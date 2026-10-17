@@ -6,7 +6,7 @@ const reader=document.getElementById('reader');
 const readerBody=document.getElementById('readerBody');
 const readerToggle=document.getElementById('readerToggle');
 const sceneRail=document.getElementById('sceneRail');
-let cur=-1,sceneIndex=0,viewMode='geography',pending=null;
+let cur=-1,sceneIndex=0,viewMode='history',pending=null;
 const lastEntry={geography:'overview',history:'history-migration'};
 const isHistory=e=>e.kind==='history';
 const activeScene=e=>isHistory(e)?e.scenes[sceneIndex]:e;
@@ -44,7 +44,7 @@ function renderToc(){
     });
     mobileToc.appendChild(optgroup);toc.appendChild(row);
   });
-  for(const [id,mode] of [['tGeography','geography'],['tHistory','history']]){
+  for(const [id,mode] of [['tHistory','history'],['tGeography','geography']]){
     const b=document.getElementById(id);b.classList.toggle('on',viewMode===mode);b.setAttribute('aria-pressed',String(viewMode===mode));
   }
   document.getElementById('indexCaption').textContent=historical?'历史树：自上而下是时间，枝杈是主题\n先选主线，↑↓ 沿线走 · ←→ 切换地图事件\nⅠ 上古 Ⅱ 城邦 Ⅲ 马其顿 Ⅳ 希腊化 Ⅴ 罗马 Ⅵ 帝国 Ⅶ 基督教 Ⅷ 中国 · 右缘可拖宽':'从山海、河流与地区名认识历史的舞台。\n↑↓ 切换条目';
@@ -565,8 +565,8 @@ document.addEventListener('keydown',ev=>{
   if(focusScenes)sceneRail.querySelector('button.on')?.focus({preventScroll:true});
 },true);
 window.addEventListener('hashchange',()=>{
-  const raw=location.hash.slice(1)||'overview';
-  go(ENTRIES.some(e=>e.id===raw.split('/')[0])?raw:'overview',{noHash:true});
+  const raw=location.hash.slice(1)||'history-migration';
+  go(ENTRIES.some(e=>e.id===raw.split('/')[0])?raw:'history-migration',{noHash:true});
 });
 /* The left column can be dragged wider (or narrower); the tree re-lays itself out and the map takes the rest.
    Double-click the edge to restore; the width is remembered per browser. */
@@ -616,5 +616,5 @@ window.addEventListener('resize',()=>{
   },150);
 });
 zoomClasses();
-go(location.hash.slice(1)||'overview');
-if(cur<0)go('overview');
+go(location.hash.slice(1)||'history-migration');
+if(cur<0)go('history-migration');

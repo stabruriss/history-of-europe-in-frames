@@ -42,8 +42,14 @@ assert.ok(!/tChrono|peakTimeline|高光年代|TIME_CH/.test(html));
   const page=await newPage();
   const data=await page.evaluate(()=>({geo:ENTRIES.filter(e=>!isHistory(e)).length,history:HISTORY_ENTRIES.length,
    scenes:HISTORY_ENTRIES.reduce((n,e)=>n+e.scenes.length,0),refs:HISTORY_ENTRIES.reduce((n,e)=>n+e.sources.length,0),
-   seas:Object.keys(MEDITERRANEAN_SEAS).length,islands:MEDITERRANEAN_ISLANDS.length,mode:viewMode}));
-  assert.deepEqual(data,{geo:33,history:64,scenes:173,refs:227,seas:18,islands:35,mode:'geography'});
+   seas:Object.keys(MEDITERRANEAN_SEAS).length,islands:MEDITERRANEAN_ISLANDS.length,mode:viewMode,
+   buttons:[...document.querySelectorAll('#modebar button')].map(b=>b.id),
+   banner:document.getElementById('ghBanner')?.textContent.trim().replace(/\s+/g,' ')||'',
+   bannerHref:document.getElementById('ghBanner')?.href||'',
+   bannerIcon:!!document.querySelector('#ghBanner svg.gh-icon')}));
+  assert.deepEqual(data,{geo:33,history:64,scenes:173,refs:227,seas:18,islands:35,mode:'history',
+   buttons:['tHistory','tGeography'],banner:'开源项目·欧洲历史笔记',
+   bannerHref:'https://github.com/stabruriss/history-of-europe-in-frames',bannerIcon:true});
   assert.equal(await page.$eval('#prev',e=>e.disabled),true);
   assert.ok(await page.$$eval('.leaflet-fallback-pane path',e=>e.length)>0);
   // Every scene draws real, valid, named geometry; a missing region may not fail silently.
@@ -114,7 +120,7 @@ assert.ok(!/tChrono|peakTimeline|高光年代|TIME_CH/.test(html));
   const direct=await newPage({hash:'#history-peloponnesian-war/2'});
   assert.equal(await direct.evaluate(()=>sceneIndex),2);await direct.close();
   const invalid=await newPage({hash:'#not-a-section'});
-  assert.equal(await invalid.evaluate(()=>ENTRIES[cur].id),'overview');await invalid.close();
+  assert.equal(await invalid.evaluate(()=>ENTRIES[cur].id),'history-migration');await invalid.close();
   // Exercise map/reader fitting at several viewport shapes, including short landscape.
   for(const [width,height] of [[390,844],[360,667],[768,1024],[1280,720],[740,390]]){
    const responsive=await newPage({width,height,hash:'#history-persian-wars/3'});
