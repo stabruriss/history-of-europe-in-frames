@@ -1,7 +1,7 @@
-<h1 align="center">Mediterranean in Frames</h1>
+<h1 align="center">History of Europe in Frames</h1>
 
 <p align="center">
-  A map atlas of Mediterranean and Near Eastern history, told scene by scene in one offline HTML file.
+  European history on maps, told scene by scene in one offline HTML file.
 </p>
 
 <p align="center">
@@ -14,7 +14,7 @@
   <strong>English</strong> · <a href="./README.zh-CN.md">简体中文</a>
 </p>
 
-*地中海与近东* is a history atlas written in Chinese, with English names for every person and place. It runs from the first migrations out of Africa to the fall of the Western Roman Empire. Each section is a short run of map scenes. In each scene the map redraws for that moment, and a short passage says what happened and why.
+This repository holds *地中海与近东* (The Mediterranean and the Near East), a history atlas written in Chinese. English names are given for every person and place. It runs from the first migrations out of Africa to the fall of the Western Roman Empire. Each section is a short run of map scenes. In each scene the map redraws for that moment, and a short passage says what happened and why.
 
 The text puts causes ahead of dates. It reads the period through power, cost and legitimacy rather than as a march toward Europe, and it sets same-era China beside the West where the comparison helps.
 

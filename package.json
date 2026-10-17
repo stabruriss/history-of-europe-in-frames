@@ -1,7 +1,7 @@
 {
-  "name": "mediterranean-in-frames",
+  "name": "history-of-europe-in-frames",
   "private": true,
-  "description": "A map atlas of Mediterranean and Near Eastern history, told scene by scene in one offline HTML file.",
+  "description": "European history on maps, told scene by scene in one offline HTML file.",
   "license": "MIT",
   "scripts": {
     "build": "cd src && python3 assemble.py ../index.html",
