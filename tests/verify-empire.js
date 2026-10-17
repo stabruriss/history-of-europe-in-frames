@@ -44,6 +44,14 @@ const wait=ms=>new Promise(r=>setTimeout(r,ms));
    assert.equal(await page.$eval('#entryEyebrow',e=>e.textContent),'罗马帝国：元首制 · 第六章');
    assert.equal(await page.$eval('.active-era',e=>e.dataset.era),'empire-principate');
    assert.ok(await page.$$eval('#toc .chip[data-era^="empire-"] small i',es=>es.length===9&&es.every(e=>e.textContent.startsWith('Ⅵ'))));
+   assert.equal(await page.$eval('#toc .chip[data-id="history-empire-dominate"] span',e=>e.textContent),'戴克里先：四帝共治');
+   for(const [scene,phrase] of [['history-empire-crisis/3','军权'],['history-empire-crisis/3','元老院和平民授权'],['history-empire-crisis/3','不再住在罗马'],['history-empire-crisis/3','共治皇帝'],
+     ['history-empire-dominate/1','不是突然冒出来的'],['history-empire-dominate/1','基于禅让的平衡记忆'],['history-empire-dominate/1','为后来君士坦丁迁都打下伏笔'],
+     ['history-empire-dominate/2','从地方自治向中央集权转型'],['history-empire-dominate/2','加派官吏'],['history-empire-dominate/2','财政支出剧增']]){
+    await page.evaluate(s=>go(s),scene);
+    assert.ok(await page.$eval('#sceneContext>p',(e,w)=>e.textContent.includes(w),phrase),scene+' lacks '+phrase);
+   }
+   await page.evaluate(()=>go('history-empire-principate'));
    assert.match(await page.$eval('#indexCaption',e=>e.textContent),/Ⅵ 帝国/);
    if(label==='desktop')assert.ok(await page.$$eval('#toc .tree-tick',es=>['公元','100','300','500'].every(y=>es.some(e=>e.textContent===y))));
    await page.evaluate(()=>go('history-empire-principate/1'));
