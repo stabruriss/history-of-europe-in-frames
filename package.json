@@ -1,0 +1,13 @@
+{
+  "name": "mediterranean-in-frames",
+  "private": true,
+  "description": "A map atlas of Mediterranean and Near Eastern history, told scene by scene in one offline HTML file.",
+  "license": "MIT",
+  "scripts": {
+    "build": "cd src && python3 assemble.py ../index.html",
+    "test": "for f in tests/verify-*.js; do node \"$f\" index.html || exit 1; done"
+  },
+  "devDependencies": {
+    "puppeteer-core": "24.43.1"
+  }
+}

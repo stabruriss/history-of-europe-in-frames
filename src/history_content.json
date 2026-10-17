@@ -1,0 +1,1963 @@
+{
+  "history-migration": {
+    "title": "走出非洲",
+    "html": "<p data-scene-text=\"0\">距今约7万—6万年，一批<strong>智人（Homo sapiens）</strong>走出非洲，是今天非洲以外大多数人的祖先。他们经西亚分头扩散，西去欧洲，东抵南亚、东亚，一路分化、混血。</p>\n<p data-scene-text=\"1\">伊朗高原可能是他们歇脚再出发的中转站。埃及、克里特、迈锡尼还要等几万年：先得会种地，才有国家。</p>",
+    "sources": [
+      {
+        "label": "人类扩散与伊朗高原研究",
+        "url": "https://www.nature.com/articles/s41467-024-46161-7"
+      },
+      {
+        "label": "东亚人群形成的古DNA研究",
+        "url": "https://www.nature.com/articles/s41586-021-03336-2"
+      }
+    ]
+  },
+  "history-farming": {
+    "title": "农业与早期国家",
+    "html": "<p data-scene-text=\"0\"><strong>粮食一有剩余，收粮的人就来了。</strong>约前10000年起，新月沃地的人驯化麦子和牛羊，开始定居；农业再经安纳托利亚传入爱琴海。</p>\n<p data-scene-text=\"1\">前4千纪两河出现城市，最早的文字多半在记账；约前3100年埃及统一。修渠、管仓、打仗、祭神都要人统筹，<strong>管事的人慢慢成了管人的人。</strong></p>",
+    "sources": [
+      {
+        "label": "爱琴海青铜时代人口研究",
+        "url": "https://www.nature.com/articles/nature23310"
+      }
+    ]
+  },
+  "history-palaces": {
+    "title": "克里特与迈锡尼",
+    "html": "<p data-scene-text=\"0\">约前1900年，克里特岛盖起宫殿，即<strong>米诺斯文明（Minoan civilization）</strong>。宫殿是王宫，也是仓库和账房；记账的线形文字A（Linear A）至今没人读懂。</p>\n<p data-scene-text=\"1\">约前1600年，希腊大陆兴起<strong>迈锡尼文明（Mycenaean civilization）</strong>，前1450年前后入主克里特。线形文字B（Linear B）写的是早期希腊语，破译出来一看，还是账。</p>\n<p data-scene-text=\"2\"><strong>爱琴海是大棋局边上的玩家，不是庄家。</strong>大国是埃及、赫梯和巴比伦，宫殿精英靠搭上它们的贸易网过日子。网在，宫殿就在。</p>",
+    "sources": [
+      {
+        "label": "大都会博物馆：米诺斯文明",
+        "url": "https://www.metmuseum.org/essays/minoan-crete"
+      },
+      {
+        "label": "大都会博物馆：迈锡尼文明",
+        "url": "https://www.metmuseum.org/essays/mycenaean-civilization"
+      }
+    ],
+    "moments": [
+      {
+        "scene": 0,
+        "name": "迷宫与牛头怪",
+        "en": "Labyrinth & Minotaur",
+        "text": "克诺索斯宫室层层叠叠，后世希腊人传说里面关着牛头人身的米诺陶洛斯，“迷宫”的故事由此而来。"
+      }
+    ]
+  },
+  "history-collapse": {
+    "title": "青铜时代的危机",
+    "html": "<p data-scene-text=\"0\">约前1274年埃及与赫梯大战卡迭石（Kadesh），前1259年议和。压垮体系的不是这一仗，是几十年后一齐涌来的麻烦。</p>\n<p data-scene-text=\"1\"><strong>大家共用一张网，一处断，处处断。</strong>粮荒、战乱和航路中断互相放大。约前1200年，迈锡尼宫殿、赫梯王权和乌加里特等港口接连倒下。</p>\n<p data-scene-text=\"2\">断了生计的人不少下海当了海盗，今称<strong>海上民族（Sea Peoples）</strong>。约前1177年埃及挡住了他们，海外威风却一去不返。</p>",
+    "sources": [
+      {
+        "label": "卡迭石和约实物资料",
+        "url": "https://www.livius.org/pictures/turkey/bogazkale-hattusa/hattusa-museum-pieces/hattusa-kadesh-treaty/"
+      },
+      {
+        "label": "赫梯末期干旱研究",
+        "url": "https://www.nature.com/articles/s41586-022-05693-y"
+      }
+    ],
+    "moments": [
+      {
+        "scene": 1,
+        "name": "特洛伊战争",
+        "en": "Trojan War",
+        "text": "荷马唱的十年围城和木马计，背景就在这个时代：安纳托利亚西北角的特洛伊（Troy）约前1180年毁于战火。"
+      }
+    ]
+  },
+  "history-dark-age": {
+    "title": "希腊的黑暗时代",
+    "html": "<p data-scene-text=\"0\">宫殿和文字没了，村落、希腊语和海上往来还在。<strong>大树倒了，林下小苗才见到阳光。</strong>小共同体慢慢长成城邦，前8世纪借腓尼基字母重新写字。</p>",
+    "sources": [
+      {
+        "label": "基克拉迪艺术博物馆：从黑暗时代到古典世界",
+        "url": "https://cycladic.gr/en/essay/apo-tous-skoteinous-chronous-stous-romaious-aytokratores/"
+      }
+    ],
+    "moments": []
+  },
+  "history-poleis": {
+    "title": "城邦世界的形成",
+    "html": "<p data-scene-text=\"0\"><strong>山把希腊切成小块，谁也吞不掉谁；海又把它们连起来，谁也离不开谁。</strong>约前800年起，城邦（polis）围着土地和公民军长成。</p>\n<p data-scene-text=\"1\">地不够、内斗输了，就出海去黑海、西西里另起炉灶，和腓尼基人抢地盘。雅典、斯巴达对峙要到前5世纪。</p>",
+    "sources": [
+      {
+        "label": "大都会博物馆：城邦与希腊世界的形成",
+        "url": "https://www.metmuseum.org/essays/geometric-art-in-ancient-greece"
+      }
+    ],
+    "moments": [
+      {
+        "scene": 0,
+        "name": "第一届奥运会",
+        "en": "First Olympiad",
+        "text": "传统以前776年为第一届奥林匹亚竞技会，希腊人后来就用“第几届奥运会”来纪年。"
+      }
+    ]
+  },
+  "history-sparta": {
+    "title": "斯巴达的制度",
+    "html": "<p data-scene-text=\"0\"><strong>斯巴达的全职军人，是被征服者养活的。</strong>希洛人（Helots）种地交粮，周边自由民做工经商，公民只管受训、会餐、打仗。</p>\n<p data-scene-text=\"1\">被奴役者远多于公民，<strong>为了压住他们，整个城邦活成了一座兵营。</strong>传说吕库古（Lycurgus）定下双王领兵、长老会议（Gerousia）议事；重装步兵成了主力后，公民分量变重，他们选出的5名监察官（Ephors）能拘押、审判国王。</p>",
+    "sources": [
+      {
+        "label": "斯巴达政治程序研究",
+        "url": "https://www.cambridge.org/core/journals/classical-quarterly/article/divided-power-and-deliberative-procedures-in-ancient-sparta/DB515806C3F3CFF62AEDA17A1E47A204"
+      }
+    ]
+  },
+  "history-athens": {
+    "title": "雅典的权力重组",
+    "html": "<p data-scene-text=\"0\"><strong>雅典政治是三方牌局：贵族有门第，富人有钱，穷人有人数，谁想赢都得拉一家、打一家。</strong>德拉古（Draco）立法之严，留下了 draconian 一词；梭伦（Solon，前594／593）废除债务奴役，按财产分配参政资格。</p>\n<p data-scene-text=\"1\">梭伦两头不讨好，强人乘乱而起：庇西特拉图（Peisistratus）前561／560年起三度夺权，靠扶小农坐稳僭主；其子希庇亚斯（Hippias）前510年被逐。</p>\n<p data-scene-text=\"2\">贵族接着斗，克里斯提尼（Cleisthenes）眼看要输，<strong>干脆把平民拉进自己阵营</strong>：前508／507年把村社打散，混编十个部落，旧贵族的同乡票仓就此失灵。</p>",
+    "sources": [
+      {
+        "label": "梭伦改革研究",
+        "url": "https://academic.oup.com/edited-volume/61673/chapter-abstract/550499053"
+      },
+      {
+        "label": "雅典民主发展的制度脉络",
+        "url": "https://www.uvm.edu/~jbailly/courses/clas21/notes/atheniandemocracy.html"
+      }
+    ]
+  },
+  "history-persian-wars": {
+    "title": "希波战争",
+    "html": "<p data-scene-text=\"0\"><strong>从此，城邦内斗和帝国边疆政治缠在一起。</strong>前499年伊奥尼亚反波斯，雅典派船助战，烧了萨迪斯；据说大流士让仆人每餐提醒：“记住雅典人。”</p>\n<p data-scene-text=\"1\">前492年第一次远征，收服色雷斯和马其顿，舰队遇风暴折返。</p>\n<p data-scene-text=\"2\">前490年第二次，波斯渡海在马拉松登陆，带路的竟是被逐的老僭主希庇亚斯，结果被雅典重装步兵击退。</p>\n<p data-scene-text=\"3\">前480年第三次，薛西斯（Xerxes）亲征，不少城邦投了波斯，雅典被焚；地米斯托克利（Themistocles）用银矿收入造的舰队在萨拉米斯翻盘。<strong>划桨的是穷人，他们在公民大会的腰杆从此硬了。</strong></p>\n<p data-scene-text=\"4\">前479年普拉提亚、米卡勒两胜，战线推回爱琴海东岸。</p>\n<p data-scene-text=\"5\">雅典领着同盟打到塞浦路斯和埃及，直到前5世纪中叶；<strong>仗越久，舰队越大，穷人筹码越重。</strong></p>",
+    "sources": [
+      {
+        "label": "盖蒂博物馆：波斯与希腊",
+        "url": "https://www.getty.edu/art/exhibitions/persia/explore.html"
+      }
+    ],
+    "moments": [
+      {
+        "scene": 2,
+        "name": "马拉松",
+        "en": "Marathon",
+        "text": "传说信使从马拉松一路跑回雅典报捷，喊完“我们赢了”便倒地身亡，现代马拉松长跑由此得名。"
+      },
+      {
+        "scene": 3,
+        "name": "斯巴达三百勇士",
+        "en": "The 300 at Thermopylae",
+        "text": "列奥尼达率三百斯巴达人和数千盟军扼守温泉关，被叛徒引路包抄后死战不退，“三百勇士”从此成了以少抗多的象征。"
+      }
+    ]
+  },
+  "history-leagues": {
+    "title": "同盟与伯利克里",
+    "html": "<p data-scene-text=\"0\"><strong>盟邦交钱，雅典造船；钱交得越久，越没本事退出。</strong>提洛同盟（Delian League，前478／477）本为共防波斯，纳克索斯想退盟，被雅典打了回来；前454年金库搬进雅典。</p>\n<p data-scene-text=\"1\">斯巴达靠盟约和陆军维系伯罗奔尼撒同盟。雅典这边，厄菲阿尔特斯（Ephialtes）削掉贵族议事会实权，伯利克里（Pericles）给陪审员发津贴，穷人天天能参政。<strong>公民大会成了权力中枢，也成了民粹的舞台：谁最会煽动，谁就能左右城邦。</strong></p>",
+    "sources": [
+      {
+        "label": "提洛同盟的发展",
+        "url": "https://www.livius.org/articles/concept/delian-league/"
+      },
+      {
+        "label": "《雅典政制》相关记载",
+        "url": "https://classics.mit.edu/Aristotle/athenian_const.2.2.html"
+      }
+    ]
+  },
+  "history-peloponnesian-war": {
+    "title": "伯罗奔尼撒战争",
+    "html": "<p data-scene-text=\"0\">修昔底德说：<strong>雅典坐大，斯巴达害怕，战争就躲不掉了。</strong>约前460—446／445年先打一轮，和约撑了不到十五年。</p>\n<p data-scene-text=\"1\">前431年全面开战，雅典人躲进长墙靠海运吃饭，却引来瘟疫，伯利克里病死；接班的克里昂（Cleon）更会煽动。</p>\n<p data-scene-text=\"2\">前415年公民大会头脑发热，远征西西里；主将亚西比德（Alcibiades）被召回受审，转投斯巴达，前413年远征军覆没。</p>\n<p data-scene-text=\"3\">波斯出钱帮斯巴达建起舰队，前405年羊河一战掐断雅典粮道，前404年雅典投降。</p>",
+    "sources": [
+      {
+        "label": "战争背景与分期",
+        "url": "https://www.livius.org/articles/concept/peloponnesian-war/"
+      },
+      {
+        "label": "战争最后阶段",
+        "url": "https://www.livius.org/articles/concept/peloponnesian-war/decelean-war/"
+      }
+    ],
+    "moments": [
+      {
+        "scene": 1,
+        "name": "伯利克里葬礼演说",
+        "en": "Funeral Oration",
+        "text": "开战第一年冬，伯利克里在阵亡将士葬礼上称雅典是“全希腊的学校”，这是民主雅典最有名的自画像。"
+      }
+    ]
+  },
+  "history-spartan-decline": {
+    "title": "波斯调停与霸权轮替",
+    "html": "<p data-scene-text=\"0\"><strong>斯巴达会打仗，不会管帝国。</strong>它四处驻军、扶寡头，雅典的“三十僭主”八个月杀了上千人。雅典次年恢复民主，伤口却没好，前399年处死了苏格拉底。</p>\n<p data-scene-text=\"1\">出钱的波斯王子小居鲁士（Cyrus the Younger）前401年起兵与兄长争位，斯巴达暗中相助；他战死后，希腊雇佣兵从波斯腹地杀回黑海，<strong>斯巴达由此认定波斯是个空架子。</strong></p>\n<p data-scene-text=\"2\">斯巴达随即出兵亚洲，波斯便<strong>拿钱拉一派、打一派</strong>，资助底比斯、雅典等反斯巴达；前395年科林斯战争爆发，次年斯巴达海军在克尼多斯惨败。</p>\n<p data-scene-text=\"3\">前387／386年<strong>大王和约（King’s Peace）</strong>：亚洲希腊城市归波斯，其余城邦“一律自治”，斯巴达负责执行。“自治”专拆别人的同盟；<strong>当年拼死抵抗的波斯王成了话事人。</strong></p>\n<p data-scene-text=\"4\">霸主当久了，仇家越来越多，公民却越来越少。前371年在留克特拉败给底比斯，前369年美塞尼亚独立，<strong>斯巴达的饭碗被端走一半。</strong></p>\n<p data-scene-text=\"5\">底比斯也没能接班：前362年伊巴密浓达（Epaminondas）战死曼丁尼亚。色诺芬的史书停在这里，结论是希腊比以前更乱。</p>",
+    "sources": [
+      {
+        "label": "伊巴密浓达与底比斯的胜利",
+        "url": "https://www.livius.org/articles/person/epaminondas/"
+      },
+      {
+        "label": "亚里士多德对斯巴达制度与土地问题的讨论",
+        "url": "https://sourcebooks.web.fordham.edu/ancient/aristotle-politics.asp"
+      },
+      {
+        "label": "《伊朗百科》· 阿尔塔薛西斯二世、小居鲁士与大王和约",
+        "url": "https://www.iranicaonline.org/articles/artaxerxes-ii-achaemenid-king/"
+      }
+    ]
+  },
+  "history-macedonian-rise": {
+    "title": "腓力的军队与王位",
+    "html": "<p data-scene-text=\"0\"><strong>腓力二世（Philip II）把金矿、税收、贵族和军队拧成一部扩张机器。</strong>他前359年即位，练出长枪方阵，配上骑兵冲击。</p>\n<p data-scene-text=\"1\">他一手刀剑一手金子：驮着金子的驴子，翻得过任何城墙。前338年喀罗尼亚击败雅典—底比斯，次年当上科林斯同盟盟主。</p>\n<p data-scene-text=\"2\">前337年腓力娶新宠克娄巴特拉·欧律狄刻（Cleopatra Eurydice），婚宴上新娘叔父祝她生个“纯正的”继承人，<strong>一出废长立幼眼看要上演</strong>。前336年腓力遇刺，有人怀疑是亚历山大母子所为。</p>\n<p data-scene-text=\"3\">亚历山大即位，前335年夷平反叛的底比斯，杀一儆百，转身东征。</p>",
+    "sources": [
+      {
+        "label": "腓力二世的国家与军队建设",
+        "url": "https://www.livius.org/articles/person/philip-ii-of-macedonia/philip-ii-of-macedonia-5/"
+      },
+      {
+        "label": "腓力取得希腊主导权的过程",
+        "url": "https://www.livius.org/articles/person/philip-ii-of-macedonia/philip-ii-of-macedonia-4/"
+      },
+      {
+        "label": "普鲁塔克《亚历山大传》9—11节 · 婚姻、刺杀与继位",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Plutarch/Lives/Alexander*/3.html"
+      }
+    ]
+  },
+  "history-alexander-conquest": {
+    "title": "东征：接管一座帝国",
+    "html": "<p data-scene-text=\"0\"><strong>打赢一仗，敌人的钱粮就成了下一仗的本钱。</strong>前334年亚历山大渡海，在格拉尼库斯河击败波斯总督；前333年在伊苏斯击败大流士三世（Darius III）。他不急着追，先沿海拿下提尔、加沙和埃及：港口丢光了，波斯舰队也就无处可泊。</p>\n<p data-scene-text=\"1\">前331年高加米拉决战，大流士再次逃走。巴比伦开城迎降，苏萨、波斯波利斯的国库落入亚历山大之手，据说金银要用上万对骡子和五千头骆驼来搬。前330年大流士被部下所杀，亚历山大接过了波斯王的名号，许多地方却不认这个新主人。</p>\n<p data-scene-text=\"2\">中亚最难啃：没有决战，只有没完没了的游击和镇压，一拖近三年。前326年他在旁遮普击败波罗斯（Porus），士兵却在希法西斯河坐下不走了；归途穿越格德罗西亚沙漠，死伤惨重。<strong>疆域越大，补给、统治和人心都到了极限。</strong></p>",
+    "sources": [
+      {
+        "label": "阿里安《亚历山大远征记》· 全文与战役次序",
+        "url": "https://www.gutenberg.org/files/46976/46976-h/46976-h.htm"
+      },
+      {
+        "label": "阿里安 · 士兵在希法西斯河拒绝前进",
+        "url": "https://www.livius.org/sources/content/arrian/anabasis/mutiny-at-the-hyphasis/"
+      }
+    ],
+    "moments": [
+      {
+        "scene": 0,
+        "name": "戈尔迪之结",
+        "en": "Gordian Knot",
+        "text": "在戈尔迪乌姆，传说谁能解开古战车上的死结，谁就能统治亚洲；亚历山大索性一剑劈开。"
+      },
+      {
+        "scene": 1,
+        "name": "火烧波斯波利斯",
+        "en": "Burning of Persepolis",
+        "text": "前330年，波斯波利斯王宫在一场酒宴后燃起大火，号称为当年雅典被焚报仇。"
+      }
+    ]
+  },
+  "history-alexander-rule": {
+    "title": "旧伙伴与新臣民",
+    "html": "<p data-scene-text=\"0\">在埃及，亚历山大尝到了神权的甜头：祭司把他当法老接纳，锡瓦绿洲的神谕据说称他为“神之子”。<strong>在马其顿，国王是贵族里的头一号；在埃及，国王是神——神不必和功臣商量。</strong></p>\n<p data-scene-text=\"1\">他要的“亚欧一体”，说白了是让希腊世界也“埃及化”，马其顿人和希腊人也得像亚洲人那样拜他。<strong>可跟着打天下的老伙伴，自认是兄弟，不是臣仆。</strong>老将帕曼尼翁父子被杀，救过他命的克利图斯被他酒后刺死；前327年推行俯拜礼（proskynesis），在波斯是宫廷礼节，在希腊人眼里却是拜神。<a data-go=\"history-alexander-rule/1\" data-person-target=\"callisthenes\">卡利斯提尼的遭遇</a>见小卡。</p>\n<p data-scene-text=\"2\"><strong>在亚洲兜的圈子越大，马其顿老班底折损越多，国王的选择反而越多。</strong>他让三万波斯少年按马其顿方式受训；前324年在苏萨让八十多名将领迎娶波斯贵族女子。老兵在奥皮斯哗变，他索性把禁卫番号授给波斯人，老兵只好认错。亚洲新军，成了他的新基本盘。</p>",
+    "sources": [
+      {
+        "label": "阿里安 · 锡瓦神谕",
+        "url": "https://www.livius.org/sources/content/arrian/anabasis/alexander-visits-siwah/"
+      },
+      {
+        "label": "阿里安《远征记》卷三至七 · 近臣冲突、亚洲征募与联姻",
+        "url": "https://www.gutenberg.org/files/46976/46976-h/46976-h.htm"
+      },
+      {
+        "label": "阿里安 · 俯拜礼与卡利斯提尼",
+        "url": "https://www.livius.org/sources/content/arrian/anabasis/the-introduction-of-proskynesis/"
+      },
+      {
+        "label": "阿里安 · 奥皮斯兵变",
+        "url": "https://www.livius.org/sources/content/arrian/anabasis/mutiny-at-opis/"
+      },
+      {
+        "label": "Livius · 亚历山大的神化与王权整合",
+        "url": "https://www.livius.org/articles/person/alexander-the-great/alexander-3.5-deification/"
+      }
+    ]
+  },
+  "history-successors": {
+    "title": "帝国裂开，网络延续",
+    "html": "<p data-scene-text=\"0\">前323年，亚历山大在巴比伦高烧不退，32岁去世。据说被问帝国传给谁，他答：“给最强的人。”<strong>帝国是他一个人串起来的，人一走，线就断了。</strong>名义国王有两位：智力有缺陷的异母兄，和还没出生的遗腹子。实权全在将领手里。</p>\n<p data-scene-text=\"1\"><strong>继业者战争（Wars of the Diadochi）</strong>一打四十年。两位小国王先后被杀，亚历山大的母亲、妻儿无一善终；最有望统一的“独眼”安提柯前301年死在伊普苏斯。到前281年，亚历山大那一代老将全部谢幕。</p>\n<p data-scene-text=\"2\">尘埃落定时，托勒密守埃及，塞琉古据西亚，安提柯回马其顿，夹缝中还有小王国和城邦联盟；东边的孔雀王朝早用五百头战象换走了印度河流域。<strong>政治上分了家，希腊语、商人、雇佣兵和学者照旧跨境流动。</strong></p>",
+    "sources": [
+      {
+        "label": "阿里安 · 巴比伦的继承与分省安排",
+        "url": "https://www.livius.org/sources/content/arrian/anabasis/the-settlement-at-babylon/"
+      },
+      {
+        "label": "大都会艺术博物馆 · 希腊化时代的王朝与文化网络",
+        "url": "https://www.metmuseum.org/essays/art-of-the-hellenistic-age-and-the-hellenistic-tradition"
+      },
+      {
+        "label": "Livius · 继业者战争",
+        "url": "https://www.livius.org/articles/concept/diadochi/"
+      }
+    ]
+  },
+  "history-hellenistic-states": {
+    "title": "王国靠什么运转",
+    "html": "<p data-scene-text=\"0\"><strong>希腊化王国的生意经：土地出粮，城市换钱，钱养兵，兵守住收粮的地盘。</strong>托勒密最会算账，尼罗河的粮和油按王室登记征收，法老的老底子配上希腊人的账本。</p>\n<p data-scene-text=\"1\">塞琉古地盘从地中海伸到中亚，只能靠点连线：建城、屯兵，再笼络两河祭司和伊朗贵族。手伸不了那么远，只能靠合作。</p>\n<p data-scene-text=\"2\">安提柯王朝守着马其顿兵源和号称“希腊镣铐”的几处要塞；南方城邦结成同盟，在王国间左右逢源。<strong>资源不同，统治方式就不同。</strong></p>",
+    "sources": [
+      {
+        "label": "《伊朗百科》· 塞琉古的税收、货币与城市",
+        "url": "https://www.iranicaonline.org/articles/seleucid-economy/"
+      },
+      {
+        "label": "大都会博物馆 · 托勒密埃及与本地社会",
+        "url": "https://www.metmuseum.org/essays/egypt-in-the-ptolemaic-period"
+      },
+      {
+        "label": "Livius · 安提柯二世与马其顿",
+        "url": "https://www.livius.org/articles/person/antigonus-ii-gonatas/"
+      }
+    ],
+    "moments": [
+      {
+        "scene": 2,
+        "name": "罗德岛巨像",
+        "en": "Colossus of Rhodes",
+        "text": "罗德岛顶住马其顿名将的围城，变卖敌军丢下的攻城器械，铸成三十多米高的太阳神像，位列古代七大奇迹。"
+      }
+    ]
+  },
+  "history-hellenistic-knowledge": {
+    "title": "王室养学者，个人求安顿",
+    "html": "<p data-scene-text=\"0\">城邦还在，大事却由国王说了算。管不了天下，就管好自己：伊壁鸠鲁教人少欲望、多朋友，不怕神也不怕死；芝诺的斯多亚派教人尽本分，视人类为同胞。</p>\n<p data-scene-text=\"1\"><strong>国王们比的不只是军队，还有人才和藏书。</strong>亚历山大里亚的图书馆据说连进港船上的书都要扣下抄录；“羊皮纸”（parchment）一词则来自对手帕加马。</p>\n<p data-scene-text=\"2\">前212年叙拉古城破，守城的阿基米德死于罗马兵刃。<strong>战争能供养学问，也能斩断它。</strong></p>",
+    "sources": [
+      {
+        "label": "大都会博物馆 · 希腊化城市与王室赞助",
+        "url": "https://www.metmuseum.org/essays/art-of-the-hellenistic-age-and-the-hellenistic-tradition"
+      },
+      {
+        "label": "斯坦福哲学百科 · 希腊化政治哲学",
+        "url": "https://plato.stanford.edu/entries/ancient-political/"
+      }
+    ],
+    "moments": [
+      {
+        "scene": 1,
+        "name": "法罗斯灯塔",
+        "en": "Lighthouse of Alexandria",
+        "text": "亚历山大里亚港外的法罗斯灯塔高约百米，也是七大奇迹之一，法语、意大利语里的“灯塔”都由它得名。"
+      }
+    ]
+  },
+  "history-celts": {
+    "title": "凯尔特人来到爱琴海",
+    "html": "<p data-scene-text=\"0\"><strong>继业者打成一锅粥，北边的门没人看了。</strong>前279年，凯尔特诸部（Celts）南下，杀了马其顿国王；另一支直扑德尔斐，遭抵抗退走。</p>\n<p data-scene-text=\"1\">比提尼亚国王为争位，前278／277年把一支凯尔特人请过海峡。<strong>请神容易送神难</strong>，他们劫掠勒索，最后扎根安纳托利亚中部，那里从此叫加拉太（Galatia）。安提柯二世则靠击败另一支坐稳马其顿王位。</p>\n<p data-scene-text=\"2\">前3世纪后半叶，帕加马击败加拉太人，随即称王，<strong>打退“蛮族”成了王朝招牌。</strong></p>",
+    "sources": [
+      {
+        "label": "保萨尼亚斯 · 前279年南下希腊的记载",
+        "url": "https://www.livius.org/sources/content/pausanias-periegete/the-invasion-of-the-gauls/"
+      },
+      {
+        "label": "门农《赫拉克利亚史》11节 · 跨海结盟与定居",
+        "url": "https://www.attalus.org/translate/memnon1.html#11"
+      },
+      {
+        "label": "帕加马胜利铭文 · 阿塔罗斯与加拉太人",
+        "url": "https://www.attalus.org/docs/ogis/s273.html"
+      }
+    ]
+  },
+  "history-eastern-kingdoms": {
+    "title": "东方边缘长出新中心",
+    "html": "<p data-scene-text=\"0\"><strong>王室的心思都在西边，东边的总督和地方豪强便自立门户。</strong>前3世纪中叶，巴克特里亚（Bactria）的希腊总督称王，这里就是张骞后来到过的“大夏”；帕提亚（Parthia）则被草原来的帕尼人夺走，中国史书称之为“安息”。</p>\n<p data-scene-text=\"1\">前141年，安息拿下巴比伦尼亚，塞琉古最肥的税源和城市易手。新主人没有推倒重来：希腊文钱币照铸，城市照转，税照收。<strong>统治者换了，社会这台机器还在转。</strong></p>",
+    "sources": [
+      {
+        "label": "《伊朗百科》· 塞琉古与东方地方势力",
+        "url": "https://www.iranicaonline.org/articles/seleucid-empire/"
+      },
+      {
+        "label": "《伊朗百科》· 巴克特里亚",
+        "url": "https://www.iranicaonline.org/articles/bactria/bactria-i-pre-islamic-period/"
+      },
+      {
+        "label": "《伊朗百科》· 安息王朝扩张",
+        "url": "https://www.iranicaonline.org/articles/arsacids-ii/"
+      }
+    ]
+  },
+  "history-spartan-reforms": {
+    "title": "斯巴达最后的改革",
+    "html": "<p data-scene-text=\"0\"><strong>斯巴达的病根在土地：地越集中，养得起自己的公民越少，军队就越弱。</strong>阿吉斯四世想免债分地，债券烧了，地没分成，前241年被监察官处死。约前227年，克里昂米尼三世先下手为强：杀监察官，再免债分地、扩充公民。</p>\n<p data-scene-text=\"1\">斯巴达又能打了，“分地”的口号还让各城穷人心动。亚该亚同盟的阿拉托斯当年靠赶走马其顿人起家，如今却把马其顿请了回来。<strong>挡住分地的号召，比挡住老对手更要紧。</strong>前222年塞拉西亚一战，改革夭折。</p>",
+    "sources": [
+      {
+        "label": "普鲁塔克《阿吉斯传》· 财产与改革",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Plutarch/Lives/Agis*.html"
+      },
+      {
+        "label": "普鲁塔克《克里昂米尼传》· 改革与塞拉西亚",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Plutarch/Lives/Cleomenes*.html"
+      },
+      {
+        "label": "Livius · 亚该亚同盟",
+        "url": "https://www.livius.org/articles/misc/achaean-league/"
+      }
+    ]
+  },
+  "history-ptolemaic-bargain": {
+    "title": "埃及：征兵、反叛与神庙",
+    "html": "<p data-scene-text=\"0\"><strong>王室要打赢仗，就得武装本地人；本地人手里有了刀，也就有了要价的底气。</strong>前217年拉菲亚之战，托勒密破例把两万埃及人编进方阵，挡住了塞琉古。仗打赢了，埃及兵也掂出了自己的分量。</p>\n<p data-scene-text=\"1\">没过几年，上埃及另立本地法老，独立近二十年。王室一手镇压，一手向神庙让利，换祭司为国王背书。前196年的罗塞塔石碑，记的正是这笔交易。</p>",
+    "sources": [
+      {
+        "label": "波利比乌斯《历史》卷五 · 拉菲亚战役",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Polybius/5*.html"
+      },
+      {
+        "label": "研究 · 埃及大起义（前205—前186年）",
+        "url": "https://www.lib.berkeley.edu/sites/default/files/files/TheGreatRevoltoftheEgyptians.pdf"
+      },
+      {
+        "label": "大都会博物馆 · 王室、祭司与埃及社会",
+        "url": "https://www.metmuseum.org/essays/egypt-in-the-ptolemaic-period"
+      }
+    ]
+  },
+  "history-hellenistic-end": {
+    "title": "罗马与帕提亚改变格局",
+    "html": "<p data-scene-text=\"0\"><strong>都请外援对付眼前的对手，外援最后成了裁判。</strong>罗马打败马其顿后宣布“希腊人自由”，像极了当年的“城邦自治”；前188年又把塞琉古赶出小亚细亚。</p>\n<p data-scene-text=\"1\">此后骨牌接连倒下：前168年马其顿亡，前146年科林斯被毁，前141年两河归安息，前64年叙利亚成罗马行省。</p>\n<p data-scene-text=\"2\">最后是埃及。克娄巴特拉七世（Cleopatra VII）是托勒密家头一个会说埃及话的，却押宝安东尼；阿克提乌姆一败，埃及并入罗马。</p>",
+    "sources": [
+      {
+        "label": "阿庇安《叙利亚战争》· 阿帕米亚条款",
+        "url": "https://www.livius.org/sources/content/appian/appian-the-syrian-wars/appian-the-syrian-wars-8/"
+      },
+      {
+        "label": "Livius · 马其顿与希腊的战争次序",
+        "url": "https://www.livius.org/articles/misc/achaean-league/"
+      },
+      {
+        "label": "《伊朗百科》· 塞琉古王朝的解体",
+        "url": "https://www.iranicaonline.org/articles/seleucid-empire/"
+      },
+      {
+        "label": "大都会博物馆 · 埃及至前30年",
+        "url": "https://www.metmuseum.org/essays/egypt-in-the-ptolemaic-period"
+      }
+    ],
+    "moments": [
+      {
+        "scene": 2,
+        "name": "埃及艳后之死",
+        "en": "Death of Cleopatra",
+        "text": "传说克娄巴特拉让人把毒蛇藏在无花果篮里带进来，让它咬死了自己。"
+      }
+    ]
+  },
+  "history-rome-site": {
+    "title": "台伯河边的十字路口",
+    "html": "<p data-scene-text=\"0\">罗马起步晚，环境也差：城中谷地原是沼泽，台伯河常常泛滥，瘟疫隔几年就来一次。<strong>它的本钱是位置，不是土地。</strong>这里是台伯河入海前最后一个好渡口，河口产盐，盐路（Via Salaria）由此通往山里，南北商道也在此过河；伊特鲁里亚、拉丁、萨宾三方的地界在这里碰头。</p>\n<p data-scene-text=\"1\">来的人杂，罗马起家像个边缘人和流窜犯的避难所。传说罗慕路斯在卡匹托尔山开避难所，收容逃犯、欠债人和奴隶；缺女人，就设计抢了萨宾人的女儿。考古看到的是另一种杂：河港市场上有希腊和腓尼基的货物，伊特鲁里亚人在城里有自己的街区。苏格拉底在雅典跟人辩论的年代，罗马人做买卖还靠称铜块、数牛头（拉丁语的钱 pecunia 就来自牛 pecus），自己的钱币要到前300年前后才铸；“用盐当钱”是后人的附会。</p>",
+    "sources": [
+      {
+        "label": "李维《建城以来史》1.4—1.13 · 建城传说",
+        "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.02.0026:book=1:chapter=4"
+      },
+      {
+        "label": "普鲁塔克《罗慕路斯传》",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Plutarch/Lives/Romulus*.html"
+      },
+      {
+        "label": "皮尔吉金箔铭文 · 伊特鲁里亚文与腓尼基文双语",
+        "url": "https://en.wikipedia.org/wiki/Pyrgi_Tablets"
+      }
+    ],
+    "moments": [
+      {
+        "scene": 1,
+        "name": "母狼与双生子",
+        "en": "The She-wolf & the Twins",
+        "text": "传说双胞胎罗慕路斯与雷穆斯被弃于台伯河，由母狼哺乳长大。罗慕路斯建城时杀了跳过新城墙的弟弟；罗马人把建城定在前753年。"
+      },
+      {
+        "scene": 1,
+        "name": "抢萨宾妇女",
+        "en": "The Sabine Women",
+        "text": "罗慕路斯借办赛会把萨宾少女掳进城。萨宾人打上门时，已成罗马人妻子的女人们冲进两军之间劝和，两族从此合为一城。"
+      }
+    ]
+  },
+  "history-rome-kings": {
+    "title": "王、元老与人民",
+    "html": "<p data-scene-text=\"0\"><strong>王不世袭：元老提名，人民大会认可，元老、王、人民三方的格局已见雏形。元老院传统上是三百人，都是大族的家长、最大的地主，他们的子孙就是最早的贵族（patricii，“父老的子孙”）。</strong>传说七王共在位244年，平均每人35年，王表显然被压缩过。早期的王更像元老推举的话事人，带着罗马吞并阿尔巴隆伽，伸手到河口的盐场。</p>\n<p data-scene-text=\"1\">后三王换了路数。老塔克文来自伊特鲁里亚的塔尔奎尼，塞尔维乌斯按财产把人编进军队和投票单位，傲慢者塔克文驱使平民修大下水道和卡匹托尔山的大神庙。<strong>他们更像同时代的希腊僭主：拉拢新兵、大兴土木，撇开元老。希腊式重装步兵方阵这时传进意大利，骑马的贵族不再独占战场，扛矛的平民分量渐重，和雅典一样要政治权力和上升通道。塞尔维乌斯编的百人团，就是日后的百人团大会（comitia centuriata；“森都里亚”是 centuria 的音译，两个名字说的是同一个会）。</strong>罗马成了意大利中部的大城。</p>",
+    "sources": [
+      {
+        "label": "李维《建城以来史》1.42—1.43 · 塞尔维乌斯的财产等级",
+        "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.02.0026:book=1:chapter=42"
+      },
+      {
+        "label": "李维《建城以来史》1.54 · 打落罂粟花",
+        "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.02.0026:book=1:chapter=54"
+      },
+      {
+        "label": "克劳狄皇帝的里昂铜板 · 马斯塔尔纳",
+        "url": "https://en.wikipedia.org/wiki/Lyon_Tablet"
+      }
+    ],
+    "moments": [
+      {
+        "scene": 0,
+        "name": "三兄弟决斗",
+        "en": "Horatii vs Curiatii",
+        "text": "传说罗马与阿尔巴隆伽各出三兄弟决斗定胜负。罗马一方只剩一人，佯装逃跑拉开对手，再逐个回身击杀。"
+      }
+    ]
+  },
+  "history-rome-republic": {
+    "title": "赶走国王",
+    "html": "<p data-scene-text=\"0\"><strong>头一回“两家联手打一家”：元老和人民一起赶走了王。</strong>傲慢者塔克文不问元老、驱民服役，前509年以卢克蕾提娅受辱为导火索被逐。王权一分为二，交给每年改选的两位执政官，由贵族把持。一年前，雅典也刚赶走僭主希庇亚斯。</p>\n<p data-scene-text=\"1\">被逐的王四处借兵：克卢西乌姆王波尔塞纳（Porsenna）兵临城下，拉丁诸城也在雷吉卢斯湖与罗马一战。<strong>外敌当前，贵族和平民只能同舟共济。</strong>前493年罗马与拉丁同盟立约，合力抵御从山里南下的沃尔斯基人和埃奎人。</p>",
+    "sources": [
+      {
+        "label": "李维《建城以来史》1.57—1.60 · 卢克蕾提娅与驱王",
+        "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.02.0026:book=1:chapter=58"
+      },
+      {
+        "label": "李维《建城以来史》2.10—2.13 · 波尔塞纳围城",
+        "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.02.0026:book=2:chapter=10"
+      },
+      {
+        "label": "波利比乌斯《通史》3.22 · 罗马与迦太基第一约",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Polybius/3*.html"
+      },
+      {
+        "label": "普鲁塔克《普布利科拉传》",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Plutarch/Lives/Publicola*.html"
+      }
+    ],
+    "moments": [
+      {
+        "scene": 0,
+        "name": "卢克蕾提娅",
+        "en": "Lucretia",
+        "text": "王子塞克斯图斯强暴了贵妇卢克蕾提娅。她向父亲和丈夫说出真相后自尽，布鲁图斯拔出染血的匕首，发誓驱逐王族。"
+      },
+      {
+        "scene": 1,
+        "name": "独守桥头",
+        "en": "Horatius at the Bridge",
+        "text": "传说贺拉提乌斯·科克莱斯独自挡在台伯河木桥头，等身后的同伴拆断桥梁，才披甲跃入河中，游回城里。"
+      },
+      {
+        "scene": 1,
+        "name": "左手穆基乌斯",
+        "en": "Mucius Scaevola",
+        "text": "刺杀波尔塞纳失手的青年穆基乌斯，当众把右手伸进祭火，说还有三百个罗马青年排队行刺。波尔塞纳于是议和，他从此得名“左手”（Scaevola）。"
+      }
+    ]
+  },
+  "history-rome-plebs": {
+    "title": "平民有了自己的官",
+    "html": "<p data-scene-text=\"0\"><strong>平民手里的牌是兵役。</strong>前5世纪，沃尔斯基人和埃奎人几乎年年下山劫掠，罗马离不开平民步兵。前494年，欠债累累的平民带着武器撤到圣山，自选首领、立誓结盟。贵族只好让步，设保民官（tribunus plebis）：谁伤害保民官，平民就杀谁。<strong>平民从此有了自己的官。</strong></p>\n<p data-scene-text=\"1\">平民要成文法，前451年贵族组十人委员会（decemviri），据说还派人去雅典抄了梭伦的法，编成十二铜表挂在广场上。可第二届十人团赖着不走，首领阿庇乌斯·克劳狄还想霸占平民少女维吉尼娅。<strong>这回是元老和平民联手，推倒专权的官员：</strong>平民再度撤离，元老院出面谈判，十人团倒台，保民官和上诉权恢复。</p>",
+    "sources": [
+      {
+        "label": "李维《建城以来史》2.32—2.33 · 第一次撤离与保民官",
+        "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.02.0026:book=2:chapter=32"
+      },
+      {
+        "label": "李维《建城以来史》3.44—3.54 · 维吉尼娅与第二次撤离",
+        "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.02.0026:book=3:chapter=44"
+      },
+      {
+        "label": "十二铜表法英译 · 耶鲁 Avalon 项目",
+        "url": "https://avalon.law.yale.edu/ancient/twelve_tables.asp"
+      },
+      {
+        "label": "Smith 古典辞典 · 保民官",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/secondary/SMIGRA*/Tribunus.html"
+      }
+    ],
+    "moments": [
+      {
+        "scene": 0,
+        "name": "肚子与四肢",
+        "en": "The Belly and the Limbs",
+        "text": "元老院派阿格里帕·梅涅尼乌斯去劝：四肢嫌肚子光吃不干，一起罢工，结果全身都饿垮了。平民听懂了比喻，也开出了价码。"
+      },
+      {
+        "scene": 0,
+        "name": "辛辛纳图斯",
+        "en": "Cincinnatus",
+        "text": "前458年，元老院派人到田里请辛辛纳图斯出任独裁官。他放下犁，十六天就解了埃奎人之围，随即交权，回家种地。"
+      },
+      {
+        "scene": 1,
+        "name": "维吉尼娅",
+        "en": "Verginia",
+        "text": "阿庇乌斯让门客把平民少女维吉尼娅认作自家逃奴。宣判当天，她父亲在广场上抄起屠户的刀刺死女儿：这是保住她自由身的唯一办法。"
+      }
+    ]
+  },
+  "history-rome-orders": {
+    "title": "切香肠与十年否决",
+    "html": "<p data-scene-text=\"0\">平民的武器就是出走，贵族没有特别好的制衡手段，只能不断让步，但边让边拖：前445年准许贵族与平民通婚，却宁可另设“有执政官权的军事保民官”，也不开放执政官，还切出贵族专任的监察官。前396年攻灭维爱，<strong>新地分给平民，矛盾暂时缓和。</strong>前390年高卢人在阿里亚河击溃罗马军，攻入城中，拿了赎金才走。</p>\n<p data-scene-text=\"1\">曼利乌斯替欠债人出头，被扣上“图谋称王”的罪名，由保民官起诉、人民判死。<strong>元老与平民的官联手，除掉了想单干的英雄。</strong>随后保民官李锡尼和绥克斯图连任十年，一度让罗马五年选不出官员，逼得元老院在前367年让步：执政官向平民开放，减债、限占公地一并通过。贵族转手新设司法官（praetor），留给自己。</p>",
+    "sources": [
+      {
+        "label": "李维《建城以来史》5.47—5.48 · 圣鹅与赎金",
+        "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.02.0026:book=5:chapter=47"
+      },
+      {
+        "label": "李维《建城以来史》6.34—6.42 · 李锡尼—绥克斯图法",
+        "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.02.0026:book=6:chapter=34"
+      },
+      {
+        "label": "普鲁塔克《卡米卢斯传》（第22节提到亚里士多德）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Plutarch/Lives/Camillus*.html"
+      },
+      {
+        "label": "Livius · 维爱",
+        "url": "https://www.livius.org/articles/place/veii/"
+      }
+    ],
+    "moments": [
+      {
+        "scene": 0,
+        "name": "卡匹托尔的鹅",
+        "en": "The Geese of the Capitol",
+        "text": "高卢人夜袭卡匹托尔山，狗没叫，朱诺神庙的圣鹅却把守军吵醒，前执政官曼利乌斯带人把敌人推下山崖。"
+      },
+      {
+        "scene": 0,
+        "name": "战败者活该",
+        "en": "Vae victis",
+        "text": "称赎金时罗马人嫌秤不准，高卢首领布伦努斯把佩剑也压上秤盘：“战败者活该！”他和前279年进犯德尔斐的布伦努斯不是一个人。"
+      }
+    ]
+  },
+  "history-rome-mature": {
+    "title": "征服意大利",
+    "html": "<p data-scene-text=\"0\"><strong>打赢了不杀光、不收税，只要兵。</strong>前338年罗马解散拉丁同盟，把战败者分成几等：全权公民、没有投票权的公民、保留拉丁权的城市、同盟者。各等之间留着上升的台阶，罗马的兵源从此越滚越大。</p>\n<p data-scene-text=\"1\">罗马和亚平宁山区的萨莫奈人缠斗半个世纪，前321年还在卡夫丁峡谷全军投降。回答是修路、设殖民地，把山民围起来：前312年监察官阿庇乌斯·克劳狄修阿庇亚大道直通卡普阿。<strong>他还把被释奴的儿子编进元老名册：官员拉着城市平民，跟元老院对着干。</strong>前295年森提努姆一战定局。</p>\n<p data-scene-text=\"2\">前287年，债务又把平民逼到台伯河对岸的雅尼库鲁姆山。平民出身的独裁官霍腾西乌斯（Hortensius）立法：平民会议的决议约束全体公民，不必元老院批准。<strong>两百年拉锯到此收官：平民上层与贵族融为新的显贵，保民官进了体制。</strong></p>\n<p data-scene-text=\"3\">伊庇鲁斯王皮洛士（Pyrrhus）应塔拉斯（罗马人叫塔伦图姆）之请渡海，连赢两仗却耗不起；他的使者回报：罗马元老院像“一群国王”。<strong>波利比乌斯后来总结：执政官像王，元老院像贵族，人民像民主，谁想独大，另两方都卡得住它。</strong>前264年，阿尔诺河到卢比孔河以南的半岛已归罗马。</p>",
+    "sources": [
+      {
+        "label": "李维《建城以来史》8.14 · 前338年的拉丁处置",
+        "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.02.0026:book=8:chapter=14"
+      },
+      {
+        "label": "李维《建城以来史》9.6 · 卡夫丁之轭",
+        "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.02.0026:book=9:chapter=6"
+      },
+      {
+        "label": "李维《建城以来史》9.46 · 阿庇乌斯与城市平民",
+        "url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.02.0026:book=9:chapter=46"
+      },
+      {
+        "label": "普鲁塔克《皮洛士传》（第19节“一群国王”）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Plutarch/Lives/Pyrrhus*.html"
+      },
+      {
+        "label": "波利比乌斯《通史》第6卷 · 三方制衡",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Polybius/6*.html"
+      },
+      {
+        "label": "Smith 古典辞典 · 殖民地",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/secondary/SMIGRA*/Colonia.html"
+      }
+    ],
+    "moments": [
+      {
+        "scene": 0,
+        "name": "撞角讲坛",
+        "en": "The Rostra",
+        "text": "罗马人把缴获的安提乌姆战船撞角钉在广场的演讲台上，演讲台从此就叫“撞角”（rostra），英语的讲台 rostrum 由此而来。"
+      },
+      {
+        "scene": 1,
+        "name": "卡夫丁之轭",
+        "en": "The Caudine Forks",
+        "text": "萨莫奈人放走被困的罗马军，条件是每人卸甲，低头从长矛搭成的轭门下钻过去。“卡夫丁之轭”从此成了奇耻大辱的代名词。"
+      },
+      {
+        "scene": 3,
+        "name": "皮洛士式胜利",
+        "en": "Pyrrhic Victory",
+        "text": "皮洛士在阿斯库路姆又赢一仗，有人道贺，他答：“再这样赢一次，我们就全完了。”"
+      }
+    ]
+  },
+  "history-rome-punic": {
+    "title": "布匿战争",
+    "html": "<p data-scene-text=\"0\">前264年，西西里墨西拿的雇佣兵同时向罗马和迦太基求援。<strong>元老院拿不定主意，执政官把案子交给人民大会；人民盼着战利品，投票开战。</strong>罗马照着搁浅的迦太基战船造舰队，一打二十三年，国库见底时富人凑钱再造一支，前241年在埃加迪群岛决胜。西西里成了第一个行省。</p>\n<p data-scene-text=\"1\">丢了西西里，迦太基的巴卡家族转去经营西班牙的银矿和兵源。前218年汉尼拔翻过两道大山，进意大利时只剩两万步兵、六千骑兵，却三战连胜；坎尼一天，罗马阵亡五万以上。<strong>波利比乌斯说：罗马平时三方相争，大难临头就拧成一股，由元老院掌舵。</strong></p>\n<p data-scene-text=\"2\">汉尼拔在意大利转战十五年，想拆散罗马的同盟：卡普阿、南意大利、叙拉古先后倒向他，拉丁殖民地却一个没反。<strong>这回是将军拉着人民，顶住元老院：</strong>人民把二十多岁、没当过执政官的大西庇阿派去西班牙；他要打非洲，元老院不肯，他就放话去找人民。前202年扎马一战，迦太基认输。</p>",
+    "sources": [
+      {
+        "label": "波利比乌斯《通史》第1卷（1.11 人民投票开战；1.59 富人捐造战船）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Polybius/1*.html"
+      },
+      {
+        "label": "波利比乌斯《通史》第3卷 · 汉尼拔进军与坎尼",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Polybius/3*.html"
+      },
+      {
+        "label": "波利比乌斯《通史》第6卷 · 危难时三方合力（6.18）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Polybius/6*.html"
+      },
+      {
+        "label": "李维《建城以来史》26.18 · 大西庇阿受命去西班牙",
+        "url": "https://en.wikisource.org/wiki/From_the_Founding_of_the_City/Book_26#18"
+      },
+      {
+        "label": "李维《建城以来史》28.40 · 费边与西庇阿争论打非洲",
+        "url": "https://en.wikisource.org/wiki/From_the_Founding_of_the_City/Book_28#40"
+      },
+      {
+        "label": "Livius · 汉尼拔",
+        "url": "https://www.livius.org/articles/person/hannibal/"
+      }
+    ],
+    "moments": [
+      {
+        "scene": 0,
+        "name": "乌鸦吊桥",
+        "en": "The Corvus",
+        "text": "罗马人不会海战，就在船头装一座带铁钉的吊桥，放下来钉住敌船，士兵踩着冲过去肉搏，把海战打成陆战。前260年迈莱一战，靠它首胜。"
+      },
+      {
+        "scene": 0,
+        "name": "雷古卢斯回营",
+        "en": "Regulus Returns",
+        "text": "传说执政官雷古卢斯在非洲被俘，迦太基放他回罗马谈换俘。他在元老院力劝不要答应，然后守约回到迦太基，受酷刑而死。"
+      },
+      {
+        "scene": 1,
+        "name": "九岁的誓言",
+        "en": "Hannibal's Oath",
+        "text": "汉尼拔晚年对安条克三世说：九岁那年，父亲哈米尔卡要带他去西班牙，先让他手按祭品发誓，永远不做罗马的朋友。"
+      },
+      {
+        "scene": 1,
+        "name": "坎尼的口袋",
+        "en": "Cannae",
+        "text": "汉尼拔把中央阵线摆成向前凸的弯月，让罗马重步兵一路压进来，两翼的非洲步兵再向内合拢，骑兵从背后封口。两千多年后，各国军校还在讲这一仗。"
+      },
+      {
+        "scene": 2,
+        "name": "汉尼拔就在门口",
+        "en": "Hannibal ad portas",
+        "text": "前211年汉尼拔为救卡普阿，兵临罗马城外。李维说，他扎营的那块地正好在城里拍卖，价钱一文没降。“汉尼拔就在门口”后来成了大难临头的代名词。"
+      }
+    ]
+  },
+  "history-rome-east": {
+    "title": "东进",
+    "html": "<p data-scene-text=\"0\">前200年，百人团大会先否决了对马其顿开战：人民打怕了，保民官也骂元老院一仗接一仗。执政官再三劝说，才改票通过。<strong>这一回，是元老院和执政官拉着人民出征。</strong>罗马在库诺斯克法莱击败腓力五世，宣布“希腊人自由”；又在马格尼西亚击败安条克三世。打完都撤军，不设行省，只当裁判。</p>\n<p data-scene-text=\"1\">强敌一个个倒下，罗马人开始彼此提防。保民官把西庇阿兄弟告上法庭，大西庇阿愤而退隐。前168年保卢斯在皮德纳灭了马其顿，带回的财宝让罗马公民从此不交直接税；士兵嫌分得少，差点在人民大会上否决他的凯旋。<strong>战利品成了政治的燃料：人民盯着分红，将军靠凯旋攒威望，元老院要防谁冒尖。</strong></p>\n<p data-scene-text=\"2\">前146年，罗马同一年毁了迦太基和科林斯。西班牙却越打越难：前151年年轻人躲避征兵，保民官为豁免名额把两位执政官关进监狱。<strong>保民官带着不愿当兵的平民，对抗执政官和元老院：兵源出了毛病。</strong>前133年小西庇阿攻下努曼提亚；同一年，提比略·格拉古当上保民官。</p>",
+    "sources": [
+      {
+        "label": "李维《建城以来史》31.6—31.8 · 百人团大会先否决开战",
+        "url": "https://en.wikisource.org/wiki/From_the_Founding_of_the_City/Book_31#6"
+      },
+      {
+        "label": "普鲁塔克《弗拉米尼努斯传》（第10节“希腊人自由”）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Plutarch/Lives/Flamininus*.html"
+      },
+      {
+        "label": "普鲁塔克《保卢斯传》（第28—38节 战利品与凯旋）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Plutarch/Lives/Aemilius_Paullus*.html"
+      },
+      {
+        "label": "普鲁塔克《老加图传》（第27节 无花果）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Plutarch/Lives/Cato_Major*.html"
+      },
+      {
+        "label": "波利比乌斯《通史》第38卷 · 迦太基陷落",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Polybius/38*.html"
+      }
+    ],
+    "moments": [
+      {
+        "scene": 0,
+        "name": "乌鸦掉进运动场",
+        "en": "Freedom of the Greeks",
+        "text": "前196年地峡运动会，传令官宣布希腊人自由。普鲁塔克说，欢呼声震得天上飞过的乌鸦掉进了运动场。"
+      },
+      {
+        "scene": 1,
+        "name": "沙地上的圈",
+        "en": "The Day of Eleusis",
+        "text": "前168年，罗马使节波皮利乌斯在亚历山大里亚城外拦住入侵埃及的安条克四世，递上元老院的撤军令，用手杖在沙地上绕国王画了个圈：出圈之前给答复。国王撤了。"
+      },
+      {
+        "scene": 2,
+        "name": "迦太基必须毁灭",
+        "en": "Carthago delenda est",
+        "text": "老加图从非洲带回一颗新鲜无花果，告诉元老们：结这果子的地方，离罗马只有三天航程。此后他每次发言，不论讲什么，都以“迦太基必须毁灭”收尾。"
+      },
+      {
+        "scene": 2,
+        "name": "小西庇阿的眼泪",
+        "en": "Scipio's Tears",
+        "text": "迦太基燃烧时，小西庇阿流着泪念出荷马的诗句：“神圣的伊利昂终有灭亡的一天。”站在一旁的波利比乌斯问他何意，他说：想到了罗马。"
+      }
+    ]
+  },
+  "history-rome-gracchi": {
+    "title": "格拉古兄弟",
+    "html": "<p data-scene-text=\"0\">仗越打越大，战利品和奴隶却把小农挤出了土地：老兵无处安置，政治一步步民粹化，军事寡头随之坐大。头一个站出来的提比略·格拉古，是大西庇阿的外孙、顶级贵族，偏偏跟自己的阶级对着干：<strong>贵族里的黑羊，靠站到民众一边和元老院对抗。</strong>他要收回超占的公地分给穷人，为此连坏三条规矩：法案不经元老院，直接交人民表决；同僚屋大维乌斯否决，就让人民当场罢免他；帕加马遗赠罗马，他不等元老院就要拿国库给新农户买农具。元老院先卡经费，再放话说他想称王。到他谋求连任的选举日，大祭司纳西卡喊一声“要救共和的跟我来”，元老们抄起凳腿，打死他和三百追随者，尸体扔进台伯河：赶走国王以来，罗马的内争第一次见血。</p>\n<p data-scene-text=\"1\">十年后弟弟盖约当上保民官，出手更大：国家平价卖粮；审贪污的法庭交给骑士（商人和包税人）；在海外设殖民地；还提议给拉丁人公民权，这一条连平民自己都不乐意。元老院不硬碰，改出更高的价码：让另一位保民官德鲁苏斯许诺十二个殖民地、每处三千穷人，自己一点好处不沾。民众转身就走，盖约连任失败。罗马城里不驻兵、没有警察，煽动群众容易，压住群众难。前121年元老院第一次发出“最后决议”，执政官奥皮米乌斯带兵攻上阿文丁山，盖约逃过台伯河，让奴隶杀了自己，追随者三千人被处死。<strong>靠分好处拉来的民众，好处一断，或者别人出价更高，转身就走：这出闹剧此后一再重演。</strong>骑士也被拉上了牌桌，三方从此变成四方。</p>",
+    "sources": [
+      {
+        "label": "普鲁塔克《提比略·格拉古传》",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Plutarch/Lives/Tiberius_Gracchus*.html"
+      },
+      {
+        "label": "普鲁塔克《盖约·格拉古传》（第17节 灌铅的人头）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Plutarch/Lives/Caius_Gracchus*.html"
+      },
+      {
+        "label": "阿庇安《内战史》第1卷 · 格拉古兄弟到苏拉",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Appian/Civil_Wars/1*.html"
+      }
+    ],
+    "moments": [
+      {
+        "scene": 0,
+        "name": "母亲的珠宝",
+        "en": "The Jewels of Cornelia",
+        "text": "一位贵妇向格拉古兄弟的母亲科尔内利娅炫耀首饰，科尔内利娅等两个儿子放学回来，指着他们说：“这就是我的珠宝。”"
+      },
+      {
+        "scene": 1,
+        "name": "灌了铅的人头",
+        "en": "A Head Filled with Lead",
+        "text": "奥皮米乌斯悬赏：谁带来盖约的人头，就给同样重的黄金。一个叫塞普图穆勒伊乌斯的人挖出脑子灌进铅，称出来十七磅多。"
+      },
+      {
+        "scene": 1,
+        "name": "和谐女神庙",
+        "en": "The Temple of Concord",
+        "text": "奥皮米乌斯事后修了一座和谐女神庙。有人夜里在门上题字：“一桩不和的事，造出一座和谐的庙。”"
+      }
+    ]
+  },
+  "history-rome-marius": {
+    "title": "马略的兵",
+    "html": "<p data-scene-text=\"0\">努米底亚王子朱古达杀兄夺位，又在锡尔塔屠了意大利商人，却一次次靠行贿拖住罗马；他离开罗马时回头骂：“一座待价而沽的城，只要找到买主，马上就会完蛋。”骑士和平民恨透了贵族将领。前107年，出身骑士家庭、没有显赫祖先的马略当选执政官，人民大会越过元老院，把这场仗交给他。他打破惯例，公开招募没有财产的无产者：<strong>军改从他这里开始，兵从此不再是有地的公民，而是跟着将军吃饭的人。</strong>前105年，他的财务官苏拉说动毛里塔尼亚王，把朱古达骗来交出。</p>\n<p data-scene-text=\"1\">辛布里人和条顿人从北方南下，前105年在阿劳西奥一天歼灭罗马两支大军，两位统帅一个贵族、一个新人，谁也不肯配合。罗马吓坏了，让马略连任五届执政官。公民兵变成了流氓兵：以当兵为业，自己扛着行装（“马略的骡子”），只认一面鹰旗和带他们发财的将军。前102、前101年两战全歼来敌。仗打完要分地，他的盟友、保民官萨图尔尼努斯替老兵抢地，还雇人杀了竞争对手；元老院发出“最后决议”，马略只好亲手镇压盟友，两头不是人。<strong>兵认将军，将军就得不断打仗、分钱、分地来养兵：马略打开了军人政治的潘多拉魔盒，共和从此进入倒计时。他之后，罗马政坛分成军事强人和共和派两边，此起彼伏。</strong></p>",
+    "sources": [
+      {
+        "label": "撒路斯提乌斯《朱古达战争》（35.10 待价而沽的城；86 招募无产者）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Sallust/Bellum_Jugurthinum/1*.html"
+      },
+      {
+        "label": "普鲁塔克《马略传》（第13节 马略的骡子）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Plutarch/Lives/Marius*.html"
+      },
+      {
+        "label": "阿庇安《内战史》第1卷（1.28—33 萨图尔尼努斯）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Appian/Civil_Wars/1*.html"
+      }
+    ],
+    "moments": [
+      {
+        "scene": 0,
+        "name": "冷水澡",
+        "en": "A Cold Bath",
+        "text": "朱古达跟在马略的凯旋车后游街，然后被剥光衣服扔进地牢。普鲁塔克说他落下去时笑着喊：“赫拉克勒斯在上，你们的澡堂真冷！”六天后饿死。"
+      },
+      {
+        "scene": 1,
+        "name": "马略的骡子",
+        "en": "Marius's Mules",
+        "text": "马略让士兵自己背行装、炊具和铁锹，绑在一根叉杆上扛着走，省下辎重车队。士兵被笑称“马略的骡子”，说的是能吃苦，不是骂人。"
+      }
+    ]
+  },
+  "history-rome-social": {
+    "title": "同盟者战争",
+    "html": "<p data-scene-text=\"0\">罗马打天下，意大利盟友出的兵往往比公民还多，分到的却少：前177年凯旋发赏，盟友只拿公民的一半。罗马官员到了盟邦作威作福：一位执政官的夫人嫌男浴室腾得慢，当地长官就被扒光衣服绑在广场上鞭打。格拉古的土地委员会收走了盟邦豪族占用的公地，前95年罗马又把冒充公民的盟友赶回老家。<strong>出力的是盟友，做主的永远是罗马人。</strong>前91年，为盟友争公民权的保民官德鲁苏斯在自家门口被刺。马尔西人、萨莫奈人等当即起兵，以科尔菲尼乌姆为都，改名“意大利”。</p>\n<p data-scene-text=\"1\">这仗并不好打：前90年一位执政官战死，维莱伊乌斯说意大利青壮死了三十多万。罗马一手打，一手发身份：前90年给没有造反的盟邦公民权，前89年放宽到放下武器、六十天内登记的人；波河以北的城镇先给拉丁权，相当于发“绿卡”。起兵者很快散了伙，只剩萨莫奈人死扛。<strong>罗马靠一张公民权，把打不完的战争拆成一个个可以安抚的城邦。</strong>新公民却被塞进少数几个部落、最后才投票，票数打了折扣：这笔账，下一场内战还要算。</p>",
+    "sources": [
+      {
+        "label": "阿庇安《内战史》第1卷（1.34—53 同盟者战争）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Appian/Civil_Wars/1*.html"
+      },
+      {
+        "label": "维莱伊乌斯《罗马史》第2卷（2.15 盟友出兵加倍、死者三十余万）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Velleius_Paterculus/2A*.html"
+      },
+      {
+        "label": "格利乌斯《阿提卡之夜》第10卷（10.3 盖约·格拉古讲泰阿努姆浴室）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Gellius/10*.html"
+      }
+    ],
+    "moments": [
+      {
+        "scene": 0,
+        "name": "公牛顶翻母狼",
+        "en": "The Bull and the Wolf",
+        "text": "起兵的盟邦自己铸币，银币上画着意大利的公牛把罗马的母狼顶翻在地，有的还用奥斯坎文写着“意大利”。"
+      }
+    ]
+  },
+  "history-rome-sulla": {
+    "title": "马略与苏拉",
+    "html": "<p data-scene-text=\"0\">本都王米特拉达梯在亚细亚一天杀了八万罗马人和意大利人，东征兵权落到执政官苏拉手里。苏拉出身没落的贵族，当年是马略的财务官和部将，擒朱古达的功劳两人争了十几年。马略一派的保民官苏尔皮基乌斯带着打手闹事，你的小弟打死了我的人：苏拉同僚执政官的儿子死在乱中，苏拉据说一度躲进马略家里，兵权被人民大会改交给马略。苏拉转身去诺拉军营，带六个军团杀进罗马：<strong>罗马军队第一次占领了罗马城。</strong>苏尔皮基乌斯被杀，马略逃往非洲。</p>\n<p data-scene-text=\"1\">苏拉一走，执政官秦纳重提苏尔皮基乌斯的法案，被同僚赶出罗马、被元老院撤职；他到坎帕尼亚拉起军队，把逃亡的马略请了回来。<strong>大哥被请回来，带兵杀回城里，清洗另一边。</strong>两人断粮围城，攻破罗马：执政官屋大维乌斯坐在官椅上被砍头，人头挂上讲坛；马略不回礼的人，卫队当场就杀。前86年初马略第七次就任执政官，十七天后病死，年过七十。这时苏拉正在东方攻破雅典、在喀罗尼亚大败本都军，随后草草与本都王议和，急着回国算账。</p>\n<p data-scene-text=\"2\">前83年苏拉带四万老兵在布伦迪西乌姆登陆，二十三岁的庞培自募三个军团来投，克拉苏也来了。前82年苏拉在城北科林门险胜萨莫奈人和马略派，当上没有期限的独裁官，在广场贴出公敌名单：杀名单上的人有赏，财产拍卖，子孙不得做官。他要还政于元老院：元老院扩到六百人，法庭还给元老，保民官不能再提法案，当过保民官的不许再升官。前79年他交出大权，隐居普特奥利写回忆录，次年病死。<strong>马略是带兵的平民派，苏拉是带兵的元老派；元老院的办法是借一个强人打另一个强人，再盼他自己交权。苏拉真交了，可他示范给后人的是：兵可以拿来定规矩。</strong></p>",
+    "sources": [
+      {
+        "label": "普鲁塔克《苏拉传》（第31节 阿尔班庄园；第38节 墓志铭）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Plutarch/Lives/Sulla*.html"
+      },
+      {
+        "label": "普鲁塔克《马略传》（第35—46节 出逃、回城、病死）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Plutarch/Lives/Marius*.html"
+      },
+      {
+        "label": "阿庇安《内战史》第1卷（1.55—106）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Appian/Civil_Wars/1*.html"
+      }
+    ],
+    "moments": [
+      {
+        "scene": 0,
+        "name": "你敢杀盖约·马略吗",
+        "en": "Do You Dare Kill Gaius Marius?",
+        "text": "马略在明图尔奈被关进一间屋子，派去杀他的是个高卢（一说辛布里）奴隶。黑暗中马略瞪着他喝道：“你敢杀盖约·马略吗？”那人扔下剑跑了。"
+      },
+      {
+        "scene": 0,
+        "name": "迦太基废墟上的马略",
+        "en": "Marius Among the Ruins",
+        "text": "罗马总督派人赶马略离开非洲。他答：“告诉他，你看见流亡的盖约·马略坐在迦太基的废墟上。”"
+      },
+      {
+        "scene": 2,
+        "name": "阿尔班庄园在追杀我",
+        "en": "My Alban Estate",
+        "text": "一个从不过问政治的人在名单上看见自己的名字，叹道：“我真倒霉，是我的阿尔班庄园在追杀我。”没走几步就被人杀了。"
+      },
+      {
+        "scene": 2,
+        "name": "苏拉的墓志铭",
+        "en": "Sulla's Epitaph",
+        "text": "苏拉给自己拟的墓志铭说：没有哪个朋友对他好、哪个敌人害过他，他不加倍奉还。"
+      }
+    ]
+  },
+  "history-rome-pompey": {
+    "title": "庞培与克拉苏",
+    "html": "<p data-scene-text=\"0\">庞培二十多岁就以私人身份带兵，替苏拉扫平西西里和非洲，没当过任何官就要凯旋；又被派去西班牙，跟马略派的塞多留打了六年。克拉苏在科林门立了头功，低价买进公敌的家产，成了罗马首富。前73年角斗士斯巴达克斯在卡普阿起事，聚众十几万，横扫意大利两年；克拉苏把他打败，六千俘虏钉死在阿庇亚大道两旁，庞培回师截住残兵，却抢走了头功。<strong>两个苏拉的副手都是军事强人，也都看清了：往上走得讨好平民。</strong>前70年两人同任执政官，一上台就把苏拉削掉的保民官权力还了回去。</p>\n<p data-scene-text=\"1\">前67年保民官加比尼乌斯提案，授庞培整个地中海和沿岸五十罗马里内的兵权去剿海盗，元老院强硬派拦也拦不住；他三个月就扫平了海盗。第二年又一纸法案把对本都王的战争交给他：他击溃米特拉达梯，降服亚美尼亚，前64年把叙利亚并为行省，前63年攻进耶路撒冷。前62年底他回到布伦迪西乌姆，人人以为他要学苏拉带兵进城，他却把大军遣散回家：喀提林已死，进兵没有名目；兵的赏钱等凯旋时发，没人去抢；他要当众望所归的第一人，不想背苏拉的骂名。元老院强硬派随即联手拖着，不批他的东方安排，不给老兵分地。<strong>没了兵的强人，元老院就敢晾着；这一晾，把他推向了恺撒和克拉苏。</strong></p>",
+    "sources": [
+      {
+        "label": "普鲁塔克《庞培传》",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Plutarch/Lives/Pompey*.html"
+      },
+      {
+        "label": "普鲁塔克《克拉苏传》（第8—11节 斯巴达克斯）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Plutarch/Lives/Crassus*.html"
+      },
+      {
+        "label": "阿庇安《内战史》第1卷（1.116—121 斯巴达克斯与前70年）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Appian/Civil_Wars/1*.html"
+      }
+    ],
+    "moments": [
+      {
+        "scene": 0,
+        "name": "初升的太阳",
+        "en": "The Rising Sun",
+        "text": "苏拉起初不准二十四岁的庞培凯旋。庞培回嘴：“拜初升太阳的人，比拜落日的多。”苏拉愣了一下，说：“让他凯旋吧。”"
+      },
+      {
+        "scene": 0,
+        "name": "罗马的消防队",
+        "en": "Crassus's Fire Brigade",
+        "text": "罗马房子密、常失火。克拉苏养了五百个会盖房的奴隶，哪里着火就赶去，压价买下着火的和左邻右舍的房子，再修好出租。"
+      }
+    ]
+  },
+  "history-rome-triumvirate": {
+    "title": "前三头",
+    "html": "<p data-scene-text=\"0\">恺撒是马略的内侄、秦纳的女婿，年轻时不肯听苏拉的命令休妻，险些送命。他借巨债办赛会讨好平民，前63年花钱当上大祭司。同年执政官西塞罗未经审判处死喀提林的同谋，恺撒反对，小加图力主处死，元老院听了加图的。前60年三个人都被元老院卡着：庞培的东方安排、克拉苏替包税商要的减免、恺撒的凯旋与竞选。恺撒把两人撮合起来，三人私下结盟，庞培娶了恺撒的女儿尤利娅。<strong>三方制衡，变成了三个人分权。</strong>前59年恺撒当执政官，老兵堵着广场强推分地法；同僚毕布路斯躲在家里“观天象”，宣布法案无效；小加图上台发言拖时间，被恺撒下令拖进监狱。恺撒随后拿到高卢五年兵权。</p>\n<p data-scene-text=\"1\">恺撒在高卢打了八年，把莱茵河以西、比利牛斯山以北都收进罗马版图，两次渡过莱茵河，两次登上不列颠。前52年高卢人在维钦托利率领下全面起义，恺撒在阿莱西亚筑两道围墙，里困守军，外挡援军，逼他投降。普鲁塔克说，高卢人死了一百万，被卖为奴的又是一百万。前56年三人在卢卡续约：庞培、克拉苏再当执政官，恺撒的兵权延长五年。<strong>战利品给了他钱，十个久经沙场、只认他的军团给了他刀：马略打开的魔盒，在他手里装满了。</strong></p>\n<p data-scene-text=\"2\">前54年尤利娅难产而死，恺撒和庞培之间的纽带断了。前53年克拉苏想在东方立军功，作死带七个军团深入两河平原，在卡莱被安息骑射手围歼。<strong>三条腿的凳子断了一条，剩下两个人只能对决。</strong>罗马城里，平民派的克洛狄乌斯和元老派的米洛两帮火并，前52年克洛狄乌斯被杀，暴民把元老院议事厅也烧了。元老院请庞培一个人当执政官，他调兵进城，米洛在士兵围住的广场上受审定罪；庞培娶了强硬派梅特卢斯·西庇阿的女儿，与小加图站到一起，要恺撒任满交兵，以平民身份回国受审。</p>",
+    "sources": [
+      {
+        "label": "苏埃托尼乌斯《神圣的尤利乌斯传》",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Suetonius/12Caesars/Julius*.html"
+      },
+      {
+        "label": "普鲁塔克《恺撒传》",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Plutarch/Lives/Caesar*.html"
+      },
+      {
+        "label": "普鲁塔克《小加图传》",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Plutarch/Lives/Cato_Minor*.html"
+      },
+      {
+        "label": "普鲁塔克《克拉苏传》（第33节 首级与《酒神的伴侣》）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Plutarch/Lives/Crassus*.html"
+      }
+    ],
+    "moments": [
+      {
+        "scene": 0,
+        "name": "恺撒的妻子",
+        "en": "Caesar's Wife",
+        "text": "前62年善德女神祭祀在恺撒家举行，主持的是他的第二任妻子、苏拉的外孙女庞培娅。贵族克洛狄乌斯男扮女装混进去，被当场揪出。恺撒随即休妻，出庭却说不知克洛狄乌斯有罪，只道：“恺撒的妻子不容怀疑。”"
+      },
+      {
+        "scene": 0,
+        "name": "尤利乌斯与恺撒",
+        "en": "Julius and Caesar",
+        "text": "毕布路斯闭门不出以后，罗马人打趣说：这一年当执政官的是“尤利乌斯和恺撒”两位。"
+      },
+      {
+        "scene": 1,
+        "name": "维钦托利投降",
+        "en": "Vercingetorix Surrenders",
+        "text": "维钦托利披上最好的盔甲，骑马绕恺撒的座位一圈，下马卸甲，坐在他脚下。六年后他在恺撒的凯旋式上游街，随即被处死。"
+      },
+      {
+        "scene": 2,
+        "name": "克拉苏的首级",
+        "en": "The Head of Crassus",
+        "text": "安息王正在亚美尼亚王廷赴婚宴，台上演欧里庇得斯的《酒神的伴侣》。克拉苏的首级送到，演员拿它当剧中被撕碎的彭透斯的头，满堂喝彩。"
+      }
+    ]
+  },
+  "history-rome-caesar": {
+    "title": "恺撒",
+    "html": "<p data-scene-text=\"0\">前49年1月，元老院发出“最后决议”，要恺撒交兵；他带一个军团渡过卢比孔河，说：“骰子已经掷下。”庞培夸过口，在意大利跺跺脚就能跺出军团，可他的精兵在西班牙，当年的老兵早已散成各地的小地主，城里的平民跟的是恺撒。意大利各城开门迎接恺撒，庞培带着执政官和大半元老弃守罗马，渡海去了希腊。<strong>元老院押宝庞培，没看出他的基本盘早已散了。</strong>恺撒先拿下西班牙，再渡海追击，前48年8月在法萨卢斯以少胜多。庞培逃到埃及，刚上岸就被托勒密十三世的谋臣派人刺死；恺撒见到他的首级，落了泪。</p>\n<p data-scene-text=\"1\">恺撒追到亚历山大里亚，被围了半年，扶克娄巴特拉（Cleopatra）坐稳王位；前47年他在泽拉五天击败本都王子法尔纳克，写信给朋友只有三个拉丁词：“我来，我见，我征服。”（Veni, vidi, vici）元老派残部在非洲重整，前46年塔普苏斯一战溃散。小加图守着乌提卡，安排好部众出海，夜里读了两遍柏拉图的《斐多篇》，拔剑自尽；被救下缝合后，又自己撕开伤口。恺撒叹道：“加图，我不甘心你这样死，因为你不肯让我救你一命。”前45年他在西班牙蒙达击败庞培的两个儿子。<strong>他打赢靠三样：快，只认他的老兵，对投降的人宽大。</strong></p>\n<p data-scene-text=\"2\">恺撒一手宽大：赦免投降的政敌，布鲁图斯、卡西乌斯都在其列，还让他们当了司法官。一手揽权：独裁官一再续任，前44年改为终身；他本来就是大祭司（前63年当上），又得到保民官的人身神圣、监管风化之权；元老院扩到九百人，塞进他的军官和高卢贵族。他改了历法，把八万老兵和城市贫民送往海外，重建迦太基和科林斯。可他坐着接见元老，安东尼在牧神节当众给他献王冠。元老们发誓护他周全，他就遣散了西班牙卫队。前44年3月15日，出征安息前三天，六十多名元老在庞培剧场的议事厅围住他，刺了二十三刀，他倒在庞培雕像的脚下。<strong>宽大饶得了政敌的命，饶不了他们的位置：共和派最后一次用匕首把天平扳了回去。</strong></p>",
+    "sources": [
+      {
+        "label": "苏埃托尼乌斯《神圣的尤利乌斯传》（第32节 卢比孔河；第76—82节 揽权与遇刺）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Suetonius/12Caesars/Julius*.html"
+      },
+      {
+        "label": "普鲁塔克《恺撒传》",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Plutarch/Lives/Caesar*.html"
+      },
+      {
+        "label": "普鲁塔克《庞培传》（第79—80节 死在埃及）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Plutarch/Lives/Pompey*.html"
+      },
+      {
+        "label": "普鲁塔克《小加图传》（第68—72节 乌提卡）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Plutarch/Lives/Cato_Minor*.html"
+      },
+      {
+        "label": "阿庇安《内战史》第2卷",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Appian/Civil_Wars/2*.html"
+      }
+    ],
+    "moments": [
+      {
+        "scene": 0,
+        "name": "他们本可以赢",
+        "en": "They Could Have Won",
+        "text": "前48年迪拉基乌姆一战恺撒吃了败仗。他事后说：“敌人今天本可以赢，可惜他们没有一个懂得赢的统帅。”"
+      },
+      {
+        "scene": 1,
+        "name": "铺盖卷里的女王",
+        "en": "The Queen in the Bedroll",
+        "text": "克娄巴特拉被弟弟赶出王宫，夜里让人把自己裹进铺盖卷扛进宫，在恺撒面前摊开。普鲁塔克说，恺撒就是被这一手迷住的。"
+      },
+      {
+        "scene": 2,
+        "name": "儒略历",
+        "en": "The Julian Calendar",
+        "text": "恺撒的新历一年365天，四年一闰，前45年起用；“儒略”就是尤利乌斯（Julius），七月（July）也因他得名。它每年比太阳年多11分钟，用到1582年，春分已从3月21日漂到3月11日，教皇格里高利十三世一口气删掉10天，改成今天的公历。俄罗斯、塞尔维亚等地的东正教会至今按儒略历过节，圣诞节因此落在公历1月7日。"
+      },
+      {
+        "scene": 2,
+        "name": "三月十五",
+        "en": "The Ides of March",
+        "text": "占卜师斯普林那警告恺撒提防三月十五。那天早上恺撒笑他：“三月十五已经到了。”斯普林那答：“到了，还没过完。”"
+      },
+      {
+        "scene": 2,
+        "name": "孩子，也有你？",
+        "en": "You Too, Child?",
+        "text": "苏埃托尼乌斯说，恺撒挨刀时一声未吭；也有人说他看见布鲁图斯，用希腊语说了一句“孩子，也有你？”莎士比亚把它写成了“还有你吗，布鲁图斯”。"
+      }
+    ]
+  },
+  "history-rome-augustus": {
+    "title": "后三头与奥古斯都",
+    "html": "<p data-scene-text=\"0\">恺撒死后，执政官安东尼先同刺客讲和，再在葬礼上举起血衣、宣读遗嘱：每个公民分三百塞斯特斯，花园捐给公众。民众当场在广场焚化遗体，冲向刺客的家。安东尼接管了恺撒的文书和国库，把恺撒没说过的话也说成恺撒的遗愿。可遗嘱收养的是十八岁的甥孙屋大维：他自掏腰包，每人五百狄纳里招募恺撒的老兵；安东尼的两个军团嫌他只给一百、还动辄处决，被屋大维的人带着钱和传单拉了过去。<strong>恺撒留下的兵、钱和名字，谁抓得住，谁就是下一个强人。</strong></p>\n<p data-scene-text=\"1\">元老院的头面人物西塞罗连发《反腓力辞》痛骂安东尼，屋大维一口一个“父亲”地讨好他。西塞罗打算借这孩子的兵对付安东尼，事后再“捧一捧、奉一奉、踢走”。前43年4月，两位执政官在穆提那打败安东尼，却都战死；元老院转身冷落屋大维。他带八个军团进城，十九岁当上执政官，随即在博诺尼亚附近的河洲上与安东尼、雷必达结成后三头。<strong>西塞罗想用一个强人打另一个强人，结果把两个强人推到了一起。</strong>三人开列公敌名单，安东尼点名要西塞罗；12月，他在福尔米亚伸出头让人砍下，头和写《反腓力辞》的手被钉上讲坛。</p>\n<p data-scene-text=\"2\">前42年秋，后三头在马其顿的腓立比两战击败布鲁图斯和卡西乌斯，两人先后自尽；首功是安东尼的，屋大维病着。三人分地盘：安东尼拿东方，屋大维管意大利和西方，还得没收土地安置老兵，雷必达后来只分到非洲。安东尼的妻子和弟弟在佩鲁西亚起兵反屋大维，被困到投降；前40年两人和解，安东尼娶了屋大维的姐姐屋大维娅。前36年阿格里帕在瑙洛库斯海战打垮庞培之子塞克斯图斯。<strong>后三头里打酱油的雷必达，这时想把西西里收归自己，他的兵却当面倒向屋大维；他被剥夺三头之权，只留大祭司头衔，在基尔凯伊软禁终老。</strong></p>\n<p data-scene-text=\"3\">安东尼人在亚历山大里亚陪着克娄巴特拉（Cleopatra）；前36年远征安息惨败，此后越来越靠埃及的钱粮。前34年他把东方领土分封给女王和她的孩子，宣布她和恺撒生的恺撒里昂才是恺撒的亲生子。屋大维从维斯塔贞女手里抢出安东尼的遗嘱当众宣读：死后要葬在亚历山大里亚。罗马向埃及女王宣战。前31年9月阿克提乌姆海战，阿格里帕封住海湾，克娄巴特拉的船队突围而去，安东尼丢下大军追随她。次年屋大维进入亚历山大里亚，安东尼伏剑，克娄巴特拉自尽，恺撒里昂被杀。<strong>屋大维把一场罗马人打罗马人的内战，打成了罗马对外国女王的战争。</strong></p>\n<p data-scene-text=\"4\">屋大维带着埃及的金子回到罗马，前29年三次凯旋，关上雅努斯神庙的门，表示天下太平。他把六十来个军团裁到二十八个，掏钱买地安置老兵，不再没收。前27年1月，他在元老院宣布把国家交还元老院和罗马人民；元老院感激涕零，授他“奥古斯都”（崇高者）的称号，又请他继续掌管带兵的边疆行省十年。他的卫队拿双饷，编成禁卫军，城里常驻三个大队：罗马城从此有了兵。他自称“第一公民”（princeps），说自己的权力并不比同僚大，只是威望高过所有人。前23年他又拿到终身的保民官权力。<strong>元老院照开，执政官照选，保民官的权力却装在他一个人身上：共和的壳子里，住进了一个人。</strong></p>",
+    "sources": [
+      {
+        "label": "普鲁塔克《安东尼传》",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Plutarch/Lives/Antony*.html"
+      },
+      {
+        "label": "普鲁塔克《西塞罗传》（第45—49节 屋大维、公敌名单与西塞罗之死）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Plutarch/Lives/Cicero*.html"
+      },
+      {
+        "label": "普鲁塔克《布鲁图斯传》（第36节 腓立比再见）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Plutarch/Lives/Brutus*.html"
+      },
+      {
+        "label": "阿庇安《内战史》第3—4卷（军团倒戈、后三头与公敌名单）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Appian/Civil_Wars/3*.html"
+      },
+      {
+        "label": "《神圣的奥古斯都功业录》（第34节 第一公民）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Augustus/Res_Gestae/6*.html"
+      },
+      {
+        "label": "苏埃托尼乌斯《神圣的奥古斯都传》",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Suetonius/12Caesars/Augustus*.html"
+      }
+    ],
+    "moments": [
+      {
+        "scene": 0,
+        "name": "恺撒的彗星",
+        "en": "Caesar's Comet",
+        "text": "前44年7月屋大维为恺撒办赛会，天上连续七天出现一颗彗星。民众认定那是恺撒的灵魂升了天，屋大维从此在恺撒像的额上加了一颗星。"
+      },
+      {
+        "scene": 1,
+        "name": "捧一捧，奉一奉，踢走",
+        "en": "Praise, Honour, Remove",
+        "text": "西塞罗说这孩子要“laudandum, ornandum, tollendum”：tollere 既是“抬举”，也是“除掉”。话传到屋大维耳朵里，他说自己不会给人除掉的机会。"
+      },
+      {
+        "scene": 2,
+        "name": "腓立比再见",
+        "en": "We Shall Meet at Philippi",
+        "text": "传说决战前夜，布鲁图斯在帐中看见一个怪影：“我是你的恶灵，我们在腓立比再见。”布鲁图斯答：“那就再见。”"
+      },
+      {
+        "scene": 3,
+        "name": "恺撒太多不是好事",
+        "en": "Too Many Caesars",
+        "text": "要不要留恺撒里昂一命？屋大维身边的哲学家改了荷马一句诗：“恺撒太多不是好事。”十七岁的恺撒里昂被杀。"
+      },
+      {
+        "scene": 4,
+        "name": "砖与大理石",
+        "en": "Brick and Marble",
+        "text": "奥古斯都晚年自夸：“我接手的是一座砖造的罗马，留下的是一座大理石的罗马。”"
+      }
+    ]
+  },
+  "history-empire-principate": {
+    "title": "奥古斯都：一个人的共和",
+    "html": "<p data-scene-text=\"0\">恺撒和奥古斯都开帝国，没走埃及法老的神权路子，靠的是战功和收买民众，死后再封神。毛病在后头：血脉一稀、年代一远，战功褪色，收买的价码越抬越高，权力凭什么归你就成了问题。<strong>这一章的主线，是权力的合法性。</strong>奥古斯都集权，走的是温和的路子。前27年的“交还共和”，好比德川幕府的“大政奉还”，纯属演戏：带兵的行省他留着，埃及归他私管，元老不经许可不得入境。城里二十万平民领救济粮，现钱一次次地发；公元6年设军库，拿遗产税给老兵发退役金。账交给自家的释奴管，临终留下的帝国总账末尾，列着可以找来问细账的释奴和奴隶。<strong>元老院管体面，家奴管钱。</strong></p>\n<p data-scene-text=\"1\">共和时代罗马城里不驻兵，这是广场政治的根，奥古斯都把它改了。前27年元老院投票给他的卫队发双饷，这就是禁卫军（Praetorian Guard）：九个大队，城里平时只放三个，不设营房，其余散驻周边城镇。他们服役十六年，比军团兵少四年，退役金多三分之二。前2年起由两名禁卫军长官统领，都是骑士出身：元老有家世、有野心，骑士的前程全系于他一人。二十五个军团都在边疆，京城近旁的兵主要就是禁卫军。公元23年，提比略的禁卫军长官塞扬努斯把各大队收进城东北角的一座大营。<strong>罗马城从此有了兵营，也就有了一群离皇宫最近、能决定谁当皇帝的人。</strong></p>\n<p data-scene-text=\"2\">奥古斯都只有一个女儿尤利娅。他先把她嫁给外甥马塞卢斯，前23年马塞卢斯病死；再嫁给老战友阿格里帕，把两个外孙盖乌斯、卢基乌斯收为养子，阿格里帕前12年死了；又逼继子提比略休妻娶她，提比略跑到罗得岛闲居七年，尤利娅因通奸被流放。两个外孙公元2年、4年相继死去，他只好收养提比略。<strong>接班人定了，他回头抬元老院：公元5年起执政官候选人先由元老和骑士预选，他一死，选举整个搬进元老院。抬元老院，是给接班人头上压一块石头。</strong>公元9年，日耳曼总督瓦卢斯在条顿堡森林中伏，丢了三个军团；公元14年他死在诺拉，元老院封他为神。</p>",
+    "sources": [
+      {
+        "label": "《神圣的奥古斯都功业录》（第15—17节 粮、钱与军库；第22节 角斗）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Augustus/Res_Gestae/home.html"
+      },
+      {
+        "label": "苏埃托尼乌斯《神圣的奥古斯都传》（第49节 禁卫军；第63—65节 尤利娅与外孙；第99—101节 临终与遗嘱）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Suetonius/12Caesars/Augustus*.html"
+      },
+      {
+        "label": "卡西乌斯·狄奥《罗马史》第53卷（第11节 卫队双饷）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Cassius_Dio/53*.html"
+      },
+      {
+        "label": "卡西乌斯·狄奥《罗马史》第54卷（第21节 利基努斯）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Cassius_Dio/54*.html"
+      },
+      {
+        "label": "卡西乌斯·狄奥《罗马史》第55卷（服役年限、军库与守夜队）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Cassius_Dio/55*.html"
+      },
+      {
+        "label": "塔西佗《编年史》第1卷（第15节 选举移交元老院）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Tacitus/Annals/1A*.html"
+      },
+      {
+        "label": "塔西佗《编年史》第4卷（第2节 禁卫军大营；第5节 军团分布）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Tacitus/Annals/4A*.html"
+      }
+    ],
+    "moments": [
+      {
+        "scene": 0,
+        "name": "一年十四个月",
+        "en": "Fourteen Months a Year",
+        "text": "利基努斯是被俘的高卢人，在恺撒家当过奴隶，获释后替奥古斯都在高卢收税。他说十二月（December）字面是“第十个月”，后面还该有两个月，让高卢人一年按月交了十四回税。被告到奥古斯都面前，他领主子去看满库的金银：这都是替您收的，免得高卢人有钱造反。"
+      },
+      {
+        "scene": 1,
+        "name": "私人救火队",
+        "en": "The Private Fire Brigade",
+        "text": "营造官埃格纳提乌斯·鲁弗斯带着自家奴隶给罗马救火，人气暴涨，不按规矩竞选执政官，前19年以谋反罪被处死。公元6年奥古斯都设七个大队的守夜队，救火兼巡夜：民心不能落在别人手里。"
+      },
+      {
+        "scene": 2,
+        "name": "瓦卢斯，还我军团！",
+        "en": "Varus, Give Me Back My Legions!",
+        "text": "条顿堡惨败的消息传来，奥古斯都几个月不剃须发，有时拿头撞门，喊：“昆提利乌斯·瓦卢斯，还我军团！”"
+      },
+      {
+        "scene": 2,
+        "name": "这出戏演得可好",
+        "en": "Acta Est Fabula",
+        "text": "临终那天，他让人拿来镜子，梳好头发，问朋友们：我这一辈子的戏演得可好？又念了一句喜剧的收场词：“演得好，就请鼓掌，欢送我下台。”"
+      }
+    ]
+  },
+  "history-empire-julio-claudian": {
+    "title": "尤利乌斯—克劳狄王朝",
+    "html": "<p data-scene-text=\"0\">这一家五位：奥古斯都、提比略、卡利古拉、克劳狄乌斯、尼禄，史称尤利乌斯—克劳狄王朝。那时没有“皇帝”头衔，正式身份是第一公民；士兵欢呼得胜统帅的“英白拉多”（imperator），后来成了西文“皇帝”（emperor）的来源。提比略是皇后莉薇娅和前夫的儿子，出身老牌贵族克劳狄家，奥古斯都晚年收他为养子。他要的是一个共和的花架子：大事都交元老院议，不受“国父”称号。他懒得讨好平民，竞技能省就省。可他又让叛国罪放开了办，骂一句元首也能定罪，告发的人分得被告四分之一的家产，元老们互相揭发、争着奉承。<strong>元老院越谄媚，他越不胜其烦。</strong>民望最高的侄子日耳曼尼库斯19年死在安条克，城里都疑心是他下的手。</p>\n<p data-scene-text=\"1\">23年亲儿子德鲁苏斯死了，后来查出是塞扬努斯和儿媳合谋下的毒。26年提比略离开罗马，此后长住卡普里岛，再没回京城。古人还记了别的缘由：躲强势的母亲莉薇娅，也羞于见人，他晚年满脸生疮。京城交给禁卫军长官塞扬努斯，此人把持奏报、清洗政敌。31年提比略暗中任命骑士马克罗接任禁卫军长官，派他带一封长信进元老院，当天把塞扬努斯处死。37年3月提比略死在米塞努姆，传说是马克罗拿被褥把他闷死的。遗嘱让孙子格梅卢斯和侄孙卡利古拉共同继承；马克罗早把宝押在卡利古拉身上，由他出面，元老院把遗嘱作废，卡利古拉独自接位。<strong>民众在街上喊：“把提比略扔进台伯河！”</strong></p>\n<p data-scene-text=\"2\">卡利古拉是日耳曼尼库斯的儿子、奥古斯都的曾外孙，小时候跟父亲住在莱茵河军营，穿一双小号军靴，士兵就叫他“小军靴”（卡利古拉）；民众和军队爱他父亲。他一上台大赦、办竞技，人人欢呼；半年后一场大病，人就变了：杀了格梅卢斯，逼死扶他上台的禁卫军长官马克罗；提比略攒下的二十七亿塞斯特斯不到一年花光，在拜伊海湾搭起五公里长的船桥骑马走过；北巡到英吉利海峡，让士兵捡贝壳当战利品；要元老亲吻他的脚，自称为神。41年1月，常被他当众取笑的禁卫军军官凯瑞亚在宫中通道里刺死了他，皇后和幼女也被杀。<strong>扶他上台的是禁卫军长官马克罗，要他命的是禁卫军军官凯瑞亚。</strong></p>\n<p data-scene-text=\"3\">元老院还在议恢复共和，禁卫军已在宫里找到躲在帘子后面的克劳狄乌斯：日耳曼尼库斯的弟弟、卡利古拉的叔叔，五十岁了，家里一直拿他当笑话。士兵把他抬回军营拥立。他许每个士兵一万五千塞斯特斯，是头一个花钱买军队效忠的恺撒。他口吃跛足、没打过仗，43年亲征不列颠攒战功；理政靠释奴，管财库的帕拉斯据说身家三亿。他在奥斯蒂亚挖新港，48年力主让长发高卢的贵族进元老院。他娶了亲侄女、卡利古拉的妹妹小阿格里皮娜，收她和前夫生的儿子尼禄为养子，排在亲生儿子不列塔尼库斯前头。54年10月，他吃了一盘蘑菇死去，古人都说是阿格里皮娜下的毒。<strong>禁卫军长官布鲁斯把十六岁的尼禄领进军营，许下赏钱，尼禄接了位。</strong></p>\n<p data-scene-text=\"4\">尼禄头五年有哲学家塞涅卡和布鲁斯掌舵，后世称为帝国治理最好的五年。好景不长：55年他毒死不列塔尼库斯，59年杀了母亲，62年布鲁斯死、塞涅卡隐退，他又杀了发妻屋大维娅。64年罗马大火，他在废墟上修金宫，把罪名推给基督徒；65年元老谋刺败露，塞涅卡被赐死。他爱唱歌、赛车，66年去希腊巡回比赛，却从不带兵，前线的将领个个手握重兵。68年高卢、西班牙的总督起兵，禁卫军被新许的赏钱买走，元老院宣布尼禄为公敌，他在城外自尽。<strong>奥古斯都的血脉断了，靠“恺撒”这个名字撑着的合法性也跟着断了。</strong></p>",
+    "sources": [
+      {
+        "label": "苏埃托尼乌斯《提比略传》",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Suetonius/12Caesars/Tiberius*.html"
+      },
+      {
+        "label": "塔西佗《编年史》第1卷（第72节 叛国罪）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Tacitus/Annals/1E*.html"
+      },
+      {
+        "label": "塔西佗《编年史》第4卷（第57节 提比略离京的缘由）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Tacitus/Annals/4E*.html"
+      },
+      {
+        "label": "苏埃托尼乌斯《卡利古拉传》",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Suetonius/12Caesars/Caligula*.html"
+      },
+      {
+        "label": "苏埃托尼乌斯《神圣的克劳狄乌斯传》（第10节 帘子后面）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Suetonius/12Caesars/Claudius*.html"
+      },
+      {
+        "label": "苏埃托尼乌斯《尼禄传》（第47—49节 末日）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Suetonius/12Caesars/Nero*.html"
+      },
+      {
+        "label": "卡西乌斯·狄奥《罗马史》第56卷（第46节 看见升天的元老）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Cassius_Dio/56*.html"
+      },
+      {
+        "label": "塔西佗《编年史》第6卷（第50节 提比略之死）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Tacitus/Annals/6B*.html"
+      },
+      {
+        "label": "卡西乌斯·狄奥《罗马史》第58—59卷（塞扬努斯之死、遗嘱作废）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Cassius_Dio/59*.html"
+      },
+      {
+        "label": "塔西佗《编年史》第12卷（第66—69节 蘑菇与尼禄继位）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Tacitus/Annals/12B*.html"
+      }
+    ],
+    "moments": [
+      {
+        "scene": 0,
+        "name": "看见他升天的元老",
+        "en": "The Senator Who Saw Him Rise",
+        "text": "奥古斯都火化那天，一位当过司法官的元老发誓说，看见他的魂从火堆上升了天。莉薇娅赏了这位元老一百万塞斯特斯。"
+      },
+      {
+        "scene": 1,
+        "name": "卡普里来的长信",
+        "en": "A Long Letter from Capri",
+        "text": "塞扬努斯听说自己要被授予保民官权，满面春风地走进元老院。信很长，东拉西扯，读到最后几行才说要拿下他。诗人尤维纳利斯一句“从卡普里来了一封又长又啰嗦的信”，就把这事说尽了。"
+      },
+      {
+        "scene": 2,
+        "name": "执政官马",
+        "en": "A Horse for Consul",
+        "text": "卡利古拉给爱马英奇塔图斯修大理石马厩、象牙马槽，配紫毯和珠宝项圈；苏埃托尼乌斯说，据说他还打算让这匹马当执政官。"
+      },
+      {
+        "scene": 3,
+        "name": "变瓜记",
+        "en": "The Pumpkinification",
+        "text": "克劳狄乌斯死后，元老院照例封他为神。塞涅卡写了篇讽刺文，题目叫《变瓜记》（Apocolocyntosis），把“封神”改成“变南瓜”，写他上天后被众神赶进了冥府。"
+      },
+      {
+        "scene": 4,
+        "name": "多么伟大的艺术家",
+        "en": "Qualis Artifex Pereo",
+        "text": "追兵将到，尼禄让人照着他的身量挖坟、备柴，一边哭一边反复念叨：“一个多么伟大的艺术家就要死了！”"
+      }
+    ]
+  },
+  "history-empire-flavian": {
+    "title": "四帝之年与弗拉维王朝",
+    "html": "<p data-scene-text=\"0\">尼禄死后一年半里出了四个皇帝。七十多岁的老贵族、西班牙总督加尔巴进了罗马，不认禁卫军长官替他许下的赏钱，说“我的兵是征来的，不是买来的”；69年1月禁卫军在广场上砍死他，拥立尼禄的旧友、卢西塔尼亚总督奥托。莱茵河军团早在科隆拥立了下日耳曼尼亚总督维特里乌斯，4月在贝德里亚库姆打败奥托。7月，东方军团在亚历山大里亚拥立正在打犹太战争的韦斯巴芗，多瑙河军团倒向他，10月在同一地方打败维特里乌斯，12月攻进罗马。塔西佗说，帝国的秘密就此泄露：<strong>皇帝可以不在罗马产生。谁的军团多、离得近，谁就是皇帝。</strong></p>\n<p data-scene-text=\"1\">韦斯巴芗出身骑士之家，祖上没出过元老。苏埃托尼乌斯说，这位新皇帝缺的是威望和一点神圣的光环；于是在亚历山大里亚，有盲人和瘸子求他医治，据说都好了。元老院通过法律，把奥古斯都以来皇帝的各项权力一条条写明，交给他。他在尼禄金宫的人工湖上修大斗兽场，把皇帝的私园还给民众，80年落成，连办一百天竞技。弗拉维王朝共三个皇帝：长子提图斯70年攻毁耶路撒冷圣殿，79年父亲病死后接位，两年后也病死；弟弟图密善接位，要人称他“我们的主和神”，猜忌元老、动辄处死，96年被宫中侍从刺死。<strong>没有血脉，就拿神迹、法律和斗兽场来补。</strong></p>",
+    "sources": [
+      {
+        "label": "塔西佗《历史》第1卷（第4节 帝国的秘密）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Tacitus/Histories/1A*.html"
+      },
+      {
+        "label": "苏埃托尼乌斯《加尔巴传》（第16节 征来的兵）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Suetonius/12Caesars/Galba*.html"
+      },
+      {
+        "label": "苏埃托尼乌斯《神圣的韦斯巴芗传》（第7节 亚历山大里亚的神迹；第23节 玩笑）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Suetonius/12Caesars/Vespasian*.html"
+      },
+      {
+        "label": "苏埃托尼乌斯《图密善传》",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Suetonius/12Caesars/Domitian*.html"
+      }
+    ],
+    "moments": [
+      {
+        "scene": 1,
+        "name": "钱不臭",
+        "en": "Money Does Not Stink",
+        "text": "韦斯巴芗连公厕收集的尿都征税。儿子提图斯嫌丢人，他拿第一笔税钱凑到儿子鼻子底下：“臭吗？”“不臭。”“这可是尿换来的。”"
+      },
+      {
+        "scene": 1,
+        "name": "我大概要成神了",
+        "en": "I Think I Am Becoming a God",
+        "text": "韦斯巴芗病重时还开玩笑：“哎呀，我想我正在变成神。”皇帝死后由元老院封神，这时已成惯例。"
+      }
+    ]
+  },
+  "history-empire-antonine": {
+    "title": "五贤帝",
+    "html": "<p data-scene-text=\"0\">图密善一死，元老院当天推出涅尔瓦：六十五岁、无子，当过两任执政官的老元老。主流说他温和宽厚，他放回流放者、停了叛国罪审判；另一面是，65年尼禄镇压元老谋刺后，他和禁卫军长官提格利努斯一起得了凯旋荣誉。97年禁卫军围宫，逼他交出刺杀图密善的人，他低了头，转身收养了统兵上日耳曼尼亚的图拉真，98年1月病死。<strong>他在位不到一年半，留下的就是这一回收养：选贤是名目，找一个军队服气的人才是要害。</strong></p>\n<p data-scene-text=\"1\">图拉真生在西班牙的意大利卡，是头一个行省出身的皇帝。他打下达契亚，拿那里的金子办了一百二十三天竞技；113年起东征安息，攻下泰西封，一直打到波斯湾，117年版图最大，元老院封他“最好的元首”。<strong>可他东征西战，和汉武帝北征匈奴一样，是亏本的买卖：打跑了蛮族，那些土地的价值大多用不上，长期驻军又养不起。</strong>达契亚是例外，金矿一直开到马可·奥勒留时代；东方新省一打下就四处起事，犹太人在昔兰尼加、塞浦路斯、埃及暴动，117年他病死在归途，继任者随即全部放弃。更要紧的是，就像秦朝统一后匈奴突然崛起，进攻蛮族会让蛮族的组织化突然提升，为三世纪危机埋下伏笔。</p>\n<p data-scene-text=\"2\">哈德良是图拉真的表侄，狄奥说他能接位，是因为皇后普洛蒂娜帮衬，人又近，手里还握着叙利亚大军。他一接位就放弃东方新省，四位前执政官随即被处死；在位一半时间巡视行省，在不列颠修长城，把边界收紧。他是文艺爱好者，写诗、作画，自己设计神庙；挖苦过他画图的建筑师阿波罗多洛斯，后来被他处死。罗马早就在引进外来的神，他又推了一大把：重修万神殿，入了希腊厄琉息斯秘仪的最高一级，淹死的宠儿安提诺乌斯被他封为神，东方各地立庙。<strong>外来的神越多，罗马本地宗教的凝聚力越弱，罗马的凝聚力也跟着弱了。</strong>他在耶路撒冷旧址建罗马城、立朱庇特庙，逼出巴尔·科赫巴起义，狄奥说犹太人死了五十八万。</p>\n<p data-scene-text=\"3\">安东尼出身高卢尼莫苏斯的富家，是个没带过兵的元老，五十一岁被哈德良收养，条件是再收养马可和哈德良前一个继承人的儿子卢基乌斯·维鲁斯。元老院不想给哈德良封神，他坚持，“庇护”（孝敬）的称号据说由此而来。在位二十三年没离开过意大利，在苏格兰往北推了一道草皮长城，二十来年后又放弃。<strong>五贤帝里最太平的一朝，边防的事也就攒着没管。</strong></p>\n<p data-scene-text=\"4\">马可的家族出自西班牙，少年时就被哈德良看中。他接位后让养兄弟卢基乌斯·维鲁斯与他同为皇帝，罗马头一回有两个奥古斯都。东征安息的大军带回瘟疫，估计死了帝国人口的一成上下；马科曼尼人等一串部落渡过多瑙河，围攻阿奎莱亚。国库空了，他拍卖宫中器物，武装奴隶和角斗士，花钱雇日耳曼人打日耳曼人，又把成批降服的蛮族安置到达契亚、潘诺尼亚，甚至意大利。日耳曼人给罗马当辅助兵由来已久，条顿堡的阿米尼乌斯就当过罗马军官；这回是成批地进来。<strong>他最大的问题是让日耳曼人进了罗马的军队，学会了罗马的军事技术；另一个问题是坏了规矩，177年把位子传给了亲生儿子康茂德。</strong>180年他死在前线。</p>\n<p data-scene-text=\"5\">康茂德是个大力士，在斗兽场里一天射死一百头熊，自比赫拉克勒斯，亲自下场当角斗士；政治上并没有什么野心。他一接位就同马科曼尼人议和，回罗马再没上过前线；元老出身的史家骂他怯战，照图拉真那本账算，收兵倒是省钱。朝政先后交给宠臣：禁卫军长官佩伦尼斯，185年被不列颠军团派来的一千五百人告倒处死；释奴侍从长克林德卖官鬻爵，190年粮荒，民众围宫，皇帝杀了他。192年底，情妇玛西娅、禁卫军长官莱图斯、侍从长埃克勒图斯合谋，毒药没毒死，就叫摔跤手纳尔西索斯在浴室里勒死了他。<strong>没什么野心，还是被刺杀了。</strong></p>\n<p data-scene-text=\"6\">吉本说，要指出人类最幸福繁荣的年代，就是从图密善之死到康茂德登基这八十多年。这本账是从元老写的书里算出来的：五贤帝敬着元老院，元老写史就说他们贤。另一本账是：图拉真的扩张是亏本买卖，还逼着蛮族组织起来；哈德良引进外来的神，冲淡了罗马本地宗教的凝聚力；马可让日耳曼人进了军队，又坏了收养的规矩。巴尔·科赫巴战争里的犹太人、瘟疫里死去的一成人口，也不在那份“幸福”里。温暖湿润的“罗马气候最适期”，也在这个世纪中叶前后到了头。<strong>太平的八十年，把三世纪的账都赊下了。</strong></p>\n<p data-scene-text=\"7\">为什么元首都是收养的？前四位确实都没有亲儿子；可收养撑得住八十多年，靠的是各地军头之间脆弱的平衡。帝国二十八个军团分驻不列颠、莱茵河、多瑙河、东方几大块，每块的统帅都可能被部下拥立；只有每个人都有希望上位，这个平衡才维系得住。涅尔瓦收养的是统兵上日耳曼尼亚的图拉真，接图拉真班的是握着叙利亚大军的哈德良。175年叙利亚总督卡西乌斯误信马可已死，立刻称帝；两年后马可立康茂德为共治皇帝，把门关上了。<strong>所以康茂德必须死。</strong>可军头们没能回到禅让式的结构，等来的是一百年的崩溃。</p>",
+    "sources": [
+      {
+        "label": "卡西乌斯·狄奥《罗马史》第68卷（涅尔瓦与图拉真；第1节 弗朗托的挖苦；第15节 一百二十三天竞技；第29节 波斯湾；第32节 犹太人起事）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Cassius_Dio/68*.html"
+      },
+      {
+        "label": "卡西乌斯·狄奥《罗马史》第72卷（马可·奥勒留；第11节 安置蛮族；第16节 雅济吉斯骑兵；第17、22—27节 卡西乌斯称帝）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Cassius_Dio/72*.html"
+      },
+      {
+        "label": "马可·奥勒留《沉思录》（英译本）",
+        "url": "https://www.gutenberg.org/ebooks/2680"
+      },
+      {
+        "label": "Roman Warm Period（罗马气候最适期）",
+        "url": "https://en.wikipedia.org/wiki/Roman_Warm_Period"
+      },
+      {
+        "label": "卡西乌斯·狄奥《罗马史》第73卷（康茂德；第4节 元老院送你的剑；第21节 鸵鸟头；第22节 遇刺）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Cassius_Dio/73*.html"
+      },
+      {
+        "label": "《罗马皇帝传·康茂德传》",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Historia_Augusta/Commodus*.html"
+      },
+      {
+        "label": "塔西佗《编年史》第15卷（第72节 涅尔瓦的凯旋荣誉）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Tacitus/Annals/15C*.html"
+      },
+      {
+        "label": "卡西乌斯·狄奥《罗马史》第69卷（哈德良；第1节 普洛蒂娜与大军；第4节 建筑师；第11节 秘仪与安提诺乌斯；第12—14节 巴尔·科赫巴）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Cassius_Dio/69*.html"
+      },
+      {
+        "label": "《罗马皇帝传·哈德良传》（第14节 安提诺乌斯；第25节 临终小诗）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Historia_Augusta/Hadrian/1*.html"
+      },
+      {
+        "label": "《罗马皇帝传·安东尼·庇护传》（第2节 “庇护”；第12节 平静）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Historia_Augusta/Antoninus_Pius*.html"
+      },
+      {
+        "label": "《罗马皇帝传·马可·奥勒留传》（第17、21节 拍卖宫中器物、雇日耳曼人打日耳曼人）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Historia_Augusta/Marcus_Aurelius/2*.html"
+      },
+      {
+        "label": "《罗马皇帝传·阿维狄乌斯·卡西乌斯传》",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Historia_Augusta/Avidius_Cassius*.html"
+      },
+      {
+        "label": "吉本《罗马帝国衰亡史》第1卷（第3章 人类最幸福的年代）",
+        "url": "https://www.gutenberg.org/ebooks/731"
+      }
+    ],
+    "moments": [
+      {
+        "scene": 0,
+        "name": "什么都许的皇帝",
+        "en": "Worse to Allow Everything",
+        "text": "涅尔瓦即位后人人互相告发。执政官弗朗托在元老院里说：皇帝什么都不许人做，固然坏；什么都许人做，更坏。涅尔瓦听了，下令把这股风气止住。"
+      },
+      {
+        "scene": 1,
+        "name": "图拉真柱",
+        "en": "Trajan's Column",
+        "text": "图拉真广场上的记功柱高约三十米，螺旋浮雕刻着两次达契亚战争，人物两千五百多个。基座铭文说，柱子有多高，修广场时挖掉的山坡就有多高。"
+      },
+      {
+        "scene": 1,
+        "name": "海湾边的叹息",
+        "en": "At the Edge of the Ocean",
+        "text": "图拉真打到大洋边，看见一条开往印度的船，说：我要是还年轻，也要渡海去印度。他羡慕亚历山大，写信告诉元老院，说自己比亚历山大走得还远；狄奥接着写道，可他连打下的地方都守不住。"
+      },
+      {
+        "scene": 2,
+        "name": "去画你的南瓜",
+        "en": "Go and Draw Your Gourds",
+        "text": "哈德良年轻时插嘴建筑上的事，图拉真的建筑师阿波罗多洛斯顶了他一句：走开，画你的南瓜去，这些事你不懂。哈德良当了皇帝，把自己设计的维纳斯与罗马神庙图样寄给他看，他又挑出毛病。狄奥说，他先被流放，后来被处死。"
+      },
+      {
+        "scene": 3,
+        "name": "平静",
+        "en": "Equanimity",
+        "text": "161年临终，值日的军官来请口令，安东尼说：“平静。”说完翻过身去，像睡着了一样。"
+      },
+      {
+        "scene": 4,
+        "name": "军帐里的沉思录",
+        "en": "Meditations in a Tent",
+        "text": "《沉思录》是马可写给自己的笔记，书中两处注明写作地点：“在夸迪人中间，格兰河畔”和“在卡农图姆”。其中一句：“不要像能活一万年那样行事。死亡悬在你头上。”"
+      },
+      {
+        "scene": 5,
+        "name": "鸵鸟头与月桂叶",
+        "en": "The Ostrich Head and the Laurel Leaves",
+        "text": "史家狄奥当时是元老，就坐在斗兽场里。康茂德射死一只鸵鸟，割下鸟头，左手提着头、右手举着血淋淋的剑走到元老席前，一言不发，只咧着嘴摇头：意思是对你们也能这样。不少人憋不住要笑，笑出来就是死罪；狄奥从自己的桂冠上摘几片叶子嚼着，也劝旁边的人嚼，好让下巴一直动着，把笑藏住。"
+      }
+    ]
+  },
+  "history-empire-crisis": {
+    "title": "军营元首时期：百年七十帝",
+    "html": "<p data-scene-text=\"0\">康茂德一死，军头们没能回到收养时代那种禅让式的脆弱平衡，政治秩序彻底崩溃。193年禁卫军先立了城市长官佩蒂纳克斯，87天后杀了他，把皇位当众拍卖。<strong>中央自己乱了，边疆大员就带兵进京：</strong>不列颠、叙利亚、上潘诺尼亚三个总督各被部下拥立，离罗马最近的塞维鲁抢先进城，四年里打垮另两家。他们不是世袭诸侯，可兵认统帅；同时期的东汉，董卓也是这样带兵进了洛阳。此后不到一百年，称帝的连各地自立的算上有七十来个。<strong>这一百年分里外两条线：里头是军头互相攻伐，外头是东、北两面同时受敌。</strong></p>\n<p data-scene-text=\"1\">塞维鲁是北非人，进城先解散禁卫军，改从军团里挑人，又给兵涨饷、许士兵娶妻；211年他死在不列颠，临终叮嘱两个儿子：“兄弟和睦，让士兵发财，别的人一概不用理。”<strong>收买军队，从此不必遮掩。</strong>长子卡拉卡拉杀弟独掌大权，217年被禁卫军长官刺死。次年塞维鲁皇后的妹妹花钱买动军团夺回皇位，推出外孙埃拉伽巴路斯，叙利亚太阳神的世袭祭司。他要拿这个外来大神统摄罗马众神，连维斯塔圣火、地母圣石都想搬进新庙；罗马的老宗教是分布式的，罗马人不认，222年禁卫军杀了他。表弟塞维鲁·亚历山大十三岁接位，235年被嫌他吝啬的士兵杀死，王朝亡了。</p>\n<p data-scene-text=\"2\">塞维鲁的长子卡拉卡拉211年在母亲怀里杀了弟弟盖塔，第二年宣布帝国境内的自由人都是罗马公民。<strong>他发公民权，是为了统治的合法性：杀弟上位，合法性不足，所以要讨好行省人。</strong>公民权原是同盟者打一场仗才争来的，这下人人有份，也就不值钱了，此后量刑只分“体面人”和“下等人”。行省税确是帝国收入的大头，可地税按田亩收，不看主人是不是公民，税源并没变小；狄奥说他图的反倒是只有公民才交的遗产税，还把税率翻了一倍。掏空国库的是军饷：他给兵加饷，一年多花两亿八千万塞斯特斯，215年又铸面值翻倍、含银只多一半的新银币。</p>\n<p data-scene-text=\"3\">王朝一亡，皇帝就由前线的军队来立，五十年换了二十多个，多是多瑙河边行伍出身的将领，少有善终。外敌压得紧，常得两个皇帝一东一西分头顶着：253年老元老瓦勒良被拥立，自己在东边对付波斯，儿子伽利埃努斯在西边对付日耳曼。260年瓦勒良被波斯俘虏，莱茵河军团另立“高卢帝国”，帕尔米拉的女王芝诺比娅拿下埃及和小亚细亚。<strong>军头互相攻伐，最后稳成了三块。</strong>270年骑兵统帅出身的奥勒良即位，五年打回统一，修起罗马城墙，立“无敌太阳神”做靠山；他死后九年又换了六个皇帝，284年东方军团拥立卫队长戴克里先。</p>\n<p data-scene-text=\"4\">外头的压力，是罗马自己打出来的。东边，从图拉真起罗马三次攻破安息都城泰西封，安息王室威信扫地；224年波斯人阿尔达希尔推翻安息，建起更强硬的萨珊王朝，他的儿子沙普尔一世先后打败三个罗马皇帝。北边，达契亚行省把罗马推到喀尔巴阡山外，罗马的压力和钱财逼着北方各族结成阿勒曼尼、哥特、法兰克这样的大联盟。哈德良以来的长城和边墙把边境钉成一条线，康茂德又在多瑙河岸修起一串瞭望塔，缓冲地带没了，冲突直接顶在墙上。<strong>251年皇帝德基乌斯战死在哥特人手里，260年瓦勒良被沙普尔生擒。</strong></p>\n<p data-scene-text=\"5\">这一过程和同时期的中国几乎一一对应。东汉让南匈奴内附，曹操把匈奴分成五部安置在并州，魏晋又把氐、羌迁进关中；299年江统说，关中百余万人口，戎狄居半。304年匈奴人刘渊起兵，五胡乱华。罗马这边，马可把降服的蛮族安置进帝国，普罗布斯一次把十万巴斯塔奈人迁进色雷斯，382年哥特人整族以同盟者身份落户；再往后，哥特、汪达尔、苏维汇、法兰克、伦巴底人的入侵，就是罗马的五胡乱华。<strong>中国是衣冠南渡，到了江南；罗马是衣冠东渡，到了君士坦丁堡。</strong></p>",
+    "sources": [
+      {
+        "label": "卡西乌斯·狄奥《罗马史》第74卷（佩蒂纳克斯之死与拍卖帝国）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Cassius_Dio/74*.html"
+      },
+      {
+        "label": "卡西乌斯·狄奥《罗马史》第77卷（第3—4节 普劳蒂亚努斯之死；第15节 塞维鲁临终）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Cassius_Dio/77*.html"
+      },
+      {
+        "label": "卡西乌斯·狄奥《罗马史》第78卷（第2节 杀盖塔；第7节 亚历山大方阵；第9节 公民权与遗产税；第13节 阿勒曼尼人；第22—23节 亚历山大里亚屠城）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Cassius_Dio/78*.html"
+      },
+      {
+        "label": "卡西乌斯·狄奥《罗马史》第80卷（埃拉伽巴路斯；第4节 阿尔达希尔）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Cassius_Dio/80*.html"
+      },
+      {
+        "label": "《罗马皇帝传·埃拉伽巴路斯传》",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Historia_Augusta/Elagabalus/1*.html"
+      },
+      {
+        "label": "希罗狄安《罗马史》第5卷第6节（太阳神与帕拉斯神像）",
+        "url": "https://www.livius.org/sources/content/herodian-s-roman-history/herodian-5.6/"
+      },
+      {
+        "label": "《罗马皇帝传·佩蒂纳克斯传》（第5节 让我们当兵吧）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Historia_Augusta/Pertinax*.html"
+      },
+      {
+        "label": "卡西乌斯·狄奥《罗马史》第76卷（第9节 攻下泰西封）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Cassius_Dio/76*.html"
+      },
+      {
+        "label": "希罗狄安《罗马史》第6卷第9节（塞维鲁·亚历山大之死）",
+        "url": "https://www.livius.org/sources/content/herodian-s-roman-history/herodian-6.9/"
+      },
+      {
+        "label": "拉克坦提乌斯《论迫害者之死》（第4—5节 德基乌斯与瓦勒良）",
+        "url": "https://www.newadvent.org/fathers/0705.htm"
+      },
+      {
+        "label": "《罗马皇帝传·奥勒良传》",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Historia_Augusta/Aurelian/1*.html"
+      },
+      {
+        "label": "《罗马皇帝传·三十僭主传》（芝诺比娅）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Historia_Augusta/Tyranni_XXX*.html"
+      },
+      {
+        "label": "《罗马皇帝传·两位伽利埃努斯传》",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Historia_Augusta/Gallieni_duo*.html"
+      },
+      {
+        "label": "《罗马皇帝传·卡鲁斯父子传》（284年戴克里先被拥立）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Historia_Augusta/Carus_et_al*.html"
+      },
+      {
+        "label": "卡西乌斯·狄奥《罗马史》第79卷（第28节 马克里努斯的新兵旧饷；第36节 卡拉卡拉加饷，一年两亿八千万）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Cassius_Dio/79*.html"
+      },
+      {
+        "label": "《罗马皇帝传·普罗布斯传》（第18节 十万巴斯塔奈人迁入色雷斯）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Historia_Augusta/Probus*.html"
+      },
+      {
+        "label": "江统《徙戎论》（关中之人百余万口，戎狄居半）",
+        "url": "https://zh.wikisource.org/wiki/%E5%BE%99%E6%88%8E%E8%AB%96"
+      }
+    ],
+    "moments": [
+      {
+        "scene": 0,
+        "name": "营墙上的拍卖",
+        "en": "The Auction at the Camp",
+        "text": "两个竞价的元老，一个在禁卫军营里，一个站在营墙下，士兵在墙头来回传价。赢家狄第乌斯·尤利安努斯只当了六十六天皇帝；元老院判他死刑，他临死问：“我做了什么坏事？我杀了谁？”"
+      },
+      {
+        "scene": 1,
+        "name": "玫瑰雨",
+        "en": "The Roses of Heliogabalus",
+        "text": "《罗马皇帝传》说，埃拉伽巴路斯在宴会上从翻板天花板倒下大堆花瓣，有客人被闷死。这部书多有虚构，故事却出了名：1888年阿尔玛-塔德玛把它画成了《埃拉伽巴路斯的玫瑰》。"
+      },
+      {
+        "scene": 2,
+        "name": "抹掉的脸",
+        "en": "The Erased Face",
+        "text": "柏林藏着一块约200年的木板画，画着塞维鲁、尤利娅·多姆娜和两个儿子一家四口。其中一张脸被刮掉了，那是盖塔：卡拉卡拉杀弟之后，盖塔的名字、画像在帝国各地一律抹去。"
+      },
+      {
+        "scene": 3,
+        "name": "金锁链",
+        "en": "Chains of Gold",
+        "text": "据《罗马皇帝传》，奥勒良凯旋时，芝诺比娅戴着金锁链走在队伍里，锁链重得要人帮她托着。她没被处死，在提布尔的别墅里终老。"
+      },
+      {
+        "scene": 4,
+        "name": "皇帝当脚凳",
+        "en": "The Emperor as a Footstool",
+        "text": "基督徒作家拉克坦提乌斯说，沙普尔上马时拿瓦勒良当脚凳，瓦勒良死后皮被剥下染红，挂在神庙里。萨珊一方在纳克什·鲁斯塔姆的崖壁上，刻下了罗马皇帝在沙普尔马前屈膝、被抓住手腕的场面。"
+      }
+    ]
+  },
+  "history-empire-dominate": {
+    "title": "戴克里先：四帝共治",
+    "html": "<p data-scene-text=\"0\">284年，东方军团拥立达尔马提亚平民出身的卫队长戴克里先，他指阿佩尔害死了皇帝，当着全军亲手刺死了他；次年，卡鲁斯的长子、坐镇西部的卡里努斯死于部下之手。五十年里皇帝换得太勤，戴克里先要换一套立皇帝的规矩。头一步是改皇帝的样子：不再是第一公民，而是深居宫中的“主上”（dominus），金线紫袍，觐见要跪下亲吻袍角，礼仪学自波斯宫廷。第二步是找帮手：286年他把老战友马克西米安升为共治的正皇帝，管西部，自己管东部。他号称朱庇特之子，马克西米安号称赫拉克勒斯之子；神话里这两位本是父子，两个皇帝的尊卑就照神话排。<strong>奥古斯都当年不走的东方神王那条路，三百年后罗马皇帝自己走上去了。</strong></p>\n<p data-scene-text=\"1\">293年，两位正皇帝（奥古斯都）各收一个副皇帝（恺撒）：戴克里先收伽列里乌斯，马克西米安收君士坦提乌斯。两人都是多瑙河边行伍出身的将领，被正式收养，又娶了正皇帝的女儿或继女；君士坦提乌斯为此休了君士坦丁的母亲海伦娜。四人分守四面：戴克里先驻尼科米底亚管东方，伽列里乌斯驻西尔米乌姆管多瑙河，马克西米安驻米兰管意大利和非洲，君士坦提乌斯驻特里尔管高卢和不列颠。法令以四人的名义颁布，帝国没有分家，戴克里先说了算。正皇帝退位，副皇帝升正，再补新的副皇帝。<strong>收养代替血缘；每条防线上都有一位皇帝，前线的兵就不必自己立皇帝。</strong>他把行省拆到一百个上下，文官武将分开。</p>\n<p data-scene-text=\"2\">四帝各带一支大军，拉克坦提乌斯骂道：领饷的人比交税的人还多。戴克里先重新清查人口和田亩，按人头、按地统一摊税，连四百多年不交地税的意大利本土也得交了。钱币改了一回，物价照涨，301年他下诏给一千多种货物和工钱定了最高价，商人宁可不卖，诏令只好作罢。303年2月，他拆了尼科米底亚宫里望得见的教堂，下诏烧经书、拆教堂、抓教士，次年要全民献祭；西部的君士坦提乌斯只拆了几座房子。305年5月1日，他和马克西米安同日退位。<strong>物价、信仰、接班，他都想靠一道命令管住；三样都没管住。</strong></p>",
+    "sources": [
+      {
+        "label": "拉克坦提乌斯《论迫害者之死》（第7节 领饷的人比交税的人多、限价诏令；第10—15节 大迫害）",
+        "url": "https://www.newadvent.org/fathers/0705.htm"
+      },
+      {
+        "label": "优西比乌《教会史》第8卷（大迫害）",
+        "url": "https://www.newadvent.org/fathers/250108.htm"
+      },
+      {
+        "label": "《罗马皇帝摘要》第39节（戴克里先）",
+        "url": "https://roman-emperors.sites.luc.edu/epitome.htm"
+      }
+    ],
+    "moments": [
+      {
+        "scene": 2,
+        "name": "界神节",
+        "en": "The Feast of Terminus",
+        "text": "303年2月23日是罗马的界神节。拉克坦提乌斯说，挑这一天动手，是要给基督教“划个界”。天刚亮，禁卫军提着斧头冲进尼科米底亚的教堂，烧了经书，几个钟头就把这座高大的建筑拆平；戴克里先和伽列里乌斯在宫里望着，争了半天要不要放火，怕烧到四周的房子才作罢。"
+      }
+    ]
+  },
+  "history-empire-constantine": {
+    "title": "君士坦丁：儿子、上帝与新都",
+    "html": "<p data-scene-text=\"0\">305年5月1日，戴克里先退位，台下的兵都等着听君士坦丁的名字：他是西部副皇帝君士坦提乌斯的长子，在东方宫廷做了多年人质。念出来的却是伽列里乌斯的老部下塞维鲁和外甥代亚，马克西米安的儿子马克森提乌斯也被撇开。<strong>四帝共治失败的根本原因是反人性：有可能的话，权力一定会传给儿子，而不是女婿。</strong>设计它的戴克里先只有一个女儿；有儿子的两家，正是坏规矩的两家。君士坦丁连夜出逃，306年父亲死在埃波拉库姆，父亲的兵当场拥立他；三个月后，禁卫军在罗马拥立马克森提乌斯。<strong>君士坦丁是四帝共治失败的起因。</strong></p>\n<p data-scene-text=\"1\">岳父、女婿、父子之间你争我夺，308年一度六人同时称帝；310年马克西米安起兵夺女婿君士坦丁的位，兵败自缢。<strong>联姻绑不住人。</strong>312年君士坦丁翻过阿尔卑斯山，战前让士兵在盾上画基督的符号，10月28日在罗马城北的米尔维安桥大败马克森提乌斯。禁卫军站错了队，被解散：<strong>这支替罗马挑了三百多年皇帝的兵，到此为止。</strong>313年他和东部皇帝、伽列里乌斯的老战友李锡尼在米兰议定宽容基督教；324年他在阿德里安堡、克里索波利斯打败李锡尼，帝国重归一人，皇位回到一家一姓。</p>\n<p data-scene-text=\"2\">君士坦丁押的是少数派：基督徒只占人口一成，却有遍布各城的主教网。他发还教产，给教会钱和特权，325年召集尼西亚大公会议，信经里的“同质”由他拍板，异端从此成了国法上的罪。他自己一直兼着旧宗教的大祭司长，临终才受洗。<strong>从死后封神到受命于神，合法性从军营和广场挪到了天上。</strong>教会这一路的来龙去脉，另见“基督教”主线。</p>\n<p data-scene-text=\"3\">君士坦丁不爱住罗马，打败李锡尼后另建新都：先在特洛伊故地动工，罗马人自称特洛伊人的后代，后来改到拜占庭。这里三面临海，扼住黑海口，夹在多瑙河、幼发拉底河两条防线之间；埃及的粮船从此改驶新都，城里设了第二个元老院。330年5月11日新都落成。<strong>这是给皇帝换个住处，帝国并没分家；可这座城往后做了一千一百多年都城，西部沦陷时的“衣冠东渡”，渡的就是这里。</strong>他铸的金币索利都斯，成色七百年不变。</p>\n<p data-scene-text=\"4\">326年他处死长子克里斯普斯，皇后福斯塔随后死在浴室里。晚年他把天下分给三个儿子和两个侄子，等于一个自家人的四帝共治；337年临终受洗后去世，军队随即杀光他的异母兄弟和侄子：<strong>兵只认他的亲儿子。</strong>三个儿子很快自相残杀，老二君士坦提乌斯二世独存，派幸存的小堂弟尤利安去守高卢。尤利安暗信旧神，360年被高卢军团拥立，登基后重开神庙，363年死在波斯战场，是最后一个不信基督教的皇帝；军队推出的约维安割地求和，八个月后也死了。<strong>旧神没有请回来。</strong></p>",
+    "sources": [
+      {
+        "label": "拉克坦提乌斯《论迫害者之死》（第18—20节 305年选副皇帝；第24—30节 出逃、约克、马克西米安之死；第34—36节 宽容诏书与代亚的祭司；第44节 米尔维安桥；第48节 米兰；第50—51节 各家后人被杀）",
+        "url": "https://www.newadvent.org/fathers/0705.htm"
+      },
+      {
+        "label": "优西比乌《君士坦丁传》第1卷（第28—31节 天上的十字）",
+        "url": "https://www.newadvent.org/fathers/25021.htm"
+      },
+      {
+        "label": "优西比乌《君士坦丁传》第4卷（第24节 教外的主教；第60—73节 受洗、葬礼、升天的钱币）",
+        "url": "https://www.newadvent.org/fathers/25024.htm"
+      },
+      {
+        "label": "《瓦莱西乌斯佚名作者》第1部分（来历、出逃、李锡尼之战、第二元老院、335年分封）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Excerpta_Valesiana/1*.html"
+      },
+      {
+        "label": "《罗马皇帝摘要》第39—41节（白菜、克罗库斯、克里斯普斯与福斯塔、三个儿子的分地）",
+        "url": "https://roman-emperors.sites.luc.edu/epitome.htm"
+      },
+      {
+        "label": "左西莫斯《新史》第2卷（第8节 弄死驿马；第17节 解散禁卫军；第29—31节 杀子杀妻、特洛伊与拜占庭、蛇柱；第34节 边防兵进城）",
+        "url": "https://www.tertullian.org/fathers/zosimus02_book2.htm"
+      },
+      {
+        "label": "苏格拉底《教会史》第2卷（第13节 新都每天八万份口粮）",
+        "url": "https://www.newadvent.org/fathers/26012.htm"
+      },
+      {
+        "label": "索佐门《教会史》第2卷（第3节 特洛伊与新都）",
+        "url": "https://www.newadvent.org/fathers/26022.htm"
+      },
+      {
+        "label": "哲罗姆《编年史》（330年 剥光各城装点新都；337年 受洗于尼科米底亚的优西比乌）",
+        "url": "https://www.tertullian.org/fathers/jerome_chronicle_03_part2.htm"
+      },
+      {
+        "label": "阿米安努斯·马尔切利努斯《历史》第14卷（第11节 克里斯普斯死于波拉）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Ammian/14*.html"
+      },
+      {
+        "label": "狄奥多勒《教会史》第3卷（尤利安之死）",
+        "url": "https://www.newadvent.org/fathers/27023.htm"
+      },
+      {
+        "label": "阿米安努斯·马尔切利努斯《历史》第21卷（尤利安称帝与君士坦提乌斯之死）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Ammian/21*.html"
+      },
+      {
+        "label": "阿米安努斯·马尔切利努斯《历史》第25卷（尤利安之死与约维安割地）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Ammian/25*.html"
+      }
+    ],
+    "moments": [
+      {
+        "scene": 0,
+        "name": "君士坦丁改名了？",
+        "en": "Was Constantine Renamed?",
+        "text": "新副皇帝一个叫塞维鲁，一个叫马克西米努斯，台下的兵一时愣住，有人嘀咕：莫非君士坦丁改了名？只见伽列里乌斯当众伸手把君士坦丁拨到一边，把代亚拉到前面。谁也不认得这个人，拉克坦提乌斯说他前不久还在林子里放牛。"
+      },
+      {
+        "scene": 1,
+        "name": "以此必胜",
+        "en": "In Hoc Signo Vinces",
+        "text": "主教优西比乌说，君士坦丁亲口对他发誓：进军途中的一个正午，他看见太阳上方有一个光芒的十字，旁边写着“以此必胜”。拉克坦提乌斯的说法是战前的一个梦。"
+      },
+      {
+        "scene": 1,
+        "name": "回去种白菜",
+        "en": "Cabbages at Salona",
+        "text": "退位几年后，旧同僚劝戴克里先出山收拾残局。他答：你们要是看见我在萨洛纳亲手种的白菜，就不会来劝我了。"
+      },
+      {
+        "scene": 2,
+        "name": "升天的钱币",
+        "en": "The Ascension Coin",
+        "text": "君士坦丁死后，元老院照老规矩把他列入神祇。纪念钱币上，他蒙着头驾着四马车升天，天上伸下一只手来接他：旧式的封神和新来的上帝，画在了同一枚钱上。"
+      },
+      {
+        "scene": 3,
+        "name": "蛇柱",
+        "en": "The Serpent Column",
+        "text": "前479年普拉提亚一战打退波斯后，希腊各邦在德尔斐献上一根三蛇缠绕的青铜柱，柱身刻着参战的三十一个城邦。君士坦丁把它搬进新都的赛马场，它至今立在伊斯坦布尔的苏丹艾哈迈德广场上，蛇头早断了。"
+      },
+      {
+        "scene": 4,
+        "name": "加利利人，你赢了",
+        "en": "Vicisti, Galilaee",
+        "text": "五世纪的基督教史家狄奥多勒说，尤利安中矛后，抓起一把自己的血洒向天空：“加利利人，你赢了！”"
+      }
+    ]
+  },
+  "history-empire-theodosius": {
+    "title": "狄奥多西：国教与分治",
+    "html": "<p data-scene-text=\"0\">约维安一死，军队推出潘诺尼亚军官出身的瓦伦提尼安，他让弟弟瓦伦斯管东部。376年，匈人压得哥特人走投无路，求渡多瑙河，瓦伦斯答应收容；官员趁机盘剥，饿急了的哥特人拿孩子换狗肉，随即造反。哥哥瓦伦提尼安375年接见蛮族使节时气得中风而死，儿子格拉提安接管西部。378年8月，瓦伦斯不等侄子格拉提安的援军，在阿德里安堡抢先开战，兵败身死，东部野战军折了三分之二。格拉提安召来西班牙将门之子狄奥多西收拾东部，也打不赢，只好谈：382年哥特人以“同盟者”身份带着自己的首领住进色雷斯。<strong>帝国境内有了一个不归罗马官员管的国中之国。</strong>这时五胡在中国北方立国已七十多年：匈奴人刘渊304年起兵，311年洛阳陷落。</p>\n<p data-scene-text=\"1\">380年狄奥多西颁诏：百姓一律信奉尼西亚派基督教，其余皆为异端。390年帖撒罗尼迦民众打死驻军将领，他下令报复，据说杀了七千人；米兰主教安布罗斯不让他领圣餐，皇帝脱下紫袍当众悔罪才被接纳。<strong>给皇帝合法性的那个上帝，也能收回它。</strong>391年起禁绝异教献祭，燃了千余年的维斯塔圣火394年前后熄灭，贞女解散。西部，格拉提安383年被篡位者杀死，狄奥多西平乱后扶起格拉提安的弟弟瓦伦提尼安二世；392年他死得不明不白，法兰克将领阿尔博加斯特另立一个教书先生。394年他在冷河打败他们，那是最后一支打着旧神旗号的大军。395年1月他死在米兰，长子阿卡狄乌斯管东部，次子霍诺留管西部。分治早有先例，这一回却再没合拢。</p>",
+    "sources": [
+      {
+        "label": "阿米安努斯·马尔切利努斯《历史》第31卷（哥特人渡河与阿德里安堡）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Ammian/31*.html"
+      },
+      {
+        "label": "狄奥多勒《教会史》第5卷（第17—18节 帖撒罗尼迦与安布罗斯）",
+        "url": "https://www.newadvent.org/fathers/27025.htm"
+      },
+      {
+        "label": "左西莫斯《新史》第5卷（第38节 塞雷娜与最后的贞女）",
+        "url": "https://www.tertullian.org/fathers/zosimus05_book5.htm"
+      },
+      {
+        "label": "粟特古信札（英译）",
+        "url": "https://depts.washington.edu/silkroad/texts/sogdlet.html"
+      },
+      {
+        "label": "左西莫斯《新史》第4卷（瓦伦提尼安兄弟、格拉提安之死、冷河之战）",
+        "url": "https://www.tertullian.org/fathers/zosimus04_book4.htm"
+      }
+    ],
+    "moments": [
+      {
+        "scene": 0,
+        "name": "粟特古信札",
+        "en": "The Sogdian Ancient Letters",
+        "text": "1907年斯坦因在敦煌以西的烽燧里找到一包没寄出的粟特商人书信。其中一封约写于313年，说洛阳被攻破、皇帝出逃、宫城焚毁，攻城的人写作 xwn，和西方说的“匈人”是同一个词。两者是不是一族，学界至今在争。"
+      },
+      {
+        "scene": 1,
+        "name": "最后的贞女",
+        "en": "The Last Vestal",
+        "text": "异教史家左西莫斯说，狄奥多西在罗马时，侄女塞雷娜走进地母神庙，摘下女神像颈上的项链戴在自己身上。一位老妇人，最后的维斯塔贞女之一，当面咒她。后来塞雷娜被勒死，左西莫斯说这是报应。"
+      }
+    ]
+  },
+  "history-empire-west-fall": {
+    "title": "西罗马的终结",
+    "html": "<p data-scene-text=\"0\">匈人是从里海以北草原上来的游牧骑兵，约370年打垮顿河边的阿兰人，又压垮黑海北岸的哥特王国，逼得哥特人376年逃过多瑙河。<strong>匈人驱赶日耳曼人，日耳曼人分化成几大军事集团：</strong>逃进帝国的哥特人在阿拉里克手里成了西哥特，留在匈人治下的哥特人后来成了东哥特；汪达尔人裹着阿兰人、苏维汇人，406年冲过莱茵河；勃艮第人436年被罗马雇来的匈人打残，迁到萨伏依。这些“民族”多半不是老部落，是跟着能打仗的首领走的兵团，谁能带着打胜、分到地，大家就认谁。法兰克、阿勒曼尼、撒克逊三世纪就结成了联盟，等罗马边防一空，就吃进高卢、渡海去不列颠。453年阿提拉死，次年各部打垮他的儿子们，匈人的天下就散了。</p>\n<p data-scene-text=\"1\">395年分家时，西部的霍诺留才十岁，大权在统帅斯提里科手里。他父亲是汪达尔人，自己娶了狄奥多西的侄女，自称两位少年皇帝的监护人。阿拉里克是在冷河替狄奥多西卖过命的哥特首领，嫌赏赐太薄，395年起带着族人在巴尔干、意大利边打边谈，斯提里科几次打败他又放他走。402年起，西罗马皇帝躲进沼泽环绕的拉文纳。406年最后一天，汪达尔人、阿兰人、苏维汇人渡过莱茵河，一路杀进高卢、西班牙。408年霍诺留听信谗言处死斯提里科，意大利各城的罗马人屠杀蛮族士兵的家眷，三万人投奔了阿拉里克。<strong>410年8月，阿拉里克攻进罗马，洗劫三天，这是八百年来罗马头一回被外敌攻破。</strong></p>\n<p data-scene-text=\"2\">北非的主教奥古斯丁为此写《上帝之城》：地上的城会陷落，上帝之城不会。西哥特人在意大利、高卢转了几年，418年以同盟者身份在阿基坦落户。423年霍诺留死了，没有儿子；425年东罗马出兵，把狄奥多西的外孙、六岁的瓦伦提尼安三世送上西部皇位，母亲加拉·普拉西提阿听政。兵权落到统帅埃提乌斯手里，他少年时在匈人那里当过人质，靠匈人雇佣兵起家。429年汪达尔人由国王盖萨里克率领渡海进非洲，430年奥古斯丁死在被围的希波城，439年迦太基陷落。<strong>北非是西罗马最富的粮仓和税源，丢了它，就养不起兵了。</strong>同一年，北魏灭北凉，统一了中国北方。</p>\n<p data-scene-text=\"3\">451年，埃提乌斯联合西哥特人，在卡塔隆平原挡住匈人王阿提拉；次年他南下意大利，见过出城的教宗利奥一世便退兵，453年暴死。454年瓦伦提尼安三世亲手刺死埃提乌斯，次年自己被埃提乌斯的旧部刺死，狄奥多西一脉在西部断了；455年汪达尔人渡海洗劫罗马。此后苏维汇王族出身的将军李希梅尔连立带废好几个皇帝。475年，当过阿提拉秘书的将军俄瑞斯忒斯赶走东罗马扶上的皇帝尼波斯，扶上自己的少年儿子罗慕路斯·奥古斯都路斯；476年9月，日耳曼雇佣军首领奥多亚克废掉了他，把皇帝的冠服送回君士坦丁堡，说西方不再需要皇帝。<strong>西罗马是被一点点掏空的：粮仓、税源、兵源没了，皇帝成了将军手里的印章。</strong>东罗马还要走近千年。</p>",
+    "sources": [
+      {
+        "label": "奥古斯丁《上帝之城》",
+        "url": "https://www.newadvent.org/fathers/1201.htm"
+      },
+      {
+        "label": "普罗柯比《战史》第3—4卷（汪达尔战争；第3卷第2节 名叫罗马的鸡）",
+        "url": "https://www.gutenberg.org/ebooks/16765"
+      },
+      {
+        "label": "《瓦莱西乌斯佚名作者》第2部分（奥多亚克与罗慕路斯·奥古斯都路斯）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Excerpta_Valesiana/2*.html"
+      },
+      {
+        "label": "左西莫斯《新史》第5卷（斯提里科与阿拉里克；第35节 屠杀蛮族士兵家眷）",
+        "url": "https://www.tertullian.org/fathers/zosimus05_book5.htm"
+      },
+      {
+        "label": "阿米安努斯·马尔切利努斯《历史》第31卷（第2—3节 匈人、阿兰人与哥特人）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Ammian/31*.html"
+      },
+      {
+        "label": "哲罗姆《书信》第123封（406年蹂躏高卢的各族）",
+        "url": "https://www.newadvent.org/fathers/3001123.htm"
+      },
+      {
+        "label": "菲洛斯托尔吉乌斯《教会史》摘要（第2卷第5节 乌尔菲拉）",
+        "url": "https://www.tertullian.org/fathers/philostorgius.htm"
+      }
+    ],
+    "moments": [
+      {
+        "scene": 0,
+        "name": "不译《列王纪》",
+        "en": "No Book of Kings",
+        "text": "给哥特人祝圣第一位主教的，正是给君士坦丁施洗的尼科米底亚主教优西比乌。这位哥特主教乌尔菲拉为哥特语造了字母，把《圣经》译成哥特文，唯独不译《列王纪》：那一卷全是打仗，哥特人已经够好战了。"
+      },
+      {
+        "scene": 1,
+        "name": "名叫罗马的鸡",
+        "en": "A Fowl Named Roma",
+        "text": "普罗柯比记了个传闻：拉文纳的宦官报告霍诺留“罗马完了”，皇帝大惊：“它刚才还在我手里吃食！”原来他养了一只大公鸡，名叫罗马。听说完了的是罗马城，他松了一口气。"
+      },
+      {
+        "scene": 3,
+        "name": "末代皇帝的名字",
+        "en": "The Last Emperor's Name",
+        "text": "罗慕路斯是罗马的开国国王，奥古斯都是第一位皇帝，“奥古斯都路斯”的意思是“小奥古斯都”。奥多亚克没杀这个少年，给他一笔年金，送到那不勒斯湾边的卢库卢斯别墅养老。"
+      }
+    ]
+  },
+  "history-faith-israel": {
+    "title": "以色列的由来",
+    "html": "<p data-scene-text=\"0\">犹太教和基督教都从这里起源。约前1208年，埃及法老麦伦普塔的石碑上头一回出现“以色列”这个名字；从考古看，以色列多由迦南本地的山地村落长成，不是从外面整批迁来的。</p>\n<p data-scene-text=\"1\">出埃及是以色列的起源故事：摩西带以色列人逃出埃及，在西奈山领受十诫，和他们的神立约，再走向迦南。年代传统定在前15或前13世纪，规模和路线都没有考古证据，图上只是一条传统路线。<strong>一个民族和一个神立约，是后来一神教的根。</strong></p>\n<p data-scene-text=\"2\">传统编年里，大卫（约前1000—前970）定都耶路撒冷，儿子所罗门（约前970—前930）在城北修起献给耶和华的圣殿，这是第一圣殿。所罗门大兴土木，重税劳役撑不住，他一死王国就分了家。</p>",
+    "sources": [
+      {
+        "label": "出埃及与以色列起源研究",
+        "url": "https://doi.org/10.5325/j.ctv1bxgxxt.12"
+      },
+      {
+        "label": "麦伦普塔赫石碑说明",
+        "url": "https://www.museumofthebible.org/book-minute/the-merneptah-stele"
+      },
+      {
+        "label": "但城石碑资料",
+        "url": "https://thejewishmuseum.org/exhibitions/tel-dan-stele/"
+      }
+    ],
+    "moments": [
+      {
+        "scene": 1,
+        "name": "分开红海",
+        "en": "Parting of the Sea",
+        "text": "故事最有名的一幕：摩西举杖，海水分开，以色列人走干地过海，追来的埃及战车被海水吞没。"
+      },
+      {
+        "scene": 2,
+        "name": "大卫与歌利亚",
+        "en": "David & Goliath",
+        "text": "牧羊少年大卫用投石器击倒非利士巨人歌利亚，“大卫对歌利亚”从此成了以小胜大的代名词。"
+      }
+    ]
+  },
+  "history-faith-first-temple": {
+    "title": "第一圣殿时期",
+    "html": "<p data-scene-text=\"0\">所罗门死后，北方十个支派另立以色列国，后来定都撒马利亚，富而大；南边的犹大国小，守着耶路撒冷的圣殿和大卫一系的王。两国都拜耶和华，也拜别的神，以利亚、阿摩司、以赛亚这些先知痛骂拜外邦神、欺压穷人。前722年亚述灭了以色列，把居民迁走，北方十个支派从此下落不明。<strong>夹在埃及和两河强国之间的小国，后来靠住的不是兵，是一个神。</strong></p>\n<p data-scene-text=\"1\">前701年亚述大军围耶路撒冷不下。前622年，约西亚王的大祭司在圣殿里“找到”一卷律法书，约西亚下令只许在耶路撒冷献祭，捣毁各地的神坛：耶和华从众神之一变成独一的神。前586年巴比伦王尼布甲尼撒攻破耶路撒冷，烧了圣殿，把上层人掳到巴比伦。<strong>国没了，殿没了，留下的是经书：宗教从此能离开土地和国家活下去。</strong>前538年波斯王居鲁士灭了巴比伦，准他们回乡。</p>",
+    "sources": [
+      {
+        "label": "《列王纪下》（第17章 北国亡；第22—25章 约西亚改革、圣殿被毁，和合本）",
+        "url": "https://zh.wikisource.org/wiki/%E8%81%96%E7%B6%93_(%E5%92%8C%E5%90%88%E6%9C%AC)/%E5%88%97%E7%8E%8B%E7%B4%80%E4%B8%8B"
+      },
+      {
+        "label": "《诗篇》（第137篇 巴比伦的河边，和合本）",
+        "url": "https://zh.wikisource.org/wiki/%E8%81%96%E7%B6%93_(%E5%92%8C%E5%90%88%E6%9C%AC)/%E8%A9%A9%E7%AF%87"
+      }
+    ],
+    "moments": [
+      {
+        "scene": 1,
+        "name": "巴比伦的河边",
+        "en": "By the Rivers of Babylon",
+        "text": "《诗篇》第137篇写被掳的人：“我们曾在巴比伦的河边坐下，一追想锡安就哭了……耶路撒冷啊，我若忘记你，情愿我的右手忘记技巧。”"
+      }
+    ]
+  },
+  "history-faith-second-temple": {
+    "title": "第二圣殿时期",
+    "html": "<p data-scene-text=\"0\">回乡的人在废墟上重修圣殿，前515年落成，这是第二圣殿。没有了国王，管事的是大祭司；祭司以斯拉把摩西律法当众宣读，立为全民的法：守安息日，行割礼，不与外族通婚。<strong>犹太人从此是守这部律法的人，住在波斯帝国哪里都一样。</strong>第二圣殿落成那年，孔子三十六岁；希腊的哲人、印度的佛陀也在这几百年里，后人叫它“轴心时代”。</p>\n<p data-scene-text=\"1\">亚历山大之后，犹地亚先归托勒密，后归塞琉古。亚历山大里亚的犹太人说希腊语，经书被译成希腊文，即《七十士译本》，后来基督教就靠它在地中海传开。前167年塞琉古王安条克四世在圣殿里祭宙斯，禁割礼和安息日；祭司之家马加比起兵，前164年夺回圣殿重新献殿，后来建起自己的哈斯蒙尼王国。<strong>希腊化压出来的，是更硬的犹太认同。</strong></p>\n<p data-scene-text=\"2\">前63年庞培趁哈斯蒙尼兄弟争位攻进耶路撒冷。罗马扶以东人希律当犹太王（前37—前4），他杀妻杀子、讨好罗马，又把圣殿扩建得金碧辉煌，今天的哭墙就是当年殿基的西墙。犹太人分成几派：撒都该人守着圣殿，法利赛人讲律法，艾赛尼人避世苦修，死海古卷多半出自这一路；人人盼着一位受膏者（弥赛亚）来赶走罗马人。<strong>这就是耶稣出生时的犹地亚。</strong></p>",
+    "sources": [
+      {
+        "label": "《尼希米记》（第8章 以斯拉宣读律法，和合本）",
+        "url": "https://zh.wikisource.org/wiki/%E8%81%96%E7%B6%93_(%E5%92%8C%E5%90%88%E6%9C%AC)/%E5%B0%BC%E5%B8%8C%E7%B1%B3%E8%A8%98"
+      },
+      {
+        "label": "《马加比一书》第1章（安条克四世亵渎圣殿，英译）",
+        "url": "https://www.biblegateway.com/passage/?search=1+Maccabees+1&version=NRSVUE"
+      },
+      {
+        "label": "《塔木德·安息日篇》21b（光明节的灯油，英译）",
+        "url": "https://www.sefaria.org/Shabbat.21b"
+      },
+      {
+        "label": "约瑟夫斯《犹太古史》第14卷（庞培进圣殿）",
+        "url": "https://penelope.uchicago.edu/josephus/ant-14.html"
+      }
+    ],
+    "moments": [
+      {
+        "scene": 1,
+        "name": "光明节",
+        "en": "Hanukkah",
+        "text": "收复圣殿时，只找到一小瓶没被玷污的灯油，只够点一天，却点了八天，这就是光明节的来历。这个故事最早见于几百年后的《塔木德》。"
+      },
+      {
+        "scene": 2,
+        "name": "至圣所",
+        "en": "The Holy of Holies",
+        "text": "耶路撒冷圣殿的至圣所只许大祭司一年进一次。庞培带人走了进去，看过金桌、灯台和香料，什么也没拿。"
+      }
+    ]
+  },
+  "history-faith-jesus": {
+    "title": "耶稣与使徒",
+    "html": "<p data-scene-text=\"0\">耶稣生在希律末年，在加利利乡间传道，讲“天国近了”，和税吏、罪人同桌吃饭，门徒认他是弥赛亚。约30年逾越节，他在耶路撒冷圣殿里掀翻兑换银钱的桌子，被大祭司交给罗马总督彼拉多，以“犹太人的王”的罪名钉了十字架；门徒说他第三天复活了。<strong>在罗马人眼里，这只是边地又一个闹事的人。</strong></p>\n<p data-scene-text=\"1\">门徒起初只是犹太教里的一派，守在耶路撒冷。生在塔尔苏斯、有罗马公民权的法利赛人保罗，原本迫害他们，后来皈依，沿着罗马大道去说希腊语的城市传教，主张外邦人入教不必行割礼、不必守犹太饮食规矩。<strong>这一步，把一个犹太教派变成了谁都能入的普世宗教。</strong>他写给各地教会的书信，是《新约》最早的部分。64年罗马大火，尼禄拿基督徒顶罪，传说彼得、保罗都死在罗马。</p>\n<p data-scene-text=\"2\">66年犹太人起兵反罗马，70年韦斯巴芗的儿子提图斯攻破耶路撒冷，第二圣殿被烧，只剩殿基的西墙；73年马萨达的守军全体自尽。圣殿没了，祭司一派跟着消失，法利赛人的拉比在雅夫内重整，靠律法和会堂撑起后来的犹太教；基督徒没跟着起事，两家从此分道。<strong>同一场灾难，生出了拉比犹太教，也让基督教走出了犹太教。</strong></p>",
+    "sources": [
+      {
+        "label": "《马可福音》（和合本）",
+        "url": "https://zh.wikisource.org/wiki/%E8%81%96%E7%B6%93_(%E5%92%8C%E5%90%88%E6%9C%AC)/%E9%A6%AC%E5%8F%AF%E7%A6%8F%E9%9F%B3"
+      },
+      {
+        "label": "《使徒行传》（和合本）",
+        "url": "https://zh.wikisource.org/wiki/%E8%81%96%E7%B6%93_(%E5%92%8C%E5%90%88%E6%9C%AC)/%E4%BD%BF%E5%BE%92%E8%A1%8C%E5%82%B3"
+      },
+      {
+        "label": "塔西佗《编年史》第15卷（第44节 尼禄迫害基督徒）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Tacitus/Annals/15B*.html"
+      },
+      {
+        "label": "约瑟夫斯《犹太战争》第6卷（圣殿被烧）",
+        "url": "https://penelope.uchicago.edu/josephus/war-6.html"
+      },
+      {
+        "label": "优西比乌《教会史》第3卷（第5节 耶路撒冷的基督徒迁往佩拉）",
+        "url": "https://www.newadvent.org/fathers/250103.htm"
+      }
+    ],
+    "moments": [
+      {
+        "scene": 0,
+        "name": "恺撒的归恺撒",
+        "en": "Render unto Caesar",
+        "text": "有人拿一枚罗马银币问耶稣，该不该给恺撒纳税。他反问：“这像和这号是谁的？”答：“是恺撒的。”他说：“恺撒的物当归给恺撒，神的物当归给神。”"
+      },
+      {
+        "scene": 1,
+        "name": "未识之神",
+        "en": "To an Unknown God",
+        "text": "保罗在雅典的亚略巴古演讲，说他在城里看见一座坛，上面写着“献给未识之神”：“你们所不认识而敬拜的，我现在告诉你们。”"
+      },
+      {
+        "scene": 2,
+        "name": "提图斯凯旋门",
+        "en": "The Arch of Titus",
+        "text": "罗马广场东头的提图斯凯旋门上，至今刻着罗马士兵扛着圣殿的七枝灯台游行。"
+      }
+    ]
+  },
+  "history-faith-church": {
+    "title": "地下的教会",
+    "html": "<p data-scene-text=\"0\">132年哈德良在耶路撒冷旧址建罗马城，逼出巴尔·科赫巴起义，战后犹太人被逐出耶路撒冷，散在各地。基督徒却在帝国的城里越来越多：手艺人、奴隶、妇女都来，病了有人照料，死了有人埋葬。各城一位主教，主教之间通信、开会，渐渐定下哪些书算《新约》。<strong>帝国修的大道和通行的希腊语，成了教会的血管。</strong>到300年前后，基督徒约占人口一成。</p>\n<p data-scene-text=\"1\">罗马人各拜各的神，基督徒的罪名是不肯给皇帝和诸神献祭。250年皇帝德基乌斯令全民献祭、领证明，257年瓦勒良专抓教士，303年戴克里先在尼科米底亚开始大迫害，东部持续八年。301年前后，罗马和波斯之间的亚美尼亚国王倒先受了洗。311年主持迫害的伽列里乌斯临死下诏认输。<strong>迫害没有拆散教会，殉道者倒成了教会的英雄。</strong></p>",
+    "sources": [
+      {
+        "label": "小普林尼《书信》第10卷（第96—97封 与图拉真论基督徒）",
+        "url": "https://www.attalus.org/old/pliny10b.html"
+      },
+      {
+        "label": "德尔图良《护教篇》（第50章 基督徒的血是种子）",
+        "url": "https://www.newadvent.org/fathers/0301.htm"
+      },
+      {
+        "label": "优西比乌《教会史》第8卷（大迫害）",
+        "url": "https://www.newadvent.org/fathers/250108.htm"
+      },
+      {
+        "label": "拉克坦提乌斯《论迫害者之死》（德基乌斯、瓦勒良、戴克里先与伽列里乌斯）",
+        "url": "https://www.newadvent.org/fathers/0705.htm"
+      }
+    ],
+    "moments": [
+      {
+        "scene": 0,
+        "name": "图拉真的回信",
+        "en": "Trajan's Reply",
+        "text": "112年前后，小普林尼写信问图拉真怎么处置基督徒。图拉真回信说：不必去搜捕；有人告发、本人又不肯向诸神献祭的，才处罚；匿名告发一概不收，那“不合我们这个时代”。"
+      },
+      {
+        "scene": 1,
+        "name": "血是种子",
+        "en": "The Blood Is Seed",
+        "text": "200年前后，迦太基的德尔图良对罗马官员说：你们杀得越多，我们就越多，“基督徒的血是种子”。"
+      }
+    ]
+  },
+  "history-faith-empire-church": {
+    "title": "帝国的教会",
+    "html": "<p data-scene-text=\"0\">312年米尔维安桥一战，君士坦丁让士兵在盾上画基督的符号；次年他和李锡尼在米兰宣布信仰自由，发还教产。那时基督徒只占一成，却有遍布各城的主教网，戴克里先迫害八年也没拆散；代亚学着给旧神设祭司网，没学成。君士坦丁给教会拨钱，教士免服公役，官司可以转给主教审；他在罗马、耶路撒冷、新都修起大教堂，母亲海伦娜到圣地朝圣。<strong>埃拉伽巴路斯、奥勒良请来的大神只有庙和祭司，基督教带来的是一张遍布帝国的网。</strong></p>\n<p data-scene-text=\"1\">亚历山大里亚的长老阿里乌说圣子是被造的，东方教会吵成两半。325年君士坦丁召集尼西亚大公会议，用驿站车马送来二百五十多位主教，信经里的“同质”由他拍板，私藏阿里乌的书者处死。<strong>从此教义要皇帝拍板，异端成了国法上的罪。</strong>可他晚年又倒向阿里乌一派，给他施洗的尼科米底亚主教优西比乌，还给哥特人祝圣了第一位主教，哥特人于是信了阿里乌派。381年君士坦丁堡会议补定信经，尼西亚派最终胜出。</p>\n<p data-scene-text=\"2\">380年狄奥多西定尼西亚派为国教，391年起禁绝献祭。410年罗马被西哥特人攻破，异教徒说这是抛弃旧神的报应，北非主教奥古斯丁写《上帝之城》作答。皇帝不住罗马，罗马主教成了西方教会的头：451年卡尔西顿大公会议奉教宗利奥一世的书信为正统，不服的埃及、叙利亚教会从此另立门户；更早被定为异端的聂斯托利派东走波斯，635年传到长安，唐人叫它景教。<strong>帝国在西部倒下，教会接过了它的骨架。</strong></p>",
+    "sources": [
+      {
+        "label": "优西比乌《君士坦丁传》第2卷（第68—71节 写给亚历山大和阿里乌的信）",
+        "url": "https://www.newadvent.org/fathers/25022.htm"
+      },
+      {
+        "label": "优西比乌《君士坦丁传》第3卷（第6—18节 尼西亚会议；第41—47节 海伦娜；第48、54节 新都与神庙）",
+        "url": "https://www.newadvent.org/fathers/25023.htm"
+      },
+      {
+        "label": "优西比乌《教会史》第10卷（第5—7节 米兰诏令、拨款与教士免役）",
+        "url": "https://www.newadvent.org/fathers/250110.htm"
+      },
+      {
+        "label": "苏格拉底《教会史》第1卷（第8—9节 “同质”与焚书令；第38节 阿里乌之死）",
+        "url": "https://www.newadvent.org/fathers/26011.htm"
+      },
+      {
+        "label": "菲洛斯托尔吉乌斯《教会史》摘要（第2卷第2节 阿里乌的小曲；第4节 福斯塔；第9节 划界）",
+        "url": "https://www.tertullian.org/fathers/philostorgius.htm"
+      },
+      {
+        "label": "阿塔纳修斯《驳阿里乌派的辩护》（第86—87节 拦马与粮船）",
+        "url": "https://www.newadvent.org/fathers/28082.htm"
+      },
+      {
+        "label": "《晋书·艺术传·佛图澄》（佛是戎神，所应兼奉）",
+        "url": "https://zh.wikisource.org/wiki/%E6%99%89%E6%9B%B8/%E5%8D%B7095"
+      },
+      {
+        "label": "《君士坦丁的赠礼》（八世纪前后伪造的诏书，英译）",
+        "url": "https://sourcebooks.fordham.edu/source/donatconst.asp"
+      },
+      {
+        "label": "奥古斯丁《上帝之城》",
+        "url": "https://www.newadvent.org/fathers/1201.htm"
+      },
+      {
+        "label": "利奥一世《书信》第28封（致弗拉维安，卡尔西顿会议奉为正统）",
+        "url": "https://www.newadvent.org/fathers/3604028.htm"
+      },
+      {
+        "label": "《大秦景教流行中国碑》（贞观九祀，至于长安）",
+        "url": "https://zh.wikisource.org/wiki/%E5%A4%A7%E7%A7%A6%E6%99%AF%E6%95%99%E6%B5%81%E8%A1%8C%E4%B8%AD%E5%9C%8B%E7%A2%91"
+      }
+    ],
+    "moments": [
+      {
+        "scene": 0,
+        "name": "佛是戎神",
+        "en": "The Buddha, a Barbarian God",
+        "text": "同一时候的中国北方，羯人石虎尊西域僧人佛图澄为大和尚，百姓争着出家。大臣王度上书：“佛，外国之神，非诸华所应祠奉。”石虎下书：“朕出自边戎，忝君诸夏……佛是戎神，所应兼奉。”外来的君主，正好拿外来的神撑腰。"
+      },
+      {
+        "scene": 1,
+        "name": "面包与圣子",
+        "en": "Bread and the Son",
+        "text": "五十多年后，尼撒的格列高利这样描写君士坦丁堡：你找人换零钱，他跟你谈“受生”与“非受生”；你问面包价钱，他答“圣父更大，圣子在下”；你问澡堂烧好了没有，他说“圣子是从无中造出来的”。"
+      },
+      {
+        "scene": 2,
+        "name": "君士坦丁的赠礼",
+        "en": "The Donation of Constantine",
+        "text": "八世纪前后，有人伪造了一份君士坦丁的诏书，说他受洗后把罗马城和整个西部交给了教宗。教宗们拿它说事好几百年，1440年意大利学者瓦拉从拉丁文的用词上证明它是伪造的。"
+      }
+    ]
+  }
+}

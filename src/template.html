@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>地中海与近东 · 地理与历史图册</title>
+<style>/*__LEAFLET_CSS__*/</style>
+<style>
+:root{
+  --paper:#f3ead6; --paper2:#eadcbf; --paper3:#e2d1ad;
+  --ink:#2a2018; --ink2:#5a4836; --ink3:#8a7458;
+  --rule:#cdb68c; --accent:#8a2a1d;
+  --serif:"Songti SC","STSong","Noto Serif SC","Source Han Serif SC","Noto Serif CJK SC",serif;
+  --latin:"Hoefler Text","Baskerville","Cormorant Garamond","Iowan Old Style",Georgia,serif;
+  --kai:"Kaiti SC","STKaiti","Kai","KaiTi","Songti SC",serif;
+  --side:432px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--paper);color:var(--ink);font-family:var(--serif);-webkit-font-smoothing:antialiased}
+body{display:flex;overflow:hidden}
+
+/* ---------- sidebar ---------- */
+#side{width:var(--side);flex:none;height:100%;display:flex;flex-direction:column;position:relative;z-index:2;
+  background:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.35  0 0 0 0 0.25  0 0 0 0 0.12  0 0 0 .07 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"),
+    linear-gradient(180deg,#f6eedd 0%,var(--paper) 40%,#efe3c9 100%);
+  border-right:1px solid var(--rule);box-shadow:6px 0 18px -10px rgba(60,40,10,.35)}
+#side header{padding:22px 26px 12px;border-bottom:1px solid var(--rule)}
+.kicker{font-family:var(--latin);font-size:11px;letter-spacing:.42em;color:var(--accent);text-transform:uppercase}
+h1{margin:6px 0 0;font-size:25px;line-height:1.25;font-weight:900;letter-spacing:.06em}
+h1 span{display:block;font-size:13px;font-weight:400;letter-spacing:.3em;color:var(--ink2);margin-top:4px}
+
+#mobileToc{display:none}
+#toc{padding:10px 20px 12px;border-bottom:1px solid var(--rule);display:grid;gap:5px;max-height:320px;overflow:auto;flex:none}
+.ch{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.ch>b{font-size:10px;color:var(--ink3);letter-spacing:.1em;font-weight:400;width:68px;flex:none;text-align:right;padding-right:4px;white-space:nowrap}
+.ch .chips{display:flex;flex-wrap:wrap;gap:2px;flex:1}
+.chip{font:inherit;font-size:13px;line-height:1;padding:5px 6px 5px;border:1px solid transparent;border-radius:2px;background:none;color:var(--ink);cursor:pointer;position:relative;transition:background .15s,border-color .15s}
+.chip:hover{background:rgba(138,42,29,.07);border-color:var(--rule)}
+.chip i{font-style:normal;display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:4px;vertical-align:1px;background:var(--c,#999);opacity:.85}
+.chip.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.chip.on i{box-shadow:0 0 0 1.5px var(--paper)}
+
+#card{flex:1;overflow-y:auto;padding:18px 28px 28px;scroll-behavior:smooth}
+#card::-webkit-scrollbar{width:8px}#card::-webkit-scrollbar-thumb{background:var(--paper3);border-radius:4px}
+.eyebrow{font-size:11px;letter-spacing:.3em;color:var(--ink3)}
+.eyebrow em{font-style:normal;font-family:var(--latin);color:var(--accent);letter-spacing:.1em;margin-right:8px}
+h2{font-size:31px;margin:6px 0 2px;font-weight:900;letter-spacing:.05em;line-height:1.2}
+h2::after{content:"";display:block;width:44px;height:3px;margin-top:10px;background:var(--c,var(--accent))}
+.en-name{font-family:var(--latin);font-size:18px;line-height:1.3;color:var(--ink2);margin:8px 0 0}
+.orig{font-family:var(--latin);font-style:italic;color:var(--ink3);font-size:13px;margin:5px 0 13px;line-height:1.5}
+.caution{margin:12px 0;padding:11px 13px;border-left:3px solid #a67a31;background:rgba(166,122,49,.1);font-size:13px;line-height:1.75;color:var(--ink2)}
+.map-jump{font:inherit;font-size:12.5px;line-height:1.5;padding:8px 10px;margin:6px 0;border:1px solid var(--rule);background:rgba(234,220,191,.45);color:var(--accent);cursor:pointer;text-align:left}
+.map-jump[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.lede{font-size:16px;line-height:1.85;margin:0 0 14px;color:var(--ink)}
+#card ul{margin:0;padding:0;list-style:none}
+#card li{font-size:14.5px;line-height:1.85;margin:0 0 9px;padding-left:16px;position:relative;color:#3a2e22}
+#card ul>li::before{content:"";position:absolute;left:2px;top:.82em;width:5px;height:5px;transform:rotate(45deg);background:var(--c,var(--accent));opacity:.75}
+#card b{font-weight:700;color:var(--ink)}
+.lao{margin:18px 0 6px;padding:12px 14px 12px 54px;position:relative;font-family:var(--kai);font-size:15.5px;line-height:1.8;color:#4a3420;background:rgba(138,42,29,.06);border-left:2px solid var(--accent)}
+.lao::before{content:"老夫曰";position:absolute;left:10px;top:12px;width:32px;font-family:var(--serif);font-size:11px;line-height:1.25;letter-spacing:.05em;color:#fff;background:var(--accent);padding:4px 3px;text-align:center;border-radius:2px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.35)}
+.see{margin-top:16px;font-size:13px;color:var(--ink3)}
+.see a,.go{color:var(--accent);cursor:pointer;text-decoration:none;border-bottom:1px dotted var(--accent);margin-right:10px}
+.hint{font-size:12.5px;color:var(--ink3);margin:10px 0 6px;letter-spacing:.05em}
+ol.tl{list-style:none;margin:6px 0 0;padding:0;counter-reset:none}
+ol.tl li{padding:5px 8px 5px 34px !important;margin:0 !important;border-bottom:1px dotted var(--rule);cursor:pointer;font-size:13.5px !important;line-height:1.55 !important;position:relative}
+ol.tl li:hover{background:rgba(178,34,34,.07)}
+ol.tl li .n{position:absolute;left:4px;top:6px;width:20px;height:20px;border-radius:50%;background:#b22222;color:#fff;font-size:11px;line-height:20px;text-align:center;font-family:var(--latin)}
+ol.tl li .n.b{background:#2a2018}
+ol.tl li em{font-style:normal;color:var(--ink3);font-size:12px;margin-right:6px;font-family:var(--latin)}
+ol.tl li.on{background:rgba(178,34,34,.12)}
+
+#side footer{display:flex;justify-content:space-between;align-items:center;padding:10px 20px;border-top:1px solid var(--rule);font-size:13px;background:rgba(234,220,191,.5)}
+#side footer button{font:inherit;background:none;border:1px solid var(--rule);padding:6px 12px;cursor:pointer;color:var(--ink);border-radius:2px}
+#side footer button:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+#side footer button:disabled{opacity:.35;pointer-events:none}
+#pos{font-family:var(--latin);color:var(--ink3);letter-spacing:.1em}
+
+/* ---------- map ---------- */
+#mapwrap{flex:1;position:relative;height:100%}
+#map{position:absolute;inset:0;background:#a8bcc3}
+#mapnote{position:absolute;top:56px;right:12px;left:12px;z-index:800;padding:8px 12px;background:rgba(243,234,214,.96);border:1px solid var(--rule);color:var(--ink2);font-size:12px;line-height:1.6}
+button:focus-visible,a:focus-visible,[role="button"]:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.lb.hidden{display:none !important}
+.leaflet-container{font-family:var(--serif)}
+/* filter per tile, not on the pane: a pane-level filter shows white seams at fractional zoom */
+.leaflet-tile{filter:sepia(.32) saturate(.78) contrast(.97) brightness(1.04)}
+#map::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:300;
+  box-shadow:inset 0 0 120px rgba(80,55,20,.28), inset 0 0 22px rgba(80,55,20,.18)}
+.leaflet-control-attribution{background:rgba(243,234,214,.8) !important;font-size:10px;color:var(--ink2)}
+.leaflet-control-attribution a{color:var(--ink2)}
+.leaflet-bar a{background:var(--paper);color:var(--ink);border-color:var(--rule)}
+.leaflet-bar a:hover{background:var(--paper2)}
+.leaflet-control-scale-line{background:rgba(243,234,214,.75);border-color:var(--ink2);color:var(--ink2);font-family:var(--latin)}
+
+#tools{position:absolute;top:12px;right:12px;z-index:800;display:flex;gap:6px}
+#tools button{font:inherit;font-size:13px;padding:7px 11px;background:rgba(243,234,214,.94);border:1px solid var(--rule);color:var(--ink);cursor:pointer;border-radius:2px;box-shadow:0 1px 4px rgba(60,40,10,.18)}
+#tools button.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+#tools button:hover{border-color:var(--ink2)}
+
+#legend{position:absolute;left:14px;bottom:30px;z-index:800;background:rgba(243,234,214,.94);border:1px solid var(--rule);padding:9px 12px 8px;font-size:12.5px;line-height:1.5;max-width:300px;box-shadow:0 1px 6px rgba(60,40,10,.18)}
+#legend:empty{display:none}
+#legend div{display:flex;align-items:center;gap:8px;margin:2px 0}
+#legend s{flex:none;width:22px;height:12px;display:inline-block;text-decoration:none}
+#legend s.fill{background:var(--c);opacity:.55;border:1.5px solid var(--c)}
+#legend s.dash{border:2px dashed var(--c);height:10px;background:transparent}
+#legend s.line{height:0;border-top:3px solid var(--c)}
+#legend s.dline{height:0;border-top:2.5px dashed var(--c)}
+#legend s.dot{width:10px;height:10px;border-radius:50%;background:var(--c);margin:0 6px}
+#legend s.seal{width:14px;height:14px;background:#a3271b;color:#fff;font-size:9px;line-height:14px;text-align:center;margin:0 4px;border-radius:1px}
+#legend .note{color:var(--ink3);font-size:11px;margin-top:5px;border-top:1px dotted var(--rule);padding-top:4px}
+
+/* labels */
+.lb{position:absolute;white-space:nowrap;transform:translate(-50%,-50%);pointer-events:none;line-height:1;
+  text-shadow:0 0 3px rgba(243,234,214,.95),0 0 6px rgba(243,234,214,.85),0 0 1px #f3ead6}
+.lb.sea{color:#3e6b78;font-size:13px;letter-spacing:.55em;font-style:italic;opacity:.92;text-shadow:0 0 4px rgba(225,235,235,.9)}
+.lb.sea.big{font-size:17px;letter-spacing:.9em}
+.lb.mtn{color:#6d4b2a;font-size:12px;letter-spacing:.35em}
+.lb.desert{color:#8a6a3c;font-size:12.5px;letter-spacing:.5em}
+.lb.island{color:#655235;font-size:12px;letter-spacing:.08em;font-weight:700;line-height:1.05}
+.lb.island.archipelago{font-weight:400;font-style:italic;letter-spacing:.15em}
+.leaflet-container.z8 .archipelago{display:none}
+.leaflet-container.maritime-off .maritime{display:none !important}
+.lb.sea.maritime{color:#234f5d;font-weight:600;text-shadow:0 0 3px rgba(243,234,214,.95),0 0 5px rgba(243,234,214,.85)}
+.leaflet-container:not(.z5) .lb.maritime:not(.big){font-size:11px;letter-spacing:.08em}
+.leaflet-container:not(.z5) .lb.maritime:not(.big) .lb-en{font-size:9px}
+.leaflet-container:not(.z4) .lb.maritime:not(.big) .lb-en{display:none}
+.lb.river{color:#235f93;font-size:11.5px;letter-spacing:.12em}
+.lb.people{color:#5a4836;font-size:12.5px;letter-spacing:.35em;font-style:italic}
+.lb.region{font-size:19px;font-weight:900;letter-spacing:.25em;color:var(--c,#333);text-shadow:0 0 4px rgba(243,234,214,1),0 0 8px rgba(243,234,214,.95),0 0 14px rgba(243,234,214,.7)}
+.lb.region.sm{font-size:14px;letter-spacing:.15em}
+.lb.region small{display:block;font-size:11px;font-weight:400;letter-spacing:.1em;margin-top:4px;color:var(--ink2);text-align:center}
+.lb.note{color:var(--ink2);font-size:11.5px;letter-spacing:.05em}
+.lb.country{color:#5d5d5d;font-size:11px;letter-spacing:.2em;opacity:.85}
+.lb.v{writing-mode:vertical-rl;letter-spacing:.35em}
+.lb.click{pointer-events:auto;cursor:pointer}
+.lb.click:hover{text-decoration:underline;text-underline-offset:4px}
+.leaflet-container:not(.z3) .mz3,.leaflet-container:not(.z4) .mz4,.leaflet-container:not(.z5) .mz5,
+.leaflet-container:not(.z6) .mz6,.leaflet-container:not(.z7) .mz7,.leaflet-container:not(.z8) .mz8{display:none}
+.lb.force{display:block !important}
+.lb .lb-en{display:block;font-family:var(--latin);font-weight:400;font-size:10px;letter-spacing:.025em;line-height:1.15;text-align:center;margin-top:3px;font-style:italic}
+.lb.region .lb-en{font-size:11px}
+.lb.v .lb-en{writing-mode:vertical-rl;text-orientation:mixed}
+.pin .pin-en{display:block;font-family:var(--latin);font-size:10px;letter-spacing:0;line-height:1.1;color:var(--ink2);font-weight:400;margin-top:2px}
+.parch .popup-en{font-family:var(--latin);font-size:13px;color:var(--accent);display:block;margin-bottom:4px}
+
+/* pins: --h = half the marker width, so the marker centre sits on the coordinate */
+.pin{--h:5px;position:absolute;display:inline-flex;align-items:center;gap:5px;white-space:nowrap;cursor:pointer;line-height:1;transform:translate(calc(-1 * var(--h)),-50%)}
+.pin.left{flex-direction:row-reverse;transform:translate(calc(-100% + var(--h)),-50%)}
+.pin i{flex:none;display:block;width:10px;height:10px;border-radius:50%;background:var(--c,#2a2018);border:2px solid #f6eedd;box-shadow:0 0 0 1px rgba(42,32,24,.55);font-style:normal}
+.pin span{font-size:12.5px;color:var(--ink);font-weight:700;letter-spacing:.04em;
+  text-shadow:0 0 3px #f3ead6,0 0 5px #f3ead6,0 0 8px rgba(243,234,214,.9)}
+.pin.k-modern{--h:4px}.pin.k-modern i{background:#f6eedd;border:none;box-shadow:0 0 0 1.5px #6b6b6b;width:8px;height:8px}
+.pin.k-modern span{font-weight:400;color:#555;font-style:italic}
+.pin.k-site{--h:4.5px}.pin.k-site i{border-radius:1px;transform:rotate(45deg);width:9px;height:9px}
+.pin.k-peak{--h:6px}.pin.k-peak i{border-radius:0;background:transparent;border:none;box-shadow:none;width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:10px solid #6d4b2a}
+.pin.k-battle{--h:6px}.pin.k-battle i{background:transparent;border:none;box-shadow:none;position:relative;width:12px;height:12px}
+.pin.k-battle i::before,.pin.k-battle i::after{content:"";position:absolute;left:-1px;top:4.5px;width:14px;height:3px;background:#a3271b;border-radius:1px;box-shadow:0 0 0 1px #f6eedd}
+.pin.k-battle i::before{transform:rotate(45deg)}.pin.k-battle i::after{transform:rotate(-45deg)}
+.pin.k-colony{--h:4px}.pin.k-colony i{width:8px;height:8px;border-width:1.5px;background:#2a5aa0}
+.pin.k-colony span{font-weight:400;font-size:12px}
+.pin.k-lao{--h:7.5px}.pin.k-lao i{width:15px;height:15px;border-radius:2px;background:#a3271b;border:none;box-shadow:0 0 0 1.5px #f6eedd,0 0 0 2.5px rgba(163,39,27,.5);position:relative}
+.pin.k-lao i::after{content:"老";position:absolute;inset:0;color:#fff;font-size:10px;line-height:15px;text-align:center;font-family:var(--serif)}
+.pin.k-lao span{color:#8a2a1d}
+.pin.k-num{--h:9px}.pin.k-num i{width:18px;height:18px;background:#b22222;border:1.5px solid #f6eedd;box-shadow:0 0 0 1px rgba(80,10,10,.6);position:relative}
+.pin.k-num i::after{content:attr(data-n);position:absolute;inset:0;color:#fff;font-size:10px;line-height:15px;text-align:center;font-family:var(--latin);font-weight:700}
+.pin.k-num.b i{background:#2a2018}
+.pin.k-cat{--h:8px}.pin.k-cat i{width:auto;height:auto;border-radius:2px;padding:1px 3px;background:#235f93;color:#fff;font-size:10px;font-family:var(--latin);border:1px solid #f6eedd;box-shadow:none}
+.pin.k-big{--h:6.5px}.pin.k-big span{font-size:15px}.pin.k-big i{width:13px;height:13px;background:#8a1c1c}
+.pin.k-lake{transform:translate(-50%,-50%)}.pin.k-lake i{display:none}.pin.k-lake span{font-weight:400;color:#235f93;font-style:italic}
+
+/* popups */
+.parch .leaflet-popup-content-wrapper{background:var(--paper);color:var(--ink);border-radius:2px;border:1px solid var(--rule);box-shadow:0 3px 14px rgba(60,40,10,.3)}
+.parch .leaflet-popup-tip{background:var(--paper);border:1px solid var(--rule)}
+.parch .leaflet-popup-content{margin:10px 14px;font-family:var(--serif);font-size:13.5px;line-height:1.65;max-width:260px}
+.parch b{font-size:15px;display:block}
+.parch em{font-style:normal;font-family:var(--latin);color:var(--accent);font-size:12px;display:block;margin:1px 0 3px}
+
+/* region fade-in & route draw */
+path.reg{animation:fadein .7s ease-out both}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+path.route{transition:stroke-dashoffset 5.5s cubic-bezier(.45,.05,.4,1)}
+
+@media (prefers-reduced-motion:reduce){
+  path.reg{animation:none}
+  path.route{transition:none}
+  #card{scroll-behavior:auto}
+}
+/*__LAYOUT_CSS__*/
+</style>
+</head>
+<body>
+<aside id="side">
+  <header><div class="kicker">Orbis Terrarum</div><h1>地中海与近东<span>地理图册 · 历史进程</span></h1></header>
+  <div id="modebar" aria-label="图册内容"><button id="tGeography" class="on" aria-pressed="true">地理概念</button><button id="tHistory" aria-pressed="false">历史进程</button></div>
+  <p id="indexCaption"></p>
+  <nav id="toc" aria-label="地理概念"></nav>
+  <select id="mobileToc" aria-label="选择地理概念"></select>
+  <footer><button id="prev" title="上一条（↑）" aria-keyshortcuts="ArrowUp">↑ 上一条</button><span id="pos"></span><button id="next" title="下一条（↓）" aria-keyshortcuts="ArrowDown">下一条 ↓</button></footer>
+</aside>
+<main id="mapwrap" aria-label="交互地图">
+  <div id="map"></div>
+  <div id="tools">
+    <button id="tModern" aria-pressed="false" title="叠加今天的国界与国名，作对照">今日国界</button>
+    <button id="tMarine" class="on" aria-pressed="true" title="显示或隐藏海区、海峡、岛屿与群岛名称">海区/岛屿</button>
+    <button id="tFit" title="回到当前条目或历史阶段的视野">⟲ 本条视野</button>
+  </div>
+  <section id="reader" aria-label="地图说明">
+    <header id="readerHead"><div id="entryEyebrow" class="eyebrow"></div><h2 id="entryTitle"></h2><div id="entryEnglish" class="en-name"></div><button id="readerToggle" aria-controls="readerBody" aria-expanded="true">收起 −</button></header>
+    <div id="readerBody"><article id="card" aria-labelledby="entryTitle"></article></div>
+  </section>
+  <details id="legendBox"><summary>图例</summary><div id="legend"></div></details>
+  <div id="sceneRail" hidden></div>
+  <div id="mapnote" role="status" title="部分地形瓦片未载入。区域、路线与文字仍可使用；联网后刷新可显示地形。" hidden>部分地形未载入<br>示意与文字可用</div>
+</main>
+
+<script>/*__LEAFLET_JS__*/</script>
+<script>const GEO = /*__GEO__*/;
+Object.assign(GEO.regions, /*__HISTORY_GEO__*/);</script>
+<script>
+"use strict";
+/* ============================================================
+   Colors
+   ============================================================ */
+const COL = {
+  near:'#b5651d', middle:'#8a2a1d', far:'#2e6b5e', crescent:'#5f7f1f', meso:'#a0522d', syria:'#b07a12',
+  nile:'#1f6fb2', egypt:'#3f5a1f', anatolia:'#9c4a2f', iran:'#7a5a3a', persia:'#1f4e79', aegean:'#16808f',
+  greek:'#2a5aa0', balkans:'#6b4c7a', macedon:'#5b2a86', alex:'#b22222', adriatic:'#127089', apennine:'#8b5e3c',
+  rome:'#8a1c1c', empire:'#8a1c1c', modern:'#555',
+  italia:'#9c5a3c', etruria:'#a0522d', cisalpine:'#8f8a3a', africa:'#a8642a', hispania:'#b5741d', gallia:'#4f7a3a', britannia:'#4a6a8a', provinces:'#7a2a3a',
+  canaan:'#9b7033', exodus:'#a45c2a', united:'#806124', jerusalem:'#9c3a36', phoenicia:'#276c73', israel:'#466b96', jordan:'#5c7b58'
+};
+
+/* ============================================================
+   Base labels (seas, mountains, deserts). id -> [lat, lon, text, class, minzoom, rot, vertical]
+   ============================================================ */
+const BASE = {
+  med:[34.4,18.2,'地中海','sea big',3], black:[43.2,34.2,'黑海','sea big',3], caspian:[41.6,50.9,'里海','sea big',3,0,1],
+  red:[20.6,38.6,'红海','sea',3,58], gulf:[27.3,51.4,'波斯湾','sea',3,27], arabian:[17.5,63,'阿拉伯海','sea big',3],
+  atlantic:[41,-15,'大西洋','sea big',3], northsea:[55.6,3.2,'北海','sea',4],
+  taurus:[37.15,33.6,'托罗斯山脉','mtn',5,-8], pontic:[40.75,37.3,'本都山脉','mtn',6,-6],
+  zagros:[33.3,47.6,'扎格罗斯山脉','mtn',4,47], alborz:[36.45,52.6,'厄尔布尔士山脉','mtn',5,4],
+  hindukush:[35.55,69.3,'兴都库什山脉','mtn',5,-22], caucasus:[42.85,44.3,'高加索山脉','mtn',4,16],
+  alps:[46.5,10.2,'阿尔卑斯山脉','mtn',4,-4], apennines:[42.75,13.15,'亚平宁山脉','mtn',6,44],
+  pindus:[39.75,21.15,'品都斯山脉','mtn',6,0,1], balkanmts:[42.78,25.1,'巴尔干山脉','mtn',6,0],
+  dinaric:[43.95,17.4,'迪纳拉山脉','mtn',6,33], rhodope:[41.62,24.4,'罗多彼山脉','mtn',7,0],
+  carpathians:[47.4,24.6,'喀尔巴阡山脉','mtn',5,-12], atlas:[32.6,-3.2,'阿特拉斯山脉','mtn',4,-18],
+  armenianHL:[39.4,41.6,'亚美尼亚高原','mtn',6,0], kopetdag:[38.0,57.6,'科佩特山','mtn',6,-20],
+  sulaiman:[30.6,69.6,'苏莱曼山脉','mtn',6,0,1], lebanon:[34.15,36.05,'黎巴嫩山','mtn',7,60],
+  sahara:[24.5,12,'撒哈拉沙漠','desert',3], arabia:[23.5,45.5,'阿拉伯半岛','desert',3],
+  syrianDesert:[32.6,39.6,'叙利亚沙漠','desert',5], libyanDesert:[27.2,26.4,'利比亚沙漠','desert',5],
+  kavir:[34.6,54.4,'卡维尔盐漠','desert',6], lut:[30.6,58.6,'卢特沙漠','desert',6], sinai:[29.55,33.85,'西奈','desert',6]
+};
+
+/*__MARINE_LABELS__*/
+
+/* ============================================================
+   Entries
+   ============================================================ */
+const CH = ['总览','方位','东方的摇篮','高原帝国','希腊与马其顿','罗马','迦南与圣经'];
+
+const P = (n, lat, lon, note, kind, opt) => Object.assign({n, ll:[lat,lon], note, kind:kind||'city'}, opt||{});
+const LB = (t, lat, lon, cls, opt) => Object.assign({t, ll:[lat,lon], cls}, opt||{});
+
+/*__LABELS_DATES__*/
+
+/* Alexander: stops and the full path */
+const ALEX_STOPS = [
+  ['佩拉','前 334 春',40.76,22.52,'马其顿都城。大军约三万七千人由此出发。','city'],
+  ['赫勒斯滂 · 特洛伊','前 334',40.08,26.32,'渡海峡进入亚洲；先去特洛伊祭拜阿喀琉斯。','site'],
+  ['格拉尼库斯河','前 334 春',40.22,27.25,'第一场大战，击败小亚细亚的波斯总督联军。','battle'],
+  ['萨迪斯','前 334',38.49,28.04,'吕底亚旧都、波斯西部重镇，开城投降。','city'],
+  ['哈利卡那索斯','前 334 秋',37.04,27.42,'围攻得手（今土耳其博德鲁姆）。','city'],
+  ['戈尔迪乌姆','前 333 春',39.65,31.98,'“谁解开此结，谁就统治亚细亚”——他一剑斩断。','city'],
+  ['伊苏斯','前 333 秋',36.84,36.20,'击败大流士三世亲率的大军，大流士弃下家眷逃走。','battle'],
+  ['提尔','前 332',33.27,35.20,'围攻七个月，筑长堤把海岛城市连上大陆。','battle'],
+  ['孟菲斯','前 332 冬',29.85,31.25,'埃及不战而降，他被奉为法老。','city'],
+  ['亚历山大里亚','前 331 初',31.20,29.92,'亲自选址建城。','city'],
+  ['锡瓦绿洲','前 331',29.20,25.52,'阿蒙神谕称他为“神之子”。','site'],
+  ['高加米拉','前 331.10.1',36.57,43.43,'决战。波斯主力崩溃，大流士再次逃走。','battle'],
+  ['巴比伦','前 331 秋',32.54,44.42,'开城迎接。','city'],
+  ['苏萨','前 331 冬',32.19,48.25,'接收波斯国库。','city'],
+  ['波斯波利斯','前 330',29.93,52.89,'王宫被焚。','city'],
+  ['埃克巴坦那','前 330',34.80,48.52,'米底旧都。留下国库，继续追击大流士。','city'],
+  ['大流士之死','前 330 夏',36.15,54.35,'大流士三世被部下贝苏斯杀死（今达姆甘一带）。','site'],
+  ['赫拉特','前 330',34.35,62.20,'建“阿里亚的亚历山大里亚”。','city'],
+  ['坎大哈','前 330 冬',31.61,65.71,'建“阿拉霍西亚的亚历山大里亚”。','city'],
+  ['翻越兴都库什','前 329 春',35.00,69.27,'从今喀布尔以北翻过雪山，进入巴克特里亚。','site'],
+  ['巴克特拉','前 329',36.76,66.90,'今阿富汗巴尔赫，即汉代所说的大夏之地。','city'],
+  ['马拉坎达','前 329',39.65,66.96,'今撒马尔罕。此后两年在中亚苦战，前 327 年娶当地贵族之女罗克珊娜。','city'],
+  ['极远的亚历山大里亚','前 329',40.28,69.62,'今塔吉克斯坦苦盏，锡尔河畔，东征最北点。','city'],
+  ['塔克西拉','前 326',33.75,72.83,'渡过印度河，当地国王归附。','city'],
+  ['希达斯皮斯河','前 326 春',32.93,73.73,'击败印度王波罗斯和他的战象。','battle'],
+  ['希发西斯河','前 326',31.55,75.25,'士兵拒绝再前进，被迫回师——东征最东点。','site'],
+  ['马里人之城','前 325',30.20,71.47,'他率先登城，胸口中箭几乎丧命（今木尔坦一带）。','battle'],
+  ['帕塔拉','前 325',25.40,68.37,'印度河三角洲顶端。舰队由此出海，陆军向西。','city'],
+  ['格德罗西亚沙漠','前 325 秋',25.80,63.50,'沿今俾路支海岸西行约六十天，酷热缺水，死伤惨重。','site'],
+  ['卡尔马尼亚','前 325 冬',27.90,57.30,'与沿海岸航行的尼阿库斯舰队重逢。','city'],
+];
+const ALEX_LATE = [ // later events at already-visited places: [name, when, idx-of-stop, note]
+  ['苏萨','前 324 春',13,'集体婚礼：他和八十多名将领同日迎娶波斯贵族女子。'],
+  ['埃克巴坦那','前 324 秋',15,'挚友赫费斯提翁病死。'],
+  ['巴比伦','前 323.6',12,'病逝，年仅三十二岁。'],
+];
+const ALEX_PATH = [[40.76,22.52],[40.82,23.85],[40.85,25.9],[40.23,26.40],[39.96,26.24],[40.22,27.25],[38.49,28.04],[37.94,27.34],[37.53,27.28],[37.04,27.42],[36.36,29.32],[36.52,30.55],[36.96,30.85],[37.75,31.3],[39.65,31.98],[39.93,32.86],[38.7,34.6],[37.28,34.79],[36.92,34.90],[36.84,36.20],[35.6,35.85],[34.6,35.95],[34.12,35.65],[33.56,35.37],[33.27,35.20],[31.50,34.45],[31.04,32.55],[30.3,31.6],[29.85,31.25],[30.6,30.6],[31.20,29.92],[31.35,27.23],[29.20,25.52],[29.85,31.25],[30.5,31.9],[31.04,32.55],[31.50,34.45],[33.27,35.20],[33.51,36.29],[34.73,36.72],[36.20,37.16],[36.0,38.2],[36.65,40.2],[36.85,42.4],[36.57,43.43],[36.19,44.01],[35.0,44.4],[33.4,44.3],[32.54,44.42],[32.6,46.6],[32.19,48.25],[31.1,50.0],[30.67,51.55],[29.93,52.89],[30.20,53.17],[32.6,51.6],[34.80,48.52],[35.59,51.43],[35.45,52.4],[36.15,54.35],[36.6,55.8],[36.4,57.6],[36.3,59.6],[34.35,62.20],[32.37,62.11],[31.3,64.2],[31.61,65.71],[33.55,68.42],[35.00,69.27],[35.66,69.82],[36.73,68.86],[36.76,66.90],[37.22,67.27],[38.6,66.9],[39.65,66.96],[39.91,69.0],[40.28,69.62],[39.75,67.6],[38.4,67.0],[36.76,66.90],[36.2,68.4],[35.00,69.27],[34.43,70.45],[34.05,71.6],[34.00,72.43],[33.75,72.83],[32.93,73.73],[32.4,74.3],[31.55,75.25],[32.2,74.3],[32.93,73.73],[32.2,72.6],[31.2,72.2],[30.20,71.47],[29.0,70.6],[27.7,68.9],[26.4,68.0],[25.40,68.37],[25.3,67.5],[25.9,66.4],[25.75,65.0],[25.80,63.50],[26.1,62.0],[27.20,60.45],[27.90,57.30],[29.1,55.0],[30.20,53.17],[29.93,52.89],[31.2,50.4],[32.19,48.25],[33.4,46.4],[33.8,44.6],[34.4,46.0],[34.80,48.52],[33.9,46.4],[33.0,45.0],[32.54,44.42]];
+const NEARCHUS = [[25.40,68.37],[24.6,67.4],[24.75,66.5],[25.0,65.5],[25.05,64.6],[25.05,63.5],[24.95,62.3],[24.95,61.6],[25.15,60.6],[25.45,59.0],[25.5,57.8],[26.2,57.1],[26.85,56.7],[26.45,55.6],[26.5,54.5],[27.15,52.8],[27.9,51.5],[28.8,50.7],[29.4,50.15],[29.85,49.3],[30.05,48.85],[30.6,48.5],[31.4,48.5],[32.19,48.25]];
+const ROYAL_ROAD = [[38.49,28.04],[39.0,29.6],[39.65,31.98],[39.93,32.86],[39.2,34.4],[38.72,35.48],[38.35,38.31],[37.91,40.22],[37.3,42.2],[36.36,43.15],[36.19,44.01],[35.5,44.6],[34.4,45.5],[33.3,46.7],[32.19,48.25]];
+const VIA_APPIA = [[41.89,12.50],[41.29,13.25],[41.26,13.6],[41.08,14.25],[41.13,14.78],[40.96,15.81],[40.47,17.24],[40.64,17.94]];
+const VIA_EGNATIA = [[41.32,19.45],[41.11,20.08],[41.12,20.80],[41.01,21.34],[40.80,22.05],[40.76,22.52],[40.64,22.94],[40.82,23.85],[41.01,24.29],[40.94,24.41],[40.95,25.4],[40.92,25.98],[40.92,26.4],[40.98,27.0],[40.97,27.95],[41.01,28.98]];
+const VIA_FLAMINIA = [[41.90,12.48],[42.52,12.52],[42.73,12.73],[43.2,12.75],[43.84,13.02],[44.06,12.57]];
+const VIA_AURELIA = [[41.90,12.45],[42.09,11.80],[42.41,11.29],[42.9,10.8],[43.72,10.40]];
+const VIA_SALARIA = [[41.92,12.50],[42.40,12.86],[42.85,13.58],[42.90,13.90]];
+const SPLIT_395 = [[45.0,19.1],[44.2,19.3],[43.5,19.4],[42.6,19.0],[42.0,18.9],[38.0,18.5],[30.4,18.9]];
+const HADRIAN = [[54.99,-3.05],[55.0,-2.4],[55.0,-1.6]];
+// Late-Republic boundary between Italy proper and Cisalpine Gaul: Rubicon mouth, Apennine crest, Macra mouth (schematic).
+const ITALY_NORTH_LINE = [[44.16,12.44],[43.95,12.2],[43.79,12.07],[43.95,11.7],[44.15,11.0],[44.3,10.3],[44.4,9.9],[44.05,9.97]];
+const APENNINE_SPINE = [[44.4,8.6],[44.3,10.0],[43.9,11.5],[43.4,12.4],[42.8,13.0],[42.45,13.6],[41.9,14.2],[41.2,15.0],[40.5,15.6],[39.9,16.1],[39.2,16.4],[38.4,16.0]];
+
+const ENTRIES = [
+{ id:'overview', ch:0, title:'总览', short:'总览', c:'#5a4632',
+  sub:'Orbis Terrarum · 已知的世界',
+  view:[[19,-6],[50,74]],
+  html:`<p class="lede">先认清山海与地区，再把历史放回地图。三十二个地理概念，串起近东、地中海和希腊世界。</p>
+  <button class="map-jump" data-bounds="[[29.8,-7.5],[46.5,37.8]]">看地中海全景 · Mediterranean overview</button>
+  <p class="hint">海区、海峡、岛屿与群岛均有中英文标注；放大可见更多细节。蓝字是海域，棕字是岛屿。</p>
+  <ul>
+  <li><b>方位词</b>：近东、中东、远东——以欧洲为参照形成的区域称呼。</li>
+  <li><b>地理单元</b>：安纳托利亚、伊朗高原、巴尔干、亚平宁、爱琴海、亚得里亚海、尼罗河、美索不达米亚。</li>
+  <li><b>罗马的天下</b>：意大利诸区、山南高卢与卢比孔河、阿非利加、西班牙、高卢、不列颠，以及前27年的行省。</li>
+  <li><b>文化圈与地区名</b>：新月沃地、迦南、腓尼基、希腊世界、叙利亚、埃及——范围随语境和时代而变。</li>
+  <li><b>城市、国家与叙事</b>：耶路撒冷、以色列、约旦、波斯、马其顿与罗马等；保留出埃及和亚历山大东征作为地理参照。</li>
+  </ul>
+  <h3>沿着历史读地图</h3>
+  <p>“历史进程”从<b>上古与黑暗时代</b>进入<b>希腊城邦时代</b>，本次读到马其顿兴起。每节下方的阶段按钮会切换相关范围、路线和地点。部分阶段附有<b>人物小方块</b>：点开可看生平、当时的小事与参考资料，也可定位到相关城市。</p>
+  <p class="see"><a data-go="history-migration">开始阅读历史 →</a></p>
+  <div class="lao">山海是舞台，路线是联系，色块要带着年代看。老夫陪你一段段往下读。</div>
+  <p class="hint">可随时收起说明，把空间留给地图；展开后，正文与参考链接仍在这里。← → 切换当前目录的条目，手机可用上方菜单选节。</p>
+  <p class="hint"><b>读图须知</b>：色块是教学用概略区域；贸易网络、同盟与迁徙路线不等于国界。古代岸线与河道也与今天不同。现代国界仅供定位对照，不能由古代范围反推现代归属。</p>
+  <section class="sources"><h3>底图与地理参考</h3>
+  <a href="https://www.naturalearthdata.com/" target="_blank" rel="noopener noreferrer">Natural Earth · 陆地、水系与现代国界</a>
+  <a href="https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer" target="_blank" rel="noopener noreferrer">Esri · 地形底图</a>
+  <a href="https://server.arcgisonline.com/ArcGIS/rest/services/World_Shaded_Relief/MapServer" target="_blank" rel="noopener noreferrer">Esri · 近景地形</a>
+  <a href="https://leafletjs.com/" target="_blank" rel="noopener noreferrer">Leaflet · 交互地图</a>
+  <a href="https://www.britannica.com/place/Mesopotamia-historical-region-Asia" target="_blank" rel="noopener noreferrer">Britannica · 美索不达米亚</a>
+  <a href="https://www.britannica.com/place/Fertile-Crescent" target="_blank" rel="noopener noreferrer">Britannica · 新月沃地</a>
+  </section><p class="hint">本文件可直接打开。地形瓦片需要联网；离线仍能查看陆地轮廓、历史示意与全部正文。</p>`,
+  draw(d){
+    const S = {weight:1.4, fillOpacity:.13, opacity:.85};
+    d.region('crescent', COL.crescent, S); d.region('mesopotamia', COL.meso, S); d.region('syria', COL.syria, S);
+    d.region('egypt', COL.egypt, {weight:1, fillOpacity:.35}); d.region('anatolia', COL.anatolia, S); d.region('iranPlateau', COL.iran, S);
+    d.region('persis', COL.persia, {weight:1.4, fillOpacity:.3}); d.region('aegean', COL.aegean, {weight:1, fillOpacity:.22});
+    d.region('balkans', COL.balkans, S); d.region('macedon', COL.macedon, {weight:1.2, fillOpacity:.3});
+    d.region('adriatic', COL.adriatic, {weight:1, fillOpacity:.22}); d.region('apennine', COL.apennine, S);
+    d.region('greekCore', COL.greek, {weight:.8, fillOpacity:.12, dashArray:'3 3'});
+    d.line(ALEX_PATH, {color:COL.alex, weight:1.6, opacity:.55, dashArray:'2 5'});
+    d.pin(P('罗马', 41.9, 12.5, '', 'big', {go:'rome', left:1}));
+    d.region('canaan',COL.canaan,{weight:.9,fillOpacity:.12});
+    d.pin(P('耶路撒冷',31.778,35.235,'','city',{go:'jerusalem',labelZ:6,left:1}));
+    const L = [
+      ['新月沃地',37.55,38.0,'crescent',COL.crescent],['美索不达米亚',33.0,44.6,'mesopotamia',COL.meso],['叙利亚',34.4,37.4,'syria',COL.syria],
+      ['埃及',26.4,30.2,'egypt',COL.egypt],['尼罗河',21.3,31.0,'nile',COL.nile],['安纳托利亚',39.3,33.0,'anatolia',COL.anatolia],
+      ['伊朗高原',32.6,57.5,'iranPlateau',COL.iran],['波斯',29.0,53.2,'persia',COL.persia],
+      ['巴尔干',44.4,22.0,'balkans',COL.balkans],['马其顿',41.9,24.6,'macedon',COL.macedon],['希腊世界',38.45,21.2,'greek',COL.greek],
+      ['亚平宁',40.9,15.2,'apennine',COL.apennine],
+      ['亚历山大东征',38.4,63.0,'alexander',COL.alex],['罗马帝国',48.4,1.5,'empire',COL.empire],['近东 · 中东 · 远东',47.6,48.0,'orient','#5a4632']];
+    L.forEach(([t,la,lo,id,c]) => d.label(LB(t,la,lo,'region sm click ov'+(['egypt','persia','anatolia','empire','alexander','balkans','greek','orient'].includes(id)?'':' detail'),{c, go:id})));
+  }},
+
+{ id:'orient', ch:1, title:'近东 · 中东 · 远东', short:'近东·中东·远东', c:COL.middle,
+  sub:'Near East · Middle East · Far East',
+  view:[[-8,-14],[60,148]],
+  legend:[['fill',COL.near,'近东（19 世纪用法）'],['fill',COL.middle,'中东（早期波斯湾中心用法，示意）'],['dash','#6b3a1a','今日“中东”的通常范围'],['fill',COL.far,'远东（浅色为东南亚）']],
+  html:`<p class="lede">三个都是<b>方位词</b>：以西欧为原点，按离欧洲的远近给东方排座次，本身不对应任何山川边界。</p>
+  <ul>
+  <li><b>近东</b>：19 世纪欧洲人对奥斯曼帝国一带的叫法——巴尔干、安纳托利亚、黎凡特、两河、埃及，离欧洲最近。当时所谓“东方问题”，就是奥斯曼衰落后这片土地归谁。</li>
+  <li><b>中东</b>：19 世纪已有零星用例，1902 年美国海军战略家马汉（A. T. Mahan）在谈波斯湾的文章中使它流行，主要指近东与印度之间、波斯湾周围那一片。1939 年英军在开罗设“中东司令部”，随后二战中的广泛使用进一步扩大了这个词的范围，把不少原叫“近东”的地区也包了进去。</li>
+  <li><b>远东</b>：中国、日本、朝鲜半岛，广义还包括东南亚——欧洲人绕过非洲、走海路才到得了的“最远的东方”。</li>
+  <li><b>“近东”今天主要活在学术里</b>：“古代近东”指两河、埃及、黎凡特、安纳托利亚、伊朗西部这片最早的文明区——后面几条讲的多半就是它。</li>
+  <li>印度次大陆和中亚通常另称“印度”与“中亚”。三个“东”都没有统一边界，图中按现代国家拼成的色块只是帮助理解早期与今日用法，不是某一年的政治版图。</li>
+  </ul>
+  <div class="lao">这三个名字，都是从伦敦量出来的距离。从长安看，“远东”就在自家门口，“近东”倒在万里之外。</div>`,
+  draw(d){
+    d.region('middleToday', '#6b3a1a', {fill:false, weight:2.2, dashArray:'7 5', opacity:.85});
+    d.region('near', COL.near, {weight:1.2, fillOpacity:.38});
+    d.region('middle', COL.middle, {weight:1.2, fillOpacity:.38});
+    d.region('farCore', COL.far, {weight:1.2, fillOpacity:.4});
+    d.region('farSea', COL.far, {weight:1, fillOpacity:.16});
+    const lon = [51.5,-0.13];
+    d.pin(P('伦敦（观察者）', lon[0], lon[1], '这套说法的原点：19 世纪大英帝国的视角。', 'big'));
+    [[33.5,36.5],[31,58.5],[36,112]].forEach(t => d.line([lon,t], {color:'#5a4632', weight:1.2, opacity:.5, dashArray:'2 6'}));
+    d.label(LB('近东',36.6,33.8,'region',{c:COL.near}));
+    d.label(LB('中东',31.6,58.8,'region',{c:COL.middle}));
+    d.label(LB('今日“中东”',17.2,47.6,'region sm',{c:'#6b3a1a'}));
+    d.label(LB('远东',36.2,108,'region',{c:COL.far}));
+    d.label(LB('东南亚',13.5,103,'region sm',{c:COL.far}));
+    d.label(LB('印度次大陆',22.5,78.5,'note'));
+    d.label(LB('中亚',42.5,66,'note'));
+  }},
+
+{ id:'crescent', ch:2, title:'新月沃地', short:'新月沃地', c:COL.crescent,
+  sub:'Fertile Crescent · 肥沃的新月',
+  view:[[25.6,29],[39.6,50.5]],
+  legend:[['fill',COL.crescent,'新月沃地'],['fill','#9bb05a','广义：加上尼罗河谷'],['site','#2a2018','早期农业遗址']],
+  html:`<p class="lede">一条新月形的可耕地带：西端从黎凡特海岸起，向北弯过叙利亚北部和土耳其东南，再顺着两河向东南直抵波斯湾。月弯里抱着的是叙利亚沙漠。</p>
+  <ul>
+  <li><b>得名</b>：1916 年前后由美国芝加哥大学的埃及学家布雷斯特德（J. H. Breasted）推广开来，古人没有这个词。</li>
+  <li><b>为什么在这里</b>：冬季有雨，山前坡地多，河谷可以灌溉；野生的小麦、大麦、扁豆、豌豆、亚麻本来就长在这里，绵羊和山羊也在附近山地。一万多年前，人类在这里最早把它们驯化——<b>西亚的农业从这里起步</b>。</li>
+  <li><b>地标</b>：哥贝克力石阵（约前 9500 年，狩猎采集者立起的巨石圈），耶利哥（最早筑有石墙和石塔的聚落之一）。</li>
+  <li><b>广义</b>常把尼罗河谷也算进来（图中浅绿），新月就从埃及一路弯到波斯湾。</li>
+  <li><b>今属</b>：以色列、巴勒斯坦、黎巴嫩、约旦、叙利亚、土耳其东南、伊拉克，以及伊朗西缘。</li>
+  </ul>
+  <p class="see">下一步：<a class="go" data-go="mesopotamia">美索不达米亚</a><a class="go" data-go="syria">叙利亚</a><a class="go" data-go="nile">尼罗河</a></p>`,
+  show:['syrianDesert','zagros','taurus'],
+  draw(d){
+    d.region('crescentNile', '#9bb05a', {weight:1, fillOpacity:.3, dashArray:'4 3'});
+    d.region('crescent', COL.crescent, {weight:2, fillOpacity:.36});
+    d.pin(P('哥贝克力石阵', 37.223, 38.922, '约前 9500 年。狩猎采集者立起的巨石圈，比农业还早或几乎同时。', 'site'));
+    d.pin(P('耶利哥', 31.871, 35.444, '约前 9000 年起有人定居，前 8000 年前后筑起石墙与石塔。', 'site', {left:1}));
+    d.pin(P('杰尔莫', 35.55, 44.95, '约前 7000 年，扎格罗斯山前的早期农村。', 'site'));
+    d.pin(P('恰塔霍裕克', 37.667, 32.828, '约前 7000 年的大型聚落，在新月之外的安纳托利亚高原上。', 'site'));
+    d.label(LB('新 月 沃 地',37.9,41.2,'region',{c:COL.crescent}));
+    d.label(LB('尼罗河谷（广义）',27.2,32.6,'note'));
+  }},
+
+{ id:'mesopotamia', ch:2, title:'美索不达米亚', short:'美索不达米亚', c:COL.meso,
+  sub:'Μεσοποταμία · 两河之间',
+  view:[[29.4,37.6],[38.6,49.4]],
+  legend:[['fill',COL.meso,'美索不达米亚（两河及两岸平原）'],['dot','#2a2018','古城'],['mdot','#888','今日城市']],
+  html:`<p class="lede">希腊语“两河之间”，指<b>底格里斯河</b>与<b>幼发拉底河</b>之间及两岸的平原，大体就是今天的伊拉克，是新月沃地的东半弯。</p>
+  <ul>
+  <li><b>北与南</b>：北部是亚述（亚述城、尼尼微），有丘陵，能靠雨水种地；南部是巴比伦尼亚，平得像桌面，全靠开渠灌溉，最南端靠近海湾的是苏美尔。两河在巴格达一带靠得最近，大致就是南北分界。</li>
+  <li><b>最早的城市与文字</b>：约前 3200 年，苏美尔的乌鲁克出现了最早的文字，后来发展成楔形文字。六十进制也来自这里——一小时六十分、一圈三百六十度，都是它的遗产。</li>
+  <li><b>王朝更替</b>：苏美尔城邦 → 阿卡德帝国（萨尔贡，前 24 世纪）→ 古巴比伦（汉谟拉比法典，前 18 世纪）→ 亚述帝国（前 10–前 7 世纪）→ 新巴比伦（尼布甲尼撒）→ 前 539 年被波斯的居鲁士拿下。</li>
+  <li><b>和埃及的差别</b>：两河的洪水来得猛，时间又不对——春末，正赶上庄稼将熟。所以这里很早就要修堤、挖渠、立法、调集人力，城邦之间也常为水和地开战。</li>
+  <li><b>今属</b>：伊拉克为主，加上叙利亚东北和土耳其东南。</li>
+  </ul>`,
+  show:['zagros','syrianDesert','gulf'],
+  draw(d){
+    d.region('mesopotamia', COL.meso, {weight:2, fillOpacity:.28});
+    d.pin(P('乌鲁克', 31.322, 45.636, '约前 3200 年，最早的文字在这里出现。传说中吉尔伽美什的城。'));
+    d.pin(P('乌尔', 30.962, 46.103, '苏美尔名城，有巨大的塔庙。'));
+    d.pin(P('埃利都', 30.816, 45.996, '苏美尔传说中最古老的城。', 'city', {left:1}));
+    d.pin(P('尼普尔', 32.127, 45.231, '苏美尔的宗教中心。'));
+    d.pin(P('巴比伦', 32.542, 44.421, '汉谟拉比与尼布甲尼撒的都城。', 'city', {left:1}));
+    d.pin(P('亚述城', 35.456, 43.262, '亚述的发祥地与宗教都城。', 'city', {left:1}));
+    d.pin(P('尼尼微', 36.359, 43.153, '亚述帝国晚期的都城，在今摩苏尔对岸。', 'city', {left:1}));
+    d.pin(P('马里', 34.550, 40.889, '幼发拉底河中游的商贸城邦。'));
+    d.pin(P('泰西封', 33.094, 44.581, '后来安息与萨珊王朝的都城。'));
+    d.pin(P('巴格达', 33.315, 44.366, '今伊拉克首都，762 年建城——两河最靠近处。', 'modern', {left:1}));
+    d.label(LB('亚 述',36.0,44.6,'people'));
+    d.label(LB('巴比伦尼亚',32.4,43.0,'people'));
+    d.label(LB('苏 美 尔',31.7,46.8,'people'));
+    d.label(LB('上美索不达米亚（杰兹拉）',36.2,40.6,'people'));
+  }},
+
+{ id:'syria', ch:2, title:'叙利亚', short:'叙利亚', c:COL.syria,
+  sub:'Συρία · 沙姆（Bilad al-Sham）',
+  view:[[29.2,32.2],[37.8,41.4]],
+  legend:[['fill',COL.syria,'古代所说的“叙利亚”（黎凡特）'],['dash','#555','今天的叙利亚国界']],
+  html:`<p class="lede">古代说的“叙利亚”远比今天的国家大：北起托罗斯山脚，南到西奈，西临地中海，东到沙漠边——整个<b>黎凡特</b>都算。</p>
+  <ul>
+  <li><b>得名</b>：希腊人的叫法，多数学者认为是“亚述”（Assyria）的缩略。阿拉伯语叫“沙姆”（Bilad al-Sham）。</li>
+  <li><b>一条走廊</b>：西边是海，东边是沙漠，埃及、两河、安纳托利亚之间的陆路都得从这条窄带过，于是历代大国都在这里相撞。前 1274 年埃及的拉美西斯二世与赫梯在卡迭石大战，十几年后双方签下现存最早的和约之一。</li>
+  <li><b>海岸</b>是腓尼基人的城市（提尔、西顿、比布鲁斯）。他们把字母带遍地中海，希腊字母、拉丁字母都由此而来。</li>
+  <li><b>希腊罗马时代</b>：亚历山大死后，这里是塞琉古王国的心脏，都城安条克；前 64 年庞培把它设为罗马的叙利亚行省，安条克成了帝国东方仅次于亚历山大里亚的大城。</li>
+  <li><b>今天</b>：一战后英法瓜分，北半归法国（分出叙利亚与黎巴嫩），南半归英国（巴勒斯坦与外约旦）。古都安条克 1939 年划给了土耳其，即今天的安塔基亚。</li>
+  </ul>`,
+  show:['syrianDesert','lebanon','taurus'],
+  draw(d){
+    d.region('syria', COL.syria, {weight:2, fillOpacity:.3});
+    d.region('syriaModern', '#555', {fill:false, weight:1.8, dashArray:'6 5', opacity:.9});
+    d.pin(P('安条克', 36.202, 36.160, '塞琉古王国与罗马叙利亚行省的都城。今属土耳其，名安塔基亚。', 'city', {left:1}));
+    d.pin(P('阿勒颇', 36.20, 37.16, '叙利亚北部的商路枢纽。'));
+    d.pin(P('乌加里特', 35.602, 35.782, '约前 14 世纪的港城，出土了最早的字母表之一。', 'site', {left:1}));
+    d.pin(P('卡迭石', 34.557, 36.519, '前 1274 年，埃及与赫梯在此大战。', 'battle'));
+    d.pin(P('巴尔米拉', 34.551, 38.269, '沙漠商队城。3 世纪女王芝诺比娅一度割据，与罗马对抗。'));
+    d.pin(P('比布鲁斯', 34.121, 35.648, '腓尼基古城。希腊人从这里进口纸草，希腊语“书”（biblion）由此得名——Bible 一词也是。', 'city', {left:1}));
+    d.pin(P('西顿', 33.563, 35.371, '腓尼基城市。', 'city', {left:1}));
+    d.pin(P('提尔', 33.271, 35.196, '腓尼基城市，迦太基的母邦。', 'city', {left:1}));
+    d.pin(P('大马士革', 33.513, 36.292, '世界上持续有人居住最久的城市之一。'));
+    d.pin(P('耶路撒冷', 31.778, 35.235, ''));
+    d.label(LB('腓 尼 基',34.75,34.75,'people'));
+    d.label(LB('黎凡特',32.6,36.6,'region sm',{c:COL.syria}));
+  }},
+
+{ id:'nile', ch:2, title:'尼罗河', short:'尼罗河', c:COL.nile,
+  sub:'Νεῖλος · 埃及人只叫它“河”（iteru）',
+  view:[[-4,22.5],[32.5,43]],
+  legend:[['line',COL.nile,'尼罗河水系'],['cat','#235f93','第一至第六瀑布']],
+  html:`<p class="lede">世界最长的河之一（约 6,650 公里），<b>由南向北</b>流，穿过撒哈拉，把一条绿带一直送进地中海。</p>
+  <ul>
+  <li><b>两个源头</b>：白尼罗河出自维多利亚湖一带，水量稳定；青尼罗河出自埃塞俄比亚的塔纳湖，夏季风雨让它暴涨。两河在喀土穆汇合。</li>
+  <li><b>洪水从哪来</b>：到达埃及的河水，八成以上来自埃塞俄比亚高原（青尼罗河、阿特巴拉河、索巴特河）。每年 6 月起涨，8–9 月最高，退水后留下一层黑泥，田地年年自动施肥。古埃及人把一年分成泛滥、生长、收获三季。</li>
+  <li><b>六道瀑布</b>：阿斯旺到喀土穆之间有六处急流险滩（图中 Ⅰ–Ⅵ），船过不去，也就挡住了埃及往南；瀑布之间是努比亚，古称库施。</li>
+  <li><b>水往北流，风往南吹</b>：顺流漂下去北方，扬帆逆流回南方。象形文字里“往南走”画的正是一条张帆的船。</li>
+  <li>1970 年阿斯旺高坝建成，持续了几千年的年度洪水从此消失。</li>
+  </ul>
+  <div class="lao">有一篇托名老夫的《论尼罗河泛滥》，说洪水来自埃塞俄比亚夏天的大雨。希罗多德没想通的事，这回说对了。</div>`,
+  show:['sahara','red','arabia'],
+  draw(d){
+    ['nile','bluenile','atbara','sobat','kagera'].forEach(k => d.river(k, {color:COL.nile, weight:k==='nile'?3.4:2.4, opacity:.95}));
+    GEO.cataracts.forEach(c => d.pin({n:c.t==='Ⅰ'?'阿斯旺':'', ll:c.ll,
+      note:'第'+c.t+'瀑布。'+(c.t==='Ⅰ'?'阿斯旺附近，古埃及的南界；高坝于 1970 年建成。':c.t==='Ⅱ'?'瓦迪哈勒法附近，今天已被纳赛尔湖淹没。':'尼罗河上的急流险滩。'), kind:'cat', icon:c.t}));
+    d.pin(P('喀土穆', 15.6, 32.53, '白尼罗河与青尼罗河在此汇合。', 'modern', {left:1}));
+    d.pin(P('开罗', 30.04, 31.24, '三角洲的顶点。', 'modern', {left:1}));
+    d.pin({n:'维多利亚湖', ll:[-1.2,33.0], kind:'lake', note:'白尼罗河的源头之湖。'});
+    d.pin({n:'塔纳湖', ll:[12.0,37.3], kind:'lake', note:'青尼罗河的源头之湖，在埃塞俄比亚高原上。'});
+    d.label(LB('埃塞俄比亚高原',9.3,39.3,'mtn'));
+    d.label(LB('苏德沼泽',7.6,27.6,'note'));
+    d.label(LB('约一半的来水在湿地蒸散',6.8,27.6,'note'));
+    d.label(LB('努 比 亚',20.6,33.4,'people'));
+    d.label(LB('埃 及',27.0,32.6,'people'));
+  }},
+
+{ id:'egypt', ch:2, title:'埃及', short:'埃及', c:COL.egypt,
+  sub:'Αἴγυπτος · 凯美特（黑土地）',
+  view:[[21.6,24.6],[32.0,35.6]],
+  legend:[['fill',COL.egypt,'“黑土地”：河谷、三角洲与法尤姆'],['dash','#555','今天的埃及国界']],
+  html:`<p class="lede">埃及＝尼罗河两岸十几公里宽的绿带，加上下游的三角洲，其余全是沙漠。希罗多德说：<b>埃及是尼罗河的赠礼</b>。</p>
+  <ul>
+  <li><b>黑与红</b>：埃及人自称“凯美特”（黑土地，指河泥），沙漠叫“德什雷特”（红土地）。“埃及”一词出自希腊语 Aigyptos，一般认为源自孟菲斯一座普塔神庙的名字。</li>
+  <li><b>上下颠倒</b>：按水流命名——上游的南方河谷叫上埃及，下游的北方三角洲叫下埃及，正好与地图的上下相反。约前 3100 年两地统一，法老的双冠就是上下埃及两顶王冠合在一起。</li>
+  <li><b>天然城墙</b>：东西两侧是沙漠，南有瀑布，北是海，唯一的陆上门户在东北，经西奈通往叙利亚。外敌难入，所以三千年间文化出奇地稳定。</li>
+  <li><b>时间线</b>：吉萨金字塔（前 26 世纪）→ 新王国定都底比斯 → 前 525 年被波斯征服 → 前 332 年迎来亚历山大 → 托勒密王朝（末代女王克娄巴特拉，Cleopatra）→ 前 30 年成为罗马行省，罗马的粮仓。</li>
+  <li><b>今天</b>：九成以上的埃及人仍住在只占国土约二十分之一的河谷和三角洲上。</li>
+  </ul>`,
+  show:['libyanDesert','sinai','red'],
+  draw(d){
+    d.region('egyptModern', '#555', {fill:false, weight:1.6, dashArray:'6 5', opacity:.85});
+    d.region('egypt', COL.egypt, {weight:1.2, fillOpacity:.55});
+    d.river('nile', {color:COL.nile, weight:2, opacity:.9});
+    d.pin(P('亚历山大里亚', 31.20, 29.92, '前 331 年亚历山大建城，托勒密王朝的都城，有大灯塔与大图书馆。', 'city', {left:1}));
+    d.pin(P('佩卢西翁', 31.04, 32.55, '东北门户。前 525 年波斯在此击败埃及。'));
+    d.pin(P('孟菲斯', 29.85, 31.25, '古王国都城，正当上下埃及交界。'));
+    d.pin(P('吉萨金字塔', 29.979, 31.134, '前 26 世纪，胡夫金字塔。', 'site', {left:1}));
+    d.pin(P('法尤姆', 29.31, 30.84, '尼罗河西侧的湖盆绿洲。', 'site', {left:1}));
+    d.pin(P('底比斯（卢克索）', 25.70, 32.64, '新王国都城，帝王谷在河西。'));
+    d.pin(P('阿斯旺', 24.09, 32.90, '第一瀑布，古埃及的南界。'));
+    d.pin(P('阿布辛贝', 22.337, 31.626, '拉美西斯二世的岩凿神庙。', 'site', {left:1}));
+    d.pin(P('锡瓦绿洲', 29.20, 25.52, '阿蒙神谕所。亚历山大曾专程来此。', 'site'));
+    d.label(LB('下 埃 及',30.35,30.05,'people'));
+    d.label(LB('上埃及',26.6,32.15,'people',{v:1}));
+    d.label(LB('东部沙漠',26.6,33.7,'desert',{v:1}));
+    d.label(LB('努 比 亚',22.0,33.6,'people'));
+  }},
+
+{ id:'anatolia', ch:2, title:'安纳托利亚', short:'安纳托利亚', c:COL.anatolia,
+  sub:'Ἀνατολή · 小亚细亚（Asia Minor）',
+  view:[[35.6,25.6],[42.4,45.0]],
+  legend:[['fill',COL.anatolia,'安纳托利亚（今土耳其亚洲部分）'],['seal','','老夫行迹']],
+  html:`<p class="lede">今天土耳其的<b>亚洲部分</b>，又称小亚细亚：三面环海的大半岛，中间是平均海拔约一千米的高原，西隔海峡与欧洲相望。</p>
+  <ul>
+  <li><b>得名</b>：希腊语 anatolē，意为“日出之处”，即东方。“小亚细亚”是后来为区别于整个亚洲而起的叫法。</li>
+  <li><b>地形</b>：北有本都山脉，南有托罗斯山脉，夹着干冷的中部高原；温暖湿润的西海岸河谷通向爱琴海。</li>
+  <li><b>文明之桥</b>：赫梯人（都城哈图沙）、特洛伊、弗里吉亚（迈达斯王，都城戈尔迪乌姆）、吕底亚（都城萨迪斯，最早铸币的地方之一）。西海岸是希腊人的爱奥尼亚——泰勒斯在米利都开启了希腊哲学。</li>
+  <li><b>哈利斯河</b>（今克孜勒河）曾是吕底亚与米底的界河。前 547 年吕底亚王克罗伊斯渡河进攻波斯，应了神谕“一个大帝国将会毁灭”——毁的是他自己。</li>
+  <li><b>之后</b>：波斯、亚历山大、罗马的亚细亚诸行省，再到拜占庭的腹地；1071 年曼齐刻尔特之战后突厥人进入，这里逐渐成为今天的土耳其。</li>
+  <li><b>东界有弹性</b>：古典的小亚细亚到幼发拉底河上游为止，再往东是亚美尼亚高原；现代土耳其语的 Anadolu 则指整个亚洲部分（图中所示）。</li>
+  </ul>
+  <div class="lao">前 347 年柏拉图去世，老夫离开雅典，渡海到小亚细亚的阿索斯，在那里住了三年。</div>`,
+  show:['taurus','pontic','armenianHL','marmara','black','aegean'],
+  draw(d){
+    d.region('anatolia', COL.anatolia, {weight:2, fillOpacity:.22});
+    d.river('halys', {color:COL.nile, weight:2.2, opacity:.9});
+    d.pin(P('哈图沙', 40.020, 34.615, '赫梯帝国都城（约前 17–前 12 世纪）。'));
+    d.pin(P('特洛伊', 39.957, 26.239, '荷马史诗中的伊利昂。', 'site', {left:1}));
+    d.pin(P('萨迪斯', 38.488, 28.040, '吕底亚都城，后来是波斯御道的西端。'));
+    d.pin(P('以弗所', 37.940, 27.341, '阿耳忒弥斯神庙，古代世界七大奇迹之一。', 'city', {left:1}));
+    d.pin(P('米利都', 37.530, 27.278, '泰勒斯的故乡，希腊哲学的起点。', 'city', {left:1}));
+    d.pin(P('戈尔迪乌姆', 39.650, 31.980, '弗里吉亚都城，“戈尔迪之结”的故事发生地。'));
+    d.pin(P('恰塔霍裕克', 37.667, 32.828, '约前 7000 年的大型聚落。', 'site'));
+    d.pin(P('拜占庭（伊斯坦布尔）', 41.008, 28.978, '欧亚交界的海峡要冲。城在欧洲一侧。'));
+    d.pin(P('曼齐刻尔特', 39.145, 42.539, '1071 年拜占庭在此惨败，突厥人从此进入安纳托利亚。', 'battle'));
+    d.pin(P('阿索斯', 39.490, 26.337, '前 347–前 345 年，老夫在此。', 'lao', {left:1}));
+    d.label(LB('安纳托利亚高原',39.0,33.6,'region sm',{c:COL.anatolia}));
+    d.label(LB('卡帕多奇亚',38.55,35.3,'people'));
+    d.label(LB('吕底亚',38.85,29.0,'people'));
+    d.label(LB('弗里吉亚',39.25,30.7,'people'));
+    d.label(LB('爱奥尼亚',36.95,25.9,'people'));
+  }},
+
+{ id:'iranPlateau', ch:3, title:'伊朗高原', short:'伊朗高原', c:COL.iran,
+  sub:'Iranian Plateau · “雅利安人之地”',
+  view:[[24.2,43.0],[40.4,73.5]],
+  legend:[['fill',COL.iran,'伊朗高原（自然地理范围示意）']],
+  html:`<p class="lede">夹在两河平原与印度河之间的一大块高地：四周是山，中间是盐漠，平均海拔一千米以上。</p>
+  <ul>
+  <li><b>山的边框</b>：西南是扎格罗斯山脉，北面是厄尔布尔士山脉（最高峰达马万德峰，约 5,600 米），东北是科佩特山，东边接阿富汗的兴都库什山和巴基斯坦的苏莱曼山。</li>
+  <li><b>空心的中央</b>：卡维尔盐漠与卢特沙漠几乎无人，后者是地球表面测得温度最高的地方之一。人住在山脚的绿洲上，靠坎儿井（qanat）把山下的地下水引出来。</li>
+  <li><b>两支民族</b>：前一千纪，说伊朗语的米底人在西北建国（都城埃克巴坦那，今哈马丹），波斯人在西南（今法尔斯省）。“伊朗”一词即来自“雅利安人（之地）”。</li>
+  <li><b>通道</b>：高原北缘、厄尔布尔士山南麓那条线（呼罗珊大道）是连接两河与中亚的主路，后来成了丝绸之路的一段。</li>
+  <li><b>今属</b>：伊朗为主，加上阿富汗大部和巴基斯坦西部（俾路支）。</li>
+  </ul>`,
+  show:['zagros','alborz','hindukush','kopetdag','sulaiman','kavir','lut','caspian','gulf'],
+  draw(d){
+    d.region('iranPlateau', COL.iran, {weight:2, fillOpacity:.25});
+    d.pin(P('达马万德峰', 35.955, 52.110, '约 5,600 米，伊朗最高峰，也是亚洲最高的火山。', 'peak'));
+    d.pin(P('埃克巴坦那（哈马丹）', 34.80, 48.52, '米底王国的都城。'));
+    d.pin(P('德黑兰', 35.69, 51.39, '今伊朗首都。', 'modern', {left:1}));
+    d.pin(P('喀布尔', 34.53, 69.17, '今阿富汗首都。', 'modern', {left:1}));
+    d.label(LB('米 底',35.4,47.4,'people'));
+    d.label(LB('波 斯',29.9,53.6,'people'));
+    d.label(LB('呼罗珊',36.0,58.8,'people'));
+    d.label(LB('俾路支',27.6,64.6,'people'));
+    d.label(LB('伊 朗 高 原',32.8,61.0,'region',{c:COL.iran}));
+  }},
+
+{ id:'persia', ch:3, title:'波斯', short:'波斯', c:COL.persia,
+  sub:'Pārsa · Περσίς',
+  view:[[18,17],[47,77]],
+  legend:[['fill',COL.persia,'波斯本部（法尔斯）'],['dash',COL.persia,'阿契美尼德帝国，约前 500 年'],['line','#b8860b','御道（萨迪斯—苏萨）']],
+  html:`<p class="lede">本是伊朗高原西南一个地区的名字（古波斯语 Pārsa，今法尔斯省）。那里兴起了阿契美尼德王朝，希腊人便把整个帝国都叫作“波斯”。</p>
+  <ul>
+  <li><b>崛起</b>：前 550 年居鲁士大帝推翻米底，随后吞并吕底亚（前 547）、巴比伦（前 539）；其子冈比西斯征服埃及（前 525）。</li>
+  <li><b>极盛</b>：大流士一世时，西起色雷斯和利比亚，东到印度河，约 550 万平方公里，是当时世界上最大的国家（图中蓝色虚线范围）。全国分为二十多个行省，各设总督，地方宗教与习俗大体照旧。</li>
+  <li><b>御道</b>：从萨迪斯到苏萨约 2,700 公里，沿途 111 个驿站。步行要走三个月，驿马接力大约一周可到。希罗多德赞叹“无论雪雨、酷暑还是黑夜，都阻止不了这些信使”——这句话今天刻在纽约一座邮政大楼的门楣上。</li>
+  <li><b>都城不止一个</b>：苏萨、巴比伦、埃克巴坦那按季节轮住；波斯波利斯是举行礼仪的王都；帕萨尔加德有居鲁士墓。</li>
+  <li><b>与希腊</b>：前 490 年马拉松、前 480 年萨拉米斯，两次西征都没拿下希腊本土；前 330 年帝国亡于亚历山大。之后伊朗高原又兴起安息（帕提亚）与萨珊两大王朝，与罗马对峙约七百年。</li>
+  <li><b>名字</b>：1935 年伊朗政府要求各国改称“伊朗”。中文“波斯”即 Pārsa 的音译；汉代所说的“安息”是帕提亚。</li>
+  </ul>`,
+  show:['caspian','gulf','black'],
+  draw(d){
+    d.region('achaemenid', COL.persia, {weight:2, fillOpacity:.08, dashArray:'8 5'});
+    d.region('persis', COL.persia, {weight:2, fillOpacity:.5});
+    d.line(ROYAL_ROAD, {color:'#b8860b', weight:3, opacity:.95});
+    d.pin(P('帕萨尔加德', 30.20, 53.17, '居鲁士的都城与陵墓。'));
+    d.pin(P('波斯波利斯', 29.935, 52.891, '大流士始建的礼仪王都，前 330 年被亚历山大焚毁。', 'city', {left:1}));
+    d.pin(P('苏萨', 32.19, 48.25, '行政首都，御道的东端。'));
+    d.pin(P('埃克巴坦那', 34.80, 48.52, '夏都，米底旧都。'));
+    d.pin(P('巴比伦', 32.54, 44.42, '冬都。', 'city', {left:1}));
+    d.pin(P('萨迪斯', 38.49, 28.04, '御道的西端，吕底亚旧都。', 'city', {left:1}));
+    d.pin(P('马拉松', 38.15, 23.96, '前 490 年，雅典人在此击退波斯登陆部队。', 'battle', {left:1,labelZ:6}));
+    d.pin(P('萨拉米斯', 37.95, 23.55, '前 480 年，希腊联合舰队在此大败波斯海军。', 'battle', {left:1,labelZ:6}));
+    d.label(LB('希波战争',37.6,22.0,'note'));
+    d.pin(P('孟菲斯', 29.85, 31.25, '埃及行省的首府。'));
+    d.pin(P('巴克特拉', 36.76, 66.90, '巴克特里亚行省（汉代称大夏之地）。'));
+    d.pin(P('塔克西拉', 33.75, 72.83, '犍陀罗，帝国最东的行省之一。'));
+    d.label(LB('阿契美尼德帝国',39.6,57.5,'region',{c:COL.persia, sub:'约前 500 年，大流士一世时'}));
+    d.label(LB('御道',37.6,38.4,'note',{rot:-12}));
+  }},
+
+{ id:'aegean', ch:4, title:'爱琴海', short:'爱琴海', c:COL.aegean,
+  sub:'Αἰγαῖον πέλαγος',
+  view:[[34.6,21.6],[41.3,29.0]],
+  legend:[['fill',COL.aegean,'爱琴海'],['seal','','老夫行迹']],
+  html:`<p class="lede">希腊半岛与安纳托利亚之间的海。南边由克里特岛封口，东北经达达尼尔海峡、马尔马拉海和博斯普鲁斯海峡通往黑海。</p>
+  <ul>
+  <li><b>岛屿如阶</b>：中部是基克拉泽斯群岛（意为“环状群岛”，环绕圣岛提洛），东南是多德卡尼斯群岛，北边贴近小亚细亚的是莱斯博斯、希俄斯、萨摩斯。在这片海上航行，几乎随时都望得见下一座岛——早期的航海者就是在这里学会出海的。</li>
+  <li><b>风</b>：夏季吹稳定的北风（梅尔特米风，古称埃特西亚风），航海季就是夏天；冬季风暴多，船几乎都靠岸。</li>
+  <li><b>名字</b>：传说来自雅典国王埃勾斯——他以为儿子忒修斯死在了克里特，投海自尽。</li>
+  <li><b>文明序列</b>：克里特岛的米诺斯文明（克诺索斯）→ 希腊本土的迈锡尼文明 → 荷马笔下的特洛伊战争 → 古典希腊。约前 1600 年锡拉岛（今圣托里尼）火山大爆发，是这片海上最大的天灾。</li>
+  <li><b>今属</b>：海中岛屿绝大多数属希腊，东岸属土耳其，两国至今在领海和领空上争执不断。</li>
+  </ul>
+  <div class="lao">老夫在莱斯博斯岛的皮拉潟湖边住过两年，解剖章鱼，看鱼产卵，数海胆的牙。动物学就是在这片海边开始的。</div>`,
+  show:['aegean','marmara','dardanelles'], hideIslands:['lesbos','samos','santorini'],
+  draw(d){
+    d.region('aegean', COL.aegean, {weight:1.5, fillOpacity:.25});
+    d.pin(P('克诺索斯', 35.298, 25.163, '米诺斯王宫，迷宫传说的原型。'));
+    d.pin(P('迈锡尼', 37.731, 22.756, '传说中阿伽门农的城。', 'city', {left:1}));
+    d.pin(P('雅典', 37.972, 23.726, '', 'city', {left:1}));
+    d.pin(P('特洛伊', 39.957, 26.239, '荷马史诗中的伊利昂。'));
+    d.pin(P('提洛岛', 37.396, 25.269, '阿波罗的诞生地，提洛同盟的金库所在。'));
+    d.pin(P('锡拉（圣托里尼）', 36.40, 25.43, '约前 1600 年火山大爆发。','city',{en:'Santorini / Thera'}));
+    d.pin(P('萨摩斯', 37.69, 26.95, '毕达哥拉斯的故乡。'));
+    d.pin(P('莱斯博斯 · 皮拉潟湖', 39.18, 26.18, '前 345–前 343 年，老夫在此研究海洋生物。', 'lao', {left:1,en:'Lesbos · Pyrrha Lagoon'}));
+    // Sea, island and archipelago labels are shared across every chapter.
+  }},
+
+{ id:'greek', ch:4, title:'希腊世界', short:'希腊世界', c:COL.greek,
+  sub:'Ἑλλάς · 希伦人的世界',
+  view:[[29.4,-1],[47.5,42.5]],
+  legend:[['fill',COL.greek,'希腊本土、爱琴海与爱奥尼亚'],['fill','#6f93c9','大希腊（南意大利与西西里）'],['dot','#2a5aa0','殖民城邦'],['seal','','老夫行迹']],
+  html:`<p class="lede">古希腊从来不是一个国家，而是<b>一千多个城邦</b>结成的网，撒在地中海和黑海沿岸。柏拉图说，希腊人围着海住，<b>“像蚂蚁和青蛙围着池塘”</b>。</p>
+  <ul>
+  <li><b>核心</b>：希腊半岛、爱琴海诸岛和小亚细亚西海岸。山把半岛切成一块块小平原，一块平原养一个城邦——雅典、斯巴达、科林斯、底比斯各自为政。</li>
+  <li><b>大殖民</b>（前 8–前 6 世纪）：人多地少，就出海建新城。西到南意大利和西西里（罗马人称“大希腊”），远到今法国的马赛和西班牙；北到黑海沿岸；南到利比亚的昔兰尼。</li>
+  <li><b>凭什么算一个“世界”</b>：不靠政治，靠共同的语言（他们自称希伦人，外人一概是说话“叽里咕噜”的 barbaroi）、荷马史诗、德尔斐神谕和四年一度的奥林匹亚赛会。</li>
+  <li><b>拉丁字母的来历</b>：意大利库迈的希腊殖民者把字母教给伊特鲁里亚人，再传给罗马人——你现在看到的拉丁字母就是这样来的。</li>
+  <li>亚历山大之后，希腊语和希腊式城市一路铺到埃及、两河和中亚，称为<b>希腊化世界</b>。</li>
+  </ul>
+  <div class="lao">老夫和学生们收集整理过 158 个城邦的政制，只有一篇《雅典政制》留到了今天。</div>`,
+  show:['med','black','aegean','ionian'],
+  draw(d){
+    d.region('greekCore', COL.greek, {weight:1.4, fillOpacity:.35});
+    d.region('magnaGraecia', '#6f93c9', {weight:1.2, fillOpacity:.35});
+    const core = [['斯巴达',37.08,22.43,'',1],['科林斯',37.91,22.88,'地峡上的商业城邦，叙拉古的母邦。',0],['底比斯',38.32,23.32,'',0],
+      ['德尔斐',38.48,22.50,'阿波罗神谕所，“世界的肚脐”。',1],['奥林匹亚',37.64,21.63,'前 776 年起四年一度的赛会。',1],['米利都',37.53,27.28,'爱奥尼亚最大的城，自己就建了几十座殖民城。',0]];
+    core.forEach(([n,a,o,t,l]) => d.pin(P(n,a,o,t,'city',{left:l,labelZ:n==='斯巴达'||n==='米利都'?0:6})));
+    d.pin(P('雅典', 37.972, 23.726, '老夫在柏拉图学园二十年，后来在城外自办吕克昂学园。', 'lao'));
+    const col = [['叙拉古',37.07,15.29,'前 733 年科林斯人所建，西方最大的希腊城。'],['阿克拉加斯',37.29,13.58,'今阿格里真托，神庙谷。'],
+      ['塔拉斯',40.47,17.24,'前 706 年斯巴达人所建，今塔兰托。'],['克罗顿',39.08,17.13,'毕达哥拉斯学派的所在。'],
+      ['埃利亚',40.16,15.16,'巴门尼德和芝诺的故乡。'],['库迈',40.85,14.05,'意大利最早的希腊殖民地之一，字母由此西传。'],
+      ['马萨利亚',43.30,5.37,'约前 600 年福西亚人所建，今马赛。'],['恩波里翁',42.13,3.12,'意为“商站”，在今西班牙。'],
+      ['昔兰尼',32.82,21.86,'约前 631 年锡拉岛人所建，在今利比亚。'],['瑙克拉提斯',30.90,30.59,'法老特许的希腊商站，在尼罗河三角洲。'],
+      ['拜占庭',41.01,28.98,'约前 667 年墨伽拉人所建，今伊斯坦布尔。'],['锡诺普',42.03,35.15,'黑海南岸。'],
+      ['特拉佩祖斯',41.00,39.72,'今特拉布宗。'],['奥尔比亚',46.69,31.90,'第聂伯河口附近。'],
+      ['潘提卡彭',45.35,36.47,'今刻赤，黑海北岸的粮仓。'],['法西斯',42.15,41.67,'传说中金羊毛之地科尔基斯。']];
+    col.forEach(([n,a,o,t]) => d.pin(P(n,a,o,t,'colony',{labelZ:n==='埃利亚'||n==='克罗顿'||n==='阿克拉加斯'?6:0})));
+    d.label(LB('大希腊',39.55,15.9,'region sm',{c:'#4a72b0'}));
+  }},
+
+{ id:'balkans', ch:4, title:'巴尔干', short:'巴尔干', c:COL.balkans,
+  sub:'Balkan · 古称海穆斯（Haemus）',
+  view:[[35.6,12.6],[46.6,30.6]],
+  legend:[['fill',COL.balkans,'巴尔干半岛（以多瑙河—萨瓦河为北界）'],['line',COL.nile,'多瑙河、萨瓦河、库帕河']],
+  html:`<p class="lede">欧洲东南角的大半岛，西临亚得里亚海和伊奥尼亚海，南临爱琴海，东临黑海；北界通常取<b>多瑙河—萨瓦河</b>一线。希腊半岛是它的南端。</p>
+  <ul>
+  <li><b>得名</b>：土耳其语 balkan，意为“林木覆盖的山”，原是保加利亚境内一条山脉的名字（古称海穆斯山）。1808 年德国地理学家措伊内误以为这条山横贯整个半岛，就用它给半岛命名。</li>
+  <li><b>多山</b>：迪纳拉山脉、品都斯山脉、巴尔干山脉、罗多彼山脉把半岛切成许多互不相通的河谷和盆地，民族与政权也跟着碎成小块——“巴尔干化”一词由此而来。</li>
+  <li><b>古代族群</b>：西部是伊利里亚人，东部是色雷斯人，南部是马其顿人和希腊人；多瑙河以北是达契亚人。</li>
+  <li><b>此后</b>：罗马在这里设伊利里库姆、默西亚、色雷斯、马其顿、亚该亚诸行省；之后先后归拜占庭与奥斯曼，19 世纪“东方问题”的主战场就在这里，1914 年一战的导火索也在萨拉热窝点燃。</li>
+  <li><b>今属</b>：希腊、阿尔巴尼亚、北马其顿、保加利亚、塞尔维亚、黑山、波黑、科索沃，克罗地亚大部，以及土耳其的欧洲部分、罗马尼亚的多布罗加。</li>
+  </ul>`,
+  show:['pindus','balkanmts','dinaric','rhodope','carpathians','adriatic','aegean','black','ionian'],
+  draw(d){
+    d.region('balkans', COL.balkans, {weight:2, fillOpacity:.2});
+    ['danube','sava','kupa'].forEach(k => d.river(k, {color:COL.nile, weight:3, opacity:.9}));
+    d.pin(P('君士坦丁堡（拜占庭）', 41.01, 28.98, '330 年起为君士坦丁堡，东罗马与奥斯曼的都城。'));
+    d.pin(P('贝尔格莱德', 44.82, 20.46, '萨瓦河汇入多瑙河处，罗马时代叫辛吉杜努姆。', 'modern'));
+    d.pin(P('萨拉热窝', 43.86, 18.41, '1914 年，一战的导火索在此点燃。', 'modern'));
+    d.pin(P('塞萨洛尼基', 40.64, 22.94, '', 'city', {left:1}));
+    d.pin(P('雅典', 37.97, 23.73, ''));
+    d.label(LB('伊利里亚人',42.55,19.6,'people'));
+    d.label(LB('色雷斯人',41.95,26.3,'people'));
+    d.label(LB('马其顿人',40.95,21.6,'people'));
+    d.label(LB('希腊人',38.9,22.0,'people'));
+    d.label(LB('达契亚人',45.9,24.6,'people'));
+  }},
+
+{ id:'macedon', ch:4, title:'马其顿', short:'马其顿', c:COL.macedon,
+  sub:'Μακεδονία',
+  view:[[38.3,20.0],[42.1,25.4]],
+  legend:[['fill',COL.macedon,'马其顿本土（腓力二世时代，概略）'],['dash','#555','今天的北马其顿共和国'],['seal','','老夫行迹']],
+  html:`<p class="lede">希腊半岛北部的古王国，在奥林匹斯山以北、塞尔迈湾周围。它在希腊世界的边缘，被南方城邦看作半个蛮族，最后却统一了希腊。</p>
+  <ul>
+  <li><b>地理</b>：沿海是平原（下马其顿），内陆是山地小王国（上马其顿）。木材、马匹、牧场、潘盖翁山的金矿——南方城邦缺的这里都有。</li>
+  <li><b>都城</b>：先在埃盖（今维尔吉纳，1977 年在此发现推测为腓力二世的王陵），约前 400 年迁到更靠海的佩拉。</li>
+  <li><b>腓力二世</b>（前 359–前 336 年在位）：练出手持五六米长矛（萨里沙）的方阵，夺取安菲波利斯和金矿；前 338 年在喀罗尼亚击败雅典与底比斯联军，从此马其顿主宰希腊。前 336 年他在埃盖遇刺，儿子亚历山大继位，年方二十。</li>
+  <li><b>今天</b>：古马其顿的核心大部分在希腊北部的马其顿大区，首府塞萨洛尼基。北边的国家 2019 年改名“北马其顿”，正是为了和希腊的这片地区区分开。图中只示意马其顿本土，不把腓力对色萨利、色雷斯及全希腊的控制都画作同一种国境。</li>
+  </ul>
+  <div class="lao">老夫生在东边的斯塔基拉，父亲是马其顿王阿明塔斯的御医。前 343 年，腓力请老夫到米埃扎的宁芙圣所，教他十三岁的儿子——就是后来的亚历山大。</div>`,
+  show:['pindus','aegean'],
+  draw(d){
+    d.region('northMacedonia', '#555', {fill:false, weight:1.8, dashArray:'6 5', opacity:.85});
+    d.region('macedon', COL.macedon, {weight:2.2, fillOpacity:.25});
+    ['haliacmon','strymon','nestos'].forEach(k => d.river(k, {color:COL.nile, weight:1.8, opacity:.8}));
+    d.pin(P('佩拉', 40.759, 22.523, '约前 400 年起的都城，亚历山大的出生地。', 'big'));
+    d.pin(P('埃盖（维尔吉纳）', 40.479, 22.318, '旧都与王陵所在，腓力二世在此遇刺。', 'city', {left:1}));
+    d.pin(P('米埃扎', 40.643, 22.120, '前 343–前 340 年，老夫在此教亚历山大。', 'lao', {left:1}));
+    d.pin(P('斯塔基拉', 40.533, 23.750, '前 384 年，老夫生于此。', 'lao'));
+    d.pin(P('安菲波利斯', 40.822, 23.847, '前 357 年为腓力所取。', 'city', {left:1}));
+    d.pin(P('腓立比', 41.013, 24.284, '腓力以自己的名字命名，附近有金矿。'));
+    d.pin(P('潘盖翁山', 40.92, 24.08, '金银矿所在，马其顿的钱袋子。', 'peak', {left:1}));
+    d.pin(P('奥林索斯', 40.296, 23.354, '前 348 年被腓力夷平。', 'city', {left:1}));
+    d.pin(P('塞萨洛尼基', 40.640, 22.944, '前 315 年建城，以亚历山大的异母妹妹命名。'));
+    d.pin(P('奥林匹斯山', 40.086, 22.359, '2,918 米，希腊最高峰，诸神之山。', 'peak', {left:1}));
+    d.pin(P('喀罗尼亚', 38.50, 22.85, '前 338 年，马其顿在此击败雅典与底比斯。', 'battle'));
+    d.label(LB('上马其顿',40.45,21.35,'people'));
+    d.label(LB('卡尔基狄克',40.05,23.7,'people'));
+    d.label(LB('色萨利',39.45,22.2,'people'));
+    d.label(LB('色雷斯',41.4,25.0,'people'));
+    d.label(LB('塞尔迈湾',40.3,22.75,'note'));
+  }},
+
+{ id:'alexander', ch:4, title:'亚历山大东征', short:'亚历山大东征', c:COL.alex,
+  sub:'前 334 – 前 323',
+  view:[[22,19],[44.5,78]],
+  legend:[['line',COL.alex,'亚历山大的行军路线'],['dline','#1f4e79','尼阿库斯的舰队'],['dash',COL.persia,'被征服的波斯帝国']],
+  html:`<p class="lede">马其顿国王亚历山大从佩拉出发，十一年间<b>打穿整个波斯帝国</b>，一直走到印度河以东，最后死在巴比伦，年仅三十二岁。</p>
+  <ul>
+  <li><b>三战定波斯</b>：格拉尼库斯（前 334）、伊苏斯（前 333）、高加米拉（前 331）。此后是在中亚苦战三年，再打进印度。</li>
+  <li><b>边走边建城</b>：沿途建起十几座“亚历山大里亚”，从埃及一直到今天的阿富汗和塔吉克斯坦，最有名的是埃及那座。</li>
+  <li><b>回头</b>：前 326 年在希发西斯河（今比亚斯河），士兵拒绝再往东走，他只得回师；穿越格德罗西亚沙漠时损失惨重。舰队由尼阿库斯率领，沿海岸驶回波斯湾（图中蓝色虚线）。</li>
+  <li><b>身后</b>：帝国被部将瓜分——托勒密得埃及，塞琉古得叙利亚到伊朗，安提柯家族得马其顿。从此到前 30 年埃及并入罗马，称为希腊化时代。</li>
+  </ul>
+  <p class="hint">点时间线上的某一站，地图会飞过去。</p>
+  <ol class="tl" id="tl"></ol>
+  <div class="lao">他行军时，枕头底下压着老夫校订的《伊利亚特》。老夫的侄孙卡利斯提尼随军写史，前 327 年因反对跪拜礼获罪而死。老夫教得了他读荷马，没教会他节制。</div>`,
+  show:['caspian','gulf','hindukush','zagros','black','med','arabian'],
+  draw(d){
+    d.region('achaemenid', COL.persia, {weight:1.6, fillOpacity:.06, dashArray:'8 5'});
+    d.line(NEARCHUS, {color:'#1f4e79', weight:2.4, opacity:.9, dashArray:'6 6'});
+    d.route(ALEX_PATH, {color:COL.alex, weight:3.2, opacity:.95});
+    ['indus','jhelum','beas','oxus','jaxartes'].forEach(k => d.river(k, {color:COL.nile, weight:1.6, opacity:.75}));
+    const LEFT = new Set([0,1,3,4,8,9,10,12,15,16,17,18,25,27,28]);
+    ALEX_STOPS.forEach((s,i) => {
+      const late = ALEX_LATE.filter(x => x[2]===i);
+      const note = s[4] + late.map(x => `<br><em>${x[1]}</em>${x[3]}`).join('');
+      d.pin({n:s[0], ll:[s[2],s[3]], kind:'num', icon:String(i+1), note:`<em>${s[1]}</em>${note}`, left:LEFT.has(i), battle:s[5]==='battle', key:'a'+i,
+        labelZ:[0,6,9,11,12,20,25,29].includes(i)?0:6});
+    });
+    d.label(LB('波斯帝国',33.2,58.5,'region sm',{c:COL.persia}));
+  }},
+
+{ id:'adriatic', ch:5, title:'亚得里亚海', short:'亚得里亚海', c:COL.adriatic,
+  sub:'Mare Adriaticum',
+  view:[[39.2,11.6],[46.3,29.4]],
+  legend:[['fill',COL.adriatic,'亚得里亚海'],['line','#8a1c1c','阿庇亚大道 → 渡海 → 埃格纳提亚大道']],
+  html:`<p class="lede">意大利半岛与巴尔干之间的狭长海湾，长约 800 公里；南口的奥特朗托海峡最窄处只有约 72 公里，外接伊奥尼亚海。</p>
+  <ul>
+  <li><b>得名</b>：来自波河口附近的古港阿德里亚（Adria）。如今泥沙淤积，它已离海二十多公里。</li>
+  <li><b>两岸迥异</b>：西岸（意大利）平直，少良港；东岸（达尔马提亚）山海相逼，岸线曲折，大小岛屿上千座。</li>
+  <li><b>罗马跨海的第一步</b>：前 229 年，罗马为打击伊利里亚海盗第一次出兵对岸。此后的经典路线是：沿阿庇亚大道到布伦迪西乌姆（今布林迪西），渡海约 150 公里到都拉基乌姆（今阿尔巴尼亚都拉斯），再走埃格纳提亚大道横穿巴尔干，经马其顿直达拜占庭。</li>
+  <li><b>后来</b>：拉文纳是罗马帝国的舰队基地，402 年起成为西罗马首都；中世纪的威尼斯称霸这片海，号称“亚得里亚海的女王”。东岸斯普利特的老城，就建在戴克里先皇帝退位后所住的宫殿里。</li>
+  </ul>`,
+  show:['adriatic','ionian','tyrrhenian','dinaric','apennines','aegean','otranto'],
+  draw(d){
+    d.region('adriatic', COL.adriatic, {weight:1.5, fillOpacity:.28});
+    d.line(VIA_APPIA, {color:'#8a1c1c', weight:2.6, opacity:.9});
+    d.line([[40.64,17.94],[41.32,19.45]], {color:'#8a1c1c', weight:2.2, opacity:.9, dashArray:'4 5'});
+    d.line(VIA_EGNATIA, {color:'#8a1c1c', weight:2.6, opacity:.9});
+    d.pin(P('阿德里亚', 45.05, 12.06, '海名的由来。', 'site', {left:1}));
+    d.pin(P('威尼斯', 45.44, 12.33, '中世纪的“亚得里亚海女王”。', 'modern', {left:1}));
+    d.pin(P('拉文纳', 44.42, 12.20, '帝国舰队基地，402 年起为西罗马都城。', 'city', {left:1}));
+    d.pin(P('阿奎莱亚', 45.77, 13.37, '罗马在亚得里亚海北端的重镇。'));
+    d.pin(P('斯普利特', 43.51, 16.44, '戴克里先宫。'));
+    d.pin(P('罗马', 41.90, 12.50, '阿庇亚大道的起点。', 'big', {left:1}));
+    d.pin(P('布伦迪西乌姆', 40.64, 17.94, '阿庇亚大道的终点，渡海港口。', 'city', {left:1}));
+    d.pin(P('都拉基乌姆', 41.32, 19.45, '埃格纳提亚大道的起点。'));
+    d.pin(P('塞萨洛尼基', 40.64, 22.94, ''));
+    d.pin(P('拜占庭', 41.01, 28.98, '埃格纳提亚大道的终点，后来的君士坦丁堡。', 'city', {left:1}));
+    d.label(LB('达尔马提亚',44.0,16.15,'people',{rot:38}));
+    // Otranto is labelled in the shared maritime layer.
+    d.label(LB('阿庇亚大道',41.25,15.1,'note',{rot:12}));
+    d.label(LB('埃格纳提亚大道',41.25,24.6,'note'));
+  }},
+
+{ id:'apennine', ch:5, title:'亚平宁半岛', short:'亚平宁', c:COL.apennine,
+  sub:'Appennini · 意大利半岛',
+  view:[[36.4,6.6],[47.0,19.2]],
+  legend:[['fill',COL.apennine,'亚平宁半岛'],['fill','#c2a25a','波河平原（古称“山南高卢”）'],['dline','#6d4b2a','亚平宁山脉走向']],
+  html:`<p class="lede">就是意大利半岛，因纵贯全境、长约 1,200 公里的<b>亚平宁山脉</b>而得名，形状像一只伸进地中海的靴子。</p>
+  <ul>
+  <li><b>半岛本体</b>从亚平宁北麓起，广义的意大利地域则北抵阿尔卑斯山。山下的波河平原是意大利最肥的土地，但古罗马人很长时间不把它算作“意大利”，称它“山南高卢”，因为那里住着高卢人。界河是小小的卢比孔河——恺撒前 49 年带兵越过它，内战爆发，“渡过卢比孔河”从此成了“破釜沉舟”的意思。</li>
+  <li><b>山脉偏东</b>：亚平宁山贴着亚得里亚海一侧走，西坡留下较宽的平原和丘陵（伊特鲁里亚、拉丁姆、坎帕尼亚），所以重要城市多在西边。</li>
+  <li><b>古代族群</b>：北有伊特鲁里亚人，中有拉丁人、萨宾人和山里的萨莫奈人，南部海岸是希腊殖民城邦（“大希腊”），波河流域是高卢人。</li>
+  <li><b>位置</b>：半岛伸进地中海正中，东望希腊，南经西西里与迦太基隔海相对——罗马能统治整个地中海，这是地理上的底牌。</li>
+  <li><b>“意大利”这个名字</b>起初只指半岛最南端的一角（今卡拉布里亚），随罗马扩张一路北移，直到前 1 世纪后期才覆盖到阿尔卑斯山下。</li>
+  </ul>`,
+  show:['alps','tyrrhenian','adriatic','ionian'],
+  draw(d){
+    d.region('poValley', '#c2a25a', {weight:1.2, fillOpacity:.35});
+    d.region('apennine', COL.apennine, {weight:2, fillOpacity:.22});
+    d.line(APENNINE_SPINE, {color:'#6d4b2a', weight:4, opacity:.75, dashArray:'10 6'});
+    ['po','tiber','arno'].forEach(k => d.river(k, {color:COL.nile, weight:2, opacity:.85}));
+    d.pin(P('卢比孔河', 44.10, 12.40, '前 49 年 1 月，恺撒率军渡过此河。', 'site'));
+    d.pin(P('罗马', 41.90, 12.50, '', 'big', {go:'rome'}));
+    d.pin(P('迦太基', 36.85, 10.32, '隔西西里海峡与意大利相望。', 'city', {left:1}));
+    d.label(LB('亚 平 宁 山 脉',42.35,14.1,'mtn',{rot:44}));
+    d.label(LB('山南高卢',45.35,9.4,'people'));
+    d.label(LB('伊特鲁里亚',43.15,11.15,'people'));
+    d.label(LB('拉丁姆',41.65,12.9,'people'));
+    d.label(LB('萨莫奈',41.45,14.75,'people'));
+    d.label(LB('坎帕尼亚',40.9,14.55,'people'));
+    d.label(LB('大希腊',39.35,16.5,'people'));
+    // Sicily, Sardinia and Corsica remain visible in the shared maritime layer.
+  }},
+
+{ id:'rome', ch:5, title:'罗马', short:'罗马', c:COL.rome,
+  sub:'Roma · 先是一座城',
+  view:[[37.7,9.6],[44.6,18.6]],
+  legend:[['fill',COL.rome,'约前 264 年罗马控制的意大利'],['line','#8a1c1c','从罗马辐射出的大道']],
+  html:`<p class="lede">先是一座城：在台伯河下游东岸，离海约 25 公里，建在七座小山上。后来它的名字成了一个国家、一个帝国。</p>
+  <ul>
+  <li><b>选址</b>：台伯岛让这里成为河上最好的渡口；海边的盐沿着“盐路”（萨拉里亚大道）从这里运进内陆；城又正好卡在北面伊特鲁里亚与南面拉丁姆的交界——商路与边界的交点。</li>
+  <li><b>三段</b>：传说前 753 年罗慕路斯建城（王政）；前 509 年驱逐国王，建立共和国；前 27 年屋大维称“奥古斯都”，进入帝制。</li>
+  <li><b>从城到半岛</b>：约前 264 年，罗马已控制阿尔诺河—卢比孔河以南的整个半岛（图中红色）。随后三次布匿战争打败迦太基，前 146 年同一年里毁了迦太基和科林斯，成为地中海霸主。</li>
+  <li><b>条条大路</b>：前 312 年动工的阿庇亚大道是第一条，此后弗拉米尼亚、奥勒利亚、萨拉里亚等大道从城门辐射出去，图上画了几条。</li>
+  <li><b>今天</b>是意大利首都，城中还套着一个国家——梵蒂冈。</li>
+  </ul>`,
+  show:['tyrrhenian','adriatic','ionian'],
+  draw(d){
+    d.region('romanItaly264', COL.rome, {weight:1.6, fillOpacity:.22});
+    [VIA_APPIA, VIA_FLAMINIA, VIA_AURELIA, VIA_SALARIA].forEach(r => d.line(r, {color:'#8a1c1c', weight:2.4, opacity:.85}));
+    d.river('tiber', {color:COL.nile, weight:2.4, opacity:.9});
+    d.pin(P('罗马', 41.893, 12.483, '七丘之城，台伯岛旁的渡口。', 'big'));
+    d.pin(P('奥斯蒂亚', 41.755, 12.29, '台伯河口，罗马的海港。', 'city', {left:1}));
+    d.pin(P('维爱', 42.024, 12.401, '伊特鲁里亚强邻，前 396 年被罗马攻灭。', 'site', {left:1}));
+    d.pin(P('卡普阿', 41.08, 14.25, '坎帕尼亚大城，阿庇亚大道最初修到这里。'));
+    d.pin(P('塔伦图姆', 40.47, 17.24, '前 272 年降罗马，半岛统一。', 'city', {left:1}));
+    d.pin(P('布伦迪西乌姆', 40.64, 17.94, '阿庇亚大道的终点。'));
+    d.pin(P('阿里米努姆', 44.06, 12.57, '前 268 年建殖民城，弗拉米尼亚大道的终点。'));
+    d.pin(P('比萨', 43.72, 10.40, '', 'city', {left:1}));
+    d.label(LB('阿庇亚大道',41.05,15.5,'note',{rot:8}));
+    d.label(LB('弗拉米尼亚大道',43.25,13.2,'note',{rot:-70}));
+    d.label(LB('奥勒利亚大道',42.65,10.55,'note',{rot:-45}));
+    d.label(LB('伊特鲁里亚',42.95,11.6,'people'));
+    d.label(LB('拉丁姆',41.55,13.05,'people'));
+  }},
+
+{ id:'italia', ch:5, title:'意大利的分野', short:'意大利诸区', c:COL.italia,
+  sub:'Italia · 半岛上的几块地方',
+  view:[[37.7,7.4],[46.4,18.8]],
+  legend:[['fill',COL.etruria,'半岛诸区：古代族群地名，边界大致依奥古斯都的分区'],['fill','#cdbb86','山南高卢：波河流域，前42年才并入意大利'],['dline','#5a2a1a','意大利本土与山南高卢的界线（示意）']],
+  html:`<p class="lede">罗马人嘴里的“意大利”，很长时间只指卢比孔河以南的半岛。半岛又按族群分成几块，每一块都牵着一段罗马史。</p>
+  <ul>
+  <li><b>伊特鲁里亚（Etruria）</b>：台伯河以北，今托斯卡纳。伊特鲁里亚人会冶铁、做买卖，罗马王政晚期的塔克文王族就从这里来；前396年罗马攻灭了近邻维爱。</li>
+  <li><b>拉丁姆与坎帕尼亚（Latium, Campania）</b>：亚平宁西坡的平原。拉丁姆是拉丁人的老家，罗马在它北缘；坎帕尼亚是维苏威火山下最肥的地，卡普阿、那不勒斯、庞贝都在这里，罗马和萨莫奈人就是为争它打起来的。</li>
+  <li><b>中部山地（Samnium 等）</b>：亚平宁中段的山民，北有萨宾人、马尔西人、佩利尼人，南有萨莫奈人。罗马同萨莫奈人打了三次战争（前343—前290年）；前91年起兵的盟邦也以这些山民为主力，把科尔菲尼乌姆改名“意大利”当首都。</li>
+  <li><b>亚得里亚海一侧</b>：翁布里亚（Umbria）和皮切努姆（Picenum）。庞培家在皮切努姆有大片地产，前83年他就在这里自掏腰包募了三个军团去投苏拉。</li>
+  <li><b>南部</b>：阿普利亚（Apulia）是坎尼战场所在；卢卡尼亚（Lucania）和布鲁提乌姆（Bruttium）多山，汉尼拔在布鲁提乌姆一直待到前203年。沿海的希腊城邦合称“大希腊”，塔伦图姆最大。</li>
+  <li><b>后来</b>：奥古斯都把意大利分成十一个区，名字大多沿用这些族群地名。今天的大区名托斯卡纳、翁布里亚、拉齐奥、坎帕尼亚、普利亚，还看得出来历；只是古代的“卡拉布里亚”指靴跟，不是今天的靴尖。</li>
+  </ul>
+  <p class="see">相关：<a class="go" data-go="apennine">亚平宁半岛</a><a class="go" data-go="cisalpine">山南高卢与卢比孔河</a><a class="go" data-go="history-rome-social">同盟者战争</a></p>`,
+  show:['tyrrhenian','adriatic','ionian','alps'], hide:['apennines'],
+  draw(d){
+    const S = {weight:1.1, fillOpacity:.3, opacity:.85};
+    [['gEtruria',COL.etruria],['gUmbria','#7a8f4a'],['gPicenum','#4f7da0'],['gSamnium','#7a5a8a'],['gLatium','#a83a2a'],['gCampania','#c47a2b'],
+     ['gApulia','#b8963a'],['gLucania','#5c7b58'],['gBruttium','#8a6a4a']].forEach(([k,c]) => d.region(k, c, S));
+    ['gLiguria','gAemilia','gTranspadana'].forEach(k => d.region(k, '#cdbb86', {weight:.8, fillOpacity:.3, opacity:.7}));
+    d.line(ITALY_NORTH_LINE, {color:'#5a2a1a', weight:2.6, opacity:.85, dashArray:'8 6'});
+    ['po','tiber','arno'].forEach(k => d.river(k, {color:COL.nile, weight:1.8, opacity:.85}));
+    d.pin(P('罗马', 41.893, 12.483, '', 'big', {go:'rome'}));
+    d.pin(P('卡普阿', 41.08, 14.25, '坎帕尼亚第一大城；坎尼之后倒向汉尼拔，前211年被罗马收复。', 'city', {left:1}));
+    d.pin(P('科尔菲尼乌姆', 42.12, 13.84, '前91年起兵的盟邦以此为都，改名“意大利”。', 'site', {en:'Corfinium'}));
+    d.pin(P('坎尼', 41.31, 16.13, '前216年汉尼拔两翼合围罗马大军。', 'battle', {en:'Cannae'}));
+    d.pin(P('塔伦图姆', 40.47, 17.24, '大希腊最大的城邦，前272年降罗马。', 'city', {left:1, en:'Tarentum'}));
+    d.pin(P('雷吉乌姆', 38.11, 15.65, '靴尖上的希腊城，隔墨西拿海峡望西西里。', 'city', {left:1, en:'Rhegium'}));
+    d.pin(P('卢比孔河', 44.10, 12.40, '意大利本土与山南高卢的界河。点击看山南高卢。', 'site', {go:'cisalpine', en:'Rubicon'}));
+    [['伊特鲁里亚','Etruria',43.15,11.25],['翁布里亚','Umbria',43.5,12.75],['皮切努姆','Picenum',43.0,13.45],['拉丁姆','Latium',41.62,13.0],
+     ['坎帕尼亚','Campania',40.72,14.62],['萨莫奈','Samnium',41.45,14.75],['萨宾 · 马尔西','Sabini · Marsi',42.3,13.3],['阿普利亚','Apulia',41.62,15.8],
+     ['古卡拉布里亚','Calabria',40.12,18.25],['卢卡尼亚','Lucania',40.18,15.7],['布鲁提乌姆','Bruttium',39.0,16.35],['山南高卢','Gallia Cisalpina',45.25,9.6]]
+      .forEach(([t,en,a,o]) => d.label(LB(t,a,o,'people',{en, z:6})));
+    d.label(LB('大 希 腊',39.65,17.55,'note',{en:'Magna Graecia', z:6}));
+  }},
+
+{ id:'cisalpine', ch:5, title:'山南高卢与卢比孔河', short:'山南高卢', c:COL.cisalpine,
+  sub:'Gallia Cisalpina · 阿尔卑斯山这一侧的高卢',
+  view:[[43.4,6.7],[46.6,14.0]],
+  legend:[['fill','#c2a25a','波河以南（Cispadana）'],['fill','#9aa35c','波河以北（Transpadana，含维内蒂人地区）'],['fill','#5f8a8b','利古里亚'],['dline','#5a2a1a','与意大利本土的界线（示意）']],
+  html:`<p class="lede">波河平原，意大利最肥的土地。罗马人叫它“山这边的高卢”（Gallia Cisalpina），山指阿尔卑斯山，因为前400年前后起住在这里的是高卢人。共和时代它是一个行省，不算意大利，东南边的界河就是卢比孔河。</p>
+  <ul>
+  <li><b>高卢人与罗马</b>：前390年前后攻破罗马的高卢人，就是翻过阿尔卑斯山、经这片平原南下的。前225年罗马在泰拉蒙大败高卢联军，随即北上；前218年在波河边建普拉森提亚、克雷莫纳两座殖民城，同年汉尼拔翻过阿尔卑斯山，这里的高卢人纷纷投他。</li>
+  <li><b>波河两岸</b>：南岸叫“波河这边”（Cispadana），北岸叫“波河那边”（Transpadana）。前89年南岸拿到公民权，北岸只给拉丁权，也就是“绿卡”；北岸人争了四十年，前49年恺撒才给足公民权，北岸也成了他最可靠的兵源。卡图卢斯（维罗纳）、维吉尔（曼图亚）、李维（帕塔维乌姆）都生在北岸。</li>
+  <li><b>卢比孔河（Rubicon）</b>：一条流进亚得里亚海的小河。按苏拉的法律，总督只能在自己的行省里带兵，带兵越界就是叛国。前49年1月，恺撒带第十三军团从拉文纳南下过河，说了句“骰子已经掷出去了”。古卢比孔究竟是今天哪条河，争了几百年；如今的鲁比科内河是1933年才定的名。</li>
+  <li><b>恺撒的后院</b>：前59年起恺撒兼管山南高卢、伊利里库姆和山北高卢。冬天不打仗，他就回山南高卢办公、见罗马来的人；前56年三人续约的卢卡，就在这个行省的南端。</li>
+  <li><b>并入意大利</b>：前43年元老院的军队在穆提那打败安东尼，同年秋三巨头在博诺尼亚附近会面；前42年山南高卢行省取消，意大利从此北抵阿尔卑斯山。</li>
+  </ul>
+  <p class="see">相关：<a class="go" data-go="italia">意大利的分野</a><a class="go" data-go="gallia">高卢</a><a class="go" data-go="history-rome-caesar">恺撒</a></p>`,
+  show:['alps','ligurian','adriatic'],
+  draw(d){
+    d.region('gEtruria', COL.etruria, {weight:.6, fillOpacity:.1, opacity:.5});
+    d.region('gUmbria', '#7a8f4a', {weight:.6, fillOpacity:.1, opacity:.5});
+    d.region('gLiguria', '#5f8a8b', {weight:1.1, fillOpacity:.3});
+    d.region('gAemilia', '#c2a25a', {weight:1.1, fillOpacity:.34});
+    d.region('gTranspadana', '#9aa35c', {weight:1.1, fillOpacity:.3});
+    d.line(ITALY_NORTH_LINE, {color:'#5a2a1a', weight:2.8, opacity:.9, dashArray:'8 6'});
+    ['po','arno'].forEach(k => d.river(k, {color:COL.nile, weight:2.2, opacity:.9}));
+    d.pin(P('卢比孔河', 44.10, 12.40, '前49年1月恺撒带第十三军团渡过此河，内战爆发。', 'site', {left:1, en:'Rubicon'}));
+    d.pin(P('拉文纳', 44.42, 12.20, '恺撒渡河前驻在这里。', 'city'));
+    d.pin(P('阿里米努姆', 44.06, 12.57, '恺撒渡河后拿下的第一座城，今里米尼。', 'city', {en:'Ariminum'}));
+    d.pin(P('普拉森提亚', 45.05, 9.69, '前218年和克雷莫纳同年建的殖民城，今皮亚琴察。', 'city', {left:1, en:'Placentia'}));
+    d.pin(P('梅狄奥拉努姆', 45.46, 9.19, '因苏布雷高卢人的中心，今米兰。', 'city', {en:'Mediolanum'}));
+    d.pin(P('维罗纳', 45.44, 10.99, '诗人卡图卢斯的家乡。', 'city', {en:'Verona'}));
+    d.pin(P('曼图亚', 45.16, 10.79, '诗人维吉尔的家乡。', 'city', {en:'Mantua'}));
+    d.pin(P('帕塔维乌姆', 45.41, 11.88, '史家李维的家乡，今帕多瓦。', 'city', {en:'Patavium'}));
+    d.pin(P('阿奎莱亚', 45.77, 13.37, '前181年建的殖民城，扼守东北门户。', 'city'));
+    d.pin(P('穆提那', 44.647, 10.925, '前43年4月，元老院的军队在此打败安东尼，两位执政官都战死。', 'battle', {left:1, en:'Mutina'}));
+    d.pin(P('博诺尼亚', 44.494, 11.343, '前43年秋，三巨头在附近河洲上会面，结成后三头。', 'city', {en:'Bononia'}));
+    d.pin(P('卢卡', 43.84, 10.50, '前56年恺撒在此会见庞培、克拉苏，续订三人同盟。', 'city', {en:'Luca'}));
+    [['波河以南','Cispadana',44.85,11.35],['波河以北','Transpadana',45.75,9.4],['利古里亚','Liguria',44.35,8.3],['维内蒂人','Veneti',45.62,12.35],['意大利本土','Italia',43.62,11.6]]
+      .forEach(([t,en,a,o]) => d.label(LB(t,a,o,'people',{en})));
+  }},
+
+{ id:'africa', ch:5, title:'迦太基与阿非利加', short:'阿非利加', c:COL.africa,
+  sub:'Carthago · Africa · 一个大洲因一个行省得名',
+  view:[[32.8,-6.4],[38.2,11.8]],
+  legend:[['dash','#7a3b1c','迦太基本土，约前264年'],['fill',COL.rome,'阿非利加行省（前146年）'],['dash',COL.rome,'新阿非利加（前46年恺撒并入）'],['fill','#c79a4b','努米底亚王国，约前112年'],['fill','#9b7a5a','毛里塔尼亚王国']],
+  html:`<p class="lede">今天的突尼斯北部。迦太基城坐在伸进海里的半岛上，扼住西西里海峡，正是地中海东西两半的腰眼。罗马人把这块地叫“阿非利加”，后来整个大洲都跟着叫了这个名字。</p>
+  <ul>
+  <li><b>迦太基（Carthage）</b>：传说前814年由推罗人建立，腓尼基语叫“新城”（Qart-hadasht）。它靠海上贸易和北非的大庄园致富，控制过西西里西部、撒丁和西班牙南部。城里有个圆形军港，环港和港中小岛上的船坞能停两百多艘战舰。</li>
+  <li><b>阿非利加行省</b>：前146年迦太基被毁，罗马把它最后那块地设为行省，首府乌提卡。最肥的是巴格拉达斯河（今迈杰尔达河）谷，后来是罗马的粮仓之一。迦太基城后来照恺撒的计划重建为殖民城，帝国时代又成了西部仅次于罗马的大城。</li>
+  <li><b>努米底亚（Numidia）</b>：迦太基西边的柏柏尔人王国，以轻骑兵闻名。马西尼萨帮罗马打赢扎马之战；他的孙子朱古达贿赂罗马元老，离开罗马时说这是一座“待价而沽的城，只要找到买主，很快就会灭亡”。前46年恺撒在塔普苏斯打败小加图一派和努米底亚王朱巴，把东部并为“新阿非利加”。</li>
+  <li><b>毛里塔尼亚（Mauretania）</b>：再往西，今摩洛哥北部和阿尔及利亚西部，同努米底亚以穆卢耶河为界，和今天的毛里塔尼亚国不是一回事。国王波库斯是朱古达的岳父，前105年却把他交给了苏拉。前25年奥古斯都让朱巴的儿子朱巴二世在这里当国王，王后是克娄巴特拉和安东尼的女儿。</li>
+  <li><b>名字</b>：“阿非利加”起初只指这一个行省，来历说法不一，可能出自当地一个部族名。后来阿拉伯人把这一带叫“伊弗里基叶”，指的还是以突尼斯为中心的这块地方。</li>
+  </ul>
+  <p class="see">相关：<a class="go" data-go="history-rome-punic">布匿战争</a><a class="go" data-go="history-rome-marius">马略的兵</a><a class="go" data-go="hispania">希斯帕尼亚</a></p>`,
+  show:['alboran','gibraltar','gulfGabes','balearic','tyrrhenian'], hide:['sicilyChannel'],
+  draw(d){
+    d.region('gMauretania', '#9b7a5a', {weight:1.2, fillOpacity:.26});
+    d.region('hNumidia', '#c79a4b', {weight:1.2, fillOpacity:.28});
+    d.region('hAfrica146', COL.rome, {weight:1.6, fillOpacity:.32});
+    d.region('gAfricaNova', COL.rome, {fill:false, weight:1.8, dashArray:'3 5', opacity:.9});
+    d.region('hCarthageAfrica', '#7a3b1c', {fill:false, weight:2, dashArray:'7 5', opacity:.8});
+    d.river('moulouya', {color:COL.nile, weight:2, opacity:.9});
+    d.pin(P('迦太基', 36.853, 10.323, '前146年被毁；后来照恺撒的计划重建为罗马殖民城。', 'big'));
+    d.pin(P('乌提卡', 37.057, 10.06, '阿非利加行省的首府；前46年小加图在此自尽。', 'city', {left:1, en:'Utica'}));
+    d.pin(P('扎马', 36.2, 9.2, '前202年大西庇阿在此击败汉尼拔，位置概略。', 'battle', {left:1, en:'Zama'}));
+    d.pin(P('塔普苏斯', 35.62, 11.05, '前46年恺撒在此击溃元老派和努米底亚王朱巴。', 'battle', {en:'Thapsus'}));
+    d.pin(P('锡尔塔', 36.365, 6.614, '努米底亚的都城，今君士坦丁。', 'city', {en:'Cirta'}));
+    d.pin(P('恺撒利亚', 36.6, 2.19, '原名约尔，朱巴二世的都城，今舍尔沙勒。', 'city', {en:'Caesarea (Iol)'}));
+    d.pin(P('廷吉斯', 35.78, -5.81, '毛里塔尼亚的海港，今丹吉尔。', 'city', {en:'Tingis'}));
+    [['毛里塔尼亚','Mauretania',33.9,-4.2],['努米底亚','Numidia',35.0,3.6],['阿非利加','Africa',35.25,9.85]]
+      .forEach(([t,en,a,o]) => d.label(LB(t,a,o,'people',{en})));
+    d.label(LB('新阿非利加',34.55,7.4,'note',{en:'Africa Nova'}));
+    d.label(LB('穆卢耶河',34.55,-3.0,'river',{rot:62, en:'Moulouya (Mulucha)'}));
+  }},
+
+{ id:'hispania', ch:5, title:'希斯帕尼亚（西班牙）', short:'西班牙', c:COL.hispania,
+  sub:'Hispania · 罗马打得最久的地方',
+  view:[[35.6,-10.0],[44.2,4.0]],
+  legend:[['dash','#7a3b1c','巴卡家族的西班牙，约前219年'],['fill',COL.hispania,'罗马已控制，约前133年'],['fill','#c9ad72','前133—前19年陆续征服']],
+  html:`<p class="lede">伊比利亚半岛，罗马人叫它希斯帕尼亚（Hispania），今天的西班牙和葡萄牙。中间是高原，四周是山，几条大河从高原流向海边。罗马从前218年登陆，到前19年平定北方山区，整整打了两百年。</p>
+  <ul>
+  <li><b>迦太基的西班牙</b>：第一次布匿战争丢了西西里，汉尼拔的父亲哈米尔卡带着家人来西班牙，靠银矿另起一个帝国，以新迦太基（今卡塔赫纳）为都。罗马接手以后，据波利比乌斯说，这里的银矿有四万人干活，每天给罗马挣两万五千德拉克马。</li>
+  <li><b>埃布罗河（Ebro）</b>：前226年罗马和迦太基以它为界。汉尼拔攻下河南的罗马盟友萨贡托，第二次布匿战争由此打响；前209年大西庇阿奇袭新迦太基，三年后把迦太基人赶出了西班牙。</li>
+  <li><b>两个行省，打不完的仗</b>：前197年设近西班牙（东北）和远西班牙（南部）两省。高原上的凯尔特伊比利亚人、西边的卢西塔尼亚人一打就是几十年，前133年小西庇阿才攻下努曼提亚。在西班牙当兵是苦差，前151年、前138年保民官两次为征兵把执政官关进监狱：公民兵制度的裂缝，最早就是在这里露出来的。</li>
+  <li><b>内战的第二战场</b>：马略派的塞多留在这里割据八年，在奥斯卡给当地贵族子弟办罗马式学校，庞培打得很吃力。恺撒在伊莱尔达、蒙达两次在这里打庞培派；蒙达之后他说，以前是为胜利而战，这一回是为性命而战。</li>
+  <li><b>最后平定</b>：北部坎塔布里亚山区到前19年才被阿格里帕打下来，奥古斯都把西班牙分成三个行省。此后这里罗马化很深：图拉真、哈德良的家族都出自意大利卡城，哲学家塞涅卡生在科尔杜巴；西班牙语和葡萄牙语都是从拉丁语变来的。</li>
+  </ul>
+  <p class="see">相关：<a class="go" data-go="history-rome-punic">布匿战争</a><a class="go" data-go="history-rome-pompey">庞培与克拉苏</a><a class="go" data-go="africa">迦太基与阿非利加</a></p>`,
+  show:['alboran','gibraltar','balearic'],
+  draw(d){
+    d.region('gIberia', '#c9ad72', {weight:1, fillOpacity:.42, opacity:.8});
+    d.region('hHispania133', COL.hispania, {weight:1.4, fillOpacity:.3});
+    d.region('hBarcidSpain', '#7a3b1c', {fill:false, weight:2, dashArray:'7 5', opacity:.8});
+    ['ebro','tagus','douro','baetis'].forEach(k => d.river(k, {color:COL.nile, weight:2, opacity:.9}));
+    d.pin(P('新迦太基', 37.6, -0.98, '巴卡家族的都城，银矿所在，今卡塔赫纳。', 'city', {en:'Carthago Nova'}));
+    d.pin(P('萨贡托', 39.68, -0.27, '罗马的盟友；前219年被汉尼拔攻破。', 'city', {en:'Saguntum'}));
+    d.pin(P('加的斯', 36.53, -6.29, '腓尼基人建的古港，传说比迦太基还早。', 'city', {left:1, en:'Gades'}));
+    d.pin(P('塔拉科', 41.12, 1.25, '近西班牙的首府，今塔拉戈纳。', 'city', {en:'Tarraco'}));
+    d.pin(P('科尔杜巴', 37.88, -4.78, '远西班牙的首府，塞涅卡的家乡，今科尔多瓦。', 'city', {left:1, en:'Corduba'}));
+    d.pin(P('意大利卡', 37.44, -6.05, '前206年大西庇阿安置伤兵所建；图拉真、哈德良的家族出自这里。', 'city', {left:1, en:'Italica'}));
+    d.pin(P('努曼提亚', 41.81, -2.44, '前133年小西庇阿围困攻破。', 'battle', {en:'Numantia'}));
+    d.pin(P('奥斯卡', 42.14, -0.41, '塞多留的根据地，今韦斯卡。', 'city', {en:'Osca'}));
+    d.pin(P('伊莱尔达', 41.617, 0.62, '前49年恺撒在此逼降庞培的两员大将。', 'battle', {en:'Ilerda'}));
+    d.pin(P('蒙达', 37.42, -4.85, '前45年恺撒在此击败庞培的两个儿子，战场位置不确定。', 'battle', {en:'Munda'}));
+    [['凯尔特伊比利亚人','Celtiberi',40.95,-3.3],['卢西塔尼亚人','Lusitani',39.15,-7.9],['坎塔布里亚人','Cantabri',43.05,-4.6]]
+      .forEach(([t,en,a,o]) => d.label(LB(t,a,o,'people',{en})));
+    d.label(LB('近西班牙',40.25,-1.2,'note',{en:'Hispania Citerior'}));
+    d.label(LB('远西班牙',37.05,-4.0,'note',{en:'Hispania Ulterior'}));
+    [['埃布罗河',41.2,-0.1,-30,'Ebro (Iberus)'],['塔霍河',39.78,-5.4,8,'Tagus'],['杜罗河',41.72,-4.6,0,'Douro'],['瓜达尔基维尔河',38.15,-3.2,-12,'Guadalquivir (Baetis)']]
+      .forEach(([t,a,o,rot,en]) => d.label(LB(t,a,o,'river',{rot, en})));
+  }},
+
+{ id:'gallia', ch:5, title:'高卢', short:'高卢', c:COL.gallia,
+  sub:'Gallia · “高卢全境分为三部分”',
+  view:[[42.2,-5.4],[51.6,9.6]],
+  legend:[['fill',COL.rome,'行省（Provincia），前121年设'],['fill','#b8963a','阿基坦人'],['fill','#7a8f4a','凯尔特人（罗马人叫高卢人）'],['fill','#4f7da0','比利其人']],
+  html:`<p class="lede">阿尔卑斯山那一边的高卢（Gallia Transalpina），大约是今天的法国、比利时，加上莱茵河以西的德国和瑞士西部。恺撒的《高卢战记》第一句就是：“高卢全境分为三部分。”</p>
+  <ul>
+  <li><b>行省（Provincia）</b>：地中海沿岸的一条，前121年设省，前118年建纳博殖民城，打通去西班牙的陆路。罗马人干脆叫它“行省”，这个词留在了地名里，就是今天的普罗旺斯。马西利亚（今马赛）是前600年前后希腊人建的城，罗马的老盟友。</li>
+  <li><b>三部分</b>：行省以北是“长发高卢”（Gallia Comata），一个个自由的部落。恺撒说，加龙河以南是阿基坦人；塞纳河、马恩河以北是比利其人，“他们最勇敢”，因为离行省的奢侈品最远，又天天和莱茵河对岸的日耳曼人打仗；中间自称凯尔特人，罗马人叫他们高卢人。</li>
+  <li><b>北方来的恐惧</b>：前113年起辛布里人、条顿人南下，前105年在阿劳西奥一天歼灭罗马两支大军。罗马让马略连任执政官，他在阿奎塞克斯提埃、韦尔切利两战全歼。对北方蛮族的恐惧，后来成了恺撒出兵的理由。</li>
+  <li><b>恺撒征服</b>：前58—前50年，他以赫尔维提人迁徙、日耳曼人阿里奥维斯图斯入境为由出兵，八年打到莱茵河和大西洋。前52年维钦托利在比布拉克特被推为全高卢的统帅，在日尔戈维亚打退恺撒，最后在阿莱西亚投降。</li>
+  <li><b>后来</b>：奥古斯都把长发高卢分成三个行省，名字基本照恺撒的三分；三省的中心卢格杜努姆（今里昂）是前43年建的。高卢人学说拉丁语，学成了今天的法语。</li>
+  </ul>
+  <p class="see">相关：<a class="go" data-go="history-rome-marius">马略的兵</a><a class="go" data-go="history-rome-triumvirate">前三头</a><a class="go" data-go="britannia">不列颠</a></p>`,
+  show:['alps','gulfLion','ligurian','northsea'],
+  draw(d){
+    const S = {weight:1.1, fillOpacity:.28, opacity:.85};
+    d.region('gAquitani', '#b8963a', S); d.region('gCeltae', '#7a8f4a', S); d.region('gBelgae', '#4f7da0', S);
+    d.region('hNarbonensis', COL.rome, {weight:1.4, fillOpacity:.3});
+    ['rhone','rhine','seine','marne','loire','garonne'].forEach(k => d.river(k, {color:COL.nile, weight:2, opacity:.9}));
+    d.pin(P('马西利亚', 43.30, 5.37, '前600年前后希腊人建的城，今马赛。', 'city', {left:1, en:'Massilia'}));
+    d.pin(P('纳博', 43.18, 3.0, '前118年建的殖民城，行省的首府。', 'city', {left:1, en:'Narbo'}));
+    d.pin(P('阿奎塞克斯提埃', 43.529, 5.447, '前102年马略在此全歼条顿人。', 'battle', {labelZ:7, en:'Aquae Sextiae'}));
+    d.pin(P('阿劳西奥', 44.138, 4.807, '前105年罗马两支大军在此被辛布里人歼灭。', 'battle', {en:'Arausio'}));
+    d.pin(P('卢格杜努姆', 45.76, 4.83, '前43年建，后来三个高卢行省的中心，今里昂。', 'city', {en:'Lugdunum'}));
+    d.pin(P('日尔戈维亚', 45.71, 3.12, '前52年维钦托利在此打退恺撒。', 'battle', {left:1, en:'Gergovia'}));
+    d.pin(P('比布拉克特', 46.92, 4.04, '埃杜伊人的山城；前52年各部在此推维钦托利为统帅。', 'site', {en:'Bibracte'}));
+    d.pin(P('阿莱西亚', 47.537, 4.50, '前52年维钦托利在此投降。', 'battle', {en:'Alesia'}));
+    d.pin(P('阿瓦利库姆', 47.08, 2.40, '前52年被恺撒攻破，城中四万人几乎无人幸免。', 'battle', {left:1, en:'Avaricum'}));
+    d.pin(P('卢泰西亚', 48.85, 2.35, '巴黎西人的岛城，今巴黎。', 'city', {en:'Lutetia'}));
+    [['阿基坦人','Aquitani',44.0,-0.4],['凯尔特人','Celtae',46.35,0.6],['比利其人','Belgae',50.0,3.4],['赫尔维提人','Helvetii',46.75,7.35],['日耳曼尼亚','Germania',50.6,9.0]]
+      .forEach(([t,en,a,o]) => d.label(LB(t,a,o,'people',{en})));
+    d.label(LB('行省（普罗旺斯）',43.82,3.75,'note',{en:'Provincia'}));
+    d.label(LB('比斯开湾',45.6,-3.3,'sea',{en:'Bay of Biscay'}));
+    d.label(LB('英吉利海峡',50.2,-1.6,'sea',{en:'English Channel'}));
+    [['塞纳河',49.25,1.0,-15,'Seine'],['马恩河',49.1,3.75,0,'Marne'],['卢瓦尔河',47.2,-0.4,5,'Loire'],['加龙河',44.75,-0.05,-35,'Garonne'],['罗讷河',45.15,5.0,-84,'Rhône']]
+      .forEach(([t,a,o,rot,en]) => d.label(LB(t,a,o,'river',{rot, en})));
+  }},
+
+{ id:'britannia', ch:5, title:'不列颠', short:'不列颠', c:COL.britannia,
+  sub:'Britannia · 大洋那边的岛',
+  view:[[49.5,-9.6],[58.8,4.0]],
+  legend:[['fill',COL.britannia,'罗马的不列颠行省：公元43年起，北到哈德良长城'],['fill','#cfd6c4','喀里多尼亚：始终没打下来'],['line','#2a2018','哈德良长城（122年起）'],['dline','#8a1c1c','恺撒渡海（前55、前54年）']],
+  html:`<p class="lede">大西洋上的大岛，隔着最窄约33公里的海峡与高卢相望。罗马人觉得它在“大洋”（Oceanus）之外，是世界的边上。</p>
+  <ul>
+  <li><b>锡</b>：青铜要锡，不列颠西南角早就以产锡出名。前4世纪末，马西利亚的希腊人皮西亚斯绕岛航行，留下了最早的记录。</li>
+  <li><b>恺撒两次登陆</b>：前55年、前54年两次渡海。第二回带了五个军团，过泰晤士河打败卡西维拉努斯，收了人质、定了贡赋就走，没有设省。他的理由是不列颠人一直在接济高卢；在罗马，这是“越过大洋”的壮举，第一次渡海之后元老院就宣布了二十天的感恩祭。</li>
+  <li><b>真正征服</b>：近一百年后，公元43年克劳狄乌斯皇帝出兵设省，自己带着大象进了卡穆洛杜努姆。60年前后布狄卡女王起义，烧了伦迪尼乌姆。</li>
+  <li><b>北界</b>：苏格兰高地（喀里多尼亚）始终没拿下，122年起哈德良修长城为界。爱尔兰（希伯尼亚）罗马人从没去打。</li>
+  <li><b>后来</b>：410年前后罗马军队撤走。和高卢、西班牙不同，不列颠人后来不说拉丁语，英语是后来渡海来的盎格鲁—撒克逊人的语言。</li>
+  </ul>
+  <p class="see">相关：<a class="go" data-go="gallia">高卢</a><a class="go" data-go="empire">罗马帝国</a></p>`,
+  show:['northsea'],
+  draw(d){
+    d.region('gCaledonia', '#cfd6c4', {weight:.8, fillOpacity:.32, opacity:.7});
+    d.region('gBritannia', COL.britannia, {weight:1.4, fillOpacity:.26});
+    d.river('thames', {color:COL.nile, weight:2.2, opacity:.9});
+    d.line(HADRIAN, {color:'#2a2018', weight:4, opacity:.9});
+    d.line([[50.73,1.6],[51.0,1.62],[51.22,1.40]], {color:'#8a1c1c', weight:2.4, opacity:.9, dashArray:'4 5'});
+    d.pin(P('伊提乌斯港', 50.73, 1.60, '恺撒从这里渡海，大约在今布洛涅一带，具体港口有争议。', 'site', {en:'Portus Itius'}));
+    d.pin(P('恺撒登陆处', 51.22, 1.40, '前55、前54年两次登陆，大约在今迪尔一带。', 'site', {left:1, en:'Caesar\'s landing'}));
+    d.pin(P('伦迪尼乌姆', 51.51, -0.09, '罗马人在泰晤士河上建的城，今伦敦。', 'city', {left:1, en:'Londinium'}));
+    d.pin(P('卡穆洛杜努姆', 51.89, 0.90, '克劳狄乌斯入城处，罗马在不列颠的第一座殖民城，今科尔切斯特。', 'city', {en:'Camulodunum'}));
+    d.pin(P('莫纳', 53.27, -4.35, '今安格尔西岛，德鲁伊的圣地，60年被罗马军攻占。', 'site', {left:1, en:'Mona'}));
+    d.pin(P('哈德良长城', 55.0, -2.4, '122年起修建，帝国的西北边墙。', 'site'));
+    [['不列颠','Britannia',52.6,-1.7],['喀里多尼亚','Caledonia',57.2,-4.3],['希伯尼亚','Hibernia',53.4,-7.9]]
+      .forEach(([t,en,a,o]) => d.label(LB(t,a,o,'people',{en})));
+    d.label(LB('英吉利海峡',50.15,-1.8,'sea',{en:'English Channel'}));
+    d.label(LB('泰晤士河',51.75,-1.55,'river',{en:'Thames'}));
+  }},
+
+{ id:'provinces', ch:5, title:'罗马的行省（至前27年）', short:'行省', c:COL.provinces,
+  sub:'Provinciae · 前241—前27年',
+  view:[[27.2,-9.8],[51.8,41.5]],
+  legend:[['fill',COL.rome,'意大利'],['fill','#c47a2b','前241—前197年：布匿战争所得'],['fill','#b8963a','前148—前101年：征服地中海'],['fill','#5f8a8b','前74—前30年：庞培、恺撒、屋大维']],
+  html:`<p class="lede">“行省”（provincia）原意是派给某位官员的差事。罗马打下海外的地方，每年派一位司法官，或卸任的执政官、司法官去管，这块地就成了他的“差事”。到前27年，地中海四周几乎都成了罗马的行省，图上标的是设省年份。</p>
+  <ul>
+  <li><b>第一批</b>：西西里（前241）、撒丁和科西嘉（前238年夺取，前227年设省）、近西班牙和远西班牙（前197），都是从迦太基手里拿来的。</li>
+  <li><b>征服地中海</b>：马其顿（前148）、阿非利加（前146）、亚细亚（前133，帕加马国王遗赠，提比略·格拉古就想拿它的国库给农民买农具）、山北高卢（前121）、奇里乞亚（前102年起，打海盗的据点）。希腊归马其顿总督兼管，前27年才单设阿凯亚行省。</li>
+  <li><b>最后一波</b>：昔兰尼（前96年遗赠，前74年设省）、比提尼亚（前74年遗赠）、克里特（前67）、本都（前63年并入比提尼亚）、叙利亚（前64）、塞浦路斯（前58年，克洛狄乌斯派小加图去接收）、长发高卢（前58—前50年征服）、新阿非利加（前46）、埃及（前30）。行省外面还有一圈附庸王国，如加拉太、卡帕多西亚、犹太、色雷斯，名义独立，实际听罗马的。</li>
+  <li><b>怎么管</b>：总督任期通常一年，带兵、审案，税包给骑士阶层的包税公司去收。当一任总督，足以还清竞选欠下的债：西塞罗控告的维雷斯在西西里三年，据说捞了四千万塞斯特斯。罗马政坛的选票和贿金，很大一部分是从行省来的。</li>
+  <li><b>前27年</b>：奥古斯都和元老院分行省。边疆要驻兵的归他，派自己的副将去管；内地太平的归元老院，照旧抽签派总督。兵在谁手里，一目了然。</li>
+  </ul>
+  <p class="see">相关：<a class="go" data-go="history-rome-gracchi">格拉古兄弟</a><a class="go" data-go="history-rome-augustus">后三头与奥古斯都</a><a class="go" data-go="empire">罗马帝国（117年）</a></p>`,
+  hide:Object.keys(MEDITERRANEAN_SEAS).concat(['black','caspian','red','gulf','northsea','alps','atlas','caucasus','taurus','pontic','zagros','sahara','arabia','syrianDesert','libyanDesert','dinaric','pindus','balkanmts','carpathians','armenianHL','apennines','rhodope','lebanon','sinai']),
+  hideIslands:MEDITERRANEAN_ISLANDS.map(i => i[0]),
+  draw(d){
+    const S = {weight:.9, fillOpacity:.34, opacity:.8};
+    ['gTranspadana','gLiguria','gAemilia','gEtruria','gUmbria','gPicenum','gLatium','gCampania','gApulia','gLucania','gBruttium','gSamnium']
+      .forEach(k => d.region(k, COL.rome, {weight:0, fillOpacity:.42}));
+    ['hSicily','hSardCorsica','gIberia'].forEach(k => d.region(k, '#c47a2b', S));
+    ['gMacedonia','hAfrica146','gAsia','hNarbonensis','gCilicia'].forEach(k => d.region(k, '#b8963a', S));
+    d.region('gIllyricum', '#b8963a', {weight:.8, fillOpacity:.16, opacity:.6, dashArray:'3 4'});
+    ['gCyrenaica','hCrete','gBithyniaPontus','hSeleucidSyria','gCyprus','hGaulComata','gAfricaNova','egypt'].forEach(k => d.region(k, '#5f8a8b', S));
+    d.pin(P('罗马', 41.893, 12.483, '', 'big', {go:'rome'}));
+    [['西西里 前241',37.0,14.2],['撒丁 · 科西嘉 前227',40.4,6.6],['西班牙 前197',39.7,-4.2],['马其顿 前148',41.3,21.6],['阿非利加 前146',35.1,10.6],
+     ['亚细亚 前133',38.6,28.6],['山北高卢 前121',43.55,3.2],['奇里乞亚 前102',36.75,34.6],['昔兰尼 前74',31.6,21.9],['比提尼亚—本都 前74',41.7,34.0],
+     ['克里特 前67',35.75,24.9],['叙利亚 前64',34.2,38.6],['塞浦路斯 前58',34.75,31.0],['长发高卢 前58—前50',47.4,2.4],['新阿非利加 前46',33.4,6.2],['埃及 前30',28.3,29.0],
+     ['伊利里库姆',44.3,16.4]].forEach(([t,a,o]) => d.label(LB(t,a,o,'note',{en:'\u200b', z:4})));
+    d.label(LB('意大利',42.75,12.9,'people',{en:'Italia'}));
+  }},
+
+{ id:'empire', ch:5, title:'罗马帝国', short:'罗马帝国', c:COL.empire,
+  sub:'Imperium Romanum · 公元 117 年',
+  view:[[21.5,-11],[56.5,50]],
+  legend:[['fill',COL.empire,'罗马帝国，117 年（图拉真去世时）'],['fill','#d4807a','图拉真东扩（114–117，旋即放弃）'],['dline','#2a2018','395 年东西分界'],['dash',COL.persia,'对照：阿契美尼德波斯，约前 500 年']],
+  html:`<p class="lede">以地中海为内湖的帝国——罗马人干脆管它叫<b>“我们的海”</b>（Mare Nostrum）。117 年图拉真去世时版图最大，约 500 万平方公里。</p>
+  <ul>
+  <li><b>边界靠自然屏障</b>：北是莱茵河—多瑙河，南是撒哈拉，东是幼发拉底河与叙利亚沙漠，西是大西洋，西北到不列颠（几年后修了哈德良长城）。多瑙河北岸的达契亚（今罗马尼亚）是图拉真 106 年新征服的。</li>
+  <li><b>短暂的东扩</b>：114–117 年图拉真越过幼发拉底河，设亚美尼亚、美索不达米亚等行省，一度打到波斯湾；他一死，继任的哈德良就放弃了（图中浅色部分）。</li>
+  <li><b>分裂</b>：395 年狄奥多西一世死后，帝国永久分为东西两半（图中黑色虚线）。西罗马 476 年灭亡；东罗马以君士坦丁堡为都，一直延续到 1453 年。他们始终自称“罗马人”，“拜占庭帝国”是 16 世纪西欧学者起的名字。</li>
+  <li><b>和波斯比一比</b>：两者面积相当（蓝色虚线是阿契美尼德波斯）。波斯是陆上帝国，靠御道把高原和河谷串起来；罗马是环海帝国，地中海就是它的高速公路——把粮食从地中海一头运到另一头，比用车走一百多公里陆路还便宜。</li>
+  </ul>
+  <p class="see">回看：<a class="go" data-go="persia">波斯</a><a class="go" data-go="alexander">亚历山大东征</a><a class="go" data-go="overview">总览</a></p>
+  <p class="see">历史进程：<a class="go" data-go="history-empire-antonine">五贤帝（117年）</a><a class="go" data-go="history-empire-constantine/3">君士坦丁：新罗马（330年）</a><a class="go" data-go="history-empire-theodosius">狄奥多西：国教与分治（395年）</a><a class="go" data-go="history-empire-west-fall">西罗马的终结（476年）</a></p>`,
+  show:['atlantic','black','caspian','red','gulf','northsea','sahara'], hide:['med'],
+  draw(d){
+    d.region('achaemenid', COL.persia, {fill:false, weight:2, dashArray:'8 6', opacity:.8});
+    d.region('trajanEast', '#d4807a', {weight:1, fillOpacity:.3, color:'#b85a52'});
+    d.region('romanEmpire', COL.empire, {weight:1.6, fillOpacity:.24});
+    ['rhine','danube'].forEach(k => d.river(k, {color:COL.nile, weight:2.4, opacity:.9}));
+    d.line(SPLIT_395, {color:'#2a2018', weight:2.2, opacity:.85, dashArray:'3 6'});
+    d.line(HADRIAN, {color:'#2a2018', weight:4, opacity:.9});
+    d.pin(P('罗马', 41.90, 12.50, '帝国的首都。', 'big'));
+    d.pin(P('君士坦丁堡', 41.01, 28.98, '330 年君士坦丁迁都于此，东罗马延续到 1453 年。', 'big'));
+    d.pin(P('亚历山大里亚', 31.20, 29.92, '帝国第二大城，粮船从这里开往罗马。', 'city', {left:1}));
+    d.pin(P('安条克', 36.20, 36.16, '叙利亚行省首府。', 'city', {left:1}));
+    d.pin(P('迦太基', 36.85, 10.32, '前 146 年被毁，后作为罗马城市重建，阿非利加行省首府。'));
+    d.pin(P('伦迪尼乌姆', 51.51, -0.09, '今伦敦。'));
+    d.pin(P('哈德良长城', 55.0, -2.4, '122 年起修建，帝国的西北边墙。', 'site'));
+    d.label(LB('我 们 的 海',35.0,18.6,'sea big',{force:1}));
+    [['不列颠',52.6,-1.9],['高卢',46.8,2.4],['希斯帕尼亚',40.0,-4.2],['意大利',43.3,11.6],['阿非利加',33.6,9.0],
+     ['埃及',27.0,30.6],['叙利亚',34.4,37.6],['小亚细亚',39.1,32.6],['达契亚',46.0,24.4],['美索不达米亚',33.6,43.6],['日耳曼尼亚（帝国之外）',52.0,11.0]]
+     .forEach(([t,a,o]) => d.label(LB(t,a,o,'people')));
+  }},
+/*__LEVANT_ENTRIES__*/
+];
+ENTRIES.forEach(e => Object.assign(e,META[e.id]));
+ENTRIES.sort((a,b)=>a.ch-b.ch);
+/*__HISTORY_ENTRIES__*/
+/*__HISTORICAL_FIGURES__*/
+ENTRIES.push(...HISTORY_ENTRIES);
+
+/* ============================================================
+   Map setup
+   ============================================================ */
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const map = L.map('map', {zoomControl:false, minZoom:1, maxZoom:10, zoomSnap:0.25, zoomDelta:0.5, wheelPxPerZoomLevel:90, worldCopyJump:false});
+L.control.zoom({position:'topleft'}).addTo(map);
+L.control.scale({position:'bottomright', imperial:false, maxWidth:140}).addTo(map);
+map.attributionControl.setPrefix('<a href="https://leafletjs.com">Leaflet</a>');
+map.createPane('fallbackPane').style.zIndex = 190;
+L.geoJSON(GEO.land, {pane:'fallbackPane', style:{fillColor:'#eee4c9',fillOpacity:1,color:'#8b9b97',weight:.7}, interactive:false}).addTo(map);
+const tiles = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x}', {
+  maxNativeZoom:8, maxZoom:10, attribution:'底图 © Esri, US National Park Service · 水系与国界 Natural Earth · 古代疆界均为示意'
+}).addTo(map);
+tiles.on('tileerror', () => { document.getElementById('mapnote').hidden = false; });
+// Physical Map stops at z8; use a label-free, higher-resolution terrain for close-ups.
+const closeTerrain=L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Shaded_Relief/MapServer/tile/{z}/{y}/{x}',{
+  minZoom:9,maxNativeZoom:13,maxZoom:10
+}).addTo(map);
+closeTerrain.on('tileerror',()=>{document.getElementById('mapnote').hidden=false;});
+[['regionPane',410],['riverPane',420],['linePane',430],['baseLabelPane',450],['labelPane',620]].forEach(([n,z]) => { map.createPane(n).style.zIndex = z; });
+map.getPane('baseLabelPane').style.pointerEvents = 'none';
+
+const container = map.getContainer();
+function zoomClasses(){
+  const z = map.getZoom();
+  for (let i=3;i<=8;i++) container.classList.toggle('z'+i, z >= i - 0.01);
+}
+map.on('zoomend', zoomClasses);
+
+/* base rivers (always on, thin) */
+const BASE_RIVERS = ['nile','bluenile','atbara','euphrates','tigris','shatt','danube','po','tiber','rhine','indus','jhelum','chenab','ravi','beas','sutlej','oxus','jaxartes','halys','jordan','strymon','hebrus','sava','haliacmon','maeander','karkheh','zeravshan','helmand','rhone','ebro','sakarya','arno','nestos','aras','kupa','drina'];
+const riverStyle = {pane:'riverPane', color:'#3f77a8', weight:1.1, opacity:.6, interactive:false};
+BASE_RIVERS.forEach(k => { if (GEO.rivers[k]) L.geoJSON(GEO.rivers[k].geom, {style:riverStyle, interactive:false}).addTo(map); });
+
+function divLabel(o, pane){
+  const cls = ['lb', ...o.cls.split(' ')];
+  if (o.z) cls.push('mz'+o.z);
+  if (o.v) cls.push('v');
+  if (o.force) cls.push('force');
+  const rot = o.rot ? ` rotate(${o.rot}deg)` : '';
+  const sub = o.sub ? `<small>${o.sub}</small>` : '';
+  const style = `transform:translate(-50%,-50%)${rot};${o.c?`--c:${o.c};`:''}`;
+  const en = o.en || (o.go && META[o.go]?.en) || englishLabel(o.t);
+  const english = en ? `<span class="lb-en">${en}</span>` : '';
+  const html = `<div class="${cls.join(' ')}" style="${style}">${o.t}${english}${sub}</div>`;
+  return L.marker(o.ll, {pane, interactive:!!o.go, keyboard:!!o.go, title:o.go?o.t+(en?' · '+en:''):'',
+    icon:L.divIcon({className:'', html, iconSize:[0,0]})});
+}
+
+const baseMarkers = {};
+Object.entries(BASE).forEach(([id,[la,lo,t,cls,z,rot,v,en]]) => {
+  const goId=BASE_LINKS[id];
+  cls+=(MARITIME_SEA_IDS.has(id)?' maritime':'')+(goId?' click':'');
+  const m=divLabel({t,en,ll:[la,lo],cls,z,rot,v,go:goId},'baseLabelPane').addTo(map);
+  if(goId)m.on('click',()=>go(goId));
+  baseMarkers[id]=m;
+});
+const islandMarkers={};
+MEDITERRANEAN_ISLANDS.forEach(([id,t,en,la,lo,z,rot,archipelago])=>{
+  islandMarkers[id]=divLabel({t,en,ll:[la,lo],cls:'island maritime'+(archipelago?' archipelago':''),z,rot},'baseLabelPane').addTo(map);
+});
+const tMarine=document.getElementById('tMarine');
+tMarine.onclick=()=>{
+  const on=tMarine.getAttribute('aria-pressed')!=='true';
+  container.classList.toggle('maritime-off',!on);
+  tMarine.classList.toggle('on',on);tMarine.setAttribute('aria-pressed',String(on));
+};
+const riverMarkers = GEO.riverLabels.map(r => ({
+  t:r.t, m:divLabel({t:r.t, ll:r.ll, cls:'river', z:r.z, rot:r.rot}, 'baseLabelPane').addTo(map)
+}));
+
+/* modern borders (toggle) */
+const modern = L.layerGroup([
+  L.geoJSON(GEO.borders, {style:{pane:'linePane', color:'#4a4a4a', weight:1.1, opacity:.75, dashArray:'4 3'}, interactive:false}),
+  ...GEO.countryLabels.map(c => divLabel({t:c.t, en:c.en, ll:c.ll, cls:'country', z:c.r<=3?3:(c.r<=5?5:6)}, 'baseLabelPane'))
+]);
+const tModern = document.getElementById('tModern');
+tModern.onclick = () => {
+  const on = !map.hasLayer(modern);
+  on ? modern.addTo(map) : map.removeLayer(modern);
+  tModern.classList.toggle('on', on);
+  tModern.setAttribute('aria-pressed', String(on));
+};
+
+/* ============================================================
+   Drawing context per entry
+   ============================================================ */
+let group = L.featureGroup().addTo(map);
+let pinIndex = {};
+let forced = [];
+
+function makeCtx(entry){
+  return {
+    region(key, color, st){
+      const g = GEO.regions[key]; if (!g) return;
+      const style = Object.assign({pane:'regionPane', color, fillColor:color, weight:1.5, opacity:.9, fillOpacity:.22, className:'reg', interactive:false}, st||{});
+      if (st && st.color) style.color = st.color;
+      return L.geoJSON(g, {style, interactive:false}).addTo(group);
+    },
+    river(key, st){
+      const r = GEO.rivers[key]; if (!r) return;
+      L.geoJSON(r.geom, {style:Object.assign({pane:'riverPane', className:'reg', interactive:false}, st), interactive:false}).addTo(group);
+    },
+    line(coords, st){
+      L.polyline(coords, Object.assign({pane:'linePane', className:'reg', interactive:false, lineJoin:'round'}, st)).addTo(group);
+    },
+    route(coords, st){
+      const pl = L.polyline(coords, Object.assign({pane:'linePane', className:'route', interactive:false, lineJoin:'round'}, st)).addTo(group);
+      const path = pl.getElement();
+      if (!reduceMotion && path && path.getTotalLength){
+        const len = path.getTotalLength();
+        path.style.strokeDasharray = len; path.style.strokeDashoffset = len;
+        path.getBoundingClientRect();
+        requestAnimationFrame(() => { path.style.strokeDashoffset = 0; });
+        const done = () => { path.style.strokeDasharray = ''; path.style.strokeDashoffset = ''; path.style.transition = 'none'; };
+        path.addEventListener('transitionend', done, {once:true});
+        map.once('zoomstart', done);
+      }
+    },
+    pin(p){
+      const k = ['pin', 'k-'+p.kind]; if (p.left) k.push('left'); if (p.battle) k.push('b');
+      const iattr = p.icon ? (p.kind==='num' ? ` data-n="${p.icon}"` : '') : '';
+      const inner = p.kind==='cat' ? p.icon : '';
+      const en = p.en || englishLabel(p.n);
+      const english = en ? `<small class="pin-en mz7">${en}</small>` : '';
+      const html = `<div class="${k.join(' ')}"><i${iattr}>${inner}</i>${p.n?`<span${p.labelZ?` class="mz${p.labelZ}"`:''}>${p.n}${english}</span>`:''}</div>`;
+      const m = L.marker(p.ll, {pane:'labelPane', title:p.n+(en?' · '+en:'')||'第'+p.icon+'瀑布', icon:L.divIcon({className:'', html, iconSize:[0,0]}), keyboard:true}).addTo(group);
+      if (p.go){ m.on('click', () => go(p.go)); }
+      else if (p.note || p.n){
+        m.bindPopup(`<b>${p.n||''}</b>${en?`<span class="popup-en">${en}</span>`:''}${p.note||''}`, {className:'parch', closeButton:false, offset:[0,-6], autoPanPadding:[40,40]});
+      }
+      if (p.key) pinIndex[p.key] = m;
+      return m;
+    },
+    label(o){
+      const m = divLabel(o, 'labelPane').addTo(group);
+      if (o.go) m.on('click', () => go(o.go));
+    }
+  };
+}
+
+/* ============================================================
+   UI
+   ============================================================ */
+/*__ATLAS_UI__*/
+</script>
+</body>
+</html>
