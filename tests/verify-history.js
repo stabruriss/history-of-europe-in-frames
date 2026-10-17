@@ -46,10 +46,13 @@ assert.ok(!/tChrono|peakTimeline|高光年代|TIME_CH/.test(html));
    buttons:[...document.querySelectorAll('#modebar button')].map(b=>b.id),
    banner:document.getElementById('ghBanner')?.textContent.trim().replace(/\s+/g,' ')||'',
    bannerHref:document.getElementById('ghBanner')?.href||'',
-   bannerIcon:!!document.querySelector('#ghBanner svg.gh-icon')}));
+   bannerIcon:!!document.querySelector('#ghBanner svg.gh-icon'),
+   title:document.title,
+   h1:document.querySelector('#side h1')?.firstChild.textContent||''}));
   assert.deepEqual(data,{geo:33,history:64,scenes:173,refs:227,seas:18,islands:35,mode:'history',
    buttons:['tHistory','tGeography'],banner:'开源项目·欧洲历史笔记',
-   bannerHref:'https://github.com/stabruriss/history-of-europe-in-frames',bannerIcon:true});
+   bannerHref:'https://github.com/stabruriss/history-of-europe-in-frames',bannerIcon:true,
+   title:'简明欧洲史图册',h1:'简明欧洲史图册'});
   assert.equal(await page.$eval('#prev',e=>e.disabled),true);
   assert.ok(await page.$$eval('.leaflet-fallback-pane path',e=>e.length)>0);
   // Every scene draws real, valid, named geometry; a missing region may not fail silently.
