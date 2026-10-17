@@ -43,7 +43,7 @@ assert.ok(!/tChrono|peakTimeline|高光年代|TIME_CH/.test(html));
   const data=await page.evaluate(()=>({geo:ENTRIES.filter(e=>!isHistory(e)).length,history:HISTORY_ENTRIES.length,
    scenes:HISTORY_ENTRIES.reduce((n,e)=>n+e.scenes.length,0),refs:HISTORY_ENTRIES.reduce((n,e)=>n+e.sources.length,0),
    seas:Object.keys(MEDITERRANEAN_SEAS).length,islands:MEDITERRANEAN_ISLANDS.length,mode:viewMode}));
-  assert.deepEqual(data,{geo:33,history:54,scenes:163,refs:227,seas:18,islands:35,mode:'geography'});
+  assert.deepEqual(data,{geo:33,history:64,scenes:173,refs:227,seas:18,islands:35,mode:'geography'});
   assert.equal(await page.$eval('#prev',e=>e.disabled),true);
   assert.ok(await page.$$eval('.leaflet-fallback-pane path',e=>e.length)>0);
   // Every scene draws real, valid, named geometry; a missing region may not fail silently.
@@ -66,9 +66,9 @@ assert.ok(!/tChrono|peakTimeline|高光年代|TIME_CH/.test(html));
    }
    return report;
   });
-  assert.equal(sceneReport.length,196);
+  assert.equal(sceneReport.length,206);
   await page.evaluate(()=>go('history-migration'));
-  assert.equal(await page.$$eval('#toc .chip',es=>es.length),56);
+  assert.equal(await page.$$eval('#toc .chip',es=>es.length),66);
   assert.equal(await page.$eval('#prev',e=>e.disabled),true);
   for(const id of await page.evaluate(()=>HISTORY_ENTRIES.map(e=>e.id))){
    await page.evaluate(id=>go(id),id);
@@ -77,8 +77,8 @@ assert.ok(!/tChrono|peakTimeline|高光年代|TIME_CH/.test(html));
    assert.ok((await page.$eval('#card',e=>e.textContent.length))>100);
   }
   assert.equal(await page.$eval('#next',e=>e.disabled),true);
-  await page.click('#prev');assert.equal(await page.evaluate(()=>ENTRIES[cur].id),'history-faith-church');
-  await page.click('#next');assert.equal(await page.evaluate(()=>ENTRIES[cur].id),'history-faith-empire-church');
+  await page.click('#prev');assert.equal(await page.evaluate(()=>ENTRIES[cur].id),'history-china-three-kingdoms');
+  await page.click('#next');assert.equal(await page.evaluate(()=>ENTRIES[cur].id),'history-china-sixteen-kingdoms');
   await page.evaluate(()=>go('history-persian-wars'));
   await page.click('[data-scene="3"]');
   assert.equal(await page.evaluate(()=>location.hash),'#history-persian-wars/3');

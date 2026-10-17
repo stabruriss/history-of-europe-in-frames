@@ -1,8 +1,8 @@
 /* Chapters organize the argument; eras independently group dated map scenes. */
 const HISTORY_CONTENT=/*__HISTORY_CONTENT__*/;
-const HISTORY_CH=['上古与黑暗时代','希腊城邦时代','马其顿与帝国','希腊化世界','罗马','罗马帝国','犹太教与基督教'];
+const HISTORY_CH=['上古与黑暗时代','希腊城邦时代','马其顿与帝国','希腊化世界','罗马','罗马帝国','犹太教与基督教','中国对照'];
 const HC={athens:'#276582',sparta:'#99462e',mino:'#ad7c25',myc:'#637541',hittite:'#866347',
-  persia:'#8b644c',thebes:'#387568',macedon:'#6b4d72',war:'#a03327',neutral:'#887b65',route:'#2a7182',celt:'#64763f',parthia:'#765b78',rome:'#a34f36',faith:'#41508c'};
+  persia:'#8b644c',thebes:'#387568',macedon:'#6b4d72',war:'#a03327',neutral:'#887b65',route:'#2a7182',celt:'#64763f',parthia:'#765b78',rome:'#a34f36',faith:'#41508c',china:'#2e6b4e'};
 const HV={aegean:[[34.3,20.2],[41.3,29.6]],greece:[[35.6,20.4],[39.8,25.1]],
   eastern:[[24.3,19.4],[42.6,49.8]],attica:[[37.55,23.23],[38.45,24.3]],levant:[[27.4,30.2],[35.9,37.2]]};
 const HS={
@@ -235,6 +235,22 @@ Object.assign(HS,{
   masada:['马萨达','Masada',31.316,35.354,'死海边的山顶要塞，希律修的行宫；73年守军全体自尽。'],
   yavneh:['雅夫内','Yavneh',31.877,34.739,'70年后拉比们在这里重整犹太教。'],
   vagharshapat:['瓦加尔沙帕特','Vagharshapat',40.16,44.29,'亚美尼亚的王城，今埃奇米阿津。'],
+  yangshao:['仰韶村','Yangshao',34.76,111.77,'黄河中游新石器彩陶文化遗址（今河南渑池）。'],
+  liangzhu:['良渚','Liangzhu',30.39,119.99,'约前3300—前2300年的大型古城与外围水利系统（今杭州余杭）。'],
+  erlitou:['二里头','Erlitou',34.69,112.69,'洛阳盆地的夏商之际都邑遗址，发现中轴宫城基址与早期青铜礼器作坊。'],
+  yinxu:['殷墟（安阳）','Yinxu / Anyang',36.12,114.32,'商朝晚期都城；出土甲骨卜辞十余万片与大批青铜礼器。'],
+  haojing:['镐京','Haojing',34.22,108.79,'西周都城（今西安西南）；前771年被犬戎攻破。'],
+  luoyi:['洛阳（洛邑）','Luoyang',34.62,112.45,'周公营建成周，前770年周平王东迁于此；后为东汉、曹魏、西晋、北魏都城。'],
+  qufu:['曲阜','Qufu',35.60,116.99,'鲁国都城；孔子故里。'],
+  linzi:['临淄','Linzi',36.82,118.30,'齐国都城，春秋战国时的东方大邑与稷下学宫所在。'],
+  xianyang:['咸阳','Xianyang',34.35,108.71,'商鞅变法后秦国迁都于此，前221年为秦朝都城。'],
+  changping:['长平','Changping',35.80,112.92,'今山西高平一带；前260年秦军在此击败赵军，坑杀降卒四十万。'],
+  changan:['长安','Chang’an',34.31,108.90,'西汉都城，丝绸之路东端起点；后为前秦、北周、隋唐都城。'],
+  dunhuang:['敦煌','Dunhuang',40.14,94.66,'汉武帝所设河西四郡最西一郡，扼守西域门户（玉门关、阳关）。'],
+  guandu:['官渡','Guandu',34.73,113.98,'今河南中牟东北；200年曹操在此击败袁绍主力。'],
+  chibi:['赤壁','Chibi',29.90,113.62,'长江中游要冲；208年孙刘联军在此击败曹操，奠定三分格局。'],
+  jiankang:['建康（建业）','Jiankang / Nanjing',32.06,118.78,'今南京；孙吴称建业，东晋与南朝宋、齐、梁、陈以此为都，称建康。'],
+  pingcheng:['平城','Pingcheng / Datong',40.09,113.30,'今山西大同；398年北魏迁都于此，493年孝文帝再南迁洛阳。'],
 });
 function hp(d,key,opt={}){
   const [n,en,la,lo,note]=HS[key];
@@ -1378,6 +1394,91 @@ const HISTORY_ENTRIES=[
     hp(d,'ctesiphon',{note:'波斯境内教会的中心；被罗马定为异端的聂斯托利派在这里落脚，再往东传。'});
     hr(d,[[33.1,44.6],[34.5,48.5],[36.0,51.5]],HC.faith);hl(d,'635年传到长安（景教）','To Chang’an, 635',37.4,48.6,HC.faith);
    },[['fill',HC.rome,'帝国西部'],['fill',HC.athens,'帝国东部'],['dline',HC.faith,'聂斯托利派东传（方向示意）'],['dot','#2a2018','教会的几个中心']])
+ ]},
+{id:'history-china-neolithic',ch:7,title:'新石器聚落与万邦时代',short:'仰韶与良渚',en:'Neolithic China: Yangshao to Liangzhu',period:'约前7000—前1900年',c:HC.china,
+ scenes:[
+  hs('约前7000—前1900年','南稻北粟与良渚古城','黄河流域种粟、长江流域种稻；前3300年起良渚筑起古城与大型水利，龙山时代城址林立。',[[27.0,104.0],[40.0,122.5]],d=>{
+    ha(d,'farCore',HC.china,{fillOpacity:.10});
+    hp(d,'yangshao',{left:1});hp(d,'liangzhu');
+    hl(d,'黄河中游粟作区','Millet zone',36.2,111.0,HC.china);hl(d,'长江下游稻作区','Rice zone',31.2,118.0,HC.china);
+   },[['fill',HC.china,'东亚文明区（示意）'],['dot','#2a2018','代表性新石器遗址']])
+ ]},
+{id:'history-china-bronze',ch:7,title:'二里头与商朝青铜礼制',short:'二里头与商朝',en:'Erlitou and the Shang Dynasty',period:'约前1900—前1046年',c:HC.china,
+ scenes:[
+  hs('约前1900—前1046年','二里头宫城与殷墟甲骨','洛阳盆地出现二里头宫城与青铜爵；商王盘庚迁殷，甲骨文与大型青铜礼器成熟。',[[31.0,106.0],[39.5,119.5]],d=>{
+    ha(d,'farCore',HC.china,{fillOpacity:.10});
+    hp(d,'erlitou',{left:1});hp(d,'yinxu');
+   },[['fill',HC.china,'东亚文明区（示意）'],['dot','#2a2018','二里头与晚商殷墟']])
+ ]},
+{id:'history-china-western-zhou',ch:7,title:'西周分封与宗法秩序',short:'西周分封与宗法',en:'The Western Zhou',period:'前1046—前771年',c:HC.china,
+ scenes:[
+  hs('前1046—前771年','武王克商、共和行政与犬戎破镐','前1046年牧野克商，周公东征分封诸侯；前841年共和行政开启确切纪年；前771年镐京陷落。',[[31.0,105.5],[39.5,120.5]],d=>{
+    ha(d,'farCore',HC.china,{fillOpacity:.10});
+    hp(d,'haojing',{kind:'battle',left:1,note:'西周王都；前841年国人暴动、共和行政，前771年被犬戎攻破。'});
+    hp(d,'luoyi',{note:'周公东征后营建成周洛邑，镇抚东方。'});hp(d,'qufu');hp(d,'linzi');
+   },[['fill',HC.china,'西周分封格局（示意）'],['dot',HC.war,'镐京（前771年陷落）'],['dot','#2a2018','成周与东方主要封国']])
+ ]},
+{id:'history-china-spring-autumn',ch:7,title:'春秋争霸与孔子时代',short:'春秋争霸与孔子',en:'Spring and Autumn Period',period:'前770—前453年',c:HC.china,
+ scenes:[
+  hs('前770—前453年','平王东迁、五霸迭兴与孔子讲学','周平王东迁洛邑，齐、晋、楚、吴、越先后争霸；孔子创私学、订六经；前453年三家分晋。',[[29.0,106.5],[39.5,121.0]],d=>{
+    ha(d,'farCore',HC.china,{fillOpacity:.10});
+    hp(d,'luoyi',{left:1,note:'前770年周平王东迁洛邑，东周开始。'});
+    hp(d,'qufu',{left:1,note:'孔子（前551—前479年）在此创私学、整理古籍，与释迦牟尼、苏格拉底同处轴心时代。'});
+    hp(d,'linzi',{note:'齐桓公任管仲改革，九合诸侯，首霸中原。'});
+   },[['fill',HC.china,'春秋列国舞台（示意）'],['dot','#2a2018','王城、齐鲁重镇与孔子故里']])
+ ]},
+{id:'history-china-warring-states',ch:7,title:'战国变法与百家争鸣',short:'战国变法与百家争鸣',en:'Warring States Period',period:'前453—前221年',c:HC.china,
+ scenes:[
+  hs('前453—前221年','商鞅变法、百家争鸣与长平之战','七雄兼并，各国变法行郡县；前356年商鞅在秦变法，前260年长平之战；儒道墨法诸子争鸣。',[[30.0,105.5],[39.5,120.5]],d=>{
+    ha(d,'farCore',HC.china,{fillOpacity:.10});
+    hp(d,'xianyang',{left:1,note:'前350年秦迁都咸阳，商鞅废井田、行县制、立军功爵。'});
+    hp(d,'changping',{kind:'battle',note:'前260年秦军在此击败赵军，坑赵卒四十万。'});
+    hp(d,'linzi',{note:'齐都临淄稷下学宫汇聚孟子、荀子、邹衍等诸子学者。'});
+   },[['fill',HC.china,'战国兼并舞台（示意）'],['dot',HC.war,'长平之战（前260年）'],['dot','#2a2018','变法与百家争鸣重镇']])
+ ]},
+{id:'history-china-qin',ch:7,title:'秦统一六国与楚汉相争',short:'秦统一与楚汉之际',en:'Qin Unification and Chu–Han Contention',period:'前221—前202年',c:HC.china,
+ scenes:[
+  hs('前221—前202年','书同文车同轨、陈胜起义与楚汉决战','前221年秦始皇灭六国称皇帝，全面推行郡县；前209年大泽乡起义，前202年刘邦击败项羽建汉。',[[29.5,105.5],[40.0,120.5]],d=>{
+    ha(d,'farCore',HC.china,{fillOpacity:.12});
+    hp(d,'xianyang',{kind:'battle',left:1,note:'前221年秦始皇定都于此，废分封、设郡县；前207年刘邦入关、项羽焚咸阳。'});
+    hp(d,'changan',{note:'前202年刘邦击败项羽称帝，不久定都长安（同一年罗马在扎马击败汉尼拔）。'});
+   },[['fill',HC.china,'秦与汉初版图核心（示意）'],['dot',HC.war,'咸阳（秦都）'],['dot','#2a2018','长安（西汉都城）']])
+ ]},
+{id:'history-china-western-han',ch:7,title:'西汉盛世与丝绸之路',short:'西汉与丝绸之路',en:'The Western Han',period:'前202—公元8年',c:HC.china,
+ scenes:[
+  hs('前202—公元8年','文景之治、汉武帝北伐与张骞凿空','汉初休养生息；汉武帝推恩削藩、独尊儒术、北击匈奴，张骞通西域；公元8年王莽代汉。',[[30.0,91.0],[42.5,118.0]],d=>{
+    ha(d,'farCore',HC.china,{fillOpacity:.12});
+    hp(d,'changan',{note:'西汉都城；汉武帝在此独尊儒术、主持北击匈奴，前138年派张骞出使西域。'});
+    hp(d,'dunhuang',{left:1,note:'河西四郡最西端，丝绸之路通往西域与大夏（巴克特里亚）、安息的门户。'});
+    hr(d,[[34.31,108.90],[36.0,103.8],[38.9,100.4],[40.14,94.66]],HC.route);
+   },[['fill',HC.china,'西汉与河西走廊（示意）'],['dline',HC.route,'丝绸之路河西段（概略）'],['dot','#2a2018','都城与西域门户']])
+ ]},
+{id:'history-china-eastern-han',ch:7,title:'东汉王朝与豪族社会',short:'东汉与豪族社会',en:'The Eastern Han',period:'25—189年',c:HC.china,
+ scenes:[
+  hs('25—189年','光武中兴、班超通西域与黄巾起义','刘秀定都洛阳；窦宪北击北匈奴，班超派甘英出使大秦；后期外戚宦官交替专权，184年黄巾起义。',[[30.0,91.0],[42.5,118.5]],d=>{
+    ha(d,'farCore',HC.china,{fillOpacity:.12});
+    hp(d,'luoyi',{note:'25年刘秀定都洛阳；184年黄巾起义后州牧坐大，189年边帅董卓带兵进洛阳。'});
+    hp(d,'dunhuang',{left:1,note:'班超由此经略西域三十余年，97年派甘英远赴大秦（罗马），抵达波斯湾。'});
+   },[['fill',HC.china,'东汉核心区（示意）'],['dot','#2a2018','东汉都城洛阳与西域门户']])
+ ]},
+{id:'history-china-three-kingdoms',ch:7,title:'三国鼎立、西晋统一与永嘉之乱',short:'三国、西晋与永嘉之乱',en:'Three Kingdoms and Western Jin',period:'190—316年',c:HC.china,
+ scenes:[
+  hs('190—316年','官渡赤壁、三分归晋与永嘉南渡','200年官渡、208年赤壁定下魏蜀吴三分；280年西晋灭吴统一；八王之乱后五胡起兵，311年洛阳陷落。',[[28.0,106.5],[39.5,121.5]],d=>{
+    ha(d,'farCore',HC.china,{fillOpacity:.12});
+    hp(d,'guandu',{kind:'battle',note:'200年曹操在此击败袁绍。'});
+    hp(d,'chibi',{kind:'battle',left:1,note:'208年孙刘联军在此击败曹操，形成三分之势。'});
+    hp(d,'luoyi',{left:1,note:'曹魏与西晋都城；八王之乱后，311年永嘉之乱洛阳被匈奴汉国攻破。'});
+    hp(d,'jiankang',{note:'孙吴都城建业；280年西晋灭吴于此。'});
+   },[['fill',HC.china,'三国至西晋舞台（示意）'],['dot',HC.war,'官渡与赤壁古战场'],['dot','#2a2018','洛阳与建业']])
+ ]},
+{id:'history-china-sixteen-kingdoms',ch:7,title:'东晋十六国与南北朝对峙',short:'东晋十六国与南北朝',en:'Eastern Jin and Northern & Southern Dynasties',period:'317—476年',c:HC.china,
+ scenes:[
+  hs('317—476年','衣冠南渡、淝水之战与北魏统一北方','317年东晋建都建康；383年淝水之战东晋击退前秦；420年进入南北朝，439年北魏统一北方。',[[28.5,106.5],[42.0,121.5]],d=>{
+    ha(d,'farCore',HC.china,{fillOpacity:.12});
+    hp(d,'jiankang',{note:'317年衣冠南渡，东晋与南朝宋、齐、梁、陈相继定都于此（同时期罗马330年迁都君士坦丁堡）。'});
+    hp(d,'pingcheng',{left:1,note:'北魏都城；439年太武帝灭北凉统一北方（同年汪达尔人攻占迦太基），471年起孝文帝改革。'});
+    hp(d,'luoyi',{left:1,note:'北方混战的中心，493年北魏孝文帝自平城南迁于此。'});
+   },[['fill',HC.china,'南北朝对峙格局（示意）'],['dot','#2a2018','北朝平城、洛阳与南朝建康']])
  ]}
 
 ];
@@ -1402,7 +1503,10 @@ const HISTORY_ERAS=[
  {id:'empire-west',name:'罗马帝国：西部的终结',en:'The End in the West',date:'364—476年',c:HC.rome,items:[['history-empire-theodosius'],['history-empire-west-fall']]},
  {id:'faith-israel',name:'古代以色列',en:'Ancient Israel',date:'约前1208—前538年',c:HC.faith,items:[['history-faith-israel'],['history-faith-first-temple']]},
  {id:'faith-temple',name:'第二圣殿时期',en:'The Second Temple',date:'前538—公元73年',c:HC.faith,items:[['history-faith-second-temple'],['history-faith-jesus']]},
- {id:'faith-church',name:'早期教会',en:'The Early Church',date:'73—451年',c:HC.faith,items:[['history-faith-church'],['history-faith-empire-church']]}
+ {id:'faith-church',name:'早期教会',en:'The Early Church',date:'73—451年',c:HC.faith,items:[['history-faith-church'],['history-faith-empire-church']]},
+ {id:'china-early',name:'先秦：三代与春秋战国',en:'Pre-Imperial China',date:'约前7000—前221年',c:HC.china,items:[['history-china-neolithic'],['history-china-bronze'],['history-china-western-zhou'],['history-china-spring-autumn'],['history-china-warring-states']]},
+ {id:'china-qin-han',name:'秦汉帝国',en:'Qin and Han Empires',date:'前221—公元189年',c:HC.china,items:[['history-china-qin'],['history-china-western-han'],['history-china-eastern-han']]},
+ {id:'china-six-dynasties',name:'三国两晋南北朝',en:'Six Dynasties',date:'190—476年',c:HC.china,items:[['history-china-three-kingdoms'],['history-china-sixteen-kingdoms']]}
 ];
 /* History as a tree: each branch is a topic; distance from the root is time (years, negative = BCE).
    Reading order stays with HISTORY_ERAS; TREE_ROWS puts each era row on a branch at its start and end. */
@@ -1414,10 +1518,12 @@ const HISTORY_BRANCHES=[
  {id:'ptolemaic',name:'托勒密埃及',en:'Ptolemaic Egypt',lane:1,parent:'trunk',from:-305,to:-30,c:HC.mino},
  {id:'seleucid',name:'塞琉古与东方',en:'Seleucids & the East',lane:0,parent:'trunk',from:-305,to:-64,c:HC.parthia},
  // 395: the empire splits for good; the West forks off and ends in 476, the Roman line itself goes on in the East.
- {id:'west',name:'西罗马',en:'Western Empire',lane:4,parent:'rome',from:395,to:476,c:HC.rome}
+ {id:'west',name:'西罗马',en:'Western Empire',lane:4,parent:'rome',from:395,to:476,c:HC.rome},
+ // Parallel timeline of China for cross-civilizational comparison.
+ {id:'china',name:'中国',en:'China',lane:6,from:-7000,to:476,c:HC.china}
 ];
-// Trunk colour follows the chapter: 上古, 城邦, 马其顿与帝国, 希腊化世界, 罗马, 罗马帝国.
-const TREE_CH_COLORS=['#7d6b50',HC.athens,HC.macedon,HC.thebes,HC.rome,HC.rome,HC.faith];
+// Trunk colour follows the chapter: 上古, 城邦, 马其顿与帝国, 希腊化世界, 罗马, 罗马帝国, 基督教, 中国对照.
+const TREE_CH_COLORS=['#7d6b50',HC.athens,HC.macedon,HC.thebes,HC.rome,HC.rome,HC.faith,HC.china];
 const TREE_ROWS={
  'history-migration/0':['trunk',-68000,-38000],
  'history-farming/0':['trunk',-10000,-6000],
@@ -1474,8 +1580,18 @@ const TREE_ROWS={
  'history-faith-second-temple/0':['faith',-538,-4],
  'history-faith-jesus/0':['faith',-4,73],
  'history-faith-church/0':['faith',73,311],
- 'history-faith-empire-church/0':['faith',312,451]
+ 'history-faith-empire-church/0':['faith',312,451],
+ 'history-china-neolithic/0':['china',-7000,-1900],
+ 'history-china-bronze/0':['china',-1850,-1046],
+ 'history-china-western-zhou/0':['china',-1046,-771],
+ 'history-china-spring-autumn/0':['china',-770,-453],
+ 'history-china-warring-states/0':['china',-453,-221],
+ 'history-china-qin/0':['china',-221,-202],
+ 'history-china-western-han/0':['china',-195,8],
+ 'history-china-eastern-han/0':['china',25,189],
+ 'history-china-three-kingdoms/0':['china',190,316],
+ 'history-china-sixteen-kingdoms/0':['china',317,476]
 };
 // Topics still to be written grow the tree as dashed shoots.
-const TREE_FUTURE=[['rome',395,'东罗马','395年起 · 君士坦丁堡 · 到1453年 · 待展开'],['west',476,'中世纪西欧','476年起 · 待展开'],['faith',451,'中世纪教会','451年起 · 待展开']];
+const TREE_FUTURE=[['rome',395,'东罗马','395年起 · 君士坦丁堡 · 到1453年 · 待展开'],['west',476,'中世纪西欧','476年起 · 待展开'],['faith',451,'中世纪教会','451年起 · 待展开'],['china',476,'隋唐','476年起 · 南北朝至隋唐 · 待展开']];
 function historyEra(e,scene=0){return HISTORY_ERAS.find(era=>era.items.some(([id,from=0,to=Infinity])=>id===e.id&&scene>=from&&scene<=to));}

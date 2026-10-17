@@ -1,4 +1,6 @@
 node_modules/
+dist/
+.vercel/
 tests/shots*/
 src/out.html
 src/ne_10m_*/

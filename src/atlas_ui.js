@@ -47,7 +47,7 @@ function renderToc(){
   for(const [id,mode] of [['tGeography','geography'],['tHistory','history']]){
     const b=document.getElementById(id);b.classList.toggle('on',viewMode===mode);b.setAttribute('aria-pressed',String(viewMode===mode));
   }
-  document.getElementById('indexCaption').textContent=historical?'历史树：自上而下是时间，枝杈是主题\n先选主线，↑↓ 沿线走 · ←→ 切换地图事件\nⅠ 上古 Ⅱ 城邦 Ⅲ 马其顿 Ⅳ 希腊化 Ⅴ 罗马 Ⅵ 帝国 Ⅶ 基督教 · 右缘可拖宽':'从山海、河流与地区名认识历史的舞台。\n↑↓ 切换条目';
+  document.getElementById('indexCaption').textContent=historical?'历史树：自上而下是时间，枝杈是主题\n先选主线，↑↓ 沿线走 · ←→ 切换地图事件\nⅠ 上古 Ⅱ 城邦 Ⅲ 马其顿 Ⅳ 希腊化 Ⅴ 罗马 Ⅵ 帝国 Ⅶ 基督教 Ⅷ 中国 · 右缘可拖宽':'从山海、河流与地区名认识历史的舞台。\n↑↓ 切换条目';
   toc.setAttribute('aria-label',historical?'历史树：按时间与主题浏览':'地理概念');
   mobileToc.setAttribute('aria-label',historical?'选择历史时期与章节':'选择地理概念');
 }
@@ -58,7 +58,7 @@ mobileToc.onchange=()=>go(mobileToc.value);
 /* History tree: branches are topics, distance from the root is time.
    Deep prehistory is compressed; where events crowd, rows push later ones down, so height stays in time order. */
 const SVGNS='http://www.w3.org/2000/svg';
-const NUMERALS=['Ⅰ','Ⅱ','Ⅲ','Ⅳ','Ⅴ','Ⅵ','Ⅶ'];
+const NUMERALS=['Ⅰ','Ⅱ','Ⅲ','Ⅳ','Ⅴ','Ⅵ','Ⅶ','Ⅷ'];
 const TREE_SCALE=[[-68000,0],[-10000,44],[-3000,92],[-1300,150],[0,1216]];
 function treeBase(t){
   let i=1;while(i<TREE_SCALE.length-1&&t>TREE_SCALE[i][0])i++;
@@ -133,7 +133,7 @@ function renderHistoryTree(host,{sheet=false}={}){
     r.el.innerHTML=`<b>${r.label}</b><small>${r.note}</small>`;tree.appendChild(r.el);
   }
   // Branch names run along their branches in the wide view.
-  tree._names=HISTORY_BRANCHES.filter(b=>b.parent).map(b=>{
+  tree._names=HISTORY_BRANCHES.filter(b=>b.c).map(b=>{
     const el=document.createElement('span');el.className='tree-branch-name';el.setAttribute('aria-hidden','true');
     el.dataset.branch=b.id;el.style.setProperty('--c',b.c);el.textContent=b.name;tree.appendChild(el);return {b,el};
   });
@@ -154,9 +154,9 @@ function layoutHistoryTree(tree){
   // Sidebar: tight lanes, two-line rows. Phone sheet: a wider fan with branch names. Desktop sheet: one-line rows too.
   const mode=W>=480?'wide':W>=300?'medium':'compact',wide=mode==='wide';
   tree.classList.toggle('wide',wide);tree.classList.toggle('compact',mode==='compact');tree.classList.toggle('narrow',W<200);
-  const rows=tree._rows,gap={wide:34,medium:22,compact:W>=220?12:11}[mode],axis={wide:46,medium:32,compact:W>=220?28:24}[mode];
+  const rows=tree._rows,gap={wide:30,medium:20,compact:W>=220?10:9}[mode],axis={wide:44,medium:30,compact:W>=220?26:22}[mode];
   const k={wide:1.15,medium:1.05,compact:1}[mode],fork={wide:44,medium:32,compact:22}[mode];
-  const lanes=Math.max(...HISTORY_BRANCHES.map(b=>b.lane))+1,laneX=l=>axis+(mode==='compact'?8:12)+l*gap,labelX=laneX(lanes-1)+(mode==='compact'?gap:20);
+  const lanes=Math.max(...HISTORY_BRANCHES.map(b=>b.lane))+1,laneX=l=>axis+(mode==='compact'?7:12)+l*gap,labelX=laneX(lanes-1)+(mode==='compact'?gap:21);
   for(const r of rows){r.el.style.left=labelX+'px';r.el.style.width=(W-labelX)+'px';}
   const rank={head:0,item:1,future:2};
   const sorted=[...rows].sort((a,b)=>a.t-b.t||rank[a.kind]-rank[b.kind]||a.order-b.order);
@@ -197,21 +197,21 @@ function layoutHistoryTree(tree){
       const px=laneX(byId[b.parent].lane),yf=tree._forkY[b.id];
       lanesSvg.push(`<path class="lane fork" data-branch="${b.id}" d="M${px} ${yf}C${px} ${yf+fork*.6} ${x} ${yf+fork*.4} ${x} ${yf+fork}" stroke="${items[0].c}" stroke-width="${w}"/>`);
       seg(yf+fork,items[0].ny,items[0].c);
-      // Name the branch in the first free stretch below the fork that can hold it.
-      const name=tree._names.find(n=>n.b===b);
-      if(name&&mode!=='compact'){
-        name.el.hidden=false;const h=name.el.offsetHeight;
-        // A branch's dashed shoot counts as room too, so a short branch (西罗马: one section, then a shoot) can still be named.
-        const shoot=sorted.filter(r=>r.kind==='future'&&r.branch===b).map(r=>r.ny+16);
-        const stops=[yf+fork,...items.map(r=>r.ny),Math.max(items.at(-1).ny,Y(b.to??items.at(-1).end)),...shoot];
-        let best=[0,0];for(let i=1;i<stops.length;i++){
-          if(stops[i]-stops[i-1]>=h+14){best=[stops[i-1],stops[i]];break;}
-          if(stops[i]-stops[i-1]>best[1]-best[0])best=[stops[i-1],stops[i]];
-        }
-        name.el.hidden=best[1]-best[0]<h+14;
-        name.el.style.left=x+7+'px';name.el.style.top=(best[0]+best[1]-h)/2+'px';
-      }else if(name)name.el.hidden=true;
     }
+    // Name the branch in the first free stretch that can hold it.
+    const name=tree._names.find(n=>n.b===b);
+    if(name&&mode!=='compact'){
+      name.el.hidden=false;const h=name.el.offsetHeight;
+      // A branch's dashed shoot counts as room too, so a short branch (西罗马: one section, then a shoot) can still be named.
+      const shoot=sorted.filter(r=>r.kind==='future'&&r.branch===b).map(r=>r.ny+16);
+      const stops=[...(b.parent?[tree._forkY[b.id]+fork]:[]),...items.map(r=>r.ny),Math.max(items.at(-1).ny,Y(b.to??items.at(-1).end)),...shoot];
+      let best=[0,0];for(let i=1;i<stops.length;i++){
+        if(stops[i]-stops[i-1]>=h+14){best=[stops[i-1],stops[i]];break;}
+        if(stops[i]-stops[i-1]>best[1]-best[0])best=[stops[i-1],stops[i]];
+      }
+      name.el.hidden=best[1]-best[0]<h+14;
+      name.el.style.left=x+7+'px';name.el.style.top=(best[0]+best[1]-h)/2+'px';
+    }else if(name)name.el.hidden=true;
     items.forEach((r,i)=>{if(i)seg(items[i-1].ny,r.ny,r.c);});
     const last=items.at(-1),end=Math.max(last.ny,Y(b.to??last.end));
     seg(last.ny,end,last.c);
@@ -300,7 +300,7 @@ function updateNavigation(){
     const option=[...mobileToc.options].find(o=>o.dataset.id===e.id&&sceneIndex>=+o.dataset.from&&sceneIndex<=+o.dataset.to);
     if(option)mobileToc.value=option.value;
     const era=historyEra(e,sceneIndex);
-    document.getElementById('entryEyebrow').textContent=`${era.name} · 第${['一','二','三','四','五','六','七'][e.ch]}章`;
+    document.getElementById('entryEyebrow').textContent=`${era.name} · 第${['一','二','三','四','五','六','七','八'][e.ch]}章`;
     toc.querySelectorAll('.era').forEach(row=>row.classList.toggle('active-era',row.dataset.era===era.id));
     // A newly reached section off the chosen line brings its own line along; switching lines in place does not.
     const s=currentStation();if(s&&s.key!==lastStationKey){lastStationKey=s.key;syncTreeLine();}

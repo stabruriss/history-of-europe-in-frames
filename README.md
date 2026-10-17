@@ -7,6 +7,8 @@
 <p align="center">
   <a href="./index.html"><strong>index.html</strong></a>
   ·
+  <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fstabruriss%2Fhistory-of-europe-in-frames"><strong>Deploy with Vercel</strong></a>
+  ·
   <a href="./LICENSE">MIT License</a>
 </p>
 
@@ -33,17 +35,19 @@ Open `index.html` directly in any desktop or mobile browser. The map engine (Lea
 What is currently in the atlas:
 
 - **地理概念 (Geography)**: 33 entries covering key seas, mountain ranges, rivers, trade routes, and historical regions.
-- **历史进程 (History)**: 7 chapters, 54 sections, and 163 map scenes so far, running from early prehistory to the late Roman Empire and early Christianity.
-- **The History Tree**: Time runs vertically along six thematic lines—Greek, Rome, Ptolemaic Egypt, the Seleucids, West Rome, and Christianity. Select any line, then use `↑` `↓` to travel along it and `←` `→` to step through the scenes within a section.
+- **历史进程 (History)**: 8 chapters, 64 sections, and 173 map scenes so far, running from early prehistory to the late Roman Empire and early Christianity, alongside a parallel timeline of contemporary China.
+- **The History Tree**: Time runs vertically along seven tracks—Greek, Rome, Ptolemaic Egypt, the Seleucids, West Rome, Christianity, and a parallel **China** reference line (from Neolithic settlements and the Bronze Age through the Qin, Han, and Six Dynasties). Select any line, then use `↑` `↓` to travel along it and `←` `→` to step through the scenes within a section.
 - **People and Iconic Moments**: 102 historical figures across 148 dated biographical cards, 108 tags highlighting iconic moments such as Marathon and Thermopylae, and 227 reading links pointing chiefly to primary sources online.
 
 *Note: Ancient boundaries are drawn as schematic teaching regions clipped to the coastline to aid spatial understanding, rather than as strictly reconstructed frontiers.*
 
-## Build
+## Build & Deploy
 
 ```sh
 npm run build        # cd src && python3 assemble.py ../index.html
 ```
+
+The repository includes a zero-config `vercel.json` so you can import it directly into Vercel—or click [**Deploy with Vercel**](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fstabruriss%2Fhistory-of-europe-in-frames) at the top of this page—for one-click static hosting.
 
 `src/assemble.py` relies only on the Python standard library. It populates the placeholders in `src/template.html` with Leaflet, the base map (`data.json`), the historical territories (`history_geo.json`), the table of contents, the narrative text, and the biographical cards, aborting if any placeholder remains unfilled. Always edit the source files under `src/`, never `index.html` directly.
 

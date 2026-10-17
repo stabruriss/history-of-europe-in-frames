@@ -1,10 +1,10 @@
 {
   "name": "history-of-europe-in-frames",
-  "private": true,
   "description": "European history on maps, told scene by scene in one offline HTML file.",
   "license": "MIT",
   "scripts": {
     "build": "cd src && python3 assemble.py ../index.html",
+    "vercel-build": "cd src && python3 assemble.py ../index.html && mkdir -p ../dist && cp ../index.html ../dist/index.html",
     "test": "for f in tests/verify-*.js; do node \"$f\" index.html || exit 1; done"
   },
   "devDependencies": {

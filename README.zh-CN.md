@@ -7,6 +7,8 @@
 <p align="center">
   <a href="./index.html"><strong>index.html</strong></a>
   ·
+  <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fstabruriss%2Fhistory-of-europe-in-frames"><strong>一键部署至 Vercel</strong></a>
+  ·
   <a href="./LICENSE">MIT 许可证</a>
 </p>
 
@@ -33,17 +35,19 @@
 当前已收录的内容包括：
 
 - **地理概念**：涵盖海域、山脉、河流、商道与历史区域，共 33 个条目。
-- **历史进程**：现已写就 7 章、54 节、163 幕地图，起于上古初民，止于罗马帝国晚期与早期基督教。
-- **历史树**：以纵轴标示时间，按主题分出希腊主线、罗马、托勒密埃及、塞琉古、西罗马与基督教六条脉络。选中任一脉络后，可用 `↑` `↓` 键沿时间线上下游历，用 `←` `→` 键切换同一节内的各幕场景。
+- **历史进程**：现已写就 8 章、64 节、173 幕地图，起于上古初民，止于罗马帝国晚期与早期基督教，并附有同时期中国的大事对照。
+- **历史树**：以纵轴标示时间，按主题分出希腊主线、罗马、托勒密埃及、塞琉古、西罗马、基督教，以及一条与之平行的**中国**时间线（自新石器聚落、三代秦汉至南北朝，供跨文明时间对照）。选中任一脉络后，可用 `↑` `↓` 键沿时间线上下游历，用 `←` `→` 键切换同一节内的各幕场景。
 - **人物与名场面**：收录 102 位历史人物、148 张纪年人物卡，为马拉松、温泉关等标志性历史时刻设有 108 个“名场面”标签，并附有 227 条主要指向在线古典原典的阅读链接。
 
 *注：图中的古代疆域系沿海岸线裁剪而成的教学示意区域，旨在辅助空间理解，并非严格考据的边界复原。*
 
-## 构建说明
+## 构建与部署
 
 ```sh
 npm run build        # 即 cd src && python3 assemble.py ../index.html
 ```
+
+项目根目录已配置 `vercel.json`，支持在 Vercel 中直接导入本仓库（或点击页首的 [一键部署至 Vercel](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fstabruriss%2Fhistory-of-europe-in-frames)），无需额外设置即可自动完成构建并发布静态页面。
 
 构建脚本 `src/assemble.py` 仅依赖 Python 标准库。它会将 Leaflet、底图（`data.json`）、历史疆域（`history_geo.json`）、目录条目、正文以及人物卡依次填入 `src/template.html` 的占位符中，生成最终的 `index.html`；若有任何占位符未能填妥，构建便会报错中止。因此，日常修订请直接编辑 `src/` 目录下的源文件，切勿手动修改 `index.html`。
 

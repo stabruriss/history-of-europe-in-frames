@@ -22,16 +22,16 @@ const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','
  }
  try{
   const p=await pageAt();
-  assert.equal(await p.$$eval('#toc .chip',es=>es.length),56);
+  assert.equal(await p.$$eval('#toc .chip',es=>es.length),66);
   // Metro lines: pick a line, then ↑↓ walk its stations in time order and stop at both ends.
   const lines=await p.evaluate(()=>HISTORY_BRANCHES.map(b=>({id:b.id,keys:lineStations(b.id).map(s=>s.key)})));
-  assert.deepEqual(lines.map(l=>[l.id,l.keys.length]),[['trunk',23],['faith',11],['rome',30],['ptolemaic',19],['seleucid',19],['west',31]]);
+  assert.deepEqual(lines.map(l=>[l.id,l.keys.length]),[['trunk',23],['faith',11],['rome',30],['ptolemaic',19],['seleucid',19],['west',31],['china',10]]);
   const onKey=()=>p.evaluate(()=>({key:toc.querySelector('.chip.on').dataset.key,line:treeLine,focus:document.activeElement===toc.querySelector('.chip.on')}));
   const walked=new Set();
   for(const line of lines){
-   await p.click(`#toc .tree-line[data-line="${line.id}"]`);
    const [id,from]=line.keys[0].split('/');await p.evaluate(({id,from})=>go(id,{scene:+from}),{id,from});
-   await p.focus('#toc .chip.on');await p.keyboard.press('ArrowUp');assert.equal((await onKey()).key,line.keys[0]);
+   await p.click(`#toc .tree-line[data-line="${line.id}"]`);
+   await p.focus('#toc .chip.on');await p.keyboard.press('ArrowUp');assert.equal((await onKey()).key,line.keys[0]);walked.add(line.keys[0]);
    for(let i=1;i<line.keys.length;i++){
     await p.keyboard.press('ArrowDown');const s=await onKey();
     assert.deepEqual(s,{key:line.keys[i],line:line.id,focus:true},line.id+' '+i);walked.add(s.key);
@@ -39,7 +39,7 @@ const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','
    await p.keyboard.press('ArrowDown');assert.equal((await onKey()).key,line.keys.at(-1));
    for(let i=line.keys.length-2;i>=0;i--){await p.keyboard.press('ArrowUp');assert.equal((await onKey()).key,line.keys[i]);}
   }
-  assert.equal(walked.size+1,56,'every row lies on some line');
+  assert.equal(walked.size,66,'every row lies on some line');
   // The same chapter has separate sidebar rows on either side of two era boundaries.
   await p.evaluate(()=>go('history-farming'));await p.focus('#map');await p.keyboard.press('ArrowDown');
   assert.equal((await state(p)).scene,1);assert.equal(await p.$eval('.active-era',e=>e.dataset.era),'bronze');
@@ -60,7 +60,7 @@ const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','
    for(let i=e.count-2;i>=0;i--){await p.keyboard.press('ArrowLeft');assert.equal((await state(p)).textScene,i);}
    await p.keyboard.press('ArrowLeft');assert.equal((await state(p)).scene,0);
   }
-  assert.equal(count,163);
+  assert.equal(count,173);
   // Meaningful correspondence, rather than several events sharing one summary paragraph.
   for(const [scene,word] of [['history-persian-wars/2','马拉松'],['history-persian-wars/3','萨拉米斯'],['history-celts/1','加拉太'],['history-celts/2','帕加马']]){
    await p.evaluate(scene=>go(scene),scene);assert.ok(await p.$eval('#sceneContext>p',(e,word)=>e.textContent.includes(word),word));
