@@ -1,7 +1,7 @@
 <h1 align="center">History of Europe in Frames</h1>
 
 <p align="center">
-  用地图一幕一幕讲欧洲历史，整本图册就是一个离线 HTML 文件。
+  以地图分镜讲述欧洲历史——从史前时代直至二战之后，浓缩于单个离线 HTML 文件的个人学习笔记。
 </p>
 
 <p align="center">
@@ -14,72 +14,76 @@
   <a href="./README.md">English</a> · <strong>简体中文</strong>
 </p>
 
-这里放的是中文历史图册《地中海与近东》，人名、地名都附英文，从走出非洲一直讲到西罗马灭亡。每一节由几幕地图组成：地图随时间变化，旁边用一小段话讲清这一刻发生了什么、为什么。
+这是一份以交互式地图呈现的欧洲史学习笔记，计划从人类走出非洲的史前时代一路写到第二次世界大战之后。全书以中文撰写，所有人物与地名均附有英文对照，希望能为使用中文学习欧洲历史的读者提供一份清晰、生动的参考。
 
-正文重因果、轻年表。它从权力、成本和合法性去读这段历史，不把它写成通向欧洲的直线；有可比之处，就把同时代的中国摆在旁边。
+笔记以“分镜”的方式展开：每一节由若干幕地图组成，疆域、路线与城邦随时间流转而重绘，旁侧辅以短文，道出彼时彼刻的来龙去脉。在叙事上，这份笔记重因果而轻年表，试图从权力、财政成本与统治合法性的视角去理解历史的演进，而非将其简化为一条通往现代欧洲的单向直线；遇到可以互相发明的地方，也会将同时代的中国置于一旁加以对照。
 
-## 界面
+目前已完成第一阶段**《地中海与近东》**（自人类走出非洲至西罗马帝国终结与迦克墩公会议），后续的中世纪与近现代篇章将沿历史树继续向下生长。
 
-![布匿战争：汉尼拔翻越阿尔卑斯的路线，右边是正文、名场面和人物卡](./docs/images/punic-wars.jpg)
+## 界面预览
 
-![君士坦丁的新罗马：埃及粮船改驶新都，左边是历史树，下面是本节各幕](./docs/images/new-rome.jpg)
+![布匿战争：汉尼拔翻越阿尔卑斯的进军路线，右侧为正文、名场面标签与人物卡片](./docs/images/punic-wars.jpg)
 
-## 打开方式
+![君士坦丁的新罗马：自亚历山大里亚改驶新都的粮道，左侧为历史树，底部为本节分镜](./docs/images/new-rome.jpg)
 
-用电脑或手机浏览器直接打开 `index.html`。Leaflet、底图、历史疆域和全部文字都在这一个文件里，不用服务器，断网也能看。联网时会多载入一层地形晕渲，阅读链接也能点开。
+## 使用方式
 
-- **地理概念**：海、山、河、道路和区域，共 33 条。
-- **历史进程**：7 章、54 节、163 幕地图，从上古讲到帝国和基督教。
-- **历史树**：从上到下是时间，每个主题一条线，包括希腊主线、罗马、托勒密埃及、塞琉古、西罗马和基督教。先选一条线，↑ ↓ 沿线走，← → 切换本节的各幕。
-- **人物与名场面**：102 个人物，148 张带年份的卡片；马拉松、温泉关这类标志性事件有 108 个名场面标签；227 条阅读链接，大多指向在线原典。
+直接用桌面或手机浏览器打开 `index.html` 即可阅读。地图引擎（Leaflet）、基础地理数据、历代疆域、正文与人物卡片均已内嵌在这一份文件中，无需启动服务器，离线亦可完整浏览。联网状态下，页面会自动加载地形晕渲图层，文末的延伸阅读链接也可直接访问。
 
-古代疆域按海岸线画成示意区域，不是考证出来的边界。
+当前已收录的内容包括：
 
-## 构建
+- **地理概念**：涵盖海域、山脉、河流、商道与历史区域，共 33 个条目。
+- **历史进程**：现已写就 7 章、54 节、163 幕地图，起于上古初民，止于罗马帝国晚期与早期基督教。
+- **历史树**：以纵轴标示时间，按主题分出希腊主线、罗马、托勒密埃及、塞琉古、西罗马与基督教六条脉络。选中任一脉络后，可用 `↑` `↓` 键沿时间线上下游历，用 `←` `→` 键切换同一节内的各幕场景。
+- **人物与名场面**：收录 102 位历史人物、148 张纪年人物卡，为马拉松、温泉关等标志性历史时刻设有 108 个“名场面”标签，并附有 227 条主要指向在线古典原典的阅读链接。
+
+*注：图中的古代疆域系沿海岸线裁剪而成的教学示意区域，旨在辅助空间理解，并非严格考据的边界复原。*
+
+## 构建说明
 
 ```sh
 npm run build        # 即 cd src && python3 assemble.py ../index.html
 ```
 
-`src/assemble.py` 只用 Python 标准库，把 Leaflet、底图（`data.json`）、历史疆域（`history_geo.json`）、条目、正文和人物卡逐一填进 `src/template.html` 的占位符；只要还剩一个没填，就报错停下。改内容只改 `src/` 里的文件，不要手改 `index.html`。
+构建脚本 `src/assemble.py` 仅依赖 Python 标准库。它会将 Leaflet、底图（`data.json`）、历史疆域（`history_geo.json`）、目录条目、正文以及人物卡依次填入 `src/template.html` 的占位符中，生成最终的 `index.html`；若有任何占位符未能填妥，构建便会报错中止。因此，日常修订请直接编辑 `src/` 目录下的源文件，切勿手动修改 `index.html`。
 
-| 路径 | 内容 |
+| 路径 | 说明 |
 | --- | --- |
-| `src/template.html`、`src/layout.css`、`src/atlas_ui.js` | 页面骨架、样式和交互 |
-| `src/history_entries.js` | 各节、各幕、地图视野、历史树和主线 |
-| `src/history_content.json` | 各节正文、名场面标签和阅读链接 |
-| `src/historical_figures.js` | 人物、人物卡和地点 |
-| `src/levante_entries.js`、`src/labels_dates.js`、`src/marine_labels.js` | 地理条目和地图标注 |
-| `src/data.json`、`src/history_geo.json` | 底图和历史疆域（已简化） |
-| `src/build*.py` | 生成上面两个地理文件的脚本（见下文） |
-| `tests/verify-*.js` | 浏览器自动检查，每块功能一套 |
+| `src/template.html`、`src/layout.css`、`src/atlas_ui.js` | 页面骨架、排版样式与交互逻辑 |
+| `src/history_entries.js` | 历史章节、分镜场景、地图视野、历史树及各条脉络 |
+| `src/history_content.json` | 各节正文、名场面标签与延伸阅读链接 |
+| `src/historical_figures.js` | 历史人物、纪年卡片与关联地点 |
+| `src/levante_entries.js`、`src/labels_dates.js`、`src/marine_labels.js` | 地理概念条目与地图注记 |
+| `src/data.json`、`src/history_geo.json` | 经简化处理的基础底图与历代疆域数据 |
+| `src/build*.py` | 生成上述两份地理数据的 Python 脚本（详见下文） |
+| `tests/verify-*.js` | 自动化浏览器测试脚本，按功能模块划分 |
 
-## 检查
+## 自动化测试
 
 ```sh
 npm install
-npm test             # 对 index.html 逐个运行 tests/verify-*.js
+npm test             # 针对 index.html 依次运行 tests/verify-*.js
 ```
 
-检查用 `puppeteer-core` 驱动本机 Chrome，内容包括：
-- 各项计数和每幕字数上限；
-- 每幕的关键句；
-- 历史树和键盘操作；
-- 桌面和 390 px 手机两种宽度，有没有横向溢出；
-- 页面报错，以及断网能否正常使用。
+测试套件通过 `puppeteer-core` 驱动本地 Chrome 浏览器，自动核验以下内容：
+- 章节、场景、人物卡的数量统计与单幕正文字数上限；
+- 各幕正文中的关键表述；
+- 历史树导航与键盘快捷键交互；
+- 桌面端与手机端（390 px 宽）的响应式布局，确保无横向溢出；
+- 页面零运行时报错，以及完全断网状态下的可用性。
 
-默认的 Chrome 路径是 `/Applications/Google Chrome.app`，装在别处时用 `CHROME_PATH` 指定。截图存到 `tests/shots*/`，不进 git。
+脚本默认调用 `/Applications/Google Chrome.app`；若浏览器安装在其他路径，可通过环境变量 `CHROME_PATH` 指定。测试过程中生成的截图保存在 `tests/shots*/` 目录下（已由 Git 忽略）。
 
 ## 重新生成地理数据
 
-只有重画疆域时才需要，图册本身运行时不用 Python。
+图册在阅读与常规构建时并不需要运行这部分脚本；唯有在增补或重绘历史疆域时才需调用。
 
-脚本依赖 `shapely` 和 `pyshp`；`build.py`、`build_history.py`、`build_west_geo.py` 还要用到 [Natural Earth](https://www.naturalearthdata.com/) 的数据：`build.py` 用陆地、湖泊、河流和国界，`build_history.py` 用陆地，`build_west_geo.py` 用河流。在 `src/` 下运行：
+脚本依赖 `shapely` 与 `pyshp`，其中 `build.py`、`build_history.py` 和 `build_west_geo.py` 还需读取 [Natural Earth](https://www.naturalearthdata.com/) 的公开地理数据（`build.py` 使用陆地、湖泊、河流与现代国界，`build_history.py` 使用陆地轮廓，`build_west_geo.py` 使用水系中心线）。请在 `src/` 目录下按序执行：
 
-1. `build.py` 生成底图 `data.json`。
-2. `build_history.py <natural-earth-dir>` 从头重写 `history_geo.json`。
-3. 之后按顺序运行各时期的脚本，往 `history_geo.json` 里追加该时期的区域：`build_rome_geo.py`、`build_punic_geo.py`、`build_late_rep_geo.py`、`build_west_geo.py <natural-earth-dir>`、`build_empire_geo.py`、`build_const_geo.py`。
+1. 运行 `build.py`，生成基础底图 `data.json`。
+2. 运行 `build_history.py <natural-earth-dir>`，从头生成 `history_geo.json`。
+3. 依次运行各时期的疆域脚本，向 `history_geo.json` 追加对应时代的图层：`build_rome_geo.py`、`build_punic_geo.py`、`build_late_rep_geo.py`、`build_west_geo.py <natural-earth-dir>`、`build_empire_geo.py`、`build_const_geo.py`。
 
-## 许可
+## 许可证
 
-本项目用 [MIT 许可证](./LICENSE)。页面里内嵌的 Leaflet 沿用它自己的 BSD-2-Clause 许可，底图来自公有领域的 Natural Earth 数据。详见 [THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md)。
+本项目采用 [MIT 许可证](./LICENSE) 开源。页面内嵌的 Leaflet 遵循其原有的 BSD-2-Clause 许可，基础底图源自公有领域的 Natural Earth 数据。第三方资源与引文说明详见 [THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md)。
