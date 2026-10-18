@@ -569,6 +569,33 @@ const FIGURE_PLACES={
       34.892
     ],
     "note": "小亚细亚南部的大城，保罗的家乡。"
+  },
+  "horeb": {
+    "name": "传统西奈山（何烈山）",
+    "en": "Traditional Mount Sinai (Horeb)",
+    "ll": [
+      28.539,
+      33.975
+    ],
+    "note": "杰贝勒穆萨，传统定为摩西领受十诫的山；不是已证实的地点。"
+  },
+  "amarna": {
+    "name": "阿玛尔纳",
+    "en": "Amarna (Akhetaten)",
+    "ll": [
+      27.65,
+      30.9
+    ],
+    "note": "阿赫那吞在中埃及新建的都城“阿顿的地平线”，他死后不久就被放弃。"
+  },
+  "capernaum": {
+    "name": "迦百农",
+    "en": "Capernaum",
+    "ll": [
+      32.881,
+      35.575
+    ],
+    "note": "加利利海北岸的渔村，彼得的家在这里。"
   }
 };
 const FIGURES={
@@ -2246,6 +2273,84 @@ const FIGURES={
         "https://www.newadvent.org/fathers/3604028.htm"
       ]
     ]
+  },
+  "moses": {
+    "name": "摩西",
+    "en": "Moses",
+    "life": "传说人物",
+    "relation": "利未人 · 出埃及的领袖（据经书）",
+    "place": "horeb",
+    "bio": "经书说他生在埃及，法老下令杀希伯来男婴，母亲把他放进蒲草箱漂在尼罗河上，被法老的女儿捡去养大。埃及文献里没有他；“摩西”是埃及名，利未人里的非尼哈等名字也出自埃及语。",
+    "sources": [
+      [
+        "《出埃及记》（第2—3章，和合本）",
+        "https://zh.wikisource.org/wiki/%E8%81%96%E7%B6%93_(%E5%92%8C%E5%90%88%E6%9C%AC)/%E5%87%BA%E5%9F%83%E5%8F%8A%E8%A8%98"
+      ]
+    ]
+  },
+  "akhenaten": {
+    "name": "阿赫那吞",
+    "en": "Akhenaten",
+    "life": "在位约前1353—前1336年",
+    "relation": "埃及第十八王朝法老 · 多数学者认为是图坦卡蒙的父亲",
+    "place": "amarna",
+    "bio": "原名阿蒙霍特普四世，即位后改名“对阿顿有益的人”，另建新都，把阿蒙神的名字从各处碑铭上凿掉。他一死新都被弃，旧神全部请回，后世提起他只说“那个罪人”。",
+    "sources": [
+      [
+        "《阿顿颂》（英文资料）",
+        "https://en.wikipedia.org/wiki/Great_Hymn_to_the_Aten"
+      ]
+    ]
+  },
+  "peter": {
+    "name": "彼得",
+    "en": "Peter",
+    "life": "生年不详—约64年",
+    "relation": "加利利的渔夫 · 十二门徒之首",
+    "place": "capernaum",
+    "bio": "原名西门，在加利利海打鱼，耶稣给他起名“磐石”（希腊语彼得）。耶稣被捕那夜，他三次说不认得耶稣；后来成了耶路撒冷门徒的头。传说他死在罗马，罗马主教后来自称他的继承人。",
+    "sources": [
+      [
+        "《使徒行传》（第10—11、15章，和合本）",
+        "https://zh.wikisource.org/wiki/%E8%81%96%E7%B6%93_(%E5%92%8C%E5%90%88%E6%9C%AC)/%E4%BD%BF%E5%BE%92%E8%A1%8C%E5%82%B3"
+      ],
+      [
+        "《马可福音》（第14章 三次不认主，和合本）",
+        "https://zh.wikisource.org/wiki/%E8%81%96%E7%B6%93_(%E5%92%8C%E5%90%88%E6%9C%AC)/%E9%A6%AC%E5%8F%AF%E7%A6%8F%E9%9F%B3"
+      ]
+    ]
+  },
+  "pliny-younger": {
+    "name": "小普林尼",
+    "en": "Pliny the Younger",
+    "life": "约61—约113年",
+    "relation": "图拉真派去比提尼亚的总督 · 老普林尼的外甥",
+    "place": "nicomedeia",
+    "bio": "科莫湖边的富家子，舅舅老普林尼在遗嘱里收他为养子。79年维苏威火山爆发，十七岁的他在海湾对岸看着舅舅驾船去救人、死在那里，后来写信给塔西佗细说经过。他的十卷书信，是了解图拉真时代的上好材料。",
+    "sources": [
+      [
+        "小普林尼《书信》第10卷（第96—97封）",
+        "https://www.attalus.org/old/pliny10b.html"
+      ]
+    ]
+  },
+  "cyprian": {
+    "name": "居普良",
+    "en": "Cyprian",
+    "life": "约200—258年",
+    "relation": "迦太基主教",
+    "place": "carthage",
+    "bio": "富家出身的修辞学教师，中年受洗，两年后就当上主教。德基乌斯迫害时他躲出城去，写信遥控教会，事后主张让献过祭的“跌倒者”悔罪回来；258年瓦勒良迫害时被斩首。",
+    "sources": [
+      [
+        "蓬提乌斯《居普良传》",
+        "https://www.newadvent.org/fathers/0505.htm"
+      ],
+      [
+        "优西比乌《教会史》第6卷（第43节）",
+        "https://www.newadvent.org/fathers/250106.htm"
+      ]
+    ]
   }
 };
 const FIGURE_SCENES={
@@ -3336,7 +3441,14 @@ const FIGURE_SCENES={
       "place": "pola"
     }
   ],
-  "history-faith-jesus/1": [
+  "history-faith-jesus/3": [
+    {
+      "id": "peter",
+      "when": "约40年",
+      "event": "给百夫长施洗",
+      "note": "哥尼流是驻凯撒里亚的罗马百夫长，敬畏上帝，却没受割礼。彼得进了他的家，说“神是不偏待人的”，给他全家施洗；回到耶路撒冷，奉割礼的门徒责问他为什么跟没受割礼的人一起吃饭。",
+      "place": "caesarea"
+    },
     {
       "id": "paul",
       "when": "约57—60年",
@@ -3345,7 +3457,7 @@ const FIGURE_SCENES={
       "place": "jerusalem"
     }
   ],
-  "history-faith-jesus/2": [
+  "history-faith-jesus/5": [
     {
       "id": "josephus",
       "when": "70年",
@@ -3354,13 +3466,67 @@ const FIGURE_SCENES={
       "place": "jerusalem"
     }
   ],
-  "history-faith-empire-church/2": [
+  "history-faith-empire-church/3": [
     {
       "id": "leo",
       "when": "451—452年",
       "event": "彼得借利奥开了口",
       "note": "451年他写给卡尔西顿大公会议的书信当众宣读，与会主教齐声喊：“彼得借利奥开了口！”次年他出城见阿提拉，阿提拉随即退兵。",
       "place": "rome"
+    }
+  ],
+  "history-faith-israel/3": [
+    {
+      "id": "moses",
+      "when": "约前13世纪（传说）",
+      "event": "燃烧的荆棘",
+      "note": "他在米甸替岳父放羊，到了何烈山，看见荆棘着火却烧不毁，耶和华从火中叫他回埃及领人出来。他问神叫什么名字，神说：“我是自有永有的。”",
+      "place": "horeb"
+    }
+  ],
+  "history-faith-second-temple/0": [
+    {
+      "id": "akhenaten",
+      "when": "约前1346年",
+      "event": "迁都阿玛尔纳",
+      "note": "他把朝廷搬到中埃及荒地上新建的“阿顿的地平线”，只许拜太阳圆盘阿顿，而能直接拜阿顿的只有国王一家，百姓拜的是国王。他写的《阿顿颂》说：“你是唯一的神，没有别的神像你。”",
+      "place": "amarna"
+    }
+  ],
+  "history-faith-second-temple/3": [
+    {
+      "id": "caesar",
+      "when": "前44年3月",
+      "event": "犹太人守灵",
+      "note": "苏埃托尼乌斯说，恺撒火化后，各国侨民轮着来哀悼，最上心的是犹太人，一连几夜守在焚尸的地方。他在亚历山大里亚被围时，犹太人派兵来援；他回头准各地犹太人照旧聚会、往耶路撒冷送钱。",
+      "place": "rome"
+    }
+  ],
+  "history-faith-church/0": [
+    {
+      "id": "pliny-younger",
+      "when": "约112年",
+      "event": "写信问皇帝",
+      "note": "他问的是：光凭“基督徒”这个名号就该罚，还是要有罪行才罚？告发的越来越多，还来了匿名揭帖。图拉真回信：匿名告发一概不收，“那是最坏的先例，也不合我们这个时代”。",
+      "place": "nicomedeia"
+    }
+  ],
+  "history-faith-church/1": [
+    {
+      "id": "cyprian",
+      "when": "252年前后",
+      "event": "瘟疫里的教会",
+      "note": "迦太基闹瘟疫，路边的尸体没人收。他召集信徒说：只照顾自家人算不得什么，连迫害我们的人也要照顾。富人出钱，穷人出力，不分信不信，一律收治。",
+      "place": "carthage"
+    }
+  ],
+  "history-faith-church/2": [
+    {
+      "id": "galerius",
+      "when": "303年",
+      "event": "撺掇迫害",
+      "note": "拉克坦提乌斯说，他母亲是拜山神的乡下女人，几乎天天设祭请邻居吃祭肉，最恨不来吃的基督徒，是她挑唆儿子动手。303年尼科米底亚皇宫两回起火，他咬定是基督徒放的。",
+      "place": "nicomedeia"
     }
   ]
 };

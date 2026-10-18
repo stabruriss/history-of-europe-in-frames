@@ -235,6 +235,14 @@ Object.assign(HS,{
   masada:['马萨达','Masada',31.316,35.354,'死海边的山顶要塞，希律修的行宫；73年守军全体自尽。'],
   yavneh:['雅夫内','Yavneh',31.877,34.739,'70年后拉比们在这里重整犹太教。'],
   vagharshapat:['瓦加尔沙帕特','Vagharshapat',40.16,44.29,'亚美尼亚的王城，今埃奇米阿津。'],
+  haran:['哈兰','Harran',36.87,39.03,'幼发拉底河支流边的商城；经书说亚伯拉罕一家从乌尔北上，在这里住过。罗马时代叫卡莱。'],
+  amarna:['阿玛尔纳','Amarna',27.65,30.90,'法老阿赫那吞新建的都城；这里出土的外交泥板里，迦南诸王向法老告“哈比鲁人”的状。'],
+  piramesses:['培尔-拉美西斯','Pi-Ramesses',30.80,31.83,'拉美西斯二世在尼罗河三角洲东部新建的都城，今坎提尔一带；经书里的“兰塞”。'],
+  dan:['但城','Tel Dan',33.249,35.652,'以色列北界的城；1993—1994年在这里出土的石碑刻着“大卫家”。'],
+  lachish:['拉吉','Lachish',31.565,34.849,'犹大的第二大城；前701年被亚述攻破，亚述王在尼尼微宫中刻下了攻城的浮雕。'],
+  megiddo:['米吉多','Megiddo',32.585,35.185,'扼守沿海大道的要塞；前609年约西亚在此阵亡。“哈米吉多顿”（末日决战之地）一名由此而来。'],
+  elephantine:['象岛','Elephantine',24.085,32.887,'尼罗河第一瀑布前的岛；波斯时代驻着一支犹太雇佣兵，有自己的耶和华神庙。'],
+  capernaum:['迦百农','Capernaum',32.881,35.575,'加利利海北岸的渔村；福音书说耶稣在这里住过，彼得的家也在这里。'],
   yangshao:['仰韶村','Yangshao',34.76,111.77,'黄河中游新石器彩陶文化遗址（今河南渑池）。'],
   liangzhu:['良渚','Liangzhu',30.39,119.99,'约前3300—前2300年的大型古城与外围水利系统（今杭州余杭）。'],
   erlitou:['二里头','Erlitou',34.69,112.69,'洛阳盆地的夏商之际都邑遗址，发现中轴宫城基址与早期青铜礼器作坊。'],
@@ -1277,96 +1285,179 @@ const HISTORY_ENTRIES=[
      ['阿勒曼尼人','Alamanni',47.6,9.7,HC.neutral],['不列颠：410年罗马撤走','Britain: abandoned 410',52.7,-1.6,HC.neutral]].forEach(([t,en,la,lo,c])=>hl(d,t,en,la,lo,c));
    },[['fill',HC.celt,'西哥特'],['fill',HC.mino,'汪达尔'],['fill',HC.macedon,'法兰克'],['fill',HC.thebes,'勃艮第'],['fill',HC.myc,'苏维汇'],['fill',HC.rome,'苏瓦松（罗马残部，到486年）'],['fill',HC.war,'奥多亚克的意大利'],['fill',HC.athens,'东罗马']])
  ]},
-{id:'history-faith-israel',ch:6,title:'以色列的由来',short:'以色列的由来',en:'The Origins of Israel',period:'约前1208—前930年',c:HC.faith,
+{id:'history-faith-israel',ch:6,title:'从大河那边来：希伯来人与出埃及',short:'族长与出埃及',en:'From Beyond the River: the Hebrews and the Exodus',period:'约前1400—前1200年',c:HC.faith,
  scenes:[
-  hs('约前1208年起','迦南与早期以色列','以色列山地社群、腓尼基港口与非利士城市各自重组。',[[30.5,33.7],[35.5,37]],d=>{
+  hs('传说时代—前14世纪','大河那边来的人','经书说祖先从幼发拉底河下游的乌尔经哈兰来到迦南；前14世纪的泥板里，迦南诸王向法老告“哈比鲁人”的状。',[[25.5,29.5],[38.6,48.5]],d=>{
+    ha(d,'crescent',COL.crescent,{fillOpacity:.12});ha(d,'canaan',COL.canaan,{fillOpacity:.22});
+    hp(d,'ur',{note:'经书里的“迦勒底的吾珥”，亚伯拉罕一家从这里出发。'});hp(d,'haran');
+    hp(d,'shechem',{note:'经书说亚伯拉罕进了迦南，先到示剑。'});hp(d,'amarna',{left:1});
+    hr(d,[[30.96,46.10],[32.4,44.6],[33.9,42.4],[35.3,40.2],[36.87,39.03]],HC.route);
+    hr(d,[[36.87,39.03],[35.6,37.4],[34.0,36.4],[32.21,35.28]],HC.route);
+   },[['fill',COL.crescent,'新月沃地'],['fill',COL.canaan,'迦南'],['dline',HC.route,'经书里亚伯拉罕的路线（传说）'],['dot','#2a2018','乌尔、哈兰、示剑与阿玛尔纳']]),
+  hs('约前14—前13世纪','在迦南放羊、学种地','平原城邦向埃及纳贡，牧人散在山坡上，半牧半农；“耶和华”这个名字最早见于埃及铭文，指的是南方旷野。',HV.levant,d=>{
+    ha(d,'canaan',COL.canaan,{fillOpacity:.16});ha(d,'centralHighlands',COL.israel,{fillOpacity:.3});ha(d,'egypt',COL.egypt,{fillOpacity:.22});
+    hp(d,'shechem');hp(d,'jerusalem',{left:1,note:'前14世纪的耶路撒冷王阿布迪-赫巴写信给法老，抱怨哈比鲁人抢了王的地。'});
+    hp(d,'gaza',{left:1,note:'埃及管迦南的据点，通往埃及的大道从这里走。'});
+    hl(d,'中央山地','Central Highlands',32.4,36.3,COL.israel);hl(d,'沙苏牧民（耶和华的旷野）','Shasu of Yhw',30.2,35.85,HC.war);
+   },[['fill',COL.canaan,'迦南城邦（向埃及纳贡）'],['fill',COL.israel,'中央山地：牧人半牧半农，慢慢开地'],['fill',COL.egypt,'埃及'],['dot','#2a2018','城邦与埃及据点']]),
+  hs('约前1274年','卡迭石：站错了队','埃及和赫梯大战卡迭石，打成平手；两强之间的小邦和山地人群各自押宝，仗后拉美西斯二世年年北上清算。',[[27.5,29],[42,41]],d=>{
+    ha(d,'hHittite',HC.hittite);ha(d,'egypt',COL.egypt,{fillOpacity:.4});ha(d,'canaan',COL.egypt,{fillOpacity:.15});
+    hp(d,'hattusa');hp(d,'piramesses',{left:1,note:'拉美西斯二世的新都，大军从这里出发北上。'});hp(d,'kadesh',{kind:'battle'});
+    hr(d,[[30.8,31.83],[31.4,34.3],[33,35.4],[34.556,36.518]],COL.egypt);
+    hr(d,[[40,34.6],[37,36],[34.556,36.518]],HC.hittite);
+    hr(d,[[32.1,35.9],[31.5,34.5],[31.1,33.0],[30.9,32.1]],HC.war);
+    hl(d,'倒向赫梯的山地人群（本线的读法）','Highland groups on the Hittite side',32.6,38.6,HC.hittite);
+   },[['fill',HC.hittite,'赫梯'],['fill',COL.egypt,'埃及与它管的迦南'],['dline',COL.egypt,'埃及北上'],['dline',HC.hittite,'赫梯南下'],['dline',HC.war,'战后俘虏押回埃及（概略）']]),
+  hs('约前1270—前1213年','埃及的苦工：摩西是谁','俘虏去修拉美西斯的新都；摩西的名字是埃及名，故事说他在法老宫中长大，逃到米甸，在何烈山遇见耶和华。',[[24.6,29.4],[32.6,37.4]],d=>{
+    ha(d,'egypt',COL.egypt,{fillOpacity:.3});
+    hp(d,'piramesses',{left:1});hp(d,'memphis',{left:1});
+    d.pin(P('传统西奈山（何烈山）',28.539,33.975,'杰贝勒穆萨，传统定为摩西遇见耶和华、领受十诫的山；不是已证实的历史地点。','peak',{en:'Traditional Mount Sinai'}));
+    hr(d,[[30.80,31.83],[30.1,32.6],[29.5,33.5],[28.9,34.6],[28.3,35.3]],COL.exodus);
+    hl(d,'米甸','Midian',27.9,36.0,COL.exodus);
+   },[['fill',COL.egypt,'埃及'],['dline',COL.exodus,'摩西逃往米甸（传说，概略）'],['dot','#2a2018','拉美西斯的新都与古都孟菲斯']]),
+  hs('约前1213—前1200年','出埃及：为什么放人','拉美西斯二世死后，埃及西挡利比亚人和海上民族、内有王族争位，看管一松，这批人走了；后人写成十灾逼法老放人。',HV.levant,d=>{
+    ha(d,'canaan',COL.canaan,{fillOpacity:.16});hr(d,EXODUS_PATH,COL.exodus);
+    d.pin(P('传统西奈山',28.539,33.975,'杰贝勒穆萨的传统定位；不是已证实的历史地点。','peak',{en:'Traditional Mount Sinai'}));
+    hp(d,'jericho');hp(d,'piramesses',{left:1});hl(d,'西奈半岛','Sinai Peninsula',29.65,34,COL.exodus);
+   },[['dline',COL.exodus,'未经证实的一种传统路线'],['fill',COL.canaan,'迦南：叙事中的目的地']])
+ ]},
+{id:'history-faith-first-temple',ch:6,title:'迦南的王国：从山地村落到巴比伦之囚',short:'王国与巴比伦之囚',en:'Kingdoms in Canaan: from Hill Villages to the Babylonian Exile',period:'约前1200—前538年',c:HC.faith,
+ scenes:[
+  hs('约前1200—前1000年','山地村落','埃及撤走、沿海城邦衰落，中央山地的村落从三十来个涨到两百多个；还没有王，有事由士师领头。',[[30.5,33.7],[35.5,37]],d=>{
     ha(d,'centralHighlands',COL.israel,{fillOpacity:.35});ha(d,'phoenicia',COL.phoenicia,{fillOpacity:.3});ha(d,'hPhilistia',HC.mino,{fillOpacity:.35});
     hp(d,'jerusalem',{left:1});hp(d,'shechem');hp(d,'tyre');hp(d,'gaza',{left:1});
     hl(d,'中央山地','Central Highlands',32.4,36.3,COL.israel);
-   },[['fill',COL.israel,'早期以色列形成的重要山地区域'],['fill',COL.phoenicia,'腓尼基沿海'],['fill',HC.mino,'非利士沿海城市地带']],8),
-  hs('传统定在前15或前13世纪','出埃及叙事','虚线展示一种出埃及传统路线。',HV.levant,d=>{
-    ha(d,'canaan',COL.canaan,{fillOpacity:.16});hr(d,EXODUS_PATH,COL.exodus);
-    d.pin(P('传统西奈山',28.539,33.975,'杰贝勒穆萨的传统定位；不是已证实的历史地点。','peak',{en:'Traditional Mount Sinai'}));
-    hp(d,'jericho');hp(d,'memphis',{left:1});hl(d,'西奈半岛','Sinai Peninsula',29.65,34,COL.exodus);
-   },[['dline',COL.exodus,'未经证实的一种传统路线'],['fill',COL.canaan,'迦南：叙事中的目的地']]),
-  hs('约前1000—前930年','大卫与所罗门','大卫定都耶路撒冷，所罗门修起第一圣殿；山地底色标王权叙事的地理核心。',[[30.6,34.0],[33.8,37.1]],d=>{
-    ha(d,'centralHighlands',COL.united,{fillOpacity:.2,dashArray:'5 5'});hp(d,'jerusalem');hp(d,'shechem');hp(d,'tyre',{left:1});
+   },[['fill',COL.israel,'以色列村落集中的中央山地'],['fill',COL.phoenicia,'腓尼基沿海'],['fill',HC.mino,'非利士人的沿海城市']],8),
+  hs('约前1000—前930年','大卫与所罗门','非利士人压得紧，各支派要了一个王；大卫定都耶路撒冷，所罗门修起第一圣殿。',[[30.6,34.0],[33.8,37.1]],d=>{
+    ha(d,'centralHighlands',COL.united,{fillOpacity:.2,dashArray:'5 5'});hp(d,'jerusalem');hp(d,'shechem');hp(d,'tyre',{left:1});hp(d,'dan');
     hl(d,'王权核心的参考地区','Approximate highland setting',32.7,36.1,COL.united);
-   },[['dash',COL.united,'山地参考区域，非已证实国境'],['dot',COL.united,'城市与地理锚点']],8)
- ]},
-{id:'history-faith-first-temple',ch:6,title:'第一圣殿时期',short:'第一圣殿时期',en:'The First Temple',period:'前930—前538年',c:HC.faith,
- scenes:[
+   },[['dash',COL.united,'山地参考区域，非已证实国境'],['dot',COL.united,'城市与地理锚点']],8),
   hs('前930—前722年','南北两国','所罗门死后王国一分为二：北国以色列、南国犹大；前722年亚述灭了以色列。',[[29.5,31.0],[38.0,45.5]],d=>{
     ha(d,'israelKingdom',COL.israel,{fillOpacity:.32});ha(d,'judahKingdom',COL.jerusalem,{fillOpacity:.32});
     hp(d,'samaria');hp(d,'jerusalem',{left:1,note:'犹大国的都城，所罗门修的圣殿在这里。'});hp(d,'nineveh');
     hr(d,[[36.36,43.15],[36.6,40.0],[35.5,37.5],[33.6,36.3],[32.4,35.4]],HC.war);
     hl(d,'以色列（北国）','Kingdom of Israel',33.2,37.0,COL.israel);hl(d,'犹大（南国）','Kingdom of Judah',30.8,36.6,COL.jerusalem);hl(d,'亚述','Assyria',35.4,44.2,HC.war);
    },[['fill',COL.israel,'以色列（北国）'],['fill',COL.jerusalem,'犹大（南国）'],['dline',HC.war,'前722年亚述灭以色列（概略）']]),
-  hs('前701—前538年','圣殿被毁','约西亚改革，耶和华成了独一的神；前586年巴比伦烧了圣殿，把上层人掳走；前538年波斯准他们回乡。',[[28.5,31.0],[37.5,49.0]],d=>{
+  hs('前701—前609年','只拜一个神','亚述攻破拉吉、围耶路撒冷不下；约西亚只许在耶路撒冷献祭，捣毁各地神坛；前609年他战死在米吉多。',[[30.6,33.7],[33.5,36.5]],d=>{
+    ha(d,'judahKingdom',COL.jerusalem,{fillOpacity:.32});
+    hp(d,'jerusalem',{left:1,note:'前701年亚述大军围城未下；前622年约西亚在此改革，只许在圣殿献祭。'});
+    hp(d,'lachish',{kind:'battle',left:1});hp(d,'megiddo',{kind:'battle'});
+    hr(d,[[33.3,35.6],[32.7,35.0],[32.0,34.85],[31.62,34.88]],HC.war);
+   },[['fill',COL.jerusalem,'犹大国'],['dline',HC.war,'前701年亚述大军南下（概略）'],['dot',HC.war,'拉吉陷落（前701）与约西亚阵亡（前609）']],8),
+  hs('前597—前538年','巴比伦之囚','巴比伦两破耶路撒冷，前586年烧了圣殿，把上层人掳走；前538年波斯王居鲁士准他们回乡。',[[28.5,31.0],[37.5,49.0]],d=>{
     ha(d,'judahKingdom',COL.jerusalem,{fillOpacity:.32});ha(d,'hBabylonia',HC.neutral,{fillOpacity:.2});
     hp(d,'jerusalem',{kind:'battle',left:1,note:'前586年被巴比伦攻破，圣殿被烧。'});
-    hp(d,'babylon',{note:'被掳的犹大上层住在这一带；前538年波斯王居鲁士准他们回乡。'});
+    hp(d,'babylon',{note:'被掳的犹大上层住在这一带；前539年居鲁士攻下巴比伦，次年准他们回乡。'});
     hr(d,[[31.78,35.24],[33.5,36.6],[35.5,38.8],[34.5,42.0],[32.55,44.42]],HC.war);
    },[['fill',COL.jerusalem,'犹大国'],['fill',HC.neutral,'巴比伦尼亚'],['dline',HC.war,'被掳到巴比伦（概略）'],['dot',HC.war,'被攻破的耶路撒冷']])
  ]},
-{id:'history-faith-second-temple',ch:6,title:'第二圣殿时期',short:'第二圣殿时期',en:'The Second Temple',period:'前538—前4年',c:HC.faith,
+{id:'history-faith-second-temple',ch:6,title:'颠沛中长出来的宗教',short:'第二圣殿时期',en:'A Faith Forged in Exile: the Second Temple',period:'前538—前4年',c:HC.faith,
  scenes:[
-  hs('前538—前332年','回乡与律法','回乡的人重修圣殿，前515年落成；以斯拉把摩西律法立为全民的法。',[[25.0,27.0],[40.5,58.0]],d=>{
-    ha(d,'achaemenid',HC.persia,{fillOpacity:.12});
-    hp(d,'jerusalem',{left:1,note:'前515年第二圣殿落成。'});hp(d,'babylon');
-    hp(d,'susa',{note:'波斯王的都城之一；以斯拉、尼希米都是从波斯宫廷领了命回耶路撒冷的。'});
+  hs('前550—前515年','只有一个神','被掳的先知喊出“在我以外并没有别神”；一神教一说是以色列首创，一说学自埃及法老阿赫那吞。',[[24.6,29.0],[37.5,48.5]],d=>{
+    ha(d,'egypt',COL.egypt,{fillOpacity:.18});ha(d,'hBabylonia',HC.neutral,{fillOpacity:.2});
+    hp(d,'amarna',{left:1,note:'前14世纪阿赫那吞在此建新都，独尊太阳圆盘阿顿；他一死，新都就被放弃。'});
+    hp(d,'babylon',{note:'被掳的先知在这里喊出“在我以外并没有别神”。'});
+    hp(d,'jerusalem',{left:1,note:'前515年，回乡的人在这里修成第二圣殿。'});
     hr(d,[[32.54,44.42],[34.5,42.0],[35.5,38.8],[33.5,36.6],[31.9,35.4]],HC.route);
-   },[['fill',HC.persia,'波斯帝国（概略）'],['dline',HC.route,'从巴比伦回乡（概略）']]),
-  hs('前332—前63年','希腊化与马加比','犹地亚先归托勒密，后归塞琉古；经书译成希腊文；前167年马加比起兵，前164年夺回圣殿。',[[28.8,26.5],[38.2,40.5]],d=>{
+   },[['fill',COL.egypt,'埃及'],['fill',HC.neutral,'巴比伦尼亚'],['dline',HC.route,'从巴比伦回乡（概略）'],['dot','#2a2018','阿顿的都城、被掳之地与重修的圣殿']]),
+  hs('约前458—前400年','选民与约','耶和华是以色列的神，以色列是他拣选的子民；以斯拉把摩西律法立为全民的法，不许跟外族通婚。',[[23.0,27.0],[38.5,50.5]],d=>{
+    ha(d,'achaemenid',HC.persia,{fillOpacity:.12});
+    hp(d,'jerusalem',{left:1,note:'以斯拉在这里当众宣读摩西律法。'});hp(d,'babylon');
+    hp(d,'susa',{note:'波斯王的都城之一；以斯拉、尼希米都是从波斯宫廷领了命回耶路撒冷的。'});
+    hp(d,'elephantine',{left:1});
+   },[['fill',HC.persia,'波斯帝国（概略）'],['dot','#2a2018','犹太人聚居的几个地方']]),
+  hs('前332—前63年','盼一个救世主','犹地亚先归托勒密，后归塞琉古；前167年马加比起兵；《但以理书》盼列国倒下、死人复活、受膏者到来。',[[28.8,26.5],[38.2,40.5]],d=>{
     ha(d,'hPtolemaicCore',HC.mino,{fillOpacity:.18});ha(d,'hSeleucidSyria',HC.parthia,{fillOpacity:.18});
     hp(d,'alexandria',{note:'城里有大批说希腊语的犹太人；经书在这里译成希腊文，即《七十士译本》。'});
     hp(d,'jerusalem',{kind:'battle',left:1,note:'前167年安条克四世在圣殿里祭宙斯；前164年马加比夺回圣殿，重新献殿。'});
     hp(d,'antioch',{note:'塞琉古王朝的都城。'});
    },[['fill',HC.mino,'托勒密埃及'],['fill',HC.parthia,'塞琉古叙利亚'],['dot',HC.war,'马加比夺回的圣殿']]),
-  hs('前63—前4年','罗马与希律','庞培攻进耶路撒冷；罗马扶希律为王，他扩建圣殿；犹太人分成几派，盼着弥赛亚。',[[29.9,33.4],[33.9,37.0]],d=>{
+  hs('前63—前4年','罗马不在乎','庞培进了至圣所；罗马准犹太人照旧聚会、往圣殿送钱，由它去；希律扩建圣殿，民间越来越盼弥赛亚。',[[29.9,33.4],[33.9,37.0]],d=>{
     ha(d,'centralHighlands',COL.united,{fillOpacity:.14,dashArray:'5 5'});
     hp(d,'jerusalem',{left:1,note:'前63年庞培攻进城；希律从前20年前后扩建圣殿，今天的哭墙是殿基的西墙。'});
     hp(d,'caesarea',{left:1});hp(d,'qumran');hp(d,'masada');
     hl(d,'加利利','Galilee',32.85,35.42,COL.israel);hl(d,'犹地亚','Judaea',31.55,34.95,COL.jerusalem);
    },[['dash',COL.united,'犹太人聚居的山地（概略）'],['dot','#2a2018','希律时代的城市与要塞']],8)
  ]},
-{id:'history-faith-jesus',ch:6,title:'耶稣与使徒',short:'耶稣与使徒',en:'Jesus and the Apostles',period:'约前4—公元73年',c:HC.faith,
+{id:'history-faith-jesus',ch:6,title:'神太多了：耶稣与使徒',short:'耶稣与使徒',en:'Too Many Gods: Jesus and the Apostles',period:'约前4—公元73年',c:HC.faith,
  scenes:[
-  hs('约前4—约30年','拿撒勒人耶稣','耶稣在加利利传道，约30年在耶路撒冷被钉十字架。',[[30.2,33.6],[33.9,36.9]],d=>{
-    hp(d,'nazareth');hp(d,'jerusalem',{kind:'battle',left:1,note:'约30年逾越节，耶稣在此被罗马总督彼拉多钉十字架。'});
-    hp(d,'caesarea',{left:1,note:'罗马总督的驻地；1961年这里出土了刻着彼拉多名字的石碑。'});
+  hs('公元前后','神太多了','罗马七百多年来对外来的神来者不拒，选神本身成了负担；基督教是这场筛选里的胜者。',[[27.0,8.0],[44.5,40.0]],d=>{
+    ha(d,'romanEmpire',HC.rome,{fillOpacity:.07});
+    hp(d,'rome',{note:'万神殿：前27年前后阿格里帕始建，名字的意思是“所有的神”；今天的穹顶是哈德良重修的。'});
+    hp(d,'pessinus',{note:'大地母库柏勒的圣地；前204年汉尼拔还在意大利，罗马照神谕把她的黑色神石迎进城。'});
+    hp(d,'alexandria',{note:'伊西斯和塞拉皮斯的大庙在这里；这两位埃及神的信徒遍及地中海。'});
+    hp(d,'emesa',{note:'太阳神埃拉伽巴尔的圣城；218年他的世袭祭司当上了罗马皇帝。'});
+    hp(d,'jerusalem',{left:1,note:'犹太人只拜一位神，不进罗马的万神殿。'});
+    hr(d,[[39.35,31.58],[39.4,26.0],[39.6,19.6],[41.3,14.2],[41.8,12.8]],HC.mino);
+    hr(d,[[31.2,29.92],[33.6,23.0],[37.0,16.4],[41.5,12.9]],HC.mino);
+    hr(d,[[34.73,36.71],[35.2,30.0],[36.4,22.0],[38.6,16.0],[41.6,13.0]],HC.mino);
+   },[['fill',HC.rome,'罗马帝国（概略）'],['dline',HC.mino,'外来的神进罗马（示意）'],['dot','#2a2018','几位外来大神的老家与不进万神殿的耶路撒冷']]),
+  hs('约前4—约30年','耶稣：一个神，换永生','耶稣用的还是犹太教那位唯一的上帝，交换的条件却改了：信从他，换个人的永生。',[[31.4,34.5],[33.3,36.2]],d=>{
+    hp(d,'nazareth',{left:1,note:'加利利的小村，耶稣在这里长大。'});hp(d,'capernaum');hp(d,'jerusalem',{left:1});
     hr(d,[[32.70,35.30],[32.2,35.55],[31.87,35.44],[31.78,35.24]],COL.israel);
-    hl(d,'加利利','Galilee',32.85,35.55,COL.israel);hl(d,'犹地亚','Judaea',31.45,35.0,COL.jerusalem);
-   },[['dline',COL.israel,'从加利利上耶路撒冷（概略，循约旦河谷）'],['dot','#2a2018','耶稣传道与受难之地']],8),
-  hs('约33—64年','保罗：传给外邦人','保罗沿罗马大道去说希腊语的城市传教，主张外邦人不必行割礼；64年尼禄迫害基督徒。',[[30.5,10.5],[43.5,37.5]],d=>{
+    hl(d,'加利利','Galilee',32.95,35.1,COL.israel);hl(d,'犹地亚','Judaea',31.55,34.85,COL.jerusalem);
+   },[['dline',COL.israel,'从加利利上耶路撒冷（概略，循约旦河谷）'],['dot','#2a2018','耶稣传道的地方']],8),
+  hs('约30年','钉十字架','跟的人一多就招忌：大祭司嫉妒他抢人，罗马看他像谋反，门徒的聚会又像秘密结社；总督彼拉多把他钉了十字架。',[[29.5,10.5],[44.0,37.5]],d=>{
+    ha(d,'eEmpire14',HC.rome,{fillOpacity:.08});
+    hp(d,'rome',{note:'奥古斯都死后由元老院封神；提比略的银币上铸着“神圣奥古斯都之子”，“恺撒的归恺撒”里那枚银币多半就是它。'});
+    hp(d,'jerusalem',{kind:'battle',left:1,note:'约30年逾越节，耶稣在此被罗马总督彼拉多钉十字架。'});
+    hp(d,'caesarea',{note:'罗马总督的驻地；1961年这里出土了刻着彼拉多名字的石碑。'});
+   },[['fill',HC.rome,'罗马帝国（奥古斯都死时，概略）'],['dot',HC.war,'受难的耶路撒冷'],['dot','#2a2018','皇帝的城与总督的驻地']]),
+  hs('约33—64年','彼得与保罗：门向外邦人打开','彼得给罗马百夫长施洗，使徒议定外邦人入教不必行割礼；保罗沿罗马大道把教会开进说希腊语的城市。',[[30.5,10.5],[43.5,37.5]],d=>{
     ha(d,'romanEmpire',HC.rome,{fillOpacity:.08});
-    hp(d,'jerusalem',{left:1});hp(d,'antioch',{note:'信耶稣的人在这里头一回被叫作“基督徒”；保罗从这里出发传教。'});hp(d,'tarsus');
+    hp(d,'jerusalem',{left:1,note:'约49年使徒在此议定，外邦人入教不必行割礼。'});
+    hp(d,'caesarea',{left:1,note:'彼得在此给罗马百夫长哥尼流一家施洗。'});
+    hp(d,'antioch',{note:'信耶稣的人在这里头一回被叫作“基督徒”；保罗从这里出发传教。'});hp(d,'tarsus');
     hp(d,'ephesus');hp(d,'corinth',{note:'保罗在此住了一年半，写信给各地教会；东边不远就是雅典。'});
-    hp(d,'rome',{note:'64年大火后尼禄迫害基督徒；传说彼得、保罗都死在这里。'});
+    hp(d,'rome',{note:'保罗以罗马公民的身份上告恺撒，被押到这里受审。'});
     hr(d,[[36.2,36.16],[36.92,34.89],[37.94,27.34],[37.98,23.73],[37.9,22.9],[40.6,19.8],[41.9,12.5]],HC.route);
    },[['fill',HC.rome,'罗马帝国'],['dline',HC.route,'保罗走过的主要城市（概略）'],['dot','#2a2018','早期教会的城市']]),
+  hs('49—64年','尼禄大火','耶稣死后三十多年，基督徒在罗马已多到人人知道；64年大火，尼禄拿他们顶罪，第一次大迫害。',[[30.5,10.5],[43.5,37.5]],d=>{
+    ha(d,'romanEmpire',HC.rome,{fillOpacity:.08});
+    hp(d,'rome',{kind:'battle',note:'64年7月大火，十四个城区只剩四个完好；尼禄拿基督徒顶罪。'});
+    hp(d,'puteoli',{note:'约60年保罗被押往罗马，在这里上岸，当地已有“弟兄”接待。'});
+    hp(d,'thessalonica',{note:'保罗在此建教会，后来写了《帖撒罗尼迦前书》，是《新约》里最早的一篇。'});
+    hp(d,'corinth');hp(d,'ephesus');hp(d,'antioch');hp(d,'jerusalem',{left:1});
+    hp(d,'alexandria',{note:'传说马可在此建立教会。'});
+   },[['fill',HC.rome,'罗马帝国（概略）'],['dot','#2a2018','64年前已有基督徒的城市（据《使徒行传》和保罗书信）'],['dot',HC.war,'大火中的罗马']]),
   hs('66—73年','圣殿被毁','提图斯攻破耶路撒冷，烧了第二圣殿；马萨达陷落；拉比在雅夫内重整，基督徒与犹太教分道。',[[30.0,33.4],[33.2,36.9]],d=>{
     hp(d,'jerusalem',{kind:'battle',left:1,note:'70年8月，第二圣殿被烧。'});hp(d,'masada',{kind:'battle'});hp(d,'yavneh');hp(d,'caesarea',{left:1});
    },[['dot',HC.war,'被攻破的耶路撒冷与马萨达'],['dot','#2a2018','拉比重整之地与罗马总督的驻地']],8)
  ]},
-{id:'history-faith-church',ch:6,title:'地下的教会',short:'地下的教会',en:'The Church Underground',period:'73—311年',c:HC.faith,
+{id:'history-faith-church',ch:6,title:'迫害为什么时紧时松',short:'迫害时期',en:'Persecution, Loose and Tight',period:'73—311年',c:HC.faith,
  scenes:[
-  hs('73—300年','城里的网','巴尔·科赫巴起义后犹太人被逐出耶路撒冷；基督徒在帝国的城里越来越多，各城有主教，到300年前后约占人口一成。',[[28.5,-7.0],[50.5,42.5]],d=>{
-    ha(d,'eEmpire300',HC.rome,{fillOpacity:.1});ha(d,'eChrist300',HC.mino,{fillOpacity:.32,weight:.8});
-    hp(d,'jerusalem',{left:1,note:'135年后改建为罗马城埃利亚·卡皮托利纳，不许犹太人进城。'});hp(d,'rome');hp(d,'carthage');hp(d,'alexandria');hp(d,'antioch');
-    hp(d,'lugdunum',{note:'177年这里的基督徒被处死，记下他们殉道的书信流传各地。'});
-   },[['fill',HC.rome,'帝国'],['fill',HC.mino,'基督徒较多的地方（约300年，概略）'],['dot','#2a2018','早期教会的大城']]),
-  hs('250—311年','三次大迫害','250年德基乌斯令全民献祭，257年瓦勒良抓教士，303年戴克里先大迫害；311年伽列里乌斯下诏认输。',[[28.5,-7.0],[50.5,47.5]],d=>{
+  hs('96—192年','不必搜捕','图拉真定下规矩：不搜捕，不收匿名告发，告到了又不肯献祭才罚；五贤帝要太平，殉道零星发生。',[[30.0,-2.0],[48.5,40.0]],d=>{
+    ha(d,'romanEmpire',HC.rome,{fillOpacity:.1});
+    hp(d,'nicomedeia',{note:'小普林尼任比提尼亚总督（约110—112年），从这一带写信问图拉真怎么处置基督徒。'});
+    hp(d,'rome',{note:'图拉真在这里回信：不必搜捕，匿名告发一概不收。'});
+    hp(d,'lugdunum',{kind:'battle',note:'177年这里的基督徒被百姓围攻、官府处死，记下他们殉道的书信流传各地。'});
+    hp(d,'jerusalem',{left:1,note:'135年巴尔·科赫巴起义失败后，改建为罗马城埃利亚·卡皮托利纳，不许犹太人进城。'});
+   },[['fill',HC.rome,'帝国（117年，概略）'],['dot',HC.war,'零星的殉道'],['dot','#2a2018','总督的信与皇帝的回信']]),
+  hs('193—284年','乱世里的网','皇帝忙着内战外患，顾不上管人信什么；乱世里教会是靠得住的网；德基乌斯、瓦勒良的迫害都没撑过三年。',[[28.5,-7.0],[50.5,47.5]],d=>{
     ha(d,'eEmpire300',HC.rome,{fillOpacity:.1});
-    hp(d,'rome',{note:'250年罗马主教法比安殉道；258年主教西克斯图斯二世被杀。'});
-    hp(d,'carthage',{kind:'battle',note:'258年迦太基主教居普良被斩首。'});
-    hp(d,'nicomedeia',{kind:'battle',note:'303年2月大迫害从这里开始；311年伽列里乌斯的宽容诏书也在这里张贴。'});
+    hp(d,'rome',{note:'251年罗马一城的教会有四十六个长老，养着一千五百多个寡妇和穷人。'});
+    hp(d,'carthage',{note:'252年瘟疫中，主教居普良召集信徒收治病人；258年他被斩首。'});
+    hp(d,'alexandria',{note:'主教狄奥尼修斯写道：瘟疫来时，别人把病人推出门外，弟兄们却留下照料，自己也染病死去。'});
+    hp(d,'abritus',{kind:'battle',left:1});hp(d,'edessa',{kind:'battle'});
+   },[['fill',HC.rome,'帝国（约300年，概略）'],['dot',HC.war,'两位迫害者的败亡之地'],['dot','#2a2018','乱世里的教会']]),
+  hs('303—311年','朱庇特之子','戴克里先号称朱庇特之子，四帝的合法性挂在老神身上；基督徒不肯献祭，就是不认这几位皇帝。',[[33.5,-6.0],[55.5,40.5]],d=>{
+    ha(d,'eEmpire300',HC.rome,{fillOpacity:.14});
+    hp(d,'nicomedeia',{kind:'battle',note:'303年2月，皇宫望得见的大教堂被拆平，大迫害从这里开始。'});
+    hp(d,'sirmium',{note:'副皇帝伽列里乌斯的驻地。'});hp(d,'mediolanum',{note:'正皇帝马克西米安的驻地，他号称赫拉克勒斯之子。'});
+    hp(d,'treveri',{note:'西部副皇帝君士坦提乌斯驻在这里，只拆了几座教堂的房子，没有杀人。'});
+    hl(d,'东部：迫害到311年','East: persecution until 311',37.6,33.4,HC.war);hl(d,'西部：拆了几座房子','West: a few churches pulled down',46.3,0.6,HC.rome);
+   },[['fill',HC.rome,'帝国（约300年，概略）'],['dot',HC.war,'大迫害的起点'],['dot','#2a2018','四帝的驻地']]),
+  hs('约300—311年','羽翼已成','全帝国约一成，却扎堆在城里、军中和宫里，长得又快；迫害八年拆不散，311年伽列里乌斯下诏认输。',[[28.5,-7.0],[50.5,47.5]],d=>{
+    ha(d,'eEmpire300',HC.rome,{fillOpacity:.1});ha(d,'eChrist300',HC.mino,{fillOpacity:.32,weight:.8});
+    hp(d,'rome');hp(d,'carthage');hp(d,'alexandria');hp(d,'antioch');
+    hp(d,'nicomedeia',{note:'311年4月，伽列里乌斯的宽容诏书在这里张贴。'});
     hp(d,'vagharshapat',{note:'301年前后，亚美尼亚国王梯里达底三世在这里受洗，亚美尼亚成了头一个奉基督教为国教的国家。'});
-   },[['fill',HC.rome,'帝国'],['dot',HC.war,'殉道与迫害的中心'],['dot','#2a2018','亚美尼亚的王城']])
+    hl(d,'弗里吉亚','Phrygia',38.6,30.6,HC.war);
+   },[['fill',HC.rome,'帝国'],['fill',HC.mino,'基督徒较多的地方（约300年，概略）'],['dot','#2a2018','教会的大城与亚美尼亚的王城']])
  ]},
-{id:'history-faith-empire-church',ch:6,title:'帝国的教会',short:'帝国的教会',en:'The Church of the Empire',period:'312—451年',c:HC.faith,
+{id:'history-faith-empire-church',ch:6,title:'借风口：帝国的教会',short:'帝国的教会',en:'Riding the Wind: the Church of the Empire',period:'312—451年',c:HC.faith,
  scenes:[
-  hs('312—337年','皇帝入教','基督徒约占人口一成，却有遍布各城的主教网；君士坦丁发还教产、给钱给特权，在罗马、耶路撒冷、新都修起大教堂。',[[28.5,-7.5],[50.5,42.5]],d=>{
+  hs('312—337年','借风口','拆不散的网不如拿来用：君士坦丁发还教产、给钱给特权、修大教堂；风口不是他造的，是他借的。',[[28.5,-7.5],[50.5,42.5]],d=>{
     ha(d,'eEmpire300',HC.rome,{fillOpacity:.1});
     ha(d,'eChrist300',HC.mino,{fillOpacity:.32,weight:.8});
     hp(d,'rome',{note:'拉特兰大教堂建在被解散的近卫骑兵营房上；梵蒂冈山坡上又修起圣彼得大教堂。'});
@@ -1386,7 +1477,15 @@ const HISTORY_ENTRIES=[
     hp(d,'treveri',{note:'335年阿塔纳修斯被流放到这里。'});
     hr(d,[[41.01,28.98],[42.70,23.32],[44.97,19.61],[46.5,15.6],[48.3,11.0],[49.75,6.64]],HC.war);
    },[['fill',HC.rome,'帝国'],['dline',HC.war,'335年阿塔纳修斯被流放到特里尔（概略）'],['dot','#2a2018','阿里乌之争的几处要地']]),
-  hs('380—451年','国教与教宗','国教之后，罗马城破，奥古斯丁写《上帝之城》；451年卡尔西顿会议奉教宗利奥的书信为正统，东方几个教会另立门户，聂斯托利派东传到长安。',[[28.0,-7.0],[50.5,52.0]],d=>{
+  hs('380—394年','朱庇特有罪','狄奥多西定尼西亚派为国教，禁绝献祭，塞拉皮斯神庙被拆；据诗人记载，元老院表决判了朱庇特有罪。',[[29.0,2.0],[47.5,33.0]],d=>{
+    ha(d,'eEmpire300',HC.rome,{fillOpacity:.1});
+    hp(d,'rome',{note:'382年胜利女神祭坛被搬出元老院议事厅；后来狄奥多西让元老院表决，判了朱庇特。'});
+    hp(d,'thessalonica',{note:'380年2月狄奥多西在此颁诏：臣民一律信尼西亚派。'});
+    hp(d,'alexandria',{kind:'battle',note:'391年主教提奥菲卢斯带人拆了塞拉皮斯神庙。'});
+    hp(d,'frigidus',{kind:'battle',note:'394年狄奥多西在此打败西部的篡位者，那是最后一支打着旧神旗号的军队。'});
+    hp(d,'mediolanum',{left:1,note:'米兰主教安布罗斯力阻胜利女神祭坛搬回元老院；395年狄奥多西死在这里。'});
+   },[['fill',HC.rome,'帝国'],['dot',HC.war,'拆庙与旧神的最后一战'],['dot','#2a2018','颁诏、表决与主教']]),
+  hs('395—451年','国教与教宗','罗马城破，奥古斯丁写《上帝之城》；451年卡尔西顿会议奉教宗利奥的书信为正统，东方几个教会另立门户，聂斯托利派东传到长安。',[[28.0,-7.0],[50.5,52.0]],d=>{
     ha(d,'eWest395',HC.rome,{fillOpacity:.14});ha(d,'eEast395',HC.athens,{fillOpacity:.14});
     hp(d,'rome',{note:'罗马主教自称彼得的继承人；440年起利奥一世任教宗。'});hp(d,'hippo',{note:'奥古斯丁在此任主教，写下《上帝之城》。'});
     hp(d,'constantinople',{left:1,note:'451年卡尔西顿大公会议就开在海峡对岸。'});
@@ -1501,7 +1600,7 @@ const HISTORY_ERAS=[
  {id:'empire-principate',name:'罗马帝国：元首制',en:'The Principate',date:'前27—192年',c:HC.rome,items:[['history-empire-principate'],['history-empire-julio-claudian'],['history-empire-flavian'],['history-empire-antonine']]},
  {id:'empire-crisis',name:'罗马帝国：危机与重铸',en:'Crisis and Reinvention',date:'193—363年',c:HC.rome,items:[['history-empire-crisis'],['history-empire-dominate'],['history-empire-constantine']]},
  {id:'empire-west',name:'罗马帝国：西部的终结',en:'The End in the West',date:'364—476年',c:HC.rome,items:[['history-empire-theodosius'],['history-empire-west-fall']]},
- {id:'faith-israel',name:'古代以色列',en:'Ancient Israel',date:'约前1208—前538年',c:HC.faith,items:[['history-faith-israel'],['history-faith-first-temple']]},
+ {id:'faith-israel',name:'古代以色列',en:'Ancient Israel',date:'约前1400—前538年',c:HC.faith,items:[['history-faith-israel'],['history-faith-first-temple']]},
  {id:'faith-temple',name:'第二圣殿时期',en:'The Second Temple',date:'前538—公元73年',c:HC.faith,items:[['history-faith-second-temple'],['history-faith-jesus']]},
  {id:'faith-church',name:'早期教会',en:'The Early Church',date:'73—451年',c:HC.faith,items:[['history-faith-church'],['history-faith-empire-church']]},
  {id:'china-early',name:'先秦：三代与春秋战国',en:'Pre-Imperial China',date:'约前7000—前221年',c:HC.china,items:[['history-china-neolithic'],['history-china-bronze'],['history-china-western-zhou'],['history-china-spring-autumn'],['history-china-warring-states']]},
@@ -1512,8 +1611,8 @@ const HISTORY_ERAS=[
    Reading order stays with HISTORY_ERAS; TREE_ROWS puts each era row on a branch at its start and end. */
 const HISTORY_BRANCHES=[
  {id:'trunk',name:'希腊主线',en:'Greek world',lane:2},
- // The 基督教 line: from ancient Israel (the old Levant branch) to the church of the empire; on its own lane, right of the West.
- {id:'faith',name:'基督教',en:'Judaism & Christianity',lane:5,parent:'trunk',from:-1208,to:451,c:HC.faith},
+ // The 基督教 line: from the Hebrews' nomadic origins (the old Levant branch) to the church of the empire; on its own lane, right of the West.
+ {id:'faith',name:'基督教',en:'Judaism & Christianity',lane:5,parent:'trunk',from:-1400,to:451,c:HC.faith},
  {id:'rome',name:'罗马',en:'Rome',lane:3,parent:'trunk',from:-1000,to:395,c:HC.rome},
  {id:'ptolemaic',name:'托勒密埃及',en:'Ptolemaic Egypt',lane:1,parent:'trunk',from:-305,to:-30,c:HC.mino},
  {id:'seleucid',name:'塞琉古与东方',en:'Seleucids & the East',lane:0,parent:'trunk',from:-305,to:-64,c:HC.parthia},
@@ -1575,8 +1674,8 @@ const TREE_ROWS={
  'history-empire-constantine/0':['rome',305,363],
  'history-empire-theodosius/0':['rome',364,395],
  'history-empire-west-fall/0':['west',395,476],
- 'history-faith-israel/0':['faith',-1208,-930],
- 'history-faith-first-temple/0':['faith',-930,-538],
+ 'history-faith-israel/0':['faith',-1400,-1200],
+ 'history-faith-first-temple/0':['faith',-1200,-538],
  'history-faith-second-temple/0':['faith',-538,-4],
  'history-faith-jesus/0':['faith',-4,73],
  'history-faith-church/0':['faith',73,311],
