@@ -1374,7 +1374,7 @@ const HISTORY_ENTRIES=[
    },[['fill',HC.mino,'托勒密埃及'],['fill',HC.parthia,'塞琉古叙利亚'],['dot',HC.war,'马加比夺回的圣殿']]),
   hs('前63—前4年','罗马不在乎','庞培进了至圣所；罗马准犹太人照旧聚会、往圣殿送钱，由它去；希律扩建圣殿，民间越来越盼弥赛亚。',[[29.9,33.4],[33.9,37.0]],d=>{
     ha(d,'centralHighlands',COL.united,{fillOpacity:.14,dashArray:'5 5'});
-    hp(d,'jerusalem',{left:1,note:'前63年庞培攻进城；希律从前20年前后扩建圣殿，今天的哭墙是殿基的西墙。'});
+    hp(d,'jerusalem',{left:1,note:'前63年庞培攻进城；希律从前20年前后扩建圣殿，用四道挡土墙把圣殿山垫成大平台，西面那道就是今天的哭墙。'});
     hp(d,'caesarea',{left:1});hp(d,'qumran');hp(d,'masada');
     hl(d,'加利利','Galilee',32.85,35.42,COL.israel);hl(d,'犹地亚','Judaea',31.55,34.95,COL.jerusalem);
    },[['dash',COL.united,'犹太人聚居的山地（概略）'],['dot','#2a2018','希律时代的城市与要塞']],8)

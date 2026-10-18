@@ -56,7 +56,7 @@ const IDS=['history-faith-israel','history-faith-first-temple','history-faith-se
      ['history-faith-jesus/0','七百多年'],['history-faith-jesus/0','选神本身成了负担'],['history-faith-jesus/0','运营成本'],['history-faith-jesus/0','胜者'],
      ['history-faith-jesus/1','唯一的上帝'],['history-faith-jesus/1','永生'],['history-faith-jesus/2','神之子'],['history-faith-jesus/2','秘密结社'],['history-faith-jesus/2','彼拉多'],
      ['history-faith-jesus/3','彼得'],['history-faith-jesus/3','外邦人'],['history-faith-jesus/3','保罗'],['history-faith-jesus/3','七十士'],
-     ['history-faith-jesus/4','三十多年'],['history-faith-jesus/4','尼禄'],['history-faith-jesus/4','顶罪'],['history-faith-jesus/5','提图斯'],['history-faith-jesus/5','雅夫内'],['history-faith-jesus/5','分道'],
+     ['history-faith-jesus/4','三十多年'],['history-faith-jesus/4','尼禄'],['history-faith-jesus/4','顶罪'],['history-faith-jesus/5','提图斯'],['history-faith-jesus/5','圣殿山大平台'],['history-faith-jesus/5','哭墙'],['history-faith-jesus/5','雅夫内'],['history-faith-jesus/5','分道'],
      ['history-faith-church/0','不必搜捕'],['history-faith-church/0','为什么松'],['history-faith-church/0','巴尔·科赫巴'],['history-faith-church/1','顾不上'],['history-faith-church/1','德基乌斯'],
      ['history-faith-church/1','一千五百多个寡妇'],['history-faith-church/2','朱庇特之子'],['history-faith-church/2','伽列里乌斯'],['history-faith-church/3','羽翼丰满'],['history-faith-church/3','一成'],
      ['history-faith-church/3','过半'],['history-faith-church/3','亚美尼亚'],['history-faith-empire-church/0','米尔维安桥'],['history-faith-empire-church/0','风口'],
@@ -97,6 +97,6 @@ const IDS=['history-faith-israel','history-faith-first-temple','history-faith-se
    await page.close();
   }
   assert.deepEqual(errors,[]);
-  console.log('PASS: chapter Ⅶ 犹太教与基督教 — the 基督教 line (outermost lane, 前1400—451, shoot 中世纪教会) rebuilt on 老无’s secular outline in 6 sections / 28 scenes, ≤230 chars each: Hebrews from beyond the River, Kadesh, Egypt and Moses, the Exodus, the kingdoms and Babylon, monotheism / exclusivity / the end of days, Rome not caring, too many gods, Jesus’ product and Peter’s channel, the cross, Nero, why persecution eased, Diocletian son of Jupiter, a wave Constantine rode, Jupiter condemned; 81 phrase checks (incl. the pointer from the Greek dark age); 22 iconic-event tags; 14 person cards (摩西、阿赫那吞、恺撒、彼得、保罗、约瑟夫斯、小普林尼、居普良、伽列里乌斯、优西比乌、海伦娜、阿里乌、阿塔纳修斯、利奥); eyebrows and tree rows; desktop and 390px without overflow; offline; no page errors.');
+  console.log('PASS: chapter Ⅶ 犹太教与基督教 — the 基督教 line (outermost lane, 前1400—451, shoot 中世纪教会) rebuilt on 老无’s secular outline in 6 sections / 28 scenes, ≤230 chars each: Hebrews from beyond the River, Kadesh, Egypt and Moses, the Exodus, the kingdoms and Babylon, monotheism / exclusivity / the end of days, Rome not caring, too many gods, Jesus’ product and Peter’s channel, the cross, Nero, why persecution eased, Diocletian son of Jupiter, a wave Constantine rode, Jupiter condemned; 83 phrase checks (incl. the pointer from the Greek dark age, and the Western Wall as the Temple Mount’s retaining wall); 22 iconic-event tags; 14 person cards (摩西、阿赫那吞、恺撒、彼得、保罗、约瑟夫斯、小普林尼、居普良、伽列里乌斯、优西比乌、海伦娜、阿里乌、阿塔纳修斯、利奥); eyebrows and tree rows; desktop and 390px without overflow; offline; no page errors.');
  }catch(e){console.error(e);process.exitCode=1;}finally{await browser.close();}
 })();
