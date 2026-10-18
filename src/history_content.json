@@ -69,11 +69,15 @@
   },
   "history-dark-age": {
     "title": "希腊的黑暗时代",
-    "html": "<p data-scene-text=\"0\">宫殿和文字没了，村落、希腊语和海上往来还在。<strong>大树倒了，林下小苗才见到阳光。</strong>小共同体慢慢长成城邦，前8世纪借腓尼基字母重新写字。</p>",
+    "html": "<p data-scene-text=\"0\">宫殿和文字没了，村落、希腊语和海上往来还在。<strong>大树倒了，林下小苗才见到阳光。</strong>小共同体慢慢长成城邦，前8世纪借腓尼基字母重新写字。迦南也一样：赫梯垮了，埃及撤了，山地上的以色列人从开荒的村落长成了两个王国；跟他们打仗的非利士人，多半就是从爱琴海一带逃过去的。来龙去脉另见“基督教”主线。</p>",
     "sources": [
       {
         "label": "基克拉迪艺术博物馆：从黑暗时代到古典世界",
         "url": "https://cycladic.gr/en/essay/apo-tous-skoteinous-chronous-stous-romaious-aytokratores/"
+      },
+      {
+        "label": "非利士人的来历：本地烧的迈锡尼式陶器、2019年阿什凯隆古墓的DNA（英文资料）",
+        "url": "https://en.wikipedia.org/wiki/Philistines"
       }
     ],
     "moments": []

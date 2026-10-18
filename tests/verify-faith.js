@@ -62,7 +62,9 @@ const IDS=['history-faith-israel','history-faith-first-temple','history-faith-se
      ['history-faith-church/3','过半'],['history-faith-church/3','亚美尼亚'],['history-faith-empire-church/0','米尔维安桥'],['history-faith-empire-church/0','风口'],
      ['history-faith-empire-church/0','一张遍布帝国的网'],['history-faith-empire-church/1','同质'],['history-faith-empire-church/1','阿里乌派'],['history-faith-empire-church/1','异端成了国法上的罪'],
      ['history-faith-empire-church/2','朱庇特有罪'],['history-faith-empire-church/2','普鲁登提乌斯'],['history-faith-empire-church/3','上帝之城'],['history-faith-empire-church/3','卡尔西顿'],
-     ['history-faith-empire-church/3','景教'],['history-empire-constantine/2','“基督教”主线']]){
+     ['history-faith-empire-church/3','景教'],['history-empire-constantine/2','“基督教”主线'],
+     // 老无 2026-10-18: what were the Israelites doing in the Greek dark age? One line in the Greek scene, pointing here.
+     ['history-dark-age/0','以色列人'],['history-dark-age/0','爱琴海一带'],['history-dark-age/0','“基督教”主线']]){
     await page.evaluate(s=>go(s),scene);
     assert.ok(await page.$eval('#sceneContext>p',(e,w)=>e.textContent.includes(w),phrase),scene+' lacks '+phrase);
    }
@@ -95,6 +97,6 @@ const IDS=['history-faith-israel','history-faith-first-temple','history-faith-se
    await page.close();
   }
   assert.deepEqual(errors,[]);
-  console.log('PASS: chapter Ⅶ 犹太教与基督教 — the 基督教 line (outermost lane, 前1400—451, shoot 中世纪教会) rebuilt on 老无’s secular outline in 6 sections / 28 scenes, ≤230 chars each: Hebrews from beyond the River, Kadesh, Egypt and Moses, the Exodus, the kingdoms and Babylon, monotheism / exclusivity / the end of days, Rome not caring, too many gods, Jesus’ product and Peter’s channel, the cross, Nero, why persecution eased, Diocletian son of Jupiter, a wave Constantine rode, Jupiter condemned; 78 phrase checks; 22 iconic-event tags; 14 person cards (摩西、阿赫那吞、恺撒、彼得、保罗、约瑟夫斯、小普林尼、居普良、伽列里乌斯、优西比乌、海伦娜、阿里乌、阿塔纳修斯、利奥); eyebrows and tree rows; desktop and 390px without overflow; offline; no page errors.');
+  console.log('PASS: chapter Ⅶ 犹太教与基督教 — the 基督教 line (outermost lane, 前1400—451, shoot 中世纪教会) rebuilt on 老无’s secular outline in 6 sections / 28 scenes, ≤230 chars each: Hebrews from beyond the River, Kadesh, Egypt and Moses, the Exodus, the kingdoms and Babylon, monotheism / exclusivity / the end of days, Rome not caring, too many gods, Jesus’ product and Peter’s channel, the cross, Nero, why persecution eased, Diocletian son of Jupiter, a wave Constantine rode, Jupiter condemned; 81 phrase checks (incl. the pointer from the Greek dark age); 22 iconic-event tags; 14 person cards (摩西、阿赫那吞、恺撒、彼得、保罗、约瑟夫斯、小普林尼、居普良、伽列里乌斯、优西比乌、海伦娜、阿里乌、阿塔纳修斯、利奥); eyebrows and tree rows; desktop and 390px without overflow; offline; no page errors.');
  }catch(e){console.error(e);process.exitCode=1;}finally{await browser.close();}
 })();
