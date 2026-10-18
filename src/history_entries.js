@@ -243,6 +243,14 @@ Object.assign(HS,{
   megiddo:['米吉多','Megiddo',32.585,35.185,'扼守沿海大道的要塞；前609年约西亚在此阵亡。“哈米吉多顿”（末日决战之地）一名由此而来。'],
   elephantine:['象岛','Elephantine',24.085,32.887,'尼罗河第一瀑布前的岛；波斯时代驻着一支犹太雇佣兵，有自己的耶和华神庙。'],
   capernaum:['迦百农','Capernaum',32.881,35.575,'加利利海北岸的渔村；福音书说耶稣在这里住过，彼得的家也在这里。'],
+  chalcedon:['卡尔西顿','Chalcedon',40.984,29.027,'博斯普鲁斯海峡亚洲一侧，与君士坦丁堡隔水相望，今伊斯坦布尔卡德柯伊。'],
+  colzim:['安东尼山','Mount Colzim',28.925,32.348,'红海边的山，安东尼晚年在此隐修四十多年，山脚的圣安东尼修道院至今还在。'],
+  tabennisi:['塔本尼西','Tabennisi',26.06,32.30,'上埃及尼罗河边的荒村，帕科米乌在此办起第一座修院。'],
+  telanissos:['圣西门堡','Qal’at Sim’an',36.334,36.844,'阿勒颇西北的山上，西门站柱之地；他死后围着石柱修起大教堂，废墟至今还在。'],
+  mazaca:['凯撒里亚（卡帕多西亚）','Caesarea Mazaca',38.72,35.49,'卡帕多西亚的首府，今土耳其开塞利；370年起巴西尔在此任主教。'],
+  nazianzus:['纳齐安','Nazianzus',38.40,34.35,'卡帕多西亚的小城，格列高利的父亲在此任主教。'],
+  kharga:['大绿洲','Great Oasis',25.44,30.56,'埃及西部沙漠里的绿洲，今哈里杰；聂斯托利435年被流放到这里。'],
+  ariminum:['里米尼','Ariminum',44.06,12.57,'亚得里亚海边的城市；359年西部四百来位主教在此被扣着开会。'],
   yangshao:['仰韶村','Yangshao',34.76,111.77,'黄河中游新石器彩陶文化遗址（今河南渑池）。'],
   liangzhu:['良渚','Liangzhu',30.39,119.99,'约前3300—前2300年的大型古城与外围水利系统（今杭州余杭）。'],
   erlitou:['二里头','Erlitou',34.69,112.69,'洛阳盆地的夏商之际都邑遗址，发现中轴宫城基址与早期青铜礼器作坊。'],
@@ -1467,16 +1475,6 @@ const HISTORY_ENTRIES=[
     hp(d,'arelate',{left:1,note:'314年皇帝召集西部主教在此开会，裁决北非的分裂。'});
     hp(d,'nicomedeia',{note:'大迫害从这里开始（303年），君士坦丁也在这里临终受洗（337年）。'});
    },[['fill',HC.rome,'帝国'],['fill',HC.mino,'基督徒较多的地方（约300年，概略）'],['dot','#2a2018','大教堂与教会大事']]),
-  hs('318—381年','尼西亚','阿里乌之争搅动东方教会；325年尼西亚大公会议，皇帝亲自出场敲定信经；他晚年倒向阿里乌一派，哥特人也信了阿里乌派；381年尼西亚派胜出。',[[29.5,3.5],[50.5,37.5]],d=>{
-    ha(d,'eEmpire300',HC.rome,{fillOpacity:.1});
-    hp(d,'alexandria',{note:'阿里乌在此当长老，被主教亚历山大革了教籍；328年阿塔纳修斯接任主教。'});
-    hp(d,'nicaea',{left:1,note:'325年5—7月，第一次大公会议在此召开，二百五十多位主教到会。'});
-    hp(d,'nicomedeia',{note:'尼科米底亚主教优西比乌是阿里乌的盟友，337年给君士坦丁施洗。'});
-    hp(d,'tyre',{note:'335年主教们在此开会，定了阿塔纳修斯的罪。'});
-    hp(d,'constantinople',{left:1,note:'336年阿里乌在此暴死，就在要恢复他教籍的前一天。'});
-    hp(d,'treveri',{note:'335年阿塔纳修斯被流放到这里。'});
-    hr(d,[[41.01,28.98],[42.70,23.32],[44.97,19.61],[46.5,15.6],[48.3,11.0],[49.75,6.64]],HC.war);
-   },[['fill',HC.rome,'帝国'],['dline',HC.war,'335年阿塔纳修斯被流放到特里尔（概略）'],['dot','#2a2018','阿里乌之争的几处要地']]),
   hs('380—394年','朱庇特有罪','狄奥多西定尼西亚派为国教，禁绝献祭，塞拉皮斯神庙被拆；据诗人记载，元老院表决判了朱庇特有罪。',[[29.0,2.0],[47.5,33.0]],d=>{
     ha(d,'eEmpire300',HC.rome,{fillOpacity:.1});
     hp(d,'rome',{note:'382年胜利女神祭坛被搬出元老院议事厅；后来狄奥多西让元老院表决，判了朱庇特。'});
@@ -1485,14 +1483,72 @@ const HISTORY_ENTRIES=[
     hp(d,'frigidus',{kind:'battle',note:'394年狄奥多西在此打败西部的篡位者，那是最后一支打着旧神旗号的军队。'});
     hp(d,'mediolanum',{left:1,note:'米兰主教安布罗斯力阻胜利女神祭坛搬回元老院；395年狄奥多西死在这里。'});
    },[['fill',HC.rome,'帝国'],['dot',HC.war,'拆庙与旧神的最后一战'],['dot','#2a2018','颁诏、表决与主教']]),
-  hs('395—451年','国教与教宗','罗马城破，奥古斯丁写《上帝之城》；451年卡尔西顿会议奉教宗利奥的书信为正统，东方几个教会另立门户，聂斯托利派东传到长安。',[[28.0,-7.0],[50.5,52.0]],d=>{
+  hs('395—451年','国教与教宗','皇帝不住罗马，罗马主教成了西方教会的头；罗马城破，奥古斯丁写《上帝之城》；帝国在西部倒下，教会接过了它的骨架。',[[30.0,-7.0],[47.5,31.0]],d=>{
     ha(d,'eWest395',HC.rome,{fillOpacity:.14});ha(d,'eEast395',HC.athens,{fillOpacity:.14});
     hp(d,'rome',{note:'罗马主教自称彼得的继承人；440年起利奥一世任教宗。'});hp(d,'hippo',{note:'奥古斯丁在此任主教，写下《上帝之城》。'});
-    hp(d,'constantinople',{left:1,note:'451年卡尔西顿大公会议就开在海峡对岸。'});
-    hp(d,'alexandria',{note:'埃及教会不服卡尔西顿的决定，另立门户，就是后来的科普特教会。'});
-    hp(d,'ctesiphon',{note:'波斯境内教会的中心；被罗马定为异端的聂斯托利派在这里落脚，再往东传。'});
+    hp(d,'ravenna',{note:'402年起西罗马皇帝住在这座沼泽环绕的城里，不住罗马。'});
+    hp(d,'constantinople',{left:1,note:'东部皇帝的都城，主教就在皇帝眼皮底下。'});
+   },[['fill',HC.rome,'帝国西部'],['fill',HC.athens,'帝国东部'],['dot','#2a2018','教宗、奥古斯丁与两位皇帝的驻地']])
+ ]},
+{id:'history-faith-councils',ch:6,title:'把一个神讲圆：四次大公会议',short:'大公会议',en:'Squaring One God: the Four Councils',period:'318—451年',c:HC.faith,
+ scenes:[
+  hs('318—325年','讲不圆的一个神','要替皇权服务，教义得先讲圆：神只有一个，父、子、灵却都有神性；主教亚历山大说圣子与父本质相同，长老阿里乌说圣子低一级。',[[29.0,24.0],[42.0,40.5]],d=>{
+    ha(d,'eEmpire300',HC.rome,{fillOpacity:.1});
+    hp(d,'alexandria',{note:'318年前后主教亚历山大与长老阿里乌在此吵开，亚历山大召集主教，革了阿里乌的教籍。'});
+    hp(d,'nicomedeia',{note:'皇帝常驻的地方；主教优西比乌是阿里乌的同门，替他四处写信撑腰。'});
+    hp(d,'antioch',{note:'阿里乌和优西比乌都出自安条克的卢西安门下，阿里乌写信称优西比乌“同门”。'});
+    hp(d,'tyre',{left:1,note:'新柏拉图派哲人波菲利的家乡；他写书驳斥基督徒，君士坦丁下令把书毁了。'});
+   },[['fill',HC.rome,'帝国（约300年，概略）'],['dot','#2a2018','阿里乌之争的几座城']]),
+  hs('313—约450年','旷野圣人','迫害停了，殉道的路断了，极端的信徒进旷野苦修，也有人表演苦修；他们在信众中一呼百应，主教们离不开他们。',[[24.5,28.0],[37.5,39.0]],d=>{
+    ha(d,'eEmpire300',HC.rome,{fillOpacity:.1});
+    hp(d,'colzim',{note:'安东尼晚年在此隐修四十多年；338年他下山进城，驳斥阿里乌派。'});
+    hp(d,'tabennisi',{note:'318—323年间帕科米乌在此办起第一座修院，不久就有一百多名修士。'});
+    hp(d,'alexandria',{note:'356年阿塔纳修斯第三次被逐，躲进上埃及的旷野，跟修士一起过了六年。'});
+    hp(d,'telanissos',{note:'西门在此站柱三十六年，459年死在柱顶；各地朝圣的人赶来看他。'});
+   },[['fill',HC.rome,'帝国（概略）'],['dot','#2a2018','隐修士与修院']]),
+  hs('325年','尼西亚','君士坦丁对教义不感兴趣，支持多数成本低：阿里乌派的信经当场撕碎，“同质”写进信经，阿里乌被流放。',[[30.0,8.0],[45.0,37.0]],d=>{
+    ha(d,'eEmpire300',HC.rome,{fillOpacity:.1});
+    hp(d,'nicaea',{kind:'battle',left:1,note:'325年5—7月，二百五十多位主教在此开会，皇帝亲自出场。'});
+    hp(d,'nicomedeia',{note:'皇帝的驻地；主教优西比乌签了信经，却不肯签字革除阿里乌，会后不久也被流放。'});
+    hp(d,'alexandria',{note:'主教亚历山大带着执事阿塔纳修斯到会。'});
+    hp(d,'rome',{note:'罗马主教没来，派了两名长老代表。'});
+   },[['fill',HC.rome,'帝国（约300年，概略）'],['dot',HC.war,'会场'],['dot','#2a2018','几位要角的来处']]),
+  hs('327—363年','翻大饼','君士坦丁晚年召回阿里乌派、流放阿塔纳修斯；老二君士坦提乌斯二世偏阿里乌派；堂弟尤利安干脆掀桌，复兴旧神。',[[30.5,-2.0],[52.0,42.0]],d=>{
+    ha(d,'eConst317',HC.rome,{fillOpacity:.12});ha(d,'eLic317',HC.athens,{fillOpacity:.12});
+    hp(d,'treveri',{note:'335年阿塔纳修斯被流放到这里。'});
+    hp(d,'constantinople',{left:1,labelZ:4,note:'336年阿里乌在此暴死，就在要恢复他教籍的前一天。'});
+    hp(d,'ariminum',{note:'359年西部四百来位主教在此被扣着开会，最后签了“圣子像圣父”的信经。'});
+    hp(d,'alexandria',{note:'阿塔纳修斯的主教座；他一生五次被逐，又五次回来。'});
+    hr(d,[[41.01,28.98],[42.70,23.32],[44.97,19.61],[46.5,15.6],[48.3,11.0],[49.75,6.64]],HC.war);
+    hl(d,'君士坦斯：挺尼西亚派','Constans: Nicene',46.0,3.0,HC.rome);hl(d,'君士坦提乌斯二世：偏阿里乌派','Constantius II: leaning Arian',38.5,34.5,HC.athens);
+   },[['fill',HC.rome,'君士坦斯的西部（340—350年，概略）'],['fill',HC.athens,'君士坦提乌斯二世的东部'],['dline',HC.war,'335年阿塔纳修斯被流放到特里尔（概略）'],['dot','#2a2018','翻来覆去的几处']]),
+  hs('363—381年','君士坦丁堡','瓦伦斯又扶阿里乌派，哥特人跟着信了；狄奥多西把大饼翻回来，381年第二次大公会议：本质一个、位格三个，君士坦丁堡排到第二。',[[35.0,20.0],[45.5,37.5]],d=>{
+    ha(d,'eEast395',HC.athens,{fillOpacity:.1});
+    hp(d,'constantinople',{note:'381年5—7月，东方一百五十位主教在此开会；狄奥多西进城前，城里的教堂都在阿里乌派手里。'});
+    hp(d,'adrianople',{kind:'battle',note:'378年瓦伦斯在此被哥特人打死。'});
+    hp(d,'thessalonica',{note:'380年2月狄奥多西在此颁诏：臣民一律信尼西亚派。'});
+    hp(d,'mazaca',{labelZ:5,note:'370年起巴西尔在此任主教；他和弟弟尼撒的格列高利、好友纳齐安的格列高利，合称卡帕多西亚三教父。'});hp(d,'nazianzus',{left:1});
+    hl(d,'哥特人：信了阿里乌派','Goths: Arian',44.4,25.6,HC.war);
+   },[['fill',HC.athens,'帝国东部（概略）'],['dot',HC.war,'瓦伦斯战死之地'],['dot','#2a2018','颁诏、开会与卡帕多西亚教父的家乡']]),
+  hs('428—435年','以弗所','这回争耶稣的神性与人性：聂斯托利不许叫马利亚“生神者”，西里尔拉上罗马抢先开会革了他；聂斯托利派东走波斯，传到长安。',[[23.5,24.0],[42.5,52.5]],d=>{
+    ha(d,'eEast395',HC.athens,{fillOpacity:.1});
+    hp(d,'ephesus',{kind:'battle',note:'431年6月第三次大公会议在此召开；本城主教带着五十多位主教站在西里尔一边。'});
+    hp(d,'constantinople',{left:1,note:'聂斯托利428年起在此任主教。'});
+    hp(d,'alexandria',{note:'西里尔的主教座；他的舅舅提奥菲卢斯403年扳倒过君士坦丁堡主教金口约翰。'});
+    hp(d,'antioch',{note:'安条克主教约翰带着东方主教晚到几天，另开一会，反过来革了西里尔。'});
+    hp(d,'kharga',{note:'435年聂斯托利被流放到这里，约451年死去。'});
+    hp(d,'ctesiphon',{note:'波斯境内教会的中心；不认以弗所决定的人在波斯落脚，再往东传。'});
     hr(d,[[33.1,44.6],[34.5,48.5],[36.0,51.5]],HC.faith);hl(d,'635年传到长安（景教）','To Chang’an, 635',37.4,48.6,HC.faith);
-   },[['fill',HC.rome,'帝国西部'],['fill',HC.athens,'帝国东部'],['dline',HC.faith,'聂斯托利派东传（方向示意）'],['dot','#2a2018','教会的几个中心']])
+   },[['fill',HC.athens,'帝国东部（概略）'],['dline',HC.faith,'聂斯托利派东传（方向示意）'],['dot',HC.war,'会场'],['dot','#2a2018','对垒的几座城与流放地']]),
+  hs('449—451年','卡尔西顿','449年“强盗会议”打死君士坦丁堡主教；451年卡尔西顿奉利奥的书信为正统：一个位格、两个本性；埃及、叙利亚另立门户。',[[24.0,8.0],[44.0,46.5]],d=>{
+    ha(d,'eWest395',HC.rome,{fillOpacity:.1});ha(d,'eEast395',HC.athens,{fillOpacity:.1});
+    hp(d,'chalcedon',{note:'451年10月，五百二十多位主教在此开会，皇帝的大臣坐镇。'});
+    hp(d,'ephesus',{kind:'battle',note:'449年第二次以弗所会议，利奥叫它“强盗会议”。'});
+    hp(d,'rome',{note:'利奥一世440年起任教宗，他的书信在卡尔西顿奉为正统。'});
+    hp(d,'alexandria',{note:'主教狄奥斯库若在卡尔西顿被革；埃及教会不服，另立门户，就是今天的科普特教会。'});
+    hp(d,'antioch',{note:'叙利亚的教会多半不服，后来另立门户，就是叙利亚正教会。'});
+    hp(d,'vagharshapat',{left:1,note:'亚美尼亚教会后来也不认卡尔西顿。'});
+   },[['fill',HC.rome,'帝国西部'],['fill',HC.athens,'帝国东部'],['dot',HC.war,'强盗会议'],['dot','#2a2018','会场与另立门户的教会']])
  ]},
 {id:'history-china-neolithic',ch:7,title:'新石器聚落与万邦时代',short:'仰韶与良渚',en:'Neolithic China: Yangshao to Liangzhu',period:'约前7000—前1900年',c:HC.china,
  scenes:[
@@ -1602,7 +1658,7 @@ const HISTORY_ERAS=[
  {id:'empire-west',name:'罗马帝国：西部的终结',en:'The End in the West',date:'364—476年',c:HC.rome,items:[['history-empire-theodosius'],['history-empire-west-fall']]},
  {id:'faith-israel',name:'古代以色列',en:'Ancient Israel',date:'约前1400—前538年',c:HC.faith,items:[['history-faith-israel'],['history-faith-first-temple']]},
  {id:'faith-temple',name:'第二圣殿时期',en:'The Second Temple',date:'前538—公元73年',c:HC.faith,items:[['history-faith-second-temple'],['history-faith-jesus']]},
- {id:'faith-church',name:'早期教会',en:'The Early Church',date:'73—451年',c:HC.faith,items:[['history-faith-church'],['history-faith-empire-church']]},
+ {id:'faith-church',name:'早期教会',en:'The Early Church',date:'73—451年',c:HC.faith,items:[['history-faith-church'],['history-faith-empire-church'],['history-faith-councils']]},
  {id:'china-early',name:'先秦：三代与春秋战国',en:'Pre-Imperial China',date:'约前7000—前221年',c:HC.china,items:[['history-china-neolithic'],['history-china-bronze'],['history-china-western-zhou'],['history-china-spring-autumn'],['history-china-warring-states']]},
  {id:'china-qin-han',name:'秦汉帝国',en:'Qin and Han Empires',date:'前221—公元189年',c:HC.china,items:[['history-china-qin'],['history-china-western-han'],['history-china-eastern-han']]},
  {id:'china-six-dynasties',name:'三国两晋南北朝',en:'Six Dynasties',date:'190—476年',c:HC.china,items:[['history-china-three-kingdoms'],['history-china-sixteen-kingdoms']]}
@@ -1680,6 +1736,7 @@ const TREE_ROWS={
  'history-faith-jesus/0':['faith',-4,73],
  'history-faith-church/0':['faith',73,311],
  'history-faith-empire-church/0':['faith',312,451],
+ 'history-faith-councils/0':['faith',318,451],
  'history-china-neolithic/0':['china',-7000,-1900],
  'history-china-bronze/0':['china',-1850,-1046],
  'history-china-western-zhou/0':['china',-1046,-771],

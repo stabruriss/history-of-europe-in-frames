@@ -596,6 +596,42 @@ const FIGURE_PLACES={
       35.575
     ],
     "note": "加利利海北岸的渔村，彼得的家在这里。"
+  },
+  "nicaea": {
+    "name": "尼西亚",
+    "en": "Nicaea",
+    "ll": [
+      40.43,
+      29.72
+    ],
+    "note": "比提尼亚的湖边城市，今土耳其伊兹尼克；325年第一次大公会议在此召开。"
+  },
+  "colzim": {
+    "name": "安东尼山",
+    "en": "Mount Colzim",
+    "ll": [
+      28.925,
+      32.348
+    ],
+    "note": "红海边的山，安东尼晚年在此隐修四十多年，山脚的圣安东尼修道院至今还在。"
+  },
+  "kharga": {
+    "name": "大绿洲",
+    "en": "Great Oasis",
+    "ll": [
+      25.44,
+      30.56
+    ],
+    "note": "埃及西部沙漠里的绿洲，今哈里杰；聂斯托利435年被流放到这里。"
+  },
+  "nazianzus": {
+    "name": "纳齐安",
+    "en": "Nazianzus",
+    "ll": [
+      38.4,
+      34.35
+    ],
+    "note": "卡帕多西亚的小城，格列高利的父亲在此任主教。"
   }
 };
 const FIGURES={
@@ -2351,6 +2387,64 @@ const FIGURES={
         "https://www.newadvent.org/fathers/250106.htm"
       ]
     ]
+  },
+  "anthony-great": {
+    "name": "安东尼",
+    "en": "Anthony the Great",
+    "life": "约251—356年",
+    "relation": "埃及隐修士 · 修道运动之父",
+    "place": "colzim",
+    "bio": "下埃及富农之子，二十来岁父母双亡，听到经上说“变卖你所有的，分给穷人”，就散了家产，独居沙漠，活到一百零五岁。阿塔纳修斯为他写的传记传遍东西方，各地都有人学他进旷野。",
+    "sources": [
+      [
+        "阿塔纳修斯《安东尼传》",
+        "https://www.newadvent.org/fathers/2811.htm"
+      ],
+      [
+        "安东尼（英文资料）",
+        "https://en.wikipedia.org/wiki/Anthony_the_Great"
+      ]
+    ]
+  },
+  "gregory-nazianzus": {
+    "name": "纳齐安的格列高利",
+    "en": "Gregory of Nazianzus",
+    "life": "约329—390年",
+    "relation": "卡帕多西亚三教父之一 · 381年的君士坦丁堡主教",
+    "place": "nazianzus",
+    "bio": "纳齐安主教之子，在雅典和巴西尔同学，还认识日后的皇帝尤利安。379年他到教堂全归阿里乌派的君士坦丁堡，把亲戚的宅子改成一座小礼拜堂，在里面讲了五篇三位一体的道，听的人越来越多，东方教会尊他为“神学家”。",
+    "sources": [
+      [
+        "纳齐安的格列高利《第42篇演说》（告别辞）",
+        "https://www.newadvent.org/fathers/310242.htm"
+      ],
+      [
+        "纳齐安的格列高利《书信》（第131封题记：辞谢382年的会议）",
+        "https://www.newadvent.org/fathers/3103c.htm"
+      ],
+      [
+        "纳齐安的格列高利（英文资料）",
+        "https://en.wikipedia.org/wiki/Gregory_of_Nazianzus"
+      ]
+    ]
+  },
+  "nestorius": {
+    "name": "聂斯托利",
+    "en": "Nestorius",
+    "life": "约386—约451年",
+    "relation": "君士坦丁堡主教（428—431年）",
+    "place": "constantinople",
+    "bio": "生在叙利亚的日耳曼尼基亚，在安条克做修士，嗓子好、口才好。428年被请去当君士坦丁堡主教，头一回讲道就对皇帝说：给我一个清除了异端的天下，我还你一个天国；帮我除掉异端，我帮你打败波斯人。",
+    "sources": [
+      [
+        "苏格拉底《教会史》第7卷（第29节 上任；第32、34节 “生神者”之争与以弗所会议）",
+        "https://www.newadvent.org/fathers/26017.htm"
+      ],
+      [
+        "聂斯托利（英文资料）",
+        "https://en.wikipedia.org/wiki/Nestorius"
+      ]
+    ]
   }
 };
 const FIGURE_SCENES={
@@ -3416,7 +3510,25 @@ const FIGURE_SCENES={
       "place": "jerusalem"
     }
   ],
-  "history-faith-empire-church/1": [
+  "history-faith-councils/1": [
+    {
+      "id": "anthony-great",
+      "when": "338年",
+      "event": "下山驳阿里乌派",
+      "note": "阿里乌派到处说安东尼跟他们一个看法。主教和弟兄们请他出山，年近九十的他进了亚历山大里亚，当众说圣子不是被造的。满城的人跑来看他，连异教的祭司也进了教堂，说：“我们要看看神人。”",
+      "place": "alexandria"
+    }
+  ],
+  "history-faith-councils/2": [
+    {
+      "id": "constantine",
+      "when": "325年",
+      "event": "烧状子",
+      "note": "开会前一天，不少主教递状子互相告发。他把状子统统烧了，只说：基督吩咐，想求饶恕的人先要饶恕弟兄。开幕那天他穿着紫袍金饰进场，等主教们示意，才在一张矮金椅上坐下。",
+      "place": "nicaea"
+    }
+  ],
+  "history-faith-councils/3": [
     {
       "id": "arius",
       "when": "336年",
@@ -3430,6 +3542,33 @@ const FIGURE_SCENES={
       "event": "流放特里尔",
       "note": "提尔会议定了他的罪，他赶到君士坦丁堡，在大街上拦住皇帝的马。对头们随即告他扬言要扣下亚历山大里亚运往新都的粮船，皇帝大怒，不再听他分辩，把他流放到高卢的特里尔。",
       "place": "treveri"
+    }
+  ],
+  "history-faith-councils/4": [
+    {
+      "id": "gregory-nazianzus",
+      "when": "381年",
+      "event": "约拿",
+      "note": "他主持会议，在安条克主教的人选上落了下风，又不肯跟“本质相似派”（介于两派之间、说圣子与圣父本质相似的人）妥协，便当众请辞：“就让我做先知约拿吧！风暴因我而起，我愿舍了自己救这条船。”第二年再请他赴会，他回信说从没见过主教开会开出什么好结果。",
+      "place": "constantinople"
+    }
+  ],
+  "history-faith-councils/5": [
+    {
+      "id": "nestorius",
+      "when": "435—约451年",
+      "event": "流放绿洲",
+      "note": "435年皇帝下诏把他流放到埃及的大绿洲，正在对头西里尔的辖区里。他在那里遭过沙漠强盗的劫掠，受了伤；晚年写书替自己辩护，约451年死去。波斯的教会始终不认他是异端。",
+      "place": "kharga"
+    }
+  ],
+  "history-faith-councils/6": [
+    {
+      "id": "leo",
+      "when": "451—452年",
+      "event": "彼得借利奥开了口",
+      "note": "451年他写给卡尔西顿大公会议的书信当众宣读，与会主教齐声喊：“彼得借利奥开了口！”次年他出城见阿提拉，阿提拉随即退兵。",
+      "place": "rome"
     }
   ],
   "history-empire-constantine/4": [
@@ -3464,15 +3603,6 @@ const FIGURE_SCENES={
       "event": "城下喊话",
       "note": "他跟着提图斯围攻耶路撒冷，绕着城墙劝守军投降，被城上飞下的石头打伤了头。",
       "place": "jerusalem"
-    }
-  ],
-  "history-faith-empire-church/3": [
-    {
-      "id": "leo",
-      "when": "451—452年",
-      "event": "彼得借利奥开了口",
-      "note": "451年他写给卡尔西顿大公会议的书信当众宣读，与会主教齐声喊：“彼得借利奥开了口！”次年他出城见阿提拉，阿提拉随即退兵。",
-      "place": "rome"
     }
   ],
   "history-faith-israel/3": [
