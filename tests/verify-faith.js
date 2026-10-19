@@ -32,9 +32,9 @@ const IDS=['history-faith-israel','history-faith-first-temple','history-faith-se
      people:Object.entries(FIGURE_SCENES).filter(([k])=>k.startsWith('history-faith-')).reduce((n,[,v])=>n+v.length,0)};
    },IDS);
    assert.equal(report.chapter,'犹太教与基督教');
-   assert.deepEqual(report.ids,IDS);assert.deepEqual(report.scenes,[5,5,4,6,4,3,7]);
+   assert.deepEqual(report.ids,IDS);assert.deepEqual(report.scenes,[5,5,4,6,4,3,8]);
    assert.ok(report.paras.every(p=>p.chars<=230),'Concise: '+JSON.stringify(report.paras.filter(p=>p.chars>230)));
-   assert.ok(report.bold);assert.equal(report.moments,29);assert.equal(report.people,18);
+   assert.ok(report.bold);assert.equal(report.moments,31);assert.equal(report.people,18);
    assert.deepEqual(report.branch,['基督教',5,'trunk',-1400,451,true]);assert.equal(report.levant,false);
    assert.deepEqual(report.eras,[['faith-israel','古代以色列',IDS.slice(0,2)],['faith-temple','第二圣殿时期',IDS.slice(2,4)],['faith-church','早期教会',IDS.slice(4)]]);
    // The line now forks off before 卡迭石: the Hebrews' nomadic origins come first.
@@ -73,6 +73,13 @@ const IDS=['history-faith-israel','history-faith-first-temple','history-faith-se
      ['history-faith-councils/5','生神者'],['history-faith-councils/5','聂斯托利'],['history-faith-councils/5','西里尔'],['history-faith-councils/5','景教'],
      ['history-faith-councils/6','狄奥斯库若'],['history-faith-councils/6','两个本性'],['history-faith-councils/6','照这条线的读法'],['history-faith-councils/6','离了心'],
      ['history-empire-constantine/4','偏阿里乌派'],['history-empire-constantine/4','“基督教”主线'],
+     // 老无 2026-10-18 (Telegram): why the quarrels never ended — his theory as the councils' closing scene; the 罗马 and 基督教 lines point at each other; China's ever stronger throne.
+     ['history-faith-councils/7','吃精英阶层'],['history-faith-councils/7','智识含量'],['history-faith-councils/7','争权的战场'],['history-faith-councils/7','皇权是放大器'],
+     ['history-faith-councils/7','化繁为简'],['history-faith-councils/7','归于一尊'],['history-faith-councils/7','各归一尊'],['history-faith-councils/7','“罗马”主线'],['history-faith-councils/7','“中国”主线'],
+     ['history-faith-councils/4','“罗马”主线'],['history-faith-empire-church/2','“罗马”主线'],['history-empire-theodosius/1','“基督教”主线'],['history-empire-west-fall/2','“基督教”主线'],
+     ['history-china-sixteen-kingdoms/1','皇权强，而且越来越强'],['history-china-sixteen-kingdoms/1','人口密度和反抗成本'],['history-china-sixteen-kingdoms/1','王与马，共天下'],
+     ['history-china-sixteen-kingdoms/1','沙门不敬王者论'],['history-china-sixteen-kingdoms/1','当今如来'],['history-china-sixteen-kingdoms/1','与我抗衡'],
+     ['history-china-sixteen-kingdoms/1','“罗马”主线'],['history-china-sixteen-kingdoms/1','“基督教”主线'],
      // 老无 2026-10-18: what were the Israelites doing in the Greek dark age? One line in the Greek scene, pointing here.
      ['history-dark-age/0','以色列人'],['history-dark-age/0','爱琴海一带'],['history-dark-age/0','“基督教”主线']]){
     await page.evaluate(s=>go(s),scene);
@@ -102,7 +109,7 @@ const IDS=['history-faith-israel','history-faith-first-temple','history-faith-se
     assert.ok(r.layers>0&&r.legend>0&&!r.overflow,e+'/'+i+' '+JSON.stringify(r));
     if(label==='desktop')assert.ok(r.pins>0&&r.fits,e+'/'+i+' '+JSON.stringify(r));
    }
-   for(const [scene,file] of [['history-faith-israel/2','kadesh'],['history-faith-jesus/0','gods'],['history-faith-jesus/3','peter-paul'],['history-faith-church/2','jupiter'],['history-faith-empire-church/1','jupiter-condemned'],['history-faith-councils/2','nicaea'],['history-faith-councils/3','pancake'],['history-faith-councils/6','chalcedon']]){
+   for(const [scene,file] of [['history-faith-israel/2','kadesh'],['history-faith-jesus/0','gods'],['history-faith-jesus/3','peter-paul'],['history-faith-church/2','jupiter'],['history-faith-empire-church/1','jupiter-condemned'],['history-faith-councils/2','nicaea'],['history-faith-councils/3','pancake'],['history-faith-councils/6','chalcedon'],['history-faith-councils/7','why']]){
     await page.evaluate(s=>go(s),scene);await wait(300);
     if(label==='390')await page.evaluate(()=>scrollSceneText(false));
     await page.screenshot({path:path.join(shots,`faith-${file}-${label}.png`)});
@@ -110,6 +117,6 @@ const IDS=['history-faith-israel','history-faith-first-temple','history-faith-se
    await page.close();
   }
   assert.deepEqual(errors,[]);
-  console.log('PASS: chapter Ⅶ 犹太教与基督教 — the 基督教 line (outermost lane, 前1400—451, shoot 中世纪教会) rebuilt on 老无’s secular outline in 7 sections / 34 scenes, ≤230 chars each: Hebrews from beyond the River, Kadesh, Egypt and Moses, the Exodus, the kingdoms and Babylon, monotheism / exclusivity / the end of days, Rome not caring, too many gods, Jesus’ product and Peter’s channel, the cross, Nero, why persecution eased, Diocletian son of Jupiter, a wave Constantine rode, Jupiter condemned, and the four councils (one God made to add up, desert saints, Nicaea, the pancake flips, Constantinople, Ephesus, Chalcedon and the mine it laid); 119 phrase checks (incl. the pointer from the Greek dark age, and the Western Wall as the Temple Mount’s retaining wall); 29 iconic-event tags; 18 person cards (摩西、阿赫那吞、恺撒、彼得、保罗、约瑟夫斯、小普林尼、居普良、伽列里乌斯、优西比乌、海伦娜、安东尼、君士坦丁、阿里乌、阿塔纳修斯、纳齐安的格列高利、聂斯托利、利奥); eyebrows and tree rows; desktop and 390px without overflow; offline; no page errors.');
+  console.log('PASS: chapter Ⅶ 犹太教与基督教 — the 基督教 line (outermost lane, 前1400—451, shoot 中世纪教会) rebuilt on 老无’s secular outline in 7 sections / 35 scenes, ≤230 chars each: Hebrews from beyond the River, Kadesh, Egypt and Moses, the Exodus, the kingdoms and Babylon, monotheism / exclusivity / the end of days, Rome not caring, too many gods, Jesus’ product and Peter’s channel, the cross, Nero, why persecution eased, Diocletian son of Jupiter, a wave Constantine rode, Jupiter condemned, and the four councils (one God made to add up, desert saints, Nicaea, the pancake flips, Constantinople, Ephesus, Chalcedon and the mine it laid, and 老无’s theory of why the quarrels never ended); 140 phrase checks (incl. the pointer from the Greek dark age, and the Western Wall as the Temple Mount’s retaining wall); 31 iconic-event tags; 18 person cards (摩西、阿赫那吞、恺撒、彼得、保罗、约瑟夫斯、小普林尼、居普良、伽列里乌斯、优西比乌、海伦娜、安东尼、君士坦丁、阿里乌、阿塔纳修斯、纳齐安的格列高利、聂斯托利、利奥); eyebrows and tree rows; desktop and 390px without overflow; offline; no page errors.');
  }catch(e){console.error(e);process.exitCode=1;}finally{await browser.close();}
 })();
