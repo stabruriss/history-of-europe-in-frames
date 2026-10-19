@@ -3417,7 +3417,7 @@ const FIGURE_SCENES={
       "place": "constantinople"
     }
   ],
-  "history-empire-theodosius/1": [
+  "history-empire-theodosius/4": [
     {
       "id": "theodosius",
       "when": "390年",

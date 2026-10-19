@@ -201,6 +201,9 @@ Object.assign(HS,{
   constantinople:['君士坦丁堡','Constantinople',41.01,28.98,'原名拜占庭，330年君士坦丁迁都于此；东罗马延续到1453年。'],
   nicaea:['尼西亚','Nicaea',40.43,29.72,'325年君士坦丁在此召开第一次大公会议。'],
   adrianople:['阿德里安堡','Adrianople',41.68,26.56,'378年哥特人在此大败罗马军，皇帝瓦伦斯战死。今埃迪尔内。'],
+  marcianopolis:['马尔西亚诺波利斯','Marcianopolis',43.225,27.585,'下默西亚的大城，今保加利亚代夫尼亚；376至377年间渡河的哥特人在此反了。'],
+  brigetio:['布里盖提奥','Brigetio',47.733,18.167,'潘诺尼亚的多瑙河军团大营，今匈牙利瑟尼；375年瓦伦提尼安一世在此接见夸迪人使节，气得中风而死。'],
+  vienne:['维埃纳','Vienna (Vienne)',45.524,4.878,'罗讷河边的城市，今法国维埃纳；392年5月瓦伦提尼安二世被发现吊死在这里的寝宫。'],
   durostorum:['杜罗斯托鲁姆','Durostorum',44.12,27.26,'下多瑙河的要塞；376年哥特人大约在这一段渡河。今锡利斯特拉。'],
   thessalonica:['帖撒罗尼迦','Thessalonica',40.64,22.94,'380年狄奥多西在此颁诏定基督教为国教；390年在此屠城。'],
   frigidus:['冷河','Frigidus',45.89,13.9,'394年狄奥多西在此打败西部的篡位者。今斯洛文尼亚的维帕瓦河谷。'],
@@ -1239,18 +1242,46 @@ const HISTORY_ENTRIES=[
  ]},
 {id:'history-empire-theodosius',ch:5,title:'狄奥多西：国教与分治',short:'瓦伦提尼安与狄奥多西',en:'Theodosius: One Faith, Two Halves',period:'364—395年',c:HC.rome,
  scenes:[
-  hs('364—382年','哥特人过河','瓦伦提尼安兄弟分管东西；哥特人为躲匈人渡过多瑙河，378年在阿德里安堡杀死皇帝瓦伦斯；狄奥多西382年让他们作为同盟者住进帝国。',[[38.6,18.5],[49.0,37.5]],d=>{
-    ha(d,'eEast395',HC.athens,{fillOpacity:.22});
-    hp(d,'durostorum');hp(d,'adrianople',{kind:'battle'});hp(d,'constantinople');
-    hr(d,[[47.8,37.0],[47.0,33.5],[46.6,30.5]],HC.war);hr(d,[[46.3,29.6],[45.2,28.4],[44.3,27.3],[43.0,26.9],[41.9,26.6]],HC.celt);
-    hl(d,'匈人','Huns',48.2,35.2,HC.war);hl(d,'382年：哥特人作为同盟者落户（概略）','Goths settled as allies, 382',43.2,24.4,HC.celt);
-   },[['fill',HC.athens,'帝国东部（瓦伦斯）'],['dline',HC.war,'匈人西进（概略）'],['dline',HC.celt,'376年哥特人渡河，378年南下阿德里安堡'],['dot',HC.war,'阿德里安堡']]),
-  hs('380—395年','国教与圣火','基督教定为国教；皇帝向米兰主教悔罪；维斯塔圣火熄灭；395年帝国由两个儿子分治东西。',[[28.5,-10.5],[55.5,42.5]],d=>{
+  hs('364—376年','匈人压境','匈人西来，压垮黑海北岸的哥特人；哥特人求渡多瑙河，瓦伦斯照以夷制夷的老套路收容，想多一批兵打波斯。',[[35.0,19.0],[50.0,46.5]],d=>{
+    ha(d,'eEast395',HC.athens,{fillOpacity:.18});
+    hp(d,'durostorum',{note:'376年哥特人在这一段求渡，坐船、扎筏、划独木舟，渡了好几天几夜。'});
+    hp(d,'antioch',{note:'瓦伦斯这时坐镇安条克，正跟波斯争亚美尼亚。'});hp(d,'constantinople');
+    hr(d,[[48.6,46.0],[47.9,40.5],[47.2,35.5],[46.7,31.0]],HC.war);hr(d,[[46.3,29.6],[45.3,28.3],[44.4,27.4]],HC.celt);
+    hl(d,'匈人','Huns',48.9,38.2,HC.war);hl(d,'哥特人','Goths',47.4,27.6,HC.celt);hl(d,'亚美尼亚：罗马与波斯相争','Armenia, contested',39.8,44.6,HC.athens);
+   },[['fill',HC.athens,'帝国东部（瓦伦斯）'],['dline',HC.war,'匈人西进（概略）'],['dline',HC.celt,'376年哥特人渡河'],['dot','#2a2018','渡河处与瓦伦斯的驻地']]),
+  hs('376—377年','收不住','人太多、来得太急，又没先打服、拆散；将领倒卖口粮，哥特人在马尔西亚诺波利斯反了，逃奴和矿工带路，在色雷斯四处抢掠。',[[40.4,22.0],[46.0,30.5]],d=>{
+    ha(d,'eEast395',HC.athens,{fillOpacity:.14});
+    hp(d,'durostorum');hp(d,'marcianopolis',{kind:'battle'});hp(d,'adrianople',{left:1});hp(d,'constantinople');
+    hr(d,[[44.0,27.3],[43.35,27.45],[42.75,26.75],[42.25,25.5],[41.95,24.4]],HC.celt);
+    hl(d,'色雷斯','Thrace',42.55,24.15,HC.war);
+   },[['fill',HC.athens,'帝国东部'],['dline',HC.celt,'哥特人南下抢掠（概略）'],['dot',HC.war,'起事之地'],['dot','#2a2018','渡河处与城市']]),
+  hs('378年','阿德里安堡','瓦伦提尼安375年已气死，西部归儿子格拉提安；瓦伦斯不等侄子会师，抢先开战，兵败身死，东部野战军只逃出三分之一。',[[40.2,13.5],[48.8,30.0]],d=>{
+    ha(d,'eWest395',HC.rome,{fillOpacity:.1});ha(d,'eEast395',HC.athens,{fillOpacity:.14});
+    hp(d,'brigetio',{left:1});hp(d,'adrianople',{kind:'battle',note:'378年8月9日，瓦伦斯在此战死，东部野战军只逃出三分之一。'});
+    hp(d,'constantinople',{note:'378年5月瓦伦斯从安条克赶到这里，再北上阿德里安堡。'});
+    hr(d,[[48.2,14.3],[47.9,17.0],[45.0,19.6],[43.9,22.5]],HC.rome);hr(d,[[41.01,28.98],[41.4,27.7],[41.62,26.75]],HC.athens);
+   },[['fill',HC.rome,'西部（格拉提安，概略）'],['fill',HC.athens,'东部（瓦伦斯，概略）'],['dline',HC.rome,'格拉提安东来，没等到会师'],['dline',HC.athens,'瓦伦斯出兵'],['dot',HC.war,'阿德里安堡'],['dot','#2a2018','375年瓦伦提尼安死处与新都']]),
+  hs('379—382年','国中之国','狄奥多西从西班牙被请回来，也打不赢；382年哥特人以同盟者身份落户色雷斯，自带首领，不归罗马官员管；东边跟波斯瓜分亚美尼亚。',[[36.5,18.5],[47.5,46.5]],d=>{
+    ha(d,'eEast395',HC.athens,{fillOpacity:.2});
+    hp(d,'sirmium',{note:'379年1月19日狄奥多西在此称帝。'});
+    hp(d,'thessalonica',{note:'狄奥多西的大本营；380年他在马其顿被夜袭，险些被擒，秋天病重受洗。'});
+    hp(d,'constantinople',{note:'380年11月狄奥多西进驻；382年10月3日与哥特人议和。'});
+    hl(d,'382年：哥特人落户（概略）','Goths settled as allies, 382',43.3,24.6,HC.celt);
+    hl(d,'亚美尼亚：与波斯瓜分','Armenia partitioned, 384/387',39.8,44.0,HC.athens);
+   },[['fill',HC.athens,'帝国东部（狄奥多西）'],['dot','#2a2018','称帝、大本营与议和之地']]),
+  hs('380—394年','圣火熄灭','国教诏书、胜利女神祭坛、帖撒罗尼迦屠城与悔罪、禁绝献祭、冷河之战；维斯塔圣火熄灭。',[[38.0,2.5],[48.3,25.0]],d=>{
+    ha(d,'eEmpire300',HC.rome,{fillOpacity:.1});
+    hp(d,'rome',{note:'维斯塔神庙在广场东头；382年胜利女神祭坛搬出元老院，393年又搬回来；394年前后圣火熄灭，贞女解散。'});
+    hp(d,'mediolanum',{note:'390年狄奥多西在此向主教安布罗斯悔罪。'});
+    hp(d,'thessalonica',{left:1,note:'380年2月狄奥多西在此颁诏；390年在此屠城。'});
+    hp(d,'vienne',{left:1});hp(d,'frigidus',{kind:'battle'});
+   },[['fill',HC.rome,'帝国（概略）'],['dot',HC.war,'冷河之战'],['dot','#2a2018','诏书、悔罪、圣火与吊死的皇帝']]),
+  hs('395年','分治','狄奥多西死在米兰，长子阿卡狄乌斯管东部，次子霍诺留管西部；分治早有先例，这一回却再没合拢。',[[28.5,-10.5],[55.5,42.5]],d=>{
     ha(d,'eWest395',HC.rome,{fillOpacity:.22});ha(d,'eEast395',HC.athens,{fillOpacity:.22});
     d.line(SPLIT_395,{color:'#2a2018',weight:2.2,opacity:.85,dashArray:'3 6'});
-    hp(d,'thessalonica',{left:1});hp(d,'mediolanum',{note:'390年狄奥多西在此向主教安布罗斯悔罪；395年1月死在这里。'});
-    hp(d,'rome',{note:'维斯塔神庙在广场东头；394年前后圣火熄灭，贞女解散。'});hp(d,'frigidus',{kind:'battle'});hp(d,'constantinople');
-   },[['fill',HC.rome,'西部：霍诺留'],['fill',HC.athens,'东部：阿卡狄乌斯'],['dline','#2a2018','395年东西分界'],['dot',HC.war,'冷河之战']])
+    hp(d,'mediolanum',{note:'395年1月17日狄奥多西死在这里；十岁的霍诺留留在西部。'});
+    hp(d,'constantinople',{note:'十七八岁的阿卡狄乌斯坐镇东部。'});hp(d,'rome');
+   },[['fill',HC.rome,'西部：霍诺留'],['fill',HC.athens,'东部：阿卡狄乌斯'],['dline','#2a2018','395年东西分界'],['dot','#2a2018','米兰、罗马与君士坦丁堡']])
  ]},
 {id:'history-empire-west-fall',ch:5,title:'西罗马的终结',short:'西罗马的终结',en:'The End of the Western Empire',period:'395—476年',c:HC.rome,hideBase:['alps'],
  scenes:[
@@ -1657,7 +1688,7 @@ const HISTORY_ENTRIES=[
 ];
 HISTORY_ENTRIES.forEach(e=>{
   const content=HISTORY_CONTENT[e.id];
-  Object.assign(e,{kind:'history',html:content.html,sources:content.sources,moments:content.moments||[],view:e.scenes[0].view,
+  Object.assign(e,{kind:'history',html:content.html,sources:content.sources,moments:content.moments||[],boxes:content.boxes||[],view:e.scenes[0].view,
     hide:['med',...(e.hideBase||[])],sub:e.period});
 });
 

@@ -455,6 +455,10 @@ function renderCard(e){
       const aside=document.createElement('aside');aside.className='moment';aside.setAttribute('aria-label','名场面：'+m.name);
       aside.innerHTML=`<span class="moment-tag">${m.name}<i>${m.en}</i></span>${m.text}`;block.append(aside);
     }
+    for(const b of e.boxes.filter(b=>b.scene===index)){
+      const aside=document.createElement('aside');aside.className='box';aside.setAttribute('aria-label','小专栏：'+b.name);
+      aside.innerHTML=`<span class="box-tag">${b.name}<i>${b.en}</i></span>${b.text}`;block.append(aside);
+    }
   });
   readerBody.scrollTo({top:0,behavior:'instant'});
   card.querySelectorAll('[data-go]').forEach(a=>{

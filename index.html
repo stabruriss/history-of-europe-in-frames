@@ -942,6 +942,11 @@ body.has-scenes #reader{max-height:calc(100% - 168px)}
 #card .moment{margin:-4px 0 14px;padding:8px 10px 9px;border:1px dashed var(--rule);background:rgba(243,234,214,.7);font-size:13px;line-height:1.8;color:var(--ink2);overflow-wrap:anywhere}
 .moment-tag{display:inline-block;margin:0 7px 0 0;padding:0 7px;border-radius:2px;background:var(--ink);color:var(--paper);font-size:11.5px;font-weight:600;letter-spacing:.04em;line-height:1.75}
 .moment-tag i{font-style:normal;font-family:var(--latin);font-weight:400;font-size:10.5px;letter-spacing:0;margin-left:5px;color:var(--paper2)}
+/* 豆腐块: a short boxed explainer inside a scene passage, in the section colour so it never reads as a 名场面. */
+#card .box{margin:-4px 0 14px;padding:8px 10px 9px;border:1px solid var(--rule);border-left:3px solid var(--c);background:rgba(250,244,230,.9);font-size:13px;line-height:1.8;color:var(--ink2);overflow-wrap:anywhere}
+.box-tag{display:inline-block;margin:0 7px 0 0;padding:0 7px;border-radius:2px;background:var(--c);color:var(--paper);font-size:11.5px;font-weight:600;letter-spacing:.04em;line-height:1.75}
+.box-tag i{font-style:normal;font-family:var(--latin);font-weight:400;font-size:10.5px;letter-spacing:0;margin-left:5px;color:var(--paper2)}
+#card .box b{font-weight:600;color:var(--ink);margin-right:.4em}
 #card .passage-title{font-size:13px;line-height:1.6;margin:0 0 8px;color:var(--ink2)}
 .passage-title small{display:block;font-size:10px;line-height:1.6;font-weight:400;color:var(--ink3)}
 .scene-passage.current .passage-title{color:var(--c)}
@@ -4127,47 +4132,123 @@ const HISTORY_CONTENT={
   },
   "history-empire-theodosius": {
     "title": "狄奥多西：国教与分治",
-    "html": "<p data-scene-text=\"0\">约维安一死，军队推出潘诺尼亚军官出身的瓦伦提尼安，他让弟弟瓦伦斯管东部。376年，匈人压得哥特人走投无路，求渡多瑙河，瓦伦斯答应收容；官员趁机盘剥，饿急了的哥特人拿孩子换狗肉，随即造反。哥哥瓦伦提尼安375年接见蛮族使节时气得中风而死，儿子格拉提安接管西部。378年8月，瓦伦斯不等侄子格拉提安的援军，在阿德里安堡抢先开战，兵败身死，东部野战军折了三分之二。格拉提安召来西班牙将门之子狄奥多西收拾东部，也打不赢，只好谈：382年哥特人以“同盟者”身份带着自己的首领住进色雷斯。<strong>帝国境内有了一个不归罗马官员管的国中之国。</strong>这时五胡在中国北方立国已七十多年：匈奴人刘渊304年起兵，311年洛阳陷落。</p>\n<p data-scene-text=\"1\">380年狄奥多西颁诏：百姓一律信尼西亚派，其余是异端（另见“基督教”主线）。390年帖撒罗尼迦民众打死驻军将领，他下令报复，据说杀了七千人；米兰主教安布罗斯不让他领圣餐，皇帝脱下紫袍当众悔罪才被接纳。<strong>给皇帝合法性的那个上帝，也能收回它。</strong>391年起禁绝异教献祭，燃了千余年的维斯塔圣火394年前后熄灭，贞女解散。西部，格拉提安383年被篡位者杀死，狄奥多西平乱后扶起他的弟弟瓦伦提尼安二世；392年他死得不明不白，法兰克将领阿尔博加斯特另立一个教书先生。394年冷河一战，打垮了最后一支打着旧神旗号的大军。395年1月他死在米兰，长子阿卡狄乌斯管东部，次子霍诺留管西部。分治早有先例，这一回却再没合拢。</p>",
+    "html": "<p data-scene-text=\"0\">约370年，里海以北草原上的游牧骑兵匈人西来，打垮顿河边的阿兰人，又压垮黑海北岸的哥特王国。这时帝国由一对兄弟分管：约维安一死，军队推出潘诺尼亚军官出身的瓦伦提尼安，他让弟弟瓦伦斯管东部。376年，哥特人拖家带口挤到多瑙河边，求瓦伦斯收留。<strong>让蛮族内附、男的当兵，本是以夷制夷的老套路</strong>：奥古斯都就把日耳曼人迁过莱茵河，五贤帝里的马可·奥勒留把降附的蛮族分到边境各省安置；拿哥特兵打波斯要到三世纪，戈尔迪安三世东征就带着他们。瓦伦斯正跟波斯争亚美尼亚，身边人奉承：这下兵源无穷，各省该出的兵还能折成金子。孩子分送东方各城当人质，大人缴械渡河。</p>\n<p data-scene-text=\"1\">照这条线的读法，<strong>这回主要是人太多了：被盘剥是真的，但物理上可能就养不起突然多出来的这么多人，不盘剥也一样乱。</strong>有据的是：摆渡的官员数人头，数不过来只好作罢，今人估计约九万人；往常是先打服、再拆散，这回是没打服的整族人，主力又在东方对着波斯；另一支哥特人格鲁森尼人还趁巡河的船调走，自己偷渡过来。缴械没缴干净，带队的将领只顾倒卖口粮，饿急了的哥特人拿孩子换狗肉。不久他们在马尔西亚诺波利斯反了，打垮当地驻军，<strong>过河之后成了一伙强盗，如入无人之境</strong>：逃奴、受不了重税的金矿工都来带路。</p>\n<p data-scene-text=\"2\">西部这时已换了人：哥哥瓦伦提尼安375年在多瑙河边接见夸迪人使节，被对方的辩解气得中风而死，比哥特人过河还早一年，西部由他的儿子格拉提安接管。瓦伦斯赶紧跟波斯把亚美尼亚的事谈妥，从安条克赶回，御驾亲征。378年夏，侄子格拉提安刚在莱茵河上打了胜仗，写信请叔叔等他会师；瓦伦斯妒他的战功，又听斥候说对面只有一万人，8月9日抢先在阿德里安堡开战，兵败身死，东部野战军只逃出三分之一。</p>\n<p data-scene-text=\"3\">格拉提安把狄奥多西从西班牙捞了出来：他是将门之子，父亲老狄奥多西是名将，376年无端被处死，他就回老家庄园躲着。379年1月他称帝管东部，也打不赢：380年在马其顿，新招的哥特兵夜里倒戈，皇帝险些被擒。只好谈：382年10月，哥特人以“同盟者”身份带着自己的首领住进色雷斯，替罗马打仗，不归罗马官员管。<strong>帝国境内有了一个国中之国。</strong>东边也让了步，384、387年跟波斯瓜分亚美尼亚，波斯拿了大头。东汉也这样用南匈奴：单于送儿子进洛阳当侍子，部众替汉朝打北匈奴。到这时，五胡在中国北方立国已七十多年：304年起兵的匈奴人刘渊，年轻时就在洛阳当过人质；311年洛阳陷落。</p>\n<p data-scene-text=\"4\">旧神一步步退出罗马。380年狄奥多西下诏，臣民一律信尼西亚派（另见“基督教”主线）；382年胜利女神的祭坛搬出元老院，贞女和祭司的公款停了。390年帖撒罗尼迦屠城，皇帝在米兰脱下紫袍，向主教悔罪：<strong>给皇帝合法性的那个上帝，也能收回它。</strong>391年起禁绝献祭。西部，格拉提安被篡位者所杀，弟弟瓦伦提尼安二世吊死在寝宫；法兰克将领阿尔博加斯特另立一个教书先生当皇帝，胜利女神的祭坛又搬了回去。394年9月冷河一战，据说大风把箭吹了回去，最后一支打着旧神旗号的大军覆没。维斯塔神庙的门从此关上，贞女散去。那团传说从特洛伊带来、燃了一千多年的圣火，没有人再添柴，熄了。</p>\n<p data-scene-text=\"5\">395年1月，四十八岁的狄奥多西死在米兰。十七八岁的长子阿卡狄乌斯坐镇君士坦丁堡管东部，十岁的次子霍诺留管西部。分治早有先例，这一回却再没合拢：西部又撑了八十一年，东部还要走一千多年，直到1453年。</p>",
     "sources": [
       {
-        "label": "阿米安努斯·马尔切利努斯《历史》第31卷（哥特人渡河与阿德里安堡）",
+        "label": "阿米安努斯·马尔切利努斯《历史》第31卷（第2—3节 匈人与阿兰人；第4节 渡河、折金代兵、数不清的人、拿人换狗；第5—8节 偷渡、马尔西亚诺波利斯、矿工带路、拉来匈人和阿兰人；第12—13节 阿德里安堡）",
         "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Ammian/31*.html"
       },
       {
-        "label": "狄奥多勒《教会史》第5卷（第17—18节 帖撒罗尼迦与安布罗斯）",
-        "url": "https://www.newadvent.org/fathers/27025.htm"
+        "label": "阿米安努斯·马尔切利努斯《历史》第30卷（第5—6节 瓦伦提尼安烧夸迪人的村子，被使节气得中风而死）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Ammian/30*.html"
+      },
+      {
+        "label": "左西莫斯《新史》第4卷（第20节 缴械渡河；第26节 孩子送往东方；第31节 狄奥多西被夜袭；格拉提安之死、冷河之战）",
+        "url": "https://www.tertullian.org/fathers/zosimus04_book4.htm"
       },
       {
         "label": "左西莫斯《新史》第5卷（第38节 塞雷娜与最后的贞女）",
         "url": "https://www.tertullian.org/fathers/zosimus05_book5.htm"
       },
       {
+        "label": "狄奥多勒《教会史》第5卷（第17—18节 帖撒罗尼迦与安布罗斯）",
+        "url": "https://www.newadvent.org/fathers/27025.htm"
+      },
+      {
+        "label": "奥古斯丁《上帝之城》第5卷（第26节 冷河的风与金雷电）",
+        "url": "https://www.newadvent.org/fathers/120105.htm"
+      },
+      {
+        "label": "辛马库斯为胜利女神祭坛上的呈文与安布罗斯的驳文（英译）",
+        "url": "https://sourcebooks.fordham.edu/source/ambrose-sym.asp"
+      },
+      {
+        "label": "胜利女神祭坛（英文资料：382年搬走，篡位的欧根尼乌斯又搬回来）",
+        "url": "https://en.wikipedia.org/wiki/Altar_of_Victory"
+      },
+      {
+        "label": "维斯塔神庙（英文资料：394年圣火熄灭）",
+        "url": "https://en.wikipedia.org/wiki/Temple_of_Vesta"
+      },
+      {
+        "label": "卡西乌斯·狄奥《罗马史》第72卷（第11节 马可·奥勒留安置降附的蛮族；第16节 伊阿兹吉人交出八千骑兵）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Cassius_Dio/72*.html"
+      },
+      {
+        "label": "苏维托尼乌斯《奥古斯都传》（第21节 苏维汇人、西甘布里人迁到莱茵河边）",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Suetonius/12Caesars/Augustus*.html"
+      },
+      {
+        "label": "米西切之战与沙普尔一世的铭文（英文资料：戈尔迪安三世从罗马、哥特、日耳曼各地召兵）",
+        "url": "https://en.wikipedia.org/wiki/Battle_of_Misiche"
+      },
+      {
+        "label": "哥特战争（376—382）（英文资料：人数估计与382年和约）",
+        "url": "https://en.wikipedia.org/wiki/Gothic_War_(376%E2%80%93382)"
+      },
+      {
+        "label": "阿德里安堡之战（英文资料：两军人数、步兵与马镫的新看法）",
+        "url": "https://en.wikipedia.org/wiki/Battle_of_Adrianople"
+      },
+      {
+        "label": "哥特人与汪达尔人的战法（英文资料：装备与骑兵）",
+        "url": "https://en.wikipedia.org/wiki/Gothic_and_Vandal_warfare"
+      },
+      {
+        "label": "阿基里塞内和约（英文资料：384、387年瓜分亚美尼亚）",
+        "url": "https://en.wikipedia.org/wiki/Peace_of_Acilisene"
+      },
+      {
         "label": "粟特古信札（英译）",
         "url": "https://depts.washington.edu/silkroad/texts/sogdlet.html"
       },
       {
-        "label": "左西莫斯《新史》第4卷（瓦伦提尼安兄弟、格拉提安之死、冷河之战）",
-        "url": "https://www.tertullian.org/fathers/zosimus04_book4.htm"
+        "label": "《后汉书·南匈奴列传》（建武二十六年，南单于遣子入侍）",
+        "url": "https://zh.wikisource.org/wiki/%E5%BE%8C%E6%BC%A2%E6%9B%B8/%E5%8D%B789"
+      },
+      {
+        "label": "《晋书·刘元海载记》（咸熙中，为任子在洛阳）",
+        "url": "https://zh.wikisource.org/wiki/%E6%99%89%E6%9B%B8/%E5%8D%B7101"
       }
     ],
     "moments": [
       {
-        "scene": 0,
+        "scene": 2,
+        "name": "坎尼以来",
+        "en": "Nothing Like It Since Cannae",
+        "text": "皇帝的尸首始终没找到：一说他中箭倒在兵堆里，一说他被抬进一座农舍，追来的哥特人不知道里面是谁，连屋烧了。阿米安努斯说，史书里除了坎尼，再没记过这样的屠杀。"
+      },
+      {
+        "scene": 3,
         "name": "粟特古信札",
         "en": "The Sogdian Ancient Letters",
         "text": "1907年斯坦因在敦煌以西的烽燧里找到一包没寄出的粟特商人书信。其中一封约写于313年，说洛阳被攻破、皇帝出逃、宫城焚毁，攻城的人写作 xwn，和西方说的“匈人”是同一个词。两者是不是一族，学界至今在争。"
       },
       {
-        "scene": 1,
+        "scene": 4,
         "name": "最后的贞女",
         "en": "The Last Vestal",
         "text": "异教史家左西莫斯说，狄奥多西在罗马时，侄女塞雷娜走进地母神庙，摘下女神像颈上的项链戴在自己身上。一位老妇人，最后的维斯塔贞女之一，当面咒她。后来塞雷娜被勒死，左西莫斯说这是报应。"
+      },
+      {
+        "scene": 4,
+        "name": "金雷电",
+        "en": "Golden Thunderbolts",
+        "text": "据奥古斯丁所记，冷河一战后，狄奥多西推倒了对方立在阿尔卑斯山口的朱庇特像。像上的雷电是金子打的，他笑着赏给了传令兵；传令兵打趣说，这样的雷劈在身上，乐意得很。"
+      }
+    ],
+    "boxes": [
+      {
+        "scene": 2,
+        "name": "哥特人怎么打仗",
+        "en": "How the Goths Fought",
+        "text": "<b>兵器</b>哥特人本是种地的，打仗主要靠步兵：长矛、标枪、盾牌，也有剑和弓，跟罗马兵差不多，只是穿得起铁甲的少；377年一仗，他们朝罗马人的盾墙扔火烤硬的大木棒。宿营时大车围成一圈，就是营寨。<br><b>匈人带来的</b>主要是草原骑兵：东边的格鲁森尼人早就雇过匈人，377年又拉来一批匈人和阿兰人。阿德里安堡那天，罗马人正攻车营，格鲁森尼人和阿兰人的骑兵从远处赶回，“像霹雳从高山上劈下”。<br><b>罗马为啥打不过</b>不是突然不行了：今天的学者多认为两军人数相近，决胜的是哥特步兵，双方都还没有马镫。输在指挥：罗马兵走了大半天，又饿又渴就开打，左翼冲到车营下没人接应，步兵挤得几乎拔不出剑。更要紧的是老办法失灵：从前是打进蛮族地界烧村子、扣人质、逼签约，这回敌人就住在帝国里，没有老家可烧。"
       }
     ]
   },
   "history-empire-west-fall": {
     "title": "西罗马的终结",
-    "html": "<p data-scene-text=\"0\">匈人是从里海以北草原上来的游牧骑兵，约370年打垮顿河边的阿兰人，又压垮黑海北岸的哥特王国，逼得哥特人376年逃过多瑙河。<strong>匈人驱赶日耳曼人，日耳曼人分化成几大军事集团：</strong>逃进帝国的哥特人在阿拉里克手里成了西哥特，留在匈人治下的哥特人后来成了东哥特；汪达尔人裹着阿兰人、苏维汇人，406年冲过莱茵河；勃艮第人436年被罗马雇来的匈人打残，迁到萨伏依。这些“民族”多半不是老部落，是跟着能打仗的首领走的兵团，谁能带着打胜、分到地，大家就认谁。法兰克、阿勒曼尼、撒克逊三世纪就结成了联盟，等罗马边防一空，就吃进高卢、渡海去不列颠。453年阿提拉死，次年各部打垮他的儿子们，匈人的天下就散了。</p>\n<p data-scene-text=\"1\">395年分家时，西部的霍诺留才十岁，大权在统帅斯提里科手里。他父亲是汪达尔人，自己娶了狄奥多西的侄女，自称两位少年皇帝的监护人。阿拉里克是在冷河替狄奥多西卖过命的哥特首领，嫌赏赐太薄，395年起带着族人在巴尔干、意大利边打边谈，斯提里科几次打败他又放他走。402年起，西罗马皇帝躲进沼泽环绕的拉文纳。406年最后一天，汪达尔人、阿兰人、苏维汇人渡过莱茵河，一路杀进高卢、西班牙。408年霍诺留听信谗言处死斯提里科，意大利各城的罗马人屠杀蛮族士兵的家眷，三万人投奔了阿拉里克。<strong>410年8月，阿拉里克攻进罗马，洗劫三天，这是八百年来罗马头一回被外敌攻破。</strong></p>\n<p data-scene-text=\"2\">北非的主教奥古斯丁为此写《上帝之城》：地上的城会陷落，上帝之城不会（另见“基督教”主线）。西哥特人在意大利、高卢转了几年，418年以同盟者身份在阿基坦落户。423年霍诺留死了，没有儿子；425年东罗马出兵，把狄奥多西的外孙、六岁的瓦伦提尼安三世送上西部皇位，母亲加拉·普拉西提阿听政。兵权落到统帅埃提乌斯手里，他少年时在匈人那里当过人质，靠匈人雇佣兵起家。429年汪达尔人由国王盖萨里克率领渡海进非洲，430年奥古斯丁死在被围的希波城，439年迦太基陷落。<strong>北非是西罗马最富的粮仓和税源，丢了它，就养不起兵了。</strong>同一年，北魏灭北凉，统一了中国北方。</p>\n<p data-scene-text=\"3\">451年，埃提乌斯联合西哥特人，在卡塔隆平原挡住匈人王阿提拉；次年他南下意大利，见过出城的教宗利奥一世便退兵，453年暴死。454年瓦伦提尼安三世亲手刺死埃提乌斯，次年自己被埃提乌斯的旧部刺死，狄奥多西一脉在西部断了；455年汪达尔人渡海洗劫罗马。此后苏维汇王族出身的将军李希梅尔连立带废好几个皇帝。475年，当过阿提拉秘书的将军俄瑞斯忒斯赶走东罗马扶上的皇帝尼波斯，扶上自己的少年儿子罗慕路斯·奥古斯都路斯；476年9月，日耳曼雇佣军首领奥多亚克废掉了他，把皇帝的冠服送回君士坦丁堡，说西方不再需要皇帝。<strong>西罗马是被一点点掏空的：粮仓、税源、兵源没了，皇帝成了将军手里的印章。</strong>东罗马还要走近千年。</p>",
+    "html": "<p data-scene-text=\"0\">匈人压垮黑海北岸的哥特王国、把哥特人逼过多瑙河以后（见上一节），<strong>匈人驱赶日耳曼人，日耳曼人分化成几大军事集团：</strong>逃进帝国的哥特人在阿拉里克手里成了西哥特，留在匈人治下的哥特人后来成了东哥特；汪达尔人裹着阿兰人、苏维汇人，406年冲过莱茵河；勃艮第人436年被罗马雇来的匈人打残，迁到萨伏依。这些“民族”多半不是老部落，是跟着能打仗的首领走的兵团，谁能带着打胜、分到地，大家就认谁。法兰克、阿勒曼尼、撒克逊三世纪就结成了联盟，等罗马边防一空，就吃进高卢、渡海去不列颠。453年阿提拉死，次年各部打垮他的儿子们，匈人的天下就散了。</p>\n<p data-scene-text=\"1\">395年分家时，西部的霍诺留才十岁，大权在统帅斯提里科手里。他父亲是汪达尔人，自己娶了狄奥多西的侄女，自称两位少年皇帝的监护人。阿拉里克是在冷河替狄奥多西卖过命的哥特首领，嫌赏赐太薄，395年起带着族人在巴尔干、意大利边打边谈，斯提里科几次打败他又放他走。402年起，西罗马皇帝躲进沼泽环绕的拉文纳。406年最后一天，汪达尔人、阿兰人、苏维汇人渡过莱茵河，一路杀进高卢、西班牙。408年霍诺留听信谗言处死斯提里科，意大利各城的罗马人屠杀蛮族士兵的家眷，三万人投奔了阿拉里克。<strong>410年8月，阿拉里克攻进罗马，洗劫三天，这是八百年来罗马头一回被外敌攻破。</strong></p>\n<p data-scene-text=\"2\">北非的主教奥古斯丁为此写《上帝之城》：地上的城会陷落，上帝之城不会（另见“基督教”主线）。西哥特人在意大利、高卢转了几年，418年以同盟者身份在阿基坦落户。423年霍诺留死了，没有儿子；425年东罗马出兵，把狄奥多西的外孙、六岁的瓦伦提尼安三世送上西部皇位，母亲加拉·普拉西提阿听政。兵权落到统帅埃提乌斯手里，他少年时在匈人那里当过人质，靠匈人雇佣兵起家。429年汪达尔人由国王盖萨里克率领渡海进非洲，430年奥古斯丁死在被围的希波城，439年迦太基陷落。<strong>北非是西罗马最富的粮仓和税源，丢了它，就养不起兵了。</strong>同一年，北魏灭北凉，统一了中国北方。</p>\n<p data-scene-text=\"3\">451年，埃提乌斯联合西哥特人，在卡塔隆平原挡住匈人王阿提拉；次年他南下意大利，见过出城的教宗利奥一世便退兵，453年暴死。454年瓦伦提尼安三世亲手刺死埃提乌斯，次年自己被埃提乌斯的旧部刺死，狄奥多西一脉在西部断了；455年汪达尔人渡海洗劫罗马。此后苏维汇王族出身的将军李希梅尔连立带废好几个皇帝。475年，当过阿提拉秘书的将军俄瑞斯忒斯赶走东罗马扶上的皇帝尼波斯，扶上自己的少年儿子罗慕路斯·奥古斯都路斯；476年9月，日耳曼雇佣军首领奥多亚克废掉了他，把皇帝的冠服送回君士坦丁堡，说西方不再需要皇帝。<strong>西罗马是被一点点掏空的：粮仓、税源、兵源没了，皇帝成了将军手里的印章。</strong>东罗马还要走近千年。</p>",
     "sources": [
       {
         "label": "奥古斯丁《上帝之城》",
@@ -5054,6 +5135,9 @@ Object.assign(HS,{
   constantinople:['君士坦丁堡','Constantinople',41.01,28.98,'原名拜占庭，330年君士坦丁迁都于此；东罗马延续到1453年。'],
   nicaea:['尼西亚','Nicaea',40.43,29.72,'325年君士坦丁在此召开第一次大公会议。'],
   adrianople:['阿德里安堡','Adrianople',41.68,26.56,'378年哥特人在此大败罗马军，皇帝瓦伦斯战死。今埃迪尔内。'],
+  marcianopolis:['马尔西亚诺波利斯','Marcianopolis',43.225,27.585,'下默西亚的大城，今保加利亚代夫尼亚；376至377年间渡河的哥特人在此反了。'],
+  brigetio:['布里盖提奥','Brigetio',47.733,18.167,'潘诺尼亚的多瑙河军团大营，今匈牙利瑟尼；375年瓦伦提尼安一世在此接见夸迪人使节，气得中风而死。'],
+  vienne:['维埃纳','Vienna (Vienne)',45.524,4.878,'罗讷河边的城市，今法国维埃纳；392年5月瓦伦提尼安二世被发现吊死在这里的寝宫。'],
   durostorum:['杜罗斯托鲁姆','Durostorum',44.12,27.26,'下多瑙河的要塞；376年哥特人大约在这一段渡河。今锡利斯特拉。'],
   thessalonica:['帖撒罗尼迦','Thessalonica',40.64,22.94,'380年狄奥多西在此颁诏定基督教为国教；390年在此屠城。'],
   frigidus:['冷河','Frigidus',45.89,13.9,'394年狄奥多西在此打败西部的篡位者。今斯洛文尼亚的维帕瓦河谷。'],
@@ -6092,18 +6176,46 @@ const HISTORY_ENTRIES=[
  ]},
 {id:'history-empire-theodosius',ch:5,title:'狄奥多西：国教与分治',short:'瓦伦提尼安与狄奥多西',en:'Theodosius: One Faith, Two Halves',period:'364—395年',c:HC.rome,
  scenes:[
-  hs('364—382年','哥特人过河','瓦伦提尼安兄弟分管东西；哥特人为躲匈人渡过多瑙河，378年在阿德里安堡杀死皇帝瓦伦斯；狄奥多西382年让他们作为同盟者住进帝国。',[[38.6,18.5],[49.0,37.5]],d=>{
-    ha(d,'eEast395',HC.athens,{fillOpacity:.22});
-    hp(d,'durostorum');hp(d,'adrianople',{kind:'battle'});hp(d,'constantinople');
-    hr(d,[[47.8,37.0],[47.0,33.5],[46.6,30.5]],HC.war);hr(d,[[46.3,29.6],[45.2,28.4],[44.3,27.3],[43.0,26.9],[41.9,26.6]],HC.celt);
-    hl(d,'匈人','Huns',48.2,35.2,HC.war);hl(d,'382年：哥特人作为同盟者落户（概略）','Goths settled as allies, 382',43.2,24.4,HC.celt);
-   },[['fill',HC.athens,'帝国东部（瓦伦斯）'],['dline',HC.war,'匈人西进（概略）'],['dline',HC.celt,'376年哥特人渡河，378年南下阿德里安堡'],['dot',HC.war,'阿德里安堡']]),
-  hs('380—395年','国教与圣火','基督教定为国教；皇帝向米兰主教悔罪；维斯塔圣火熄灭；395年帝国由两个儿子分治东西。',[[28.5,-10.5],[55.5,42.5]],d=>{
+  hs('364—376年','匈人压境','匈人西来，压垮黑海北岸的哥特人；哥特人求渡多瑙河，瓦伦斯照以夷制夷的老套路收容，想多一批兵打波斯。',[[35.0,19.0],[50.0,46.5]],d=>{
+    ha(d,'eEast395',HC.athens,{fillOpacity:.18});
+    hp(d,'durostorum',{note:'376年哥特人在这一段求渡，坐船、扎筏、划独木舟，渡了好几天几夜。'});
+    hp(d,'antioch',{note:'瓦伦斯这时坐镇安条克，正跟波斯争亚美尼亚。'});hp(d,'constantinople');
+    hr(d,[[48.6,46.0],[47.9,40.5],[47.2,35.5],[46.7,31.0]],HC.war);hr(d,[[46.3,29.6],[45.3,28.3],[44.4,27.4]],HC.celt);
+    hl(d,'匈人','Huns',48.9,38.2,HC.war);hl(d,'哥特人','Goths',47.4,27.6,HC.celt);hl(d,'亚美尼亚：罗马与波斯相争','Armenia, contested',39.8,44.6,HC.athens);
+   },[['fill',HC.athens,'帝国东部（瓦伦斯）'],['dline',HC.war,'匈人西进（概略）'],['dline',HC.celt,'376年哥特人渡河'],['dot','#2a2018','渡河处与瓦伦斯的驻地']]),
+  hs('376—377年','收不住','人太多、来得太急，又没先打服、拆散；将领倒卖口粮，哥特人在马尔西亚诺波利斯反了，逃奴和矿工带路，在色雷斯四处抢掠。',[[40.4,22.0],[46.0,30.5]],d=>{
+    ha(d,'eEast395',HC.athens,{fillOpacity:.14});
+    hp(d,'durostorum');hp(d,'marcianopolis',{kind:'battle'});hp(d,'adrianople',{left:1});hp(d,'constantinople');
+    hr(d,[[44.0,27.3],[43.35,27.45],[42.75,26.75],[42.25,25.5],[41.95,24.4]],HC.celt);
+    hl(d,'色雷斯','Thrace',42.55,24.15,HC.war);
+   },[['fill',HC.athens,'帝国东部'],['dline',HC.celt,'哥特人南下抢掠（概略）'],['dot',HC.war,'起事之地'],['dot','#2a2018','渡河处与城市']]),
+  hs('378年','阿德里安堡','瓦伦提尼安375年已气死，西部归儿子格拉提安；瓦伦斯不等侄子会师，抢先开战，兵败身死，东部野战军只逃出三分之一。',[[40.2,13.5],[48.8,30.0]],d=>{
+    ha(d,'eWest395',HC.rome,{fillOpacity:.1});ha(d,'eEast395',HC.athens,{fillOpacity:.14});
+    hp(d,'brigetio',{left:1});hp(d,'adrianople',{kind:'battle',note:'378年8月9日，瓦伦斯在此战死，东部野战军只逃出三分之一。'});
+    hp(d,'constantinople',{note:'378年5月瓦伦斯从安条克赶到这里，再北上阿德里安堡。'});
+    hr(d,[[48.2,14.3],[47.9,17.0],[45.0,19.6],[43.9,22.5]],HC.rome);hr(d,[[41.01,28.98],[41.4,27.7],[41.62,26.75]],HC.athens);
+   },[['fill',HC.rome,'西部（格拉提安，概略）'],['fill',HC.athens,'东部（瓦伦斯，概略）'],['dline',HC.rome,'格拉提安东来，没等到会师'],['dline',HC.athens,'瓦伦斯出兵'],['dot',HC.war,'阿德里安堡'],['dot','#2a2018','375年瓦伦提尼安死处与新都']]),
+  hs('379—382年','国中之国','狄奥多西从西班牙被请回来，也打不赢；382年哥特人以同盟者身份落户色雷斯，自带首领，不归罗马官员管；东边跟波斯瓜分亚美尼亚。',[[36.5,18.5],[47.5,46.5]],d=>{
+    ha(d,'eEast395',HC.athens,{fillOpacity:.2});
+    hp(d,'sirmium',{note:'379年1月19日狄奥多西在此称帝。'});
+    hp(d,'thessalonica',{note:'狄奥多西的大本营；380年他在马其顿被夜袭，险些被擒，秋天病重受洗。'});
+    hp(d,'constantinople',{note:'380年11月狄奥多西进驻；382年10月3日与哥特人议和。'});
+    hl(d,'382年：哥特人落户（概略）','Goths settled as allies, 382',43.3,24.6,HC.celt);
+    hl(d,'亚美尼亚：与波斯瓜分','Armenia partitioned, 384/387',39.8,44.0,HC.athens);
+   },[['fill',HC.athens,'帝国东部（狄奥多西）'],['dot','#2a2018','称帝、大本营与议和之地']]),
+  hs('380—394年','圣火熄灭','国教诏书、胜利女神祭坛、帖撒罗尼迦屠城与悔罪、禁绝献祭、冷河之战；维斯塔圣火熄灭。',[[38.0,2.5],[48.3,25.0]],d=>{
+    ha(d,'eEmpire300',HC.rome,{fillOpacity:.1});
+    hp(d,'rome',{note:'维斯塔神庙在广场东头；382年胜利女神祭坛搬出元老院，393年又搬回来；394年前后圣火熄灭，贞女解散。'});
+    hp(d,'mediolanum',{note:'390年狄奥多西在此向主教安布罗斯悔罪。'});
+    hp(d,'thessalonica',{left:1,note:'380年2月狄奥多西在此颁诏；390年在此屠城。'});
+    hp(d,'vienne',{left:1});hp(d,'frigidus',{kind:'battle'});
+   },[['fill',HC.rome,'帝国（概略）'],['dot',HC.war,'冷河之战'],['dot','#2a2018','诏书、悔罪、圣火与吊死的皇帝']]),
+  hs('395年','分治','狄奥多西死在米兰，长子阿卡狄乌斯管东部，次子霍诺留管西部；分治早有先例，这一回却再没合拢。',[[28.5,-10.5],[55.5,42.5]],d=>{
     ha(d,'eWest395',HC.rome,{fillOpacity:.22});ha(d,'eEast395',HC.athens,{fillOpacity:.22});
     d.line(SPLIT_395,{color:'#2a2018',weight:2.2,opacity:.85,dashArray:'3 6'});
-    hp(d,'thessalonica',{left:1});hp(d,'mediolanum',{note:'390年狄奥多西在此向主教安布罗斯悔罪；395年1月死在这里。'});
-    hp(d,'rome',{note:'维斯塔神庙在广场东头；394年前后圣火熄灭，贞女解散。'});hp(d,'frigidus',{kind:'battle'});hp(d,'constantinople');
-   },[['fill',HC.rome,'西部：霍诺留'],['fill',HC.athens,'东部：阿卡狄乌斯'],['dline','#2a2018','395年东西分界'],['dot',HC.war,'冷河之战']])
+    hp(d,'mediolanum',{note:'395年1月17日狄奥多西死在这里；十岁的霍诺留留在西部。'});
+    hp(d,'constantinople',{note:'十七八岁的阿卡狄乌斯坐镇东部。'});hp(d,'rome');
+   },[['fill',HC.rome,'西部：霍诺留'],['fill',HC.athens,'东部：阿卡狄乌斯'],['dline','#2a2018','395年东西分界'],['dot','#2a2018','米兰、罗马与君士坦丁堡']])
  ]},
 {id:'history-empire-west-fall',ch:5,title:'西罗马的终结',short:'西罗马的终结',en:'The End of the Western Empire',period:'395—476年',c:HC.rome,hideBase:['alps'],
  scenes:[
@@ -6510,7 +6622,7 @@ const HISTORY_ENTRIES=[
 ];
 HISTORY_ENTRIES.forEach(e=>{
   const content=HISTORY_CONTENT[e.id];
-  Object.assign(e,{kind:'history',html:content.html,sources:content.sources,moments:content.moments||[],view:e.scenes[0].view,
+  Object.assign(e,{kind:'history',html:content.html,sources:content.sources,moments:content.moments||[],boxes:content.boxes||[],view:e.scenes[0].view,
     hide:['med',...(e.hideBase||[])],sub:e.period});
 });
 
@@ -10042,7 +10154,7 @@ const FIGURE_SCENES={
       "place": "constantinople"
     }
   ],
-  "history-empire-theodosius/1": [
+  "history-empire-theodosius/4": [
     {
       "id": "theodosius",
       "when": "390年",
@@ -10888,6 +11000,10 @@ function renderCard(e){
     for(const m of e.moments.filter(m=>m.scene===index)){
       const aside=document.createElement('aside');aside.className='moment';aside.setAttribute('aria-label','名场面：'+m.name);
       aside.innerHTML=`<span class="moment-tag">${m.name}<i>${m.en}</i></span>${m.text}`;block.append(aside);
+    }
+    for(const b of e.boxes.filter(b=>b.scene===index)){
+      const aside=document.createElement('aside');aside.className='box';aside.setAttribute('aria-label','小专栏：'+b.name);
+      aside.innerHTML=`<span class="box-tag">${b.name}<i>${b.en}</i></span>${b.text}`;block.append(aside);
     }
   });
   readerBody.scrollTo({top:0,behavior:'instant'});

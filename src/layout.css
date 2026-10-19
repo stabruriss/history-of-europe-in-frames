@@ -93,6 +93,11 @@ body.has-scenes #reader{max-height:calc(100% - 168px)}
 #card .moment{margin:-4px 0 14px;padding:8px 10px 9px;border:1px dashed var(--rule);background:rgba(243,234,214,.7);font-size:13px;line-height:1.8;color:var(--ink2);overflow-wrap:anywhere}
 .moment-tag{display:inline-block;margin:0 7px 0 0;padding:0 7px;border-radius:2px;background:var(--ink);color:var(--paper);font-size:11.5px;font-weight:600;letter-spacing:.04em;line-height:1.75}
 .moment-tag i{font-style:normal;font-family:var(--latin);font-weight:400;font-size:10.5px;letter-spacing:0;margin-left:5px;color:var(--paper2)}
+/* 豆腐块: a short boxed explainer inside a scene passage, in the section colour so it never reads as a 名场面. */
+#card .box{margin:-4px 0 14px;padding:8px 10px 9px;border:1px solid var(--rule);border-left:3px solid var(--c);background:rgba(250,244,230,.9);font-size:13px;line-height:1.8;color:var(--ink2);overflow-wrap:anywhere}
+.box-tag{display:inline-block;margin:0 7px 0 0;padding:0 7px;border-radius:2px;background:var(--c);color:var(--paper);font-size:11.5px;font-weight:600;letter-spacing:.04em;line-height:1.75}
+.box-tag i{font-style:normal;font-family:var(--latin);font-weight:400;font-size:10.5px;letter-spacing:0;margin-left:5px;color:var(--paper2)}
+#card .box b{font-weight:600;color:var(--ink);margin-right:.4em}
 #card .passage-title{font-size:13px;line-height:1.6;margin:0 0 8px;color:var(--ink2)}
 .passage-title small{display:block;font-size:10px;line-height:1.6;font-weight:400;color:var(--ink3)}
 .scene-passage.current .passage-title{color:var(--c)}

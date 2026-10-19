@@ -14,13 +14,24 @@ const shots=path.join(__dirname,'shots-v7');require('node:fs').mkdirSync(shots,{
   await page.setRequestInterception(true);page.on('request',r=>/^https?:/.test(r.url())?r.abort():r.continue());
   await page.goto(pathToFileURL(target).href+'#history-migration',{waitUntil:'domcontentloaded'});
   const list=await page.evaluate(()=>HISTORY_ENTRIES.flatMap(e=>e.moments.map(m=>({id:e.id,scene:m.scene,name:m.name}))));
-  assert.equal(list.length,126);
+  assert.equal(list.length,128);
   for(const m of list){
    const r=await page.evaluate(m=>{go(m.id,{scene:m.scene});
     const ctx=document.getElementById('sceneContext');const tags=[...ctx.querySelectorAll('.moment-tag')].map(t=>t.firstChild.textContent);
     return {tags,total:document.querySelectorAll('#card .moment').length,expected:ENTRIES[cur].moments.length,overflow:document.documentElement.scrollWidth>innerWidth};},m);
    assert.ok(r.tags.includes(m.name),JSON.stringify({m,r}));
    assert.equal(r.total,r.expected);assert.equal(r.overflow,false);
+  }
+  // 豆腐块: boxed explainers render inside their own scene passage, apart from the 名场面.
+  const boxes=await page.evaluate(()=>HISTORY_ENTRIES.flatMap(e=>e.boxes.map(b=>({id:e.id,scene:b.scene,name:b.name}))));
+  assert.equal(boxes.length,1);
+  for(const b of boxes){
+   const r=await page.evaluate(b=>{go(b.id,{scene:b.scene});
+    const ctx=document.getElementById('sceneContext');
+    return {tags:[...ctx.querySelectorAll('.box-tag')].map(t=>t.firstChild.textContent),total:document.querySelectorAll('#card .box').length,expected:ENTRIES[cur].boxes.length,
+     moments:document.querySelectorAll('#card .moment').length,expectedMoments:ENTRIES[cur].moments.length,overflow:document.documentElement.scrollWidth>innerWidth};},b);
+   assert.ok(r.tags.includes(b.name),JSON.stringify({b,r}));
+   assert.equal(r.total,r.expected);assert.equal(r.moments,r.expectedMoments);assert.equal(r.overflow,false);
   }
   await page.evaluate(()=>go('history-persian-wars',{scene:3}));
   await new Promise(r=>setTimeout(r,800));
@@ -30,5 +41,5 @@ const shots=path.join(__dirname,'shots-v7');require('node:fs').mkdirSync(shots,{
  }
  await browser.close();
  assert.deepEqual(errors,[]);
- console.log('PASS: 126 iconic-event tags render inside their scene passages; desktop and 390px; no overflow; offline; no page errors.');
+ console.log('PASS: 128 iconic-event tags and 1 豆腐块 (boxed explainer) render inside their scene passages; desktop and 390px; no overflow; offline; no page errors.');
 })().catch(e=>{console.error(e);process.exit(1);});
