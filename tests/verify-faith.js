@@ -5,7 +5,7 @@ const {pathToFileURL}=require('node:url');
 const target=path.resolve(process.argv[2]||path.join(__dirname,'..','index.html'));
 const shots=path.join(__dirname,'shots-v19');require('node:fs').mkdirSync(shots,{recursive:true});
 const wait=ms=>new Promise(r=>setTimeout(r,ms));
-const IDS=['history-faith-israel','history-faith-first-temple','history-faith-second-temple','history-faith-jesus','history-faith-church','history-faith-empire-church','history-faith-councils'];
+const IDS=['history-faith-israel','history-faith-first-temple','history-faith-second-temple','history-faith-jesus','history-faith-church','history-faith-empire-church','history-faith-councils','history-faith-two-cities'];
 (async()=>{
  const browser=await puppeteer.launch({executablePath:process.env.CHROME_PATH||'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true});
  const errors=[];
@@ -32,9 +32,9 @@ const IDS=['history-faith-israel','history-faith-first-temple','history-faith-se
      people:Object.entries(FIGURE_SCENES).filter(([k])=>k.startsWith('history-faith-')).reduce((n,[,v])=>n+v.length,0)};
    },IDS);
    assert.equal(report.chapter,'犹太教与基督教');
-   assert.deepEqual(report.ids,IDS);assert.deepEqual(report.scenes,[5,5,4,6,4,3,8]);
+   assert.deepEqual(report.ids,IDS);assert.deepEqual(report.scenes,[5,5,4,6,4,2,5,5]);
    assert.ok(report.paras.every(p=>p.chars<=230),'Concise: '+JSON.stringify(report.paras.filter(p=>p.chars>230)));
-   assert.ok(report.bold);assert.equal(report.moments,31);assert.equal(report.people,18);
+   assert.ok(report.bold);assert.equal(report.moments,32);assert.equal(report.people,18);
    assert.deepEqual(report.branch,['基督教',5,'trunk',-1400,451,true]);assert.equal(report.levant,false);
    assert.deepEqual(report.eras,[['faith-israel','古代以色列',IDS.slice(0,2)],['faith-temple','第二圣殿时期',IDS.slice(2,4)],['faith-church','早期教会',IDS.slice(4)]]);
    // The line now forks off before 卡迭石: the Hebrews' nomadic origins come first.
@@ -61,7 +61,7 @@ const IDS=['history-faith-israel','history-faith-first-temple','history-faith-se
      ['history-faith-church/1','一千五百多个寡妇'],['history-faith-church/2','朱庇特之子'],['history-faith-church/2','伽列里乌斯'],['history-faith-church/3','羽翼丰满'],['history-faith-church/3','一成'],
      ['history-faith-church/3','过半'],['history-faith-church/3','亚美尼亚'],['history-faith-empire-church/0','米尔维安桥'],['history-faith-empire-church/0','风口'],
      ['history-faith-empire-church/0','一张遍布帝国的网'],['history-faith-empire-church/1','朱庇特有罪'],['history-faith-empire-church/1','普鲁登提乌斯'],
-     ['history-faith-empire-church/2','上帝之城'],['history-faith-empire-church/2','卡尔西顿'],['history-faith-empire-church/2','见下一节'],['history-empire-constantine/2','“基督教”主线'],
+     ['history-faith-two-cities/0','上帝之城'],['history-faith-two-cities/2','卡尔西顿'],['history-faith-two-cities/2','帝国在西部倒下'],['history-empire-constantine/2','“基督教”主线'],
      // 老无 2026-10-18: the councils, point by point — background, the two repairs, the ascetics, Nicaea and the buried mine, the pancake flips, then councils II–IV.
      ['history-faith-councils/0','书接上回'],['history-faith-councils/0','草根宗教'],['history-faith-councils/0','新柏拉图主义'],['history-faith-councils/0','科层化、上层化、体制化'],
      ['history-faith-councils/0','强行发明一个新逻辑'],['history-faith-councils/0','本质相同'],['history-faith-councils/0','三位一体派的祖师'],['history-faith-councils/0','低一级'],
@@ -70,16 +70,20 @@ const IDS=['history-faith-israel','history-faith-first-temple','history-faith-se
      ['history-faith-councils/2','异端成了国法上的罪'],['history-faith-councils/2','埋了雷'],['history-faith-councils/2','穆斯林'],['history-faith-councils/2','使者'],
      ['history-faith-councils/3','后悔了'],['history-faith-councils/3','老二君士坦提乌斯二世'],['history-faith-councils/3','偏阿里乌派'],['history-faith-councils/3','干脆掀桌'],['history-faith-councils/3','“罗马”主线'],
      ['history-faith-councils/4','把大饼翻了回来'],['history-faith-councils/4','哥特人'],['history-faith-councils/4','本质是一个，位格是三个'],['history-faith-councils/4','新罗马'],
-     ['history-faith-councils/5','生神者'],['history-faith-councils/5','聂斯托利'],['history-faith-councils/5','西里尔'],['history-faith-councils/5','景教'],
-     ['history-faith-councils/6','狄奥斯库若'],['history-faith-councils/6','两个本性'],['history-faith-councils/6','照这条线的读法'],['history-faith-councils/6','离了心'],
+     ['history-faith-two-cities/1','生神者'],['history-faith-two-cities/1','聂斯托利'],['history-faith-two-cities/1','西里尔'],['history-faith-two-cities/1','金口约翰'],
+     ['history-faith-two-cities/3','狄奥斯库若'],['history-faith-two-cities/3','两个本性'],['history-faith-two-cities/3','一性论'],['history-faith-two-cities/3','离了心'],
      ['history-empire-constantine/4','偏阿里乌派'],['history-empire-constantine/4','“基督教”主线'],
      // 老无 2026-10-18 (Telegram): why the quarrels never ended — his theory as the councils' closing scene; the 罗马 and 基督教 lines point at each other; China's ever stronger throne.
-     ['history-faith-councils/7','吃精英阶层'],['history-faith-councils/7','智识含量'],['history-faith-councils/7','争权的战场'],['history-faith-councils/7','皇权是放大器'],
-     ['history-faith-councils/7','化繁为简'],['history-faith-councils/7','归于一尊'],['history-faith-councils/7','各归一尊'],['history-faith-councils/7','“罗马”主线'],['history-faith-councils/7','“中国”主线'],
-     ['history-faith-councils/4','“罗马”主线'],['history-faith-empire-church/2','“罗马”主线'],['history-empire-theodosius/4','“基督教”主线'],['history-empire-west-fall/2','“基督教”主线'],
+     ['history-faith-two-cities/4','吃精英阶层'],['history-faith-two-cities/4','智识含量'],['history-faith-two-cities/4','争权的战场'],['history-faith-two-cities/4','皇权是放大器'],
+     ['history-faith-two-cities/4','化繁为简'],['history-faith-two-cities/4','归于一尊'],['history-faith-two-cities/4','各归一尊'],['history-faith-two-cities/4','“西罗马”主线'],['history-faith-two-cities/4','“中国”主线'],
+     ['history-faith-councils/4','“罗马”主线'],['history-faith-two-cities/1','“罗马”主线'],['history-empire-theodosius/4','“基督教”主线'],['history-empire-west-fall/3','“基督教”主线'],
      ['history-china-sixteen-kingdoms/1','皇权强，而且越来越强'],['history-china-sixteen-kingdoms/1','人口密度和反抗成本'],['history-china-sixteen-kingdoms/1','王与马，共天下'],
      ['history-china-sixteen-kingdoms/1','沙门不敬王者论'],['history-china-sixteen-kingdoms/1','当今如来'],['history-china-sixteen-kingdoms/1','与我抗衡'],
      ['history-china-sixteen-kingdoms/1','“罗马”主线'],['history-china-sixteen-kingdoms/1','“基督教”主线'],
+     // 老无 2026-10-19: the councils split; Augustine and Leo; Nestorians and one-nature; the summary last; cross-line pointers.
+     ['history-faith-two-cities/0','地上之城'],['history-faith-two-cities/0','政治影响'],['history-faith-two-cities/0','多纳图派'],['history-faith-two-cities/0','正义战争'],['history-faith-two-cities/0','两个国度'],['history-faith-two-cities/0','慧远'],
+     ['history-faith-two-cities/1','普尔喀丽娅'],['history-faith-two-cities/2','利奥一世'],['history-faith-two-cities/2','阿提拉'],['history-faith-two-cities/2','“西罗马”主线'],
+     ['history-faith-two-cities/3','欧迪奇'],['history-faith-two-cities/3','穆斯林横扫'],['history-faith-israel/2','押了赫梯'],
      // 老无 2026-10-18: what were the Israelites doing in the Greek dark age? One line in the Greek scene, pointing here.
      ['history-dark-age/0','以色列人'],['history-dark-age/0','爱琴海一带'],['history-dark-age/0','“基督教”主线']]){
     await page.evaluate(s=>go(s),scene);
@@ -87,19 +91,25 @@ const IDS=['history-faith-israel','history-faith-first-temple','history-faith-se
    }
    for(const [scene,id,re] of [['history-faith-israel/3','moses',/自有永有/],['history-faith-second-temple/0','akhenaten',/唯一的神/],['history-faith-second-temple/3','caesar',/焚尸/],
      ['history-faith-jesus/3','peter',/不偏待人/],['history-faith-jesus/3','paul',/上告于恺撒/],['history-faith-jesus/5','josephus',/石头/],['history-faith-church/0','pliny-younger',/不合我们这个时代/],
-     ['history-faith-church/1','cyprian',/迫害我们的人/],['history-faith-church/2','galerius',/山神/],['history-faith-councils/6','leo',/彼得借利奥/],
+     ['history-faith-church/1','cyprian',/迫害我们的人/],['history-faith-church/2','galerius',/山神/],['history-faith-two-cities/2','leo',/彼得借利奥/],
      ['history-faith-empire-church/0','eusebius',/教会外面/],['history-faith-empire-church/0','helena',/六十多年后/],['history-faith-councils/3','arius',/小曲/],['history-faith-councils/3','athanasius',/粮船/],
-     ['history-faith-councils/1','anthony-great',/神人/],['history-faith-councils/2','constantine',/饶恕/],['history-faith-councils/4','gregory-nazianzus',/约拿/],['history-faith-councils/5','nestorius',/绿洲/]]){
+     ['history-faith-councils/1','anthony-great',/神人/],['history-faith-councils/2','constantine',/饶恕/],['history-faith-councils/4','gregory-nazianzus',/约拿/],['history-faith-two-cities/1','nestorius',/绿洲/]]){
     await page.evaluate(s=>go(s),scene);assert.match(await page.$eval(`[data-person="${id}"]`,e=>e.textContent),re,scene+' '+id);
    }
+   // 豆腐块 on the three churches that came out of Ephesus and Chalcedon; and no hedging tone left anywhere in the text (老无 2026-10-19).
+   await page.evaluate(()=>go('history-faith-two-cities/3'));
+   const churches=await page.evaluate(()=>{const b=document.querySelector('#sceneContext .box');return b&&{tag:b.querySelector('.box-tag').firstChild.textContent,text:b.textContent};});
+   assert.ok(churches&&churches.tag==='三家教会',JSON.stringify(churches));
+   for(const w of ['聂斯托利一家','景教','合一性论','雅各派','卡尔西顿一家','合一诏'])assert.ok(churches.text.includes(w),'churches box lacks '+w);
+   assert.ok(await page.evaluate(()=>HISTORY_ENTRIES.every(e=>!e.html.includes('这条线的读法'))),'hedging tone left in the text');
    await page.evaluate(()=>go('history-faith-israel'));
    assert.equal(await page.$eval('#entryEyebrow',e=>e.textContent),'古代以色列 · 第七章');
-   for(const id of ['history-faith-empire-church','history-faith-councils']){
+   for(const id of ['history-faith-empire-church','history-faith-councils','history-faith-two-cities']){
     await page.evaluate(id=>go(id),id);
     assert.equal(await page.$eval('#entryEyebrow',e=>e.textContent),'早期教会 · 第七章');
    }
    if(label==='desktop'){
-    assert.ok(await page.$$eval('#toc .tree-item[data-branch="faith"] small',es=>es.length===7&&es.every(e=>e.textContent.startsWith('基督教 · '))));
+    assert.ok(await page.$$eval('#toc .tree-item[data-branch="faith"] small',es=>es.length===8&&es.every(e=>e.textContent.startsWith('基督教 · '))));
     assert.match(await page.$eval('#indexCaption',e=>e.textContent),/Ⅶ 基督教/);
    }
    for(const e of IDS)for(let i=0;i<await page.evaluate(id=>HISTORY_ENTRIES.find(x=>x.id===id).scenes.length,e);i++){
@@ -109,7 +119,7 @@ const IDS=['history-faith-israel','history-faith-first-temple','history-faith-se
     assert.ok(r.layers>0&&r.legend>0&&!r.overflow,e+'/'+i+' '+JSON.stringify(r));
     if(label==='desktop')assert.ok(r.pins>0&&r.fits,e+'/'+i+' '+JSON.stringify(r));
    }
-   for(const [scene,file] of [['history-faith-israel/2','kadesh'],['history-faith-jesus/0','gods'],['history-faith-jesus/3','peter-paul'],['history-faith-church/2','jupiter'],['history-faith-empire-church/1','jupiter-condemned'],['history-faith-councils/2','nicaea'],['history-faith-councils/3','pancake'],['history-faith-councils/6','chalcedon'],['history-faith-councils/7','why']]){
+   for(const [scene,file] of [['history-faith-israel/2','kadesh'],['history-faith-jesus/0','gods'],['history-faith-jesus/3','peter-paul'],['history-faith-church/2','jupiter'],['history-faith-empire-church/1','jupiter-condemned'],['history-faith-councils/2','nicaea'],['history-faith-councils/3','pancake'],['history-faith-two-cities/3','chalcedon'],['history-faith-two-cities/4','why'],['history-faith-two-cities/0','city-of-god']]){
     await page.evaluate(s=>go(s),scene);await wait(300);
     if(label==='390')await page.evaluate(()=>scrollSceneText(false));
     await page.screenshot({path:path.join(shots,`faith-${file}-${label}.png`)});
@@ -117,6 +127,6 @@ const IDS=['history-faith-israel','history-faith-first-temple','history-faith-se
    await page.close();
   }
   assert.deepEqual(errors,[]);
-  console.log('PASS: chapter Ⅶ 犹太教与基督教 — the 基督教 line (outermost lane, 前1400—451, shoot 中世纪教会) rebuilt on 老无’s secular outline in 7 sections / 35 scenes, ≤230 chars each: Hebrews from beyond the River, Kadesh, Egypt and Moses, the Exodus, the kingdoms and Babylon, monotheism / exclusivity / the end of days, Rome not caring, too many gods, Jesus’ product and Peter’s channel, the cross, Nero, why persecution eased, Diocletian son of Jupiter, a wave Constantine rode, Jupiter condemned, and the four councils (one God made to add up, desert saints, Nicaea, the pancake flips, Constantinople, Ephesus, Chalcedon and the mine it laid, and 老无’s theory of why the quarrels never ended); 140 phrase checks (incl. the pointer from the Greek dark age, and the Western Wall as the Temple Mount’s retaining wall); 31 iconic-event tags; 18 person cards (摩西、阿赫那吞、恺撒、彼得、保罗、约瑟夫斯、小普林尼、居普良、伽列里乌斯、优西比乌、海伦娜、安东尼、君士坦丁、阿里乌、阿塔纳修斯、纳齐安的格列高利、聂斯托利、利奥); eyebrows and tree rows; desktop and 390px without overflow; offline; no page errors.');
+  console.log('PASS: chapter Ⅶ 犹太教与基督教 — the 基督教 line (outermost lane, 前1400—451, shoot 中世纪教会) rebuilt on 老无’s secular outline in 8 sections / 36 scenes, ≤230 chars each: Hebrews from beyond the River, Kadesh, Egypt and Moses, the Exodus, the kingdoms and Babylon, monotheism / exclusivity / the end of days, Rome not caring, too many gods, Jesus’ product and Peter’s channel, the cross, Nero, why persecution eased, Diocletian son of Jupiter, a wave Constantine rode, Jupiter condemned, and the four councils (one God made to add up, desert saints, Nicaea, the pancake flips, Constantinople, Ephesus, Chalcedon and the mine it laid, and 老无’s theory of why the quarrels never ended); 153 phrase checks (incl. the pointer from the Greek dark age, and the Western Wall as the Temple Mount’s retaining wall); 32 iconic-event tags; a 豆腐块 on the three churches; 18 person cards (摩西、阿赫那吞、恺撒、彼得、保罗、约瑟夫斯、小普林尼、居普良、伽列里乌斯、优西比乌、海伦娜、安东尼、君士坦丁、阿里乌、阿塔纳修斯、纳齐安的格列高利、聂斯托利、利奥); eyebrows and tree rows; desktop and 390px without overflow; offline; no page errors.');
  }catch(e){console.error(e);process.exitCode=1;}finally{await browser.close();}
 })();

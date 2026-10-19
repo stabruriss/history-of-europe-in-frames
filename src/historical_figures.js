@@ -632,6 +632,15 @@ const FIGURE_PLACES={
       34.35
     ],
     "note": "卡帕多西亚的小城，格列高利的父亲在此任主教。"
+  },
+  "comana": {
+    "name": "科马纳",
+    "en": "Comana Pontica",
+    "ll": [
+      40.36,
+      36.62
+    ],
+    "note": "本都的小城，今土耳其托卡特附近；407年金口约翰死在城外一座殉道者小堂里。"
   }
 };
 const FIGURES={
@@ -2445,6 +2454,60 @@ const FIGURES={
         "https://en.wikipedia.org/wiki/Nestorius"
       ]
     ]
+  },
+  "john-chrysostom": {
+    "name": "金口约翰",
+    "en": "John Chrysostom",
+    "life": "约347—407年",
+    "relation": "君士坦丁堡主教（398—404年）",
+    "place": "constantinople",
+    "bio": "安条克人，跟异教的修辞名师利巴尼乌斯学过；利巴尼乌斯临终，有人问谁来接班，他说本该是约翰，可惜被基督徒抢走了。约翰进山苦修六年，最后两年不躺下睡觉，熬坏了胃和肾，才回城当长老，讲道出了名。",
+    "sources": [
+      [
+        "索佐门《教会史》第8卷（第2节 利巴尼乌斯的话）",
+        "https://www.newadvent.org/fathers/26028.htm"
+      ],
+      [
+        "帕拉狄乌斯《金口约翰传》（第5节 进山苦修；第11节 死在科马纳）",
+        "https://www.tertullian.org/fathers/palladius_dialogus_02_text.htm"
+      ]
+    ]
+  },
+  "pulcheria": {
+    "name": "普尔喀丽娅",
+    "en": "Pulcheria",
+    "life": "398或399—453年",
+    "relation": "阿卡狄乌斯的长女 · 狄奥多西二世的姐姐",
+    "place": "constantinople",
+    "bio": "十五岁当上奥古斯塔，替弟弟理政多年，在宫里先后跟皇后、宦官争权。450年弟弟死后，她嫁给老将马尔西安，扶他称帝，自己照旧守贞，一手促成了卡尔西顿会议。",
+    "sources": [
+      [
+        "索佐门《教会史》第9卷（第1节 普尔喀丽娅）",
+        "https://www.newadvent.org/fathers/26029.htm"
+      ],
+      [
+        "普尔喀丽娅（英文资料）",
+        "https://en.wikipedia.org/wiki/Pulcheria"
+      ]
+    ]
+  },
+  "stilicho": {
+    "name": "斯提里科",
+    "en": "Stilicho",
+    "life": "约359—408年",
+    "relation": "西罗马统帅 · 霍诺留的岳父",
+    "place": "ravenna",
+    "bio": "父亲是汪达尔骑兵军官，母亲是罗马人。383年随使团出使波斯，回来娶了狄奥多西的侄女塞雷娜，带兵二十多年；左西莫斯说，他是那个时代掌大权的人里最有分寸的一个。",
+    "sources": [
+      [
+        "左西莫斯《新史》第5卷（第34节 斯提里科之死）",
+        "https://www.tertullian.org/fathers/zosimus05_book5.htm"
+      ],
+      [
+        "斯提里科（英文资料）",
+        "https://en.wikipedia.org/wiki/Stilicho"
+      ]
+    ]
   }
 };
 const FIGURE_SCENES={
@@ -3433,7 +3496,7 @@ const FIGURE_SCENES={
       "place": "rome"
     }
   ],
-  "history-empire-west-fall/2": [
+  "history-empire-west-fall/3": [
     {
       "id": "augustine",
       "when": "410—426年",
@@ -3442,7 +3505,7 @@ const FIGURE_SCENES={
       "place": "hippo"
     }
   ],
-  "history-empire-west-fall/3": [
+  "history-empire-west-fall/4": [
     {
       "id": "odoacer",
       "when": "476年",
@@ -3553,7 +3616,7 @@ const FIGURE_SCENES={
       "place": "constantinople"
     }
   ],
-  "history-faith-councils/5": [
+  "history-faith-two-cities/1": [
     {
       "id": "nestorius",
       "when": "435—约451年",
@@ -3562,7 +3625,7 @@ const FIGURE_SCENES={
       "place": "kharga"
     }
   ],
-  "history-faith-councils/6": [
+  "history-faith-two-cities/2": [
     {
       "id": "leo",
       "when": "451—452年",
@@ -3657,6 +3720,33 @@ const FIGURE_SCENES={
       "event": "撺掇迫害",
       "note": "拉克坦提乌斯说，他母亲是拜山神的乡下女人，几乎天天设祭请邻居吃祭肉，最恨不来吃的基督徒，是她挑唆儿子动手。303年尼科米底亚皇宫两回起火，他咬定是基督徒放的。",
       "place": "nicomedeia"
+    }
+  ],
+  "history-empire-arcadius/3": [
+    {
+      "id": "john-chrysostom",
+      "when": "407年9月",
+      "event": "凡事荣耀归于上帝",
+      "note": "押送的兵催着他往黑海东岸的皮提乌斯赶，走了三个月。到科马纳城外一座殉道者小堂，他要来一身白衣换上，把旧衣分给旁人，领了圣餐，念完他常说的那句“凡事荣耀归于上帝”，就断了气。",
+      "place": "comana"
+    }
+  ],
+  "history-empire-theodosius-ii/0": [
+    {
+      "id": "pulcheria",
+      "when": "414年",
+      "event": "金祭台",
+      "note": "她和两个妹妹阿尔卡迪娅、玛丽娜发誓终身不嫁，在大教堂献了一张金子和宝石打的祭台，把守贞的誓言和弟弟的帝位一起刻在正面，让人人看得见。她不让男人进她的宫。",
+      "place": "constantinople"
+    }
+  ],
+  "history-empire-west-fall/2": [
+    {
+      "id": "stilicho",
+      "when": "408年8月",
+      "event": "伸出脖子",
+      "note": "他夜里躲进拉文纳的教堂。天亮兵来了，当着主教发誓只是看押；他一出门，第二道诏书就到了：斩首。跟着他的蛮族兵要动手救人，他喝住了，自己伸出了脖子。",
+      "place": "ravenna"
     }
   ]
 };

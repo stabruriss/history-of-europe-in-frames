@@ -23,7 +23,7 @@ const treeReport=sel=>{
   timeOrder:HISTORY_ERAS.flatMap(era=>era.items.map(([id,from=0])=>id+'/'+from)).map((k,i)=>[k,TREE_ROWS[k][1],i]).sort((a,b)=>a[1]-b[1]||a[2]-b[2]).map(x=>x[0])};
 };
 function checkTree(r,label){
- assert.equal(r.items.length,67,label);
+ assert.equal(r.items.length,70,label);
  // Navigation order (DOM order) is the time order, and it reads top to bottom.
  assert.deepEqual(r.items.map(i=>i.key),r.timeOrder,label+' rows follow the time order');
  for(let i=1;i<r.items.length;i++)assert.ok(r.items[i].top>r.items[i-1].top,label+' row order runs top to bottom at '+r.items[i].key);
@@ -86,7 +86,7 @@ function checkTree(r,label){
   assert.ok(side.lanes.every(l=>l.branch==='rome'||(l.branch==='trunk'&&l.y1<=side.forkY.rome+.5)),JSON.stringify(side.lanes));
   assert.ok(side.dimTrunk>0);
   assert.deepEqual(side.pills,[['trunk',false],['faith',false],['rome',true],['ptolemaic',false],['seleucid',false],['west',false],['china',false]]);
-  assert.equal(side.pos,'13 / 30');assert.ok(side.offLine.includes('history-poleis/0')&&!side.offLine.includes('history-palaces/0')&&!side.offLine.includes('history-rome-site/0'));
+  assert.equal(side.pos,'13 / 32');assert.ok(side.offLine.includes('history-poleis/0')&&!side.offLine.includes('history-palaces/0')&&!side.offLine.includes('history-rome-site/0'));
   assert.equal(side.node,'history-rome-punic/0');assert.equal(side.r,'5.5');
   let s=await state(p);assert.deepEqual(s.on,['history-rome-punic/0']);assert.equal(s.era,'rome-med');
   // Clicking a branch row picks its line; ↑↓ then stay on that line (metro style) and stop at its ends.
@@ -96,8 +96,8 @@ function checkTree(r,label){
   await p.keyboard.press('ArrowUp');s=await state(p);assert.deepEqual([s.id,s.on[0]],['history-palaces','history-palaces/0']);
   assert.equal(await p.evaluate(()=>treeLine),'faith');
   await p.keyboard.press('ArrowDown');await p.keyboard.press('ArrowDown');s=await state(p);assert.deepEqual([s.id,s.scene],['history-faith-first-temple',0],'the 基督教 line goes on to the First Temple');
-  for(let i=0;i<5;i++)await p.keyboard.press('ArrowDown');
-  s=await state(p);assert.deepEqual([s.id,s.scene],['history-faith-councils',0],'end of the 基督教 line');assert.ok(await p.$eval('#next',e=>e.disabled));
+  for(let i=0;i<6;i++)await p.keyboard.press('ArrowDown');
+  s=await state(p);assert.deepEqual([s.id,s.scene],['history-faith-two-cities',0],'end of the 基督教 line');assert.ok(await p.$eval('#next',e=>e.disabled));
   await p.click('#toc .tree-item[data-key="history-faith-israel/0"]');
   // Switching lines is in place: the section stays and the sidebar does not move; ↑↓ then follow the new line by time.
   const scroll0=await p.evaluate(()=>toc.scrollTop);
@@ -125,7 +125,7 @@ function checkTree(r,label){
    assert.equal(await p.evaluate(()=>toc.scrollTop),before,'line click does not scroll');
   };
   await clickLine('rome');s=await state(p);assert.equal(s.id,'history-celts');assert.equal(await p.evaluate(()=>treeLine),'rome');
-  assert.equal(await p.$eval('#pos',e=>e.textContent),'– / 30');
+  assert.equal(await p.$eval('#pos',e=>e.textContent),'– / 32');
   await p.keyboard.press('ArrowDown');s=await state(p);assert.equal(s.id,'history-rome-punic','next Rome station after 前279');
   await clickLine('trunk');s=await state(p);assert.equal(s.id,'history-rome-punic');assert.equal(await p.evaluate(()=>treeLine),'trunk');
   await p.keyboard.press('ArrowUp');s=await state(p);assert.equal(s.id,'history-celts','previous Greek station before 前264');
@@ -150,7 +150,7 @@ function checkTree(r,label){
   assert.equal(s.id,'history-palaces');await p.keyboard.press('ArrowDown');await p.keyboard.press('ArrowDown');await p.keyboard.press('ArrowDown');
   s=await state(p);assert.equal(s.id,'history-rome-site');
   // A full ride on each line from the root: every ↓ lands lower in the tree, and the footer counts stations.
-  for(const [line,startId,count,last] of [['trunk','history-migration',23,'history-hellenistic-end'],['faith','history-migration',11,'history-faith-councils'],['rome','history-migration',30,'history-empire-theodosius'],['west','history-migration',31,'history-empire-west-fall'],['ptolemaic','history-migration',19,'history-ptolemaic-bargain'],['china','history-china-neolithic',10,'history-china-sixteen-kingdoms']]){
+  for(const [line,startId,count,last] of [['trunk','history-migration',23,'history-hellenistic-end'],['faith','history-migration',12,'history-faith-two-cities'],['rome','history-migration',32,'history-empire-theodosius-ii'],['west','history-migration',31,'history-empire-west-fall'],['ptolemaic','history-migration',19,'history-ptolemaic-bargain'],['china','history-china-neolithic',10,'history-china-sixteen-kingdoms']]){
    await p.evaluate(id=>go(id),startId);await p.click(`#toc .tree-line[data-line="${line}"]`);await p.focus('#toc .tree-item.on');
    let lastTop=-1;
    for(let i=0;i<count;i++){
@@ -227,6 +227,6 @@ function checkTree(r,label){
    await m.close();
   }
   assert.deepEqual(errors,[]);
-  console.log('PASS: history tree — 67 rows on 7 branches (trunk, 基督教, Rome, Ptolemaic, Seleucid, West Rome, 中国) with 5 forks (基督教 off the trunk at 前1400 on the outermost lane, West Rome off Rome at 395); every earlier start sits higher; no overlapping rows; nodes on their lanes; Rome beside Greece and the Hellenistic kingdoms; unwritten topics as dashed shoots; time ticks and compressed-prehistory breaks; metro lines: pick a line (button or the drawn line itself) in place, ↑↓ / 上一条 / 下一条 ride only that line in time order, line lit root-to-fork, everything else greyed; draggable, remembered, clamped column; sidebar at 1440 and 1024; expanded view with branch names; phone and short-landscape sheets; geography mode untouched; offline; no page errors.');
+  console.log('PASS: history tree — 70 rows on 7 branches (trunk, 基督教, Rome, Ptolemaic, Seleucid, West Rome, 中国) with 5 forks (基督教 off the trunk at 前1400 on the outermost lane, West Rome off Rome at 395); every earlier start sits higher; no overlapping rows; nodes on their lanes; Rome beside Greece and the Hellenistic kingdoms; unwritten topics as dashed shoots; time ticks and compressed-prehistory breaks; metro lines: pick a line (button or the drawn line itself) in place, ↑↓ / 上一条 / 下一条 ride only that line in time order, line lit root-to-fork, everything else greyed; draggable, remembered, clamped column; sidebar at 1440 and 1024; expanded view with branch names; phone and short-landscape sheets; geography mode untouched; offline; no page errors.');
  }catch(e){console.error(e);process.exitCode=1;}finally{await browser.close();}
 })();
