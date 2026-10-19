@@ -1378,7 +1378,7 @@ const HISTORY_ENTRIES=[
     hp(d,'ctesiphon',{note:'波斯王伊嗣俟一世的都城；据说他当了七岁罗马皇帝的保护人。'});
     hl(d,'波斯（萨珊王朝）','Sasanian Persia',33.5,51.0,HC.parthia);
    },[['fill',HC.athens,'东罗马（狄奥多西二世）'],['dot','#2a2018','新都与波斯王的都城']]),
-  hs('421—443年','苹果','姐姐给弟弟挑了个雅典姑娘当皇后；一个苹果送掉了皇帝老友的命，皇后出走耶路撒冷；宫里姐姐、皇后、宦官三股势力，教义之争跟着站队。',[[29.5,21.0],[42.5,38.0]],d=>{
+  hs('421—443年','苹果','姐姐给弟弟挑了个雅典姑娘当皇后；宫里姐姐、皇后、宦官三股势力争权，教义之争跟着站队；一个苹果送掉皇帝老友的命，皇后出走耶路撒冷。',[[29.5,21.0],[42.5,38.0]],d=>{
     ha(d,'eEast395',HC.athens,{fillOpacity:.18});
     hp(d,'athens',{note:'欧多基娅生在这里，父亲是教修辞的异教先生。'});hp(d,'constantinople');
     hp(d,'antioch',{note:'438年欧多基娅路过这里，用荷马的诗句讲演，城里给她立了金像。'});
@@ -1787,7 +1787,8 @@ const HISTORY_ERAS=[
  {id:'rome-fall',name:'罗马：共和崩解',en:'The Fall of the Republic',date:'前133—前27年',c:HC.rome,items:[['history-rome-gracchi'],['history-rome-marius'],['history-rome-social'],['history-rome-sulla'],['history-rome-pompey'],['history-rome-triumvirate'],['history-rome-caesar'],['history-rome-augustus']]},
  {id:'empire-principate',name:'罗马帝国：元首制',en:'The Principate',date:'前27—192年',c:HC.rome,items:[['history-empire-principate'],['history-empire-julio-claudian'],['history-empire-flavian'],['history-empire-antonine']]},
  {id:'empire-crisis',name:'罗马帝国：危机与重铸',en:'Crisis and Reinvention',date:'193—363年',c:HC.rome,items:[['history-empire-crisis'],['history-empire-dominate'],['history-empire-constantine']]},
- {id:'empire-west',name:'罗马帝国：分治与西部的终结',en:'Division and the End in the West',date:'364—476年',c:HC.rome,items:[['history-empire-theodosius'],['history-empire-west-fall'],['history-empire-arcadius'],['history-empire-theodosius-ii']]},
+ {id:'empire-west',name:'罗马帝国：西部的终结',en:'The End in the West',date:'364—476年',c:HC.rome,items:[['history-empire-theodosius'],['history-empire-west-fall']]},
+ {id:'empire-east',name:'罗马帝国：东部撑住了',en:'The East Holds',date:'395—450年',c:HC.rome,items:[['history-empire-arcadius'],['history-empire-theodosius-ii']]},
  {id:'faith-israel',name:'古代以色列',en:'Ancient Israel',date:'约前1400—前538年',c:HC.faith,items:[['history-faith-israel'],['history-faith-first-temple']]},
  {id:'faith-temple',name:'第二圣殿时期',en:'The Second Temple',date:'前538—公元73年',c:HC.faith,items:[['history-faith-second-temple'],['history-faith-jesus']]},
  {id:'faith-church',name:'早期教会',en:'The Early Church',date:'73—451年',c:HC.faith,items:[['history-faith-church'],['history-faith-empire-church'],['history-faith-councils'],['history-faith-two-cities']]},

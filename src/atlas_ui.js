@@ -158,8 +158,8 @@ function layoutHistoryTree(tree){
   const k={wide:1.15,medium:1.05,compact:1}[mode],fork={wide:44,medium:32,compact:22}[mode];
   const lanes=Math.max(...HISTORY_BRANCHES.map(b=>b.lane))+1,laneX=l=>axis+(mode==='compact'?7:12)+l*gap,labelX=laneX(lanes-1)+(mode==='compact'?gap:21);
   for(const r of rows){r.el.style.left=labelX+'px';r.el.style.width=(W-labelX)+'px';}
-  const rank={head:0,item:1,future:2};
-  const sorted=[...rows].sort((a,b)=>a.t-b.t||rank[a.kind]-rank[b.kind]||a.order-b.order);
+  const rank=r=>r.kind==='future'?1:0;
+  const sorted=[...rows].sort((a,b)=>a.t-b.t||rank(a)-rank(b)||a.order-b.order);
   let bottom=0;
   for(const r of sorted){
     r.h=r.el.offsetHeight||30;r.y=Math.max(4+treeBase(r.t)*k,bottom+(r.kind==='head'?9:3));

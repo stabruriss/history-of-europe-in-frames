@@ -28,7 +28,7 @@ const wait=ms=>new Promise(r=>setTimeout(r,ms));
    assert.equal(report.chapter,'罗马帝国');
    assert.deepEqual(report.ids,['history-empire-principate','history-empire-julio-claudian','history-empire-flavian','history-empire-antonine',
     'history-empire-crisis','history-empire-dominate','history-empire-constantine','history-empire-theodosius','history-empire-west-fall','history-empire-arcadius','history-empire-theodosius-ii']);
-   assert.deepEqual(report.eraIds,['empire-principate','empire-crisis','empire-west']);
+   assert.deepEqual(report.eraIds,['empire-principate','empire-crisis','empire-west','empire-east']);
    assert.deepEqual(report.eraItems,report.ids);
    assert.equal(report.scenes,51);assert.equal(report.paras.length,51);
    assert.ok(report.paras.every(p=>p.chars<=300),'Empire prose budget: '+JSON.stringify(report.paras.filter(p=>p.chars>300)));
@@ -116,6 +116,6 @@ const wait=ms=>new Promise(r=>setTimeout(r,ms));
    await page.close();
   }
   assert.deepEqual(errors,[]);
-  console.log('PASS: Empire chapter Ⅵ — 11 sections in 3 eras (戴克里先 and 君士坦丁 apart; the Constantinian section runs 305—363) (Rome line forks at 395: 西罗马 to 476 with a 中世纪西欧 shoot, 东罗马 shoot on the Rome line), 51 map scenes (军营元首时期 cut to 6, 君士坦丁 to 5, 狄奥多西 grown to 6: 匈人压境, 收不住, 阿德里安堡, 国中之国, 圣火熄灭, 分治; 西罗马 5 with 托孤大臣; East Rome to 450 in 阿卡狄乌斯与金口约翰 and 狄奥多西二世), ≤300 chars per scene, the user’s readings (legitimacy, 大政奉还, freedmen, heirs, Senate as a check, distributed Vesta cult) and the Praetorian Guard thread in 220 scene checks (incl. 反人性/起因, 受命于神, 新罗马, 卡拉卡拉 courting the provinces, the Huns and the Germanic war bands), 40 iconic-event tags, two 豆腐块 (how the Goths fought; after the flame), 36 dated person cards; eyebrow/numerals/AD ticks; desktop and 390px without overflow; offline; no page errors.');
+  console.log('PASS: Empire chapter Ⅵ — 11 sections in 4 eras (戴克里先 and 君士坦丁 apart; the Constantinian section runs 305—363) (Rome line forks at 395: 西罗马 to 476 with a 中世纪西欧 shoot, 东罗马 shoot on the Rome line), 51 map scenes (军营元首时期 cut to 6, 君士坦丁 to 5, 狄奥多西 grown to 6: 匈人压境, 收不住, 阿德里安堡, 国中之国, 圣火熄灭, 分治; 西罗马 5 with 托孤大臣; East Rome to 450 in 阿卡狄乌斯与金口约翰 and 狄奥多西二世), ≤300 chars per scene, the user’s readings (legitimacy, 大政奉还, freedmen, heirs, Senate as a check, distributed Vesta cult) and the Praetorian Guard thread in 220 scene checks (incl. 反人性/起因, 受命于神, 新罗马, 卡拉卡拉 courting the provinces, the Huns and the Germanic war bands), 40 iconic-event tags, two 豆腐块 (how the Goths fought; after the flame), 36 dated person cards; eyebrow/numerals/AD ticks; desktop and 390px without overflow; offline; no page errors.');
  }catch(e){console.error(e);process.exitCode=1;}finally{await browser.close();}
 })();

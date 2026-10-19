@@ -28,7 +28,7 @@ const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','
    return {oldChars:8419,newChars:HISTORY_ENTRIES.filter(e=>oldIDs.includes(e.id)).reduce((n,e)=>n+chars(e.html),0),coverage,eras:HISTORY_ERAS.length};
   });
   assert.ok(report.newChars<=report.oldChars/3,'Existing prose exceeds one-third: '+JSON.stringify(report));
-  assert.equal(report.coverage,207);assert.equal(report.eras,18);
+  assert.equal(report.coverage,207);assert.equal(report.eras,19);
   const concise = await page.evaluate(() => {
    const entries=HISTORY_ENTRIES.filter(e=>e.ch===3);
    return entries.map(e=>{const p=document.createElement('div');p.innerHTML=e.html;return {id:e.id,chars:p.textContent.replace(/\s/g,'').length};});
