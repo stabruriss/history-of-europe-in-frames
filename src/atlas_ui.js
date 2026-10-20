@@ -8,9 +8,9 @@ const readerToggle=document.getElementById('readerToggle');
 const sceneRail=document.getElementById('sceneRail');
 let cur=-1,sceneIndex=0,viewMode='history',pending=null;
 const lastEntry={geography:'overview',history:'history-migration',topics:'topic-grail-sword'};
-const isHistory=e=>e.kind==='history',isTopic=e=>e.kind==='topic';
+const isHistory=e=>e.kind==='history',isTopic=e=>e.kind==='topic',hasScenes=e=>Boolean(e?.scenes?.length);
 const entryMode=e=>isHistory(e)?'history':isTopic(e)?'topics':'geography';
-const activeScene=e=>isHistory(e)?e.scenes[sceneIndex]:e;
+const activeScene=e=>hasScenes(e)?e.scenes[sceneIndex]:e;
 const activeEntries=()=>ENTRIES.filter(e=>entryMode(e)===viewMode);
 const navigationRows=()=>[...toc.querySelectorAll('.chip')];
 
@@ -390,9 +390,9 @@ setReaderCollapsed(initialCollapsed,{save:false,refit:false});
 document.getElementById('legendBox').open=!matchMedia('(max-width:820px)').matches;
 
 function renderScenes(e){
-  const historical=isHistory(e);sceneRail.hidden=!historical;
-  document.body.classList.toggle('has-scenes',historical);
-  if(!historical){sceneRail.replaceChildren();return;}
+  const multi=hasScenes(e);sceneRail.hidden=!multi;
+  document.body.classList.toggle('has-scenes',multi);
+  if(!multi){sceneRail.replaceChildren();return;}
   sceneRail.innerHTML='<span class="scene-rail-label" title="左右方向键切换地图事件">地图<br>事件 ↔</span><div class="scene-buttons" aria-label="切换历史地图事件"></div>';
   const buttons=sceneRail.querySelector('.scene-buttons');
   e.scenes.forEach((s,i)=>{
@@ -457,14 +457,14 @@ function focusFigure(item){
 }
 
 function renderCard(e){
-  const historical=isHistory(e);
+  const historical=isHistory(e),multi=hasScenes(e);
   reader.style.setProperty('--c',e.c);
   document.getElementById('entryEyebrow').textContent=historical?`SECTOR ${e.ch+1} · ${e.period}`:isTopic(e)?`动力专题 · 第 ${e.num} 题`:CH[e.ch]+' · 地理概念';
   document.getElementById('entryTitle').textContent=e.title;
   document.getElementById('entryEnglish').textContent=e.en;
   const refs=(e.sources||[]).map(s=>`<a href="${s.url}" target="_blank" rel="noopener noreferrer">${s.label}</a>`).join('');
-  card.innerHTML=(historical?'':`<div class="orig">${e.sub}</div>`)+e.html+(historical?'<section id="peopleCards" aria-label="本阶段人物与小事" hidden></section>':'')+(refs?`<details class="sources"><summary>史料与延伸阅读 <span>＋</span></summary>${refs}</details>`:'');
-  if(historical)card.querySelectorAll('[data-scene-text]').forEach(p=>{
+  card.innerHTML=(multi?'':`<div class="orig">${e.sub}</div>`)+e.html+(multi?'<section id="peopleCards" aria-label="本阶段人物与小事" hidden></section>':'')+(refs?`<details class="sources"><summary>史料与延伸阅读 <span>＋</span></summary>${refs}</details>`:'');
+  if(multi)card.querySelectorAll('[data-scene-text]').forEach(p=>{
     const index=+p.dataset.sceneText,s=e.scenes[index];
     const block=document.createElement('section');block.className='scene-passage';block.dataset.sceneText=index;
     const title=document.createElement('h3');title.className='passage-title';title.id=`${e.id}-text-${index}`;
@@ -501,8 +501,8 @@ function go(id,opts={}){
   const i=typeof id==='number'?id:ENTRIES.findIndex(e=>e.id===id);
   if(i<0||i>=ENTRIES.length)return;
   const e=ENTRIES[i];
-  const selected=isHistory(e)&&Number.isInteger(opts.scene)&&opts.scene>=0&&opts.scene<e.scenes.length?opts.scene:0;
-  if(i===cur&&selected===sceneIndex){if(isHistory(e))scrollSceneText();return;}
+  const selected=hasScenes(e)&&Number.isInteger(opts.scene)&&opts.scene>=0&&opts.scene<e.scenes.length?opts.scene:0;
+  if(i===cur&&selected===sceneIndex){if(hasScenes(e))scrollSceneText();return;}
   const first=cur<0,entryChanged=cur!==i;
   cur=i;sceneIndex=selected;
   const mode=entryMode(e);
@@ -514,7 +514,7 @@ function go(id,opts={}){
   forced.forEach(id=>baseMarkers[id]?.getElement()?.firstChild.classList.remove('force'));forced=[];
   if(entryChanged)renderCard(e);
   renderScenes(e);
-  if(isHistory(e))scrollSceneText(!entryChanged);
+  if(hasScenes(e))scrollSceneText(!entryChanged);
   const scene=activeScene(e);
   legend.innerHTML=legendHTML(scene.legend?scene:e);
   document.getElementById('legendBox').hidden=!legend.innerHTML;
@@ -561,7 +561,7 @@ function stepEntry(delta){
 }
 function stepScene(delta){
   const e=ENTRIES[cur];
-  if(isHistory(e)){
+  if(hasScenes(e)){
     const next=sceneIndex+delta;
     if(next>=0&&next<e.scenes.length)go(e.id,{scene:next});
   }else if(e.id==='alexander'){
@@ -579,7 +579,7 @@ document.addEventListener('keydown',ev=>{
   const vertical=ev.key==='ArrowUp'||ev.key==='ArrowDown';
   const horizontal=ev.key==='ArrowLeft'||ev.key==='ArrowRight';
   if(!vertical&&!horizontal)return;
-  if(horizontal&&!isHistory(ENTRIES[cur])&&ENTRIES[cur].id!=='alexander')return;
+  if(horizontal&&!hasScenes(ENTRIES[cur])&&ENTRIES[cur].id!=='alexander')return;
   const focusToc=ev.target.closest('#toc'),focusScenes=ev.target.closest('#sceneRail');
   ev.preventDefault();ev.stopPropagation();
   if(vertical)stepEntry(ev.key==='ArrowDown'?1:-1);else stepScene(ev.key==='ArrowRight'?1:-1);

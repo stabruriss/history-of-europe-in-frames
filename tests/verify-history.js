@@ -59,7 +59,7 @@ assert.ok(!/tChrono|peakTimeline|高光年代|TIME_CH/.test(html));
   const sceneReport=await page.evaluate(()=>{
    const report=[];
    for(const e of ENTRIES){
-    const scenes=isHistory(e)?e.scenes:[e];
+    const scenes=e.scenes||[e];
     scenes.forEach((s,i)=>{
      go(e.id,{scene:i});
      const ctx=makeCtx(e),reg=ctx.region,river=ctx.river;
@@ -68,14 +68,14 @@ assert.ok(!/tChrono|peakTimeline|高光年代|TIME_CH/.test(html));
      group.clearLayers();s.draw(ctx);
      if(!group.getLayers().length)throw new Error('Empty scene '+e.id+'/'+i);
      if(!map.getBounds().contains(L.latLngBounds(s.view)))throw new Error('View not fitted '+e.id+'/'+i);
-     if(isHistory(e)&&!s.legend?.length)throw new Error('Missing legend '+e.id+'/'+i);
-     if(isHistory(e)&&!document.getElementById('sceneContext').textContent.includes(s.date))throw new Error('Scene caption mismatch');
+     if(e.scenes&&!s.legend?.length)throw new Error('Missing legend '+e.id+'/'+i);
+     if(e.scenes&&!document.getElementById('sceneContext').textContent.includes(s.date))throw new Error('Scene caption mismatch');
      report.push(e.id+'/'+i);
     });
    }
    return report;
   });
-  assert.equal(sceneReport.length,242);
+  assert.equal(sceneReport.length,245);
   await page.evaluate(()=>go('history-migration'));
   assert.equal(await page.$$eval('#toc .chip',es=>es.length),70);
   assert.equal(await page.$eval('#prev',e=>e.disabled),true);
@@ -101,7 +101,8 @@ assert.ok(!/tChrono|peakTimeline|高光年代|TIME_CH/.test(html));
   assert.equal(await page.$eval('#readerBody',e=>e.hidden),true);
   await page.click('#tTopics');assert.equal(await page.evaluate(()=>viewMode),'topics');
   assert.equal(await page.evaluate(()=>ENTRIES[cur].id),'topic-grail-sword');
-  assert.equal(await page.$$eval('#card .topic-box',es=>es.length),4);
+  assert.equal(await page.$$eval('#sceneRail .scene-buttons button',es=>es.length),4);
+  await page.click('#sceneRail [data-scene="1"]');assert.equal(await page.evaluate(()=>location.hash),'#topic-grail-sword/1');
   await page.click('#tHistory');assert.equal(await page.evaluate(()=>sceneIndex),3);
   await page.click('#readerToggle');await checkLayout(page,'desktop re-expanded');
   await page.evaluate(()=>go('alexander'));
