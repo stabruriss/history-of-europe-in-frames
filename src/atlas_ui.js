@@ -7,10 +7,11 @@ const readerBody=document.getElementById('readerBody');
 const readerToggle=document.getElementById('readerToggle');
 const sceneRail=document.getElementById('sceneRail');
 let cur=-1,sceneIndex=0,viewMode='history',pending=null;
-const lastEntry={geography:'overview',history:'history-migration'};
-const isHistory=e=>e.kind==='history';
+const lastEntry={geography:'overview',history:'history-migration',topics:'topic-grail-sword'};
+const isHistory=e=>e.kind==='history',isTopic=e=>e.kind==='topic';
+const entryMode=e=>isHistory(e)?'history':isTopic(e)?'topics':'geography';
 const activeScene=e=>isHistory(e)?e.scenes[sceneIndex]:e;
-const activeEntries=()=>ENTRIES.filter(e=>isHistory(e)===(viewMode==='history'));
+const activeEntries=()=>ENTRIES.filter(e=>entryMode(e)===viewMode);
 const navigationRows=()=>[...toc.querySelectorAll('.chip')];
 
 function renderToc(){
@@ -28,8 +29,25 @@ function renderToc(){
       });
       mobileToc.appendChild(optgroup);
     });
+  }else if(viewMode==='topics'){
+    const optgroup=document.createElement('optgroup');optgroup.label='动力专题';
+    const row=document.createElement('section');row.className='ch history-ch';
+    row.innerHTML='<h3 class="chapter-heading"><small>DYNAMICS & MECHANISMS</small>动力专题</h3><div class="chips"></div>';
+    TOPIC_ENTRIES.forEach(e=>{
+      const i=ENTRIES.indexOf(e);
+      const option=document.createElement('option');option.value=e.id;option.dataset.id=e.id;
+      option.textContent=e.num+' · '+e.title;optgroup.appendChild(option);
+      const b=document.createElement('button');b.className='chip';b.dataset.i=i;b.dataset.id=e.id;b.style.setProperty('--c',e.c);
+      b.innerHTML=`<i>${e.num}</i><span>${e.short}<small>${e.sub}</small></span>`;
+      b.title=e.title+' · '+e.en;b.setAttribute('aria-label',b.title);b.onclick=()=>go(e.id);
+      row.querySelector('.chips').appendChild(b);
+    });
+    mobileToc.appendChild(optgroup);toc.appendChild(row);
+    const fut=document.createElement('div');fut.className='era-future';
+    fut.innerHTML='<span>待定稿 · 逐篇审订</span>'+TOPIC_FUTURE.map(([n,t,s])=>`<b>${n} · ${t}</b><small>${s}</small>`).join('');
+    toc.appendChild(fut);
   }else CH.forEach((name,ci)=>{
-    const items=ENTRIES.map((e,i)=>[e,i]).filter(([e])=>isHistory(e)===historical&&e.ch===ci);
+    const items=ENTRIES.map((e,i)=>[e,i]).filter(([e])=>entryMode(e)===viewMode&&e.ch===ci);
     if(!items.length)return;
     const optgroup=document.createElement('optgroup');optgroup.label=name;
     const row=document.createElement('section');row.className='ch'+(historical?' history-ch':'');
@@ -44,15 +62,16 @@ function renderToc(){
     });
     mobileToc.appendChild(optgroup);toc.appendChild(row);
   });
-  for(const [id,mode] of [['tHistory','history'],['tGeography','geography']]){
+  for(const [id,mode] of [['tHistory','history'],['tGeography','geography'],['tTopics','topics']]){
     const b=document.getElementById(id);b.classList.toggle('on',viewMode===mode);b.setAttribute('aria-pressed',String(viewMode===mode));
   }
-  document.getElementById('indexCaption').textContent=historical?'历史树：自上而下是时间，枝杈是主题\n先选主线，↑↓ 沿线走 · ←→ 切换地图事件\nⅠ 上古 Ⅱ 城邦 Ⅲ 马其顿 Ⅳ 希腊化 Ⅴ 罗马 Ⅵ 帝国 Ⅶ 基督教 Ⅷ 中国 · 右缘可拖宽':'从山海、河流与地区名认识历史的舞台。\n↑↓ 切换条目';
-  toc.setAttribute('aria-label',historical?'历史树：按时间与主题浏览':'地理概念');
-  mobileToc.setAttribute('aria-label',historical?'选择历史时期与章节':'选择地理概念');
+  document.getElementById('indexCaption').textContent=historical?'历史树：自上而下是时间，枝杈是主题\n先选主线，↑↓ 沿线走 · ←→ 切换地图事件\nⅠ 上古 Ⅱ 城邦 Ⅲ 马其顿 Ⅳ 希腊化 Ⅴ 罗马 Ⅵ 帝国 Ⅶ 基督教 Ⅷ 中国 · 右缘可拖宽':viewMode==='topics'?'主线讲事情怎么发生，专题讲事情为什么总这样发生。\n每个专题拆成若干豆腐块呈现，可点链接跳回主线。':'从山海、河流与地区名认识历史的舞台。\n↑↓ 切换条目';
+  toc.setAttribute('aria-label',historical?'历史树：按时间与主题浏览':viewMode==='topics'?'动力专题':'地理概念');
+  mobileToc.setAttribute('aria-label',historical?'选择历史时期与章节':viewMode==='topics'?'选择动力专题':'选择地理概念');
 }
 document.getElementById('tGeography').onclick=()=>go(lastEntry.geography);
 document.getElementById('tHistory').onclick=()=>go(lastEntry.history);
+document.getElementById('tTopics').onclick=()=>go(lastEntry.topics);
 mobileToc.onchange=()=>go(mobileToc.value);
 
 /* History tree: branches are topics, distance from the root is time.
@@ -440,7 +459,7 @@ function focusFigure(item){
 function renderCard(e){
   const historical=isHistory(e);
   reader.style.setProperty('--c',e.c);
-  document.getElementById('entryEyebrow').textContent=historical?`SECTOR ${e.ch+1} · ${e.period}`:CH[e.ch]+' · 地理概念';
+  document.getElementById('entryEyebrow').textContent=historical?`SECTOR ${e.ch+1} · ${e.period}`:isTopic(e)?`动力专题 · 第 ${e.num} 题`:CH[e.ch]+' · 地理概念';
   document.getElementById('entryTitle').textContent=e.title;
   document.getElementById('entryEnglish').textContent=e.en;
   const refs=(e.sources||[]).map(s=>`<a href="${s.url}" target="_blank" rel="noopener noreferrer">${s.label}</a>`).join('');
@@ -486,7 +505,7 @@ function go(id,opts={}){
   if(i===cur&&selected===sceneIndex){if(isHistory(e))scrollSceneText();return;}
   const first=cur<0,entryChanged=cur!==i;
   cur=i;sceneIndex=selected;
-  const mode=isHistory(e)?'history':'geography';
+  const mode=entryMode(e);
   if(mode!==viewMode||!toc.childElementCount){viewMode=mode;renderToc();}
   lastEntry[mode]=e.id+(selected?'/'+selected:'');
   if(pending){map.off('moveend',pending);clearTimeout(pending.t);pending=null;}

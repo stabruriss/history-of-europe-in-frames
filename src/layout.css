@@ -11,7 +11,7 @@ body{display:flex;overflow:hidden;height:100dvh}
 #ghBanner:hover .gh-icon{opacity:1}
 #side header{padding:18px 20px 15px}
 h1{font-size:24px;letter-spacing:.02em;line-height:1.4}
-h1 span{font-size:12px;letter-spacing:.16em;margin-top:7px}
+h1 span{font-size:11.5px;letter-spacing:.08em;margin-top:7px}
 .kicker{font-size:10px;letter-spacing:.3em}
 #modebar{display:flex;margin:14px 16px 0;padding:3px;border:1px solid var(--rule);gap:3px}
 #modebar button{flex:1;border:0;background:transparent;color:var(--ink2);font:inherit;font-size:13px;padding:9px 4px;cursor:pointer}
@@ -98,6 +98,11 @@ body.has-scenes #reader{max-height:calc(100% - 168px)}
 .box-tag{display:inline-block;margin:0 7px 0 0;padding:0 7px;border-radius:2px;background:var(--c);color:var(--paper);font-size:11.5px;font-weight:600;letter-spacing:.04em;line-height:1.75}
 .box-tag i{font-style:normal;font-family:var(--latin);font-weight:400;font-size:10.5px;letter-spacing:0;margin-left:5px;color:var(--paper2)}
 #card .box b{font-weight:600;color:var(--ink);margin-right:.4em}
+#card .topic-box{margin:0 0 14px;padding:11px 13px 12px;font-size:14px;line-height:1.9;color:var(--ink)}
+#card .topic-box .box-tag{display:table;margin:0 0 8px;padding:1px 8px;font-size:12px}
+#card .topic-box p{margin:0 0 10px}
+#card .topic-box p:last-child{margin-bottom:0}
+#card .topic-box table{margin:10px 0 4px}
 #card .passage-title{font-size:13px;line-height:1.6;margin:0 0 8px;color:var(--ink2)}
 .passage-title small{display:block;font-size:10px;line-height:1.6;font-weight:400;color:var(--ink3)}
 .scene-passage.current .passage-title{color:var(--c)}
@@ -156,7 +161,7 @@ body.has-scenes #legendBox{bottom:121px}
   #side .kicker,#side h1 span,#indexCaption,#toc{display:none}
   h1{font-size:17px;margin:0;line-height:1.4;letter-spacing:.08em}
   #modebar{position:absolute;top:33px;right:12px;margin:0;padding:2px;gap:2px}
-  #modebar button{font-size:11px;padding:5px 9px}
+  #modebar button{font-size:11px;padding:5px 7px}
   #mobileToc{display:block;flex:none;width:calc(100% - 28px);margin:13px 14px 8px;padding:8px 9px;font:inherit;font-size:12px;color:var(--ink);background:rgba(246,238,221,.8);border:1px solid var(--rule);border-radius:2px;white-space:nowrap;text-overflow:ellipsis}
   #side footer{padding:0 14px 7px;gap:10px;background:none;border:0}
   #side footer button{padding:3px 8px;border:0;font-size:11px}

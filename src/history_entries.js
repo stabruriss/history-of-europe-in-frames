@@ -1894,3 +1894,41 @@ const TREE_ROWS={
 // Topics still to be written grow the tree as dashed shoots.
 const TREE_FUTURE=[['rome',457,'东罗马','457年起 · 利奥一世以后 · 到1453年 · 待展开'],['west',476,'中世纪西欧','476年起 · 待展开'],['faith',451,'中世纪教会','451年起 · 待展开'],['china',476,'隋唐','476年起 · 南北朝至隋唐 · 待展开']];
 function historyEra(e,scene=0){return HISTORY_ERAS.find(era=>era.items.some(([id,from=0,to=Infinity])=>id===e.id&&scene>=from&&scene<=to));}
+const TOPIC_ENTRIES=[
+ {id:'topic-grail-sword',kind:'topic',ch:0,num:'01',title:'圣杯与剑：统治的成本',short:'圣杯与剑：统治的成本',en:'The Grail and the Sword: the Cost of Rule',
+  sub:'1:10 与 1:1000 · 武力、神化、礼教与想象共同体',c:HC.rome,view:[[22.0,10.0],[43.0,118.0]],hide:['med'],
+  legend:[['fill',HC.war,'纯靠剑：斯巴达（约 1:7—10）'],['fill',COL.egypt,'神化王权：埃及（法老即荷鲁斯）'],['fill',HC.rome,'由剑向圣杯收敛：罗马帝国'],['fill',HC.china,'礼与纲常：中国（唐约 1:2800 · 清约 1:20000）']],
+  draw(d){
+   ha(d,'hLaconia',HC.war,{fillOpacity:.4});ha(d,'hMessenia',HC.war,{fillOpacity:.32});ha(d,'egypt',COL.egypt,{fillOpacity:.32});
+   ha(d,'romanEmpire',HC.rome,{fillOpacity:.12});ha(d,'farCore',HC.china,{fillOpacity:.18});
+   hp(d,'sparta',{kind:'battle',note:'纯靠剑的样本：前479年普拉提亚之战，每名斯巴达公民带七名黑劳士；前371年留克特拉一败即倒。'});
+   hp(d,'memphis',{left:1,note:'埃及法老是荷鲁斯在人间，三千年换家族不换信仰。'});
+   hp(d,'raphia',{kind:'battle',labelZ:4,note:'前217年托勒密四世在此武装两万埃及本地兵打赢塞琉古，此后本地人起事数十年。'});
+   hp(d,'rome',{note:'从公民兵分权走向恺撒封神、奥古斯都兼大祭司长，再到君士坦丁借基督教之网。'});
+   hp(d,'changan',{note:'天命、德与纲常：唐代流内官一万八千余人管五千多万人，约 1:2800。'});
+   hl(d,'纯靠剑 · 约 1:7—10','Rule by the sword: c. 1:7–10',34.0,16.5,HC.war);
+   hl(d,'神化王权 · 法老即荷鲁斯','Pharaoh as Horus',23.8,29.5,COL.egypt);
+   hl(d,'礼与纲常 · 唐约 1:2800','Ritual & ethics: Tang c. 1:2800',39.5,108.5,HC.china);
+  },
+  html:`<aside class="box topic-box" aria-label="小专栏：圣杯与剑：1:10 与 1:1000"><span class="box-tag">圣杯与剑：1:10 与 1:1000<i>The Grail and the Sword</i></span><p><strong>人类靠大规模协作活下来，古代技术条件下协作就意味着层级。统治可以靠武力，像斯巴达，但成本极高、上限很低，榨取者和被榨取者大约 1:10；也可以拿宗教和道德当润滑剂，埃及把统治者神化，中国把统治者道德化——“对小人神道设教，对君子纲常伦理”——被榨取者的比例就能轻松超过 1000:1。</strong></p><table><thead><tr><th>样本</th><th>凭什么服从</th><th>看守 : 被统治者</th></tr></thead><tbody><tr><td><b>斯巴达</b></td><td>纯靠剑（公民全职当兵、每年向黑劳士宣战）</td><td>约 <b>1 : 7—10</b></td></tr><tr><td><b>埃及</b></td><td>神化王权（法老即人间荷鲁斯）</td><td>换了三十来个王朝，信仰不换</td></tr><tr><td><b>唐代中国</b></td><td>天命与礼（流内官 1.88 万管 5290 万人）</td><td>约 <b>1 : 2800</b></td></tr><tr><td><b>清代中国</b></td><td>神道设教与纲常伦理（约两万文官管三四亿人）</td><td>约 <b>1 : 15000—20000</b></td></tr></tbody></table></aside>
+<aside class="box topic-box" aria-label="小专栏：纯靠剑的样本：斯巴达"><span class="box-tag">纯靠剑的样本：斯巴达<i>Rule by the Sword: Sparta</i></span><p><strong>斯巴达（Sparta）是纯靠剑的样本。</strong>前 479 年普拉提亚（Plataea）之战，五千斯巴达公民每人带着七个黑劳士（helots）。公民不种地、不经商，一辈子当兵，看着人数多出好几倍的农奴。成本全写在制度里：监察官每年向黑劳士“宣战”，好让杀人不算渎神；秘密队（krypteia）夜里出去杀冒头的人。剑的成本还会自我放大：公民越来越少，看守越来越吃力。亚里士多德说，斯巴达公民到他那时已不足一千，“一击就倒，亡于缺人”。前 371 年留克特拉（Leuctra）一败，美塞尼亚（Messenia）的黑劳士被解放，斯巴达从此二流。</p><p class="see">主线印证：<a class="go" data-go="history-sparta">斯巴达：军营城邦</a><a class="go" data-go="history-spartan-decline/1">留克特拉之战（前371年）</a></p></aside>
+<aside class="box topic-box" aria-label="小专栏：圣杯的算法：法老与礼教"><span class="box-tag">圣杯的算法：法老与礼教<i>The Algorithm of the Grail</i></span><p><strong>圣杯是另一套算法：让被统治者自己相信该服从，看守的活就交给了他们脑子里的群居动物本能。</strong>埃及法老是荷鲁斯（Horus）在人间，三千年换了三十来个王朝，换的是家族，不是这套信仰。连马其顿人托勒密也得戴上法老的双冠。前 217 年拉菲亚（Raphia）一战，托勒密武装了两万埃及本地兵才打赢塞琉古，此后本地人起事几十年：刀一递到被统治者手里，润滑剂就不够用了。<strong>中国的圣杯是礼：天命、德、纲常，把服从变成做人的道理，所以统治成本得以降低。</strong>唐代流内官一万八千多人，管五千多万人，约 1:2800；清代两万来个文官，管三四亿人。</p><p class="see">主线印证：<a class="go" data-go="history-ptolemaic-bargain">托勒密埃及：拉菲亚与罗塞塔</a><a class="go" data-go="history-china-western-han">西汉独尊儒术</a></p></aside>
+<aside class="box topic-box" aria-label="小专栏：从古至今的圣杯：想象共同体"><span class="box-tag">从古至今的圣杯：想象共同体<i>Imagined Communities</i></span><p>罗马走过中间路线：共和国时被统治者本身就是兵，只能分权；扩成帝国以后，也一步步往圣杯收敛——恺撒死后封神，奥古斯都当大祭司长，最后君士坦丁借了基督教那张遍布帝国的网。<strong>古代社会的稳定统治必然要借助圣杯的力量。乃至近代以来，圣杯的位置依然被民族主义、身份政治、主流价值观叙事占据，使得想象共同体稳定存在，大规模的人类社会协作成为可能。</strong></p><p class="see">主线印证：<a class="go" data-go="history-empire-principate">奥古斯都：大政奉还与封神</a><a class="go" data-go="history-faith-empire-church/0">君士坦丁借风口</a><a class="go" data-go="history-china-sixteen-kingdoms/1">沙门拜不拜皇帝</a></p></aside>`,
+  sources:[
+   {label:'黑劳士与斯巴达制度（英文资料：普拉提亚1:7、每年宣战与秘密队）',url:'https://en.wikipedia.org/wiki/Helots'},
+   {label:'波利比乌斯《通史》第5卷（第65、84、107节 拉菲亚之战武装埃及本地兵与战后起事）',url:'https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Polybius/5*.html'},
+   {label:'《周易·观卦·彖传》（“圣人以神道设教，而天下服矣”）',url:'https://zh.wikisource.org/wiki/%E5%91%A8%E6%98%93/%E8%A7%80'},
+   {label:'《通典·职官二十二》（唐代流内官一万八千八百零五员）',url:'https://zh.wikisource.org/wiki/%E9%80%9A%E5%85%B8/%E5%8D%B7040'},
+   {label:'想象的共同体（英文资料：民族主义如何接替宗教成为现代共同体纽带）',url:'https://en.wikipedia.org/wiki/Imagined_Community'}
+  ]}
+];
+const TOPIC_FUTURE=[
+ ['02','减压阀与大马路：社会阶梯','罗马平民参选、商鞅军功爵 vs 雅典公民大会 · 待定稿'],
+ ['03','谁养得起兵，谁说了算：从战车到骑兵','军事参与率与财政、政治权力流向 · 待定稿'],
+ ['04','为什么中国没有平民和贵族的拉扯','亩产、人口密度、统治半径与科举拆掉中间力量 · 待定稿'],
+ ['05','罗马内政：三方怎么拉扯','元老院、官员、人民大会的两两联手 · 待定稿'],
+ ['06','吸纳的机器：罗马为什么人多兵多','分级公民权与会员制同盟 vs 秦汉编户齐民 · 待定稿'],
+ ['07','黑羊与收买：一再重演的闹剧','贵族站民粹背叛本阶级，直到奥古斯都把收买国有化 · 待定稿'],
+ ['08','城里没有兵：广场政治的源头','神圣边界内无驻军与禁卫军诞生后的宫廷政治 · 待定稿']
+];
+

@@ -35,6 +35,7 @@ Open `index.html` directly in any desktop or mobile browser. The map engine (Lea
 What is currently in the atlas:
 
 - **地理概念 (Geography)**: 33 entries covering key seas, mountain ranges, rivers, trade routes, and historical regions.
+- **动力专题 (Dynamics & Mechanisms)**: Cross-era, cross-civilizational essays broken into boxed explainers—starting with *The Grail and the Sword: the Cost of Rule*.
 - **历史进程 (History)**: 8 chapters, 68 sections, and 208 map scenes so far, running from early prehistory to the late Roman Empire and early Christianity, alongside a parallel timeline of contemporary China.
 - **The History Tree**: Time runs vertically along seven tracks—Greek, Rome, Ptolemaic Egypt, the Seleucids, West Rome, Christianity, and a parallel **China** reference line (from Neolithic settlements and the Bronze Age through the Qin, Han, and Six Dynasties). Select any line, then use `↑` `↓` to travel along it and `←` `→` to step through the scenes within a section.
 - **People and Iconic Moments**: 113 historical figures across 162 dated biographical cards, 132 tags highlighting iconic moments such as Marathon and Thermopylae, short boxed explainers such as how the Goths fought, and 333 reading links pointing chiefly to primary sources online.

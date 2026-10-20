@@ -40,7 +40,7 @@ assert.ok(!/tChrono|peakTimeline|高光年代|TIME_CH/.test(html));
  }
  try{
   const page=await newPage();
-  const data=await page.evaluate(()=>({geo:ENTRIES.filter(e=>!isHistory(e)).length,history:HISTORY_ENTRIES.length,
+  const data=await page.evaluate(()=>({geo:ENTRIES.filter(e=>!isHistory(e)&&!isTopic(e)).length,topics:TOPIC_ENTRIES.length,history:HISTORY_ENTRIES.length,
    scenes:HISTORY_ENTRIES.reduce((n,e)=>n+e.scenes.length,0),refs:HISTORY_ENTRIES.reduce((n,e)=>n+e.sources.length,0),
    seas:Object.keys(MEDITERRANEAN_SEAS).length,islands:MEDITERRANEAN_ISLANDS.length,mode:viewMode,
    buttons:[...document.querySelectorAll('#modebar button')].map(b=>b.id),
@@ -49,8 +49,8 @@ assert.ok(!/tChrono|peakTimeline|高光年代|TIME_CH/.test(html));
    bannerIcon:!!document.querySelector('#ghBanner svg.gh-icon'),
    title:document.title,
    h1:document.querySelector('#side h1')?.firstChild.textContent||''}));
-  assert.deepEqual(data,{geo:33,history:68,scenes:208,refs:333,seas:18,islands:35,mode:'history',
-   buttons:['tHistory','tGeography'],banner:'开源项目·欧洲历史笔记',
+  assert.deepEqual(data,{geo:33,topics:1,history:68,scenes:208,refs:333,seas:18,islands:35,mode:'history',
+   buttons:['tHistory','tGeography','tTopics'],banner:'开源项目·欧洲历史笔记',
    bannerHref:'https://github.com/stabruriss/history-of-europe-in-frames',bannerIcon:true,
    title:'简明欧洲史图册',h1:'简明欧洲史图册'});
   assert.equal(await page.$eval('#prev',e=>e.disabled),true);
@@ -75,7 +75,7 @@ assert.ok(!/tChrono|peakTimeline|高光年代|TIME_CH/.test(html));
    }
    return report;
   });
-  assert.equal(sceneReport.length,241);
+  assert.equal(sceneReport.length,242);
   await page.evaluate(()=>go('history-migration'));
   assert.equal(await page.$$eval('#toc .chip',es=>es.length),70);
   assert.equal(await page.$eval('#prev',e=>e.disabled),true);
@@ -99,6 +99,9 @@ assert.ok(!/tChrono|peakTimeline|高光年代|TIME_CH/.test(html));
   await page.click('#tGeography');assert.equal(await page.evaluate(()=>viewMode),'geography');
   assert.equal(await page.$$eval('#toc .chip',es=>es.length),33);
   assert.equal(await page.$eval('#readerBody',e=>e.hidden),true);
+  await page.click('#tTopics');assert.equal(await page.evaluate(()=>viewMode),'topics');
+  assert.equal(await page.evaluate(()=>ENTRIES[cur].id),'topic-grail-sword');
+  assert.equal(await page.$$eval('#card .topic-box',es=>es.length),4);
   await page.click('#tHistory');assert.equal(await page.evaluate(()=>sceneIndex),3);
   await page.click('#readerToggle');await checkLayout(page,'desktop re-expanded');
   await page.evaluate(()=>go('alexander'));
