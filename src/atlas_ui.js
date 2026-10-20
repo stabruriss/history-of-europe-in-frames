@@ -43,9 +43,11 @@ function renderToc(){
       row.querySelector('.chips').appendChild(b);
     });
     mobileToc.appendChild(optgroup);toc.appendChild(row);
-    const fut=document.createElement('div');fut.className='era-future';
-    fut.innerHTML='<span>待定稿 · 逐篇审订</span>'+TOPIC_FUTURE.map(([n,t,s])=>`<b>${n} · ${t}</b><small>${s}</small>`).join('');
-    toc.appendChild(fut);
+    if(TOPIC_FUTURE.length){
+      const fut=document.createElement('div');fut.className='era-future';
+      fut.innerHTML='<span>待定稿 · 逐篇审订</span>'+TOPIC_FUTURE.map(([n,t,s])=>`<b>${n} · ${t}</b><small>${s}</small>`).join('');
+      toc.appendChild(fut);
+    }
   }else CH.forEach((name,ci)=>{
     const items=ENTRIES.map((e,i)=>[e,i]).filter(([e])=>entryMode(e)===viewMode&&e.ch===ci);
     if(!items.length)return;
