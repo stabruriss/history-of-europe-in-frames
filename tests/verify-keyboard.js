@@ -25,7 +25,7 @@ const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','
   assert.equal(await p.$$eval('#toc .chip',es=>es.length),70);
   // Metro lines: pick a line, then ↑↓ walk its stations in time order and stop at both ends.
   const lines=await p.evaluate(()=>HISTORY_BRANCHES.map(b=>({id:b.id,keys:lineStations(b.id).map(s=>s.key)})));
-  assert.deepEqual(lines.map(l=>[l.id,l.keys.length]),[['trunk',23],['faith',12],['rome',32],['ptolemaic',19],['seleucid',19],['west',31],['china',10]]);
+  assert.deepEqual(lines.map(l=>[l.id,l.keys.length]),[['trunk',23],['faith',13],['rome',31],['ptolemaic',19],['seleucid',19],['west',32],['china',10]]);
   const onKey=()=>p.evaluate(()=>({key:toc.querySelector('.chip.on').dataset.key,line:treeLine,focus:document.activeElement===toc.querySelector('.chip.on')}));
   const walked=new Set();
   for(const line of lines){
@@ -60,7 +60,7 @@ const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','
    for(let i=e.count-2;i>=0;i--){await p.keyboard.press('ArrowLeft');assert.equal((await state(p)).textScene,i);}
    await p.keyboard.press('ArrowLeft');assert.equal((await state(p)).scene,0);
   }
-  assert.equal(count,207);
+  assert.equal(count,208);
   // Meaningful correspondence, rather than several events sharing one summary paragraph.
   for(const [scene,word] of [['history-persian-wars/2','马拉松'],['history-persian-wars/3','萨拉米斯'],['history-celts/1','加拉太'],['history-celts/2','帕加马']]){
    await p.evaluate(scene=>go(scene),scene);assert.ok(await p.$eval('#sceneContext>p',(e,word)=>e.textContent.includes(word),word));
@@ -92,6 +92,6 @@ const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','
   await animated.waitForFunction(()=>{const t=document.querySelector('#sceneContext .passage-title').getBoundingClientRect(),b=readerBody.getBoundingClientRect();return t.top>=b.top-1&&t.top<b.bottom;});
   assert.equal((await state(animated)).scene,5);await visible(animated,'rapid animated switching');
   await animated.screenshot({path:path.join(__dirname,'shots-v6','keyboard-desktop.png')});await animated.close();
-  assert.deepEqual(errors,[]);console.log('PASS: 7 metro lines (23/12/32/19/19/31/10 stations, all 70 rows; the 基督教 line replaces the Levant spur) walked up/down in time order; 207 scene-to-text passages with real arrow keys; era boundaries; map/reader/rail focus; input and modifiers; 33-stop geography timeline; mobile scrolling and fold restoration; rapid animated changes; offline; no page errors.');
+  assert.deepEqual(errors,[]);console.log('PASS: 7 metro lines (23/13/31/19/19/32/10 stations, all 70 rows; the 基督教 line replaces the Levant spur) walked up/down in time order; 208 scene-to-text passages with real arrow keys; era boundaries; map/reader/rail focus; input and modifiers; 33-stop geography timeline; mobile scrolling and fold restoration; rapid animated changes; offline; no page errors.');
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

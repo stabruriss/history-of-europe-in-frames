@@ -3480,7 +3480,7 @@ const FIGURE_SCENES={
       "place": "constantinople"
     }
   ],
-  "history-empire-theodosius/4": [
+  "history-empire-theodosius/1": [
     {
       "id": "theodosius",
       "when": "390年",
@@ -3573,7 +3573,7 @@ const FIGURE_SCENES={
       "place": "jerusalem"
     }
   ],
-  "history-faith-councils/1": [
+  "history-faith-empire-church/2": [
     {
       "id": "anthony-great",
       "when": "338年",
@@ -3582,7 +3582,7 @@ const FIGURE_SCENES={
       "place": "alexandria"
     }
   ],
-  "history-faith-councils/2": [
+  "history-faith-empire-church/3": [
     {
       "id": "constantine",
       "when": "325年",
@@ -3591,7 +3591,7 @@ const FIGURE_SCENES={
       "place": "nicaea"
     }
   ],
-  "history-faith-councils/3": [
+  "history-faith-councils/0": [
     {
       "id": "arius",
       "when": "336年",
@@ -3607,7 +3607,7 @@ const FIGURE_SCENES={
       "place": "treveri"
     }
   ],
-  "history-faith-councils/4": [
+  "history-faith-councils/1": [
     {
       "id": "gregory-nazianzus",
       "when": "381年",
@@ -3616,7 +3616,7 @@ const FIGURE_SCENES={
       "place": "constantinople"
     }
   ],
-  "history-faith-two-cities/1": [
+  "history-faith-ephesus/2": [
     {
       "id": "nestorius",
       "when": "435—约451年",
@@ -3625,7 +3625,7 @@ const FIGURE_SCENES={
       "place": "kharga"
     }
   ],
-  "history-faith-two-cities/2": [
+  "history-faith-two-cities/0": [
     {
       "id": "leo",
       "when": "451—452年",
@@ -3722,7 +3722,7 @@ const FIGURE_SCENES={
       "place": "nicomedeia"
     }
   ],
-  "history-empire-arcadius/3": [
+  "history-empire-theodosius/6": [
     {
       "id": "john-chrysostom",
       "when": "407年9月",
@@ -3731,7 +3731,7 @@ const FIGURE_SCENES={
       "place": "comana"
     }
   ],
-  "history-empire-theodosius-ii/0": [
+  "history-empire-theodosius/7": [
     {
       "id": "pulcheria",
       "when": "414年",

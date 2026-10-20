@@ -1246,7 +1246,7 @@ const HISTORY_ENTRIES=[
      ['汉尼拔良 · 亚美尼亚','Hannibalianus',39.7,42.3]].forEach(([t,en,la,lo])=>hl(d,t,en,la,lo,HC.rome));
    },[['fill',HC.rome,'帝国'],['dot','#2a2018','家事与身后'],['dot',HC.war,'尤利安的死地']])
  ]},
-{id:'history-empire-theodosius',ch:5,title:'狄奥多西：国教与分治',short:'瓦伦提尼安与狄奥多西',en:'Theodosius: One Faith, Two Halves',period:'364—395年',c:HC.rome,
+{id:'history-empire-valentinian',ch:5,title:'瓦伦提尼安王朝：哥特人过河',short:'瓦伦提尼安王朝',en:'The Valentinianic Dynasty: the Goths Cross the Danube',period:'364—378年',c:HC.rome,
  scenes:[
   hs('364—376年','匈人压境','匈人西来，压垮黑海北岸的哥特人；哥特人求渡多瑙河，瓦伦斯照以夷制夷的老套路收容，想多一批兵打波斯。',[[35.0,19.0],[50.0,46.5]],d=>{
     ha(d,'eEast395',HC.athens,{fillOpacity:.18});
@@ -1266,7 +1266,10 @@ const HISTORY_ENTRIES=[
     hp(d,'brigetio',{left:1});hp(d,'adrianople',{kind:'battle',note:'378年8月9日，瓦伦斯在此战死，东部野战军只逃出三分之一。'});
     hp(d,'constantinople',{note:'378年5月瓦伦斯从安条克赶到这里，再北上阿德里安堡。'});
     hr(d,[[48.2,14.3],[47.9,17.0],[45.0,19.6],[43.9,22.5]],HC.rome);hr(d,[[41.01,28.98],[41.4,27.7],[41.62,26.75]],HC.athens);
-   },[['fill',HC.rome,'西部（格拉提安，概略）'],['fill',HC.athens,'东部（瓦伦斯，概略）'],['dline',HC.rome,'格拉提安东来，没等到会师'],['dline',HC.athens,'瓦伦斯出兵'],['dot',HC.war,'阿德里安堡'],['dot','#2a2018','375年瓦伦提尼安死处与新都']]),
+   },[['fill',HC.rome,'西部（格拉提安，概略）'],['fill',HC.athens,'东部（瓦伦斯，概略）'],['dline',HC.rome,'格拉提安东来，没等到会师'],['dline',HC.athens,'瓦伦斯出兵'],['dot',HC.war,'阿德里安堡'],['dot','#2a2018','375年瓦伦提尼安死处与新都']])
+ ]},
+{id:'history-empire-theodosius',ch:5,title:'狄奥多西王朝：从分家到绝嗣',short:'狄奥多西王朝',en:'The Theodosian Dynasty: from Division to Extinction',period:'379—457年',c:HC.rome,
+ scenes:[
   hs('379—382年','国中之国','狄奥多西从西班牙被请回来，也打不赢；382年哥特人以同盟者身份落户色雷斯，自带首领，不归罗马官员管；东边跟波斯瓜分亚美尼亚。',[[36.5,18.5],[47.5,46.5]],d=>{
     ha(d,'eEast395',HC.athens,{fillOpacity:.2});
     hp(d,'sirmium',{note:'379年1月19日狄奥多西在此称帝。'});
@@ -1287,7 +1290,59 @@ const HISTORY_ENTRIES=[
     d.line(SPLIT_395,{color:'#2a2018',weight:2.2,opacity:.85,dashArray:'3 6'});
     hp(d,'mediolanum',{note:'395年1月17日狄奥多西死在这里；十岁的霍诺留留在西部。'});
     hp(d,'constantinople',{note:'十七八岁的阿卡狄乌斯坐镇东部。'});hp(d,'rome');
-   },[['fill',HC.rome,'西部：霍诺留'],['fill',HC.athens,'东部：阿卡狄乌斯'],['dline','#2a2018','395年东西分界'],['dot','#2a2018','米兰、罗马与君士坦丁堡']])
+   },[['fill',HC.rome,'西部：霍诺留'],['fill',HC.athens,'东部：阿卡狄乌斯'],['dline','#2a2018','395年东西分界'],['dot','#2a2018','米兰、罗马与君士坦丁堡']]),
+  hs('395—398年','兄弟分家','帝国分给两个儿子；东边朝政先后落在鲁菲努斯和宦官手里；城里多是三一派，兵营里多是信阿里乌派的哥特兵；398年金口约翰被接来当主教。',[[32.5,19.5],[46.0,40.5]],d=>{
+    ha(d,'eEast395',HC.athens,{fillOpacity:.2});
+    hp(d,'constantinople',{note:'395年11月鲁菲努斯在城外阅兵场被砍死；398年约翰被送来当主教。'});
+    hp(d,'antioch',{note:'约翰在这里当长老，讲道出了名；398年被哄上马车，连夜送走。'});
+    hl(d,'城里：三一派','Cities: Nicene',39.0,30.5,HC.athens);hl(d,'兵营：信阿里乌派的哥特兵','Army: Arian Goths',43.6,25.2,HC.war);
+   },[['fill',HC.athens,'东罗马（阿卡狄乌斯）'],['dot','#2a2018','新都与安条克']]),
+  hs('398—400年','说不动哥特人','约翰开哥特语教堂、组织夜里唱诗跟阿里乌派对着干；400年不肯给哥特统帅盖纳斯一座教堂；城里人群起杀哥特人，盖纳斯北逃，被匈人所杀。',[[39.5,22.0],[46.0,31.5]],d=>{
+    ha(d,'eEast395',HC.athens,{fillOpacity:.2});
+    hp(d,'constantinople',{kind:'battle',note:'400年7月城里人群起杀哥特人，七千多人躲进一座教堂，被揭了屋顶烧死。'});
+    hr(d,[[41.01,28.98],[40.9,27.6],[40.45,26.7],[41.6,26.4],[43.0,26.8],[44.5,27.4]],HC.war);
+    hl(d,'盖纳斯北逃，被匈人砍了头','Gainas flees, killed by the Huns',45.3,27.2,HC.war);
+   },[['fill',HC.athens,'东罗马'],['dline',HC.war,'400年盖纳斯北逃（概略）'],['dot',HC.war,'杀哥特人的新都']]),
+  hs('398—403年','打土豪','约翰砍主教府的开销办医院，讲道骂富人；399年失势的权宦躲进大教堂，约翰拦着不交：教会成了皇帝的手伸不进去的地方。',[[33.0,24.5],[43.0,36.0]],d=>{
+    ha(d,'eEast395',HC.athens,{fillOpacity:.18});
+    hp(d,'constantinople',{note:'399年欧特罗皮乌斯躲进大教堂；约翰在这里讲道骂富人、办医院。'});
+    hp(d,'chalcedon',{left:1,labelZ:8,note:'欧特罗皮乌斯后来还是被哄出教堂，先流放塞浦路斯，又被押回这里杀了。'});
+    hr(d,[[41.0,28.9],[39.0,27.5],[36.5,29.5],[35.2,33.0]],HC.war);
+   },[['fill',HC.athens,'东罗马'],['dline',HC.war,'欧特罗皮乌斯被流放塞浦路斯（概略）'],['dot','#2a2018','大教堂所在的新都']]),
+  hs('403—407年','两次流放','皇后和亚历山大里亚主教合力扳倒约翰，两次流放，引来闹事与大火；西边派使团撑腰，被扣下送回；407年约翰死在流放路上。',[[37.0,10.5],[46.5,42.0]],d=>{
+    ha(d,'eWest395',HC.rome,{fillOpacity:.1});ha(d,'eEast395',HC.athens,{fillOpacity:.16});
+    hp(d,'constantinople',{kind:'battle',note:'403年在对岸卡尔西顿郊外被定罪；404年6月20日再被押走，当天大教堂起火，烧到元老院。'});
+    hp(d,'cucusus',{note:'404—407年约翰的流放地。'});hp(d,'comana');hp(d,'pityus');
+    hp(d,'rome',{note:'罗马主教英诺森和霍诺留替约翰出头，派使团东去。'});
+    hr(d,[[41.01,28.98],[40.0,31.5],[39.0,34.5],[38.05,36.45]],HC.war);hr(d,[[38.05,36.45],[39.3,36.5],[40.35,36.6]],HC.war);
+    hr(d,[[40.6,17.9],[39.4,20.2],[38.0,23.6],[40.3,26.6],[41.0,28.4]],HC.rome);
+    hl(d,'西边的使团：被扣下，送回','Western envoys turned back',38.6,18.6,HC.rome);
+   },[['fill',HC.rome,'西罗马'],['fill',HC.athens,'东罗马'],['dline',HC.war,'约翰的流放路（概略）'],['dline',HC.rome,'西边的使团（概略）'],['dot',HC.war,'大火'],['dot','#2a2018','流放地与死处']]),
+  hs('408—414年','七岁的皇帝','阿卡狄乌斯死，七岁的狄奥多西二世继位；据说遗嘱托波斯王当保护人；禁卫军长官修起陆墙；十五岁的姐姐普尔喀丽娅当上奥古斯塔，掌了权。',[[29.0,20.0],[44.5,51.5]],d=>{
+    ha(d,'eEast395',HC.athens,{fillOpacity:.2});
+    hp(d,'constantinople',{note:'413年安提米乌斯在城外修成陆墙；414年普尔喀丽娅当上奥古斯塔。'});
+    hp(d,'ctesiphon',{note:'波斯王伊嗣俟一世的都城；据说他当了七岁罗马皇帝的保护人。'});
+    hl(d,'波斯（萨珊王朝）','Sasanian Persia',33.5,51.0,HC.parthia);
+   },[['fill',HC.athens,'东罗马（狄奥多西二世）'],['dot','#2a2018','新都与波斯王的都城']]),
+  hs('421—443年','苹果','姐姐给弟弟挑了个雅典姑娘当皇后；宫里姐姐、皇后、宦官三股势力争权，教义之争跟着站队；一个苹果送掉皇帝老友的命，皇后出走耶路撒冷。',[[29.5,21.0],[42.5,38.0]],d=>{
+    ha(d,'eEast395',HC.athens,{fillOpacity:.18});
+    hp(d,'athens',{note:'欧多基娅生在这里，父亲是教修辞的异教先生。'});hp(d,'constantinople');
+    hp(d,'antioch',{note:'438年欧多基娅路过这里，用荷马的诗句讲演，城里给她立了金像。'});
+    hp(d,'jerusalem',{left:1,note:'欧多基娅约443年出走到这里，修教堂、写诗，460年死在这里。'});
+   },[['fill',HC.athens,'东罗马'],['dot','#2a2018','皇后的一生：雅典、新都、安条克、耶路撒冷']]),
+  hs('424—438年','法典与西嫁','设官办学堂、颁《狄奥多西法典》；把独生女嫁给送到西罗马的小皇帝瓦伦提尼安三世，本有机会重统帝国，却没生出儿子。',[[35.5,-3.0],[47.5,31.0]],d=>{
+    ha(d,'eWest395',HC.rome,{fillOpacity:.12});ha(d,'eEast395',HC.athens,{fillOpacity:.16});
+    hp(d,'constantinople',{left:1,note:'425年设官办学堂，三十一个教席；438年颁行法典。'});
+    hp(d,'rome',{note:'法典439年1月1日起在西边同时生效。'});
+    hp(d,'tolosa',{note:'西哥特王国的都城；506年国王阿拉里克二世照法典删编出一部法，给治下的罗马人用。'});
+   },[['fill',HC.rome,'西罗马'],['fill',HC.athens,'东罗马'],['dot','#2a2018','颁行、生效与传下去的地方']]),
+  hs('441—457年','城墙、匈人与王朝绝嗣','一边修墙一边给阿提拉进贡，地震后六十天修好城墙；450年皇帝坠马，皇姐嫁马尔西安称帝；453、457年皇姐与皇姐夫相继去世，王朝绝嗣，军方推利奥一世继位。',[[38.5,13.5],[49.0,31.5]],d=>{
+    ha(d,'eHuns450',HC.war,{fillOpacity:.18});ha(d,'eEast395',HC.athens,{fillOpacity:.18});
+    hp(d,'constantinople',{note:'447年地震震塌城墙，赛车场两派一万六千人六十天修好。'});
+    hp(d,'naissus',{kind:'battle',note:'被匈人攻破；449年使团路过，城里空了，只剩几个病人躺在教堂里。'});
+    hp(d,'viminacium',{kind:'battle',note:'约441年被匈人攻破；普利斯库斯在匈人营地碰见的希腊商人，就是在这里被掳的。'});
+    hl(d,'阿提拉的营地（约449年，概略）','Attila’s camp, c. 449',46.9,20.6,HC.war);
+   },[['fill',HC.war,'匈人的天下（约450年，概略）'],['fill',HC.athens,'东罗马'],['dot',HC.war,'被匈人攻破的城'],['dot','#2a2018','新都']])
  ]},
 {id:'history-empire-west-fall',ch:5,title:'西罗马的终结',short:'西罗马的终结',en:'The End of the Western Empire',period:'395—476年',c:HC.rome,hideBase:['alps'],
  scenes:[
@@ -1339,64 +1394,6 @@ const HISTORY_ENTRIES=[
      ['勃艮第人','Burgundians',46.2,5.5,HC.thebes],['汪达尔王国','Vandals',34.4,8.6,HC.mino],['奥多亚克的意大利','Odoacer\'s Italy',40.3,16.4,HC.war],['东罗马','Eastern Empire',42.0,23.4,HC.athens],
      ['阿勒曼尼人','Alamanni',47.6,9.7,HC.neutral],['不列颠：410年罗马撤走','Britain: abandoned 410',52.7,-1.6,HC.neutral]].forEach(([t,en,la,lo,c])=>hl(d,t,en,la,lo,c));
    },[['fill',HC.celt,'西哥特'],['fill',HC.mino,'汪达尔'],['fill',HC.macedon,'法兰克'],['fill',HC.thebes,'勃艮第'],['fill',HC.myc,'苏维汇'],['fill',HC.rome,'苏瓦松（罗马残部，到486年）'],['fill',HC.war,'奥多亚克的意大利'],['fill',HC.athens,'东罗马']])
- ]},
-{id:'history-empire-arcadius',ch:5,title:'阿卡狄乌斯与金口约翰',short:'阿卡狄乌斯与金口约翰',en:'Arcadius and John Chrysostom',period:'395—408年',c:HC.rome,
- scenes:[
-  hs('395—398年','兄弟分家','帝国分给两个儿子；东边朝政先后落在鲁菲努斯和宦官手里；城里多是三一派，兵营里多是信阿里乌派的哥特兵；398年金口约翰被接来当主教。',[[32.5,19.5],[46.0,40.5]],d=>{
-    ha(d,'eEast395',HC.athens,{fillOpacity:.2});
-    hp(d,'constantinople',{note:'395年11月鲁菲努斯在城外阅兵场被砍死；398年约翰被送来当主教。'});
-    hp(d,'antioch',{note:'约翰在这里当长老，讲道出了名；398年被哄上马车，连夜送走。'});
-    hl(d,'城里：三一派','Cities: Nicene',39.0,30.5,HC.athens);hl(d,'兵营：信阿里乌派的哥特兵','Army: Arian Goths',43.6,25.2,HC.war);
-   },[['fill',HC.athens,'东罗马（阿卡狄乌斯）'],['dot','#2a2018','新都与安条克']]),
-  hs('398—400年','说不动哥特人','约翰开哥特语教堂、组织夜里唱诗跟阿里乌派对着干；400年不肯给哥特统帅盖纳斯一座教堂；城里人群起杀哥特人，盖纳斯北逃，被匈人所杀。',[[39.5,22.0],[46.0,31.5]],d=>{
-    ha(d,'eEast395',HC.athens,{fillOpacity:.2});
-    hp(d,'constantinople',{kind:'battle',note:'400年7月城里人群起杀哥特人，七千多人躲进一座教堂，被揭了屋顶烧死。'});
-    hr(d,[[41.01,28.98],[40.9,27.6],[40.45,26.7],[41.6,26.4],[43.0,26.8],[44.5,27.4]],HC.war);
-    hl(d,'盖纳斯北逃，被匈人砍了头','Gainas flees, killed by the Huns',45.3,27.2,HC.war);
-   },[['fill',HC.athens,'东罗马'],['dline',HC.war,'400年盖纳斯北逃（概略）'],['dot',HC.war,'杀哥特人的新都']]),
-  hs('398—403年','打土豪','约翰砍主教府的开销办医院，讲道骂富人；399年失势的权宦躲进大教堂，约翰拦着不交：教会成了皇帝的手伸不进去的地方。',[[33.0,24.5],[43.0,36.0]],d=>{
-    ha(d,'eEast395',HC.athens,{fillOpacity:.18});
-    hp(d,'constantinople',{note:'399年欧特罗皮乌斯躲进大教堂；约翰在这里讲道骂富人、办医院。'});
-    hp(d,'chalcedon',{left:1,labelZ:8,note:'欧特罗皮乌斯后来还是被哄出教堂，先流放塞浦路斯，又被押回这里杀了。'});
-    hr(d,[[41.0,28.9],[39.0,27.5],[36.5,29.5],[35.2,33.0]],HC.war);
-   },[['fill',HC.athens,'东罗马'],['dline',HC.war,'欧特罗皮乌斯被流放塞浦路斯（概略）'],['dot','#2a2018','大教堂所在的新都']]),
-  hs('403—407年','两次流放','皇后和亚历山大里亚主教合力扳倒约翰，两次流放，引来闹事与大火；西边派使团撑腰，被扣下送回；407年约翰死在流放路上。',[[37.0,10.5],[46.5,42.0]],d=>{
-    ha(d,'eWest395',HC.rome,{fillOpacity:.1});ha(d,'eEast395',HC.athens,{fillOpacity:.16});
-    hp(d,'constantinople',{kind:'battle',note:'403年在对岸卡尔西顿郊外被定罪；404年6月20日再被押走，当天大教堂起火，烧到元老院。'});
-    hp(d,'cucusus',{note:'404—407年约翰的流放地。'});hp(d,'comana');hp(d,'pityus');
-    hp(d,'rome',{note:'罗马主教英诺森和霍诺留替约翰出头，派使团东去。'});
-    hr(d,[[41.01,28.98],[40.0,31.5],[39.0,34.5],[38.05,36.45]],HC.war);hr(d,[[38.05,36.45],[39.3,36.5],[40.35,36.6]],HC.war);
-    hr(d,[[40.6,17.9],[39.4,20.2],[38.0,23.6],[40.3,26.6],[41.0,28.4]],HC.rome);
-    hl(d,'西边的使团：被扣下，送回','Western envoys turned back',38.6,18.6,HC.rome);
-   },[['fill',HC.rome,'西罗马'],['fill',HC.athens,'东罗马'],['dline',HC.war,'约翰的流放路（概略）'],['dline',HC.rome,'西边的使团（概略）'],['dot',HC.war,'大火'],['dot','#2a2018','流放地与死处']])
- ]},
-{id:'history-empire-theodosius-ii',ch:5,title:'狄奥多西二世：法典、苹果与姐姐',short:'狄奥多西二世',en:'Theodosius II: the Code, the Apple and the Sister',period:'408—450年',c:HC.rome,
- scenes:[
-  hs('408—414年','七岁的皇帝','阿卡狄乌斯死，七岁的狄奥多西二世继位；据说遗嘱托波斯王当保护人；禁卫军长官修起陆墙；十五岁的姐姐普尔喀丽娅当上奥古斯塔，掌了权。',[[29.0,20.0],[44.5,51.5]],d=>{
-    ha(d,'eEast395',HC.athens,{fillOpacity:.2});
-    hp(d,'constantinople',{note:'413年安提米乌斯在城外修成陆墙；414年普尔喀丽娅当上奥古斯塔。'});
-    hp(d,'ctesiphon',{note:'波斯王伊嗣俟一世的都城；据说他当了七岁罗马皇帝的保护人。'});
-    hl(d,'波斯（萨珊王朝）','Sasanian Persia',33.5,51.0,HC.parthia);
-   },[['fill',HC.athens,'东罗马（狄奥多西二世）'],['dot','#2a2018','新都与波斯王的都城']]),
-  hs('421—443年','苹果','姐姐给弟弟挑了个雅典姑娘当皇后；宫里姐姐、皇后、宦官三股势力争权，教义之争跟着站队；一个苹果送掉皇帝老友的命，皇后出走耶路撒冷。',[[29.5,21.0],[42.5,38.0]],d=>{
-    ha(d,'eEast395',HC.athens,{fillOpacity:.18});
-    hp(d,'athens',{note:'欧多基娅生在这里，父亲是教修辞的异教先生。'});hp(d,'constantinople');
-    hp(d,'antioch',{note:'438年欧多基娅路过这里，用荷马的诗句讲演，城里给她立了金像。'});
-    hp(d,'jerusalem',{left:1,note:'欧多基娅约443年出走到这里，修教堂、写诗，460年死在这里。'});
-   },[['fill',HC.athens,'东罗马'],['dot','#2a2018','皇后的一生：雅典、新都、安条克、耶路撒冷']]),
-  hs('425—438年','法典','425年设官办学堂；438年颁行《狄奥多西法典》，十六卷，东西两边同时生效；西罗马亡后，西哥特国王照着它给治下的罗马人定法。',[[35.5,-3.0],[47.5,31.0]],d=>{
-    ha(d,'eWest395',HC.rome,{fillOpacity:.12});ha(d,'eEast395',HC.athens,{fillOpacity:.16});
-    hp(d,'constantinople',{left:1,note:'425年设官办学堂，三十一个教席；438年颁行法典。'});
-    hp(d,'rome',{note:'法典439年1月1日起在西边同时生效。'});
-    hp(d,'tolosa',{note:'西哥特王国的都城；506年国王阿拉里克二世照法典删编出一部法，给治下的罗马人用。'});
-   },[['fill',HC.rome,'西罗马'],['fill',HC.athens,'东罗马'],['dot','#2a2018','颁行、生效与传下去的地方']]),
-  hs('441—450年','城墙与匈人','东罗马一边修墙一边给阿提拉进贡；447年地震后六十天修好城墙；450年皇帝坠马而死，新帝马尔西安不再进贡，阿提拉转头向西。',[[38.5,13.5],[49.0,31.5]],d=>{
-    ha(d,'eHuns450',HC.war,{fillOpacity:.18});ha(d,'eEast395',HC.athens,{fillOpacity:.18});
-    hp(d,'constantinople',{note:'447年地震震塌城墙，赛车场两派一万六千人六十天修好。'});
-    hp(d,'naissus',{kind:'battle',note:'被匈人攻破；449年使团路过，城里空了，只剩几个病人躺在教堂里。'});
-    hp(d,'viminacium',{kind:'battle',note:'约441年被匈人攻破；普利斯库斯在匈人营地碰见的希腊商人，就是在这里被掳的。'});
-    hl(d,'阿提拉的营地（约449年，概略）','Attila’s camp, c. 449',46.9,20.6,HC.war);
-   },[['fill',HC.war,'匈人的天下（约450年，概略）'],['fill',HC.athens,'东罗马'],['dot',HC.war,'被匈人攻破的城'],['dot','#2a2018','新都']])
  ]},
 {id:'history-faith-israel',ch:6,title:'从大河那边来：希伯来人与出埃及',short:'族长与出埃及',en:'From Beyond the River: the Hebrews and the Exodus',period:'约前1400—前1200年',c:HC.faith,
  scenes:[
@@ -1568,7 +1565,7 @@ const HISTORY_ENTRIES=[
     hl(d,'弗里吉亚','Phrygia',38.6,30.6,HC.war);
    },[['fill',HC.rome,'帝国'],['fill',HC.mino,'基督徒较多的地方（约300年，概略）'],['dot','#2a2018','教会的大城与亚美尼亚的王城']])
  ]},
-{id:'history-faith-empire-church',ch:6,title:'借风口：帝国的教会',short:'帝国的教会',en:'Riding the Wind: the Church of the Empire',period:'312—394年',c:HC.faith,
+{id:'history-faith-empire-church',ch:6,title:'第一次大公会议：尼西亚',short:'尼西亚会议',en:'The First Ecumenical Council: Nicaea',period:'312—325年',c:HC.faith,
  scenes:[
   hs('312—337年','借风口','拆不散的网不如拿来用：君士坦丁发还教产、给钱给特权、修大教堂；风口不是他造的，是他借的。',[[28.5,-7.5],[50.5,42.5]],d=>{
     ha(d,'eEmpire300',HC.rome,{fillOpacity:.1});
@@ -1580,17 +1577,6 @@ const HISTORY_ENTRIES=[
     hp(d,'arelate',{left:1,note:'314年皇帝召集西部主教在此开会，裁决北非的分裂。'});
     hp(d,'nicomedeia',{note:'大迫害从这里开始（303年），君士坦丁也在这里临终受洗（337年）。'});
    },[['fill',HC.rome,'帝国'],['fill',HC.mino,'基督徒较多的地方（约300年，概略）'],['dot','#2a2018','大教堂与教会大事']]),
-  hs('380—394年','朱庇特有罪','狄奥多西定尼西亚派为国教，禁绝献祭，塞拉皮斯神庙被拆；据诗人记载，元老院表决判了朱庇特有罪。',[[29.0,2.0],[47.5,33.0]],d=>{
-    ha(d,'eEmpire300',HC.rome,{fillOpacity:.1});
-    hp(d,'rome',{note:'382年胜利女神祭坛被搬出元老院议事厅；后来狄奥多西让元老院表决，判了朱庇特。'});
-    hp(d,'thessalonica',{note:'380年2月狄奥多西在此颁诏：臣民一律信尼西亚派。'});
-    hp(d,'alexandria',{kind:'battle',note:'391年主教提奥菲卢斯带人拆了塞拉皮斯神庙。'});
-    hp(d,'frigidus',{kind:'battle',note:'394年狄奥多西在此打败西部的篡位者，那是最后一支打着旧神旗号的军队。'});
-    hp(d,'mediolanum',{left:1,note:'米兰主教安布罗斯力阻胜利女神祭坛搬回元老院；395年狄奥多西死在这里。'});
-   },[['fill',HC.rome,'帝国'],['dot',HC.war,'拆庙与旧神的最后一战'],['dot','#2a2018','颁诏、表决与主教']])
- ]},
-{id:'history-faith-councils',ch:6,title:'把一个神讲圆：尼西亚与君士坦丁堡',short:'尼西亚与君士坦丁堡',en:'Squaring One God: Nicaea and Constantinople',period:'318—381年',c:HC.faith,
- scenes:[
   hs('318—325年','讲不圆的一个神','要替皇权服务，教义得先讲圆：神只有一个，父、子、灵却都有神性；主教亚历山大说圣子与父本质相同，长老阿里乌说圣子低一级。',[[29.0,24.0],[42.0,40.5]],d=>{
     ha(d,'eEmpire300',HC.rome,{fillOpacity:.1});
     hp(d,'alexandria',{note:'318年前后主教亚历山大与长老阿里乌在此吵开，亚历山大召集主教，革了阿里乌的教籍。'});
@@ -1611,7 +1597,10 @@ const HISTORY_ENTRIES=[
     hp(d,'nicomedeia',{note:'皇帝的驻地；主教优西比乌签了信经，却不肯签字革除阿里乌，会后不久也被流放。'});
     hp(d,'alexandria',{note:'主教亚历山大带着执事阿塔纳修斯到会。'});
     hp(d,'rome',{note:'罗马主教没来，派了两名长老代表。'});
-   },[['fill',HC.rome,'帝国（约300年，概略）'],['dot',HC.war,'会场'],['dot','#2a2018','几位要角的来处']]),
+   },[['fill',HC.rome,'帝国（约300年，概略）'],['dot',HC.war,'会场'],['dot','#2a2018','几位要角的来处']])
+ ]},
+{id:'history-faith-councils',ch:6,title:'第二次大公会议：君士坦丁堡',short:'君士坦丁堡会议',en:'The Second Ecumenical Council: Constantinople',period:'327—394年',c:HC.faith,
+ scenes:[
   hs('327—363年','翻大饼','君士坦丁晚年召回阿里乌派、流放阿塔纳修斯；老二君士坦提乌斯二世偏阿里乌派；堂弟尤利安干脆掀桌，复兴旧神。',[[30.5,-2.0],[52.0,42.0]],d=>{
     ha(d,'eConst317',HC.rome,{fillOpacity:.12});ha(d,'eLic317',HC.athens,{fillOpacity:.12});
     hp(d,'treveri',{note:'335年阿塔纳修斯被流放到这里。'});
@@ -1628,9 +1617,17 @@ const HISTORY_ENTRIES=[
     hp(d,'thessalonica',{note:'380年2月狄奥多西在此颁诏：臣民一律信尼西亚派。'});
     hp(d,'mazaca',{labelZ:5,note:'370年起巴西尔在此任主教；他和弟弟尼撒的格列高利、好友纳齐安的格列高利，合称卡帕多西亚三教父。'});hp(d,'nazianzus',{left:1});
     hl(d,'哥特人：信了阿里乌派','Goths: Arian',44.4,25.6,HC.war);
-   },[['fill',HC.athens,'帝国东部（概略）'],['dot',HC.war,'瓦伦斯战死之地'],['dot','#2a2018','颁诏、开会与卡帕多西亚教父的家乡']])
+   },[['fill',HC.athens,'帝国东部（概略）'],['dot',HC.war,'瓦伦斯战死之地'],['dot','#2a2018','颁诏、开会与卡帕多西亚教父的家乡']]),
+  hs('380—394年','朱庇特有罪','狄奥多西定尼西亚派为国教，禁绝献祭，塞拉皮斯神庙被拆；据诗人记载，元老院表决判了朱庇特有罪。',[[29.0,2.0],[47.5,33.0]],d=>{
+    ha(d,'eEmpire300',HC.rome,{fillOpacity:.1});
+    hp(d,'rome',{note:'382年胜利女神祭坛被搬出元老院议事厅；后来狄奥多西让元老院表决，判了朱庇特。'});
+    hp(d,'thessalonica',{note:'380年2月狄奥多西在此颁诏：臣民一律信尼西亚派。'});
+    hp(d,'alexandria',{kind:'battle',note:'391年主教提奥菲卢斯带人拆了塞拉皮斯神庙。'});
+    hp(d,'frigidus',{kind:'battle',note:'394年狄奥多西在此打败西部的篡位者，那是最后一支打着旧神旗号的军队。'});
+    hp(d,'mediolanum',{left:1,note:'米兰主教安布罗斯力阻胜利女神祭坛搬回元老院；395年狄奥多西死在这里。'});
+   },[['fill',HC.rome,'帝国'],['dot',HC.war,'拆庙与旧神的最后一战'],['dot','#2a2018','颁诏、表决与主教']])
  ]},
-{id:'history-faith-two-cities',ch:6,title:'两座城：分家以后的教会',short:'分家以后的教会',en:'Two Cities: the Church after the Split',period:'410—451年',c:HC.faith,
+{id:'history-faith-ephesus',ch:6,title:'第三次大公会议：以弗所',short:'以弗所会议',en:'The Third Ecumenical Council: Ephesus',period:'410—435年',c:HC.faith,
  scenes:[
   hs('410—430年','上帝之城','罗马城破，异教徒说是抛弃旧神的报应；奥古斯丁写《上帝之城》：两种爱造出两座城，罗马会倒，上帝之城不倒；教会从此不必跟帝国同生死。',[[30.0,-6.0],[46.5,20.0]],d=>{
     ha(d,'eWest395',HC.rome,{fillOpacity:.14});
@@ -1638,6 +1635,14 @@ const HISTORY_ENTRIES=[
     hp(d,'hippo',{left:1,note:'奥古斯丁在此任主教，413—426年写成《上帝之城》；430年死在汪达尔人的围城之中。'});
     hp(d,'carthage',{note:'皇帝派来的大员在这里判北非的多纳图派为异端，令他们交出教堂。'});
    },[['fill',HC.rome,'西罗马'],['dot',HC.war,'被攻破的罗马'],['dot','#2a2018','奥古斯丁的北非']]),
+  hs('381—428年','两个异端分支','三一派主导之后，争论转到耶稣的神性与人性怎么合：安条克一派拆成两截（聂斯托利派），亚历山大一派合成一性（一性论），相当于从阿里乌派衍生出的两个分支。',[[28.5,22.0],[42.5,41.5]],d=>{
+    ha(d,'eEast395',HC.athens,{fillOpacity:.14});
+    hp(d,'antioch',{note:'安条克学派的大本营：看重字面解经和耶稣的人性；阿里乌、金口约翰、聂斯托利都出自这里。'});
+    hp(d,'alexandria',{note:'亚历山大里亚学派的大本营：看重神性合一；381年座次被君士坦丁堡压过，满心不服。'});
+    hp(d,'constantinople',{left:1,note:'381年排到罗马之后、亚历山大里亚之前；常从安条克请人来当主教。'});
+    hl(d,'安条克一派：神人两截','Antiochene: two natures apart',34.1,38.8,HC.faith);
+    hl(d,'亚历山大一派：合成一性','Alexandrian: one united nature',29.8,26.8,HC.rome);
+   },[['fill',HC.athens,'帝国东部（概略）'],['dot','#2a2018','两派神学与三座大城']]),
   hs('428—435年','以弗所','这回争耶稣的神性与人性：聂斯托利不许叫马利亚“生神者”，西里尔拉上罗马抢先开会革了他；聂斯托利派东走波斯，传到长安。',[[23.5,24.0],[42.5,52.5]],d=>{
     ha(d,'eEast395',HC.athens,{fillOpacity:.1});
     hp(d,'ephesus',{kind:'battle',note:'431年6月第三次大公会议在此召开；本城主教带着五十多位主教站在西里尔一边。'});
@@ -1647,7 +1652,10 @@ const HISTORY_ENTRIES=[
     hp(d,'kharga',{note:'435年聂斯托利被流放到这里，约451年死去。'});
     hp(d,'ctesiphon',{note:'波斯境内教会的中心；不认以弗所决定的人在波斯落脚，再往东传。'});
     hr(d,[[33.1,44.6],[34.5,48.5],[36.0,51.5]],HC.faith);hl(d,'635年传到长安（景教）','To Chang’an, 635',37.4,48.6,HC.faith);
-   },[['fill',HC.athens,'帝国东部（概略）'],['dline',HC.faith,'聂斯托利派东传（方向示意）'],['dot',HC.war,'会场'],['dot','#2a2018','对垒的几座城与流放地']]),
+   },[['fill',HC.athens,'帝国东部（概略）'],['dline',HC.faith,'聂斯托利派东传（方向示意）'],['dot',HC.war,'会场'],['dot','#2a2018','对垒的几座城与流放地']])
+ ]},
+{id:'history-faith-two-cities',ch:6,title:'第四次大公会议：卡尔西顿',short:'卡尔西顿会议',en:'The Fourth Ecumenical Council: Chalcedon',period:'440—451年',c:HC.faith,
+ scenes:[
   hs('440—452年','教宗','利奥一世自称彼得的继承人，皇帝下诏要西方主教都听罗马的；他不认君士坦丁堡与罗马同等，又出城见阿提拉。',[[36.0,-3.0],[48.0,31.0]],d=>{
     ha(d,'eWest395',HC.rome,{fillOpacity:.14});ha(d,'eEast395',HC.athens,{fillOpacity:.1});
     hp(d,'rome',{note:'440年起利奥一世任罗马主教。'});
@@ -1787,11 +1795,10 @@ const HISTORY_ERAS=[
  {id:'rome-fall',name:'罗马：共和崩解',en:'The Fall of the Republic',date:'前133—前27年',c:HC.rome,items:[['history-rome-gracchi'],['history-rome-marius'],['history-rome-social'],['history-rome-sulla'],['history-rome-pompey'],['history-rome-triumvirate'],['history-rome-caesar'],['history-rome-augustus']]},
  {id:'empire-principate',name:'罗马帝国：元首制',en:'The Principate',date:'前27—192年',c:HC.rome,items:[['history-empire-principate'],['history-empire-julio-claudian'],['history-empire-flavian'],['history-empire-antonine']]},
  {id:'empire-crisis',name:'罗马帝国：危机与重铸',en:'Crisis and Reinvention',date:'193—363年',c:HC.rome,items:[['history-empire-crisis'],['history-empire-dominate'],['history-empire-constantine']]},
- {id:'empire-west',name:'罗马帝国：西部的终结',en:'The End in the West',date:'364—476年',c:HC.rome,items:[['history-empire-theodosius'],['history-empire-west-fall']]},
- {id:'empire-east',name:'罗马帝国：东部撑住了',en:'The East Holds',date:'395—450年',c:HC.rome,items:[['history-empire-arcadius'],['history-empire-theodosius-ii']]},
+ {id:'empire-west',name:'罗马帝国：分治与西部的终结',en:'Division and the End in the West',date:'364—476年',c:HC.rome,items:[['history-empire-valentinian'],['history-empire-theodosius'],['history-empire-west-fall']]},
  {id:'faith-israel',name:'古代以色列',en:'Ancient Israel',date:'约前1400—前538年',c:HC.faith,items:[['history-faith-israel'],['history-faith-first-temple']]},
  {id:'faith-temple',name:'第二圣殿时期',en:'The Second Temple',date:'前538—公元73年',c:HC.faith,items:[['history-faith-second-temple'],['history-faith-jesus']]},
- {id:'faith-church',name:'早期教会',en:'The Early Church',date:'73—451年',c:HC.faith,items:[['history-faith-church'],['history-faith-empire-church'],['history-faith-councils'],['history-faith-two-cities']]},
+ {id:'faith-church',name:'早期教会',en:'The Early Church',date:'73—451年',c:HC.faith,items:[['history-faith-church'],['history-faith-empire-church'],['history-faith-councils'],['history-faith-ephesus'],['history-faith-two-cities']]},
  {id:'china-early',name:'先秦：三代与春秋战国',en:'Pre-Imperial China',date:'约前7000—前221年',c:HC.china,items:[['history-china-neolithic'],['history-china-bronze'],['history-china-western-zhou'],['history-china-spring-autumn'],['history-china-warring-states']]},
  {id:'china-qin-han',name:'秦汉帝国',en:'Qin and Han Empires',date:'前221—公元189年',c:HC.china,items:[['history-china-qin'],['history-china-western-han'],['history-china-eastern-han']]},
  {id:'china-six-dynasties',name:'三国两晋南北朝',en:'Six Dynasties',date:'190—476年',c:HC.china,items:[['history-china-three-kingdoms'],['history-china-sixteen-kingdoms']]}
@@ -1802,7 +1809,7 @@ const HISTORY_BRANCHES=[
  {id:'trunk',name:'希腊主线',en:'Greek world',lane:2},
  // The 基督教 line: from the Hebrews' nomadic origins (the old Levant branch) to the church of the empire; on its own lane, right of the West.
  {id:'faith',name:'基督教',en:'Judaism & Christianity',lane:5,parent:'trunk',from:-1400,to:451,c:HC.faith},
- {id:'rome',name:'罗马',en:'Rome',lane:3,parent:'trunk',from:-1000,to:450,c:HC.rome},
+ {id:'rome',name:'罗马',en:'Rome',lane:3,parent:'trunk',from:-1000,to:457,c:HC.rome},
  {id:'ptolemaic',name:'托勒密埃及',en:'Ptolemaic Egypt',lane:1,parent:'trunk',from:-305,to:-30,c:HC.mino},
  {id:'seleucid',name:'塞琉古与东方',en:'Seleucids & the East',lane:0,parent:'trunk',from:-305,to:-64,c:HC.parthia},
  // 395: the empire splits for good; the West forks off and ends in 476, the Roman line itself goes on in the East.
@@ -1861,18 +1868,18 @@ const TREE_ROWS={
  'history-empire-crisis/0':['rome',193,284],
  'history-empire-dominate/0':['rome',284,305],
  'history-empire-constantine/0':['rome',305,363],
- 'history-empire-theodosius/0':['rome',364,395],
+ 'history-empire-valentinian/0':['rome',364,378],
+ 'history-empire-theodosius/0':['rome',379,457],
  'history-empire-west-fall/0':['west',395,476],
- 'history-empire-arcadius/0':['rome',395,408],
- 'history-empire-theodosius-ii/0':['rome',408,450],
  'history-faith-israel/0':['faith',-1400,-1200],
  'history-faith-first-temple/0':['faith',-1200,-538],
  'history-faith-second-temple/0':['faith',-538,-4],
  'history-faith-jesus/0':['faith',-4,73],
  'history-faith-church/0':['faith',73,311],
- 'history-faith-empire-church/0':['faith',312,394],
- 'history-faith-councils/0':['faith',318,381],
- 'history-faith-two-cities/0':['faith',410,451],
+ 'history-faith-empire-church/0':['faith',312,325],
+ 'history-faith-councils/0':['faith',327,394],
+ 'history-faith-ephesus/0':['faith',410,435],
+ 'history-faith-two-cities/0':['faith',440,451],
  'history-china-neolithic/0':['china',-7000,-1900],
  'history-china-bronze/0':['china',-1850,-1046],
  'history-china-western-zhou/0':['china',-1046,-771],
@@ -1885,5 +1892,5 @@ const TREE_ROWS={
  'history-china-sixteen-kingdoms/0':['china',317,476]
 };
 // Topics still to be written grow the tree as dashed shoots.
-const TREE_FUTURE=[['rome',450,'东罗马','450年起 · 马尔西安以后 · 到1453年 · 待展开'],['west',476,'中世纪西欧','476年起 · 待展开'],['faith',451,'中世纪教会','451年起 · 待展开'],['china',476,'隋唐','476年起 · 南北朝至隋唐 · 待展开']];
+const TREE_FUTURE=[['rome',457,'东罗马','457年起 · 利奥一世以后 · 到1453年 · 待展开'],['west',476,'中世纪西欧','476年起 · 待展开'],['faith',451,'中世纪教会','451年起 · 待展开'],['china',476,'隋唐','476年起 · 南北朝至隋唐 · 待展开']];
 function historyEra(e,scene=0){return HISTORY_ERAS.find(era=>era.items.some(([id,from=0,to=Infinity])=>id===e.id&&scene>=from&&scene<=to));}
