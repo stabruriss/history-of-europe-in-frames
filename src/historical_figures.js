@@ -821,6 +821,123 @@ const FIGURE_PLACES={
       44.58
     ],
     "note": "安息和萨珊的王都，在底格里斯河东岸。"
+  },
+  "chalcedon": {
+    "name": "卡尔西顿",
+    "en": "Chalcedon",
+    "ll": [
+      40.984,
+      29.027
+    ],
+    "note": "博斯普鲁斯海峡东岸，与君士坦丁堡隔水相望。"
+  },
+  "edessa": {
+    "name": "埃德萨",
+    "en": "Edessa",
+    "ll": [
+      37.16,
+      38.79
+    ],
+    "note": "上美索不达米亚的叙利亚语大城，今土耳其尚勒乌尔法。"
+  },
+  "i_amorion": {
+    "name": "阿莫里翁",
+    "en": "Amorion",
+    "ll": [
+      39.02,
+      31.29
+    ],
+    "note": "安纳托利亚军区的重镇；741年君士坦丁五世逃到这里。"
+  },
+  "v_dara": {
+    "name": "达拉",
+    "en": "Dara",
+    "ll": [
+      37.18,
+      40.95
+    ],
+    "note": "罗马在两河边境的要塞，正对波斯的尼西比斯。"
+  },
+  "v_tiflis": {
+    "name": "第比利斯",
+    "en": "Tiflis",
+    "ll": [
+      41.69,
+      44.8
+    ],
+    "note": "格鲁吉亚（伊比利亚）的中心城市，今格鲁吉亚首都。"
+  },
+  "v_arabissus": {
+    "name": "阿拉比苏斯",
+    "en": "Arabissus",
+    "ll": [
+      38.205,
+      36.92
+    ],
+    "note": "卡帕多西亚小城，莫里斯的出生地，今土耳其阿夫辛。"
+  },
+  "w_metz": {
+    "name": "梅斯",
+    "en": "Metz",
+    "ll": [
+      49.12,
+      6.177
+    ],
+    "note": "奥斯特拉西亚的都城，布伦希尔德在此成婚、掌权。"
+  },
+  "w_saintdenis": {
+    "name": "圣但尼",
+    "en": "Saint-Denis",
+    "ll": [
+      48.936,
+      2.36
+    ],
+    "note": "巴黎北郊的修道院，法兰克国王的葬地；丕平在此受教育、受教宗涂油。"
+  },
+  "w_soissons": {
+    "name": "苏瓦松",
+    "en": "Soissons",
+    "ll": [
+      49.381,
+      3.323
+    ],
+    "note": "751年丕平在此被推举为王、涂油。"
+  },
+  "w_ponthion": {
+    "name": "蓬蒂翁",
+    "en": "Ponthion",
+    "ll": [
+      48.765,
+      4.73
+    ],
+    "note": "马恩河畔的王室庄园；754年丕平在此迎接翻山而来的教宗。"
+  },
+  "w_aachen": {
+    "name": "亚琛",
+    "en": "Aachen",
+    "ll": [
+      50.776,
+      6.084
+    ],
+    "note": "有温泉的王宫，查理曼晚年常住，死后葬在宫中礼拜堂。"
+  },
+  "merv": {
+    "name": "木鹿",
+    "en": "Merv",
+    "ll": [
+      37.66,
+      62.19
+    ],
+    "note": "呼罗珊的绿洲大城；651年伊嗣俟三世死在城外。"
+  },
+  "changan": {
+    "name": "长安",
+    "en": "Chang’an",
+    "ll": [
+      34.31,
+      108.9
+    ],
+    "note": "隋唐的都城，今陕西西安。"
   }
 };
 const FIGURES={
@@ -3114,6 +3231,378 @@ const FIGURES={
         "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Procopius/Wars/2I*.html"
       ]
     ]
+  },
+  "justin-ii": {
+    "name": "查士丁二世",
+    "en": "Justin II",
+    "life": "约520—578年",
+    "relation": "东罗马皇帝（565—578年）· 查士丁尼的外甥",
+    "place": "constantinople",
+    "bio": "查士丁尼的妹妹维吉兰提娅之子，娶了狄奥多拉的外甥女索菲娅。即位时许诺还清国债，停了给阿瓦尔人和波斯的钱，结果两头开战。573年达拉失守后精神失常，此后的朝政由皇后和提比略掌管。",
+    "sources": [
+      [
+        "查士丁二世（英文资料）",
+        "https://en.wikipedia.org/wiki/Justin_II"
+      ]
+    ]
+  },
+  "tiberius-ii": {
+    "name": "提比略二世",
+    "en": "Tiberius II Constantine",
+    "life": "约535—582年",
+    "relation": "东罗马皇帝（578—582年）· 查士丁二世的养子",
+    "place": "constantinople",
+    "bio": "由牧首尤提基乌斯荐给查士丁当文书，后任禁卫统领；574年被立为恺撒，578年即位。出手阔绰，减税散金，花钱分化伦巴第人；把国库花空后停付阿瓦尔人岁赐，丢了西尔米乌姆。临终立女婿莫里斯。",
+    "sources": [
+      [
+        "提比略二世（英文资料）",
+        "https://en.wikipedia.org/wiki/Tiberius_II_Constantine"
+      ]
+    ]
+  },
+  "maurice": {
+    "name": "莫里斯",
+    "en": "Maurice",
+    "life": "539—602年",
+    "relation": "东罗马皇帝（582—602年）· 提比略二世的女婿",
+    "place": "constantinople",
+    "bio": "生在卡帕多西亚的阿拉比苏斯，母语希腊语。帮库思老二世复位，换来亚美尼亚西部；设意大利、非洲两个总督区；传世兵书《战略》托在他名下。理财极省，减饷、不赎俘虏，602年被哗变的军队推翻，是查士丁尼王朝最后一位皇帝。",
+    "sources": [
+      [
+        "莫里斯（英文资料）",
+        "https://en.wikipedia.org/wiki/Maurice_(emperor)"
+      ]
+    ]
+  },
+  "phocas": {
+    "name": "福卡斯",
+    "en": "Phocas",
+    "life": "约547—610年",
+    "relation": "东罗马皇帝（602—610年）· 推翻莫里斯的百夫长",
+    "place": "constantinople",
+    "bio": "色雷斯多瑙河军中的百夫长，602年被哗变的士兵推举进京，杀了莫里斯一家称帝。在位八年靠清洗坐稳，东线连连失守；对罗马教会出手大方。他是头一个在钱币上留胡子的皇帝，此后的皇帝几乎都留胡子。610年被希拉克略斩首。",
+    "sources": [
+      [
+        "福卡斯（英文资料）",
+        "https://en.wikipedia.org/wiki/Phocas"
+      ]
+    ]
+  },
+  "heraclius": {
+    "name": "希拉克略",
+    "en": "Heraclius",
+    "life": "约575—641年",
+    "relation": "拜占庭皇帝（610—641年）· 非洲总督老希拉克略之子",
+    "place": "constantinople",
+    "bio": "610年从迦太基带舰队推翻福卡斯。在位三十一年，先丢了叙利亚、埃及，又亲征打进波斯腹地，628年逼和波斯；随后叙利亚、埃及又归了阿拉伯人。在他手里，帝国的官方语言由拉丁语换成希腊语，皇帝改称巴西琉斯。",
+    "sources": [
+      [
+        "希拉克略（英文资料）",
+        "https://en.wikipedia.org/wiki/Heraclius"
+      ]
+    ]
+  },
+  "jacob-baradaeus": {
+    "name": "雅各·巴拉代",
+    "en": "Jacob Baradaeus",
+    "life": "约500—578年",
+    "relation": "埃德萨主教（543—578年）· 一性论派叙利亚教会的组织者",
+    "place": "edessa",
+    "bio": "生在叙利亚北部，在修道院长大，约527年进京，在君士坦丁堡的修道院住了十五年，得到皇后狄奥多拉和加萨尼王哈里斯的信任。543年被祝圣为主教后乔装四处奔走，为一性论派另立了一整套主教，叙利亚正教会因此又叫“雅各派”。",
+    "sources": [
+      [
+        "雅各·巴拉代（英文资料）",
+        "https://en.wikipedia.org/wiki/Jacob_Baradaeus"
+      ]
+    ]
+  },
+  "vigilius": {
+    "name": "维吉利乌斯",
+    "en": "Pope Vigilius",
+    "life": "?—555年",
+    "relation": "罗马教宗（537—555年）· 由贝利萨留扶上位",
+    "place": "rome",
+    "bio": "罗马贵族子弟，曾任教宗驻君士坦丁堡的使节，与皇后狄奥多拉往来。537年贝利萨留废了教宗西尔维留，扶他继任。545年被押往新都，在三章案上反复多次，最终签字，回国途中死在西西里。",
+    "sources": [
+      [
+        "维吉利乌斯（英文资料）",
+        "https://en.wikipedia.org/wiki/Pope_Vigilius"
+      ]
+    ]
+  },
+  "sergius-cp": {
+    "name": "塞尔吉乌斯一世",
+    "en": "Sergius I of Constantinople",
+    "life": "?—638年",
+    "relation": "君士坦丁堡牧首（610—638年）· 希拉克略的牧首",
+    "place": "constantinople",
+    "bio": "父母是叙利亚的一性论信徒，原在圣索菲亚做执事、管济贫。610年为希拉克略加冕、主婚；618年劝住要迁都迦太基的皇帝，626年与大臣博努斯守城；提出“一个能力”“一个意志”的折中，681年被会议革除。",
+    "sources": [
+      [
+        "君士坦丁堡的塞尔吉乌斯一世（英文资料）",
+        "https://en.wikipedia.org/wiki/Sergius_I_of_Constantinople"
+      ]
+    ]
+  },
+  "maximus-confessor": {
+    "name": "马克西姆斯",
+    "en": "Maximus the Confessor",
+    "life": "约580—662年",
+    "relation": "修士、神学家 · 两个意志说的主将",
+    "place": "carthage",
+    "bio": "早年在希拉克略的宫中任职，后来出家；波斯人打进小亚细亚时逃到迦太基，跟随索弗罗尼乌斯。他主张基督有神、人两个意志，645年辩倒皮洛士，653年在罗马被捕，662年被割舌断手，流放高加索而死；681年会议定的正是他的主张。",
+    "sources": [
+      [
+        "马克西姆斯（英文资料）",
+        "https://en.wikipedia.org/wiki/Maximus_the_Confessor"
+      ]
+    ]
+  },
+  "constantine-v": {
+    "name": "君士坦丁五世",
+    "en": "Constantine V",
+    "life": "718—775年",
+    "relation": "拜占庭皇帝（741—775年）· 利奥三世的儿子",
+    "place": "constantinople",
+    "bio": "利奥三世的独子，两岁就被立为共治皇帝，娶了可萨汗的女儿。他九次出征保加尔，亲自写过十几篇反圣像的论文，把京城的近卫团练成职业兵，死后给儿子留下满满的国库。他死在征保加尔的路上；圣像派得胜后，他的遗骨被移出了皇陵。",
+    "sources": [
+      [
+        "君士坦丁五世（英文资料）",
+        "https://en.wikipedia.org/wiki/Constantine_V"
+      ]
+    ]
+  },
+  "irene-athens": {
+    "name": "伊琳娜",
+    "en": "Irene of Athens",
+    "life": "约752—803年",
+    "relation": "利奥四世的皇后 · 君士坦丁六世的母亲，797—802年独自称帝",
+    "place": "constantinople",
+    "bio": "雅典萨兰塔佩霍斯家族的孤女，769年嫁给君士坦丁五世的儿子利奥。丈夫死后她摄政、恢复圣像，797年弄瞎儿子，成了罗马帝国头一个独自当政的女人；文书和钱币上多称“女皇”，偶尔自称“皇帝”。",
+    "sources": [
+      [
+        "伊琳娜（英文资料）",
+        "https://en.wikipedia.org/wiki/Irene_of_Athens"
+      ]
+    ]
+  },
+  "shahrbaraz": {
+    "name": "沙赫巴拉兹",
+    "en": "Shahrbaraz",
+    "life": "？—630年",
+    "relation": "萨珊大将，米赫兰家族 · 630年篡位称王四十天",
+    "place": "alexandria",
+    "bio": "“沙赫巴拉兹”是称号，意为“国家的野猪”。他出自安息旧族米赫兰家，娶了库思老二世的姐妹，先后攻下耶路撒冷和亚历山大里亚；后与库思老翻脸，按兵不动。630年夺了王位，四十天后被杀。儿子尼基塔斯信基督教，后来做了罗马的将领。",
+    "sources": [
+      [
+        "沙赫巴拉兹（英文资料）",
+        "https://en.wikipedia.org/wiki/Shahrbaraz"
+      ],
+      [
+        "塞贝奥斯《亚美尼亚史》（第24、28章，贝德罗西安英译）",
+        "https://archive.org/details/SebeosHistoryOfArmenia"
+      ]
+    ]
+  },
+  "bonus-magister": {
+    "name": "博努斯",
+    "en": "Bonus (patrician)",
+    "life": "？—627年",
+    "relation": "拜占庭贵族、大臣 · 622—626年留守京城",
+    "place": "constantinople",
+    "bio": "希拉克略的亲信，诗人乔治·皮西迪亚称他是皇帝的“战友”。皇帝亲征那几年，他和牧首塞尔吉乌斯一同辅佐少年皇子、主持京城，史料多称他“大臣”。626年阿瓦尔人围城，由他统兵守御。他在城里修过一座大蓄水池，627年5月去世。",
+    "sources": [
+      [
+        "博努斯（英文资料）",
+        "https://en.wikipedia.org/wiki/Bonus_(patrician)"
+      ],
+      [
+        "《复活节编年史》（626年守城、627年5月下葬，丁多夫校本）",
+        "https://archive.org/details/chroniconpascha01dindgoog"
+      ]
+    ]
+  },
+  "brunhild": {
+    "name": "布伦希尔德",
+    "en": "Brunhild (Brunhilda)",
+    "life": "约543—613年",
+    "relation": "奥斯特拉西亚王后 · 西吉贝尔特一世的妻子",
+    "place": "w_metz",
+    "bio": "西哥特王阿塔纳吉尔德的小女儿，在西班牙长大，嫁到法兰克时由阿里乌派改信天主教。丈夫遇刺后，她先后替儿子、孙子、曾孙掌权，修路建堡、整顿财政，和教宗格雷戈里一世书信往来，也和贵族、主教一再交恶。",
+    "sources": [
+      [
+        "布伦希尔德（英文资料）",
+        "https://en.wikipedia.org/wiki/Brunhilda_of_Austrasia"
+      ]
+    ]
+  },
+  "charles-martel": {
+    "name": "查理·马特",
+    "en": "Charles Martel",
+    "life": "约688—741年",
+    "relation": "法兰克宫相 · 丕平二世的儿子、丕平三世的父亲",
+    "place": "w_saintdenis",
+    "bio": "丕平二世和情妇阿尔派达的儿子。父亲死后被继母关押，逃出来打败继母和纽斯特里亚人，718年起掌握全法兰克。他几乎年年出征，打弗里西亚人、萨克森人、巴伐利亚人、阿基坦和普罗旺斯；“马特”（铁锤）是后来编年史给的外号。",
+    "sources": [
+      [
+        "查理·马特（英文资料）",
+        "https://en.wikipedia.org/wiki/Charles_Martel"
+      ]
+    ]
+  },
+  "pepin-short": {
+    "name": "丕平三世（矮子丕平）",
+    "en": "Pepin the Short",
+    "life": "约714—768年",
+    "relation": "法兰克王（751—768年）· 查理·马特的儿子、查理曼的父亲",
+    "place": "w_saintdenis",
+    "bio": "查理·马特的次子，在圣但尼修道院跟修士读过书。741年和哥哥卡洛曼分任宫相，747年哥哥出家后独掌大权，751年废末代墨洛温王自立。他两次出兵意大利替教宗打伦巴第人，又从阿拉伯人手里收回纳博讷，768年死后葬在圣但尼。",
+    "sources": [
+      [
+        "矮子丕平（英文资料）",
+        "https://en.wikipedia.org/wiki/Pepin_the_Short"
+      ]
+    ]
+  },
+  "gregory-great": {
+    "name": "格雷戈里一世（大格雷戈里）",
+    "en": "Pope Gregory I (the Great)",
+    "life": "约540—604年",
+    "relation": "教宗（590—604年）",
+    "place": "rome",
+    "bio": "罗马元老之子，三十出头任罗马城长官。父亲死后，他把罗马的家宅改成修道院，自己当了修士；后被教宗派到君士坦丁堡当了六年驻京代表。590年当选教宗。五到十一世纪的教宗里，只有他的书信和著作留存得足以成套。",
+    "sources": [
+      [
+        "格雷戈里一世（英文资料）",
+        "https://en.wikipedia.org/wiki/Pope_Gregory_I"
+      ]
+    ]
+  },
+  "charlemagne": {
+    "name": "查理曼（查理大帝）",
+    "en": "Charlemagne",
+    "life": "748—814年",
+    "relation": "法兰克王（768—814年）、伦巴第王、皇帝（800—814年）· 丕平三世的儿子",
+    "place": "w_aachen",
+    "bio": "丕平三世的长子。据艾因哈德，他身高是自己脚长的七倍，拉丁语说得和母语一样好，希腊语听得懂、说不好；晚年在枕头下放写字板练字，起步太晚，终究没学成。他几乎年年出征，晚年住在亚琛，常邀上百人一起泡温泉。",
+    "sources": [
+      [
+        "查理曼（英文资料）",
+        "https://en.wikipedia.org/wiki/Charlemagne"
+      ],
+      [
+        "艾因哈德《查理曼传》（第22—25节 相貌、温泉、学问）",
+        "https://sourcebooks.fordham.edu/basis/einhard.asp"
+      ]
+    ]
+  },
+  "pope-leo-iii": {
+    "name": "利奥三世",
+    "en": "Pope Leo III",
+    "life": "生年不详—816年",
+    "relation": "教宗（795—816年）· 给查理曼加冕的人",
+    "place": "rome",
+    "bio": "罗马本地人，不是贵族出身，前任教宗哈德良任他为圣苏珊娜堂的枢机司铎。795年哈德良下葬当天他就被选为教宗，随即把圣彼得墓的钥匙和罗马城的旗帜送给查理，表示认他做保护人。他在位二十多年，816年去世。",
+    "sources": [
+      [
+        "教宗利奥三世（英文资料）",
+        "https://en.wikipedia.org/wiki/Pope_Leo_III"
+      ]
+    ]
+  },
+  "bahram-chobin": {
+    "name": "巴赫拉姆·楚宾",
+    "en": "Bahram Chobin",
+    "life": "？—591年",
+    "relation": "萨珊大将，米赫兰家族 · 590—591年自立为王（巴赫拉姆六世）",
+    "place": "bactra",
+    "bio": "安息旧族米赫兰家出身，当过雷伊的总督，绰号“楚宾”意为“标枪”，因为人又高又瘦。他在罗马战线立过功，588年大败突厥。称王失败后投奔突厥，还替可汗平过内乱，最后被库思老收买突厥王族刺杀。后来中亚的萨曼王朝自称是他的后代。",
+    "sources": [
+      [
+        "巴赫拉姆·楚宾（英文资料）",
+        "https://en.wikipedia.org/wiki/Bahram_Chobin"
+      ],
+      [
+        "塞贝奥斯《亚美尼亚史》（第2章，贝德罗西安英译）",
+        "https://archive.org/details/SebeosHistoryOfArmenia"
+      ]
+    ]
+  },
+  "khosrow-ii": {
+    "name": "库思老二世",
+    "en": "Khosrow II",
+    "life": "约570—628年",
+    "relation": "萨珊国王（590—628年）· 霍尔木兹四世之子、库思老一世之孙",
+    "place": "ctesiphon",
+    "bio": "霍尔木兹四世之子，母亲出自安息旧族伊斯帕赫布丹家。即位前当过高加索阿尔巴尼亚的总督，把格鲁吉亚并成波斯的行省。他号称“得胜者”，娶基督徒希琳为后，偏向一性论派；打到埃及和君士坦丁堡对岸，最后被儿子推翻处死。",
+    "sources": [
+      [
+        "库思老二世（英文资料）",
+        "https://en.wikipedia.org/wiki/Khosrow_II"
+      ],
+      [
+        "巴拉祖里《列国征服记》下册（默戈腾英译：熏香的账本）",
+        "https://archive.org/details/originsoftheisla032520mbp"
+      ]
+    ]
+  },
+  "yazdegerd-iii": {
+    "name": "伊嗣俟三世",
+    "en": "Yazdegerd III",
+    "life": "约624—651年",
+    "relation": "萨珊末代国王（632—651年）· 库思老二世之孙",
+    "place": "merv",
+    "bio": "库思老二世之孙，父亲沙赫里亚尔被叔父卡瓦德二世所杀，他躲在伊斯塔赫尔才活下来，八岁被大族抬上王位，实权在鲁斯塔姆等人手里。他几次遣使到长安求援，唐太宗没有出兵。至今琐罗亚斯德教的历法仍从他即位那年起算。",
+    "sources": [
+      [
+        "伊嗣俟三世（英文资料）",
+        "https://en.wikipedia.org/wiki/Yazdegerd_III"
+      ],
+      [
+        "巴拉祖里《列国征服记》上册（希蒂英译：伊嗣俟之死）",
+        "https://archive.org/details/originsofislamic01albauoft"
+      ]
+    ]
+  },
+  "peroz-iii": {
+    "name": "卑路斯三世",
+    "en": "Peroz III",
+    "life": "636—约679年",
+    "relation": "伊嗣俟三世之子 · 唐朝的波斯都督、右武卫将军",
+    "place": "changan",
+    "bio": "伊嗣俟三世之子。父亲死后投奔吐火罗，屡次遣使向唐求援；661年唐在疾陵城设波斯都督府，以他为都督，次年又封他为波斯王。地盘失守后，他在670年代来到长安，授右武卫将军，此后再没回到伊朗。",
+    "sources": [
+      [
+        "卑路斯三世（英文资料）",
+        "https://en.wikipedia.org/wiki/Peroz_III"
+      ],
+      [
+        "《新唐书·西域传下》（波斯）",
+        "https://zh.wikisource.org/wiki/%E6%96%B0%E5%94%90%E6%9B%B8/%E5%8D%B7221%E4%B8%8B"
+      ],
+      [
+        "乾陵（英文资料：684年建成，神道旁有六十一尊外国使臣石像）",
+        "https://en.wikipedia.org/wiki/Qianling_Mausoleum"
+      ]
+    ]
+  },
+  "tang-taizong": {
+    "name": "唐太宗",
+    "en": "Emperor Taizong of Tang",
+    "life": "598—649年",
+    "relation": "唐朝皇帝（626—649年）· 唐高祖李渊次子",
+    "place": "changan",
+    "bio": "名李世民，唐高祖李渊的次子。隋末随父起兵，带兵削平各路割据。626年发动玄武门之变登上皇位，年号贞观。他灭了东突厥，被西北各部尊为“天可汗”；晚年亲征高句丽，没能取胜。",
+    "sources": [
+      [
+        "唐太宗（英文资料）",
+        "https://en.wikipedia.org/wiki/Emperor_Taizong_of_Tang"
+      ],
+      [
+        "《资治通鉴》卷193（天可汗）",
+        "https://zh.wikisource.org/wiki/%E8%B3%87%E6%B2%BB%E9%80%9A%E9%91%91/%E5%8D%B7193"
+      ]
+    ]
   }
 };
 const FIGURE_SCENES={
@@ -4641,6 +5130,290 @@ const FIGURE_SCENES={
       "event": "点名要一位医生",
       "note": "这年两国议定五年停战。库思老的条件除了两千磅黄金，还点名要罗马医生特里布努斯来陪他住一阵：此人从前治好过他的重病。查士丁尼当即把人和钱一起送了过去。",
       "place": "ctesiphon"
+    }
+  ],
+  "history-empire-maurice/1": [
+    {
+      "id": "justin-ii",
+      "when": "574年12月",
+      "event": "别被这身袍子骗了",
+      "note": "据埃瓦格里乌斯所记，查士丁给提比略披上袍服时大声说：别被这身袍服、这场排场迷了眼，我就是被它骗了，才落得这般下场；你要宽厚治国，补我的过错。又指着大臣们说：就是这些人把我弄成这样的。在场的人都哭了。",
+      "place": "constantinople"
+    }
+  ],
+  "history-empire-maurice/2": [
+    {
+      "id": "tiberius-ii",
+      "when": "578年9月",
+      "event": "不娶前朝皇后",
+      "note": "提比略加冕为奥古斯都后，寡居的索菲娅想嫁给他保住权势。他早有妻子伊诺，拒绝了，还把伊诺和孩子接进宫，给她改名阿纳斯塔西娅。索菲娅转而联络一位将军谋废他，事败后只领一份不多的年俸。",
+      "place": "constantinople"
+    }
+  ],
+  "history-empire-maurice/3": [
+    {
+      "id": "maurice",
+      "when": "591年",
+      "event": "收了个波斯儿子",
+      "note": "库思老二世逃到罗马境内，请莫里斯出兵，答应复位后归还达拉、马尔蒂罗波利斯。莫里斯借兵，库思老复位后称他为父，又多割让了亚美尼亚西部大片土地。十一年后莫里斯被杀，库思老以替父报仇为名开战。",
+      "place": "constantinople"
+    }
+  ],
+  "history-empire-heraclius/0": [
+    {
+      "id": "phocas",
+      "when": "约600年",
+      "event": "被揪了胡子",
+      "note": "多瑙河的士兵不满将领科门提奥卢斯，推百夫长福卡斯进京向莫里斯告状。他在御前同皇帝争吵，一位贵族气得当场揪他的胡子。两年后，正是这支军队拥他为帝。",
+      "place": "constantinople"
+    }
+  ],
+  "history-empire-heraclius/3": [
+    {
+      "id": "heraclius",
+      "when": "629年3月21日",
+      "event": "在基督里忠信的巴西琉斯",
+      "note": "这天颁布的一道法令里，皇帝的称号不再写拉丁文的恺撒、奥古斯都，只写“在基督里忠信的巴西琉斯”。巴西琉斯本是希腊语的“王”，从前只用来称波斯王；此后拜占庭皇帝用了八百多年。",
+      "place": "constantinople"
+    }
+  ],
+  "history-faith-three-chapters/0": [
+    {
+      "id": "theodora",
+      "when": "约535—548年",
+      "event": "宫里藏着的牧首",
+      "note": "536年牧首安提姆被教宗和皇帝一同革职，从此不见了踪影。他其实就藏在狄奥多拉的寝宫里，一藏十年，直到548年皇后去世，人们才知道他一直在宫中。",
+      "place": "constantinople"
+    }
+  ],
+  "history-faith-three-chapters/1": [
+    {
+      "id": "jacob-baradaeus",
+      "when": "543—578年",
+      "event": "穿破马衣的主教",
+      "note": "朝廷要抓他，他就换上破烂的马衣，装成乞丐，一城一城地走，暗中按立神父和主教。叙利亚语里“破马衣”叫“布尔达阿纳”，“巴拉代”这个外号就是这么来的；他死时，一性论派已经有了自己完整的一套教会。",
+      "place": "edessa"
+    }
+  ],
+  "history-faith-monothelites/0": [
+    {
+      "id": "sergius-cp",
+      "when": "633年",
+      "event": "一个“能力”",
+      "note": "塞尔吉乌斯想出的说法是：基督有神、人两性，可行事只凭一个“能力”。卡尔西顿派听着还是两性，一性论派听着像是一性，亚历山大里亚因此合了一回。耶路撒冷的索弗罗尼乌斯不认，他就改口说一个“意志”，并请教宗霍诺留表态。",
+      "place": "constantinople"
+    }
+  ],
+  "history-faith-monothelites/3": [
+    {
+      "id": "maximus-confessor",
+      "when": "662年",
+      "event": "不能说，也不能写",
+      "note": "第二次受审后，他和两个弟子被割了舌头、砍了右手，叫他们再也不能讲、不能写，然后游街示众，流放到高加索西部的拉齐卡，分开关押。他死于这年8月13日。十九年后，第六次大公会议定的正是他坚持的两个意志。",
+      "place": "constantinople"
+    }
+  ],
+  "history-faith-three-chapters/3": [
+    {
+      "id": "vigilius",
+      "when": "553年5月",
+      "event": "不出席的教宗",
+      "note": "会议在君士坦丁堡开幕，教宗就在城里，却拒不到场，另发一份文件替“三章”里的部分人说话。会议不予理会，照样谴责“三章”，还把他的名字从礼拜时代祷的名单上划掉。半年后他认了会议的决定。",
+      "place": "constantinople"
+    }
+  ],
+  "history-faith-icons/2": [
+    {
+      "id": "constantine-v",
+      "when": "741年6月",
+      "event": "逃到阿莫里翁",
+      "note": "他带兵东征阿拉伯人，姐夫阿塔巴斯多斯在半路突袭，亲随被杀，他逃到阿莫里翁。那里的兵当年归他父亲统领，收留了他；安纳托利亚和小亚细亚西部的军区跟着站到他这边，两年后他打回京城。",
+      "place": "i_amorion"
+    }
+  ],
+  "history-faith-icons/4": [
+    {
+      "id": "irene-athens",
+      "when": "780—790年",
+      "event": "金币上的名字",
+      "note": "她摄政时铸的金币，母子像都在正面，手持宝球的是她，正面也只印她的名字，儿子的名字挪到背面；诏令和效忠誓词里，她排在儿子前头。790年她要军队只向她一人宣誓，亚美尼亚军区不干，各军区跟着倒向了儿子。",
+      "place": "constantinople"
+    }
+  ],
+  "history-faith-icons/5": [
+    {
+      "id": "irene-athens",
+      "when": "802—803年",
+      "event": "岛上纺羊毛",
+      "note": "802年10月，她的财政大臣尼基弗鲁斯带着官员废了她。她先被送到京城外的王子岛，后来流放到莱斯沃斯岛，靠纺羊毛过活，次年8月死在岛上；遗骨后来迁回京城的圣使徒教堂。",
+      "place": "lesbos"
+    }
+  ],
+  "history-war-602/0": [
+    {
+      "id": "khosrow-ii",
+      "when": "604—605年",
+      "event": "最后一次上前线",
+      "note": "据塞贝奥斯所记，库思老亲自围攻达拉，挖地道掏空城基，破城后把城里的人杀尽，掠走财物，因兵马疲惫回了泰西封。此后的仗都交给沙赫巴拉兹、沙欣等大将去打，他自己不再上前线。",
+      "place": "v_dara"
+    }
+  ],
+  "history-war-602/1": [
+    {
+      "id": "shahrbaraz",
+      "when": "614年5月",
+      "event": "按手艺挑人",
+      "note": "破城后杀戮稍停，他让传令官满城喊：躲着的都出来，刀已经收起。据修士安条克所记，从水窖、地洞里爬出来的人被挨个问会什么手艺，懂营造的挑出来押往波斯，其余的关进城外的马米拉水池。",
+      "place": "jerusalem"
+    }
+  ],
+  "history-war-602/2": [
+    {
+      "id": "sergius-cp",
+      "when": "618—619年",
+      "event": "圣坛前的誓言",
+      "note": "饥荒加上瘟疫，皇帝想退回非洲，先装船运走的金银遇上风暴，沉了不少。据牧首尼基弗鲁斯所记，京城百姓想尽办法拦他，牧首把他叫进大教堂，当着圣坛让他起誓，决不离开京城。",
+      "place": "constantinople"
+    }
+  ],
+  "history-war-602/3": [
+    {
+      "id": "bonus-magister",
+      "when": "626年7—8月",
+      "event": "城下的讨价还价",
+      "note": "围城头几天，他一次次派人带礼物去劝可汗退兵。据《复活节编年史》，可汗只回一句：把城让出来，财物留给我，你们带着家小保命走人。据尼基弗鲁斯，他的私生子约翰这时还在可汗手里当人质。",
+      "place": "constantinople"
+    }
+  ],
+  "history-war-602/4": [
+    {
+      "id": "heraclius",
+      "when": "627年",
+      "event": "画像里的公主",
+      "note": "据牧首尼基弗鲁斯所记，突厥首领见了他，下马伏地便拜。他称对方“我的孩子”，摘下自己的冠冕给他戴上，又拿出女儿埃皮法尼娅（又名欧多基娅）的画像说：这是我的女儿、罗马人的奥古斯塔，你帮我打敌人，我就把她嫁给你。",
+      "place": "v_tiflis"
+    },
+    {
+      "id": "khosrow-ii",
+      "when": "628年2月",
+      "event": "马厩是空的",
+      "note": "据塞贝奥斯所记，将领们夜里过桥占了王都旁的一座城，拥立西罗埃，还悄悄牵走了库思老的坐骑。消息传进宫，库思老惊慌中要马，马厩里却没有。他换了装束溜进御花园，躲在密密的灌木丛下，还是被搜了出来。",
+      "place": "ctesiphon"
+    }
+  ],
+  "history-war-602/5": [
+    {
+      "id": "shahrbaraz",
+      "when": "629年",
+      "event": "三封信",
+      "note": "据塔巴里所记，库思老先要他献上弟弟法鲁罕的人头，他不肯；国王转把兵权给了弟弟，附一道杀他的密令。刀已举起，他求写遗嘱，拿出三封信，都是替弟弟求情的。弟弟交还兵权，他随即写信约罗马皇帝各带五十人见面。",
+      "place": "v_arabissus"
+    }
+  ],
+  "history-west-merovingians/1": [
+    {
+      "id": "brunhild",
+      "when": "613年",
+      "event": "被自家贵族交了出去",
+      "note": "她替孙子掌权时，扶起的宫相被不愿打仗的士兵杀死，她就把下令的公爵抓来处死。613年两国宫相和丕平、梅斯主教阿努尔夫等贵族一起倒向克洛泰尔二世；后来篡位的加洛林家，正是丕平和阿努尔夫的后人。",
+      "place": "w_metz"
+    }
+  ],
+  "history-west-merovingians/3": [
+    {
+      "id": "charles-martel",
+      "when": "737—741年",
+      "event": "没有国王的宫相",
+      "note": "737年国王死后，他不立新王，也没人拥立，自己照旧只称宫相、“法兰克人的公爵”。去世前一年，他像国王一样把国家分给两个儿子；741年死后葬进圣但尼修道院，跟墨洛温的国王们葬在一处。",
+      "place": "w_saintdenis"
+    }
+  ],
+  "history-west-merovingians/4": [
+    {
+      "id": "pepin-short",
+      "when": "751年",
+      "event": "受膏称王",
+      "note": "法兰克贵族按老规矩在苏瓦松推他为王，又给他抹了圣油；据说是爱尔兰修士维尔吉利乌斯翻出一部爱尔兰教会法集，劝他受膏。墨洛温王靠血统和长发，他多了教会给的名分；754年教宗又给他父子涂了一回，不许法兰克人另立别家。",
+      "place": "w_soissons"
+    }
+  ],
+  "history-west-lombards/2": [
+    {
+      "id": "gregory-great",
+      "when": "590年",
+      "event": "不想当的教宗",
+      "note": "罗马人推他当教宗，他写信请皇帝莫里斯不要批准，信却被罗马城的长官截了下来，皇帝的批文照样到了。他在任头一年的信里满是诉苦：担子太重，想念修道院里的清静日子。",
+      "place": "rome"
+    }
+  ],
+  "history-west-lombards/4": [
+    {
+      "id": "pepin-short",
+      "when": "754年1月",
+      "event": "蓬蒂翁的见面",
+      "note": "教宗司提反二世翻过大圣伯纳德山口来到蓬蒂翁。丕平下马替教宗牵马走了一程；教宗则披麻蒙灰，俯伏在国王面前，求他替圣彼得和罗马人出头。半年后，教宗在圣但尼给丕平父子涂油。",
+      "place": "w_ponthion"
+    }
+  ],
+  "history-west-charlemagne/4": [
+    {
+      "id": "pope-leo-iii",
+      "when": "799—800年",
+      "event": "游行路上的伏击",
+      "note": "前任教宗哈德良的侄子们看不起出身平常的他。大游行那天，一伙人在路上把他打翻在地，要割他的舌头、挖他的眼睛，他昏死过去，被法兰克使节救走。仇家又告他通奸、发伪誓；800年12月23日，他当众手捧福音书发誓自证清白。",
+      "place": "rome"
+    },
+    {
+      "id": "charlemagne",
+      "when": "801年起",
+      "event": "“治理罗马帝国的皇帝”",
+      "note": "加冕后，他的公文开头改成：“查理，至尊的奥古斯都，上帝加冕的伟大而和平的皇帝，治理罗马帝国，蒙上帝怜悯为法兰克人和伦巴第人的王。”罗马人喊的是“罗马人的皇帝”，他自己从不这么写。",
+      "place": "w_aachen"
+    }
+  ],
+  "history-persia-khosrow-ii/0": [
+    {
+      "id": "bahram-chobin",
+      "when": "589年",
+      "event": "可汗的金宝座",
+      "note": "他攻进巴尔赫，缴获突厥可汗的金库和金宝座。据塞贝奥斯，他只把王权信物等一小份送进宫，其余按功分给士兵。霍尔木兹表面嘉奖来使，心里冒火：饭是丰盛，可攒了那么多财宝，只送来这一点，不成体统。",
+      "place": "bactra"
+    }
+  ],
+  "history-persia-khosrow-ii/2": [
+    {
+      "id": "khosrow-ii",
+      "when": "591—628年间",
+      "event": "熏香的账本",
+      "note": "萨珊的规矩：管税的官每年把一年的收入、开支和库存写在羊皮纸上，念给国王听，国王盖印批准。据巴拉祖里引伊本·穆加法，库思老二世嫌羊皮纸有膻味，下令账本一律改用番红花、玫瑰水熏过的羊皮纸。",
+      "place": "ctesiphon"
+    }
+  ],
+  "history-arab-conquest/5": [
+    {
+      "id": "yazdegerd-iii",
+      "when": "651年",
+      "event": "“你不过是我的奴仆”",
+      "note": "据巴拉祖里，他逃到木鹿，总督和嚈哒首领尼扎克殷勤款待。尼扎克来信求娶他的女儿，他回话：你不过是我的一个奴仆，也配？又命总督交代收了多少钱。两人随即合谋除掉他。",
+      "place": "merv"
+    }
+  ],
+  "history-arab-conquest/6": [
+    {
+      "id": "peroz-iii",
+      "when": "684年",
+      "event": "乾陵前的石像",
+      "note": "唐高宗死后第二年葬进乾陵，神道旁立着六十一尊外国使臣与君长的石像，其中有卑路斯，另一尊据考是他的弟弟。卑路斯这时已经去世，石像替他在唐朝皇帝的陵前站班。",
+      "place": "changan"
+    }
+  ],
+  "history-china-tang/1": [
+    {
+      "id": "tang-taizong",
+      "when": "630年",
+      "event": "天可汗",
+      "note": "据《资治通鉴》，各族君长到长安请他做“天可汗”。他说：我是大唐天子，还要下去兼办可汗的事吗？群臣和四夷齐呼万岁。此后给西北各部首领的诏书，他都署名“天可汗”。",
+      "place": "changan"
     }
   ]
 };

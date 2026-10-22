@@ -93,14 +93,19 @@ function historyTreeRows(){
     const items=era.items.map(([id,from=0,to,label])=>{
       const e=HISTORY_ENTRIES.find(x=>x.id===id),key=id+'/'+from,spec=TREE_ROWS[key];to??=e.scenes.length-1;
       if(!spec)throw new Error('History tree has no place for '+key);
-      const [branch,t,end,period]=spec,b=branches[branch];
-      return {kind:'item',key,id,from,to,era,e,branch:b,t,end,order:order++,c:b.c||TREE_CH_COLORS[e.ch],label:label||e.short,
+      // One event can sit on several lines at once (one set of scenes); the first line is its home.
+      const [branch,t,end,period]=spec,lines=[].concat(branch),b=branches[lines[0]];
+      return {kind:'item',key,id,from,to,era,e,branch:b,lines,t,end,order:order++,c:b.c||TREE_CH_COLORS[e.ch],label:label||e.short,
         period:period||(from===0&&to===e.scenes.length-1?e.period:e.scenes[from].date)};
     });
     const first=items.reduce((a,b)=>b.t<a.t?b:a);
     rows.push({kind:'head',era,t:first.t,order:items[0].order-.5,c:TREE_CH_COLORS[items[0].e.ch]},...items);
   }
   TREE_FUTURE.forEach(([branch,t,label,note],i)=>rows.push({kind:'future',branch:branches[branch],t,label,note,order:1e4+i,c:branches[branch].c}));
+  // A line that stops says why: the event that ends it, and the line it runs into, if any.
+  const lastOn=id=>rows.filter(r=>r.kind==='item'&&r.lines.includes(id)).reduce((a,r)=>!a||r.t>=a.t?r:a,null);
+  TREE_ENDS.forEach(([branch,t,label,note,into],i)=>rows.push({kind:'end',branch:branches[branch],t,label,note,into:into?branches[into]:null,order:2e4+i,
+    c:branches[branch].c||lastOn(branch).c}));
   return rows;
 }
 
@@ -110,11 +115,11 @@ let treeLine='trunk',treeStationList=null,lastStationKey=null;
 const lineCache={},BRANCH=Object.fromEntries(HISTORY_BRANCHES.map(b=>[b.id,b]));
 const lineColor=b=>b.c||TREE_CH_COLORS[1];
 const treeStations=()=>treeStationList??=historyTreeRows().filter(r=>r.kind==='item')
-  .map(r=>({key:r.key,id:r.id,from:r.from,to:r.to,t:r.t,order:r.order,branch:r.branch.id,era:r.era.id}));
+  .map(r=>({key:r.key,id:r.id,from:r.from,to:r.to,t:r.t,order:r.order,branch:r.branch.id,lines:r.lines,era:r.era.id}));
 function lineStations(id){
   if(lineCache[id])return lineCache[id];
   const b=BRANCH[id],before=b.parent?lineStations(b.parent).filter(s=>s.t<b.from):[];
-  return lineCache[id]=[...before,...treeStations().filter(s=>s.branch===id)].sort((a,b)=>a.t-b.t||a.order-b.order);
+  return lineCache[id]=[...before,...treeStations().filter(s=>s.lines.includes(id))].sort((a,b)=>a.t-b.t||a.order-b.order);
 }
 function currentStation(){
   const e=ENTRIES[cur];if(!e||!isHistory(e))return null;
@@ -142,8 +147,9 @@ function renderHistoryTree(host,{sheet=false}={}){
   // Rows sit in time order in the DOM too, so ↑↓ and 上一条/下一条 walk the tree top to bottom.
   for(const r of rows.filter(r=>r.kind==='item').sort((a,b)=>a.t-b.t||a.order-b.order)){
     const b=r.el=document.createElement('button');b.type='button';b.className='chip tree-item';
-    Object.assign(b.dataset,{id:r.id,from:r.from,to:r.to,era:r.era.id,branch:r.branch.id,key:r.key});b.style.setProperty('--c',r.c);
-    const where=r.branch.c&&!['rome','west'].includes(r.branch.id)?r.branch.name:NUMERALS[r.e.ch];
+    Object.assign(b.dataset,{id:r.id,from:r.from,to:r.to,era:r.era.id,branch:r.branch.id,lines:r.lines.join(' '),key:r.key});b.style.setProperty('--c',r.c);
+    // A shared station names all its lines; 罗马 rows name their chapter (Ⅴ 罗马, Ⅵ 帝国); other lines name themselves.
+    const where=r.lines.length>1?r.lines.map(id=>BRANCH[id].name).join('、'):r.branch.c&&r.branch.id!=='rome'?r.branch.name:NUMERALS[r.e.ch];
     b.innerHTML=`<span>${r.label}</span><small><i>${where} · </i>${r.period}</small>`;
     b.title=HISTORY_CH[r.e.ch]+' · '+r.e.title;b.setAttribute('aria-label',`${b.title} · ${r.era.name} · ${r.period}`);
     b.onclick=()=>{go(r.id,{scene:r.from});if(sheet)closeTreeSheet(false);};
@@ -151,6 +157,10 @@ function renderHistoryTree(host,{sheet=false}={}){
   }
   for(const r of rows.filter(r=>r.kind==='future')){
     r.el=document.createElement('div');r.el.className='tree-future era-future';r.el.dataset.branch=r.branch.id;r.el.style.setProperty('--c',r.c);
+    r.el.innerHTML=`<b>${r.label}</b><small>${r.note}</small>`;tree.appendChild(r.el);
+  }
+  for(const r of rows.filter(r=>r.kind==='end')){
+    r.el=document.createElement('div');r.el.className='tree-end';r.el.dataset.branch=r.branch.id;r.el.style.setProperty('--c',r.c);
     r.el.innerHTML=`<b>${r.label}</b><small>${r.note}</small>`;tree.appendChild(r.el);
   }
   // Branch names run along their branches in the wide view.
@@ -179,7 +189,8 @@ function layoutHistoryTree(tree){
   const k={wide:1.15,medium:1.05,compact:1}[mode],fork={wide:44,medium:32,compact:22}[mode];
   const lanes=Math.max(...HISTORY_BRANCHES.map(b=>b.lane))+1,laneX=l=>axis+(mode==='compact'?7:12)+l*gap,labelX=laneX(lanes-1)+(mode==='compact'?gap:21);
   for(const r of rows){r.el.style.left=labelX+'px';r.el.style.width=(W-labelX)+'px';}
-  const rank=r=>r.kind==='future'?1:0;
+  // At one moment: a line's end comes first, then what grows out of it; unwritten shoots come last.
+  const rank=r=>r.kind==='end'?-1:r.kind==='future'?1:0;
   const sorted=[...rows].sort((a,b)=>a.t-b.t||rank(a)-rank(b)||a.order-b.order);
   let bottom=0;
   for(const r of sorted){
@@ -194,38 +205,46 @@ function layoutHistoryTree(tree){
     for(let i=1;i<pts.length;i++)if(t<=pts[i][0]){const [t0,y0]=pts[i-1],[t1,y1]=pts[i];return y0+(t-t0)*(y1-y0)/(t1-t0);}
     const [t1,y1]=pts.at(-1);return y1+(treeBase(t)-treeBase(t1))*k;
   };
-  const grid=[],ties=[],lanesSvg=[],marks=[],nodes=[],hits=[],ticks=tree.querySelector('.htree-ticks');ticks.replaceChildren();
+  const grid=[],ties=[],lanesSvg=[],marks=[],nodes=[],copies=[],swaps=[],hits=[],ticks=tree.querySelector('.htree-ticks');ticks.replaceChildren();
   let lastTick=-1e9;
-  for(const t of [-10000,-3000,-2000,-1500,-1200,-1000,-800,-600,-500,-400,-300,-200,-100,0,100,200,300,400,500,600,700]){
+  for(const t of [-10000,-3000,-2000,-1500,-1200,-1000,-800,-600,-500,-400,-300,-200,-100,0,100,200,300,400,500,600,700,800]){
     const y=Y(t);if(y-lastTick<26||y>H-8)continue;lastTick=y;
     grid.push(`<path class="grid" d="M${axis-2} ${y}H${labelX-4}"/>`);
     const label=document.createElement('span');label.className='tree-tick';label.style.cssText=`top:${y}px;width:${axis-4}px`;label.textContent=treeYear(t);ticks.appendChild(label);
   }
-  const byId=BRANCH,stationsOf=b=>sorted.filter(r=>r.kind==='item'&&r.branch===b);
+  const byId=BRANCH,stationsOf=b=>sorted.filter(r=>r.kind==='item'&&r.lines.includes(b.id));
+  const ends=Object.fromEntries(sorted.filter(r=>r.kind==='end').map(r=>[r.branch.id,r]));
   // Where each branch leaves its parent; parent segments are cut there so a line can light up root-to-fork.
-  tree._forkY={};
-  for(const b of HISTORY_BRANCHES)if(b.parent){const items=stationsOf(b);if(items.length)tree._forkY[b.id]=Math.min(Y(b.from),items[0].ny-fork);}
+  // A branch that carries on where its parent stops (罗马 → 东罗马 and 中世纪西欧, 东罗马 → 拜占庭) leaves from that end.
+  tree._forkY={};tree._endY=Object.fromEntries(Object.entries(ends).map(([id,r])=>[id,r.ny]));const forkLen={};
+  for(const b of HISTORY_BRANCHES)if(b.parent){
+    const items=stationsOf(b),pe=ends[b.parent];if(!items.length)continue;
+    if(pe&&pe.t<=b.from){tree._forkY[b.id]=pe.ny;forkLen[b.id]=Math.max(6,Math.min(fork,items[0].ny-pe.ny));}
+    else{tree._forkY[b.id]=Math.min(Y(b.from),items[0].ny-fork);forkLen[b.id]=fork;}
+  }
   for(const b of HISTORY_BRANCHES){
     const items=stationsOf(b);if(!items.length)continue;
-    const x=laneX(b.lane),w=(b.id==='trunk'?3.4:b.id==='rome'?3.1:2.3)*(wide?1.25:1);
+    const x=laneX(b.lane),w=(b.id==='trunk'?3.4:b.id==='rome'?3.1:2.3)*(wide?1.25:1),col=r=>b.c||r.c;
     const cuts=HISTORY_BRANCHES.filter(c=>c.parent===b.id&&tree._forkY[c.id]!==undefined).map(c=>tree._forkY[c.id]);
     const seg=(y0,y1,c)=>{
       for(const y of [...cuts.filter(y=>y>y0+.5&&y<y1-.5).sort((a,b)=>a-b),y1]){
         if(y>y0+.5)lanesSvg.push(`<path class="lane" data-branch="${b.id}" data-y1="${y}" d="M${x} ${y0}V${y}" stroke="${c}" stroke-width="${w}"/>`);y0=y;
       }
     };
+    const px=b.parent?laneX(byId[b.parent].lane):x,yf=tree._forkY[b.id],fl=forkLen[b.id];
     if(b.parent){
-      const px=laneX(byId[b.parent].lane),yf=tree._forkY[b.id];
-      lanesSvg.push(`<path class="lane fork" data-branch="${b.id}" d="M${px} ${yf}C${px} ${yf+fork*.6} ${x} ${yf+fork*.4} ${x} ${yf+fork}" stroke="${items[0].c}" stroke-width="${w}"/>`);
-      seg(yf+fork,items[0].ny,items[0].c);
+      // On the parent's own lane the line simply carries on; elsewhere it curves out.
+      if(px!==x)lanesSvg.push(`<path class="lane fork" data-branch="${b.id}" d="M${px} ${yf}C${px} ${yf+fl*.6} ${x} ${yf+fl*.4} ${x} ${yf+fl}" stroke="${col(items[0])}" stroke-width="${w}"/>`);
+      seg(px!==x?yf+fl:yf,items[0].ny,col(items[0]));
     }
+    const last=items.at(-1),stop=ends[b.id],end=stop?stop.ny:Math.max(last.ny,Y(b.to??last.end));
+    const future=sorted.filter(r=>r.kind==='future'&&r.branch===b);
     // Name the branch in the first free stretch that can hold it.
     const name=tree._names.find(n=>n.b===b);
     if(name&&mode!=='compact'){
       name.el.hidden=false;const h=name.el.offsetHeight;
-      // A branch's dashed shoot counts as room too, so a short branch (西罗马: one section, then a shoot) can still be named.
-      const shoot=sorted.filter(r=>r.kind==='future'&&r.branch===b).map(r=>r.ny+16);
-      const stops=[...(b.parent?[tree._forkY[b.id]+fork]:[]),...items.map(r=>r.ny),Math.max(items.at(-1).ny,Y(b.to??items.at(-1).end)),...shoot];
+      // A branch's dashed shoot counts as room too, so a short branch (one section, then a shoot) can still be named.
+      const stops=[...(b.parent?[px!==x?yf+fl:yf]:[]),...items.map(r=>r.ny),end,...future.map(r=>r.ny+16)];
       let best=[0,0];for(let i=1;i<stops.length;i++){
         if(stops[i]-stops[i-1]>=h+14){best=[stops[i-1],stops[i]];break;}
         if(stops[i]-stops[i-1]>best[1]-best[0])best=[stops[i-1],stops[i]];
@@ -233,28 +252,40 @@ function layoutHistoryTree(tree){
       name.el.hidden=best[1]-best[0]<h+14;
       name.el.style.left=x+7+'px';name.el.style.top=(best[0]+best[1]-h)/2+'px';
     }else if(name)name.el.hidden=true;
-    items.forEach((r,i)=>{if(i)seg(items[i-1].ny,r.ny,r.c);});
-    const last=items.at(-1),end=Math.max(last.ny,Y(b.to??last.end));
-    seg(last.ny,end,last.c);
-    const future=sorted.filter(r=>r.kind==='future'&&r.branch===b);
+    items.forEach((r,i)=>{if(i)seg(items[i-1].ny,r.ny,col(r));});
+    seg(last.ny,end,col(last));
     if(future.length)lanesSvg.push(`<path class="future-lane" data-branch="${b.id}" d="M${x} ${end}V${future.at(-1).ny+16}" stroke="${b.c}"/>`);
-    else lanesSvg.push(`<path class="lane-end" data-branch="${b.id}" d="M${x-4} ${end}H${x+4}" stroke="${last.c}"/>`);
+    else if(stop?.into&&stop.into.lane!==b.lane){
+      // Running into another line: the curve joins that line's lane just below the end.
+      const ix=laneX(stop.into.lane);
+      lanesSvg.push(`<path class="lane merge" data-branch="${b.id}" data-y1="${end+fork}" d="M${x} ${end}C${x} ${end+fork*.6} ${ix} ${end+fork*.4} ${ix} ${end+fork}" stroke="${col(last)}" stroke-width="${w}"/>`);
+    }else if(!stop)lanesSvg.push(`<path class="lane-end" data-branch="${b.id}" d="M${x-4} ${end}H${x+4}" stroke="${last.c}"/>`);
     // A wide transparent stroke over the whole line: clicking the line itself picks it, in place.
-    const start=b.parent?`M${laneX(byId[b.parent].lane)} ${tree._forkY[b.id]}C${laneX(byId[b.parent].lane)} ${tree._forkY[b.id]+fork*.6} ${x} ${tree._forkY[b.id]+fork*.4} ${x} ${tree._forkY[b.id]+fork}`:`M${x} ${items[0].ny}`;
+    const start=b.parent&&px!==x?`M${px} ${yf}C${px} ${yf+fl*.6} ${x} ${yf+fl*.4} ${x} ${yf+fl}`:`M${x} ${b.parent?yf:items[0].ny}`;
     hits.push(`<path class="lane-hit" data-line="${b.id}" d="${start}V${future.length?future.at(-1).ny+16:end}" stroke-width="${Math.min(14,gap-2)}"><title>切换到“${b.name}”（原地）</title></path>`);
     for(const r of [...items,...future]){
-      const tag=r.kind==='item'?`data-key="${r.key}"`:`data-branch="${b.id}"`;
-      ties.push(`<path class="tie" ${tag} d="M${x+6} ${r.ny}H${labelX-3}"/>`);
-      nodes.push(r.kind==='item'?`<circle class="tree-node" ${tag} cx="${x}" cy="${r.ny}" r="4" stroke="${r.c}" style="--node:${r.c}"/>`
+      const tag=r.kind==='item'?`data-key="${r.key}"`:`data-branch="${b.id}"`,shared=r.kind==='item'&&r.lines.length>1;
+      // A shared station: one node on each of its lanes, one tie from the rightmost.
+      if(!shared||b.lane===Math.max(...r.lines.map(id=>byId[id].lane)))ties.push(`<path class="tie" ${tag} d="M${x+6} ${r.ny}H${labelX-3}"/>`);
+      (shared&&r.branch!==b?copies:nodes).push(r.kind==='item'?`<circle class="tree-node" ${tag} cx="${x}" cy="${r.ny}" r="4" stroke="${col(r)}" style="--node:${col(r)}"/>`
         :`<circle class="tree-node future" ${tag} cx="${x}" cy="${r.ny}" r="3.5" stroke="${r.c}"/>`);
     }
+    if(stop){
+      ties.push(`<path class="tie" data-end="${b.id}" d="M${x+6} ${stop.ny}H${labelX-3}"/>`);
+      nodes.push(`<rect class="tree-stop" data-end="${b.id}" x="${x-4}" y="${stop.ny-1.6}" width="8" height="3.2" rx="1" fill="${col(last)}"/>`);
+    }
+  }
+  // Interchanges: the lanes of a shared station joined at its height.
+  for(const r of sorted.filter(r=>r.kind==='item'&&r.lines.length>1)){
+    const xs=r.lines.map(id=>laneX(byId[id].lane)),x0=Math.min(...xs),x1=Math.max(...xs);
+    swaps.push(`<path class="interchange" data-key="${r.key}" d="M${x0} ${r.ny}H${x1}"/><path class="interchange in" data-key="${r.key}" d="M${x0} ${r.ny}H${x1}"/>`);
   }
   // Breaks on the trunk where long stretches of prehistory are compressed.
   const tx=laneX(byId.trunk.lane);
   for(const t of [-24000,-5000,-2500]){const y=Y(t);marks.push(`<g class="break"><rect x="${tx-6}" y="${y-4}" width="12" height="8"/><path d="M${tx-6} ${y-1}L${tx+6} ${y-5}M${tx-6} ${y+5}L${tx+6} ${y+1}"/></g>`);}
   const svg=tree.querySelector('.htree-svg');
   svg.setAttribute('width',W);svg.setAttribute('height',H);svg.setAttribute('viewBox',`0 0 ${W} ${H}`);
-  svg.innerHTML=grid.join('')+ties.join('')+lanesSvg.join('')+marks.join('')+nodes.join('')+hits.join('');
+  svg.innerHTML=grid.join('')+ties.join('')+lanesSvg.join('')+marks.join('')+swaps.join('')+nodes.join('')+copies.join('')+hits.join('');
   markTreeCurrent();
 }
 
@@ -272,10 +303,15 @@ function markTreeCurrent(){
     tree.dataset.line=treeLine;tree.dataset.branch=current?.dataset.branch||'';
     // Everything off the chosen line greys out: rows, nodes, ties, era headings, branch names, unwritten shoots.
     const eras=new Set(lineStations(treeLine).map(s=>s.era));
-    tree.querySelectorAll('.tree-item,.tie[data-key]').forEach(b=>b.classList.toggle('off-line',!keys.has(b.dataset.key)));
+    tree.querySelectorAll('.tree-item,.tie[data-key],.interchange').forEach(b=>b.classList.toggle('off-line',!keys.has(b.dataset.key)));
     tree.querySelectorAll('.tree-head').forEach(h=>h.classList.toggle('off-line',!eras.has(h.dataset.era)));
     tree.querySelectorAll('.tree-branch-name,.era-future,.future-lane,.tree-node.future,.tie[data-branch]').forEach(el=>el.classList.toggle('off-line',el.dataset.branch!==treeLine));
+    // A line's end is on the chosen line when the line runs through it (its own end, or the end it carries on from).
+    const endOn=id=>reach.has(id)&&reach.get(id)>=(tree._endY?.[id]??Infinity)-.5;
+    tree.querySelectorAll('.tree-end').forEach(el=>el.classList.toggle('off-line',!endOn(el.dataset.branch)));
+    tree.querySelectorAll('.tree-stop,.tie[data-end]').forEach(el=>el.classList.toggle('off-line',!endOn(el.dataset.end)));
     tree.querySelectorAll('.tree-node[data-key]').forEach(n=>{
+      // Every copy of a shared station lights up together.
       const on=n.dataset.key===current?.dataset.key;n.classList.toggle('on',on);n.setAttribute('r',on?5.5:4);n.classList.toggle('off-line',!keys.has(n.dataset.key));
     });
     tree.querySelectorAll('.lane,.lane-end').forEach(l=>{

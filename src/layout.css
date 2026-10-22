@@ -238,6 +238,10 @@ body.history-mode #toc{padding:0 10px 18px}
 .htree-svg .tree-node{fill:var(--paper);stroke-width:1.8}
 .htree-svg .tree-node.on{fill:var(--node)}
 .htree-svg .tree-node.future{stroke-dasharray:2 2;stroke-width:1.4}
+/* A shared station: its lanes joined by a hollow bar, like a metro interchange. */
+.htree-svg .interchange{fill:none;stroke:var(--ink3);stroke-width:9;stroke-linecap:round}
+.htree-svg .interchange.in{stroke:var(--paper);stroke-width:6}
+.htree-svg .interchange.off-line:not(.in){opacity:.3}
 .htree-svg .break rect{fill:var(--paper)}
 .htree-svg .break path{fill:none;stroke:var(--ink3);stroke-width:1.2}
 .tree-tick{position:absolute;left:0;transform:translateY(-50%);font:8.5px/1 var(--latin);color:var(--ink3);text-align:right;white-space:nowrap}
@@ -254,14 +258,19 @@ body.history-mode #toc{padding:0 10px 18px}
 .htree .era-future{position:absolute;margin:0;padding:3px 6px;border:0;color:var(--ink3)}
 .htree .era-future b{display:block;margin:0;font-size:12px;font-weight:400;line-height:1.3}
 .htree .era-future small{display:block;margin:0;font:8.5px/1.35 var(--latin)}
+/* The end of a line: what ended it, and where its story goes on. */
+.htree .tree-end{position:absolute;margin:0;padding:3px 6px;color:var(--ink2)}
+.htree .tree-end b{display:block;margin:0;font-size:12px;font-weight:400;line-height:1.3}
+.htree .tree-end b::before{content:'■ ';font-size:8px;vertical-align:2px;color:var(--c)}
+.htree .tree-end small{display:block;margin:0;font:8.5px/1.35 var(--latin);color:var(--ink3)}
 .tree-branch-name{position:absolute;writing-mode:vertical-rl;font-size:12px;line-height:1;letter-spacing:.35em;color:var(--c);white-space:nowrap;pointer-events:none}
 .htree.compact .tree-branch-name{display:none}
 .htree.wide .tree-tick{font-size:10px}
 .htree.wide .tree-item{font-size:13px;padding:3px 8px}
-.htree.wide .tree-item span,.htree.wide .tree-head em,.htree.wide .era-future b,.htree.wide .era-future small{display:inline}
+.htree.wide .tree-item span,.htree.wide .tree-head em,.htree.wide .era-future b,.htree.wide .era-future small,.htree.wide .tree-end b,.htree.wide .tree-end small{display:inline}
 .htree.wide .tree-item small{display:inline;margin-left:10px;font-size:10px}
 .htree.wide .tree-head{font-size:12px}
-.htree.wide .tree-head em,.htree.wide .era-future small{margin-left:8px;font-size:10px}
+.htree.wide .tree-head em,.htree.wide .era-future small,.htree.wide .tree-end small{margin-left:8px;font-size:10px}
 .htree.wide .era-future b{font-size:13px}
 .toc-row{display:none}
 body.history-mode .toc-row{display:flex;justify-content:flex-end;margin:-8px 16px 4px}
@@ -307,8 +316,8 @@ body.history-mode .toc-row{display:flex;justify-content:flex-end;margin:-8px 16p
 .htree[data-line] .lane:not(.current),.htree[data-line] .lane-end:not(.current),.htree-svg .future-lane.off-line{opacity:.22;filter:grayscale(1)}
 .htree .tree-item.off-line:not(.on){color:var(--ink3);filter:grayscale(1);opacity:.38}
 .htree .tree-item.off-line:not(.on):hover,.htree .tree-item.off-line:not(.on):focus-visible{opacity:.75}
-.htree .tree-head.off-line,.htree .era-future.off-line,.htree .tree-branch-name.off-line{filter:grayscale(1);opacity:.32}
-.htree-svg .tree-node.off-line:not(.on),.htree-svg .tie.off-line{filter:grayscale(1);opacity:.28}
+.htree .tree-head.off-line,.htree .era-future.off-line,.htree .tree-branch-name.off-line,.htree .tree-end.off-line{filter:grayscale(1);opacity:.32}
+.htree-svg .tree-node.off-line:not(.on),.htree-svg .tie.off-line,.htree-svg .tree-stop.off-line{filter:grayscale(1);opacity:.28}
 .htree-svg .lane-hit{fill:none;stroke:transparent;pointer-events:stroke;cursor:pointer}
 .htree-svg .lane-hit:hover{stroke:rgba(138,42,29,.1)}
 /* Column grip on the sidebar's right edge. */

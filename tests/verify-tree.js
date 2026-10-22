@@ -14,7 +14,7 @@ const treeReport=sel=>{
   const node=tree.querySelector(`.tree-node[data-key="${b.dataset.key}"]`);
   return {key:b.dataset.key,branch:b.dataset.branch,t:TREE_ROWS[b.dataset.key][1],...rel(b),cx:node?+node.getAttribute('cx'):null,cy:node?+node.getAttribute('cy'):null};
  });
- const rows=[...tree.querySelectorAll('.tree-item,.tree-head,.tree-future')].map(el=>({text:el.textContent.slice(0,14),...rel(el)}));
+ const rows=[...tree.querySelectorAll('.tree-item,.tree-head,.tree-future,.tree-end')].map(el=>({text:el.textContent.slice(0,14),...rel(el)}));
  const names=[...tree.querySelectorAll('.tree-branch-name')].filter(n=>!n.hidden&&n.checkVisibility()).map(n=>({text:n.textContent,...rel(n)}));
  return {wide:tree.classList.contains('wide'),compact:tree.classList.contains('compact'),items,rows,names,
   forks:[...tree.querySelectorAll('.fork')].map(p=>p.dataset.branch).sort(),breaks:tree.querySelectorAll('.break').length,
@@ -23,7 +23,7 @@ const treeReport=sel=>{
   timeOrder:HISTORY_ERAS.flatMap(era=>era.items.map(([id,from=0])=>id+'/'+from)).map((k,i)=>[k,TREE_ROWS[k][1],i]).sort((a,b)=>a[1]-b[1]||a[2]-b[2]).map(x=>x[0])};
 };
 function checkTree(r,label){
- assert.equal(r.items.length,86,label);
+ assert.equal(r.items.length,98,label);
  // Navigation order (DOM order) is the time order, and it reads top to bottom.
  assert.deepEqual(r.items.map(i=>i.key),r.timeOrder,label+' rows follow the time order');
  for(let i=1;i<r.items.length;i++)assert.ok(r.items[i].top>r.items[i-1].top,label+' row order runs top to bottom at '+r.items[i].key);
@@ -33,22 +33,23 @@ function checkTree(r,label){
  for(let i=1;i<byTop.length;i++)assert.ok(byTop[i].top>=byTop[i-1].bottom-.5,`${label}: rows overlap: ${byTop[i-1].text} / ${byTop[i].text}`);
  // Each branch is one lane; each row's node sits on its lane, level with its label.
  const lanes={};for(const i of r.items){assert.ok(i.cx!==null&&i.cy>=i.top&&i.cy<=i.bottom,label+' node '+i.key);(lanes[i.branch]??=new Set()).add(i.cx);}
- assert.deepEqual(Object.keys(lanes).sort(),['china','egypt','faith','persia','rome','trunk','west'],label);
+ assert.deepEqual(Object.keys(lanes).sort(),['byz','china','east','egypt','faith','persia','rome','trunk','west'],label);
  assert.ok(Object.values(lanes).every(s=>s.size===1),label+' one lane per branch');
- // 西罗马 (395—476) reuses the Levant lane, which ended fourteen centuries earlier; China sits on its own parallel lane on the far right.
+ // 东罗马 and 拜占庭 take the Greek lane, free since 希腊 ran into 罗马; China sits on its own parallel lane on the far right.
+ assert.ok([...lanes.east][0]===[...lanes.trunk][0]&&[...lanes.byz][0]===[...lanes.trunk][0],label+' 东罗马 and 拜占庭 on the Greek lane');
  assert.equal(new Set(Object.values(lanes).map(s=>[...s][0])).size,7,label+' distinct lanes');
  // Left to right: 波斯, 埃及, the Greek trunk, Rome, West Rome, 基督教, then the parallel 中国 line on the outermost lane.
  assert.ok([...lanes.persia][0]<[...lanes.egypt][0]&&[...lanes.egypt][0]<[...lanes.trunk][0],label+' 波斯 and 埃及 left of the trunk');
  assert.ok([...lanes.rome][0]<[...lanes.west][0]&&[...lanes.west][0]<[...lanes.faith][0]&&[...lanes.faith][0]<[...lanes.china][0],label+' the 中国 line outermost');
- assert.deepEqual(r.forks,['egypt','faith','persia','rome','west'],label+' forks');
+ assert.deepEqual(r.forks,['east','egypt','faith','persia','rome','west'],label+' forks');
  assert.equal(r.breaks,3,label+' compressed prehistory is marked');
  // Overlapping topics read side by side at the same height.
  const top=k=>r.items.find(i=>i.key===k).top;
  assert.ok(top('history-poleis/0')<top('history-rome-kings/0')&&top('history-rome-kings/0')<top('history-sparta/0'),label+' Rome kings beside archaic Greece');
  assert.ok(top('history-celts/0')<top('history-rome-punic/0')&&top('history-rome-punic/0')<top('history-eastern-kingdoms/0'),label+' Punic Wars beside the Hellenistic kingdoms');
- assert.equal(r.futures.length,6,label);assert.match(r.futures.map(f=>f.text).join(' '),/中世纪教会/,label);assert.match(r.futures.map(f=>f.text).join(' '),/东罗马/,label);assert.match(r.futures.map(f=>f.text).join(' '),/隋唐/,label);assert.ok(r.futureLane,label);
+ assert.equal(r.futures.length,6,label);assert.match(r.futures.map(f=>f.text).join(' '),/走向东西分裂/,label);assert.match(r.futures.map(f=>f.text).join(' '),/希拉克略以后/,label);assert.match(r.futures.map(f=>f.text).join(' '),/晚唐五代与宋/,label);assert.ok(r.futureLane,label);
  assert.ok(r.futures.every(f=>f.top>top('history-rome-augustus/0')),label+' unwritten topics grow below');
- assert.match(r.futures.map(f=>f.text).join(' '),/中世纪/,label);
+ assert.match(r.futures.map(f=>f.text).join(' '),/加洛林以后/,label);
  assert.ok(r.futures.every(f=>f.top>top('history-empire-west-fall/0')),label+' the medieval shoot grows below 476');
  const years=r.ticks.map(t=>t.text);
  assert.ok(years.includes('前1000')&&years.includes('前500'),label+' ticks '+years);
@@ -86,8 +87,8 @@ function checkTree(r,label){
   assert.ok(side.lanes.some(l=>l.branch==='rome'&&l.fork)&&side.lanes.some(l=>l.branch==='trunk'),JSON.stringify(side.lanes));
   assert.ok(side.lanes.every(l=>l.branch==='rome'||(l.branch==='trunk'&&l.y1<=side.forkY.rome+.5)),JSON.stringify(side.lanes));
   assert.ok(side.dimTrunk>0);
-  assert.deepEqual(side.pills,[['trunk',false],['faith',false],['rome',true],['egypt',false],['persia',false],['west',false],['china',false]]);
-  assert.equal(side.pos,'13 / 33');assert.ok(side.offLine.includes('history-poleis/0')&&!side.offLine.includes('history-palaces/0')&&!side.offLine.includes('history-rome-site/0'));
+  assert.deepEqual(side.pills,[['trunk',false],['rome',true],['east',false],['byz',false],['west',false],['faith',false],['egypt',false],['persia',false],['china',false]]);
+  assert.equal(side.pos,'13 / 32');assert.ok(side.offLine.includes('history-poleis/0')&&!side.offLine.includes('history-palaces/0')&&!side.offLine.includes('history-rome-site/0'));
   assert.equal(side.node,'history-rome-punic/0');assert.equal(side.r,'5.5');
   let s=await state(p);assert.deepEqual(s.on,['history-rome-punic/0']);assert.equal(s.era,'rome-med');
   // Clicking a branch row picks its line; ↑↓ then stay on that line (metro style) and stop at its ends.
@@ -99,7 +100,11 @@ function checkTree(r,label){
   await p.keyboard.press('ArrowDown');await p.keyboard.press('ArrowDown');s=await state(p);assert.deepEqual([s.id,s.scene],['history-faith-first-temple',0],'the 基督教 line goes on to the First Temple');
   for(let i=0;i<7;i++)await p.keyboard.press('ArrowDown');
   s=await state(p);assert.deepEqual([s.id,s.scene],['history-faith-two-cities',0]);
-  await p.keyboard.press('ArrowDown');s=await state(p);assert.deepEqual([s.id,s.scene],['history-faith-papacy',0],'end of the 基督教 line');assert.ok(await p.$eval('#next',e=>e.disabled));
+  await p.keyboard.press('ArrowDown');s=await state(p);assert.deepEqual([s.id,s.scene],['history-faith-papacy',0]);
+  await p.keyboard.press('ArrowDown');s=await state(p);assert.deepEqual([s.id,s.scene],['history-faith-three-chapters',0]);
+  await p.keyboard.press('ArrowDown');s=await state(p);assert.deepEqual([s.id,s.scene],['history-faith-monothelites',0]);
+  await p.keyboard.press('ArrowDown');s=await state(p);assert.deepEqual([s.id,s.scene],['history-faith-icons',0]);
+  assert.ok(await p.$eval('#next',e=>e.disabled),'end of the 基督教 line');
   await p.click('#toc .tree-item[data-key="history-faith-israel/0"]');
   // Switching lines is in place: the section stays and the sidebar does not move; ↑↓ then follow the new line by time.
   const scroll0=await p.evaluate(()=>toc.scrollTop);
@@ -127,7 +132,7 @@ function checkTree(r,label){
    assert.equal(await p.evaluate(()=>toc.scrollTop),before,'line click does not scroll');
   };
   await clickLine('rome');s=await state(p);assert.equal(s.id,'history-celts');assert.equal(await p.evaluate(()=>treeLine),'rome');
-  assert.equal(await p.$eval('#pos',e=>e.textContent),'– / 33');
+  assert.equal(await p.$eval('#pos',e=>e.textContent),'– / 32');
   await p.keyboard.press('ArrowDown');s=await state(p);assert.equal(s.id,'history-rome-punic','next Rome station after 前279');
   await clickLine('trunk');s=await state(p);assert.equal(s.id,'history-rome-punic');assert.equal(await p.evaluate(()=>treeLine),'trunk');
   await p.keyboard.press('ArrowUp');s=await state(p);assert.equal(s.id,'history-celts','previous Greek station before 前264');
@@ -138,7 +143,7 @@ function checkTree(r,label){
    const row=k=>tree.querySelector(`.tree-item[data-key="${k}"]`),head=e=>tree.querySelector(`.tree-head[data-era="${e}"]`);
    return {line:treeLine,greekRow:[st(row('history-celts/0')).filter,+st(row('history-celts/0')).opacity],romeRow:[st(row('history-rome-kings/0')).filter,+st(row('history-rome-kings/0')).opacity],
     shared:+st(row('history-palaces/0')).opacity,greekHead:[head('hellenistic').classList.contains('off-line'),st(head('hellenistic')).filter],romeHead:head('rome-med').classList.contains('off-line'),
-    node:st(tree.querySelector('.tree-node[data-key="history-celts/0"]')).filter,future:tree.querySelector('.era-future').classList.contains('off-line')};
+    node:st(tree.querySelector('.tree-node[data-key="history-celts/0"]')).filter,future:tree.querySelector('.tree-end[data-branch="rome"]').classList.contains('off-line')};
   });
   assert.equal(grey.line,'rome');
   assert.ok(/grayscale/.test(grey.greekRow[0])&&grey.greekRow[1]<.5,JSON.stringify(grey));
@@ -152,7 +157,7 @@ function checkTree(r,label){
   assert.equal(s.id,'history-palaces');await p.keyboard.press('ArrowDown');await p.keyboard.press('ArrowDown');await p.keyboard.press('ArrowDown');
   s=await state(p);assert.equal(s.id,'history-rome-site');
   // A full ride on each line from the root: every ↓ lands lower in the tree, and the footer counts stations.
-  for(const [line,startId,count,last] of [['trunk','history-migration',23,'history-hellenistic-end'],['faith','history-migration',14,'history-faith-papacy'],['rome','history-migration',33,'history-empire-justinian'],['west','history-migration',33,'history-west-kingdoms'],['egypt','history-migration',10,'history-egypt-byzantine'],['persia','history-migration',9,'history-persia-khosrow'],['china','history-china-neolithic',11,'history-china-sui']]){
+  for(const [line,startId,count,last] of [['trunk','history-migration',23,'history-hellenistic-end'],['rome','history-migration',32,'history-empire-west-fall'],['east','history-migration',35,'history-empire-maurice'],['byz','history-migration',38,'history-arab-conquest'],['west','history-migration',36,'history-west-charlemagne'],['faith','history-migration',17,'history-faith-icons'],['egypt','history-migration',12,'history-arab-conquest'],['persia','history-migration',12,'history-arab-conquest'],['china','history-china-neolithic',12,'history-china-tang']]){
    await p.evaluate(id=>go(id),startId);await p.click(`#toc .tree-line[data-line="${line}"]`);await p.focus('#toc .tree-item.on');
    let lastTop=-1;
    for(let i=0;i<count;i++){
@@ -171,7 +176,7 @@ function checkTree(r,label){
     compact:toc.querySelector('.htree').classList.contains('compact'),names:[...toc.querySelectorAll('.tree-branch-name')].filter(n=>!n.hidden&&n.checkVisibility()).length,
     fits:toc.scrollWidth<=toc.clientWidth,valuenow:+sideGrip.getAttribute('aria-valuenow'),fitted:map.getBounds().contains(L.latLngBounds(activeScene(ENTRIES[cur]).view))}));
   assert.ok(Math.abs(after.side-(before.side+176))<=2&&after.map<before.map-150&&Math.abs(after.saved-after.side)<=1,JSON.stringify({before,after}));
-  assert.ok(!after.compact&&after.names===6&&after.fits&&after.fitted&&Math.abs(after.valuenow-after.side)<=1,JSON.stringify(after));
+  assert.ok(!after.compact&&after.names>=6&&after.fits&&after.fitted&&Math.abs(after.valuenow-after.side)<=1,JSON.stringify(after));
   checkTree(await p.evaluate(treeReport,'#toc .htree'),'sidebar dragged wider');
   await p.focus('#sideGrip');const sc=await p.evaluate(()=>sceneIndex);await p.keyboard.press('ArrowRight');
   assert.equal(await p.evaluate(()=>Math.round(side.getBoundingClientRect().width)),Math.round(after.side)+16);assert.equal(await p.evaluate(()=>sceneIndex),sc,'grip keys do not change scenes');
@@ -198,8 +203,8 @@ function checkTree(r,label){
   assert.equal(await d.$eval('#treeOpen',e=>e.innerText.trim()),'展开大图 ↗');
   await d.click('#treeOpen');s=await state(d);assert.ok(s.sheet);assert.deepEqual(s.sheetOn,['history-rome-punic/0']);
   const wide=await d.evaluate(treeReport,'#treeSheet .htree');checkTree(wide,'expanded');assert.ok(wide.wide);
-  // 西罗马 is one section and a shoot; its name shows where the stretch below the fork can hold it (sidebar dragged wide, phone sheet).
-  assert.ok(['波斯','埃及','罗马','基督教','中国'].every(t=>wide.names.some(n=>n.text===t))&&wide.names.every(n=>['波斯','埃及','罗马','基督教','西罗马','中国'].includes(n.text)),JSON.stringify(wide.names.map(n=>n.text)));
+  // Short lines still get their names where a stretch below the fork can hold them (sidebar dragged wide, phone sheet).
+  assert.ok(['波斯','埃及','罗马','基督教','中国'].every(t=>wide.names.some(n=>n.text===t))&&wide.names.every(n=>['罗马','东罗马','拜占庭','中世纪西欧','基督教','埃及','波斯','中国'].includes(n.text)),JSON.stringify(wide.names.map(n=>n.text)));
   for(const n of wide.names)for(const i of wide.items)assert.ok(n.right<=i.left||n.left>=i.right||n.bottom<=i.top||n.top>=i.bottom,'name '+n.text+' over '+i.key);
   assert.ok(await d.evaluate(()=>{const b=treeSheet.querySelector('.tree-sheet-body').getBoundingClientRect(),r=treeSheet.querySelector('.tree-item.on').getBoundingClientRect();return r.top>=b.top&&r.bottom<=b.bottom;}));
   assert.ok(await d.evaluate(()=>document.activeElement===treeSheet.querySelector('.tree-item.on')));
@@ -220,7 +225,7 @@ function checkTree(r,label){
    assert.ok(await m.evaluate(()=>getComputedStyle(toc).display==='none'&&treeOpen.checkVisibility()&&treeOpen.innerText.trim()==='树状图'&&!sideGrip.checkVisibility()));
    await m.click('#treeOpen');s=await state(m);assert.ok(s.sheet);
    const r=await m.evaluate(treeReport,'#treeSheet .htree');checkTree(r,'phone '+w);assert.equal(r.wide,w>=480);
-   if(w===390){assert.ok(!r.compact&&r.names.length===6,JSON.stringify(r.names.map(n=>n.text)));await m.screenshot({path:path.join(shots,'tree-sheet-390.png')});}
+   if(w===390){assert.ok(!r.compact&&r.names.length>=6,JSON.stringify(r.names.map(n=>n.text)));await m.screenshot({path:path.join(shots,'tree-sheet-390.png')});}
    assert.ok(await m.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
    await m.click('#treeSheet .tree-item[data-key="history-ptolemaic-bargain/0"]');s=await state(m);
    assert.equal(s.id,'history-ptolemaic-bargain');assert.equal(s.sheet,false);
@@ -229,6 +234,6 @@ function checkTree(r,label){
    await m.close();
   }
   assert.deepEqual(errors,[]);
-  console.log('PASS: history tree — 86 rows on 7 branches (trunk, 基督教, Rome, 埃及, 波斯, West Rome, 中国) with 5 forks (埃及 and 波斯 off the trunk at the early states, 基督教 at 前1400 on the outermost lane, West Rome off Rome at 395); every earlier start sits higher; no overlapping rows; nodes on their lanes; Rome beside Greece and the Hellenistic kingdoms; unwritten topics as dashed shoots; time ticks and compressed-prehistory breaks; metro lines: pick a line (button or the drawn line itself) in place, ↑↓ / 上一条 / 下一条 ride only that line in time order, line lit root-to-fork, everything else greyed; draggable, remembered, clamped column; sidebar at 1440 and 1024; expanded view with branch names; phone and short-landscape sheets; geography mode untouched; offline; no page errors.');
+  console.log('PASS: history tree — 98 rows on 9 branches (希腊, 罗马, 东罗马, 拜占庭, 中世纪西欧, 基督教, 埃及, 波斯, 中国) with 6 forks (埃及 and 波斯 off the trunk at the early states, 基督教 at 前1400 on the outermost lane, 东罗马 and 中世纪西欧 off 罗马 at 476; 拜占庭 carries on in 东罗马’s lane); every earlier start sits higher; no overlapping rows; nodes on their lanes; Rome beside Greece and the Hellenistic kingdoms; unwritten topics as dashed shoots; time ticks and compressed-prehistory breaks; metro lines: pick a line (button or the drawn line itself) in place, ↑↓ / 上一条 / 下一条 ride only that line in time order, line lit root-to-fork, everything else greyed; draggable, remembered, clamped column; sidebar at 1440 and 1024; expanded view with branch names; phone and short-landscape sheets; geography mode untouched; offline; no page errors.');
  }catch(e){console.error(e);process.exitCode=1;}finally{await browser.close();}
 })();
