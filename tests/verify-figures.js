@@ -18,8 +18,8 @@ const wait=ms=>new Promise(r=>setTimeout(r,ms));
  try{
   const page=await pageAt();
   const occurrences=await page.evaluate(()=>Object.entries(FIGURE_SCENES).flatMap(([scene,items])=>items.map(item=>({scene,...item}))));
-  assert.equal(occurrences.length,226);assert.equal(new Set(occurrences.map(p=>p.id)).size,166);
-  assert.equal(await page.evaluate(()=>Object.keys(FIGURES).length),166);
+  assert.equal(occurrences.length,218);assert.equal(new Set(occurrences.map(p=>p.id)).size,162);
+  assert.equal(await page.evaluate(()=>Object.keys(FIGURES).length),162);
   for(const item of occurrences){
    await page.evaluate(scene=>go(scene),item.scene);
    assert.equal(await page.evaluate(({scene,id})=>{
@@ -82,6 +82,6 @@ const wait=ms=>new Promise(r=>setTimeout(r,ms));
   await animated.evaluate(()=>{focusFigure(FIGURE_SCENES['history-spartan-decline/0'][0]);go('history-migration');});
   await wait(1600);assert.equal(await animated.evaluate(()=>Boolean(map._popup?.isOpen())),false);
   await animated.close();assert.deepEqual(errors,[]);
-  console.log('PASS: 166 people / events across 226 dated cards; expandable sources; one-open-card behavior; keyboard; restored fold state; city map popups; return to scene; stage switching; phones and landscape; offline; stale popup cancellation; no page errors.');
+  console.log('PASS: 162 people / events across 218 dated cards; expandable sources; one-open-card behavior; keyboard; restored fold state; city map popups; return to scene; stage switching; phones and landscape; offline; stale popup cancellation; no page errors.');
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

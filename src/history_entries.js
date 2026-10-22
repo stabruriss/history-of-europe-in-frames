@@ -364,16 +364,10 @@ Object.assign(HS,{
 });
 // v34: places for the end of the Justinian dynasty, Heraclius, the councils to 843, the Franks and Lombards, late Sasanian Persia and Tang China.
 Object.assign(HS,{
-  r_apamea:['阿帕米亚','Apamea on the Orontes',35.418,36.398,'叙利亚奥龙特斯河边的大城；573年被波斯兵洗劫，据说掳走的人以万计。'],
-  r_arabissus:['阿拉比苏斯','Arabissus',38.205,36.92,'卡帕多西亚小城，539年莫里斯生在这里。今土耳其阿夫辛。'],
-  r_martyropolis:['马尔蒂罗波利斯','Martyropolis',38.14,41.0,'底格里斯河上游的边城，589年被波斯人以内应夺去，591年库思老二世还给罗马。今土耳其锡尔万。'],
-  r_dvin:['德文','Dvin',40.0,44.58,'波斯治下亚美尼亚的首府；572年亚美尼亚人在这里起兵，二十年战争由此开打。'],
-  r_ani:['阿尼','Ani',40.507,43.572,'亚美尼亚高原上的城，591年随亚美尼亚西部一起划归罗马。'],
-  r_hebdomon:['赫布多蒙','Hebdomon',40.976,28.84,'君士坦丁堡城外第七里程碑处的阅兵场，新皇帝常在这里被拥立；602年福卡斯在此称帝。'],
-  r_sogdiana:['粟特','Sogdiana',39.65,66.96,'撒马尔罕一带的商人之国，6世纪归突厥管；粟特商人想绕过波斯，把丝直接卖给罗马。'],
-  r_turkcamp:['西突厥可汗牙帐','Camp of the Western Turkic Khagan',43.0,81.5,'弥南德说在“金山”环抱的山谷里，大约在今天山一带；569年罗马使节泽马库斯到此。'],
-  r_pereshchepina:['小佩列谢皮诺','Mala Pereshchepyna',49.02,35.0,'乌克兰波尔塔瓦附近的村子；1912年农民在这里挖出五十多公斤金银，一般认为是库布拉特的墓。'],
-  r_cartagena:['新迦太基','Carthago Nova / Cartagena',37.6,-0.98,'罗马在西班牙东南那块属地的中心，620年代落入西哥特人之手。'],
+  r_ganzak:['甘扎克（阿杜尔·古什纳斯普）','Ganzak / Adur Gushnasp',36.604,47.234,'阿塞拜疆的萨珊皇家圣火庙；624年希拉克略绕道高加索打到这里，烧毁了这座火庙。'],
+  r_dastagird:['达斯塔吉尔德','Dastagird',33.98,44.93,'泰西封东北约百公里的萨珊王家行宫；628年1月被希拉克略洗劫。'],
+  r_yarmouk:['雅穆克河谷','Yarmouk',32.81,35.95,'戈兰高地南侧的河谷；636年8月东罗马大军在此溃败，叙利亚归了穆斯林。'],
+  r_babylon_eg:['巴比伦堡','Babylon Fortress',30.006,31.23,'尼罗河三角洲顶端的要塞（今开罗老城）；641年4月被阿慕尔攻下，居鲁士在此签约交出埃及。'],
   f_grado:['格拉多','Grado',45.68,13.39,'阿奎莱亚南边潟湖里的小岛；568年伦巴第人进来，阿奎莱亚主教带着教会的财宝逃到这里。'],
   f_faras:['法拉斯','Faras / Pachoras',22.2,31.48,'努比亚北部诺巴德人的王城；约543年皇后派的传教士抢先到了这里。'],
   f_jabiya:['贾比亚','Jabiya',32.92,35.97,'戈兰高地上加萨尼阿拉伯人的营地；他们的王哈里斯替罗马守沙漠，信一性论。'],
@@ -386,13 +380,6 @@ Object.assign(HS,{
   i_amorion:['阿莫里翁','Amorion',39.02,31.29,'安纳托利亚军区的重镇；741年君士坦丁五世被姐夫突袭后逃到这里，驻军收留了他。'],
   i_pliska:['普利斯卡','Pliska',43.38,27.12,'保加尔汗国的都城；811年尼基弗鲁斯一世攻入焚毁，回军途中在山口中伏。'],
   i_frankfurt:['法兰克福','Frankfurt',50.11,8.68,'美因河畔的王室驻地；794年查理曼在此开会，驳斥尼西亚会议。'],
-  v_theodosiopolis:['卡林（狄奥多西波利斯）','Theodosiopolis (Karin)',39.905,41.27,'今土耳其埃尔祖鲁姆；守城人认了波斯军带来的“狄奥多西”，开城投降。'],
-  v_heraclea:['赫拉克利亚','Heraclea Perinthus',40.98,27.96,'马尔马拉海北岸的城，今马尔马拉埃雷利西；623年阿瓦尔可汗约皇帝在此相会。'],
-  v_ganzak:['甘扎克','Ganzak',37.01,46.19,'阿塞拜疆的旧都，今伊朗米扬多阿布平原上的莱伊兰一带；624年被希拉克略攻下。'],
-  v_takhtsoleyman:['阿杜尔·古什纳斯普火庙','Adur Gushnasp (Takht-e Soleyman)',36.604,47.236,'今伊朗所罗门王座遗址；萨珊三大圣火之一，624年被希拉克略捣毁。'],
-  v_tiflis:['第比利斯','Tiflis',41.69,44.8,'格鲁吉亚（伊比利亚）的中心城市；627年罗马与西突厥在此合围波斯守军。'],
-  v_dastagird:['达斯塔吉尔德','Dastagird',33.98,44.93,'泰西封东北约百公里的行宫，库思老二世常住；628年1月被罗马军洗劫。'],
-  v_arabissus:['阿拉比苏斯','Arabissus',38.205,36.92,'卡帕多西亚小城，今土耳其阿夫辛，莫里斯生在这里；629年夏希拉克略在此会见沙赫巴拉兹。'],
   w_paris:['巴黎','Paris',48.853,2.349,'561年分给卡里贝尔特；567年后兄弟共管；达戈贝尔特一世以此为都。'],
   w_orleans:['奥尔良','Orléans',47.902,1.909,'561年贡特拉姆分到的都城，他的王国后来叫勃艮第。'],
   w_reims:['兰斯','Reims',49.258,4.032,'561年西吉贝尔特分到的都城；后来奥斯特拉西亚的重心移到梅斯。'],
@@ -1653,138 +1640,50 @@ const HISTORY_ENTRIES=[
     hp(d,'constantinople',{note:'553年第五次大公会议；565年11月查士丁尼去世。'});
    },[['fill',HC.athens,'查士丁尼去世时的帝国（565年，概略）'],['fill',HC.parthia,'萨珊波斯'],['dot',HC.war,'最后的两仗'],['dot','#2a2018','新都与西班牙的据点']])
  ]},
-{id:'history-empire-maurice',ch:5,title:'查士丁尼王朝的终局',short:'查士丁尼王朝终局',en:'The End of the Justinian Dynasty',period:'565—602年',c:HC.byz,
+{id:'history-empire-heraclius',ch:5,title:'查士丁尼之后：圣战换家与得而复失',short:'圣战换家与得而复失',en:'After Justinian: Holy War, Base-Trading and Provinces Lost Twice',period:'565—641年',c:HC.byz,
  scenes:[
-  hs('565—572年','不肯付钱的皇帝','查士丁二世停了给阿瓦尔人和波斯的钱，伦巴第人进了意大利；突厥派粟特人来结盟，要绕过波斯卖丝。',[[30.0,8.0],[50.0,86.0]],d=>{
-    ha(d,'lJustinian565',HC.athens,{fillOpacity:.2});ha(d,'lSasanian560',HC.parthia,{fillOpacity:.16});
-    ha(d,'mAvars600',HC.neutral,{fillOpacity:.22});ha(d,'mWesternTurks600',HC.mino,{fillOpacity:.14,dashArray:'4 4'});
-    hp(d,'constantinople',{note:'568年粟特人马尼亚克带着丝和可汗的国书到此。'});hp(d,'r_sogdiana',{left:1});hp(d,'r_turkcamp');hp(d,'r_dvin',{left:1});
-    hr(d,[[41.01,28.98],[41.6,41.6],[44.0,47.5],[45.5,53.0],[42.0,63.0],[39.65,66.96],[43.0,81.5]],HC.route);
-   },[['fill',HC.athens,'东罗马（565年）'],['fill',HC.parthia,'萨珊波斯'],['fill',HC.neutral,'阿瓦尔汗国（约600年）'],['dash',HC.mino,'西突厥（示意）'],['dline',HC.route,'569年泽马库斯出使的路线（概略）']]),
-  hs('573—574年','达拉陷落，皇帝疯了','库思老一世攻破达拉、洗劫阿帕米亚；查士丁二世发疯，皇后和提比略花钱买停战。',[[31.5,27.0],[42.5,46.0]],d=>{
-    ha(d,'lJustinian565',HC.athens,{fillOpacity:.16});ha(d,'lSasanian560',HC.parthia,{fillOpacity:.16});
-    hp(d,'dara',{kind:'battle',note:'573年11月，围了四个月后陷落。'});hp(d,'r_apamea',{left:1,kind:'battle'});
-    hp(d,'nisibis');hp(d,'constantinople');hp(d,'ctesiphon');
-   },[['fill',HC.athens,'东罗马'],['fill',HC.parthia,'萨珊波斯'],['dot',HC.war,'失陷的要塞与被洗劫的城']]),
-  hs('575—582年','散钱的恺撒','提比略减税、散金，花钱让伦巴第人选不出王；北边停付阿瓦尔人的钱，西尔米乌姆失守，斯拉夫人南下。',[[34.0,10.0],[48.5,42.0]],d=>{
-    ha(d,'lJustinian565',HC.athens,{fillOpacity:.16});ha(d,'mAvars600',HC.neutral,{fillOpacity:.24});
-    ha(d,'mLombards600',HC.mino,{fillOpacity:.2});
-    hp(d,'sirmium',{kind:'battle',note:'萨瓦河上的要塞，多瑙河防线的关键；阿瓦尔人围了约三年，约582年城破。'});hp(d,'constantinople');hp(d,'thessalonica',{left:1});
-    hl(d,'斯拉夫人南下','Slavs move south',41.8,22.0,HC.neutral);
-   },[['fill',HC.athens,'东罗马'],['fill',HC.neutral,'阿瓦尔汗国'],['fill',HC.mino,'伦巴第人（约600年）'],['dot',HC.war,'西尔米乌姆']]),
-  hs('590—591年','扶起库思老二世','莫里斯借兵送库思老二世复位；罗马拿回达拉、马尔蒂罗波利斯和亚美尼亚西部，不再付年金。',[[33.0,34.0],[42.8,50.5]],d=>{
-    ha(d,'mByz600',HC.athens,{fillOpacity:.2});ha(d,'lSasanian560',HC.parthia,{fillOpacity:.12});
-    hp(d,'dara');hp(d,'r_martyropolis',{left:1});hp(d,'r_dvin');hp(d,'r_ani',{left:1});hp(d,'ctesiphon');
-    hl(d,'甘扎克一带：591年巴赫拉姆兵败','Near Ganzak, 591',37.0,46.8,HC.war);
-   },[['fill',HC.athens,'591年后的东罗马'],['fill',HC.parthia,'萨珊波斯'],['dot','#2a2018','归还与划给罗马的城']]),
-  hs('584—600年','省钱的皇帝','军饷减四分之一，一万二千俘虏不赎；意大利、非洲设总督区就地自守；不许士兵出家。',[[30.5,6.0],[47.5,31.5]],d=>{
-    ha(d,'mByz600',HC.athens,{fillOpacity:.18});ha(d,'mByzItaly600',HC.athens,{fillOpacity:.3});
-    ha(d,'mLombards600',HC.mino,{fillOpacity:.18});ha(d,'mAvars600',HC.neutral,{fillOpacity:.2});
-    hp(d,'ravenna',{note:'意大利总督驻地，584年前后设立。'});hp(d,'carthage',{note:'非洲总督驻地，591年设立。'});
-    hp(d,'rome',{left:1,note:'教宗格雷戈里一世写信给皇帝，反对不许士兵出家的法令。'});hp(d,'constantinople');
-   },[['fill',HC.athens,'东罗马（约600年）'],['fill',HC.mino,'伦巴第人'],['fill',HC.neutral,'阿瓦尔汗国'],['dot','#2a2018','两个总督区与罗马']]),
-  hs('602年','王朝的终点','多瑙河的兵不肯在河北过冬，拥福卡斯进京；莫里斯和五个儿子在卡尔西顿被杀，查士丁尼王朝结束。',[[40.0,25.5],[45.5,31.5]],d=>{
-    ha(d,'mByz600',HC.athens,{fillOpacity:.14});
-    hp(d,'constantinople');hp(d,'r_hebdomon',{left:1,note:'602年11月23日福卡斯在这里称帝。'});
-    hp(d,'chalcedon',{kind:'battle',note:'602年11月27日，莫里斯和儿子们在这里的港口被杀。'});
-    hl(d,'多瑙河前线','Danube front',44.4,27.0,HC.war);
-    hr(d,[[44.0,27.0],[43.0,27.6],[42.2,27.4],[41.3,28.4],[41.0,28.9]],HC.war);
-   },[['fill',HC.athens,'东罗马'],['dline',HC.war,'哗变的大军南下（概略）'],['dot','#2a2018','称帝与行刑的地方']])
- ]},
-{id:'history-empire-heraclius',ch:5,title:'希拉克略：从东罗马到拜占庭',short:'希拉克略',en:'Heraclius: From East Rome to Byzantium',period:'602—641年',c:HC.byz,
- scenes:[
-  hs('602—610年','福卡斯','福卡斯烧死降将、杀尽莫里斯一家，东边丢城；对罗马却大方：教会称首、广场立柱、万神殿改作教堂。',[[34.0,9.0],[44.5,42.0]],d=>{
-    ha(d,'mByz600',HC.athens,{fillOpacity:.14});ha(d,'lSasanian560',HC.parthia,{fillOpacity:.12});
-    hp(d,'constantinople');hp(d,'edessa',{note:'603年纳尔塞斯据城反福卡斯，向波斯求援。'});
-    hp(d,'rome',{note:'608年广场上立起福卡斯柱；609年万神殿改为圣母与殉道者教堂。'});
-   },[['fill',HC.athens,'东罗马（602年）'],['fill',HC.parthia,'萨珊波斯'],['dot','#2a2018','福卡斯与罗马、埃德萨']]),
-  hs('608—610年','从迦太基来的人','非洲总督父子起兵：侄子走陆路取埃及，儿子带舰队直取京城；610年10月福卡斯被斩，希拉克略加冕。',[[28.5,6.0],[43.5,33.5]],d=>{
-    ha(d,'mByz600',HC.athens,{fillOpacity:.14});
-    hp(d,'carthage',{note:'608年老希拉克略在此起兵，父子自称执政官。'});hp(d,'alexandria',{left:1});hp(d,'constantinople',{note:'610年10月5日福卡斯被斩，希拉克略加冕。'});
-    hr(d,[[36.9,10.4],[37.2,15.6],[36.5,22.5],[38.5,25.5],[40.3,26.4],[40.95,28.95]],HC.war);
-    hr(d,[[36.8,10.2],[32.9,13.2],[30.4,19.6],[32.8,21.9],[31.6,25.1],[31.2,29.9]],HC.war);
-   },[['fill',HC.athens,'帝国'],['dline',HC.war,'舰队与陆路两路（概略）'],['dot','#2a2018','起兵与进京']]),
-  hs('619—635年','北边的朋友，西边的失地','库布拉特在黑海北岸立起大保加利亚，同罗马结盟；西班牙的属地丢给西哥特人；儿子娶了波斯降将的女儿。',[[34.0,-4.0],[53.0,45.0]],d=>{
-    ha(d,'mByz620',HC.athens,{fillOpacity:.14});ha(d,'mAvars600',HC.neutral,{fillOpacity:.2});
-    ha(d,'lVisigoths600',HC.celt,{fillOpacity:.14});ha(d,'lSpania',HC.athens,{fillOpacity:.28,dashArray:'4 4'});
-    hp(d,'r_pereshchepina',{note:'1912年出土的金银与戒指，一般认为是库布拉特的墓。'});hp(d,'r_cartagena',{left:1});hp(d,'constantinople');
-    hl(d,'大保加利亚（约635年）','Old Great Bulgaria',47.3,38.5,HC.neutral);
-   },[['fill',HC.athens,'拜占庭（约620年）'],['fill',HC.neutral,'阿瓦尔汗国'],['fill',HC.celt,'西哥特王国'],['dash',HC.athens,'620年代丢掉的西班牙属地'],['dot','#2a2018','库布拉特的墓与新迦太基']]),
-  hs('628—641年','希腊语的罗马','629年起皇帝只称“巴西琉斯”，公文改用希腊文；“拜占庭”的名字是1557年才有的，他们自称罗马人。',[[28.0,10.0],[46.0,46.0]],d=>{
-    ha(d,'mByz641',HC.athens,{fillOpacity:.2});
-    hp(d,'constantinople',{note:'629年3月21日的法令只称“在基督里忠信的巴西琉斯”。'});hp(d,'rome',{left:1});hp(d,'jerusalem');
-    hl(d,'希腊语','Greek',38.6,32.5,HC.athens);
-   },[['fill',HC.athens,'希拉克略死时的拜占庭（641年）'],['dot','#2a2018','新旧两个罗马与耶路撒冷']]),
-  hs('629—638年','两道统一令','强迫犹太人受洗；为拉拢一性论派提出“一个意志”，638年的《信仰宣言》贴在圣索菲亚，可东方已经丢了。',[[28.0,2.0],[50.0,37.5]],d=>{
-    ha(d,'mByz620',HC.athens,{fillOpacity:.14});ha(d,'mFranks600',HC.celt,{fillOpacity:.16});
-    hp(d,'carthage',{note:'约632年这里的犹太人被强迫受洗。'});hp(d,'alexandria',{note:'633年主教居鲁士与一性论派合一。'});
-    hp(d,'constantinople',{note:'638年《信仰宣言》贴在圣索菲亚前廊。'});hp(d,'lutetia',{left:1,note:'629年达戈贝尔特与拜占庭立约。'});
-   },[['fill',HC.athens,'拜占庭'],['fill',HC.celt,'法兰克王国'],['dot','#2a2018','受洗与合一的地方']]),
-  hs('636—641年','晚年与身后','叙利亚丢了；希拉克略娶外甥女，被骂乱伦；641年死后宫廷内斗，赫拉克洛纳斯割鼻、玛蒂娜割舌，流放罗得岛。',[[34.0,22.0],[42.5,37.0]],d=>{
-    ha(d,'mByz641',HC.athens,{fillOpacity:.18});ha(d,'mCaliph644',HC.myc,{fillOpacity:.16});
-    hp(d,'constantinople',{note:'641年2月11日希拉克略死在这里。'});hp(d,'chalcedon',{left:1});
-    hp(d,'rhodes',{note:'641年11月玛蒂娜母子被流放到这里。'});
-   },[['fill',HC.athens,'拜占庭（641年）'],['fill',HC.myc,'哈里发国（约644年）'],['dot','#2a2018','京城与流放地']])
- ]},
-{id:'history-war-602',ch:5,title:'最后一场罗马—波斯大战',short:'最后的罗马—波斯大战',en:'The Last Roman–Persian War',period:'602—630年',c:HC.byz,
- scenes:[
-  hs('602—610年','为莫里斯报仇','602年莫里斯被杀，库思老以报仇为名开战，亲自攻下达拉；609—610年阿米达、埃德萨失守，罗马人自己正打内战。',[[30.5,26.5],[42.5,46.5]],d=>{
-    ha(d,'mByz600',HC.athens,{fillOpacity:.16});ha(d,'lSasanian560',HC.parthia,{fillOpacity:.16});
-    hp(d,'constantinople',{note:'602年11月，福卡斯在对岸的卡尔西顿杀了莫里斯父子。'});
-    hp(d,'edessa',{kind:'battle',note:'603年纳尔塞斯据城反福卡斯、向波斯求援；610年失守。'});
-    hp(d,'dara',{kind:'battle',note:'库思老亲自领兵围攻，挖地道掏空城基后攻破。'});
-    hp(d,'amida',{kind:'battle',left:1,note:'609年失守。'});
-    hp(d,'v_theodosiopolis');
-    hp(d,'alexandria',{left:1,note:'609年城里人截下待运的皇税，倒向起兵的希拉克略一方。'});
-    hr(d,[[37.07,41.22],[37.18,40.95],[37.16,38.79]],HC.parthia);
-   },[['fill',HC.athens,'东罗马（602年，含591年得来的亚美尼亚）'],['fill',HC.parthia,'萨珊波斯'],['dline',HC.parthia,'波斯兵西进（概略）'],['dot',HC.war,'失守的边城'],['dot','#2a2018','京城、卡林与亚历山大里亚']]),
-  hs('611—619年','从安条克到亚历山大里亚','613年希拉克略在安条克城下大败，帝国被拦腰切断；614年耶路撒冷陷落，真十字架被运走；619年波斯拿下亚历山大里亚。',[[23.5,24.0],[41.5,46.5]],d=>{
-    ha(d,'mSasanian620',HC.parthia,{fillOpacity:.2});ha(d,'mByz620',HC.athens,{fillOpacity:.16});
-    hp(d,'antioch',{kind:'battle',note:'613年希拉克略与尼基塔斯在城下大败。'});
-    hp(d,'tarsus',{left:1,note:'奇里乞亚的隘口失守后落入波斯人之手，小亚细亚与叙利亚从此不通。'});
-    hp(d,'jerusalem',{kind:'battle',note:'614年春被围，第二十一天城破；牧首与真十字架被带往泰西封。'});
-    hp(d,'alexandria',{kind:'battle',left:1,note:'619年陷落，此后十年埃及的税交给波斯。'});
-    hp(d,'ctesiphon',{note:'真十字架和牧首撒迦利亚被押到这里。'});
-    hr(d,[[36.2,36.16],[33.51,36.29],[31.78,35.24],[31.04,32.55],[31.2,29.92]],HC.parthia);
-   },[['fill',HC.parthia,'萨珊波斯极盛（约620年）'],['fill',HC.athens,'罗马剩下的地方（约620年）'],['dline',HC.parthia,'沙赫巴拉兹南下（概略）'],['dot',HC.war,'战败与陷落的三座大城'],['dot','#2a2018','塔尔苏斯与泰西封']]),
-  hs('615—623年','没有面包的首都','波斯兵到了卡尔西顿，埃及的粮断了：京城停发面包、薪俸减半，皇帝想走被牧首留住；库思老的库藏却越攒越多。',[[29.5,8.0],[49.0,46.5]],d=>{
-    ha(d,'mByz620',HC.athens,{fillOpacity:.16});ha(d,'mSasanian620',HC.parthia,{fillOpacity:.14});ha(d,'mAvars600',HC.neutral,{fillOpacity:.22});
-    hp(d,'constantinople',{note:'618年8月停发市民面包；622年熔了圣索菲亚的吊灯和圣器铸币。'});
-    hp(d,'chalcedon',{left:1,labelZ:6,note:'615年沙欣兵临此地，隔海就是京城。'});
-    hp(d,'v_heraclea',{kind:'battle',left:1,labelZ:6});
-    hp(d,'carthage',{note:'618—619年皇帝想退回非洲，被牧首留住。'});
-    hp(d,'alexandria',{note:'京城的口粮原本多从这里运去；619年落入波斯人之手。'});
-    hp(d,'ctesiphon',{note:'据塔巴里，库思老的银币开战后翻了一倍。'});
-   },[['fill',HC.athens,'罗马（约620年）'],['fill',HC.parthia,'萨珊波斯（约620年）'],['fill',HC.neutral,'阿瓦尔汗国'],['dot',HC.war,'623年阿瓦尔人设伏处'],['dot','#2a2018','京城、对岸的卡尔西顿、非洲、埃及与泰西封']]),
-  hs('622—626年','皇帝绕到背后','希拉克略绕道亚美尼亚打进波斯后方，毁了阿杜尔·古什纳斯普火庙；626年波斯与阿瓦尔人隔着海峡夹攻君士坦丁堡，失败。',[[35.5,25.5],[45.5,49.0]],d=>{
-    ha(d,'mByz620',HC.athens,{fillOpacity:.14});ha(d,'mSasanian620',HC.parthia,{fillOpacity:.14});
-    hp(d,'constantinople',{kind:'battle',note:'626年6月底阿瓦尔人逼近，7月底至8月8日猛攻。'});
-    hp(d,'chalcedon',{left:1,labelZ:6,note:'626年沙赫巴拉兹在此扎营，隔海接应。'});
-    hp(d,'mazaca',{note:'624年希拉克略在此集结大军。'});
-    hp(d,'v_ganzak',{left:1});hp(d,'v_takhtsoleyman',{kind:'battle'});
-    hr(d,[[40.98,29.03],[38.72,35.49],[39.9,41.27],[40.0,44.58],[39.2,45.4],[37.01,46.19]],HC.athens);
-    hr(d,[[36.92,34.89],[38.2,32.6],[39.8,30.5],[40.98,29.03]],HC.parthia);
-    hl(d,'阿瓦尔人与斯拉夫人','Avars and Slavs',42.6,27.0,HC.neutral);
-   },[['fill',HC.athens,'罗马（约620年）'],['fill',HC.parthia,'萨珊波斯（约620年）'],['dline',HC.athens,'624年希拉克略的进军（概略）'],['dline',HC.parthia,'626年沙赫巴拉兹奔向卡尔西顿（概略）'],['dot',HC.war,'被围的京城与被毁的火庙'],['dot','#2a2018','卡尔西顿、凯撒里亚与甘扎克']]),
-  hs('626—628年','尼尼微与库思老之死','西突厥翻过高加索与罗马合围第比利斯；627年12月尼尼微一战波斯军溃散；628年2月大族拥立西罗埃，库思老被囚处死。',[[32.0,37.5],[44.5,51.5]],d=>{
-    ha(d,'lSasanian560',HC.parthia,{fillOpacity:.16});
-    hl(d,'西突厥（拜占庭人称“可萨人”）','Western Turks (Khazars)',44.0,46.6,HC.mino);
-    hp(d,'derbent',{kind:'battle',note:'627年突厥人攻破这道里海边的关口。'});
-    hp(d,'v_tiflis',{kind:'battle'});
-    hp(d,'nineveh',{kind:'battle',note:'627年12月12日，大雾中波斯军被击溃，主将拉赫扎德战死。'});
-    hp(d,'v_dastagird');
-    hp(d,'ctesiphon',{note:'628年2月政变，库思老被关进自己新修的库房，几天后被处死。'});
-    hr(d,[[42.06,48.29],[41.69,44.8]],HC.mino);
-    hr(d,[[41.69,44.8],[39.9,44.6],[37.6,45.0],[36.36,43.15],[34.9,44.2],[33.98,44.93]],HC.athens);
-   },[['fill',HC.parthia,'萨珊波斯'],['dline',HC.mino,'627年西突厥南下（概略）'],['dline',HC.athens,'627—628年希拉克略南下（概略）'],['dot',HC.war,'关口、围城与战场'],['dot','#2a2018','行宫与王都']]),
-  hs('628—630年','两败俱伤','628年和约，边界回到莫里斯时的旧线；629年沙赫巴拉兹撤出埃及、叙利亚；630年真十字架回到耶路撒冷，波斯陷入内乱。',[[27.5,26.0],[42.5,47.5]],d=>{
-    ha(d,'mByz600',HC.athens,{fillOpacity:.18});ha(d,'lSasanian560',HC.parthia,{fillOpacity:.14});
-    hp(d,'constantinople',{note:'628年5月15日，希拉克略的捷报在圣索菲亚宣读。'});
-    hp(d,'v_arabissus');
-    hp(d,'jerusalem',{note:'630年3月21日，希拉克略把真十字架送回。'});
-    hp(d,'alexandria',{left:1,note:'629年夏起波斯军撤出埃及。'});
-    hp(d,'ctesiphon',{note:'630年4月沙赫巴拉兹在此称王，四十天后被杀。'});
-   },[['fill',HC.athens,'罗马（东界回到591年的旧线，示意）'],['fill',HC.parthia,'萨珊波斯'],['dot','#2a2018','报捷、会面、归还与称王的地方']])
+  hs('565—602年','查士丁尼死后的烂摊子','查士丁二世停付岁币丢达拉；提比略散金掏空国库；莫里斯扶库思老二世复位，却因削饷和河北过冬死于602年福卡斯兵变。',[[32.0,14.0],[46.5,49.5]],d=>{
+    ha(d,'mByz600',HC.athens,{fillOpacity:.2});ha(d,'lSasanian560',HC.parthia,{fillOpacity:.15});
+    ha(d,'mAvars600',HC.neutral,{fillOpacity:.2});
+    hp(d,'dara',{kind:'battle',note:'573年被波斯攻破，查士丁二世闻讯发疯；591年库思老二世归还罗马。'});
+    hp(d,'sirmium',{kind:'battle',note:'约582年被阿瓦尔人攻破。'});
+    hp(d,'constantinople');hp(d,'chalcedon',{kind:'battle',note:'602年11月莫里斯与五个儿子在此被福卡斯处死。'});
+   },[['fill',HC.athens,'591年后的东罗马'],['fill',HC.parthia,'萨珊波斯'],['fill',HC.neutral,'阿瓦尔汗国'],['dot',HC.war,'要塞失守与602年兵变']]),
+  hs('602—619年','叙利亚和埃及是怎么丢的','福卡斯清洗引发波斯借口开战；希拉克略从迦太基起兵进京，内战抽空边防，加上当地一性论派离心，叙利亚与埃及相继失守。',[[27.0,8.0],[43.5,48.0]],d=>{
+    ha(d,'mSasanian620',HC.parthia,{fillOpacity:.22});ha(d,'mByz620',HC.athens,{fillOpacity:.18});
+    hp(d,'carthage',{note:'608年老希拉克略父子在此起兵断粮，610年舰队进京斩福卡斯。'});
+    hp(d,'antioch',{kind:'battle',note:'613年希拉克略在城外大败，叙利亚失守。'});
+    hp(d,'jerusalem',{kind:'battle',note:'614年沙赫巴拉兹破城，真十字架被运往泰西封。'});
+    hp(d,'alexandria',{kind:'battle',note:'619年波斯军攻下亚历山大里亚，君士坦丁堡断粮。'});hp(d,'constantinople');
+   },[['fill',HC.parthia,'萨珊波斯占领区（约620年）'],['fill',HC.athens,'东罗马仅存的疆域'],['dot',HC.war,'613—619年接连失守的大城']]),
+  hs('622—626年','圣战与“换家”：孤城撑了六年','教会熔金银器充饷；希拉克略绕道高加索直插波斯腹地烧毁圣火庙；626年君士坦丁堡靠海峡城墙天险与牧首打鸡血顶住围攻。',[[33.0,22.0],[45.0,50.0]],d=>{
+    ha(d,'mByz620',HC.athens,{fillOpacity:.18});ha(d,'mSasanian620',HC.parthia,{fillOpacity:.18});
+    ha(d,'mAvars600',HC.neutral,{fillOpacity:.2});
+    hp(d,'constantinople',{kind:'battle',note:'626年夏阿瓦尔、斯拉夫与波斯夹攻，靠金角湾海战与城墙顶住。'});
+    hp(d,'chalcedon',{note:'波斯大将沙赫巴拉兹驻军于此，隔着海峡过不去。'});
+    hp(d,'trapezus');hp(d,'r_ganzak',{kind:'battle',note:'624年希拉克略在此烧毁萨珊皇家阿杜尔·古什纳斯普火庙。'});
+    hr(d,[[41.0,28.97],[41.0,39.7],[40.0,44.5],[36.6,47.2]],HC.war);
+   },[['fill',HC.athens,'东罗马'],['fill',HC.parthia,'萨珊占领区'],['fill',HC.neutral,'阿瓦尔汗国'],['dline',HC.war,'希拉克略绕道“换家”路线（概略）'],['dot',HC.war,'626年守城与烧毁波斯圣火庙']]),
+  hs('627—630年','撑到皇帝赢了：收回失地与放弃拉丁语','627年尼尼微大捷，628年波斯政变杀库思老求和，叙利亚与埃及收回；629年皇帝改称希腊语“巴西琉斯”，拉丁语退出官方。',[[28.0,20.0],[43.5,49.0]],d=>{
+    ha(d,'mByz600',HC.athens,{fillOpacity:.2});ha(d,'lSasanian560',HC.parthia,{fillOpacity:.14});
+    hp(d,'nineveh',{kind:'battle',note:'627年12月希拉克略在大雾中击溃波斯军。'});
+    hp(d,'r_dastagird',{kind:'battle'});hp(d,'ctesiphon',{note:'628年2月波斯贵族政变处死库思老二世，向东罗马求和。'});
+    hp(d,'jerusalem',{note:'630年3月21日希拉克略把真十字架送回耶路撒冷。'});
+    hp(d,'constantinople',{note:'629年法令去掉拉丁文帝号，改称希腊语“巴西琉斯”。'});
+   },[['fill',HC.athens,'628年收复失地后的东罗马'],['fill',HC.parthia,'萨珊波斯'],['dot',HC.war,'尼尼微大捷与洗劫行宫'],['dot','#2a2018','京城、泰西封与耶路撒冷']]),
+  hs('630—638年','抓紧时间又搞了一次宗教纷争','失地刚收回，朝廷强推“一志论”《信仰宣言》；居鲁士在埃及严刑逼迫科普特人十年，反而把叙利亚和埃及彻底推向对立面。',[[27.0,9.0],[43.0,41.0]],d=>{
+    ha(d,'mByz600',HC.athens,{fillOpacity:.16});
+    hp(d,'constantinople',{note:'638年《信仰宣言》贴在圣索菲亚前廊，强推“一个意志”。'});
+    hp(d,'alexandria',{note:'居鲁士兼任主教与总督，严刑逼迫科普特人十年，科普特牧首本雅明逃入沙漠。'});
+    hp(d,'jerusalem',{note:'牧首索弗罗尼乌斯带头反对一志论。'});hp(d,'carthage',{note:'约632年这里的犹太人被强迫受洗。'});
+   },[['fill',HC.athens,'东罗马'],['dot','#2a2018','强推“一志论”与逼迫改宗之地']]),
+  hs('634—642年','五年后穆斯林丝滑夺走离心之地','636年雅穆克惨败，639—642年埃及易手；阿拉伯人轻税且不问教派，早对朝廷离心的叙利亚和埃及顺顺当当换了主人。',[[25.0,18.0],[43.0,46.0]],d=>{
+    ha(d,'mByz641',HC.athens,{fillOpacity:.2});ha(d,'mCaliph644',HC.myc,{fillOpacity:.22});
+    hp(d,'r_yarmouk',{kind:'battle',note:'636年8月东罗马军溃败，希拉克略叹“别了，叙利亚”。'});
+    hp(d,'jerusalem',{note:'637年开城向哈里发欧麦尔投降。'});
+    hp(d,'r_babylon_eg',{kind:'battle',note:'641年居鲁士在此签约交出埃及，成年男子年交两第纳尔。'});
+    hp(d,'alexandria',{note:'642年东罗马军撤出，科普特牧首本雅明回到城中。'});hp(d,'constantinople');
+   },[['fill',HC.athens,'希拉克略死时的东罗马（641年）'],['fill',HC.myc,'穆斯林接收后的哈里发国（约644年）'],['dot',HC.war,'雅穆克与巴比伦堡'],['dot','#2a2018','顺顺当当换了主人的大城']])
  ]},
 {id:'history-west-kingdoms',ch:5,title:'蛮族诸王国与西哥特',short:'蛮族诸王国',en:'The Barbarian Kingdoms and the Visigoths',period:'476—711年',c:HC.celt,
  scenes:[
@@ -2858,7 +2757,7 @@ const HISTORY_ENTRIES=[
     hl(d,'回鹘汗国（840年被黠戛斯攻破）','Uyghur Khaganate, fell 840',44.8,106.0,HC.war);
    },[['fill',HC.china,'唐（示意）'],['dot','#2a2018','两京']])
  ]},
-{id:'history-persia-khosrow-ii',ch:9,title:'库思老二世：借兵复位',short:'库思老二世',en:'Khosrow II: Restored with Roman Troops',period:'579—628年',c:HC.parthia,
+{id:'history-persia-khosrow-ii',ch:9,title:'库思老二世：借兵复位',short:'库思老二世',en:'Khosrow II: Restored with Roman Troops',period:'579—602年',c:HC.parthia,
  scenes:[
   hs('579—590年','霍尔木兹四世与巴赫拉姆·楚宾','霍尔木兹四世杀贵族、倚重德赫干；588年巴赫拉姆·楚宾大败突厥，因战利品与国王翻脸，被部下拥立为王。',[[28.5,40.0],[43.0,72.0]],d=>{
     ha(d,'lSasanian560',HC.parthia,{fillOpacity:.18});ha(d,'mWesternTurks600',HC.neutral,{fillOpacity:.22});
@@ -2881,13 +2780,7 @@ const HISTORY_ENTRIES=[
     hp(d,'ctesiphon');hp(d,'p_dastagird');hp(d,'p_taqebostan');
     hp(d,'p_hira',{note:'602年前后拉赫姆王朝被废，希拉交给泰伊部首领伊亚斯。'});
     hl(d,'贝克尔部阿拉伯人','Banu Bakr',30.0,45.2,HC.myc);
-   },[['fill',HC.parthia,'萨珊帝国'],['dash',HC.myc,'拉赫姆王国（602年前后被废）'],['dot','#2a2018','王都、行宫、崖刻与希拉']]),
-  hs('591—628年','宫廷里的基督徒','希琳和御医加百列偏一性论，财政大臣亚兹丁属东方教会；库思老不许再选大主教，主教座从608年空到628年。',[[31.5,36.0],[38.5,46.5]],d=>{
-    ha(d,'lSasanian560',HC.parthia,{fillOpacity:.16});ha(d,'mByz600',HC.athens,{fillOpacity:.12});
-    hp(d,'ctesiphon',{note:'612年两派在宫里辩论；615年乔治在附近的韦赫阿尔达希尔被钉死。'});
-    hp(d,'p_sergiopolis');
-    hp(d,'nisibis',{note:'附近的伊兹拉山修道院是东方教会的重镇，乔治在那里受教，大主教空缺时由这里的院长巴拜代管北方教务。'});
-   },[['fill',HC.parthia,'萨珊帝国'],['fill',HC.athens,'东罗马'],['dot','#2a2018','王都、圣塞尔吉乌斯城与尼西比斯']])
+   },[['fill',HC.parthia,'萨珊帝国'],['dash',HC.myc,'拉赫姆王国（602年前后被废）'],['dot','#2a2018','王都、行宫、崖刻与希拉']])
  ]},
 {id:'history-arab-conquest',ch:9,title:'穆斯林崛起与阿拉伯征服',short:'阿拉伯征服',en:'The Rise of Islam and the Arab Conquests',period:'610—651年',c:HC.parthia,
  scenes:[
@@ -2960,8 +2853,7 @@ const HISTORY_ERAS=[
  {id:'empire-principate',name:'罗马帝国：元首制',en:'The Principate',date:'前27—192年',c:HC.rome,items:[['history-empire-principate'],['history-empire-julio-claudian'],['history-empire-flavian'],['history-empire-antonine']]},
  {id:'empire-crisis',name:'罗马帝国：危机与重铸',en:'Crisis and Reinvention',date:'193—363年',c:HC.rome,items:[['history-empire-crisis'],['history-empire-dominate'],['history-empire-constantine']]},
  {id:'empire-west',name:'罗马帝国：分治与西部的终结',en:'Division and the End in the West',date:'364—476年',c:HC.rome,items:[['history-empire-valentinian'],['history-empire-theodosius'],['history-empire-west-fall']]},
- {id:'empire-east',name:'东罗马：利奥王朝与查士丁尼王朝',en:'East Rome: the Leonid and Justinian Dynasties',date:'457—602年',c:HC.byz,items:[['history-empire-leo'],['history-empire-justinian'],['history-empire-maurice']]},
- {id:'empire-byzantium',name:'拜占庭：希拉克略时代',en:'Byzantium under Heraclius',date:'602—641年',c:HC.byz,items:[['history-empire-heraclius'],['history-war-602']]},
+ {id:'empire-east',name:'东罗马：从利奥到希拉克略',en:'East Rome from Leo to Heraclius',date:'457—641年',c:HC.byz,items:[['history-empire-leo'],['history-empire-justinian'],['history-empire-heraclius']]},
  {id:'empire-kingdoms',name:'中世纪早期：蛮族诸王国',en:'The Barbarian Kingdoms',date:'476—711年',c:HC.celt,items:[['history-west-kingdoms']]},
  {id:'empire-franks',name:'中世纪早期：法兰克与伦巴第',en:'Franks and Lombards',date:'561—814年',c:HC.celt,items:[['history-west-merovingians'],['history-west-lombards'],['history-west-charlemagne']]},
  {id:'faith-israel',name:'古代以色列',en:'Ancient Israel',date:'约前1400—前538年',c:HC.faith,items:[['history-faith-israel'],['history-faith-first-temple']]},
@@ -2983,10 +2875,8 @@ const HISTORY_BRANCHES=[
  {id:'trunk',name:'希腊',en:'Greek world',lane:2},
  // 罗马: from the founding to the end of the West in 476, where it splits into 东罗马 and 中世纪西欧.
  {id:'rome',name:'罗马',en:'Rome',lane:3,parent:'trunk',from:-1000,to:476,c:HC.rome},
- // 东罗马 takes the Greek lane, free since the Greek world ran into Rome; it ends with the Justinian dynasty and carries on as 拜占庭,
- // named for the switch from Latin to Greek as the language of state under Heraclius.
- {id:'east',name:'东罗马',en:'East Rome',lane:2,parent:'rome',from:476,to:602,c:HC.byz},
- {id:'byz',name:'拜占庭',en:'Byzantium',lane:2,parent:'east',from:602,to:641,c:HC.byz},
+ // 东罗马 takes the Greek lane, free since the Greek world ran into Rome.
+ {id:'east',name:'东罗马',en:'East Rome',lane:2,parent:'rome',from:476,to:641,c:HC.byz},
  {id:'west',name:'中世纪西欧',en:'Medieval Western Europe',lane:4,parent:'rome',from:476,to:814,c:HC.celt},
  // The 基督教 line: from the Hebrews' nomadic origins (the old Levant branch) to the medieval church; on its own lane, right of the West.
  {id:'faith',name:'基督教',en:'Judaism & Christianity',lane:5,parent:'trunk',from:-1400,to:843,c:HC.faith},
@@ -3085,23 +2975,21 @@ const TREE_ROWS={
  'history-persia-parthia/0':['persia',-141,224],
  'history-persia-sasanian/0':['persia',224,379],
  'history-persia-khosrow/0':['persia',379,579],
- 'history-empire-maurice/0':['east',565,602],
- 'history-empire-heraclius/0':['byz',602,641],
- 'history-war-602/0':[['byz','persia','egypt'],603,628],
- 'history-arab-conquest/0':[['persia','byz','egypt'],622,651],
+ 'history-empire-heraclius/0':[['east','persia','egypt'],602,641,'565—641年'],
+ 'history-arab-conquest/0':[['persia','east','egypt'],622,651],
  'history-faith-three-chapters/0':['faith',527,604],
  'history-faith-monothelites/0':['faith',610,692],
  'history-faith-icons/0':['faith',717,843],
  'history-west-merovingians/0':['west',561,751],
  'history-west-lombards/0':['west',568,756],
  'history-west-charlemagne/0':['west',768,814],
- 'history-persia-khosrow-ii/0':['persia',579,628],
+ 'history-persia-khosrow-ii/0':['persia',579,602],
  'history-china-tang/0':['china',589,845]
 };
 // Topics still to be written grow the tree as dashed shoots.
-const TREE_FUTURE=[['byz',641,'希拉克略以后','641年起 · 到1453年 · 希腊火守城与圣像之争先见“基督教”主线 · 待展开'],['west',814,'加洛林以后','814年起 · 待展开'],['faith',843,'走向东西分裂','843年起 · 待展开'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',651,'伊斯兰时代的伊朗','651年起 · 待展开'],['china',845,'晚唐五代与宋','845年起 · 待展开']];
+const TREE_FUTURE=[['east',641,'东罗马（中世纪）','641年起 · 到1453年 · 希腊火守城与圣像之争先见“基督教”主线 · 待展开'],['west',814,'加洛林以后','814年起 · 待展开'],['faith',843,'走向东西分裂','843年起 · 待展开'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',651,'伊斯兰时代的伊朗','651年起 · 待展开'],['china',845,'晚唐五代与宋','845年起 · 待展开']];
 // Where a line stops it says why: [line, year, the event that ends it, note, the line it carries on in].
-const TREE_ENDS=[['trunk',-30,'并入罗马','前146年科林斯被毁 · 前30年最后一个希腊化王国埃及并入罗马','rome'],['rome',476,'西罗马终结','476年西部末代皇帝被废 · 分出东罗马与中世纪西欧'],['east',602,'查士丁尼王朝终结','602年莫里斯被杀 · 接拜占庭（拉丁语退出官方）','byz']];
+const TREE_ENDS=[['trunk',-30,'并入罗马','前146年科林斯被毁 · 前30年最后一个希腊化王国埃及并入罗马','rome'],['rome',476,'西罗马终结','476年西部末代皇帝被废 · 分出东罗马与中世纪西欧']];
 function historyEra(e,scene=0){return HISTORY_ERAS.find(era=>era.items.some(([id,from=0,to=Infinity])=>id===e.id&&scene>=from&&scene<=to));}
 const TOPIC_ENTRIES=[
  {id:'topic-grail-sword',kind:'topic',ch:0,num:'01',title:'圣杯与剑：统治的成本',short:'圣杯与剑：统治的成本',en:'The Grail and the Sword: the Cost of Rule',

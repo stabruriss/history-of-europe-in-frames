@@ -22,10 +22,10 @@ const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','
  }
  try{
   const p=await pageAt();
-  assert.equal(await p.$$eval('#toc .chip',es=>es.length),98);
+  assert.equal(await p.$$eval('#toc .chip',es=>es.length),96);
   // Metro lines: pick a line, then ↑↓ walk its stations in time order and stop at both ends.
   const lines=await p.evaluate(()=>HISTORY_BRANCHES.map(b=>({id:b.id,keys:lineStations(b.id).map(s=>s.key)})));
-  assert.deepEqual(lines.map(l=>[l.id,l.keys.length]),[['trunk',23],['rome',32],['east',35],['byz',38],['west',36],['faith',17],['egypt',12],['persia',12],['china',12]]);
+  assert.deepEqual(lines.map(l=>[l.id,l.keys.length]),[['trunk',23],['rome',32],['east',36],['west',36],['faith',17],['egypt',12],['persia',12],['china',12]]);
   const onKey=()=>p.evaluate(()=>({key:toc.querySelector('.chip.on').dataset.key,line:treeLine,focus:document.activeElement===toc.querySelector('.chip.on')}));
   const walked=new Set();
   for(const line of lines){
@@ -39,7 +39,7 @@ const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','
    await p.keyboard.press('ArrowDown');assert.equal((await onKey()).key,line.keys.at(-1));
    for(let i=line.keys.length-2;i>=0;i--){await p.keyboard.press('ArrowUp');assert.equal((await onKey()).key,line.keys[i]);}
   }
-  assert.equal(walked.size,98,'every row lies on some line');
+  assert.equal(walked.size,96,'every row lies on some line');
   // The same chapter has separate sidebar rows on either side of two era boundaries.
   await p.evaluate(()=>go('history-farming'));await p.focus('#map');await p.keyboard.press('ArrowDown');
   assert.equal((await state(p)).scene,1);assert.equal(await p.$eval('.active-era',e=>e.dataset.era),'bronze');
@@ -60,7 +60,7 @@ const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','
    for(let i=e.count-2;i>=0;i--){await p.keyboard.press('ArrowLeft');assert.equal((await state(p)).textScene,i);}
    await p.keyboard.press('ArrowLeft');assert.equal((await state(p)).scene,0);
   }
-  assert.equal(count,346);
+  assert.equal(count,333);
   // Meaningful correspondence, rather than several events sharing one summary paragraph.
   for(const [scene,word] of [['history-persian-wars/2','马拉松'],['history-persian-wars/3','萨拉米斯'],['history-celts/1','加拉太'],['history-celts/2','帕加马']]){
    await p.evaluate(scene=>go(scene),scene);assert.ok(await p.$eval('#sceneContext>p',(e,word)=>e.textContent.includes(word),word));
@@ -92,6 +92,6 @@ const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','
   await animated.waitForFunction(()=>{const t=document.querySelector('#sceneContext .passage-title').getBoundingClientRect(),b=readerBody.getBoundingClientRect();return t.top>=b.top-1&&t.top<b.bottom;});
   assert.equal((await state(animated)).scene,5);await visible(animated,'rapid animated switching');
   await animated.screenshot({path:path.join(__dirname,'shots-v6','keyboard-desktop.png')});await animated.close();
-  assert.deepEqual(errors,[]);console.log('PASS: 9 metro lines (23/32/35/38/36/17/12/12/12 stations, all 98 rows; 罗马 to 476, then 东罗马 and 中世纪西欧; 拜占庭 after 602; shared stations walked on every line they sit on) walked up/down in time order; 346 scene-to-text passages with real arrow keys; era boundaries; map/reader/rail focus; input and modifiers; 33-stop geography timeline; mobile scrolling and fold restoration; rapid animated changes; offline; no page errors.');
+  assert.deepEqual(errors,[]);console.log('PASS: 9 metro lines (23/32/36/36/17/12/12/12 stations, all 96 rows; 罗马 to 476, then 东罗马 and 中世纪西欧; 拜占庭 after 602; shared stations walked on every line they sit on) walked up/down in time order; 333 scene-to-text passages with real arrow keys; era boundaries; map/reader/rail focus; input and modifiers; 33-stop geography timeline; mobile scrolling and fold restoration; rapid animated changes; offline; no page errors.');
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

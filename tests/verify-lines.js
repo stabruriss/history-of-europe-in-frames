@@ -41,8 +41,8 @@ const PHRASES=[["history-egypt-roman/0", "托勒密只是亚历山大之后的�
    // Each line leaves the trunk at the early states, then runs through its own dynasties; the Hellenistic sections sit in the middle.
    assert.deepEqual(report.egyptLine.slice(0,3),['history-migration','history-farming','history-farming']);
    // The shared stations (the last Roman–Persian war, the Arab conquests) sit on 埃及 and 波斯 too.
-   assert.deepEqual(report.egyptLine.slice(3),['history-egypt-old','history-egypt-middle','history-egypt-new','history-egypt-late','history-ptolemaic-bargain','history-egypt-roman','history-egypt-byzantine','history-war-602','history-arab-conquest']);
-   assert.deepEqual(report.persiaLine.slice(3),['history-persia-elam','history-persia-achaemenid','history-eastern-kingdoms','history-persia-parthia','history-persia-sasanian','history-persia-khosrow','history-persia-khosrow-ii','history-war-602','history-arab-conquest']);
+   assert.deepEqual(report.egyptLine.slice(3),['history-egypt-old','history-egypt-middle','history-egypt-new','history-egypt-late','history-ptolemaic-bargain','history-egypt-roman','history-egypt-byzantine','history-empire-heraclius','history-arab-conquest']);
+   assert.deepEqual(report.persiaLine.slice(3),['history-persia-elam','history-persia-achaemenid','history-eastern-kingdoms','history-persia-parthia','history-persia-sasanian','history-persia-khosrow','history-persia-khosrow-ii','history-empire-heraclius','history-arab-conquest']);
    assert.deepEqual(report.shoots,[['egypt',642],['persia',651]]);
    for(const [scene,phrase] of PHRASES){
     await page.evaluate(s=>go(s),scene);
