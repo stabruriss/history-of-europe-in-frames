@@ -24,6 +24,7 @@ const BOLD=[['history-faith-three-chapters/1','教义之争背后的权力格局
  ['history-empire-heraclius/3','拜占庭帝国取代东罗马名号（以拉丁语不再作为官方语言为标志）'],
  ['history-empire-heraclius/4','在此期间，东罗马还又抓紧时间搞了一次宗教纷争'],
  ['history-empire-heraclius/5','五年后穆斯林就兴起了，很丝滑地就夺回了已经很离心的这些地区'],
+ ['history-empire-heraclius/5','叙利亚和埃及丢了之后，停发免费粮食，君士坦丁堡的人口骤减'],
  ['history-west-merovingians/*','权力自我膨胀'],['history-west-lombards/*','组织扩张'],['history-arab-conquest/*','几次战争征服和领土变迁']];
 (async()=>{
  const browser=await puppeteer.launch({executablePath:process.env.CHROME_PATH||'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true});
