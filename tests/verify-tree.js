@@ -23,7 +23,7 @@ const treeReport=sel=>{
   timeOrder:HISTORY_ERAS.flatMap(era=>era.items.map(([id,from=0])=>id+'/'+from)).map((k,i)=>[k,TREE_ROWS[k][1],i]).sort((a,b)=>a[1]-b[1]||a[2]-b[2]).map(x=>x[0])};
 };
 function checkTree(r,label){
- assert.equal(r.items.length,70,label);
+ assert.equal(r.items.length,86,label);
  // Navigation order (DOM order) is the time order, and it reads top to bottom.
  assert.deepEqual(r.items.map(i=>i.key),r.timeOrder,label+' rows follow the time order');
  for(let i=1;i<r.items.length;i++)assert.ok(r.items[i].top>r.items[i-1].top,label+' row order runs top to bottom at '+r.items[i].key);
@@ -33,19 +33,20 @@ function checkTree(r,label){
  for(let i=1;i<byTop.length;i++)assert.ok(byTop[i].top>=byTop[i-1].bottom-.5,`${label}: rows overlap: ${byTop[i-1].text} / ${byTop[i].text}`);
  // Each branch is one lane; each row's node sits on its lane, level with its label.
  const lanes={};for(const i of r.items){assert.ok(i.cx!==null&&i.cy>=i.top&&i.cy<=i.bottom,label+' node '+i.key);(lanes[i.branch]??=new Set()).add(i.cx);}
- assert.deepEqual(Object.keys(lanes).sort(),['china','faith','ptolemaic','rome','seleucid','trunk','west'],label);
+ assert.deepEqual(Object.keys(lanes).sort(),['china','egypt','faith','persia','rome','trunk','west'],label);
  assert.ok(Object.values(lanes).every(s=>s.size===1),label+' one lane per branch');
  // 西罗马 (395—476) reuses the Levant lane, which ended fourteen centuries earlier; China sits on its own parallel lane on the far right.
  assert.equal(new Set(Object.values(lanes).map(s=>[...s][0])).size,7,label+' distinct lanes');
- // Left to right: Seleucids, Ptolemies, the Greek trunk, Rome, West Rome, 基督教, then the parallel 中国 line on the outermost lane.
+ // Left to right: 波斯, 埃及, the Greek trunk, Rome, West Rome, 基督教, then the parallel 中国 line on the outermost lane.
+ assert.ok([...lanes.persia][0]<[...lanes.egypt][0]&&[...lanes.egypt][0]<[...lanes.trunk][0],label+' 波斯 and 埃及 left of the trunk');
  assert.ok([...lanes.rome][0]<[...lanes.west][0]&&[...lanes.west][0]<[...lanes.faith][0]&&[...lanes.faith][0]<[...lanes.china][0],label+' the 中国 line outermost');
- assert.deepEqual(r.forks,['faith','ptolemaic','rome','seleucid','west'],label+' forks');
+ assert.deepEqual(r.forks,['egypt','faith','persia','rome','west'],label+' forks');
  assert.equal(r.breaks,3,label+' compressed prehistory is marked');
  // Overlapping topics read side by side at the same height.
  const top=k=>r.items.find(i=>i.key===k).top;
  assert.ok(top('history-poleis/0')<top('history-rome-kings/0')&&top('history-rome-kings/0')<top('history-sparta/0'),label+' Rome kings beside archaic Greece');
  assert.ok(top('history-celts/0')<top('history-rome-punic/0')&&top('history-rome-punic/0')<top('history-eastern-kingdoms/0'),label+' Punic Wars beside the Hellenistic kingdoms');
- assert.equal(r.futures.length,4,label);assert.match(r.futures.map(f=>f.text).join(' '),/中世纪教会/,label);assert.match(r.futures.map(f=>f.text).join(' '),/东罗马/,label);assert.match(r.futures.map(f=>f.text).join(' '),/隋唐/,label);assert.ok(r.futureLane,label);
+ assert.equal(r.futures.length,6,label);assert.match(r.futures.map(f=>f.text).join(' '),/中世纪教会/,label);assert.match(r.futures.map(f=>f.text).join(' '),/东罗马/,label);assert.match(r.futures.map(f=>f.text).join(' '),/隋唐/,label);assert.ok(r.futureLane,label);
  assert.ok(r.futures.every(f=>f.top>top('history-rome-augustus/0')),label+' unwritten topics grow below');
  assert.match(r.futures.map(f=>f.text).join(' '),/中世纪/,label);
  assert.ok(r.futures.every(f=>f.top>top('history-empire-west-fall/0')),label+' the medieval shoot grows below 476');
@@ -85,8 +86,8 @@ function checkTree(r,label){
   assert.ok(side.lanes.some(l=>l.branch==='rome'&&l.fork)&&side.lanes.some(l=>l.branch==='trunk'),JSON.stringify(side.lanes));
   assert.ok(side.lanes.every(l=>l.branch==='rome'||(l.branch==='trunk'&&l.y1<=side.forkY.rome+.5)),JSON.stringify(side.lanes));
   assert.ok(side.dimTrunk>0);
-  assert.deepEqual(side.pills,[['trunk',false],['faith',false],['rome',true],['ptolemaic',false],['seleucid',false],['west',false],['china',false]]);
-  assert.equal(side.pos,'13 / 31');assert.ok(side.offLine.includes('history-poleis/0')&&!side.offLine.includes('history-palaces/0')&&!side.offLine.includes('history-rome-site/0'));
+  assert.deepEqual(side.pills,[['trunk',false],['faith',false],['rome',true],['egypt',false],['persia',false],['west',false],['china',false]]);
+  assert.equal(side.pos,'13 / 33');assert.ok(side.offLine.includes('history-poleis/0')&&!side.offLine.includes('history-palaces/0')&&!side.offLine.includes('history-rome-site/0'));
   assert.equal(side.node,'history-rome-punic/0');assert.equal(side.r,'5.5');
   let s=await state(p);assert.deepEqual(s.on,['history-rome-punic/0']);assert.equal(s.era,'rome-med');
   // Clicking a branch row picks its line; ↑↓ then stay on that line (metro style) and stop at its ends.
@@ -97,7 +98,8 @@ function checkTree(r,label){
   assert.equal(await p.evaluate(()=>treeLine),'faith');
   await p.keyboard.press('ArrowDown');await p.keyboard.press('ArrowDown');s=await state(p);assert.deepEqual([s.id,s.scene],['history-faith-first-temple',0],'the 基督教 line goes on to the First Temple');
   for(let i=0;i<7;i++)await p.keyboard.press('ArrowDown');
-  s=await state(p);assert.deepEqual([s.id,s.scene],['history-faith-two-cities',0],'end of the 基督教 line');assert.ok(await p.$eval('#next',e=>e.disabled));
+  s=await state(p);assert.deepEqual([s.id,s.scene],['history-faith-two-cities',0]);
+  await p.keyboard.press('ArrowDown');s=await state(p);assert.deepEqual([s.id,s.scene],['history-faith-papacy',0],'end of the 基督教 line');assert.ok(await p.$eval('#next',e=>e.disabled));
   await p.click('#toc .tree-item[data-key="history-faith-israel/0"]');
   // Switching lines is in place: the section stays and the sidebar does not move; ↑↓ then follow the new line by time.
   const scroll0=await p.evaluate(()=>toc.scrollTop);
@@ -125,7 +127,7 @@ function checkTree(r,label){
    assert.equal(await p.evaluate(()=>toc.scrollTop),before,'line click does not scroll');
   };
   await clickLine('rome');s=await state(p);assert.equal(s.id,'history-celts');assert.equal(await p.evaluate(()=>treeLine),'rome');
-  assert.equal(await p.$eval('#pos',e=>e.textContent),'– / 31');
+  assert.equal(await p.$eval('#pos',e=>e.textContent),'– / 33');
   await p.keyboard.press('ArrowDown');s=await state(p);assert.equal(s.id,'history-rome-punic','next Rome station after 前279');
   await clickLine('trunk');s=await state(p);assert.equal(s.id,'history-rome-punic');assert.equal(await p.evaluate(()=>treeLine),'trunk');
   await p.keyboard.press('ArrowUp');s=await state(p);assert.equal(s.id,'history-celts','previous Greek station before 前264');
@@ -150,7 +152,7 @@ function checkTree(r,label){
   assert.equal(s.id,'history-palaces');await p.keyboard.press('ArrowDown');await p.keyboard.press('ArrowDown');await p.keyboard.press('ArrowDown');
   s=await state(p);assert.equal(s.id,'history-rome-site');
   // A full ride on each line from the root: every ↓ lands lower in the tree, and the footer counts stations.
-  for(const [line,startId,count,last] of [['trunk','history-migration',23,'history-hellenistic-end'],['faith','history-migration',13,'history-faith-two-cities'],['rome','history-migration',31,'history-empire-theodosius'],['west','history-migration',32,'history-empire-west-fall'],['ptolemaic','history-migration',19,'history-ptolemaic-bargain'],['china','history-china-neolithic',10,'history-china-sixteen-kingdoms']]){
+  for(const [line,startId,count,last] of [['trunk','history-migration',23,'history-hellenistic-end'],['faith','history-migration',14,'history-faith-papacy'],['rome','history-migration',33,'history-empire-justinian'],['west','history-migration',33,'history-west-kingdoms'],['egypt','history-migration',10,'history-egypt-byzantine'],['persia','history-migration',9,'history-persia-khosrow'],['china','history-china-neolithic',11,'history-china-sui']]){
    await p.evaluate(id=>go(id),startId);await p.click(`#toc .tree-line[data-line="${line}"]`);await p.focus('#toc .tree-item.on');
    let lastTop=-1;
    for(let i=0;i<count;i++){
@@ -197,7 +199,7 @@ function checkTree(r,label){
   await d.click('#treeOpen');s=await state(d);assert.ok(s.sheet);assert.deepEqual(s.sheetOn,['history-rome-punic/0']);
   const wide=await d.evaluate(treeReport,'#treeSheet .htree');checkTree(wide,'expanded');assert.ok(wide.wide);
   // 西罗马 is one section and a shoot; its name shows where the stretch below the fork can hold it (sidebar dragged wide, phone sheet).
-  assert.ok(['塞琉古与东方','托勒密埃及','罗马','基督教','中国'].every(t=>wide.names.some(n=>n.text===t))&&wide.names.every(n=>['塞琉古与东方','托勒密埃及','罗马','基督教','西罗马','中国'].includes(n.text)),JSON.stringify(wide.names.map(n=>n.text)));
+  assert.ok(['波斯','埃及','罗马','基督教','中国'].every(t=>wide.names.some(n=>n.text===t))&&wide.names.every(n=>['波斯','埃及','罗马','基督教','西罗马','中国'].includes(n.text)),JSON.stringify(wide.names.map(n=>n.text)));
   for(const n of wide.names)for(const i of wide.items)assert.ok(n.right<=i.left||n.left>=i.right||n.bottom<=i.top||n.top>=i.bottom,'name '+n.text+' over '+i.key);
   assert.ok(await d.evaluate(()=>{const b=treeSheet.querySelector('.tree-sheet-body').getBoundingClientRect(),r=treeSheet.querySelector('.tree-item.on').getBoundingClientRect();return r.top>=b.top&&r.bottom<=b.bottom;}));
   assert.ok(await d.evaluate(()=>document.activeElement===treeSheet.querySelector('.tree-item.on')));
@@ -227,6 +229,6 @@ function checkTree(r,label){
    await m.close();
   }
   assert.deepEqual(errors,[]);
-  console.log('PASS: history tree — 70 rows on 7 branches (trunk, 基督教, Rome, Ptolemaic, Seleucid, West Rome, 中国) with 5 forks (基督教 off the trunk at 前1400 on the outermost lane, West Rome off Rome at 395); every earlier start sits higher; no overlapping rows; nodes on their lanes; Rome beside Greece and the Hellenistic kingdoms; unwritten topics as dashed shoots; time ticks and compressed-prehistory breaks; metro lines: pick a line (button or the drawn line itself) in place, ↑↓ / 上一条 / 下一条 ride only that line in time order, line lit root-to-fork, everything else greyed; draggable, remembered, clamped column; sidebar at 1440 and 1024; expanded view with branch names; phone and short-landscape sheets; geography mode untouched; offline; no page errors.');
+  console.log('PASS: history tree — 86 rows on 7 branches (trunk, 基督教, Rome, 埃及, 波斯, West Rome, 中国) with 5 forks (埃及 and 波斯 off the trunk at the early states, 基督教 at 前1400 on the outermost lane, West Rome off Rome at 395); every earlier start sits higher; no overlapping rows; nodes on their lanes; Rome beside Greece and the Hellenistic kingdoms; unwritten topics as dashed shoots; time ticks and compressed-prehistory breaks; metro lines: pick a line (button or the drawn line itself) in place, ↑↓ / 上一条 / 下一条 ride only that line in time order, line lit root-to-fork, everything else greyed; draggable, remembered, clamped column; sidebar at 1440 and 1024; expanded view with branch names; phone and short-landscape sheets; geography mode untouched; offline; no page errors.');
  }catch(e){console.error(e);process.exitCode=1;}finally{await browser.close();}
 })();

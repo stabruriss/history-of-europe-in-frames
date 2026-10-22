@@ -5,7 +5,7 @@ const {pathToFileURL}=require('node:url');
 const target=path.resolve(process.argv[2]||path.join(__dirname,'..','index.html'));
 const shots=path.join(__dirname,'shots-v19');require('node:fs').mkdirSync(shots,{recursive:true});
 const wait=ms=>new Promise(r=>setTimeout(r,ms));
-const IDS=['history-faith-israel','history-faith-first-temple','history-faith-second-temple','history-faith-jesus','history-faith-church','history-faith-empire-church','history-faith-councils','history-faith-ephesus','history-faith-two-cities'];
+const IDS=['history-faith-israel','history-faith-first-temple','history-faith-second-temple','history-faith-jesus','history-faith-church','history-faith-empire-church','history-faith-councils','history-faith-ephesus','history-faith-two-cities','history-faith-papacy'];
 (async()=>{
  const browser=await puppeteer.launch({executablePath:process.env.CHROME_PATH||'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true});
  const errors=[];
@@ -32,14 +32,14 @@ const IDS=['history-faith-israel','history-faith-first-temple','history-faith-se
      people:Object.entries(FIGURE_SCENES).filter(([k])=>k.startsWith('history-faith-')).reduce((n,[,v])=>n+v.length,0)};
    },IDS);
    assert.equal(report.chapter,'犹太教与基督教');
-   assert.deepEqual(report.ids,IDS);assert.deepEqual(report.scenes,[5,5,4,6,4,4,3,3,3]);
+   assert.deepEqual(report.ids,IDS);assert.deepEqual(report.scenes,[5,5,4,6,4,4,3,3,3,6]);
    assert.ok(report.paras.every(p=>p.chars<=230),'Concise: '+JSON.stringify(report.paras.filter(p=>p.chars>230)));
-   assert.ok(report.bold);assert.equal(report.moments,32);assert.equal(report.people,18);
-   assert.deepEqual(report.branch,['基督教',5,'trunk',-1400,451,true]);assert.equal(report.levant,false);
-   assert.deepEqual(report.eras,[['faith-israel','古代以色列',IDS.slice(0,2)],['faith-temple','第二圣殿时期',IDS.slice(2,4)],['faith-church','早期教会',IDS.slice(4)]]);
+   assert.ok(report.bold);assert.equal(report.moments,33);assert.equal(report.people,20);
+   assert.deepEqual(report.branch,['基督教',5,'trunk',-1400,555,true]);assert.equal(report.levant,false);
+   assert.deepEqual(report.eras,[['faith-israel','古代以色列',IDS.slice(0,2)],['faith-temple','第二圣殿时期',IDS.slice(2,4)],['faith-church','早期教会',IDS.slice(4,9)],['faith-medieval','中世纪早期的教会',IDS.slice(9)]]);
    // The line now forks off before 卡迭石: the Hebrews' nomadic origins come first.
    assert.deepEqual(report.line,['history-migration/0','history-farming/0','history-farming/1','history-palaces/0',...IDS.map(id=>id+'/0')]);
-   assert.equal(report.shoot[1],451);assert.match(report.shoot[2],/中世纪教会/);
+   assert.equal(report.shoot[1],555);assert.match(report.shoot[2],/中世纪教会/);
    // Exodus and the Temple, once scattered, now sit on this line.
    assert.equal(report.dark,1);assert.equal(report.pompeyHoly,false);assert.equal(report.holy,3);
    assert.deepEqual(report.exodus,[[2,'两份战报'],[4,'分开红海']]);
@@ -85,7 +85,12 @@ const IDS=['history-faith-israel','history-faith-first-temple','history-faith-se
      ['history-faith-ephesus/1','三一派主导之后'],['history-faith-ephesus/1','从阿里乌派里衍生出来的两个异端分支'],['history-faith-ephesus/1','安条克学派'],['history-faith-ephesus/1','亚历山大里亚学派'],['history-faith-ephesus/2','普尔喀丽娅'],['history-faith-two-cities/0','利奥一世'],['history-faith-two-cities/0','阿提拉'],['history-faith-two-cities/0','“西罗马”主线'],
      ['history-faith-two-cities/1','欧迪奇'],['history-faith-two-cities/1','穆斯林横扫'],['history-faith-israel/2','押了赫梯'],
      // 老无 2026-10-18: what were the Israelites doing in the Greek dark age? One line in the Greek scene, pointing here.
-     ['history-dark-age/0','以色列人'],['history-dark-age/0','爱琴海一带'],['history-dark-age/0','“基督教”主线']]){
+     ['history-dark-age/0','以色列人'],['history-dark-age/0','爱琴海一带'],['history-dark-age/0','“基督教”主线'],
+     // 老无 2026-10-21: recap the split (Jewish tradition, the crowd's “Christ above all”), Arius’s two offshoots, the throne dragged along, the Pope and the first East–West schism.
+     ['history-faith-papacy/0','三一派守的是犹太传统'],['history-faith-papacy/0','必须基督至大，其他逻辑无所谓'],['history-faith-papacy/0','希腊哲学的台阶'],['history-faith-papacy/1','阿里乌后来有两个变种'],
+     ['history-faith-papacy/1','聂斯托利派'],['history-faith-papacy/1','景教'],['history-faith-papacy/1','“埃及”主线'],['history-faith-papacy/2','君士坦丁之后皇权左右摇摆'],['history-faith-papacy/2','反而变成了独立势力'],
+     ['history-faith-papacy/2','宫殿归皇帝，教堂归主教'],['history-faith-papacy/3','磐石'],['history-faith-papacy/3','爸爸'],['history-faith-papacy/3','西利修'],['history-faith-papacy/4','断交三十五年'],
+     ['history-faith-papacy/4','两样'],['history-faith-papacy/5','四百金币'],['history-faith-papacy/5','“罗马”主线']]){
     await page.evaluate(s=>go(s),scene);
     assert.ok(await page.$eval('#sceneContext>p',(e,w)=>e.textContent.includes(w),phrase),scene+' lacks '+phrase);
    }
@@ -93,7 +98,7 @@ const IDS=['history-faith-israel','history-faith-first-temple','history-faith-se
      ['history-faith-jesus/3','peter',/不偏待人/],['history-faith-jesus/3','paul',/上告于恺撒/],['history-faith-jesus/5','josephus',/石头/],['history-faith-church/0','pliny-younger',/不合我们这个时代/],
      ['history-faith-church/1','cyprian',/迫害我们的人/],['history-faith-church/2','galerius',/山神/],['history-faith-two-cities/0','leo',/彼得借利奥/],
      ['history-faith-empire-church/0','eusebius',/教会外面/],['history-faith-empire-church/0','helena',/六十多年后/],['history-faith-councils/0','arius',/小曲/],['history-faith-councils/0','athanasius',/粮船/],
-     ['history-faith-empire-church/2','anthony-great',/神人/],['history-faith-empire-church/3','constantine',/饶恕/],['history-faith-councils/1','gregory-nazianzus',/约拿/],['history-faith-ephesus/2','nestorius',/绿洲/]]){
+     ['history-faith-empire-church/2','anthony-great',/神人/],['history-faith-empire-church/3','constantine',/饶恕/],['history-faith-councils/1','gregory-nazianzus',/约拿/],['history-faith-ephesus/2','nestorius',/绿洲/],['history-faith-papacy/2','ambrose',/宫殿归皇帝/],['history-faith-papacy/4','gelasius-i',/两样/]]){
     await page.evaluate(s=>go(s),scene);assert.match(await page.$eval(`[data-person="${id}"]`,e=>e.textContent),re,scene+' '+id);
    }
    // 豆腐块 on the three churches that came out of Ephesus and Chalcedon; and no hedging tone left anywhere in the text (老无 2026-10-19).
@@ -108,8 +113,9 @@ const IDS=['history-faith-israel','history-faith-first-temple','history-faith-se
     await page.evaluate(id=>go(id),id);
     assert.equal(await page.$eval('#entryEyebrow',e=>e.textContent),'早期教会 · 第七章');
    }
+   await page.evaluate(()=>go('history-faith-papacy'));assert.equal(await page.$eval('#entryEyebrow',e=>e.textContent),'中世纪早期的教会 · 第七章');
    if(label==='desktop'){
-    assert.ok(await page.$$eval('#toc .tree-item[data-branch="faith"] small',es=>es.length===9&&es.every(e=>e.textContent.startsWith('基督教 · '))));
+    assert.ok(await page.$$eval('#toc .tree-item[data-branch="faith"] small',es=>es.length===10&&es.every(e=>e.textContent.startsWith('基督教 · '))));
     assert.match(await page.$eval('#indexCaption',e=>e.textContent),/Ⅶ 基督教/);
    }
    for(const e of IDS)for(let i=0;i<await page.evaluate(id=>HISTORY_ENTRIES.find(x=>x.id===id).scenes.length,e);i++){
@@ -119,7 +125,7 @@ const IDS=['history-faith-israel','history-faith-first-temple','history-faith-se
     assert.ok(r.layers>0&&r.legend>0&&!r.overflow,e+'/'+i+' '+JSON.stringify(r));
     if(label==='desktop')assert.ok(r.pins>0&&r.fits,e+'/'+i+' '+JSON.stringify(r));
    }
-   for(const [scene,file] of [['history-faith-israel/2','kadesh'],['history-faith-jesus/0','gods'],['history-faith-jesus/3','peter-paul'],['history-faith-church/2','jupiter'],['history-faith-councils/2','jupiter-condemned'],['history-faith-empire-church/3','nicaea'],['history-faith-councils/0','pancake'],['history-faith-two-cities/1','chalcedon'],['history-faith-two-cities/2','why'],['history-faith-ephesus/0','city-of-god']]){
+   for(const [scene,file] of [['history-faith-israel/2','kadesh'],['history-faith-jesus/0','gods'],['history-faith-jesus/3','peter-paul'],['history-faith-church/2','jupiter'],['history-faith-councils/2','jupiter-condemned'],['history-faith-empire-church/3','nicaea'],['history-faith-councils/0','pancake'],['history-faith-two-cities/1','chalcedon'],['history-faith-two-cities/2','why'],['history-faith-ephesus/0','city-of-god'],['history-faith-papacy/1','offshoots'],['history-faith-papacy/4','schism']]){
     await page.evaluate(s=>go(s),scene);await wait(300);
     if(label==='390')await page.evaluate(()=>scrollSceneText(false));
     await page.screenshot({path:path.join(shots,`faith-${file}-${label}.png`)});
@@ -127,6 +133,6 @@ const IDS=['history-faith-israel','history-faith-first-temple','history-faith-se
    await page.close();
   }
   assert.deepEqual(errors,[]);
-  console.log('PASS: chapter Ⅶ 犹太教与基督教 — the 基督教 line (outermost lane, 前1400—451, shoot 中世纪教会) rebuilt on 老无’s secular outline in 9 sections / 37 scenes, ≤230 chars each: Hebrews from beyond the River, Kadesh, Egypt and Moses, the Exodus, the kingdoms and Babylon, monotheism / exclusivity / the end of days, Rome not caring, too many gods, Jesus’ product and Peter’s channel, the cross, Nero, why persecution eased, Diocletian son of Jupiter, a wave Constantine rode, Jupiter condemned, and the four councils (one God made to add up, desert saints, Nicaea, the pancake flips, Constantinople, Ephesus, Chalcedon and the mine it laid, and 老无’s theory of why the quarrels never ended); 157 phrase checks (incl. the pointer from the Greek dark age, and the Western Wall as the Temple Mount’s retaining wall); 32 iconic-event tags; a 豆腐块 on the three churches; 18 person cards (摩西、阿赫那吞、恺撒、彼得、保罗、约瑟夫斯、小普林尼、居普良、伽列里乌斯、优西比乌、海伦娜、安东尼、君士坦丁、阿里乌、阿塔纳修斯、纳齐安的格列高利、聂斯托利、利奥); eyebrows and tree rows; desktop and 390px without overflow; offline; no page errors.');
+  console.log('PASS: chapter Ⅶ 犹太教与基督教 — the 基督教 line (outermost lane, 前1400—555, shoot 中世纪教会) in 10 sections / 43 scenes (v33: 教宗与第一次东西分裂 — the recap, Arius’s two offshoots, the throne dragged along, how Rome’s bishop became the Pope, the Acacian schism), earlier: rebuilt on 老无’s secular outline in 9 sections / 37 scenes, ≤230 chars each: Hebrews from beyond the River, Kadesh, Egypt and Moses, the Exodus, the kingdoms and Babylon, monotheism / exclusivity / the end of days, Rome not caring, too many gods, Jesus’ product and Peter’s channel, the cross, Nero, why persecution eased, Diocletian son of Jupiter, a wave Constantine rode, Jupiter condemned, and the four councils (one God made to add up, desert saints, Nicaea, the pancake flips, Constantinople, Ephesus, Chalcedon and the mine it laid, and 老无’s theory of why the quarrels never ended); 157 phrase checks (incl. the pointer from the Greek dark age, and the Western Wall as the Temple Mount’s retaining wall); 32 iconic-event tags; a 豆腐块 on the three churches; 18 person cards (摩西、阿赫那吞、恺撒、彼得、保罗、约瑟夫斯、小普林尼、居普良、伽列里乌斯、优西比乌、海伦娜、安东尼、君士坦丁、阿里乌、阿塔纳修斯、纳齐安的格列高利、聂斯托利、利奥); eyebrows and tree rows; desktop and 390px without overflow; offline; no page errors.');
  }catch(e){console.error(e);process.exitCode=1;}finally{await browser.close();}
 })();

@@ -67,7 +67,7 @@ function renderToc(){
   for(const [id,mode] of [['tHistory','history'],['tGeography','geography'],['tTopics','topics']]){
     const b=document.getElementById(id);b.classList.toggle('on',viewMode===mode);b.setAttribute('aria-pressed',String(viewMode===mode));
   }
-  document.getElementById('indexCaption').textContent=historical?'历史树：自上而下是时间，枝杈是主题\n先选主线，↑↓ 沿线走 · ←→ 切换地图事件\nⅠ 上古 Ⅱ 城邦 Ⅲ 马其顿 Ⅳ 希腊化 Ⅴ 罗马 Ⅵ 帝国 Ⅶ 基督教 Ⅷ 中国 · 右缘可拖宽':viewMode==='topics'?'主线讲事情怎么发生，专题讲事情为什么总这样发生。\n每个专题拆成若干豆腐块呈现，可点链接跳回主线。':'从山海、河流与地区名认识历史的舞台。\n↑↓ 切换条目';
+  document.getElementById('indexCaption').textContent=historical?'历史树：自上而下是时间，枝杈是主题\n先选主线，↑↓ 沿线走 · ←→ 切换地图事件\nⅠ 上古 Ⅱ 城邦 Ⅲ 马其顿 Ⅳ 希腊化 Ⅴ 罗马 Ⅵ 帝国 Ⅶ 基督教 Ⅷ 中国 Ⅸ 埃及 Ⅹ 波斯 · 右缘可拖宽':viewMode==='topics'?'主线讲事情怎么发生，专题讲事情为什么总这样发生。\n每个专题拆成若干豆腐块呈现，可点链接跳回主线。':'从山海、河流与地区名认识历史的舞台。\n↑↓ 切换条目';
   toc.setAttribute('aria-label',historical?'历史树：按时间与主题浏览':viewMode==='topics'?'动力专题':'地理概念');
   mobileToc.setAttribute('aria-label',historical?'选择历史时期与章节':viewMode==='topics'?'选择动力专题':'选择地理概念');
 }
@@ -79,7 +79,7 @@ mobileToc.onchange=()=>go(mobileToc.value);
 /* History tree: branches are topics, distance from the root is time.
    Deep prehistory is compressed; where events crowd, rows push later ones down, so height stays in time order. */
 const SVGNS='http://www.w3.org/2000/svg';
-const NUMERALS=['Ⅰ','Ⅱ','Ⅲ','Ⅳ','Ⅴ','Ⅵ','Ⅶ','Ⅷ'];
+const NUMERALS=['Ⅰ','Ⅱ','Ⅲ','Ⅳ','Ⅴ','Ⅵ','Ⅶ','Ⅷ','Ⅸ','Ⅹ'];
 const TREE_SCALE=[[-68000,0],[-10000,44],[-3000,92],[-1300,150],[0,1216]];
 function treeBase(t){
   let i=1;while(i<TREE_SCALE.length-1&&t>TREE_SCALE[i][0])i++;
@@ -196,7 +196,7 @@ function layoutHistoryTree(tree){
   };
   const grid=[],ties=[],lanesSvg=[],marks=[],nodes=[],hits=[],ticks=tree.querySelector('.htree-ticks');ticks.replaceChildren();
   let lastTick=-1e9;
-  for(const t of [-10000,-3000,-2000,-1500,-1200,-1000,-800,-600,-500,-400,-300,-200,-100,0,100,200,300,400,500]){
+  for(const t of [-10000,-3000,-2000,-1500,-1200,-1000,-800,-600,-500,-400,-300,-200,-100,0,100,200,300,400,500,600,700]){
     const y=Y(t);if(y-lastTick<26||y>H-8)continue;lastTick=y;
     grid.push(`<path class="grid" d="M${axis-2} ${y}H${labelX-4}"/>`);
     const label=document.createElement('span');label.className='tree-tick';label.style.cssText=`top:${y}px;width:${axis-4}px`;label.textContent=treeYear(t);ticks.appendChild(label);
@@ -321,7 +321,7 @@ function updateNavigation(){
     const option=[...mobileToc.options].find(o=>o.dataset.id===e.id&&sceneIndex>=+o.dataset.from&&sceneIndex<=+o.dataset.to);
     if(option)mobileToc.value=option.value;
     const era=historyEra(e,sceneIndex);
-    document.getElementById('entryEyebrow').textContent=`${era.name} · 第${['一','二','三','四','五','六','七','八'][e.ch]}章`;
+    document.getElementById('entryEyebrow').textContent=`${era.name} · 第${['一','二','三','四','五','六','七','八','九','十'][e.ch]}章`;
     toc.querySelectorAll('.era').forEach(row=>row.classList.toggle('active-era',row.dataset.era===era.id));
     // A newly reached section off the chosen line brings its own line along; switching lines in place does not.
     const s=currentStation();if(s&&s.key!==lastStationKey){lastStationKey=s.key;syncTreeLine();}

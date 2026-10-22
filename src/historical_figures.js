@@ -641,6 +641,186 @@ const FIGURE_PLACES={
       36.62
     ],
     "note": "本都的小城，今土耳其托卡特附近；407年金口约翰死在城外一座殉道者小堂里。"
+  },
+  "toletum": {
+    "name": "托莱多",
+    "en": "Toledo",
+    "ll": [
+      39.857,
+      -4.024
+    ],
+    "note": "西哥特王国后期的都城。"
+  },
+  "tours": {
+    "name": "图尔",
+    "en": "Tours",
+    "ll": [
+      47.394,
+      0.685
+    ],
+    "note": "圣马丁的城；格雷戈里在此当主教，写《法兰克人史》。"
+  },
+  "giza": {
+    "name": "吉萨",
+    "en": "Giza",
+    "ll": [
+      29.979,
+      31.134
+    ],
+    "note": "胡夫的大金字塔和工人村所在。"
+  },
+  "saqqara": {
+    "name": "萨卡拉",
+    "en": "Saqqara",
+    "ll": [
+      29.871,
+      31.216
+    ],
+    "note": "孟菲斯的王家墓地，左塞尔的阶梯金字塔在这里。"
+  },
+  "semna": {
+    "name": "塞姆纳",
+    "en": "Semna",
+    "ll": [
+      21.49,
+      30.96
+    ],
+    "note": "第二瀑布以南的要塞，森沃斯雷特三世的界碑立在这里。"
+  },
+  "avaris": {
+    "name": "阿瓦里斯",
+    "en": "Avaris",
+    "ll": [
+      30.787,
+      31.821
+    ],
+    "note": "喜克索斯人的都城；雅赫摩斯攻下后在此修王宫。"
+  },
+  "deirelbahari": {
+    "name": "代尔拜赫里",
+    "en": "Deir el-Bahari",
+    "ll": [
+      25.738,
+      32.607
+    ],
+    "note": "底比斯西岸的山崖下，哈特谢普苏特的神殿在这里。"
+  },
+  "piramesses": {
+    "name": "培尔-拉美西斯",
+    "en": "Pi-Ramesses",
+    "ll": [
+      30.8,
+      31.83
+    ],
+    "note": "拉美西斯二世在东三角洲建的新都，靠近旧日的阿瓦里斯。"
+  },
+  "napata": {
+    "name": "纳帕塔",
+    "en": "Napata",
+    "ll": [
+      18.535,
+      31.828
+    ],
+    "note": "第四瀑布下游巴卡尔山脚的阿蒙圣地，库施王国的都城。"
+  },
+  "susa": {
+    "name": "苏萨",
+    "en": "Susa",
+    "ll": [
+      32.19,
+      48.25
+    ],
+    "note": "埃兰的都城，后来是阿契美尼德的王都之一。"
+  },
+  "ecbatana": {
+    "name": "埃克巴坦那",
+    "en": "Ecbatana",
+    "ll": [
+      34.8,
+      48.52
+    ],
+    "note": "米底的都城，今伊朗哈马丹。"
+  },
+  "nineveh": {
+    "name": "尼尼微",
+    "en": "Nineveh",
+    "ll": [
+      36.36,
+      43.15
+    ],
+    "note": "亚述的都城，前612年被米底与巴比伦攻破。"
+  },
+  "pasargadae": {
+    "name": "帕萨尔加德",
+    "en": "Pasargadae",
+    "ll": [
+      30.194,
+      53.167
+    ],
+    "note": "居鲁士在法尔斯新建的都城，他的陵墓在此。"
+  },
+  "babylon": {
+    "name": "巴比伦",
+    "en": "Babylon",
+    "ll": [
+      32.54,
+      44.42
+    ],
+    "note": "两河的大城，前539年归波斯。"
+  },
+  "persepolis": {
+    "name": "波斯波利斯",
+    "en": "Persepolis",
+    "ll": [
+      29.93,
+      52.89
+    ],
+    "note": "大流士在法尔斯兴建的王宫与库房。"
+  },
+  "behistun": {
+    "name": "贝希斯敦",
+    "en": "Behistun",
+    "ll": [
+      34.39,
+      47.44
+    ],
+    "note": "大流士刻下三语铭文的山崖。"
+  },
+  "euphrates": {
+    "name": "幼发拉底河上游",
+    "en": "Upper Euphrates",
+    "ll": [
+      37.4,
+      38.4
+    ],
+    "note": "安息与罗马的界河一带。"
+  },
+  "bishapur": {
+    "name": "比沙普尔",
+    "en": "Bishapur",
+    "ll": [
+      29.78,
+      51.57
+    ],
+    "note": "沙普尔一世在法尔斯新建的城，270年他病死于此。"
+  },
+  "gundeshapur": {
+    "name": "贡德沙普尔",
+    "en": "Gundeshapur",
+    "ll": [
+      32.28,
+      48.52
+    ],
+    "note": "沙普尔一世安置罗马战俘的新城，在胡齐斯坦。"
+  },
+  "ctesiphon": {
+    "name": "泰西封",
+    "en": "Ctesiphon",
+    "ll": [
+      33.09,
+      44.58
+    ],
+    "note": "安息和萨珊的王都，在底格里斯河东岸。"
   }
 };
 const FIGURES={
@@ -2508,6 +2688,432 @@ const FIGURES={
         "https://en.wikipedia.org/wiki/Stilicho"
       ]
     ]
+  },
+  "aspar": {
+    "name": "阿斯帕尔",
+    "en": "Flavius Ardabur Aspar",
+    "life": "约400—471年",
+    "relation": "东罗马统帅 · 拥立马尔西安和利奥一世",
+    "place": "constantinople",
+    "bio": "阿兰与哥特血统的将门之子，424年随父亲出兵意大利，打掉西部的篡位者，把小皇帝瓦伦提尼安三世送上皇位。他在君士坦丁堡带兵近半个世纪，信阿里乌派，当不了皇帝，就当拥立皇帝的人；伊斯坦布尔至今有一座归在他名下的蓄水池。",
+    "sources": [
+      [
+        "阿斯帕尔（英文资料）",
+        "https://en.wikipedia.org/wiki/Aspar"
+      ]
+    ]
+  },
+  "anastasius-i": {
+    "name": "阿纳斯塔修斯一世",
+    "en": "Anastasius I Dicorus",
+    "life": "约431—518年",
+    "relation": "东罗马皇帝（491—518年）· 芝诺遗孀阿里阿德涅的丈夫",
+    "place": "constantinople",
+    "bio": "生在亚得里亚海边的都拉基乌姆，一只眼黑、一只眼蓝，外号“两色眼”。他原是宫里的侍从官，六十岁上被寡居的皇后选中当皇帝。他会算账，减税还攒下巨款；偏一性论，晚年被教派之争逼得摘冠示弱，八十多岁去世。",
+    "sources": [
+      [
+        "阿纳斯塔修斯一世（英文资料）",
+        "https://en.wikipedia.org/wiki/Anastasius_I_Dicorus"
+      ]
+    ]
+  },
+  "justin-i": {
+    "name": "查士丁一世",
+    "en": "Justin I",
+    "life": "约450—527年",
+    "relation": "东罗马皇帝（518—527年）· 查士丁尼的舅舅",
+    "place": "constantinople",
+    "bio": "伊利里亚贝德里亚纳的农家子，说拉丁语，希腊语只会一点。年轻时步行进京当兵，打过伊苏里亚人和波斯人，升到警卫军统领。妻子原是他买来的蛮族女奴，登基后改名欧菲米娅。",
+    "sources": [
+      [
+        "查士丁一世（英文资料）",
+        "https://en.wikipedia.org/wiki/Justin_I"
+      ]
+    ]
+  },
+  "theodora": {
+    "name": "狄奥多拉",
+    "en": "Theodora",
+    "life": "约497—548年",
+    "relation": "查士丁尼的皇后",
+    "place": "constantinople",
+    "bio": "父亲在赛车场给绿党驯熊，早亡；她少年登台当演员。查士丁尼为娶她，请舅舅改了不许元老级人物娶女演员的法律。她站在一性论一边，常替他们说话，皇帝对一性论派也因此时紧时松。",
+    "sources": [
+      [
+        "狄奥多拉（英文资料）",
+        "https://en.wikipedia.org/wiki/Theodora_(wife_of_Justinian_I)"
+      ]
+    ]
+  },
+  "belisarius": {
+    "name": "贝利萨留",
+    "en": "Belisarius",
+    "life": "约500—565年",
+    "relation": "查士丁尼的大将",
+    "place": "constantinople",
+    "bio": "生在今保加利亚西南的小城日耳曼尼亚，年轻时是查士丁尼的卫士，二十多岁就领兵对波斯。他打仗爱用计，自养一支多达七千人的私兵。后世说他被皇帝刺瞎、沦为乞丐，是几百年后才有的传说。",
+    "sources": [
+      [
+        "贝利萨留（英文资料）",
+        "https://en.wikipedia.org/wiki/Belisarius"
+      ]
+    ]
+  },
+  "theodoric-great": {
+    "name": "狄奥多里克",
+    "en": "Theodoric the Great",
+    "life": "约454—526年",
+    "relation": "东哥特王 · 意大利的统治者（493—526年）",
+    "place": "ravenna",
+    "bio": "东哥特王族之子，七八岁起在君士坦丁堡当了八九年人质，在那里学会读写算。回去后带着族人在巴尔干勒索东罗马，488年被芝诺打发去意大利，493年杀了奥多亚克，统治意大利三十三年。",
+    "sources": [
+      [
+        "狄奥多里克大王（英文资料）",
+        "https://en.wikipedia.org/wiki/Theodoric_the_Great"
+      ]
+    ]
+  },
+  "clovis": {
+    "name": "克洛维",
+    "en": "Clovis I",
+    "life": "约466—511年",
+    "relation": "法兰克王（481—511年）",
+    "place": "tours",
+    "bio": "十五岁继承父亲在高卢北部的一小块法兰克王位，三十年里打掉罗马残部、阿勒曼尼人和西哥特人，把各支法兰克王一个个除掉，死时几乎占了整个高卢。他娶的克洛蒂尔德信天主教，他自己后来也受了洗。",
+    "sources": [
+      [
+        "克洛维一世（英文资料）",
+        "https://en.wikipedia.org/wiki/Clovis_I"
+      ]
+    ]
+  },
+  "leovigild": {
+    "name": "莱奥维吉尔德",
+    "en": "Liuvigild",
+    "life": "约519—586年",
+    "relation": "西哥特王（568—586年）· 雷卡雷德的父亲",
+    "place": "toletum",
+    "bio": "先跟哥哥共治，哥哥死后独掌王国，几乎年年出征，吞了苏维汇，又从拜占庭手里夺回科尔多瓦。他想让哥特人和罗马人合成一个国，可自己到死仍守阿里乌派。",
+    "sources": [
+      [
+        "莱奥维吉尔德（英文资料）",
+        "https://en.wikipedia.org/wiki/Liuvigild"
+      ]
+    ]
+  },
+  "gelasius-i": {
+    "name": "格拉修一世",
+    "en": "Pope Gelasius I",
+    "life": "？—496年",
+    "relation": "罗马教宗（492—496年）",
+    "place": "rome",
+    "bio": "生在北非的罗马行省，给皇帝写信自称“生来是罗马人”。他坚持要把已故牧首阿卡奇乌的名字从东方的代祷名单上划掉，寸步不让；在罗马城里，他终于禁掉了从建城传说流传下来的牧神节。",
+    "sources": [
+      [
+        "教宗格拉修一世（英文资料）",
+        "https://en.wikipedia.org/wiki/Pope_Gelasius_I"
+      ]
+    ]
+  },
+  "imhotep": {
+    "name": "伊姆霍特普",
+    "en": "Imhotep",
+    "life": "约前27世纪",
+    "relation": "左塞尔的掌印大臣 · 赫利奥波利斯太阳神的大祭司",
+    "place": "saqqara",
+    "bio": "名字意为“平安到来的人”。他死后一千二百年里没有文字再提他；新王国起有人给他奠酒，再往后成了医神，祭祀中心在孟菲斯，希腊人把他认作阿斯克勒庇俄斯。他的墓至今没找到。",
+    "sources": [
+      [
+        "伊姆霍特普（英文资料）",
+        "https://en.wikipedia.org/wiki/Imhotep"
+      ]
+    ]
+  },
+  "khufu": {
+    "name": "胡夫",
+    "en": "Khufu (Cheops)",
+    "life": "在位约前2589—前2566年",
+    "relation": "古王国第四王朝国王 · 斯尼夫鲁之子",
+    "place": "giza",
+    "bio": "大金字塔的主人，希腊人叫他基奥普斯，留下的唯一一尊近乎完整的雕像是个象牙小像。他死后有专门划出的庄园供养祭司，到第六王朝末侍奉他的祭司已有六十七个，这份祭祀一直延续到波斯时代。把他写成暴君的，是两千年后的希腊作家。",
+    "sources": [
+      [
+        "胡夫（英文资料）",
+        "https://en.wikipedia.org/wiki/Khufu"
+      ]
+    ]
+  },
+  "senusret-iii": {
+    "name": "森沃斯雷特三世",
+    "en": "Senusret III (Sesostris III)",
+    "life": "在位约前1878—前1839年",
+    "relation": "中王国第十二王朝国王 · 森沃斯雷特二世之子",
+    "place": "semna",
+    "bio": "第十二王朝的第五位王，在位三十多年。他是少数活着就被当作神来祭祀的埃及国王，死后在阿拜多斯又被祭祀了约三百年；希腊人传说里征服四方的“塞索斯特里斯”，有他的影子。",
+    "sources": [
+      [
+        "森沃斯雷特三世（英文资料）",
+        "https://en.wikipedia.org/wiki/Senusret_III"
+      ]
+    ]
+  },
+  "ahmose-i": {
+    "name": "雅赫摩斯一世",
+    "en": "Ahmose I",
+    "life": "在位约前1550—前1525年",
+    "relation": "新王国第十八王朝的开创者 · 塞肯内拉·陶之子、卡摩斯之弟",
+    "place": "avaris",
+    "bio": "七岁丧父，十岁即位，母亲阿赫霍特普摄政。他赶走喜克索斯人，重新统一埃及，以底比斯为都；在位约二十五年，三十五岁上下去世，在阿拜多斯修了埃及本土国王的最后一座金字塔。",
+    "sources": [
+      [
+        "雅赫摩斯一世（英文资料）",
+        "https://en.wikipedia.org/wiki/Ahmose_I"
+      ]
+    ]
+  },
+  "hatshepsut": {
+    "name": "哈特谢普苏特",
+    "en": "Hatshepsut",
+    "life": "约前1505—前1458年",
+    "relation": "新王国第十八王朝的女王 · 图特摩斯三世的姑母兼继母",
+    "place": "deirelbahari",
+    "bio": "图特摩斯一世的长女，嫁给异母兄弟图特摩斯二世。称王以后，她的雕像和浮雕多照男王的样子，戴假胡须、穿短裙。她在位约二十年，修了代尔拜赫里的神殿。各地凿掉她的名字和像，是她死后二十来年、图特摩斯三世晚年才开始的。",
+    "sources": [
+      [
+        "哈特谢普苏特（英文资料）",
+        "https://en.wikipedia.org/wiki/Hatshepsut"
+      ]
+    ]
+  },
+  "ramesses-ii": {
+    "name": "拉美西斯二世",
+    "en": "Ramesses II",
+    "life": "约前1303—前1213年",
+    "relation": "新王国第十九王朝国王（前1279—前1213年在位）· 塞提一世之子",
+    "place": "piramesses",
+    "bio": "二十五岁即位，在位六十六年，九十岁上下去世，办过十三四次登基周年大典，比哪位法老都多。希腊人叫他奥西曼迪亚斯，十九世纪雪莱的诗《奥西曼迪亚斯》，写的就是他倒在沙漠里的巨像。他的木乃伊1881年在王家木乃伊窖藏里找到。",
+    "sources": [
+      [
+        "拉美西斯二世（英文资料）",
+        "https://en.wikipedia.org/wiki/Ramesses_II"
+      ]
+    ]
+  },
+  "piye": {
+    "name": "皮耶",
+    "en": "Piye (Piankhi)",
+    "life": "在位约前744—前714年",
+    "relation": "库施国王、第二十五王朝的开创者 · 卡什塔之子",
+    "place": "napata",
+    "bio": "以纳帕塔为都，在位约三十年。他把北伐当成圣战，令士兵开战前沐浴洁身；得胜以后回了努比亚，再没回过埃及。他是五百多年来头一个葬进金字塔的法老，墓在库鲁。",
+    "sources": [
+      [
+        "皮耶（英文资料）",
+        "https://en.wikipedia.org/wiki/Piye"
+      ]
+    ]
+  },
+  "nectanebo-ii": {
+    "name": "内克塔内布二世",
+    "en": "Nectanebo II",
+    "life": "在位约前358—前340年",
+    "relation": "第三十王朝末代国王 · 最后一位埃及本土出身的法老",
+    "place": "memphis",
+    "bio": "他在全国大修神庙、厚待祭司，百姓奉他为“神鹰”。兵败后逃往上埃及、再到努比亚，下落不明。后来流传的《亚历山大传奇》，说他逃到马其顿，成了亚历山大的生父。",
+    "sources": [
+      [
+        "内克塔内布二世（英文资料）",
+        "https://en.wikipedia.org/wiki/Nectanebo_II"
+      ],
+      [
+        "亚历山大传奇（英文资料）",
+        "https://en.wikipedia.org/wiki/Alexander_Romance"
+      ]
+    ]
+  },
+  "cornelius-gallus": {
+    "name": "科尔内利乌斯·伽卢斯",
+    "en": "Gaius Cornelius Gallus",
+    "life": "约前70—前26年",
+    "relation": "罗马诗人 · 屋大维派驻埃及的首任长官",
+    "place": "alexandria",
+    "bio": "出身寒微，和维吉尔拜过同一位老师，写过四卷情诗，奥维德把他排在罗马哀歌诗人的头一位。他追随屋大维，前30年在利比亚边上挡住安东尼，随即当上第一任埃及长官。他的诗几乎全部失传，1978年努比亚的伊布里姆堡出土了九行。",
+    "sources": [
+      [
+        "科尔内利乌斯·伽卢斯（英文资料）",
+        "https://en.wikipedia.org/wiki/Gaius_Cornelius_Gallus"
+      ],
+      [
+        "卡西乌斯·狄奥《罗马史》第53卷（第23节）",
+        "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Cassius_Dio/53*.html"
+      ]
+    ]
+  },
+  "dioscorus": {
+    "name": "狄奥斯库若",
+    "en": "Dioscorus I of Alexandria",
+    "life": "生年不详—454年",
+    "relation": "亚历山大里亚宗主教（444—451年）· 西里尔的接班人",
+    "place": "alexandria",
+    "bio": "西里尔的秘书和指定接班人，444年接任亚历山大里亚宗主教，不是本地埃及人。他收回被侵占的教产和船只；卡尔西顿会上有人告他把朝廷运往利比亚的小麦收购后高价倒卖。451年被革职，454年死在流放地冈格拉，科普特人奉他为圣人。",
+    "sources": [
+      [
+        "狄奥斯库若一世（英文资料）",
+        "https://en.wikipedia.org/wiki/Pope_Dioscorus_I_of_Alexandria"
+      ]
+    ]
+  },
+  "shutruk-nakhunte": {
+    "name": "舒特鲁克-纳洪特",
+    "en": "Shutruk-Nakhunte",
+    "life": "？—约前1155年",
+    "relation": "埃兰国王（约前1184—前1155年在位）",
+    "place": "susa",
+    "bio": "埃兰中期最强的国王，自称“安善与苏萨之王”。他打进巴比伦尼亚，把一批古碑运回苏萨献给城神因舒希纳克；三千年后，法国考古队在苏萨卫城把这些碑挖了出来，汉谟拉比法典碑和纳拉姆-辛胜利碑如今都在卢浮宫。",
+    "sources": [
+      [
+        "舒特鲁克-纳洪特（英文资料）",
+        "https://en.wikipedia.org/wiki/Shutruk-Nakhunte"
+      ]
+    ]
+  },
+  "cyaxares": {
+    "name": "基亚克萨雷斯",
+    "en": "Cyaxares",
+    "life": "？—前585年",
+    "relation": "米底国王（前625—前585年）",
+    "place": "ecbatana",
+    "bio": "据希罗多德，他是米底王弗拉欧尔特斯之子，父亲死于和亚述的战争。他把扎格罗斯山里的米底部落拢成一国，联合巴比伦灭了亚述，与吕底亚打成平手，前585年讲和后不久去世，王位传给儿子阿斯提阿格斯。",
+    "sources": [
+      [
+        "基亚克萨雷斯（英文资料）",
+        "https://en.wikipedia.org/wiki/Cyaxares"
+      ]
+    ]
+  },
+  "cyrus-ii": {
+    "name": "居鲁士二世",
+    "en": "Cyrus the Great",
+    "life": "约前600—前530年",
+    "relation": "波斯国王（前559—前530年）· 阿契美尼德帝国的开创者",
+    "place": "pasargadae",
+    "bio": "安善王冈比西斯一世之子，据希罗多德，母亲是米底王阿斯提阿格斯的女儿。他十一年间吞并米底、吕底亚和巴比伦，在故乡新建都城帕萨尔加德，前530年在中亚征战时死去，葬在帕萨尔加德一座石砌的小屋形陵墓里。",
+    "sources": [
+      [
+        "居鲁士大帝（英文资料）",
+        "https://en.wikipedia.org/wiki/Cyrus_the_Great"
+      ]
+    ]
+  },
+  "darius-i": {
+    "name": "大流士一世",
+    "en": "Darius I",
+    "life": "约前550—前486年",
+    "relation": "波斯国王（前522—前486年）· 居鲁士的女婿",
+    "place": "persepolis",
+    "bio": "希斯塔斯佩斯之子，曾在冈比西斯身边当持矛侍卫。他杀了居鲁士的小儿子夺位，又娶了居鲁士的两个女儿；定省、定税、修路、铸币，在波斯波利斯修起新宫，前490年派兵渡海征希腊，在马拉松受挫。",
+    "sources": [
+      [
+        "大流士一世（英文资料）",
+        "https://en.wikipedia.org/wiki/Darius_the_Great"
+      ]
+    ]
+  },
+  "mithridates-ii": {
+    "name": "米特拉达梯二世",
+    "en": "Mithridates II",
+    "life": "？—前91年",
+    "relation": "安息国王（前124—前91年）",
+    "place": "seleucia",
+    "bio": "安息国王，后世称“大王”。他打退东边的草原部落，把锡斯坦封给苏伦家族；往西扣下亚美尼亚王子提格兰做人质，后来扶他回国当王，把边界推到幼发拉底河。汉使到安息，正是在他这一朝。",
+    "sources": [
+      [
+        "米特拉达梯二世（英文资料）",
+        "https://en.wikipedia.org/wiki/Mithridates_II_of_Parthia"
+      ]
+    ]
+  },
+  "surena": {
+    "name": "苏雷那",
+    "en": "Surena",
+    "life": "？—约前52年",
+    "relation": "安息大将 · 苏伦家族的家主",
+    "place": "carrhae",
+    "bio": "苏伦家族的家主，世代有为安息王加冕的特权。据普鲁塔克，他是安息人里最高大俊美的，却照米底人的打扮涂脸、分头发；不到三十岁就帮奥罗德斯二世复位，带头登城攻下塞琉西亚。卡莱大胜后不久被国王处死。",
+    "sources": [
+      [
+        "普鲁塔克《克拉苏传》（第21、24、33节）",
+        "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Plutarch/Lives/Crassus*.html"
+      ],
+      [
+        "苏雷那（英文资料）",
+        "https://en.wikipedia.org/wiki/Surena"
+      ]
+    ]
+  },
+  "shapur-i": {
+    "name": "沙普尔一世",
+    "en": "Shapur I",
+    "life": "？—270年",
+    "relation": "萨珊国王（240—270年）· 阿尔达希尔一世之子",
+    "place": "bishapur",
+    "bio": "阿尔达希尔一世之子，240年起与父亲共治。他三败罗马，把掳来的罗马人安置在伊朗各地，王号也加成“伊朗与非伊朗的王中之王”；在法尔斯新建比沙普尔城。他让摩尼随驾，又为王室成员的灵魂设火坛，天天献羊。",
+    "sources": [
+      [
+        "沙普尔一世（英文资料）",
+        "https://en.wikipedia.org/wiki/Shapur_I"
+      ]
+    ]
+  },
+  "mani": {
+    "name": "摩尼",
+    "en": "Mani",
+    "life": "216—274年前后",
+    "relation": "摩尼教的创立者 · 沙普尔一世的座上客",
+    "place": "gundeshapur",
+    "bio": "生在泰西封附近，母亲出自安息王族的一支。他自称“耶稣基督的使徒”，信徒说他是琐罗亚斯德、佛陀、耶稣的再来；他也是有名的画师。教团分“选民”和“听者”：选民守全部戒律，听者供养选民。",
+    "sources": [
+      [
+        "摩尼（英文资料）",
+        "https://en.wikipedia.org/wiki/Mani_(prophet)"
+      ]
+    ]
+  },
+  "kavad-i": {
+    "name": "卡瓦德一世",
+    "en": "Kavad I",
+    "life": "约473—531年",
+    "relation": "萨珊国王（488—496年、498—531年在位）· 卑路斯之子",
+    "place": "ctesiphon",
+    "bio": "卑路斯之子，少年时在嚈哒宫廷当过人质。十五岁被大贵族扶上台，借马兹达克派压贵族和祭司，被废后越狱逃往嚈哒，又带嚈哒兵复位。他两度同东罗马开战，晚年清算马兹达克派，临终立第三子库思老为嗣。",
+    "sources": [
+      [
+        "卡瓦德一世（英文资料）",
+        "https://en.wikipedia.org/wiki/Kavad_I"
+      ],
+      [
+        "普罗柯比《战史》第1卷（第11节 请查士丁收养库思老）",
+        "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Procopius/Wars/1B*.html"
+      ]
+    ]
+  },
+  "khosrow-i": {
+    "name": "库思老一世",
+    "en": "Khosrow I",
+    "life": "？—579年",
+    "relation": "萨珊国王（531—579年）· 卡瓦德一世的第三子",
+    "place": "ctesiphon",
+    "bio": "死后得名“不朽的灵魂”（阿努希尔万），生前号称“主持公道者”，伊斯兰时代称“公正者”。他丈量土地、定额收税，扶植德赫干，把全国兵权一分为四；东边联合突厥灭了嚈哒。他一死，大贵族又很快把权力夺了回去。",
+    "sources": [
+      [
+        "库思老一世（英文资料）",
+        "https://en.wikipedia.org/wiki/Khosrow_I"
+      ],
+      [
+        "普罗柯比《战史》第2卷（第28节 545年停战，点名要医生特里布努斯）",
+        "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Procopius/Wars/2I*.html"
+      ]
+    ]
   }
 };
 const FIGURE_SCENES={
@@ -3747,6 +4353,294 @@ const FIGURE_SCENES={
       "event": "伸出脖子",
       "note": "他夜里躲进拉文纳的教堂。天亮兵来了，当着主教发誓只是看押；他一出门，第二道诏书就到了：斩首。跟着他的蛮族兵要动手救人，他喝住了，自己伸出了脖子。",
       "place": "ravenna"
+    }
+  ],
+  "history-empire-leo/0": [
+    {
+      "id": "aspar",
+      "when": "457年2月",
+      "event": "同车进城",
+      "note": "利奥在城外称帝后进城游行，阿斯帕尔和他同坐一辆车；到了君士坦丁广场，又是阿斯帕尔献上金冠。皇帝是他扶的，他要全城看见。",
+      "place": "constantinople"
+    }
+  ],
+  "history-empire-leo/4": [
+    {
+      "id": "anastasius-i",
+      "when": "491年4月",
+      "event": "要不回来的保证书",
+      "note": "皇后选定他以后，牧首欧菲米乌斯要他先亲笔签一份信仰保证，才让他登基。几年后皇帝想把这份保证书要回来，牧首不给；495年皇帝召集京城的主教开会，把牧首革了职。",
+      "place": "constantinople"
+    }
+  ],
+  "history-empire-justinian/0": [
+    {
+      "id": "justin-i",
+      "when": "约470年",
+      "event": "三个背干粮的同乡",
+      "note": "查士丁和同乡齐马尔库斯、狄提比斯图斯为了逃离家乡的穷苦，背着山羊毛口袋步行到京城，口袋里只有家里带来的几块干粮。三人都长得好，被皇帝利奥挑进了宫廷卫队。",
+      "place": "constantinople"
+    }
+  ],
+  "history-empire-justinian/1": [
+    {
+      "id": "theodora",
+      "when": "532年1月",
+      "event": "帝位是上好的裹尸布",
+      "note": "尼卡暴动最凶时，大臣们劝皇帝坐船逃走。狄奥多拉说：钱有的是，海就在那里，船也备好了；可逃出去以后，你会不会宁愿当初死了？“我赞成一句古话：帝位是上好的裹尸布。”",
+      "place": "constantinople"
+    }
+  ],
+  "history-empire-justinian/3": [
+    {
+      "id": "belisarius",
+      "when": "540年5月",
+      "event": "进了拉文纳",
+      "note": "哥特人秘密派人请他做西部皇帝。他极厌恶“僭主”这个名头，也早对皇帝发过重誓终身不造反，却假装答应，带着私兵从沼泽中唯一的堤道进了城，运粮船跟着就到。",
+      "place": "ravenna"
+    }
+  ],
+  "history-west-kingdoms/1": [
+    {
+      "id": "theodoric-great",
+      "when": "519年",
+      "event": "烧了会堂就得赔",
+      "note": "拉文纳的一伙人放火烧了城里的犹太会堂。信阿里乌派的国王下令：全城出钱把会堂重修起来，出不起的挨鞭子。他要的是各守各的法、谁也别闹事。",
+      "place": "ravenna"
+    }
+  ],
+  "history-west-kingdoms/3": [
+    {
+      "id": "clovis",
+      "when": "507年",
+      "event": "看不下去的阿里乌派",
+      "note": "据图尔的格雷戈里，克洛维对部下说：“这些阿里乌派占着高卢一块地，我看不下去。靠上帝帮忙，去把他们打下来，地归我们。”打完仗，他把战利品送进了图尔的圣马丁教堂。",
+      "place": "tours"
+    }
+  ],
+  "history-west-kingdoms/4": [
+    {
+      "id": "leovigild",
+      "when": "584年",
+      "event": "三万金币",
+      "note": "长子赫尔梅内吉尔德在塞维利亚造反，靠的是拜占庭兵。父亲没跟拜占庭硬打，付了三万金币，拜占庭人就撤了，还把儿媳和孙子一并带走。儿子逃进教堂，父亲派次子进去劝降。",
+      "place": "toletum"
+    }
+  ],
+  "history-faith-papacy/2": [
+    {
+      "id": "ambrose",
+      "when": "386年",
+      "event": "宫殿归皇帝，教堂归主教",
+      "note": "朝廷的伯爵、军官来催他交出教堂，说皇帝的东西样样归皇帝管。他答：我的地、我的钱，要就拿去；属上帝的东西不归皇帝管。又说：“宫殿归皇帝，教堂归主教。”",
+      "place": "mediolanum"
+    }
+  ],
+  "history-faith-papacy/4": [
+    {
+      "id": "gelasius-i",
+      "when": "494年",
+      "event": "两样东西",
+      "note": "他写信给阿纳斯塔修斯：治理世界的有两样，主教的神圣权威和君王的权力；主教的担子更重，因为到了上帝面前，他们连君王也要替着交账。这封信后来成了西方讲教权和王权的老本。",
+      "place": "rome"
+    }
+  ],
+  "history-egypt-old/1": [
+    {
+      "id": "imhotep",
+      "when": "约前2650年",
+      "event": "未完工的金字塔",
+      "note": "左塞尔死后，他接着替下一任国王塞汉姆赫特修阶梯金字塔，那座塔的围墙上留有他的名字。这位国王在位太短，金字塔只修了几层就丢下了。",
+      "place": "saqqara"
+    }
+  ],
+  "history-egypt-old/2": [
+    {
+      "id": "khufu",
+      "when": "约前2560年",
+      "event": "梅雷尔的船队",
+      "note": "他在位末年，督察梅雷尔带着四十来个船工，十天两三趟，把图拉的白石灰石运到吉萨，交给胡夫的异母兄弟、大臣安赫哈夫验收。日志里，大金字塔叫“胡夫的地平线”。",
+      "place": "giza"
+    }
+  ],
+  "history-egypt-middle/1": [
+    {
+      "id": "senusret-iii",
+      "when": "约前1862年",
+      "event": "塞姆纳界碑",
+      "note": "他在塞姆纳立碑，说自己把边界推得比父辈更往南；又说努比亚人“不是值得尊重的人”，你进他就退，你退他就进。谁守住这条边界，才是他的儿子；丢了边界、不肯为它打仗的，不是他生的。碑旁立着他的像。",
+      "place": "semna"
+    }
+  ],
+  "history-egypt-middle/3": [
+    {
+      "id": "ahmose-i",
+      "when": "约前1530年",
+      "event": "在敌都上盖王宫",
+      "note": "他拿下阿瓦里斯，没有毁掉这座港城，而是在喜克索斯人的城防旧址上修起自己的王宫，宫墙上画着克里特风格的壁画。城里的迦南居民，不少留了下来。",
+      "place": "avaris"
+    }
+  ],
+  "history-egypt-new/0": [
+    {
+      "id": "hatshepsut",
+      "when": "约前1471年",
+      "event": "蓬特的没药树",
+      "note": "她在位第九年派船队去蓬特，运回三十一棵活没药树和乳香。这趟远航刻在代尔拜赫里神殿的墙上，蓬特的王后也画在上面。据说她把烧过的乳香磨成粉，当眼线涂。",
+      "place": "deirelbahari"
+    }
+  ],
+  "history-egypt-new/2": [
+    {
+      "id": "ramesses-ii",
+      "when": "约前1246年",
+      "event": "赫梯公主的嫁妆",
+      "note": "赫梯王后普杜赫帕写信解释：嫁妆一时凑不齐，请他别催。这年秋天，公主由两国军队护送，带着满载金银铜器的车队、牛羊和奴仆从哈图沙动身，到了埃及改名玛特霍尔奈弗鲁拉，当上正宫王后。",
+      "place": "piramesses"
+    }
+  ],
+  "history-egypt-late/1": [
+    {
+      "id": "piye",
+      "when": "约前725年",
+      "event": "吃鱼的王不得进宫",
+      "note": "南北四个王来向他称臣，只放进王宫一个：另外三个吃鱼，在宫里算不洁；赫尔莫波利斯王尼姆罗特不吃鱼，才进了门。站在宫门外的三个，用碑上的话说，“腿软得像女人”。",
+      "place": "napata"
+    }
+  ],
+  "history-egypt-late/3": [
+    {
+      "id": "nectanebo-ii",
+      "when": "前343年",
+      "event": "门托尔倒戈",
+      "note": "他派四千希腊雇佣兵去帮西顿反波斯，领兵的罗得人门托尔暗中投了波斯。这年冬天波斯大军压境，他手下有六万埃及兵、两万利比亚兵、两万希腊雇佣兵；门托尔熟悉埃及东边的防线，带着人马投到波斯军中。次年夏天波斯人进了孟菲斯。",
+      "place": "memphis"
+    }
+  ],
+  "history-egypt-roman/0": [
+    {
+      "id": "cornelius-gallus",
+      "when": "前27—前26年",
+      "event": "刻在金字塔上的战功",
+      "note": "据卡西乌斯·狄奥，他在埃及到处给自己立像，还把战功刻上了金字塔。好友告发他，奥古斯都不许他再住在皇帝的行省，元老院跟着定罪、抄家，他在判决生效前自杀。",
+      "place": "alexandria"
+    }
+  ],
+  "history-egypt-roman/3": [
+    {
+      "id": "diocletian",
+      "when": "298年",
+      "event": "烧掉点金术的书",
+      "note": "平定埃及以后，他下令把讲怎样把贱金属变成金银的书统统烧掉；吉本说，这是炼金术史上头一件确凿可考的事。他又南下上埃及，跟努比亚的部落讲和，把边界退到第一瀑布边的菲莱。",
+      "place": "alexandria"
+    }
+  ],
+  "history-egypt-byzantine/0": [
+    {
+      "id": "dioscorus",
+      "when": "451年",
+      "event": "一盒牙和胡子",
+      "note": "卡尔西顿会议第三次开会起他不再到场，会议以抗命为由革了他的职，并没有定他异端。科普特人的传说是：皇姐普尔喀丽娅一巴掌打掉了他几颗牙，卫兵揪下他的胡子，他把牙和胡子装盒寄回亚历山大里亚：“这是我信仰的果实。”",
+      "place": "alexandria"
+    }
+  ],
+  "history-egypt-byzantine/2": [
+    {
+      "id": "theodora",
+      "when": "536年起",
+      "event": "宫里的流亡宗主教",
+      "note": "536年查士丁尼撤了不肯认卡尔西顿的亚历山大里亚宗主教提奥多西，她把人接到君士坦丁堡供养起来。提奥多西在京城照样替自己一派祝圣神父和主教，后来派去诺巴德当主教的朗吉努斯，就是他祝圣的。",
+      "place": "constantinople"
+    }
+  ],
+  "history-persia-elam/1": [
+    {
+      "id": "shutruk-nakhunte",
+      "when": "约前1158年",
+      "event": "把古碑搬回苏萨",
+      "note": "他在阿卡德王纳拉姆-辛的胜利碑上补刻了一段埃兰文：城神因舒希纳克命我出兵，我攻破西帕尔，拿走纳拉姆-辛的碑，带回埃兰，献给我的神。",
+      "place": "susa"
+    }
+  ],
+  "history-persia-elam/3": [
+    {
+      "id": "cyaxares",
+      "when": "前612年",
+      "event": "合围尼尼微",
+      "note": "巴比伦编年史记：这年夏天，巴比伦王和米底王基亚克萨雷斯合围尼尼微，三个月后破城，亚述王死，两军抢走城中和神庙的大批财宝。9月14日，基亚克萨雷斯班师回国。",
+      "place": "nineveh"
+    }
+  ],
+  "history-persia-achaemenid/0": [
+    {
+      "id": "cyrus-ii",
+      "when": "前539年10月",
+      "event": "进巴比伦",
+      "note": "据巴比伦编年史，10月12日他的部将乌格巴鲁不战而入巴比伦，神庙的祭礼一天也没停；17天后居鲁士入城，向全城致意，城中太平。他的人随即任命巴比伦各区的官。",
+      "place": "babylon"
+    }
+  ],
+  "history-persia-achaemenid/1": [
+    {
+      "id": "darius-i",
+      "when": "前520年前后",
+      "event": "贝希斯敦崖刻",
+      "note": "他在巴比伦通往埃克巴坦那的大路边、离地约一百米的崖上刻下浮雕和三种文字：他一脚踩着仰面倒地的高墨达，九个被擒的“说谎王”脖子上拴着绳子排在面前。一百年后，埃及还有人抄录这篇铭文的阿拉米文译本。",
+      "place": "behistun"
+    }
+  ],
+  "history-persia-parthia/0": [
+    {
+      "id": "mithridates-ii",
+      "when": "前96年",
+      "event": "三把椅子",
+      "note": "他的使者奥罗巴佐斯在幼发拉底河边见罗马将领苏拉，这是两国头一回打交道。苏拉摆了三把椅子，自己坐中间，一边是卡帕多西亚王，一边是安息使者。据普鲁塔克，安息王事后处死了奥罗巴佐斯。",
+      "place": "euphrates"
+    }
+  ],
+  "history-persia-parthia/2": [
+    {
+      "id": "surena",
+      "when": "前53年",
+      "event": "掀开毡皮",
+      "note": "他把重甲骑兵藏在前队后面，用袍子和兽皮盖住盔甲。罗马人走近时，蒙皮挂铃的战鼓一齐擂响，骑兵掀开遮盖，头盔胸甲闪闪发亮，马也披着铜甲铁甲。",
+      "place": "carrhae"
+    }
+  ],
+  "history-persia-sasanian/1": [
+    {
+      "id": "shapur-i",
+      "when": "260年",
+      "event": "“亲手”擒住瓦勒良",
+      "note": "他在铭文里列出瓦勒良从哪些行省调来七万大军，接着说：瓦勒良皇帝，我们亲手擒获；其余禁卫军长官、元老、将领，全都俘虏，押往波斯。",
+      "place": "carrhae"
+    }
+  ],
+  "history-persia-sasanian/2": [
+    {
+      "id": "mani",
+      "when": "274年前后",
+      "event": "死在狱中",
+      "note": "巴赫拉姆一世听了卡提尔等祭司的话，把摩尼关进贡德沙普尔的监狱，不到一个月他就死了。信徒把他的死比作耶稣受难；几百年后的伊斯兰史书说他被剥了皮，皮里塞草挂在城门上。",
+      "place": "gundeshapur"
+    }
+  ],
+  "history-persia-khosrow/2": [
+    {
+      "id": "kavad-i",
+      "when": "约520年",
+      "event": "请罗马皇帝收养库思老",
+      "note": "他怕诸子争位，写信请东罗马皇帝查士丁收养库思老，给小儿子撑腰。查士丁和外甥查士丁尼都很高兴，正要立文书，财务官普罗克卢斯劝阻：儿子按例继承父亲的家业，收养了，波斯王子日后就能来争罗马。事情就此告吹。",
+      "place": "ctesiphon"
+    }
+  ],
+  "history-persia-khosrow/4": [
+    {
+      "id": "khosrow-i",
+      "when": "545年",
+      "event": "点名要一位医生",
+      "note": "这年两国议定五年停战。库思老的条件除了两千磅黄金，还点名要罗马医生特里布努斯来陪他住一阵：此人从前治好过他的重病。查士丁尼当即把人和钱一起送了过去。",
+      "place": "ctesiphon"
     }
   ]
 };
