@@ -16,6 +16,7 @@ const SHARED={'history-war-602/0':['byz','persia','egypt'],'history-arab-conques
 const BOLD=[['history-faith-three-chapters/1','教义之争背后的权力格局之斗争，不一定是阴谋论，只是人类组织内群体对抗外群体和组织扩张，权力自我膨胀的自然结果'],
  ['history-faith-monothelites/4','教义本身不那么重要'],['history-faith-icons/-1','人类可以以任意画一条线分为两派互相斗争。这是人类组织的自然属性'],
  ['history-empire-heraclius/3','拜占庭帝国取代东罗马名号（以拉丁语不再作为官方语言为标志）'],
+ ['history-empire-leo/5','也有要拉拢埃及、叙利亚的意思，让他们别太离心'],
  ['history-west-merovingians/*','权力自我膨胀'],['history-west-lombards/*','组织扩张'],['history-arab-conquest/*','几次战争征服和领土变迁']];
 (async()=>{
  const browser=await puppeteer.launch({executablePath:process.env.CHROME_PATH||'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true});
@@ -110,6 +111,18 @@ const BOLD=[['history-faith-three-chapters/1','教义之争背后的权力格局
    await page.evaluate(()=>go('history-empire-heraclius',{scene:3}));await wait(250);
    await page.screenshot({path:path.join(shots,`heraclius_3-${label}.png`)});
    if(label==='desktop'){
+    // Top header pills jump to that line's start time; clicking in the tree below keeps the timeline where it is.
+    await page.evaluate(()=>{go('history-migration');toc.scrollTop=0;});
+    await page.click('#toc .tree-line[data-line="east"]');
+    const jumped=await page.evaluate(()=>{
+     const bar=toc.querySelector('.tree-lines').getBoundingClientRect(),item=toc.querySelector('.tree-item.on').getBoundingClientRect();
+     return {id:ENTRIES[cur].id,line:treeLine,scroll:toc.scrollTop,visible:item.top>=bar.bottom-2&&item.bottom<=toc.getBoundingClientRect().bottom};
+    });
+    assert.equal(jumped.id,'history-empire-leo');assert.equal(jumped.line,'east');assert.ok(jumped.scroll>500&&jumped.visible,JSON.stringify(jumped));
+    const beforeClick=await page.evaluate(()=>toc.scrollTop);
+    await page.click('#toc .tree-item[data-key="history-west-kingdoms/0"]');
+    const afterItem=await page.evaluate(()=>({id:ENTRIES[cur].id,line:treeLine,scroll:toc.scrollTop}));
+    assert.deepEqual(afterItem,{id:'history-west-kingdoms',line:'west',scroll:beforeClick},'clicking a tree item below does not move the timeline');
     await page.evaluate(()=>{selectTreeLine('byz');go('history-war-602');});await page.click('#treeOpen');await wait(250);
     await page.evaluate(()=>treeSheet.querySelector('.tree-item.on')?.scrollIntoView({block:'center'}));await wait(150);
     await page.screenshot({path:path.join(shots,'tree-shared-1440.png')});

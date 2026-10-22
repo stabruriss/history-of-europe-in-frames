@@ -106,16 +106,15 @@ function checkTree(r,label){
   await p.keyboard.press('ArrowDown');s=await state(p);assert.deepEqual([s.id,s.scene],['history-faith-icons',0]);
   assert.ok(await p.$eval('#next',e=>e.disabled),'end of the 基督教 line');
   await p.click('#toc .tree-item[data-key="history-faith-israel/0"]');
-  // Switching lines is in place: the section stays and the sidebar does not move; ↑↓ then follow the new line by time.
+  // Clicking a top header pill jumps to that line’s start time; switching in place (in the tree below) keeps the section and scroll.
   const scroll0=await p.evaluate(()=>toc.scrollTop);
-  await p.click('#toc .tree-line[data-line="trunk"]');s=await state(p);
+  await p.evaluate(()=>selectTreeLine('trunk'));s=await state(p);
   assert.deepEqual([s.id,s.scene],['history-faith-israel',0],'in place');assert.equal(await p.evaluate(()=>toc.scrollTop),scroll0,'no jump');
   assert.equal(await p.$eval('#pos',e=>e.textContent),'– / 23');
   await p.keyboard.press('ArrowDown');s=await state(p);assert.deepEqual([s.id,s.scene],['history-collapse',0],'next Greek station after 前1400');
   await p.keyboard.press('ArrowDown');s=await state(p);assert.deepEqual([s.id,s.scene],['history-dark-age',0]);
   await p.keyboard.press('ArrowDown');s=await state(p);assert.equal(s.id,'history-poleis','the Greek line skips Rome');
-  await p.click('#toc .tree-line[data-line="rome"]');s=await state(p);assert.equal(s.id,'history-poleis','in place');
-  await p.keyboard.press('ArrowUp');s=await state(p);assert.equal(s.id,'history-rome-site','previous Rome station before 前800');
+  await p.click('#toc .tree-line[data-line="rome"]');s=await state(p);assert.equal(s.id,'history-rome-site','top pill jumps to Rome’s start');
   await p.keyboard.press('ArrowDown');s=await state(p);assert.equal(s.id,'history-rome-kings');
   await p.keyboard.press('ArrowDown');s=await state(p);assert.equal(s.id,'history-rome-republic');
   await p.keyboard.press('ArrowDown');s=await state(p);assert.equal(s.id,'history-rome-plebs');
@@ -152,13 +151,12 @@ function checkTree(r,label){
   await p.click('#toc .tree-line[data-line="trunk"]');
   assert.ok(await p.evaluate(()=>toc.querySelector('.era-future').classList.contains('off-line')&&!toc.querySelector('.tree-item[data-key="history-celts/0"]').classList.contains('off-line')));
   await p.click('#toc .tree-line[data-line="rome"]');
-  // Picking a line whose track already passes the current station keeps the station.
+  // Picking a top line pill from an ancestor station jumps straight to that line’s own start.
   await p.evaluate(()=>go('history-palaces'));await p.click('#toc .tree-line[data-line="rome"]');s=await state(p);
-  assert.equal(s.id,'history-palaces');await p.keyboard.press('ArrowDown');await p.keyboard.press('ArrowDown');await p.keyboard.press('ArrowDown');
-  s=await state(p);assert.equal(s.id,'history-rome-site');
+  assert.equal(s.id,'history-rome-site');
   // A full ride on each line from the root: every ↓ lands lower in the tree, and the footer counts stations.
   for(const [line,startId,count,last] of [['trunk','history-migration',23,'history-hellenistic-end'],['rome','history-migration',32,'history-empire-west-fall'],['east','history-migration',35,'history-empire-maurice'],['byz','history-migration',38,'history-arab-conquest'],['west','history-migration',36,'history-west-charlemagne'],['faith','history-migration',17,'history-faith-icons'],['egypt','history-migration',12,'history-arab-conquest'],['persia','history-migration',12,'history-arab-conquest'],['china','history-china-neolithic',12,'history-china-tang']]){
-   await p.evaluate(id=>go(id),startId);await p.click(`#toc .tree-line[data-line="${line}"]`);await p.focus('#toc .tree-item.on');
+   await p.click(`#toc .tree-line[data-line="${line}"]`);await p.evaluate(id=>go(id),startId);await p.focus('#toc .tree-item.on');
    let lastTop=-1;
    for(let i=0;i<count;i++){
     const w=await p.evaluate(()=>{const b=toc.querySelector('.tree-item.on');return {top:b.offsetTop,pos:document.getElementById('pos').textContent,focus:document.activeElement===b};});

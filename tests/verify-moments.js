@@ -14,7 +14,7 @@ const shots=path.join(__dirname,'shots-v7');require('node:fs').mkdirSync(shots,{
   await page.setRequestInterception(true);page.on('request',r=>/^https?:/.test(r.url())?r.abort():r.continue());
   await page.goto(pathToFileURL(target).href+'#history-migration',{waitUntil:'domcontentloaded'});
   const list=await page.evaluate(()=>HISTORY_ENTRIES.flatMap(e=>e.moments.map(m=>({id:e.id,scene:m.scene,name:m.name}))));
-  assert.equal(list.length,192);
+  assert.equal(list.length,194);
   for(const m of list){
    const r=await page.evaluate(m=>{go(m.id,{scene:m.scene});
     const ctx=document.getElementById('sceneContext');const tags=[...ctx.querySelectorAll('.moment-tag')].map(t=>t.firstChild.textContent);
@@ -41,5 +41,5 @@ const shots=path.join(__dirname,'shots-v7');require('node:fs').mkdirSync(shots,{
  }
  await browser.close();
  assert.deepEqual(errors,[]);
- console.log('PASS: 192 iconic-event tags and 10 豆腐块 (boxed explainers) render inside their scene passages; desktop and 390px; no overflow; offline; no page errors.');
+ console.log('PASS: 194 iconic-event tags and 10 豆腐块 (boxed explainers) render inside their scene passages; desktop and 390px; no overflow; offline; no page errors.');
 })().catch(e=>{console.error(e);process.exit(1);});

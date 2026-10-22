@@ -29,8 +29,8 @@ const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','
   const onKey=()=>p.evaluate(()=>({key:toc.querySelector('.chip.on').dataset.key,line:treeLine,focus:document.activeElement===toc.querySelector('.chip.on')}));
   const walked=new Set();
   for(const line of lines){
-   const [id,from]=line.keys[0].split('/');await p.evaluate(({id,from})=>go(id,{scene:+from}),{id,from});
    await p.click(`#toc .tree-line[data-line="${line.id}"]`);
+   const [id,from]=line.keys[0].split('/');await p.evaluate(({id,from})=>go(id,{scene:+from}),{id,from});
    await p.focus('#toc .chip.on');await p.keyboard.press('ArrowUp');assert.equal((await onKey()).key,line.keys[0]);walked.add(line.keys[0]);
    for(let i=1;i<line.keys.length;i++){
     await p.keyboard.press('ArrowDown');const s=await onKey();

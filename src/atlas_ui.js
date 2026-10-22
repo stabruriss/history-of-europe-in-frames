@@ -111,7 +111,7 @@ function historyTreeRows(){
 
 /* Metro lines: a line runs from the root down the trunk to its fork, then along its own branch.
    ↑↓ and 上一条/下一条 move between the stations of the chosen line, in time order. */
-let treeLine='trunk',treeStationList=null,lastStationKey=null;
+let treeLine='trunk',treeStationList=null,lastStationKey=null,keepTreeScroll=false;
 const lineCache={},BRANCH=Object.fromEntries(HISTORY_BRANCHES.map(b=>[b.id,b]));
 const lineColor=b=>b.c||TREE_CH_COLORS[1];
 const treeStations=()=>treeStationList??=historyTreeRows().filter(r=>r.kind==='item')
@@ -127,8 +127,35 @@ function currentStation(){
 }
 // Stay on the chosen line while its stations are visited; a station off the line switches to that station's own branch.
 function syncTreeLine(){const s=currentStation();if(s&&!lineStations(treeLine).some(x=>x.key===s.key))treeLine=s.branch;}
-// Switching lines happens in place: the current section stays; only the track for ↑↓ changes.
-function selectTreeLine(id){treeLine=id;updateNavigation();}
+function scrollTreeToKey(key){
+  document.querySelectorAll('.htree').forEach(tree=>{
+    const scroller=tree.parentElement,item=tree.querySelector(`.tree-item[data-key="${key}"]`);
+    if(!scroller||!item||!item.getClientRects().length)return;
+    const head=tree.querySelector(`.tree-head[data-era="${item.dataset.era}"]`);
+    const anchor=head&&item.offsetTop-head.offsetTop<56?head:item;
+    const bar=scroller.querySelector('.tree-lines');
+    const topEdge=bar?bar.getBoundingClientRect().bottom+6:scroller.getBoundingClientRect().top+6;
+    scroller.scrollTop=Math.max(0,scroller.scrollTop+anchor.getBoundingClientRect().top-topEdge);
+  });
+}
+// Top header pills jump to that line's start time; clicking in the tree below switches in place without moving the timeline.
+function selectTreeLine(id,{jump=false}={}){
+  treeLine=id;
+  keepTreeScroll=true;
+  try{
+    if(jump){
+      const first=treeStations().find(s=>s.lines.includes(id))||lineStations(id)[0];
+      if(first){
+        lastStationKey=first.key;
+        go(first.id,{scene:first.from});
+        treeLine=id;updateNavigation();
+        scrollTreeToKey(first.key);
+        return;
+      }
+    }
+    updateNavigation();
+  }finally{keepTreeScroll=false;}
+}
 // The previous/next station on the chosen line; from a section off the line, the nearest ones before/after it in time.
 function lineNeighbor(delta){
   const line=lineStations(treeLine),s=currentStation();if(!s)return null;
@@ -152,7 +179,7 @@ function renderHistoryTree(host,{sheet=false}={}){
     const where=r.lines.length>1?r.lines.map(id=>BRANCH[id].name).join('、'):r.branch.c&&r.branch.id!=='rome'?r.branch.name:NUMERALS[r.e.ch];
     b.innerHTML=`<span>${r.label}</span><small><i>${where} · </i>${r.period}</small>`;
     b.title=HISTORY_CH[r.e.ch]+' · '+r.e.title;b.setAttribute('aria-label',`${b.title} · ${r.era.name} · ${r.period}`);
-    b.onclick=()=>{go(r.id,{scene:r.from});if(sheet)closeTreeSheet(false);};
+    b.onclick=()=>{keepTreeScroll=true;try{go(r.id,{scene:r.from});}finally{keepTreeScroll=false;}if(sheet)closeTreeSheet(false);};
     tree.appendChild(b);
   }
   for(const r of rows.filter(r=>r.kind==='future')){
@@ -163,18 +190,20 @@ function renderHistoryTree(host,{sheet=false}={}){
     r.el=document.createElement('div');r.el.className='tree-end';r.el.dataset.branch=r.branch.id;r.el.style.setProperty('--c',r.c);
     r.el.innerHTML=`<b>${r.label}</b><small>${r.note}</small>`;tree.appendChild(r.el);
   }
-  // Branch names run along their branches in the wide view.
+  // Branch names run along their branches in the wide view; clicking them in the tree below switches in place without moving the timeline.
   tree._names=HISTORY_BRANCHES.filter(b=>b.c).map(b=>{
     const el=document.createElement('span');el.className='tree-branch-name';el.setAttribute('aria-hidden','true');
-    el.dataset.branch=b.id;el.style.setProperty('--c',b.c);el.textContent=b.name;tree.appendChild(el);return {b,el};
+    el.dataset.branch=b.id;el.style.setProperty('--c',b.c);el.textContent=b.name;
+    el.title=`切换到“${b.name}”（原地）`;el.onclick=()=>selectTreeLine(b.id,{jump:false});
+    tree.appendChild(el);return {b,el};
   });
-  tree.querySelector('.htree-svg').addEventListener('click',ev=>{const hit=ev.target.closest('.lane-hit');if(hit)selectTreeLine(hit.dataset.line);});
+  tree.querySelector('.htree-svg').addEventListener('click',ev=>{const hit=ev.target.closest('.lane-hit');if(hit)selectTreeLine(hit.dataset.line,{jump:false});});
   const bar=document.createElement('div');bar.className='tree-lines';bar.setAttribute('role','group');bar.setAttribute('aria-label','选择主线');
   bar.innerHTML='<span>主线</span>';
   for(const b of HISTORY_BRANCHES){
     const btn=document.createElement('button');btn.type='button';btn.className='tree-line';btn.dataset.line=b.id;
-    btn.style.setProperty('--c',lineColor(b));btn.innerHTML=`<i></i>${b.name}`;btn.title=`沿“${b.name}”上下移动`;
-    btn.onclick=()=>selectTreeLine(b.id);bar.appendChild(btn);
+    btn.style.setProperty('--c',lineColor(b));btn.innerHTML=`<i></i>${b.name}`;btn.title=`跳到“${b.name}”的起点`;
+    btn.onclick=()=>selectTreeLine(b.id,{jump:true});bar.appendChild(btn);
   }
   tree._rows=rows;host.replaceChildren(bar,tree);layoutHistoryTree(tree);
   return tree;
@@ -321,7 +350,7 @@ function markTreeCurrent(){
     tree.parentElement?.querySelectorAll('.tree-line').forEach(p=>{const on=p.dataset.line===treeLine;p.classList.toggle('on',on);p.setAttribute('aria-pressed',String(on));});
     tree.querySelectorAll('.era').forEach(h=>h.classList.toggle('active-era',h.dataset.era===current?.dataset.era));
   });
-  if(!treeSheet.hidden)treeSheet.querySelector('.tree-item.on')?.scrollIntoView({block:'nearest'});
+  if(!keepTreeScroll&&!treeSheet.hidden)treeSheet.querySelector('.tree-item.on')?.scrollIntoView({block:'nearest'});
 }
 
 // The same tree opens full-size on phones (where the sidebar is a menu) and on request on desktop.
@@ -365,7 +394,7 @@ function updateNavigation(){
   toc.querySelectorAll('.chip').forEach(b=>{
     const on=b.dataset.id===e.id&&(!isHistory(e)||(sceneIndex>=+b.dataset.from&&sceneIndex<=+b.dataset.to));b.classList.toggle('on',on);
     if(on)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current');
-    if(on&&b.getClientRects().length)b.scrollIntoView({block:'nearest'});
+    if(on&&!keepTreeScroll&&b.getClientRects().length)b.scrollIntoView({block:'nearest'});
   });
   markTreeCurrent();
   // History steps along the chosen line; geography steps through the list.
@@ -436,7 +465,7 @@ function renderScenes(e){
   e.scenes.forEach((s,i)=>{
     const b=document.createElement('button');b.dataset.scene=i;b.className=i===sceneIndex?'on':'';
     b.setAttribute('aria-pressed',String(i===sceneIndex));b.title=s.note;
-    b.innerHTML=`<small>${s.date}</small>${s.title}`;b.onclick=()=>go(e.id,{scene:i});buttons.appendChild(b);
+    b.innerHTML=`<small>${s.date}</small>${s.title}`;b.onclick=()=>{keepTreeScroll=true;try{go(e.id,{scene:i});}finally{keepTreeScroll=false;}};buttons.appendChild(b);
   });
   const on=buttons.children[sceneIndex];
   if(on)buttons.scrollLeft=Math.max(0,on.offsetLeft-buttons.offsetLeft-(buttons.clientWidth-on.offsetWidth)/2);

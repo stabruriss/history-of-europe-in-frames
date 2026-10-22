@@ -1604,7 +1604,7 @@ const HISTORY_ENTRIES=[
     d.line([[41.55,28.3],[41.07,28.25]],{color:'#2a2018',weight:3,opacity:.85});
     hl(d,'波斯（萨珊）','Sasanian Persia',35.6,43.0,HC.parthia);
    },[['fill',HC.athens,'东罗马'],['line','#2a2018','阿纳斯塔修斯长墙'],['dot',HC.war,'阿米达'],['dot','#2a2018','新都、埃德萨与边境要塞']]),
-  hs('507—518年','三圣颂暴动','老皇帝偏一性论；512年三圣颂加一句引发暴动，皇帝摘冠示弱；513年起维塔利安几次兵临都城。',[[39.0,23.0],[45.5,31.5]],d=>{
+  hs('507—518年','三圣颂暴动','老皇帝偏一性论，也想拉住钱粮所出的埃及与叙利亚；512年三圣颂加一句引发暴动，皇帝摘冠示弱；次年维塔利安起兵。',[[39.0,23.0],[45.5,31.5]],d=>{
     ha(d,'eEast395',HC.athens,{fillOpacity:.18});
     hp(d,'constantinople',{kind:'battle',note:'512年三圣颂暴动；皇帝不戴皇冠坐到赛车场上，说情愿让位。'});
     hp(d,'marcianopolis',{note:'维塔利安在下默西亚起兵，号称保卫卡尔西顿。'});
@@ -2323,9 +2323,9 @@ const HISTORY_ENTRIES=[
     ha(d,'mByz641',HC.faith,{fillOpacity:.1});
     hp(d,'constantinople');hp(d,'f_lazica',{left:1});hp(d,'syracuse',{note:'663年起皇帝住在这里，668年在浴室里被杀。'});hp(d,'rome');
    },[['fill',HC.faith,'拜占庭'],['dot','#2a2018','流放地、新的皇居与罗马']]),
-  hs('668—681年','第六次大公会议','埃及、叙利亚丢定了，皇帝转向罗马：680—681年在皇宫开会，定两个意志，连前任教宗一起革除。',[[28.0,8.0],[45.0,46.0]],d=>{
+  hs('668—681年','希腊火与第六次大公会议','卡利尼库斯的“希腊火”烧退围攻京城的阿拉伯舰队；埃及、叙利亚丢定了，皇帝转向罗马，680—681年定两个意志。',[[28.0,8.0],[45.0,46.0]],d=>{
     ha(d,'mByz680',HC.faith,{fillOpacity:.14});ha(d,'mCaliph661',HC.myc,{fillOpacity:.16});
-    hp(d,'constantinople',{note:'680年11月7日开幕，681年9月16日闭幕。'});hp(d,'rome',{left:1});hp(d,'antioch',{note:'牧首的教座在阿拉伯人治下，人住在君士坦丁堡。'});
+    hp(d,'constantinople',{note:'670年代靠卡利尼库斯的“海火”（希腊火）烧毁围城的阿拉伯舰队；680—681年在此开第六次大公会议。'});hp(d,'rome',{left:1});hp(d,'antioch',{note:'牧首的教座在阿拉伯人治下，人住在君士坦丁堡。'});
    },[['fill',HC.faith,'拜占庭（约680年）'],['fill',HC.myc,'哈里发国（约661年）'],['dot','#2a2018','会场、罗马与安条克']]),
   hs('687—701年','羔羊与周六禁食','692年的会判了罗马几样习惯是错的；教宗不签，皇帝派人来抓，意大利民兵拦住；教宗把“上帝的羔羊”编进弥撒。',[[36.0,8.0],[46.0,30.0]],d=>{
     ha(d,'mByzItaly600',HC.athens,{fillOpacity:.26});ha(d,'mLombards600',HC.mino,{fillOpacity:.16});
@@ -3099,7 +3099,7 @@ const TREE_ROWS={
  'history-china-tang/0':['china',589,845]
 };
 // Topics still to be written grow the tree as dashed shoots.
-const TREE_FUTURE=[['byz',641,'希拉克略以后','641年起 · 到1453年 · 圣像之争先见“基督教”主线 · 待展开'],['west',814,'加洛林以后','814年起 · 待展开'],['faith',843,'走向东西分裂','843年起 · 待展开'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',651,'伊斯兰时代的伊朗','651年起 · 待展开'],['china',845,'晚唐五代与宋','845年起 · 待展开']];
+const TREE_FUTURE=[['byz',641,'希拉克略以后','641年起 · 到1453年 · 希腊火守城与圣像之争先见“基督教”主线 · 待展开'],['west',814,'加洛林以后','814年起 · 待展开'],['faith',843,'走向东西分裂','843年起 · 待展开'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',651,'伊斯兰时代的伊朗','651年起 · 待展开'],['china',845,'晚唐五代与宋','845年起 · 待展开']];
 // Where a line stops it says why: [line, year, the event that ends it, note, the line it carries on in].
 const TREE_ENDS=[['trunk',-30,'并入罗马','前146年科林斯被毁 · 前30年最后一个希腊化王国埃及并入罗马','rome'],['rome',476,'西罗马终结','476年西部末代皇帝被废 · 分出东罗马与中世纪西欧'],['east',602,'查士丁尼王朝终结','602年莫里斯被杀 · 接拜占庭（拉丁语退出官方）','byz']];
 function historyEra(e,scene=0){return HISTORY_ERAS.find(era=>era.items.some(([id,from=0,to=Infinity])=>id===e.id&&scene>=from&&scene<=to));}

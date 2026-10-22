@@ -34,7 +34,7 @@ const IDS=['history-faith-israel','history-faith-first-temple','history-faith-se
    assert.equal(report.chapter,'犹太教与基督教');
    assert.deepEqual(report.ids,IDS);assert.deepEqual(report.scenes,[5,5,4,6,4,4,3,3,3,6,5,6,6]);
    assert.ok(report.paras.every(p=>p.chars<=230),'Concise: '+JSON.stringify(report.paras.filter(p=>p.chars>230)));
-   assert.ok(report.bold);assert.equal(report.moments,40);assert.equal(report.people,28);
+   assert.ok(report.bold);assert.equal(report.moments,42);assert.equal(report.people,28);
    assert.deepEqual(report.branch,['基督教',5,'trunk',-1400,843,true]);assert.equal(report.levant,false);
    assert.deepEqual(report.eras,[['faith-israel','古代以色列',IDS.slice(0,2)],['faith-temple','第二圣殿时期',IDS.slice(2,4)],['faith-church','早期教会',IDS.slice(4,9)],['faith-medieval','中世纪早期的教会',IDS.slice(9)]]);
    // The line now forks off before 卡迭石: the Hebrews' nomadic origins come first.
