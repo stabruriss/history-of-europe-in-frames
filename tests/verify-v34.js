@@ -13,8 +13,11 @@ const OWN={east:['history-empire-leo','history-empire-justinian','history-empire
  west:['history-west-kingdoms','history-west-merovingians','history-west-lombards','history-west-charlemagne']};
 const SHARED={'history-empire-heraclius/0':['east','persia','egypt'],'history-arab-conquest/0':['persia','east','egypt']};
 const BOLD=[['history-faith-three-chapters/1','教义之争背后的权力格局之斗争，不一定是阴谋论，只是人类组织内群体对抗外群体和组织扩张，权力自我膨胀的自然结果'],
+ ['history-faith-monothelites/1','吃马肉不吃马肝，不算你傻；谁再讨论什么几性几位几志就弄谁'],
+ ['history-faith-monothelites/1','这是很聪明的策略：虽然有帝国动员能力不足导致底层宗教势大的原因，但君士坦丁以来跟着教义之争翻大饼，也的确弱化了皇权，如果早早就铁腕把这些争论都压下去，本是更聪明的办法。实际上查士丁尼在暴乱后下决心屠杀了三万人，的确让蓝绿党争消停了'],
  ['history-faith-monothelites/4','教义本身不那么重要'],['history-faith-icons/-1','人类可以以任意画一条线分为两派互相斗争。这是人类组织的自然属性'],
  ['history-empire-leo/5','也有要拉拢埃及、叙利亚的意思，让他们别太离心'],
+ ['history-empire-justinian/4','大瘟疫也直接导致了波斯退兵'],
  ['history-empire-justinian/5','查士丁尼折腾了一辈子，拿回了意大利，但只撑了十几年就又丢了'],
  ['history-empire-justinian/5','内部宗教派系争夺也没停下，晚年就很颓'],
  ['history-empire-heraclius/1','叙利亚和埃及开始是怎么丢的？'],

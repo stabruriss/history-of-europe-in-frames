@@ -2209,7 +2209,7 @@ const HISTORY_ENTRIES=[
     ha(d,'mByz620',HC.faith,{fillOpacity:.1});
     hp(d,'constantinople');hp(d,'alexandria',{note:'633年6月居鲁士在这里与一性论派订合一条约。'});hp(d,'jerusalem',{note:'修士索弗罗尼乌斯带头反对，634年当上耶路撒冷牧首。'});hp(d,'rome',{left:1});
    },[['fill',HC.faith,'帝国（约620年）'],['dot','#2a2018','四大教座']]),
-  hs('641—648年','不许再说','东方丢了，罗马谴责《信仰宣言》，马克西姆斯在迦太基辩赢；648年皇帝下令谁都不许再谈，罚则按身份开列。',[[29.0,6.0],[44.5,38.5]],d=>{
+  hs('641—648年','《谕令》：谁再讨论就弄谁','645年马克西姆斯在迦太基辩论；648年君士坦斯二世颁《谕令》，拆掉《信仰宣言》，禁谈一志还是两志，按身份重罚。',[[29.0,6.0],[44.5,38.5]],d=>{
     ha(d,'mByz641',HC.faith,{fillOpacity:.1});ha(d,'mCaliph644',HC.myc,{fillOpacity:.16});
     hp(d,'carthage',{note:'645年马克西姆斯与皮洛士在这里辩论。'});hp(d,'rome');hp(d,'constantinople',{note:'648年《谕令》在这里颁布。'});
    },[['fill',HC.faith,'拜占庭（641年）'],['fill',HC.myc,'哈里发国（约644年）'],['dot','#2a2018','辩论与颁令的地方']]),
