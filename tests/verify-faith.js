@@ -94,7 +94,7 @@ const IDS=['history-faith-israel','history-faith-first-temple','history-faith-se
      ['history-faith-papacy/4','两样'],['history-faith-papacy/5','四百金币'],['history-faith-papacy/5','“东罗马”主线'],
      // v34 (老无 2026-10-21 晚): the power struggle behind doctrine — the fifth council (the sixth and seventh now sit on the East Roman dynasties).
      ['history-faith-three-chapters/0','霍尔米斯达斯宫'],['history-faith-three-chapters/1','雅各派'],['history-faith-three-chapters/1','皇帝的人'],['history-faith-three-chapters/2','死人的东西'],['history-faith-three-chapters/3','一百五十二位主教'],['history-faith-three-chapters/4','众仆之仆'],
-     ['history-empire-constans/0','罚则按身份开列'],['history-empire-constans/1','割了舌头'],['history-empire-constans/3','地盘一丢，教义就翻案'],['history-empire-isaurian/3','第七次大公会议'],['history-empire-amorian/2','正统的胜利'],['history-empire-macedonian/3','无酵饼']]){
+     ['history-empire-constans/0','罚则按身份开列'],['history-empire-constans/1','割去舌头'],['history-empire-constans/3','地盘一丢，教义就翻案'],['history-empire-isaurian/3','第七次大公会议'],['history-empire-amorian/2','正统的胜利'],['history-empire-macedonian/3','无酵饼']]){
     await page.evaluate(s=>go(s),scene);
     assert.ok(await page.$eval('#sceneContext>p',(e,w)=>e.textContent.includes(w),phrase),scene+' lacks '+phrase);
    }

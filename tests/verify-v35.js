@@ -20,28 +20,37 @@ const EAST_TAIL=['history-empire-leo/0','history-empire-justinian/0','history-em
  'history-empire-anarchy/0','history-empire-isaurian/0','history-empire-amorian/0','history-empire-macedonian/0','history-empire-macedonian/3'];
 const FAITH_TAIL=['history-faith-papacy/0','history-faith-three-chapters/0','history-empire-constans/0','history-empire-isaurian/0','history-empire-amorian/0','history-empire-macedonian/3'];
 const SHARED=['history-empire-constans/0','history-empire-isaurian/0','history-empire-amorian/0','history-empire-macedonian/3'];
-// 老无's own words, verbatim and bold (教皇 → 教宗, leo → 利奥, 伊苏利亚 → 伊苏里亚, as everywhere in the atlas).
-const BOLD=[['history-empire-justinian/6','查士丁尼身后和汉武帝一样'],['history-empire-justinian/6','土地：征服后又很快失去'],['history-empire-justinian/6','军队：损失惨重'],
- ['history-empire-justinian/6','内政：教义暴乱，民变'],['history-empire-justinian/6','财政：崩溃'],
- ['history-empire-constans/1','被抓流放的教宗和被砍手割舌的“教宗小弟”，都是因为违反《谕令》'],['history-empire-constans/2','他死之后事情怎么样了？'],
- ['history-empire-constans/4','后来又开始教义纷争是因为外敌的压力减小了，所以教士团体内部就开始争权，皇帝就镇不住了。这个前面说的一开始皇权强大的时候没有定于一尊，后来导致教士坐大，开始互相争，还和皇帝叫板的逻辑一脉相承'],
- ['history-empire-constans/5','一开始还能把教宗抓到君士坦丁堡，后来都抓不来了，只能请来之后皇帝给教宗下跪。是后来皇帝对西部发现武力不行了，又开始怀柔'],
- ['history-empire-anarchy/0','后来因为东部财政问题，只能建了类似四个藩镇'],['history-empire-anarchy/1','导致类似五代的局面，皇帝轮流做'],
- ['history-empire-isaurian/0','利奥三世为了讨好一性论（耶稣是神就不能画像），加上老百姓觉得老被阿拉伯欺负是因为违反戒律'],
- ['history-empire-isaurian/1','和西部（西边觉得画像是OK的）分歧更大'],
- ['history-empire-isaurian/2','也有一部分东边的老百姓和欧洲军队不乐意，但是硬推了60年，基本稳定了新局面'],
- ['history-empire-isaurian/3','结果皇太后上去又翻大饼，导致亚洲的军队和另一部分老百姓不乐意'],
- ['history-empire-isaurian/4','她就只能撒币安抚，结果财政崩溃'],['history-empire-isaurian/4','因为宗教偏好和儿子皇上又不和'],
- ['history-empire-isaurian/4','结果把儿子弄死，孙子夭折，自己的合法性也没了'],
- ['history-empire-isaurian/5','那时候教宗利奥三世加冕查理曼，查理曼需要全罗马的合法性，就要娶皇太后，皇太后同意未遂，被不愿意当嫁妆被送给蛮族的其他贵族给干掉'],
- ['history-empire-isaurian/5','成也利奥，败也利奥'],
- ['history-empire-amorian/0','然后又乱'],['history-empire-macedonian/1','对阿拉伯的反攻'],['history-empire-macedonian/3','东西教会大分裂'],
- ['history-empire-macedonian/3','查理曼之后东罗马自己内部教士不太打了，开始一致对外反对罗马教宗']];
-// Where a claim leans on a mechanism the sources do not bear out, the right one sits in the same scene (not in bold).
-const FIXES=[['history-empire-constans/1','要治的还是拒签《谕令》这一条'],['history-empire-constans/2','抄起水桶把他砸死（坊间常说成“肥皂盒”）'],
- ['history-empire-constans/5','下旨召教宗君士坦丁东来'],['history-empire-isaurian/0','一性论派的大本营这时已归哈里发'],['history-empire-isaurian/0','只画人性是拆开两性'],
- ['history-empire-isaurian/4','儿子本人不反圣像'],['history-empire-isaurian/4','孙子那年5月已夭折'],['history-empire-isaurian/5','宠臣埃提奥斯想扶自己的弟弟'],['history-empire-isaurian/5','她没被杀'],
- ['history-empire-macedonian/0','只比末代的巴列奥略王朝（1259—1453）短几年'],['history-empire-macedonian/3','牧首的位子还常有派系之争'],
+// 老无's core theses and hooks, woven into the right historical places and bolded (no conversational "后来/结果/他死之后事情怎么样了" copied verbatim).
+const BOLD=[['history-empire-justinian/6','查士丁尼身后留下的困局，与汉武帝如出一辙：收复的土地得而复失，大军损耗殆尽，财政破产，教派冲突与兵变交织'],
+ ['history-empire-constans/1','教宗马丁一世被抓流放、他的主要神学助手修士马克西姆斯被割舌断手，根子都是因为带头违反《谕令》'],
+ ['history-empire-constans/3','东方外敌压力骤减，被《谕令》强行按住的教会纷争再度抬头'],
+ ['history-empire-constans/3','教义本身不那么重要，地盘一丢，教义就翻案'],
+ ['history-empire-constans/4','当年皇权强盛时没有铁腕定于一尊，纵容教士集团坐大；如今外敌稍缓，教会内部便争权夺利、同皇帝叫板，皇权已经镇不住了'],
+ ['history-empire-constans/4','从前皇帝还能把教宗抓到君士坦丁堡，如今连抓都抓不来了'],
+ ['history-empire-constans/5','皇帝发现对意大利动武已经行不通，只能改用怀柔'],
+ ['history-empire-constans/5','戴着皇冠的皇帝当众向教宗伏地行礼、亲吻他的脚'],
+ ['history-empire-anarchy/0','失去叙利亚和埃及后，帝国丧失了大半赋税与漕粮，东部财政枯竭，朝廷再养不起领全饷的常备军，只能在小亚细亚建立起类似唐朝藩镇的四大“军区”'],
+ ['history-empire-anarchy/1','四大军区坐大之后，帝国演成类似中国五代的局面，军区兵马轮番拥立新君，二十二年换了七个皇帝'],
+ ['history-empire-isaurian/0','当时百姓和军队觉得屡受严禁偶像的阿拉伯人欺负、又逢火山天灾，是因为拜圣像违反了十诫；而小亚细亚东部军民本就受东方一性论与反偶像风气影响，反圣像派主张基督既是神，无形的神性就不可画成图像'],
+ ['history-empire-isaurian/1','禁毁圣像使东罗马与西方的分歧进一步加深'],
+ ['history-empire-isaurian/2','帝国欧洲军区与部分东方百姓起初并不服从，但两代皇帝硬推近六十年，强行稳住了新局面'],
+ ['history-empire-isaurian/3','皇太后上台后再次“翻大饼”恢复圣像，引发小亚细亚军队和反圣像派百姓的强烈不满'],
+ ['history-empire-isaurian/4','围绕军权与宗教路线，皇太后与儿子矛盾激化，最终弄死亲生儿子，皇孙又已夭折，她自己的合法性也彻底丧失'],
+ ['history-empire-isaurian/4','失去合法性与亚洲军心后，她只能靠撒币和减税安抚各方，结果导致财政崩溃'],
+ ['history-empire-isaurian/5','800年圣诞节，教宗利奥三世在罗马为查理曼加冕；查理曼为了取得全罗马的合法性，于802年派使节赴君士坦丁堡向伊琳娜求婚。伊琳娜有意应允，但宠臣埃提奥斯从中作梗，满朝贵族官员既不满她挥霍国库，更不愿连人带帝国当成嫁妆送给法兰克“蛮族”，遂由财政大臣尼基弗鲁斯领头发动政变将她推翻'],
+ ['history-empire-isaurian/5','伊苏里亚王朝起于皇帝利奥三世，亡于教宗利奥三世加冕引发的政变——可谓“成也利奥，败也利奥”'],
+ ['history-empire-amorian/0','伊琳娜被废之后，帝国政局再度陷入动荡'],
+ ['history-empire-amorian/2','人类可以以任意画一条线分为两派互相斗争。这是人类组织的自然属性。'],
+ ['history-empire-amorian/3','查理曼在西方称帝、843年圣像之争收场之后，东罗马教会内部不再爆发大规模教义混战；虽仍有争夺牧首之位的派系倾轧，但已转为一致对外，联手抵制罗马教宗的管辖'],
+ ['history-empire-macedonian/0','他开创的马其顿王朝延续189年（867—1056），把东罗马推向中世纪国力的顶峰，是到那时为止最长命的王朝'],
+ ['history-empire-macedonian/1','马其顿王朝对阿拉伯世界展开了长达百年的大反攻'],
+ ['history-empire-macedonian/2','罗斯自此改信东正教，六千罗斯精兵则留在京城组成著名的瓦良格卫队'],
+ ['history-empire-macedonian/3','东罗马教会自圣像之争结束后不再爆发内部教义混战，而是同罗马教廷一致对外争权，最终在1054年酿成东西教会大分裂']];
+// Factual corrections woven in place (no self-contradicting bold-then-refute).
+const FIXES=[['history-empire-constans/1','实则治的就是抗旨议论教义这一条'],['history-empire-constans/2','抄起沉重的铜水桶将他猛击致死（俗传为肥皂盒打死）'],
+ ['history-empire-constans/5','下旨礼请教宗君士坦丁东来商议'],['history-empire-isaurian/0','若只画人性是割裂两性，若连神性同画又混同两性'],
+ ['history-empire-isaurian/4','小亚细亚反圣像派军团拥护君士坦丁六世'],['history-empire-isaurian/4','797年春幼孙利奥夭折，8月伊琳娜便勾结将领把亲生儿子抓回他出生的紫色寝宫残忍刺瞎'],
+ ['history-empire-isaurian/5','流放莱斯沃斯岛，次年病死'],['history-empire-macedonian/0','（仅次于末代的巴列奥略王朝）'],
  ['history-empire-justinian/4','据普罗柯比，库思老怕染上'],['history-empire-justinian/4','据《秘史》']];
 // One Chinese parallel per new section.
 const CHINA=[['history-empire-constans','汉景帝'],['history-empire-anarchy','安重荣'],['history-empire-isaurian','武则天'],['history-empire-amorian','唐文宗'],['history-empire-macedonian','宋太祖']];
@@ -68,6 +77,7 @@ const REGIONS=['mThemeOpsikion','mThemeThrakesion','mThemeAnatolikon','mThemeArm
      branches:Object.fromEntries(HISTORY_BRANCHES.map(b=>[b.id,[b.from??null,b.to??null]])),futures:TREE_FUTURE.map(f=>[f[0],f[1],f[2]]),
      bold:BOLD.map(([k,w])=>{const [id,i]=k.split('/');return [k,para(id,i).innerHTML.includes('<strong>'+w)];}),
      fixes:FIXES.map(([k,w])=>{const [id,i]=k.split('/');const p=para(id,i);return [k,p.textContent.includes(w)&&!p.innerHTML.includes('<strong>'+w)];}),
+     chatFiller:/后来又开始教义纷争|这个前面说的|他死之后事情怎么样了|叙利亚和埃及开始是怎么丢的|然后又乱|画像是OK的|教宗小弟|为了讨好一性论/.test(Object.keys(SHORTS).map(id=>all(E(id))).join(' ')),
      china:CHINA.map(([id,w])=>[id,all(E(id)).includes(w)]),
      wu:E('history-empire-justinian').boxes.map(b=>[b.scene,b.name,b.text.split('<br>').length]),
      nurse:E('history-empire-justinian').moments.filter(m=>m.name==='乳母换子').map(m=>m.scene),
@@ -89,8 +99,9 @@ const REGIONS=['mThemeOpsikion','mThemeThrakesion','mThemeAnatolikon','mThemeArm
    assert.deepEqual(r.east.slice(-EAST_TAIL.length),EAST_TAIL);assert.deepEqual(r.faith.slice(-FAITH_TAIL.length),FAITH_TAIL);
    assert.deepEqual(r.branches.east,[476,1056]);assert.deepEqual(r.branches.faith,[-1400,1056]);
    assert.deepEqual(r.futures.filter(f=>['east','faith'].includes(f[0])),[['east',1056,'东罗马（晚期）'],['faith',1056,'大分裂以后']]);
-   for(const [k,ok] of r.bold)assert.ok(ok,k+' lacks 老无’s words in bold');
-   for(const [k,ok] of r.fixes)assert.ok(ok,k+' lacks the corrected mechanism (plain text)');
+   for(const [k,ok] of r.bold)assert.ok(ok,k+' lacks 老无’s thesis in bold');
+   for(const [k,ok] of r.fixes)assert.ok(ok,k+' lacks the in-place factual correction');
+   assert.equal(r.chatFiller,false,'conversational filler or uncorrected wording left in prose');
    for(const [id,ok] of r.china)assert.ok(ok,id+' lacks its Chinese parallel');
    assert.deepEqual(r.wu,[[6,'查士丁尼身后与汉武帝',5]],'the Wu box moved to the bills left behind, five rows');assert.deepEqual(r.nurse,[6]);
    for(const [id,n] of r.chars)assert.ok(n<=300,id+' '+n);
