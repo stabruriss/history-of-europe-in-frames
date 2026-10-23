@@ -63,7 +63,7 @@ const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','
   assert.equal(count,343);
   // Meaningful correspondence, rather than several events sharing one summary paragraph.
   for(const [scene,word] of [['history-persian-wars/2','马拉松'],['history-persian-wars/3','萨拉米斯'],['history-celts/1','加拉太'],['history-celts/2','帕加马']]){
-   await p.evaluate(scene=>go(scene),scene);assert.ok(await p.$eval('#sceneContext>p',(e,word)=>e.textContent.includes(word),word));
+   await p.evaluate(scene=>go(scene),scene);assert.ok(await p.$eval('#sceneContext>p',(e,word)=>e.textContent.replace(/（[A-Za-z][^）]*）/g,'').includes(word),word));
   }
   await p.evaluate(()=>go('history-celts'));await p.focus('[data-person="brennus"] summary');await p.keyboard.press('ArrowRight');assert.equal((await state(p)).scene,1);
   await p.focus('#sceneRail button.on');await p.keyboard.press('ArrowRight');assert.equal((await state(p)).scene,2);

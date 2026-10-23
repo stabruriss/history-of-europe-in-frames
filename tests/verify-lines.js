@@ -20,7 +20,7 @@ const PHRASES=[["history-egypt-roman/0", "托勒密只是亚历山大之后的�
    await page.setRequestInterception(true);page.on('request',r=>/^https?:/.test(r.url())?r.abort():r.continue());
    await page.goto(pathToFileURL(target).href+'#'+EGYPT[0],{waitUntil:'domcontentloaded'});
    const report=await page.evaluate(()=>{
-    const chars=html=>{const d=document.createElement('div');d.innerHTML=html;return d.textContent.replace(/\s/g,'').length;};
+    const chars=html=>{const d=document.createElement('div');d.innerHTML=html;return d.textContent.replace(/（[A-Za-z][^）]*）/g,'').replace(/\s/g,'').length;};
     const paras=es=>es.flatMap(e=>{const d=document.createElement('div');d.innerHTML=e.html;return [...d.querySelectorAll('[data-scene-text]')].map(p=>({id:e.id+'/'+p.dataset.sceneText,chars:chars(p.innerHTML)}));});
     const line=id=>{const b=HISTORY_BRANCHES.find(b=>b.id===id);return [b.name,b.lane,b.parent,b.from,b.to];};
     const eg=HISTORY_ENTRIES.filter(e=>e.ch===8),pe=HISTORY_ENTRIES.filter(e=>e.ch===9);
@@ -46,7 +46,7 @@ const PHRASES=[["history-egypt-roman/0", "托勒密只是亚历山大之后的�
    assert.deepEqual(report.shoots,[['egypt',642],['persia',651]]);
    for(const [scene,phrase] of PHRASES){
     await page.evaluate(s=>go(s),scene);
-    assert.ok(await page.$eval('#sceneContext>p',(e,w)=>e.textContent.includes(w),phrase),scene+' lacks '+phrase);
+    assert.ok(await page.$eval('#sceneContext>p',(e,w)=>e.textContent.replace(/（[A-Za-z][^）]*）/g,'').includes(w),phrase),scene+' lacks '+phrase);
    }
    await page.evaluate(id=>go(id),EGYPT[0]);assert.match(await page.$eval('#entryEyebrow',e=>e.textContent),/ · 第九章$/);
    await page.evaluate(id=>go(id),PERSIA[0]);assert.match(await page.$eval('#entryEyebrow',e=>e.textContent),/ · 第十章$/);

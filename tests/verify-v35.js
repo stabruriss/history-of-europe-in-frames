@@ -67,7 +67,9 @@ const REGIONS=['mThemeOpsikion','mThemeThrakesion','mThemeAnatolikon','mThemeArm
    await page.goto(pathToFileURL(target).href+'#history-empire-justinian/6',{waitUntil:'domcontentloaded'});await page.evaluate(()=>document.fonts.ready);await wait(150);
    const r=await page.evaluate(({ERAS,SHORTS,SHARED,BOLD,FIXES,CHINA,REGIONS})=>{
     const E=id=>HISTORY_ENTRIES.find(e=>e.id===id),para=(id,i)=>{const d=document.createElement('div');d.innerHTML=E(id).html;return [...d.querySelectorAll('[data-scene-text]')].at(+i);};
+    const stripEn=s=>s.replace(/（[A-Za-z][^）]*）/g,'');
     const all=e=>[e.html,...e.moments.map(m=>m.text),...e.boxes.map(b=>b.text)].join(' ');
+    const fullBlob=HISTORY_ENTRIES.map(all).join(' ');
     return {eras:ERAS.map(([id])=>{const x=HISTORY_ERAS.find(e=>e.id===id);return x&&[x.id,x.name,x.items];}),
      eraOrder:HISTORY_ERAS.map(e=>e.id).filter(id=>/^empire-(east|heraclian|iconoclasm|macedonian|kingdoms)$/.test(id)),
      shorts:Object.fromEntries(Object.keys(SHORTS).map(id=>[id,[E(id).short,E(id).period,E(id).scenes.length,E(id).ch,E(id).title]])),
@@ -75,14 +77,16 @@ const REGIONS=['mThemeOpsikion','mThemeThrakesion','mThemeAnatolikon','mThemeArm
      shared:SHARED.map(k=>[k,[].concat(TREE_ROWS[k][0]),HISTORY_BRANCHES.filter(b=>lineStations(b.id).some(s=>s.key===k)).map(b=>b.id).sort()]),
      east:lineStations('east').map(s=>s.key),faith:lineStations('faith').map(s=>s.key),
      branches:Object.fromEntries(HISTORY_BRANCHES.map(b=>[b.id,[b.from??null,b.to??null]])),futures:TREE_FUTURE.map(f=>[f[0],f[1],f[2]]),
-     bold:BOLD.map(([k,w])=>{const [id,i]=k.split('/');return [k,para(id,i).innerHTML.includes('<strong>'+w)];}),
-     fixes:FIXES.map(([k,w])=>{const [id,i]=k.split('/');const p=para(id,i);return [k,p.textContent.includes(w)&&!p.innerHTML.includes('<strong>'+w)];}),
+     bold:BOLD.map(([k,w])=>{const [id,i]=k.split('/');return [k,stripEn(para(id,i).innerHTML).includes('<strong>'+w)];}),
+     fixes:FIXES.map(([k,w])=>{const [id,i]=k.split('/');const p=para(id,i);return [k,stripEn(p.textContent).includes(w)&&!stripEn(p.innerHTML).includes('<strong>'+w)];}),
      chatFiller:/后来又开始教义纷争|这个前面说的|他死之后事情怎么样了|叙利亚和埃及开始是怎么丢的|然后又乱|画像是OK的|教宗小弟|为了讨好一性论/.test(Object.keys(SHORTS).map(id=>all(E(id))).join(' ')),
-     china:CHINA.map(([id,w])=>[id,all(E(id)).includes(w)]),
+     china:CHINA.map(([id,w])=>[id,stripEn(all(E(id))).includes(w)]),
      wu:E('history-empire-justinian').boxes.map(b=>[b.scene,b.name,b.text.split('<br>').length]),
      nurse:E('history-empire-justinian').moments.filter(m=>m.name==='乳母换子').map(m=>m.scene),
-     chars:Object.keys(SHORTS).flatMap(id=>{const d=document.createElement('div');d.innerHTML=E(id).html;return [...d.querySelectorAll('[data-scene-text]')].map(p=>[id,p.textContent.replace(/\s/g,'').length]);}),
-     byzName:HISTORY_ENTRIES.flatMap(e=>[...all(e).matchAll(/拜占庭(?!帝国取代东罗马名号)(?!人讲)/g)].map(()=>e.id)).filter(id=>!/^history-(empire-constantine|empire-theodosius|rome-|hellenistic|persian|poleis|peloponnesian)/.test(id)),
+     chars:Object.keys(SHORTS).flatMap(id=>{const d=document.createElement('div');d.innerHTML=E(id).html;return [...d.querySelectorAll('[data-scene-text]')].map(p=>[id,stripEn(p.textContent).replace(/\s/g,'').length]);}),
+     enTags:[...fullBlob.matchAll(/[\u4e00-\u9fa5·]{2,12}（[A-Za-z][^）]*）/g)].length,
+     enSpots:['梭伦（Solon','马拉松（Marathon）','汉尼拔（Hannibal）','恺撒（Caesar）','查士丁尼（Justinian I）','希拉克略（Heraclius）','君士坦斯二世（Constans II）','利奥三世（Leo III）','教宗利奥三世（Pope Leo III）','查理曼（Charlemagne）','巴西尔二世（Basil II）','拉美西斯二世（Ramesses II）','库思老一世（Khosrow I）','穆罕默德（Muhammad）'].filter(s=>!fullBlob.includes(s)),
+     byzName:HISTORY_ENTRIES.flatMap(e=>[...stripEn(all(e)).matchAll(/拜占庭(?!帝国取代东罗马名号)(?!人讲)/g)].map(()=>e.id)).filter(id=>!/^history-(empire-constantine|empire-theodosius|rome-|hellenistic|persian|poleis|peloponnesian)/.test(id)),
      egypt:[HISTORY_ENTRIES.find(e=>e.id==='history-egypt-byzantine').short,HISTORY_ERAS.find(e=>e.id==='egypt-roman').name],
      regions:REGIONS.filter(k=>!GEO.regions[k]),
      links:Object.keys(SHORTS).flatMap(id=>E(id).sources.map(s=>s.url)).filter(u=>!/^https:\/\//.test(u)),
@@ -106,6 +110,7 @@ const REGIONS=['mThemeOpsikion','mThemeThrakesion','mThemeAnatolikon','mThemeArm
    assert.deepEqual(r.wu,[[6,'查士丁尼身后与汉武帝',5]],'the Wu box moved to the bills left behind, five rows');assert.deepEqual(r.nurse,[6]);
    for(const [id,n] of r.chars)assert.ok(n<=300,id+' '+n);
    assert.deepEqual(r.byzName,[],'东罗马, not 拜占庭');assert.deepEqual(r.egypt,['东罗马治下的埃及','罗马与东罗马治下的埃及']);
+   assert.ok(r.enTags>1000,'English parentheticals on first appearances: '+r.enTags);assert.deepEqual(r.enSpots,[],'missing English spot checks');
    assert.deepEqual(r.regions,[]);assert.deepEqual(r.links,[]);assert.deepEqual(r.cards,[]);
    // The reader: the Wu box in the last Justinian scene; eyebrows name the dynasty eras.
    const box=await page.evaluate(()=>{const b=document.querySelector('#sceneContext .box');return b&&{tag:b.querySelector('.box-tag').firstChild.textContent,text:b.textContent};});

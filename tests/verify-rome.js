@@ -17,7 +17,7 @@ const wait=ms=>new Promise(r=>setTimeout(r,ms));
    await page.goto(pathToFileURL(target).href+'#history-rome-site',{waitUntil:'domcontentloaded'});
    const report=await page.evaluate(()=>{
     const rome=HISTORY_ENTRIES.filter(e=>e.ch===4),eras=HISTORY_ERAS.filter(e=>e.id.startsWith('rome-'));
-    const chars=html=>{const d=document.createElement('div');d.innerHTML=html;return d.textContent.replace(/\s/g,'').length;};
+    const chars=html=>{const d=document.createElement('div');d.innerHTML=html;return d.textContent.replace(/（[A-Za-z][^）]*）/g,'').replace(/\s/g,'').length;};
     const paras=rome.flatMap(e=>{const d=document.createElement('div');d.innerHTML=e.html;return [...d.querySelectorAll('[data-scene-text]')].map(p=>({id:e.id+'/'+p.dataset.sceneText,chars:chars(p.innerHTML),bold:!!p.querySelector('strong')}));});
     return {chapter:HISTORY_CH[4],ids:rome.map(e=>e.id),eraItems:eras.flatMap(era=>era.items.map(([id])=>id)),eraIds:eras.map(e=>e.id),scenes:rome.reduce((n,e)=>n+e.scenes.length,0),paras,
      sectionsBold:rome.every(e=>/<strong>/.test(e.html)),moments:rome.reduce((n,e)=>n+e.moments.length,0),
@@ -42,7 +42,7 @@ const wait=ms=>new Promise(r=>setTimeout(r,ms));
      ['history-rome-augustus/1','把两个强人推到了一起'],['history-rome-augustus/2','打酱油的雷必达'],['history-rome-augustus/4','共和的壳子里，住进了一个人'],
      ['history-rome-site/0','罗马起步晚'],['history-rome-site/1','边缘人和流窜犯的避难所'],['history-rome-kings/0','三百人'],['history-rome-kings/1','重装步兵方阵'],['history-rome-orders/0','平民的武器就是出走']]){
     await page.evaluate(s=>go(s),scene);
-    assert.ok(await page.$eval('#sceneContext>p',(e,w)=>e.textContent.includes(w),phrase),scene+' lacks '+phrase);
+    assert.ok(await page.$eval('#sceneContext>p',(e,w)=>e.textContent.replace(/（[A-Za-z][^）]*）/g,'').includes(w),phrase),scene+' lacks '+phrase);
    }
    await page.evaluate(()=>go('history-rome-site'));
    assert.equal(await page.$eval('#entryEyebrow',e=>e.textContent),'罗马：王政与共和 · 第五章');

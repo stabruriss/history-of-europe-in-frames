@@ -14,7 +14,7 @@ const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','
   await page.goto(url+'#history-migration',{waitUntil:'domcontentloaded'});
   const report=await page.evaluate(()=>{
    const oldIDs=['migration','farming','palaces','collapse','dark-age','poleis','sparta','athens','persian-wars','leagues','peloponnesian-war','spartan-decline','macedonian-rise'].map(s=>'history-'+s);
-   const chars=html=>{const div=document.createElement('div');div.innerHTML=html;return div.textContent.replace(/\s/g,'').length;};
+   const chars=html=>{const div=document.createElement('div');div.innerHTML=html;return div.textContent.replace(/（[A-Za-z][^）]*）/g,'').replace(/\s/g,'').length;};
    let coverage=0;
    for(const e of HISTORY_ENTRIES)for(let i=0;i<e.scenes.length;i++){
     const matches=HISTORY_ERAS.flatMap(era=>era.items.filter(([id,from=0,to=Infinity])=>id===e.id&&i>=from&&i<=to));
@@ -31,7 +31,7 @@ const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','
   assert.equal(report.coverage,343);assert.equal(report.eras,30);
   const concise = await page.evaluate(() => {
    const entries=HISTORY_ENTRIES.filter(e=>e.ch===3);
-   return entries.map(e=>{const p=document.createElement('div');p.innerHTML=e.html;return {id:e.id,chars:p.textContent.replace(/\s/g,'').length};});
+   return entries.map(e=>{const p=document.createElement('div');p.innerHTML=e.html;return {id:e.id,chars:p.textContent.replace(/（[A-Za-z][^）]*）/g,'').replace(/\s/g,'').length};});
   });
   assert.equal(concise.length,7);
   assert.ok(concise.every(e=>e.chars<=200),JSON.stringify(concise));

@@ -44,7 +44,7 @@ const BOLD=[['history-faith-three-chapters/1','教义之争背后的权力格局
    const r=await page.evaluate(({OWN,SHARED,BOLD})=>{
     const B=Object.fromEntries(HISTORY_BRANCHES.map(b=>[b.id,b])),own=id=>lineStations(id).filter(s=>s.lines.includes(id)).map(s=>s.id);
     const text=(id,i)=>{const e=HISTORY_ENTRIES.find(x=>x.id===id),d=document.createElement('div');d.innerHTML=e.html;const ps=[...d.querySelectorAll('[data-scene-text]')];
-     return (i==='*'?ps:[ps.at(+i)]).map(p=>p.innerHTML).join(' ');};
+     return (i==='*'?ps:[ps.at(+i)]).map(p=>p.innerHTML.replace(/（[A-Za-z][^）]*）/g,'')).join(' ');};
     const all=HISTORY_ENTRIES.map(e=>[e.html,...e.moments.map(m=>m.text),...e.boxes.map(b=>b.text)].join(' ')).join(' ')+JSON.stringify(FIGURE_SCENES);
     const titles=new Set(HISTORY_ENTRIES.flatMap(e=>[e.title,e.short]));
     return {branches:HISTORY_BRANCHES.map(b=>[b.id,b.name,b.parent||null,b.from??null,b.to??null,b.lane]),
@@ -58,7 +58,7 @@ const BOLD=[['history-faith-three-chapters/1','教义之争背后的权力格局
      sections:[...all.matchAll(/（(?:另)?见“([^”]+)”一节）/g)].map(m=>m[1]).filter(t=>!titles.has(t)),
      old:/希腊主线|“西罗马”主线|“拜占庭”主线/.test(all),
      chars:HISTORY_ENTRIES.filter(e=>/^history-(empire-heraclius|west-(merovingians|lombards|charlemagne))$/.test(e.id)||/^history-(faith-three-chapters|arab-conquest|persia-khosrow-ii|china-tang)$/.test(e.id))
-      .map(e=>{const d=document.createElement('div');d.innerHTML=e.html;return [e.id,e.ch,Math.max(...[...d.querySelectorAll('[data-scene-text]')].map(p=>p.textContent.replace(/\s/g,'').length))];})};
+      .map(e=>{const d=document.createElement('div');d.innerHTML=e.html;return [e.id,e.ch,Math.max(...[...d.querySelectorAll('[data-scene-text]')].map(p=>p.textContent.replace(/（[A-Za-z][^）]*）/g,'').replace(/\s/g,'').length))];})};
    },{OWN,SHARED,BOLD});
    // The lines and where they end.
    const br=Object.fromEntries(r.branches.map(b=>[b[0],b]));

@@ -18,7 +18,7 @@ const IDS=['history-faith-israel','history-faith-first-temple','history-faith-se
    await page.goto(pathToFileURL(target).href+'#history-faith-israel',{waitUntil:'domcontentloaded'});
    const report=await page.evaluate(IDS=>{
     const faith=HISTORY_ENTRIES.filter(e=>e.ch===6);
-    const chars=html=>{const d=document.createElement('div');d.innerHTML=html;return d.textContent.replace(/\s/g,'').length;};
+    const chars=html=>{const d=document.createElement('div');d.innerHTML=html;return d.textContent.replace(/（[A-Za-z][^）]*）/g,'').replace(/\s/g,'').length;};
     const paras=faith.flatMap(e=>{const d=document.createElement('div');d.innerHTML=e.html;return [...d.querySelectorAll('[data-scene-text]')].map(p=>({id:e.id+'/'+p.dataset.sceneText,chars:chars(p.innerHTML)}));});
     const b=HISTORY_BRANCHES.find(b=>b.id==='faith');
     return {chapter:HISTORY_CH[6],ids:faith.map(e=>e.id),scenes:faith.map(e=>e.scenes.length),paras,bold:faith.every(e=>/<strong>/.test(e.html)),
@@ -96,7 +96,7 @@ const IDS=['history-faith-israel','history-faith-first-temple','history-faith-se
      ['history-faith-three-chapters/0','霍尔米斯达斯宫'],['history-faith-three-chapters/1','雅各派'],['history-faith-three-chapters/1','皇帝的人'],['history-faith-three-chapters/2','死人的东西'],['history-faith-three-chapters/3','一百五十二位主教'],['history-faith-three-chapters/4','众仆之仆'],
      ['history-empire-constans/0','罚则按身份开列'],['history-empire-constans/1','割去舌头'],['history-empire-constans/3','地盘一丢，教义就翻案'],['history-empire-isaurian/3','第七次大公会议'],['history-empire-amorian/2','正统的胜利'],['history-empire-macedonian/3','无酵饼']]){
     await page.evaluate(s=>go(s),scene);
-    assert.ok(await page.$eval('#sceneContext>p',(e,w)=>e.textContent.includes(w),phrase),scene+' lacks '+phrase);
+    assert.ok(await page.$eval('#sceneContext>p',(e,w)=>e.textContent.replace(/（[A-Za-z][^）]*）/g,'').includes(w),phrase),scene+' lacks '+phrase);
    }
    for(const [scene,id,re] of [['history-faith-israel/3','moses',/自有永有/],['history-faith-second-temple/0','akhenaten',/唯一的神/],['history-faith-second-temple/3','caesar',/焚尸/],
      ['history-faith-jesus/3','peter',/不偏待人/],['history-faith-jesus/3','paul',/上告于恺撒/],['history-faith-jesus/5','josephus',/石头/],['history-faith-church/0','pliny-younger',/不合我们这个时代/],

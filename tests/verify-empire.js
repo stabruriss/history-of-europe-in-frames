@@ -17,7 +17,7 @@ const wait=ms=>new Promise(r=>setTimeout(r,ms));
    await page.goto(pathToFileURL(target).href+'#history-empire-principate',{waitUntil:'domcontentloaded'});
    const report=await page.evaluate(()=>{
     const empire=HISTORY_ENTRIES.filter(e=>e.ch===5),eras=HISTORY_ERAS.filter(e=>e.id.startsWith('empire-'));
-    const chars=html=>{const d=document.createElement('div');d.innerHTML=html;return d.textContent.replace(/\s/g,'').length;};
+    const chars=html=>{const d=document.createElement('div');d.innerHTML=html;return d.textContent.replace(/（[A-Za-z][^）]*）/g,'').replace(/\s/g,'').length;};
     const paras=empire.flatMap(e=>{const d=document.createElement('div');d.innerHTML=e.html;return [...d.querySelectorAll('[data-scene-text]')].map(p=>({id:e.id+'/'+p.dataset.sceneText,chars:chars(p.innerHTML)}));});
     return {chapter:HISTORY_CH[5],ids:empire.map(e=>e.id),eraIds:eras.map(e=>e.id),eraItems:eras.flatMap(era=>era.items.map(([id])=>id)),
      scenes:empire.reduce((n,e)=>n+e.scenes.length,0),paras,bold:empire.filter(e=>!['history-west-charlemagne'].includes(e.id)).every(e=>/<strong>/.test(e.html)),
@@ -81,7 +81,7 @@ const wait=ms=>new Promise(r=>setTimeout(r,ms));
      ['history-west-kingdoms/2','西哥特的统治'],['history-west-kingdoms/2','两套法'],['history-west-kingdoms/3','克洛维'],['history-west-kingdoms/3','武耶'],['history-west-kingdoms/4','三万金币'],['history-west-kingdoms/4','589年'],
      ['history-west-kingdoms/5','七十九岁'],['history-west-kingdoms/5','瓜达莱特']]){
     await page.evaluate(s=>go(s),scene);
-    assert.ok(await page.$eval('#sceneContext>p',(e,w)=>e.textContent.includes(w),phrase),scene+' lacks '+phrase);
+    assert.ok(await page.$eval('#sceneContext>p',(e,w)=>e.textContent.includes(w)||e.textContent.replace(/（[A-Za-z][^）]*）/g,'').includes(w),phrase),scene+' lacks '+phrase);
    }
    await page.evaluate(()=>go('history-empire-principate'));
    assert.equal(await page.$eval('#entryEyebrow',e=>e.textContent),'罗马帝国：元首制 · 第六章');
@@ -93,7 +93,7 @@ const wait=ms=>new Promise(r=>setTimeout(r,ms));
      ['history-empire-dominate/1','不是突然冒出来的'],['history-empire-dominate/1','基于禅让的平衡记忆'],['history-empire-dominate/1','为后来君士坦丁迁都打下伏笔'],
      ['history-empire-dominate/2','从地方自治向中央集权转型'],['history-empire-dominate/2','加派官吏'],['history-empire-dominate/2','财政支出剧增']]){
     await page.evaluate(s=>go(s),scene);
-    assert.ok(await page.$eval('#sceneContext>p',(e,w)=>e.textContent.includes(w),phrase),scene+' lacks '+phrase);
+    assert.ok(await page.$eval('#sceneContext>p',(e,w)=>e.textContent.includes(w)||e.textContent.replace(/（[A-Za-z][^）]*）/g,'').includes(w),phrase),scene+' lacks '+phrase);
    }
    await page.evaluate(()=>go('history-empire-principate'));
    assert.match(await page.$eval('#indexCaption',e=>e.textContent),/Ⅵ 帝国/);
