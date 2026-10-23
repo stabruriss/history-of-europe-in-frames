@@ -23,7 +23,7 @@ const treeReport=sel=>{
   timeOrder:HISTORY_ERAS.flatMap(era=>era.items.map(([id,from=0])=>id+'/'+from)).map((k,i)=>[k,TREE_ROWS[k][1],i]).sort((a,b)=>a[1]-b[1]||a[2]-b[2]).map(x=>x[0])};
 };
 function checkTree(r,label){
- assert.equal(r.items.length,96,label);
+ assert.equal(r.items.length,100,label);
  // Navigation order (DOM order) is the time order, and it reads top to bottom.
  assert.deepEqual(r.items.map(i=>i.key),r.timeOrder,label+' rows follow the time order');
  for(let i=1;i<r.items.length;i++)assert.ok(r.items[i].top>r.items[i-1].top,label+' row order runs top to bottom at '+r.items[i].key);
@@ -47,7 +47,7 @@ function checkTree(r,label){
  const top=k=>r.items.find(i=>i.key===k).top;
  assert.ok(top('history-poleis/0')<top('history-rome-kings/0')&&top('history-rome-kings/0')<top('history-sparta/0'),label+' Rome kings beside archaic Greece');
  assert.ok(top('history-celts/0')<top('history-rome-punic/0')&&top('history-rome-punic/0')<top('history-eastern-kingdoms/0'),label+' Punic Wars beside the Hellenistic kingdoms');
- assert.equal(r.futures.length,6,label);assert.match(r.futures.map(f=>f.text).join(' '),/走向东西分裂/,label);assert.match(r.futures.map(f=>f.text).join(' '),/东罗马/,label);assert.match(r.futures.map(f=>f.text).join(' '),/晚唐五代与宋/,label);assert.ok(r.futureLane,label);
+ assert.equal(r.futures.length,6,label);assert.match(r.futures.map(f=>f.text).join(' '),/大分裂以后/,label);assert.match(r.futures.map(f=>f.text).join(' '),/东罗马/,label);assert.match(r.futures.map(f=>f.text).join(' '),/晚唐五代与宋/,label);assert.ok(r.futureLane,label);
  assert.ok(r.futures.every(f=>f.top>top('history-rome-augustus/0')),label+' unwritten topics grow below');
  assert.match(r.futures.map(f=>f.text).join(' '),/加洛林以后/,label);
  assert.ok(r.futures.every(f=>f.top>top('history-empire-west-fall/0')),label+' the medieval shoot grows below 476');
@@ -102,8 +102,10 @@ function checkTree(r,label){
   s=await state(p);assert.deepEqual([s.id,s.scene],['history-faith-two-cities',0]);
   await p.keyboard.press('ArrowDown');s=await state(p);assert.deepEqual([s.id,s.scene],['history-faith-papacy',0]);
   await p.keyboard.press('ArrowDown');s=await state(p);assert.deepEqual([s.id,s.scene],['history-faith-three-chapters',0]);
-  await p.keyboard.press('ArrowDown');s=await state(p);assert.deepEqual([s.id,s.scene],['history-faith-monothelites',0]);
-  await p.keyboard.press('ArrowDown');s=await state(p);assert.deepEqual([s.id,s.scene],['history-faith-icons',0]);
+  await p.keyboard.press('ArrowDown');s=await state(p);assert.deepEqual([s.id,s.scene],['history-empire-constans',0]);
+  await p.keyboard.press('ArrowDown');s=await state(p);assert.deepEqual([s.id,s.scene],['history-empire-isaurian',0]);
+  await p.keyboard.press('ArrowDown');s=await state(p);assert.deepEqual([s.id,s.scene],['history-empire-amorian',0]);
+  await p.keyboard.press('ArrowDown');s=await state(p);assert.deepEqual([s.id,s.scene],['history-empire-macedonian',3]);
   assert.ok(await p.$eval('#next',e=>e.disabled),'end of the 基督教 line');
   await p.click('#toc .tree-item[data-key="history-faith-israel/0"]');
   // Clicking a top header pill jumps to that line’s start time; switching in place (in the tree below) keeps the section and scroll.
@@ -155,7 +157,7 @@ function checkTree(r,label){
   await p.evaluate(()=>go('history-palaces'));await p.click('#toc .tree-line[data-line="rome"]');s=await state(p);
   assert.equal(s.id,'history-rome-site');
   // A full ride on each line from the root: every ↓ lands lower in the tree, and the footer counts stations.
-  for(const [line,startId,count,last] of [['trunk','history-migration',23,'history-hellenistic-end'],['rome','history-migration',32,'history-empire-west-fall'],['east','history-migration',36,'history-arab-conquest'],['west','history-migration',36,'history-west-charlemagne'],['faith','history-migration',17,'history-faith-icons'],['egypt','history-migration',12,'history-arab-conquest'],['persia','history-migration',12,'history-arab-conquest'],['china','history-china-neolithic',12,'history-china-tang']]){
+  for(const [line,startId,count,last] of [['trunk','history-migration',23,'history-hellenistic-end'],['rome','history-migration',32,'history-empire-west-fall'],['east','history-migration',42,'history-empire-macedonian'],['west','history-migration',36,'history-west-charlemagne'],['faith','history-migration',19,'history-empire-macedonian'],['egypt','history-migration',12,'history-arab-conquest'],['persia','history-migration',12,'history-arab-conquest'],['china','history-china-neolithic',12,'history-china-tang']]){
    await p.click(`#toc .tree-line[data-line="${line}"]`);await p.evaluate(id=>go(id),startId);await p.focus('#toc .tree-item.on');
    let lastTop=-1;
    for(let i=0;i<count;i++){
@@ -232,6 +234,6 @@ function checkTree(r,label){
    await m.close();
   }
   assert.deepEqual(errors,[]);
-  console.log('PASS: history tree — 96 rows on 9 branches (希腊, 罗马, 东罗马, 拜占庭, 中世纪西欧, 基督教, 埃及, 波斯, 中国) with 6 forks (埃及 and 波斯 off the trunk at the early states, 基督教 at 前1400 on the outermost lane, 东罗马 and 中世纪西欧 off 罗马 at 476; 拜占庭 carries on in 东罗马’s lane); every earlier start sits higher; no overlapping rows; nodes on their lanes; Rome beside Greece and the Hellenistic kingdoms; unwritten topics as dashed shoots; time ticks and compressed-prehistory breaks; metro lines: pick a line (button or the drawn line itself) in place, ↑↓ / 上一条 / 下一条 ride only that line in time order, line lit root-to-fork, everything else greyed; draggable, remembered, clamped column; sidebar at 1440 and 1024; expanded view with branch names; phone and short-landscape sheets; geography mode untouched; offline; no page errors.');
+  console.log('PASS: history tree — 100 rows on 8 branches (希腊, 罗马, 东罗马, 中世纪西欧, 基督教, 埃及, 波斯, 中国) with 6 forks (埃及 and 波斯 off the trunk at the early states, 基督教 at 前1400 on the outermost lane, 东罗马 and 中世纪西欧 off 罗马 at 476; 东罗马 to 1056, 基督教 through its shared stations to 1054); every earlier start sits higher; no overlapping rows; nodes on their lanes; Rome beside Greece and the Hellenistic kingdoms; unwritten topics as dashed shoots; time ticks and compressed-prehistory breaks; metro lines: pick a line (button or the drawn line itself) in place, ↑↓ / 上一条 / 下一条 ride only that line in time order, line lit root-to-fork, everything else greyed; draggable, remembered, clamped column; sidebar at 1440 and 1024; expanded view with branch names; phone and short-landscape sheets; geography mode untouched; offline; no page errors.');
  }catch(e){console.error(e);process.exitCode=1;}finally{await browser.close();}
 })();

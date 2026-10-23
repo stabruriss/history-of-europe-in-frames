@@ -236,7 +236,7 @@ function layoutHistoryTree(tree){
   };
   const grid=[],ties=[],lanesSvg=[],marks=[],nodes=[],copies=[],swaps=[],hits=[],ticks=tree.querySelector('.htree-ticks');ticks.replaceChildren();
   let lastTick=-1e9;
-  for(const t of [-10000,-3000,-2000,-1500,-1200,-1000,-800,-600,-500,-400,-300,-200,-100,0,100,200,300,400,500,600,700,800]){
+  for(const t of [-10000,-3000,-2000,-1500,-1200,-1000,-800,-600,-500,-400,-300,-200,-100,0,100,200,300,400,500,600,700,800,900,1000]){
     const y=Y(t);if(y-lastTick<26||y>H-8)continue;lastTick=y;
     grid.push(`<path class="grid" d="M${axis-2} ${y}H${labelX-4}"/>`);
     const label=document.createElement('span');label.className='tree-tick';label.style.cssText=`top:${y}px;width:${axis-4}px`;label.textContent=treeYear(t);ticks.appendChild(label);
@@ -244,7 +244,7 @@ function layoutHistoryTree(tree){
   const byId=BRANCH,stationsOf=b=>sorted.filter(r=>r.kind==='item'&&r.lines.includes(b.id));
   const ends=Object.fromEntries(sorted.filter(r=>r.kind==='end').map(r=>[r.branch.id,r]));
   // Where each branch leaves its parent; parent segments are cut there so a line can light up root-to-fork.
-  // A branch that carries on where its parent stops (罗马 → 东罗马 and 中世纪西欧, 东罗马 → 拜占庭) leaves from that end.
+  // A branch that carries on where its parent stops (罗马 → 东罗马 and 中世纪西欧) leaves from that end.
   tree._forkY={};tree._endY=Object.fromEntries(Object.entries(ends).map(([id,r])=>[id,r.ny]));const forkLen={};
   for(const b of HISTORY_BRANCHES)if(b.parent){
     const items=stationsOf(b),pe=ends[b.parent];if(!items.length)continue;

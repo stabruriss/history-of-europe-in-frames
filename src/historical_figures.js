@@ -847,7 +847,7 @@ const FIGURE_PLACES={
       39.02,
       31.29
     ],
-    "note": "安纳托利亚军区的重镇；741年君士坦丁五世逃到这里。"
+    "note": "安纳托利亚军区的首府；741年君士坦丁五世逃到这里。"
   },
   "w_metz": {
     "name": "梅斯",
@@ -3303,11 +3303,53 @@ const FIGURES={
       ]
     ]
   },
+  "constans-ii": {
+    "name": "君士坦斯二世",
+    "en": "Constans II",
+    "life": "630—668年",
+    "relation": "东罗马皇帝（641—668年）· 希拉克略的孙子",
+    "place": "constantinople",
+    "bio": "十一岁登基，在位二十七年间丢了埃及，舰队在“桅杆之战”中败给阿拉伯人。他颁《谕令》封口，抓了教宗、割了修士的舌头，又逼弟弟出家后杀了他；663年迁居叙拉古，668年在浴室被侍从砸死。",
+    "sources": [
+      [
+        "君士坦斯二世（英文资料）",
+        "https://en.wikipedia.org/wiki/Constans_II"
+      ]
+    ]
+  },
+  "justinian-ii": {
+    "name": "查士丁尼二世",
+    "en": "Justinian II",
+    "life": "669—711年",
+    "relation": "东罗马皇帝（685—695、705—711年）· 希拉克略王朝末代皇帝",
+    "place": "constantinople",
+    "bio": "十六岁继位，想学同名的查士丁尼一世：大兴土木，把斯拉夫人整批迁到小亚细亚当兵，692年开会改教规、逼教宗签字。695年被推翻割鼻，705年借保加尔兵复位后大肆报复，711年被杀，希拉克略王朝绝嗣。",
+    "sources": [
+      [
+        "查士丁尼二世（英文资料）",
+        "https://en.wikipedia.org/wiki/Justinian_II"
+      ]
+    ]
+  },
+  "leo-iii-isaurian": {
+    "name": "利奥三世",
+    "en": "Leo III",
+    "life": "约685—741年",
+    "relation": "东罗马皇帝（717—741年）· 伊苏里亚王朝的开创者",
+    "place": "constantinople",
+    "bio": "原名科农，生在叙利亚北边的日耳曼尼基亚，从士兵做到安纳托利亚军区的将军。717年进京称帝，守住京城一年；在位时颁布《法律选编》，以割鼻断手代替不少死刑，又开始毁圣像。",
+    "sources": [
+      [
+        "利奥三世（英文资料）",
+        "https://en.wikipedia.org/wiki/Leo_III_the_Isaurian"
+      ]
+    ]
+  },
   "constantine-v": {
     "name": "君士坦丁五世",
     "en": "Constantine V",
     "life": "718—775年",
-    "relation": "拜占庭皇帝（741—775年）· 利奥三世的儿子",
+    "relation": "东罗马皇帝（741—775年）· 利奥三世的儿子",
     "place": "constantinople",
     "bio": "利奥三世的独子，两岁就被立为共治皇帝，娶了可萨汗的女儿。他九次出征保加尔，亲自写过十几篇反圣像的论文，把京城的近卫团练成职业兵，死后给儿子留下满满的国库。他死在征保加尔的路上；圣像派得胜后，他的遗骨被移出了皇陵。",
     "sources": [
@@ -3328,6 +3370,34 @@ const FIGURES={
       [
         "伊琳娜（英文资料）",
         "https://en.wikipedia.org/wiki/Irene_of_Athens"
+      ]
+    ]
+  },
+  "photius": {
+    "name": "佛提乌",
+    "en": "Photios I",
+    "life": "约810—893年",
+    "relation": "君士坦丁堡牧首（858—867、877—886年）",
+    "place": "constantinople",
+    "bio": "出身显贵的平信徒学者，做过皇家秘书，读书笔记《群书摘要》留下了许多失传古书的内容。两度当牧首、两度被废，同罗马争保加利亚，攻击西方信经里的“和子”，东方教会尊他为圣人。",
+    "sources": [
+      [
+        "佛提乌一世（英文资料）",
+        "https://en.wikipedia.org/wiki/Photios_I_of_Constantinople"
+      ]
+    ]
+  },
+  "basil-ii": {
+    "name": "巴西尔二世",
+    "en": "Basil II",
+    "life": "958—1025年",
+    "relation": "东罗马皇帝（976—1025年）· 马其顿王朝",
+    "place": "constantinople",
+    "bio": "两岁加冕为共治皇帝，十八岁亲政，在位近五十年，罗马与东罗马皇帝里在位最久。打了十三年内战压服将门，又打二十年吞并保加利亚，还把边界推进亚美尼亚。他终身未娶，衣着朴素，不爱宴饮。",
+    "sources": [
+      [
+        "巴西尔二世（英文资料）",
+        "https://en.wikipedia.org/wiki/Basil_II"
       ]
     ]
   },
@@ -5043,15 +5113,6 @@ const FIGURE_SCENES={
   ],
   "history-empire-heraclius/0": [
     {
-      "id": "maurice",
-      "when": "591年",
-      "event": "收了个波斯儿子",
-      "note": "库思老二世逃到罗马境内，请莫里斯出兵，答应复位后归还达拉、马尔蒂罗波利斯。莫里斯借兵，库思老复位后称他为父，又多割让了亚美尼亚西部大片土地。十一年后莫里斯被杀，库思老就以替父报仇为名开战。",
-      "place": "constantinople"
-    }
-  ],
-  "history-empire-heraclius/1": [
-    {
       "id": "shahrbaraz",
       "when": "614年5月",
       "event": "夺走真十字架",
@@ -5059,7 +5120,7 @@ const FIGURE_SCENES={
       "place": "jerusalem"
     }
   ],
-  "history-empire-heraclius/2": [
+  "history-empire-heraclius/1": [
     {
       "id": "sergius-cp",
       "when": "618—626年",
@@ -5068,12 +5129,30 @@ const FIGURE_SCENES={
       "place": "constantinople"
     }
   ],
-  "history-empire-heraclius/3": [
+  "history-empire-heraclius/2": [
     {
       "id": "heraclius",
       "when": "629年3月21日",
       "event": "在基督里忠信的巴西琉斯",
       "note": "这天颁布的一道法令里，皇帝的称号不再写拉丁文的恺撒、奥古斯都，只写“在基督里忠信的巴西琉斯”。巴西琉斯本是希腊语的“王”，从前只用来称波斯王；此后东罗马皇帝用了八百多年。",
+      "place": "constantinople"
+    }
+  ],
+  "history-empire-heraclius/3": [
+    {
+      "id": "sergius-cp",
+      "when": "633年",
+      "event": "一个“能力”",
+      "note": "塞尔吉乌斯想出的说法是：基督有神、人两性，可行事只凭一个“能力”。卡尔西顿派听着还是两性，一性论派听着像是一性，亚历山大里亚因此合了一回。耶路撒冷的索弗罗尼乌斯不认，他就改口说一个“意志”，并请教宗霍诺留表态。",
+      "place": "constantinople"
+    }
+  ],
+  "history-empire-justinian/6": [
+    {
+      "id": "maurice",
+      "when": "591年",
+      "event": "收了个波斯儿子",
+      "note": "库思老二世逃到罗马境内，请莫里斯出兵，答应复位后归还达拉、马尔蒂罗波利斯。莫里斯借兵，库思老复位后称他为父，又多割让了亚美尼亚西部大片土地。十一年后莫里斯被杀，库思老就以替父报仇为名开战。",
       "place": "constantinople"
     }
   ],
@@ -5095,24 +5174,6 @@ const FIGURE_SCENES={
       "place": "edessa"
     }
   ],
-  "history-faith-monothelites/0": [
-    {
-      "id": "sergius-cp",
-      "when": "633年",
-      "event": "一个“能力”",
-      "note": "塞尔吉乌斯想出的说法是：基督有神、人两性，可行事只凭一个“能力”。卡尔西顿派听着还是两性，一性论派听着像是一性，亚历山大里亚因此合了一回。耶路撒冷的索弗罗尼乌斯不认，他就改口说一个“意志”，并请教宗霍诺留表态。",
-      "place": "constantinople"
-    }
-  ],
-  "history-faith-monothelites/3": [
-    {
-      "id": "maximus-confessor",
-      "when": "662年",
-      "event": "不能说，也不能写",
-      "note": "第二次受审后，他和两个弟子被割了舌头、砍了右手，叫他们再也不能讲、不能写，然后游街示众，流放到高加索西部的拉齐卡，分开关押。他死于这年8月13日。十九年后，第六次大公会议定的正是他坚持的两个意志。",
-      "place": "constantinople"
-    }
-  ],
   "history-faith-three-chapters/3": [
     {
       "id": "vigilius",
@@ -5122,7 +5183,43 @@ const FIGURE_SCENES={
       "place": "constantinople"
     }
   ],
-  "history-faith-icons/2": [
+  "history-empire-constans/0": [
+    {
+      "id": "constans-ii",
+      "when": "641年11月",
+      "event": "十一岁的皇帝",
+      "note": "叔叔赫拉克洛纳斯和继祖母马丁娜被废，元老院判马丁娜割舌、赫拉克洛纳斯割鼻，一并流放。十一岁的君士坦斯二世到元老院讲话，说要与元老们共商国是；吉本说，听起来就像回到了五百年前的安东尼王朝。",
+      "place": "constantinople"
+    }
+  ],
+  "history-empire-constans/1": [
+    {
+      "id": "maximus-confessor",
+      "when": "662年",
+      "event": "不能说，也不能写",
+      "note": "第二次受审后，他和两个弟子被割了舌头、砍了右手，叫他们再也不能讲、不能写，然后游街示众，流放到高加索西部的拉齐卡，分开关押。他死于这年8月13日。十九年后，第六次大公会议定的正是他坚持的两个意志。",
+      "place": "constantinople"
+    }
+  ],
+  "history-empire-constans/5": [
+    {
+      "id": "justinian-ii",
+      "when": "695—711年",
+      "event": "没了鼻子还当皇帝",
+      "note": "695年被推翻割鼻、流放赫尔松；他娶了可萨可汗的妹妹，借保加尔汗特尔维尔的兵复位，成了头一个缺鼻子当皇帝的人，据说装了金鼻子。711年再被推翻杀死，首级送到罗马和拉文纳示众，六岁的儿子也被拖出教堂杀死。",
+      "place": "constantinople"
+    }
+  ],
+  "history-empire-isaurian/0": [
+    {
+      "id": "leo-iii-isaurian",
+      "when": "717年3月",
+      "event": "从将军到皇帝",
+      "note": "阿拉伯大军正在逼近，安纳托利亚军区的将军利奥与亚美尼亚军区的将军阿塔巴斯多斯结盟，许他娶自己的女儿，带兵开到京城对岸，逼狄奥多西三世退位，自己登基。五个月后，阿拉伯水陆大军就到了城下。",
+      "place": "constantinople"
+    }
+  ],
+  "history-empire-isaurian/2": [
     {
       "id": "constantine-v",
       "when": "741年6月",
@@ -5131,7 +5228,7 @@ const FIGURE_SCENES={
       "place": "i_amorion"
     }
   ],
-  "history-faith-icons/4": [
+  "history-empire-isaurian/3": [
     {
       "id": "irene-athens",
       "when": "780—790年",
@@ -5140,13 +5237,31 @@ const FIGURE_SCENES={
       "place": "constantinople"
     }
   ],
-  "history-faith-icons/5": [
+  "history-empire-isaurian/5": [
     {
       "id": "irene-athens",
       "when": "802—803年",
       "event": "岛上纺羊毛",
       "note": "802年10月，她的财政大臣尼基弗鲁斯带着官员废了她。她先被送到京城外的王子岛，后来流放到莱斯沃斯岛，靠纺羊毛过活，次年8月死在岛上；遗骨后来迁回京城的圣使徒教堂。",
       "place": "lesbos"
+    }
+  ],
+  "history-empire-amorian/3": [
+    {
+      "id": "photius",
+      "when": "858年12月",
+      "event": "六天当上牧首",
+      "note": "牧首伊格纳修斯得罪了摄政的巴尔达斯，被迫下台。平信徒佛提乌在六天里接连受剃发、读经、副执事、执事、神父各级圣职，圣诞节就被祝圣为牧首。伊格纳修斯一派不认，去罗马告状，东西两边从此吵了十年。",
+      "place": "constantinople"
+    }
+  ],
+  "history-empire-macedonian/2": [
+    {
+      "id": "basil-ii",
+      "when": "1025年12月",
+      "event": "二十万磅黄金",
+      "note": "他死时国库存着二十万磅黄金，帝国疆域是四百年来最大，他正准备出兵收复西西里。他没有子女，皇位落到弟弟君士坦丁八世和侄女们手里，此后三十年，谁娶了侄女佐伊，谁就当皇帝。",
+      "place": "constantinople"
     }
   ],
   "history-west-merovingians/1": [

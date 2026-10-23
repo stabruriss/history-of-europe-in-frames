@@ -371,15 +371,23 @@ Object.assign(HS,{
   f_grado:['格拉多','Grado',45.68,13.39,'阿奎莱亚南边潟湖里的小岛；568年伦巴第人进来，阿奎莱亚主教带着教会的财宝逃到这里。'],
   f_faras:['法拉斯','Faras / Pachoras',22.2,31.48,'努比亚北部诺巴德人的王城；约543年皇后派的传教士抢先到了这里。'],
   f_jabiya:['贾比亚','Jabiya',32.92,35.97,'戈兰高地上加萨尼阿拉伯人的营地；他们的王哈里斯替罗马守沙漠，信一性论。'],
-  f_cherson:['赫尔松','Cherson',44.61,33.49,'克里米亚南端的希腊城，帝国流放犯人的地方；655年教宗马丁一世死在这里。'],
+  f_cherson:['赫尔松','Cherson',44.61,33.49,'克里米亚南端的希腊城，帝国流放犯人的地方；655年教宗马丁一世死在这里，988年弗拉基米尔在这里受洗。'],
   f_naxos:['纳克索斯','Naxos',37.1,25.38,'爱琴海上的岛；653年押解教宗马丁的船在这里停了很久。'],
   f_lazica:['拉齐卡（策盖里）','Lazica (Tsageri)',42.65,42.77,'高加索西部的山地，今格鲁吉亚；662年马克西姆斯被割舌断手后流放到这里，当年死去。'],
-  i_germanikeia:['日耳曼尼基亚','Germanikeia (Maraş)',37.585,36.937,'今土耳其卡赫拉曼马拉什；利奥三世生在这里，746年他儿子君士坦丁五世一度攻下。'],
+  i_germanikeia:['日耳曼尼基亚','Germanikeia (Maraş)',37.585,36.937,'今土耳其卡赫拉曼马拉什；利奥三世生在这里。'],
   i_thera:['锡拉岛','Thera (Santorini)',36.4,25.4,'今圣托里尼；726年夏，锡拉与锡拉夏两岛之间海底火山喷发，浮石漂满爱琴海。'],
   i_ninfa:['宁法与诺尔马','Ninfa and Norma',41.585,12.96,'罗马东南的两处庄园；743年君士坦丁五世赐给教宗扎迦利，补偿西西里庄园被没收的损失。'],
-  i_amorion:['阿莫里翁','Amorion',39.02,31.29,'安纳托利亚军区的重镇；741年君士坦丁五世被姐夫突袭后逃到这里，驻军收留了他。'],
+  i_amorion:['阿莫里翁','Amorion',39.02,31.29,'安纳托利亚军区的首府，阿莫里亚王朝的老家；838年被哈里发穆阿台绥姆攻破。'],
   i_pliska:['普利斯卡','Pliska',43.38,27.12,'保加尔汗国的都城；811年尼基弗鲁斯一世攻入焚毁，回军途中在山口中伏。'],
-  i_frankfurt:['法兰克福','Frankfurt',50.11,8.68,'美因河畔的王室驻地；794年查理曼在此开会，驳斥尼西亚会议。'],
+  b_ongal:['翁加尔（多瑙河口一带）','Onglos',45.2,28.6,'保加尔人在多瑙河口的营地，确切位置不明，此处只标大致方位；680年君士坦丁四世在这一带战败。'],
+  b_adramyttium:['阿德拉米提翁','Adramyttium',39.6,27.0,'小亚细亚西岸的港口；715年奥普西金的兵在这里把一个税吏拥为皇帝。'],
+  b_lesbos:['莱斯沃斯岛','Lesbos',39.1,26.55,'爱琴海东部的大岛；803年伊琳娜死在这里的流放地。'],
+  b_chandax:['坎达克斯（克里特）','Chandax (Heraklion)',35.34,25.13,'从西班牙流亡来的阿拉伯人约827年在克里特建的城；961年被尼基弗鲁斯·福卡斯攻下。'],
+  b_melitene:['梅利泰内','Melitene',38.35,38.31,'幼发拉底河上游的埃米尔国都城，今马拉蒂亚；934年被库尔库阿斯拿下。'],
+  b_kiev:['基辅','Kiev',50.45,30.52,'第聂伯河上的罗斯大公都城；988年起罗斯人改信东正教。'],
+  b_kleidion:['克莱迪昂山口','Kleidion',41.37,23.04,'斯特鲁马河谷的山口；1014年巴西尔二世在此大败保加利亚。'],
+  b_ohrid:['奥赫里德','Ohrid',41.117,20.8,'萨穆伊尔的保加利亚的都城与大主教座。'],
+  b_civitate:['奇维塔泰','Civitate',41.74,15.27,'意大利东南的小城；1053年诺曼人在此打垮教宗利奥九世的军队，俘虏了教宗。'],
   w_paris:['巴黎','Paris',48.853,2.349,'561年分给卡里贝尔特；567年后兄弟共管；达戈贝尔特一世以此为都。'],
   w_orleans:['奥尔良','Orléans',47.902,1.909,'561年贡特拉姆分到的都城，他的王国后来叫勃艮第。'],
   w_reims:['兰斯','Reims',49.258,4.032,'561年西吉贝尔特分到的都城；后来奥斯特拉西亚的重心移到梅斯。'],
@@ -401,7 +409,7 @@ Object.assign(HS,{
   w_sutri:['苏特里','Sutri',42.245,12.216,'罗马以北的要塞；728年利乌特普兰德把它“献给使徒彼得和保罗”。'],
   w_ponthion:['蓬蒂翁','Ponthion',48.765,4.73,'王室庄园；754年1月6日丕平在此迎接翻山而来的教宗司提反二世。'],
   w_noyon:['努瓦永','Noyon',49.581,2.999,'768年10月9日查理在此加冕，同日弟弟卡洛曼在苏瓦松加冕。'],
-  w_aachen:['亚琛','Aachen',50.776,6.084,'有温泉的王宫，查理晚年常住；812年拜占庭使节在此称他为皇帝。'],
+  w_aachen:['亚琛','Aachen',50.776,6.084,'有温泉的王宫，查理晚年常住；812年东罗马使节在此称他为皇帝。'],
   w_paderborn:['帕德博恩','Paderborn',51.719,8.754,'查理在萨克森的据点；777年在此开大会，799年在此接待逃来的教宗。'],
   w_verden:['费尔登','Verden',52.921,9.235,'阿勒尔河汇入威悉河处；782年查理在此下令处死四千五百名萨克森人。'],
   w_eresburg:['埃雷斯堡','Eresburg',51.461,8.85,'萨克森人的山寨，今上马尔斯贝格；772年查理在附近毁了圣柱伊尔明苏尔。'],
@@ -409,7 +417,7 @@ Object.assign(HS,{
   w_zaragoza:['萨拉戈萨','Zaragoza',41.65,-0.889,'778年城主闭门不纳，查理围城一个多月后退兵。'],
   w_baghdad:['巴格达','Baghdad',33.315,44.366,'阿拔斯王朝762年起的都城，哈伦·拉希德的宫廷所在。'],
   w_portovenere:['韦内雷港','Porto Venere',44.05,9.835,'801年10月使节以撒带着大象在此上岸。'],
-  w_venice:['威尼斯','Venice',45.437,12.335,'潟湖上的城，名义上归君士坦丁堡；810年查理把它让还拜占庭。'],
+  w_venice:['威尼斯','Venice',45.437,12.335,'潟湖上的城，名义上归君士坦丁堡；810年查理把它让还东罗马。'],
   w_verdun:['凡尔登','Verdun',49.16,5.384,'843年查理曼的三个孙子在此订约，把帝国一分为三。'],
   p_rey:['雷伊','Ray',35.59,51.44,'今德黑兰南郊；安息旧族米赫兰家族的根据地，巴赫拉姆·楚宾在此当过总督。'],
   p_tiflis:['第比利斯','Tiflis',41.69,44.8,'格鲁吉亚（伊比利亚）的中心城市；591年库思老二世把伊比利亚到此城一带让给罗马。'],
@@ -1598,7 +1606,7 @@ const HISTORY_ENTRIES=[
     hr(d,[[43.4,27.6],[42.6,27.4],[41.9,28.2],[41.2,28.8]],HC.war);
    },[['fill',HC.athens,'东罗马'],['dline',HC.war,'513—515年维塔利安进兵（概略）'],['dot',HC.war,'暴动的新都']])
  ]},
-{id:'history-empire-justinian',ch:5,title:'查士丁尼：雄才大略与两线作战',short:'查士丁尼时代',en:'Justinian: Grand Designs and a War on Two Fronts',period:'518—565年',c:HC.byz,
+{id:'history-empire-justinian',ch:5,title:'查士丁尼王朝：雄才大略与身后烂账',short:'查士丁尼王朝',en:'The Justinian Dynasty: Grand Designs and the Bill Left Behind',period:'518—602年',c:HC.byz,
  scenes:[
   hs('518—527年','舅舅查士丁','农家子查士丁从警卫军统领登上皇位，结束东西教会的断交，收外甥查士丁尼为养子；527年舅甥共治。',[[39.0,19.0],[44.5,30.5]],d=>{
     ha(d,'eEast395',HC.athens,{fillOpacity:.18});
@@ -1638,17 +1646,18 @@ const HISTORY_ENTRIES=[
     hp(d,'taginae',{kind:'battle'});hp(d,'vesuvius',{kind:'battle',note:'最后一个东哥特王泰亚在维苏威山下的乳山战死。'});
     hp(d,'cartnova',{note:'552年起东罗马占了西班牙东南海岸，这里是中心。'});
     hp(d,'constantinople',{note:'553年第五次大公会议；565年11月查士丁尼去世。'});
-   },[['fill',HC.athens,'查士丁尼去世时的帝国（565年，概略）'],['fill',HC.parthia,'萨珊波斯'],['dot',HC.war,'最后的两仗'],['dot','#2a2018','新都与西班牙的据点']])
- ]},
-{id:'history-empire-heraclius',ch:5,title:'查士丁尼之后：圣战换家与得而复失',short:'圣战换家与得而复失',en:'After Justinian: Holy War, Base-Trading and Provinces Lost Twice',period:'565—641年',c:HC.byz,
- scenes:[
-  hs('565—602年','查士丁尼死后的烂摊子','查士丁二世停付岁币丢达拉；提比略散金掏空国库；莫里斯扶库思老二世复位，却因削饷和河北过冬死于602年福卡斯兵变。',[[32.0,14.0],[46.5,49.5]],d=>{
-    ha(d,'mByz600',HC.athens,{fillOpacity:.2});ha(d,'lSasanian560',HC.parthia,{fillOpacity:.15});
-    ha(d,'mAvars600',HC.neutral,{fillOpacity:.2});
-    hp(d,'dara',{kind:'battle',note:'573年被波斯攻破，查士丁二世闻讯发疯；591年库思老二世归还罗马。'});
-    hp(d,'sirmium',{kind:'battle',note:'约582年被阿瓦尔人攻破。'});
+   },[['fill',HC.athens,'查士丁尼去世时的帝国（565年，概略）'],['fill',HC.parthia,'萨珊波斯'],['dot',HC.war,'最后的两仗'],['dot','#2a2018','新都与西班牙的据点']]),
+  hs('565—602年','身后：和汉武帝一样的四笔账','查士丁二世停付岁币，伦巴第人、阿瓦尔人、波斯人轮番打来；莫里斯削饷、拒赎俘虏，602年死于福卡斯兵变。',[[32.0,6.0],[48.0,49.5]],d=>{
+    ha(d,'mByz600',HC.athens,{fillOpacity:.2});ha(d,'mLombards600',HC.mino,{fillOpacity:.22});
+    ha(d,'lSasanian560',HC.parthia,{fillOpacity:.14});ha(d,'mAvars600',HC.neutral,{fillOpacity:.2});
+    hp(d,'w_pavia',{note:'572年被伦巴第人攻下，后来成了他们的王都。'});
+    hp(d,'dara',{kind:'battle',note:'573年被波斯攻破，查士丁二世闻讯发疯。'});
+    hp(d,'sirmium',{kind:'battle',note:'582年被阿瓦尔人攻破。'});
     hp(d,'constantinople');hp(d,'chalcedon',{kind:'battle',note:'602年11月莫里斯与五个儿子在此被福卡斯处死。'});
-   },[['fill',HC.athens,'591年后的东罗马'],['fill',HC.parthia,'萨珊波斯'],['fill',HC.neutral,'阿瓦尔汗国'],['dot',HC.war,'要塞失守与602年兵变']]),
+   },[['fill',HC.athens,'东罗马（591年后）'],['fill',HC.mino,'伦巴第人（约600年）'],['fill',HC.parthia,'萨珊波斯'],['fill',HC.neutral,'阿瓦尔汗国'],['dot',HC.war,'失守的城与602年兵变']])
+ ]},
+{id:'history-empire-heraclius',ch:5,title:'希拉克略王朝：圣战换家与得而复失',short:'希拉克略王朝',en:'The Heraclian Dynasty: Holy War, Base-Trading and Provinces Lost Twice',period:'602—641年',c:HC.byz,
+ scenes:[
   hs('602—619年','叙利亚和埃及是怎么丢的','福卡斯清洗引发波斯借口开战；希拉克略从迦太基起兵进京，内战抽空边防，加上当地一性论派离心，叙利亚与埃及相继失守。',[[27.0,8.0],[43.5,48.0]],d=>{
     ha(d,'mSasanian620',HC.parthia,{fillOpacity:.22});ha(d,'mByz620',HC.athens,{fillOpacity:.18});
     hp(d,'carthage',{note:'608年老希拉克略父子在此起兵断粮，610年舰队进京斩福卡斯。'});
@@ -1685,6 +1694,145 @@ const HISTORY_ENTRIES=[
     hp(d,'alexandria',{note:'642年东罗马军撤出，科普特牧首本雅明回到城中。'});hp(d,'constantinople');
    },[['fill',HC.athens,'希拉克略死时的东罗马（641年）'],['fill',HC.myc,'穆斯林接收后的哈里发国（约644年）'],['dot',HC.war,'雅穆克与巴比伦堡'],['dot','#2a2018','顺顺当当换了主人的大城']])
  ]},
+{id:'history-empire-constans',ch:5,title:'希拉克略王朝（下）：从抓教宗到跪教宗',short:'希拉克略王朝（下）',en:'The Heraclian Dynasty II: from Arresting a Pope to Kneeling before One',period:'641—711年',c:HC.byz,
+ scenes:[
+  hs('641—648年','《谕令》：谁再讨论就弄谁','641年十一岁的君士坦斯二世登基；645年马克西姆斯在迦太基辩论；648年颁《谕令》，禁谈一志还是两志，按身份重罚。',[[29.0,6.0],[44.5,38.5]],d=>{
+    ha(d,'mByz641',HC.athens,{fillOpacity:.16});ha(d,'mCaliph644',HC.myc,{fillOpacity:.16});
+    hp(d,'carthage',{note:'645年马克西姆斯与前牧首皮洛士在这里辩论。'});hp(d,'rome');hp(d,'constantinople',{note:'648年《谕令》在这里颁布。'});
+   },[['fill',HC.athens,'东罗马（641年）'],['fill',HC.myc,'哈里发国（约644年）'],['dot','#2a2018','辩论与颁令的地方']]),
+  hs('649—662年','违反《谕令》的教宗和他的“小弟”','马丁一世不等批准就任，开会谴责《谕令》；653年与马克西姆斯一同被捕押往新都，判决另找罪名，一个流放而死，一个割舌断手。',[[34.5,9.0],[47.5,45.0]],d=>{
+    ha(d,'mByz641',HC.athens,{fillOpacity:.14});
+    hp(d,'rome',{note:'653年6月17日马丁在拉特朗被捕。'});hp(d,'f_naxos');hp(d,'constantinople');hp(d,'f_cherson');hp(d,'f_lazica',{left:1});
+    hr(d,[[41.89,12.48],[38.0,15.6],[37.1,25.38],[40.0,26.2],[41.0,28.95]],HC.war);
+   },[['fill',HC.athens,'东罗马'],['dline',HC.war,'押解马丁的路线（概略）'],['dot','#2a2018','被捕、受审与两处流放地']]),
+  hs('663—681年','叙拉古浴室以后','皇帝迁居叙拉古，668年在浴室被侍从砸死；儿子平定西西里，用希腊火守住京城，却败给渡过多瑙河的保加尔人。',[[33.0,10.0],[47.0,40.0]],d=>{
+    ha(d,'mByz680',HC.athens,{fillOpacity:.16});ha(d,'mCaliph661',HC.myc,{fillOpacity:.14});ha(d,'mBulgars681',HC.neutral,{fillOpacity:.26});
+    hp(d,'syracuse',{note:'663年起皇帝住在这里，668年7月在浴室里被杀。'});hp(d,'rome',{note:'663年皇帝在此住了十二天，剥走万神殿的铜瓦。'});
+    hp(d,'constantinople',{kind:'battle',note:'670年代靠卡利尼库斯的“海火”（希腊火）烧退阿拉伯舰队。'});
+    hp(d,'b_ongal',{kind:'battle'});
+   },[['fill',HC.athens,'东罗马（约680年）'],['fill',HC.myc,'哈里发国'],['fill',HC.neutral,'保加尔人（681年立国）'],['dot',HC.war,'守城与败仗'],['dot','#2a2018','叙拉古与罗马']]),
+  hs('680—681年','第六次大公会议','埃及、叙利亚丢定了，皇帝转向罗马：680—681年会议定基督两个意志，革除前教宗霍诺留。',[[28.0,8.0],[45.0,46.0]],d=>{
+    ha(d,'mByz680',HC.athens,{fillOpacity:.14});ha(d,'mCaliph661',HC.myc,{fillOpacity:.16});
+    hp(d,'constantinople',{note:'680年11月至681年9月，第六次大公会议在皇宫圆顶大厅召开。'});hp(d,'rome',{left:1});hp(d,'antioch',{note:'牧首的教座在阿拉伯人治下，人住在君士坦丁堡。'});
+   },[['fill',HC.athens,'东罗马（约680年）'],['fill',HC.myc,'哈里发国（约661年）'],['dot','#2a2018','会场、罗马与安条克']]),
+  hs('685—695年','外敌压力一小，教士就争权','哈里发内战，年年纳贡；692年的会给新都争名分、判罗马习惯有错；教宗不签，皇帝抓不动；695年皇帝被割鼻流放。',[[36.0,8.0],[46.5,35.0]],d=>{
+    ha(d,'mByzItaly600',HC.athens,{fillOpacity:.26});ha(d,'mLombards600',HC.mino,{fillOpacity:.16});ha(d,'mByz680',HC.athens,{fillOpacity:.1});
+    hp(d,'rome',{note:'教宗塞尔吉乌斯一世拒签692年的教规，民兵护住了他。'});hp(d,'ravenna',{note:'总督手下的民兵开进罗马，护住了教宗。'});
+    hp(d,'constantinople',{note:'692年在皇宫圆顶大厅补订教规。'});hp(d,'f_cherson');
+   },[['fill',HC.athens,'东罗马与它在意大利的地方'],['fill',HC.mino,'伦巴第人'],['dot','#2a2018','罗马、拉文纳、京城与流放地']]),
+  hs('705—711年','从抓教宗到跪教宗','查士丁尼二世借保加尔兵复位；710—711年召教宗东来，在尼科米底亚伏地吻他的脚；711年被杀，王朝绝嗣。',[[36.5,10.0],[46.5,36.0]],d=>{
+    ha(d,'mByz680',HC.athens,{fillOpacity:.14});ha(d,'mBulgars681',HC.neutral,{fillOpacity:.24});
+    hp(d,'rome',{note:'710年10月教宗君士坦丁动身东行，711年10月回到罗马。'});
+    hp(d,'nicomedeia',{note:'711年皇帝在这里迎教宗，伏地吻他的脚。'});hp(d,'constantinople',{note:'705年查士丁尼二世从一条废弃的水道钻进城复位。'});
+    hp(d,'f_cherson',{note:'流放地；711年这里起兵推翻了查士丁尼二世。'});
+   },[['fill',HC.athens,'东罗马'],['fill',HC.neutral,'保加尔汗国'],['dot','#2a2018','罗马、尼科米底亚、京城与赫尔松']])
+ ]},
+{id:'history-empire-anarchy',ch:5,title:'军区与二十年无政府：皇帝轮流做',short:'二十年无政府',en:'The Themes and the Twenty Years’ Anarchy: Emperors Take Turns',period:'695—717年',c:HC.byz,
+ scenes:[
+  hs('约640—695年','四个“藩镇”','丢了埃及、叙利亚的钱粮，退回小亚细亚的野战军就地驻扎、分地养兵，成了四大军区。',[[35.0,24.0],[43.5,42.5]],d=>{
+    ha(d,'mThemeOpsikion',HC.rome,{fillOpacity:.26});ha(d,'mThemeThrakesion',HC.mino,{fillOpacity:.26});
+    ha(d,'mThemeAnatolikon',HC.athens,{fillOpacity:.26});ha(d,'mThemeArmeniakon',HC.thebes,{fillOpacity:.26});
+    hp(d,'constantinople');hp(d,'i_amorion',{note:'安纳托利亚军区的首府。'});hp(d,'ancyra',{left:1});
+    hl(d,'奥普西金','Opsikion',40.4,30.8,HC.rome);hl(d,'色雷斯人军区','Thrakesion',38.3,28.6,HC.mino);
+    hl(d,'安纳托利亚军区','Anatolikon',37.9,32.6,HC.athens);hl(d,'亚美尼亚军区','Armeniakon',40.1,37.6,HC.thebes);
+   },[['fill',HC.rome,'奥普西金（护卫京城）'],['fill',HC.mino,'色雷斯人军区'],['fill',HC.athens,'安纳托利亚军区'],['fill',HC.thebes,'亚美尼亚军区'],['dot','#2a2018','京城与军区首府']]),
+  hs('695—717年','皇帝轮流做','二十二年七个皇帝，几乎都是军区或水军拥立；717年安纳托利亚军区的将军利奥进京收场。',[[33.5,8.0],[46.5,40.0]],d=>{
+    ha(d,'mByz680',HC.athens,{fillOpacity:.14});ha(d,'mThemeOpsikion',HC.rome,{fillOpacity:.22});ha(d,'mThemeAnatolikon',HC.athens,{fillOpacity:.22});
+    hp(d,'constantinople',{kind:'battle'});hp(d,'carthage',{kind:'battle',note:'698年被阿拉伯人攻下，出征的水军哗变另立皇帝。'});
+    hp(d,'f_cherson',{note:'711年这里起兵，拥立腓力皮科斯。'});hp(d,'b_adramyttium',{left:1});hp(d,'i_amorion',{note:'利奥从这一带的安纳托利亚军区起兵。'});
+   },[['fill',HC.athens,'东罗马与安纳托利亚军区'],['fill',HC.rome,'奥普西金'],['dot',HC.war,'京城与迦太基'],['dot','#2a2018','起兵与拥立的地方']])
+ ]},
+{id:'history-empire-isaurian',ch:5,title:'伊苏里亚王朝：成也利奥，败也利奥',short:'伊苏里亚王朝',en:'The Isaurian Dynasty: Made by a Leo, Undone by a Leo',period:'717—802年',c:HC.byz,
+ scenes:[
+  hs('717—730年','利奥三世为什么动手','利奥三世生在叙利亚边上，母语阿拉伯语；717—718年守住京城；726年锡拉岛火山喷发后动手毁圣像，730年牧首辞职。',[[33.0,22.0],[43.5,40.0]],d=>{
+    ha(d,'mByz680',HC.athens,{fillOpacity:.18});ha(d,'mCaliph661',HC.myc,{fillOpacity:.14});
+    hp(d,'constantinople',{note:'717年夏至718年8月，阿拉伯水陆大军围城一年；730年1月御前会议，牧首日耳曼努斯辞职。'});
+    hp(d,'i_thera',{labelZ:6});hp(d,'i_germanikeia',{left:1});
+    hl(d,'保加尔人','Bulgars',43.0,26.8,HC.neutral);
+   },[['fill',HC.athens,'东罗马（约700年）'],['fill',HC.myc,'倭马亚哈里发国'],['dot','#2a2018','京城、726年喷发的锡拉岛与利奥的家乡']]),
+  hs('724—754年','和西部分歧更大','皇帝要钱打仗，教宗要钱养城；教宗在西西里、卡拉布里亚的庄园被没收，那里和伊利里库姆的主教改归君士坦丁堡。',[[36.0,8.0],[46.5,22.5]],d=>{
+    ha(d,'mLombards600',HC.mino,{fillOpacity:.16});ha(d,'mByz780',HC.athens,{fillOpacity:.18});
+    ha(d,'mPapal756',HC.faith,{fillOpacity:.25});ha(d,'hSicily',HC.faith,{fillOpacity:.08,dashArray:'4 4'});
+    hp(d,'rome',{note:'教宗格雷戈里二世带头抗税；731年格雷戈里三世开会，革除毁圣像者的教籍。'});
+    hp(d,'ravenna',{note:'727年驻军哗变，杀了总督；751年被伦巴第人攻下。'});
+    hp(d,'syracuse',{left:1,note:'西西里军区的首府；教宗派去送信的使节两次在西西里被扣。'});hp(d,'i_ninfa',{left:1,labelZ:6});
+    hl(d,'伊利里库姆：主教改归君士坦丁堡','Illyricum, transferred to Constantinople',41.0,20.6,HC.athens);
+   },[['fill',HC.mino,'伦巴第人（751年以前）'],['fill',HC.athens,'东罗马'],['fill',HC.faith,'罗马与拉文纳一带（751年前属帝国，后成教宗领地）'],['dash',HC.faith,'被没收的“圣彼得庄园”所在（西西里、卡拉布里亚）'],['dot','#2a2018','罗马、拉文纳、叙拉古与补偿的庄园']]),
+  hs('727—775年','硬推六十年','727年希腊军区为圣像造反；君士坦丁五世平了姐夫的内战，扩编近卫军，754年338位主教宣布圣像是偶像，随后拆修院。',[[35.0,20.0],[43.5,36.0]],d=>{
+    ha(d,'mByz780',HC.athens,{fillOpacity:.18});ha(d,'mBulgars800',HC.neutral,{fillOpacity:.14});
+    hp(d,'constantinople',{note:'743年11月君士坦丁五世打回京城；766年修士被押到赛车场游街。'});
+    hp(d,'i_amorion',{note:'741年他逃到这里，父亲当年带过的兵收留了他。'});
+    hp(d,'chalcedon',{left:1,labelZ:7,note:'754年会议在卡尔西顿附近的希耶里亚宫召开。'});
+    hl(d,'727年：希腊军区与诸岛为圣像造反','Helladic revolt of 727',37.9,23.4,HC.war);
+   },[['fill',HC.athens,'东罗马（约775年）'],['fill',HC.neutral,'保加尔汗国（君士坦丁五世九次出征）'],['dot','#2a2018','京城、阿莫里翁与开会的卡尔西顿']]),
+  hs('780—790年','皇太后又翻大饼','786年近卫军冲散会场；伊琳娜换兵后787年在尼西亚开会恢复圣像；790年亚美尼亚军区抗命，各军区倒向儿子。',[[36.0,24.0],[43.0,41.0]],d=>{
+    ha(d,'mByz780',HC.athens,{fillOpacity:.18});
+    hp(d,'constantinople',{note:'786年8月近卫军冲散圣使徒教堂的会。'});
+    hp(d,'nicaea',{note:'787年9—10月第七次大公会议在此召开，恢复圣像。'});
+    hl(d,'790年：亚美尼亚军区抗命','Armeniakon refuses the oath, 790',40.5,37.2,HC.war);
+   },[['fill',HC.athens,'东罗马'],['dot','#2a2018','开会与冲散会场的城']]),
+  hs('790—797年','撒币与母子相残','纳贡、免税收买人心；儿子休妻再娶、失了修士与军心，797年被母亲弄瞎，孙子也已夭折。',[[30.0,22.0],[44.0,48.0]],d=>{
+    ha(d,'mByz780',HC.athens,{fillOpacity:.18});ha(d,'mAbbasid800',HC.myc,{fillOpacity:.12});
+    hp(d,'constantinople',{note:'797年8月君士坦丁六世在他出生的紫色寝宫被弄瞎。'});
+    hp(d,'w_baghdad',{note:'782年起，伊琳娜年年向哈里发纳贡。'});
+   },[['fill',HC.athens,'东罗马'],['fill',HC.myc,'阿拔斯哈里发国'],['dot','#2a2018','京城与收贡的巴格达']]),
+  hs('797—802年','成也利奥，败也利奥','800年教宗利奥三世给查理曼加冕；802年查理求婚，伊琳娜被财政大臣废黜，流放莱斯沃斯岛。',[[36.0,2.0],[53.0,31.0]],d=>{
+    ha(d,'mByz780',HC.athens,{fillOpacity:.18});ha(d,'mCarolingian814',HC.celt,{fillOpacity:.14});ha(d,'mPapal756',HC.faith,{fillOpacity:.3});
+    hp(d,'rome',{note:'800年圣诞节，教宗利奥三世在圣彼得教堂给查理曼加冕。'});hp(d,'w_aachen');
+    hp(d,'constantinople',{note:'802年10月31日财政大臣尼基弗鲁斯废了伊琳娜。'});hp(d,'b_lesbos',{left:1});
+   },[['fill',HC.athens,'东罗马'],['fill',HC.celt,'查理曼的帝国'],['fill',HC.faith,'教宗领地'],['dot','#2a2018','加冕、废黜与流放的地方']])
+ ]},
+{id:'history-empire-amorian',ch:5,title:'然后又乱：从尼基弗鲁斯到阿莫里亚王朝',short:'阿莫里亚王朝',en:'Turmoil Again: from Nikephoros to the Amorian Dynasty',period:'802—867年',c:HC.byz,
+ scenes:[
+  hs('802—820年','然后又乱','尼基弗鲁斯一世加税、停贡，811年死于克鲁姆的埋伏；813年利奥五世篡位，815年重开毁圣像，820年在教堂被杀。',[[37.5,21.0],[46.0,33.0]],d=>{
+    ha(d,'mByz842',HC.athens,{fillOpacity:.18});ha(d,'mBulgars800',HC.neutral,{fillOpacity:.2});
+    hp(d,'i_pliska',{kind:'battle'});
+    hp(d,'adrianople',{kind:'battle',note:'813年6月东罗马军在附近的韦尔西尼基亚败给克鲁姆，同年阿德里安堡失守。'});
+    hp(d,'constantinople',{note:'813年有人撬开君士坦丁五世的陵墓；820年圣诞节利奥五世在宫中教堂被杀。'});
+    hr(d,[[41.0,28.9],[41.68,26.56],[42.55,27.0],[43.38,27.12]],HC.athens);
+   },[['fill',HC.athens,'东罗马'],['fill',HC.neutral,'保加尔汗国（克鲁姆）'],['dline',HC.athens,'811年尼基弗鲁斯一世进兵（概略）'],['dot',HC.war,'811、813年两次大败'],['dot','#2a2018','京城']]),
+  hs('820—842年','阿莫里亚王朝','托马斯起兵围京城一年多；克里特与西西里落入阿拉伯人之手；838年哈里发攻破皇族老家阿莫里翁。',[[33.5,10.0],[43.5,37.0]],d=>{
+    ha(d,'mByz842',HC.athens,{fillOpacity:.18});ha(d,'mAbbasid800',HC.myc,{fillOpacity:.12});
+    hp(d,'constantinople',{kind:'battle',note:'821年冬至823年春，托马斯围城。'});
+    hp(d,'b_chandax',{note:'约827年从西班牙流亡来的阿拉伯人在克里特建城。'});
+    hp(d,'syracuse',{note:'827年北非的阿拉伯人登陆西西里，878年叙拉古陷落。'});
+    hp(d,'i_amorion',{kind:'battle',note:'838年8月哈里发穆阿台绥姆攻破屠城。'});
+   },[['fill',HC.athens,'东罗马（约842年）'],['fill',HC.myc,'阿拔斯哈里发国'],['dot',HC.war,'围城与屠城'],['dot','#2a2018','丢掉的克里特与西西里']]),
+  hs('842—843年','正统的胜利','寡后狄奥多拉恢复圣像，条件是不诅咒亡夫；一百多年里，两边各有自己的皇帝、牧首和大公会议。',[[35.5,20.0],[42.5,33.0]],d=>{
+    ha(d,'mByz842',HC.athens,{fillOpacity:.18});
+    hp(d,'constantinople',{note:'843年3月11日恢复圣像，此后每年大斋期第一个主日纪念。'});hp(d,'nicaea',{left:1,note:'787年在此召开恢复圣像的会议。'});
+    hp(d,'chalcedon',{left:1,labelZ:7,note:'754年反圣像的会议在这附近召开。'});
+   },[['fill',HC.athens,'东罗马'],['dot','#2a2018','两派各自开会的地方']]),
+  hs('856—867年','炮口转向罗马','863年大败梅利泰内埃米尔；佛提乌与罗马争的是保加利亚这块新地盘，867年互相革除；同年巴西尔弑君。',[[35.5,10.0],[46.5,40.0]],d=>{
+    ha(d,'mByz842',HC.athens,{fillOpacity:.18});ha(d,'mBulgars800',HC.neutral,{fillOpacity:.2});ha(d,'mPapal756',HC.faith,{fillOpacity:.3});
+    hp(d,'rome',{note:'863年教宗尼古拉一世宣布佛提乌无效。'});hp(d,'constantinople',{note:'867年佛提乌开会革除教宗；同年巴西尔杀了米海尔三世。'});
+    hp(d,'i_pliska',{note:'864年保加尔汗鲍里斯受洗。'});hp(d,'b_melitene',{kind:'battle',note:'863年这里的埃米尔率军入侵，在黑海边被全歼。'});
+   },[['fill',HC.athens,'东罗马'],['fill',HC.neutral,'保加尔汗国'],['fill',HC.faith,'教宗领地'],['dot',HC.war,'转守为攻'],['dot','#2a2018','新旧两个罗马与保加利亚']])
+ ]},
+{id:'history-empire-macedonian',ch:5,title:'马其顿王朝：反攻与东西教会大分裂',short:'马其顿王朝',en:'The Macedonian Dynasty: Counter-attack and the Great Schism',period:'867—1056年',c:HC.byz,
+ scenes:[
+  hs('867—912年','马夫的王朝','马夫巴西尔两次弑君登基，开了189年的马其顿王朝；他讨好罗马、重编法典，儿子利奥六世为四婚换掉牧首。',[[35.5,10.0],[43.5,31.0]],d=>{
+    ha(d,'mByz842',HC.athens,{fillOpacity:.18});
+    hp(d,'adrianople',{note:'巴西尔生在这一带，当时叫马其顿军区。'});hp(d,'constantinople',{kind:'battle',note:'867年9月巴西尔带人闯进宫，杀了醉倒的米海尔三世。'});
+    hp(d,'rome',{note:'教宗支持伊格纳修斯；巴西尔请回伊格纳修斯，向罗马示好。'});
+   },[['fill',HC.athens,'东罗马（约867年）'],['dot',HC.war,'弑君的京城'],['dot','#2a2018','巴西尔的老家与罗马']]),
+  hs('863—976年','对阿拉伯的反攻','哈里发国四分五裂，东罗马收回梅利泰内、克里特、塔尔苏斯、塞浦路斯与安条克；打仗的将门越打越富。',[[32.0,20.0],[42.0,42.0]],d=>{
+    ha(d,'mByz842',HC.athens,{fillOpacity:.2});ha(d,'mByz1025',HC.athens,{fillOpacity:.06,dashArray:'4 4'});
+    hp(d,'b_melitene',{kind:'battle'});hp(d,'edessa',{note:'944年东罗马军围城，换回传说印着基督面容的圣布。'});
+    hp(d,'b_chandax',{kind:'battle'});hp(d,'tarsus',{kind:'battle',note:'965年被尼基弗鲁斯·福卡斯攻下。'});
+    hp(d,'antioch',{kind:'battle',note:'969年10月东罗马收回安条克。'});hp(d,'constantinople');
+   },[['fill',HC.athens,'东罗马（约867年）'],['dash',HC.athens,'到1025年收回的地方'],['dot',HC.war,'934—969年收复的城']]),
+  hs('976—1025年','保加尔屠夫','巴西尔二世借罗斯兵平了将门叛乱，罗斯人随之改信东正教；1014年克莱迪昂大捷，1018年吞并保加利亚。',[[36.0,18.0],[56.5,44.0]],d=>{
+    ha(d,'mByz1025',HC.athens,{fillOpacity:.18});ha(d,'mSamuel1000',HC.war,{fillOpacity:.2});ha(d,'mRus1000',HC.celt,{fillOpacity:.14});
+    hp(d,'b_kiev',{note:'988年起罗斯人改信东正教。'});hp(d,'f_cherson',{note:'988年弗拉基米尔攻下这里，989年在这里受洗、迎娶安娜。'});
+    hp(d,'b_kleidion',{kind:'battle'});hp(d,'b_ohrid',{left:1});hp(d,'constantinople');
+   },[['fill',HC.athens,'巴西尔二世死时的东罗马（1025年）'],['fill',HC.war,'萨穆伊尔的保加利亚（约1000年）'],['fill',HC.celt,'基辅罗斯（约1000年）'],['dot',HC.war,'1014年大捷'],['dot','#2a2018','受洗之地与两国都城']]),
+  hs('1025—1056年','东西教会大分裂','巴西尔二世无子，皇位跟着侄女的婚床走；1054年教宗使节与牧首互相革除；1056年马其顿王朝绝嗣。',[[36.0,8.0],[46.5,34.0]],d=>{
+    ha(d,'mByz1025',HC.athens,{fillOpacity:.16});
+    hp(d,'rome',{note:'教宗利奥九世派洪贝特等三人出使，1054年4月他在罗马去世。'});
+    hp(d,'b_civitate',{kind:'battle'});hp(d,'constantinople',{note:'1053年牧首关闭城中的拉丁教堂；1054年7月互相革除。'});
+   },[['fill',HC.athens,'东罗马（1025年）'],['dot',HC.war,'1053年诺曼人俘虏教宗'],['dot','#2a2018','新旧两个罗马']])
+ ]},
 {id:'history-west-kingdoms',ch:5,title:'蛮族诸王国与西哥特',short:'蛮族诸王国',en:'The Barbarian Kingdoms and the Visigoths',period:'476—711年',c:HC.celt,
  scenes:[
   hs('476—507年','谁分到哪块','西罗马的地盘按各路兵团的落脚处分开；意大利的蛮族兵要走三分之一的地，奥多亚克答应了才坐稳。',[[29.0,-11.5],[56.5,21.0]],d=>{
@@ -1717,7 +1865,7 @@ const HISTORY_ENTRIES=[
     ha(d,'lVisigoths600',HC.mino,{fillOpacity:.24});ha(d,'lSpania',HC.athens,{fillOpacity:.3});
     hp(d,'toletum',{note:'莱奥维吉尔德定都于此；589年第三次托莱多会议，哥特人弃阿里乌派。'});
     hp(d,'bracara',{left:1});hp(d,'hispalis',{kind:'battle',left:1});hp(d,'recopolis',{labelZ:6});
-   },[['fill',HC.mino,'西哥特王国（约600年）'],['fill',HC.athens,'拜占庭的西班牙据点'],['dot','#2a2018','都城、新城与苏维汇旧都'],['dot',HC.war,'长子起兵的塞维利亚']]),
+   },[['fill',HC.mino,'西哥特王国（约600年）'],['fill',HC.athens,'东罗马的西班牙据点'],['dot','#2a2018','都城、新城与苏维汇旧都'],['dot',HC.war,'长子起兵的塞维利亚']]),
   hs('589—713年','选出来的王','主教会议替王国立规矩，654年一部法管两族；王位靠选也靠政变；711年塔里克渡海，罗德里克战死，王国崩塌。',[[33.5,-10.5],[44.5,4.5]],d=>{
     ha(d,'lVisigoths600',HC.mino,{fillOpacity:.2});
     hp(d,'toletum',{note:'历次托莱多会议在此召开；711年罗德里克战死后随即失守。'});
@@ -1836,14 +1984,14 @@ const HISTORY_ENTRIES=[
     hl(d,'阿瓦尔人的“圆环”（大致方位）','Avar Ring (approx.)',46.9,19.6,HC.war);
     hr(d,[[33.3,44.4],[33.5,40.5],[32.0,35.5],[30.6,32.3],[31.2,29.9],[32.9,13.2],[36.8,10.2],[44.05,9.83],[45.32,8.42],[46.5,7.5],[48.6,7.7],[50.78,6.08]],HC.route);
    },[['fill',HC.celt,'查理曼的帝国（814年）'],['fill',HC.myc,'倭马亚治下的西班牙（科尔多瓦）'],['dash',HC.myc,'阿拔斯王朝（约800年）'],['dline',HC.route,'大象到亚琛的路（概略）'],['dot',HC.war,'龙塞斯瓦列斯'],['dot','#2a2018','萨拉戈萨、亚琛、巴格达与上岸的港口']]),
-  hs('799—812年','两个皇帝','799年教宗遇袭投奔查理；800年圣诞节查理在罗马加冕；拜占庭不认，812年只称他“皇帝”，不称罗马人的皇帝；西方改叫东边“希腊人”。',[[35.0,-2.0],[54.5,30.5]],d=>{
+  hs('799—812年','两个皇帝','799年教宗遇袭投奔查理；800年圣诞节查理在罗马加冕；东罗马不认，812年只称他“皇帝”，不称罗马人的皇帝；西方改叫东边“希腊人”。',[[35.0,-2.0],[54.5,30.5]],d=>{
     ha(d,'mCarolingian814',HC.celt,{fillOpacity:.18});ha(d,'mByz780',HC.athens,{fillOpacity:.28});
     hp(d,'w_paderborn',{note:'799年查理在此接待逃来的教宗利奥三世。'});
     hp(d,'rome',{note:'800年圣诞节，教宗在圣彼得大教堂给查理戴上皇冠。'});
-    hp(d,'w_aachen',{note:'812年拜占庭使节在此用希腊语称查理为“皇帝”。'});
+    hp(d,'w_aachen',{note:'812年东罗马使节在此用希腊语称查理为“皇帝”。'});
     hp(d,'constantinople',{note:'797年起女皇伊琳娜当政，802年被废。'});
     hp(d,'w_venice',{kind:'battle',left:1});
-   },[['fill',HC.celt,'查理曼的帝国（814年）'],['fill',HC.athens,'拜占庭帝国（约780年）'],['dot',HC.war,'两边争夺的威尼斯'],['dot','#2a2018','投奔、加冕与两个皇帝的都城']]),
+   },[['fill',HC.celt,'查理曼的帝国（814年）'],['fill',HC.athens,'东罗马（约780年）'],['dot',HC.war,'两边争夺的威尼斯'],['dot','#2a2018','投奔、加冕与两个皇帝的都城']]),
   hs('802—814年','身后还要分家','伯爵管地方、钦差两人一组巡察；806年立分国文书，813年查理亲手给儿子路易加冕，814年死在亚琛；843年孙辈三分帝国。',[[40.5,-3.5],[55.0,18.5]],d=>{
     ha(d,'mCarolingian814',HC.celt,{fillOpacity:.2});
     hp(d,'w_aachen',{note:'813年查理在此亲手给路易加冕；814年1月28日死在这里。'});
@@ -2203,80 +2351,6 @@ const HISTORY_ENTRIES=[
     hp(d,'constantinople',{note:'“斋戒者”约翰在这里以“普世牧首”的名义开会。'});hp(d,'rome',{note:'格雷戈里一世自称“众仆之仆”。'});
    },[['fill',HC.faith,'帝国（约600年）'],['dot','#2a2018','新旧两个罗马']])
  ]},
-{id:'history-faith-monothelites',ch:6,title:'第六次大公会议：一志论',short:'一志论',en:'The Sixth Ecumenical Council: One Will or Two',period:'619—692年',c:HC.faith,
- scenes:[
-  hs('619—638年','一个能力，一个意志','为了拉回一性论派，牧首塞尔吉乌斯提出“一个能力”，后改“一个意志”；居鲁士在亚历山大里亚与对方合一。',[[28.5,10.0],[42.5,38.5]],d=>{
-    ha(d,'mByz620',HC.faith,{fillOpacity:.1});
-    hp(d,'constantinople');hp(d,'alexandria',{note:'633年6月居鲁士在这里与一性论派订合一条约。'});hp(d,'jerusalem',{note:'修士索弗罗尼乌斯带头反对，634年当上耶路撒冷牧首。'});hp(d,'rome',{left:1});
-   },[['fill',HC.faith,'帝国（约620年）'],['dot','#2a2018','四大教座']]),
-  hs('641—648年','《谕令》：谁再讨论就弄谁','645年马克西姆斯在迦太基辩论；648年君士坦斯二世颁《谕令》，拆掉《信仰宣言》，禁谈一志还是两志，按身份重罚。',[[29.0,6.0],[44.5,38.5]],d=>{
-    ha(d,'mByz641',HC.faith,{fillOpacity:.1});ha(d,'mCaliph644',HC.myc,{fillOpacity:.16});
-    hp(d,'carthage',{note:'645年马克西姆斯与皮洛士在这里辩论。'});hp(d,'rome');hp(d,'constantinople',{note:'648年《谕令》在这里颁布。'});
-   },[['fill',HC.faith,'拜占庭（641年）'],['fill',HC.myc,'哈里发国（约644年）'],['dot','#2a2018','辩论与颁令的地方']]),
-  hs('649—655年','不等皇帝批准的教宗','马丁一世不等批准就任，开会谴责《谕令》；653年被捕押往新都，以私通撒拉森人定罪，流放赫尔松而死。',[[34.5,9.0],[47.5,36.5]],d=>{
-    ha(d,'mByz641',HC.faith,{fillOpacity:.1});
-    hp(d,'rome',{note:'653年6月17日马丁在拉特朗被捕。'});hp(d,'f_naxos');hp(d,'constantinople');hp(d,'f_cherson');
-    hr(d,[[41.89,12.48],[38.0,15.6],[37.1,25.38],[40.0,26.2],[41.0,28.95]],HC.war);
-   },[['fill',HC.faith,'拜占庭'],['dline',HC.war,'押解的路线（概略）'],['dot','#2a2018','被捕、受审与流放的地方']]),
-  hs('655—668年','舌头与右手','马克西姆斯被割舌断手，流放拉齐卡；君士坦斯二世搬到叙拉古，到罗马剥走万神殿的铜，668年在浴室被杀。',[[34.5,9.0],[45.5,45.0]],d=>{
-    ha(d,'mByz641',HC.faith,{fillOpacity:.1});
-    hp(d,'constantinople');hp(d,'f_lazica',{left:1});hp(d,'syracuse',{note:'663年起皇帝住在这里，668年在浴室里被杀。'});hp(d,'rome');
-   },[['fill',HC.faith,'拜占庭'],['dot','#2a2018','流放地、新的皇居与罗马']]),
-  hs('668—681年','希腊火与第六次大公会议','卡利尼库斯的“希腊火”烧退围攻京城的阿拉伯舰队；埃及、叙利亚丢定了，皇帝转向罗马，680—681年定两个意志。',[[28.0,8.0],[45.0,46.0]],d=>{
-    ha(d,'mByz680',HC.faith,{fillOpacity:.14});ha(d,'mCaliph661',HC.myc,{fillOpacity:.16});
-    hp(d,'constantinople',{note:'670年代靠卡利尼库斯的“海火”（希腊火）烧毁围城的阿拉伯舰队；680—681年在此开第六次大公会议。'});hp(d,'rome',{left:1});hp(d,'antioch',{note:'牧首的教座在阿拉伯人治下，人住在君士坦丁堡。'});
-   },[['fill',HC.faith,'拜占庭（约680年）'],['fill',HC.myc,'哈里发国（约661年）'],['dot','#2a2018','会场、罗马与安条克']]),
-  hs('687—701年','羔羊与周六禁食','692年的会判了罗马几样习惯是错的；教宗不签，皇帝派人来抓，意大利民兵拦住；教宗把“上帝的羔羊”编进弥撒。',[[36.0,8.0],[46.0,30.0]],d=>{
-    ha(d,'mByzItaly600',HC.athens,{fillOpacity:.26});ha(d,'mLombards600',HC.mino,{fillOpacity:.16});
-    hp(d,'rome',{note:'教宗塞尔吉乌斯一世拒签692年的教规。'});hp(d,'ravenna',{note:'总督手下的民兵开进罗马，护住了教宗。'});hp(d,'constantinople');
-   },[['fill',HC.athens,'帝国在意大利的地方'],['fill',HC.mino,'伦巴第人'],['dot','#2a2018','罗马、拉文纳与京城']])
- ]},
-{id:'history-faith-icons',ch:6,title:'第七次大公会议：圣像之争',short:'圣像之争',en:'The Seventh Council: Icons',period:'717—843年',c:HC.faith,
- scenes:[
-  hs('717—730年','从叙利亚来的皇帝','利奥三世生在叙利亚边上，母语阿拉伯语；717—718年守住京城；726年锡拉岛火山喷发后动手反圣像，730年牧首辞职。',[[33.0,22.0],[43.5,40.0]],d=>{
-    ha(d,'mByz680',HC.athens,{fillOpacity:.18});ha(d,'mCaliph661',HC.myc,{fillOpacity:.14});
-    hp(d,'constantinople',{note:'717年夏至718年8月，阿拉伯水陆大军围城一年；730年1月御前会议，牧首日耳曼努斯辞职。'});
-    hp(d,'i_thera',{labelZ:6});hp(d,'i_germanikeia',{left:1});
-    hl(d,'保加尔人','Bulgars',43.0,26.8,HC.neutral);
-   },[['fill',HC.athens,'拜占庭（约700年）'],['fill',HC.myc,'倭马亚哈里发国'],['dot','#2a2018','京城、726年喷发的锡拉岛与利奥的家乡']]),
-  hs('724—754年','罗马的地租','皇帝要钱打仗，教宗要钱养城；教宗在西西里、卡拉布里亚的庄园被没收，那里和伊利里库姆的主教改归君士坦丁堡。',[[36.0,8.0],[46.5,22.5]],d=>{
-    ha(d,'mLombards600',HC.mino,{fillOpacity:.16});ha(d,'mByz780',HC.athens,{fillOpacity:.18});
-    ha(d,'mPapal756',HC.faith,{fillOpacity:.25});ha(d,'hSicily',HC.faith,{fillOpacity:.08,dashArray:'4 4'});
-    hp(d,'rome',{note:'教宗格雷戈里二世带头抗税；731年格雷戈里三世开会，革除毁圣像者的教籍。'});
-    hp(d,'ravenna',{note:'727年驻军哗变，杀了总督；751年被伦巴第人攻下。'});
-    hp(d,'syracuse',{left:1,note:'西西里军区的首府；教宗派去送信的使节两次在西西里被扣。'});hp(d,'i_ninfa',{left:1,labelZ:6});
-    hl(d,'伊利里库姆：主教改归君士坦丁堡','Illyricum, transferred to Constantinople',41.0,20.6,HC.athens);
-   },[['fill',HC.mino,'伦巴第人（751年以前）'],['fill',HC.athens,'拜占庭'],['fill',HC.faith,'罗马与拉文纳一带（751年前属帝国，后成教宗领地）'],['dash',HC.faith,'被没收的“圣彼得庄园”所在（西西里、卡拉布里亚）'],['dot','#2a2018','罗马、拉文纳、叙拉古与补偿的庄园']]),
-  hs('741—754年','军区站队与无头会议','姐夫篡位，军区分成两边；君士坦丁五世夺回京城后拆小军区、扩编近卫军；754年338位主教在希耶里亚宫谴责圣像。',[[36.5,25.5],[42.0,33.5]],d=>{
-    ha(d,'mByz680',HC.athens,{fillOpacity:.18});
-    hp(d,'constantinople',{note:'743年11月君士坦丁五世打回京城，在赛车场让牧首倒骑驴游街。'});
-    hp(d,'i_amorion',{note:'741年他逃到这里，父亲当年带过的兵收留了他。'});
-    hp(d,'sardis',{kind:'battle',note:'743年5月阿塔巴斯多斯在此战败。'});
-    hp(d,'chalcedon',{left:1,labelZ:7,note:'754年会议在卡尔西顿附近的希耶里亚宫召开。'});
-    hl(d,'奥普西金军区（站姐夫）','Opsikion, for Artabasdos',40.2,30.4,HC.war);hl(d,'安纳托利亚军区（站他）','Anatolikon, for Constantine',38.6,31.9,HC.athens);
-   },[['fill',HC.athens,'拜占庭'],['dot',HC.war,'743年萨迪斯之战'],['dot','#2a2018','京城、阿莫里翁与开会的卡尔西顿']]),
-  hs('765—775年','皇帝与修院的账','修院的田免税、修士不当兵；皇帝在京城打死隐修士、羞辱修士，以弗所一带的将军逼修士成婚、变卖修院产业。',[[34.0,22.0],[44.5,36.0]],d=>{
-    ha(d,'mByz780',HC.athens,{fillOpacity:.18});ha(d,'mBulgars800',HC.neutral,{fillOpacity:.14});
-    hp(d,'constantinople',{note:'765年11月小斯蒂芬被拖过街打死；766年8月修士牵着女人在赛车场游街。'});
-    hp(d,'ephesus',{note:'拉哈诺德拉孔把全区修士修女召到城外，逼他们当场成婚。'});
-    hl(d,'塞浦路斯：不从者的流放地','Cyprus, place of exile',35.1,33.3,HC.war);
-   },[['fill',HC.athens,'拜占庭（约775年）'],['fill',HC.neutral,'保加尔汗国（君士坦丁五世九次出征）'],['dot','#2a2018','京城与以弗所']]),
-  hs('780—802年','伊琳娜：换兵开会','786年近卫军冲散会场；伊琳娜换兵后787年在尼西亚开会，教宗派使节；法兰克人794年驳回；797年她弄瞎儿子称帝。',[[36.0,6.0],[52.0,33.0]],d=>{
-    ha(d,'mByz780',HC.athens,{fillOpacity:.18});ha(d,'mCarolingian814',HC.celt,{fillOpacity:.14});
-    ha(d,'mPapal756',HC.faith,{fillOpacity:.3});
-    hp(d,'constantinople',{note:'786年8月近卫军冲散圣使徒教堂的会；797年君士坦丁六世在他出生的紫色寝宫被弄瞎。'});
-    hp(d,'nicaea',{note:'787年9—10月第七次大公会议在此召开，恢复圣像。'});
-    hp(d,'rome',{note:'教宗哈德良派两位使节赴会；800年圣诞节教宗利奥三世在此给查理曼加冕。'});
-    hp(d,'i_frankfurt');
-   },[['fill',HC.athens,'拜占庭'],['fill',HC.celt,'法兰克王国（约800年）'],['fill',HC.faith,'教宗领地'],['dot','#2a2018','开会、驳会与加冕的城']]),
-  hs('802—843年','第二轮与“正统的胜利”','811年皇帝死于保加尔人之手；813年利奥五世篡位，815年重开反圣像；843年寡后狄奥多拉恢复圣像，立“正统的胜利”节。',[[39.5,22.5],[45.0,31.5]],d=>{
-    ha(d,'mByz780',HC.athens,{fillOpacity:.18});ha(d,'mBulgars800',HC.neutral,{fillOpacity:.2});
-    hp(d,'i_pliska',{kind:'battle'});
-    hp(d,'adrianople',{kind:'battle',note:'813年6月拜占庭军在附近的韦尔西尼基亚败给克鲁姆，同年阿德里安堡失守。'});
-    hp(d,'constantinople',{note:'813年有人撬开君士坦丁五世的陵墓；843年3月11日恢复圣像。'});
-    hr(d,[[41.0,28.9],[41.68,26.56],[42.55,27.0],[43.38,27.12]],HC.athens);
-   },[['fill',HC.athens,'拜占庭'],['fill',HC.neutral,'保加尔汗国（克鲁姆）'],['dline',HC.athens,'811年尼基弗鲁斯一世进兵（概略）'],['dot',HC.war,'811、813年两次大败'],['dot','#2a2018','京城']])
- ]},
 {id:'history-china-neolithic',ch:7,title:'新石器聚落与万邦时代',short:'仰韶与良渚',en:'Neolithic China: Yangshao to Liangzhu',period:'约前7000—前1900年',c:HC.china,
  scenes:[
   hs('约前7000—前1900年','南稻北粟与良渚古城','黄河流域种粟、长江流域种稻；前3300年起良渚筑起古城与大型水利，龙山时代城址林立。',[[27.0,104.0],[40.0,122.5]],d=>{
@@ -2539,7 +2613,7 @@ const HISTORY_ENTRIES=[
     hp(d,'philae',{left:1,note:'298年戴克里先把南界退到这里。'});
    },[['fill',HC.mino,'埃及'],['dot',HC.war,'被围的亚历山大里亚'],['dot','#2a2018','修道地与南界']])
  ]},
-{id:'history-egypt-byzantine',ch:8,title:'科普特埃及',short:'拜占庭治下的埃及',en:'Coptic Egypt',period:'395—619年',c:HC.mino,
+{id:'history-egypt-byzantine',ch:8,title:'科普特埃及',short:'东罗马治下的埃及',en:'Coptic Egypt',period:'395—619年',c:HC.mino,
  scenes:[
   hs('451—约540年','卡尔西顿之后：两位宗主教','卡尔西顿革了狄奥斯库若；亚历山大里亚人烧死官兵，被停发口粮；457年朝廷认的宗主教被杀；本地一系成了科普特教会。',[[29.5,25.5],[42.5,36.5]],d=>{
     ha(d,'eEast395',HC.athens,{fillOpacity:.14});ha(d,'egypt',HC.mino,{fillOpacity:.35});
@@ -2797,7 +2871,7 @@ const HISTORY_ENTRIES=[
     hp(d,'alexandria',{left:1,note:'埃及多数人信一性论，跟朝廷指派的牧首不和。'});
     hp(d,'ctesiphon',{note:'628—632年王位在此轮转：卡瓦德二世、阿尔达希尔三世、沙赫巴拉兹、布兰……'});
     hp(d,'p_istakhr',{note:'632年伊嗣俟三世在此的阿娜希塔神庙加冕，四百年前阿尔达希尔一世也在这里起家。'});
-   },[['fill',HC.athens,'拜占庭（630年前后，概略）'],['fill',HC.parthia,'萨珊帝国'],['dot','#2a2018','两国的都城、亚历山大里亚与伊斯塔赫尔']]),
+   },[['fill',HC.athens,'东罗马（630年前后，概略）'],['fill',HC.parthia,'萨珊帝国'],['dot','#2a2018','两国的都城、亚历山大里亚与伊斯塔赫尔']]),
   hs('634—640年','叙利亚','大马士革议和开城；636年8月雅穆克一战罗马大军溃散；牧首索弗洛尼乌斯只向欧麦尔交出耶路撒冷；凯撒里亚守到640年。',[[29.5,33.0],[37.5,40.0]],d=>{
     ha(d,'syria',HC.athens,{fillOpacity:.14,dashArray:'4 4'});ha(d,'mArabia',HC.myc,{fillOpacity:.2});
     hp(d,'p_damascus',{note:'635年议和开城：交人头税，保住性命、财产和教堂。'});hp(d,'p_yarmouk',{kind:'battle'});
@@ -2853,19 +2927,22 @@ const HISTORY_ERAS=[
  {id:'empire-principate',name:'罗马帝国：元首制',en:'The Principate',date:'前27—192年',c:HC.rome,items:[['history-empire-principate'],['history-empire-julio-claudian'],['history-empire-flavian'],['history-empire-antonine']]},
  {id:'empire-crisis',name:'罗马帝国：危机与重铸',en:'Crisis and Reinvention',date:'193—363年',c:HC.rome,items:[['history-empire-crisis'],['history-empire-dominate'],['history-empire-constantine']]},
  {id:'empire-west',name:'罗马帝国：分治与西部的终结',en:'Division and the End in the West',date:'364—476年',c:HC.rome,items:[['history-empire-valentinian'],['history-empire-theodosius'],['history-empire-west-fall']]},
- {id:'empire-east',name:'东罗马：从利奥到希拉克略',en:'East Rome from Leo to Heraclius',date:'457—641年',c:HC.byz,items:[['history-empire-leo'],['history-empire-justinian'],['history-empire-heraclius']]},
+ {id:'empire-east',name:'东罗马：利奥王朝与查士丁尼王朝',en:'East Rome: the Leonids and the Justinians',date:'457—602年',c:HC.byz,items:[['history-empire-leo'],['history-empire-justinian']]},
+ {id:'empire-heraclian',name:'东罗马：希拉克略王朝与二十年无政府',en:'East Rome: the Heraclians and the Anarchy',date:'602—717年',c:HC.byz,items:[['history-empire-heraclius'],['history-empire-constans'],['history-empire-anarchy']]},
+ {id:'empire-iconoclasm',name:'东罗马：圣像之争时代',en:'East Rome: the Age of Iconoclasm',date:'717—867年',c:HC.byz,items:[['history-empire-isaurian'],['history-empire-amorian']]},
+ {id:'empire-macedonian',name:'东罗马：马其顿王朝',en:'East Rome: the Macedonian Dynasty',date:'867—1056年',c:HC.byz,items:[['history-empire-macedonian',0,2],['history-empire-macedonian',3,3,'东西教会大分裂']]},
  {id:'empire-kingdoms',name:'中世纪早期：蛮族诸王国',en:'The Barbarian Kingdoms',date:'476—711年',c:HC.celt,items:[['history-west-kingdoms']]},
  {id:'empire-franks',name:'中世纪早期：法兰克与伦巴第',en:'Franks and Lombards',date:'561—814年',c:HC.celt,items:[['history-west-merovingians'],['history-west-lombards'],['history-west-charlemagne']]},
  {id:'faith-israel',name:'古代以色列',en:'Ancient Israel',date:'约前1400—前538年',c:HC.faith,items:[['history-faith-israel'],['history-faith-first-temple']]},
  {id:'faith-temple',name:'第二圣殿时期',en:'The Second Temple',date:'前538—公元73年',c:HC.faith,items:[['history-faith-second-temple'],['history-faith-jesus']]},
  {id:'faith-church',name:'早期教会',en:'The Early Church',date:'73—451年',c:HC.faith,items:[['history-faith-church'],['history-faith-empire-church'],['history-faith-councils'],['history-faith-ephesus'],['history-faith-two-cities']]},
- {id:'faith-medieval',name:'中世纪早期的教会',en:'The Early Medieval Church',date:'451—843年',c:HC.faith,items:[['history-faith-papacy'],['history-faith-three-chapters'],['history-faith-monothelites'],['history-faith-icons']]},
+ {id:'faith-medieval',name:'中世纪早期的教会',en:'The Early Medieval Church',date:'451—604年',c:HC.faith,items:[['history-faith-papacy'],['history-faith-three-chapters']]},
  {id:'china-early',name:'先秦：三代与春秋战国',en:'Pre-Imperial China',date:'约前7000—前221年',c:HC.china,items:[['history-china-neolithic'],['history-china-bronze'],['history-china-western-zhou'],['history-china-spring-autumn'],['history-china-warring-states']]},
  {id:'china-qin-han',name:'秦汉帝国',en:'Qin and Han Empires',date:'前221—公元189年',c:HC.china,items:[['history-china-qin'],['history-china-western-han'],['history-china-eastern-han']]},
  {id:'china-six-dynasties',name:'三国两晋南北朝',en:'Six Dynasties',date:'190—589年',c:HC.china,items:[['history-china-three-kingdoms'],['history-china-sixteen-kingdoms'],['history-china-sui']]},
  {id:'china-sui-tang',name:'隋唐',en:'Sui and Tang',date:'589—845年',c:HC.china,items:[['history-china-tang']]},
  {id:'egypt-ancient',name:'古埃及',en:'Ancient Egypt',date:'约前3100—前332年',c:HC.mino,items:[['history-egypt-old'],['history-egypt-middle'],['history-egypt-new'],['history-egypt-late']]},
- {id:'egypt-roman',name:'罗马与拜占庭治下的埃及',en:'Roman and Byzantine Egypt',date:'前30—619年',c:HC.mino,items:[['history-egypt-roman'],['history-egypt-byzantine']]},
+ {id:'egypt-roman',name:'罗马与东罗马治下的埃及',en:'Roman and Byzantine Egypt',date:'前30—619年',c:HC.mino,items:[['history-egypt-roman'],['history-egypt-byzantine']]},
  {id:'persia-ancient',name:'古代伊朗',en:'Ancient Iran',date:'约前3200—前330年',c:HC.parthia,items:[['history-persia-elam'],['history-persia-achaemenid']]},
  {id:'persia-iranian',name:'安息与萨珊',en:'Parthians and Sasanians',date:'前141—651年',c:HC.parthia,items:[['history-persia-parthia'],['history-persia-sasanian'],['history-persia-khosrow'],['history-persia-khosrow-ii'],['history-arab-conquest']]}
 ];
@@ -2875,11 +2952,12 @@ const HISTORY_BRANCHES=[
  {id:'trunk',name:'希腊',en:'Greek world',lane:2},
  // 罗马: from the founding to the end of the West in 476, where it splits into 东罗马 and 中世纪西欧.
  {id:'rome',name:'罗马',en:'Rome',lane:3,parent:'trunk',from:-1000,to:476,c:HC.rome},
- // 东罗马 takes the Greek lane, free since the Greek world ran into Rome.
- {id:'east',name:'东罗马',en:'East Rome',lane:2,parent:'rome',from:476,to:641,c:HC.byz},
+ // 东罗马 takes the Greek lane, free since the Greek world ran into Rome; by dynasty to the end of the Macedonians.
+ {id:'east',name:'东罗马',en:'East Rome',lane:2,parent:'rome',from:476,to:1056,c:HC.byz},
  {id:'west',name:'中世纪西欧',en:'Medieval Western Europe',lane:4,parent:'rome',from:476,to:814,c:HC.celt},
- // The 基督教 line: from the Hebrews' nomadic origins (the old Levant branch) to the medieval church; on its own lane, right of the West.
- {id:'faith',name:'基督教',en:'Judaism & Christianity',lane:5,parent:'trunk',from:-1400,to:843,c:HC.faith},
+ // The 基督教 line: from the Hebrews' nomadic origins (the old Levant branch) to the schism of 1054; on its own lane, right of the West.
+ // After 641 it runs through the shared stations of the East Roman dynasties.
+ {id:'faith',name:'基督教',en:'Judaism & Christianity',lane:5,parent:'trunk',from:-1400,to:1056,c:HC.faith},
  // 埃及 and 波斯 leave the trunk at the early states (老无 2026-10-21): the Ptolemies, the Seleucids, Rome and Byzantium are passing rulers of these lands.
  {id:'egypt',name:'埃及',en:'Egypt',lane:1,parent:'trunk',from:-3100,to:642,c:HC.mino},
  {id:'persia',name:'波斯',en:'Persia',lane:0,parent:'trunk',from:-3200,to:651,c:HC.parthia},
@@ -2960,7 +3038,7 @@ const TREE_ROWS={
  'history-china-three-kingdoms/0':['china',190,316],
  'history-china-sixteen-kingdoms/0':['china',317,476],
  'history-empire-leo/0':['east',476,518,'457—518年'],
- 'history-empire-justinian/0':['east',518,565],
+ 'history-empire-justinian/0':['east',518,602],
  'history-west-kingdoms/0':['west',476,711],
  'history-faith-papacy/0':['faith',451,555],
  'history-china-sui/0':['china',494,589],
@@ -2975,19 +3053,23 @@ const TREE_ROWS={
  'history-persia-parthia/0':['persia',-141,224],
  'history-persia-sasanian/0':['persia',224,379],
  'history-persia-khosrow/0':['persia',379,579],
- 'history-empire-heraclius/0':[['east','persia','egypt'],602,641,'565—641年'],
+ 'history-empire-heraclius/0':[['east','persia','egypt'],602,641],
  'history-arab-conquest/0':[['persia','east','egypt'],622,651],
+ 'history-empire-constans/0':[['east','faith'],641,711],
+ 'history-empire-anarchy/0':['east',695,717],
+ 'history-empire-isaurian/0':[['east','faith'],717,802],
+ 'history-empire-amorian/0':[['east','faith'],802,867],
+ 'history-empire-macedonian/0':['east',867,1025,'867—1025年'],
  'history-faith-three-chapters/0':['faith',527,604],
- 'history-faith-monothelites/0':['faith',610,692],
- 'history-faith-icons/0':['faith',717,843],
  'history-west-merovingians/0':['west',561,751],
  'history-west-lombards/0':['west',568,756],
  'history-west-charlemagne/0':['west',768,814],
  'history-persia-khosrow-ii/0':['persia',579,602],
- 'history-china-tang/0':['china',589,845]
+ 'history-china-tang/0':['china',589,845],
+ 'history-empire-macedonian/3':[['east','faith'],1025,1056]
 };
 // Topics still to be written grow the tree as dashed shoots.
-const TREE_FUTURE=[['east',641,'东罗马（中世纪）','641年起 · 到1453年 · 希腊火守城与圣像之争先见“基督教”主线 · 待展开'],['west',814,'加洛林以后','814年起 · 待展开'],['faith',843,'走向东西分裂','843年起 · 待展开'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',651,'伊斯兰时代的伊朗','651年起 · 待展开'],['china',845,'晚唐五代与宋','845年起 · 待展开']];
+const TREE_FUTURE=[['east',1056,'东罗马（晚期）','1056年起 · 1071年曼齐刻尔特之战 · 1204年十字军攻破君士坦丁堡 · 到1453年 · 待展开'],['west',814,'加洛林以后','814年起 · 待展开'],['faith',1056,'大分裂以后','1054年起 · 十字军与东西两教会 · 待展开'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',651,'伊斯兰时代的伊朗','651年起 · 待展开'],['china',845,'晚唐五代与宋','845年起 · 待展开']];
 // Where a line stops it says why: [line, year, the event that ends it, note, the line it carries on in].
 const TREE_ENDS=[['trunk',-30,'并入罗马','前146年科林斯被毁 · 前30年最后一个希腊化王国埃及并入罗马','rome'],['rome',476,'西罗马终结','476年西部末代皇帝被废 · 分出东罗马与中世纪西欧']];
 function historyEra(e,scene=0){return HISTORY_ERAS.find(era=>era.items.some(([id,from=0,to=Infinity])=>id===e.id&&scene>=from&&scene<=to));}
