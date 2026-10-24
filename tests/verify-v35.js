@@ -13,7 +13,7 @@ const ERAS=[['empire-east','东罗马：利奥王朝与查士丁尼王朝',[['hi
  ['empire-heraclian','东罗马：希拉克略王朝与二十年无政府',[['history-empire-heraclius'],['history-empire-constans'],['history-empire-anarchy']]],
  ['empire-iconoclasm','东罗马：圣像之争时代',[['history-empire-isaurian'],['history-empire-amorian']]],
  ['empire-macedonian','东罗马：马其顿王朝',[['history-empire-macedonian',0,2],['history-empire-macedonian',3,3,'东西教会大分裂']]]];
-const SHORTS={'history-empire-justinian':['查士丁尼王朝','518—602年',7],'history-empire-heraclius':['希拉克略王朝','602—641年',5],
+const SHORTS={'history-empire-west-fall':['西罗马的终结','395—476年',6],'history-empire-justinian':['查士丁尼王朝','518—602年',7],'history-empire-heraclius':['希拉克略王朝','602—641年',5],
  'history-empire-constans':['希拉克略王朝（下）','641—711年',6],'history-empire-anarchy':['二十年无政府','695—717年',2],
  'history-empire-isaurian':['伊苏里亚王朝','717—802年',6],'history-empire-amorian':['阿莫里亚王朝','802—867年',4],'history-empire-macedonian':['马其顿王朝','867—1056年',4]};
 const EAST_TAIL=['history-empire-leo/0','history-empire-justinian/0','history-empire-heraclius/0','history-arab-conquest/0','history-empire-constans/0',
@@ -21,7 +21,16 @@ const EAST_TAIL=['history-empire-leo/0','history-empire-justinian/0','history-em
 const FAITH_TAIL=['history-faith-papacy/0','history-faith-three-chapters/0','history-empire-constans/0','history-empire-isaurian/0','history-empire-amorian/0','history-empire-macedonian/3'];
 const SHARED=['history-empire-constans/0','history-empire-isaurian/0','history-empire-amorian/0','history-empire-macedonian/3'];
 // 老无's core theses and hooks, woven into the right historical places and bolded (no conversational "后来/结果/他死之后事情怎么样了" copied verbatim).
-const BOLD=[['history-empire-justinian/6','查士丁尼身后留下的困局，与汉武帝如出一辙：收复的土地得而复失，大军损耗殆尽，财政破产，教派冲突与兵变交织'],
+const BOLD=[['history-empire-theodosius/2','394年9月冷河之战，狄奥多西征调两万西哥特同盟兵讨伐西部篡位者，首领阿拉里克率部履行义务顶在最前线，一战死伤过半'],
+ ['history-empire-west-fall/0','董卓式的军阀统帅阿拉里克'],['history-empire-west-fall/1','一个霍光式的人物'],
+ ['history-empire-west-fall/1','西哥特头子阿拉里克则是董卓式的人物：手握能战的蛮族私兵，在帝国腹地要官、要粮、要地'],
+ ['history-empire-west-fall/2','为救意大利，斯提里科从莱茵河与不列颠抽回兵员回防'],['history-empire-west-fall/2','与这位“董卓”密谋：封阿拉里克为大将，约好合兵攻打东罗马、夺取马其顿'],
+ ['history-empire-west-fall/2','斯提里科被北方战局死死拖住，把苦等在伊庇鲁斯的阿拉里克放了鸽子'],
+ ['history-empire-west-fall/3','因为皇权猜忌与宗教矛盾，西边小弟弟皇上大了之后杀了托孤大臣'],
+ ['history-empire-west-fall/3','三万人投奔阿拉里克；霍诺留躲在拉文纳，厌恶阿里乌派西哥特人，拒不谈判'],
+ ['history-empire-west-fall/3','410年8月攻进罗马，这是八百年来罗马头一回被外敌攻破。西哥特人洗劫三天，掳走财宝与皇妹加拉·普拉西提阿，但未屠城'],
+ ['history-empire-west-fall/4','北非是西罗马最富的粮仓和税源，西班牙与北非相继丢失后，赋税与漕粮断绝，罗马常备军急剧缩水，对日耳曼人失去了长期优势。'],
+ ['history-empire-justinian/6','查士丁尼身后留下的困局，与汉武帝如出一辙：收复的土地得而复失，大军损耗殆尽，财政破产，教派冲突与兵变交织'],
  ['history-empire-constans/1','教宗马丁一世被抓流放、他的主要神学助手修士马克西姆斯被割舌断手，根子都是因为带头违反《谕令》'],
  ['history-empire-constans/3','东方外敌压力骤减，被《谕令》强行按住的教会纷争再度抬头'],
  ['history-empire-constans/3','教义本身不那么重要，地盘一丢，教义就翻案'],
@@ -92,7 +101,7 @@ const REGIONS=['mThemeOpsikion','mThemeThrakesion','mThemeAnatolikon','mThemeArm
      egypt:[HISTORY_ENTRIES.find(e=>e.id==='history-egypt-byzantine').short,HISTORY_ERAS.find(e=>e.id==='egypt-roman').name],
      regions:REGIONS.filter(k=>!GEO.regions[k]),
      links:Object.keys(SHORTS).flatMap(id=>E(id).sources.map(s=>s.url)).filter(u=>!/^https:\/\//.test(u)),
-     cards:['history-empire-justinian/6','history-empire-constans/0','history-empire-constans/1','history-empire-constans/5','history-empire-isaurian/0','history-empire-isaurian/2',
+     cards:['history-empire-west-fall/1','history-empire-west-fall/3','history-empire-west-fall/4','history-empire-west-fall/5','history-empire-justinian/6','history-empire-constans/0','history-empire-constans/1','history-empire-constans/5','history-empire-isaurian/0','history-empire-isaurian/2',
       'history-empire-isaurian/3','history-empire-isaurian/5','history-empire-amorian/3','history-empire-macedonian/2'].filter(k=>!FIGURE_SCENES[k])};
    },{ERAS,SHORTS,SHARED,BOLD,FIXES,CHINA,REGIONS});
    // Dynasties as eras and sections, like the Rome chapter before them.
