@@ -388,6 +388,7 @@ Object.assign(HS,{
   b_kleidion:['克莱迪昂山口','Kleidion',41.37,23.04,'斯特鲁马河谷的山口；1014年巴西尔二世在此大败保加利亚。'],
   b_ohrid:['奥赫里德','Ohrid',41.117,20.8,'萨穆伊尔的保加利亚的都城与大主教座。'],
   b_civitate:['奇维塔泰','Civitate',41.74,15.27,'意大利东南的小城；1053年诺曼人在此打垮教宗利奥九世的军队，俘虏了教宗。'],
+  b_bari:['巴里','Bari',41.125,16.867,'南意大利亚得里亚海岸重镇；871年东罗马舰队与法兰克皇帝路易二世联手从阿拉伯人手中夺回，876年归入东罗马，后为南意大利总督驻地。'],
   w_paris:['巴黎','Paris',48.853,2.349,'561年分给卡里贝尔特；567年后兄弟共管；达戈贝尔特一世以此为都。'],
   w_orleans:['奥尔良','Orléans',47.902,1.909,'561年贡特拉姆分到的都城，他的王国后来叫勃艮第。'],
   w_reims:['兰斯','Reims',49.258,4.032,'561年西吉贝尔特分到的都城；后来奥斯特拉西亚的重心移到梅斯。'],
@@ -1809,24 +1810,27 @@ const HISTORY_ENTRIES=[
     hp(d,'i_pliska',{note:'864年保加尔汗鲍里斯受洗。'});hp(d,'b_melitene',{kind:'battle',note:'863年这里的埃米尔率军入侵，在黑海边被全歼。'});
    },[['fill',HC.athens,'东罗马'],['fill',HC.neutral,'保加尔汗国'],['fill',HC.faith,'教宗领地'],['dot',HC.war,'转守为攻'],['dot','#2a2018','新旧两个罗马与保加利亚']])
  ]},
-{id:'history-empire-macedonian',ch:5,title:'马其顿王朝：反攻与东西教会大分裂',short:'马其顿王朝',en:'The Macedonian Dynasty: Counter-attack and the Great Schism',period:'867—1056年',c:HC.byz,
+{id:'history-empire-macedonian',ch:5,title:'马其顿王朝：马其顿复兴与东西教会大分裂',short:'马其顿王朝',en:'The Macedonian Dynasty: Revival and the Great Schism',period:'867—1056年',c:HC.byz,
  scenes:[
-  hs('867—912年','马夫开创的长寿王朝','马夫巴西尔两次弑君登基，开了189年的马其顿王朝；他缓和罗马关系、重编希腊文法典，儿子利奥六世为四婚换掉牧首。',[[35.5,10.0],[43.5,31.0]],d=>{
+  hs('867—959年','宗教与文化：按住牧首，稳住教宗','对内任意废立牧首，对外怀柔罗马、与法兰克联兵收复南意大利稳住教宗；重办太学、编《帝国法典》，开启马其顿文艺复兴。',[[35.5,10.0],[44.5,31.5]],d=>{
     ha(d,'mByz842',HC.athens,{fillOpacity:.18});
-    hp(d,'adrianople',{note:'巴西尔生在这一带，当时叫马其顿军区。'});hp(d,'constantinople',{kind:'battle',note:'867年9月巴西尔带人闯进宫，杀了醉倒的米海尔三世。'});
-    hp(d,'rome',{note:'教宗支持伊格纳修斯；巴西尔请回伊格纳修斯，向罗马示好。'});
-   },[['fill',HC.athens,'东罗马（约867年）'],['dot',HC.war,'弑君的京城'],['dot','#2a2018','巴西尔的老家与罗马']]),
-  hs('863—976年','对阿拉伯的反攻与将门坐大','哈里发国四分五裂，东罗马收回梅利泰内、克里特、塔尔苏斯、塞浦路斯与安条克；打仗的小亚细亚将门越打越富。',[[32.0,20.0],[42.0,42.0]],d=>{
-    ha(d,'mByz842',HC.athens,{fillOpacity:.2});ha(d,'mByz1025',HC.athens,{fillOpacity:.06,dashArray:'4 4'});
-    hp(d,'b_melitene',{kind:'battle'});hp(d,'edessa',{note:'944年东罗马军围城，换回传说印着基督面容的圣布。'});
+    hp(d,'adrianople',{note:'巴西尔一世生在这一带，当时叫马其顿军区。'});hp(d,'constantinople',{kind:'battle',note:'867年巴西尔弑君夺位；879年会议与罗马和解；重办宫廷太学、编译六十卷《帝国法典》。'});
+    hp(d,'rome',{note:'教宗受阿拉伯海盗袭扰，有求于东罗马舰队，双方百余年不再决裂。'});
+    hp(d,'b_bari',{kind:'battle',note:'871年东罗马舰队助法兰克皇帝路易二世攻克，876年归入东罗马，后老福卡斯收复南意大利。'});
+   },[['fill',HC.athens,'东罗马（约867年）'],['dot',HC.war,'京城与收复的巴里'],['dot','#2a2018','巴西尔老家与罗马']]),
+  hs('920—1025年','内政：拆解将门与扩充中央军','小亚细亚将门兼并农兵田产坐大；巴西尔二世分化将门，收“折兵钱”与海贸关税，借六千罗斯精兵组建瓦良格卫队，立“连保代税法”抑兼并。',[[35.0,22.0],[53.5,43.0]],d=>{
+    ha(d,'mByz1025',HC.athens,{fillOpacity:.16});ha(d,'mRus1000',HC.celt,{fillOpacity:.14});
+    hp(d,'constantinople',{note:'收“折兵钱”与商业关税，扩充皇家近卫军与瓦良格卫队；996年土地法与1002年“连保代税法”。'});
+    hp(d,'f_cherson',{note:'988年弗拉基米尔在此受洗、迎娶皇妹安娜。'});hp(d,'b_kiev',{note:'基辅罗斯派兵六千助战，举国改信东正教。'});
+    hl(d,'小亚细亚将门（福卡斯、斯克莱罗斯）','Anatolian magnates (Phokas, Skleros)',38.8,34.5,HC.war);
+   },[['fill',HC.athens,'东罗马'],['fill',HC.celt,'基辅罗斯（约1000年）'],['dot','#2a2018','京城、受洗之地与基辅']]),
+  hs('863—1025年','战争：“保加尔屠夫”与反攻阿拉伯','趁阿拔斯哈里发国分裂，百年反攻收复梅利泰内、克里特、塔尔苏斯、塞浦路斯与安条克；1014年克莱迪昂大捷，1018年吞并保加利亚。',[[33.0,18.0],[45.5,43.5]],d=>{
+    ha(d,'mByz842',HC.athens,{fillOpacity:.16});ha(d,'mByz1025',HC.athens,{fillOpacity:.08,dashArray:'4 4'});ha(d,'mSamuel1000',HC.war,{fillOpacity:.22});
+    hp(d,'b_kleidion',{kind:'battle'});hp(d,'b_ohrid',{left:1});
+    hp(d,'b_melitene',{kind:'battle'});hp(d,'edessa',{note:'944年东罗马军围城，换回相传印着基督面容的圣布。'});
     hp(d,'b_chandax',{kind:'battle'});hp(d,'tarsus',{kind:'battle',note:'965年被尼基弗鲁斯·福卡斯攻下。'});
-    hp(d,'antioch',{kind:'battle',note:'969年10月东罗马收回安条克。'});hp(d,'constantinople');
-   },[['fill',HC.athens,'东罗马（约867年）'],['dash',HC.athens,'到1025年收回的地方'],['dot',HC.war,'934—969年收复的城']]),
-  hs('976—1025年','保加尔屠夫与罗斯受洗','巴西尔二世借罗斯兵平定将门叛乱，罗斯随之改信东正教；1014年克莱迪昂大捷，1018年吞并保加利亚。',[[36.0,18.0],[56.5,44.0]],d=>{
-    ha(d,'mByz1025',HC.athens,{fillOpacity:.18});ha(d,'mSamuel1000',HC.war,{fillOpacity:.2});ha(d,'mRus1000',HC.celt,{fillOpacity:.14});
-    hp(d,'b_kiev',{note:'988年起罗斯人改信东正教。'});hp(d,'f_cherson',{note:'988年弗拉基米尔攻下这里，989年在这里受洗、迎娶安娜。'});
-    hp(d,'b_kleidion',{kind:'battle'});hp(d,'b_ohrid',{left:1});hp(d,'constantinople');
-   },[['fill',HC.athens,'巴西尔二世死时的东罗马（1025年）'],['fill',HC.war,'萨穆伊尔的保加利亚（约1000年）'],['fill',HC.celt,'基辅罗斯（约1000年）'],['dot',HC.war,'1014年大捷'],['dot','#2a2018','受洗之地与两国都城']]),
+    hp(d,'antioch',{kind:'battle',note:'969年10月东罗马收复安条克。'});hp(d,'constantinople');
+   },[['fill',HC.athens,'东罗马（约867年）'],['dash',HC.athens,'到1025年收复的疆域'],['fill',HC.war,'萨穆伊尔的保加利亚（约1000年）'],['dot',HC.war,'克莱迪昂大捷与东线收复名城'],['dot','#2a2018','京城、奥赫里德与埃德萨']]),
   hs('1025—1056年','东西教会大分裂与王朝绝嗣','巴西尔二世无子，皇位随侄女婚床流转；1054年教宗使节与牧首互相绝罚，正式分裂；1056年马其顿王朝绝嗣。',[[36.0,8.0],[46.5,34.0]],d=>{
     ha(d,'mByz1025',HC.athens,{fillOpacity:.16});
     hp(d,'rome',{note:'教宗利奥九世派洪贝特等三人出使，1054年4月他在罗马去世。'});

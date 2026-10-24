@@ -42,15 +42,17 @@ const BOLD=[['history-empire-justinian/6','查士丁尼身后留下的困局，�
  ['history-empire-amorian/0','伊琳娜被废之后，帝国政局再度陷入动荡'],
  ['history-empire-amorian/2','人类可以以任意画一条线分为两派互相斗争。这是人类组织的自然属性。'],
  ['history-empire-amorian/3','查理曼在西方称帝、843年圣像之争收场之后，东罗马教会内部不再爆发大规模教义混战；虽仍有争夺牧首之位的派系倾轧，但已转为一致对外，联手抵制罗马教宗的管辖'],
- ['history-empire-macedonian/0','他开创的马其顿王朝延续189年（867—1056），把东罗马推向中世纪国力的顶峰，是到那时为止最长命的王朝'],
- ['history-empire-macedonian/1','马其顿王朝对阿拉伯世界展开了长达百年的大反攻'],
- ['history-empire-macedonian/2','罗斯自此改信东正教，六千罗斯精兵则留在京城组成著名的瓦良格卫队'],
+ ['history-empire-macedonian/0','宗教上使出两手：对内打压君士坦丁堡牧首、立定皇上才是老大；对外拉拢加震慑罗马教宗，让教宗跟东罗马皇帝闹不起来'],
+ ['history-empire-macedonian/1','内政重在对付小亚细亚的军事世家（形同北周隋唐的关陇集团）：分化瓦解、扩充中央军、抑制兼并三管齐下'],
+ ['history-empire-macedonian/1','导致中间贵族阶层坐大，重演了中国历代土地兼并的戏码'],
+ ['history-empire-macedonian/2','对外战争以巴西尔二世攻灭宿敌保加利亚为主轴，同时趁阿拉伯帝国衰落展开百年反攻'],
  ['history-empire-macedonian/3','东罗马教会自圣像之争结束后不再爆发内部教义混战，而是同罗马教廷一致对外争权，最终在1054年酿成东西教会大分裂']];
 // Factual corrections woven in place (no self-contradicting bold-then-refute).
 const FIXES=[['history-empire-constans/1','实则治的就是抗旨议论教义这一条'],['history-empire-constans/2','抄起沉重的铜水桶将他猛击致死（俗传为肥皂盒打死）'],
  ['history-empire-constans/5','下旨礼请教宗君士坦丁东来商议'],['history-empire-isaurian/0','若只画人性是割裂两性，若连神性同画又混同两性'],
  ['history-empire-isaurian/4','小亚细亚反圣像派军团拥护君士坦丁六世'],['history-empire-isaurian/4','797年春幼孙利奥夭折，8月伊琳娜便勾结将领把亲生儿子抓回他出生的紫色寝宫残忍刺瞎'],
- ['history-empire-isaurian/5','流放莱斯沃斯岛，次年病死'],['history-empire-macedonian/0','（仅次于末代的巴列奥略王朝）'],
+ ['history-empire-isaurian/5','流放莱斯沃斯岛，次年病死'],['history-empire-macedonian/0','（仅次于末代巴列奥略王朝的长寿王朝）'],
+ ['history-empire-macedonian/0','马其顿文艺复兴'],['history-empire-macedonian/1','折兵钱'],['history-empire-macedonian/1','瓦良格卫队'],['history-empire-macedonian/1','连保代税法'],
  ['history-empire-justinian/4','据普罗柯比，库思老怕染上'],['history-empire-justinian/4','据《秘史》']];
 // One Chinese parallel per new section.
 const CHINA=[['history-empire-constans','汉景帝'],['history-empire-anarchy','安重荣'],['history-empire-isaurian','武则天'],['history-empire-amorian','唐文宗'],['history-empire-macedonian','宋太祖']];
