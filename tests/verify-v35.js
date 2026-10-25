@@ -13,7 +13,7 @@ const ERAS=[['empire-east','东罗马：利奥王朝与查士丁尼王朝',[['hi
  ['empire-heraclian','东罗马：希拉克略王朝与二十年无政府',[['history-empire-heraclius'],['history-empire-constans'],['history-empire-anarchy']]],
  ['empire-iconoclasm','东罗马：圣像之争时代',[['history-empire-isaurian'],['history-empire-amorian']]],
  ['empire-macedonian','东罗马：马其顿王朝',[['history-empire-macedonian',0,2],['history-empire-macedonian',3,3,'东西教会大分裂']]]];
-const SHORTS={'history-empire-west-fall':['西罗马的终结','395—476年',6],'history-empire-justinian':['查士丁尼王朝','518—602年',7],'history-empire-heraclius':['希拉克略王朝','602—641年',5],
+const SHORTS={'history-empire-west-fall':['西罗马的终结','395—476年',8],'history-empire-justinian':['查士丁尼王朝','518—602年',7],'history-empire-heraclius':['希拉克略王朝','602—641年',5],
  'history-empire-constans':['希拉克略王朝（下）','641—711年',6],'history-empire-anarchy':['二十年无政府','695—717年',2],
  'history-empire-isaurian':['伊苏里亚王朝','717—802年',6],'history-empire-amorian':['阿莫里亚王朝','802—867年',4],'history-empire-macedonian':['马其顿王朝','867—1056年',4]};
 const EAST_TAIL=['history-empire-leo/0','history-empire-justinian/0','history-empire-heraclius/0','history-arab-conquest/0','history-empire-constans/0',
@@ -29,7 +29,17 @@ const BOLD=[['history-empire-theodosius/2','394年9月冷河之战，狄奥多�
  ['history-empire-west-fall/3','因为皇权猜忌与宗教矛盾，西边小弟弟皇上大了之后杀了托孤大臣'],
  ['history-empire-west-fall/3','三万人投奔阿拉里克；霍诺留躲在拉文纳，厌恶阿里乌派西哥特人，拒不谈判'],
  ['history-empire-west-fall/3','410年8月攻进罗马，这是八百年来罗马头一回被外敌攻破。西哥特人洗劫三天，掳走财宝与皇妹加拉·普拉西提阿，但未屠城'],
- ['history-empire-west-fall/4','北非是西罗马最富的粮仓和税源，西班牙与北非相继丢失后，赋税与漕粮断绝，罗马常备军急剧缩水，对日耳曼人失去了长期优势。'],
+ ['history-empire-west-fall/4','阿陶尔夫当上皇帝妹夫后过于亲罗马，415年被部下刺杀；所生混血幼子已夭折，留着皇妹没了用处，缺粮的西哥特人便拿她换了六十万斛小麦'],
+ ['history-empire-west-fall/4','把儿子与东帝狄奥多西二世的独生女定下娃娃亲。423年霍诺留死，瓦伦提尼安三世凭皇室血统、亡父旧部与东帝岳父大军护送得以登基'],
+ ['history-empire-west-fall/5','埃提乌斯多线受敌，北有高卢诸蛮族与匈人，内与太后争权未决，只得在435年绥靖汪达尔人、割让部分土地，腾出手在北线借匈人骑兵压服勃艮第与西哥特——后人常讥为战略失败，实则是内外交困下的无可奈何'],
+ ['history-empire-west-fall/5','埃提乌斯只能在442年承认汪达尔独立，接受盖萨里克送长子胡内里克当质子，并将皇帝长女许配给他'],
+ ['history-empire-west-fall/5','丢掉北非后，赋税与漕粮断绝，罗马常备军急剧缩水，对日耳曼人失去了长期优势'],
+ ['history-empire-west-fall/6','相传匈人是汉朝打败的匈奴人在西迁途中不断重组演化的族群'],
+ ['history-empire-west-fall/6','匈人掌握攻城技术，比日耳曼人更具威胁，连破数十城，逼得狄奥多西二世重金纳贡、449年派人暗杀阿提拉亦败露；但匈人是少数人统治多数日耳曼附庸，必须不断打仗分赃才能维持控制力'],
+ ['history-empire-west-fall/6','453年阿提拉纳少女伊尔迪科为妾，新婚夜饮酒大出血暴毙（亦传被小妾所杀）；强人一死，儿子内斗，势力作鸟兽散'],
+ ['history-empire-west-fall/7','外头消停了，瓦伦提尼安三世便着手搞掉权臣埃提乌斯：454年9月埃提乌斯汇报财政时，皇帝亲手拔剑将他砍死'],
+ ['history-empire-west-fall/7','半年后，权臣马克西穆斯唆使埃提乌斯旧部刺死皇帝，篡位后强娶皇后，又把已许配给汪达尔王子的公主改嫁自家儿子。汪达尔人当即渡海而来“保卫儿媳”，马克西穆斯落荒而逃，被罗马市民打死后碎尸游街，汪达尔人再次洗劫罗马'],
+ ['history-empire-west-fall/7','罗马陷落之后，西部罗马本地地主开始服从日耳曼征服者的统治——正如奥古斯丁《上帝之城》所言，信仰的正统在教会，皇帝的正统只是世俗道统；既然罗马城都被攻破了，皇帝的道统也就衰落了'],
  ['history-empire-justinian/6','查士丁尼身后留下的困局，与汉武帝如出一辙：收复的土地得而复失，大军损耗殆尽，财政破产，教派冲突与兵变交织'],
  ['history-empire-constans/1','教宗马丁一世被抓流放、他的主要神学助手修士马克西姆斯被割舌断手，根子都是因为带头违反《谕令》'],
  ['history-empire-constans/3','东方外敌压力骤减，被《谕令》强行按住的教会纷争再度抬头'],
@@ -101,7 +111,7 @@ const REGIONS=['mThemeOpsikion','mThemeThrakesion','mThemeAnatolikon','mThemeArm
      egypt:[HISTORY_ENTRIES.find(e=>e.id==='history-egypt-byzantine').short,HISTORY_ERAS.find(e=>e.id==='egypt-roman').name],
      regions:REGIONS.filter(k=>!GEO.regions[k]),
      links:Object.keys(SHORTS).flatMap(id=>E(id).sources.map(s=>s.url)).filter(u=>!/^https:\/\//.test(u)),
-     cards:['history-empire-west-fall/1','history-empire-west-fall/3','history-empire-west-fall/4','history-empire-west-fall/5','history-empire-justinian/6','history-empire-constans/0','history-empire-constans/1','history-empire-constans/5','history-empire-isaurian/0','history-empire-isaurian/2',
+     cards:['history-empire-west-fall/1','history-empire-west-fall/3','history-empire-west-fall/7','history-empire-justinian/6','history-empire-constans/0','history-empire-constans/1','history-empire-constans/5','history-empire-isaurian/0','history-empire-isaurian/2',
       'history-empire-isaurian/3','history-empire-isaurian/5','history-empire-amorian/3','history-empire-macedonian/2'].filter(k=>!FIGURE_SCENES[k])};
    },{ERAS,SHORTS,SHARED,BOLD,FIXES,CHINA,REGIONS});
    // Dynasties as eras and sections, like the Rome chapter before them.

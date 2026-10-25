@@ -77,7 +77,7 @@ const IDS=['history-faith-israel','history-faith-first-temple','history-faith-se
      // 老无 2026-10-18 (Telegram): why the quarrels never ended — his theory as the councils' closing scene; the 罗马 and 基督教 lines point at each other; China's ever stronger throne.
      ['history-faith-two-cities/2','吃精英阶层'],['history-faith-two-cities/2','智识含量'],['history-faith-two-cities/2','争权的战场'],['history-faith-two-cities/2','皇权是放大器'],
      ['history-faith-two-cities/2','化繁为简'],['history-faith-two-cities/2','归于一尊'],['history-faith-two-cities/2','各归一尊'],['history-faith-two-cities/2','“中世纪西欧”主线'],['history-faith-two-cities/2','“中国”主线'],
-     ['history-faith-councils/1','“罗马”主线'],['history-faith-ephesus/2','“罗马”主线'],['history-empire-theodosius/1','“基督教”主线'],['history-empire-west-fall/4','“基督教”主线'],
+     ['history-faith-councils/1','“罗马”主线'],['history-faith-ephesus/2','“罗马”主线'],['history-empire-theodosius/1','“基督教”主线'],['history-empire-west-fall/7','“基督教”主线'],
      ['history-china-sixteen-kingdoms/1','皇权强，而且越来越强'],['history-china-sixteen-kingdoms/1','人口密度和反抗成本'],['history-china-sixteen-kingdoms/1','王与马，共天下'],
      ['history-china-sixteen-kingdoms/1','沙门不敬王者论'],['history-china-sixteen-kingdoms/1','当今如来'],['history-china-sixteen-kingdoms/1','与我抗衡'],
      ['history-china-sixteen-kingdoms/1','“罗马”主线'],['history-china-sixteen-kingdoms/1','“基督教”主线'],

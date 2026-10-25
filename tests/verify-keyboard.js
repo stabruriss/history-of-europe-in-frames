@@ -60,7 +60,7 @@ const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','
    for(let i=e.count-2;i>=0;i--){await p.keyboard.press('ArrowLeft');assert.equal((await state(p)).textScene,i);}
    await p.keyboard.press('ArrowLeft');assert.equal((await state(p)).scene,0);
   }
-  assert.equal(count,344);
+  assert.equal(count,346);
   // Meaningful correspondence, rather than several events sharing one summary paragraph.
   for(const [scene,word] of [['history-persian-wars/2','马拉松'],['history-persian-wars/3','萨拉米斯'],['history-celts/1','加拉太'],['history-celts/2','帕加马']]){
    await p.evaluate(scene=>go(scene),scene);assert.ok(await p.$eval('#sceneContext>p',(e,word)=>e.textContent.replace(/（[A-Za-z][^）]*）/g,'').includes(word),word));
@@ -92,6 +92,6 @@ const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','
   await animated.waitForFunction(()=>{const t=document.querySelector('#sceneContext .passage-title').getBoundingClientRect(),b=readerBody.getBoundingClientRect();return t.top>=b.top-1&&t.top<b.bottom;});
   assert.equal((await state(animated)).scene,5);await visible(animated,'rapid animated switching');
   await animated.screenshot({path:path.join(__dirname,'shots-v6','keyboard-desktop.png')});await animated.close();
-  assert.deepEqual(errors,[]);console.log('PASS: 8 metro lines (23/32/42/36/19/12/12/12 stations, all 100 rows; 罗马 to 476, then 东罗马 and 中世纪西欧; 东罗马 by dynasty to 1056; shared stations walked on every line they sit on) walked up/down in time order; 344 scene-to-text passages with real arrow keys; era boundaries; map/reader/rail focus; input and modifiers; 33-stop geography timeline; mobile scrolling and fold restoration; rapid animated changes; offline; no page errors.');
+  assert.deepEqual(errors,[]);console.log('PASS: 8 metro lines (23/32/42/36/19/12/12/12 stations, all 100 rows; 罗马 to 476, then 东罗马 and 中世纪西欧; 东罗马 by dynasty to 1056; shared stations walked on every line they sit on) walked up/down in time order; 346 scene-to-text passages with real arrow keys; era boundaries; map/reader/rail focus; input and modifiers; 33-stop geography timeline; mobile scrolling and fold restoration; rapid animated changes; offline; no page errors.');
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});
