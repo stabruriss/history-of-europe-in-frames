@@ -82,6 +82,20 @@ const CARDS=[[ID+'/1','theodoric-great',/人质/],[ID+'/3','theodoric-great',/�
    }
    await page.evaluate(id=>go(id,{scene:2}),ID);await wait(80);
    assert.equal(await page.$eval('#entryEyebrow',e=>e.textContent),'中世纪早期：蛮族诸王国 · 第六章');
+   // 老无 2026-10-25: 法兰克人的分家账 drawn as a family tree; the names that repeat carry an identifying tag, in the drawing and in the prose.
+   await page.evaluate(()=>go('history-west-charlemagne',{scene:5}));await wait(120);
+   const tree=await page.evaluate(()=>{const b=[...document.querySelectorAll('#sceneContext .box')].find(x=>x.querySelector('.box-tag').firstChild.textContent==='法兰克人的分家账');
+    const s=b&&b.querySelector('svg.kin-tree');if(!s)return null;const r=s.getBoundingClientRect(),br=b.getBoundingClientRect();
+    return {text:s.textContent,fits:r.width<=br.width&&r.width>250,overflow:document.documentElement.scrollWidth>innerWidth,after:b.textContent.includes('算账')};});
+   assert.ok(tree&&tree.fits&&!tree.overflow&&tree.after,JSON.stringify(tree&&{fits:tree.fits,overflow:tree.overflow}));
+   for(const w of ['丕平二世（宫相）','查理·马特（铁锤）','丕平三世（献土）','查理曼（大帝）','卡洛曼（出家）','卡洛曼（早死）','路易（虔诚者）','路易（日耳曼人）','查理（秃头）','克洛泰尔一世（收齐）','希尔德里克三世（末代）','511年','843年'])
+    assert.ok(tree.text.includes(w),'tree lacks '+w);
+   const tags=await page.evaluate(()=>{const E=id=>HISTORY_ENTRIES.find(e=>e.id===id),p=(id,i)=>{const d=document.createElement('div');d.innerHTML=E(id).html;return [...d.querySelectorAll('[data-scene-text]')][i].textContent.replace(/（[A-Za-z][^）]*）/g,'');};
+    return [p('history-west-merovingians',3).includes('查理·马特（铁锤）'),p('history-west-merovingians',4).includes('丕平（矮子丕平）'),p('history-west-lombards',4).includes('“丕平献土”'),
+     p('history-west-charlemagne',0).includes('查理（即查理曼大帝）'),p('history-west-charlemagne',5).includes('“虔诚者”路易')];});
+   assert.deepEqual(tags,[true,true,true,true,true],'identifying tags in the prose');
+   if(label==='desktop')await page.evaluate(()=>[...document.querySelectorAll('#sceneContext .box')].at(-1).scrollIntoView({block:'start'}));
+   await page.screenshot({path:path.join(shots,`frank-tree-${label}.png`)});
    for(let i=0;i<SCENES.length;i++){
     const s=await page.evaluate(({ID,i})=>{go(ID,{scene:i});const sc=activeScene(ENTRIES[cur]);
      return {pins:Object.keys(pinIndex).length,layers:group.getLayers().length,legend:legend.children.length,fits:map.getBounds().contains(L.latLngBounds(sc.view)),overflow:document.documentElement.scrollWidth>innerWidth};},{ID,i});
@@ -106,6 +120,6 @@ const CARDS=[[ID+'/1','theodoric-great',/人质/],[ID+'/3','theodoric-great',/�
   assert.deepEqual(errors,[]);
   console.log('PASS: 东哥特王国 476—568 on 中世纪西欧, between 蛮族诸王国 and 墨洛温王朝 — seven scenes (Odoacer and the lie of the land, Zeno’s two Theodorics, the Hongmen banquet, Goths under arms and Romans at the desks, Amalasuntha lending Sicily, the Gothic War and Italian hearts, the Lombards); '
    +BOLD.length+' of 老无’s theses in bold, '+FIXES.length+' corrections in plain text; 刘渊, 鸿门宴, 孝文帝 and 侯景之乱 beside them; four iconic moments and five cards; 蛮族诸王国 down to five scenes with its moments and cards moved up; '
-   +'the Justinian section and this one point at each other; ≤300 chars per scene; desktop and 390px; no page errors.');
+   +'the Justinian section and this one point at each other; 法兰克人的分家账 drawn as a family tree with identifying tags (铁锤, 宫相, 献土, 大帝 …), and the same tags in the prose; ≤300 chars per scene; desktop and 390px; no page errors.');
  }catch(e){console.error(e);process.exitCode=1;}finally{await browser.close();}
 })();
