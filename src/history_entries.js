@@ -368,6 +368,16 @@ Object.assign(HS,{
   r_dastagird:['达斯塔吉尔德','Dastagird',33.98,44.93,'泰西封东北约百公里的萨珊王家行宫；628年1月被希拉克略洗劫。'],
   r_yarmouk:['雅穆克河谷','Yarmouk',32.81,35.95,'戈兰高地南侧的河谷；636年8月东罗马大军在此溃败，叙利亚归了穆斯林。'],
   r_babylon_eg:['巴比伦堡','Babylon Fortress',30.006,31.23,'尼罗河三角洲顶端的要塞（今开罗老城）；641年4月被阿慕尔攻下，居鲁士在此签约交出埃及。'],
+  r_placentia:['皮亚琴察','Placentia / Piacenza',45.05,9.69,'波河边的城；456年阿维图斯在此兵败，476年俄瑞斯忒斯在此被杀。'],
+  r_dertona:['托尔托纳','Dertona / Tortona',44.9,8.86,'461年8月马约里安在此被李希梅尔扒去紫袍，五天后斩首。'],
+  r_orbigo:['奥尔维戈河','Órbigo',42.46,-5.88,'阿斯托加附近的河；456年10月西哥特王狄奥多里克二世在此大败苏维汇人。'],
+  r_illici:['伊利奇港','Portus Illicitanus',38.19,-0.56,'今圣波拉；460年马约里安的舰队停在这一带，被汪达尔人买通内奸烧毁。'],
+  r_deols:['德奥勒','Déols',46.83,1.7,'469年前后，不列颠王里奥萨穆斯带来的援军在此被西哥特王尤里克打垮。'],
+  r_caralis:['卡拉利斯','Caralis / Cagliari',39.22,9.11,'撒丁岛的首府；468年马塞利努斯从汪达尔人手里拿下撒丁岛。'],
+  o_novae:['诺瓦','Novae',43.61,25.39,'多瑙河南岸的军团大营；483—488年阿马尔哥特人在此一带驻扎。'],
+  o_isonzo:['伊松佐河','Isonzo',45.85,13.55,'意大利东北门户的河；489年8月狄奥多里克在此击败奥多亚克。'],
+  o_adda:['阿达河','Adda',45.53,9.52,'波河北岸的支流；490年8月狄奥多里克在此大败奥多亚克。'],
+  o_bolsena:['博尔塞纳湖','Lake Bolsena',42.62,11.9,'湖中的马尔塔纳小岛；535年阿玛拉逊莎被囚在此，死在浴室里。'],
   f_grado:['格拉多','Grado',45.68,13.39,'阿奎莱亚南边潟湖里的小岛；568年伦巴第人进来，阿奎莱亚主教带着教会的财宝逃到这里。'],
   f_faras:['法拉斯','Faras / Pachoras',22.2,31.48,'努比亚北部诺巴德人的王城；约543年皇后派的传教士抢先到了这里。'],
   f_jabiya:['贾比亚','Jabiya',32.92,35.97,'戈兰高地上加萨尼阿拉伯人的营地；他们的王哈里斯替罗马守沙漠，信一性论。'],
@@ -1512,7 +1522,7 @@ const HISTORY_ENTRIES=[
     hl(d,'阿提拉的营地（约449年，概略）','Attila’s camp, c. 449',46.9,20.6,HC.war);
    },[['fill',HC.war,'匈人的天下（约450年，概略）'],['fill',HC.athens,'东罗马'],['dot',HC.war,'被匈人攻破的城'],['dot','#2a2018','新都']])
  ]},
-{id:'history-empire-west-fall',ch:5,title:'西罗马的终结',short:'西罗马的终结',en:'The End of the Western Empire',period:'395—476年',c:HC.rome,hideBase:['alps'],
+{id:'history-empire-west-fall',ch:5,title:'西罗马的终结',short:'西罗马的终结',en:'The End of the Western Empire',period:'395—455年',c:HC.rome,hideBase:['alps'],
  scenes:[
   hs('370—454年','匈人西来','匈人从草原西来，赶得哥特人逃过多瑙河；日耳曼人在逃难、投靠和被征服中捏成几大军事集团；453年阿提拉死，匈人的天下散了。',[[38.5,-6.5],[56.5,48.5]],d=>{
     ha(d,'eWest395',HC.rome,{fillOpacity:.1});ha(d,'eEast395',HC.athens,{fillOpacity:.1});ha(d,'eHuns450',HC.war,{fillOpacity:.2});
@@ -1578,16 +1588,89 @@ const HISTORY_ENTRIES=[
     hl(d,'453年：阿提拉新婚夜暴毙，诸子内斗瓦解','Attila dies 453; empire breaks up',47.2,20.5,HC.war);
     hr(d,[[47.0,20.0],[49.5,11.0],[48.8,4.4]],HC.war);
    },[['fill',HC.war,'阿提拉的匈人帝国（约450年）'],['fill',HC.rome,'西罗马'],['fill',HC.athens,'东罗马'],['dline',HC.war,'451年阿提拉西征高卢（概略）'],['dot',HC.war,'攻破的坚城与卡塔隆之战']]),
-  hs('454—476年','手刃权臣、汪达尔劫城与道统终结','454年瓦伦提尼安三世亲手砍死埃提乌斯，半年后被马克西穆斯所杀；455年汪达尔人渡海“保卫儿媳”洗劫罗马；476年奥多亚克废掉末代皇帝，把冠服送回君士坦丁堡。',[[29.5,-11.0],[56.0,30.5]],d=>{
-    ha(d,'e476Visigoths',HC.celt,{fillOpacity:.32});ha(d,'e476Suebi',HC.myc,{fillOpacity:.32});ha(d,'e476Franks',HC.macedon,{fillOpacity:.3});
-    ha(d,'e476Soissons',HC.rome,{fillOpacity:.3});ha(d,'e476Burgundians',HC.thebes,{fillOpacity:.32});ha(d,'e476Vandals',HC.mino,{fillOpacity:.32});
-    ha(d,'e476Odoacer',HC.war,{fillOpacity:.22});ha(d,'eEast395',HC.athens,{fillOpacity:.2});
-    hp(d,'catalaunian',{kind:'battle'});hp(d,'ravenna',{note:'476年9月4日，奥多亚克在此废掉罗慕路斯·奥古斯都路斯。'});
-    hp(d,'rome',{note:'455年6月，汪达尔人洗劫罗马两个星期。'});hp(d,'constantinople');
-    [['西哥特王国','Visigoths',40.6,-3.6,HC.celt],['苏维汇人','Suebi',42.4,-7.9,HC.myc],['法兰克人','Franks',51.4,5.4,HC.macedon],['苏瓦松','Soissons',49.4,0.9,HC.rome],
-     ['勃艮第人','Burgundians',46.2,5.5,HC.thebes],['汪达尔王国','Vandals',34.4,8.6,HC.mino],['奥多亚克的意大利','Odoacer\'s Italy',40.3,16.4,HC.war],['东罗马','Eastern Empire',42.0,23.4,HC.athens],
+  hs('454—455年','手刃权臣、汪达尔劫城与道统衰落','454年瓦伦提尼安三世亲手砍死埃提乌斯，半年后被马克西穆斯所杀；455年汪达尔人渡海“保卫儿媳”洗劫罗马；西部的罗马地主转而顺从日耳曼征服者。',[[35.0,5.0],[44.6,17.0]],d=>{
+    ha(d,'eWest395',HC.rome,{fillOpacity:.12});ha(d,'e476Vandals',HC.mino,{fillOpacity:.28});
+    hp(d,'rome',{kind:'battle',note:'454年9月埃提乌斯在宫中被皇帝砍死；455年3月皇帝遇刺，6月汪达尔人洗劫两个星期。'});
+    hp(d,'ostia',{left:1,note:'455年5月底汪达尔舰队在台伯河口登陆，6月2日开进罗马城。'});
+    hp(d,'carthage',{note:'盖萨里克的都城；455年他从这里渡海“保卫儿媳”。'});
+    hp(d,'hippo',{note:'奥古斯丁在此写完《上帝之城》：信仰的正统在教会，皇帝只是世俗的道统。'});
+    hr(d,[[36.85,10.3],[38.6,11.6],[41.73,12.28]],HC.war);
+   },[['fill',HC.rome,'西罗马'],['fill',HC.mino,'汪达尔王国（455年起又占诸岛）'],['dline',HC.war,'455年汪达尔舰队渡海（概略）'],['dot',HC.war,'手刃权臣与洗劫罗马'],['dot','#2a2018','迦太基与写《上帝之城》的希波']])
+ ]},
+{id:'history-empire-west-end',ch:5,title:'西罗马的终结（下）：二十一年八个皇帝',short:'西罗马的终结（下）',en:'The End of the Western Empire (II): Eight Emperors in Twenty-One Years',period:'455—476年',c:HC.rome,hideBase:['alps'],
+ scenes:[
+  hs('455—462年','两位公主：一嫁汪达尔，一嫁元老','汪达尔人把皇后与两位公主掳到迦太基；大公主嫁胡内里克，小公主462年被赎到君士坦丁堡，与元老丈夫奥利布里乌斯团聚。',[[29.5,7.0],[44.5,37.0]],d=>{
+    ha(d,'eWest395',HC.rome,{fillOpacity:.08});ha(d,'eEast395',HC.athens,{fillOpacity:.12});ha(d,'e476Vandals',HC.macedon,{fillOpacity:.26});
+    hp(d,'rome',{kind:'battle',note:'455年6月被汪达尔人洗劫两个星期，皇后和两位公主被掳走。'});
+    hp(d,'carthage',{note:'大公主欧多基娅在此嫁给胡内里克，生下后来的汪达尔王希尔德里克。'});
+    hp(d,'constantinople',{note:'462年皇后和小公主普拉西提阿被赎到这里，与元老奥利布里乌斯团聚。'});
+    hp(d,'jerusalem',{note:'欧多基娅晚年出走至此，葬在她祖母、东罗马皇后欧多基娅的墓里。'});
+    hr(d,[[41.73,12.28],[38.6,11.6],[36.85,10.3]],HC.war);
+    hr(d,[[36.85,10.3],[36.2,15.0],[36.3,21.5],[37.6,24.3],[40.1,26.2],[41.0,28.97]],HC.athens);
+   },[['fill',HC.macedon,'汪达尔王国'],['fill',HC.athens,'东罗马'],['dline',HC.war,'455年掳往迦太基（概略）'],['dline',HC.athens,'462年赎往君士坦丁堡（概略）'],['dot','#2a2018','两位公主的去处']]),
+  hs('455—461年','北联西哥特、南征汪达尔','西哥特王拥立高卢皇帝阿维图斯；马约里安打服西哥特、借他们打苏维汇，在西班牙备船南征，460年船被烧，次年被李希梅尔斩首。',[[36.0,-10.0],[47.8,13.5]],d=>{
+    ha(d,'eWest460',HC.rome,{fillOpacity:.16});ha(d,'eVisigoths460',HC.mino,{fillOpacity:.28});
+    ha(d,'e476Suebi',HC.thebes,{fillOpacity:.3});ha(d,'e476Vandals',HC.macedon,{fillOpacity:.2});
+    hp(d,'tolosa',{note:'455年西哥特王狄奥多里克二世在此拥立阿维图斯称帝。'});hp(d,'r_orbigo',{kind:'battle'});
+    hp(d,'r_placentia',{kind:'battle',note:'456年10月阿维图斯在此被李希梅尔和马约里安打垮，被迫去当主教。'});
+    hp(d,'arelate',{kind:'battle',note:'458—459年马约里安在此打服西哥特，重订盟约。'});
+    hp(d,'r_illici',{kind:'battle'});hp(d,'r_dertona',{kind:'battle',left:1});ha(d,'eBurgundians460',HC.celt,{fillOpacity:.3});
+    hr(d,[[45.05,9.69],[44.4,8.0],[43.68,4.63],[43.6,1.44],[41.65,-0.88],[39.5,-0.9],[38.19,-0.56]],HC.rome);
+   },[['fill',HC.rome,'马约里安治下的西罗马（约460年，概略）'],['fill',HC.mino,'西哥特同盟者（约460年）'],['fill',HC.thebes,'苏维汇'],['fill',HC.macedon,'汪达尔'],['fill',HC.celt,'勃艮第人（萨伏依）'],['dline',HC.rome,'马约里安西征（概略）'],['dot',HC.war,'456—461年的几处战场与刑场']]),
+  hs('461—467年','傀儡与正统：请东边派皇帝','李希梅尔扶起塞维鲁，东罗马不认，高卢与达尔马提亚各自割据，汪达尔人年年劫掠；西部只认东边是正统，只好请利奥派皇帝。',[[34.5,-3.5],[51.0,30.0]],d=>{
+    ha(d,'e476Odoacer',HC.rome,{fillOpacity:.22});ha(d,'eDalmatia460',HC.rome,{fillOpacity:.12,dashArray:'5 4'});
+    ha(d,'e476Soissons',HC.rome,{fillOpacity:.12,dashArray:'5 4'});ha(d,'eVisigoths460',HC.mino,{fillOpacity:.24});
+    ha(d,'e476Vandals',HC.macedon,{fillOpacity:.22});ha(d,'eEast395',HC.athens,{fillOpacity:.16});
+    hp(d,'ravenna',{note:'461—465年李希梅尔扶起的塞维鲁在此坐朝，东罗马始终不认。'});
+    hp(d,'soissons',{note:'埃吉迪乌斯不认塞维鲁，在卢瓦尔河以北自立，多半仍奉利奥为主。'});
+    hp(d,'salona',{note:'马塞利努斯据达尔马提亚自立，与东罗马合作。'});
+    hp(d,'narbo',{note:'462年西部朝廷为借西哥特兵打埃吉迪乌斯，把纳博讷割给了他们。'});
+    hp(d,'constantinople',{note:'467年西部请利奥一世派皇帝。'});hp(d,'carthage');
+    hr(d,[[36.85,10.3],[37.6,13.0],[38.6,15.8]],HC.war);hr(d,[[36.85,10.3],[36.9,16.5],[37.3,21.3]],HC.war);
+   },[['fill',HC.rome,'李希梅尔与塞维鲁的意大利'],['dash',HC.rome,'不认塞维鲁的高卢北部与达尔马提亚'],['fill',HC.mino,'西哥特'],['fill',HC.macedon,'汪达尔'],['fill',HC.athens,'东罗马'],['dline',HC.war,'汪达尔人年年劫掠（概略）']]),
+  hs('467—468年','利奥送来的皇帝与联合舰队','利奥把能威胁自己皇位的安提米乌斯派去西边当皇帝；468年东西合兵一千一百多艘船远征北非，在邦角外被火船烧败。',[[30.5,7.0],[44.0,30.0]],d=>{
+    ha(d,'e476Odoacer',HC.rome,{fillOpacity:.22});ha(d,'e476Vandals',HC.macedon,{fillOpacity:.26});ha(d,'eEast395',HC.athens,{fillOpacity:.16});
+    hp(d,'serdica',{kind:'battle',note:'466—467年冬，安提米乌斯在此困住渡过冰封多瑙河的匈人，逼他们出战投降。'});
+    hp(d,'rome',{note:'467年4月12日安提米乌斯在城外称帝。'});
+    hp(d,'constantinople',{note:'468年利奥一世在此集结一千一百多艘船。'});
+    hp(d,'capebon',{kind:'battle',note:'468年巴西利斯库斯中了五天停战之计，被火船烧得大败。'});hp(d,'carthage',{left:1});
+    hp(d,'leptis',{note:'468年东罗马将领赫拉克利乌斯在的黎波里塔尼亚登陆，向迦太基进逼。'});
+    hp(d,'r_caralis',{left:1});
+    hr(d,[[41.0,28.97],[38.6,25.6],[36.6,22.4],[37.0,16.5],[37.08,11.04]],HC.athens);hr(d,[[38.1,13.4],[39.4,9.9]],HC.rome);
+   },[['fill',HC.rome,'西罗马（意大利）'],['fill',HC.macedon,'汪达尔王国'],['fill',HC.athens,'东罗马'],['dline',HC.athens,'468年东西合兵攻北非（概略）'],['dot',HC.war,'塞尔迪卡与邦角'],['dot','#2a2018','两京、迦太基与东西两路登陆处']]),
+  hs('468—472年','西哥特扩张与拥立者的内战','舰队一败，尤里克的西哥特人四面扩张；471年皇子率军在阿雷拉特大败战死；472年李希梅尔围罗马，安提米乌斯被斩首。',[[39.0,-6.5],[49.5,14.0]],d=>{
+    ha(d,'e476Visigoths',HC.mino,{fillOpacity:.26});ha(d,'e476Burgundians',HC.celt,{fillOpacity:.24});
+    ha(d,'e476Odoacer',HC.rome,{fillOpacity:.2});ha(d,'e476Soissons',HC.rome,{fillOpacity:.12,dashArray:'5 4'});
+    hp(d,'tolosa',{note:'尤里克的都城；468年以后他不再当罗马的同盟者。'});hp(d,'r_deols',{kind:'battle'});
+    hp(d,'arelate',{kind:'battle',note:'471年皇子安提米奥卢斯在此渡罗讷河迎战尤里克，大败，皇子与三员大将战死。'});
+    hp(d,'mediolanum',{note:'470年李希梅尔带六千兵移驻米兰，与皇帝分庭抗礼。'});
+    hp(d,'rome',{kind:'battle',note:'472年李希梅尔围城五个月，7月安提米乌斯被斩首。'});
+    hr(d,[[43.6,1.44],[45.2,1.6],[46.83,1.70]],HC.mino);hr(d,[[43.6,1.44],[42.8,-1.65],[41.65,-0.88],[41.12,1.25]],HC.mino);
+    hr(d,[[45.07,7.68],[44.5,6.2],[43.68,4.63]],HC.rome);
+   },[['fill',HC.mino,'尤里克的西哥特（到475年前后）'],['fill',HC.celt,'勃艮第'],['fill',HC.rome,'西罗马（意大利）'],['dline',HC.mino,'西哥特扩张（概略）'],['dline',HC.rome,'471年皇子西征（概略）'],['dot',HC.war,'德奥勒、阿雷拉特与罗马之围']]),
+  hs('472—476年','走马灯与冠服东归','格利凯里乌斯、尼波斯、罗慕路斯走马灯；476年奥多亚克废了小皇帝，不称帝，让元老院把冠服仪仗送给东罗马皇帝芝诺。',[[36.5,1.0],[47.5,30.0]],d=>{
+    ha(d,'e476Odoacer',HC.war,{fillOpacity:.2});ha(d,'eDalmatia460',HC.rome,{fillOpacity:.22});
+    ha(d,'e476Visigoths',HC.mino,{fillOpacity:.2});ha(d,'eEast395',HC.athens,{fillOpacity:.16});
+    hp(d,'salona',{note:'474年格利凯里乌斯被废后在此当主教；475年尼波斯逃回这里，480年遇刺。'});
+    hp(d,'clermont',{note:'475年尼波斯拿它所在的奥弗涅向西哥特换和。'});
+    hp(d,'r_placentia',{kind:'battle',note:'476年8月28日俄瑞斯忒斯在此被奥多亚克所杀。'});
+    hp(d,'ravenna',{kind:'battle',note:'476年9月4日罗慕路斯在此被废。'});
+    hp(d,'naples',{note:'被废的罗慕路斯送到海湾边的卢库卢斯别墅，每年领六千金币。'});
+    hp(d,'constantinople',{note:'元老院把西部皇帝的冠服和仪仗送到芝诺这里。'});
+    hr(d,[[44.42,12.2],[42.0,15.8],[40.6,19.0],[39.6,20.5],[40.6,23.0],[41.0,28.97]],HC.war);
+   },[['fill',HC.war,'奥多亚克的意大利（476年）'],['fill',HC.rome,'尼波斯退守的达尔马提亚'],['fill',HC.mino,'西哥特'],['fill',HC.athens,'东罗马'],['dline',HC.war,'冠服仪仗送往君士坦丁堡（概略）'],['dot',HC.war,'476年的皮亚琴察与拉文纳']]),
+  hs('476年以后','以罗马人治罗马人，从收税到分地','蛮族诸王用罗马元老与主教治理罗马人，像十六国君主用汉人士人；东罗马照旧收税养兵，西部改成分地养兵，为封建打下了底子。',[[29.5,-11.0],[56.0,30.5]],d=>{
+    ha(d,'e476Visigoths',HC.mino,{fillOpacity:.26});ha(d,'e476Suebi',HC.thebes,{fillOpacity:.3});ha(d,'e476Franks',HC.myc,{fillOpacity:.2,dashArray:'5 4'});
+    ha(d,'e476Soissons',HC.rome,{fillOpacity:.26});ha(d,'e476Burgundians',HC.celt,{fillOpacity:.26});ha(d,'e476Vandals',HC.macedon,{fillOpacity:.26});
+    ha(d,'e476Odoacer',HC.war,{fillOpacity:.2});ha(d,'eEast395',HC.athens,{fillOpacity:.2});
+    hp(d,'ravenna',{note:'奥多亚克、狄奥多里克先后在此建都，衙门照旧全由罗马元老坐堂。'});
+    hp(d,'tolosa',{note:'西哥特都城：尤里克给哥特人编法典，506年阿拉里克二世给罗马人编罗马法摘要。'});
+    hp(d,'clermont',{note:'西多尼乌斯先领着城里人守城，城割给西哥特后又在尤里克治下当主教。'});
+    hp(d,'constantinople',{note:'东罗马照旧按地收税、发饷养兵。'});
+    [['西哥特王国','Visigoths',40.6,-3.6,HC.mino],['苏维汇人','Suebi',42.4,-7.9,HC.thebes],['法兰克人','Franks',51.4,5.4,HC.myc],['苏瓦松','Soissons',49.4,0.9,HC.rome],
+     ['勃艮第人','Burgundians',46.2,5.5,HC.celt],['汪达尔王国','Vandals',34.4,8.6,HC.macedon],['奥多亚克的意大利','Odoacer’s Italy',40.3,16.4,HC.war],['东罗马','Eastern Empire',42.0,23.4,HC.athens],
      ['阿勒曼尼人','Alamanni',47.6,9.7,HC.neutral],['不列颠：410年罗马撤走','Britain: abandoned 410',52.7,-1.6,HC.neutral]].forEach(([t,en,la,lo,c])=>hl(d,t,en,la,lo,c));
-   },[['fill',HC.celt,'西哥特'],['fill',HC.mino,'汪达尔'],['fill',HC.macedon,'法兰克'],['fill',HC.thebes,'勃艮第'],['fill',HC.myc,'苏维汇'],['fill',HC.rome,'苏瓦松（罗马残部，到486年）'],['fill',HC.war,'奥多亚克的意大利'],['fill',HC.athens,'东罗马']])
+   },[['fill',HC.athens,'东罗马：照旧收税养兵'],['fill',HC.war,'奥多亚克的意大利'],['fill',HC.mino,'西哥特'],['fill',HC.macedon,'汪达尔'],['fill',HC.celt,'勃艮第'],['dash',HC.myc,'法兰克'],['fill',HC.thebes,'苏维汇'],['fill',HC.rome,'苏瓦松（罗马残部，到486年）']])
  ]},
 {id:'history-empire-leo',ch:5,title:'过渡时期：利奥王朝',short:'利奥王朝',en:'The Transition: the Leonid Dynasty',period:'457—518年',c:HC.byz,
  scenes:[
@@ -1873,17 +1956,10 @@ const HISTORY_ENTRIES=[
     hp(d,'carthage',{left:1,note:'汪达尔王国的都城。'});hp(d,'soissons',{labelZ:6});
     hl(d,'盎格鲁—撒克逊人','Anglo-Saxons',52.8,0.2,HC.route);
    },[['fill',HC.war,'东哥特（约510年）'],['fill',HC.mino,'西哥特（约476年）'],['fill',HC.celt,'勃艮第'],['dash',HC.myc,'法兰克（511年）'],['fill',HC.thebes,'苏维汇'],['fill',HC.macedon,'汪达尔']]),
-  hs('493—526年','哥特人当兵，罗马人办事','东哥特人聚居几处当兵，罗马人照旧办事；狄奥多里克用联姻串起西方诸王，晚年处死波爱修斯。',[[36.0,0.5],[49.5,21.5]],d=>{
-    ha(d,'lOstrogoths510',HC.war,{fillOpacity:.22});
-    hp(d,'ravenna',{note:'狄奥多里克的都城；519年城里人烧了犹太会堂，他下令全城出钱重建。'});
-    hp(d,'ticinum',{note:'哥特人的聚居地之一；波爱修斯在这一带的狱中写下《哲学的慰藉》。'});
-    hp(d,'rome',{note:'元老院照旧开会；500年狄奥多里克来住了半年。'});
-    hl(d,'皮切努姆：哥特人聚居','Picenum: Gothic settlers',43.3,13.4,HC.war);
-   },[['fill',HC.war,'东哥特王国（约510年）'],['dot','#2a2018','都城、元老院与哥特人的聚居地']]),
   hs('466—507年','图卢兹王国：两套法','西哥特从同盟者变成独立王国；哥特人守尤里克法典，罗马人守阿拉里克的罗马法摘要；国王信阿里乌派。',[[35.5,-10.0],[48.5,8.5]],d=>{
     ha(d,'e476Visigoths',HC.mino,{fillOpacity:.26});
     hp(d,'tolosa',{note:'西哥特王国的都城；尤里克在此编法典，506年阿拉里克二世颁布罗马法摘要。'});
-    hp(d,'clermont',{kind:'battle'});hp(d,'massilia',{left:1,note:'475年西部皇帝尼波斯把普罗旺斯让给了尤里克。'});
+    hp(d,'clermont',{kind:'battle'});hp(d,'massilia',{left:1,note:'476年西罗马亡后，尤里克夺下普罗旺斯，奥多亚克订约承认。'});
    },[['fill',HC.mino,'西哥特王国（约476年）'],['dot',HC.war,'抵抗三年的克莱蒙'],['dot','#2a2018','都城与普罗旺斯']]),
   hs('486—511年','武耶：天主教的法兰克人','克洛维打掉罗马残部、改信天主教，507年在武耶打垮西哥特，西哥特退进西班牙，只保住塞普提马尼亚。',[[40.5,-5.5],[51.5,9.5]],d=>{
     ha(d,'lFranks511',HC.myc,{fillOpacity:.22});ha(d,'lVisigoths510',HC.mino,{fillOpacity:.2});
@@ -1902,6 +1978,66 @@ const HISTORY_ENTRIES=[
     hp(d,'calpe',{left:1});hp(d,'guadalete',{kind:'battle',left:1});hp(d,'tudmir',{labelZ:6});
     hr(d,[[35.8,-5.6],[36.1,-5.35]],HC.war);hr(d,[[36.6,-5.9],[37.9,-4.8],[39.8,-4.0]],HC.war);
    },[['fill',HC.mino,'西哥特王国（7世纪）'],['dline',HC.war,'711年塔里克渡海北进（概略）'],['dot',HC.war,'瓜达莱特（大致方位）'],['dot','#2a2018','都城与713年订约之地']])
+ ]},
+{id:'history-west-ostrogoths',ch:5,title:'东哥特王国：从奥多亚克到伦巴第人',short:'东哥特王国',en:'The Ostrogothic Kingdom: from Odoacer to the Lombards',period:'476—568年',c:HC.celt,hideBase:['alps'],
+ scenes:[
+  hs('476—488年','西边称臣，东边哥特','奥多亚克名义上向芝诺称臣；西边诸王大多讨东罗马的头衔，只有西哥特自立；巴尔干上是从匈人治下出来的东哥特人。',[[33.5,-10.0],[52.5,30.0]],d=>{
+    ha(d,'e476Odoacer',HC.war,{fillOpacity:.22});ha(d,'eDalmatia460',HC.war,{fillOpacity:.14,dashArray:'5 4'});ha(d,'e476Visigoths',HC.mino,{fillOpacity:.24});
+    ha(d,'e476Vandals',HC.macedon,{fillOpacity:.24});ha(d,'e476Burgundians',HC.celt,{fillOpacity:.26});ha(d,'e476Franks',HC.myc,{fillOpacity:.2,dashArray:'5 4'});
+    ha(d,'e476Soissons',HC.rome,{fillOpacity:.24});ha(d,'eEast395',HC.athens,{fillOpacity:.16});
+    hp(d,'ravenna',{note:'奥多亚克的都城；他用尼波斯、芝诺的名义铸币。'});hp(d,'constantinople',{note:'芝诺封奥多亚克为“贵族”。'});
+    hp(d,'carthage',{left:1,note:'474年盖萨里克与芝诺订“永久和平”，一直维持到530年。'});hp(d,'tolosa',{note:'尤里克的都城，西边唯一不认皇帝的王。'});
+    hp(d,'salona',{note:'480年尼波斯遇刺，奥多亚克随即拿下达尔马提亚。'});
+    hl(d,'东哥特人','Ostrogoths',42.9,25.3,HC.war);
+   },[['fill',HC.war,'奥多亚克的意大利（虚线为480年后拿下的达尔马提亚）'],['fill',HC.mino,'西哥特'],['fill',HC.macedon,'汪达尔'],['fill',HC.celt,'勃艮第'],['dash',HC.myc,'法兰克'],['fill',HC.rome,'苏瓦松（罗马残部）'],['fill',HC.athens,'东罗马'],['dot','#2a2018','各家的都城']]),
+  hs('473—488年','两个狄奥多里克：芝诺玩砸的阴招','芝诺挑两支东哥特人互斗，被识破；484年两支合一，487年兵临君士坦丁堡；当过人质的狄奥多里克受命西去打奥多亚克。',[[38.5,12.5],[46.8,30.5]],d=>{
+    ha(d,'eEast395',HC.athens,{fillOpacity:.16});
+    hp(d,'constantinople',{kind:'battle',note:'487年狄奥多里克兵临城下，切断水道。'});hp(d,'o_novae');
+    hp(d,'dyrrachium',{note:'479年阿马尔一支被芝诺耍了之后，转进伊庇鲁斯，占了这座港城。'});
+    hp(d,'sirmium',{note:'488年西去时，狄奥多里克在这一带打败拦路的格皮德人。'});
+    hl(d,'斯特拉波的色雷斯哥特人','Theodoric Strabo’s Thracian Goths',42.3,26.4,HC.war);
+    hr(d,[[43.61,25.39],[42.3,23.5],[41.6,21.4],[41.32,19.45]],HC.war);hr(d,[[43.61,25.39],[42.6,27.4],[41.2,28.6]],HC.war);
+    hr(d,[[43.61,25.39],[44.4,22.6],[44.97,19.61],[45.8,16.0],[46.0,14.5]],HC.war);
+   },[['fill',HC.athens,'东罗马'],['dline',HC.war,'阿马尔哥特人的去向：479年进伊庇鲁斯、487年逼京城、488年西去（概略）'],['dot',HC.war,'487年兵临的君士坦丁堡'],['dot','#2a2018','诺瓦、迪拉基乌姆与西尔米乌姆']]),
+  hs('489—493年','鸿门宴','狄奥多里克三战三胜，围拉文纳三年；493年议和共治，十天后在宴席上亲手砍死奥多亚克，从此独占意大利。',[[42.8,7.5],[47.2,20.5]],d=>{
+    ha(d,'e476Odoacer',HC.war,{fillOpacity:.16});
+    hp(d,'sirmium',{kind:'battle',note:'488—489年之交，狄奥多里克在这一带打败拦路的格皮德人。'});
+    hp(d,'o_isonzo',{kind:'battle'});hp(d,'verona',{kind:'battle',note:'489年9月奥多亚克再败于此。'});hp(d,'o_adda',{kind:'battle'});
+    hp(d,'ticinum',{left:1,note:'490年狄奥多里克的大营。'});
+    hp(d,'ravenna',{kind:'battle',note:'490—493年被围三年；493年3月15日的宴席上，狄奥多里克亲手杀了奥多亚克。'});
+    hr(d,[[44.97,19.61],[45.5,16.8],[46.05,14.5],[45.85,13.55],[45.44,10.99],[45.53,9.52],[45.19,9.15]],HC.war);hr(d,[[45.19,9.15],[44.8,10.9],[44.42,12.2]],HC.war);
+   },[['fill',HC.war,'奥多亚克的意大利'],['dline',HC.war,'狄奥多里克西征（概略）'],['dot',HC.war,'一路的胜仗与拉文纳的鸿门宴']]),
+  hs('493—526年','哥特人当兵，罗马人办事','狄奥多里克向东罗马称臣、受回宫廷仪仗；哥特人当兵，罗马人照旧办事；晚年处死波爱修斯，跟东边也冷了。',[[36.0,0.5],[49.5,21.5]],d=>{
+    ha(d,'lOstrogoths510',HC.war,{fillOpacity:.22});
+    hp(d,'ravenna',{note:'狄奥多里克的都城；519年城里人烧了犹太会堂，他下令全城出钱重建。'});
+    hp(d,'ticinum',{note:'哥特人的聚居地之一；波爱修斯在这一带的狱中写下《哲学的慰藉》。'});
+    hp(d,'rome',{note:'元老院照旧开会；500年狄奥多里克来住了半年。'});
+    hl(d,'皮切努姆：哥特人聚居','Picenum: Gothic settlers',43.3,13.4,HC.war);
+   },[['fill',HC.war,'东哥特王国（约510年）'],['dot','#2a2018','都城、元老院与哥特人的聚居地']]),
+  hs('526—535年','阿玛拉逊莎：借出西西里','女王替幼子摄政，亲近东罗马；533年借西西里给贝利萨留补给打汪达尔；535年被表兄囚杀，成了查士丁尼出兵的由头。',[[34.5,8.0],[46.0,30.0]],d=>{
+    ha(d,'lOstrogoths510',HC.war,{fillOpacity:.2});ha(d,'e476Vandals',HC.macedon,{fillOpacity:.22});ha(d,'eEast395',HC.athens,{fillOpacity:.16});
+    hp(d,'ravenna',{note:'阿玛拉逊莎摄政的朝廷。'});
+    hp(d,'syracuse',{note:'533年贝利萨留的舰队在附近的考卡纳靠岸，哥特人开市卖粮卖马。'});
+    hp(d,'carthage',{kind:'battle',note:'533年9月贝利萨留在城外打垮汪达尔军。'});hp(d,'o_bolsena',{kind:'battle'});
+    hp(d,'dyrrachium',{note:'阿玛拉逊莎曾在这里备下船，随时准备带着国库投奔查士丁尼。'});hp(d,'constantinople');
+    hr(d,[[41.0,28.97],[37.6,23.5],[36.8,21.7],[37.3,17.5],[36.75,15.0],[35.5,11.06],[36.85,10.3]],HC.athens);
+   },[['fill',HC.war,'东哥特王国'],['fill',HC.macedon,'汪达尔王国'],['fill',HC.athens,'东罗马'],['dline',HC.athens,'533年贝利萨留经西西里打北非（概略）'],['dot',HC.war,'迦太基城外与博尔塞纳湖']]),
+  hs('535—554年','哥特战争：意大利的人心','罗马城起初开门迎贝利萨留；“剪刀”一来清算旧账，人心倒向托提拉；罗马几度易手，拉锯近二十年才由纳尔塞斯收场。',[[36.5,7.0],[46.6,19.0]],d=>{
+    ha(d,'lOstrogoths510',HC.war,{fillOpacity:.14});
+    hp(d,'syracuse',{note:'535年贝利萨留先取西西里。'});hp(d,'naples',{kind:'battle',left:1,note:'536年顽抗被破；543年托提拉收复，先少给吃的、慢慢加量，免得饿久了的人撑死。'});
+    hp(d,'rome',{kind:'battle',note:'536年开城迎贝利萨留；546年托提拉攻下后，把城里的人全迁走，一度空城。'});
+    hp(d,'mediolanum',{kind:'battle',note:'539年归附帝国后被哥特人和勃艮第人攻破屠城。'});
+    hp(d,'ravenna',{note:'540年贝利萨留进城；皇帝派来的“剪刀”亚历山大在此清算旧账。'});
+    hp(d,'taginae',{kind:'battle'});hp(d,'vesuvius',{kind:'battle',note:'552—553年之交，最后的哥特王泰亚在山下战死。'});
+    hr(d,[[37.06,15.29],[38.1,15.65],[40.85,14.27],[41.89,12.48]],HC.athens);
+   },[['fill',HC.war,'哥特王国（战前）'],['dline',HC.athens,'贝利萨留535—536年北上（概略）'],['dot',HC.war,'易手的城与收场的两仗']]),
+  hs('554—568年','只守了十几年：伦巴第人南下','554年《国事诏书》把地还给罗马地主，意大利已打烂；伦巴第人568年举族南下，很快占了大半；774年查理曼灭其国。',[[37.5,7.0],[48.5,21.5]],d=>{
+    ha(d,'lJustinian565',HC.athens,{fillOpacity:.14});ha(d,'mLombards600',HC.myc,{fillOpacity:.24});
+    hp(d,'w_cividale',{note:'568年伦巴第人翻过阿尔卑斯山，先在此设公国。'});hp(d,'verona');
+    hp(d,'w_pavia',{kind:'battle',note:'572年被围三年后陷落，成了伦巴第王国的都城；774年向查理曼投降。'});
+    hp(d,'ravenna',{note:'帝国在意大利的总督驻地，守到751年。'});hp(d,'rome');hp(d,'naples');
+    hr(d,[[47.2,19.0],[46.4,15.5],[46.09,13.43],[45.44,10.99],[45.19,9.15]],HC.myc);
+   },[['fill',HC.athens,'查士丁尼死时的帝国（565年）'],['fill',HC.myc,'伦巴第人（约600年）'],['dline',HC.myc,'568年伦巴第人南下（概略）'],['dot',HC.war,'围了三年的帕维亚'],['dot','#2a2018','帝国守住的拉文纳、罗马、那不勒斯']])
  ]},
 {id:'history-west-merovingians',ch:5,title:'墨洛温王朝：分家与宫相',short:'墨洛温王朝',en:'The Merovingians: Partitions and Mayors of the Palace',period:'561—751年',c:HC.celt,
  scenes:[
@@ -2956,12 +3092,12 @@ const HISTORY_ERAS=[
  {id:'rome-fall',name:'罗马：共和崩解',en:'The Fall of the Republic',date:'前133—前27年',c:HC.rome,items:[['history-rome-gracchi'],['history-rome-marius'],['history-rome-social'],['history-rome-sulla'],['history-rome-pompey'],['history-rome-triumvirate'],['history-rome-caesar'],['history-rome-augustus']]},
  {id:'empire-principate',name:'罗马帝国：元首制',en:'The Principate',date:'前27—192年',c:HC.rome,items:[['history-empire-principate'],['history-empire-julio-claudian'],['history-empire-flavian'],['history-empire-antonine']]},
  {id:'empire-crisis',name:'罗马帝国：危机与重铸',en:'Crisis and Reinvention',date:'193—363年',c:HC.rome,items:[['history-empire-crisis'],['history-empire-dominate'],['history-empire-constantine']]},
- {id:'empire-west',name:'罗马帝国：分治与西部的终结',en:'Division and the End in the West',date:'364—476年',c:HC.rome,items:[['history-empire-valentinian'],['history-empire-theodosius'],['history-empire-west-fall']]},
+ {id:'empire-west',name:'罗马帝国：分治与西部的终结',en:'Division and the End in the West',date:'364—476年',c:HC.rome,items:[['history-empire-valentinian'],['history-empire-theodosius'],['history-empire-west-fall'],['history-empire-west-end']]},
  {id:'empire-east',name:'东罗马：利奥王朝与查士丁尼王朝',en:'East Rome: the Leonids and the Justinians',date:'457—602年',c:HC.byz,items:[['history-empire-leo'],['history-empire-justinian']]},
  {id:'empire-heraclian',name:'东罗马：希拉克略王朝与二十年无政府',en:'East Rome: the Heraclians and the Anarchy',date:'602—717年',c:HC.byz,items:[['history-empire-heraclius'],['history-empire-constans'],['history-empire-anarchy']]},
  {id:'empire-iconoclasm',name:'东罗马：圣像之争时代',en:'East Rome: the Age of Iconoclasm',date:'717—867年',c:HC.byz,items:[['history-empire-isaurian'],['history-empire-amorian']]},
  {id:'empire-macedonian',name:'东罗马：马其顿王朝',en:'East Rome: the Macedonian Dynasty',date:'867—1056年',c:HC.byz,items:[['history-empire-macedonian',0,2],['history-empire-macedonian',3,3,'东西教会大分裂']]},
- {id:'empire-kingdoms',name:'中世纪早期：蛮族诸王国',en:'The Barbarian Kingdoms',date:'476—711年',c:HC.celt,items:[['history-west-kingdoms']]},
+ {id:'empire-kingdoms',name:'中世纪早期：蛮族诸王国',en:'The Barbarian Kingdoms',date:'476—711年',c:HC.celt,items:[['history-west-kingdoms'],['history-west-ostrogoths']]},
  {id:'empire-franks',name:'中世纪早期：法兰克与伦巴第',en:'Franks and Lombards',date:'561—814年',c:HC.celt,items:[['history-west-merovingians'],['history-west-lombards'],['history-west-charlemagne']]},
  {id:'faith-israel',name:'古代以色列',en:'Ancient Israel',date:'约前1400—前538年',c:HC.faith,items:[['history-faith-israel'],['history-faith-first-temple']]},
  {id:'faith-temple',name:'第二圣殿时期',en:'The Second Temple',date:'前538—公元73年',c:HC.faith,items:[['history-faith-second-temple'],['history-faith-jesus']]},
@@ -3047,7 +3183,7 @@ const TREE_ROWS={
  'history-empire-constantine/0':['rome',305,363],
  'history-empire-valentinian/0':['rome',364,378],
  'history-empire-theodosius/0':['rome',379,457],
- 'history-empire-west-fall/0':['rome',395,476],
+ 'history-empire-west-fall/0':['rome',395,455],
  'history-faith-israel/0':['faith',-1400,-1200],
  'history-faith-first-temple/0':['faith',-1200,-538],
  'history-faith-second-temple/0':['faith',-538,-4],
@@ -3083,6 +3219,7 @@ const TREE_ROWS={
  'history-persia-parthia/0':['persia',-141,224],
  'history-persia-sasanian/0':['persia',224,379],
  'history-persia-khosrow/0':['persia',379,579],
+ 'history-empire-west-end/0':['rome',455,476],
  'history-empire-heraclius/0':[['east','persia','egypt'],602,641],
  'history-arab-conquest/0':[['persia','east','egypt'],622,651],
  'history-empire-constans/0':[['east','faith'],641,711],
@@ -3091,6 +3228,7 @@ const TREE_ROWS={
  'history-empire-amorian/0':[['east','faith'],802,867],
  'history-empire-macedonian/0':['east',867,1025,'867—1025年'],
  'history-faith-three-chapters/0':['faith',527,604],
+ 'history-west-ostrogoths/0':['west',480,568,'476—568年'],
  'history-west-merovingians/0':['west',561,751],
  'history-west-lombards/0':['west',568,756],
  'history-west-charlemagne/0':['west',768,814],
@@ -3302,7 +3440,7 @@ const TOPIC_ENTRIES=[
   html:`<p data-scene-text="0"><strong>为什么中国古代没有像希腊罗马那样平民与贵族长期拉扯利益、分权制衡的局面？底层原因是一笔地理与人口的算术：中国的亩产高、人口密度高、绝对数量大，在同样的统治半径、同样的缴付比例下，统治者手里集中的资源远比西方多，而反抗者组织起来对抗这些资源的难度也大得多；何况关中和华北平原连片开阔的地貌，决定了同样技术条件下中国的有效统治半径天然大于被山海切碎的希腊罗马。所以中国的普通平民从一开始就没有和皇帝讨价还价的资本。</strong>落到数字上：公元 2 年西汉户籍上有五千九百多万人，大半密集挤在黄河中下游的平原上，一道诏令顺着驰道就能一竿子插到底；同一时期奥古斯都治下的罗马帝国虽然也有五千万上下人口，却被地中海、阿尔卑斯山和沙漠切散在几十个文化各异的行省里，意大利本土不过几百万人。罗马平民玩得转“不给保民官我们就撤出城外罢工”，是因为城邦小、打仗全指望这几万市民；放到随便就能跨郡调几十万大军的秦汉帝国，普通农户连往哪儿“出走”的地方都没有。</p>
 <p data-scene-text="1"><strong>平民虽然没有拉扯的资本，但中国早期并不是完全没有能制衡皇权的中间力量：先秦有世卿贵族，两汉有地方豪族，魏晋南北朝有门阀士族——它们虽然被皇权一步步削弱，但在一千多年里依然能挡在朝廷和小民之间，抵抗帝国对民力的直接压榨。</strong>先秦的世卿世禄被战国变法和秦朝郡县制拆掉了第一层；到了两汉，地方大姓靠宗族、庄园和经学传家重新长成豪族，连开国的光武帝刘秀都是靠南阳豪族支持才坐稳江山，后来他下诏“度田”想清查豪族隐匿的田地人口，地方官根本查不下去。到了魏晋南北朝，中间力量硬到了顶点：九品中正制下“上品无寒门，下品无势族”，高门士族不仅垄断高官，手里还有部曲私兵和大量荫庇人口，东晋干脆是“王与马，共天下”，皇帝也得跟门阀联姻、分权，连北魏鲜卑皇帝进中原也得拉拢汉人高门。（主线印证：<a class="go" data-go="history-china-eastern-han">东汉与豪族社会</a>、<a class="go" data-go="history-china-sixteen-kingdoms">东晋“王与马，共天下”</a>）</p>
 <p data-scene-text="2"><strong>真正把这层中间力量连根拔起的，是造纸与印刷带来的文字传播普及，加上隋唐开创、宋代定型的科举制度——帝国从此绕开门阀大族，直接从民间选拔文官，皇帝再也不必依赖这些“老钱”家族。</strong>唐末黄巢起义把长安、洛阳的百年世家大族杀得七零八落（“天街踏尽公卿骨”），五代武夫又扫平了残余门第；等到宋朝建立，朝廷把科举名额扩大十倍，加上锁院、糊名、誊录，真正做到了“取士不问家世，婚姻不问阀阅”。表面上看，寒门读书人有了一步登天的梯子（专题 2）；但从权力结构上看，<strong>考出来的进士没有世袭领地、没有宗族私兵，乌纱帽是皇帝一个人给的，皇帝随时能摘——原本能够抱团跟皇权讨价还价的世袭贵族与门阀彻底消失，变成了在皇帝面前毫无根基的流官。</strong></p>
-<p data-scene-text="3"><strong>拆掉了所有中间力量之后，皇帝就可以毫无阻碍地直接榨取民力，直到把民间的承受力榨到一个极高的极限，引发周期性的总崩溃。</strong>明末思想家黄宗羲看出了这套系统的死结：历代每次搞“并税除杂”的赋税改革（从唐代两税法到明代一条鞭法），把旧杂派并进正税里，过不了几十年，朝廷一旦用钱，又会在新正税之上再加一轮新杂派，赋税只会单向往上叠，永远降不下来，他称之为“积累莫返之害”。用系统论的话说，这是一个<strong>只有正反馈、没有负反馈（没有贵族议会或地方自治机构能对加税说“不”）的回路</strong>，只能一路踩油门冲向阈值——灾荒、流民、农民起义、改朝换代，把人口和账本清零，再由下一个新王朝从低税率重新跑一遍。拿罗马做镜子正好照出两边的分岔：罗马变成帝国后平民虽然也没了筹码，但始终没搞出科举去拆掉元老贵族的大庄园；所以西罗马一倒，这些大地主和蛮族首领就地变成封建领主，欧洲走进了王权受限的封建社会，中国则走进了皇权越来越强的大一统王朝循环。（主线印证：<a class="go" data-go="history-china-sixteen-kingdoms/1">沙门拜不拜皇帝</a>、<a class="go" data-go="history-empire-west-fall/7">西罗马的终结</a>）</p>`,
+<p data-scene-text="3"><strong>拆掉了所有中间力量之后，皇帝就可以毫无阻碍地直接榨取民力，直到把民间的承受力榨到一个极高的极限，引发周期性的总崩溃。</strong>明末思想家黄宗羲看出了这套系统的死结：历代每次搞“并税除杂”的赋税改革（从唐代两税法到明代一条鞭法），把旧杂派并进正税里，过不了几十年，朝廷一旦用钱，又会在新正税之上再加一轮新杂派，赋税只会单向往上叠，永远降不下来，他称之为“积累莫返之害”。用系统论的话说，这是一个<strong>只有正反馈、没有负反馈（没有贵族议会或地方自治机构能对加税说“不”）的回路</strong>，只能一路踩油门冲向阈值——灾荒、流民、农民起义、改朝换代，把人口和账本清零，再由下一个新王朝从低税率重新跑一遍。拿罗马做镜子正好照出两边的分岔：罗马变成帝国后平民虽然也没了筹码，但始终没搞出科举去拆掉元老贵族的大庄园；所以西罗马一倒，这些大地主和蛮族首领就地变成封建领主，欧洲走进了王权受限的封建社会，中国则走进了皇权越来越强的大一统王朝循环。（主线印证：<a class="go" data-go="history-china-sixteen-kingdoms/1">沙门拜不拜皇帝</a>、<a class="go" data-go="history-empire-west-end/6">西罗马亡后：从收税到分地</a>）</p>`,
   sources:[
    {label:'《汉书·地理志下》（元始二年户籍：千二百二十三万三千六十二户，口五千九百五十九万四千九百七十八人）',url:'https://zh.wikisource.org/wiki/%E6%BC%A2%E6%9B%B8/%E5%8D%B7028%E4%B8%8B'},
    {label:'黄宗羲《明夷待访录》（《田制》篇论历代并税之弊：“有明暗加之害，有积累莫返之害”）',url:'https://zh.wikisource.org/wiki/%E6%98%8E%E5%A4%B7%E5%BE%85%E8%A8%AA%E9%8C%84'},

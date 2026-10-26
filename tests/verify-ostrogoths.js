@@ -1,0 +1,111 @@
+const puppeteer=require('puppeteer-core');
+const assert=require('node:assert/strict');
+const path=require('node:path');
+const {pathToFileURL}=require('node:url');
+const target=path.resolve(process.argv[2]||path.join(__dirname,'..','index.html'));
+const shots=path.join(__dirname,'shots-ostrogoths');require('node:fs').mkdirSync(shots,{recursive:true});
+const wait=ms=>new Promise(r=>setTimeout(r,ms));
+// 老无 2026-10-25 (later the same day): 中世纪西欧 on to the Lombards in Italy — Odoacer under Zeno and the lie of the land; Zeno setting
+// the two Gothic bands on each other and getting it wrong; the Liu Yuan of the Goths sent west; the Hongmen banquet; Theodoric deferring
+// to Constantinople; Ostrogothic help against the Vandals (Sicily); the Gothic War and Italian hearts; held a dozen years, then the Lombards,
+// until Charlemagne two centuries on. Where this overlaps the East Roman line the two point at each other instead of telling it twice.
+const ID='history-west-ostrogoths';
+const BOLD=[[ID+'/0','对芝诺称臣，自己统治意大利'],[ID+'/0','当时的大势'],[ID+'/0','东边是匈人散去之后，从前附庸匈人的东哥特人'],[ID+'/0','西边诸国大多讨好东罗马皇帝'],
+ [ID+'/1','一个刘渊式的人物'],[ID+'/1','芝诺玩阴的，让两支东哥特人内斗'],[ID+'/1','结果玩砸了'],
+ [ID+'/2','摆了一场鸿门宴，把奥多亚克杀了，从此占领了意大利'],
+ [ID+'/3','狄奥多里克占了意大利，跟东罗马的关系还很好，一直对东罗马称臣'],
+ [ID+'/4','查士丁尼打汪达尔人时还得到东哥特的援助'],[ID+'/4','查士丁尼打完北非，转身就拿这个由头打东哥特'],
+ [ID+'/5','可意大利的民心很快就不向着东罗马了'],[ID+'/5','所以这仗一打就是近二十年'],
+ [ID+'/6','拿回来的意大利只守住了十几年'],[ID+'/6','查士丁尼死后，意大利很快被伦巴第人占了大半'],[ID+'/6','直到两百年后']];
+// Set straight in plain text: the Visigoths sat to the north-west and were the one court that did not defer; who proposed the march on
+// Italy is told both ways; the banquet went further than Hongmen; the deference cooled at the end; Italians turned only after 540; Charlemagne
+// took the Lombard kingdom in 774 rather than driving the Lombards out.
+const FIXES=[[ID+'/0','西北是坐大的西哥特'],[ID+'/0','唯独西哥特的尤里克自居独立'],[ID+'/1','一说是他自己请的命'],[ID+'/1','481年斯特拉波坠马死，484年阿马尔杀了他的儿子'],
+ [ID+'/2','鸿门宴上项羽放走了刘邦'],[ID+'/3','两边交情也就冷了'],[ID+'/5','540年拿下拉文纳以后'],[ID+'/5','罗马人看在眼里，开门迎他进城'],
+ [ID+'/6','774年查理曼攻下帕维亚，灭了伦巴第王国'],[ID+'/6','552年纳尔塞斯雇来打托提拉的五千多伦巴第兵']];
+const SCENES=[['476—488年','西边称臣，东边哥特'],['473—488年','两个狄奥多里克：芝诺玩砸的阴招'],['489—493年','鸿门宴'],['493—526年','哥特人当兵，罗马人办事'],
+ ['526—535年','阿玛拉逊莎：借出西西里'],['535—554年','哥特战争：意大利的人心'],['554—568年','只守了十几年：伦巴第人南下']];
+const MOMENTS=[[1,'山下的喊话'],[2,'“连根骨头都没有”'],[3,'鱼头里的西马库斯'],[5,'空城罗马']];
+const CARDS=[[ID+'/1','theodoric-great',/人质/],[ID+'/3','theodoric-great',/会堂/],[ID+'/4','amalasuntha',/戒尺/],[ID+'/5','totila',/撑死/],[ID+'/6','narses',/金纺锤/],
+ ['history-west-kingdoms/2','clovis',/看不下去/],['history-west-kingdoms/3','leovigild',/三万金币/]];
+(async()=>{
+ const browser=await puppeteer.launch({executablePath:process.env.CHROME_PATH||'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true});
+ const errors=[];
+ try{
+  for(const [width,height,label] of [[1440,960,'desktop'],[390,844,'390']]){
+   const page=await browser.newPage();page.on('pageerror',e=>errors.push(e.message));
+   await page.setViewport({width,height});
+   await page.emulateMediaFeatures([{name:'prefers-reduced-motion',value:'reduce'}]);
+   await page.setRequestInterception(true);page.on('request',r=>/^https?:/.test(r.url())?r.abort():r.continue());
+   await page.goto(pathToFileURL(target).href+'#'+ID,{waitUntil:'domcontentloaded'});await page.evaluate(()=>document.fonts.ready);await wait(150);
+   const r=await page.evaluate(({ID,BOLD,FIXES})=>{
+    const E=id=>HISTORY_ENTRIES.find(e=>e.id===id),para=(id,i)=>{const d=document.createElement('div');d.innerHTML=E(id).html;return [...d.querySelectorAll('[data-scene-text]')].at(+i);};
+    const stripEn=s=>s.replace(/（[A-Za-z][^）]*）/g,'');
+    const e=E(ID),wk=E('history-west-kingdoms'),all=x=>[x.html,...x.moments.map(m=>m.text),...x.boxes.map(b=>b.text)].join(' ');
+    const ids=HISTORY_ENTRIES.map(x=>x.id),at=ids.indexOf('history-west-kingdoms');
+    const chars=id=>{const d=document.createElement('div');d.innerHTML=E(id).html;return [...d.querySelectorAll('[data-scene-text]')].map((p,i)=>[id+'/'+i,stripEn(p.textContent).replace(/\s/g,'').length]);};
+    return {head:[e.ch,e.title,e.short,e.period,e.c===HC.celt],scenes:e.scenes.map(s=>[s.date,s.title]),order:ids.slice(at,at+3),
+     row:TREE_ROWS[ID+'/0'],west:lineStations('west').map(s=>s.id).filter((x,i,a)=>a.indexOf(x)===i),
+     era:HISTORY_ERAS.find(x=>x.id==='empire-kingdoms').items.map(i=>i[0]),
+     wk:[wk.scenes.length,wk.scenes.map(s=>s.date),wk.moments.map(m=>[m.scene,m.name]),wk.html.includes('两层的国'),wk.sources.some(s=>/狄奥多里克大王|波爱修斯|魏书/.test(s.label))],
+     bold:BOLD.map(([k,w])=>{const [id,i]=k.split('/');return [k,stripEn(para(id,i).innerHTML).includes('<strong>'+w)];}),
+     fixes:FIXES.map(([k,w])=>{const [id,i]=k.split('/');const p=para(id,i);return [k,stripEn(p.textContent).includes(w)&&!stripEn(p.innerHTML).includes('<strong>'+w)];}),
+     filler:/不知道怎么的|有什么错漏|可以补充|前面有提到过|之类的|奥多亚赛|匂人|伦巴底|贝利撒留|东哥人/.test(all(e)),
+     china:['刘渊','任子','鸿门宴','项羽','孝文帝','侯景之乱'].filter(w=>!stripEn(all(e)).includes(w)),
+     moments:e.moments.map(m=>[m.scene,m.name]),
+     xrefs:[['history-empire-justinian',2,'在东哥特人治下的西西里买粮买马（另见“中世纪西欧”主线）'],['history-empire-justinian',3,'借口出兵（另见“中世纪西欧”主线）'],
+      [ID,1,'（另见“东罗马”主线）'],[ID,4,'（另见“东罗马”主线）'],[ID,5,'（另见“东罗马”主线）']].filter(([id,i,w])=>!stripEn(para(id,i).textContent).includes(w)).map(x=>x[0]+'/'+x[1]),
+     chars:[...chars(ID),...chars('history-west-kingdoms'),...chars('history-empire-justinian')],
+     en:['斯特拉波（Theodoric Strabo）','阿塔拉里克（Athalaric）','阿玛拉逊莎（Amalasuntha）','托提拉（Totila）','伊松佐河（Isonzo）','阿达河（Adda）','博尔塞纳湖（Lake Bolsena）','西马库斯（Symmachus）'].filter(s=>!all(e).includes(s)),
+     links:e.sources.map(s=>s.url).filter(u=>!/^https:\/\//.test(u)),dupLinks:e.sources.length-new Set(e.sources.map(s=>s.url)).size,sourcesN:e.sources.length};
+   },{ID,BOLD,FIXES});
+   assert.deepEqual(r.head,[5,'东哥特王国：从奥多亚克到伦巴第人','东哥特王国','476—568年',true]);
+   assert.deepEqual(r.scenes,SCENES);
+   assert.deepEqual(r.order,['history-west-kingdoms',ID,'history-west-merovingians'],'reading order on 中世纪西欧');
+   assert.deepEqual(r.row,['west',480,568,'476—568年']);
+   assert.deepEqual(r.west.slice(r.west.indexOf('history-west-kingdoms')),['history-west-kingdoms',ID,'history-west-merovingians','history-west-lombards','history-west-charlemagne']);
+   assert.deepEqual(r.era,['history-west-kingdoms',ID]);
+   // 蛮族诸王国 handed over its Theodoric scene, with its links; its later scenes and moments moved up one.
+   assert.deepEqual(r.wk,[5,['476—507年','466—507年','486—511年','568—589年','589—713年'],[[2,'圣马丁堂里的紫袍'],[4,'剃了发的国王']],false,false]);
+   for(const [k,ok] of r.bold)assert.ok(ok,k+' lacks 老无’s thesis in bold');
+   for(const [k,ok] of r.fixes)assert.ok(ok,k+' lacks the plain-text correction');
+   assert.equal(r.filler,false,'conversational filler or misspelt names copied into the prose');
+   assert.deepEqual(r.china,[],'Chinese parallels missing');
+   assert.deepEqual(r.moments,MOMENTS);
+   assert.deepEqual(r.xrefs,[],'the East and West lines point at each other');
+   for(const [k,n] of r.chars)assert.ok(n<=300,k+' '+n);
+   assert.deepEqual(r.en,[],'English names on first appearance');
+   assert.deepEqual(r.links,[]);assert.equal(r.dupLinks,0);assert.ok(r.sourcesN>=15);
+   for(const [hash,id,re] of CARDS){
+    await page.evaluate(h=>{const [id,s]=h.split('/');go(id,{scene:+s});},hash);await wait(60);
+    assert.match(await page.$eval(`[data-person="${id}"]`,e=>e.textContent),re,hash+' '+id);
+   }
+   await page.evaluate(id=>go(id,{scene:2}),ID);await wait(80);
+   assert.equal(await page.$eval('#entryEyebrow',e=>e.textContent),'中世纪早期：蛮族诸王国 · 第六章');
+   for(let i=0;i<SCENES.length;i++){
+    const s=await page.evaluate(({ID,i})=>{go(ID,{scene:i});const sc=activeScene(ENTRIES[cur]);
+     return {pins:Object.keys(pinIndex).length,layers:group.getLayers().length,legend:legend.children.length,fits:map.getBounds().contains(L.latLngBounds(sc.view)),overflow:document.documentElement.scrollWidth>innerWidth};},{ID,i});
+    await wait(120);
+    assert.ok(s.layers>0&&s.legend>0&&!s.overflow,ID+'/'+i+' '+JSON.stringify(s));
+    if(label==='desktop')assert.ok(s.pins>0&&s.fits,ID+'/'+i+' '+JSON.stringify(s));
+    if(label==='390')await page.evaluate(()=>scrollSceneText(false));
+    await page.screenshot({path:path.join(shots,`ostrogoths_${i}-${label}.png`)});
+   }
+   // ↑↓ along 中世纪西欧: 蛮族诸王国 → 东哥特王国 → 墨洛温王朝.
+   await page.evaluate(()=>{selectTreeLine('west');go('history-west-kingdoms');});
+   await page.click('#next');assert.deepEqual(await page.evaluate(()=>[ENTRIES[cur].id,sceneIndex]),[ID,0]);
+   await page.click('#next');assert.deepEqual(await page.evaluate(()=>[ENTRIES[cur].id,sceneIndex]),['history-west-merovingians',0]);
+   if(label==='desktop'){
+    const row=await page.$eval(`#toc .tree-item[data-key="${ID}/0"]`,e=>e.textContent);assert.match(row,/^东哥特王国中世纪西欧 · 476—568年$/);
+    await page.evaluate(id=>{selectTreeLine('west');go(id);},ID);await page.click('#treeOpen');await wait(250);
+    await page.evaluate(()=>treeSheet.querySelector('.tree-item.on')?.scrollIntoView({block:'center'}));await wait(150);
+    await page.screenshot({path:path.join(shots,'tree-west-1440.png')});await page.keyboard.press('Escape');
+   }
+   await page.close();
+  }
+  assert.deepEqual(errors,[]);
+  console.log('PASS: 东哥特王国 476—568 on 中世纪西欧, between 蛮族诸王国 and 墨洛温王朝 — seven scenes (Odoacer and the lie of the land, Zeno’s two Theodorics, the Hongmen banquet, Goths under arms and Romans at the desks, Amalasuntha lending Sicily, the Gothic War and Italian hearts, the Lombards); '
+   +BOLD.length+' of 老无’s theses in bold, '+FIXES.length+' corrections in plain text; 刘渊, 鸿门宴, 孝文帝 and 侯景之乱 beside them; four iconic moments and five cards; 蛮族诸王国 down to five scenes with its moments and cards moved up; '
+   +'the Justinian section and this one point at each other; ≤300 chars per scene; desktop and 390px; no page errors.');
+ }catch(e){console.error(e);process.exitCode=1;}finally{await browser.close();}
+})();

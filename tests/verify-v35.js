@@ -13,7 +13,7 @@ const ERAS=[['empire-east','东罗马：利奥王朝与查士丁尼王朝',[['hi
  ['empire-heraclian','东罗马：希拉克略王朝与二十年无政府',[['history-empire-heraclius'],['history-empire-constans'],['history-empire-anarchy']]],
  ['empire-iconoclasm','东罗马：圣像之争时代',[['history-empire-isaurian'],['history-empire-amorian']]],
  ['empire-macedonian','东罗马：马其顿王朝',[['history-empire-macedonian',0,2],['history-empire-macedonian',3,3,'东西教会大分裂']]]];
-const SHORTS={'history-empire-west-fall':['西罗马的终结','395—476年',8],'history-empire-justinian':['查士丁尼王朝','518—602年',7],'history-empire-heraclius':['希拉克略王朝','602—641年',5],
+const SHORTS={'history-empire-west-fall':['西罗马的终结','395—455年',8],'history-empire-justinian':['查士丁尼王朝','518—602年',7],'history-empire-heraclius':['希拉克略王朝','602—641年',5],
  'history-empire-constans':['希拉克略王朝（下）','641—711年',6],'history-empire-anarchy':['二十年无政府','695—717年',2],
  'history-empire-isaurian':['伊苏里亚王朝','717—802年',6],'history-empire-amorian':['阿莫里亚王朝','802—867年',4],'history-empire-macedonian':['马其顿王朝','867—1056年',4]};
 const EAST_TAIL=['history-empire-leo/0','history-empire-justinian/0','history-empire-heraclius/0','history-arab-conquest/0','history-empire-constans/0',

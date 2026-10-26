@@ -12,7 +12,7 @@ const wait=ms=>new Promise(r=>setTimeout(r,ms));
 const NAMES=['希腊','罗马','东罗马','中世纪西欧','基督教','埃及','波斯','中国'];
 const OWN={east:['history-empire-leo','history-empire-justinian','history-empire-heraclius','history-arab-conquest','history-empire-constans','history-empire-anarchy',
   'history-empire-isaurian','history-empire-amorian','history-empire-macedonian','history-empire-macedonian'],
- west:['history-west-kingdoms','history-west-merovingians','history-west-lombards','history-west-charlemagne']};
+ west:['history-west-kingdoms','history-west-ostrogoths','history-west-merovingians','history-west-lombards','history-west-charlemagne']};
 const SHARED={'history-empire-heraclius/0':['east','persia','egypt'],'history-arab-conquest/0':['persia','east','egypt']};
 const BOLD=[['history-faith-three-chapters/1','教义之争背后的权力格局之斗争，不一定是阴谋论，只是人类组织内群体对抗外群体和组织扩张，权力自我膨胀的自然结果'],
  ['history-empire-constans/0','吃马肉不吃马肝，不算你傻；谁再讨论什么几性几位几志就弄谁'],
@@ -66,7 +66,8 @@ const BOLD=[['history-faith-three-chapters/1','教义之争背后的权力格局
    assert.deepEqual(br.rome.slice(2,5),['trunk',-1000,476],'罗马 ends with the West');
    assert.deepEqual(br.east.slice(2,6),['rome',476,1056,br.trunk[5]],'东罗马 off 罗马 at 476, on the Greek lane, to 1056');
    assert.deepEqual(br.west.slice(1,4),['中世纪西欧','rome',476],'中世纪西欧 forks off 罗马 with 东罗马');
-   assert.equal(r.romeLast,'history-empire-west-fall');assert.ok(r.eastHas.includes('history-empire-west-fall')&&r.westHas.includes('history-empire-west-fall'));
+   // 老无 2026-10-25: the West's last years (455—476) are now the last station of 罗马, right before the fork.
+   assert.equal(r.romeLast,'history-empire-west-end');assert.ok(['history-empire-west-fall','history-empire-west-end'].every(id=>r.eastHas.includes(id)&&r.westHas.includes(id)));
    assert.ok(!r.westHas.includes('history-empire-leo')&&!r.eastHas.includes('history-west-kingdoms'));
    for(const [id,list] of Object.entries(OWN))assert.deepEqual(r.own[id],list,id+' stations');
    assert.deepEqual(r.ends,[['trunk',-30,'rome'],['rome',476,null]]);
