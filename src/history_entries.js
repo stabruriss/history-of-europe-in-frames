@@ -381,6 +381,12 @@ Object.assign(HS,{
   f_grado:['格拉多','Grado',45.68,13.39,'阿奎莱亚南边潟湖里的小岛；568年伦巴第人进来，阿奎莱亚主教带着教会的财宝逃到这里。'],
   f_faras:['法拉斯','Faras / Pachoras',22.2,31.48,'努比亚北部诺巴德人的王城；约543年皇后派的传教士抢先到了这里。'],
   f_jabiya:['贾比亚','Jabiya',32.92,35.97,'戈兰高地上加萨尼阿拉伯人的营地；他们的王哈里斯替罗马守沙漠，信一性论。'],
+  f_cassino:['卡西诺山','Monte Cassino',41.49,13.81,'本笃约529年在此建修道院、写会规；580年前后被伦巴第人洗劫，修士逃到罗马。'],
+  f_luxeuil:['吕克瑟伊','Luxeuil',47.82,6.38,'约590年爱尔兰修士高隆邦在孚日山区办的修道院。'],
+  f_bobbio:['博比奥','Bobbio',44.77,9.39,'614年高隆邦在伦巴第王给的地上建的修道院；628年起直属教宗。'],
+  f_iona:['艾奥纳','Iona',56.33,-6.41,'苏格兰西岸的小岛修道院，爱尔兰修士按自己的算法过复活节。'],
+  f_whitby:['惠特比','Whitby',54.49,-0.61,'664年诺森布里亚王在此开会，改从罗马的复活节和剃发式。'],
+  f_thanet:['萨尼特岛','Isle of Thanet',51.36,1.38,'597年奥古斯丁一行在此登岸，肯特王在露天里召见他们。'],
   f_cherson:['赫尔松','Cherson',44.61,33.49,'克里米亚南端的希腊城，帝国流放犯人的地方；655年教宗马丁一世死在这里，988年弗拉基米尔在这里受洗。'],
   f_naxos:['纳克索斯','Naxos',37.1,25.38,'爱琴海上的岛；653年押解教宗马丁的船在这里停了很久。'],
   f_lazica:['拉齐卡（策盖里）','Lazica (Tsageri)',42.65,42.77,'高加索西部的山地，今格鲁吉亚；662年马克西姆斯被割舌断手后流放到这里，当年死去。'],
@@ -2096,14 +2102,14 @@ const HISTORY_ENTRIES=[
     hp(d,'w_pavia',{note:'伦巴第王国的都城。'});hp(d,'w_spoleto');hp(d,'w_benevento',{left:1});
     hp(d,'ravenna',{note:'584年前后皇帝在此设总督，军政一把抓。'});hp(d,'rome');hp(d,'naples',{left:1});
    },[['fill',HC.mino,'伦巴第王国与南方两公国（约600年）'],['fill',HC.athens,'帝国手里的几块（约600年）'],['dot','#2a2018','王都、两公国与帝国的城']]),
-  hs('590—604年','教宗当了罗马的家','格雷戈里一世拿教会庄园的收入养活罗马、赎俘虏、给伦巴第人送钱，自己出面跟伦巴第公爵打交道；596年派奥古斯丁去肯特。',[[36.0,-3.0],[52.5,19.0]],d=>{
-    ha(d,'mByzItaly600',HC.athens,{fillOpacity:.3});ha(d,'mLombards600',HC.mino,{fillOpacity:.14});
-    ha(d,'hSicily',HC.faith,{fillOpacity:.12,dashArray:'4 4'});
-    hp(d,'rome',{note:'590年格雷戈里一世当选；教会庄园的粮食从这里发给难民。'});
-    hp(d,'w_spoleto',{note:'格雷戈里自己出面跟这里的公爵打交道，挨了皇帝的数落。'});
-    hp(d,'w_canterbury',{note:'597年奥古斯丁一行到此，王后伯莎是法兰克公主。'});
-    hr(d,[[41.9,12.5],[43.6,7.0],[43.3,5.4],[45.6,4.9],[47.0,4.3],[48.8,2.4],[50.7,1.6],[51.28,1.08]],HC.faith);
-   },[['fill',HC.athens,'帝国手里的几块'],['fill',HC.mino,'伦巴第人'],['dash',HC.faith,'教会庄园最集中的西西里'],['dline',HC.faith,'596—597年奥古斯丁去肯特（概略）'],['dot','#2a2018','罗马、斯波莱托与坎特伯雷']]),
+  hs('590—604年','教宗当了罗马的家','592年格雷戈里一世自己跟斯波莱托公爵讲和，挨了皇帝数落；593年伦巴第王兵临罗马；598年王后说合，总督与伦巴第王订约。',[[37.5,8.0],[46.5,16.8]],d=>{
+    ha(d,'mByzItaly600',HC.athens,{fillOpacity:.3});ha(d,'mLombards600',HC.mino,{fillOpacity:.18});
+    hp(d,'rome',{note:'593年伦巴第王兵临城下，格雷戈里停讲《以西结书》。'});
+    hp(d,'w_spoleto',{note:'592年公爵截断罗马去拉文纳的路，教宗自己跟他讲和。'});
+    hp(d,'ravenna',{note:'总督不满教宗单独讲和；598年与伦巴第王订约。'});
+    hp(d,'w_pavia',{left:1,note:'阿吉卢尔夫与王后狄奥德琳达的都城。'});
+    hr(d,[[41.9,12.5],[42.42,12.1],[43.11,12.39],[43.5,12.6],[44.06,12.57],[44.42,12.2]],HC.athens);
+   },[['fill',HC.athens,'帝国手里的几块'],['fill',HC.mino,'伦巴第人'],['dline',HC.athens,'罗马通拉文纳的路（概略）'],['dot','#2a2018','罗马、斯波莱托、拉文纳与帕维亚']]),
   hs('603—744年','同一个教','王子受天主教洗礼，伦巴第人渐归天主教；643年罗萨里写定伦巴第法；728年利乌特普兰德把苏特里“献给使徒”，教宗的地伸出罗马公国。',[[40.5,7.0],[46.8,14.5]],d=>{
     ha(d,'mLombards600',HC.mino,{fillOpacity:.2});ha(d,'mByzItaly600',HC.athens,{fillOpacity:.3});
     hp(d,'w_monza',{note:'狄奥德琳达在此修教堂、拨庄园；603年复活节王子在此受天主教洗礼。'});
@@ -2516,6 +2522,65 @@ const HISTORY_ENTRIES=[
     ha(d,'mByz600',HC.faith,{fillOpacity:.1});
     hp(d,'constantinople',{note:'“斋戒者”约翰在这里以“普世牧首”的名义开会。'});hp(d,'rome',{note:'格雷戈里一世自称“众仆之仆”。'});
    },[['fill',HC.faith,'帝国（约600年）'],['dot','#2a2018','新旧两个罗马']])
+ ]},
+{id:'history-faith-gregory',ch:6,title:'罗马教会的崛起：格雷戈里一世',short:'罗马教会的崛起',en:'The Rise of the Roman Church: Gregory the Great',period:'568—604年',c:HC.faith,
+ scenes:[
+  hs('568—590年','大背景：皇帝鞭长莫及','北边是信天主教的法兰克，身边是不认皇帝的伦巴第人；皇帝两线作战，给意大利的只有一个总督和一笔请法兰克人的钱。',[[38.5,-1.5],[51.5,21.0]],d=>{
+    ha(d,'mFranks600',HC.celt,{fillOpacity:.2});ha(d,'mLombards600',HC.mino,{fillOpacity:.24});ha(d,'mByzItaly600',HC.athens,{fillOpacity:.3});
+    ha(d,'mAvars600',HC.thebes,{fillOpacity:.12,dashArray:'4 4'});
+    hp(d,'rome',{note:'罗马公国被伦巴第人围在中间，去拉文纳只剩一条细路。'});
+    hp(d,'ravenna',{note:'皇帝的总督驻地，兵少，自顾不暇。'});
+    hp(d,'w_pavia',{left:1,note:'伦巴第王国的都城。'});
+    hp(d,'f_cassino',{kind:'battle',note:'580年前后被伦巴第人洗劫，修士带着本笃会规逃进罗马。'});
+   },[['fill',HC.celt,'法兰克诸王国（约600年）'],['fill',HC.mino,'伦巴第人（约600年）'],['fill',HC.athens,'皇帝手里的几块'],['dash',HC.thebes,'阿瓦尔汗国'],['dot','#2a2018','罗马、拉文纳与伦巴第王都'],['dot',HC.war,'被洗劫的卡西诺山']]),
+  hs('573—590年','小背景：出身官员的教宗','元老之子，三十出头当罗马城长官；后来出家、在新都当驻京代表；590年瘟疫中被推为教宗。',[[34.5,9.0],[45.5,31.5]],d=>{
+    ha(d,'mByz600',HC.faith,{fillOpacity:.1});ha(d,'hSicily',HC.faith,{fillOpacity:.2,dashArray:'4 4'});
+    hp(d,'rome',{note:'约573年任罗马城长官；后把西里欧山上的家宅改成圣安德烈修道院。'});
+    hp(d,'constantinople',{note:'579—585年前后任教宗驻京代表，给莫里斯的长子当教父。'});
+   },[['fill',HC.faith,'帝国（约600年）'],['dash',HC.faith,'西西里：他家的庄园和六座修道院'],['dot','#2a2018','罗马与新都']]),
+  hs('590—604年','对内：不生孩子，攒成资源池','教士受职后不再生子，教产就传不到儿子手里；教会的庄园遍布地中海西部，派教士去管，收成运回罗马。',[[31.0,-3.0],[46.5,21.5]],d=>{
+    ha(d,'hSicily',HC.faith,{fillOpacity:.32});
+    hp(d,'rome',{note:'各地庄园的粮、酒、油运到这里，按月发放。'});
+    hp(d,'syracuse',{note:'西西里的庄园最多，由教宗派的副执事管。'});hp(d,'naples',{left:1,note:'坎帕尼亚的庄园。'});
+    hp(d,'r_caralis',{left:1,note:'撒丁岛的庄园。'});hp(d,'massilia',{note:'高卢的庄园。'});
+    hp(d,'carthage',{note:'北非的庄园。'});hp(d,'salona',{note:'达尔马提亚的庄园。'});
+   },[['fill',HC.faith,'西西里：教会庄园最集中'],['dot','#2a2018','有教会庄园的地方（示意）']]),
+  hs('590—628年','对内：修士进了体制','修士本在教阶之外；头一个当教宗的修士把他们派去传教、当主教，又给不服本地主教的修道院一个直属罗马的名分。',[[40.0,-11.0],[58.5,17.0]],d=>{
+    ha(d,'mFranks600',HC.celt,{fillOpacity:.12});ha(d,'mLombards600',HC.mino,{fillOpacity:.12});
+    hp(d,'f_cassino',{note:'本笃在此写会规；《对话录》第二卷专写本笃。'});
+    hp(d,'rome',{note:'圣安德烈修道院的修士被派去传教、当主教。'});
+    hp(d,'f_luxeuil',{note:'约590年高隆邦所建；他为复活节日期跟法兰克主教闹翻。'});
+    hp(d,'f_bobbio',{note:'614年建；628年教宗准它不归主教管，直属罗马。'});
+    hp(d,'f_iona',{left:1});hp(d,'f_whitby',{note:'664年诺森布里亚王改从罗马的复活节。'});
+   },[['fill',HC.celt,'法兰克'],['fill',HC.mino,'伦巴第'],['dot','#2a2018','修道院与会场']]),
+  hs('591—681年','对内：不钻牛角尖','前四次大公会议当四福音敬着，定了的不再翻；三章案的断交不硬逼。省事也有代价：霍诺留后来被大公会议革除。',[[35.0,6.0],[47.5,31.0]],d=>{
+    ha(d,'mByz600',HC.faith,{fillOpacity:.1});ha(d,'mLombards600',HC.mino,{fillOpacity:.16});
+    hp(d,'rome',{note:'格雷戈里：前四次大公会议如四福音，第五次也敬。'});
+    hp(d,'constantinople',{note:'681年第六次大公会议在此革除前教宗霍诺留。'});
+    hp(d,'f_grado',{note:'为三章案跟罗马断交的教省躲在这里，顶到698年。'});
+    hp(d,'w_monza',{left:1,note:'王后狄奥德琳达护着断交的主教，教宗写信劝她。'});
+   },[['fill',HC.faith,'帝国（约600年）'],['fill',HC.mino,'伦巴第人'],['dot','#2a2018','罗马、新都与断交的北意大利']]),
+  hs('590—604年','对外：城里的出纳','瘟疫里领全城游行祈祷；教会庄园的粮按月发给穷人，还要赎俘虏、给伦巴第人送钱：皇帝的出纳在拉文纳，罗马的出纳是教宗。',[[36.3,8.0],[45.6,19.5]],d=>{
+    ha(d,'mLombards600',HC.mino,{fillOpacity:.16});ha(d,'mByzItaly600',HC.athens,{fillOpacity:.26});ha(d,'hSicily',HC.faith,{fillOpacity:.24});
+    hp(d,'rome',{note:'590年分七路游行求止瘟疫；粮食按月发给登记的穷人。'});
+    hp(d,'ravenna',{note:'皇帝给意大利军队设的出纳在这里。'});
+    hp(d,'w_spoleto',{note:'592年公爵兵临罗马，教宗自己跟他讲和。'});
+    hr(d,[[37.07,15.29],[38.13,15.65],[40.0,14.6],[41.75,12.25]],HC.faith);
+   },[['fill',HC.faith,'西西里的教会庄园'],['dline',HC.faith,'运粮进罗马（概略）'],['fill',HC.mino,'伦巴第人'],['fill',HC.athens,'帝国手里的几块'],['dot','#2a2018','罗马、总督驻地与斯波莱托']]),
+  hs('596—601年','对外：开发新市场','派修士去肯特，十字架当旗、画像开路；马赛主教砸了圣像挨训；英格兰的神庙不拆，祭神的日子改成圣徒节宴。',[[40.5,-6.0],[54.5,16.0]],d=>{
+    ha(d,'mFranks600',HC.celt,{fillOpacity:.14});
+    hp(d,'rome',{note:'596年奥古斯丁一行从圣安德烈修道院出发。'});
+    hp(d,'massilia',{note:'主教塞雷努斯砸了教堂里的圣像，挨了教宗两回训斥。'});
+    hp(d,'f_thanet',{note:'597年登岸，肯特王在露天里召见。'});hp(d,'w_canterbury',{left:1,note:'肯特的王都；王后伯莎是法兰克公主。'});
+    hr(d,[[41.9,12.5],[43.6,7.0],[43.3,5.4],[45.6,4.9],[47.0,4.3],[48.8,2.4],[50.7,1.6],[51.36,1.38]],HC.faith);
+   },[['fill',HC.celt,'法兰克诸王国'],['dline',HC.faith,'596—597年奥古斯丁一行（概略）'],['dot','#2a2018','罗马、马赛与肯特']]),
+  hs('590—604年','对外：深耕老市场','哈利路亚唱到复活节期以外，“求主怜悯”神职唱、会众应；讲圣人故事、讲烧净小罪的火；到他死时，罗马主教有地、有粮、有修士、有一张网。',[[30.0,-7.0],[55.0,37.0]],d=>{
+    hp(d,'rome',{note:'哈利路亚唱到复活节期以外；“求主怜悯”神职唱、会众应。'});
+    hp(d,'syracuse',{note:'598年有人说教宗学君士坦丁堡，他写信给这里的主教辩白。'});
+    hp(d,'constantinople',{left:1});hp(d,'jerusalem',{note:'他说弥撒里多唱哈利路亚的规矩是从这里传来的。'});
+    hp(d,'w_canterbury',{note:'597年修士们唱着以“哈利路亚”收尾的连祷进城。'});
+    hp(d,'w_metz',{note:'8世纪法兰克人在这一带整理出后来叫“格里高利圣咏”的唱法。'});
+   },[['dot','#2a2018','礼仪的来路与去处']])
  ]},
 {id:'history-china-neolithic',ch:7,title:'新石器聚落与万邦时代',short:'仰韶与良渚',en:'Neolithic China: Yangshao to Liangzhu',period:'约前7000—前1900年',c:HC.china,
  scenes:[
@@ -3102,7 +3167,7 @@ const HISTORY_ERAS=[
  {id:'faith-israel',name:'古代以色列',en:'Ancient Israel',date:'约前1400—前538年',c:HC.faith,items:[['history-faith-israel'],['history-faith-first-temple']]},
  {id:'faith-temple',name:'第二圣殿时期',en:'The Second Temple',date:'前538—公元73年',c:HC.faith,items:[['history-faith-second-temple'],['history-faith-jesus']]},
  {id:'faith-church',name:'早期教会',en:'The Early Church',date:'73—451年',c:HC.faith,items:[['history-faith-church'],['history-faith-empire-church'],['history-faith-councils'],['history-faith-ephesus'],['history-faith-two-cities']]},
- {id:'faith-medieval',name:'中世纪早期的教会',en:'The Early Medieval Church',date:'451—604年',c:HC.faith,items:[['history-faith-papacy'],['history-faith-three-chapters']]},
+ {id:'faith-medieval',name:'中世纪早期的教会',en:'The Early Medieval Church',date:'451—604年',c:HC.faith,items:[['history-faith-papacy'],['history-faith-three-chapters'],['history-faith-gregory']]},
  {id:'china-early',name:'先秦：三代与春秋战国',en:'Pre-Imperial China',date:'约前7000—前221年',c:HC.china,items:[['history-china-neolithic'],['history-china-bronze'],['history-china-western-zhou'],['history-china-spring-autumn'],['history-china-warring-states']]},
  {id:'china-qin-han',name:'秦汉帝国',en:'Qin and Han Empires',date:'前221—公元189年',c:HC.china,items:[['history-china-qin'],['history-china-western-han'],['history-china-eastern-han']]},
  {id:'china-six-dynasties',name:'三国两晋南北朝',en:'Six Dynasties',date:'190—589年',c:HC.china,items:[['history-china-three-kingdoms'],['history-china-sixteen-kingdoms'],['history-china-sui']]},
@@ -3228,6 +3293,7 @@ const TREE_ROWS={
  'history-empire-amorian/0':[['east','faith'],802,867],
  'history-empire-macedonian/0':['east',867,1025,'867—1025年'],
  'history-faith-three-chapters/0':['faith',527,604],
+ 'history-faith-gregory/0':['faith',568,604],
  'history-west-ostrogoths/0':['west',480,568,'476—568年'],
  'history-west-merovingians/0':['west',561,751],
  'history-west-lombards/0':['west',568,756],

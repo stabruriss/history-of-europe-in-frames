@@ -32,7 +32,7 @@ const wait=ms=>new Promise(r=>setTimeout(r,ms));
    assert.deepEqual([...new Set(report.eraItems)],report.ids);
    assert.equal(report.scenes,129);assert.equal(report.paras.length,129);
    assert.ok(report.paras.every(p=>p.chars<=300),'Empire prose budget: '+JSON.stringify(report.paras.filter(p=>p.chars>300)));
-   assert.ok(report.bold);assert.deepEqual(report.nobold,['history-west-charlemagne']);assert.equal(report.moments,82);assert.equal(report.people,61);
+   assert.ok(report.bold);assert.deepEqual(report.nobold,['history-west-charlemagne']);assert.equal(report.moments,81);assert.equal(report.people,61);
    assert.equal(report.romeEnd,476);assert.deepEqual(report.future,['东罗马（晚期）','加洛林以后','大分裂以后','伊斯兰时代的埃及','伊斯兰时代的伊朗','晚唐五代与宋']);
    assert.ok(await page.evaluate(()=>{const w=HISTORY_BRANCHES.find(b=>b.id==='west');return w.name==='中世纪西欧'&&w.parent==='rome'&&w.from===476&&w.to===814&&w.c===HC.celt;}));
    // The user's own reading of Augustus and of the empire, and the Praetorian Guard as a thread through the chapter.

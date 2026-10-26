@@ -858,6 +858,24 @@ const FIGURE_PLACES={
     ],
     "note": "上美索不达米亚的叙利亚语大城，今土耳其尚勒乌尔法。"
   },
+  "f_bobbio": {
+    "name": "博比奥",
+    "en": "Bobbio",
+    "ll": [
+      44.77,
+      9.39
+    ],
+    "note": "亚平宁山北麓的小镇，614年高隆邦在此建修道院。"
+  },
+  "w_canterbury": {
+    "name": "坎特伯雷",
+    "en": "Canterbury",
+    "ll": [
+      51.28,
+      1.08
+    ],
+    "note": "肯特王国的王都，597年起是英格兰教会的首座。"
+  },
   "i_amorion": {
     "name": "阿莫里翁",
     "en": "Amorion",
@@ -3447,6 +3465,34 @@ const FIGURES={
       ]
     ]
   },
+  "columbanus": {
+    "name": "高隆邦",
+    "en": "Columbanus",
+    "life": "543—615年",
+    "relation": "爱尔兰修士 · 吕克瑟伊与博比奥修道院的创建者",
+    "place": "f_bobbio",
+    "bio": "生在爱尔兰伦斯特，在班戈修道院读书，通拉丁文。约590年带十二个同伴渡海到高卢，在孚日山办学，学生多到搬了两回家。他守爱尔兰的复活节算法、剃爱尔兰式的发，跟法兰克主教和王室闹翻，610年被逐出勃艮第；614年在伦巴第王阿吉卢尔夫给的地上建博比奥修道院，次年死在那里。",
+    "sources": [
+      [
+        "高隆邦（英文资料）",
+        "https://en.wikipedia.org/wiki/Columbanus"
+      ]
+    ]
+  },
+  "augustine-canterbury": {
+    "name": "坎特伯雷的奥古斯丁",
+    "en": "Augustine of Canterbury",
+    "life": "?—约604年",
+    "relation": "首任坎特伯雷大主教 · 格雷戈里修道院的副院长",
+    "place": "w_canterbury",
+    "bio": "格雷戈里在罗马西里欧山上所建圣安德烈修道院的副院长。595—596年受命带修士去英格兰，597年在肯特登岸，同年受祝圣为主教；601年教宗赐他披肩，交代他在英格兰立十二个主教，再派一位去约克。他在坎特伯雷建了主教座堂和修道院，约604年去世。",
+    "sources": [
+      [
+        "坎特伯雷的奥古斯丁（英文资料）",
+        "https://en.wikipedia.org/wiki/Augustine_of_Canterbury"
+      ]
+    ]
+  },
   "constans-ii": {
     "name": "君士坦斯二世",
     "en": "Constans II",
@@ -5417,6 +5463,33 @@ const FIGURE_SCENES={
       "place": "constantinople"
     }
   ],
+  "history-faith-gregory/1": [
+    {
+      "id": "gregory-great",
+      "when": "590年",
+      "event": "不想当的教宗",
+      "note": "罗马人推他当教宗，他写信请皇帝莫里斯不要批准，信却被罗马城的长官截了下来，皇帝的批文照样到了。他在任头一年的信里满是诉苦：担子太重，想念修道院里的清静日子。",
+      "place": "rome"
+    }
+  ],
+  "history-faith-gregory/3": [
+    {
+      "id": "columbanus",
+      "when": "602—603年",
+      "event": "让我在林子里安静地活",
+      "note": "法兰克主教开会要审他的复活节算法，他不去，写信给主教们：这分歧不是我造的，我是为基督来到这里的穷外乡人，只求诸位让我在这片林子里，守着十七位已故弟兄的骨头，安静地活。他又写信请教宗格雷戈里撑腰，信没得回音。",
+      "place": "f_bobbio"
+    }
+  ],
+  "history-faith-gregory/6": [
+    {
+      "id": "augustine-canterbury",
+      "when": "596年",
+      "event": "半路想回头",
+      "note": "据比德，一行人走到半路就怕了：要去的是个蛮横凶悍、不信神的民族，连话都听不懂，大家商定还是回去最稳妥，派奥古斯丁回罗马求教宗免了这趟差。教宗回信打气，叫他们接着走，又给沿途的法兰克主教写信照应。",
+      "place": "w_canterbury"
+    }
+  ],
   "history-empire-constans/0": [
     {
       "id": "constans-ii",
@@ -5523,15 +5596,6 @@ const FIGURE_SCENES={
       "event": "受膏称王",
       "note": "法兰克贵族按老规矩在苏瓦松推他为王，又给他抹了圣油；据说是爱尔兰修士维尔吉利乌斯翻出一部爱尔兰教会法集，劝他受膏。墨洛温王靠血统和长发，他多了教会给的名分；754年教宗又给他父子涂了一回，不许法兰克人另立别家。",
       "place": "w_soissons"
-    }
-  ],
-  "history-west-lombards/2": [
-    {
-      "id": "gregory-great",
-      "when": "590年",
-      "event": "不想当的教宗",
-      "note": "罗马人推他当教宗，他写信请皇帝莫里斯不要批准，信却被罗马城的长官截了下来，皇帝的批文照样到了。他在任头一年的信里满是诉苦：担子太重，想念修道院里的清静日子。",
-      "place": "rome"
     }
   ],
   "history-west-lombards/4": [

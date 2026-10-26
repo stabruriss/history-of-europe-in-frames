@@ -18,7 +18,7 @@ const SHORTS={'history-empire-west-fall':['西罗马的终结','395—455年',8]
  'history-empire-isaurian':['伊苏里亚王朝','717—802年',6],'history-empire-amorian':['阿莫里亚王朝','802—867年',4],'history-empire-macedonian':['马其顿王朝','867—1056年',4]};
 const EAST_TAIL=['history-empire-leo/0','history-empire-justinian/0','history-empire-heraclius/0','history-arab-conquest/0','history-empire-constans/0',
  'history-empire-anarchy/0','history-empire-isaurian/0','history-empire-amorian/0','history-empire-macedonian/0','history-empire-macedonian/3'];
-const FAITH_TAIL=['history-faith-papacy/0','history-faith-three-chapters/0','history-empire-constans/0','history-empire-isaurian/0','history-empire-amorian/0','history-empire-macedonian/3'];
+const FAITH_TAIL=['history-faith-papacy/0','history-faith-three-chapters/0','history-faith-gregory/0','history-empire-constans/0','history-empire-isaurian/0','history-empire-amorian/0','history-empire-macedonian/3'];
 const SHARED=['history-empire-constans/0','history-empire-isaurian/0','history-empire-amorian/0','history-empire-macedonian/3'];
 // 老无's core theses and hooks, woven into the right historical places and bolded (no conversational "后来/结果/他死之后事情怎么样了" copied verbatim).
 const BOLD=[['history-empire-theodosius/2','394年9月冷河之战，狄奥多西征调两万西哥特同盟兵讨伐西部篡位者，首领阿拉里克率部履行义务顶在最前线，一战死伤过半'],
@@ -144,8 +144,8 @@ const REGIONS=['mThemeOpsikion','mThemeThrakesion','mThemeAnatolikon','mThemeArm
    }
    // Stepping along 基督教 from the fifth council runs through the East Roman stations to the schism; along 东罗马 the Macedonians come in two stops.
    await page.evaluate(()=>{selectTreeLine('faith');go('history-faith-three-chapters');});
-   const walk=[];for(let i=0;i<4;i++){await page.click('#next');walk.push(await page.evaluate(()=>[ENTRIES[cur].id,sceneIndex,treeLine]));}
-   assert.deepEqual(walk,[['history-empire-constans',0,'faith'],['history-empire-isaurian',0,'faith'],['history-empire-amorian',0,'faith'],['history-empire-macedonian',3,'faith']]);
+   const walk=[];for(let i=0;i<5;i++){await page.click('#next');walk.push(await page.evaluate(()=>[ENTRIES[cur].id,sceneIndex,treeLine]));}
+   assert.deepEqual(walk,[['history-faith-gregory',0,'faith'],['history-empire-constans',0,'faith'],['history-empire-isaurian',0,'faith'],['history-empire-amorian',0,'faith'],['history-empire-macedonian',3,'faith']]);
    assert.ok(await page.$eval('#next',e=>e.disabled),'end of the 基督教 line');
    await page.evaluate(()=>{selectTreeLine('east');go('history-empire-amorian');});
    await page.click('#next');assert.deepEqual(await page.evaluate(()=>[ENTRIES[cur].id,sceneIndex]),['history-empire-macedonian',0]);
