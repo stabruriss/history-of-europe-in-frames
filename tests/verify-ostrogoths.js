@@ -65,8 +65,8 @@ const CARDS=[[ID+'/1','theodoric-great',/人质/],[ID+'/3','theodoric-great',/�
    assert.deepEqual(r.row,['west',480,568,'476—568年']);
    assert.deepEqual(r.west.slice(r.west.indexOf('history-west-kingdoms')),['history-west-kingdoms',ID,'history-west-merovingians','history-west-lombards','history-west-charlemagne']);
    assert.deepEqual(r.era,['history-west-kingdoms',ID]);
-   // 蛮族诸王国 handed over its Theodoric scene, with its links; its later scenes and moments moved up one.
-   assert.deepEqual(r.wk,[5,['476—507年','466—507年','486—511年','568—589年','589—713年'],[[2,'圣马丁堂里的紫袍'],[4,'剃了发的国王']],false,false]);
+   // 蛮族诸王国 handed over its Theodoric scene, with its links; its later scenes and moments moved up one, and Clovis's scene gained the Vase of Soissons.
+   assert.deepEqual(r.wk,[5,['476—507年','466—507年','486—511年','568—589年','589—713年'],[[2,'苏瓦松花瓶'],[2,'圣马丁堂里的紫袍'],[4,'剃了发的国王']],false,false]);
    for(const [k,ok] of r.bold)assert.ok(ok,k+' lacks 老无’s thesis in bold');
    for(const [k,ok] of r.fixes)assert.ok(ok,k+' lacks the plain-text correction');
    assert.equal(r.filler,false,'conversational filler or misspelt names copied into the prose');
@@ -91,9 +91,23 @@ const CARDS=[[ID+'/1','theodoric-great',/人质/],[ID+'/3','theodoric-great',/�
    for(const w of ['丕平二世（宫相）','查理·马特（铁锤）','丕平三世（献土）','查理曼（大帝）','卡洛曼（出家）','卡洛曼（早死）','路易（虔诚者）','路易（日耳曼人）','查理（秃头）','克洛泰尔一世（收齐）','希尔德里克三世（末代）','511年','843年'])
     assert.ok(tree.text.includes(w),'tree lacks '+w);
    const tags=await page.evaluate(()=>{const E=id=>HISTORY_ENTRIES.find(e=>e.id===id),p=(id,i)=>{const d=document.createElement('div');d.innerHTML=E(id).html;return [...d.querySelectorAll('[data-scene-text]')][i].textContent.replace(/（[A-Za-z][^）]*）/g,'');};
+    const b=(id,i)=>{const d=document.createElement('div');d.innerHTML=E(id).html;return [...d.querySelectorAll('[data-scene-text]')][i].innerHTML.replace(/（[A-Za-z][^）]*）/g,'');};
     return [p('history-west-merovingians',3).includes('查理·马特（铁锤）'),p('history-west-merovingians',4).includes('丕平（矮子丕平）'),p('history-west-lombards',4).includes('“丕平献土”'),
-     p('history-west-charlemagne',0).includes('查理（即查理曼大帝）'),p('history-west-charlemagne',5).includes('“虔诚者”路易')];});
-   assert.deepEqual(tags,[true,true,true,true,true],'identifying tags in the prose');
+     p('history-west-charlemagne',0).includes('查理（即查理曼大帝）'),p('history-west-charlemagne',5).includes('“虔诚者”路易'),
+     // 老无 2026-10-25 夜: 法兰克崛起的要点 woven chronologically across seven sections (not dumped into a standalone section).
+     b('history-empire-crisis',4).includes('<strong>法兰克由莱茵河中下游的卡马维、布鲁克特里等小部族合流而成，“法兰克”在日耳曼语里意为“凶悍、勇猛”，后世又演成免税的“自由人”'),
+     b('history-empire-constantine',4).includes('<strong>358年尤利安打服渡过莱茵河的萨利克法兰克人，没按老规矩拆散，而是准其整支留在托克桑德利亚当同盟兵'),
+     b('history-empire-theodosius',4).includes('<strong>四世纪末法兰克将领接连掌管西罗马兵权，连东边的皇后欧多克西娅也是法兰克大将鲍托之女'),
+     b('history-empire-west-fall',0).includes('<strong>唯独法兰克人（三角洲的萨利克部与科隆河岸的里普利安部）从来没被拆散，也没像哥特、汪达尔那样整族背井离乡，而是背靠莱茵河老家步步南下蚕食'),
+     b('history-empire-west-fall',2).includes('<strong>替罗马守河的法兰克同盟兵迎头截击，阵斩汪达尔王、杀两万人，直到阿兰人赶来救场才被冲垮'),
+     b('history-empire-west-fall',6).includes('<strong>恰逢法兰克王死后两子争位，各投阿提拉与埃提乌斯。451年埃提乌斯合西哥特与墨洛维的法兰克人在卡塔隆平原挡住阿提拉'),
+     b('history-empire-west-end',2).includes('<strong>埃吉迪乌斯联手图尔奈的萨利克法兰克王希尔德里克一世（，克洛维之父），463年在奥尔良打退西哥特')||p('history-empire-west-end',2).includes('埃吉迪乌斯联手图尔奈的萨利克法兰克王希尔德里克一世'),
+     b('history-empire-west-end',4).includes('<strong>一路推到卢瓦尔河、打到法兰克地盘，希尔德里克一世与罗马残军并肩死守，外患促进了法兰克诸部更好地组织联合起来'),
+     b('history-empire-leo',4).includes('<strong>东边同波斯打仗，他在西边只能搞制衡，拉法兰克王克洛维对付西哥特、授他执政官'),
+     b('history-west-kingdoms',0).includes('<strong>高卢北部归从未背井离乡、也未被拆散的法兰克')&&p('history-west-kingdoms',0).includes('不列颠早在410年前后被罗马放弃'),
+     b('history-west-kingdoms',2).includes('<strong>468年后西哥特北扩打到法兰克地盘，促进了法兰克诸部组织联合起来')&&b('history-west-kingdoms',2).includes('<strong>那时东罗马同波斯打仗，在西边只能搞“搅屎棍”式的制衡策略，拉法兰克对付西哥特。507年克洛维在武耶打垮西哥特、亲手杀了阿拉里克二世；他从东帝阿纳斯塔修斯拿到执政官称号，披紫袍自称“奥古斯都”')&&b('history-west-kingdoms',2).includes('<strong>他又设计除掉萨利克与科隆各小王，一统诸部、定都巴黎'),
+     b('history-west-ostrogoths',3).includes('<strong>508年发兵打退南下武耶的克洛维，收下普罗旺斯、替外孙保住西哥特残部')];});
+   assert.deepEqual(tags,Array(17).fill(true),'identifying tags and Frankish rise woven across the timeline: '+JSON.stringify(tags));
    if(label==='desktop')await page.evaluate(()=>[...document.querySelectorAll('#sceneContext .box')].at(-1).scrollIntoView({block:'start'}));
    await page.screenshot({path:path.join(shots,`frank-tree-${label}.png`)});
    for(let i=0;i<SCENES.length;i++){

@@ -35,8 +35,8 @@ const GONE=[['history-west-kingdoms/1','把普罗旺斯也让给了他'],['histo
  ['history-empire-west-fall/7','476年奥多亚克废掉罗慕路斯']];
 const SCENES=[['455—462年','两位公主：一嫁汪达尔，一嫁元老'],['455—461年','北联西哥特、南征汪达尔'],['461—467年','傀儡与正统：请东边派皇帝'],
  ['467—468年','利奥送来的皇帝与联合舰队'],['468—472年','西哥特扩张与拥立者的内战'],['472—476年','走马灯与冠服东归'],['476年以后','以罗马人治罗马人，从收税到分地']];
-const MOMENTS=[[0,'“汪达尔主义”'],[1,'染黑金发进敌营'],[4,'穿皮袄的哥特人与爱激动的加拉太人'],[5,'十八骑破围'],[5,'末代皇帝的名字']];
-const CARDS=[[ID+'/0','gaiseric',/上帝发怒/],[ID+'/1','majorian',/五十磅黄金/],[ID+'/2','ricimer',/两个王国/],[ID+'/3','anthemius',/携手/],
+const MOMENTS=[[0,'“汪达尔主义”'],[1,'染黑金发进敌营'],[2,'图尔奈墓里的金蜜蜂'],[4,'穿皮袄的哥特人与爱激动的加拉太人'],[5,'十八骑破围'],[5,'末代皇帝的名字']];
+const CARDS=[[ID+'/0','gaiseric',/上帝发怒/],[ID+'/1','majorian',/五十磅黄金/],[ID+'/2','ricimer',/两个王国/],[ID+'/2','childeric-i',/金币掰成两半/],[ID+'/3','anthemius',/携手/],
  [ID+'/5','odoacer',/两头应付.*尼波斯/],[ID+'/6','sidonius',/乐得输给他/],['history-empire-west-fall/7','augustine',/上帝之城/]];
 (async()=>{
  const browser=await puppeteer.launch({executablePath:process.env.CHROME_PATH||'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true});
@@ -78,7 +78,7 @@ const CARDS=[[ID+'/0','gaiseric',/上帝发怒/],[ID+'/1','majorian',/五十磅�
    assert.deepEqual(r.head,[5,'西罗马的终结（下）：二十一年八个皇帝','西罗马的终结（下）','455—476年',true]);
    assert.deepEqual(r.scenes,SCENES);
    assert.deepEqual(r.order,['history-empire-west-fall',ID,'history-empire-leo'],'reading order: after 西罗马的终结, before 利奥王朝');
-   assert.deepEqual(r.wf,['395—455年',8,'454—455年','手刃权臣、汪达尔劫城与道统衰落',['不译《列王纪》','名叫罗马的鸡','左手砍了右手：手刃权臣的皇帝']]);
+   assert.deepEqual(r.wf,['395—455年',8,'454—455年','手刃权臣、汪达尔劫城与道统衰落',['不译《列王纪》','替罗马守河的法兰克人','名叫罗马的鸡','金发王子与卡塔隆前夜','左手砍了右手：手刃权臣的皇帝']]);
    assert.deepEqual(r.rows,[['rome',395,455],['rome',455,476]]);
    assert.deepEqual(r.romeLine,['history-empire-theodosius','history-empire-west-fall',ID],'the last station of 罗马 before the fork at 476');
    assert.deepEqual(r.era,['history-empire-valentinian','history-empire-theodosius','history-empire-west-fall',ID]);

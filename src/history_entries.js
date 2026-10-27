@@ -368,6 +368,9 @@ Object.assign(HS,{
   r_dastagird:['达斯塔吉尔德','Dastagird',33.98,44.93,'泰西封东北约百公里的萨珊王家行宫；628年1月被希拉克略洗劫。'],
   r_yarmouk:['雅穆克河谷','Yarmouk',32.81,35.95,'戈兰高地南侧的河谷；636年8月东罗马大军在此溃败，叙利亚归了穆斯林。'],
   r_babylon_eg:['巴比伦堡','Babylon Fortress',30.006,31.23,'尼罗河三角洲顶端的要塞（今开罗老城）；641年4月被阿慕尔攻下，居鲁士在此签约交出埃及。'],
+  w_toxandria:['托克桑德利亚','Toxandria',51.35,5.1,'莱茵—马斯河三角洲南边的沙地；358年尤利安准萨利克法兰克人整支留居于此当同盟兵。'],
+  w_tournai:['图尔奈','Tournai / Turnacum',50.61,3.39,'萨利克法兰克王克洛迪奥、希尔德里克一世与少年克洛维的驻地；1653年在此挖出希尔德里克墓。'],
+  w_tolbiac:['托尔比亚克','Tolbiac / Zülpich',50.69,6.65,'科隆西南；496年前后克洛维在此击败阿勒曼尼人。'],
   r_placentia:['皮亚琴察','Placentia / Piacenza',45.05,9.69,'波河边的城；456年阿维图斯在此兵败，476年俄瑞斯忒斯在此被杀。'],
   r_dertona:['托尔托纳','Dertona / Tortona',44.9,8.86,'461年8月马约里安在此被李希梅尔扒去紫袍，五天后斩首。'],
   r_orbigo:['奥尔维戈河','Órbigo',42.46,-5.88,'阿斯托加附近的河；456年10月西哥特王狄奥多里克二世在此大败苏维汇人。'],
@@ -1424,7 +1427,7 @@ const HISTORY_ENTRIES=[
     hp(d,'pola',{note:'326年长子克里斯普斯在此被处死。'});
     hp(d,'nicomedeia',{note:'337年5月，君士坦丁在城郊临终受洗，22日去世。'});
     hp(d,'constantinople',{left:1,note:'葬在圣使徒教堂；337年夏，军队在此杀尽他的异母兄弟和侄子。'});
-    hp(d,'lutetia',{note:'360年高卢军团在此拥立尤利安。'});hp(d,'ctesiphon',{kind:'battle',note:'363年尤利安兵临城下，没能攻下，回师途中中矛身亡。'});
+    hp(d,'w_toxandria',{note:'358年尤利安打服萨利克法兰克人，准其整支留居于此当同盟兵。'});hp(d,'lutetia',{note:'360年高卢军团在此拥立尤利安。'});hp(d,'ctesiphon',{kind:'battle',note:'363年尤利安兵临城下，没能攻下，回师途中中矛身亡。'});
     [['君士坦丁二世 · 阿尔卑斯以西','Constantine II',47.0,1.0],['君士坦斯 · 意大利、阿非利加','Constans',35.0,8.0],
      ['达尔马提乌斯 · 色雷斯、希腊','Dalmatius',42.0,24.2],['君士坦提乌斯二世 · 东方','Constantius II',34.0,38.6],
      ['汉尼拔良 · 亚美尼亚','Hannibalianus',39.7,42.3]].forEach(([t,en,la,lo])=>hl(d,t,en,la,lo,HC.rome));
@@ -1541,7 +1544,7 @@ const HISTORY_ENTRIES=[
     hp(d,'catalaunian',{kind:'battle',left:1});
     [['匈人','Huns',49.6,40.5,HC.war],['东哥特','Ostrogoths',48.9,31.0,HC.celt],['西哥特','Visigoths',42.9,24.0,HC.celt],
      ['汪达尔等','Vandals, Alans, Suebi',51.5,15.8,HC.mino],['勃艮第','Burgundians',46.5,2.4,HC.thebes],
-     ['法兰克','Franks',51.9,4.2,HC.macedon],['阿勒曼尼','Alamanni',48.0,9.8,HC.neutral],['撒克逊','Saxons',54.3,9.6,HC.neutral]].forEach(([t,en,la,lo,c])=>hl(d,t,en,la,lo,c));
+     ['法兰克：背靠莱茵河，未拆散','Franks: rooted on the Rhine',51.9,4.2,HC.macedon],['阿勒曼尼','Alamanni',48.0,9.8,HC.neutral],['撒克逊','Saxons',54.3,9.6,HC.neutral]].forEach(([t,en,la,lo,c])=>hl(d,t,en,la,lo,c));
    },[['fill',HC.war,'匈人的天下（约450年，概略）'],['dline',HC.war,'匈人西进（约370—420，概略）'],['dline',HC.celt,'哥特人渡多瑙河（376）'],['dline',HC.mino,'汪达尔等渡莱茵河（406）'],['dline',HC.thebes,'勃艮第人迁徙（概略）'],['dot','#2a2018','渡河处与卡塔隆平原']]),
   hs('395—402年','“董卓”阿拉里克与马其顿方案','十岁的霍诺留由“霍光”斯提里科辅佐；东罗马权宦以“马其顿方案”封阿拉里克为伊利里库姆大元帅，399年宦官倒台方案烂尾，阿拉里克洗劫希腊、杀入意大利，402年西罗马迁都拉文纳。',[[31.5,6.0],[47.5,31.5]],d=>{
     ha(d,'eWest395',HC.rome,{fillOpacity:.14});ha(d,'eEast395',HC.athens,{fillOpacity:.14});
@@ -1557,7 +1560,8 @@ const HISTORY_ENTRIES=[
     ha(d,'eWest395',HC.rome,{fillOpacity:.14});ha(d,'eEast395',HC.athens,{fillOpacity:.1});
     hp(d,'ravenna',{note:'斯提里科坐镇北意大利，406年击灭入侵的拉达盖苏斯大军。'});
     hp(d,'epirus',{note:'405—407年阿拉里克依约进驻伊庇鲁斯，苦等斯提里科会师攻打东罗马的马其顿。'});
-    hp(d,'mogontiacum',{kind:'battle',note:'斯提里科抽空莱茵河驻军回防意大利；406年最后一天，汪达尔人、阿兰人、苏维汇人在此踏冰渡河。'});
+    hp(d,'mogontiacum',{kind:'battle',note:'406年法兰克同盟兵在莱茵河东岸截击汪达尔人、杀其王与两万部众，阿兰人救场后三族于除夕在此踏冰渡河。'});
+    hp(d,'w_tournai',{note:'440年代萨利克法兰克王克洛迪奥穿炭林南下，攻占图尔奈与康布雷。'});
     hr(d,[[50.0,8.0],[48.6,4.0],[46.0,1.0],[43.4,-1.2],[40.5,-4.0]],HC.war);
     hr(d,[[39.8,20.5],[43.5,16.5],[46.3,14.0]],HC.celt);
    },[['fill',HC.rome,'西罗马'],['fill',HC.athens,'东罗马'],['dline',HC.war,'406年蛮族渡莱茵河、409年夺西班牙（概略）'],['dline',HC.celt,'408年阿拉里克北上索要四千磅黄金（概略）'],['dot',HC.war,'莱茵河决口处'],['dot','#2a2018','拉文纳与苦等的伊庇鲁斯']]),
@@ -1589,7 +1593,7 @@ const HISTORY_ENTRIES=[
     ha(d,'eHuns450',HC.war,{fillOpacity:.22});ha(d,'eWest395',HC.rome,{fillOpacity:.12});ha(d,'eEast395',HC.athens,{fillOpacity:.12});
     hp(d,'naissus',{kind:'battle',note:'匈人用攻城锤与攻城塔攻破巴尔干数十城；449年东罗马暗杀阿提拉未遂。'});
     hp(d,'constantinople',{note:'霍诺莉娅公主与管家私通怀孕后曾被送往这里；450年她密送戒指求阿提拉救她。'});
-    hp(d,'catalaunian',{kind:'battle',note:'451年6月埃提乌斯联合西哥特王狄奥多里克一世在此挡住阿提拉。'});
+    hp(d,'catalaunian',{kind:'battle',note:'451年6月埃提乌斯联合西哥特王狄奥多里克一世与墨洛维的萨利克法兰克人在此挡住阿提拉。'});
     hp(d,'aquileia',{kind:'battle',note:'452年被阿提拉攻破夷平。'});hp(d,'mincio',{note:'452年教宗利奥一世在此劝退阿提拉。'});hp(d,'rome');
     hl(d,'453年：阿提拉新婚夜暴毙，诸子内斗瓦解','Attila dies 453; empire breaks up',47.2,20.5,HC.war);
     hr(d,[[47.0,20.0],[49.5,11.0],[48.8,4.4]],HC.war);
@@ -1623,12 +1627,14 @@ const HISTORY_ENTRIES=[
     hp(d,'r_illici',{kind:'battle'});hp(d,'r_dertona',{kind:'battle',left:1});ha(d,'eBurgundians460',HC.celt,{fillOpacity:.3});
     hr(d,[[45.05,9.69],[44.4,8.0],[43.68,4.63],[43.6,1.44],[41.65,-0.88],[39.5,-0.9],[38.19,-0.56]],HC.rome);
    },[['fill',HC.rome,'马约里安治下的西罗马（约460年，概略）'],['fill',HC.mino,'西哥特同盟者（约460年）'],['fill',HC.thebes,'苏维汇'],['fill',HC.macedon,'汪达尔'],['fill',HC.celt,'勃艮第人（萨伏依）'],['dline',HC.rome,'马约里安西征（概略）'],['dot',HC.war,'456—461年的几处战场与刑场']]),
-  hs('461—467年','傀儡与正统：请东边派皇帝','李希梅尔扶起塞维鲁，东罗马不认，高卢与达尔马提亚各自割据，汪达尔人年年劫掠；西部只认东边是正统，只好请利奥派皇帝。',[[34.5,-3.5],[51.0,30.0]],d=>{
+  hs('461—467年','傀儡与正统：请东边派皇帝','李希梅尔扶起塞维鲁，东罗马不认，高卢与达尔马提亚各自割据，汪达尔人年年劫掠；西部只认东边是正统，只好请利奥派皇帝。',[[34.5,-3.5],[51.4,30.0]],d=>{
     ha(d,'e476Odoacer',HC.rome,{fillOpacity:.22});ha(d,'eDalmatia460',HC.rome,{fillOpacity:.12,dashArray:'5 4'});
     ha(d,'e476Soissons',HC.rome,{fillOpacity:.12,dashArray:'5 4'});ha(d,'eVisigoths460',HC.mino,{fillOpacity:.24});
     ha(d,'e476Vandals',HC.macedon,{fillOpacity:.22});ha(d,'eEast395',HC.athens,{fillOpacity:.16});
     hp(d,'ravenna',{note:'461—465年李希梅尔扶起的塞维鲁在此坐朝，东罗马始终不认。'});
     hp(d,'soissons',{note:'埃吉迪乌斯不认塞维鲁，在卢瓦尔河以北自立，多半仍奉利奥为主。'});
+    hp(d,'w_tournai',{note:'萨利克法兰克王希尔德里克一世的驻地；他与埃吉迪乌斯联手守卢瓦尔河。'});
+    hp(d,'w_orleans',{kind:'battle',note:'463年埃吉迪乌斯与法兰克人在此打败西哥特军。'});
     hp(d,'salona',{note:'马塞利努斯据达尔马提亚自立，与东罗马合作。'});
     hp(d,'narbo',{note:'462年西部朝廷为借西哥特兵打埃吉迪乌斯，把纳博讷割给了他们。'});
     hp(d,'constantinople',{note:'467年西部请利奥一世派皇帝。'});hp(d,'carthage');
@@ -1969,7 +1975,7 @@ const HISTORY_ENTRIES=[
    },[['fill',HC.mino,'西哥特王国（约476年）'],['dot',HC.war,'抵抗三年的克莱蒙'],['dot','#2a2018','都城与普罗旺斯']]),
   hs('486—511年','武耶：天主教的法兰克人','克洛维打掉罗马残部、改信天主教，507年在武耶打垮西哥特，西哥特退进西班牙，只保住塞普提马尼亚。',[[40.5,-5.5],[51.5,9.5]],d=>{
     ha(d,'lFranks511',HC.myc,{fillOpacity:.22});ha(d,'lVisigoths510',HC.mino,{fillOpacity:.2});
-    hp(d,'soissons',{kind:'battle'});hp(d,'vouille',{kind:'battle'});
+    hp(d,'w_tournai',{note:'希尔德里克一世与少年克洛维的起点。'});hp(d,'soissons',{kind:'battle',left:1,note:'486年克洛维在此灭掉西亚格里乌斯的罗马残部。'});hp(d,'w_reims',{note:'克洛维在此受洗归入天主教。'});hp(d,'w_tolbiac',{kind:'battle',note:'496年克洛维在此击败阿勒曼尼人。'});hp(d,'colonia',{note:'里普利安法兰克人的都城；克洛维设计除掉其王父子后兼并。'});hp(d,'w_paris',{left:1,note:'克洛维晚年定都于此。'});hp(d,'vouille',{kind:'battle'});
     hp(d,'tolosa',{note:'507年王室库藏被克洛维抢走。'});hp(d,'narbo',{left:1});
     hr(d,[[49.4,3.3],[47.9,1.9],[46.64,0.17]],HC.myc);hr(d,[[46.6,0.2],[45.2,0.9],[43.6,1.44]],HC.myc);
    },[['fill',HC.myc,'克洛维死时的法兰克（511年）'],['fill',HC.mino,'507年以后的西哥特'],['dline',HC.myc,'克洛维南下（概略）'],['dot',HC.war,'苏瓦松与武耶']]),
