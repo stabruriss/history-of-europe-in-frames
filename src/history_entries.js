@@ -2053,30 +2053,32 @@ const HISTORY_ENTRIES=[
  ]},
 {id:'history-west-merovingians',ch:5,title:'墨洛温王朝：分家与宫相',short:'墨洛温王朝',en:'The Merovingians: Partitions and Mayors of the Palace',period:'561—751年',c:HC.celt,
  scenes:[
-  hs('561—567年','四个儿子分家','561年克洛泰尔一世死，四子照分家产的规矩分国、各据一都；567年大哥死后再分，王国定成纽斯特里亚、奥斯特拉西亚、勃艮第三块。',[[42.5,-5.0],[51.8,10.0]],d=>{
-    ha(d,'mFranks600',HC.celt,{fillOpacity:.18});
+  hs('561—567年','四个儿子分家','561年克洛泰尔一世死，四子照分家产的规矩分国；567年后定成奥斯特拉西亚、纽斯特里亚、勃艮第、阿基坦四大块，分家混战令集权难维。',[[42.2,-5.0],[53.8,11.2]],d=>{
+    ha(d,'mAustrasia',HC.celt,{fillOpacity:.28});ha(d,'mNeustria',HC.rome,{fillOpacity:.22});
+    ha(d,'mBurgundy',HC.mino,{fillOpacity:.24});ha(d,'mAquitaine',HC.thebes,{fillOpacity:.2,dashArray:'4 4'});
     hp(d,'w_paris',{note:'卡里贝尔特的都城；567年他死后三兄弟共管，约定谁也不许单独进城。'});
-    hp(d,'w_orleans',{left:1});hp(d,'soissons',{note:'希尔佩里克分到的都城。'});
+    hp(d,'w_orleans',{left:1,note:'贡特拉姆初分时的都城。'});hp(d,'soissons',{left:1,note:'希尔佩里克分到的都城。'});
     hp(d,'w_reims',{note:'西吉贝尔特分到的都城，后来奥斯特拉西亚的重心移到梅斯。'});
-    hl(d,'纽斯特里亚','Neustria',48.6,0.2,HC.celt);hl(d,'奥斯特拉西亚','Austrasia',50.2,6.8,HC.celt);
-    hl(d,'勃艮第','Burgundy',46.4,5.2,HC.celt);hl(d,'阿基坦：各分一角','Aquitaine, shared out',44.6,0.8,HC.celt);
-   },[['fill',HC.celt,'法兰克王国（约600年）'],['dot','#2a2018','561年四兄弟的都城']]),
-  hs('568—617年','两个王后','布伦希尔德与弗蕾德贡德两家仇杀四十多年；613年两国宫相倒戈，布伦希尔德被处死；614年巴黎敕令规定地方官用本地人。',[[44.5,-1.5],[51.5,9.0]],d=>{
-    ha(d,'mFranks600',HC.celt,{fillOpacity:.16});
+    hl(d,'纽斯特里亚（新西边的地）','Neustria',48.6,-0.2,HC.rome);hl(d,'奥斯特拉西亚（东边的老家）','Austrasia',50.4,7.2,HC.celt);
+    hl(d,'勃艮第','Burgundy',46.2,5.3,HC.mino);hl(d,'阿基坦（各分一角·常半独立）','Aquitaine',44.6,0.8,HC.thebes);
+   },[['fill',HC.celt,'奥斯特拉西亚（东边的日耳曼老家）'],['fill',HC.rome,'纽斯特里亚（西边）'],['fill',HC.mino,'勃艮第（东南）'],['dash',HC.thebes,'阿基坦（西南，各分一角）'],['dot','#2a2018','561年四兄弟的都城']]),
+  hs('568—617年','两个王后','布伦希尔德与弗蕾德贡德仇杀四十多年；教会也分裂成国王加主教、贵族加爱尔兰修士两头；613年宫相与贵族倒戈，614年巴黎敕令向贵族让权。',[[44.5,-1.5],[51.5,9.0]],d=>{
+    ha(d,'mAustrasia',HC.celt,{fillOpacity:.24});ha(d,'mNeustria',HC.rome,{fillOpacity:.2});ha(d,'mBurgundy',HC.mino,{fillOpacity:.2});
     hp(d,'w_metz',{note:'奥斯特拉西亚的都城；布伦希尔德在此与西吉贝尔特成婚。'});
-    hp(d,'soissons',{note:'希尔佩里克与弗蕾德贡德的都城。'});
+    hp(d,'soissons',{left:1,note:'希尔佩里克与弗蕾德贡德的都城。'});
     hp(d,'w_vitry',{kind:'battle',note:'575年西吉贝尔特在此被举上盾牌，随即遇刺。'});
-    hp(d,'w_paris',{left:1,note:'614年克洛泰尔二世在此颁布敕令。'});
-    hl(d,'奥斯特拉西亚','Austrasia',49.9,7.2,HC.celt);hl(d,'纽斯特里亚','Neustria',48.4,0.3,HC.celt);
-    hl(d,'勃艮第','Burgundy',46.4,5.2,HC.celt);
-   },[['fill',HC.celt,'法兰克王国（约600年）'],['dot',HC.war,'575年西吉贝尔特遇刺处'],['dot','#2a2018','两家的都城与颁敕令的巴黎']]),
-  hs('613—687年','懒王与宫相','达戈贝尔特以后王位多落到孩子手里，宫相替国王发地封官、反由贵族推举；687年丕平二世在泰尔特里获胜，一人兼管三国。',[[46.5,-1.0],[52.0,9.0]],d=>{
-    ha(d,'mFranks600',HC.celt,{fillOpacity:.16});
+    hp(d,'f_luxeuil',{note:'约590年爱尔兰修士高隆邦在此办修道院，各地贵族纷纷效仿建院、不归城里主教管；610年被布伦希尔德驱逐。'});
+    hp(d,'w_paris',{left:1,note:'614年克洛泰尔二世在此颁布敕令：地方官必用本地人。'});
+    hl(d,'奥斯特拉西亚','Austrasia',49.9,7.2,HC.celt);hl(d,'纽斯特里亚','Neustria',48.4,0.3,HC.rome);
+    hl(d,'勃艮第','Burgundy',46.4,5.2,HC.mino);
+   },[['fill',HC.celt,'奥斯特拉西亚'],['fill',HC.rome,'纽斯特里亚'],['fill',HC.mino,'勃艮第'],['dot',HC.war,'575年西吉贝尔特遇刺处'],['dot','#2a2018','两家王都、爱尔兰修道院与颁敕令的巴黎']]),
+  hs('613—687年','懒王与宫相','活像三国：各地偏割据，中央朝政被权相“宫相”把持，懒王成了摆设；687年丕平二世在泰尔特里获胜，一人兼管三国。',[[46.5,-1.0],[52.0,9.0]],d=>{
+    ha(d,'mAustrasia',HC.celt,{fillOpacity:.26});ha(d,'mNeustria',HC.rome,{fillOpacity:.2});ha(d,'mBurgundy',HC.mino,{fillOpacity:.16});
     hp(d,'w_paris',{left:1,note:'达戈贝尔特一世的都城。'});
     hp(d,'w_saintdenis',{labelZ:7,note:'达戈贝尔特一世是第一个葬在这里的法兰克王。'});
     hp(d,'w_tertry',{kind:'battle'});hp(d,'w_herstal',{note:'丕平二世家族的根据地。'});hp(d,'w_metz');
-    hl(d,'奥斯特拉西亚','Austrasia',50.0,7.4,HC.celt);hl(d,'纽斯特里亚','Neustria',48.4,0.3,HC.celt);
-   },[['fill',HC.celt,'法兰克王国（约600年）'],['dot',HC.war,'687年泰尔特里之战'],['dot','#2a2018','王都、王陵与宫相家的根据地']]),
+    hl(d,'奥斯特拉西亚','Austrasia',50.0,7.4,HC.celt);hl(d,'纽斯特里亚','Neustria',48.4,0.3,HC.rome);
+   },[['fill',HC.celt,'奥斯特拉西亚（丕平家根据地）'],['fill',HC.rome,'纽斯特里亚'],['fill',HC.mino,'勃艮第'],['dot',HC.war,'687年泰尔特里之战'],['dot','#2a2018','王都、王陵与宫相家的根据地']]),
   hs('714—743年','铁锤与教会的地','732年阿拉伯军北上劫掠，查理·马特在普瓦捷与图尔之间击退；他把主教座和修道院连地赏给亲信，743年改成借地交租。',[[41.0,-4.5],[49.8,7.5]],d=>{
     ha(d,'mFranks600',HC.celt,{fillOpacity:.16});ha(d,'mAndalus750',HC.myc,{fillOpacity:.22});
     ha(d,'mSeptimania',HC.myc,{fillOpacity:.2,dashArray:'4 4'});

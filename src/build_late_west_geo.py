@@ -39,6 +39,18 @@ lost = unary_union([africa, G('gBritannia'), regions['eVisigoths460'], G('e476Su
 regions['eWest460'] = G('eWest395').intersection(box(-10.5, 35.8, 21.0, 51.6)).difference(lost).buffer(0)
 regions['eBurgundians460'] = land.intersection(sapaudia)
 
+# ---------- The four internal blocks of Merovingian Francia (c. 600): Austrasia, Neustria, Burgundy, Aquitaine ----------
+f600 = G('mFranks600')
+aq_poly = Polygon([(-5.5, 42.0), (3.5, 42.0), (3.6, 45.4), (2.6, 46.5), (0.6, 47.15), (-2.5, 47.25), (-5.5, 47.25)])
+bu_poly = Polygon([(2.6, 46.5), (3.6, 45.4), (3.5, 42.0), (10.5, 42.0), (10.5, 47.55), (7.5, 47.6), (5.5, 48.0), (3.8, 48.1), (2.8, 47.7)])
+ne_poly = Polygon([(-5.5, 47.25), (0.6, 47.15), (2.6, 46.5), (2.8, 47.7), (3.8, 48.1), (3.9, 49.6), (3.4, 50.8), (2.2, 51.5), (-5.5, 51.5)])
+regions['mAquitaine'] = f600.intersection(aq_poly).buffer(0)
+rem1 = f600.difference(regions['mAquitaine']).buffer(0)
+regions['mBurgundy'] = rem1.intersection(bu_poly).buffer(0)
+rem2 = rem1.difference(regions['mBurgundy']).buffer(0)
+regions['mNeustria'] = rem2.intersection(ne_poly).buffer(0)
+regions['mAustrasia'] = rem2.difference(regions['mNeustria']).buffer(0)
+
 
 def rounded(g):
     g = g.simplify(.01, preserve_topology=True).buffer(0)

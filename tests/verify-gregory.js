@@ -72,7 +72,7 @@ const CARDS=[[ID+'/1','gregory-great',/截了下来/],[ID+'/3','columbanus',/十
    const k=r.faith.indexOf('history-faith-three-chapters/0');
    assert.deepEqual(r.faith.slice(k,k+3),['history-faith-three-chapters/0',ID+'/0','history-empire-constans/0'],'between 三章案 and the shared 一志论 station');
    assert.deepEqual(r.era,['history-faith-papacy','history-faith-three-chapters',ID]);
-   assert.deepEqual(r.lombards,[true,false,true,true,true,[[0,'阿尔博因的头骨杯']],false,false],JSON.stringify(r.lombards));
+   assert.deepEqual(r.lombards,[true,false,true,true,true,[[0,'阿尔博因的头骨杯'],[4,'伪造的《君士坦丁赠礼》']],false,false],JSON.stringify(r.lombards));
    for(const [k,ok] of r.bold)assert.ok(ok,k+' lacks 老无’s thesis in bold');
    for(const [k,ok] of r.fixes)assert.ok(ok,k+' lacks the plain-text correction');
    assert.equal(r.filler,false,'conversational filler, slips or the wrong title copied into the prose');

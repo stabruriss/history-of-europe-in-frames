@@ -102,7 +102,7 @@ const REGIONS=['mThemeOpsikion','mThemeThrakesion','mThemeAnatolikon','mThemeArm
      fixes:FIXES.map(([k,w])=>{const [id,i]=k.split('/');const p=para(id,i);return [k,stripEn(p.textContent).includes(w)&&!stripEn(p.innerHTML).includes('<strong>'+w)];}),
      chatFiller:/后来又开始教义纷争|这个前面说的|他死之后事情怎么样了|叙利亚和埃及开始是怎么丢的|然后又乱|画像是OK的|教宗小弟|为了讨好一性论/.test(Object.keys(SHORTS).map(id=>all(E(id))).join(' ')),
      china:CHINA.map(([id,w])=>[id,stripEn(all(E(id))).includes(w)]),
-     wu:E('history-empire-justinian').boxes.map(b=>[b.scene,b.name,b.text.split('<br>').length]),
+     wu:E('history-empire-justinian').boxes.filter(b=>b.name==='查士丁尼身后与汉武帝').map(b=>[b.scene,b.name,b.text.split('<br>').length]),
      nurse:E('history-empire-justinian').moments.filter(m=>m.name==='乳母换子').map(m=>m.scene),
      chars:Object.keys(SHORTS).flatMap(id=>{const d=document.createElement('div');d.innerHTML=E(id).html;return [...d.querySelectorAll('[data-scene-text]')].map(p=>[id,stripEn(p.textContent).replace(/\s/g,'').length]);}),
      enTags:[...fullBlob.matchAll(/[\u4e00-\u9fa5·]{2,12}（[A-Za-z][^）]*）/g)].length,

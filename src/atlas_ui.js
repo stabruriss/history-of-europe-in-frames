@@ -708,3 +708,31 @@ window.addEventListener('resize',()=>{
 zoomClasses();
 go(location.hash.slice(1)||'history-migration');
 if(cur<0)go('history-migration');
+
+// Full-size dynasty family/succession sheet overlaid on the map stage when a .kin-open button or svg.kin-tree is clicked.
+const kinSheet=document.createElement('div');kinSheet.id='kinSheet';kinSheet.hidden=true;
+kinSheet.innerHTML=`<div class="kin-sheet-panel" role="dialog" aria-modal="true" aria-labelledby="kinSheetTitle">
+  <header><div><b id="kinSheetTitle">王朝世系表</b><span id="kinSheetSub"></span></div><button type="button" id="kinClose">关闭 ×</button></header>
+  <div class="kin-sheet-body"></div></div>`;
+document.body.appendChild(kinSheet);
+function openKinSheet(box){
+  const btn=box.querySelector('.kin-open'),svg=box.querySelector('svg.kin-tree');if(!svg)return;
+  document.getElementById('kinSheetTitle').textContent=btn?.dataset.kinTitle||box.querySelector('.box-tag')?.firstChild?.textContent||'王朝世系表';
+  document.getElementById('kinSheetSub').textContent=btn?.dataset.kinSub||'当前王朝及以前全彩显示 · 后续王朝灰显';
+  const body=kinSheet.querySelector('.kin-sheet-body');
+  body.innerHTML=svg.outerHTML;
+  const bAfter=box.querySelector('b:last-of-type');
+  if(bAfter&&bAfter.nextSibling){
+    const note=document.createElement('p');note.className='kin-sheet-note';
+    note.innerHTML='<b>'+bAfter.textContent+'</b>'+bAfter.nextSibling.textContent;
+    body.appendChild(note);
+  }
+  kinSheet.hidden=false;
+}
+document.getElementById('kinClose').onclick=()=>{kinSheet.hidden=true;};
+kinSheet.onclick=ev=>{if(ev.target===kinSheet)kinSheet.hidden=true;};
+addEventListener('keydown',ev=>{if(ev.key==='Escape'&&!kinSheet.hidden)kinSheet.hidden=true;});
+card.addEventListener('click',ev=>{
+  const trigger=ev.target.closest('.kin-open,svg.kin-tree');
+  if(trigger){const box=trigger.closest('.box');if(box)openKinSheet(box);}
+});

@@ -108,8 +108,21 @@ const CARDS=[[ID+'/1','theodoric-great',/人质/],[ID+'/3','theodoric-great',/�
      b('history-west-kingdoms',2).includes('<strong>468年后西哥特北扩打到法兰克地盘，促进了法兰克诸部组织联合起来')&&b('history-west-kingdoms',2).includes('<strong>那时东罗马同波斯打仗，在西边只能搞“搅屎棍”式的制衡策略，拉法兰克对付西哥特。507年克洛维在武耶打垮西哥特、亲手杀了阿拉里克二世；他从东帝阿纳斯塔修斯拿到执政官称号，披紫袍自称“奥古斯都”')&&b('history-west-kingdoms',2).includes('<strong>他又设计除掉萨利克与科隆各小王，一统诸部、定都巴黎'),
      b('history-west-ostrogoths',3).includes('<strong>508年发兵打退南下武耶的克洛维，收下普罗旺斯、替外孙保住西哥特残部'),
      b('history-west-merovingians',4).includes('<strong>751年，法兰克贵族在苏瓦松推丕平为王、涂了圣油，开创加洛林王朝')&&E('history-west-charlemagne').short==='加洛林王朝：查理曼',
-     E('history-empire-west-end').boxes[0].text.includes('<svg class="kin-tree"')&&E('history-empire-macedonian').boxes[0].text.includes('<svg class="kin-tree"')];});
-   assert.deepEqual(tags,Array(19).fill(true),'identifying tags, Carolingian naming, and dynasty trees: '+JSON.stringify(tags));
+     E('history-empire-west-end').boxes[0].text.includes('<svg class="kin-tree"')&&E('history-empire-macedonian').boxes[0].text.includes('<svg class="kin-tree"'),
+     // 老无 2026-10-26: 法兰克内部四大块、分家混战难维集权、教会分裂两头、像三国权相把持、加洛林与教宗土地换合法性交易及伪造《君士坦丁赠礼》; progressive dynasty trees at each dynasty end.
+     b('history-west-merovingians',0).includes('<strong>法兰克内部版图定成四大块：东边日耳曼老家奥斯特拉西亚、西边纽斯特里亚、东南勃艮第，外加西南常半独立的阿基坦；分家导致兄弟叔侄频繁混战，中央集权难以维持')&&['mAustrasia','mNeustria','mBurgundy','mAquitaine'].every(k=>!!GEO.regions[k]),
+     b('history-west-merovingians',1).includes('<strong>教会也是一盘散沙：国王与城里的主教是一头，地方贵族与从爱尔兰引入的高隆邦等修士是另一头，贵族在自家庄园建修道院、不归主教管'),
+     b('history-west-merovingians',2).includes('<strong>法兰克演成活像中国三国的局面：外头几大块各地偏割据，里头中央朝政被权相“宫相”把持，“懒王”成了汉献帝式的摆设'),
+     b('history-west-merovingians',4).includes('<strong>加洛林篡位缺王族血统，急需罗马教宗给合法性背书；教宗被伦巴第人逼迫，也急需法兰克撑腰')&&E('history-west-merovingians').boxes[0].text.includes('class="dim-stage"'),
+     b('history-west-lombards',4).includes('伪造《君士坦丁赠礼》说是物归原主——这只是表面文章，实则是法兰克王拿土地换教宗的合法性背书，东罗马光凭空口白牙怎么也要不回去')&&E('history-west-lombards').moments.some(m=>m.name==='伪造的《君士坦丁赠礼》'),
+     ['history-empire-julio-claudian','history-empire-flavian','history-empire-antonine','history-empire-crisis','history-empire-constantine','history-empire-west-fall','history-empire-theodosius','history-empire-leo','history-empire-justinian','history-empire-constans','history-empire-anarchy','history-empire-isaurian','history-empire-amorian'].every(id=>E(id).boxes.some(x=>x.text.includes('class="dim-stage"')))];});
+   assert.deepEqual(tags,Array(25).fill(true),'identifying tags, Carolingian naming, Frankish dynamics, and progressive dynasty trees: '+JSON.stringify(tags));
+   // Clicking the expand button opens the wide dynasty sheet overlaid on the map stage.
+   await page.click('#sceneContext .box .kin-open');await wait(80);
+   const sheet=await page.evaluate(()=>{const s=document.getElementById('kinSheet'),svg=s&&s.querySelector('svg.kin-tree');return {open:s&&!s.hidden,w:svg?Math.round(svg.getBoundingClientRect().width):0};});
+   assert.ok(sheet.open&&sheet.w>(label==='desktop'?600:300),JSON.stringify(sheet));
+   if(label==='desktop')await page.screenshot({path:path.join(shots,'frank-tree-sheet-desktop.png')});
+   await page.click('#kinClose');await wait(40);
    if(label==='desktop')await page.evaluate(()=>[...document.querySelectorAll('#sceneContext .box')].at(-1).scrollIntoView({block:'start'}));
    await page.screenshot({path:path.join(shots,`frank-tree-${label}.png`)});
    for(let i=0;i<SCENES.length;i++){
