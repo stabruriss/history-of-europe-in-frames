@@ -65,7 +65,7 @@ const CARDS=[[ID+'/0','gaiseric',/上帝发怒/],[ID+'/1','majorian',/五十磅�
      filler:/新皇帝叫什么|叫什么来的|满族|黄袍|不对，应该是|嗯，|说一下原因|简单交代一下/.test(all(e)),
      china:['萧道成','君子营','张宾','王猛','均田','刘渊'].filter(w=>!stripEn(all(e)).includes(w)),
      moments:e.moments.map(m=>[m.scene,m.name]),
-     box:e.boxes.map(b=>[b.scene,b.name,b.text.split('<br>').length,['用谁治理','两套规矩','借谁的名分','收税还是分地','结局不同'].every(w=>b.text.includes(w))]),
+     box:e.boxes.map(b=>[b.scene,b.name,b.name==='罗马帝国世系表'?b.text.includes('<svg class="kin-tree"')&&b.text.includes('屋大维')&&b.text.includes('罗慕路斯'):['用谁治理','两套规矩','借谁的名分','收税还是分地','结局不同'].every(w=>b.text.includes(w))]),
      chars:[...[ID,'history-empire-west-fall','history-west-kingdoms'].flatMap(id=>{const d=document.createElement('div');d.innerHTML=E(id).html;
       return [...d.querySelectorAll('[data-scene-text]')].map((p,i)=>[id+'/'+i,stripEn(p.textContent).replace(/\s/g,'').length,300]);}),
       ...(()=>{const d=document.createElement('div');d.innerHTML=E('history-china-sixteen-kingdoms').html;return [...d.querySelectorAll('[data-scene-text]')].map((p,i)=>['history-china-sixteen-kingdoms/'+i,stripEn(p.textContent).replace(/\s/g,'').length,230]);})()],
@@ -87,7 +87,7 @@ const CARDS=[[ID+'/0','gaiseric',/上帝发怒/],[ID+'/1','majorian',/五十磅�
    assert.deepEqual(r.gone,[],'old wording left');assert.equal(r.filler,false,'conversational filler copied into the prose');
    assert.deepEqual(r.china,[],'Chinese parallels missing');
    assert.deepEqual(r.moments,MOMENTS);
-   assert.deepEqual(r.box,[[6,'蛮族王国与五胡十六国',5,true]]);
+   assert.deepEqual(r.box,[[5,'罗马帝国世系表',true],[6,'蛮族王国与五胡十六国',true]]);
    for(const [k,n,max] of r.chars)assert.ok(n<=max,k+' '+n+' > '+max);
    assert.deepEqual(r.en,[],'English names on first appearance');
    assert.deepEqual(r.links,[]);assert.equal(r.dupLinks,0);assert.ok(r.sourcesN>=15);

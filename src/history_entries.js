@@ -2130,7 +2130,7 @@ const HISTORY_ENTRIES=[
     hr(d,[[48.77,4.73],[46.6,5.6],[45.25,6.9],[45.14,7.05],[45.19,9.16]],HC.celt);
    },[['fill',HC.mino,'伦巴第王国（751年后）'],['fill',HC.faith,'756年交给教宗的地'],['dline',HC.faith,'753—754年教宗北上（概略）'],['dline',HC.celt,'丕平南下（概略）'],['dot','#2a2018','会面、涂油之地与罗马、拉文纳']])
  ]},
-{id:'history-west-charlemagne',ch:5,title:'查理曼：西方又有了皇帝',short:'查理曼',en:'Charlemagne: An Emperor in the West Again',period:'768—814年',c:HC.celt,
+{id:'history-west-charlemagne',ch:5,title:'加洛林王朝与查理曼：西方又有了皇帝',short:'加洛林王朝：查理曼',en:'The Carolingian Dynasty and Charlemagne: An Emperor in the West Again',period:'768—814年',c:HC.celt,
  scenes:[
   hs('768—771年','两兄弟','768年丕平死，查理与弟弟卡洛曼分国；770年查理娶伦巴第公主，教宗写信痛骂伦巴第人；771年卡洛曼病死，查理独掌全国。',[[41.0,-3.5],[53.5,15.0]],d=>{
     ha(d,'mFranks768',HC.celt,{fillOpacity:.18});ha(d,'mLombards750',HC.mino,{fillOpacity:.18});ha(d,'mPapal756',HC.faith,{fillOpacity:.3});

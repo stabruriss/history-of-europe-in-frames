@@ -20,7 +20,7 @@ const wait=ms=>new Promise(r=>setTimeout(r,ms));
     const chars=html=>{const d=document.createElement('div');d.innerHTML=html;return d.textContent.replace(/（[A-Za-z][^）]*）/g,'').replace(/\s/g,'').length;};
     const paras=empire.flatMap(e=>{const d=document.createElement('div');d.innerHTML=e.html;return [...d.querySelectorAll('[data-scene-text]')].map(p=>({id:e.id+'/'+p.dataset.sceneText,chars:chars(p.innerHTML)}));});
     return {chapter:HISTORY_CH[5],ids:empire.map(e=>e.id),eraIds:eras.map(e=>e.id),eraItems:eras.flatMap(era=>era.items.map(([id])=>id)),
-     scenes:empire.reduce((n,e)=>n+e.scenes.length,0),paras,bold:empire.filter(e=>!['history-west-charlemagne'].includes(e.id)).every(e=>/<strong>/.test(e.html)),
+     scenes:empire.reduce((n,e)=>n+e.scenes.length,0),paras,bold:empire.filter(e=>![].includes(e.id)).every(e=>/<strong>/.test(e.html)),
      nobold:empire.filter(e=>!/<strong>/.test(e.html)).map(e=>e.id),
      moments:empire.reduce((n,e)=>n+e.moments.length,0),
      people:Object.entries(FIGURE_SCENES).filter(([k])=>k.startsWith('history-empire-')).reduce((n,[,v])=>n+v.length,0),
@@ -32,7 +32,7 @@ const wait=ms=>new Promise(r=>setTimeout(r,ms));
    assert.deepEqual([...new Set(report.eraItems)],report.ids);
    assert.equal(report.scenes,129);assert.equal(report.paras.length,129);
    assert.ok(report.paras.every(p=>p.chars<=300),'Empire prose budget: '+JSON.stringify(report.paras.filter(p=>p.chars>300)));
-   assert.ok(report.bold);assert.deepEqual(report.nobold,['history-west-charlemagne']);assert.equal(report.moments,85);assert.equal(report.people,62);
+   assert.ok(report.bold);assert.deepEqual(report.nobold,[]);assert.equal(report.moments,85);assert.equal(report.people,62);
    assert.equal(report.romeEnd,476);assert.deepEqual(report.future,['东罗马（晚期）','加洛林以后','大分裂以后','伊斯兰时代的埃及','伊斯兰时代的伊朗','晚唐五代与宋']);
    assert.ok(await page.evaluate(()=>{const w=HISTORY_BRANCHES.find(b=>b.id==='west');return w.name==='中世纪西欧'&&w.parent==='rome'&&w.from===476&&w.to===814&&w.c===HC.celt;}));
    // The user's own reading of Augustus and of the empire, and the Praetorian Guard as a thread through the chapter.

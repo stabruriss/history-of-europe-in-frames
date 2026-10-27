@@ -106,8 +106,10 @@ const CARDS=[[ID+'/1','theodoric-great',/人质/],[ID+'/3','theodoric-great',/�
      b('history-empire-leo',4).includes('<strong>东边同波斯打仗，他在西边只能搞制衡，拉法兰克王克洛维对付西哥特、授他执政官'),
      b('history-west-kingdoms',0).includes('<strong>高卢北部归从未背井离乡、也未被拆散的法兰克')&&p('history-west-kingdoms',0).includes('不列颠早在410年前后被罗马放弃'),
      b('history-west-kingdoms',2).includes('<strong>468年后西哥特北扩打到法兰克地盘，促进了法兰克诸部组织联合起来')&&b('history-west-kingdoms',2).includes('<strong>那时东罗马同波斯打仗，在西边只能搞“搅屎棍”式的制衡策略，拉法兰克对付西哥特。507年克洛维在武耶打垮西哥特、亲手杀了阿拉里克二世；他从东帝阿纳斯塔修斯拿到执政官称号，披紫袍自称“奥古斯都”')&&b('history-west-kingdoms',2).includes('<strong>他又设计除掉萨利克与科隆各小王，一统诸部、定都巴黎'),
-     b('history-west-ostrogoths',3).includes('<strong>508年发兵打退南下武耶的克洛维，收下普罗旺斯、替外孙保住西哥特残部')];});
-   assert.deepEqual(tags,Array(17).fill(true),'identifying tags and Frankish rise woven across the timeline: '+JSON.stringify(tags));
+     b('history-west-ostrogoths',3).includes('<strong>508年发兵打退南下武耶的克洛维，收下普罗旺斯、替外孙保住西哥特残部'),
+     b('history-west-merovingians',4).includes('<strong>751年，法兰克贵族在苏瓦松推丕平为王、涂了圣油，开创加洛林王朝')&&E('history-west-charlemagne').short==='加洛林王朝：查理曼',
+     E('history-empire-west-end').boxes[0].text.includes('<svg class="kin-tree"')&&E('history-empire-macedonian').boxes[0].text.includes('<svg class="kin-tree"')];});
+   assert.deepEqual(tags,Array(19).fill(true),'identifying tags, Carolingian naming, and dynasty trees: '+JSON.stringify(tags));
    if(label==='desktop')await page.evaluate(()=>[...document.querySelectorAll('#sceneContext .box')].at(-1).scrollIntoView({block:'start'}));
    await page.screenshot({path:path.join(shots,`frank-tree-${label}.png`)});
    for(let i=0;i<SCENES.length;i++){
