@@ -30,6 +30,11 @@ const BOLD=[
  ['history-west-charlemagne/1','虽是双向奔赴，交易里显然是教廷赚了'],
  ['history-west-charlemagne/2','查理曼继位后看出这笔账吃了亏，开始从教廷往回收权'],
  ['history-west-charlemagne/3','对外征战让底下的贵族团结在国王周围，也分到了好处，没工夫搞事，国王的权力基础跟着扩大'],
+ // 老无 2026-10-27 晚：他特意用的对照（世袭罔替、巡抚刺史、罪己诏、希特勒、拿破仑、天皇）照用，事实另写在明处。
+ ['history-west-charlemagne/3','结果是欧洲历史上统治范围最大的人之一'],
+ ['history-france-west-francia/0','最明显的是头衔和封地走向世袭罔替，给封建制又打了一层地基'],
+ ['history-france-west-francia/1','对西欧来说，这是日耳曼人的第二次大入侵'],
+ ['history-france-west-francia/5','至今仍在位的王族里论古老仅次于日本天皇家'],
  ['history-west-charlemagne-rule/0','法兰克人原本没什么文化，读写几乎全在教士手里；为了不让教廷独占文墨，查理曼大力提倡读书识字'],
  ['history-west-charlemagne-rule/0','他自己也学，只是学得不怎么样'],
  ['history-west-charlemagne-rule/1','查理曼爱亲自裁决，故意显得和教廷不同，从教廷手里拿话语权'],
@@ -42,7 +47,7 @@ const BOLD=[
  ['history-west-charlemagne-rule/5','他活得长，最后只剩一个儿子，躲过了分家造成的内乱'],
  ['history-west-louis-pious/0','他太虔诚，几乎把父亲埋下的雷都引爆了'],
  ['history-west-louis-pious/0','把查理曼从教会收回的神职任命权又交还教会'],
- ['history-west-louis-pious/1','一闹灾，他就公开认罪、开宗教大会'],
+ ['history-west-louis-pious/1','一闹灾就下罪己诏、开宗教大会'],
  ['history-west-louis-pious/2','路易给贵族分地，却不再像父祖那样动教会的地，改拿王室自己的庄园去赏'],
  ['history-west-louis-pious/2','教会不许教士成家生子，地只进不出'],
  ['history-west-louis-pious/3','父亲靠对外打仗凝聚贵族的那一招，到他手里也不灵了'],
@@ -55,9 +60,14 @@ const BOLD=[
 // Facts set right in plain text, never in bold.
 const FIXES=[
  ['history-west-charlemagne/1','747年法兰克主教具文宣誓服从罗马'],['history-west-charlemagne/1','主教仍由国王任命，规矩却由罗马来定'],
- ['history-west-charlemagne/3','他的疆域约一百二十万平方公里，还不到图拉真时罗马帝国（约五百万）的四分之一，却是西罗马亡后西方最大的一片'],
- ['history-west-charlemagne-rule/0','希腊文却没几个人懂'],['history-west-charlemagne-rule/2','又多用教士和王室家臣，他们的位子传不给儿子'],
+ // 老无 2026-10-27 晚：“圆环”是啥——正文就地注明是可汗的王庭兼宝库。
+ ['history-west-charlemagne/2','可汗的王庭兼宝库“圆环”（环形土木墙围着的大营）'],
+ ['history-west-charlemagne/3','约一百二十万平方公里，不及图拉真时的罗马（约五百万）、亚历山大（约五百二十万），也不及拿破仑（约二百一十万）和希特勒占领下的欧洲，却是西罗马亡后西方最大的一片'],
+ ['history-west-charlemagne-rule/2','一是派中央巡视官，像汉朝的刺史、明清的巡抚'],['history-west-charlemagne-rule/2','二是启用寒门'],['history-west-charlemagne-rule/2','不承诺世袭罔替'],
+ ['history-west-charlemagne-rule/0','希腊文却没几个人懂'],['history-west-charlemagne-rule/2','多用教士和王室家臣，他们的位子传不给儿子'],
  ['history-west-charlemagne-rule/4','到11、12世纪国王缺钱常找犹太人借'],
+ // 老无 2026-10-27 晚：认罪到复位之间“是不是有点突然”——补上洛泰尔压弟弟、拖着老父示众、众人倒戈的经过。
+ ['history-west-louis-pious/4','可洛泰尔一得势就压弟弟，又拖着老父示众，弟弟们和贵族掉头帮老父'],
  ['history-west-louis-pious/0','侄子意大利王伯纳德不服起兵'],['history-west-louis-pious/4','838年老二丕平死'],
 ];
 const MOMENTS={'history-west-charlemagne':[[0,'为了圣彼得'],[2,'阿瓦尔人的宝库'],[3,'龙塞斯瓦列斯'],[3,'哈伦的大象'],[4,'事先不知道']],

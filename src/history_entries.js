@@ -2227,7 +2227,7 @@ const HISTORY_ENTRIES=[
     ha(d,'mSpanishMarch801',HC.myc,{fillOpacity:.3});ha(d,'mBenevento800',HC.mino,{fillOpacity:.1,dashArray:'4 4'});
     hp(d,'w_pavia',{kind:'battle',note:'773—774年被围八个月后投降。'});hp(d,'w_verden',{kind:'battle',note:'782年查理在此处死四千五百名萨克森人。'});
     hp(d,'k_regensburg',{note:'巴伐利亚公爵的都城；788年公爵塔西洛被废。'});hp(d,'k_barcelona',{note:'801年路易攻下，设西班牙边区。'});
-    hl(d,'阿瓦尔人的“圆环”（大致方位）','Avar Ring (approx.)',46.9,19.6,HC.war);
+    hl(d,'阿瓦尔可汗的王庭“圆环”（确切位置不明）','The Avar Ring (site unknown)',46.9,19.6,HC.war);
    },[['fill',HC.celt,'法兰克王国（768年）'],['fill',HC.mino,'伦巴第王国（774年灭）'],['fill',HC.war,'萨克森人（772—804年）'],['fill',HC.hittite,'巴伐利亚（788年并入）'],['fill',HC.parthia,'阿瓦尔汗国（795—796年攻破）'],['fill',HC.myc,'西班牙边区（801年起）'],['dash',HC.mino,'贝内文托（787年称臣）'],['dot',HC.war,'帕维亚与费尔登']]),
   hs('778—814年','打到哪里为止','814年的帝国与一圈邻居：倭马亚、阿斯图里亚斯、丹麦人、斯拉夫诸部、保加尔汗国、东罗马与贝内文托；远方的阿拔斯是朋友。',[[29.5,-10.0],[58.5,46.5]],d=>{
     ha(d,'mCarolingian814',HC.celt,{fillOpacity:.22});ha(d,'mAndalus814',HC.myc,{fillOpacity:.2});ha(d,'mAsturias800',HC.sparta,{fillOpacity:.22});
