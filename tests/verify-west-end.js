@@ -81,7 +81,7 @@ const CARDS=[[ID+'/0','gaiseric',/上帝发怒/],[ID+'/1','majorian',/五十磅�
    assert.deepEqual(r.wf,['395—455年',8,'454—455年','手刃权臣、汪达尔劫城与道统衰落',['不译《列王纪》','替罗马守河的法兰克人','名叫罗马的鸡','金发王子与卡塔隆前夜','左手砍了右手：手刃权臣的皇帝']]);
    assert.deepEqual(r.rows,[['rome',395,455],['rome',455,476]]);
    assert.deepEqual(r.romeLine,['history-empire-theodosius','history-empire-west-fall',ID],'the last station of 罗马 before the fork at 476');
-   assert.deepEqual(r.era,['history-empire-valentinian','history-empire-theodosius','history-empire-west-fall',ID]);
+   assert.deepEqual(r.era,['history-empire-valentinian','history-empire-theodosius','history-empire-theodosius','history-empire-west-fall',ID],'the Theodosian section in two rows: 罗马 to 395, 东罗马 after');
    for(const [k,ok] of r.bold)assert.ok(ok,k+' lacks 老无’s thesis in bold');
    for(const [k,ok] of r.fixes)assert.ok(ok,k+' lacks the plain-text correction');
    assert.deepEqual(r.gone,[],'old wording left');assert.equal(r.filler,false,'conversational filler copied into the prose');

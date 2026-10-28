@@ -939,6 +939,15 @@ const FIGURE_PLACES={
     ],
     "note": "有温泉的王宫，查理曼晚年常住，死后葬在宫中礼拜堂。"
   },
+  "k_york": {
+    "name": "约克",
+    "en": "York",
+    "ll": [
+      53.96,
+      -1.08
+    ],
+    "note": "诺森布里亚的大主教座，阿尔昆在这里的学校长大、教书。"
+  },
   "merv": {
     "name": "木鹿",
     "en": "Merv",
@@ -956,6 +965,114 @@ const FIGURE_PLACES={
       108.9
     ],
     "note": "隋唐的都城，今陕西西安。"
+  },
+  "fc_orbais": {
+    "name": "奥尔拜",
+    "en": "Orbais",
+    "ll": [
+      48.88,
+      3.7
+    ],
+    "note": "苏瓦松教区的修道院，戈特沙尔克829年后在此当修士。"
+  },
+  "fc_hautvillers": {
+    "name": "奥维莱尔",
+    "en": "Hautvillers",
+    "ll": [
+      49.08,
+      3.94
+    ],
+    "note": "兰斯附近马恩河边的修道院；戈特沙尔克849年起被关在这里，直到去世。"
+  },
+  "fc_reims": {
+    "name": "兰斯",
+    "en": "Reims",
+    "ll": [
+      49.258,
+      4.032
+    ],
+    "note": "北法兰克的大主教驻地；845—882年兴克马尔在此任大主教。"
+  },
+  "fr_paris": {
+    "name": "巴黎",
+    "en": "Paris",
+    "ll": [
+      48.853,
+      2.349
+    ],
+    "note": "塞纳河中西岱岛上的城；罗贝尔家几代任巴黎伯爵，885—886年在此顶住维京人围城。"
+  },
+  "fr_rouen": {
+    "name": "鲁昂",
+    "en": "Rouen",
+    "ll": [
+      49.443,
+      1.099
+    ],
+    "note": "塞纳河下游的大主教座城；911年后成了罗洛的都城，他死后葬在主教座堂。"
+  },
+  "de_regensburg": {
+    "name": "雷根斯堡",
+    "en": "Regensburg",
+    "ll": [
+      49.02,
+      12.1
+    ],
+    "note": "多瑙河畔的巴伐利亚老都城，日耳曼人路易的王城。"
+  },
+  "de_quedlinburg": {
+    "name": "奎德林堡",
+    "en": "Quedlinburg",
+    "ll": [
+      51.79,
+      11.14
+    ],
+    "note": "哈尔茨山北麓的王室庄园，亨利一世葬在这里。"
+  },
+  "de_magdeburg": {
+    "name": "马格德堡",
+    "en": "Magdeburg",
+    "ll": [
+      52.13,
+      11.63
+    ],
+    "note": "易北河畔的城，奥托一世和妻子伊迪丝都葬在这里。"
+  },
+  "it_dorestad": {
+    "name": "多雷斯塔德",
+    "en": "Dorestad",
+    "ll": [
+      51.974,
+      5.341
+    ],
+    "note": "莱茵河下游的商埠；846年维京人当着洛泰尔一世的面烧了它。"
+  },
+  "it_benevento": {
+    "name": "贝内文托",
+    "en": "Benevento",
+    "ll": [
+      41.13,
+      14.78
+    ],
+    "note": "伦巴第人在南意大利的亲王国都城；871年路易二世在此被扣押。"
+  },
+  "it_bari": {
+    "name": "巴里",
+    "en": "Bari",
+    "ll": [
+      41.125,
+      16.867
+    ],
+    "note": "亚得里亚海边的港城，847—871年的埃米尔国都城。"
+  },
+  "it_pavia": {
+    "name": "帕维亚",
+    "en": "Pavia",
+    "ll": [
+      45.185,
+      9.155
+    ],
+    "note": "意大利王国的都城，诸王在此加冕。"
   }
 };
 const FIGURES={
@@ -3702,6 +3819,34 @@ const FIGURES={
       ]
     ]
   },
+  "louis-pious": {
+    "name": "虔诚者路易",
+    "en": "Louis the Pious",
+    "life": "778—840年",
+    "relation": "皇帝（814—840年）· 查理曼的儿子",
+    "place": "w_aachen",
+    "bio": "查理曼与王后希尔德加德的儿子，三岁被立为阿基坦王，在南方长大，身边多修士与改革派教士。813年在亚琛被父亲加冕为共治皇帝，次年独掌帝国。他两度当众忏悔，在位后半段同儿子们打了三场内战，840年死在莱茵河中的小岛上。",
+    "sources": [
+      [
+        "虔诚者路易（英文资料）",
+        "https://en.wikipedia.org/wiki/Louis_the_Pious"
+      ]
+    ]
+  },
+  "alcuin": {
+    "name": "阿尔昆",
+    "en": "Alcuin of York",
+    "life": "约735—804年",
+    "relation": "查理曼的宫廷学者 · 约克主教座堂学校出身",
+    "place": "k_york",
+    "bio": "诺森布里亚人，在约克主教座堂学校受教，后来主持这所学校。781年在帕尔马遇见查理曼，应邀到法兰克宫廷办学，教国王和王子们文法、修辞和天文。796年出任图尔圣马丁修道院长，在那里抄书、校订经文，804年去世。",
+    "sources": [
+      [
+        "阿尔昆（英文资料）",
+        "https://en.wikipedia.org/wiki/Alcuin"
+      ]
+    ]
+  },
   "bahram-chobin": {
     "name": "巴赫拉姆·楚宾",
     "en": "Bahram Chobin",
@@ -3793,6 +3938,208 @@ const FIGURES={
       [
         "《资治通鉴》卷193（天可汗）",
         "https://zh.wikisource.org/wiki/%E8%B3%87%E6%B2%BB%E9%80%9A%E9%91%91/%E5%8D%B7193"
+      ]
+    ]
+  },
+  "gottschalk": {
+    "name": "戈特沙尔克",
+    "en": "Gottschalk of Orbais",
+    "life": "约808—868年",
+    "relation": "奥尔拜修道院的修士 · 双重预定论者",
+    "place": "fc_hautvillers",
+    "bio": "萨克森伯爵之子，幼年被献给富尔达修道院，后在赖兴瑙读书。829年求还俗不成，改到奥尔拜。他读奥古斯丁读出双重预定，到意大利、达尔马提亚宣讲；848、849年两度被判异端，挨鞭、焚书，在奥维莱尔关了约二十年，至死不改口。",
+    "sources": [
+      [
+        "奥尔拜的戈特沙尔克（英文资料）",
+        "https://en.wikipedia.org/wiki/Gottschalk_of_Orbais"
+      ],
+      [
+        "《天主教百科全书》“奥尔拜的戈特沙尔克”条（英文）",
+        "https://www.newadvent.org/cathen/06682a.htm"
+      ],
+      [
+        "848年美因茨会议资料汇编（拉丁原文：《富尔达年代记》说他主张好人得生、恶人永死都由上帝预定；《克桑滕年代记》；兴克马尔：“穿着修士的衣服，心是野兽”）",
+        "https://la.wikisource.org/wiki/Concilium_Moguntinense_(848)"
+      ]
+    ]
+  },
+  "hincmar": {
+    "name": "兴克马尔",
+    "en": "Hincmar of Reims",
+    "life": "806—882年",
+    "relation": "兰斯大主教 · 秃头查理的谋臣",
+    "place": "fc_reims",
+    "bio": "西法兰克贵族出身，在圣但尼长大，随院长进虔诚者路易的宫廷。845年起任兰斯大主教近四十年，替秃头查理出谋划策：看押戈特沙尔克，反对洛泰尔二世离婚，869年在梅斯给他加冕为洛林王。882年躲维京人逃到埃佩尔奈，死在那里。",
+    "sources": [
+      [
+        "兴克马尔（英文资料）",
+        "https://en.wikipedia.org/wiki/Hincmar"
+      ],
+      [
+        "《天主教百科全书》“兰斯的兴克马尔”条（英文）",
+        "https://www.newadvent.org/cathen/07356b.htm"
+      ]
+    ]
+  },
+  "charles-bald": {
+    "name": "秃头查理",
+    "en": "Charles the Bald",
+    "life": "823—877年",
+    "relation": "西法兰克王（843—877年）、皇帝（875—877年）· 虔诚者路易的小儿子",
+    "place": "w_saintdenis",
+    "bio": "823年生在法兰克福，母亲是皇后朱迪特。843年分得西法兰克，跟兄弟、侄子争洛林和意大利，又要应付维京人和布列塔尼人，倚重兰斯大主教兴克马尔。“秃头”这外号9世纪60年代已见于记载，当时的画像却画他满头头发。",
+    "sources": [
+      [
+        "秃头查理（英文资料）",
+        "https://en.wikipedia.org/wiki/Charles_the_Bald"
+      ],
+      [
+        "库莱讷条约（英文资料）",
+        "https://en.wikipedia.org/wiki/Treaty_of_Coulaines"
+      ],
+      [
+        "基耶尔济敕令（英文资料：877年为远征期间作的临时安排，“由它确立封地世袭”的旧说已站不住）",
+        "https://en.wikipedia.org/wiki/Capitulary_of_Quierzy"
+      ]
+    ]
+  },
+  "odo-paris": {
+    "name": "厄德",
+    "en": "Odo, Count of Paris",
+    "life": "约857—898年",
+    "relation": "巴黎伯爵、西法兰克王（888—898年）· 强者罗贝尔的长子",
+    "place": "fr_paris",
+    "bio": "强者罗贝尔的长子，882年起任巴黎伯爵。885—886年和巴黎主教戈兹林一起守城近一年，888年被贵族推为国王，是头一个非加洛林家的西法兰克王。他把家里的伯爵领大多交给弟弟罗贝尔，898年元旦病死在拉费尔。",
+    "sources": [
+      [
+        "厄德（英文资料）",
+        "https://en.wikipedia.org/wiki/Odo_of_France"
+      ],
+      [
+        "巴黎围城（885—886年）（英文资料）",
+        "https://en.wikipedia.org/wiki/Siege_of_Paris_(885%E2%80%93886)"
+      ]
+    ]
+  },
+  "rollo": {
+    "name": "罗洛",
+    "en": "Rollo",
+    "life": "?—约930年",
+    "relation": "鲁昂伯爵（911—约928年）· 诺曼底的开创者",
+    "place": "fr_rouen",
+    "bio": "挪威出身的维京首领，北欧史书叫他“步行者”赫罗尔夫。911年在沙特尔受挫后与糊涂查理立约，受封鲁昂一带。918年的王室文书头一回提到他；他死于928至933年间，葬在鲁昂，儿子“长剑”威廉继位。",
+    "sources": [
+      [
+        "罗洛（英文资料）",
+        "https://en.wikipedia.org/wiki/Rollo"
+      ],
+      [
+        "圣克莱尔—埃普特条约（英文资料）",
+        "https://en.wikipedia.org/wiki/Treaty_of_Saint-Clair-sur-Epte"
+      ]
+    ]
+  },
+  "hugh-capet": {
+    "name": "雨果·卡佩",
+    "en": "Hugh Capet",
+    "life": "约941—996年",
+    "relation": "法兰克人的国王（987—996年）· 卡佩王朝的开创者",
+    "place": "fr_paris",
+    "bio": "雨果大公之子，母亲是捕鸟者亨利的女儿，奥托一世是他舅舅；伯祖父厄德、祖父罗贝尔一世都当过国王。987年被诸侯推为王，直辖的只有巴黎到奥尔良一带，996年死后葬在圣但尼。“卡佩”这称呼到12世纪才有人用。",
+    "sources": [
+      [
+        "雨果·卡佩（英文资料）",
+        "https://en.wikipedia.org/wiki/Hugh_Capet"
+      ]
+    ]
+  },
+  "louis-german": {
+    "name": "日耳曼人路易",
+    "en": "Louis the German",
+    "life": "约806/810—876年",
+    "relation": "东法兰克王（843—876年）· 虔诚者路易的第三子",
+    "place": "de_regensburg",
+    "bio": "虔诚者路易与第一任皇后厄门加德所生的第三子，817年起当巴伐利亚王，娶了继母朱迪特的妹妹埃玛，一生跟兄弟、儿子轮番打仗。“日耳曼人”是18世纪才有的外号；当时西边叫他“日耳曼尼亚之王”，他的钱币上铸的是“虔诚的路易王”。",
+    "sources": [
+      [
+        "日耳曼人路易（英文资料）",
+        "https://en.wikipedia.org/wiki/Louis_the_German"
+      ],
+      [
+        "拉斯蒂斯拉夫（英文资料：870年被押到路易面前，判死后改为刺瞎、关押）",
+        "https://en.wikipedia.org/wiki/Rastislav_of_Moravia"
+      ]
+    ]
+  },
+  "henry-fowler": {
+    "name": "捕鸟者亨利",
+    "en": "Henry the Fowler (Henry I)",
+    "life": "约876—936年",
+    "relation": "萨克森公爵（912年起）、东法兰克王（919—936年）· 奥托一世的父亲",
+    "place": "de_quedlinburg",
+    "bio": "萨克森公爵“显赫者”奥托之子。先娶修女出身的哈特布尔格，婚姻被教会判为无效，又娶威斯特法伦伯爵之女玛蒂尔达。他靠盟约和联姻笼住各位公爵，筑城练兵，933年打退马扎尔人，934年逼丹麦王受洗；936年中风死在梅姆莱本。",
+    "sources": [
+      [
+        "捕鸟者亨利（英文资料）",
+        "https://en.wikipedia.org/wiki/Henry_the_Fowler"
+      ],
+      [
+        "亨利一世（德文资料：“捕鸟者”的外号12世纪才见于记载；929年奎德林堡文书；936年在埃尔福特指定奥托）",
+        "https://de.wikipedia.org/wiki/Heinrich_I._(Ostfrankenreich)"
+      ]
+    ]
+  },
+  "otto-i": {
+    "name": "奥托一世",
+    "en": "Otto I (Otto the Great)",
+    "life": "912—973年",
+    "relation": "东法兰克王（936年起）、意大利王（951年起）、皇帝（962—973年）· 捕鸟者亨利的长子",
+    "place": "de_magdeburg",
+    "bio": "捕鸟者亨利与玛蒂尔达的长子，930年娶英格兰王埃塞尔斯坦的异母妹伊迪丝。据维杜金德，他到946年伊迪丝死后才学认字，学到能通读整本书，会说罗曼语和斯拉夫语，却难得开口。962年称帝，973年死在梅姆莱本，葬在马格德堡。",
+    "sources": [
+      [
+        "奥托一世（英文资料）",
+        "https://en.wikipedia.org/wiki/Otto_the_Great"
+      ],
+      [
+        "维杜金德《萨克森人史》第2卷第1—2章（936年亚琛加冕，英译节选）",
+        "https://sourcebooks.fordham.edu/source/963Widukind-coronationOtto1.asp"
+      ],
+      [
+        "维杜金德《萨克森人史》第2卷（第2章 四位公爵在加冕宴上执役；第36章 伊迪丝死后才学认字，拉丁原文）",
+        "https://www.tha.de/~harsch/Chronologia/Lspost10/Widukind/wid_sa2t.html"
+      ]
+    ]
+  },
+  "lothair-i": {
+    "name": "洛泰尔一世",
+    "en": "Lothair I",
+    "life": "795—855年",
+    "relation": "皇帝 · 中法兰克国王 · 虔诚者路易的长子",
+    "place": "w_aachen",
+    "bio": "虔诚者路易的长子，817年立为共治皇帝，830、833年两度起兵废黜父亲。父死后想独揽全国，841年在丰特努瓦败给两个弟弟，843年分得中法兰克和皇帝名号。855年病重，三分国土给儿子，进普吕姆修道院，六天后死去。",
+    "sources": [
+      [
+        "洛泰尔一世（英文资料）",
+        "https://en.wikipedia.org/wiki/Lothair_I"
+      ],
+      [
+        "凡尔登条约（英文资料：洛泰尔得中法兰克和亚琛、罗马两座帝都，皇帝名号只是名义上压过两个弟弟）",
+        "https://en.wikipedia.org/wiki/Treaty_of_Verdun"
+      ]
+    ]
+  },
+  "louis-ii-italy": {
+    "name": "路易二世",
+    "en": "Louis II of Italy",
+    "life": "825—875年",
+    "relation": "意大利国王、皇帝 · 洛泰尔一世的长子",
+    "place": "it_benevento",
+    "bio": "洛泰尔一世的长子，844年加冕为意大利王，850年为共治皇帝，855年起独掌意大利，多在南方打萨拉森人：849年把贝内文托一分为二，871年攻下巴里，同年被贝内文托亲王扣押三十五天。875年死在布雷西亚附近，没有儿子。",
+    "sources": [
+      [
+        "意大利的路易二世（英文资料）",
+        "https://en.wikipedia.org/wiki/Louis_II_of_Italy"
       ]
     ]
   }
@@ -5653,6 +6000,33 @@ const FIGURE_SCENES={
       "place": "w_aachen"
     }
   ],
+  "history-west-charlemagne-rule/0": [
+    {
+      "id": "alcuin",
+      "when": "796年",
+      "event": "去图尔当修道院长",
+      "note": "他在宫中教了十几年书，晚年请求退隐，查理曼把富甲一方的图尔圣马丁修道院交给他。他在那里督着修士抄书、校订拉丁文《圣经》，又从英格兰调来书，一直给查理曼写信议论学问和教务。",
+      "place": "tours"
+    }
+  ],
+  "history-west-louis-pious/0": [
+    {
+      "id": "louis-pious",
+      "when": "816—817年",
+      "event": "再加冕与分国",
+      "note": "父亲在亚琛亲手给他戴过皇冠，816年他又请新教宗在兰斯给自己涂油加冕；次年复活节前他险些被倒塌的回廊砸死，三个月后便立长子洛泰尔为共治皇帝，把两个小儿子分到阿基坦和巴伐利亚。",
+      "place": "w_aachen"
+    }
+  ],
+  "history-west-louis-pious/4": [
+    {
+      "id": "louis-pious",
+      "when": "833年11月",
+      "event": "在苏瓦松解下佩剑",
+      "note": "兰斯大主教埃博——他亲手从农奴提拔起来的人——主持了这场忏悔：他在圣梅达尔教堂一条条认罪，把佩剑和腰带放到祭坛下，换上忏悔者的衣服，从此按规矩不能再掌权。次年他又被拥回帝位，835年这场忏悔被正式撤销。",
+      "place": "w_aachen"
+    }
+  ],
   "history-persia-khosrow-ii/0": [
     {
       "id": "bahram-chobin",
@@ -5696,6 +6070,132 @@ const FIGURE_SCENES={
       "event": "天可汗",
       "note": "据《资治通鉴》，各族君长到长安请他做“天可汗”。他说：我是大唐天子，还要下去兼办可汗的事吗？群臣和四夷齐呼万岁。此后给西北各部首领的诏书，他都署名“天可汗”。",
       "place": "changan"
+    }
+  ],
+  "history-faith-carolingian/1": [
+    {
+      "id": "charlemagne",
+      "when": "799年",
+      "event": "王宫里的辩论",
+      "note": "费利克斯被带到亚琛，已任图尔修道院长的阿尔昆在王宫里跟他辩论，他认了错，被免去乌赫尔主教，交里昂大主教看管。他死后，里昂大主教阿戈巴德在他遗物里翻出一纸声明，把先前的悔过全收了回去。",
+      "place": "w_aachen"
+    }
+  ],
+  "history-faith-carolingian/4": [
+    {
+      "id": "gottschalk",
+      "when": "829年",
+      "event": "求去不成",
+      "note": "他幼年被父母献给富尔达修道院。829年美因茨会议准他离院，院长拉巴努斯·毛鲁斯（Rabanus Maurus）上告虔诚者路易，还写了一本《论献童》。结果他仍得当修士，只准从富尔达换到奥尔拜。",
+      "place": "fc_orbais"
+    }
+  ],
+  "history-faith-carolingian/5": [
+    {
+      "id": "hincmar",
+      "when": "865年",
+      "event": "像狄奥斯库若那样蒙着头",
+      "note": "罗塔德的官司里，教宗尼古拉一世写信给秃头查理，说兴克马尔对教宗的来信“像狄奥斯库若那样蒙着头”，看也不看。865年教宗使节把罗塔德送回苏瓦松复职，兴克马尔只得认了。",
+      "place": "fc_reims"
+    }
+  ],
+  "history-france-west-francia/0": [
+    {
+      "id": "charles-bald",
+      "when": "877年",
+      "event": "死在山口下",
+      "note": "875年他抢在兄长之前南下，在罗马称帝。877年教宗受萨拉森人威胁求援，他再翻阿尔卑斯山，贵族却不来会合，侄子卡洛曼又带兵进了意大利。他带病折返，10月6日死在塞尼山口下，尸身发臭，抬的人受不了，只好草草葬在南蒂阿。",
+      "place": "rome"
+    }
+  ],
+  "history-france-west-francia/1": [
+    {
+      "id": "charlemagne",
+      "when": "808—810年",
+      "event": "二百条船",
+      "note": "据艾因哈德，丹麦王古德弗雷德把弗里斯兰和萨克森看作自家的省份，扬言不久就带大军开到亚琛。810年他的二百条船劫了弗里斯兰，勒索一百磅白银；查理曼正调兵迎战，传来消息：古德弗雷德被自己的随从杀了，侄子继位后跟法兰克讲了和。",
+      "place": "w_aachen"
+    }
+  ],
+  "history-france-west-francia/2": [
+    {
+      "id": "odo-paris",
+      "when": "886年",
+      "event": "冲出去搬救兵",
+      "note": "据亲历围城的修士阿博，城里闹起瘟疫，死人多得没地方埋，厄德被派出城去向皇帝求援。不久他带着三队兵回来，阳光照得盔甲发亮；维京人渡河堵在岸边，他纵马冲过去，守塔的修道院长埃布勒开门放他进了城。",
+      "place": "fr_paris"
+    }
+  ],
+  "history-france-west-francia/4": [
+    {
+      "id": "rollo",
+      "when": "911—912年",
+      "event": "受洗改名罗贝尔",
+      "note": "据杜多，鲁昂大主教弗朗科给罗洛施洗，教父是巴黎伯爵罗贝尔，他便取名罗贝尔。受洗后穿白衣的七天里，他每天把一块地捐给一座教堂，鲁昂、巴约、埃夫勒都有份；第八天脱下白衣，才开始给手下的头目分地。",
+      "place": "fr_rouen"
+    }
+  ],
+  "history-france-west-francia/5": [
+    {
+      "id": "hugh-capet",
+      "when": "987年12月",
+      "event": "生前先立儿子",
+      "note": "推举他的兰斯大主教说过王位不靠世袭。他一加冕就要给儿子罗贝尔也加冕，大主教说一年不能立两个王；他说要南下援救被摩尔人侵扰的巴塞罗那伯爵，万一死在路上，国不能无主。当年圣诞节罗贝尔加冕，此后几代卡佩国王都在生前给长子加冕。",
+      "place": "fr_paris"
+    }
+  ],
+  "history-germany-east-francia/0": [
+    {
+      "id": "louis-german",
+      "when": "870年",
+      "event": "戴铁链的拉斯蒂斯拉夫",
+      "note": "拉斯蒂斯拉夫是他846年扶上台的摩拉维亚公，863年从君士坦丁堡请来传教士，抵制巴伐利亚的教士。870年被侄子斯瓦托普卢克捆送给法兰克人；据《富尔达年代记》，路易让人用重铁链锁着他来见，集会判了死刑，路易改为刺瞎、关押。",
+      "place": "de_regensburg"
+    }
+  ],
+  "history-germany-east-francia/4": [
+    {
+      "id": "henry-fowler",
+      "when": "929年",
+      "event": "不再分国",
+      "note": "929年9月他在奎德林堡给妻子玛蒂尔达立下产业，文书里头一回露出传位的安排：王位只归长子奥托。936年在埃尔福特，他当众再荐奥托，别的儿子只分庄园和财宝，法兰克人分国的老规矩到此为止。不久他在梅姆莱本再次中风死去。",
+      "place": "de_quedlinburg"
+    }
+  ],
+  "history-germany-east-francia/5": [
+    {
+      "id": "otto-i",
+      "when": "936年8月",
+      "event": "公爵们端菜",
+      "note": "他穿着法兰克式的紧身袍在亚琛加冕，美因茨大主教授他剑、披风和权杖，涂油戴冠。据维杜金德，宴席上四位公爵各司其职：洛林公爵管全场，法兰克尼亚公爵管餐桌，士瓦本公爵管斟酒，巴伐利亚公爵管马队和营地。",
+      "place": "w_aachen"
+    }
+  ],
+  "history-italy-middle-francia/0": [
+    {
+      "id": "lothair-i",
+      "when": "846年",
+      "event": "眼看着多雷斯塔德着火",
+      "note": "据《克桑滕年代记》，846年维京人照例劫掠东、西弗里斯兰，放火烧了莱茵河下游的商埠多雷斯塔德和另外两个村子。洛泰尔一世就在附近的奈梅亨城堡里，看着却无力报复；维京人满载人口和财物，扬帆回了老家。",
+      "place": "it_dorestad"
+    }
+  ],
+  "history-italy-middle-francia/2": [
+    {
+      "id": "louis-ii-italy",
+      "when": "869—871年",
+      "event": "“罗马人的皇帝”",
+      "note": "869年东罗马舰队开到巴里城外，要接路易二世的女儿去和皇子成婚，被拒后掉头就走。871年攻下巴里后，他写长信给东罗马皇帝巴西尔一世，为自己“罗马人的皇帝”的名号辩护；东罗马人只肯称他“法兰克的皇帝”。",
+      "place": "it_bari"
+    }
+  ],
+  "history-italy-middle-francia/5": [
+    {
+      "id": "otto-i",
+      "when": "951年",
+      "event": "帕维亚的新王",
+      "note": "951年9月奥托一世翻过阿尔卑斯山，帕维亚不战开门，他自称“伦巴第人的王”“意大利人的王”，秋天娶了逃出囚禁的寡后阿德莱德。她是先后三位意大利国王的女儿、儿媳和遗孀，娶了她，意大利王位的名分也就跟着来了。",
+      "place": "it_pavia"
     }
   ]
 };

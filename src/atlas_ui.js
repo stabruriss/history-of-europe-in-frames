@@ -243,6 +243,13 @@ function layoutHistoryTree(tree){
   }
   const byId=BRANCH,stationsOf=b=>sorted.filter(r=>r.kind==='item'&&r.lines.includes(b.id));
   const ends=Object.fromEntries(sorted.filter(r=>r.kind==='end').map(r=>[r.branch.id,r]));
+  // Sections of one line that run almost the same years (老无 2026-10-27): the later ones ride a passing loop beside the line.
+  const side=new Map(),loops=[];
+  for(const [line,keys,dir=1] of (typeof TREE_PARALLEL==='undefined'?[]:TREE_PARALLEL)){
+    const rs=keys.map(k=>sorted.find(r=>r.kind==='item'&&r.key===k)).filter(r=>r&&r.lines.includes(line));
+    if(rs.length<2||!byId[line])continue;
+    const off=dir*Math.min(gap*.45,12);rs.slice(1).forEach(r=>side.set(line+'|'+r.key,off));loops.push({line,rs,off});
+  }
   // Where each branch leaves its parent; parent segments are cut there so a line can light up root-to-fork.
   // A branch that carries on where its parent stops (罗马 → 东罗马 and 中世纪西欧) leaves from that end.
   tree._forkY={};tree._endY=Object.fromEntries(Object.entries(ends).map(([id,r])=>[id,r.ny]));const forkLen={};
@@ -294,15 +301,21 @@ function layoutHistoryTree(tree){
     hits.push(`<path class="lane-hit" data-line="${b.id}" d="${start}V${future.length?future.at(-1).ny+16:end}" stroke-width="${Math.min(14,gap-2)}"><title>切换到“${b.name}”（原地）</title></path>`);
     for(const r of [...items,...future]){
       const tag=r.kind==='item'?`data-key="${r.key}"`:`data-branch="${b.id}"`,shared=r.kind==='item'&&r.lines.length>1;
+      const nx=x+(r.kind==='item'&&side.get(b.id+'|'+r.key)||0);
       // A shared station: one node on each of its lanes, one tie from the rightmost.
-      if(!shared||b.lane===Math.max(...r.lines.map(id=>byId[id].lane)))ties.push(`<path class="tie" ${tag} d="M${x+6} ${r.ny}H${labelX-3}"/>`);
-      (shared&&r.branch!==b?copies:nodes).push(r.kind==='item'?`<circle class="tree-node" ${tag} cx="${x}" cy="${r.ny}" r="4" stroke="${col(r)}" style="--node:${col(r)}"/>`
+      if(!shared||b.lane===Math.max(...r.lines.map(id=>byId[id].lane)))ties.push(`<path class="tie" ${tag} d="M${Math.max(x,nx)+6} ${r.ny}H${labelX-3}"/>`);
+      (shared&&r.branch!==b?copies:nodes).push(r.kind==='item'?`<circle class="tree-node" ${tag} cx="${nx}" cy="${r.ny}" r="4" data-lx="${x}" stroke="${col(r)}" style="--node:${col(r)}"/>`
         :`<circle class="tree-node future" ${tag} cx="${x}" cy="${r.ny}" r="3.5" stroke="${r.c}"/>`);
     }
     if(stop){
       ties.push(`<path class="tie" data-end="${b.id}" d="M${x+6} ${stop.ny}H${labelX-3}"/>`);
       nodes.push(`<rect class="tree-stop" data-end="${b.id}" x="${x-4}" y="${stop.ny-1.6}" width="8" height="3.2" rx="1" fill="${col(last)}"/>`);
     }
+  }
+  // The passing loops: a second track leaves the line just above the first section of the group and rejoins just below the last.
+  for(const {line,rs,off} of loops){
+    const b=byId[line],x=laneX(b.lane),y0=rs[0].ny-8,y1=rs.at(-1).ny+8,k=Math.min(6,(y1-y0)/4);
+    lanesSvg.push(`<path class="lane loop" data-branch="${line}" data-y1="${y1}" d="M${x} ${y0}C${x} ${y0+k} ${x+off} ${y0+k*.4} ${x+off} ${y0+k*1.6}V${y1-k*1.6}C${x+off} ${y1-k*.4} ${x} ${y1-k} ${x} ${y1}" fill="none" stroke="${b.c||rs[1].c}" stroke-width="${(wide?1.25:1)*1.9}"/>`);
   }
   // Interchanges: the lanes of a shared station joined at its height.
   for(const r of sorted.filter(r=>r.kind==='item'&&r.lines.length>1)){

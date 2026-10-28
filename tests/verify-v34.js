@@ -9,10 +9,11 @@ const wait=ms=>new Promise(r=>setTimeout(r,ms));
 // Latin no longer being the official language in bold); 西罗马 is now 中世纪西欧, forking off at the same point; 希腊 ends by running
 // into 罗马; a big event that hits several lines at once is one station on each of them, lit together, with one set of scenes.
 // v35 (老无 2026-10-22 晚): 东罗马 runs on by dynasty to 1056; the sixth and seventh councils moved onto its dynasties (see verify-v35.js).
-const NAMES=['希腊','罗马','东罗马','中世纪西欧','基督教','埃及','波斯','中国'];
-const OWN={east:['history-empire-leo','history-empire-justinian','history-empire-heraclius','history-arab-conquest','history-empire-constans','history-empire-anarchy',
+// 老无 2026-10-27: a region that goes its own way forks off — 东罗马 at the division of 395, and 法兰西, 德意志, 意大利 out of 中世纪西欧 at Verdun (843).
+const NAMES=['希腊','罗马','东罗马','中世纪西欧','法兰西','德意志','意大利','基督教','埃及','波斯','中国'];
+const OWN={east:['history-empire-theodosius','history-empire-leo','history-empire-justinian','history-empire-heraclius','history-arab-conquest','history-empire-constans','history-empire-anarchy',
   'history-empire-isaurian','history-empire-amorian','history-empire-macedonian','history-empire-macedonian'],
- west:['history-west-kingdoms','history-west-ostrogoths','history-west-merovingians','history-west-lombards','history-west-charlemagne']};
+ west:['history-west-kingdoms','history-west-ostrogoths','history-west-merovingians','history-west-lombards','history-west-charlemagne','history-west-charlemagne-rule','history-west-louis-pious']};
 const SHARED={'history-empire-heraclius/0':['east','persia','egypt'],'history-arab-conquest/0':['persia','east','egypt']};
 const BOLD=[['history-faith-three-chapters/1','教义之争背后的权力格局之斗争，不一定是阴谋论，只是人类组织内群体对抗外群体和组织扩张，权力自我膨胀的自然结果'],
  ['history-empire-constans/0','吃马肉不吃马肝，不算你傻；谁再讨论什么几性几位几志就弄谁'],
@@ -62,18 +63,20 @@ const BOLD=[['history-faith-three-chapters/1','教义之争背后的权力格局
    },{OWN,SHARED,BOLD});
    // The lines and where they end.
    const br=Object.fromEntries(r.branches.map(b=>[b[0],b]));
-   assert.deepEqual(r.branches.map(b=>b[1]).sort(),[...NAMES].sort(),'eight lines by name');
+   assert.deepEqual(r.branches.map(b=>b[1]).sort(),[...NAMES].sort(),'eleven lines by name');
    assert.deepEqual(br.rome.slice(2,5),['trunk',-1000,476],'罗马 ends with the West');
-   assert.deepEqual(br.east.slice(2,6),['rome',476,1056,br.trunk[5]],'东罗马 off 罗马 at 476, on the Greek lane, to 1056');
+   assert.deepEqual(br.east.slice(2,6),['rome',395,1056,br.trunk[5]],'东罗马 off 罗马 at 395, on the Greek lane, to 1056');
    assert.deepEqual(br.west.slice(1,4),['中世纪西欧','rome',476],'中世纪西欧 forks off 罗马 with 东罗马');
    // 老无 2026-10-25: the West's last years (455—476) are now the last station of 罗马, right before the fork.
-   assert.equal(r.romeLast,'history-empire-west-end');assert.ok(['history-empire-west-fall','history-empire-west-end'].every(id=>r.eastHas.includes(id)&&r.westHas.includes(id)));
+   assert.equal(r.romeLast,'history-empire-west-end');assert.ok(['history-empire-west-fall','history-empire-west-end'].every(id=>!r.eastHas.includes(id)&&r.westHas.includes(id)));
+   // The Theodosian section sits on both: its first rows (to 395) on 罗马, the eastern court after 395 opening 东罗马.
+   assert.ok(r.eastHas.includes('history-empire-theodosius')&&r.westHas.includes('history-empire-theodosius'));
    assert.ok(!r.westHas.includes('history-empire-leo')&&!r.eastHas.includes('history-west-kingdoms'));
    for(const [id,list] of Object.entries(OWN))assert.deepEqual(r.own[id],list,id+' stations');
-   assert.deepEqual(r.ends,[['trunk',-30,'rome'],['rome',476,null]]);
+   assert.deepEqual(r.ends,[['trunk',-30,'rome'],['rome',476,null],['west',843,null]]);
    // Every line either grows a shoot or ends with an event.
    for(const b of r.branches)assert.ok(r.futures.some(f=>f[0]===b[0])||r.ends.some(e=>e[0]===b[0]),b[0]+' ends without an event');
-   assert.deepEqual(r.futures.sort(),[['china',845],['east',1056],['egypt',642],['faith',1056],['persia',651],['west',814]]);
+   assert.deepEqual(r.futures.sort(),[['china',845],['east',1056],['egypt',642],['faith',1056],['france',987],['germany',962],['italy',962],['persia',651]]);
    // Shared stations: one section, on each of its lines.
    for(const [k,lines] of Object.entries(SHARED)){assert.deepEqual(r.shared[k].lines,lines);assert.deepEqual(r.shared[k].on.sort(),[...lines].sort());assert.equal(r.shared[k].entries,1);}
    // 老无's own words, verbatim and bold.
@@ -93,10 +96,12 @@ const BOLD=[['history-faith-three-chapters/1','教义之争背后的权力格局
      on:[...tree.querySelectorAll('.tree-node.on')].map(n=>n.dataset.key),rows:tree.querySelectorAll('.tree-item[data-key="history-empire-heraclius/0"]').length,
      where:tree.querySelector('.tree-item[data-key="history-empire-heraclius/0"] small i')?.textContent};
    },sel);
-   assert.deepEqual(t.ends.map(e=>e[0]),['trunk','rome']);assert.match(t.ends[0][1],/并入罗马/);assert.match(t.ends[1][1],/西罗马终结/);
-   assert.equal(t.stops,2);assert.ok(t.merge,'希腊 runs into 罗马');
-   assert.deepEqual(t.forks,['east','egypt','faith','persia','rome','west']);
-   assert.equal(t.forkY.east,t.endY.rome);assert.equal(t.forkY.west,t.endY.rome);
+   assert.deepEqual(t.ends.map(e=>e[0]),['trunk','rome','west']);assert.match(t.ends[0][1],/并入罗马/);assert.match(t.ends[1][1],/西罗马终结/);assert.match(t.ends[2][1],/凡尔登三分/);
+   assert.equal(t.stops,3);assert.ok(t.merge,'希腊 runs into 罗马');
+   // 老无 2026-10-27: 东罗马 leaves 罗马 at 395, above 罗马’s end; the three heirs of Verdun leave 中世纪西欧 where it stops (德意志 straight on, so no curve).
+   assert.deepEqual(t.forks,['east','egypt','faith','france','italy','persia','rome','west']);
+   assert.ok(t.forkY.east<t.endY.rome);assert.equal(t.forkY.west,t.endY.rome);
+   assert.ok(['france','germany','italy'].every(l=>t.forkY[l]===t.endY.west),'the heirs of Verdun fork where 中世纪西欧 ends');
    for(const k of ['war','arab']){assert.equal(t[k].length,3,k+' node on each line');assert.equal(new Set(t[k].map(p=>p[1])).size,1,k+' copies level');assert.equal(new Set(t[k].map(p=>p[0])).size,3);}
    assert.equal(t.swaps,6,'interchanges: the Persian war, the Arab conquests, and four East Roman stations shared with 基督教');assert.equal(t.rows,1,'one row for the shared station');assert.match(t.where,/东罗马、波斯、埃及/);
    assert.deepEqual(t.on,['history-empire-heraclius/0','history-empire-heraclius/0','history-empire-heraclius/0'],'a shared station lights up on all its lines');
@@ -113,8 +118,8 @@ const BOLD=[['history-faith-three-chapters/1','教义之争背后的权力格局
    },sel);
    assert.deepEqual(light.trunk,{ends:['trunk'],merge:true,war:false,lanes:['trunk']});
    assert.deepEqual(light.rome,{ends:['rome'],merge:false,war:false,lanes:['rome','trunk']});
-   assert.deepEqual(light.east,{ends:['rome'],merge:false,war:true,lanes:['east','rome','trunk']});
-   assert.deepEqual(light.west,{ends:['rome'],merge:false,war:false,lanes:['rome','trunk','west']});
+   assert.deepEqual(light.east,{ends:[],merge:false,war:true,lanes:['east','rome','trunk']},'东罗马 leaves 罗马 at 395, before 罗马’s end');
+   assert.deepEqual(light.west,{ends:['rome','west'],merge:false,war:false,lanes:['rome','trunk','west']},'中世纪西欧 runs through 罗马’s end to its own at Verdun');
    assert.deepEqual(light.persia,{ends:[],merge:false,war:true,lanes:['persia','trunk']});
    // Stepping along 波斯 from the shared war goes on to the Arab conquest; along 埃及 too.
    if(label!=='desktop'){await page.keyboard.press('Escape');await wait(100);}
@@ -130,11 +135,13 @@ const BOLD=[['history-faith-three-chapters/1','教义之争背后的权力格局
      const bar=toc.querySelector('.tree-lines').getBoundingClientRect(),item=toc.querySelector('.tree-item.on').getBoundingClientRect();
      return {id:ENTRIES[cur].id,line:treeLine,scroll:toc.scrollTop,visible:item.top>=bar.bottom-2&&item.bottom<=toc.getBoundingClientRect().bottom};
     });
-    assert.equal(jumped.id,'history-empire-leo');assert.equal(jumped.line,'east');assert.ok(jumped.scroll>500&&jumped.visible,JSON.stringify(jumped));
+    assert.equal(jumped.id,'history-empire-theodosius');assert.equal(jumped.line,'east');// 东罗马 now starts at 395, with the eastern court of the Theodosians
+    assert.ok(jumped.scroll>500&&jumped.visible,JSON.stringify(jumped));
     const beforeClick=await page.evaluate(()=>toc.scrollTop);
-    await page.click('#toc .tree-item[data-key="history-west-kingdoms/0"]');
+    // The row right below 东罗马’s first station (395) is 西罗马的终结 on 罗马: clicking it switches line in place.
+    await page.click('#toc .tree-item[data-key="history-empire-west-fall/0"]');
     const afterItem=await page.evaluate(()=>({id:ENTRIES[cur].id,line:treeLine,scroll:toc.scrollTop}));
-    assert.deepEqual(afterItem,{id:'history-west-kingdoms',line:'west',scroll:beforeClick},'clicking a tree item below does not move the timeline');
+    assert.deepEqual(afterItem,{id:'history-empire-west-fall',line:'rome',scroll:beforeClick},'clicking a tree item below does not move the timeline');
     await page.evaluate(()=>{selectTreeLine('east');go('history-empire-heraclius');});await page.click('#treeOpen');await wait(250);
     await page.evaluate(()=>treeSheet.querySelector('.tree-item.on')?.scrollIntoView({block:'center'}));await wait(150);
     await page.screenshot({path:path.join(shots,'tree-shared-1440.png')});
@@ -143,6 +150,6 @@ const BOLD=[['history-faith-three-chapters/1','教义之争背后的权力格局
    await page.close();
   }
   assert.deepEqual(errors,[]);
-  console.log('PASS: v34 tree — eight lines (希腊 ends by running into 罗马; 罗马 ends with the West in 476 and splits into 东罗马 and 中世纪西欧; 东罗马 stays 东罗马, now to 1056); every line ends with an event or a shoot; 希拉克略王朝 and 阿拉伯征服 are shared stations on 东罗马, 波斯 and 埃及, one row and one set of scenes, lit together; 老无’s words verbatim and bold (the 一志论 and 圣像之争 ones now on the East Roman dynasties); cross-line pointers by the new names; desktop and 390px; no page errors.');
+  console.log('PASS: v34 tree, as rearranged 2026-10-27 — eleven lines (希腊 ends by running into 罗马; 东罗马 forks off 罗马 at 395; 罗马 ends with the West in 476 and carries on as 中世纪西欧, which ends at Verdun in 843 and forks into 法兰西, 德意志 and 意大利; 东罗马 stays 东罗马, now to 1056); every line ends with an event or a shoot; 希拉克略王朝 and 阿拉伯征服 are shared stations on 东罗马, 波斯 and 埃及, one row and one set of scenes, lit together; 老无’s words verbatim and bold (the 一志论 and 圣像之争 ones now on the East Roman dynasties); cross-line pointers by the new names; desktop and 390px; no page errors.');
  }catch(e){console.error(e);process.exitCode=1;}finally{await browser.close();}
 })();

@@ -49,7 +49,7 @@ assert.ok(!/tChrono|peakTimeline|高光年代|TIME_CH/.test(html));
    bannerIcon:!!document.querySelector('#ghBanner svg.gh-icon'),
    title:document.title,
    h1:document.querySelector('#side h1')?.firstChild.textContent||''}));
-  assert.deepEqual(data,{geo:33,topics:8,history:100,scenes:367,refs:838,seas:18,islands:35,mode:'history',
+  assert.deepEqual(data,{geo:33,topics:8,history:106,scenes:402,refs:918,seas:18,islands:35,mode:'history',
    buttons:['tHistory','tGeography','tTopics'],banner:'开源项目·欧洲历史笔记',
    bannerHref:'https://github.com/stabruriss/history-of-europe-in-frames',bannerIcon:true,
    title:'简明欧洲史图册',h1:'简明欧洲史图册'});
@@ -75,9 +75,9 @@ assert.ok(!/tChrono|peakTimeline|高光年代|TIME_CH/.test(html));
    }
    return report;
   });
-  assert.equal(sceneReport.length,432);
+  assert.equal(sceneReport.length,467);
   await page.evaluate(()=>go('history-migration'));
-  assert.equal(await page.$$eval('#toc .chip',es=>es.length),103);
+  assert.equal(await page.$$eval('#toc .chip',es=>es.length),110);
   assert.equal(await page.$eval('#prev',e=>e.disabled),true);
   for(const id of await page.evaluate(()=>HISTORY_ENTRIES.map(e=>e.id))){
    await page.evaluate(id=>go(id),id);
@@ -153,6 +153,6 @@ assert.ok(!/tChrono|peakTimeline|高光年代|TIME_CH/.test(html));
   await animated.close();
   await wait(200);assert.equal(await page.$eval('#mapnote',e=>e.hidden),false);
   assert.deepEqual(errors,[]);
-  console.log('PASS: 33 geographic entries; 100 history sections; 367 scenes; all geometry references; 838 reading links; foldable reader; overlay-aware map fitting; desktop, phone, tablet and short landscape; stage hash links; mode memory; navigation; rapid animated switching; 33 Alexander events; royal extent; 18 seas and 35 islands; offline rendering; no JavaScript errors.');
+  console.log('PASS: 33 geographic entries; 106 history sections; 402 scenes; all geometry references; 918 reading links; foldable reader; overlay-aware map fitting; desktop, phone, tablet and short landscape; stage hash links; mode memory; navigation; rapid animated switching; 33 Alexander events; royal extent; 18 seas and 35 islands; offline rendering; no JavaScript errors.');
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

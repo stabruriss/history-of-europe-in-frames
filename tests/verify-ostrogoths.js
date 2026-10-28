@@ -63,7 +63,7 @@ const CARDS=[[ID+'/1','theodoric-great',/人质/],[ID+'/3','theodoric-great',/�
    assert.deepEqual(r.scenes,SCENES);
    assert.deepEqual(r.order,['history-west-kingdoms',ID,'history-west-merovingians'],'reading order on 中世纪西欧');
    assert.deepEqual(r.row,['west',480,568,'476—568年']);
-   assert.deepEqual(r.west.slice(r.west.indexOf('history-west-kingdoms')),['history-west-kingdoms',ID,'history-west-merovingians','history-west-lombards','history-west-charlemagne']);
+   assert.deepEqual(r.west.slice(r.west.indexOf('history-west-kingdoms')),['history-west-kingdoms',ID,'history-west-merovingians','history-west-lombards','history-west-charlemagne','history-west-charlemagne-rule','history-west-louis-pious']);
    assert.deepEqual(r.era,['history-west-kingdoms',ID]);
    // 蛮族诸王国 handed over its Theodoric scene, with its links; its later scenes and moments moved up one, and Clovis's scene gained the Vase of Soissons.
    assert.deepEqual(r.wk,[5,['476—507年','466—507年','486—511年','568—589年','589—713年'],[[2,'苏瓦松花瓶'],[2,'圣马丁堂里的紫袍'],[4,'剃了发的国王']],false,false]);
@@ -83,7 +83,8 @@ const CARDS=[[ID+'/1','theodoric-great',/人质/],[ID+'/3','theodoric-great',/�
    await page.evaluate(id=>go(id,{scene:2}),ID);await wait(80);
    assert.equal(await page.$eval('#entryEyebrow',e=>e.textContent),'中世纪早期：蛮族诸王国 · 第六章');
    // 老无 2026-10-25: 法兰克人的分家账 drawn as a family tree; the names that repeat carry an identifying tag, in the drawing and in the prose.
-   await page.evaluate(()=>go('history-west-charlemagne',{scene:5}));await wait(120);
+   // 老无 2026-10-27: the full account closes the Carolingians in the West, at Verdun (虔诚者路易, last scene).
+   await page.evaluate(()=>go('history-west-louis-pious',{scene:5}));await wait(120);
    const tree=await page.evaluate(()=>{const b=[...document.querySelectorAll('#sceneContext .box')].find(x=>x.querySelector('.box-tag').firstChild.textContent==='法兰克人的分家账');
     const s=b&&b.querySelector('svg.kin-tree');if(!s)return null;const r=s.getBoundingClientRect(),br=b.getBoundingClientRect();
     return {text:s.textContent,fits:r.width<=br.width&&r.width>250,overflow:document.documentElement.scrollWidth>innerWidth,after:b.textContent.includes('算账')};});
@@ -93,7 +94,7 @@ const CARDS=[[ID+'/1','theodoric-great',/人质/],[ID+'/3','theodoric-great',/�
    const tags=await page.evaluate(()=>{const E=id=>HISTORY_ENTRIES.find(e=>e.id===id),p=(id,i)=>{const d=document.createElement('div');d.innerHTML=E(id).html;return [...d.querySelectorAll('[data-scene-text]')][i].textContent.replace(/（[A-Za-z][^）]*）/g,'');};
     const b=(id,i)=>{const d=document.createElement('div');d.innerHTML=E(id).html;return [...d.querySelectorAll('[data-scene-text]')][i].innerHTML.replace(/（[A-Za-z][^）]*）/g,'');};
     return [p('history-west-merovingians',3).includes('查理·马特（铁锤）'),p('history-west-merovingians',4).includes('丕平（矮子丕平）'),p('history-west-lombards',4).includes('“丕平献土”'),
-     p('history-west-charlemagne',0).includes('查理（即查理曼大帝）'),p('history-west-charlemagne',5).includes('“虔诚者”路易'),
+     p('history-west-charlemagne',1).includes('查理（即查理曼大帝）'),p('history-west-charlemagne-rule',5).includes('“虔诚者”路易'),
      // 老无 2026-10-25 夜: 法兰克崛起的要点 woven chronologically across seven sections (not dumped into a standalone section).
      b('history-empire-crisis',4).includes('<strong>法兰克由莱茵河中下游的卡马维、布鲁克特里等小部族合流而成，“法兰克”在日耳曼语里意为“凶悍、勇猛”，后世又演成免税的“自由人”'),
      b('history-empire-constantine',4).includes('<strong>358年尤利安打服渡过莱茵河的萨利克法兰克人，没按老规矩拆散，而是准其整支留在托克桑德利亚当同盟兵'),
@@ -107,14 +108,14 @@ const CARDS=[[ID+'/1','theodoric-great',/人质/],[ID+'/3','theodoric-great',/�
      b('history-west-kingdoms',0).includes('<strong>高卢北部归从未背井离乡、也未被拆散的法兰克')&&p('history-west-kingdoms',0).includes('不列颠早在410年前后被罗马放弃'),
      b('history-west-kingdoms',2).includes('<strong>468年后西哥特北扩打到法兰克地盘，促进了法兰克诸部组织联合起来')&&b('history-west-kingdoms',2).includes('<strong>那时东罗马同波斯打仗，在西边只能搞“搅屎棍”式的制衡策略，拉法兰克对付西哥特。507年克洛维在武耶打垮西哥特、亲手杀了阿拉里克二世；他从东帝阿纳斯塔修斯拿到执政官称号，披紫袍自称“奥古斯都”')&&b('history-west-kingdoms',2).includes('<strong>他又设计除掉萨利克与科隆各小王，一统诸部、定都巴黎'),
      b('history-west-ostrogoths',3).includes('<strong>508年发兵打退南下武耶的克洛维，收下普罗旺斯、替外孙保住西哥特残部'),
-     b('history-west-merovingians',4).includes('<strong>751年，法兰克贵族在苏瓦松推丕平为王、涂了圣油，开创加洛林王朝')&&E('history-west-charlemagne').short==='加洛林王朝：查理曼',
+     b('history-west-merovingians',4).includes('<strong>751年，法兰克贵族在苏瓦松推丕平为王、涂了圣油，开创加洛林王朝')&&E('history-west-charlemagne').short==='加洛林王朝',
      E('history-empire-west-end').boxes[0].text.includes('<svg class="kin-tree"')&&E('history-empire-macedonian').boxes[0].text.includes('<svg class="kin-tree"'),
      // 老无 2026-10-26: 法兰克内部四大块、分家混战难维集权、教会分裂两头、像三国权相把持、加洛林与教宗土地换合法性交易及伪造《君士坦丁赠礼》; progressive dynasty trees at each dynasty end.
      b('history-west-merovingians',0).includes('<strong>法兰克内部版图定成四大块：东边日耳曼老家奥斯特拉西亚、西边纽斯特里亚、东南勃艮第，外加西南常半独立的阿基坦；分家导致兄弟叔侄频繁混战，中央集权难以维持')&&['mAustrasia','mNeustria','mBurgundy','mAquitaine'].every(k=>!!GEO.regions[k]),
      b('history-west-merovingians',1).includes('<strong>教会也是一盘散沙：国王与城里的主教是一头，地方贵族与从爱尔兰引入的高隆邦等修士是另一头，贵族在自家庄园建修道院、不归主教管'),
      b('history-west-merovingians',2).includes('<strong>法兰克演成活像中国三国的局面：外头几大块各地偏割据，里头中央朝政被权相“宫相”把持，“懒王”成了汉献帝式的摆设'),
-     b('history-west-merovingians',4).includes('<strong>加洛林篡位缺王族血统，急需罗马教宗给合法性背书；教宗被伦巴第人逼迫，也急需法兰克撑腰')&&E('history-west-merovingians').boxes[0].text.includes('class="dim-stage"'),
-     b('history-west-lombards',4).includes('伪造《君士坦丁赠礼》说是物归原主——这只是表面文章，实则是法兰克王拿土地换教宗的合法性背书，东罗马光凭空口白牙怎么也要不回去')&&E('history-west-lombards').moments.some(m=>m.name==='伪造的《君士坦丁赠礼》'),
+     b('history-west-charlemagne',0).includes('<strong>篡位缺王族血统，要靠罗马教宗加持合法性；教宗跟东罗马为圣像越闹越僵')&&E('history-west-merovingians').boxes[0].text.includes('class="dim-stage"'),
+     b('history-west-charlemagne',0).includes('<strong>地是法兰克人打下来送的，东罗马怎么讲理也要不回去</strong>')&&p('history-west-charlemagne',0).includes('《君士坦丁赠礼》')&&E('history-west-lombards').moments.some(m=>m.name==='伪造的《君士坦丁赠礼》'),
      ['history-empire-julio-claudian','history-empire-flavian','history-empire-antonine','history-empire-crisis','history-empire-constantine','history-empire-west-fall','history-empire-theodosius','history-empire-leo','history-empire-justinian','history-empire-constans','history-empire-anarchy','history-empire-isaurian','history-empire-amorian'].every(id=>E(id).boxes.some(x=>x.text.includes('class="dim-stage"')))];});
    assert.deepEqual(tags,Array(25).fill(true),'identifying tags, Carolingian naming, Frankish dynamics, and progressive dynasty trees: '+JSON.stringify(tags));
    // Clicking the expand button opens the wide dynasty sheet overlaid on the map stage.
