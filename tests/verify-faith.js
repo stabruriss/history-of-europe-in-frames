@@ -8,7 +8,8 @@ const wait=ms=>new Promise(r=>setTimeout(r,ms));
 const IDS=['history-faith-israel','history-faith-first-temple','history-faith-second-temple','history-faith-jesus','history-faith-church','history-faith-empire-church','history-faith-councils','history-faith-ephesus','history-faith-two-cities','history-faith-papacy','history-faith-three-chapters','history-faith-gregory'];
 // 老无 2026-10-27: 加洛林神学之争 (787—870), beside the East's last iconoclasm on a passing loop.
 // 老无 2026-10-28: on to 1054 — the papacy as a prize, the emperors' church beside Cluny, the reformers.
-const IDS_ALL=[...IDS,'history-faith-carolingian','history-faith-dark-century','history-faith-imperial-church','history-faith-cluny','history-faith-leo-ix'];
+// 老无 2026-10-29: on past 1054 — Urban II, the First Crusade (shared with 东罗马 and 波斯—阿拉伯), the Cistercians.
+const IDS_ALL=[...IDS,'history-faith-carolingian','history-faith-dark-century','history-faith-imperial-church','history-faith-cluny','history-faith-leo-ix','history-faith-urban','history-faith-crusade','history-faith-citeaux'];
 (async()=>{
  const browser=await puppeteer.launch({executablePath:process.env.CHROME_PATH||'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true});
  const errors=[];
@@ -35,15 +36,15 @@ const IDS_ALL=[...IDS,'history-faith-carolingian','history-faith-dark-century','
      people:Object.entries(FIGURE_SCENES).filter(([k])=>k.startsWith('history-faith-')).reduce((n,[,v])=>n+v.length,0)};
    },IDS);
    assert.equal(report.chapter,'犹太教与基督教');
-   assert.deepEqual(report.ids,IDS_ALL);assert.deepEqual(report.scenes,[5,5,4,6,4,4,3,3,3,6,5,8,6,4,4,5,5]);
+   assert.deepEqual(report.ids,IDS_ALL);assert.deepEqual(report.scenes,[5,5,4,6,4,4,3,3,3,6,5,8,6,4,4,5,5,4,6,5]);
    assert.ok(report.paras.every(p=>p.chars<=230),'Concise: '+JSON.stringify(report.paras.filter(p=>p.chars>230)));
-   assert.ok(report.bold);assert.equal(report.moments,63);assert.equal(report.people,38);
-   assert.deepEqual(report.branch,['基督教',6,'trunk',-1400,1056,true]);assert.equal(report.levant,false);
-   assert.deepEqual(report.eras,[['faith-israel','古代以色列',IDS.slice(0,2)],['faith-temple','第二圣殿时期',IDS.slice(2,4)],['faith-church','早期教会',IDS.slice(4,9)],['faith-medieval','中世纪早期的教会',IDS.slice(9)],['faith-carolingian','加洛林时代的教会',['history-faith-carolingian']],['faith-reform','帝国与教会改革',['history-faith-dark-century','history-faith-imperial-church','history-faith-cluny','history-faith-leo-ix']]]);
+   assert.ok(report.bold);assert.equal(report.moments,78);assert.equal(report.people,52);
+   assert.deepEqual(report.branch,['基督教',6,'trunk',-1400,1153,true]);assert.equal(report.levant,false);
+   assert.deepEqual(report.eras,[['faith-israel','古代以色列',IDS.slice(0,2)],['faith-temple','第二圣殿时期',IDS.slice(2,4)],['faith-church','早期教会',IDS.slice(4,9)],['faith-medieval','中世纪早期的教会',IDS.slice(9)],['faith-carolingian','加洛林时代的教会',['history-faith-carolingian']],['faith-reform','帝国与教会改革',['history-faith-dark-century','history-faith-imperial-church','history-faith-cluny','history-faith-leo-ix']],['faith-crusade','乌尔班二世与第一次十字军',['history-faith-urban','history-faith-crusade']],['faith-orders','修会的兴替',['history-faith-citeaux']]]);
    // The line now forks off before 卡迭石: the Hebrews' nomadic origins come first.
    // After 641 the line runs through the shared stations of the East Roman dynasties.
-   assert.deepEqual(report.line,['history-migration/0','history-farming/0','history-farming/1','history-palaces/0',...IDS.map(id=>id+'/0'),...['history-empire-constans/0','history-empire-isaurian/0','history-faith-carolingian/0','history-empire-amorian/0','history-faith-dark-century/0','history-germany-otto/0','history-faith-imperial-church/0','history-faith-cluny/0','history-faith-leo-ix/0','history-empire-macedonian/3']]);
-   assert.equal(report.shoot[1],1056);assert.match(report.shoot[2],/大分裂以后/);
+   assert.deepEqual(report.line,['history-migration/0','history-farming/0','history-farming/1','history-palaces/0',...IDS.map(id=>id+'/0'),...['history-empire-constans/0','history-empire-isaurian/0','history-faith-carolingian/0','history-empire-amorian/0','history-faith-dark-century/0','history-germany-otto/0','history-faith-imperial-church/0','history-faith-cluny/0','history-faith-leo-ix/0','history-empire-macedonian/3','history-germany-investiture/0','history-germany-canossa/0','history-spain-crusade/0','history-faith-urban/0','history-faith-crusade/0','history-faith-citeaux/0']]);
+   assert.equal(report.shoot[1],1153);assert.match(report.shoot[2],/托钵修会与十字军以后/);
    // Exodus and the Temple, once scattered, now sit on this line.
    assert.equal(report.dark,1);assert.equal(report.pompeyHoly,false);assert.equal(report.holy,3);
    assert.deepEqual(report.exodus,[[2,'两份战报'],[4,'分开红海']]);
@@ -126,7 +127,7 @@ const IDS_ALL=[...IDS,'history-faith-carolingian','history-faith-dark-century','
    // After 641 the church’s story runs through the shared stations of the East Roman dynasties.
    for(const [id,era] of [['history-empire-constans','东罗马：希拉克略王朝与二十年无政府'],['history-empire-isaurian','东罗马：圣像之争时代'],['history-empire-amorian','东罗马：圣像之争时代'],['history-empire-macedonian/3','东罗马：马其顿王朝']]){await page.evaluate(id=>go(id),id);assert.equal(await page.$eval('#entryEyebrow',e=>e.textContent),era+' · 第六章');}
    if(label==='desktop'){
-    assert.ok(await page.$$eval('#toc .tree-item[data-branch="faith"] small',es=>es.length===17&&es.every(e=>e.textContent.startsWith('基督教 · '))));
+    assert.ok(await page.$$eval('#toc .tree-item[data-branch="faith"] small',es=>es.length===20&&es.every(e=>/^基督教( · |、)/.test(e.textContent))));
     assert.match(await page.$eval('#indexCaption',e=>e.textContent),/Ⅶ 基督教/);
    }
    for(const e of IDS)for(let i=0;i<await page.evaluate(id=>HISTORY_ENTRIES.find(x=>x.id===id).scenes.length,e);i++){
@@ -144,6 +145,6 @@ const IDS_ALL=[...IDS,'history-faith-carolingian','history-faith-dark-century','
    await page.close();
   }
   assert.deepEqual(errors,[]);
-  console.log('PASS: chapter Ⅶ 犹太教与基督教 — the 基督教 line (outermost lane, 前1400—1056: the rise of the Roman church after the Lombards, then the shared East Roman stations: 一志论, 圣像之争, the schism of 1054; shoot 大分裂以后) in 10 sections / 43 scenes (v33: 教宗与第一次东西分裂 — the recap, Arius’s two offshoots, the throne dragged along, how Rome’s bishop became the Pope, the Acacian schism), earlier: rebuilt on 老无’s secular outline in 9 sections / 37 scenes, ≤230 chars each: Hebrews from beyond the River, Kadesh, Egypt and Moses, the Exodus, the kingdoms and Babylon, monotheism / exclusivity / the end of days, Rome not caring, too many gods, Jesus’ product and Peter’s channel, the cross, Nero, why persecution eased, Diocletian son of Jupiter, a wave Constantine rode, Jupiter condemned, and the four councils (one God made to add up, desert saints, Nicaea, the pancake flips, Constantinople, Ephesus, Chalcedon and the mine it laid, and 老无’s theory of why the quarrels never ended); 157 phrase checks (incl. the pointer from the Greek dark age, and the Western Wall as the Temple Mount’s retaining wall); 32 iconic-event tags; a 豆腐块 on the three churches; 18 person cards (摩西、阿赫那吞、恺撒、彼得、保罗、约瑟夫斯、小普林尼、居普良、伽列里乌斯、优西比乌、海伦娜、安东尼、君士坦丁、阿里乌、阿塔纳修斯、纳齐安的格列高利、聂斯托利、利奥); eyebrows and tree rows; desktop and 390px without overflow; offline; no page errors.');
+  console.log('PASS: chapter Ⅶ 犹太教与基督教 — the 基督教 line (outermost lane, 前1400—1153: the rise of the Roman church after the Lombards, then the shared East Roman stations: 一志论, 圣像之争, the schism of 1054; then the investiture contest and Canossa, the holy war in Spain, Urban II, the First Crusade and the Cistercians; shoot 托钵修会与十字军以后) in 10 sections / 43 scenes (v33: 教宗与第一次东西分裂 — the recap, Arius’s two offshoots, the throne dragged along, how Rome’s bishop became the Pope, the Acacian schism), earlier: rebuilt on 老无’s secular outline in 9 sections / 37 scenes, ≤230 chars each: Hebrews from beyond the River, Kadesh, Egypt and Moses, the Exodus, the kingdoms and Babylon, monotheism / exclusivity / the end of days, Rome not caring, too many gods, Jesus’ product and Peter’s channel, the cross, Nero, why persecution eased, Diocletian son of Jupiter, a wave Constantine rode, Jupiter condemned, and the four councils (one God made to add up, desert saints, Nicaea, the pancake flips, Constantinople, Ephesus, Chalcedon and the mine it laid, and 老无’s theory of why the quarrels never ended); 157 phrase checks (incl. the pointer from the Greek dark age, and the Western Wall as the Temple Mount’s retaining wall); 32 iconic-event tags; a 豆腐块 on the three churches; 18 person cards (摩西、阿赫那吞、恺撒、彼得、保罗、约瑟夫斯、小普林尼、居普良、伽列里乌斯、优西比乌、海伦娜、安东尼、君士坦丁、阿里乌、阿塔纳修斯、纳齐安的格列高利、聂斯托利、利奥); eyebrows and tree rows; desktop and 390px without overflow; offline; no page errors.');
  }catch(e){console.error(e);process.exitCode=1;}finally{await browser.close();}
 })();

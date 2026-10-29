@@ -20,9 +20,10 @@ const SHORTS={'history-empire-west-fall':['西罗马的终结','395—455年',8]
 // schism through the papacy as a prize, Otto's crowning, the emperors' church beside Cluny, and Leo IX's reformers.
 const EAST_TAIL=['history-empire-leo/0','history-empire-justinian/0','history-empire-heraclius/0','history-arab-conquest/0','history-empire-constans/0',
  'history-arab-constantinople/0','history-empire-anarchy/0','history-empire-isaurian/0','history-empire-amorian/0','history-eeurope-byzantium/0',
- 'history-empire-macedonian/0','history-empire-macedonian/3'];
+ 'history-empire-macedonian/0','history-empire-macedonian/3','history-empire-zoe/0','history-arab-seljuks/3','history-empire-alexios/0','history-faith-crusade/0'];
 const FAITH_TAIL=['history-faith-papacy/0','history-faith-three-chapters/0','history-faith-gregory/0','history-empire-constans/0','history-empire-isaurian/0','history-faith-carolingian/0','history-empire-amorian/0',
- 'history-faith-dark-century/0','history-germany-otto/0','history-faith-imperial-church/0','history-faith-cluny/0','history-faith-leo-ix/0','history-empire-macedonian/3'];
+ 'history-faith-dark-century/0','history-germany-otto/0','history-faith-imperial-church/0','history-faith-cluny/0','history-faith-leo-ix/0','history-empire-macedonian/3',
+ 'history-germany-investiture/0','history-germany-canossa/0','history-spain-crusade/0','history-faith-urban/0','history-faith-crusade/0','history-faith-citeaux/0'];
 const SHARED=['history-empire-constans/0','history-empire-isaurian/0','history-empire-amorian/0','history-empire-macedonian/3'];
 // 老无's core theses and hooks, woven into the right historical places and bolded (no conversational "后来/结果/他死之后事情怎么样了" copied verbatim).
 const BOLD=[['history-empire-theodosius/2','394年9月冷河之战，狄奥多西征调两万西哥特同盟兵讨伐西部篡位者，首领阿拉里克率部履行义务顶在最前线，一战死伤过半'],
@@ -126,8 +127,8 @@ const REGIONS=['mThemeOpsikion','mThemeThrakesion','mThemeAnatolikon','mThemeArm
    // One story told once: the councils after 641 are shared stations on 东罗马 and 基督教.
    for(const [k,lines,on] of r.shared){assert.deepEqual(lines,['east','faith'],k);assert.deepEqual(on,['east','faith'],k);}
    assert.deepEqual(r.east.slice(-EAST_TAIL.length),EAST_TAIL);assert.deepEqual(r.faith.slice(-FAITH_TAIL.length),FAITH_TAIL);
-   assert.deepEqual(r.branches.east,[395,1056]);assert.deepEqual(r.branches.faith,[-1400,1056]);
-   assert.deepEqual(r.futures.filter(f=>['east','faith'].includes(f[0])),[['east',1056,'东罗马（晚期）'],['faith',1056,'大分裂以后']]);
+   assert.deepEqual(r.branches.east,[395,1099]);assert.deepEqual(r.branches.faith,[-1400,1153]);
+   assert.deepEqual(r.futures.filter(f=>['east','faith'].includes(f[0])),[['east',1099,'科穆宁王朝'],['faith',1153,'托钵修会与十字军以后']]);
    for(const [k,ok] of r.bold)assert.ok(ok,k+' lacks 老无’s thesis in bold');
    for(const [k,ok] of r.fixes)assert.ok(ok,k+' lacks the in-place factual correction');
    assert.equal(r.chatFiller,false,'conversational filler or uncorrected wording left in prose');
@@ -151,13 +152,13 @@ const REGIONS=['mThemeOpsikion','mThemeThrakesion','mThemeAnatolikon','mThemeArm
    const walk=[];for(let i=0;i<11;i++){await page.click('#next');walk.push(await page.evaluate(()=>[ENTRIES[cur].id,sceneIndex,treeLine]));}
    assert.deepEqual(walk,[['history-faith-gregory',0,'faith'],['history-empire-constans',0,'faith'],['history-empire-isaurian',0,'faith'],['history-faith-carolingian',0,'faith'],['history-empire-amorian',0,'faith'],
     ['history-faith-dark-century',0,'faith'],['history-germany-otto',0,'faith'],['history-faith-imperial-church',0,'faith'],['history-faith-cluny',0,'faith'],['history-faith-leo-ix',0,'faith'],['history-empire-macedonian',3,'faith']]);
-   assert.ok(await page.$eval('#next',e=>e.disabled),'end of the 基督教 line');
+   await page.click('#next');assert.deepEqual(await page.evaluate(()=>[ENTRIES[cur].id,sceneIndex,treeLine]),['history-germany-investiture',0,'faith'],'基督教 runs on past the schism (老无 2026-10-29)');
    await page.evaluate(()=>{selectTreeLine('east');go('history-empire-amorian');});
    // 老无 2026-10-28 夜: the Rus and Byzantium (860—1043) is a station on 东罗马 between the Amorians and the Macedonians.
    await page.click('#next');assert.deepEqual(await page.evaluate(()=>[ENTRIES[cur].id,sceneIndex]),['history-eeurope-byzantium',0]);
    await page.click('#next');assert.deepEqual(await page.evaluate(()=>[ENTRIES[cur].id,sceneIndex]),['history-empire-macedonian',0]);
    await page.click('#next');assert.deepEqual(await page.evaluate(()=>[ENTRIES[cur].id,sceneIndex]),['history-empire-macedonian',3]);
-   assert.ok(await page.$eval('#next',e=>e.disabled),'end of the 东罗马 line');
+   await page.click('#next');assert.deepEqual(await page.evaluate(()=>[ENTRIES[cur].id,sceneIndex]),['history-empire-zoe',0],'东罗马 runs on past the schism (老无 2026-10-29)');await page.click('#prev');
    // The tree: the schism row is labelled on its own, both copies of a shared station light up together.
    const sel=label==='desktop'?'#toc .htree':'#treeSheet .htree';
    if(label!=='desktop'){await page.click('#treeOpen');await wait(200);}
@@ -168,7 +169,7 @@ const REGIONS=['mThemeOpsikion','mThemeThrakesion','mThemeAnatolikon','mThemeArm
    },sel);
    assert.match(t.mace[0],/^马其顿王朝东罗马 · 867—1025年$/);assert.match(t.mace[1],/^东西教会大分裂东罗马、基督教 · 1025—1056年$/);
    assert.equal(t.on.length,2);assert.ok(t.on.every(n=>n[0]==='history-empire-macedonian/3')&&t.on[0][1]===t.on[1][1],JSON.stringify(t.on));
-   assert.equal(t.swaps,10,'interchanges, with the sieges of Constantinople, Tariq’s crossing, Otto’s crowning and the Rus and Byzantium');
+   assert.equal(t.swaps,15,'interchanges, with the sieges of Constantinople, Tariq’s crossing, Otto’s crowning, the Rus and Byzantium, and (老无 2026-10-29) the investiture contest, Canossa, the holy war in Spain, Manzikert and the First Crusade');
    if(label!=='desktop'){await page.keyboard.press('Escape');await wait(100);}
    for(const hash of ['history-empire-justinian/6','history-empire-constans/2','history-empire-anarchy/0','history-empire-isaurian/5','history-empire-macedonian/2']){
     await page.evaluate(h=>{const [id,s]=h.split('/');go(id,{scene:+s});},hash);await wait(250);
@@ -183,6 +184,6 @@ const REGIONS=['mThemeOpsikion','mThemeThrakesion','mThemeAnatolikon','mThemeArm
   }
   assert.deepEqual(errors,[]);
   console.log('PASS: v35 东罗马 by dynasty — four eras (利奥与查士丁尼, 希拉克略与二十年无政府, 圣像之争时代, 马其顿) and seven dynasty sections to 1056; 查士丁尼王朝 ends with the bills beside Emperor Wu (five-row box); the councils after 641 are shared stations on 东罗马 and 基督教 (the old council sections gone, one story told once); '
-   +BOLD.length+' of 老无’s sentences verbatim and bold, '+FIXES.length+' corrected mechanisms in plain text beside them; one Chinese parallel per section; ≤300 chars per scene; 东罗马 not 拜占庭; nine new teaching areas; https links; cards; eyebrows; ↑↓ along 基督教 (on through the reformers to 1054) and 东罗马 to their ends; the schism row lit on both lines; desktop and 390px; no page errors.');
+   +BOLD.length+' of 老无’s sentences verbatim and bold, '+FIXES.length+' corrected mechanisms in plain text beside them; one Chinese parallel per section; ≤300 chars per scene; 东罗马 not 拜占庭; nine new teaching areas; https links; cards; eyebrows; ↑↓ along 基督教 (on through the reformers to 1054, then past the schism into the investiture contest) and 东罗马 (on into the empresses); the schism row lit on both lines; desktop and 390px; no page errors.');
  }catch(e){console.error(e);process.exitCode=1;}finally{await browser.close();}
 })();
