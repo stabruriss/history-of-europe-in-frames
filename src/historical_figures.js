@@ -1092,6 +1092,24 @@ const FIGURE_PLACES={
     ],
     "note": "莱茵河拐弯处的主教城，当时属勃艮第王国；1025年康拉德二世在此立主教。"
   },
+  "cl_cluny": {
+    "name": "克吕尼",
+    "en": "Cluny",
+    "ll": [
+      46.434,
+      4.659
+    ],
+    "note": "勃艮第南部马孔以北的修道院，910年由阿基坦公爵威廉建立。"
+  },
+  "cl_souvigny": {
+    "name": "苏维尼",
+    "en": "Souvigny",
+    "ll": [
+      46.534,
+      3.19
+    ],
+    "note": "克吕尼最早的分院之一，院长马约勒、奥迪洛都死在这里、葬在这里。"
+  },
   "gr_toul": {
     "name": "图勒",
     "en": "Toul",
@@ -1118,6 +1136,60 @@ const FIGURE_PLACES={
       8.359
     ],
     "note": "莱茵河边的主教城；1048年12月皇帝与诸侯在此推图勒主教布鲁诺当教宗。"
+  },
+  "ib_lusitania": {
+    "name": "卢西塔尼亚",
+    "en": "Lusitania",
+    "ll": [
+      39.5,
+      -7.6
+    ],
+    "note": "卢西塔尼亚人的家园，今葡萄牙中部和西班牙西部。"
+  },
+  "ib_barcino": {
+    "name": "巴塞罗那",
+    "en": "Barcino / Barcelona",
+    "ll": [
+      41.385,
+      2.173
+    ],
+    "note": "415年西哥特王阿陶尔夫在此遇刺，瓦利亚随后被推为王。"
+  },
+  "ib_cartnova": {
+    "name": "新迦太基",
+    "en": "Carthago Nova / Cartagena",
+    "ll": [
+      37.6,
+      -0.98
+    ],
+    "note": "巴卡家族在西班牙的都城；前209年大西庇阿一天攻下。"
+  },
+  "ib_corduba": {
+    "name": "科尔多瓦",
+    "en": "Corduba / Córdoba",
+    "ll": [
+      37.88,
+      -4.78
+    ],
+    "note": "远西班牙（后来的贝提卡）的首府，罗马总督驻地。"
+  },
+  "ib_castulo": {
+    "name": "卡斯图洛",
+    "en": "Castulo",
+    "ll": [
+      38.04,
+      -3.63
+    ],
+    "note": "莫雷纳山银矿区的伊比利亚城；汉尼拔的妻子出自这里。"
+  },
+  "vg_seville": {
+    "name": "塞维利亚",
+    "en": "Seville",
+    "ll": [
+      37.389,
+      -5.984
+    ],
+    "note": "贝提卡的首府和大主教座；莱安德、伊西多尔兄弟先后在此任主教。"
   }
 };
 const FIGURES={
@@ -4246,6 +4318,50 @@ const FIGURES={
       ]
     ]
   },
+  "william-pious": {
+    "name": "虔诚者威廉",
+    "en": "William I of Aquitaine (William the Pious)",
+    "life": "875—918年",
+    "relation": "阿基坦公爵、奥弗涅伯爵 · 克吕尼的创建人",
+    "place": "cl_cluny",
+    "bio": "秃头查理时的权臣“毛脚”贝尔纳之子，886年继任奥弗涅伯爵，893年起称阿基坦公爵，地盘从奥弗涅、利穆赞连到欧坦、马孔一带，在布里乌德用自己的名字铸币。910年把克吕尼献给圣彼得。918年死，没有儿子，由外甥继位。",
+    "sources": [
+      [
+        "阿基坦的威廉一世（英文资料）",
+        "https://en.wikipedia.org/wiki/William_I,_Duke_of_Aquitaine"
+      ],
+      [
+        "阿娃893年把克吕尼庄园转给兄长威廉的文书（英译：死后转给他，换他一块地终身使用）",
+        "https://salutemmundo.wordpress.com/2018/11/26/charter-a-week-17-brothers-and-sisters/"
+      ],
+      [
+        "贝尔纳、布吕埃尔编《克吕尼修道院文书集》第1卷（第112号建院文书拉丁原文：910年9月11日在布尔日立约，大主教与主教署名）",
+        "https://archive.org/details/recueildescharte01clunuoft"
+      ]
+    ]
+  },
+  "odilo": {
+    "name": "奥迪洛",
+    "en": "Odilo of Cluny",
+    "life": "约962—1049年",
+    "relation": "克吕尼第五任院长（994—1049年）",
+    "place": "cl_souvigny",
+    "bio": "奥弗涅梅尔克尔家的贵族子弟，在布里乌德的圣朱利安当过教士，991年入克吕尼，994年接任院长，一当五十五年。他九次去意大利，两度推辞里昂大主教；饥荒年熔了院里的圣器赈济。1049年元旦前后死在巡视途中的苏维尼。",
+    "sources": [
+      [
+        "奥迪洛（英文资料）",
+        "https://en.wikipedia.org/wiki/Odilo_of_Cluny"
+      ],
+      [
+        "《天主教百科全书》“圣奥迪洛”条（英文）",
+        "https://www.newadvent.org/cathen/11207c.htm"
+      ],
+      [
+        "拉昂主教阿达尔贝隆《致罗贝尔王诗》（《拉丁教父全集》第141卷第771—786栏，拉丁原文：“我不是修士……我的主子是克吕尼的奥迪洛国王”）",
+        "https://archive.org/details/patrologiaecursu0141mign"
+      ]
+    ]
+  },
   "leo-ix": {
     "name": "利奥九世",
     "en": "Pope Leo IX",
@@ -4275,6 +4391,84 @@ const FIGURES={
       [
         "席尔瓦坎迪达的洪贝特（英文资料）",
         "https://en.wikipedia.org/wiki/Humbert_of_Silva_Candida"
+      ]
+    ]
+  },
+  "viriathus": {
+    "name": "维里亚图斯",
+    "en": "Viriathus",
+    "life": "?—前139年",
+    "relation": "卢西塔尼亚人的首领（前147—前139年）",
+    "place": "ib_lusitania",
+    "bio": "据李维是牧人出身，后来打猎、当兵。前150年罗马总督加尔巴假意分地、诱杀卢西塔尼亚青壮，他是少数逃出来的人之一；前147年被推为首领，打了八年游击，前140年逼罗马承认他是“罗马人民之友”，次年被收买的亲信刺死。",
+    "sources": [
+      [
+        "维里亚图斯（英文资料）",
+        "https://en.wikipedia.org/wiki/Viriathus"
+      ],
+      [
+        "阿庇安《西班牙战争》第71—75节（议和、亲信受贿、睡梦中被刺，英译）",
+        "https://www.livius.org/sources/content/appian/appian-the-spanish-wars/appian-the-spanish-wars-15/"
+      ]
+    ]
+  },
+  "wallia": {
+    "name": "瓦利亚",
+    "en": "Wallia",
+    "life": "约385—418年",
+    "relation": "西哥特王（415—418年）",
+    "place": "ib_barcino",
+    "bio": "415年阿陶尔夫和继位的西格里克相继被部下所杀，哥特人推瓦利亚为王。他想渡海去非洲，船队遇风覆没，只好跟罗马议和：送还皇妹，换来粮食，替罗马打西班牙的汪达尔人和阿兰人。418年落户阿基坦，他随即死去，狄奥多里克一世继位。",
+    "sources": [
+      [
+        "瓦利亚（英文资料）",
+        "https://en.wikipedia.org/wiki/Wallia"
+      ],
+      [
+        "奥罗修斯《反异教史》第7卷第43节（拉丁原文）",
+        "https://www.thelatinlibrary.com/orosius/orosius7.shtml"
+      ]
+    ]
+  },
+  "reccared": {
+    "name": "雷卡雷德",
+    "en": "Reccared I",
+    "life": "约559—601年",
+    "relation": "西哥特王（586—601年）· 莱奥维吉尔德的次子",
+    "place": "toletum",
+    "bio": "莱奥维吉尔德与第一位妻子所生的次子。586年即位，次年改信天主教，589年在第三次托莱多会议上带哥特人和苏维汇人当众弃阿里乌派，接连挫败阿里乌派主教和继母的密谋。601年死在托莱多，儿子即位两年后被篡位者所杀。",
+    "sources": [
+      [
+        "雷卡雷德一世（英文资料）",
+        "https://en.wikipedia.org/wiki/Reccared_I"
+      ]
+    ]
+  },
+  "isidore-seville": {
+    "name": "塞维利亚的伊西多尔",
+    "en": "Isidore of Seville",
+    "life": "约560—636年",
+    "relation": "塞维利亚主教（约600—636年）· 莱安德的弟弟",
+    "place": "vg_seville",
+    "bio": "生在卡塔赫纳的西班牙罗马人望族，接替哥哥莱安德任塞维利亚主教三十多年。他的《词源》二十卷把古代学问分门别类摘抄下来，不少失传古书靠它留下片段；又写了《哥特史》。633年主持第四次托莱多会议。",
+    "sources": [
+      [
+        "塞维利亚的伊西多尔（英文资料）",
+        "https://en.wikipedia.org/wiki/Isidore_of_Seville"
+      ]
+    ]
+  },
+  "chindasuinth": {
+    "name": "钦达斯文特",
+    "en": "Chindasuinth",
+    "life": "约563—653年",
+    "relation": "西哥特王（642—653年）· 雷切斯文特的父亲",
+    "place": "toletum",
+    "bio": "哥特贵族，642年年近八十时发动政变，废了少年国王图尔加。据弗雷德加，他杀了两百名大贵族、五百名小贵族，把他们的妻女和家产赏给亲信。649年立儿子雷切斯文特为共治王，又着手编一部两族通用的法典，九十来岁死去。",
+    "sources": [
+      [
+        "钦达斯文特（英文资料）",
+        "https://en.wikipedia.org/wiki/Chindasuinth"
       ]
     ]
   }
@@ -5779,22 +5973,13 @@ const FIGURE_SCENES={
       "place": "ravenna"
     }
   ],
-  "history-west-kingdoms/2": [
+  "history-west-kingdoms/1": [
     {
       "id": "clovis",
       "when": "507年",
       "event": "看不下去的阿里乌派",
       "note": "据图尔的格雷戈里，克洛维对部下说：“这些阿里乌派占着高卢一块地，我看不下去。靠上帝帮忙，去把他们打下来，地归我们。”打完仗，他把战利品送进了图尔的圣马丁教堂。",
       "place": "tours"
-    }
-  ],
-  "history-west-kingdoms/3": [
-    {
-      "id": "leovigild",
-      "when": "584年",
-      "event": "三万金币",
-      "note": "长子赫尔梅内吉尔德在塞维利亚造反，靠的是拜占庭兵。父亲没跟拜占庭硬打，付了三万金币，拜占庭人就撤了，还把儿媳和孙子一并带走。儿子逃进教堂，父亲派次子进去劝降。",
-      "place": "toletum"
     }
   ],
   "history-empire-west-fall/3": [
@@ -6360,6 +6545,33 @@ const FIGURE_SCENES={
       "place": "ic_basel"
     }
   ],
+  "history-faith-cluny/0": [
+    {
+      "id": "odo-paris",
+      "when": "910年",
+      "event": "祈祷名单上的头一个",
+      "note": "厄德生前兼着图尔圣马丁修道院的俗人院长，888年被推为西法兰克王，898年死。十二年后“虔诚者”威廉立克吕尼建院文书，开列修士该为谁祈祷，头一个就是“我主厄德王”，然后才是威廉的父母、夫妻和亲族。",
+      "place": "tours"
+    }
+  ],
+  "history-faith-cluny/1": [
+    {
+      "id": "william-pious",
+      "when": "893年",
+      "event": "姐姐的庄园",
+      "note": "克吕尼原是他姐姐、女修道院长阿娃（Ava）的庄园。893年阿娃立约，死后把它连同教堂、农奴、葡萄园、磨坊转给他，换他一块地终身使用。910年他把这份遗产整个献给圣彼得，文书里请修士也为阿娃的灵魂祈祷。",
+      "place": "cl_cluny"
+    }
+  ],
+  "history-faith-cluny/3": [
+    {
+      "id": "odilo",
+      "when": "约1030年",
+      "event": "“克吕尼的奥迪洛国王”",
+      "note": "拉昂主教阿达尔贝隆（Adalbero of Laon）写长诗献给法王罗贝尔二世，讥讽派去打探的修士回来换了一身兵装：“我不是修士，我奉国王之命当兵——我的主子是克吕尼的奥迪洛国王。”这位老派主教看不惯修道院绕开主教，自成一国。",
+      "place": "cl_cluny"
+    }
+  ],
   "history-faith-leo-ix/1": [
     {
       "id": "leo-ix",
@@ -6385,6 +6597,108 @@ const FIGURE_SCENES={
       "event": "提防你们的亲戚",
       "note": "据西尼的布鲁诺所记，利奥九世死前把主教们叫到床前，头一条叮嘱是：不许卖教会的地、葡萄园、城堡和房屋，谁也不许把教产当成自己的；又说：别养成起誓的习惯，提防你们的亲戚。4月19日他死在罗马。",
       "place": "rome"
+    }
+  ],
+  "history-spain-before-goths/1": [
+    {
+      "id": "hannibal",
+      "when": "前3世纪末",
+      "event": "娶了卡斯图洛的女儿",
+      "note": "据李维，卡斯图洛是西班牙一座强大有名的城，跟迦太基结盟极紧，汉尼拔的妻子就出自那里。城在莫雷纳山的银矿区；跟本地豪强结亲，矿和兵就连在了一起。后来这座城还是倒向了罗马。",
+      "place": "ib_castulo"
+    },
+    {
+      "id": "scipio-africanus",
+      "when": "前209年",
+      "event": "放还人质",
+      "note": "据波利比乌斯，攻下新迦太基后，他把三百多名伊比利亚人质叫来，一个个摸着孩子的头，叫他们放心，过几天就能见到父母，又让大人写信回家报平安。各部落的首领随后纷纷来投：迦太基人向他们索钱、拿他们的妻女作人质，早就惹怒了他们。",
+      "place": "ib_cartnova"
+    }
+  ],
+  "history-spain-before-goths/2": [
+    {
+      "id": "viriathus",
+      "when": "前139年",
+      "event": "睡梦中被刺",
+      "note": "据阿庇安，维里亚图斯操劳过度，少睡，常穿着铠甲歇息，亲信夜里可以进帐。派去议和的三个亲信被罗马将领收买，回营趁他刚睡着，一刀刺进铠甲护不住的咽喉。凶手去讨余下的赏钱，罗马将领只让他们留着已拿到的，其余叫他们去罗马要。",
+      "place": "ib_lusitania"
+    },
+    {
+      "id": "caesar",
+      "when": "前61—前60年",
+      "event": "到西班牙还债",
+      "note": "据苏埃托尼乌斯，他当远西班牙总督时，向盟邦讨钱还自己的债，还攻打洗劫了几座卢西塔尼亚人的城镇，那些城镇并没有拒绝他的条件，他一到就开了门。罗马总督拿西班牙捞钱，这是一例。",
+      "place": "ib_corduba"
+    }
+  ],
+  "history-spain-before-goths/3": [
+    {
+      "id": "hadrian",
+      "when": "101年",
+      "event": "外省口音",
+      "note": "据《罗马皇帝传》，哈德良当财务官时替图拉真到元老院念皇帝的演说，一口外省口音惹得满堂发笑。他从此下苦功学拉丁语，直到说得极好极流利。他家祖上从意大利的哈德里亚迁到意大利卡，母亲是加的斯人。",
+      "place": "italica"
+    },
+    {
+      "id": "theodosius",
+      "when": "389年",
+      "event": "西班牙送来的皇帝",
+      "note": "389年狄奥多西打败篡位的马克西穆斯，在罗马受庆。高卢修辞家帕卡图斯当面念颂词，夸西班牙出硬朗的兵、老练的将、能说的演说家、有名的诗人，是法官和君主的母亲：送给帝国的有图拉真、哈德良，还有他。",
+      "place": "rome"
+    }
+  ],
+  "history-spain-before-goths/4": [
+    {
+      "id": "wallia",
+      "when": "415—416年",
+      "event": "渡海不成，回头讲和",
+      "note": "据奥罗修斯，哥特人推瓦利亚为王，本是要他跟罗马翻脸。可前一年一大队哥特人带着兵器坐船想渡海去非洲，在加的斯海峡里遇风全没了；他又记得阿拉里克当年渡海去西西里也翻了船，这才跟皇帝议和，交出精选的人质，把皇妹体面地送了回去。",
+      "place": "ib_barcino"
+    }
+  ],
+  "history-spain-visigoths/2": [
+    {
+      "id": "sidonius",
+      "when": "约474年",
+      "event": "牛在祭坛边吃草",
+      "note": "他写信给一位主教诉苦：尤里克一听“天主教”就变脸，波尔多、利摩日、罗德兹等一串城的主教死了补不上人；教堂屋顶塌了，门被荆棘堵住，牛躺在半塌的门廊里，还在长满野草的祭坛边吃草。",
+      "place": "clermont"
+    }
+  ],
+  "history-spain-visigoths/3": [
+    {
+      "id": "leovigild",
+      "when": "583—584年",
+      "event": "三万金币",
+      "note": "长子在塞维利亚造反，靠的是东罗马兵。据图尔的格雷戈里，他没跟东罗马硬打，给东罗马的长官送去三万金币，对方就撤了兵。儿子逃进教堂，他派次子进去起誓劝降；儿子出来扑倒在他脚下，他亲了亲儿子，转身就叫人扒了儿子的衣服押走。",
+      "place": "toletum"
+    }
+  ],
+  "history-spain-visigoths/4": [
+    {
+      "id": "reccared",
+      "when": "587年",
+      "event": "还回抄没的家产",
+      "note": "据比克拉罗的约翰，他即位第十个月改信天主教，劝阿里乌派教士改宗“靠讲道理，不靠下命令”；又把前几任国王抄没归公的财产和气地还给原主，给教堂和修道院捐地。伊西多尔说他还常常减免百姓的赋税。",
+      "place": "toletum"
+    }
+  ],
+  "history-spain-toledo/0": [
+    {
+      "id": "isidore-seville",
+      "when": "625—633年",
+      "event": "穷人的父亲",
+      "note": "他在《哥特史》里夸国王苏因蒂拉“不光配称万民之主，还配称穷人的父亲”，又替苏因蒂拉立为共治王的儿子祈祷，盼他将来接班。七八年后，他主持的第四次托莱多会议宣布苏因蒂拉自知罪恶、自己退了位，把他一家逐出教会。",
+      "place": "vg_seville"
+    }
+  ],
+  "history-spain-fall/0": [
+    {
+      "id": "chindasuinth",
+      "when": "646年",
+      "event": "最多还二十分之一",
+      "note": "第七次托莱多会议记下：几乎全西班牙的主教、贵族和宫廷官员都已起誓，叛国投敌者的家产一律不还；国王若要开恩，最多只能还二十分之一。教士投敌也一样，革职终身悔罪，临死才准领圣体。",
+      "place": "toletum"
     }
   ]
 };
