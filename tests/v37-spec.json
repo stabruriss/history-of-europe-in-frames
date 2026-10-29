@@ -1,0 +1,54 @@
+{
+ "pass": "pending",
+ "sections": {
+  "history-italy-middle-francia": ["中法兰克王国", "843—950年", 6, 5, 300],
+  "history-germany-otto": ["奥托一世称帝", "951—964年", 4, 5, 300],
+  "history-faith-dark-century": ["教宗的黑暗世纪", "875—955年", 4, 6, 230]
+ },
+ "rows": {
+  "history-italy-middle-francia/0": [["italy"], 843, 950],
+  "history-germany-east-francia/0": [["germany"], 843, 955],
+  "history-germany-otto/0": [["germany", "italy", "faith"], 951, 964],
+  "history-faith-dark-century/0": [["faith"], 875, 955]
+ },
+ "shared": {
+  "history-germany-otto/0": ["germany", "italy", "faith"]
+ },
+ "branches": {},
+ "ends": [],
+ "futures": [],
+ "parallel": [],
+ "pills": [],
+ "bold": [
+  ["history-italy-middle-francia/0", "大儿子洛泰尔一世占了中法兰克"],
+  ["history-italy-middle-francia/1", "洛泰尔一死，中法兰克又再分给三个儿子"],
+  ["history-italy-middle-francia/2", "三个儿子都没留下合法的继承人"],
+  ["history-italy-middle-francia/3", "中法兰克没了主，就遭了哄抢"],
+  ["history-italy-middle-francia/3", "山北的洛林被东西两个叔叔瓜分"],
+  ["history-germany-otto/0", "中法兰克遭哄抢到最后，南边的意大利被东法兰克的奥托一世拿了"],
+  ["history-germany-otto/2", "后人把这一天当作神圣罗马帝国的开端，奥托是它的第一位皇帝"],
+  ["history-germany-otto/3", "奥托控制意大利之后就收紧控制：教宗不听话，皇帝开会把他废了，另立一个"],
+  ["history-faith-dark-century/0", "教会变得有利可图，教宗之位就成了争夺的焦点"],
+  ["history-faith-dark-century/1", "于是闹剧连台，头一出是审判死人"],
+  ["history-faith-dark-century/2", "第二出是情妇定教宗"]
+ ],
+ "fixes": [
+  ["history-italy-middle-francia/3", "洛泰尔二世的合法继承人本是哥哥路易二世，可他正在南方围巴里"],
+  ["history-italy-middle-francia/2", "婚姻归教会管，儿子合不合法也由教宗说了算"],
+  ["history-germany-otto/2", "这个名号要到12—13世纪才定型"],
+  ["history-germany-otto/0", "952年贝伦加尔二世到奥格斯堡向他称臣"],
+  ["history-faith-dark-century/2", "据敌视这家人的克雷莫纳主教利乌特普兰德所记"],
+  ["history-faith-dark-century/2", "16世纪的枢机巴罗尼乌斯把这几十年叫作教宗的“黑暗世纪”"]
+ ],
+ "gone": [
+  ["history-italy-middle-francia", "尸体审判"],
+  ["history-germany-east-francia", "962年2月2日"]
+ ],
+ "moments": {
+  "history-italy-middle-francia": [[0, "圣彼得的祭坛"], [2, "沸水神判"], [3, "扣押皇帝"], [5, "“投降的死狗”"]],
+  "history-germany-otto": [[0, "阿德莱德出逃"], [2, "头上的剑"], [3, "太阳穴上的一掌"]],
+  "history-faith-dark-century": [[1, "尸体审判"], [3, "洗手水与一记耳光"]]
+ },
+ "boxes": {},
+ "regions": ["mMeerssen870W", "mMeerssen870E", "mBurgundyKingdom1032", "mEmpire1050", "mNormanItaly1053"]
+}

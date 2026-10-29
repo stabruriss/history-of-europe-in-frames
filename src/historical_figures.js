@@ -4142,6 +4142,20 @@ const FIGURES={
         "https://en.wikipedia.org/wiki/Louis_II_of_Italy"
       ]
     ]
+  },
+  "marozia": {
+    "name": "马罗齐娅",
+    "en": "Marozia",
+    "life": "约890—937年",
+    "relation": "罗马贵族 · 狄奥菲拉克特之女 · 教宗约翰十一世之母",
+    "place": "rome",
+    "bio": "罗马贵族狄奥菲拉克特与狄奥多拉的女儿，先后嫁斯波莱托公爵阿尔贝里克一世、托斯卡纳边侯居伊、意大利王于格，得“元老夫人”的头衔。她的儿子一个当了教宗约翰十一世，一个是统治罗马的阿尔贝里克二世，孙子是教宗约翰十二世。她的坏名声大半出自敌对的利乌特普兰德。",
+    "sources": [
+      [
+        "马罗齐娅（英文资料）",
+        "https://en.wikipedia.org/wiki/Marozia"
+      ]
+    ]
   }
 };
 const FIGURE_SCENES={
@@ -6045,7 +6059,7 @@ const FIGURE_SCENES={
       "place": "ctesiphon"
     }
   ],
-  "history-arab-conquest/5": [
+  "history-arab-conquest/4": [
     {
       "id": "yazdegerd-iii",
       "when": "651年",
@@ -6054,7 +6068,7 @@ const FIGURE_SCENES={
       "place": "merv"
     }
   ],
-  "history-arab-conquest/6": [
+  "history-arab-conquest/5": [
     {
       "id": "peroz-iii",
       "when": "684年",
@@ -6180,7 +6194,7 @@ const FIGURE_SCENES={
       "place": "it_dorestad"
     }
   ],
-  "history-italy-middle-francia/2": [
+  "history-italy-middle-francia/1": [
     {
       "id": "louis-ii-italy",
       "when": "869—871年",
@@ -6189,13 +6203,22 @@ const FIGURE_SCENES={
       "place": "it_bari"
     }
   ],
-  "history-italy-middle-francia/5": [
+  "history-germany-otto/0": [
     {
       "id": "otto-i",
       "when": "951年",
       "event": "帕维亚的新王",
       "note": "951年9月奥托一世翻过阿尔卑斯山，帕维亚不战开门，他自称“伦巴第人的王”“意大利人的王”，秋天娶了逃出囚禁的寡后阿德莱德。她是先后三位意大利国王的女儿、儿媳和遗孀，娶了她，意大利王位的名分也就跟着来了。",
       "place": "it_pavia"
+    }
+  ],
+  "history-faith-dark-century/2": [
+    {
+      "id": "marozia",
+      "when": "932年",
+      "event": "第三次出嫁",
+      "note": "第二任丈夫居伊死后，她嫁给居伊的同母异父兄弟、意大利王于格，想借王的兵把罗马攥得更紧。婚宴上儿子阿尔贝里克带罗马人围了城堡，于格缒绳逃走，她从此被儿子关押，几年后死去。",
+      "place": "rome"
     }
   ]
 };

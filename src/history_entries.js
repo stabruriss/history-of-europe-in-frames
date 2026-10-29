@@ -2,7 +2,7 @@
 const HISTORY_CONTENT=/*__HISTORY_CONTENT__*/;
 const HISTORY_CH=['上古与黑暗时代','希腊城邦时代','马其顿与帝国','希腊化世界','罗马','罗马帝国','犹太教与基督教','中国对照','埃及','波斯'];
 const HC={athens:'#276582',sparta:'#99462e',mino:'#ad7c25',myc:'#637541',hittite:'#866347',
-  persia:'#8b644c',thebes:'#387568',macedon:'#6b4d72',war:'#a03327',neutral:'#887b65',route:'#2a7182',celt:'#64763f',parthia:'#765b78',rome:'#a34f36',faith:'#41508c',china:'#2e6b4e',byz:'#93324f',france:'#2b6cb0',germany:'#4a4440',italy:'#b8652a'};
+  persia:'#8b644c',thebes:'#387568',macedon:'#6b4d72',war:'#a03327',neutral:'#887b65',route:'#2a7182',celt:'#64763f',parthia:'#765b78',rome:'#a34f36',faith:'#41508c',china:'#2e6b4e',byz:'#93324f',france:'#2b6cb0',germany:'#4a4440',italy:'#b8652a',spain:'#a2337f'};
 const HV={aegean:[[34.3,20.2],[41.3,29.6]],greece:[[35.6,20.4],[39.8,25.1]],
   eastern:[[24.3,19.4],[42.6,49.8]],attica:[[37.55,23.23],[38.45,24.3]],levant:[[27.4,30.2],[35.9,37.2]]};
 const HS={
@@ -527,15 +527,15 @@ Object.assign(HS,{
   it_prum:['普吕姆修道院','Prüm Abbey',50.207,6.423,'艾费尔山中的王家修道院；855年9月洛泰尔一世病重来此出家，六天后死去，葬在这里。'],
   it_meerssen:['默尔森','Meerssen',50.887,5.751,'马斯河畔的王庄；870年8月秃头查理与日耳曼人路易在此对半瓜分洛泰尔二世的王国。'],
   it_palermo:['巴勒莫','Palermo',38.116,13.361,'831年被阿格拉布军攻下，成了阿拉伯人西西里的首府。'],
-  it_taormina:['陶尔米纳','Taormina',37.852,15.288,'东罗马在西西里的最后一座大要塞，902年8月失守。'],
-  it_salerno:['萨莱诺','Salerno',40.68,14.765,'849年路易二世把贝内文托一分为二，萨莱诺成了另一个伦巴第亲王国的都城。'],
   it_brenta:['布伦塔河','Brenta',45.55,11.8,'899年9月24日马扎尔人在河边突袭，大破贝伦加尔一世的大军；确切战场不详。'],
   it_porto:['波尔图','Porto',41.78,12.26,'台伯河口的港口和主教座；福尔摩苏斯原是这里的主教，改任教宗成了他受审的罪名之一。'],
   it_garda:['加尔达','Garda',45.578,10.708,'加尔达湖边的城堡；据较晚的传说，951年阿德莱德被囚在这里。'],
-  it_canossa:['卡诺萨','Canossa',44.576,10.455,'阿佐家族的城堡；据后来替这家写颂诗的多尼佐，阿德莱德逃出后在此避难。'],
+  it_canossa:['卡诺莎','Canossa',44.576,10.455,'阿佐家族的城堡；据多尼佐，951年阿德莱德逃出后在此避难；1077年亨利四世在城堡外求见教宗。'],
   it_ivrea:['伊夫雷亚','Ivrea',45.467,7.876,'西北边区的中心；贝伦加尔二世是这里的边侯。'],
   it_garigliano:['加里利亚诺河口','Garigliano',41.24,13.77,'河口附近的萨拉森据点盘踞近三十年；915年教宗约翰十世联合南方诸侯和东罗马把它拔掉。'],
   it_sanleo:['圣莱奥','San Leo',43.896,12.344,'山顶要塞；963年奥托一世在此围困贝伦加尔二世，后者被押往班贝格，966年死在那里。'],
+  ot_augsburg:['奥格斯堡','Augsburg',48.37,10.9,'士瓦本的主教城；952年8月贝伦加尔二世父子在此的帝国会议上向奥托称臣。'],
+  ot_hamburg:['汉堡','Hamburg',53.55,9.99,'易北河口的主教城；964年被奥托废黜的教宗本笃五世押到这里，966年前后死去。'],
 });
 function hp(d,key,opt={}){
   const [n,en,la,lo,note]=HS[key];
@@ -2364,7 +2364,7 @@ const HISTORY_ENTRIES=[
     hl(d,'佛兰德','Flanders',50.9,3.0,HC.mino);hl(d,'勃艮第','Burgundy',47.2,4.8,HC.macedon);
    },[['fill',HC.france,'雨果·卡佩的王室领地（987年）'],['fill',HC.war,'诺曼底（933年）'],['dash',HC.thebes,'阿基坦公国'],['dot',HC.war,'923年苏瓦松之战'],['dot','#2a2018','佩罗讷、桑利斯、努瓦永、巴黎与奥尔良']])
  ]},
-{id:'history-germany-east-francia',ch:5,title:'东法兰克：从日耳曼人路易到奥托',short:'东法兰克王国',en:'East Francia: From Louis the German to Otto',period:'843—962年',c:HC.germany,
+{id:'history-germany-east-francia',ch:5,title:'东法兰克：从日耳曼人路易到奥托',short:'东法兰克王国',en:'East Francia: From Louis the German to Otto',period:'843—955年',c:HC.germany,
  scenes:[
   hs('843—876年','日耳曼人路易：处境稍好','843年东法兰克分得莱茵河以东和河西的美因茨一带；路易坐镇雷根斯堡，跟摩拉维亚打打停停，874年在福希海姆议和。',[[45.3,3.2],[55.6,19.6]],d=>{
     ha(d,'mFrancia843E',HC.germany,{fillOpacity:.24});ha(d,'mFrancia843M',HC.italy,{fillOpacity:.12,dashArray:'4 4'});
@@ -2400,57 +2400,83 @@ const HISTORY_ENTRIES=[
     hp(d,'de_werla');hp(d,'de_brandenburg',{kind:'battle'});hp(d,'de_prague');hp(d,'de_riade',{kind:'battle'});
     hp(d,'de_quedlinburg',{left:1});
    },[['fill',HC.germany,'亨利的王国（925年收回洛林后）'],['dash',HC.hittite,'波希米亚（929年起纳贡）'],['dot',HC.war,'928—929年冬攻下的勃兰登堡与933年里亚德'],['dot','#2a2018','韦尔拉城堡、929年归顺的布拉格与奎德林堡']]),
-  hs('936—962年','奥托一世与神圣罗马帝国','奥托936年在亚琛加冕，951年在帕维亚称意大利王，955年在莱希费尔德大胜，962年在罗马称帝。',[[40.6,2.5],[55.6,19.5]],d=>{
-    ha(d,'mOtto962',HC.germany,{fillOpacity:.22});ha(d,'mPapal756',HC.faith,{fillOpacity:.22});
-    ha(d,'mMagyars900',HC.parthia,{fillOpacity:.14,dashArray:'4 4'});
+  hs('936—955年','奥托一世：压服公爵，打退马扎尔人','奥托936年在亚琛加冕，压服造反的兄弟和公爵，多用主教；951年南下拿下意大利王冠，955年在莱希费尔德大破马扎尔人。',[[44.5,2.5],[55.6,19.5]],d=>{
+    ha(d,'mEastFrancia880',HC.germany,{fillOpacity:.22});ha(d,'mItalyKingdom950',HC.italy,{fillOpacity:.12,dashArray:'4 4'});
+    ha(d,'mMagyars900',HC.parthia,{fillOpacity:.16,dashArray:'4 4'});
     hp(d,'w_aachen',{note:'936年8月7日奥托在查理曼的礼拜堂加冕。'});hp(d,'de_lechfeld',{kind:'battle',note:'955年8月10日奥托在奥格斯堡南边大破马扎尔人。'});
-    hp(d,'w_pavia',{note:'951年奥托在此称意大利王，娶了阿德莱德。'});hp(d,'rome',{note:'962年2月2日教宗约翰十二世在圣彼得大教堂给奥托加冕。'});
-    hp(d,'de_magdeburg');
-   },[['fill',HC.germany,'奥托一世的帝国（962年）'],['fill',HC.faith,'教宗领'],['dash',HC.parthia,'马扎尔人'],['dot',HC.war,'955年莱希费尔德'],['dot','#2a2018','亚琛、帕维亚、罗马与马格德堡']])
+    hp(d,'w_pavia',{note:'951年奥托在此称意大利王，娶了阿德莱德。'});hp(d,'de_magdeburg');
+   },[['fill',HC.germany,'奥托一世的东法兰克'],['dash',HC.italy,'951年拿下的意大利王国'],['dash',HC.parthia,'马扎尔人'],['dot',HC.war,'955年莱希费尔德'],['dot','#2a2018','亚琛、帕维亚与马格德堡']])
  ]},
-{id:'history-italy-middle-francia',ch:5,title:'中法兰克与意大利王国：诸侯、萨拉森人与教宗',short:'意大利王国',en:'Middle Francia and the Kingdom of Italy',period:'843—962年',c:HC.italy,
+{id:'history-italy-middle-francia',ch:5,title:'中法兰克：再分、绝嗣与哄抢',short:'中法兰克王国',en:'Middle Francia: Split, Heirless and Fought Over',period:'843—950年',c:HC.italy,
  scenes:[
-  hs('843—855年','洛泰尔的长条王国','中法兰克从北海一长条拉到罗马，没有核心；846年北头多雷斯塔德被维京人烧，南头圣彼得大教堂遭萨拉森人洗劫；855年三分。',[[40.6,-2.5],[54.2,17.5]],d=>{
+  hs('843—855年','大儿子占了中法兰克','中法兰克从北海一长条拉到罗马，没有核心；846年北头多雷斯塔德被维京人烧，南头圣彼得大教堂遭萨拉森人洗劫；855年三分。',[[40.6,-2.5],[54.2,17.5]],d=>{
     ha(d,'mFrancia843M',HC.italy,{fillOpacity:.28});ha(d,'mFrancia843W',HC.france,{fillOpacity:.1,dashArray:'4 4'});ha(d,'mFrancia843E',HC.germany,{fillOpacity:.1,dashArray:'4 4'});
     hp(d,'fr_dorestad',{kind:'battle',note:'846年维京人当着驻在奈梅亨的洛泰尔一世的面放火烧了它。'});hp(d,'w_aachen',{note:'洛泰尔一世坐镇的帝都，查理曼的王宫所在。'});hp(d,'it_prum');
     hp(d,'w_pavia',{note:'意大利王国的都城；844年起归路易二世。'});
     hp(d,'rome',{kind:'battle',note:'846年萨拉森人劫了城墙外的圣彼得、圣保禄两座大教堂；848—852年教宗利奥四世筑墙把圣彼得圈进城。'});
     hp(d,'ostia',{kind:'battle',left:1,note:'846年萨拉森人在此登陆；849年那不勒斯、阿马尔菲、加埃塔的船队借风暴在海上大败萨拉森舰队。'});
    },[['fill',HC.italy,'中法兰克（洛泰尔一世，843年）'],['dash',HC.france,'西法兰克'],['dash',HC.germany,'东法兰克'],['dot',HC.war,'846年北头、南头同年遭劫'],['dot','#2a2018','亚琛、普吕姆与帕维亚']]),
-  hs('855—880年','阿尔卑斯山北边被东西两家分了','855年三分；洛泰尔二世离婚不成、无嫡子，869年死后东西两家对半分了洛林，880年全归东法兰克；南边普罗旺斯、上勃艮第879、888年起另立国王。',[[41.3,-0.5],[54.0,15.5]],d=>{
-    ha(d,'mLotharingia855',HC.italy,{fillOpacity:.3});ha(d,'mProvence855',HC.italy,{fillOpacity:.16,dashArray:'4 4'});ha(d,'mItaly855',HC.italy,{fillOpacity:.12});
-    hp(d,'w_aachen',{note:'洛泰尔二世的都城。'});hp(d,'w_metz',{note:'863年洛泰尔二世在此开会，教宗的两位使节也点了头；869年9月秃头查理抢先在此加冕。'});
-    hp(d,'it_meerssen');hp(d,'r_placentia',{note:'869年8月洛泰尔二世从罗马回程，死在这里。'});
-    hp(d,'rome',{note:'教宗尼古拉一世不准洛泰尔二世离婚，863年革了替他办事的科隆、特里尔两位大主教。'});
-    hl(d,'西法兰克','West Francia',47.6,1.6,HC.france);hl(d,'东法兰克','East Francia',50.6,10.6,HC.germany);
-   },[['fill',HC.italy,'洛泰尔二世的洛林（855—869年）'],['dash',HC.italy,'普罗旺斯的查理（855—863年）'],['fill',HC.italy,'路易二世的意大利（浅色）'],['dot','#2a2018','离婚案与分地的几处']]),
-  hs('827—871年','南方：萨拉森人与巴里','阿格拉布王朝827—902年拿下西西里；贝内文托内战双方雇萨拉森兵，巴里成了埃米尔国；849年贝内文托一分为二；871年路易二世攻下巴里。',[[35.3,9.0],[42.6,19.0]],d=>{
-    ha(d,'mSicilyArab902',HC.myc,{fillOpacity:.24});ha(d,'mBari847',HC.myc,{fillOpacity:.32});ha(d,'mBenevento849',HC.italy,{fillOpacity:.2});
-    hp(d,'it_palermo');hp(d,'syracuse',{note:'878年5月被围九个月后攻破，居民被杀或卖为奴。'});hp(d,'it_taormina');
-    hp(d,'b_bari',{kind:'battle',note:'847年前后成了埃米尔国；871年2月路易二世攻下，俘获埃米尔萨乌丹。'});
-    hp(d,'w_benevento',{note:'871年8月亲王阿德尔基斯在宫里扣押路易二世一家，9月才放。'});hp(d,'it_salerno');
-    hr(d,[[35.83,10.64],[37.0,11.6],[37.65,12.59]],HC.myc);
-   },[['fill',HC.myc,'阿拉伯人的西西里（902年）与巴里埃米尔国（847—871年）'],['fill',HC.italy,'贝内文托亲王国（849年分出萨莱诺后）'],['dline',HC.myc,'827年阿格拉布军从苏塞渡海到马扎拉（概略）'],['dot',HC.war,'巴里'],['dot','#2a2018','巴勒莫、叙拉古、陶尔米纳、贝内文托、萨莱诺']]),
-  hs('875—924年','意大利国王走马灯','路易二世无子，888年后弗留利、斯波莱托两家与外请的普罗旺斯王、勃艮第王轮番称王；899年马扎尔人大胜；924年贝伦加尔一世遇刺。',[[41.2,6.5],[48.8,21.0]],d=>{
-    ha(d,'mItaly855',HC.italy,{fillOpacity:.2});ha(d,'mMagyars900',HC.parthia,{fillOpacity:.2});
-    hp(d,'w_cividale',{note:'弗留利边区的中心，贝伦加尔一世的老家。'});hp(d,'w_spoleto',{note:'居伊的公国；他891年称帝，894年死，其子兰贝特898年在打猎地暴死。'});
-    hp(d,'w_pavia',{note:'意大利国王加冕之地；924年被马扎尔人焚掠。'});hp(d,'verona',{left:1,note:'贝伦加尔一世的据点：905年在此刺瞎普罗旺斯的路易，924年4月自己在此遇刺。'});
-    hp(d,'it_brenta',{kind:'battle'});hp(d,'rome',{note:'891、896、901、915年的四次皇帝加冕都在这里。'});
+  hs('855—867年','死后三个儿子再分','855年普吕姆三分：路易二世得意大利，洛泰尔二世得洛林，查理得普罗旺斯；南头的西西里与巴里落入萨拉森人之手。',[[35.3,-0.5],[54.0,19.0]],d=>{
+    ha(d,'mLotharingia855',HC.italy,{fillOpacity:.3});ha(d,'mProvence855',HC.italy,{fillOpacity:.16,dashArray:'4 4'});ha(d,'mItaly855',HC.italy,{fillOpacity:.2});
+    ha(d,'mSicilyArab902',HC.myc,{fillOpacity:.18,dashArray:'4 4'});ha(d,'mBari847',HC.myc,{fillOpacity:.32});
+    hp(d,'it_prum',{note:'855年9月洛泰尔一世在此分国给三个儿子，随即出家、死去。'});hp(d,'w_aachen',{note:'洛泰尔二世的都城。'});
+    hp(d,'vienne',{note:'普罗旺斯的查理一带的重镇，由他的监护人吉拉尔伯爵替他打理。'});hp(d,'w_pavia',{note:'路易二世的意大利王国都城。'});
+    hp(d,'it_palermo');hp(d,'b_bari',{kind:'battle',note:'847年前后成了埃米尔国；867年起路易二世围城。'});
+   },[['fill',HC.italy,'洛泰尔二世的洛林（深）与路易二世的意大利（浅）'],['dash',HC.italy,'幼子查理的普罗旺斯（855—863年）'],['dash',HC.myc,'阿拉伯人的西西里（902年全岛）'],['fill',HC.myc,'巴里埃米尔国（847—871年）'],['dot','#2a2018','分国之地与三个儿子的都城']]),
+  hs('857—875年','三个儿子都没有合法继承者','查理863年无子而死；洛泰尔二世离婚不成，869年死在皮亚琴察；路易二世875年死，只有一个女儿。',[[40.8,2.0],[52.5,15.5]],d=>{
+    ha(d,'mLotharingia855',HC.italy,{fillOpacity:.3});ha(d,'mProvence855',HC.italy,{fillOpacity:.14,dashArray:'4 4'});ha(d,'mItaly855',HC.italy,{fillOpacity:.14});
+    hp(d,'w_metz',{note:'863年6月洛泰尔二世在此开会，教宗的两位使节受贿点了头。'});
+    hp(d,'colonia',{note:'科隆大主教贡特尔替洛泰尔二世批准离婚，863年10月被教宗撤职。'});hp(d,'treveri',{left:1,note:'特里尔大主教同案被撤。'});
+    hp(d,'rome',{note:'教宗尼古拉一世不准洛泰尔二世离婚；869年洛泰尔二世来罗马求新教宗哈德良二世。'});
+    hp(d,'r_placentia',{note:'869年8月洛泰尔二世从罗马回程，死在这里。'});
+   },[['fill',HC.italy,'洛泰尔二世的洛林'],['dash',HC.italy,'863年查理死后被两个哥哥分掉的普罗旺斯'],['dot','#2a2018','离婚案的几处：梅斯、科隆、特里尔、罗马与皮亚琴察']]),
+  hs('869—925年','山北：洛林被东西两个叔叔瓜分','路易二世还在南方围巴里，两个叔叔抢先动手：869年秃头查理在梅斯加冕，870年默尔森条约对半分；880年洛林全归东法兰克。',[[41.3,-0.5],[54.0,17.5]],d=>{
+    ha(d,'mMeerssen870W',HC.france,{fillOpacity:.3});ha(d,'mMeerssen870E',HC.germany,{fillOpacity:.3});
+    ha(d,'mFrancia843W',HC.france,{fillOpacity:.08,dashArray:'4 4'});ha(d,'mFrancia843E',HC.germany,{fillOpacity:.08,dashArray:'4 4'});ha(d,'mItaly855',HC.italy,{fillOpacity:.14});
+    hp(d,'w_metz',{note:'869年9月秃头查理抢先在此加冕为洛林王；870年分地后归了东边。'});hp(d,'it_meerssen');
+    hp(d,'w_aachen',{note:'870年分给了东边的日耳曼人路易。'});hp(d,'vienne',{left:1,note:'870年分给了西边的秃头查理。'});
+    hp(d,'b_bari',{kind:'battle',note:'869年洛泰尔二世死时，合法继承人路易二世正在这里围城；871年2月攻下。'});
+   },[['fill',HC.france,'870年分给秃头查理的西半'],['fill',HC.germany,'870年分给日耳曼人路易的东半（880年洛林全归东边）'],['fill',HC.italy,'路易二世的意大利'],['dot',HC.war,'路易二世正在围的巴里'],['dot','#2a2018','加冕的梅斯、分地的默尔森']]),
+  hs('875—888年','山南：皇冠也遭哄抢','875年秃头查理抢先翻过阿尔卑斯山，在罗马称帝；卡洛曼带兵来夺；877年后意大利先后归卡洛曼、胖子查理，887年帝国散了。',[[40.8,-1.0],[53.5,17.0]],d=>{
+    ha(d,'mItaly855',HC.italy,{fillOpacity:.24});ha(d,'mFrancia843W',HC.france,{fillOpacity:.12,dashArray:'4 4'});ha(d,'mEastFrancia880',HC.germany,{fillOpacity:.12,dashArray:'4 4'});
+    ha(d,'mPapal756',HC.faith,{fillOpacity:.22});
+    hp(d,'rome',{note:'875年圣诞节教宗约翰八世给秃头查理加冕；881年给胖子查理加冕。'});hp(d,'w_pavia',{note:'876年2月秃头查理在此称意大利王。'});
+    hp(d,'de_trebur',{note:'887年11月东法兰克贵族在此一带废了胖子查理。'});
+    hr(d,[[48.9,2.3],[46.5,4.9],[45.2,6.6],[45.07,7.68],[45.19,9.15]],HC.france);hr(d,[[48.3,11.6],[47.3,11.4],[46.5,11.35],[45.44,10.99],[45.19,9.15]],HC.germany);
+   },[['fill',HC.italy,'意大利王国'],['fill',HC.faith,'教宗国'],['dash',HC.france,'西法兰克'],['dash',HC.germany,'东法兰克'],['dline',HC.france,'875年秃头查理翻山南下（概略）'],['dline',HC.germany,'卡洛曼翻布伦纳山口来夺（概略）'],['dot','#2a2018','加冕的罗马与帕维亚']]),
+  hs('888—950年','山南：边侯与外请的国王轮番称王','弗留利、斯波莱托两家与外请的普罗旺斯王、勃艮第王、阿尔勒的于格轮番称王；马扎尔人、萨拉森人也来抢；950年贝伦加尔二世称王。',[[40.8,6.0],[48.8,21.0]],d=>{
+    ha(d,'mItaly855',HC.italy,{fillOpacity:.2});ha(d,'mMagyars900',HC.parthia,{fillOpacity:.2});ha(d,'mPapal756',HC.faith,{fillOpacity:.14,dashArray:'4 4'});
+    hp(d,'w_cividale',{note:'弗留利边区的中心，贝伦加尔一世的老家。'});hp(d,'w_spoleto',{note:'居伊的公国；他891年称帝，894年死。'});
+    hp(d,'w_pavia',{note:'意大利国王加冕之地；924年被马扎尔人焚掠。'});hp(d,'verona',{left:1,note:'贝伦加尔一世的据点；924年4月他在此遇刺。'});
+    hp(d,'it_brenta',{kind:'battle'});hp(d,'it_garigliano',{kind:'battle'});hp(d,'it_ivrea');
     hr(d,[[47.2,18.5],[46.3,15.6],[46.05,13.6],[45.6,12.2],[45.55,11.8]],HC.parthia);
-   },[['fill',HC.italy,'意大利王国'],['fill',HC.parthia,'马扎尔人（约900年）'],['dline',HC.parthia,'899年马扎尔人入寇（概略）'],['dot',HC.war,'布伦塔河之战'],['dot','#2a2018','争王各家的据点与加冕地']]),
-  hs('896—955年','教宗落到罗马贵族手里','897年尸体审判；此后狄奥菲拉克特家把持罗马，女儿马罗齐娅废立教宗；932年其子阿尔贝里克二世夺城，统治罗马到954年。',[[40.9,11.0],[44.8,14.4]],d=>{
-    ha(d,'mPapal756',HC.faith,{fillOpacity:.22});ha(d,'mItaly855',HC.italy,{fillOpacity:.1,dashArray:'4 4'});
-    hp(d,'rome',{note:'897年1月在拉特兰大教堂审尸；932年于格从台伯河桥头的城堡（今圣天使堡）缒绳逃走。'});hp(d,'it_porto',{left:1});
-    hp(d,'w_spoleto',{note:'斯波莱托公爵家：兰贝特母子897年初回罗马，随即有了尸体审判；阿尔贝里克一世娶了马罗齐娅。'});
-    hp(d,'it_garigliano',{kind:'battle'});
-   },[['fill',HC.faith,'教宗国'],['dash',HC.italy,'意大利王国'],['dot',HC.war,'加里利亚诺河口'],['dot','#2a2018','罗马、波尔图与斯波莱托']]),
-  hs('926—962年','奥托一世南下','于格926年称王，945年被贝伦加尔二世夺权；951年阿德莱德出逃，奥托一世进帕维亚娶她；962年在罗马加冕称帝，963年废黜约翰十二世。',[[40.8,5.5],[50.5,16.5]],d=>{
-    ha(d,'mItalyKingdom950',HC.italy,{fillOpacity:.24});ha(d,'mOtto962',HC.germany,{fillOpacity:.1,dashArray:'4 4'});ha(d,'mPapal756',HC.faith,{fillOpacity:.2});
-    hp(d,'w_pavia',{note:'926年于格在此称王，945年失势，948年死在普罗旺斯；951年9月奥托一世不战而入，称意大利王，秋天在此娶阿德莱德。'});
-    hp(d,'it_ivrea');hp(d,'it_garda');hp(d,'it_canossa',{left:1});hp(d,'it_sanleo',{kind:'battle'});
-    hp(d,'rome',{note:'962年2月2日奥托一世在圣彼得大教堂加冕；963年底开会废黜约翰十二世，后者次年5月暴死。'});
-    hr(d,[[47.0,11.5],[46.07,11.12],[45.44,10.99],[45.19,9.15]],HC.germany);hr(d,[[45.19,9.15],[44.49,11.34],[43.3,12.2],[41.9,12.48]],HC.germany);
-   },[['fill',HC.italy,'意大利王国（约950年）'],['dash',HC.germany,'奥托一世的帝国（962年）'],['fill',HC.faith,'教宗国'],['dline',HC.germany,'961—962年奥托一世翻布伦纳山口南下（概略）'],['dot',HC.war,'963年围圣莱奥'],['dot','#2a2018','帕维亚、伊夫雷亚、加尔达、卡诺萨']])
+   },[['fill',HC.italy,'意大利王国'],['fill',HC.parthia,'马扎尔人（约900年）'],['dash',HC.faith,'教宗国'],['dline',HC.parthia,'899年马扎尔人入寇（概略）'],['dot',HC.war,'布伦塔河与加里利亚诺河口'],['dot','#2a2018','争王各家的据点']])
+ ]},
+{id:'history-germany-otto',ch:5,title:'奥托一世称帝：拿下意大利，管起教宗',short:'奥托一世称帝',en:'Otto I Takes Italy and the Imperial Crown',period:'951—964年',c:HC.germany,
+ scenes:[
+  hs('950—952年','南边的意大利被奥托拿了','贝伦加尔二世950年称王，囚禁阿德莱德；951年9月奥托进帕维亚，娶她称意大利王；952年贝伦加尔在奥格斯堡称臣。',[[42.0,5.5],[50.0,13.5]],d=>{
+    ha(d,'mItalyKingdom950',HC.italy,{fillOpacity:.26});ha(d,'mEastFrancia880',HC.germany,{fillOpacity:.14,dashArray:'4 4'});
+    hp(d,'w_pavia',{note:'951年9月奥托一世不战而入，称意大利王，秋天在此娶阿德莱德。'});hp(d,'it_ivrea');hp(d,'it_garda');hp(d,'it_canossa',{left:1});
+    hp(d,'ot_augsburg');
+    hr(d,[[48.37,10.9],[47.3,11.4],[46.5,11.35],[45.44,10.99],[45.19,9.15]],HC.germany);
+   },[['fill',HC.italy,'意大利王国（约950年）'],['dash',HC.germany,'东法兰克'],['dline',HC.germany,'951年奥托翻布伦纳山口南下（概略）'],['dot','#2a2018','帕维亚、伊夫雷亚、加尔达、卡诺莎与奥格斯堡']]),
+  hs('952—961年','教宗来求','955年莱希费尔德大胜，军队喊奥托“皇帝”；贝伦加尔二世攻打教宗的地盘，960年约翰十二世派人求救；961年奥托南下。',[[40.8,5.5],[55.0,16.5]],d=>{
+    ha(d,'mEastFrancia880',HC.germany,{fillOpacity:.2});ha(d,'mItalyKingdom950',HC.italy,{fillOpacity:.18});ha(d,'mPapal756',HC.faith,{fillOpacity:.26});
+    hp(d,'de_lechfeld',{kind:'battle',note:'955年8月10日奥托在奥格斯堡南边大破马扎尔人。'});hp(d,'w_aachen',{note:'961年5月26日六岁的奥托二世在此加冕为王。'});
+    hp(d,'w_spoleto',{left:1,note:'贝伦加尔二世攻进教宗国北边，约翰十二世向奥托求救。'});hp(d,'rome');
+    hr(d,[[50.78,6.08],[49.6,8.35],[48.37,10.9],[47.3,11.4],[46.5,11.35],[45.44,10.99],[45.19,9.15]],HC.germany);
+   },[['fill',HC.germany,'东法兰克'],['fill',HC.italy,'贝伦加尔二世的意大利王国（名为封臣）'],['fill',HC.faith,'教宗国'],['dline',HC.germany,'961年奥托南下（概略）'],['dot',HC.war,'955年莱希费尔德'],['dot','#2a2018','亚琛、斯波莱托与罗马']]),
+  hs('962年','加冕与特许状','962年2月2日奥托在罗马加冕；十一天后颁特许状：确认教宗的土地，新教宗受祝圣前先向皇帝的使节宣誓。',[[40.6,2.5],[55.6,19.5]],d=>{
+    ha(d,'mOtto962',HC.germany,{fillOpacity:.22});ha(d,'mPapal756',HC.faith,{fillOpacity:.28});
+    hp(d,'rome',{note:'962年2月2日奥托在圣彼得大教堂加冕，13日颁特许状。'});hp(d,'w_pavia',{note:'意大利王国的都城，归入帝国。'});
+    hp(d,'w_aachen',{note:'奥托936年在此加冕为东法兰克王。'});hp(d,'de_magdeburg',{note:'962年教宗准奥托在此立大主教区，作向易北河东传教的基地。'});
+   },[['fill',HC.germany,'奥托一世的帝国（962年）'],['fill',HC.faith,'教宗国'],['dot','#2a2018','罗马、帕维亚、亚琛与马格德堡']]),
+  hs('963—964年','废立教宗','963年约翰十二世反水，奥托回罗马开会废了他、另立利奥八世；964年再废罗马人另选的本笃五世，押往汉堡；同年围困贝伦加尔二世。',[[40.6,4.0],[55.0,16.0]],d=>{
+    ha(d,'mOtto962',HC.germany,{fillOpacity:.18});ha(d,'mPapal756',HC.faith,{fillOpacity:.28});
+    hp(d,'rome',{note:'963年11—12月在圣彼得大教堂开会废黜约翰十二世；964年6月奥托围城，废本笃五世。'});
+    hp(d,'it_sanleo',{kind:'battle'});hp(d,'ot_hamburg');
+    hr(d,[[41.9,12.48],[44.5,11.3],[47.3,11.4],[50.1,8.7],[53.55,9.99]],HC.route);
+   },[['fill',HC.germany,'奥托一世的帝国'],['fill',HC.faith,'教宗国'],['dline',HC.route,'本笃五世被押往汉堡（概略）'],['dot',HC.war,'963年围圣莱奥'],['dot','#2a2018','罗马与汉堡']])
  ]},
 {id:'history-faith-israel',ch:6,title:'从大河那边来：希伯来人与出埃及',short:'族长与出埃及',en:'From Beyond the River: the Hebrews and the Exodus',period:'约前1400—前1200年',c:HC.faith,
  scenes:[
@@ -2908,6 +2934,29 @@ const HISTORY_ENTRIES=[
     hp(d,'rome',{note:'尼古拉一世在此开会撤人、绝罚；867年11月去世。'});
     hp(d,'constantinople',{note:'863年被罗马绝罚的牧首佛提乌，867年开会回敬。'});
    },[['fill',HC.faith,'教宗领'],['fill',HC.italy,'洛泰尔二世的洛林（855—869年）'],['dash',HC.athens,'东罗马'],['dot','#2a2018','兰斯、苏瓦松、梅斯、科隆、罗马与君士坦丁堡']])
+ ]},
+{id:'history-faith-dark-century',ch:6,title:'教宗的黑暗世纪：有利可图，就有人抢',short:'教宗的黑暗世纪',en:'The Papacy’s Dark Century: A Prize Worth Fighting For',period:'875—955年',c:HC.faith,
+ scenes:[
+  hs('875—882年','教宗之位为什么值钱','教宗管着丕平、查理曼献的一片国，又握着加冕皇帝的权；875年路易二世一死没了靠山，882年约翰八世被身边人毒杀加棒打。',[[40.4,9.8],[45.6,15.2]],d=>{
+    ha(d,'mPapal756',HC.faith,{fillOpacity:.3});ha(d,'mItaly855',HC.italy,{fillOpacity:.12,dashArray:'4 4'});
+    hp(d,'rome',{note:'875年圣诞节约翰八世在此给秃头查理加冕，881年给胖子查理加冕；882年12月他在此被害。'});hp(d,'ravenna',{note:'756年丕平献给教宗的原拉文纳总督区的中心。'});
+    hp(d,'it_garigliano',{kind:'battle',note:'萨拉森人882年前后在河口扎营，袭扰教宗国近三十年。'});
+   },[['fill',HC.faith,'教宗国（丕平、查理曼所献）'],['dash',HC.italy,'意大利王国'],['dot',HC.war,'萨拉森人的据点'],['dot','#2a2018','罗马与拉文纳']]),
+  hs('891—904年','审判死人','福尔摩苏斯给斯波莱托家和东法兰克王先后加冕；897年斯波莱托一派的教宗在拉特兰大教堂审他的尸体；八年换了九个教宗。',[[40.9,10.5],[44.8,14.4]],d=>{
+    ha(d,'mPapal756',HC.faith,{fillOpacity:.26});ha(d,'mItaly855',HC.italy,{fillOpacity:.1,dashArray:'4 4'});
+    hp(d,'rome',{note:'897年1月在拉特兰大教堂审尸；896年2月福尔摩苏斯在此给阿努尔夫加冕。'});hp(d,'it_porto',{left:1});
+    hp(d,'w_spoleto',{note:'斯波莱托公爵家：兰贝特母子897年初回罗马，随即有了尸体审判。'});
+   },[['fill',HC.faith,'教宗国'],['dash',HC.italy,'意大利王国'],['dot','#2a2018','罗马、波尔图与斯波莱托']]),
+  hs('904—935年','情妇定教宗','狄奥菲拉克特一家把持罗马：管库房、管民兵、挑教宗；928年马罗齐娅把约翰十世关死，931年立儿子为教宗。',[[40.9,10.5],[44.8,14.4]],d=>{
+    ha(d,'mPapal756',HC.faith,{fillOpacity:.26});
+    hp(d,'rome',{note:'928年约翰十世被关在拉特兰附近的牢里闷死；931年马罗齐娅立儿子约翰十一世。'});
+    hp(d,'it_garigliano',{kind:'battle',note:'915年约翰十世联合南方诸侯和东罗马，拔掉了河口的萨拉森据点。'});hp(d,'ravenna',{note:'约翰十世原是这里的大主教。'});
+   },[['fill',HC.faith,'教宗国'],['dot',HC.war,'915年加里利亚诺河口之战'],['dot','#2a2018','罗马与拉文纳']]),
+  hs('932—955年','教宗位成了家产','932年阿尔贝里克二世从台伯河桥头的城堡赶走于格，统治罗马到954年，连立五个教宗；临终让贵族发誓选他儿子。',[[40.9,10.5],[44.8,14.4]],d=>{
+    ha(d,'mPapal756',HC.faith,{fillOpacity:.28});ha(d,'mItaly855',HC.italy,{fillOpacity:.1,dashArray:'4 4'});
+    hp(d,'rome',{note:'932年于格从台伯河桥头的城堡（今圣天使堡）缒绳逃走；阿尔贝里克住在今科尔索大街一带。'});
+    hp(d,'w_spoleto',{left:1,note:'阿尔贝里克一世是斯波莱托公爵，娶了马罗齐娅。'});
+   },[['fill',HC.faith,'阿尔贝里克治下的罗马与教宗国'],['dash',HC.italy,'于格的意大利王国'],['dot','#2a2018','罗马与斯波莱托']])
  ]},
 {id:'history-china-neolithic',ch:7,title:'新石器聚落与万邦时代',short:'仰韶与良渚',en:'Neolithic China: Yangshao to Liangzhu',period:'约前7000—前1900年',c:HC.china,
  scenes:[
@@ -3414,15 +3463,8 @@ const HISTORY_ENTRIES=[
     hl(d,'贝克尔部阿拉伯人','Banu Bakr',30.0,45.2,HC.myc);
    },[['fill',HC.parthia,'萨珊帝国'],['dash',HC.myc,'拉赫姆王国（602年前后被废）'],['dot','#2a2018','王都、行宫、崖刻与希拉']])
  ]},
-{id:'history-arab-conquest',ch:9,title:'穆斯林崛起与阿拉伯征服',short:'阿拉伯征服',en:'The Rise of Islam and the Arab Conquests',period:'610—651年',c:HC.parthia,
+{id:'history-arab-conquest',ch:9,title:'阿拉伯征服：萨珊亡国，东罗马失了叙利亚和埃及',short:'阿拉伯征服',en:'The Arab Conquests: Persia Falls, Rome Loses Syria and Egypt',period:'628—651年',c:HC.parthia,
  scenes:[
-  hs('610—632年','先知与麦地那','穆罕默德约610年起在麦加宣讲，622年迁麦地那，630年进麦加，632年去世时半岛大部归信。',[[12.0,30.0],[37.0,60.0]],d=>{
-    ha(d,'mArabia',HC.myc,{fillOpacity:.28});ha(d,'lSasanian560',HC.parthia,{fillOpacity:.12});
-    hp(d,'p_mecca');hp(d,'p_medina');
-    hp(d,'jerusalem',{note:'614年被波斯攻下；注家多把《古兰经》第30章说的罗马人战败指为这一时期。'});
-    hr(d,[[21.42,39.83],[22.9,39.4],[24.47,39.61]],HC.myc);
-    hl(d,'也门（原属波斯）','Yemen, formerly Persian',15.6,45.0,HC.parthia);
-   },[['fill',HC.myc,'阿拉伯半岛'],['fill',HC.parthia,'萨珊帝国'],['dline',HC.myc,'622年迁往麦地那'],['dot','#2a2018','麦加、麦地那与耶路撒冷']]),
   hs('628—634年','两个打空了的帝国','罗马为反攻压缩开支、熔教会金银器，埃及多数人信一性论；波斯四年换了十几个王，632年八岁的伊嗣俟三世在伊斯塔赫尔加冕。',[[23.0,22.0],[44.0,60.0]],d=>{
     ha(d,'mByz600',HC.athens,{fillOpacity:.16});ha(d,'lSasanian560',HC.parthia,{fillOpacity:.18});
     hp(d,'constantinople',{note:'希拉克略压缩开支、借教会的金银器熔铸成钱，才凑出622年反攻的军费。'});
@@ -3491,12 +3533,13 @@ const HISTORY_ERAS=[
  {id:'empire-macedonian',name:'东罗马：马其顿王朝',en:'East Rome: the Macedonian Dynasty',date:'867—1056年',c:HC.byz,items:[['history-empire-macedonian',0,2],['history-empire-macedonian',3,3,'东西教会大分裂']]},
  {id:'empire-kingdoms',name:'中世纪早期：蛮族诸王国',en:'The Barbarian Kingdoms',date:'476—711年',c:HC.celt,items:[['history-west-kingdoms'],['history-west-ostrogoths']]},
  {id:'empire-franks',name:'中世纪早期：法兰克与伦巴第',en:'Franks and Lombards',date:'561—843年',c:HC.celt,items:[['history-west-merovingians'],['history-west-lombards'],['history-west-charlemagne'],['history-west-charlemagne-rule'],['history-west-louis-pious']]},
- {id:'empire-verdun',name:'中世纪早期：凡尔登之后',en:'After Verdun',date:'843—987年',c:HC.celt,items:[['history-france-west-francia'],['history-germany-east-francia'],['history-italy-middle-francia']]},
+ {id:'empire-verdun',name:'中世纪早期：凡尔登之后',en:'After Verdun',date:'843—987年',c:HC.celt,items:[['history-france-west-francia'],['history-germany-east-francia'],['history-italy-middle-francia'],['history-germany-otto']]},
  {id:'faith-israel',name:'古代以色列',en:'Ancient Israel',date:'约前1400—前538年',c:HC.faith,items:[['history-faith-israel'],['history-faith-first-temple']]},
  {id:'faith-temple',name:'第二圣殿时期',en:'The Second Temple',date:'前538—公元73年',c:HC.faith,items:[['history-faith-second-temple'],['history-faith-jesus']]},
  {id:'faith-church',name:'早期教会',en:'The Early Church',date:'73—451年',c:HC.faith,items:[['history-faith-church'],['history-faith-empire-church'],['history-faith-councils'],['history-faith-ephesus'],['history-faith-two-cities']]},
  {id:'faith-medieval',name:'中世纪早期的教会',en:'The Early Medieval Church',date:'451—604年',c:HC.faith,items:[['history-faith-papacy'],['history-faith-three-chapters'],['history-faith-gregory']]},
  {id:'faith-carolingian',name:'加洛林时代的教会',en:'The Church in the Carolingian Age',date:'787—870年',c:HC.faith,items:[['history-faith-carolingian']]},
+ {id:'faith-reform',name:'帝国与教会改革',en:'Empire and Church Reform',date:'875—1054年',c:HC.faith,items:[['history-faith-dark-century']]},
  {id:'china-early',name:'先秦：三代与春秋战国',en:'Pre-Imperial China',date:'约前7000—前221年',c:HC.china,items:[['history-china-neolithic'],['history-china-bronze'],['history-china-western-zhou'],['history-china-spring-autumn'],['history-china-warring-states']]},
  {id:'china-qin-han',name:'秦汉帝国',en:'Qin and Han Empires',date:'前221—公元189年',c:HC.china,items:[['history-china-qin'],['history-china-western-han'],['history-china-eastern-han']]},
  {id:'china-six-dynasties',name:'三国两晋南北朝',en:'Six Dynasties',date:'190—589年',c:HC.china,items:[['history-china-three-kingdoms'],['history-china-sixteen-kingdoms'],['history-china-sui']]},
@@ -3516,8 +3559,8 @@ const HISTORY_BRANCHES=[
  {id:'east',name:'东罗马',en:'East Rome',lane:2,parent:'rome',from:395,to:1056,c:HC.byz},
  {id:'west',name:'中世纪西欧',en:'Medieval Western Europe',lane:4,parent:'rome',from:476,to:843,c:HC.celt},
  {id:'france',name:'法兰西',en:'France',lane:5,parent:'west',from:843,to:987,c:HC.france},
- {id:'germany',name:'德意志',en:'Germany',lane:4,parent:'west',from:843,to:962,c:HC.germany},
- {id:'italy',name:'意大利',en:'Italy',lane:3,parent:'west',from:843,to:962,c:HC.italy},
+ {id:'germany',name:'德意志',en:'Germany',lane:4,parent:'west',from:843,to:964,c:HC.germany},
+ {id:'italy',name:'意大利',en:'Italy',lane:3,parent:'west',from:843,to:964,c:HC.italy},
  // The 基督教 line: from the Hebrews' nomadic origins (the old Levant branch) to the schism of 1054; on its own lane, right of the West.
  // After 641 it runs through the shared stations of the East Roman dynasties.
  {id:'faith',name:'基督教',en:'Judaism & Christianity',lane:6,parent:'trunk',from:-1400,to:1056,c:HC.faith},
@@ -3619,7 +3662,7 @@ const TREE_ROWS={
  'history-persia-khosrow/0':['persia',379,579],
  'history-empire-west-end/0':['rome',455,476],
  'history-empire-heraclius/0':[['east','persia','egypt'],602,641],
- 'history-arab-conquest/0':[['persia','east','egypt'],622,651],
+ 'history-arab-conquest/0':[['persia','east','egypt'],628,651],
  'history-empire-constans/0':[['east','faith'],641,711],
  'history-empire-anarchy/0':['east',695,717],
  'history-empire-isaurian/0':[['east','faith'],717,802],
@@ -3634,15 +3677,17 @@ const TREE_ROWS={
  'history-west-charlemagne-rule/0':['west',800,814,'781—814年'],
  'history-west-louis-pious/0':['west',814,843],
  'history-france-west-francia/0':['france',843,987],
- 'history-germany-east-francia/0':['germany',843,962],
- 'history-italy-middle-francia/0':['italy',843,962],
+ 'history-germany-east-francia/0':['germany',843,955],
+ 'history-italy-middle-francia/0':['italy',843,950],
  'history-faith-carolingian/0':['faith',787,870],
  'history-persia-khosrow-ii/0':['persia',579,602],
  'history-china-tang/0':['china',589,845],
- 'history-empire-macedonian/3':[['east','faith'],1025,1056]
+ 'history-germany-otto/0':[['germany','italy','faith'],951,964],
+ 'history-faith-dark-century/0':['faith',875,955],
+ 'history-empire-macedonian/3':[['east','faith'],1054,1056]
 };
 // Topics still to be written grow the tree as dashed shoots.
-const TREE_FUTURE=[['east',1056,'东罗马（晚期）','1056年起 · 1071年曼齐刻尔特之战 · 1204年十字军攻破君士坦丁堡 · 到1453年 · 待展开'],['france',987,'卡佩王朝','987年起 · 待展开'],['germany',962,'神圣罗马帝国','962年起 · 待展开'],['italy',962,'帝国治下的意大利','962年起 · 待展开'],['faith',1056,'大分裂以后','1054年起 · 十字军与东西两教会 · 待展开'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',651,'伊斯兰时代的伊朗','651年起 · 待展开'],['china',845,'晚唐五代与宋','845年起 · 待展开']];
+const TREE_FUTURE=[['east',1056,'东罗马（晚期）','1056年起 · 1071年曼齐刻尔特之战 · 1204年十字军攻破君士坦丁堡 · 到1453年 · 待展开'],['france',987,'卡佩王朝','987年起 · 待展开'],['germany',964,'神圣罗马帝国','964年起 · 奥托王朝与萨利安王朝 · 1077年卡诺莎之辱 · 待展开'],['italy',964,'帝国治下的意大利','964年起 · 待展开'],['faith',1056,'大分裂以后','1054年起 · 十字军与东西两教会 · 待展开'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',651,'伊斯兰时代的伊朗','651年起 · 待展开'],['china',845,'晚唐五代与宋','845年起 · 待展开']];
 // Where a line stops it says why: [line, year, the event that ends it, note, the line it carries on in].
 const TREE_ENDS=[['trunk',-30,'并入罗马','前146年科林斯被毁 · 前30年最后一个希腊化王国埃及并入罗马','rome'],['rome',476,'西罗马终结','476年西部末代皇帝被废 · 由中世纪西欧接续'],['west',843,'凡尔登三分','843年《凡尔登条约》三分帝国 · 分出法兰西、德意志、意大利']];
 // Sections of one line that run side by side: [line, row keys, side of the passing loop].
