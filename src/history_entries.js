@@ -536,6 +536,14 @@ Object.assign(HS,{
   it_sanleo:['圣莱奥','San Leo',43.896,12.344,'山顶要塞；963年奥托一世在此围困贝伦加尔二世，后者被押往班贝格，966年死在那里。'],
   ot_augsburg:['奥格斯堡','Augsburg',48.37,10.9,'士瓦本的主教城；952年8月贝伦加尔二世父子在此的帝国会议上向奥托称臣。'],
   ot_hamburg:['汉堡','Hamburg',53.55,9.99,'易北河口的主教城；964年被奥托废黜的教宗本笃五世押到这里，966年前后死去。'],
+  ic_bamberg:['班贝格','Bamberg',49.891,10.886,'1007年亨利二世立的主教城；主教苏伊德格1046年当了教宗克雷芒二世，死后葬回这里。'],
+  ic_tusculum:['图斯库鲁姆','Tusculum',41.797,12.708,'罗马东南约二十五公里、阿尔班山上的古城，图斯库鲁姆伯爵家的据点。'],
+  ic_paterno:['帕泰尔诺','Paterno',42.24,12.39,'罗马以北法莱里亚境内的城堡；1002年1月奥托三世病死在这里，年二十一。'],
+  gr_toul:['图勒','Toul',48.675,5.891,'摩泽尔河边的主教城，属上洛林；布鲁诺1027年起在此当了二十多年主教。'],
+  gr_moyenmoutier:['穆瓦扬穆捷','Moyenmoutier',48.383,6.913,'孚日山中的修道院，属图勒教区；洪贝特少年时在此当修士。'],
+  gr_besancon:['贝桑松','Besançon',47.238,6.024,'杜河边的大主教城，属勃艮第王国，1033年随王国并入帝国。'],
+  gr_langres:['朗格勒','Langres',47.862,5.333,'法兰西王国东部的主教城；1049年主教于格在兰斯会上被控买卖圣职。'],
+  gr_fonteavellana:['丰泰阿韦拉纳','Fonte Avellana',43.47,12.734,'亚平宁山中的隐修院；彼得·达米安1043年起在此当院长。'],
 });
 function hp(d,key,opt={}){
   const [n,en,la,lo,note]=HS[key];
@@ -2421,7 +2429,7 @@ const HISTORY_ENTRIES=[
     ha(d,'mSicilyArab902',HC.myc,{fillOpacity:.18,dashArray:'4 4'});ha(d,'mBari847',HC.myc,{fillOpacity:.32});
     hp(d,'it_prum',{note:'855年9月洛泰尔一世在此分国给三个儿子，随即出家、死去。'});hp(d,'w_aachen',{note:'洛泰尔二世的都城。'});
     hp(d,'vienne',{note:'普罗旺斯的查理一带的重镇，由他的监护人吉拉尔伯爵替他打理。'});hp(d,'w_pavia',{note:'路易二世的意大利王国都城。'});
-    hp(d,'it_palermo');hp(d,'b_bari',{kind:'battle',note:'847年前后成了埃米尔国；867年起路易二世围城。'});
+    hp(d,'it_palermo');hp(d,'b_bari',{kind:'battle',note:'847年前后成了埃米尔国；866年起路易二世出兵围打。'});
    },[['fill',HC.italy,'洛泰尔二世的洛林（深）与路易二世的意大利（浅）'],['dash',HC.italy,'幼子查理的普罗旺斯（855—863年）'],['dash',HC.myc,'阿拉伯人的西西里（902年全岛）'],['fill',HC.myc,'巴里埃米尔国（847—871年）'],['dot','#2a2018','分国之地与三个儿子的都城']]),
   hs('857—875年','三个儿子都没有合法继承者','查理863年无子而死；洛泰尔二世离婚不成，869年死在皮亚琴察；路易二世875年死，只有一个女儿。',[[40.8,2.0],[52.5,15.5]],d=>{
     ha(d,'mLotharingia855',HC.italy,{fillOpacity:.3});ha(d,'mProvence855',HC.italy,{fillOpacity:.14,dashArray:'4 4'});ha(d,'mItaly855',HC.italy,{fillOpacity:.14});
@@ -2433,7 +2441,7 @@ const HISTORY_ENTRIES=[
   hs('869—925年','山北：洛林被东西两个叔叔瓜分','路易二世还在南方围巴里，两个叔叔抢先动手：869年秃头查理在梅斯加冕，870年默尔森条约对半分；880年洛林全归东法兰克。',[[41.3,-0.5],[54.0,17.5]],d=>{
     ha(d,'mMeerssen870W',HC.france,{fillOpacity:.3});ha(d,'mMeerssen870E',HC.germany,{fillOpacity:.3});
     ha(d,'mFrancia843W',HC.france,{fillOpacity:.08,dashArray:'4 4'});ha(d,'mFrancia843E',HC.germany,{fillOpacity:.08,dashArray:'4 4'});ha(d,'mItaly855',HC.italy,{fillOpacity:.14});
-    hp(d,'w_metz',{note:'869年9月秃头查理抢先在此加冕为洛林王；870年分地后归了东边。'});hp(d,'it_meerssen');
+    hp(d,'w_metz',{note:'869年9月秃头查理抢先在此加冕为洛林王；870年分地后归了东边。'});hp(d,'it_meerssen',{left:1});
     hp(d,'w_aachen',{note:'870年分给了东边的日耳曼人路易。'});hp(d,'vienne',{left:1,note:'870年分给了西边的秃头查理。'});
     hp(d,'b_bari',{kind:'battle',note:'869年洛泰尔二世死时，合法继承人路易二世正在这里围城；871年2月攻下。'});
    },[['fill',HC.france,'870年分给秃头查理的西半'],['fill',HC.germany,'870年分给日耳曼人路易的东半（880年洛林全归东边）'],['fill',HC.italy,'路易二世的意大利'],['dot',HC.war,'路易二世正在围的巴里'],['dot','#2a2018','加冕的梅斯、分地的默尔森']]),
@@ -2957,6 +2965,89 @@ const HISTORY_ENTRIES=[
     hp(d,'rome',{note:'932年于格从台伯河桥头的城堡（今圣天使堡）缒绳逃走；阿尔贝里克住在今科尔索大街一带。'});
     hp(d,'w_spoleto',{left:1,note:'阿尔贝里克一世是斯波莱托公爵，娶了马罗齐娅。'});
    },[['fill',HC.faith,'阿尔贝里克治下的罗马与教宗国'],['dash',HC.italy,'于格的意大利王国'],['dot','#2a2018','罗马与斯波莱托']])
+ ]},
+{id:'history-faith-imperial-church',ch:6,title:'帝国教会：皇帝任免教宗',short:'帝国教会',en:'The Imperial Church: Emperors Make Popes',period:'962—1046年',c:HC.faith,
+ scenes:[
+  hs('962—1024年','主教当伯爵','伯爵的权赐给了帝国境内的主教：科隆大主教布鲁诺兼洛林公爵；981年的调兵单上，美因茨、科隆、斯特拉斯堡、奥格斯堡各出一百名披甲骑兵。',[[45.8,3.5],[54.0,15.5]],d=>{
+    ha(d,'mOtto962',HC.germany,{fillOpacity:.16});ha(d,'mLotharingia925',HC.germany,{fillOpacity:.26,dashArray:'4 4'});
+    hp(d,'colonia',{note:'953年奥托一世的幼弟布鲁诺任大主教，女婿洛林公爵造反被撤后，又兼洛林公爵；981年大主教派一百名披甲骑兵。'});
+    hp(d,'k_mainz',{note:'美因茨大主教981年派一百名披甲骑兵。'});
+    hp(d,'k_strasbourg',{left:1,note:'主教981年派一百名。'});
+    hp(d,'ot_augsburg',{note:'主教981年亲自带一百名南下，次年战死在卡拉布里亚。'});
+    hp(d,'k_fulda',{note:'帝国修道院，院长981年派六十名。'});
+   },[['fill',HC.germany,'奥托一世的帝国（962年）'],['dash',HC.germany,'洛林公国：科隆大主教布鲁诺兼任公爵'],['dot','#2a2018','981年出兵的主教座与修道院']]),
+  hs('996—1002年','自家人当教宗','奥托三世在罗马先立姑母的孙子、再立老师当教宗；1001年特许状把马尔凯一带的八个伯爵领“赏”给教宗；1002年他死在罗马城北。',[[40.8,2.5],[51.5,15.0]],d=>{
+    ha(d,'mOtto962',HC.germany,{fillOpacity:.12,dashArray:'4 4'});ha(d,'mPapal756',HC.faith,{fillOpacity:.32});
+    hp(d,'rome',{note:'996年5月格雷戈里五世在此给奥托三世加冕；998年4月皇帝攻下哈德良陵堡，斩了造反的贵族首领；1001年罗马人造反，皇帝出逃。'});
+    hp(d,'ic_paterno',{left:1});
+    hp(d,'ravenna',{note:'998年热尔贝任这里的大主教；1001年奥托三世在此召集兵马。'});
+    hp(d,'w_reims',{note:'热尔贝在此教书多年，991年当上兰斯大主教。'});
+    hp(d,'w_aachen',{note:'1000年奥托三世打开查理曼的墓；1002年他葬在这里。'});
+    hl(d,'八个伯爵领','Eight Counties',43.62,13.0,HC.faith);
+   },[['fill',HC.faith,'教宗国'],['dash',HC.germany,'帝国'],['dot','#2a2018','罗马、帕泰尔诺、拉文纳、兰斯与亚琛']]),
+  hs('1002—1046年','皇帝一走，教宗位又成了家产','皇帝多在阿尔卑斯山北，来罗马多半只为加冕；罗马城东南的图斯库鲁姆伯爵家连出三任教宗，1046年城里三个教宗各占一座大教堂。',[[40.8,7.0],[50.8,15.0]],d=>{
+    ha(d,'mEmpire1050',HC.germany,{fillOpacity:.12,dashArray:'4 4'});ha(d,'mPapal756',HC.faith,{fillOpacity:.3});
+    hp(d,'rome',{note:'1014年本笃八世在此给亨利二世加冕，罗马的弥撒从此也唱带“和子”的信经；1027年约翰十九世给康拉德二世加冕；1046年三个教宗分据圣彼得、拉特兰和圣母大殿。'});
+    hp(d,'ic_tusculum',{note:'图斯库鲁姆伯爵家的据点；1012年起这家连出三任教宗。'});
+    hp(d,'ic_bamberg',{note:'1020年本笃八世北上，在此见亨利二世。'});
+    hr(d,[[41.9,12.48],[42.42,12.1],[43.32,11.33],[43.84,10.5],[44.37,9.88],[44.8,10.33],[45.44,10.99],[46.5,11.35],[47.27,11.4],[48.37,10.9],[49.89,10.89]],HC.route);
+   },[['fill',HC.faith,'教宗国'],['dash',HC.germany,'帝国（约1050年）'],['dline',HC.route,'1020年本笃八世北上班贝格（概略）'],['dot','#2a2018','罗马、图斯库鲁姆与班贝格']]),
+  hs('1046年','苏特里：一次废掉三个教宗','1046年秋亨利三世翻过阿尔卑斯山南下，在皮亚琴察见格雷戈里六世，12月在苏特里、罗马撤掉三个教宗，圣诞节加冕；卡诺莎是三十一年后的事。',[[41.3,7.0],[50.5,13.8]],d=>{
+    ha(d,'mEmpire1050',HC.germany,{fillOpacity:.14});ha(d,'mPapal756',HC.faith,{fillOpacity:.3});
+    hp(d,'w_sutri',{note:'1046年12月20日的会议：另立的教宗被剥夺圣职、关进修道院，格雷戈里六世自判退位。'});
+    hp(d,'rome',{note:'12月24日再废本笃九世，选班贝格主教为教宗；圣诞节新教宗受祝圣，给亨利三世夫妇加冕。'});
+    hp(d,'r_placentia',{note:'1046年秋格雷戈里六世北上，在此迎接亨利三世。'});
+    hp(d,'w_pavia',{left:1,note:'1046年秋亨利三世在此开庭理事。'});
+    hp(d,'ic_bamberg',{note:'克雷芒二世保留班贝格主教之位，1047年死后葬回这里，是阿尔卑斯山以北唯一的教宗墓。'});
+    hp(d,'it_canossa',{note:'1077年1月亨利四世在城堡外的雪地里等了三天，求教宗赦免。'});
+    hr(d,[[47.0,11.5],[46.5,11.35],[45.44,10.99],[45.19,9.15],[45.05,9.69],[44.8,10.33],[44.37,9.88],[43.84,10.5],[43.32,11.33],[42.42,12.1],[42.245,12.216],[41.9,12.48]],HC.germany);
+   },[['fill',HC.germany,'帝国（约1050年）'],['fill',HC.faith,'教宗国'],['dline',HC.germany,'1046年亨利三世南下（概略）'],['dot','#2a2018','苏特里、罗马、皮亚琴察、帕维亚、班贝格与卡诺莎']])
+ ]},
+{id:'history-faith-leo-ix',ch:6,title:'教会改革：从清洗门户到绝罚君士坦丁堡',short:'教会改革',en:'Church Reform: From Cleaning House to Excommunicating Constantinople',period:'1046—1054年',c:HC.faith,
+ scenes:[
+  hs('1022—1046年','教会脏了','1022年帕维亚会议：教会农奴出身的教士所生子女归教会为奴，家产归还；1045年教宗位被卖，次年亨利三世在苏特里开会废黜教宗。',[[40.6,6.0],[47.6,16.0]],d=>{
+    ha(d,'mOtto962',HC.germany,{fillOpacity:.16});ha(d,'mPapal756',HC.faith,{fillOpacity:.32});
+    hp(d,'w_pavia',{note:'1022年本笃八世与亨利二世在此开会：教会农奴出身的教士，子女归教会为奴、家产归还。'});
+    hp(d,'w_sutri',{left:1,note:'1046年12月亨利三世在此开会，废黜争位的教宗（见“帝国教会”一节）。'});
+    hp(d,'rome',{note:'1045年本笃九世把教宗位卖给自己的教父（见“帝国教会”一节）。'});
+   },[['fill',HC.germany,'帝国（德意志与意大利王国，概略）'],['fill',HC.faith,'教宗领'],['dot','#2a2018','帕维亚、苏特里与罗马']]),
+  hs('1048—1049年','皇帝挑的人，偏要罗马人选','1048年12月沃尔姆斯推举；布鲁诺回图勒过完圣诞，穿朝圣者的衣服经贝桑松、奥斯塔南下，1049年2月光脚进罗马。',[[41.0,3.5],[50.6,14.5]],d=>{
+    ha(d,'mEmpire1050',HC.germany,{fillOpacity:.14});ha(d,'mPapal756',HC.faith,{fillOpacity:.3});
+    hp(d,'k_worms',{note:'1048年12月，皇帝与诸侯推图勒主教布鲁诺当教宗；他要罗马的教士和百姓同意才算。'});
+    hp(d,'gr_toul',{left:1,note:'布鲁诺在此过完圣诞，穿上朝圣者的衣服上路。'});
+    hp(d,'gr_moyenmoutier',{note:'洪贝特当修士的修道院，属图勒教区。'});
+    hp(d,'gr_besancon',{left:1,note:'据博尼佐所记，克吕尼院长于格与希尔德布兰在此与他会合。'});
+    hp(d,'rome',{note:'1049年2月他光着脚进城，众人推举后，2月12日登座为利奥九世。'});
+    hr(d,[[49.63,8.36],[48.68,5.89],[47.24,6.02],[45.87,7.17],[45.74,7.32],[45.05,9.69],[44.83,10.24],[44.65,10.93],[44.29,11.88],[44.14,12.24],[44.06,12.57],[43.84,13.02],[42.74,12.74],[41.89,12.48]],HC.route);
+   },[['fill',HC.germany,'帝国（约1050年）'],['fill',HC.faith,'教宗领'],['dline',HC.route,'1048—1049年布鲁诺去罗马（概略）'],['dot','#2a2018','沃尔姆斯、图勒、穆瓦扬穆捷、贝桑松与罗马']]),
+  hs('1049—1053年','清洗门户','1049年利奥九世开了四场会：复活节在罗马，5月在帕维亚，10月在兰斯和美因茨；兰斯会上朗格勒主教逃走，南特主教被废。',[[40.8,-3.0],[51.6,14.0]],d=>{
+    ha(d,'mEmpire1050',HC.germany,{fillOpacity:.14});ha(d,'mFrancia843W',HC.france,{fillOpacity:.16});ha(d,'mPapal756',HC.faith,{fillOpacity:.3});
+    hp(d,'rome',{note:'1049年复活节会议：禁婚重申到副执事，罗马神父的女人罚作拉特兰宫的仆役。'});
+    hp(d,'w_pavia',{note:'1049年5月的改革会议。'});
+    hp(d,'w_reims',{note:'1049年10月初献堂并开会，圣雷米的遗骨摆上主祭台，主教们逐个表白有没有花钱买位子。'});
+    hp(d,'k_mainz',{note:'1049年10月与亨利三世同开会议，主议买卖圣职与教士婚娶。'});
+    hp(d,'gr_langres',{left:1,note:'主教于格被控买卖圣职、杀人、通奸，逃会，被绝罚。'});
+    hp(d,'fr_nantes',{left:1,note:'主教承认父亲是前任主教，自己花钱接班，被收走戒指和权杖。'});
+    hr(d,[[41.89,12.48],[43.77,11.25],[45.19,9.16],[46.5,8.6],[47.6,7.6],[50.94,6.96],[49.26,4.03],[50.0,8.27]],HC.route);
+   },[['fill',HC.germany,'帝国（约1050年）'],['fill',HC.france,'法兰西王国（概略）'],['fill',HC.faith,'教宗领'],['dline',HC.route,'1049年利奥九世的行程（概略）'],['dot','#2a2018','开会与查处主教的地方']]),
+  hs('1049—1059年','极端派：皇帝认定也算买卖','温和派的达米安出自亚平宁山中的隐修院，称颂皇帝点教宗；极端派的洪贝特说俗人授职就是买卖；1059年罗马会议定下教宗选举令。',[[40.9,8.6],[45.6,14.6]],d=>{
+    ha(d,'mEmpire1050',HC.germany,{fillOpacity:.14});ha(d,'mPapal756',HC.faith,{fillOpacity:.32});
+    hp(d,'gr_fonteavellana',{note:'彼得·达米安当院长的隐修院。'});
+    hp(d,'ravenna',{note:'达米安的家乡；1052年他把论买卖圣职的书题献给拉文纳大主教。'});
+    hp(d,'rome',{note:'1059年4月罗马会议定教宗选举令，洪贝特在上面签了名。'});
+    hp(d,'w_sutri',{left:1,kind:'battle',note:'1046年亨利三世在此开会废黜教宗（见“帝国教会”一节）。'});
+    hp(d,'it_canossa',{left:1,kind:'battle',note:'1077年亨利四世在城堡外求见教宗（待展开）。'});
+   },[['fill',HC.germany,'帝国（约1050年）'],['fill',HC.faith,'教宗领'],['dot',HC.war,'1046年苏特里与1077年卡诺莎'],['dot','#2a2018','写书与开会的地方']]),
+  hs('1053—1054年','拿同一把尺子量东方','1053年6月奇维塔泰兵败后，利奥九世在贝内文托被扣到次年3月；他派使节去君士坦丁堡，1054年7月16日诏书放上圣索菲亚的祭台。',[[37.0,11.0],[44.6,30.0]],d=>{
+    ha(d,'mByz1025',HC.athens,{fillOpacity:.14});ha(d,'mNormanItaly1053',HC.war,{fillOpacity:.3});ha(d,'mPapal756',HC.faith,{fillOpacity:.32});
+    hp(d,'b_civitate',{kind:'battle',note:'1053年6月18日，教宗的军队在此败给诺曼人。'});
+    hp(d,'w_benevento',{left:1,note:'利奥九世战后被扣在这里，名为作客，到1054年3月才回罗马。'});
+    hp(d,'b_bari',{note:'东罗马在意大利的总督阿尔吉罗斯驻在这里，他约教宗南北夹击诺曼人。'});
+    hp(d,'rome',{note:'1054年4月19日利奥九世死在这里，比诏书放上祭台早三个月。'});
+    hp(d,'constantinople',{note:'皇帝待使节如贵宾；牧首闭门不见，7月16日被革除。'});
+    hp(d,'f_cassino',{left:1,note:'1054年初使节取道这里东去。'});
+    hr(d,[[41.49,13.81],[41.13,16.87],[41.32,19.45],[41.12,20.8],[40.64,22.94],[41.01,28.98]],HC.route);
+   },[['fill',HC.athens,'东罗马（1025年）'],['fill',HC.war,'诺曼人的地盘（约1053年）'],['fill',HC.faith,'教宗领'],['dline',HC.route,'1054年使节去君士坦丁堡（概略）'],['dot',HC.war,'1053年奇维塔泰之战'],['dot','#2a2018','卡西诺山、贝内文托、巴里、罗马与君士坦丁堡']])
  ]},
 {id:'history-china-neolithic',ch:7,title:'新石器聚落与万邦时代',short:'仰韶与良渚',en:'Neolithic China: Yangshao to Liangzhu',period:'约前7000—前1900年',c:HC.china,
  scenes:[
@@ -3539,7 +3630,7 @@ const HISTORY_ERAS=[
  {id:'faith-church',name:'早期教会',en:'The Early Church',date:'73—451年',c:HC.faith,items:[['history-faith-church'],['history-faith-empire-church'],['history-faith-councils'],['history-faith-ephesus'],['history-faith-two-cities']]},
  {id:'faith-medieval',name:'中世纪早期的教会',en:'The Early Medieval Church',date:'451—604年',c:HC.faith,items:[['history-faith-papacy'],['history-faith-three-chapters'],['history-faith-gregory']]},
  {id:'faith-carolingian',name:'加洛林时代的教会',en:'The Church in the Carolingian Age',date:'787—870年',c:HC.faith,items:[['history-faith-carolingian']]},
- {id:'faith-reform',name:'帝国与教会改革',en:'Empire and Church Reform',date:'875—1054年',c:HC.faith,items:[['history-faith-dark-century']]},
+ {id:'faith-reform',name:'帝国与教会改革',en:'Empire and Church Reform',date:'875—1054年',c:HC.faith,items:[['history-faith-dark-century'],['history-faith-imperial-church'],['history-faith-leo-ix']]},
  {id:'china-early',name:'先秦：三代与春秋战国',en:'Pre-Imperial China',date:'约前7000—前221年',c:HC.china,items:[['history-china-neolithic'],['history-china-bronze'],['history-china-western-zhou'],['history-china-spring-autumn'],['history-china-warring-states']]},
  {id:'china-qin-han',name:'秦汉帝国',en:'Qin and Han Empires',date:'前221—公元189年',c:HC.china,items:[['history-china-qin'],['history-china-western-han'],['history-china-eastern-han']]},
  {id:'china-six-dynasties',name:'三国两晋南北朝',en:'Six Dynasties',date:'190—589年',c:HC.china,items:[['history-china-three-kingdoms'],['history-china-sixteen-kingdoms'],['history-china-sui']]},
@@ -3684,10 +3775,12 @@ const TREE_ROWS={
  'history-china-tang/0':['china',589,845],
  'history-germany-otto/0':[['germany','italy','faith'],951,964],
  'history-faith-dark-century/0':['faith',875,955],
+ 'history-faith-imperial-church/0':['faith',962,1046],
+ 'history-faith-leo-ix/0':['faith',1046,1054],
  'history-empire-macedonian/3':[['east','faith'],1054,1056]
 };
 // Topics still to be written grow the tree as dashed shoots.
-const TREE_FUTURE=[['east',1056,'东罗马（晚期）','1056年起 · 1071年曼齐刻尔特之战 · 1204年十字军攻破君士坦丁堡 · 到1453年 · 待展开'],['france',987,'卡佩王朝','987年起 · 待展开'],['germany',964,'神圣罗马帝国','964年起 · 奥托王朝与萨利安王朝 · 1077年卡诺莎之辱 · 待展开'],['italy',964,'帝国治下的意大利','964年起 · 待展开'],['faith',1056,'大分裂以后','1054年起 · 十字军与东西两教会 · 待展开'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',651,'伊斯兰时代的伊朗','651年起 · 待展开'],['china',845,'晚唐五代与宋','845年起 · 待展开']];
+const TREE_FUTURE=[['east',1056,'东罗马（晚期）','1056年起 · 1071年曼齐刻尔特之战 · 1204年十字军攻破君士坦丁堡 · 到1453年 · 待展开'],['france',987,'卡佩王朝','987年起 · 待展开'],['germany',964,'神圣罗马帝国','964年起 · 奥托王朝与萨利安王朝 · 1077年卡诺莎之辱 · 待展开'],['italy',964,'帝国治下的意大利','964年起 · 待展开'],['faith',1056,'大分裂以后','1054年起 · 1077年卡诺莎之辱 · 十字军与东西两教会 · 待展开'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',651,'伊斯兰时代的伊朗','651年起 · 待展开'],['china',845,'晚唐五代与宋','845年起 · 待展开']];
 // Where a line stops it says why: [line, year, the event that ends it, note, the line it carries on in].
 const TREE_ENDS=[['trunk',-30,'并入罗马','前146年科林斯被毁 · 前30年最后一个希腊化王国埃及并入罗马','rome'],['rome',476,'西罗马终结','476年西部末代皇帝被废 · 由中世纪西欧接续'],['west',843,'凡尔登三分','843年《凡尔登条约》三分帝国 · 分出法兰西、德意志、意大利']];
 // Sections of one line that run side by side: [line, row keys, side of the passing loop].
