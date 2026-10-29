@@ -8195,7 +8195,7 @@ const FIGURE_SCENES={
       "place": "constantinople"
     }
   ],
-  "history-germany-salian/0": [
+  "history-germany-ottonians/2": [
     {
       "id": "henry-ii",
       "when": "1007年11月",
@@ -8204,7 +8204,7 @@ const FIGURE_SCENES={
       "place": "sa_bamberg"
     }
   ],
-  "history-germany-salian/1": [
+  "history-germany-salian/0": [
     {
       "id": "conrad-ii",
       "when": "1024年9月4日",
@@ -8213,7 +8213,7 @@ const FIGURE_SCENES={
       "place": "sa_kamba"
     }
   ],
-  "history-germany-salian/4": [
+  "history-germany-salian/3": [
     {
       "id": "henry-iii",
       "when": "1056年10月",

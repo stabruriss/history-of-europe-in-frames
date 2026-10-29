@@ -1,9 +1,15 @@
 {
  "sections": {
+  "history-germany-ottonians": [
+   "奥托王朝",
+   "973—1024年",
+   3,
+   5
+  ],
   "history-germany-salian": [
    "萨利安王朝",
-   "1002—1056年",
-   5,
+   "1024—1056年",
+   4,
    5
   ],
   "history-germany-investiture": [
@@ -74,11 +80,18 @@
   ]
  },
  "rows": {
+  "history-germany-ottonians/0": [
+   [
+    "germany"
+   ],
+   973,
+   1024
+  ],
   "history-germany-salian/0": [
    [
     "germany"
    ],
-   1002,
+   1024,
    1056
   ],
   "history-germany-investiture/0": [
@@ -174,23 +187,23 @@
  },
  "bold": [
   [
+   "history-germany-ottonians/2",
+   "奥托王朝的最后一个皇帝亨利二世又太虔诚，结果绝了嗣"
+  ],
+  [
    "history-germany-salian/0",
-   "奥托王朝的最后一个皇帝亨利二世又是个太虔诚的人，身后无子，王朝绝了嗣"
+   "奥托王朝绝了嗣，德意志的贵族又选了一家，开了新王朝，接着当罗马帝国的皇帝"
   ],
   [
    "history-germany-salian/1",
-   "德意志的贵族又选了一家，开了新王朝，接着当罗马帝国的皇帝"
-  ],
-  [
-   "history-germany-salian/2",
    "皇帝要联合底层骑士，抓贵族的权"
   ],
   [
-   "history-germany-salian/3",
+   "history-germany-salian/2",
    "到亨利三世，他的远房表兄当上教宗，改革派上了位；皇帝和改革派合作得还不错"
   ],
   [
-   "history-germany-salian/4",
+   "history-germany-salian/3",
    "亨利三世死前，还把不满六岁的亨利四世托付给了新教宗"
   ],
   [
@@ -347,21 +360,23 @@
   ]
  ],
  "moments": {
+  "history-germany-ottonians": [
+   [
+    2,
+    "烧红的犁铧"
+   ]
+  ],
   "history-germany-salian": [
    [
     0,
-    "烧红的犁铧"
-   ],
-   [
-    1,
     "一张牛皮"
    ],
    [
-    2,
+    1,
     "我们是自由人"
    ],
    [
-    3,
+    2,
     "空手回去的戏子"
    ]
   ],
@@ -594,6 +609,7 @@
  },
  "boxes": {},
  "budget": {
+  "history-germany-ottonians": 300,
   "history-germany-salian": 300,
   "history-germany-investiture": 300,
   "history-germany-canossa": 300,
@@ -612,6 +628,7 @@
    "empire-high",
    "中世纪盛期：皇帝、教宗与诺曼人",
    [
+    "history-germany-ottonians",
     "history-germany-salian",
     "history-germany-investiture",
     "history-germany-canossa",
@@ -737,6 +754,7 @@
  "tails": {
   "germany": [
    "history-germany-otto/0",
+   "history-germany-ottonians/0",
    "history-germany-salian/0",
    "history-germany-investiture/0",
    "history-germany-canossa/0"
@@ -799,19 +817,31 @@
  },
  "fixes": [
   [
-   "history-germany-salian/0",
-   "是他1146年封圣后写成的《亨利二世传》"
+   "history-germany-ottonians/0",
+   "1002年1月他死在罗马城北，年二十一，没有娶亲"
   ],
   [
-   "history-germany-salian/1",
+   "history-germany-ottonians/1",
+   "送进教会的人越多，能生合法继承人的男丁就越少"
+  ],
+  [
+   "history-germany-ottonians/2",
+   "奥托家的男丁只剩当主教的布鲁诺"
+  ],
+  [
+   "history-germany-ottonians/2",
+   "是他1146年封圣后的圣徒传才有的"
+  ],
+  [
+   "history-germany-salian/0",
    "911、919年他们就自己推举过国王"
   ],
   [
-   "history-germany-salian/2",
+   "history-germany-salian/1",
    "1037年5月皇帝在米兰城下颁《封地敕令》"
   ],
   [
-   "history-germany-salian/4",
+   "history-germany-salian/3",
    "据格雷戈里七世1073年的信"
   ],
   [
@@ -918,7 +948,8 @@
   "女王",
   "一只打到",
   "坐禅",
-  "佛系"
+  "佛系",
+  "不和皇后同房"
  ],
  "regions": [
   "mMatilda1077",
@@ -943,5 +974,5 @@
   "mFatimids1050",
   "mCrusaderStates1100"
  ],
- "pass": "1000年之后 — 12 sections (60 scenes): 德意志 from the Salians through the investiture contest and Canossa to Henry IV's death (1106), the last two shared with 基督教; 意大利 to the Normans' Sicily (1091); 基督教 on to the Cistercians (1153); 西班牙 through the taifas to the holy war (1123), shared with 基督教; 43 of 老无’s points in bold, the facts and their order set right in plain text; new shoots at the ends"
+ "pass": "1000年之后 — 13 sections (62 scenes): 德意志 from the Ottonians (how piety ended the line) and the Salians through the investiture contest and Canossa to Henry IV's death (1106), the last two shared with 基督教; 意大利 to the Normans' Sicily (1091); 基督教 on to the Cistercians (1153); 西班牙 through the taifas to the holy war (1123), shared with 基督教; 43 of 老无’s points in bold, the facts and their order set right in plain text; new shoots at the ends"
 }

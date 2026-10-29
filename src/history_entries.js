@@ -651,6 +651,9 @@ Object.assign(HS,{
   er_dorostolon:['多罗斯托尔','Dorostolon (Silistra)',44.12,27.26,'多瑙河边的要塞（今锡利斯特拉）；971年斯维亚托斯拉夫在此被围三个月。'],
   er_arcadiopolis:['阿卡迪奥波利斯','Arcadiopolis',41.4,27.36,'色雷斯的城（今吕莱布尔加兹）；970年东罗马军在此打败罗斯人。'],
   er_ostrovo:['奥斯特罗沃','Ostrovo',40.8,21.8,'马其顿西部湖边；1041年东罗马军在此打败彼得·德里扬的起义军。'],
+  on_colonna:['科隆纳角','Cape Colonna',39.027,17.204,'克罗托内南边的海角；982年7月奥托二世在附近败给西西里的穆斯林军队，险些被俘。'],
+  on_gandersheim:['甘德斯海姆','Gandersheim',51.87,10.026,'哈尔茨山西边的家族修院，852年由奥托家的始祖柳道夫夫妇所建；1002年起奥托二世之女索菲娅任院长。'],
+  on_hildesheim:['希尔德斯海姆','Hildesheim',52.15,9.951,'萨克森的主教城；巴伐利亚公爵的两个儿子亨利、布鲁诺在此读教会学校。'],
   sa_speyer:['施派尔','Speyer',49.317,8.441,'莱茵河左岸的主教城；康拉德二世约1030年起在此修大教堂，作萨利安家的墓地。'],
   sa_polling:['波灵','Polling',47.81,11.13,'阿尔卑斯山北麓的庄园，属奥格斯堡主教；1002年巴伐利亚公爵亨利在此截下奥托三世的灵柩。'],
   sa_kamba:['坎巴','Kamba',49.862,8.383,'莱茵河东岸、奥彭海姆对面的河滩；1024年9月4日诸侯在此选康拉德二世为王。'],
@@ -2923,17 +2926,40 @@ const HISTORY_ENTRIES=[
     hl(d,'纳瓦拉王国','Kingdom of Pamplona',42.95,-1.75,HC.spain);hl(d,'巴塞罗那伯国','County of Barcelona',41.95,2.0,HC.spain);
    },[['fill',HC.mino,'新来的柏柏尔将领分得的泰法（约1035年）'],['fill',HC.hittite,'斯拉夫将领与曼苏尔家旧部的泰法'],['fill',HC.myc,'本地豪族的泰法（含早年定居的柏柏尔家族）'],['dash',HC.spain,'北方基督教诸国（约1031年，含1010年割给卡斯蒂利亚的杜罗河边堡）'],['dot',HC.war,'1013年被洗劫的科尔多瓦'],['dot','#2a2018','几个泰法的都城与割给卡斯蒂利亚的戈尔马斯']])
  ]},
-{id:'history-germany-salian',ch:5,title:'萨利安王朝：贵族选王，皇帝拉小压大',short:'萨利安王朝',en:'The Salians: Elected Kings Who Leaned on Lesser Men',period:'1002—1056年',c:HC.germany,
+{id:'history-germany-ottonians',ch:5,title:'奥托王朝：越虔诚，男丁越少',short:'奥托王朝',en:'The Ottonians: The More Pious, the Fewer Heirs',period:'973—1024年',c:HC.germany,
  scenes:[
-  hs('1002—1024年','虔诚的皇帝，绝了嗣','1002年亨利在波灵截下奥托三世的灵柩，6月在美因茨加冕；1007年在法兰克福开会，设班贝格主教区；1024年他死，奥托王朝绝嗣。',[[41.4,4.6],[52.4,15.2]],d=>{
+  hs('973—1002年','两代短命的独子','奥托二世982年在科隆纳角兵败，次年死在罗马；奥托三世999年去加尔加诺山朝圣，1002年1月死在帕泰尔诺；许嫁的佐伊坐船到巴里，才知道他已死了。',[[38.2,4.8],[52.2,29.4]],d=>{
+    ha(d,'mOtto962',HC.germany,{fillOpacity:.16});ha(d,'mByzItaly880',HC.athens,{fillOpacity:.2});ha(d,'mSicilyArab902',HC.myc,{fillOpacity:.2});
+    hp(d,'on_colonna',{kind:'battle'});
+    hp(d,'rome',{note:'983年12月奥托二世病死在此，葬在圣彼得大教堂；奥托三世996年后多住在罗马。'});
+    hp(d,'no_gargano',{note:'999年奥托三世来此朝圣，为处死罗马的叛首克雷森蒂乌斯赎罪。'});
+    hp(d,'ic_paterno',{left:1,note:'1002年1月奥托三世病死在此，年二十一，没有娶亲。'});
+    hp(d,'b_bari',{note:'1002年1月，许嫁奥托三世的东罗马公主佐伊坐船到此，才知道新郎已死。'});
+    hp(d,'w_aachen',{note:'奥托三世葬在这里，挨着查理曼。'});
+    hr(d,[[41.01,28.98],[40.6,26.0],[39.0,23.0],[38.0,21.0],[39.5,19.8],[41.13,16.87]],HC.route);
+   },[['fill',HC.germany,'奥托王朝的帝国'],['fill',HC.athens,'东罗马在南意大利的地盘'],['fill',HC.myc,'阿拉伯人的西西里'],['dline',HC.route,'1001—1002年佐伊坐船来巴里（概略）'],['dot',HC.war,'982年科隆纳角之战'],['dot','#2a2018','罗马、加尔加诺山、帕泰尔诺、巴里与亚琛']]),
+  hs('936—1024年','家里的男丁进了教会','奥托家的兄弟、儿子当科隆、美因茨大主教，女儿、孙女当奎德林堡、甘德斯海姆的院长；巴伐利亚公爵的两个儿子在希尔德斯海姆读教会学校。',[[47.2,5.6],[53.6,13.6]],d=>{
+    ha(d,'mSaxonyDuchy',HC.germany,{fillOpacity:.2});ha(d,'mBavariaDuchy',HC.germany,{fillOpacity:.12,dashArray:'4 4'});
+    hp(d,'colonia',{note:'953—965年奥托一世的幼弟布鲁诺任科隆大主教，兼洛林公爵。'});
+    hp(d,'k_mainz',{left:1,note:'954—968年奥托一世的私生子威廉任美因茨大主教。'});
+    hp(d,'de_quedlinburg',{note:'936年奥托一世为父亲建的家族修院；966年起他的女儿玛蒂尔达、999年起奥托二世的女儿阿德尔海德先后任院长。'});
+    hp(d,'on_gandersheim',{left:1});hp(d,'on_hildesheim');
+    hp(d,'k_regensburg',{note:'主教沃尔夫冈给巴伐利亚公爵的儿子亨利、布鲁诺启蒙。'});
+    hp(d,'ot_augsburg',{note:'1006年亨利二世唯一的弟弟布鲁诺当了这里的主教，直到1029年。'});
+   },[['fill',HC.germany,'萨克森：奥托家的老家'],['dash',HC.germany,'巴伐利亚：旁支的公国'],['dot','#2a2018','家里人当主教、当院长、读书的地方']]),
+  hs('1002—1024年','立基督为继承人','1002年亨利在波灵截下奥托三世的灵柩，6月在美因茨加冕；1007年在法兰克福开会，设班贝格主教区；1024年他死，奥托王朝绝嗣。',[[41.4,4.6],[52.4,15.2]],d=>{
     ha(d,'mOtto962',HC.germany,{fillOpacity:.16});ha(d,'mBavariaDuchy',HC.germany,{fillOpacity:.28,dashArray:'4 4'});
     hp(d,'ic_paterno',{left:1,note:'1002年1月奥托三世病死在此，年二十一，没有儿子。'});hp(d,'sa_polling');
     hp(d,'k_mainz',{left:1,note:'1002年6月，亨利二世在此被巴伐利亚、法兰克尼亚等地的贵族选为王，美因茨大主教维利吉斯给他涂油加冕。'});
     hp(d,'k_frankfurt',{note:'1007年11月1日的会上，亨利二世立基督为继承人，准设班贝格主教区。'});
     hp(d,'ic_bamberg',{note:'亨利二世最喜欢的城，本是给皇后的嫁妆；1007年设主教区，夫妻都葬在这里的大教堂。'});
+    hp(d,'ot_augsburg',{note:'1006年起他唯一的弟弟布鲁诺在此当主教；1024年亨利死时，奥托家的男丁只剩这一个。'});
     hp(d,'w_aachen',{left:1,note:'1002年复活节奥托三世葬在这里。'});
     hr(d,[[42.24,12.39],[44.4,11.6],[45.44,10.99],[46.5,11.35],[47.0,11.5],[47.81,11.13],[48.37,10.9],[49.6,8.7],[50.94,6.96],[50.78,6.08]],HC.route);
-   },[['fill',HC.germany,'奥托王朝的帝国'],['dash',HC.germany,'巴伐利亚公国：亨利二世995年起任公爵'],['dline',HC.route,'1002年奥托三世的灵柩北运（概略）'],['dot','#2a2018','帕泰尔诺、波灵、美因茨、法兰克福、班贝格与亚琛']]),
+   },[['fill',HC.germany,'奥托王朝的帝国'],['dash',HC.germany,'巴伐利亚公国：亨利二世995年起任公爵'],['dline',HC.route,'1002年奥托三世的灵柩北运（概略）'],['dot','#2a2018','帕泰尔诺、波灵、美因茨、法兰克福、班贝格、奥格斯堡与亚琛']])
+ ]},
+{id:'history-germany-salian',ch:5,title:'萨利安王朝：贵族选王，皇帝拉小压大',short:'萨利安王朝',en:'The Salians: Elected Kings Who Leaned on Lesser Men',period:'1024—1056年',c:HC.germany,
+ scenes:[
   hs('1024—1033年','贵族又选了一家','1024年9月诸侯在坎巴选康拉德二世，他在美因茨加冕；1027年复活节在罗马加冕称帝；1033年在帕耶讷被选为勃艮第国王。',[[41.2,4.2],[51.0,14.0]],d=>{
     ha(d,'mOtto962',HC.germany,{fillOpacity:.16});ha(d,'mBurgundyKingdom1032',HC.neutral,{fillOpacity:.26,dashArray:'4 4'});ha(d,'mPapal756',HC.faith,{fillOpacity:.24});
     hp(d,'sa_kamba',{note:'1024年9月4日诸侯在此选康拉德二世为王；9月8日美因茨大主教阿里博在美因茨给他加冕。'});
@@ -5025,7 +5051,7 @@ const HISTORY_ERAS=[
  {id:'empire-franks',name:'中世纪早期：法兰克与伦巴第',en:'Franks and Lombards',date:'561—843年',c:HC.celt,items:[['history-west-merovingians'],['history-west-lombards'],['history-west-charlemagne'],['history-west-charlemagne-rule'],['history-west-louis-pious']]},
  {id:'empire-verdun',name:'中世纪早期：凡尔登之后',en:'After Verdun',date:'843—987年',c:HC.celt,items:[['history-france-west-francia'],['history-germany-east-francia'],['history-italy-middle-francia'],['history-germany-otto']]},
  {id:'empire-spain',name:'西班牙：从迦太基到后倭马亚',en:'Spain from Carthage to the Umayyads of Córdoba',date:'约前1100—1031年',c:HC.spain,items:[['history-spain-before-goths'],['history-spain-visigoths'],['history-spain-toledo'],['history-spain-fall',0,1],['history-spain-fall',2,2,'塔里克渡海'],['history-spain-andalus']]},
- {id:'empire-high',name:'中世纪盛期：皇帝、教宗与诺曼人',en:'The High Middle Ages: Emperors, Popes and Normans',date:'1002—1106年',c:HC.germany,items:[['history-germany-salian'],['history-germany-investiture'],['history-germany-canossa'],['history-italy-normans']]},
+ {id:'empire-high',name:'中世纪盛期：皇帝、教宗与诺曼人',en:'The High Middle Ages: Emperors, Popes and Normans',date:'973—1106年',c:HC.germany,items:[['history-germany-ottonians'],['history-germany-salian'],['history-germany-investiture'],['history-germany-canossa'],['history-italy-normans']]},
  {id:'empire-taifas',name:'西班牙：泰法与圣战',en:'Spain: the Taifas and Holy War',date:'1031—1123年',c:HC.spain,items:[['history-spain-taifas'],['history-spain-crusade']]},
  {id:'faith-israel',name:'古代以色列',en:'Ancient Israel',date:'约前1400—前538年',c:HC.faith,items:[['history-faith-israel'],['history-faith-first-temple']]},
  {id:'faith-temple',name:'第二圣殿时期',en:'The Second Temple',date:'前538—公元73年',c:HC.faith,items:[['history-faith-second-temple'],['history-faith-jesus']]},
@@ -5205,7 +5231,8 @@ const TREE_ROWS={
  'history-eeurope-rus/0':['eeurope',750,945],
  'history-eeurope-byzantium/0':[['eeurope','east'],860,1043],
  'history-spain-andalus/0':['spain',756,1031],
- 'history-germany-salian/0':['germany',1002,1056],
+ 'history-germany-ottonians/0':['germany',973,1024],
+ 'history-germany-salian/0':['germany',1024,1056],
  'history-germany-investiture/0':[['germany','faith'],1056,1075],
  'history-germany-canossa/0':[['germany','faith'],1076,1106],
  'history-italy-normans/0':['italy',1016,1091],
