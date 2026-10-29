@@ -67,7 +67,7 @@ function renderToc(){
   for(const [id,mode] of [['tHistory','history'],['tGeography','geography'],['tTopics','topics']]){
     const b=document.getElementById(id);b.classList.toggle('on',viewMode===mode);b.setAttribute('aria-pressed',String(viewMode===mode));
   }
-  document.getElementById('indexCaption').textContent=historical?'历史树：自上而下是时间，枝杈是主题\n先选主线，↑↓ 沿线走 · ←→ 切换地图事件\nⅠ 上古 Ⅱ 城邦 Ⅲ 马其顿 Ⅳ 希腊化 Ⅴ 罗马 Ⅵ 帝国 Ⅶ 基督教 Ⅷ 中国 Ⅸ 埃及 Ⅹ 波斯 · 右缘可拖宽':viewMode==='topics'?'主线讲事情怎么发生，专题讲事情为什么总这样发生。\n每个专题拆成若干豆腐块呈现，可点链接跳回主线。':'从山海、河流与地区名认识历史的舞台。\n↑↓ 切换条目';
+  document.getElementById('indexCaption').textContent=historical?'历史树：自上而下是时间，枝杈是主题\n先选主线，↑↓ 沿线走 · ←→ 切换地图事件\nⅠ 上古 Ⅱ 城邦 Ⅲ 马其顿 Ⅳ 希腊化 Ⅴ 罗马 Ⅵ 帝国 Ⅶ 基督教 Ⅷ 中国 Ⅸ 埃及 Ⅹ 波斯—阿拉伯 · 右缘可拖宽':viewMode==='topics'?'主线讲事情怎么发生，专题讲事情为什么总这样发生。\n每个专题拆成若干豆腐块呈现，可点链接跳回主线。':'从山海、河流与地区名认识历史的舞台。\n↑↓ 切换条目';
   toc.setAttribute('aria-label',historical?'历史树：按时间与主题浏览':viewMode==='topics'?'动力专题':'地理概念');
   mobileToc.setAttribute('aria-label',historical?'选择历史时期与章节':viewMode==='topics'?'选择动力专题':'选择地理概念');
 }
@@ -79,7 +79,7 @@ mobileToc.onchange=()=>go(mobileToc.value);
 /* History tree: branches are topics, distance from the root is time.
    Deep prehistory is compressed; where events crowd, rows push later ones down, so height stays in time order. */
 const SVGNS='http://www.w3.org/2000/svg';
-const NUMERALS=['Ⅰ','Ⅱ','Ⅲ','Ⅳ','Ⅴ','Ⅵ','Ⅶ','Ⅷ','Ⅸ','Ⅹ'];
+const NUMERALS=['Ⅰ','Ⅱ','Ⅲ','Ⅳ','Ⅴ','Ⅵ','Ⅶ','Ⅷ','Ⅸ','Ⅹ','Ⅺ'];
 const TREE_SCALE=[[-68000,0],[-10000,44],[-3000,92],[-1300,150],[0,1216]];
 function treeBase(t){
   let i=1;while(i<TREE_SCALE.length-1&&t>TREE_SCALE[i][0])i++;
@@ -106,6 +106,8 @@ function historyTreeRows(){
   const lastOn=id=>rows.filter(r=>r.kind==='item'&&r.lines.includes(id)).reduce((a,r)=>!a||r.t>=a.t?r:a,null);
   TREE_ENDS.forEach(([branch,t,label,note,into],i)=>rows.push({kind:'end',branch:branches[branch],t,label,note,into:into?branches[into]:null,order:2e4+i,
     c:branches[branch].c||lastOn(branch).c}));
+  // 老无 2026-10-28: every five hundred years a line across the whole tree, with a short account of where each line stands.
+  (typeof TREE_SLICES==='undefined'?[]:TREE_SLICES).forEach(([t,label,head,text],i)=>rows.push({kind:'slice',t,label,head,text,order:3e4+i}));
   return rows;
 }
 
@@ -190,6 +192,12 @@ function renderHistoryTree(host,{sheet=false}={}){
     r.el=document.createElement('div');r.el.className='tree-end';r.el.dataset.branch=r.branch.id;r.el.style.setProperty('--c',r.c);
     r.el.innerHTML=`<b>${r.label}</b><small>${r.note}</small>`;tree.appendChild(r.el);
   }
+  // A time slice opens to its paragraph; the expanded tree shows them open, the sidebar shows the headline only.
+  for(const r of rows.filter(r=>r.kind==='slice')){
+    r.el=document.createElement('details');r.el.className='tree-slice';r.el.dataset.t=r.t;r.el.open=sheet;
+    r.el.innerHTML=`<summary><b>${r.label}</b><span>${r.head}</span></summary><p>${r.text}</p>`;
+    r.el.addEventListener('toggle',()=>layoutHistoryTree(tree));tree.appendChild(r.el);
+  }
   // Branch names run along their branches in the wide view; clicking them in the tree below switches in place without moving the timeline.
   tree._names=HISTORY_BRANCHES.filter(b=>b.c).map(b=>{
     const el=document.createElement('span');el.className='tree-branch-name';el.setAttribute('aria-hidden','true');
@@ -218,8 +226,8 @@ function layoutHistoryTree(tree){
   const k={wide:1.15,medium:1.05,compact:1}[mode],fork={wide:44,medium:32,compact:22}[mode];
   const lanes=Math.max(...HISTORY_BRANCHES.map(b=>b.lane))+1,laneX=l=>axis+(mode==='compact'?7:12)+l*gap,labelX=laneX(lanes-1)+(mode==='compact'?gap:21);
   for(const r of rows){r.el.style.left=labelX+'px';r.el.style.width=(W-labelX)+'px';}
-  // At one moment: a line's end comes first, then what grows out of it; unwritten shoots come last.
-  const rank=r=>r.kind==='end'?-1:r.kind==='future'?1:0;
+  // At one moment: a time slice first, then a line's end, then what grows out of it; unwritten shoots come last.
+  const rank=r=>r.kind==='slice'?-2:r.kind==='end'?-1:r.kind==='future'?1:0;
   const sorted=[...rows].sort((a,b)=>a.t-b.t||rank(a)-rank(b)||a.order-b.order);
   let bottom=0;
   for(const r of sorted){
@@ -241,6 +249,8 @@ function layoutHistoryTree(tree){
     grid.push(`<path class="grid" d="M${axis-2} ${y}H${labelX-4}"/>`);
     const label=document.createElement('span');label.className='tree-tick';label.style.cssText=`top:${y}px;width:${axis-4}px`;label.textContent=treeYear(t);ticks.appendChild(label);
   }
+  // Each time slice cuts across every lane at its own height.
+  for(const r of sorted.filter(r=>r.kind==='slice'))grid.push(`<path class="slice-line" data-t="${r.t}" d="M${axis-2} ${r.ny}H${labelX-4}"/>`);
   const byId=BRANCH,stationsOf=b=>sorted.filter(r=>r.kind==='item'&&r.lines.includes(b.id));
   const ends=Object.fromEntries(sorted.filter(r=>r.kind==='end').map(r=>[r.branch.id,r]));
   // Sections of one line that run almost the same years (老无 2026-10-27): the later ones ride a passing loop beside the line.

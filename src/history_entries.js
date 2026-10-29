@@ -2,7 +2,7 @@
 const HISTORY_CONTENT=/*__HISTORY_CONTENT__*/;
 const HISTORY_CH=['上古与黑暗时代','希腊城邦时代','马其顿与帝国','希腊化世界','罗马','罗马帝国','犹太教与基督教','中国对照','埃及','波斯—阿拉伯'];
 const HC={athens:'#276582',sparta:'#99462e',mino:'#ad7c25',myc:'#637541',hittite:'#866347',
-  persia:'#8b644c',thebes:'#387568',macedon:'#6b4d72',war:'#a03327',neutral:'#887b65',route:'#2a7182',celt:'#64763f',parthia:'#765b78',rome:'#a34f36',faith:'#41508c',china:'#2e6b4e',byz:'#93324f',france:'#2b6cb0',germany:'#4a4440',italy:'#b8652a',spain:'#a2337f'};
+  persia:'#8b644c',thebes:'#387568',macedon:'#6b4d72',war:'#a03327',neutral:'#887b65',route:'#2a7182',celt:'#64763f',parthia:'#765b78',rome:'#a34f36',faith:'#41508c',china:'#2e6b4e',byz:'#93324f',france:'#2b6cb0',germany:'#4a4440',italy:'#b8652a',spain:'#a2337f',eeurope:'#1d8a99'};
 const HV={aegean:[[34.3,20.2],[41.3,29.6]],greece:[[35.6,20.4],[39.8,25.1]],
   eastern:[[24.3,19.4],[42.6,49.8]],attica:[[37.55,23.23],[38.45,24.3]],levant:[[27.4,30.2],[35.9,37.2]]};
 const HS={
@@ -4279,6 +4279,8 @@ const TREE_FUTURE=[['east',1056,'东罗马（晚期）','1056年起 · 1071年�
 const TREE_ENDS=[['trunk',-30,'并入罗马','前146年科林斯被毁 · 前30年最后一个希腊化王国埃及并入罗马','rome'],['rome',476,'西罗马终结','476年西部末代皇帝被废 · 由中世纪西欧接续'],['west',843,'凡尔登三分','843年《凡尔登条约》三分帝国 · 分出法兰西、德意志、意大利']];
 // Sections of one line that run side by side: [line, row keys, side of the passing loop].
 const TREE_PARALLEL=[['trunk',['history-alexander-conquest/0','history-alexander-rule/0'],1],['trunk',['history-hellenistic-states/0','history-hellenistic-knowledge/0'],1],['west',['history-west-kingdoms/0','history-west-ostrogoths/0'],1],['west',['history-west-merovingians/0','history-west-lombards/0'],1],['faith',['history-empire-amorian/0','history-faith-carolingian/0'],-1],['faith',['history-faith-imperial-church/0','history-faith-cluny/0'],-1]];
+// Time slices across the whole tree: [year, label, headline, paragraph].
+const TREE_SLICES=[[-1000, "前1000年", "青铜时代崩了以后，各地从头长起", "约前1200年前后，迈锡尼的宫殿、赫梯帝国接连崩塌，东地中海进了“黑暗时代”，各处都是小王国和村社重新长起来。希腊没了文字、人口稀少，城邦还要两百年才成形；罗马只是拉丁姆山丘上的几处村落；以色列人刚立王，据《圣经》，大卫约在此时定都耶路撒冷；埃及新王国已散（约前1070年），南北分治；伊朗高原上米底人、波斯人刚刚进来，埃兰还在，两河的亚述正要复起；中国是西周，周王分封诸侯、立宗法。"], [-500, "前500年", "波斯一家独大", "大流士一世的阿契美尼德帝国从印度河伸到爱琴海，前525年拿下埃及，前513年还渡过多瑙河去打斯基泰人，无功而返。帝国边上的小地方各走各路：雅典刚经克里斯提尼改革，希腊城邦正要在希波战争里顶住波斯；罗马前509年赶走国王，成了共和国；犹太人从巴比伦回来，重建了圣殿；黑海北岸，希腊港口跟斯基泰人做着粮食和奴隶的买卖。中国是春秋末年，孔子在鲁国做官，几年后周游列国。"], [0, "公元元年", "地中海头一回归了一家", "希腊化诸国已全数并入罗马，最后一个托勒密埃及亡于前30年；罗马自己也从共和变成了奥古斯都的元首制。东边的安息跟罗马隔着幼发拉底河对峙，前53年在卡莱大败克拉苏。罗马治下的犹太地，耶稣约在前4年出生；埃及成了罗马的粮仓；黑海北岸的博斯普鲁斯王国当了罗马的附庸，草原上是萨尔马特人。中国是西汉末年，外戚王莽掌权，八年后篡汉。"], [500, "500年", "西罗马没了，东罗马守着东方", "西罗马已亡二十多年，地盘由蛮族国王分着：法兰克的克洛维占了高卢北部，东哥特的狄奥多里克名义上替东罗马皇帝管着意大利，西哥特人占着西班牙和高卢南部，七年后在武耶败给克洛维。东罗马的阿纳斯塔修斯攒下满库金币，守着东方，两年后又跟萨珊波斯开战；教会为卡尔西顿会议的信经闹分裂，罗马和君士坦丁堡已断交十多年。匈人帝国散了，斯拉夫人正往多瑙河边扩散；中国是南北朝，北魏孝文帝迁都洛阳、改汉俗不久。"], [1000, "1000年", "东罗马正当盛年，西欧的新格局刚刚定型", "巴西尔二世的东罗马正跟保加利亚苦战，十几年后吞了它；帮手里有罗斯人：弗拉基米尔988年受洗、娶了皇帝的妹妹，派来的兵成了瓦良格卫队。西边，奥托王朝的皇帝（这一年是奥托三世）管着德意志和意大利，还亲手立了教宗；法兰西归了刚开张的卡佩王朝；克吕尼的修院越开越多，教会改革正在酝酿，五十多年后东西教会分裂。西班牙的科尔多瓦哈里发国盛极将衰；巴格达的哈里发早成了摆设，埃及归了法蒂玛王朝。中国是北宋，五年后与辽订澶渊之盟。"]];
 function historyEra(e,scene=0){return HISTORY_ERAS.find(era=>era.items.some(([id,from=0,to=Infinity])=>id===e.id&&scene>=from&&scene<=to));}
 const TOPIC_ENTRIES=[
  {id:'topic-grail-sword',kind:'topic',ch:0,num:'01',title:'圣杯与剑：统治的成本',short:'圣杯与剑：统治的成本',en:'The Grail and the Sword: the Cost of Rule',
