@@ -70,6 +70,6 @@ const PHRASES=[["history-egypt-roman/0", "托勒密只是亚历山大之后的�
    await page.close();
   }
   assert.deepEqual(errors,[]);
-  console.log('PASS: chapters Ⅸ 埃及 and Ⅹ 波斯 — two lines of their own off the trunk at the early states ('+EGYPT.length+' + '+PERSIA.length+' new sections; the Ptolemaic and Seleucid sections now on these lines), ≤230 chars per scene, 老无’s readings in bold, '+PHRASES.length+' phrase checks, eyebrows, tree labels, shoots to 619 and 579, every scene drawn and fitted, desktop and 390px, offline, no page errors.');
+  console.log('PASS: chapters Ⅸ 埃及 and Ⅹ 波斯—阿拉伯 — two lines of their own off the trunk at the early states ('+EGYPT.length+' + '+PERSIA.length+' new sections; the Ptolemaic and Seleucid sections now on these lines), ≤230 chars per scene, 老无’s readings in bold, '+PHRASES.length+' phrase checks, eyebrows, tree labels, shoots to 642 and 945, every scene drawn and fitted, desktop and 390px, offline, no page errors.');
  }catch(e){console.error(e);process.exitCode=1;}finally{await browser.close();}
 })();
