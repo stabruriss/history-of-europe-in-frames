@@ -135,6 +135,21 @@ const SLICE_YEARS=[-1000,-500,0,500,1000];
      if(label==='desktop'){assert.ok(s.pins>0&&s.fits,id+'/'+i+' '+JSON.stringify(s));await page.screenshot({path:path.join(shots,`${id.replace('history-','')}_${i}-desktop.png`)});}
     }
    }
+   // 老无 2026-10-28 夜: “见‘X’一节” jumps to that section; “另见‘X’主线” switches to that line at the station of the year its
+   // sentence names (860: the Rus and Byzantium), or, with no year, at the scene's start (750: 西法兰克王国, the line's first station).
+   for(const [from,scene,sel,to,line] of [['history-eeurope-slavs',0,'a.xref[data-go="history-eeurope-roman"]','history-eeurope-roman',null],
+     ['history-france-west-francia',1,'a.xref[data-line="east"]','history-eeurope-byzantium','east'],
+     ['history-eeurope-rus',0,'a.xref[data-line="france"]','history-france-west-francia','france'],
+     ['history-eeurope-pontic',3,'a.xref[data-line="china"]','history-china-western-han','china']]){
+    await page.evaluate(({from,scene})=>go(from,{scene}),{from,scene});await wait(80);
+    const text=await page.$eval('#sceneContext',e=>e.textContent);
+    assert.ok(await page.$(`#sceneContext ${sel}`),from+'/'+scene+' has the link '+sel);
+    await page.evaluate(sel=>document.querySelector(`#sceneContext ${sel}`).click(),sel);await wait(120);
+    const at=await page.evaluate(()=>[ENTRIES[cur].id,treeLine,currentStation()?.t]);
+    if(to)assert.equal(at[0],to,from+' → '+to);
+    if(line)assert.equal(at[1],line,from+' → on '+line);
+    assert.ok(text.includes('见“'),'the pointer text itself stays as written');
+   }
    // The eyebrow names the era and chapter Ⅺ (第十一章), on 东欧 and on the shared station alike.
    for(const [id,era] of [['history-eeurope-pontic','东欧：草原、森林与港口'],['history-eeurope-byzantium','东欧：斯拉夫人与罗斯']]){
     await page.evaluate(id=>go(id),id);await wait(60);
