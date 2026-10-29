@@ -8,6 +8,7 @@ Teaching regions only, not reconstructed frontiers.  Points are (lon, lat).
 - mHimyar: Yemen, the Himyarite kingdom about 500; mAksum: the kingdom of Aksum about 525 (Eritrea and Tigray).
 - ibBaetica, ibLusitania, ibTarraconensis: the three provinces of Roman Spain after Augustus (cut from gIberia).
 - mChristianNorth1000/1031, mCaliphCordoba1000, mTaifasBerber1035, mTaifasSlav1035, mTaifasLocal1035: Córdoba and its break-up.
+- mBuyids945, mSamanids945: the Buyids in Iraq and western Iran, the Samanids in Khurasan and Transoxiana.
 """
 import json
 from pathlib import Path
@@ -70,6 +71,12 @@ regions['mTaifasBerber1035'] = BERBER
 regions['mTaifasSlav1035'] = SLAV
 regions['mTaifasLocal1035'] = (G('gIberia').difference(regions['mChristianNorth1031'].buffer(.02)).difference(BERBER.buffer(.02))
                                .difference(SLAV.buffer(.02)).buffer(0))
+
+# ---------- 945: two of the states the Abbasid empire broke into ----------
+regions['mBuyids945'] = L([(42.6, 34.6), (44.5, 35.3), (46.5, 35.5), (48.5, 36.6), (50.5, 36.9), (52.8, 36.3), (53.8, 35.0), (53.0, 33.0), (55.0, 30.5),
+                           (54.6, 27.8), (52.5, 27.2), (51.0, 28.2), (50.2, 29.8), (48.5, 30.0), (47.8, 30.4), (46.5, 31.0), (44.8, 31.2), (43.0, 32.4)])
+regions['mSamanids945'] = L([(55.0, 38.6), (57.5, 40.5), (60.5, 42.5), (64.0, 43.6), (68.5, 43.3), (71.7, 42.0), (71.5, 40.0), (70.0, 37.6), (68.0, 37.0),
+                             (65.5, 35.9), (63.0, 34.6), (61.0, 34.3), (59.5, 35.0), (57.5, 35.6), (55.5, 36.6)])
 
 
 def rounded(g):

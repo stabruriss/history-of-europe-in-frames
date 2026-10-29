@@ -7,7 +7,8 @@ const shots=path.join(__dirname,'shots-v19');require('node:fs').mkdirSync(shots,
 const wait=ms=>new Promise(r=>setTimeout(r,ms));
 const IDS=['history-faith-israel','history-faith-first-temple','history-faith-second-temple','history-faith-jesus','history-faith-church','history-faith-empire-church','history-faith-councils','history-faith-ephesus','history-faith-two-cities','history-faith-papacy','history-faith-three-chapters','history-faith-gregory'];
 // 老无 2026-10-27: 加洛林神学之争 (787—870), beside the East's last iconoclasm on a passing loop.
-const IDS_ALL=[...IDS,'history-faith-carolingian'];
+// 老无 2026-10-28: on to 1054 — the papacy as a prize, the emperors' church beside Cluny, the reformers.
+const IDS_ALL=[...IDS,'history-faith-carolingian','history-faith-dark-century','history-faith-imperial-church','history-faith-cluny','history-faith-leo-ix'];
 (async()=>{
  const browser=await puppeteer.launch({executablePath:process.env.CHROME_PATH||'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true});
  const errors=[];
@@ -34,14 +35,14 @@ const IDS_ALL=[...IDS,'history-faith-carolingian'];
      people:Object.entries(FIGURE_SCENES).filter(([k])=>k.startsWith('history-faith-')).reduce((n,[,v])=>n+v.length,0)};
    },IDS);
    assert.equal(report.chapter,'犹太教与基督教');
-   assert.deepEqual(report.ids,IDS_ALL);assert.deepEqual(report.scenes,[5,5,4,6,4,4,3,3,3,6,5,8,6]);
+   assert.deepEqual(report.ids,IDS_ALL);assert.deepEqual(report.scenes,[5,5,4,6,4,4,3,3,3,6,5,8,6,4,4,5,5]);
    assert.ok(report.paras.every(p=>p.chars<=230),'Concise: '+JSON.stringify(report.paras.filter(p=>p.chars>230)));
-   assert.ok(report.bold);assert.equal(report.moments,46);assert.equal(report.people,29);
+   assert.ok(report.bold);assert.equal(report.moments,63);assert.equal(report.people,38);
    assert.deepEqual(report.branch,['基督教',6,'trunk',-1400,1056,true]);assert.equal(report.levant,false);
-   assert.deepEqual(report.eras,[['faith-israel','古代以色列',IDS.slice(0,2)],['faith-temple','第二圣殿时期',IDS.slice(2,4)],['faith-church','早期教会',IDS.slice(4,9)],['faith-medieval','中世纪早期的教会',IDS.slice(9)],['faith-carolingian','加洛林时代的教会',['history-faith-carolingian']]]);
+   assert.deepEqual(report.eras,[['faith-israel','古代以色列',IDS.slice(0,2)],['faith-temple','第二圣殿时期',IDS.slice(2,4)],['faith-church','早期教会',IDS.slice(4,9)],['faith-medieval','中世纪早期的教会',IDS.slice(9)],['faith-carolingian','加洛林时代的教会',['history-faith-carolingian']],['faith-reform','帝国与教会改革',['history-faith-dark-century','history-faith-imperial-church','history-faith-cluny','history-faith-leo-ix']]]);
    // The line now forks off before 卡迭石: the Hebrews' nomadic origins come first.
    // After 641 the line runs through the shared stations of the East Roman dynasties.
-   assert.deepEqual(report.line,['history-migration/0','history-farming/0','history-farming/1','history-palaces/0',...IDS.map(id=>id+'/0'),...['history-empire-constans/0','history-empire-isaurian/0','history-faith-carolingian/0','history-empire-amorian/0','history-empire-macedonian/3']]);
+   assert.deepEqual(report.line,['history-migration/0','history-farming/0','history-farming/1','history-palaces/0',...IDS.map(id=>id+'/0'),...['history-empire-constans/0','history-empire-isaurian/0','history-faith-carolingian/0','history-empire-amorian/0','history-faith-dark-century/0','history-germany-otto/0','history-faith-imperial-church/0','history-faith-cluny/0','history-faith-leo-ix/0','history-empire-macedonian/3']]);
    assert.equal(report.shoot[1],1056);assert.match(report.shoot[2],/大分裂以后/);
    // Exodus and the Temple, once scattered, now sit on this line.
    assert.equal(report.dark,1);assert.equal(report.pompeyHoly,false);assert.equal(report.holy,3);
@@ -125,7 +126,7 @@ const IDS_ALL=[...IDS,'history-faith-carolingian'];
    // After 641 the church’s story runs through the shared stations of the East Roman dynasties.
    for(const [id,era] of [['history-empire-constans','东罗马：希拉克略王朝与二十年无政府'],['history-empire-isaurian','东罗马：圣像之争时代'],['history-empire-amorian','东罗马：圣像之争时代'],['history-empire-macedonian/3','东罗马：马其顿王朝']]){await page.evaluate(id=>go(id),id);assert.equal(await page.$eval('#entryEyebrow',e=>e.textContent),era+' · 第六章');}
    if(label==='desktop'){
-    assert.ok(await page.$$eval('#toc .tree-item[data-branch="faith"] small',es=>es.length===13&&es.every(e=>e.textContent.startsWith('基督教 · '))));
+    assert.ok(await page.$$eval('#toc .tree-item[data-branch="faith"] small',es=>es.length===17&&es.every(e=>e.textContent.startsWith('基督教 · '))));
     assert.match(await page.$eval('#indexCaption',e=>e.textContent),/Ⅶ 基督教/);
    }
    for(const e of IDS)for(let i=0;i<await page.evaluate(id=>HISTORY_ENTRIES.find(x=>x.id===id).scenes.length,e);i++){

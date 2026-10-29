@@ -7,7 +7,7 @@ const shots=path.join(__dirname,'shots-v33');require('node:fs').mkdirSync(shots,
 const wait=ms=>new Promise(r=>setTimeout(r,ms));
 // 老无 2026-10-21: 埃及 and 波斯 are lines of their own, leaving the trunk at the early states; the Ptolemies, the Seleucids,
 // Rome and Byzantium are passing rulers of these lands. The old Ptolemaic and Seleucid sections now sit on these lines.
-const EGYPT=["history-egypt-old", "history-egypt-middle", "history-egypt-new", "history-egypt-late", "history-egypt-roman", "history-egypt-byzantine"],PERSIA=["history-persia-elam", "history-persia-achaemenid", "history-persia-parthia", "history-persia-sasanian", "history-persia-khosrow", "history-persia-khosrow-ii", "history-arab-conquest"];
+const EGYPT=["history-egypt-old", "history-egypt-middle", "history-egypt-new", "history-egypt-late", "history-egypt-roman", "history-egypt-byzantine"],PERSIA=["history-persia-elam", "history-persia-achaemenid", "history-persia-parthia", "history-persia-sasanian", "history-persia-khosrow", "history-persia-khosrow-ii", "history-arab-conquest", "history-arab-rise", "history-arab-muhammad", "history-arab-expansion", "history-arab-caliphs", "history-arab-constantinople", "history-arab-abbasid"];
 const PHRASES=[["history-egypt-roman/0", "托勒密只是亚历山大之后的统治者"], ["history-egypt-roman/0", "临时统治者"], ["history-egypt-old/0", "两土地"], ["history-egypt-old/0", "纳尔迈"], ["history-egypt-old/2", "工人村"], ["history-egypt-old/2", "梅雷尔"], ["history-egypt-old/3", "第一中间期"], ["history-egypt-middle/1", "塞姆纳"], ["history-egypt-middle/2", "喜克索斯"], ["history-egypt-middle/2", "没有证据"], ["history-egypt-middle/3", "雅赫摩斯"], ["history-egypt-new/0", "哈特谢普苏特"], ["history-egypt-new/1", "阿赫那吞"], ["history-egypt-new/2", "卡迭石"], ["history-egypt-new/3", "罢工"], ["history-egypt-late/0", "舍顺克"], ["history-egypt-late/1", "皮耶"], ["history-egypt-late/2", "瑙克拉提斯"], ["history-egypt-late/3", "冈比西斯"], ["history-egypt-late/3", "“波斯”主线"], ["history-egypt-new/1", "“基督教”主线"], ["history-egypt-roman/1", "人头税"], ["history-egypt-roman/2", "犹太"], ["history-egypt-roman/3", "庞培柱"], ["history-egypt-byzantine/0", "科普特"], ["history-egypt-byzantine/1", "阿皮翁"], ["history-egypt-byzantine/2", "菲莱"], ["history-persia-parthia/0", "所谓的“东方”也是一个道理"], ["history-persia-parthia/0", "过客"], ["history-persia-elam/0", "原始埃兰文"], ["history-persia-elam/1", "汉谟拉比"], ["history-persia-elam/2", "亚述巴尼拔"], ["history-persia-elam/3", "米底"], ["history-persia-achaemenid/0", "居鲁士"], ["history-persia-achaemenid/1", "贝希斯敦"], ["history-persia-achaemenid/2", "二十个省"], ["history-persia-achaemenid/2", "书同文"], ["history-persia-achaemenid/3", "高加米拉"], ["history-persia-parthia/1", "大宛列传"], ["history-persia-parthia/2", "苏雷那"], ["history-persia-parthia/3", "甘英"], ["history-persia-parthia/4", "阿尔达希尔"], ["history-persia-sasanian/1", "瓦勒良"], ["history-persia-sasanian/2", "卡提尔"], ["history-persia-sasanian/3", "尼西比斯"], ["history-persia-khosrow/0", "东方教会"], ["history-persia-khosrow/1", "嚈哒"], ["history-persia-khosrow/2", "马兹达克"], ["history-persia-khosrow/3", "德赫干"], ["history-persia-khosrow/4", "“东罗马”主线"]];
 (async()=>{
  const browser=await puppeteer.launch({executablePath:process.env.CHROME_PATH||'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true});
@@ -32,17 +32,17 @@ const PHRASES=[["history-egypt-roman/0", "托勒密只是亚历山大之后的�
      eras:HISTORY_ERAS.filter(e=>/^(egypt|persia)-/.test(e.id)).map(e=>[e.id,e.items.map(([id])=>id)]),
      shoots:TREE_FUTURE.filter(f=>['egypt','persia'].includes(f[0])).map(f=>[f[0],f[1]])};
    });
-   assert.deepEqual(report.chapters,['埃及','波斯']);
+   assert.deepEqual(report.chapters,['埃及','波斯—阿拉伯']);
    assert.deepEqual(report.egypt,EGYPT);assert.deepEqual(report.persia,PERSIA);
    assert.ok(report.paras.every(p=>p.chars<=230),'Concise: '+JSON.stringify(report.paras.filter(p=>p.chars>230)));
    assert.match(report.strong,/临时统治者/,'老无’s reading of Egypt in bold');assert.match(report.strong,/东方/,'老无’s reading of the East in bold');
-   assert.deepEqual(report.lines,[['埃及',1,'trunk',-3100,642],['波斯',0,'trunk',-3200,651]]);assert.equal(report.old,false);
+   assert.deepEqual(report.lines,[['埃及',1,'trunk',-3100,642],['波斯—阿拉伯',0,'trunk',-3200,945]]);assert.equal(report.old,false);
    assert.deepEqual(report.rows,{ptolemaic:'egypt',eastern:'persia'});
    // Each line leaves the trunk at the early states, then runs through its own dynasties; the Hellenistic sections sit in the middle.
    assert.deepEqual(report.egyptLine.slice(0,3),['history-migration','history-farming','history-farming']);
    // The shared stations (the last Roman–Persian war, the Arab conquests) sit on 埃及 and 波斯 too.
    assert.deepEqual(report.egyptLine.slice(3),['history-egypt-old','history-egypt-middle','history-egypt-new','history-egypt-late','history-ptolemaic-bargain','history-egypt-roman','history-egypt-byzantine','history-empire-heraclius','history-arab-conquest']);
-   assert.deepEqual(report.persiaLine.slice(3),['history-persia-elam','history-persia-achaemenid','history-eastern-kingdoms','history-persia-parthia','history-persia-sasanian','history-persia-khosrow','history-persia-khosrow-ii','history-empire-heraclius','history-arab-conquest']);
+   assert.deepEqual(report.persiaLine.slice(3),['history-persia-elam','history-persia-achaemenid','history-eastern-kingdoms','history-persia-parthia','history-persia-sasanian','history-persia-khosrow','history-persia-khosrow-ii','history-empire-heraclius','history-arab-conquest','history-arab-rise','history-arab-muhammad','history-arab-expansion','history-arab-caliphs','history-arab-constantinople','history-spain-fall','history-arab-abbasid']);
    assert.deepEqual(report.shoots,[['egypt',642],['persia',651]]);
    for(const [scene,phrase] of PHRASES){
     await page.evaluate(s=>go(s),scene);

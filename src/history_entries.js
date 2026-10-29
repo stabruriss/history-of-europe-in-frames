@@ -1,6 +1,6 @@
 /* Chapters organize the argument; eras independently group dated map scenes. */
 const HISTORY_CONTENT=/*__HISTORY_CONTENT__*/;
-const HISTORY_CH=['上古与黑暗时代','希腊城邦时代','马其顿与帝国','希腊化世界','罗马','罗马帝国','犹太教与基督教','中国对照','埃及','波斯'];
+const HISTORY_CH=['上古与黑暗时代','希腊城邦时代','马其顿与帝国','希腊化世界','罗马','罗马帝国','犹太教与基督教','中国对照','埃及','波斯—阿拉伯'];
 const HC={athens:'#276582',sparta:'#99462e',mino:'#ad7c25',myc:'#637541',hittite:'#866347',
   persia:'#8b644c',thebes:'#387568',macedon:'#6b4d72',war:'#a03327',neutral:'#887b65',route:'#2a7182',celt:'#64763f',parthia:'#765b78',rome:'#a34f36',faith:'#41508c',china:'#2e6b4e',byz:'#93324f',france:'#2b6cb0',germany:'#4a4440',italy:'#b8652a',spain:'#a2337f'};
 const HV={aegean:[[34.3,20.2],[41.3,29.6]],greece:[[35.6,20.4],[39.8,25.1]],
@@ -605,7 +605,6 @@ Object.assign(HS,{
   ab_wasit:['瓦西特','Wasit',32.19,46.3,'702年哈查只在库法与巴士拉之间新建，驻叙利亚兵，作伊拉克总督的治所。'],
   ab_karbala:['卡尔巴拉','Karbala',32.616,44.024,'库法西北的平原；680年侯赛因在此被杀，后来成了什叶派的圣地。'],
   ab_zab:['大扎卜河','Great Zab',36.0,43.45,'摩苏尔东南、底格里斯河的支流，此处只标大致方位；750年1月阿拔斯军在此击溃倭马亚主力。'],
-  ab_baghdad:['巴格达','Baghdad',33.315,44.366,'762年曼苏尔在底格里斯河西岸建圆城，763年把衙门从库法迁来。'],
   ab_samarra:['萨迈拉','Samarra',34.198,43.874,'巴格达以北约125公里；836—892年阿拔斯王朝的都城，宫城外是一圈圈兵营。'],
   ab_tus:['图斯','Tus',36.29,59.61,'呼罗珊的城，今马什哈德一带；809年哈伦·拉希德死在这里，818年里达也死于此。'],
   ab_bukhara:['布哈拉','Bukhara',39.775,64.42,'河中的绿洲城；布哈里生在这里，9世纪末起是萨曼王朝的都城。'],
@@ -2190,194 +2189,6 @@ const HISTORY_ENTRIES=[
     hr(d,[[47.2,19.0],[46.4,15.5],[46.09,13.43],[45.44,10.99],[45.19,9.15]],HC.myc);
    },[['fill',HC.athens,'查士丁尼死时的帝国（565年）'],['fill',HC.myc,'伦巴第人（约600年）'],['dline',HC.myc,'568年伦巴第人南下（概略）'],['dot',HC.war,'围了三年的帕维亚'],['dot','#2a2018','帝国守住的拉文纳、罗马、那不勒斯']])
  ]},
-{id:'history-spain-before-goths',ch:5,title:'西哥特以前的西班牙：矿山、粮仓与战场',short:'西哥特以前的西班牙',en:'Spain before the Visigoths',period:'约前1100—468年',c:HC.spain,
- scenes:[
-  hs('约前1100—前237年','拿货换矿','东部、南部沿海是伊比利亚人，中部、西北是凯尔特人；提尔人建加迪尔，希腊人建恩波里翁，都为金属而来；迦太基后来接手这张商站网。',[[34.8,-10.2],[44.4,11.2]],d=>{
-    ha(d,'hCarthageAfrica',HC.mino,{fillOpacity:.22});
-    hp(d,'ib_gadir');hp(d,'ib_riotinto');hp(d,'ib_emporion');
-    hp(d,'massilia',{note:'福西亚希腊人约前600年所建的港城；恩波里翁的希腊人与它同出一源。'});
-    hp(d,'carthage',{left:1,note:'传说提尔人约前814年所建；前6世纪起接手腓尼基人在西地中海的商站网。'});
-    hl(d,'伊比利亚人','Iberians',39.3,-0.9,HC.neutral);hl(d,'凯尔特伊比利亚人','Celtiberians',41.4,-2.6,HC.celt);
-    hl(d,'凯尔特人','Celts',42.7,-7.4,HC.celt);hl(d,'卢西塔尼亚人','Lusitanians',39.6,-7.4,HC.neutral);
-    hl(d,'塔特索斯：银','Tartessos: silver',37.75,-5.9,HC.hittite);hl(d,'马斯提亚','Mastia',37.75,-1.2,HC.mino);
-    hr(d,[[37.0,10.0],[37.4,5.0],[37.1,0.5],[36.6,-2.4],[36.4,-4.8],[36.45,-6.15]],HC.mino);
-    hr(d,[[43.25,5.3],[42.6,3.7],[42.15,3.2]],HC.athens);
-   },[['fill',HC.mino,'迦太基本土'],['dline',HC.mino,'腓尼基人、迦太基人的航路（概略）'],['dline',HC.athens,'希腊人的航路（概略）'],['dot','#2a2018','商站与矿区']]),
-  hs('前237—前206年','汉尼拔的本钱','巴卡家族从加迪尔起家，攥住南部银矿，建新迦太基；前219年围萨贡托开战；前209年大西庇阿攻下新迦太基，前206年伊利帕一战，迦太基退出西班牙。',[[35.6,-10.0],[44.0,4.6]],d=>{
-    ha(d,'hBarcidSpain',HC.mino,{fillOpacity:.26});
-    hp(d,'ib_gadir',{note:'前237年哈米尔卡在此登陆；前206年迦太基人从这里撤走，城随即归附罗马。'});
-    hp(d,'ib_castulo');
-    hp(d,'cartnova',{kind:'battle',note:'约前227年哈斯德鲁巴所建，国库、军械和各部落的人质都在城里；前209年大西庇阿一天攻下。'});
-    hp(d,'saguntum',{kind:'battle',note:'受罗马保护的城；前219年汉尼拔围了八个月攻下，第二次布匿战争由此开打。'});
-    hp(d,'tarraco',{note:'前218年起罗马在西班牙的基地；前209年大西庇阿从这里南下。'});
-    hp(d,'ib_ilipa',{kind:'battle',left:1});
-    hr(d,[[37.6,-0.98],[39.68,-0.27],[40.7,0.7],[41.6,2.0],[42.4,2.95]],HC.mino);
-    hr(d,[[41.12,1.25],[40.3,0.3],[39.4,-0.35],[38.3,-0.55],[37.7,-0.95]],HC.rome);
-   },[['fill',HC.mino,'巴卡家族的西班牙（前218年前后）'],['dline',HC.mino,'前218年汉尼拔北上（概略）'],['dline',HC.rome,'前209年大西庇阿南下（概略）'],['dot',HC.war,'萨贡托、新迦太基与伊利帕'],['dot','#2a2018','加迪尔、卡斯图洛与塔拉科']]),
-  hs('前197—前19年','两百年才打下来','罗马从东南沿海往内陆一步步推：努曼提亚顶了二十年，卢西塔尼亚人打游击；内战打到伊莱尔达、蒙达；前19年平定西北的坎塔布里亚人。',[[35.6,-10.0],[44.4,4.4]],d=>{
-    ha(d,'gIberia',HC.rome,{fillOpacity:.06,dashArray:'5 4'});ha(d,'hHispania133',HC.rome,{fillOpacity:.22});
-    hp(d,'numantia',{kind:'battle',note:'凯尔特伊比利亚人的小城，顶了二十年；前133年被小西庇阿围到人吃人才降，城被夷平。'});
-    hp(d,'cartnova',{note:'据波利比乌斯，城外银矿有四万人开采，每天给罗马国库挣两万五千德拉克马。'});
-    hp(d,'osca',{note:'塞多留在此办学，让西班牙贵族子弟穿罗马袍子念希腊、拉丁书，其实是人质。'});
-    hp(d,'ilerda',{kind:'battle',note:'前49年恺撒在此逼降庞培的两员部将。'});
-    hp(d,'munda',{kind:'battle',note:'前45年恺撒在此打败庞培的儿子，内战最后一场大仗。'});
-    hl(d,'卢西塔尼亚人：维里亚图斯','Lusitanians: Viriathus',39.6,-7.5,HC.neutral);
-    hl(d,'坎塔布里亚人：前19年才平定','Cantabri, subdued 19 BC',43.05,-4.4,HC.celt);
-   },[['fill',HC.rome,'罗马的西班牙（约前133年）'],['dash',HC.rome,'前19年全境平定'],['dot',HC.war,'努曼提亚与内战战场'],['dot','#2a2018','新迦太基银矿与塞多留的奥斯卡']]),
-  hs('前19—409年','最罗马化的行省','三个行省；西北的金子、南方的粮酒油源源运往罗马，倒掉的油罐在罗马城南堆成泰斯塔乔山；图拉真生在意大利卡。',[[35.0,-10.0],[44.6,13.2]],d=>{
-    ha(d,'ibBaetica',HC.rome,{fillOpacity:.30});ha(d,'ibLusitania',HC.rome,{fillOpacity:.18});ha(d,'ibTarraconensis',HC.rome,{fillOpacity:.10});
-    hp(d,'ib_corduba');hp(d,'ib_emerita');hp(d,'tarraco',{note:'塔拉科嫩西斯行省的首府。'});
-    hp(d,'italica',{left:1,note:'前206年大西庇阿安置伤兵所建；图拉真生在这里，哈德良一家也出自这里。'});
-    hp(d,'ib_medulas');
-    hp(d,'rome',{note:'城南台伯河边的泰斯塔乔山，约五千三百万只油罐的碎片堆成，大半是贝提卡的橄榄油罐。'});
-    hl(d,'贝提卡','Baetica',37.6,-5.3,HC.rome);hl(d,'卢西塔尼亚','Lusitania',39.6,-7.4,HC.rome);hl(d,'塔拉科嫩西斯','Tarraconensis',41.7,-3.0,HC.rome);
-    hr(d,[[36.75,-6.35],[36.0,-5.5],[36.9,-1.5],[38.7,3.0],[40.6,8.6],[41.74,12.24]],HC.route);
-   },[['fill',HC.rome,'奥古斯都定下的三个行省（概略）'],['dline',HC.route,'贝提卡的粮酒油运往罗马（概略）'],['dot','#2a2018','行省首府、意大利卡、金矿与罗马']]),
-  hs('409—468年','拿蛮族打蛮族','409年三族入西班牙，411年抽签分地；416—418年瓦利亚替罗马打仗，后落户阿基坦；456年狄奥多里克二世在奥尔维戈河大破苏维汇。',[[35.6,-10.0],[47.6,4.6]],d=>{
-    ha(d,'eVisigoths460',HC.spain,{fillOpacity:.22});ha(d,'e476Suebi',HC.thebes,{fillOpacity:.3});
-    hp(d,'tolosa',{note:'418年西哥特人落户阿基坦，以此为都。'});
-    hp(d,'k_barcelona',{note:'415年西哥特王阿陶尔夫在此遇刺；继位的瓦利亚随后与罗马议和。'});
-    hp(d,'r_orbigo',{kind:'battle'});
-    hp(d,'bracara',{left:1,note:'苏维汇人的都城；456年10月被狄奥多里克二世攻破洗劫，苏维汇王逃到波尔图被擒。'});
-    hp(d,'ib_emerita',{note:'439年苏维汇王攻入梅里达，一度以此为都。'});
-    hp(d,'calpe',{note:'429年5月，盖萨里克带全体汪达尔人从这一带渡海去北非。'});
-    hl(d,'411年：苏维汇人、哈斯丁汪达尔人','411: Suebi, Hasding Vandals',42.4,-6.4,HC.thebes);
-    hl(d,'411年：阿兰人','411: Alans',39.6,-5.0,HC.war);hl(d,'411年：西林汪达尔人','411: Siling Vandals',37.5,-4.4,HC.macedon);
-    hl(d,'罗马（塔拉科嫩西斯）','Rome (Tarraconensis)',41.8,0.0,HC.rome);
-    hr(d,[[43.3,-1.3],[42.8,-1.65],[42.0,-3.6]],HC.war);
-    hr(d,[[41.385,2.173],[40.5,-0.8],[39.2,-3.2],[37.7,-4.9]],HC.spain);
-   },[['fill',HC.spain,'西哥特人（418年落户阿基坦，图为约460年范围）'],['fill',HC.thebes,'苏维汇人（核心在加莱西亚）'],['dline',HC.war,'409年三族翻过比利牛斯山（概略）'],['dline',HC.spain,'416—418年瓦利亚替罗马南征（概略）'],['dot',HC.war,'456年奥尔维戈河之战'],['dot','#2a2018','都城、遇刺地与渡海处']])
- ]},
-{id:'history-spain-visigoths',ch:5,title:'西哥特王国：少数人统治多数人的成本',short:'西哥特王国',en:'The Visigothic Kingdom: The Cost of a Minority’s Rule',period:'468—589年',c:HC.spain,
- scenes:[
-  hs('468—484年','趁乱扩张','468年东西罗马合兵远征北非惨败；尤里克趁势自立，拿下西班牙大半和高卢南部，484年死时王国北到卢瓦尔河、南到直布罗陀。',[[34.8,-10.5],[48.5,11.2]],d=>{
-    ha(d,'eVisigoths460',HC.spain,{fillOpacity:.1,dashArray:'5 4'});ha(d,'e476Visigoths',HC.spain,{fillOpacity:.26});
-    ha(d,'e476Suebi',HC.thebes,{fillOpacity:.24});ha(d,'e476Vandals',HC.macedon,{fillOpacity:.2});
-    hp(d,'tolosa',{note:'西哥特的都城（418—507年）。'});
-    hp(d,'w_zaragoza',{left:1,note:'尤里克的军队拿下这里和北边的潘普洛纳。'});
-    hp(d,'tarraco',{note:'这一带的罗马贵族起兵抵抗，被尤里克的军队打垮。'});
-    hp(d,'clermont',{note:'475年西部皇帝把克莱蒙所在的奥弗涅割给尤里克求和。'});
-    hp(d,'k_arles',{note:'476年后被尤里克拿下；484年他死在这里。'});
-    hp(d,'carthage',{kind:'battle',left:1,note:'468年东西罗马的联合舰队在附近的邦角外被汪达尔人火船烧败。'});
-   },[['fill',HC.spain,'尤里克治下的西哥特王国（约476—484年）'],['dash',HC.spain,'460年前后的西哥特地盘'],['fill',HC.thebes,'苏维汇'],['fill',HC.macedon,'汪达尔'],['dot',HC.war,'468年远征北非惨败处'],['dot','#2a2018','都城与一路拿下的城']]),
-  hs('507—531年','败给克洛维，缩回西班牙','507年武耶一败，图卢兹和高卢大半丢给法兰克；东哥特出兵保住塞普提马尼亚；531年再败于纳博讷，王廷一路南移到托莱多。',[[37.5,-6.5],[48.8,9.5]],d=>{
-    ha(d,'lFranks511',HC.myc,{fillOpacity:.2});ha(d,'lVisigoths510',HC.spain,{fillOpacity:.26});ha(d,'lOstrogoths510',HC.war,{fillOpacity:.14,dashArray:'5 4'});
-    hp(d,'vouille',{kind:'battle'});
-    hp(d,'tolosa',{note:'507年被法兰克人攻下，王室库藏被抢走。'});
-    hp(d,'narbo',{kind:'battle',left:1,note:'507年后的临时王都；531年阿马拉里克在城下败给法兰克人。'});
-    hp(d,'k_barcelona',{note:'6世纪前期王廷一度设在这里。'});
-    hp(d,'toletum',{note:'6世纪中叶起王廷常驻于此。'});
-    hr(d,[[46.64,0.17],[45.2,0.9],[43.6,1.44]],HC.myc);
-   },[['fill',HC.myc,'克洛维死时的法兰克（511年）'],['fill',HC.spain,'507年以后的西哥特'],['dash',HC.war,'东哥特（约510年，含普罗旺斯）'],['dline',HC.myc,'507年克洛维南下（概略）'],['dot',HC.war,'武耶与纳博讷'],['dot','#2a2018','王廷南移：巴塞罗那、托莱多']]),
-  hs('475—552年','少数统治多数的成本','哥特人只占人口百分之三四，分两套法、两个教会；天主教主教是罗马人的头面人物；552年贵族夺位请来东罗马兵，丢了东南沿海七十年。',[[35.5,-10.0],[46.5,4.5]],d=>{
-    ha(d,'lVisigoths510',HC.spain,{fillOpacity:.22});ha(d,'e476Suebi',HC.thebes,{fillOpacity:.22});ha(d,'lSpania',HC.athens,{fillOpacity:.32});
-    hp(d,'clermont',{note:'主教西多尼乌斯约474年写信诉苦：许多城的主教死了补不上人。'});
-    hp(d,'vg_cordoba',{kind:'battle'});
-    hp(d,'hispalis',{note:'约551年阿塔纳吉尔德在此起兵夺位，随后请来东罗马兵。'});
-    hp(d,'vg_merida',{left:1});hp(d,'vg_cartagena',{left:1});
-   },[['fill',HC.spain,'西哥特王国（6世纪前期）'],['fill',HC.thebes,'苏维汇'],['fill',HC.athens,'552年后东罗马占的东南沿海'],['dot',HC.war,'反抗阿里乌派国王的科尔多瓦'],['dot','#2a2018','克莱蒙、塞维利亚、梅里达与卡塔赫纳']]),
-  hs('531—586年','国王专权，和贵族杀来杀去','531—554年四个国王接连被杀；莱奥维吉尔德年年出征、穿王袍坐王座、抄贵族的家；长子改宗造反，被父亲擒杀。',[[35.8,-10.0],[44.2,4.5]],d=>{
-    ha(d,'lVisigoths510',HC.spain,{fillOpacity:.22});ha(d,'e476Suebi',HC.thebes,{fillOpacity:.22,dashArray:'5 4'});ha(d,'lSpania',HC.athens,{fillOpacity:.3});
-    hp(d,'toletum',{note:'莱奥维吉尔德的都城；他头一个在此穿王袍、坐王座。'});
-    hp(d,'recopolis',{note:'578年莱奥维吉尔德新建，以次子雷卡雷德的名字命名。'});
-    hp(d,'hispalis',{kind:'battle',left:1,note:'579年长子赫尔梅内吉尔德在此造反，583—584年被父亲围攻。'});
-    hp(d,'vg_cordoba',{left:1,note:'572年莱奥维吉尔德夜袭收回；584年长子在此被擒。'});
-    hp(d,'bracara',{left:1,note:'苏维汇的都城；585年莱奥维吉尔德吞并其国。'});
-    hp(d,'tarraco',{note:'585年赫尔梅内吉尔德在此被杀。'});
-   },[['fill',HC.spain,'西哥特王国'],['dash',HC.thebes,'585年被吞并的苏维汇王国'],['fill',HC.athens,'东罗马的西班牙省'],['dot',HC.war,'长子起兵的塞维利亚'],['dot','#2a2018','都城、新城与长子被擒、被杀之地']]),
-  hs('586—589年','一国一教','雷卡雷德587年改宗，把抄没的家产还给原主；589年第三次托莱多会议上，哥特人当众弃阿里乌派，主教们从此站到国王一边。',[[35.8,-10.0],[44.6,4.8]],d=>{
-    ha(d,'lVisigoths600',HC.spain,{fillOpacity:.24});ha(d,'lSpania',HC.athens,{fillOpacity:.3});
-    hp(d,'toletum',{note:'589年5月第三次托莱多会议，国王夫妇和哥特贵族当众弃阿里乌派。'});
-    hp(d,'hispalis',{left:1,note:'主教莱安德的座城；他主持了589年的会议。'});
-    hp(d,'vg_merida',{left:1,note:'588年阿里乌派主教孙纳在此密谋反扑，事败被流放。'});
-    hp(d,'narbo',{note:'587年纳博讷省的阿里乌派起兵，引来法兰克兵，被雷卡雷德的将领击退。'});
-   },[['fill',HC.spain,'西哥特王国（约600年）'],['fill',HC.athens,'东罗马的西班牙省'],['dot','#2a2018','改宗的会场与阿里乌派反扑之地']])
- ]},
-{id:'history-spain-toledo',ch:5,title:'托莱多会议：不是穿越，是复古',short:'托莱多会议',en:'The Councils of Toledo: Not Ahead of Its Time, but a Return',period:'589—642年',c:HC.spain,
- scenes:[
-  hs('589—633年','两败俱伤，主教上场','改宗以后国王照样被杀被废；631年西塞南德借法兰克兵篡位，633年伊西多尔主持的会议替他背书，会议成了裁判。',[[36.0,-9.5],[45.0,4.5]],d=>{
-    ha(d,'lVisigoths600',HC.spain,{fillOpacity:.22});ha(d,'mFranks600',HC.myc,{fillOpacity:.14,dashArray:'5 4'});
-    hp(d,'toletum',{note:'633年第四次会议在城里的圣莱奥卡迪娅教堂召开。'});
-    hp(d,'hispalis',{left:1,note:'伊西多尔的主教座；他主持了633年的会议。'});
-    hp(d,'tolosa',{note:'631年达戈贝尔特派去帮西塞南德的法兰克兵从这里出发。'});
-    hp(d,'w_zaragoza',{kind:'battle',left:1,note:'631年法兰克兵开到这里，哥特人当场推西塞南德为王。'});
-    hr(d,[[43.6,1.44],[42.75,0.4],[41.65,-0.889]],HC.myc);
-   },[['fill',HC.spain,'西哥特王国'],['dash',HC.myc,'法兰克（约600年）'],['dline',HC.myc,'631年法兰克援兵（概略）'],['dot',HC.war,'推立西塞南德的萨拉戈萨'],['dot','#2a2018','会场与主持人的座城']]),
-  hs('633—638年','发誓“不许杀国王”','633年第75条把诅咒念了三遍；636年定下每次全国会议都要再念一遍；638年又重申，此后多数会议照办。',[[36.0,-10.0],[44.6,4.8]],d=>{
-    ha(d,'lVisigoths600',HC.spain,{fillOpacity:.2});
-    hp(d,'toletum',{note:'633、636、638年三次会议都在此召开，一次次加上保护国王的条文。'});
-    hp(d,'hispalis',{left:1});hp(d,'vg_merida',{left:1});hp(d,'bracara',{left:1});hp(d,'tarraco');
-    hp(d,'narbo',{note:'636年纳博讷省的主教没来开会，638年全到了。'});
-   },[['fill',HC.spain,'西哥特王国'],['dot','#2a2018','六个教省的首府：托莱多、塞维利亚、梅里达、布拉加、塔拉戈纳、纳博讷']]),
-  hs('633—672年','教权保国王，换来监督','第75条的后半截约束国王；伊西多尔说行得正才是王；新王即位先发誓；672年万巴受膏，是基督教国王受膏可靠记载的头一回。',[[36.5,-8.5],[42.5,-1.0]],d=>{
-    ha(d,'lVisigoths600',HC.spain,{fillOpacity:.18});
-    hp(d,'toletum',{note:'672年9月万巴在城郊的圣彼得圣保罗教堂受膏。'});
-    hp(d,'hispalis',{left:1,note:'伊西多尔在此写《词源》：行得正才是王。'});
-   },[['fill',HC.spain,'西哥特王国'],['dot','#2a2018','受膏的托莱多与伊西多尔的塞维利亚']]),
-  hs('633—653年','贵族得了选王与被选的权','633年定由显贵和主教共推新王；636、638年定只有哥特贵族可当选；653年定在都城或先王死处推选，宫廷伯爵头一回签名。',[[38.0,-8.0],[42.5,-2.5]],d=>{
-    ha(d,'lVisigoths600',HC.spain,{fillOpacity:.18});
-    hp(d,'toletum',{note:'都城：653年定新王在都城或先王死去的地方推选。'});
-    hl(d,'赫尔蒂科斯（大致方位）：672年先王死处','Gerticos (approx.)',40.9,-5.7,HC.spain);
-   },[['fill',HC.spain,'西哥特王国'],['dot','#2a2018','都城托莱多']]),
-  hs('1—7世纪','不是穿越，是复古','塔西佗笔下的日耳曼人按出身选王、大事集会定、祭司管会场；东哥特人举盾推王；托莱多会议是部落大会加主教。',[[36.0,-10.0],[55.5,16.0]],d=>{
-    ha(d,'eGermania9',HC.celt,{fillOpacity:.16,dashArray:'5 4'});ha(d,'lVisigoths600',HC.spain,{fillOpacity:.2});
-    hl(d,'日耳曼尼亚：部众大会','Germania: the folk assembly',51.8,10.5,HC.celt);
-    hl(d,'雷加塔（大致方位）：536年举盾推王','Regata, 536 (approx.)',41.45,13.05,HC.war);
-    hp(d,'toletum',{note:'托莱多会议：部落大会搬进了教堂。'});
-   },[['dash',HC.celt,'塔西佗笔下的日耳曼尼亚'],['fill',HC.spain,'西哥特王国'],['dot','#2a2018','托莱多']])
- ]},
-{id:'history-spain-fall',ch:5,title:'西哥特的覆亡：强王打破平衡',short:'西哥特的覆亡',en:'The Fall of the Visigoths: A Strong King Breaks the Balance',period:'642—711年',c:HC.spain,
- scenes:[
-  hs('642—672年','强王打破平衡','642年钦达斯文特政变，据弗雷德加杀了七百名贵族；646年会议加码惩办叛国；649年立子共治、绕开选举；654年两族同守一部法。',[[37.0,-8.5],[43.0,0.5]],d=>{
-    ha(d,'lVisigoths600',HC.spain,{fillOpacity:.22});
-    hp(d,'toletum',{note:'都城；646年第七次会议在此加重惩办叛国。'});
-    hp(d,'vg_guarrazar',{left:1});
-    hp(d,'w_zaragoza',{note:'主教布劳略的座城；他上书请钦达斯文特立儿子共治。'});
-   },[['fill',HC.spain,'西哥特王国'],['dot','#2a2018','都城、出土还愿冠的瓜拉萨尔与萨拉戈萨']]),
-  hs('672—710年','西班牙又乱了','673年平叛将领自立；680年万巴病中被剃发让位；埃吉卡解誓、清洗哥特贵族，693年大主教谋逆，694年犹太人被罚为奴。',[[37.0,-8.0],[44.6,5.0]],d=>{
-    ha(d,'lVisigoths600',HC.spain,{fillOpacity:.2});ha(d,'mSeptimania',HC.war,{fillOpacity:.16,dashArray:'5 4'});
-    hp(d,'toletum',{note:'681年会议在此认可埃尔维希；693年托莱多大主教在此密谋杀埃吉卡。'});
-    hp(d,'narbo',{kind:'battle',note:'673年派去平叛的将领保罗在此自立为王。'});
-    hp(d,'vg_nimes',{kind:'battle'});
-    hp(d,'vg_pampliega',{left:1});
-   },[['fill',HC.spain,'西哥特王国'],['dash',HC.war,'673年倒向保罗的塞普提马尼亚'],['dot',HC.war,'叛乱的纳博讷与尼姆'],['dot','#2a2018','都城与万巴被剃发的潘普列加']]),
-  hs('710—713年','一战而亡','710年罗德里克乱中夺位；711年塔里克渡海，瓜达莱特一战国王战死、托莱多失守；713年狄奥德米尔订约保地保教、按年交税。',[[35.2,-9.5],[41.5,0.5]],d=>{
-    ha(d,'lVisigoths600',HC.spain,{fillOpacity:.18});
-    hp(d,'vg_ceuta',{left:1});hp(d,'calpe',{note:'711年塔里克在此登陆，阿拉伯人叫它“塔里克山”。'});
-    hp(d,'guadalete',{kind:'battle',left:1,note:'711年7月罗德里克在这一带战死，确切地点不明。'});
-    hp(d,'toletum',{note:'都城，罗德里克战死后随即失守。'});
-    hp(d,'tudmir',{note:'713年狄奥德米尔在这一带订约，保住七座城。'});
-    hr(d,[[35.89,-5.32],[36.14,-5.35]],HC.myc);hr(d,[[36.6,-5.9],[37.9,-4.8],[39.86,-4.02]],HC.myc);
-   },[['fill',HC.spain,'西哥特王国'],['dline',HC.myc,'711年塔里克渡海北进（概略）'],['dot',HC.war,'瓜达莱特（大致方位）'],['dot','#2a2018','休达、登陆处、都城与713年订约之地']])
- ]},
-{id:'history-spain-andalus',ch:5,title:'后倭马亚王朝：请外族兵平乱，反被外族兵打烂',short:'后倭马亚王朝',en:'The Umayyads of Córdoba',period:'756—1031年',c:HC.spain,
- scenes:[
-  hs('756—910年','倭马亚的遗孤另立门户','750年逃过屠杀的倭马亚王子756年在科尔多瓦称埃米尔；不归穆斯林管的基督徒只剩北边的阿斯图里亚斯和比利牛斯山一带。',[[33.6,-10.2],[44.6,11.2]],d=>{
-    ha(d,'mAndalus814',HC.myc,{fillOpacity:.2});ha(d,'mAsturias800',HC.spain,{fillOpacity:.32});ha(d,'mSpanishMarch801',HC.spain,{fillOpacity:.18,dashArray:'4 4'});
-    hp(d,'an_almunecar',{left:1});hp(d,'an_cordoba',{note:'756年5月阿卜杜勒·拉赫曼在城外打败总督，进城称埃米尔。'});
-    hp(d,'an_covadonga',{kind:'battle'});hp(d,'an_leon',{note:'910年阿斯图里亚斯诸王从奥维耶多迁都于此。'});
-    hp(d,'an_pamplona',{note:'巴斯克人的中心；824年前后有了自己的王。'});hp(d,'k_barcelona',{note:'801年法兰克人攻下，成了西班牙边区的中心。'});
-    hl(d,'自幼发拉底河一路西逃（750—755年）','Flight from the Euphrates (750–755)',35.0,8.4,HC.route);
-    hr(d,[[35.68,10.1],[36.4,6.6],[36.6,4.2],[35.3,0.2],[35.2,-2.9],[35.7,-5.3],[36.73,-3.69],[37.09,-4.39],[37.39,-5.98],[37.885,-4.779]],HC.route);
-   },[['fill',HC.myc,'科尔多瓦的倭马亚埃米尔国（约814年）'],['fill',HC.spain,'阿斯图里亚斯王国（约800年）'],['dash',HC.spain,'查理曼设的西班牙边区（801年起）'],['dline',HC.route,'阿卜杜勒·拉赫曼的逃亡路（概略）'],['dot',HC.war,'722年的科瓦东加'],['dot','#2a2018','登陆处、科尔多瓦与北方基督徒的据点']]),
-  hs('912—1002年','引外族兵平乱','912年政令出不了科尔多瓦；靠外来的奴隶兵、柏柏尔兵平乱，929年称哈里发；曼苏尔把兵全换成外人，年年北征。',[[33.4,-10.2],[44.4,4.6]],d=>{
-    ha(d,'mCaliphCordoba1000',HC.myc,{fillOpacity:.22});ha(d,'mChristianNorth1000',HC.spain,{fillOpacity:.26});
-    hp(d,'an_cordoba',{note:'城西建了扎哈拉宫城（936年起）；曼苏尔另建扎希拉宫城理政。'});hp(d,'an_bobastro',{kind:'battle'});
-    hp(d,'an_santiago',{kind:'battle'});hp(d,'an_leon',{kind:'battle',note:'986年、994年两度被曼苏尔攻破。'});
-    hp(d,'k_barcelona',{kind:'battle',note:'985年7月被曼苏尔攻破洗劫。'});hp(d,'vg_ceuta',{left:1,note:'931年归科尔多瓦；北非招来的柏柏尔兵多从这一带渡海。'});
-    hr(d,[[37.885,-4.779],[38.92,-6.34],[39.98,-6.54],[40.66,-7.91],[41.15,-8.61],[42.88,-8.545]],HC.war);
-    hr(d,[[34.03,-5.0],[35.78,-5.81],[36.13,-5.45],[37.885,-4.779]],HC.mino);
-   },[['fill',HC.myc,'科尔多瓦哈里发国（约1000年，含北非属地）'],['fill',HC.spain,'北方基督教诸国（约1000年）'],['dline',HC.war,'997年曼苏尔北上圣地亚哥（概略）'],['dline',HC.mino,'北非柏柏尔兵渡海而来（概略）'],['dot',HC.war,'928年攻下的博瓦斯特罗与曼苏尔攻破的城'],['dot','#2a2018','科尔多瓦与休达']]),
-  hs('1008—1031年','外族兵互相打，打烂了','柏柏尔兵、斯拉夫兵各拥哈里发，各请基督徒帮打；1013年科尔多瓦被洗劫，1031年废哈里发，外族将领分地成泰法。',[[35.6,-9.8],[44.2,4.6]],d=>{
-    ha(d,'mTaifasLocal1035',HC.myc,{fillOpacity:.2});ha(d,'mTaifasBerber1035',HC.mino,{fillOpacity:.32});ha(d,'mTaifasSlav1035',HC.hittite,{fillOpacity:.32});
-    ha(d,'mChristianNorth1031',HC.spain,{fillOpacity:.18,dashArray:'4 4'});
-    hp(d,'an_cordoba',{kind:'battle',note:'1013年柏柏尔兵破城大掠；据伊本·哈兹姆所记，他家城西的宅院被抢，成了兵营。'});
-    hp(d,'hispalis',{note:'阿拉伯人阿巴德家的泰法；1035年在此推出假希沙姆。'});hp(d,'an_granada');hp(d,'an_denia');hp(d,'an_gormaz');
-    hp(d,'w_zaragoza',{note:'阿拉伯豪族图吉布家、后来胡德家的泰法。'});
-    hl(d,'莱昂王国','Kingdom of León',42.75,-6.3,HC.spain);hl(d,'卡斯蒂利亚伯国','County of Castile',42.35,-3.9,HC.spain);
-    hl(d,'纳瓦拉王国','Kingdom of Pamplona',42.95,-1.75,HC.spain);hl(d,'巴塞罗那伯国','County of Barcelona',41.95,2.0,HC.spain);
-   },[['fill',HC.mino,'新来的柏柏尔将领分得的泰法（约1035年）'],['fill',HC.hittite,'斯拉夫将领与曼苏尔家旧部的泰法'],['fill',HC.myc,'本地豪族的泰法（含早年定居的柏柏尔家族）'],['dash',HC.spain,'北方基督教诸国（约1031年，含1010年割给卡斯蒂利亚的杜罗河边堡）'],['dot',HC.war,'1013年被洗劫的科尔多瓦'],['dot','#2a2018','几个泰法的都城与割给卡斯蒂利亚的戈尔马斯']])
- ]},
 {id:'history-west-merovingians',ch:5,title:'墨洛温王朝：分家与宫相',short:'墨洛温王朝',en:'The Merovingians: Partitions and Mayors of the Palace',period:'561—751年',c:HC.celt,
  scenes:[
   hs('561—567年','四个儿子分家','561年克洛泰尔一世死，四子照分家产的规矩分国；567年后定成奥斯特拉西亚、纽斯特里亚、勃艮第、阿基坦四大块，分家混战令集权难维。',[[42.2,-5.0],[53.8,11.2]],d=>{
@@ -2732,6 +2543,194 @@ const HISTORY_ENTRIES=[
     hp(d,'it_sanleo',{kind:'battle'});hp(d,'ot_hamburg');
     hr(d,[[41.9,12.48],[44.5,11.3],[47.3,11.4],[50.1,8.7],[53.55,9.99]],HC.route);
    },[['fill',HC.germany,'奥托一世的帝国'],['fill',HC.faith,'教宗国'],['dline',HC.route,'本笃五世被押往汉堡（概略）'],['dot',HC.war,'963年围圣莱奥'],['dot','#2a2018','罗马与汉堡']])
+ ]},
+{id:'history-spain-before-goths',ch:5,title:'西哥特以前的西班牙：矿山、粮仓与战场',short:'西哥特以前的西班牙',en:'Spain before the Visigoths',period:'约前1100—468年',c:HC.spain,
+ scenes:[
+  hs('约前1100—前237年','拿货换矿','东部、南部沿海是伊比利亚人，中部、西北是凯尔特人；提尔人建加迪尔，希腊人建恩波里翁，都为金属而来；迦太基后来接手这张商站网。',[[34.8,-10.2],[44.4,11.2]],d=>{
+    ha(d,'hCarthageAfrica',HC.mino,{fillOpacity:.22});
+    hp(d,'ib_gadir');hp(d,'ib_riotinto');hp(d,'ib_emporion');
+    hp(d,'massilia',{note:'福西亚希腊人约前600年所建的港城；恩波里翁的希腊人与它同出一源。'});
+    hp(d,'carthage',{left:1,note:'传说提尔人约前814年所建；前6世纪起接手腓尼基人在西地中海的商站网。'});
+    hl(d,'伊比利亚人','Iberians',39.3,-0.9,HC.neutral);hl(d,'凯尔特伊比利亚人','Celtiberians',41.4,-2.6,HC.celt);
+    hl(d,'凯尔特人','Celts',42.7,-7.4,HC.celt);hl(d,'卢西塔尼亚人','Lusitanians',39.6,-7.4,HC.neutral);
+    hl(d,'塔特索斯：银','Tartessos: silver',37.75,-5.9,HC.hittite);hl(d,'马斯提亚','Mastia',37.75,-1.2,HC.mino);
+    hr(d,[[37.0,10.0],[37.4,5.0],[37.1,0.5],[36.6,-2.4],[36.4,-4.8],[36.45,-6.15]],HC.mino);
+    hr(d,[[43.25,5.3],[42.6,3.7],[42.15,3.2]],HC.athens);
+   },[['fill',HC.mino,'迦太基本土'],['dline',HC.mino,'腓尼基人、迦太基人的航路（概略）'],['dline',HC.athens,'希腊人的航路（概略）'],['dot','#2a2018','商站与矿区']]),
+  hs('前237—前206年','汉尼拔的本钱','巴卡家族从加迪尔起家，攥住南部银矿，建新迦太基；前219年围萨贡托开战；前209年大西庇阿攻下新迦太基，前206年伊利帕一战，迦太基退出西班牙。',[[35.6,-10.0],[44.0,4.6]],d=>{
+    ha(d,'hBarcidSpain',HC.mino,{fillOpacity:.26});
+    hp(d,'ib_gadir',{note:'前237年哈米尔卡在此登陆；前206年迦太基人从这里撤走，城随即归附罗马。'});
+    hp(d,'ib_castulo');
+    hp(d,'cartnova',{kind:'battle',note:'约前227年哈斯德鲁巴所建，国库、军械和各部落的人质都在城里；前209年大西庇阿一天攻下。'});
+    hp(d,'saguntum',{kind:'battle',note:'受罗马保护的城；前219年汉尼拔围了八个月攻下，第二次布匿战争由此开打。'});
+    hp(d,'tarraco',{note:'前218年起罗马在西班牙的基地；前209年大西庇阿从这里南下。'});
+    hp(d,'ib_ilipa',{kind:'battle',left:1});
+    hr(d,[[37.6,-0.98],[39.68,-0.27],[40.7,0.7],[41.6,2.0],[42.4,2.95]],HC.mino);
+    hr(d,[[41.12,1.25],[40.3,0.3],[39.4,-0.35],[38.3,-0.55],[37.7,-0.95]],HC.rome);
+   },[['fill',HC.mino,'巴卡家族的西班牙（前218年前后）'],['dline',HC.mino,'前218年汉尼拔北上（概略）'],['dline',HC.rome,'前209年大西庇阿南下（概略）'],['dot',HC.war,'萨贡托、新迦太基与伊利帕'],['dot','#2a2018','加迪尔、卡斯图洛与塔拉科']]),
+  hs('前197—前19年','两百年才打下来','罗马从东南沿海往内陆一步步推：努曼提亚顶了二十年，卢西塔尼亚人打游击；内战打到伊莱尔达、蒙达；前19年平定西北的坎塔布里亚人。',[[35.6,-10.0],[44.4,4.4]],d=>{
+    ha(d,'gIberia',HC.rome,{fillOpacity:.06,dashArray:'5 4'});ha(d,'hHispania133',HC.rome,{fillOpacity:.22});
+    hp(d,'numantia',{kind:'battle',note:'凯尔特伊比利亚人的小城，顶了二十年；前133年被小西庇阿围到人吃人才降，城被夷平。'});
+    hp(d,'cartnova',{note:'据波利比乌斯，城外银矿有四万人开采，每天给罗马国库挣两万五千德拉克马。'});
+    hp(d,'osca',{note:'塞多留在此办学，让西班牙贵族子弟穿罗马袍子念希腊、拉丁书，其实是人质。'});
+    hp(d,'ilerda',{kind:'battle',note:'前49年恺撒在此逼降庞培的两员部将。'});
+    hp(d,'munda',{kind:'battle',note:'前45年恺撒在此打败庞培的儿子，内战最后一场大仗。'});
+    hl(d,'卢西塔尼亚人：维里亚图斯','Lusitanians: Viriathus',39.6,-7.5,HC.neutral);
+    hl(d,'坎塔布里亚人：前19年才平定','Cantabri, subdued 19 BC',43.05,-4.4,HC.celt);
+   },[['fill',HC.rome,'罗马的西班牙（约前133年）'],['dash',HC.rome,'前19年全境平定'],['dot',HC.war,'努曼提亚与内战战场'],['dot','#2a2018','新迦太基银矿与塞多留的奥斯卡']]),
+  hs('前19—409年','最罗马化的行省','三个行省；西北的金子、南方的粮酒油源源运往罗马，倒掉的油罐在罗马城南堆成泰斯塔乔山；图拉真生在意大利卡。',[[35.0,-10.0],[44.6,13.2]],d=>{
+    ha(d,'ibBaetica',HC.rome,{fillOpacity:.30});ha(d,'ibLusitania',HC.rome,{fillOpacity:.18});ha(d,'ibTarraconensis',HC.rome,{fillOpacity:.10});
+    hp(d,'ib_corduba');hp(d,'ib_emerita');hp(d,'tarraco',{note:'塔拉科嫩西斯行省的首府。'});
+    hp(d,'italica',{left:1,note:'前206年大西庇阿安置伤兵所建；图拉真生在这里，哈德良一家也出自这里。'});
+    hp(d,'ib_medulas');
+    hp(d,'rome',{note:'城南台伯河边的泰斯塔乔山，约五千三百万只油罐的碎片堆成，大半是贝提卡的橄榄油罐。'});
+    hl(d,'贝提卡','Baetica',37.6,-5.3,HC.rome);hl(d,'卢西塔尼亚','Lusitania',39.6,-7.4,HC.rome);hl(d,'塔拉科嫩西斯','Tarraconensis',41.7,-3.0,HC.rome);
+    hr(d,[[36.75,-6.35],[36.0,-5.5],[36.9,-1.5],[38.7,3.0],[40.6,8.6],[41.74,12.24]],HC.route);
+   },[['fill',HC.rome,'奥古斯都定下的三个行省（概略）'],['dline',HC.route,'贝提卡的粮酒油运往罗马（概略）'],['dot','#2a2018','行省首府、意大利卡、金矿与罗马']]),
+  hs('409—468年','拿蛮族打蛮族','409年三族入西班牙，411年抽签分地；416—418年瓦利亚替罗马打仗，后落户阿基坦；456年狄奥多里克二世在奥尔维戈河大破苏维汇。',[[35.6,-10.0],[47.6,4.6]],d=>{
+    ha(d,'eVisigoths460',HC.spain,{fillOpacity:.22});ha(d,'e476Suebi',HC.thebes,{fillOpacity:.3});
+    hp(d,'tolosa',{note:'418年西哥特人落户阿基坦，以此为都。'});
+    hp(d,'k_barcelona',{note:'415年西哥特王阿陶尔夫在此遇刺；继位的瓦利亚随后与罗马议和。'});
+    hp(d,'r_orbigo',{kind:'battle'});
+    hp(d,'bracara',{left:1,note:'苏维汇人的都城；456年10月被狄奥多里克二世攻破洗劫，苏维汇王逃到波尔图被擒。'});
+    hp(d,'ib_emerita',{note:'439年苏维汇王攻入梅里达，一度以此为都。'});
+    hp(d,'calpe',{note:'429年5月，盖萨里克带全体汪达尔人从这一带渡海去北非。'});
+    hl(d,'411年：苏维汇人、哈斯丁汪达尔人','411: Suebi, Hasding Vandals',42.4,-6.4,HC.thebes);
+    hl(d,'411年：阿兰人','411: Alans',39.6,-5.0,HC.war);hl(d,'411年：西林汪达尔人','411: Siling Vandals',37.5,-4.4,HC.macedon);
+    hl(d,'罗马（塔拉科嫩西斯）','Rome (Tarraconensis)',41.8,0.0,HC.rome);
+    hr(d,[[43.3,-1.3],[42.8,-1.65],[42.0,-3.6]],HC.war);
+    hr(d,[[41.385,2.173],[40.5,-0.8],[39.2,-3.2],[37.7,-4.9]],HC.spain);
+   },[['fill',HC.spain,'西哥特人（418年落户阿基坦，图为约460年范围）'],['fill',HC.thebes,'苏维汇人（核心在加莱西亚）'],['dline',HC.war,'409年三族翻过比利牛斯山（概略）'],['dline',HC.spain,'416—418年瓦利亚替罗马南征（概略）'],['dot',HC.war,'456年奥尔维戈河之战'],['dot','#2a2018','都城、遇刺地与渡海处']])
+ ]},
+{id:'history-spain-visigoths',ch:5,title:'西哥特王国：少数人统治多数人的成本',short:'西哥特王国',en:'The Visigothic Kingdom: The Cost of a Minority’s Rule',period:'468—589年',c:HC.spain,
+ scenes:[
+  hs('468—484年','趁乱扩张','468年东西罗马合兵远征北非惨败；尤里克趁势自立，拿下西班牙大半和高卢南部，484年死时王国北到卢瓦尔河、南到直布罗陀。',[[34.8,-10.5],[48.5,11.2]],d=>{
+    ha(d,'eVisigoths460',HC.spain,{fillOpacity:.1,dashArray:'5 4'});ha(d,'e476Visigoths',HC.spain,{fillOpacity:.26});
+    ha(d,'e476Suebi',HC.thebes,{fillOpacity:.24});ha(d,'e476Vandals',HC.macedon,{fillOpacity:.2});
+    hp(d,'tolosa',{note:'西哥特的都城（418—507年）。'});
+    hp(d,'w_zaragoza',{left:1,note:'尤里克的军队拿下这里和北边的潘普洛纳。'});
+    hp(d,'tarraco',{note:'这一带的罗马贵族起兵抵抗，被尤里克的军队打垮。'});
+    hp(d,'clermont',{note:'475年西部皇帝把克莱蒙所在的奥弗涅割给尤里克求和。'});
+    hp(d,'k_arles',{note:'476年后被尤里克拿下；484年他死在这里。'});
+    hp(d,'carthage',{kind:'battle',left:1,note:'468年东西罗马的联合舰队在附近的邦角外被汪达尔人火船烧败。'});
+   },[['fill',HC.spain,'尤里克治下的西哥特王国（约476—484年）'],['dash',HC.spain,'460年前后的西哥特地盘'],['fill',HC.thebes,'苏维汇'],['fill',HC.macedon,'汪达尔'],['dot',HC.war,'468年远征北非惨败处'],['dot','#2a2018','都城与一路拿下的城']]),
+  hs('507—531年','败给克洛维，缩回西班牙','507年武耶一败，图卢兹和高卢大半丢给法兰克；东哥特出兵保住塞普提马尼亚；531年再败于纳博讷，王廷一路南移到托莱多。',[[37.5,-6.5],[48.8,9.5]],d=>{
+    ha(d,'lFranks511',HC.myc,{fillOpacity:.2});ha(d,'lVisigoths510',HC.spain,{fillOpacity:.26});ha(d,'lOstrogoths510',HC.war,{fillOpacity:.14,dashArray:'5 4'});
+    hp(d,'vouille',{kind:'battle'});
+    hp(d,'tolosa',{note:'507年被法兰克人攻下，王室库藏被抢走。'});
+    hp(d,'narbo',{kind:'battle',left:1,note:'507年后的临时王都；531年阿马拉里克在城下败给法兰克人。'});
+    hp(d,'k_barcelona',{note:'6世纪前期王廷一度设在这里。'});
+    hp(d,'toletum',{note:'6世纪中叶起王廷常驻于此。'});
+    hr(d,[[46.64,0.17],[45.2,0.9],[43.6,1.44]],HC.myc);
+   },[['fill',HC.myc,'克洛维死时的法兰克（511年）'],['fill',HC.spain,'507年以后的西哥特'],['dash',HC.war,'东哥特（约510年，含普罗旺斯）'],['dline',HC.myc,'507年克洛维南下（概略）'],['dot',HC.war,'武耶与纳博讷'],['dot','#2a2018','王廷南移：巴塞罗那、托莱多']]),
+  hs('475—552年','少数统治多数的成本','哥特人只占人口百分之三四，分两套法、两个教会；天主教主教是罗马人的头面人物；552年贵族夺位请来东罗马兵，丢了东南沿海七十年。',[[35.5,-10.0],[46.5,4.5]],d=>{
+    ha(d,'lVisigoths510',HC.spain,{fillOpacity:.22});ha(d,'e476Suebi',HC.thebes,{fillOpacity:.22});ha(d,'lSpania',HC.athens,{fillOpacity:.32});
+    hp(d,'clermont',{note:'主教西多尼乌斯约474年写信诉苦：许多城的主教死了补不上人。'});
+    hp(d,'vg_cordoba',{kind:'battle'});
+    hp(d,'hispalis',{note:'约551年阿塔纳吉尔德在此起兵夺位，随后请来东罗马兵。'});
+    hp(d,'vg_merida',{left:1});hp(d,'vg_cartagena',{left:1});
+   },[['fill',HC.spain,'西哥特王国（6世纪前期）'],['fill',HC.thebes,'苏维汇'],['fill',HC.athens,'552年后东罗马占的东南沿海'],['dot',HC.war,'反抗阿里乌派国王的科尔多瓦'],['dot','#2a2018','克莱蒙、塞维利亚、梅里达与卡塔赫纳']]),
+  hs('531—586年','国王专权，和贵族杀来杀去','531—554年四个国王接连被杀；莱奥维吉尔德年年出征、穿王袍坐王座、抄贵族的家；长子改宗造反，被父亲擒杀。',[[35.8,-10.0],[44.2,4.5]],d=>{
+    ha(d,'lVisigoths510',HC.spain,{fillOpacity:.22});ha(d,'e476Suebi',HC.thebes,{fillOpacity:.22,dashArray:'5 4'});ha(d,'lSpania',HC.athens,{fillOpacity:.3});
+    hp(d,'toletum',{note:'莱奥维吉尔德的都城；他头一个在此穿王袍、坐王座。'});
+    hp(d,'recopolis',{note:'578年莱奥维吉尔德新建，以次子雷卡雷德的名字命名。'});
+    hp(d,'hispalis',{kind:'battle',left:1,note:'579年长子赫尔梅内吉尔德在此造反，583—584年被父亲围攻。'});
+    hp(d,'vg_cordoba',{left:1,note:'572年莱奥维吉尔德夜袭收回；584年长子在此被擒。'});
+    hp(d,'bracara',{left:1,note:'苏维汇的都城；585年莱奥维吉尔德吞并其国。'});
+    hp(d,'tarraco',{note:'585年赫尔梅内吉尔德在此被杀。'});
+   },[['fill',HC.spain,'西哥特王国'],['dash',HC.thebes,'585年被吞并的苏维汇王国'],['fill',HC.athens,'东罗马的西班牙省'],['dot',HC.war,'长子起兵的塞维利亚'],['dot','#2a2018','都城、新城与长子被擒、被杀之地']]),
+  hs('586—589年','一国一教','雷卡雷德587年改宗，把抄没的家产还给原主；589年第三次托莱多会议上，哥特人当众弃阿里乌派，主教们从此站到国王一边。',[[35.8,-10.0],[44.6,4.8]],d=>{
+    ha(d,'lVisigoths600',HC.spain,{fillOpacity:.24});ha(d,'lSpania',HC.athens,{fillOpacity:.3});
+    hp(d,'toletum',{note:'589年5月第三次托莱多会议，国王夫妇和哥特贵族当众弃阿里乌派。'});
+    hp(d,'hispalis',{left:1,note:'主教莱安德的座城；他主持了589年的会议。'});
+    hp(d,'vg_merida',{left:1,note:'588年阿里乌派主教孙纳在此密谋反扑，事败被流放。'});
+    hp(d,'narbo',{note:'587年纳博讷省的阿里乌派起兵，引来法兰克兵，被雷卡雷德的将领击退。'});
+   },[['fill',HC.spain,'西哥特王国（约600年）'],['fill',HC.athens,'东罗马的西班牙省'],['dot','#2a2018','改宗的会场与阿里乌派反扑之地']])
+ ]},
+{id:'history-spain-toledo',ch:5,title:'托莱多会议：不是穿越，是复古',short:'托莱多会议',en:'The Councils of Toledo: Not Ahead of Its Time, but a Return',period:'589—642年',c:HC.spain,
+ scenes:[
+  hs('589—633年','两败俱伤，主教上场','改宗以后国王照样被杀被废；631年西塞南德借法兰克兵篡位，633年伊西多尔主持的会议替他背书，会议成了裁判。',[[36.0,-9.5],[45.0,4.5]],d=>{
+    ha(d,'lVisigoths600',HC.spain,{fillOpacity:.22});ha(d,'mFranks600',HC.myc,{fillOpacity:.14,dashArray:'5 4'});
+    hp(d,'toletum',{note:'633年第四次会议在城里的圣莱奥卡迪娅教堂召开。'});
+    hp(d,'hispalis',{left:1,note:'伊西多尔的主教座；他主持了633年的会议。'});
+    hp(d,'tolosa',{note:'631年达戈贝尔特派去帮西塞南德的法兰克兵从这里出发。'});
+    hp(d,'w_zaragoza',{kind:'battle',left:1,note:'631年法兰克兵开到这里，哥特人当场推西塞南德为王。'});
+    hr(d,[[43.6,1.44],[42.75,0.4],[41.65,-0.889]],HC.myc);
+   },[['fill',HC.spain,'西哥特王国'],['dash',HC.myc,'法兰克（约600年）'],['dline',HC.myc,'631年法兰克援兵（概略）'],['dot',HC.war,'推立西塞南德的萨拉戈萨'],['dot','#2a2018','会场与主持人的座城']]),
+  hs('633—638年','发誓“不许杀国王”','633年第75条把诅咒念了三遍；636年定下每次全国会议都要再念一遍；638年又重申，此后多数会议照办。',[[36.0,-10.0],[44.6,4.8]],d=>{
+    ha(d,'lVisigoths600',HC.spain,{fillOpacity:.2});
+    hp(d,'toletum',{note:'633、636、638年三次会议都在此召开，一次次加上保护国王的条文。'});
+    hp(d,'hispalis',{left:1});hp(d,'vg_merida',{left:1});hp(d,'bracara',{left:1});hp(d,'tarraco');
+    hp(d,'narbo',{note:'636年纳博讷省的主教没来开会，638年全到了。'});
+   },[['fill',HC.spain,'西哥特王国'],['dot','#2a2018','六个教省的首府：托莱多、塞维利亚、梅里达、布拉加、塔拉戈纳、纳博讷']]),
+  hs('633—672年','教权保国王，换来监督','第75条的后半截约束国王；伊西多尔说行得正才是王；新王即位先发誓；672年万巴受膏，是基督教国王受膏可靠记载的头一回。',[[36.5,-8.5],[42.5,-1.0]],d=>{
+    ha(d,'lVisigoths600',HC.spain,{fillOpacity:.18});
+    hp(d,'toletum',{note:'672年9月万巴在城郊的圣彼得圣保罗教堂受膏。'});
+    hp(d,'hispalis',{left:1,note:'伊西多尔在此写《词源》：行得正才是王。'});
+   },[['fill',HC.spain,'西哥特王国'],['dot','#2a2018','受膏的托莱多与伊西多尔的塞维利亚']]),
+  hs('633—653年','贵族得了选王与被选的权','633年定由显贵和主教共推新王；636、638年定只有哥特贵族可当选；653年定在都城或先王死处推选，宫廷伯爵头一回签名。',[[38.0,-8.0],[42.5,-2.5]],d=>{
+    ha(d,'lVisigoths600',HC.spain,{fillOpacity:.18});
+    hp(d,'toletum',{note:'都城：653年定新王在都城或先王死去的地方推选。'});
+    hl(d,'赫尔蒂科斯（大致方位）：672年先王死处','Gerticos (approx.)',40.9,-5.7,HC.spain);
+   },[['fill',HC.spain,'西哥特王国'],['dot','#2a2018','都城托莱多']]),
+  hs('1—7世纪','不是穿越，是复古','塔西佗笔下的日耳曼人按出身选王、大事集会定、祭司管会场；东哥特人举盾推王；托莱多会议是部落大会加主教。',[[36.0,-10.0],[55.5,16.0]],d=>{
+    ha(d,'eGermania9',HC.celt,{fillOpacity:.16,dashArray:'5 4'});ha(d,'lVisigoths600',HC.spain,{fillOpacity:.2});
+    hl(d,'日耳曼尼亚：部众大会','Germania: the folk assembly',51.8,10.5,HC.celt);
+    hl(d,'雷加塔（大致方位）：536年举盾推王','Regata, 536 (approx.)',41.45,13.05,HC.war);
+    hp(d,'toletum',{note:'托莱多会议：部落大会搬进了教堂。'});
+   },[['dash',HC.celt,'塔西佗笔下的日耳曼尼亚'],['fill',HC.spain,'西哥特王国'],['dot','#2a2018','托莱多']])
+ ]},
+{id:'history-spain-fall',ch:5,title:'西哥特的覆亡：强王打破平衡',short:'西哥特的覆亡',en:'The Fall of the Visigoths: A Strong King Breaks the Balance',period:'642—711年',c:HC.spain,
+ scenes:[
+  hs('642—672年','强王打破平衡','642年钦达斯文特政变，据弗雷德加杀了七百名贵族；646年会议加码惩办叛国；649年立子共治、绕开选举；654年两族同守一部法。',[[37.0,-8.5],[43.0,0.5]],d=>{
+    ha(d,'lVisigoths600',HC.spain,{fillOpacity:.22});
+    hp(d,'toletum',{note:'都城；646年第七次会议在此加重惩办叛国。'});
+    hp(d,'vg_guarrazar',{left:1});
+    hp(d,'w_zaragoza',{note:'主教布劳略的座城；他上书请钦达斯文特立儿子共治。'});
+   },[['fill',HC.spain,'西哥特王国'],['dot','#2a2018','都城、出土还愿冠的瓜拉萨尔与萨拉戈萨']]),
+  hs('672—710年','西班牙又乱了','673年平叛将领自立；680年万巴病中被剃发让位；埃吉卡解誓、清洗哥特贵族，693年大主教谋逆，694年犹太人被罚为奴。',[[37.0,-8.0],[44.6,5.0]],d=>{
+    ha(d,'lVisigoths600',HC.spain,{fillOpacity:.2});ha(d,'mSeptimania',HC.war,{fillOpacity:.16,dashArray:'5 4'});
+    hp(d,'toletum',{note:'681年会议在此认可埃尔维希；693年托莱多大主教在此密谋杀埃吉卡。'});
+    hp(d,'narbo',{kind:'battle',note:'673年派去平叛的将领保罗在此自立为王。'});
+    hp(d,'vg_nimes',{kind:'battle'});
+    hp(d,'vg_pampliega',{left:1});
+   },[['fill',HC.spain,'西哥特王国'],['dash',HC.war,'673年倒向保罗的塞普提马尼亚'],['dot',HC.war,'叛乱的纳博讷与尼姆'],['dot','#2a2018','都城与万巴被剃发的潘普列加']]),
+  hs('710—713年','一战而亡','710年罗德里克乱中夺位；711年塔里克渡海，瓜达莱特一战国王战死、托莱多失守；713年狄奥德米尔订约保地保教、按年交税。',[[35.2,-9.5],[41.5,0.5]],d=>{
+    ha(d,'lVisigoths600',HC.spain,{fillOpacity:.18});
+    hp(d,'vg_ceuta',{left:1});hp(d,'calpe',{note:'711年塔里克在此登陆，阿拉伯人叫它“塔里克山”。'});
+    hp(d,'guadalete',{kind:'battle',left:1,note:'711年7月罗德里克在这一带战死，确切地点不明。'});
+    hp(d,'toletum',{note:'都城，罗德里克战死后随即失守。'});
+    hp(d,'tudmir',{note:'713年狄奥德米尔在这一带订约，保住七座城。'});
+    hr(d,[[35.89,-5.32],[36.14,-5.35]],HC.myc);hr(d,[[36.6,-5.9],[37.9,-4.8],[39.86,-4.02]],HC.myc);
+   },[['fill',HC.spain,'西哥特王国'],['dline',HC.myc,'711年塔里克渡海北进（概略）'],['dot',HC.war,'瓜达莱特（大致方位）'],['dot','#2a2018','休达、登陆处、都城与713年订约之地']])
+ ]},
+{id:'history-spain-andalus',ch:5,title:'后倭马亚王朝：请外族兵平乱，反被外族兵打烂',short:'后倭马亚王朝',en:'The Umayyads of Córdoba',period:'756—1031年',c:HC.spain,
+ scenes:[
+  hs('756—910年','倭马亚的遗孤另立门户','750年逃过屠杀的倭马亚王子756年在科尔多瓦称埃米尔；不归穆斯林管的基督徒只剩北边的阿斯图里亚斯和比利牛斯山一带。',[[33.6,-10.2],[44.6,11.2]],d=>{
+    ha(d,'mAndalus814',HC.myc,{fillOpacity:.2});ha(d,'mAsturias800',HC.spain,{fillOpacity:.32});ha(d,'mSpanishMarch801',HC.spain,{fillOpacity:.18,dashArray:'4 4'});
+    hp(d,'an_almunecar',{left:1});hp(d,'an_cordoba',{note:'756年5月阿卜杜勒·拉赫曼在城外打败总督，进城称埃米尔。'});
+    hp(d,'an_covadonga',{kind:'battle'});hp(d,'an_leon',{note:'910年阿斯图里亚斯诸王从奥维耶多迁都于此。'});
+    hp(d,'an_pamplona',{note:'巴斯克人的中心；824年前后有了自己的王。'});hp(d,'k_barcelona',{note:'801年法兰克人攻下，成了西班牙边区的中心。'});
+    hl(d,'自幼发拉底河一路西逃（750—755年）','Flight from the Euphrates (750–755)',35.0,8.4,HC.route);
+    hr(d,[[35.68,10.1],[36.4,6.6],[36.6,4.2],[35.3,0.2],[35.2,-2.9],[35.7,-5.3],[36.73,-3.69],[37.09,-4.39],[37.39,-5.98],[37.885,-4.779]],HC.route);
+   },[['fill',HC.myc,'科尔多瓦的倭马亚埃米尔国（约814年）'],['fill',HC.spain,'阿斯图里亚斯王国（约800年）'],['dash',HC.spain,'查理曼设的西班牙边区（801年起）'],['dline',HC.route,'阿卜杜勒·拉赫曼的逃亡路（概略）'],['dot',HC.war,'722年的科瓦东加'],['dot','#2a2018','登陆处、科尔多瓦与北方基督徒的据点']]),
+  hs('912—1002年','引外族兵平乱','912年政令出不了科尔多瓦；靠外来的奴隶兵、柏柏尔兵平乱，929年称哈里发；曼苏尔把兵全换成外人，年年北征。',[[33.4,-10.2],[44.4,4.6]],d=>{
+    ha(d,'mCaliphCordoba1000',HC.myc,{fillOpacity:.22});ha(d,'mChristianNorth1000',HC.spain,{fillOpacity:.26});
+    hp(d,'an_cordoba',{note:'城西建了扎哈拉宫城（936年起）；曼苏尔另建扎希拉宫城理政。'});hp(d,'an_bobastro',{kind:'battle'});
+    hp(d,'an_santiago',{kind:'battle'});hp(d,'an_leon',{kind:'battle',note:'986年、994年两度被曼苏尔攻破。'});
+    hp(d,'k_barcelona',{kind:'battle',note:'985年7月被曼苏尔攻破洗劫。'});hp(d,'vg_ceuta',{left:1,note:'931年归科尔多瓦；北非招来的柏柏尔兵多从这一带渡海。'});
+    hr(d,[[37.885,-4.779],[38.92,-6.34],[39.98,-6.54],[40.66,-7.91],[41.15,-8.61],[42.88,-8.545]],HC.war);
+    hr(d,[[34.03,-5.0],[35.78,-5.81],[36.13,-5.45],[37.885,-4.779]],HC.mino);
+   },[['fill',HC.myc,'科尔多瓦哈里发国（约1000年，含北非属地）'],['fill',HC.spain,'北方基督教诸国（约1000年）'],['dline',HC.war,'997年曼苏尔北上圣地亚哥（概略）'],['dline',HC.mino,'北非柏柏尔兵渡海而来（概略）'],['dot',HC.war,'928年攻下的博瓦斯特罗与曼苏尔攻破的城'],['dot','#2a2018','科尔多瓦与休达']]),
+  hs('1008—1031年','外族兵互相打，打烂了','柏柏尔兵、斯拉夫兵各拥哈里发，各请基督徒帮打；1013年科尔多瓦被洗劫，1031年废哈里发，外族将领分地成泰法。',[[35.6,-9.8],[44.2,4.6]],d=>{
+    ha(d,'mTaifasLocal1035',HC.myc,{fillOpacity:.2});ha(d,'mTaifasBerber1035',HC.mino,{fillOpacity:.32});ha(d,'mTaifasSlav1035',HC.hittite,{fillOpacity:.32});
+    ha(d,'mChristianNorth1031',HC.spain,{fillOpacity:.18,dashArray:'4 4'});
+    hp(d,'an_cordoba',{kind:'battle',note:'1013年柏柏尔兵破城大掠；据伊本·哈兹姆所记，他家城西的宅院被抢，成了兵营。'});
+    hp(d,'hispalis',{note:'阿拉伯人阿巴德家的泰法；1035年在此推出假希沙姆。'});hp(d,'an_granada');hp(d,'an_denia');hp(d,'an_gormaz');
+    hp(d,'w_zaragoza',{note:'阿拉伯豪族图吉布家、后来胡德家的泰法。'});
+    hl(d,'莱昂王国','Kingdom of León',42.75,-6.3,HC.spain);hl(d,'卡斯蒂利亚伯国','County of Castile',42.35,-3.9,HC.spain);
+    hl(d,'纳瓦拉王国','Kingdom of Pamplona',42.95,-1.75,HC.spain);hl(d,'巴塞罗那伯国','County of Barcelona',41.95,2.0,HC.spain);
+   },[['fill',HC.mino,'新来的柏柏尔将领分得的泰法（约1035年）'],['fill',HC.hittite,'斯拉夫将领与曼苏尔家旧部的泰法'],['fill',HC.myc,'本地豪族的泰法（含早年定居的柏柏尔家族）'],['dash',HC.spain,'北方基督教诸国（约1031年，含1010年割给卡斯蒂利亚的杜罗河边堡）'],['dot',HC.war,'1013年被洗劫的科尔多瓦'],['dot','#2a2018','几个泰法的都城与割给卡斯蒂利亚的戈尔马斯']])
  ]},
 {id:'history-faith-israel',ch:6,title:'从大河那边来：希伯来人与出埃及',short:'族长与出埃及',en:'From Beyond the River: the Hebrews and the Exodus',period:'约前1400—前1200年',c:HC.faith,
  scenes:[
@@ -4008,7 +4007,7 @@ const HISTORY_ENTRIES=[
    },[['fill',HC.myc,'哈里发国（约661年）'],['dline',HC.war,'656年埃及兵进麦地那（概略）'],['dot',HC.war,'骆驼之战与隋芬'],['dot','#2a2018','麦地那、库法与大马士革']]),
   hs('640—700年','迪万：只收税的王朝','阿拉伯兵住进库法、巴士拉、福斯塔特等兵城吃饷；大马士革的税由基督徒萨尔贡家经手，伊朗乡下由德赫干收税；700年前后账册改用阿拉伯文。',[[22.0,28.0],[40.0,62.0]],d=>{
     ha(d,'mCaliph661',HC.myc,{fillOpacity:.16});
-    hp(d,'ab_kufa',{note:'638年建的兵城；兵按迪万名册领饷，不下乡种地。'});hp(d,'ab_basra');hp(d,'ab_fustat',{left:1});
+    hp(d,'ab_kufa',{note:'638年建的兵城；兵按迪万名册领饷，田地仍由当地农民耕种纳税。'});hp(d,'ab_basra');hp(d,'ab_fustat',{left:1});
     hp(d,'p_damascus',{note:'叙利亚的阿拉伯兵就住进旧城；税务由萨尔贡家经手，账册用希腊文到700年。'});
     hl(d,'伊朗：德赫干照旧收税','Iran: the dihqans still collect',33.0,55.0,HC.parthia);
    },[['fill',HC.myc,'哈里发国（约661年）'],['dot','#2a2018','三座兵城与大马士革']]),
@@ -4052,7 +4051,7 @@ const HISTORY_ENTRIES=[
  scenes:[
   hs('750—809年','迁都与子弟兵','762年曼苏尔在底格里斯河边建圆城巴格达，次年衙门从库法迁来；呼罗珊兵在城北落户，号称“王朝之子”；大道东通呼罗珊。',[[20.0,30.0],[42.0,66.0]],d=>{
     ha(d,'mAbbasid800',HC.myc,{fillOpacity:.16});
-    hp(d,'ab_baghdad',{note:'762年动工，四门分朝库法、巴士拉、呼罗珊和叙利亚；城北的哈尔比亚区住着呼罗珊兵。'});
+    hp(d,'w_baghdad',{note:'762年动工，四门分朝库法、巴士拉、呼罗珊和叙利亚；城北的哈尔比亚区住着呼罗珊兵。'});
     hp(d,'ab_kufa',{note:'阿拔斯家最初在城旁建都；阿里后人的支持者扎堆。'});
     hp(d,'p_medina',{note:'762年阿里的后人“纯洁的灵魂”穆罕默德在此起事，兵败被杀。'});
     hp(d,'merv',{note:'呼罗珊的首府，阿拔斯革命的起点。'});
@@ -4063,7 +4062,7 @@ const HISTORY_ENTRIES=[
     hp(d,'ab_kufa',{note:'艾布·哈尼法（767年死）在此讲学，卖丝绸为生，不肯当曼苏尔的大法官，死在狱中。'});
     hp(d,'p_medina',{note:'马立克（795年死）在此编《穆瓦塔》，不肯让曼苏尔把它定为全国通行的法。'});
     hp(d,'ab_fustat',{left:1,note:'沙斐仪（820年死）晚年在此讲学。'});
-    hp(d,'ab_baghdad',{note:'790年代有了纸坊；伊本·罕百勒（855年死）在此传圣训。'});
+    hp(d,'w_baghdad',{note:'790年代有了纸坊；伊本·罕百勒（855年死）在此传圣训。'});
     hp(d,'ab_bukhara',{note:'布哈里（870年死）生在这里，他的圣训集846年前后编成。'});
    },[['fill',HC.myc,'阿拔斯哈里发国（约800年）'],['dot','#2a2018','四大法学派的祖师与布哈里']]),
   hs('802—833年','兄弟相争与突厥兵','802年麦加立约；809年哈伦死在图斯；玛蒙坐镇木鹿，811年雷伊一战大胜，813年攻破巴格达；830年突厥兵平定埃及。',[[20.0,28.0],[41.0,64.0]],d=>{
@@ -4071,12 +4070,12 @@ const HISTORY_ENTRIES=[
     hp(d,'p_mecca',{note:'802年哈伦·拉希德在此写下两份约书，挂进克尔白。'});
     hp(d,'ab_tus');hp(d,'merv',{note:'809—819年玛蒙坐镇于此。'});
     hp(d,'p_rey',{kind:'battle',note:'811年玛蒙的大将塔希尔在此打垮巴格达来的大军。'});
-    hp(d,'ab_baghdad',{kind:'battle',note:'812—813年被围一年多，城破后艾敏被杀。'});
+    hp(d,'w_baghdad',{kind:'battle',note:'812—813年被围一年多，城破后艾敏被杀。'});
     hp(d,'ab_fustat',{left:1,note:'830年穆阿台绥姆带四千突厥兵来平乱，831—832年突厥兵再来镇压。'});
    },[['fill',HC.myc,'阿拔斯哈里发国（约800年）'],['dot',HC.war,'雷伊与巴格达'],['dot','#2a2018','麦加、图斯、木鹿与福斯塔特']]),
   hs('830—851年','智慧宫与“古兰经受造”之争','玛蒙在巴格达的智慧宫招人译书；穆尔太齐赖派出自巴士拉；833年起审查各地法官学者，同年玛蒙征东罗马途中病死在塔尔苏斯附近。',[[28.0,27.0],[42.0,50.0]],d=>{
     ha(d,'mAbbasid800',HC.myc,{fillOpacity:.14});ha(d,'mByz842',HC.athens,{fillOpacity:.14});
-    hp(d,'ab_baghdad',{note:'智慧宫所在；834年伊本·罕百勒在宫中挨鞭，宫外民众聚众要冲宫。'});
+    hp(d,'w_baghdad',{note:'智慧宫所在；834年伊本·罕百勒在宫中挨鞭，宫外民众聚众要冲宫。'});
     hp(d,'ab_basra',{note:'8世纪穆尔太齐赖派在这里成形。'});
     hp(d,'tarsus',{note:'833年8月玛蒙征东罗马途中病死在附近，葬在城里。'});
     hp(d,'constantinople',{note:'据伊本·纳迪姆所记，玛蒙写信向东罗马皇帝求古希腊书，皇帝先拒后允。'});
@@ -4085,7 +4084,7 @@ const HISTORY_ENTRIES=[
     ha(d,'mAbbasid800',HC.myc,{fillOpacity:.06,dashArray:'4 4'});
     ha(d,'mBuyids945',HC.parthia,{fillOpacity:.22});ha(d,'mSamanids945',HC.parthia,{fillOpacity:.22});
     hp(d,'ab_samarra',{note:'836—892年的都城；861年穆塔瓦基勒在宫中被突厥卫兵杀死。'});
-    hp(d,'ab_baghdad',{note:'945年布韦希家的艾哈迈德进城，哈里发只剩名号。'});
+    hp(d,'w_baghdad',{note:'945年布韦希家的艾哈迈德进城，哈里发只剩名号。'});
     hp(d,'p_zaranj',{note:'萨法尔家的根据地；铜匠出身的叶尔孤白861年起兵，873年夺了呼罗珊。'});
     hp(d,'ab_basra',{note:'869—883年黑奴起义的中心；871年9月巴士拉城被义军攻破焚毁。'});
     hl(d,'萨曼王朝','Samanids',39.6,63.0,HC.parthia);hl(d,'布韦希家','Buyids',31.0,52.5,HC.parthia);hl(d,'齐亚尔家','Ziyarids',37.2,54.6,HC.parthia);
@@ -4118,9 +4117,9 @@ const HISTORY_ERAS=[
  {id:'empire-iconoclasm',name:'东罗马：圣像之争时代',en:'East Rome: the Age of Iconoclasm',date:'717—867年',c:HC.byz,items:[['history-empire-isaurian'],['history-empire-amorian']]},
  {id:'empire-macedonian',name:'东罗马：马其顿王朝',en:'East Rome: the Macedonian Dynasty',date:'867—1056年',c:HC.byz,items:[['history-empire-macedonian',0,2],['history-empire-macedonian',3,3,'东西教会大分裂']]},
  {id:'empire-kingdoms',name:'中世纪早期：蛮族诸王国',en:'The Barbarian Kingdoms',date:'476—568年',c:HC.celt,items:[['history-west-kingdoms'],['history-west-ostrogoths']]},
- {id:'spain-visigoths',name:'西班牙：从迦太基到后倭马亚',en:'Spain from Carthage to the Umayyads of Córdoba',date:'约前1100—1031年',c:HC.spain,items:[['history-spain-before-goths'],['history-spain-visigoths'],['history-spain-toledo'],['history-spain-fall',0,1],['history-spain-fall',2,2,'塔里克渡海'],['history-spain-andalus']]},
  {id:'empire-franks',name:'中世纪早期：法兰克与伦巴第',en:'Franks and Lombards',date:'561—843年',c:HC.celt,items:[['history-west-merovingians'],['history-west-lombards'],['history-west-charlemagne'],['history-west-charlemagne-rule'],['history-west-louis-pious']]},
  {id:'empire-verdun',name:'中世纪早期：凡尔登之后',en:'After Verdun',date:'843—987年',c:HC.celt,items:[['history-france-west-francia'],['history-germany-east-francia'],['history-italy-middle-francia'],['history-germany-otto']]},
+ {id:'empire-spain',name:'西班牙：从迦太基到后倭马亚',en:'Spain from Carthage to the Umayyads of Córdoba',date:'约前1100—1031年',c:HC.spain,items:[['history-spain-before-goths'],['history-spain-visigoths'],['history-spain-toledo'],['history-spain-fall',0,1],['history-spain-fall',2,2,'塔里克渡海'],['history-spain-andalus']]},
  {id:'faith-israel',name:'古代以色列',en:'Ancient Israel',date:'约前1400—前538年',c:HC.faith,items:[['history-faith-israel'],['history-faith-first-temple']]},
  {id:'faith-temple',name:'第二圣殿时期',en:'The Second Temple',date:'前538—公元73年',c:HC.faith,items:[['history-faith-second-temple'],['history-faith-jesus']]},
  {id:'faith-church',name:'早期教会',en:'The Early Church',date:'73—451年',c:HC.faith,items:[['history-faith-church'],['history-faith-empire-church'],['history-faith-councils'],['history-faith-ephesus'],['history-faith-two-cities']]},
