@@ -8274,7 +8274,7 @@ const FIGURE_SCENES={
       "place": "ca_forchheim"
     }
   ],
-  "history-germany-canossa/4": [
+  "history-germany-canossa/5": [
     {
       "id": "gregory-vii",
       "when": "1085年5月",
@@ -8283,7 +8283,7 @@ const FIGURE_SCENES={
       "place": "ca_salerno"
     }
   ],
-  "history-germany-canossa/5": [
+  "history-germany-canossa/6": [
     {
       "id": "henry-iv",
       "when": "1105年12月",

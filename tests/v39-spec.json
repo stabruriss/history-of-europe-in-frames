@@ -21,7 +21,7 @@
   "history-germany-canossa": [
    "卡诺莎之辱",
    "1076—1106年",
-   6,
+   7,
    5
   ],
   "history-italy-normans": [
@@ -243,15 +243,15 @@
    "贵族还是另选了一个国王，亨利四世回来，带着骑士平叛"
   ],
   [
-   "history-germany-canossa/3",
-   "1080年3月格雷戈里又绝罚了他，这次却没用了"
-  ],
-  [
    "history-germany-canossa/4",
-   "亨利四世挥军南下，教宗被逼出罗马，死在流亡中"
+   "1080年3月格雷戈里又绝罚了亨利，这次却没用了"
   ],
   [
    "history-germany-canossa/5",
+   "亨利四世挥军南下，教宗被逼出罗马，死在流亡中"
+  ],
+  [
+   "history-germany-canossa/6",
    "皇帝立了一个教宗，改革派自己又选了一个，成了两个教宗并立的局面"
   ],
   [
@@ -412,11 +412,11 @@
     "城门外的三天"
    ],
    [
-    3,
+    4,
     "这只手"
    ],
    [
-    4,
+    5,
     "死在流亡中"
    ]
   ],
@@ -818,7 +818,7 @@
  "fixes": [
   [
    "history-germany-ottonians/0",
-   "1002年1月他死在罗马城北，年二十一，没有娶亲"
+   "1002年1月奥托三世死在罗马城北，年二十一，没有娶亲"
   ],
   [
    "history-germany-ottonians/1",
@@ -854,18 +854,42 @@
   ],
   [
    "history-germany-canossa/0",
-   "1076年1月24日他在沃尔姆斯开会"
+   "1076年1月24日亨利在沃尔姆斯召集主教开会"
   ],
   [
    "history-germany-canossa/3",
-   "1077年3月，诸侯在福希海姆选鲁道夫为对立国王"
+   "萨克森和南德的诸侯在福希海姆选士瓦本公爵鲁道夫为对立国王"
+  ],
+  [
+   "history-germany-canossa/3",
+   "向着亨利的市民闹起来，把鲁道夫赶回萨克森"
+  ],
+  [
+   "history-germany-canossa/3",
+   "亨利自己在梅尔里希施塔特截住萨克森人，不分胜负"
   ],
   [
    "history-germany-canossa/4",
+   "格雷戈里看鲁道夫占了上风，反手再次绝罚亨利"
+  ],
+  [
+   "history-germany-canossa/4",
+   "他们的位子是国王授的"
+  ],
+  [
+   "history-germany-canossa/4",
+   "6月亨利在布里克森召集三十位主教"
+  ],
+  [
+   "history-germany-canossa/4",
+   "10月埃尔斯特河边亨利又败了，鲁道夫却断了右手"
+  ],
+  [
+   "history-germany-canossa/5",
    "他这才是皇帝"
   ],
   [
-   "history-germany-canossa/4",
+   "history-germany-canossa/5",
    "格雷戈里只得随诺曼人南去"
   ],
   [
@@ -949,7 +973,8 @@
   "一只打到",
   "坐禅",
   "佛系",
-  "不和皇后同房"
+  "不和皇后同房",
+  "又绝罚了他"
  ],
  "regions": [
   "mMatilda1077",
@@ -974,5 +999,5 @@
   "mFatimids1050",
   "mCrusaderStates1100"
  ],
- "pass": "1000年之后 — 13 sections (62 scenes): 德意志 from the Ottonians (how piety ended the line) and the Salians through the investiture contest and Canossa to Henry IV's death (1106), the last two shared with 基督教; 意大利 to the Normans' Sicily (1091); 基督教 on to the Cistercians (1153); 西班牙 through the taifas to the holy war (1123), shared with 基督教; 43 of 老无’s points in bold, the facts and their order set right in plain text; new shoots at the ends"
+ "pass": "1000年之后 — 13 sections (63 scenes): 德意志 from the Ottonians (how piety ended the line) and the Salians through the investiture contest and Canossa to Henry IV's death (1106), the last two shared with 基督教; 意大利 to the Normans' Sicily (1091); 基督教 on to the Cistercians (1153); 西班牙 through the taifas to the holy war (1123), shared with 基督教; 43 of 老无’s points in bold, the facts and their order set right in plain text; new shoots at the ends"
 }
