@@ -6578,7 +6578,7 @@ const FIGURE_SCENES={
       "place": "ctesiphon"
     }
   ],
-  "history-arab-conquest/4": [
+  "history-arab-conquest/3": [
     {
       "id": "yazdegerd-iii",
       "when": "651年",
@@ -6587,7 +6587,7 @@ const FIGURE_SCENES={
       "place": "merv"
     }
   ],
-  "history-arab-conquest/5": [
+  "history-arab-conquest/4": [
     {
       "id": "peroz-iii",
       "when": "684年",
@@ -6948,7 +6948,7 @@ const FIGURE_SCENES={
       "place": "ar_mecca"
     }
   ],
-  "history-arab-expansion/2": [
+  "history-arab-expansion/1": [
     {
       "id": "tariq-ibn-ziyad",
       "when": "711—712年",
@@ -6957,7 +6957,7 @@ const FIGURE_SCENES={
       "place": "toletum"
     }
   ],
-  "history-arab-expansion/3": [
+  "history-arab-expansion/2": [
     {
       "id": "qutayba-ibn-muslim",
       "when": "713年",

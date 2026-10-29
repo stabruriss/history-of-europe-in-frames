@@ -3850,51 +3850,7 @@ const HISTORY_ENTRIES=[
     hl(d,'贝克尔部阿拉伯人','Banu Bakr',30.0,45.2,HC.myc);
    },[['fill',HC.parthia,'萨珊帝国'],['dash',HC.myc,'拉赫姆王国（602年前后被废）'],['dot','#2a2018','王都、行宫、崖刻与希拉']])
  ]},
-{id:'history-arab-conquest',ch:9,title:'阿拉伯征服：萨珊亡国，东罗马失了叙利亚和埃及',short:'阿拉伯征服',en:'The Arab Conquests: Persia Falls, Rome Loses Syria and Egypt',period:'628—651年',c:HC.parthia,
- scenes:[
-  hs('628—634年','两个打空了的帝国','罗马为反攻压缩开支、熔教会金银器，埃及多数人信一性论；波斯四年换了十几个王，632年八岁的伊嗣俟三世在伊斯塔赫尔加冕。',[[23.0,22.0],[44.0,60.0]],d=>{
-    ha(d,'mByz600',HC.athens,{fillOpacity:.16});ha(d,'lSasanian560',HC.parthia,{fillOpacity:.18});
-    hp(d,'constantinople',{note:'希拉克略压缩开支、借教会的金银器熔铸成钱，才凑出622年反攻的军费。'});
-    hp(d,'alexandria',{left:1,note:'埃及多数人信一性论，跟朝廷指派的牧首不和。'});
-    hp(d,'ctesiphon',{note:'628—632年王位在此轮转：卡瓦德二世、阿尔达希尔三世、沙赫巴拉兹、布兰……'});
-    hp(d,'p_istakhr',{note:'632年伊嗣俟三世在此的阿娜希塔神庙加冕，四百年前阿尔达希尔一世也在这里起家。'});
-   },[['fill',HC.athens,'东罗马（630年前后，概略）'],['fill',HC.parthia,'萨珊帝国'],['dot','#2a2018','两国的都城、亚历山大里亚与伊斯塔赫尔']]),
-  hs('634—640年','叙利亚','大马士革议和开城；636年8月雅穆克一战罗马大军溃散；牧首索弗洛尼乌斯只向欧麦尔交出耶路撒冷；凯撒里亚守到640年。',[[29.5,33.0],[37.5,40.0]],d=>{
-    ha(d,'syria',HC.athens,{fillOpacity:.14,dashArray:'4 4'});ha(d,'mArabia',HC.myc,{fillOpacity:.2});
-    hp(d,'p_damascus',{note:'635年议和开城：交人头税，保住性命、财产和教堂。'});hp(d,'p_yarmouk',{kind:'battle'});
-    hp(d,'jerusalem',{note:'牧首索弗洛尼乌斯守了几个月，只向哈里发欧麦尔投降。'});
-    hp(d,'antioch',{note:'希拉克略坐镇此地；雅穆克败后从这里回君士坦丁堡。'});
-    hp(d,'caesarea',{kind:'battle',left:1,note:'滨海重镇，640年才被攻下。'});
-   },[['dash',HC.athens,'罗马的叙利亚与巴勒斯坦（634年前）'],['fill',HC.myc,'阿拉伯半岛'],['dot',HC.war,'雅穆克与凯撒里亚'],['dot','#2a2018','大马士革、耶路撒冷与安条克']]),
-  hs('633—637年','伊拉克','希拉出钱求和；634年桥边一战波斯小胜；636年卡迪西亚一战鲁斯塔姆战死；637年泰西封陷落。',[[29.5,40.5],[35.5,47.5]],d=>{
-    ha(d,'mArabia',HC.myc,{fillOpacity:.14});ha(d,'mLakhmids',HC.myc,{fillOpacity:.3});
-    ha(d,'lSasanian560',HC.parthia,{fillOpacity:.12});
-    hp(d,'p_hira',{note:'633年5月出钱求和，年交十万银币，还替穆斯林刺探波斯军情。'});
-    hp(d,'p_qadisiyyah',{kind:'battle',left:1});
-    hp(d,'ctesiphon',{kind:'battle',note:'637年陷落，伊嗣俟带着国库逃往扎格罗斯山里的胡勒万。'});hp(d,'p_jalula',{kind:'battle'});
-    hr(d,[[29.8,43.7],[30.8,44.1],[31.88,44.45]],HC.myc);
-   },[['fill',HC.myc,'阿拉伯半岛与希拉一带'],['fill',HC.parthia,'萨珊帝国'],['dline',HC.myc,'633年哈立德北上（概略）'],['dot',HC.war,'卡迪西亚、泰西封与贾卢拉'],['dot','#2a2018','希拉']]),
-  hs('639—642年','埃及','阿慕尔围巴比伦堡七个月；主教居鲁士签约，罗马兵642年9月撤出亚历山大里亚；烧图书馆是后来的故事。',[[28.5,28.5],[32.5,35.5]],d=>{
-    ha(d,'egypt',HC.athens,{fillOpacity:.16,dashArray:'4 4'});
-    hp(d,'pelusium',{note:'埃及东边的门户，640年初被围两个月后攻下。'});
-    hp(d,'p_babylonfort',{kind:'battle'});
-    hp(d,'alexandria',{note:'641年秋主教居鲁士签约；642年9月最后一批罗马兵乘船撤走。'});
-    hr(d,[[31.5,34.5],[31.13,33.8],[31.04,32.55],[30.4,31.6],[30.006,31.23]],HC.myc);
-   },[['dash',HC.athens,'罗马的埃及（概略）'],['dline',HC.myc,'639—640年阿慕尔进军（概略）'],['dot',HC.war,'巴比伦堡'],['dot','#2a2018','佩卢西乌姆与亚历山大里亚']]),
-  hs('642—651年','尼哈万德之后','642年萨珊最后一支大军覆灭；各地总督和地主跟阿拉伯人议和，税照旧收；伊嗣俟三世东逃，651年死在木鹿。',[[25.5,40.0],[40.5,64.5]],d=>{
-    ha(d,'mCaliph644',HC.myc,{fillOpacity:.2});ha(d,'lSasanian560',HC.parthia,{fillOpacity:.1,dashArray:'4 4'});
-    hp(d,'p_nahavand',{kind:'battle'});hp(d,'p_isfahan');hp(d,'p_istakhr');hp(d,'p_kirman');
-    hp(d,'merv',{note:'651年伊嗣俟三世逃到这里，城门不开，死在城外穆尔加布河边的磨坊。'});
-    hr(d,[[33.09,44.58],[34.5,46.0],[32.65,51.67],[30.0,52.92],[30.28,57.08],[30.96,61.86],[37.66,62.19]],HC.parthia);
-   },[['fill',HC.myc,'哈里发国（约644年）'],['dash',HC.parthia,'萨珊旧疆'],['dline',HC.parthia,'伊嗣俟三世东逃（概略）'],['dot',HC.war,'尼哈万德'],['dot','#2a2018','东逃路上的城']]),
-  hs('651—约708年','卑路斯与泥涅师','王子卑路斯投唐，661年唐在疾陵城设波斯都督府；679年裴行俭以护送泥涅师为名擒阿史那都支。',[[22.0,44.0],[46.5,112.0]],d=>{
-    ha(d,'mCaliph661',HC.myc,{fillOpacity:.16});ha(d,'mTarim',HC.china,{fillOpacity:.2});ha(d,'farCore',HC.china,{fillOpacity:.12});
-    hp(d,'changan',{note:'卑路斯670年代来此，授右武卫将军；泥涅师707年前后回到这里。'});
-    hp(d,'p_zaranj');hp(d,'p_suyab',{kind:'battle'});hp(d,'merv',{left:1});
-    hl(d,'吐火罗','Tokharistan',36.5,68.5,HC.parthia);
-   },[['fill',HC.myc,'哈里发国（约661年）'],['fill',HC.china,'唐朝本部与安西（示意）'],['dot',HC.war,'碎叶'],['dot','#2a2018','长安、疾陵城与木鹿']])
- ]},
-{id:'history-arab-rise',ch:9,title:'阿拉伯的兴起：两大帝国打烂之后',short:'阿拉伯的兴起',en:'The Rise of the Arabs: After Two Empires Wore Each Other Out',period:'约525—622年',c:HC.parthia,
+{id:'history-arab-rise',ch:9,title:'阿拉伯的兴起：两大帝国打烂之后',short:'阿拉伯的兴起',en:'The Rise of the Arabs: After Two Empires Wore Each Other Out',period:'约525—632年',c:HC.parthia,
  scenes:[
   hs('约525—630年','南边：大坝垮了','525年阿克苏姆灭希木叶尔，570年前后也门归波斯；没人管的马里卜大坝570年代最后一次溃决，绿洲荒弃；传说中的部落北迁。',[[11.0,33.0],[33.5,53.0]],d=>{
     ha(d,'mHimyar',HC.thebes,{fillOpacity:.28});ha(d,'mAksum',HC.mino,{fillOpacity:.25});
@@ -3904,12 +3860,12 @@ const HISTORY_ENTRIES=[
     hr(d,[[14.13,38.72],[15.26,39.66],[14.0,41.8],[13.32,43.25],[14.21,44.4]],HC.mino);
     hr(d,[[15.4,45.26],[17.49,44.13],[21.0,40.6],[24.47,39.61],[28.5,37.6],[32.92,35.97]],HC.route);
    },[['fill',HC.thebes,'也门（希木叶尔王国核心，约500年）'],['fill',HC.mino,'阿克苏姆王国（今埃塞俄比亚北部）'],['dline',HC.mino,'525年阿克苏姆渡海出兵（概略）'],['dline',HC.route,'传说中阿兹德人北迁（示意）'],['dot','#2a2018','大坝、萨那、纳季兰、阿克苏姆与北迁的落脚处']]),
-  hs('约580—630年','北边：看门的没了','东罗马581年诱捕加萨尼王，联盟瓦解；萨珊602年前后废拉赫姆王朝，贝克尔部在济加尔打败波斯军；602—628年大战把两家打空。',[[28.0,33.0],[37.5,49.0]],d=>{
+  hs('约580—632年','北边：两家打空，看门的没了','东罗马581年诱捕加萨尼王，萨珊602年前后废拉赫姆王朝；602—628年大战把两家打空，波斯四年换了十几个王，632年伊嗣俟三世即位。',[[28.0,33.0],[37.5,49.0]],d=>{
     ha(d,'mByz600',HC.athens,{fillOpacity:.14});ha(d,'lSasanian560',HC.parthia,{fillOpacity:.14});
     ha(d,'mGhassanids',HC.myc,{fillOpacity:.3,dashArray:'4 4'});ha(d,'mLakhmids',HC.myc,{fillOpacity:.3,dashArray:'4 4'});
     hp(d,'f_jabiya',{note:'加萨尼王的营地；581年加萨尼王蒙齐尔在叙利亚被东罗马诱捕，次年流放西西里。'});
     hp(d,'p_hira',{note:'拉赫姆王朝的都城；602年前后改由波斯直辖。'});
-    hp(d,'ctesiphon');hp(d,'ar_dhiqar',{kind:'battle'});
+    hp(d,'ctesiphon',{note:'628—632年王位在此轮转：卡瓦德二世、阿尔达希尔三世、沙赫巴拉兹、布兰……632年伊嗣俟三世即位。'});hp(d,'ar_dhiqar',{kind:'battle'});
     hl(d,'叙利亚沙漠','Syrian Desert',31.6,39.2,HC.neutral);
    },[['fill',HC.athens,'东罗马（约600年）'],['fill',HC.parthia,'萨珊帝国'],['dash',HC.myc,'加萨尼与拉赫姆：两家的阿拉伯看门人'],['dot',HC.war,'济加尔'],['dot','#2a2018','两个看门王国的营地、王都与泰西封']]),
   hs('约500—610年','中间：没有国家的半岛','半岛腹地没有国家，部落靠劫掠过日子；麦加的克尔白是各部共同的圣地，圣月休战、赶集；犹太人、基督徒和一神的说法早已进来。',[[12.0,33.5],[33.5,58.5]],d=>{
@@ -3961,16 +3917,44 @@ const HISTORY_ENTRIES=[
     hr(d,[[24.47,39.61],[27.6,37.4],[30.5,36.3],[33.51,36.29]],HC.war);
    },[['fill',HC.myc,'631—632年遣使归附的半岛各部（概略）'],['fill',HC.athens,'东罗马'],['fill',HC.parthia,'萨珊帝国'],['dline',HC.myc,'630年进军麦加'],['dline',HC.war,'633年起北上伊拉克、叙利亚（概略）'],['dot','#2a2018','麦加、麦地那与北边的第一批目标']])
  ]},
-{id:'history-arab-expansion',ch:9,title:'四面扩张：风口上的哈里发国',short:'四面扩张',en:'Expansion on Every Front: A Caliphate Riding the Wind',period:'632—751年',c:HC.parthia,
+{id:'history-arab-conquest',ch:9,title:'阿拉伯征服：大军一败，城门自开',short:'阿拉伯征服',en:'The Arab Conquests: One Lost Battle, and the Gates Open',period:'632—651年',c:HC.parthia,
  scenes:[
-  hs('632—661年','产品对路，风口正好','各部劫掠朝外；被教义之争推开的一性论派和聂斯托利派交税保教；征服者住进兵城、靠税养着。北线见“君士坦丁堡之围”一节。',[[22.0,26.0],[39.5,51.5]],d=>{
-    ha(d,'mCaliph661',HC.myc,{fillOpacity:.2});ha(d,'mByz680',HC.athens,{fillOpacity:.14});
-    hp(d,'p_medina');hp(d,'p_damascus',{note:'661年起是倭马亚王朝的都城。'});
-    hp(d,'cf_kufa');hp(d,'cf_basra');hp(d,'cf_fustat',{left:1});
-    hl(d,'一性论派（雅各派）','Miaphysites (Syriac)',35.6,38.6,HC.neutral);hl(d,'一性论派（科普特人）','Miaphysites (Copts)',27.3,30.9,HC.neutral);
-    hl(d,'聂斯托利派','Church of the East',34.4,44.8,HC.neutral);
-   },[['fill',HC.myc,'哈里发国（约661年）'],['fill',HC.athens,'东罗马（约680年）'],['dot','#2a2018','麦地那、大马士革与三座兵城']]),
-  hs('641—652年','南边：止步于努比亚、沙漠和大海','两次南下马库里亚，652年围栋古拉不下，订“巴克特”换奴隶；阿比西尼亚没打，只占了红海里的达赫拉克群岛。',[[12.0,24.0],[32.0,46.0]],d=>{
+  hs('632—634年','产品对路，风口正好','半岛各部拢成一个教团、劫掠朝外；对外只要人头税；633年希拉出钱求和、替穆斯林刺探军情，634年进叙利亚。',[[22.0,30.0],[37.5,50.0]],d=>{
+    ha(d,'mArabia',HC.myc,{fillOpacity:.22});ha(d,'mByz600',HC.athens,{fillOpacity:.14});ha(d,'lSasanian560',HC.parthia,{fillOpacity:.14});
+    hp(d,'p_medina',{note:'632年穆罕默德死在这里；哈里发平定各部以后，把兵引向北方。'});
+    hp(d,'p_hira',{note:'从前替波斯看守沙漠的拉赫姆王都；633年出钱求和，年交十万银币，还替穆斯林刺探波斯军情。'});hp(d,'p_damascus');
+    hr(d,[[24.47,39.61],[26.6,42.0],[29.8,43.7],[31.88,44.45]],HC.myc);hr(d,[[24.47,39.61],[28.4,36.6],[30.3,35.7],[31.7,35.0]],HC.myc);
+   },[['fill',HC.myc,'阿拉伯半岛（632年拢成一个教团）'],['fill',HC.athens,'东罗马（630年前后，概略）'],['fill',HC.parthia,'萨珊帝国'],['dline',HC.myc,'633年进伊拉克、634年进叙利亚（概略）'],['dot','#2a2018','麦地那、希拉与大马士革']]),
+  hs('636—637年','经不起一场大败','636年雅穆克一败，希拉克略放弃叙利亚；卡迪西亚一败，637年泰西封陷落，伊嗣俟三世带着国库逃进扎格罗斯山。',[[29.5,33.5],[37.5,48.5]],d=>{
+    ha(d,'mByz600',HC.athens,{fillOpacity:.14});ha(d,'lSasanian560',HC.parthia,{fillOpacity:.14});ha(d,'mArabia',HC.myc,{fillOpacity:.16});
+    hp(d,'p_yarmouk',{kind:'battle',note:'636年8月希拉克略调集的大军在此溃散。'});
+    hp(d,'antioch',{note:'希拉克略坐镇此地；雅穆克败后从这里回君士坦丁堡，从此放弃叙利亚。'});
+    hp(d,'p_qadisiyyah',{kind:'battle',left:1,note:'636年冬激战三天，萨珊主将鲁斯塔姆战死。'});
+    hp(d,'ctesiphon',{kind:'battle',note:'637年陷落，伊嗣俟三世带着国库逃往扎格罗斯山里的胡勒万。'});
+   },[['fill',HC.athens,'东罗马（630年前后，概略）'],['fill',HC.parthia,'萨珊帝国'],['fill',HC.myc,'阿拉伯半岛'],['dot',HC.war,'雅穆克、卡迪西亚与泰西封'],['dot','#2a2018','安条克']]),
+  hs('635—642年','投降比死守划算','635年大马士革议和成了投降的样板；埃及的科普特人受朝廷逼迫十年，阿拉伯人不夺教堂，642年罗马兵撤走。',[[26.5,28.0],[37.0,39.5]],d=>{
+    ha(d,'syria',HC.athens,{fillOpacity:.14,dashArray:'4 4'});ha(d,'egypt',HC.athens,{fillOpacity:.14,dashArray:'4 4'});ha(d,'mArabia',HC.myc,{fillOpacity:.18});
+    hp(d,'p_damascus',{note:'635年议和开城：交人头税，保住性命、财产和教堂；这份条约成了各地投降的样板。'});
+    hp(d,'jerusalem',{note:'牧首索弗洛尼乌斯守了几个月，只向哈里发欧麦尔本人投降。'});hp(d,'p_babylonfort',{kind:'battle'});
+    hp(d,'alexandria',{note:'641年秋主教居鲁士签约；642年9月最后一批罗马兵乘船撤走，一年多后科普特牧首本雅明回城。'});
+    hl(d,'一性论派（雅各派）','Miaphysites (Syriac)',35.6,38.6,HC.neutral);hl(d,'一性论派（科普特人）','Miaphysites (Copts)',28.6,30.4,HC.neutral);
+   },[['dash',HC.athens,'罗马的叙利亚与埃及（634年前）'],['fill',HC.myc,'阿拉伯半岛'],['dot',HC.war,'巴比伦堡'],['dot','#2a2018','大马士革、耶路撒冷与亚历山大里亚']]),
+  hs('642—651年','萨珊不是一战亡的','642年尼哈万德最后一支大军覆灭；各省保田产、照收税就降；伊嗣俟三世东逃，651年死在木鹿。',[[25.5,40.0],[40.5,64.5]],d=>{
+    ha(d,'mCaliph644',HC.myc,{fillOpacity:.2});ha(d,'lSasanian560',HC.parthia,{fillOpacity:.1,dashArray:'4 4'});
+    hp(d,'p_nahavand',{kind:'battle'});hp(d,'p_isfahan');hp(d,'p_istakhr');hp(d,'p_kirman');hp(d,'cf_kufa');hp(d,'cf_basra',{left:1});
+    hp(d,'merv',{note:'651年伊嗣俟三世逃到这里，城门不开，死在城外穆尔加布河边的磨坊。'});
+    hr(d,[[33.09,44.58],[34.5,46.0],[32.65,51.67],[30.0,52.92],[30.28,57.08],[30.96,61.86],[37.66,62.19]],HC.parthia);
+   },[['fill',HC.myc,'哈里发国（约644年）'],['dash',HC.parthia,'萨珊旧疆'],['dline',HC.parthia,'伊嗣俟三世东逃（概略）'],['dot',HC.war,'尼哈万德'],['dot','#2a2018','东逃路上的城与库法、巴士拉两座兵城']]),
+  hs('651—约708年','唐朝的手伸不到','王子卑路斯投唐，661年唐在疾陵城设波斯都督府；679年护送泥涅师的唐军走到碎叶就回去了。',[[22.0,44.0],[46.5,112.0]],d=>{
+    ha(d,'mCaliph661',HC.myc,{fillOpacity:.16});ha(d,'mTarim',HC.china,{fillOpacity:.2});ha(d,'farCore',HC.china,{fillOpacity:.12});
+    hp(d,'changan',{note:'卑路斯670年代来此，授右武卫将军；泥涅师707年前后回到这里。'});
+    hp(d,'p_zaranj');hp(d,'p_suyab',{kind:'battle'});hp(d,'merv',{left:1});
+    hl(d,'吐火罗','Tokharistan',36.5,68.5,HC.parthia);
+   },[['fill',HC.myc,'哈里发国（约661年）'],['fill',HC.china,'唐朝本部与安西（示意）'],['dot',HC.war,'碎叶'],['dot','#2a2018','长安、疾陵城与木鹿']])
+ ]},
+{id:'history-arab-expansion',ch:9,title:'四面扩张：打到哪里为止',short:'四面扩张',en:'Expansion on Every Front: Where It Stopped',period:'641—751年',c:HC.parthia,
+ scenes:[
+  hs('641—652年','南边：止步于努比亚、沙漠和大海','两次南下马库里亚，652年围栋古拉不下，订“巴克特”换奴隶；阿比西尼亚没打，只占了达赫拉克群岛。北线见“君士坦丁堡之围”一节。',[[12.0,24.0],[32.0,46.0]],d=>{
     ha(d,'mCaliph661',HC.myc,{fillOpacity:.16});ha(d,'mMakuria650',HC.mino,{fillOpacity:.3});
     hp(d,'cf_fustat');hp(d,'cf_aswan',{note:'阿拉伯治下埃及的南界。'});hp(d,'f_faras',{left:1});
     hp(d,'cf_dongola',{kind:'battle'});hp(d,'cf_dahlak');
@@ -4133,8 +4117,8 @@ const HISTORY_ERAS=[
  {id:'egypt-ancient',name:'古埃及',en:'Ancient Egypt',date:'约前3100—前332年',c:HC.mino,items:[['history-egypt-old'],['history-egypt-middle'],['history-egypt-new'],['history-egypt-late']]},
  {id:'egypt-roman',name:'罗马与东罗马治下的埃及',en:'Roman and Byzantine Egypt',date:'前30—619年',c:HC.mino,items:[['history-egypt-roman'],['history-egypt-byzantine']]},
  {id:'persia-ancient',name:'古代伊朗',en:'Ancient Iran',date:'约前3200—前330年',c:HC.parthia,items:[['history-persia-elam'],['history-persia-achaemenid']]},
- {id:'persia-iranian',name:'安息与萨珊',en:'Parthians and Sasanians',date:'前141—651年',c:HC.parthia,items:[['history-persia-parthia'],['history-persia-sasanian'],['history-persia-khosrow'],['history-persia-khosrow-ii'],['history-arab-conquest']]},
- {id:'arab-caliphate',name:'阿拉伯：兴起、扩张与统治',en:'The Arabs: Rise, Conquest and Rule',date:'约525—945年',c:HC.parthia,items:[['history-arab-rise'],['history-arab-muhammad'],['history-arab-expansion'],['history-arab-caliphs'],['history-arab-constantinople'],['history-arab-abbasid']]},
+ {id:'persia-iranian',name:'安息与萨珊',en:'Parthians and Sasanians',date:'前141—602年',c:HC.parthia,items:[['history-persia-parthia'],['history-persia-sasanian'],['history-persia-khosrow'],['history-persia-khosrow-ii']]},
+ {id:'arab-caliphate',name:'阿拉伯：兴起、扩张与统治',en:'The Arabs: Rise, Conquest and Rule',date:'约525—945年',c:HC.parthia,items:[['history-arab-rise'],['history-arab-muhammad'],['history-arab-conquest'],['history-arab-expansion'],['history-arab-caliphs'],['history-arab-constantinople'],['history-arab-abbasid']]},
 ];
 /* History as a tree: each branch is a topic; distance from the root is time (years, negative = BCE).
    Reading order stays with HISTORY_ERAS; TREE_ROWS puts each era row on a branch at its start and end. */
@@ -4250,7 +4234,7 @@ const TREE_ROWS={
  'history-persia-khosrow/0':['persia',379,579],
  'history-empire-west-end/0':['rome',455,476],
  'history-empire-heraclius/0':[['east','persia','egypt'],602,641],
- 'history-arab-conquest/0':[['persia','east','egypt'],628,651],
+ 'history-arab-conquest/0':[['persia','east','egypt'],632,651],
  'history-empire-constans/0':[['east','faith'],641,711],
  'history-empire-anarchy/0':['east',695,717],
  'history-empire-isaurian/0':[['east','faith'],717,802],
@@ -4279,10 +4263,10 @@ const TREE_ROWS={
  'history-spain-visigoths/0':['spain',482,589,'468—589年'],
  'history-spain-toledo/0':['spain',589,642],
  'history-spain-fall/0':['spain',642,710,'642—710年'],
- 'history-arab-rise/0':['persia',652,652,'约525—622年'],
- 'history-arab-muhammad/0':['persia',653,653,'610—632年'],
- 'history-arab-expansion/0':['persia',654,751,'632—751年'],
- 'history-arab-caliphs/0':['persia',655,750,'632—750年'],
+ 'history-arab-rise/0':['persia',603,632,'约525—632年'],
+ 'history-arab-muhammad/0':['persia',610,632],
+ 'history-arab-expansion/0':['persia',641,751],
+ 'history-arab-caliphs/0':['persia',656,750,'632—750年'],
  'history-arab-constantinople/0':[['east','persia'],667,718],
  'history-arab-abbasid/0':['persia',750,945],
  'history-spain-andalus/0':['spain',756,1031],

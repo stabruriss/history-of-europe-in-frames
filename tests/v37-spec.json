@@ -72,7 +72,7 @@
   ],
   "history-arab-rise": [
    "阿拉伯的兴起",
-   "约525—622年",
+   "约525—632年",
    3,
    9,
    230
@@ -86,8 +86,8 @@
   ],
   "history-arab-expansion": [
    "四面扩张",
-   "632—751年",
-   4,
+   "641—751年",
+   3,
    9,
    230
   ],
@@ -121,8 +121,8 @@
   ],
   "history-arab-conquest": [
    "阿拉伯征服",
-   "628—651年",
-   6,
+   "632—651年",
+   5,
    9,
    230
   ],
@@ -211,21 +211,21 @@
    [
     "persia"
    ],
-   652,
-   652
+   603,
+   632
   ],
   "history-arab-muhammad/0": [
    [
     "persia"
    ],
-   653,
-   653
+   610,
+   632
   ],
   "history-arab-expansion/0": [
    [
     "persia"
    ],
-   654,
+   641,
    751
   ],
   "history-arab-constantinople/0": [
@@ -240,7 +240,7 @@
    [
     "persia"
    ],
-   655,
+   656,
    750
   ],
   "history-arab-abbasid/0": [
@@ -263,7 +263,7 @@
     "east",
     "egypt"
    ],
-   628,
+   632,
    651
   ],
   "history-germany-east-francia/0": [
@@ -509,18 +509,14 @@
   ],
   [
    "history-arab-expansion/0",
-   "穆斯林的产品与市场完美契合，又赶上两大帝国打烂的风口，迅速起飞，四面扩张"
-  ],
-  [
-   "history-arab-expansion/1",
    "南边到了努比亚就停了：前面是弓箭、沙漠和大海"
   ],
   [
-   "history-arab-expansion/2",
+   "history-arab-expansion/1",
    "西边打穿了北非，711年七千人从直布罗陀渡过海峡，打下了内乱的西班牙"
   ],
   [
-   "history-arab-expansion/3",
+   "history-arab-expansion/2",
    "东边打到怛罗斯，和唐军一战，虽然赢了也是强弩之末，无法再往东"
   ],
   [
@@ -593,30 +589,26 @@
   ],
   [
    "history-arab-conquest/0",
-   "两大帝国互相打空，正给阿拉伯人留出风口"
+   "穆斯林的产品与市场完美契合，又赶上两大帝国打烂的风口，迅速起飞"
   ],
   [
    "history-arab-conquest/1",
-   "投降比死守划算，叙利亚的城就一座座开了门"
+   "两大帝国都打空了，经不起一场大败"
   ],
   [
    "history-arab-conquest/2",
-   "库思老亲手拆掉的缓冲，成了阿拉伯人的前哨"
+   "投降比死守划算，城就一座座开了门；被罗马教义之争推开的一性论派，更是很丝滑地换了"
   ],
   [
    "history-arab-conquest/3",
-   "朝廷十年逼科普特人改宗，阿拉伯人来了却不夺教堂"
+   "萨珊不是一战亡的：大军打光以后，各地总督和地主各自跟阿拉伯人谈条件，国王成了孤家"
   ],
   [
-   "history-arab-conquest/4",
-   "大军一没，各地自己跟新主人谈条件；阿拉伯人照收萨珊的老税，统治成本很低"
-  ],
-  [
-   "history-arab-conquest/4",
+   "history-arab-conquest/3",
    "几次战争征服和领土变迁"
   ],
   [
-   "history-arab-conquest/5",
+   "history-arab-conquest/4",
    "萨珊的余脉向唐朝求救，可唐朝的手伸不到那么远"
   ],
   [
@@ -856,18 +848,14 @@
   "history-arab-expansion": [
    [
     0,
-    "四朝管税的一家"
-   ],
-   [
-    1,
     "射眼睛的弓手"
    ],
    [
-    2,
+    1,
     "石头上的三十个人"
    ],
    [
-    3,
+    2,
     "撒马尔罕的纸"
    ]
   ],
@@ -941,23 +929,27 @@
   ],
   "history-arab-conquest": [
    [
-    1,
-    "退回的税"
+    0,
+    "四朝管税的一家"
    ],
    [
     1,
     "别了，叙利亚"
    ],
    [
-    2,
+    1,
     "鲁斯塔姆的开价"
    ],
    [
-    3,
+    2,
+    "退回的税"
+   ],
+   [
+    2,
     "要拿石头砸主教"
    ],
    [
-    4,
+    3,
     "四个银币"
    ]
   ],
@@ -1072,12 +1064,20 @@
    "还定下每次全国会议议完事都要高声再念一遍第75条"
   ],
   [
-   "history-arab-expansion/2",
+   "history-arab-expansion/1",
    "722年首领佩拉约"
   ],
   [
-   "history-arab-expansion/3",
+   "history-arab-expansion/2",
    "造纸术西传也有人归到这一仗"
+  ],
+  [
+   "history-arab-conquest/2",
+   "科普特牧首出逃十三年"
+  ],
+  [
+   "history-arab-conquest/2",
+   "是六百年后才有的故事"
   ],
   [
    "history-arab-caliphs/0",
@@ -1175,6 +1175,14 @@
   [
    "history-empire-isaurian",
    "金角湾的铁链"
+  ],
+  [
+   "history-arab-conquest",
+   "公主布兰"
+  ],
+  [
+   "history-arab-expansion",
+   "产品与市场完美契合"
   ]
  ],
  "branches": {
@@ -1325,5 +1333,5 @@
   "ibLusitania",
   "ibTarraconensis"
  ],
- "pass": "19 new or rebuilt sections (84 scenes), 老无’s four requests: 意大利 on his chain; 奥托一世称帝 shared by 德意志, 意大利 and 基督教; 基督教 to 1054 with the imperial church beside Cluny; 西班牙 from Carthage to Córdoba, forking off 中世纪西欧, sharing 711 with 波斯—阿拉伯 and running on to 1031; the Sasanians’ end closing 波斯, then the Arabs from Marib to the dozen states of 945, the sieges of Constantinople shared with 东罗马; 80 of 老无’s theses in bold, 29 corrections in plain text, 22 dictation slips kept out"
+ "pass": "19 new or rebuilt sections (82 scenes), 老无’s four requests: 意大利 on his chain; 奥托一世称帝 shared by 德意志, 意大利 and 基督教; 基督教 to 1054 with the imperial church beside Cluny; 西班牙 from Carthage to Córdoba, forking off 中世纪西欧, sharing 711 with 波斯—阿拉伯 and running on to 1031; the Sasanians’ end closing 波斯, then the Arabs from Marib to the dozen states of 945, the sieges of Constantinople shared with 东罗马; 78 of 老无’s theses in bold, 31 corrections in plain text, 22 dictation slips kept out"
 }
