@@ -1,54 +1,972 @@
 {
- "pass": "pending",
  "sections": {
-  "history-italy-middle-francia": ["中法兰克王国", "843—950年", 6, 5, 300],
-  "history-germany-otto": ["奥托一世称帝", "951—964年", 4, 5, 300],
-  "history-faith-dark-century": ["教宗的黑暗世纪", "875—955年", 4, 6, 230]
+  "history-italy-middle-francia": [
+   "中法兰克王国",
+   "843—950年",
+   6,
+   5,
+   300
+  ],
+  "history-germany-otto": [
+   "奥托一世称帝",
+   "951—964年",
+   4,
+   5,
+   300
+  ],
+  "history-faith-dark-century": [
+   "教宗的黑暗世纪",
+   "875—955年",
+   4,
+   6,
+   230
+  ],
+  "history-faith-imperial-church": [
+   "帝国教会",
+   "962—1046年",
+   4,
+   6,
+   230
+  ],
+  "history-faith-cluny": [
+   "克吕尼运动",
+   "910—1049年",
+   5,
+   6,
+   230
+  ],
+  "history-faith-leo-ix": [
+   "教会改革",
+   "1046—1054年",
+   5,
+   6,
+   230
+  ],
+  "history-spain-before-goths": [
+   "西哥特以前的西班牙",
+   "约前1100—468年",
+   5,
+   5,
+   300
+  ],
+  "history-spain-visigoths": [
+   "西哥特王国",
+   "468—589年",
+   5,
+   5,
+   300
+  ],
+  "history-spain-toledo": [
+   "托莱多会议",
+   "589—642年",
+   5,
+   5,
+   300
+  ],
+  "history-spain-fall": [
+   "西哥特的覆亡",
+   "642—711年",
+   3,
+   5,
+   300
+  ],
+  "history-arab-rise": [
+   "阿拉伯的兴起",
+   "约525—622年",
+   3,
+   9,
+   230
+  ],
+  "history-arab-muhammad": [
+   "穆罕默德",
+   "610—632年",
+   5,
+   9,
+   230
+  ],
+  "history-arab-expansion": [
+   "四面扩张",
+   "632—751年",
+   4,
+   9,
+   230
+  ],
+  "history-arab-constantinople": [
+   "君士坦丁堡之围",
+   "667—718年",
+   2,
+   9,
+   230
+  ],
+  "history-spain-andalus": [
+   "后倭马亚王朝",
+   "756—1031年",
+   3,
+   5,
+   300
+  ]
  },
  "rows": {
-  "history-italy-middle-francia/0": [["italy"], 843, 950],
-  "history-germany-east-francia/0": [["germany"], 843, 955],
-  "history-germany-otto/0": [["germany", "italy", "faith"], 951, 964],
-  "history-faith-dark-century/0": [["faith"], 875, 955]
+  "history-italy-middle-francia/0": [
+   [
+    "italy"
+   ],
+   843,
+   950
+  ],
+  "history-germany-otto/0": [
+   [
+    "germany",
+    "italy",
+    "faith"
+   ],
+   951,
+   964
+  ],
+  "history-faith-dark-century/0": [
+   [
+    "faith"
+   ],
+   875,
+   955
+  ],
+  "history-faith-imperial-church/0": [
+   [
+    "faith"
+   ],
+   962,
+   1046
+  ],
+  "history-faith-cluny/0": [
+   [
+    "faith"
+   ],
+   963,
+   1049
+  ],
+  "history-faith-leo-ix/0": [
+   [
+    "faith"
+   ],
+   1046,
+   1054
+  ],
+  "history-spain-before-goths/0": [
+   [
+    "spain"
+   ],
+   481,
+   481
+  ],
+  "history-spain-visigoths/0": [
+   [
+    "spain"
+   ],
+   482,
+   589
+  ],
+  "history-spain-toledo/0": [
+   [
+    "spain"
+   ],
+   589,
+   642
+  ],
+  "history-spain-fall/0": [
+   [
+    "spain"
+   ],
+   642,
+   710
+  ],
+  "history-arab-rise/0": [
+   [
+    "persia"
+   ],
+   652,
+   652
+  ],
+  "history-arab-muhammad/0": [
+   [
+    "persia"
+   ],
+   653,
+   653
+  ],
+  "history-arab-expansion/0": [
+   [
+    "persia"
+   ],
+   654,
+   751
+  ],
+  "history-arab-constantinople/0": [
+   [
+    "east",
+    "persia"
+   ],
+   667,
+   718
+  ],
+  "history-spain-andalus/0": [
+   [
+    "spain"
+   ],
+   756,
+   1031
+  ],
+  "history-empire-macedonian/3": [
+   [
+    "east",
+    "faith"
+   ],
+   1054,
+   1056
+  ],
+  "history-spain-fall/2": [
+   [
+    "spain",
+    "persia"
+   ],
+   711,
+   713
+  ]
  },
  "shared": {
-  "history-germany-otto/0": ["germany", "italy", "faith"]
+  "history-germany-otto/0": [
+   "germany",
+   "italy",
+   "faith"
+  ],
+  "history-arab-constantinople/0": [
+   "east",
+   "persia"
+  ],
+  "history-empire-macedonian/3": [
+   "east",
+   "faith"
+  ],
+  "history-spain-fall/2": [
+   "spain",
+   "persia"
+  ]
  },
- "branches": {},
- "ends": [],
- "futures": [],
- "parallel": [],
- "pills": [],
  "bold": [
-  ["history-italy-middle-francia/0", "大儿子洛泰尔一世占了中法兰克"],
-  ["history-italy-middle-francia/1", "洛泰尔一死，中法兰克又再分给三个儿子"],
-  ["history-italy-middle-francia/2", "三个儿子都没留下合法的继承人"],
-  ["history-italy-middle-francia/3", "中法兰克没了主，就遭了哄抢"],
-  ["history-italy-middle-francia/3", "山北的洛林被东西两个叔叔瓜分"],
-  ["history-germany-otto/0", "中法兰克遭哄抢到最后，南边的意大利被东法兰克的奥托一世拿了"],
-  ["history-germany-otto/2", "后人把这一天当作神圣罗马帝国的开端，奥托是它的第一位皇帝"],
-  ["history-germany-otto/3", "奥托控制意大利之后就收紧控制：教宗不听话，皇帝开会把他废了，另立一个"],
-  ["history-faith-dark-century/0", "教会变得有利可图，教宗之位就成了争夺的焦点"],
-  ["history-faith-dark-century/1", "于是闹剧连台，头一出是审判死人"],
-  ["history-faith-dark-century/2", "第二出是情妇定教宗"]
- ],
- "fixes": [
-  ["history-italy-middle-francia/3", "洛泰尔二世的合法继承人本是哥哥路易二世，可他正在南方围巴里"],
-  ["history-italy-middle-francia/2", "婚姻归教会管，儿子合不合法也由教宗说了算"],
-  ["history-germany-otto/2", "这个名号要到12—13世纪才定型"],
-  ["history-germany-otto/0", "952年贝伦加尔二世到奥格斯堡向他称臣"],
-  ["history-faith-dark-century/2", "据敌视这家人的克雷莫纳主教利乌特普兰德所记"],
-  ["history-faith-dark-century/2", "16世纪的枢机巴罗尼乌斯把这几十年叫作教宗的“黑暗世纪”"]
- ],
- "gone": [
-  ["history-italy-middle-francia", "尸体审判"],
-  ["history-germany-east-francia", "962年2月2日"]
+  [
+   "history-italy-middle-francia/0",
+   "大儿子洛泰尔一世占了中法兰克"
+  ],
+  [
+   "history-italy-middle-francia/1",
+   "洛泰尔一死，中法兰克又再分给三个儿子"
+  ],
+  [
+   "history-italy-middle-francia/2",
+   "三个儿子都没留下合法的继承人"
+  ],
+  [
+   "history-italy-middle-francia/3",
+   "中法兰克没了主，就遭了哄抢"
+  ],
+  [
+   "history-italy-middle-francia/3",
+   "山北的洛林被东西两个叔叔瓜分"
+  ],
+  [
+   "history-germany-otto/0",
+   "中法兰克遭哄抢到最后，南边的意大利被东法兰克的奥托一世拿了"
+  ],
+  [
+   "history-germany-otto/2",
+   "后人把这一天当作神圣罗马帝国的开端，奥托是它的第一位皇帝"
+  ],
+  [
+   "history-germany-otto/3",
+   "奥托控制意大利之后就收紧控制：教宗不听话，皇帝开会把他废了，另立一个"
+  ],
+  [
+   "history-faith-dark-century/0",
+   "教会变得有利可图，教宗之位就成了争夺的焦点"
+  ],
+  [
+   "history-faith-dark-century/1",
+   "于是闹剧连台，头一出是审判死人"
+  ],
+  [
+   "history-faith-dark-century/2",
+   "第二出是情妇定教宗"
+  ],
+  [
+   "history-faith-imperial-church/0",
+   "神圣罗马帝国开张后，皇帝对教会的控制力甚至强过查理曼时期：能任命主教，甚至能任命"
+  ],
+  [
+   "history-faith-imperial-church/2",
+   "有利可图的教宗之位又成了罗马贵族争夺的焦点"
+  ],
+  [
+   "history-faith-imperial-church/3",
+   "可这份控制很快衰落：从1046年亨利三世一次废掉三个教宗，到1077年他儿子亨利"
+  ],
+  [
+   "history-faith-cluny/0",
+   "教会和修道院的变质，给信仰市场留出了新的空白"
+  ],
+  [
+   "history-faith-cluny/1",
+   "克吕尼模式抢占了这个风口，头一条是抓地权"
+  ],
+  [
+   "history-faith-cluny/2",
+   "第二条是勇猛精进"
+  ],
+  [
+   "history-faith-cluny/3",
+   "第三条是做模式推广，很快赢得了很大份额"
+  ],
+  [
+   "history-faith-leo-ix/0",
+   "改革是教会脏了才点燃的"
+  ],
+  [
+   "history-faith-leo-ix/1",
+   "亨利三世挑了自家亲戚当教宗，他偏不肯凭皇帝一句话上任，带着修士到罗马，让教士和百"
+  ],
+  [
+   "history-faith-leo-ix/2",
+   "清洁的办法：不许教士结婚的禁令严格执行，范围也扩大了；买卖神职一律禁止"
+  ],
+  [
+   "history-faith-leo-ix/3",
+   "极端派甚至觉得，皇帝认定教宗也是买卖，这就引出了皇权和教权的矛盾"
+  ],
+  [
+   "history-faith-leo-ix/4",
+   "利奥九世派到君士坦丁堡的洪贝特，拿改革派那把尺子量东方，把牧首绝罚了"
+  ],
+  [
+   "history-spain-before-goths/0",
+   "西班牙是地中海西头的矿山，原住民跟腓尼基人、迦太基人之间做的是殖民贸易：这里出银"
+  ],
+  [
+   "history-spain-before-goths/1",
+   "汉尼拔的本钱就出在西班牙"
+  ],
+  [
+   "history-spain-before-goths/2",
+   "罗马打了将近两百年，才把整个西班牙拿下来"
+  ],
+  [
+   "history-spain-before-goths/3",
+   "仗打完，西班牙成了罗马化最深的行省，连皇帝都出在这里"
+  ],
+  [
+   "history-spain-before-goths/4",
+   "帝国晚期管不住了，西罗马就让西哥特人去打西班牙的汪达尔人、阿兰人和苏维汇人，西哥"
+  ],
+  [
+   "history-spain-visigoths/0",
+   "西哥特趁西罗马南征迦太基失败，迅速扩大地盘，占了西班牙和高卢南部"
+  ],
+  [
+   "history-spain-visigoths/1",
+   "法兰克崛起，西哥特被克洛维打败，地盘稳定在西班牙"
+  ],
+  [
+   "history-spain-visigoths/2",
+   "原住民多信三一派，统治者西哥特人信阿里乌派，统治成本就很高"
+  ],
+  [
+   "history-spain-visigoths/3",
+   "国王还想专权，搞中央集权的老套路，激化了和贵族的矛盾，国王和贵族经常杀来杀去"
+  ],
+  [
+   "history-spain-toledo/0",
+   "国王和贵族两败俱伤，教会就冒了出来，开起主教大会"
+  ],
+  [
+   "history-spain-toledo/1",
+   "主教会议一次次让大家发誓“不许杀国王”，演成了喜剧套路"
+  ],
+  [
+   "history-spain-toledo/2",
+   "教会通过教权保护国王，换来了监督王权的权力"
+  ],
+  [
+   "history-spain-toledo/3",
+   "贵族得到了王位的选举权和被选举权，最终平衡"
+  ],
+  [
+   "history-spain-toledo/4",
+   "这看起来像今天的议会加元首制度，其实不是穿越，而是复古，回到了原始部落常见的会盟"
+  ],
+  [
+   "history-spain-fall/0",
+   "平衡维持到642年，出了一个强王，又想大权独揽"
+  ],
+  [
+   "history-spain-fall/1",
+   "于是西班牙又乱了"
+  ],
+  [
+   "history-spain-fall/2",
+   "就这样乱下去，直到被阿拉伯人征服"
+  ],
+  [
+   "history-arab-rise/0",
+   "马里卜大坝垮了，导致阿拉伯半岛流民遍地"
+  ],
+  [
+   "history-arab-rise/1",
+   "萨珊和东罗马打烂了"
+  ],
+  [
+   "history-arab-rise/2",
+   "这片乱局，就是后来穆斯林赶上的时代风口"
+  ],
+  [
+   "history-arab-muhammad/0",
+   "穆罕默德悟道之后，拿着自己的极简版新产品开发市场"
+  ],
+  [
+   "history-arab-muhammad/1",
+   "一开始在麦加不太顺利：圣人不容于本乡，耶稣也踩过这个坑"
+  ],
+  [
+   "history-arab-muhammad/2",
+   "后来换了个赛场，终于获得了种子用户"
+  ],
+  [
+   "history-arab-muhammad/3",
+   "第一桶金是想吸纳犹太人，没吸纳成，就发动自己的阵营对付犹太人"
+  ],
+  [
+   "history-arab-muhammad/3",
+   "男人杀掉，妇孺卖掉，财产瓜分"
+  ],
+  [
+   "history-arab-expansion/0",
+   "穆斯林的产品与市场完美契合，又赶上两大帝国打烂的风口，迅速起飞，四面扩张"
+  ],
+  [
+   "history-arab-expansion/1",
+   "南边到了努比亚就停了：前面是弓箭、沙漠和大海"
+  ],
+  [
+   "history-arab-expansion/2",
+   "西边打穿了北非，711年七千人从直布罗陀渡过海峡，打下了内乱的西班牙"
+  ],
+  [
+   "history-arab-expansion/3",
+   "东边打到怛罗斯，和唐军一战，虽然赢了也是强弩之末，无法再往东"
+  ],
+  [
+   "history-arab-constantinople/0",
+   "北边打到君士坦丁堡，被希腊火挡住了"
+  ],
+  [
+   "history-spain-andalus/0",
+   "倭马亚王朝剩下的人在西班牙建立了统治"
+  ],
+  [
+   "history-spain-andalus/1",
+   "后倭马亚王朝又闹内乱，引入外族兵平乱"
+  ],
+  [
+   "history-spain-andalus/2",
+   "结果外族兵又互相打，打烂了"
+  ],
+  [
+   "history-spain-andalus/2",
+   "打烂之后，北方的基督教诸王国就此南下"
+  ]
  ],
  "moments": {
-  "history-italy-middle-francia": [[0, "圣彼得的祭坛"], [2, "沸水神判"], [3, "扣押皇帝"], [5, "“投降的死狗”"]],
-  "history-germany-otto": [[0, "阿德莱德出逃"], [2, "头上的剑"], [3, "太阳穴上的一掌"]],
-  "history-faith-dark-century": [[1, "尸体审判"], [3, "洗手水与一记耳光"]]
+  "history-italy-middle-francia": [
+   [
+    0,
+    "圣彼得的祭坛"
+   ],
+   [
+    2,
+    "沸水神判"
+   ],
+   [
+    3,
+    "扣押皇帝"
+   ],
+   [
+    5,
+    "“投降的死狗”"
+   ]
+  ],
+  "history-germany-otto": [
+   [
+    0,
+    "阿德莱德出逃"
+   ],
+   [
+    2,
+    "头上的剑"
+   ],
+   [
+    3,
+    "太阳穴上的一掌"
+   ]
+  ],
+  "history-faith-dark-century": [
+   [
+    1,
+    "尸体审判"
+   ],
+   [
+    3,
+    "洗手水与一记耳光"
+   ]
+  ],
+  "history-faith-imperial-church": [
+   [
+    0,
+    "一张调兵单"
+   ],
+   [
+    1,
+    "王座上的查理曼"
+   ],
+   [
+    1,
+    "魔法师教宗"
+   ],
+   [
+    2,
+    "想娶表妹的教宗"
+   ],
+   [
+    3,
+    "我判我自己"
+   ]
+  ],
+  "history-faith-cluny": [
+   [
+    1,
+    "文书末尾的诅咒"
+   ],
+   [
+    2,
+    "魔鬼的抱怨"
+   ],
+   [
+    2,
+    "一千磅银子"
+   ],
+   [
+    3,
+    "骑驴进院"
+   ],
+   [
+    4,
+    "金十字球"
+   ]
+  ],
+  "history-faith-leo-ix": [
+   [
+    0,
+    "随母亲算自由人"
+   ],
+   [
+    1,
+    "光着脚进罗马"
+   ],
+   [
+    2,
+    "圣雷米还活着"
+   ],
+   [
+    4,
+    "跪着的胜利者"
+   ],
+   [
+    4,
+    "皇帝下令烧书"
+   ]
+  ],
+  "history-spain-before-goths": [
+   [
+    0,
+    "银子做的锚"
+   ],
+   [
+    1,
+    "还罗马的债"
+   ],
+   [
+    2,
+    "努曼提亚的最后几天"
+   ],
+   [
+    3,
+    "毁山"
+   ],
+   [
+    4,
+    "“我们自相残杀，替你打赢”"
+   ]
+  ],
+  "history-spain-visigoths": [
+   [
+    1,
+    "沾血的手帕"
+   ],
+   [
+    3,
+    "灭了灯的宴席"
+   ],
+   [
+    3,
+    "复活节的圣体"
+   ],
+   [
+    4,
+    "瞎子的眼睛"
+   ]
+  ],
+  "history-spain-toledo": [
+   [
+    0,
+    "五百磅的金盘"
+   ],
+   [
+    1,
+    "三遍诅咒"
+   ],
+   [
+    2,
+    "头顶冒烟"
+   ],
+   [
+    3,
+    "不答应就砍了你"
+   ]
+  ],
+  "history-spain-fall": [
+   [
+    0,
+    "挂在祭坛上的王冠"
+   ],
+   [
+    1,
+    "剃了发的国王"
+   ],
+   [
+    2,
+    "朱利安伯爵的女儿"
+   ]
+  ],
+  "history-arab-rise": [
+   [
+    1,
+    "这些狗"
+   ],
+   [
+    2,
+    "骆驼是我的"
+   ],
+   [
+    2,
+    "可我不知道"
+   ]
+  ],
+  "history-arab-muhammad": [
+   [
+    0,
+    "你读！"
+   ],
+   [
+    1,
+    "多不出一根小棍"
+   ],
+   [
+    2,
+    "一齐下刀"
+   ],
+   [
+    2,
+    "井边的话"
+   ],
+   [
+    4,
+    "三百六十尊偶像"
+   ]
+  ],
+  "history-arab-expansion": [
+   [
+    0,
+    "四朝管税的一家"
+   ],
+   [
+    1,
+    "射眼睛的弓手"
+   ],
+   [
+    2,
+    "石头上的三十个人"
+   ],
+   [
+    3,
+    "撒马尔罕的纸"
+   ]
+  ],
+  "history-arab-constantinople": [
+   [
+    0,
+    "海面上烧着的希腊火"
+   ],
+   [
+    1,
+    "金角湾的铁链与希腊火"
+   ]
+  ],
+  "history-spain-andalus": [
+   [
+    0,
+    "泅渡幼发拉底河"
+   ],
+   [
+    0,
+    "三十个蛮子"
+   ],
+   [
+    1,
+    "钟做的灯"
+   ],
+   [
+    2,
+    "卖席子的“哈里发”"
+   ]
+  ]
  },
- "boxes": {},
- "regions": ["mMeerssen870W", "mMeerssen870E", "mBurgundyKingdom1032", "mEmpire1050", "mNormanItaly1053"]
+ "boxes": {
+  "history-arab-rise": [
+   [
+    0,
+    "马里卜大坝"
+   ]
+  ]
+ },
+ "fixes": [
+  [
+   "history-italy-middle-francia/3",
+   "洛泰尔二世的合法继承人本是哥哥路易二世，可他正在南方围巴里"
+  ],
+  [
+   "history-italy-middle-francia/2",
+   "婚姻归教会管，儿子合不合法也由教宗说了算"
+  ],
+  [
+   "history-germany-otto/2",
+   "这个名号要到12—13世纪才定型"
+  ],
+  [
+   "history-faith-dark-century/2",
+   "据敌视这家人的克雷莫纳主教利乌特普兰德所记"
+  ],
+  [
+   "history-faith-leo-ix/4",
+   "皇帝君士坦丁九世想联手，待使节如贵宾；顶着不让的是牧首凯鲁拉里乌斯"
+  ],
+  [
+   "history-faith-leo-ix/4",
+   "诏书只革除牧首和同党"
+  ],
+  [
+   "history-faith-cluny/4",
+   "后人以教宗格雷戈里七世之名，称作格雷戈里改革"
+  ],
+  [
+   "history-spain-visigoths/1",
+   "531年阿马拉里克在纳博讷城下败给法兰克人"
+  ],
+  [
+   "history-spain-fall/0",
+   "平衡维持到642年"
+  ],
+  [
+   "history-arab-muhammad/3",
+   "同年逐盖努卡部，625年逐纳迪尔部"
+  ],
+  [
+   "history-arab-muhammad/3",
+   "628年攻下海巴尔，犹太人留下种地，交一半收成"
+  ]
+ ],
+ "gone": [
+  [
+   "history-italy-middle-francia",
+   "尸体审判"
+  ],
+  [
+   "history-germany-east-francia",
+   "962年2月2日"
+  ],
+  [
+   "history-west-kingdoms",
+   "莱奥维吉尔德"
+  ],
+  [
+   "history-west-kingdoms",
+   "托莱多"
+  ],
+  [
+   "history-arab-conquest",
+   "希拉山"
+  ],
+  [
+   "history-empire-constans",
+   "赫利奥波利斯"
+  ]
+ ],
+ "branches": {
+  "west": [
+   "中世纪西欧",
+   "rome",
+   476,
+   843,
+   4
+  ],
+  "spain": [
+   "西班牙",
+   "west",
+   481,
+   1031,
+   5
+  ],
+  "germany": [
+   "德意志",
+   "west",
+   843,
+   964,
+   4
+  ],
+  "italy": [
+   "意大利",
+   "west",
+   843,
+   964,
+   3
+  ],
+  "faith": [
+   "基督教",
+   "trunk",
+   -1400,
+   1056,
+   6
+  ],
+  "persia": [
+   "波斯—阿拉伯",
+   "trunk",
+   -3200,
+   751,
+   0
+  ]
+ },
+ "ends": [
+  [
+   "trunk",
+   -30,
+   "并入罗马"
+  ],
+  [
+   "rome",
+   476,
+   "西罗马终结"
+  ],
+  [
+   "west",
+   843,
+   "凡尔登三分"
+  ]
+ ],
+ "futures": [
+  [
+   "germany",
+   964,
+   "神圣罗马帝国"
+  ],
+  [
+   "italy",
+   964,
+   "帝国治下的意大利"
+  ],
+  [
+   "faith",
+   1056,
+   "大分裂以后"
+  ],
+  [
+   "spain",
+   1031,
+   "收复失地运动"
+  ]
+ ],
+ "parallel": [
+  [
+   "trunk",
+   "history-alexander-conquest/0",
+   "history-alexander-rule/0"
+  ],
+  [
+   "trunk",
+   "history-hellenistic-states/0",
+   "history-hellenistic-knowledge/0"
+  ],
+  [
+   "west",
+   "history-west-kingdoms/0",
+   "history-west-ostrogoths/0"
+  ],
+  [
+   "west",
+   "history-west-merovingians/0",
+   "history-west-lombards/0"
+  ],
+  [
+   "faith",
+   "history-empire-amorian/0",
+   "history-faith-carolingian/0"
+  ],
+  [
+   "faith",
+   "history-faith-imperial-church/0",
+   "history-faith-cluny/0"
+  ]
+ ],
+ "pills": [
+  "希腊",
+  "罗马",
+  "东罗马",
+  "中世纪西欧",
+  "西班牙",
+  "法兰西",
+  "德意志",
+  "意大利",
+  "基督教",
+  "埃及",
+  "波斯—阿拉伯",
+  "中国"
+ ],
+ "regions": [
+  "mMeerssen870W",
+  "mMeerssen870E",
+  "mBurgundyKingdom1032",
+  "mEmpire1050",
+  "mNormanItaly1053",
+  "mUmayyad750",
+  "mMakuria650",
+  "mHimyar",
+  "mAksum",
+  "ibBaetica",
+  "ibLusitania",
+  "ibTarraconensis"
+ ],
+ "pass": "15 new or rebuilt sections (63 scenes): 意大利 on 老无’s chain; 奥托一世称帝 shared by 德意志, 意大利 and 基督教; 基督教 to 1054 with the imperial church beside Cluny; 西班牙 from Carthage to Córdoba, forking off 中世纪西欧 and sharing 711 with 波斯—阿拉伯; the Arabs from Marib to the dozen states, the sieges of Constantinople shared with 东罗马; 57 of 老无’s theses in bold, 11 corrections in plain text"
 }

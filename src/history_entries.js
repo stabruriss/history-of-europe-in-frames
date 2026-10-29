@@ -598,6 +598,16 @@ Object.assign(HS,{
   cf_cyzicus:['基齐库斯','Cyzicus',40.38,27.89,'马尔马拉海南岸的半岛；据提奥法尼斯，阿拉伯舰队在此过冬，开春再去攻城。'],
   cf_syllaeum:['叙莱翁','Syllaeum',36.99,30.99,'潘菲利亚的城；据提奥法尼斯，撤退的阿拉伯舰队在这一带海上遭风暴覆没。'],
   cf_abydos:['阿拜多斯（赫勒斯滂）','Abydos (Hellespont)',40.2,26.4,'达达尼尔海峡边的城；717年夏马斯拉马的大军在此渡海进入色雷斯。'],
+  an_cordoba:['科尔多瓦','Córdoba',37.885,-4.779,'756年起后倭马亚王朝的都城；10世纪西欧最大的城，1013年被柏柏尔兵攻破洗劫。'],
+  an_covadonga:['科瓦东加','Covadonga',43.309,-5.056,'坎塔布里亚山中欧罗巴峰下的山谷与岩洞；据9世纪末的编年史，722年佩拉约在此打退一支穆斯林兵。'],
+  an_almunecar:['阿尔穆涅卡尔','Almuñécar',36.733,-3.69,'格拉纳达南边的海港；755年9月阿卜杜勒·拉赫曼一世从北非渡海，在这一带登陆。'],
+  an_leon:['莱昂','León',42.599,-5.567,'罗马军团营地旧址；910年阿斯图里亚斯诸王从奥维耶多迁都于此，后称莱昂王国。'],
+  an_pamplona:['潘普洛纳','Pamplona',42.817,-1.643,'巴斯克人的中心；824年前后伊尼戈·阿里斯塔在此称王，是后来纳瓦拉王国的起点。'],
+  an_santiago:['圣地亚哥—德孔波斯特拉','Santiago de Compostela',42.88,-8.545,'9世纪起据称在此发现使徒雅各之墓，成了朝圣地；997年被曼苏尔攻破焚掠。'],
+  an_bobastro:['博瓦斯特罗','Bobastro',36.89,-4.77,'马拉加北边山中的要塞；880—928年改宗者乌马尔·伊本·哈夫森父子据此对抗科尔多瓦。'],
+  an_granada:['格拉纳达','Granada',37.177,-3.599,'1013年后柏柏尔人齐里家族在此立国，是南部最强的柏柏尔泰法。'],
+  an_denia:['德尼亚','Dénia',38.84,0.106,'东岸海港；1010年后斯拉夫将领穆贾希德在此立国，兼领巴利阿里群岛。'],
+  an_gormaz:['戈尔马斯','Gormaz',41.496,-3.003,'杜罗河上的哈里发国大要塞；1010年和两百多座边堡一起割给了卡斯蒂利亚伯爵。'],
 });
 function hp(d,key,opt={}){
   const [n,en,la,lo,note]=HS[key];
@@ -2172,27 +2182,27 @@ const HISTORY_ENTRIES=[
 {id:'history-spain-before-goths',ch:5,title:'西哥特以前的西班牙：矿山、粮仓与战场',short:'西哥特以前的西班牙',en:'Spain before the Visigoths',period:'约前1100—468年',c:HC.spain,
  scenes:[
   hs('约前1100—前237年','拿货换矿','东部、南部沿海是伊比利亚人，中部、西北是凯尔特人；提尔人建加迪尔，希腊人建恩波里翁，都为金属而来；迦太基后来接手这张商站网。',[[34.8,-10.2],[44.4,11.2]],d=>{
-    ha(d,'hCarthageAfrica',HC.myc,{fillOpacity:.22});
+    ha(d,'hCarthageAfrica',HC.mino,{fillOpacity:.22});
     hp(d,'ib_gadir');hp(d,'ib_riotinto');hp(d,'ib_emporion');
     hp(d,'massilia',{note:'福西亚希腊人约前600年所建的港城；恩波里翁的希腊人与它同出一源。'});
     hp(d,'carthage',{left:1,note:'传说提尔人约前814年所建；前6世纪起接手腓尼基人在西地中海的商站网。'});
     hl(d,'伊比利亚人','Iberians',39.3,-0.9,HC.neutral);hl(d,'凯尔特伊比利亚人','Celtiberians',41.4,-2.6,HC.celt);
     hl(d,'凯尔特人','Celts',42.7,-7.4,HC.celt);hl(d,'卢西塔尼亚人','Lusitanians',39.6,-7.4,HC.neutral);
-    hl(d,'塔特索斯：银','Tartessos: silver',37.75,-5.9,HC.mino);hl(d,'马斯提亚','Mastia',37.75,-1.2,HC.myc);
-    hr(d,[[37.0,10.0],[37.4,5.0],[37.1,0.5],[36.6,-2.4],[36.4,-4.8],[36.45,-6.15]],HC.myc);
+    hl(d,'塔特索斯：银','Tartessos: silver',37.75,-5.9,HC.hittite);hl(d,'马斯提亚','Mastia',37.75,-1.2,HC.mino);
+    hr(d,[[37.0,10.0],[37.4,5.0],[37.1,0.5],[36.6,-2.4],[36.4,-4.8],[36.45,-6.15]],HC.mino);
     hr(d,[[43.25,5.3],[42.6,3.7],[42.15,3.2]],HC.athens);
-   },[['fill',HC.myc,'迦太基本土'],['dline',HC.myc,'腓尼基人、迦太基人的航路（概略）'],['dline',HC.athens,'希腊人的航路（概略）'],['dot','#2a2018','商站与矿区']]),
+   },[['fill',HC.mino,'迦太基本土'],['dline',HC.mino,'腓尼基人、迦太基人的航路（概略）'],['dline',HC.athens,'希腊人的航路（概略）'],['dot','#2a2018','商站与矿区']]),
   hs('前237—前206年','汉尼拔的本钱','巴卡家族从加迪尔起家，攥住南部银矿，建新迦太基；前219年围萨贡托开战；前209年大西庇阿攻下新迦太基，前206年伊利帕一战，迦太基退出西班牙。',[[35.6,-10.0],[44.0,4.6]],d=>{
-    ha(d,'hBarcidSpain',HC.myc,{fillOpacity:.26});
+    ha(d,'hBarcidSpain',HC.mino,{fillOpacity:.26});
     hp(d,'ib_gadir',{note:'前237年哈米尔卡在此登陆；前206年迦太基人从这里撤走，城随即归附罗马。'});
     hp(d,'ib_castulo');
     hp(d,'cartnova',{kind:'battle',note:'约前227年哈斯德鲁巴所建，国库、军械和各部落的人质都在城里；前209年大西庇阿一天攻下。'});
     hp(d,'saguntum',{kind:'battle',note:'受罗马保护的城；前219年汉尼拔围了八个月攻下，第二次布匿战争由此开打。'});
     hp(d,'tarraco',{note:'前218年起罗马在西班牙的基地；前209年大西庇阿从这里南下。'});
     hp(d,'ib_ilipa',{kind:'battle',left:1});
-    hr(d,[[37.6,-0.98],[39.68,-0.27],[40.7,0.7],[41.6,2.0],[42.4,2.95]],HC.myc);
+    hr(d,[[37.6,-0.98],[39.68,-0.27],[40.7,0.7],[41.6,2.0],[42.4,2.95]],HC.mino);
     hr(d,[[41.12,1.25],[40.3,0.3],[39.4,-0.35],[38.3,-0.55],[37.7,-0.95]],HC.rome);
-   },[['fill',HC.myc,'巴卡家族的西班牙（前218年前后）'],['dline',HC.myc,'前218年汉尼拔北上（概略）'],['dline',HC.rome,'前209年大西庇阿南下（概略）'],['dot',HC.war,'萨贡托、新迦太基与伊利帕'],['dot','#2a2018','加迪尔、卡斯图洛与塔拉科']]),
+   },[['fill',HC.mino,'巴卡家族的西班牙（前218年前后）'],['dline',HC.mino,'前218年汉尼拔北上（概略）'],['dline',HC.rome,'前209年大西庇阿南下（概略）'],['dot',HC.war,'萨贡托、新迦太基与伊利帕'],['dot','#2a2018','加迪尔、卡斯图洛与塔拉科']]),
   hs('前197—前19年','两百年才打下来','罗马从东南沿海往内陆一步步推：努曼提亚顶了二十年，卢西塔尼亚人打游击；内战打到伊莱尔达、蒙达；前19年平定西北的坎塔布里亚人。',[[35.6,-10.0],[44.4,4.4]],d=>{
     ha(d,'gIberia',HC.rome,{fillOpacity:.06,dashArray:'5 4'});ha(d,'hHispania133',HC.rome,{fillOpacity:.22});
     hp(d,'numantia',{kind:'battle',note:'凯尔特伊比利亚人的小城，顶了二十年；前133年被小西庇阿围到人吃人才降，城被夷平。'});
@@ -2328,6 +2338,34 @@ const HISTORY_ENTRIES=[
     hp(d,'tudmir',{note:'713年狄奥德米尔在这一带订约，保住七座城。'});
     hr(d,[[35.89,-5.32],[36.14,-5.35]],HC.myc);hr(d,[[36.6,-5.9],[37.9,-4.8],[39.86,-4.02]],HC.myc);
    },[['fill',HC.spain,'西哥特王国'],['dline',HC.myc,'711年塔里克渡海北进（概略）'],['dot',HC.war,'瓜达莱特（大致方位）'],['dot','#2a2018','休达、登陆处、都城与713年订约之地']])
+ ]},
+{id:'history-spain-andalus',ch:5,title:'后倭马亚王朝：请外族兵平乱，反被外族兵打烂',short:'后倭马亚王朝',en:'The Umayyads of Córdoba',period:'756—1031年',c:HC.spain,
+ scenes:[
+  hs('756—910年','倭马亚的遗孤另立门户','750年逃过屠杀的倭马亚王子756年在科尔多瓦称埃米尔；基督徒只剩北边的阿斯图里亚斯和比利牛斯山一带。',[[33.6,-10.2],[44.6,11.2]],d=>{
+    ha(d,'mAndalus814',HC.myc,{fillOpacity:.2});ha(d,'mAsturias800',HC.spain,{fillOpacity:.32});ha(d,'mSpanishMarch801',HC.spain,{fillOpacity:.18,dashArray:'4 4'});
+    hp(d,'an_almunecar',{left:1});hp(d,'an_cordoba',{note:'756年5月阿卜杜勒·拉赫曼在城外打败总督，进城称埃米尔。'});
+    hp(d,'an_covadonga',{kind:'battle'});hp(d,'an_leon',{note:'910年阿斯图里亚斯诸王从奥维耶多迁都于此。'});
+    hp(d,'an_pamplona',{note:'巴斯克人的中心；824年前后有了自己的王。'});hp(d,'k_barcelona',{note:'801年法兰克人攻下，成了西班牙边区的中心。'});
+    hl(d,'自幼发拉底河一路西逃（750—755年）','Flight from the Euphrates (750–755)',35.0,8.4,HC.route);
+    hr(d,[[35.68,10.1],[36.4,6.6],[36.6,4.2],[35.3,0.2],[35.2,-2.9],[35.7,-5.3],[36.73,-3.69],[37.09,-4.39],[37.39,-5.98],[37.885,-4.779]],HC.route);
+   },[['fill',HC.myc,'科尔多瓦的倭马亚埃米尔国（约814年）'],['fill',HC.spain,'阿斯图里亚斯王国（约800年）'],['dash',HC.spain,'查理曼设的西班牙边区（801年起）'],['dline',HC.route,'阿卜杜勒·拉赫曼的逃亡路（概略）'],['dot',HC.war,'722年的科瓦东加'],['dot','#2a2018','登陆处、科尔多瓦与北方基督徒的据点']]),
+  hs('912—1002年','哈里发与外族兵','912年政令出不了科尔多瓦；靠外来的奴隶兵、柏柏尔兵平乱，929年称哈里发；曼苏尔把兵全换成外人，年年北征。',[[33.4,-10.2],[44.4,4.6]],d=>{
+    ha(d,'mCaliphCordoba1000',HC.myc,{fillOpacity:.22});ha(d,'mChristianNorth1000',HC.spain,{fillOpacity:.26});
+    hp(d,'an_cordoba',{note:'城西建了扎哈拉宫城（936年起）；曼苏尔另建扎希拉宫城理政。'});hp(d,'an_bobastro',{kind:'battle'});
+    hp(d,'an_santiago',{kind:'battle'});hp(d,'an_leon',{kind:'battle',note:'曼苏尔多次来攻，城墙被拆。'});
+    hp(d,'k_barcelona',{kind:'battle',note:'985年7月被曼苏尔攻破洗劫。'});hp(d,'vg_ceuta',{left:1,note:'931年归科尔多瓦；北非招来的柏柏尔兵多从这一带渡海。'});
+    hr(d,[[37.885,-4.779],[38.92,-6.34],[39.98,-6.54],[40.66,-7.91],[41.15,-8.61],[42.88,-8.545]],HC.war);
+    hr(d,[[34.03,-5.0],[35.78,-5.81],[36.13,-5.45],[37.885,-4.779]],HC.mino);
+   },[['fill',HC.myc,'科尔多瓦哈里发国（约1000年，含北非属地）'],['fill',HC.spain,'北方基督教诸国（约1000年）'],['dline',HC.war,'997年曼苏尔北上圣地亚哥（概略）'],['dline',HC.mino,'北非柏柏尔兵渡海而来（概略）'],['dot',HC.war,'928年攻下的博瓦斯特罗与曼苏尔攻破的城'],['dot','#2a2018','科尔多瓦与休达']]),
+  hs('1008—1031年','外族兵互相打，打烂了','柏柏尔兵、斯拉夫兵各拥哈里发，各请基督徒帮打；1013年科尔多瓦被洗劫，1031年废哈里发，外族将领分地成泰法。',[[35.6,-9.8],[44.2,4.6]],d=>{
+    ha(d,'mTaifasLocal1035',HC.myc,{fillOpacity:.2});ha(d,'mTaifasBerber1035',HC.mino,{fillOpacity:.32});ha(d,'mTaifasSlav1035',HC.hittite,{fillOpacity:.32});
+    ha(d,'mChristianNorth1000',HC.spain,{fillOpacity:.18,dashArray:'4 4'});
+    hp(d,'an_cordoba',{kind:'battle',note:'1013年柏柏尔兵破城大掠；据伊本·哈兹姆所记，他家城西的宅院被抢，成了兵营。'});
+    hp(d,'hispalis',{note:'阿拉伯人阿巴德家的泰法；1035年在此推出假希沙姆。'});hp(d,'an_granada');hp(d,'an_denia');hp(d,'an_gormaz');
+    hp(d,'w_zaragoza',{note:'阿拉伯豪族图吉布家、后来胡德家的泰法。'});
+    hl(d,'莱昂王国','Kingdom of León',42.75,-6.3,HC.spain);hl(d,'卡斯蒂利亚伯国','County of Castile',42.35,-3.9,HC.spain);
+    hl(d,'纳瓦拉王国','Kingdom of Pamplona',42.95,-1.75,HC.spain);hl(d,'巴塞罗那伯国','County of Barcelona',41.95,2.0,HC.spain);
+   },[['fill',HC.mino,'新来的柏柏尔将领分得的泰法（约1035年）'],['fill',HC.hittite,'斯拉夫将领与曼苏尔家旧部的泰法'],['fill',HC.myc,'本地豪族的泰法（含早年定居的柏柏尔家族）'],['dash',HC.spain,'北方基督教诸国（1010年卡斯蒂利亚又得了杜罗河上的边堡）'],['dot',HC.war,'1013年被洗劫的科尔多瓦'],['dot','#2a2018','几个泰法的都城与割给卡斯蒂利亚的戈尔马斯']])
  ]},
 {id:'history-west-merovingians',ch:5,title:'墨洛温王朝：分家与宫相',short:'墨洛温王朝',en:'The Merovingians: Partitions and Mayors of the Palace',period:'561—751年',c:HC.celt,
  scenes:[
@@ -3287,7 +3325,7 @@ const HISTORY_ENTRIES=[
     hp(d,'it_canossa',{left:1,kind:'battle',note:'1077年亨利四世在城堡外求见教宗（待展开）。'});
    },[['fill',HC.germany,'帝国（约1050年）'],['fill',HC.faith,'教宗领'],['dot',HC.war,'1046年苏特里与1077年卡诺莎'],['dot','#2a2018','写书与开会的地方']]),
   hs('1053—1054年','拿同一把尺子量东方','1053年6月奇维塔泰兵败后，利奥九世在贝内文托被扣到次年3月；他派使节去君士坦丁堡，1054年7月16日诏书放上圣索菲亚的祭台。',[[37.0,11.0],[44.6,30.0]],d=>{
-    ha(d,'mByz1025',HC.athens,{fillOpacity:.14});ha(d,'mNormanItaly1053',HC.war,{fillOpacity:.3});ha(d,'mPapal756',HC.faith,{fillOpacity:.32});
+    ha(d,'mByz1025',HC.athens,{fillOpacity:.14});ha(d,'mByzItaly880',HC.athens,{fillOpacity:.14,dashArray:'4 4'});ha(d,'mNormanItaly1053',HC.war,{fillOpacity:.3});ha(d,'mPapal756',HC.faith,{fillOpacity:.32});
     hp(d,'b_civitate',{kind:'battle',note:'1053年6月18日，教宗的军队在此败给诺曼人。'});
     hp(d,'w_benevento',{left:1,note:'利奥九世战后被扣在这里，名为作客，到1054年3月才回罗马。'});
     hp(d,'b_bari',{note:'东罗马在意大利的总督阿尔吉罗斯驻在这里，他约教宗南北夹击诺曼人。'});
@@ -3295,7 +3333,7 @@ const HISTORY_ENTRIES=[
     hp(d,'constantinople',{note:'皇帝待使节如贵宾；牧首闭门不见，7月16日被革除。'});
     hp(d,'f_cassino',{left:1,note:'1054年初使节取道这里东去。'});
     hr(d,[[41.49,13.81],[41.13,16.87],[41.32,19.45],[41.12,20.8],[40.64,22.94],[41.01,28.98]],HC.route);
-   },[['fill',HC.athens,'东罗马（1025年）'],['fill',HC.war,'诺曼人的地盘（约1053年）'],['fill',HC.faith,'教宗领'],['dline',HC.route,'1054年使节去君士坦丁堡（概略）'],['dot',HC.war,'1053年奇维塔泰之战'],['dot','#2a2018','卡西诺山、贝内文托、巴里、罗马与君士坦丁堡']])
+   },[['fill',HC.athens,'东罗马（1025年）'],['dash',HC.athens,'东罗马在南意大利的地盘（巴里、卡拉布里亚）'],['fill',HC.war,'诺曼人的地盘（约1053年）'],['fill',HC.faith,'教宗领'],['dline',HC.route,'1054年使节去君士坦丁堡（概略）'],['dot',HC.war,'1053年奇维塔泰之战'],['dot','#2a2018','卡西诺山、贝内文托、巴里、罗马与君士坦丁堡']])
  ]},
 {id:'history-china-neolithic',ch:7,title:'新石器聚落与万邦时代',short:'仰韶与良渚',en:'Neolithic China: Yangshao to Liangzhu',period:'约前7000—前1900年',c:HC.china,
  scenes:[
@@ -3989,7 +4027,7 @@ const HISTORY_ERAS=[
  {id:'empire-iconoclasm',name:'东罗马：圣像之争时代',en:'East Rome: the Age of Iconoclasm',date:'717—867年',c:HC.byz,items:[['history-empire-isaurian'],['history-empire-amorian']]},
  {id:'empire-macedonian',name:'东罗马：马其顿王朝',en:'East Rome: the Macedonian Dynasty',date:'867—1056年',c:HC.byz,items:[['history-empire-macedonian',0,2],['history-empire-macedonian',3,3,'东西教会大分裂']]},
  {id:'empire-kingdoms',name:'中世纪早期：蛮族诸王国',en:'The Barbarian Kingdoms',date:'476—568年',c:HC.celt,items:[['history-west-kingdoms'],['history-west-ostrogoths']]},
- {id:'spain-visigoths',name:'西班牙：从迦太基到后倭马亚',en:'Spain from Carthage to the Umayyads of Córdoba',date:'约前1100—1031年',c:HC.spain,items:[['history-spain-before-goths'],['history-spain-visigoths'],['history-spain-toledo'],['history-spain-fall',0,1],['history-spain-fall',2,2,'塔里克渡海']]},
+ {id:'spain-visigoths',name:'西班牙：从迦太基到后倭马亚',en:'Spain from Carthage to the Umayyads of Córdoba',date:'约前1100—1031年',c:HC.spain,items:[['history-spain-before-goths'],['history-spain-visigoths'],['history-spain-toledo'],['history-spain-fall',0,1],['history-spain-fall',2,2,'塔里克渡海'],['history-spain-andalus']]},
  {id:'empire-franks',name:'中世纪早期：法兰克与伦巴第',en:'Franks and Lombards',date:'561—843年',c:HC.celt,items:[['history-west-merovingians'],['history-west-lombards'],['history-west-charlemagne'],['history-west-charlemagne-rule'],['history-west-louis-pious']]},
  {id:'empire-verdun',name:'中世纪早期：凡尔登之后',en:'After Verdun',date:'843—987年',c:HC.celt,items:[['history-france-west-francia'],['history-germany-east-francia'],['history-italy-middle-francia'],['history-germany-otto']]},
  {id:'faith-israel',name:'古代以色列',en:'Ancient Israel',date:'约前1400—前538年',c:HC.faith,items:[['history-faith-israel'],['history-faith-first-temple']]},
@@ -4017,7 +4055,7 @@ const HISTORY_BRANCHES=[
  // 东罗马 takes the Greek lane, free since the Greek world ran into Rome; from the division of 395 by dynasty to the end of the Macedonians.
  {id:'east',name:'东罗马',en:'East Rome',lane:2,parent:'rome',from:395,to:1056,c:HC.byz},
  {id:'west',name:'中世纪西欧',en:'Medieval Western Europe',lane:4,parent:'rome',from:476,to:843,c:HC.celt},
- {id:'spain',name:'西班牙',en:'Spain',lane:5,parent:'west',from:481,to:711,c:HC.spain},
+ {id:'spain',name:'西班牙',en:'Spain',lane:5,parent:'west',from:481,to:1031,c:HC.spain},
  {id:'france',name:'法兰西',en:'France',lane:5,parent:'west',from:843,to:987,c:HC.france},
  {id:'germany',name:'德意志',en:'Germany',lane:4,parent:'west',from:843,to:964,c:HC.germany},
  {id:'italy',name:'意大利',en:'Italy',lane:3,parent:'west',from:843,to:964,c:HC.italy},
@@ -4155,13 +4193,14 @@ const TREE_ROWS={
  'history-arab-muhammad/0':['persia',653,653,'610—632年'],
  'history-arab-expansion/0':['persia',654,751,'632—751年'],
  'history-arab-constantinople/0':[['east','persia'],667,718],
+ 'history-spain-andalus/0':['spain',756,1031],
  'history-empire-macedonian/3':[['east','faith'],1054,1056],
  'history-spain-fall/2':[['spain','persia'],711,713]
 };
 // Topics still to be written grow the tree as dashed shoots.
-const TREE_FUTURE=[['east',1056,'东罗马（晚期）','1056年起 · 1071年曼齐刻尔特之战 · 1204年十字军攻破君士坦丁堡 · 到1453年 · 待展开'],['france',987,'卡佩王朝','987年起 · 待展开'],['germany',964,'神圣罗马帝国','964年起 · 奥托王朝与萨利安王朝 · 1077年卡诺莎之辱 · 待展开'],['italy',964,'帝国治下的意大利','964年起 · 待展开'],['faith',1056,'大分裂以后','1054年起 · 1077年卡诺莎之辱 · 十字军与东西两教会 · 待展开'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',751,'阿拔斯王朝','750年起 · 巴格达、造纸与翻译运动 · 待展开'],['china',845,'晚唐五代与宋','845年起 · 待展开']];
+const TREE_FUTURE=[['east',1056,'东罗马（晚期）','1056年起 · 1071年曼齐刻尔特之战 · 1204年十字军攻破君士坦丁堡 · 到1453年 · 待展开'],['france',987,'卡佩王朝','987年起 · 待展开'],['germany',964,'神圣罗马帝国','964年起 · 奥托王朝与萨利安王朝 · 1077年卡诺莎之辱 · 待展开'],['italy',964,'帝国治下的意大利','964年起 · 待展开'],['faith',1056,'大分裂以后','1054年起 · 1077年卡诺莎之辱 · 十字军与东西两教会 · 待展开'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',751,'阿拔斯王朝','750年起 · 巴格达、造纸与翻译运动 · 待展开'],['china',845,'晚唐五代与宋','845年起 · 待展开'],['spain',1031,'收复失地运动','1031年起 · 泰法诸小国与北方基督教诸王国南下 · 待展开']];
 // Where a line stops it says why: [line, year, the event that ends it, note, the line it carries on in].
-const TREE_ENDS=[['trunk',-30,'并入罗马','前146年科林斯被毁 · 前30年最后一个希腊化王国埃及并入罗马','rome'],['rome',476,'西罗马终结','476年西部末代皇帝被废 · 由中世纪西欧接续'],['west',843,'凡尔登三分','843年《凡尔登条约》三分帝国 · 分出法兰西、德意志、意大利'],['spain',711,'并入阿拉伯','711年塔里克渡海、西哥特王国覆亡 · 由“波斯—阿拉伯”线接续']];
+const TREE_ENDS=[['trunk',-30,'并入罗马','前146年科林斯被毁 · 前30年最后一个希腊化王国埃及并入罗马','rome'],['rome',476,'西罗马终结','476年西部末代皇帝被废 · 由中世纪西欧接续'],['west',843,'凡尔登三分','843年《凡尔登条约》三分帝国 · 分出法兰西、德意志、意大利']];
 // Sections of one line that run side by side: [line, row keys, side of the passing loop].
 const TREE_PARALLEL=[['trunk',['history-alexander-conquest/0','history-alexander-rule/0'],1],['trunk',['history-hellenistic-states/0','history-hellenistic-knowledge/0'],1],['west',['history-west-kingdoms/0','history-west-ostrogoths/0'],1],['west',['history-west-merovingians/0','history-west-lombards/0'],1],['faith',['history-empire-amorian/0','history-faith-carolingian/0'],-1],['faith',['history-faith-imperial-church/0','history-faith-cluny/0'],-1]];
 function historyEra(e,scene=0){return HISTORY_ERAS.find(era=>era.items.some(([id,from=0,to=Infinity])=>id===e.id&&scene>=from&&scene<=to));}
