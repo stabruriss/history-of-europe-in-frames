@@ -14,7 +14,7 @@ const treeReport=sel=>{
   const node=tree.querySelector(`.tree-node[data-key="${b.dataset.key}"]`);
   return {key:b.dataset.key,branch:b.dataset.branch,t:TREE_ROWS[b.dataset.key][1],...rel(b),cx:node?+(node.dataset.lx??node.getAttribute('cx')):null,cy:node?+node.getAttribute('cy'):null};
  });
- const rows=[...tree.querySelectorAll('.tree-item,.tree-head,.tree-future,.tree-end')].map(el=>({text:el.textContent.slice(0,14),...rel(el)}));
+ const rows=[...tree.querySelectorAll('.tree-item,.tree-head,.tree-future,.tree-end,.tree-slice')].map(el=>({text:el.textContent.slice(0,14),...rel(el)}));
  const names=[...tree.querySelectorAll('.tree-branch-name')].filter(n=>!n.hidden&&n.checkVisibility()).map(n=>({text:n.textContent,...rel(n)}));
  return {wide:tree.classList.contains('wide'),compact:tree.classList.contains('compact'),items,rows,names,
   forks:[...tree.querySelectorAll('.fork')].map(p=>p.dataset.branch).sort(),breaks:tree.querySelectorAll('.break').length,
@@ -37,11 +37,13 @@ function checkTree(r,label){
  assert.ok(Object.values(lanes).every(s=>s.size===1),label+' one lane per branch');
  // 东罗马 takes the Greek lane, free since 希腊 ran into 罗马; China sits on its own parallel lane on the far right.
  assert.ok([...lanes.east][0]===[...lanes.trunk][0],label+' 东罗马 on the Greek lane');
- assert.equal(new Set(Object.values(lanes).map(s=>[...s][0])).size,8,label+' distinct lanes');
+ assert.equal(new Set(Object.values(lanes).map(s=>[...s][0])).size,9,label+' distinct lanes');
+ // 东欧 runs on its own lane between 基督教 and 中国.
+ assert.ok([...lanes.faith][0]<[...lanes.eeurope][0]&&[...lanes.eeurope][0]<[...lanes.china][0],label+' 东欧 between 基督教 and 中国');
  // Left to right: 波斯, 埃及, the Greek trunk, Rome, West Rome, 基督教, then the parallel 中国 line on the outermost lane.
  assert.ok([...lanes.persia][0]<[...lanes.egypt][0]&&[...lanes.egypt][0]<[...lanes.trunk][0],label+' 波斯 and 埃及 left of the trunk');
  assert.ok([...lanes.rome][0]<[...lanes.west][0]&&[...lanes.west][0]<[...lanes.faith][0]&&[...lanes.faith][0]<[...lanes.china][0],label+' the 中国 line outermost');
- assert.deepEqual(r.forks,['east','egypt','faith','france','italy','persia','rome','spain','west'],label+' forks');
+ assert.deepEqual(r.forks,['east','eeurope','egypt','faith','france','italy','persia','rome','spain','west'],label+' forks');
  assert.equal(r.breaks,3,label+' compressed prehistory is marked');
  // Overlapping topics read side by side at the same height.
  const top=k=>r.items.find(i=>i.key===k).top;
@@ -241,6 +243,6 @@ function checkTree(r,label){
    await m.close();
   }
   assert.deepEqual(errors,[]);
-  console.log('PASS: history tree — 133 rows on 12 lines (希腊, 罗马, 东罗马, 中世纪西欧, 西班牙, 法兰西, 德意志, 意大利, 基督教, 埃及, 波斯—阿拉伯, 中国) with 9 forks (埃及 and 波斯—阿拉伯 off the trunk at the early states, 基督教 at 前1400 on the outermost lane, 东罗马 off 罗马 at 395 and 中世纪西欧 at 476, 西班牙 off 中世纪西欧 with the Visigoths, 法兰西 and 意大利 at Verdun; 东罗马 to 1056, 基督教 through its shared stations to 1054); every earlier start sits higher; no overlapping rows; nodes on their lanes; Rome beside Greece and the Hellenistic kingdoms; unwritten topics as dashed shoots; time ticks and compressed-prehistory breaks; metro lines: pick a line (button or the drawn line itself) in place, ↑↓ / 上一条 / 下一条 ride only that line in time order, line lit root-to-fork, everything else greyed; draggable, remembered, clamped column; sidebar at 1440 and 1024; expanded view with branch names; phone and short-landscape sheets; geography mode untouched; offline; no page errors.');
+  console.log('PASS: history tree — 133 rows on 13 lines (希腊, 罗马, 东罗马, 中世纪西欧, 西班牙, 法兰西, 德意志, 意大利, 基督教, 埃及, 波斯—阿拉伯, 东欧, 中国) with 10 forks (东欧 off 希腊 at the Black Sea colonies, 埃及 and 波斯—阿拉伯 off the trunk at the early states, 基督教 at 前1400 on the outermost lane, 东罗马 off 罗马 at 395 and 中世纪西欧 at 476, 西班牙 off 中世纪西欧 with the Visigoths, 法兰西 and 意大利 at Verdun; 东罗马 to 1056, 基督教 through its shared stations to 1054); every earlier start sits higher; no overlapping rows, the five time slices included; nodes on their lanes; Rome beside Greece and the Hellenistic kingdoms; unwritten topics as dashed shoots; time ticks and compressed-prehistory breaks; metro lines: pick a line (button or the drawn line itself) in place, ↑↓ / 上一条 / 下一条 ride only that line in time order, line lit root-to-fork, everything else greyed; draggable, remembered, clamped column; sidebar at 1440 and 1024; expanded view with branch names; phone and short-landscape sheets; geography mode untouched; offline; no page errors.');
  }catch(e){console.error(e);process.exitCode=1;}finally{await browser.close();}
 })();

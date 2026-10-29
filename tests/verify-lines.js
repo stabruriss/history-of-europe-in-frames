@@ -51,7 +51,7 @@ const PHRASES=[["history-egypt-roman/0", "托勒密只是亚历山大之后的�
    await page.evaluate(id=>go(id),EGYPT[0]);assert.match(await page.$eval('#entryEyebrow',e=>e.textContent),/ · 第九章$/);
    await page.evaluate(id=>go(id),PERSIA[0]);assert.match(await page.$eval('#entryEyebrow',e=>e.textContent),/ · 第十章$/);
    if(label==='desktop'){
-    assert.match(await page.$eval('#indexCaption',e=>e.textContent),/Ⅸ 埃及 Ⅹ 波斯/);
+    assert.match(await page.$eval('#indexCaption',e=>e.textContent),/Ⅸ 埃及 Ⅹ 波斯—阿拉伯 Ⅺ 东欧/);
     assert.ok(await page.$$eval('#toc .tree-item[data-branch="egypt"] small',(es,n)=>es.length===n&&es.every(e=>e.textContent.startsWith('埃及 · ')),EGYPT.length+1));
     assert.ok(await page.$$eval('#toc .tree-item[data-branch="persia"] small',(es,n)=>es.length===n&&es.every(e=>/^波斯—阿拉伯(、[^ ]+)? · /.test(e.textContent)),PERSIA.length));
    }

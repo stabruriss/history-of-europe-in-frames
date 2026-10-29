@@ -23452,7 +23452,7 @@ function updateNavigation(){
     const option=[...mobileToc.options].find(o=>o.dataset.id===e.id&&sceneIndex>=+o.dataset.from&&sceneIndex<=+o.dataset.to);
     if(option)mobileToc.value=option.value;
     const era=historyEra(e,sceneIndex);
-    document.getElementById('entryEyebrow').textContent=`${era.name} · 第${['一','二','三','四','五','六','七','八','九','十'][e.ch]}章`;
+    document.getElementById('entryEyebrow').textContent=`${era.name} · 第${['一','二','三','四','五','六','七','八','九','十','十一'][e.ch]}章`;
     toc.querySelectorAll('.era').forEach(row=>row.classList.toggle('active-era',row.dataset.era===era.id));
     // A newly reached section off the chosen line brings its own line along; switching lines in place does not.
     const s=currentStation();if(s&&s.key!==lastStationKey){lastStationKey=s.key;syncTreeLine();}

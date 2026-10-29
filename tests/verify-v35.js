@@ -19,7 +19,8 @@ const SHORTS={'history-empire-west-fall':['西罗马的终结','395—455年',8]
 // 老无 2026-10-28: the Arab sieges of Constantinople are one station on 东罗马 and 波斯—阿拉伯; 基督教 runs on from the Carolingians to the
 // schism through the papacy as a prize, Otto's crowning, the emperors' church beside Cluny, and Leo IX's reformers.
 const EAST_TAIL=['history-empire-leo/0','history-empire-justinian/0','history-empire-heraclius/0','history-arab-conquest/0','history-empire-constans/0',
- 'history-arab-constantinople/0','history-empire-anarchy/0','history-empire-isaurian/0','history-empire-amorian/0','history-empire-macedonian/0','history-empire-macedonian/3'];
+ 'history-arab-constantinople/0','history-empire-anarchy/0','history-empire-isaurian/0','history-empire-amorian/0','history-eeurope-byzantium/0',
+ 'history-empire-macedonian/0','history-empire-macedonian/3'];
 const FAITH_TAIL=['history-faith-papacy/0','history-faith-three-chapters/0','history-faith-gregory/0','history-empire-constans/0','history-empire-isaurian/0','history-faith-carolingian/0','history-empire-amorian/0',
  'history-faith-dark-century/0','history-germany-otto/0','history-faith-imperial-church/0','history-faith-cluny/0','history-faith-leo-ix/0','history-empire-macedonian/3'];
 const SHARED=['history-empire-constans/0','history-empire-isaurian/0','history-empire-amorian/0','history-empire-macedonian/3'];
@@ -152,6 +153,8 @@ const REGIONS=['mThemeOpsikion','mThemeThrakesion','mThemeAnatolikon','mThemeArm
     ['history-faith-dark-century',0,'faith'],['history-germany-otto',0,'faith'],['history-faith-imperial-church',0,'faith'],['history-faith-cluny',0,'faith'],['history-faith-leo-ix',0,'faith'],['history-empire-macedonian',3,'faith']]);
    assert.ok(await page.$eval('#next',e=>e.disabled),'end of the 基督教 line');
    await page.evaluate(()=>{selectTreeLine('east');go('history-empire-amorian');});
+   // 老无 2026-10-28 夜: the Rus and Byzantium (860—1043) is a station on 东罗马 between the Amorians and the Macedonians.
+   await page.click('#next');assert.deepEqual(await page.evaluate(()=>[ENTRIES[cur].id,sceneIndex]),['history-eeurope-byzantium',0]);
    await page.click('#next');assert.deepEqual(await page.evaluate(()=>[ENTRIES[cur].id,sceneIndex]),['history-empire-macedonian',0]);
    await page.click('#next');assert.deepEqual(await page.evaluate(()=>[ENTRIES[cur].id,sceneIndex]),['history-empire-macedonian',3]);
    assert.ok(await page.$eval('#next',e=>e.disabled),'end of the 东罗马 line');
@@ -165,7 +168,7 @@ const REGIONS=['mThemeOpsikion','mThemeThrakesion','mThemeAnatolikon','mThemeArm
    },sel);
    assert.match(t.mace[0],/^马其顿王朝东罗马 · 867—1025年$/);assert.match(t.mace[1],/^东西教会大分裂东罗马、基督教 · 1025—1056年$/);
    assert.equal(t.on.length,2);assert.ok(t.on.every(n=>n[0]==='history-empire-macedonian/3')&&t.on[0][1]===t.on[1][1],JSON.stringify(t.on));
-   assert.equal(t.swaps,9,'interchanges, with the sieges of Constantinople, Tariq’s crossing and Otto’s crowning');
+   assert.equal(t.swaps,10,'interchanges, with the sieges of Constantinople, Tariq’s crossing, Otto’s crowning and the Rus and Byzantium');
    if(label!=='desktop'){await page.keyboard.press('Escape');await wait(100);}
    for(const hash of ['history-empire-justinian/6','history-empire-constans/2','history-empire-anarchy/0','history-empire-isaurian/5','history-empire-macedonian/2']){
     await page.evaluate(h=>{const [id,s]=h.split('/');go(id,{scene:+s});},hash);await wait(250);
