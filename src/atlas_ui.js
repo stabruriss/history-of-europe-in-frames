@@ -549,8 +549,10 @@ function focusFigure(item){
 
 // 老无 2026-10-28 夜: “见‘X’一节” jumps to that section; “另见‘X’主线” switches to that line, at the station of about the same
 // time — the year named last in the pointer's own sentence, else the start of the scene; only the line's own stations count.
+// “见上一节”“见下一节” mean the section before or after this one on its own line (the line being read, at a shared station).
 const SHORT_ID=new Map(),LINE_ID=new Map(HISTORY_BRANCHES.map(b=>[b.name,b.id]));
 HISTORY_ENTRIES.forEach(e=>{if(!SHORT_ID.has(e.short))SHORT_ID.set(e.short,e.id);});
+HISTORY_ENTRIES.forEach(e=>{if(!SHORT_ID.has(e.title))SHORT_ID.set(e.title,e.id);});  // or by its full title
 const yearOf=(m,cent)=>{let y=+m[2];if(cent)return m[1]?-y*100:(y-1)*100;return m[1]?-y:y;};
 function pointerYear(a){
   const block=a.closest('p,aside,li,.person-detail')||a.parentElement,r=document.createRange();r.setStart(block,0);r.setEndBefore(a);
@@ -559,17 +561,23 @@ function pointerYear(a){
   const d=ENTRIES[cur]?.scenes?.[sceneIndex]?.date||'',m=d.match(/(前)?\s*(\d{1,4})/);
   return m?yearOf(m,/世纪/.test(d)):(currentStation()?.t??0);
 }
-function linkPointers(root){
+function neighbourSection(e,dir){
+  const lines=HISTORY_BRANCHES.map(b=>b.id).filter(l=>treeStations().some(s=>s.id===e.id&&s.lines.includes(l)));
+  const line=lines.includes(treeLine)?treeLine:lines[0],own=line?lineStations(line).filter(s=>s.lines.includes(line)):[];
+  const at=own.flatMap((s,i)=>s.id===e.id?[i]:[]);if(!at.length)return null;
+  return (dir==='上'?own.slice(0,at[0]).reverse():own.slice(at.at(-1)+1)).find(s=>s.id!==e.id)?.id||null;
+}
+function linkPointers(root,e){
   const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode:n=>n.parentElement.closest('a,.sources,.passage-title,.moment-tag,.box-tag,summary')
-    ?NodeFilter.FILTER_REJECT:/见“[^”]+”(一节|主线)/.test(n.data)?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_SKIP});
+    ?NodeFilter.FILTER_REJECT:/见“[^”]+”(一节|主线)|见[上下]一节/.test(n.data)?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_SKIP});
   const nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);
   for(const n of nodes){
     const frag=document.createDocumentFragment();let last=0;
-    for(const m of n.data.matchAll(/(另)?见“([^”]+)”(一节|主线)/g)){
-      const id=m[3]==='一节'?SHORT_ID.get(m[2]):null,line=m[3]==='主线'?LINE_ID.get(m[2]):null;
+    for(const m of n.data.matchAll(/(另)?见“([^”]+)”(一节|主线)|见(上|下)一节/g)){
+      const id=m[4]?e&&neighbourSection(e,m[4]):m[3]==='一节'?SHORT_ID.get(m[2]):null,line=m[3]==='主线'?LINE_ID.get(m[2]):null;
       if(!id&&!line)continue;
       const a=document.createElement('a');a.className='xref';a.textContent=m[0];
-      if(id){a.dataset.go=id;a.href='#'+id;a.title=`跳到“${m[2]}”一节`;a.onclick=ev=>{ev.preventDefault();go(id);};}
+      if(id){a.dataset.go=id;a.href='#'+id;a.title=`跳到“${m[2]??HISTORY_ENTRIES.find(x=>x.id===id).short}”一节`;a.onclick=ev=>{ev.preventDefault();go(id);};}
       else{
         a.dataset.line=line;a.href='#';a.title=`切到“${m[2]}”线上同一时期的一站`;
         a.onclick=ev=>{
@@ -606,7 +614,7 @@ function renderCard(e){
       aside.innerHTML=`<span class="box-tag">${b.name}<i>${b.en}</i></span>${b.text}`;block.append(aside);
     }
   });
-  linkPointers(card);
+  linkPointers(card,e);
   readerBody.scrollTo({top:0,behavior:'instant'});
   card.querySelectorAll('[data-go]').forEach(a=>{
     a.setAttribute('href','#'+a.dataset.go);a.onclick=ev=>{

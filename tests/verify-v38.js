@@ -150,6 +150,26 @@ const SLICE_YEARS=[-1000,-500,0,500,1000];
     if(line)assert.equal(at[1],line,from+' → on '+line);
     assert.ok(text.includes('见“'),'the pointer text itself stays as written');
    }
+   // Every pointer in the atlas — prose, moments, boxes, people — names a section (by short name or title) or a line that exists.
+   const pointers=await page.evaluate(()=>{
+    const all=[...HISTORY_ENTRIES.flatMap(e=>[e.html,...e.moments.map(m=>m.text),...e.boxes.map(b=>b.text)]),
+      ...Object.values(FIGURES).flatMap(f=>[f.bio,f.relation]),...Object.values(FIGURE_SCENES).flat().map(c=>c.note)].join(' ');
+    const found=[...all.matchAll(/(另)?见“([^”]+)”(一节|主线)/g)];
+    return {n:found.length,bad:[...new Set(found.filter(m=>m[3]==='一节'?!SHORT_ID.has(m[2]):!LINE_ID.has(m[2])).map(m=>m[0]))]};
+   });
+   assert.ok(pointers.n>200,'pointers found: '+pointers.n);
+   assert.deepEqual(pointers.bad,[],'every pointer resolves');
+   // “见上一节”“见下一节”: the section before or after on the section's own line (checked by hand against what each one cites).
+   for(const [id,want] of [['history-empire-west-fall',['history-empire-theodosius','history-empire-west-end']],
+     ['history-empire-west-end',['history-empire-west-fall']],['history-empire-leo',['history-empire-theodosius']],
+     ['history-west-ostrogoths',['history-west-kingdoms']],['history-faith-gregory',['history-faith-three-chapters']],
+     ['history-persia-elam',['history-persia-achaemenid']],['history-persia-parthia',['history-eastern-kingdoms']]]){
+    await page.evaluate(id=>go(id),id);await wait(60);
+    const got=await page.$$eval('#card a.xref',as=>as.filter(a=>/^见[上下]一节$/.test(a.textContent)).map(a=>a.dataset.go));
+    assert.deepEqual(got,want,id+' 见上/下一节');
+   }
+   const relative=await page.evaluate(()=>HISTORY_ENTRIES.reduce((n,e)=>n+(e.html.match(/见[上下]一节/g)||[]).length,0));
+   assert.equal(relative,8,'eight relative pointers, all checked above');
    // The eyebrow names the era and chapter Ⅺ (第十一章), on 东欧 and on the shared station alike.
    for(const [id,era] of [['history-eeurope-pontic','东欧：草原、森林与港口'],['history-eeurope-byzantium','东欧：斯拉夫人与罗斯']]){
     await page.evaluate(id=>go(id),id);await wait(60);
