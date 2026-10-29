@@ -27,7 +27,7 @@ const SCENES=[['476—488年','西边称臣，东边哥特'],['473—488年','�
  ['526—535年','阿玛拉逊莎：借出西西里'],['535—554年','哥特战争：意大利的人心'],['554—568年','只守了十几年：伦巴第人南下']];
 const MOMENTS=[[1,'山下的喊话'],[2,'“连根骨头都没有”'],[3,'鱼头里的西马库斯'],[5,'空城罗马']];
 const CARDS=[[ID+'/1','theodoric-great',/人质/],[ID+'/3','theodoric-great',/会堂/],[ID+'/4','amalasuntha',/戒尺/],[ID+'/5','totila',/撑死/],[ID+'/6','narses',/金纺锤/],
- ['history-west-kingdoms/2','clovis',/看不下去/],['history-west-kingdoms/3','leovigild',/三万金币/]];
+ ['history-west-kingdoms/1','clovis',/看不下去/],['history-spain-visigoths/3','leovigild',/三万金币/]];
 (async()=>{
  const browser=await puppeteer.launch({executablePath:process.env.CHROME_PATH||'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true});
  const errors=[];
@@ -66,7 +66,8 @@ const CARDS=[[ID+'/1','theodoric-great',/人质/],[ID+'/3','theodoric-great',/�
    assert.deepEqual(r.west.slice(r.west.indexOf('history-west-kingdoms')),['history-west-kingdoms',ID,'history-west-merovingians','history-west-lombards','history-west-charlemagne','history-west-charlemagne-rule','history-west-louis-pious']);
    assert.deepEqual(r.era,['history-west-kingdoms',ID]);
    // 蛮族诸王国 handed over its Theodoric scene, with its links; its later scenes and moments moved up one, and Clovis's scene gained the Vase of Soissons.
-   assert.deepEqual(r.wk,[5,['476—507年','466—507年','486—511年','568—589年','589—713年'],[[2,'苏瓦松花瓶'],[2,'圣马丁堂里的紫袍'],[4,'剃了发的国王']],false,false]);
+   // 老无 2026-10-28: and its Visigothic scenes to the new 西班牙 line (剃了发的国王 with them, now 西哥特的覆亡); Clovis's scene is its second.
+   assert.deepEqual(r.wk,[2,['476—507年','486—511年'],[[1,'苏瓦松花瓶'],[1,'圣马丁堂里的紫袍']],false,false]);
    for(const [k,ok] of r.bold)assert.ok(ok,k+' lacks 老无’s thesis in bold');
    for(const [k,ok] of r.fixes)assert.ok(ok,k+' lacks the plain-text correction');
    assert.equal(r.filler,false,'conversational filler or misspelt names copied into the prose');
@@ -106,7 +107,7 @@ const CARDS=[[ID+'/1','theodoric-great',/人质/],[ID+'/3','theodoric-great',/�
      b('history-empire-west-end',4).includes('<strong>一路推到卢瓦尔河、打到法兰克地盘，希尔德里克一世与罗马残军并肩死守，外患促进了法兰克诸部更好地组织联合起来'),
      b('history-empire-leo',4).includes('<strong>东边同波斯打仗，他在西边只能搞制衡，拉法兰克王克洛维对付西哥特、授他执政官'),
      b('history-west-kingdoms',0).includes('<strong>高卢北部归从未背井离乡、也未被拆散的法兰克')&&p('history-west-kingdoms',0).includes('不列颠早在410年前后被罗马放弃'),
-     b('history-west-kingdoms',2).includes('<strong>468年后西哥特北扩打到法兰克地盘，促进了法兰克诸部组织联合起来')&&b('history-west-kingdoms',2).includes('<strong>那时东罗马同波斯打仗，在西边只能搞“搅屎棍”式的制衡策略，拉法兰克对付西哥特。507年克洛维在武耶打垮西哥特、亲手杀了阿拉里克二世；他从东帝阿纳斯塔修斯拿到执政官称号，披紫袍自称“奥古斯都”')&&b('history-west-kingdoms',2).includes('<strong>他又设计除掉萨利克与科隆各小王，一统诸部、定都巴黎'),
+     b('history-west-kingdoms',1).includes('<strong>468年后西哥特北扩打到法兰克地盘，促进了法兰克诸部组织联合起来')&&b('history-west-kingdoms',1).includes('<strong>那时东罗马同波斯打仗，在西边只能搞“搅屎棍”式的制衡策略，拉法兰克对付西哥特。507年克洛维在武耶打垮西哥特、亲手杀了阿拉里克二世；他从东帝阿纳斯塔修斯拿到执政官称号，披紫袍自称“奥古斯都”')&&b('history-west-kingdoms',1).includes('<strong>他又设计除掉萨利克与科隆各小王，一统诸部、定都巴黎'),
      b('history-west-ostrogoths',3).includes('<strong>508年发兵打退南下武耶的克洛维，收下普罗旺斯、替外孙保住西哥特残部'),
      b('history-west-merovingians',4).includes('<strong>751年，法兰克贵族在苏瓦松推丕平为王、涂了圣油，开创加洛林王朝')&&E('history-west-charlemagne').short==='加洛林王朝',
      E('history-empire-west-end').boxes[0].text.includes('<svg class="kin-tree"')&&E('history-empire-macedonian').boxes[0].text.includes('<svg class="kin-tree"'),
@@ -149,7 +150,7 @@ const CARDS=[[ID+'/1','theodoric-great',/人质/],[ID+'/3','theodoric-great',/�
   }
   assert.deepEqual(errors,[]);
   console.log('PASS: 东哥特王国 476—568 on 中世纪西欧, between 蛮族诸王国 and 墨洛温王朝 — seven scenes (Odoacer and the lie of the land, Zeno’s two Theodorics, the Hongmen banquet, Goths under arms and Romans at the desks, Amalasuntha lending Sicily, the Gothic War and Italian hearts, the Lombards); '
-   +BOLD.length+' of 老无’s theses in bold, '+FIXES.length+' corrections in plain text; 刘渊, 鸿门宴, 孝文帝 and 侯景之乱 beside them; four iconic moments and five cards; 蛮族诸王国 down to five scenes with its moments and cards moved up; '
+   +BOLD.length+' of 老无’s theses in bold, '+FIXES.length+' corrections in plain text; 刘渊, 鸿门宴, 孝文帝 and 侯景之乱 beside them; four iconic moments and five cards; 蛮族诸王国 down to two scenes, its Visigothic ones on the 西班牙 line, with its moments and cards moved; '
    +'the Justinian section and this one point at each other; 法兰克人的分家账 drawn as a family tree with identifying tags (铁锤, 宫相, 献土, 大帝 …), and the same tags in the prose; ≤300 chars per scene; desktop and 390px; no page errors.');
  }catch(e){console.error(e);process.exitCode=1;}finally{await browser.close();}
 })();

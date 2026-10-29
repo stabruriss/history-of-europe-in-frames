@@ -98,10 +98,38 @@
    9,
    230
   ],
+  "history-arab-caliphs": [
+   "四大哈里发与倭马亚",
+   "632—750年",
+   4,
+   9,
+   230
+  ],
+  "history-arab-abbasid": [
+   "阿拔斯王朝",
+   "750—945年",
+   5,
+   9,
+   230
+  ],
   "history-spain-andalus": [
    "后倭马亚王朝",
    "756—1031年",
    3,
+   5,
+   300
+  ],
+  "history-arab-conquest": [
+   "阿拉伯征服",
+   "628—651年",
+   6,
+   9,
+   230
+  ],
+  "history-germany-east-francia": [
+   "东法兰克王国",
+   "843—955年",
+   6,
    5,
    300
   ]
@@ -208,12 +236,42 @@
    667,
    718
   ],
+  "history-arab-caliphs/0": [
+   [
+    "persia"
+   ],
+   655,
+   750
+  ],
+  "history-arab-abbasid/0": [
+   [
+    "persia"
+   ],
+   750,
+   945
+  ],
   "history-spain-andalus/0": [
    [
     "spain"
    ],
    756,
    1031
+  ],
+  "history-arab-conquest/0": [
+   [
+    "persia",
+    "east",
+    "egypt"
+   ],
+   628,
+   651
+  ],
+  "history-germany-east-francia/0": [
+   [
+    "germany"
+   ],
+   843,
+   955
   ],
   "history-empire-macedonian/3": [
    [
@@ -241,6 +299,11 @@
   "history-arab-constantinople/0": [
    "east",
    "persia"
+  ],
+  "history-arab-conquest/0": [
+   "persia",
+   "east",
+   "egypt"
   ],
   "history-empire-macedonian/3": [
    "east",
@@ -465,6 +528,54 @@
    "北边打到君士坦丁堡，被希腊火挡住了"
   ],
   [
+   "history-arab-caliphs/0",
+   "先知死后，他的两个老丈人、两个女婿先后当哈里发，可扩张太快、山头盘根错节，四人里"
+  ],
+  [
+   "history-arab-caliphs/0",
+   "倭马亚家的穆阿维叶顺势建立了血缘王朝"
+  ],
+  [
+   "history-arab-caliphs/1",
+   "一开始是迪万制度：武士住在兵城里吃饷，周围的农民交税养着；朝廷只收税，日常行政交"
+  ],
+  [
+   "history-arab-caliphs/2",
+   "时间一长，这种原始制度在当时的技术水平下撑不住大帝国：等于退回比先秦还原始的任用"
+  ],
+  [
+   "history-arab-caliphs/2",
+   "哈里发想给本地人开一道社会阶梯，被提拔成马瓦里的本地人反倒更亲当地"
+  ],
+  [
+   "history-arab-caliphs/3",
+   "各地乱成一团时阿拔斯家胜出，因为他们团结了盼先知家族掌权的什叶一派和呼罗珊人"
+  ],
+  [
+   "history-arab-abbasid/0",
+   "阿拔斯胜利后不得不面对自己的基本盘和多数人的矛盾，只能迁都，把呼罗珊人定为子弟兵"
+  ],
+  [
+   "history-arab-abbasid/1",
+   "新兴的穆斯林也长大到教义纷争来捣乱的程度：多数派形成了民间的宗教共同体，哈里发挟"
+  ],
+  [
+   "history-arab-abbasid/2",
+   "拉希德指定两个儿子兄终弟及，他一死两人就打起来；这时发现呼罗珊子弟兵已经跟八旗入"
+  ],
+  [
+   "history-arab-abbasid/3",
+   "内乱平了，就要收回神权：办智慧宫，用古希腊哲学养一批有学问的人，再挑起一场教义之"
+  ],
+  [
+   "history-arab-abbasid/4",
+   "玛蒙死后弟弟继位，带着突厥兵再迁都，波斯人发现自己被抛弃，各地纷纷造反，税收断了"
+  ],
+  [
+   "history-arab-abbasid/4",
+   "最后打成了十几个小国，回到最适合直接统治的尺寸，才稳定下来"
+  ],
+  [
    "history-spain-andalus/0",
    "倭马亚王朝剩下的人在西班牙建立了统治"
   ],
@@ -479,6 +590,50 @@
   [
    "history-spain-andalus/2",
    "打烂之后，北方的基督教诸王国就此南下"
+  ],
+  [
+   "history-arab-conquest/0",
+   "两大帝国互相打空，正给阿拉伯人留出风口"
+  ],
+  [
+   "history-arab-conquest/1",
+   "投降比死守划算，叙利亚的城就一座座开了门"
+  ],
+  [
+   "history-arab-conquest/2",
+   "库思老亲手拆掉的缓冲，成了阿拉伯人的前哨"
+  ],
+  [
+   "history-arab-conquest/3",
+   "朝廷十年逼科普特人改宗，阿拉伯人来了却不夺教堂"
+  ],
+  [
+   "history-arab-conquest/4",
+   "大军一没，各地自己跟新主人谈条件；阿拉伯人照收萨珊的老税，统治成本很低"
+  ],
+  [
+   "history-arab-conquest/4",
+   "几次战争征服和领土变迁"
+  ],
+  [
+   "history-arab-conquest/5",
+   "萨珊的余脉向唐朝求救，可唐朝的手伸不到那么远"
+  ],
+  [
+   "history-germany-east-francia/0",
+   "东法兰克受维京人的打击小，贵族，尤其是不久前才被征服的萨克森贵族，还比较穷、质朴"
+  ],
+  [
+   "history-germany-east-francia/2",
+   "加洛林家在东法兰克绝了嗣"
+  ],
+  [
+   "history-germany-east-francia/3",
+   "当地贵族不愿接受西法兰克的国王，自己推举"
+  ],
+  [
+   "history-germany-east-francia/5",
+   "奥托一世压公爵，一手交给亲戚，一手重用主教：主教不能传子，位子收得回来"
   ]
  ],
  "moments": {
@@ -726,6 +881,46 @@
     "金角湾的铁链与希腊火"
    ]
   ],
+  "history-arab-caliphs": [
+   [
+    0,
+    "矛尖上的《古兰经》"
+   ],
+   [
+    1,
+    "墨水瓶里的尿"
+   ],
+   [
+    3,
+    "卡尔巴拉"
+   ],
+   [
+    3,
+    "阿布·富特鲁斯的宴席"
+   ]
+  ],
+  "history-arab-abbasid": [
+   [
+    0,
+    "火线画出的圆城"
+   ],
+   [
+    1,
+    "马立克不肯"
+   ],
+   [
+    2,
+    "撕碎的约书"
+   ],
+   [
+    3,
+    "鞭子下的伊本·罕百勒"
+   ],
+   [
+    4,
+    "螺旋宣礼塔"
+   ]
+  ],
   "history-spain-andalus": [
    [
     0,
@@ -743,6 +938,50 @@
     2,
     "卖席子的“哈里发”"
    ]
+  ],
+  "history-arab-conquest": [
+   [
+    1,
+    "退回的税"
+   ],
+   [
+    1,
+    "别了，叙利亚"
+   ],
+   [
+    2,
+    "鲁斯塔姆的开价"
+   ],
+   [
+    3,
+    "要拿石头砸主教"
+   ],
+   [
+    4,
+    "四个银币"
+   ]
+  ],
+  "history-germany-east-francia": [
+   [
+    0,
+    "“伙伴们”"
+   ],
+   [
+    3,
+    "临终让位给对头"
+   ],
+   [
+    4,
+    "捕鸟的国王"
+   ],
+   [
+    4,
+    "一条肥狗"
+   ],
+   [
+    5,
+    "圣矛"
+   ]
   ]
  },
  "boxes": {
@@ -750,6 +989,12 @@
    [
     0,
     "马里卜大坝"
+   ]
+  ],
+  "history-arab-caliphs": [
+   [
+    3,
+    "什叶派与逊尼派"
    ]
   ]
  },
@@ -797,7 +1042,106 @@
   [
    "history-arab-muhammad/3",
    "628年攻下海巴尔，犹太人留下种地，交一半收成"
+  ],
+  [
+   "history-faith-dark-century/0",
+   "先下毒、再棒打致死"
+  ],
+  [
+   "history-faith-cluny/2",
+   "院长奥迪洛晚年又定11月2日追念所有亡者"
+  ],
+  [
+   "history-faith-cluny/3",
+   "奥迪洛994年接手时有三十七座，1049年死时六十五座"
+  ],
+  [
+   "history-faith-leo-ix/1",
+   "挑中远房表兄、图勒主教布鲁诺"
+  ],
+  [
+   "history-faith-leo-ix/1",
+   "他的条件是：罗马的教士和百姓一致同意"
+  ],
+  [
+   "history-faith-leo-ix/2",
+   "禁婚重申到副执事，还管到女人和俗人"
+  ],
+  [
+   "history-spain-toledo/1",
+   "还定下每次全国会议议完事都要高声再念一遍第75条"
+  ],
+  [
+   "history-arab-expansion/2",
+   "722年首领佩拉约"
+  ],
+  [
+   "history-arab-expansion/3",
+   "造纸术西传也有人归到这一仗"
+  ],
+  [
+   "history-arab-caliphs/0",
+   "656年被埃及、伊拉克的兵围杀"
+  ],
+  [
+   "history-arab-caliphs/0",
+   "答应仲裁，激进的部下出走"
+  ],
+  [
+   "history-arab-caliphs/2",
+   "呼罗珊的马瓦里跟着当地头人闹了二十年"
+  ],
+  [
+   "history-arab-caliphs/3",
+   "阿拔斯家是先知叔父的后人"
+  ],
+  [
+   "history-arab-caliphs/3",
+   "跟上来的多是住了几代、说波斯话的阿拉伯移民和改宗的波斯人"
+  ],
+  [
+   "history-arab-abbasid/2",
+   "波斯女奴生的哥哥玛蒙"
+  ],
+  [
+   "history-arab-abbasid/3",
+   "8世纪巴士拉的穆尔太齐赖派"
+  ],
+  [
+   "history-arab-abbasid/3",
+   "又过两任，穆塔瓦基勒"
   ]
+ ],
+ "moment_fixes": [
+  [
+   "history-arab-constantinople",
+   "金角湾的铁链与希腊火",
+   "悄悄放下了金角湾口的铁链"
+  ]
+ ],
+ "slips": [
+  "malibu",
+  "Malibu",
+  "马里布",
+  "科吕尼",
+  "红贝尔",
+  "堂哥",
+  "乌里码",
+  "迈加",
+  "默罕穆德",
+  "莫哈默德",
+  "交易纷争",
+  "新31",
+  "598年",
+  "每年发誓",
+  "呼罗珊就反了",
+  "毛拉",
+  "什么派",
+  "xx派",
+  "佛角督",
+  "苏喂汇",
+  "教会复兴",
+  "拉起横跨金角湾的铁链"
  ],
  "gone": [
   [
@@ -823,6 +1167,14 @@
   [
    "history-empire-constans",
    "赫利奥波利斯"
+  ],
+  [
+   "history-empire-constans",
+   "海面上烧着的希腊火"
+  ],
+  [
+   "history-empire-isaurian",
+   "金角湾的铁链"
   ]
  ],
  "branches": {
@@ -865,7 +1217,7 @@
    "波斯—阿拉伯",
    "trunk",
    -3200,
-   751,
+   945,
    0
   ]
  },
@@ -906,6 +1258,11 @@
    "spain",
    1031,
    "收复失地运动"
+  ],
+  [
+   "persia",
+   945,
+   "布韦希与塞尔柱"
   ]
  ],
  "parallel": [
@@ -968,5 +1325,5 @@
   "ibLusitania",
   "ibTarraconensis"
  ],
- "pass": "15 new or rebuilt sections (63 scenes): 意大利 on 老无’s chain; 奥托一世称帝 shared by 德意志, 意大利 and 基督教; 基督教 to 1054 with the imperial church beside Cluny; 西班牙 from Carthage to Córdoba, forking off 中世纪西欧 and sharing 711 with 波斯—阿拉伯; the Arabs from Marib to the dozen states, the sieges of Constantinople shared with 东罗马; 57 of 老无’s theses in bold, 11 corrections in plain text"
+ "pass": "19 new or rebuilt sections (84 scenes), 老无’s four requests: 意大利 on his chain; 奥托一世称帝 shared by 德意志, 意大利 and 基督教; 基督教 to 1054 with the imperial church beside Cluny; 西班牙 from Carthage to Córdoba, forking off 中世纪西欧, sharing 711 with 波斯—阿拉伯 and running on to 1031; the Sasanians’ end closing 波斯, then the Arabs from Marib to the dozen states of 945, the sieges of Constantinople shared with 东罗马; 80 of 老无’s theses in bold, 29 corrections in plain text, 22 dictation slips kept out"
 }

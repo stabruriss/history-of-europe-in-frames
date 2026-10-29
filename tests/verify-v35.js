@@ -16,9 +16,12 @@ const ERAS=[['empire-east','东罗马：利奥王朝与查士丁尼王朝',[['hi
 const SHORTS={'history-empire-west-fall':['西罗马的终结','395—455年',8],'history-empire-justinian':['查士丁尼王朝','518—602年',7],'history-empire-heraclius':['希拉克略王朝','602—641年',5],
  'history-empire-constans':['希拉克略王朝（下）','641—711年',6],'history-empire-anarchy':['二十年无政府','695—717年',2],
  'history-empire-isaurian':['伊苏里亚王朝','717—802年',6],'history-empire-amorian':['阿莫里亚王朝','802—867年',4],'history-empire-macedonian':['马其顿王朝','867—1056年',4]};
+// 老无 2026-10-28: the Arab sieges of Constantinople are one station on 东罗马 and 波斯—阿拉伯; 基督教 runs on from the Carolingians to the
+// schism through the papacy as a prize, Otto's crowning, the emperors' church beside Cluny, and Leo IX's reformers.
 const EAST_TAIL=['history-empire-leo/0','history-empire-justinian/0','history-empire-heraclius/0','history-arab-conquest/0','history-empire-constans/0',
- 'history-empire-anarchy/0','history-empire-isaurian/0','history-empire-amorian/0','history-empire-macedonian/0','history-empire-macedonian/3'];
-const FAITH_TAIL=['history-faith-papacy/0','history-faith-three-chapters/0','history-faith-gregory/0','history-empire-constans/0','history-empire-isaurian/0','history-faith-carolingian/0','history-empire-amorian/0','history-empire-macedonian/3'];
+ 'history-arab-constantinople/0','history-empire-anarchy/0','history-empire-isaurian/0','history-empire-amorian/0','history-empire-macedonian/0','history-empire-macedonian/3'];
+const FAITH_TAIL=['history-faith-papacy/0','history-faith-three-chapters/0','history-faith-gregory/0','history-empire-constans/0','history-empire-isaurian/0','history-faith-carolingian/0','history-empire-amorian/0',
+ 'history-faith-dark-century/0','history-germany-otto/0','history-faith-imperial-church/0','history-faith-cluny/0','history-faith-leo-ix/0','history-empire-macedonian/3'];
 const SHARED=['history-empire-constans/0','history-empire-isaurian/0','history-empire-amorian/0','history-empire-macedonian/3'];
 // 老无's core theses and hooks, woven into the right historical places and bolded (no conversational "后来/结果/他死之后事情怎么样了" copied verbatim).
 const BOLD=[['history-empire-theodosius/2','394年9月冷河之战，狄奥多西征调两万西哥特同盟兵讨伐西部篡位者，首领阿拉里克率部履行义务顶在最前线，一战死伤过半'],
@@ -144,8 +147,9 @@ const REGIONS=['mThemeOpsikion','mThemeThrakesion','mThemeAnatolikon','mThemeArm
    }
    // Stepping along 基督教 from the fifth council runs through the East Roman stations to the schism; along 东罗马 the Macedonians come in two stops.
    await page.evaluate(()=>{selectTreeLine('faith');go('history-faith-three-chapters');});
-   const walk=[];for(let i=0;i<6;i++){await page.click('#next');walk.push(await page.evaluate(()=>[ENTRIES[cur].id,sceneIndex,treeLine]));}
-   assert.deepEqual(walk,[['history-faith-gregory',0,'faith'],['history-empire-constans',0,'faith'],['history-empire-isaurian',0,'faith'],['history-faith-carolingian',0,'faith'],['history-empire-amorian',0,'faith'],['history-empire-macedonian',3,'faith']]);
+   const walk=[];for(let i=0;i<11;i++){await page.click('#next');walk.push(await page.evaluate(()=>[ENTRIES[cur].id,sceneIndex,treeLine]));}
+   assert.deepEqual(walk,[['history-faith-gregory',0,'faith'],['history-empire-constans',0,'faith'],['history-empire-isaurian',0,'faith'],['history-faith-carolingian',0,'faith'],['history-empire-amorian',0,'faith'],
+    ['history-faith-dark-century',0,'faith'],['history-germany-otto',0,'faith'],['history-faith-imperial-church',0,'faith'],['history-faith-cluny',0,'faith'],['history-faith-leo-ix',0,'faith'],['history-empire-macedonian',3,'faith']]);
    assert.ok(await page.$eval('#next',e=>e.disabled),'end of the 基督教 line');
    await page.evaluate(()=>{selectTreeLine('east');go('history-empire-amorian');});
    await page.click('#next');assert.deepEqual(await page.evaluate(()=>[ENTRIES[cur].id,sceneIndex]),['history-empire-macedonian',0]);
@@ -161,7 +165,7 @@ const REGIONS=['mThemeOpsikion','mThemeThrakesion','mThemeAnatolikon','mThemeArm
    },sel);
    assert.match(t.mace[0],/^马其顿王朝东罗马 · 867—1025年$/);assert.match(t.mace[1],/^东西教会大分裂东罗马、基督教 · 1025—1056年$/);
    assert.equal(t.on.length,2);assert.ok(t.on.every(n=>n[0]==='history-empire-macedonian/3')&&t.on[0][1]===t.on[1][1],JSON.stringify(t.on));
-   assert.equal(t.swaps,6);
+   assert.equal(t.swaps,9,'interchanges, with the sieges of Constantinople, Tariq’s crossing and Otto’s crowning');
    if(label!=='desktop'){await page.keyboard.press('Escape');await wait(100);}
    for(const hash of ['history-empire-justinian/6','history-empire-constans/2','history-empire-anarchy/0','history-empire-isaurian/5','history-empire-macedonian/2']){
     await page.evaluate(h=>{const [id,s]=h.split('/');go(id,{scene:+s});},hash);await wait(250);
@@ -176,6 +180,6 @@ const REGIONS=['mThemeOpsikion','mThemeThrakesion','mThemeAnatolikon','mThemeArm
   }
   assert.deepEqual(errors,[]);
   console.log('PASS: v35 东罗马 by dynasty — four eras (利奥与查士丁尼, 希拉克略与二十年无政府, 圣像之争时代, 马其顿) and seven dynasty sections to 1056; 查士丁尼王朝 ends with the bills beside Emperor Wu (five-row box); the councils after 641 are shared stations on 东罗马 and 基督教 (the old council sections gone, one story told once); '
-   +BOLD.length+' of 老无’s sentences verbatim and bold, '+FIXES.length+' corrected mechanisms in plain text beside them; one Chinese parallel per section; ≤300 chars per scene; 东罗马 not 拜占庭; nine new teaching areas; https links; cards; eyebrows; ↑↓ along 基督教 and 东罗马 to their ends; the schism row lit on both lines; desktop and 390px; no page errors.');
+   +BOLD.length+' of 老无’s sentences verbatim and bold, '+FIXES.length+' corrected mechanisms in plain text beside them; one Chinese parallel per section; ≤300 chars per scene; 东罗马 not 拜占庭; nine new teaching areas; https links; cards; eyebrows; ↑↓ along 基督教 (on through the reformers to 1054) and 东罗马 to their ends; the schism row lit on both lines; desktop and 390px; no page errors.');
  }catch(e){console.error(e);process.exitCode=1;}finally{await browser.close();}
 })();

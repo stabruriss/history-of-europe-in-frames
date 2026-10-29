@@ -30,8 +30,9 @@ const FIXES=[[ID+'/1','457年马约里安称帝'],[ID+'/1','460年盖萨里克�
  [ID+'/4','儿子安提米奥卢斯'],[ID+'/4','皇帝本人没死在这一仗'],[ID+'/4','472年李希梅尔带蛮族兵围罗马五个月'],
  [ID+'/5','473年扶禁卫军长格利凯里乌斯'],[ID+'/5','474年把格利凯里乌斯废去当萨洛纳主教'],[ID+'/5','俄瑞斯忒斯立十来岁的儿子罗慕路斯'],
  [ID+'/0','已许配（一说已嫁）罗马元老奥利布里乌斯'],[ID+'/2','跟东边的阿斯帕尔一样当不了皇帝'],
- ['history-west-kingdoms/1','拿克莱蒙所在的奥弗涅向他换回普罗旺斯'],['history-china-sixteen-kingdoms/0','485年起冯太后与孝文帝颁均田']];
-const GONE=[['history-west-kingdoms/1','把普罗旺斯也让给了他'],['history-china-sixteen-kingdoms/0','471年起孝文帝推行汉化'],
+ // 老无 2026-10-28: Euric's scene went with the other Visigothic ones to the 西班牙 line, the Auvergne set right there too.
+ ['history-spain-visigoths/0','475年西部皇帝割奥弗涅求和'],['history-china-sixteen-kingdoms/0','485年起冯太后与孝文帝颁均田']];
+const GONE=[['history-spain-visigoths/0','把普罗旺斯也让给了他'],['history-west-kingdoms/1','把普罗旺斯也让给了他'],['history-china-sixteen-kingdoms/0','471年起孝文帝推行汉化'],
  ['history-empire-west-fall/7','476年奥多亚克废掉罗慕路斯']];
 const SCENES=[['455—462年','两位公主：一嫁汪达尔，一嫁元老'],['455—461年','北联西哥特、南征汪达尔'],['461—467年','傀儡与正统：请东边派皇帝'],
  ['467—468年','利奥送来的皇帝与联合舰队'],['468—472年','西哥特扩张与拥立者的内战'],['472—476年','走马灯与冠服东归'],['476年以后','以罗马人治罗马人，从收税到分地']];

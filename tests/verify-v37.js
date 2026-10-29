@@ -6,13 +6,15 @@ const {pathToFileURL}=require('node:url');
 const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','index.html'))).href;
 const shots=path.join(__dirname,'shots-v37');fs.mkdirSync(shots,{recursive:true});
 const wait=ms=>new Promise(r=>setTimeout(r,ms));
-// 老无 2026-10-28, three requests in one afternoon:
+// 老无 2026-10-28, four requests in one day:
 // 1. 意大利 rebuilt on 老无’s chain (the eldest son takes Middle Francia → his three sons split it again → none leaves a lawful heir →
 //    Middle Francia is fought over → the uncles split Lotharingia north of the Alps → Otto takes Italy), Otto’s Italy a station shared by
 //    德意志, 意大利 and 基督教; 基督教 pushed on to 1054 (the papacy as a prize, the emperors’ church beside Cluny, the reformers, the legates).
-// 2. A new line 西班牙 forks off 中世纪西欧 where the Visigoths take Spain and runs into the Arabs in 711.
-// 3. 波斯 becomes 波斯—阿拉伯: the Sasanians end in 651, the Arabs carry the line on to Talas; the sieges of Constantinople are one
+// 2. A new line 西班牙 forks off 中世纪西欧 where the Visigoths take Spain; Tariq’s crossing (711) is one station on it and on 波斯—阿拉伯.
+// 3. 波斯 becomes 波斯—阿拉伯: the Sasanians end in 651, then the Arabs from their rise; the sieges of Constantinople are one
 //    station on 东罗马 and 波斯—阿拉伯.
+// 4. How the Arabs ruled what they took, to the dozen states of 945; and in Spain the Umayyads of Córdoba, so 西班牙 runs on to 1031
+//    and grows a shoot there for the Christian kingdoms coming south, instead of ending in 711.
 // And from now on every section is a chain of causes, one link a scene, the link stated first and in bold (老无’s standing rule).
 const SECTIONS=JSON.parse(fs.readFileSync(path.join(__dirname,'v37-spec.json'),'utf8'));
 (async()=>{
@@ -30,7 +32,7 @@ const SECTIONS=JSON.parse(fs.readFileSync(path.join(__dirname,'v37-spec.json'),'
     const E=id=>HISTORY_ENTRIES.find(e=>e.id===id),stripEn=s=>s.replace(/（[A-Za-z][^）]*）/g,'');
     const para=(id,i)=>{const d=document.createElement('div');d.innerHTML=E(id).html;return [...d.querySelectorAll('[data-scene-text]')][+i];};
     const B=Object.fromEntries(HISTORY_BRANCHES.map(b=>[b.id,b]));
-    const ids=Object.keys(S.sections);
+    const ids=Object.keys(S.sections),all=e=>[e.html,...e.moments.map(m=>m.text),...e.boxes.map(b=>b.text)].join(' ');
     const shorts=new Set(HISTORY_ENTRIES.map(e=>e.short)),names=new Set(HISTORY_BRANCHES.map(b=>b.name));
     return {
      heads:ids.map(id=>{const e=E(id);return e&&[e.short,e.period,e.scenes.length,e.ch];}),
@@ -41,7 +43,9 @@ const SECTIONS=JSON.parse(fs.readFileSync(path.join(__dirname,'v37-spec.json'),'
      parallel:TREE_PARALLEL.map(p=>[p[0],...p[1]]),
      bold:S.bold.map(([k,w])=>{const [id,i]=k.split('/');return [k,!!E(id)&&[...para(id,i).querySelectorAll('strong')].some(st=>stripEn(st.textContent).includes(w))];}),
      fixes:S.fixes.map(([k,w])=>{const [id,i]=k.split('/');const p=E(id)&&para(id,i);return [k,!!p&&stripEn(p.textContent).includes(w)&&!stripEn(p.innerHTML).includes('<strong>'+w)];}),
-     gone:S.gone.map(([id,w])=>[id,!!E(id)&&stripEn(E(id).html).includes(w)]),
+     gone:S.gone.map(([id,w])=>[id,!!E(id)&&stripEn(all(E(id))).includes(w)]),
+     momentFixes:S.moment_fixes.map(([id,name,w])=>{const m=E(id)&&E(id).moments.find(x=>x.name===name);return [id+' '+name,!!m&&stripEn(m.text).includes(w)];}),
+     slips:ids.filter(E).flatMap(id=>S.slips.filter(w=>stripEn(all(E(id))).includes(w)).map(w=>id+': '+w)),
      moments:Object.fromEntries(Object.keys(S.moments).map(id=>[id,E(id)?E(id).moments.map(m=>[m.scene,m.name]):null])),
      boxes:Object.fromEntries(Object.keys(S.boxes).map(id=>[id,E(id)?E(id).boxes.map(b=>[b.scene,b.name]):null])),
      momentsPerScene:ids.filter(E).map(id=>[id,Math.max(0,...Object.values(E(id).moments.reduce((a,m)=>(a[m.scene]=(a[m.scene]||0)+1,a),{})))]),
@@ -71,21 +75,25 @@ const SECTIONS=JSON.parse(fs.readFileSync(path.join(__dirname,'v37-spec.json'),'
    for(const [k,ok] of r.bold)assert.ok(ok,k+' lacks 老无’s thesis in bold');
    for(const [k,ok] of r.fixes)assert.ok(ok,k+' lacks the plain-text correction');
    for(const [id,still] of r.gone)assert.ok(!still,id+' still carries what moved away');
+   for(const [k,ok] of r.momentFixes)assert.ok(ok,k+' lacks its correction');
+   assert.deepEqual(r.slips,[],'dictation slips or readings set right, copied into the prose');
    for(const [id,list] of Object.entries(S.moments))assert.deepEqual(r.moments[id],list,id+' moments');
    for(const [id,list] of Object.entries(S.boxes))assert.deepEqual(r.boxes[id],list,id+' boxes');
    for(const [id,n] of r.momentsPerScene)assert.ok(n<=2,id+' has more than two moments in one scene');
    for(const [id,n,bad,dup] of r.sources)assert.ok(n>=6&&!bad&&!dup,id+' reading links '+JSON.stringify([n,bad,dup]));
    assert.deepEqual(r.xsec,[],'pointers to missing sections');assert.deepEqual(r.xline,[],'pointers to missing lines');
    assert.deepEqual(r.regions,[],'map areas');assert.deepEqual(r.byz,[],'东罗马, not 拜占庭');assert.deepEqual(r.pope,[],'教宗, not 教皇');
-   // The drawn tree: interchange bars for the shared stations, the fork of 西班牙 out of 中世纪西欧, its stop at 711.
+   // The drawn tree: one node per line for each shared station, level; the fork of 西班牙 out of 中世纪西欧 and its shoot at 1031.
    if(label==='desktop'){
     const t=await page.evaluate(keys=>{const tree=document.querySelector('#toc .htree');
      return {forks:[...tree.querySelectorAll('.fork')].map(p=>p.dataset.branch).sort(),loops:tree.querySelectorAll('.lane.loop').length,
-      nodes:Object.fromEntries(keys.map(k=>[k,[...new Set([...tree.querySelectorAll(`.tree-node[data-key="${k}"]`)].map(n=>n.dataset.line||n.getAttribute('data-branch')||''))].length])),
-      ends:[...tree.querySelectorAll('.tree-end')].map(e=>e.textContent)};},Object.keys(S.shared));
+      nodes:Object.fromEntries(keys.map(k=>{const ns=[...tree.querySelectorAll(`.tree-node[data-key="${k}"]`)];return [k,[new Set(ns.map(n=>n.getAttribute('cx'))).size,new Set(ns.map(n=>n.getAttribute('cy'))).size]];})),
+      ends:[...tree.querySelectorAll('.tree-end')].map(e=>e.textContent),futures:[...tree.querySelectorAll('.tree-future')].map(e=>[e.dataset.branch,e.textContent])};},Object.keys(S.shared));
     assert.ok(t.forks.includes('spain'),'西班牙 forks off '+JSON.stringify(t.forks));
     assert.equal(t.loops,S.parallel.length,'loops');
-    assert.ok(t.ends.some(e=>/并入阿拉伯/.test(e)),'西班牙 ends where it runs into the Arabs');
+    for(const [k,lines] of Object.entries(S.shared))assert.deepEqual(t.nodes[k],[lines.length,1],k+' one node on each of its lines, level');
+    assert.ok(!t.ends.some(e=>/并入阿拉伯/.test(e)),'西班牙 runs on past 711');
+    assert.ok(t.futures.some(([b,x])=>b==='spain'&&/收复失地运动/.test(x)),'西班牙 grows its shoot at 1031 '+JSON.stringify(t.futures));
    }
    // Every new scene draws, fits its view on the desktop, and leaves no horizontal overflow.
    for(const id of Object.keys(S.sections)){

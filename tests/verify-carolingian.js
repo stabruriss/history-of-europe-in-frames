@@ -15,12 +15,13 @@ const SECTIONS={
  'history-west-charlemagne-rule':['查理曼的治理','781—814年',6,5,300],
  'history-west-louis-pious':['虔诚者路易','814—843年',6,5,300],
  'history-france-west-francia':['西法兰克王国','843—987年',6,5,300],
- 'history-germany-east-francia':['东法兰克王国','843—962年',6,5,300],
- 'history-italy-middle-francia':['意大利王国','843—962年',6,5,300],
+ // 老无 2026-10-28: 中法兰克 told on his chain (split, heirless, fought over); 962 itself is now 奥托一世称帝, shared by 德意志, 意大利 and 基督教.
+ 'history-germany-east-francia':['东法兰克王国','843—955年',6,5,300],
+ 'history-italy-middle-francia':['中法兰克王国','843—950年',6,5,300],
  'history-faith-carolingian':['加洛林神学之争','787—870年',null,6,230],
 };
 const ROWS={'history-west-charlemagne/0':['west',751,800],'history-west-charlemagne-rule/0':['west',800,814],'history-west-louis-pious/0':['west',814,843],
- 'history-france-west-francia/0':['france',843,987],'history-germany-east-francia/0':['germany',843,962],'history-italy-middle-francia/0':['italy',843,962],
+ 'history-france-west-francia/0':['france',843,987],'history-germany-east-francia/0':['germany',843,955],'history-italy-middle-francia/0':['italy',843,950],
  'history-faith-carolingian/0':['faith',787,870],'history-empire-theodosius/0':['rome',379,395],'history-empire-theodosius/3':['east',395,457],'history-empire-leo/0':['east',457,518]};
 // 老无’s own points, refined into bold theses.
 const BOLD=[
@@ -73,7 +74,8 @@ const FIXES=[
 const MOMENTS={'history-west-charlemagne':[[0,'为了圣彼得'],[2,'阿瓦尔人的宝库'],[3,'龙塞斯瓦列斯'],[3,'哈伦的大象'],[4,'事先不知道']],
  'history-west-louis-pious':[[4,'谎言之野'],[5,'斯特拉斯堡誓言']]};
 const PARALLEL=[['trunk','history-alexander-conquest/0','history-alexander-rule/0'],['trunk','history-hellenistic-states/0','history-hellenistic-knowledge/0'],
- ['west','history-west-kingdoms/0','history-west-ostrogoths/0'],['west','history-west-merovingians/0','history-west-lombards/0'],['faith','history-empire-amorian/0','history-faith-carolingian/0']];
+ ['west','history-west-kingdoms/0','history-west-ostrogoths/0'],['west','history-west-merovingians/0','history-west-lombards/0'],['faith','history-empire-amorian/0','history-faith-carolingian/0'],
+ ['faith','history-faith-imperial-church/0','history-faith-cluny/0']];
 (async()=>{
  const browser=await puppeteer.launch({headless:true,executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'});
  const errors=[];
@@ -116,9 +118,9 @@ const PARALLEL=[['trunk','history-alexander-conquest/0','history-alexander-rule/
    const over=r.chars.filter(([,n,cap])=>n>cap);assert.deepEqual(over,[],'prose budgets');
    // The tree: forks at 395 and 843, the new lines and their lanes, the West's end, the shoots after the forks, the passing loops.
    for(const [k,spec] of Object.entries(ROWS))assert.deepEqual(r.rows[k],spec,k);
-   assert.deepEqual(r.branches,[['east','rome',395,1056,2],['west','rome',476,843,4],['france','west',843,987,5],['germany','west',843,962,4],['italy','west',843,962,3],['faith','trunk',-1400,1056,6],['china',null,-7000,845,7]]);
+   assert.deepEqual(r.branches,[['east','rome',395,1056,2],['west','rome',476,843,4],['france','west',843,987,5],['germany','west',843,964,4],['italy','west',843,964,3],['faith','trunk',-1400,1056,6],['china',null,-7000,845,7]]);
    assert.deepEqual(r.ends,[['trunk',-30,'并入罗马'],['rome',476,'西罗马终结'],['west',843,'凡尔登三分']]);
-   for(const f of [['france',987,'卡佩王朝'],['germany',962,'神圣罗马帝国'],['italy',962,'帝国治下的意大利']])assert.ok(r.futures.some(x=>JSON.stringify(x)===JSON.stringify(f)),f[0]+' shoot');
+   for(const f of [['france',987,'卡佩王朝'],['germany',964,'神圣罗马帝国'],['italy',964,'帝国治下的意大利']])assert.ok(r.futures.some(x=>JSON.stringify(x)===JSON.stringify(f)),f[0]+' shoot');
    assert.ok(!r.futures.some(f=>f[0]==='west'),'中世纪西欧 ends at Verdun instead of growing a shoot');
    assert.deepEqual(r.parallel,PARALLEL);
    // 老无’s theses in bold; corrections in plain text; one or two moments a scene; the reading links.
@@ -139,7 +141,7 @@ const PARALLEL=[['trunk','history-alexander-conquest/0','history-alexander-rule/
    assert.equal(t.loops,PARALLEL.length,label+' loops');
    assert.deepEqual(t.side,PARALLEL.map(p=>p[2]).sort(),label+' the later section of each pair rides the loop');
    assert.ok(['east','france','italy'].every(f=>t.forks.includes(f))&&!t.forks.includes('germany'),label+' forks '+JSON.stringify(t.forks));
-   assert.deepEqual(t.pills,['希腊','罗马','东罗马','中世纪西欧','法兰西','德意志','意大利','基督教','埃及','波斯','中国'],label+' line pills');
+   assert.deepEqual(t.pills,['希腊','罗马','东罗马','中世纪西欧','西班牙','法兰西','德意志','意大利','基督教','埃及','波斯—阿拉伯','中国'],label+' line pills');
    }
    // Every new scene draws, fits its view on the desktop, and leaves no horizontal overflow.
    for(const id of Object.keys(SECTIONS)){
@@ -156,6 +158,6 @@ const PARALLEL=[['trunk','history-alexander-conquest/0','history-alexander-rule/
    await page.close();
   }
   assert.deepEqual(errors,[],'page errors');
-  console.log('PASS: Carolingians and Verdun — 东罗马 forks off 罗马 at 395; 中世纪西欧 ends at Verdun (843) and forks into 法兰西, 德意志 and 意大利; five passing loops for near-simultaneous sections; 加洛林王朝 (751—800), 查理曼的治理 (781—814) and 虔诚者路易 (814—843) carry 老无’s theses in bold with the facts set right in plain text; the three heirs of Verdun and 加洛林神学之争 within budget; maps fit, offline, no overflow at 1440 and 390');
+  console.log('PASS: Carolingians and Verdun — 东罗马 forks off 罗马 at 395; 中世纪西欧 ends at Verdun (843) and forks into 法兰西, 德意志 and 意大利; six passing loops for near-simultaneous sections; 加洛林王朝 (751—800), 查理曼的治理 (781—814) and 虔诚者路易 (814—843) carry 老无’s theses in bold with the facts set right in plain text; the three heirs of Verdun and 加洛林神学之争 within budget; maps fit, offline, no overflow at 1440 and 390');
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exit(1);});
