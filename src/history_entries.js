@@ -574,6 +574,30 @@ Object.assign(HS,{
   vg_nimes:['尼姆','Nîmes',43.837,4.36,'塞普提马尼亚的城；673年9月万巴攻下此城，平了保罗的叛乱。'],
   vg_pampliega:['潘普列加','Pampliega',42.21,-3.98,'布尔戈斯西南的村镇；据后世编年史，680年万巴在此病倒、被剃发。'],
   vg_ceuta:['休达','Ceuta',35.889,-5.32,'海峡南岸的要塞；据9世纪的阿拉伯史书，城主朱利安借船给塔里克渡海。'],
+  ar_marib:['马里卜大坝','Marib Dam',15.4,45.26,'示巴故都马里卜城西边的大坝遗址；547年决口、548年修好，570年代最后一次溃决。'],
+  ar_sanaa:['萨那','Sanaa',15.35,44.21,'也门高原上的城；6世纪中叶阿布拉哈在此建都，修了一座大教堂。'],
+  ar_najran:['纳季兰','Najran',17.49,44.13,'也门北边的绿洲城，基督徒聚居；523年前后城中基督徒遭信犹太教的希木叶尔国王屠杀。'],
+  ar_aksum:['阿克苏姆','Aksum',14.13,38.72,'埃塞俄比亚高原北部的王都；525年其王出兵渡红海攻也门，615年收留了穆罕默德的信徒。'],
+  ar_dhiqar:['济加尔','Dhi Qar',31.95,45.05,'库法附近的水源地，确切位置不明，此处只标大致方位；604—611年间贝克尔部在此打败波斯军。'],
+  ar_ukaz:['欧卡兹','Ukaz',21.62,40.72,'麦加东南、塔伊夫以北的年集；每年朝圣前的圣月里开集二十来天。'],
+  ar_khaybar:['海巴尔','Khaybar',25.7,39.29,'麦地那以北约一百五十公里的犹太人绿洲；628年被攻下，犹太人留下种地，交一半收成。'],
+  ar_taif:['塔伊夫','Taif',21.27,40.42,'麦加东南山地的城，赛基夫部所居；619年穆罕默德来此求援，被撵了出来。'],
+  ar_badr:['白德尔','Badr',23.73,38.77,'麦地那西南、近红海的水井；624年3月穆斯林在此打败古莱什军。'],
+  cf_kufa:['库法','Kufa',32.03,44.4,'638年建的兵城，伊拉克两座兵城之一，在希拉旁边。'],
+  cf_basra:['巴士拉','Basra',30.4,47.7,'636年建的兵城，在两河入海口附近；伊拉克两座兵城之一。'],
+  cf_fustat:['福斯塔特','Fustat',30.01,31.235,'641年建在巴比伦堡旁的兵城，今开罗老城；阿拉伯治下埃及的首府。'],
+  cf_aswan:['阿斯旺','Aswan',24.09,32.9,'尼罗河第一瀑布下的城，阿拉伯治下埃及的南界。'],
+  cf_dongola:['栋古拉','Dongola',18.22,30.75,'马库里亚王国的都城，在尼罗河第三、第四瀑布之间；652年被围，没有攻破。'],
+  cf_dahlak:['达赫拉克群岛','Dahlak Archipelago',15.72,40.2,'红海里的群岛；702年阿比西尼亚海盗袭击吉达后被穆斯林占领，倭马亚拿来关犯人。'],
+  cf_sufetula:['苏费图拉','Sufetula',35.24,9.12,'今突尼斯斯贝特拉；647年自立为帝的东罗马总督格雷戈里在此战败被杀。'],
+  cf_kairouan:['凯鲁万','Kairouan',35.68,10.1,'670年建的兵城，阿拉伯人在北非的大本营。'],
+  cf_covadonga:['科瓦东加','Covadonga',43.31,-5.06,'坎塔布里亚山中的山谷；722年佩拉约在此打退一支穆斯林兵，阿斯图里亚斯王国由此起家。'],
+  cf_bukhara:['布哈拉','Bukhara',39.77,64.42,'粟特人的绿洲城；706—709年屈底波打了四年才拿下。'],
+  cf_samarkand:['撒马尔罕','Samarkand',39.65,66.96,'粟特人最大的城，712年降屈底波；后来以造纸出名。'],
+  cf_debal:['代巴勒','Debal',24.75,67.52,'印度河口的港城，今巴基斯坦班布霍尔一带；711—712年被穆罕默德·本·卡西姆攻下。'],
+  cf_cyzicus:['基齐库斯','Cyzicus',40.38,27.89,'马尔马拉海南岸的半岛；据提奥法尼斯，阿拉伯舰队在此过冬，开春再去攻城。'],
+  cf_syllaeum:['叙莱翁','Syllaeum',36.99,30.99,'潘菲利亚的城；据提奥法尼斯，撤退的阿拉伯舰队在这一带海上遭风暴覆没。'],
+  cf_abydos:['阿拜多斯（赫勒斯滂）','Abydos (Hellespont)',40.2,26.4,'达达尼尔海峡边的城；717年夏马斯拉马的大军在此渡海进入色雷斯。'],
 });
 function hp(d,key,opt={}){
   const [n,en,la,lo,note]=HS[key];
@@ -2179,7 +2203,7 @@ const HISTORY_ENTRIES=[
     hl(d,'卢西塔尼亚人：维里亚图斯','Lusitanians: Viriathus',39.6,-7.5,HC.neutral);
     hl(d,'坎塔布里亚人：前19年才平定','Cantabri, subdued 19 BC',43.05,-4.4,HC.celt);
    },[['fill',HC.rome,'罗马的西班牙（约前133年）'],['dash',HC.rome,'前19年全境平定'],['dot',HC.war,'努曼提亚与内战战场'],['dot','#2a2018','新迦太基银矿与塞多留的奥斯卡']]),
-  hs('前19—409年','最罗马化的行省','三个行省；西北的金子、南方的粮酒油源源运往罗马，罗马城外倒掉的油罐堆成泰斯塔乔山；图拉真生在意大利卡。',[[35.0,-10.0],[44.6,13.2]],d=>{
+  hs('前19—409年','最罗马化的行省','三个行省；西北的金子、南方的粮酒油源源运往罗马，倒掉的油罐在罗马城南堆成泰斯塔乔山；图拉真生在意大利卡。',[[35.0,-10.0],[44.6,13.2]],d=>{
     ha(d,'ibBaetica',HC.rome,{fillOpacity:.30});ha(d,'ibLusitania',HC.rome,{fillOpacity:.18});ha(d,'ibTarraconensis',HC.rome,{fillOpacity:.10});
     hp(d,'ib_corduba');hp(d,'ib_emerita');hp(d,'tarraco',{note:'塔拉科嫩西斯行省的首府。'});
     hp(d,'italica',{left:1,note:'前206年大西庇阿安置伤兵所建；图拉真生在这里，哈德良一家也出自这里。'});
@@ -3821,6 +3845,124 @@ const HISTORY_ENTRIES=[
     hp(d,'p_zaranj');hp(d,'p_suyab',{kind:'battle'});hp(d,'merv',{left:1});
     hl(d,'吐火罗','Tokharistan',36.5,68.5,HC.parthia);
    },[['fill',HC.myc,'哈里发国（约661年）'],['fill',HC.china,'唐朝本部与安西（示意）'],['dot',HC.war,'碎叶'],['dot','#2a2018','长安、疾陵城与木鹿']])
+ ]},
+{id:'history-arab-rise',ch:9,title:'阿拉伯的兴起：两大帝国打烂之后',short:'阿拉伯的兴起',en:'The Rise of the Arabs: After Two Empires Wore Each Other Out',period:'约525—622年',c:HC.parthia,
+ scenes:[
+  hs('约525—630年','南边：大坝垮了','525年阿克苏姆灭希木叶尔，570年前后也门归波斯；没人管的马里卜大坝570年代最后一次溃决，绿洲荒弃；传说中的部落北迁。',[[11.0,33.0],[33.5,53.0]],d=>{
+    ha(d,'mHimyar',HC.thebes,{fillOpacity:.28});ha(d,'mAksum',HC.mino,{fillOpacity:.25});
+    hp(d,'ar_marib');hp(d,'ar_sanaa',{left:1});hp(d,'ar_najran');hp(d,'ar_aksum',{left:1});
+    hp(d,'p_medina',{note:'据传说，奥斯、哈兹拉吉两部从也门北迁，落脚在这里。'});
+    hp(d,'f_jabiya',{note:'加萨尼王的营地；据传说，加萨尼王族也是从也门北迁来的。'});
+    hr(d,[[14.13,38.72],[15.26,39.66],[14.0,41.8],[13.32,43.25],[14.21,44.4]],HC.mino);
+    hr(d,[[15.4,45.26],[17.49,44.13],[21.0,40.6],[24.47,39.61],[28.5,37.6],[32.92,35.97]],HC.route);
+   },[['fill',HC.thebes,'也门（希木叶尔王国核心，约500年）'],['fill',HC.mino,'阿克苏姆王国（今埃塞俄比亚北部）'],['dline',HC.mino,'525年阿克苏姆渡海出兵（概略）'],['dline',HC.route,'传说中阿兹德人北迁（示意）'],['dot','#2a2018','大坝、萨那、纳季兰、阿克苏姆与北迁的落脚处']]),
+  hs('约580—630年','北边：看门的没了','东罗马581年诱捕加萨尼王，联盟瓦解；萨珊602年前后废拉赫姆王朝，贝克尔部在济加尔打败波斯军；602—628年大战把两家打空。',[[28.0,33.0],[37.5,49.0]],d=>{
+    ha(d,'mByz600',HC.athens,{fillOpacity:.14});ha(d,'lSasanian560',HC.parthia,{fillOpacity:.14});
+    ha(d,'mGhassanids',HC.myc,{fillOpacity:.3,dashArray:'4 4'});ha(d,'mLakhmids',HC.myc,{fillOpacity:.3,dashArray:'4 4'});
+    hp(d,'f_jabiya',{note:'加萨尼王的营地；581年加萨尼王蒙齐尔在叙利亚被东罗马诱捕，次年流放西西里。'});
+    hp(d,'p_hira',{note:'拉赫姆王朝的都城；602年前后改由波斯直辖。'});
+    hp(d,'ctesiphon');hp(d,'ar_dhiqar',{kind:'battle'});
+    hl(d,'叙利亚沙漠','Syrian Desert',31.6,39.2,HC.neutral);
+   },[['fill',HC.athens,'东罗马（约600年）'],['fill',HC.parthia,'萨珊帝国'],['dash',HC.myc,'加萨尼与拉赫姆：两家的阿拉伯看门人'],['dot',HC.war,'济加尔'],['dot','#2a2018','两个看门王国的营地、王都与泰西封']]),
+  hs('约500—610年','中间：没有国家的半岛','半岛腹地没有国家，部落靠劫掠过日子；麦加的克尔白是各部共同的圣地，圣月休战、赶集；犹太人、基督徒和一神的说法早已进来。',[[12.0,33.5],[33.5,58.5]],d=>{
+    ha(d,'mArabia',HC.myc,{fillOpacity:.16});ha(d,'mHimyar',HC.parthia,{fillOpacity:.2,dashArray:'4 4'});
+    hp(d,'p_mecca',{note:'克尔白里供着各部的神像；四个圣月里各部休战，来朝圣、赶集。'});hp(d,'ar_ukaz',{left:1});
+    hp(d,'p_medina',{note:'阿拉伯人的奥斯、哈兹拉吉两部与几个犹太部落混居的绿洲。'});
+    hp(d,'ar_khaybar',{note:'犹太人的椰枣绿洲。'});hp(d,'ar_najran',{note:'基督徒的城。'});
+    hr(d,[[21.42,39.83],[17.49,44.13],[15.35,44.21]],HC.route);
+    hr(d,[[21.42,39.83],[24.47,39.61],[28.0,36.6],[31.5,34.47]],HC.route);
+    hl(d,'游牧部落','Bedouin tribes',24.0,45.5,HC.myc);
+   },[['fill',HC.myc,'阿拉伯半岛'],['dash',HC.parthia,'也门（570年代起归波斯）'],['dline',HC.route,'古莱什商队：冬去也门、夏去叙利亚（概略）'],['dot','#2a2018','麦加、欧卡兹集市与犹太人、基督徒的城']])
+ ]},
+{id:'history-arab-muhammad',ch:9,title:'穆罕默德：一款极简的新产品',short:'穆罕默德',en:'Muhammad: A Minimalist New Product',period:'610—632年',c:HC.parthia,
+ scenes:[
+  hs('约610—613年','悟道：极简的新产品','约610年穆罕默德说在麦加城外的希拉山洞得到启示，613年公开传教；四周是信基督的东罗马、阿克苏姆和信祆教的波斯，绿洲里住着犹太部落。',[[11.0,30.0],[34.0,52.0]],d=>{
+    ha(d,'mByz600',HC.athens,{fillOpacity:.14});ha(d,'lSasanian560',HC.parthia,{fillOpacity:.14});ha(d,'mAksum',HC.mino,{fillOpacity:.22});
+    hp(d,'p_mecca',{note:'约610年起，穆罕默德说自己在城外希拉山的山洞里得到启示；613年起公开宣讲。'});
+    hp(d,'jerusalem',{note:'犹太人和基督徒的圣城；614年被波斯攻下，注家多把《古兰经》第30章说的“罗马人已败北”指为这一时期。'});
+    hp(d,'p_medina',{note:'绿洲里住着几个犹太部落。'});hp(d,'ar_najran',{note:'基督徒的城。'});hp(d,'ar_aksum',{left:1});
+   },[['fill',HC.athens,'东罗马：基督教'],['fill',HC.parthia,'萨珊：祆教，境内也有基督徒和犹太人'],['fill',HC.mino,'阿克苏姆：基督教'],['dot','#2a2018','麦加与周边的一神教据点']]),
+  hs('613—622年','在麦加碰壁','古莱什人抵制哈希姆家族；615年信徒渡海投奔阿比西尼亚；619年妻子和伯父去世，穆罕默德去塔伊夫求援被撵走。',[[12.0,35.5],[24.5,45.0]],d=>{
+    ha(d,'mAksum',HC.mino,{fillOpacity:.25});ha(d,'mArabia',HC.myc,{fillOpacity:.1});
+    hp(d,'p_mecca',{note:'616年起古莱什各家立约，不跟哈希姆家族通婚、买卖，约三年。'});
+    hp(d,'ar_taif',{note:'619年穆罕默德来此求援，被人追骂撵走。'});
+    hp(d,'ar_aksum',{note:'615年起前后八十多名穆斯林渡海来此避难，国王拒绝把他们交还古莱什。'});
+    hr(d,[[21.42,39.83],[21.0,39.2],[15.3,39.7],[14.13,38.72]],HC.route);
+    hr(d,[[21.42,39.83],[21.3,40.1],[21.27,40.42]],HC.myc);
+   },[['fill',HC.mino,'阿克苏姆王国（阿比西尼亚）'],['fill',HC.myc,'阿拉伯半岛'],['dline',HC.route,'615年信徒渡海避难（概略）'],['dline',HC.myc,'619年去塔伊夫求援'],['dot','#2a2018','麦加、塔伊夫与阿克苏姆']]),
+  hs('620—624年','换个赛场：麦地那的种子用户','621、622年麦地那人两次在阿卡巴立誓；622年穆罕默德迁往麦地那；624年3月在白德尔截商队，打败古莱什援军。',[[20.3,36.8],[26.2,42.0]],d=>{
+    ha(d,'mArabia',HC.myc,{fillOpacity:.12});
+    hp(d,'p_mecca');hp(d,'p_medina',{note:'622年穆罕默德迁来，这一年后来定为伊斯兰历元年。'});hp(d,'ar_badr',{kind:'battle'});
+    hr(d,[[21.42,39.83],[22.9,39.4],[24.47,39.61]],HC.myc);
+    hr(d,[[26.2,37.3],[24.9,37.9],[23.73,38.55],[22.6,39.0],[21.42,39.83]],HC.route);
+   },[['fill',HC.myc,'阿拉伯半岛'],['dline',HC.myc,'622年迁往麦地那（概略）'],['dline',HC.route,'古莱什商队北上叙利亚的沿海路（概略）'],['dot',HC.war,'白德尔'],['dot','#2a2018','麦加与麦地那']]),
+  hs('624—628年','第一桶金：犹太部落','624年盖努卡部、625年纳迪尔部被逐出麦地那；627年壕沟之战后古莱扎部男子被杀、妇孺被卖；628年海巴尔投降，交一半收成。',[[21.0,36.8],[27.2,42.0]],d=>{
+    ha(d,'mArabia',HC.myc,{fillOpacity:.12});
+    hp(d,'p_medina',{note:'627年城外挖壕沟，挡住来围城的一万联军；城里三个犹太部落先后被逐、被杀。'});
+    hp(d,'ar_khaybar',{kind:'battle'});hp(d,'p_mecca');
+    hr(d,[[24.47,39.61],[25.1,39.5],[25.7,39.29]],HC.route);
+    hr(d,[[21.42,39.83],[22.9,39.4],[24.3,39.6]],HC.war);
+   },[['fill',HC.myc,'阿拉伯半岛'],['dline',HC.route,'625年纳迪尔部迁往海巴尔（概略）'],['dline',HC.war,'627年古莱什联军围麦地那（概略）'],['dot',HC.war,'海巴尔'],['dot','#2a2018','麦地那与麦加']]),
+  hs('628—632年','拿下麦加，拢成一个教团','628年侯德比亚和约；630年初一万人开进麦加，砸了偶像、留下朝圣；631年各部遣使归附；632年穆罕默德去世，艾布·伯克尔平叛后挥兵北上。',[[12.0,33.0],[34.0,59.5]],d=>{
+    ha(d,'mArabia',HC.myc,{fillOpacity:.3});ha(d,'mByz600',HC.athens,{fillOpacity:.12});ha(d,'lSasanian560',HC.parthia,{fillOpacity:.12});
+    hp(d,'p_mecca',{note:'630年初一万人开进，几乎没打仗；克尔白的偶像被砸，朝圣改拜独一真主。'});
+    hp(d,'p_medina',{note:'632年6月穆罕默德在此去世，艾布·伯克尔被推为继任人。'});
+    hp(d,'p_hira',{left:1});hp(d,'p_damascus');
+    hr(d,[[24.47,39.61],[22.9,39.4],[21.42,39.83]],HC.myc);
+    hr(d,[[24.47,39.61],[27.5,41.5],[30.0,43.2],[31.88,44.45]],HC.war);
+    hr(d,[[24.47,39.61],[27.6,37.4],[30.5,36.3],[33.51,36.29]],HC.war);
+   },[['fill',HC.myc,'631—632年遣使归附的半岛各部（概略）'],['fill',HC.athens,'东罗马'],['fill',HC.parthia,'萨珊帝国'],['dline',HC.myc,'630年进军麦加'],['dline',HC.war,'633年起北上伊拉克、叙利亚（概略）'],['dot','#2a2018','麦加、麦地那与北边的第一批目标']])
+ ]},
+{id:'history-arab-expansion',ch:9,title:'四面扩张：风口上的哈里发国',short:'四面扩张',en:'Expansion on Every Front: A Caliphate Riding the Wind',period:'632—751年',c:HC.parthia,
+ scenes:[
+  hs('632—661年','产品对路，风口正好','各部劫掠朝外；被教义之争推开的一性论派和聂斯托利派交税保教；征服者住进兵城、靠税养着。北线见“君士坦丁堡之围”一节。',[[22.0,26.0],[39.5,51.5]],d=>{
+    ha(d,'mCaliph661',HC.myc,{fillOpacity:.2});ha(d,'mByz680',HC.athens,{fillOpacity:.14});
+    hp(d,'p_medina');hp(d,'p_damascus',{note:'661年起是倭马亚王朝的都城。'});
+    hp(d,'cf_kufa');hp(d,'cf_basra');hp(d,'cf_fustat',{left:1});
+    hl(d,'一性论派（雅各派）','Miaphysites (Syriac)',35.6,38.6,HC.neutral);hl(d,'一性论派（科普特人）','Miaphysites (Copts)',27.3,30.9,HC.neutral);
+    hl(d,'聂斯托利派','Church of the East',34.4,44.8,HC.neutral);
+   },[['fill',HC.myc,'哈里发国（约661年）'],['fill',HC.athens,'东罗马（约680年）'],['dot','#2a2018','麦地那、大马士革与三座兵城']]),
+  hs('641—652年','南边：止步于努比亚、沙漠和大海','两次南下马库里亚，652年围栋古拉不下，订“巴克特”换奴隶；阿比西尼亚没打，只占了红海里的达赫拉克群岛。',[[12.0,24.0],[32.0,46.0]],d=>{
+    ha(d,'mCaliph661',HC.myc,{fillOpacity:.16});ha(d,'mMakuria650',HC.mino,{fillOpacity:.3});
+    hp(d,'cf_fustat');hp(d,'cf_aswan',{note:'阿拉伯治下埃及的南界。'});hp(d,'f_faras',{left:1});
+    hp(d,'cf_dongola',{kind:'battle'});hp(d,'cf_dahlak');
+    hr(d,[[30.01,31.24],[27.2,31.2],[25.7,32.6],[24.09,32.9],[22.0,31.4],[20.2,30.4],[18.22,30.75]],HC.myc);
+    hl(d,'撒哈拉','Sahara',23.0,27.0,HC.neutral);hl(d,'阿克苏姆（阿比西尼亚）','Aksum (Abyssinia)',14.1,38.7,HC.neutral);
+   },[['fill',HC.myc,'哈里发国（埃及）'],['fill',HC.mino,'马库里亚王国（努比亚，示意）'],['dline',HC.myc,'641—652年南下（概略）'],['dot',HC.war,'栋古拉'],['dot','#2a2018','福斯塔特、阿斯旺、法拉斯与达赫拉克']]),
+  hs('647—732年','西边：打穿北非，渡海拿下西班牙','647年苏费图拉、698年迦太基；711年渡海；坎塔布里亚山里的阿斯图里亚斯起家；732年北上劫掠在普瓦捷被挡住。',[[30.0,-10.5],[48.5,12.0]],d=>{
+    ha(d,'mUmayyad750',HC.myc,{fillOpacity:.16});ha(d,'mAsturias800',HC.spain,{fillOpacity:.32});
+    hp(d,'cf_sufetula',{kind:'battle'});hp(d,'cf_kairouan');hp(d,'carthage',{note:'698年攻下，城墙被拆、港口被填。'});
+    hp(d,'calpe',{note:'711年塔里克在此登陆，阿拉伯人叫它“塔里克山”。'});
+    hp(d,'cf_covadonga',{kind:'battle'});hp(d,'w_battle732',{kind:'battle'});
+    hr(d,[[35.68,10.1],[35.3,6.0],[34.9,1.0],[35.2,-2.9],[35.77,-5.8],[36.14,-5.35],[36.65,-5.95],[37.88,-4.78],[39.86,-4.02]],HC.myc);
+   },[['fill',HC.myc,'倭马亚哈里发国（约732—750年）'],['fill',HC.spain,'阿斯图里亚斯王国（约800年的范围）'],['dline',HC.myc,'北非西进与711年渡海（概略）'],['dot',HC.war,'苏费图拉、科瓦东加与普瓦捷'],['dot','#2a2018','凯鲁万、迦太基与直布罗陀']]),
+  hs('705—751年','东边：打到怛罗斯为止','屈底波打下布哈拉、撒马尔罕，死后大半得而复失；另一路711—712年拿下信德；751年怛罗斯一战之后不再东进。',[[22.0,42.0],[46.5,84.0]],d=>{
+    ha(d,'mUmayyad750',HC.myc,{fillOpacity:.14});ha(d,'mTarim',HC.china,{fillOpacity:.22});
+    ha(d,'mWesternTurks600',HC.hittite,{fillOpacity:.14,dashArray:'4 4'});
+    hp(d,'merv',{note:'呼罗珊的首府，屈底波东征的大本营。'});hp(d,'cf_bukhara');hp(d,'cf_samarkand');
+    hp(d,'c_talas',{kind:'battle'});hp(d,'cf_debal');hp(d,'w_baghdad',{left:1,note:'762年起建的阿拔斯新都；8世纪90年代有了纸坊。'});
+    hr(d,[[37.66,62.19],[39.0,63.6],[39.77,64.42],[39.65,66.96],[40.4,69.0],[41.0,71.0]],HC.myc);
+    hr(d,[[29.6,60.9],[25.3,62.3],[25.2,64.6],[24.75,67.52],[27.7,68.9],[30.2,71.47]],HC.myc);
+    hl(d,'突骑施等突厥诸部','Türgesh and other Turks',44.6,70.5,HC.hittite);
+   },[['fill',HC.myc,'倭马亚哈里发国（约750年）'],['fill',HC.china,'唐的安西四镇一带（示意）'],['dash',HC.hittite,'突厥诸部（示意）'],['dline',HC.myc,'屈底波东征与穆罕默德·本·卡西姆进军信德（概略）'],['dot',HC.war,'怛罗斯'],['dot','#2a2018','木鹿、布哈拉、撒马尔罕、代巴勒与巴格达']])
+ ]},
+{id:'history-arab-constantinople',ch:9,title:'君士坦丁堡之围：希腊火挡住北线',short:'君士坦丁堡之围',en:'The Arab Sieges of Constantinople',period:'667—718年',c:HC.byz,
+ scenes:[
+  hs('667—678年','头一回：希腊火','阿拉伯舰队占罗得岛、在基齐库斯过冬，连年攻城；卡利尼库斯的“海火”烧船，舰队又遭风暴；678年哈里发求和纳贡。',[[31.0,22.0],[43.5,39.0]],d=>{
+    ha(d,'mByz680',HC.athens,{fillOpacity:.16});ha(d,'mCaliph661',HC.myc,{fillOpacity:.16});
+    hp(d,'constantinople',{kind:'battle',note:'667年起几度被围；城下的海战里，东罗马船从铜管喷出“海火”。'});
+    hp(d,'cf_cyzicus');hp(d,'chalcedon',{left:1,note:'669年阿拉伯军打到这里，与京城隔海相望。'});
+    hp(d,'rhodes',{note:'673年被阿拉伯舰队占领，驻兵一万二千人，作北上的跳板。'});hp(d,'cf_syllaeum',{kind:'battle'});
+    hp(d,'p_damascus',{note:'穆阿维叶坐镇的都城。'});
+    hr(d,[[34.4,35.8],[35.2,32.0],[36.0,29.5],[36.44,28.22],[37.9,26.6],[39.6,26.3],[40.38,27.89],[40.95,28.8]],HC.myc);
+   },[['fill',HC.athens,'东罗马（约680年）'],['fill',HC.myc,'倭马亚哈里发国'],['dline',HC.myc,'阿拉伯舰队北上（概略）'],['dot',HC.war,'君士坦丁堡与叙莱翁'],['dot','#2a2018','基齐库斯、卡尔西顿、罗得岛与大马士革']]),
+  hs('717—718年','第二回：海路守住，围城的先饿垮','马斯拉马从阿拜多斯渡海合围；希腊火守住海路，围城军冬天饿垮、援军倒戈、保加尔人夹击，718年8月撤围。',[[34.0,22.0],[44.5,40.0]],d=>{
+    ha(d,'mByz680',HC.athens,{fillOpacity:.16});ha(d,'mBulgars681',HC.neutral,{fillOpacity:.26});ha(d,'mCaliph661',HC.myc,{fillOpacity:.12});
+    hp(d,'constantinople',{kind:'battle',note:'717年8月15日起被围整整一年；利奥三世夜里放下金角湾口的铁链，敌船疑有埋伏，不敢进港。'});
+    hp(d,'cf_abydos');hp(d,'i_amorion',{note:'716年利奥与阿拉伯人在此周旋，进了城、守住了它。'});hp(d,'i_pliska',{left:1});
+    hr(d,[[36.5,37.3],[37.3,34.8],[38.5,32.6],[39.02,31.29],[39.4,28.5],[40.2,26.4],[41.0,28.6]],HC.myc);
+    hl(d,'托罗斯山：此后两百多年的大致边界','Taurus: the frontier for two centuries',37.3,34.2,HC.war);
+   },[['fill',HC.athens,'东罗马（约700年）'],['fill',HC.neutral,'保加尔汗国'],['fill',HC.myc,'倭马亚哈里发国'],['dline',HC.myc,'716—717年马斯拉马进军（概略）'],['dot',HC.war,'君士坦丁堡'],['dot','#2a2018','阿拜多斯、阿莫里翁与普利斯卡']])
  ]}
 ];
 HISTORY_ENTRIES.forEach(e=>{
@@ -3863,7 +4005,8 @@ const HISTORY_ERAS=[
  {id:'egypt-ancient',name:'古埃及',en:'Ancient Egypt',date:'约前3100—前332年',c:HC.mino,items:[['history-egypt-old'],['history-egypt-middle'],['history-egypt-new'],['history-egypt-late']]},
  {id:'egypt-roman',name:'罗马与东罗马治下的埃及',en:'Roman and Byzantine Egypt',date:'前30—619年',c:HC.mino,items:[['history-egypt-roman'],['history-egypt-byzantine']]},
  {id:'persia-ancient',name:'古代伊朗',en:'Ancient Iran',date:'约前3200—前330年',c:HC.parthia,items:[['history-persia-elam'],['history-persia-achaemenid']]},
- {id:'persia-iranian',name:'安息与萨珊',en:'Parthians and Sasanians',date:'前141—651年',c:HC.parthia,items:[['history-persia-parthia'],['history-persia-sasanian'],['history-persia-khosrow'],['history-persia-khosrow-ii'],['history-arab-conquest']]}
+ {id:'persia-iranian',name:'安息与萨珊',en:'Parthians and Sasanians',date:'前141—651年',c:HC.parthia,items:[['history-persia-parthia'],['history-persia-sasanian'],['history-persia-khosrow'],['history-persia-khosrow-ii'],['history-arab-conquest']]},
+ {id:'arab-caliphate',name:'阿拉伯：兴起、扩张与统治',en:'The Arabs: Rise, Conquest and Rule',date:'约525—945年',c:HC.parthia,items:[['history-arab-rise'],['history-arab-muhammad'],['history-arab-expansion'],['history-arab-constantinople']]},
 ];
 /* History as a tree: each branch is a topic; distance from the root is time (years, negative = BCE).
    Reading order stays with HISTORY_ERAS; TREE_ROWS puts each era row on a branch at its start and end. */
@@ -3883,7 +4026,7 @@ const HISTORY_BRANCHES=[
  {id:'faith',name:'基督教',en:'Judaism & Christianity',lane:6,parent:'trunk',from:-1400,to:1056,c:HC.faith},
  // 埃及 and 波斯 leave the trunk at the early states (老无 2026-10-21): the Ptolemies, the Seleucids, Rome and Byzantium are passing rulers of these lands.
  {id:'egypt',name:'埃及',en:'Egypt',lane:1,parent:'trunk',from:-3100,to:642,c:HC.mino},
- {id:'persia',name:'波斯',en:'Persia',lane:0,parent:'trunk',from:-3200,to:651,c:HC.parthia},
+ {id:'persia',name:'波斯—阿拉伯',en:'Persia and the Arabs',lane:0,parent:'trunk',from:-3200,to:751,c:HC.parthia},
  // Parallel timeline of China for cross-civilizational comparison.
  {id:'china',name:'中国',en:'China',lane:7,from:-7000,to:845,c:HC.china}
 ];
@@ -4008,11 +4151,15 @@ const TREE_ROWS={
  'history-spain-visigoths/0':['spain',482,589,'468—589年'],
  'history-spain-toledo/0':['spain',589,642],
  'history-spain-fall/0':['spain',642,710,'642—710年'],
+ 'history-arab-rise/0':['persia',652,652,'约525—622年'],
+ 'history-arab-muhammad/0':['persia',653,653,'610—632年'],
+ 'history-arab-expansion/0':['persia',654,751,'632—751年'],
+ 'history-arab-constantinople/0':[['east','persia'],667,718],
  'history-empire-macedonian/3':[['east','faith'],1054,1056],
  'history-spain-fall/2':[['spain','persia'],711,713]
 };
 // Topics still to be written grow the tree as dashed shoots.
-const TREE_FUTURE=[['east',1056,'东罗马（晚期）','1056年起 · 1071年曼齐刻尔特之战 · 1204年十字军攻破君士坦丁堡 · 到1453年 · 待展开'],['france',987,'卡佩王朝','987年起 · 待展开'],['germany',964,'神圣罗马帝国','964年起 · 奥托王朝与萨利安王朝 · 1077年卡诺莎之辱 · 待展开'],['italy',964,'帝国治下的意大利','964年起 · 待展开'],['faith',1056,'大分裂以后','1054年起 · 1077年卡诺莎之辱 · 十字军与东西两教会 · 待展开'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',651,'伊斯兰时代的伊朗','651年起 · 待展开'],['china',845,'晚唐五代与宋','845年起 · 待展开']];
+const TREE_FUTURE=[['east',1056,'东罗马（晚期）','1056年起 · 1071年曼齐刻尔特之战 · 1204年十字军攻破君士坦丁堡 · 到1453年 · 待展开'],['france',987,'卡佩王朝','987年起 · 待展开'],['germany',964,'神圣罗马帝国','964年起 · 奥托王朝与萨利安王朝 · 1077年卡诺莎之辱 · 待展开'],['italy',964,'帝国治下的意大利','964年起 · 待展开'],['faith',1056,'大分裂以后','1054年起 · 1077年卡诺莎之辱 · 十字军与东西两教会 · 待展开'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',751,'阿拔斯王朝','750年起 · 巴格达、造纸与翻译运动 · 待展开'],['china',845,'晚唐五代与宋','845年起 · 待展开']];
 // Where a line stops it says why: [line, year, the event that ends it, note, the line it carries on in].
 const TREE_ENDS=[['trunk',-30,'并入罗马','前146年科林斯被毁 · 前30年最后一个希腊化王国埃及并入罗马','rome'],['rome',476,'西罗马终结','476年西部末代皇帝被废 · 由中世纪西欧接续'],['west',843,'凡尔登三分','843年《凡尔登条约》三分帝国 · 分出法兰西、德意志、意大利'],['spain',711,'并入阿拉伯','711年塔里克渡海、西哥特王国覆亡 · 由“波斯—阿拉伯”线接续']];
 // Sections of one line that run side by side: [line, row keys, side of the passing loop].

@@ -1190,6 +1190,33 @@ const FIGURE_PLACES={
       -5.984
     ],
     "note": "贝提卡的首府和大主教座；莱安德、伊西多尔兄弟先后在此任主教。"
+  },
+  "ar_mecca": {
+    "name": "麦加",
+    "en": "Mecca",
+    "ll": [
+      21.42,
+      39.83
+    ],
+    "note": "汉志的商城与克尔白圣地；穆罕默德的家乡，630年归顺。"
+  },
+  "ar_medina": {
+    "name": "麦地那",
+    "en": "Medina (Yathrib)",
+    "ll": [
+      24.47,
+      39.61
+    ],
+    "note": "原名叶斯里卜；622年穆罕默德迁居于此，632年死在这里。"
+  },
+  "ar_badr": {
+    "name": "白德尔",
+    "en": "Badr",
+    "ll": [
+      23.73,
+      38.77
+    ],
+    "note": "麦地那西南、近红海的水井；624年3月穆斯林在此打败古莱什军。"
   }
 };
 const FIGURES={
@@ -4471,6 +4498,78 @@ const FIGURES={
         "https://en.wikipedia.org/wiki/Chindasuinth"
       ]
     ]
+  },
+  "muhammad": {
+    "name": "穆罕默德",
+    "en": "Muhammad",
+    "life": "约570—632年",
+    "relation": "伊斯兰教的先知 · 麦加古莱什部哈希姆家族",
+    "place": "ar_medina",
+    "bio": "麦加古莱什部哈希姆家族的遗腹子，六岁丧母，先后由祖父和伯父艾布·塔利卜抚养，替人押商队为生，娶了富孀赫底彻。约610年起宣讲独一真主，622年迁麦地那，630年拿下麦加，632年6月在麦地那病逝。",
+    "sources": [
+      [
+        "穆罕默德（英文资料）",
+        "https://en.wikipedia.org/wiki/Muhammad"
+      ],
+      [
+        "伊本·伊斯哈格《先知传》（吉约姆英译）",
+        "https://archive.org/details/the-life-of-muhammad-ibn-ishaq-tr.-a-guillaume"
+      ]
+    ]
+  },
+  "khadija": {
+    "name": "赫底彻",
+    "en": "Khadija bint Khuwaylid",
+    "life": "约554—619年",
+    "relation": "穆罕默德的第一位妻子 · 第一个信他的人",
+    "place": "ar_mecca",
+    "bio": "古莱什部阿萨德家族的富孀，自己不出门，雇人押货、按利分成。约595年嫁给替她押货的穆罕默德，二十多年里他没有别的妻子。他宣讲后她第一个信从；抵制哈希姆家族的几年里缺粮，619年去世，那一年被称作“悲伤之年”。",
+    "sources": [
+      [
+        "赫底彻（英文资料）",
+        "https://en.wikipedia.org/wiki/Khadija_bint_Khuwaylid"
+      ],
+      [
+        "伊本·伊斯哈格《先知传》（吉约姆英译）",
+        "https://archive.org/details/the-life-of-muhammad-ibn-ishaq-tr.-a-guillaume"
+      ]
+    ]
+  },
+  "tariq-ibn-ziyad": {
+    "name": "塔里克·伊本·齐亚德",
+    "en": "Tariq ibn Ziyad",
+    "life": "约670—约720年",
+    "relation": "倭马亚将领 · 北非总督穆萨·伊本·努赛尔的释奴",
+    "place": "toletum",
+    "bio": "多数今人认为他是柏柏尔人，北非总督穆萨的释奴，708年起镇守丹吉尔。711年带七千人渡海，在瓜达莱特打败西哥特王罗德里克，直取都城托莱多；直布罗陀的名字就来自“塔里克山”。714年他和穆萨一同被召回大马士革，再没回来。",
+    "sources": [
+      [
+        "塔里克·伊本·齐亚德（英文资料）",
+        "https://en.wikipedia.org/wiki/Tariq_ibn_Ziyad"
+      ],
+      [
+        "伊本·阿卜杜·哈卡姆《征服西班牙记》节选（Fordham 英译）",
+        "https://sourcebooks.fordham.edu/source/conqspain.asp"
+      ]
+    ]
+  },
+  "qutayba-ibn-muslim": {
+    "name": "屈底波",
+    "en": "Qutayba ibn Muslim",
+    "life": "669—715年",
+    "relation": "倭马亚将领 · 呼罗珊总督（705—715年）",
+    "place": "merv",
+    "bio": "伊拉克总督哈查只提拔的将领。任呼罗珊总督十年，打下布哈拉、花剌子模和撒马尔罕，又沿锡尔河打到费尔干纳；兵不够用，就大批征募当地人从军。715年靠山哈查只和哈里发瓦利德相继去世，他起兵自保，部下不从，被自己的兵杀死。",
+    "sources": [
+      [
+        "屈底波（英文资料）",
+        "https://en.wikipedia.org/wiki/Qutayba_ibn_Muslim"
+      ],
+      [
+        "《旧唐书·西戎传》（大食：开元初遣使献马，“平立不拜”；“其时西域康国、石国之类，皆臣属之……东与突骑施相接”）",
+        "https://zh.wikisource.org/wiki/%E8%88%8A%E5%94%90%E6%9B%B8/%E5%8D%B7198"
+      ]
+    ]
   }
 };
 const FIGURE_SCENES={
@@ -6699,6 +6798,67 @@ const FIGURE_SCENES={
       "event": "最多还二十分之一",
       "note": "第七次托莱多会议记下：几乎全西班牙的主教、贵族和宫廷官员都已起誓，叛国投敌者的家产一律不还；国王若要开恩，最多只能还二十分之一。教士投敌也一样，革职终身悔罪，临死才准领圣体。",
       "place": "toletum"
+    }
+  ],
+  "history-arab-muhammad/0": [
+    {
+      "id": "khadija",
+      "when": "约595年",
+      "event": "雇来的押货人",
+      "note": "据伊本·伊斯哈格所记，她听说穆罕默德靠得住，出比别人高的价钱请他押货去叙利亚，让仆人迈斯赖随行。货卖了差不多一倍的钱，仆人又一路夸他，她便托人向他提亲。传统说法里，那年他二十五岁，她四十岁。",
+      "place": "ar_mecca"
+    }
+  ],
+  "history-arab-muhammad/2": [
+    {
+      "id": "muhammad",
+      "when": "约605年",
+      "event": "斗篷抬黑石",
+      "note": "据伊本·伊斯哈格所记，古莱什翻修克尔白，各家争着要亲手把黑石安回原位，几乎动刀。众人约定请第一个进门的人裁断，来的正是他，大家说：这是可靠的人。他把黑石放在斗篷中间，让各家各抓一角一起抬起，再亲手安上。",
+      "place": "ar_mecca"
+    },
+    {
+      "id": "muhammad",
+      "when": "624年",
+      "event": "一天宰几头骆驼",
+      "note": "据伊本·伊斯哈格所记，白德尔开战前，抓来的两个运水奴说不清古莱什来了多少人。他问一天宰几头骆驼，答九头或十头；他说：那就是九百到一千人。",
+      "place": "ar_badr"
+    }
+  ],
+  "history-arab-muhammad/4": [
+    {
+      "id": "muhammad",
+      "when": "628年",
+      "event": "擦掉“真主的使者”",
+      "note": "据伊本·伊斯哈格所记，在侯德比亚订约时，他叫人写“真主的使者穆罕默德”，古莱什的代表不肯：我要是认你是真主的使者，就不跟你打了。他便改写成“阿卜杜拉之子穆罕默德”。",
+      "place": "ar_mecca"
+    }
+  ],
+  "history-arab-expansion/2": [
+    {
+      "id": "tariq-ibn-ziyad",
+      "when": "711—712年",
+      "event": "少了一条腿的桌子",
+      "note": "据9世纪埃及史家伊本·阿卜杜·哈卡姆所记，他在托莱多一带得到传说中所罗门王的宝桌，镶满珍珠，值二十万第纳尔，便偷偷卸下一条桌腿，另配一条相似的。上司穆萨来信严令他原地待命，狠狠训了他一顿，随即亲自带兵过海。",
+      "place": "toletum"
+    }
+  ],
+  "history-arab-expansion/3": [
+    {
+      "id": "qutayba-ibn-muslim",
+      "when": "713年",
+      "event": "站着不拜的使者",
+      "note": "他沿锡尔河东进的那几年，派过使团去长安。据《旧唐书·西戎传》，开元初大食使者献马，见玄宗只站着不拜，御史要治罪，中书令张说说大食风俗不同、远来慕义，不可治罪。书里还说，这时大食已臣服康国、石国，东边与突骑施接壤。",
+      "place": "merv"
+    }
+  ],
+  "history-arab-constantinople/1": [
+    {
+      "id": "leo-iii-isaurian",
+      "when": "716—718年",
+      "event": "城下的两面戏",
+      "note": "716年他与马斯拉马暗中往来，借阿拉伯人的势逼退前任，进京后却翻脸守城；提奥法尼斯也说马斯拉马觉得被耍了。据阿拉伯史书，入冬后他又假意议和，骗马斯拉马交出（一说烧掉）了军粮。",
+      "place": "constantinople"
     }
   ]
 };

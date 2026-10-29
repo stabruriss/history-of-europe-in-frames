@@ -5,6 +5,7 @@ Teaching regions only, not reconstructed frontiers.  Points are (lon, lat).
 - mUmayyad750: the Umayyad caliphate at its widest (about 732—750): al-Andalus, Septimania, the Maghreb coast to Cyrenaica,
   the Abbasid lands of 800 and Transoxiana up to the Syr Darya.
 - mMakuria650: the Nubian kingdom of Makuria (with Nobadia) along the Nile from the First to the Fifth Cataract.
+- mHimyar: Yemen, the Himyarite kingdom about 500; mAksum: the kingdom of Aksum about 525 (Eritrea and Tigray).
 """
 import json
 from pathlib import Path
@@ -36,6 +37,12 @@ regions['mUmayyad750'] = unary_union([G('mAndalus750'), G('mSeptimania'), G('mAb
 regions['mMakuria650'] = L([(32.6, 24.2), (33.2, 24.0), (32.4, 22.2), (31.9, 21.2), (31.2, 20.6), (30.9, 19.8), (31.1, 18.9), (31.9, 18.7),
                             (32.6, 19.1), (33.5, 19.7), (34.2, 18.6), (34.1, 17.8), (33.6, 17.6), (32.9, 18.3), (32.0, 17.9), (31.0, 17.7),
                             (30.3, 18.2), (29.9, 19.6), (30.3, 20.8), (31.0, 21.8), (31.8, 22.6), (32.2, 23.6)])
+
+# ---------- South Arabia and Aksum ----------
+regions['mHimyar'] = L([(42.7, 16.4), (43.3, 17.6), (44.6, 17.9), (46.2, 17.3), (48.5, 16.9), (51.2, 17.0), (52.3, 16.4), (52.2, 15.6), (50.2, 15.0),
+                        (49.0, 14.5), (47.5, 13.8), (45.6, 13.2), (44.6, 12.7), (43.5, 12.7), (43.2, 13.3), (42.9, 14.6), (42.6, 15.6)])
+regions['mAksum'] = L([(36.6, 14.3), (37.0, 15.6), (38.3, 17.0), (38.9, 16.6), (39.4, 15.6), (40.0, 15.0), (40.9, 14.6), (41.7, 13.8), (42.4, 13.1),
+                       (41.0, 12.4), (39.8, 12.0), (38.4, 12.3), (37.4, 13.0)])
 
 
 def rounded(g):
