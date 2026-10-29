@@ -1,6 +1,6 @@
 /* Chapters organize the argument; eras independently group dated map scenes. */
 const HISTORY_CONTENT=/*__HISTORY_CONTENT__*/;
-const HISTORY_CH=['上古与黑暗时代','希腊城邦时代','马其顿与帝国','希腊化世界','罗马','罗马帝国','犹太教与基督教','中国对照','埃及','波斯—阿拉伯'];
+const HISTORY_CH=['上古与黑暗时代','希腊城邦时代','马其顿与帝国','希腊化世界','罗马','罗马帝国','犹太教与基督教','中国对照','埃及','波斯—阿拉伯','东欧'];
 const HC={athens:'#276582',sparta:'#99462e',mino:'#ad7c25',myc:'#637541',hittite:'#866347',
   persia:'#8b644c',thebes:'#387568',macedon:'#6b4d72',war:'#a03327',neutral:'#887b65',route:'#2a7182',celt:'#64763f',parthia:'#765b78',rome:'#a34f36',faith:'#41508c',china:'#2e6b4e',byz:'#93324f',france:'#2b6cb0',germany:'#4a4440',italy:'#b8652a',spain:'#a2337f',eeurope:'#1d8a99'};
 const HV={aegean:[[34.3,20.2],[41.3,29.6]],greece:[[35.6,20.4],[39.8,25.1]],
@@ -618,6 +618,39 @@ Object.assign(HS,{
   an_granada:['格拉纳达','Granada',37.177,-3.599,'1013年后柏柏尔人齐里家族在此立国，是南部最强的柏柏尔泰法。'],
   an_denia:['德尼亚','Dénia',38.84,0.106,'东岸海港；1010年后斯拉夫将领穆贾希德在此立国，兼领巴利阿里群岛。'],
   an_gormaz:['戈尔马斯','Gormaz',41.496,-3.003,'杜罗河上的哈里发国大要塞；1010年和两百多座边堡一起割给了卡斯蒂利亚伯爵。'],
+  ea_olbia:['奥尔比亚','Olbia',46.69,31.9,'米利都人在布格河口建的港口城；前5世纪希罗多德到过这里。'],
+  ea_tanais:['塔奈斯','Tanais',47.27,39.33,'前3世纪初博斯普鲁斯人在顿河口建的集市城；5世纪后半被弃。'],
+  ea_theodosia:['忒奥多西亚','Theodosia',45.03,35.38,'米利都人建的港口，港湾终年不冻；莱孔一世攻下后在这里开了第二个运粮港。'],
+  ea_phanagoria:['法纳戈里亚','Phanagoria',45.28,36.97,'约前543年忒奥斯人在刻赤海峡东岸所建，是塔曼半岛上最大的希腊城。'],
+  ea_gelonus:['别利斯克土城','Bilsk hillfort',50.1,34.66,'沃尔斯克拉河畔的大土城，约四千四百公顷；不少学者认为就是格洛诺斯。'],
+  ea_kamianka:['卡缅卡土城','Kamianka hillfort',47.48,34.42,'第聂伯河下游左岸的斯基泰大城，前5世纪末起是王国的中心，前3世纪初被弃。'],
+  ea_solokha:['索洛哈王陵','Solokha kurgan',47.53,34.5,'前4世纪初的斯基泰王陵，高19米；侧室出土一把饰着三个武士厮杀的金梳。'],
+  ea_neapolis:['斯基泰的那不勒斯','Scythian Neapolis',44.95,34.1,'前3世纪末起退守克里米亚的斯基泰王廷所在，在今辛菲罗波尔郊外；3世纪中叶毁于哥特人。'],
+  es_noviodunum:['诺维奥杜努姆','Noviodunum (Isaccea)',45.27,28.46,'多瑙河三角洲上游的罗马要塞；据约尔达内斯，斯克拉文人的地盘从这里一直往北到维斯瓦河。'],
+  es_korchak:['科尔恰克','Korchak',50.2,28.55,'日托米尔附近的村子；20世纪20年代在此开始发掘，6—7世纪早期斯拉夫人的“科尔恰克型”遗存由此得名。'],
+  es_topirus:['托皮鲁斯','Topirus (Toperos)',41.02,24.75,'内斯托斯河口附近的色雷斯海边设防城；549年前后被一支斯拉夫兵诱出守军后攻破。'],
+  es_longwalls:['长城（阿纳斯塔修斯城墙）','Long Walls (Anastasian Wall)',41.3,28.2,'京城以西六十多公里，从黑海拉到马尔马拉海，长约五十六公里；551年斯拉夫人抢到这里。'],
+  es_split:['斯普利特','Split (Spalatum)',43.508,16.44,'戴克里先退位后修的宫殿；萨洛纳被攻破后，逃出来的人住进宫里，渐成一城。'],
+  es_monemvasia:['莫奈姆瓦西亚','Monemvasia',36.687,23.056,'伯罗奔尼撒东南海边的岩岛，只有一条窄堤连着陆地；斯拉夫人南下时成了避难的设防城。'],
+  es_phanagoria:['法纳戈里亚','Phanagoria',45.28,36.96,'塔曼半岛上的古希腊港城；今人多推定为库布拉特“大保加利亚”的中心，后归可萨人。'],
+  es_varna:['瓦尔纳','Varna (Odessos)',43.21,27.92,'黑海西岸的港城；据提奥法尼斯，680年保加尔人追过多瑙河，看中这一带住了下来。'],
+  es_patras:['帕特雷','Patras',38.246,21.735,'伯罗奔尼撒西北的海港；805年前后斯拉夫人围城不下，此后城里的主教升为大主教。'],
+  es_sebastopolis:['塞巴斯托波利斯','Sebastopolis (Sulusaray)',39.99,36.08,'亚美尼亚军区腹地的城；692年东罗马在此败给阿拉伯人，两万斯拉夫兵临阵倒戈。'],
+  er_birka:['比尔卡','Birka',59.335,17.543,'瑞典梅拉伦湖中比约克岛上的商埠，8—10世纪与波罗的海各地往来。'],
+  er_ladoga:['旧拉多加','Staraya Ladoga',59.997,32.297,'沃尔霍夫河近拉多加湖处的商站，树轮测年建于753年；欧俄最早的阿拉伯银币出土于此。'],
+  er_novgorod:['诺夫哥罗德','Novgorod',58.52,31.27,'伊尔门湖北口的城；据《往年纪事》，862年留里克在此称王。'],
+  er_smolensk:['斯摩棱斯克','Smolensk',54.78,32.05,'第聂伯河上游的城，882年被奥列格拿下；城西的格涅兹多沃有约三千座10世纪的坟丘。'],
+  er_lyubech:['柳别奇','Lyubech',51.7,30.66,'第聂伯河边的城；据《往年纪事》，882年奥列格拿下此城，派兵驻守。'],
+  er_bolghar:['保加尔','Bolghar',54.98,49.06,'伏尔加保加尔人的城；922年伊本·法德兰到此，见到来做买卖的罗斯人。'],
+  er_itil:['伊提尔','Atil (Itil)',46.35,48.05,'可萨汗国的都城，在伏尔加河下游，确切位置至今未定。'],
+  er_iskorosten:['伊斯科罗斯坚','Iskorosten (Korosten)',50.95,28.63,'德列夫利亚人的城（今科罗斯坚）；945年伊戈尔在附近被杀。'],
+  er_rapids:['第聂伯河险滩','Dnieper Rapids',48.1,35.15,'今第聂伯罗至扎波罗热之间的七道险滩，1932年后没入水库。'],
+  er_berezan:['别列赞岛','Berezan Island',46.6,31.41,'第聂伯河口外的小岛，《帝国行政论》称圣埃塞里奥斯岛。'],
+  er_preslav:['普雷斯拉夫','Preslav',43.16,26.82,'893年起保加利亚的都城；971年4月被齐米斯基斯攻破。'],
+  er_pereyaslavets:['佩列亚斯拉韦茨','Pereyaslavets',45.15,28.92,'多瑙河口附近的商城，确切位置有争议，一说在今罗马尼亚的努法鲁。'],
+  er_dorostolon:['多罗斯托尔','Dorostolon (Silistra)',44.12,27.26,'多瑙河边的要塞（今锡利斯特拉）；971年斯维亚托斯拉夫在此被围三个月。'],
+  er_arcadiopolis:['阿卡迪奥波利斯','Arcadiopolis',41.4,27.36,'色雷斯的城（今吕莱布尔加兹）；970年东罗马军在此打败罗斯人。'],
+  er_ostrovo:['奥斯特罗沃','Ostrovo',40.8,21.8,'马其顿西部湖边；1041年东罗马军在此打败彼得·德里扬的起义军。'],
 });
 function hp(d,key,opt={}){
   const [n,en,la,lo,note]=HS[key];
@@ -4075,6 +4108,250 @@ const HISTORY_ENTRIES=[
     hl(d,'哈姆丹家','Hamdanids',36.6,40.0,HC.myc);hl(d,'伊赫什德家（埃及）','Ikhshidids',28.6,30.2,HC.hittite);hl(d,'卡尔马特派','Qarmatians',25.6,49.6,HC.myc);
     hl(d,'法蒂玛王朝','Fatimids',33.8,9.8,HC.myc);hl(d,'后倭马亚王朝','Umayyads of Córdoba',38.4,-4.6,HC.myc);
    },[['dash',HC.myc,'阿拔斯旧疆（约800年）'],['fill',HC.parthia,'伊朗人的王朝：布韦希与萨曼（945年，示意）'],['dot','#2a2018','萨迈拉、巴格达、扎兰季与巴士拉']])
+ ]},
+{id:'history-eeurope-pontic',ch:10,title:'黑海北岸：森林种地，草原放牧，海边做买卖',short:'黑海北岸',en:'The North Pontic: Farmers, Nomads and Greek Ports',period:'约前700—前63年',c:HC.eeurope,
+ scenes:[
+  hs('前8—前5世纪','两种活法：森林里种地，草原上放牧','沿海是草原，往北是森林草原，再往北是森林；希罗多德记下港口以北为出卖而种粮的农夫、东边住在车上的游牧民。',[[43.8,18.5],[55.0,41.0]],d=>{
+    ha(d,'eeScythia500',HC.hittite,{fillOpacity:.2});ha(d,'eeForestSteppe500',HC.eeurope,{fillOpacity:.22});ha(d,'eeSlavHome500',HC.eeurope,{fillOpacity:.1,dashArray:'5 4'});
+    hp(d,'ea_olbia',{note:'希罗多德到过的港口；他从这里往北、往东记下各族。'});
+    hp(d,'ea_gelonus');
+    hl(d,'种粮出卖的农夫','Scythian ploughmen',48.6,29.6,HC.eeurope);hl(d,'游牧斯基泰人','Nomad Scythians',46.9,34.6,HC.hittite);
+    hl(d,'涅乌里人','Neuri',50.7,26.4,HC.eeurope);
+   },[['fill',HC.hittite,'草原：游牧斯基泰人（约前500年）'],['fill',HC.eeurope,'森林草原：种地的人'],['dash',HC.eeurope,'今人推定的斯拉夫人祖居地（大致）'],['dot','#2a2018','奥尔比亚与别利斯克土城']]),
+  hs('前7—前3世纪','草原的主人来来去去','斯基泰人赶走辛梅里安人；约前513年大流士扑空；王城卡缅卡、王陵索洛哈；前3世纪萨尔马特人压倒斯基泰人，后者退守克里米亚。',[[40.5,22.5],[52.0,48.5]],d=>{
+    ha(d,'eeScythia500',HC.hittite,{fillOpacity:.22});ha(d,'eeSarmatia100',HC.hittite,{fillOpacity:.1,dashArray:'5 4'});
+    hp(d,'ea_kamianka');hp(d,'ea_solokha',{left:1});hp(d,'ea_neapolis');
+    hr(d,[[41.01,28.98],[42.6,27.6],[44.4,28.4],[45.3,28.9],[46.6,30.6],[47.6,33.0]],HC.persia);
+    hr(d,[[48.3,46.5],[48.0,42.5],[47.4,38.0],[47.0,35.0]],HC.hittite);
+    hl(d,'辛梅里安人南逃（据希罗多德）','Cimmerians flee south',43.2,37.8,HC.war);hl(d,'萨尔马特人西来','Sarmatians from the east',49.2,44.6,HC.hittite);
+   },[['fill',HC.hittite,'斯基泰人（约前500年）'],['dash',HC.hittite,'萨尔马特人（前2世纪起）'],['dline',HC.persia,'约前513年大流士进军（概略）'],['dline',HC.hittite,'萨尔马特人西进（概略）'],['dot','#2a2018','斯基泰王城、王陵与后来退守的克里米亚王城']]),
+  hs('前7—前3世纪','希腊人在海边开港口','米利都人建奥尔比亚、潘提卡彭，赫拉克利亚人建赫尔松，博斯普鲁斯人建塔奈斯；港口都挑河口和海峡，鱼、粮、皮货顺水而来。',[[37.0,22.5],[50.8,41.5]],d=>{
+    ha(d,'eeScythia500',HC.hittite,{fillOpacity:.1});
+    hp(d,'miletus',{note:'在黑海沿岸建了几十座殖民城的母邦。'});
+    hp(d,'ea_olbia',{left:1});hp(d,'panticapaeum',{note:'米利都人约前600年在刻赤海峡西岸所建，后来是博斯普鲁斯王国的都城。'});
+    hp(d,'f_cherson',{left:1,note:'前5世纪后期，黑海南岸的赫拉克利亚人在克里米亚西南角所建。'});
+    hp(d,'ea_tanais');
+    hr(d,[[37.53,27.28],[39.4,26.2],[40.3,26.6],[41.05,29.0],[42.4,29.9],[44.6,30.6],[46.5,31.6]],HC.athens);
+    hr(d,[[41.3,29.2],[42.1,33.0],[43.9,35.0],[45.0,36.5]],HC.athens);
+    hr(d,[[46.6,32.4],[47.6,34.5],[48.4,35.0],[49.4,32.6],[50.4,30.6]],HC.route);
+   },[['dline',HC.athens,'希腊人的航线（概略）'],['dline',HC.route,'顺第聂伯河上下的水路（概略）'],['fill',HC.hittite,'草原'],['dot','#2a2018','母邦米利都与北岸港口']]),
+  hs('前5—前2世纪','三方买卖','森林草原出粮和人，草原的主子居间转手，港口装船经拜占庭运往爱琴海；回头运来葡萄酒、橄榄油和陶罐。',[[36.0,21.5],[52.0,41.5]],d=>{
+    ha(d,'eeForestSteppe500',HC.eeurope,{fillOpacity:.2});ha(d,'eeScythia500',HC.hittite,{fillOpacity:.16});
+    hp(d,'ea_olbia',{left:1});hp(d,'panticapaeum');
+    hp(d,'byzantium',{note:'扼住黑海口；波利比乌斯说，没有它点头，船进不来也出不去。'});
+    hp(d,'athens',{note:'城邦买来三百个斯基泰弓手，当街上和会场里的警察。'});
+    hl(d,'希俄斯：拿酒换奴隶','Chios: wine for slaves',38.4,26.0,HC.athens);
+    hr(d,[[46.6,31.9],[45.0,30.6],[42.4,29.3],[41.1,29.0],[40.3,26.6],[39.2,26.0],[38.0,24.0],[37.9,23.7]],HC.route);
+    hr(d,[[49.6,32.0],[48.4,35.0],[47.6,34.5],[46.7,32.5]],HC.route);
+   },[['fill',HC.eeurope,'森林草原：粮和人'],['fill',HC.hittite,'草原：斯基泰贵族居间'],['dline',HC.route,'粮、奴隶、皮货南下，酒、油、陶罐北上（概略）'],['dot','#2a2018','港口、海峡与买家']]),
+  hs('前438—前63年','雅典的粮仓：博斯普鲁斯王国','斯帕尔托科斯家族管海峡两岸三百多年；粮船从忒奥多西亚、潘提卡彭驶往雅典；前405年羊河口一败，雅典断粮；前63年米特拉达梯死在潘提卡彭。',[[36.6,22.0],[47.6,42.5]],d=>{
+    ha(d,'eeBosporan350',HC.athens,{fillOpacity:.32});ha(d,'hPontus',HC.thebes,{fillOpacity:.14,dashArray:'5 4'});ha(d,'hAttica',HC.athens,{fillOpacity:.3});
+    hp(d,'panticapaeum',{note:'博斯普鲁斯王国的都城；前63年米特拉达梯六世死在这里。'});
+    hp(d,'ea_theodosia',{left:1});
+    hp(d,'aegospotami',{kind:'battle',note:'前405年斯巴达在此打垮雅典舰队，掐断黑海粮道。'});
+    hp(d,'athens');hp(d,'sinope',{note:'米特拉达梯六世的都城。'});
+    hr(d,[[45.03,35.38],[44.0,34.0],[42.6,31.6],[41.2,29.1],[40.4,26.7],[39.6,26.1],[38.6,24.6],[37.94,23.64]],HC.route);
+   },[['fill',HC.athens,'博斯普鲁斯王国（约前350年）与雅典所在的阿提卡'],['dash',HC.thebes,'米特拉达梯六世的本都王国（约前80年，含博斯普鲁斯）'],['dline',HC.route,'运粮去雅典的航线（概略）'],['dot',HC.war,'羊河口'],['dot','#2a2018','王都、运粮港、雅典与本都都城']])
+ ]},
+{id:'history-eeurope-roman',ch:10,title:'罗马时代的黑海北岸：粮食没了大主顾',short:'罗马时代的黑海北岸',en:'The North Pontic under Rome: Grain Without a Buyer',period:'前63—375年',c:HC.eeurope,
+ scenes:[
+  hs('前63—1世纪','罗马接手：博斯普鲁斯成了附庸','庞培把博斯普鲁斯交给法纳西斯；国王称“恺撒之友、罗马人之友”；罗马以三千兵、四十条船看住北岸，年年送礼请国王挡住草原。',[[38.5,25.5],[49.0,46.0]],d=>{
+    ha(d,'eEmpire14',HC.rome,{fillOpacity:.12});ha(d,'eeBosporan100',HC.athens,{fillOpacity:.32});ha(d,'eeSarmatia100',HC.hittite,{fillOpacity:.12,dashArray:'5 4'});
+    hp(d,'panticapaeum',{note:'王都；1世纪起国王的金币一面铸自己，一面铸罗马皇帝。'});
+    hp(d,'f_cherson',{left:1,note:'罗马时代驻有罗马兵。'});
+    hp(d,'sinope',{note:'前63年庞培在此收到米特拉达梯的遗体，把博斯普鲁斯交给法纳西斯。'});
+    hp(d,'ea_tanais',{note:'约前8年不服管束，被国王波勒蒙劫掠。'});
+    hp(d,'ea_phanagoria',{left:1,note:'前63年带头反米特拉达梯，被庞培封为自由城。'});
+   },[['fill',HC.rome,'罗马帝国（14年）'],['fill',HC.athens,'博斯普鲁斯王国：罗马的附庸（1—3世纪）'],['dash',HC.hittite,'萨尔马特各部'],['dot','#2a2018','王都、驻兵的赫尔松、锡诺普、塔奈斯与法纳戈里亚']]),
+  hs('1—3世纪','北边的粮食没了大主顾','罗马城的口粮，北非供八个月，埃及供四个月；北岸的粮没了大主顾，塔奈斯集市上卖的是奴隶和皮子。',[[29.5,5.5],[48.5,42.0]],d=>{
+    ha(d,'eEmpire96',HC.rome,{fillOpacity:.1});ha(d,'eeBosporan100',HC.athens,{fillOpacity:.32});
+    hp(d,'rome');hp(d,'carthage',{left:1,note:'北非的粮在这一带装船，据约瑟夫斯够罗马城吃八个月。'});
+    hp(d,'alexandria',{note:'埃及的粮从这里装船，够罗马城吃四个月。'});
+    hp(d,'ea_tanais',{note:'游牧民带来奴隶、皮子和牧产，换走衣料和葡萄酒。'});hp(d,'panticapaeum');
+    hr(d,[[36.85,10.3],[38.0,11.8],[40.0,12.6],[41.75,12.25]],HC.route);
+    hr(d,[[31.2,29.9],[33.5,25.0],[36.0,18.5],[38.2,15.6],[40.8,14.1],[41.75,12.25]],HC.route);
+    hr(d,[[47.27,39.33],[46.2,38.0],[45.35,36.6],[44.0,34.5],[42.2,31.6],[41.1,29.0]],HC.hittite);
+   },[['fill',HC.rome,'罗马帝国（96年）'],['fill',HC.athens,'博斯普鲁斯王国'],['dline',HC.route,'北非、埃及运粮去罗马（概略）'],['dline',HC.hittite,'北岸的奴隶和皮货南运（概略）'],['dot','#2a2018','罗马、两大粮港与北岸的集市']]),
+  hs('2—3世纪','草原换主人：萨尔马特人、哥特人','哥特人从维斯瓦河一带南下黑海北岸；250年代借博斯普鲁斯的船渡海，攻破皮提乌斯、特拉佩祖斯；271年罗马放弃达契亚。',[[39.5,17.0],[55.5,45.5]],d=>{
+    ha(d,'eEmpire300',HC.rome,{fillOpacity:.1});ha(d,'eeGoths350',HC.celt,{fillOpacity:.16,dashArray:'5 4'});ha(d,'eeBosporan100',HC.athens,{fillOpacity:.3});
+    hp(d,'ea_tanais',{kind:'battle',note:'240年代被毁，一般认为是哥特人所为。'});
+    hp(d,'pityus',{kind:'battle',note:'250年代头一回守住，第二回被攻破。'});
+    hp(d,'trapezus',{kind:'battle',note:'250年代被攻破，大批人口被掳走。'});
+    hp(d,'panticapaeum',{note:'城里人害怕，把船借给渡海的北方人。'});
+    hp(d,'sarmizegetusa',{note:'达契亚行省的旧都一带；271年前后罗马放弃达契亚。'});
+    hr(d,[[53.5,18.8],[52.0,22.0],[50.2,26.0],[48.3,29.0],[47.0,31.0]],HC.celt);
+    hr(d,[[45.3,36.5],[44.4,38.2],[43.17,40.33],[42.2,41.6],[41.0,39.73]],HC.war);
+   },[['fill',HC.rome,'罗马帝国（271年以后）'],['dash',HC.celt,'哥特人等（切尔尼亚霍夫文化，3—4世纪）'],['fill',HC.athens,'博斯普鲁斯王国'],['dline',HC.celt,'哥特人南下（概略）'],['dline',HC.war,'250年代渡海劫掠（概略）'],['dot',HC.war,'被毁、被破的城'],['dot','#2a2018','借出船的王都与达契亚旧都']]),
+  hs('375年','匈人来了：买卖整个掀翻','330年君士坦丁堡落成；约375年匈人打垮顿河边的阿兰人和赫尔曼纳里克的哥特人，哥特人退到德涅斯特河，376年挤到多瑙河边。',[[39.0,20.0],[52.5,50.0]],d=>{
+    ha(d,'eEmpire300',HC.rome,{fillOpacity:.1});ha(d,'eeGoths350',HC.celt,{fillOpacity:.2});
+    hp(d,'constantinople',{note:'330年落成，帝国的重心挪到黑海口上。'});
+    hp(d,'ea_tanais',{kind:'battle',note:'4世纪再遭破坏，5世纪后半被弃。'});
+    hp(d,'panticapaeum',{note:'博斯普鲁斯王都；据404年的一封信，这时克里米亚一带归“哥特人的王”统治。'});
+    hp(d,'durostorum',{note:'376年哥特人挤在这一段多瑙河北岸，求罗马收留。'});
+    hr(d,[[48.5,48.5],[48.2,44.0],[47.6,40.5],[47.4,37.0],[47.2,34.0]],HC.hittite);
+    hr(d,[[47.0,32.5],[46.8,30.6],[46.3,29.7],[45.4,28.5],[44.6,27.6]],HC.celt);
+    hl(d,'匈人','Huns',48.9,45.0,HC.hittite);hl(d,'阿兰人（顿河边）','Alans on the Don',48.3,40.8,HC.hittite);
+   },[['fill',HC.rome,'罗马帝国（4世纪）'],['fill',HC.celt,'赫尔曼纳里克的哥特人等（约350年）'],['dline',HC.hittite,'匈人西进（概略）'],['dline',HC.celt,'哥特人退向多瑙河（概略）'],['dot',HC.war,'塔奈斯'],['dot','#2a2018','新都、博斯普鲁斯王都与多瑙河渡口']])
+ ]},
+{id:'history-eeurope-slavs',ch:10,title:'斯拉夫人登场：跟着草原的主子南下',short:'斯拉夫人登场',en:'The Slavs Appear: South with Their Steppe Masters',period:'375—602年',c:HC.eeurope,
+ scenes:[
+  hs('375—454年','拢在一起，又散了','匈人的势力从伏尔加河伸到多瑙河中游；449年普里斯库斯随使团北上，沿途村里吃黍子、喝“米多斯”；454年各族在内达奥河打垮匈人。',[[40.5,14.5],[51.5,48.5]],d=>{
+    ha(d,'eHuns450',HC.hittite,{fillOpacity:.22});ha(d,'eEast395',HC.athens,{fillOpacity:.12});
+    hp(d,'constantinople',{note:'449年东罗马使团从这里北上。'});
+    hp(d,'serdica');
+    hp(d,'naissus',{note:'据普里斯库斯，449年城已空了，河岸上满是战死者的骨头。'});
+    hl(d,'阿提拉的王庭（大致方位）','Attila’s court (approx.)',46.9,20.3,HC.hittite);
+    hl(d,'内达奥河之战（454年，大致方位）','Nedao, 454 (approx.)',46.0,18.6,HC.war);
+    hr(d,[[41.01,28.98],[42.7,23.32],[43.32,21.9],[44.7,21.2],[46.9,20.3]],HC.route);
+   },[['fill',HC.hittite,'匈人的势力范围（约450年）'],['fill',HC.athens,'东罗马'],['dline',HC.route,'449年普里斯库斯随使团北上（概略）'],['dot','#2a2018','君士坦丁堡、塞尔迪卡与纳伊苏斯']]),
+  hs('5—6世纪','森林里种地的人','6世纪中叶斯克拉文人住在多瑙河以北，安特人在德涅斯特河到第聂伯河之间；手捏素面陶罐从今乌克兰西北传到易北河、多瑙河。',[[42.5,10.5],[55.5,37.0]],d=>{
+    ha(d,'eeSlavHome500',HC.eeurope,{fillOpacity:.1,dashArray:'5 4'});ha(d,'eeSlavs560',HC.eeurope,{fillOpacity:.26});ha(d,'lJustinian565',HC.athens,{fillOpacity:.14});
+    hl(d,'斯克拉文人','Sclaveni',46.6,25.6,HC.eeurope);hl(d,'安特人','Antes',48.6,31.0,HC.eeurope);
+    hp(d,'es_noviodunum',{left:1});
+    hp(d,'es_korchak');
+    hp(d,'de_prague',{note:'早期斯拉夫人的“布拉格型”陶器以此地命名。'});
+   },[['fill',HC.eeurope,'6世纪中叶斯拉夫人住的地方（斯克拉文人、安特人）'],['dash',HC.eeurope,'多数学者推定的更早的老家（示意）'],['fill',HC.athens,'东罗马（565年）'],['dot','#2a2018','约尔达内斯笔下的起点与两处考古典型遗址']]),
+  hs('530—551年','过河去抢','530—533年希尔布迪奥斯守河，他一死门户大开；549年斯拉夫人攻破托皮鲁斯，550年绕开塞尔迪卡的大军，次年打败东罗马军，抢到长城。',[[39.5,18.5],[46.5,30.5]],d=>{
+    ha(d,'lJustinian565',HC.athens,{fillOpacity:.16});ha(d,'eeSlavs560',HC.eeurope,{fillOpacity:.22});
+    hp(d,'es_topirus',{kind:'battle'});
+    hp(d,'serdica',{note:'550年西征意大利的大军在此集结，斯拉夫人闻讯绕开了帖撒罗尼迦。'});
+    hp(d,'thessalonica',{left:1});
+    hp(d,'adrianople',{kind:'battle',note:'551年东罗马军在城外败给斯拉夫人。'});
+    hp(d,'es_longwalls',{kind:'battle'});
+    hr(d,[[43.32,21.9],[42.7,23.32],[42.15,24.75],[41.68,26.56],[41.3,28.2]],HC.war);
+   },[['fill',HC.athens,'东罗马（565年）'],['fill',HC.eeurope,'斯拉夫人'],['dline',HC.war,'550—551年斯拉夫人一路抢到长城（概略）'],['dot',HC.war,'攻破或打赢的地方'],['dot','#2a2018','塞尔迪卡与帖撒罗尼迦']]),
+  hs('552—602年','新主子带着属民南下','突厥西进，阿瓦尔人逃到欧洲，568年占了潘诺尼亚，582年拿下西尔米乌姆；581—584年斯拉夫人在希腊、色雷斯住下，莫里斯的反攻打到602年。',[[37.0,13.0],[50.5,45.5]],d=>{
+    ha(d,'mAvars600',HC.hittite,{fillOpacity:.26});ha(d,'eeSlavs560',HC.eeurope,{fillOpacity:.16,dashArray:'5 4'});ha(d,'lJustinian565',HC.athens,{fillOpacity:.12});
+    hp(d,'constantinople',{note:'558年阿瓦尔使节到此，全城的人跑来看他们脑后的长辫子。'});
+    hp(d,'sirmium',{kind:'battle',note:'582年被阿瓦尔可汗巴扬攻下。'});
+    hl(d,'581—584年斯拉夫人住下的希腊、色雷斯','Slavs settling in Greece and Thrace, 581–584',39.6,22.6,HC.eeurope);
+    hr(d,[[44.0,44.5],[46.6,39.5],[47.4,34.0],[46.3,29.5],[47.6,24.0],[47.3,19.5]],HC.hittite);
+   },[['fill',HC.hittite,'阿瓦尔汗国（约600年）'],['dash',HC.eeurope,'多瑙河以北的斯拉夫人'],['fill',HC.athens,'东罗马'],['dline',HC.hittite,'558—568年阿瓦尔人西来（概略）'],['dot',HC.war,'582年失守的西尔米乌姆'],['dot','#2a2018','558年阿瓦尔人遣使的君士坦丁堡']])
+ ]},
+{id:'history-eeurope-balkans',ch:10,title:'斯拉夫人住进巴尔干：希拉克略顾不了北边',short:'斯拉夫人住进巴尔干',en:'The Slavs Settle the Balkans',period:'602—805年',c:HC.eeurope,
+ scenes:[
+  hs('602—626年','北门没人守','602年后两朝都把欧洲的兵调去打波斯；615年前后斯拉夫各部拖家带口围帖撒罗尼迦，626年斯拉夫独木舟在金角湾被击沉。',[[35.5,18.5],[46.0,45.0]],d=>{
+    ha(d,'mByz620',HC.athens,{fillOpacity:.18});ha(d,'mSasanian620',HC.parthia,{fillOpacity:.14});ha(d,'mAvars600',HC.hittite,{fillOpacity:.22});
+    hp(d,'thessalonica',{kind:'battle',note:'615年前后斯拉夫各部拖家带口来围，617年又与阿瓦尔人合围三十三天。'});
+    hp(d,'constantinople',{kind:'battle',note:'626年阿瓦尔人、斯拉夫人与波斯人合围，斯拉夫独木舟在金角湾被击沉。'});
+    hr(d,[[41.0,29.0],[40.3,33.5],[39.9,39.0],[40.2,44.0]],HC.route);
+    hr(d,[[44.6,21.5],[43.3,21.9],[42.0,22.4],[40.9,22.6],[39.4,22.4],[37.8,22.3]],HC.eeurope);
+   },[['fill',HC.athens,'东罗马（约620年）'],['fill',HC.parthia,'萨珊波斯（约620年）'],['fill',HC.hittite,'阿瓦尔汗国'],['dline',HC.route,'622年起希拉克略东征（概略）'],['dline',HC.eeurope,'斯拉夫人南下（示意）'],['dot',HC.war,'被围的帖撒罗尼迦与君士坦丁堡']]),
+  hs('7世纪','一个村一个村住下来','斯拉夫人住满巴尔干内地，东罗马守着海边的城；萨洛纳的逃难者住进戴克里先的旧宫；623年起萨莫在西边甩掉阿瓦尔人，631年大败法兰克军。',[[36.0,12.0],[51.5,29.5]],d=>{
+    ha(d,'eeSclaviniae700',HC.eeurope,{fillOpacity:.24});ha(d,'mByz680',HC.athens,{fillOpacity:.2});ha(d,'eeSamo630',HC.eeurope,{fillOpacity:.12,dashArray:'5 4'});ha(d,'mAvars600',HC.hittite,{fillOpacity:.14});
+    hp(d,'thessalonica',{note:'670年代被几个斯拉夫部落围困，城里派船去色萨利找另一个斯拉夫部落运粮。'});
+    hp(d,'salona',{note:'7世纪被阿瓦尔人和斯拉夫人攻破。'});hp(d,'es_split',{left:1});
+    hp(d,'corinth');hp(d,'es_monemvasia');
+   },[['fill',HC.eeurope,'斯拉夫人自管的“斯克拉维尼亚”（约700年，示意）'],['fill',HC.athens,'东罗马（约680年）'],['dash',HC.eeurope,'萨莫的王国（623—658年，示意）'],['fill',HC.hittite,'阿瓦尔汗国'],['dot','#2a2018','海边的城、萨洛纳与戴克里先宫']]),
+  hs('635—681年','草原又来一拨主子','635年前后库布拉特在亚速海边称雄；可萨人从东边压来，阿斯帕鲁赫西迁多瑙河口，680年大败东罗马，收服七个斯拉夫部落，681年立国。',[[40.5,22.0],[50.5,47.5]],d=>{
+    ha(d,'eeGreatBulgaria635',HC.macedon,{fillOpacity:.14,dashArray:'5 4'});ha(d,'eeKhazars670',HC.hittite,{fillOpacity:.22});ha(d,'mBulgars681',HC.macedon,{fillOpacity:.32});ha(d,'mByz680',HC.athens,{fillOpacity:.16});
+    hp(d,'es_phanagoria');
+    hl(d,'马拉佩列谢皮诺（大致方位）：库布拉特的戒指','Mala Pereshchepyna (approx.)',49.3,34.6,HC.macedon);
+    hp(d,'b_ongal',{kind:'battle',note:'680年东罗马军在这一带的沼泽前溃散。'});
+    hp(d,'es_varna',{left:1});hp(d,'i_pliska',{note:'后来保加尔汗国的都城。'});
+    hr(d,[[46.8,38.5],[47.2,34.5],[46.6,31.0],[45.3,28.9]],HC.macedon);
+   },[['dash',HC.macedon,'库布拉特的“大保加利亚”（约635年，示意）'],['fill',HC.hittite,'可萨人（约670年，示意）'],['fill',HC.macedon,'681年立国的保加利亚'],['fill',HC.athens,'东罗马'],['dline',HC.macedon,'阿斯帕鲁赫西迁（概略）'],['dot',HC.war,'680年翁加尔之战'],['dot','#2a2018','法纳戈里亚、瓦尔纳与普利斯卡']]),
+  hs('658—805年','打不走，就收编','658、688年东罗马掳斯拉夫人去小亚细亚当兵，692年两万人在塞巴斯托波利斯倒戈；783年斯陶拉基奥斯打进伯罗奔尼撒，805年前后斯拉夫人围帕特雷不下。',[[36.0,19.0],[42.8,37.5]],d=>{
+    ha(d,'mByz780',HC.athens,{fillOpacity:.2});ha(d,'eeSclaviniae700',HC.eeurope,{fillOpacity:.12,dashArray:'5 4'});ha(d,'mThemeOpsikion',HC.eeurope,{fillOpacity:.22});
+    hp(d,'thessalonica',{note:'688年查士丁尼二世打到这里，把大批斯拉夫人迁去小亚细亚。'});
+    hp(d,'es_sebastopolis',{kind:'battle'});
+    hp(d,'es_patras',{kind:'battle',left:1});
+    hp(d,'corinth',{note:'约800年起是伯罗奔尼撒军区的首府。'});
+    hr(d,[[40.64,22.94],[40.45,26.6],[40.35,28.9]],HC.route);
+   },[['fill',HC.athens,'东罗马（约780年）'],['dash',HC.eeurope,'希腊内地斯拉夫人的地方（示意）'],['fill',HC.eeurope,'688年起斯拉夫人被迁去的奥普西金军区'],['dline',HC.route,'688年斯拉夫人渡海东迁（概略）'],['dot',HC.war,'692年倒戈的塞巴斯托波利斯与被围的帕特雷'],['dot','#2a2018','帖撒罗尼迦与科林斯']])
+ ]},
+{id:'history-eeurope-rus',ch:10,title:'罗斯：维京人在东边上岸',short:'罗斯',en:'The Rus: Vikings Ashore in the East',period:'约750—945年',c:HC.eeurope,
+ scenes:[
+  hs('约750—860年','顺河往南：银子从哈里发国来','753年维京人在拉多加湖附近建商站；罗斯商人顺伏尔加河把毛皮和剑运到可萨人那里，过里海到巴格达，阿拉伯银币一路北流到瑞典。',[[32.5,12.0],[61.8,56.0]],d=>{
+    ha(d,'mScandinavia',HC.germany,{fillOpacity:.22});ha(d,'eeKhazars850',HC.hittite,{fillOpacity:.22});ha(d,'mAbbasid800',HC.myc,{fillOpacity:.12,dashArray:'4 4'});
+    hp(d,'er_birka',{left:1});
+    hp(d,'er_ladoga');
+    hp(d,'er_bolghar',{note:'伏尔加保加尔人的城，北方的毛皮和人在这里换阿拉伯银币。'});
+    hp(d,'er_itil',{left:1,note:'可萨汗国的都城；据伊本·胡尔达兹贝，可萨君主对过往的罗斯商人抽一成。'});
+    hp(d,'w_baghdad',{note:'哈里发的都城；据伊本·胡尔达兹贝，罗斯商人有时从里海南岸用骆驼把货驮到这里。'});
+    hl(d,'哥得兰岛','Gotland',57.45,18.6,HC.germany);
+    hr(d,[[59.34,17.54],[59.85,22.3],[59.95,27.5],[59.93,30.3],[60.1,31.6],[60.0,32.3],[58.52,31.27],[57.6,31.4],[57.25,32.5],[56.86,35.9],[57.63,39.87],[56.33,44.0],[55.8,48.5],[54.98,49.06],[53.2,50.1],[51.5,46.0],[48.7,44.5],[46.35,48.05],[44.5,49.5],[41.0,51.0],[38.0,52.5],[36.84,54.44],[35.6,51.4],[34.8,48.5],[33.32,44.37]],HC.route);
+   },[['fill',HC.germany,'维京人老家'],['fill',HC.hittite,'可萨汗国（约850年）'],['dash',HC.myc,'阿拔斯哈里发国'],['dline',HC.route,'伏尔加河—里海—巴格达商路（概略）'],['dot','#2a2018','商站、集市与巴格达']]),
+  hs('9—10世纪','卖的就是斯拉夫人','罗斯人掳来的斯拉夫人往东卖到保加尔、伊提尔，往南顺第聂伯河卖到君士坦丁堡；西边有人经布拉格贩到科尔多瓦。',[[40.0,12.5],[61.0,52.0]],d=>{
+    ha(d,'eeRus900',HC.eeurope,{fillOpacity:.2});ha(d,'eeKhazars850',HC.hittite,{fillOpacity:.18});ha(d,'mByz842',HC.athens,{fillOpacity:.2});
+    hp(d,'er_bolghar',{note:'922年伊本·法德兰在此见到罗斯商人；保加尔王对运来的奴隶十中抽一。'});
+    hp(d,'er_itil',{left:1,note:'可萨汗国的都城，向哈里发国转卖北方来的奴隶。'});
+    hp(d,'b_kiev',{note:'罗斯人南下的起点，船队载着毛皮和奴隶去君士坦丁堡。'});
+    hp(d,'constantinople',{note:'按条约，罗斯人的奴隶逃走找不回来，东罗马每人赔两匹丝绸。'});
+    hp(d,'de_prague',{note:'西路的奴隶集散地，斯拉夫俘虏从这里经法兰克贩往科尔多瓦。'});
+    hr(d,[[60.0,32.3],[58.52,31.27],[57.6,31.4],[57.25,32.5],[56.86,35.9],[57.63,39.87],[56.33,44.0],[55.8,48.5],[54.98,49.06],[53.2,50.1],[51.5,46.0],[48.7,44.5],[46.35,48.05]],HC.route);
+    hr(d,[[58.52,31.27],[57.6,31.4],[55.6,31.3],[54.78,32.05],[53.0,30.9],[51.7,30.66],[50.45,30.52],[49.4,32.1],[48.45,35.0],[47.8,35.1],[46.8,33.4],[46.6,31.9],[45.6,29.7],[44.2,28.7],[42.65,27.73],[41.25,29.1],[41.01,28.98]],HC.route);
+    hr(d,[[50.45,30.52],[50.3,26.0],[50.06,19.94],[50.09,14.42]],HC.mino);
+   },[['fill',HC.eeurope,'罗斯人收贡、掳人的斯拉夫地区（约900年，示意）'],['fill',HC.hittite,'可萨汗国'],['fill',HC.athens,'东罗马'],['dline',HC.route,'伏尔加河与第聂伯河两条水路（概略）'],['dline',HC.mino,'往西去布拉格的陆路（概略）'],['dot','#2a2018','奴隶市场']]),
+  hs('862—907年','请来的王：从诺夫哥罗德到基辅','据《往年纪事》，862年留里克落脚诺夫哥罗德；882年奥列格南下拿下斯摩棱斯克、柳别奇，在基辅定都，把原先给可萨人交贡的部落收归自己。',[[45.5,24.5],[61.0,42.0]],d=>{
+    ha(d,'eeRus900',HC.eeurope,{fillOpacity:.22});ha(d,'eeKhazars850',HC.hittite,{fillOpacity:.14,dashArray:'4 4'});
+    hp(d,'er_ladoga',{note:'据《往年纪事》的另一个抄本，留里克先落脚在这里。'});
+    hp(d,'er_novgorod',{left:1});
+    hp(d,'er_smolensk');
+    hp(d,'er_lyubech',{left:1});
+    hp(d,'b_kiev',{note:'882年奥列格诱杀阿斯科尔德和迪尔，在此定都，称之为“罗斯众城之母”。'});
+    hl(d,'塞维利亚人','Severians',51.6,33.4,HC.hittite);hl(d,'拉迪米奇人','Radimichians',53.3,31.9,HC.hittite);hl(d,'维亚蒂奇人','Vyatichians',54.3,36.6,HC.hittite);
+    hr(d,[[58.52,31.27],[57.6,31.4],[55.6,31.3],[54.78,32.05],[53.0,30.9],[51.7,30.66],[50.45,30.52]],HC.route);
+   },[['fill',HC.eeurope,'奥列格治下的罗斯（约900年，示意）'],['dash',HC.hittite,'可萨汗国'],['dline',HC.route,'882年奥列格南下（概略）'],['dot','#2a2018','拉多加、诺夫哥罗德、斯摩棱斯克、柳别奇与基辅']]),
+  hs('约900—945年','收贡就是这个国家','每年11月大公出基辅，到各斯拉夫部落巡行收贡，4月回来装船南下；945年伊戈尔在伊斯科罗斯坚附近被杀；947年奥尔加在北方设收贡点。',[[46.0,24.5],[60.5,40.0]],d=>{
+    ha(d,'eeRus900',HC.eeurope,{fillOpacity:.22});
+    hp(d,'b_kiev',{note:'大公每年11月从这里出发巡行收贡，4月回来。'});
+    hp(d,'er_iskorosten',{kind:'battle',left:1,note:'945年伊戈尔在附近被德列夫利亚人杀死；946年奥尔加攻破此城。'});
+    hp(d,'er_novgorod',{note:'947年奥尔加到此，沿姆斯塔河、卢加河设收贡点。'});
+    hl(d,'德列夫利亚人','Derevlians',51.4,27.6,HC.eeurope);hl(d,'德雷戈维奇人','Dregovichians',53.0,27.4,HC.eeurope);
+    hl(d,'克里维奇人','Krivichians',55.7,29.4,HC.eeurope);hl(d,'塞维利亚人','Severians',51.9,33.5,HC.eeurope);
+    hr(d,[[50.45,30.52],[51.0,28.8],[52.4,27.8],[54.0,28.6],[54.78,32.05],[53.3,33.6],[51.5,32.4],[50.45,30.52]],HC.eeurope);
+    hr(d,[[50.45,30.52],[49.4,32.1],[48.45,35.0],[47.8,35.1],[46.8,33.4],[46.6,31.9]],HC.route);
+   },[['fill',HC.eeurope,'向基辅交贡的斯拉夫部落（约945年，示意）'],['dline',HC.eeurope,'冬季巡行收贡（示意）'],['dline',HC.route,'4月以后装船南下'],['dot',HC.war,'伊戈尔被杀处'],['dot','#2a2018','基辅与诺夫哥罗德']])
+ ]},
+{id:'history-eeurope-byzantium',ch:10,title:'罗斯与东罗马：打不下，就做买卖',short:'罗斯与东罗马',en:'The Rus and Byzantium: Trade What You Cannot Take',period:'860—1043年',c:HC.eeurope,
+ scenes:[
+  hs('860—941年','打不下，也吓坏了','860年约两百条罗斯船闯进博斯普鲁斯海峡烧杀城郊；907年奥列格来攻（细节是传说）；941年伊戈尔劫掠小亚细亚北岸，被装了喷火筒的旧船烧败。',[[39.8,26.0],[51.2,37.5]],d=>{
+    ha(d,'mByz842',HC.athens,{fillOpacity:.22});ha(d,'eeRus900',HC.eeurope,{fillOpacity:.14});
+    hp(d,'constantinople',{kind:'battle',note:'860、907、941年罗斯人三次来攻，陆墙和海墙一次也没攻破。'});
+    hp(d,'b_kiev',{note:'罗斯船队从这里顺第聂伯河南下。'});
+    hp(d,'nicomedia',{left:1,note:'941年伊戈尔的人在比提尼亚沿岸烧杀。'});
+    hr(d,[[50.45,30.52],[49.4,32.1],[48.45,35.0],[47.8,35.1],[46.8,33.4],[46.6,31.9],[45.6,29.7],[44.2,28.7],[42.65,27.73],[41.25,29.1],[41.01,28.98]],HC.route);
+    hr(d,[[41.2,29.15],[41.15,30.6],[41.28,31.42],[41.75,32.38],[41.97,33.8]],HC.war);
+   },[['fill',HC.athens,'东罗马（约850年）'],['fill',HC.eeurope,'罗斯（示意）'],['dline',HC.route,'罗斯船队南下（概略）'],['dline',HC.war,'941年劫掠小亚细亚北岸'],['dot',HC.war,'三次兵临的君士坦丁堡'],['dot','#2a2018','基辅与比提尼亚海岸']]),
+  hs('907—944年','讲和开市：条约里的规矩','罗斯商人住城外圣马马斯，五十人一批、不带兵器进城，秋天回去；船队6月出基辅，过第聂伯河七道险滩，在别列赞岛装帆，沿岸到君士坦丁堡。',[[40.5,26.5],[51.2,37.5]],d=>{
+    ha(d,'eePechenegs950',HC.hittite,{fillOpacity:.2});ha(d,'mByz842',HC.athens,{fillOpacity:.2});ha(d,'mBulgars800',HC.macedon,{fillOpacity:.16});
+    hp(d,'b_kiev',{note:'冬天斯拉夫人造独木舟，春天运到这里卖给罗斯人；6月船队出发。'});
+    hp(d,'er_rapids',{note:'七道险滩，最大的第四道要卸货拖船，押着奴隶走岸路，佩切涅格人常在此截杀。'});
+    hp(d,'er_berezan',{left:1,note:'船队在此歇两三天，装上帆、桅和舵再入海。'});
+    hp(d,'f_cherson',{note:'944年条约：罗斯大公不得侵扰赫尔松一带。'});
+    hp(d,'constantinople',{note:'罗斯商人住城外的圣马马斯，按月领口粮，五十人一批进城。'});
+    hr(d,[[50.45,30.52],[50.17,30.75],[49.4,32.1],[48.45,35.0],[48.1,35.15],[47.82,35.1],[46.8,33.4],[46.55,32.2],[46.6,31.41],[46.3,30.6],[45.6,29.75],[45.15,29.65],[44.2,28.7],[43.2,27.95],[42.65,27.73],[41.25,29.1],[41.01,28.98]],HC.route);
+   },[['fill',HC.hittite,'佩切涅格人（约950年）'],['fill',HC.athens,'东罗马'],['fill',HC.macedon,'保加利亚'],['dline',HC.route,'《帝国行政论》所记船队航程'],['dot','#2a2018','基辅、险滩、别列赞岛、赫尔松与京城']]),
+  hs('681—967年','背景：保加利亚，北边最大的对头','681年保加尔人立国；894年东罗马把保加利亚商人的市场挪到帖撒罗尼迦，西美昂开战，东罗马请马扎尔人从北边打他；西美昂时国土最大。',[[38.0,18.0],[47.4,31.5]],d=>{
+    ha(d,'eeBulgaria920',HC.macedon,{fillOpacity:.26});ha(d,'mByz842',HC.athens,{fillOpacity:.2});
+    hp(d,'i_pliska',{note:'681年以后保加尔人的都城；811年被尼基弗鲁斯一世焚毁。'});
+    hp(d,'er_preslav',{left:1});
+    hp(d,'thessalonica',{note:'894年保加利亚商人的市场被挪到这里，还加了税。'});
+    hp(d,'constantinople',{note:'913—924年西美昂几次兵临城下，始终没能进城。'});
+    hl(d,'马扎尔人（895年前）','Magyars before 895',46.7,29.4,HC.hittite);
+    hr(d,[[46.6,29.6],[45.9,28.6],[45.43,28.05],[44.6,27.6],[43.5,27.0]],HC.war);
+   },[['fill',HC.macedon,'西美昂时的保加利亚（约920年，示意）'],['fill',HC.athens,'东罗马（约850年）'],['dline',HC.war,'894—895年马扎尔人受东罗马之请南下（概略）'],['dot','#2a2018','普利斯卡、普雷斯拉夫、帖撒罗尼迦与京城']]),
+  hs('967—972年','雇来打保加利亚，赖着不走','968年斯维亚托斯拉夫沿多瑙河拿下八十座城，想住在佩列亚斯拉韦茨；970年在阿卡迪奥波利斯败北，971年被围多罗斯托尔，972年死在险滩。',[[40.6,22.5],[51.2,37.0]],d=>{
+    ha(d,'eeBulgaria920',HC.macedon,{fillOpacity:.22});ha(d,'mByz842',HC.athens,{fillOpacity:.2});ha(d,'eePechenegs950',HC.hittite,{fillOpacity:.16});
+    hp(d,'er_pereyaslavets',{note:'斯维亚托斯拉夫说这里是他土地的中心，各地的好东西都汇到这里。'});
+    hp(d,'er_dorostolon',{kind:'battle',left:1});
+    hp(d,'er_preslav',{kind:'battle',left:1});
+    hp(d,'er_arcadiopolis',{kind:'battle'});
+    hp(d,'er_rapids',{kind:'battle',note:'972年春斯维亚托斯拉夫回程在此被佩切涅格人截杀，头骨被做成酒杯。'});
+    hp(d,'b_kiev');
+    hr(d,[[50.45,30.52],[49.4,32.1],[48.45,35.0],[47.8,35.1],[46.8,33.4],[46.6,31.9],[45.6,29.75],[45.2,29.3],[45.15,28.92]],HC.eeurope);
+    hr(d,[[44.12,27.26],[45.15,28.92],[45.6,29.75],[46.6,31.9],[46.8,33.4],[47.8,35.1],[48.1,35.15]],HC.war);
+   },[['fill',HC.macedon,'保加利亚'],['fill',HC.athens,'东罗马'],['fill',HC.hittite,'佩切涅格人'],['dline',HC.eeurope,'968年罗斯人南下（概略）'],['dline',HC.war,'972年回程（概略）'],['dot',HC.war,'970—972年交战与斯维亚托斯拉夫被杀处'],['dot','#2a2018','佩列亚斯拉韦茨与基辅']]),
+  hs('988—1043年','给皇帝派卫队','988年六千罗斯兵南下，989年助巴西尔二世在阿拜多斯平叛；弗拉基米尔在赫尔松受洗娶安娜（据《往年纪事》）；1041年卫队到奥斯特罗沃镇压保加利亚人起义。',[[38.5,19.5],[51.5,36.5]],d=>{
+    ha(d,'mByz1025',HC.athens,{fillOpacity:.22});ha(d,'mRus1000',HC.eeurope,{fillOpacity:.2});
+    hp(d,'constantinople',{note:'988年六千罗斯兵到此；1043年罗斯船队最后一次来攻，被希腊火烧退。'});
+    hp(d,'cf_abydos',{kind:'battle',left:1,note:'989年4月叛将巴尔达斯·福卡斯在此阵前倒毙，叛军溃散。'});
+    hp(d,'f_cherson',{note:'据《往年纪事》，弗拉基米尔攻下此城，在城里受洗、娶安娜。'});
+    hp(d,'b_kiev');
+    hp(d,'er_ostrovo',{kind:'battle',left:1});
+    hr(d,[[50.45,30.52],[49.4,32.1],[48.45,35.0],[47.8,35.1],[46.8,33.4],[46.6,31.9],[45.6,29.75],[44.2,28.7],[42.65,27.73],[41.25,29.1],[41.01,28.98]],HC.eeurope);
+   },[['fill',HC.athens,'东罗马（1025年）'],['fill',HC.eeurope,'基辅罗斯（约1000年）'],['dline',HC.eeurope,'988年罗斯兵南下（概略）'],['dot',HC.war,'989年阿拜多斯、1041年奥斯特罗沃'],['dot','#2a2018','基辅、赫尔松与京城']])
  ]}
 ];
 HISTORY_ENTRIES.forEach(e=>{
@@ -4119,6 +4396,8 @@ const HISTORY_ERAS=[
  {id:'persia-ancient',name:'古代伊朗',en:'Ancient Iran',date:'约前3200—前330年',c:HC.parthia,items:[['history-persia-elam'],['history-persia-achaemenid']]},
  {id:'persia-iranian',name:'安息与萨珊',en:'Parthians and Sasanians',date:'前141—602年',c:HC.parthia,items:[['history-persia-parthia'],['history-persia-sasanian'],['history-persia-khosrow'],['history-persia-khosrow-ii']]},
  {id:'arab-caliphate',name:'阿拉伯：兴起、扩张与统治',en:'The Arabs: Rise, Conquest and Rule',date:'约525—945年',c:HC.parthia,items:[['history-arab-rise'],['history-arab-muhammad'],['history-arab-conquest'],['history-arab-expansion'],['history-arab-caliphs'],['history-arab-constantinople'],['history-arab-abbasid']]},
+ {id:'eeurope-pontic',name:'东欧：草原、森林与港口',en:'Eastern Europe: Steppe, Forest and Ports',date:'约前700—375年',c:HC.eeurope,items:[['history-eeurope-pontic'],['history-eeurope-roman']]},
+ {id:'eeurope-slavs',name:'东欧：斯拉夫人与罗斯',en:'Eastern Europe: Slavs and Rus',date:'375—1043年',c:HC.eeurope,items:[['history-eeurope-slavs'],['history-eeurope-balkans'],['history-eeurope-rus'],['history-eeurope-byzantium']]},
 ];
 /* History as a tree: each branch is a topic; distance from the root is time (years, negative = BCE).
    Reading order stays with HISTORY_ERAS; TREE_ROWS puts each era row on a branch at its start and end. */
@@ -4139,11 +4418,12 @@ const HISTORY_BRANCHES=[
  // 埃及 and 波斯 leave the trunk at the early states (老无 2026-10-21): the Ptolemies, the Seleucids, Rome and Byzantium are passing rulers of these lands.
  {id:'egypt',name:'埃及',en:'Egypt',lane:1,parent:'trunk',from:-3100,to:642,c:HC.mino},
  {id:'persia',name:'波斯—阿拉伯',en:'Persia and the Arabs',lane:0,parent:'trunk',from:-3200,to:945,c:HC.parthia},
+ {id:'eeurope',name:'东欧',en:'Eastern Europe',lane:7,parent:'trunk',from:-700,to:1054,c:HC.eeurope},
  // Parallel timeline of China for cross-civilizational comparison.
- {id:'china',name:'中国',en:'China',lane:7,from:-7000,to:845,c:HC.china}
+ {id:'china',name:'中国',en:'China',lane:8,from:-7000,to:845,c:HC.china}
 ];
 // Trunk colour follows the chapter: 上古, 城邦, 马其顿与帝国, 希腊化世界, 罗马, 罗马帝国, 基督教, 中国对照, 埃及, 波斯.
-const TREE_CH_COLORS=['#7d6b50',HC.athens,HC.macedon,HC.thebes,HC.rome,HC.rome,HC.faith,HC.china,HC.mino,HC.parthia];
+const TREE_CH_COLORS=['#7d6b50',HC.athens,HC.macedon,HC.thebes,HC.rome,HC.rome,HC.faith,HC.china,HC.mino,HC.parthia,HC.eeurope];
 const TREE_ROWS={
  'history-migration/0':['trunk',-68000,-38000],
  'history-farming/0':['trunk',-10000,-6000],
@@ -4269,18 +4549,24 @@ const TREE_ROWS={
  'history-arab-caliphs/0':['persia',656,750,'632—750年'],
  'history-arab-constantinople/0':[['east','persia'],667,718],
  'history-arab-abbasid/0':['persia',750,945],
+ 'history-eeurope-pontic/0':['eeurope',-700,-63],
+ 'history-eeurope-roman/0':['eeurope',-63,375],
+ 'history-eeurope-slavs/0':['eeurope',375,602],
+ 'history-eeurope-balkans/0':['eeurope',602,681],
+ 'history-eeurope-rus/0':['eeurope',750,945],
+ 'history-eeurope-byzantium/0':[['eeurope','east'],860,1043],
  'history-spain-andalus/0':['spain',756,1031],
  'history-empire-macedonian/3':[['east','faith'],1054,1056],
  'history-spain-fall/2':[['spain','persia'],711,713]
 };
 // Topics still to be written grow the tree as dashed shoots.
-const TREE_FUTURE=[['east',1056,'东罗马（晚期）','1056年起 · 1071年曼齐刻尔特之战 · 1204年十字军攻破君士坦丁堡 · 到1453年 · 待展开'],['france',987,'卡佩王朝','987年起 · 待展开'],['germany',964,'神圣罗马帝国','964年起 · 奥托王朝与萨利安王朝 · 1077年卡诺莎之辱 · 待展开'],['italy',964,'帝国治下的意大利','964年起 · 待展开'],['faith',1056,'大分裂以后','1054年起 · 1077年卡诺莎之辱 · 十字军与东西两教会 · 待展开'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',945,'布韦希与塞尔柱','945年起 · 哈里发成了摆设 · 1055年塞尔柱突厥人进巴格达 · 待展开'],['china',845,'晚唐五代与宋','845年起 · 待展开'],['spain',1031,'收复失地运动','1031年起 · 泰法诸小国与北方基督教诸王国南下 · 待展开']];
+const TREE_FUTURE=[['east',1056,'东罗马（晚期）','1056年起 · 1071年曼齐刻尔特之战 · 1204年十字军攻破君士坦丁堡 · 到1453年 · 待展开'],['france',987,'卡佩王朝','987年起 · 待展开'],['germany',964,'神圣罗马帝国','964年起 · 奥托王朝与萨利安王朝 · 1077年卡诺莎之辱 · 待展开'],['italy',964,'帝国治下的意大利','964年起 · 待展开'],['faith',1056,'大分裂以后','1054年起 · 1077年卡诺莎之辱 · 十字军与东西两教会 · 待展开'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',945,'布韦希与塞尔柱','945年起 · 哈里发成了摆设 · 1055年塞尔柱突厥人进巴格达 · 待展开'],['china',845,'晚唐五代与宋','845年起 · 待展开'],['spain',1031,'收复失地运动','1031年起 · 泰法诸小国与北方基督教诸王国南下 · 待展开'],['eeurope',1054,'基辅罗斯以后','1054年起 · 雅罗斯拉夫死后诸子分封 · 1240年蒙古人攻破基辅 · 待展开']];
 // Where a line stops it says why: [line, year, the event that ends it, note, the line it carries on in].
 const TREE_ENDS=[['trunk',-30,'并入罗马','前146年科林斯被毁 · 前30年最后一个希腊化王国埃及并入罗马','rome'],['rome',476,'西罗马终结','476年西部末代皇帝被废 · 由中世纪西欧接续'],['west',843,'凡尔登三分','843年《凡尔登条约》三分帝国 · 分出法兰西、德意志、意大利']];
 // Sections of one line that run side by side: [line, row keys, side of the passing loop].
 const TREE_PARALLEL=[['trunk',['history-alexander-conquest/0','history-alexander-rule/0'],1],['trunk',['history-hellenistic-states/0','history-hellenistic-knowledge/0'],1],['west',['history-west-kingdoms/0','history-west-ostrogoths/0'],1],['west',['history-west-merovingians/0','history-west-lombards/0'],1],['faith',['history-empire-amorian/0','history-faith-carolingian/0'],-1],['faith',['history-faith-imperial-church/0','history-faith-cluny/0'],-1]];
 // Time slices across the whole tree: [year, label, headline, paragraph].
-const TREE_SLICES=[[-1000, "前1000年", "青铜时代崩了以后，各地从头长起", "约前1200年前后，迈锡尼的宫殿、赫梯帝国接连崩塌，东地中海进了“黑暗时代”，各处都是小王国和村社重新长起来。希腊没了文字、人口稀少，城邦还要两百年才成形；罗马只是拉丁姆山丘上的几处村落；以色列人刚立王，据《圣经》，大卫约在此时定都耶路撒冷；埃及新王国已散（约前1070年），南北分治；伊朗高原上米底人、波斯人刚刚进来，埃兰还在，两河的亚述正要复起；中国是西周，周王分封诸侯、立宗法。"], [-500, "前500年", "波斯一家独大", "大流士一世的阿契美尼德帝国从印度河伸到爱琴海，前525年拿下埃及，前513年还渡过多瑙河去打斯基泰人，无功而返。帝国边上的小地方各走各路：雅典刚经克里斯提尼改革，希腊城邦正要在希波战争里顶住波斯；罗马前509年赶走国王，成了共和国；犹太人从巴比伦回来，重建了圣殿；黑海北岸，希腊港口跟斯基泰人做着粮食和奴隶的买卖。中国是春秋末年，孔子在鲁国做官，几年后周游列国。"], [0, "公元元年", "地中海头一回归了一家", "希腊化诸国已全数并入罗马，最后一个托勒密埃及亡于前30年；罗马自己也从共和变成了奥古斯都的元首制。东边的安息跟罗马隔着幼发拉底河对峙，前53年在卡莱大败克拉苏。罗马治下的犹太地，耶稣约在前4年出生；埃及成了罗马的粮仓；黑海北岸的博斯普鲁斯王国当了罗马的附庸，草原上是萨尔马特人。中国是西汉末年，外戚王莽掌权，八年后篡汉。"], [500, "500年", "西罗马没了，东罗马守着东方", "西罗马已亡二十多年，地盘由蛮族国王分着：法兰克的克洛维占了高卢北部，东哥特的狄奥多里克名义上替东罗马皇帝管着意大利，西哥特人占着西班牙和高卢南部，七年后在武耶败给克洛维。东罗马的阿纳斯塔修斯攒下满库金币，守着东方，两年后又跟萨珊波斯开战；教会为卡尔西顿会议的信经闹分裂，罗马和君士坦丁堡已断交十多年。匈人帝国散了，斯拉夫人正往多瑙河边扩散；中国是南北朝，北魏孝文帝迁都洛阳、改汉俗不久。"], [1000, "1000年", "东罗马正当盛年，西欧的新格局刚刚定型", "巴西尔二世的东罗马正跟保加利亚苦战，十几年后吞了它；帮手里有罗斯人：弗拉基米尔988年受洗、娶了皇帝的妹妹，派来的兵成了瓦良格卫队。西边，奥托王朝的皇帝（这一年是奥托三世）管着德意志和意大利，还亲手立了教宗；法兰西归了刚开张的卡佩王朝；克吕尼的修院越开越多，教会改革正在酝酿，五十多年后东西教会分裂。西班牙的科尔多瓦哈里发国盛极将衰；巴格达的哈里发早成了摆设，埃及归了法蒂玛王朝。中国是北宋，五年后与辽订澶渊之盟。"]];
+const TREE_SLICES=[[-1000, "前1000年", "青铜时代崩了以后，各地从头长起", "约前1200年前后，迈锡尼的宫殿、赫梯帝国接连崩塌，东地中海进了“黑暗时代”，各处都是小王国和村社重新长起来。希腊没了文字、人口稀少，城邦还要两百年才成形；罗马只是拉丁姆山丘上的几处村落；以色列人刚立王，据《圣经》，大卫约在此时定都耶路撒冷；埃及新王国已散（约前1070年），南北分治；伊朗高原上米底人、波斯人刚刚进来，埃兰还在，两河的亚述正要复起；中国是西周，周王分封诸侯、立宗法。"], [-500, "前500年", "波斯一家独大", "大流士一世的阿契美尼德帝国从印度河伸到爱琴海，前525年拿下埃及，前513年还渡过多瑙河去打斯基泰人，无功而返。帝国边上的小地方各走各路：雅典刚经克里斯提尼改革，希腊城邦正要在希波战争里顶住波斯；罗马前509年赶走国王，成了共和国；犹太人从巴比伦回来，重建了圣殿；黑海北岸，希腊港口跟斯基泰人做着粮食和奴隶的买卖。中国是春秋末年，孔子在鲁国做官，几年后周游列国。"], [0, "公元元年", "地中海头一回归了一家", "希腊化诸国已全数并入罗马，最后一个托勒密埃及亡于前30年；罗马自己也从共和变成了奥古斯都的元首制。东边的安息跟罗马隔着幼发拉底河对峙，前53年在卡莱大败克拉苏。罗马治下的犹太地，耶稣约在前4年出生；埃及成了罗马的粮仓；黑海北岸的博斯普鲁斯王国当了罗马的附庸，草原上是萨尔马特人。中国是西汉末年，外戚王莽掌权，八年后篡汉。"], [500, "500年", "西罗马没了，东罗马守着东方", "西罗马已亡二十多年，地盘由蛮族国王分着：法兰克的克洛维占了高卢北部，东哥特的狄奥多里克名义上替东罗马皇帝管着意大利，西哥特人占着西班牙和高卢南部，七年后在武耶败给克洛维。东罗马的阿纳斯塔修斯攒下满库金币，守着东方，两年后又跟萨珊波斯开战；教会为卡尔西顿会议的信经闹分裂，罗马和君士坦丁堡已断交十多年。匈人帝国散了，斯拉夫人正往多瑙河边扩散；中国是南北朝，北魏孝文帝迁都洛阳、改汉俗不久。"], [1000, "1000年", "东罗马正当盛年，西欧的新格局刚刚定型", "巴西尔二世的东罗马正跟保加利亚苦战，十几年后吞了它；皇帝身边的卫队是罗斯人：弗拉基米尔988年受洗、娶了皇帝的妹妹，派来的六千兵从此留下，成了瓦良格卫队。西边，奥托王朝的皇帝（这一年是奥托三世）管着德意志和意大利，还亲手立了教宗；法兰西归了刚开张的卡佩王朝；克吕尼的修院越开越多，教会改革正在酝酿，五十多年后东西教会分裂。西班牙的科尔多瓦哈里发国盛极将衰；巴格达的哈里发早成了摆设，埃及归了法蒂玛王朝。中国是北宋，五年后与辽订澶渊之盟。"]];
 function historyEra(e,scene=0){return HISTORY_ERAS.find(era=>era.items.some(([id,from=0,to=Infinity])=>id===e.id&&scene>=from&&scene<=to));}
 const TOPIC_ENTRIES=[
  {id:'topic-grail-sword',kind:'topic',ch:0,num:'01',title:'圣杯与剑：统治的成本',short:'圣杯与剑：统治的成本',en:'The Grail and the Sword: the Cost of Rule',

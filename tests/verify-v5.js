@@ -28,7 +28,7 @@ const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','
    return {oldChars:8419,newChars:HISTORY_ENTRIES.filter(e=>oldIDs.includes(e.id)).reduce((n,e)=>n+chars(e.html),0),coverage,eras:HISTORY_ERAS.length};
   });
   assert.ok(report.newChars<=report.oldChars/3,'Existing prose exceeds one-third: '+JSON.stringify(report));
-  assert.equal(report.coverage,462);assert.equal(report.eras,35);
+  assert.equal(report.coverage,488);assert.equal(report.eras,37);
   const concise = await page.evaluate(() => {
    const entries=HISTORY_ENTRIES.filter(e=>e.ch===3);
    return entries.map(e=>{const p=document.createElement('div');p.innerHTML=e.html;return {id:e.id,chars:p.textContent.replace(/（[A-Za-z][^）]*）/g,'').replace(/\s/g,'').length};});
@@ -38,7 +38,7 @@ const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','
   await page.evaluate(()=>go('history-celts',{scene:1}));
   assert.match(await page.$eval('#sceneContext',e=>e.textContent),/278／277/);
   assert.match(await page.$eval('#card',e=>e.textContent),/加拉太/);
-  assert.equal(await page.$$eval('#toc .chip small',es=>es.length===127&&es.every(e=>!e.textContent.includes('undefined'))),true);
+  assert.equal(await page.$$eval('#toc .chip small',es=>es.length===133&&es.every(e=>!e.textContent.includes('undefined'))),true);
   assert.equal(await page.$eval('details.sources',e=>e.open),false);
   assert.equal(await page.$eval('.active-era',e=>e.dataset.era),'hellenistic');
   assert.equal(await page.$eval('#entryEyebrow',e=>e.textContent),'希腊化时期 · 第四章');

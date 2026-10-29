@@ -48,7 +48,8 @@ const SLICE_YEARS=[-1000,-500,0,500,1000];
      xsec:ids.filter(E).flatMap(id=>[...stripEn(all(E(id))).matchAll(/见“([^”]+)”一节/g)].map(m=>m[1]).filter(x=>!shorts.has(x)).map(x=>id+': '+x)),
      xline:ids.filter(E).flatMap(id=>[...stripEn(all(E(id))).matchAll(/另见“([^”]+)”主线/g)].map(m=>m[1]).filter(x=>!names.has(x)).map(x=>id+': '+x)),
      regions:S.regions.filter(k=>!GEO.regions[k]),
-     byz:ids.filter(E).filter(id=>/拜占庭/.test(stripEn(all(E(id))))),pope:ids.filter(E).filter(id=>/教皇/.test(all(E(id)))),
+     // 拜占庭 is the Greek city's own name in the two ancient sections; from the Slavs on the empire is 东罗马.
+     byz:ids.slice(2).filter(E).filter(id=>/拜占庭/.test(stripEn(all(E(id))))),pope:ids.filter(E).filter(id=>/教皇/.test(all(E(id)))),
      pills:[...document.querySelectorAll('#toc .tree-line')].map(b=>b.textContent),
      caption:document.getElementById('indexCaption')?.textContent||'',
      slices:TREE_SLICES.map(s=>[s[0],s[1],s[2].length>0,s[3].length]),
@@ -89,7 +90,7 @@ const SLICE_YEARS=[-1000,-500,0,500,1000];
     const tree=document.querySelector(sel),top=el=>+el.style.top.replace('px','');
     const items=[...tree.querySelectorAll('.tree-item')].map(b=>({t:TREE_ROWS[b.dataset.key][1],top:top(b),bottom:top(b)+b.offsetHeight}));
     const slices=[...tree.querySelectorAll('.tree-slice')].map(s=>({t:+s.dataset.t,top:top(s),h:s.offsetHeight,open:s.open,off:s.classList.contains('off-line')}));
-    const lines=[...tree.querySelectorAll('.slice-line')].map(p=>+p.getAttribute('d').split(' ')[1]);
+    const lines=[...tree.querySelectorAll('.slice-line')].map(p=>+p.getAttribute('d').match(/^M[-\d.]+ ([-\d.]+)H/)[1]);
     const nodes=k=>{const ns=[...tree.querySelectorAll(`.tree-node[data-key="${k}"]`)];return [new Set(ns.map(n=>n.getAttribute('cx'))).size,new Set(ns.map(n=>n.getAttribute('cy'))).size];};
     return {forks:[...tree.querySelectorAll('.fork')].map(p=>p.dataset.branch),slices,lines,items,
      shared:nodes('history-eeurope-byzantium/0'),overflow:document.documentElement.scrollWidth>innerWidth};

@@ -67,7 +67,7 @@ function renderToc(){
   for(const [id,mode] of [['tHistory','history'],['tGeography','geography'],['tTopics','topics']]){
     const b=document.getElementById(id);b.classList.toggle('on',viewMode===mode);b.setAttribute('aria-pressed',String(viewMode===mode));
   }
-  document.getElementById('indexCaption').textContent=historical?'历史树：自上而下是时间，枝杈是主题\n先选主线，↑↓ 沿线走 · ←→ 切换地图事件\nⅠ 上古 Ⅱ 城邦 Ⅲ 马其顿 Ⅳ 希腊化 Ⅴ 罗马 Ⅵ 帝国 Ⅶ 基督教 Ⅷ 中国 Ⅸ 埃及 Ⅹ 波斯—阿拉伯 · 右缘可拖宽':viewMode==='topics'?'主线讲事情怎么发生，专题讲事情为什么总这样发生。\n每个专题拆成若干豆腐块呈现，可点链接跳回主线。':'从山海、河流与地区名认识历史的舞台。\n↑↓ 切换条目';
+  document.getElementById('indexCaption').textContent=historical?'历史树：自上而下是时间，枝杈是主题\n先选主线，↑↓ 沿线走 · ←→ 切换地图事件\nⅠ 上古 Ⅱ 城邦 Ⅲ 马其顿 Ⅳ 希腊化 Ⅴ 罗马 Ⅵ 帝国 Ⅶ 基督教 Ⅷ 中国 Ⅸ 埃及 Ⅹ 波斯—阿拉伯 Ⅺ 东欧 · 右缘可拖宽':viewMode==='topics'?'主线讲事情怎么发生，专题讲事情为什么总这样发生。\n每个专题拆成若干豆腐块呈现，可点链接跳回主线。':'从山海、河流与地区名认识历史的舞台。\n↑↓ 切换条目';
   toc.setAttribute('aria-label',historical?'历史树：按时间与主题浏览':viewMode==='topics'?'动力专题':'地理概念');
   mobileToc.setAttribute('aria-label',historical?'选择历史时期与章节':viewMode==='topics'?'选择动力专题':'选择地理概念');
 }
