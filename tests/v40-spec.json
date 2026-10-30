@@ -81,7 +81,7 @@
   "history-crusade-end": [
    "十字军的终结",
    "1258—1291年",
-   5,
+   6,
    11
   ],
   "history-crusade-orders": [
@@ -839,10 +839,26 @@
   ]
  },
  "boxes": {
+  "history-crusade-players": [
+   [
+    1,
+    "突厥是哪来的"
+   ],
+   [
+    4,
+    "马扎尔人是哪来的"
+   ]
+  ],
   "history-crusade-saladin": [
    [
     3,
     "《天国王朝》与真实的历史"
+   ]
+  ],
+  "history-crusade-end": [
+   [
+    5,
+    "十字军的仗怎么打"
    ]
   ]
  },
@@ -1183,6 +1199,14 @@
   [
    "history-crusade-orders/5",
    "立陶宛却顶住了一百年"
+  ],
+  [
+   "history-crusade-end/5",
+   "海上是意大利船队占上风"
+  ],
+  [
+   "history-crusade-end/5",
+   "萨拉丁和马穆鲁克就拆平拿下的海港"
   ]
  ],
  "slips": [
@@ -1199,7 +1223,10 @@
   "克尔博加",
   "图贝塞尔",
   "梅尔济丰",
-  "打了个措手不及"
+  "打了个措手不及",
+  "匂人",
+  "东突厥后来分化",
+  "匈人西迁裹挟"
  ],
  "regions": [
   "mEdessa1110",
@@ -1252,5 +1279,87 @@
   "mHafsids1270",
   "mOttoman1522"
  ],
- "pass": "十字军 — 15 sections (79 scenes) on a new line and chapter Ⅻ: the theatre and the players, the holy war in Spain as the 0th crusade, the people's crusade and the First Crusade reorganised, the crusader states, the Second to the Eighth, Nur ad-Din and Saladin, the Mongols and the end at Acre, the military orders; the Muslim side shared with 波斯—阿拉伯 to 1291; 74 of 老无’s points in bold, 37 facts and their order set right in plain text"
+ "boxfixes": [
+  [
+   "history-crusade-players",
+   "突厥是哪来的",
+   "据《魏书》出自东胡"
+  ],
+  [
+   "history-crusade-players",
+   "突厥是哪来的",
+   "颉利可汗被擒，部众降唐"
+  ],
+  [
+   "history-crusade-players",
+   "突厥是哪来的",
+   "回纥原是铁勒部"
+  ],
+  [
+   "history-crusade-players",
+   "突厥是哪来的",
+   "沙陀出自西突厥的处月部"
+  ],
+  [
+   "history-crusade-players",
+   "突厥是哪来的",
+   "唐立阿史那家的人当可汗"
+  ],
+  [
+   "history-crusade-players",
+   "突厥是哪来的",
+   "乌古斯人8世纪跟葛逻禄争七河输了"
+  ],
+  [
+   "history-crusade-players",
+   "突厥是哪来的",
+   "这就是十字军时期的塞尔柱突厥"
+  ],
+  [
+   "history-crusade-players",
+   "马扎尔人是哪来的",
+   "可能在山东边的西西伯利亚"
+  ],
+  [
+   "history-crusade-players",
+   "马扎尔人是哪来的",
+   "阿瓦尔人自己是552年突厥兴起以后才逃进欧洲的"
+  ],
+  [
+   "history-crusade-players",
+   "马扎尔人是哪来的",
+   "马扎尔人搭的是哪一波，史料没有记"
+  ],
+  [
+   "history-crusade-players",
+   "马扎尔人是哪来的",
+   "阿提拉死后的四百年"
+  ],
+  [
+   "history-crusade-players",
+   "马扎尔人是哪来的",
+   "这就是十字军时期的匈牙利"
+  ],
+  [
+   "history-crusade-end",
+   "十字军的仗怎么打",
+   "12世纪地中海两岸出现配重投石机"
+  ],
+  [
+   "history-crusade-end",
+   "十字军的仗怎么打",
+   "据巴哈丁所记，一个做锅的大马士革青年"
+  ],
+  [
+   "history-crusade-end",
+   "十字军的仗怎么打",
+   "1190年十字军在阿卡城下造了三座"
+  ],
+  [
+   "history-crusade-end",
+   "十字军的仗怎么打",
+   "据安娜·科穆宁娜所记"
+  ]
+ ],
+ "pass": "十字军 — 15 sections (80 scenes) on a new line and chapter Ⅻ: the theatre and the players, the holy war in Spain as the 0th crusade, the people's crusade and the First Crusade reorganised, the crusader states, the Second to the Eighth, Nur ad-Din and Saladin, the Mongols and the end at Acre, the military orders; the Muslim side shared with 波斯—阿拉伯 to 1291; 74 of 老无’s points in bold, 39 facts and their order set right in plain text; 4 豆腐块 (where the Turks and the Magyars came from, how the wars were fought) with 16 corrections in plain text"
 }

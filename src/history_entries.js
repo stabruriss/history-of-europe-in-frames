@@ -5885,7 +5885,17 @@ const HISTORY_ENTRIES=[
     hp(d,'cm_beirut',{left:1});
     hp(d,'cm_atlit',{left:1});
     hp(d,'cm_ruad');
-   },[['fill',HC.mino,'马穆鲁克（1291年，示意）'],['fill',HC.crusade,'塞浦路斯王国'],['dot',HC.war,'阿卡'],['dot','#2a2018','提尔、西顿、贝鲁特、阿特利特与鲁阿德岛']])
+   },[['fill',HC.mino,'马穆鲁克（1291年，示意）'],['fill',HC.crusade,'塞浦路斯王国'],['dot',HC.war,'阿卡'],['dot','#2a2018','提尔、西顿、贝鲁特、阿特利特与鲁阿德岛']]),
+  hs('1095—1291年','两百年的仗怎么打','1187年哈丁、1191年阿尔苏夫、1250年曼苏拉三场野战；1190年阿卡守军烧塔，1291年马穆鲁克从骑士堡运大投石机攻阿卡；1191年萨拉丁拆阿斯卡隆。',[[29.8,27.5],[38.6,38.8]],d=>{
+    ha(d,'mCrusaderStates1186',HC.crusade,{fillOpacity:.18});
+    hp(d,'sl_hattin',{kind:'battle',note:'1187年7月4日国王居伊的大军离了水源，被萨拉丁全歼。'});
+    hp(d,'c3_arsuf',{kind:'battle',left:1,note:'1191年9月7日理查一世沿海南下，骑士一冲击溃萨拉丁。'});
+    hp(d,'c7_mansura',{kind:'battle',note:'1250年2月8日法兰克骑士不等大军追进城，在窄巷里被马穆鲁克围歼。'});
+    hp(d,'c7_acre',{kind:'battle',left:1,note:'1190年5月守军用火油罐一天烧掉三座攻城塔；1291年破城后被拆平。'});
+    hp(d,'c3_ascalon',{left:1,note:'1123年威尼斯舰队在附近海上打垮法蒂玛舰队；1191年萨拉丁拆城，1270年拜巴尔毁了城堡和港口。'});
+    hp(d,'cm_krak',{note:'13世纪修成内外两重城墙；1291年哈马的兵在此接手大投石机“曼苏里”，运往阿卡。'});
+    hr(d,[[36.3,28.0],[35.6,30.4],[34.5,32.9],[33.6,34.4],[32.93,35.05]],HC.italy);
+   },[['fill',HC.crusade,'十字军诸国（1186年，示意）'],['dline',HC.italy,'意大利船队的海路（概略）'],['dot',HC.war,'哈丁、阿尔苏夫、曼苏拉与阿卡'],['dot','#2a2018','阿斯卡隆与骑士堡']])
  ]},
 {id:'history-crusade-orders',ch:11,title:'三大骑士团：修士兼骑士',short:'三大骑士团',en:'The Military Orders: Monks Who Were Knights',period:'约1100—1525年',c:HC.crusade,
  scenes:[

@@ -42,6 +42,10 @@ const S=JSON.parse(fs.readFileSync(path.join(__dirname,'v40-spec.json'),'utf8'))
      bold:S.bold.map(([k,w])=>{const [id,i]=k.split('/');return [k,!!E(id)&&[...para(id,i).querySelectorAll('strong')].some(st=>stripEn(st.textContent).includes(w))];}),
      fixes:S.fixes.map(([k,w])=>{const [id,i]=k.split('/');const p=E(id)&&para(id,i);return [k,w,!!p&&stripEn(p.textContent).includes(w)&&!stripEn(p.innerHTML).includes('<strong>'+w)];}),
      slips:ids.filter(E).flatMap(id=>S.slips.filter(w=>stripEn(all(E(id))).includes(w)).map(w=>id+': '+w)),
+     boxes:Object.entries(S.boxes).flatMap(([id,bs])=>bs.map(([sc,name])=>[id,sc,name,!!E(id)&&E(id).boxes.some(b=>b.scene===sc&&b.name===name)])),
+     boxfixes:(S.boxfixes||[]).map(([id,name,w])=>{const b=E(id)&&E(id).boxes.find(x=>x.name===name);return [id,name,w,!!b&&stripEn(b.text.replace(/<[^>]+>/g,'')).includes(w)&&!/<strong>/.test(b.text)];}),
+     boxes:Object.entries(S.boxes).flatMap(([id,bs])=>bs.map(([sc,name])=>[id,sc,name,!!E(id)&&E(id).boxes.some(b=>b.scene===sc&&b.name===name)])),
+     boxfixes:(S.boxfixes||[]).map(([id,name,w])=>{const b=E(id)&&E(id).boxes.find(x=>x.name===name);return [id,name,w,!!b&&stripEn(b.text.replace(/<[^>]+>/g,'')).includes(w)&&!/<strong>/.test(b.text)];}),
      moments:Object.fromEntries(Object.keys(S.moments).map(id=>[id,E(id)?E(id).moments.map(m=>[m.scene,m.name]):null])),
      momentsPerScene:ids.filter(E).map(id=>[id,Math.max(0,...Object.values(E(id).moments.reduce((a,m)=>(a[m.scene]=(a[m.scene]||0)+1,a),{})))]),
      sources:ids.filter(E).map(id=>[id,E(id).sources.length,E(id).sources.filter(s=>!/^https:\/\//.test(s.url)).length,E(id).sources.length-new Set(E(id).sources.map(s=>s.url)).size]),
@@ -68,6 +72,10 @@ const S=JSON.parse(fs.readFileSync(path.join(__dirname,'v40-spec.json'),'utf8'))
     for(const [k,ok] of r.bold)assert.ok(ok,k+' lacks 老无’s point in bold');
     for(const [k,w,ok] of r.fixes)assert.ok(ok,k+' lacks the plain-text correction: '+w);
     assert.deepEqual(r.slips,[],'readings set right, not copied into the prose');
+    for(const [id,sc,name,ok] of r.boxes)assert.ok(ok,id+' lacks the 豆腐块 '+name+' at scene '+sc);
+    for(const [id,name,w,ok] of r.boxfixes)assert.ok(ok,id+' 豆腐块 '+name+' lacks the plain-text correction: '+w);
+    for(const [id,sc,name,ok] of r.boxes)assert.ok(ok,id+' lacks the 豆腐块 '+name+' at scene '+sc);
+    for(const [id,name,w,ok] of r.boxfixes)assert.ok(ok,id+' 豆腐块 '+name+' lacks the plain-text correction: '+w);
     for(const [id,list] of Object.entries(S.moments))assert.deepEqual(r.moments[id],list,id+' moments');
     for(const [id,n] of r.momentsPerScene)assert.ok(n<=2,id+' has more than two moments in one scene');
     for(const [id,n,bad,dup] of r.sources)assert.ok(n>=8&&!bad&&!dup,id+' reading links '+JSON.stringify([n,bad,dup]));
