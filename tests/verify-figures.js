@@ -18,8 +18,8 @@ const wait=ms=>new Promise(r=>setTimeout(r,ms));
  try{
   const page=await pageAt();
   const occurrences=await page.evaluate(()=>Object.entries(FIGURE_SCENES).flatMap(([scene,items])=>items.map(item=>({scene,...item}))));
-  assert.equal(occurrences.length,348);assert.equal(new Set(occurrences.map(p=>p.id)).size,249);
-  assert.equal(await page.evaluate(()=>Object.keys(FIGURES).length),249);
+  assert.equal(occurrences.length,397);assert.equal(new Set(occurrences.map(p=>p.id)).size,269);
+  assert.equal(await page.evaluate(()=>Object.keys(FIGURES).length),269);
   for(const item of occurrences){
    await page.evaluate(scene=>go(scene),item.scene);
    assert.equal(await page.evaluate(({scene,id})=>{
@@ -31,7 +31,7 @@ const wait=ms=>new Promise(r=>setTimeout(r,ms));
    await page.$eval(selector+' summary',e=>e.click());
    assert.equal(await page.$eval(selector,e=>e.open),true);
    assert.equal(await page.$$eval('.person-card[open]',es=>es.length),1);
-   assert.equal(await page.$$eval(selector+' a',es=>es.every(a=>a.href.startsWith('https://')&&a.rel.includes('noopener')&&a.rel.includes('noreferrer')&&a.checkVisibility())),true);
+   assert.equal(await page.$$eval(selector+' a:not(.xref)',es=>es.every(a=>a.href.startsWith('https://')&&a.rel.includes('noopener')&&a.rel.includes('noreferrer')&&a.checkVisibility())),true);
    await page.$eval(selector+' .person-map',e=>e.click());
    await page.waitForFunction(()=>map._popup?.isOpen());
    assert.equal(await page.evaluate(item=>{
@@ -82,6 +82,6 @@ const wait=ms=>new Promise(r=>setTimeout(r,ms));
   await animated.evaluate(()=>{focusFigure(FIGURE_SCENES['history-spartan-decline/0'][0]);go('history-migration');});
   await wait(1600);assert.equal(await animated.evaluate(()=>Boolean(map._popup?.isOpen())),false);
   await animated.close();assert.deepEqual(errors,[]);
-  console.log('PASS: 249 people / events across 348 dated cards; expandable sources; one-open-card behavior; keyboard; restored fold state; city map popups; return to scene; stage switching; phones and landscape; offline; stale popup cancellation; no page errors.');
+  console.log('PASS: 269 people / events across 397 dated cards; expandable sources; one-open-card behavior; keyboard; restored fold state; city map popups; return to scene; stage switching; phones and landscape; offline; stale popup cancellation; no page errors.');
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

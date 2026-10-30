@@ -74,9 +74,9 @@
   ],
   "history-faith-crusade": [
    "第一次十字军",
-   "1095—1099年",
+   "1096—1099年",
    6,
-   6
+   11
   ]
  },
  "rows": {
@@ -134,7 +134,8 @@
   "history-spain-crusade/0": [
    [
     "spain",
-    "faith"
+    "faith",
+    "crusade"
    ],
    1085,
    1123
@@ -162,18 +163,20 @@
   ],
   "history-faith-urban/0": [
    [
-    "faith"
+    "faith",
+    "crusade"
    ],
    1088,
    1095
   ],
   "history-faith-crusade/0": [
    [
+    "crusade",
     "faith",
     "east",
     "persia"
    ],
-   1095,
+   1096,
    1099
   ],
   "history-arab-seljuks/3": [
@@ -299,6 +302,10 @@
    "教宗给免罪，让信徒去西班牙打穆斯林"
   ],
   [
+   "history-spain-crusade/3",
+   "这算是第0次十字军"
+  ],
+  [
    "history-empire-zoe/0",
    "巴西尔二世的丰功伟绩之后，接班人成了问题：他没有儿子"
   ],
@@ -355,8 +362,28 @@
    "这时候来了救命稻草：东罗马求援"
   ],
   [
+   "history-faith-crusade/0",
+   "正规军里，诺曼人对外扩张的欲望和条件最成熟"
+  ],
+  [
    "history-faith-crusade/1",
-   "乌尔班二世动身巡回讲道，煽动宗教狂热，促成了十字军东征"
+   "东罗马刚和诺曼人打过仗，对他们有顾忌，所以先立字据"
+  ],
+  [
+   "history-faith-crusade/2",
+   "第一站还算顺利；第二站，鲍德温偷跑，成立了第一个十字军国家"
+  ],
+  [
+   "history-faith-crusade/3",
+   "到了安条克，十字军屠了城，又有一个人偷跑，成立了第二个十字军国家"
+  ],
+  [
+   "history-faith-crusade/4",
+   "正菜是打耶路撒冷"
+  ],
+  [
+   "history-faith-crusade/5",
+   "城破之后，十字军大肆屠戮"
   ]
  ],
  "moments": {
@@ -587,19 +614,19 @@
   "history-faith-crusade": [
    [
     1,
-    "天主愿意"
-   ],
-   [
-    3,
-    "骨头堆成的山"
-   ],
-   [
-    4,
     "一屋子金银"
    ],
    [
-    5,
+    2,
+    "钻进一件衬衫"
+   ],
+   [
+    3,
     "请教宗来安条克"
+   ],
+   [
+    4,
+    "赤脚绕城"
    ],
    [
     5,
@@ -621,7 +648,7 @@
   "history-arab-seljuks": 300,
   "history-empire-alexios": 300,
   "history-faith-urban": 230,
-  "history-faith-crusade": 230
+  "history-faith-crusade": 300
  },
  "eras": [
   [
@@ -668,10 +695,9 @@
   ],
   [
    "faith-crusade",
-   "乌尔班二世与第一次十字军",
+   "乌尔班二世与十字军的号召",
    [
-    "history-faith-urban",
-    "history-faith-crusade"
+    "history-faith-urban"
    ]
   ]
  ],
@@ -715,7 +741,7 @@
    "波斯—阿拉伯",
    "trunk",
    -3200,
-   1099,
+   1291,
    0
   ]
  },
@@ -733,7 +759,7 @@
   [
    "faith",
    1153,
-   "托钵修会与十字军以后"
+   "托钵修会"
   ],
   [
    "spain",
@@ -747,8 +773,8 @@
   ],
   [
    "persia",
-   1099,
-   "十字军国家与萨拉丁"
+   1291,
+   "伊儿汗国与马穆鲁克"
   ]
  ],
  "tails": {
@@ -771,7 +797,8 @@
    "history-spain-crusade/0",
    "history-faith-urban/0",
    "history-faith-crusade/0",
-   "history-faith-citeaux/0"
+   "history-faith-citeaux/0",
+   "history-crusade-second/0"
   ],
   "spain": [
    "history-spain-andalus/0",
@@ -789,7 +816,12 @@
    "history-arab-abbasid/0",
    "history-arab-seljuks/0",
    "history-arab-seljuks/3",
-   "history-faith-crusade/0"
+   "history-faith-crusade/0",
+   "history-crusade-states/0",
+   "history-crusade-nuraldin/0",
+   "history-crusade-saladin/0",
+   "history-crusade-louis/0",
+   "history-crusade-end/0"
   ]
  },
  "shared": {
@@ -803,13 +835,15 @@
   ],
   "history-spain-crusade/0": [
    "spain",
-   "faith"
+   "faith",
+   "crusade"
   ],
   "history-arab-seljuks/3": [
    "persia",
    "east"
   ],
   "history-faith-crusade/0": [
+   "crusade",
    "faith",
    "east",
    "persia"
@@ -947,14 +981,6 @@
   [
    "history-faith-urban/2",
    "严格派的领头人、里昂大主教于格"
-  ],
-  [
-   "history-faith-crusade/0",
-   "皇帝要的是听他调遣的兵"
-  ],
-  [
-   "history-faith-crusade/2",
-   "民间讲道人却讲得更凶"
   ]
  ],
  "slips": [
@@ -999,5 +1025,5 @@
   "mFatimids1050",
   "mCrusaderStates1100"
  ],
- "pass": "1000年之后 — 13 sections (63 scenes): 德意志 from the Ottonians (how piety ended the line) and the Salians through the investiture contest and Canossa to Henry IV's death (1106), the last two shared with 基督教; 意大利 to the Normans' Sicily (1091); 基督教 on to the Cistercians (1153); 西班牙 through the taifas to the holy war (1123), shared with 基督教; 43 of 老无’s points in bold, the facts and their order set right in plain text; new shoots at the ends"
+ "pass": "1000年之后 — 13 sections (63 scenes): 德意志 from the Ottonians (how piety ended the line) and the Salians through the investiture contest and Canossa to Henry IV's death (1106), the last two shared with 基督教; 意大利 to the Normans' Sicily (1091); 基督教 on to the Cistercians (1153); 西班牙 through the taifas to the holy war (1123), shared with 基督教; 49 of 老无’s points in bold, the facts and their order set right in plain text; new shoots at the ends"
 }
