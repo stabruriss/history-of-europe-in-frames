@@ -952,7 +952,7 @@
    "基督教",
    "trunk",
    -1400,
-   1153,
+   1216,
    6
   ]
  },
@@ -969,7 +969,7 @@
   ],
   [
    "faith",
-   1153,
+   1216,
    "托钵修会"
   ]
  ],
@@ -1007,7 +1007,11 @@
    "history-faith-urban/0",
    "history-faith-crusade/0",
    "history-faith-citeaux/0",
-   "history-crusade-second/0"
+   "history-germany-worms/0",
+   "history-faith-cardinals/0",
+   "history-crusade-second/0",
+   "history-germany-barbarossa/0",
+   "history-germany-innocent/0"
   ]
  },
  "shared": {

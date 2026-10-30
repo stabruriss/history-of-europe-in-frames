@@ -118,9 +118,9 @@ const PARALLEL=[['trunk','history-alexander-conquest/0','history-alexander-rule/
    const over=r.chars.filter(([,n,cap])=>n>cap);assert.deepEqual(over,[],'prose budgets');
    // The tree: forks at 395 and 843, the new lines and their lanes, the West's end, the shoots after the forks, the passing loops.
    for(const [k,spec] of Object.entries(ROWS))assert.deepEqual(r.rows[k],spec,k);
-   assert.deepEqual(r.branches,[['east','rome',395,1099,2],['west','rome',476,843,4],['france','west',843,987,5],['germany','west',843,1106,4],['italy','west',843,1091,3],['faith','trunk',-1400,1153,6],['china',null,-7000,845,8]]);
+   assert.deepEqual(r.branches,[['east','rome',395,1099,2],['west','rome',476,843,4],['france','west',843,987,5],['germany','west',843,1216,4],['italy','west',843,1216,3],['faith','trunk',-1400,1216,6],['china',null,-7000,845,8]]);
    assert.deepEqual(r.ends,[['trunk',-30,'并入罗马'],['rome',476,'西罗马终结'],['west',843,'凡尔登三分']]);
-   for(const f of [['france',987,'卡佩王朝'],['germany',1106,'霍亨施陶芬王朝'],['italy',1091,'西西里王国与北意城市']])assert.ok(r.futures.some(x=>JSON.stringify(x)===JSON.stringify(f)),f[0]+' shoot');
+   for(const f of [['france',987,'卡佩王朝'],['germany',1216,'腓特烈二世与大空位'],['italy',1216,'归尔甫派与吉伯林派']])assert.ok(r.futures.some(x=>JSON.stringify(x)===JSON.stringify(f)),f[0]+' shoot');
    assert.ok(!r.futures.some(f=>f[0]==='west'),'中世纪西欧 ends at Verdun instead of growing a shoot');
    assert.deepEqual(r.parallel,PARALLEL);
    // 老无’s theses in bold; corrections in plain text; one or two moments a scene; the reading links.

@@ -23,7 +23,7 @@ const treeReport=sel=>{
   timeOrder:HISTORY_ERAS.flatMap(era=>era.items.map(([id,from=0])=>id+'/'+from)).map((k,i)=>[k,TREE_ROWS[k][1],i]).sort((a,b)=>a[1]-b[1]||a[2]-b[2]).map(x=>x[0])};
 };
 function checkTree(r,label){
- assert.equal(r.items.length,161,label);
+ assert.equal(r.items.length,169,label);
  // Navigation order (DOM order) is the time order, and it reads top to bottom.
  assert.deepEqual(r.items.map(i=>i.key),r.timeOrder,label+' rows follow the time order');
  for(let i=1;i<r.items.length;i++)assert.ok(r.items[i].top>r.items[i-1].top,label+' row order runs top to bottom at '+r.items[i].key);
@@ -121,7 +121,11 @@ function checkTree(r,label){
   await p.keyboard.press('ArrowDown');s=await state(p);assert.deepEqual([s.id,s.scene],['history-faith-urban',0]);
   await p.keyboard.press('ArrowDown');s=await state(p);assert.deepEqual([s.id,s.scene],['history-faith-crusade',0]);
   await p.keyboard.press('ArrowDown');s=await state(p);assert.deepEqual([s.id,s.scene],['history-faith-citeaux',0]);
+  await p.keyboard.press('ArrowDown');s=await state(p);assert.deepEqual([s.id,s.scene],['history-germany-worms',0]);
+  await p.keyboard.press('ArrowDown');s=await state(p);assert.deepEqual([s.id,s.scene],['history-faith-cardinals',0]);
   await p.keyboard.press('ArrowDown');s=await state(p);assert.deepEqual([s.id,s.scene],['history-crusade-second',0]);
+  await p.keyboard.press('ArrowDown');s=await state(p);assert.deepEqual([s.id,s.scene],['history-germany-barbarossa',0]);
+  await p.keyboard.press('ArrowDown');s=await state(p);assert.deepEqual([s.id,s.scene],['history-germany-innocent',0]);
   assert.ok(await p.$eval('#next',e=>e.disabled),'end of the 基督教 line');
   await p.click('#toc .tree-item[data-key="history-faith-israel/0"]');
   // Clicking a top header pill jumps to that line’s start time; switching in place (in the tree below) keeps the section and scroll.
@@ -173,7 +177,7 @@ function checkTree(r,label){
   await p.evaluate(()=>go('history-palaces'));await p.click('#toc .tree-line[data-line="rome"]');s=await state(p);
   assert.equal(s.id,'history-rome-site');
   // A full ride on each line from the root: every ↓ lands lower in the tree, and the footer counts stations.
-  for(const [line,startId,count,last] of [['trunk','history-migration',23,'history-hellenistic-end'],['rome','history-migration',33,'history-empire-west-end'],['east','history-migration',48,'history-faith-crusade'],['west','history-migration',40,'history-west-louis-pious'],['spain','history-migration',43,'history-spain-crusade'],['france','history-migration',41,'history-france-west-francia'],['germany','history-migration',46,'history-germany-canossa'],['italy','history-migration',43,'history-italy-normans'],['faith','history-migration',33,'history-crusade-second'],['egypt','history-migration',12,'history-arab-conquest'],['persia','history-migration',27,'history-crusade-end'],['eeurope','history-migration',14,'history-eeurope-byzantium'],['crusade','history-migration',44,'history-crusade-orders'],['crusade','history-migration',44,'history-crusade-orders'],['china','history-china-neolithic',12,'history-china-tang']]){
+  for(const [line,startId,count,last] of [['trunk','history-migration',23,'history-hellenistic-end'],['rome','history-migration',33,'history-empire-west-end'],['east','history-migration',48,'history-faith-crusade'],['west','history-migration',40,'history-west-louis-pious'],['spain','history-migration',43,'history-spain-crusade'],['france','history-migration',41,'history-france-west-francia'],['germany','history-migration',51,'history-germany-innocent'],['italy','history-migration',48,'history-germany-innocent'],['faith','history-migration',37,'history-germany-innocent'],['egypt','history-migration',12,'history-arab-conquest'],['persia','history-migration',27,'history-crusade-end'],['eeurope','history-migration',14,'history-eeurope-byzantium'],['crusade','history-migration',44,'history-crusade-orders'],['crusade','history-migration',44,'history-crusade-orders'],['china','history-china-neolithic',12,'history-china-tang']]){
    await p.click(`#toc .tree-line[data-line="${line}"]`);await p.evaluate(id=>go(id),startId);await p.focus('#toc .tree-item.on');
    let lastTop=-1;
    for(let i=0;i<count;i++){
@@ -250,6 +254,6 @@ function checkTree(r,label){
    await m.close();
   }
   assert.deepEqual(errors,[]);
-  console.log('PASS: history tree — 161 rows on 13 lines (希腊, 罗马, 东罗马, 中世纪西欧, 西班牙, 法兰西, 德意志, 意大利, 基督教, 埃及, 波斯—阿拉伯, 东欧, 中国) with 10 forks (东欧 off 希腊 at the Black Sea colonies, 埃及 and 波斯—阿拉伯 off the trunk at the early states, 基督教 at 前1400 on the outermost lane, 东罗马 off 罗马 at 395 and 中世纪西欧 at 476, 西班牙 off 中世纪西欧 with the Visigoths, 法兰西 and 意大利 at Verdun; 东罗马 to 1056, 基督教 through its shared stations to 1054); every earlier start sits higher; no overlapping rows, the five time slices included; nodes on their lanes; Rome beside Greece and the Hellenistic kingdoms; unwritten topics as dashed shoots; time ticks and compressed-prehistory breaks; metro lines: pick a line (button or the drawn line itself) in place, ↑↓ / 上一条 / 下一条 ride only that line in time order, line lit root-to-fork, everything else greyed; draggable, remembered, clamped column; sidebar at 1440 and 1024; expanded view with branch names; phone and short-landscape sheets; geography mode untouched; offline; no page errors.');
+  console.log('PASS: history tree — 169 rows on 13 lines (希腊, 罗马, 东罗马, 中世纪西欧, 西班牙, 法兰西, 德意志, 意大利, 基督教, 埃及, 波斯—阿拉伯, 东欧, 中国) with 10 forks (东欧 off 希腊 at the Black Sea colonies, 埃及 and 波斯—阿拉伯 off the trunk at the early states, 基督教 at 前1400 on the outermost lane, 东罗马 off 罗马 at 395 and 中世纪西欧 at 476, 西班牙 off 中世纪西欧 with the Visigoths, 法兰西 and 意大利 at Verdun; 东罗马 to 1056, 基督教 through its shared stations to 1054); every earlier start sits higher; no overlapping rows, the five time slices included; nodes on their lanes; Rome beside Greece and the Hellenistic kingdoms; unwritten topics as dashed shoots; time ticks and compressed-prehistory breaks; metro lines: pick a line (button or the drawn line itself) in place, ↑↓ / 上一条 / 下一条 ride only that line in time order, line lit root-to-fork, everything else greyed; draggable, remembered, clamped column; sidebar at 1440 and 1024; expanded view with branch names; phone and short-landscape sheets; geography mode untouched; offline; no page errors.');
  }catch(e){console.error(e);process.exitCode=1;}finally{await browser.close();}
 })();

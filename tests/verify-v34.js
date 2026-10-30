@@ -80,7 +80,7 @@ const BOLD=[['history-faith-three-chapters/1','教义之争背后的权力格局
    assert.deepEqual(r.ends,[['trunk',-30,'rome'],['rome',476,null],['west',843,null]]);
    // Every line either grows a shoot or ends with an event.
    for(const b of r.branches)assert.ok(r.futures.some(f=>f[0]===b[0])||r.ends.some(e=>e[0]===b[0]),b[0]+' ends without an event');
-   assert.deepEqual(r.futures.sort(),[['china',845],['crusade',1312],['east',1099],['eeurope',1054],['egypt',642],['faith',1153],['france',987],['germany',1106],['italy',1091],['persia',1291],['spain',1123]]);
+   assert.deepEqual(r.futures.sort(),[['china',845],['crusade',1312],['east',1099],['eeurope',1054],['egypt',642],['faith',1216],['france',987],['germany',1216],['italy',1216],['persia',1291],['spain',1123]]);
    // Shared stations: one section, on each of its lines.
    for(const [k,lines] of Object.entries(SHARED)){assert.deepEqual(r.shared[k].lines,lines);assert.deepEqual(r.shared[k].on.sort(),[...lines].sort());assert.equal(r.shared[k].entries,1);}
    // 老无's own words, verbatim and bold.
@@ -108,7 +108,7 @@ const BOLD=[['history-faith-three-chapters/1','教义之争背后的权力格局
    assert.ok(['france','germany','italy'].every(l=>t.forkY[l]===t.endY.west),'the heirs of Verdun fork where 中世纪西欧 ends');
    assert.ok(t.forkY.spain>t.forkY.west&&t.forkY.spain<t.endY.west,'西班牙 leaves 中世纪西欧 on the way, with the Visigoths');
    for(const k of ['war','arab']){assert.equal(t[k].length,3,k+' node on each line');assert.equal(new Set(t[k].map(p=>p[1])).size,1,k+' copies level');assert.equal(new Set(t[k].map(p=>p[0])).size,3);}
-   assert.equal(t.swaps,22,'interchanges (v40: seven more on the 十字军 line): the Persian war, the Arab conquests, the sieges of Constantinople, Tariq’s crossing, Otto’s crowning, the Rus and Byzantium, four East Roman stations shared with 基督教, and (老无 2026-10-29) the investiture contest, Canossa, the holy war in Spain, Manzikert and the First Crusade');assert.equal(t.rows,1,'one row for the shared station');assert.match(t.where,/东罗马、波斯—阿拉伯、埃及/);
+   assert.equal(t.swaps,26,'interchanges (v40: seven more on the 十字军 line; v42: Worms, Barbarossa, Henry VI and Innocent III on two and three lines): the Persian war, the Arab conquests, the sieges of Constantinople, Tariq’s crossing, Otto’s crowning, the Rus and Byzantium, four East Roman stations shared with 基督教, and (老无 2026-10-29) the investiture contest, Canossa, the holy war in Spain, Manzikert and the First Crusade');assert.equal(t.rows,1,'one row for the shared station');assert.match(t.where,/东罗马、波斯—阿拉伯、埃及/);
    assert.deepEqual(t.on,['history-empire-heraclius/0','history-empire-heraclius/0','history-empire-heraclius/0'],'a shared station lights up on all its lines');
    // Lighting: the chosen line, its ends and merges.
    const light=await page.evaluate((sel)=>{
