@@ -706,14 +706,14 @@
    "德意志",
    "west",
    843,
-   1216,
+   1273,
    4
   ],
   "italy": [
    "意大利",
    "west",
    843,
-   1216,
+   1302,
    3
   ],
   "spain": [
@@ -727,7 +727,7 @@
    "基督教",
    "trunk",
    -1400,
-   1216,
+   1309,
    6
   ],
   "east": [
@@ -748,18 +748,18 @@
  "futures": [
   [
    "germany",
-   1216,
-   "腓特烈二世与大空位"
+   1273,
+   "选帝侯与哈布斯堡"
   ],
   [
    "italy",
-   1216,
-   "归尔甫派与吉伯林派"
+   1302,
+   "城市共和国与文艺复兴"
   ],
   [
    "faith",
-   1216,
-   "托钵修会"
+   1309,
+   "阿维尼翁与大分裂"
   ],
   [
    "spain",
@@ -788,7 +788,8 @@
    "history-germany-staufer/0",
    "history-germany-barbarossa/0",
    "history-germany-henry6/0",
-   "history-germany-innocent/0"
+   "history-germany-innocent/0",
+   "history-germany-frederick2/0"
   ],
   "italy": [
    "history-germany-otto/0",
@@ -797,7 +798,9 @@
    "history-italy-sicily/0",
    "history-germany-barbarossa/0",
    "history-germany-henry6/0",
-   "history-germany-innocent/0"
+   "history-germany-innocent/0",
+   "history-germany-frederick2/0",
+   "history-italy-vespers/0"
   ],
   "faith": [
    "history-faith-leo-ix/0",
@@ -812,7 +815,10 @@
    "history-faith-cardinals/0",
    "history-crusade-second/0",
    "history-germany-barbarossa/0",
-   "history-germany-innocent/0"
+   "history-germany-innocent/0",
+   "history-germany-frederick2/0",
+   "history-faith-scholasticism/0",
+   "history-france-stlouis/0"
   ],
   "spain": [
    "history-spain-andalus/0",

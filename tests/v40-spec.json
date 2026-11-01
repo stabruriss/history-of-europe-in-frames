@@ -952,7 +952,7 @@
    "基督教",
    "trunk",
    -1400,
-   1216,
+   1309,
    6
   ]
  },
@@ -969,8 +969,8 @@
   ],
   [
    "faith",
-   1216,
-   "托钵修会"
+   1309,
+   "阿维尼翁与大分裂"
   ]
  ],
  "tails": {
@@ -1011,7 +1011,10 @@
    "history-faith-cardinals/0",
    "history-crusade-second/0",
    "history-germany-barbarossa/0",
-   "history-germany-innocent/0"
+   "history-germany-innocent/0",
+   "history-germany-frederick2/0",
+   "history-faith-scholasticism/0",
+   "history-france-stlouis/0"
   ]
  },
  "shared": {
