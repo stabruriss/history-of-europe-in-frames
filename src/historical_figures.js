@@ -11919,7 +11919,7 @@ const FIGURE_SCENES={
       "place": "uk4_caen"
     }
   ],
-  "history-britain-henry2/2": [
+  "history-britain-henry2/3": [
     {
       "id": "henry-ii-england",
       "when": "1153—1154年",
@@ -11928,7 +11928,7 @@ const FIGURE_SCENES={
       "place": "uk5_winchester"
     }
   ],
-  "history-britain-henry2/3": [
+  "history-britain-henry2/4": [
     {
       "id": "henry-ii-england",
       "when": "1166—1179年",
@@ -11937,7 +11937,7 @@ const FIGURE_SCENES={
       "place": "uk5_clarendon"
     }
   ],
-  "history-britain-henry2/4": [
+  "history-britain-henry2/5": [
     {
       "id": "thomas-becket",
       "when": "1162—1170年",
@@ -11946,7 +11946,7 @@ const FIGURE_SCENES={
       "place": "w_canterbury"
     }
   ],
-  "history-britain-henry2/5": [
+  "history-britain-henry2/6": [
     {
       "id": "henry-ii-england",
       "when": "1174年7月12—13日",

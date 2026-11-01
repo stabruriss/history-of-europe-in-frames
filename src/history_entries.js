@@ -1123,6 +1123,7 @@ Object.assign(HS,{
   uk5_northampton:['北安普敦','Northampton',52.237,-0.903,'英格兰中部重镇；1164年亨利二世在此审判贝克特，1176年颁布法令将全国划为六个巡回审判区。'],
   uk5_avranches:['阿夫朗什','Avranches',48.684,-1.357,'诺曼底西南主教城；1172年5月亨利二世在此向教宗使节发誓并非蓄意杀害贝克特，达成折中。'],
   uk5_alnwick:['阿尼克','Alnwick',55.416,-1.706,'诺森伯兰要塞；1174年7月13日亨利二世在坎特伯雷受鞭次日，英军在此活捉入侵的苏格兰王威廉一世。'],
+  uk5_cardiff:['加的夫城堡','Cardiff Castle',51.482,-3.181,'南威尔士诺曼要塞；长兄罗贝尔1106年兵败被俘后，被亨利一世终身囚禁至1134年八十余岁死于此堡。'],
   uk6_dublin:['都柏林','Dublin',53.344,-6.267,'841年维京人建船营起家的海港重镇；1170年被强弓手攻占，后成为英王统治爱尔兰的首府。'],
   uk6_clontarf:['克朗塔夫','Clontarf',53.363,-6.208,'都柏林湾北岸战场；1014年4月23日布莱恩·博鲁在此击溃都柏林维京与伦斯特联军并战死。'],
   uk6_waterford:['沃特福德','Waterford',52.26,-7.107,'爱尔兰东南的维京海港城；1170年8月强弓手攻陷此城并娶伦斯特公主伊娃，1171年10月亨利二世在此登陆。'],
@@ -7205,18 +7206,26 @@ const HISTORY_ENTRIES=[
     hp(d,'uk4_caen',{left:1,note:'威廉一世遗体运至此地圣斯德望修道院安葬，葬礼上遭原房主之子阿塞林拦棺索地。'});
    },[['fill',HC.britain,'《末日审判书》清查的英格兰王国（1086年）'],['fill',HC.war,'留给长子罗贝尔的诺曼底公国'],['fill',HC.france,'法王腓力一世的王室领地'],['dot',HC.war,'1087年7月焚掠芒特'],['dot','#2a2018','格洛斯特、温彻斯特、鲁昂与卡昂']])
  ]},
-{id:'history-britain-henry2',ch:12,title:'亨利二世：降低司法成本的陪审团与主教墓前的鞭子',short:'亨利二世与普通法',en:'Henry II: Juries to Cut the Cost of Justice and the Lash at Becket’s Tomb',period:'1100—1189年',c:HC.britain,
+{id:'history-britain-henry2',ch:12,title:'亨利二世：降低司法成本的陪审团与主教墓前的鞭子',short:'亨利二世与普通法',en:'Henry II: Juries to Cut the Cost of Justice and the Lash at Becket’s Tomb',period:'1087—1189年',c:HC.britain,
  scenes:[
-  hs('1100—1135年','棋盘署与白船海难','1100年亨利一世在温彻斯特夺取金库、在伦敦加冕，1106年在坦什布赖击败兄长夺回诺曼底；1120年独子威廉于巴夫勒尔“白船”海难溺亡，1128年玛蒂尔达在勒芒嫁安茹伯爵。',[[47.0,-3.5],[53.5,3.0]],d=>{
+  hs('1087—1100年','三个儿子的遗产与新森林的冷箭','1087年威廉一世在鲁昂临终分家：罗贝尔得诺曼底、红毛威廉得英格兰、亨利得五千磅银；1096年罗贝尔抵押诺曼底东征；1100年8月红毛威廉在新森林中箭暴毙，亨利抢金库加冕。',[[39.5,-3.5],[53.2,18.0]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});ha(d,'mNormandy933',HC.war,{fillOpacity:.28});ha(d,'mNormanItaly1091',HC.celt,{fillOpacity:.22});
+    hp(d,'fr_rouen',{left:1,note:'1087年9月威廉一世在此临终：长子罗贝尔得诺曼底，次子红毛威廉得英格兰，四子亨利只得五千磅银；1096年罗贝尔将诺曼底抵押给红毛威廉。'});
+    hp(d,'b_bari',{note:'1100年夏，长兄罗贝尔自耶路撒冷归途在南意大利阿普利亚迎娶富家女西比拉，得巨额嫁妆准备回诺曼底赎地。'});
+    hp(d,'uk5_newforest',{kind:'battle',left:1,note:'1100年8月2日傍晚，红毛威廉带四弟亨利等人在新森林打猎，胸中冷箭暴毙，尸首被弃林中。'});
+    hp(d,'uk5_winchester',{note:'亨利从林中直接策马狂奔至此，拔剑逼看守官交出王室金库。'});
+    hp(d,'k_london',{note:'1100年8月5日，赶在长兄罗贝尔返抵诺曼底前一个月，亨利在威斯敏斯特火速加冕为亨利一世。'});
+    hr(d,[[41.13,16.87],[45.5,9.0],[49.44,1.10]],HC.route);
+   },[['fill',HC.britain,'红毛威廉与亨利一世先后夺取的英格兰'],['fill',HC.war,'长兄罗贝尔抵押出去的诺曼底公国'],['fill',HC.celt,'罗贝尔归途娶妻筹赎金的南意大利'],['dline',HC.route,'1100年夏秋长兄罗贝尔自南意大利返诺曼底路线（概略）'],['dot',HC.war,'新森林冷箭命案（1100年8月2日）'],['dot','#2a2018','鲁昂、巴里、温彻斯特与伦敦']]),
+  hs('1100—1135年','终身囚兄、棋盘署与白船海难','1106年亨利一世在坦什布赖活捉长兄罗贝尔，终身囚于加的夫城堡；设棋盘署管账；1120年独子威廉于巴夫勒尔“白船”海难溺亡，1128年玛蒂尔达在勒芒嫁安茹伯爵。',[[47.0,-4.0],[53.5,3.0]],d=>{
     ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'mNormandy933',HC.war,{fillOpacity:.28});
     ha(d,'mAnjou1100',HC.celt,{fillOpacity:.22});ha(d,'mCapetDomain987',HC.france,{fillOpacity:.22,dashArray:'4 4'});
-    hp(d,'uk5_newforest',{left:1,note:'1100年8月2日，威廉二世在此打猎时被冷箭射死。'});
-    hp(d,'uk5_winchester',{note:'亨利一世当即驰往温彻斯特夺下王室金库。'});
-    hp(d,'k_london',{note:'1100年8月5日亨利一世在威斯敏斯特加冕；棋盘署每半年在此核对各郡郡长账目。'});
     hp(d,'uk5_tinchebray',{kind:'battle',left:1,note:'1106年9月28日，亨利一世在此大败并活捉长兄罗贝尔，重并诺曼底。'});
-    hp(d,'uk5_barfleur',{left:1,note:'1120年11月25日夜，十七岁独子威廉所乘“白船”在此出港触礁沉没。'});
+    hp(d,'uk5_cardiff',{left:1,note:'长兄罗贝尔被亨利一世终身囚禁在威尔士加的夫城堡二十八年，1134年八十余岁死于狱中。'});
+    hp(d,'k_london',{note:'棋盘署每半年在威斯敏斯特摆算筹核对各郡郡长账目。'});
+    hp(d,'uk5_barfleur',{left:1,note:'1120年11月25日夜，十七岁婚生独子威廉所乘“白船”在此出港触礁沉没。'});
     hp(d,'pl_lemans',{note:'1128年6月，守寡归来的玛蒂尔达在此嫁给安茹伯爵继承人若弗鲁瓦。'});
-   },[['fill',HC.britain,'英格兰王国'],['fill',HC.war,'1106年重并的诺曼底公国'],['fill',HC.celt,'联姻结盟的安茹伯国'],['dash',HC.france,'卡佩王室直辖领地'],['dot',HC.war,'坦什布赖之战（1106年）'],['dot','#2a2018','新森林、温彻斯特、伦敦、巴夫勒尔与勒芒']]),
+   },[['fill',HC.britain,'英格兰王国'],['fill',HC.war,'1106年重并的诺曼底公国'],['fill',HC.celt,'联姻结盟的安茹伯国'],['dash',HC.france,'卡佩王室直辖领地'],['dot',HC.war,'坦什布赖之战（1106年）'],['dot','#2a2018','加的夫城堡、伦敦、巴夫勒尔与勒芒']]),
   hs('1135—1154年','十九年“无政府时代”与违章城堡','1135年斯蒂芬在温彻斯特与伦敦抢位；1139—1153年内战中林肯、温彻斯特、牛津反复拉锯，各地领主私筑违章城堡，《彼得伯勒编年史》记下战乱惨状。',[[50.3,-3.8],[54.2,1.5]],d=>{
     ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});ha(d,'mWales',HC.celt,{fillOpacity:.2});ha(d,'mScotland1200',HC.celt,{fillOpacity:.18,dashArray:'4 4'});
     hp(d,'k_london',{note:'1135年12月斯蒂芬在此加冕；1141年夏伦敦市民起兵轰走准备加冕的玛蒂尔达。'});
@@ -7756,7 +7765,7 @@ const TREE_ROWS={
  'history-britain-ireland/0':['britain',432,664,'约350—664年'],
  'history-britain-anglosaxon/0':['britain',665,927,'约410—927年'],
  'history-britain-norman/0':['britain',978,1087],
- 'history-britain-henry2/0':[['britain','france'],1154,1189,'1100—1189年'],
+ 'history-britain-henry2/0':[['britain','france'],1154,1189,'1087—1189年'],
  'history-britain-norman-ireland/0':['britain',1169,1210,'1014—1210年'],
  'history-britain-richard/0':[['britain','france'],1189,1214,'1173—1214年'],
  'history-britain-magnacarta/0':['britain',1215,1272,'1215—1295年'],

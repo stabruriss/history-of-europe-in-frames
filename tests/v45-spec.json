@@ -32,8 +32,8 @@
   ],
   "history-britain-henry2": [
    "亨利二世与普通法",
-   "1100—1189年",
-   6,
+   "1087—1189年",
+   7,
    12
   ],
   "history-britain-norman-ireland": [
@@ -197,23 +197,23 @@
    "1066年诺曼征服是外人一次性武装接管全境，使英格兰从起点上就是西欧王权最硬、抽"
   ],
   [
-   "history-britain-henry2/2",
+   "history-britain-henry2/3",
    "收拢基层司法权和军权有很多种方法，只要国王实力够强就能收——亨利二世靠的是横跨英"
   ],
   [
-   "history-britain-henry2/3",
+   "history-britain-henry2/4",
    "陪审团和普通法只是亨利二世降低司法成本的措施；普通法并不是提前计划好或设计出来的"
   ],
   [
-   "history-britain-henry2/3",
+   "history-britain-henry2/4",
    "在亨利二世之前，神判法用火烧水淹降低司法成本，欧洲有用决斗降低司法成本，中国有的"
   ],
   [
-   "history-britain-henry2/3",
+   "history-britain-henry2/4",
    "陪审团不是巡回法官带的，而是在当地找来十二名知情乡贤起誓参与判案以降低司法成本；"
   ],
   [
-   "history-britain-henry2/4",
+   "history-britain-henry2/5",
    "没想到贝克特一穿上大主教道袍，就像当年东罗马的金口约翰一样彻底变脸"
   ],
   [
@@ -355,18 +355,22 @@
   "history-britain-henry2": [
    [
     0,
-    "白船与唯一的幸存者"
+    "新森林的冷箭与拔剑抢金库"
    ],
    [
     1,
+    "白船与唯一的幸存者"
+   ],
+   [
+    2,
     "“基督和众圣徒都睡着了”"
    ],
    [
-    4,
+    5,
     "锦袍底下的生虱毛衣"
    ],
    [
-    5,
+    6,
     "背出“脖颈经文”免死刑"
    ]
   ],
@@ -664,18 +668,22 @@
   ],
   [
    "history-britain-henry2/0",
-   "在方格桌布上摆算筹核对各郡郡长半年账目"
+   "把诺曼底以一万马克抵押给红毛威廉"
   ],
   [
    "history-britain-henry2/1",
+   "在方格桌布上摆算筹核对各郡郡长半年账目"
+  ],
+  [
+   "history-britain-henry2/2",
    "领主私筑上千座“违章城堡”"
   ],
   [
-   "history-britain-henry2/4",
+   "history-britain-henry2/5",
    "四名骑士渡海进座堂削掉贝克特头盖骨"
   ],
   [
-   "history-britain-henry2/5",
+   "history-britain-henry2/6",
    "让八十名修士轮流鞭打谢罪"
   ],
   [
@@ -806,5 +814,5 @@
   "mNormanIreland1210",
   "mGaelicIreland1210"
  ],
- "pass": "不列颠 — 10 sections (55 scenes) on a new line and chapter ⅩⅢ: Doggerland and Stonehenge to Caesar's raids, Roman Britain and Hadrian's Wall, Ireland's monasteries and Whitby, the Heptarchy, Vikings and Alfred the Great, Cnut and the Norman Conquest, Henry II's juries and Becket, the Normans in Ireland, Richard the Lionheart and Lackland John, Magna Carta and Parliament, Edward I's Wales and Scottish wars; 31 of 老无’s points in bold, 36 facts set right in plain text; 6 豆腐块"
+ "pass": "不列颠 — 10 sections (56 scenes) on a new line and chapter ⅩⅢ: Doggerland and Stonehenge to Caesar's raids, Roman Britain and Hadrian's Wall, Ireland's monasteries and Whitby, the Heptarchy, Vikings and Alfred the Great, Cnut and the Norman Conquest, Henry II's juries and Becket, the Normans in Ireland, Richard the Lionheart and Lackland John, Magna Carta and Parliament, Edward I's Wales and Scottish wars; 31 of 老无’s points in bold, 37 facts set right in plain text; 6 豆腐块"
 }
