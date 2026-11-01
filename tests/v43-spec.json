@@ -395,7 +395,7 @@
    "trunk",
    -1400,
    1309,
-   6
+   7
   ]
  },
  "futures": [
@@ -425,6 +425,8 @@
    "history-france-west-francia/0",
    "history-france-capet/0",
    "history-france-plantagenet/0",
+   "history-britain-henry2/0",
+   "history-britain-richard/0",
    "history-france-stlouis/0"
   ],
   "germany": [

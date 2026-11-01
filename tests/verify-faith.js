@@ -39,7 +39,7 @@ const IDS_ALL=[...IDS,'history-faith-carolingian','history-faith-dark-century','
    assert.deepEqual(report.ids,IDS_ALL);assert.deepEqual(report.scenes,[5,5,4,6,4,4,3,3,3,6,5,8,6,4,4,5,5,4,5,6,5]);
    assert.ok(report.paras.every(p=>p.chars<=230),'Concise: '+JSON.stringify(report.paras.filter(p=>p.chars>230)));
    assert.ok(report.bold);assert.equal(report.moments,82);assert.equal(report.people,63);
-   assert.deepEqual(report.branch,['基督教',6,'trunk',-1400,1309,true]);assert.equal(report.levant,false);
+   assert.deepEqual(report.branch,['基督教',7,'trunk',-1400,1309,true]);assert.equal(report.levant,false);
    assert.deepEqual(report.eras,[['faith-israel','古代以色列',IDS.slice(0,2)],['faith-temple','第二圣殿时期',IDS.slice(2,4)],['faith-church','早期教会',IDS.slice(4,9)],['faith-medieval','中世纪早期的教会',IDS.slice(9)],['faith-carolingian','加洛林时代的教会',['history-faith-carolingian']],['faith-reform','帝国与教会改革',['history-faith-dark-century','history-faith-imperial-church','history-faith-cluny','history-faith-leo-ix']],['faith-crusade','乌尔班二世与十字军的号召',['history-faith-urban']],['faith-orders','修会的兴替',['history-faith-citeaux']],['faith-cardinals','枢机团与两个教宗',['history-faith-cardinals']],['faith-scholasticism','大学与经院哲学',['history-faith-scholasticism']]]);
    // The line now forks off before 卡迭石: the Hebrews' nomadic origins come first.
    // After 641 the line runs through the shared stations of the East Roman dynasties.
