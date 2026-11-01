@@ -71,6 +71,8 @@ const S=JSON.parse(fs.readFileSync(path.join(__dirname,'v43-spec.json'),'utf8'))
     for(const [id,sc,name,ok] of r.boxes)assert.ok(ok,id+' lacks the 豆腐块 '+name+' at scene '+sc);
     for(const [id,name,w,ok] of r.boxfixes)assert.ok(ok,id+' 豆腐块 '+name+' lacks the plain-text correction: '+w);
     assert.ok(r.kintree,'Capet–Plantagenet marriage and land diagram in history-france-plantagenet');
+    const tp=await page.evaluate(()=>{const e=TOPIC_ENTRIES.find(x=>x.id==='topic-paper-power');return e&&[e.num,e.scenes.length,e.boxes.length,e.sources.length,e.html.includes('十字军东征与地中海贸易带来的低成本造纸术')&&e.html.includes('本质上是各方使用平民精英的边际收益不同')&&!e.html.includes('Louis the Pious')];});
+    assert.deepEqual(tp,['09',4,1,5,true],'topic-paper-power (09)');
     for(const [id,list] of Object.entries(S.moments))assert.deepEqual(r.moments[id],list,id+' moments');
     for(const [id,n] of r.momentsPerScene)assert.ok(n<=2,id+' has more than two moments in one scene');
     for(const [id,n,bad,dup] of r.sources)assert.ok(n>=8&&!bad&&!dup,id+' reading links '+JSON.stringify([n,bad,dup]));
