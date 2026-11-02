@@ -57,7 +57,7 @@
   "history-faith-constance": [
    "教会大分裂（下）",
    "1378—1449年",
-   9,
+   11,
    6
   ],
   "history-italy-blackdeath": [
@@ -398,23 +398,27 @@
    "亚历山大五世很快去世，上来的约翰二十三世又好色又猥琐，很快就没人跟随了"
   ],
   [
-   "history-faith-constance/3",
+   "history-faith-constance/4",
    "德国国王西吉斯蒙德收留了约翰二十三世，借机又开了一次大公会议，废了三个教宗，选出"
   ],
   [
-   "history-faith-constance/4",
+   "history-faith-constance/5",
    "马丁五世死后上来一个尤金四世，事情出现了转机：本来国王们支持大公会议高于教宗，结"
   ],
   [
-   "history-faith-constance/5",
+   "history-faith-constance/6",
    "正好东边被奥斯曼打，希望再来一次十字军，于是联系尤金四世，搞了个东西教会合并，尤"
   ],
   [
-   "history-faith-constance/6",
+   "history-faith-constance/7",
+   "巴塞尔会议于是失去了国王们的支持"
+  ],
+  [
+   "history-faith-constance/8",
    "这期间教义问题又继续深入，甚至出现了说圣经解释权不在教廷的一派，当然受到皇帝国王"
   ],
   [
-   "history-faith-constance/7",
+   "history-faith-constance/9",
    "其中一人被皇帝开了个保护状去大公会议讨论，结果被烧死了"
   ],
   [
@@ -583,15 +587,15 @@
   ],
   "history-faith-constance": [
    [
-    3,
+    4,
     "扮成信差溜走的教宗"
    ],
    [
-    4,
+    5,
     "台伯河上的石头雨"
    ],
    [
-    7,
+    9,
     "烤鹅与天鹅"
    ]
   ],
@@ -647,7 +651,7 @@
   ],
   "history-faith-constance": [
    [
-    8,
+    10,
     "从“三个教宗”到胡斯战车：宗教改革为什么挡不住"
    ]
   ],
@@ -1032,15 +1036,15 @@
    "1377年在切塞纳屠城的布列塔尼雇佣兵"
   ],
   [
-   "history-faith-constance/2",
-   "1412年又给钱承认对方"
+   "history-faith-constance/3",
+   "1412年6月约翰二十三世反过来答应付七万五千弗罗林"
   ],
   [
-   "history-faith-constance/5",
+   "history-faith-constance/6",
    "1261年希腊人收复京城，拉丁牧首出逃，希腊牧首回来复位"
   ],
   [
-   "history-faith-constance/7",
+   "history-faith-constance/9",
    "会议坚持世俗通行证管不着异端审判"
   ],
   [
@@ -1066,6 +1070,30 @@
   [
    "history-italy-blackdeath/4",
    "2月9日斯特拉斯堡行会造反"
+  ],
+  [
+   "history-faith-schism/5",
+   "史称“八圣徒战争”，得名于佛罗伦萨主事的八人委员会"
+  ],
+  [
+   "history-faith-constance/2",
+   "据教廷文书尼海姆的迪特里希所记，博洛尼亚人公开传说"
+  ],
+  [
+   "history-faith-constance/2",
+   "两个兄弟当海盗"
+  ],
+  [
+   "history-faith-constance/5",
+   "巴塞尔会议就是照这条规矩召集、1431年7月开幕的"
+  ],
+  [
+   "history-faith-constance/6",
+   "巴塞尔会议要在巴塞尔、阿维尼翁或萨伏依跟希腊人谈"
+  ],
+  [
+   "history-faith-constance/7",
+   "只收下对法国有利的改革，不跟着逼教宗"
   ]
  ],
  "boxfixes": [
@@ -1169,5 +1197,5 @@
   "mNaplesAnjou1282",
   "mAragonCrown1282"
  ],
- "pass": "法兰西、基督教、德意志、意大利 on to ~1300 — 11 sections (74 scenes): Hugh Capet and Louis VI, the Plantagenets and Philip II (with the marriage-and-land diagram), Saint Louis to Philip IV and Anagni, universities and scholasticism, Frederick II and the Interregnum (with the 豆腐块 on seven excommunications of five emperors), and the Sicilian Vespers; shared stations across lines; 66 of 老无’s points in bold, 58 facts and their order set right in plain text; 7 豆腐块 with 14 corrections"
+ "pass": "法兰西、基督教、德意志、意大利 on to ~1300 — 11 sections (76 scenes): Hugh Capet and Louis VI, the Plantagenets and Philip II (with the marriage-and-land diagram), Saint Louis to Philip IV and Anagni, universities and scholasticism, Frederick II and the Interregnum (with the 豆腐块 on seven excommunications of five emperors), and the Sicilian Vespers; shared stations across lines; 67 of 老无’s points in bold, 64 facts and their order set right in plain text; 7 豆腐块 with 14 corrections"
 }

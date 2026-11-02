@@ -36,7 +36,7 @@ const IDS_ALL=[...IDS,'history-faith-carolingian','history-faith-dark-century','
      people:Object.entries(FIGURE_SCENES).filter(([k])=>k.startsWith('history-faith-')).reduce((n,[,v])=>n+v.length,0)};
    },IDS);
    assert.equal(report.chapter,'犹太教与基督教');
-   assert.deepEqual(report.ids,IDS_ALL);assert.deepEqual(report.scenes,[5,5,4,6,4,4,3,3,3,6,5,8,6,4,4,5,5,4,5,6,7,9,5,9,9]);
+   assert.deepEqual(report.ids,IDS_ALL);assert.deepEqual(report.scenes,[5,5,4,6,4,4,3,3,3,6,5,8,6,4,4,5,5,4,5,6,7,9,5,9,11]);
    assert.ok(report.paras.every(p=>p.chars<=230),'Concise: '+JSON.stringify(report.paras.filter(p=>p.chars>230)));
    assert.ok(report.bold);assert.equal(report.moments,96);assert.equal(report.people,74);
    assert.deepEqual(report.branch,['基督教',7,'trunk',-1400,1449,true]);assert.equal(report.levant,false);

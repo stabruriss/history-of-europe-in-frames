@@ -12397,7 +12397,7 @@ const FIGURE_SCENES={
       "note": "1376年6月凯瑟琳作为佛罗伦萨的使者到阿维尼翁，和没说成，却当面劝动格雷戈里十一世回罗马；大分裂爆发后她到罗马力挺乌尔班六世。"
     }
   ],
-  "history-faith-constance/6": [
+  "history-faith-constance/8": [
     {
       "id": "john-wycliffe",
       "when": "1377—1384年",
@@ -12405,7 +12405,7 @@ const FIGURE_SCENES={
       "note": "威克里夫在牛津主张《圣经》是最高权威、教士有罪国王可没收教产，主持把《圣经》译成英文；1377年被格雷戈里十一世谴责，靠王叔冈特的约翰保护，1384年善终。"
     }
   ],
-  "history-faith-constance/7": [
+  "history-faith-constance/9": [
     {
       "id": "jan-hus",
       "when": "1414—1415年",
@@ -12413,7 +12413,7 @@ const FIGURE_SCENES={
       "note": "1414年胡斯持西吉斯蒙德的安全通行证到康斯坦茨，三周多后被关押；1415年7月6日不肯认罪，被定为异端烧死。"
     }
   ],
-  "history-faith-constance/8": [
+  "history-faith-constance/10": [
     {
       "id": "jan-zizka",
       "when": "1419—1424年",
