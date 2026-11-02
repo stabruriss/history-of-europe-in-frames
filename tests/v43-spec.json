@@ -15,7 +15,7 @@
   "history-france-stlouis": [
    "圣路易与腓力四世",
    "1223—1314年",
-   6,
+   5,
    5
   ],
   "history-germany-frederick2": [
@@ -33,19 +33,31 @@
   "history-faith-scholasticism": [
    "经院哲学",
    "约1150—1303年",
-   5,
+   7,
    6
   ],
   "history-faith-avignon": [
-   "阿维尼翁之囚",
-   "1294—1377年",
-   6,
+   "阿维尼翁之囚（上）",
+   "1294—1303年",
+   9,
+   6
+  ],
+  "history-faith-clement": [
+   "阿维尼翁之囚（下）",
+   "1303—1314年",
+   5,
    6
   ],
   "history-faith-schism": [
-   "教会大分裂",
-   "1347—1439年",
-   8,
+   "教会大分裂（上）",
+   "1322—1379年",
+   9,
+   6
+  ],
+  "history-faith-constance": [
+   "教会大分裂（下）",
+   "1378—1449年",
+   9,
    6
   ]
  },
@@ -100,15 +112,30 @@
     "faith",
     "france"
    ],
-   1310,
-   1377
+   1296,
+   1303
+  ],
+  "history-faith-clement/0": [
+   [
+    "faith",
+    "france"
+   ],
+   1304,
+   1314
   ],
   "history-faith-schism/0": [
    [
     "faith"
    ],
-   1378,
-   1439
+   1322,
+   1379
+  ],
+  "history-faith-constance/0": [
+   [
+    "faith"
+   ],
+   1380,
+   1449
   ]
  },
  "bold": [
@@ -173,15 +200,15 @@
    "安茹伯爵帮教宗打西西里，杀了霍亨施陶芬家最后的继承人"
   ],
   [
-   "history-france-stlouis/4",
+   "history-france-stlouis/3",
    "圣路易的孙子腓力四世干出了殴打教宗的事，史称阿纳尼事件"
   ],
   [
-   "history-france-stlouis/5",
+   "history-france-stlouis/4",
    "后来法兰西又占了一片德意志的地里昂"
   ],
   [
-   "history-france-stlouis/5",
+   "history-france-stlouis/4",
    "对应皇帝和教宗斗争期间，法兰西就主打一个渔翁得利"
   ],
   [
@@ -226,131 +253,151 @@
   ],
   [
    "history-faith-scholasticism/2",
-   "当时经院哲学分化出三派光谱：一是巴黎艺学院的亚里士多德派（拉丁阿威罗伊派），奉逻"
+   "当时的光谱里，一头是亚里士多德派，奉逻辑至上"
   ],
   [
    "history-faith-scholasticism/3",
-   "1323年教宗约翰二十二世将阿奎那封圣，1325年巴黎撤销对阿奎那的禁令，托马斯"
+   "方济各会主张在上帝的框架内使用理性"
   ],
   [
    "history-faith-scholasticism/4",
+   "多明我会的阿奎那两头调和，搞的是和稀泥的托马斯主义"
+  ],
+  [
+   "history-faith-scholasticism/5",
    "有知识、讲逻辑的人多了，就对教宗至上和罗马教廷这些年推行的没什么道理的教义产生了"
   ],
   [
-   "history-faith-avignon/0",
-   "13世纪末教廷面临四重变局：经院哲学兴起令教宗权威下降（见“经院哲学”一节）；十"
+   "history-faith-scholasticism/6",
+   "最后是阿奎那封圣，调和派胜出"
   ],
   [
    "history-faith-avignon/0",
-   "内部佛系的约阿希姆派崛起后，1294年隐士塞莱斯廷五世当选教宗，可塞莱斯廷五世特"
+   "13世纪末，经院哲学兴起、十字军激情消退、德意志被绝罚打散，教宗的权威往下掉；渔"
   ],
   [
    "history-faith-avignon/1",
-   "英法战争开打后，英王爱德华一世与法王腓力四世为打仗相继对教产征税，与教廷产生矛盾"
-  ],
-  [
-   "history-faith-avignon/1",
-   "此时十字军主旋律已变成英法征战，教宗昔日两大帮手也不给力了——北意大利伦巴第同盟"
-  ],
-  [
-   "history-faith-avignon/1",
-   "偏偏卜尼法斯八世因1300年办罗马朝圣“大赦年”赚了不少钱，错误估计形势、特别飘"
+   "佛系的约阿希姆派崛起后，隐士塞莱斯廷五世被选为教宗，可他特别佛系，不愿管教廷，很"
   ],
   [
    "history-faith-avignon/2",
-   "既然和教宗闹翻，腓力四世便在1302年4月于巴黎圣母院召开“三级会议”：给第一等"
+   "接着选出罗马贵族出身的强硬派卜尼法斯八世；他跟另一家罗马贵族科隆纳有仇，上台就迫"
   ],
   [
    "history-faith-avignon/3",
-   "失去了在法国的支持，教廷的枢机主教们和罗马其余贵族趁机对卜尼法斯八世发难；130"
-  ],
-  [
-   "history-faith-avignon/3",
-   "这时死对头夏拉·科隆纳与法王大臣诺加雷找准机会，雇了一群雇佣兵在9月7日杀进阿纳"
+   "英法战争开打后，英王法王为了打仗相继对教产征税，跟教廷闹出了矛盾"
   ],
   [
    "history-faith-avignon/4",
-   "卜尼法斯八世死后选出佛系的本笃十一世，一上来就对法王各种妥协；法王得寸进尺要掘墓"
-  ],
-  [
-   "history-faith-avignon/4",
-   "这下鹰派鸽派都试过了、都不行，于是来了一个投机分子波尔多大主教贝尔特朗·德·戈特"
+   "十字军的主旋律变成了英法征战；教宗在意大利的两大帮手，北边的伦巴第同盟和南边的诺"
   ],
   [
    "history-faith-avignon/5",
-   "法王腓力四世欠圣殿骑士团钱不想还，就耍流氓摧毁骑士团：1307年10月13日黎明"
+   "卜尼法斯八世还特别飘：1300年罗马朝圣赚了不少钱，他错误估计了形势，跟腓力四世"
   ],
   [
-   "history-faith-avignon/5",
-   "教宗克莱芒五世不但不支持直属自己的骑士团，反在法王要挟下发令搜捕骑士，1312年"
+   "history-faith-avignon/6",
+   "既然和教宗闹翻，腓力四世就召开了三级会议"
+  ],
+  [
+   "history-faith-avignon/7",
+   "腓力四世给教士经济权和自治权，给贵族司法权，给平民参与权；平民基本只是重在参与，"
+  ],
+  [
+   "history-faith-avignon/8",
+   "失去了在法国的支持，枢机和罗马的其他贵族也趁机对教宗发难，卜尼法斯八世离开罗马回"
+  ],
+  [
+   "history-faith-clement/0",
+   "接着又选了个佛系的本笃十一世，一上来就对法王各种妥协；法王得寸进尺，还要审判卜尼"
+  ],
+  [
+   "history-faith-clement/1",
+   "这下鹰派鸽派都试过了，都不行，于是来了一个投机分子，在教廷装鹰上位"
+  ],
+  [
+   "history-faith-clement/2",
+   "上位之后对上强敌法王，克莱芒五世就开始装孙子，甚至直接把教廷搬到了阿维尼翁，任命"
+  ],
+  [
+   "history-faith-clement/3",
+   "法王欠圣殿骑士团的钱不想还，就耍流氓摧毁了骑士团，把人抓起来逼供，钱也没收了"
+  ],
+  [
+   "history-faith-clement/4",
+   "教宗不但不支持骑士团，还下令搜捕骑士、废除骑士团"
   ],
   [
    "history-faith-schism/0",
-   "阿维尼翁时期教会连遭重击：先受第一个大贯通事件“黑死病”（1347—1351）影"
-  ],
-  [
-   "history-faith-schism/0",
-   "内部教义纷争再起：阿奎那之后佛系了一阵，方济各会后辈出了个奥卡姆的威廉，主唯名论"
-  ],
-  [
-   "history-faith-schism/0",
-   "底层还兴起鲍格米勒派、东方静修派与贝格哈德派，主张类似静默派或佛教净土宗那一套，"
+   "受第一个大贯通事件黑死病的冲击，教会经济收入下降，教廷的控制力低了，给了下层各种"
   ],
   [
    "history-faith-schism/1",
-   "阿维尼翁六十多年后，教宗两次试着回罗马：主要是教廷一搬走罗马就萧条了（人口跌破两"
+   "阿奎那之后消停了一阵，方济各会后辈里出了个奥卡姆的威廉，主张唯名论：人没法靠理性"
   ],
   [
    "history-faith-schism/1",
-   "第一次乌尔班五世于1367年回罗马，因罗马与佩鲁贾市民暴动围攻、法国枢机反对，1"
+   "奥卡姆这帮人还主张教廷要守圣贫穷"
   ],
   [
    "history-faith-schism/2",
-   "格雷戈里十一世死后，枢机团又被罗马市民围住要选意大利教宗，遂选出乌尔班六世；在阿"
-  ],
-  [
-   "history-faith-schism/2",
-   "枢机团在阿纳尼与丰迪另选“日内瓦的罗贝尔”为克莱芒七世；克莱芒七世靠那不勒斯女王"
+   "底层还兴起了贝居安会，像东方静修派、佛教净土宗那样，靠简单重复的修行达到宗教体验"
   ],
   [
    "history-faith-schism/3",
-   "大分裂把全欧按敌友利益劈成两派：法兰西、盟友苏格兰、及德意志西部亲法诸侯（洛林、"
-  ],
-  [
-   "history-faith-schism/3",
-   "西班牙（卡斯蒂利亚、阿拉贡）、葡萄牙与那不勒斯则是骑墙与摇摆派：卡斯蒂利亚与阿拉"
+   "教廷一搬走，罗马就萧条了；可教廷一回来，罗马贵族就煽动市民闹事，想让罗马贵族上位"
   ],
   [
    "history-faith-schism/4",
-   "罗马与阿维尼翁双方既不愿退位、也不愿见面（1407—1408年格雷戈里十二世与本"
-  ],
-  [
-   "history-faith-schism/4",
-   "为了解决分裂问题，双方枢机主教团在1409年于比萨开了个大公会议，选出亚历山大五"
+   "阿维尼翁之后若干年，教宗两次试着回罗马，第一次乌尔班五世失败了"
   ],
   [
    "history-faith-schism/5",
-   "亚历山大五世很快去世，上来的比萨教宗约翰二十三世又好色又猥琐，先攻罗马、后向那不"
-  ],
-  [
-   "history-faith-schism/5",
-   "德意志国王（后为皇帝）西吉斯蒙德收留了约翰二十三世，利用这个机会于1414—14"
+   "第二次是在“基督新娘”的帮助下，格雷戈里十一世再次回到罗马；这次情况没啥变化，可"
   ],
   [
    "history-faith-schism/6",
-   "马丁五世死后上来一个尤金四世，事情出现转机：本来各国国王支持大公会议高于教宗，结"
-  ],
-  [
-   "history-faith-schism/6",
-   "正好东边的东罗马被奥斯曼突厥围困、盼再来一次十字军（1204年英诺森三世虽设拉丁"
+   "格雷戈里十一世死后，枢机主教又被罗马人围了，要选意大利教宗，于是选了乌尔班六世"
   ],
   [
    "history-faith-schism/7",
-   "这期间教义问题继续深入，甚至出现了牛津的威克里夫与布拉格的扬·胡斯一派，主张《圣"
+   "在阿维尼翁仰人鼻息多年，枢机团里多是法国人；这个乌尔班六世是个苦出身的二愣子，一"
   ],
   [
-   "history-faith-schism/7",
-   "1414年胡斯被西吉斯蒙德开了张保护状（安全通行证）去康斯坦茨讨论，结果被教廷以"
+   "history-faith-schism/8",
+   "克莱芒七世还去攻打罗马，没打下来，只好回到阿维尼翁，于是变成了两个教宗，一个在阿"
+  ],
+  [
+   "history-faith-constance/0",
+   "法国和德意志一些诸侯站阿维尼翁，它们的对手英国、神圣罗马帝国、北欧、东欧一些诸侯"
+  ],
+  [
+   "history-faith-constance/1",
+   "双方既不愿退位，也不愿见面；为了解决分裂，两边的枢机团在比萨开了大公会议，另选亚"
+  ],
+  [
+   "history-faith-constance/2",
+   "亚历山大五世很快去世，上来的约翰二十三世又好色又猥琐，很快就没人跟随了"
+  ],
+  [
+   "history-faith-constance/3",
+   "德国国王西吉斯蒙德收留了约翰二十三世，借机又开了一次大公会议，废了三个教宗，选出"
+  ],
+  [
+   "history-faith-constance/4",
+   "马丁五世死后上来一个尤金四世，事情出现了转机：本来国王们支持大公会议高于教宗，结"
+  ],
+  [
+   "history-faith-constance/5",
+   "正好东边被奥斯曼打，希望再来一次十字军，于是联系尤金四世，搞了个东西教会合并，尤"
+  ],
+  [
+   "history-faith-constance/6",
+   "这期间教义问题又继续深入，甚至出现了说圣经解释权不在教廷的一派，当然受到皇帝国王"
+  ],
+  [
+   "history-faith-constance/7",
+   "其中一人被皇帝开了个保护状去大公会议讨论，结果被烧死了"
   ]
  ],
  "moments": {
@@ -402,14 +449,6 @@
    [
     1,
     "法兰西只该有一个国王"
-   ],
-   [
-    3,
-    "火烧通谕与两把剑"
-   ],
-   [
-    4,
-    "阿纳尼的宝座与耳光"
    ]
   ],
   "history-germany-frederick2": [
@@ -458,52 +497,80 @@
     "酒馆斗殴换来的特许状"
    ],
    [
-    2,
+    4,
     "御宴上拍桌子"
    ],
    [
-    3,
+    2,
     "二百一十九条禁令"
    ],
    [
-    4,
-    "奥卡姆剃刀与“用剑护我”"
+    6,
+    "写了多少条，就是多少个奇迹"
    ]
   ],
   "history-faith-avignon": [
    [
-    0,
-    "壁炉烟囱里的传话筒"
-   ],
-   [
     1,
-    "铜耙搂钱与烧诏骂街"
-   ],
-   [
-    3,
-    "阿纳尼耳光与倒骑毛驴"
+    "传话筒里的“天使”"
    ],
    [
     5,
-    "黑色星期五与火刑台上的召唤"
+    "耙子搂钱的大赦年"
+   ],
+   [
+    6,
+    "假诏书与钢铁之剑"
+   ],
+   [
+    8,
+    "阿纳尼的宝座与耳光"
+   ]
+  ],
+  "history-faith-clement": [
+   [
+    2,
+    "里昂塌了一堵墙"
+   ],
+   [
+    3,
+    "烤掉的脚骨"
+   ],
+   [
+    4,
+    "希农羊皮卷"
    ]
   ],
   "history-faith-schism": [
    [
-    1,
-    "“基督新娘”劝教宗做男子汉"
+    0,
+    "坐在两堆火中间的教宗"
    ],
    [
-    2,
-    "“我们要罗马人，不然砍碎你们”"
+    1,
+    "“你用剑护我”"
    ],
    [
     5,
-    "海盗教宗与化装马夫出逃"
+    "“我亲爱的爸爸”"
+   ],
+   [
+    6,
+    "“我们要罗马人”"
+   ]
+  ],
+  "history-faith-constance": [
+   [
+    3,
+    "扮成信差溜走的教宗"
+   ],
+   [
+    4,
+    "台伯河上的石头雨"
    ],
    [
     7,
-    "烤了一只鹅，百年后飞起天鹅"
+    "烤鹅与天鹅"
    ]
   ]
  },
@@ -522,20 +589,20 @@
   ],
   "history-faith-scholasticism": [
    [
-    2,
+    6,
     "13世纪经院哲学的三派光谱"
    ]
   ],
-  "history-faith-avignon": [
+  "history-faith-clement": [
    [
-    5,
+    4,
     "圣殿骑士团的兴亡：从王室银行到替罪羊"
    ]
   ],
-  "history-faith-schism": [
+  "history-faith-constance": [
    [
-    7,
-    "从“三个教宗”到胡斯战车：为什么宗教改革挡不住了"
+    8,
+    "从“三个教宗”到胡斯战车：宗教改革为什么挡不住"
    ]
   ]
  },
@@ -547,7 +614,9 @@
   "history-italy-vespers": 300,
   "history-faith-scholasticism": 230,
   "history-faith-avignon": 230,
-  "history-faith-schism": 230
+  "history-faith-clement": 230,
+  "history-faith-schism": 230,
+  "history-faith-constance": 230
  },
  "eras": [
   [
@@ -576,10 +645,18 @@
   ],
   [
    "faith-avignon",
-   "阿维尼翁之囚与教会大分裂",
+   "阿维尼翁之囚",
    [
     "history-faith-avignon",
-    "history-faith-schism"
+    "history-faith-clement"
+   ]
+  ],
+  [
+   "faith-schism",
+   "教会大分裂",
+   [
+    "history-faith-schism",
+    "history-faith-constance"
    ]
   ]
  ],
@@ -588,7 +665,7 @@
    "法兰西",
    "west",
    843,
-   1377,
+   1314,
    5
   ],
   "germany": [
@@ -609,14 +686,14 @@
    "基督教",
    "trunk",
    -1400,
-   1439,
+   1449,
    7
   ]
  },
  "futures": [
   [
    "france",
-   1377,
+   1314,
    "百年战争"
   ],
   [
@@ -631,7 +708,7 @@
   ],
   [
    "faith",
-   1439,
+   1449,
    "宗教改革"
   ]
  ],
@@ -643,7 +720,8 @@
    "history-britain-henry2/0",
    "history-britain-richard/0",
    "history-france-stlouis/0",
-   "history-faith-avignon/0"
+   "history-faith-avignon/0",
+   "history-faith-clement/0"
   ],
   "germany": [
    "history-germany-innocent/0",
@@ -660,7 +738,9 @@
    "history-faith-scholasticism/0",
    "history-france-stlouis/0",
    "history-faith-avignon/0",
-   "history-faith-schism/0"
+   "history-faith-clement/0",
+   "history-faith-schism/0",
+   "history-faith-constance/0"
   ]
  },
  "shared": {
@@ -674,6 +754,10 @@
    "faith"
   ],
   "history-faith-avignon/0": [
+   "faith",
+   "france"
+  ],
+  "history-faith-clement/0": [
    "faith",
    "france"
   ]
@@ -753,14 +837,6 @@
   ],
   [
    "history-france-stlouis/4",
-   "年约七十岁的卜尼法斯八世"
-  ],
-  [
-   "history-france-stlouis/4",
-   "相传科隆纳一铁手套抽在教宗脸上"
-  ],
-  [
-   "history-france-stlouis/5",
    "1312年签《维埃纳条约》将里昂并入法兰西"
   ],
   [
@@ -821,31 +897,79 @@
   ],
   [
    "history-faith-scholasticism/2",
-   "用“五路证明”推证上帝存在"
+   "1277年3月7日奉教宗之命再禁219条"
   ],
   [
    "history-faith-scholasticism/3",
-   "查禁219条命题"
+   "1257年被巴黎大学接纳为神学教授"
   ],
   [
    "history-faith-scholasticism/4",
+   "“五路证明”推出上帝存在"
+  ],
+  [
+   "history-faith-scholasticism/5",
    "多明我会学者巴黎的约翰著《论王权与教权》"
   ],
   [
-   "history-faith-avignon/2",
-   "卜尼法斯八世11月发《唯有一圣》宣称得救必须服从教宗"
+   "history-faith-scholasticism/6",
+   "1323年7月18日约翰二十二世在阿维尼翁封阿奎那为圣徒"
   ],
   [
-   "history-faith-avignon/3",
-   "三天后市民救出教宗，卜尼法斯八世回罗马一个月后愤懑而死"
+   "history-faith-avignon/2",
+   "1297年5月科隆纳家劫了教宗运往罗马的金银"
+  ],
+  [
+   "history-faith-avignon/4",
+   "1237年在科尔泰诺瓦被腓特烈二世打垮"
   ],
   [
    "history-faith-avignon/5",
-   "1314年3月莫莱当众翻供被烧死"
+   "1302年2月10日这道诏书在巴黎当着国王和人群被烧掉"
   ],
   [
-   "history-faith-schism/7",
-   "明太祖亦禁白莲弥勒"
+   "history-faith-avignon/7",
+   "1314年批过打佛兰德的军费"
+  ],
+  [
+   "history-faith-avignon/8",
+   "教宗被扣三天、不给吃喝，相传还挨了一记铁手套耳光"
+  ],
+  [
+   "history-faith-clement/0",
+   "至今没有实据"
+  ],
+  [
+   "history-faith-clement/1",
+   "1302年还顶着法王禁令去罗马开会"
+  ],
+  [
+   "history-faith-clement/3",
+   "腓力四世继位不久就欠它约八吨白银"
+  ],
+  [
+   "history-faith-schism/1",
+   "1323年约翰二十二世判“基督与使徒一无所有”为异端"
+  ],
+  [
+   "history-faith-schism/4",
+   "1367年10月本笃会修士出身的乌尔班五世"
+  ],
+  [
+   "history-faith-schism/8",
+   "1377年在切塞纳屠城的布列塔尼雇佣兵"
+  ],
+  [
+   "history-faith-constance/2",
+   "1412年又给钱承认对方"
+  ],
+  [
+   "history-faith-constance/5",
+   "1261年希腊人收复京城，拉丁牧首出逃，希腊牧首回来复位"
+  ],
+  [
+   "history-faith-constance/7",
+   "会议坚持世俗通行证管不着异端审判"
   ]
  ],
  "boxfixes": [
@@ -887,27 +1011,27 @@
   [
    "history-faith-scholasticism",
    "13世纪经院哲学的三派光谱",
-   "① 激进亚里士多德派（拉丁阿威罗伊派 · 逻辑至上）"
+   "① 亚里士多德派（拉丁阿威罗伊派 · 逻辑至上）"
   ],
   [
    "history-faith-scholasticism",
    "13世纪经院哲学的三派光谱",
-   "② 方济各会学派（奥古斯丁传统 · 在上帝框架内使用理性）"
+   "② 方济各会（奥古斯丁传统 · 在上帝框架内使用理性）"
   ],
   [
    "history-faith-scholasticism",
    "13世纪经院哲学的三派光谱",
-   "③ 多明我会托马斯派（阿奎那 · 和稀泥的调和论胜出）"
+   "③ 多明我会（阿奎那 · 和稀泥的调和论）"
   ],
   [
-   "history-faith-avignon",
+   "history-faith-clement",
    "圣殿骑士团的兴亡：从王室银行到替罪羊",
-   "① 十字军催生的跨国武装银行（1120—1291年）"
+   "① 十字军养出的跨国银行（1120—1291年）"
   ],
   [
-   "history-faith-schism",
-   "从“三个教宗”到胡斯战车：为什么宗教改革挡不住了",
-   "③ 火刑柱压不住火器与民族觉醒（1415—1436年）"
+   "history-faith-constance",
+   "从“三个教宗”到胡斯战车：宗教改革为什么挡不住",
+   "③ 火刑压不住车阵（1415—1436年）"
   ]
  ],
  "slips": [
@@ -919,7 +1043,17 @@
   "霍亨斯陶芬",
   "阿娜尼",
   "杀了菲力的继承人",
-  "菲力2死后，被安如"
+  "菲力2死后，被安如",
+  "卜西法斯",
+  "西来廷斯",
+  "本尼迪克特",
+  "克莱门",
+  "格里高利",
+  "受规派",
+  "波哥音",
+  "倒骑",
+  "黑色星期五",
+  "多名我"
  ],
  "regions": [
   "mAnjou1100",
@@ -929,5 +1063,5 @@
   "mNaplesAnjou1282",
   "mAragonCrown1282"
  ],
- "pass": "法兰西、基督教、德意志、意大利 on to ~1300 — 8 sections (48 scenes): Hugh Capet and Louis VI, the Plantagenets and Philip II (with the marriage-and-land diagram), Saint Louis to Philip IV and Anagni, universities and scholasticism, Frederick II and the Interregnum (with the 豆腐块 on seven excommunications of five emperors), and the Sicilian Vespers; shared stations across lines; 60 of 老无’s points in bold, 42 facts and their order set right in plain text; 5 豆腐块 with 12 corrections"
+ "pass": "法兰西、基督教、德意志、意大利 on to ~1300 — 10 sections (67 scenes): Hugh Capet and Louis VI, the Plantagenets and Philip II (with the marriage-and-land diagram), Saint Louis to Philip IV and Anagni, universities and scholasticism, Frederick II and the Interregnum (with the 豆腐块 on seven excommunications of five emperors), and the Sicilian Vespers; shared stations across lines; 65 of 老无’s points in bold, 52 facts and their order set right in plain text; 5 豆腐块 with 12 corrections"
 }

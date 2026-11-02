@@ -492,7 +492,7 @@
    "基督教",
    "trunk",
    -1400,
-   1439,
+   1449,
    7
   ]
  },
@@ -509,7 +509,7 @@
   ],
   [
    "faith",
-   1439,
+   1449,
    "宗教改革"
   ]
  ],
@@ -544,7 +544,9 @@
    "history-faith-scholasticism/0",
    "history-france-stlouis/0",
    "history-faith-avignon/0",
-   "history-faith-schism/0"
+   "history-faith-clement/0",
+   "history-faith-schism/0",
+   "history-faith-constance/0"
   ]
  },
  "shared": {
