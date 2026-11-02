@@ -1170,6 +1170,18 @@ Object.assign(HS,{
   uk9_dumfries:['邓弗里斯','Dumfries',55.07,-3.605,'苏格兰西南重镇；1306年2月10日罗伯特·布鲁斯在城内灰衣修士教堂祭坛前刺死政敌红科明。'],
   uk9_burgh:['堡下沙地','Burgh by Sands',54.922,-3.149,'英苏边境索尔威湾南岸的村镇；1307年7月7日六十八岁的爱德华一世在北征布鲁斯途中病死于此。'],
   uk9_edinburgh:['爱丁堡','Edinburgh',55.949,-3.2,'福斯湾南岸的苏格兰重镇与山顶城堡；1296年被爱德华一世攻占，1996年命运之石归还存放于此。'],
+  av_aquila:['拉奎拉','L’Aquila',42.35,13.399,'阿布鲁佐山城；1294年7月隐士彼得·德·莫罗内在此骑驴加冕为塞莱斯廷五世。'],
+  av_palestrina:['帕莱斯特里纳','Palestrina',41.839,12.892,'罗马东郊科隆纳家族的坚固山城；1298年卜尼法斯八世将其攻陷夷平、犁地撒盐。'],
+  av_perugia:['佩鲁贾','Perugia',43.112,12.389,'翁布里亚山城；1304年7月本笃十一世死于此，次年枢机团在此选出克莱芒五世。'],
+  sc_athos:['阿托斯山','Mount Athos',40.157,24.326,'爱琴海圣山半岛；14世纪静修派（Hesychasm）中心，修士在此静坐屏息、反复念诵“耶稣祷文”。'],
+  sc_siena:['锡耶纳','Siena',43.318,11.331,'托斯卡纳山城，“基督新娘”凯瑟琳（1347—1380年）的故乡。'],
+  sc_fondi:['丰迪','Fondi',41.358,13.428,'那不勒斯王国边境山城；1378年9月逃离罗马的枢机团在此另选对立教宗克莱芒七世。'],
+  sc_marino:['马里诺','Marino',41.77,12.663,'罗马东南阿尔巴诺山城；1379年4月29日乌尔班六世的意大利雇佣兵在此击溃克莱芒七世的布列塔尼雇佣兵。'],
+  sc_savona:['萨沃纳','Savona',44.309,8.477,'利古里亚海港；1407年罗马与阿维尼翁两教宗约在此会面，最终隔岸猜忌未见成。'],
+  sc_constance:['康斯坦茨','Constance (Konstanz)',47.66,9.175,'博登湖畔帝国自由市；1414—1418年康斯坦茨大公会议在此废三教宗、立马丁五世，并烧死胡斯。'],
+  sc_basel:['巴塞尔','Basel',47.558,7.588,'莱茵河畔城市；1431—1449年巴塞尔大公会议在此召开，因主张会议高于王权失去君主支持。'],
+  sc_prague:['布拉格','Prague',50.087,14.421,'波希米亚王都；扬·胡斯任布拉格大学校长并在伯利恒礼拜堂用捷克语讲道，1419年爆发胡斯战争。'],
+  sc_tabor:['塔博尔','Tábor',49.414,14.658,'南波希米亚山城；1420年胡斯派激进派“塔博尔派”与统帅杰式卡在此建立战车堡垒大本营。'],
 });
 function hp(d,key,opt={}){
   const [n,en,la,lo,note]=HS[key];
@@ -5130,6 +5142,132 @@ const HISTORY_ENTRIES=[
     hp(d,'sh_munich',{note:'1328年奥卡姆投奔慕尼黑的皇帝路易四世，写书痛批教宗约翰二十二世。'});
    },[['fill',HC.france,'法兰西王国（约1300年）'],['fill',HC.germany,'神圣罗马帝国'],['fill',HC.faith,'教宗国'],['dot','#2a2018','蒙彼利埃、纳博讷、巴黎、阿纳尼、牛津、阿维尼翁与慕尼黑']])
  ]},
+{id:'history-faith-avignon',ch:6,title:'阿维尼翁之囚：从罗马耳光到法王怀抱',short:'阿维尼翁之囚',en:'The Avignon Captivity: From the Outrage of Anagni to the Destruction of the Templars',period:'1294—1377年',c:HC.faith,
+ scenes:[
+  hs('1274—1297年','四重变局、佛系隐士退位与卜尼法斯斗科隆纳','1294年7月隐士塞莱斯廷五世在拉奎拉当选，五个月后在那不勒斯退位；强硬派卜尼法斯八世上台，1297—1298年攻毁科隆纳家族的帕莱斯特里纳，科隆纳逃往巴黎。',[[39.8,0.5],[49.8,16.5]],d=>{
+    ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.22});ha(d,'mEmpire1050',HC.germany,{fillOpacity:.12,dashArray:'4 4'});
+    ha(d,'mPapal1210',HC.faith,{fillOpacity:.3});ha(d,'mNaplesAnjou1282',HC.italy,{fillOpacity:.2});
+    hp(d,'av_aquila',{note:'1294年7月八旬苦行隐士彼得·德·莫罗内在此骑驴加冕为塞莱斯廷五世。'});
+    hp(d,'naples',{left:1,note:'1294年12月塞莱斯廷五世在此宣布退位；阿纳尼贵族卡埃塔尼当选为卜尼法斯八世，将前任囚死于富莫内。'});
+    hp(d,'rome',{left:1,note:'卜尼法斯八世在罗马大封本族，与罗马大贵族科隆纳家族结下死仇。'});
+    hp(d,'av_palestrina',{kind:'battle',note:'1298年卜尼法斯八世发十字军攻陷科隆纳家族老巢帕莱斯特里纳，将其夷平撒盐。'});
+    hp(d,'w_paris',{note:'夏拉·科隆纳等逃往法国，投靠完成集权的法王腓力四世。'});
+    hr(d,[[41.84,12.89],[48.85,2.35]],HC.war);
+   },[['fill',HC.france,'渔翁得利完成集权的法兰西王国'],['dash',HC.germany,'五帝七次绝罚后散沙化的德意志'],['fill',HC.faith,'教宗国'],['fill',HC.italy,'安茹家族的那不勒斯王国'],['dline',HC.war,'1298年科隆纳家族逃往法国求庇护'],['dot',HC.war,'帕莱斯特里纳被毁'],['dot','#2a2018','拉奎拉、那不勒斯、罗马与巴黎']]),
+  hs('1294—1302年','英法向教产征税、抓手失灵与卜尼法斯飘了','1294年起英王爱德华一世与法王腓力四世为战费向教产征税；北意城市变僭主、南意晚祷后分裂；1300年罗马大赦年朝圣赚大钱令卜尼法斯误判形势，1302年巴黎烧手谕骂街。',[[37.2,-3.5],[52.5,16.5]],d=>{
+    ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.24});ha(d,'mEngland1066',HC.britain,{fillOpacity:.24});
+    ha(d,'mPapal1210',HC.faith,{fillOpacity:.3});ha(d,'mNaplesAnjou1282',HC.italy,{fillOpacity:.18});ha(d,'mAragonCrown1282',HC.spain,{fillOpacity:.18});
+    hp(d,'k_london',{left:1,note:'1294年起英王爱德华一世向英国教士强征二分之一岁入打英法战争，没收抗税教士产业。'});
+    hp(d,'w_paris',{note:'1296年腓力四世禁金银出境；1302年2月当众烧毁教宗《倾听，我儿》手谕，回信骂教宗“愚蠢透顶”。'});
+    hp(d,'mediolanum',{note:'北意大利昔日伦巴第同盟城市忙于归尔甫与吉伯林内斗，米兰等已沦为维斯孔蒂等家族僭主政权。'});
+    hp(d,'it_palermo',{left:1,note:'南意大利自1282年西西里晚祷后分裂为那不勒斯与西西里，两家混战二十年，无力替教宗撑腰。'});
+    hp(d,'rome',{note:'1300年卜尼法斯八世首办罗马大赦年，朝圣客塞满罗马，祭坛昼夜用铜耙搂钱，令教宗严重高估实力。'});
+   },[['fill',HC.france,'向教产征税的法兰西'],['fill',HC.britain,'向教产征税的英格兰'],['fill',HC.faith,'1300年大赦年赚得盆满钵满的教宗国'],['fill',HC.italy,'与西西里混战的那不勒斯'],['fill',HC.spain,'阿拉贡统治下的西西里岛'],['dot','#2a2018','伦敦、巴黎、米兰、巴勒莫与罗马']]),
+  hs('1302年4月','腓力四世首开三级会议：拉三个等级抗教宗','1302年4月10日腓力四世在巴黎圣母院首开三级会议：给教士经济与自治权、给贵族司法权、给市民布尔乔亚议政参与权；11月卜尼法斯八世发《唯有一圣》。',[[41.0,-3.0],[51.5,14.5]],d=>{
+    ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.28});ha(d,'mPapal1210',HC.faith,{fillOpacity:.28});
+    hp(d,'w_paris',{kind:'battle',note:'1302年4月10日腓力四世在巴黎圣母院首开三级会议，教士、贵族、市民（布尔乔亚）一致写信驳斥教宗。'});
+    hp(d,'sl9_pamiers',{left:1,note:'1301年腓力四世逮捕帕米耶主教贝尔纳·塞塞，点燃与卜尼法斯八世的司法主权冲突。'});
+    hp(d,'sl9_kortrijk',{kind:'battle',left:1,note:'1302年7月金马刺之战法军败于佛兰德市民，腓力四世愈发依赖国内三级会议支持。'});
+    hp(d,'rome',{note:'1302年11月18日卜尼法斯八世发《唯有一圣》通谕，宣称属世之剑必须服从属灵之剑。'});
+   },[['fill',HC.france,'召开三级会议一致对外抗教宗的法兰西'],['fill',HC.faith,'教宗国'],['dot',HC.war,'1302年巴黎三级会议与科特赖克之战'],['dot','#2a2018','帕米耶与罗马']]),
+  hs('1303年9月','众叛亲离、阿纳尼挨打与“倒骑毛驴”','1303年春卢浮宫大会控告教宗，罗马贵族与枢机发难；卜尼法斯八世退往故乡阿纳尼拟绝罚法王，9月7日科隆纳与诺加雷雇兵突袭阿纳尼殴辱教宗，10月教宗死于罗马。',[[40.8,1.0],[49.8,15.2]],d=>{
+    ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.24});ha(d,'mPapal1210',HC.faith,{fillOpacity:.3});
+    hp(d,'w_paris',{note:'1303年3月与6月腓力四世在卢浮宫控告卜尼法斯八世二十九条罪状，派诺加雷携汇票赴意大利雇兵。'});
+    hp(d,'rome',{left:1,note:'罗马贵族与部分枢机趁机发难；1303年10月11日获救回罗马的卜尼法斯八世愤懑暴死。'});
+    hp(d,'bb_anagni',{kind:'battle',note:'1303年9月7日科隆纳与诺加雷率雇佣兵攻入阿纳尼教宗宫，殴辱卜尼法斯八世并逼其倒骑毛驴。'});
+    hr(d,[[48.85,2.35],[43.77,11.25],[41.74,13.15]],HC.war);
+   },[['fill',HC.france,'法兰西王国'],['fill',HC.faith,'教宗国'],['dline',HC.war,'1303年诺加雷赴意大利联手科隆纳突袭阿纳尼'],['dot',HC.war,'1303年9月7日阿纳尼事件'],['dot','#2a2018','巴黎与罗马']]),
+  hs('1303—1309年','佛系本笃十一世、投机分子克莱芒五世与迁驻阿维尼翁','1303年10月佛系的本笃十一世上台妥协，1304年7月死于佩鲁贾；1305年投机分子克莱芒五世当选、在里昂加冕，1309年将教廷迁往阿维尼翁，24名新枢机23人为法国人。',[[41.0,-2.0],[49.8,15.0]],d=>{
+    ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.26});ha(d,'mPapal1210',HC.faith,{fillOpacity:.22,dashArray:'4 4'});
+    hp(d,'rome',{note:'1303年10月选出温和派本笃十一世，对法王步步退让，法王仍逼审卜尼法斯八世尸体。'});
+    hp(d,'av_perugia',{note:'1304年7月本笃十一世在此食无花果后暴死；1305年6月波尔多大主教在此装鹰派当选为克莱芒五世。'});
+    hp(d,'w_bordeaux',{left:1,note:'克莱芒五世原任波尔多大主教，当选后拒赴罗马，任命24名枢机中23名为法国人（16名加斯科涅同乡）。'});
+    hp(d,'k_lyon',{note:'1305年11月克莱芒五世在此加冕，腓力四世亲自牵马，观礼台坍塌砸落教宗三重冕。'});
+    hp(d,'sl9_avignon',{kind:'battle',left:1,note:'1309年3月克莱芒五世将教廷迁驻阿维尼翁，七任法籍教宗在此驻留近七十年。'});
+    hr(d,[[44.84,-0.58],[45.76,4.83],[43.95,4.81]],HC.faith);
+   },[['fill',HC.france,'控制教廷的法兰西王国'],['dash',HC.faith,'被抛弃的罗马与教宗国'],['dline',HC.faith,'1305—1309年克莱芒五世迁驻阿维尼翁路线'],['dot',HC.war,'阿维尼翁教廷（1309—1377年）'],['dot','#2a2018','罗马、佩鲁贾、波尔多与里昂']]),
+  hs('1307—1314年','法王耍流氓毁圣殿骑士团，教宗帮腔搜捕','1307年10月13日腓力四世在全法抓捕圣殿骑士与大团长莫莱逼供抄家；克莱芒五世在普瓦捷与维埃纳顺从法王，1312年废除圣殿骑士团，1314年3月莫莱在巴黎被烧死。',[[41.5,-3.5],[50.8,12.5]],d=>{
+    ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.28});ha(d,'mPapal1210',HC.faith,{fillOpacity:.18,dashArray:'4 4'});
+    hp(d,'w_paris',{kind:'battle',note:'1307年10月13日黎明腓力四世在巴黎圣殿抓捕大团长莫莱、没收金库；1314年3月18日将翻供的莫莱烧死于塞纳河小岛。'});
+    hp(d,'k_poitiers',{left:1,note:'1307—1308年克莱芒五世驻此，在法王“掘墓审判卜尼法斯八世尸体”要挟下发通谕全欧搜捕圣殿骑士。'});
+    hp(d,'sl9_avignon',{left:1,note:'1309—1311年教廷在阿维尼翁与巴黎开庭审讯卜尼法斯八世身后案与圣殿骑士案，用废骑士团换法王撤诉。'});
+    hp(d,'vienne',{kind:'battle',note:'1312年3月22日克莱芒五世在维埃纳大公会议颁《天意洞见》通谕，强行废除圣殿骑士团。'});
+   },[['fill',HC.france,'抓捕圣殿骑士、没收金库的法兰西'],['dash',HC.faith,'顺从法王的阿维尼翁教廷与教宗国'],['dot',HC.war,'巴黎抓捕烧死莫莱与维埃纳废除骑士团'],['dot','#2a2018','普瓦捷与阿维尼翁']])
+ ]},
+{id:'history-faith-schism',ch:6,title:'教会大分裂：从两个教宗到胡斯战火',short:'教会大分裂',en:'The Western Schism: From Two and Three Popes to the Hussite Wars',period:'1347—1439年',c:HC.faith,
+ scenes:[
+  hs('1324—1351年','黑死病、奥卡姆唯名论与底层静修派','1347—1351年黑死病冲击教会财政与基层控制；奥卡姆的威廉主唯名论与方济各守规派圣贫穷，1328年自阿维尼翁逃往慕尼黑；巴尔干鲍格米勒派、阿托斯山静修派与莱茵河贝格哈德派盛行。',[[38.5,-2.5],[53.2,26.5]],d=>{
+    ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.18});ha(d,'mEmpire1050',HC.germany,{fillOpacity:.16});ha(d,'mPapal1210',HC.faith,{fillOpacity:.26});
+    hp(d,'sl9_avignon',{kind:'battle',left:1,note:'1348年黑死病席卷阿维尼翁，死近半人口与数名枢机，教会什一税与控制力骤降。'});
+    hp(d,'sh_oxford',{left:1,note:'方济各会学者奥卡姆的威廉在此提出“奥卡姆剃刀”与唯名论，断言理性无法直接认知证明神学信条。'});
+    hp(d,'sh_munich',{note:'1328年奥卡姆与方济各会守规派（属灵派）逃离阿维尼翁，在此投靠皇帝路易四世，痛斥教廷腐败。'});
+    hp(d,'colonia',{left:1,note:'莱茵河与低地兴起贝居安、贝格哈德（自由心灵派）平民灵修团体，遭教廷查禁。'});
+    hp(d,'sc_athos',{note:'东方静修派与巴尔干鲍格米勒派盛行：靠呼吸静坐、简单重复念诵“耶稣祷文”直接达成神秘宗教体验。'});
+    hr(d,[[43.95,4.81],[48.14,11.58]],HC.war);
+   },[['fill',HC.france,'受黑死病冲击的法兰西与阿维尼翁'],['fill',HC.germany,'庇护奥卡姆与守规派的神圣罗马帝国'],['fill',HC.faith,'教宗国'],['dline',HC.war,'1328年奥卡姆自阿维尼翁逃往慕尼黑'],['dot',HC.war,'1348年阿维尼翁黑死病'],['dot','#2a2018','牛津、慕尼黑、科隆与阿托斯山']]),
+  hs('1367—1377年','两次试回罗马：乌尔班五世失败与“基督新娘”劝归','教廷迁走后罗马萧条、贵族煽动市民争权；1367—1370年乌尔班五世回罗马因市民暴动失败退回；1376年“基督新娘”锡耶纳的凯瑟琳劝格雷戈里十一世于1377年回罗马，次年病死。',[[40.8,3.0],[45.5,14.8]],d=>{
+    ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.2});ha(d,'mPapal1210',HC.faith,{fillOpacity:.32});
+    hp(d,'sl9_avignon',{left:1,note:'1370年乌尔班五世自罗马败归阿维尼翁；1376年“基督新娘”锡耶纳的凯瑟琳亲赴此处劝格雷戈里十一世回罗马。'});
+    hp(d,'sc_siena',{left:1,note:'“基督新娘”凯瑟琳故乡；她自幼见异象与基督缔结神秘婚姻，连写书信痛陈罗马荒芜、力劝教宗返城。'});
+    hp(d,'cd_viterbo',{note:'1367年乌尔班五世首次回意大利时，驻此遭市民暴动围攻三日。'});
+    hp(d,'rome',{kind:'battle',note:'教廷搬走后人口跌破两万、贵族煽动市民夺权；1367—1370年乌尔班五世试归失败，1377年1月格雷戈里十一世返城，未及搬回阿维尼翁即于1378年3月病死。'});
+    hr(d,[[43.95,4.81],[43.32,11.33],[41.89,12.48]],HC.faith);
+   },[['fill',HC.france,'阿维尼翁所在的普罗旺斯与法兰西'],['fill',HC.faith,'动荡萧条的教宗国与罗马'],['dline',HC.faith,'乌尔班五世与格雷戈里十一世两度返罗马路线'],['dot',HC.war,'1367、1377年两次返罗马'],['dot','#2a2018','阿维尼翁、锡耶纳与维泰博']]),
+  hs('1378—1379年','二愣子乌尔班六世激反枢机团：罗马与阿维尼翁两教宗','1378年4月罗马市民围逼枢机团选出“二愣子”乌尔班六世；乌尔班六世激反法国与意大利枢机，枢机逃往阿纳尼与丰迪另选克莱芒七世；1379年克莱芒七世攻罗马败于马里诺，退回阿维尼翁。',[[40.2,3.5],[45.0,15.5]],d=>{
+    ha(d,'mPapal1210',HC.faith,{fillOpacity:.32});ha(d,'mNaplesAnjou1282',HC.italy,{fillOpacity:.22});ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.2});
+    hp(d,'rome',{kind:'battle',left:1,note:'1378年4月两万罗马市民冲入梵蒂冈逼选意大利教宗；苦出身“二愣子”乌尔班六世上台即痛骂法国与意大利枢机。'});
+    hp(d,'bb_anagni',{note:'1378年5—8月逃出罗马的枢机团在此集结，宣布4月选举受暴民胁迫无效。'});
+    hp(d,'sc_fondi',{kind:'battle',note:'1378年9月20日枢机团在那不勒斯女王保护下于此另选“日内瓦的罗贝尔”为克莱芒七世。'});
+    hp(d,'sc_marino',{kind:'battle',left:1,note:'1379年4月29日克莱芒七世招募的布列塔尼雇佣兵在此被乌尔班六世的意大利雇佣兵击败。'});
+    hp(d,'sl9_avignon',{left:1,note:'1379年6月攻罗马未果的克莱芒七世乘船退回阿维尼翁，天主教世界正式裂为两个教廷。'});
+    hr(d,[[41.36,13.43],[41.77,12.66],[40.85,14.27],[43.95,4.81]],HC.war);
+   },[['fill',HC.faith,'罗马教宗乌尔班六世控制的教宗国'],['fill',HC.italy,'资助克莱芒七世的那不勒斯王国'],['fill',HC.france,'阿维尼翁教宗克莱芒七世投奔的法兰西'],['dline',HC.war,'1378—1379年克莱芒七世攻罗马败退阿维尼翁'],['dot',HC.war,'罗马、丰迪与马里诺之战'],['dot','#2a2018','阿纳尼与阿维尼翁']]),
+  hs('1378—1409年','地图上的全欧站队：两大阵营与骑墙派','法国、苏格兰与德意志西部诸侯站阿维尼翁；英国、神圣罗马帝国、北欧卡尔马同盟、波兰—立陶宛与匈牙利站罗马；卡斯蒂利亚、阿拉贡、葡萄牙与那不勒斯骑墙或反复横跳。',[[36.0,-10.0],[59.0,26.0]],d=>{
+    ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.34});ha(d,'mScotland1200',HC.france,{fillOpacity:.34});
+    ha(d,'mEngland1066',HC.faith,{fillOpacity:.34});ha(d,'mEmpire1050',HC.faith,{fillOpacity:.24});ha(d,'mScandinavia',HC.faith,{fillOpacity:.24});
+    ha(d,'mPoland1385',HC.faith,{fillOpacity:.24});ha(d,'mLithuania1385',HC.faith,{fillOpacity:.18});ha(d,'mHungary1100',HC.faith,{fillOpacity:.24});ha(d,'mPapal1210',HC.faith,{fillOpacity:.38});
+    ha(d,'mChristianNorth1110',HC.war,{fillOpacity:.26,dashArray:'4 4'});ha(d,'mAragonCrown1282',HC.war,{fillOpacity:.26,dashArray:'4 4'});ha(d,'mNaplesAnjou1282',HC.war,{fillOpacity:.28,dashArray:'4 4'});
+    hp(d,'sl9_avignon',{kind:'battle',left:1,note:'阿维尼翁阵营大本营：法兰西、苏格兰及洛林、萨伏依等德意志西部亲法诸侯拥戴。'});
+    hp(d,'rome',{kind:'battle',note:'罗马阵营大本营：英格兰、神圣罗马帝国、北欧三国、波兰、匈牙利等反法阵营拥戴。'});
+    hp(d,'w_paris',{left:1,note:'法王查理五世与巴黎大学力挺阿维尼翁教廷。'});
+    hp(d,'k_london',{left:1,note:'英王理查二世因百年战争与法国敌对，坚站罗马教廷，1383年还发“十字军”攻打亲阿维尼翁的佛兰德。'});
+    hp(d,'toletum',{left:1,note:'伊比利亚骑墙派：卡斯蒂利亚与阿拉贡先中立观望后转站阿维尼翁，葡萄牙靠英军打赢阿勒祖巴洛特之战后改站罗马。'});
+    hp(d,'naples',{note:'那不勒斯摇摆混战：女王乔万娜一世与法王安茹系站阿维尼翁，夺位的杜拉佐系查理三世与拉迪斯劳斯站罗马。'});
+   },[['fill',HC.france,'站阿维尼翁教廷：法兰西、苏格兰与德意志西部亲法诸侯'],['fill',HC.faith,'站罗马教廷：英格兰、神圣罗马帝国、北欧与东欧诸国'],['dash',HC.war,'骑墙与反复横跳：西班牙诸国、葡萄牙与那不勒斯'],['dot',HC.war,'阿维尼翁与罗马两大对立教廷'],['dot','#2a2018','巴黎、伦敦、托莱多与那不勒斯']]),
+  hs('1407—1410年','死不见面与比萨大公会议：两个变成三个','1407—1408年格雷戈里十二世与本笃十三世约在萨沃纳会面未果；1409年双方枢机在比萨开大公会议选出亚历山大五世，旧的两个都不退，两个教宗变成三个教宗。',[[40.5,2.0],[46.5,15.0]],d=>{
+    ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.2});ha(d,'mPapal1210',HC.faith,{fillOpacity:.28});ha(d,'mAragonCrown1282',HC.spain,{fillOpacity:.2});
+    hp(d,'sc_savona',{note:'1407年阿维尼翁教宗本笃十三世到萨沃纳港船上，罗马教宗格雷戈里十二世停在陆上卢卡，如水兽与陆兽死不见面。'});
+    hp(d,'cs_pisa',{kind:'battle',left:1,note:'1409年3—8月双方枢机在比萨开大公会议，宣布废掉两个旧教宗、另选亚历山大五世，结果两个不退变成三个教宗！'});
+    hp(d,'sl9_avignon',{left:1,note:'阿维尼翁教宗本笃十三世拒不退位，退往阿拉贡佩尼斯科拉城堡继续自称真教宗。'});
+    hp(d,'rome',{note:'罗马教宗格雷戈里十二世同样拒不退位，流亡里米尼等地继续行使教宗职权。'});
+    hp(d,'bb_bologna',{note:'比萨教宗亚历山大五世与继任者约翰二十三世驻扎博洛尼亚，形成第三套教廷。'});
+   },[['fill',HC.faith,'三个教宗争夺的意大利与教宗国'],['fill',HC.france,'抛弃本笃十三世转投比萨的法兰西'],['fill',HC.spain,'仍支持本笃十三世的阿拉贡'],['dot',HC.war,'1409年比萨大公会议（两个变三个）'],['dot','#2a2018','萨沃纳、阿维尼翁、罗马与博洛尼亚']]),
+  hs('1410—1417年','海盗教宗约翰二十三世与康斯坦茨会议：废三立一','1410年约翰二十三世继任，攻罗马又向那不勒斯割地反被赶走；西吉斯蒙德收留他并召开1414—1418年康斯坦茨大公会议，废三教宗、立马丁五世，确立大公会议高于教宗。',[[40.5,4.0],[50.5,16.5]],d=>{
+    ha(d,'mEmpire1050',HC.germany,{fillOpacity:.24});ha(d,'mPapal1210',HC.faith,{fillOpacity:.28});ha(d,'mNaplesAnjou1282',HC.italy,{fillOpacity:.2});
+    hp(d,'bb_bologna',{left:1,note:'1410年5月亚历山大五世暴死于此，海盗出身、好色猥琐的巴尔达萨雷·科萨当选为约翰二十三世。'});
+    hp(d,'rome',{note:'约翰二十三世先攻罗马、后向那不勒斯王拉迪斯劳斯割地妥协，1413年反被拉迪斯劳斯打进罗马仓皇北逃。'});
+    hp(d,'sc_constance',{kind:'battle',note:'1414—1418年西吉斯蒙德在此主持康斯坦茨大公会议，通过《神圣会议》法令确立大公会议高于教宗，废掉三个教宗，1417年11月选出马丁五世。'});
+    hp(d,'sl9_avignon',{left:1,note:'1417年7月康斯坦茨大会正式废黜顽抗到底的阿维尼翁教宗本笃十三世，三十九年大分裂终结。'});
+    hr(d,[[41.89,12.48],[44.49,11.34],[47.66,9.18]],HC.war);
+   },[['fill',HC.germany,'西吉斯蒙德主持大公会议的神圣罗马帝国'],['fill',HC.faith,'马丁五世重归一统的教宗国'],['fill',HC.italy,'攻占罗马逼逃约翰二十三世的那不勒斯'],['dline',HC.war,'1413—1414年约翰二十三世败逃投靠西吉斯蒙德赴康斯坦茨'],['dot',HC.war,'康斯坦茨大公会议（1414—1418年）'],['dot','#2a2018','博洛尼亚、罗马与阿维尼翁']]),
+  hs('1431—1449年','巴塞尔会议玩过头与佛罗伦萨东西教会合并：尤金四世翻盘','1431年尤金四世继位；巴塞尔会议主张大公会议也高于王权而失君主支持；东罗马被奥斯曼围困求十字军，皇帝约翰八世于1439年赴佛罗伦萨与尤金四世完成东西教会合并，尤金四世声威大振。',[[38.0,5.0],[49.0,30.5]],d=>{
+    ha(d,'mEmpire1050',HC.germany,{fillOpacity:.18});ha(d,'mPapal1210',HC.faith,{fillOpacity:.32});ha(d,'mOttoman1522',HC.parthia,{fillOpacity:.22,dashArray:'4 4'});
+    hp(d,'sc_basel',{kind:'battle',left:1,note:'1431—1449年巴塞尔大公会议：主教们玩过头，主张会议不仅高于教宗也高于世俗王权，失去各国国王支持。'});
+    hp(d,'constantinople',{note:'1261年希腊人收复京城后换回希腊牧首；此时被奥斯曼围成孤城，皇帝约翰八世亲率七百人赴意大利求十字军。'});
+    hp(d,'ci_florence',{kind:'battle',left:1,note:'1439年7月6日尤金四世与东罗马皇帝约翰八世在此签署《愿诸天欢腾》合并诏书，宣布东西教会合并，尤金四世声威大振。'});
+    hp(d,'rome',{left:1,note:'1443年尤金四世携合并威望重返罗马，巴塞尔会议及其另立的对立教宗费利克斯五世彻底垮台。'});
+    hr(d,[[41.01,28.98],[45.44,12.32],[43.77,11.25]],HC.byz);
+   },[['fill',HC.faith,'尤金四世翻盘复威的教宗国与佛罗伦萨'],['fill',HC.germany,'巴塞尔会议所在的神圣罗马帝国'],['dash',HC.parthia,'围逼君士坦丁堡的奥斯曼帝国（示意）'],['dline',HC.byz,'1438—1439年东罗马皇帝约翰八世赴佛罗伦萨合并航线'],['dot',HC.war,'巴塞尔大公会议与佛罗伦萨东西教会合并'],['dot','#2a2018','君士坦丁堡与罗马']]),
+  hs('1370—1436年','圣经解释权不在教廷：胡斯持保护状被烧死与胡斯战争','威克里夫与胡斯主张《圣经》解释权不在教廷；1414年胡斯持西吉斯蒙德安全通行证赴康斯坦茨被烧死，引爆1419—1436年胡斯战争，杰式卡用战车堡垒五破十字军，逼签《布拉格协约》。',[[46.0,-2.5],[53.2,18.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.22});ha(d,'mEmpire1050',HC.germany,{fillOpacity:.18});ha(d,'mBohemia900',HC.war,{fillOpacity:.34});
+    hp(d,'sh_oxford',{left:1,note:'约翰·威克里夫在此主张《圣经》为唯一权威、把《圣经》译成英文，1415年被康斯坦茨会议定为异端、1428年掘墓焚骨。'});
+    hp(d,'sc_prague',{kind:'battle',note:'扬·胡斯在此用捷克语讲道痛斥售卖赎罪券；1419年7月市民将官员扔出窗外，胡斯战争爆发，1436年签《布拉格协约》。'});
+    hp(d,'sc_constance',{kind:'battle',left:1,note:'1414年胡斯持西吉斯蒙德开的安全通行证来此讨论，被教廷背信抓捕，1415年7月6日戴魔鬼纸帽在莱茵河畔被烧死。'});
+    hp(d,'sc_tabor',{kind:'battle',note:'独眼统帅扬·杰式卡在此建塔博尔营地，用配火炮火铳的战车堡垒（Wagenburg）五次击溃十字军。'});
+    hp(d,'sc_basel',{left:1,note:'1433—1436年巴塞尔大公会议被迫与捷克代表谈判，签订《布拉格协约》准许俗人“饼酒同领”。'});
+    hr(d,[[50.09,14.42],[47.66,9.18]],HC.war);
+   },[['fill',HC.war,'掀起胡斯战争、五破十字军的波希米亚（捷克）'],['fill',HC.britain,'威克里夫与罗拉德派所在的英格兰'],['fill',HC.germany,'神圣罗马帝国'],['dline',HC.war,'1414年胡斯持安全通行证自布拉格赴康斯坦茨'],['dot',HC.war,'康斯坦茨烧死胡斯、布拉格与塔博尔战车大捷'],['dot','#2a2018','牛津与巴塞尔']])
+ ]},
 {id:'history-china-neolithic',ch:7,title:'新石器聚落与万邦时代',short:'仰韶与良渚',en:'Neolithic China: Yangshao to Liangzhu',period:'约前7000—前1900年',c:HC.china,
  scenes:[
   hs('约前7000—前1900年','南稻北粟与良渚古城','黄河流域种粟、长江流域种稻；前3300年起良渚筑起古城与大型水利，龙山时代城址林立。',[[27.0,104.0],[40.0,122.5]],d=>{
@@ -7544,6 +7682,7 @@ const HISTORY_ERAS=[
  {id:'faith-orders',name:'修会的兴替',en:'The Rise and Fall of Monastic Orders',date:'1088—1153年',c:HC.faith,items:[['history-faith-citeaux']]},
  {id:'faith-cardinals',name:'枢机团与两个教宗',en:'The Cardinals and the Double Elections',date:'1099—1179年',c:HC.faith,items:[['history-faith-cardinals']]},
  {id:'faith-scholasticism',name:'大学与经院哲学',en:'Universities and Scholasticism',date:'约1150—1303年',c:HC.faith,items:[['history-faith-scholasticism']]},
+ {id:'faith-avignon',name:'阿维尼翁之囚与教会大分裂',en:'The Avignon Captivity and the Western Schism',date:'1294—1439年',c:HC.faith,items:[['history-faith-avignon'],['history-faith-schism']]},
  {id:'china-early',name:'先秦：三代与春秋战国',en:'Pre-Imperial China',date:'约前7000—前221年',c:HC.china,items:[['history-china-neolithic'],['history-china-bronze'],['history-china-western-zhou'],['history-china-spring-autumn'],['history-china-warring-states']]},
  {id:'china-qin-han',name:'秦汉帝国',en:'Qin and Han Empires',date:'前221—公元189年',c:HC.china,items:[['history-china-qin'],['history-china-western-han'],['history-china-eastern-han']]},
  {id:'china-six-dynasties',name:'三国两晋南北朝',en:'Six Dynasties',date:'190—589年',c:HC.china,items:[['history-china-three-kingdoms'],['history-china-sixteen-kingdoms'],['history-china-sui']]},
@@ -7576,14 +7715,14 @@ const HISTORY_BRANCHES=[
  {id:'east',name:'东罗马',en:'East Rome',lane:2,parent:'rome',from:395,to:1099,c:HC.byz},
  {id:'west',name:'中世纪西欧',en:'Medieval Western Europe',lane:4,parent:'rome',from:476,to:843,c:HC.celt},
  {id:'spain',name:'西班牙',en:'Spain',lane:5,parent:'west',from:481,to:1123,c:HC.spain},
- {id:'france',name:'法兰西',en:'France',lane:5,parent:'west',from:843,to:1309,c:HC.france},
+ {id:'france',name:'法兰西',en:'France',lane:5,parent:'west',from:843,to:1377,c:HC.france},
  {id:'germany',name:'德意志',en:'Germany',lane:4,parent:'west',from:843,to:1273,c:HC.germany},
  {id:'italy',name:'意大利',en:'Italy',lane:3,parent:'west',from:843,to:1302,c:HC.italy},
  // 不列颠 (including Ireland): forks from the trunk before Caesar's landing, on lane 6 right beside 法兰西.
  {id:'britain',name:'不列颠',en:'Britain and Ireland',lane:6,parent:'trunk',from:-55,to:1307,c:HC.britain},
  // The 基督教 line: from the Hebrews' nomadic origins (the old Levant branch) to the schism of 1054; on its own lane, right of the West.
  // After 641 it runs through the shared stations of the East Roman dynasties.
- {id:'faith',name:'基督教',en:'Judaism & Christianity',lane:7,parent:'trunk',from:-1400,to:1309,c:HC.faith},
+ {id:'faith',name:'基督教',en:'Judaism & Christianity',lane:7,parent:'trunk',from:-1400,to:1439,c:HC.faith},
  // 埃及 and 波斯 leave the trunk at the early states (老无 2026-10-21): the Ptolemies, the Seleucids, Rome and Byzantium are passing rulers of these lands.
  {id:'egypt',name:'埃及',en:'Egypt',lane:1,parent:'trunk',from:-3100,to:642,c:HC.mino},
  {id:'persia',name:'波斯—阿拉伯',en:'Persia and the Arabs',lane:0,parent:'trunk',from:-3200,to:1291,c:HC.parthia},
@@ -7778,12 +7917,14 @@ const TREE_ROWS={
  'history-britain-richard/0':[['britain','france'],1189,1214,'1173—1214年'],
  'history-britain-magnacarta/0':['britain',1215,1272,'1215—1295年'],
  'history-britain-edward1/0':['britain',1277,1307,'1272—1307年'],
+ 'history-faith-avignon/0':[['faith','france'],1310,1377,'1294—1377年'],
+ 'history-faith-schism/0':['faith',1378,1439,'1347—1439年'],
  'history-empire-macedonian/3':[['east','faith'],1054,1056],
  'history-spain-fall/2':[['spain','persia'],711,713],
  'history-arab-seljuks/3':[['persia','east'],1071,1092]
 };
 // Topics still to be written grow the tree as dashed shoots.
-const TREE_FUTURE=[['east',1099,'科穆宁王朝','1099年起 · 1176年米利奥克法隆之战 · 1204年第四次十字军攻破君士坦丁堡 · 待展开'],['france',1309,'百年战争','1328年卡佩直系绝嗣 · 1337—1453年英法百年战争 · 待展开'],['germany',1273,'选帝侯与哈布斯堡','1273年哈布斯堡的鲁道夫当选 · 1356年《金玺诏书》七选帝侯 · 待展开'],['italy',1302,'城市共和国与文艺复兴','佛罗伦萨、威尼斯、热那亚与米兰 · 文艺复兴 · 待展开'],['faith',1309,'阿维尼翁与大分裂','1309—1377年阿维尼翁教廷 · 1378—1417年天主教大分裂 · 待展开'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',1291,'伊儿汗国与马穆鲁克','1291年起 · 1295年合赞汗皈依伊斯兰 · 1300年伊儿汗国一度占大马士革 · 奥斯曼人兴起 · 待展开'],['china',845,'晚唐五代与宋','845年起 · 待展开'],['spain',1123,'收复失地运动','1123年起 · 穆拉比特与穆瓦希德 · 1212年纳瓦斯—德托洛萨 · 1492年格拉纳达 · 待展开'],['eeurope',1054,'基辅罗斯以后','1054年起 · 雅罗斯拉夫死后诸子分封 · 1240年蒙古人攻破基辅 · 待展开'],['crusade',1312,'后来的十字军','1396年尼科波利斯 · 1444年瓦尔纳 · 1571年勒班陀 · 待展开'],['britain',1307,'班诺克本与百年战争','1314年班诺克本之战 · 1337—1453年英法百年战争 · 玫瑰战争 · 待展开']];
+const TREE_FUTURE=[['east',1099,'科穆宁王朝','1099年起 · 1176年米利奥克法隆之战 · 1204年第四次十字军攻破君士坦丁堡 · 待展开'],['france',1377,'百年战争','1328年卡佩直系绝嗣 · 1337—1453年英法百年战争 · 待展开'],['germany',1273,'选帝侯与哈布斯堡','1273年哈布斯堡的鲁道夫当选 · 1356年《金玺诏书》七选帝侯 · 待展开'],['italy',1302,'城市共和国与文艺复兴','佛罗伦萨、威尼斯、热那亚与米兰 · 文艺复兴 · 待展开'],['faith',1439,'宗教改革','1439年起 · 文艺复兴教廷 · 1517年马丁·路德《九十五条论纲》与宗教改革 · 待展开'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',1291,'伊儿汗国与马穆鲁克','1291年起 · 1295年合赞汗皈依伊斯兰 · 1300年伊儿汗国一度占大马士革 · 奥斯曼人兴起 · 待展开'],['china',845,'晚唐五代与宋','845年起 · 待展开'],['spain',1123,'收复失地运动','1123年起 · 穆拉比特与穆瓦希德 · 1212年纳瓦斯—德托洛萨 · 1492年格拉纳达 · 待展开'],['eeurope',1054,'基辅罗斯以后','1054年起 · 雅罗斯拉夫死后诸子分封 · 1240年蒙古人攻破基辅 · 待展开'],['crusade',1312,'后来的十字军','1396年尼科波利斯 · 1444年瓦尔纳 · 1571年勒班陀 · 待展开'],['britain',1307,'班诺克本与百年战争','1314年班诺克本之战 · 1337—1453年英法百年战争 · 玫瑰战争 · 待展开']];
 // Where a line stops it says why: [line, year, the event that ends it, note, the line it carries on in].
 const TREE_ENDS=[['trunk',-30,'并入罗马','前146年科林斯被毁 · 前30年最后一个希腊化王国埃及并入罗马','rome'],['rome',476,'西罗马终结','476年西部末代皇帝被废 · 由中世纪西欧接续'],['west',843,'凡尔登三分','843年《凡尔登条约》三分帝国 · 分出法兰西、德意志、意大利']];
 // Sections of one line that run side by side: [line, row keys, side of the passing loop].

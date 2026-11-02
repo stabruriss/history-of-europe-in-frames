@@ -952,7 +952,7 @@
    "基督教",
    "trunk",
    -1400,
-   1309,
+   1439,
    7
   ]
  },
@@ -969,8 +969,8 @@
   ],
   [
    "faith",
-   1309,
-   "阿维尼翁与大分裂"
+   1439,
+   "宗教改革"
   ]
  ],
  "tails": {
@@ -1014,7 +1014,9 @@
    "history-germany-innocent/0",
    "history-germany-frederick2/0",
    "history-faith-scholasticism/0",
-   "history-france-stlouis/0"
+   "history-france-stlouis/0",
+   "history-faith-avignon/0",
+   "history-faith-schism/0"
   ]
  },
  "shared": {
