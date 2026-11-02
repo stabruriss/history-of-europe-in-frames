@@ -36,14 +36,14 @@ const PHRASES=[["history-egypt-roman/0", "托勒密只是亚历山大之后的�
    assert.deepEqual(report.egypt,EGYPT);assert.deepEqual(report.persia,PERSIA);
    assert.ok(report.paras.every(p=>p.chars<=230),'Concise: '+JSON.stringify(report.paras.filter(p=>p.chars>230)));
    assert.match(report.strong,/临时统治者/,'老无’s reading of Egypt in bold');assert.match(report.strong,/东方/,'老无’s reading of the East in bold');
-   assert.deepEqual(report.lines,[['埃及',1,'trunk',-3100,642],['波斯—阿拉伯',0,'trunk',-3200,1291]]);assert.equal(report.old,false);
+   assert.deepEqual(report.lines,[['埃及',1,'trunk',-3100,642],['波斯—阿拉伯',0,'trunk',-3200,1351]]);assert.equal(report.old,false);
    assert.deepEqual(report.rows,{ptolemaic:'egypt',eastern:'persia'});
    // Each line leaves the trunk at the early states, then runs through its own dynasties; the Hellenistic sections sit in the middle.
    assert.deepEqual(report.egyptLine.slice(0,3),['history-migration','history-farming','history-farming']);
    // The shared stations (the last Roman–Persian war, the Arab conquests) sit on 埃及 and 波斯 too.
    assert.deepEqual(report.egyptLine.slice(3),['history-egypt-old','history-egypt-middle','history-egypt-new','history-egypt-late','history-ptolemaic-bargain','history-egypt-roman','history-egypt-byzantine','history-empire-heraclius','history-arab-conquest']);
-   assert.deepEqual(report.persiaLine.slice(3),['history-persia-elam','history-persia-achaemenid','history-eastern-kingdoms','history-persia-parthia','history-persia-sasanian','history-persia-khosrow','history-persia-khosrow-ii','history-empire-heraclius','history-arab-rise','history-arab-muhammad','history-arab-conquest','history-arab-expansion','history-arab-caliphs','history-arab-constantinople','history-spain-fall','history-arab-abbasid','history-arab-seljuks','history-arab-seljuks','history-faith-crusade','history-crusade-states','history-crusade-nuraldin','history-crusade-saladin','history-crusade-louis','history-crusade-end']);
-   assert.deepEqual(report.shoots,[['egypt',642],['persia',1291]]);
+   assert.deepEqual(report.persiaLine.slice(3),['history-persia-elam','history-persia-achaemenid','history-eastern-kingdoms','history-persia-parthia','history-persia-sasanian','history-persia-khosrow','history-persia-khosrow-ii','history-empire-heraclius','history-arab-rise','history-arab-muhammad','history-arab-conquest','history-arab-expansion','history-arab-caliphs','history-arab-constantinople','history-spain-fall','history-arab-abbasid','history-arab-seljuks','history-arab-seljuks','history-faith-crusade','history-crusade-states','history-crusade-nuraldin','history-crusade-saladin','history-crusade-louis','history-crusade-end','history-italy-blackdeath']);
+   assert.deepEqual(report.shoots,[['egypt',642],['persia',1351]]);
    for(const [scene,phrase] of PHRASES){
     await page.evaluate(s=>go(s),scene);
     assert.ok(await page.$eval('#sceneContext>p',(e,w)=>e.textContent.replace(/（[A-Za-z][^）]*）/g,'').includes(w),phrase),scene+' lacks '+phrase);

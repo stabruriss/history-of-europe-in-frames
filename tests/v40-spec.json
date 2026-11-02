@@ -945,7 +945,7 @@
    "波斯—阿拉伯",
    "trunk",
    -3200,
-   1291,
+   1351,
    0
   ],
   "faith": [
@@ -964,7 +964,7 @@
   ],
   [
    "persia",
-   1291,
+   1351,
    "伊儿汗国与马穆鲁克"
   ],
   [
@@ -1000,7 +1000,8 @@
    "history-crusade-nuraldin/0",
    "history-crusade-saladin/0",
    "history-crusade-louis/0",
-   "history-crusade-end/0"
+   "history-crusade-end/0",
+   "history-italy-blackdeath/0"
   ],
   "faith": [
    "history-spain-crusade/0",
@@ -1017,6 +1018,7 @@
    "history-france-stlouis/0",
    "history-faith-avignon/0",
    "history-faith-clement/0",
+   "history-italy-blackdeath/0",
    "history-faith-schism/0",
    "history-faith-constance/0"
   ]

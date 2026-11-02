@@ -706,14 +706,14 @@
    "德意志",
    "west",
    843,
-   1273,
+   1351,
    4
   ],
   "italy": [
    "意大利",
    "west",
    843,
-   1302,
+   1351,
    3
   ],
   "spain": [
@@ -741,19 +741,19 @@
    "波斯—阿拉伯",
    "trunk",
    -3200,
-   1291,
+   1351,
    0
   ]
  },
  "futures": [
   [
    "germany",
-   1273,
+   1351,
    "选帝侯与哈布斯堡"
   ],
   [
    "italy",
-   1302,
+   1351,
    "城市共和国与文艺复兴"
   ],
   [
@@ -773,7 +773,7 @@
   ],
   [
    "persia",
-   1291,
+   1351,
    "伊儿汗国与马穆鲁克"
   ]
  ],
@@ -789,7 +789,8 @@
    "history-germany-barbarossa/0",
    "history-germany-henry6/0",
    "history-germany-innocent/0",
-   "history-germany-frederick2/0"
+   "history-germany-frederick2/0",
+   "history-italy-blackdeath/0"
   ],
   "italy": [
    "history-germany-otto/0",
@@ -800,7 +801,8 @@
    "history-germany-henry6/0",
    "history-germany-innocent/0",
    "history-germany-frederick2/0",
-   "history-italy-vespers/0"
+   "history-italy-vespers/0",
+   "history-italy-blackdeath/0"
   ],
   "faith": [
    "history-faith-leo-ix/0",
@@ -821,6 +823,7 @@
    "history-france-stlouis/0",
    "history-faith-avignon/0",
    "history-faith-clement/0",
+   "history-italy-blackdeath/0",
    "history-faith-schism/0",
    "history-faith-constance/0"
   ],
@@ -845,7 +848,8 @@
    "history-crusade-nuraldin/0",
    "history-crusade-saladin/0",
    "history-crusade-louis/0",
-   "history-crusade-end/0"
+   "history-crusade-end/0",
+   "history-italy-blackdeath/0"
   ]
  },
  "shared": {

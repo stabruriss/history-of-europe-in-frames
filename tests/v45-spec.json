@@ -578,26 +578,26 @@
    "不列颠",
    "trunk",
    -55,
-   1307,
+   1351,
    6
   ],
   "france": [
    "法兰西",
    "west",
    843,
-   1314,
+   1351,
    5
   ]
  },
  "futures": [
   [
    "britain",
-   1307,
+   1351,
    "班诺克本与百年战争"
   ],
   [
    "france",
-   1314,
+   1351,
    "百年战争"
   ]
  ],
@@ -612,7 +612,8 @@
    "history-britain-norman-ireland/0",
    "history-britain-richard/0",
    "history-britain-magnacarta/0",
-   "history-britain-edward1/0"
+   "history-britain-edward1/0",
+   "history-italy-blackdeath/0"
   ],
   "france": [
    "history-france-west-francia/0",
@@ -622,7 +623,8 @@
    "history-britain-richard/0",
    "history-france-stlouis/0",
    "history-faith-avignon/0",
-   "history-faith-clement/0"
+   "history-faith-clement/0",
+   "history-italy-blackdeath/0"
   ]
  },
  "shared": {

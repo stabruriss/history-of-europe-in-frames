@@ -59,6 +59,12 @@
    "1378—1449年",
    9,
    6
+  ],
+  "history-italy-blackdeath": [
+   "黑死病",
+   "1346—1353年",
+   7,
+   5
   ]
  },
  "rows": {
@@ -127,7 +133,7 @@
    [
     "faith"
    ],
-   1322,
+   1352,
    1379
   ],
   "history-faith-constance/0": [
@@ -136,6 +142,18 @@
    ],
    1380,
    1449
+  ],
+  "history-italy-blackdeath/0": [
+   [
+    "italy",
+    "france",
+    "britain",
+    "germany",
+    "faith",
+    "persia"
+   ],
+   1347,
+   1351
   ]
  },
  "bold": [
@@ -329,7 +347,7 @@
   ],
   [
    "history-faith-schism/0",
-   "受第一个大贯通事件黑死病的冲击，教会经济收入下降，教廷的控制力低了，给了下层各种"
+   "黑死病对教会的影响，就是经济收入下降，教廷的控制力低了，于是给了下层各种派系成长"
   ],
   [
    "history-faith-schism/1",
@@ -398,6 +416,10 @@
   [
    "history-faith-constance/7",
    "其中一人被皇帝开了个保护状去大公会议讨论，结果被烧死了"
+  ],
+  [
+   "history-italy-blackdeath/6",
+   "对教会的影响，就是经济收入下降，教廷的控制力低了，给了下层各种派系成长的空间"
   ]
  ],
  "moments": {
@@ -519,6 +541,10 @@
     "耙子搂钱的大赦年"
    ],
    [
+    5,
+    "烧诏骂街"
+   ],
+   [
     6,
     "假诏书与钢铁之剑"
    ],
@@ -542,10 +568,6 @@
    ]
   ],
   "history-faith-schism": [
-   [
-    0,
-    "坐在两堆火中间的教宗"
-   ],
    [
     1,
     "“你用剑护我”"
@@ -571,6 +593,24 @@
    [
     7,
     "烤鹅与天鹅"
+   ]
+  ],
+  "history-italy-blackdeath": [
+   [
+    1,
+    "没写完的那一句"
+   ],
+   [
+    1,
+    "“我亲手埋了五个孩子”"
+   ],
+   [
+    2,
+    "守着火的教宗"
+   ],
+   [
+    5,
+    "大马士革的赤脚游行"
    ]
   ]
  },
@@ -599,10 +639,22 @@
     "圣殿骑士团的兴亡：从王室银行到替罪羊"
    ]
   ],
+  "history-faith-schism": [
+   [
+    5,
+    "“基督新娘”锡耶纳的凯瑟琳"
+   ]
+  ],
   "history-faith-constance": [
    [
     8,
     "从“三个教宗”到胡斯战车：宗教改革为什么挡不住"
+   ]
+  ],
+  "history-italy-blackdeath": [
+   [
+    6,
+    "黑死病在各条线上"
    ]
   ]
  },
@@ -616,7 +668,8 @@
   "history-faith-avignon": 230,
   "history-faith-clement": 230,
   "history-faith-schism": 230,
-  "history-faith-constance": 230
+  "history-faith-constance": 230,
+  "history-italy-blackdeath": 300
  },
  "eras": [
   [
@@ -658,6 +711,13 @@
     "history-faith-schism",
     "history-faith-constance"
    ]
+  ],
+  [
+   "empire-blackdeath",
+   "中世纪晚期：黑死病",
+   [
+    "history-italy-blackdeath"
+   ]
   ]
  ],
  "branches": {
@@ -665,21 +725,21 @@
    "法兰西",
    "west",
    843,
-   1314,
+   1351,
    5
   ],
   "germany": [
    "德意志",
    "west",
    843,
-   1273,
+   1351,
    4
   ],
   "italy": [
    "意大利",
    "west",
    843,
-   1302,
+   1351,
    3
   ],
   "faith": [
@@ -693,17 +753,17 @@
  "futures": [
   [
    "france",
-   1314,
+   1351,
    "百年战争"
   ],
   [
    "germany",
-   1273,
+   1351,
    "选帝侯与哈布斯堡"
   ],
   [
    "italy",
-   1302,
+   1351,
    "城市共和国与文艺复兴"
   ],
   [
@@ -721,16 +781,19 @@
    "history-britain-richard/0",
    "history-france-stlouis/0",
    "history-faith-avignon/0",
-   "history-faith-clement/0"
+   "history-faith-clement/0",
+   "history-italy-blackdeath/0"
   ],
   "germany": [
    "history-germany-innocent/0",
-   "history-germany-frederick2/0"
+   "history-germany-frederick2/0",
+   "history-italy-blackdeath/0"
   ],
   "italy": [
    "history-germany-innocent/0",
    "history-germany-frederick2/0",
-   "history-italy-vespers/0"
+   "history-italy-vespers/0",
+   "history-italy-blackdeath/0"
   ],
   "faith": [
    "history-germany-innocent/0",
@@ -739,6 +802,7 @@
    "history-france-stlouis/0",
    "history-faith-avignon/0",
    "history-faith-clement/0",
+   "history-italy-blackdeath/0",
    "history-faith-schism/0",
    "history-faith-constance/0"
   ]
@@ -760,6 +824,14 @@
   "history-faith-clement/0": [
    "faith",
    "france"
+  ],
+  "history-italy-blackdeath/0": [
+   "italy",
+   "france",
+   "britain",
+   "germany",
+   "faith",
+   "persia"
   ]
  },
  "fixes": [
@@ -970,6 +1042,30 @@
   [
    "history-faith-constance/7",
    "会议坚持世俗通行证管不着异端审判"
+  ],
+  [
+   "history-faith-schism/0",
+   "1349年10月克莱芒六世下诏取缔"
+  ],
+  [
+   "history-italy-blackdeath/0",
+   "可今人认为德穆西多半从没离开过家乡"
+  ],
+  [
+   "history-italy-blackdeath/0",
+   "1348年1月又进了热那亚和威尼斯，月底到了马赛"
+  ],
+  [
+   "history-italy-blackdeath/1",
+   "佛罗伦萨的人口从1338年的十一二万降到1351年的五万"
+  ],
+  [
+   "history-italy-blackdeath/3",
+   "秋天到了伦敦"
+  ],
+  [
+   "history-italy-blackdeath/4",
+   "2月9日斯特拉斯堡行会造反"
   ]
  ],
  "boxfixes": [
@@ -1032,6 +1128,16 @@
    "history-faith-constance",
    "从“三个教宗”到胡斯战车：宗教改革为什么挡不住",
    "③ 火刑压不住车阵（1415—1436年）"
+  ],
+  [
+   "history-faith-schism",
+   "“基督新娘”锡耶纳的凯瑟琳",
+   "① 来历：染匠家的第二十四个孩子（1347—1368年）"
+  ],
+  [
+   "history-italy-blackdeath",
+   "黑死病在各条线上",
+   "东罗马、东欧与西班牙"
   ]
  ],
  "slips": [
@@ -1053,7 +1159,8 @@
   "波哥音",
   "倒骑",
   "黑色星期五",
-  "多名我"
+  "多名我",
+  "贯通"
  ],
  "regions": [
   "mAnjou1100",
@@ -1063,5 +1170,5 @@
   "mNaplesAnjou1282",
   "mAragonCrown1282"
  ],
- "pass": "法兰西、基督教、德意志、意大利 on to ~1300 — 10 sections (67 scenes): Hugh Capet and Louis VI, the Plantagenets and Philip II (with the marriage-and-land diagram), Saint Louis to Philip IV and Anagni, universities and scholasticism, Frederick II and the Interregnum (with the 豆腐块 on seven excommunications of five emperors), and the Sicilian Vespers; shared stations across lines; 65 of 老无’s points in bold, 52 facts and their order set right in plain text; 5 豆腐块 with 12 corrections"
+ "pass": "法兰西、基督教、德意志、意大利 on to ~1300 — 11 sections (74 scenes): Hugh Capet and Louis VI, the Plantagenets and Philip II (with the marriage-and-land diagram), Saint Louis to Philip IV and Anagni, universities and scholasticism, Frederick II and the Interregnum (with the 豆腐块 on seven excommunications of five emperors), and the Sicilian Vespers; shared stations across lines; 66 of 老无’s points in bold, 58 facts and their order set right in plain text; 7 豆腐块 with 14 corrections"
 }

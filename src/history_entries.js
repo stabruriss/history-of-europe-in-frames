@@ -1186,10 +1186,19 @@ Object.assign(HS,{
   sc_prague:['布拉格','Prague',50.087,14.421,'波希米亚王都；胡斯在此讲道，1419年胡斯战争在此爆发。'],
   sc_tabor:['塔博尔','Tábor',49.414,14.658,'南波希米亚山城；1420年胡斯派激进派在此建营，杰式卡的战车大营。'],
   sc_beguinage:['根特','Ghent',51.054,3.725,'佛兰德大城；13世纪起城边建有大片贝居安院。'],
-  sc_kaffa:['卡法','Caffa (Feodosia)',45.031,35.383,'克里米亚的热那亚商港；1346—1347年金帐汗国围城时军中爆发瘟疫。'],
   sc_lisbon:['里斯本','Lisbon',38.722,-9.139,'葡萄牙王都；1385年若昂一世靠英国人坐稳王位，站到罗马一边。'],
   sc_peniscola:['佩尼斯科拉','Peñíscola',40.359,0.405,'巴伦西亚海边的岩堡；本笃十三世被废后在此自称教宗到1423年死。'],
   sc_domazlice:['多马日利采','Domažlice',49.44,12.93,'波希米亚西部边城；1431年8月十字军在此不战自溃。'],
+  sc_kaffa:['卡法','Caffa (Feodosia)',45.031,35.383,'克里米亚的热那亚商港；1346—1347年金帐汗国围城时军中爆发瘟疫。'],
+  bd_fiesole:['菲耶索莱','Fiesole',43.806,11.293,'佛罗伦萨城北的山城；《十日谈》里的十个年轻人躲在这一带的庄园里。'],
+  bd_ragusa:['拉古萨','Ragusa (Dubrovnik)',42.641,18.108,'亚得里亚海东岸的商城，今杜布罗夫尼克；1377年最早规定外来者先隔离三十天。'],
+  bd_calais:['加莱','Calais',50.951,1.858,'英吉利海峡边的港城；1347年被英王爱德华三世围下。'],
+  bd_melcombe:['梅尔科姆','Melcombe (Weymouth)',50.611,-2.455,'多塞特海边的港口，今韦茅斯；1348年夏黑死病在此登陆英格兰。'],
+  bd_toulon:['土伦','Toulon',43.124,5.928,'普罗旺斯海港；1348年春最早出现把瘟疫怪到犹太人头上的屠杀。'],
+  bd_krakow:['克拉科夫','Kraków',50.061,19.938,'波兰王都；国王卡齐米日三世收留从西边逃来的犹太人。'],
+  bd_gibraltar:['直布罗陀','Gibraltar',36.14,-5.353,'海峡北岸的岩城；1350年卡斯蒂利亚国王阿方索十一世在此围城时病死。'],
+  bd_bergen:['卑尔根','Bergen (Bjørgvin)',60.392,5.324,'挪威西海岸的商港；1349年黑死病经此进入挪威。'],
+  bd_moscow:['莫斯科','Moscow',55.756,37.617,'莫斯科大公国的都城；1353年大公西美昂一家死于黑死病。'],
 });
 function hp(d,key,opt={}){
   const [n,en,la,lo,note]=HS[key];
@@ -4230,6 +4239,70 @@ const HISTORY_ENTRIES=[
     hr(d,[[41.39,2.17],[39.5,3.8],[37.01,6.56],[38.02,12.51],[38.12,13.36]],HC.spain);
    },[['fill',HC.spain,'阿拉贡联合王国与西西里岛（1282—1302年）'],['fill',HC.france,'安茹王朝的那不勒斯王国'],['fill',HC.faith,'教宗国'],['dline',HC.spain,'1282年佩德罗三世经科洛进军西西里（概略）'],['dot',HC.war,'马耳他、那不勒斯湾与赫罗纳之战'],['dot','#2a2018','科洛、特拉帕尼、巴勒莫与卡尔塔贝洛塔']])
  ]},
+{id:'history-italy-blackdeath',ch:5,title:'黑死病：从卡法到伦敦',short:'黑死病',en:'The Black Death: From Caffa to London',period:'1346—1353年',c:HC.italy,
+ scenes:[
+  hs('1346—1348年','从卡法到墨西拿：瘟疫顺着商路进欧洲','1346年金帐汗国围攻卡法，军中瘟疫大作；1347年疫病随热那亚商船到君士坦丁堡、墨西拿和亚历山大，1348年1月进热那亚、威尼斯，月底到马赛。',[[30.0,4.0],[47.6,38.6]],d=>{
+    ha(d,'mMamluks1291',HC.mino,{fillOpacity:.16,dashArray:'4 4'});
+    hp(d,'sc_kaffa',{kind:'battle',note:'1346年金帐汗国大汗札尼别围攻热那亚人的这座商港，军中瘟疫大作。'});
+    hp(d,'constantinople',{note:'1347年瘟疫先到这里，东罗马皇帝约翰六世的小儿子安德罗尼库斯病死。'});
+    hp(d,'no_messina',{left:1,note:'1347年10月十二艘热那亚桨帆船靠岸，瘟疫随即遍及西西里。'});
+    hp(d,'alexandria',{note:'1347年秋一艘病船进港，瘟疫从这里传遍埃及。'});
+    hp(d,'cx_genoa',{left:1,note:'1348年1月从卡法回来的桨帆船进港，瘟疫上了意大利本土。'});
+    hp(d,'w_venice',{note:'1348年1月病船也进了威尼斯。'});
+    hp(d,'k_marseille',{left:1,note:'1348年1月底一艘被意大利赶走的病船进港。'});
+    hr(d,[[45.03,35.38],[41.01,28.98],[37.6,24.6],[36.2,20.0],[38.19,15.55]],HC.war);
+    hr(d,[[38.19,15.55],[41.2,10.0],[44.41,8.93],[43.3,5.37]],HC.war);
+    hr(d,[[37.6,24.6],[31.2,29.92]],HC.war);
+   },[['dash',HC.mino,'马穆鲁克王朝（埃及与叙利亚）'],['dline',HC.war,'1346—1348年瘟疫随热那亚商船西传（概略）'],['dot',HC.war,'1346年卡法之围'],['dot','#2a2018','君士坦丁堡、墨西拿、亚历山大、热那亚、威尼斯与马赛']]),
+  hs('1348年','意大利：佛罗伦萨的《十日谈》，锡耶纳的半截教堂','佛罗伦萨人口从十一二万降到五万，薄伽丘写《十日谈》；1348年5月瘟疫到锡耶纳，大教堂停建；1377年拉古萨首定隔离期。',[[40.6,8.0],[46.4,19.4]],d=>{
+    ha(d,'mPapal1210',HC.faith,{fillOpacity:.2});ha(d,'mNaplesAnjou1282',HC.italy,{fillOpacity:.16});
+    hp(d,'ci_florence',{kind:'battle',note:'人口从1338年的十一二万降到1351年的五万；编年史家维拉尼也死于这场瘟疫。'});
+    hp(d,'bd_fiesole',{note:'《十日谈》里七个姑娘、三个小伙躲进这一带山上的庄园，轮流讲了一百个故事。'});
+    hp(d,'sc_siena',{left:1,note:'1348年5月瘟疫到来，扩建大教堂的工程停下，1355年正式放弃。'});
+    hp(d,'w_venice',{note:'1348年1月病船进港；后来威尼斯话把四十天的隔离叫作quarantena。'});
+    hp(d,'bd_ragusa',{note:'1377年规定外来者先隔离三十天再进城。'});
+   },[['fill',HC.faith,'教宗国'],['fill',HC.italy,'那不勒斯王国'],['dot',HC.war,'佛罗伦萨'],['dot','#2a2018','菲耶索莱、锡耶纳、威尼斯与拉古萨']]),
+  hs('1348—1349年','阿维尼翁与法兰西：教宗守着火，百年战争停了仗','1348年1月瘟疫到阿维尼翁，克莱芒六世祝圣罗讷河、两次发诏止杀，又买下阿维尼翁城；巴黎死了一半；英王之女琼死在波尔多一带。',[[42.4,-2.5],[51.6,8.6]],d=>{
+    ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.24});ha(d,'mGascony1223',HC.britain,{fillOpacity:.2,dashArray:'4 4'});
+    hp(d,'sl9_avignon',{kind:'battle',note:'1348年坟地不够，克莱芒六世祝圣罗讷河让人抛尸；同年教宗买下阿维尼翁城。'});
+    hp(d,'w_paris',{note:'巴黎约十万人，死了一半。'});
+    hp(d,'w_bordeaux',{left:1,note:'1348年夏英王之女琼在此待嫁卡斯蒂利亚王子，染病死去。'});
+    hp(d,'bd_calais',{left:1,note:'1347年英王围下这座港城，随后英法的仗因瘟疫停了下来。'});
+    hp(d,'k_marseille',{note:'1348年1月底病船进港，瘟疫沿罗讷河北上。'});
+   },[['fill',HC.france,'法兰西王国'],['dash',HC.britain,'英王的加斯科涅'],['dot',HC.war,'阿维尼翁'],['dot','#2a2018','巴黎、波尔多、加莱与马赛']]),
+  hs('1348—1381年','英格兰：人少了，工钱涨了','1348年6月瘟疫在梅尔科姆上岸，秋天到伦敦；1349年《劳工条例》、1351年《劳工法》压工钱；1381年农民起义打进伦敦。',[[49.8,-5.8],[55.8,2.2]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.28});
+    hp(d,'bd_melcombe',{kind:'battle',note:'1348年6月24日前不久，瘟疫随加斯科涅来的船在此上岸。'});
+    hp(d,'k_london',{note:'1348年秋瘟疫进城；1381年6月13日起义农民打进伦敦，烧了冈特的约翰的萨伏依宫。'});
+    hp(d,'w_canterbury',{left:1,note:'肯特郡的主教城；1381年农民起义由肯特、埃塞克斯闹起来。'});
+   },[['fill',HC.britain,'英格兰王国'],['dot',HC.war,'梅尔科姆（瘟疫登陆处）'],['dot','#2a2018','伦敦与坎特伯雷']]),
+  hs('1348—1350年','德意志：鞭笞派与烧死犹太人','1348年春土伦先屠杀犹太人，经萨伏依传进德意志；1349年1月巴塞尔、2月斯特拉斯堡烧死犹太人；鞭笞派结队游行，1349年10月被教宗取缔。',[[42.8,3.5],[54.2,22.5]],d=>{
+    ha(d,'mEmpire1050',HC.germany,{fillOpacity:.2});ha(d,'mPoland1385',HC.eeurope,{fillOpacity:.2});
+    hp(d,'bd_toulon',{left:1,note:'1348年春这里先发生屠杀犹太人的事。'});
+    hp(d,'sc_basel',{kind:'battle',left:1,note:'1349年1月犹太人被锁进莱茵河小岛上的木屋烧死，孩子被强行受洗。'});
+    hp(d,'k_strasbourg',{kind:'battle',note:'1349年2月14日约两千犹太人被烧死，五天前行会刚造反赶下护着犹太人的市政长官。'});
+    hp(d,'colonia',{note:'鞭笞派“十字兄弟会”在莱茵河与低地国家一带结队游行。'});
+    hp(d,'bd_krakow',{note:'波兰国王卡齐米日三世收留东逃的犹太人。'});
+    hr(d,[[48.58,7.75],[50.0,12.5],[50.06,19.94]],HC.eeurope);
+   },[['fill',HC.germany,'神圣罗马帝国'],['fill',HC.eeurope,'收留犹太人的波兰'],['dline',HC.eeurope,'犹太人东迁（示意）'],['dot',HC.war,'巴塞尔与斯特拉斯堡'],['dot','#2a2018','土伦、科隆与克拉科夫']]),
+  hs('1347—1349年','马穆鲁克：开罗与大马士革','1347年秋病船到亚历山大，1348年9月瘟疫到开罗；1348年夏到大马士革，同年朝觐者把病带进麦加；埃及税收锐减、水渠失修。',[[20.5,27.0],[37.8,41.5]],d=>{
+    ha(d,'mMamluks1291',HC.mino,{fillOpacity:.26});
+    hp(d,'alexandria',{left:1,note:'1347年秋一艘病船进港，次年春瘟疫遍及下埃及。'});
+    hp(d,'cx_cairo',{kind:'battle',note:'1348年9月瘟疫进城；据伊本·白图泰所记，开罗和老开罗一天死到两万四千人。'});
+    hp(d,'p_damascus',{kind:'battle',note:'1348年7月全城斋戒三天，穆斯林、犹太人、基督徒一起出城游行祈祷。'});
+    hp(d,'gaza',{left:1,note:'伊本·白图泰路过时，城里几乎死空了。'});
+    hp(d,'p_mecca',{note:'1348年朝觐的人把瘟疫带进了麦加。'});
+   },[['fill',HC.mino,'马穆鲁克王朝（埃及与叙利亚）'],['dot',HC.war,'开罗与大马士革'],['dot','#2a2018','亚历山大、加沙与麦加']]),
+  hs('1346—1353年','同一场瘟疫，各地不同的后果','据教宗手下1351年估算，基督教欧洲死了约三成；西欧工钱上涨、农奴松绑，埃及水渠失修，教会神父大批死去；1349年到挪威，1353年到莫斯科。',[[34.0,-10.0],[62.5,42.0]],d=>{
+    ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.16});ha(d,'mEngland1066',HC.britain,{fillOpacity:.16});ha(d,'mEmpire1050',HC.germany,{fillOpacity:.12});
+    ha(d,'mPapal1210',HC.faith,{fillOpacity:.2});ha(d,'mMamluks1291',HC.mino,{fillOpacity:.14});ha(d,'mScandinavia',HC.eeurope,{fillOpacity:.12,dashArray:'4 4'});
+    hp(d,'sl9_avignon',{note:'1351年教宗的手下估算，基督教欧洲死了两千三百八十四万人。'});
+    hp(d,'bd_gibraltar',{kind:'battle',left:1,note:'1350年3月卡斯蒂利亚国王阿方索十一世围城时染病死去。'});
+    hp(d,'bd_bergen',{note:'1349年病船在附近靠岸，瘟疫进了挪威。'});
+    hp(d,'bd_moscow',{note:'1353年莫斯科大公西美昂和儿子们相继病死。'});
+    hp(d,'constantinople',{note:'1347年最早染病的大城之一。'});
+   },[['fill',HC.france,'法兰西'],['fill',HC.britain,'英格兰'],['fill',HC.germany,'神圣罗马帝国'],['fill',HC.faith,'教宗国'],['fill',HC.mino,'马穆鲁克王朝'],['dash',HC.eeurope,'斯堪的纳维亚（示意）'],['dot',HC.war,'直布罗陀城下'],['dot','#2a2018','阿维尼翁、卑尔根、莫斯科与君士坦丁堡']])
+ ]},
 {id:'history-spain-taifas',ch:5,title:'泰法诸国：多国演义',short:'泰法诸国',en:'The Taifas: A Game of Many Kingdoms',period:'1031—1086年',c:HC.spain,
  scenes:[
   hs('1031—1037年','碎成多国','1031年废哈里发后，南边碎成三十来个泰法；北边桑乔三世一度从莱昂管到巴塞罗那边上，1035年分给几个儿子；1037年卡斯蒂利亚并了莱昂。',[[35.6,-9.9],[44.2,4.4]],d=>{
@@ -5257,15 +5330,12 @@ const HISTORY_ENTRIES=[
  ]},
 {id:'history-faith-schism',ch:6,title:'教会大分裂（上）：从黑死病到两个教宗',short:'教会大分裂（上）',en:'The Western Schism (I): From the Black Death to Two Popes',period:'1322—1379年',c:HC.faith,
  scenes:[
-  hs('1347—1351年','黑死病：第一个大贯通事件','1347年疫病从卡法随船到墨西拿，次年遍及意大利、法国、英格兰，1349年进德意志；欧洲约死三成，教会收入与控制力一落千丈。',[[35.0,-8.0],[56.5,38.0]],d=>{
-    ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.16});ha(d,'mEngland1066',HC.britain,{fillOpacity:.16});ha(d,'mEmpire1050',HC.germany,{fillOpacity:.12});ha(d,'mPapal1210',HC.faith,{fillOpacity:.22});
-    hp(d,'sc_kaffa',{kind:'battle',note:'1346—1347年金帐汗国围攻这座热那亚商港，军中爆发瘟疫。'});
-    hp(d,'no_messina',{note:'1347年10月热那亚船把疫病带到墨西拿，随后传遍意大利。'});
-    hp(d,'k_marseille',{left:1,note:'1347年11月瘟疫到马赛，沿罗讷河北上。'});
-    hp(d,'sl9_avignon',{kind:'battle',note:'1348年阿维尼翁死人无数，克莱芒六世祝圣罗讷河让人抛尸。'});
-    hp(d,'k_london',{left:1,note:'1348年秋瘟疫到伦敦，英格兰约死三分之一到一半人口。'});
-    hr(d,[[45.03,35.38],[41.0,28.98],[38.19,15.55],[43.3,5.37],[43.95,4.81],[48.85,2.35],[51.51,-0.12]],HC.war);
-   },[['fill',HC.faith,'教宗国'],['fill',HC.france,'法兰西'],['fill',HC.britain,'英格兰'],['fill',HC.germany,'神圣罗马帝国'],['dline',HC.war,'1347—1348年瘟疫西传的主要路线（概略）'],['dot',HC.war,'卡法与阿维尼翁'],['dot','#2a2018','墨西拿、马赛与伦敦']]),
+  hs('1347—1351年','回顾：黑死病对教会的打击','黑死病中英格兰教士死了三到四成；鞭笞派绕开神父自己赎罪，1349年被克莱芒六世取缔；1350年罗马大赦年，教宗仍留在阿维尼翁。',[[40.5,-3.5],[54.5,13.5]],d=>{
+    ha(d,'mPapal1210',HC.faith,{fillOpacity:.3});ha(d,'mEngland1066',HC.britain,{fillOpacity:.24});
+    hp(d,'sl9_avignon',{kind:'battle',note:'1348年克莱芒六世守在城里，祝圣罗讷河抛尸；1349年10月下诏取缔鞭笞派。'});
+    hp(d,'rome',{note:'1350年照常办大赦年，教宗没回来，只派一位枢机代行。'});
+    hp(d,'colonia',{left:1,note:'鞭笞派在莱茵河与低地国家一带结队游行，自己鞭打赎罪。'});
+   },[['fill',HC.faith,'教宗国'],['fill',HC.britain,'英格兰（教士死了三到四成）'],['dot',HC.war,'阿维尼翁'],['dot','#2a2018','罗马与科隆']]),
   hs('1322—1347年','奥卡姆：理性够不着上帝，教廷该守贫','奥卡姆在牛津讲唯名论，1324年被召到阿维尼翁受审；1323年教宗判守贫之说为异端，1328年奥卡姆与总会长逃往慕尼黑投奔路易四世。',[[42.5,-3.5],[52.6,13.8]],d=>{
     ha(d,'mEmpire1050',HC.germany,{fillOpacity:.2});ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.16});ha(d,'mEngland1066',HC.britain,{fillOpacity:.18});
     hp(d,'sh_oxford',{left:1,note:'奥卡姆在此讲学，主张共相只是名字、信条只能靠信。'});
@@ -7795,6 +7865,7 @@ const HISTORY_ERAS=[
  {id:'empire-staufer',name:'中世纪盛期：红胡子、亨利六世与英诺森三世',en:'Barbarossa, Henry VI and Innocent III',date:'1152—1216年',c:HC.germany,items:[['history-germany-barbarossa'],['history-germany-henry6'],['history-germany-innocent']]},
  {id:'empire-france',name:'法兰西：从卡佩开张到阿纳尼',en:'France: From Hugh Capet to Anagni',date:'987—1314年',c:HC.france,items:[['history-france-capet'],['history-france-plantagenet'],['history-france-stlouis']]},
  {id:'empire-frederick2',name:'中世纪盛期：腓特烈二世与西西里晚祷',en:'Frederick II and the Sicilian Vespers',date:'1212—1302年',c:HC.germany,items:[['history-germany-frederick2'],['history-italy-vespers']]},
+ {id:'empire-blackdeath',name:'中世纪晚期：黑死病',en:'The Late Middle Ages: the Black Death',date:'1346—1353年',c:HC.italy,items:[['history-italy-blackdeath']]},
  {id:'empire-taifas',name:'西班牙：泰法与圣战',en:'Spain: the Taifas and Holy War',date:'1031—1123年',c:HC.spain,items:[['history-spain-taifas'],['history-spain-crusade']]},
  {id:'faith-israel',name:'古代以色列',en:'Ancient Israel',date:'约前1400—前538年',c:HC.faith,items:[['history-faith-israel'],['history-faith-first-temple']]},
  {id:'faith-temple',name:'第二圣殿时期',en:'The Second Temple',date:'前538—公元73年',c:HC.faith,items:[['history-faith-second-temple'],['history-faith-jesus']]},
@@ -7840,17 +7911,17 @@ const HISTORY_BRANCHES=[
  {id:'east',name:'东罗马',en:'East Rome',lane:2,parent:'rome',from:395,to:1099,c:HC.byz},
  {id:'west',name:'中世纪西欧',en:'Medieval Western Europe',lane:4,parent:'rome',from:476,to:843,c:HC.celt},
  {id:'spain',name:'西班牙',en:'Spain',lane:5,parent:'west',from:481,to:1123,c:HC.spain},
- {id:'france',name:'法兰西',en:'France',lane:5,parent:'west',from:843,to:1314,c:HC.france},
- {id:'germany',name:'德意志',en:'Germany',lane:4,parent:'west',from:843,to:1273,c:HC.germany},
- {id:'italy',name:'意大利',en:'Italy',lane:3,parent:'west',from:843,to:1302,c:HC.italy},
+ {id:'france',name:'法兰西',en:'France',lane:5,parent:'west',from:843,to:1351,c:HC.france},
+ {id:'germany',name:'德意志',en:'Germany',lane:4,parent:'west',from:843,to:1351,c:HC.germany},
+ {id:'italy',name:'意大利',en:'Italy',lane:3,parent:'west',from:843,to:1351,c:HC.italy},
  // 不列颠 (including Ireland): forks from the trunk before Caesar's landing, on lane 6 right beside 法兰西.
- {id:'britain',name:'不列颠',en:'Britain and Ireland',lane:6,parent:'trunk',from:-55,to:1307,c:HC.britain},
+ {id:'britain',name:'不列颠',en:'Britain and Ireland',lane:6,parent:'trunk',from:-55,to:1351,c:HC.britain},
  // The 基督教 line: from the Hebrews' nomadic origins (the old Levant branch) to the schism of 1054; on its own lane, right of the West.
  // After 641 it runs through the shared stations of the East Roman dynasties.
  {id:'faith',name:'基督教',en:'Judaism & Christianity',lane:7,parent:'trunk',from:-1400,to:1449,c:HC.faith},
  // 埃及 and 波斯 leave the trunk at the early states (老无 2026-10-21): the Ptolemies, the Seleucids, Rome and Byzantium are passing rulers of these lands.
  {id:'egypt',name:'埃及',en:'Egypt',lane:1,parent:'trunk',from:-3100,to:642,c:HC.mino},
- {id:'persia',name:'波斯—阿拉伯',en:'Persia and the Arabs',lane:0,parent:'trunk',from:-3200,to:1291,c:HC.parthia},
+ {id:'persia',name:'波斯—阿拉伯',en:'Persia and the Arabs',lane:0,parent:'trunk',from:-3200,to:1351,c:HC.parthia},
  {id:'eeurope',name:'东欧',en:'Eastern Europe',lane:8,parent:'trunk',from:-700,to:1054,c:HC.eeurope},
  // 十字军: from the theatre, the players and the holy war in Spain (the 0th crusade) to Acre (1291) and the military orders.
  {id:'crusade',name:'十字军',en:'The Crusades',lane:1,parent:'faith',from:1070,to:1312,c:HC.crusade},
@@ -8044,14 +8115,15 @@ const TREE_ROWS={
  'history-britain-edward1/0':['britain',1277,1307,'1272—1307年'],
  'history-faith-avignon/0':[['faith','france'],1296,1303,'1294—1303年'],
  'history-faith-clement/0':[['faith','france'],1304,1314,'1303—1314年'],
- 'history-faith-schism/0':['faith',1322,1379,'1322—1379年'],
+ 'history-italy-blackdeath/0':[['italy','france','britain','germany','faith','persia'],1347,1351,'1346—1353年'],
+ 'history-faith-schism/0':['faith',1352,1379,'1322—1379年'],
  'history-faith-constance/0':['faith',1380,1449,'1378—1449年'],
  'history-empire-macedonian/3':[['east','faith'],1054,1056],
  'history-spain-fall/2':[['spain','persia'],711,713],
  'history-arab-seljuks/3':[['persia','east'],1071,1092]
 };
 // Topics still to be written grow the tree as dashed shoots.
-const TREE_FUTURE=[['east',1099,'科穆宁王朝','1099年起 · 1176年米利奥克法隆之战 · 1204年第四次十字军攻破君士坦丁堡 · 待展开'],['france',1314,'百年战争','1328年卡佩直系绝嗣 · 1337—1453年英法百年战争 · 待展开'],['germany',1273,'选帝侯与哈布斯堡','1273年哈布斯堡的鲁道夫当选 · 1356年《金玺诏书》七选帝侯 · 待展开'],['italy',1302,'城市共和国与文艺复兴','佛罗伦萨、威尼斯、热那亚与米兰 · 文艺复兴 · 待展开'],['faith',1449,'宗教改革','1449年起 · 文艺复兴教廷 · 1517年马丁·路德《九十五条论纲》与宗教改革 · 待展开'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',1291,'伊儿汗国与马穆鲁克','1291年起 · 1295年合赞汗皈依伊斯兰 · 1300年伊儿汗国一度占大马士革 · 奥斯曼人兴起 · 待展开'],['china',845,'晚唐五代与宋','845年起 · 待展开'],['spain',1123,'收复失地运动','1123年起 · 穆拉比特与穆瓦希德 · 1212年纳瓦斯—德托洛萨 · 1492年格拉纳达 · 待展开'],['eeurope',1054,'基辅罗斯以后','1054年起 · 雅罗斯拉夫死后诸子分封 · 1240年蒙古人攻破基辅 · 待展开'],['crusade',1312,'后来的十字军','1396年尼科波利斯 · 1444年瓦尔纳 · 1571年勒班陀 · 待展开'],['britain',1307,'班诺克本与百年战争','1314年班诺克本之战 · 1337—1453年英法百年战争 · 玫瑰战争 · 待展开']];
+const TREE_FUTURE=[['east',1099,'科穆宁王朝','1099年起 · 1176年米利奥克法隆之战 · 1204年第四次十字军攻破君士坦丁堡 · 待展开'],['france',1351,'百年战争','1314年后待展开：1328年卡佩直系绝嗣 · 1337—1453年英法百年战争'],['germany',1351,'选帝侯与哈布斯堡','1273年后待展开：1273年哈布斯堡的鲁道夫当选 · 1356年《金玺诏书》七选帝侯'],['italy',1351,'城市共和国与文艺复兴','1302年后待展开：佛罗伦萨、威尼斯、热那亚与米兰 · 文艺复兴'],['faith',1449,'宗教改革','1449年起 · 文艺复兴教廷 · 1517年马丁·路德《九十五条论纲》与宗教改革 · 待展开'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',1351,'伊儿汗国与马穆鲁克','1291年后待展开：1295年合赞汗皈依伊斯兰 · 1300年伊儿汗国一度占大马士革 · 奥斯曼人兴起'],['china',845,'晚唐五代与宋','845年起 · 待展开'],['spain',1123,'收复失地运动','1123年起 · 穆拉比特与穆瓦希德 · 1212年纳瓦斯—德托洛萨 · 1492年格拉纳达 · 待展开'],['eeurope',1054,'基辅罗斯以后','1054年起 · 雅罗斯拉夫死后诸子分封 · 1240年蒙古人攻破基辅 · 待展开'],['crusade',1312,'后来的十字军','1396年尼科波利斯 · 1444年瓦尔纳 · 1571年勒班陀 · 待展开'],['britain',1351,'班诺克本与百年战争','1307年后待展开：1314年班诺克本之战 · 1337—1453年英法百年战争 · 玫瑰战争']];
 // Where a line stops it says why: [line, year, the event that ends it, note, the line it carries on in].
 const TREE_ENDS=[['trunk',-30,'并入罗马','前146年科林斯被毁 · 前30年最后一个希腊化王国埃及并入罗马','rome'],['rome',476,'西罗马终结','476年西部末代皇帝被废 · 由中世纪西欧接续'],['west',843,'凡尔登三分','843年《凡尔登条约》三分帝国 · 分出法兰西、德意志、意大利']];
 // Sections of one line that run side by side: [line, row keys, side of the passing loop].
