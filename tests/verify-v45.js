@@ -68,7 +68,7 @@ const S=JSON.parse(fs.readFileSync(path.join(__dirname,'v45-spec.json'),'utf8'))
     const t10=await page.evaluate(()=>{const e=TOPIC_ENTRIES.find(x=>x.id==='topic-one-vs-many'),mc=HISTORY_ENTRIES.find(x=>x.id==='history-britain-magnacarta');const words=['霍光','曹操','王谢','关陇集团','东南互保','皇帝','国王','独裁官','总统','主席','总书记','丞相','太师','征夷大将军','大司马','关白','摄政王','二十五个男爵','八大贝勒','51个','全民11月去投票','站在广场上喊','在议会里吵','闭门密谈','宫廷政变','刻在碑上','写在遗诏上','写成宪法','签成《大宪章》','刻在丹书铁券上','留在长期默认共识里'];return e&&[e.num,e.scenes.length,e.boxes.length,words.filter(w=>!e.boxes[0].text.includes(w)),mc.html.includes('data-go="topic-one-vs-many"')];});
     assert.deepEqual(t10,['10',4,1,[],true],'topic-one-vs-many (10) and link from Magna Carta');
     const t11=await page.evaluate(()=>{const a=TOPIC_ENTRIES.find(x=>x.id==='topic-china-cycles'),b=TOPIC_ENTRIES.find(x=>x.id==='topic-three-states');return [a&&a.num,a&&a.scenes.length,a&&a.boxes.length,a&&a.html.includes('税负套利')&&a.html.includes('无限放大器'),b&&b.num,b&&b.scenes.length,b&&b.boxes.length,b&&b.html.includes('分配性危机')&&b.html.includes('绝对内卷')&&b.html.includes('LLM')];});
-    assert.deepEqual(t11,['11',4,1,true,'12',4,1,true],'topics 11 (cycles) and 12 (three-state model)');
+    assert.deepEqual(t11,['11',7,0,true,'12',5,1,true],'topics 11 (cycles) and 12 (three-state model)');
     for(const [k,spec] of Object.entries(S.rows))assert.deepEqual(r.rows[k],spec,k);
     for(const [id,spec] of Object.entries(S.branches))assert.deepEqual(r.branches[id],spec,id+' runs on to its new end');
     assert.deepEqual(r.eras.sort(),S.eras.slice().sort());

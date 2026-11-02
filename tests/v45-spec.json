@@ -45,7 +45,7 @@
   "history-britain-richard": [
    "狮心王与无地王",
    "1173—1214年",
-   6,
+   7,
    12
   ],
   "history-britain-magnacarta": [
@@ -237,6 +237,22 @@
    "理查一死，八十岁的太后埃莉诺拼尽最后一口气扶小儿子约翰上位，可约翰在五年里就把父"
   ],
   [
+   "history-britain-richard/5",
+   "约翰上位后跟国内贵族关系极差——贵族崇拜狮心王理查，觉得理查正是被约翰当年勾结法"
+  ],
+  [
+   "history-britain-richard/5",
+   "约翰想靠打法国转移国内矛盾，1212年夏集结大军准备渡海，结果出师未捷，北方贵族"
+  ],
+  [
+   "history-britain-richard/6",
+   "约翰稳住局面后又要打法国；这时法国因扶腓特烈二世跟德意志韦尔夫家结了仇，约翰便联"
+  ],
+  [
+   "history-britain-richard/6",
+   "战败原因有三层：一是英国贵族离心，许多人没来、只交钱弄雇佣军；二是德意志那边奥托"
+  ],
+  [
    "history-britain-magnacarta/0",
    "历史长期看服从概率，短期看却并不全是必然：《大宪章》并不是什么天生神圣的“制度笼"
   ],
@@ -253,12 +269,28 @@
    "《大宪章》的内容根据双方的实力演变，经过多次的重申、添加、删除等修订"
   ],
   [
+   "history-britain-magnacarta/2",
+   "约翰死后亨利三世还小，当时托孤小组里两个是教宗的人（教宗使节瓜拉、潘杜尔夫与温彻"
+  ],
+  [
+   "history-britain-magnacarta/2",
+   "亨利三世亲政后，教宗英诺森四世想找人解决霍亨施陶芬家对教宗国的南北夹击问题（见“"
+  ],
+  [
    "history-britain-magnacarta/3",
    "说明当时自治城市已经有重要性了"
   ],
   [
    "history-britain-magnacarta/5",
    "纵观人类的政治组织，本质上还是一头独大、还是多头并立的区别"
+  ],
+  [
+   "history-britain-magnacarta/5",
+   "法国依靠自治城市新兴精英，国王走民粹路线同贵族争权，把贵族拆成没有实权的寄生阶层"
+  ],
+  [
+   "history-britain-magnacarta/5",
+   "而英国是贵族联合限制王权，把骑士与市民拉进议会维持多头稳态渐进演化，后来成了保守"
   ],
   [
    "history-britain-edward1/3",
@@ -731,8 +763,8 @@
    "6月15日约翰在兰尼米德盖印63条《大宪章》"
   ],
   [
-   "history-britain-magnacarta/2",
-   "替次子埃德蒙买西西里王冠，欠下教廷十三万五千余马克巨债"
+   "history-britain-magnacarta/1",
+   "1216年6月伦敦开门迎接法军"
   ],
   [
    "history-britain-magnacarta/4",
@@ -789,7 +821,12 @@
   [
    "history-britain-magnacarta",
    "英、法、德三国的权力算术",
-   "英格兰（强王权起手"
+   "英格兰（贵族联合限权"
+  ],
+  [
+   "history-britain-magnacarta",
+   "英、法、德三国的权力算术",
+   "法兰西（王权联手城市精英走民粹路线"
   ],
   [
    "history-britain-edward1",
@@ -822,5 +859,5 @@
   "mNormanIreland1210",
   "mGaelicIreland1210"
  ],
- "pass": "不列颠 — 10 sections (56 scenes) on a new line and chapter ⅩⅢ: Doggerland and Stonehenge to Caesar's raids, Roman Britain and Hadrian's Wall, Ireland's monasteries and Whitby, the Heptarchy, Vikings and Alfred the Great, Cnut and the Norman Conquest, Henry II's juries and Becket, the Normans in Ireland, Richard the Lionheart and Lackland John, Magna Carta and Parliament, Edward I's Wales and Scottish wars; 32 of 老无’s points in bold, 38 facts set right in plain text; 6 豆腐块"
+ "pass": "不列颠 — 10 sections (57 scenes) on a new line and chapter ⅩⅢ: Doggerland and Stonehenge to Caesar's raids, Roman Britain and Hadrian's Wall, Ireland's monasteries and Whitby, the Heptarchy, Vikings and Alfred the Great, Cnut and the Norman Conquest, Henry II's juries and Becket, the Normans in Ireland, Richard the Lionheart and Lackland John, Magna Carta and Parliament, Edward I's Wales and Scottish wars; 40 of 老无’s points in bold, 38 facts set right in plain text; 6 豆腐块"
 }
