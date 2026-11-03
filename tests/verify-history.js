@@ -58,10 +58,11 @@ assert.ok(!/tChrono|peakTimeline|高光年代|TIME_CH/.test(html));
   // Every scene draws real, valid, named geometry; a missing region may not fail silently.
   const sceneReport=await page.evaluate(()=>{
    const report=[];
-   for(const e of ENTRIES){
+   const _m=markTreeCurrent,_c=makeCtx;markTreeCurrent=()=>{};
+   try{for(const e of ENTRIES){
     const scenes=e.scenes||[e];
     scenes.forEach((s,i)=>{
-     go(e.id,{scene:i});
+     makeCtx=()=>new Proxy({},{get:()=>()=>{}});go(e.id,{scene:i});makeCtx=_c;
      const ctx=makeCtx(e),reg=ctx.region,river=ctx.river;
      ctx.region=(key,...args)=>{if(!GEO.regions[key])throw new Error('Missing region '+key+' in '+e.id);return reg(key,...args);};
      ctx.river=(key,...args)=>{if(!GEO.rivers[key])throw new Error('Missing river '+key+' in '+e.id);return river(key,...args);};
@@ -72,16 +73,18 @@ assert.ok(!/tChrono|peakTimeline|高光年代|TIME_CH/.test(html));
      if(e.scenes&&!document.getElementById('sceneContext').textContent.includes(s.date))throw new Error('Scene caption mismatch');
      report.push(e.id+'/'+i);
     });
-   }
+   }}finally{markTreeCurrent=_m;makeCtx=_c;markTreeCurrent();}
    return report;
   });
   assert.equal(sceneReport.length,909);
   await page.evaluate(()=>go('history-migration'));
   assert.equal(await page.$$eval('#toc .chip',es=>es.length),194);
   assert.equal(await page.$eval('#prev',e=>e.disabled),true);
-  await page.evaluate(()=>{for(const e of HISTORY_ENTRIES){go(e.id);
-   const as=[...document.querySelectorAll('#readerBody .sources a')];
-   if(as.length!==ENTRIES[cur].sources.length||!as.every(a=>a.href.startsWith('https://')&&a.target==='_blank'&&a.rel.includes('noopener')&&a.rel.includes('noreferrer'))||document.getElementById('card').textContent.length<=100)throw new Error('sources '+e.id);}});
+  await page.evaluate(()=>{const _f=fit,_m=markTreeCurrent,_c=makeCtx;fit=()=>{};markTreeCurrent=()=>{};makeCtx=()=>new Proxy({},{get:()=>()=>{}});
+   try{for(const e of HISTORY_ENTRIES){go(e.id);
+    const as=[...document.querySelectorAll('#readerBody .sources a')];
+    if(as.length!==ENTRIES[cur].sources.length||!as.every(a=>a.href.startsWith('https://')&&a.target==='_blank'&&a.rel.includes('noopener')&&a.rel.includes('noreferrer'))||document.getElementById('card').textContent.length<=100)throw new Error('sources '+e.id);
+   }}finally{fit=_f;markTreeCurrent=_m;makeCtx=_c;markTreeCurrent();}});
   assert.equal(await page.$eval('#next',e=>e.disabled),true);
   await page.click('#prev');assert.equal(await page.evaluate(()=>ENTRIES[cur].id),'history-britain-hundred-years-2');
   await page.click('#next');assert.equal(await page.evaluate(()=>ENTRIES[cur].id),'history-britain-hundred-years-3');

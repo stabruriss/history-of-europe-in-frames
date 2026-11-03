@@ -15,18 +15,20 @@ const shots=path.join(__dirname,'shots-v7');require('node:fs').mkdirSync(shots,{
   await page.goto(pathToFileURL(target).href+'#history-migration',{waitUntil:'domcontentloaded'});
   const list=await page.evaluate(()=>HISTORY_ENTRIES.flatMap(e=>e.moments.map(m=>({id:e.id,scene:m.scene,name:m.name}))));
   assert.equal(list.length,571);
-  await page.evaluate(list=>{for(const m of list){if(ENTRIES[cur]?.id!==m.id||sceneIndex!==m.scene)go(m.id,{scene:m.scene});
+  await page.evaluate(list=>{const _f=fit,_m=markTreeCurrent,_c=makeCtx;fit=()=>{};markTreeCurrent=()=>{};makeCtx=()=>new Proxy({},{get:()=>()=>{}});try{
+   for(const m of list){if(ENTRIES[cur]?.id!==m.id||sceneIndex!==m.scene)go(m.id,{scene:m.scene});
    const ctx=document.getElementById('sceneContext');const tags=[...ctx.querySelectorAll('.moment-tag')].map(t=>t.firstChild.textContent);
    const r={tags,total:document.querySelectorAll('#card .moment').length,expected:ENTRIES[cur].moments.length,overflow:document.documentElement.scrollWidth>innerWidth};
-   if(!r.tags.includes(m.name)||r.total!==r.expected||r.overflow)throw new Error(JSON.stringify({m,r}));}},list);
+   if(!r.tags.includes(m.name)||r.total!==r.expected||r.overflow)throw new Error(JSON.stringify({m,r}));}}finally{fit=_f;markTreeCurrent=_m;makeCtx=_c;}},list);
   // 豆腐块: boxed explainers render inside their own scene passage, apart from the 名场面.
   const boxes=await page.evaluate(()=>HISTORY_ENTRIES.flatMap(e=>e.boxes.map(b=>({id:e.id,scene:b.scene,name:b.name}))));
   assert.equal(boxes.length,52);
-  await page.evaluate(boxes=>{for(const b of boxes){if(ENTRIES[cur]?.id!==b.id||sceneIndex!==b.scene)go(b.id,{scene:b.scene});
+  await page.evaluate(boxes=>{const _f=fit,_m=markTreeCurrent,_c=makeCtx;fit=()=>{};markTreeCurrent=()=>{};makeCtx=()=>new Proxy({},{get:()=>()=>{}});try{
+   for(const b of boxes){if(ENTRIES[cur]?.id!==b.id||sceneIndex!==b.scene)go(b.id,{scene:b.scene});
    const ctx=document.getElementById('sceneContext');
    const r={tags:[...ctx.querySelectorAll('.box-tag')].map(t=>t.firstChild.textContent),total:document.querySelectorAll('#card .box').length,expected:ENTRIES[cur].boxes.length,
     moments:document.querySelectorAll('#card .moment').length,expectedMoments:ENTRIES[cur].moments.length,overflow:document.documentElement.scrollWidth>innerWidth};
-   if(!r.tags.includes(b.name)||r.total!==r.expected||r.moments!==r.expectedMoments||r.overflow)throw new Error(JSON.stringify({b,r}));}},boxes);
+   if(!r.tags.includes(b.name)||r.total!==r.expected||r.moments!==r.expectedMoments||r.overflow)throw new Error(JSON.stringify({b,r}));}}finally{fit=_f;markTreeCurrent=_m;makeCtx=_c;}},boxes);
   await page.evaluate(()=>go('history-persian-wars',{scene:3}));
   if(process.env.FULL_SHOTS==='1')await new Promise(r=>setTimeout(r,800));
   if(label==='390')await page.evaluate(()=>scrollSceneText(false));

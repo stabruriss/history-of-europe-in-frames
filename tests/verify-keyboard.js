@@ -29,20 +29,23 @@ const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','
   const onKey=()=>p.evaluate(()=>({key:toc.querySelector('.chip.on').dataset.key,line:treeLine,focus:document.activeElement===toc.querySelector('.chip.on')}));
   const walked=new Set();
   for(const k of await p.evaluate(lines=>{
-   const walked=[],press=key=>(document.activeElement||document.body).dispatchEvent(new KeyboardEvent('keydown',{key,bubbles:true,cancelable:true}));
-   const onKey=()=>({key:toc.querySelector('.chip.on').dataset.key,line:treeLine,focus:document.activeElement===toc.querySelector('.chip.on')});
-   for(const line of lines){
-    document.querySelector(`#toc .tree-line[data-line="${line.id}"]`).click();
-    const [id,from]=line.keys[0].split('/');go(id,{scene:+from});
-    toc.querySelector('.chip.on').focus();press('ArrowUp');if(onKey().key!==line.keys[0])throw new Error(line.id+' start');walked.push(line.keys[0]);
-    for(let i=1;i<line.keys.length;i++){
-     press('ArrowDown');const s=onKey();
-     if(s.key!==line.keys[i]||s.line!==line.id||!s.focus)throw new Error(line.id+' '+i+' '+JSON.stringify(s));walked.push(s.key);
+   const _rc=renderCard,_rs=renderScenes,_f=fit,_m=markTreeCurrent,_c=makeCtx;renderCard=()=>{};renderScenes=()=>{};fit=()=>{};markTreeCurrent=()=>{};makeCtx=()=>new Proxy({},{get:()=>()=>{}});
+   try{
+    const walked=[],press=key=>(document.activeElement||document.body).dispatchEvent(new KeyboardEvent('keydown',{key,bubbles:true,cancelable:true}));
+    const onKey=()=>({key:toc.querySelector('.chip.on').dataset.key,line:treeLine,focus:document.activeElement===toc.querySelector('.chip.on')});
+    for(const line of lines){
+     document.querySelector(`#toc .tree-line[data-line="${line.id}"]`).click();
+     const [id,from]=line.keys[0].split('/');go(id,{scene:+from});
+     toc.querySelector('.chip.on').focus();press('ArrowUp');if(onKey().key!==line.keys[0])throw new Error(line.id+' start');walked.push(line.keys[0]);
+     for(let i=1;i<line.keys.length;i++){
+      press('ArrowDown');const s=onKey();
+      if(s.key!==line.keys[i]||s.line!==line.id||!s.focus)throw new Error(line.id+' '+i+' '+JSON.stringify(s));walked.push(s.key);
+     }
+     press('ArrowDown');if(onKey().key!==line.keys.at(-1))throw new Error(line.id+' end');
+     for(let i=line.keys.length-2;i>=0;i--){press('ArrowUp');if(onKey().key!==line.keys[i])throw new Error(line.id+' up '+i);}
     }
-    press('ArrowDown');if(onKey().key!==line.keys.at(-1))throw new Error(line.id+' end');
-    for(let i=line.keys.length-2;i>=0;i--){press('ArrowUp');if(onKey().key!==line.keys[i])throw new Error(line.id+' up '+i);}
-   }
-   return walked;
+    return walked;
+   }finally{renderCard=_rc;renderScenes=_rs;fit=_f;markTreeCurrent=_m;makeCtx=_c;markTreeCurrent();}
   },lines))walked.add(k);
   assert.equal(walked.size,194,'every row lies on some line');
   // The same chapter has separate sidebar rows on either side of two era boundaries.
@@ -55,23 +58,26 @@ const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','
   const entries=await p.evaluate(()=>HISTORY_ENTRIES.map(e=>({id:e.id,count:e.scenes.length})));
   let count=0;
   count=await p.evaluate(entries=>{
-   let count=0;const mapEl=document.getElementById('map'),press=key=>(document.activeElement||document.body).dispatchEvent(new KeyboardEvent('keydown',{key,bubbles:true,cancelable:true}));
-   const st=()=>({id:ENTRIES[cur].id,scene:sceneIndex,textScene:+document.getElementById('sceneContext')?.dataset.sceneText});
-   const checkVis=label=>{const title=document.querySelector('#sceneContext .passage-title'),body=readerBody.getBoundingClientRect(),r=title.getBoundingClientRect();
-    const active=document.querySelectorAll('.scene-passage[aria-current="step"]').length,fits=document.documentElement.scrollWidth<=innerWidth&&readerBody.scrollWidth<=readerBody.clientWidth+1;
-    if(!(r.top>=body.top-1&&r.top<body.bottom&&active===1&&fits))throw new Error(label);};
-   for(const e of entries){
-    go(e.id);mapEl.focus();
-    if(document.querySelectorAll('.scene-passage').length!==e.count)throw new Error(e.id+' count');
-    for(let i=0;i<e.count;i++){
-     if(i)press('ArrowRight');const s=st();
-     if(s.id!==e.id||s.scene!==i||s.textScene!==i)throw new Error(e.id+'/'+i);checkVis(e.id+'/'+i);count++;
+   const _f=fit,_m=markTreeCurrent,_c=makeCtx;fit=()=>{};markTreeCurrent=()=>{};makeCtx=()=>new Proxy({},{get:()=>()=>{}});
+   try{
+    let count=0;const mapEl=document.getElementById('map'),press=key=>(document.activeElement||document.body).dispatchEvent(new KeyboardEvent('keydown',{key,bubbles:true,cancelable:true}));
+    const st=()=>({id:ENTRIES[cur].id,scene:sceneIndex,textScene:+document.getElementById('sceneContext')?.dataset.sceneText});
+    const checkVis=label=>{const title=document.querySelector('#sceneContext .passage-title'),body=readerBody.getBoundingClientRect(),r=title.getBoundingClientRect();
+     const active=document.querySelectorAll('.scene-passage[aria-current="step"]').length,fits=document.documentElement.scrollWidth<=innerWidth&&readerBody.scrollWidth<=readerBody.clientWidth+1;
+     if(!(r.top>=body.top-1&&r.top<body.bottom&&active===1&&fits))throw new Error(label);};
+    for(const e of entries){
+     go(e.id);mapEl.focus();
+     if(document.querySelectorAll('.scene-passage').length!==e.count)throw new Error(e.id+' count');
+     for(let i=0;i<e.count;i++){
+      if(i)press('ArrowRight');const s=st();
+      if(s.id!==e.id||s.scene!==i||s.textScene!==i)throw new Error(e.id+'/'+i);checkVis(e.id+'/'+i);count++;
+     }
+     press('ArrowRight');if(st().scene!==e.count-1||st().id!==e.id)throw new Error(e.id+' end');
+     for(let i=e.count-2;i>=0;i--){press('ArrowLeft');if(st().textScene!==i)throw new Error(e.id+' left '+i);}
+     press('ArrowLeft');if(st().scene!==0)throw new Error(e.id+' start');
     }
-    press('ArrowRight');if(st().scene!==e.count-1||st().id!==e.id)throw new Error(e.id+' end');
-    for(let i=e.count-2;i>=0;i--){press('ArrowLeft');if(st().textScene!==i)throw new Error(e.id+' left '+i);}
-    press('ArrowLeft');if(st().scene!==0)throw new Error(e.id+' start');
-   }
-   return count;
+    return count;
+   }finally{fit=_f;markTreeCurrent=_m;makeCtx=_c;markTreeCurrent();}
   },entries);
   assert.equal(count,824);
   // Meaningful correspondence, rather than several events sharing one summary paragraph.

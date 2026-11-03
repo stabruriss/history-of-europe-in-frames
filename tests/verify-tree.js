@@ -187,14 +187,17 @@ function checkTree(r,label){
   // A full ride on each line from the root: every ↓ lands lower in the tree, and the footer counts stations.
   for(const [line,startId,count,last] of [['trunk','history-migration',23,'history-hellenistic-end'],['rome','history-migration',33,'history-empire-west-end'],['east','history-migration',48,'history-faith-crusade'],['west','history-migration',40,'history-west-louis-pious'],['spain','history-migration',43,'history-spain-crusade'],['france','history-migration',53,'history-britain-hundred-years-3'],['germany','history-migration',53,'history-italy-blackdeath'],['italy','history-migration',51,'history-italy-blackdeath'],['britain','history-migration',38,'history-britain-hundred-years-3'],['faith','history-migration',45,'history-faith-constance'],['egypt','history-migration',12,'history-arab-conquest'],['persia','history-migration',28,'history-italy-blackdeath'],['eeurope','history-migration',14,'history-eeurope-byzantium'],['crusade','history-migration',44,'history-crusade-orders'],['china','history-china-neolithic',12,'history-china-tang']]){
    await p.evaluate(({line,startId,count,last})=>{
-    document.querySelector(`#toc .tree-line[data-line="${line}"]`).click();go(startId);toc.querySelector('.tree-item.on').focus();
-    let lastTop=-1;
-    for(let i=0;i<count;i++){
-     const b=toc.querySelector('.tree-item.on'),w={top:b.offsetTop,pos:document.getElementById('pos').textContent,focus:document.activeElement===b};
-     if(!(w.top>lastTop&&w.pos===`${i+1} / ${count}`&&w.focus))throw new Error(line+' walk '+i+' '+JSON.stringify(w));lastTop=w.top;
-     b.dispatchEvent(new KeyboardEvent('keydown',{key:'ArrowDown',bubbles:true,cancelable:true}));
-    }
-    if(ENTRIES[cur].id!==last)throw new Error(line+' last '+ENTRIES[cur].id+' !== '+last);
+    const _rc=renderCard,_rs=renderScenes,_f=fit,_m=markTreeCurrent,_c=makeCtx;renderCard=()=>{};renderScenes=()=>{};fit=()=>{};markTreeCurrent=()=>{};makeCtx=()=>new Proxy({},{get:()=>()=>{}});
+    try{
+     document.querySelector(`#toc .tree-line[data-line="${line}"]`).click();go(startId);toc.querySelector('.tree-item.on').focus();
+     let lastTop=-1;
+     for(let i=0;i<count;i++){
+      const b=toc.querySelector('.tree-item.on'),w={top:b.offsetTop,pos:document.getElementById('pos').textContent,focus:document.activeElement===b};
+      if(!(w.top>lastTop&&w.pos===`${i+1} / ${count}`&&w.focus))throw new Error(line+' walk '+i+' '+JSON.stringify(w));lastTop=w.top;
+      b.dispatchEvent(new KeyboardEvent('keydown',{key:'ArrowDown',bubbles:true,cancelable:true}));
+     }
+     if(ENTRIES[cur].id!==last)throw new Error(line+' last '+ENTRIES[cur].id+' !== '+last);
+    }finally{renderCard=_rc;renderScenes=_rs;fit=_f;markTreeCurrent=_m;makeCtx=_c;cur=-1;go(last);}
    },{line,startId,count,last});
   }
   // The column grip: drag wider, the tree opens up (branch names), the map shrinks; remembered; double-click restores.

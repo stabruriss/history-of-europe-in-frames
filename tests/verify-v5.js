@@ -72,9 +72,9 @@ const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','
    await page.setViewport({width,height});
    // Wait for Leaflet and the existing 150 ms resize handler to settle.
    await page.waitForFunction(()=>map.getSize().x===map.getContainer().clientWidth&&map.getSize().y===map.getContainer().clientHeight&&map.getBounds().contains(L.latLngBounds(activeScene(ENTRIES[cur]).view)));
-   await page.evaluate(()=>{for(const e of HISTORY_ENTRIES.filter(e=>e.ch===3)){for(let scene=0;scene<e.scenes.length;scene++){
+   await page.evaluate(()=>{const _m=markTreeCurrent;markTreeCurrent=()=>{};try{for(const e of HISTORY_ENTRIES.filter(e=>e.ch===3)){for(let scene=0;scene<e.scenes.length;scene++){
     go(e.id,{scene});
-    if(!(document.documentElement.scrollWidth<=innerWidth&&readerBody.scrollWidth<=readerBody.clientWidth+1&&map.getBounds().contains(L.latLngBounds(activeScene(ENTRIES[cur]).view))&&document.querySelectorAll('.person-card[open]').length===0))throw new Error(e.id+'/'+scene);}}});
+    if(!(document.documentElement.scrollWidth<=innerWidth&&readerBody.scrollWidth<=readerBody.clientWidth+1&&map.getBounds().contains(L.latLngBounds(activeScene(ENTRIES[cur]).view))&&document.querySelectorAll('.person-card[open]').length===0))throw new Error(e.id+'/'+scene);}}}finally{markTreeCurrent=_m;markTreeCurrent();}});
   }
   assert.deepEqual(errors,[]);
   console.log('PASS: '+JSON.stringify(report)+'; all scene-to-era mappings; chapter splits; mobile optgroups; folded references; Callisthenes deep link; new map stages; offline; no page errors.');

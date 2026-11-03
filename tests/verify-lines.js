@@ -55,9 +55,9 @@ const PHRASES=[["history-egypt-roman/0", "托勒密只是亚历山大之后的�
     assert.ok(await page.$$eval('#toc .tree-item[data-branch="egypt"] small',(es,n)=>es.length===n&&es.every(e=>e.textContent.startsWith('埃及 · ')),EGYPT.length+1));
     assert.ok(await page.$$eval('#toc .tree-item[data-branch="persia"] small',(es,n)=>es.length===n&&es.every(e=>/^波斯—阿拉伯(、[^ ]+)? · /.test(e.textContent)),PERSIA.length+1));
    }
-   await page.evaluate(({ids,label})=>{for(const e of ids){const n=HISTORY_ENTRIES.find(x=>x.id===e).scenes.length;for(let i=0;i<n;i++){go(e,{scene:i});const s=activeScene(ENTRIES[cur]);
+   await page.evaluate(({ids,label})=>{const _m=markTreeCurrent;markTreeCurrent=()=>{};try{for(const e of ids){const n=HISTORY_ENTRIES.find(x=>x.id===e).scenes.length;for(let i=0;i<n;i++){go(e,{scene:i});const s=activeScene(ENTRIES[cur]);
     const r={pins:Object.keys(pinIndex).length,layers:group.getLayers().length,legend:legend.children.length,fits:map.getBounds().contains(L.latLngBounds(s.view)),overflow:document.documentElement.scrollWidth>innerWidth};
-    if(!(r.layers>0&&r.legend>0&&!r.overflow)||((label==='desktop')&&!(r.pins>0&&r.fits)))throw new Error(e+'/'+i+' '+JSON.stringify(r));}}},{ids:[...EGYPT,...PERSIA],label});
+    if(!(r.layers>0&&r.legend>0&&!r.overflow)||((label==='desktop')&&!(r.pins>0&&r.fits)))throw new Error(e+'/'+i+' '+JSON.stringify(r));}}}}finally{markTreeCurrent=_m;markTreeCurrent();}}},{ids:[...EGYPT,...PERSIA],label});
    for(const scene of [EGYPT[0]+'/0',EGYPT[2]+'/0',EGYPT[4]+'/0',PERSIA[1]+'/0',PERSIA[2]+'/0',PERSIA[4]+'/0']){
     await page.evaluate(s=>go(s),scene);await wait(300);
     if(label==='390')await page.evaluate(()=>scrollSceneText(false));
