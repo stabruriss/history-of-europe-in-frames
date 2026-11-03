@@ -22,10 +22,10 @@ const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','
  }
  try{
   const p=await pageAt();
-  assert.equal(await p.$$eval('#toc .chip',es=>es.length),195);
+  assert.equal(await p.$$eval('#toc .chip',es=>es.length),198);
   // Metro lines: pick a line, then ↑↓ walk its stations in time order and stop at both ends.
   const lines=await p.evaluate(()=>HISTORY_BRANCHES.map(b=>({id:b.id,keys:lineStations(b.id).map(s=>s.key)})));
-  assert.deepEqual(lines.map(l=>[l.id,l.keys.length]),[['trunk',23],['rome',33],['east',48],['west',40],['spain',43],['france',54],['germany',53],['italy',51],['britain',39],['faith',45],['egypt',12],['persia',28],['eeurope',14],['crusade',44],['china',12]]);
+  assert.deepEqual(lines.map(l=>[l.id,l.keys.length]),[['trunk',23],['rome',33],['east',48],['west',40],['spain',43],['france',56],['germany',53],['italy',51],['britain',41],['faith',45],['egypt',12],['persia',28],['eeurope',14],['crusade',44],['china',12]]);
   const onKey=()=>p.evaluate(()=>({key:toc.querySelector('.chip.on').dataset.key,line:treeLine,focus:document.activeElement===toc.querySelector('.chip.on')}));
   const walked=new Set();
   for(const k of await p.evaluate(lines=>{
@@ -47,7 +47,7 @@ const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','
     return walked;
    }finally{renderCard=_rc;renderScenes=_rs;fit=_f;markTreeCurrent=_m;makeCtx=_c;markTreeCurrent();}
   },lines))walked.add(k);
-  assert.equal(walked.size,195,'every row lies on some line');
+  assert.equal(walked.size,198,'every row lies on some line');
   // The same chapter has separate sidebar rows on either side of two era boundaries.
   await p.evaluate(()=>go('history-farming'));await p.focus('#map');await p.keyboard.press('ArrowDown');
   assert.equal((await state(p)).scene,1);assert.equal(await p.$eval('.active-era',e=>e.dataset.era),'bronze');
@@ -79,7 +79,7 @@ const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','
     return count;
    }finally{fit=_f;markTreeCurrent=_m;makeCtx=_c;markTreeCurrent();}
   },entries);
-  assert.equal(count,831);
+  assert.equal(count,846);
   // Meaningful correspondence, rather than several events sharing one summary paragraph.
   for(const [scene,word] of [['history-persian-wars/2','马拉松'],['history-persian-wars/3','萨拉米斯'],['history-celts/1','加拉太'],['history-celts/2','帕加马']]){
    await p.evaluate(scene=>go(scene),scene);assert.ok(await p.$eval('#sceneContext>p',(e,word)=>e.textContent.replace(/（[A-Za-z][^）]*）/g,'').includes(word),word));
@@ -111,6 +111,6 @@ const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','
   await animated.waitForFunction(()=>{const t=document.querySelector('#sceneContext .passage-title').getBoundingClientRect(),b=readerBody.getBoundingClientRect();return t.top>=b.top-1&&t.top<b.bottom;});
   assert.equal((await state(animated)).scene,5);await visible(animated,'rapid animated switching');
   if(process.env.FULL_SHOTS==='1')await animated.screenshot({path:path.join(__dirname,'shots-v6','keyboard-desktop.png')});await animated.close();
-  assert.deepEqual(errors,[]);console.log('PASS: 13 metro lines (23/33/48/40/43/54/53/51/39/45/12/28/14/44/12 stations, all 195 rows; 罗马 to 476, then 东罗马 and 中世纪西欧; 东罗马 by dynasty to 1056; shared stations walked on every line they sit on) walked up/down in time order; 831 scene-to-text passages with real arrow keys; era boundaries; map/reader/rail focus; input and modifiers; 33-stop geography timeline; mobile scrolling and fold restoration; rapid animated changes; offline; no page errors.');
+  assert.deepEqual(errors,[]);console.log('PASS: 13 metro lines (23/33/48/40/43/56/53/51/41/45/12/28/14/44/12 stations, all 198 rows; 罗马 to 476, then 东罗马 and 中世纪西欧; 东罗马 by dynasty to 1056; shared stations walked on every line they sit on) walked up/down in time order; 846 scene-to-text passages with real arrow keys; era boundaries; map/reader/rail focus; input and modifiers; 33-stop geography timeline; mobile scrolling and fold restoration; rapid animated changes; offline; no page errors.');
  }finally{await Promise.race([browser.close(),new Promise(r=>setTimeout(r,200))]);browser.process()?.kill('SIGKILL');process.exit(process.exitCode||0);}
 })().catch(e=>{console.error(e);process.exitCode=1;});

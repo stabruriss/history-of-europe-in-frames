@@ -89,6 +89,18 @@
    "1377—1400年",
    7,
    12
+  ],
+  "history-britain-hundred-years-4": [
+   "百年战争（三）",
+   "1380—1422年",
+   6,
+   12
+  ],
+  "history-britain-hundred-years-5": [
+   "百年战争（四）",
+   "1422—1435年",
+   4,
+   12
   ]
  },
  "rows": {
@@ -198,11 +210,26 @@
   ],
   "history-britain-richard2/0": [
    [
-    "britain",
-    "france"
+    "britain"
    ],
    1382,
    1400
+  ],
+  "history-britain-hundred-years-4/0": [
+   [
+    "britain",
+    "france"
+   ],
+   1401,
+   1422
+  ],
+  "history-britain-hundred-years-5/0": [
+   [
+    "britain",
+    "france"
+   ],
+   1423,
+   1435
   ]
  },
  "bold": [
@@ -477,6 +504,46 @@
   [
    "history-britain-richard2/6",
    "1399年理查二世公然侵吞兰开斯特家族遗产，这一下动到了所有贵族乃至新兴有产者的"
+  ],
+  [
+   "history-britain-hundred-years-4/0",
+   "法国那边，查理五世收复失地后死去，继位的查理六世是个在位四十多年的疯子，一会儿觉"
+  ],
+  [
+   "history-britain-hundred-years-4/1",
+   "英国这边，亨利四世篡位后本想收理查二世的法国小未婚妻当儿媳，因理查二世生前待她很"
+  ],
+  [
+   "history-britain-hundred-years-4/2",
+   "1415年英国又打过来时，法国正闹内斗，堂弟派（勃艮第）跟英国暗通款曲袖手旁观；"
+  ],
+  [
+   "history-britain-hundred-years-4/3",
+   "亨利五世继续向巴黎进军，堂弟派又不想自己跟英国硬拼，转头拉拢弟弟派一起抗英；结果"
+  ],
+  [
+   "history-britain-hundred-years-4/4",
+   "但是弟弟派也没能统合巴黎市民抗英，因为巴黎人搞地域黑、不喜欢南方土包子；于是法国"
+  ],
+  [
+   "history-britain-hundred-years-4/5",
+   "此后废太子跑到南方重建势力；亨利五世回国不久再次渡海便暴病身亡，疯子查理六世也紧"
+  ],
+  [
+   "history-britain-hundred-years-5/0",
+   "亨利五世的托孤遗诏是让周岁幼子亨利六世继位，三叔管法兰西，四叔摄政英格兰，王太叔"
+  ],
+  [
+   "history-britain-hundred-years-5/1",
+   "三叔在法兰西娶了勃艮第公爵家的女儿，联合勃艮第防范南边的废太子；同时勃艮第借机向"
+  ],
+  [
+   "history-britain-hundred-years-5/2",
+   "这时候英国摄政王四叔作妖，娶了拿废教宗离婚书的荷兰女贵族杰奎琳，还派兵去占领埃诺"
+  ],
+  [
+   "history-britain-hundred-years-5/3",
+   "全靠王三叔从中弥合才勉强维持同盟；可王三叔一死，勃艮第公爵立刻和南边的废太子和解"
   ]
  ],
  "moments": {
@@ -717,6 +784,22 @@
     3,
     "路上私语、死无对证与考文垂比武场的权术绝杀"
    ]
+  ],
+  "history-britain-hundred-years-4": [
+   [
+    0,
+    "缝在衣服里的铁条：“我是玻璃做的！”"
+   ],
+   [
+    3,
+    "“英国人就是从这个头骨窟窿钻进法国的”"
+   ]
+  ],
+  "history-britain-hundred-years-5": [
+   [
+    0,
+    "伦敦桥头的弓箭与莱斯特的“棍棒议会”"
+   ]
   ]
  },
  "boxes": {
@@ -789,6 +872,12 @@
     6,
     "英格兰王室世系表"
    ]
+  ],
+  "history-britain-hundred-years-5": [
+   [
+    2,
+    "荷兰女伯爵杰奎琳：一张废教宗的离婚纸如何拆散了英勃同盟"
+   ]
   ]
  },
  "budget": {
@@ -806,7 +895,9 @@
   "history-britain-hundred-years-1": 300,
   "history-britain-hundred-years-2": 300,
   "history-britain-hundred-years-3": 300,
-  "history-britain-richard2": 300
+  "history-britain-richard2": 300,
+  "history-britain-hundred-years-4": 300,
+  "history-britain-hundred-years-5": 300
  },
  "eras": [
   [
@@ -845,13 +936,15 @@
   ],
   [
    "britain-hundred-years",
-   "百年战争（上）：从阿基坦称臣到金雀花直系终结",
+   "百年战争：从阿基坦称臣、双王合体到英勃破裂",
    [
     "history-britain-edward2",
     "history-britain-hundred-years-1",
     "history-britain-hundred-years-2",
     "history-britain-hundred-years-3",
-    "history-britain-richard2"
+    "history-britain-richard2",
+    "history-britain-hundred-years-4",
+    "history-britain-hundred-years-5"
    ]
   ]
  ],
@@ -860,26 +953,26 @@
    "不列颠",
    "trunk",
    -55,
-   1400,
+   1435,
    6
   ],
   "france": [
    "法兰西",
    "west",
    843,
-   1400,
+   1435,
    5
   ]
  },
  "futures": [
   [
    "britain",
-   1400,
+   1435,
    "班诺克本与百年战争"
   ],
   [
    "france",
-   1400,
+   1435,
    "百年战争"
   ]
  ],
@@ -900,7 +993,9 @@
    "history-britain-hundred-years-1/0",
    "history-britain-hundred-years-2/0",
    "history-britain-hundred-years-3/0",
-   "history-britain-richard2/0"
+   "history-britain-richard2/0",
+   "history-britain-hundred-years-4/0",
+   "history-britain-hundred-years-5/0"
   ],
   "france": [
    "history-france-west-francia/0",
@@ -916,7 +1011,9 @@
    "history-britain-hundred-years-1/0",
    "history-britain-hundred-years-2/0",
    "history-britain-hundred-years-3/0",
-   "history-britain-richard2/0"
+   "history-france-valois/0",
+   "history-britain-hundred-years-4/0",
+   "history-britain-hundred-years-5/0"
   ]
  },
  "shared": {
@@ -944,7 +1041,11 @@
    "britain",
    "france"
   ],
-  "history-britain-richard2/0": [
+  "history-britain-hundred-years-4/0": [
+   "britain",
+   "france"
+  ],
+  "history-britain-hundred-years-5/0": [
    "britain",
    "france"
   ]
@@ -1229,6 +1330,46 @@
   [
    "history-britain-richard2/6",
    "直接没收整个兰开斯特家族的庞大遗产"
+  ],
+  [
+   "history-britain-hundred-years-4/0",
+   "常以为自己是玻璃做的、一碰就碎"
+  ],
+  [
+   "history-britain-hundred-years-4/1",
+   "1405年约克大主教斯克罗普起兵更被斩首（如方孝孺骂朱棣被杀"
+  ],
+  [
+   "history-britain-hundred-years-4/2",
+   "10月25日在阿金库尔被阿马尼亚克派主导的法军截住"
+  ],
+  [
+   "history-britain-hundred-years-4/3",
+   "9月10日双方在蒙特罗桥头木栅栏内会面"
+  ],
+  [
+   "history-britain-hundred-years-4/4",
+   "专门加上不许征英国税去养法国的条款"
+  ],
+  [
+   "history-britain-hundred-years-4/5",
+   "出生才九个月的婴儿亨利六世按约同时继承英法王位"
+  ],
+  [
+   "history-britain-hundred-years-5/0",
+   "1426年2月召莱斯特“棍棒议会”调停"
+  ],
+  [
+   "history-britain-hundred-years-5/1",
+   "迎娶老勃艮第公爵无畏的约翰之女（新公爵好人腓力之妹）安妮"
+  ],
+  [
+   "history-britain-hundred-years-5/2",
+   "请被康斯坦茨会议废黜的阿维尼翁废教宗本笃十三世开具离婚证明"
+  ],
+  [
+   "history-britain-hundred-years-5/3",
+   "好人腓力就在阿拉斯与废太子查理七世签《阿拉斯条约》倒戈和解"
   ]
  ],
  "boxfixes": [
@@ -1341,6 +1482,16 @@
    "history-britain-richard2",
    "手帕、食谱与“至尊陛下”：理查二世的审美、礼仪与作死账",
    "133,333英镑（80万金法郎）"
+  ],
+  [
+   "history-britain-hundred-years-5",
+   "荷兰女伯爵杰奎琳：一张废教宗的离婚纸如何拆散了英勃同盟",
+   "① 来历：身怀三大伯国嫁妆的勃艮第表妹（1401—1421年）"
+  ],
+  [
+   "history-britain-hundred-years-5",
+   "荷兰女伯爵杰奎琳：一张废教宗的离婚纸如何拆散了英勃同盟",
+   "阿维尼翁废教宗本笃十三世"
   ]
  ],
  "slips": [
@@ -1369,5 +1520,5 @@
   "mNormanIreland1210",
   "mGaelicIreland1210"
  ],
- "pass": "不列颠 — 15 sections (85 scenes) on a new line and chapter ⅩⅢ: Doggerland and Stonehenge to Caesar's raids, Roman Britain and Hadrian's Wall, Ireland's monasteries and Whitby, the Heptarchy, Vikings and Alfred the Great, Cnut and the Norman Conquest, Henry II's juries and Becket, the Normans in Ireland, Richard the Lionheart and Lackland John, Magna Carta and Parliament, Edward I's Wales and Scottish wars; 68 of 老无’s points in bold, 70 facts set right in plain text; 12 豆腐块"
+ "pass": "不列颠 — 17 sections (95 scenes) on a new line and chapter ⅩⅢ: Doggerland and Stonehenge to Caesar's raids, Roman Britain and Hadrian's Wall, Ireland's monasteries and Whitby, the Heptarchy, Vikings and Alfred the Great, Cnut and the Norman Conquest, Henry II's juries and Becket, the Normans in Ireland, Richard the Lionheart and Lackland John, Magna Carta and Parliament, Edward I's Wales and Scottish wars; 78 of 老无’s points in bold, 80 facts set right in plain text; 13 豆腐块"
 }

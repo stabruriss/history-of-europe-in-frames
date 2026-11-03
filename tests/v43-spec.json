@@ -18,6 +18,12 @@
    5,
    5
   ],
+  "history-france-valois": [
+   "从卡佩到瓦卢瓦",
+   "987—1380年",
+   5,
+   5
+  ],
   "history-germany-frederick2": [
    "腓特烈二世",
    "1212—1273年",
@@ -89,6 +95,13 @@
    ],
    1291,
    1309
+  ],
+  "history-france-valois/0": [
+   [
+    "france"
+   ],
+   1382,
+   1400
   ],
   "history-germany-frederick2/0": [
    [
@@ -228,6 +241,26 @@
   [
    "history-france-stlouis/4",
    "对应皇帝和教宗斗争期间，法兰西就主打一个渔翁得利"
+  ],
+  [
+   "history-france-valois/0",
+   "对应英国从诺曼征服到爱德华一世，法兰西卡佩王朝前十代国王靠父死子继与提前共治，把"
+  ],
+  [
+   "history-france-valois/1",
+   "到腓力四世末年闹出内勒塔丑闻，老国王死后三个儿子兄终弟及却都没留下存活男嗣，延续"
+  ],
+  [
+   "history-france-valois/2",
+   "卡佩直系绝嗣后，法国贵族拥立先帝的侄子腓力六世继位，由旁支瓦卢瓦王朝取代，历经两"
+  ],
+  [
+   "history-france-valois/3",
+   "法国原先沿袭日耳曼传统不收常税，为了跟集权更早的英国对抗，法王不得不向第三等级（"
+  ],
+  [
+   "history-france-valois/4",
+   "查理五世平定内部动乱后，借筹集父王赎金与抗英之机，把原本要靠三级会议逐次批准的临"
   ],
   [
    "history-germany-frederick2/0",
@@ -477,6 +510,12 @@
     "法兰西只该有一个国王"
    ]
   ],
+  "history-france-valois": [
+   [
+    3,
+    "红蓝双色帽与王太子眼前的血案"
+   ]
+  ],
   "history-germany-frederick2": [
    [
     0,
@@ -625,6 +664,12 @@
     "卡佩与金雀花的姻亲账"
    ]
   ],
+  "history-france-valois": [
+   [
+    4,
+    "法兰西王室世系表"
+   ]
+  ],
   "history-germany-frederick2": [
    [
     3,
@@ -666,6 +711,7 @@
   "history-france-capet": 300,
   "history-france-plantagenet": 300,
   "history-france-stlouis": 300,
+  "history-france-valois": 300,
   "history-germany-frederick2": 300,
   "history-italy-vespers": 300,
   "history-faith-scholasticism": 230,
@@ -678,11 +724,12 @@
  "eras": [
   [
    "empire-france",
-   "法兰西：从卡佩开张到阿纳尼",
+   "法兰西：从卡佩开张到瓦卢瓦常设税",
    [
     "history-france-capet",
     "history-france-plantagenet",
-    "history-france-stlouis"
+    "history-france-stlouis",
+    "history-france-valois"
    ]
   ],
   [
@@ -729,7 +776,7 @@
    "法兰西",
    "west",
    843,
-   1400,
+   1435,
    5
   ],
   "germany": [
@@ -757,7 +804,7 @@
  "futures": [
   [
    "france",
-   1400,
+   1435,
    "百年战争"
   ],
   [
@@ -791,7 +838,9 @@
    "history-britain-hundred-years-1/0",
    "history-britain-hundred-years-2/0",
    "history-britain-hundred-years-3/0",
-   "history-britain-richard2/0"
+   "history-france-valois/0",
+   "history-britain-hundred-years-4/0",
+   "history-britain-hundred-years-5/0"
   ],
   "germany": [
    "history-germany-innocent/0",
@@ -1099,6 +1148,26 @@
   [
    "history-faith-constance/7",
    "只收下对法国有利的改革，不跟着逼教宗"
+  ],
+  [
+   "history-france-valois/0",
+   "⑩腓力三世（1270—1285）接收绝嗣叔父的图卢兹与普瓦图"
+  ],
+  [
+   "history-france-valois/1",
+   "⑬遗腹子约翰一世生即王、仅活五天"
+  ],
+  [
+   "history-france-valois/2",
+   "于1349年买下多菲内"
+  ],
+  [
+   "history-france-valois/3",
+   "率第三等级逼王太子颁《1357年大法令》"
+  ],
+  [
+   "history-france-valois/4",
+   "按户征收的直接税“炉灶税”"
   ]
  ],
  "boxfixes": [
@@ -1202,5 +1271,5 @@
   "mNaplesAnjou1282",
   "mAragonCrown1282"
  ],
- "pass": "法兰西、基督教、德意志、意大利 on to ~1300 — 11 sections (76 scenes): Hugh Capet and Louis VI, the Plantagenets and Philip II (with the marriage-and-land diagram), Saint Louis to Philip IV and Anagni, universities and scholasticism, Frederick II and the Interregnum (with the 豆腐块 on seven excommunications of five emperors), and the Sicilian Vespers; shared stations across lines; 67 of 老无’s points in bold, 64 facts and their order set right in plain text; 7 豆腐块 with 14 corrections"
+ "pass": "法兰西、基督教、德意志、意大利 on to ~1300 — 12 sections (81 scenes): Hugh Capet and Louis VI, the Plantagenets and Philip II (with the marriage-and-land diagram), Saint Louis to Philip IV and Anagni, universities and scholasticism, Frederick II and the Interregnum (with the 豆腐块 on seven excommunications of five emperors), and the Sicilian Vespers; shared stations across lines; 72 of 老无’s points in bold, 69 facts and their order set right in plain text; 8 豆腐块 with 14 corrections"
 }

@@ -1027,6 +1027,9 @@ Object.assign(HS,{
   sl9_tagliacozzo:['塔利亚科佐','Tagliacozzo',42.069,13.254,'阿布鲁佐山间的谷地；1268年8月23日安茹的查理在此以伏兵击败康拉丁。'],
   sl9_pamiers:['帕米耶','Pamiers',43.116,1.611,'富瓦伯国里的城，1295年卜尼法斯八世升为主教区；1301年主教贝尔纳·塞塞被腓力四世逮捕。'],
   sl9_kortrijk:['科特赖克','Kortrijk (Courtrai)',50.828,3.265,'佛兰德的城；1302年7月11日佛兰德市民步兵在此击败法军骑士，史称金马刺之战。'],
+  fv_perpignan:['佩皮尼昂','Perpignan',42.698,2.895,'鲁西永首府；1285年10月5日法王腓力三世在征讨阿拉贡归途中染痢疾死于此城。'],
+  fv_grenoble:['格勒诺布尔','Grenoble',45.189,5.725,'多菲内首府；1349年腓力六世买下多菲内，规定由法国王储领有，王太子从此称“多芬”（Dauphin）。'],
+  fv_compiegne_est:['贡比涅','Compiègne',49.418,2.826,'瓦兹河畔王室重镇；1358年王太子查理在此召集三级会议反击巴黎商长马赛。'],
   f2_lucera:['卢切拉','Lucera',41.508,15.335,'阿普利亚北部的城；1224年起腓特烈二世把西西里穆斯林迁置于此，征募贴身弓箭卫队。'],
   f2_cortenuova:['科尔泰诺瓦','Cortenuova',45.539,9.79,'贝加莫东南奥廖河畔的城堡；1237年11月27日腓特烈二世在此大破伦巴第联盟，缴获米兰战车。'],
   f2_giglio:['吉廖岛','Giglio',42.36,10.9,'托斯卡纳外海的小岛；1241年5月3日帝国与比萨舰队在此截击热那亚船队，俘获大批赴罗马开会的主教与枢机。'],
@@ -1193,6 +1196,12 @@ Object.assign(HS,{
   r2_coventry:['考文垂','Coventry',52.408,-1.51,'英格兰中部重镇；1398年9月理查二世在此叫停亨利·博林布鲁克与莫布雷的比武审判，将两人一并流放。'],
   r2_ravenspur:['雷文斯珀','Ravenspur',53.606,0.115,'约克郡亨伯河口海港；1399年7月初流放的亨利·博林布鲁克率数十名随从在此登陆起兵。'],
   r2_eltham:['埃尔特姆宫','Eltham Palace',51.645,0.048,'伦敦东南王室行宫；1386年“奇妙议会”期间理查二世躲居于此，痛骂议会“连御膳房一个烧火帮工都不撤”。'],
+  hy4_harfleur:['阿弗勒尔','Harfleur',49.507,0.198,'塞纳河口要塞海港；1415年8—9月亨利五世渡海首先围攻拿下此城。'],
+  hy4_agincourt:['阿金库尔','Agincourt (Azincourt)',50.463,2.142,'北法阿图瓦林间村落；1415年10月25日亨利五世在此以长弓手与木桩阵大破三倍法军。'],
+  hy4_montereau:['蒙特罗','Montereau-Fault-Yonne',48.385,2.95,'塞纳河与约讷河交汇处石桥；1419年9月10日王太子查理的部下在桥上和谈木栅内一斧劈死勃艮第公爵无畏的约翰。'],
+  hy5_leicester:['莱斯特','Leicester',52.634,-1.139,'英格兰中部重镇；1426年2月三叔贝德福德公爵在此召集“棍棒议会”，调停四叔格洛斯特与王太叔博福特的伦敦兵变。'],
+  hy5_mons:['蒙斯','Mons',50.454,3.952,'埃诺伯国首府；1424年底四叔格洛斯特公爵携杰奎琳率五千英军进占此城，次年被勃艮第军围困攻克。'],
+  hy5_hague:['海牙','The Hague',52.08,4.31,'荷兰伯国治所；勃艮第公爵好人腓力击败杰奎琳与英军后，于1428—1433年将荷兰、泽兰、埃诺并入勃艮第领地。'],
   av_aquila:['拉奎拉','L’Aquila',42.35,13.399,'阿布鲁佐山城；1294年8月塞莱斯廷五世在此骑毛驴加冕。'],
   av_palestrina:['帕莱斯特里纳','Palestrina',41.839,12.892,'罗马东郊科隆纳家族的山城；1298年卜尼法斯八世将其攻陷夷平、犁地撒盐。'],
   av_perugia:['佩鲁贾','Perugia',43.112,12.389,'翁布里亚山城；1294年、1305年两次教宗选举在此，1304年本笃十一世死于此。'],
@@ -4156,6 +4165,45 @@ const HISTORY_ENTRIES=[
     hp(d,'sl9_avignon',{left:1,note:'教廷迁驻罗讷河畔，受法兰西王室左右近七十年。'});
     hp(d,'it_canossa',{note:'1077年卡诺莎以来皇帝与教宗死斗两百年，最终两败俱伤。'});
    },[['fill',HC.france,'987年卡佩开张时的直辖领地（深色）与1300年的法兰西王国（浅色）'],['dash',HC.germany,'一盘散沙的神圣罗马帝国'],['dot',HC.war,'1310—1312年法军占领并吞并里昂'],['dot','#2a2018','巴黎、奥尔良、维埃纳、阿维尼翁与卡诺莎']])
+ ]},
+{id:'history-france-valois',ch:5,title:'从卡佩到瓦卢瓦：十九代法王、三级会议与常设税',short:'从卡佩到瓦卢瓦',en:'From Capet to Valois: Nineteen French Kings, the Estates-General and Standing Taxes',period:'987—1380年',c:HC.france,
+ scenes:[
+  hs('987—1285年','卡佩前十王：从巴黎一隅攒出强国','从987年于格·卡佩仅守巴黎—奥尔良王领，经路易六世发城市特许状、腓力二世夺诺曼底与布汶大胜、圣路易设巴黎高院，到1285年腓力三世并入图卢兹与普瓦图。',[[42.2,-3.5],[51.5,6.2]],d=>{
+    ha(d,'mCapetDomain987',HC.war,{fillOpacity:.36});ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.26});
+    hp(d,'w_paris',{note:'卡佩王朝都城：987年于格·卡佩在此开朝；腓力二世修卢浮宫，路易九世设巴黎高等法院。'});
+    hp(d,'cl_bourges',{left:1,note:'1101年腓力一世买下布尔日，迈出王领南扩第一步。'});
+    hp(d,'in_bouvines',{kind:'battle',note:'1214年7月腓力二世在此大破英德联军，坐稳诺曼底与安茹。'});
+    hp(d,'tolosa',{left:1,note:'1271年腓力三世接收绝嗣叔父留下的图卢兹与普瓦图，王领直抵地中海。'});
+    hp(d,'fv_perpignan',{kind:'battle',left:1,note:'1285年10月5日，第十代法王腓力三世在征阿拉贡归途中病死于此。'});
+   },[['fill',HC.war,'987年于格·卡佩开国时的狭长王领'],['fill',HC.france,'1285年腓力三世去世时的法兰西王领与版图'],['dot',HC.war,'1214年布汶大胜与1285年佩皮尼昂'],['dot','#2a2018','巴黎、布尔日与图卢兹']]),
+  hs('1285—1328年','腓力四世与三子绝嗣：卡佩直系终结','1285—1314年腓力四世集权极盛，末年爆出内勒塔案；1314—1328年三子路易十世（及活五天的约翰一世）、腓力五世、查理四世接连绝男嗣，卡佩直系终结。',[[43.5,-2.5],[51.2,6.2]],d=>{
+    ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.32});
+    hp(d,'w_paris',{kind:'battle',note:'1302年腓力四世在此首开三级会议；1314年内勒塔案爆发；1316—1328年三兄弟接连绝男嗣。'});
+    hp(d,'pl_gaillard',{left:1,note:'路易十世原配玛格丽特与查理四世原配布兰卡被囚于此，玛格丽特1315年死于狱中。'});
+    hp(d,'k_lyon',{note:'1312年腓力四世并入里昂；1316年次子腓力五世在此逼枢机团选出约翰二十二世后赶回巴黎夺位。'});
+    hp(d,'w_reims',{note:'兰斯座堂：十四年间路易十世、腓力五世、查理四世与瓦卢瓦的腓力六世先后在此加冕。'});
+   },[['fill',HC.france,'1314—1328年卡佩直系绝嗣时的法兰西'],['dot',HC.war,'巴黎（三级会议与内勒塔案）'],['dot','#2a2018','加亚尔城堡、里昂与兰斯']]),
+  hs('1328—1380年','瓦卢瓦前三王：从两场惨败到查理五世中兴','1328年旁支瓦卢瓦的腓力六世继位（1349年买多菲内）；约翰二世在普瓦捷被俘并封幼子于勃艮第；查理五世与盖克兰在1369—1375年收复绝大部分失地。',[[43.0,-3.5],[51.5,7.2]],d=>{
+    ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.32});ha(d,'mBurgundyDuchy900',HC.war,{fillOpacity:.3});
+    hp(d,'hy1_crecy',{kind:'battle',left:1,note:'1346年8月腓力六世在此败于爱德华三世。'});
+    hp(d,'fv_grenoble',{note:'1349年腓力六世买下多菲内，规定由王储领有，法国王太子自此称“多芬”（Dauphin）。'});
+    hp(d,'k_poitiers',{kind:'battle',left:1,note:'1356年9月约翰二世在此被黑太子生擒。'});
+    hp(d,'pl_dijon',{note:'勃艮第首府第戎：1363年约翰二世将勃艮第公国封给幼子“大胆”腓力，埋下日后勃艮第派割据之祸。'});
+    hp(d,'w_paris',{note:'1364—1380年“智者”查理五世坐镇巴黎，与统帅盖克兰收复失地，传位十一岁的查理六世。'});
+   },[['fill',HC.france,'查理五世收复失地后的瓦卢瓦法兰西（1380年）'],['fill',HC.war,'1363年约翰二世封给幼子“大胆”腓力的勃艮第公国'],['dot',HC.war,'克雷西与普瓦捷两战'],['dot','#2a2018','格勒诺布尔、第戎与巴黎']]),
+  hs('987—1358年','内政演变（上）：从不收常税到给第三等级放权','法国沿袭日耳曼传统不收常税；路易六世发城市公社特许状，1302年腓力四世首召第三等级进三级会议；1356—1358年巴黎商长马赛借三级会议逼宫夺取税权。',[[45.5,-2.5],[51.2,5.5]],d=>{
+    ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.32});
+    hp(d,'w_paris',{kind:'battle',note:'1302年腓力四世在巴黎圣母院首召含市民第三等级的三级会议；1357年巴黎商长马赛在此逼王太子颁《大法令》控制税权。'});
+    hp(d,'fr_laon',{left:1,note:'12世纪路易六世、七世颁发城市公社特许状的代表城市，王室借市民压制领主并换取资助。'});
+    hp(d,'fv_compiegne_est',{note:'1358年5月王太子查理在此另召三级会议，随后收复巴黎、平定马赛之乱。'});
+   },[['fill',HC.france,'召开三级会议、向第三等级市民放权换税的法兰西'],['dot',HC.war,'巴黎（1302年首届三级会议与1357年马赛逼宫）'],['dot','#2a2018','拉昂与贡比涅']]),
+  hs('1360—1380年','内政演变（下）：查理五世三大常设王税抗英','1360年起为筹约翰二世赎金与抗英军费，查理五世将三级会议临时拨款固化为炉灶税（taille）、商品流通税（aides）与盐税（gabelle）三大常设税，养起常备军收复失地。',[[43.5,-3.5],[51.2,6.2]],d=>{
+    ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.34});ha(d,'mGascony1223',HC.britain,{fillOpacity:.28});
+    hp(d,'w_paris',{kind:'battle',note:'查理五世在此建立无需三级会议逐次审批的炉灶税、商品流通税与盐税三大常设税，岁入逾一百五十万法郎。'});
+    hp(d,'fr_rouen',{left:1,note:'诺曼底富庶商贸区：商品流通税（aides）与食盐专卖盐仓（greniers à sel）的核心税源地。'});
+    hp(d,'sl9_rochelle',{left:1,note:'靠常设王税供养的法军与舰队在1372年收复拉罗谢尔，将英军挤回波尔多沿海。'});
+    hp(d,'w_bordeaux',{left:1,note:'1375年休战时英军在西南仅存的波尔多沿海。'});
+   },[['fill',HC.france,'推行炉灶税、商品税、盐税三大常设税的查理五世法兰西'],['fill',HC.britain,'被挤回波尔多沿海的英军领地'],['dot',HC.war,'巴黎（王室常设税中枢）'],['dot','#2a2018','鲁昂、拉罗谢尔与波尔多']])
  ]},
 {id:'history-germany-frederick2',ch:5,title:'腓特烈二世：向诸侯放权，跟教宗死磕',short:'腓特烈二世',en:'Frederick II: Yielding Germany to the Princes, Fighting the Popes to the Death',period:'1212—1273年',c:HC.germany,
  scenes:[
@@ -8108,6 +8156,91 @@ const HISTORY_ENTRIES=[
     hp(d,'hy2_pontefract',{kind:'battle',left:1,note:'1400年2月，三十三岁的理查二世在庞蒂弗拉克特城堡被活活饿死，金雀花直系终结。'});
     hr(d,[[53.61,0.12],[52.95,-1.15],[53.28,-3.83],[51.51,-0.13]],HC.war);
    },[['fill',HC.britain,'倒戈拥立亨利四世（兰开斯特王朝）的英格兰'],['fill',HC.celt,'威尔士'],['fill',HC.war,'理查二世出征的爱尔兰'],['dline',HC.war,'1399年7—9月亨利·博林布鲁克夺位路线（概略）'],['dot',HC.war,'雷文斯珀、康威与庞蒂弗拉克特'],['dot','#2a2018','都柏林与伦敦']])
+ ]},
+{id:'history-britain-hundred-years-4',ch:12,title:'百年战争（三）：玻璃疯王、蒙特罗血案与英法双王合体',short:'百年战争（三）',en:'The Hundred Years’ War (III): The Glass King, Agincourt, Montereau and the Dual Monarchy',period:'1380—1422年',c:HC.britain,
+ scenes:[
+  hs('1380—1411年','疯王自认玻璃人，弟弟派与堂弟派内战','1392年查理六世在勒芒森林发疯，常自认玻璃人；亲弟奥尔良公爵与堂弟勃艮第公爵无畏的约翰争权，1407年无畏的约翰在巴黎暗杀奥尔良公爵，引发与阿马尼亚克派内战。',[[42.8,-2.5],[51.5,6.5]],d=>{
+    ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.28});ha(d,'mBurgundyDuchy900',HC.war,{fillOpacity:.32});
+    ha(d,'mFlanders900',HC.war,{fillOpacity:.28});
+    hp(d,'pl_lemans',{left:1,note:'1392年8月查理六世在此城外森林行军时突然发疯拔剑砍死四名随从，此后三十年常自认是玻璃人。'});
+    hp(d,'w_paris',{kind:'battle',note:'1407年11月23日夜，堂弟勃艮第公爵无畏的约翰派刺客在巴黎街头砍死国王亲弟奥尔良公爵路易。'});
+    hp(d,'pl_dijon',{note:'堂弟派大本营第戎：勃艮第公爵兼领佛兰德，靠贸易与巴黎市民支持对抗奥尔良派。'});
+    hp(d,'tolosa',{left:1,note:'弟弟派（阿马尼亚克派）大本营在西南加斯科涅一带，由小奥尔良公爵的岳父阿马尼亚克伯爵贝尔纳七世领头。'});
+   },[['fill',HC.france,'疯王查理六世治下分裂的法兰西'],['fill',HC.war,'堂弟派：勃艮第公国与佛兰德'],['dot',HC.war,'1407年巴黎暗杀奥尔良公爵'],['dot','#2a2018','勒芒、第戎与西南阿马尼亚克']]),
+  hs('1399—1415年','小公主拒婚、教士效方孝孺与亨利五世兴兵','1399年亨利四世篡位后欲让十一岁法国小王后伊莎贝拉改嫁小亨利遭拒；1402—1405年方济各会修士与约克大主教斯克罗普抗命被杀；1413年亨利五世继位，决意攻法转移矛盾。',[[48.5,-4.5],[55.2,3.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'mWales',HC.celt,{fillOpacity:.26});
+    hp(d,'k_london',{left:1,note:'1400年十一岁的法国小王后伊莎贝拉感念理查二世善待，穿黑衣哭拒改嫁亨利五世；1402年八名方济各会修士当面痛斥亨利四世篡位，在泰伯恩被绞死。'});
+    hp(d,'k_york',{kind:'battle',note:'1405年6月8日，起兵讨逆的约克大主教理查·斯克罗普在此被亨利四世斩首，朝野震动。'});
+    hp(d,'uk9_shrewsbury',{left:1,note:'1403年7月什鲁斯伯里之战：亨利四世与王储小亨利击败叛乱的珀西家族，小亨利左脸中箭留疤。'});
+    hp(d,'hy1_calais',{note:'1401年7月拒绝改嫁的小王后伊莎贝拉由此返法；亨利五世后来改求娶其幼妹凯瑟琳。'});
+   },[['fill',HC.britain,'亨利四世篡位后叛乱频仍的英格兰'],['fill',HC.celt,'起兵反抗亨利四世的威尔士'],['dot',HC.war,'1403年什鲁斯伯里之战与1405年约克斩大主教'],['dot','#2a2018','伦敦与加来']]),
+  hs('1415—1418年','阿金库尔大捷与勃艮第派屠洗巴黎','1415年10月25日亨利五世在阿金库尔用长弓与木桩大破法军，勃艮第派袖手旁观；1417—1419年英军攻占诺曼底，1418年5月勃艮第公爵攻入巴黎屠杀阿马尼亚克派。',[[47.8,-2.5],[51.5,4.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.32});ha(d,'mNormandy933',HC.britain,{fillOpacity:.34});
+    ha(d,'mBurgundyDuchy900',HC.war,{fillOpacity:.28});ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.22});
+    hp(d,'hy4_harfleur',{left:1,note:'1415年8—9月亨利五世渡海围攻拿下此港，随后率军北撤加来。'});
+    hp(d,'hy4_agincourt',{kind:'battle',note:'1415年10月25日阿金库尔会战：亨利五世以五千长弓手在林间泥田大破法军，法军六千贵族战死。'});
+    hp(d,'fr_rouen',{kind:'battle',left:1,note:'1417年夏—1419年1月，亨利五世二渡海峡攻占鲁昂，收复整个诺曼底。'});
+    hp(d,'w_paris',{kind:'battle',note:'1418年5月29日，袖手旁观的勃艮第公爵无畏的约翰攻入巴黎，屠杀阿马尼亚克伯爵等两千余人，自封疯王代理人。'});
+    hr(d,[[50.9,-1.4],[49.51,0.20],[50.46,2.14],[50.95,1.86]],HC.britain);
+   },[['fill',HC.britain,'英格兰及1417—1419年亨利五世征服的诺曼底'],['fill',HC.war,'袖手旁观并夺占巴黎的勃艮第派'],['fill',HC.france,'法兰西其余地区'],['dline',HC.britain,'1415年亨利五世阿金库尔进军路线'],['dot',HC.war,'1415年阿金库尔、1418年巴黎屠杀与1419年鲁昂'],['dot','#2a2018','阿弗勒尔']]),
+  hs('1419年','蒙特罗桥头的一斧：劈死勃艮第公爵','1419年英军逼近巴黎，无畏的约翰约王太子查理会谈联手抗英；9月10日在蒙特罗桥头木栅栏内，王太子部下当场用战斧劈死无畏的约翰。',[[46.5,-0.5],[50.8,5.5]],d=>{
+    ha(d,'mNormandy933',HC.britain,{fillOpacity:.34});ha(d,'mBurgundyDuchy900',HC.war,{fillOpacity:.32});
+    ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.22});
+    hp(d,'hy1_pontoise',{left:1,note:'1419年7月31日英军攻占巴黎西北门户蓬图瓦兹，无畏的约翰急忙带着疯王撤往特鲁瓦并找王太子和谈。'});
+    hp(d,'hy4_montereau',{kind:'battle',note:'1419年9月10日蒙特罗桥头会谈：王太子查理的部下当场一斧劈死单膝行礼的勃艮第公爵无畏的约翰。'});
+    hp(d,'w_paris',{left:1,note:'蒙特罗血案传回巴黎，市民与新任勃艮第公爵好人腓力怒火万丈，发誓宁认英王也不认弑叔的王太子。'});
+    hp(d,'cl_bourges',{left:1,note:'王太子查理与阿马尼亚克派退守卢瓦尔河以南的布尔日。'});
+   },[['fill',HC.britain,'步步紧逼巴黎的英军占领区'],['fill',HC.war,'因公爵被劈死而彻底倒向英国的勃艮第派'],['fill',HC.france,'王太子查理退守的南方'],['dot',HC.war,'1419年9月10日蒙特罗桥头刺杀'],['dot','#2a2018','蓬图瓦兹、巴黎与布尔日']]),
+  hs('1420年','《特鲁瓦条约》：和亲、废太子、立英王为储','巴黎人排斥南方阿马尼亚克派；1420年5月21日新勃艮第公爵与王后同亨利五世签《特鲁瓦条约》，娶凯瑟琳、废太子、立亨利五世为法王继承人，两院批准。',[[46.2,-2.5],[52.2,5.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});ha(d,'mNormandy933',HC.britain,{fillOpacity:.34});
+    ha(d,'mBurgundyDuchy900',HC.war,{fillOpacity:.3});ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.2});
+    hp(d,'ko_troyes',{kind:'battle',note:'1420年5月21日《特鲁瓦条约》在此签署，6月2日亨利五世迎娶凯瑟琳，获立为法兰西摄政与王位继承人。'});
+    hp(d,'w_paris',{kind:'battle',left:1,note:'1420年12月亨利五世与疯王查理六世、好人腓力并骑入巴黎，巴黎三级会议批准条约、判王太子流放夺嗣。'});
+    hp(d,'k_london',{left:1,note:'1420年12月与1421年5月威斯敏斯特议会批准条约，专门规定英法财政分立、不许征英国税去养法国。'});
+    hp(d,'cl_bourges',{left:1,note:'被剥夺继承权的王太子查理据守布尔日，拒不承认《特鲁瓦条约》。'});
+   },[['fill',HC.britain,'亨利五世统治的英格兰与诺曼底'],['fill',HC.war,'同英王结盟的勃艮第派'],['fill',HC.france,'王太子查理拒不认账的南方'],['dot',HC.war,'1420年5月特鲁瓦签约与12月巴黎三级会议批准'],['dot','#2a2018','伦敦与布尔日']]),
+  hs('1420—1422年','两王暴卒：周岁婴儿亨利六世兼承英法双冠','1422年8月31日三十五岁的亨利五世病死万塞讷，10月21日疯王查理六世亦死；出生仅九个月的亨利六世按约同时继承英法王位，废太子在布尔日自立为查理七世。',[[44.5,-3.5],[52.5,5.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'mNormandy933',HC.britain,{fillOpacity:.34});
+    ha(d,'mGascony1223',HC.britain,{fillOpacity:.32});ha(d,'mBurgundyDuchy900',HC.war,{fillOpacity:.28});
+    ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.22});
+    hp(d,'w_paris',{kind:'battle',note:'1422年8月31日亨利五世在东郊万塞讷暴卒，10月21日疯王查理六世死于巴黎；周岁婴儿亨利六世在此被宣布为法兰西国王。'});
+    hp(d,'k_london',{kind:'battle',left:1,note:'出生仅九个月的亨利六世在伦敦与巴黎同时继位，成为史上唯一兼承英法双冠的君主。'});
+    hp(d,'cl_bourges',{left:1,note:'1422年10月废太子在布尔日自行称王（查理七世），法兰西裂为南北两个朝廷。'});
+   },[['fill',HC.britain,'婴儿亨利六世名义统治的英格兰、北法与加斯科涅'],['fill',HC.war,'盟友勃艮第公国'],['fill',HC.france,'南方“布尔日小王”查理七世控制区'],['dot',HC.war,'1422年万塞讷/巴黎两王去世与伦敦双冠继位'],['dot','#2a2018','布尔日']])
+ ]},
+{id:'history-britain-hundred-years-5',ch:12,title:'百年战争（四）：托孤制衡、四叔作妖与英勃同盟破裂',short:'百年战争（四）',en:'The Hundred Years’ War (IV): The Regency Feud, Jacqueline of Hainaut and the Breach with Burgundy',period:'1422—1435年',c:HC.britain,
+ scenes:[
+  hs('1422—1426年','托孤制衡失灵：四叔与王太叔伦敦动兵','1422年亨利五世遗命三叔管法国、四叔护国英格兰、王太叔博福特主教辅政制衡；1425年10月四叔与王太叔在伦敦桥陈兵火并，三叔赶回于1426年2月开莱斯特“棍棒议会”调停。',[[47.5,-3.5],[54.2,3.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'mNormandy933',HC.britain,{fillOpacity:.3});
+    hp(d,'k_london',{kind:'battle',left:1,note:'1425年10月30日，四叔格洛斯特公爵与王太叔博福特主教在伦敦桥陈兵对峙，险些在首都街巷开战。'});
+    hp(d,'uk7_winchester',{left:1,note:'王太叔亨利·博福特的主教座城：冈特的约翰私生子转正，富甲一方，屡借巨款给王室并制衡四叔。'});
+    hp(d,'hy5_leicester',{kind:'battle',note:'1426年2月三叔贝德福德公爵在此召议会调停叔侄内斗；因禁带刀剑，议员揣木棒铅锤入场，史称“棍棒议会”。'});
+    hp(d,'w_paris',{note:'三叔贝德福德公爵坐镇巴黎与鲁昂统管法国，却不得不分心回英弹压四叔。'});
+   },[['fill',HC.britain,'叔侄争权内耗的英格兰与北法占领区'],['dot',HC.war,'1425年伦敦桥对峙与1426年莱斯特“棍棒议会”'],['dot','#2a2018','温彻斯特与巴黎']]),
+  hs('1423—1428年','三叔娶勃艮第女，勃艮第北扩与瓦卢瓦拆台','1423年三叔娶老勃艮第公爵之女（好人腓力之妹）安妮；勃艮第趁机向北吞并低地，南方废太子的安茹宗亲却专心去意大利争那不勒斯王位。',[[40.0,-2.5],[53.2,15.5]],d=>{
+    ha(d,'mNormandy933',HC.britain,{fillOpacity:.32});ha(d,'mBurgundyDuchy900',HC.war,{fillOpacity:.32});
+    ha(d,'mFlanders900',HC.war,{fillOpacity:.32});ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.2});
+    ha(d,'mNaplesAnjou1282',HC.celt,{fillOpacity:.24});
+    hp(d,'cp_amiens',{left:1,note:'1423年4月三叔贝德福德公爵在此与勃艮第公爵好人腓力结盟，随后迎娶其妹勃艮第的安妮。'});
+    hp(d,'hy5_hague',{note:'勃艮第公爵好人腓力借英勃同盟掩护，全力向北吞并那慕尔、布拉班特、荷兰与泽兰。'});
+    hp(d,'cl_bourges',{left:1,note:'南方布尔日：废太子查理七世孤掌难鸣，瓦卢瓦宗亲各自保存实力。'});
+    hp(d,'naples',{note:'那不勒斯：废太子的大舅哥安茹公爵路易三世与勒内把兵力财力全投在意大利争王位，不肯全力助战本土。'});
+   },[['fill',HC.britain,'三叔贝德福德公爵统辖的英占北法'],['fill',HC.war,'向北吞并低地的勃艮第公国'],['fill',HC.france,'南方废太子控制区'],['fill',HC.celt,'瓦卢瓦安茹支系分心争夺的那不勒斯'],['dot','#2a2018','亚眠、海牙、布尔日与那不勒斯']]),
+  hs('1422—1428年','四叔作妖：娶杰奎琳出兵荷兰，气翻勃艮第','杰奎琳持阿维尼翁废教宗本笃十三世的离婚书嫁给四叔格洛斯特；1424年底四叔率五千英军进占埃诺，勃艮第公爵好人腓力发兵反击抓获杰奎琳、吞并荷兰，英勃同盟破裂。',[[48.2,-2.0],[53.2,6.2]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.32});ha(d,'mBurgundyDuchy900',HC.war,{fillOpacity:.32});
+    ha(d,'mFlanders900',HC.war,{fillOpacity:.34});
+    hp(d,'k_london',{left:1,note:'1421年杰奎琳逃往伦敦，拿废教宗本笃十三世的离婚证明于1423年嫁给四叔格洛斯特公爵。'});
+    hp(d,'hy1_calais',{left:1,note:'1424年10月，四叔格洛斯特公爵不顾三叔劝阻，率五千英军由此登陆进军低地。'});
+    hp(d,'hy5_mons',{kind:'battle',note:'1424年12月四叔在蒙斯自称埃诺与荷兰伯爵；次年6月勃艮第军攻破蒙斯俘获杰奎琳，四叔丢下妻子逃回英国。'});
+    hp(d,'hy5_hague',{kind:'battle',note:'杰奎琳女扮男装逃回荷兰苦战三年，1428年被迫签《代尔夫特条约》，将荷兰、泽兰、埃诺继承权全让给表兄勃艮第公爵。'});
+   },[['fill',HC.britain,'四叔格洛斯特公爵主政的英格兰'],['fill',HC.war,'击败英军并吞并埃诺、荷兰、泽兰的勃艮第领地'],['dot',HC.war,'1424—1425年蒙斯之战与1428年荷兰易手'],['dot','#2a2018','伦敦与加来']]),
+  hs('1432—1435年','三叔病逝鲁昂，勃艮第在阿拉斯倒戈和解','1432年勃艮第的安妮病逝，1435年9月14日三叔贝德福德公爵死于鲁昂；9月21日勃艮第公爵好人腓力在阿拉斯与查理七世签和约倒戈，英军在法统治危在旦夕。',[[46.5,-1.5],[51.5,5.5]],d=>{
+    ha(d,'mNormandy933',HC.britain,{fillOpacity:.28});ha(d,'mBurgundyDuchy900',HC.war,{fillOpacity:.34});
+    ha(d,'mFlanders900',HC.war,{fillOpacity:.34});ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.28});
+    hp(d,'fr_rouen',{kind:'battle',left:1,note:'1435年9月14日，苦撑危局十三年的三叔贝德福德公爵在此病逝。'});
+    hp(d,'pl_arras',{kind:'battle',note:'1435年9月21日，三叔死后仅七天，勃艮第公爵好人腓力在此与查理七世签《阿拉斯条约》倒戈反英。'});
+    hp(d,'w_paris',{note:'1432年11月勃艮第的安妮死于巴黎；1435年勃艮第倒戈后，孤立无援的巴黎次年即向法王开门。'});
+   },[['fill',HC.britain,'失去勃艮第盟友后孤立无援的英占诺曼底'],['fill',HC.war,'1435年《阿拉斯条约》倒向法王的勃艮第公国'],['fill',HC.france,'查理七世的法兰西'],['dot',HC.war,'1435年9月鲁昂三叔病逝与阿拉斯倒戈'],['dot','#2a2018','巴黎']])
  ]}
 ];
 HISTORY_ENTRIES.forEach(e=>{
@@ -8142,7 +8275,7 @@ const HISTORY_ERAS=[
  {id:'empire-worms',name:'中世纪盛期：沃尔姆斯之后，施陶芬上台',en:'After Worms: The Hohenstaufen Come to the Throne',date:'1106—1152年',c:HC.germany,items:[['history-germany-worms'],['history-germany-staufer']]},
  {id:'empire-italy',name:'中世纪盛期：北意大利城市与西西里王国',en:'The Northern Cities and the Kingdom of Sicily',date:'约950—1166年',c:HC.italy,items:[['history-italy-cities'],['history-italy-sicily']]},
  {id:'empire-staufer',name:'中世纪盛期：红胡子、亨利六世与英诺森三世',en:'Barbarossa, Henry VI and Innocent III',date:'1152—1216年',c:HC.germany,items:[['history-germany-barbarossa'],['history-germany-henry6'],['history-germany-innocent']]},
- {id:'empire-france',name:'法兰西：从卡佩开张到阿纳尼',en:'France: From Hugh Capet to Anagni',date:'987—1314年',c:HC.france,items:[['history-france-capet'],['history-france-plantagenet'],['history-france-stlouis']]},
+ {id:'empire-france',name:'法兰西：从卡佩开张到瓦卢瓦常设税',en:'France: From Hugh Capet to Valois Standing Taxes',date:'987—1380年',c:HC.france,items:[['history-france-capet'],['history-france-plantagenet'],['history-france-stlouis'],['history-france-valois']]},
  {id:'empire-frederick2',name:'中世纪盛期：腓特烈二世与西西里晚祷',en:'Frederick II and the Sicilian Vespers',date:'1212—1302年',c:HC.germany,items:[['history-germany-frederick2'],['history-italy-vespers']]},
  {id:'empire-blackdeath',name:'中世纪晚期：黑死病',en:'The Late Middle Ages: the Black Death',date:'1346—1353年',c:HC.italy,items:[['history-italy-blackdeath']]},
  {id:'empire-taifas',name:'西班牙：泰法与圣战',en:'Spain: the Taifas and Holy War',date:'1031—1123年',c:HC.spain,items:[['history-spain-taifas'],['history-spain-crusade']]},
@@ -8179,7 +8312,7 @@ const HISTORY_ERAS=[
  {id:'britain-saxon-norman',name:'英格兰的成型：维京狂潮与诺曼征服',en:'The Making of England: Vikings and Normans',date:'约410—1087年',c:HC.britain,items:[['history-britain-anglosaxon'],['history-britain-norman']]},
  {id:'britain-angevin',name:'金雀花帝国：普通法、爱尔兰与狮心王',en:'The Angevin Empire: Common Law, Ireland and Lionheart',date:'1014—1214年',c:HC.britain,items:[['history-britain-henry2'],['history-britain-norman-ireland'],['history-britain-richard']]},
  {id:'britain-parliament',name:'大宪章、议会与英伦三岛的边界',en:'Magna Carta, Parliament and the Bounds of the Isles',date:'1215—1307年',c:HC.britain,items:[['history-britain-magnacarta'],['history-britain-edward1']]},
- {id:'britain-hundred-years',name:'百年战争（上）：从阿基坦称臣到金雀花直系终结',en:'The Hundred Years’ War (I): From Aquitaine to the End of the Main Plantagenet Line',date:'1200—1400年',c:HC.britain,items:[['history-britain-edward2'],['history-britain-hundred-years-1'],['history-britain-hundred-years-2'],['history-britain-hundred-years-3'],['history-britain-richard2']]},
+ {id:'britain-hundred-years',name:'百年战争：从阿基坦称臣、双王合体到英勃破裂',en:'The Hundred Years’ War: From Aquitaine to the Dual Monarchy and the Breach with Burgundy',date:'1200—1435年',c:HC.britain,items:[['history-britain-edward2'],['history-britain-hundred-years-1'],['history-britain-hundred-years-2'],['history-britain-hundred-years-3'],['history-britain-richard2'],['history-britain-hundred-years-4'],['history-britain-hundred-years-5']]},
 ];
 /* History as a tree: each branch is a topic; distance from the root is time (years, negative = BCE).
    Reading order stays with HISTORY_ERAS; TREE_ROWS puts each era row on a branch at its start and end. */
@@ -8191,11 +8324,11 @@ const HISTORY_BRANCHES=[
  {id:'east',name:'东罗马',en:'East Rome',lane:2,parent:'rome',from:395,to:1099,c:HC.byz},
  {id:'west',name:'中世纪西欧',en:'Medieval Western Europe',lane:4,parent:'rome',from:476,to:843,c:HC.celt},
  {id:'spain',name:'西班牙',en:'Spain',lane:5,parent:'west',from:481,to:1123,c:HC.spain},
- {id:'france',name:'法兰西',en:'France',lane:5,parent:'west',from:843,to:1400,c:HC.france},
+ {id:'france',name:'法兰西',en:'France',lane:5,parent:'west',from:843,to:1435,c:HC.france},
  {id:'germany',name:'德意志',en:'Germany',lane:4,parent:'west',from:843,to:1351,c:HC.germany},
  {id:'italy',name:'意大利',en:'Italy',lane:3,parent:'west',from:843,to:1351,c:HC.italy},
  // 不列颠 (including Ireland): forks from the trunk before Caesar's landing, on lane 6 right beside 法兰西.
- {id:'britain',name:'不列颠',en:'Britain and Ireland',lane:6,parent:'trunk',from:-55,to:1400,c:HC.britain},
+ {id:'britain',name:'不列颠',en:'Britain and Ireland',lane:6,parent:'trunk',from:-55,to:1435,c:HC.britain},
  // The 基督教 line: from the Hebrews' nomadic origins (the old Levant branch) to the schism of 1054; on its own lane, right of the West.
  // After 641 it runs through the shared stations of the East Roman dynasties.
  {id:'faith',name:'基督教',en:'Judaism & Christianity',lane:7,parent:'trunk',from:-1400,to:1449,c:HC.faith},
@@ -8397,7 +8530,10 @@ const TREE_ROWS={
  'history-britain-hundred-years-1/0':[['britain','france'],1352,1360,'1314—1360年'],
  'history-britain-hundred-years-2/0':[['britain','france'],1361,1370,'1272—1381年'],
  'history-britain-hundred-years-3/0':[['britain','france'],1371,1381,'1360—1380年'],
- 'history-britain-richard2/0':[['britain','france'],1382,1400,'1377—1400年'],
+ 'history-britain-richard2/0':['britain',1382,1400,'1377—1400年'],
+ 'history-france-valois/0':['france',1382,1400,'987—1380年'],
+ 'history-britain-hundred-years-4/0':[['britain','france'],1401,1422,'1380—1422年'],
+ 'history-britain-hundred-years-5/0':[['britain','france'],1423,1435,'1422—1435年'],
  'history-faith-avignon/0':[['faith','france'],1296,1303,'1294—1303年'],
  'history-faith-clement/0':[['faith','france'],1304,1314,'1303—1314年'],
  'history-italy-blackdeath/0':[['italy','france','britain','germany','faith','persia'],1347,1351,'1346—1353年'],
@@ -8408,7 +8544,7 @@ const TREE_ROWS={
  'history-arab-seljuks/3':[['persia','east'],1071,1092]
 };
 // Topics still to be written grow the tree as dashed shoots.
-const TREE_FUTURE=[['east',1099,'科穆宁王朝','1099年起 · 1176年米利奥克法隆之战 · 1204年第四次十字军攻破君士坦丁堡 · 待展开'],['france',1400,'百年战争','1314年后待展开：1328年卡佩直系绝嗣 · 1337—1453年英法百年战争'],['germany',1351,'选帝侯与哈布斯堡','1273年后待展开：1273年哈布斯堡的鲁道夫当选 · 1356年《金玺诏书》七选帝侯'],['italy',1351,'城市共和国与文艺复兴','1302年后待展开：佛罗伦萨、威尼斯、热那亚与米兰 · 文艺复兴'],['faith',1449,'宗教改革','1449年起 · 文艺复兴教廷 · 1517年马丁·路德《九十五条论纲》与宗教改革 · 待展开'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',1351,'伊儿汗国与马穆鲁克','1291年后待展开：1295年合赞汗皈依伊斯兰 · 1300年伊儿汗国一度占大马士革 · 奥斯曼人兴起'],['china',845,'晚唐五代与宋','845年起 · 待展开'],['spain',1123,'收复失地运动','1123年起 · 穆拉比特与穆瓦希德 · 1212年纳瓦斯—德托洛萨 · 1492年格拉纳达 · 待展开'],['eeurope',1054,'基辅罗斯以后','1054年起 · 雅罗斯拉夫死后诸子分封 · 1240年蒙古人攻破基辅 · 待展开'],['crusade',1312,'后来的十字军','1396年尼科波利斯 · 1444年瓦尔纳 · 1571年勒班陀 · 待展开'],['britain',1400,'班诺克本与百年战争','1307年后待展开：1314年班诺克本之战 · 1337—1453年英法百年战争 · 玫瑰战争']];
+const TREE_FUTURE=[['east',1099,'科穆宁王朝','1099年起 · 1176年米利奥克法隆之战 · 1204年第四次十字军攻破君士坦丁堡 · 待展开'],['france',1435,'百年战争','1314年后待展开：1328年卡佩直系绝嗣 · 1337—1453年英法百年战争'],['germany',1351,'选帝侯与哈布斯堡','1273年后待展开：1273年哈布斯堡的鲁道夫当选 · 1356年《金玺诏书》七选帝侯'],['italy',1351,'城市共和国与文艺复兴','1302年后待展开：佛罗伦萨、威尼斯、热那亚与米兰 · 文艺复兴'],['faith',1449,'宗教改革','1449年起 · 文艺复兴教廷 · 1517年马丁·路德《九十五条论纲》与宗教改革 · 待展开'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',1351,'伊儿汗国与马穆鲁克','1291年后待展开：1295年合赞汗皈依伊斯兰 · 1300年伊儿汗国一度占大马士革 · 奥斯曼人兴起'],['china',845,'晚唐五代与宋','845年起 · 待展开'],['spain',1123,'收复失地运动','1123年起 · 穆拉比特与穆瓦希德 · 1212年纳瓦斯—德托洛萨 · 1492年格拉纳达 · 待展开'],['eeurope',1054,'基辅罗斯以后','1054年起 · 雅罗斯拉夫死后诸子分封 · 1240年蒙古人攻破基辅 · 待展开'],['crusade',1312,'后来的十字军','1396年尼科波利斯 · 1444年瓦尔纳 · 1571年勒班陀 · 待展开'],['britain',1435,'班诺克本与百年战争','1307年后待展开：1314年班诺克本之战 · 1337—1453年英法百年战争 · 玫瑰战争']];
 // Where a line stops it says why: [line, year, the event that ends it, note, the line it carries on in].
 const TREE_ENDS=[['trunk',-30,'并入罗马','前146年科林斯被毁 · 前30年最后一个希腊化王国埃及并入罗马','rome'],['rome',476,'西罗马终结','476年西部末代皇帝被废 · 由中世纪西欧接续'],['west',843,'凡尔登三分','843年《凡尔登条约》三分帝国 · 分出法兰西、德意志、意大利']];
 // Sections of one line that run side by side: [line, row keys, side of the passing loop].
