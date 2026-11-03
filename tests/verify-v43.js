@@ -103,7 +103,7 @@ const S=JSON.parse(fs.readFileSync(path.join(__dirname,'v43-spec.json'),'utf8'))
    // Every new scene draws, fits its view on the desktop, and leaves no horizontal overflow.
    if(!FULL_SHOTS){await page.evaluate(({ids,label})=>{for(const id of ids){const n=HISTORY_ENTRIES.find(e=>e.id===id).scenes.length;for(let i=0;i<n;i++){go(id,{scene:i});const sc=activeScene(ENTRIES[cur]);
      const s={pins:Object.keys(pinIndex).length,layers:group.getLayers().length,fits:map.getBounds().contains(L.latLngBounds(sc.view)),overflow:document.documentElement.scrollWidth>innerWidth};
-     if(!(s.layers>0&&!s.overflow)||((label==='desktop')&&!(s.pins>0&&s.fits)))throw new Error(id+'/'+i+' '+JSON.stringify(s));}}}}},{ids:Object.keys(S.sections),label});}else for(const id of Object.keys(S.sections)){
+     if(!(s.layers>0&&!s.overflow)||((label==='desktop')&&!(s.pins>0&&s.fits)))throw new Error(id+'/'+i+' '+JSON.stringify(s));}}},{ids:Object.keys(S.sections),label});}else for(const id of Object.keys(S.sections)){
     const n=await page.evaluate(id=>HISTORY_ENTRIES.find(e=>e.id===id).scenes.length,id);
     for(let i=0;i<n;i++){
      const s=await page.evaluate(({id,i})=>{go(id,{scene:i});const sc=activeScene(ENTRIES[cur]);
