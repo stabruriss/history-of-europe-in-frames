@@ -87,7 +87,7 @@
   "history-britain-richard2": [
    "理查二世与金雀花末路",
    "1377—1400年",
-   6,
+   7,
    12
   ]
  },
@@ -468,10 +468,14 @@
   ],
   [
    "history-britain-richard2/4",
-   "理查二世与法国停战和亲收下十三万三千三百三十三英镑巨额嫁妆，可少年久受压抑，一朝"
+   "理查二世的两段婚姻各有政治算盘：首娶波希米亚的安妮是为了联合德意志与波希米亚制衡"
   ],
   [
    "history-britain-richard2/5",
+   "少年时期久受压抑的理查二世，一朝大权独揽便肆意妄为、飞扬跋扈，接连干出拔剑砍大主"
+  ],
+  [
+   "history-britain-richard2/6",
    "1399年理查二世公然侵吞兰开斯特家族遗产，这一下动到了所有贵族乃至新兴有产者的"
   ]
  ],
@@ -711,7 +715,7 @@
    ],
    [
     3,
-    "考文垂比武场上的权术绝杀"
+    "路上私语、死无对证与考文垂比武场的权术绝杀"
    ]
   ]
  },
@@ -778,7 +782,7 @@
   ],
   "history-britain-richard2": [
    [
-    4,
+    5,
     "手帕、食谱与“至尊陛下”：理查二世的审美、礼仪与作死账"
    ]
   ]
@@ -1200,14 +1204,26 @@
   ],
   [
    "history-britain-richard2/3",
-   "在考文垂比武审判现场下令将莫布雷终身流放、亨利流放十年"
+   "因一对一密谈死无对证，按骑士法庭规矩只能靠“比武神判”决生死"
   ],
   [
    "history-britain-richard2/4",
-   "收下八十万金法郎（折合十三万三千三百三十三英镑，即二十万马克）嫁妆"
+   "娶皇帝兼波希米亚王查理四世之女、德王兼波希米亚王文策尔之妹安妮"
+  ],
+  [
+   "history-britain-richard2/4",
+   "收下八十万法郎（合十三万三千三百三十三英镑）嫁妆"
   ],
   [
    "history-britain-richard2/5",
+   "早在1385年泰晤士河御船上，坎特伯雷大主教考特尼当面直谏，理查二世暴怒拔剑要砍死大主教"
+  ],
+  [
+   "history-britain-richard2/5",
+   "我连御膳房一个烧火帮工都不撤"
+  ],
+  [
+   "history-britain-richard2/6",
    "直接没收整个兰开斯特家族的庞大遗产"
   ]
  ],
@@ -1349,5 +1365,5 @@
   "mNormanIreland1210",
   "mGaelicIreland1210"
  ],
- "pass": "不列颠 — 15 sections (84 scenes) on a new line and chapter ⅩⅢ: Doggerland and Stonehenge to Caesar's raids, Roman Britain and Hadrian's Wall, Ireland's monasteries and Whitby, the Heptarchy, Vikings and Alfred the Great, Cnut and the Norman Conquest, Henry II's juries and Becket, the Normans in Ireland, Richard the Lionheart and Lackland John, Magna Carta and Parliament, Edward I's Wales and Scottish wars; 67 of 老无’s points in bold, 67 facts set right in plain text; 11 豆腐块"
+ "pass": "不列颠 — 15 sections (85 scenes) on a new line and chapter ⅩⅢ: Doggerland and Stonehenge to Caesar's raids, Roman Britain and Hadrian's Wall, Ireland's monasteries and Whitby, the Heptarchy, Vikings and Alfred the Great, Cnut and the Norman Conquest, Henry II's juries and Becket, the Normans in Ireland, Richard the Lionheart and Lackland John, Magna Carta and Parliament, Edward I's Wales and Scottish wars; 68 of 老无’s points in bold, 70 facts set right in plain text; 11 豆腐块"
 }
