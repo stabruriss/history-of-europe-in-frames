@@ -137,7 +137,7 @@ const FULL_SHOTS=process.env.FULL_SHOTS==='1';const wait=ms=>FULL_SHOTS?new Prom
    // Every scene draws real geometry, keeps its pins inside the fitted view, and does not overflow.
    await page.evaluate(({ids,label})=>{for(const e of ids){const n=HISTORY_ENTRIES.find(x=>x.id===e).scenes.length;for(let i=0;i<n;i++){go(e,{scene:i});const s=activeScene(ENTRIES[cur]);
     const r={pins:Object.keys(pinIndex).length,layers:group.getLayers().length,legend:legend.children.length,fits:map.getBounds().contains(L.latLngBounds(s.view)),overflow:document.documentElement.scrollWidth>innerWidth};
-    if(!(r.layers>0&&r.legend>0&&!r.overflow)||((label==='desktop')&&!(r.pins>0&&r.fits)))throw new Error(e+'/'+i+' '+JSON.stringify(r));}}}}}},{{ids:report.ids,label}});
+    if(!(r.layers>0&&r.legend>0&&!r.overflow)||((label==='desktop')&&!(r.pins>0&&r.fits)))throw new Error(e+'/'+i+' '+JSON.stringify(r));}}}}},{ids:report.ids,label});
    for(const [scene,file] of [['history-empire-principate/1','guard'],['history-empire-crisis/3','split'],['history-empire-west-fall/7','455'],['history-empire-west-end/5','476'],['history-empire-west-end/6','kingdoms-476'],['history-empire-theodosius/6','exiles'],['history-empire-theodosius/10','walls'],['history-empire-constantine/1','307-324'],['history-empire-west-fall/0','huns'],['history-empire-valentinian/2','adrianople-box'],['history-empire-theodosius/1','vesta'],['history-empire-leo/0','aspar'],['history-empire-justinian/3','ravenna'],['history-empire-justinian/5','565'],['history-west-kingdoms/0','kingdoms'],['history-spain-fall/2','711']]){
     await page.evaluate(s=>go(s),scene);await wait(300);
     if(label==='390')await page.evaluate(()=>scrollSceneText(false));
