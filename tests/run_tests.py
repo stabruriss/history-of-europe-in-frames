@@ -86,6 +86,16 @@ def main() -> int:
     else:
         env.setdefault('FULL_SHOTS', '0')
 
+    if not (pf / 'node_modules').is_dir() and 'NODE_PATH' not in env:
+        candidates = list(pf.parents[1].glob('*/project-files/node_modules'))
+        proj_root = os.environ.get('KOTA_PROJECT_ROOT')
+        if proj_root:
+            candidates.extend(Path(proj_root).glob('.agent-workspaces/*/project-files/node_modules'))
+        for nm in candidates:
+            if nm.is_dir():
+                env['NODE_PATH'] = str(nm)
+                break
+
     t0 = time.monotonic()
     results = {}
 
