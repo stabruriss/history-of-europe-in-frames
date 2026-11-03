@@ -77,6 +77,12 @@
    "1272—1381年",
    5,
    12
+  ],
+  "history-britain-hundred-years-3": [
+   "百年战争（二）",
+   "1360—1380年",
+   4,
+   12
   ]
  },
  "rows": {
@@ -174,6 +180,14 @@
     "france"
    ],
    1361,
+   1370
+  ],
+  "history-britain-hundred-years-3/0": [
+   [
+    "britain",
+    "france"
+   ],
+   1371,
    1381
   ]
  },
@@ -405,6 +419,22 @@
   [
    "history-britain-hundred-years-2/4",
    "国王还把羊毛税和海外贸易的税都交给下议院打理，而这些税赋并不是全部由纺织者和外贸"
+  ],
+  [
+   "history-britain-hundred-years-3/0",
+   "第一阶段《布雷蒂尼条约》之后，英国在法国西南收复并占有了完整的大阿基坦，北边握有"
+  ],
+  [
+   "history-britain-hundred-years-3/1",
+   "这一时期战法和军队构成发生剧变：英国因为打压大贵族、让市民与自耕农参军，军种从以"
+  ],
+  [
+   "history-britain-hundred-years-3/2",
+   "但英军靠“以战养战”、烧杀抢掠打赢战争，胜利后难以建立稳定统治，结果很快被法国反"
+  ],
+  [
+   "history-britain-hundred-years-3/3",
+   "随着黑太子爱德华和老国王爱德华三世相继去世，年仅十岁的理查二世继位，成了金雀花王"
   ]
  ],
  "moments": {
@@ -629,6 +659,12 @@
     1,
     "瘦马背上的兰开斯特伯爵"
    ]
+  ],
+  "history-britain-hundred-years-3": [
+   [
+    2,
+    "“布列塔尼之鹰”不打野战与担架上的利摩日屠城"
+   ]
   ]
  },
  "boxes": {
@@ -679,6 +715,12 @@
     4,
     "英法财政翻转与关税转嫁算术：为什么小国能压着大国打"
    ]
+  ],
+  "history-britain-hundred-years-3": [
+   [
+    1,
+    "英国长弓 vs 法国封建骑士：单兵技术、阵型、训练与代差"
+   ]
   ]
  },
  "budget": {
@@ -694,7 +736,8 @@
   "history-britain-edward1": 300,
   "history-britain-edward2": 300,
   "history-britain-hundred-years-1": 300,
-  "history-britain-hundred-years-2": 300
+  "history-britain-hundred-years-2": 300,
+  "history-britain-hundred-years-3": 300
  },
  "eras": [
   [
@@ -737,7 +780,8 @@
    [
     "history-britain-edward2",
     "history-britain-hundred-years-1",
-    "history-britain-hundred-years-2"
+    "history-britain-hundred-years-2",
+    "history-britain-hundred-years-3"
    ]
   ]
  ],
@@ -784,7 +828,8 @@
    "history-britain-edward2/0",
    "history-italy-blackdeath/0",
    "history-britain-hundred-years-1/0",
-   "history-britain-hundred-years-2/0"
+   "history-britain-hundred-years-2/0",
+   "history-britain-hundred-years-3/0"
   ],
   "france": [
    "history-france-west-francia/0",
@@ -798,7 +843,8 @@
    "history-britain-edward2/0",
    "history-italy-blackdeath/0",
    "history-britain-hundred-years-1/0",
-   "history-britain-hundred-years-2/0"
+   "history-britain-hundred-years-2/0",
+   "history-britain-hundred-years-3/0"
   ]
  },
  "shared": {
@@ -819,6 +865,10 @@
    "france"
   ],
   "history-britain-hundred-years-2/0": [
+   "britain",
+   "france"
+  ],
+  "history-britain-hundred-years-3/0": [
    "britain",
    "france"
   ]
@@ -1051,6 +1101,22 @@
   [
    "history-britain-hundred-years-2/4",
    "1348年议会请愿书就点破此税实为转嫁给产毛人"
+  ],
+  [
+   "history-britain-hundred-years-3/0",
+   "1362年爱德华三世把西南诸省合为“阿基坦亲王国”"
+  ],
+  [
+   "history-britain-hundred-years-3/1",
+   "两翼长弓手排成前倾的“齿耙阵”交叉攒射"
+  ],
+  [
+   "history-britain-hundred-years-3/2",
+   "1369年查理五世与名将盖克兰重启战端，严禁与英军野战，改用坚壁清野"
+  ],
+  [
+   "history-britain-hundred-years-3/3",
+   "由黑太子十岁的独子理查二世继位"
   ]
  ],
  "boxfixes": [
@@ -1123,6 +1189,16 @@
    "history-britain-hundred-years-2",
    "英法财政翻转与关税转嫁算术：为什么小国能压着大国打",
    "③ 关税与包税从来不是“只由外商承担”"
+  ],
+  [
+   "history-britain-hundred-years-3",
+   "英国长弓 vs 法国封建骑士：单兵技术、阵型、训练与代差",
+   "① 单兵技术特点（六尺紫杉木的天然复合弓）"
+  ],
+  [
+   "history-britain-hundred-years-3",
+   "英国长弓 vs 法国封建骑士：单兵技术、阵型、训练与代差",
+   "④ 与骑士的区别及优势（3便士的自耕农克制2先令的贵族）"
   ]
  ],
  "slips": [
@@ -1133,7 +1209,9 @@
   "阿斯克捏",
   "布纹",
   "安如",
-  "杀了亲夫之后，她又跑回娘家"
+  "杀了亲夫之后，她又跑回娘家",
+  "查理2",
+  "查理二世继位"
  ],
  "regions": [
   "mDoggerland7000",
@@ -1149,5 +1227,5 @@
   "mNormanIreland1210",
   "mGaelicIreland1210"
  ],
- "pass": "不列颠 — 13 sections (74 scenes) on a new line and chapter ⅩⅢ: Doggerland and Stonehenge to Caesar's raids, Roman Britain and Hadrian's Wall, Ireland's monasteries and Whitby, the Heptarchy, Vikings and Alfred the Great, Cnut and the Norman Conquest, Henry II's juries and Becket, the Normans in Ireland, Richard the Lionheart and Lackland John, Magna Carta and Parliament, Edward I's Wales and Scottish wars; 57 of 老无’s points in bold, 57 facts set right in plain text; 8 豆腐块"
+ "pass": "不列颠 — 14 sections (78 scenes) on a new line and chapter ⅩⅢ: Doggerland and Stonehenge to Caesar's raids, Roman Britain and Hadrian's Wall, Ireland's monasteries and Whitby, the Heptarchy, Vikings and Alfred the Great, Cnut and the Norman Conquest, Henry II's juries and Becket, the Normans in Ireland, Richard the Lionheart and Lackland John, Magna Carta and Parliament, Edward I's Wales and Scottish wars; 61 of 老无’s points in bold, 61 facts set right in plain text; 9 豆腐块"
 }

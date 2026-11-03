@@ -1186,6 +1186,8 @@ Object.assign(HS,{
   hy2_pontefract:['庞蒂弗拉克特','Pontefract',53.691,-1.312,'兰开斯特伯爵在约克郡的主堡；1322年3月22日爱德华二世在此将堂兄托马斯斩首。'],
   hy2_boston:['波士顿','Boston',52.978,-0.026,'林肯郡沃什湾畔的羊毛出口大港；13—14世纪仅次于伦敦的羊毛关税重镇。'],
   hy2_bruges:['布鲁日','Bruges',51.209,3.224,'佛兰德毛纺与贸易中心；加来攻占前英格兰羊毛专卖市场曾多次设于此。'],
+  hy3_limoges:['利摩日','Limoges',45.834,1.262,'利穆赞首府；1360年归英，1370年开城归顺法军，9月被抬在担架上的黑太子攻破洗劫。'],
+  hy3_najera:['纳赫拉','Nájera',42.416,-2.734,'卡斯蒂利亚北部城镇；1367年4月黑太子爱德华在此击败法军名将盖克兰，却耗空阿基坦财力并染上重病。'],
   av_aquila:['拉奎拉','L’Aquila',42.35,13.399,'阿布鲁佐山城；1294年8月塞莱斯廷五世在此骑毛驴加冕。'],
   av_palestrina:['帕莱斯特里纳','Palestrina',41.839,12.892,'罗马东郊科隆纳家族的山城；1298年卜尼法斯八世将其攻陷夷平、犁地撒盐。'],
   av_perugia:['佩鲁贾','Perugia',43.112,12.389,'翁布里亚山城；1294年、1305年两次教宗选举在此，1304年本笃十一世死于此。'],
@@ -8012,6 +8014,40 @@ const HISTORY_ENTRIES=[
     hp(d,'hy2_boston',{left:1,note:'1348年议会请愿书指出：每袋两英镑的羊毛出口税被专卖商压价转嫁到了国内产毛农户头上。'});
     hp(d,'hy2_bruges',{note:'佛兰德与大陆市场：出口关税与进口英镑税由英格兰产毛户、织工与消费者共同分摊。'});
    },[['fill',HC.britain,'税负层层转嫁、1381年爆发大起义的英格兰'],['fill',HC.war,'大陆毛纺市场'],['dot',HC.war,'加来羊毛专卖公会与1381年伦敦大起义'],['dot','#2a2018','波士顿与布鲁日']])
+ ]},
+{id:'history-britain-hundred-years-3',ch:12,title:'百年战争（二）：长弓破骑士、大劫掠反噬与得而复失',short:'百年战争（二）',en:'The Hundred Years’ War (II): The Longbow Revolution, Chevauchée Backlash and Lost Gains',period:'1360—1380年',c:HC.britain,
+ scenes:[
+  hs('1360—1362年','第一阶段后英国收复的土地','1360年《布雷蒂尼条约》后，英王在西南拥有从普瓦图到比利牛斯山的大阿基坦亲王国，在北边握有加来与蓬蒂厄，均享完全主权、不再向法王称臣。',[[42.8,-4.5],[52.2,4.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});ha(d,'mAquitaineDuchy900',HC.britain,{fillOpacity:.36});
+    ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.22});
+    hp(d,'w_bordeaux',{left:1,note:'大阿基坦亲王国都城：1362年黑太子爱德华受封阿基坦亲王，在此设宫廷统辖西南十余省。'});
+    hp(d,'k_poitiers',{note:'普瓦图首府：连同桑通日、昂古穆瓦、利穆赞、佩里戈尔、凯尔西、鲁埃格一并归英王完全主权所有。'});
+    hp(d,'hy3_limoges',{note:'利穆赞首府利摩日：1360年条约划归英王主权之下。'});
+    hp(d,'hy1_calais',{left:1,note:'北法海峡要塞加来：连同吉讷与蓬蒂厄归英王完全主权所有，为英军与羊毛专卖桥头堡。'});
+    hp(d,'w_paris',{note:'法兰西王室被迫承认英王对上述领地享有完全主权，不再行臣服礼。'});
+   },[['fill',HC.britain,'1360年后英王享有完全主权的英格兰、大阿基坦与加来'],['fill',HC.france,'割让西南大片领土后的法兰西'],['dot','#2a2018','波尔多、普瓦捷、利摩日、加来与巴黎']]),
+  hs('1337—1360年','战法与军制剧变：长弓手革了骑士的命','英国打压封建私兵，靠议会税收招募自耕农与市民当长弓手（占全军四分之三以上），以“下马骑士居中+两翼长弓齿耙阵”克制法国封建重骑兵。',[[45.5,-3.5],[53.2,3.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});ha(d,'mWales',HC.celt,{fillOpacity:.28});
+    ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.22});
+    hp(d,'k_london',{left:1,note:'爱德华三世在伦敦塔储备上百万支长弓箭，1363年下令禁止星期日踢球玩乐、全国男丁必须练射箭。'});
+    hp(d,'hy1_crecy',{kind:'battle',note:'1346年克雷西会战：五千余名长弓手在两翼排成前倾“齿耙阵”，每分钟射出五万支箭击溃法国骑士。'});
+    hp(d,'k_poitiers',{kind:'battle',note:'1356年普瓦捷会战：长弓手借树篱与沼泽射乱法军骑兵，配全装下马骑士活捉法王。'});
+   },[['fill',HC.britain,'推行契约募兵与全民练箭的英格兰'],['fill',HC.celt,'紫杉长弓发源地威尔士'],['fill',HC.france,'仍依赖封建贵族重骑兵的法兰西'],['dot',HC.war,'克雷西与普瓦捷：长弓配下马骑士的经典战例'],['dot','#2a2018','伦敦（伦敦塔军械库）']]),
+  hs('1360—1375年','大劫掠失尽人心，查理五世反攻收复失地','英军以战养战烧杀抢掠，黑太子远征纳赫拉负债后强征炉灶税激反人心；1369—1375年法王查理五世与统帅盖克兰以坚壁清野战术收复绝大部分失地。',[[42.0,-4.5],[51.8,4.8]],d=>{
+    ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.34});ha(d,'mGascony1223',HC.britain,{fillOpacity:.34});
+    hp(d,'hy3_najera',{kind:'battle',left:1,note:'1367年4月黑太子越过比利牛斯山在此打赢纳赫拉之战，却染病负债，回阿基坦强征炉灶税激起反叛。'});
+    hp(d,'hy3_limoges',{kind:'battle',note:'1370年9月重病的黑太子躺担架攻破倒向法国的利摩日并屠城，更令阿基坦各城寒心倒戈。'});
+    hp(d,'sl9_rochelle',{kind:'battle',left:1,note:'1372年6月法卡联合舰队在拉罗谢尔全歼英军援船，普瓦图与桑通日尽归法国。'});
+    hp(d,'w_paris',{note:'法王“智者”查理五世与王室统帅盖克兰坐镇指挥：避开长弓野战，靠坚壁清野与围城策反收复失地。'});
+    hp(d,'w_bordeaux',{left:1,note:'到1375年休战时，英军在西南只剩波尔多与巴约讷沿海狭长地带，北边只剩加来。'});
+    hp(d,'hy1_calais',{left:1,note:'英军在北法仅存的据点加来。'});
+   },[['fill',HC.france,'1369—1375年查理五世与盖克兰收复失地后的法兰西'],['fill',HC.britain,'1375年英军在大陆仅存的波尔多—巴约讷沿海与加来'],['dot',HC.war,'纳赫拉、利摩日与拉罗谢尔海战'],['dot','#2a2018','巴黎、波尔多与加来']]),
+  hs('1376—1380年','黑太子与爱德华三世相继去世，理查二世继位','1376年6月黑太子病逝，次年6月爱德华三世去世，十岁的理查二世继位（金雀花直系末王）；1380年法王查理五世与盖克兰亦死，两国同陷幼主危局。',[[47.5,-4.5],[54.5,4.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.28});
+    hp(d,'w_canterbury',{note:'1376年6月8日四十五岁的黑太子爱德华病逝，葬于坎特伯雷座堂，墓上悬其黑甲与鸵鸟毛徽章。'});
+    hp(d,'k_london',{kind:'battle',left:1,note:'1377年6月21日爱德华三世去世，十岁长孙理查二世在威斯敏斯特加冕，为金雀花王朝直系末代国王。'});
+    hp(d,'w_paris',{note:'1380年7月王室统帅盖克兰病死军中，9月法王查理五世去世，十一岁的查理六世继位。'});
+   },[['fill',HC.britain,'十岁理查二世继位后的英格兰（1377年）'],['fill',HC.france,'十一岁查理六世继位后的法兰西（1380年）'],['dot',HC.war,'1377年伦敦威斯敏斯特理查二世继位'],['dot','#2a2018','坎特伯雷与巴黎']])
  ]}
 ];
 HISTORY_ENTRIES.forEach(e=>{
@@ -8083,7 +8119,7 @@ const HISTORY_ERAS=[
  {id:'britain-saxon-norman',name:'英格兰的成型：维京狂潮与诺曼征服',en:'The Making of England: Vikings and Normans',date:'约410—1087年',c:HC.britain,items:[['history-britain-anglosaxon'],['history-britain-norman']]},
  {id:'britain-angevin',name:'金雀花帝国：普通法、爱尔兰与狮心王',en:'The Angevin Empire: Common Law, Ireland and Lionheart',date:'1014—1214年',c:HC.britain,items:[['history-britain-henry2'],['history-britain-norman-ireland'],['history-britain-richard']]},
  {id:'britain-parliament',name:'大宪章、议会与英伦三岛的边界',en:'Magna Carta, Parliament and the Bounds of the Isles',date:'1215—1307年',c:HC.britain,items:[['history-britain-magnacarta'],['history-britain-edward1']]},
- {id:'britain-hundred-years',name:'百年战争（上）：从阿基坦称臣到生擒法王与议会账本',en:'The Hundred Years’ War (I): From Aquitaine to Poitiers and the Commons’ Ledger',date:'1200—1381年',c:HC.britain,items:[['history-britain-edward2'],['history-britain-hundred-years-1'],['history-britain-hundred-years-2']]},
+ {id:'britain-hundred-years',name:'百年战争（上）：从阿基坦称臣到生擒法王与议会账本',en:'The Hundred Years’ War (I): From Aquitaine to Poitiers and the Commons’ Ledger',date:'1200—1381年',c:HC.britain,items:[['history-britain-edward2'],['history-britain-hundred-years-1'],['history-britain-hundred-years-2'],['history-britain-hundred-years-3']]},
 ];
 /* History as a tree: each branch is a topic; distance from the root is time (years, negative = BCE).
    Reading order stays with HISTORY_ERAS; TREE_ROWS puts each era row on a branch at its start and end. */
@@ -8299,7 +8335,8 @@ const TREE_ROWS={
  'history-britain-edward1/0':['britain',1277,1307,'1272—1307年'],
  'history-britain-edward2/0':[['britain','france'],1315,1330,'1200—1330年'],
  'history-britain-hundred-years-1/0':[['britain','france'],1352,1360,'1314—1360年'],
- 'history-britain-hundred-years-2/0':[['britain','france'],1361,1381,'1272—1381年'],
+ 'history-britain-hundred-years-2/0':[['britain','france'],1361,1370,'1272—1381年'],
+ 'history-britain-hundred-years-3/0':[['britain','france'],1371,1381,'1360—1380年'],
  'history-faith-avignon/0':[['faith','france'],1296,1303,'1294—1303年'],
  'history-faith-clement/0':[['faith','france'],1304,1314,'1303—1314年'],
  'history-italy-blackdeath/0':[['italy','france','britain','germany','faith','persia'],1347,1351,'1346—1353年'],
