@@ -710,6 +710,12 @@
     "从阿基坦公爵到“法兰西母狼”：百年战争前夜的两颗雷"
    ]
   ],
+  "history-britain-hundred-years-1": [
+   [
+    5,
+    "不可思议的“好人”约翰二世：为什么法王会主动回伦敦坐牢？"
+   ]
+  ],
   "history-britain-hundred-years-2": [
    [
     4,
@@ -1181,6 +1187,11 @@
    "② 第二颗雷：和亲娶来的“法兰西母狼”成了王位继承桥（1308—1328年）"
   ],
   [
+   "history-britain-hundred-years-1",
+   "不可思议的“好人”约翰二世：为什么法王会主动回伦敦坐牢？",
+   "就算信义从整个大地上被驱逐殆尽，她也应当在君王的心里找到避难所"
+  ],
+  [
    "history-britain-hundred-years-2",
    "英法财政翻转与关税转嫁算术：为什么小国能压着大国打",
    "① 为什么英国联市镇压贵族比法国更彻底"
@@ -1198,7 +1209,17 @@
   [
    "history-britain-hundred-years-3",
    "英国长弓 vs 法国封建骑士：单兵技术、阵型、训练与代差",
-   "④ 与骑士的区别及优势（3便士的自耕农克制2先令的贵族）"
+   "② 为什么长弓改变了战争形态：它突破了“冲锋时间窗×射速×破甲”三重临界点！"
+  ],
+  [
+   "history-britain-hundred-years-3",
+   "英国长弓 vs 法国封建骑士：单兵技术、阵型、训练与代差",
+   "中国唐宋神臂弓/克敌弓"
+  ],
+  [
+   "history-britain-hundred-years-3",
+   "英国长弓 vs 法国封建骑士：单兵技术、阵型、训练与代差",
+   "现代狩猎滑轮复合弓"
   ]
  ],
  "slips": [
@@ -1227,5 +1248,5 @@
   "mNormanIreland1210",
   "mGaelicIreland1210"
  ],
- "pass": "不列颠 — 14 sections (78 scenes) on a new line and chapter ⅩⅢ: Doggerland and Stonehenge to Caesar's raids, Roman Britain and Hadrian's Wall, Ireland's monasteries and Whitby, the Heptarchy, Vikings and Alfred the Great, Cnut and the Norman Conquest, Henry II's juries and Becket, the Normans in Ireland, Richard the Lionheart and Lackland John, Magna Carta and Parliament, Edward I's Wales and Scottish wars; 61 of 老无’s points in bold, 61 facts set right in plain text; 9 豆腐块"
+ "pass": "不列颠 — 14 sections (78 scenes) on a new line and chapter ⅩⅢ: Doggerland and Stonehenge to Caesar's raids, Roman Britain and Hadrian's Wall, Ireland's monasteries and Whitby, the Heptarchy, Vikings and Alfred the Great, Cnut and the Norman Conquest, Henry II's juries and Becket, the Normans in Ireland, Richard the Lionheart and Lackland John, Magna Carta and Parliament, Edward I's Wales and Scottish wars; 61 of 老无’s points in bold, 61 facts set right in plain text; 10 豆腐块"
 }

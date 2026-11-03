@@ -24,7 +24,7 @@ const shots=path.join(__dirname,'shots-v7');require('node:fs').mkdirSync(shots,{
   }
   // 豆腐块: boxed explainers render inside their own scene passage, apart from the 名场面.
   const boxes=await page.evaluate(()=>HISTORY_ENTRIES.flatMap(e=>e.boxes.map(b=>({id:e.id,scene:b.scene,name:b.name}))));
-  assert.equal(boxes.length,51);
+  assert.equal(boxes.length,52);
   for(const b of boxes){
    const r=await page.evaluate(b=>{go(b.id,{scene:b.scene});
     const ctx=document.getElementById('sceneContext');
@@ -41,5 +41,5 @@ const shots=path.join(__dirname,'shots-v7');require('node:fs').mkdirSync(shots,{
  }
  await browser.close();
  assert.deepEqual(errors,[]);
- console.log('PASS: 571 iconic-event tags and 51 豆腐块 (boxed explainers) render inside their scene passages; desktop and 390px; no overflow; offline; no page errors.');
+ console.log('PASS: 571 iconic-event tags and 52 豆腐块 (boxed explainers) render inside their scene passages; desktop and 390px; no overflow; offline; no page errors.');
 })().catch(e=>{console.error(e);process.exit(1);});
