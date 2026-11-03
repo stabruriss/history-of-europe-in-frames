@@ -59,6 +59,12 @@
    "1272—1307年",
    5,
    12
+  ],
+  "history-britain-edward2": [
+   "百年战争前夜",
+   "1200—1330年",
+   6,
+   12
   ]
  },
  "rows": {
@@ -133,6 +139,14 @@
    ],
    1277,
    1307
+  ],
+  "history-britain-edward2/0": [
+   [
+    "britain",
+    "france"
+   ],
+   1315,
+   1330
   ]
  },
  "bold": [
@@ -295,6 +309,30 @@
   [
    "history-britain-edward1/3",
    "爱德华一世越想靠武力统一全岛，连年南北两线作战就越把王库掏空，反而逼着国王向国内"
+  ],
+  [
+   "history-britain-edward2/0",
+   "1200年法王腓力二世借口无地王约翰强娶封臣的未婚妻，剥夺约翰在法国的领地，引发"
+  ],
+  [
+   "history-britain-edward2/1",
+   "布汶战败、签下《大宪章》之后，继任的英王依然想着夺回诺曼底、安茹等以前自己的地盘"
+  ],
+  [
+   "history-britain-edward2/2",
+   "《牛津条例》之后，英王亨利三世只得和圣路易（路易九世）签下《巴黎条约》，彻底放弃"
+  ],
+  [
+   "history-britain-edward2/3",
+   "到了爱德华一世，英法双方找到了新的共存模式：让王子做阿基坦公爵防止尴尬，双方和亲"
+  ],
+  [
+   "history-britain-edward2/4",
+   "但是嫁给爱德华二世的伊莎贝拉和人通奸，带兵回国废杀亲夫，先演了一出“哈姆雷特”式"
+  ],
+  [
+   "history-britain-edward2/5",
+   "紧接着十七岁的爱德华三世又上演“玄武门之变”式的禁宫突袭，从地底密道夜袭擒杀奸夫"
   ]
  ],
  "moments": {
@@ -485,6 +523,20 @@
     4,
     "煮沸剔骨，抬在阵前"
    ]
+  ],
+  "history-britain-edward2": [
+   [
+    2,
+    "“他原先不是我的封臣，现在是了”"
+   ],
+   [
+    4,
+    "没有标点的密信与伯克利城堡的惨叫"
+   ],
+   [
+    5,
+    "诺丁汉密道与“可怜可怜温柔的莫蒂默”"
+   ]
   ]
  },
  "boxes": {
@@ -523,6 +575,12 @@
     2,
     "《勇敢的心》与真实的历史"
    ]
+  ],
+  "history-britain-edward2": [
+   [
+    5,
+    "从阿基坦公爵到“法兰西母狼”：百年战争前夜的两颗雷"
+   ]
   ]
  },
  "budget": {
@@ -535,7 +593,8 @@
   "history-britain-norman-ireland": 300,
   "history-britain-richard": 300,
   "history-britain-magnacarta": 300,
-  "history-britain-edward1": 300
+  "history-britain-edward1": 300,
+  "history-britain-edward2": 300
  },
  "eras": [
   [
@@ -570,6 +629,13 @@
    [
     "history-britain-magnacarta",
     "history-britain-edward1"
+   ]
+  ],
+  [
+   "britain-hundred-years",
+   "百年战争前夜：阿基坦称臣与王位易手",
+   [
+    "history-britain-edward2"
    ]
   ]
  ],
@@ -613,6 +679,7 @@
    "history-britain-richard/0",
    "history-britain-magnacarta/0",
    "history-britain-edward1/0",
+   "history-britain-edward2/0",
    "history-italy-blackdeath/0"
   ],
   "france": [
@@ -624,6 +691,7 @@
    "history-france-stlouis/0",
    "history-faith-avignon/0",
    "history-faith-clement/0",
+   "history-britain-edward2/0",
    "history-italy-blackdeath/0"
   ]
  },
@@ -633,6 +701,10 @@
    "france"
   ],
   "history-britain-richard/0": [
+   "britain",
+   "france"
+  ],
+  "history-britain-edward2/0": [
    "britain",
    "france"
   ]
@@ -789,6 +861,34 @@
   [
    "history-britain-edward1/4",
    "7月7日死在索尔威湾畔的堡下沙地"
+  ],
+  [
+   "history-britain-edward2/0",
+   "大陆只剩阿基坦南部的加斯科涅"
+  ],
+  [
+   "history-britain-edward2/1",
+   "1242年议会拒批军费，亨利三世仍听母亲与继父挑唆远征桑通日，7月在塔耶堡被路易九世击败"
+  ],
+  [
+   "history-britain-edward2/2",
+   "1259年12月4日亲赴巴黎与连襟路易九世"
+  ],
+  [
+   "history-britain-edward2/3",
+   "1306年爱德华一世把阿基坦公爵转封王储小爱德华"
+  ],
+  [
+   "history-britain-edward2/3",
+   "1325年圣萨尔多战争后，爱德华二世照搬此法"
+  ],
+  [
+   "history-britain-edward2/4",
+   "9月爱德华二世在伯克利城堡被害"
+  ],
+  [
+   "history-britain-edward2/5",
+   "由守将引路从地底密道潜入主塔，砍杀卫士生擒莫蒂默"
   ]
  ],
  "boxfixes": [
@@ -841,13 +941,26 @@
    "history-britain-edward1",
    "《勇敢的心》与真实的历史",
    "1298年福尔柯克之战时伊莎贝拉还在巴黎、才三岁"
+  ],
+  [
+   "history-britain-edward2",
+   "从阿基坦公爵到“法兰西母狼”：百年战争前夜的两颗雷",
+   "① 第一颗雷：一国之君给另一国国王下跪（1259年《巴黎条约》）"
+  ],
+  [
+   "history-britain-edward2",
+   "从阿基坦公爵到“法兰西母狼”：百年战争前夜的两颗雷",
+   "② 第二颗雷：和亲娶来的“法兰西母狼”成了王位继承桥（1308—1328年）"
   ]
  ],
  "slips": [
   "教皇",
   "开始撒",
   "凯撒",
-  "当选即位"
+  "当选即位",
+  "阿斯克捏",
+  "布纹",
+  "安如"
  ],
  "regions": [
   "mDoggerland7000",
@@ -863,5 +976,5 @@
   "mNormanIreland1210",
   "mGaelicIreland1210"
  ],
- "pass": "不列颠 — 10 sections (57 scenes) on a new line and chapter ⅩⅢ: Doggerland and Stonehenge to Caesar's raids, Roman Britain and Hadrian's Wall, Ireland's monasteries and Whitby, the Heptarchy, Vikings and Alfred the Great, Cnut and the Norman Conquest, Henry II's juries and Becket, the Normans in Ireland, Richard the Lionheart and Lackland John, Magna Carta and Parliament, Edward I's Wales and Scottish wars; 40 of 老无’s points in bold, 38 facts set right in plain text; 6 豆腐块"
+ "pass": "不列颠 — 11 sections (63 scenes) on a new line and chapter ⅩⅢ: Doggerland and Stonehenge to Caesar's raids, Roman Britain and Hadrian's Wall, Ireland's monasteries and Whitby, the Heptarchy, Vikings and Alfred the Great, Cnut and the Norman Conquest, Henry II's juries and Becket, the Normans in Ireland, Richard the Lionheart and Lackland John, Magna Carta and Parliament, Edward I's Wales and Scottish wars; 46 of 老无’s points in bold, 45 facts set right in plain text; 7 豆腐块"
 }

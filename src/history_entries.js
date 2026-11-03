@@ -1170,6 +1170,13 @@ Object.assign(HS,{
   uk9_dumfries:['邓弗里斯','Dumfries',55.07,-3.605,'苏格兰西南重镇；1306年2月10日罗伯特·布鲁斯在城内灰衣修士教堂祭坛前刺死政敌红科明。'],
   uk9_burgh:['堡下沙地','Burgh by Sands',54.922,-3.149,'英苏边境索尔威湾南岸的村镇；1307年7月7日六十八岁的爱德华一世在北征布鲁斯途中病死于此。'],
   uk9_edinburgh:['爱丁堡','Edinburgh',55.949,-3.2,'福斯湾南岸的苏格兰重镇与山顶城堡；1296年被爱德华一世攻占，1996年命运之石归还存放于此。'],
+  ed2_bayonne:['巴约讷','Bayonne',43.493,-1.475,'加斯科涅南端海港重镇；与波尔多同为1204年后英王在大陆仅存的核心据点。'],
+  ed2_boulogne:['布洛涅','Boulogne-sur-Mer',50.726,1.614,'法国北部海峡港口；1308年1月25日英王爱德华二世在此迎娶法王腓力四世之女伊莎贝拉。'],
+  ed2_saintsardos:['圣萨尔多','Saint-Sardos',44.341,0.481,'阿基坦阿热奈边境村镇；1323年法王差役在此立桩被杀，引发1324年圣萨尔多战争。'],
+  ed2_valenciennes:['瓦朗谢讷','Valenciennes',50.357,3.523,'埃诺伯国首府；1326年伊莎贝拉与莫蒂默携王储爱德华至此，以王储与菲莉帕定亲换取雇佣兵与船只。'],
+  ed2_orwell:['奥威尔河口','Orwell Haven',51.956,1.309,'英格兰东岸萨福克郡河口；1326年9月24日伊莎贝拉与莫蒂默率军在此登陆。'],
+  ed2_bannockburn:['班诺克本','Bannockburn',56.09,-3.916,'苏格兰斯特灵城南的沼泽溪谷；1314年6月24日罗伯特·布鲁斯在此大破爱德华二世的英军。'],
+  ed2_berkeley:['伯克利城堡','Berkeley Castle',51.688,-2.457,'格洛斯特郡塞文河畔石堡；1327年9月21日夜被废黜的爱德华二世死于此堡。'],
   av_aquila:['拉奎拉','L’Aquila',42.35,13.399,'阿布鲁佐山城；1294年8月塞莱斯廷五世在此骑毛驴加冕。'],
   av_palestrina:['帕莱斯特里纳','Palestrina',41.839,12.892,'罗马东郊科隆纳家族的山城；1298年卜尼法斯八世将其攻陷夷平、犁地撒盐。'],
   av_perugia:['佩鲁贾','Perugia',43.112,12.389,'翁布里亚山城；1294年、1305年两次教宗选举在此，1304年本笃十一世死于此。'],
@@ -7845,6 +7852,66 @@ const HISTORY_ENTRIES=[
     hp(d,'uk9_stirling',{note:'七年后（1314年6月），布鲁斯在斯特灵城南的班诺克本大破爱德华二世，保住苏格兰独立。'});
     hp(d,'k_london',{note:'爱德华一世葬入威斯敏斯特修道院素面大理石棺，后世漆上“爱德华一世，苏格兰人之锤，守信当遵”。'});
    },[['fill',HC.celt,'罗伯特·布鲁斯重夺独立的苏格兰王国'],['fill',HC.britain,'英格兰王国'],['dash',HC.britain,'已并入王领的威尔士'],['dot',HC.war,'1306年邓弗里斯刺杀与1314年斯特灵（班诺克本）'],['dot','#2a2018','斯昆、堡下沙地与伦敦']])
+ ]},
+{id:'history-britain-edward2',ch:12,title:'百年战争前夜：阿基坦称臣与“法兰西母狼”',short:'百年战争前夜',en:'Eve of the Hundred Years’ War: Homage for Aquitaine and the She-Wolf of France',period:'1200—1330年',c:HC.britain,
+ scenes:[
+  hs('1200—1215年','强娶夺地与布汶战败：大陆只剩加斯科涅','1200年约翰强娶封臣未婚妻，1202年腓力二世没收其大陆封地，1204—1206年夺走诺曼底与安茹；1214年布汶惨败后英王在大陆只剩加斯科涅，1215年被迫签《大宪章》。',[[42.8,-4.8],[52.8,5.2]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});ha(d,'mGascony1223',HC.britain,{fillOpacity:.34});
+    ha(d,'mCapetDomain1223',HC.france,{fillOpacity:.32});
+    hp(d,'k_poitiers',{left:1,note:'1200年8月约翰强娶普瓦图封臣吕西尼昂的于格九世的未婚妻伊莎贝拉，于格向法王上诉。'});
+    hp(d,'w_paris',{note:'1202年腓力二世传讯约翰赴巴黎出庭，约翰拒不到庭，腓力二世宣布没收其全部大陆封地。'});
+    hp(d,'fr_rouen',{left:1,note:'1204年6月鲁昂投降，诺曼底、安茹、曼恩、图赖讷相继落入法王之手。'});
+    hp(d,'in_bouvines',{kind:'battle',note:'1214年7月27日布汶大战，约翰与外甥奥托四世联军惨败，收复故土之望破灭。'});
+    hp(d,'w_bordeaux',{left:1,note:'加斯科涅首府波尔多；布汶战后英王在大陆仅存波尔多与巴约讷一带的加斯科涅。'});
+    hp(d,'ed2_bayonne',{left:1,note:'加斯科涅南端海港重镇，与波尔多同为英王保住的大陆立足点。'});
+    hp(d,'uk8_runnymede',{kind:'battle',left:1,note:'1215年6月15日，布汶惨败引发国内男爵起兵，约翰在此被迫盖印《大宪章》。'});
+   },[['fill',HC.britain,'英格兰与大陆仅存的加斯科涅'],['fill',HC.france,'腓力二世吞并诺曼底、安茹后的法兰西王领'],['dot',HC.war,'1214年布汶大战与1215年兰尼米德《大宪章》'],['dot','#2a2018','普瓦捷、巴黎、鲁昂、波尔多与巴约讷']]),
+  hs('1216—1258年','亨利三世想夺故土，英国贵族却不支持','1204年后英格兰贵族已无诺曼底地产，拒绝资助大陆战事；1224年路易八世夺拉罗谢尔，1230、1242年亨利三世两度渡海均败于塔耶堡，1258年贵族逼签《牛津条例》。',[[43.0,-4.8],[53.2,4.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});ha(d,'mGascony1223',HC.britain,{fillOpacity:.3});
+    ha(d,'mCapetDomain1223',HC.france,{fillOpacity:.3});
+    hp(d,'sl9_rochelle',{kind:'battle',left:1,note:'1224年8月法王路易八世攻占这座大西洋要港，切断英军进入普瓦图的门户。'});
+    hp(d,'uk7_taillebourg',{kind:'battle',left:1,note:'1242年7月桑通日战争：亨利三世在无议会拨款下渡海参战，在此被法王路易九世击败。'});
+    hp(d,'k_london',{note:'英格兰男爵在诺曼底已无地产，1242年威斯敏斯特议会明确拒绝为亨利三世攻法拨款。'});
+    hp(d,'sh_oxford',{kind:'battle',left:1,note:'1258年6月男爵披甲逼签《牛津条例》，设十五人委员会管束亨利三世，勒令对法讲和。'});
+    hr(d,[[50.8,-1.1],[45.84,-0.64]],HC.britain);
+   },[['fill',HC.britain,'贵族拒掏军费的英格兰与加斯科涅'],['fill',HC.france,'路易八世与路易九世的法兰西'],['dline',HC.britain,'1242年亨利三世远征桑通日航线（概略）'],['dot',HC.war,'拉罗谢尔、塔耶堡之战与《牛津条例》'],['dot','#2a2018','伦敦（威斯敏斯特）']]),
+  hs('1259年','《巴黎条约》：放弃诺曼底，以公爵向法王称臣','1259年12月4日亨利三世赴巴黎与路易九世签《巴黎条约》：彻底放弃诺曼底、安茹、曼恩、图赖讷、普瓦图，保留阿基坦公爵封号，向法王下跪行臣服礼。',[[43.0,-4.5],[52.5,4.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.3});
+    ha(d,'mGascony1223',HC.war,{fillOpacity:.34,dashArray:'4 4'});
+    hp(d,'w_paris',{kind:'battle',note:'1259年12月4日《巴黎条约》公布，亨利三世在巴黎向连襟路易九世下跪行阿基坦公爵臣服礼。'});
+    hp(d,'fr_rouen',{left:1,note:'诺曼底首府；亨利三世在条约中正式摘掉“诺曼底公爵”头衔，彻底放弃诺曼底。'});
+    hp(d,'pl_angers',{left:1,note:'金雀花祖居安茹；与曼恩（勒芒）、图赖讷（图尔）、普瓦图一并由亨利三世正式放弃。'});
+    hp(d,'pl_lemans',{note:'曼恩首府勒芒；1259年条约由英王正式放弃。'});
+    hp(d,'w_bordeaux',{left:1,note:'亨利三世保住阿基坦公爵头衔与加斯科涅，但须对法王奉召称臣、受巴黎高等法院上诉管辖。'});
+   },[['fill',HC.britain,'英格兰王国（亨利三世）'],['fill',HC.france,'法兰西王国（圣路易获认诺曼底、安茹等全部主权）'],['dash',HC.war,'阿基坦公国（加斯科涅：英王保留，但须向法王称臣）'],['dot',HC.war,'1259年12月《巴黎条约》与臣服礼'],['dot','#2a2018','鲁昂、昂热、勒芒与波尔多']]),
+  hs('1272—1325年','新共存模式：王子做阿基坦公爵与双方和亲','1299、1303年条约以两代和亲结束加斯科涅战争（爱德华一世娶玛格丽特、爱德华二世娶伊莎贝拉）；1306与1325年两度封王储为阿基坦公爵代父赴法称臣。',[[43.0,-4.5],[53.0,4.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.28});
+    ha(d,'mGascony1223',HC.war,{fillOpacity:.34});
+    hp(d,'w_canterbury',{note:'1299年9月，六十岁的爱德华一世在此迎娶法王腓力四世之妹玛格丽特，达成第一重和亲。'});
+    hp(d,'ed2_boulogne',{left:1,note:'1308年1月25日，新即位的爱德华二世在此迎娶腓力四世十二岁的女儿伊莎贝拉，达成第二重和亲。'});
+    hp(d,'k_london',{left:1,note:'1306年5月威斯敏斯特“天鹅宴”上，爱德华一世封王储小爱德华为阿基坦公爵，免去国王亲自称臣之窘。'});
+    hp(d,'ed2_saintsardos',{kind:'battle',note:'1323年法王差役在此立桩被杀，引发1324年圣萨尔多战争，法军占领阿基坦大半。'});
+    hp(d,'w_paris',{note:'1325年9月，十二岁的王储爱德华（爱德华三世）受父转封阿基坦公爵，来此代父向舅舅法王查理四世行臣服礼。'});
+   },[['fill',HC.britain,'英格兰王国（爱德华一世、二世）'],['fill',HC.france,'法兰西王国（腓力四世与查理四世）'],['fill',HC.war,'由英王王储兼领公爵以代父称臣的阿基坦（加斯科涅）'],['dot',HC.war,'1324年圣萨尔多战争'],['dot','#2a2018','坎特伯雷、布洛涅、伦敦与巴黎']]),
+  hs('1307—1327年','伊莎贝拉与莫蒂默：通奸、倒戈与废杀亲夫','1314年爱德华二世败于班诺克本，宠信德斯彭瑟父子；1325年王后伊莎贝拉在巴黎与莫蒂默私通，1326年借埃诺兵登陆奥威尔，次年废爱德华二世并在伯克利城堡将其害死。',[[48.2,-5.2],[56.8,5.2]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});ha(d,'mScotland1200',HC.celt,{fillOpacity:.24});
+    ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.2});
+    hp(d,'ed2_bannockburn',{kind:'battle',left:1,note:'1314年6月24日，爱德华二世率大军在此被苏格兰王罗伯特·布鲁斯打得惨败，威信扫地。'});
+    hp(d,'w_paris',{note:'1325年伊莎贝拉在巴黎扣住王储爱德华，与逃出伦敦塔的叛乱领主罗杰·莫蒂默公开同居。'});
+    hp(d,'ed2_valenciennes',{note:'1326年伊莎贝拉在埃诺将王储许配菲莉帕，换取埃诺伯爵的雇佣军与战船。'});
+    hp(d,'ed2_orwell',{kind:'battle',note:'1326年9月24日，伊莎贝拉与莫蒂默在此登陆，全英贵族与伦敦市民纷纷倒戈相迎。'});
+    hp(d,'uk8_hereford',{left:1,note:'1326年11月24日，爱德华二世宠臣小休·德斯彭瑟在此被判“绞、拖、剖、剐”极刑处死。'});
+    hp(d,'ed2_berkeley',{kind:'battle',left:1,note:'1327年1月爱德华二世被议会废黜，4月押入伯克利城堡，9月21日夜被害身亡。'});
+    hr(d,[[50.36,3.52],[51.82,4.67],[51.96,1.31],[51.51,-0.13],[51.69,-2.46]],HC.war);
+   },[['fill',HC.britain,'倒戈推翻爱德华二世的英格兰'],['fill',HC.celt,'班诺克本大胜后的苏格兰'],['fill',HC.france,'法兰西王国'],['dline',HC.war,'1326年伊莎贝拉与莫蒂默率军登陆进军路线（概略）'],['dot',HC.war,'班诺克本、奥威尔河口与伯克利城堡'],['dot','#2a2018','巴黎、瓦朗谢讷与赫里福德']]),
+  hs('1327—1330年','诺丁汉密道夜袭：十七岁的爱德华三世夺权','1327—1330年伊莎贝拉与莫蒂默摄政专权并杀肯特伯爵；1330年10月19日夜十七岁的爱德华三世带二十三名骑士从诺丁汉城堡地底密道突袭擒莫蒂默，押赴伦敦绞死，亲掌大权。',[[50.2,-4.5],[54.8,1.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'mWales',HC.celt,{fillOpacity:.22});
+    hp(d,'uk7_winchester',{left:1,note:'1330年3月，伊莎贝拉与莫蒂默在此处死爱德华三世的亲叔父肯特伯爵埃德蒙，激怒年轻国王。'});
+    hp(d,'uk7_nottingham',{kind:'battle',note:'1330年10月19日夜，十七岁的爱德华三世与蒙塔古率二十三名骑士从砂岩地底密道潜入城堡，生擒莫蒂默。'});
+    hp(d,'k_london',{note:'1330年11月29日，莫蒂默经威斯敏斯特议会定罪后在伦敦泰伯恩被绞死，爱德华三世正式亲政。'});
+    hp(d,'uk8_gloucester',{left:1,note:'爱德华三世在格洛斯特座堂为父王爱德华二世修筑华美雪花石膏陵墓，将弑君罪名全归于莫蒂默。'});
+    hr(d,[[52.95,-1.15],[51.51,-0.13]],HC.britain);
+   },[['fill',HC.britain,'爱德华三世亲政后的英格兰（1330年）'],['fill',HC.celt,'莫蒂默盘踞多年的威尔士与边境领'],['dline',HC.britain,'1330年10—11月押解莫蒂默赴伦敦受审路线（概略）'],['dot',HC.war,'1330年10月19日夜诺丁汉城堡密道突袭'],['dot','#2a2018','温彻斯特、伦敦与格洛斯特']])
  ]}
 ];
 HISTORY_ENTRIES.forEach(e=>{
@@ -7916,6 +7983,7 @@ const HISTORY_ERAS=[
  {id:'britain-saxon-norman',name:'英格兰的成型：维京狂潮与诺曼征服',en:'The Making of England: Vikings and Normans',date:'约410—1087年',c:HC.britain,items:[['history-britain-anglosaxon'],['history-britain-norman']]},
  {id:'britain-angevin',name:'金雀花帝国：普通法、爱尔兰与狮心王',en:'The Angevin Empire: Common Law, Ireland and Lionheart',date:'1014—1214年',c:HC.britain,items:[['history-britain-henry2'],['history-britain-norman-ireland'],['history-britain-richard']]},
  {id:'britain-parliament',name:'大宪章、议会与英伦三岛的边界',en:'Magna Carta, Parliament and the Bounds of the Isles',date:'1215—1307年',c:HC.britain,items:[['history-britain-magnacarta'],['history-britain-edward1']]},
+ {id:'britain-hundred-years',name:'百年战争前夜：阿基坦称臣与王位易手',en:'Eve of the Hundred Years’ War: Aquitaine and the Crown',date:'1200—1330年',c:HC.britain,items:[['history-britain-edward2']]},
 ];
 /* History as a tree: each branch is a topic; distance from the root is time (years, negative = BCE).
    Reading order stays with HISTORY_ERAS; TREE_ROWS puts each era row on a branch at its start and end. */
@@ -8129,6 +8197,7 @@ const TREE_ROWS={
  'history-britain-richard/0':[['britain','france'],1189,1214,'1173—1214年'],
  'history-britain-magnacarta/0':['britain',1215,1272,'1215—1295年'],
  'history-britain-edward1/0':['britain',1277,1307,'1272—1307年'],
+ 'history-britain-edward2/0':[['britain','france'],1315,1330,'1200—1330年'],
  'history-faith-avignon/0':[['faith','france'],1296,1303,'1294—1303年'],
  'history-faith-clement/0':[['faith','france'],1304,1314,'1303—1314年'],
  'history-italy-blackdeath/0':[['italy','france','britain','germany','faith','persia'],1347,1351,'1346—1353年'],
