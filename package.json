@@ -5,7 +5,8 @@
   "scripts": {
     "build": "cd src && python3 assemble.py ../index.html",
     "vercel-build": "cd src && python3 assemble.py ../index.html && mkdir -p ../dist && cp ../index.html ../dist/index.html",
-    "test": "for f in tests/verify-*.js; do node \"$f\" index.html || exit 1; done"
+    "test": "python3 tests/run_tests.py index.html",
+    "test:serial": "for f in tests/verify-*.js; do node \"$f\" index.html || exit 1; done"
   },
   "devDependencies": {
     "puppeteer-core": "24.43.1"
