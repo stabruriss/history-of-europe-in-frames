@@ -49,7 +49,7 @@ assert.ok(!/tChrono|peakTimeline|高光年代|TIME_CH/.test(html));
    bannerIcon:!!document.querySelector('#ghBanner svg.gh-icon'),
    title:document.title,
    h1:document.querySelector('#side h1')?.firstChild.textContent||''}));
-  assert.deepEqual(data,{geo:33,topics:12,history:185,scenes:809,refs:1999,seas:18,islands:35,mode:'history',
+  assert.deepEqual(data,{geo:33,topics:12,history:187,scenes:820,refs:2021,seas:18,islands:35,mode:'history',
    buttons:['tHistory','tGeography','tTopics'],banner:'开源项目·欧洲历史笔记',
    bannerHref:'https://github.com/stabruriss/history-of-europe-in-frames',bannerIcon:true,
    title:'简明欧洲史图册',h1:'简明欧洲史图册'});
@@ -75,9 +75,9 @@ assert.ok(!/tChrono|peakTimeline|高光年代|TIME_CH/.test(html));
    }
    return report;
   });
-  assert.equal(sceneReport.length,894);
+  assert.equal(sceneReport.length,905);
   await page.evaluate(()=>go('history-migration'));
-  assert.equal(await page.$$eval('#toc .chip',es=>es.length),191);
+  assert.equal(await page.$$eval('#toc .chip',es=>es.length),193);
   assert.equal(await page.$eval('#prev',e=>e.disabled),true);
   for(const id of await page.evaluate(()=>HISTORY_ENTRIES.map(e=>e.id))){
    await page.evaluate(id=>go(id),id);
@@ -85,10 +85,9 @@ assert.ok(!/tChrono|peakTimeline|高光年代|TIME_CH/.test(html));
    assert.equal(await page.$$eval('#readerBody .sources a',es=>es.every(a=>a.href.startsWith('https://')&&a.target==='_blank'&&a.rel.includes('noopener')&&a.rel.includes('noreferrer'))),true);
    assert.ok((await page.$eval('#card',e=>e.textContent.length))>100);
   }
-  await page.evaluate(()=>go('history-italy-blackdeath'));  // v50–v52: the Black Death is the last station on 不列颠, after edward2
   assert.equal(await page.$eval('#next',e=>e.disabled),true);
-  await page.click('#prev');assert.equal(await page.evaluate(()=>ENTRIES[cur].id),'history-britain-edward2');
-  await page.click('#next');assert.equal(await page.evaluate(()=>ENTRIES[cur].id),'history-italy-blackdeath');
+  await page.click('#prev');assert.equal(await page.evaluate(()=>ENTRIES[cur].id),'history-britain-hundred-years-1');
+  await page.click('#next');assert.equal(await page.evaluate(()=>ENTRIES[cur].id),'history-britain-hundred-years-2');
   await page.evaluate(()=>go('history-persian-wars'));
   await page.click('[data-scene="3"]');
   assert.equal(await page.evaluate(()=>location.hash),'#history-persian-wars/3');
@@ -154,6 +153,6 @@ assert.ok(!/tChrono|peakTimeline|高光年代|TIME_CH/.test(html));
   await animated.close();
   await wait(200);assert.equal(await page.$eval('#mapnote',e=>e.hidden),false);
   assert.deepEqual(errors,[]);
-  console.log('PASS: 33 geographic entries; 185 history sections; 809 scenes; all geometry references; 1999 reading links; foldable reader; overlay-aware map fitting; desktop, phone, tablet and short landscape; stage hash links; mode memory; navigation; rapid animated switching; 33 Alexander events; royal extent; 18 seas and 35 islands; offline rendering; no JavaScript errors.');
+  console.log('PASS: 33 geographic entries; 187 history sections; 820 scenes; all geometry references; 2021 reading links; foldable reader; overlay-aware map fitting; desktop, phone, tablet and short landscape; stage hash links; mode memory; navigation; rapid animated switching; 33 Alexander events; royal extent; 18 seas and 35 islands; offline rendering; no JavaScript errors.');
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

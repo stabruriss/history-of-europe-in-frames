@@ -1177,6 +1177,15 @@ Object.assign(HS,{
   ed2_orwell:['奥威尔河口','Orwell Haven',51.956,1.309,'英格兰东岸萨福克郡河口；1326年9月24日伊莎贝拉与莫蒂默率军在此登陆。'],
   ed2_bannockburn:['班诺克本','Bannockburn',56.09,-3.916,'苏格兰斯特灵城南的沼泽溪谷；1314年6月24日罗伯特·布鲁斯在此大破爱德华二世的英军。'],
   ed2_berkeley:['伯克利城堡','Berkeley Castle',51.688,-2.457,'格洛斯特郡塞文河畔石堡；1327年9月21日夜被废黜的爱德华二世死于此堡。'],
+  hy1_pontoise:['蓬图瓦兹','Pontoise',49.051,2.101,'巴黎西北瓦兹河畔城镇；1314年4月内勒塔事件中的奥奈兄弟在此被剥皮凌迟处死。'],
+  hy1_sluys:['斯勒伊斯','Sluys',51.308,3.387,'佛兰德兹温河口海港；1340年6月24日爱德华三世在此全歼法军锁连舰队，夺得海峡制海权。'],
+  hy1_crecy:['克雷西','Crécy-en-Ponthieu',50.255,1.883,'北法蓬蒂厄高地村落；1346年8月26日英军长弓手与下马骑士在此大破腓力六世的法军。'],
+  hy1_calais:['加来','Calais',50.951,1.858,'多佛尔海峡最窄处的法国门户海港；1347年8月被爱德华三世围困十一个月后攻克，英军据守至1558年。'],
+  hy1_bretigny:['布雷蒂尼','Brétigny',48.406,1.531,'沙特尔东南的小村；1360年5月8日英法在此议定《布雷蒂尼条约》，结束百年战争第一阶段。'],
+  hy2_boroughbridge:['博罗布里奇','Boroughbridge',54.095,-1.396,'约克西北乌斯河支流渡口；1322年3月16日爱德华二世在此击败并生擒兰开斯特伯爵托马斯。'],
+  hy2_pontefract:['庞蒂弗拉克特','Pontefract',53.691,-1.312,'兰开斯特伯爵在约克郡的主堡；1322年3月22日爱德华二世在此将堂兄托马斯斩首。'],
+  hy2_boston:['波士顿','Boston',52.978,-0.026,'林肯郡沃什湾畔的羊毛出口大港；13—14世纪仅次于伦敦的羊毛关税重镇。'],
+  hy2_bruges:['布鲁日','Bruges',51.209,3.224,'佛兰德毛纺与贸易中心；加来攻占前英格兰羊毛专卖市场曾多次设于此。'],
   av_aquila:['拉奎拉','L’Aquila',42.35,13.399,'阿布鲁佐山城；1294年8月塞莱斯廷五世在此骑毛驴加冕。'],
   av_palestrina:['帕莱斯特里纳','Palestrina',41.839,12.892,'罗马东郊科隆纳家族的山城；1298年卜尼法斯八世将其攻陷夷平、犁地撒盐。'],
   av_perugia:['佩鲁贾','Perugia',43.112,12.389,'翁布里亚山城；1294年、1305年两次教宗选举在此，1304年本笃十一世死于此。'],
@@ -7912,6 +7921,97 @@ const HISTORY_ENTRIES=[
     hp(d,'uk8_gloucester',{left:1,note:'爱德华三世在格洛斯特座堂为父王爱德华二世修筑华美雪花石膏陵墓，将弑君罪名全归于莫蒂默。'});
     hr(d,[[52.95,-1.15],[51.51,-0.13]],HC.britain);
    },[['fill',HC.britain,'爱德华三世亲政后的英格兰（1330年）'],['fill',HC.celt,'莫蒂默盘踞多年的威尔士与边境领'],['dline',HC.britain,'1330年10—11月押解莫蒂默赴伦敦受审路线（概略）'],['dot',HC.war,'1330年10月19日夜诺丁汉城堡密道突袭'],['dot','#2a2018','温彻斯特、伦敦与格洛斯特']])
+ ]},
+{id:'history-britain-hundred-years-1',ch:12,title:'百年战争（一）：从内勒塔到生擒法王',short:'百年战争（一）',en:'The Hundred Years’ War (I): From the Tour de Nesle to the Capture of the French King',period:'1314—1360年',c:HC.britain,
+ scenes:[
+  hs('1314—1328年','内勒塔丑闻与卡佩王朝绝嗣','1314年春伊莎贝拉回巴黎告发嫂子在内勒塔通奸，奥奈兄弟在蓬图瓦兹受极刑、两王妃囚入加亚尔城堡；三兄弟十四年间相继绝男嗣，1328年瓦卢瓦的腓力六世继位。',[[46.5,-2.5],[52.2,5.5]],d=>{
+    ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.3});ha(d,'mEngland1066',HC.britain,{fillOpacity:.26});
+    hp(d,'w_paris',{kind:'battle',note:'1314年春伊莎贝拉回巴黎省亲，凭刺绣钱袋告发嫂子们在塞纳河畔内勒塔私通；1328年卡佩直系绝嗣，瓦卢瓦的腓力六世继位。'});
+    hp(d,'hy1_pontoise',{left:1,note:'1314年4月，与两位王妃私通的诺曼骑士奥奈兄弟在此被阉割、剥皮、车裂处死。'});
+    hp(d,'pl_gaillard',{left:1,note:'长媳勃艮第的玛格丽特与三媳布兰卡被剃光头发，关进加亚尔城堡地牢，玛格丽特次年死于狱中。'});
+    hp(d,'w_reims',{note:'1328年5月29日，腓力四世之侄瓦卢瓦的腓力在此加冕为腓力六世，开启瓦卢瓦王朝。'});
+   },[['fill',HC.france,'从卡佩直系转入瓦卢瓦王朝的法兰西（1328年）'],['fill',HC.britain,'伊莎贝拉与爱德华三世的英格兰'],['dot',HC.war,'1314年巴黎内勒塔丑闻'],['dot','#2a2018','蓬图瓦兹、加亚尔城堡与兰斯']]),
+  hs('1329—1340年','从亚眠效忠到翻脸争法王位','1329年6月爱德华三世赴亚眠向腓力六世行臣服礼，1331年政变后仍予承认；1337年腓力六世没收阿基坦，爱德华三世遂以腓力四世外孙自居，1340年1月在根特自称法王。',[[43.5,-4.0],[56.2,5.2]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});ha(d,'mGascony1223',HC.war,{fillOpacity:.34});
+    ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.28});ha(d,'mFlanders900',HC.celt,{fillOpacity:.28});
+    hp(d,'cp_amiens',{note:'1329年6月6日，十六岁的爱德华三世在此向腓力六世行阿基坦公爵臣服礼；1331年政变后仍书面认账。'});
+    hp(d,'w_paris',{note:'1337年5月24日，腓力六世以英王窝藏叛臣阿图瓦的罗贝尔为由，宣布没收阿基坦公国。'});
+    hp(d,'w_bordeaux',{left:1,note:'阿基坦（加斯科涅）首府；英法围绕此地宗主权与苏格兰、佛兰德问题全面决裂。'});
+    hp(d,'uk9_ghent',{kind:'battle',note:'1340年1月26日，爱德华三世在根特广场正式自称“法兰西与英格兰国王”，将百合花与三狮并列上旗。'});
+   },[['fill',HC.britain,'爱德华三世的英格兰'],['fill',HC.france,'腓力六世的法兰西'],['fill',HC.war,'1337年被腓力六世宣布没收的加斯科涅'],['fill',HC.celt,'倒向英国的佛兰德'],['dot',HC.war,'1340年1月根特自称法王'],['dot','#2a2018','亚眠、巴黎与波尔多']]),
+  hs('1337—1340年','佛兰德羊毛同盟与斯勒伊斯海战','1336年爱德华三世禁运羊毛，根特富商阿特韦尔德率佛兰德城市与英王结盟；1340年6月24日爱德华三世在斯勒伊斯河口全歼法军锁连舰队，夺得海峡制海权。',[[49.2,-2.5],[53.2,5.2]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});ha(d,'mFlanders900',HC.war,{fillOpacity:.32});
+    ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.26});
+    hp(d,'ed2_orwell',{left:1,note:'1340年6月22日，爱德华三世率百余艘战船从奥威尔河口启航渡海。'});
+    hp(d,'hy1_sluys',{kind:'battle',note:'1340年6月24日斯勒伊斯海战：英军长弓手攒射锁成三排的法船，法军死伤近两万、两百艘船被夺。'});
+    hp(d,'uk9_ghent',{left:1,note:'毛纺重镇根特；阿特韦尔德率市民驱逐亲法伯爵，承认爱德华三世为法王以换取英国羊毛。'});
+    hp(d,'k_london',{left:1,note:'英吉利海峡自此成为英国水道，英军随时可渡海登陆法国。'});
+    hr(d,[[51.96,1.31],[51.31,3.39]],HC.britain);
+   },[['fill',HC.britain,'掌握海峡制海权的英格兰'],['fill',HC.war,'依赖英国羊毛、与英王结盟的佛兰德'],['fill',HC.france,'丧失主力舰队的法兰西'],['dline',HC.britain,'1340年6月爱德华三世舰队渡海航线'],['dot',HC.war,'1340年6月24日斯勒伊斯海战'],['dot','#2a2018','奥威尔河口、根特与伦敦']]),
+  hs('1346—1347年','克雷西长弓破骑士与攻克加来','1346年7月爱德华三世与黑太子登陆诺曼底，8月26日在克雷西用长弓大破法军骑士；随后围攻十一个月，于1347年8月攻克海峡门户加来。',[[48.2,-2.8],[51.8,3.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.32});ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.26});
+    hp(d,'hy1_crecy',{kind:'battle',note:'1346年8月26日克雷西会战：英军长弓手射溃热那亚弩手，挫败法军骑士十五次冲锋，全盲波希米亚王战死。'});
+    hp(d,'hy1_calais',{kind:'battle',left:1,note:'1346年9月—1347年8月，爱德华三世围城十一个月攻克加来，此后两百年成为英军大陆桥头堡。'});
+    hp(d,'w_paris',{note:'英军1346年夏一路烧掠至巴黎西郊普瓦西渡过塞纳河，再北撤至克雷西决战。'});
+    hp(d,'fr_rouen',{left:1,note:'诺曼底首府；英军在科唐坦登陆后横扫诺曼底富庶城镇。'});
+    hr(d,[[49.65,-1.25],[49.18,-0.37],[48.93,2.04],[50.26,1.88],[50.95,1.86]],HC.war);
+   },[['fill',HC.britain,'英格兰王国'],['fill',HC.france,'法兰西王国'],['dline',HC.war,'1346—1347年爱德华三世诺曼底—克雷西—加来进军路线（概略）'],['dot',HC.war,'1346年克雷西会战与1347年攻克加来'],['dot','#2a2018','鲁昂与巴黎']]),
+  hs('1355—1356年','普瓦捷会战：黑太子生擒法王','1356年黑太子爱德华自波尔多北上大掠，9月19日在普瓦捷依托树篱与长弓抗击法军，派骑兵迂回包抄，当场生擒法王约翰二世及其幼子腓力。',[[43.2,-3.5],[50.2,4.2]],d=>{
+    ha(d,'mGascony1223',HC.britain,{fillOpacity:.36});ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.26});
+    hp(d,'w_bordeaux',{left:1,note:'黑太子爱德华的大本营；1355年秋与1356年夏黑太子两度由此出发大掠法国腹地。'});
+    hp(d,'k_poitiers',{kind:'battle',note:'1356年9月19日普瓦捷会战：黑太子以六千人击败一万五千法军，生擒法王约翰二世与幼子腓力。'});
+    hp(d,'w_tours',{left:1,note:'卢瓦尔河重镇图尔；黑太子北上至此因河水暴涨南撤，在普瓦捷与追来的法王决战。'});
+    hp(d,'w_paris',{note:'国王被俘消息传回巴黎，法国朝野震动，由王太子查理勉强摄政。'});
+    hr(d,[[44.84,-0.58],[45.8,-0.1],[47.39,0.69],[46.58,0.34],[44.84,-0.58]],HC.war);
+   },[['fill',HC.britain,'黑太子爱德华坐镇的加斯科涅'],['fill',HC.france,'约翰二世的法兰西'],['dline',HC.war,'1356年黑太子北上劫掠与普瓦捷决战路线（概略）'],['dot',HC.war,'1356年9月19日普瓦捷会战'],['dot','#2a2018','波尔多、图尔与巴黎']]),
+  hs('1356—1364年','三百万金币赎金与《布雷蒂尼条约》','1360年5月英法在布雷蒂尼签约（10月加来批准）：英王获大阿基坦与加来完全主权、不再称臣，勒索法王三百万金埃居赎金；1364年约翰二世主动回伦敦坐牢病死。',[[43.0,-4.5],[52.5,4.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});ha(d,'mAquitaineDuchy900',HC.britain,{fillOpacity:.32});
+    ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.22});
+    hp(d,'hy1_bretigny',{kind:'battle',left:1,note:'1360年5月8日英法在此签《布雷蒂尼条约》：英王获整个大阿基坦完全主权，勒索三百万金币赎金。'});
+    hp(d,'hy1_calais',{note:'1360年10月24日两王在此正式批准条约；加来与蓬蒂厄归英王完全主权所有。'});
+    hp(d,'w_bordeaux',{left:1,note:'大阿基坦首府；1362年爱德华三世封黑太子为阿基坦亲王，无需再向法王称臣。'});
+    hp(d,'k_london',{left:1,note:'法王约翰二世被囚于此；1363年其子逃逸毁约，约翰二世主动回伦敦坐牢，1364年4月死于萨伏依宫。'});
+    hp(d,'w_paris',{note:'法国为凑赎金首次开铸“法郎”金币（意为自由之身），并确立常设税收。'});
+   },[['fill',HC.britain,'1360年《布雷蒂尼条约》后英王享有完全主权的英格兰与大阿基坦'],['fill',HC.france,'被迫割地赔款的法兰西'],['dot',HC.war,'1360年5月《布雷蒂尼条约》'],['dot','#2a2018','加来、波尔多、伦敦与巴黎']])
+ ]},
+{id:'history-britain-hundred-years-2',ch:12,title:'百年战争的账本：下议院、羊毛税与盛世隐患',short:'百年战争的账本',en:'The Ledger of the Hundred Years’ War: Commons, Wool and Hidden Perils',period:'1272—1381年',c:HC.britain,
+ scenes:[
+  hs('1272—1307年','爱德华一世：联市镇压贵族与羊毛兴起','英格兰主教服从王权、不握藩镇，爱德华一世给自治市镇更大权力以挤压世俗大贵族；1275年确立每袋半马克羊毛常税，1295年模范议会让市镇代表痛快批税。',[[49.8,-4.8],[55.5,4.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});ha(d,'mFlanders900',HC.war,{fillOpacity:.28});
+    hp(d,'k_london',{left:1,note:'威斯敏斯特与伦敦城：1275年第一议会批准每袋羊毛半马克（6先令8便士）的“古老常税”，1295年模范议会赋予市民代表全权同意权。'});
+    hp(d,'hy2_boston',{left:1,note:'林肯郡波士顿港：修道院与庄园盛产优质长毛，经此港源源运往佛兰德换取白银。'});
+    hp(d,'w_canterbury',{note:'英格兰教会自诺曼征服起服从王权，不似法国六大教会伯爵握有藩镇实权。'});
+    hp(d,'hy2_bruges',{note:'佛兰德布鲁日：欧洲毛纺中心，全靠英格兰原毛运转。'});
+    hr(d,[[52.98,-0.03],[51.21,3.22]],HC.route);
+   },[['fill',HC.britain,'市镇代表进议会批税的英格兰'],['fill',HC.war,'进口英格兰羊毛的佛兰德'],['dline',HC.route,'英格兰原毛出口佛兰德航线（概略）'],['dot','#2a2018','伦敦、波士顿、坎特伯雷与布鲁日']]),
+  hs('1307—1341年','血洗贵族与议会六等级变上下两院','1322年爱德华二世在博罗布里奇击败并处死兰开斯特伯爵等二十余名显贵，5月颁《约克法令》；1330年代低级教士退回教省会议，1341年郡骑士与市民合流为下议院。',[[50.5,-4.5],[55.2,1.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'mWales',HC.celt,{fillOpacity:.2});
+    hp(d,'hy2_boroughbridge',{kind:'battle',left:1,note:'1322年3月16日，爱德华二世在此用步兵与长弓击败叛乱贵族领袖兰开斯特伯爵托马斯。'});
+    hp(d,'hy2_pontefract',{kind:'battle',left:1,note:'1322年3月22日，兰开斯特伯爵在自家城堡被斩首，二十余名叛乱伯爵与男爵被连根处死。'});
+    hp(d,'k_york',{note:'1322年5月爱德华二世在此颁《约克法令》，废除贵族条例，确立重大立法须经含骑士与市民的议会同意。'});
+    hp(d,'w_canterbury',{note:'1330年代起教区低级教士退出世俗议会，改在坎特伯雷与约克教省会议（Convocation）自行批税。'});
+    hp(d,'k_london',{left:1,note:'1341年威斯敏斯特议会起，郡骑士与市镇市民正式合流为下议院，世俗贵族与主教留作上议院。'});
+   },[['fill',HC.britain,'大贵族遭清洗、上下两院分立的英格兰'],['fill',HC.celt,'威尔士'],['dot',HC.war,'1322年博罗布里奇之战与庞蒂弗拉克特处决'],['dot','#2a2018','约克、坎特伯雷与伦敦']]),
+  hs('1250—1360年','英法王室财力翻转：黑死病期税收增近三倍','亨利三世岁入不足三万英镑，远逊路易九世；到爱德华三世时，靠下议院连年批动产税与每袋四十先令战时羊毛税，黑死病前后英国年均税收猛增至八万到十万英镑以上。',[[44.0,-4.5],[54.5,4.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.24});
+    hp(d,'k_london',{left:1,note:'威斯敏斯特国库：1352年黑死病刚过，下议院一次连批三年直接税，叠加每袋四十先令羊毛税，年入翻至战前近三倍。'});
+    hp(d,'hy2_boston',{left:1,note:'全国每年出口三万余袋羊毛，每袋征四十先令战时补贴税，仅羊毛税一项即可年收五六万英镑。'});
+    hp(d,'w_paris',{note:'巴黎：法国贵族享有免税特权，三级会议拒批常税，腓力六世与约翰二世被迫八十五次贬值铸币。'});
+    hp(d,'hy1_calais',{note:'1347年英军占领加来后，逐步将全英羊毛出口专卖市场集中于此。'});
+   },[['fill',HC.britain,'议会常税与羊毛补贴撑起高额岁入的英格兰'],['fill',HC.france,'贵族免税、靠贬值货币维持的法兰西'],['dot','#2a2018','伦敦、波士顿、加来与巴黎']]),
+  hs('1334—1380年','过火的隐患（上）：定额包税与人头税盘剥底层','1334年直接税改为三万八千英镑定额包干，由各郡镇乡绅富豪自行摊派；1377—1380年下议院免去自身动产税，连批三次人头税转嫁给赤贫农工。',[[50.2,-4.5],[54.8,1.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});
+    hp(d,'k_london',{kind:'battle',left:1,note:'威斯敏斯特：1334年确立三万八千英镑定额包税制；1377、1379年在此批出两次人头税。'});
+    hp(d,'uk8_lincoln',{left:1,note:'各郡与市镇定额包干后，掌握基层税权的乡绅与行会富豪把税负摊给贫农与帮工。'});
+    hp(d,'k_york',{note:'1380年11月北安普顿议会批出第三次人头税：无论贫富每名成年人一律收三格罗特（十二便士），北方与东南各郡逃税抗税四起。'});
+   },[['fill',HC.britain,'推行1334年定额包税与1377—1380年人头税的英格兰'],['dot',HC.war,'威斯敏斯特（包税与人头税立法）'],['dot','#2a2018','林肯与约克']]),
+  hs('1336—1381年','过火的隐患（下）：羊毛与外贸税转嫁引爆大起义','1362、1371年羊毛补贴税与酒吨、英镑外贸税交由下议院打理，加来羊毛专卖大商人向上压低国内养羊户原毛收购价、向下推高物价，叠加人头税引爆1381年大起义。',[[49.8,-3.8],[54.2,3.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'mFlanders900',HC.war,{fillOpacity:.26});
+    hp(d,'hy1_calais',{kind:'battle',note:'1363年起设于加来的“羊毛专卖公会”：二十六名大商人垄断全英原毛出口，替王室包揽高额关税。'});
+    hp(d,'k_london',{kind:'battle',left:1,note:'1362、1371年议会收回羊毛税与酒吨、英镑外贸税审批权；1381年6月东南农民与工匠杀进伦敦烧毁萨伏依宫。'});
+    hp(d,'hy2_boston',{left:1,note:'1348年议会请愿书指出：每袋两英镑的羊毛出口税被专卖商压价转嫁到了国内产毛农户头上。'});
+    hp(d,'hy2_bruges',{note:'佛兰德与大陆市场：出口关税与进口英镑税由英格兰产毛户、织工与消费者共同分摊。'});
+   },[['fill',HC.britain,'税负层层转嫁、1381年爆发大起义的英格兰'],['fill',HC.war,'大陆毛纺市场'],['dot',HC.war,'加来羊毛专卖公会与1381年伦敦大起义'],['dot','#2a2018','波士顿与布鲁日']])
  ]}
 ];
 HISTORY_ENTRIES.forEach(e=>{
@@ -7983,7 +8083,7 @@ const HISTORY_ERAS=[
  {id:'britain-saxon-norman',name:'英格兰的成型：维京狂潮与诺曼征服',en:'The Making of England: Vikings and Normans',date:'约410—1087年',c:HC.britain,items:[['history-britain-anglosaxon'],['history-britain-norman']]},
  {id:'britain-angevin',name:'金雀花帝国：普通法、爱尔兰与狮心王',en:'The Angevin Empire: Common Law, Ireland and Lionheart',date:'1014—1214年',c:HC.britain,items:[['history-britain-henry2'],['history-britain-norman-ireland'],['history-britain-richard']]},
  {id:'britain-parliament',name:'大宪章、议会与英伦三岛的边界',en:'Magna Carta, Parliament and the Bounds of the Isles',date:'1215—1307年',c:HC.britain,items:[['history-britain-magnacarta'],['history-britain-edward1']]},
- {id:'britain-hundred-years',name:'百年战争前夜：阿基坦称臣与王位易手',en:'Eve of the Hundred Years’ War: Aquitaine and the Crown',date:'1200—1330年',c:HC.britain,items:[['history-britain-edward2']]},
+ {id:'britain-hundred-years',name:'百年战争（上）：从阿基坦称臣到生擒法王与议会账本',en:'The Hundred Years’ War (I): From Aquitaine to Poitiers and the Commons’ Ledger',date:'1200—1381年',c:HC.britain,items:[['history-britain-edward2'],['history-britain-hundred-years-1'],['history-britain-hundred-years-2']]},
 ];
 /* History as a tree: each branch is a topic; distance from the root is time (years, negative = BCE).
    Reading order stays with HISTORY_ERAS; TREE_ROWS puts each era row on a branch at its start and end. */
@@ -7995,11 +8095,11 @@ const HISTORY_BRANCHES=[
  {id:'east',name:'东罗马',en:'East Rome',lane:2,parent:'rome',from:395,to:1099,c:HC.byz},
  {id:'west',name:'中世纪西欧',en:'Medieval Western Europe',lane:4,parent:'rome',from:476,to:843,c:HC.celt},
  {id:'spain',name:'西班牙',en:'Spain',lane:5,parent:'west',from:481,to:1123,c:HC.spain},
- {id:'france',name:'法兰西',en:'France',lane:5,parent:'west',from:843,to:1351,c:HC.france},
+ {id:'france',name:'法兰西',en:'France',lane:5,parent:'west',from:843,to:1381,c:HC.france},
  {id:'germany',name:'德意志',en:'Germany',lane:4,parent:'west',from:843,to:1351,c:HC.germany},
  {id:'italy',name:'意大利',en:'Italy',lane:3,parent:'west',from:843,to:1351,c:HC.italy},
  // 不列颠 (including Ireland): forks from the trunk before Caesar's landing, on lane 6 right beside 法兰西.
- {id:'britain',name:'不列颠',en:'Britain and Ireland',lane:6,parent:'trunk',from:-55,to:1351,c:HC.britain},
+ {id:'britain',name:'不列颠',en:'Britain and Ireland',lane:6,parent:'trunk',from:-55,to:1381,c:HC.britain},
  // The 基督教 line: from the Hebrews' nomadic origins (the old Levant branch) to the schism of 1054; on its own lane, right of the West.
  // After 641 it runs through the shared stations of the East Roman dynasties.
  {id:'faith',name:'基督教',en:'Judaism & Christianity',lane:7,parent:'trunk',from:-1400,to:1449,c:HC.faith},
@@ -8198,6 +8298,8 @@ const TREE_ROWS={
  'history-britain-magnacarta/0':['britain',1215,1272,'1215—1295年'],
  'history-britain-edward1/0':['britain',1277,1307,'1272—1307年'],
  'history-britain-edward2/0':[['britain','france'],1315,1330,'1200—1330年'],
+ 'history-britain-hundred-years-1/0':[['britain','france'],1352,1360,'1314—1360年'],
+ 'history-britain-hundred-years-2/0':[['britain','france'],1361,1381,'1272—1381年'],
  'history-faith-avignon/0':[['faith','france'],1296,1303,'1294—1303年'],
  'history-faith-clement/0':[['faith','france'],1304,1314,'1303—1314年'],
  'history-italy-blackdeath/0':[['italy','france','britain','germany','faith','persia'],1347,1351,'1346—1353年'],
@@ -8208,7 +8310,7 @@ const TREE_ROWS={
  'history-arab-seljuks/3':[['persia','east'],1071,1092]
 };
 // Topics still to be written grow the tree as dashed shoots.
-const TREE_FUTURE=[['east',1099,'科穆宁王朝','1099年起 · 1176年米利奥克法隆之战 · 1204年第四次十字军攻破君士坦丁堡 · 待展开'],['france',1351,'百年战争','1314年后待展开：1328年卡佩直系绝嗣 · 1337—1453年英法百年战争'],['germany',1351,'选帝侯与哈布斯堡','1273年后待展开：1273年哈布斯堡的鲁道夫当选 · 1356年《金玺诏书》七选帝侯'],['italy',1351,'城市共和国与文艺复兴','1302年后待展开：佛罗伦萨、威尼斯、热那亚与米兰 · 文艺复兴'],['faith',1449,'宗教改革','1449年起 · 文艺复兴教廷 · 1517年马丁·路德《九十五条论纲》与宗教改革 · 待展开'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',1351,'伊儿汗国与马穆鲁克','1291年后待展开：1295年合赞汗皈依伊斯兰 · 1300年伊儿汗国一度占大马士革 · 奥斯曼人兴起'],['china',845,'晚唐五代与宋','845年起 · 待展开'],['spain',1123,'收复失地运动','1123年起 · 穆拉比特与穆瓦希德 · 1212年纳瓦斯—德托洛萨 · 1492年格拉纳达 · 待展开'],['eeurope',1054,'基辅罗斯以后','1054年起 · 雅罗斯拉夫死后诸子分封 · 1240年蒙古人攻破基辅 · 待展开'],['crusade',1312,'后来的十字军','1396年尼科波利斯 · 1444年瓦尔纳 · 1571年勒班陀 · 待展开'],['britain',1351,'班诺克本与百年战争','1307年后待展开：1314年班诺克本之战 · 1337—1453年英法百年战争 · 玫瑰战争']];
+const TREE_FUTURE=[['east',1099,'科穆宁王朝','1099年起 · 1176年米利奥克法隆之战 · 1204年第四次十字军攻破君士坦丁堡 · 待展开'],['france',1381,'百年战争','1314年后待展开：1328年卡佩直系绝嗣 · 1337—1453年英法百年战争'],['germany',1351,'选帝侯与哈布斯堡','1273年后待展开：1273年哈布斯堡的鲁道夫当选 · 1356年《金玺诏书》七选帝侯'],['italy',1351,'城市共和国与文艺复兴','1302年后待展开：佛罗伦萨、威尼斯、热那亚与米兰 · 文艺复兴'],['faith',1449,'宗教改革','1449年起 · 文艺复兴教廷 · 1517年马丁·路德《九十五条论纲》与宗教改革 · 待展开'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',1351,'伊儿汗国与马穆鲁克','1291年后待展开：1295年合赞汗皈依伊斯兰 · 1300年伊儿汗国一度占大马士革 · 奥斯曼人兴起'],['china',845,'晚唐五代与宋','845年起 · 待展开'],['spain',1123,'收复失地运动','1123年起 · 穆拉比特与穆瓦希德 · 1212年纳瓦斯—德托洛萨 · 1492年格拉纳达 · 待展开'],['eeurope',1054,'基辅罗斯以后','1054年起 · 雅罗斯拉夫死后诸子分封 · 1240年蒙古人攻破基辅 · 待展开'],['crusade',1312,'后来的十字军','1396年尼科波利斯 · 1444年瓦尔纳 · 1571年勒班陀 · 待展开'],['britain',1381,'班诺克本与百年战争','1307年后待展开：1314年班诺克本之战 · 1337—1453年英法百年战争 · 玫瑰战争']];
 // Where a line stops it says why: [line, year, the event that ends it, note, the line it carries on in].
 const TREE_ENDS=[['trunk',-30,'并入罗马','前146年科林斯被毁 · 前30年最后一个希腊化王国埃及并入罗马','rome'],['rome',476,'西罗马终结','476年西部末代皇帝被废 · 由中世纪西欧接续'],['west',843,'凡尔登三分','843年《凡尔登条约》三分帝国 · 分出法兰西、德意志、意大利']];
 // Sections of one line that run side by side: [line, row keys, side of the passing loop].

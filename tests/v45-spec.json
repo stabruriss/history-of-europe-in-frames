@@ -65,6 +65,18 @@
    "1200—1330年",
    6,
    12
+  ],
+  "history-britain-hundred-years-1": [
+   "百年战争（一）",
+   "1314—1360年",
+   6,
+   12
+  ],
+  "history-britain-hundred-years-2": [
+   "百年战争的账本",
+   "1272—1381年",
+   5,
+   12
   ]
  },
  "rows": {
@@ -147,6 +159,22 @@
    ],
    1315,
    1330
+  ],
+  "history-britain-hundred-years-1/0": [
+   [
+    "britain",
+    "france"
+   ],
+   1352,
+   1360
+  ],
+  "history-britain-hundred-years-2/0": [
+   [
+    "britain",
+    "france"
+   ],
+   1361,
+   1381
   ]
  },
  "bold": [
@@ -333,6 +361,50 @@
   [
    "history-britain-edward2/5",
    "紧接着十七岁的爱德华三世又上演“玄武门之变”式的禁宫突袭，从地底密道夜袭擒杀奸夫"
+  ],
+  [
+   "history-britain-hundred-years-1/0",
+   "腓力四世在位末期闹出内勒塔通奸丑闻，三位王子妃都被抓了起来；老国王死后三个儿子兄"
+  ],
+  [
+   "history-britain-hundred-years-1/1",
+   "伊莎贝拉摄政时派儿子爱德华三世去向腓力六世效忠，爱德华三世政变夺权后也没有立刻否"
+  ],
+  [
+   "history-britain-hundred-years-1/2",
+   "英法百年战争正式开打，第一仗先在海上决出胜负：爱德华三世在斯勒伊斯海战全歼法国舰"
+  ],
+  [
+   "history-britain-hundred-years-1/3",
+   "1346年爱德华三世率军登陆诺曼底，在克雷西会战用威尔士长弓把法国重装骑士射得人"
+  ],
+  [
+   "history-britain-hundred-years-1/4",
+   "黑死病过后战事重开，1356年黑太子爱德华在普瓦捷会战以少胜多，当场生擒御驾亲征"
+  ],
+  [
+   "history-britain-hundred-years-1/5",
+   "法王沦为伦敦阶下囚，法国国内大乱，只得签下《布雷蒂尼条约》，割让西南大片主权并被"
+  ],
+  [
+   "history-britain-hundred-years-2/0",
+   "《大宪章》和《牛津条例》后英国王权受贵族制衡，爱德华一世以来的破局之道就是联合市"
+  ],
+  [
+   "history-britain-hundred-years-2/1",
+   "到爱德华二世期间，国王血洗叛乱贵族，议会从六个等级演变成引入地方骑士与市镇代表的"
+  ],
+  [
+   "history-britain-hundred-years-2/2",
+   "英法王室的经济对比，从亨利三世时代到爱德华三世时代已经彻底翻转；在黑死病期间，英"
+  ],
+  [
+   "history-britain-hundred-years-2/3",
+   "但这个过程中也有做得过火的地方：为了打击大贵族，国王和下议院如胶似漆，给了下议院"
+  ],
+  [
+   "history-britain-hundred-years-2/4",
+   "国王还把羊毛税和海外贸易的税都交给下议院打理，而这些税赋并不是全部由纺织者和外贸"
   ]
  ],
  "moments": {
@@ -537,6 +609,26 @@
     5,
     "诺丁汉密道与“可怜可怜温柔的莫蒂默”"
    ]
+  ],
+  "history-britain-hundred-years-1": [
+   [
+    0,
+    "刺绣钱袋与内勒塔的剥皮刑"
+   ],
+   [
+    3,
+    "“让这孩子自己去挣马刺吧”与盲王冲阵"
+   ],
+   [
+    4,
+    "“父王，当心右边！”与黑太子侍宴"
+   ]
+  ],
+  "history-britain-hundred-years-2": [
+   [
+    1,
+    "瘦马背上的兰开斯特伯爵"
+   ]
   ]
  },
  "boxes": {
@@ -581,6 +673,12 @@
     5,
     "从阿基坦公爵到“法兰西母狼”：百年战争前夜的两颗雷"
    ]
+  ],
+  "history-britain-hundred-years-2": [
+   [
+    4,
+    "英法财政翻转与关税转嫁算术：为什么小国能压着大国打"
+   ]
   ]
  },
  "budget": {
@@ -594,7 +692,9 @@
   "history-britain-richard": 300,
   "history-britain-magnacarta": 300,
   "history-britain-edward1": 300,
-  "history-britain-edward2": 300
+  "history-britain-edward2": 300,
+  "history-britain-hundred-years-1": 300,
+  "history-britain-hundred-years-2": 300
  },
  "eras": [
   [
@@ -633,9 +733,11 @@
   ],
   [
    "britain-hundred-years",
-   "百年战争前夜：阿基坦称臣与王位易手",
+   "百年战争（上）：从阿基坦称臣到生擒法王与议会账本",
    [
-    "history-britain-edward2"
+    "history-britain-edward2",
+    "history-britain-hundred-years-1",
+    "history-britain-hundred-years-2"
    ]
   ]
  ],
@@ -644,26 +746,26 @@
    "不列颠",
    "trunk",
    -55,
-   1351,
+   1381,
    6
   ],
   "france": [
    "法兰西",
    "west",
    843,
-   1351,
+   1381,
    5
   ]
  },
  "futures": [
   [
    "britain",
-   1351,
+   1381,
    "班诺克本与百年战争"
   ],
   [
    "france",
-   1351,
+   1381,
    "百年战争"
   ]
  ],
@@ -680,7 +782,9 @@
    "history-britain-magnacarta/0",
    "history-britain-edward1/0",
    "history-britain-edward2/0",
-   "history-italy-blackdeath/0"
+   "history-italy-blackdeath/0",
+   "history-britain-hundred-years-1/0",
+   "history-britain-hundred-years-2/0"
   ],
   "france": [
    "history-france-west-francia/0",
@@ -692,7 +796,9 @@
    "history-faith-avignon/0",
    "history-faith-clement/0",
    "history-britain-edward2/0",
-   "history-italy-blackdeath/0"
+   "history-italy-blackdeath/0",
+   "history-britain-hundred-years-1/0",
+   "history-britain-hundred-years-2/0"
   ]
  },
  "shared": {
@@ -705,6 +811,14 @@
    "france"
   ],
   "history-britain-edward2/0": [
+   "britain",
+   "france"
+  ],
+  "history-britain-hundred-years-1/0": [
+   "britain",
+   "france"
+  ],
+  "history-britain-hundred-years-2/0": [
    "britain",
    "france"
   ]
@@ -889,6 +1003,54 @@
   [
    "history-britain-edward2/5",
    "由守将引路从地底密道潜入主塔，砍杀卫士生擒莫蒂默"
+  ],
+  [
+   "history-britain-hundred-years-1/0",
+   "1314年春（早于伊莎贝拉后来在英国废杀亲夫十三年）"
+  ],
+  [
+   "history-britain-hundred-years-1/1",
+   "1329年6月（诺丁汉政变前一年），十六岁的爱德华三世奉母后之命赴亚眠大教堂"
+  ],
+  [
+   "history-britain-hundred-years-1/2",
+   "1340年6月24日，腓力六世集结两百余艘战船堵在斯勒伊斯河口"
+  ],
+  [
+   "history-britain-hundred-years-1/3",
+   "8月26日在克雷西山坡布下下马骑士与两翼长弓阵"
+  ],
+  [
+   "history-britain-hundred-years-1/4",
+   "1356年9月19日约翰二世率一万五千法军在普瓦捷截住英军"
+  ],
+  [
+   "history-britain-hundred-years-1/5",
+   "法国还要为约翰二世付三百万枚金埃居（合五十万英镑）赎金"
+  ],
+  [
+   "history-britain-hundred-years-2/0",
+   "英格兰自诺曼征服起主教就服从王权、不握藩镇"
+  ],
+  [
+   "history-britain-hundred-years-2/1",
+   "1322年3月爱德华二世在博罗布里奇之战击败并处死头号强藩兰开斯特伯爵托马斯等二十余名显贵"
+  ],
+  [
+   "history-britain-hundred-years-2/1",
+   "1330年代起教士退回坎特伯雷和约克教省会议自行批税，1341年郡骑士与市民合流为下议院"
+  ],
+  [
+   "history-britain-hundred-years-2/2",
+   "年均财政收入从战前的约三万英镑猛增到黑死病前后的八万至十万英镑以上，翻了近三倍"
+  ],
+  [
+   "history-britain-hundred-years-2/3",
+   "1334年起，王室不再派官逐户核查个人动产，而是把每次“十五分之一与十分之一直接税”固定为全国约三万八千英镑的包干总额"
+  ],
+  [
+   "history-britain-hundred-years-2/4",
+   "1348年议会请愿书就点破此税实为转嫁给产毛人"
   ]
  ],
  "boxfixes": [
@@ -951,6 +1113,16 @@
    "history-britain-edward2",
    "从阿基坦公爵到“法兰西母狼”：百年战争前夜的两颗雷",
    "② 第二颗雷：和亲娶来的“法兰西母狼”成了王位继承桥（1308—1328年）"
+  ],
+  [
+   "history-britain-hundred-years-2",
+   "英法财政翻转与关税转嫁算术：为什么小国能压着大国打",
+   "① 为什么英国联市镇压贵族比法国更彻底"
+  ],
+  [
+   "history-britain-hundred-years-2",
+   "英法财政翻转与关税转嫁算术：为什么小国能压着大国打",
+   "③ 关税与包税从来不是“只由外商承担”"
   ]
  ],
  "slips": [
@@ -960,7 +1132,8 @@
   "当选即位",
   "阿斯克捏",
   "布纹",
-  "安如"
+  "安如",
+  "杀了亲夫之后，她又跑回娘家"
  ],
  "regions": [
   "mDoggerland7000",
@@ -976,5 +1149,5 @@
   "mNormanIreland1210",
   "mGaelicIreland1210"
  ],
- "pass": "不列颠 — 11 sections (63 scenes) on a new line and chapter ⅩⅢ: Doggerland and Stonehenge to Caesar's raids, Roman Britain and Hadrian's Wall, Ireland's monasteries and Whitby, the Heptarchy, Vikings and Alfred the Great, Cnut and the Norman Conquest, Henry II's juries and Becket, the Normans in Ireland, Richard the Lionheart and Lackland John, Magna Carta and Parliament, Edward I's Wales and Scottish wars; 46 of 老无’s points in bold, 45 facts set right in plain text; 7 豆腐块"
+ "pass": "不列颠 — 13 sections (74 scenes) on a new line and chapter ⅩⅢ: Doggerland and Stonehenge to Caesar's raids, Roman Britain and Hadrian's Wall, Ireland's monasteries and Whitby, the Heptarchy, Vikings and Alfred the Great, Cnut and the Norman Conquest, Henry II's juries and Becket, the Normans in Ireland, Richard the Lionheart and Lackland John, Magna Carta and Parliament, Edward I's Wales and Scottish wars; 57 of 老无’s points in bold, 57 facts set right in plain text; 8 豆腐块"
 }
