@@ -19,6 +19,7 @@ SLOWEST_FIRST = [
     'verify-history.js',
     'verify-empire.js',
     'verify-faith.js',
+    'verify-moments.js',
     'verify-figures.js',
     'verify-keyboard.js',
     'verify-tree.js',
@@ -38,7 +39,6 @@ SLOWEST_FIRST = [
     'verify-gregory.js',
     'verify-rome.js',
     'verify-lines.js',
-    'verify-moments.js',
 ]
 
 
