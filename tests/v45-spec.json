@@ -83,6 +83,12 @@
    "1360—1380年",
    4,
    12
+  ],
+  "history-britain-richard2": [
+   "理查二世与金雀花末路",
+   "1377—1400年",
+   6,
+   12
   ]
  },
  "rows": {
@@ -189,6 +195,14 @@
    ],
    1371,
    1381
+  ],
+  "history-britain-richard2/0": [
+   [
+    "britain",
+    "france"
+   ],
+   1382,
+   1400
   ]
  },
  "bold": [
@@ -435,6 +449,30 @@
   [
    "history-britain-hundred-years-3/3",
    "随着黑太子爱德华和老国王爱德华三世相继去世，年仅十岁的理查二世继位，成了金雀花王"
+  ],
+  [
+   "history-britain-richard2/0",
+   "1381年大起义不仅有人头税和包税盘剥做经济基础，更叠加了百年战争败退老兵难以安"
+  ],
+  [
+   "history-britain-richard2/1",
+   "当时首富皇叔冈特的约翰擅权压制幼主，十四岁的理查二世顺水推舟把暴民目标引向皇叔，"
+  ],
+  [
+   "history-britain-richard2/2",
+   "暴乱与善后清算让下议院的本地骑士和市镇精英看清自己只是韭菜、转而倒向贵族；理查二"
+  ],
+  [
+   "history-britain-richard2/3",
+   "理查二世随后卧薪尝胆、阳奉阴违，暗中培养力量，又耍权术挑拨五大权臣关系、拉弱打强"
+  ],
+  [
+   "history-britain-richard2/4",
+   "理查二世与法国停战和亲收下十三万三千三百三十三英镑巨额嫁妆，可少年久受压抑，一朝"
+  ],
+  [
+   "history-britain-richard2/5",
+   "1399年理查二世公然侵吞兰开斯特家族遗产，这一下动到了所有贵族乃至新兴有产者的"
   ]
  ],
  "moments": {
@@ -665,6 +703,16 @@
     2,
     "“布列塔尼之鹰”不打野战与担架上的利摩日屠城"
    ]
+  ],
+  "history-britain-richard2": [
+   [
+    1,
+    "“我就是你们的国王和领袖！”与被烧光的萨伏依宫"
+   ],
+   [
+    3,
+    "考文垂比武场上的权术绝杀"
+   ]
   ]
  },
  "boxes": {
@@ -727,6 +775,12 @@
     1,
     "英国长弓 vs 法国封建骑士：单兵技术、阵型、训练与代差"
    ]
+  ],
+  "history-britain-richard2": [
+   [
+    4,
+    "手帕、食谱与“至尊陛下”：理查二世的审美、礼仪与作死账"
+   ]
   ]
  },
  "budget": {
@@ -743,7 +797,8 @@
   "history-britain-edward2": 300,
   "history-britain-hundred-years-1": 300,
   "history-britain-hundred-years-2": 300,
-  "history-britain-hundred-years-3": 300
+  "history-britain-hundred-years-3": 300,
+  "history-britain-richard2": 300
  },
  "eras": [
   [
@@ -782,12 +837,13 @@
   ],
   [
    "britain-hundred-years",
-   "百年战争（上）：从阿基坦称臣到生擒法王与议会账本",
+   "百年战争（上）：从阿基坦称臣到金雀花直系终结",
    [
     "history-britain-edward2",
     "history-britain-hundred-years-1",
     "history-britain-hundred-years-2",
-    "history-britain-hundred-years-3"
+    "history-britain-hundred-years-3",
+    "history-britain-richard2"
    ]
   ]
  ],
@@ -796,26 +852,26 @@
    "不列颠",
    "trunk",
    -55,
-   1381,
+   1400,
    6
   ],
   "france": [
    "法兰西",
    "west",
    843,
-   1381,
+   1400,
    5
   ]
  },
  "futures": [
   [
    "britain",
-   1381,
+   1400,
    "班诺克本与百年战争"
   ],
   [
    "france",
-   1381,
+   1400,
    "百年战争"
   ]
  ],
@@ -835,7 +891,8 @@
    "history-italy-blackdeath/0",
    "history-britain-hundred-years-1/0",
    "history-britain-hundred-years-2/0",
-   "history-britain-hundred-years-3/0"
+   "history-britain-hundred-years-3/0",
+   "history-britain-richard2/0"
   ],
   "france": [
    "history-france-west-francia/0",
@@ -850,7 +907,8 @@
    "history-italy-blackdeath/0",
    "history-britain-hundred-years-1/0",
    "history-britain-hundred-years-2/0",
-   "history-britain-hundred-years-3/0"
+   "history-britain-hundred-years-3/0",
+   "history-britain-richard2/0"
   ]
  },
  "shared": {
@@ -875,6 +933,10 @@
    "france"
   ],
   "history-britain-hundred-years-3/0": [
+   "britain",
+   "france"
+  ],
+  "history-britain-richard2/0": [
    "britain",
    "france"
   ]
@@ -1123,6 +1185,30 @@
   [
    "history-britain-hundred-years-3/3",
    "由黑太子十岁的独子理查二世继位"
+  ],
+  [
+   "history-britain-richard2/0",
+   "亚当耕地、夏娃织布的时候，谁是贵族老爷"
+  ],
+  [
+   "history-britain-richard2/1",
+   "三叔兰开斯特公爵冈特的约翰把持朝政、最招民怨"
+  ],
+  [
+   "history-britain-richard2/2",
+   "发觉在联合国王斗贵族的协作中并无稳固政治保障，自己只是被收割的韭菜"
+  ],
+  [
+   "history-britain-richard2/3",
+   "在考文垂比武审判现场下令将莫布雷终身流放、亨利流放十年"
+  ],
+  [
+   "history-britain-richard2/4",
+   "收下八十万金法郎（折合十三万三千三百三十三英镑，即二十万马克）嫁妆"
+  ],
+  [
+   "history-britain-richard2/5",
+   "直接没收整个兰开斯特家族的庞大遗产"
   ]
  ],
  "boxfixes": [
@@ -1220,6 +1306,21 @@
    "history-britain-hundred-years-3",
    "英国长弓 vs 法国封建骑士：单兵技术、阵型、训练与代差",
    "现代狩猎滑轮复合弓"
+  ],
+  [
+   "history-britain-hundred-years-3",
+   "英国长弓 vs 法国封建骑士：单兵技术、阵型、训练与代差",
+   "现代 5.56×45mm NATO 步枪弹"
+  ],
+  [
+   "history-britain-richard2",
+   "手帕、食谱与“至尊陛下”：理查二世的审美、礼仪与作死账",
+   "① 手帕的发明者与皇家食谱（宫廷审美）"
+  ],
+  [
+   "history-britain-richard2",
+   "手帕、食谱与“至尊陛下”：理查二世的审美、礼仪与作死账",
+   "133,333英镑（80万金法郎）"
   ]
  ],
  "slips": [
@@ -1248,5 +1349,5 @@
   "mNormanIreland1210",
   "mGaelicIreland1210"
  ],
- "pass": "不列颠 — 14 sections (78 scenes) on a new line and chapter ⅩⅢ: Doggerland and Stonehenge to Caesar's raids, Roman Britain and Hadrian's Wall, Ireland's monasteries and Whitby, the Heptarchy, Vikings and Alfred the Great, Cnut and the Norman Conquest, Henry II's juries and Becket, the Normans in Ireland, Richard the Lionheart and Lackland John, Magna Carta and Parliament, Edward I's Wales and Scottish wars; 61 of 老无’s points in bold, 61 facts set right in plain text; 10 豆腐块"
+ "pass": "不列颠 — 15 sections (84 scenes) on a new line and chapter ⅩⅢ: Doggerland and Stonehenge to Caesar's raids, Roman Britain and Hadrian's Wall, Ireland's monasteries and Whitby, the Heptarchy, Vikings and Alfred the Great, Cnut and the Norman Conquest, Henry II's juries and Becket, the Normans in Ireland, Richard the Lionheart and Lackland John, Magna Carta and Parliament, Edward I's Wales and Scottish wars; 67 of 老无’s points in bold, 67 facts set right in plain text; 11 豆腐块"
 }

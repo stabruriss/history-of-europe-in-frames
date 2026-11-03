@@ -729,7 +729,7 @@
    "法兰西",
    "west",
    843,
-   1381,
+   1400,
    5
   ],
   "germany": [
@@ -757,7 +757,7 @@
  "futures": [
   [
    "france",
-   1381,
+   1400,
    "百年战争"
   ],
   [
@@ -790,7 +790,8 @@
    "history-italy-blackdeath/0",
    "history-britain-hundred-years-1/0",
    "history-britain-hundred-years-2/0",
-   "history-britain-hundred-years-3/0"
+   "history-britain-hundred-years-3/0",
+   "history-britain-richard2/0"
   ],
   "germany": [
    "history-germany-innocent/0",

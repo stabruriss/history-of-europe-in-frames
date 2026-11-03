@@ -49,7 +49,7 @@ assert.ok(!/tChrono|peakTimeline|高光年代|TIME_CH/.test(html));
    bannerIcon:!!document.querySelector('#ghBanner svg.gh-icon'),
    title:document.title,
    h1:document.querySelector('#side h1')?.firstChild.textContent||''}));
-  assert.deepEqual(data,{geo:33,topics:12,history:188,scenes:824,refs:2029,seas:18,islands:35,mode:'history',
+  assert.deepEqual(data,{geo:33,topics:12,history:189,scenes:830,refs:2042,seas:18,islands:35,mode:'history',
    buttons:['tHistory','tGeography','tTopics'],banner:'开源项目·欧洲历史笔记',
    bannerHref:'https://github.com/stabruriss/history-of-europe-in-frames',bannerIcon:true,
    title:'简明欧洲史图册',h1:'简明欧洲史图册'});
@@ -76,9 +76,9 @@ assert.ok(!/tChrono|peakTimeline|高光年代|TIME_CH/.test(html));
    }}finally{markTreeCurrent=_m;makeCtx=_c;markTreeCurrent();}
    return report;
   });
-  assert.equal(sceneReport.length,909);
+  assert.equal(sceneReport.length,915);
   await page.evaluate(()=>go('history-migration'));
-  assert.equal(await page.$$eval('#toc .chip',es=>es.length),194);
+  assert.equal(await page.$$eval('#toc .chip',es=>es.length),195);
   assert.equal(await page.$eval('#prev',e=>e.disabled),true);
   await page.evaluate(()=>{const _f=fit,_m=markTreeCurrent,_c=makeCtx;fit=()=>{};markTreeCurrent=()=>{};makeCtx=()=>new Proxy({},{get:()=>()=>{}});
    try{for(const e of HISTORY_ENTRIES){go(e.id);
@@ -86,8 +86,8 @@ assert.ok(!/tChrono|peakTimeline|高光年代|TIME_CH/.test(html));
     if(as.length!==ENTRIES[cur].sources.length||!as.every(a=>a.href.startsWith('https://')&&a.target==='_blank'&&a.rel.includes('noopener')&&a.rel.includes('noreferrer'))||document.getElementById('card').textContent.length<=100)throw new Error('sources '+e.id);
    }}finally{fit=_f;markTreeCurrent=_m;makeCtx=_c;markTreeCurrent();}});
   assert.equal(await page.$eval('#next',e=>e.disabled),true);
-  await page.click('#prev');assert.equal(await page.evaluate(()=>ENTRIES[cur].id),'history-britain-hundred-years-2');
-  await page.click('#next');assert.equal(await page.evaluate(()=>ENTRIES[cur].id),'history-britain-hundred-years-3');
+  await page.click('#prev');assert.equal(await page.evaluate(()=>ENTRIES[cur].id),'history-britain-hundred-years-3');
+  await page.click('#next');assert.equal(await page.evaluate(()=>ENTRIES[cur].id),'history-britain-richard2');
   await page.evaluate(()=>go('history-persian-wars'));
   await page.click('[data-scene="3"]');
   assert.equal(await page.evaluate(()=>location.hash),'#history-persian-wars/3');
@@ -153,6 +153,6 @@ assert.ok(!/tChrono|peakTimeline|高光年代|TIME_CH/.test(html));
   await animated.close();
   await wait(200);assert.equal(await page.$eval('#mapnote',e=>e.hidden),false);
   assert.deepEqual(errors,[]);
-  console.log('PASS: 33 geographic entries; 188 history sections; 824 scenes; all geometry references; 2029 reading links; foldable reader; overlay-aware map fitting; desktop, phone, tablet and short landscape; stage hash links; mode memory; navigation; rapid animated switching; 33 Alexander events; royal extent; 18 seas and 35 islands; offline rendering; no JavaScript errors.');
+  console.log('PASS: 33 geographic entries; 189 history sections; 830 scenes; all geometry references; 2042 reading links; foldable reader; overlay-aware map fitting; desktop, phone, tablet and short landscape; stage hash links; mode memory; navigation; rapid animated switching; 33 Alexander events; royal extent; 18 seas and 35 islands; offline rendering; no JavaScript errors.');
  }finally{await Promise.race([browser.close(),new Promise(r=>setTimeout(r,200))]);browser.process()?.kill('SIGKILL');process.exit(process.exitCode||0);}
 })().catch(e=>{console.error(e);process.exitCode=1;});

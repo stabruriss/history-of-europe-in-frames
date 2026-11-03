@@ -1188,6 +1188,10 @@ Object.assign(HS,{
   hy2_bruges:['布鲁日','Bruges',51.209,3.224,'佛兰德毛纺与贸易中心；加来攻占前英格兰羊毛专卖市场曾多次设于此。'],
   hy3_limoges:['利摩日','Limoges',45.834,1.262,'利穆赞首府；1360年归英，1370年开城归顺法军，9月被抬在担架上的黑太子攻破洗劫。'],
   hy3_najera:['纳赫拉','Nájera',42.416,-2.734,'卡斯蒂利亚北部城镇；1367年4月黑太子爱德华在此击败法军名将盖克兰，却耗空阿基坦财力并染上重病。'],
+  r2_maidstone:['梅德斯通','Maidstone',51.272,0.523,'肯特郡重镇；1381年6月瓦特·泰勒率起义军攻占此城，劫狱救出罗拉德派传道士约翰·保尔。'],
+  r2_radcot:['拉德科特桥','Radcot Bridge',51.693,-1.588,'牛津郡泰晤士河上游石桥；1387年12月亨利·博林布鲁克等“申诉贵族”在此击溃理查二世亲信德·维尔的军队。'],
+  r2_coventry:['考文垂','Coventry',52.408,-1.51,'英格兰中部重镇；1398年9月理查二世在此叫停亨利·博林布鲁克与莫布雷的比武审判，将两人一并流放。'],
+  r2_ravenspur:['雷文斯珀','Ravenspur',53.606,0.115,'约克郡亨伯河口海港；1399年7月初流放的亨利·博林布鲁克率数十名随从在此登陆起兵。'],
   av_aquila:['拉奎拉','L’Aquila',42.35,13.399,'阿布鲁佐山城；1294年8月塞莱斯廷五世在此骑毛驴加冕。'],
   av_palestrina:['帕莱斯特里纳','Palestrina',41.839,12.892,'罗马东郊科隆纳家族的山城；1298年卜尼法斯八世将其攻陷夷平、犁地撒盐。'],
   av_perugia:['佩鲁贾','Perugia',43.112,12.389,'翁布里亚山城；1294年、1305年两次教宗选举在此，1304年本笃十一世死于此。'],
@@ -8048,6 +8052,52 @@ const HISTORY_ENTRIES=[
     hp(d,'k_london',{kind:'battle',left:1,note:'1377年6月21日爱德华三世去世，十岁长孙理查二世在威斯敏斯特加冕，为金雀花王朝直系末代国王。'});
     hp(d,'w_paris',{note:'1380年7月王室统帅盖克兰病死军中，9月法王查理五世去世，十一岁的查理六世继位。'});
    },[['fill',HC.britain,'十岁理查二世继位后的英格兰（1377年）'],['fill',HC.france,'十一岁查理六世继位后的法兰西（1380年）'],['dot',HC.war,'1377年伦敦威斯敏斯特理查二世继位'],['dot','#2a2018','坎特伯雷与巴黎']])
+ ]},
+{id:'history-britain-richard2',ch:12,title:'理查二世与金雀花末路：少年控场、二桃杀三士与动了继承权红线',short:'理查二世与金雀花末路',en:'Richard II and the End of the Main Plantagenet Line',period:'1377—1400年',c:HC.britain,
+ scenes:[
+  hs('1377—1381年','人头税、退伍老兵与罗拉德派：大起义爆发','1381年5—6月第三次人头税点燃火药桶，百年战争退伍老兵瓦特·泰勒与罗拉德派传道士约翰·保尔率肯特、埃塞克斯民众攻入伦敦，处死大主教兼大法官萨德伯里。',[[50.6,-1.8],[52.8,1.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});
+    hp(d,'sh_oxford',{left:1,note:'牛津大学：威克里夫与罗拉德派思想源头，贫穷传道士四处用英语宣讲《圣经》平等、抨击贵族与教会地产。'});
+    hp(d,'r2_maidstone',{note:'1381年6月7日，退伍老兵瓦特·泰勒率肯特起义军攻占此城，从大主教监狱救出传道士约翰·保尔。'});
+    hp(d,'w_canterbury',{note:'6月10日起义军攻入坎特伯雷，烧毁征税档案，直扑伦敦。'});
+    hp(d,'k_london',{kind:'battle',left:1,note:'6月13—14日起义军进占伦敦，冲入伦敦塔将大主教兼大法官萨德伯里与财政大臣押上塔丘斩首。'});
+    hr(d,[[51.28,1.08],[51.27,0.52],[51.51,-0.09]],HC.war);
+   },[['fill',HC.britain,'1381年大起义席卷的英格兰东南部'],['dline',HC.war,'1381年6月瓦特·泰勒起义军进军伦敦路线'],['dot',HC.war,'伦敦（伦敦塔与史密斯菲尔德）'],['dot','#2a2018','牛津、梅德斯通与坎特伯雷']]),
+  hs('1381年6月','少年天子一石二鸟：引火烧皇叔与单骑平叛','暴民在伦敦炸毁权叔冈特的约翰的萨伏依宫，吓得冈特的约翰逃入苏格兰；6月15日十四岁的理查二世在史密斯菲尔德单骑控场平息暴乱，一石二鸟逼退权叔。',[[50.8,-4.5],[56.5,1.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});ha(d,'mScotland1200',HC.celt,{fillOpacity:.22});
+    hp(d,'k_london',{kind:'battle',left:1,note:'6月13日暴民炸毁冈特的约翰的萨伏依宫；15日十四岁的理查二世在史密斯菲尔德单骑稳住数万暴民、平息叛乱。'});
+    hp(d,'uk9_edinburgh',{left:1,note:'擅权的三叔冈特的约翰当时正在苏格兰边境谈判，闻暴民到处搜杀自己，仓皇逃入苏格兰避难，回朝后失势并在1386年远走西班牙。'});
+    hp(d,'uk8_windsor',{left:1,note:'平叛后理查二世撕毁废农奴特许状，冷酷宣布“你们过去是农奴，今后仍是农奴”。'});
+   },[['fill',HC.britain,'十四岁理查二世借力打力控局的英格兰'],['fill',HC.celt,'冈特的约翰避难的苏格兰'],['dot',HC.war,'1381年6月15日伦敦史密斯菲尔德单骑平叛'],['dot','#2a2018','爱丁堡与温莎']]),
+  hs('1381—1388年','下议院倒向贵族，新贵班底败于“无情议会”','善后清算让下议院骑士与市民看清自己只是韭菜而倒向贵族；1387年幼叔格洛斯特等五大“申诉贵族”在拉德科特桥击败王军，1388年开“无情议会”清洗理查二世的新贵班底。',[[50.5,-4.2],[54.2,1.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});
+    hp(d,'r2_radcot',{kind:'battle',left:1,note:'1387年12月19日，亨利·博林布鲁克等“申诉贵族”在此截击并打垮理查二世亲信牛津伯爵德·维尔的军队。'});
+    hp(d,'k_london',{kind:'battle',note:'1388年2—6月威斯敏斯特“无情议会”：格洛斯特公爵等五大贵族联合下议院，将理查二世培养的新贵班底成批处死或流放。'});
+    hp(d,'uk8_gloucester',{left:1,note:'幼叔格洛斯特公爵托马斯：五大“申诉贵族”之首，拿爱德华二世被废旧事威胁少年国王。'});
+   },[['fill',HC.britain,'“申诉贵族”与下议院联手压制王权的英格兰（1388年）'],['dot',HC.war,'1387年拉德科特桥之战与1388年“无情议会”'],['dot','#2a2018','格洛斯特']]),
+  hs('1389—1398年','卧薪尝胆与二虎狗咬狗：理查二世大权独揽','理查二世隐忍八年培植柴郡“白鹿”私兵，拉拢亨利与莫布雷孤立并除掉幼叔格洛斯特（1397年押赴加来灭口）；1398年9月在考文垂趁亨利与莫布雷互控谋反，将两人一并流放。',[[50.2,-4.5],[54.2,2.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});
+    hp(d,'hy1_calais',{kind:'battle',note:'1397年7月理查二世突然逮捕幼叔格洛斯特公爵，押往加来于9月在狱中灭口；阿伦德尔伯爵在伦敦被斩首。'});
+    hp(d,'r2_coventry',{kind:'battle',left:1,note:'1398年9月16日考文垂比武审判：亨利·博林布鲁克与莫布雷互控谋反、端矛欲战，理查二世当场喊停，将两人一并流放。'});
+    hp(d,'k_london',{left:1,note:'理查二世清除五大政敌后大权独揽，身边环绕佩戴个人“白鹿徽”的柴郡弓箭手卫队。'});
+   },[['fill',HC.britain,'理查二世用权术清洗五大申诉贵族后的英格兰（1398年）'],['dot',HC.war,'1397年加来除叔与1398年考文垂流放二虎'],['dot','#2a2018','伦敦']]),
+  hs('1382—1398年','十三万英镑嫁妆和亲，飞扬跋扈与空白特许状','1396年理查二世在加来与法王查理六世签二十八年停战、娶其六岁幼女伊莎贝拉，获十三万三千三百三十三英镑嫁妆；国内则骂议会、拔剑欲砍大主教、强逼十七郡签空白特许状。',[[48.2,-3.5],[53.5,3.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.26});
+    hp(d,'hy1_calais',{kind:'battle',note:'1396年10—11月，理查二世在此与法王查理六世会盟签二十八年停战，迎娶六岁的伊莎贝拉，收下八十万法郎（133,333英镑）嫁妆。'});
+    hp(d,'k_london',{left:1,note:'威斯敏斯特：理查二世重建宏伟锤梁大厅，要求群臣称“至尊陛下”行屈膝礼，并强逼伦敦与东南十七郡签“空白特许状”。'});
+    hp(d,'w_canterbury',{note:'理查二世因朝堂与征途争执，曾暴怒拔剑要砍直言劝谏的坎特伯雷大主教威廉·考特尼。'});
+    hp(d,'w_paris',{note:'巴黎：查理六世以巨额嫁妆换取二十八年停战。'});
+   },[['fill',HC.britain,'被“空白特许状”勒索的英格兰'],['fill',HC.france,'签下二十八年停战的法兰西'],['dot',HC.war,'1396年加来和亲（133,333英镑嫁妆）'],['dot','#2a2018','伦敦、坎特伯雷与巴黎']]),
+  hs('1399—1400年','侵吞兰开斯特家产动红线，金雀花直系终结','1399年3月理查二世没收兰开斯特遗产触犯全体有产者红线，5月渡海征爱尔兰；7月亨利在雷文斯珀登陆，全境倒戈，8月在康威擒理查二世，9月自立为亨利四世，次年饿死理查二世。',[[51.0,-7.5],[55.2,1.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'mWales',HC.celt,{fillOpacity:.22});
+    ha(d,'mNormanIreland1210',HC.war,{fillOpacity:.24});
+    hp(d,'uk6_dublin',{left:1,note:'1399年5月理查二世带精锐渡海二征爱尔兰，把英格兰本土留成空城。'});
+    hp(d,'r2_ravenspur',{kind:'battle',note:'1399年7月初，亨利·博林布鲁克在此登陆，打出“讨还兰开斯特父产”旗号，贵族与市镇精英全境倒戈。'});
+    hp(d,'uk9_conwy',{kind:'battle',left:1,note:'1399年8月理查二世从爱尔兰赶回威尔士，在此被诱出城堡活捉。'});
+    hp(d,'k_london',{note:'1399年9月30日议会废黜理查二世，亨利自立为亨利四世，开启兰开斯特王朝。'});
+    hp(d,'hy2_pontefract',{kind:'battle',left:1,note:'1400年2月，三十三岁的理查二世在庞蒂弗拉克特城堡被活活饿死，金雀花直系终结。'});
+    hr(d,[[53.61,0.12],[52.95,-1.15],[53.28,-3.83],[51.51,-0.13]],HC.war);
+   },[['fill',HC.britain,'倒戈拥立亨利四世（兰开斯特王朝）的英格兰'],['fill',HC.celt,'威尔士'],['fill',HC.war,'理查二世出征的爱尔兰'],['dline',HC.war,'1399年7—9月亨利·博林布鲁克夺位路线（概略）'],['dot',HC.war,'雷文斯珀、康威与庞蒂弗拉克特'],['dot','#2a2018','都柏林与伦敦']])
  ]}
 ];
 HISTORY_ENTRIES.forEach(e=>{
@@ -8119,7 +8169,7 @@ const HISTORY_ERAS=[
  {id:'britain-saxon-norman',name:'英格兰的成型：维京狂潮与诺曼征服',en:'The Making of England: Vikings and Normans',date:'约410—1087年',c:HC.britain,items:[['history-britain-anglosaxon'],['history-britain-norman']]},
  {id:'britain-angevin',name:'金雀花帝国：普通法、爱尔兰与狮心王',en:'The Angevin Empire: Common Law, Ireland and Lionheart',date:'1014—1214年',c:HC.britain,items:[['history-britain-henry2'],['history-britain-norman-ireland'],['history-britain-richard']]},
  {id:'britain-parliament',name:'大宪章、议会与英伦三岛的边界',en:'Magna Carta, Parliament and the Bounds of the Isles',date:'1215—1307年',c:HC.britain,items:[['history-britain-magnacarta'],['history-britain-edward1']]},
- {id:'britain-hundred-years',name:'百年战争（上）：从阿基坦称臣到生擒法王与议会账本',en:'The Hundred Years’ War (I): From Aquitaine to Poitiers and the Commons’ Ledger',date:'1200—1381年',c:HC.britain,items:[['history-britain-edward2'],['history-britain-hundred-years-1'],['history-britain-hundred-years-2'],['history-britain-hundred-years-3']]},
+ {id:'britain-hundred-years',name:'百年战争（上）：从阿基坦称臣到金雀花直系终结',en:'The Hundred Years’ War (I): From Aquitaine to the End of the Main Plantagenet Line',date:'1200—1400年',c:HC.britain,items:[['history-britain-edward2'],['history-britain-hundred-years-1'],['history-britain-hundred-years-2'],['history-britain-hundred-years-3'],['history-britain-richard2']]},
 ];
 /* History as a tree: each branch is a topic; distance from the root is time (years, negative = BCE).
    Reading order stays with HISTORY_ERAS; TREE_ROWS puts each era row on a branch at its start and end. */
@@ -8131,11 +8181,11 @@ const HISTORY_BRANCHES=[
  {id:'east',name:'东罗马',en:'East Rome',lane:2,parent:'rome',from:395,to:1099,c:HC.byz},
  {id:'west',name:'中世纪西欧',en:'Medieval Western Europe',lane:4,parent:'rome',from:476,to:843,c:HC.celt},
  {id:'spain',name:'西班牙',en:'Spain',lane:5,parent:'west',from:481,to:1123,c:HC.spain},
- {id:'france',name:'法兰西',en:'France',lane:5,parent:'west',from:843,to:1381,c:HC.france},
+ {id:'france',name:'法兰西',en:'France',lane:5,parent:'west',from:843,to:1400,c:HC.france},
  {id:'germany',name:'德意志',en:'Germany',lane:4,parent:'west',from:843,to:1351,c:HC.germany},
  {id:'italy',name:'意大利',en:'Italy',lane:3,parent:'west',from:843,to:1351,c:HC.italy},
  // 不列颠 (including Ireland): forks from the trunk before Caesar's landing, on lane 6 right beside 法兰西.
- {id:'britain',name:'不列颠',en:'Britain and Ireland',lane:6,parent:'trunk',from:-55,to:1381,c:HC.britain},
+ {id:'britain',name:'不列颠',en:'Britain and Ireland',lane:6,parent:'trunk',from:-55,to:1400,c:HC.britain},
  // The 基督教 line: from the Hebrews' nomadic origins (the old Levant branch) to the schism of 1054; on its own lane, right of the West.
  // After 641 it runs through the shared stations of the East Roman dynasties.
  {id:'faith',name:'基督教',en:'Judaism & Christianity',lane:7,parent:'trunk',from:-1400,to:1449,c:HC.faith},
@@ -8337,6 +8387,7 @@ const TREE_ROWS={
  'history-britain-hundred-years-1/0':[['britain','france'],1352,1360,'1314—1360年'],
  'history-britain-hundred-years-2/0':[['britain','france'],1361,1370,'1272—1381年'],
  'history-britain-hundred-years-3/0':[['britain','france'],1371,1381,'1360—1380年'],
+ 'history-britain-richard2/0':[['britain','france'],1382,1400,'1377—1400年'],
  'history-faith-avignon/0':[['faith','france'],1296,1303,'1294—1303年'],
  'history-faith-clement/0':[['faith','france'],1304,1314,'1303—1314年'],
  'history-italy-blackdeath/0':[['italy','france','britain','germany','faith','persia'],1347,1351,'1346—1353年'],
@@ -8347,7 +8398,7 @@ const TREE_ROWS={
  'history-arab-seljuks/3':[['persia','east'],1071,1092]
 };
 // Topics still to be written grow the tree as dashed shoots.
-const TREE_FUTURE=[['east',1099,'科穆宁王朝','1099年起 · 1176年米利奥克法隆之战 · 1204年第四次十字军攻破君士坦丁堡 · 待展开'],['france',1381,'百年战争','1314年后待展开：1328年卡佩直系绝嗣 · 1337—1453年英法百年战争'],['germany',1351,'选帝侯与哈布斯堡','1273年后待展开：1273年哈布斯堡的鲁道夫当选 · 1356年《金玺诏书》七选帝侯'],['italy',1351,'城市共和国与文艺复兴','1302年后待展开：佛罗伦萨、威尼斯、热那亚与米兰 · 文艺复兴'],['faith',1449,'宗教改革','1449年起 · 文艺复兴教廷 · 1517年马丁·路德《九十五条论纲》与宗教改革 · 待展开'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',1351,'伊儿汗国与马穆鲁克','1291年后待展开：1295年合赞汗皈依伊斯兰 · 1300年伊儿汗国一度占大马士革 · 奥斯曼人兴起'],['china',845,'晚唐五代与宋','845年起 · 待展开'],['spain',1123,'收复失地运动','1123年起 · 穆拉比特与穆瓦希德 · 1212年纳瓦斯—德托洛萨 · 1492年格拉纳达 · 待展开'],['eeurope',1054,'基辅罗斯以后','1054年起 · 雅罗斯拉夫死后诸子分封 · 1240年蒙古人攻破基辅 · 待展开'],['crusade',1312,'后来的十字军','1396年尼科波利斯 · 1444年瓦尔纳 · 1571年勒班陀 · 待展开'],['britain',1381,'班诺克本与百年战争','1307年后待展开：1314年班诺克本之战 · 1337—1453年英法百年战争 · 玫瑰战争']];
+const TREE_FUTURE=[['east',1099,'科穆宁王朝','1099年起 · 1176年米利奥克法隆之战 · 1204年第四次十字军攻破君士坦丁堡 · 待展开'],['france',1400,'百年战争','1314年后待展开：1328年卡佩直系绝嗣 · 1337—1453年英法百年战争'],['germany',1351,'选帝侯与哈布斯堡','1273年后待展开：1273年哈布斯堡的鲁道夫当选 · 1356年《金玺诏书》七选帝侯'],['italy',1351,'城市共和国与文艺复兴','1302年后待展开：佛罗伦萨、威尼斯、热那亚与米兰 · 文艺复兴'],['faith',1449,'宗教改革','1449年起 · 文艺复兴教廷 · 1517年马丁·路德《九十五条论纲》与宗教改革 · 待展开'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',1351,'伊儿汗国与马穆鲁克','1291年后待展开：1295年合赞汗皈依伊斯兰 · 1300年伊儿汗国一度占大马士革 · 奥斯曼人兴起'],['china',845,'晚唐五代与宋','845年起 · 待展开'],['spain',1123,'收复失地运动','1123年起 · 穆拉比特与穆瓦希德 · 1212年纳瓦斯—德托洛萨 · 1492年格拉纳达 · 待展开'],['eeurope',1054,'基辅罗斯以后','1054年起 · 雅罗斯拉夫死后诸子分封 · 1240年蒙古人攻破基辅 · 待展开'],['crusade',1312,'后来的十字军','1396年尼科波利斯 · 1444年瓦尔纳 · 1571年勒班陀 · 待展开'],['britain',1400,'班诺克本与百年战争','1307年后待展开：1314年班诺克本之战 · 1337—1453年英法百年战争 · 玫瑰战争']];
 // Where a line stops it says why: [line, year, the event that ends it, note, the line it carries on in].
 const TREE_ENDS=[['trunk',-30,'并入罗马','前146年科林斯被毁 · 前30年最后一个希腊化王国埃及并入罗马','rome'],['rome',476,'西罗马终结','476年西部末代皇帝被废 · 由中世纪西欧接续'],['west',843,'凡尔登三分','843年《凡尔登条约》三分帝国 · 分出法兰西、德意志、意大利']];
 // Sections of one line that run side by side: [line, row keys, side of the passing loop].
