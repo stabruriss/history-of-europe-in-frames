@@ -5,7 +5,7 @@ const path=require('node:path');
 const {pathToFileURL}=require('node:url');
 const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','index.html'))).href;
 const shots=path.join(__dirname,'shots-carolingian');fs.mkdirSync(shots,{recursive:true});
-const wait=ms=>new Promise(r=>setTimeout(r,ms));
+const FULL_SHOTS=process.env.FULL_SHOTS==='1';const wait=ms=>FULL_SHOTS?new Promise(r=>setTimeout(r,ms)):Promise.resolve();
 // 老无 2026-10-27: the big rule of arrangement (shared scenes may repeat; near-simultaneous sections of one line run side by side on a
 // passing loop; a region that goes its own way forks off as a line of its own), applied: 东罗马 leaves 罗马 at 395, 中世纪西欧 splits at
 // Verdun (843) into 法兰西, 德意志 and 意大利. The Carolingians rebuilt in three sections, the three heirs of Verdun, and 基督教 pushed on
@@ -144,17 +144,19 @@ const PARALLEL=[['trunk','history-alexander-conquest/0','history-alexander-rule/
    assert.deepEqual(t.pills,['希腊','罗马','东罗马','中世纪西欧','西班牙','法兰西','德意志','意大利','不列颠','基督教','埃及','波斯—阿拉伯','东欧','十字军','中国'],label+' line pills');
    }
    // Every new scene draws, fits its view on the desktop, and leaves no horizontal overflow.
-   for(const id of Object.keys(SECTIONS)){
+   if(!FULL_SHOTS){await page.evaluate(({ids,label})=>{for(const id of ids){const n=HISTORY_ENTRIES.find(e=>e.id===id).scenes.length;for(let i=0;i<n;i++){go(id,{scene:i});const sc=activeScene(ENTRIES[cur]);
+     const s={pins:Object.keys(pinIndex).length,layers:group.getLayers().length,fits:map.getBounds().contains(L.latLngBounds(sc.view)),overflow:document.documentElement.scrollWidth>innerWidth};
+     if(!(s.layers>0&&!s.overflow)||((label==='desktop')&&!(s.pins>0&&s.fits)))throw new Error(id+'/'+i+' '+JSON.stringify(s));}}}}}},{{ids:Object.keys(SECTIONS),label}});}else for(const id of Object.keys(SECTIONS)){
     const n=await page.evaluate(id=>HISTORY_ENTRIES.find(e=>e.id===id).scenes.length,id);
     for(let i=0;i<n;i++){
      const s=await page.evaluate(({id,i})=>{go(id,{scene:i});const sc=activeScene(ENTRIES[cur]);
       return {pins:Object.keys(pinIndex).length,layers:group.getLayers().length,fits:map.getBounds().contains(L.latLngBounds(sc.view)),overflow:document.documentElement.scrollWidth>innerWidth};},{id,i});
      await wait(90);
      assert.ok(s.layers>0&&!s.overflow,id+'/'+i+' '+JSON.stringify(s));
-     if(label==='desktop'){assert.ok(s.pins>0&&s.fits,id+'/'+i+' '+JSON.stringify(s));await page.screenshot({path:path.join(shots,`${id.replace('history-','')}_${i}-desktop.png`)});}
+     if(label==='desktop'){assert.ok(s.pins>0&&s.fits,id+'/'+i+' '+JSON.stringify(s));if(process.env.FULL_SHOTS==='1')await page.screenshot({path:path.join(shots,`${id.replace('history-','')}_${i}-desktop.png`)});}
     }
    }
-   if(label==='390'){await page.evaluate(()=>go('history-west-louis-pious',{scene:5}));await wait(150);await page.screenshot({path:path.join(shots,'verdun-390.png')});}
+   if(label==='390'){await page.evaluate(()=>go('history-west-louis-pious',{scene:5}));await wait(150);if(process.env.FULL_SHOTS==='1')await page.screenshot({path:path.join(shots,'verdun-390.png')});}
    await page.close();
   }
   assert.deepEqual(errors,[],'page errors');

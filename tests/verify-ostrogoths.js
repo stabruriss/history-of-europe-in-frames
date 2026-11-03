@@ -4,7 +4,7 @@ const path=require('node:path');
 const {pathToFileURL}=require('node:url');
 const target=path.resolve(process.argv[2]||path.join(__dirname,'..','index.html'));
 const shots=path.join(__dirname,'shots-ostrogoths');require('node:fs').mkdirSync(shots,{recursive:true});
-const wait=ms=>new Promise(r=>setTimeout(r,ms));
+const FULL_SHOTS=process.env.FULL_SHOTS==='1';const wait=ms=>FULL_SHOTS?new Promise(r=>setTimeout(r,ms)):Promise.resolve();
 // 老无 2026-10-25 (later the same day): 中世纪西欧 on to the Lombards in Italy — Odoacer under Zeno and the lie of the land; Zeno setting
 // the two Gothic bands on each other and getting it wrong; the Liu Yuan of the Goths sent west; the Hongmen banquet; Theodoric deferring
 // to Constantinople; Ostrogothic help against the Vandals (Sicily); the Gothic War and Italian hearts; held a dozen years, then the Lombards,
@@ -123,10 +123,10 @@ const CARDS=[[ID+'/1','theodoric-great',/人质/],[ID+'/3','theodoric-great',/�
    await page.click('#sceneContext .box .kin-open');await wait(80);
    const sheet=await page.evaluate(()=>{const s=document.getElementById('kinSheet'),svg=s&&s.querySelector('svg.kin-tree');return {open:s&&!s.hidden,w:svg?Math.round(svg.getBoundingClientRect().width):0};});
    assert.ok(sheet.open&&sheet.w>(label==='desktop'?600:300),JSON.stringify(sheet));
-   if(label==='desktop')await page.screenshot({path:path.join(shots,'frank-tree-sheet-desktop.png')});
+   if(label==='desktop')if(process.env.FULL_SHOTS==='1')await page.screenshot({path:path.join(shots,'frank-tree-sheet-desktop.png')});
    await page.click('#kinClose');await wait(40);
    if(label==='desktop')await page.evaluate(()=>[...document.querySelectorAll('#sceneContext .box')].at(-1).scrollIntoView({block:'start'}));
-   await page.screenshot({path:path.join(shots,`frank-tree-${label}.png`)});
+   if(process.env.FULL_SHOTS==='1')await page.screenshot({path:path.join(shots,`frank-tree-${label}.png`)});
    for(let i=0;i<SCENES.length;i++){
     const s=await page.evaluate(({ID,i})=>{go(ID,{scene:i});const sc=activeScene(ENTRIES[cur]);
      return {pins:Object.keys(pinIndex).length,layers:group.getLayers().length,legend:legend.children.length,fits:map.getBounds().contains(L.latLngBounds(sc.view)),overflow:document.documentElement.scrollWidth>innerWidth};},{ID,i});
@@ -134,7 +134,7 @@ const CARDS=[[ID+'/1','theodoric-great',/人质/],[ID+'/3','theodoric-great',/�
     assert.ok(s.layers>0&&s.legend>0&&!s.overflow,ID+'/'+i+' '+JSON.stringify(s));
     if(label==='desktop')assert.ok(s.pins>0&&s.fits,ID+'/'+i+' '+JSON.stringify(s));
     if(label==='390')await page.evaluate(()=>scrollSceneText(false));
-    await page.screenshot({path:path.join(shots,`ostrogoths_${i}-${label}.png`)});
+    if(process.env.FULL_SHOTS==='1')await page.screenshot({path:path.join(shots,`ostrogoths_${i}-${label}.png`)});
    }
    // ↑↓ along 中世纪西欧: 蛮族诸王国 → 东哥特王国 → 墨洛温王朝.
    await page.evaluate(()=>{selectTreeLine('west');go('history-west-kingdoms');});
@@ -144,7 +144,7 @@ const CARDS=[[ID+'/1','theodoric-great',/人质/],[ID+'/3','theodoric-great',/�
     const row=await page.$eval(`#toc .tree-item[data-key="${ID}/0"]`,e=>e.textContent);assert.match(row,/^东哥特王国中世纪西欧 · 476—568年$/);
     await page.evaluate(id=>{selectTreeLine('west');go(id);},ID);await page.click('#treeOpen');await wait(250);
     await page.evaluate(()=>treeSheet.querySelector('.tree-item.on')?.scrollIntoView({block:'center'}));await wait(150);
-    await page.screenshot({path:path.join(shots,'tree-west-1440.png')});await page.keyboard.press('Escape');
+    if(process.env.FULL_SHOTS==='1')await page.screenshot({path:path.join(shots,'tree-west-1440.png')});await page.keyboard.press('Escape');
    }
    await page.close();
   }

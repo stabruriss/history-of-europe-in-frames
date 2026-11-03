@@ -5,7 +5,7 @@ const path=require('node:path');
 const {pathToFileURL}=require('node:url');
 const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','index.html'))).href;
 const shots=path.join(__dirname,'shots-v43');fs.mkdirSync(shots,{recursive:true});
-const wait=ms=>new Promise(r=>setTimeout(r,ms));
+const FULL_SHOTS=process.env.FULL_SHOTS==='1';const wait=ms=>FULL_SHOTS?new Promise(r=>setTimeout(r,ms)):Promise.resolve();
 // 老无 2026-10-31, “现在回头推一下法兰西……再把前面基督教，意大利和德意志也往1300年推一下”:
 // 法兰西 from Hugh Capet to Louis VI (working with the Church, royal bishoprics and town charters) and on through Eleanor's divorce,
 //   the Plantagenets and Philip II Augustus (a marriage-and-land diagram, Bouvines, Toulouse, baillis and the Twelve Peers) to Saint
@@ -95,20 +95,22 @@ const S=JSON.parse(fs.readFileSync(path.join(__dirname,'v43-spec.json'),'utf8'))
    assert.equal(t.overflow,false,label+' no overflow');
    if(label!=='desktop'){
     await page.evaluate(()=>document.querySelector('#treeSheet .tree-item[data-key="history-france-stlouis/0"]').scrollIntoView({block:'center'}));await wait(150);
-    await page.screenshot({path:path.join(shots,'tree-sheet-390.png')});await page.keyboard.press('Escape');await wait(150);
+    if(process.env.FULL_SHOTS==='1')await page.screenshot({path:path.join(shots,'tree-sheet-390.png')});await page.keyboard.press('Escape');await wait(150);
    }else{
     await page.evaluate(()=>document.querySelector('#toc .tree-item[data-key="history-france-stlouis/0"]').scrollIntoView({block:'center'}));await wait(150);
-    await page.screenshot({path:path.join(shots,'tree-sidebar.png'),clip:{x:0,y:0,width:520,height:960}});
+    if(process.env.FULL_SHOTS==='1')await page.screenshot({path:path.join(shots,'tree-sidebar.png'),clip:{x:0,y:0,width:520,height:960}});
    }
    // Every new scene draws, fits its view on the desktop, and leaves no horizontal overflow.
-   for(const id of Object.keys(S.sections)){
+   if(!FULL_SHOTS){await page.evaluate(({ids,label})=>{for(const id of ids){const n=HISTORY_ENTRIES.find(e=>e.id===id).scenes.length;for(let i=0;i<n;i++){go(id,{scene:i});const sc=activeScene(ENTRIES[cur]);
+     const s={pins:Object.keys(pinIndex).length,layers:group.getLayers().length,fits:map.getBounds().contains(L.latLngBounds(sc.view)),overflow:document.documentElement.scrollWidth>innerWidth};
+     if(!(s.layers>0&&!s.overflow)||((label==='desktop')&&!(s.pins>0&&s.fits)))throw new Error(id+'/'+i+' '+JSON.stringify(s));}}}}}},{{ids:Object.keys(S.sections),label}});}else for(const id of Object.keys(S.sections)){
     const n=await page.evaluate(id=>HISTORY_ENTRIES.find(e=>e.id===id).scenes.length,id);
     for(let i=0;i<n;i++){
      const s=await page.evaluate(({id,i})=>{go(id,{scene:i});const sc=activeScene(ENTRIES[cur]);
       return {pins:Object.keys(pinIndex).length,layers:group.getLayers().length,fits:map.getBounds().contains(L.latLngBounds(sc.view)),overflow:document.documentElement.scrollWidth>innerWidth};},{id,i});
      await wait(90);
      assert.ok(s.layers>0&&!s.overflow,id+'/'+i+' '+JSON.stringify(s));
-     if(label==='desktop'){assert.ok(s.pins>0&&s.fits,id+'/'+i+' '+JSON.stringify(s));await page.screenshot({path:path.join(shots,`${id.replace('history-','')}_${i}-desktop.png`)});}
+     if(label==='desktop'){assert.ok(s.pins>0&&s.fits,id+'/'+i+' '+JSON.stringify(s));if(process.env.FULL_SHOTS==='1')await page.screenshot({path:path.join(shots,`${id.replace('history-','')}_${i}-desktop.png`)});}
     }
    }
    if(label==='desktop'){

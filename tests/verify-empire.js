@@ -4,7 +4,7 @@ const path=require('node:path');
 const {pathToFileURL}=require('node:url');
 const target=path.resolve(process.argv[2]||path.join(__dirname,'..','index.html'));
 const shots=path.join(__dirname,'shots-v15');require('node:fs').mkdirSync(shots,{recursive:true});
-const wait=ms=>new Promise(r=>setTimeout(r,ms));
+const FULL_SHOTS=process.env.FULL_SHOTS==='1';const wait=ms=>FULL_SHOTS?new Promise(r=>setTimeout(r,ms)):Promise.resolve();
 (async()=>{
  const browser=await puppeteer.launch({executablePath:process.env.CHROME_PATH||'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true});
  const errors=[];
@@ -81,8 +81,7 @@ const wait=ms=>new Promise(r=>setTimeout(r,ms));
      ['history-west-kingdoms/0','西罗马没了皇帝'],['history-west-kingdoms/0','三分之一'],['history-west-kingdoms/0','拿刀吃饭'],['history-west-ostrogoths/3','孝文帝'],['history-west-ostrogoths/3','“中国”主线'],
      ['history-spain-visigoths/0','尤里克'],['history-spain-visigoths/2','两套'],['history-west-kingdoms/1','克洛维'],['history-west-kingdoms/1','武耶'],['history-spain-visigoths/3','莱奥维吉尔德'],['history-spain-visigoths/4','589年'],
      ['history-spain-fall/0','年近八十'],['history-spain-fall/2','塔里克']]){
-    await page.evaluate(s=>go(s),scene);
-    assert.ok(await page.$eval('#sceneContext>p',(e,w)=>e.textContent.includes(w)||e.textContent.replace(/（[A-Za-z][^）]*）/g,'').includes(w),phrase),scene+' lacks '+phrase);
+    assert.ok(await page.evaluate(({s,w})=>{if(ENTRIES[cur]?.id+'/'+sceneIndex!==s)go(s);const e=document.querySelector('#sceneContext>p');return e.textContent.includes(w)||e.textContent.replace(/（[A-Za-z][^）]*）/g,'').includes(w);},{s:scene,w:phrase}),scene+' lacks '+phrase);
    }
    await page.evaluate(()=>go('history-empire-principate'));
    assert.equal(await page.$eval('#entryEyebrow',e=>e.textContent),'罗马帝国：元首制 · 第六章');
@@ -93,8 +92,7 @@ const wait=ms=>new Promise(r=>setTimeout(r,ms));
    for(const [scene,phrase] of [['history-empire-crisis/3','军权'],['history-empire-crisis/3','元老院和平民授权'],['history-empire-crisis/3','不再住在罗马'],['history-empire-crisis/3','共治皇帝'],
      ['history-empire-dominate/1','不是突然冒出来的'],['history-empire-dominate/1','基于禅让的平衡记忆'],['history-empire-dominate/1','为后来君士坦丁迁都打下伏笔'],
      ['history-empire-dominate/2','从地方自治向中央集权转型'],['history-empire-dominate/2','加派官吏'],['history-empire-dominate/2','财政支出剧增']]){
-    await page.evaluate(s=>go(s),scene);
-    assert.ok(await page.$eval('#sceneContext>p',(e,w)=>e.textContent.includes(w)||e.textContent.replace(/（[A-Za-z][^）]*）/g,'').includes(w),phrase),scene+' lacks '+phrase);
+    assert.ok(await page.evaluate(({s,w})=>{if(ENTRIES[cur]?.id+'/'+sceneIndex!==s)go(s);const e=document.querySelector('#sceneContext>p');return e.textContent.includes(w)||e.textContent.replace(/（[A-Za-z][^）]*）/g,'').includes(w);},{s:scene,w:phrase}),scene+' lacks '+phrase);
    }
    await page.evaluate(()=>go('history-empire-principate'));
    assert.match(await page.$eval('#indexCaption',e=>e.textContent),/Ⅵ 帝国/);
@@ -137,17 +135,13 @@ const wait=ms=>new Promise(r=>setTimeout(r,ms));
     await page.evaluate(s=>go(s),scene);assert.match(await page.$eval(`[data-person="${id}"]`,e=>e.textContent),re,scene+' '+id);
    }
    // Every scene draws real geometry, keeps its pins inside the fitted view, and does not overflow.
-   for(const e of report.ids)for(let i=0;i<await page.evaluate(id=>HISTORY_ENTRIES.find(x=>x.id===id).scenes.length,e);i++){
-    const r=await page.evaluate(({e,i})=>{go(e,{scene:i});const s=activeScene(ENTRIES[cur]);
-     return {pins:Object.keys(pinIndex).length,layers:group.getLayers().length,legend:legend.children.length,fits:map.getBounds().contains(L.latLngBounds(s.view)),overflow:document.documentElement.scrollWidth>innerWidth};},{e,i});
-    await wait(60);
-    assert.ok(r.layers>0&&r.legend>0&&!r.overflow,e+'/'+i+' '+JSON.stringify(r));
-    if(label==='desktop')assert.ok(r.pins>0&&r.fits,e+'/'+i+' '+JSON.stringify(r));
-   }
+   await page.evaluate(({ids,label})=>{for(const e of ids){const n=HISTORY_ENTRIES.find(x=>x.id===e).scenes.length;for(let i=0;i<n;i++){go(e,{scene:i});const s=activeScene(ENTRIES[cur]);
+    const r={pins:Object.keys(pinIndex).length,layers:group.getLayers().length,legend:legend.children.length,fits:map.getBounds().contains(L.latLngBounds(s.view)),overflow:document.documentElement.scrollWidth>innerWidth};
+    if(!(r.layers>0&&r.legend>0&&!r.overflow)||((label==='desktop')&&!(r.pins>0&&r.fits)))throw new Error(e+'/'+i+' '+JSON.stringify(r));}}}}}},{{ids:report.ids,label}});
    for(const [scene,file] of [['history-empire-principate/1','guard'],['history-empire-crisis/3','split'],['history-empire-west-fall/7','455'],['history-empire-west-end/5','476'],['history-empire-west-end/6','kingdoms-476'],['history-empire-theodosius/6','exiles'],['history-empire-theodosius/10','walls'],['history-empire-constantine/1','307-324'],['history-empire-west-fall/0','huns'],['history-empire-valentinian/2','adrianople-box'],['history-empire-theodosius/1','vesta'],['history-empire-leo/0','aspar'],['history-empire-justinian/3','ravenna'],['history-empire-justinian/5','565'],['history-west-kingdoms/0','kingdoms'],['history-spain-fall/2','711']]){
     await page.evaluate(s=>go(s),scene);await wait(300);
     if(label==='390')await page.evaluate(()=>scrollSceneText(false));
-    await page.screenshot({path:path.join(shots,`empire-${file}-${label}.png`)});
+    if(process.env.FULL_SHOTS==='1')await page.screenshot({path:path.join(shots,`empire-${file}-${label}.png`)});
    }
    await page.close();
   }

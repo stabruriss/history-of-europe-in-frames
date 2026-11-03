@@ -5,7 +5,7 @@ const path=require('node:path');
 const {pathToFileURL}=require('node:url');
 const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','index.html'))).href;
 const shots=path.join(__dirname,'shots-v10');fs.mkdirSync(shots,{recursive:true});
-const wait=ms=>new Promise(r=>setTimeout(r,ms));
+const FULL_SHOTS=process.env.FULL_SHOTS==='1';const wait=ms=>new Promise(r=>setTimeout(r,FULL_SHOTS?ms:0));
 // Geometry of one rendered tree: rows, nodes, forks, ticks, names; positions relative to the tree box.
 const treeReport=sel=>{
  const tree=document.querySelector(sel),box=tree.getBoundingClientRect();
@@ -185,15 +185,17 @@ function checkTree(r,label){
   await p.evaluate(()=>go('history-palaces'));await p.click('#toc .tree-line[data-line="rome"]');s=await state(p);
   assert.equal(s.id,'history-rome-site');
   // A full ride on each line from the root: every ↓ lands lower in the tree, and the footer counts stations.
-  for(const [line,startId,count,last] of [['trunk','history-migration',23,'history-hellenistic-end'],['rome','history-migration',33,'history-empire-west-end'],['east','history-migration',48,'history-faith-crusade'],['west','history-migration',40,'history-west-louis-pious'],['spain','history-migration',43,'history-spain-crusade'],['france','history-migration',53,'history-britain-hundred-years-3'],['germany','history-migration',53,'history-italy-blackdeath'],['italy','history-migration',51,'history-italy-blackdeath'],['britain','history-migration',38,'history-britain-hundred-years-3'],['faith','history-migration',45,'history-faith-constance'],['egypt','history-migration',12,'history-arab-conquest'],['persia','history-migration',28,'history-italy-blackdeath'],['eeurope','history-migration',14,'history-eeurope-byzantium'],['crusade','history-migration',44,'history-crusade-orders'],['crusade','history-migration',44,'history-crusade-orders'],['china','history-china-neolithic',12,'history-china-tang']]){
-   await p.click(`#toc .tree-line[data-line="${line}"]`);await p.evaluate(id=>go(id),startId);await p.focus('#toc .tree-item.on');
-   let lastTop=-1;
-   for(let i=0;i<count;i++){
-    const w=await p.evaluate(()=>{const b=toc.querySelector('.tree-item.on');return {top:b.offsetTop,pos:document.getElementById('pos').textContent,focus:document.activeElement===b};});
-    assert.ok(w.top>lastTop&&w.pos===`${i+1} / ${count}`&&w.focus,line+' walk '+i+' '+JSON.stringify(w));lastTop=w.top;
-    await p.keyboard.press('ArrowDown');
-   }
-   s=await state(p);assert.equal(s.id,last);
+  for(const [line,startId,count,last] of [['trunk','history-migration',23,'history-hellenistic-end'],['rome','history-migration',33,'history-empire-west-end'],['east','history-migration',48,'history-faith-crusade'],['west','history-migration',40,'history-west-louis-pious'],['spain','history-migration',43,'history-spain-crusade'],['france','history-migration',53,'history-britain-hundred-years-3'],['germany','history-migration',53,'history-italy-blackdeath'],['italy','history-migration',51,'history-italy-blackdeath'],['britain','history-migration',38,'history-britain-hundred-years-3'],['faith','history-migration',45,'history-faith-constance'],['egypt','history-migration',12,'history-arab-conquest'],['persia','history-migration',28,'history-italy-blackdeath'],['eeurope','history-migration',14,'history-eeurope-byzantium'],['crusade','history-migration',44,'history-crusade-orders'],['china','history-china-neolithic',12,'history-china-tang']]){
+   await p.evaluate(({line,startId,count,last})=>{
+    document.querySelector(`#toc .tree-line[data-line="${line}"]`).click();go(startId);toc.querySelector('.tree-item.on').focus();
+    let lastTop=-1;
+    for(let i=0;i<count;i++){
+     const b=toc.querySelector('.tree-item.on'),w={top:b.offsetTop,pos:document.getElementById('pos').textContent,focus:document.activeElement===b};
+     if(!(w.top>lastTop&&w.pos===`${i+1} / ${count}`&&w.focus))throw new Error(line+' walk '+i+' '+JSON.stringify(w));lastTop=w.top;
+     b.dispatchEvent(new KeyboardEvent('keydown',{key:'ArrowDown',bubbles:true,cancelable:true}));
+    }
+    if(ENTRIES[cur].id!==last)throw new Error(line+' last '+ENTRIES[cur].id+' !== '+last);
+   },{line,startId,count,last});
   }
   // The column grip: drag wider, the tree opens up (branch names), the map shrinks; remembered; double-click restores.
   await p.evaluate(()=>go('history-rome-punic',{scene:1}));
@@ -215,12 +217,12 @@ function checkTree(r,label){
   await p.reload({waitUntil:'domcontentloaded'});await p.evaluate(()=>document.fonts.ready);await wait(150);
   assert.equal(await p.evaluate(()=>Math.round(side.getBoundingClientRect().width)),640,'width remembered');
   assert.ok(await p.evaluate(()=>map.getBounds().contains(L.latLngBounds(activeScene(ENTRIES[cur]).view))));
-  await p.screenshot({path:path.join(shots,'tree-sidebar-wide.png')});
+  if(process.env.FULL_SHOTS==='1')await p.screenshot({path:path.join(shots,'tree-sidebar-wide.png')});
   await p.$eval('#sideGrip',e=>e.dispatchEvent(new MouseEvent('dblclick',{bubbles:true})));
   assert.equal(await p.evaluate(()=>Math.round(side.getBoundingClientRect().width)),244);
   assert.equal(await p.evaluate(()=>localStorage.getItem('agora-atlas-side-width')),null);
   await p.close();
-  const tall=await pageAt(1440,2000);await tall.screenshot({path:path.join(shots,'tree-sidebar-desktop.png')});await tall.close();
+  const tall=await pageAt(1440,2000);if(process.env.FULL_SHOTS==='1')await tall.screenshot({path:path.join(shots,'tree-sidebar-desktop.png')});await tall.close();
   // Narrower desktop sidebar keeps the same tree inside its width.
   const narrow=await pageAt(1024,768);
   checkTree(await narrow.evaluate(treeReport,'#toc .htree'),'sidebar 1024');

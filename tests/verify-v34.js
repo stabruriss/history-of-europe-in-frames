@@ -4,7 +4,7 @@ const path=require('node:path');
 const {pathToFileURL}=require('node:url');
 const target=path.resolve(process.argv[2]||path.join(__dirname,'..','index.html'));
 const shots=path.join(__dirname,'shots-v34');require('node:fs').mkdirSync(shots,{recursive:true});
-const wait=ms=>new Promise(r=>setTimeout(r,ms));
+const FULL_SHOTS=process.env.FULL_SHOTS==='1';const wait=ms=>FULL_SHOTS?new Promise(r=>setTimeout(r,ms)):Promise.resolve();
 // 老无 2026-10-21 (evening): 罗马 runs to the end of the West; 东罗马 carries on from there (kept as 东罗马, with the sentence on
 // Latin no longer being the official language in bold); 西罗马 is now 中世纪西欧, forking off at the same point; 希腊 ends by running
 // into 罗马; a big event that hits several lines at once is one station on each of them, lit together, with one set of scenes.
@@ -131,7 +131,7 @@ const BOLD=[['history-faith-three-chapters/1','教义之争背后的权力格局
    await page.evaluate(()=>{selectTreeLine('egypt');go('history-empire-heraclius');});await page.click('#next');
    assert.equal(await page.evaluate(()=>ENTRIES[cur].id),'history-arab-conquest');assert.equal(await page.evaluate(()=>treeLine),'egypt','stays on 埃及 through shared stations');
    await page.evaluate(()=>go('history-empire-heraclius',{scene:1}));await wait(250);
-   await page.screenshot({path:path.join(shots,`heraclius_1-${label}.png`)});
+   if(process.env.FULL_SHOTS==='1')await page.screenshot({path:path.join(shots,`heraclius_1-${label}.png`)});
    if(label==='desktop'){
     // Top header pills jump to that line's start time; clicking in the tree below keeps the timeline where it is.
     await page.evaluate(()=>{go('history-migration');toc.scrollTop=0;});
@@ -149,7 +149,7 @@ const BOLD=[['history-faith-three-chapters/1','教义之争背后的权力格局
     assert.deepEqual(afterItem,{id:'history-empire-west-fall',line:'rome',scroll:beforeClick},'clicking a tree item below does not move the timeline');
     await page.evaluate(()=>{selectTreeLine('east');go('history-empire-heraclius');});await page.click('#treeOpen');await wait(250);
     await page.evaluate(()=>treeSheet.querySelector('.tree-item.on')?.scrollIntoView({block:'center'}));await wait(150);
-    await page.screenshot({path:path.join(shots,'tree-shared-1440.png')});
+    if(process.env.FULL_SHOTS==='1')await page.screenshot({path:path.join(shots,'tree-shared-1440.png')});
     await page.keyboard.press('Escape');
    }
    await page.close();

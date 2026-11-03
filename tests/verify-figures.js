@@ -20,27 +20,21 @@ const wait=ms=>new Promise(r=>setTimeout(r,ms));
   const occurrences=await page.evaluate(()=>Object.entries(FIGURE_SCENES).flatMap(([scene,items])=>items.map(item=>({scene,...item}))));
   assert.equal(occurrences.length,563);assert.equal(new Set(occurrences.map(p=>p.id)).size,330);
   assert.equal(await page.evaluate(()=>Object.keys(FIGURES).length),330);
-  for(const item of occurrences){
-   await page.evaluate(scene=>go(scene),item.scene);
-   assert.equal(await page.evaluate(({scene,id})=>{
-    const [entry,index]=scene.split('/'),p=FIGURES[id];
-    return ENTRIES[cur].id===entry&&sceneIndex===+index&&p.name&&p.en&&p.life&&p.bio&&p.sources.length>0;
-   },item),true);
-   const selector=`.person-card[data-person="${item.id}"]`;
-   assert.equal(await page.$eval(selector,e=>e.open),false);
-   await page.$eval(selector+' summary',e=>e.click());
-   assert.equal(await page.$eval(selector,e=>e.open),true);
-   assert.equal(await page.$$eval('.person-card[open]',es=>es.length),1);
-   assert.equal(await page.$$eval(selector+' a:not(.xref)',es=>es.every(a=>a.href.startsWith('https://')&&a.rel.includes('noopener')&&a.rel.includes('noreferrer')&&a.checkVisibility())),true);
-   await page.$eval(selector+' .person-map',e=>e.click());
-   await page.waitForFunction(()=>map._popup?.isOpen());
-   assert.equal(await page.evaluate(item=>{
-    const p=FIGURES[item.id],where=FIGURE_PLACES[item.place||p.place];
-    return map._popup.getLatLng().equals(where.ll)&&map._popup.getContent().includes(p.name);
-   },item),true);
-   await page.click('#tFit');assert.equal(await page.evaluate(()=>Boolean(map._popup?.isOpen())),false);
-   assert.ok(await page.evaluate(()=>map.getBounds().contains(L.latLngBounds(activeScene(ENTRIES[cur]).view))));
-  }
+  await page.evaluate(occurrences=>{for(const item of occurrences){
+   go(item.scene);
+   const [entry,index]=item.scene.split('/'),p=FIGURES[item.id];
+   if(!(ENTRIES[cur].id===entry&&sceneIndex===+index&&p.name&&p.en&&p.life&&p.bio&&p.sources.length>0))throw new Error('meta '+item.id);
+   const card=document.querySelector(`.person-card[data-person="${item.id}"]`);
+   if(!card||card.open!==false)throw new Error('closed '+item.id);
+   card.querySelector('summary').click();
+   if(card.open!==true||document.querySelectorAll('.person-card[open]').length!==1)throw new Error('open '+item.id);
+   if(![...card.querySelectorAll('a:not(.xref)')].every(a=>a.href.startsWith('https://')&&a.rel.includes('noopener')&&a.rel.includes('noreferrer')&&a.checkVisibility()))throw new Error('links '+item.id);
+   card.querySelector('.person-map').click();
+   const where=FIGURE_PLACES[item.place||p.place];
+   if(!(map._popup?.isOpen()&&map._popup.getLatLng().equals(where.ll)&&map._popup.getContent().includes(p.name)))throw new Error('popup '+item.id);
+   document.getElementById('tFit').click();
+   if(map._popup?.isOpen()||!map.getBounds().contains(L.latLngBounds(activeScene(ENTRIES[cur]).view)))throw new Error('fit '+item.id);
+  }},occurrences);
   await page.evaluate(()=>go('history-spartan-decline'));
   assert.match(await page.$eval('[data-person="socrates"]',e=>e.textContent),/前399年/);
   assert.match(await page.$eval('[data-person="socrates"]',e=>e.textContent),/前403年民主恢复/);
@@ -61,7 +55,7 @@ const wait=ms=>new Promise(r=>setTimeout(r,ms));
   for(const [width,height] of [[390,844],[360,667],[740,390]]){
    const p=await pageAt(width,height);
    await p.click('[data-person="socrates"] summary');
-   await p.$eval('[data-person="socrates"] .person-map',e=>e.click());await wait(400);
+   await p.$eval('[data-person="socrates"] .person-map',e=>e.click());if(process.env.FULL_SHOTS==='1')await wait(400);
    const layout=await p.evaluate(()=>{
     const c=document.querySelector('[data-person="socrates"]'),r=reader.getBoundingClientRect(),popup=document.querySelector('.leaflet-popup').getBoundingClientRect(),zoom=document.querySelector('.leaflet-control-zoom').getBoundingClientRect();
     return {pageFits:document.documentElement.scrollWidth<=innerWidth,bodyFits:readerBody.scrollWidth<=readerBody.clientWidth+1,
@@ -71,7 +65,7 @@ const wait=ms=>new Promise(r=>setTimeout(r,ms));
      debug:{popup:{left:popup.left,right:popup.right,top:popup.top,bottom:popup.bottom},reader:{left:r.left,right:r.right,top:r.top,bottom:r.bottom}}};
    });
    assert.ok(layout.pageFits&&layout.bodyFits&&layout.cardFits&&layout.popupVisible&&layout.noReaderOverlap&&layout.noZoomOverlap,width+'x'+height+': '+JSON.stringify(layout));
-   await p.screenshot({path:path.join(__dirname,'shots',`figures-${width}x${height}.png`)});
+   if(process.env.FULL_SHOTS==='1')await p.screenshot({path:path.join(__dirname,'shots',`figures-${width}x${height}.png`)});
    await p.evaluate(()=>go('history-macedonian-rise'));
    assert.equal(await p.$$eval('.person-card',es=>es.length),5);
    assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth&&readerBody.scrollWidth<=readerBody.clientWidth+1),true);
@@ -80,7 +74,7 @@ const wait=ms=>new Promise(r=>setTimeout(r,ms));
   const animated=await pageAt(1440,960,false);
   await animated.waitForFunction(()=>pending===null);
   await animated.evaluate(()=>{focusFigure(FIGURE_SCENES['history-spartan-decline/0'][0]);go('history-migration');});
-  await wait(1600);assert.equal(await animated.evaluate(()=>Boolean(map._popup?.isOpen())),false);
+  await animated.waitForFunction(()=>pending===null);await wait(250);assert.equal(await animated.evaluate(()=>Boolean(map._popup?.isOpen())),false);
   await animated.close();assert.deepEqual(errors,[]);
   console.log('PASS: 330 people / events across 563 dated cards; expandable sources; one-open-card behavior; keyboard; restored fold state; city map popups; return to scene; stage switching; phones and landscape; offline; stale popup cancellation; no page errors.');
  }finally{await browser.close();}

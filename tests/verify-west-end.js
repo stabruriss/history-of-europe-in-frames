@@ -4,7 +4,7 @@ const path=require('node:path');
 const {pathToFileURL}=require('node:url');
 const target=path.resolve(process.argv[2]||path.join(__dirname,'..','index.html'));
 const shots=path.join(__dirname,'shots-west-end');require('node:fs').mkdirSync(shots,{recursive:true});
-const wait=ms=>new Promise(r=>setTimeout(r,ms));
+const FULL_SHOTS=process.env.FULL_SHOTS==='1';const wait=ms=>FULL_SHOTS?new Promise(r=>setTimeout(r,ms)):Promise.resolve();
 // 老无 2026-10-25: on past the Vandal sack of 455 — the empress and her two daughters taken to Africa; the emperors after Maximus;
 // why Leo I sent a general who threatened his own throne to rule the West; the war plan (Visigoths against the Suebi, a fleet against
 // the Vandals), the joint fleet of 468, the Visigoths spreading at once, the last defeat, the regalia sent to Zeno; then a short summary
@@ -111,7 +111,7 @@ const CARDS=[[ID+'/0','gaiseric',/上帝发怒/],[ID+'/1','majorian',/五十磅�
     assert.ok(s.layers>0&&s.legend>0&&!s.overflow,ID+'/'+i+' '+JSON.stringify(s));
     if(label==='desktop')assert.ok(s.pins>0&&s.fits,ID+'/'+i+' '+JSON.stringify(s));
     if(label==='390')await page.evaluate(()=>scrollSceneText(false));
-    await page.screenshot({path:path.join(shots,`west-end_${i}-${label}.png`)});
+    if(process.env.FULL_SHOTS==='1')await page.screenshot({path:path.join(shots,`west-end_${i}-${label}.png`)});
    }
    // ↑↓ along 罗马: 西罗马的终结 → its sequel, which is the end of the line.
    await page.evaluate(()=>{selectTreeLine('rome');go('history-empire-west-fall');});
@@ -120,7 +120,7 @@ const CARDS=[[ID+'/0','gaiseric',/上帝发怒/],[ID+'/1','majorian',/五十磅�
    if(label==='desktop'){
     await page.evaluate(id=>{selectTreeLine('rome');go(id);},ID);await page.click('#treeOpen');await wait(250);
     await page.evaluate(()=>treeSheet.querySelector('.tree-item.on')?.scrollIntoView({block:'center'}));await wait(150);
-    await page.screenshot({path:path.join(shots,'tree-rome-1440.png')});await page.keyboard.press('Escape');
+    if(process.env.FULL_SHOTS==='1')await page.screenshot({path:path.join(shots,'tree-rome-1440.png')});await page.keyboard.press('Escape');
     const row=await page.$eval(`#toc .tree-item[data-key="${ID}/0"]`,e=>e.textContent);assert.match(row,/^西罗马的终结（下）Ⅵ · 455—476年$/);
    }
    await page.close();

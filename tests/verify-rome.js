@@ -4,7 +4,7 @@ const path=require('node:path');
 const {pathToFileURL}=require('node:url');
 const target=path.resolve(process.argv[2]||path.join(__dirname,'..','index.html'));
 const shots=path.join(__dirname,'shots-v13');require('node:fs').mkdirSync(shots,{recursive:true});
-const wait=ms=>new Promise(r=>setTimeout(r,ms));
+const FULL_SHOTS=process.env.FULL_SHOTS==='1';const wait=ms=>FULL_SHOTS?new Promise(r=>setTimeout(r,ms)):Promise.resolve();
 (async()=>{
  const browser=await puppeteer.launch({executablePath:process.env.CHROME_PATH||'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true});
  const errors=[];
@@ -41,8 +41,7 @@ const wait=ms=>new Promise(r=>setTimeout(r,ms));
      ['history-rome-sulla/0','你的小弟打死了我的人'],['history-rome-sulla/2','借一个强人打另一个强人'],['history-rome-caesar/0','基本盘早已散了'],
      ['history-rome-augustus/1','把两个强人推到了一起'],['history-rome-augustus/2','打酱油的雷必达'],['history-rome-augustus/4','共和的壳子里，住进了一个人'],
      ['history-rome-site/0','罗马起步晚'],['history-rome-site/1','边缘人和流窜犯的避难所'],['history-rome-kings/0','三百人'],['history-rome-kings/1','重装步兵方阵'],['history-rome-orders/0','平民的武器就是出走']]){
-    await page.evaluate(s=>go(s),scene);
-    assert.ok(await page.$eval('#sceneContext>p',(e,w)=>e.textContent.replace(/（[A-Za-z][^）]*）/g,'').includes(w),phrase),scene+' lacks '+phrase);
+    assert.ok(await page.evaluate(({s,w})=>{if(ENTRIES[cur]?.id+'/'+sceneIndex!==s)go(s);const e=document.querySelector('#sceneContext>p');return e.textContent.replace(/（[A-Za-z][^）]*）/g,'').includes(w);},{s:scene,w:phrase}),scene+' lacks '+phrase);
    }
    await page.evaluate(()=>go('history-rome-site'));
    assert.equal(await page.$eval('#entryEyebrow',e=>e.textContent),'罗马：王政与共和 · 第五章');
@@ -53,14 +52,11 @@ const wait=ms=>new Promise(r=>setTimeout(r,ms));
    assert.ok(await page.$$eval('#toc .chip[data-era="rome-fall"] small i',es=>es.length===8&&es.every(e=>e.textContent.startsWith('Ⅴ'))));
    assert.match(await page.$eval('#indexCaption',e=>e.textContent),/Ⅴ 罗马/);
    const ids=await page.evaluate(()=>HISTORY_ENTRIES.filter(e=>e.ch===4).flatMap(e=>e.scenes.map((s,i)=>e.id+'/'+i)));
-   for(const id of ids){
-    await page.evaluate(id=>go(id),id);
-    const r=await page.evaluate(()=>({pins:Object.keys(pinIndex).length,layers:group.getLayers().length,legend:legend.children.length,
-      fits:document.documentElement.scrollWidth<=innerWidth&&readerBody.scrollWidth<=readerBody.clientWidth+1,
-      moments:document.querySelectorAll('#sceneContext .moment').length,expected:ENTRIES[cur].moments.filter(m=>m.scene===sceneIndex).length}));
-    assert.ok(r.pins>0&&r.layers>0&&r.legend>0&&r.fits,id+' '+JSON.stringify(r));
-    assert.equal(r.moments,r.expected,id);
-   }
+   await page.evaluate(ids=>{for(const id of ids){go(id);
+    const r={pins:Object.keys(pinIndex).length,layers:group.getLayers().length,legend:legend.children.length,
+     fits:document.documentElement.scrollWidth<=innerWidth&&readerBody.scrollWidth<=readerBody.clientWidth+1,
+     moments:document.querySelectorAll('#sceneContext .moment').length,expected:ENTRIES[cur].moments.filter(m=>m.scene===sceneIndex).length};
+    if(!(r.pins>0&&r.layers>0&&r.legend>0&&r.fits&&r.moments===r.expected))throw new Error(id+' '+JSON.stringify(r));}},ids);
    // Dated person cards, including 老夫's own Rome anecdote.
    await page.evaluate(()=>go('history-rome-orders/0'));
    assert.match(await page.$eval('[data-person="aristotle"]',e=>e.textContent),/卢基乌斯/);
@@ -83,7 +79,7 @@ const wait=ms=>new Promise(r=>setTimeout(r,ms));
    for(const [scene,file] of [['history-rome-site/0','site'],['history-rome-gracchi/0','gracchi'],['history-rome-marius/1','cimbri'],['history-rome-social/0','social'],['history-rome-sulla/1','sulla'],['history-rome-pompey/1','pompey-east'],['history-rome-triumvirate/1','gaul'],['history-rome-caesar/0','rubicon'],['history-rome-augustus/2','philippi'],['history-rome-augustus/4','princeps']]){
     await page.evaluate(s=>go(s),scene);await wait(300);
     if(label==='390')await page.evaluate(()=>scrollSceneText(false));
-    await page.screenshot({path:path.join(shots,`rome-${file}-${label}.png`)});
+    if(process.env.FULL_SHOTS==='1')await page.screenshot({path:path.join(shots,`rome-${file}-${label}.png`)});
    }
    await page.close();
   }

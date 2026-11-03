@@ -4,7 +4,7 @@ const path=require('node:path');
 const {pathToFileURL}=require('node:url');
 const target=path.resolve(process.argv[2]||path.join(__dirname,'..','index.html'));
 const shots=path.join(__dirname,'shots-v19');require('node:fs').mkdirSync(shots,{recursive:true});
-const wait=ms=>new Promise(r=>setTimeout(r,ms));
+const FULL_SHOTS=process.env.FULL_SHOTS==='1';const wait=ms=>FULL_SHOTS?new Promise(r=>setTimeout(r,ms)):Promise.resolve();
 const IDS=['history-faith-israel','history-faith-first-temple','history-faith-second-temple','history-faith-jesus','history-faith-church','history-faith-empire-church','history-faith-councils','history-faith-ephesus','history-faith-two-cities','history-faith-papacy','history-faith-three-chapters','history-faith-gregory'];
 // 老无 2026-10-27: 加洛林神学之争 (787—870), beside the East's last iconoclasm on a passing loop.
 // 老无 2026-10-28: on to 1054 — the papacy as a prize, the emperors' church beside Cluny, the reformers.
@@ -101,8 +101,7 @@ const IDS_ALL=[...IDS,'history-faith-carolingian','history-faith-dark-century','
      // 老无 2026-10-25 夜: the rise of the Roman church after the Lombards, on 老无’s own frame.
      ['history-faith-gregory/0','鞭长莫及'],['history-faith-gregory/2','资源池'],['history-faith-gregory/3','好好学习就能进体制'],['history-faith-gregory/4','语法问题'],['history-faith-gregory/5','我就是他们的出纳'],['history-faith-gregory/6','登高要一步步来'],['history-faith-gregory/7','控制力越来越大'],
      ['history-empire-constans/0','罚则按身份开列'],['history-empire-constans/1','割去舌头'],['history-empire-constans/3','地盘一丢，教义就翻案'],['history-empire-isaurian/3','第七次大公会议'],['history-empire-amorian/2','正统的胜利'],['history-empire-macedonian/3','无酵饼']]){
-    await page.evaluate(s=>go(s),scene);
-    assert.ok(await page.$eval('#sceneContext>p',(e,w)=>e.textContent.replace(/（[A-Za-z][^）]*）/g,'').includes(w),phrase),scene+' lacks '+phrase);
+    assert.ok(await page.evaluate(({s,w})=>{if(ENTRIES[cur]?.id+'/'+sceneIndex!==s)go(s);const e=document.querySelector('#sceneContext>p');return e.textContent.replace(/（[A-Za-z][^）]*）/g,'').includes(w);},{s:scene,w:phrase}),scene+' lacks '+phrase);
    }
    for(const [scene,id,re] of [['history-faith-israel/3','moses',/自有永有/],['history-faith-second-temple/0','akhenaten',/唯一的神/],['history-faith-second-temple/3','caesar',/焚尸/],
      ['history-faith-jesus/3','peter',/不偏待人/],['history-faith-jesus/3','paul',/上告于恺撒/],['history-faith-jesus/5','josephus',/石头/],['history-faith-church/0','pliny-younger',/不合我们这个时代/],
@@ -130,17 +129,13 @@ const IDS_ALL=[...IDS,'history-faith-carolingian','history-faith-dark-century','
     assert.ok(await page.$$eval('#toc .tree-item[data-branch="faith"] small',es=>es.length===25&&es.every(e=>/^基督教( · |、)/.test(e.textContent))));
     assert.match(await page.$eval('#indexCaption',e=>e.textContent),/Ⅶ 基督教/);
    }
-   for(const e of IDS)for(let i=0;i<await page.evaluate(id=>HISTORY_ENTRIES.find(x=>x.id===id).scenes.length,e);i++){
-    const r=await page.evaluate(({e,i})=>{go(e,{scene:i});const s=activeScene(ENTRIES[cur]);
-     return {pins:Object.keys(pinIndex).length,layers:group.getLayers().length,legend:legend.children.length,fits:map.getBounds().contains(L.latLngBounds(s.view)),overflow:document.documentElement.scrollWidth>innerWidth};},{e,i});
-    await wait(60);
-    assert.ok(r.layers>0&&r.legend>0&&!r.overflow,e+'/'+i+' '+JSON.stringify(r));
-    if(label==='desktop')assert.ok(r.pins>0&&r.fits,e+'/'+i+' '+JSON.stringify(r));
-   }
+   await page.evaluate(({ids,label})=>{for(const e of ids){const n=HISTORY_ENTRIES.find(x=>x.id===e).scenes.length;for(let i=0;i<n;i++){go(e,{scene:i});const s=activeScene(ENTRIES[cur]);
+    const r={pins:Object.keys(pinIndex).length,layers:group.getLayers().length,legend:legend.children.length,fits:map.getBounds().contains(L.latLngBounds(s.view)),overflow:document.documentElement.scrollWidth>innerWidth};
+    if(!(r.layers>0&&r.legend>0&&!r.overflow)||((label==='desktop')&&!(r.pins>0&&r.fits)))throw new Error(e+'/'+i+' '+JSON.stringify(r));}}}}}},{{ids:IDS,label}});
    for(const [scene,file] of [['history-faith-israel/2','kadesh'],['history-faith-jesus/0','gods'],['history-faith-jesus/3','peter-paul'],['history-faith-church/2','jupiter'],['history-faith-councils/2','jupiter-condemned'],['history-faith-empire-church/3','nicaea'],['history-faith-councils/0','pancake'],['history-faith-two-cities/1','chalcedon'],['history-faith-two-cities/2','why'],['history-faith-ephesus/0','city-of-god'],['history-faith-papacy/1','offshoots'],['history-faith-papacy/4','schism']]){
     await page.evaluate(s=>go(s),scene);await wait(300);
     if(label==='390')await page.evaluate(()=>scrollSceneText(false));
-    await page.screenshot({path:path.join(shots,`faith-${file}-${label}.png`)});
+    if(process.env.FULL_SHOTS==='1')await page.screenshot({path:path.join(shots,`faith-${file}-${label}.png`)});
    }
    await page.close();
   }

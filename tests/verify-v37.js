@@ -5,7 +5,7 @@ const path=require('node:path');
 const {pathToFileURL}=require('node:url');
 const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','index.html'))).href;
 const shots=path.join(__dirname,'shots-v37');fs.mkdirSync(shots,{recursive:true});
-const wait=ms=>new Promise(r=>setTimeout(r,ms));
+const FULL_SHOTS=process.env.FULL_SHOTS==='1';const wait=ms=>FULL_SHOTS?new Promise(r=>setTimeout(r,ms)):Promise.resolve();
 // 老无 2026-10-28, four requests in one day:
 // 1. 意大利 rebuilt on 老无’s chain (the eldest son takes Middle Francia → his three sons split it again → none leaves a lawful heir →
 //    Middle Francia is fought over → the uncles split Lotharingia north of the Alps → Otto takes Italy), Otto’s Italy a station shared by
@@ -96,14 +96,16 @@ const SECTIONS=JSON.parse(fs.readFileSync(path.join(__dirname,'v37-spec.json'),'
     assert.ok(t.futures.some(([b,x])=>b==='spain'&&/收复失地运动/.test(x)),'西班牙 grows its shoot at 1031 '+JSON.stringify(t.futures));
    }
    // Every new scene draws, fits its view on the desktop, and leaves no horizontal overflow.
-   for(const id of Object.keys(S.sections)){
+   if(!FULL_SHOTS){await page.evaluate(({ids,label})=>{for(const id of ids){const n=HISTORY_ENTRIES.find(e=>e.id===id).scenes.length;for(let i=0;i<n;i++){go(id,{scene:i});const sc=activeScene(ENTRIES[cur]);
+     const s={pins:Object.keys(pinIndex).length,layers:group.getLayers().length,fits:map.getBounds().contains(L.latLngBounds(sc.view)),overflow:document.documentElement.scrollWidth>innerWidth};
+     if(!(s.layers>0&&!s.overflow)||((label==='desktop')&&!(s.pins>0&&s.fits)))throw new Error(id+'/'+i+' '+JSON.stringify(s));}}}}}},{{ids:Object.keys(S.sections),label}});}else for(const id of Object.keys(S.sections)){
     const n=await page.evaluate(id=>HISTORY_ENTRIES.find(e=>e.id===id).scenes.length,id);
     for(let i=0;i<n;i++){
      const s=await page.evaluate(({id,i})=>{go(id,{scene:i});const sc=activeScene(ENTRIES[cur]);
       return {pins:Object.keys(pinIndex).length,layers:group.getLayers().length,fits:map.getBounds().contains(L.latLngBounds(sc.view)),overflow:document.documentElement.scrollWidth>innerWidth};},{id,i});
      await wait(90);
      assert.ok(s.layers>0&&!s.overflow,id+'/'+i+' '+JSON.stringify(s));
-     if(label==='desktop'){assert.ok(s.pins>0&&s.fits,id+'/'+i+' '+JSON.stringify(s));await page.screenshot({path:path.join(shots,`${id.replace('history-','')}_${i}-desktop.png`)});}
+     if(label==='desktop'){assert.ok(s.pins>0&&s.fits,id+'/'+i+' '+JSON.stringify(s));if(process.env.FULL_SHOTS==='1')await page.screenshot({path:path.join(shots,`${id.replace('history-','')}_${i}-desktop.png`)});}
     }
    }
    // Shared stations open their section on every line they sit on.
@@ -113,7 +115,7 @@ const SECTIONS=JSON.parse(fs.readFileSync(path.join(__dirname,'v37-spec.json'),'
      assert.ok(ok,k+' is a station on '+line);
     }
    }
-   if(label==='390'){await page.evaluate(()=>go('history-italy-middle-francia',{scene:3}));await wait(150);await page.screenshot({path:path.join(shots,'meerssen-390.png')});}
+   if(label==='390'){await page.evaluate(()=>go('history-italy-middle-francia',{scene:3}));await wait(150);if(process.env.FULL_SHOTS==='1')await page.screenshot({path:path.join(shots,'meerssen-390.png')});}
    await page.close();
   }
   assert.deepEqual(errors,[],'page errors');

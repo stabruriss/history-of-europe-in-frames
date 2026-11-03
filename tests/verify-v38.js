@@ -5,7 +5,7 @@ const path=require('node:path');
 const {pathToFileURL}=require('node:url');
 const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','index.html'))).href;
 const shots=path.join(__dirname,'shots-v38');fs.mkdirSync(shots,{recursive:true});
-const wait=ms=>new Promise(r=>setTimeout(r,ms));
+const FULL_SHOTS=process.env.FULL_SHOTS==='1';const wait=ms=>FULL_SHOTS?new Promise(r=>setTimeout(r,ms)):Promise.resolve();
 // 老无 2026-10-28 夜, two requests:
 // 1. A new 东欧 line: the forest farmers, the steppe nomads and the Greek ports of the north Pontic trading for centuries; under Rome the
 //    grain lost its buyer and slaves paid the bill; new masters on the steppe, the Slavs going south with them; Heraclius won in the east
@@ -116,23 +116,25 @@ const SLICE_YEARS=[-1000,-500,0,500,1000];
       res({grew:after-before,clear:after>=top+s.offsetHeight-1,text:s.querySelector('p').textContent.length});},150));});
     assert.ok(o.grew>40&&o.clear&&o.text>100,JSON.stringify(o));
     await page.evaluate(()=>[...document.querySelectorAll('#toc .tree-slice')][1].scrollIntoView({block:'center'}));await wait(150);
-    await page.screenshot({path:path.join(shots,'slice-sidebar.png'),clip:{x:0,y:0,width:520,height:960}});
+    if(process.env.FULL_SHOTS==='1')await page.screenshot({path:path.join(shots,'slice-sidebar.png'),clip:{x:0,y:0,width:520,height:960}});
     await page.click('#treeOpen');await wait(300);
     await page.evaluate(()=>[...document.querySelectorAll('#treeSheet .tree-slice')][3].scrollIntoView({block:'center'}));await wait(150);
-    await page.screenshot({path:path.join(shots,'slice-sheet-1440.png')});await page.keyboard.press('Escape');await wait(150);
+    if(process.env.FULL_SHOTS==='1')await page.screenshot({path:path.join(shots,'slice-sheet-1440.png')});await page.keyboard.press('Escape');await wait(150);
    }else{
     await page.evaluate(()=>[...document.querySelectorAll('#treeSheet .tree-slice')][2].scrollIntoView({block:'center'}));await wait(150);
-    await page.screenshot({path:path.join(shots,'slice-sheet-390.png')});await page.keyboard.press('Escape');await wait(150);
+    if(process.env.FULL_SHOTS==='1')await page.screenshot({path:path.join(shots,'slice-sheet-390.png')});await page.keyboard.press('Escape');await wait(150);
    }
    // Every new scene draws, fits its view on the desktop, and leaves no horizontal overflow.
-   for(const id of Object.keys(S.sections)){
+   if(!FULL_SHOTS){await page.evaluate(({ids,label})=>{for(const id of ids){const n=HISTORY_ENTRIES.find(e=>e.id===id).scenes.length;for(let i=0;i<n;i++){go(id,{scene:i});const sc=activeScene(ENTRIES[cur]);
+     const s={pins:Object.keys(pinIndex).length,layers:group.getLayers().length,fits:map.getBounds().contains(L.latLngBounds(sc.view)),overflow:document.documentElement.scrollWidth>innerWidth};
+     if(!(s.layers>0&&!s.overflow)||((label==='desktop')&&!(s.pins>0&&s.fits)))throw new Error(id+'/'+i+' '+JSON.stringify(s));}}}}}},{{ids:Object.keys(S.sections),label}});}else for(const id of Object.keys(S.sections)){
     const n=await page.evaluate(id=>HISTORY_ENTRIES.find(e=>e.id===id).scenes.length,id);
     for(let i=0;i<n;i++){
      const s=await page.evaluate(({id,i})=>{go(id,{scene:i});const sc=activeScene(ENTRIES[cur]);
       return {pins:Object.keys(pinIndex).length,layers:group.getLayers().length,fits:map.getBounds().contains(L.latLngBounds(sc.view)),overflow:document.documentElement.scrollWidth>innerWidth};},{id,i});
      await wait(90);
      assert.ok(s.layers>0&&!s.overflow,id+'/'+i+' '+JSON.stringify(s));
-     if(label==='desktop'){assert.ok(s.pins>0&&s.fits,id+'/'+i+' '+JSON.stringify(s));await page.screenshot({path:path.join(shots,`${id.replace('history-','')}_${i}-desktop.png`)});}
+     if(label==='desktop'){assert.ok(s.pins>0&&s.fits,id+'/'+i+' '+JSON.stringify(s));if(process.env.FULL_SHOTS==='1')await page.screenshot({path:path.join(shots,`${id.replace('history-','')}_${i}-desktop.png`)});}
     }
    }
    // 老无 2026-10-28 夜: “见‘X’一节” jumps to that section; “另见‘X’主线” switches to that line at the station of the year its

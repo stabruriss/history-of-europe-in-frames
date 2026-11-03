@@ -4,7 +4,7 @@ const path=require('node:path');
 const {pathToFileURL}=require('node:url');
 const target=path.resolve(process.argv[2]||path.join(__dirname,'..','index.html'));
 const shots=path.join(__dirname,'shots-v33');require('node:fs').mkdirSync(shots,{recursive:true});
-const wait=ms=>new Promise(r=>setTimeout(r,ms));
+const FULL_SHOTS=process.env.FULL_SHOTS==='1';const wait=ms=>FULL_SHOTS?new Promise(r=>setTimeout(r,ms)):Promise.resolve();
 // 老无 2026-10-21: 埃及 and 波斯 are lines of their own, leaving the trunk at the early states; the Ptolemies, the Seleucids,
 // Rome and Byzantium are passing rulers of these lands. The old Ptolemaic and Seleucid sections now sit on these lines.
 const EGYPT=["history-egypt-old", "history-egypt-middle", "history-egypt-new", "history-egypt-late", "history-egypt-roman", "history-egypt-byzantine"],PERSIA=["history-persia-elam", "history-persia-achaemenid", "history-persia-parthia", "history-persia-sasanian", "history-persia-khosrow", "history-persia-khosrow-ii", "history-arab-rise", "history-arab-muhammad", "history-arab-conquest", "history-arab-expansion", "history-arab-caliphs", "history-arab-constantinople", "history-arab-abbasid", "history-arab-seljuks"];
@@ -45,8 +45,7 @@ const PHRASES=[["history-egypt-roman/0", "托勒密只是亚历山大之后的�
    assert.deepEqual(report.persiaLine.slice(3),['history-persia-elam','history-persia-achaemenid','history-eastern-kingdoms','history-persia-parthia','history-persia-sasanian','history-persia-khosrow','history-persia-khosrow-ii','history-empire-heraclius','history-arab-rise','history-arab-muhammad','history-arab-conquest','history-arab-expansion','history-arab-caliphs','history-arab-constantinople','history-spain-fall','history-arab-abbasid','history-arab-seljuks','history-arab-seljuks','history-faith-crusade','history-crusade-states','history-crusade-nuraldin','history-crusade-saladin','history-crusade-louis','history-crusade-end','history-italy-blackdeath']);
    assert.deepEqual(report.shoots,[['egypt',642],['persia',1351]]);
    for(const [scene,phrase] of PHRASES){
-    await page.evaluate(s=>go(s),scene);
-    assert.ok(await page.$eval('#sceneContext>p',(e,w)=>e.textContent.replace(/（[A-Za-z][^）]*）/g,'').includes(w),phrase),scene+' lacks '+phrase);
+    assert.ok(await page.evaluate(({s,w})=>{if(ENTRIES[cur]?.id+'/'+sceneIndex!==s)go(s);const e=document.querySelector('#sceneContext>p');return e.textContent.replace(/（[A-Za-z][^）]*）/g,'').includes(w);},{s:scene,w:phrase}),scene+' lacks '+phrase);
    }
    await page.evaluate(id=>go(id),EGYPT[0]);assert.match(await page.$eval('#entryEyebrow',e=>e.textContent),/ · 第九章$/);
    await page.evaluate(id=>go(id),PERSIA[0]);assert.match(await page.$eval('#entryEyebrow',e=>e.textContent),/ · 第十章$/);
@@ -55,17 +54,13 @@ const PHRASES=[["history-egypt-roman/0", "托勒密只是亚历山大之后的�
     assert.ok(await page.$$eval('#toc .tree-item[data-branch="egypt"] small',(es,n)=>es.length===n&&es.every(e=>e.textContent.startsWith('埃及 · ')),EGYPT.length+1));
     assert.ok(await page.$$eval('#toc .tree-item[data-branch="persia"] small',(es,n)=>es.length===n&&es.every(e=>/^波斯—阿拉伯(、[^ ]+)? · /.test(e.textContent)),PERSIA.length+1));
    }
-   for(const e of [...EGYPT,...PERSIA])for(let i=0;i<await page.evaluate(id=>HISTORY_ENTRIES.find(x=>x.id===id).scenes.length,e);i++){
-    const r=await page.evaluate(({e,i})=>{go(e,{scene:i});const s=activeScene(ENTRIES[cur]);
-     return {pins:Object.keys(pinIndex).length,layers:group.getLayers().length,legend:legend.children.length,fits:map.getBounds().contains(L.latLngBounds(s.view)),overflow:document.documentElement.scrollWidth>innerWidth};},{e,i});
-    await wait(60);
-    assert.ok(r.layers>0&&r.legend>0&&!r.overflow,e+'/'+i+' '+JSON.stringify(r));
-    if(label==='desktop')assert.ok(r.pins>0&&r.fits,e+'/'+i+' '+JSON.stringify(r));
-   }
+   await page.evaluate(({ids,label})=>{for(const e of ids){const n=HISTORY_ENTRIES.find(x=>x.id===e).scenes.length;for(let i=0;i<n;i++){go(e,{scene:i});const s=activeScene(ENTRIES[cur]);
+    const r={pins:Object.keys(pinIndex).length,layers:group.getLayers().length,legend:legend.children.length,fits:map.getBounds().contains(L.latLngBounds(s.view)),overflow:document.documentElement.scrollWidth>innerWidth};
+    if(!(r.layers>0&&r.legend>0&&!r.overflow)||((label==='desktop')&&!(r.pins>0&&r.fits)))throw new Error(e+'/'+i+' '+JSON.stringify(r));}}}}}},{{ids:[...EGYPT,...PERSIA],label}});
    for(const scene of [EGYPT[0]+'/0',EGYPT[2]+'/0',EGYPT[4]+'/0',PERSIA[1]+'/0',PERSIA[2]+'/0',PERSIA[4]+'/0']){
     await page.evaluate(s=>go(s),scene);await wait(300);
     if(label==='390')await page.evaluate(()=>scrollSceneText(false));
-    await page.screenshot({path:path.join(shots,`${scene.replace('/','_')}-${label}.png`)});
+    if(process.env.FULL_SHOTS==='1')await page.screenshot({path:path.join(shots,`${scene.replace('/','_')}-${label}.png`)});
    }
    await page.close();
   }

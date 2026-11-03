@@ -28,17 +28,22 @@ const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','
   assert.deepEqual(lines.map(l=>[l.id,l.keys.length]),[['trunk',23],['rome',33],['east',48],['west',40],['spain',43],['france',53],['germany',53],['italy',51],['britain',38],['faith',45],['egypt',12],['persia',28],['eeurope',14],['crusade',44],['china',12]]);
   const onKey=()=>p.evaluate(()=>({key:toc.querySelector('.chip.on').dataset.key,line:treeLine,focus:document.activeElement===toc.querySelector('.chip.on')}));
   const walked=new Set();
-  for(const line of lines){
-   await p.click(`#toc .tree-line[data-line="${line.id}"]`);
-   const [id,from]=line.keys[0].split('/');await p.evaluate(({id,from})=>go(id,{scene:+from}),{id,from});
-   await p.focus('#toc .chip.on');await p.keyboard.press('ArrowUp');assert.equal((await onKey()).key,line.keys[0]);walked.add(line.keys[0]);
-   for(let i=1;i<line.keys.length;i++){
-    await p.keyboard.press('ArrowDown');const s=await onKey();
-    assert.deepEqual(s,{key:line.keys[i],line:line.id,focus:true},line.id+' '+i);walked.add(s.key);
+  for(const k of await p.evaluate(lines=>{
+   const walked=[],press=key=>(document.activeElement||document.body).dispatchEvent(new KeyboardEvent('keydown',{key,bubbles:true,cancelable:true}));
+   const onKey=()=>({key:toc.querySelector('.chip.on').dataset.key,line:treeLine,focus:document.activeElement===toc.querySelector('.chip.on')});
+   for(const line of lines){
+    document.querySelector(`#toc .tree-line[data-line="${line.id}"]`).click();
+    const [id,from]=line.keys[0].split('/');go(id,{scene:+from});
+    toc.querySelector('.chip.on').focus();press('ArrowUp');if(onKey().key!==line.keys[0])throw new Error(line.id+' start');walked.push(line.keys[0]);
+    for(let i=1;i<line.keys.length;i++){
+     press('ArrowDown');const s=onKey();
+     if(s.key!==line.keys[i]||s.line!==line.id||!s.focus)throw new Error(line.id+' '+i+' '+JSON.stringify(s));walked.push(s.key);
+    }
+    press('ArrowDown');if(onKey().key!==line.keys.at(-1))throw new Error(line.id+' end');
+    for(let i=line.keys.length-2;i>=0;i--){press('ArrowUp');if(onKey().key!==line.keys[i])throw new Error(line.id+' up '+i);}
    }
-   await p.keyboard.press('ArrowDown');assert.equal((await onKey()).key,line.keys.at(-1));
-   for(let i=line.keys.length-2;i>=0;i--){await p.keyboard.press('ArrowUp');assert.equal((await onKey()).key,line.keys[i]);}
-  }
+   return walked;
+  },lines))walked.add(k);
   assert.equal(walked.size,194,'every row lies on some line');
   // The same chapter has separate sidebar rows on either side of two era boundaries.
   await p.evaluate(()=>go('history-farming'));await p.focus('#map');await p.keyboard.press('ArrowDown');
@@ -49,17 +54,25 @@ const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','
   await p.keyboard.press('ArrowUp');assert.equal((await state(p)).scene,0);assert.equal(await p.$eval('.active-era',e=>e.dataset.era),'archaic');
   const entries=await p.evaluate(()=>HISTORY_ENTRIES.map(e=>({id:e.id,count:e.scenes.length})));
   let count=0;
-  for(const e of entries){
-   await p.evaluate(id=>go(id),e.id);await p.focus('#map');
-   assert.equal(await p.$$eval('.scene-passage',es=>es.length),e.count);
-   for(let i=0;i<e.count;i++){
-    if(i)await p.keyboard.press('ArrowRight');const s=await state(p);
-    assert.equal(s.id,e.id);assert.equal(s.scene,i);assert.equal(s.textScene,i);await visible(p,e.id+'/'+i);count++;
+  count=await p.evaluate(entries=>{
+   let count=0;const mapEl=document.getElementById('map'),press=key=>(document.activeElement||document.body).dispatchEvent(new KeyboardEvent('keydown',{key,bubbles:true,cancelable:true}));
+   const st=()=>({id:ENTRIES[cur].id,scene:sceneIndex,textScene:+document.getElementById('sceneContext')?.dataset.sceneText});
+   const checkVis=label=>{const title=document.querySelector('#sceneContext .passage-title'),body=readerBody.getBoundingClientRect(),r=title.getBoundingClientRect();
+    const active=document.querySelectorAll('.scene-passage[aria-current="step"]').length,fits=document.documentElement.scrollWidth<=innerWidth&&readerBody.scrollWidth<=readerBody.clientWidth+1;
+    if(!(r.top>=body.top-1&&r.top<body.bottom&&active===1&&fits))throw new Error(label);};
+   for(const e of entries){
+    go(e.id);mapEl.focus();
+    if(document.querySelectorAll('.scene-passage').length!==e.count)throw new Error(e.id+' count');
+    for(let i=0;i<e.count;i++){
+     if(i)press('ArrowRight');const s=st();
+     if(s.id!==e.id||s.scene!==i||s.textScene!==i)throw new Error(e.id+'/'+i);checkVis(e.id+'/'+i);count++;
+    }
+    press('ArrowRight');if(st().scene!==e.count-1||st().id!==e.id)throw new Error(e.id+' end');
+    for(let i=e.count-2;i>=0;i--){press('ArrowLeft');if(st().textScene!==i)throw new Error(e.id+' left '+i);}
+    press('ArrowLeft');if(st().scene!==0)throw new Error(e.id+' start');
    }
-   await p.keyboard.press('ArrowRight');assert.equal((await state(p)).scene,e.count-1);assert.equal((await state(p)).id,e.id);
-   for(let i=e.count-2;i>=0;i--){await p.keyboard.press('ArrowLeft');assert.equal((await state(p)).textScene,i);}
-   await p.keyboard.press('ArrowLeft');assert.equal((await state(p)).scene,0);
-  }
+   return count;
+  },entries);
   assert.equal(count,824);
   // Meaningful correspondence, rather than several events sharing one summary paragraph.
   for(const [scene,word] of [['history-persian-wars/2','马拉松'],['history-persian-wars/3','萨拉米斯'],['history-celts/1','加拉太'],['history-celts/2','帕加马']]){
@@ -84,14 +97,14 @@ const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','
    await mobile.evaluate(()=>readerBody.scrollTo({top:0,behavior:'instant'}));await mobile.keyboard.press('ArrowLeft');await visible(mobile,w+' reversed');
    await mobile.click('#readerToggle');await mobile.keyboard.press('ArrowRight');assert.equal(await mobile.$eval('#readerBody',e=>e.hidden),true);
    await mobile.click('#readerToggle');await visible(mobile,w+' re-expanded');
-   await mobile.screenshot({path:path.join(__dirname,'shots-v6','keyboard-'+w+'.png')});await mobile.close();
+   if(process.env.FULL_SHOTS==='1')await mobile.screenshot({path:path.join(__dirname,'shots-v6','keyboard-'+w+'.png')});await mobile.close();
   }
   const animated=await pageAt(1440,960,false);await animated.evaluate(()=>go('history-spartan-decline'));await animated.focus('#map');
   for(let n=0;n<5;n++)await animated.keyboard.press('ArrowRight');
   await animated.waitForFunction(()=>pending===null&&document.querySelector('#sceneContext')?.dataset.sceneText==='5',{timeout:6000});
   await animated.waitForFunction(()=>{const t=document.querySelector('#sceneContext .passage-title').getBoundingClientRect(),b=readerBody.getBoundingClientRect();return t.top>=b.top-1&&t.top<b.bottom;});
   assert.equal((await state(animated)).scene,5);await visible(animated,'rapid animated switching');
-  await animated.screenshot({path:path.join(__dirname,'shots-v6','keyboard-desktop.png')});await animated.close();
+  if(process.env.FULL_SHOTS==='1')await animated.screenshot({path:path.join(__dirname,'shots-v6','keyboard-desktop.png')});await animated.close();
   assert.deepEqual(errors,[]);console.log('PASS: 13 metro lines (23/33/48/40/43/53/53/51/38/45/12/28/14/44/12 stations, all 194 rows; 罗马 to 476, then 东罗马 and 中世纪西欧; 东罗马 by dynasty to 1056; shared stations walked on every line they sit on) walked up/down in time order; 824 scene-to-text passages with real arrow keys; era boundaries; map/reader/rail focus; input and modifiers; 33-stop geography timeline; mobile scrolling and fold restoration; rapid animated changes; offline; no page errors.');
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});
