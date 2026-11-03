@@ -132,7 +132,7 @@ const IDS_ALL=[...IDS,'history-faith-carolingian','history-faith-dark-century','
    }
    await page.evaluate(({ids,label})=>{const _m=markTreeCurrent;markTreeCurrent=()=>{};try{for(const e of ids){const n=HISTORY_ENTRIES.find(x=>x.id===e).scenes.length;for(let i=0;i<n;i++){go(e,{scene:i});const s=activeScene(ENTRIES[cur]);
     const r={pins:Object.keys(pinIndex).length,layers:group.getLayers().length,legend:legend.children.length,fits:map.getBounds().contains(L.latLngBounds(s.view)),overflow:document.documentElement.scrollWidth>innerWidth};
-    if(!(r.layers>0&&r.legend>0&&!r.overflow)||((label==='desktop')&&!(r.pins>0&&r.fits)))throw new Error(e+'/'+i+' '+JSON.stringify(r));}}}}finally{markTreeCurrent=_m;markTreeCurrent();}}},{ids:IDS,label});
+    if(!(r.layers>0&&r.legend>0&&!r.overflow)||((label==='desktop')&&!(r.pins>0&&r.fits)))throw new Error(e+'/'+i+' '+JSON.stringify(r));}}}finally{markTreeCurrent=_m;markTreeCurrent();}},{ids:IDS,label});
    for(const [scene,file] of [['history-faith-israel/2','kadesh'],['history-faith-jesus/0','gods'],['history-faith-jesus/3','peter-paul'],['history-faith-church/2','jupiter'],['history-faith-councils/2','jupiter-condemned'],['history-faith-empire-church/3','nicaea'],['history-faith-councils/0','pancake'],['history-faith-two-cities/1','chalcedon'],['history-faith-two-cities/2','why'],['history-faith-ephesus/0','city-of-god'],['history-faith-papacy/1','offshoots'],['history-faith-papacy/4','schism']]){
     await page.evaluate(s=>go(s),scene);await wait(300);
     if(label==='390')await page.evaluate(()=>scrollSceneText(false));

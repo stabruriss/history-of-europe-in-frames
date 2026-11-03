@@ -57,8 +57,8 @@ def find_project_files() -> Path:
 def main() -> int:
     parser = argparse.ArgumentParser(description='Run verify-*.js test suites in parallel.')
     parser.add_argument('args', nargs='*', help='Optional index.html path and/or specific verify-*.js names')
-    parser.add_argument('-j', '--jobs', type=int, default=int(os.environ.get('TEST_JOBS', '8')),
-                        help='Number of parallel Chrome test workers (default: 8)')
+    parser.add_argument('-j', '--jobs', type=int, default=int(os.environ.get('TEST_JOBS', '5')),
+                        help='Number of parallel Chrome test workers (default: 5)')
     parser.add_argument('--full-shots', action='store_true',
                         help='Enable FULL_SHOTS=1 to write all legacy PNG screenshots')
     ns = parser.parse_args()
