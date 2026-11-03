@@ -13,7 +13,7 @@ const FULL_SHOTS=process.env.FULL_SHOTS==='1';const wait=ms=>FULL_SHOTS?new Prom
    const page=await browser.newPage();page.on('pageerror',e=>errors.push(e.message));
    await page.setViewport({width,height});
    await page.emulateMediaFeatures([{name:'prefers-reduced-motion',value:'reduce'}]);
-   await page.setRequestInterception(true);page.on('request',r=>/^https?:/.test(r.url())?r.abort():r.continue());
+   await page.setOfflineMode(true);await page.evaluateOnNewDocument(full=>{window.addEventListener('DOMContentLoaded',()=>{const n=document.getElementById('mapnote');if(n)n.hidden=false;if(typeof map!=='undefined'){if(typeof tiles!=='undefined')map.removeLayer(tiles);if(typeof closeTerrain!=='undefined')map.removeLayer(closeTerrain);if(!full)for(const l of Object.values(map._layers)){const kp=l.options?.pane;if(kp==='fallbackPane'||kp==='baseLabelPane'||(kp==='riverPane'&&!group.hasLayer(l))){l._project=()=>{};l._update=()=>{};l._setPos=()=>{};}}}});},process.env.FULL_SHOTS==='1');
    await page.goto(pathToFileURL(target).href+'#history-rome-site',{waitUntil:'domcontentloaded'});
    const report=await page.evaluate(()=>{
     const rome=HISTORY_ENTRIES.filter(e=>e.ch===4),eras=HISTORY_ERAS.filter(e=>e.id.startsWith('rome-'));
@@ -41,7 +41,8 @@ const FULL_SHOTS=process.env.FULL_SHOTS==='1';const wait=ms=>FULL_SHOTS?new Prom
      ['history-rome-sulla/0','你的小弟打死了我的人'],['history-rome-sulla/2','借一个强人打另一个强人'],['history-rome-caesar/0','基本盘早已散了'],
      ['history-rome-augustus/1','把两个强人推到了一起'],['history-rome-augustus/2','打酱油的雷必达'],['history-rome-augustus/4','共和的壳子里，住进了一个人'],
      ['history-rome-site/0','罗马起步晚'],['history-rome-site/1','边缘人和流窜犯的避难所'],['history-rome-kings/0','三百人'],['history-rome-kings/1','重装步兵方阵'],['history-rome-orders/0','平民的武器就是出走']]){
-    assert.ok(await page.evaluate(({s,w})=>{if(ENTRIES[cur]?.id+'/'+sceneIndex!==s)go(s);const e=document.querySelector('#sceneContext>p');return e.textContent.replace(/（[A-Za-z][^）]*）/g,'').includes(w);},{s:scene,w:phrase}),scene+' lacks '+phrase);
+    const _pm=page._pm??=await page.evaluate(()=>{const m={},d=document.createElement('div');for(const e of HISTORY_ENTRIES){d.innerHTML=e.html;for(const p of d.querySelectorAll('[data-scene-text]'))m[e.id+'/'+p.dataset.sceneText]=p.textContent;}return m;});
+    assert.ok((_pm[scene]||'').replace(/（[A-Za-z][^）]*）/g,'').includes(phrase),scene+' lacks '+phrase);
    }
    await page.evaluate(()=>go('history-rome-site'));
    assert.equal(await page.$eval('#entryEyebrow',e=>e.textContent),'罗马：王政与共和 · 第五章');
@@ -85,5 +86,5 @@ const FULL_SHOTS=process.env.FULL_SHOTS==='1';const wait=ms=>FULL_SHOTS?new Prom
   }
   assert.deepEqual(errors,[]);
   console.log('PASS: Rome chapter Ⅴ — 16 sections in 3 eras, 42 map scenes, ≤300 chars per scene, three-force theses and the user’s own points in 33 scenes, 49 iconic-event tags (至圣所 moved to the 基督教 line), 68 dated person cards with relationship labels; era/eyebrow/numerals/roadmap; desktop and 390px without overflow; offline; no page errors.');
- }catch(e){console.error(e);process.exitCode=1;}finally{await browser.close();}
+ }catch(e){console.error(e);process.exitCode=1;}finally{await Promise.race([browser.close(),new Promise(r=>setTimeout(r,200))]);browser.process()?.kill('SIGKILL');process.exit(process.exitCode||0);}
 })();

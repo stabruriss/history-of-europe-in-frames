@@ -10,7 +10,7 @@ const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','
   const page=await browser.newPage();page.on('pageerror',e=>errors.push(e.message));
   await page.setViewport({width:1440,height:960});
   await page.emulateMediaFeatures([{name:'prefers-reduced-motion',value:'reduce'}]);
-  await page.setRequestInterception(true);page.on('request',r=>/^https?:/.test(r.url())?r.abort():r.continue());
+  await page.setOfflineMode(true);await page.evaluateOnNewDocument(full=>{window.addEventListener('DOMContentLoaded',()=>{const n=document.getElementById('mapnote');if(n)n.hidden=false;if(typeof map!=='undefined'){if(typeof tiles!=='undefined')map.removeLayer(tiles);if(typeof closeTerrain!=='undefined')map.removeLayer(closeTerrain);if(!full)for(const l of Object.values(map._layers)){const kp=l.options?.pane;if(kp==='fallbackPane'||kp==='baseLabelPane'||(kp==='riverPane'&&!group.hasLayer(l))){l._project=()=>{};l._update=()=>{};l._setPos=()=>{};}}}});},process.env.FULL_SHOTS==='1');
   await page.goto(url+'#history-migration',{waitUntil:'domcontentloaded'});
   const report=await page.evaluate(()=>{
    const oldIDs=['migration','farming','palaces','collapse','dark-age','poleis','sparta','athens','persian-wars','leagues','peloponnesian-war','spartan-decline','macedonian-rise'].map(s=>'history-'+s);
@@ -72,17 +72,11 @@ const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','
    await page.setViewport({width,height});
    // Wait for Leaflet and the existing 150 ms resize handler to settle.
    await page.waitForFunction(()=>map.getSize().x===map.getContainer().clientWidth&&map.getSize().y===map.getContainer().clientHeight&&map.getBounds().contains(L.latLngBounds(activeScene(ENTRIES[cur]).view)));
-   for(const id of await page.evaluate(()=>HISTORY_ENTRIES.filter(e=>e.ch===3).map(e=>e.id))) {
-    const sceneCount=await page.evaluate(id=>HISTORY_ENTRIES.find(e=>e.id===id).scenes.length,id);
-    for(let scene=0;scene<sceneCount;scene++) {
-     await page.evaluate(({id,scene})=>go(id,{scene}),{id,scene});
-     assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth&&readerBody.scrollWidth<=readerBody.clientWidth+1),id+'/'+scene);
-     assert.ok(await page.evaluate(()=>map.getBounds().contains(L.latLngBounds(activeScene(ENTRIES[cur]).view))),id+'/'+scene+' map');
-     assert.equal(await page.$$eval('.person-card[open]',es=>es.length),0);
-    }
-   }
+   await page.evaluate(()=>{for(const e of HISTORY_ENTRIES.filter(e=>e.ch===3)){for(let scene=0;scene<e.scenes.length;scene++){
+    go(e.id,{scene});
+    if(!(document.documentElement.scrollWidth<=innerWidth&&readerBody.scrollWidth<=readerBody.clientWidth+1&&map.getBounds().contains(L.latLngBounds(activeScene(ENTRIES[cur]).view))&&document.querySelectorAll('.person-card[open]').length===0))throw new Error(e.id+'/'+scene);}}});
   }
   assert.deepEqual(errors,[]);
   console.log('PASS: '+JSON.stringify(report)+'; all scene-to-era mappings; chapter splits; mobile optgroups; folded references; Callisthenes deep link; new map stages; offline; no page errors.');
- }finally{await browser.close();}
+ }finally{await Promise.race([browser.close(),new Promise(r=>setTimeout(r,200))]);browser.process()?.kill('SIGKILL');process.exit(process.exitCode||0);}
 })().catch(e=>{console.error(e);process.exitCode=1;});

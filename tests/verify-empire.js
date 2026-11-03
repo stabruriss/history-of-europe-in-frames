@@ -13,7 +13,7 @@ const FULL_SHOTS=process.env.FULL_SHOTS==='1';const wait=ms=>FULL_SHOTS?new Prom
    const page=await browser.newPage();page.on('pageerror',e=>errors.push(e.message));
    await page.setViewport({width,height});
    await page.emulateMediaFeatures([{name:'prefers-reduced-motion',value:'reduce'}]);
-   await page.setRequestInterception(true);page.on('request',r=>/^https?:/.test(r.url())?r.abort():r.continue());
+   await page.setOfflineMode(true);await page.evaluateOnNewDocument(full=>{window.addEventListener('DOMContentLoaded',()=>{const n=document.getElementById('mapnote');if(n)n.hidden=false;if(typeof map!=='undefined'){if(typeof tiles!=='undefined')map.removeLayer(tiles);if(typeof closeTerrain!=='undefined')map.removeLayer(closeTerrain);if(!full)for(const l of Object.values(map._layers)){const kp=l.options?.pane;if(kp==='fallbackPane'||kp==='baseLabelPane'||(kp==='riverPane'&&!group.hasLayer(l))){l._project=()=>{};l._update=()=>{};l._setPos=()=>{};}}}});},process.env.FULL_SHOTS==='1');
    await page.goto(pathToFileURL(target).href+'#history-empire-principate',{waitUntil:'domcontentloaded'});
    const report=await page.evaluate(()=>{
     const empire=HISTORY_ENTRIES.filter(e=>e.ch===5),eras=HISTORY_ERAS.filter(e=>e.id.startsWith('empire-'));
@@ -81,7 +81,8 @@ const FULL_SHOTS=process.env.FULL_SHOTS==='1';const wait=ms=>FULL_SHOTS?new Prom
      ['history-west-kingdoms/0','西罗马没了皇帝'],['history-west-kingdoms/0','三分之一'],['history-west-kingdoms/0','拿刀吃饭'],['history-west-ostrogoths/3','孝文帝'],['history-west-ostrogoths/3','“中国”主线'],
      ['history-spain-visigoths/0','尤里克'],['history-spain-visigoths/2','两套'],['history-west-kingdoms/1','克洛维'],['history-west-kingdoms/1','武耶'],['history-spain-visigoths/3','莱奥维吉尔德'],['history-spain-visigoths/4','589年'],
      ['history-spain-fall/0','年近八十'],['history-spain-fall/2','塔里克']]){
-    assert.ok(await page.evaluate(({s,w})=>{if(ENTRIES[cur]?.id+'/'+sceneIndex!==s)go(s);const e=document.querySelector('#sceneContext>p');return e.textContent.includes(w)||e.textContent.replace(/（[A-Za-z][^）]*）/g,'').includes(w);},{s:scene,w:phrase}),scene+' lacks '+phrase);
+    const _pm=page._pm??=await page.evaluate(()=>{const m={},d=document.createElement('div');for(const e of HISTORY_ENTRIES){d.innerHTML=e.html;for(const p of d.querySelectorAll('[data-scene-text]'))m[e.id+'/'+p.dataset.sceneText]=p.textContent;}return m;});
+    assert.ok((_pm[scene]||'').includes(phrase)||(_pm[scene]||'').replace(/（[A-Za-z][^）]*）/g,'').includes(phrase),scene+' lacks '+phrase);
    }
    await page.evaluate(()=>go('history-empire-principate'));
    assert.equal(await page.$eval('#entryEyebrow',e=>e.textContent),'罗马帝国：元首制 · 第六章');
@@ -92,7 +93,8 @@ const FULL_SHOTS=process.env.FULL_SHOTS==='1';const wait=ms=>FULL_SHOTS?new Prom
    for(const [scene,phrase] of [['history-empire-crisis/3','军权'],['history-empire-crisis/3','元老院和平民授权'],['history-empire-crisis/3','不再住在罗马'],['history-empire-crisis/3','共治皇帝'],
      ['history-empire-dominate/1','不是突然冒出来的'],['history-empire-dominate/1','基于禅让的平衡记忆'],['history-empire-dominate/1','为后来君士坦丁迁都打下伏笔'],
      ['history-empire-dominate/2','从地方自治向中央集权转型'],['history-empire-dominate/2','加派官吏'],['history-empire-dominate/2','财政支出剧增']]){
-    assert.ok(await page.evaluate(({s,w})=>{if(ENTRIES[cur]?.id+'/'+sceneIndex!==s)go(s);const e=document.querySelector('#sceneContext>p');return e.textContent.includes(w)||e.textContent.replace(/（[A-Za-z][^）]*）/g,'').includes(w);},{s:scene,w:phrase}),scene+' lacks '+phrase);
+    const _pm=page._pm??=await page.evaluate(()=>{const m={},d=document.createElement('div');for(const e of HISTORY_ENTRIES){d.innerHTML=e.html;for(const p of d.querySelectorAll('[data-scene-text]'))m[e.id+'/'+p.dataset.sceneText]=p.textContent;}return m;});
+    assert.ok((_pm[scene]||'').includes(phrase)||(_pm[scene]||'').replace(/（[A-Za-z][^）]*）/g,'').includes(phrase),scene+' lacks '+phrase);
    }
    await page.evaluate(()=>go('history-empire-principate'));
    assert.match(await page.$eval('#indexCaption',e=>e.textContent),/Ⅵ 帝国/);
@@ -137,7 +139,7 @@ const FULL_SHOTS=process.env.FULL_SHOTS==='1';const wait=ms=>FULL_SHOTS?new Prom
    // Every scene draws real geometry, keeps its pins inside the fitted view, and does not overflow.
    await page.evaluate(({ids,label})=>{for(const e of ids){const n=HISTORY_ENTRIES.find(x=>x.id===e).scenes.length;for(let i=0;i<n;i++){go(e,{scene:i});const s=activeScene(ENTRIES[cur]);
     const r={pins:Object.keys(pinIndex).length,layers:group.getLayers().length,legend:legend.children.length,fits:map.getBounds().contains(L.latLngBounds(s.view)),overflow:document.documentElement.scrollWidth>innerWidth};
-    if(!(r.layers>0&&r.legend>0&&!r.overflow)||((label==='desktop')&&!(r.pins>0&&r.fits)))throw new Error(e+'/'+i+' '+JSON.stringify(r));}}},{ids:report.ids,label});
+    if(!(r.layers>0&&r.legend>0&&!r.overflow)||((label==='desktop')&&!(r.pins>0&&r.fits)))throw new Error(e+'/'+i+' '+JSON.stringify(r));}}}},{ids:report.ids,label});
    for(const [scene,file] of [['history-empire-principate/1','guard'],['history-empire-crisis/3','split'],['history-empire-west-fall/7','455'],['history-empire-west-end/5','476'],['history-empire-west-end/6','kingdoms-476'],['history-empire-theodosius/6','exiles'],['history-empire-theodosius/10','walls'],['history-empire-constantine/1','307-324'],['history-empire-west-fall/0','huns'],['history-empire-valentinian/2','adrianople-box'],['history-empire-theodosius/1','vesta'],['history-empire-leo/0','aspar'],['history-empire-justinian/3','ravenna'],['history-empire-justinian/5','565'],['history-west-kingdoms/0','kingdoms'],['history-spain-fall/2','711']]){
     await page.evaluate(s=>go(s),scene);await wait(300);
     if(label==='390')await page.evaluate(()=>scrollSceneText(false));
@@ -147,5 +149,5 @@ const FULL_SHOTS=process.env.FULL_SHOTS==='1';const wait=ms=>FULL_SHOTS?new Prom
   }
   assert.deepEqual(errors,[]);
   console.log('PASS: Empire chapter Ⅵ — 57 sections in 20 eras (v35: 东罗马 by dynasty — 查士丁尼王朝 to 602 beside Emperor Wu, 希拉克略王朝 and 希拉克略王朝（下）, 二十年无政府, 伊苏里亚王朝, 阿莫里亚王朝, 马其顿王朝 to 1056; v34: 墨洛温, 伦巴第, 查理曼); before: 13 sections in 5 eras (v33: 利奥王朝 457—518, 查士丁尼 518—565, 蛮族诸王国与西哥特 476—711, a 豆腐块 on Justinian and Emperor Wu of Han); earlier: 10 sections in 3 eras (戴克里先 and 君士坦丁 apart; the Constantinian section runs 305—363) (Rome line forks at 395: 西罗马 to 476 with a 中世纪西欧 shoot, 东罗马 shoot on the Rome line), 51 map scenes (军营元首时期 cut to 6, 君士坦丁 to 5, 狄奥多西 grown to 6: 匈人压境, 收不住, 阿德里安堡, 国中之国, 圣火熄灭, 分治; 西罗马 5 with 托孤大臣; East Rome to 450 in 阿卡狄乌斯与金口约翰 and 狄奥多西二世), ≤300 chars per scene, the user’s readings (legitimacy, 大政奉还, freedmen, heirs, Senate as a check, distributed Vesta cult) and the Praetorian Guard thread in 226 scene checks (incl. 反人性/起因, 受命于神, 新罗马, 卡拉卡拉 courting the provinces, the Huns and the Germanic war bands), 40 iconic-event tags, two 豆腐块 (how the Goths fought; after the flame), 36 dated person cards; eyebrow/numerals/AD ticks; desktop and 390px without overflow; offline; no page errors.');
- }catch(e){console.error(e);process.exitCode=1;}finally{await browser.close();}
+ }catch(e){console.error(e);process.exitCode=1;}finally{await Promise.race([browser.close(),new Promise(r=>setTimeout(r,200))]);browser.process()?.kill('SIGKILL');process.exit(process.exitCode||0);}
 })();

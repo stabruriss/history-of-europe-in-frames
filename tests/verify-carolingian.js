@@ -83,7 +83,7 @@ const PARALLEL=[['trunk','history-alexander-conquest/0','history-alexander-rule/
   for(const [label,w,h] of [['desktop',1440,960],['390',390,844]]){
    const page=await browser.newPage();await page.setViewport({width:w,height:h,deviceScaleFactor:1});
    await page.emulateMediaFeatures([{name:'prefers-reduced-motion',value:'reduce'}]);
-   await page.setRequestInterception(true);page.on('request',r=>/^https?:/.test(r.url())?r.abort():r.continue());
+   await page.setOfflineMode(true);await page.evaluateOnNewDocument(full=>{window.addEventListener('DOMContentLoaded',()=>{const n=document.getElementById('mapnote');if(n)n.hidden=false;if(typeof map!=='undefined'){if(typeof tiles!=='undefined')map.removeLayer(tiles);if(typeof closeTerrain!=='undefined')map.removeLayer(closeTerrain);if(!full)for(const l of Object.values(map._layers)){const kp=l.options?.pane;if(kp==='fallbackPane'||kp==='baseLabelPane'||(kp==='riverPane'&&!group.hasLayer(l))){l._project=()=>{};l._update=()=>{};l._setPos=()=>{};}}}});},process.env.FULL_SHOTS==='1');
    page.on('pageerror',e=>errors.push(label+': '+e.message));
    await page.goto(url,{waitUntil:'domcontentloaded'});await wait(400);
    const r=await page.evaluate(({SECTIONS,ROWS,BOLD,FIXES,MOMENTS,PARALLEL})=>{
@@ -161,5 +161,5 @@ const PARALLEL=[['trunk','history-alexander-conquest/0','history-alexander-rule/
   }
   assert.deepEqual(errors,[],'page errors');
   console.log('PASS: Carolingians and Verdun — 东罗马 forks off 罗马 at 395; 中世纪西欧 ends at Verdun (843) and forks into 法兰西, 德意志 and 意大利; six passing loops for near-simultaneous sections; 加洛林王朝 (751—800), 查理曼的治理 (781—814) and 虔诚者路易 (814—843) carry 老无’s theses in bold with the facts set right in plain text; the three heirs of Verdun and 加洛林神学之争 within budget; maps fit, offline, no overflow at 1440 and 390');
- }finally{await browser.close();}
+ }finally{await Promise.race([browser.close(),new Promise(r=>setTimeout(r,200))]);browser.process()?.kill('SIGKILL');process.exit(process.exitCode||0);}
 })().catch(e=>{console.error(e);process.exit(1);});

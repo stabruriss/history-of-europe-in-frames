@@ -63,7 +63,7 @@ function checkTree(r,label){
  async function pageAt(width,height,hash='#history-rome-punic/1'){
   const p=await browser.newPage();p.on('pageerror',e=>errors.push(e.message));await p.setViewport({width,height});
   await p.emulateMediaFeatures([{name:'prefers-reduced-motion',value:'reduce'}]);
-  await p.setRequestInterception(true);p.on('request',r=>/^https?:/.test(r.url())?r.abort():r.continue());
+  await p.setOfflineMode(true);await p.evaluateOnNewDocument(full=>{window.addEventListener('DOMContentLoaded',()=>{const n=document.getElementById('mapnote');if(n)n.hidden=false;if(typeof map!=='undefined'){if(typeof tiles!=='undefined')map.removeLayer(tiles);if(typeof closeTerrain!=='undefined')map.removeLayer(closeTerrain);if(!full)for(const l of Object.values(map._layers)){const kp=l.options?.pane;if(kp==='fallbackPane'||kp==='baseLabelPane'||(kp==='riverPane'&&!group.hasLayer(l))){l._project=()=>{};l._update=()=>{};l._setPos=()=>{};}}}});},process.env.FULL_SHOTS==='1');
   await p.goto(url+hash,{waitUntil:'domcontentloaded'});await p.evaluate(()=>document.fonts.ready);await wait(150);return p;
  }
  const state=p=>p.evaluate(()=>({id:ENTRIES[cur].id,scene:sceneIndex,eyebrow:document.getElementById('entryEyebrow').textContent,
@@ -265,5 +265,5 @@ function checkTree(r,label){
   }
   assert.deepEqual(errors,[]);
   console.log('PASS: history tree — 194 rows on 13 lines (希腊, 罗马, 东罗马, 中世纪西欧, 西班牙, 法兰西, 德意志, 意大利, 基督教, 埃及, 波斯—阿拉伯, 东欧, 中国) with 10 forks (东欧 off 希腊 at the Black Sea colonies, 埃及 and 波斯—阿拉伯 off the trunk at the early states, 基督教 at 前1400 on the outermost lane, 东罗马 off 罗马 at 395 and 中世纪西欧 at 476, 西班牙 off 中世纪西欧 with the Visigoths, 法兰西 and 意大利 at Verdun; 东罗马 to 1056, 基督教 through its shared stations to 1054); every earlier start sits higher; no overlapping rows, the five time slices included; nodes on their lanes; Rome beside Greece and the Hellenistic kingdoms; unwritten topics as dashed shoots; time ticks and compressed-prehistory breaks; metro lines: pick a line (button or the drawn line itself) in place, ↑↓ / 上一条 / 下一条 ride only that line in time order, line lit root-to-fork, everything else greyed; draggable, remembered, clamped column; sidebar at 1440 and 1024; expanded view with branch names; phone and short-landscape sheets; geography mode untouched; offline; no page errors.');
- }catch(e){console.error(e);process.exitCode=1;}finally{await browser.close();}
+ }catch(e){console.error(e);process.exitCode=1;}finally{await Promise.race([browser.close(),new Promise(r=>setTimeout(r,200))]);browser.process()?.kill('SIGKILL');process.exit(process.exitCode||0);}
 })();

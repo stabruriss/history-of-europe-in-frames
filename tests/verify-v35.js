@@ -89,7 +89,7 @@ const REGIONS=['mThemeOpsikion','mThemeThrakesion','mThemeAnatolikon','mThemeArm
    const page=await browser.newPage();page.on('pageerror',e=>errors.push(e.message));
    await page.setViewport({width,height});
    await page.emulateMediaFeatures([{name:'prefers-reduced-motion',value:'reduce'}]);
-   await page.setRequestInterception(true);page.on('request',r=>/^https?:/.test(r.url())?r.abort():r.continue());
+   await page.setOfflineMode(true);await page.evaluateOnNewDocument(full=>{window.addEventListener('DOMContentLoaded',()=>{const n=document.getElementById('mapnote');if(n)n.hidden=false;if(typeof map!=='undefined'){if(typeof tiles!=='undefined')map.removeLayer(tiles);if(typeof closeTerrain!=='undefined')map.removeLayer(closeTerrain);if(!full)for(const l of Object.values(map._layers)){const kp=l.options?.pane;if(kp==='fallbackPane'||kp==='baseLabelPane'||(kp==='riverPane'&&!group.hasLayer(l))){l._project=()=>{};l._update=()=>{};l._setPos=()=>{};}}}});},process.env.FULL_SHOTS==='1');
    await page.goto(pathToFileURL(target).href+'#history-empire-justinian/6',{waitUntil:'domcontentloaded'});await page.evaluate(()=>document.fonts.ready);await wait(150);
    const r=await page.evaluate(({ERAS,SHORTS,SHARED,BOLD,FIXES,CHINA,REGIONS})=>{
     const E=id=>HISTORY_ENTRIES.find(e=>e.id===id),para=(id,i)=>{const d=document.createElement('div');d.innerHTML=E(id).html;return [...d.querySelectorAll('[data-scene-text]')].at(+i);};
@@ -185,5 +185,5 @@ const REGIONS=['mThemeOpsikion','mThemeThrakesion','mThemeAnatolikon','mThemeArm
   assert.deepEqual(errors,[]);
   console.log('PASS: v35 东罗马 by dynasty — four eras (利奥与查士丁尼, 希拉克略与二十年无政府, 圣像之争时代, 马其顿) and seven dynasty sections to 1056; 查士丁尼王朝 ends with the bills beside Emperor Wu (five-row box); the councils after 641 are shared stations on 东罗马 and 基督教 (the old council sections gone, one story told once); '
    +BOLD.length+' of 老无’s sentences verbatim and bold, '+FIXES.length+' corrected mechanisms in plain text beside them; one Chinese parallel per section; ≤300 chars per scene; 东罗马 not 拜占庭; nine new teaching areas; https links; cards; eyebrows; ↑↓ along 基督教 (on through the reformers to 1054, then past the schism into the investiture contest) and 东罗马 (on into the empresses); the schism row lit on both lines; desktop and 390px; no page errors.');
- }catch(e){console.error(e);process.exitCode=1;}finally{await browser.close();}
+ }catch(e){console.error(e);process.exitCode=1;}finally{await Promise.race([browser.close(),new Promise(r=>setTimeout(r,200))]);browser.process()?.kill('SIGKILL');process.exit(process.exitCode||0);}
 })();

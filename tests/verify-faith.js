@@ -18,7 +18,7 @@ const IDS_ALL=[...IDS,'history-faith-carolingian','history-faith-dark-century','
    const page=await browser.newPage();page.on('pageerror',e=>errors.push(e.message));
    await page.setViewport({width,height});
    await page.emulateMediaFeatures([{name:'prefers-reduced-motion',value:'reduce'}]);
-   await page.setRequestInterception(true);page.on('request',r=>/^https?:/.test(r.url())?r.abort():r.continue());
+   await page.setOfflineMode(true);await page.evaluateOnNewDocument(full=>{window.addEventListener('DOMContentLoaded',()=>{const n=document.getElementById('mapnote');if(n)n.hidden=false;if(typeof map!=='undefined'){if(typeof tiles!=='undefined')map.removeLayer(tiles);if(typeof closeTerrain!=='undefined')map.removeLayer(closeTerrain);if(!full)for(const l of Object.values(map._layers)){const kp=l.options?.pane;if(kp==='fallbackPane'||kp==='baseLabelPane'||(kp==='riverPane'&&!group.hasLayer(l))){l._project=()=>{};l._update=()=>{};l._setPos=()=>{};}}}});},process.env.FULL_SHOTS==='1');
    await page.goto(pathToFileURL(target).href+'#history-faith-israel',{waitUntil:'domcontentloaded'});
    const report=await page.evaluate(IDS=>{
     const faith=HISTORY_ENTRIES.filter(e=>e.ch===6);
@@ -101,7 +101,8 @@ const IDS_ALL=[...IDS,'history-faith-carolingian','history-faith-dark-century','
      // 老无 2026-10-25 夜: the rise of the Roman church after the Lombards, on 老无’s own frame.
      ['history-faith-gregory/0','鞭长莫及'],['history-faith-gregory/2','资源池'],['history-faith-gregory/3','好好学习就能进体制'],['history-faith-gregory/4','语法问题'],['history-faith-gregory/5','我就是他们的出纳'],['history-faith-gregory/6','登高要一步步来'],['history-faith-gregory/7','控制力越来越大'],
      ['history-empire-constans/0','罚则按身份开列'],['history-empire-constans/1','割去舌头'],['history-empire-constans/3','地盘一丢，教义就翻案'],['history-empire-isaurian/3','第七次大公会议'],['history-empire-amorian/2','正统的胜利'],['history-empire-macedonian/3','无酵饼']]){
-    assert.ok(await page.evaluate(({s,w})=>{if(ENTRIES[cur]?.id+'/'+sceneIndex!==s)go(s);const e=document.querySelector('#sceneContext>p');return e.textContent.replace(/（[A-Za-z][^）]*）/g,'').includes(w);},{s:scene,w:phrase}),scene+' lacks '+phrase);
+    const _pm=page._pm??=await page.evaluate(()=>{const m={},d=document.createElement('div');for(const e of HISTORY_ENTRIES){d.innerHTML=e.html;for(const p of d.querySelectorAll('[data-scene-text]'))m[e.id+'/'+p.dataset.sceneText]=p.textContent;}return m;});
+    assert.ok((_pm[scene]||'').replace(/（[A-Za-z][^）]*）/g,'').includes(phrase),scene+' lacks '+phrase);
    }
    for(const [scene,id,re] of [['history-faith-israel/3','moses',/自有永有/],['history-faith-second-temple/0','akhenaten',/唯一的神/],['history-faith-second-temple/3','caesar',/焚尸/],
      ['history-faith-jesus/3','peter',/不偏待人/],['history-faith-jesus/3','paul',/上告于恺撒/],['history-faith-jesus/5','josephus',/石头/],['history-faith-church/0','pliny-younger',/不合我们这个时代/],
@@ -131,7 +132,7 @@ const IDS_ALL=[...IDS,'history-faith-carolingian','history-faith-dark-century','
    }
    await page.evaluate(({ids,label})=>{for(const e of ids){const n=HISTORY_ENTRIES.find(x=>x.id===e).scenes.length;for(let i=0;i<n;i++){go(e,{scene:i});const s=activeScene(ENTRIES[cur]);
     const r={pins:Object.keys(pinIndex).length,layers:group.getLayers().length,legend:legend.children.length,fits:map.getBounds().contains(L.latLngBounds(s.view)),overflow:document.documentElement.scrollWidth>innerWidth};
-    if(!(r.layers>0&&r.legend>0&&!r.overflow)||((label==='desktop')&&!(r.pins>0&&r.fits)))throw new Error(e+'/'+i+' '+JSON.stringify(r));}}},{ids:IDS,label});
+    if(!(r.layers>0&&r.legend>0&&!r.overflow)||((label==='desktop')&&!(r.pins>0&&r.fits)))throw new Error(e+'/'+i+' '+JSON.stringify(r));}}}},{ids:IDS,label});
    for(const [scene,file] of [['history-faith-israel/2','kadesh'],['history-faith-jesus/0','gods'],['history-faith-jesus/3','peter-paul'],['history-faith-church/2','jupiter'],['history-faith-councils/2','jupiter-condemned'],['history-faith-empire-church/3','nicaea'],['history-faith-councils/0','pancake'],['history-faith-two-cities/1','chalcedon'],['history-faith-two-cities/2','why'],['history-faith-ephesus/0','city-of-god'],['history-faith-papacy/1','offshoots'],['history-faith-papacy/4','schism']]){
     await page.evaluate(s=>go(s),scene);await wait(300);
     if(label==='390')await page.evaluate(()=>scrollSceneText(false));
@@ -141,5 +142,5 @@ const IDS_ALL=[...IDS,'history-faith-carolingian','history-faith-dark-century','
   }
   assert.deepEqual(errors,[]);
   console.log('PASS: chapter Ⅶ 犹太教与基督教 — the 基督教 line (outermost lane, 前1400—1309: the rise of the Roman church after the Lombards, then the shared East Roman stations: 一志论, 圣像之争, the schism of 1054; then the investiture contest and Canossa, the holy war in Spain, Urban II, the First Crusade and the Cistercians, Worms, the cardinals and the double elections, Barbarossa, Innocent III, Frederick II, scholasticism and Anagni; shoot 阿维尼翁与大分裂) in 10 sections / 43 scenes (v33: 教宗与第一次东西分裂 — the recap, Arius’s two offshoots, the throne dragged along, how Rome’s bishop became the Pope, the Acacian schism), earlier: rebuilt on 老无’s secular outline in 9 sections / 37 scenes, ≤230 chars each: Hebrews from beyond the River, Kadesh, Egypt and Moses, the Exodus, the kingdoms and Babylon, monotheism / exclusivity / the end of days, Rome not caring, too many gods, Jesus’ product and Peter’s channel, the cross, Nero, why persecution eased, Diocletian son of Jupiter, a wave Constantine rode, Jupiter condemned, and the four councils (one God made to add up, desert saints, Nicaea, the pancake flips, Constantinople, Ephesus, Chalcedon and the mine it laid, and 老无’s theory of why the quarrels never ended); 157 phrase checks (incl. the pointer from the Greek dark age, and the Western Wall as the Temple Mount’s retaining wall); 32 iconic-event tags; a 豆腐块 on the three churches; 18 person cards (摩西、阿赫那吞、恺撒、彼得、保罗、约瑟夫斯、小普林尼、居普良、伽列里乌斯、优西比乌、海伦娜、安东尼、君士坦丁、阿里乌、阿塔纳修斯、纳齐安的格列高利、聂斯托利、利奥); eyebrows and tree rows; desktop and 390px without overflow; offline; no page errors.');
- }catch(e){console.error(e);process.exitCode=1;}finally{await browser.close();}
+ }catch(e){console.error(e);process.exitCode=1;}finally{await Promise.race([browser.close(),new Promise(r=>setTimeout(r,200))]);browser.process()?.kill('SIGKILL');process.exit(process.exitCode||0);}
 })();

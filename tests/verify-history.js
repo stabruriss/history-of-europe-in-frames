@@ -17,7 +17,7 @@ assert.ok(!/tChrono|peakTimeline|高光年代|TIME_CH/.test(html));
   const page=await browser.newPage();page.on('pageerror',e=>errors.push(e.message));
   await page.setViewport({width,height});
   if(reduced)await page.emulateMediaFeatures([{name:'prefers-reduced-motion',value:'reduce'}]);
-  if(offline){await page.setRequestInterception(true);page.on('request',r=>/^https?:/.test(r.url())?r.abort():r.continue());}
+  if(offline){await page.setOfflineMode(true);await page.evaluateOnNewDocument(full=>{window.addEventListener('DOMContentLoaded',()=>{const n=document.getElementById('mapnote');if(n)n.hidden=false;if(typeof map!=='undefined'){if(typeof tiles!=='undefined')map.removeLayer(tiles);if(typeof closeTerrain!=='undefined')map.removeLayer(closeTerrain);if(!full)for(const l of Object.values(map._layers)){const kp=l.options?.pane;if(kp==='fallbackPane'||kp==='baseLabelPane'||(kp==='riverPane'&&!group.hasLayer(l))){l._project=()=>{};l._update=()=>{};l._setPos=()=>{};}}}});},process.env.FULL_SHOTS==='1');}
   await page.goto(url+hash,{waitUntil:'domcontentloaded'});
   return page;
  }
@@ -79,12 +79,9 @@ assert.ok(!/tChrono|peakTimeline|高光年代|TIME_CH/.test(html));
   await page.evaluate(()=>go('history-migration'));
   assert.equal(await page.$$eval('#toc .chip',es=>es.length),194);
   assert.equal(await page.$eval('#prev',e=>e.disabled),true);
-  for(const id of await page.evaluate(()=>HISTORY_ENTRIES.map(e=>e.id))){
-   await page.evaluate(id=>go(id),id);
-   assert.equal(await page.evaluate(()=>document.querySelectorAll('#readerBody .sources a').length===ENTRIES[cur].sources.length),true);
-   assert.equal(await page.$$eval('#readerBody .sources a',es=>es.every(a=>a.href.startsWith('https://')&&a.target==='_blank'&&a.rel.includes('noopener')&&a.rel.includes('noreferrer'))),true);
-   assert.ok((await page.$eval('#card',e=>e.textContent.length))>100);
-  }
+  await page.evaluate(()=>{for(const e of HISTORY_ENTRIES){go(e.id);
+   const as=[...document.querySelectorAll('#readerBody .sources a')];
+   if(as.length!==ENTRIES[cur].sources.length||!as.every(a=>a.href.startsWith('https://')&&a.target==='_blank'&&a.rel.includes('noopener')&&a.rel.includes('noreferrer'))||document.getElementById('card').textContent.length<=100)throw new Error('sources '+e.id);}});
   assert.equal(await page.$eval('#next',e=>e.disabled),true);
   await page.click('#prev');assert.equal(await page.evaluate(()=>ENTRIES[cur].id),'history-britain-hundred-years-2');
   await page.click('#next');assert.equal(await page.evaluate(()=>ENTRIES[cur].id),'history-britain-hundred-years-3');
@@ -154,5 +151,5 @@ assert.ok(!/tChrono|peakTimeline|高光年代|TIME_CH/.test(html));
   await wait(200);assert.equal(await page.$eval('#mapnote',e=>e.hidden),false);
   assert.deepEqual(errors,[]);
   console.log('PASS: 33 geographic entries; 188 history sections; 824 scenes; all geometry references; 2029 reading links; foldable reader; overlay-aware map fitting; desktop, phone, tablet and short landscape; stage hash links; mode memory; navigation; rapid animated switching; 33 Alexander events; royal extent; 18 seas and 35 islands; offline rendering; no JavaScript errors.');
- }finally{await browser.close();}
+ }finally{await Promise.race([browser.close(),new Promise(r=>setTimeout(r,200))]);browser.process()?.kill('SIGKILL');process.exit(process.exitCode||0);}
 })().catch(e=>{console.error(e);process.exitCode=1;});

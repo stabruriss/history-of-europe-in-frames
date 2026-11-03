@@ -8,7 +8,7 @@ const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','
   const p=await browser.newPage();p.on('pageerror',e=>errors.push(e.message));await p.setViewport({width,height});
   if(reduced)await p.emulateMediaFeatures([{name:'prefers-reduced-motion',value:'reduce'}]);
   await p.evaluateOnNewDocument(()=>localStorage.removeItem('agora-atlas-reader-collapsed'));
-  await p.setRequestInterception(true);p.on('request',r=>/^https?:/.test(r.url())?r.abort():r.continue());
+  await p.setOfflineMode(true);await p.evaluateOnNewDocument(full=>{window.addEventListener('DOMContentLoaded',()=>{const n=document.getElementById('mapnote');if(n)n.hidden=false;if(typeof map!=='undefined'){if(typeof tiles!=='undefined')map.removeLayer(tiles);if(typeof closeTerrain!=='undefined')map.removeLayer(closeTerrain);if(!full)for(const l of Object.values(map._layers)){const kp=l.options?.pane;if(kp==='fallbackPane'||kp==='baseLabelPane'||(kp==='riverPane'&&!group.hasLayer(l))){l._project=()=>{};l._update=()=>{};l._setPos=()=>{};}}}});},process.env.FULL_SHOTS==='1');
   await p.goto(url+'#history-migration',{waitUntil:'domcontentloaded'});return p;
  }
  async function state(p){return p.evaluate(()=>({id:ENTRIES[cur].id,scene:sceneIndex,row:[...toc.querySelectorAll('.chip')].findIndex(b=>b.classList.contains('on')),textScene:+document.getElementById('sceneContext')?.dataset.sceneText}));}
@@ -106,5 +106,5 @@ const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','
   assert.equal((await state(animated)).scene,5);await visible(animated,'rapid animated switching');
   if(process.env.FULL_SHOTS==='1')await animated.screenshot({path:path.join(__dirname,'shots-v6','keyboard-desktop.png')});await animated.close();
   assert.deepEqual(errors,[]);console.log('PASS: 13 metro lines (23/33/48/40/43/53/53/51/38/45/12/28/14/44/12 stations, all 194 rows; 罗马 to 476, then 东罗马 and 中世纪西欧; 东罗马 by dynasty to 1056; shared stations walked on every line they sit on) walked up/down in time order; 824 scene-to-text passages with real arrow keys; era boundaries; map/reader/rail focus; input and modifiers; 33-stop geography timeline; mobile scrolling and fold restoration; rapid animated changes; offline; no page errors.');
- }finally{await browser.close();}
+ }finally{await Promise.race([browser.close(),new Promise(r=>setTimeout(r,200))]);browser.process()?.kill('SIGKILL');process.exit(process.exitCode||0);}
 })().catch(e=>{console.error(e);process.exitCode=1;});

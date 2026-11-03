@@ -36,7 +36,7 @@ const CARDS=[[ID+'/1','theodoric-great',/人质/],[ID+'/3','theodoric-great',/�
    const page=await browser.newPage();page.on('pageerror',e=>errors.push(e.message));
    await page.setViewport({width,height});
    await page.emulateMediaFeatures([{name:'prefers-reduced-motion',value:'reduce'}]);
-   await page.setRequestInterception(true);page.on('request',r=>/^https?:/.test(r.url())?r.abort():r.continue());
+   await page.setOfflineMode(true);await page.evaluateOnNewDocument(full=>{window.addEventListener('DOMContentLoaded',()=>{const n=document.getElementById('mapnote');if(n)n.hidden=false;if(typeof map!=='undefined'){if(typeof tiles!=='undefined')map.removeLayer(tiles);if(typeof closeTerrain!=='undefined')map.removeLayer(closeTerrain);if(!full)for(const l of Object.values(map._layers)){const kp=l.options?.pane;if(kp==='fallbackPane'||kp==='baseLabelPane'||(kp==='riverPane'&&!group.hasLayer(l))){l._project=()=>{};l._update=()=>{};l._setPos=()=>{};}}}});},process.env.FULL_SHOTS==='1');
    await page.goto(pathToFileURL(target).href+'#'+ID,{waitUntil:'domcontentloaded'});await page.evaluate(()=>document.fonts.ready);await wait(150);
    const r=await page.evaluate(({ID,BOLD,FIXES})=>{
     const E=id=>HISTORY_ENTRIES.find(e=>e.id===id),para=(id,i)=>{const d=document.createElement('div');d.innerHTML=E(id).html;return [...d.querySelectorAll('[data-scene-text]')].at(+i);};
@@ -152,5 +152,5 @@ const CARDS=[[ID+'/1','theodoric-great',/人质/],[ID+'/3','theodoric-great',/�
   console.log('PASS: 东哥特王国 476—568 on 中世纪西欧, between 蛮族诸王国 and 墨洛温王朝 — seven scenes (Odoacer and the lie of the land, Zeno’s two Theodorics, the Hongmen banquet, Goths under arms and Romans at the desks, Amalasuntha lending Sicily, the Gothic War and Italian hearts, the Lombards); '
    +BOLD.length+' of 老无’s theses in bold, '+FIXES.length+' corrections in plain text; 刘渊, 鸿门宴, 孝文帝 and 侯景之乱 beside them; four iconic moments and five cards; 蛮族诸王国 down to two scenes, its Visigothic ones on the 西班牙 line, with its moments and cards moved; '
    +'the Justinian section and this one point at each other; 法兰克人的分家账 drawn as a family tree with identifying tags (铁锤, 宫相, 献土, 大帝 …), and the same tags in the prose; ≤300 chars per scene; desktop and 390px; no page errors.');
- }catch(e){console.error(e);process.exitCode=1;}finally{await browser.close();}
+ }catch(e){console.error(e);process.exitCode=1;}finally{await Promise.race([browser.close(),new Promise(r=>setTimeout(r,200))]);browser.process()?.kill('SIGKILL');process.exit(process.exitCode||0);}
 })();

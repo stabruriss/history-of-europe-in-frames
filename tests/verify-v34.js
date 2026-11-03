@@ -44,7 +44,7 @@ const BOLD=[['history-faith-three-chapters/1','教义之争背后的权力格局
    const page=await browser.newPage();page.on('pageerror',e=>errors.push(e.message));
    await page.setViewport({width,height});
    await page.emulateMediaFeatures([{name:'prefers-reduced-motion',value:'reduce'}]);
-   await page.setRequestInterception(true);page.on('request',r=>/^https?:/.test(r.url())?r.abort():r.continue());
+   await page.setOfflineMode(true);await page.evaluateOnNewDocument(full=>{window.addEventListener('DOMContentLoaded',()=>{const n=document.getElementById('mapnote');if(n)n.hidden=false;if(typeof map!=='undefined'){if(typeof tiles!=='undefined')map.removeLayer(tiles);if(typeof closeTerrain!=='undefined')map.removeLayer(closeTerrain);if(!full)for(const l of Object.values(map._layers)){const kp=l.options?.pane;if(kp==='fallbackPane'||kp==='baseLabelPane'||(kp==='riverPane'&&!group.hasLayer(l))){l._project=()=>{};l._update=()=>{};l._setPos=()=>{};}}}});},process.env.FULL_SHOTS==='1');
    await page.goto(pathToFileURL(target).href+'#history-empire-heraclius',{waitUntil:'domcontentloaded'});await page.evaluate(()=>document.fonts.ready);await wait(150);
    const r=await page.evaluate(({OWN,SHARED,BOLD})=>{
     const B=Object.fromEntries(HISTORY_BRANCHES.map(b=>[b.id,b])),own=id=>lineStations(id).filter(s=>s.lines.includes(id)).map(s=>s.id);
@@ -156,5 +156,5 @@ const BOLD=[['history-faith-three-chapters/1','教义之争背后的权力格局
   }
   assert.deepEqual(errors,[]);
   console.log('PASS: v34 tree, as rearranged 2026-10-27 and 2026-10-28 — thirteen lines (东欧 forks off 希腊 at the Black Sea colonies and runs to 1054; 西班牙 forks off 中世纪西欧 and runs to 1123; 波斯 is 波斯—阿拉伯, to 1099; 希腊 ends by running into 罗马; 东罗马 forks off 罗马 at 395; 罗马 ends with the West in 476 and carries on as 中世纪西欧, which ends at Verdun in 843 and forks into 法兰西, 德意志 and 意大利; 东罗马 stays 东罗马, now to the First Crusade, 1099); every line ends with an event or a shoot; 希拉克略王朝 and 阿拉伯征服 are shared stations on 东罗马, 波斯—阿拉伯 and 埃及, one row and one set of scenes, lit together; 老无’s words verbatim and bold (the 一志论 and 圣像之争 ones now on the East Roman dynasties); cross-line pointers by the new names; desktop and 390px; no page errors.');
- }catch(e){console.error(e);process.exitCode=1;}finally{await browser.close();}
+ }catch(e){console.error(e);process.exitCode=1;}finally{await Promise.race([browser.close(),new Promise(r=>setTimeout(r,200))]);browser.process()?.kill('SIGKILL');process.exit(process.exitCode||0);}
 })();

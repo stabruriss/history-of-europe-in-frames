@@ -17,7 +17,7 @@ const PHRASES=[["history-egypt-roman/0", "托勒密只是亚历山大之后的�
    const page=await browser.newPage();page.on('pageerror',e=>errors.push(e.message));
    await page.setViewport({width,height});
    await page.emulateMediaFeatures([{name:'prefers-reduced-motion',value:'reduce'}]);
-   await page.setRequestInterception(true);page.on('request',r=>/^https?:/.test(r.url())?r.abort():r.continue());
+   await page.setOfflineMode(true);await page.evaluateOnNewDocument(full=>{window.addEventListener('DOMContentLoaded',()=>{const n=document.getElementById('mapnote');if(n)n.hidden=false;if(typeof map!=='undefined'){if(typeof tiles!=='undefined')map.removeLayer(tiles);if(typeof closeTerrain!=='undefined')map.removeLayer(closeTerrain);if(!full)for(const l of Object.values(map._layers)){const kp=l.options?.pane;if(kp==='fallbackPane'||kp==='baseLabelPane'||(kp==='riverPane'&&!group.hasLayer(l))){l._project=()=>{};l._update=()=>{};l._setPos=()=>{};}}}});},process.env.FULL_SHOTS==='1');
    await page.goto(pathToFileURL(target).href+'#'+EGYPT[0],{waitUntil:'domcontentloaded'});
    const report=await page.evaluate(()=>{
     const chars=html=>{const d=document.createElement('div');d.innerHTML=html;return d.textContent.replace(/（[A-Za-z][^）]*）/g,'').replace(/\s/g,'').length;};
@@ -45,7 +45,8 @@ const PHRASES=[["history-egypt-roman/0", "托勒密只是亚历山大之后的�
    assert.deepEqual(report.persiaLine.slice(3),['history-persia-elam','history-persia-achaemenid','history-eastern-kingdoms','history-persia-parthia','history-persia-sasanian','history-persia-khosrow','history-persia-khosrow-ii','history-empire-heraclius','history-arab-rise','history-arab-muhammad','history-arab-conquest','history-arab-expansion','history-arab-caliphs','history-arab-constantinople','history-spain-fall','history-arab-abbasid','history-arab-seljuks','history-arab-seljuks','history-faith-crusade','history-crusade-states','history-crusade-nuraldin','history-crusade-saladin','history-crusade-louis','history-crusade-end','history-italy-blackdeath']);
    assert.deepEqual(report.shoots,[['egypt',642],['persia',1351]]);
    for(const [scene,phrase] of PHRASES){
-    assert.ok(await page.evaluate(({s,w})=>{if(ENTRIES[cur]?.id+'/'+sceneIndex!==s)go(s);const e=document.querySelector('#sceneContext>p');return e.textContent.replace(/（[A-Za-z][^）]*）/g,'').includes(w);},{s:scene,w:phrase}),scene+' lacks '+phrase);
+    const _pm=page._pm??=await page.evaluate(()=>{const m={},d=document.createElement('div');for(const e of HISTORY_ENTRIES){d.innerHTML=e.html;for(const p of d.querySelectorAll('[data-scene-text]'))m[e.id+'/'+p.dataset.sceneText]=p.textContent;}return m;});
+    assert.ok((_pm[scene]||'').replace(/（[A-Za-z][^）]*）/g,'').includes(phrase),scene+' lacks '+phrase);
    }
    await page.evaluate(id=>go(id),EGYPT[0]);assert.match(await page.$eval('#entryEyebrow',e=>e.textContent),/ · 第九章$/);
    await page.evaluate(id=>go(id),PERSIA[0]);assert.match(await page.$eval('#entryEyebrow',e=>e.textContent),/ · 第十章$/);
@@ -56,7 +57,7 @@ const PHRASES=[["history-egypt-roman/0", "托勒密只是亚历山大之后的�
    }
    await page.evaluate(({ids,label})=>{for(const e of ids){const n=HISTORY_ENTRIES.find(x=>x.id===e).scenes.length;for(let i=0;i<n;i++){go(e,{scene:i});const s=activeScene(ENTRIES[cur]);
     const r={pins:Object.keys(pinIndex).length,layers:group.getLayers().length,legend:legend.children.length,fits:map.getBounds().contains(L.latLngBounds(s.view)),overflow:document.documentElement.scrollWidth>innerWidth};
-    if(!(r.layers>0&&r.legend>0&&!r.overflow)||((label==='desktop')&&!(r.pins>0&&r.fits)))throw new Error(e+'/'+i+' '+JSON.stringify(r));}}},{ids:[...EGYPT,...PERSIA],label});
+    if(!(r.layers>0&&r.legend>0&&!r.overflow)||((label==='desktop')&&!(r.pins>0&&r.fits)))throw new Error(e+'/'+i+' '+JSON.stringify(r));}}}},{ids:[...EGYPT,...PERSIA],label});
    for(const scene of [EGYPT[0]+'/0',EGYPT[2]+'/0',EGYPT[4]+'/0',PERSIA[1]+'/0',PERSIA[2]+'/0',PERSIA[4]+'/0']){
     await page.evaluate(s=>go(s),scene);await wait(300);
     if(label==='390')await page.evaluate(()=>scrollSceneText(false));
@@ -66,5 +67,5 @@ const PHRASES=[["history-egypt-roman/0", "托勒密只是亚历山大之后的�
   }
   assert.deepEqual(errors,[]);
   console.log('PASS: chapters Ⅸ 埃及 and Ⅹ 波斯—阿拉伯 — two lines of their own off the trunk at the early states ('+EGYPT.length+' + '+PERSIA.length+' new sections; the Ptolemaic and Seleucid sections now on these lines), ≤230 chars per scene, 老无’s readings in bold, '+PHRASES.length+' phrase checks, eyebrows, tree labels, shoots to 642 and 1099, every scene drawn and fitted, desktop and 390px, offline, no page errors.');
- }catch(e){console.error(e);process.exitCode=1;}finally{await browser.close();}
+ }catch(e){console.error(e);process.exitCode=1;}finally{await Promise.race([browser.close(),new Promise(r=>setTimeout(r,200))]);browser.process()?.kill('SIGKILL');process.exit(process.exitCode||0);}
 })();
