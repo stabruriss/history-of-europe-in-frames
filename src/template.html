@@ -188,6 +188,17 @@ path.route{transition:stroke-dashoffset 5.5s cubic-bezier(.45,.05,.4,1)}
   #card{scroll-behavior:auto}
 }
 /*__LAYOUT_CSS__*/
+/* The reader's width: see the script after #mapwrap. The map always keeps 332px, which leaves the legend uncovered. */
+@media(min-width:821px){#reader:not(.collapsed){width:clamp(280px,var(--reader),calc(100% - 332px))}}
+#readerGrip{position:absolute;top:0;left:-7px;width:12px;height:100%;cursor:col-resize;z-index:5;touch-action:none}
+#readerGrip::before{content:'';position:absolute;left:3px;top:50%;width:6px;height:38px;margin-top:-19px;border:1px solid rgba(179,153,107,.95);border-radius:3px;background:var(--paper);box-shadow:0 1px 3px rgba(48,33,15,.25)}
+#readerGrip::after{content:'';position:absolute;left:5px;top:0;bottom:0;width:2px;background:var(--accent);opacity:0;transition:opacity .15s}
+#readerGrip:hover::after,#readerGrip:focus-visible::after,body.resizing-reader #readerGrip::after{opacity:.55}
+#readerGrip:focus-visible{outline:none}
+#reader.collapsed #readerGrip{display:none}
+body.resizing-reader{cursor:col-resize;user-select:none}
+body.resizing-reader #map{pointer-events:none}
+@media(max-width:820px){#readerGrip{display:none}}
 </style>
 </head>
 <body>
@@ -219,6 +230,55 @@ path.route{transition:stroke-dashoffset 5.5s cubic-bezier(.45,.05,.4,1)}
   <div id="mapnote" role="status" title="部分地形瓦片未载入。区域、路线与文字仍可使用；联网后刷新可显示地形。" hidden>部分地形未载入<br>示意与文字可用</div>
 </main>
 
+<script>
+/* Drag the reader's left edge to set its width. Arrow keys nudge it, double-click or Enter restores it, and the browser remembers it.
+   This sits in the template because work/v35/build_v35.py regenerates atlas_ui.js and layout.css from its backup.
+   It runs before atlas_ui.js so the first map fit sees the remembered width; fit, cur and ENTRIES are that script's, used only after load. */
+{
+  const pane=document.getElementById('reader'),scroller=document.getElementById('readerBody'),text=document.getElementById('card'),stage=document.getElementById('mapwrap');
+  const vars=document.documentElement.style,KEY='agora-atlas-reader-width';
+  const grip=document.createElement('div');grip.id='readerGrip';grip.tabIndex=0;
+  for(const [k,v] of Object.entries({role:'separator','aria-orientation':'vertical','aria-controls':'reader','aria-label':'拖动调整正文宽度（双击复原）',title:'拖动调整宽度 · 双击复原','aria-valuemin':280}))grip.setAttribute(k,v);
+  pane.appendChild(grip);
+  const width=()=>Math.round(pane.getBoundingClientRect().width);
+  const syncAria=()=>{grip.setAttribute('aria-valuemax',Math.max(280,stage.clientWidth-332));grip.setAttribute('aria-valuenow',width());};
+  const setWidth=(w,settled=true)=>{
+    // The text reflows, so hold on to whatever sits at the top of the panel.
+    const edge=scroller.getBoundingClientRect();
+    const anchor=document.elementFromPoint(edge.left+edge.width/2,edge.top+1)?.closest('#card *')||text;
+    const was=anchor.getBoundingClientRect(),past=was.height?(edge.top-was.top)/was.height:0;
+    if(w===null)vars.removeProperty('--reader');
+    else{vars.setProperty('--reader',Math.round(w)+'px');vars.setProperty('--reader',width()+'px');}  // Read back what the stylesheet's clamp allowed.
+    const now=anchor.getBoundingClientRect();
+    scroller.scrollTo({top:scroller.scrollTop+now.top+past*now.height-scroller.getBoundingClientRect().top,behavior:'instant'});
+    syncAria();
+    if(!settled)return;
+    if(cur>=0)fit(ENTRIES[cur],false);
+    try{if(w===null)localStorage.removeItem(KEY);else localStorage.setItem(KEY,String(width()));}catch{}
+  };
+  grip.addEventListener('pointerdown',ev=>{
+    if(ev.button!==0)return;ev.preventDefault();grip.setPointerCapture(ev.pointerId);document.body.classList.add('resizing-reader');
+    const startX=ev.clientX,startWidth=width(),widthAt=x=>startWidth+startX-x;
+    let frame=0,x=startX,moved=false;
+    const move=e=>{x=e.clientX;moved=true;if(!frame)frame=requestAnimationFrame(()=>{frame=0;setWidth(widthAt(x),false);});};
+    const up=()=>{
+      grip.removeEventListener('pointermove',move);grip.removeEventListener('pointerup',up);grip.removeEventListener('pointercancel',up);
+      cancelAnimationFrame(frame);document.body.classList.remove('resizing-reader');
+      if(moved)setWidth(widthAt(x));
+    };
+    grip.addEventListener('pointermove',move);grip.addEventListener('pointerup',up);grip.addEventListener('pointercancel',up);
+  });
+  grip.ondblclick=()=>setWidth(null);
+  grip.onkeydown=ev=>{
+    const step=ev.shiftKey?64:16,target={ArrowLeft:width()+step,ArrowRight:width()-step,Home:0,End:1e5}[ev.key];
+    if(target!==undefined){ev.preventDefault();setWidth(target);}
+    else if(ev.key==='Enter'){ev.preventDefault();setWidth(null);}
+  };
+  grip.addEventListener('focus',syncAria);
+  try{const saved=Number(localStorage.getItem(KEY));if(saved>0)vars.setProperty('--reader',saved+'px');}catch{}
+  syncAria();
+}
+</script>
 <script>/*__LEAFLET_JS__*/</script>
 <script>const GEO = /*__GEO__*/;
 Object.assign(GEO.regions, /*__HISTORY_GEO__*/);</script>
@@ -339,7 +399,7 @@ const ENTRIES = [
   <p>“历史进程”从<b>上古与黑暗时代</b>进入<b>希腊城邦时代</b>，本次读到马其顿兴起。每节下方的阶段按钮会切换相关范围、路线和地点。部分阶段附有<b>人物小方块</b>：点开可看生平、当时的小事与参考资料，也可定位到相关城市。</p>
   <p class="see"><a data-go="history-migration">开始阅读历史 →</a></p>
   <div class="lao">山海是舞台，路线是联系，色块要带着年代看。老夫陪你一段段往下读。</div>
-  <p class="hint">可随时收起说明，把空间留给地图；展开后，正文与参考链接仍在这里。← → 切换当前目录的条目，手机可用上方菜单选节。</p>
+  <p class="hint">可随时收起说明，把空间留给地图，也可拖动说明左缘调宽度；展开后，正文与参考链接仍在这里。← → 切换当前目录的条目，手机可用上方菜单选节。</p>
   <p class="hint"><b>读图须知</b>：色块是教学用概略区域；贸易网络、同盟与迁徙路线不等于国界。古代岸线与河道也与今天不同。现代国界仅供定位对照，不能由古代范围反推现代归属。</p>
   <section class="sources"><h3>底图与地理参考</h3>
   <a href="https://www.naturalearthdata.com/" target="_blank" rel="noopener noreferrer">Natural Earth · 陆地、水系与现代国界</a>
