@@ -706,74 +706,74 @@
    "德意志",
    "west",
    843,
-   1494,
+   1500,
    4
   ],
   "italy": [
    "意大利",
    "west",
    843,
-   1351,
+   1494,
    3
   ],
   "spain": [
    "西班牙",
    "west",
    481,
-   1123,
+   1498,
    5
   ],
   "faith": [
    "基督教",
    "trunk",
    -1400,
-   1449,
+   1453,
    7
   ],
   "east": [
    "东罗马",
    "rome",
    395,
-   1099,
+   1453,
    2
   ],
   "persia": [
    "波斯—阿拉伯",
    "trunk",
    -3200,
-   1351,
+   1501,
    0
   ]
  },
  "futures": [
   [
    "germany",
-   1494,
+   1500,
    "选帝侯与哈布斯堡"
   ],
   [
    "italy",
-   1351,
+   1494,
    "城市共和国与文艺复兴"
   ],
   [
    "faith",
-   1449,
+   1453,
    "宗教改革"
   ],
   [
    "spain",
-   1123,
+   1498,
    "收复失地运动"
   ],
   [
    "east",
-   1099,
+   1453,
    "科穆宁王朝"
   ],
   [
    "persia",
-   1351,
+   1501,
    "伊儿汗国与马穆鲁克"
   ]
  ],
@@ -793,7 +793,8 @@
    "history-germany-electors/0",
    "history-italy-blackdeath/0",
    "history-germany-golden-bull/0",
-   "history-germany-hansa/0"
+   "history-germany-hansa/0",
+   "history-lowlands-burgundy/0"
   ],
   "italy": [
    "history-germany-otto/0",
@@ -805,7 +806,11 @@
    "history-germany-innocent/0",
    "history-germany-frederick2/0",
    "history-italy-vespers/0",
-   "history-italy-blackdeath/0"
+   "history-italy-blackdeath/0",
+   "history-italy-venice/0",
+   "history-italy-condottieri/0",
+   "history-empire-fall-1453/0",
+   "history-italy-renaissance/0"
   ],
   "faith": [
    "history-faith-leo-ix/0",
@@ -828,19 +833,27 @@
    "history-faith-clement/0",
    "history-italy-blackdeath/0",
    "history-faith-schism/0",
-   "history-faith-constance/0"
+   "history-faith-constance/0",
+   "history-empire-fall-1453/0"
   ],
   "spain": [
    "history-spain-andalus/0",
    "history-spain-taifas/0",
-   "history-spain-crusade/0"
+   "history-spain-crusade/0",
+   "history-spain-reconquista/0",
+   "history-spain-aragon/0",
+   "history-spain-1492/0"
   ],
   "east": [
    "history-empire-macedonian/3",
    "history-empire-zoe/0",
    "history-arab-seljuks/3",
    "history-empire-alexios/0",
-   "history-faith-crusade/0"
+   "history-faith-crusade/0",
+   "history-empire-komnenos/0",
+   "history-crusade-fourth/0",
+   "history-empire-palaiologos/0",
+   "history-empire-fall-1453/0"
   ],
   "persia": [
    "history-arab-abbasid/0",
@@ -850,9 +863,13 @@
    "history-crusade-states/0",
    "history-crusade-nuraldin/0",
    "history-crusade-saladin/0",
+   "history-persia-mongols/0",
    "history-crusade-louis/0",
    "history-crusade-end/0",
-   "history-italy-blackdeath/0"
+   "history-italy-blackdeath/0",
+   "history-persia-timur/0",
+   "history-empire-fall-1453/0",
+   "history-persia-ottoman/0"
   ]
  },
  "shared": {

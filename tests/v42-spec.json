@@ -478,38 +478,38 @@
    "德意志",
    "west",
    843,
-   1494,
+   1500,
    4
   ],
   "italy": [
    "意大利",
    "west",
    843,
-   1351,
+   1494,
    3
   ],
   "faith": [
    "基督教",
    "trunk",
    -1400,
-   1449,
+   1453,
    7
   ]
  },
  "futures": [
   [
    "germany",
-   1494,
+   1500,
    "选帝侯与哈布斯堡"
   ],
   [
    "italy",
-   1351,
+   1494,
    "城市共和国与文艺复兴"
   ],
   [
    "faith",
-   1449,
+   1453,
    "宗教改革"
   ]
  ],
@@ -525,7 +525,8 @@
    "history-germany-electors/0",
    "history-italy-blackdeath/0",
    "history-germany-golden-bull/0",
-   "history-germany-hansa/0"
+   "history-germany-hansa/0",
+   "history-lowlands-burgundy/0"
   ],
   "italy": [
    "history-italy-normans/0",
@@ -536,7 +537,11 @@
    "history-germany-innocent/0",
    "history-germany-frederick2/0",
    "history-italy-vespers/0",
-   "history-italy-blackdeath/0"
+   "history-italy-blackdeath/0",
+   "history-italy-venice/0",
+   "history-italy-condottieri/0",
+   "history-empire-fall-1453/0",
+   "history-italy-renaissance/0"
   ],
   "faith": [
    "history-faith-citeaux/0",
@@ -552,7 +557,8 @@
    "history-faith-clement/0",
    "history-italy-blackdeath/0",
    "history-faith-schism/0",
-   "history-faith-constance/0"
+   "history-faith-constance/0",
+   "history-empire-fall-1453/0"
   ]
  },
  "shared": {

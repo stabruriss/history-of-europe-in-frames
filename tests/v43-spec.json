@@ -54,10 +54,40 @@
    6,
    5
   ],
+  "history-lowlands-flanders": [
+   "低地：围海与金马刺",
+   "843—1384年",
+   5,
+   5
+  ],
+  "history-lowlands-burgundy": [
+   "勃艮第尼德兰与哈布斯堡",
+   "1363—1500年",
+   6,
+   5
+  ],
   "history-italy-vespers": [
    "西西里晚祷",
    "1266—1302年",
    5,
+   5
+  ],
+  "history-italy-venice": [
+   "威尼斯与热那亚",
+   "约1204—1400年",
+   5,
+   5
+  ],
+  "history-italy-condottieri": [
+   "雇佣兵与米兰霸权",
+   "约1300—1454年",
+   5,
+   5
+  ],
+  "history-italy-renaissance": [
+   "美第奇与文艺复兴",
+   "约1300—1494年",
+   6,
    5
   ],
   "history-faith-scholasticism": [
@@ -164,12 +194,48 @@
    1438,
    1494
   ],
+  "history-lowlands-flanders/0": [
+   [
+    "lowlands"
+   ],
+   1300,
+   1384
+  ],
+  "history-lowlands-burgundy/0": [
+   [
+    "lowlands",
+    "germany"
+   ],
+   1495,
+   1500
+  ],
   "history-italy-vespers/0": [
    [
     "italy"
    ],
    1282,
    1302
+  ],
+  "history-italy-venice/0": [
+   [
+    "italy"
+   ],
+   1353,
+   1400
+  ],
+  "history-italy-condottieri/0": [
+   [
+    "italy"
+   ],
+   1402,
+   1449
+  ],
+  "history-italy-renaissance/0": [
+   [
+    "italy"
+   ],
+   1454,
+   1494
   ],
   "history-faith-scholasticism/0": [
    [
@@ -431,6 +497,50 @@
    "当荷兰船队在海上抢走生意、英俄与北欧各国又相继完成王权集权并用国家力量排挤汉萨特"
   ],
   [
+   "history-lowlands-flanders/0",
+   "843年《凡尔登条约》三分法兰克后，莱茵河、默兹河与斯海尔德河入海口的泥滩沼泽卡"
+  ],
+  [
+   "history-lowlands-flanders/1",
+   "北方荷兰与泽兰的百姓常年与北海风暴潮搏斗，靠风车、堤坝和排水渠“围海造田”，在集"
+  ],
+  [
+   "history-lowlands-flanders/2",
+   "南方佛兰德的布鲁日、根特与伊普尔三城，靠进口英格兰羊毛织造全欧最名贵的精纺呢绒，"
+  ],
+  [
+   "history-lowlands-flanders/3",
+   "法王腓力四世垂涎佛兰德财富发兵吞并，布鲁日与根特的纺织工匠揭竿而起，于1302年"
+  ],
+  [
+   "history-lowlands-flanders/4",
+   "百年战争爆发后，经济命脉系于英国羊毛的佛兰德市民在根特啤酒商阿特维尔德率领下倒向"
+  ],
+  [
+   "history-lowlands-burgundy/0",
+   "瓦卢瓦勃艮第公爵“好人”腓力通过联姻、购买与武力威逼，将原本分属法德两国的佛兰德"
+  ],
+  [
+   "history-lowlands-burgundy/1",
+   "同一时期，神圣罗马皇位在1438年卢森堡绝嗣后重归哈布斯堡家族（此后三百年不再旁"
+  ],
+  [
+   "history-lowlands-burgundy/2",
+   "政治分裂的德意志自由城市孕育出改变人类历史的信息革命：约1450年美因茨金匠古腾"
+  ],
+  [
+   "history-lowlands-burgundy/3",
+   "1477年1月勃艮第公爵“大胆查理”在南锡被瑞士长矛兵劈死，法王路易十一立刻发兵"
+  ],
+  [
+   "history-lowlands-burgundy/4",
+   "“别人打仗，快乐的奥地利人结婚”：马克西米利安一世不仅替哈布斯堡娶下尼德兰金库，"
+  ],
+  [
+   "history-lowlands-burgundy/5",
+   "1493年马克西米利安一世继任皇位，在1495年沃尔姆斯帝国会议上颁布《永久和平"
+  ],
+  [
    "history-italy-vespers/0",
    "腓特烈二世死后，西西里王国被安茹伯爵打下"
   ],
@@ -441,6 +551,70 @@
   [
    "history-italy-vespers/2",
    "1282年复活节次日晚祷钟响，西西里人爆发了西西里晚祷起义"
+  ],
+  [
+   "history-italy-venice/0",
+   "1204年第四次十字军后，威尼斯独占爱琴海与克里特岛商路，死对头热那亚遂资助东罗"
+  ],
+  [
+   "history-italy-venice/1",
+   "1378至1381年第四次威热战争中，热那亚舰队杀进威尼斯潟湖攻占南大门基奥贾，"
+  ],
+  [
+   "history-italy-venice/2",
+   "当北意大利各城纷纷在党争中沦为强人独裁时，唯独威尼斯能靠精密的寡头分权制度稳坐一"
+  ],
+  [
+   "history-italy-venice/3",
+   "威尼斯选总督更设计出匪夷所思的“选、抽、选、抽”九轮摇号防作弊法，选出来的总督终"
+  ],
+  [
+   "history-italy-venice/4",
+   "打服热那亚后，威尼斯靠日产一艘战船的国营阿森纳造船厂垄断东地中海贸易，同时向北意"
+  ],
+  [
+   "history-italy-condottieri/0",
+   "神圣罗马皇帝与迁往阿维尼翁的教宗双双退出北意大利后，发了大财的城市商人与工匠不愿"
+  ],
+  [
+   "history-italy-condottieri/1",
+   "雇佣兵队长把战争变成了低伤亡、高收费的商业表演：两边统帅都是同行老熟人，今天替威"
+  ],
+  [
+   "history-italy-condottieri/2",
+   "在弱肉强食的丛林混战中，米兰公社落入维斯孔蒂家族独裁之手；吉安·加莱亚佐花十万金"
+  ],
+  [
+   "history-italy-condottieri/3",
+   "请神容易送神难，雇佣兵统帅最终反客为主篡夺了雇主的江山：米兰市民雇佣头号名将弗朗"
+  ],
+  [
+   "history-italy-condottieri/4",
+   "1453年君士坦丁堡陷落的噩耗传来，打得精疲力竭的米兰、威尼斯、佛罗伦萨、教宗国"
+  ],
+  [
+   "history-italy-renaissance/0",
+   "佛罗伦萨靠精加工英格兰与西班牙羊毛、丝织业以及成色恒定的“金弗罗林”金币成为全欧"
+  ],
+  [
+   "history-italy-renaissance/1",
+   "平民出身的美第奇家族靠承包罗马教廷的什一税汇兑与明矾矿垄断暴富，掌门人科西莫14"
+  ],
+  [
+   "history-italy-renaissance/2",
+   "意大利商人与银行家把过剩的财富全砸进艺术、建筑与古籍赞助，本质上是“新钱”想更像"
+  ],
+  [
+   "history-italy-renaissance/3",
+   "科西莫之孙“豪华者”洛伦佐将文艺赞助与均势外交推向顶峰，却在1478年4月圣母百"
+  ],
+  [
+   "history-italy-renaissance/4",
+   "帕齐血案后洛伦佐单骑闯入敌国那不勒斯说服国王退兵，保住意大利五强均势；然而文艺复"
+  ],
+  [
+   "history-italy-renaissance/5",
+   "1494年秋，篡夺米兰大权的卢多维科·斯福尔扎为打击那不勒斯引狼入室，邀请法王查"
   ],
   [
    "history-faith-scholasticism/0",
@@ -722,6 +896,22 @@
     "咸鱼浓烟熏学徒与挪威码头的“单身汉集中营”"
    ]
   ],
+  "history-lowlands-flanders": [
+   [
+    3,
+    "“盾与友”口令、早上好铁头棒与五百副黄金马刺"
+   ]
+  ],
+  "history-lowlands-burgundy": [
+   [
+    1,
+    "坐牛车躲债的皇帝与写满笔记本的“A.E.I.O.U.”"
+   ],
+   [
+    4,
+    "布鲁日大广场关押未来皇帝四个月"
+   ]
+  ],
   "history-italy-vespers": [
    [
     1,
@@ -738,6 +928,32 @@
    [
     4,
     "那不勒斯湾的无花果"
+   ]
+  ],
+  "history-italy-venice": [
+   [
+    0,
+    "热那亚大牢里的“百万先生”：“我见到的连一半都还没说”"
+   ],
+   [
+    2,
+    "总督宫墙上的黑布：“此处为马里诺·法列罗，因罪斩首”"
+   ]
+  ],
+  "history-italy-condottieri": [
+   [
+    1,
+    "大教堂墙上省钱画出来的假铜像与“只摔死一人”的战场"
+   ],
+   [
+    3,
+    "饿肚子的雇主开门迎贼：“我的宝剑就是公爵委任状”"
+   ]
+  ],
+  "history-italy-renaissance": [
+   [
+    3,
+    "大教堂弥撒上的匕首与吊在市政厅窗外的大主教"
    ]
   ],
   "history-faith-scholasticism": [
@@ -884,6 +1100,24 @@
     "一条咸鲱鱼引发的国运洗牌：为什么海洋环境变迁与荷兰造船术打垮了汉萨同盟？"
    ]
   ],
+  "history-lowlands-burgundy": [
+   [
+    2,
+    "古腾堡到底发明了什么？铅锡锑手铸字模、油墨与压榨机如何引爆欧洲信息革命，兼论与中国活字印刷之比较"
+   ]
+  ],
+  "history-italy-venice": [
+   [
+    3,
+    "九轮抓阄选总督与“十人秘密警察”：威尼斯共和国是如何靠制度设计防住独裁与买票的？"
+   ]
+  ],
+  "history-italy-renaissance": [
+   [
+    2,
+    "为什么文艺复兴偏偏长在意大利？“新钱”洗白成“老钱”的文化贴金经济学"
+   ]
+  ],
   "history-faith-scholasticism": [
    [
     6,
@@ -925,7 +1159,12 @@
   "history-germany-electors": 300,
   "history-germany-golden-bull": 300,
   "history-germany-hansa": 300,
+  "history-lowlands-flanders": 300,
+  "history-lowlands-burgundy": 300,
   "history-italy-vespers": 300,
+  "history-italy-venice": 300,
+  "history-italy-condottieri": 300,
+  "history-italy-renaissance": 300,
   "history-faith-scholasticism": 230,
   "history-faith-avignon": 230,
   "history-faith-clement": 230,
@@ -947,13 +1186,18 @@
   ],
   [
    "empire-frederick2",
-   "德意志与意大利：从腓特烈二世到《金玺诏书》与汉萨同盟",
+   "德意志、低地与意大利：从腓特烈二世到文艺复兴与哈布斯堡联姻",
    [
     "history-germany-frederick2",
     "history-germany-electors",
     "history-germany-golden-bull",
     "history-germany-hansa",
-    "history-italy-vespers"
+    "history-lowlands-flanders",
+    "history-lowlands-burgundy",
+    "history-italy-vespers",
+    "history-italy-venice",
+    "history-italy-condottieri",
+    "history-italy-renaissance"
    ]
   ],
   [
@@ -999,21 +1243,21 @@
    "德意志",
    "west",
    843,
-   1494,
+   1500,
    4
   ],
   "italy": [
    "意大利",
    "west",
    843,
-   1351,
+   1494,
    3
   ],
   "faith": [
    "基督教",
    "trunk",
    -1400,
-   1449,
+   1453,
    7
   ]
  },
@@ -1025,17 +1269,17 @@
   ],
   [
    "germany",
-   1494,
+   1500,
    "选帝侯与哈布斯堡"
   ],
   [
    "italy",
-   1351,
+   1494,
    "城市共和国与文艺复兴"
   ],
   [
    "faith",
-   1449,
+   1453,
    "宗教改革"
   ]
  ],
@@ -1066,13 +1310,18 @@
    "history-germany-electors/0",
    "history-italy-blackdeath/0",
    "history-germany-golden-bull/0",
-   "history-germany-hansa/0"
+   "history-germany-hansa/0",
+   "history-lowlands-burgundy/0"
   ],
   "italy": [
    "history-germany-innocent/0",
    "history-germany-frederick2/0",
    "history-italy-vespers/0",
-   "history-italy-blackdeath/0"
+   "history-italy-blackdeath/0",
+   "history-italy-venice/0",
+   "history-italy-condottieri/0",
+   "history-empire-fall-1453/0",
+   "history-italy-renaissance/0"
   ],
   "faith": [
    "history-germany-innocent/0",
@@ -1083,7 +1332,8 @@
    "history-faith-clement/0",
    "history-italy-blackdeath/0",
    "history-faith-schism/0",
-   "history-faith-constance/0"
+   "history-faith-constance/0",
+   "history-empire-fall-1453/0"
   ]
  },
  "shared": {
@@ -1111,6 +1361,10 @@
    "germany",
    "faith",
    "persia"
+  ],
+  "history-lowlands-burgundy/0": [
+   "lowlands",
+   "germany"
   ]
  },
  "fixes": [
@@ -1603,5 +1857,5 @@
   "mNaplesAnjou1282",
   "mAragonCrown1282"
  ],
- "pass": "法兰西、基督教、德意志、意大利 on to ~1300 — 16 sections (105 scenes): Hugh Capet and Louis VI, the Plantagenets and Philip II (with the marriage-and-land diagram), Saint Louis to Philip IV and Anagni, universities and scholasticism, Frederick II and the Interregnum (with the 豆腐块 on seven excommunications of five emperors), and the Sicilian Vespers; shared stations across lines; 96 of 老无’s points in bold, 88 facts and their order set right in plain text; 12 豆腐块 with 21 corrections"
+ "pass": "法兰西、基督教、德意志、意大利 on to ~1300 — 21 sections (132 scenes): Hugh Capet and Louis VI, the Plantagenets and Philip II (with the marriage-and-land diagram), Saint Louis to Philip IV and Anagni, universities and scholasticism, Frederick II and the Interregnum (with the 豆腐块 on seven excommunications of five emperors), and the Sicilian Vespers; shared stations across lines; 123 of 老无’s points in bold, 88 facts and their order set right in plain text; 15 豆腐块 with 21 corrections"
 }
