@@ -48,6 +48,12 @@
    7,
    5
   ],
+  "history-germany-hansa": [
+   "汉萨同盟",
+   "约1159—1500年",
+   6,
+   5
+  ],
   "history-italy-vespers": [
    "西西里晚祷",
    "1266—1302年",
@@ -150,6 +156,13 @@
    ],
    1352,
    1437
+  ],
+  "history-germany-hansa/0": [
+   [
+    "germany"
+   ],
+   1438,
+   1494
   ],
   "history-italy-vespers/0": [
    [
@@ -392,6 +405,30 @@
   [
    "history-germany-golden-bull/6",
    "西吉斯蒙德在康斯坦茨背弃通行证烧死胡斯，引爆长达十七年的波希米亚胡斯战争；143"
+  ],
+  [
+   "history-germany-hansa/0",
+   "“汉萨”原意是结伙同行的队伍，实际是类似“镖局加行业协会”的民间武装组织：只因德"
+  ],
+  [
+   "history-germany-hansa/1",
+   "汉萨同盟靠大肚高舷的柯克帆船打通东西欧贸易闭环，拿吕讷堡的盐腌制波罗的海鲱鱼卖遍"
+  ],
+  [
+   "history-germany-hansa/2",
+   "为防商业机密外泄与资产外流，汉萨同盟在伦敦、布鲁日、卑尔根和诺夫哥罗德四大海外商"
+  ],
+  [
+   "history-germany-hansa/3",
+   "当丹麦国王洗劫汉萨商港时，这个没有国家的民间镖局直接抽税组建联合舰队攻陷哥本哈根"
+  ],
+  [
+   "history-germany-hansa/4",
+   "15世纪起，随着主要贸易产品鲱鱼因海洋环境变化迁往北海，加上荷兰人在海上加工与造"
+  ],
+  [
+   "history-germany-hansa/5",
+   "当荷兰船队在海上抢走生意、英俄与北欧各国又相继完成王权集权并用国家力量排挤汉萨特"
   ],
   [
    "history-italy-vespers/0",
@@ -679,6 +716,12 @@
     "“我是罗马国王，高于语法”与坐死宝座的末代卢森堡皇帝"
    ]
   ],
+  "history-germany-hansa": [
+   [
+    2,
+    "咸鱼浓烟熏学徒与挪威码头的“单身汉集中营”"
+   ]
+  ],
   "history-italy-vespers": [
    [
     1,
@@ -835,6 +878,12 @@
     "1356年《金玺诏书》与查理四世的传子算术：七大选帝侯怎么分权？为什么前人传不下去，他却能传给两个儿子？"
    ]
   ],
+  "history-germany-hansa": [
+   [
+    4,
+    "一条咸鲱鱼引发的国运洗牌：为什么海洋环境变迁与荷兰造船术打垮了汉萨同盟？"
+   ]
+  ],
   "history-faith-scholasticism": [
    [
     6,
@@ -875,6 +924,7 @@
   "history-germany-frederick2": 300,
   "history-germany-electors": 300,
   "history-germany-golden-bull": 300,
+  "history-germany-hansa": 300,
   "history-italy-vespers": 300,
   "history-faith-scholasticism": 230,
   "history-faith-avignon": 230,
@@ -897,11 +947,12 @@
   ],
   [
    "empire-frederick2",
-   "德意志与意大利：从腓特烈二世到《金玺诏书》与康斯坦茨",
+   "德意志与意大利：从腓特烈二世到《金玺诏书》与汉萨同盟",
    [
     "history-germany-frederick2",
     "history-germany-electors",
     "history-germany-golden-bull",
+    "history-germany-hansa",
     "history-italy-vespers"
    ]
   ],
@@ -948,7 +999,7 @@
    "德意志",
    "west",
    843,
-   1437,
+   1494,
    4
   ],
   "italy": [
@@ -974,7 +1025,7 @@
   ],
   [
    "germany",
-   1437,
+   1494,
    "选帝侯与哈布斯堡"
   ],
   [
@@ -1014,7 +1065,8 @@
    "history-germany-frederick2/0",
    "history-germany-electors/0",
    "history-italy-blackdeath/0",
-   "history-germany-golden-bull/0"
+   "history-germany-golden-bull/0",
+   "history-germany-hansa/0"
   ],
   "italy": [
    "history-germany-innocent/0",
@@ -1389,6 +1441,30 @@
   [
    "history-germany-golden-bull/6",
    "1437年12月西吉斯蒙德身穿皇袍坐死于兹诺伊莫宝座"
+  ],
+  [
+   "history-germany-hansa/0",
+   "在古德语里意为“一队人马、结伙队伍”"
+  ],
+  [
+   "history-germany-hansa/1",
+   "1926年创立的德国国家航空“汉莎航空"
+  ],
+  [
+   "history-germany-hansa/2",
+   "全体汉萨港同时切断其粮食、咸鱼与信贷"
+  ],
+  [
+   "history-germany-hansa/3",
+   "1370年5月丹麦被迫签《施特拉尔松德条约》"
+  ],
+  [
+   "history-germany-hansa/4",
+   "原本每年游入波罗的海口产卵的亿万条鲱鱼改道游向北海"
+  ],
+  [
+   "history-germany-hansa/5",
+   "1494年莫斯科大公伊凡三世直接发兵查封诺夫哥罗德汉萨商站"
   ]
  ],
  "boxfixes": [
@@ -1486,6 +1562,16 @@
    "history-germany-golden-bull",
    "1356年《金玺诏书》与查理四世的传子算术：七大选帝侯怎么分权？为什么前人传不下去，他却能传给两个儿子？",
    "自家手握两张选帝侯铁票（2/4）"
+  ],
+  [
+   "history-germany-hansa",
+   "一条咸鲱鱼引发的国运洗牌：为什么海洋环境变迁与荷兰造船术打垮了汉萨同盟？",
+   "鲱鱼群突然不再进波罗的海，集体改去北海"
+  ],
+  [
+   "history-germany-hansa",
+   "一条咸鲱鱼引发的国运洗牌：为什么海洋环境变迁与荷兰造船术打垮了汉萨同盟？",
+   "弗留特商船"
   ]
  ],
  "slips": [
@@ -1517,5 +1603,5 @@
   "mNaplesAnjou1282",
   "mAragonCrown1282"
  ],
- "pass": "法兰西、基督教、德意志、意大利 on to ~1300 — 15 sections (99 scenes): Hugh Capet and Louis VI, the Plantagenets and Philip II (with the marriage-and-land diagram), Saint Louis to Philip IV and Anagni, universities and scholasticism, Frederick II and the Interregnum (with the 豆腐块 on seven excommunications of five emperors), and the Sicilian Vespers; shared stations across lines; 90 of 老无’s points in bold, 82 facts and their order set right in plain text; 11 豆腐块 with 19 corrections"
+ "pass": "法兰西、基督教、德意志、意大利 on to ~1300 — 16 sections (105 scenes): Hugh Capet and Louis VI, the Plantagenets and Philip II (with the marriage-and-land diagram), Saint Louis to Philip IV and Anagni, universities and scholasticism, Frederick II and the Interregnum (with the 豆腐块 on seven excommunications of five emperors), and the Sicilian Vespers; shared stations across lines; 96 of 老无’s points in bold, 88 facts and their order set right in plain text; 12 豆腐块 with 21 corrections"
 }

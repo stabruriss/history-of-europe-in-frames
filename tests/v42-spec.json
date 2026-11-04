@@ -478,7 +478,7 @@
    "德意志",
    "west",
    843,
-   1437,
+   1494,
    4
   ],
   "italy": [
@@ -499,7 +499,7 @@
  "futures": [
   [
    "germany",
-   1437,
+   1494,
    "选帝侯与哈布斯堡"
   ],
   [
@@ -524,7 +524,8 @@
    "history-germany-frederick2/0",
    "history-germany-electors/0",
    "history-italy-blackdeath/0",
-   "history-germany-golden-bull/0"
+   "history-germany-golden-bull/0",
+   "history-germany-hansa/0"
   ],
   "italy": [
    "history-italy-normans/0",

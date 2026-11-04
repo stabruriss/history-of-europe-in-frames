@@ -1054,6 +1054,14 @@ Object.assign(HS,{
   ge2_brandenburg:['勃兰登堡（柏林—科尔恩）','Brandenburg (Berlin-Cölln)',52.517,13.388,'勃兰登堡选帝侯国核心；1373年查理四世花五十万弗罗林买下凑齐两张选帝侯铁票，1415年西吉斯蒙德将其封给霍亨索伦的腓特烈。'],
   ge2_nicopolis:['尼科波利斯','Nicopolis (Nikopol)',43.706,24.896,'多瑙河南岸重镇；1396年9月25日匈牙利国王西吉斯蒙德率欧洲十字军在此被奥斯曼苏丹巴耶济德一世击败。'],
   ge2_znojmo:['兹诺伊莫','Znojmo',48.855,16.049,'摩拉维亚南部边城；1437年12月9日西吉斯蒙德在此身穿全套皇袍坐死于宝座之上，卢森堡王朝绝嗣。'],
+  gh_lubeck:['吕贝克','Lübeck',53.866,10.687,'波罗的海西南岸的帝国自由市；1159年重建，1241年与汉堡结盟，被称为汉萨同盟的“女王城”与总舵所在。'],
+  gh_luneburg:['吕讷堡','Lüneburg',53.246,10.412,'北德意志岩盐产区；通过“旧盐路”将白盐运往吕贝克，专供腌制波罗的海鲱鱼。'],
+  gh_skane:['斯科讷（法尔斯特布）','Skåne (Falsterbo)',55.39,12.835,'波罗的海口厄勒海峡南端；12—14世纪全欧最大的秋季鲱鱼捕捞与盐腌集市，15世纪初因洋流变迁而枯竭。'],
+  gh_visby:['维斯比（哥特兰岛）','Visby (Gotland)',57.635,18.294,'波罗的海中心岛屿商港；早期德意志海外商人行会驻地，1361年被丹麦王瓦尔德马四世洗劫。'],
+  gh_copenhagen:['哥本哈根','Copenhagen',55.676,12.568,'厄勒海峡西岸的丹麦都城；1368年被汉萨同盟科隆联合舰队攻陷并拆毁城堡。'],
+  gh_stralsund:['施特拉尔松德','Stralsund',54.309,13.082,'波罗的海沿岸汉萨重镇；1370年5月24日丹麦在此与汉萨同盟签下屈辱的《施特拉尔松德条约》。'],
+  gh_danzig:['但泽（格但斯克）','Danzig (Gdańsk)',54.352,18.646,'维斯瓦河口大港；普鲁士与波兰黑麦、木材出口枢纽，汉萨同盟东方核心城。'],
+  gh_amsterdam:['阿姆斯特丹','Amsterdam',52.368,4.904,'荷兰核心海港；15世纪凭北海鲱鱼新渔场与新式造船术崛起，打破汉萨垄断，成为“海上马车夫”。'],
   vp_lucera:['卢切拉','Lucera',41.508,15.335,'阿普利亚北部的城；1220至1240年代腓特烈二世将西西里穆斯林迁来定居，1300年被安茹的查理二世铲平。'],
   vp_tagliacozzo:['塔利亚科佐','Tagliacozzo',42.069,13.253,'阿布鲁佐山间的城；1268年8月23日安茹的查理在此附近设伏击败十六岁的康拉丁。'],
   vp_procida:['普罗奇达','Procida',40.76,14.02,'那不勒斯湾口的小岛，流亡御医普罗奇达的约翰原有的封地；1284年被劳里亚的罗杰攻占。'],
@@ -4447,6 +4455,64 @@ const HISTORY_ENTRIES=[
     hp(d,'ge2_znojmo',{kind:'battle',note:'1437年12月9日西吉斯蒙德在此身穿皇袍坐死于宝座之上，卢森堡王朝绝嗣。'});
     hp(d,'c3_vienna',{left:1,note:'女婿哈布斯堡的阿尔布雷希特二世驻维也纳，一口气继承德意志、波希米亚与匈牙利三顶王冠。'});
    },[['fill',HC.germany,'神圣罗马帝国'],['fill',HC.war,'胡斯派车阵坚守的波希米亚'],['dot',HC.war,'布拉格胡斯起义与兹诺伊莫之死'],['dot','#2a2018','康斯坦茨、塔博尔与维也纳']])
+ ]},
+{id:'history-germany-hansa',ch:5,title:'汉萨同盟：国家缺位催生的“武装镖局”、打服丹麦王与鲱鱼西迁衰落',short:'汉萨同盟',en:'The Hanseatic League: The Armed Merchant Guild Born of a Missing State, Defeating Denmark, and Fading Before the Dutch',period:'约1159—1500年',c:HC.germany,
+ scenes:[
+  hs('约1159—1241年','国家服务缺位：从结伴押镖到“汉萨同盟”','皇帝与诸侯忙于内陆政教缠斗，北方海盗横行；1159年吕贝克建港，1241年与汉堡结盟护航，长成近两百城的民间武装镖局。',[[49.5,3.0],[59.5,22.0]],d=>{
+    ha(d,'mEmpire1050',HC.germany,{fillOpacity:.16});
+    hp(d,'gh_lubeck',{kind:'battle',note:'“汉萨女王”吕贝克：1159年重建，1226年成为帝国自由市，1241年与汉堡签约联手缉盗护商。'});
+    hp(d,'ot_hamburg',{kind:'battle',left:1,note:'北海门户汉堡：扼守易北河口，与吕贝克打通北海至波罗的海的陆海联运。'});
+    hp(d,'iv_bremen',{left:1,note:'威悉河口大港不来梅：北方早期商业重镇。'});
+    hp(d,'colonia',{left:1,note:'莱茵河大港科隆：早在12世纪就在伦敦设有德意志商人会馆。'});
+    hp(d,'gh_visby',{note:'哥特兰岛维斯比：早期德意志海外押镖商帮（Gotlandfahrer）在波罗的海的落脚中心。'});
+    hr(d,[[50.94,6.96],[53.08,8.81],[53.55,9.99],[53.87,10.69],[57.64,18.29]],HC.route);
+   },[['fill',HC.germany,'皇权缺位、诸侯割据的神圣罗马帝国'],['dline',HC.route,'北德意志商人结伴押镖航线（示意）'],['dot',HC.war,'1241年吕贝克—汉堡同盟'],['dot','#2a2018','不来梅、科隆与维斯比']]),
+  hs('约1200—1400年','柯克帆船、盐腌鲱鱼与今日“汉莎航空”','汉萨商人用大肚柯克船把吕讷堡岩盐运往斯科讷腌制波罗的海鲱鱼，串联但泽与布鲁日；1926年德国“汉莎航空”即承此名。',[[50.5,2.0],[58.5,21.5]],d=>{
+    ha(d,'mEmpire1050',HC.germany,{fillOpacity:.14});ha(d,'mTeutonicPrussia1300',HC.crusade,{fillOpacity:.2});
+    hp(d,'gh_lubeck',{kind:'battle',note:'汉萨总舵吕贝克：柯克帆船（Cog）造船中心，今日汉莎航空（Lufthansa＝空中汉萨）之名即源于此。'});
+    hp(d,'gh_luneburg',{left:1,note:'吕讷堡盐矿：出产优质白盐，经“旧盐路”北运吕贝克，是腌制鲱鱼不可或缺的原料。'});
+    hp(d,'gh_skane',{kind:'battle',note:'波罗的海口斯科讷渔场：每年秋季亿万条鲱鱼游经此处，汉萨商人在此用吕讷堡盐装桶销往全欧。'});
+    hp(d,'gh_danzig',{note:'但泽：出口普鲁士与波兰的黑麦、木材、琥珀与沥青。'});
+    hp(d,'hy2_bruges',{left:1,note:'布鲁日：汉萨船队在西端换取佛兰德呢绒与南方香料的枢纽。'});
+    hr(d,[[53.25,10.41],[53.87,10.69],[55.39,12.84],[54.35,18.65]],HC.war);
+    hr(d,[[53.87,10.69],[53.55,9.99],[51.21,3.22]],HC.route);
+   },[['fill',HC.germany,'神圣罗马帝国'],['fill',HC.crusade,'与汉萨紧密合作的条顿骑士团普鲁士'],['dline',HC.war,'“白银之路”：吕讷堡岩盐 → 吕贝克 → 斯科讷腌鲱鱼'],['dline',HC.route,'东西大宗贸易航线（示意）'],['dot',HC.war,'吕贝克与斯科讷鲱鱼场'],['dot','#2a2018','吕讷堡、但泽与布鲁日']]),
+  hs('约1250—1450年','四大海外商站：禁婚、烟熏入会与“除名禁运”','汉萨在伦敦钢院、布鲁日、卑尔根德国码头、诺夫哥罗德彼得大院设四大治外法权商站，严禁娶当地女子，以全员断供制裁违约。',[[50.0,-2.0],[61.5,33.0]],d=>{
+    ha(d,'mEmpire1050',HC.germany,{fillOpacity:.14});ha(d,'mEngland1066',HC.britain,{fillOpacity:.16,dashArray:'4 4'});
+    hp(d,'k_london',{kind:'battle',left:1,note:'伦敦“钢院（Steelyard）”商站：泰晤士河北岸高墙大院，垄断英格兰羊毛出口与呢绒免税特权。'});
+    hp(d,'hy2_bruges',{kind:'battle',left:1,note:'布鲁日商站：西欧最大金融与呢绒集散点；1358年汉萨曾对佛兰德发动全员禁运逼其恢复特权。'});
+    hp(d,'bd_bergen',{kind:'battle',note:'挪威卑尔根“德国码头（Bryggen）”商站：垄断北极鳕鱼干与鲸油，以烟熏水淹学徒的残酷入会礼闻名。'});
+    hp(d,'er_novgorod',{kind:'battle',note:'诺夫哥罗德“彼得大院（Peterhof）”商站：圣彼得教堂兼做仓库，严禁俄国人入内，垄断毛皮与蜂蜡。'});
+    hp(d,'gh_lubeck',{note:'吕贝克汉萨大会（Hansetag）：一旦某城违规即宣布“除名禁运（Verhansung）”，全员断供。'});
+    hr(d,[[51.51,-0.09],[51.21,3.22],[53.87,10.69],[60.39,5.32]],HC.route);
+    hr(d,[[53.87,10.69],[57.64,18.29],[58.52,31.27]],HC.route);
+   },[['fill',HC.germany,'神圣罗马帝国'],['dash',HC.britain,'英格兰'],['dline',HC.route,'连接四大海外商站的汉萨海网'],['dot',HC.war,'四大海外商站：伦敦、布鲁日、卑尔根、诺夫哥罗德'],['dot','#2a2018','总舵吕贝克']]),
+  hs('1361—1370年','镖局巅峰：抽税建海军，丹麦选国王要汉萨批准','1361年丹麦王洗劫维斯比；1367年汉萨77城结成“科隆同盟”抽税建舰队攻陷哥本哈根，1370年签《施特拉尔松德条约》控制丹麦王位继承。',[[50.2,5.5],[58.5,20.5]],d=>{
+    ha(d,'mEmpire1050',HC.germany,{fillOpacity:.16});
+    hp(d,'gh_visby',{note:'1361年7月丹麦王瓦尔德马四世攻破维斯比，勒索三大啤酒桶金银。'});
+    hp(d,'colonia',{kind:'battle',left:1,note:'1367年11月七十七座商业城市代表在此结成“科隆同盟”，统一抽“磅税”组建联合海军。'});
+    hp(d,'gh_copenhagen',{kind:'battle',left:1,note:'1368年汉萨联合舰队攻陷丹麦首都哥本哈根，将王室城堡逐块拆毁沉海。'});
+    hp(d,'gh_stralsund',{kind:'battle',note:'1370年5月24日在此签《施特拉尔松德条约》：厄勒海峡四要塞押给汉萨十五年，丹麦选王须经汉萨批准。'});
+    hp(d,'gh_skane',{note:'厄勒海峡收税城堡（赫尔辛堡、马尔默、法尔斯特布、斯坎诺）全归汉萨驻军收税。'});
+    hr(d,[[53.87,10.69],[54.31,13.08],[55.68,12.57],[55.39,12.84]],HC.war);
+   },[['fill',HC.germany,'神圣罗马帝国'],['dline',HC.war,'1368年汉萨舰队北伐攻陷哥本哈根'],['dot',HC.war,'1367年科隆同盟、1368年破哥本哈根与1370年施特拉尔松德条约'],['dot','#2a2018','维斯比与斯科讷要塞']]),
+  hs('约1410—1500年','鲱鱼迁往北海与造船代差：荷兰崛起为“海上马车夫”','15世纪小冰期洋流变化使鲱鱼从波罗的海迁往北海，加上荷兰海上直接一刀剖腌术与新式低运费商船降维打击，阿姆斯特丹夺走贸易霸权。',[[50.8,1.2],[57.8,16.5]],d=>{
+    ha(d,'mEmpire1050',HC.germany,{fillOpacity:.14,dashArray:'4 4'});
+    hl(d,'北海新鲱鱼场（15世纪小冰期西迁）','North Sea Herring Grounds',55.0,5.6,HC.france);
+    hp(d,'gh_skane',{note:'波罗的海口旧渔场：1410—1425年后因气候与海水盐度变化，鲱鱼群不再进入波罗的海，汉萨命脉枯竭。'});
+    hp(d,'gh_amsterdam',{kind:'battle',left:1,note:'阿姆斯特丹：背靠北海新鲱鱼场，凭海上直接剖腌术与低运费新式大肚商船崛起为“海上马车夫”。'});
+    hp(d,'gh_lubeck',{note:'吕贝克：守着笨重高成本的旧式柯克船，被荷兰船队绕过地峡直接冲入波罗的海抢走货运。'});
+    hr(d,[[55.39,12.84],[57.8,9.5],[55.2,5.6]],HC.war);
+    hr(d,[[52.37,4.90],[57.8,10.5],[55.68,12.57],[54.35,18.65]],HC.france);
+   },[['dash',HC.germany,'神圣罗马帝国'],['dline',HC.war,'15世纪初大西洋鲱鱼群随洋流变迁西移北海（示意）'],['dline',HC.france,'荷兰新式商船绕过吕贝克直入波罗的海抢货运'],['dot',HC.war,'崛起的“海上马车夫”阿姆斯特丹'],['dot','#2a2018','枯竭的斯科讷旧渔场与吕贝克']]),
+  hs('1441—1494年','没有祖国撑腰的终局：强邻集权收网，汉萨衰落','1441年《哥本哈根条约》被迫向荷兰开海；1494年莫斯科大公伊凡三世查封诺夫哥罗德商站；内陆皇帝漠不关心，汉萨同盟与德意志商业一同衰落。',[[49.5,-1.5],[60.8,33.5]],d=>{
+    ha(d,'mEmpire1050',HC.germany,{fillOpacity:.14,dashArray:'4 4'});ha(d,'mEngland1066',HC.britain,{fillOpacity:.2});
+    hp(d,'gh_copenhagen',{kind:'battle',left:1,note:'1441年汉萨封锁荷兰失败，在此签《哥本哈根条约》，被迫向荷兰商船全面开放波罗的海。'});
+    hp(d,'gh_amsterdam',{left:1,note:'荷兰与尼德兰在勃艮第与哈布斯堡整合下，彻底压倒北德意志商港。'});
+    hp(d,'er_novgorod',{kind:'battle',note:'1494年莫斯科大公伊凡三世直接发兵关闭诺夫哥罗德“彼得大院”商站，逮捕四十九名德商、没收货物。'});
+    hp(d,'k_london',{left:1,note:'都铎王朝扶持本国“冒险商人公司”，逐步削夺伦敦钢院特权（后于1598年被伊丽莎白一世关闭）。'});
+    hp(d,'gh_lubeck',{note:'失去周边特权又无统一国家海军撑腰，吕贝克与汉萨同盟从此一蹶不振。'});
+   },[['dash',HC.germany,'对北方海权漠不关心的神圣罗马帝国'],['fill',HC.britain,'王权集权排挤汉萨的都铎英格兰'],['dot',HC.war,'1441年哥本哈根开海与1494年诺夫哥罗德封馆'],['dot','#2a2018','阿姆斯特丹、伦敦与吕贝克']])
  ]},
 {id:'history-italy-vespers',ch:5,title:'西西里晚祷：杀光法国人，两西西里分家',short:'西西里晚祷',en:'The Sicilian Vespers: Death to the French and the Two Sicilies',period:'1266—1302年',c:HC.italy,
  scenes:[
@@ -8686,7 +8752,7 @@ const HISTORY_ERAS=[
  {id:'empire-italy',name:'中世纪盛期：北意大利城市与西西里王国',en:'The Northern Cities and the Kingdom of Sicily',date:'约950—1166年',c:HC.italy,items:[['history-italy-cities'],['history-italy-sicily']]},
  {id:'empire-staufer',name:'中世纪盛期：红胡子、亨利六世与英诺森三世',en:'Barbarossa, Henry VI and Innocent III',date:'1152—1216年',c:HC.germany,items:[['history-germany-barbarossa'],['history-germany-henry6'],['history-germany-innocent']]},
  {id:'empire-france',name:'法兰西：从卡佩开张到“宇宙蜘蛛”一统',en:'France: From Hugh Capet to Louis XI',date:'987—1483年',c:HC.france,items:[['history-france-capet'],['history-france-plantagenet'],['history-france-stlouis'],['history-france-valois'],['history-france-louis11']]},
- {id:'empire-frederick2',name:'德意志与意大利：从腓特烈二世到《金玺诏书》与康斯坦茨',en:'Germany and Italy: From Frederick II to the Golden Bull and Constance',date:'1212—1437年',c:HC.germany,items:[['history-germany-frederick2'],['history-germany-electors'],['history-germany-golden-bull'],['history-italy-vespers']]},
+ {id:'empire-frederick2',name:'德意志与意大利：从腓特烈二世到《金玺诏书》与汉萨同盟',en:'Germany and Italy: From Frederick II to the Golden Bull and the Hanseatic League',date:'约1159—1500年',c:HC.germany,items:[['history-germany-frederick2'],['history-germany-electors'],['history-germany-golden-bull'],['history-germany-hansa'],['history-italy-vespers']]},
  {id:'empire-blackdeath',name:'中世纪晚期：黑死病',en:'The Late Middle Ages: the Black Death',date:'1346—1353年',c:HC.italy,items:[['history-italy-blackdeath']]},
  {id:'empire-taifas',name:'西班牙：泰法与圣战',en:'Spain: the Taifas and Holy War',date:'1031—1123年',c:HC.spain,items:[['history-spain-taifas'],['history-spain-crusade']]},
  {id:'faith-israel',name:'古代以色列',en:'Ancient Israel',date:'约前1400—前538年',c:HC.faith,items:[['history-faith-israel'],['history-faith-first-temple']]},
@@ -8735,7 +8801,7 @@ const HISTORY_BRANCHES=[
  {id:'west',name:'中世纪西欧',en:'Medieval Western Europe',lane:4,parent:'rome',from:476,to:843,c:HC.celt},
  {id:'spain',name:'西班牙',en:'Spain',lane:5,parent:'west',from:481,to:1123,c:HC.spain},
  {id:'france',name:'法兰西',en:'France',lane:5,parent:'west',from:843,to:1483,c:HC.france},
- {id:'germany',name:'德意志',en:'Germany',lane:4,parent:'west',from:843,to:1437,c:HC.germany},
+ {id:'germany',name:'德意志',en:'Germany',lane:4,parent:'west',from:843,to:1494,c:HC.germany},
  {id:'italy',name:'意大利',en:'Italy',lane:3,parent:'west',from:843,to:1351,c:HC.italy},
  // 不列颠 (including Ireland): forks from the trunk before Caesar's landing, on lane 6 right beside 法兰西.
  {id:'britain',name:'不列颠',en:'Britain and Ireland',lane:6,parent:'trunk',from:-55,to:1487,c:HC.britain},
@@ -8925,6 +8991,7 @@ const TREE_ROWS={
  'history-germany-frederick2/0':[['germany','italy','faith'],1220,1273,'1212—1273年'],
  'history-germany-electors/0':['germany',1274,1308,'1273—1308年'],
  'history-germany-golden-bull/0':['germany',1352,1437,'1308—1437年'],
+ 'history-germany-hansa/0':['germany',1438,1494,'约1159—1500年'],
  'history-faith-scholasticism/0':['faith',1274,1290,'约1150—1325年'],
  'history-italy-vespers/0':['italy',1282,1302,'1266—1302年'],
  'history-france-stlouis/0':[['france','faith'],1291,1309,'1223—1314年'],
@@ -8962,7 +9029,7 @@ const TREE_ROWS={
  'history-arab-seljuks/3':[['persia','east'],1071,1092]
 };
 // Topics still to be written grow the tree as dashed shoots.
-const TREE_FUTURE=[['east',1099,'科穆宁王朝','1099年起 · 1176年米利奥克法隆之战 · 1204年第四次十字军攻破君士坦丁堡 · 待展开'],['france',1483,'百年战争','1314年后待展开：1328年卡佩直系绝嗣 · 1337—1453年英法百年战争'],['germany',1437,'选帝侯与哈布斯堡','1273年后待展开：1273年哈布斯堡的鲁道夫当选 · 1356年《金玺诏书》七选帝侯'],['italy',1351,'城市共和国与文艺复兴','1302年后待展开：佛罗伦萨、威尼斯、热那亚与米兰 · 文艺复兴'],['faith',1449,'宗教改革','1449年起 · 文艺复兴教廷 · 1517年马丁·路德《九十五条论纲》与宗教改革 · 待展开'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',1351,'伊儿汗国与马穆鲁克','1291年后待展开：1295年合赞汗皈依伊斯兰 · 1300年伊儿汗国一度占大马士革 · 奥斯曼人兴起'],['china',845,'晚唐五代与宋','845年起 · 待展开'],['spain',1123,'收复失地运动','1123年起 · 穆拉比特与穆瓦希德 · 1212年纳瓦斯—德托洛萨 · 1492年格拉纳达 · 待展开'],['eeurope',1054,'基辅罗斯以后','1054年起 · 雅罗斯拉夫死后诸子分封 · 1240年蒙古人攻破基辅 · 待展开'],['crusade',1312,'后来的十字军','1396年尼科波利斯 · 1444年瓦尔纳 · 1571年勒班陀 · 待展开'],['britain',1487,'班诺克本与百年战争','1307年后待展开：1314年班诺克本之战 · 1337—1453年英法百年战争 · 玫瑰战争']];
+const TREE_FUTURE=[['east',1099,'科穆宁王朝','1099年起 · 1176年米利奥克法隆之战 · 1204年第四次十字军攻破君士坦丁堡 · 待展开'],['france',1483,'百年战争','1314年后待展开：1328年卡佩直系绝嗣 · 1337—1453年英法百年战争'],['germany',1494,'选帝侯与哈布斯堡','1273年后待展开：1273年哈布斯堡的鲁道夫当选 · 1356年《金玺诏书》七选帝侯'],['italy',1351,'城市共和国与文艺复兴','1302年后待展开：佛罗伦萨、威尼斯、热那亚与米兰 · 文艺复兴'],['faith',1449,'宗教改革','1449年起 · 文艺复兴教廷 · 1517年马丁·路德《九十五条论纲》与宗教改革 · 待展开'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',1351,'伊儿汗国与马穆鲁克','1291年后待展开：1295年合赞汗皈依伊斯兰 · 1300年伊儿汗国一度占大马士革 · 奥斯曼人兴起'],['china',845,'晚唐五代与宋','845年起 · 待展开'],['spain',1123,'收复失地运动','1123年起 · 穆拉比特与穆瓦希德 · 1212年纳瓦斯—德托洛萨 · 1492年格拉纳达 · 待展开'],['eeurope',1054,'基辅罗斯以后','1054年起 · 雅罗斯拉夫死后诸子分封 · 1240年蒙古人攻破基辅 · 待展开'],['crusade',1312,'后来的十字军','1396年尼科波利斯 · 1444年瓦尔纳 · 1571年勒班陀 · 待展开'],['britain',1487,'班诺克本与百年战争','1307年后待展开：1314年班诺克本之战 · 1337—1453年英法百年战争 · 玫瑰战争']];
 // Where a line stops it says why: [line, year, the event that ends it, note, the line it carries on in].
 const TREE_ENDS=[['trunk',-30,'并入罗马','前146年科林斯被毁 · 前30年最后一个希腊化王国埃及并入罗马','rome'],['rome',476,'西罗马终结','476年西部末代皇帝被废 · 由中世纪西欧接续'],['west',843,'凡尔登三分','843年《凡尔登条约》三分帝国 · 分出法兰西、德意志、意大利']];
 // Sections of one line that run side by side: [line, row keys, side of the passing loop].
