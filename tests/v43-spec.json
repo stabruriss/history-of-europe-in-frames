@@ -36,6 +36,18 @@
    6,
    5
   ],
+  "history-germany-electors": [
+   "选帝侯与三任弱主",
+   "1273—1308年",
+   6,
+   5
+  ],
+  "history-germany-golden-bull": [
+   "金玺诏书与卢森堡王朝",
+   "1308—1437年",
+   7,
+   5
+  ],
   "history-italy-vespers": [
    "西西里晚祷",
    "1266—1302年",
@@ -124,6 +136,20 @@
    ],
    1220,
    1273
+  ],
+  "history-germany-electors/0": [
+   [
+    "germany"
+   ],
+   1274,
+   1308
+  ],
+  "history-germany-golden-bull/0": [
+   [
+    "germany"
+   ],
+   1352,
+   1437
   ],
   "history-italy-vespers/0": [
    [
@@ -314,6 +340,58 @@
   [
    "history-germany-frederick2/5",
    "教宗趁机让安茹伯爵去打西西里，杀了腓特烈二世的继承人"
+  ],
+  [
+   "history-germany-electors/0",
+   "从奥托一世南下加冕为神圣罗马皇帝起，皇帝同教宗缠斗三百年，为应付绝罚不断向诸侯与"
+  ],
+  [
+   "history-germany-electors/1",
+   "七大选帝侯制度是七大势力最低成本的共存方案：七个铁帽子王谁都当不了老大，又不让另"
+  ],
+  [
+   "history-germany-electors/2",
+   "第一任弱主哈布斯堡的鲁道夫一世借公章吞奥地利坐大，想靠“方案X1”同教宗联合、承"
+  ],
+  [
+   "history-germany-electors/3",
+   "第二任弱主拿骚的阿道夫因弱小且帮过握有提名与加冕权的科隆大主教平叛而当选；阿道夫"
+  ],
+  [
+   "history-germany-electors/4",
+   "第三任上台的鲁道夫之子阿尔布雷希特一世见找教宗和当搅屎棍都不行，改试“方案X3”"
+  ],
+  [
+   "history-germany-electors/5",
+   "阿尔布雷希特一世为补合法性又捡起“方案X1”找教宗加冕，撞上漫天要价的“二愣子”"
+  ],
+  [
+   "history-germany-golden-bull/0",
+   "阿尔布雷希特一世遇刺后，选帝侯为防哈布斯堡做大并挡住法王弟弟竞选，挑中法德边境的"
+  ],
+  [
+   "history-germany-golden-bull/1",
+   "亨利七世死后，卢森堡派为阻击哈布斯堡，扶巴伐利亚的路易四世上台；路易四世顶住阿维"
+  ],
+  [
+   "history-germany-golden-bull/2",
+   "查理四世在位时，南边教廷缩在阿维尼翁、西边英法打百年战争、东边奥斯曼土耳其渡海西"
+  ],
+  [
+   "history-germany-golden-bull/3",
+   "前几任皇帝搞父传子全都翻车，查理四世却能成功传位给儿子，靠的是《金玺诏书》让选帝"
+  ],
+  [
+   "history-germany-golden-bull/4",
+   "查理四世长子文策尔嗜酒怠政被莱茵选帝侯废黜，但次子西吉斯蒙德凭联姻拿下的匈牙利王"
+  ],
+  [
+   "history-germany-golden-bull/5",
+   "西吉斯蒙德上台后主持召开康斯坦茨大公会议，一举终结三个教宗并立的分裂乱局，并因缺"
+  ],
+  [
+   "history-germany-golden-bull/6",
+   "西吉斯蒙德在康斯坦茨背弃通行证烧死胡斯，引爆长达十七年的波希米亚胡斯战争；143"
   ],
   [
    "history-italy-vespers/0",
@@ -581,6 +659,26 @@
     "棋盘前的死刑判决"
    ]
   ],
+  "history-germany-electors": [
+   [
+    2,
+    "抓起十字架当权杖与“狮子洞口只有进去的脚印”"
+   ],
+   [
+    5,
+    "“我就是恺撒”与罗伊斯河渡口的弑叔一剑"
+   ]
+  ],
+  "history-germany-golden-bull": [
+   [
+    2,
+    "当天进城、当天出城的罗马加冕"
+   ],
+   [
+    6,
+    "“我是罗马国王，高于语法”与坐死宝座的末代卢森堡皇帝"
+   ]
+  ],
   "history-italy-vespers": [
    [
     1,
@@ -725,6 +823,18 @@
     "五个皇帝的七次绝罚"
    ]
   ],
+  "history-germany-electors": [
+   [
+    1,
+    "轮流坐庄的四大家族：哈布斯堡、拿骚、卢森堡与维特尔斯巴赫的历史沿革"
+   ]
+  ],
+  "history-germany-golden-bull": [
+   [
+    3,
+    "1356年《金玺诏书》与查理四世的传子算术：七大选帝侯怎么分权？为什么前人传不下去，他却能传给两个儿子？"
+   ]
+  ],
   "history-faith-scholasticism": [
    [
     6,
@@ -763,6 +873,8 @@
   "history-france-valois": 300,
   "history-france-louis11": 300,
   "history-germany-frederick2": 300,
+  "history-germany-electors": 300,
+  "history-germany-golden-bull": 300,
   "history-italy-vespers": 300,
   "history-faith-scholasticism": 230,
   "history-faith-avignon": 230,
@@ -785,9 +897,11 @@
   ],
   [
    "empire-frederick2",
-   "中世纪盛期：腓特烈二世与西西里晚祷",
+   "德意志与意大利：从腓特烈二世到《金玺诏书》与康斯坦茨",
    [
     "history-germany-frederick2",
+    "history-germany-electors",
+    "history-germany-golden-bull",
     "history-italy-vespers"
    ]
   ],
@@ -834,7 +948,7 @@
    "德意志",
    "west",
    843,
-   1351,
+   1437,
    4
   ],
   "italy": [
@@ -860,7 +974,7 @@
   ],
   [
    "germany",
-   1351,
+   1437,
    "选帝侯与哈布斯堡"
   ],
   [
@@ -898,7 +1012,9 @@
   "germany": [
    "history-germany-innocent/0",
    "history-germany-frederick2/0",
-   "history-italy-blackdeath/0"
+   "history-germany-electors/0",
+   "history-italy-blackdeath/0",
+   "history-germany-golden-bull/0"
   ],
   "italy": [
    "history-germany-innocent/0",
@@ -1221,6 +1337,58 @@
   [
    "history-france-valois/4",
    "按户征收的直接税“炉灶税”"
+  ],
+  [
+   "history-germany-electors/0",
+   "五位皇帝遭七次绝罚"
+  ],
+  [
+   "history-germany-electors/1",
+   "选王权收归莱茵三大主教——美因茨（召集人）、科隆（亚琛加冕人）、特里尔"
+  ],
+  [
+   "history-germany-electors/2",
+   "1278年在杜恩克鲁特击杀奥托卡二世"
+  ],
+  [
+   "history-germany-electors/3",
+   "1298年6月美因茨大主教召紧急会议废黜阿道夫"
+  ],
+  [
+   "history-germany-electors/4",
+   "1300年10月在宾根结盟准备再废阿尔布雷希特"
+  ],
+  [
+   "history-germany-electors/5",
+   "1308年5月渡罗伊斯河时被索要遗产的亲侄约翰刺死"
+  ],
+  [
+   "history-germany-golden-bull/0",
+   "特里尔大主教鲍德温遂联手美因茨大主教"
+  ],
+  [
+   "history-germany-golden-bull/1",
+   "促成1338年《伦斯宣言》，确立多数选出即合法、无需教宗批准"
+  ],
+  [
+   "history-germany-golden-bull/2",
+   "1356年查理四世在纽伦堡与梅斯颁《金玺诏书》"
+  ],
+  [
+   "history-germany-golden-bull/3",
+   "1373年查理四世又花五十万弗罗林买下勃兰登堡"
+  ],
+  [
+   "history-germany-golden-bull/4",
+   "1400年莱茵四选帝侯以“无用懒惰”废黜文策尔"
+  ],
+  [
+   "history-germany-golden-bull/5",
+   "1415—1417年在康斯坦茨正式将勃兰登堡选帝侯国封给腓特烈"
+  ],
+  [
+   "history-germany-golden-bull/6",
+   "1437年12月西吉斯蒙德身穿皇袍坐死于兹诺伊莫宝座"
   ]
  ],
  "boxfixes": [
@@ -1293,6 +1461,31 @@
    "history-italy-blackdeath",
    "黑死病在各条线上",
    "东罗马、东欧与西班牙"
+  ],
+  [
+   "history-germany-electors",
+   "轮流坐庄的四大家族：哈布斯堡、拿骚、卢森堡与维特尔斯巴赫的历史沿革",
+   "① 哈布斯堡家族"
+  ],
+  [
+   "history-germany-electors",
+   "轮流坐庄的四大家族：哈布斯堡、拿骚、卢森堡与维特尔斯巴赫的历史沿革",
+   "② 拿骚家族"
+  ],
+  [
+   "history-germany-electors",
+   "轮流坐庄的四大家族：哈布斯堡、拿骚、卢森堡与维特尔斯巴赫的历史沿革",
+   "③ 卢森堡家族"
+  ],
+  [
+   "history-germany-electors",
+   "轮流坐庄的四大家族：哈布斯堡、拿骚、卢森堡与维特尔斯巴赫的历史沿革",
+   "④ 维特尔斯巴赫家族"
+  ],
+  [
+   "history-germany-golden-bull",
+   "1356年《金玺诏书》与查理四世的传子算术：七大选帝侯怎么分权？为什么前人传不下去，他却能传给两个儿子？",
+   "自家手握两张选帝侯铁票（2/4）"
   ]
  ],
  "slips": [
@@ -1324,5 +1517,5 @@
   "mNaplesAnjou1282",
   "mAragonCrown1282"
  ],
- "pass": "法兰西、基督教、德意志、意大利 on to ~1300 — 13 sections (86 scenes): Hugh Capet and Louis VI, the Plantagenets and Philip II (with the marriage-and-land diagram), Saint Louis to Philip IV and Anagni, universities and scholasticism, Frederick II and the Interregnum (with the 豆腐块 on seven excommunications of five emperors), and the Sicilian Vespers; shared stations across lines; 77 of 老无’s points in bold, 69 facts and their order set right in plain text; 9 豆腐块 with 14 corrections"
+ "pass": "法兰西、基督教、德意志、意大利 on to ~1300 — 15 sections (99 scenes): Hugh Capet and Louis VI, the Plantagenets and Philip II (with the marriage-and-land diagram), Saint Louis to Philip IV and Anagni, universities and scholasticism, Frederick II and the Interregnum (with the 豆腐块 on seven excommunications of five emperors), and the Sicilian Vespers; shared stations across lines; 90 of 老无’s points in bold, 82 facts and their order set right in plain text; 11 豆腐块 with 19 corrections"
 }

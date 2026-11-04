@@ -1038,6 +1038,22 @@ Object.assign(HS,{
   f2_lavello:['拉韦洛','Lavello',41.047,15.8,'巴西利卡塔北部的城镇；1254年5月21日康拉德四世在附近的军营染疟疾病死。'],
   f2_tagliacozzo:['塔利亚科佐','Tagliacozzo',42.069,13.254,'阿布鲁佐山间的城镇；1268年8月23日安茹的查理在此附近设伏击败十六岁的康拉丁。'],
   f2_astura:['阿斯图拉','Torre Astura',41.409,12.766,'罗马东南海边的岬角城堡；1268年9月兵败南逃的康拉丁在此登船时被弗兰吉帕尼家族抓获，交给了安茹的查理。'],
+  ge1_habichtsburg:['哈布斯堡（鹰堡）','Habichtsburg (Habsburg Castle)',47.463,8.181,'瑞士北部阿尔高地区的山顶小堡；哈布斯堡家族发源地，鲁道夫一世当选前只是这一带的小伯爵。'],
+  ge1_durnkrut:['杜恩克鲁特','Dürnkrut (Marchfeld)',48.472,16.853,'维也纳东北摩拉瓦河畔平原；1278年8月26日鲁道夫一世在此击败并杀死波希米亚王奥托卡二世，夺取奥地利。'],
+  ge1_nassau:['拿骚','Nassau',50.316,7.8,'莱茵河中游兰河畔的城堡小邦；1292年选帝侯挑中家底微薄的拿骚伯爵阿道夫当德意志国王。'],
+  ge1_worringen:['沃林根','Worringen',51.053,6.862,'科隆以北莱茵河畔；1288年6月5日拿骚的阿道夫在此替科隆大主教齐格弗里德作战被俘，结下政治同盟。'],
+  ge1_gollheim:['格尔海姆','Göllheim',49.593,8.051,'莱茵兰—普法尔茨山间村镇；1298年7月2日哈布斯堡的阿尔布雷希特一世在此击败并阵斩被废国王拿骚的阿道夫。'],
+  ge1_quatrevaux:['卡特尔山谷（沃库勒尔）','Quatrevaux (Vaucouleurs)',48.602,5.666,'洛林边境默兹河谷；1299年12月阿尔布雷希特一世与法王腓力四世在此会盟联姻。'],
+  ge1_bingen:['宾根','Bingen am Rhein',49.967,7.898,'莱茵河咽喉要津；1300年10月莱茵三大主教与普法尔茨伯爵在此结盟企图废黜阿尔布雷希特一世，次年被阿尔布雷希特攻破。'],
+  ge1_windisch:['温迪施（罗伊斯河渡口）','Windisch (Reuss River)',47.479,8.221,'瑞士北部阿勒河与罗伊斯河交汇处；1308年5月1日阿尔布雷希特一世在此渡河时被亲侄子约翰当场刺死。'],
+  ge2_luxembourg:['卢森堡','Luxembourg',49.611,6.132,'法德边境阿登森林的伯爵城堡；1308年亨利七世由此起家当选德意志国王，开创卢森堡王朝。'],
+  ge2_buonconvento:['布翁孔文托','Buonconvento',43.134,11.483,'锡耶纳以南的小镇；1313年8月24日亨利七世在南征途中染疟疾暴死于此。'],
+  ge2_muhldorf:['米尔多夫','Mühldorf',48.245,12.524,'巴伐利亚因河畔；1322年9月28日巴伐利亚的路易四世在此击败并生擒哈布斯堡的对立国王“美男子”腓特烈。'],
+  ge2_rhens:['伦斯','Rhens',50.281,7.617,'科布伦茨以南莱茵河畔果园；1338年7月16日六大选帝侯在此发表《伦斯宣言》，宣布选帝侯多数选出即合法，无需教宗批准。'],
+  ge2_gallipoli:['加里波利','Gallipoli (Gelibolu)',40.414,26.671,'达达尼尔海峡欧洲岸要塞；1354年奥斯曼土耳其人趁地震占领此城，自亚洲渡海向巴尔干扩张。'],
+  ge2_brandenburg:['勃兰登堡（柏林—科尔恩）','Brandenburg (Berlin-Cölln)',52.517,13.388,'勃兰登堡选帝侯国核心；1373年查理四世花五十万弗罗林买下凑齐两张选帝侯铁票，1415年西吉斯蒙德将其封给霍亨索伦的腓特烈。'],
+  ge2_nicopolis:['尼科波利斯','Nicopolis (Nikopol)',43.706,24.896,'多瑙河南岸重镇；1396年9月25日匈牙利国王西吉斯蒙德率欧洲十字军在此被奥斯曼苏丹巴耶济德一世击败。'],
+  ge2_znojmo:['兹诺伊莫','Znojmo',48.855,16.049,'摩拉维亚南部边城；1437年12月9日西吉斯蒙德在此身穿全套皇袍坐死于宝座之上，卢森堡王朝绝嗣。'],
   vp_lucera:['卢切拉','Lucera',41.508,15.335,'阿普利亚北部的城；1220至1240年代腓特烈二世将西西里穆斯林迁来定居，1300年被安茹的查理二世铲平。'],
   vp_tagliacozzo:['塔利亚科佐','Tagliacozzo',42.069,13.253,'阿布鲁佐山间的城；1268年8月23日安茹的查理在此附近设伏击败十六岁的康拉丁。'],
   vp_procida:['普罗奇达','Procida',40.76,14.02,'那不勒斯湾口的小岛，流亡御医普罗奇达的约翰原有的封地；1284年被劳里亚的罗杰攻占。'],
@@ -4322,6 +4338,115 @@ const HISTORY_ENTRIES=[
     hp(d,'naples',{left:1,note:'1268年10月29日查理在集市广场将十六岁的康拉丁公开斩首，霍亨施陶芬家族男丁断绝。'});
     hr(d,[[41.89,12.48],[42.07,13.25],[41.89,12.48],[41.41,12.77],[40.85,14.27]],HC.war);
    },[['fill',HC.france,'安茹伯爵查理夺取的西西里王国（1266—1268年）'],['fill',HC.faith,'教宗国'],['dline',HC.war,'1268年康拉丁出征、战败与被押往那不勒斯（概略）'],['dot',HC.war,'1266年贝内文托与1268年塔利亚科佐两战'],['dot','#2a2018','巴勒莫、罗马、阿斯图拉与那不勒斯']])
+ ]},
+{id:'history-germany-electors',ch:5,title:'选帝侯与三任“弱主”：周天子困局、捞私产与传子梦碎',short:'选帝侯与三任弱主',en:'The Seven Electors and Three Weak Kings: The Zhou-King Dilemma, Family Lands, and Failed Dynasties',period:'1273—1308年',c:HC.germany,
+ scenes:[
+  hs('962—1273年','从最整到最碎：三百年教宗缠斗掏空皇权','843年东法兰克本是三个法兰克里最整的一个；962年奥托一世南下罗马加冕后，皇帝与教宗缠斗三百年，为应付绝罚不断向诸侯和主教分权，到大空位碎成一盘散沙。',[[38.0,1.0],[54.5,19.0]],d=>{
+    ha(d,'mFrancia843E',HC.germany,{fillOpacity:.22});ha(d,'mFrancia843W',HC.france,{fillOpacity:.12,dashArray:'4 4'});ha(d,'mPapal1210',HC.faith,{fillOpacity:.28});
+    hp(d,'rome',{kind:'battle',note:'962年奥托一世在此加冕为帝，此后三百年皇帝与罗马教宗死磕，五位皇帝遭七次绝罚。'});
+    hp(d,'k_frankfurt',{left:1,note:'1220年腓特烈二世在此颁《与教会诸侯协定》，把铸币、税关与筑城权让给地方主教。'});
+    hp(d,'k_worms',{left:1,note:'1122年《沃尔姆斯宗教协定》与1231年《恩惠诸侯法令》，世俗诸侯正式获称“邦君”。'});
+    hr(d,[[50.11,8.68],[47.5,11.0],[45.4,10.9],[41.89,12.48]],HC.war);
+   },[['fill',HC.germany,'原本最完整的东法兰克（后碎成数百邦国）'],['dash',HC.france,'西法兰克（由碎向整的法兰西）'],['fill',HC.faith,'罗马教宗国'],['dline',HC.war,'皇帝反复南下意大利与教宗缠斗（示意）'],['dot',HC.war,'罗马'],['dot','#2a2018','法兰克福与沃尔姆斯']]),
+  hs('约1257—1273年','七大选帝侯与“周天子”：专挑弱主上台','莱茵三大主教（美因茨、科隆、特里尔）与四大世俗诸侯（波希米亚、普法尔茨、萨克森、勃兰登堡）组成七大选帝侯，在法兰克福选弱主、在亚琛加冕。',[[47.0,5.0],[54.2,17.5]],d=>{
+    ha(d,'mEmpire1050',HC.germany,{fillOpacity:.14,dashArray:'4 4'});ha(d,'mBohemia900',HC.war,{fillOpacity:.26});ha(d,'mSaxonyDuchy',HC.celt,{fillOpacity:.2});
+    hp(d,'k_mainz',{kind:'battle',note:'美因茨大主教：德意志大尚书，握有召集七大选帝侯赴法兰克福投票的首席大权。'});
+    hp(d,'colonia',{left:1,note:'科隆大主教：意大利大尚书，握有在亚琛为新当选国王加冕的大权。'});
+    hp(d,'treveri',{left:1,note:'特里尔大主教：勃艮第大尚书，三大教会选帝侯之一。'});
+    hp(d,'de_prague',{note:'波希米亚国王：帝国大酒政，四大世俗选帝侯之首（另有普法尔茨、萨克森、勃兰登堡）。'});
+    hp(d,'k_frankfurt',{note:'法兰克福：选帝侯选举德意志国王之地。'});
+    hp(d,'w_aachen',{left:1,note:'亚琛：查理曼故都，德意志国王受冠之地。'});
+   },[['dash',HC.germany,'神圣罗马帝国边界（示意）'],['fill',HC.war,'世俗选帝侯之首：波希米亚王国'],['fill',HC.celt,'北方世俗选帝侯：萨克森与勃兰登堡一带'],['dot',HC.war,'召集地美因茨'],['dot','#2a2018','科隆、特里尔、布拉格、法兰克福与亚琛']]),
+  hs('1273—1291年','弱主A哈布斯堡的鲁道夫一世：联教宗丢四票而凉','1273年瑞士小伯爵鲁道夫一世当选；1278年杜恩克鲁特击杀奥托卡二世夺奥地利；1279年承认教宗国独立以求传子，反得罪三大主教与波希米亚，1291年法兰克福丢四票告吹。',[[41.2,5.5],[51.6,18.2]],d=>{
+    ha(d,'mEmpire1050',HC.germany,{fillOpacity:.14});ha(d,'mBohemia900',HC.war,{fillOpacity:.24});ha(d,'mPapal1210',HC.faith,{fillOpacity:.28});
+    hp(d,'ge1_habichtsburg',{left:1,note:'哈布斯堡（鹰堡）：鲁道夫一世起家的瑞士北部小伯爵领。'});
+    hp(d,'ge1_durnkrut',{kind:'battle',note:'1278年8月26日鲁道夫一世在此击败并杀死波希米亚王奥托卡二世。'});
+    hp(d,'c3_vienna',{note:'1282年鲁道夫一世把夺来的奥地利与施蒂里亚封给自家儿子，维也纳从此成为哈布斯堡640年大本营。'});
+    hp(d,'rome',{left:1,note:'1279年鲁道夫一世向教宗尼古拉三世颁诏放弃罗马涅主权、承认教宗国独立，想换加冕与传子。'});
+    hp(d,'k_frankfurt',{kind:'battle',left:1,note:'1291年5月法兰克福会议：美因茨、科隆、特里尔三主教加波希米亚共四票拒选鲁道夫之子。'});
+   },[['fill',HC.germany,'神圣罗马帝国'],['fill',HC.war,'被夺走奥地利的波希米亚王国'],['fill',HC.faith,'获承认为独立主权的教宗国'],['dot',HC.war,'1278年杜恩克鲁特会战与1291年法兰克福拒选'],['dot','#2a2018','哈布斯堡、维也纳与罗马']]),
+  hs('1292—1298年','弱主B拿骚的阿道夫：当搅屎棍被美因茨会议废黜','1288年阿道夫在沃林根助科隆大主教作战；1292年当选后背弃波希米亚、拿英国补贴买图林根、在三主教区扶强藩搞联姻；1298年6月被美因茨会议废黜，7月在格尔海姆战死。',[[47.5,5.2],[52.8,15.8]],d=>{
+    ha(d,'mEmpire1050',HC.germany,{fillOpacity:.16});ha(d,'mBohemia900',HC.war,{fillOpacity:.22});
+    hp(d,'ge1_nassau',{left:1,note:'拿骚：阿道夫仅拥有莱茵河支流兰河畔的几座小城。'});
+    hp(d,'ge1_worringen',{note:'1288年沃林根之战：阿道夫替科隆大主教齐格弗里德作战被俘，由此获科隆与美因茨大主教推举。'});
+    hp(d,'de_prague',{note:'阿道夫当选前答应替波希米亚王瓦茨拉夫二世夺回奥地利，当选后直接跳反承认哈布斯堡占奥地利。'});
+    hp(d,'k_mainz',{kind:'battle',left:1,note:'1298年6月23日美因茨大主教格哈德在此召集紧急会议，直接宣布废黜阿道夫。'});
+    hp(d,'ge1_gollheim',{kind:'battle',note:'1298年7月2日格尔海姆之战：阿道夫冲阵被哈布斯堡的阿尔布雷希特一世阵斩。'});
+   },[['fill',HC.germany,'神圣罗马帝国'],['fill',HC.war,'遭阿道夫背弃的波希米亚'],['dot',HC.war,'1298年美因茨废王会议与格尔海姆之战'],['dot','#2a2018','拿骚、沃林根与布拉格']]),
+  hs('1298—1302年','弱主C哈布斯堡的阿尔布雷希特一世：联法王击破三主教','1299年12月阿尔布雷希特一世在卡特尔山谷与法王腓力四世结盟联姻；1300年莱茵三大主教在宾根结盟欲废王，1301—1302年被阿尔布雷希特顺莱茵河各个击破。',[[46.8,1.8],[52.2,16.8]],d=>{
+    ha(d,'mEmpire1050',HC.germany,{fillOpacity:.18});ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.24});
+    hp(d,'ge1_quatrevaux',{kind:'battle',left:1,note:'1299年12月阿尔布雷希特一世在此与法王腓力四世会盟，长子鲁道夫迎娶法王之妹布朗什。'});
+    hp(d,'ge1_bingen',{kind:'battle',note:'1300年10月美因茨、科隆、特里尔三大主教在此结盟欲废阿尔布雷希特，1301年被阿尔布雷希特攻克。'});
+    hp(d,'colonia',{left:1,note:'1302年阿尔布雷希特联合莱茵市民顺江北上，逼科隆与特里尔大主教割让关税投降。'});
+    hp(d,'c3_vienna',{note:'阿尔布雷希特一世背靠富庶的奥地利私产，兵力远胜前任拿骚的阿道夫。'});
+    hr(d,[[48.21,16.37],[49.45,11.08],[49.97,7.90],[50.94,6.96]],HC.war);
+   },[['fill',HC.germany,'神圣罗马帝国'],['fill',HC.france,'向东扩张威胁莱茵主教区的法兰西（腓力四世）'],['dline',HC.war,'1301—1302年阿尔布雷希特一世进军莱茵河击破三主教（示意）'],['dot',HC.war,'卡特尔山谷会盟与宾根之战'],['dot','#2a2018','科隆与维也纳']]),
+  hs('1301—1308年','找“二愣子”卜尼法斯八世碰壁、阿纳尼铁拳与弑叔血案','卜尼法斯八世先拒认阿尔布雷希特并漫天要价，1303年同法王闹僵后才回头拉拢，旋即在阿纳尼受辱暴死，教廷迁阿维尼翁；1308年5月阿尔布雷希特在罗伊斯河渡口被亲侄刺死。',[[40.6,3.5],[50.8,16.8]],d=>{
+    ha(d,'mEmpire1050',HC.germany,{fillOpacity:.16});ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.2});ha(d,'mPapal1210',HC.faith,{fillOpacity:.28});ha(d,'mNaplesAnjou1282',HC.italy,{fillOpacity:.2});
+    hp(d,'rome',{left:1,note:'1301年卜尼法斯八世头戴皇冠高喊“我就是皇帝”，拒认阿尔布雷希特；1303年4月同法王闹僵后才改口承认。'});
+    hp(d,'bb_anagni',{kind:'battle',note:'1303年9月7日腓力四世派诺加雷与科隆纳突袭阿纳尼，铁拳扣押卜尼法斯八世。'});
+    hp(d,'sl9_avignon',{left:1,note:'1309年教宗克莱芒五世迁驻阿维尼翁，开启近七十年的“阿维尼翁之囚”。'});
+    hp(d,'de_prague',{note:'1306年波希米亚绝嗣，阿尔布雷希特一世强把长子鲁道夫扶上波希米亚王位（次年病死）。'});
+    hp(d,'ge1_windisch',{kind:'battle',left:1,note:'1308年5月1日阿尔布雷希特一世在此渡罗伊斯河时，被索要遗产未果的亲侄子约翰当场一剑刺死。'});
+   },[['fill',HC.germany,'神圣罗马帝国'],['fill',HC.france,'腓力四世的法兰西'],['fill',HC.faith,'教宗国'],['fill',HC.italy,'卜尼法斯八世力保的安茹那不勒斯'],['dot',HC.war,'1303年阿纳尼事件与1308年罗伊斯河弑叔案'],['dot','#2a2018','罗马、阿维尼翁与布拉格']])
+ ]},
+{id:'history-germany-golden-bull',ch:5,title:'从卢森堡到《金玺诏书》与康斯坦茨：内卷定规矩、查理四世传子与胡斯战火',short:'金玺诏书与卢森堡王朝',en:'From Luxembourg to the Golden Bull and Constance: Internal Involution, Charles IV’s Succession, and the Hussite Fire',period:'1308—1437年',c:HC.germany,
+ scenes:[
+  hs('1308—1313年','卢森堡登台：亨利七世替儿娶走波希米亚','1308年特里尔大主教鲍德温助兄长卢森堡伯爵亨利七世当选；1310年亨利七世替独子约翰娶得波希米亚王位，同年南下意大利，1312年罗马加冕，1313年病死于布翁孔文托。',[[41.0,4.5],[51.8,16.8]],d=>{
+    ha(d,'mEmpire1050',HC.germany,{fillOpacity:.15});ha(d,'mBohemia900',HC.war,{fillOpacity:.28});ha(d,'mPapal1210',HC.faith,{fillOpacity:.26});
+    hp(d,'ge2_luxembourg',{left:1,note:'卢森堡：法德边境阿登森林的小伯国，亨利七世由此起家。'});
+    hp(d,'treveri',{left:1,note:'特里尔：亨利七世亲弟鲍德温任特里尔大主教长达四十六年，是卢森堡家族三代帝业的幕后操盘手。'});
+    hp(d,'de_prague',{kind:'battle',note:'1310年亨利七世让十四岁独子约翰迎娶波希米亚公主伊丽莎白，卢森堡家族一举吞下波希米亚王国。'});
+    hp(d,'rome',{left:1,note:'1312年6月29日亨利七世在罗马拉特兰宫加冕，是自腓特烈二世以来时隔九十二年首位加冕皇帝。'});
+    hp(d,'ge2_buonconvento',{kind:'battle',note:'1313年8月24日亨利七世在南征途中染疟疾暴死于此，但丁恢复帝国一统之梦破灭。'});
+    hr(d,[[49.61,6.13],[46.0,9.0],[45.07,7.69],[43.72,10.40],[41.89,12.48],[43.13,11.48]],HC.war);
+   },[['fill',HC.germany,'神圣罗马帝国'],['fill',HC.war,'卢森堡家族新吞并的波希米亚王国'],['fill',HC.faith,'教宗国'],['dline',HC.war,'1310—1313年亨利七世南下意大利与病亡路线（概略）'],['dot',HC.war,'布拉格与布翁孔文托'],['dot','#2a2018','卢森堡、特里尔与罗马']]),
+  hs('1314—1347年','巴伐利亚的路易四世：硬刚教宗与捞私产被废','1314年双王选举，1322年路易四世在米尔多夫生擒哈布斯堡对手；与阿维尼翁教宗抗争并促成1338年《伦斯宣言》；因封长子勃兰登堡及强夺蒂罗尔联姻，1346年被改立查理四世。',[[42.5,3.8],[53.2,16.8]],d=>{
+    ha(d,'mEmpire1050',HC.germany,{fillOpacity:.15});ha(d,'mBavariaDuchy',HC.celt,{fillOpacity:.28});ha(d,'mBohemia900',HC.war,{fillOpacity:.22});
+    hp(d,'ge2_muhldorf',{kind:'battle',note:'1322年9月28日巴伐利亚的路易四世在此生擒哈布斯堡的对立国王“美男子”腓特烈。'});
+    hp(d,'sl9_avignon',{left:1,note:'1324年阿维尼翁教宗约翰二十二世绝罚路易四世；1346年克莱芒六世支持卢森堡的查理四世反扑。'});
+    hp(d,'sh_munich',{note:'路易四世的大本营慕尼黑：1328年起收留奥卡姆等学者写书痛批教宗。'});
+    hp(d,'ge2_rhens',{kind:'battle',left:1,note:'1338年7月16日六大选帝侯在此发表《伦斯宣言》：选帝侯多数选出即合法，无需教宗批准。'});
+    hp(d,'ge2_brandenburg',{note:'路易四世把绝嗣的勃兰登堡封给长子，1342年又替次子强娶蒂罗尔女伯爵，吃相太难看被选帝侯抛弃。'});
+   },[['fill',HC.germany,'神圣罗马帝国'],['fill',HC.celt,'维特尔斯巴赫家族的巴伐利亚'],['fill',HC.war,'卢森堡家族的波希米亚'],['dot',HC.war,'1322年米尔多夫之战与1338年伦斯宣言'],['dot','#2a2018','慕尼黑、阿维尼翁与勃兰登堡']]),
+  hs('1346—1356年','三面受困只能内卷：1356年《金玺诏书》把规矩制度化','西边英法打百年战争、南边教廷缩在阿维尼翁、东边奥斯曼1354年渡海占加里波利；查理四世于1356年在纽伦堡与梅斯颁布《金玺诏书》，将七大选帝侯与分权规矩彻底制度化。',[[38.5,-2.0],[54.0,29.0]],d=>{
+    ha(d,'mEmpire1050',HC.germany,{fillOpacity:.22});ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.16,dashArray:'4 4'});ha(d,'mEngland1066',HC.britain,{fillOpacity:.16,dashArray:'4 4'});ha(d,'mOttoman1522',HC.parthia,{fillOpacity:.14,dashArray:'4 4'});
+    hp(d,'st_nuremberg',{kind:'battle',note:'1356年1月10日查理四世在此颁布《金玺诏书》前二十三章，定死七大选帝侯四票多数决与准主权。'});
+    hp(d,'w_metz',{kind:'battle',left:1,note:'1356年12月25日查理四世在此颁布《金玺诏书》后八章，全文只字不提教宗审批权。'});
+    hp(d,'sl9_avignon',{left:1,note:'南边：教廷缩在法国阿维尼翁；查理四世1355年去罗马加冕当天进城当天出城。'});
+    hp(d,'w_paris',{left:1,note:'西边：英法正打百年战争（1346年克雷西、1356年普瓦捷），无力东顾。'});
+    hp(d,'ge2_gallipoli',{note:'东南边：1354年奥斯曼土耳其人占领加里波利渡海西侵，把东罗马围成孤城。'});
+   },[['fill',HC.germany,'内部内卷定规矩的神圣罗马帝国'],['dash',HC.france,'西边：深陷百年战争的英法'],['dash',HC.parthia,'东南边：渡海西侵的奥斯曼土耳其（示意）'],['dot',HC.war,'1356年纽伦堡与梅斯《金玺诏书》'],['dot','#2a2018','阿维尼翁、巴黎与加里波利']]),
+  hs('1348—1378年','为什么查理四世这次能传给儿子？双铁票与天价买票','查理四世在布拉格创办中欧首所大学，手握波希米亚（第1票）并在1373年买下勃兰登堡（第2票），1376年又抵押帝国自由城市天价买票，让长子文策尔顺利当选接班。',[[47.2,5.5],[53.8,18.2]],d=>{
+    ha(d,'mEmpire1050',HC.germany,{fillOpacity:.14});ha(d,'mBohemia900',HC.war,{fillOpacity:.32});
+    hp(d,'de_prague',{kind:'battle',note:'“黄金布拉格”：查理四世1348年创办布拉格大学、修查理大桥，且波希米亚本身握有第1张选帝侯铁票。'});
+    hp(d,'ge2_brandenburg',{kind:'battle',note:'1373年查理四世花五十万弗罗林从维特尔斯巴赫手中买下勃兰登堡，卢森堡自家直接攥住第2张选帝侯铁票。'});
+    hp(d,'k_frankfurt',{left:1,note:'1376年6月查理四世向其余选帝侯许诺每人十万弗罗林并抵押十六座施瓦本帝国城市，让长子文策尔顺利当选。'});
+    hp(d,'w_aachen',{left:1,note:'1376年7月6日十五岁的文策尔在亚琛加冕，打破大空位以来百年“传子必败”魔咒。'});
+   },[['fill',HC.germany,'神圣罗马帝国'],['fill',HC.war,'查理四世倾力经营的波希米亚大本营'],['dot',HC.war,'两张自家选帝侯铁票：布拉格（波希米亚）与勃兰登堡'],['dot','#2a2018','法兰克福买票与亚琛加冕']]),
+  hs('1378—1411年','从长子“酒鬼文策尔”被废，到次子西吉斯蒙德接班','1393年文策尔溺死布拉格副主教，1400年被莱茵四选帝侯废黜；1410—1411年查理四世次子、匈牙利国王西吉斯蒙德凭勃兰登堡选票与波希米亚继承权重新当选德王。',[[43.0,5.8],[53.5,26.0]],d=>{
+    ha(d,'mEmpire1050',HC.germany,{fillOpacity:.15});ha(d,'mBohemia900',HC.war,{fillOpacity:.26});ha(d,'mHungary1100',HC.celt,{fillOpacity:.24});
+    hp(d,'de_prague',{note:'长子文策尔终日酗酒，1393年把布拉格副主教扔进伏尔塔瓦河淹死；因无子嗣，次子西吉斯蒙德成为其继承人。'});
+    hp(d,'ge2_rhens',{kind:'battle',left:1,note:'1400年8月莱茵四选帝侯在此以“无用懒惰”废黜文策尔，改选普法尔茨的鲁普雷希特（1410年病死）。'});
+    hp(d,'ge2_nicopolis',{note:'次子西吉斯蒙德娶匈牙利女王继位，1396年在此率十字军抗击奥斯曼战败。'});
+    hp(d,'ge2_brandenburg',{left:1,note:'西吉斯蒙德手握勃兰登堡选帝侯票，派纽伦堡城堡伯爵霍亨索伦的腓特烈代为投票。'});
+    hp(d,'k_frankfurt',{kind:'battle',left:1,note:'1410—1411年西吉斯蒙德在法兰克福当选德意志国王，皇冠重归卢森堡家族。'});
+   },[['fill',HC.germany,'神圣罗马帝国'],['fill',HC.war,'波希米亚王国'],['fill',HC.celt,'西吉斯蒙德统治的匈牙利王国'],['dot',HC.war,'1400年伦斯废王与1411年法兰克福西吉斯蒙德当选'],['dot','#2a2018','布拉格、勃兰登堡与尼科波利斯']]),
+  hs('1411—1418年','西吉斯蒙德接上康斯坦茨会议与卖勃兰登堡给霍亨索伦','1414—1418年西吉斯蒙德主持康斯坦茨大公会议，废三立一终结教会大分裂；1415—1417年以四十万弗罗林将勃兰登堡选帝侯封给霍亨索伦的腓特烈。',[[41.5,5.0],[53.6,17.5]],d=>{
+    ha(d,'mEmpire1050',HC.germany,{fillOpacity:.18});ha(d,'mPapal1210',HC.faith,{fillOpacity:.26});
+    hp(d,'sc_constance',{kind:'battle',left:1,note:'1414—1418年西吉斯蒙德在此主持康斯坦茨大公会议，废除三个教宗，选出马丁五世。'});
+    hp(d,'ge2_brandenburg',{kind:'battle',note:'1415—1417年西吉斯蒙德以四十万弗罗林将勃兰登堡选帝侯封给霍亨索伦的腓特烈，霍亨索伦家族从此入主柏林。'});
+    hp(d,'st_nuremberg',{left:1,note:'霍亨索伦的腓特烈原为纽伦堡城堡伯爵，因替西吉斯蒙德跑腿垫资而获封选帝侯。'});
+    hp(d,'rome',{note:'1420年新教宗马丁五世重返罗马，持续四十年的西方教会大分裂告终。'});
+   },[['fill',HC.germany,'主持大公会议的神圣罗马帝国'],['fill',HC.faith,'重归一统的罗马教宗国'],['dot',HC.war,'康斯坦茨大公会议与霍亨索伦获封勃兰登堡'],['dot','#2a2018','纽伦堡与罗马']]),
+  hs('1415—1437年','烧死胡斯引爆波希米亚战火，卢森堡绝嗣归哈布斯堡','1415年康斯坦茨烧死胡斯，1419年布拉格起义引爆胡斯战争，杰式卡车阵五败十字军；1436年签协约入布拉格，1437年西吉斯蒙德坐死于兹诺伊莫，三顶王冠归哈布斯堡女婿。',[[46.8,8.0],[51.5,18.5]],d=>{
+    ha(d,'mEmpire1050',HC.germany,{fillOpacity:.15});ha(d,'mBohemia900',HC.war,{fillOpacity:.32});
+    hp(d,'sc_constance',{left:1,note:'1415年7月6日西吉斯蒙德背弃通行证放任会议烧死胡斯，点燃捷克怒火。'});
+    hp(d,'de_prague',{kind:'battle',note:'1419年布拉格掷出窗外事件引爆胡斯战争，杰式卡的车阵火器五败西吉斯蒙德的十字军。'});
+    hp(d,'sc_tabor',{note:'胡斯派塔博尔大营：铁链战车配火炮手铳打垮封建骑士。'});
+    hp(d,'ge2_znojmo',{kind:'battle',note:'1437年12月9日西吉斯蒙德在此身穿皇袍坐死于宝座之上，卢森堡王朝绝嗣。'});
+    hp(d,'c3_vienna',{left:1,note:'女婿哈布斯堡的阿尔布雷希特二世驻维也纳，一口气继承德意志、波希米亚与匈牙利三顶王冠。'});
+   },[['fill',HC.germany,'神圣罗马帝国'],['fill',HC.war,'胡斯派车阵坚守的波希米亚'],['dot',HC.war,'布拉格胡斯起义与兹诺伊莫之死'],['dot','#2a2018','康斯坦茨、塔博尔与维也纳']])
  ]},
 {id:'history-italy-vespers',ch:5,title:'西西里晚祷：杀光法国人，两西西里分家',short:'西西里晚祷',en:'The Sicilian Vespers: Death to the French and the Two Sicilies',period:'1266—1302年',c:HC.italy,
  scenes:[
@@ -8561,7 +8686,7 @@ const HISTORY_ERAS=[
  {id:'empire-italy',name:'中世纪盛期：北意大利城市与西西里王国',en:'The Northern Cities and the Kingdom of Sicily',date:'约950—1166年',c:HC.italy,items:[['history-italy-cities'],['history-italy-sicily']]},
  {id:'empire-staufer',name:'中世纪盛期：红胡子、亨利六世与英诺森三世',en:'Barbarossa, Henry VI and Innocent III',date:'1152—1216年',c:HC.germany,items:[['history-germany-barbarossa'],['history-germany-henry6'],['history-germany-innocent']]},
  {id:'empire-france',name:'法兰西：从卡佩开张到“宇宙蜘蛛”一统',en:'France: From Hugh Capet to Louis XI',date:'987—1483年',c:HC.france,items:[['history-france-capet'],['history-france-plantagenet'],['history-france-stlouis'],['history-france-valois'],['history-france-louis11']]},
- {id:'empire-frederick2',name:'中世纪盛期：腓特烈二世与西西里晚祷',en:'Frederick II and the Sicilian Vespers',date:'1212—1302年',c:HC.germany,items:[['history-germany-frederick2'],['history-italy-vespers']]},
+ {id:'empire-frederick2',name:'德意志与意大利：从腓特烈二世到《金玺诏书》与康斯坦茨',en:'Germany and Italy: From Frederick II to the Golden Bull and Constance',date:'1212—1437年',c:HC.germany,items:[['history-germany-frederick2'],['history-germany-electors'],['history-germany-golden-bull'],['history-italy-vespers']]},
  {id:'empire-blackdeath',name:'中世纪晚期：黑死病',en:'The Late Middle Ages: the Black Death',date:'1346—1353年',c:HC.italy,items:[['history-italy-blackdeath']]},
  {id:'empire-taifas',name:'西班牙：泰法与圣战',en:'Spain: the Taifas and Holy War',date:'1031—1123年',c:HC.spain,items:[['history-spain-taifas'],['history-spain-crusade']]},
  {id:'faith-israel',name:'古代以色列',en:'Ancient Israel',date:'约前1400—前538年',c:HC.faith,items:[['history-faith-israel'],['history-faith-first-temple']]},
@@ -8610,7 +8735,7 @@ const HISTORY_BRANCHES=[
  {id:'west',name:'中世纪西欧',en:'Medieval Western Europe',lane:4,parent:'rome',from:476,to:843,c:HC.celt},
  {id:'spain',name:'西班牙',en:'Spain',lane:5,parent:'west',from:481,to:1123,c:HC.spain},
  {id:'france',name:'法兰西',en:'France',lane:5,parent:'west',from:843,to:1483,c:HC.france},
- {id:'germany',name:'德意志',en:'Germany',lane:4,parent:'west',from:843,to:1351,c:HC.germany},
+ {id:'germany',name:'德意志',en:'Germany',lane:4,parent:'west',from:843,to:1437,c:HC.germany},
  {id:'italy',name:'意大利',en:'Italy',lane:3,parent:'west',from:843,to:1351,c:HC.italy},
  // 不列颠 (including Ireland): forks from the trunk before Caesar's landing, on lane 6 right beside 法兰西.
  {id:'britain',name:'不列颠',en:'Britain and Ireland',lane:6,parent:'trunk',from:-55,to:1487,c:HC.britain},
@@ -8798,6 +8923,8 @@ const TREE_ROWS={
  'history-france-capet/0':['france',987,1137],
  'history-france-plantagenet/0':['france',1137,1223],
  'history-germany-frederick2/0':[['germany','italy','faith'],1220,1273,'1212—1273年'],
+ 'history-germany-electors/0':['germany',1274,1308,'1273—1308年'],
+ 'history-germany-golden-bull/0':['germany',1352,1437,'1308—1437年'],
  'history-faith-scholasticism/0':['faith',1274,1290,'约1150—1325年'],
  'history-italy-vespers/0':['italy',1282,1302,'1266—1302年'],
  'history-france-stlouis/0':[['france','faith'],1291,1309,'1223—1314年'],
@@ -8835,7 +8962,7 @@ const TREE_ROWS={
  'history-arab-seljuks/3':[['persia','east'],1071,1092]
 };
 // Topics still to be written grow the tree as dashed shoots.
-const TREE_FUTURE=[['east',1099,'科穆宁王朝','1099年起 · 1176年米利奥克法隆之战 · 1204年第四次十字军攻破君士坦丁堡 · 待展开'],['france',1483,'百年战争','1314年后待展开：1328年卡佩直系绝嗣 · 1337—1453年英法百年战争'],['germany',1351,'选帝侯与哈布斯堡','1273年后待展开：1273年哈布斯堡的鲁道夫当选 · 1356年《金玺诏书》七选帝侯'],['italy',1351,'城市共和国与文艺复兴','1302年后待展开：佛罗伦萨、威尼斯、热那亚与米兰 · 文艺复兴'],['faith',1449,'宗教改革','1449年起 · 文艺复兴教廷 · 1517年马丁·路德《九十五条论纲》与宗教改革 · 待展开'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',1351,'伊儿汗国与马穆鲁克','1291年后待展开：1295年合赞汗皈依伊斯兰 · 1300年伊儿汗国一度占大马士革 · 奥斯曼人兴起'],['china',845,'晚唐五代与宋','845年起 · 待展开'],['spain',1123,'收复失地运动','1123年起 · 穆拉比特与穆瓦希德 · 1212年纳瓦斯—德托洛萨 · 1492年格拉纳达 · 待展开'],['eeurope',1054,'基辅罗斯以后','1054年起 · 雅罗斯拉夫死后诸子分封 · 1240年蒙古人攻破基辅 · 待展开'],['crusade',1312,'后来的十字军','1396年尼科波利斯 · 1444年瓦尔纳 · 1571年勒班陀 · 待展开'],['britain',1487,'班诺克本与百年战争','1307年后待展开：1314年班诺克本之战 · 1337—1453年英法百年战争 · 玫瑰战争']];
+const TREE_FUTURE=[['east',1099,'科穆宁王朝','1099年起 · 1176年米利奥克法隆之战 · 1204年第四次十字军攻破君士坦丁堡 · 待展开'],['france',1483,'百年战争','1314年后待展开：1328年卡佩直系绝嗣 · 1337—1453年英法百年战争'],['germany',1437,'选帝侯与哈布斯堡','1273年后待展开：1273年哈布斯堡的鲁道夫当选 · 1356年《金玺诏书》七选帝侯'],['italy',1351,'城市共和国与文艺复兴','1302年后待展开：佛罗伦萨、威尼斯、热那亚与米兰 · 文艺复兴'],['faith',1449,'宗教改革','1449年起 · 文艺复兴教廷 · 1517年马丁·路德《九十五条论纲》与宗教改革 · 待展开'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',1351,'伊儿汗国与马穆鲁克','1291年后待展开：1295年合赞汗皈依伊斯兰 · 1300年伊儿汗国一度占大马士革 · 奥斯曼人兴起'],['china',845,'晚唐五代与宋','845年起 · 待展开'],['spain',1123,'收复失地运动','1123年起 · 穆拉比特与穆瓦希德 · 1212年纳瓦斯—德托洛萨 · 1492年格拉纳达 · 待展开'],['eeurope',1054,'基辅罗斯以后','1054年起 · 雅罗斯拉夫死后诸子分封 · 1240年蒙古人攻破基辅 · 待展开'],['crusade',1312,'后来的十字军','1396年尼科波利斯 · 1444年瓦尔纳 · 1571年勒班陀 · 待展开'],['britain',1487,'班诺克本与百年战争','1307年后待展开：1314年班诺克本之战 · 1337—1453年英法百年战争 · 玫瑰战争']];
 // Where a line stops it says why: [line, year, the event that ends it, note, the line it carries on in].
 const TREE_ENDS=[['trunk',-30,'并入罗马','前146年科林斯被毁 · 前30年最后一个希腊化王国埃及并入罗马','rome'],['rome',476,'西罗马终结','476年西部末代皇帝被废 · 由中世纪西欧接续'],['west',843,'凡尔登三分','843年《凡尔登条约》三分帝国 · 分出法兰西、德意志、意大利']];
 // Sections of one line that run side by side: [line, row keys, side of the passing loop].
