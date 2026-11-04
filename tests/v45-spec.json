@@ -105,7 +105,7 @@
   "history-britain-jeanne": [
    "圣女贞德与百年战争终局",
    "1428—1453年",
-   6,
+   7,
    12
   ],
   "history-britain-roses-1": [
@@ -594,7 +594,11 @@
   ],
   [
    "history-britain-jeanne/5",
-   "1435年勃艮第和解后法国靠火炮打赢百年战争，而被国王抛弃的贞德则在后世被各派反"
+   "被国王当作弃子烧死的贞德，在死后五百年里被历代政治力量反复挖掘，一步步塑造成了法"
+  ],
+  [
+   "history-britain-jeanne/6",
+   "百年战争最后能彻底打垮英国，靠的是查理七世用常设税银从勃艮第与德意志铸钟匠那里学"
   ],
   [
    "history-britain-roses-1/0",
@@ -984,6 +988,10 @@
    [
     5,
     "从“女巫”到法兰西图腾：后世五百年如何挖掘与神话圣女贞德"
+   ],
+   [
+    6,
+    "火炮革了长弓与城堡的命：法军火炮从哪学来、比罗兄弟的四大跃迁与古今火炮对比表"
    ]
   ],
   "history-britain-roses-1": [
@@ -1517,7 +1525,11 @@
   ],
   [
    "history-britain-jeanne/5",
-   "1453年7月在卡斯蒂永之战用三百门火炮轰碎英军并炸死老帅塔尔博特"
+   "才在1456年请教廷办重审替贞德平反"
+  ],
+  [
+   "history-britain-jeanne/6",
+   "1453年7月17日在卡斯蒂永之战架起三百门火炮轰碎英军冲锋"
   ],
   [
    "history-britain-roses-1/0",
@@ -1681,6 +1693,11 @@
    "③ 从启蒙时代的嘲笑到19世纪民族主义的“重新挖掘”"
   ],
   [
+   "history-britain-jeanne",
+   "火炮革了长弓与城堡的命：法军火炮从哪学来、比罗兄弟的四大跃迁与古今火炮对比表",
+   "1941年日本“大和”号战列舰 460毫米45倍径主炮"
+  ],
+  [
    "history-britain-roses-1",
    "红玫瑰 vs 白玫瑰：兰开斯特、博福特与约克三家的血统账",
    "次子克拉伦斯这一支的顺位排在第三子之前"
@@ -1717,5 +1734,5 @@
   "mNormanIreland1210",
   "mGaelicIreland1210"
  ],
- "pass": "不列颠 — 19 sections (107 scenes) on a new line and chapter ⅩⅢ: Doggerland and Stonehenge to Caesar's raids, Roman Britain and Hadrian's Wall, Ireland's monasteries and Whitby, the Heptarchy, Vikings and Alfred the Great, Cnut and the Norman Conquest, Henry II's juries and Becket, the Normans in Ireland, Richard the Lionheart and Lackland John, Magna Carta and Parliament, Edward I's Wales and Scottish wars; 90 of 老无’s points in bold, 92 facts set right in plain text; 16 豆腐块"
+ "pass": "不列颠 — 19 sections (108 scenes) on a new line and chapter ⅩⅢ: Doggerland and Stonehenge to Caesar's raids, Roman Britain and Hadrian's Wall, Ireland's monasteries and Whitby, the Heptarchy, Vikings and Alfred the Great, Cnut and the Norman Conquest, Henry II's juries and Becket, the Normans in Ireland, Richard the Lionheart and Lackland John, Magna Carta and Parliament, Edward I's Wales and Scottish wars; 91 of 老无’s points in bold, 93 facts set right in plain text; 17 豆腐块"
 }
