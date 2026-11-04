@@ -24,6 +24,12 @@
    5,
    5
   ],
+  "history-france-louis11": [
+   "“宇宙蜘蛛”路易十一",
+   "1453—1483年",
+   5,
+   5
+  ],
   "history-germany-frederick2": [
    "腓特烈二世",
    "1212—1273年",
@@ -102,6 +108,13 @@
    ],
    1382,
    1400
+  ],
+  "history-france-louis11/0": [
+   [
+    "france"
+   ],
+   1461,
+   1483
   ],
   "history-germany-frederick2/0": [
    [
@@ -261,6 +274,26 @@
   [
    "history-france-valois/4",
    "查理五世平定内部动乱后，借筹集父王赎金与抗英之机，把原本要靠三级会议逐次批准的临"
+  ],
+  [
+   "history-france-louis11/0",
+   "百年战争刚打赢，法王查理七世就与王太子路易反目成仇，最终在1461年因妄想儿子在"
+  ],
+  [
+   "history-france-louis11/1",
+   "路易十一厌恶骑士虚荣、专靠银子与密探织网算计，即位初年面对大诸侯的“公益同盟”兵"
+  ],
+  [
+   "history-france-louis11/2",
+   "见英国新王爱德华四世同勃艮第联姻合围法国，路易十一索性在幕后操盘英国红白玫瑰战争"
+  ],
+  [
+   "history-france-louis11/3",
+   "1475年重新坐稳王位的爱德华四世率大军渡海攻法，路易十一不发一兵一卒，直接用七"
+  ],
+  [
+   "history-france-louis11/4",
+   "买退英军后，路易十一花钱雇瑞士长矛兵在1477年南锡雪原砍死宿敌“大胆查理”，顺"
   ],
   [
    "history-germany-frederick2/0",
@@ -516,6 +549,16 @@
     "红蓝双色帽与王太子眼前的血案"
    ]
   ],
+  "history-france-louis11": [
+   [
+    0,
+    "怕被亲生儿子毒死而活活饿死的“胜利者”查理七世"
+   ],
+   [
+    4,
+    "南锡冰河里被野狼啃食的“大胆查理”与皮基尼的防刺杀木栅栏"
+   ]
+  ],
   "history-germany-frederick2": [
    [
     0,
@@ -712,6 +755,7 @@
   "history-france-plantagenet": 300,
   "history-france-stlouis": 300,
   "history-france-valois": 300,
+  "history-france-louis11": 300,
   "history-germany-frederick2": 300,
   "history-italy-vespers": 300,
   "history-faith-scholasticism": 230,
@@ -724,12 +768,13 @@
  "eras": [
   [
    "empire-france",
-   "法兰西：从卡佩开张到瓦卢瓦常设税",
+   "法兰西：从卡佩开张到“宇宙蜘蛛”一统",
    [
     "history-france-capet",
     "history-france-plantagenet",
     "history-france-stlouis",
-    "history-france-valois"
+    "history-france-valois",
+    "history-france-louis11"
    ]
   ],
   [
@@ -776,7 +821,7 @@
    "法兰西",
    "west",
    843,
-   1453,
+   1483,
    5
   ],
   "germany": [
@@ -804,7 +849,7 @@
  "futures": [
   [
    "france",
-   1453,
+   1483,
    "百年战争"
   ],
   [
@@ -841,7 +886,8 @@
    "history-france-valois/0",
    "history-britain-hundred-years-4/0",
    "history-britain-hundred-years-5/0",
-   "history-britain-jeanne/0"
+   "history-britain-jeanne/0",
+   "history-france-louis11/0"
   ],
   "germany": [
    "history-germany-innocent/0",
@@ -1272,5 +1318,5 @@
   "mNaplesAnjou1282",
   "mAragonCrown1282"
  ],
- "pass": "法兰西、基督教、德意志、意大利 on to ~1300 — 12 sections (81 scenes): Hugh Capet and Louis VI, the Plantagenets and Philip II (with the marriage-and-land diagram), Saint Louis to Philip IV and Anagni, universities and scholasticism, Frederick II and the Interregnum (with the 豆腐块 on seven excommunications of five emperors), and the Sicilian Vespers; shared stations across lines; 72 of 老无’s points in bold, 69 facts and their order set right in plain text; 8 豆腐块 with 14 corrections"
+ "pass": "法兰西、基督教、德意志、意大利 on to ~1300 — 13 sections (86 scenes): Hugh Capet and Louis VI, the Plantagenets and Philip II (with the marriage-and-land diagram), Saint Louis to Philip IV and Anagni, universities and scholasticism, Frederick II and the Interregnum (with the 豆腐块 on seven excommunications of five emperors), and the Sicilian Vespers; shared stations across lines; 77 of 老无’s points in bold, 69 facts and their order set right in plain text; 8 豆腐块 with 14 corrections"
 }

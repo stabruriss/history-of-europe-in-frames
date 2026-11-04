@@ -113,6 +113,24 @@
    "1435—1455年",
    6,
    12
+  ],
+  "history-britain-roses-2": [
+   "红白玫瑰战争（中）",
+   "1455—1461年",
+   6,
+   12
+  ],
+  "history-britain-roses-3": [
+   "红白玫瑰战争（下）",
+   "1461—1471年",
+   6,
+   12
+  ],
+  "history-britain-roses-4": [
+   "红白玫瑰战争（终）",
+   "1471—1487年",
+   6,
+   12
   ]
  },
  "rows": {
@@ -257,6 +275,27 @@
    ],
    1454,
    1455
+  ],
+  "history-britain-roses-2/0": [
+   [
+    "britain"
+   ],
+   1456,
+   1461
+  ],
+  "history-britain-roses-3/0": [
+   [
+    "britain"
+   ],
+   1462,
+   1471
+  ],
+  "history-britain-roses-4/0": [
+   [
+    "britain"
+   ],
+   1472,
+   1487
   ]
  },
  "bold": [
@@ -554,7 +593,7 @@
   ],
   [
    "history-britain-hundred-years-4/5",
-   "此后废太子跑到南方重建势力；亨利五世回国不久再次渡海便暴病身亡，疯子查理六世也紧"
+   "此后废太子跑到南方重建势力；亨利五世再次渡海便暴病身亡，疯子查理六世紧跟着死去，"
   ],
   [
    "history-britain-hundred-years-5/0",
@@ -623,6 +662,78 @@
   [
    "history-britain-roses-1/5",
    "谁知王后安茹的玛格丽特突然生了个儿子，疯王随后又醒过来罢免约克公爵，和平接班之路"
+  ],
+  [
+   "history-britain-roses-2/0",
+   "第一次圣奥尔本斯战后双方几度拉锯，1460年约克派再擒亨利六世，但因王后仍握北方"
+  ],
+  [
+   "history-britain-roses-2/1",
+   "手握重兵的玛格丽特王后坚决不认废掉自己儿子的《调解法案》，于1460年年底在韦克"
+  ],
+  [
+   "history-britain-roses-2/2",
+   "约克公爵阵亡后，十九岁的长子爱德华在莫蒂默十字架之战借“三日同辉”的幻日天象鼓舞"
+  ],
+  [
+   "history-britain-roses-2/3",
+   "与此同时玛格丽特王后在第二次圣奥尔本斯之战击溃沃里克、救回亨利六世，却因北方兵沿"
+  ],
+  [
+   "history-britain-roses-2/4",
+   "1461年3月29日棕枝主日暴风雪中，爱德华四世在陶顿之战用顺风借箭之计破敌，经"
+  ],
+  [
+   "history-britain-roses-2/5",
+   "陶顿之战单日砍杀两万八千人，彻底坏了中世纪欧洲贵族战争“交赎金不杀俘”的规矩，开"
+  ],
+  [
+   "history-britain-roses-3/0",
+   "爱德华四世登基后不甘心当表兄“造王者”沃里克伯爵的傀儡，借1464年打猎秘娶兰开"
+  ],
+  [
+   "history-britain-roses-3/1",
+   "沃里克伯爵在1469年夏拉拢国王二弟克拉伦斯公爵兵变捉住爱德华四世，却因贵族罢工"
+  ],
+  [
+   "history-britain-roses-3/2",
+   "逃到法国的沃里克在法王路易十一撮合下，向流亡法国九年的死敌玛格丽特王后下跪结盟，"
+  ],
+  [
+   "history-britain-roses-3/3",
+   "不等玛格丽特王后渡海，爱德华四世于1471年3月借勃艮第钱船抢先登陆北境，而被岳"
+  ],
+  [
+   "history-britain-roses-3/4",
+   "1471年4月14日复活节大雾中，爱德华四世在伦敦北郊巴尼特与沃里克决战，沃里克"
+  ],
+  [
+   "history-britain-roses-3/5",
+   "就在沃里克战死当天，被海风耽搁的玛格丽特王后与十七岁王子才在西南海岸登陆，爱德华"
+  ],
+  [
+   "history-britain-roses-4/0",
+   "1471年阵前倒戈立功的二弟克拉伦斯公爵乔治，战后因争家产把小姨子扮成厨娘藏匿、"
+  ],
+  [
+   "history-britain-roses-4/1",
+   "1483年春年仅四十岁的爱德华四世因暴饮暴食与纵欲过度暴毙，镇守北方的三弟理查半"
+  ],
+  [
+   "history-britain-roses-4/2",
+   "理查三世篡位后将两个小侄子锁进伦敦塔深处，1483年秋两个男孩人间蒸发，杀侄恶名"
+  ],
+  [
+   "history-britain-roses-4/3",
+   "由于兰开斯特与约克正统男丁已被杀得几乎绝迹，逃亡法国的各派残党只能共推具有“威尔"
+  ],
+  [
+   "history-britain-roses-4/4",
+   "1485年8月22日博斯沃思决战中，继父斯坦利兄弟因长子被扣为人质而停在山头观望"
+  ],
+  [
+   "history-britain-roses-4/5",
+   "亨利·都铎在战场戴冠为亨利七世，迎娶约克公主伊丽莎白拼成“都铎玫瑰”，三十年内战"
   ]
  ],
  "moments": {
@@ -899,6 +1010,28 @@
     5,
     "“这孩子一定是圣灵怀上的”与圣奥尔本斯城堡客栈之死"
    ]
+  ],
+  "history-britain-roses-2": [
+   [
+    1,
+    "“你爹杀了我爹，你也得死”与约克城门的纸王冠"
+   ]
+  ],
+  "history-britain-roses-3": [
+   [
+    5,
+    "蒂克斯伯里阵前一斧劈死自家主将的萨默塞特公爵"
+   ]
+  ],
+  "history-britain-roses-4": [
+   [
+    2,
+    "伦敦塔楼梯下的两具孩童骸骨与莱斯特停车场的驼背国王"
+   ],
+   [
+    4,
+    "“一匹马，用我的王国换一匹马”与荆棘丛中的王冠"
+   ]
   ]
  },
  "boxes": {
@@ -999,6 +1132,32 @@
     4,
     "红玫瑰 vs 白玫瑰：兰开斯特、博福特与约克三家的血统账"
    ]
+  ],
+  "history-britain-roses-2": [
+   [
+    2,
+    "“三日同辉”是怎么回事？冰晶折射的“幻日（Parhelion）”气象学"
+   ],
+   [
+    5,
+    "当贵族战争坏了赎金规矩：从陶顿“不留俘虏”看两大家族同归于尽，兼论中国战国白起长平坑杀四十万"
+   ]
+  ],
+  "history-britain-roses-3": [
+   [
+    0,
+    "爱德华四世娶寡妇真是因为好色吗？史学界对“扶植外戚制衡造王者”的政治解读"
+   ]
+  ],
+  "history-britain-roses-4": [
+   [
+    3,
+    "红白玫瑰与都铎王室血统图（1377—1509年）"
+   ],
+   [
+    4,
+    "骑墙世家与人质博弈：亨利·都铎的继父斯坦利兄弟为什么在博斯沃思阵前背刺理查三世？"
+   ]
   ]
  },
  "budget": {
@@ -1020,7 +1179,10 @@
   "history-britain-hundred-years-4": 300,
   "history-britain-hundred-years-5": 300,
   "history-britain-jeanne": 300,
-  "history-britain-roses-1": 300
+  "history-britain-roses-1": 300,
+  "history-britain-roses-2": 300,
+  "history-britain-roses-3": 300,
+  "history-britain-roses-4": 300
  },
  "eras": [
   [
@@ -1059,7 +1221,7 @@
   ],
   [
    "britain-hundred-years",
-   "百年战争与玫瑰战争：从阿基坦称臣到圣奥尔本斯",
+   "百年战争与红白玫瑰战争：从阿基坦称臣到都铎玫瑰",
    [
     "history-britain-edward2",
     "history-britain-hundred-years-1",
@@ -1069,7 +1231,10 @@
     "history-britain-hundred-years-4",
     "history-britain-hundred-years-5",
     "history-britain-jeanne",
-    "history-britain-roses-1"
+    "history-britain-roses-1",
+    "history-britain-roses-2",
+    "history-britain-roses-3",
+    "history-britain-roses-4"
    ]
   ]
  ],
@@ -1078,26 +1243,26 @@
    "不列颠",
    "trunk",
    -55,
-   1455,
+   1487,
    6
   ],
   "france": [
    "法兰西",
    "west",
    843,
-   1453,
+   1483,
    5
   ]
  },
  "futures": [
   [
    "britain",
-   1455,
+   1487,
    "班诺克本与百年战争"
   ],
   [
    "france",
-   1453,
+   1483,
    "百年战争"
   ]
  ],
@@ -1122,7 +1287,10 @@
    "history-britain-hundred-years-4/0",
    "history-britain-hundred-years-5/0",
    "history-britain-jeanne/0",
-   "history-britain-roses-1/0"
+   "history-britain-roses-1/0",
+   "history-britain-roses-2/0",
+   "history-britain-roses-3/0",
+   "history-britain-roses-4/0"
   ],
   "france": [
    "history-france-west-francia/0",
@@ -1141,7 +1309,8 @@
    "history-france-valois/0",
    "history-britain-hundred-years-4/0",
    "history-britain-hundred-years-5/0",
-   "history-britain-jeanne/0"
+   "history-britain-jeanne/0",
+   "history-france-louis11/0"
   ]
  },
  "shared": {
@@ -1485,7 +1654,7 @@
   ],
   [
    "history-britain-hundred-years-4/5",
-   "出生才九个月的婴儿亨利六世按约同时继承英法王位"
+   "出生仅九个月的婴儿亨利六世按约兼承英法双冠"
   ],
   [
    "history-britain-hundred-years-5/0",
@@ -1553,7 +1722,63 @@
   ],
   [
    "history-britain-roses-1/5",
-   "于1455年5月22日在圣奥尔本斯砍死萨默塞特、生擒亨利六世"
+   "一箭射伤亨利六世脖颈将其生擒，并在酒馆门前将萨默塞特乱斧砍死"
+  ],
+  [
+   "history-britain-roses-2/0",
+   "二来玛格丽特王后并未被俘，正同北方大贵族在约克郡集结近两万大军"
+  ],
+  [
+   "history-britain-roses-2/1",
+   "在头上套了一顶纸糊王冠，插在约克城门长矛上羞辱"
+  ],
+  [
+   "history-britain-roses-2/2",
+   "开战前冰冷天空中突然出现“三个太阳同放光芒”的幻日奇观"
+  ],
+  [
+   "history-britain-roses-2/4",
+   "等敌军箭囊射空，约克弓手走上前拔起地上的敌箭射回"
+  ],
+  [
+   "history-britain-roses-2/5",
+   "彻底坏了中世纪欧洲贵族战争“交赎金不杀俘”的规矩"
+  ],
+  [
+   "history-britain-roses-3/0",
+   "爱德华四世趁机重用王后娘家十二名兄弟姐妹包揽豪门联姻"
+  ],
+  [
+   "history-britain-roses-3/1",
+   "声称“见不到自由的爱德华国王本人绝不拔剑”"
+  ],
+  [
+   "history-britain-roses-3/3",
+   "克拉伦斯率四千兵在班伯里倒戈归顺兄长"
+  ],
+  [
+   "history-britain-roses-3/5",
+   "暴怒抡战斧当场劈碎温洛克脑袋"
+  ],
+  [
+   "history-britain-roses-4/0",
+   "克拉伦斯竟把小姨子扮成厨娘藏在伦敦肉食店里"
+  ],
+  [
+   "history-britain-roses-4/2",
+   "1483年秋两个男孩人间蒸发"
+  ],
+  [
+   "history-britain-roses-4/3",
+   "父系爷爷欧文·都铎只是亨利五世法国寡后凯瑟琳的威尔士侍从"
+  ],
+  [
+   "history-britain-roses-4/4",
+   "无子当人质的叔叔威廉·斯坦利深知理查若胜必清算自家"
+  ],
+  [
+   "history-britain-roses-4/5",
+   "亨利七世顺势禁私兵、设星室法庭"
   ]
  ],
  "boxfixes": [
@@ -1706,6 +1931,31 @@
    "history-britain-roses-1",
    "红玫瑰 vs 白玫瑰：兰开斯特、博福特与约克三家的血统账",
    "都铎玫瑰"
+  ],
+  [
+   "history-britain-roses-2",
+   "“三日同辉”是怎么回事？冰晶折射的“幻日（Parhelion）”气象学",
+   "最小偏向角约 22° 的折射"
+  ],
+  [
+   "history-britain-roses-2",
+   "当贵族战争坏了赎金规矩：从陶顿“不留俘虏”看两大家族同归于尽，兼论中国战国白起长平坑杀四十万",
+   "长平之战"
+  ],
+  [
+   "history-britain-roses-3",
+   "爱德华四世娶寡妇真是因为好色吗？史学界对“扶植外戚制衡造王者”的政治解读",
+   "伍德维尔外戚新贵集团"
+  ],
+  [
+   "history-britain-roses-4",
+   "红白玫瑰与都铎王室血统图（1377—1509年）",
+   "父系本无一滴英格兰王室血"
+  ],
+  [
+   "history-britain-roses-4",
+   "骑墙世家与人质博弈：亨利·都铎的继父斯坦利兄弟为什么在博斯沃思阵前背刺理查三世？",
+   "亲生大儿子斯特兰奇勋爵"
   ]
  ],
  "slips": [
@@ -1734,5 +1984,5 @@
   "mNormanIreland1210",
   "mGaelicIreland1210"
  ],
- "pass": "不列颠 — 19 sections (108 scenes) on a new line and chapter ⅩⅢ: Doggerland and Stonehenge to Caesar's raids, Roman Britain and Hadrian's Wall, Ireland's monasteries and Whitby, the Heptarchy, Vikings and Alfred the Great, Cnut and the Norman Conquest, Henry II's juries and Becket, the Normans in Ireland, Richard the Lionheart and Lackland John, Magna Carta and Parliament, Edward I's Wales and Scottish wars; 91 of 老无’s points in bold, 93 facts set right in plain text; 17 豆腐块"
+ "pass": "不列颠 — 22 sections (126 scenes) on a new line and chapter ⅩⅢ: Doggerland and Stonehenge to Caesar's raids, Roman Britain and Hadrian's Wall, Ireland's monasteries and Whitby, the Heptarchy, Vikings and Alfred the Great, Cnut and the Norman Conquest, Henry II's juries and Becket, the Normans in Ireland, Richard the Lionheart and Lackland John, Magna Carta and Parliament, Edward I's Wales and Scottish wars; 109 of 老无’s points in bold, 107 facts set right in plain text; 22 豆腐块"
 }

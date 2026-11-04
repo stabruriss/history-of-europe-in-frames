@@ -6,7 +6,7 @@ const path=require('node:path');
 const {pathToFileURL}=require('node:url');
 const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','index.html'))).href;
 const shots=path.join(__dirname,'shots-reader-width');
-const shot=async(p,name)=>{if(process.env.FULL_SHOTS==='1'){fs.mkdirSync(shots,{recursive:true});await p.screenshot({path:path.join(shots,name+'.png')});}};
+const shot=async(p,name)=>{if(process.env.FULL_SHOTS==='1'){fs.mkdirSync(shots,{recursive:true});if(process.env.FULL_SHOTS==='1')await p.screenshot({path:path.join(shots,name+'.png')});}};
 const KEY='agora-atlas-reader-width',TABLE='#history-britain-jeanne/6',MIN=280,MAP_KEPT=332;
 const report=p=>p.evaluate(()=>{
  const r=reader.getBoundingClientRect(),stage=document.getElementById('mapwrap').getBoundingClientRect(),g=document.getElementById('readerGrip'),gr=g.getBoundingClientRect(),legend=document.getElementById('legendBox').getBoundingClientRect();

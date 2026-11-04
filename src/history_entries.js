@@ -1114,6 +1114,9 @@ Object.assign(HS,{
   uk4_shrewsbury:['什鲁斯伯里','Shrewsbury',52.708,-2.754,'威尔士中段边境重镇；威廉封心腹罗杰·德·蒙哥马利为伯爵，镇守威尔士边防。'],
   uk4_gloucester:['格洛斯特','Gloucester',51.867,-2.247,'塞文河畔王室重镇；1085年圣诞威廉在此召集御前会议，下令派钦差清查全境田亩与牲畜家底。'],
   uk4_caen:['卡昂','Caen',49.182,-0.37,'诺曼底重镇；威廉夫妇在此创建圣斯德望修道院，1087年9月威廉葬于院内。'],
+  l11_mehun:['默昂城堡','Mehun-sur-Yèvre',47.145,2.216,'布尔日西北城堡；1461年7月22日法王查理七世在此因口腔脓肿且妄想儿子路易派人下毒，拒绝进食活活饿死。'],
+  l11_picquigny:['皮基尼','Picquigny',49.944,2.144,'索姆河畔亚眠以西小镇；1475年8月29日法王路易十一与英王爱德华四世在河心木桥隔栏会面签《皮基尼条约》，花钱买退英军。'],
+  l11_nancy:['南锡','Nancy',48.692,6.184,'洛林公国首府；1477年1月5日勃艮第公爵“大胆查理”在此围城时被路易十一资助的瑞士长矛兵与洛林军击毙，勃艮第公国随即被瓜分。'],
   uk5_newforest:['新森林','New Forest',50.87,-1.63,'汉普郡的王室猎场；1100年8月2日英王威廉二世在此打猎时中冷箭身亡。'],
   uk5_winchester:['温彻斯特','Winchester',51.063,-1.308,'英格兰古都与王室金库所在地；1100年亨利一世在此夺取金库，1135年温彻斯特主教亨利助兄长斯蒂芬夺位。'],
   uk5_tinchebray:['坦什布赖','Tinchebray',48.767,-0.733,'诺曼底西南要塞；1106年9月28日亨利一世在此击败并活捉长兄罗贝尔，将诺曼底重并入英王手中。'],
@@ -1211,6 +1214,19 @@ Object.assign(HS,{
   rs1_formigny:['福尔米尼','Formigny',49.337,-0.899,'诺曼底海岸村落；1450年4月15日法军用两门蛇炮轰散英军长弓阵并全歼援军，英军一年之内丢光整个诺曼底。'],
   rs1_clarendon:['克拉伦登行宫','Clarendon Palace',51.069,-1.737,'威尔特郡索尔兹伯里以东王室猎宫；1453年8月亨利六世在此听到加斯科涅战败消息后突发精神分裂与木僵症，昏迷十七个月。'],
   rs1_st_albans:['圣奥尔本斯','St Albans',51.752,-0.339,'伦敦西北赫特福德郡重镇；1455年5月22日约克公爵与沃里克伯爵在此街巷击杀萨默塞特公爵、生擒亨利六世，打响红白玫瑰战争第一枪。'],
+  rs2_northampton:['北安普敦','Northampton',52.24,-0.902,'英格兰中部重镇；1460年7月10日沃里克伯爵在此击败王军、二次俘获亨利六世，但玛格丽特王后携王子在北方拥兵未降。'],
+  rs2_wakefield:['韦克菲尔德','Wakefield',53.683,-1.497,'约克郡桑德尔城堡所在地；1460年12月30日约克公爵理查在此出城中伏阵亡，首级被戴上纸王冠悬于约克城门。'],
+  rs2_mortimer:['莫蒂默十字架','Mortimer’s Cross',52.275,-2.847,'威尔士边境赫里福德郡路口；1461年2月2日清晨出现“三日幻日”天象，十九岁的爱德华在此击败都铎父子并斩杀欧文·都铎。'],
+  rs2_towton:['陶顿','Towton',53.848,-1.267,'约克西南雪原；1461年3月29日棕枝主日暴风雪中，爱德华四世在此击败兰开斯特主力，单日阵亡两万八千人，为英国史上最血腥一战。'],
+  rs3_middleham:['米德勒姆城堡','Middleham Castle',54.284,-1.806,'约克郡内维尔家族主堡；1469年8—9月“造王者”沃里克伯爵将俘获的爱德华四世关押于此，因民兵不见国王拒不平叛，六周后被迫放人。'],
+  rs3_banbury:['班伯里','Banbury',52.062,-1.339,'牛津郡北部重镇；1469年7月沃里克在此附近埃奇科特击败王军，1471年4月克拉伦斯公爵在此阵前倒戈归顺兄长爱德华四世。'],
+  rs3_barnet:['巴尼特','Barnet',51.653,-0.2,'伦敦北郊重镇；1471年4月14日复活节浓雾中，沃里克军误击友军牛津伯爵部导致全军溃败，“造王者”沃里克伯爵在此被杀。'],
+  rs3_weymouth:['韦茅斯','Weymouth',50.614,-2.457,'英格兰西南多塞特郡海港；流亡法国九年的玛格丽特王后与十七岁王子爱德华于1471年4月14日巴尼特之战当天在此登陆。'],
+  rs3_tewkesbury:['蒂克斯伯里','Tewkesbury',51.992,-2.158,'塞文河与埃文河交汇处；1471年5月4日爱德华四世在此设伏全歼玛格丽特王后大军，兰开斯特独苗爱德华王子被杀。'],
+  rs4_stony:['斯托尼斯特拉特福德','Stony Stratford',52.056,-0.852,'白金汉郡驿道小镇；1483年4月30日格洛斯特公爵理查（理查三世）在此半路截走十二岁的侄儿爱德华五世，逮捕外戚护卫。'],
+  rs4_milford:['米尔福德港','Milford Haven',51.713,-5.034,'威尔士西南彭布罗克郡海港；1485年8月7日流亡法国的亨利·都铎率军在此登陆，沿途招揽威尔士乡党东进。'],
+  rs4_bosworth:['博斯沃思原野','Bosworth Field',52.591,-1.41,'莱斯特郡西部原野；1485年8月22日理查三世在此单骑冲阵时遭斯坦利兄弟侧翼背刺阵亡，亨利·都铎戴冠开启都铎王朝。'],
+  rs4_stoke:['斯托克','East Stoke',53.023,-0.885,'诺丁汉郡特伦特河畔；1487年6月16日亨利七世在此彻底剿灭约克派残党，红白玫瑰战争落幕。'],
   av_aquila:['拉奎拉','L’Aquila',42.35,13.399,'阿布鲁佐山城；1294年8月塞莱斯廷五世在此骑毛驴加冕。'],
   av_palestrina:['帕莱斯特里纳','Palestrina',41.839,12.892,'罗马东郊科隆纳家族的山城；1298年卜尼法斯八世将其攻陷夷平、犁地撒盐。'],
   av_perugia:['佩鲁贾','Perugia',43.112,12.389,'翁布里亚山城；1294年、1305年两次教宗选举在此，1304年本笃十一世死于此。'],
@@ -4213,6 +4229,43 @@ const HISTORY_ENTRIES=[
     hp(d,'sl9_rochelle',{left:1,note:'靠常设王税供养的法军与舰队在1372年收复拉罗谢尔，将英军挤回波尔多沿海。'});
     hp(d,'w_bordeaux',{left:1,note:'1375年休战时英军在西南仅存的波尔多沿海。'});
    },[['fill',HC.france,'推行炉灶税、商品税、盐税三大常设税的查理五世法兰西'],['fill',HC.britain,'被挤回波尔多沿海的英军领地'],['dot',HC.war,'巴黎（王室常设税中枢）'],['dot','#2a2018','鲁昂、拉罗谢尔与波尔多']])
+ ]},
+{id:'history-france-louis11',ch:5,title:'查理七世绝食与“宇宙蜘蛛”路易十一：操盘玫瑰战争与肢解勃艮第',short:'“宇宙蜘蛛”路易十一',en:'Charles VII’s Starvation and Louis XI “the Universal Spider”: Manipulating the Wars of the Roses and Dismantling Burgundy',period:'1453—1483年',c:HC.france,
+ scenes:[
+  hs('1440—1461年','父子反目：查理七世妄想被毒死而绝食身亡','王太子路易两次叛父后逃往勃艮第领地避难五年；1461年7月多疑抑郁的查理七世因口腔生疮且妄想路易派人下毒，拒绝进食在默昂城堡活活饿死，路易十一继位。',[[45.5,-0.5],[51.2,5.8]],d=>{
+    ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.34});ha(d,'mBurgundyDuchy900',HC.war,{fillOpacity:.28});
+    hp(d,'l11_mehun',{kind:'battle',left:1,note:'1461年7月22日，五十八岁的法王查理七世因妄想儿子路易下毒，在此拒绝进食活活饿死。'});
+    hp(d,'pl_dijon',{note:'勃艮第公国：叛逆的王太子路易在1456—1461年间躲在勃艮第公爵好人腓力庇护下坐等父王驾崩。'});
+    hp(d,'w_reims',{note:'1461年8月15日，三十八岁的路易十一在好人腓力护送下于兰斯加冕。'});
+   },[['fill',HC.france,'法兰西王国'],['fill',HC.war,'收留叛逆太子的勃艮第公国'],['dot',HC.war,'1461年7月22日默昂城堡（查理七世绝食身亡）'],['dot','#2a2018','兰斯与第戎']]),
+  hs('1461—1465年','“宇宙蜘蛛”路易十一：瓦解诸侯“公益同盟”','1465年勃艮第储君大胆查理、国王亲弟贝里公爵与布列塔尼公爵组成“公益同盟”围攻巴黎；路易十一假意签约哄散联军，随后发兵收回诺曼底、逐个分化瓦解。',[[46.2,-3.2],[50.8,5.8]],d=>{
+    ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.34});ha(d,'mBurgundyDuchy900',HC.war,{fillOpacity:.3});
+    ha(d,'mNormandy933',HC.war,{fillOpacity:.24});
+    hp(d,'w_paris',{kind:'battle',note:'1465年7月蒙莱里之战后，“公益同盟”诸侯围困巴黎，路易十一亲自进城安抚市民并以银币和爵位分化诸侯。'});
+    hp(d,'fr_rouen',{left:1,note:'路易十一假意把诺曼底封给亲弟贝里公爵，联军一散便在年底发兵收回鲁昂与诺曼底。'});
+    hp(d,'w_tours',{left:1,note:'路易十一常驻图尔郊外的普莱西城堡，穿粗布旧衣、戴铅章毡帽，以密探网与邮政驿站遥控全国。'});
+   },[['fill',HC.france,'路易十一直辖的王室领地'],['fill',HC.war,'1465年“公益同盟”叛乱诸侯（勃艮第、诺曼底等）'],['dot',HC.war,'1465年巴黎保卫与分化诸侯'],['dot','#2a2018','鲁昂与图尔']]),
+  hs('1468—1471年','幕后操盘玫瑰战争：昂热撮合死敌反攻英国','为破解1468年英王爱德华四世与勃艮第大胆查理的联姻合围，路易十一于1470年7月在昂热撮合流亡法国的玛格丽特王后与叛逃的沃里克伯爵结盟，出钱送沃里克返英推翻爱德华四世。',[[46.8,-2.5],[52.0,5.2]],d=>{
+    ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.34});ha(d,'mBurgundyDuchy900',HC.war,{fillOpacity:.28});
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.28});
+    hp(d,'pl_angers',{kind:'battle',left:1,note:'1470年7月昂热和解：路易十一硬劝玛格丽特王后宽恕死敌沃里克伯爵，让爱德华王子娶沃里克次女安妮。'});
+    hp(d,'k_london',{left:1,note:'1470年10月沃里克率法国资助的船队杀回伦敦，赶走爱德华四世，把疯王亨利六世重新扶上王位。'});
+    hp(d,'hy2_bruges',{note:'1468年爱德华四世之妹在此嫁给勃艮第公爵大胆查理；1470年秋被赶下台的爱德华四世逃往勃艮第领地求援。'});
+    hr(d,[[47.47,-0.55],[49.49,0.11],[50.35,-3.58],[51.51,-0.13]],HC.war);
+   },[['fill',HC.france,'路易十一的法兰西（资助兰开斯特与沃里克）'],['fill',HC.war,'资助爱德华四世的勃艮第公国'],['fill',HC.britain,'沦为法勃代理战场的英格兰'],['dline',HC.war,'1470年秋路易十一送沃里克返英复辟路线'],['dot',HC.war,'1470年7月昂热结盟'],['dot','#2a2018','伦敦与布鲁日']]),
+  hs('1475年8月','《皮基尼条约》：用金币与美酒兵不血刃买退英军','1475年夏复位后的爱德华四世率一万五千大军攻法；路易十一在索姆河皮基尼木桥会面，付七万五千金埃居现款、每年五万养老金并犒劳美酒，不战而退英军。',[[48.2,-1.5],[51.8,4.8]],d=>{
+    ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.36});ha(d,'mEngland1066',HC.britain,{fillOpacity:.28});
+    hp(d,'hy1_calais',{left:1,note:'1475年7月爱德华四世率百年战争后最大规模英军在此登陆，但盟友大胆查理忙于德意志战事爽约。'});
+    hp(d,'l11_picquigny',{kind:'battle',note:'1475年8月29日皮基尼木桥会面：路易十一与爱德华四世隔着防刺杀木栅栏拥抱签约，花钱把英军哄回本岛。'});
+    hp(d,'w_paris',{note:'路易十一在巴黎得意宣称：“我用几箱金币和几车红酒，比我父亲用大炮赶走英国人还要快。”'});
+   },[['fill',HC.france,'兵不血刃买退英军的法兰西'],['fill',HC.britain,'拿钱退兵的爱德华四世英格兰'],['dot',HC.war,'1475年8月29日《皮基尼条约》'],['dot','#2a2018','加来与巴黎']]),
+  hs('1474—1483年','南锡雪原借刀杀大胆查理，吞并勃艮第与安茹','路易十一重金资助瑞士长矛兵与洛林公爵，于1477年1月5日在南锡之战劈死勃艮第公爵大胆查理，随即吞并勃艮第本土与皮卡第，1480年再收安茹与普罗旺斯。',[[43.0,-1.8],[51.2,8.2]],d=>{
+    ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.38});ha(d,'mBurgundyDuchy900',HC.france,{fillOpacity:.48});
+    hp(d,'l11_nancy',{kind:'battle',note:'1477年1月5日南锡之战：大胆查理被瑞士戟兵一戟劈裂头颅，赤裸尸首在冰水中被狼啃食。'});
+    hp(d,'pl_dijon',{note:'1477年路易十一发兵直接吞并勃艮第公国本土与皮卡第。'});
+    hp(d,'pl_angers',{left:1,note:'1480年安茹老公爵勒内去世后，路易十一将安茹、曼恩与南法普罗旺斯一并收归王室。'});
+    hp(d,'hy2_bruges',{note:'勃艮第所属的富庶低地（尼德兰）因大胆查理独女玛丽嫁给奥地利马克西米利安，从此转入哈布斯堡家族之手。'});
+   },[['fill',HC.france,'路易十一统一整合的法兰西王国（含新吞并的勃艮第、安茹与普罗旺斯）'],['dot',HC.war,'1477年1月5日南锡之战（大胆查理阵亡）'],['dot','#2a2018','第戎、昂热与转入哈布斯堡的布鲁日']])
  ]},
 {id:'history-germany-frederick2',ch:5,title:'腓特烈二世：向诸侯放权，跟教宗死磕',short:'腓特烈二世',en:'Frederick II: Yielding Germany to the Princes, Fighting the Popes to the Death',period:'1212—1273年',c:HC.germany,
  scenes:[
@@ -8349,6 +8402,130 @@ const HISTORY_ENTRIES=[
     hp(d,'rs1_st_albans',{kind:'battle',note:'1455年5月22日第一次圣奥尔本斯之战：约克公爵与沃里克伯爵穿果园突袭街巷，砍死萨默塞特、射伤并生擒亨利六世。'});
     hr(d,[[53.96,-1.08],[52.63,-1.13],[51.75,-0.34]],HC.war);
    },[['fill',HC.britain,'分裂为红白玫瑰两派开战的英格兰'],['dline',HC.war,'1455年5月约克公爵与沃里克南下进军路线'],['dot',HC.war,'1455年5月22日第一次圣奥尔本斯之战（玫瑰战争爆发）'],['dot','#2a2018','伦敦与莱斯特']])
+ ]},
+{id:'history-britain-roses-2',ch:12,title:'红白玫瑰战争（中）：纸王冠、三日幻日与陶顿雪原破规矩',short:'红白玫瑰战争（中）',en:'The Wars of the Roses (II): The Paper Crown, the Three Suns and Breaking the Rules at Towton',period:'1455—1461年',c:HC.britain,
+ scenes:[
+  hs('1455—1460年','议会为何和稀泥：《调解法案》与王后重兵在外','1460年7月沃里克在北安普敦再擒亨利六世；10月约克公爵逼宫，但因玛格丽特王后在北方握有近两万大军且贵族顾忌效忠誓言，议会折中通过《调解法案》立约克为储。',[[50.8,-3.8],[54.5,1.2]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});
+    hp(d,'rs2_northampton',{kind:'battle',left:1,note:'1460年7月10日北安普敦之战：沃里克伯爵击败王军先锋、二次活捉亨利六世。'});
+    hp(d,'k_london',{kind:'battle',note:'1460年10月威斯敏斯特议会：贵族顾忌效忠誓言与北方王后大军，折中通过《调解法案》，保亨利六世王号而立约克公爵为储。'});
+    hp(d,'k_york',{left:1,note:'玛格丽特王后与王子并未被俘，正在约克郡集结北方兰开斯特大军拒不承认《调解法案》。'});
+   },[['fill',HC.britain,'南北对峙的英格兰（1460年）'],['dot',HC.war,'1460年7月北安普敦之战与10月威斯敏斯特《调解法案》'],['dot','#2a2018','王后集结重兵的约克郡']]),
+  hs('1460年12月','韦克菲尔德之战：约克公爵阵亡与城门纸王冠','1460年12月30日约克公爵理查在桑德尔城堡外中伏阵亡，十七岁次子埃德蒙求饶被杀；兰开斯特军给约克公爵首级戴上纸王冠悬于约克城门。',[[51.2,-3.5],[54.6,0.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});
+    hp(d,'rs2_wakefield',{kind:'battle',left:1,note:'1460年12月30日韦克菲尔德之战：约克公爵理查出城中伏阵亡，次子埃德蒙在桥上被克利福德刺死。'});
+    hp(d,'k_york',{kind:'battle',note:'兰开斯特军砍下约克公爵首级，戴上纸糊王冠插在约克米克尔盖特城门长矛上示众。'});
+    hp(d,'k_london',{left:1,note:'留守伦敦的沃里克伯爵闻讯震恐，急调兵力北上布防圣奥尔本斯。'});
+   },[['fill',HC.britain,'兰开斯特北方军反攻的英格兰'],['dot',HC.war,'1460年12月30日韦克菲尔德之战与约克城门悬首'],['dot','#2a2018','伦敦']]),
+  hs('1461年2月2日','莫蒂默十字架之战：“三日幻日”与斩欧文·都铎','1461年2月2日清晨天空出现“三日同辉”幻日天象，十九岁的爱德华在莫蒂默十字架宣称此乃三位一体吉兆，率军击溃威尔士都铎军并处死欧文·都铎。',[[51.0,-4.8],[53.8,0.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});ha(d,'mWales',HC.celt,{fillOpacity:.28});
+    hp(d,'rs2_mortimer',{kind:'battle',left:1,note:'1461年2月2日莫蒂默十字架之战：十九岁的爱德华借“三日幻日”鼓舞士气，大破威尔士军，斩杀亨利六世继父欧文·都铎。'});
+    hp(d,'uk9_shrewsbury',{note:'爱德华原本在此一带募兵，闻父死讯后即刻接任约克公爵并挥师迎敌。'});
+    hp(d,'k_london',{note:'伦敦市民期盼爱德华东进救援首都。'});
+   },[['fill',HC.britain,'英格兰'],['fill',HC.celt,'都铎父子募兵的威尔士'],['dot',HC.war,'1461年2月2日莫蒂默十字架之战（三日幻日）'],['dot','#2a2018','什鲁斯伯里与伦敦']]),
+  hs('1461年2—3月','二次圣奥尔本斯与伦敦拒门：爱德华四世抢先称王','1461年2月17日玛格丽特王后在圣奥尔本斯击溃沃里克、救回亨利六世，但伦敦市民怕北方兵抢劫紧闭城门；王后退回北方，爱德华遂进驻伦敦于3月4日自立为爱德华四世。',[[51.0,-3.2],[53.8,1.0]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});
+    hp(d,'rs1_st_albans',{kind:'battle',left:1,note:'1461年2月17日第二次圣奥尔本斯之战：玛格丽特王后攻破沃里克防线，救回坐在树下唱歌的亨利六世。'});
+    hp(d,'k_london',{kind:'battle',note:'伦敦市民惧怕王后的北方大军进城抢劫，关闭城门拒纳王后；3月4日十九岁的爱德华进城自立为爱德华四世。'});
+    hr(d,[[52.28,-2.85],[51.8,-1.2],[51.51,-0.13]],HC.war);
+   },[['fill',HC.britain,'爱德华四世进京称王的英格兰'],['dline',HC.war,'1461年2月爱德华自威尔士边境驰援伦敦路线'],['dot',HC.war,'2月17日二次圣奥尔本斯之战与3月4日伦敦称王']]),
+  hs('1461年3月29日','陶顿暴风雪决战：顺风借箭，十小时血染溪流','1461年3月29日棕枝主日暴风雪中，两军六万余人在陶顿决战；约克军顺风借箭诱空敌箭囊，激战十小时全歼兰开斯特主力，亨利六世与王后逃入苏格兰。',[[51.2,-3.5],[55.8,0.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'mScotland',HC.celt,{fillOpacity:.24});
+    hp(d,'rs2_towton',{kind:'battle',left:1,note:'1461年3月29日陶顿之战：暴风雪中约克军顺风借箭，十小时肉搏阵亡两万八千人，科克溪水尽赤。'});
+    hp(d,'k_york',{note:'爱德华四世战后进入约克城，取下城门长矛上父亲与二弟的首级安葬，换上兰开斯特降将的人头。'});
+    hp(d,'uk9_edinburgh',{left:1,note:'亨利六世、玛格丽特王后与王子爱德华兵败逃入苏格兰避难（王后次年携子流亡法国）。'});
+    hr(d,[[51.51,-0.13],[52.6,-0.9],[53.85,-1.27]],HC.war);
+   },[['fill',HC.britain,'爱德华四世一战定鼎的英格兰'],['fill',HC.celt,'收留亨利六世流亡王室的苏格兰'],['dline',HC.war,'1461年3月爱德华四世北伐陶顿路线'],['dot',HC.war,'1461年3月29日陶顿之战'],['dot','#2a2018','约克与爱丁堡']]),
+  hs('1461年及此后','贵族战争坏了赎金规矩：两大家族走向同归于尽','从韦克菲尔德杀幼子到陶顿传令“不留俘虏”并处决被俘伯爵，玫瑰战争彻底打破欧洲封建骑士“交赎金不杀俘”规矩，开启两大家族互相灭门的血腥死循环。',[[50.5,-4.5],[55.2,1.2]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});
+    hp(d,'rs2_wakefield',{left:1,note:'韦克菲尔德：克利福德刺杀求饶的十七岁约克次子埃德蒙，埋下“不留活口”的灭门血仇。'});
+    hp(d,'rs2_towton',{kind:'battle',note:'陶顿雪原：现代考古在此挖出数十具头骨被战锤、长剑反复劈砍十余刀的遗骸，印证“不留俘虏”的屠杀令。'});
+    hp(d,'k_york',{left:1,note:'陶顿战后德文伯爵、威尔特郡伯爵等被俘贵族均被直接斩首抄家，封建骑士赎金规矩彻底崩塌。'});
+   },[['fill',HC.britain,'陷入贵族互相灭门死循环的英格兰'],['dot',HC.war,'陶顿屠杀遗址（打破中世纪贵族赎金规矩）'],['dot','#2a2018','韦克菲尔德与约克']])
+ ]},
+{id:'history-britain-roses-3',ch:12,title:'红白玫瑰战争（下）：寡妇王后、造王者反水与兰开斯特绝嗣',short:'红白玫瑰战争（下）',en:'The Wars of the Roses (III): The Widow Queen, the Kingmaker’s Defection and the Extinction of Lancaster',period:'1461—1471年',c:HC.britain,
+ scenes:[
+  hs('1461—1468年','秘娶寡妇伍德维尔：拉起外戚集团拆“造王者”专权','1464年5月爱德华四世秘娶兰开斯特骑士遗孀伊丽莎白·伍德维尔，重用王后十二名兄弟姐妹包揽豪门联姻，并在1468年联勃艮第抗法，彻底架空“造王者”沃里克伯爵。',[[50.2,-3.8],[54.8,4.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});ha(d,'mBurgundyDuchy900',HC.war,{fillOpacity:.28});
+    hp(d,'rs2_northampton',{left:1,note:'1464年5月1日，爱德华四世在北安普敦郡格拉夫顿庄园秘密迎娶寡妇伊丽莎白·伍德维尔。'});
+    hp(d,'k_london',{kind:'battle',left:1,note:'爱德华四世在朝会重用伍德维尔外戚家族，包办全国大贵族联姻，架空沃里克伯爵三兄弟。'});
+    hp(d,'hy2_bruges',{note:'1468年爱德华四世不顾沃里克亲法主张，将妹妹玛格丽特嫁给勃艮第公爵大胆查理。'});
+   },[['fill',HC.britain,'爱德华四世扶植外戚掌权的英格兰'],['fill',HC.war,'爱德华四世结盟的勃艮第公国'],['dot',HC.war,'1464年秘娶伍德维尔与伦敦朝局洗牌'],['dot','#2a2018','格拉夫顿与布鲁日']]),
+  hs('1469—1470年春','沃里克兵变捉王：为何关押六周就不得不放人','1469年7月沃里克与国王二弟克拉伦斯兵变将爱德华四世囚于米德勒姆城堡；因贵族罢工、兰开斯特北境叛乱且民兵不见国王拒不出征，沃里克被迫放人，1470年春兵败逃法。',[[50.5,-3.8],[55.2,1.2]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});
+    hp(d,'rs3_banbury',{kind:'battle',left:1,note:'1469年7月埃奇科特之战：沃里克与克拉伦斯公爵在此击败王军，斩杀伍德维尔王后父兄并活捉爱德华四世。'});
+    hp(d,'rs3_middleham',{kind:'battle',left:1,note:'米德勒姆城堡：沃里克将爱德华四世囚禁于此，因北境兰开斯特叛乱而各郡民兵“不见自由国王拒不出征”，六周后被迫释放爱德华四世。'});
+    hp(d,'k_london',{note:'1469年秋爱德华四世平叛后率诸侯返回伦敦复辟；1470年3月击败叛军，逼沃里克与克拉伦斯逃往法国。'});
+   },[['fill',HC.britain,'拒绝服从沃里克兵变政令的英格兰'],['dot',HC.war,'1469年埃奇科特捉王与米德勒姆城堡六周困局'],['dot','#2a2018','伦敦']]),
+  hs('1470年7—10月','昂热死敌结盟：沃里克返英赶走爱德华、复辟疯王','1470年7月法王路易十一在昂热撮合沃里克向流亡法国九年的玛格丽特王后下跪结盟；9—10月沃里克先行返英赶走爱德华四世（逃往勃艮第），从伦敦塔放出亨利六世复位。',[[47.0,-4.2],[53.8,5.2]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.28});
+    hp(d,'pl_angers',{kind:'battle',left:1,note:'1470年7月昂热协议：沃里克向流亡法国九年的死敌玛格丽特王后下跪结盟，但王后坚持留法观望，让沃里克先去英国打头阵。'});
+    hp(d,'k_london',{kind:'battle',left:1,note:'1470年10月沃里克进占伦敦，从伦敦塔放出疯王亨利六世复位；爱德华四世乘船逃往勃艮第属地荷兰。'});
+    hp(d,'hy2_bruges',{note:'布鲁日：逃亡低地的爱德华四世获得妹夫勃艮第公爵大胆查理资助，准备来年春反攻。'});
+    hr(d,[[47.47,-0.55],[50.35,-3.58],[51.51,-0.13]],HC.war);
+   },[['fill',HC.britain,'沃里克复辟亨利六世的英格兰（1470年秋）'],['fill',HC.france,'玛格丽特王后携子暂留的法兰西'],['dline',HC.war,'1470年9—10月沃里克返英复辟路线'],['dot',HC.war,'1470年7月昂热结盟与10月伦敦复辟'],['dot','#2a2018','爱德华四世避难的布鲁日']]),
+  hs('1471年3—4月','爱德华借勃艮第船登陆，二弟克拉伦斯阵前倒戈','1471年3月14日爱德华四世借勃艮第钱船抢在玛格丽特王后渡海前登陆约克郡；发觉被岳父沃里克出卖了储君地位与封地的二弟克拉伦斯公爵在班伯里阵前倒戈归顺兄长。',[[50.5,-3.5],[54.8,4.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});
+    hp(d,'k_york',{left:1,note:'1471年3月14日爱德华四世率勃艮第资助的三十六艘船在约克郡海岸登陆，谎称只索回约克公爵爵位，一路南下。'});
+    hp(d,'rs3_banbury',{kind:'battle',left:1,note:'1471年4月班伯里：不满岳父沃里克改立兰开斯特王子、剥夺自己储位与封地的二弟克拉伦斯公爵，在此率四千军倒戈投奔兄长爱德华四世。'});
+    hp(d,'k_london',{kind:'battle',note:'1471年4月11日爱德华四世进入伦敦，将亨利六世重新关回伦敦塔。'});
+    hr(d,[[51.21,3.22],[53.65,0.08],[52.06,-1.34],[51.51,-0.13]],HC.war);
+   },[['fill',HC.britain,'爱德华四世登陆反攻的英格兰'],['dline',HC.war,'1471年3—4月爱德华四世自勃艮第登陆、收编二弟进军伦敦路线'],['dot',HC.war,'班伯里二弟倒戈与4月11日重夺伦敦'],['dot','#2a2018','约克']]),
+  hs('1471年4月14日','巴尼特迷雾之战：友军误击，“造王者”沃里克被杀','1471年4月14日复活节浓雾中，两军在伦敦北郊巴尼特决战；沃里克中军把牛津伯爵的“星徽”误看成爱德华四世的“金日徽”射杀友军，全军溃散，“造王者”沃里克被追杀身亡。',[[50.8,-2.8],[53.2,1.2]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});
+    hp(d,'rs3_barnet',{kind:'battle',note:'1471年4月14日巴尼特之战：大雾中沃里克军误射牛津伯爵友军导致崩溃，下马步战的“造王者”沃里克伯爵穿重甲逃跑时被杀。'});
+    hp(d,'k_london',{left:1,note:'爱德华四世将沃里克伯爵尸体运回伦敦圣保罗座堂公开陈尸三天，彻底粉碎“造王者”神话。'});
+   },[['fill',HC.britain,'铲除“造王者”沃里克的英格兰'],['dot',HC.war,'1471年4月14日巴尼特迷雾之战（沃里克阵亡）'],['dot','#2a2018','伦敦']]),
+  hs('1471年4—5月','玛格丽特同日登陆：蒂克斯伯里伏击与兰开斯特绝户','4月14日巴尼特决战当天，玛格丽特王后携十七岁王子在韦茅斯登陆北上；5月4日爱德华四世在蒂克斯伯里设伏全歼其军、阵斩爱德华王子，5月21日夜处死伦敦塔中的亨利六世。',[[50.2,-4.5],[53.2,0.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'mWales',HC.celt,{fillOpacity:.24});
+    hp(d,'rs3_weymouth',{left:1,note:'1471年4月14日（巴尼特之战当天），被海峡逆风耽搁的玛格丽特王后与十七岁王子在此登陆，闻沃里克死讯后急向北走欲入威尔士。'});
+    hp(d,'rs3_tewkesbury',{kind:'battle',left:1,note:'1471年5月4日蒂克斯伯里之战：爱德华四世以二百长矛兵林中设伏破敌，萨默塞特怒劈友军主将温洛克，十七岁王子爱德华被杀。'});
+    hp(d,'k_london',{kind:'battle',note:'1471年5月21日夜爱德华四世凯旋伦敦当晚，伦敦塔内的亨利六世被秘密处死，兰开斯特直系彻底断绝。'});
+    hr(d,[[50.61,-2.46],[51.45,-2.58],[51.99,-2.16]],HC.route);
+    hr(d,[[51.51,-0.13],[51.75,-1.25],[51.99,-2.16]],HC.war);
+   },[['fill',HC.britain,'约克王朝彻底剿灭兰开斯特嫡系的英格兰'],['fill',HC.celt,'玛格丽特王后原定去会师的威尔士'],['dline',HC.route,'1471年4—5月玛格丽特王后自韦茅斯登陆北上路线'],['dline',HC.war,'爱德华四世自伦敦强行军拦截路线'],['dot',HC.war,'5月4日蒂克斯伯里决战与5月21日伦敦塔处死亨利六世'],['dot','#2a2018','韦茅斯']])
+ ]},
+{id:'history-britain-roses-4',ch:12,title:'红白玫瑰战争（终）：塔中王子、理查三世与都铎玫瑰',short:'红白玫瑰战争（终）',en:'The Wars of the Roses (IV): The Princes in the Tower, Richard III and the Tudor Rose',period:'1471—1487年',c:HC.britain,
+ scenes:[
+  hs('1471—1478年','二弟克拉伦斯再作妖：伦敦塔甜葡萄酒桶溺死','1471年倒戈立功的二弟克拉伦斯战后争产把小姨子扮成厨娘藏匿，1477年又闹着要娶勃艮第女公爵并散播哥哥是私生子的谣言，1478年2月在伦敦塔被塞进葡萄酒桶淹死。',[[50.5,-3.5],[53.8,4.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});
+    hp(d,'k_london',{kind:'battle',left:1,note:'克拉伦斯公爵在此把小姨子安妮·内维尔扮成厨娘藏进肉食店；1478年2月18日因叛国罪在伦敦塔被溺死于甜马姆齐葡萄酒桶中。'});
+    hp(d,'hy2_bruges',{note:'1477年勃艮第公爵大胆查理阵亡后，丧妻的克拉伦斯妄图迎娶勃艮第女继承人玛丽，遭兄长爱德华四世严词拒绝。'});
+   },[['fill',HC.britain,'约克三兄弟内讧的英格兰'],['dot',HC.war,'1478年2月伦敦塔处死二弟克拉伦斯公爵'],['dot','#2a2018','布鲁日']]),
+  hs('1483年4—7月','爱德华四世暴死：三弟理查三世截幼主篡位','1483年4月四十岁的爱德华四世暴逝，三弟理查在斯托尼斯特拉特福德半路截走十二岁幼主爱德华五世、斩杀外戚与重臣，宣布两个小侄子皆为私生子，于7月6日加冕为理查三世。',[[50.8,-3.5],[54.5,1.2]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});
+    hp(d,'uk9_shrewsbury',{left:1,note:'十二岁的幼主爱德华五世原在威尔士边境勒德洛城堡由伍德维尔外戚抚养，闻父死讯启程赴伦敦。'});
+    hp(d,'rs4_stony',{kind:'battle',left:1,note:'1483年4月30日，叔父理查在此半路截走小侄子爱德华五世，逮捕并处死王太后兄长与次子。'});
+    hp(d,'k_london',{kind:'battle',note:'1483年6月理查在伦敦塔斩杀重臣黑斯廷斯，宣布两个小侄子皆为私生子，7月6日自立为理查三世。'});
+    hp(d,'k_york',{left:1,note:'理查三世长期镇守北方大本营约克，靠北方班底南下夺权。'});
+    hr(d,[[52.37,-2.72],[52.06,-0.85],[51.51,-0.13]],HC.war);
+   },[['fill',HC.britain,'理查三世截幼主篡位的英格兰（1483年）'],['dline',HC.war,'1483年4—5月理查截持幼主进京路线'],['dot',HC.war,'4月30日半路截幼主与7月6日伦敦篡位'],['dot','#2a2018','约克与边境']]),
+  hs('1483年夏秋','“伦敦塔中的两个小王子”失踪与白金汉叛乱','1483年夏理查三世将十二岁的爱德华五世与九岁的弟弟锁进伦敦塔，秋天后两个小王子人间蒸发；杀侄恶名激起南方约克贵族反叛，10月头号功臣白金汉公爵倒戈起兵败亡。',[[50.5,-4.5],[53.8,1.2]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});ha(d,'mWales',HC.celt,{fillOpacity:.24});
+    hp(d,'k_london',{kind:'battle',note:'伦敦塔：1483年秋十二岁的爱德华五世与九岁的弟弟在塔中神秘消失（1674年塔内楼梯下挖出两具同龄孩童骸骨）。'});
+    hp(d,'rs1_clarendon',{kind:'battle',left:1,note:'索尔兹伯里：1483年10月曾帮理查三世篡位的头号功臣白金汉公爵倒戈起兵，因暴雨阻断塞文河兵败，在此被斩首。'});
+   },[['fill',HC.britain,'因杀侄恶名众叛亲离的理查三世统治区'],['fill',HC.celt,'白金汉公爵起兵的威尔士边境'],['dot',HC.war,'1483年秋伦敦塔王子失踪与10月白金汉起兵']]),
+  hs('1483—1485年','双偏支捡漏：流亡者亨利·都铎与红白联姻密约','因兰开斯特与约克正统男丁死绝，各派残党共推流亡法国的亨利·都铎（父系威尔士侍从、母系博福特私生子支系），约定打倒理查三世后迎娶爱德华四世长女约克的伊丽莎白。',[[47.2,-5.5],[52.8,3.2]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.26});
+    hp(d,'w_paris',{note:'1484年亨利·都铎自布列塔尼逃入法国王廷，获法王查理八世摄政安妮资助钱船与雇佣兵。'});
+    hp(d,'k_london',{left:1,note:'1483年圣诞节，躲在威斯敏斯特教堂避难的前王后伍德维尔与都铎生母玛格丽特·博福特密约儿女联姻、共讨理查三世。'});
+    hp(d,'rs4_milford',{kind:'battle',left:1,note:'1485年8月7日亨利·都铎率两千余人在威尔士老家米尔福德港登陆，打起威尔士红龙旗号召乡党。'});
+    hr(d,[[49.49,0.11],[50.0,-2.5],[51.71,-5.03]],HC.war);
+   },[['fill',HC.britain,'理查三世据守的英格兰'],['fill',HC.france,'资助亨利·都铎的法兰西'],['dline',HC.war,'1485年8月亨利·都铎自诺曼底渡海登陆威尔士路线'],['dot',HC.war,'1485年8月7日米尔福德港登陆'],['dot','#2a2018','伦敦与巴黎']]),
+  hs('1485年8月22日','博斯沃思原野之战：继父斯坦利背刺，理查三世战死','1485年8月22日两军在博斯沃思原野决战；继父斯坦利兄弟因长子被扣为人质在山头观望，见理查三世单骑冲阵快砍死亨利·都铎时，威廉·斯坦利从侧翼背刺将理查三世砍死。',[[51.2,-5.2],[54.2,0.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'mWales',HC.celt,{fillOpacity:.28});
+    hp(d,'rs4_milford',{left:1,note:'亨利·都铎登陆起点。'});
+    hp(d,'uk9_shrewsbury',{left:1,note:'亨利·都铎途经什鲁斯伯里与继父斯坦利兄弟秘密接洽。'});
+    hp(d,'rs4_bosworth',{kind:'battle',left:1,note:'1485年8月22日博斯沃思原野之战：理查三世单骑冲阵砍倒都铎大旗，遭威廉·斯坦利三千骑兵侧翼背刺战死。'});
+    hp(d,'hy5_leicester',{note:'理查三世尸体被裸身驮回莱斯特示众并草草掩埋（2012年在莱斯特市政停车场地下挖出其带十处刀伤的脊椎侧弯遗骸）。'});
+    hr(d,[[51.71,-5.03],[52.71,-2.75],[52.59,-1.41]],HC.war);
+   },[['fill',HC.britain,'亨利·都铎一战夺位的英格兰'],['fill',HC.celt,'出兵助战的威尔士与西北斯坦利领地'],['dline',HC.war,'1485年8月亨利·都铎进军博斯沃思路线'],['dot',HC.war,'1485年8月22日博斯沃思原野之战（理查三世阵亡）'],['dot','#2a2018','什鲁斯伯里与莱斯特']]),
+  hs('1485—1487年','都铎玫瑰与中央集权：三十年内战杀空旧贵族','亨利七世于1486年迎娶约克的伊丽莎白合成“都铎玫瑰”，1487年在斯托克平定最后叛乱；三十年内战杀光老牌封建大贵族，亨利七世顺势禁私兵、设星室法庭，开启都铎集权时代。',[[50.5,-4.8],[55.0,1.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.38});ha(d,'mWales',HC.britain,{fillOpacity:.32});
+    hp(d,'k_london',{kind:'battle',left:1,note:'1485年10月亨利七世在威斯敏斯特加冕，1486年1月迎娶约克的伊丽莎白；设星室法庭、严禁贵族蓄养私兵。'});
+    hp(d,'rs4_stoke',{kind:'battle',note:'1487年6月16日斯托克之战：亨利七世击败冒牌王子与林肯伯爵的最后叛军，红白玫瑰战争彻底终结。'});
+    hp(d,'k_york',{left:1,note:'北方约克派基地归顺都铎王朝。'});
+   },[['fill',HC.britain,'红白玫瑰合一、确立中央集权的都铎王朝英格兰与威尔士'],['dot',HC.war,'1486年伦敦大婚与1487年6月斯托克收官之战'],['dot','#2a2018','约克']])
  ]}
 ];
 HISTORY_ENTRIES.forEach(e=>{
@@ -8383,7 +8560,7 @@ const HISTORY_ERAS=[
  {id:'empire-worms',name:'中世纪盛期：沃尔姆斯之后，施陶芬上台',en:'After Worms: The Hohenstaufen Come to the Throne',date:'1106—1152年',c:HC.germany,items:[['history-germany-worms'],['history-germany-staufer']]},
  {id:'empire-italy',name:'中世纪盛期：北意大利城市与西西里王国',en:'The Northern Cities and the Kingdom of Sicily',date:'约950—1166年',c:HC.italy,items:[['history-italy-cities'],['history-italy-sicily']]},
  {id:'empire-staufer',name:'中世纪盛期：红胡子、亨利六世与英诺森三世',en:'Barbarossa, Henry VI and Innocent III',date:'1152—1216年',c:HC.germany,items:[['history-germany-barbarossa'],['history-germany-henry6'],['history-germany-innocent']]},
- {id:'empire-france',name:'法兰西：从卡佩开张到瓦卢瓦常设税',en:'France: From Hugh Capet to Valois Standing Taxes',date:'987—1380年',c:HC.france,items:[['history-france-capet'],['history-france-plantagenet'],['history-france-stlouis'],['history-france-valois']]},
+ {id:'empire-france',name:'法兰西：从卡佩开张到“宇宙蜘蛛”一统',en:'France: From Hugh Capet to Louis XI',date:'987—1483年',c:HC.france,items:[['history-france-capet'],['history-france-plantagenet'],['history-france-stlouis'],['history-france-valois'],['history-france-louis11']]},
  {id:'empire-frederick2',name:'中世纪盛期：腓特烈二世与西西里晚祷',en:'Frederick II and the Sicilian Vespers',date:'1212—1302年',c:HC.germany,items:[['history-germany-frederick2'],['history-italy-vespers']]},
  {id:'empire-blackdeath',name:'中世纪晚期：黑死病',en:'The Late Middle Ages: the Black Death',date:'1346—1353年',c:HC.italy,items:[['history-italy-blackdeath']]},
  {id:'empire-taifas',name:'西班牙：泰法与圣战',en:'Spain: the Taifas and Holy War',date:'1031—1123年',c:HC.spain,items:[['history-spain-taifas'],['history-spain-crusade']]},
@@ -8420,7 +8597,7 @@ const HISTORY_ERAS=[
  {id:'britain-saxon-norman',name:'英格兰的成型：维京狂潮与诺曼征服',en:'The Making of England: Vikings and Normans',date:'约410—1087年',c:HC.britain,items:[['history-britain-anglosaxon'],['history-britain-norman']]},
  {id:'britain-angevin',name:'金雀花帝国：普通法、爱尔兰与狮心王',en:'The Angevin Empire: Common Law, Ireland and Lionheart',date:'1014—1214年',c:HC.britain,items:[['history-britain-henry2'],['history-britain-norman-ireland'],['history-britain-richard']]},
  {id:'britain-parliament',name:'大宪章、议会与英伦三岛的边界',en:'Magna Carta, Parliament and the Bounds of the Isles',date:'1215—1307年',c:HC.britain,items:[['history-britain-magnacarta'],['history-britain-edward1']]},
- {id:'britain-hundred-years',name:'百年战争与玫瑰战争：从阿基坦称臣到圣奥尔本斯',en:'The Hundred Years’ War and the Wars of the Roses: From Aquitaine to St Albans',date:'1200—1455年',c:HC.britain,items:[['history-britain-edward2'],['history-britain-hundred-years-1'],['history-britain-hundred-years-2'],['history-britain-hundred-years-3'],['history-britain-richard2'],['history-britain-hundred-years-4'],['history-britain-hundred-years-5'],['history-britain-jeanne'],['history-britain-roses-1']]},
+ {id:'britain-hundred-years',name:'百年战争与红白玫瑰战争：从阿基坦称臣到都铎玫瑰',en:'The Hundred Years’ War and the Wars of the Roses: From Aquitaine to the Tudor Rose',date:'1200—1487年',c:HC.britain,items:[['history-britain-edward2'],['history-britain-hundred-years-1'],['history-britain-hundred-years-2'],['history-britain-hundred-years-3'],['history-britain-richard2'],['history-britain-hundred-years-4'],['history-britain-hundred-years-5'],['history-britain-jeanne'],['history-britain-roses-1'],['history-britain-roses-2'],['history-britain-roses-3'],['history-britain-roses-4']]},
 ];
 /* History as a tree: each branch is a topic; distance from the root is time (years, negative = BCE).
    Reading order stays with HISTORY_ERAS; TREE_ROWS puts each era row on a branch at its start and end. */
@@ -8432,11 +8609,11 @@ const HISTORY_BRANCHES=[
  {id:'east',name:'东罗马',en:'East Rome',lane:2,parent:'rome',from:395,to:1099,c:HC.byz},
  {id:'west',name:'中世纪西欧',en:'Medieval Western Europe',lane:4,parent:'rome',from:476,to:843,c:HC.celt},
  {id:'spain',name:'西班牙',en:'Spain',lane:5,parent:'west',from:481,to:1123,c:HC.spain},
- {id:'france',name:'法兰西',en:'France',lane:5,parent:'west',from:843,to:1453,c:HC.france},
+ {id:'france',name:'法兰西',en:'France',lane:5,parent:'west',from:843,to:1483,c:HC.france},
  {id:'germany',name:'德意志',en:'Germany',lane:4,parent:'west',from:843,to:1351,c:HC.germany},
  {id:'italy',name:'意大利',en:'Italy',lane:3,parent:'west',from:843,to:1351,c:HC.italy},
  // 不列颠 (including Ireland): forks from the trunk before Caesar's landing, on lane 6 right beside 法兰西.
- {id:'britain',name:'不列颠',en:'Britain and Ireland',lane:6,parent:'trunk',from:-55,to:1455,c:HC.britain},
+ {id:'britain',name:'不列颠',en:'Britain and Ireland',lane:6,parent:'trunk',from:-55,to:1487,c:HC.britain},
  // The 基督教 line: from the Hebrews' nomadic origins (the old Levant branch) to the schism of 1054; on its own lane, right of the West.
  // After 641 it runs through the shared stations of the East Roman dynasties.
  {id:'faith',name:'基督教',en:'Judaism & Christianity',lane:7,parent:'trunk',from:-1400,to:1449,c:HC.faith},
@@ -8644,6 +8821,10 @@ const TREE_ROWS={
  'history-britain-hundred-years-5/0':[['britain','france'],1423,1435,'1422—1435年'],
  'history-britain-jeanne/0':[['britain','france'],1436,1453,'1428—1453年'],
  'history-britain-roses-1/0':['britain',1454,1455,'1435—1455年'],
+ 'history-britain-roses-2/0':['britain',1456,1461,'1455—1461年'],
+ 'history-france-louis11/0':['france',1461,1483,'1453—1483年'],
+ 'history-britain-roses-3/0':['britain',1462,1471,'1461—1471年'],
+ 'history-britain-roses-4/0':['britain',1472,1487,'1471—1487年'],
  'history-faith-avignon/0':[['faith','france'],1296,1303,'1294—1303年'],
  'history-faith-clement/0':[['faith','france'],1304,1314,'1303—1314年'],
  'history-italy-blackdeath/0':[['italy','france','britain','germany','faith','persia'],1347,1351,'1346—1353年'],
@@ -8654,7 +8835,7 @@ const TREE_ROWS={
  'history-arab-seljuks/3':[['persia','east'],1071,1092]
 };
 // Topics still to be written grow the tree as dashed shoots.
-const TREE_FUTURE=[['east',1099,'科穆宁王朝','1099年起 · 1176年米利奥克法隆之战 · 1204年第四次十字军攻破君士坦丁堡 · 待展开'],['france',1453,'百年战争','1314年后待展开：1328年卡佩直系绝嗣 · 1337—1453年英法百年战争'],['germany',1351,'选帝侯与哈布斯堡','1273年后待展开：1273年哈布斯堡的鲁道夫当选 · 1356年《金玺诏书》七选帝侯'],['italy',1351,'城市共和国与文艺复兴','1302年后待展开：佛罗伦萨、威尼斯、热那亚与米兰 · 文艺复兴'],['faith',1449,'宗教改革','1449年起 · 文艺复兴教廷 · 1517年马丁·路德《九十五条论纲》与宗教改革 · 待展开'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',1351,'伊儿汗国与马穆鲁克','1291年后待展开：1295年合赞汗皈依伊斯兰 · 1300年伊儿汗国一度占大马士革 · 奥斯曼人兴起'],['china',845,'晚唐五代与宋','845年起 · 待展开'],['spain',1123,'收复失地运动','1123年起 · 穆拉比特与穆瓦希德 · 1212年纳瓦斯—德托洛萨 · 1492年格拉纳达 · 待展开'],['eeurope',1054,'基辅罗斯以后','1054年起 · 雅罗斯拉夫死后诸子分封 · 1240年蒙古人攻破基辅 · 待展开'],['crusade',1312,'后来的十字军','1396年尼科波利斯 · 1444年瓦尔纳 · 1571年勒班陀 · 待展开'],['britain',1455,'班诺克本与百年战争','1307年后待展开：1314年班诺克本之战 · 1337—1453年英法百年战争 · 玫瑰战争']];
+const TREE_FUTURE=[['east',1099,'科穆宁王朝','1099年起 · 1176年米利奥克法隆之战 · 1204年第四次十字军攻破君士坦丁堡 · 待展开'],['france',1483,'百年战争','1314年后待展开：1328年卡佩直系绝嗣 · 1337—1453年英法百年战争'],['germany',1351,'选帝侯与哈布斯堡','1273年后待展开：1273年哈布斯堡的鲁道夫当选 · 1356年《金玺诏书》七选帝侯'],['italy',1351,'城市共和国与文艺复兴','1302年后待展开：佛罗伦萨、威尼斯、热那亚与米兰 · 文艺复兴'],['faith',1449,'宗教改革','1449年起 · 文艺复兴教廷 · 1517年马丁·路德《九十五条论纲》与宗教改革 · 待展开'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',1351,'伊儿汗国与马穆鲁克','1291年后待展开：1295年合赞汗皈依伊斯兰 · 1300年伊儿汗国一度占大马士革 · 奥斯曼人兴起'],['china',845,'晚唐五代与宋','845年起 · 待展开'],['spain',1123,'收复失地运动','1123年起 · 穆拉比特与穆瓦希德 · 1212年纳瓦斯—德托洛萨 · 1492年格拉纳达 · 待展开'],['eeurope',1054,'基辅罗斯以后','1054年起 · 雅罗斯拉夫死后诸子分封 · 1240年蒙古人攻破基辅 · 待展开'],['crusade',1312,'后来的十字军','1396年尼科波利斯 · 1444年瓦尔纳 · 1571年勒班陀 · 待展开'],['britain',1487,'班诺克本与百年战争','1307年后待展开：1314年班诺克本之战 · 1337—1453年英法百年战争 · 玫瑰战争']];
 // Where a line stops it says why: [line, year, the event that ends it, note, the line it carries on in].
 const TREE_ENDS=[['trunk',-30,'并入罗马','前146年科林斯被毁 · 前30年最后一个希腊化王国埃及并入罗马','rome'],['rome',476,'西罗马终结','476年西部末代皇帝被废 · 由中世纪西欧接续'],['west',843,'凡尔登三分','843年《凡尔登条约》三分帝国 · 分出法兰西、德意志、意大利']];
 // Sections of one line that run side by side: [line, row keys, side of the passing loop].
