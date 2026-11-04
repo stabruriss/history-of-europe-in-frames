@@ -1202,6 +1202,10 @@ Object.assign(HS,{
   hy5_leicester:['莱斯特','Leicester',52.634,-1.139,'英格兰中部重镇；1426年2月三叔贝德福德公爵在此召集“棍棒议会”，调停四叔格洛斯特与王太叔博福特的伦敦兵变。'],
   hy5_mons:['蒙斯','Mons',50.454,3.952,'埃诺伯国首府；1424年底四叔格洛斯特公爵携杰奎琳率五千英军进占此城，次年被勃艮第军围困攻克。'],
   hy5_hague:['海牙','The Hague',52.08,4.31,'荷兰伯国治所；勃艮第公爵好人腓力击败杰奎琳与英军后，于1428—1433年将荷兰、泽兰、埃诺并入勃艮第领地。'],
+  jn_orleans:['奥尔良','Orléans',47.902,1.909,'卢瓦尔河北端大拐弯处的咽喉重镇；1428年10月被英军围困，1429年5月8日由圣女贞德率军解围。'],
+  jn_domremy:['东雷米','Domrémy',48.443,5.675,'香槟与洛林交界处的默兹河谷小村；约1412年圣女贞德生于此地农家，十三岁起自称在此听见天启声音。'],
+  jn_patay:['帕泰','Patay',48.048,1.696,'奥尔良西北的平原村落；1429年6月18日法军铁骑在此趁英军长弓手未及打下木桩便冲阵大破英军，生擒名将塔尔博特。'],
+  jn_castillon:['卡斯蒂永','Castillon-la-Bataille',44.853,-0.044,'加斯科涅多尔多涅河畔城镇；1453年7月17日法军在此用三百门火炮轰垮英军、炸死老帅塔尔博特，百年战争至此收官。'],
   av_aquila:['拉奎拉','L’Aquila',42.35,13.399,'阿布鲁佐山城；1294年8月塞莱斯廷五世在此骑毛驴加冕。'],
   av_palestrina:['帕莱斯特里纳','Palestrina',41.839,12.892,'罗马东郊科隆纳家族的山城；1298年卜尼法斯八世将其攻陷夷平、犁地撒盐。'],
   av_perugia:['佩鲁贾','Perugia',43.112,12.389,'翁布里亚山城；1294年、1305年两次教宗选举在此，1304年本笃十一世死于此。'],
@@ -8241,6 +8245,54 @@ const HISTORY_ENTRIES=[
     hp(d,'pl_arras',{kind:'battle',note:'1435年9月21日，三叔死后仅七天，勃艮第公爵好人腓力在此与查理七世签《阿拉斯条约》倒戈反英。'});
     hp(d,'w_paris',{note:'1432年11月勃艮第的安妮死于巴黎；1435年勃艮第倒戈后，孤立无援的巴黎次年即向法王开门。'});
    },[['fill',HC.britain,'失去勃艮第盟友后孤立无援的英占诺曼底'],['fill',HC.war,'1435年《阿拉斯条约》倒向法王的勃艮第公国'],['fill',HC.france,'查理七世的法兰西'],['dot',HC.war,'1435年9月鲁昂三叔病逝与阿拉斯倒戈'],['dot','#2a2018','巴黎']])
+ ]},
+{id:'history-britain-jeanne',ch:12,title:'圣女贞德与百年战争终局：从奥尔良解围到火刑架与神话',short:'圣女贞德与百年战争终局',en:'Joan of Arc and the End of the Hundred Years’ War: From Orléans to the Stake and the Myth',period:'1428—1453年',c:HC.britain,
+ scenes:[
+  hs('1428—1429年2月','王三叔围攻奥尔良：卢瓦尔河咽喉之战','1428年10月王三叔派索尔兹伯里伯爵围攻奥尔良，夺占南岸图雷尔桥头堡（索尔兹伯里中炮身亡）；1429年2月英军在“鲱鱼之战”击败法苏联军，奥尔良危在旦夕。',[[46.5,-0.5],[50.2,4.2]],d=>{
+    ha(d,'mNormandy933',HC.britain,{fillOpacity:.34});ha(d,'mBurgundyDuchy900',HC.war,{fillOpacity:.28});
+    ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.22});
+    hp(d,'w_paris',{note:'王三叔贝德福德公爵坐镇巴黎，1428年秋派兵南下进攻卢瓦尔河门户奥尔良。'});
+    hp(d,'jn_orleans',{kind:'battle',note:'1428年10月英军围困奥尔良，夺占南岸图雷尔桥头堡，索尔兹伯里伯爵中炮身亡；1429年2月英军在城北打赢“鲱鱼之战”。'});
+    hp(d,'pl_chinon',{left:1,note:'希农城堡：王太子查理的临时驻地，一旦奥尔良失守，英军即可渡河南下直扑希农与布尔日。'});
+    hp(d,'cl_bourges',{left:1,note:'南方朝廷首府布尔日，人心惶惶，王太子查理一度打算弃守逃往多菲内或苏格兰。'});
+   },[['fill',HC.britain,'王三叔统治的英占北法'],['fill',HC.war,'盟友勃艮第公国'],['fill',HC.france,'王太子查理退守的卢瓦尔河以南'],['dot',HC.war,'1428—1429年奥尔良围城与鲱鱼之战'],['dot','#2a2018','巴黎、希农与布尔日']]),
+  hs('1412—1429年3月','东雷米的通灵少女：千里穿敌境赴希农','贞德生于洛林边境东雷米，十三岁起自称见圣米迦勒与亚历山大里亚的圣凯瑟琳、圣玛格丽特显灵；1429年2月着男装自沃库勒尔穿越英勃占领区赶赴希农。',[[46.2,-0.8],[49.8,6.5]],d=>{
+    ha(d,'mNormandy933',HC.britain,{fillOpacity:.28});ha(d,'mBurgundyDuchy900',HC.war,{fillOpacity:.28});
+    ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.22});
+    hp(d,'jn_domremy',{kind:'battle',note:'东雷米村：贞德十三岁起自称在此听见天启声音，借“洛林处女救法国”的民间预言在四里八乡出名。'});
+    hp(d,'pl_chinon',{kind:'battle',left:1,note:'1429年3月贞德穿越敌境抵达希农城堡，劝说王太子查理派兵救奥尔良、赴兰斯加冕。'});
+    hp(d,'k_poitiers',{left:1,note:'普瓦捷：查理派神学家在此审问贞德三周，确认其无异端嫌疑后准其随运粮队出征。'});
+    hr(d,[[48.44,5.68],[47.8,3.6],[47.17,0.24],[46.58,0.34]],HC.route);
+   },[['fill',HC.britain,'英占区'],['fill',HC.war,'勃艮第占领区'],['fill',HC.france,'王太子控制区'],['dline',HC.route,'1429年2—3月贞德自东雷米穿敌境赴希农与普瓦捷路线'],['dot',HC.war,'东雷米与希农'],['dot','#2a2018','普瓦捷']]),
+  hs('1429年4—5月','给奥尔良送粮：底层士兵振奋，九天解围','1429年4月底贞德押运粮船队进入奥尔良；底层士兵士气大振，5月4—7日连克英军木堡，贞德中箭不退攻破南岸图雷尔桥头堡，5月8日英军撤围。',[[46.8,-0.2],[49.2,3.5]],d=>{
+    ha(d,'mNormandy933',HC.britain,{fillOpacity:.3});ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.26});
+    hp(d,'pl_blois',{left:1,note:'1429年4月贞德在此集结运粮船队与牛群，令随军士兵驱逐营妓、告解祈祷后沿卢瓦尔河东进。'});
+    hp(d,'jn_orleans',{kind:'battle',note:'1429年4月29日贞德押粮入城；5月7日贞德肩颈中箭仍擎旗带头攻克南岸图雷尔桥头堡，5月8日英军解围北撤。'});
+    hp(d,'w_tours',{left:1,note:'图尔：王室工匠在此为贞德打造白甲，取出圣卡特琳教堂古剑，绘百合花白旗。'});
+    hr(d,[[47.39,0.69],[47.59,1.34],[47.90,1.91]],HC.war);
+   },[['fill',HC.britain,'北撤的英军控制区'],['fill',HC.france,'士气大振的法军控制区'],['dline',HC.war,'1429年4月贞德押粮赴奥尔良路线'],['dot',HC.war,'1429年5月8日奥尔良解围'],['dot','#2a2018','图尔与布卢瓦']]),
+  hs('1429年6—7月','帕泰破长弓，护送查理赴兰斯加冕正大位','1429年6月18日法军在帕泰趁英军长弓手未及立桩冲阵大胜、生擒塔尔博特；随后率军深入敌后，7月17日护送查理七世在兰斯座堂受膏加冕。',[[47.0,0.2],[50.2,5.2]],d=>{
+    ha(d,'mNormandy933',HC.britain,{fillOpacity:.28});ha(d,'mBurgundyDuchy900',HC.war,{fillOpacity:.26});
+    ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.3});
+    hp(d,'jn_patay',{kind:'battle',left:1,note:'1429年6月18日帕泰之战：法军先锋趁英军长弓手未及打下木桩便猛冲砍杀两千余人，生擒主将塔尔博特。'});
+    hp(d,'ko_troyes',{note:'九年前签《特鲁瓦条约》之地；7月贞德兵临城下，城内市民开城归顺查理。'});
+    hp(d,'w_reims',{kind:'battle',note:'1429年7月17日，查理七世在历代法王加冕圣地兰斯座堂受圣油膏立，贞德擎旗立于祭坛旁。'});
+    hp(d,'jn_orleans',{left:1,note:'卢瓦尔河反攻起点奥尔良。'});
+    hr(d,[[47.90,1.91],[48.05,1.70],[48.30,4.08],[49.25,4.03]],HC.war);
+   },[['fill',HC.france,'查理七世兰斯加冕后声威大振的法兰西'],['fill',HC.britain,'英占区'],['fill',HC.war,'勃艮第区'],['dline',HC.war,'1429年6—7月贞德护送查理赴兰斯加冕进军路线'],['dot',HC.war,'1429年6月18日帕泰大捷与7月17日兰斯加冕'],['dot','#2a2018','奥尔良与特鲁瓦']]),
+  hs('1429年9月—1431年5月','功高震主遭弃：贡比涅被俘与鲁昂火刑','查理七世忌惮贞德威望，9月攻巴黎中弩后强令撤军；1430年5月23日贞德在贡比涅城门外被勃艮第派俘获，以一万图尔里弗尔卖给英军，1431年5月30日在鲁昂被烧死。',[[48.2,0.2],[50.8,4.5]],d=>{
+    ha(d,'mNormandy933',HC.britain,{fillOpacity:.34});ha(d,'mBurgundyDuchy900',HC.war,{fillOpacity:.3});
+    hp(d,'w_paris',{left:1,note:'1429年9月8日贞德猛攻巴黎圣奥诺雷门大腿中弩，次日查理七世强令拆桥撤军、解散部队。'});
+    hp(d,'fv_compiegne_est',{kind:'battle',note:'1430年5月23日贞德率少数佣兵救援贡比涅，出击时守将关死城门，贞德被勃艮第封臣卢森堡的约翰部下生擒。'});
+    hp(d,'fr_rouen',{kind:'battle',left:1,note:'英军以一万图尔里弗尔买下贞德押至鲁昂，由博韦主教科雄主持审讯，1431年5月30日在老集市广场将其烧死。'});
+   },[['fill',HC.britain,'英军审判并处死贞德的诺曼底（鲁昂）'],['fill',HC.war,'俘获并出卖贞德的勃艮第派'],['dot',HC.war,'1430年5月贡比涅被俘与1431年5月30日鲁昂火刑'],['dot','#2a2018','巴黎']]),
+  hs('1435—1453年','卡斯蒂永火炮收官与贞德的百年神话','1450年法军收复诺曼底，1453年7月17日在卡斯蒂永用三百门火炮轰垮英军、终结百年战争；1456年查理七世为贞德重审平反，19—20世纪贞德被塑造成法兰西民族图腾。',[[43.5,-2.5],[51.5,4.5]],d=>{
+    ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.36});ha(d,'mEngland1066',HC.britain,{fillOpacity:.28});
+    hp(d,'fr_rouen',{left:1,note:'1449年法军收复鲁昂；1456年查理七世在此办重审推翻1431年异端判决，为自己的加冕洗白。'});
+    hp(d,'jn_castillon',{kind:'battle',note:'1453年7月17日卡斯蒂永之战：比罗兄弟以三百门火炮轰碎英军冲锋，八旬老帅塔尔博特阵亡，波尔多随即归法。'});
+    hp(d,'hy1_calais',{note:'1453年百年战争结束时，英格兰在大陆仅剩加来一城（据守至1558年）。'});
+    hp(d,'w_paris',{note:'19世纪法国大革命与普法战争后，史家米什莱等将贞德塑造成法兰西民族象征，1920年教廷正式封圣。'});
+   },[['fill',HC.france,'1453年收复诺曼底与阿基坦、统一全国的法兰西'],['fill',HC.britain,'退回本岛（仅留加来）的英格兰'],['dot',HC.war,'1453年7月17日卡斯蒂永之战（百年战争终结）'],['dot','#2a2018','鲁昂、巴黎与加来']])
  ]}
 ];
 HISTORY_ENTRIES.forEach(e=>{
@@ -8312,7 +8364,7 @@ const HISTORY_ERAS=[
  {id:'britain-saxon-norman',name:'英格兰的成型：维京狂潮与诺曼征服',en:'The Making of England: Vikings and Normans',date:'约410—1087年',c:HC.britain,items:[['history-britain-anglosaxon'],['history-britain-norman']]},
  {id:'britain-angevin',name:'金雀花帝国：普通法、爱尔兰与狮心王',en:'The Angevin Empire: Common Law, Ireland and Lionheart',date:'1014—1214年',c:HC.britain,items:[['history-britain-henry2'],['history-britain-norman-ireland'],['history-britain-richard']]},
  {id:'britain-parliament',name:'大宪章、议会与英伦三岛的边界',en:'Magna Carta, Parliament and the Bounds of the Isles',date:'1215—1307年',c:HC.britain,items:[['history-britain-magnacarta'],['history-britain-edward1']]},
- {id:'britain-hundred-years',name:'百年战争：从阿基坦称臣、双王合体到英勃破裂',en:'The Hundred Years’ War: From Aquitaine to the Dual Monarchy and the Breach with Burgundy',date:'1200—1435年',c:HC.britain,items:[['history-britain-edward2'],['history-britain-hundred-years-1'],['history-britain-hundred-years-2'],['history-britain-hundred-years-3'],['history-britain-richard2'],['history-britain-hundred-years-4'],['history-britain-hundred-years-5']]},
+ {id:'britain-hundred-years',name:'百年战争：从阿基坦称臣到圣女贞德与终局',en:'The Hundred Years’ War: From Aquitaine to Joan of Arc and Castillon',date:'1200—1453年',c:HC.britain,items:[['history-britain-edward2'],['history-britain-hundred-years-1'],['history-britain-hundred-years-2'],['history-britain-hundred-years-3'],['history-britain-richard2'],['history-britain-hundred-years-4'],['history-britain-hundred-years-5'],['history-britain-jeanne']]},
 ];
 /* History as a tree: each branch is a topic; distance from the root is time (years, negative = BCE).
    Reading order stays with HISTORY_ERAS; TREE_ROWS puts each era row on a branch at its start and end. */
@@ -8324,11 +8376,11 @@ const HISTORY_BRANCHES=[
  {id:'east',name:'东罗马',en:'East Rome',lane:2,parent:'rome',from:395,to:1099,c:HC.byz},
  {id:'west',name:'中世纪西欧',en:'Medieval Western Europe',lane:4,parent:'rome',from:476,to:843,c:HC.celt},
  {id:'spain',name:'西班牙',en:'Spain',lane:5,parent:'west',from:481,to:1123,c:HC.spain},
- {id:'france',name:'法兰西',en:'France',lane:5,parent:'west',from:843,to:1435,c:HC.france},
+ {id:'france',name:'法兰西',en:'France',lane:5,parent:'west',from:843,to:1453,c:HC.france},
  {id:'germany',name:'德意志',en:'Germany',lane:4,parent:'west',from:843,to:1351,c:HC.germany},
  {id:'italy',name:'意大利',en:'Italy',lane:3,parent:'west',from:843,to:1351,c:HC.italy},
  // 不列颠 (including Ireland): forks from the trunk before Caesar's landing, on lane 6 right beside 法兰西.
- {id:'britain',name:'不列颠',en:'Britain and Ireland',lane:6,parent:'trunk',from:-55,to:1435,c:HC.britain},
+ {id:'britain',name:'不列颠',en:'Britain and Ireland',lane:6,parent:'trunk',from:-55,to:1453,c:HC.britain},
  // The 基督教 line: from the Hebrews' nomadic origins (the old Levant branch) to the schism of 1054; on its own lane, right of the West.
  // After 641 it runs through the shared stations of the East Roman dynasties.
  {id:'faith',name:'基督教',en:'Judaism & Christianity',lane:7,parent:'trunk',from:-1400,to:1449,c:HC.faith},
@@ -8534,6 +8586,7 @@ const TREE_ROWS={
  'history-france-valois/0':['france',1382,1400,'987—1380年'],
  'history-britain-hundred-years-4/0':[['britain','france'],1401,1422,'1380—1422年'],
  'history-britain-hundred-years-5/0':[['britain','france'],1423,1435,'1422—1435年'],
+ 'history-britain-jeanne/0':[['britain','france'],1436,1453,'1428—1453年'],
  'history-faith-avignon/0':[['faith','france'],1296,1303,'1294—1303年'],
  'history-faith-clement/0':[['faith','france'],1304,1314,'1303—1314年'],
  'history-italy-blackdeath/0':[['italy','france','britain','germany','faith','persia'],1347,1351,'1346—1353年'],
@@ -8544,7 +8597,7 @@ const TREE_ROWS={
  'history-arab-seljuks/3':[['persia','east'],1071,1092]
 };
 // Topics still to be written grow the tree as dashed shoots.
-const TREE_FUTURE=[['east',1099,'科穆宁王朝','1099年起 · 1176年米利奥克法隆之战 · 1204年第四次十字军攻破君士坦丁堡 · 待展开'],['france',1435,'百年战争','1314年后待展开：1328年卡佩直系绝嗣 · 1337—1453年英法百年战争'],['germany',1351,'选帝侯与哈布斯堡','1273年后待展开：1273年哈布斯堡的鲁道夫当选 · 1356年《金玺诏书》七选帝侯'],['italy',1351,'城市共和国与文艺复兴','1302年后待展开：佛罗伦萨、威尼斯、热那亚与米兰 · 文艺复兴'],['faith',1449,'宗教改革','1449年起 · 文艺复兴教廷 · 1517年马丁·路德《九十五条论纲》与宗教改革 · 待展开'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',1351,'伊儿汗国与马穆鲁克','1291年后待展开：1295年合赞汗皈依伊斯兰 · 1300年伊儿汗国一度占大马士革 · 奥斯曼人兴起'],['china',845,'晚唐五代与宋','845年起 · 待展开'],['spain',1123,'收复失地运动','1123年起 · 穆拉比特与穆瓦希德 · 1212年纳瓦斯—德托洛萨 · 1492年格拉纳达 · 待展开'],['eeurope',1054,'基辅罗斯以后','1054年起 · 雅罗斯拉夫死后诸子分封 · 1240年蒙古人攻破基辅 · 待展开'],['crusade',1312,'后来的十字军','1396年尼科波利斯 · 1444年瓦尔纳 · 1571年勒班陀 · 待展开'],['britain',1435,'班诺克本与百年战争','1307年后待展开：1314年班诺克本之战 · 1337—1453年英法百年战争 · 玫瑰战争']];
+const TREE_FUTURE=[['east',1099,'科穆宁王朝','1099年起 · 1176年米利奥克法隆之战 · 1204年第四次十字军攻破君士坦丁堡 · 待展开'],['france',1453,'百年战争','1314年后待展开：1328年卡佩直系绝嗣 · 1337—1453年英法百年战争'],['germany',1351,'选帝侯与哈布斯堡','1273年后待展开：1273年哈布斯堡的鲁道夫当选 · 1356年《金玺诏书》七选帝侯'],['italy',1351,'城市共和国与文艺复兴','1302年后待展开：佛罗伦萨、威尼斯、热那亚与米兰 · 文艺复兴'],['faith',1449,'宗教改革','1449年起 · 文艺复兴教廷 · 1517年马丁·路德《九十五条论纲》与宗教改革 · 待展开'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',1351,'伊儿汗国与马穆鲁克','1291年后待展开：1295年合赞汗皈依伊斯兰 · 1300年伊儿汗国一度占大马士革 · 奥斯曼人兴起'],['china',845,'晚唐五代与宋','845年起 · 待展开'],['spain',1123,'收复失地运动','1123年起 · 穆拉比特与穆瓦希德 · 1212年纳瓦斯—德托洛萨 · 1492年格拉纳达 · 待展开'],['eeurope',1054,'基辅罗斯以后','1054年起 · 雅罗斯拉夫死后诸子分封 · 1240年蒙古人攻破基辅 · 待展开'],['crusade',1312,'后来的十字军','1396年尼科波利斯 · 1444年瓦尔纳 · 1571年勒班陀 · 待展开'],['britain',1453,'班诺克本与百年战争','1307年后待展开：1314年班诺克本之战 · 1337—1453年英法百年战争 · 玫瑰战争']];
 // Where a line stops it says why: [line, year, the event that ends it, note, the line it carries on in].
 const TREE_ENDS=[['trunk',-30,'并入罗马','前146年科林斯被毁 · 前30年最后一个希腊化王国埃及并入罗马','rome'],['rome',476,'西罗马终结','476年西部末代皇帝被废 · 由中世纪西欧接续'],['west',843,'凡尔登三分','843年《凡尔登条约》三分帝国 · 分出法兰西、德意志、意大利']];
 // Sections of one line that run side by side: [line, row keys, side of the passing loop].

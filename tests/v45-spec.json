@@ -101,6 +101,12 @@
    "1422—1435年",
    4,
    12
+  ],
+  "history-britain-jeanne": [
+   "圣女贞德与百年战争终局",
+   "1428—1453年",
+   6,
+   12
   ]
  },
  "rows": {
@@ -230,6 +236,14 @@
    ],
    1423,
    1435
+  ],
+  "history-britain-jeanne/0": [
+   [
+    "britain",
+    "france"
+   ],
+   1436,
+   1453
   ]
  },
  "bold": [
@@ -544,6 +558,30 @@
   [
    "history-britain-hundred-years-5/3",
    "全靠王三叔从中弥合才勉强维持同盟；可王三叔一死，勃艮第公爵立刻和南边的废太子和解"
+  ],
+  [
+   "history-britain-jeanne/0",
+   "圣女贞德出场是在1428年王三叔贝德福德公爵派军围攻奥尔良之时"
+  ],
+  [
+   "history-britain-jeanne/1",
+   "贞德从小就神神叨叨的，路数酷似前面的“基督新娘”，在四里八乡小有名气"
+  ],
+  [
+   "history-britain-jeanne/2",
+   "奥尔良被围期间贞德跑去找查理，查理没把这小巫婆太当回事，只派她去给奥尔良送粮食，"
+  ],
+  [
+   "history-britain-jeanne/3",
+   "贞德又力劝查理去兰斯加冕以正大位，虽然一路深入敌境极为不易，但因为贞德带队也成功"
+  ],
+  [
+   "history-britain-jeanne/4",
+   "于是贞德在军中威望极高、功高震主，终于被查理派去执行送死任务，被勃艮第人抓获之后"
+  ],
+  [
+   "history-britain-jeanne/5",
+   "1435年勃艮第和解后法国靠火炮打赢百年战争，而被国王抛弃的贞德则在后世被各派反"
   ]
  ],
  "moments": {
@@ -800,6 +838,16 @@
     0,
     "伦敦桥头的弓箭与莱斯特的“棍棒议会”"
    ]
+  ],
+  "history-britain-jeanne": [
+   [
+    2,
+    "肩颈拔箭与图雷尔桥头堡的白旗"
+   ],
+   [
+    4,
+    "鲁昂法庭的死亡陷阱题：“你是否在天主的恩宠中？”"
+   ]
   ]
  },
  "boxes": {
@@ -873,10 +921,22 @@
     "英格兰王室世系表"
    ]
   ],
+  "history-britain-hundred-years-4": [
+   [
+    4,
+    "“我太爱法兰西了，连一个村子都不舍得丢”：莎士比亚《亨利五世》的求婚名场面与历史真相"
+   ]
+  ],
   "history-britain-hundred-years-5": [
    [
     2,
     "荷兰女伯爵杰奎琳：一张废教宗的离婚纸如何拆散了英勃同盟"
+   ]
+  ],
+  "history-britain-jeanne": [
+   [
+    5,
+    "从“女巫”到法兰西图腾：后世五百年如何挖掘与神话圣女贞德"
    ]
   ]
  },
@@ -897,7 +957,8 @@
   "history-britain-hundred-years-3": 300,
   "history-britain-richard2": 300,
   "history-britain-hundred-years-4": 300,
-  "history-britain-hundred-years-5": 300
+  "history-britain-hundred-years-5": 300,
+  "history-britain-jeanne": 300
  },
  "eras": [
   [
@@ -936,7 +997,7 @@
   ],
   [
    "britain-hundred-years",
-   "百年战争：从阿基坦称臣、双王合体到英勃破裂",
+   "百年战争：从阿基坦称臣到圣女贞德与终局",
    [
     "history-britain-edward2",
     "history-britain-hundred-years-1",
@@ -944,7 +1005,8 @@
     "history-britain-hundred-years-3",
     "history-britain-richard2",
     "history-britain-hundred-years-4",
-    "history-britain-hundred-years-5"
+    "history-britain-hundred-years-5",
+    "history-britain-jeanne"
    ]
   ]
  ],
@@ -953,26 +1015,26 @@
    "不列颠",
    "trunk",
    -55,
-   1435,
+   1453,
    6
   ],
   "france": [
    "法兰西",
    "west",
    843,
-   1435,
+   1453,
    5
   ]
  },
  "futures": [
   [
    "britain",
-   1435,
+   1453,
    "班诺克本与百年战争"
   ],
   [
    "france",
-   1435,
+   1453,
    "百年战争"
   ]
  ],
@@ -995,7 +1057,8 @@
    "history-britain-hundred-years-3/0",
    "history-britain-richard2/0",
    "history-britain-hundred-years-4/0",
-   "history-britain-hundred-years-5/0"
+   "history-britain-hundred-years-5/0",
+   "history-britain-jeanne/0"
   ],
   "france": [
    "history-france-west-francia/0",
@@ -1013,7 +1076,8 @@
    "history-britain-hundred-years-3/0",
    "history-france-valois/0",
    "history-britain-hundred-years-4/0",
-   "history-britain-hundred-years-5/0"
+   "history-britain-hundred-years-5/0",
+   "history-britain-jeanne/0"
   ]
  },
  "shared": {
@@ -1046,6 +1110,10 @@
    "france"
   ],
   "history-britain-hundred-years-5/0": [
+   "britain",
+   "france"
+  ],
+  "history-britain-jeanne/0": [
    "britain",
    "france"
   ]
@@ -1370,6 +1438,30 @@
   [
    "history-britain-hundred-years-5/3",
    "好人腓力就在阿拉斯与废太子查理七世签《阿拉斯条约》倒戈和解"
+  ],
+  [
+   "history-britain-jeanne/0",
+   "索尔兹伯里伯爵登塔瞭望时被法军一炮轰碎半张脸身亡"
+  ],
+  [
+   "history-britain-jeanne/1",
+   "看见天使长圣米迦勒与早期殉道贞女亚历山大里亚的圣凯瑟琳、圣玛格丽特显灵"
+  ],
+  [
+   "history-britain-jeanne/2",
+   "强攻南岸图雷尔桥头堡时肩颈中箭，她亲手拔箭后重返壕沟竖起大旗"
+  ],
+  [
+   "history-britain-jeanne/3",
+   "在帕泰之战趁英军长弓手还没来得及往地上打木桩，法军先锋铁骑直接冲阵砍杀两千余名长弓手"
+  ],
+  [
+   "history-britain-jeanne/4",
+   "勃艮第人以一万图尔里弗尔将她卖给英国王三叔"
+  ],
+  [
+   "history-britain-jeanne/5",
+   "1453年7月在卡斯蒂永之战用三百门火炮轰碎英军并炸死老帅塔尔博特"
   ]
  ],
  "boxfixes": [
@@ -1492,6 +1584,21 @@
    "history-britain-hundred-years-5",
    "荷兰女伯爵杰奎琳：一张废教宗的离婚纸如何拆散了英勃同盟",
    "阿维尼翁废教宗本笃十三世"
+  ],
+  [
+   "history-britain-hundred-years-4",
+   "“我太爱法兰西了，连一个村子都不舍得丢”：莎士比亚《亨利五世》的求婚名场面与历史真相",
+   "因为我太爱法兰西了，爱到连它的一个村子都不舍得丢掉"
+  ],
+  [
+   "history-britain-jeanne",
+   "从“女巫”到法兰西图腾：后世五百年如何挖掘与神话圣女贞德",
+   "① 她看到的究竟是谁：亚历山大里亚的圣凯瑟琳 vs “基督新娘”"
+  ],
+  [
+   "history-britain-jeanne",
+   "从“女巫”到法兰西图腾：后世五百年如何挖掘与神话圣女贞德",
+   "③ 从启蒙时代的嘲笑到19世纪民族主义的“重新挖掘”"
   ]
  ],
  "slips": [
@@ -1520,5 +1627,5 @@
   "mNormanIreland1210",
   "mGaelicIreland1210"
  ],
- "pass": "不列颠 — 17 sections (95 scenes) on a new line and chapter ⅩⅢ: Doggerland and Stonehenge to Caesar's raids, Roman Britain and Hadrian's Wall, Ireland's monasteries and Whitby, the Heptarchy, Vikings and Alfred the Great, Cnut and the Norman Conquest, Henry II's juries and Becket, the Normans in Ireland, Richard the Lionheart and Lackland John, Magna Carta and Parliament, Edward I's Wales and Scottish wars; 78 of 老无’s points in bold, 80 facts set right in plain text; 13 豆腐块"
+ "pass": "不列颠 — 18 sections (101 scenes) on a new line and chapter ⅩⅢ: Doggerland and Stonehenge to Caesar's raids, Roman Britain and Hadrian's Wall, Ireland's monasteries and Whitby, the Heptarchy, Vikings and Alfred the Great, Cnut and the Norman Conquest, Henry II's juries and Becket, the Normans in Ireland, Richard the Lionheart and Lackland John, Magna Carta and Parliament, Edward I's Wales and Scottish wars; 84 of 老无’s points in bold, 86 facts set right in plain text; 15 豆腐块"
 }
