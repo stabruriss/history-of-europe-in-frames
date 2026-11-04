@@ -107,6 +107,12 @@
    "1428—1453年",
    6,
    12
+  ],
+  "history-britain-roses-1": [
+   "红白玫瑰战争（上）",
+   "1435—1455年",
+   6,
+   12
   ]
  },
  "rows": {
@@ -244,6 +250,13 @@
    ],
    1436,
    1453
+  ],
+  "history-britain-roses-1/0": [
+   [
+    "britain"
+   ],
+   1454,
+   1455
   ]
  },
  "bold": [
@@ -582,6 +595,30 @@
   [
    "history-britain-jeanne/5",
    "1435年勃艮第和解后法国靠火炮打赢百年战争，而被国王抛弃的贞德则在后世被各派反"
+  ],
+  [
+   "history-britain-roses-1/0",
+   "红白玫瑰战争的祸根埋在百年战争尾声：勃艮第与查理七世和解后，查理七世于1436年"
+  ],
+  [
+   "history-britain-roses-1/1",
+   "割地和亲的消息传开后，搅屎棍王四叔格洛斯特公爵又跳出来主战，结果在1447年被主"
+  ],
+  [
+   "history-britain-roses-1/2",
+   "到1450年英国在大陆的地盘基本彻底丢失，前线大崩盘直接引爆了国内对兰开斯特朝廷"
+  ],
+  [
+   "history-britain-roses-1/3",
+   "屋漏偏逢连夜雨，亨利六世在1453年精神失常且成婚八年无子，极可能是外祖父法国疯"
+  ],
+  [
+   "history-britain-roses-1/4",
+   "议会顺应民意，封当初和兰开斯特合谋篡位的约克公爵理查当护国公，约克公爵已做好“王"
+  ],
+  [
+   "history-britain-roses-1/5",
+   "谁知王后安茹的玛格丽特突然生了个儿子，疯王随后又醒过来罢免约克公爵，和平接班之路"
   ]
  ],
  "moments": {
@@ -848,6 +885,16 @@
     4,
     "鲁昂法庭的死亡陷阱题：“你是否在天主的恩宠中？”"
    ]
+  ],
+  "history-britain-roses-1": [
+   [
+    2,
+    "多佛尔海峡的生锈大剑与敲击“伦敦石”的凯德"
+   ],
+   [
+    5,
+    "“这孩子一定是圣灵怀上的”与圣奥尔本斯城堡客栈之死"
+   ]
   ]
  },
  "boxes": {
@@ -938,6 +985,12 @@
     5,
     "从“女巫”到法兰西图腾：后世五百年如何挖掘与神话圣女贞德"
    ]
+  ],
+  "history-britain-roses-1": [
+   [
+    4,
+    "红玫瑰 vs 白玫瑰：兰开斯特、博福特与约克三家的血统账"
+   ]
   ]
  },
  "budget": {
@@ -958,7 +1011,8 @@
   "history-britain-richard2": 300,
   "history-britain-hundred-years-4": 300,
   "history-britain-hundred-years-5": 300,
-  "history-britain-jeanne": 300
+  "history-britain-jeanne": 300,
+  "history-britain-roses-1": 300
  },
  "eras": [
   [
@@ -997,7 +1051,7 @@
   ],
   [
    "britain-hundred-years",
-   "百年战争：从阿基坦称臣到圣女贞德与终局",
+   "百年战争与玫瑰战争：从阿基坦称臣到圣奥尔本斯",
    [
     "history-britain-edward2",
     "history-britain-hundred-years-1",
@@ -1006,7 +1060,8 @@
     "history-britain-richard2",
     "history-britain-hundred-years-4",
     "history-britain-hundred-years-5",
-    "history-britain-jeanne"
+    "history-britain-jeanne",
+    "history-britain-roses-1"
    ]
   ]
  ],
@@ -1015,7 +1070,7 @@
    "不列颠",
    "trunk",
    -55,
-   1453,
+   1455,
    6
   ],
   "france": [
@@ -1029,7 +1084,7 @@
  "futures": [
   [
    "britain",
-   1453,
+   1455,
    "班诺克本与百年战争"
   ],
   [
@@ -1058,7 +1113,8 @@
    "history-britain-richard2/0",
    "history-britain-hundred-years-4/0",
    "history-britain-hundred-years-5/0",
-   "history-britain-jeanne/0"
+   "history-britain-jeanne/0",
+   "history-britain-roses-1/0"
   ],
   "france": [
    "history-france-west-francia/0",
@@ -1462,6 +1518,30 @@
   [
    "history-britain-jeanne/5",
    "1453年7月在卡斯蒂永之战用三百门火炮轰碎英军并炸死老帅塔尔博特"
+  ],
+  [
+   "history-britain-roses-1/0",
+   "反而秘密答应把大陆战略重镇曼恩白白割给法国"
+  ],
+  [
+   "history-britain-roses-1/1",
+   "王四叔刚到场就被以叛国罪逮捕，关押仅五天便离奇暴死榻上"
+  ],
+  [
+   "history-britain-roses-1/2",
+   "1450年4月福尔米尼战败后一年内丢光诺曼底"
+  ],
+  [
+   "history-britain-roses-1/3",
+   "三十二岁的亨利六世突然发作急性精神分裂与木僵症"
+  ],
+  [
+   "history-britain-roses-1/4",
+   "只要疯王一直无嗣昏迷到死，约克公爵就能像王莽居摄一样和平接班"
+  ],
+  [
+   "history-britain-roses-1/5",
+   "于1455年5月22日在圣奥尔本斯砍死萨默塞特、生擒亨利六世"
   ]
  ],
  "boxfixes": [
@@ -1599,6 +1679,16 @@
    "history-britain-jeanne",
    "从“女巫”到法兰西图腾：后世五百年如何挖掘与神话圣女贞德",
    "③ 从启蒙时代的嘲笑到19世纪民族主义的“重新挖掘”"
+  ],
+  [
+   "history-britain-roses-1",
+   "红玫瑰 vs 白玫瑰：兰开斯特、博福特与约克三家的血统账",
+   "次子克拉伦斯这一支的顺位排在第三子之前"
+  ],
+  [
+   "history-britain-roses-1",
+   "红玫瑰 vs 白玫瑰：兰开斯特、博福特与约克三家的血统账",
+   "都铎玫瑰"
   ]
  ],
  "slips": [
@@ -1627,5 +1717,5 @@
   "mNormanIreland1210",
   "mGaelicIreland1210"
  ],
- "pass": "不列颠 — 18 sections (101 scenes) on a new line and chapter ⅩⅢ: Doggerland and Stonehenge to Caesar's raids, Roman Britain and Hadrian's Wall, Ireland's monasteries and Whitby, the Heptarchy, Vikings and Alfred the Great, Cnut and the Norman Conquest, Henry II's juries and Becket, the Normans in Ireland, Richard the Lionheart and Lackland John, Magna Carta and Parliament, Edward I's Wales and Scottish wars; 84 of 老无’s points in bold, 86 facts set right in plain text; 15 豆腐块"
+ "pass": "不列颠 — 19 sections (107 scenes) on a new line and chapter ⅩⅢ: Doggerland and Stonehenge to Caesar's raids, Roman Britain and Hadrian's Wall, Ireland's monasteries and Whitby, the Heptarchy, Vikings and Alfred the Great, Cnut and the Norman Conquest, Henry II's juries and Becket, the Normans in Ireland, Richard the Lionheart and Lackland John, Magna Carta and Parliament, Edward I's Wales and Scottish wars; 90 of 老无’s points in bold, 92 facts set right in plain text; 16 豆腐块"
 }
