@@ -201,13 +201,29 @@ const nearestOnLine=(id,key)=>{const s=stationByKey.get(key)||station,seq=lineSt
 function board(id,{key=selectedKey}={}){
  const next=nearestOnLine(id,key);if(!next)return;
  rideLine=id;treeLine=id;
- if(next.key===station?.key){renderRide();updateSceneUI();}
+ // Same station: nothing else moves, so the route strip has to find the stop on the new line itself.
+ if(next.key===station?.key){renderRide();updateSceneUI();routeAt=id;requestAnimationFrame(centerRoute);}
  else go(next.id,{scene:next.from});
  setMode('ride');
 }
 function goStation(key){const s=stationByKey.get(key);if(s)go(s.id,{scene:s.from})}
 function stepStation(delta){const seq=lineStops.get(rideLine),next=seq[seq.findIndex(s=>s.key===station.key)+delta];if(next)goStation(next.key)}
 function stepScene(delta){const next=sceneIndex+delta;if(station&&next>=station.from&&next<=station.to)go(station.id,{scene:next})}
+
+/* ---------- Changing line asks first ---------- */
+const transferDialog=document.createElement('dialog');transferDialog.id='transferDialog';
+transferDialog.innerHTML='<form method="dialog"><p id="transferQuestion"></p><small id="transferNote"></small><div class="transfer-actions"><button value="cancel">取消</button><button id="transferConfirm" value="ok"></button></div></form>';
+document.body.append(transferDialog);
+let transferTo=null;
+$('#transferConfirm').onclick=ev=>{ev.preventDefault();const to=transferTo;transferDialog.close();if(to)board(to.id,{key:to.key})};
+transferDialog.addEventListener('click',ev=>{if(ev.target===transferDialog)transferDialog.close()});  // the backdrop
+function askTransfer(id,key){
+ const s=stationByKey.get(key),name=lineName(id);transferTo={id,key};
+ $('#transferQuestion').textContent=`是否从这里切换到${name}线？`;
+ $('#transferNote').textContent=key===station?.key?`还在“${s.title}”这一幕，之后沿${name}线往前走。`:`会跳到“${s.title}”，之后沿${name}线往前走。`;
+ $('#transferConfirm').textContent=`切换到${name}线`;transferDialog.style.setProperty('--c',color(id));
+ transferDialog.showModal();$('#transferConfirm').focus();
+}
 
 /* ---------- On-train line diagram ---------- */
 let routeSkipClick=false;
@@ -225,12 +241,22 @@ function renderRide(){
  for(const g of groups){const left=offset+(g.start-.47)*step,w=(g.end-g.start+.94)*step;track.insertAdjacentHTML('beforeend',`<div class="route-period-band" title="${esc(g.title)} · 路段标记，章节可能跨越多个时段" style="left:${left}px;width:${w}px"><span>${esc(g.title)}</span></div>`)}
  seq.forEach((s,i)=>{
   const others=s.lines.filter(id=>id!==rideLine),b=document.createElement('button');b.className='route-stop'+(others.length?' shared':'')+(s.key===station.key?' active':'')+(i<idx?' past':'');b.style.left=offset+i*step+'px';b.dataset.key=s.key;b.title=`${s.title} · ${s.period} · ${s.count}幕${others.length?'；可换乘'+others.map(lineName).join('、'):''}`;b.setAttribute('aria-label',b.title);b.setAttribute('aria-current',s.key===station.key?'step':'false');
-  b.innerHTML=`${others.length?`<span class="stop-transfers">${others.map(id=>`<i style="--c:${color(id)}">${esc(LINE_MARK[id]||lineName(id)[0])}</i>`).join('')}</span>`:''}<i class="dot"></i><span class="stop-text"><span class="stop-name">${esc(s.title)}</span><span class="stop-date">${esc(s.period)}</span></span>`;
+  b.innerHTML=`<i class="dot"></i><span class="stop-text"><span class="stop-name">${esc(s.title)}</span><span class="stop-date">${esc(s.period)}</span></span>`;
   b.onclick=()=>{if(!routeSkipClick)goStation(s.key)};track.appendChild(b);
+ });
+ // The badges above a stop change line there. They sit beside the stop buttons, after all of them: a button cannot hold buttons.
+ seq.forEach((s,i)=>{
+  const others=s.lines.filter(id=>id!==rideLine);if(!others.length)return;
+  const row=document.createElement('div');row.className='route-transfers';row.style.left=offset+i*step+'px';
+  for(const id of others){
+   const t=document.createElement('button');t.type='button';t.dataset.switchLine=id;t.dataset.key=s.key;t.style.setProperty('--c',color(id));t.textContent=LINE_MARK[id]||lineName(id)[0];
+   t.title=`在“${s.title}”换乘${lineName(id)}线`;t.setAttribute('aria-label',t.title);t.onclick=()=>{if(!routeSkipClick)askTransfer(id,s.key)};row.appendChild(t);
+  }
+  track.appendChild(row);
  });
  if(future)track.insertAdjacentHTML('beforeend',`<i class="route-rail upcoming" style="left:${offset+span}px;width:${step}px"></i><div class="route-future" title="${esc(future[3])}" style="left:${offset+span+step}px"><i class="dot"></i><span class="stop-text"><span class="stop-name">${esc(future[2])}</span><span class="stop-date">待展开</span></span></div>`);
  const transfers=station.lines.filter(id=>id!==rideLine);$('#transferBar').innerHTML=transfers.length?'<span>⇄ 本站可换乘</span>'+transfers.map(id=>`<button data-transfer="${id}" style="--c:${color(id)}"><i></i>${esc(lineName(id))}</button>`).join(''):'';
- $$('#transferBar button').forEach(b=>b.onclick=()=>board(b.dataset.transfer,{key:station.key}));
+ $$('#transferBar button').forEach(b=>b.onclick=()=>askTransfer(b.dataset.transfer,station.key));
 }
 let routeAt=null;
 function centerRoute(){const s=$('#routeScroller'),b=$('.route-stop.active');if(b)s.scrollLeft=b.offsetLeft-s.clientWidth/2}
@@ -318,7 +344,7 @@ viewportPadding=()=>{
 };
 // ← → change station and ↑ ↓ change scene on the train; other modes keep the atlas's own keys.
 window.addEventListener('keydown',ev=>{
- if(mode==='off'||ev.defaultPrevented||ev.isComposing||ev.altKey||ev.ctrlKey||ev.metaKey||ev.shiftKey)return;
+ if(transferDialog.open||mode==='off'||ev.defaultPrevented||ev.isComposing||ev.altKey||ev.ctrlKey||ev.metaKey||ev.shiftKey)return;
  if(ev.target.isContentEditable||ev.target.closest('input,textarea,select,[role="textbox"],[role="separator"],#toc,#treeSheet')||!$('#kinSheet')?.hidden)return;
  if(ev.key==='Escape'&&mode==='ride'){ev.preventDefault();setMode('network');return}
  if(!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(ev.key))return;

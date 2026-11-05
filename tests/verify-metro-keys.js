@@ -70,7 +70,7 @@ const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','
   await p.keyboard.press('ArrowRight');s=await state(p);assert.notEqual(s.station,farming.station);assert.equal(s.id,'history-farming');assert.equal(s.scene,0);
   // Changing line at a shared station keeps the event and the scene; → then follows the new line.
   await p.evaluate(()=>metroUI.board('east',{key:'history-crusade-fourth/0'}));await p.focus('#map');await p.keyboard.press('ArrowDown');await p.keyboard.press('ArrowDown');
-  await p.click('[data-transfer="crusade"]');s=await state(p);assert.equal(s.line,'crusade');assert.equal(s.station,'history-crusade-fourth/0');assert.equal(s.scene,2);
+  await p.click('[data-transfer="crusade"]');assert.equal((await state(p)).line,'east','asks first');await p.click('#transferConfirm');s=await state(p);assert.equal(s.line,'crusade');assert.equal(s.station,'history-crusade-fourth/0');assert.equal(s.scene,2);
   await p.keyboard.press('ArrowRight');s=await state(p);assert.equal(s.line,'crusade');assert.equal(s.station,'history-crusade-fifth/0');assert.equal(s.scene,0);
   // Meaningful correspondence, rather than several events sharing one summary paragraph.
   for(const [scene,word] of [['history-persian-wars/2','马拉松'],['history-persian-wars/3','萨拉米斯'],['history-celts/1','加拉太'],['history-celts/2','帕加马']]){
