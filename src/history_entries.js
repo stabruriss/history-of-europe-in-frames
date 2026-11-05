@@ -1379,6 +1379,16 @@ Object.assign(HS,{
   ir_imola:['伊莫拉','Imola',44.353,11.714,'罗马涅门户重镇；1473年教宗西克斯图斯四世想让洛伦佐出钱买此地给侄子，因挡了佛罗伦萨北扩之路遭洛伦佐拒贷；1502年达·芬奇在此为切萨雷·博吉亚绘出著名的俯瞰实测地图。'],
   ir_konstanz:['康斯坦茨','Constance',47.66,9.175,'博登湖畔帝国自由市；1415年约翰二十三世在此被大公会议废黜关押，后由美第奇出资赎身。'],
   ir_valencia:['瓦伦西亚','Valencia',39.47,-0.376,'西班牙阿拉贡王冠重镇；教宗亚历山大六世（罗德里戈·博吉亚）与博吉亚家族的故乡。'],
+  iw1_amboise:['昂布瓦斯','Amboise',47.413,0.983,'卢瓦尔河畔法国王室城堡；1498年4月7日查理八世在此看球时额头撞上低矮石门框暴毙，1516年达·芬奇亦受邀迁居此地养老。'],
+  iw1_blois:['布卢瓦','Blois',47.586,1.331,'奥尔良支系路易十二的出生与常驻王宫；1504年在此与哈布斯堡皇帝马克西米利安一世签下“和亲分地方案”（《布卢瓦条约》）。'],
+  iw1_sarzana:['萨尔扎纳','Sarzana',44.114,9.959,'托斯卡纳西北边境要塞；1494年11月皮耶罗二世在此向查理八世屈膝献出要塞并答应赔付巨款，回城后即被市民轰跑。'],
+  iw1_garigliano:['加里利亚诺河','Garigliano River',41.272,13.822,'罗马与那不勒斯之间界河；1503年12月西班牙名将贡萨洛在此大败法王路易十二大军，将那不勒斯收入西班牙囊中。'],
+  iw1_palermo:['巴勒莫（西西里岛）','Palermo (Sicily)',38.116,13.361,'西西里王国首府；1282年西西里晚祷起义后归腓特烈二世孙女婿阿拉贡家族统治。'],
+  iw2_agnadello:['阿尼亚代洛','Agnadello',45.444,9.557,'米兰以东平原；1509年5月战神教宗尤利乌斯二世组建康布雷同盟联合法军在此大败威尼斯陆军。'],
+  iw2_ravenna:['拉文纳','Ravenna',44.418,12.204,'亚得里亚海畔重镇；1512年4月神圣同盟与法军在此血战，法军主帅加斯东战死，随即被尤利乌斯二世赶出米兰。'],
+  iw2_prato:['普拉托','Prato',43.878,11.096,'佛罗伦萨西北门户；1512年8月战神教宗派西班牙军攻破此城，护送美第奇家族杀回佛罗伦萨复辟。'],
+  iw2_marignano:['马里尼亚诺（梅莱尼亚诺）','Marignano (Melegnano)',45.356,9.324,'米兰东南；1515年9月新继位的法王弗朗索瓦一世在此击败瑞士长矛兵，重新夺占米兰六年。'],
+  iw2_utrecht:['乌得勒支','Utrecht',52.091,5.121,'低地重镇；1522—1523年在位的唯一荷兰教宗哈德良六世的故乡。'],
   sr_guimaraes:['吉马良斯（圣马梅德）','Guimarães (São Mamede)',41.448,-8.29,'葡萄牙北部“摇篮之城”；1128年6月24日阿方索·恩里克斯在城郊圣马梅德击败摄政母亲特蕾莎，夺取葡萄牙伯国实权。'],
   sr_ourique:['奥里基','Ourique',37.651,-8.225,'葡萄牙南部阿连特茹原野；1139年7月25日阿方索·恩里克斯在此大败穆拉比特军，战后自称葡萄牙国王阿方索一世。'],
   sr_lisbon:['里斯本','Lisbon',38.714,-9.133,'塔霍河口天然良港；1147年阿方索一世截住路过的英、德、弗拉芒十字军舰队，围攻四个月攻克此城。'],
@@ -1440,10 +1450,12 @@ Object.assign(HS,{
   rf2_speyer:['斯派尔','Speyer',49.317,8.441,'莱茵河畔帝国城市；1529年4月帝国会议上六位诸侯与十四座自由市递交抗议书，“新教徒（抗议派）”由此得名。'],
   rf2_schmalkalden:['施马尔卡登','Schmalkalden',50.722,10.454,'图林根西南部小城；1531年萨克森与黑森等新教诸侯在此结成军事同盟对抗皇帝查理五世。'],
   rf2_muhlberg:['米尔贝格','Mühlberg',51.433,13.217,'易北河畔重镇；1547年4月24日皇帝查理五世在此大败施马尔卡登同盟军，生擒萨克森选帝侯。'],
-  c5_pavia:['帕维亚','Pavia',45.185,9.158,'米兰以南重镇；1525年2月24日查理五世的西班牙火绳枪方阵在此大破法军，生擒法王弗朗索瓦一世。'],
-  c5_trent:['特兰托','Trent (Trento)',46.066,11.121,'阿尔卑斯山南麓主教城；1545—1563年教宗保罗三世等在此召开特兰托大公会议，开启天主教反宗教改革。'],
+  c5_pavia:['帕维亚','Pavia',45.185,9.158,'米兰以南重镇；1525年2月24日查理五世的西班牙火绳枪方阵在此一战打废法军，生擒法王弗朗索瓦一世。'],
+  c5_trent:['特兰托','Trent (Trento)',46.066,11.121,'阿尔卑斯山南麓主教城；1545—1563年教宗保罗三世等在查理五世催促下于此召开特兰托大公会议，开启天主教反宗教改革。'],
   c5_yuste:['尤斯特修道院','Monastery of Yuste',40.114,-5.738,'西班牙埃斯特雷马杜拉山间修道院；1556年查理五世退位分家后隐居于此，1558年病逝。'],
-  c5_madrid:['马德里','Madrid',40.417,-3.704,'卡斯蒂利亚中枢；1525年法王弗朗索瓦一世被俘押解至此，后成为查理五世之子腓力二世统治西班牙哈布斯堡帝国的都城。'],
+  c5_madrid:['马德里','Madrid',40.417,-3.704,'卡斯蒂利亚中枢；1525年法王弗朗索瓦一世被俘押解至此，签约获释后毁约，气得查理五世下战书要与他单挑。'],
+  c5_marseille:['马赛','Marseille',43.296,5.37,'法国南岸大港；1533年10月教宗克莱芒七世亲赴此地，主持侄孙女凯瑟琳·德·美第奇与法国二王子亨利的婚礼。'],
+  c5_parma:['帕尔马','Parma',44.801,10.328,'波河南岸重镇；1545年豪族教宗保罗三世学美第奇给自家抬旗，从教廷领地切出帕尔马与皮亚琴察封给自己的私生子当公爵。'],
   ty1_heidelberg:['海德堡','Heidelberg',49.409,8.693,'莱茵—普法尔茨（巴拉丁）选帝侯国首府；加尔文派大本营，选帝侯腓特烈五世自此赴布拉格称王。'],
   ty1_white_mountain:['白山（布拉格城西）','White Mountain (Bílá hora)',50.079,14.319,'布拉格城西高地；1620年11月8日帝国与巴伐利亚天主教联军在此两小时击溃波希米亚新教军。'],
   ty1_hague:['海牙','The Hague',52.08,4.31,'荷兰共和国中枢；1620年白山惨败后，英国岳父詹姆士一世不肯接盘，“冬王”腓特烈五世携妻逃亡至此投靠荷兰执政舅舅莫里斯亲王。'],
@@ -5188,54 +5200,49 @@ const HISTORY_ENTRIES=[
     hp(d,'lb_vienna',{note:'马克西米利安一世坐镇奥地利与帝国，哈布斯堡尼德兰成为全帝国最富庶的税源。'});
    },[['fill',HC.germany,'1495年帝国改革后的神圣罗马帝国与哈布斯堡尼德兰'],['dot',HC.war,'1495年沃尔姆斯会议、金融之都安特卫普与海运之都阿姆斯特丹'],['dot','#2a2018','淤塞的布鲁日与维也纳']])
  ]},
-{id:'history-germany-charles5',ch:5,title:'查理五世的欧洲棋局：罗马之劫、特兰托反击与哈布斯堡分家',short:'查理五世与哈布斯堡分家',en:'Charles V’s European Chessboard: The Sack of Rome, the Council of Trent, and the Habsburg Partition',period:'1516—1563年',c:HC.germany,
+{id:'history-germany-charles5',ch:5,title:'查理五世与两位教宗：帕维亚、罗马之劫、英国离婚案与特兰托会议',short:'查理五世与哈布斯堡分家',en:'Charles V and the Popes: Pavia, the Sack of Rome, Henry VIII’s Divorce, and the Council of Trent',period:'1523—1563年',c:HC.germany,
  scenes:[
-  hs('1516—1525年','查理五世当选皇帝与帕维亚生擒法王','1519年查理五世借富格尔银行八十五万金币当选皇帝，合围法国；1525年2月帕维亚之战西班牙火绳枪方阵生擒法王弗朗索瓦一世，法王获释后联手奥斯曼苏丹夹击皇帝。',[[37.5,-6.5],[53.5,29.5]],d=>{
-    ha(d,'mEmpire1050',HC.germany,{fillOpacity:.2});ha(d,'mFlanders900',HC.germany,{fillOpacity:.32});
-    ha(d,'mLeonCastile1080',HC.germany,{fillOpacity:.24});ha(d,'mNaplesAnjou1282',HC.germany,{fillOpacity:.24});
-    ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.24});ha(d,'mOttoman1522',HC.parthia,{fillOpacity:.18,dashArray:'4 4'});
-    hp(d,'k_frankfurt',{left:1,note:'1519年6月法兰克福选举：十九岁的查理五世靠奥格斯堡富格尔银行八十五万弗罗林买通七大选帝侯当选。'});
-    hp(d,'c5_pavia',{kind:'battle',note:'1525年2月24日帕维亚之战：帝国军火绳枪配长矛方阵大败法军，生擒法王弗朗索瓦一世。'});
-    hp(d,'c5_madrid',{left:1,note:'弗朗索瓦一世被押往马德里坐牢一年，1526年签字获释后立即毁约。'});
-    hp(d,'constantinople',{note:'弗朗索瓦一世秘密向奥斯曼苏丹苏莱曼一世求援，结成法土同盟东西夹击查理五世。'});
-   },[['fill',HC.germany,'查理五世的哈布斯堡大帝国（西班牙、低地、德意志、奥地利、那不勒斯）'],['fill',HC.france,'被四面合围的法兰西（弗朗索瓦一世）'],['dash',HC.parthia,'与法王结盟的奥斯曼帝国'],['dot',HC.war,'1525年帕维亚之战（生擒法王）'],['dot','#2a2018','法兰克福、马德里与君士坦丁堡']]),
-  hs('1526—1527年','克莱芒七世背刺与1527年“罗马之劫”','美第奇教宗克莱芒七世联手法国反帝；1527年5月查理五世麾下断饷的两万德意志路德派雇佣兵与西班牙兵攻破罗马狂抢八个月，克莱芒七世困守圣天使堡。',[[40.2,8.0],[46.2,15.8]],d=>{
-    ha(d,'mPapal1210',HC.faith,{fillOpacity:.32});ha(d,'mNaplesAnjou1282',HC.germany,{fillOpacity:.22});
-    hp(d,'rome',{kind:'battle',note:'1527年5月6日“罗马之劫”：两万断饷的德意志路德派雇佣兵与西班牙兵冲入罗马，屠杀洗劫八个月，克莱芒七世逃入圣天使堡。'});
-    hp(d,'ci_florence',{left:1,note:'罗马被攻破消息传来，佛罗伦萨市民趁机起义，再次赶走美第奇家族恢复共和国。'});
-    hp(d,'bb_bologna',{left:1,note:'帝国军自北意大利一路南下，沿途无人能挡。'});
+  hs('1523—1526年','帕维亚一战打废法国：查理拿北米兰南那不勒斯，法王毁约气得查理要单挑','克莱芒七世联合法国打米兰；1525年帕维亚之战法国一战就废，查理五世拿到北米兰与南那不勒斯；法王弗朗索瓦一世签约获释后毁约，气得查理五世下战书要跟他单挑。',[[37.5,-6.5],[51.5,18.5]],d=>{
+    ha(d,'mLombardLeague1176',HC.germany,{fillOpacity:.3});ha(d,'mNaplesAnjou1282',HC.germany,{fillOpacity:.3});
+    ha(d,'mPapal1210',HC.faith,{fillOpacity:.26});ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.24});ha(d,'mLeonCastile1080',HC.spain,{fillOpacity:.22});
+    hp(d,'c5_pavia',{kind:'battle',note:'1525年2月24日帕维亚之战：法国不争气一战就废，法王弗朗索瓦一世被俘，查理五世同时握住北米兰与南那不勒斯。'});
+    hp(d,'c5_madrid',{kind:'battle',left:1,note:'马德里：弗朗索瓦一世押解至此，拿两个儿子当人质换取签约获释，一过边境就毁约，气得查理五世下战书要跟他单挑。'});
+    hp(d,'rome',{left:1,note:'罗马：美第奇教宗克莱芒七世见查理五世南北合围教宗国，又拉毁约的法王结成科涅克同盟。'});
+   },[['fill',HC.germany,'查理五世拿下的北米兰与南那不勒斯'],['fill',HC.faith,'被南北夹在中间的克莱芒七世教宗国'],['fill',HC.france,'帕维亚惨败后毁约的法兰西'],['fill',HC.spain,'西班牙本土'],['dot',HC.war,'1525年帕维亚之战与马德里毁约单挑'],['dot','#2a2018','罗马']]),
+  hs('1526—1527年','没钱发饷酿“罗马之劫”，佛罗伦萨趁机再轰走美第奇','来回打到查理五世没钱发军饷，1527年5月断饷的德西大军冲进罗马狂抢八个月；佛罗伦萨市民见美第奇的靠山教宗被困圣天使堡，趁机再次起义把美第奇轰出城外。',[[40.2,8.0],[46.2,15.8]],d=>{
+    ha(d,'mPapal1210',HC.faith,{fillOpacity:.32});ha(d,'mLombardLeague1176',HC.italy,{fillOpacity:.24});ha(d,'mNaplesAnjou1282',HC.germany,{fillOpacity:.22});
+    hp(d,'rome',{kind:'battle',note:'1527年5月6日“罗马之劫”：两万断饷的德意志路德派雇佣兵与西班牙兵冲入罗马洗劫八个月，克莱芒七世被困圣天使堡。'});
+    hp(d,'ir_florence',{kind:'battle',left:1,note:'1527年5月佛罗伦萨又丢了：见靠山教宗被困圣天使堡，市民再次起义轰走美第奇小辈，恢复共和国。'});
+    hp(d,'bb_bologna',{left:1,note:'断饷大军自北意大利一路南下无人能挡。'});
     hr(d,[[45.18,9.16],[44.49,11.34],[43.77,11.25],[41.89,12.48]],HC.war);
-   },[['fill',HC.faith,'遭帝国哗变大军洗劫的教宗国'],['fill',HC.germany,'查理五世的那不勒斯'],['dline',HC.war,'1527年春帝国哗变大军南下攻破罗马路线'],['dot',HC.war,'1527年5月罗马之劫'],['dot','#2a2018','佛罗伦萨与博洛尼亚']]),
-  hs('1529—1530年','帮美第奇拿回佛罗伦萨与博洛尼亚加冕','克莱芒七世向查理五世求和：1530年2月在博洛尼亚最后一次为神圣罗马皇帝加冕，查理五世则派大军攻陷佛罗伦萨共和国、扶美第奇成为世袭公爵。',[[40.5,8.2],[45.8,15.2]],d=>{
-    ha(d,'mPapal1210',HC.faith,{fillOpacity:.28});ha(d,'mNaplesAnjou1282',HC.germany,{fillOpacity:.22});
-    hp(d,'bb_bologna',{kind:'battle',left:1,note:'1530年2月24日博洛尼亚加冕：克莱芒七世在此为查理五世戴上皇冠，是历史上最后一次由教宗主持的皇帝加冕礼。'});
-    hp(d,'ci_florence',{kind:'battle',left:1,note:'1529—1530年帝国军围攻佛罗伦萨十个月将其攻陷，扶克莱芒七世私生子亚历山德罗·德·美第奇为世袭公爵。'});
-    hp(d,'rome',{note:'克莱芒七世交出巨额赎金后返回满目疮痍的罗马。'});
-   },[['fill',HC.faith,'向查理五世屈服的教宗国'],['fill',HC.germany,'帝国控制下的那不勒斯'],['dot',HC.war,'1530年博洛尼亚加冕与攻陷佛罗伦萨'],['dot','#2a2018','罗马']]),
-  hs('1534—1563年','保罗三世上位：西斯廷画壁、耶稣会与特兰托会议','1534年保罗三世继位，请米开朗基罗绘西斯廷《最后的审判》（1536—1541），1540年批准创立耶稣会，1545—1563年召开特兰托大公会议整肃教会。',[[40.5,8.0],[47.5,16.0]],d=>{
-    ha(d,'mPapal1210',HC.faith,{fillOpacity:.34});ha(d,'mEmpire1050',HC.germany,{fillOpacity:.14});
-    hp(d,'rome',{kind:'battle',left:1,note:'梵蒂冈：保罗三世命米开朗基罗在西斯廷礼拜堂绘《最后的审判》（1536—1541），并于1540年批准罗耀拉创立耶稣会。'});
-    hp(d,'c5_trent',{kind:'battle',note:'特兰托（1545—1563年大公会议）：选在阿尔卑斯山南麓帝国境内召开，整顿教士纪律并重申七件圣事与教宗权威。'});
-    hp(d,'bb_bologna',{left:1,note:'1547年会议一度因瘟疫与同皇帝摩擦短暂迁往博洛尼亚。'});
-   },[['fill',HC.faith,'发起反宗教改革的教宗国'],['fill',HC.germany,'神圣罗马帝国'],['dot',HC.war,'罗马（西斯廷壁画与耶稣会）与特兰托大公会议'],['dot','#2a2018','博洛尼亚']]),
-  hs('1555—1556年','查理五世退位分封：哈布斯堡一分为二','1555—1556年查理五世退位隐居尤斯特修道院：将西班牙、低地与意大利分给儿子腓力二世（西支），将奥地利、波希米亚、匈牙利与神罗皇位分给弟弟斐迪南一世（东支）。',[[36.5,-9.0],[54.0,20.5]],d=>{
+   },[['fill',HC.faith,'遭断饷大军洗劫的教宗国'],['fill',HC.italy,'趁教宗被困再次轰走美第奇的佛罗伦萨'],['fill',HC.germany,'查理五世的那不勒斯'],['dline',HC.war,'1527年春断饷大军南下攻破罗马路线'],['dot',HC.war,'1527年5月罗马之劫与佛罗伦萨再轰美第奇'],['dot','#2a2018','博洛尼亚']]),
+  hs('1527—1534年','亨利八世找来离婚：女方是查理五世亲姨妈，教宗不敢批致英国脱离教会','英王亨利八世要休掉王后阿拉贡的凯瑟琳找来罗马；因女方是查理五世亲姨妈，被查理捏在手里的教宗克莱芒七世不敢同意，亨利八世遂脱离罗马教会成立英国国教。',[[40.5,-5.0],[54.0,16.0]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.32});ha(d,'mEmpire1050',HC.germany,{fillOpacity:.18});ha(d,'mPapal1210',HC.faith,{fillOpacity:.28});
+    hp(d,'k_london',{kind:'battle',left:1,note:'伦敦：英王亨利八世因王后阿拉贡的凯瑟琳未生男嗣要离婚娶安妮·博林，遭教宗拒批后于1533—1534年脱离天主教成立英国国教。'});
+    hp(d,'rome',{kind:'battle',note:'罗马：克莱芒七世刚被查理五世大军打怕，哪敢批准休掉查理五世的亲姨妈？'});
+    hp(d,'c5_madrid',{left:1,note:'西班牙：王后阿拉贡的凯瑟琳正是查理五世母亲疯女胡安娜的亲妹妹（查理五世亲姨妈）。'});
+   },[['fill',HC.britain,'因离婚案脱离天主教、成立英国国教的英格兰'],['fill',HC.germany,'替姨妈撑腰的查理五世帝国'],['fill',HC.faith,'夹在中间不敢批离婚的克莱芒七世教宗国'],['dot',HC.war,'伦敦（亨利八世立英国国教）与罗马'],['dot','#2a2018','马德里']]),
+  hs('1529—1534年','和解加冕送美第奇回城，死前嫁女法国（大王子喝水暴死成王后）','1530年教宗与查理五世和解加冕、送美第奇回佛罗伦萨当公爵；1533年克莱芒七世死前把凯瑟琳嫁给法国小王子，后来大王子打球喝冰水暴死，她真当上了法国王后。',[[40.5,3.5],[46.5,15.2]],d=>{
+    ha(d,'mPapal1210',HC.faith,{fillOpacity:.28});ha(d,'mLombardLeague1176',HC.italy,{fillOpacity:.26});ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.24});
+    hp(d,'bb_bologna',{kind:'battle',left:1,note:'1530年2月博洛尼亚：克莱芒七世同查理五世和解并为之加冕。'});
+    hp(d,'ir_florence',{kind:'battle',note:'1530年佛罗伦萨：查理五世派兵攻陷共和国，送克莱芒七世私生子亚历山德罗回去当世袭公爵（还娶了查理五世私生女）。'});
+    hp(d,'c5_marseille',{kind:'battle',left:1,note:'1533年10月马赛：克莱芒七世死前把侄孙女凯瑟琳·德·美第奇嫁给法国二王子亨利；1536年法国大王子喝冰水暴死，凯瑟琳遂成法国王后。'});
+   },[['fill',HC.italy,'美第奇改当世袭公爵的佛罗伦萨'],['fill',HC.faith,'教宗国'],['fill',HC.france,'迎娶凯瑟琳·德·美第奇的法兰西'],['dot',HC.war,'1530年博洛尼亚加冕、攻陷佛罗伦萨与1533年马赛联姻']]),
+  hs('1534—1563年','豪族教宗保罗三世：先封私生子当公爵，拖了十一年才开特兰托会议','1534年豪族法尔内塞出身的保罗三世继位，新教已坐大，查理五世催开大公会议；教宗学美第奇先切帕尔马封给私生子，拖到1545年才开特兰托大公会议（由此换乘转回基督教线）。',[[40.5,8.0],[47.5,16.0]],d=>{
+    ha(d,'mPapal1210',HC.faith,{fillOpacity:.34});ha(d,'mEmpire1050',HC.germany,{fillOpacity:.16});
+    hp(d,'rome',{kind:'battle',left:1,note:'梵蒂冈：保罗三世请米开朗基罗画《最后的审判》、批准耶稣会，却先封两个十几岁外孙当枢机。'});
+    hp(d,'c5_parma',{kind:'battle',left:1,note:'1545年帕尔马：保罗三世学美第奇给自家抬旗，从教廷领地切出帕尔马与皮亚琴察公国封给私生子皮耶尔·路易吉。'});
+    hp(d,'c5_trent',{kind:'battle',note:'1545—1563年特兰托大公会议：在查理五世反复催促下拖了十一年终于召开，由此换乘站转回“基督教”主线。'});
+   },[['fill',HC.faith,'保罗三世治下的教宗国与切给私生子的帕尔马'],['fill',HC.germany,'催开大会的查理五世帝国'],['dot',HC.war,'帕尔马（封私生子）与特兰托大公会议（转回基督教主线）']]),
+  hs('1555—1556年','查理五世退位分家：哈布斯堡一分为二，接上后续大局','1555—1556年查理五世退位隐居尤斯特修道院：将西班牙、低地与北米兰、南那不勒斯分给儿子腓力二世，将奥地利、波希米亚与神罗皇位分给弟弟斐迪南一世。',[[36.5,-9.0],[54.0,20.5]],d=>{
     ha(d,'mLeonCastile1080',HC.spain,{fillOpacity:.3});ha(d,'mAragonCrown1282',HC.spain,{fillOpacity:.28});
-    ha(d,'mFlanders900',HC.spain,{fillOpacity:.36});ha(d,'mNaplesAnjou1282',HC.spain,{fillOpacity:.28});
+    ha(d,'mFlanders900',HC.spain,{fillOpacity:.36});ha(d,'mNaplesAnjou1282',HC.spain,{fillOpacity:.28});ha(d,'mLombardLeague1176',HC.spain,{fillOpacity:.26});
     ha(d,'mEmpire1050',HC.germany,{fillOpacity:.22});ha(d,'mBohemia900',HC.germany,{fillOpacity:.3});
-    hp(d,'lb_brussels',{kind:'battle',left:1,note:'1555年10月查理五世在布鲁塞尔宫廷含泪宣布退位，将低地十七省与西班牙王冠传给儿子腓力二世。'});
-    hp(d,'c5_madrid',{left:1,note:'马德里：儿子腓力二世统辖西班牙、美洲殖民地、低地与意大利（西班牙哈布斯堡支系）。'});
-    hp(d,'c3_vienna',{kind:'battle',note:'维也纳：弟弟斐迪南一世统辖奥地利、波希米亚、匈牙利并接任神圣罗马皇帝（奥地利哈布斯堡支系）。'});
-    hp(d,'c5_yuste',{left:1,note:'尤斯特修道院：查理五世退隐于此修表听经，1558年染疟疾去世。'});
-   },[['fill',HC.spain,'分给儿子腓力二世的西支：西班牙、低地诸国、米兰与那不勒斯'],['fill',HC.germany,'分给弟弟斐迪南一世的东支：奥地利、波希米亚与神圣罗马帝国'],['dot',HC.war,'1555年布鲁塞尔退位与维也纳东支中心'],['dot','#2a2018','马德里与尤斯特修道院']]),
-  hs('1556—1618年','分家埋下的两颗大雷：尼德兰战火与三十年战争引线','西班牙国王腓力二世用极端天主教与重税高压统治低地，引爆尼德兰独立战争；奥地利皇帝缺钱缺兵面对波希米亚与德意志新教诸侯，埋下1618年三十年战争引线。',[[37.5,-6.5],[54.5,19.5]],d=>{
-    ha(d,'mLeonCastile1080',HC.spain,{fillOpacity:.24});ha(d,'mFlanders900',HC.war,{fillOpacity:.38});
-    ha(d,'mEmpire1050',HC.germany,{fillOpacity:.18});ha(d,'mBohemia900',HC.war,{fillOpacity:.34});
-    hp(d,'c5_madrid',{left:1,note:'腓力二世在马德里遥控低地，不懂荷兰语且严抓加尔文派异端，把尼德兰逼反。'});
-    hp(d,'gh_amsterdam',{kind:'battle',left:1,note:'阿姆斯特丹与低地北方：1568年爆发反抗西班牙统治的“八十年战争（荷兰独立战争）”。'});
-    hp(d,'de_prague',{kind:'battle',note:'布拉格：波希米亚新教贵族与奥地利哈布斯堡天主教皇帝矛盾日深，1618年在此引爆“三十年战争”。'});
-    hp(d,'c3_vienna',{note:'维也纳：失去西班牙金银直输的奥地利皇帝，一遇危局就请西班牙堂兄弟跨国派兵助拳。'});
-    hr(d,[[40.42,-3.70],[45.46,9.19],[50.85,4.35]],HC.spain);
-   },[['fill',HC.war,'两大火药桶：反抗西班牙的低地诸国与对抗奥地利的波希米亚'],['fill',HC.spain,'西班牙哈布斯堡'],['fill',HC.germany,'奥地利哈布斯堡治下的帝国'],['dline',HC.spain,'西班牙运兵镇压低地与支援奥地利的“西班牙军道”'],['dot',HC.war,'阿姆斯特丹（八十年战争）与布拉格（三十年战争起点）'],['dot','#2a2018','马德里与维也纳']])
+    hp(d,'lb_brussels',{kind:'battle',left:1,note:'1555年10月查理五世在布鲁塞尔含泪退位，将低地、西班牙与意大利（米兰、那不勒斯）传给儿子腓力二世。'});
+    hp(d,'c5_madrid',{left:1,note:'马德里：儿子腓力二世统辖西班牙哈布斯堡支系。'});
+    hp(d,'c3_vienna',{kind:'battle',note:'维也纳：弟弟斐迪南一世统辖奥地利、波希米亚并接任神圣罗马皇帝（奥地利哈布斯堡支系）。'});
+    hp(d,'c5_yuste',{left:1,note:'尤斯特修道院：查理五世退隐于此，1558年病逝。'});
+   },[['fill',HC.spain,'分给儿子腓力二世的西支：西班牙、低地、北米兰与南那不勒斯'],['fill',HC.germany,'分给弟弟斐迪南一世的东支：奥地利、波希米亚与神圣罗马帝国'],['dot',HC.war,'1555年布鲁塞尔退位与维也纳东支中心'],['dot','#2a2018','马德里与尤斯特修道院']])
  ]},
 {id:'history-germany-thirty-years-1',ch:5,title:'三十年战争（上）：波希米亚扔窗、一人占俩茅坑与华伦斯坦被炒',short:'三十年战争（上）',en:'The Thirty Years’ War (I): The Prague Defenestration, One Man Holding Two Electorates, and Wallenstein’s Dismissal',period:'1555—1630年',c:HC.germany,
  scenes:[
@@ -5583,6 +5590,93 @@ const HISTORY_ENTRIES=[
     hp(d,'ir_florence',{left:1,note:'1494年法王查理八世南下，洛伦佐长子皮耶罗二世投降被市民赶跑，马基雅维利后来作为共和国使节贴身观察切萨雷·博吉亚。'});
     hp(d,'rome',{kind:'battle',left:1,note:'1503年8月罗马：亚历山大六世与切萨雷晚宴后同时暴病（亚历山大六世暴毙），死对头尤利乌斯二世终于上台。'});
    },[['fill',HC.war,'切萨雷·博吉亚征服的教宗国与罗马涅'],['fill',HC.italy,'佛罗伦萨与北意'],['dot',HC.war,'伊莫拉（达·芬奇绘军用图）、乌尔比诺与罗马（1503年父子倒台）'],['dot','#2a2018','佛罗伦萨']])
+ ]},
+{id:'history-italy-wars-1',ch:5,title:'意大利战争（上）：那不勒斯老账、查理八世磕死门框与神棍烧画',short:'意大利战争（上）',en:'The Italian Wars (I): The Old Naples Claim, Charles VIII Hitting the Lintel, and Savonarola’s Bonfires',period:'1435—1504年',c:HC.italy,
+ scenes:[
+  hs('1250—1479年','Recap南意老账：从西西里晚祷到阿方索五世分传叔侄','腓特烈二世死后教宗卖西西里转安茹，晚祷起义后阿拉贡占西西里；1442年阿拉贡王阿方索五世夺那不勒斯，传本土给弟胡安，留私生子费尔南多管那不勒斯。',[[36.5,-4.5],[45.5,17.5]],d=>{
+    ha(d,'mAragonCrown1282',HC.spain,{fillOpacity:.28});ha(d,'mSicilyAragon1282',HC.spain,{fillOpacity:.34});ha(d,'mNaplesAnjou1282',HC.war,{fillOpacity:.3});
+    hp(d,'naples',{kind:'battle',note:'那不勒斯：1435年安茹女王乔万娜二世绝嗣，1442年阿拉贡王阿方索五世击败法国安茹公爵夺下此城，1458年传给私生子费尔南多一世。'});
+    hp(d,'iw1_palermo',{left:1,note:'巴勒莫（西西里岛）：1282年西西里晚祷起义后归腓特烈二世孙女婿阿拉贡家族统治。'});
+    hp(d,'k_barcelona',{left:1,note:'阿拉贡本土：阿方索五世因国内强藩难缠，把阿拉贡传给弟弟胡安二世，胡安之子斐迪南二世与伊莎贝拉合并西班牙。'});
+    hp(d,'rome',{left:1,note:'罗马：教宗历来最怕北边的帝国与南边的西西里—那不勒斯落入同一家手里形成南北夹击。'});
+   },[['fill',HC.spain,'传给弟弟胡安二世（后并入西班牙）的阿拉贡与西西里岛'],['fill',HC.war,'阿方索五世夺取并留给私生子费尔南多一世的那不勒斯王国'],['dot',HC.war,'争夺焦点那不勒斯'],['dot','#2a2018','巴勒莫、巴塞罗那与罗马']]),
+  hs('1483—1494年','查理八世亲政与米兰摄政叔卢多维科引狼入室','路易十一死后十三岁查理八世由姐安妮摄政，二十一岁亲政；米兰摄政叔卢多维科拒让娶了那不勒斯王孙女的小公爵亲政，于1494年撺掇查理八世挥军南下攻打那不勒斯。',[[40.2,0.5],[48.5,16.0]],d=>{
+    ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.28});ha(d,'mLombardLeague1176',HC.italy,{fillOpacity:.22});ha(d,'mNaplesAnjou1282',HC.spain,{fillOpacity:.24});
+    hp(d,'iw1_amboise',{left:1,note:'昂布瓦斯：查理八世十三岁登基，由姐姐安妮摄政八年风调雨顺；二十一岁亲政后志大才疏，发兵征意大利。'});
+    hp(d,'ic_milan',{kind:'battle',left:1,note:'米兰：托孤摄政叔卢多维科·斯福尔扎（达·芬奇老板）不愿让小公爵亲政，怕那不勒斯出兵干预，遂引法军入意。'});
+    hp(d,'naples',{note:'那不勒斯：小公爵之妻的娘家；成为查理八世三万法军与四十门青铜野战炮的目标。'});
+    hr(d,[[45.76,4.84],[45.46,9.19],[43.77,11.26],[40.85,14.27]],HC.france);
+   },[['fill',HC.france,'查理八世亲政后的法兰西王国'],['fill',HC.italy,'摄政叔卢多维科把持的米兰与北意'],['fill',HC.spain,'费尔南多一世家族的那不勒斯王国'],['dline',HC.france,'1494年秋查理八世受卢多维科撺掇南下征那不勒斯路线'],['dot',HC.war,'引狼入室的米兰'],['dot','#2a2018','昂布瓦斯与那不勒斯']]),
+  hs('1494年11月','路过佛罗伦萨：皮耶罗二世跑路与神棍萨伏那洛拉上台','法军逼近佛罗伦萨，洛伦佐之子皮耶罗二世去谈被要十五万金币与要塞，回城拿钱遭拒后跑路、美第奇垮台；城里改派神棍卫道士萨伏那洛拉带团去谈，神棍自此统治佛罗伦萨。',[[42.2,9.2],[45.2,13.5]],d=>{
+    ha(d,'mLombardLeague1176',HC.italy,{fillOpacity:.26});ha(d,'mPapal1210',HC.faith,{fillOpacity:.2});
+    hp(d,'iw1_sarzana',{kind:'battle',left:1,note:'萨尔扎纳：1494年11月皮耶罗二世在此向查理八世跪献要塞并答应赔十五万金币。'});
+    hp(d,'ir_florence',{kind:'battle',note:'佛罗伦萨：市民拒掏十五万金币并将皮耶罗二世轰跑，美第奇垮台；改派神棍卫道士萨伏那洛拉去见法王并接管全城。'});
+    hp(d,'ir_pisa',{left:1,note:'比萨：趁查理八世进城脱离佛罗伦萨独立。'});
+   },[['fill',HC.italy,'轰走皮耶罗二世、由萨伏那洛拉接管的佛罗伦萨'],['fill',HC.faith,'教宗国'],['dot',HC.war,'萨尔扎纳谈判与佛罗伦萨政变'],['dot','#2a2018','比萨']]),
+  hs('1495—1498年','查理八世撤军与萨伏那洛拉“存天理灭人欲”被挂路灯杆','查理八世占那不勒斯后遭教宗神圣同盟合围撤军；萨伏那洛拉在佛罗伦萨搞存天理灭人欲烧画（波提切利亲手烧画），被教宗绝罚后基本盘崩塌，1498年被挂上广场绞架烧死，佛罗伦萨回共和制。',[[40.2,8.5],[45.8,15.8]],d=>{
+    ha(d,'mLombardLeague1176',HC.italy,{fillOpacity:.24});ha(d,'mPapal1210',HC.faith,{fillOpacity:.26});ha(d,'mNaplesAnjou1282',HC.spain,{fillOpacity:.22});
+    hp(d,'naples',{left:1,note:'1495年2月查理八世占领那不勒斯，旋因后路被神圣同盟切断而撤军。'});
+    hp(d,'ir_fornovo',{kind:'battle',left:1,note:'1495年7月福尔诺沃之战：查理八世血战突围退出意大利。'});
+    hp(d,'ir_florence',{kind:'battle',note:'佛罗伦萨领主广场：萨伏那洛拉在此燃起“虚荣之火”烧毁名画，1498年5月23日自己也在同一广场被吊上高架烧死，佛罗伦萨恢复共和制。'});
+    hp(d,'rome',{left:1,note:'罗马：教宗亚历山大六世先组神圣同盟反法，又于1497年将痛骂教廷的萨伏那洛拉绝罚。'});
+   },[['fill',HC.italy,'处死萨伏那洛拉、恢复世俗共和制的佛罗伦萨'],['fill',HC.faith,'教宗国'],['fill',HC.spain,'那不勒斯'],['dot',HC.war,'1495年福尔诺沃撤军与1498年佛罗伦萨处死萨伏那洛拉'],['dot','#2a2018','那不勒斯与罗马']]),
+  hs('1498年','查理八世撞门框磕死：瓦卢瓦嫡系绝嗣，路易十二继位','1498年4月查理八世在昂布瓦斯城堡看球时撞在低矮石门框上磕死，瓦卢瓦嫡系绝嗣；旁系堂叔奥尔良公爵路易十二继位（配780px瓦卢瓦支系世系图）。',[[44.5,-2.5],[50.2,8.5]],d=>{
+    ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.32});
+    hp(d,'iw1_amboise',{kind:'battle',left:1,note:'1498年4月7日昂布瓦斯城堡：二十七岁的查理八世穿过低矮石廊看网球时额头撞上门框暴毙，瓦卢瓦嫡系绝嗣。'});
+    hp(d,'iw1_blois',{kind:'battle',note:'布卢瓦：查理五世次子奥尔良支系曾孙路易十二由此继位，并凭祖母维斯孔蒂血统索取米兰。'});
+    hp(d,'w_paris',{note:'巴黎：路易十二加冕并迎娶查理八世遗孀布列塔尼的安妮。'});
+   },[['fill',HC.france,'由主脉转入奥尔良支系（路易十二）的法兰西王国'],['dot',HC.war,'1498年昂布瓦斯（查理八世撞门框磕死）与布卢瓦（路易十二继位）'],['dot','#2a2018','巴黎']]),
+  hs('1499—1504年','路易十二再打意大利：西班牙本家夺那不勒斯，德国皇帝搞和亲分地','路易十二为补支系合法性夺下米兰并与西班牙争那不勒斯；斐迪南二世以阿拉贡本家名义在加里利亚诺河击败法军独占那不勒斯，亲家皇帝马克西米利安一世搞和亲分地方案引教宗不满。',[[39.5,0.5],[48.5,16.5]],d=>{
+    ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.24});ha(d,'mLombardLeague1176',HC.france,{fillOpacity:.28});
+    ha(d,'mPapal1210',HC.faith,{fillOpacity:.26});ha(d,'mNaplesAnjou1282',HC.spain,{fillOpacity:.34});
+    hp(d,'ic_milan',{kind:'battle',left:1,note:'1499—1500年路易十二攻占米兰，将摄政叔卢多维科抓回法国洛什地牢关死。'});
+    hp(d,'iw1_garigliano',{kind:'battle',note:'1503年12月加里利亚诺河之战：西班牙名将贡萨洛击败法军，那不勒斯彻底归入西班牙斐迪南二世手中。'});
+    hp(d,'iw1_blois',{left:1,note:'1504年《布卢瓦条约》：亲家德国皇帝马克西米利安一世捣浆糊搞“和亲分地方案”，拟把米兰与那不勒斯全给未来孙女婿查理五世。'});
+    hp(d,'rome',{left:1,note:'罗马：见和亲方案又要让南北落入同一家之手，教宗大为不满。'});
+   },[['fill',HC.france,'路易十二占领的法兰西与北意米兰'],['fill',HC.spain,'西班牙斐迪南二世夺回的南意那不勒斯'],['fill',HC.faith,'夹在南北两大强权之间的教宗国'],['dot',HC.war,'1499年法占米兰与1503年西占那不勒斯'],['dot','#2a2018','布卢瓦与罗马']])
+ ]},
+{id:'history-italy-wars-2',ch:5,title:'意大利战争（下）：战神教宗、机械狮子与两位美第奇教宗',short:'意大利战争（下）',en:'The Italian Wars (II): The Warrior Pope, Da Vinci’s Mechanical Lion, and the Two Medici Popes',period:'1503—1523年',c:HC.italy,
+ scenes:[
+  hs('1503—1512年','战神教宗尤利乌斯二世：联法打威尼斯，再联威尼斯把法军赶出米兰','1503年战神教宗尤利乌斯二世上位，没兵却纵横捭阖：1508年组康布雷同盟联法打服威尼斯，1511年又组神圣同盟联威尼斯与西班牙把法军赶出米兰。',[[41.0,7.5],[46.5,16.0]],d=>{
+    ha(d,'mPapal1210',HC.faith,{fillOpacity:.32});ha(d,'mVenetian1210',HC.war,{fillOpacity:.24});ha(d,'mLombardLeague1176',HC.italy,{fillOpacity:.22});
+    hp(d,'rome',{left:1,note:'罗马：1503年西克斯图斯四世之侄尤利乌斯二世当选，披甲督战，外号“战神教宗”。'});
+    hp(d,'iw2_agnadello',{kind:'battle',left:1,note:'1509年5月阿尼亚代洛之战：尤利乌斯二世联手法国打败威尼斯，逼威尼斯吐出罗马涅城池。'});
+    hp(d,'iw2_ravenna',{kind:'battle',note:'1512年4月拉文纳之战与米兰易手：尤利乌斯二世掉头联手威尼斯、西班牙与瑞士兵，将法军赶出米兰。'});
+    hp(d,'ir_venice',{note:'威尼斯：先挨教宗与法国联手痛揍，跪地求和后又被教宗拉去一起打法国。'});
+   },[['fill',HC.faith,'战神教宗尤利乌斯二世扩张后的教宗国'],['fill',HC.war,'先被打服、再联手反法的威尼斯'],['fill',HC.italy,'赶走法军后的米兰与北意'],['dot',HC.war,'1509年阿尼亚代洛与1512年拉文纳之战'],['dot','#2a2018','罗马与威尼斯']]),
+  hs('1512—1513年','帮美第奇复辟：洛伦佐孙子当僭主、马基雅维利献《君主论》','因佛罗伦萨共和国亲法，尤利乌斯二世派兵于1512年帮美第奇复辟；洛伦佐之孙小洛伦佐重新当僭主（马基雅维利向他献《君主论》），其女即后来的法国王后凯瑟琳。',[[41.2,8.8],[45.5,14.5]],d=>{
+    ha(d,'mLombardLeague1176',HC.italy,{fillOpacity:.28});ha(d,'mPapal1210',HC.faith,{fillOpacity:.28});
+    hp(d,'iw2_prato',{kind:'battle',left:1,note:'1512年8月普拉托之劫：尤利乌斯二世派西班牙联军攻破此城，吓垮亲法的佛罗伦萨共和政府。'});
+    hp(d,'ir_florence',{kind:'battle',note:'佛罗伦萨：美第奇复辟，洛伦佐之孙小洛伦佐当僭主（生女凯瑟琳后为法国王后）；失业的马基雅维利在乡下写出《君主论》献给小洛伦佐。'});
+    hp(d,'rome',{left:1,note:'罗马：战神教宗尤利乌斯二世除掉亲法政权后，于1513年2月去世。'});
+   },[['fill',HC.italy,'美第奇复辟、小洛伦佐当僭主的佛罗伦萨'],['fill',HC.faith,'教宗国'],['dot',HC.war,'1512年普拉托破城与佛罗伦萨美第奇复辟'],['dot','#2a2018','罗马']]),
+  hs('1513—1517年','利奥十世疯狂给美第奇抬旗：封侄子当公爵与清洗枢机团','1513年美第奇的利奥十世继位，1516年夺乌尔比诺封侄子小洛伦佐当公爵；1517年遭佩特鲁奇枢机下毒刺杀未遂，借机大清洗枢机团并一天封三十一名新枢机集权。',[[41.0,9.2],[45.0,14.5]],d=>{
+    ha(d,'mPapal1210',HC.faith,{fillOpacity:.34});ha(d,'mLombardLeague1176',HC.italy,{fillOpacity:.24});
+    hp(d,'rome',{kind:'battle',left:1,note:'罗马圣天使堡：1517年利奥十世挫败佩特鲁奇枢机下毒刺杀案，借机清洗枢机团并一天卖官封三十一名新枢机。'});
+    hp(d,'ir_urbino',{kind:'battle',note:'乌尔比诺：1516年利奥十世花八十万金币发兵赶走原公爵，把乌尔比诺公爵之位硬封给亲侄子小洛伦佐。'});
+    hp(d,'ir_florence',{left:1,note:'佛罗伦萨：美第奇家族同时握住罗马教廷与佛罗伦萨两端大权。'});
+   },[['fill',HC.faith,'利奥十世清洗枢机团集权后的教宗国'],['fill',HC.italy,'美第奇控制的佛罗伦萨与乌尔比诺'],['dot',HC.war,'1516年夺取乌尔比诺封侄与1517年罗马清洗枢机团'],['dot','#2a2018','佛罗伦萨']]),
+  hs('1515—1516年','法王再来：达·芬奇的走路开花机械狮与索要《拉奥孔》','1515年法王弗朗索瓦一世重占米兰，利奥十世带着达·芬奇造的开花机械狮子赴博洛尼亚谈判；法王提无理要求还要《拉奥孔》雕像，利奥十世忍气吞声先拿假货答应。',[[41.2,7.5],[46.2,14.8]],d=>{
+    ha(d,'mLombardLeague1176',HC.france,{fillOpacity:.3});ha(d,'mPapal1210',HC.faith,{fillOpacity:.26});ha(d,'mNaplesAnjou1282',HC.spain,{fillOpacity:.22});
+    hp(d,'iw2_marignano',{kind:'battle',left:1,note:'1515年9月马里尼亚诺之战：新继位的法王弗朗索瓦一世击败瑞士军，重新夺取米兰。'});
+    hp(d,'bb_bologna',{kind:'battle',note:'1515年12月博洛尼亚谈判：利奥十世以达·芬奇造的开花机械狮献礼，弗朗索瓦一世索要帕尔马、主教提名权与《拉奥孔》雕像。'});
+    hp(d,'rome',{left:1,note:'梵蒂冈：利奥十世舍不得交出1506年出土的《拉奥孔》真品，密令雕塑家班迪内利仿造一件复制品应付法王。'});
+   },[['fill',HC.france,'弗朗索瓦一世重新占领的米兰'],['fill',HC.faith,'忍气吞声妥协的利奥十世教宗国'],['fill',HC.spain,'1516年归查理五世继承的那不勒斯'],['dot',HC.war,'1515年马里尼亚诺之战与博洛尼亚谈判'],['dot','#2a2018','罗马']]),
+  hs('1519—1521年','查理五世当选皇帝：利奥十世倒向查理赶走法军，法军只带走达·芬奇','1519年查理五世拿到德国王位，利奥十世立即倒向查理五世，于1521年把法国人从米兰轰走；法国占米兰六年只带走了达·芬奇，但教宗与皇帝也因此没空去收拾路德。',[[41.5,0.0],[52.5,16.0]],d=>{
+    ha(d,'mEmpire1050',HC.germany,{fillOpacity:.2});ha(d,'mLombardLeague1176',HC.germany,{fillOpacity:.28});
+    ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.24});ha(d,'mPapal1210',HC.faith,{fillOpacity:.26});
+    hp(d,'k_frankfurt',{left:1,note:'1519年6月法兰克福：已握有西班牙与那不勒斯的查理五世当选神圣罗马皇帝。'});
+    hp(d,'ic_milan',{kind:'battle',note:'1521年11月米兰：利奥十世倒向查理五世，教廷与帝国联军把法军赶出米兰。'});
+    hp(d,'iw1_amboise',{kind:'battle',left:1,note:'法国昂布瓦斯（克洛吕斯庄园）：法国占米兰六年竹篮打水，只由弗朗索瓦一世在1516年带走了达·芬奇与《蒙娜丽莎》（1519年达·芬奇病逝于此）。'});
+    hp(d,'rf1_wittenberg',{note:'维滕贝格：因教宗与皇帝忙着争夺米兰与选票，马丁·路德在1517—1521年黄金窗口期得以坐大。'});
+    hr(d,[[45.46,9.19],[47.41,0.98]],HC.france);
+   },[['fill',HC.germany,'查理五世帝国与1521年夺回的米兰'],['fill',HC.faith,'倒向查理五世的利奥十世教宗国'],['fill',HC.france,'被赶出米兰、只带走达·芬奇的法兰西'],['dline',HC.france,'1516年弗朗索瓦一世将达·芬奇自意大利请往昂布瓦斯路线'],['dot',HC.war,'1521年夺回米兰与昂布瓦斯（达·芬奇终老地）'],['dot','#2a2018','法兰克福与维滕贝格']]),
+  hs('1521—1523年','利奥十世感冒暴死：荷兰教宗改革未果，枢机又选美第奇','1521年底利奥十世庆祝米兰捷报时感冒暴死；荷兰教宗哈德良六世想紧缩改革抢新教下沉市场，未见成果即病死；不愿过苦日子的枢机们于1523年又选出美第奇家的克莱芒七世。',[[41.0,3.5],[53.2,15.5]],d=>{
+    ha(d,'mPapal1210',HC.faith,{fillOpacity:.3});ha(d,'mLombardLeague1176',HC.italy,{fillOpacity:.22});ha(d,'mFlanders900',HC.germany,{fillOpacity:.24});
+    hp(d,'iw2_utrecht',{left:1,note:'荷兰乌得勒支：苦修简朴的教宗哈德良六世故乡。'});
+    hp(d,'rome',{kind:'battle',left:1,note:'罗马：1521年12月利奥十世感冒暴死；哈德良六世来此推行节俭改革遭枢机抵制，1523年9月病死，枢机们当即又选出美第奇家的克莱芒七世。'});
+    hp(d,'ir_florence',{left:1,note:'佛罗伦萨：新教宗克莱芒七世（1478年遇刺的朱利亚诺之私生子）此前一直替堂兄利奥十世坐镇佛罗伦萨。'});
+   },[['fill',HC.faith,'不愿过苦日子、重归美第奇掌权的罗马教廷'],['fill',HC.italy,'佛罗伦萨'],['fill',HC.germany,'哈德良六世的家乡低地乌得勒支'],['dot',HC.war,'1521—1523年罗马三换教宗（利奥十世→哈德良六世→克莱芒七世）'],['dot','#2a2018','乌得勒支与佛罗伦萨']])
  ]},
 {id:'history-italy-blackdeath',ch:5,title:'黑死病：从卡法到伦敦',short:'黑死病',en:'The Black Death: From Caffa to London',period:'1346—1353年',c:HC.italy,
  scenes:[
@@ -10712,7 +10806,7 @@ const HISTORY_ERAS=[
  {id:'empire-italy',name:'中世纪盛期：北意大利城市与西西里王国',en:'The Northern Cities and the Kingdom of Sicily',date:'约950—1166年',c:HC.italy,items:[['history-italy-cities'],['history-italy-sicily']]},
  {id:'empire-staufer',name:'中世纪盛期：红胡子、亨利六世与英诺森三世',en:'Barbarossa, Henry VI and Innocent III',date:'1152—1216年',c:HC.germany,items:[['history-germany-barbarossa'],['history-germany-henry6'],['history-germany-innocent']]},
  {id:'empire-france',name:'法兰西：从卡佩开张到“宇宙蜘蛛”一统',en:'France: From Hugh Capet to Louis XI',date:'987—1483年',c:HC.france,items:[['history-france-capet'],['history-france-plantagenet'],['history-france-stlouis'],['history-france-valois'],['history-france-louis11']]},
- {id:'empire-frederick2',name:'德意志、低地与意大利：从腓特烈二世到文艺复兴、查理五世与三十年战争',en:'Germany, Low Countries and Italy: From Frederick II to the Renaissance, Charles V, and the Thirty Years’ War',date:'843—1648年',c:HC.germany,items:[['history-germany-frederick2'],['history-germany-electors'],['history-germany-golden-bull'],['history-germany-hansa'],['history-lowlands-flanders'],['history-germany-swiss',0,2,'山口与长矛'],['history-lowlands-burgundy'],['history-germany-swiss',3,5,'雇佣兵之国'],['history-germany-charles5'],['history-germany-thirty-years-1',0,4,'三十年战争（上）'],['history-germany-thirty-years-1',5,6,'丹麦参战与华伦斯坦'],['history-germany-thirty-years-2'],['history-germany-thirty-years-3'],['history-italy-vespers'],['history-italy-venice'],['history-italy-condottieri'],['history-italy-renaissance']]},
+ {id:'empire-frederick2',name:'德意志、低地与意大利：从腓特烈二世到文艺复兴、查理五世与三十年战争',en:'Germany, Low Countries and Italy: From Frederick II to the Renaissance, Charles V, and the Thirty Years’ War',date:'843—1648年',c:HC.germany,items:[['history-germany-frederick2'],['history-germany-electors'],['history-germany-golden-bull'],['history-germany-hansa'],['history-lowlands-flanders'],['history-germany-swiss',0,2,'山口与长矛'],['history-lowlands-burgundy'],['history-germany-swiss',3,5,'雇佣兵之国'],['history-germany-charles5'],['history-germany-thirty-years-1',0,4,'三十年战争（上）'],['history-germany-thirty-years-1',5,6,'丹麦参战与华伦斯坦'],['history-germany-thirty-years-2'],['history-germany-thirty-years-3'],['history-italy-vespers'],['history-italy-venice'],['history-italy-condottieri'],['history-italy-renaissance'],['history-italy-wars-1'],['history-italy-wars-2']]},
  {id:'empire-blackdeath',name:'中世纪晚期：黑死病',en:'The Late Middle Ages: the Black Death',date:'1346—1353年',c:HC.italy,items:[['history-italy-blackdeath']]},
  {id:'empire-taifas',name:'西班牙：泰法与圣战',en:'Spain: the Taifas and Holy War',date:'1031—1123年',c:HC.spain,items:[['history-spain-taifas'],['history-spain-crusade']]},
  {id:'empire-spain-1492',name:'西班牙与葡萄牙：从托洛萨到1492大航海',en:'Spain and Portugal: From Las Navas to 1492',date:'1123—1498年',c:HC.spain,items:[['history-spain-reconquista'],['history-spain-aragon'],['history-spain-1492']]},
@@ -11003,6 +11097,8 @@ const TREE_ROWS={
  'history-italy-venice/0':['italy',1353,1400,'约1204—1400年'],
  'history-italy-condottieri/0':['italy',1402,1449,'约1300—1454年'],
  'history-italy-renaissance/0':['italy',1454,1503,'约1300—1503年'],
+ 'history-italy-wars-1/0':['italy',1500,1504,'1435—1504年'],
+ 'history-italy-wars-2/0':[['italy','faith'],1512,1523,'1503—1523年'],
  'history-spain-reconquista/0':['spain',1128,1252,'1123—1252年'],
  'history-spain-aragon/0':['spain',1253,1469,'1252—1469年'],
  'history-spain-1492/0':['spain',1470,1498,'1415—1498年'],
@@ -11010,7 +11106,7 @@ const TREE_ROWS={
  'history-lowlands-burgundy/0':[['lowlands','germany'],1495,1500,'1363—1500年'],
  'history-faith-reformation-1/0':[['faith','germany'],1517,1536,'1450—1536年'],
  'history-faith-reformation-2/0':[['faith','germany'],1537,1555,'1521—1555年'],
- 'history-germany-charles5/0':[['germany','faith','italy','spain'],1556,1563,'1516—1563年'],
+ 'history-germany-charles5/0':[['germany','faith','italy','spain'],1556,1563,'1523—1563年'],
  'history-germany-thirty-years-1/0':[['germany','faith'],1557,1624,'1555—1625年'],
  'history-germany-thirty-years-2/0':[['germany','faith','nordic'],1631,1634,'1630—1634年'],
  'history-germany-thirty-years-3/0':[['germany','faith','spain','nordic'],1635,1648,'1634—1648年'],
