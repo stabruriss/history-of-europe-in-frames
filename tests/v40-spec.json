@@ -953,7 +953,7 @@
    "基督教",
    "trunk",
    -1400,
-   1634,
+   1648,
    7
   ]
  },
@@ -970,8 +970,8 @@
   ],
   [
    "faith",
-   1634,
-   "威斯特伐利亚与宗教宽容"
+   1648,
+   "政教分离与启蒙时代"
   ]
  ],
  "tails": {
@@ -1031,7 +1031,8 @@
    "history-faith-reformation-2/0",
    "history-germany-charles5/0",
    "history-germany-thirty-years-1/0",
-   "history-germany-thirty-years-2/0"
+   "history-germany-thirty-years-2/0",
+   "history-germany-thirty-years-3/0"
   ]
  },
  "shared": {

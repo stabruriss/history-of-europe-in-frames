@@ -478,7 +478,7 @@
    "德意志",
    "west",
    843,
-   1634,
+   1648,
    4
   ],
   "italy": [
@@ -492,15 +492,15 @@
    "基督教",
    "trunk",
    -1400,
-   1634,
+   1648,
    7
   ]
  },
  "futures": [
   [
    "germany",
-   1634,
-   "法军下场与威斯特伐利亚"
+   1648,
+   "普鲁士崛起与七年战争"
   ],
   [
    "italy",
@@ -509,8 +509,8 @@
   ],
   [
    "faith",
-   1634,
-   "威斯特伐利亚与宗教宽容"
+   1648,
+   "政教分离与启蒙时代"
   ]
  ],
  "tails": {
@@ -531,7 +531,8 @@
    "history-faith-reformation-2/0",
    "history-germany-charles5/0",
    "history-germany-thirty-years-1/0",
-   "history-germany-thirty-years-2/0"
+   "history-germany-thirty-years-2/0",
+   "history-germany-thirty-years-3/0"
   ],
   "italy": [
    "history-italy-normans/0",
@@ -569,7 +570,8 @@
    "history-faith-reformation-2/0",
    "history-germany-charles5/0",
    "history-germany-thirty-years-1/0",
-   "history-germany-thirty-years-2/0"
+   "history-germany-thirty-years-2/0",
+   "history-germany-thirty-years-3/0"
   ]
  },
  "shared": {
