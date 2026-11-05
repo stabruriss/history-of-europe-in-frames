@@ -17,7 +17,7 @@ window.NETWORK_DESIGN = (() => {
   const y = (level, k = 0) => Math.round(level * S) + k * B;
 
   // Lanes, top to bottom.
-  const TOP = 60;        // eastern europe in antiquity
+  const TOP = 60;        // eastern europe in antiquity; scandinavia from about 745, the north of the map
   const BRITAIN = 140;   // greece, then britain; france bundles here from 1154
   const FRANCE = 182;
   const LOW = 224;       // low countries
@@ -48,6 +48,7 @@ window.NETWORK_DESIGN = (() => {
     lowlands: [[830, y(ROME), null, -10], [1300, y(LOW), 'e'], [1495, y(LOW)]],
     germany: [[830, y(ROME)], [843, y(GER0), 'e'], [860, y(GER0)], [951, y(GERMANY)], [1495, y(GERMANY)]],
     crusade: [[1070, y(GERMANY, 1), null, -92], [1070, y(CRUSADE)], [1295, y(CRUSADE)]],
+    nordic: [[745, y(TOP)], [1648, y(TOP)]],
   };
 
   // Room around branch points, and where a name needs to sit between dashed links.

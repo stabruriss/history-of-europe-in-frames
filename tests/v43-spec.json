@@ -249,7 +249,8 @@
    [
     "germany",
     "faith",
-    "italy"
+    "italy",
+    "spain"
    ],
    1556,
    1563
@@ -260,12 +261,13 @@
     "faith"
    ],
    1557,
-   1630
+   1624
   ],
   "history-germany-thirty-years-2/0": [
    [
     "germany",
-    "faith"
+    "faith",
+    "nordic"
    ],
    1631,
    1634
@@ -273,7 +275,9 @@
   "history-germany-thirty-years-3/0": [
    [
     "germany",
-    "faith"
+    "faith",
+    "spain",
+    "nordic"
    ],
    1635,
    1648
@@ -366,7 +370,8 @@
     "britain",
     "germany",
     "faith",
-    "persia"
+    "persia",
+    "nordic"
    ],
    1347,
    1351
@@ -1530,8 +1535,11 @@
     "history-germany-golden-bull",
     "history-germany-hansa",
     "history-lowlands-flanders",
+    "history-germany-swiss",
     "history-lowlands-burgundy",
+    "history-germany-swiss",
     "history-germany-charles5",
+    "history-germany-thirty-years-1",
     "history-germany-thirty-years-1",
     "history-germany-thirty-years-2",
     "history-germany-thirty-years-3",
@@ -1629,6 +1637,8 @@
  "tails": {
   "france": [
    "history-france-west-francia/0",
+   "history-france-west-francia/1",
+   "history-france-west-francia/5",
    "history-france-capet/0",
    "history-france-plantagenet/0",
    "history-britain-henry2/0",
@@ -1654,11 +1664,14 @@
    "history-italy-blackdeath/0",
    "history-germany-golden-bull/0",
    "history-germany-hansa/0",
+   "history-germany-swiss/0",
    "history-lowlands-burgundy/0",
+   "history-germany-swiss/3",
    "history-faith-reformation-1/0",
    "history-faith-reformation-2/0",
    "history-germany-charles5/0",
    "history-germany-thirty-years-1/0",
+   "history-germany-thirty-years-1/5",
    "history-germany-thirty-years-2/0",
    "history-germany-thirty-years-3/0"
   ],
@@ -1671,6 +1684,7 @@
    "history-italy-condottieri/0",
    "history-empire-fall-1453/0",
    "history-italy-renaissance/0",
+   "history-germany-swiss/3",
    "history-germany-charles5/0"
   ],
   "faith": [
@@ -1684,10 +1698,12 @@
    "history-faith-schism/0",
    "history-faith-constance/0",
    "history-empire-fall-1453/0",
+   "history-germany-swiss/3",
    "history-faith-reformation-1/0",
    "history-faith-reformation-2/0",
    "history-germany-charles5/0",
    "history-germany-thirty-years-1/0",
+   "history-germany-thirty-years-1/5",
    "history-germany-thirty-years-2/0",
    "history-germany-thirty-years-3/0"
   ]
@@ -1716,7 +1732,8 @@
    "britain",
    "germany",
    "faith",
-   "persia"
+   "persia",
+   "nordic"
   ],
   "history-lowlands-burgundy/0": [
    "lowlands",
@@ -1733,7 +1750,8 @@
   "history-germany-charles5/0": [
    "germany",
    "faith",
-   "italy"
+   "italy",
+   "spain"
   ],
   "history-germany-thirty-years-1/0": [
    "germany",
@@ -1741,11 +1759,14 @@
   ],
   "history-germany-thirty-years-2/0": [
    "germany",
-   "faith"
+   "faith",
+   "nordic"
   ],
   "history-germany-thirty-years-3/0": [
    "germany",
-   "faith"
+   "faith",
+   "spain",
+   "nordic"
   ]
  },
  "fixes": [

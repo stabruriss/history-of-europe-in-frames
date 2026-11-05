@@ -134,8 +134,9 @@
       });
       // Stops added beyond the drawn route: the line carries straight on to reach them.
       const seq = lineStops.get(id), firstX = X(tx.get(seq[0].key)), lastX = X(tx.get(seq[seq.length - 1].key));
-      if (firstX < pts[0].x) pts.unshift({ x: firstX, y: pts[0].y });
-      if (lastX > pts[pts.length - 1].x) pts.push({ x: lastX, y: pts[pts.length - 1].y });
+      const head = pts[0], tail = pts[pts.length - 1];
+      if (firstX < head.x) { if (pts[1] && pts[1].y === head.y) head.x = firstX; else pts.unshift({ x: firstX, y: head.y }); }
+      if (lastX > tail.x) { const before = pts[pts.length - 2]; if (before && before.y === tail.y) tail.x = lastX; else pts.push({ x: lastX, y: tail.y }); }
       return { pts: pts.filter((p, i) => !i || Math.hypot(p.x - pts[i - 1].x, p.y - pts[i - 1].y) > 0.5), tight };
     }
 

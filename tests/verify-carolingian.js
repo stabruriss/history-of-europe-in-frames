@@ -21,7 +21,7 @@ const SECTIONS={
  'history-faith-carolingian':['加洛林神学之争','787—870年',null,6,230],
 };
 const ROWS={'history-west-charlemagne/0':['west',751,800],'history-west-charlemagne-rule/0':['west',800,814],'history-west-louis-pious/0':['west',814,843],
- 'history-france-west-francia/0':['france',843,987],'history-germany-east-francia/0':['germany',843,955],'history-italy-middle-francia/0':['italy',843,950],
+ 'history-france-west-francia/0':['france',843,844],'history-germany-east-francia/0':['germany',843,955],'history-italy-middle-francia/0':['italy',843,950],
  'history-faith-carolingian/0':['faith',787,870],'history-empire-theodosius/0':['rome',379,395],'history-empire-theodosius/3':['east',395,457],'history-empire-leo/0':['east',457,518]};
 // 老无’s own points, refined into bold theses.
 const BOLD=[
@@ -141,7 +141,7 @@ const PARALLEL=[['trunk','history-alexander-conquest/0','history-alexander-rule/
    assert.equal(t.loops,PARALLEL.length,label+' loops');
    assert.deepEqual(t.side,PARALLEL.map(p=>p[2]).sort(),label+' the later section of each pair rides the loop');
    assert.ok(['east','france','italy'].every(f=>t.forks.includes(f))&&!t.forks.includes('germany'),label+' forks '+JSON.stringify(t.forks));
-   assert.deepEqual(t.pills,['希腊','罗马','东罗马','中世纪西欧','西班牙','法兰西','低地诸国','德意志','意大利','不列颠','基督教','埃及','波斯—阿拉伯','东欧','十字军','中国'],label+' line pills');
+   assert.deepEqual(t.pills,['希腊','罗马','东罗马','中世纪西欧','西班牙','法兰西','低地诸国','德意志','意大利','不列颠','基督教','埃及','波斯—阿拉伯','东欧','十字军','北欧','中国'],label+' line pills');
    }
    // Every new scene draws, fits its view on the desktop, and leaves no horizontal overflow.
    if(!FULL_SHOTS){await page.evaluate(({ids,label})=>{for(const id of ids){const n=HISTORY_ENTRIES.find(e=>e.id===id).scenes.length;for(let i=0;i<n;i++){go(id,{scene:i});const sc=activeScene(ENTRIES[cur]);

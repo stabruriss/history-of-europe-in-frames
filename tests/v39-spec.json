@@ -720,7 +720,7 @@
    "西班牙",
    "west",
    481,
-   1498,
+   1648,
    5
   ],
   "faith": [
@@ -763,8 +763,8 @@
   ],
   [
    "spain",
-   1498,
-   "日不落帝国与无敌舰队"
+   1648,
+   "比利牛斯和约与王朝绝嗣"
   ],
   [
    "persia",
@@ -789,11 +789,14 @@
    "history-italy-blackdeath/0",
    "history-germany-golden-bull/0",
    "history-germany-hansa/0",
+   "history-germany-swiss/0",
    "history-lowlands-burgundy/0",
+   "history-germany-swiss/3",
    "history-faith-reformation-1/0",
    "history-faith-reformation-2/0",
    "history-germany-charles5/0",
    "history-germany-thirty-years-1/0",
+   "history-germany-thirty-years-1/5",
    "history-germany-thirty-years-2/0",
    "history-germany-thirty-years-3/0"
   ],
@@ -812,6 +815,7 @@
    "history-italy-condottieri/0",
    "history-empire-fall-1453/0",
    "history-italy-renaissance/0",
+   "history-germany-swiss/3",
    "history-germany-charles5/0"
   ],
   "faith": [
@@ -837,10 +841,12 @@
    "history-faith-schism/0",
    "history-faith-constance/0",
    "history-empire-fall-1453/0",
+   "history-germany-swiss/3",
    "history-faith-reformation-1/0",
    "history-faith-reformation-2/0",
    "history-germany-charles5/0",
    "history-germany-thirty-years-1/0",
+   "history-germany-thirty-years-1/5",
    "history-germany-thirty-years-2/0",
    "history-germany-thirty-years-3/0"
   ],
@@ -850,7 +856,12 @@
    "history-spain-crusade/0",
    "history-spain-reconquista/0",
    "history-spain-aragon/0",
-   "history-spain-1492/0"
+   "history-spain-1492/0",
+   "history-spain-habsburg/0",
+   "history-germany-charles5/0",
+   "history-spain-philip2/0",
+   "history-spain-philips/0",
+   "history-germany-thirty-years-3/0"
   ],
   "east": [
    "history-empire-macedonian/3",

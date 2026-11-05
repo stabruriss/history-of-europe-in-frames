@@ -160,14 +160,15 @@
     "britain"
    ],
    665,
-   927
+   792
   ],
   "history-britain-norman/0": [
    [
-    "britain"
+    "britain",
+    "nordic"
    ],
    978,
-   1087
+   1041
   ],
   "history-britain-henry2/0": [
    [
@@ -1199,6 +1200,9 @@
    "英格兰的成型：维京狂潮与诺曼征服",
    [
     "history-britain-anglosaxon",
+    "history-britain-anglosaxon",
+    "history-britain-anglosaxon",
+    "history-britain-norman",
     "history-britain-norman"
    ]
   ],
@@ -1272,7 +1276,10 @@
    "history-britain-roman/0",
    "history-britain-ireland/0",
    "history-britain-anglosaxon/0",
+   "history-britain-anglosaxon/2",
+   "history-britain-anglosaxon/4",
    "history-britain-norman/0",
+   "history-britain-norman/1",
    "history-britain-henry2/0",
    "history-britain-norman-ireland/0",
    "history-britain-richard/0",
@@ -1294,6 +1301,8 @@
   ],
   "france": [
    "history-france-west-francia/0",
+   "history-france-west-francia/1",
+   "history-france-west-francia/5",
    "history-france-capet/0",
    "history-france-plantagenet/0",
    "history-britain-henry2/0",

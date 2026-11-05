@@ -60,7 +60,7 @@ const settle=p=>p.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestA
   const plain=await p.evaluate(()=>{const n=[...metroUI.pointByKey.values()].find(x=>x.s.title==='大宪章与议会');metroUI.focusStation(n.s.key);return{x:n.x,y:n.y}});
   let at=await screenOf(plain.x,plain.y);await p.mouse.click(at.x,at.y);assert.equal(await p.$eval('#inspectorTitle',e=>e.textContent),'大宪章与议会');assert.ok(await on(p,'#stationInspector'));
   const plague=await p.evaluate(()=>{const n=[...metroUI.pointByKey.values()].find(x=>x.s.title==='黑死病');metroUI.inspect(n.s.key);metroUI.focusStation(n.s.key);return{key:n.s.key,lines:n.s.lines.length,links:!!n.link,nodes:document.querySelectorAll(`.metro-node[data-key="${n.s.key}"]`).length,offers:document.querySelectorAll('#inspectorLines button').length}});
-  assert.equal(plague.lines,6);assert.equal(plague.nodes,1,'one station');assert.equal(plague.offers,6);assert.ok(plague.links,'far-apart rails are joined by a dashed link');
+  assert.equal(plague.lines,7);assert.equal(plague.nodes,1,'one station');assert.equal(plague.offers,7);assert.ok(plague.links,'far-apart rails are joined by a dashed link');
   await shot(p,'plague');
   const rail=await p.evaluate(()=>{const a=metroUI.data.lineStops.get('china'),m=metroUI.pointByKey.get(a[8].key),n=metroUI.pointByKey.get(a[9].key);metroUI.focusStation(m.s.key);document.querySelector('#stationInspector').hidden=true;return{x:(m.x+n.x)/2,y:m.y}});
   at=await screenOf(rail.x,rail.y);await p.mouse.click(at.x,at.y);await settle(p);let st=await p.evaluate(()=>metroUI.state());assert.equal(st.mode,'ride');assert.equal(st.line,'china');

@@ -296,6 +296,61 @@
    ],
    1071,
    1092
+  ],
+  "history-britain-anglosaxon/2": [
+   [
+    "britain",
+    "nordic"
+   ],
+   793,
+   878
+  ],
+  "history-britain-anglosaxon/4": [
+   [
+    "britain"
+   ],
+   879,
+   927
+  ],
+  "history-britain-norman/1": [
+   [
+    "britain"
+   ],
+   1042,
+   1087
+  ],
+  "history-france-west-francia/1": [
+   [
+    "france",
+    "nordic"
+   ],
+   845,
+   911
+  ],
+  "history-france-west-francia/5": [
+   [
+    "france"
+   ],
+   922,
+   987
+  ],
+  "history-germany-thirty-years-1/5": [
+   [
+    "germany",
+    "faith",
+    "nordic"
+   ],
+   1625,
+   1630
+  ],
+  "history-germany-swiss/3": [
+   [
+    "germany",
+    "italy",
+    "faith"
+   ],
+   1515,
+   1516
   ]
  },
  "shared": {
@@ -324,6 +379,33 @@
   "history-arab-seljuks/3": [
    "persia",
    "east"
+  ],
+  "history-britain-anglosaxon/2": [
+   "britain",
+   "nordic"
+  ],
+  "history-britain-anglosaxon/4": [
+   "britain"
+  ],
+  "history-britain-norman/1": [
+   "britain"
+  ],
+  "history-france-west-francia/1": [
+   "france",
+   "nordic"
+  ],
+  "history-france-west-francia/5": [
+   "france"
+  ],
+  "history-germany-thirty-years-1/5": [
+   "germany",
+   "faith",
+   "nordic"
+  ],
+  "history-germany-swiss/3": [
+   "germany",
+   "italy",
+   "faith"
   ]
  },
  "bold": [
@@ -1209,7 +1291,7 @@
    "西班牙",
    "west",
    481,
-   1498,
+   1648,
    5
   ],
   "germany": [
@@ -1281,8 +1363,8 @@
   ],
   [
    "spain",
-   1498,
-   "日不落帝国与无敌舰队"
+   1648,
+   "比利牛斯和约与王朝绝嗣"
   ],
   [
    "persia",
@@ -1338,6 +1420,7 @@
   "波斯—阿拉伯",
   "东欧",
   "十字军",
+  "北欧",
   "中国"
  ],
  "regions": [

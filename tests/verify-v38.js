@@ -65,7 +65,7 @@ const SLICE_YEARS=[-1000,-500,0,500,1000];
     assert.deepEqual(r.chars.filter(([,n])=>n>230),[],'prose budgets');
     for(const [k,spec] of Object.entries(S.rows))assert.deepEqual(r.rows[k],spec,k);
     assert.deepEqual(r.branch,['东欧','trunk',-700,1505,8,true],'东欧 off 希腊 on lane 8');
-    assert.equal(r.china,9,'中国 keeps the outermost lane');assert.equal(r.lanes,9);
+    assert.equal(r.china,9,'中国 keeps the outermost lane');assert.equal(r.lanes,10);
     assert.deepEqual(r.chapter,['东欧','Ⅺ',true],'chapter Ⅺ 东欧');
     assert.deepEqual(r.eras,S.eras);
     assert.deepEqual(r.future,[['eeurope',1505,'伊凡雷帝与沙皇俄国']]);
