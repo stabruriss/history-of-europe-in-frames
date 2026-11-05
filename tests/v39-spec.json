@@ -706,7 +706,7 @@
    "德意志",
    "west",
    843,
-   1563,
+   1630,
    4
   ],
   "italy": [
@@ -727,7 +727,7 @@
    "基督教",
    "trunk",
    -1400,
-   1563,
+   1630,
    7
   ],
   "east": [
@@ -748,8 +748,8 @@
  "futures": [
   [
    "germany",
-   1563,
-   "三十年战争与普鲁士"
+   1630,
+   "瑞典登场与威斯特伐利亚"
   ],
   [
    "italy",
@@ -758,8 +758,8 @@
   ],
   [
    "faith",
-   1563,
-   "三十年战争与宗教宽容"
+   1630,
+   "威斯特伐利亚与宗教宽容"
   ],
   [
    "spain",
@@ -792,7 +792,8 @@
    "history-lowlands-burgundy/0",
    "history-faith-reformation-1/0",
    "history-faith-reformation-2/0",
-   "history-germany-charles5/0"
+   "history-germany-charles5/0",
+   "history-germany-thirty-years-1/0"
   ],
   "italy": [
    "history-germany-otto/0",
@@ -836,7 +837,8 @@
    "history-empire-fall-1453/0",
    "history-faith-reformation-1/0",
    "history-faith-reformation-2/0",
-   "history-germany-charles5/0"
+   "history-germany-charles5/0",
+   "history-germany-thirty-years-1/0"
   ],
   "spain": [
    "history-spain-andalus/0",

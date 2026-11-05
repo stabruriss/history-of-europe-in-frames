@@ -72,6 +72,12 @@
    6,
    5
   ],
+  "history-germany-thirty-years-1": [
+   "三十年战争（上）",
+   "1555—1630年",
+   7,
+   5
+  ],
   "history-italy-vespers": [
    "西西里晚祷",
    "1266—1302年",
@@ -235,6 +241,14 @@
    ],
    1556,
    1563
+  ],
+  "history-germany-thirty-years-1/0": [
+   [
+    "germany",
+    "faith"
+   ],
+   1557,
+   1630
   ],
   "history-italy-vespers/0": [
    [
@@ -606,6 +620,34 @@
   [
    "history-germany-charles5/5",
    "查理五世这一分家直接埋下两颗大雷：让狂热天主教的西班牙儿子去管遍布新教徒的低地诸"
+  ],
+  [
+   "history-germany-thirty-years-1/0",
+   "三十年战争前夕，德意志天主教与新教各自结盟，新教在中下层飞速发展；哈布斯堡的马蒂"
+  ],
+  [
+   "history-germany-thirty-years-1/1",
+   "1618年波希米亚贵族把皇帝派来的官员扔出窗外，不认斐迪南二世，改选普法尔茨选帝"
+  ],
+  [
+   "history-germany-thirty-years-1/2",
+   "七大选帝侯本是三主教加四世俗，普法尔茨选帝侯当波希米亚王等于一个人占了两个茅坑，"
+  ],
+  [
+   "history-germany-thirty-years-1/3",
+   "新教刚孵出来、蛋壳还没掉干净就开始内部教派斗争：信加尔文宗的腓特烈五世跑去布拉格"
+  ],
+  [
+   "history-germany-thirty-years-1/4",
+   "1620年11月白山战役，欠饷孤立的腓特烈五世不到两小时就全军覆没，逃往英国岳父"
+  ],
+  [
+   "history-germany-thirty-years-1/5",
+   "打垮波希米亚后皇帝转向收拾北德新教诸侯，眼看新教要凉，在北德替儿子投资占了多个主"
+  ],
+  [
+   "history-germany-thirty-years-1/6",
+   "华伦斯坦这个人既反新教也反天主教诸侯，专替皇上争取集权，他的兵一边打败北德与丹麦"
   ],
   [
    "history-italy-vespers/0",
@@ -1045,6 +1087,12 @@
     "把挑刺的教廷礼仪官画进地狱当驴耳判官"
    ]
   ],
+  "history-germany-thirty-years-1": [
+   [
+    1,
+    "摔进粪堆没摔死的钦差与“冬王”吃午饭逃席"
+   ]
+  ],
   "history-italy-vespers": [
    [
     1,
@@ -1251,6 +1299,12 @@
     "古腾堡到底发明了什么？铅锡锑手铸字模、油墨与压榨机如何引爆欧洲信息革命，兼论与中国活字印刷之比较"
    ]
   ],
+  "history-germany-thirty-years-1": [
+   [
+    5,
+    "靠老寡妇、劣币财团与“以战养战”发家的战争大亨：华伦斯坦是如何拉起十万大军又得罪全天下的？"
+   ]
+  ],
   "history-italy-venice": [
    [
     3,
@@ -1319,6 +1373,7 @@
   "history-lowlands-flanders": 300,
   "history-lowlands-burgundy": 300,
   "history-germany-charles5": 300,
+  "history-germany-thirty-years-1": 300,
   "history-italy-vespers": 300,
   "history-italy-venice": 300,
   "history-italy-condottieri": 300,
@@ -1346,7 +1401,7 @@
   ],
   [
    "empire-frederick2",
-   "德意志、低地与意大利：从腓特烈二世到文艺复兴与查理五世分家",
+   "德意志、低地与意大利：从腓特烈二世到文艺复兴、查理五世与三十年战争",
    [
     "history-germany-frederick2",
     "history-germany-electors",
@@ -1355,6 +1410,7 @@
     "history-lowlands-flanders",
     "history-lowlands-burgundy",
     "history-germany-charles5",
+    "history-germany-thirty-years-1",
     "history-italy-vespers",
     "history-italy-venice",
     "history-italy-condottieri",
@@ -1406,7 +1462,7 @@
    "德意志",
    "west",
    843,
-   1563,
+   1630,
    4
   ],
   "italy": [
@@ -1420,7 +1476,7 @@
    "基督教",
    "trunk",
    -1400,
-   1563,
+   1630,
    7
   ]
  },
@@ -1432,8 +1488,8 @@
   ],
   [
    "germany",
-   1563,
-   "三十年战争与普鲁士"
+   1630,
+   "瑞典登场与威斯特伐利亚"
   ],
   [
    "italy",
@@ -1442,8 +1498,8 @@
   ],
   [
    "faith",
-   1563,
-   "三十年战争与宗教宽容"
+   1630,
+   "威斯特伐利亚与宗教宽容"
   ]
  ],
  "tails": {
@@ -1477,7 +1533,8 @@
    "history-lowlands-burgundy/0",
    "history-faith-reformation-1/0",
    "history-faith-reformation-2/0",
-   "history-germany-charles5/0"
+   "history-germany-charles5/0",
+   "history-germany-thirty-years-1/0"
   ],
   "italy": [
    "history-germany-innocent/0",
@@ -1503,7 +1560,8 @@
    "history-empire-fall-1453/0",
    "history-faith-reformation-1/0",
    "history-faith-reformation-2/0",
-   "history-germany-charles5/0"
+   "history-germany-charles5/0",
+   "history-germany-thirty-years-1/0"
   ]
  },
  "shared": {
@@ -1548,6 +1606,10 @@
    "germany",
    "faith",
    "italy"
+  ],
+  "history-germany-thirty-years-1/0": [
+   "germany",
+   "faith"
   ]
  },
  "fixes": [
@@ -2040,5 +2102,5 @@
   "mNaplesAnjou1282",
   "mAragonCrown1282"
  ],
- "pass": "法兰西、基督教、德意志、意大利 on to ~1300 — 24 sections (152 scenes): Hugh Capet and Louis VI, the Plantagenets and Philip II (with the marriage-and-land diagram), Saint Louis to Philip IV and Anagni, universities and scholasticism, Frederick II and the Interregnum (with the 豆腐块 on seven excommunications of five emperors), and the Sicilian Vespers; shared stations across lines; 143 of 老无’s points in bold, 88 facts and their order set right in plain text; 17 豆腐块 with 21 corrections"
+ "pass": "法兰西、基督教、德意志、意大利 on to ~1300 — 25 sections (159 scenes): Hugh Capet and Louis VI, the Plantagenets and Philip II (with the marriage-and-land diagram), Saint Louis to Philip IV and Anagni, universities and scholasticism, Frederick II and the Interregnum (with the 豆腐块 on seven excommunications of five emperors), and the Sicilian Vespers; shared stations across lines; 150 of 老无’s points in bold, 88 facts and their order set right in plain text; 18 豆腐块 with 21 corrections"
 }

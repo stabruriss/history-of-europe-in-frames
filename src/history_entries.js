@@ -1441,6 +1441,14 @@ Object.assign(HS,{
   c5_trent:['特兰托','Trent (Trento)',46.066,11.121,'阿尔卑斯山南麓主教城；1545—1563年教宗保罗三世等在此召开特兰托大公会议，开启天主教反宗教改革。'],
   c5_yuste:['尤斯特修道院','Monastery of Yuste',40.114,-5.738,'西班牙埃斯特雷马杜拉山间修道院；1556年查理五世退位分家后隐居于此，1558年病逝。'],
   c5_madrid:['马德里','Madrid',40.417,-3.704,'卡斯蒂利亚中枢；1525年法王弗朗索瓦一世被俘押解至此，后成为查理五世之子腓力二世统治西班牙哈布斯堡帝国的都城。'],
+  ty1_heidelberg:['海德堡','Heidelberg',49.409,8.693,'莱茵—普法尔茨（巴拉丁）选帝侯国首府；加尔文派大本营，选帝侯腓特烈五世自此赴布拉格称王。'],
+  ty1_white_mountain:['白山（布拉格城西）','White Mountain (Bílá hora)',50.079,14.319,'布拉格城西高地；1620年11月8日帝国与巴伐利亚天主教联军在此两小时击溃波希米亚新教军。'],
+  ty1_hague:['海牙','The Hague',52.08,4.31,'荷兰共和国中枢；1620年白山惨败后，“冬王”腓特烈五世携英格兰公主妻子逃亡至此寄居岳父与舅舅篱下。'],
+  ty1_verden:['费尔登（与不来梅主教区）','Verden & Bremen Bishoprics',52.923,9.235,'北德意志威悉河流域世俗化教会领地；丹麦王克里斯蒂安四世将儿子塞入此处当主教领主，为保投资而出兵参战。'],
+  ty1_lutter:['吕特','Lutter am Barenberge',51.99,10.271,'下萨克森山间小镇；1626年8月27日蒂利与华伦斯坦在此大破丹麦国王克里斯蒂安四世主力。'],
+  ty1_jicin:['伊钦（弗里德兰公国）','Jičín (Duchy of Friedland)',50.437,15.352,'波希米亚北部重镇；华伦斯坦靠劣币财团低价吞并六十余处新教贵族抄家庄园，在此建起自家“弗里德兰公国”军工基地。'],
+  ty1_stralsund:['施特拉尔松德','Stralsund',54.309,13.082,'波罗的海汉萨港城；1628年华伦斯坦自封“波罗的海与大洋统帅”围攻此城不下，丹麦与瑞典派兵助守。'],
+  ty1_regensburg:['雷根斯堡','Regensburg',49.013,12.102,'多瑙河畔帝国自由市；1630年夏皇帝斐迪南二世在此召开选帝侯会议求选长子为储，被选帝侯联手逼迫将华伦斯坦撤职。'],
 });
 function hp(d,key,opt={}){
   const [n,en,la,lo,note]=HS[key];
@@ -4969,6 +4977,62 @@ const HISTORY_ENTRIES=[
     hp(d,'c3_vienna',{note:'维也纳：失去西班牙金银直输的奥地利皇帝，一遇危局就请西班牙堂兄弟跨国派兵助拳。'});
     hr(d,[[40.42,-3.70],[45.46,9.19],[50.85,4.35]],HC.spain);
    },[['fill',HC.war,'两大火药桶：反抗西班牙的低地诸国与对抗奥地利的波希米亚'],['fill',HC.spain,'西班牙哈布斯堡'],['fill',HC.germany,'奥地利哈布斯堡治下的帝国'],['dline',HC.spain,'西班牙运兵镇压低地与支援奥地利的“西班牙军道”'],['dot',HC.war,'阿姆斯特丹（八十年战争）与布拉格（三十年战争起点）'],['dot','#2a2018','马德里与维也纳']])
+ ]},
+{id:'history-germany-thirty-years-1',ch:5,title:'三十年战争（上）：波希米亚扔窗、一人占俩茅坑与华伦斯坦被炒',short:'三十年战争（上）',en:'The Thirty Years’ War (I): The Prague Defenestration, One Man Holding Two Electorates, and Wallenstein’s Dismissal',period:'1555—1630年',c:HC.germany,
+ scenes:[
+  hs('1555—1617年','马蒂亚斯借新教夺哥哥皇位，上位后鸟尽弓藏','1608—1609年新教与天主教各结同盟；马蒂亚斯借波希米亚与奥地利新教贵族之力废掉驻布拉格的哥哥鲁道夫二世，上位后逃回维也纳并立斐迪南二世为波希米亚王。',[[46.5,7.5],[52.8,18.5]],d=>{
+    ha(d,'mEmpire1050',HC.germany,{fillOpacity:.18});ha(d,'mBohemia900',HC.war,{fillOpacity:.32});ha(d,'mBavariaDuchy',HC.faith,{fillOpacity:.26});
+    hp(d,'de_prague',{kind:'battle',note:'布拉格：鲁道夫二世驻此沉迷炼金；1611年弟弟马蒂亚斯借新教贵族逼退兄长夺位，随后过河拆桥逃回维也纳。'});
+    hp(d,'c3_vienna',{kind:'battle',left:1,note:'维也纳：马蒂亚斯将皇廷迁回天主教大本营，1617年安排狂热天主教徒斐迪南二世接任波希米亚国王。'});
+    hp(d,'ty1_heidelberg',{left:1,note:'海德堡：1608年普法尔茨选帝侯领头成立新教“福音派同盟”。'});
+    hp(d,'sh_munich',{left:1,note:'慕尼黑：1609年巴伐利亚公爵马克西米利安一世领头成立“天主教同盟”。'});
+   },[['fill',HC.war,'新教中小贵族势大的波希米亚王国'],['fill',HC.faith,'天主教同盟核心巴伐利亚'],['fill',HC.germany,'神圣罗马帝国'],['dot',HC.war,'布拉格与维也纳'],['dot','#2a2018','海德堡与慕尼黑']]),
+  hs('1618—1619年','布拉格扔窗、改选普法尔茨王与法兰克福选帝账','1618年5月波希米亚贵族将两名帝国钦差扔出布拉格王宫窗外，1619年8月改选普法尔茨选帝侯腓特烈五世为王；同月法兰克福选帝侯拒认叛军废立，仍选斐迪南二世为皇帝。',[[47.5,6.5],[52.5,17.5]],d=>{
+    ha(d,'mEmpire1050',HC.germany,{fillOpacity:.18});ha(d,'mBohemia900',HC.war,{fillOpacity:.34});
+    hp(d,'de_prague',{kind:'battle',note:'1618年5月23日第二次布拉格掷出窗外事件引爆三十年战争；1619年8月波希米亚贵族改选腓特烈五世为王。'});
+    hp(d,'ty1_heidelberg',{left:1,note:'普法尔茨选帝侯腓特烈五世从海德堡赶赴布拉格加冕，企图一人兼掌普法尔茨与波希米亚两张选帝侯票。'});
+    hp(d,'k_frankfurt',{kind:'battle',left:1,note:'1619年8月28日法兰克福大选：其余选帝侯拒认布拉格叛军废立，准斐迪南二世本人持波希米亚票入场，全票当选皇帝。'});
+    hp(d,'c3_vienna',{note:'新皇帝斐迪南二世坐镇维也纳，准备武力讨伐波希米亚。'});
+   },[['fill',HC.war,'起义废王的波希米亚'],['fill',HC.germany,'神圣罗马帝国'],['dot',HC.war,'1618年布拉格扔窗与1619年法兰克福皇帝大选'],['dot','#2a2018','海德堡与维也纳']]),
+  hs('1619—1620年','“一人占俩茅坑”：路德宗中立，哈布斯堡联巴伐利亚','腓特烈五世一人占普法尔茨与波希米亚两个选帝侯位，引起萨克森与勃兰登堡不满；皇帝承诺“只打加尔文派不打路德派”，联合天主教巴伐利亚夹击波希米亚。',[[47.2,6.5],[53.6,17.5]],d=>{
+    ha(d,'mEmpire1050',HC.germany,{fillOpacity:.14});ha(d,'mBohemia900',HC.war,{fillOpacity:.32});
+    ha(d,'mSaxonyDuchy',HC.celt,{fillOpacity:.26});ha(d,'mBavariaDuchy',HC.faith,{fillOpacity:.32});
+    hp(d,'de_prague',{kind:'battle',note:'腓特烈五世一人占普法尔茨与波希米亚两个世俗选帝侯茅坑，打破帝国均势。'});
+    hp(d,'rf1_wittenberg',{left:1,note:'路德宗的萨克森选帝侯：听信皇帝“只反加尔文派不反路德派”承诺，不仅不救腓特烈五世，反出兵帮皇帝夺占卢萨蒂亚。'});
+    hp(d,'ge2_brandenburg',{left:1,note:'勃兰登堡选帝侯：同样对腓特烈五世独占两票不满，宣布袖手旁观。'});
+    hp(d,'sh_munich',{kind:'battle',left:1,note:'巴伐利亚公爵马克西米利安一世：获皇帝许诺转封普法尔茨选帝侯头衔，率天主教同盟军三万人东征。'});
+    hr(d,[[48.14,11.58],[48.3,14.2],[50.08,14.32]],HC.faith);
+   },[['fill',HC.war,'孤立无援的加尔文派腓特烈五世（波希米亚）'],['fill',HC.celt,'拒绝相救甚至帮皇帝的路德宗选帝侯（萨克森与勃兰登堡）'],['fill',HC.faith,'与哈布斯堡联手出兵的天主教巴伐利亚'],['dline',HC.faith,'1620年巴伐利亚与帝国联军东征波希米亚路线'],['dot',HC.war,'慕尼黑与布拉格'],['dot','#2a2018','萨克森与勃兰登堡']]),
+  hs('1619—1620年','新教蛋壳未掉就内斗：布拉格砸圣像与欠饷危机','加尔文派的腓特烈五世在布拉格圣维特大教堂焚毁圣像十字架，激怒本地路德派与胡斯派；开战前波希米亚贵族与自由市镇互相推诿都不肯出钱，导致军队无饷哗变。',[[48.2,11.2],[51.5,17.5]],d=>{
+    ha(d,'mBohemia900',HC.war,{fillOpacity:.34});ha(d,'mEmpire1050',HC.germany,{fillOpacity:.14});
+    hp(d,'de_prague',{kind:'battle',note:'1619年冬布拉格：腓特烈五世强拆圣维特大教堂圣像与十字架烧毁，惹怒本地路德派；贵族与自由市镇互相推诿拒缴军饷。'});
+    hp(d,'sc_tabor',{left:1,note:'南波希米亚：欠饷长达一年的雇佣兵四处抢掠农户，民心尽失。'});
+    hp(d,'c3_vienna',{note:'斐迪南二世借西班牙与教宗补贴备足军饷，大军稳步北上。'});
+   },[['fill',HC.war,'内部教派火并、贵族市镇拒掏军饷的波希米亚'],['fill',HC.germany,'神圣罗马帝国'],['dot',HC.war,'砸毁圣像、断绝军饷的布拉格'],['dot','#2a2018','塔博尔与维也纳']]),
+  hs('1620—1623年','白山之战惨败：逃亡英国岳父家，选帝侯转封巴伐利亚','1620年11月8日白山之战腓特烈五世两小时惨败，逃往英国岳父与荷兰家；1623年皇帝将普法尔茨选帝侯资格正式转封给巴伐利亚公爵。',[[47.5,2.5],[53.2,16.5]],d=>{
+    ha(d,'mEmpire1050',HC.germany,{fillOpacity:.16});ha(d,'mBohemia900',HC.faith,{fillOpacity:.3});ha(d,'mBavariaDuchy',HC.faith,{fillOpacity:.32});
+    hp(d,'ty1_white_mountain',{kind:'battle',note:'1620年11月8日白山之战：蒂利伯爵率天主教联军两小时打崩波希米亚军，“冬王”腓特烈五世仓皇出逃。'});
+    hp(d,'ty1_hague',{kind:'battle',left:1,note:'海牙与伦敦：腓特烈五世携英格兰公主妻子逃亡投靠英国岳父詹姆士一世与荷兰舅舅。'});
+    hp(d,'ty1_heidelberg',{left:1,note:'1622年蒂利与西班牙军攻占海德堡，把著名的普法尔茨图书馆整车运往罗马献给教宗。'});
+    hp(d,'ty1_regensburg',{kind:'battle',note:'1623年雷根斯堡会议：皇帝正式剥夺腓特烈五世的选帝侯资格，转封给巴伐利亚公爵马克西米利安一世。'});
+    hr(d,[[50.08,14.32],[51.1,17.0],[52.5,13.4],[52.08,4.31]],HC.war);
+   },[['fill',HC.faith,'被哈布斯堡与巴伐利亚征服的波希米亚与巴伐利亚'],['fill',HC.germany,'神圣罗马帝国'],['dline',HC.war,'1620年冬腓特烈五世自布拉格逃亡荷兰与英国路线'],['dot',HC.war,'1620年白山之战、1623年雷根斯堡转封选帝侯与海牙'],['dot','#2a2018','海德堡']]),
+  hs('1625—1629年','丹麦王为保北德主教区投资参战，华伦斯坦拉起大军','皇帝北上威胁新教诸侯，在北德替儿子占下多处主教区地产的丹麦王克里斯蒂安四世于1625年参战；皇帝启用波希米亚暴发户华伦斯坦垫资拉起大军，在吕特击败丹麦。',[[49.2,6.8],[56.5,17.5]],d=>{
+    ha(d,'mEmpire1050',HC.germany,{fillOpacity:.18});ha(d,'mBohemia900',HC.faith,{fillOpacity:.24});
+    hp(d,'gh_copenhagen',{left:1,note:'丹麦国王克里斯蒂安四世：靠厄勒海峡税攒下巨富，为保儿子在北德的主教区投资于1625年出兵。'});
+    hp(d,'ty1_verden',{kind:'battle',left:1,note:'费尔登与不来梅主教区：克里斯蒂安四世把儿子塞进北德多个世俗化主教区当领主，生怕皇帝收回教产。'});
+    hp(d,'ty1_jicin',{kind:'battle',note:'波希米亚伊钦（弗里德兰公国）：华伦斯坦靠劣币财团吞并抄家地产发家，1625年替皇帝垫资拉起五万大军。'});
+    hp(d,'ty1_lutter',{kind:'battle',left:1,note:'1626年8月吕特之战与德绍桥之战：蒂利与华伦斯坦大破丹麦军，一路反攻占领日德兰半岛。'});
+    hp(d,'gh_lubeck',{note:'1629年5月丹麦被迫签《吕贝克和约》，保证不再插手德意志事务。'});
+    hr(d,[[50.44,15.35],[51.99,10.27],[53.87,10.69],[55.5,9.5]],HC.war);
+   },[['fill',HC.germany,'华伦斯坦大军横扫的北德意志'],['fill',HC.faith,'华伦斯坦老家波希米亚'],['dline',HC.war,'1626—1629年华伦斯坦大军北伐击溃丹麦路线'],['dot',HC.war,'北德费尔登主教区、伊钦与1626年吕特之战'],['dot','#2a2018','哥本哈根与吕贝克']]),
+  hs('1626—1630年','华伦斯坦连自己人一起打秋风，雷根斯堡会议被撤职','华伦斯坦扩军十余万，不分新教天主教一概横征暴敛“打秋风”，得罪全体诸侯；1630年夏雷根斯堡会议上，选帝侯以拒选皇子相要挟，逼皇帝将华伦斯坦撤职。',[[47.5,6.8],[55.0,17.5]],d=>{
+    ha(d,'mEmpire1050',HC.germany,{fillOpacity:.2});ha(d,'mBavariaDuchy',HC.faith,{fillOpacity:.28});
+    hp(d,'ty1_stralsund',{left:1,note:'1628年华伦斯坦获封梅克伦堡公爵与“波罗的海统帅”，围攻施特拉尔松德不下。'});
+    hp(d,'k_mainz',{left:1,note:'莱茵三大天主教主教区与巴伐利亚：华伦斯坦大军在自己人领地照样强征军粮“打秋风”，诸侯怨声载道。'});
+    hp(d,'sh_munich',{left:1,note:'巴伐利亚公爵马克西米利安一世带头串联全体选帝侯，要求解除华伦斯坦兵权。'});
+    hp(d,'ty1_regensburg',{kind:'battle',note:'1630年8月雷根斯堡选帝侯会议：斐迪南二世为求选帝侯选自己长子为储，被迫下诏将华伦斯坦撤职。'});
+   },[['fill',HC.germany,'遭华伦斯坦十万大军四处“打秋风”的神圣罗马帝国'],['fill',HC.faith,'领头逼宫倒华的巴伐利亚'],['dot',HC.war,'1630年8月雷根斯堡会议（华伦斯坦被撤职）'],['dot','#2a2018','施特拉尔松德、美因茨与慕尼黑']])
  ]},
 {id:'history-italy-vespers',ch:5,title:'西西里晚祷：杀光法国人，两西西里分家',short:'西西里晚祷',en:'The Sicilian Vespers: Death to the French and the Two Sicilies',period:'1266—1302年',c:HC.italy,
  scenes:[
@@ -9797,7 +9861,7 @@ const HISTORY_ERAS=[
  {id:'empire-italy',name:'中世纪盛期：北意大利城市与西西里王国',en:'The Northern Cities and the Kingdom of Sicily',date:'约950—1166年',c:HC.italy,items:[['history-italy-cities'],['history-italy-sicily']]},
  {id:'empire-staufer',name:'中世纪盛期：红胡子、亨利六世与英诺森三世',en:'Barbarossa, Henry VI and Innocent III',date:'1152—1216年',c:HC.germany,items:[['history-germany-barbarossa'],['history-germany-henry6'],['history-germany-innocent']]},
  {id:'empire-france',name:'法兰西：从卡佩开张到“宇宙蜘蛛”一统',en:'France: From Hugh Capet to Louis XI',date:'987—1483年',c:HC.france,items:[['history-france-capet'],['history-france-plantagenet'],['history-france-stlouis'],['history-france-valois'],['history-france-louis11']]},
- {id:'empire-frederick2',name:'德意志、低地与意大利：从腓特烈二世到文艺复兴与查理五世分家',en:'Germany, Low Countries and Italy: From Frederick II to the Renaissance and Charles V',date:'843—1563年',c:HC.germany,items:[['history-germany-frederick2'],['history-germany-electors'],['history-germany-golden-bull'],['history-germany-hansa'],['history-lowlands-flanders'],['history-lowlands-burgundy'],['history-germany-charles5'],['history-italy-vespers'],['history-italy-venice'],['history-italy-condottieri'],['history-italy-renaissance']]},
+ {id:'empire-frederick2',name:'德意志、低地与意大利：从腓特烈二世到文艺复兴、查理五世与三十年战争',en:'Germany, Low Countries and Italy: From Frederick II to the Renaissance, Charles V, and the Thirty Years’ War',date:'843—1630年',c:HC.germany,items:[['history-germany-frederick2'],['history-germany-electors'],['history-germany-golden-bull'],['history-germany-hansa'],['history-lowlands-flanders'],['history-lowlands-burgundy'],['history-germany-charles5'],['history-germany-thirty-years-1'],['history-italy-vespers'],['history-italy-venice'],['history-italy-condottieri'],['history-italy-renaissance']]},
  {id:'empire-blackdeath',name:'中世纪晚期：黑死病',en:'The Late Middle Ages: the Black Death',date:'1346—1353年',c:HC.italy,items:[['history-italy-blackdeath']]},
  {id:'empire-taifas',name:'西班牙：泰法与圣战',en:'Spain: the Taifas and Holy War',date:'1031—1123年',c:HC.spain,items:[['history-spain-taifas'],['history-spain-crusade']]},
  {id:'empire-spain-1492',name:'西班牙与葡萄牙：从托洛萨到1492大航海',en:'Spain and Portugal: From Las Navas to 1492',date:'1123—1498年',c:HC.spain,items:[['history-spain-reconquista'],['history-spain-aragon'],['history-spain-1492']]},
@@ -9850,13 +9914,13 @@ const HISTORY_BRANCHES=[
  {id:'spain',name:'西班牙',en:'Spain',lane:5,parent:'west',from:481,to:1498,c:HC.spain},
  {id:'france',name:'法兰西',en:'France',lane:5,parent:'west',from:843,to:1483,c:HC.france},
  {id:'lowlands',name:'低地诸国',en:'Low Countries',lane:5,parent:'west',from:843,to:1500,c:HC.lowlands},
- {id:'germany',name:'德意志',en:'Germany',lane:4,parent:'west',from:843,to:1563,c:HC.germany},
+ {id:'germany',name:'德意志',en:'Germany',lane:4,parent:'west',from:843,to:1630,c:HC.germany},
  {id:'italy',name:'意大利',en:'Italy',lane:3,parent:'west',from:843,to:1563,c:HC.italy},
  // 不列颠 (including Ireland): forks from the trunk before Caesar's landing, on lane 6 right beside 法兰西.
  {id:'britain',name:'不列颠',en:'Britain and Ireland',lane:6,parent:'trunk',from:-55,to:1487,c:HC.britain},
  // The 基督教 line: from the Hebrews' nomadic origins (the old Levant branch) to the schism of 1054; on its own lane, right of the West.
  // After 641 it runs through the shared stations of the East Roman dynasties.
- {id:'faith',name:'基督教',en:'Judaism & Christianity',lane:7,parent:'trunk',from:-1400,to:1563,c:HC.faith},
+ {id:'faith',name:'基督教',en:'Judaism & Christianity',lane:7,parent:'trunk',from:-1400,to:1630,c:HC.faith},
  // 埃及 and 波斯 leave the trunk at the early states (老无 2026-10-21): the Ptolemies, the Seleucids, Rome and Byzantium are passing rulers of these lands.
  {id:'egypt',name:'埃及',en:'Egypt',lane:1,parent:'trunk',from:-3100,to:642,c:HC.mino},
  {id:'persia',name:'波斯—阿拉伯',en:'Persia and the Arabs',lane:0,parent:'trunk',from:-3200,to:1501,c:HC.parthia},
@@ -10091,12 +10155,13 @@ const TREE_ROWS={
  'history-faith-reformation-1/0':[['faith','germany'],1517,1536,'1450—1536年'],
  'history-faith-reformation-2/0':[['faith','germany'],1537,1555,'1521—1555年'],
  'history-germany-charles5/0':[['germany','faith','italy'],1556,1563,'1516—1563年'],
+ 'history-germany-thirty-years-1/0':[['germany','faith'],1557,1630,'1555—1630年'],
  'history-empire-macedonian/3':[['east','faith'],1054,1056],
  'history-spain-fall/2':[['spain','persia'],711,713],
  'history-arab-seljuks/3':[['persia','east'],1071,1092]
 };
 // Topics still to be written grow the tree as dashed shoots.
-const TREE_FUTURE=[['france',1483,'胡格诺战争与波旁王朝','1483年后待展开：1494—1559年意大利战争 · 1562—1598年胡格诺宗教战争与波旁王朝'],['germany',1563,'三十年战争与普鲁士','1563年后待展开：1618—1648年三十年战争与《威斯特伐利亚和约》 · 普鲁士崛起'],['italy',1563,'哈布斯堡霸权与统一','1563年后待展开：西班牙哈布斯堡霸权下的意大利 · 巴洛克时代与近代统一'],['faith',1563,'三十年战争与宗教宽容','1563年后待展开：法国胡格诺战争 · 1618—1648年三十年战争与宗教宽容'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',1501,'奥斯曼全盛与波斯争霸','1501年后待展开：1517年奥斯曼灭马穆鲁克 · 苏莱曼一世全盛与奥斯曼—萨法维百年争霸'],['china',845,'晚唐五代与宋','845年起 · 待展开'],['spain',1498,'日不落帝国与无敌舰队','1498年后待展开：美洲金银与哈布斯堡西班牙帝国 · 1588年无敌舰队之战'],['eeurope',1505,'伊凡雷帝与沙皇俄国','1505年后待展开：1547年伊凡四世加冕沙皇 · 混乱时代与罗曼诺夫王朝'],['lowlands',1500,'八十年战争与荷兰共和国','1500年后待展开：1568—1648年尼德兰独立战争 · 17世纪荷兰黄金时代'],['crusade',1312,'后来的十字军','1396年尼科波利斯 · 1444年瓦尔纳 · 1571年勒班陀 · 待展开'],['britain',1487,'都铎宗教改革与无敌舰队','1487年后待展开：亨利八世英国宗教改革 · 伊丽莎白一世击败西班牙无敌舰队']];
+const TREE_FUTURE=[['france',1483,'胡格诺战争与波旁王朝','1483年后待展开：1494—1559年意大利战争 · 1562—1598年胡格诺宗教战争与波旁王朝'],['germany',1630,'瑞典登场与威斯特伐利亚','1630年后待展开：瑞典国王古斯塔夫二世参战 · 1648年《威斯特伐利亚和约》与普鲁士崛起'],['italy',1563,'哈布斯堡霸权与统一','1563年后待展开：西班牙哈布斯堡霸权下的意大利 · 巴洛克时代与近代统一'],['faith',1630,'威斯特伐利亚与宗教宽容','1630年后待展开：1648年《威斯特伐利亚和约》确立加尔文宗合法与三派并立 · 近代宗教宽容'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',1501,'奥斯曼全盛与波斯争霸','1501年后待展开：1517年奥斯曼灭马穆鲁克 · 苏莱曼一世全盛与奥斯曼—萨法维百年争霸'],['china',845,'晚唐五代与宋','845年起 · 待展开'],['spain',1498,'日不落帝国与无敌舰队','1498年后待展开：美洲金银与哈布斯堡西班牙帝国 · 1588年无敌舰队之战'],['eeurope',1505,'伊凡雷帝与沙皇俄国','1505年后待展开：1547年伊凡四世加冕沙皇 · 混乱时代与罗曼诺夫王朝'],['lowlands',1500,'八十年战争与荷兰共和国','1500年后待展开：1568—1648年尼德兰独立战争 · 17世纪荷兰黄金时代'],['crusade',1312,'后来的十字军','1396年尼科波利斯 · 1444年瓦尔纳 · 1571年勒班陀 · 待展开'],['britain',1487,'都铎宗教改革与无敌舰队','1487年后待展开：亨利八世英国宗教改革 · 伊丽莎白一世击败西班牙无敌舰队']];
 // Where a line stops it says why: [line, year, the event that ends it, note, the line it carries on in].
 const TREE_ENDS=[['trunk',-30,'并入罗马','前146年科林斯被毁 · 前30年最后一个希腊化王国埃及并入罗马','rome'],['rome',476,'西罗马终结','476年西部末代皇帝被废 · 由中世纪西欧接续'],['west',843,'凡尔登三分','843年《凡尔登条约》三分帝国 · 分出法兰西、德意志、意大利'],['east',1453,'东罗马终结','1453年5月29日奥斯曼帝国攻破君士坦丁堡 · 千年东罗马帝国终结']];
 // Sections of one line that run side by side: [line, row keys, side of the passing loop].

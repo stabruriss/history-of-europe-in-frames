@@ -953,7 +953,7 @@
    "基督教",
    "trunk",
    -1400,
-   1563,
+   1630,
    7
   ]
  },
@@ -970,8 +970,8 @@
   ],
   [
    "faith",
-   1563,
-   "三十年战争与宗教宽容"
+   1630,
+   "威斯特伐利亚与宗教宽容"
   ]
  ],
  "tails": {
@@ -1029,7 +1029,8 @@
    "history-empire-fall-1453/0",
    "history-faith-reformation-1/0",
    "history-faith-reformation-2/0",
-   "history-germany-charles5/0"
+   "history-germany-charles5/0",
+   "history-germany-thirty-years-1/0"
   ]
  },
  "shared": {
