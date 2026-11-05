@@ -1,4 +1,4 @@
-const puppeteer=require('puppeteer-core');
+const puppeteer=require('puppeteer-core');require('./legacy_sidebar.cjs');
 const assert=require('node:assert/strict');
 const path=require('node:path');
 const {pathToFileURL}=require('node:url');
@@ -78,5 +78,5 @@ const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','
   }
   assert.deepEqual(errors,[]);
   console.log('PASS: '+JSON.stringify(report)+'; all scene-to-era mappings; chapter splits; mobile optgroups; folded references; Callisthenes deep link; new map stages; offline; no page errors.');
- }finally{await Promise.race([browser.close(),new Promise(r=>setTimeout(r,200))]);browser.process()?.kill('SIGKILL');process.exit(process.exitCode||0);}
+ }catch(e){console.error(e);process.exitCode=1;}finally{await Promise.race([browser.close(),new Promise(r=>setTimeout(r,200))]);browser.process()?.kill('SIGKILL');process.exit(process.exitCode||0);}
 })().catch(e=>{console.error(e);process.exitCode=1;});

@@ -1,4 +1,4 @@
-const puppeteer=require('puppeteer-core');
+const puppeteer=require('puppeteer-core');require('./legacy_sidebar.cjs');
 const assert=require('node:assert/strict');
 const fs=require('node:fs');
 const path=require('node:path');
@@ -120,5 +120,5 @@ const SECTIONS=JSON.parse(fs.readFileSync(path.join(__dirname,'v37-spec.json'),'
   }
   assert.deepEqual(errors,[],'page errors');
   console.log('PASS: v37 — '+S.pass);
- }finally{await Promise.race([browser.close(),new Promise(r=>setTimeout(r,200))]);browser.process()?.kill('SIGKILL');process.exit(process.exitCode||0);}
+ }catch(e){console.error(e);process.exitCode=1;}finally{await Promise.race([browser.close(),new Promise(r=>setTimeout(r,200))]);browser.process()?.kill('SIGKILL');process.exit(process.exitCode||0);}
 })().catch(e=>{console.error(e);process.exit(1);});

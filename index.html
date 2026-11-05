@@ -1219,16 +1219,238 @@ body.resizing-side #mapwrap{pointer-events:none}
 body.resizing-reader{cursor:col-resize;user-select:none}
 body.resizing-reader #map{pointer-events:none}
 @media(max-width:820px){#readerGrip{display:none}}
+/* The historical metro layout. Loaded after layout.css, whose rules come from the content build. */
+:root{--paper-light:#f9f3e5;--soft:#69563f;--sans:"PingFang SC","Noto Sans SC",sans-serif;--line:#93324f;--reader:460px;--reader-w:clamp(280px,var(--reader),calc(100% - 332px))}
+
+/* ---------- Page shell ---------- */
+html,body{height:100%}
+body{display:grid;grid-template-columns:auto minmax(0,1fr);grid-template-rows:auto auto minmax(0,1fr);height:100dvh;overflow:hidden}
+#masthead{grid-column:1/-1;grid-row:1;display:flex;align-items:center;gap:14px;min-height:64px;padding:6px 18px;background:var(--paper-light);border-bottom:1px solid var(--rule);position:relative;z-index:1300}
+#brandMark{display:block;width:40px;height:40px;flex:none}
+#brandText{min-width:0}
+#masthead .kicker{font-size:8.5px;line-height:1.3;letter-spacing:.3em}
+#masthead h1{margin:0;font-size:20px;line-height:1.3;letter-spacing:.05em;white-space:nowrap}
+#masthead h1 span{display:block;margin:0;font-size:10px;line-height:1.35;font-weight:400;letter-spacing:.08em;color:var(--ink2)}
+#modebar{margin:0 0 0 12px;flex:none}
+#modebar button{padding:7px 14px;font-size:12.5px;white-space:nowrap}
+#ghBanner{margin-left:auto;flex:none;padding:7px 11px;border:0;border-radius:2px}
+#modeToggle{flex:none;padding:9px 15px;border:1px solid var(--ink);border-radius:2px;background:var(--ink);color:var(--paper-light);font:inherit;font-size:12px;cursor:pointer;white-space:nowrap}
+#modeToggle:hover{background:#463525}
+body[data-metro=off] #modeToggle{display:none}
+#side{grid-column:1;grid-row:3;height:auto;min-height:0;z-index:2}
+#mapwrap{grid-column:2;grid-row:3;height:auto;min-height:0;min-width:0;overflow:hidden;position:relative;isolation:isolate}
+/* The line stays laid out under the whole-map view, so the map keeps its size when boarding. */
+#ridePanel{grid-column:1/-1;grid-row:2;display:none;position:relative;z-index:900}
+body.history-mode #ridePanel{display:block}
+body.history-mode #side{display:none}
+body.history-mode #mapwrap{grid-column:1/-1}
+#networkMode{display:none;position:fixed;left:0;right:0;bottom:0;top:var(--masthead-h,65px);z-index:1200;flex-direction:column;background:#fbf6ea}
+body[data-metro=network] #networkMode{display:flex}
+#masthead :is(button,a):focus-visible,:where(#networkMode,#ridePanel) button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+:where(#networkMode,#ridePanel) button{font:inherit;color:inherit;cursor:pointer;border:1px solid transparent;background:none;border-radius:2px}
+:where(#networkMode,#ridePanel) button:hover{background:#e5d5b650}
+:where(#networkMode,#ridePanel) button:disabled{opacity:.3;cursor:default}
+.network-toolbar h2::after{display:none}
+#networkMode [hidden],#ridePanel [hidden]{display:none!important}
+.mobile-only{display:none}
+
+/* ---------- Text on the left, map on the right ---------- */
+#tools{display:none}
+#map{inset:0 0 0 var(--reader-w)}
+#reader,body.has-scenes #reader,#reader:not(.collapsed){position:absolute;left:0;top:0;bottom:0;right:auto;width:var(--reader-w);max-height:none;border:0;border-right:1px solid var(--rule);border-radius:0;background:var(--paper-light);box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none;z-index:820}
+#readerGrip,#reader.collapsed #readerGrip{display:block;left:auto;right:-7px}
+#readerToggle{display:none}
+#readerHead{padding:15px 24px 11px}
+#reader .eyebrow{max-width:none}
+#reader h2{font-size:23px}
+#reader .en-name{font-size:14px}
+#readerBody{flex:1;scroll-behavior:auto}
+#card{padding:6px 24px 26px}
+#card p{font-size:15px;line-height:1.95}
+#card p.lede{font-size:15.5px}
+#card li{font-size:14.5px}
+body.history-mode #card{padding-bottom:30vh;counter-reset:scene}
+.scene-passage{margin:0 -12px 8px;padding:14px 11px 2px}
+.scene-passage.off-station{display:none}
+.scene-passage:not(.off-station){counter-increment:scene}
+body.history-mode .passage-title small::before{content:"第 " counter(scene) " 幕 · ";color:var(--line)}
+#card .passage-title{font-size:17px;line-height:1.5;color:var(--ink)}
+.passage-title small{font-size:11.5px;margin-bottom:3px}
+#metroBar{display:none;flex:none}
+body.history-mode #metroBar{display:block}
+#transferBar{display:flex;align-items:center;flex-wrap:wrap;gap:5px;padding:0 24px 10px;font-size:10.5px;color:var(--soft)}
+#transferBar:empty{display:none}
+#transferBar button{display:flex;align-items:center;gap:5px;border:1px solid var(--rule);border-radius:999px;padding:4px 9px;background:#f3e8d0;color:var(--ink);font:inherit;font-size:10.5px;cursor:pointer}
+#transferBar button:hover{border-color:var(--c)}
+#transferBar button i{width:7px;height:7px;border-radius:50%;background:var(--c)}
+.scene-nav{display:flex;align-items:center;gap:6px;padding:6px 16px 6px 24px;background:#eee1c8;border-top:1px solid #cbb58b80;border-bottom:1px solid #cbb58b80}
+.scene-nav>span{font-size:11px;color:var(--soft)}
+#sceneHeading{margin-right:auto}
+#scenePosition{font-family:var(--latin);margin-right:6px}
+.scene-nav button{padding:5px 8px;border:1px solid #c5ae85;background:none;color:var(--ink);font:inherit;font-size:11px;cursor:pointer;border-radius:2px}
+.scene-nav button:hover{background:#e5d5b650}
+.scene-nav button:disabled{opacity:.35;cursor:default}
+body.history-mode #sceneRail{display:none}
+#sceneRail{left:calc(var(--reader-w) + 14px);right:14px;bottom:26px}
+#legendBox,body.has-scenes #legendBox{left:calc(var(--reader-w) + 14px);bottom:30px;top:auto}
+body.has-scenes:not(.history-mode) #legendBox{bottom:121px}
+#mapnote{left:auto;right:12px;top:12px}
+#mapSceneChip{display:none;position:absolute;left:calc(var(--reader-w) + 62px);top:12px;right:12px;z-index:810;pointer-events:none}
+body.history-mode #mapSceneChip{display:block}
+#mapSceneChip>div{display:inline-block;max-width:100%;padding:7px 11px;background:#f5eddbef;border:1px solid var(--rule);box-shadow:0 2px 7px #2a201816}
+#mapSceneChip small{display:block;margin-bottom:2px;font:10px var(--latin);color:var(--soft)}
+#mapSceneChip b{display:block;font-size:12px;line-height:1.45}
+
+/* ---------- Network map ---------- */
+.network-toolbar{height:49px;flex:none;display:flex;align-items:center;gap:18px;padding:0 22px;background:#f7efdf;border-bottom:1px solid var(--rule)}.network-toolbar h2{font-size:16px;letter-spacing:.07em;margin:0;white-space:nowrap}.schematic-note{font-size:10px;color:var(--soft)}.network-presets{display:flex;gap:3px;margin-left:auto}.network-presets button{padding:5px 10px;font-size:11px}.zoom-tools{display:flex;align-items:center;gap:3px;border-left:1px solid var(--rule);padding-left:12px}.zoom-tools button{height:32px;min-width:32px;padding:0 8px;font-size:11px}.zoom-tools #zoomIn,.zoom-tools #zoomOut{font:20px var(--sans);padding:0 5px}.zoom-tools output{min-width:38px;text-align:center;font:12px var(--latin);color:var(--soft)}.network-workspace{display:flex;flex:1;min-height:0}.network-legend{width:180px;flex:none;border-right:1px solid var(--rule);background:#f5eddb;padding:14px 11px 10px;overflow:auto}.legend-heading{display:flex;justify-content:space-between;align-items:center;padding:0 6px 9px;margin-bottom:7px;border-bottom:1px solid #cbb58b70}.legend-heading b{font-size:12px}.legend-heading span{font-size:9px;color:var(--soft)}.line-choice{display:flex;align-items:center;gap:8px;width:100%;padding:8px 6px;text-align:left;line-height:1.2;font-size:12px;position:relative}.line-choice .line-swatch{height:4px;width:23px;background:var(--c);border-radius:4px;flex:none}.line-choice .line-swatch:after{content:"";display:block;width:7px;height:7px;border:2px solid var(--c);background:var(--paper-light);border-radius:50%;margin: -1.5px auto 0}.line-choice .line-count{margin-left:auto;font:10px var(--latin);color:var(--soft)}.line-choice.on{background:#e6d7bc;border-color:#cbb58b55;font-weight:bold}.line-choice:hover:after{content:'→';position:absolute;right:5px;background:var(--paper)}.symbol-key{border-top:1px solid var(--rule);margin:12px 5px 0;padding-top:10px;font-size:10px;line-height:1.9;color:var(--soft)}.symbol-key>span{display:flex;align-items:center;gap:8px}.symbol-key p{font-size:9px;margin:8px 0 0;line-height:1.8}.key-stop,.key-transfer{display:inline-block;width:7px;height:7px;border:1.5px solid var(--ink);background:var(--paper-light);border-radius:50%;margin:0 7px}.key-transfer{width:9px;height:15px;border-radius:6px;margin:0 6px}.key-link{position:relative;display:inline-block;width:9px;height:19px;margin:0 6px}.key-link:before,.key-link:after{content:"";position:absolute;left:0;width:7px;height:7px;border:1.5px solid var(--ink);border-radius:50%;background:var(--paper-light)}.key-link:before{top:0}.key-link:after{bottom:0}.key-link i{position:absolute;left:4px;top:7px;bottom:7px;border-left:1.5px dashed var(--ink)}.key-flag{display:inline-block;width:20px;height:11px;margin:0 1px;background:#8b7a60;clip-path:polygon(0 0,70% 0,100% 50%,70% 100%,0 100%)}.key-flag.end{transform:scaleX(-1)}.key-cross{position:relative;display:inline-block;width:15px;height:15px;margin:0 3px}.key-cross:before,.key-cross:after{content:"";position:absolute;left:6px;top:0;width:3px;height:15px;background:#8b7a60}.key-cross:after{transform:rotate(90deg);background:#b45309}.key-tick{position:relative;display:inline-block;width:15px;height:13px;margin:0 3px}.key-tick:before{content:"";position:absolute;left:0;right:0;top:5px;height:3px;background:#8b7a60}.key-tick:after{content:"";position:absolute;left:6px;top:0;width:2px;height:13px;background:#8b7a60}
+.network-canvas{position:relative;flex:1;min-width:0;overflow:hidden;background:#fbf6ea;isolation:isolate;cursor:grab;touch-action:none}.network-canvas.dragging{cursor:grabbing}#networkSvg{display:block;width:100%;height:100%;overflow:hidden;user-select:none}.year-zone{fill:#efe5cf;opacity:.42}.rail-casing{fill:none;stroke:#fbf6ea;stroke-width:calc(var(--rail-w,5)*1px + 2.4px);stroke-linejoin:round;stroke-linecap:butt}.rail-path{fill:none;stroke:var(--c);stroke-width:calc(var(--rail-w,5)*1px);stroke-linejoin:round;stroke-linecap:round;transition:opacity .18s}.rail-path.on{stroke-width:calc(var(--rail-w,5)*1px + .8px)}.rail-hit{fill:none;stroke:transparent;stroke-width:18;pointer-events:stroke;cursor:pointer}.rail-path.muted{opacity:.14}.dim{opacity:.16}.transfer-link{stroke:#2b241c;stroke-width:calc(var(--link-w,1.6)*1px);stroke-dasharray:calc(var(--link-w,1.6)*2.6px) calc(var(--link-w,1.6)*2.2px);pointer-events:none}.metro-node.selected .transfer-link{stroke:var(--accent)}.period-tick{stroke:var(--c);stroke-width:2;stroke-linecap:round;opacity:.85}.period-annotation{font:10.5px var(--sans);fill:var(--c);paint-order:stroke;stroke:#fbf6ea;stroke-width:3.5;stroke-linejoin:round;letter-spacing:.02em}.junction-note{font:10.5px var(--serif);fill:var(--c);font-weight:700;paint-order:stroke;stroke:#fbf6ea;stroke-width:3.5;pointer-events:none}.line-flag{cursor:pointer}.flag-shape{stroke:#fbf6ea;stroke-width:1.2;stroke-linejoin:round}.flag-scale{transform:scale(var(--inv,1))}.line-flag .flag-scale{transform:scale(calc(var(--inv,1)*var(--flag-k,1)))}.line-flag text{font:600 11px var(--sans);fill:#fffdf6}.hub-name{cursor:pointer;display:none}.hub-name text{font:600 12px var(--sans);fill:#2b241c;paint-order:stroke;stroke:#fbf6ea;stroke-width:4;stroke-linejoin:round}.metro-node{cursor:pointer;outline:none}.station-circle{fill:#fffdf6;stroke:var(--c);stroke-width:1.9}.metro-node.transfer .station-circle{stroke:#2b241c;stroke-width:2;fill:#fffdf6}.metro-node.selected .station-circle{stroke:var(--accent);fill:var(--accent)}.current-halo{fill:none;stroke:var(--accent);stroke-width:1.5;opacity:.7;pointer-events:none}.node-name{font:12.5px var(--sans);fill:#2b241c;cursor:pointer}.metro-node.transfer .node-name{font-weight:600}.label-leader{stroke:#8b7a60;stroke-width:.8;stroke-dasharray:2 2;pointer-events:none}.network-canvas[data-lod="1"] .label-leader,.network-canvas[data-lod="2"] .label-leader{display:none}.node-date{font:9.5px var(--latin);fill:#6d5941;pointer-events:none;display:none}.metro-node.selected .node-name{font-weight:700;fill:var(--accent)}.metro-node:hover .station-circle{stroke-width:3.2}.metro-node:hover .node-name{text-decoration:underline;text-underline-offset:2px}.show-dates .node-date{display:block}.network-canvas[data-lod="1"] .node-name,.network-canvas[data-lod="1"] .period-annotation,.network-canvas[data-lod="1"] .period-tick,.network-canvas[data-lod="1"] .junction-note{display:none}.network-canvas[data-lod="1"] .hub-name{display:block}.network-canvas[data-lod="2"] .metro-node:not(.transfer) .node-name{display:none}.network-canvas[data-lod="3"] .mid-only,.network-canvas[data-lod="3"] .line-flag.no-room{display:none}.culled{display:none!important}.network-canvas[data-lod="2"] .node-name{font-size:calc(12.5px*var(--label-scale,1))}.network-canvas[data-lod="2"] .period-annotation{font-size:calc(10.5px*var(--label-scale,1));stroke-width:calc(3.5px*var(--label-scale,1))}.network-canvas[data-lod="1"] .metro-node:not(.transfer) .station-circle{opacity:.75}.year-ruler{position:absolute;left:0;right:0;top:0;height:24px;background:#fbf6eae0;border-bottom:1px solid #e3d6bb;pointer-events:none;z-index:1}.year-ruler span{position:absolute;left:0;top:5px;padding-left:5px;border-left:1px solid #b9a278;font:10px var(--latin);color:var(--soft);white-space:nowrap;line-height:15px}.map-instruction{position:absolute;bottom:12px;left:14px;z-index:2;font:10px var(--sans);color:var(--soft);background:#fbf6eae8;padding:6px 9px;border:1px solid #d9c9ac80;pointer-events:none}.map-instruction span{margin:0 6px;color:#b09a77}.station-inspector{position:absolute;right:20px;bottom:22px;width:278px;padding:19px 20px 16px;background:#f9f1dfed;border:1px solid var(--rule);box-shadow:0 5px 22px #3a28161a;cursor:default;backdrop-filter:blur(7px)}.inspector-close{position:absolute;right:6px;top:6px;width:30px;height:30px;font-size:18px;line-height:1;color:var(--soft)}.inspector-kicker{font:10px var(--sans);color:var(--accent);letter-spacing:.12em}.station-inspector h3{font-size:23px;line-height:1.4;margin:8px 0 5px}.inspector-period{font:13px var(--latin);color:var(--soft)}.station-inspector p{font-size:12px;line-height:1.8;color:var(--soft);margin:10px 0 13px}.station-inspector small{display:block;font-size:9px;color:var(--soft);line-height:1.7;margin-top:11px}.board-line{display:flex;align-items:center;gap:8px;width:100%;padding:9px 10px;border:1px solid var(--rule);margin-top:6px;font-size:12px;text-align:left;background:#fbf6ea}.board-line i{width:18px;height:4px;background:var(--c);border-radius:4px}.board-line span{margin-left:auto;color:var(--soft)}.board-line:hover{border-color:var(--c);background:#f0e2c9}.network-footer{height:28px;flex:none;display:flex;justify-content:space-between;align-items:center;padding:0 18px;border-top:1px solid var(--rule);font-size:9px;color:var(--soft);background:#eee2c9}
+
+.slice-line{stroke:#8b7a60;stroke-width:1;stroke-dasharray:5 4;opacity:.55;vector-effect:non-scaling-stroke}
+.year-ruler button{position:absolute;left:0;top:3px;padding:1px 6px 1px 5px;border:0;border-left:1px solid var(--accent);border-radius:0;background:none;font:10px var(--latin);color:var(--accent);white-space:nowrap;line-height:15px;pointer-events:auto;cursor:pointer}
+.year-ruler button:hover{background:#efe2c8}
+.year-ruler [hidden]{display:none}
+.slice-panel{position:absolute;left:16px;top:36px;width:min(430px,calc(100% - 32px));max-height:calc(100% - 60px);overflow:auto;padding:15px 34px 14px 16px;background:#f9f1dff5;border:1px solid var(--rule);box-shadow:0 5px 22px #3a28161a;z-index:3;cursor:default}
+.slice-panel h3{margin:0 0 7px;font-size:15px;line-height:1.5}
+.slice-panel p{margin:0;font-size:13px;line-height:1.85;color:var(--ink2)}
+#sliceClose{position:absolute;right:5px;top:5px;width:28px;height:28px;font-size:17px;line-height:1;color:var(--soft)}
+.inspector-future{margin:10px 0 0;padding-top:8px;border-top:1px dotted var(--rule);font-size:10.5px;line-height:1.7;color:var(--soft)}
+
+/* ---------- On-train line ---------- */
+.ride-heading{height:46px;flex:none;display:flex;align-items:center;padding:0 22px;gap:22px;background:#f8f0df;border-bottom:1px solid #cbb58b80}.riding-line{display:flex;align-items:center;gap:10px;font-size:18px;font-weight:bold;color:var(--line)}.line-number{display:inline-grid;place-items:center;min-width:27px;height:24px;padding:0 5px;border-radius:3px;background:var(--line);color:#fffdf5;font:13px var(--latin)}.riding-line small{font:10px var(--sans);color:var(--soft);font-weight:400}.ride-instruction{font-size:10px;color:var(--soft)}.ride-instruction span{margin:0 8px}.station-nav{margin-left:auto;display:flex;align-items:center;gap:10px}.station-nav button{height:32px;padding:0 12px;border-color:var(--rule);font-size:11px}.station-nav>span{font:12px var(--latin);min-width:55px;text-align:center;color:var(--soft)}.route-panel{display:flex;height:128px;flex:none;border-bottom:1px solid #bda37b;box-shadow:0 7px 13px -12px #3a2816;background:#f8f0df;position:relative;z-index:2}.route-caption{width:150px;flex:none;padding:13px 16px;border-right:1px solid var(--rule);background:#eee2ca}.route-caption>span{font-size:10px;color:var(--soft)}.route-caption>b{display:block;font-size:14px;line-height:1.4;margin-top:5px;color:var(--line)}.route-caption small{font-size:9px;line-height:1.6;color:var(--soft);display:block;margin-top:6px}.route-scroller{flex:1;min-width:0;overflow-x:auto;overflow-y:hidden;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#b59b73 transparent;cursor:grab;user-select:none}.route-scroller.dragging{cursor:grabbing}.route-track{position:relative;height:118px}.route-rail{position:absolute;top:47px;height:5px;background:var(--line);border-radius:4px}.route-rail.past{background:color-mix(in srgb,var(--line) 32%,#e8dcc5)}.route-stop{position:absolute;top:24px;width:140px;height:92px;transform:translateX(-50%);padding:0;text-align:center;white-space:normal}.route-stop .dot{position:absolute;left:50%;top:18px;width:13px;height:13px;margin-left:-6.5px;border:2px solid var(--line);background:var(--paper-light);border-radius:50%}.route-stop.past .dot{border-color:color-mix(in srgb,var(--line) 40%,#b8a98c)}.route-stop.shared .dot{width:15px;height:15px;top:17px;margin-left:-7.5px;border:2.5px solid var(--ink);background:#fffdf5}.route-stop.active .dot{width:15px;height:15px;top:17px;margin-left:-7.5px;background:var(--line);border-color:var(--line);box-shadow:0 0 0 3px #f8f0df,0 0 0 5px var(--line)}.route-stop .stop-transfers{position:absolute;left:0;right:0;top:0;display:flex;justify-content:center;gap:2px}.route-stop .stop-transfers i{display:grid;place-items:center;min-width:14px;height:14px;padding:0 2px;border-radius:7px;background:var(--c);color:#fffdf6;font:600 9px/14px var(--sans)}.route-stop .stop-text{position:absolute;top:38px;left:0;width:100%;display:block}.route-stop .stop-name{display:block;font:12px/1.3 var(--sans);padding:0 3px;color:var(--ink)}.route-stop.past .stop-name{color:#6d5941}.route-stop.active .stop-name{font-weight:600;color:var(--line)}.route-stop .stop-date{display:block;margin-top:2px;font:10px/1.2 var(--latin);color:var(--soft)}.route-stop:hover{background:none}.route-stop:hover .stop-name{text-decoration:underline;text-underline-offset:3px}.route-period-band{position:absolute;top:4px;height:17px;border-bottom:1px solid #c6b18c;color:var(--soft);font-size:10px;white-space:nowrap}.route-period-band>span{position:sticky;left:6px;padding:0 5px;display:inline-block;line-height:14px}.route-period-band:after,.route-period-band:before{content:"";position:absolute;bottom:0;height:5px;width:1px;background:#c6b18c}.route-period-band:before{left:0}.route-period-band:after{right:0}
+
+.route-rail.upcoming{height:0;top:49px;background:none;border-top:3px dashed color-mix(in srgb,var(--line) 45%,#e8dcc5);border-radius:0}
+.route-future{position:absolute;top:24px;width:140px;height:92px;transform:translateX(-50%);text-align:center;color:var(--soft);cursor:help}
+.route-future .dot{position:absolute;left:50%;top:18px;width:13px;height:13px;margin-left:-6.5px;border:2px dashed color-mix(in srgb,var(--line) 55%,#b8a98c);background:var(--paper-light);border-radius:50%}
+.route-future .stop-text{position:absolute;top:38px;left:0;width:100%}
+.route-future .stop-name{display:block;font:12px/1.3 var(--sans);padding:0 3px}
+.route-future .stop-date{display:block;margin-top:2px;font-size:10px}
+
+/* ---------- Narrower desktops ---------- */
+@media(min-width:821px) and (max-width:1200px){
+ #masthead{gap:10px;padding:6px 12px}
+ #masthead h1{font-size:18px}#masthead h1 span{font-size:9.5px}
+ #modebar{margin-left:4px}#modebar button{padding:6px 8px;font-size:11.5px}
+ #ghBanner .gh-banner-text{display:none}
+ .schematic-note{display:none}.network-presets{margin-left:auto}
+ .network-legend{width:160px}.route-caption{width:132px}
+ .station-inspector{width:252px;right:14px;bottom:16px}
+}
+
+@media(min-width:821px) and (max-width:1100px){:root{--reader:400px}}
+
+/* ---------- Phones: map above text ---------- */
+@media(max-width:820px){
+ body{grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto auto minmax(0,1fr)}
+ #masthead{flex-wrap:wrap;gap:6px 9px;min-height:0;padding:7px 11px}
+ #brandMark{width:30px;height:30px}
+ #masthead .kicker,#masthead h1 span{display:none}
+ #masthead h1{margin:0;font-size:17px;letter-spacing:.03em}
+ #ghBanner{order:2;padding:6px 8px}
+ #ghBanner .gh-banner-text{display:none}
+ #modebar{position:static;order:3;margin:0;flex:1 1 auto;padding:2px;gap:2px}
+ #modebar button{flex:1;padding:6px 4px;font-size:11px}
+ #modeToggle{order:4;padding:7px 9px;font-size:10.5px;max-width:132px;overflow:hidden;text-overflow:ellipsis}
+ #side{grid-column:1;grid-row:3;width:100%;height:auto}
+ #mapwrap{grid-column:1;grid-row:4;display:grid;grid-template-rows:minmax(150px,36%) minmax(0,1fr)}
+ #map{position:relative;inset:auto;grid-row:1;height:100%;min-height:0}
+ #reader,body.has-scenes #reader,#reader:not(.collapsed){position:relative;grid-row:2;left:auto;right:auto;top:auto;bottom:auto;width:100%;height:auto;min-height:0;max-height:none;border-right:0;border-top:1px solid var(--rule)}
+ #readerGrip,#reader.collapsed #readerGrip{display:none}
+ #readerHead{padding:9px 14px 6px}
+ #reader h2{font-size:17px;margin-top:3px}
+ #reader .en-name{display:none}
+ #card{padding:4px 14px 20px}
+ #card p{font-size:14px;line-height:1.9}
+ #transferBar{padding:0 14px 7px;font-size:9.5px}
+ .scene-nav{padding:4px 10px 4px 14px}
+ #sceneRail,body.has-scenes #sceneRail{left:8px;right:8px;bottom:auto;top:calc(36% - 72px)}
+ #legendBox,body.has-scenes #legendBox,body.has-scenes:not(.history-mode) #legendBox{left:8px;top:8px;bottom:auto}
+ #mapnote{top:8px;right:48px}
+ body.history-mode #mapSceneChip{display:none}
+ .leaflet-top.leaflet-left{left:auto;right:0;top:6px}
+ .ride-heading{height:44px;padding:0 10px;gap:8px}
+ .riding-line{font-size:15px;gap:7px}.riding-line small,.ride-instruction{display:none}
+ .line-number{min-width:23px;height:22px;font-size:12px}
+ .station-nav{gap:3px}.station-nav button{font-size:10px;height:36px;padding:0 6px}.station-nav>span{min-width:39px;font-size:10px}
+ .route-panel{height:112px}.route-caption{display:none}.route-track{height:104px}.route-rail{top:41px;height:4px}.route-rail.upcoming{top:42px}
+ .route-stop,.route-future{top:20px;height:84px;width:122px}.route-stop .dot,.route-future .dot{top:15px}.route-stop.shared .dot,.route-stop.active .dot{top:14px}
+ .route-stop .stop-text,.route-future .stop-text{top:33px}.route-stop .stop-name,.route-future .stop-name{font-size:11px;line-height:1.25}.route-stop .stop-date{font-size:9px}
+ .route-period-band{top:2px;height:15px;font-size:9px}
+ .mobile-only{display:block}
+ .network-toolbar{height:46px;padding:0 8px;gap:6px}.network-toolbar h2{font-size:13px}
+ #legendToggle{font-size:11px;height:40px;min-width:44px}
+ .schematic-note,.network-presets{display:none}
+ .zoom-tools{margin-left:auto;padding-left:4px;gap:0}.zoom-tools button{min-width:36px;height:40px;padding:0 5px;font-size:10px}.zoom-tools output{min-width:34px;font-size:11px}.zoom-tools #focusCurrent{display:none}
+ .network-legend{display:none;position:absolute;top:46px;bottom:26px;left:0;width:175px;z-index:12;box-shadow:5px 0 16px #2a201825}
+ .network-legend.open{display:block}
+ .line-choice{min-height:37px}
+ .network-canvas .map-instruction{display:none}
+ .station-inspector{width:calc(100% - 24px);right:12px;bottom:12px;padding:12px 14px}
+ .station-inspector h3{font-size:18px;margin:4px 0}
+ .station-inspector p,.station-inspector small{display:none}
+ .station-inspector .inspector-period{font-size:11px}
+ .inspector-kicker{font-size:9px}
+ #inspectorLines{display:flex;gap:6px;flex-wrap:wrap}
+ .board-line{flex:1;min-width:130px;margin-top:8px;padding:9px 8px;font-size:11px}
+ .network-footer{height:26px;padding:0 10px;font-size:8px}.network-footer>span+span{display:none}
+}
+@media(max-width:820px) and (max-height:520px) and (orientation:landscape){
+ body{flex-direction:initial}
+ #side{height:auto;border-right:0}
+ #mapwrap{display:grid;grid-template-rows:minmax(0,1fr);grid-template-columns:minmax(240px,44%) minmax(0,1fr);width:auto;height:auto}
+ #map{grid-row:1;grid-column:2}
+ #reader,body.has-scenes #reader,#reader:not(.collapsed){grid-row:1;grid-column:1;width:100%;border-top:0;border-right:1px solid var(--rule)}
+ #masthead{flex-wrap:nowrap;gap:8px;padding:3px 10px}
+ #brandMark{width:24px;height:24px}
+ #masthead h1{font-size:14px}
+ #modebar{flex:0 1 auto;order:0}#modebar button{padding:3px 7px;font-size:10.5px}
+ #ghBanner{margin-left:auto;order:0;padding:4px 6px}
+ #modeToggle{order:0;padding:4px 8px;font-size:10px}
+ .ride-heading{height:34px}.station-nav button{height:28px}
+ .route-panel{height:60px}.route-track{height:52px}
+ .route-period-band,.route-stop .stop-transfers,.route-stop .stop-date,.route-future .stop-date{display:none}
+ .route-rail{top:12px}.route-rail.upcoming{top:13px}
+ .route-stop,.route-future{top:0;height:52px}
+ .route-stop .dot,.route-future .dot{top:7px}.route-stop.shared .dot,.route-stop.active .dot{top:6px}
+ .route-stop .stop-text,.route-future .stop-text{top:24px}
+ #readerHead{padding:4px 12px}#reader .eyebrow{display:none}#reader h2{font-size:14px;line-height:1.3;margin:0}#reader h2::after{display:none}
+ #transferBar{padding:0 12px 3px}
+ .scene-nav{padding:2px 8px 2px 12px}#sceneHeading{display:none}#scenePosition{margin-right:auto}.scene-nav button{padding:2px 6px}
+ #mapSceneChip{display:none!important}
+}
+@media(prefers-reduced-motion:reduce){.rail-path{transition:none}}
+
 </style>
 </head>
 <body>
-<aside id="side">
+<header id="masthead">
+  <img id="brandMark" alt="">
+  <div id="brandText"><div class="kicker">Orbis Terrarum</div><h1>简明欧洲史图册<span>历史进程 · 地理图册 · 动力专题</span></h1></div>
+  <div id="modebar" aria-label="图册内容"><button id="tHistory" class="on" aria-pressed="true">历史进程</button><button id="tGeography" aria-pressed="false">地理概念</button><button id="tTopics" aria-pressed="false">动力专题</button></div>
   <a id="ghBanner" href="https://github.com/stabruriss/history-of-europe-in-frames" target="_blank" rel="noopener noreferrer" title="在 GitHub 上查看开源仓库" aria-label="开源项目：欧洲历史笔记（打开 GitHub）">
     <span class="gh-banner-text"><b>开源项目</b><i>·</i><span>欧洲历史笔记</span></span>
     <svg class="gh-icon" viewBox="0 0 16 16" width="15" height="15" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
   </a>
-  <header><div class="kicker">Orbis Terrarum</div><h1>简明欧洲史图册<span>历史进程 · 地理图册 · 动力专题</span></h1></header>
-  <div id="modebar" aria-label="图册内容"><button id="tHistory" class="on" aria-pressed="true">历史进程</button><button id="tGeography" aria-pressed="false">地理概念</button><button id="tTopics" aria-pressed="false">动力专题</button></div>
+  <button id="modeToggle" type="button"></button>
+</header>
+<section id="networkMode" aria-label="历史地铁全图">
+  <div class="network-toolbar"><button id="legendToggle" class="mobile-only" type="button">线路 ☰</button><h2>历史线路全图</h2><span class="schematic-note">站距示意，不按年代等比 · 越往右越晚</span><div class="network-presets"><button data-era="ancient" type="button">古代</button><button data-era="medieval" type="button">中世纪</button><button data-era="late" type="button">近代前夜</button></div><div class="zoom-tools"><button id="zoomOut" type="button" aria-label="缩小">−</button><output id="zoomLevel">100%</output><button id="zoomIn" type="button" aria-label="放大">＋</button><button id="focusCurrent" type="button">当前站</button><button id="fitNetwork" type="button">全网</button></div></div>
+  <div class="network-workspace">
+    <aside class="network-legend" id="networkLegend"><div class="legend-heading"><b>主线</b><span>点线路上车 →</span></div><div id="lineList"></div><div class="symbol-key"><span><i class="key-stop"></i>事件站</span><span><i class="key-transfer"></i>同行线路 · 同站换乘</span><span><i class="key-link"><i></i></i>虚线相连 · 可换乘</span><span><i class="key-cross"></i>线路相交 · 不可换乘</span><span><i class="key-tick"></i>路段标记：王朝／时段</span><span><i class="key-flag"></i><i class="key-flag end"></i>线路起点／终点</span><p>无站圈的分岔来自图册的主线分支，不是换乘站。</p></div></aside>
+    <div class="network-canvas" id="networkCanvas" tabindex="0" aria-label="拖动平移，滚轮缩放，点击车站预览；点击线路乘车">
+      <svg id="networkSvg" role="group" aria-label="历史主线与贯通事件组成的地铁式拓扑图"><g id="viewport"><g id="zones"></g><g id="networkLines"></g><g id="periodTicks"></g><g id="periodLabels"></g><g id="networkNodes"></g><g id="lineFlags"></g><g id="hubNames"></g></g></svg>
+      <div class="year-ruler" id="yearRuler"></div>
+      <div class="map-instruction">拖动平移 <span>·</span> 滚轮／双指缩放 <span>·</span> 点线路上车</div>
+      <aside class="slice-panel" id="slicePanel" hidden><button id="sliceClose" type="button" aria-label="关闭时间切片">×</button><h3 id="sliceTitle"></h3><p id="sliceText"></p></aside>
+      <aside class="station-inspector" id="stationInspector" hidden><button class="inspector-close" id="inspectorClose" type="button" aria-label="关闭车站预览">×</button><div class="inspector-kicker" id="inspectorKicker"></div><h3 id="inspectorTitle"></h3><div class="inspector-period" id="inspectorPeriod"></div><p id="inspectorSummary"></p><div id="inspectorLines"></div><small id="inspectorHint">在贯通站换线，事件和当前幕不会重置。</small><div class="inspector-future" id="inspectorFuture" hidden></div></aside>
+    </div>
+  </div>
+  <footer class="network-footer"><span id="datasetStats"></span><span>地图视野：线路图不是地理底图，站距不代表时长</span></footer>
+</section>
+<section id="ridePanel" aria-label="沿线路线图">
+  <header class="ride-heading"><div class="riding-line" id="ridingLine"></div><span class="ride-instruction">← → 换站 <span>·</span> ↑ ↓ 换幕</span><div class="station-nav"><button id="prevStation" type="button">← 上一站</button><span id="stationPosition"></span><button id="nextStation" type="button">下一站 →</button></div></header>
+  <div class="route-panel"><div class="route-caption"><span>本线路线图</span><b id="routePeriod"></b><small>拖动看全线 · 点站直达</small></div><div class="route-scroller" id="routeScroller" tabindex="0" aria-label="当前主线上的事件站与历史时期"><div class="route-track" id="routeTrack"></div></div></div>
+</section>
+<aside id="side">
   <p id="indexCaption"></p>
   <nav id="toc" aria-label="历史树：按时间与主题浏览"></nav>
   <select id="mobileToc" aria-label="选择历史时期与章节"></select>
@@ -1236,22 +1458,24 @@ body.resizing-reader #map{pointer-events:none}
 </aside>
 <main id="mapwrap" aria-label="交互地图">
   <div id="map"></div>
-  <div id="tools">
+  <div id="tools" hidden>
     <button id="tModern" aria-pressed="false" title="叠加今天的国界与国名，作对照">今日国界</button>
     <button id="tMarine" class="on" aria-pressed="true" title="显示或隐藏海区、海峡、岛屿与群岛名称">海区/岛屿</button>
     <button id="tFit" title="回到当前条目或历史阶段的视野">⟲ 本条视野</button>
   </div>
   <section id="reader" aria-label="地图说明">
     <header id="readerHead"><div id="entryEyebrow" class="eyebrow"></div><h2 id="entryTitle"></h2><div id="entryEnglish" class="en-name"></div><button id="readerToggle" aria-controls="readerBody" aria-expanded="true">收起 −</button></header>
+    <div id="metroBar"><div id="transferBar"></div><div class="scene-nav"><span id="sceneHeading"></span><span id="scenePosition"></span><button id="prevScene" type="button" aria-label="上一幕">↑ 上一幕</button><button id="nextScene" type="button" aria-label="下一幕">下一幕 ↓</button></div></div>
     <div id="readerBody"><article id="card" aria-labelledby="entryTitle"></article></div>
   </section>
+  <div id="mapSceneChip"><div><small id="mapSceneDate"></small><b id="mapSceneTitle"></b></div></div>
   <details id="legendBox"><summary>图例</summary><div id="legend"></div></details>
   <div id="sceneRail" hidden></div>
   <div id="mapnote" role="status" title="部分地形瓦片未载入。区域、路线与文字仍可使用；联网后刷新可显示地形。" hidden>部分地形未载入<br>示意与文字可用</div>
 </main>
 
 <script>
-/* Drag the reader's left edge to set its width. Arrow keys nudge it, double-click or Enter restores it, and the browser remembers it.
+/* Drag the reader's right edge to set its width. Arrow keys nudge it, double-click or Enter restores it, and the browser remembers it.
    This sits in the template because work/v35/build_v35.py regenerates atlas_ui.js and layout.css from its backup.
    It runs before atlas_ui.js so the first map fit sees the remembered width; fit, cur and ENTRIES are that script's, used only after load. */
 {
@@ -1273,12 +1497,12 @@ body.resizing-reader #map{pointer-events:none}
     scroller.scrollTo({top:scroller.scrollTop+now.top+past*now.height-scroller.getBoundingClientRect().top,behavior:'instant'});
     syncAria();
     if(!settled)return;
-    if(cur>=0)fit(ENTRIES[cur],false);
+    map.invalidateSize({animate:false,pan:false});if(cur>=0)fit(ENTRIES[cur],false);
     try{if(w===null)localStorage.removeItem(KEY);else localStorage.setItem(KEY,String(width()));}catch{}
   };
   grip.addEventListener('pointerdown',ev=>{
     if(ev.button!==0)return;ev.preventDefault();grip.setPointerCapture(ev.pointerId);document.body.classList.add('resizing-reader');
-    const startX=ev.clientX,startWidth=width(),widthAt=x=>startWidth+startX-x;
+    const startX=ev.clientX,startWidth=width(),widthAt=x=>startWidth+x-startX;
     let frame=0,x=startX,moved=false;
     const move=e=>{x=e.clientX;moved=true;if(!frame)frame=requestAnimationFrame(()=>{frame=0;setWidth(widthAt(x),false);});};
     const up=()=>{
@@ -1290,7 +1514,7 @@ body.resizing-reader #map{pointer-events:none}
   });
   grip.ondblclick=()=>setWidth(null);
   grip.onkeydown=ev=>{
-    const step=ev.shiftKey?64:16,target={ArrowLeft:width()+step,ArrowRight:width()-step,Home:0,End:1e5}[ev.key];
+    const step=ev.shiftKey?64:16,target={ArrowLeft:width()-step,ArrowRight:width()+step,Home:0,End:1e5}[ev.key];
     if(target!==undefined){ev.preventDefault();setWidth(target);}
     else if(ev.key==='Enter'){ev.preventDefault();setWidth(null);}
   };
@@ -1299,6 +1523,7 @@ body.resizing-reader #map{pointer-events:none}
   syncAria();
 }
 </script>
+<script>window.atlasOpenedBare=location.hash.length<2;</script>
 <script>/* @preserve
  * Leaflet 1.9.4, a JS library for interactive maps. https://leafletjs.com
  * (c) 2010-2023 Vladimir Agafonkin, (c) 2010-2011 CloudMade
@@ -44450,6 +44675,952 @@ card.addEventListener('click',ev=>{
   const trigger=ev.target.closest('.kin-open,svg.kin-tree');
   if(trigger){const box=trigger.closest('.box');if(box)openKinSheet(box);}
 });
+
+</script>
+<script>
+// Route-section marks only (dynasty or broad period), written for this mock as an orientation aid.
+// They are not atlas chapter labels and not event stations: a chapter can span several marks.
+// Stations, text, scenes and interchange membership always come from atlas-data.js.
+window.ROUTE_PERIODS = {
+ trunk:[[-68000,-1200,'史前与青铜时代'],[-1200,-800,'早期铁器时代'],[-800,-480,'古风时期'],[-480,-323,'古典时期'],[-323,-30,'希腊化时期']],
+ rome:[[-1000,-509,'起源与王政'],[-509,-27,'罗马共和国'],[-27,476,'罗马帝国']],
+ east:[[395,610,'晚期罗马'],[610,867,'希拉克略至阿莫里亚'],[867,1056,'马其顿王朝'],[1056,1081,'杜卡斯时期'],[1081,1204,'科穆宁与安格洛斯'],[1204,1261,'拉丁帝国时期'],[1261,1453,'巴列奥略王朝']],
+ west:[[476,751,'蛮族诸王国与墨洛温'],[751,843,'加洛林王朝']],
+ spain:[[481,711,'西哥特王国'],[711,1031,'后倭马亚的安达卢斯'],[1031,1469,'诸国并立与收复失地'],[1469,1501,'天主教双王']],
+ france:[[843,987,'西法兰克'],[987,1328,'卡佩王朝'],[1328,1500,'瓦卢瓦王朝']],
+ lowlands:[[843,1384,'佛兰德斯与诸伯国'],[1384,1477,'勃艮第尼德兰'],[1477,1501,'哈布斯堡尼德兰']],
+ germany:[[843,919,'东法兰克'],[919,1024,'奥托王朝'],[1024,1125,'萨利安王朝'],[1125,1254,'霍亨施陶芬时期'],[1254,1273,'大空位'],[1273,1438,'诸家轮替选王'],[1438,1501,'哈布斯堡时期']],
+ italy:[[843,1075,'帝国与教宗之间'],[1075,1302,'教权、皇权与城邦'],[1302,1495,'城市国家与文艺复兴']],
+ britain:[[-55,410,'罗马不列颠'],[410,1066,'盎格鲁—撒克逊时期'],[1066,1154,'诺曼王朝'],[1154,1399,'金雀花王朝'],[1399,1485,'兰开斯特与约克'],[1485,1500,'都铎王朝']],
+ faith:[[-1400,30,'希伯来与犹太教'],[30,313,'早期教会'],[313,1054,'帝国教会时期'],[1054,1309,'教权与王权'],[1309,1377,'阿维尼翁时期'],[1377,1517,'大分裂与大公会议']],
+ egypt:[[-3100,-332,'法老时代'],[-332,-30,'托勒密王朝'],[-30,395,'罗马埃及'],[395,642,'东罗马埃及']],
+ persia:[[-3200,-550,'古代两河与伊朗'],[-550,-330,'阿契美尼德王朝'],[-330,-141,'塞琉古时期'],[-141,224,'安息（帕提亚）'],[224,651,'萨珊王朝'],[651,945,'阿拉伯哈里发'],[945,1258,'白益与塞尔柱时代'],[1258,1405,'伊儿汗国与帖木儿'],[1405,1502,'奥斯曼崛起']],
+ eeurope:[[-700,375,'古代黑海世界'],[375,862,'斯拉夫人迁徙'],[862,1240,'基辅罗斯'],[1240,1480,'蒙古统治时期'],[1480,1510,'莫斯科大公国']],
+ crusade:[[1070,1096,'东征前夜'],[1096,1144,'首次东征与十字军国家'],[1144,1198,'第二、三次东征'],[1198,1270,'第四至第八次东征'],[1270,1525,'圣地陷落之后']],
+ china:[[-7000,-770,'史前与上古'],[-770,-453,'春秋'],[-453,-221,'战国'],[-221,220,'秦汉'],[220,589,'魏晋南北朝'],[589,907,'隋唐']]
+};
+
+// Hand-composed route plan for the network map, the way a metro diagram is drawn:
+// a designer decides where each line runs; the engine in metro_layout.js only
+// solves exact x positions and places labels.
+//
+// A knot is [t, y, mode, dx]. t is the atlas anchor year, y the world height.
+// mode 'e' leaves the previous knot at once; otherwise the line turns just before this knot.
+// dx shifts the knot horizontally (where a branch leaves its parent's rail).
+//
+// Lines run straight on their own lane and change lane rarely, by one 45deg run. They do
+// not detour to meet: rails that travel together are bundled one step apart and share a
+// capsule; rails that stay apart each carry a ring, joined by a dashed link.
+// Nothing here adds an event or a connection: stations and interchange membership come
+// only from the atlas's tree rows, and branch / merge points from its parent, from and ends fields.
+// A new HISTORY_BRANCHES line gets a spare lane until it has a route here; verify-metro.js fails until then.
+window.NETWORK_DESIGN = (() => {
+  const S = 2.2, B = 13;
+  const y = (level, k = 0) => Math.round(level * S) + k * B;
+
+  // Lanes, top to bottom.
+  const TOP = 60;        // eastern europe in antiquity
+  const BRITAIN = 140;   // greece, then britain; france bundles here from 1154
+  const FRANCE = 182;
+  const LOW = 224;       // low countries
+  const ROME = 266;      // rome, then the medieval west, then italy: one straight lane
+  const GER0 = 310;      // germany before it bundles with the church
+  const GERMANY = 345;   // germany; the church runs one step below
+  const CRUSADE = 395;
+  const PERSIA = 440;    // persia; east rome bundles one step below from 602
+  const EAST0 = 470;     // east rome before it bundles with persia
+  const EASTEU = 505;    // egypt in antiquity, eastern europe from 860
+  const SPAIN = 550;
+  const CHINA = 620;
+
+  const routes = {
+    trunk: [[-68000, y(ROME)], [-1000, y(ROME), null, -34], [-800, y(BRITAIN), 'e'], [-55, y(BRITAIN), null, -26], [-30, y(ROME), 'e']],
+    rome: [[-1000, y(ROME), null, -34], [476, y(ROME), null, -14]],
+    west: [[476, y(ROME), null, -14], [830, y(ROME)]],
+    italy: [[830, y(ROME)], [1454, y(ROME)]],
+    china: [[-7000, y(CHINA)], [589, y(CHINA)]],
+    persia: [[-3200, y(ROME), null, -20], [-3200, y(PERSIA)], [1454, y(PERSIA)]],
+    egypt: [[-3100, y(ROME), null, -100], [-3100, y(EASTEU)], [632, y(EASTEU)]],
+    faith: [[-1400, y(ROME), null, -34], [-1400, y(GERMANY, 1)], [1450, y(GERMANY, 1)]],
+    eeurope: [[-700, y(BRITAIN), null, -34], [-700, y(TOP)], [602, y(TOP)], [860, y(EASTEU)], [1455, y(EASTEU)]],
+    britain: [[-55, y(BRITAIN), null, -26], [1472, y(BRITAIN)]],
+    east: [[395, y(ROME), null, -34], [395, y(EAST0)], [518, y(EAST0)], [602, y(PERSIA, 1)], [1450, y(PERSIA, 1)]],
+    spain: [[481, y(ROME), null, -34], [481, y(SPAIN)], [1470, y(SPAIN)]],
+    france: [[830, y(ROME)], [843, y(FRANCE), 'e'], [1137, y(FRANCE)], [1154, y(BRITAIN, 1)], [1461, y(BRITAIN, 1)]],
+    lowlands: [[830, y(ROME), null, -10], [1300, y(LOW), 'e'], [1495, y(LOW)]],
+    germany: [[830, y(ROME)], [843, y(GER0), 'e'], [860, y(GER0)], [951, y(GERMANY)], [1495, y(GERMANY)]],
+    crusade: [[1070, y(GERMANY, 1), null, -92], [1070, y(CRUSADE)], [1295, y(CRUSADE)]],
+  };
+
+  // Room around branch points, and where a name needs to sit between dashed links.
+  const gaps = [
+    [-4000, -3200, 48], [-4000, -3100, 128],
+    [-1900, -1400, 62], [-1100, -1000, 66],
+    [-730, -700, 62], [-200, -55, 60], [-44, -30, 40], [-30, -27, 20],
+    [379, 395, 62], [455, 476, 30], [480, 481, 62],
+    [814, 830, 100],
+    [1056, 1070, 110],
+    [641, 641.4, 34],
+    [1296, 1300, 74], [1300, 1304, 74], [1438, 1450, 26], [1450, 1454, 72],
+  ];
+
+  // Keeps a plain stop off a dashed link that shares its anchor year.
+  const nudge = { 'history-empire-constans/0': 0.4 };
+
+  return { S, B, routes, gaps, nudge, top: y(TOP) };
+})();
+
+// Turns the route plan in metro_design.js into exact geometry: solves x positions,
+// builds simple octilinear rails, draws interchanges and places every name without
+// collisions. Pure and deterministic, so a Node script can check it without a browser.
+//
+// An interchange is one station. Rails that run bundled share one capsule; rails that
+// run apart each carry a ring, and a dashed link joins the rings at one x position.
+(function (global) {
+  'use strict';
+  const RAIL_HALF = 3, GLYPH_R = 4.5, BUNDLED_R = 3.6, RING_R = 5.5, CAPSULE_R = 6.5;
+  const NAME_H = 15, NAME_DATE_H = 27, FS = 12.5, MIN_STOP_GAP = 32;
+  const FLAG_H = 20, FLAG_POINT = 8, SPARE_LANE = 48;
+
+  const textWidth = (text, size) => {
+    let w = 0;
+    for (const c of String(text)) w += /[⺀-￯]/.test(c) ? size : size * 0.56;
+    return w;
+  };
+  const overlaps = (a, b) => a.x0 < b.x1 && a.x1 > b.x0 && a.y0 < b.y1 && a.y1 > b.y0;
+
+  function segmentHitsBox(s, box, pad) {
+    const x0 = box.x0 - pad, x1 = box.x1 + pad, y0 = box.y0 - pad, y1 = box.y1 + pad;
+    let t0 = 0, t1 = 1;
+    const dx = s.x2 - s.x1, dy = s.y2 - s.y1;
+    for (const [p, q] of [[-dx, s.x1 - x0], [dx, x1 - s.x1], [-dy, s.y1 - y0], [dy, y1 - s.y1]]) {
+      if (p === 0) { if (q < 0) return false; continue; }
+      const r = q / p;
+      if (p < 0) { if (r > t1) return false; if (r > t0) t0 = r; }
+      else { if (r < t0) return false; if (r < t1) t1 = r; }
+    }
+    return true;
+  }
+
+  function properCross(a, b) {
+    const side = (p, q, r) => (q.x - p.x) * (r.y - p.y) - (q.y - p.y) * (r.x - p.x);
+    const A = { x: a.x1, y: a.y1 }, B = { x: a.x2, y: a.y2 }, C = { x: b.x1, y: b.y1 }, D = { x: b.x2, y: b.y2 };
+    return side(A, B, C) * side(A, B, D) < -1e-6 && side(C, D, A) * side(C, D, B) < -1e-6;
+  }
+
+  function build({ stations, lines, lineStops, design, periods, ends }) {
+    // Two stops of one line can share an anchor year; keep them in route order.
+    const tx = new Map(stations.map(s => [s.key, s.t]));
+    for (const line of lines) {
+      let last = -Infinity;
+      for (const s of lineStops.get(line.id)) {
+        if (tx.get(s.key) <= last) tx.set(s.key, last + 0.25);
+        last = tx.get(s.key);
+      }
+    }
+
+    for (const [key, shift] of Object.entries(design.nudge || {})) tx.set(key, tx.get(key) + shift);
+
+    // A line not yet drawn in metro_design.js still runs, on a spare lane under the rest; the report names it.
+    const deepest = Math.max(...Object.values(design.routes).flat().map(k => k[1]));
+    const undrawn = lines.filter(l => !design.routes[l.id]).map(l => l.id);
+    const spareRoutes = Object.fromEntries(undrawn.map((id, i) => {
+      const seq = lineStops.get(id), y = deepest + SPARE_LANE * (i + 1);
+      return [id, [[tx.get(seq[0].key), y], [tx.get(seq[seq.length - 1].key), y]]];
+    }));
+    const knotsOf = id => design.routes[id] || spareRoutes[id];
+    const allTimes = [...new Set([...tx.values(), ...lines.flatMap(l => knotsOf(l.id).map(k => k[0])), ...design.gaps.flatMap(g => [g[0], g[1]])])].sort((a, b) => a - b);
+    const index = new Map(allTimes.map((t, i) => [t, i]));
+    const learned = new Map();
+    const addLearned = (a, b, d) => {
+      const [p, q] = a < b ? [a, b] : [b, a];
+      if (p === q) return;
+      const key = p + '|' + q;
+      learned.set(key, { a: p, b: q, d: Math.max(d, learned.get(key)?.d || 0) });
+    };
+
+    let xs = [];
+    const X = t => xs[index.get(t)];
+    const XAt = t => {
+      if (index.has(t)) return X(t);
+      if (t <= allTimes[0]) return xs[0];
+      if (t >= allTimes[allTimes.length - 1]) return xs[xs.length - 1];
+      let lo = 0, hi = allTimes.length - 1;
+      while (hi - lo > 1) { const m = (lo + hi) >> 1; if (allTimes[m] <= t) lo = m; else hi = m; }
+      return xs[lo] + (t - allTimes[lo]) / (allTimes[hi] - allTimes[lo]) * (xs[hi] - xs[lo]);
+    };
+
+    const labelWidth = s => Math.max(textWidth(s.title, FS), textWidth(s.period, 9.5) * 0.92) + 6;
+
+    function solveX() {
+      const cons = allTimes.map(() => []);
+      const add = (a, b, d) => { const i = index.get(a), j = index.get(b); if (i < j) cons[j].push([i, d]); };
+      for (const line of lines) {
+        const seq = lineStops.get(line.id);
+        seq.forEach((s, i) => {
+          if (i) add(tx.get(seq[i - 1].key), tx.get(s.key), MIN_STOP_GAP);
+          if (i > 1) add(tx.get(seq[i - 2].key), tx.get(s.key), (labelWidth(seq[i - 2]) + labelWidth(s)) / 2 + 8);
+        });
+        const knots = knotsOf(line.id);
+        for (let i = 2; i < knots.length; i++) {
+          // Every lane change after a branch's first leg is one clean 45deg run.
+          const [t0, y0, , dx0 = 0] = knots[i - 1], [t1, y1, , dx1 = 0] = knots[i];
+          const dy = Math.abs(y1 - y0);
+          if (dy) add(t0, t1, dy + 6 - (dx1 - dx0));
+        }
+        if (knots.length > 1) {
+          const [t0, y0, , dx0 = 0] = knots[0], [t1, y1, , dx1 = 0] = knots[1];
+          const dy = Math.abs(y1 - y0);
+          if (dy && t0 !== t1) add(t0, t1, dy + 6 - (dx1 - dx0));
+        }
+      }
+      for (const [a, b, d] of design.gaps) add(a, b, d);
+      for (const { a, b, d } of learned.values()) add(a, b, d);
+      xs = new Array(allTimes.length);
+      xs[0] = 170;
+      for (let j = 1; j < allTimes.length; j++) {
+        let x = xs[j - 1] + 0.4;
+        for (const [i, d] of cons[j]) x = Math.max(x, xs[i] + d);
+        xs[j] = x;
+      }
+    }
+
+    function routePoints(id) {
+      const knots = knotsOf(id), pts = [], tight = [];
+      knots.forEach(([t, y, mode, dx = 0], i) => {
+        const x = X(t) + dx;
+        if (!i) { pts.push({ x, y }); return; }
+        const prev = pts[pts.length - 1], dy = Math.abs(y - prev.y), run = x - prev.x, sign = Math.sign(y - prev.y);
+        if (dy < 0.5) { pts.push({ x, y }); return; }
+        if (run >= dy - 0.5) {
+          // A final early turn ends where it lands: that is a merge into another line.
+          if (mode === 'e' && i === knots.length - 1) pts.push({ x: prev.x + dy, y });
+          else if (mode === 'e') pts.push({ x: prev.x + dy, y }, { x, y });
+          else pts.push({ x: x - dy, y: prev.y }, { x, y });
+          return;
+        }
+        // A branch drops straight off its parent's rail, then eases into its first stop.
+        const c = Math.max(0, run);
+        if (i !== 1) tight.push({ line: id, t, run: Math.round(run), dy: Math.round(dy) });
+        pts.push({ x: x - c, y: y - sign * c }, { x, y });
+      });
+      // Stops added beyond the drawn route: the line carries straight on to reach them.
+      const seq = lineStops.get(id), firstX = X(tx.get(seq[0].key)), lastX = X(tx.get(seq[seq.length - 1].key));
+      if (firstX < pts[0].x) pts.unshift({ x: firstX, y: pts[0].y });
+      if (lastX > pts[pts.length - 1].x) pts.push({ x: lastX, y: pts[pts.length - 1].y });
+      return { pts: pts.filter((p, i) => !i || Math.hypot(p.x - pts[i - 1].x, p.y - pts[i - 1].y) > 0.5), tight };
+    }
+
+    const yOn = (pts, x) => {
+      if (x <= pts[0].x) return pts[0].y;
+      for (let i = 1; i < pts.length; i++) {
+        const a = pts[i - 1], b = pts[i];
+        if (x <= b.x) return b.x === a.x ? b.y : a.y + (x - a.x) / (b.x - a.x) * (b.y - a.y);
+      }
+      return pts[pts.length - 1].y;
+    };
+
+    const nodes = new Map(stations.map(s => [s.key, { key: s.key, s }]));
+    let routes = new Map(), segments = [], links = [], tightList = [], flagList = [];
+
+    function geometry() {
+      solveX();
+      routes = new Map(); segments = []; tightList = []; links = [];
+      for (const line of lines) {
+        const { pts, tight } = routePoints(line.id);
+        routes.set(line.id, pts);
+        tightList.push(...tight);
+        for (let i = 1; i < pts.length; i++) segments.push({ line: line.id, x1: pts[i - 1].x, y1: pts[i - 1].y, x2: pts[i].x, y2: pts[i].y });
+      }
+      for (const n of nodes.values()) {
+        n.x = X(tx.get(n.key));
+        n.ys = Object.fromEntries(n.s.lines.map(id => [id, yOn(routes.get(id), n.x)]));
+        const rails = n.s.lines.map(id => ({ id, y: n.ys[id] })).sort((a, b) => a.y - b.y);
+        n.clusters = [];
+        if (rails.length === 1) {
+          // A plain stop beside another rail gets a smaller glyph, nudged off its neighbour.
+          let r = GLYPH_R, shift = 0;
+          for (const line of lines) {
+            if (line.id === rails[0].id) continue;
+            const pts = routes.get(line.id);
+            if (!pts?.length || n.x < pts[0].x || n.x > pts[pts.length - 1].x) continue;
+            const d = yOn(pts, n.x) - rails[0].y;
+            if (Math.abs(d) < 10) { r = BUNDLED_R; shift = d > 0 ? -1.4 : 1.4; }
+          }
+          n.clusters.push({ lines: [rails[0].id], y0: rails[0].y + shift, y1: rails[0].y + shift, r });
+        } else {
+          for (const rail of rails) {
+            const last = n.clusters[n.clusters.length - 1];
+            if (last && rail.y - last.y1 <= design.B + 1) { last.lines.push(rail.id); last.y1 = rail.y; }
+            else n.clusters.push({ lines: [rail.id], y0: rail.y, y1: rail.y });
+          }
+          for (const c of n.clusters) c.r = c.lines.length > 1 ? CAPSULE_R : RING_R;
+        }
+        for (const c of n.clusters) c.box = { x0: n.x - c.r, x1: n.x + c.r, y0: c.y0 - c.r, y1: c.y1 + c.r };
+        n.y0 = n.clusters[0].y0;
+        n.y1 = n.clusters[n.clusters.length - 1].y1;
+        n.y = (n.y0 + n.y1) / 2;
+        n.link = n.clusters.length > 1 ? { x: n.x, y0: n.clusters[0].y1 + n.clusters[0].r, y1: n.clusters[n.clusters.length - 1].y0 - n.clusters[n.clusters.length - 1].r } : null;
+        if (n.link) links.push({ key: n.key, x1: n.x, y1: n.link.y0, x2: n.x, y2: n.link.y1 });
+      }
+    }
+
+    const allGlyphs = () => [...nodes.values()].flatMap(n => n.clusters.map(c => ({ key: n.key, box: c.box })));
+
+    // Signpost flags: the start flag points right at the line's first stop, the end flag
+    // points left at its last. Station names then avoid them.
+    function placeFlags(glyphs) {
+      const out = [];
+      for (const line of lines) {
+        const seq = lineStops.get(line.id);
+        if (!seq.length) continue;
+        const w = textWidth(line.name, 11) + 12 + FLAG_POINT;
+        for (const [end, n] of [['start', nodes.get(seq[0].key)], ['end', nodes.get(seq[seq.length - 1].key)]]) {
+          const y = n.ys[line.id], sign = end === 'start' ? -1 : 1;
+          const r = n.clusters.find(c => c.lines.includes(line.id)).r + 3;
+          const tips = [[n.x + sign * r, y], [n.x + sign * 2, y + 16], [n.x + sign * 2, y - 16], [n.x + sign * (r + 18), y], [n.x + sign * 2, y + 32], [n.x + sign * 2, y - 32]];
+          const boxAt = (tx0, ty) => ({ x0: sign < 0 ? tx0 - w : tx0, x1: sign < 0 ? tx0 : tx0 + w, y0: ty - FLAG_H / 2, y1: ty + FLAG_H / 2 });
+          const free = (box, onRail) => !segments.some(s => (!onRail || s.line !== line.id) && segmentHitsBox(s, box, 1.5))
+            && !links.some(l => segmentHitsBox(l, box, 1.5))
+            && !glyphs.some(g => g.key !== n.key && overlaps(box, g.box))
+            && !out.some(f => overlaps(box, f.box));
+          const tip = tips.find(([tipX, tipY]) => free(boxAt(tipX, tipY), tipY === y));
+          const [tipX, tipY] = tip || tips[0];
+          out.push({ line: line.id, name: line.name, c: line.c, end, free: Boolean(tip), onRail: tipY === y, tipX, tipY, w, h: FLAG_H, box: boxAt(tipX, tipY) });
+        }
+      }
+      return out;
+    }
+
+    function placeLabels() {
+      const glyphs = allGlyphs();
+      flagList = placeFlags(glyphs);
+      const placed = flagList.filter(f => f.free).map(f => ({ key: 'flag:' + f.line + ':' + f.end, box: f.box, flag: true }));
+      const unresolved = [];
+      const ordered = [...nodes.values()].sort((a, b) => b.s.lines.length - a.s.lines.length || a.x - b.x);
+      const sideOf = new Map();
+      const prevSide = n => {
+        for (const id of n.s.lines) {
+          const seq = lineStops.get(id), i = seq.findIndex(s => s.key === n.key);
+          for (const j of [i - 1, i + 1]) { const side = seq[j] && sideOf.get(seq[j].key); if (side) return side; }
+        }
+        return null;
+      };
+      const conflicts = (box, n) => {
+        const hits = [];
+        for (const s of segments) if (segmentHitsBox(s, box, RAIL_HALF)) { hits.push({ kind: 'rail', line: s.line }); break; }
+        for (const l of links) if (segmentHitsBox(l, box, 2)) { hits.push({ kind: 'link', key: l.key }); break; }
+        for (const g of glyphs) if (g.key !== n.key && overlaps(box, g.box)) { hits.push({ kind: 'glyph', key: g.key }); break; }
+        for (const p of placed) if (overlaps(box, p.box)) { hits.push({ kind: 'label', key: p.key, flag: p.flag }); break; }
+        return hits;
+      };
+      for (const n of ordered) {
+        const w = textWidth(n.s.title, FS) + 4, wd = labelWidth(n.s), gap = 4;
+        const top = n.clusters[0], bottom = n.clusters[n.clusters.length - 1];
+        const above = (bw, h, shift = 0, anchor = 'middle') => {
+          const x0 = anchor === 'middle' ? n.x - bw / 2 : anchor === 'start' ? n.x - 5 : n.x + 5 - bw;
+          return { x0, x1: x0 + bw, y0: top.box.y0 - gap - h - shift, y1: top.box.y0 - gap - shift, anchor, side: 'above', far: shift > 0, leaderFrom: top.box.y0 };
+        };
+        const below = (bw, h, shift = 0, anchor = 'middle') => {
+          const x0 = anchor === 'middle' ? n.x - bw / 2 : anchor === 'start' ? n.x - 5 : n.x + 5 - bw;
+          return { x0, x1: x0 + bw, y0: bottom.box.y1 + gap + shift, y1: bottom.box.y1 + gap + h + shift, anchor, side: 'below', far: shift > 0, leaderFrom: bottom.box.y1 };
+        };
+        const beside = (bw, h, cy, right) => ({ x0: right ? n.x + RING_R + gap : n.x - RING_R - gap - bw, x1: right ? n.x + RING_R + gap + bw : n.x - RING_R - gap, y0: cy - h / 2, y1: cy + h / 2, anchor: right ? 'start' : 'end', side: right ? 'right' : 'left' });
+        const candidates = (bw, h) => {
+          const prefer = prevSide(n) === 'above' ? below : prevSide(n) === 'below' ? above : (n.s.lines.length > 1 ? above : below);
+          const other = prefer === above ? below : above;
+          const out = [prefer(bw, h), other(bw, h), prefer(bw, h, 0, 'start'), other(bw, h, 0, 'start'), prefer(bw, h, 0, 'end'), other(bw, h, 0, 'end')];
+          // Names of far-apart interchanges can also sit beside the dashed link.
+          if (n.link) for (const f of [0.5, 0.3, 0.7, 0.15, 0.85]) {
+            const cy = n.link.y0 + (n.link.y1 - n.link.y0) * f;
+            out.push(beside(bw, h, cy, true), beside(bw, h, cy, false));
+          }
+          for (const c of n.clusters) { const cy = (c.y0 + c.y1) / 2; out.push(beside(bw, h, cy, true), beside(bw, h, cy, false), beside(bw, h, cy - h / 2 - 8, true), beside(bw, h, cy + h / 2 + 8, true), beside(bw, h, cy - h / 2 - 8, false), beside(bw, h, cy + h / 2 + 8, false)); }
+          for (const shift of [16, 36, 58]) out.push(prefer(bw, h, shift), other(bw, h, shift));
+          return out;
+        };
+        let chosen = null, withDate = false;
+        for (const [list, date] of [[candidates(wd, NAME_DATE_H), true], [candidates(w, NAME_H), false]]) {
+          chosen = list.find(b => !conflicts(b, n).length) || null;
+          if (chosen) { withDate = date; break; }
+        }
+        if (!chosen) {
+          const best = candidates(w, NAME_H).map(b => ({ b, hits: conflicts(b, n) })).sort((p, q) => p.hits.length - q.hits.length)[0];
+          chosen = best.b;
+          unresolved.push({ key: n.key, title: n.s.title, hits: best.hits });
+          // Only a clash with another name can be cured by moving stations apart.
+          for (const h of best.hits) {
+            if (h.flag || (h.kind !== 'label' && h.kind !== 'link')) continue;
+            addLearned(tx.get(n.key), tx.get(h.key), Math.abs(n.x - nodes.get(h.key).x) + 18);
+          }
+        }
+        n.label = {
+          box: chosen, anchor: chosen.anchor, side: chosen.side, withDate, far: Boolean(chosen.far), leaderFrom: chosen.leaderFrom,
+          x: chosen.anchor === 'middle' ? (chosen.x0 + chosen.x1) / 2 : chosen.anchor === 'start' ? chosen.x0 : chosen.x1,
+          y: chosen.y0 + 12,
+        };
+        sideOf.set(n.key, chosen.side);
+        placed.push({ key: n.key, box: chosen });
+      }
+      return { placed, unresolved };
+    }
+
+    let iterations = 0, result;
+    for (; iterations < 6; iterations++) {
+      geometry();
+      result = placeLabels();
+      if (!result.unresolved.length) break;
+    }
+    iterations++;
+
+    // Dynasty and period marks along each line: ticks at boundaries, names where they fit.
+    const periodMarks = [], ticks = [], periodBoxes = [];
+    const glyphBoxes = allGlyphs().map(g => g.box);
+    const labelBoxes = result.placed.map(p => p.box);
+    const railFree = box => !segments.some(s => segmentHitsBox(s, box, RAIL_HALF)) && !links.some(l => segmentHitsBox(l, box, 2));
+    for (const line of lines) {
+      const seq = lineStops.get(line.id), list = periods[line.id] || [], pts = routes.get(line.id);
+      if (!seq.length) continue;
+      const first = seq[0].t, last = seq[seq.length - 1].t;
+      for (const [start, end, name] of list) {
+        const a = Math.max(start, first), b = Math.min(end, last);
+        if (start >= last || end <= first) continue;
+        if (end > first && end < last) {
+          let x = XAt(end);
+          const clear = v => !seq.some(st => Math.abs(nodes.get(st.key).x - v) < 13);
+          if (!clear(x)) x = [x - 15, x + 15, x - 24, x + 24].find(clear) ?? x;
+          const y = yOn(pts, x), yl = yOn(pts, x - 3), yr = yOn(pts, x + 3);
+          if (Math.abs(yl - yr) < 0.5) ticks.push({ line: line.id, x, y });
+        }
+        const xa = XAt(a), xb = XAt(b), w = textWidth(name, 10.5) + 6, h = 13;
+        if (xb - xa < 14) { periodMarks.push({ line: line.id, name, placed: false, tiny: true, start, end }); continue; }
+        const tryPlace = strict => {
+          const spots = [0.5];
+          for (let d = 0.07; d <= 0.5; d += 0.07) spots.push(0.5 - d, 0.5 + d);
+          for (const f of spots) {
+            const cx = xa + (xb - xa) * f, ry = yOn(pts, cx), flat = Math.abs(yOn(pts, cx - w / 2) - ry) < 0.5 && Math.abs(yOn(pts, cx + w / 2) - ry) < 0.5;
+            if (!flat) continue;
+            for (const off of [7, 22, 38]) for (const side of [1, -1]) {
+              const box = { x0: cx - w / 2, x1: cx + w / 2, y0: side > 0 ? ry + off : ry - off - h, y1: side > 0 ? ry + off + h : ry - off };
+              if (!railFree(box) || glyphBoxes.some(g => overlaps(box, g)) || periodBoxes.some(p => overlaps(box, p))) continue;
+              if (strict && labelBoxes.some(l => overlaps(box, l))) continue;
+              return { box, cx };
+            }
+          }
+          // A section that is all diagonal: sit beside the slope instead.
+          for (const f of spots) {
+            const px = xa + (xb - xa) * f, ry = yOn(pts, px);
+            for (const [bx0, by0] of [[px + 8, ry + 3], [px - w - 8, ry - h - 3], [px + 8, ry - h - 3], [px - w - 8, ry + 3], [px + 16, ry + 10], [px - w - 16, ry - h - 10]]) {
+              const box = { x0: bx0, x1: bx0 + w, y0: by0, y1: by0 + h };
+              if (!railFree(box) || glyphBoxes.some(g => overlaps(box, g)) || periodBoxes.some(p => overlaps(box, p))) continue;
+              if (strict && labelBoxes.some(l => overlaps(box, l))) continue;
+              return { box, cx: bx0 + w / 2 };
+            }
+          }
+          return null;
+        };
+        const strict = tryPlace(true), spot = strict || tryPlace(false);
+        if (!spot) { periodMarks.push({ line: line.id, name, placed: false, start, end }); continue; }
+        periodBoxes.push(spot.box);
+        periodMarks.push({ line: line.id, name, placed: true, strict: Boolean(strict), x: spot.cx, y: spot.box.y0 + 10.5, start, end });
+      }
+    }
+
+    // Branch and merge notes, using the atlas's own ends data only.
+    const notes = [];
+    for (const [id, t, name, note] of ends || []) {
+      const pts = routes.get(id);
+      if (!pts) continue;
+      const end = pts[pts.length - 1], w = textWidth(name, 10.5) + 6, h = 13;
+      const options = [[end.x + 6, end.y - 22], [end.x - w - 6, end.y - 22], [end.x + 6, end.y + 9], [end.x - w - 6, end.y + 9], [end.x + 14, end.y - 40], [end.x - w - 14, end.y + 26]];
+      for (const [x, y] of options) {
+        const box = { x0: x, x1: x + w, y0: y, y1: y + h };
+        if (!railFree(box) || glyphBoxes.some(g => overlaps(box, g)) || labelBoxes.some(l => overlaps(box, l)) || periodBoxes.some(p => overlaps(box, p))) continue;
+        notes.push({ line: id, name, note, year: t, x, y: y + 10.5 });
+        periodBoxes.push(box);
+        break;
+      }
+    }
+
+    // Quality report, asserted by verify_mock.cjs.
+    const foreign = [];
+    for (const n of nodes.values()) for (const c of n.clusters) for (const s of segments) {
+      if (c.lines.includes(s.line)) continue;
+      if (segmentHitsBox(s, c.box, 0)) foreign.push({ station: n.s.title, line: s.line });
+    }
+    const linkThroughStations = [], linkOnRail = [];
+    for (const l of links) {
+      for (const n of nodes.values()) {
+        if (n.key === l.key) continue;
+        if (n.clusters.some(c => segmentHitsBox(l, c.box, 0))) linkThroughStations.push({ link: nodes.get(l.key).s.title, station: n.s.title });
+      }
+      for (const s of segments) {
+        if (Math.abs(s.x1 - s.x2) > 0.5 || Math.abs(s.x1 - l.x1) > 3) continue;
+        if (Math.min(l.y2, Math.max(s.y1, s.y2)) - Math.max(l.y1, Math.min(s.y1, s.y2)) > 6) linkOnRail.push({ link: nodes.get(l.key).s.title, line: s.line });
+      }
+    }
+    const overlapsRail = [];
+    let crossings = 0;
+    for (let i = 0; i < segments.length; i++) for (let j = i + 1; j < segments.length; j++) {
+      const a = segments[i], b = segments[j];
+      if (a.line === b.line) continue;
+      if (properCross(a, b)) crossings++;
+      const ax = a.x2 - a.x1, ay = a.y2 - a.y1, bx = b.x2 - b.x1, by = b.y2 - b.y1;
+      if (Math.abs(ax * by - ay * bx) > 1e-6) continue;
+      const d = Math.abs((b.x1 - a.x1) * ay - (b.y1 - a.y1) * ax) / Math.hypot(ax, ay);
+      if (d > 2) continue;
+      const lo = Math.max(Math.min(a.x1, a.x2), Math.min(b.x1, b.x2)), hi = Math.min(Math.max(a.x1, a.x2), Math.max(b.x1, b.x2));
+      if (hi - lo > 6) overlapsRail.push({ a: a.line, b: b.line, from: Math.round(lo), to: Math.round(hi) });
+    }
+    const boxes = [...nodes.values()];
+    const world = {
+      minX: Math.min(...boxes.map(n => n.label.box.x0), ...segments.map(s => s.x1), ...flagList.map(f => f.box.x0)),
+      maxX: Math.max(...boxes.map(n => n.label.box.x1), ...segments.map(s => s.x2), ...flagList.map(f => f.box.x1)),
+      minY: Math.min(...boxes.map(n => n.label.box.y0), ...segments.map(s => Math.min(s.y1, s.y2))),
+      maxY: Math.max(...boxes.map(n => n.label.box.y1), ...segments.map(s => Math.max(s.y1, s.y2))),
+    };
+    const bendsByLine = Object.fromEntries(lines.map(l => [l.id, Math.max(0, (routes.get(l.id)?.length || 2) - 2)]));
+
+    return {
+      nodes, routes, segments, ticks, periodMarks, flags: flagList, notes, X: XAt, world,
+      report: {
+        iterations,
+        undrawnLines: undrawn,
+        worldWidth: Math.round(world.maxX - world.minX),
+        worldHeight: Math.round(world.maxY - world.minY),
+        unresolvedLabels: result.unresolved.map(u => ({ title: u.title, hits: u.hits.map(h => h.kind + ':' + (h.line || h.key)) })),
+        foreignStations: foreign,
+        railOverlaps: overlapsRail,
+        tightBends: tightList,
+        linkThroughStations,
+        linkOnRail,
+        bends: Object.values(bendsByLine).reduce((a, b) => a + b, 0),
+        bendsByLine,
+        dashedLinks: links.length,
+        capsules: boxes.reduce((v, n) => v + n.clusters.filter(c => c.lines.length > 1).length, 0),
+        crossings,
+        flagsWithoutRoom: flagList.filter(f => !f.free).map(f => f.line + ':' + f.end),
+        flagsOffRail: flagList.filter(f => f.free && !f.onRail).map(f => f.line + ':' + f.end),
+        periodsTotal: periodMarks.length,
+        periodsPlaced: periodMarks.filter(p => p.placed).length,
+        periodsSkippedTiny: periodMarks.filter(p => p.tiny).length,
+        periodsWithStationNames: periodMarks.filter(p => p.strict).length,
+        periodsUnplaced: periodMarks.filter(p => !p.placed && !p.tiny).map(p => p.line + ':' + p.name),
+        routeOrderViolations: lines.flatMap(l => {
+          const seq = lineStops.get(l.id), bad = [];
+          for (let i = 1; i < seq.length; i++) if (nodes.get(seq[i].key).x <= nodes.get(seq[i - 1].key).x) bad.push(l.id + ':' + seq[i].title);
+          return bad;
+        }),
+        labelsWithDates: boxes.filter(n => n.label.withDate).length,
+      },
+    };
+  }
+
+  global.buildNetworkLayout = build;
+})(typeof window !== 'undefined' ? window : globalThis);
+
+/* The historical metro: a network map of the main lines, and an on-train view for reading along one.
+   It sits on top of atlas_ui.js, which still owns navigation (go), the text, the map drawing, figures and family trees,
+   and takes over from that file's sidebar tree for 历史进程. Stations are read live from the atlas's own tree rows,
+   so new sections appear here without touching this file; where a line runs is drawn in metro_design.js. */
+(() => {
+'use strict';
+const NS='http://www.w3.org/2000/svg';
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
+const narrowScreen=()=>matchMedia('(max-width:820px)').matches;
+
+/* ---------- Data, live from the atlas ---------- */
+const branches=HISTORY_BRANCHES.map(b=>({...b,c:lineColor(b)}));
+const branchById=new Map(branches.map(b=>[b.id,b]));
+const stations=historyTreeRows().filter(r=>r.kind==='item').map((r,i)=>({key:r.key,id:r.id,from:r.from,to:r.to,t:r.t,end:r.end,lines:r.lines,title:r.label,period:r.period,sourceOrder:i,count:r.to-r.from+1}));
+const stationByKey=new Map(stations.map(s=>[s.key,s]));
+const firstYear=id=>Math.min(...stations.filter(s=>s.lines.includes(id)).map(s=>s.t));
+const lines=[...branches].sort((a,b)=>firstYear(a.id)-firstYear(b.id));
+const lineStops=new Map(lines.map(l=>[l.id,stations.filter(s=>s.lines.includes(l.id)).sort((a,b)=>a.t-b.t||a.sourceOrder-b.sourceOrder)]));
+const color=id=>branchById.get(id)?.c||'#26738a';
+const lineName=id=>branchById.get(id)?.name||id;
+const lineCode=id=>String(HISTORY_BRANCHES.findIndex(b=>b.id===id)+1).padStart(2,'0');
+const LINE_MARK={trunk:'希',rome:'罗',east:'东',west:'西欧',spain:'西',france:'法',lowlands:'低',germany:'德',italy:'意',britain:'不',faith:'基',egypt:'埃',persia:'波',eeurope:'欧',crusade:'十',china:'中'};
+const periodFor=(id,t)=>{const a=ROUTE_PERIODS[id]||[];return a.find(([s,e])=>t>=s&&t<e)?.[2]||a.findLast(([s])=>t>=s)?.[2]||a[0]?.[2]||''};
+const SLICES=typeof TREE_SLICES==='undefined'?[]:TREE_SLICES;
+
+// The line being ridden counts only its own stops; the atlas's treeLine also runs back through its ancestors.
+let mode='network',station=null,selectedKey=stations[0].key,rideLine=treeLine;
+const network=$('#networkCanvas'),viewport=$('#viewport'),yearRuler=$('#yearRuler');
+let camera={x:0,y:0,z:.84},NET=null,pointByKey=new Map();
+const createSVG=(name,attrs,parent)=>{const e=document.createElementNS(NS,name);for(const[k,v]of Object.entries(attrs||{}))e.setAttribute(k,v);parent?.appendChild(e);return e};
+const textSVG=(parent,content,attrs)=>{const e=createSVG('text',attrs,parent);e.textContent=content;return e};
+
+/* ---------- Network map ---------- */
+const round2=n=>Math.round(n*100)/100;
+function roundedPath(points){
+ if(points.length<2)return'';let d=`M ${round2(points[0].x)} ${round2(points[0].y)}`;
+ for(let i=1;i<points.length-1;i++){
+  const a=points[i-1],b=points[i],c=points[i+1],ab=Math.hypot(b.x-a.x,b.y-a.y),bc=Math.hypot(c.x-b.x,c.y-b.y),r=Math.min(13,ab/2,bc/2);
+  const p={x:b.x-(b.x-a.x)/ab*r,y:b.y-(b.y-a.y)/ab*r},q={x:b.x+(c.x-b.x)/bc*r,y:b.y+(c.y-b.y)/bc*r};
+  d+=` L ${round2(p.x)} ${round2(p.y)} Q ${round2(b.x)} ${round2(b.y)} ${round2(q.x)} ${round2(q.y)}`;
+ }
+ const p=points[points.length-1];return d+` L ${round2(p.x)} ${round2(p.y)}`;
+}
+const labelScale=z=>z>=.8?1:Math.min(1.75,.8/z);
+// The ruler's marks: the atlas's time slices, each opening its paragraph, plus a few years for orientation.
+function renderZones(){
+ const zones=$('#zones'),w=NET.world,top=w.minY-900,h=w.maxY-w.minY+1800;
+ const marks=[...SLICES.map((s,i)=>({t:s[0],name:s[1],slice:i})),...[[-3000,'前3000'],[1200,'1200'],[1400,'1400']].map(([t,name])=>({t,name}))].sort((a,b)=>a.t-b.t);
+ const edges=[w.minX-1500,...marks.map(m=>NET.X(m.t)),w.maxX+1500];
+ for(let i=0;i<edges.length-1;i++)if(i%2)createSVG('rect',{x:edges[i],y:top,width:edges[i+1]-edges[i],height:h,class:'year-zone'},zones);
+ for(const m of marks)if(m.slice!==undefined)createSVG('line',{x1:NET.X(m.t),x2:NET.X(m.t),y1:top,y2:top+h,class:'slice-line'},zones);
+ yearRuler.innerHTML=marks.map(m=>m.slice!==undefined?`<button type="button" data-x="${NET.X(m.t)}" data-slice="${m.slice}" title="${esc(SLICES[m.slice][2])}">${esc(m.name)} ▸</button>`:`<span data-x="${NET.X(m.t)}">${esc(m.name)}</span>`).join('');
+ yearRuler.querySelectorAll('button').forEach(b=>b.onclick=()=>showSlice(+b.dataset.slice));
+}
+function showSlice(i){
+ const [,label,head,text]=SLICES[i];
+ $('#sliceTitle').textContent=`${label} · ${head}`;$('#sliceText').textContent=text;$('#slicePanel').hidden=false;
+}
+function renderNetwork(){
+ NET=window.buildNetworkLayout({stations,lines,lineStops,design:window.NETWORK_DESIGN,periods:window.ROUTE_PERIODS,ends:TREE_ENDS});
+ pointByKey=NET.nodes;
+ renderZones();
+ const paths=$('#networkLines'),nodes=$('#networkNodes'),periods=$('#periodLabels'),ticks=$('#periodTicks'),flags=$('#lineFlags'),hubs=$('#hubNames');
+ for(const l of lines){
+  const pts=NET.routes.get(l.id);if(!pts?.length)continue;
+  const d=roundedPath(pts);
+  createSVG('path',{d,class:'rail-casing'},paths);
+  createSVG('path',{d,class:'rail-path',style:`--c:${l.c}`,'data-line':l.id},paths);
+  const hit=createSVG('path',{d,class:'rail-hit','data-line':l.id,'aria-label':`乘坐${l.name}线`},paths);
+  hit.addEventListener('click',e=>{e.stopPropagation();if(!skipGraphClick)board(l.id)});
+ }
+ for(const t of NET.ticks)createSVG('line',{x1:t.x,x2:t.x,y1:t.y-8,y2:t.y+8,class:'period-tick','data-line':t.line,style:`--c:${color(t.line)}`},ticks);
+ for(const p of NET.periodMarks)if(p.placed)textSVG(periods,p.name,{x:p.x,y:p.y,'text-anchor':'middle',class:'period-annotation'+(p.strict?'':' mid-only'),style:`--c:${color(p.line)}`,'data-line':p.line});
+ for(const n of NET.notes){const t=textSVG(periods,n.name,{x:n.x,y:n.y,class:'junction-note','data-line':n.line,style:`--c:${color(n.line)}`});if(n.note)createSVG('title',{},t).textContent=n.note}
+ for(const f of NET.flags){
+  // Signposts: the start flag points right at the line's first stop, the end flag left at its last.
+  const g=createSVG('g',{class:`line-flag flag-${f.end}`+(f.free?'':' no-room'),'data-line':f.line,role:'button','aria-label':`${f.name}线${f.end==='start'?'起点':'终点'}，点击上车`,transform:`translate(${f.tipX} ${f.tipY})`},flags),inner=createSVG('g',{class:'flag-scale'},g);
+  const dir=f.end==='start'?-1:1,half=f.h/2,point=8;
+  createSVG('path',{d:`M0 0 L${dir*point} ${-half} L${dir*f.w} ${-half} L${dir*f.w} ${half} L${dir*point} ${half} Z`,fill:f.c,class:'flag-shape'},inner);
+  textSVG(inner,f.name,{x:dir*(f.w+point)/2,y:4,'text-anchor':'middle'});
+  g.addEventListener('click',e=>{e.stopPropagation();if(!skipGraphClick)board(f.line)});
+ }
+ for(const n of pointByKey.values()){
+  const s=n.s,transfer=s.lines.length>1,g=createSVG('g',{class:'metro-node'+(transfer?' transfer':'')+(s.lines.length>2?' hub':''),'data-key':s.key,'data-lines':s.lines.join(' '),role:'button',tabindex:s.key===selectedKey?'0':'-1','aria-label':`${s.title}，${s.period}，${s.count}幕${transfer?'，换乘'+s.lines.map(lineName).join('、'):''}`,style:`--c:${color(s.lines[0])}`},nodes);
+  createSVG('title',{},g).textContent=`${s.title} · ${s.period}\n${s.lines.map(lineName).join(' / ')} · ${s.count}幕`;
+  if(n.link){createSVG('rect',{x:n.x-6,y:n.link.y0,width:12,height:n.link.y1-n.link.y0,fill:'transparent',class:'station-hit'},g);createSVG('line',{x1:n.x,x2:n.x,y1:n.link.y0,y2:n.link.y1,class:'transfer-link'},g)}
+  for(const c of n.clusters){
+   createSVG('rect',{x:n.x-15,y:c.y0-15,width:30,height:c.y1-c.y0+30,fill:'transparent',class:'station-hit'},g);
+   if(transfer)createSVG('rect',{x:n.x-c.r,y:c.y0-c.r,width:c.r*2,height:c.y1-c.y0+c.r*2,rx:c.r,class:'station-circle'},g);
+   else createSVG('circle',{cx:n.x,cy:c.y0,r:c.r,class:'station-circle'},g);
+  }
+  const L_=n.label;
+  if(L_.far){const above=L_.side==='above';createSVG('line',{x1:n.x,x2:n.x,y1:L_.leaderFrom,y2:above?L_.box.y1+1:L_.box.y0-1,class:'label-leader'},g)}
+  textSVG(g,s.title,{x:L_.x,y:L_.y,'text-anchor':L_.anchor,class:'node-name'});
+  if(L_.withDate)textSVG(g,s.period,{x:L_.x,y:L_.y+12.5,'text-anchor':L_.anchor,class:'node-date'});
+  g.addEventListener('click',e=>{e.stopPropagation();if(!skipGraphClick)inspect(s.key)});
+  g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();inspect(s.key)}});
+  if(s.lines.length>2){const h=createSVG('g',{class:'hub-name','data-lines':s.lines.join(' '),transform:`translate(${n.x} ${n.y0})`},hubs),i=createSVG('g',{class:'flag-scale'},h);textSVG(i,s.title,{x:0,y:-11,'text-anchor':'middle'});h.addEventListener('click',e=>{e.stopPropagation();if(!skipGraphClick)inspect(s.key)})}
+ }
+ buildDeclutter();
+ $('#lineList').innerHTML=lines.map(l=>`<button class="line-choice" data-line="${l.id}" style="--c:${l.c}" title="乘坐${esc(l.name)}线"><i class="line-swatch"></i><span>${esc(l.name)}</span><span class="line-count">${lineStops.get(l.id).length}</span></button>`).join('');
+ $$('#lineList button').forEach(b=>{b.onclick=()=>board(b.dataset.line);b.onmouseenter=()=>highlightLine(b.dataset.line);b.onmouseleave=()=>highlightLine(null)});
+ markNetwork();
+}
+// Below full zoom, names are drawn larger than their world size, so keep only those that fit on screen.
+let declutterItems=[],declutterZ=0;
+function declutter(){
+ const z=camera.z,level=network.dataset.lod,taken=[];
+ const free=b=>!taken.some(o=>b.x0<o.x1&&b.x1>o.x0&&b.y0<o.y1&&b.y1>o.y0);
+ for(const it of declutterItems){
+  if(!it.levels.includes(level)){it.el.classList.remove('culled');continue}
+  const scale=it.scale(z),w=it.w*scale,h=it.h*scale,cx=it.x*z,cy=it.y*z;
+  const b=it.anchor==='tipStart'?{x0:cx-w,x1:cx,y0:cy-h/2,y1:cy+h/2}:it.anchor==='tipEnd'?{x0:cx,x1:cx+w,y0:cy-h/2,y1:cy+h/2}:it.anchor==='start'?{x0:cx,x1:cx+w,y0:cy-h,y1:cy+h*.3}:{x0:cx-w/2,x1:cx+w/2,y0:cy-h,y1:cy+h*.3};
+  const ok=free(b);it.el.classList.toggle('culled',!ok);if(ok)taken.push(b);
+ }
+}
+function buildDeclutter(){
+ const constant=z=>Math.max(1,z),flagSize=z=>z<.36?.8:Math.max(1,z),world=z=>labelScale(z)*z,items=[];
+ const flagEls=$$('.line-flag');
+ NET.flags.forEach((f,i)=>items.push({el:flagEls[i],x:f.tipX,y:f.tipY,w:f.w+4,h:f.h+2,anchor:f.end==='start'?'tipStart':'tipEnd',levels:['1','2'],scale:flagSize,rank:f.end==='start'?1:2}));
+ const biggest=[...pointByKey.values()].filter(n=>n.s.lines.length>2).sort((a,b)=>b.s.lines.length-a.s.lines.length);
+ for(const el of $$('.hub-name')){const n=biggest.find(p=>p.s.title===el.textContent);items.push({el,x:n.x,y:n.y0,w:n.s.title.length*12+8,h:17,anchor:'middle',levels:['1'],scale:constant,rank:n.s.lines.length>=4?0:3})}
+ for(const g of $$('.metro-node.transfer')){const n=pointByKey.get(g.dataset.key),el=g.querySelector('.node-name');items.push({el,x:n.label.x,y:n.label.y,w:n.s.title.length*12.5+4,h:15,anchor:n.label.anchor==='start'?'start':'middle',levels:['2'],scale:world,rank:n.s.lines.length>2?0:3})}
+ for(const el of $$('.period-annotation'))items.push({el,x:+el.getAttribute('x'),y:+el.getAttribute('y'),w:el.textContent.length*10.5+6,h:13,anchor:'middle',levels:['2'],scale:world,rank:4});
+ declutterItems=items.sort((a,b)=>a.rank-b.rank);
+}
+// Hovering any label highlights its line, or all the lines of an interchange.
+let highlightKey=null;
+function highlightLine(ids){
+ const set=ids?new Set([].concat(ids)):null,key=set?[...set].sort().join(' '):'@'+rideLine;
+ if(key===highlightKey)return;highlightKey=key;
+ $$('.rail-path').forEach(p=>{p.classList.toggle('muted',Boolean(set&&!set.has(p.dataset.line)));p.classList.toggle('on',set?set.has(p.dataset.line):p.dataset.line===rideLine)});
+ const touches=el=>(el.dataset.lines||el.dataset.line||'').split(' ').some(l=>set.has(l));
+ $$('.metro-node,.line-flag,.period-annotation,.period-tick,.junction-note,.hub-name').forEach(el=>el.classList.toggle('dim',Boolean(set)&&!touches(el)));
+}
+$('#networkSvg').addEventListener('mouseover',e=>{const t=e.target.closest('[data-lines],[data-line]');highlightLine(t?(t.dataset.lines||t.dataset.line).split(' '):null)});
+$('#networkSvg').addEventListener('mouseleave',()=>highlightLine(null));
+function markNetwork(){
+ $$('.metro-node').forEach(g=>{const on=g.dataset.key===selectedKey;g.classList.toggle('selected',on);g.setAttribute('tabindex',on?'0':'-1');g.querySelectorAll('.current-halo').forEach(h=>h.remove());if(on){const n=pointByKey.get(selectedKey);for(const c of n.clusters){const r=c.r+7;createSVG('rect',{x:n.x-r,y:c.y0-r,width:r*2,height:c.y1-c.y0+r*2,rx:r,class:'current-halo'},g)}}});
+ $$('.line-choice').forEach(b=>b.classList.toggle('on',b.dataset.line===rideLine));highlightLine(null);
+}
+const futureOf=id=>TREE_FUTURE.find(f=>f[0]===id);
+function inspect(key){
+ selectedKey=key;const s=stationByKey.get(key),entry=HISTORY_ENTRIES.find(e=>e.id===s.id);
+ $('#stationInspector').hidden=false;
+ $('#inspectorKicker').textContent=s.lines.length>1?`贯通事件 · ${s.lines.length}线换乘`:`事件站 · ${lineName(s.lines[0])}线`;
+ $('#inspectorTitle').textContent=s.title;$('#inspectorPeriod').textContent=`${s.period} · ${s.count}幕`;
+ $('#inspectorSummary').textContent=entry.scenes[s.from]?.title||entry.title;
+ $('#inspectorLines').innerHTML=s.lines.map(id=>`<button class="board-line" data-line="${id}" style="--c:${color(id)}"><i></i>乘坐${esc(lineName(id))}线<span>→</span></button>`).join('');
+ $$('#inspectorLines button').forEach(b=>b.onclick=()=>board(b.dataset.line,{key}));
+ $('#inspectorHint').hidden=s.lines.length<2;
+ const future=s.lines.map(futureOf).find((f,i)=>f&&lineStops.get(s.lines[i]).at(-1).key===key);
+ $('#inspectorFuture').hidden=!future;$('#inspectorFuture').textContent=future?`待展开：${future[2]} · ${future[3]}`:'';
+ updateModeToggle();markNetwork();
+}
+function applyCamera(){
+ viewport.setAttribute('transform',`translate(${camera.x} ${camera.y}) scale(${camera.z})`);
+ $('#zoomLevel').textContent=Math.round(camera.z*100)+'%';
+ const z=camera.z,level=z<.36?1:z<.8?2:3;
+ network.dataset.lod=level;network.classList.toggle('show-dates',z>=1.15);
+ network.style.setProperty('--inv',(1/Math.min(1,Math.max(z,.16))).toFixed(3));
+ network.style.setProperty('--label-scale',labelScale(z).toFixed(3));
+ network.style.setProperty('--flag-k',z<.36?.8:1);
+ network.style.setProperty('--rail-w',Math.max(5,2.7/z).toFixed(2));
+ network.style.setProperty('--link-w',Math.max(1.6,1/z).toFixed(2));
+ const w=network.clientWidth;let lastYearX=-999;
+ for(const mark of yearRuler.children){const x=camera.x+(+mark.dataset.x)*z;mark.style.transform=`translateX(${x.toFixed(1)}px)`;mark.hidden=x<0||x>w||x-lastYearX<58;if(!mark.hidden)lastYearX=x}
+ if(Math.abs(z-declutterZ)>.001){declutterZ=z;declutter()}
+}
+function zoomAt(factor,x=network.clientWidth/2,y=network.clientHeight/2){const z=clamp(camera.z*factor,.12,2.3),ratio=z/camera.z;camera.x=x-(x-camera.x)*ratio;camera.y=y-(y-camera.y)*ratio;camera.z=z;applyCamera()}
+function focusBox(minX,maxX,minY,maxY,maxZ=1.05){
+ const w=network.clientWidth,h=network.clientHeight,z=clamp(Math.min((w-60)/(maxX-minX),(h-70)/(maxY-minY)),.12,maxZ);
+ camera={x:(w-(maxX-minX)*z)/2-minX*z,y:(h-(maxY-minY)*z)/2-minY*z,z};applyCamera();
+}
+function focusKeys(keys){
+ const p=keys.map(k=>pointByKey.get(k)).filter(Boolean);if(!p.length)return;
+ focusBox(Math.min(...p.map(n=>n.x))-130,Math.max(...p.map(n=>n.x))+170,Math.min(...p.map(n=>n.y0))-85,Math.max(...p.map(n=>n.y1))+75,1);
+}
+function fitWhole(){const w=NET.world;focusBox(w.minX-90,w.maxX+90,w.minY-30,w.maxY+30)}
+function focusStation(key=selectedKey){const n=pointByKey.get(key);if(!n)return;const small=narrowScreen(),z=small?.83:.95;camera={z,x:network.clientWidth*(small?.5:.44)-n.x*z,y:network.clientHeight*(small?.38:.45)-n.y*z};applyCamera()}
+function updateModeToggle(){
+ const s=stationByKey.get(selectedKey);
+ $('#modeToggle').textContent=mode==='ride'?'展开地铁全图 ↗':`乘坐${lineName(s.lines.includes(rideLine)?rideLine:s.lines[0])}线 →`;
+}
+function setMode(next,{whole=false}={}){
+ mode=next;document.body.dataset.metro=next;$('#networkLegend').classList.remove('open');$('#slicePanel').hidden=true;
+ if(next==='network'){
+  if(station)selectedKey=station.key;
+  if(whole)$('#stationInspector').hidden=true;else inspect(selectedKey);
+  updateModeToggle();
+  requestAnimationFrame(()=>whole?fitWhole():focusStation(selectedKey));
+ }else{
+  updateModeToggle();
+  requestAnimationFrame(()=>{centerRoute();map.invalidateSize({animate:false,pan:false})});
+ }
+}
+const nearestOnLine=(id,key)=>{const s=stationByKey.get(key)||station,seq=lineStops.get(id);return seq.find(x=>x.key===s.key)||[...seq].sort((a,b)=>Math.abs(a.t-s.t)-Math.abs(b.t-s.t))[0]};
+// Boarding at a shared station keeps both the event and the scene; boarding elsewhere starts that station.
+function board(id,{key=selectedKey}={}){
+ const next=nearestOnLine(id,key);if(!next)return;
+ rideLine=id;treeLine=id;
+ if(next.key===station?.key){renderRide();updateSceneUI();}
+ else go(next.id,{scene:next.from});
+ setMode('ride');
+}
+function goStation(key){const s=stationByKey.get(key);if(s)go(s.id,{scene:s.from})}
+function stepStation(delta){const seq=lineStops.get(rideLine),next=seq[seq.findIndex(s=>s.key===station.key)+delta];if(next)goStation(next.key)}
+function stepScene(delta){const next=sceneIndex+delta;if(station&&next>=station.from&&next<=station.to)go(station.id,{scene:next})}
+
+/* ---------- On-train line diagram ---------- */
+let routeSkipClick=false;
+function renderRide(){
+ const seq=lineStops.get(rideLine),idx=seq.findIndex(s=>s.key===station.key),narrow=narrowScreen();
+ document.documentElement.style.setProperty('--line',color(rideLine));
+ $('#ridingLine').innerHTML=`<span class="line-number">${lineCode(rideLine)}</span>${esc(lineName(rideLine))}<small>主线 · ${seq.length}站</small>`;
+ $('#stationPosition').textContent=`${idx+1} / ${seq.length}`;$('#prevStation').disabled=idx<=0;$('#nextStation').disabled=idx>=seq.length-1;
+ $('#routePeriod').textContent=periodFor(rideLine,station.t);
+ const future=futureOf(rideLine),step=narrow?128:150,offset=narrow?72:88,span=(seq.length-1)*step,width=Math.max($('#routeScroller').clientWidth,offset*2+span+(future?step:0));
+ const track=$('#routeTrack');track.style.width=width+'px';
+ track.innerHTML=`<i class="route-rail" style="left:${offset}px;width:${span}px"></i><i class="route-rail past" style="left:${offset}px;width:${Math.max(0,idx*step)}px"></i>`;
+ // Section marks group contiguous stations; the name stays in view while its section does.
+ const groups=[];seq.forEach((s,i)=>{const title=periodFor(rideLine,s.t),last=groups.at(-1);if(last?.title===title)last.end=i;else groups.push({title,start:i,end:i})});
+ for(const g of groups){const left=offset+(g.start-.47)*step,w=(g.end-g.start+.94)*step;track.insertAdjacentHTML('beforeend',`<div class="route-period-band" title="${esc(g.title)} · 路段标记，章节可能跨越多个时段" style="left:${left}px;width:${w}px"><span>${esc(g.title)}</span></div>`)}
+ seq.forEach((s,i)=>{
+  const others=s.lines.filter(id=>id!==rideLine),b=document.createElement('button');b.className='route-stop'+(others.length?' shared':'')+(s.key===station.key?' active':'')+(i<idx?' past':'');b.style.left=offset+i*step+'px';b.dataset.key=s.key;b.title=`${s.title} · ${s.period} · ${s.count}幕${others.length?'；可换乘'+others.map(lineName).join('、'):''}`;b.setAttribute('aria-label',b.title);b.setAttribute('aria-current',s.key===station.key?'step':'false');
+  b.innerHTML=`${others.length?`<span class="stop-transfers">${others.map(id=>`<i style="--c:${color(id)}">${esc(LINE_MARK[id]||lineName(id)[0])}</i>`).join('')}</span>`:''}<i class="dot"></i><span class="stop-text"><span class="stop-name">${esc(s.title)}</span><span class="stop-date">${esc(s.period)}</span></span>`;
+  b.onclick=()=>{if(!routeSkipClick)goStation(s.key)};track.appendChild(b);
+ });
+ if(future)track.insertAdjacentHTML('beforeend',`<i class="route-rail upcoming" style="left:${offset+span}px;width:${step}px"></i><div class="route-future" title="${esc(future[3])}" style="left:${offset+span+step}px"><i class="dot"></i><span class="stop-text"><span class="stop-name">${esc(future[2])}</span><span class="stop-date">待展开</span></span></div>`);
+ const transfers=station.lines.filter(id=>id!==rideLine);$('#transferBar').innerHTML=transfers.length?'<span>⇄ 本站可换乘</span>'+transfers.map(id=>`<button data-transfer="${id}" style="--c:${color(id)}"><i></i>${esc(lineName(id))}</button>`).join(''):'';
+ $$('#transferBar button').forEach(b=>b.onclick=()=>board(b.dataset.transfer,{key:station.key}));
+}
+let routeAt=null;
+function centerRoute(){const s=$('#routeScroller'),b=$('.route-stop.active');if(b)s.scrollLeft=b.offsetLeft-s.clientWidth/2}
+function updateSceneUI(){
+ const data=ENTRIES[cur].scenes[sceneIndex];if(!data||!station)return;
+ $('#scenePosition').textContent=`${sceneIndex-station.from+1} / ${station.count} 幕`;
+ $('#sceneHeading').textContent=`本站 ${station.count} 幕 · 上下阅读`;
+ $('#prevScene').disabled=sceneIndex<=station.from;$('#nextScene').disabled=sceneIndex>=station.to;
+ $('#mapSceneDate').textContent=data.date;$('#mapSceneTitle').textContent=data.title;
+}
+
+/* ---------- Hooks on the atlas's own navigation ---------- */
+// Landing on a scene frames its marks: the authored view clipped to what the scene draws, widened to take in every place and route.
+const focusedScenes=new WeakSet();
+function focusScene(e,scene){
+ if(focusedScenes.has(scene))return;focusedScenes.add(scene);
+ const liveGroup=group,livePins=pinIndex;group=L.featureGroup();pinIndex={};
+ const points=[];let drawn=null;
+ try{
+  scene.draw(makeCtx(e));
+  group.eachLayer(l=>{if(l.getLatLng)points.push(l.getLatLng());else if(l.getLatLngs&&!l.eachLayer)points.push(...l.getLatLngs().flat(3))});
+  drawn=group.getBounds();
+ }catch{drawn=null}finally{group=liveGroup;pinIndex=livePins}
+ const view=L.latLngBounds(scene.view||e.view);
+ if(!drawn?.isValid()||!view.intersects(drawn))return;
+ const focus=L.latLngBounds([Math.max(view.getSouth(),drawn.getSouth()),Math.max(view.getWest(),drawn.getWest())],[Math.min(view.getNorth(),drawn.getNorth()),Math.min(view.getEast(),drawn.getEast())]);
+ if(points.length)focus.extend(L.latLngBounds(points));
+ const c=focus.getCenter(),lat=Math.max(2.2,focus.getNorth()-focus.getSouth())/2,lon=Math.max(3,focus.getEast()-focus.getWest())/2;
+ scene.view=[[c.lat-lat,c.lng-lon],[c.lat+lat,c.lng+lon]];
+}
+const targetOf=(id,opts)=>{
+ const [ref,part]=typeof id==='string'&&id.includes('/')?id.split('/'):[id,opts.scene];
+ const e=typeof ref==='number'?ENTRIES[ref]:ENTRIES.find(x=>x.id===ref),i=Number(part);
+ return e&&isHistory(e)?[e,e.scenes[Number.isInteger(i)?i:0]||e.scenes[0]]:null;
+};
+function afterNavigation(){
+ const e=ENTRIES[cur];
+ if(!isHistory(e)){document.body.dataset.metro='off';mode='off';return}
+ const current=currentStation();if(!current)return;
+ const before=station?.key;station=stationByKey.get(current.key);selectedKey=station.key;
+ // A cross-reference may have just chosen a line for the atlas; otherwise stay on this one if the station is on it.
+ if(station.lines.includes(treeLine))rideLine=treeLine;else if(!station.lines.includes(rideLine))rideLine=station.lines[0];
+ renderRide();updateSceneUI();markNetwork();
+ if(mode!=='ride')setMode('ride');else if(before!==station.key||routeAt!==rideLine)requestAnimationFrame(centerRoute);
+ routeAt=rideLine;
+}
+const atlasGo=go;
+go=function(id,opts={}){
+ const target=targetOf(id,opts);if(target)focusScene(...target);
+ atlasGo(id,opts);afterNavigation();
+};
+// Only this station's scenes are on the page; the rest of the section belongs to other stops.
+const atlasRenderScenes=renderScenes;
+renderScenes=e=>{
+ atlasRenderScenes(e);
+ const s=isHistory(e)?currentStation():null;
+ card.querySelectorAll('.scene-passage').forEach(p=>{const i=+p.dataset.sceneText;p.classList.toggle('off-station',Boolean(s)&&(i<s.from||i>s.to))});
+};
+// Reading on down the text moves to the next scene and its map; a scene chosen elsewhere brings the text along.
+// Only the reader's own scrolling counts: a short scene jumped to by code must not read as having scrolled past it.
+let readerFollows=false,readerScrolledUntil=0;
+const atlasScrollSceneText=scrollSceneText;
+scrollSceneText=animate=>{if(!readerFollows)atlasScrollSceneText(isHistory(ENTRIES[cur])?false:animate)};
+const readerIsScrolling=()=>{readerScrolledUntil=performance.now()+700};
+for(const type of ['wheel','touchmove','pointerdown'])readerBody.addEventListener(type,readerIsScrolling,{passive:true});
+readerBody.addEventListener('keydown',ev=>{if(['PageUp','PageDown','Home','End',' '].includes(ev.key))readerIsScrolling()});
+let scrollFrame=0;
+readerBody.addEventListener('scroll',()=>{
+ if(scrollFrame||mode!=='ride'||performance.now()>readerScrolledUntil)return;
+ scrollFrame=requestAnimationFrame(()=>{
+  scrollFrame=0;
+  const edge=readerBody.getBoundingClientRect().top+Math.min(60,readerBody.clientHeight*.14),passages=[...card.querySelectorAll('.scene-passage:not(.off-station)')];
+  let active=passages[0];for(const p of passages)if(p.getBoundingClientRect().top<=edge)active=p;
+  const i=+active?.dataset.sceneText;if(!active||i===sceneIndex)return;
+  const was=active.getBoundingClientRect().top;
+  readerFollows=true;try{go(ENTRIES[cur].id,{scene:i})}finally{readerFollows=false}
+  readerBody.scrollTop+=active.getBoundingClientRect().top-was;
+ });
+},{passive:true});
+// The map now fills the space beside the text, so nothing overlaps it but the scene strip outside 历史进程.
+viewportPadding=()=>{
+ map.invalidateSize({animate:false,pan:false});
+ const small=narrowScreen(),strip=!sceneRail.hidden&&!document.body.classList.contains('history-mode');
+ return small?{paddingTopLeft:[16,50],paddingBottomRight:[16,strip?104:24]}:{paddingTopLeft:[34,66],paddingBottomRight:[34,strip?112:44]};
+};
+// ← → change station and ↑ ↓ change scene on the train; other modes keep the atlas's own keys.
+window.addEventListener('keydown',ev=>{
+ if(mode==='off'||ev.defaultPrevented||ev.isComposing||ev.altKey||ev.ctrlKey||ev.metaKey||ev.shiftKey)return;
+ if(ev.target.isContentEditable||ev.target.closest('input,textarea,select,[role="textbox"],[role="separator"],#toc,#treeSheet')||!$('#kinSheet')?.hidden)return;
+ if(ev.key==='Escape'&&mode==='ride'){ev.preventDefault();setMode('network');return}
+ if(!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(ev.key))return;
+ ev.preventDefault();ev.stopImmediatePropagation();
+ if(mode!=='ride')return;
+ if(ev.key==='ArrowLeft')stepStation(-1);if(ev.key==='ArrowRight')stepStation(1);
+ if(ev.key==='ArrowUp')stepScene(-1);if(ev.key==='ArrowDown')stepScene(1);
+},true);
+
+/* ---------- Pan and zoom the network like a map ---------- */
+const pointers=new Map();let graphDrag=null,pinch=null,skipGraphClick=false;
+network.addEventListener('pointerdown',e=>{
+ if(e.target.closest('.station-inspector,.slice-panel,#yearRuler button'))return;
+ pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});skipGraphClick=false;
+ if(pointers.size===2){const[a,b]=[...pointers.values()];pinch={d:Math.hypot(a.x-b.x,a.y-b.y)};graphDrag=null}
+ else graphDrag={id:e.pointerId,x:e.clientX,y:e.clientY,cx:camera.x,cy:camera.y,moved:false};
+});
+network.addEventListener('pointermove',e=>{
+ if(!pointers.has(e.pointerId))return;pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});
+ if(pointers.size===2){const[a,b]=[...pointers.values()],d=Math.hypot(a.x-b.x,a.y-b.y),r=network.getBoundingClientRect();if(pinch?.d)zoomAt(d/pinch.d,(a.x+b.x)/2-r.left,(a.y+b.y)/2-r.top);pinch={d};skipGraphClick=true;return}
+ if(!graphDrag)return;const dx=e.clientX-graphDrag.x,dy=e.clientY-graphDrag.y;
+ if(!graphDrag.moved&&Math.hypot(dx,dy)>5){graphDrag.moved=true;network.setPointerCapture(e.pointerId);network.classList.add('dragging')}
+ if(graphDrag.moved){e.preventDefault();camera.x=graphDrag.cx+dx;camera.y=graphDrag.cy+dy;skipGraphClick=true;applyCamera()}
+});
+function endGraphPointer(e){pointers.delete(e.pointerId);graphDrag=null;pinch=null;network.classList.remove('dragging');setTimeout(()=>{skipGraphClick=false},0)}
+network.addEventListener('pointerup',endGraphPointer);network.addEventListener('pointercancel',endGraphPointer);
+network.addEventListener('wheel',e=>{if(e.target.closest('.station-inspector,.slice-panel'))return;e.preventDefault();const r=network.getBoundingClientRect();if(e.shiftKey){camera.x-=e.deltaY;camera.y-=e.deltaX;applyCamera()}else zoomAt(Math.exp(-e.deltaY*.0015),e.clientX-r.left,e.clientY-r.top)},{passive:false});
+network.addEventListener('dblclick',e=>{if(e.target.closest('.station-inspector,.slice-panel,.metro-node,.rail-hit'))return;const r=network.getBoundingClientRect();zoomAt(1.35,e.clientX-r.left,e.clientY-r.top)});
+
+/* The on-train line can be dragged too. */
+let routeDrag=null;const routeScroller=$('#routeScroller');
+routeScroller.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse'||e.button!==0)return;routeDrag={x:e.clientX,left:routeScroller.scrollLeft,moved:false};routeSkipClick=false});
+routeScroller.addEventListener('pointermove',e=>{if(!routeDrag)return;const dx=e.clientX-routeDrag.x;if(Math.abs(dx)>5&&!routeDrag.moved){routeDrag.moved=true;routeScroller.setPointerCapture(e.pointerId);routeScroller.classList.add('dragging')}if(routeDrag.moved){routeScroller.scrollLeft=routeDrag.left-dx;routeSkipClick=true}});
+routeScroller.addEventListener('pointerup',()=>{routeDrag=null;routeScroller.classList.remove('dragging');setTimeout(()=>{routeSkipClick=false},0)});
+routeScroller.addEventListener('pointercancel',()=>{routeDrag=null;routeScroller.classList.remove('dragging')});
+routeScroller.addEventListener('wheel',e=>{if(Math.abs(e.deltaY)>Math.abs(e.deltaX)){e.preventDefault();routeScroller.scrollLeft+=e.deltaY}},{passive:false});
+
+/* ---------- Controls ---------- */
+$('#modeToggle').onclick=()=>{
+ if(mode==='ride'){setMode('network');return}
+ const s=stationByKey.get(selectedKey);board(s.lines.includes(rideLine)?rideLine:s.lines[0],{key:selectedKey});
+};
+$('#tHistory').onclick=()=>{if(mode==='ride')setMode('network');else if(mode==='off')go(lastEntry.history)};
+$('#prevStation').onclick=()=>stepStation(-1);$('#nextStation').onclick=()=>stepStation(1);
+$('#prevScene').onclick=()=>stepScene(-1);$('#nextScene').onclick=()=>stepScene(1);
+$('#zoomIn').onclick=()=>zoomAt(1.2);$('#zoomOut').onclick=()=>zoomAt(1/1.2);$('#focusCurrent').onclick=()=>focusStation();$('#fitNetwork').onclick=fitWhole;
+$('#inspectorClose').onclick=()=>{$('#stationInspector').hidden=true};
+$('#sliceClose').onclick=()=>{$('#slicePanel').hidden=true};
+$('#legendToggle').onclick=()=>$('#networkLegend').classList.toggle('open');
+$$('.network-presets [data-era]').forEach(b=>b.onclick=()=>{const ranges={ancient:[-550,476],medieval:[900,1285],late:[1270,1505]},[a,z]=ranges[b.dataset.era];focusKeys(stations.filter(s=>s.t<=z&&s.end>=a).map(s=>s.key))});
+window.addEventListener('resize',()=>{if(mode!=='off'&&station){renderRide();centerRoute()}if(mode==='network')applyCamera()});
+new ResizeObserver(()=>map.invalidateSize({animate:false,pan:false})).observe($('#map'));
+
+/* ---------- Start ---------- */
+$('#brandMark').src=$('link[rel="icon"]').href;
+const syncMasthead=()=>document.documentElement.style.setProperty('--masthead-h',$('#masthead').offsetHeight+'px');
+new ResizeObserver(syncMasthead).observe($('#masthead'));syncMasthead();
+$('#datasetStats').textContent=`${lines.length}条主线 · ${stations.length}个事件站 · ${ENTRIES.filter(isHistory).reduce((n,e)=>n+e.scenes.length,0)}幕`;
+setReaderCollapsed(false,{save:false,refit:false});
+$('#legendBox').open=false;
+renderNetwork();
+map.invalidateSize({animate:false,pan:false});
+const opening=ENTRIES[cur];
+// A link to a scene opens on the train; the bare address opens on the whole map.
+if(isHistory(opening)){
+ const deepLink=!window.atlasOpenedBare;
+ mode=deepLink?'ride':'network';document.body.dataset.metro=mode;
+ station=stationByKey.get(currentStation().key);selectedKey=station.key;
+ if(station.lines.includes(treeLine))rideLine=treeLine;else rideLine=station.lines[0];
+ card.querySelectorAll('.scene-passage').forEach(p=>{const i=+p.dataset.sceneText;p.classList.toggle('off-station',i<station.from||i>station.to)});
+ renderRide();updateSceneUI();
+ focusScene(opening,activeScene(opening));fit(opening,false);
+ setMode(mode,{whole:!deepLink&&!narrowScreen()});
+ if(!deepLink)$('#stationInspector').hidden=true;
+ scrollSceneText(false);
+}else{document.body.dataset.metro='off';mode='off';fit(opening,false)}
+routeAt=rideLine;
+window.metroUI={board,inspect,goStation,stepStation,stepScene,setMode,focusStation,focusKeys,fitWhole,zoomAt,setCamera:c=>{camera={...c};applyCamera()},
+ state:()=>({mode,line:rideLine,station:station?.key,scene:station?sceneIndex-station.from:0,globalScene:sceneIndex,sceneCount:station?.count,camera:{...camera}}),
+ data:{stations,lines,lineStops},get pointByKey(){return pointByKey},layoutReport:()=>NET.report,layoutBounds:()=>NET.world};
+})();
 
 </script>
 </body>

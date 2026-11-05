@@ -1,4 +1,4 @@
-const puppeteer=require('puppeteer-core');
+const puppeteer=require('puppeteer-core');require('./legacy_sidebar.cjs');
 const assert=require('node:assert/strict');
 const fs=require('node:fs');
 const path=require('node:path');
@@ -161,5 +161,5 @@ const PARALLEL=[['trunk','history-alexander-conquest/0','history-alexander-rule/
   }
   assert.deepEqual(errors,[],'page errors');
   console.log('PASS: Carolingians and Verdun — 东罗马 forks off 罗马 at 395; 中世纪西欧 ends at Verdun (843) and forks into 法兰西, 德意志 and 意大利; six passing loops for near-simultaneous sections; 加洛林王朝 (751—800), 查理曼的治理 (781—814) and 虔诚者路易 (814—843) carry 老无’s theses in bold with the facts set right in plain text; the three heirs of Verdun and 加洛林神学之争 within budget; maps fit, offline, no overflow at 1440 and 390');
- }finally{await Promise.race([browser.close(),new Promise(r=>setTimeout(r,200))]);browser.process()?.kill('SIGKILL');process.exit(process.exitCode||0);}
+ }catch(e){console.error(e);process.exitCode=1;}finally{await Promise.race([browser.close(),new Promise(r=>setTimeout(r,200))]);browser.process()?.kill('SIGKILL');process.exit(process.exitCode||0);}
 })().catch(e=>{console.error(e);process.exit(1);});

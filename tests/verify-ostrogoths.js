@@ -1,4 +1,4 @@
-const puppeteer=require('puppeteer-core');
+const puppeteer=require('puppeteer-core');require('./legacy_sidebar.cjs');
 const assert=require('node:assert/strict');
 const path=require('node:path');
 const {pathToFileURL}=require('node:url');

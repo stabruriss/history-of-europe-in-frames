@@ -1,4 +1,4 @@
-const puppeteer=require('puppeteer-core');
+const puppeteer=require('puppeteer-core');require('./legacy_sidebar.cjs');
 const assert=require('node:assert/strict');
 require('node:fs').mkdirSync(require('node:path').join(__dirname,'shots'),{recursive:true});
 const path=require('node:path');
@@ -77,5 +77,5 @@ const wait=ms=>new Promise(r=>setTimeout(r,ms));
   await animated.waitForFunction(()=>pending===null);await wait(250);assert.equal(await animated.evaluate(()=>Boolean(map._popup?.isOpen())),false);
   await animated.close();assert.deepEqual(errors,[]);
   console.log('PASS: 382 people / events across 682 dated cards; expandable sources; one-open-card behavior; keyboard; restored fold state; city map popups; return to scene; stage switching; phones and landscape; offline; stale popup cancellation; no page errors.');
- }finally{await Promise.race([browser.close(),new Promise(r=>setTimeout(r,200))]);browser.process()?.kill('SIGKILL');process.exit(process.exitCode||0);}
+ }catch(e){console.error(e);process.exitCode=1;}finally{await Promise.race([browser.close(),new Promise(r=>setTimeout(r,200))]);browser.process()?.kill('SIGKILL');process.exit(process.exitCode||0);}
 })().catch(e=>{console.error(e);process.exitCode=1;});

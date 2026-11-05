@@ -16,7 +16,7 @@ import time
 from pathlib import Path
 
 SLOWEST_FIRST = [
-    'verify-keyboard.js',
+    'verify-metro-keys.js',
     'verify-history.js',
     'verify-tree.js',
     'verify-moments.js',
@@ -111,7 +111,9 @@ def main() -> int:
         dt = time.monotonic() - st
         out = (proc.stdout + proc.stderr).strip()
         last = out.splitlines()[-1] if out else ''
-        return name, proc.returncode, dt, last, out
+        # Every suite prints PASS as its last act; a clean exit without it did not finish.
+        code = proc.returncode or (0 if 'PASS' in proc.stdout else 99)
+        return name, code, dt, last, out or 'Exited cleanly without printing PASS.'
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=max(1, ns.jobs)) as pool:
         futs = [pool.submit(run_one, s) for s in suites]

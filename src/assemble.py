@@ -12,6 +12,11 @@ t = t.replace('/*__HISTORY_ENTRIES__*/', open('history_entries.js', encoding='ut
 t = t.replace('/*__HISTORY_CONTENT__*/', open('history_content.json', encoding='utf-8').read())
 t = t.replace('/*__HISTORICAL_FIGURES__*/', open('historical_figures.js', encoding='utf-8').read())
 t = t.replace('/*__ATLAS_UI__*/', open('atlas_ui.js', encoding='utf-8').read())
+t = t.replace('/*__METRO_CSS__*/', open('metro.css', encoding='utf-8').read())
+t = t.replace('/*__METRO_PERIODS__*/', open('metro_periods.js', encoding='utf-8').read())
+t = t.replace('/*__METRO_DESIGN__*/', open('metro_design.js', encoding='utf-8').read())
+t = t.replace('/*__METRO_LAYOUT__*/', open('metro_layout.js', encoding='utf-8').read())
+t = t.replace('/*__METRO_UI__*/', open('metro_ui.js', encoding='utf-8').read())
 assert '/*__' not in t, 'Unresolved template placeholder'
 out = sys.argv[1] if len(sys.argv) > 1 else 'out.html'
 open(out, 'w', encoding='utf-8').write(t)

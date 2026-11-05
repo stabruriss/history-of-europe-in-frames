@@ -199,16 +199,39 @@ path.route{transition:stroke-dashoffset 5.5s cubic-bezier(.45,.05,.4,1)}
 body.resizing-reader{cursor:col-resize;user-select:none}
 body.resizing-reader #map{pointer-events:none}
 @media(max-width:820px){#readerGrip{display:none}}
+/*__METRO_CSS__*/
 </style>
 </head>
 <body>
-<aside id="side">
+<header id="masthead">
+  <img id="brandMark" alt="">
+  <div id="brandText"><div class="kicker">Orbis Terrarum</div><h1>简明欧洲史图册<span>历史进程 · 地理图册 · 动力专题</span></h1></div>
+  <div id="modebar" aria-label="图册内容"><button id="tHistory" class="on" aria-pressed="true">历史进程</button><button id="tGeography" aria-pressed="false">地理概念</button><button id="tTopics" aria-pressed="false">动力专题</button></div>
   <a id="ghBanner" href="https://github.com/stabruriss/history-of-europe-in-frames" target="_blank" rel="noopener noreferrer" title="在 GitHub 上查看开源仓库" aria-label="开源项目：欧洲历史笔记（打开 GitHub）">
     <span class="gh-banner-text"><b>开源项目</b><i>·</i><span>欧洲历史笔记</span></span>
     <svg class="gh-icon" viewBox="0 0 16 16" width="15" height="15" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
   </a>
-  <header><div class="kicker">Orbis Terrarum</div><h1>简明欧洲史图册<span>历史进程 · 地理图册 · 动力专题</span></h1></header>
-  <div id="modebar" aria-label="图册内容"><button id="tHistory" class="on" aria-pressed="true">历史进程</button><button id="tGeography" aria-pressed="false">地理概念</button><button id="tTopics" aria-pressed="false">动力专题</button></div>
+  <button id="modeToggle" type="button"></button>
+</header>
+<section id="networkMode" aria-label="历史地铁全图">
+  <div class="network-toolbar"><button id="legendToggle" class="mobile-only" type="button">线路 ☰</button><h2>历史线路全图</h2><span class="schematic-note">站距示意，不按年代等比 · 越往右越晚</span><div class="network-presets"><button data-era="ancient" type="button">古代</button><button data-era="medieval" type="button">中世纪</button><button data-era="late" type="button">近代前夜</button></div><div class="zoom-tools"><button id="zoomOut" type="button" aria-label="缩小">−</button><output id="zoomLevel">100%</output><button id="zoomIn" type="button" aria-label="放大">＋</button><button id="focusCurrent" type="button">当前站</button><button id="fitNetwork" type="button">全网</button></div></div>
+  <div class="network-workspace">
+    <aside class="network-legend" id="networkLegend"><div class="legend-heading"><b>主线</b><span>点线路上车 →</span></div><div id="lineList"></div><div class="symbol-key"><span><i class="key-stop"></i>事件站</span><span><i class="key-transfer"></i>同行线路 · 同站换乘</span><span><i class="key-link"><i></i></i>虚线相连 · 可换乘</span><span><i class="key-cross"></i>线路相交 · 不可换乘</span><span><i class="key-tick"></i>路段标记：王朝／时段</span><span><i class="key-flag"></i><i class="key-flag end"></i>线路起点／终点</span><p>无站圈的分岔来自图册的主线分支，不是换乘站。</p></div></aside>
+    <div class="network-canvas" id="networkCanvas" tabindex="0" aria-label="拖动平移，滚轮缩放，点击车站预览；点击线路乘车">
+      <svg id="networkSvg" role="group" aria-label="历史主线与贯通事件组成的地铁式拓扑图"><g id="viewport"><g id="zones"></g><g id="networkLines"></g><g id="periodTicks"></g><g id="periodLabels"></g><g id="networkNodes"></g><g id="lineFlags"></g><g id="hubNames"></g></g></svg>
+      <div class="year-ruler" id="yearRuler"></div>
+      <div class="map-instruction">拖动平移 <span>·</span> 滚轮／双指缩放 <span>·</span> 点线路上车</div>
+      <aside class="slice-panel" id="slicePanel" hidden><button id="sliceClose" type="button" aria-label="关闭时间切片">×</button><h3 id="sliceTitle"></h3><p id="sliceText"></p></aside>
+      <aside class="station-inspector" id="stationInspector" hidden><button class="inspector-close" id="inspectorClose" type="button" aria-label="关闭车站预览">×</button><div class="inspector-kicker" id="inspectorKicker"></div><h3 id="inspectorTitle"></h3><div class="inspector-period" id="inspectorPeriod"></div><p id="inspectorSummary"></p><div id="inspectorLines"></div><small id="inspectorHint">在贯通站换线，事件和当前幕不会重置。</small><div class="inspector-future" id="inspectorFuture" hidden></div></aside>
+    </div>
+  </div>
+  <footer class="network-footer"><span id="datasetStats"></span><span>地图视野：线路图不是地理底图，站距不代表时长</span></footer>
+</section>
+<section id="ridePanel" aria-label="沿线路线图">
+  <header class="ride-heading"><div class="riding-line" id="ridingLine"></div><span class="ride-instruction">← → 换站 <span>·</span> ↑ ↓ 换幕</span><div class="station-nav"><button id="prevStation" type="button">← 上一站</button><span id="stationPosition"></span><button id="nextStation" type="button">下一站 →</button></div></header>
+  <div class="route-panel"><div class="route-caption"><span>本线路线图</span><b id="routePeriod"></b><small>拖动看全线 · 点站直达</small></div><div class="route-scroller" id="routeScroller" tabindex="0" aria-label="当前主线上的事件站与历史时期"><div class="route-track" id="routeTrack"></div></div></div>
+</section>
+<aside id="side">
   <p id="indexCaption"></p>
   <nav id="toc" aria-label="历史树：按时间与主题浏览"></nav>
   <select id="mobileToc" aria-label="选择历史时期与章节"></select>
@@ -216,22 +239,24 @@ body.resizing-reader #map{pointer-events:none}
 </aside>
 <main id="mapwrap" aria-label="交互地图">
   <div id="map"></div>
-  <div id="tools">
+  <div id="tools" hidden>
     <button id="tModern" aria-pressed="false" title="叠加今天的国界与国名，作对照">今日国界</button>
     <button id="tMarine" class="on" aria-pressed="true" title="显示或隐藏海区、海峡、岛屿与群岛名称">海区/岛屿</button>
     <button id="tFit" title="回到当前条目或历史阶段的视野">⟲ 本条视野</button>
   </div>
   <section id="reader" aria-label="地图说明">
     <header id="readerHead"><div id="entryEyebrow" class="eyebrow"></div><h2 id="entryTitle"></h2><div id="entryEnglish" class="en-name"></div><button id="readerToggle" aria-controls="readerBody" aria-expanded="true">收起 −</button></header>
+    <div id="metroBar"><div id="transferBar"></div><div class="scene-nav"><span id="sceneHeading"></span><span id="scenePosition"></span><button id="prevScene" type="button" aria-label="上一幕">↑ 上一幕</button><button id="nextScene" type="button" aria-label="下一幕">下一幕 ↓</button></div></div>
     <div id="readerBody"><article id="card" aria-labelledby="entryTitle"></article></div>
   </section>
+  <div id="mapSceneChip"><div><small id="mapSceneDate"></small><b id="mapSceneTitle"></b></div></div>
   <details id="legendBox"><summary>图例</summary><div id="legend"></div></details>
   <div id="sceneRail" hidden></div>
   <div id="mapnote" role="status" title="部分地形瓦片未载入。区域、路线与文字仍可使用；联网后刷新可显示地形。" hidden>部分地形未载入<br>示意与文字可用</div>
 </main>
 
 <script>
-/* Drag the reader's left edge to set its width. Arrow keys nudge it, double-click or Enter restores it, and the browser remembers it.
+/* Drag the reader's right edge to set its width. Arrow keys nudge it, double-click or Enter restores it, and the browser remembers it.
    This sits in the template because work/v35/build_v35.py regenerates atlas_ui.js and layout.css from its backup.
    It runs before atlas_ui.js so the first map fit sees the remembered width; fit, cur and ENTRIES are that script's, used only after load. */
 {
@@ -253,12 +278,12 @@ body.resizing-reader #map{pointer-events:none}
     scroller.scrollTo({top:scroller.scrollTop+now.top+past*now.height-scroller.getBoundingClientRect().top,behavior:'instant'});
     syncAria();
     if(!settled)return;
-    if(cur>=0)fit(ENTRIES[cur],false);
+    map.invalidateSize({animate:false,pan:false});if(cur>=0)fit(ENTRIES[cur],false);
     try{if(w===null)localStorage.removeItem(KEY);else localStorage.setItem(KEY,String(width()));}catch{}
   };
   grip.addEventListener('pointerdown',ev=>{
     if(ev.button!==0)return;ev.preventDefault();grip.setPointerCapture(ev.pointerId);document.body.classList.add('resizing-reader');
-    const startX=ev.clientX,startWidth=width(),widthAt=x=>startWidth+startX-x;
+    const startX=ev.clientX,startWidth=width(),widthAt=x=>startWidth+x-startX;
     let frame=0,x=startX,moved=false;
     const move=e=>{x=e.clientX;moved=true;if(!frame)frame=requestAnimationFrame(()=>{frame=0;setWidth(widthAt(x),false);});};
     const up=()=>{
@@ -270,7 +295,7 @@ body.resizing-reader #map{pointer-events:none}
   });
   grip.ondblclick=()=>setWidth(null);
   grip.onkeydown=ev=>{
-    const step=ev.shiftKey?64:16,target={ArrowLeft:width()+step,ArrowRight:width()-step,Home:0,End:1e5}[ev.key];
+    const step=ev.shiftKey?64:16,target={ArrowLeft:width()-step,ArrowRight:width()+step,Home:0,End:1e5}[ev.key];
     if(target!==undefined){ev.preventDefault();setWidth(target);}
     else if(ev.key==='Enter'){ev.preventDefault();setWidth(null);}
   };
@@ -279,6 +304,7 @@ body.resizing-reader #map{pointer-events:none}
   syncAria();
 }
 </script>
+<script>window.atlasOpenedBare=location.hash.length<2;</script>
 <script>/*__LEAFLET_JS__*/</script>
 <script>const GEO = /*__GEO__*/;
 Object.assign(GEO.regions, /*__HISTORY_GEO__*/);</script>
@@ -1385,6 +1411,12 @@ function makeCtx(entry){
    UI
    ============================================================ */
 /*__ATLAS_UI__*/
+</script>
+<script>
+/*__METRO_PERIODS__*/
+/*__METRO_DESIGN__*/
+/*__METRO_LAYOUT__*/
+/*__METRO_UI__*/
 </script>
 </body>
 </html>
