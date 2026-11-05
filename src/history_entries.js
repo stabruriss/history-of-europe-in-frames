@@ -1449,6 +1449,14 @@ Object.assign(HS,{
   ty1_jicin:['伊钦（弗里德兰公国）','Jičín (Duchy of Friedland)',50.437,15.352,'波希米亚北部重镇；华伦斯坦靠劣币财团低价吞并六十余处新教贵族抄家庄园，在此建起自家“弗里德兰公国”军工基地。'],
   ty1_stralsund:['施特拉尔松德','Stralsund',54.309,13.082,'波罗的海汉萨港城；1628年华伦斯坦自封“波罗的海与大洋统帅”围攻此城不下，丹麦与瑞典派兵助守。'],
   ty1_regensburg:['雷根斯堡','Regensburg',49.013,12.102,'多瑙河畔帝国自由市；1630年夏皇帝斐迪南二世在此召开选帝侯会议求选长子为储，被选帝侯联手逼迫将华伦斯坦撤职。'],
+  ty2_usedom:['佩内明德（波美拉尼亚）','Peenemünde (Pomerania)',54.139,13.769,'波罗的海南岸奥得河口乌泽多姆岛；1630年7月6日瑞典国王古斯塔夫二世率军在此登陆，夺取波美拉尼亚公国。'],
+  ty2_barwalde:['贝尔瓦尔德','Bärwalde (Mieszkowice)',52.788,14.493,'勃兰登堡新马尔克小城；1631年1月法国与瑞典在此签《贝尔瓦尔德条约》，法国每年向瑞典提供一百万里弗尔军费打哈布斯堡。'],
+  ty2_magdeburg:['马格德堡','Magdeburg',52.121,11.628,'易北河畔北德新教重镇；1631年5月20日蒂利伯爵攻破此城屠杀两万五千人、全城烧成白地，震动全欧新教徒。'],
+  ty2_breitenfeld:['布赖滕费尔德（莱比锡北）','Breitenfeld (Leipzig)',51.4,12.333,'萨克森莱比锡北郊；1631年9月17日古斯塔夫二世联手萨克森在此大破蒂利伯爵，打垮天主教同盟主力。'],
+  ty2_rain:['莱希河畔赖恩','Rain am Lech',48.69,10.916,'巴伐利亚门户；1632年4月15日古斯塔夫二世强渡莱希河，炮弹轰碎蒂利伯爵大腿致其伤重毙命，瑞军随即占领慕尼黑。'],
+  ty2_gollersdorf:['格勒斯多夫','Göllersdorf',48.492,16.121,'维也纳西北下奥地利小镇；1632年4月皇帝使节在此与华伦斯坦签《格勒斯多夫协定》，全盘答应华伦斯坦“约三事”。'],
+  ty2_lutzen:['吕岑','Lützen',51.255,12.142,'莱比锡西南战场；1632年11月16日大雾中瑞典王古斯塔夫二世冲阵战死，但瑞军反扑击败华伦斯坦。'],
+  ty2_eger:['埃格尔（今海布）','Eger (Cheb)',50.079,12.371,'波希米亚西境边城；1634年2月25日夜被皇帝二次免职的华伦斯坦逃至此处，遭买通的爱尔兰军官用长戟刺杀。'],
 });
 function hp(d,key,opt={}){
   const [n,en,la,lo,note]=HS[key];
@@ -5033,6 +5041,52 @@ const HISTORY_ENTRIES=[
     hp(d,'sh_munich',{left:1,note:'巴伐利亚公爵马克西米利安一世带头串联全体选帝侯，要求解除华伦斯坦兵权。'});
     hp(d,'ty1_regensburg',{kind:'battle',note:'1630年8月雷根斯堡选帝侯会议：斐迪南二世为求选帝侯选自己长子为储，被迫下诏将华伦斯坦撤职。'});
    },[['fill',HC.germany,'遭华伦斯坦十万大军四处“打秋风”的神圣罗马帝国'],['fill',HC.faith,'领头逼宫倒华的巴伐利亚'],['dot',HC.war,'1630年8月雷根斯堡会议（华伦斯坦被撤职）'],['dot','#2a2018','施特拉尔松德、美因茨与慕尼黑']])
+ ]},
+{id:'history-germany-thirty-years-2',ch:5,title:'三十年战争（中）：瑞典王夺波美拉尼亚、真假齐王与华伦斯坦之死',short:'三十年战争（中）',en:'The Thirty Years’ War (II): Sweden Takes Pomerania, the “True King of Qi” Bargain, and Wallenstein’s Fall',period:'1630—1634年',c:HC.germany,
+ scenes:[
+  hs('1630—1631年','法国资助的瑞典王登陆夺波美拉尼亚，掌握波罗的海','法国红衣主教黎塞留每年资助瑞典一百万里弗尔；1630年7月瑞典国王古斯塔夫二世在奥得河口登陆夺取波美拉尼亚，将波罗的海变成瑞典内湖。',[[48.5,2.0],[59.8,20.5]],d=>{
+    ha(d,'mEmpire1050',HC.germany,{fillOpacity:.18});ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.22});
+    hp(d,'w_paris',{left:1,note:'巴黎：红衣主教黎塞留为打破哈布斯堡合围，出钱资助新教瑞典攻打神圣罗马帝国。'});
+    hp(d,'ty2_usedom',{kind:'battle',note:'1630年7月波美拉尼亚登陆：瑞典国王古斯塔夫二世率军在此登陆，吞并波美拉尼亚，把波罗的海变成瑞典内湖。'});
+    hp(d,'ty2_barwalde',{kind:'battle',left:1,note:'1631年1月《贝尔瓦尔德条约》：法国承诺每年向瑞典支付一百万里弗尔军费，维持三万六千瑞军作战。'});
+    hr(d,[[59.33,18.07],[56.5,16.2],[54.14,13.77],[52.79,14.49]],HC.war);
+   },[['fill',HC.germany,'神圣罗马帝国（北部波美拉尼亚被瑞典占领）'],['fill',HC.france,'背后出钱资助瑞典的法兰西（黎塞留）'],['dline',HC.war,'1630—1631年瑞典国王古斯塔夫二世渡波罗的海登陆波美拉尼亚路线'],['dot',HC.war,'1630年波美拉尼亚登陆与1631年法瑞《贝尔瓦尔德条约》'],['dot','#2a2018','巴黎']]),
+  hs('1631—1632年','为何德国不堪一击：逼反新教诸侯与瑞军席卷全德','蒂利屠毁马格德堡并闯入萨克森抢粮，把原本中立的萨克森与勃兰登堡逼向瑞典；古斯塔夫二世在布赖滕费尔德与莱希河击毙蒂利、占领慕尼黑，除哈布斯堡老家外几乎占遍全德。',[[47.2,6.5],[54.5,17.5]],d=>{
+    ha(d,'mEmpire1050',HC.war,{fillOpacity:.26});ha(d,'mSaxonyDuchy',HC.celt,{fillOpacity:.28});ha(d,'mBavariaDuchy',HC.war,{fillOpacity:.34});
+    hp(d,'ty2_magdeburg',{kind:'battle',left:1,note:'1631年5月马格德堡惨案：蒂利攻破此城屠杀两万五千人、全城烧成焦土，激起全德新教徒同仇敌忾。'});
+    hp(d,'ty2_breitenfeld',{kind:'battle',note:'1631年9月17日布赖滕费尔德之战：被蒂利抢粮逼反的萨克森与瑞典联手，两小时轰碎蒂利天主教同盟主力。'});
+    hp(d,'k_mainz',{left:1,note:'1631年冬古斯塔夫二世进驻莱茵河畔美因茨过冬，号令半个德意志。'});
+    hp(d,'ty2_rain',{kind:'battle',left:1,note:'1632年4月莱希河之战：瑞军炮轰击碎蒂利大腿（不久毙命），5月攻占巴伐利亚首府慕尼黑。'});
+    hp(d,'de_prague',{note:'萨克森新教军趁机南下占领布拉格，帝国除奥地利本部外几乎全境沦陷。'});
+    hr(d,[[54.14,13.77],[51.40,12.33],[50.00,8.27],[48.69,10.92],[48.14,11.58]],HC.war);
+   },[['fill',HC.war,'被瑞典与新教联军横扫占领的德意志与巴伐利亚'],['fill',HC.celt,'被皇帝逼反倒向瑞典的萨克森与勃兰登堡'],['dline',HC.war,'1631—1632年古斯塔夫二世自波美拉尼亚一路南下攻入慕尼黑路线'],['dot',HC.war,'马格德堡、1631年布赖滕费尔德大捷与1632年莱希河击毙蒂利'],['dot','#2a2018','美因茨与布拉格']]),
+  hs('1631年底—1632年4月','皇上请华伦出山，“约三事”与“当什么假齐王”','皇帝走投无路求华伦斯坦出山；华伦斯坦在格勒斯多夫“约三事”（要普法尔茨与选帝侯级补偿以报复巴伐利亚、要独断军权、要同新教诸侯和解权），皇帝捏着鼻子全盘同意。',[[47.5,8.0],[52.5,18.0]],d=>{
+    ha(d,'mEmpire1050',HC.germany,{fillOpacity:.18});ha(d,'mBohemia900',HC.faith,{fillOpacity:.3});ha(d,'mBavariaDuchy',HC.war,{fillOpacity:.3});
+    hp(d,'c3_vienna',{left:1,note:'维也纳：眼看瑞军打进巴伐利亚与波希米亚，皇帝斐迪南二世低声下气派特使求华伦斯坦复出。'});
+    hp(d,'ty2_gollersdorf',{kind:'battle',note:'1632年4月《格勒斯多夫协定》：华伦斯坦“约三事”（要独断军权、要与新教和解权、要选帝侯级领地补偿），皇帝如刘邦封真齐王般全盘照准。'});
+    hp(d,'ty1_heidelberg',{left:1,note:'普法尔茨（巴拉丁）：1623年上普法尔茨与选帝侯已转给巴伐利亚，但华伦斯坦恨透巴伐利亚，企图借重排普法尔茨与选帝侯封赏来报复宿敌。'});
+    hp(d,'sh_munich',{left:1,note:'慕尼黑：当年带头逼皇帝炒掉华伦斯坦的巴伐利亚公爵此时正被瑞典王赶出都城，不得不反过来求华伦斯坦救命。'});
+   },[['fill',HC.faith,'华伦斯坦重新募兵的波希米亚大本营'],['fill',HC.war,'被瑞军攻占、不得不求华伦斯坦救命的巴伐利亚'],['fill',HC.germany,'神圣罗马帝国'],['dot',HC.war,'1632年4月格勒斯多夫协定（华伦斯坦约三事）'],['dot','#2a2018','维也纳、海德堡与慕尼黑']]),
+  hs('1632年5—11月','吕岑大雾决战：瑞典王虽死，华伦斯坦上去还是打不过','1632年11月16日吕岑之战，瑞典国王古斯塔夫二世在浓雾中冲阵战死，但悲愤的瑞军反扑打败华伦斯坦；此后瑞典首相奥克森谢纳组建海尔布隆同盟，继续在德国节节胜利。',[[48.2,7.5],[53.2,16.5]],d=>{
+    ha(d,'mEmpire1050',HC.germany,{fillOpacity:.18});ha(d,'mSaxonyDuchy',HC.celt,{fillOpacity:.28});ha(d,'mBohemia900',HC.faith,{fillOpacity:.28});
+    hp(d,'de_prague',{note:'1632年5月华伦斯坦先赶走萨克森军收复布拉格，9月在纽伦堡营垒挡住瑞军。'});
+    hp(d,'ty2_lutzen',{kind:'battle',note:'1632年11月16日吕岑之战：瑞典王古斯塔夫二世在雾中阵亡，但瑞军拼死反扑夺下帝国大炮，打退华伦斯坦。'});
+    hp(d,'k_frankfurt',{left:1,note:'瑞典大法官奥克森谢纳坐镇莱茵—美因河流域，1633年组建“海尔布隆同盟”，统合瑞军在德国继续节节胜利。'});
+    hr(d,[[51.26,12.14],[50.08,14.42]],HC.faith);
+   },[['fill',HC.celt,'吕岑决战所在地萨克森'],['fill',HC.faith,'华伦斯坦败退撤回的波希米亚'],['fill',HC.germany,'奥克森谢纳统率瑞军继续占领的德意志'],['dline',HC.faith,'1632年11月吕岑战后华伦斯坦丢弃大炮败退回波希米亚路线'],['dot',HC.war,'1632年11月16日吕岑之战（古斯塔夫二世战死、华伦斯坦败退）'],['dot','#2a2018','布拉格与法兰克福']]),
+  hs('1633年','国内贵族烦透他：华伦斯坦按兵不动，与瑞、新眉来眼去','1633年华伦斯坦缩在波希米亚与西里西亚，坐视瑞军攻陷巴伐利亚重镇雷根斯堡，激起国内天主教贵族痛恨；华伦斯坦背着皇帝与萨克森、勃兰登堡及瑞典使节秘密往来。',[[47.8,9.5],[52.8,18.0]],d=>{
+    ha(d,'mBohemia900',HC.faith,{fillOpacity:.32});ha(d,'mSaxonyDuchy',HC.celt,{fillOpacity:.26});ha(d,'mBavariaDuchy',HC.war,{fillOpacity:.3});
+    hp(d,'de_prague',{kind:'battle',note:'波希米亚与西里西亚：1633年华伦斯坦在此与萨克森、勃兰登堡及瑞典代表秘密谈判、眉来眼去，甚至休战互通消息。'});
+    hp(d,'ty1_regensburg',{kind:'battle',left:1,note:'1633年11月雷根斯堡陷落：华伦斯坦故意不救宿敌巴伐利亚，眼看瑞军攻占此城。'});
+    hp(d,'c3_vienna',{note:'维也纳宫廷：天主教大贵族、巴伐利亚使节与西班牙公使日夜向皇帝控告华伦斯坦通敌叛国。'});
+   },[['fill',HC.faith,'华伦斯坦拥兵自重、私下与敌密谈的波希米亚'],['fill',HC.celt,'与华伦斯坦眉来眼去的萨克森与勃兰登堡'],['fill',HC.war,'遭瑞军猛攻而华伦斯坦见死不救的巴伐利亚'],['dot',HC.war,'布拉格（秘密议和）与1633年雷根斯堡陷落'],['dot','#2a2018','维也纳']]),
+  hs('1634年1—2月','皇帝将华伦斯坦二次免职，埃格尔血夜乱戟刺杀','1634年1月华伦斯坦召集众将签《皮尔森盟约》；皇帝斐迪南二世秘密下诏将华伦斯坦免职并买通其部将，2月25日夜华伦斯坦逃至埃格尔被爱尔兰军官刺死。',[[47.8,10.5],[51.2,17.5]],d=>{
+    ha(d,'mBohemia900',HC.faith,{fillOpacity:.34});ha(d,'mEmpire1050',HC.germany,{fillOpacity:.16});
+    hp(d,'c3_vienna',{kind:'battle',note:'1634年1月24日维也纳：皇帝斐迪南二世签署秘密诏书免除华伦斯坦一切职务，重金收买皮科洛米尼与加拉斯倒戈。'});
+    hp(d,'de_prague',{note:'布拉格驻军奉皇帝诏令宣布不再听命于华伦斯坦，华伦斯坦众叛亲离向西逃往边境。'});
+    hp(d,'ty2_eger',{kind:'battle',left:1,note:'1634年2月25日夜埃格尔（海布）：华伦斯坦准备迎接瑞典援军前夕，被买通的爱尔兰军官破门一戟刺穿胸膛。'});
+    hr(d,[[50.08,14.42],[49.75,13.38],[50.08,12.37]],HC.war);
+   },[['fill',HC.faith,'皇帝收回军权的波希米亚'],['fill',HC.germany,'神圣罗马帝国'],['dline',HC.war,'1634年2月华伦斯坦被免职后自皮尔森逃往埃格尔路线'],['dot',HC.war,'维也纳免职诏书与1634年2月25日埃格尔刺杀华伦斯坦'],['dot','#2a2018','布拉格']])
  ]},
 {id:'history-italy-vespers',ch:5,title:'西西里晚祷：杀光法国人，两西西里分家',short:'西西里晚祷',en:'The Sicilian Vespers: Death to the French and the Two Sicilies',period:'1266—1302年',c:HC.italy,
  scenes:[
@@ -9861,7 +9915,7 @@ const HISTORY_ERAS=[
  {id:'empire-italy',name:'中世纪盛期：北意大利城市与西西里王国',en:'The Northern Cities and the Kingdom of Sicily',date:'约950—1166年',c:HC.italy,items:[['history-italy-cities'],['history-italy-sicily']]},
  {id:'empire-staufer',name:'中世纪盛期：红胡子、亨利六世与英诺森三世',en:'Barbarossa, Henry VI and Innocent III',date:'1152—1216年',c:HC.germany,items:[['history-germany-barbarossa'],['history-germany-henry6'],['history-germany-innocent']]},
  {id:'empire-france',name:'法兰西：从卡佩开张到“宇宙蜘蛛”一统',en:'France: From Hugh Capet to Louis XI',date:'987—1483年',c:HC.france,items:[['history-france-capet'],['history-france-plantagenet'],['history-france-stlouis'],['history-france-valois'],['history-france-louis11']]},
- {id:'empire-frederick2',name:'德意志、低地与意大利：从腓特烈二世到文艺复兴、查理五世与三十年战争',en:'Germany, Low Countries and Italy: From Frederick II to the Renaissance, Charles V, and the Thirty Years’ War',date:'843—1630年',c:HC.germany,items:[['history-germany-frederick2'],['history-germany-electors'],['history-germany-golden-bull'],['history-germany-hansa'],['history-lowlands-flanders'],['history-lowlands-burgundy'],['history-germany-charles5'],['history-germany-thirty-years-1'],['history-italy-vespers'],['history-italy-venice'],['history-italy-condottieri'],['history-italy-renaissance']]},
+ {id:'empire-frederick2',name:'德意志、低地与意大利：从腓特烈二世到文艺复兴、查理五世与三十年战争',en:'Germany, Low Countries and Italy: From Frederick II to the Renaissance, Charles V, and the Thirty Years’ War',date:'843—1634年',c:HC.germany,items:[['history-germany-frederick2'],['history-germany-electors'],['history-germany-golden-bull'],['history-germany-hansa'],['history-lowlands-flanders'],['history-lowlands-burgundy'],['history-germany-charles5'],['history-germany-thirty-years-1'],['history-germany-thirty-years-2'],['history-italy-vespers'],['history-italy-venice'],['history-italy-condottieri'],['history-italy-renaissance']]},
  {id:'empire-blackdeath',name:'中世纪晚期：黑死病',en:'The Late Middle Ages: the Black Death',date:'1346—1353年',c:HC.italy,items:[['history-italy-blackdeath']]},
  {id:'empire-taifas',name:'西班牙：泰法与圣战',en:'Spain: the Taifas and Holy War',date:'1031—1123年',c:HC.spain,items:[['history-spain-taifas'],['history-spain-crusade']]},
  {id:'empire-spain-1492',name:'西班牙与葡萄牙：从托洛萨到1492大航海',en:'Spain and Portugal: From Las Navas to 1492',date:'1123—1498年',c:HC.spain,items:[['history-spain-reconquista'],['history-spain-aragon'],['history-spain-1492']]},
@@ -9914,13 +9968,13 @@ const HISTORY_BRANCHES=[
  {id:'spain',name:'西班牙',en:'Spain',lane:5,parent:'west',from:481,to:1498,c:HC.spain},
  {id:'france',name:'法兰西',en:'France',lane:5,parent:'west',from:843,to:1483,c:HC.france},
  {id:'lowlands',name:'低地诸国',en:'Low Countries',lane:5,parent:'west',from:843,to:1500,c:HC.lowlands},
- {id:'germany',name:'德意志',en:'Germany',lane:4,parent:'west',from:843,to:1630,c:HC.germany},
+ {id:'germany',name:'德意志',en:'Germany',lane:4,parent:'west',from:843,to:1634,c:HC.germany},
  {id:'italy',name:'意大利',en:'Italy',lane:3,parent:'west',from:843,to:1563,c:HC.italy},
  // 不列颠 (including Ireland): forks from the trunk before Caesar's landing, on lane 6 right beside 法兰西.
  {id:'britain',name:'不列颠',en:'Britain and Ireland',lane:6,parent:'trunk',from:-55,to:1487,c:HC.britain},
  // The 基督教 line: from the Hebrews' nomadic origins (the old Levant branch) to the schism of 1054; on its own lane, right of the West.
  // After 641 it runs through the shared stations of the East Roman dynasties.
- {id:'faith',name:'基督教',en:'Judaism & Christianity',lane:7,parent:'trunk',from:-1400,to:1630,c:HC.faith},
+ {id:'faith',name:'基督教',en:'Judaism & Christianity',lane:7,parent:'trunk',from:-1400,to:1634,c:HC.faith},
  // 埃及 and 波斯 leave the trunk at the early states (老无 2026-10-21): the Ptolemies, the Seleucids, Rome and Byzantium are passing rulers of these lands.
  {id:'egypt',name:'埃及',en:'Egypt',lane:1,parent:'trunk',from:-3100,to:642,c:HC.mino},
  {id:'persia',name:'波斯—阿拉伯',en:'Persia and the Arabs',lane:0,parent:'trunk',from:-3200,to:1501,c:HC.parthia},
@@ -10156,12 +10210,13 @@ const TREE_ROWS={
  'history-faith-reformation-2/0':[['faith','germany'],1537,1555,'1521—1555年'],
  'history-germany-charles5/0':[['germany','faith','italy'],1556,1563,'1516—1563年'],
  'history-germany-thirty-years-1/0':[['germany','faith'],1557,1630,'1555—1630年'],
+ 'history-germany-thirty-years-2/0':[['germany','faith'],1631,1634,'1630—1634年'],
  'history-empire-macedonian/3':[['east','faith'],1054,1056],
  'history-spain-fall/2':[['spain','persia'],711,713],
  'history-arab-seljuks/3':[['persia','east'],1071,1092]
 };
 // Topics still to be written grow the tree as dashed shoots.
-const TREE_FUTURE=[['france',1483,'胡格诺战争与波旁王朝','1483年后待展开：1494—1559年意大利战争 · 1562—1598年胡格诺宗教战争与波旁王朝'],['germany',1630,'瑞典登场与威斯特伐利亚','1630年后待展开：瑞典国王古斯塔夫二世参战 · 1648年《威斯特伐利亚和约》与普鲁士崛起'],['italy',1563,'哈布斯堡霸权与统一','1563年后待展开：西班牙哈布斯堡霸权下的意大利 · 巴洛克时代与近代统一'],['faith',1630,'威斯特伐利亚与宗教宽容','1630年后待展开：1648年《威斯特伐利亚和约》确立加尔文宗合法与三派并立 · 近代宗教宽容'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',1501,'奥斯曼全盛与波斯争霸','1501年后待展开：1517年奥斯曼灭马穆鲁克 · 苏莱曼一世全盛与奥斯曼—萨法维百年争霸'],['china',845,'晚唐五代与宋','845年起 · 待展开'],['spain',1498,'日不落帝国与无敌舰队','1498年后待展开：美洲金银与哈布斯堡西班牙帝国 · 1588年无敌舰队之战'],['eeurope',1505,'伊凡雷帝与沙皇俄国','1505年后待展开：1547年伊凡四世加冕沙皇 · 混乱时代与罗曼诺夫王朝'],['lowlands',1500,'八十年战争与荷兰共和国','1500年后待展开：1568—1648年尼德兰独立战争 · 17世纪荷兰黄金时代'],['crusade',1312,'后来的十字军','1396年尼科波利斯 · 1444年瓦尔纳 · 1571年勒班陀 · 待展开'],['britain',1487,'都铎宗教改革与无敌舰队','1487年后待展开：亨利八世英国宗教改革 · 伊丽莎白一世击败西班牙无敌舰队']];
+const TREE_FUTURE=[['france',1483,'胡格诺战争与波旁王朝','1483年后待展开：1494—1559年意大利战争 · 1562—1598年胡格诺宗教战争与波旁王朝'],['germany',1634,'法军下场与威斯特伐利亚','1634年后待展开：1635年法国亲自下场参战 · 1648年《威斯特伐利亚和约》与普鲁士崛起'],['italy',1563,'哈布斯堡霸权与统一','1563年后待展开：西班牙哈布斯堡霸权下的意大利 · 巴洛克时代与近代统一'],['faith',1634,'威斯特伐利亚与宗教宽容','1634年后待展开：1648年《威斯特伐利亚和约》确立加尔文宗合法与三派并立 · 近代宗教宽容'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',1501,'奥斯曼全盛与波斯争霸','1501年后待展开：1517年奥斯曼灭马穆鲁克 · 苏莱曼一世全盛与奥斯曼—萨法维百年争霸'],['china',845,'晚唐五代与宋','845年起 · 待展开'],['spain',1498,'日不落帝国与无敌舰队','1498年后待展开：美洲金银与哈布斯堡西班牙帝国 · 1588年无敌舰队之战'],['eeurope',1505,'伊凡雷帝与沙皇俄国','1505年后待展开：1547年伊凡四世加冕沙皇 · 混乱时代与罗曼诺夫王朝'],['lowlands',1500,'八十年战争与荷兰共和国','1500年后待展开：1568—1648年尼德兰独立战争 · 17世纪荷兰黄金时代'],['crusade',1312,'后来的十字军','1396年尼科波利斯 · 1444年瓦尔纳 · 1571年勒班陀 · 待展开'],['britain',1487,'都铎宗教改革与无敌舰队','1487年后待展开：亨利八世英国宗教改革 · 伊丽莎白一世击败西班牙无敌舰队']];
 // Where a line stops it says why: [line, year, the event that ends it, note, the line it carries on in].
 const TREE_ENDS=[['trunk',-30,'并入罗马','前146年科林斯被毁 · 前30年最后一个希腊化王国埃及并入罗马','rome'],['rome',476,'西罗马终结','476年西部末代皇帝被废 · 由中世纪西欧接续'],['west',843,'凡尔登三分','843年《凡尔登条约》三分帝国 · 分出法兰西、德意志、意大利'],['east',1453,'东罗马终结','1453年5月29日奥斯曼帝国攻破君士坦丁堡 · 千年东罗马帝国终结']];
 // Sections of one line that run side by side: [line, row keys, side of the passing loop].

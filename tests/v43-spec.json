@@ -78,6 +78,12 @@
    7,
    5
   ],
+  "history-germany-thirty-years-2": [
+   "三十年战争（中）",
+   "1630—1634年",
+   6,
+   5
+  ],
   "history-italy-vespers": [
    "西西里晚祷",
    "1266—1302年",
@@ -249,6 +255,14 @@
    ],
    1557,
    1630
+  ],
+  "history-germany-thirty-years-2/0": [
+   [
+    "germany",
+    "faith"
+   ],
+   1631,
+   1634
   ],
   "history-italy-vespers/0": [
    [
@@ -648,6 +662,30 @@
   [
    "history-germany-thirty-years-1/6",
    "华伦斯坦这个人既反新教也反天主教诸侯，专替皇上争取集权，他的兵一边打败北德与丹麦"
+  ],
+  [
+   "history-germany-thirty-years-2/0",
+   "就在皇帝自断臂膀撤掉华伦斯坦的同一夏，拿了法国经费支持的瑞典国王古斯塔夫二世趁着"
+  ],
+  [
+   "history-germany-thirty-years-2/1",
+   "瑞典军登陆后在德国节节胜利，除了哈布斯堡老家几乎把全德国都占了——德国之所以这么"
+  ],
+  [
+   "history-germany-thirty-years-2/2",
+   "眼看老家不保，皇上低头请华伦斯坦出山，华伦斯坦趁火打劫“约三事”：要普法尔茨与选"
+  ],
+  [
+   "history-germany-thirty-years-2/3",
+   "华伦斯坦要挟了一通重新挂帅，结果上去还是打不过：1632年11月吕岑之战虽然瑞典"
+  ],
+  [
+   "history-germany-thirty-years-2/4",
+   "吃了败仗的华伦斯坦知道硬拼打不过，缩在波希米亚按兵不动，国内天主教贵族越发烦透了"
+  ],
+  [
+   "history-germany-thirty-years-2/5",
+   "见华伦斯坦既打不赢仗又同敌人眉来眼去，皇帝斐迪南二世终于下定决心二次将华伦斯坦免"
   ],
   [
    "history-italy-vespers/0",
@@ -1093,6 +1131,12 @@
     "摔进粪堆没摔死的钦差与“冬王”吃午饭逃席"
    ]
   ],
+  "history-germany-thirty-years-2": [
+   [
+    3,
+    "吕岑大雾中不穿铁甲的“北方雄狮”与埃格尔血夜的长戟"
+   ]
+  ],
   "history-italy-vespers": [
    [
     1,
@@ -1305,6 +1349,12 @@
     "靠老寡妇、劣币财团与“以战养战”发家的战争大亨：华伦斯坦是如何拉起十万大军又得罪全天下的？"
    ]
   ],
+  "history-germany-thirty-years-2": [
+   [
+    1,
+    "为什么德国天主教大军在瑞典面前如此不堪一击：皇帝逼反新教诸侯与古斯塔夫二世的军事革命"
+   ]
+  ],
   "history-italy-venice": [
    [
     3,
@@ -1374,6 +1424,7 @@
   "history-lowlands-burgundy": 300,
   "history-germany-charles5": 300,
   "history-germany-thirty-years-1": 300,
+  "history-germany-thirty-years-2": 300,
   "history-italy-vespers": 300,
   "history-italy-venice": 300,
   "history-italy-condottieri": 300,
@@ -1411,6 +1462,7 @@
     "history-lowlands-burgundy",
     "history-germany-charles5",
     "history-germany-thirty-years-1",
+    "history-germany-thirty-years-2",
     "history-italy-vespers",
     "history-italy-venice",
     "history-italy-condottieri",
@@ -1462,7 +1514,7 @@
    "德意志",
    "west",
    843,
-   1630,
+   1634,
    4
   ],
   "italy": [
@@ -1476,7 +1528,7 @@
    "基督教",
    "trunk",
    -1400,
-   1630,
+   1634,
    7
   ]
  },
@@ -1488,8 +1540,8 @@
   ],
   [
    "germany",
-   1630,
-   "瑞典登场与威斯特伐利亚"
+   1634,
+   "法军下场与威斯特伐利亚"
   ],
   [
    "italy",
@@ -1498,7 +1550,7 @@
   ],
   [
    "faith",
-   1630,
+   1634,
    "威斯特伐利亚与宗教宽容"
   ]
  ],
@@ -1534,7 +1586,8 @@
    "history-faith-reformation-1/0",
    "history-faith-reformation-2/0",
    "history-germany-charles5/0",
-   "history-germany-thirty-years-1/0"
+   "history-germany-thirty-years-1/0",
+   "history-germany-thirty-years-2/0"
   ],
   "italy": [
    "history-germany-innocent/0",
@@ -1561,7 +1614,8 @@
    "history-faith-reformation-1/0",
    "history-faith-reformation-2/0",
    "history-germany-charles5/0",
-   "history-germany-thirty-years-1/0"
+   "history-germany-thirty-years-1/0",
+   "history-germany-thirty-years-2/0"
   ]
  },
  "shared": {
@@ -1608,6 +1662,10 @@
    "italy"
   ],
   "history-germany-thirty-years-1/0": [
+   "germany",
+   "faith"
+  ],
+  "history-germany-thirty-years-2/0": [
    "germany",
    "faith"
   ]
@@ -2102,5 +2160,5 @@
   "mNaplesAnjou1282",
   "mAragonCrown1282"
  ],
- "pass": "法兰西、基督教、德意志、意大利 on to ~1300 — 25 sections (159 scenes): Hugh Capet and Louis VI, the Plantagenets and Philip II (with the marriage-and-land diagram), Saint Louis to Philip IV and Anagni, universities and scholasticism, Frederick II and the Interregnum (with the 豆腐块 on seven excommunications of five emperors), and the Sicilian Vespers; shared stations across lines; 150 of 老无’s points in bold, 88 facts and their order set right in plain text; 18 豆腐块 with 21 corrections"
+ "pass": "法兰西、基督教、德意志、意大利 on to ~1300 — 26 sections (165 scenes): Hugh Capet and Louis VI, the Plantagenets and Philip II (with the marriage-and-land diagram), Saint Louis to Philip IV and Anagni, universities and scholasticism, Frederick II and the Interregnum (with the 豆腐块 on seven excommunications of five emperors), and the Sicilian Vespers; shared stations across lines; 156 of 老无’s points in bold, 88 facts and their order set right in plain text; 19 豆腐块 with 21 corrections"
 }

@@ -23,7 +23,7 @@ const EAST_TAIL=['history-empire-leo/0','history-empire-justinian/0','history-em
  'history-empire-macedonian/0','history-empire-macedonian/3','history-empire-zoe/0','history-arab-seljuks/3','history-empire-alexios/0','history-faith-crusade/0','history-empire-komnenos/0','history-crusade-fourth/0','history-empire-palaiologos/0','history-empire-fall-1453/0'];
 const FAITH_TAIL=['history-faith-papacy/0','history-faith-three-chapters/0','history-faith-gregory/0','history-empire-constans/0','history-empire-isaurian/0','history-faith-carolingian/0','history-empire-amorian/0',
  'history-faith-dark-century/0','history-germany-otto/0','history-faith-imperial-church/0','history-faith-cluny/0','history-faith-leo-ix/0','history-empire-macedonian/3',
- 'history-germany-investiture/0','history-germany-canossa/0','history-spain-crusade/0','history-faith-urban/0','history-faith-crusade/0','history-faith-citeaux/0','history-germany-worms/0','history-faith-cardinals/0','history-crusade-second/0','history-germany-barbarossa/0','history-germany-innocent/0','history-germany-frederick2/0','history-faith-scholasticism/0','history-france-stlouis/0','history-faith-avignon/0','history-faith-clement/0','history-italy-blackdeath/0','history-faith-schism/0','history-faith-constance/0','history-empire-fall-1453/0','history-faith-reformation-1/0','history-faith-reformation-2/0','history-germany-charles5/0','history-germany-thirty-years-1/0'];
+ 'history-germany-investiture/0','history-germany-canossa/0','history-spain-crusade/0','history-faith-urban/0','history-faith-crusade/0','history-faith-citeaux/0','history-germany-worms/0','history-faith-cardinals/0','history-crusade-second/0','history-germany-barbarossa/0','history-germany-innocent/0','history-germany-frederick2/0','history-faith-scholasticism/0','history-france-stlouis/0','history-faith-avignon/0','history-faith-clement/0','history-italy-blackdeath/0','history-faith-schism/0','history-faith-constance/0','history-empire-fall-1453/0','history-faith-reformation-1/0','history-faith-reformation-2/0','history-germany-charles5/0','history-germany-thirty-years-1/0','history-germany-thirty-years-2/0'];
 const SHARED=['history-empire-constans/0','history-empire-isaurian/0','history-empire-amorian/0','history-empire-macedonian/3'];
 // 老无's core theses and hooks, woven into the right historical places and bolded (no conversational "后来/结果/他死之后事情怎么样了" copied verbatim).
 const BOLD=[['history-empire-theodosius/2','394年9月冷河之战，狄奥多西征调两万西哥特同盟兵讨伐西部篡位者，首领阿拉里克率部履行义务顶在最前线，一战死伤过半'],
@@ -127,8 +127,8 @@ const REGIONS=['mThemeOpsikion','mThemeThrakesion','mThemeAnatolikon','mThemeArm
    // One story told once: the councils after 641 are shared stations on 东罗马 and 基督教.
    for(const [k,lines,on] of r.shared){assert.deepEqual(lines,['east','faith'],k);assert.deepEqual(on,['crusade','east','faith'],k);}
    assert.deepEqual(r.east.slice(-EAST_TAIL.length),EAST_TAIL);assert.deepEqual(r.faith.slice(-FAITH_TAIL.length),FAITH_TAIL);
-   assert.deepEqual(r.branches.east,[395,1453]);assert.deepEqual(r.branches.faith,[-1400,1630]);
-   assert.deepEqual(r.futures.filter(f=>['east','faith'].includes(f[0])),[['faith',1630,'威斯特伐利亚与宗教宽容']]);
+   assert.deepEqual(r.branches.east,[395,1453]);assert.deepEqual(r.branches.faith,[-1400,1634]);
+   assert.deepEqual(r.futures.filter(f=>['east','faith'].includes(f[0])),[['faith',1634,'威斯特伐利亚与宗教宽容']]);
    for(const [k,ok] of r.bold)assert.ok(ok,k+' lacks 老无’s thesis in bold');
    for(const [k,ok] of r.fixes)assert.ok(ok,k+' lacks the in-place factual correction');
    assert.equal(r.chatFiller,false,'conversational filler or uncorrected wording left in prose');
@@ -169,7 +169,7 @@ const REGIONS=['mThemeOpsikion','mThemeThrakesion','mThemeAnatolikon','mThemeArm
    },sel);
    assert.match(t.mace[0],/^马其顿王朝东罗马 · 867—1025年$/);assert.match(t.mace[1],/^东西教会大分裂东罗马、基督教 · 1025—1056年$/);
    assert.equal(t.on.length,2);assert.ok(t.on.every(n=>n[0]==='history-empire-macedonian/3')&&t.on[0][1]===t.on[1][1],JSON.stringify(t.on));
-   assert.equal(t.swaps,48,'interchanges (v40: seven more on the 十字军 line; v42: Worms, Barbarossa, Henry VI and Innocent III on two and three lines; v43: Frederick II and Saint Louis–Philip IV; v45: Henry II and Richard I–John on 不列颠 and 法兰西; v49: both halves of Avignon on 基督教 and 法兰西; v50: the Black Death on six lines; v52–v70: all lines aligned through the Reformation), with the sieges of Constantinople, Tariq’s crossing, Otto’s crowning, the Rus and Byzantium, and (老无 2026-10-29) the investiture contest, Canossa, the holy war in Spain, Manzikert and the First Crusade');
+   assert.equal(t.swaps,49,'interchanges (v40: seven more on the 十字军 line; v42: Worms, Barbarossa, Henry VI and Innocent III on two and three lines; v43: Frederick II and Saint Louis–Philip IV; v45: Henry II and Richard I–John on 不列颠 and 法兰西; v49: both halves of Avignon on 基督教 and 法兰西; v50: the Black Death on six lines; v52–v70: all lines aligned through the Reformation), with the sieges of Constantinople, Tariq’s crossing, Otto’s crowning, the Rus and Byzantium, and (老无 2026-10-29) the investiture contest, Canossa, the holy war in Spain, Manzikert and the First Crusade');
    if(label!=='desktop'){await page.keyboard.press('Escape');await wait(100);}
    for(const hash of ['history-empire-justinian/6','history-empire-constans/2','history-empire-anarchy/0','history-empire-isaurian/5','history-empire-macedonian/2']){
     await page.evaluate(h=>{const [id,s]=h.split('/');go(id,{scene:+s});},hash);await wait(250);

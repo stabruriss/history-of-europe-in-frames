@@ -706,7 +706,7 @@
    "德意志",
    "west",
    843,
-   1630,
+   1634,
    4
   ],
   "italy": [
@@ -727,7 +727,7 @@
    "基督教",
    "trunk",
    -1400,
-   1630,
+   1634,
    7
   ],
   "east": [
@@ -748,8 +748,8 @@
  "futures": [
   [
    "germany",
-   1630,
-   "瑞典登场与威斯特伐利亚"
+   1634,
+   "法军下场与威斯特伐利亚"
   ],
   [
    "italy",
@@ -758,7 +758,7 @@
   ],
   [
    "faith",
-   1630,
+   1634,
    "威斯特伐利亚与宗教宽容"
   ],
   [
@@ -793,7 +793,8 @@
    "history-faith-reformation-1/0",
    "history-faith-reformation-2/0",
    "history-germany-charles5/0",
-   "history-germany-thirty-years-1/0"
+   "history-germany-thirty-years-1/0",
+   "history-germany-thirty-years-2/0"
   ],
   "italy": [
    "history-germany-otto/0",
@@ -838,7 +839,8 @@
    "history-faith-reformation-1/0",
    "history-faith-reformation-2/0",
    "history-germany-charles5/0",
-   "history-germany-thirty-years-1/0"
+   "history-germany-thirty-years-1/0",
+   "history-germany-thirty-years-2/0"
   ],
   "spain": [
    "history-spain-andalus/0",
