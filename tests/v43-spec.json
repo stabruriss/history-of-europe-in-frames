@@ -637,7 +637,7 @@
   ],
   [
    "history-germany-thirty-years-1/0",
-   "三十年战争前夕，德意志天主教与新教各自结盟，新教在中下层飞速发展；哈布斯堡的马蒂"
+   "查理五世退位后皇位传给弟弟斐迪南一世，再经儿子马克西米利安二世传到孙子鲁道夫二世"
   ],
   [
    "history-germany-thirty-years-1/1",
@@ -1344,6 +1344,10 @@
    ]
   ],
   "history-germany-thirty-years-1": [
+   [
+    0,
+    "奥地利哈布斯堡三代传位账（1556—1619）：从查理五世之弟斐迪南一世，到孙子鲁道夫二世、马蒂亚斯与斐迪南二世"
+   ],
    [
     5,
     "靠老寡妇、劣币财团与“以战养战”发家的战争大亨：华伦斯坦是如何拉起十万大军又得罪全天下的？"
@@ -2160,5 +2164,5 @@
   "mNaplesAnjou1282",
   "mAragonCrown1282"
  ],
- "pass": "法兰西、基督教、德意志、意大利 on to ~1300 — 26 sections (165 scenes): Hugh Capet and Louis VI, the Plantagenets and Philip II (with the marriage-and-land diagram), Saint Louis to Philip IV and Anagni, universities and scholasticism, Frederick II and the Interregnum (with the 豆腐块 on seven excommunications of five emperors), and the Sicilian Vespers; shared stations across lines; 156 of 老无’s points in bold, 88 facts and their order set right in plain text; 19 豆腐块 with 21 corrections"
+ "pass": "法兰西、基督教、德意志、意大利 on to ~1300 — 26 sections (165 scenes): Hugh Capet and Louis VI, the Plantagenets and Philip II (with the marriage-and-land diagram), Saint Louis to Philip IV and Anagni, universities and scholasticism, Frederick II and the Interregnum (with the 豆腐块 on seven excommunications of five emperors), and the Sicilian Vespers; shared stations across lines; 156 of 老无’s points in bold, 88 facts and their order set right in plain text; 20 豆腐块 with 21 corrections"
 }
