@@ -110,8 +110,8 @@
   ],
   "history-italy-renaissance": [
    "美第奇与文艺复兴",
-   "约1300—1494年",
-   6,
+   "约1300—1503年",
+   7,
    5
   ],
   "history-faith-scholasticism": [
@@ -304,7 +304,7 @@
     "italy"
    ],
    1454,
-   1494
+   1503
   ],
   "history-faith-scholasticism/0": [
    [
@@ -783,27 +783,31 @@
   ],
   [
    "history-italy-renaissance/0",
-   "佛罗伦萨靠精加工英格兰与西班牙羊毛、丝织业以及成色恒定的“金弗罗林”金币成为全欧"
+   "十字军之后教廷势力开始衰落，富庶的意大利成了各方争夺的肥奶牛，因政府统治力不足形"
   ],
   [
    "history-italy-renaissance/1",
-   "平民出身的美第奇家族靠承包罗马教廷的什一税汇兑与明矾矿垄断暴富，掌门人科西莫14"
+   "到东罗马皇帝来意大利跪求十字军时，教宗尤金四世和东罗马手下谈东西教会合并，为了圣"
   ],
   [
    "history-italy-renaissance/2",
-   "意大利商人与银行家把过剩的财富全砸进艺术、建筑与古籍赞助，本质上是“新钱”想更像"
+   "此后美第奇从“圣祖”科西莫传到“世宗”痛风者皮耶罗、再传到“高宗”豪华者洛伦佐，"
   ],
   [
    "history-italy-renaissance/3",
-   "科西莫之孙“豪华者”洛伦佐将文艺赞助与均势外交推向顶峰，却在1478年4月圣母百"
+   "然而和两百多年后的另一位“高宗”乾隆一样，洛伦佐四处嘚瑟、好大喜功、挥霍无度，让"
   ],
   [
    "history-italy-renaissance/4",
-   "帕齐血案后洛伦佐单骑闯入敌国那不勒斯说服国王退兵，保住意大利五强均势；然而文艺复"
+   "不久西克斯图斯四世死去，他培养的继承人尤利乌斯二世羽翼未丰，枢机团选了个过渡性的"
   ],
   [
    "history-italy-renaissance/5",
-   "1494年秋，篡夺米兰大权的卢多维科·斯福尔扎为打击那不勒斯引狼入室，邀请法王查"
+   "1492年英诺森八世与洛伦佐差不多同时死去，佛罗伦萨由洛伦佐长子继位；教廷那边则"
+  ],
+  [
+   "history-italy-renaissance/6",
+   "亚历山大六世把私生子女当成争霸意大利的政治棋子，派私生子切萨雷·博吉亚横扫罗马涅"
   ],
   [
    "history-faith-scholasticism/0",
@@ -1227,6 +1231,10 @@
    [
     3,
     "大教堂弥撒上的匕首与吊在市政厅窗外的大主教"
+   ],
+   [
+    6,
+    "教宗私生子的军事总工程师达·芬奇与《伊莫拉俯瞰图》"
    ]
   ],
   "history-faith-scholasticism": [
@@ -1421,8 +1429,12 @@
   ],
   "history-italy-renaissance": [
    [
+    0,
+    "政府统治力不足长出的意大利自由市镇群像：威尼斯、热那亚、米兰与佛罗伦萨各靠什么当家？"
+   ],
+   [
     2,
-    "为什么文艺复兴偏偏长在意大利？“新钱”洗白成“老钱”的文化贴金经济学"
+    "为什么文艺复兴偏偏长在意大利？“新钱想更像老钱”的文化贴金术与美第奇三代账"
    ]
   ],
   "history-faith-scholasticism": [
@@ -2226,5 +2238,5 @@
   "mNaplesAnjou1282",
   "mAragonCrown1282"
  ],
- "pass": "法兰西、基督教、德意志、意大利 on to ~1300 — 27 sections (172 scenes): Hugh Capet and Louis VI, the Plantagenets and Philip II (with the marriage-and-land diagram), Saint Louis to Philip IV and Anagni, universities and scholasticism, Frederick II and the Interregnum (with the 豆腐块 on seven excommunications of five emperors), and the Sicilian Vespers; shared stations across lines; 163 of 老无’s points in bold, 88 facts and their order set right in plain text; 21 豆腐块 with 21 corrections"
+ "pass": "法兰西、基督教、德意志、意大利 on to ~1300 — 27 sections (173 scenes): Hugh Capet and Louis VI, the Plantagenets and Philip II (with the marriage-and-land diagram), Saint Louis to Philip IV and Anagni, universities and scholasticism, Frederick II and the Interregnum (with the 豆腐块 on seven excommunications of five emperors), and the Sicilian Vespers; shared stations across lines; 164 of 老无’s points in bold, 88 facts and their order set right in plain text; 22 豆腐块 with 21 corrections"
 }
