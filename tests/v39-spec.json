@@ -706,14 +706,14 @@
    "德意志",
    "west",
    843,
-   1500,
+   1563,
    4
   ],
   "italy": [
    "意大利",
    "west",
    843,
-   1494,
+   1563,
    3
   ],
   "spain": [
@@ -727,7 +727,7 @@
    "基督教",
    "trunk",
    -1400,
-   1453,
+   1563,
    7
   ],
   "east": [
@@ -748,33 +748,28 @@
  "futures": [
   [
    "germany",
-   1500,
-   "选帝侯与哈布斯堡"
+   1563,
+   "三十年战争与普鲁士"
   ],
   [
    "italy",
-   1494,
-   "城市共和国与文艺复兴"
+   1563,
+   "哈布斯堡霸权与统一"
   ],
   [
    "faith",
-   1453,
-   "宗教改革"
+   1563,
+   "三十年战争与宗教宽容"
   ],
   [
    "spain",
    1498,
-   "收复失地运动"
-  ],
-  [
-   "east",
-   1453,
-   "科穆宁王朝"
+   "日不落帝国与无敌舰队"
   ],
   [
    "persia",
    1501,
-   "伊儿汗国与马穆鲁克"
+   "奥斯曼全盛与波斯争霸"
   ]
  ],
  "tails": {
@@ -794,7 +789,10 @@
    "history-italy-blackdeath/0",
    "history-germany-golden-bull/0",
    "history-germany-hansa/0",
-   "history-lowlands-burgundy/0"
+   "history-lowlands-burgundy/0",
+   "history-faith-reformation-1/0",
+   "history-faith-reformation-2/0",
+   "history-germany-charles5/0"
   ],
   "italy": [
    "history-germany-otto/0",
@@ -810,7 +808,8 @@
    "history-italy-venice/0",
    "history-italy-condottieri/0",
    "history-empire-fall-1453/0",
-   "history-italy-renaissance/0"
+   "history-italy-renaissance/0",
+   "history-germany-charles5/0"
   ],
   "faith": [
    "history-faith-leo-ix/0",
@@ -834,7 +833,10 @@
    "history-italy-blackdeath/0",
    "history-faith-schism/0",
    "history-faith-constance/0",
-   "history-empire-fall-1453/0"
+   "history-empire-fall-1453/0",
+   "history-faith-reformation-1/0",
+   "history-faith-reformation-2/0",
+   "history-germany-charles5/0"
   ],
   "spain": [
    "history-spain-andalus/0",

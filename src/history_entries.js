@@ -1423,6 +1423,24 @@ Object.assign(HS,{
   lb_worms:['沃尔姆斯','Worms',49.63,8.359,'莱茵河畔帝国自由市；1495年马克西米利安一世在此召开帝国会议，颁布《永久和平令》并设立帝国最高法院。'],
   lb_antwerp:['安特卫普','Antwerp',51.219,4.402,'斯海尔德河深水大港；15世纪末接替淤塞的布鲁日，崛起为16世纪欧洲头号金融与香料集散之都。'],
   lb_amsterdam:['阿姆斯特丹','Amsterdam',52.368,4.904,'荷兰北方海运之都；凭波罗的海谷物与北海鲱鱼贸易崛起为欧洲航运枢纽。'],
+  rf1_assisi:['阿西西','Assisi',43.071,12.618,'翁布里亚山城；1209年圣方济各在此创立托钵修会方济各会。'],
+  rf1_wittenberg:['维滕贝格','Wittenberg',51.866,12.649,'萨克森选帝侯国的新兴大学城；1517年10月31日马丁·路德在此发表《九十五条论纲》，掀起宗教改革。'],
+  rf1_augsburg:['奥格斯堡','Augsburg',48.37,10.898,'南德金融中心与帝国自由市；德意志首富富格尔银行总部所在，包揽美因茨大主教赎罪券贷款与分成。'],
+  rf1_juterbog:['于特博格','Jüterbog',51.992,13.079,'紧邻萨克森边界的集镇；1517年总推销员帖策尔在此摇铃叫卖赎罪券，引来维滕贝格信徒跨界购买。'],
+  rf1_leipzig:['莱比锡','Leipzig',51.34,12.375,'萨克森商业与大学重镇；1519年7月路德在此与神学家埃克辩论，公开否认教宗与大公会议无谬。'],
+  rf1_wartburg:['瓦特堡','Wartburg',50.966,10.306,'图林根森林山顶古堡；1521—1522年萨克森选帝侯将路德藏匿于此，路德在此用十一周将希腊文《新约》译成白话德文。'],
+  rf1_geneva:['日内瓦','Geneva',46.204,6.143,'瑞士法语区自治城市；1536年起法国新教大V加尔文在此建立政教合一的神权共和国，传播预定论。'],
+  rf1_zurich:['苏黎世','Zürich',47.377,8.542,'瑞士德语区重镇；改革家慈运理在此推行激进宗教改革，废除圣像与弥撒。'],
+  rf2_zwickau:['茨维考','Zwickau',50.718,12.496,'萨克森南部织工城市；激进派大V闵采尔在此向矿工与织工宣讲暴力千禧年革命。'],
+  rf2_memmingen:['梅明根','Memmingen',47.983,10.181,'上士瓦本帝国自由市；1525年3月起义农民代表在此拟定《十二条款》，要求废除农奴制与自选牧师。'],
+  rf2_frankenhausen:['弗兰肯豪森','Frankenhausen',51.356,11.101,'图林根北部的盐镇；1525年5月15日诸侯联军在此用火炮与骑兵屠杀六千起义农民，生擒并处死闵采尔。'],
+  rf2_speyer:['斯派尔','Speyer',49.317,8.441,'莱茵河畔帝国城市；1529年4月帝国会议上六位诸侯与十四座自由市递交抗议书，“新教徒（抗议派）”由此得名。'],
+  rf2_schmalkalden:['施马尔卡登','Schmalkalden',50.722,10.454,'图林根西南部小城；1531年萨克森与黑森等新教诸侯在此结成军事同盟对抗皇帝查理五世。'],
+  rf2_muhlberg:['米尔贝格','Mühlberg',51.433,13.217,'易北河畔重镇；1547年4月24日皇帝查理五世在此大败施马尔卡登同盟军，生擒萨克森选帝侯。'],
+  c5_pavia:['帕维亚','Pavia',45.185,9.158,'米兰以南重镇；1525年2月24日查理五世的西班牙火绳枪方阵在此大破法军，生擒法王弗朗索瓦一世。'],
+  c5_trent:['特兰托','Trent (Trento)',46.066,11.121,'阿尔卑斯山南麓主教城；1545—1563年教宗保罗三世等在此召开特兰托大公会议，开启天主教反宗教改革。'],
+  c5_yuste:['尤斯特修道院','Monastery of Yuste',40.114,-5.738,'西班牙埃斯特雷马杜拉山间修道院；1556年查理五世退位分家后隐居于此，1558年病逝。'],
+  c5_madrid:['马德里','Madrid',40.417,-3.704,'卡斯蒂利亚中枢；1525年法王弗朗索瓦一世被俘押解至此，后成为查理五世之子腓力二世统治西班牙哈布斯堡帝国的都城。'],
 });
 function hp(d,key,opt={}){
   const [n,en,la,lo,note]=HS[key];
@@ -4903,6 +4921,55 @@ const HISTORY_ENTRIES=[
     hp(d,'lb_vienna',{note:'马克西米利安一世坐镇奥地利与帝国，哈布斯堡尼德兰成为全帝国最富庶的税源。'});
    },[['fill',HC.germany,'1495年帝国改革后的神圣罗马帝国与哈布斯堡尼德兰'],['dot',HC.war,'1495年沃尔姆斯会议、金融之都安特卫普与海运之都阿姆斯特丹'],['dot','#2a2018','淤塞的布鲁日与维也纳']])
  ]},
+{id:'history-germany-charles5',ch:5,title:'查理五世的欧洲棋局：罗马之劫、特兰托反击与哈布斯堡分家',short:'查理五世与哈布斯堡分家',en:'Charles V’s European Chessboard: The Sack of Rome, the Council of Trent, and the Habsburg Partition',period:'1516—1563年',c:HC.germany,
+ scenes:[
+  hs('1516—1525年','查理五世当选皇帝与帕维亚生擒法王','1519年查理五世借富格尔银行八十五万金币当选皇帝，合围法国；1525年2月帕维亚之战西班牙火绳枪方阵生擒法王弗朗索瓦一世，法王获释后联手奥斯曼苏丹夹击皇帝。',[[37.5,-6.5],[53.5,29.5]],d=>{
+    ha(d,'mEmpire1050',HC.germany,{fillOpacity:.2});ha(d,'mFlanders900',HC.germany,{fillOpacity:.32});
+    ha(d,'mLeonCastile1080',HC.germany,{fillOpacity:.24});ha(d,'mNaplesAnjou1282',HC.germany,{fillOpacity:.24});
+    ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.24});ha(d,'mOttoman1522',HC.parthia,{fillOpacity:.18,dashArray:'4 4'});
+    hp(d,'k_frankfurt',{left:1,note:'1519年6月法兰克福选举：十九岁的查理五世靠奥格斯堡富格尔银行八十五万弗罗林买通七大选帝侯当选。'});
+    hp(d,'c5_pavia',{kind:'battle',note:'1525年2月24日帕维亚之战：帝国军火绳枪配长矛方阵大败法军，生擒法王弗朗索瓦一世。'});
+    hp(d,'c5_madrid',{left:1,note:'弗朗索瓦一世被押往马德里坐牢一年，1526年签字获释后立即毁约。'});
+    hp(d,'constantinople',{note:'弗朗索瓦一世秘密向奥斯曼苏丹苏莱曼一世求援，结成法土同盟东西夹击查理五世。'});
+   },[['fill',HC.germany,'查理五世的哈布斯堡大帝国（西班牙、低地、德意志、奥地利、那不勒斯）'],['fill',HC.france,'被四面合围的法兰西（弗朗索瓦一世）'],['dash',HC.parthia,'与法王结盟的奥斯曼帝国'],['dot',HC.war,'1525年帕维亚之战（生擒法王）'],['dot','#2a2018','法兰克福、马德里与君士坦丁堡']]),
+  hs('1526—1527年','克莱芒七世背刺与1527年“罗马之劫”','美第奇教宗克莱芒七世联手法国反帝；1527年5月查理五世麾下断饷的两万德意志路德派雇佣兵与西班牙兵攻破罗马狂抢八个月，克莱芒七世困守圣天使堡。',[[40.2,8.0],[46.2,15.8]],d=>{
+    ha(d,'mPapal1210',HC.faith,{fillOpacity:.32});ha(d,'mNaplesAnjou1282',HC.germany,{fillOpacity:.22});
+    hp(d,'rome',{kind:'battle',note:'1527年5月6日“罗马之劫”：两万断饷的德意志路德派雇佣兵与西班牙兵冲入罗马，屠杀洗劫八个月，克莱芒七世逃入圣天使堡。'});
+    hp(d,'ci_florence',{left:1,note:'罗马被攻破消息传来，佛罗伦萨市民趁机起义，再次赶走美第奇家族恢复共和国。'});
+    hp(d,'bb_bologna',{left:1,note:'帝国军自北意大利一路南下，沿途无人能挡。'});
+    hr(d,[[45.18,9.16],[44.49,11.34],[43.77,11.25],[41.89,12.48]],HC.war);
+   },[['fill',HC.faith,'遭帝国哗变大军洗劫的教宗国'],['fill',HC.germany,'查理五世的那不勒斯'],['dline',HC.war,'1527年春帝国哗变大军南下攻破罗马路线'],['dot',HC.war,'1527年5月罗马之劫'],['dot','#2a2018','佛罗伦萨与博洛尼亚']]),
+  hs('1529—1530年','帮美第奇拿回佛罗伦萨与博洛尼亚加冕','克莱芒七世向查理五世求和：1530年2月在博洛尼亚最后一次为神圣罗马皇帝加冕，查理五世则派大军攻陷佛罗伦萨共和国、扶美第奇成为世袭公爵。',[[40.5,8.2],[45.8,15.2]],d=>{
+    ha(d,'mPapal1210',HC.faith,{fillOpacity:.28});ha(d,'mNaplesAnjou1282',HC.germany,{fillOpacity:.22});
+    hp(d,'bb_bologna',{kind:'battle',left:1,note:'1530年2月24日博洛尼亚加冕：克莱芒七世在此为查理五世戴上皇冠，是历史上最后一次由教宗主持的皇帝加冕礼。'});
+    hp(d,'ci_florence',{kind:'battle',left:1,note:'1529—1530年帝国军围攻佛罗伦萨十个月将其攻陷，扶克莱芒七世私生子亚历山德罗·德·美第奇为世袭公爵。'});
+    hp(d,'rome',{note:'克莱芒七世交出巨额赎金后返回满目疮痍的罗马。'});
+   },[['fill',HC.faith,'向查理五世屈服的教宗国'],['fill',HC.germany,'帝国控制下的那不勒斯'],['dot',HC.war,'1530年博洛尼亚加冕与攻陷佛罗伦萨'],['dot','#2a2018','罗马']]),
+  hs('1534—1563年','保罗三世上位：西斯廷画壁、耶稣会与特兰托会议','1534年保罗三世继位，请米开朗基罗绘西斯廷《最后的审判》（1536—1541），1540年批准创立耶稣会，1545—1563年召开特兰托大公会议整肃教会。',[[40.5,8.0],[47.5,16.0]],d=>{
+    ha(d,'mPapal1210',HC.faith,{fillOpacity:.34});ha(d,'mEmpire1050',HC.germany,{fillOpacity:.14});
+    hp(d,'rome',{kind:'battle',left:1,note:'梵蒂冈：保罗三世命米开朗基罗在西斯廷礼拜堂绘《最后的审判》（1536—1541），并于1540年批准罗耀拉创立耶稣会。'});
+    hp(d,'c5_trent',{kind:'battle',note:'特兰托（1545—1563年大公会议）：选在阿尔卑斯山南麓帝国境内召开，整顿教士纪律并重申七件圣事与教宗权威。'});
+    hp(d,'bb_bologna',{left:1,note:'1547年会议一度因瘟疫与同皇帝摩擦短暂迁往博洛尼亚。'});
+   },[['fill',HC.faith,'发起反宗教改革的教宗国'],['fill',HC.germany,'神圣罗马帝国'],['dot',HC.war,'罗马（西斯廷壁画与耶稣会）与特兰托大公会议'],['dot','#2a2018','博洛尼亚']]),
+  hs('1555—1556年','查理五世退位分封：哈布斯堡一分为二','1555—1556年查理五世退位隐居尤斯特修道院：将西班牙、低地与意大利分给儿子腓力二世（西支），将奥地利、波希米亚、匈牙利与神罗皇位分给弟弟斐迪南一世（东支）。',[[36.5,-9.0],[54.0,20.5]],d=>{
+    ha(d,'mLeonCastile1080',HC.spain,{fillOpacity:.3});ha(d,'mAragonCrown1282',HC.spain,{fillOpacity:.28});
+    ha(d,'mFlanders900',HC.spain,{fillOpacity:.36});ha(d,'mNaplesAnjou1282',HC.spain,{fillOpacity:.28});
+    ha(d,'mEmpire1050',HC.germany,{fillOpacity:.22});ha(d,'mBohemia900',HC.germany,{fillOpacity:.3});
+    hp(d,'lb_brussels',{kind:'battle',left:1,note:'1555年10月查理五世在布鲁塞尔宫廷含泪宣布退位，将低地十七省与西班牙王冠传给儿子腓力二世。'});
+    hp(d,'c5_madrid',{left:1,note:'马德里：儿子腓力二世统辖西班牙、美洲殖民地、低地与意大利（西班牙哈布斯堡支系）。'});
+    hp(d,'c3_vienna',{kind:'battle',note:'维也纳：弟弟斐迪南一世统辖奥地利、波希米亚、匈牙利并接任神圣罗马皇帝（奥地利哈布斯堡支系）。'});
+    hp(d,'c5_yuste',{left:1,note:'尤斯特修道院：查理五世退隐于此修表听经，1558年染疟疾去世。'});
+   },[['fill',HC.spain,'分给儿子腓力二世的西支：西班牙、低地诸国、米兰与那不勒斯'],['fill',HC.germany,'分给弟弟斐迪南一世的东支：奥地利、波希米亚与神圣罗马帝国'],['dot',HC.war,'1555年布鲁塞尔退位与维也纳东支中心'],['dot','#2a2018','马德里与尤斯特修道院']]),
+  hs('1556—1618年','分家埋下的两颗大雷：尼德兰战火与三十年战争引线','西班牙国王腓力二世用极端天主教与重税高压统治低地，引爆尼德兰独立战争；奥地利皇帝缺钱缺兵面对波希米亚与德意志新教诸侯，埋下1618年三十年战争引线。',[[37.5,-6.5],[54.5,19.5]],d=>{
+    ha(d,'mLeonCastile1080',HC.spain,{fillOpacity:.24});ha(d,'mFlanders900',HC.war,{fillOpacity:.38});
+    ha(d,'mEmpire1050',HC.germany,{fillOpacity:.18});ha(d,'mBohemia900',HC.war,{fillOpacity:.34});
+    hp(d,'c5_madrid',{left:1,note:'腓力二世在马德里遥控低地，不懂荷兰语且严抓加尔文派异端，把尼德兰逼反。'});
+    hp(d,'gh_amsterdam',{kind:'battle',left:1,note:'阿姆斯特丹与低地北方：1568年爆发反抗西班牙统治的“八十年战争（荷兰独立战争）”。'});
+    hp(d,'de_prague',{kind:'battle',note:'布拉格：波希米亚新教贵族与奥地利哈布斯堡天主教皇帝矛盾日深，1618年在此引爆“三十年战争”。'});
+    hp(d,'c3_vienna',{note:'维也纳：失去西班牙金银直输的奥地利皇帝，一遇危局就请西班牙堂兄弟跨国派兵助拳。'});
+    hr(d,[[40.42,-3.70],[45.46,9.19],[50.85,4.35]],HC.spain);
+   },[['fill',HC.war,'两大火药桶：反抗西班牙的低地诸国与对抗奥地利的波希米亚'],['fill',HC.spain,'西班牙哈布斯堡'],['fill',HC.germany,'奥地利哈布斯堡治下的帝国'],['dline',HC.spain,'西班牙运兵镇压低地与支援奥地利的“西班牙军道”'],['dot',HC.war,'阿姆斯特丹（八十年战争）与布拉格（三十年战争起点）'],['dot','#2a2018','马德里与维也纳']])
+ ]},
 {id:'history-italy-vespers',ch:5,title:'西西里晚祷：杀光法国人，两西西里分家',short:'西西里晚祷',en:'The Sicilian Vespers: Death to the French and the Two Sicilies',period:'1266—1302年',c:HC.italy,
  scenes:[
   hs('1220—1268年','西西里的底色与法国新主','1220至1240年代腓特烈二世把西西里穆斯林迁往卢切拉；1266年2月安茹的查理在贝内文托杀曼弗雷德，1268年在塔利亚科佐败康拉丁并斩于那不勒斯。',[[36.5,11.5],[43.0,18.5]],d=>{
@@ -6491,6 +6558,111 @@ const HISTORY_ENTRIES=[
     hp(d,'sc_tabor',{note:'1420年激进的胡斯派在此建营，杰式卡的战车大营。'});
     hp(d,'sc_domazlice',{kind:'battle',left:1,note:'1431年8月14日十字军在此一听胡斯派的战歌就溃散。'});
    },[['fill',HC.war,'胡斯派的波希米亚'],['fill',HC.germany,'神圣罗马帝国'],['dot',HC.war,'布拉格与多马日利采'],['dot','#2a2018','塔博尔']])
+ ]},
+{id:'history-faith-reformation-1',ch:6,title:'宗教改革（上）：印刷机“推特”、屠龙者成龙与路德九十五条出圈',short:'宗教改革（上）',en:'The Reformation (I): The Pamphlet Twitter, Dragon-Slayers Turned Dragons, and Luther’s Viral Ninety-Five Theses',period:'1450—1536年',c:HC.faith,
+ scenes:[
+  hs('1450—1517年','印刷机“推特”与沦为提款机的德意志','古腾堡印刷机催生小册子舆论场；英法西王权集权能截留教税，唯有分裂的神圣罗马帝国沦为罗马教廷随意抽血的“奶牛”。',[[38.0,-6.0],[55.0,18.5]],d=>{
+    ha(d,'mEmpire1050',HC.germany,{fillOpacity:.22});ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.16,dashArray:'4 4'});
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.16,dashArray:'4 4'});ha(d,'mLeonCastile1080',HC.spain,{fillOpacity:.16,dashArray:'4 4'});ha(d,'mPapal1210',HC.faith,{fillOpacity:.3});
+    hp(d,'k_mainz',{kind:'battle',left:1,note:'美因茨：古腾堡活字印刷术发源地，到1500年全德遍布印坊，几页德文传单几天可印数千份。'});
+    hp(d,'rome',{kind:'battle',note:'罗马教廷：在英、法、西受强王节制，遂将一盘散沙的德意志当作最大提款机。'});
+    hp(d,'w_paris',{left:1,note:'法兰西：打赢百年战争完成集权，国王牢控本国教会与教税分成。'});
+    hp(d,'k_london',{left:1,note:'英格兰：红白玫瑰战争后都铎王权独揽，教廷不敢肆意搜刮。'});
+    hr(d,[[50.0,8.27],[48.37,10.90],[41.89,12.48]],HC.war);
+   },[['fill',HC.germany,'遍布印刷机、却一盘散沙被教廷抽血的德意志'],['fill',HC.faith,'罗马教宗国'],['dash',HC.france,'已完成王权集权的英、法、西三国'],['dline',HC.war,'德意志白银源源流向罗马（示意）'],['dot',HC.war,'美因茨（印刷源头）与罗马'],['dot','#2a2018','巴黎与伦敦']]),
+  hs('910—1500年','五百年“屠龙少年终成恶龙”的死循环','从10世纪克吕尼、11世纪格雷戈里改革派、12世纪熙笃会到13世纪托钵修会，历代反腐派上位后皆成新恶龙；托钵修会后两百年再无体制内革新。',[[40.5,1.5],[51.5,15.5]],d=>{
+    ha(d,'mPapal1210',HC.faith,{fillOpacity:.3});ha(d,'mEmpire1050',HC.germany,{fillOpacity:.14});ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.14});
+    hp(d,'cl_cluny',{left:1,note:'第一代屠龙少年克吕尼（910年）：靠反腐起家，后遍布金银庄园。'});
+    hp(d,'ci_citeaux',{left:1,note:'第二代屠龙少年熙笃会（1098年）：荒野苦修起家，五十年后靠羊毛贸易富甲天下。'});
+    hp(d,'rf1_assisi',{left:1,note:'第三代屠龙少年方济各托钵修会（1209年）：乞讨起家，后垄断大学与宗教裁判所。'});
+    hp(d,'sl9_avignon',{left:1,note:'1323年阿维尼翁教宗约翰二十二世将坚持绝对守贫的方济各会修士打成异端烧死。'});
+    hp(d,'sc_constance',{note:'1415年康斯坦茨会议烧死胡斯，体制内改革渠道彻底堵死。'});
+   },[['fill',HC.faith,'成为新恶龙的罗马教廷'],['fill',HC.germany,'神圣罗马帝国'],['fill',HC.france,'法兰西'],['dot','#2a2018','克吕尼、熙笃、阿西西、阿维尼翁与康斯坦茨']]),
+  hs('1471—1513年','文艺复兴教廷腐化：博尔贾与美第奇教宗','博尔贾教宗亚历山大六世公开养情妇、封私生子切萨雷，连西班牙女王都痛斥；尤利乌斯二世拆建圣彼得大教堂留下烂尾，美第奇教宗利奥十世挥霍一空。',[[39.0,-5.0],[45.5,15.5]],d=>{
+    ha(d,'mPapal1210',HC.faith,{fillOpacity:.34});ha(d,'mLeonCastile1080',HC.spain,{fillOpacity:.2});
+    hp(d,'rome',{kind:'battle',note:'梵蒂冈与圣彼得大教堂：亚历山大六世公开养情妇封私生子；1506年尤利乌斯二世拆老教堂重建，1513年利奥十世挥霍库银。'});
+    hp(d,'ci_florence',{left:1,note:'佛罗伦萨：利奥十世出身美第奇银行家族，把文艺复兴奢靡风气带进教廷。'});
+    hp(d,'toletum',{left:1,note:'西班牙天主教女王伊莎贝拉一世闻知老乡教宗亚历山大六世荒淫无度、私分教产，忍不住严词痛斥。'});
+   },[['fill',HC.faith,'奢靡腐化的文艺复兴教宗国'],['fill',HC.spain,'连女王都看不下去的西班牙'],['dot',HC.war,'大兴土木、库银见底的罗马'],['dot','#2a2018','佛罗伦萨与托莱多']]),
+  hs('1514—1517年','一万金币加盟费与赎罪券分销链条','1514年阿尔布雷希特向奥格斯堡富格尔银行借钱交一万金币加盟费兼任美因茨大主教，承包赎罪券八年与教廷对半分账；帖策尔在于特博格大打夸张广告。',[[41.0,6.0],[53.5,15.5]],d=>{
+    ha(d,'mEmpire1050',HC.germany,{fillOpacity:.22});ha(d,'mPapal1210',HC.faith,{fillOpacity:.28});
+    hp(d,'rome',{note:'利奥十世急需巨款续建圣彼得大教堂，批出德意志八年赎罪券分销合同（收一半款）。'});
+    hp(d,'k_mainz',{kind:'battle',left:1,note:'美因茨：霍亨索伦的阿尔布雷希特交一万金币豁免加盟费，一人兼任美因茨、马格德堡大主教等三职。'});
+    hp(d,'rf1_augsburg',{kind:'battle',left:1,note:'奥格斯堡富格尔银行：借给阿尔布雷希特近三万金币，派账房随赎罪券推销团当场划走一半收入抵债。'});
+    hp(d,'rf1_juterbog',{kind:'battle',note:'于特博格：多明我会总推销员帖策尔在此叫卖“银币一响，灵魂跳出炼狱”。'});
+    hp(d,'rf1_wittenberg',{left:1,note:'维滕贝格：不少市民跑去邻境于特博格买回赎罪券，向路德炫耀无需悔改即可免罪。'});
+    hr(d,[[51.99,13.08],[50.0,8.27],[48.37,10.90],[41.89,12.48]],HC.war);
+   },[['fill',HC.germany,'赎罪券分销区：神圣罗马帝国'],['fill',HC.faith,'坐收一半分成修大教堂的罗马教廷'],['dline',HC.war,'赎罪券资金链：于特博格/美因茨 → 富格尔银行扣一半 → 罗马'],['dot',HC.war,'美因茨、奥格斯堡与于特博格'],['dot','#2a2018','维滕贝格与罗马']]),
+  hs('1505—1517年','路德《九十五条》被译印小册子两周出圈','1517年9月路德写《九十七条》无人问津；10月31日在维滕贝格贴出《九十五条论纲》，被译成德文小册子用活字印刷推广，两周传遍全德成为顶流大V。',[[47.5,6.5],[54.0,15.5]],d=>{
+    ha(d,'mEmpire1050',HC.germany,{fillOpacity:.2});ha(d,'mSaxonyDuchy',HC.war,{fillOpacity:.28});
+    hp(d,'rf1_wittenberg',{kind:'battle',note:'维滕贝格诸圣堂：1517年10月31日奥古斯丁隐修会教授马丁·路德在此贴出《九十五条论纲》。'});
+    hp(d,'rf1_leipzig',{left:1,note:'莱比锡与纽伦堡、巴塞尔各印坊：未经路德同意将拉丁文论纲译成德文小册子，两周印遍全德。'});
+    hp(d,'st_nuremberg',{note:'纽伦堡：人文主义者与印刷商争相翻印转发，路德一夜成名。'});
+    hp(d,'k_mainz',{left:1,note:'美因茨大主教阿尔布雷希特收到路德寄来的论纲，赎罪券销量应声暴跌。'});
+    hr(d,[[51.87,12.65],[51.34,12.38],[49.46,11.08],[50.0,8.27]],HC.route);
+   },[['fill',HC.war,'路德所在的萨克森选帝侯国'],['fill',HC.germany,'小册子两周传遍的神圣罗马帝国'],['dline',HC.route,'《九十五条论纲》德文小册子扩散路线'],['dot',HC.war,'1517年10月31日维滕贝格'],['dot','#2a2018','莱比锡、纽伦堡与美因茨']]),
+  hs('1517—1519年','教廷回扣偏心与1519年选帝博弈护住路德','教廷给英法25%回扣却只打发德皇两千金币，老皇帝嘱萨克森选帝侯护住路德；利奥十世为在1519年大选中拉拢萨克森选帝侯，对路德大事化小求退网。',[[41.2,6.0],[53.2,17.5]],d=>{
+    ha(d,'mEmpire1050',HC.germany,{fillOpacity:.18});ha(d,'mSaxonyDuchy',HC.war,{fillOpacity:.28});ha(d,'mPapal1210',HC.faith,{fillOpacity:.26});
+    hp(d,'rf1_augsburg',{kind:'battle',left:1,note:'1518年奥格斯堡会议：老皇帝马克西米利安一世嫌教宗只给两三千金币回扣，叮嘱萨克森选帝侯“好好看护那个修士”。'});
+    hp(d,'rf1_wittenberg',{kind:'battle',note:'萨克森选帝侯“智者”腓特烈拒不把路德押送罗马；1519年教宗特使送来“金玫瑰”拉拢腓特烈，只求路德闭嘴退网。'});
+    hp(d,'k_frankfurt',{left:1,note:'1519年法兰克福选帝会议：利奥十世想推萨克森选帝侯当皇帝以阻击查理五世，因而不敢得罪萨克森。'});
+    hp(d,'rome',{left:1,note:'利奥十世为大选投鼠忌器，错失扑灭路德声浪的最后窗口。'});
+   },[['fill',HC.war,'手握关键选票、庇护路德的萨克森选帝侯国'],['fill',HC.germany,'神圣罗马帝国'],['fill',HC.faith,'教宗国'],['dot',HC.war,'奥格斯堡与维滕贝格'],['dot','#2a2018','法兰克福与罗马']]),
+  hs('1519—1521年','大V拒不退网：烧毁教宗诏书，掀翻教廷体制','1519年7月莱比锡辩论路德公开否定教宗权威；1520年连发三大檄文提出“因信称义、唯独圣经、信徒皆祭司”，12月在维滕贝格当众烧毁教宗绝罚诏书。',[[41.2,6.5],[53.5,16.0]],d=>{
+    ha(d,'mEmpire1050',HC.germany,{fillOpacity:.2});ha(d,'mSaxonyDuchy',HC.war,{fillOpacity:.3});ha(d,'mPapal1210',HC.faith,{fillOpacity:.26});
+    hp(d,'rf1_leipzig',{kind:'battle',left:1,note:'1519年7月莱比锡辩论：路德被埃克逼问后公开承认“胡斯说的有许多是基督的真理”，否认教宗与大公会议无谬。'});
+    hp(d,'rf1_wittenberg',{kind:'battle',note:'1520年12月10日路德率师生在维滕贝格埃尔斯特门外，把利奥十世的绝罚诏书与教会法典一同扔进火堆烧毁。'});
+    hp(d,'rome',{left:1,note:'1520年6月利奥十世颁《主啊，起来吧》通谕责令路德六十天内悔改，1521年1月正式绝罚路德。'});
+   },[['fill',HC.war,'公开烧毁教宗诏书的萨克森中心'],['fill',HC.germany,'神圣罗马帝国'],['fill',HC.faith,'罗马教宗国'],['dot',HC.war,'1519年莱比锡辩论与1520年维滕贝格烧诏书'],['dot','#2a2018','罗马']]),
+  hs('1521—1536年','沃尔姆斯抗命、瓦特堡译经与加尔文等大V崛起','1521年4月路德在沃尔姆斯拒不认错，躲入瓦特堡译出德文《新约》；瑞士慈运理与日内瓦加尔文相继崛起，加尔文提出“善不受报、双重预定论”。',[[45.2,5.0],[53.2,15.0]],d=>{
+    ha(d,'mEmpire1050',HC.germany,{fillOpacity:.2});ha(d,'mSaxonyDuchy',HC.war,{fillOpacity:.28});
+    hp(d,'k_worms',{kind:'battle',left:1,note:'1521年4月沃尔姆斯帝国会议：路德面对新皇帝查理五世拒绝撤回著作，声明“这是我的立场，我别无选择”。'});
+    hp(d,'rf1_wartburg',{kind:'battle',note:'瓦特堡：萨克森选帝侯派蒙面骑士将路德藏入此堡十个月，路德用十一周译出畅销全德的《新约》。'});
+    hp(d,'rf1_zurich',{left:1,note:'苏黎世：大V慈运理在此推行改革，后于1531年卡佩尔教派战死。'});
+    hp(d,'rf1_geneva',{kind:'battle',left:1,note:'日内瓦（“新教罗马”）：加尔文在此建立严格的宗教共和国，宣扬善不受报、唯有靠上帝预定与信仰之跃得救。'});
+   },[['fill',HC.germany,'神圣罗马帝国'],['fill',HC.war,'萨克森选帝侯国'],['dot',HC.war,'沃尔姆斯会议、瓦特堡译经与日内瓦加尔文宗大本营'],['dot','#2a2018','苏黎世']])
+ ]},
+{id:'history-faith-reformation-2',ch:6,title:'宗教改革（下）：大V内卷引爆农民暴动、贵族抄教产与“教随国定”',short:'宗教改革（下）',en:'The Reformation (II): Radical Preachers, the Peasants’ War, Princes Seizing Church Lands, and Cuius Regio',period:'1521—1555年',c:HC.faith,
+ scenes:[
+  hs('1521—1524年','大V内卷抢高地：闵采尔高喊“用恶人的血洗手”','小册子舆论场内卷，激进派大V托马斯·闵采尔在茨维考与米尔豪森痛骂路德讨好王公，号召底层矿工与农民拿起刀剑杀光教士与恶人。',[[47.5,7.5],[53.2,15.0]],d=>{
+    ha(d,'mEmpire1050',HC.germany,{fillOpacity:.2});ha(d,'mSaxonyDuchy',HC.war,{fillOpacity:.28});
+    hp(d,'rf2_zwickau',{kind:'battle',note:'茨维考与阿尔施泰特：激进派大V闵采尔在此向矿工与织工布道，高喊“不敬虔的人无权活在世上，要用恶人的血洗手”。'});
+    hp(d,'rf1_wittenberg',{left:1,note:'维滕贝格：路德痛骂闵采尔是“被魔鬼附身的狂热分子”，两派大V互发小册子对骂。'});
+    hp(d,'rf1_zurich',{left:1,note:'苏黎世：激进的“再洗礼派”也在此兴起，拒绝婴儿洗礼与国家兵役。'});
+   },[['fill',HC.war,'激进布道蔓延的萨克森与图林根'],['fill',HC.germany,'神圣罗马帝国'],['dot',HC.war,'闵采尔布道重镇茨维考'],['dot','#2a2018','维滕贝格与苏黎世']]),
+  hs('1524—1525年春','德意志农民大起义：三十万人打土豪分田地','1524—1525年春三十万农民在士瓦本、法兰克尼亚与图林根揭竿而起，在梅明根拟定《十二条款》，攻破上千座修道院与城堡。',[[47.0,6.8],[52.2,14.0]],d=>{
+    ha(d,'mEmpire1050',HC.germany,{fillOpacity:.18});ha(d,'mSwabiaDuchy',HC.war,{fillOpacity:.34});ha(d,'mFranconiaDuchy',HC.war,{fillOpacity:.32});
+    hp(d,'rf2_memmingen',{kind:'battle',left:1,note:'梅明根：1525年3月起义农民代表在此通过《十二条款》，以《圣经》为据要求废除农奴制、自选牧师与归还公地。'});
+    hp(d,'k_worms',{left:1,note:'莱茵河与法兰克尼亚：农民大军攻占数百座修道院与城堡，烧毁赋税账册。'});
+    hp(d,'rf2_frankenhausen',{kind:'battle',note:'图林根：闵采尔在米尔豪森铸造大炮、打出彩虹旗，率领数千农民与矿工起事。'});
+   },[['fill',HC.war,'1524—1525年德意志农民大起义核心区（士瓦本、法兰克尼亚、图林根）'],['fill',HC.germany,'神圣罗马帝国'],['dot',HC.war,'梅明根（《十二条款》）与弗兰肯豪森'],['dot','#2a2018','沃尔姆斯']]),
+  hs('1525年5月','弗兰肯豪森大屠杀与路德反水喊“统统杀掉”','1525年5月诸侯联军在弗兰肯豪森等战场用火炮骑兵屠杀十万农民并处死闵采尔；路德发表檄文高喊“像打死疯狗一样把叛乱农民统统杀掉”。',[[47.2,7.0],[52.6,14.5]],d=>{
+    ha(d,'mEmpire1050',HC.germany,{fillOpacity:.2});ha(d,'mSaxonyDuchy',HC.war,{fillOpacity:.28});
+    hp(d,'rf2_frankenhausen',{kind:'battle',note:'1525年5月15日弗兰肯豪森之战：萨克森与黑森诸侯联军用火炮轰垮农民车阵，屠杀五千余名农民，搜出并斩首闵采尔。'});
+    hp(d,'rf1_wittenberg',{kind:'battle',left:1,note:'维滕贝格：路德于1525年5月印发《反抗杀人越货的农民暴徒》，催促诸侯“能砍能杀就去动手，把农民统统杀掉”。'});
+    hp(d,'rf2_memmingen',{left:1,note:'士瓦本同盟军在南德一路屠村焚镇，全国逾十万农民被杀。'});
+   },[['fill',HC.germany,'诸侯联军血腥镇压的神圣罗马帝国'],['fill',HC.war,'萨克森与图林根'],['dot',HC.war,'1525年5月弗兰肯豪森屠杀与维滕贝格路德檄文'],['dot','#2a2018','梅明根']]),
+  hs('1525—1530年','贵族发现新教红利：独吞教会土地与什一税','农民被镇压后，诸侯纷纷改信路德宗：在自己领地推行新教即可合法没收修道院与主教地产、独吞什一税；1525年条顿骑士团率先改宗变普鲁士公国。',[[48.5,6.5],[56.5,22.5]],d=>{
+    ha(d,'mEmpire1050',HC.germany,{fillOpacity:.18});ha(d,'mSaxonyDuchy',HC.war,{fillOpacity:.3});ha(d,'mTeutonicPrussia1300',HC.war,{fillOpacity:.32});
+    hp(d,'ko_konigsberg',{kind:'battle',note:'柯尼斯堡：1525年条顿骑士团大团长霍亨索伦的阿尔布雷希特听从路德建议改信新教、迎娶公主，把教团领地变成自家世袭的普鲁士公国。'});
+    hp(d,'rf1_wittenberg',{left:1,note:'萨克森与黑森：诸侯改信新教后，将领地内数百座修道院地产充公归入邦君国库。'});
+    hp(d,'gh_lubeck',{left:1,note:'北德自由市与丹麦、瑞典王室也纷纷改信路德宗，没收天主教庞大教产。'});
+   },[['fill',HC.war,'率先改信新教并没收教产的萨克森与普鲁士公国'],['fill',HC.germany,'神圣罗马帝国'],['dot',HC.war,'1525年柯尼斯堡（普鲁士公国化）'],['dot','#2a2018','维滕贝格与吕贝克']]),
+  hs('1529—1547年','“新教徒”得名、施马尔卡登同盟与米尔贝格之战','1529年斯派尔会议新教诸侯递交抗议书得名“新教徒”；1531年结成施马尔卡登同盟，1547年查理五世虽在米尔贝格击败联军，却无法铲除新教。',[[47.5,6.5],[53.2,15.5]],d=>{
+    ha(d,'mEmpire1050',HC.germany,{fillOpacity:.18});ha(d,'mSaxonyDuchy',HC.war,{fillOpacity:.3});
+    hp(d,'rf2_speyer',{kind:'battle',left:1,note:'1529年4月斯派尔帝国会议：六位诸侯与十四座自由市联名递交《抗议书》，“抗议派（新教徒 Protestant）”由此得名。'});
+    hp(d,'rf2_schmalkalden',{kind:'battle',left:1,note:'1531年2月萨克森选帝侯与黑森伯爵在此结成“施马尔卡登军事同盟”，拥兵数万对抗皇帝。'});
+    hp(d,'rf2_muhlberg',{kind:'battle',note:'1547年4月24日米尔贝格之战：查理五世率西班牙精兵渡易北河击败同盟军、生擒萨克森选帝侯，但新教城市仍拒绝屈服。'});
+   },[['fill',HC.war,'施马尔卡登新教同盟核心区'],['fill',HC.germany,'神圣罗马帝国'],['dot',HC.war,'1529年斯派尔抗议、1531年施马尔卡登同盟与1547年米尔贝格之战']]),
+  hs('1552—1555年','《奥格斯堡和约》“教随国定”与基督教第二次大分裂','1555年9月签署《奥格斯堡和约》确立“教随国定”，承认路德宗合法地位；继1054年东西教会分裂后，基督教完成天主教与新教的第二次大分裂。',[[37.5,-8.0],[59.5,28.0]],d=>{
+    ha(d,'mEmpire1050',HC.war,{fillOpacity:.26,dashArray:'4 4'});ha(d,'mScandinavia',HC.war,{fillOpacity:.28});ha(d,'mEngland1066',HC.war,{fillOpacity:.26});
+    ha(d,'mFranceCapetian1300',HC.faith,{fillOpacity:.22});ha(d,'mLeonCastile1080',HC.faith,{fillOpacity:.24});ha(d,'mPapal1210',HC.faith,{fillOpacity:.34});
+    hp(d,'rf1_augsburg',{kind:'battle',note:'1555年9月25日《奥格斯堡和约》在此签署，定下“教随国定（谁的地盘谁定宗教）”，承认路德宗合法。'});
+    hp(d,'rf1_wittenberg',{left:1,note:'北德意志与斯堪的纳维亚全境确立路德宗统治。'});
+    hp(d,'rf1_geneva',{left:1,note:'日内瓦加尔文宗向法国、尼德兰、苏格兰与英格兰扩散。'});
+    hp(d,'rome',{note:'罗马天主教保住意大利、西班牙、法国主体与南德奥地利，西方基督教世界一分为二。'});
+    hp(d,'constantinople',{note:'1054年第一次大分裂形成的东方东正教区。'});
+   },[['fill',HC.war,'第二次大分裂后倒向新教的北欧、不列颠与德意志半壁'],['fill',HC.faith,'坚守罗马天主教的南欧、法兰西与奥地利'],['dot',HC.war,'1555年《奥格斯堡和约》签署地奥格斯堡'],['dot','#2a2018','维滕贝格、日内瓦、罗马与君士坦丁堡']])
  ]},
 {id:'history-china-neolithic',ch:7,title:'新石器聚落与万邦时代',short:'仰韶与良渚',en:'Neolithic China: Yangshao to Liangzhu',period:'约前7000—前1900年',c:HC.china,
  scenes:[
@@ -9493,7 +9665,7 @@ const HISTORY_ENTRIES=[
     hr(d,[[52.28,-2.85],[51.8,-1.2],[51.51,-0.13]],HC.war);
    },[['fill',HC.britain,'爱德华四世进京称王的英格兰'],['dline',HC.war,'1461年2月爱德华自威尔士边境驰援伦敦路线'],['dot',HC.war,'2月17日二次圣奥尔本斯之战与3月4日伦敦称王']]),
   hs('1461年3月29日','陶顿暴风雪决战：顺风借箭，十小时血染溪流','1461年3月29日棕枝主日暴风雪中，两军六万余人在陶顿决战；约克军顺风借箭诱空敌箭囊，激战十小时全歼兰开斯特主力，亨利六世与王后逃入苏格兰。',[[51.2,-3.5],[55.8,0.8]],d=>{
-    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'mScotland',HC.celt,{fillOpacity:.24});
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'mScotland1200',HC.celt,{fillOpacity:.24});
     hp(d,'rs2_towton',{kind:'battle',left:1,note:'1461年3月29日陶顿之战：暴风雪中约克军顺风借箭，十小时肉搏阵亡两万八千人，科克溪水尽赤。'});
     hp(d,'k_york',{note:'爱德华四世战后进入约克城，取下城门长矛上父亲与二弟的首级安葬，换上兰开斯特降将的人头。'});
     hp(d,'uk9_edinburgh',{left:1,note:'亨利六世、玛格丽特王后与王子爱德华兵败逃入苏格兰避难（王后次年携子流亡法国）。'});
@@ -9614,7 +9786,8 @@ const HISTORY_ERAS=[
  {id:'empire-heraclian',name:'东罗马：希拉克略王朝与二十年无政府',en:'East Rome: the Heraclians and the Anarchy',date:'602—717年',c:HC.byz,items:[['history-empire-heraclius'],['history-empire-constans'],['history-empire-anarchy']]},
  {id:'empire-iconoclasm',name:'东罗马：圣像之争时代',en:'East Rome: the Age of Iconoclasm',date:'717—867年',c:HC.byz,items:[['history-empire-isaurian'],['history-empire-amorian']]},
  {id:'empire-macedonian',name:'东罗马：马其顿王朝',en:'East Rome: the Macedonian Dynasty',date:'867—1056年',c:HC.byz,items:[['history-empire-macedonian',0,2],['history-empire-macedonian',3,3,'东西教会大分裂']]},
- {id:'empire-late',name:'东罗马：从马其顿尾声到1453年亡国',en:'East Rome: From the Late Macedonians to the Fall of 1453',date:'1025—1453年',c:HC.byz,items:[['history-empire-zoe'],['history-empire-alexios'],['history-empire-komnenos'],['history-empire-palaiologos'],['history-empire-fall-1453']]},
+ {id:'empire-late',name:'东罗马：马其顿王朝以后',en:'East Rome after the Macedonians',date:'1025—1095年',c:HC.byz,items:[['history-empire-zoe'],['history-empire-alexios']]},
+ {id:'empire-east-end',name:'东罗马：从科穆宁中兴到1453年亡国',en:'East Rome: From the Komnenians to the Fall of 1453',date:'1081—1453年',c:HC.byz,items:[['history-empire-komnenos'],['history-empire-palaiologos'],['history-empire-fall-1453']]},
  {id:'empire-kingdoms',name:'中世纪早期：蛮族诸王国',en:'The Barbarian Kingdoms',date:'476—568年',c:HC.celt,items:[['history-west-kingdoms'],['history-west-ostrogoths']]},
  {id:'empire-franks',name:'中世纪早期：法兰克与伦巴第',en:'Franks and Lombards',date:'561—843年',c:HC.celt,items:[['history-west-merovingians'],['history-west-lombards'],['history-west-charlemagne'],['history-west-charlemagne-rule'],['history-west-louis-pious']]},
  {id:'empire-verdun',name:'中世纪早期：凡尔登之后',en:'After Verdun',date:'843—987年',c:HC.celt,items:[['history-france-west-francia'],['history-germany-east-francia'],['history-italy-middle-francia'],['history-germany-otto']]},
@@ -9624,9 +9797,10 @@ const HISTORY_ERAS=[
  {id:'empire-italy',name:'中世纪盛期：北意大利城市与西西里王国',en:'The Northern Cities and the Kingdom of Sicily',date:'约950—1166年',c:HC.italy,items:[['history-italy-cities'],['history-italy-sicily']]},
  {id:'empire-staufer',name:'中世纪盛期：红胡子、亨利六世与英诺森三世',en:'Barbarossa, Henry VI and Innocent III',date:'1152—1216年',c:HC.germany,items:[['history-germany-barbarossa'],['history-germany-henry6'],['history-germany-innocent']]},
  {id:'empire-france',name:'法兰西：从卡佩开张到“宇宙蜘蛛”一统',en:'France: From Hugh Capet to Louis XI',date:'987—1483年',c:HC.france,items:[['history-france-capet'],['history-france-plantagenet'],['history-france-stlouis'],['history-france-valois'],['history-france-louis11']]},
- {id:'empire-frederick2',name:'德意志、低地与意大利：从腓特烈二世到文艺复兴与哈布斯堡联姻',en:'Germany, Low Countries and Italy: From Frederick II to the Renaissance and Habsburg Marriages',date:'843—1500年',c:HC.germany,items:[['history-germany-frederick2'],['history-germany-electors'],['history-germany-golden-bull'],['history-germany-hansa'],['history-lowlands-flanders'],['history-lowlands-burgundy'],['history-italy-vespers'],['history-italy-venice'],['history-italy-condottieri'],['history-italy-renaissance']]},
+ {id:'empire-frederick2',name:'德意志、低地与意大利：从腓特烈二世到文艺复兴与查理五世分家',en:'Germany, Low Countries and Italy: From Frederick II to the Renaissance and Charles V',date:'843—1563年',c:HC.germany,items:[['history-germany-frederick2'],['history-germany-electors'],['history-germany-golden-bull'],['history-germany-hansa'],['history-lowlands-flanders'],['history-lowlands-burgundy'],['history-germany-charles5'],['history-italy-vespers'],['history-italy-venice'],['history-italy-condottieri'],['history-italy-renaissance']]},
  {id:'empire-blackdeath',name:'中世纪晚期：黑死病',en:'The Late Middle Ages: the Black Death',date:'1346—1353年',c:HC.italy,items:[['history-italy-blackdeath']]},
- {id:'empire-taifas',name:'西班牙与葡萄牙：从泰法、托洛萨到1492大航海',en:'Spain and Portugal: From the Taifas and Las Navas to 1492',date:'1031—1498年',c:HC.spain,items:[['history-spain-taifas'],['history-spain-crusade'],['history-spain-reconquista'],['history-spain-aragon'],['history-spain-1492']]},
+ {id:'empire-taifas',name:'西班牙：泰法与圣战',en:'Spain: the Taifas and Holy War',date:'1031—1123年',c:HC.spain,items:[['history-spain-taifas'],['history-spain-crusade']]},
+ {id:'empire-spain-1492',name:'西班牙与葡萄牙：从托洛萨到1492大航海',en:'Spain and Portugal: From Las Navas to 1492',date:'1123—1498年',c:HC.spain,items:[['history-spain-reconquista'],['history-spain-aragon'],['history-spain-1492']]},
  {id:'faith-israel',name:'古代以色列',en:'Ancient Israel',date:'约前1400—前538年',c:HC.faith,items:[['history-faith-israel'],['history-faith-first-temple']]},
  {id:'faith-temple',name:'第二圣殿时期',en:'The Second Temple',date:'前538—公元73年',c:HC.faith,items:[['history-faith-second-temple'],['history-faith-jesus']]},
  {id:'faith-church',name:'早期教会',en:'The Early Church',date:'73—451年',c:HC.faith,items:[['history-faith-church'],['history-faith-empire-church'],['history-faith-councils'],['history-faith-ephesus'],['history-faith-two-cities']]},
@@ -9638,7 +9812,7 @@ const HISTORY_ERAS=[
  {id:'faith-cardinals',name:'枢机团与两个教宗',en:'The Cardinals and the Double Elections',date:'1099—1179年',c:HC.faith,items:[['history-faith-cardinals']]},
  {id:'faith-scholasticism',name:'大学与经院哲学',en:'Universities and Scholasticism',date:'约1150—1303年',c:HC.faith,items:[['history-faith-scholasticism']]},
  {id:'faith-avignon',name:'阿维尼翁之囚',en:'The Avignon Captivity',date:'1294—1314年',c:HC.faith,items:[['history-faith-avignon'],['history-faith-clement']]},
- {id:'faith-schism',name:'教会大分裂',en:'The Western Schism',date:'1322—1449年',c:HC.faith,items:[['history-faith-schism'],['history-faith-constance']]},
+ {id:'faith-schism',name:'教会大分裂与宗教改革',en:'The Western Schism and the Reformation',date:'1322—1555年',c:HC.faith,items:[['history-faith-schism'],['history-faith-constance'],['history-faith-reformation-1'],['history-faith-reformation-2']]},
  {id:'china-early',name:'先秦：三代与春秋战国',en:'Pre-Imperial China',date:'约前7000—前221年',c:HC.china,items:[['history-china-neolithic'],['history-china-bronze'],['history-china-western-zhou'],['history-china-spring-autumn'],['history-china-warring-states']]},
  {id:'china-qin-han',name:'秦汉帝国',en:'Qin and Han Empires',date:'前221—公元189年',c:HC.china,items:[['history-china-qin'],['history-china-western-han'],['history-china-eastern-han']]},
  {id:'china-six-dynasties',name:'三国两晋南北朝',en:'Six Dynasties',date:'190—589年',c:HC.china,items:[['history-china-three-kingdoms'],['history-china-sixteen-kingdoms'],['history-china-sui']]},
@@ -9648,9 +9822,11 @@ const HISTORY_ERAS=[
  {id:'persia-ancient',name:'古代伊朗',en:'Ancient Iran',date:'约前3200—前330年',c:HC.parthia,items:[['history-persia-elam'],['history-persia-achaemenid']]},
  {id:'persia-iranian',name:'安息与萨珊',en:'Parthians and Sasanians',date:'前141—602年',c:HC.parthia,items:[['history-persia-parthia'],['history-persia-sasanian'],['history-persia-khosrow'],['history-persia-khosrow-ii']]},
  {id:'arab-caliphate',name:'阿拉伯：兴起、扩张与统治',en:'The Arabs: Rise, Conquest and Rule',date:'约525—945年',c:HC.parthia,items:[['history-arab-rise'],['history-arab-muhammad'],['history-arab-conquest'],['history-arab-expansion'],['history-arab-caliphs'],['history-arab-constantinople'],['history-arab-abbasid']]},
- {id:'arab-seljuks',name:'从塞尔柱、蒙古西征到帖木儿与奥斯曼崛起',en:'From the Seljuks and Mongols to Timur and the Ottomans',date:'945—1501年',c:HC.parthia,items:[['history-arab-seljuks',0,2],['history-arab-seljuks',3,4,'曼齐刻尔特'],['history-persia-mongols'],['history-persia-timur'],['history-persia-ottoman']]},
+ {id:'arab-seljuks',name:'塞尔柱突厥',en:'The Seljuk Turks',date:'945—1092年',c:HC.parthia,items:[['history-arab-seljuks',0,2],['history-arab-seljuks',3,4,'曼齐刻尔特']]},
+ {id:'arab-mongols',name:'从蒙古西征到帖木儿与奥斯曼崛起',en:'From the Mongols to Timur and the Ottomans',date:'1206—1501年',c:HC.parthia,items:[['history-persia-mongols'],['history-persia-timur'],['history-persia-ottoman']]},
  {id:'eeurope-pontic',name:'东欧：草原、森林与港口',en:'Eastern Europe: Steppe, Forest and Ports',date:'约前700—375年',c:HC.eeurope,items:[['history-eeurope-pontic'],['history-eeurope-roman']]},
- {id:'eeurope-slavs',name:'东欧：从斯拉夫人、基辅罗斯到金帐汗国与莫斯科“第三罗马”',en:'Eastern Europe: From Slavs and Kievan Rus to the Golden Horde and Moscow the Third Rome',date:'375—1505年',c:HC.eeurope,items:[['history-eeurope-slavs'],['history-eeurope-balkans'],['history-eeurope-rus'],['history-eeurope-byzantium'],['history-eeurope-moscow']]},
+ {id:'eeurope-slavs',name:'东欧：斯拉夫人与罗斯',en:'Eastern Europe: Slavs and Rus',date:'375—1043年',c:HC.eeurope,items:[['history-eeurope-slavs'],['history-eeurope-balkans'],['history-eeurope-rus'],['history-eeurope-byzantium']]},
+ {id:'eeurope-moscow',name:'东欧：金帐汗国与莫斯科“第三罗马”',en:'Eastern Europe: The Golden Horde and Moscow the Third Rome',date:'1054—1505年',c:HC.eeurope,items:[['history-eeurope-moscow']]},
  {id:'crusade-setting',name:'十字军：战场与玩家',en:'The Crusades: Theatre and Players',date:'约1000—1291年',c:HC.crusade,items:[['history-crusade-theatre'],['history-crusade-players']]},
  {id:'crusade-first',name:'第一次十字军与十字军国家',en:'The First Crusade and the Crusader States',date:'1095—1144年',c:HC.crusade,items:[['history-crusade-people'],['history-faith-crusade'],['history-crusade-states']]},
  {id:'crusade-saladin',name:'从第二次十字军到萨拉丁',en:'From the Second Crusade to Saladin',date:'1145—1192年',c:HC.crusade,items:[['history-crusade-second'],['history-crusade-nuraldin'],['history-crusade-saladin'],['history-crusade-third']]},
@@ -9674,13 +9850,13 @@ const HISTORY_BRANCHES=[
  {id:'spain',name:'西班牙',en:'Spain',lane:5,parent:'west',from:481,to:1498,c:HC.spain},
  {id:'france',name:'法兰西',en:'France',lane:5,parent:'west',from:843,to:1483,c:HC.france},
  {id:'lowlands',name:'低地诸国',en:'Low Countries',lane:5,parent:'west',from:843,to:1500,c:HC.lowlands},
- {id:'germany',name:'德意志',en:'Germany',lane:4,parent:'west',from:843,to:1500,c:HC.germany},
- {id:'italy',name:'意大利',en:'Italy',lane:3,parent:'west',from:843,to:1494,c:HC.italy},
+ {id:'germany',name:'德意志',en:'Germany',lane:4,parent:'west',from:843,to:1563,c:HC.germany},
+ {id:'italy',name:'意大利',en:'Italy',lane:3,parent:'west',from:843,to:1563,c:HC.italy},
  // 不列颠 (including Ireland): forks from the trunk before Caesar's landing, on lane 6 right beside 法兰西.
  {id:'britain',name:'不列颠',en:'Britain and Ireland',lane:6,parent:'trunk',from:-55,to:1487,c:HC.britain},
  // The 基督教 line: from the Hebrews' nomadic origins (the old Levant branch) to the schism of 1054; on its own lane, right of the West.
  // After 641 it runs through the shared stations of the East Roman dynasties.
- {id:'faith',name:'基督教',en:'Judaism & Christianity',lane:7,parent:'trunk',from:-1400,to:1453,c:HC.faith},
+ {id:'faith',name:'基督教',en:'Judaism & Christianity',lane:7,parent:'trunk',from:-1400,to:1563,c:HC.faith},
  // 埃及 and 波斯 leave the trunk at the early states (老无 2026-10-21): the Ptolemies, the Seleucids, Rome and Byzantium are passing rulers of these lands.
  {id:'egypt',name:'埃及',en:'Egypt',lane:1,parent:'trunk',from:-3100,to:642,c:HC.mino},
  {id:'persia',name:'波斯—阿拉伯',en:'Persia and the Arabs',lane:0,parent:'trunk',from:-3200,to:1501,c:HC.parthia},
@@ -9912,14 +10088,17 @@ const TREE_ROWS={
  'history-spain-1492/0':['spain',1470,1498,'1415—1498年'],
  'history-lowlands-flanders/0':['lowlands',1300,1384,'843—1384年'],
  'history-lowlands-burgundy/0':[['lowlands','germany'],1495,1500,'1363—1500年'],
+ 'history-faith-reformation-1/0':[['faith','germany'],1517,1536,'1450—1536年'],
+ 'history-faith-reformation-2/0':[['faith','germany'],1537,1555,'1521—1555年'],
+ 'history-germany-charles5/0':[['germany','faith','italy'],1556,1563,'1516—1563年'],
  'history-empire-macedonian/3':[['east','faith'],1054,1056],
  'history-spain-fall/2':[['spain','persia'],711,713],
  'history-arab-seljuks/3':[['persia','east'],1071,1092]
 };
 // Topics still to be written grow the tree as dashed shoots.
-const TREE_FUTURE=[['east',1453,'科穆宁王朝','1453年君士坦丁堡陷落 · 东罗马学者西逃催化文艺复兴 · 莫斯科自称“第三罗马”'],['france',1483,'百年战争','1314年后待展开：1328年卡佩直系绝嗣 · 1337—1453年英法百年战争'],['germany',1500,'选帝侯与哈布斯堡','1273年后待展开：1273年哈布斯堡的鲁道夫当选 · 1356年《金玺诏书》七选帝侯'],['italy',1494,'城市共和国与文艺复兴','1302年后待展开：佛罗伦萨、威尼斯、热那亚与米兰 · 文艺复兴'],['faith',1453,'宗教改革','1449年起 · 文艺复兴教廷 · 1517年马丁·路德《九十五条论纲》与宗教改革 · 待展开'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',1501,'伊儿汗国与马穆鲁克','1291年后待展开：1295年合赞汗皈依伊斯兰 · 1300年伊儿汗国一度占大马士革 · 奥斯曼人兴起'],['china',845,'晚唐五代与宋','845年起 · 待展开'],['spain',1498,'收复失地运动','1492年攻克格拉纳达、哥伦布西航美洲 · 1494年《托德西利亚斯条约》 · 1498年达·伽马抵印'],['eeurope',1505,'基辅罗斯以后','1480年乌格拉河独立 · 伊凡三世迎娶东罗马公主自称“第三罗马” · 沙皇俄国待展开'],['lowlands',1500,'八十年战争与荷兰共和国','1500年后待展开：1568—1648年尼德兰独立战争 · 17世纪荷兰黄金时代'],['crusade',1312,'后来的十字军','1396年尼科波利斯 · 1444年瓦尔纳 · 1571年勒班陀 · 待展开'],['britain',1487,'班诺克本与百年战争','1307年后待展开：1314年班诺克本之战 · 1337—1453年英法百年战争 · 玫瑰战争']];
+const TREE_FUTURE=[['france',1483,'胡格诺战争与波旁王朝','1483年后待展开：1494—1559年意大利战争 · 1562—1598年胡格诺宗教战争与波旁王朝'],['germany',1563,'三十年战争与普鲁士','1563年后待展开：1618—1648年三十年战争与《威斯特伐利亚和约》 · 普鲁士崛起'],['italy',1563,'哈布斯堡霸权与统一','1563年后待展开：西班牙哈布斯堡霸权下的意大利 · 巴洛克时代与近代统一'],['faith',1563,'三十年战争与宗教宽容','1563年后待展开：法国胡格诺战争 · 1618—1648年三十年战争与宗教宽容'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',1501,'奥斯曼全盛与波斯争霸','1501年后待展开：1517年奥斯曼灭马穆鲁克 · 苏莱曼一世全盛与奥斯曼—萨法维百年争霸'],['china',845,'晚唐五代与宋','845年起 · 待展开'],['spain',1498,'日不落帝国与无敌舰队','1498年后待展开：美洲金银与哈布斯堡西班牙帝国 · 1588年无敌舰队之战'],['eeurope',1505,'伊凡雷帝与沙皇俄国','1505年后待展开：1547年伊凡四世加冕沙皇 · 混乱时代与罗曼诺夫王朝'],['lowlands',1500,'八十年战争与荷兰共和国','1500年后待展开：1568—1648年尼德兰独立战争 · 17世纪荷兰黄金时代'],['crusade',1312,'后来的十字军','1396年尼科波利斯 · 1444年瓦尔纳 · 1571年勒班陀 · 待展开'],['britain',1487,'都铎宗教改革与无敌舰队','1487年后待展开：亨利八世英国宗教改革 · 伊丽莎白一世击败西班牙无敌舰队']];
 // Where a line stops it says why: [line, year, the event that ends it, note, the line it carries on in].
-const TREE_ENDS=[['trunk',-30,'并入罗马','前146年科林斯被毁 · 前30年最后一个希腊化王国埃及并入罗马','rome'],['rome',476,'西罗马终结','476年西部末代皇帝被废 · 由中世纪西欧接续'],['west',843,'凡尔登三分','843年《凡尔登条约》三分帝国 · 分出法兰西、德意志、意大利']];
+const TREE_ENDS=[['trunk',-30,'并入罗马','前146年科林斯被毁 · 前30年最后一个希腊化王国埃及并入罗马','rome'],['rome',476,'西罗马终结','476年西部末代皇帝被废 · 由中世纪西欧接续'],['west',843,'凡尔登三分','843年《凡尔登条约》三分帝国 · 分出法兰西、德意志、意大利'],['east',1453,'东罗马终结','1453年5月29日奥斯曼帝国攻破君士坦丁堡 · 千年东罗马帝国终结']];
 // Sections of one line that run side by side: [line, row keys, side of the passing loop].
 const TREE_PARALLEL=[['trunk',['history-alexander-conquest/0','history-alexander-rule/0'],1],['trunk',['history-hellenistic-states/0','history-hellenistic-knowledge/0'],1],['west',['history-west-kingdoms/0','history-west-ostrogoths/0'],1],['west',['history-west-merovingians/0','history-west-lombards/0'],1],['faith',['history-empire-amorian/0','history-faith-carolingian/0'],-1],['faith',['history-faith-imperial-church/0','history-faith-cluny/0'],-1]];
 // Time slices across the whole tree: [year, label, headline, paragraph].

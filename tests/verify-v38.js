@@ -68,7 +68,7 @@ const SLICE_YEARS=[-1000,-500,0,500,1000];
     assert.equal(r.china,9,'中国 keeps the outermost lane');assert.equal(r.lanes,9);
     assert.deepEqual(r.chapter,['东欧','Ⅺ',true],'chapter Ⅺ 东欧');
     assert.deepEqual(r.eras,S.eras);
-    assert.deepEqual(r.future,[['eeurope',1505,'基辅罗斯以后']]);
+    assert.deepEqual(r.future,[['eeurope',1505,'伊凡雷帝与沙皇俄国']]);
     for(const [k,ok] of r.bold)assert.ok(ok,k+' lacks 老无’s point in bold');
     for(const [k,ok] of r.fixes)assert.ok(ok,k+' lacks the plain-text correction');
     assert.deepEqual(r.slips,[],'readings set right, copied into the prose');

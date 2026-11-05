@@ -478,39 +478,39 @@
    "德意志",
    "west",
    843,
-   1500,
+   1563,
    4
   ],
   "italy": [
    "意大利",
    "west",
    843,
-   1494,
+   1563,
    3
   ],
   "faith": [
    "基督教",
    "trunk",
    -1400,
-   1453,
+   1563,
    7
   ]
  },
  "futures": [
   [
    "germany",
-   1500,
-   "选帝侯与哈布斯堡"
+   1563,
+   "三十年战争与普鲁士"
   ],
   [
    "italy",
-   1494,
-   "城市共和国与文艺复兴"
+   1563,
+   "哈布斯堡霸权与统一"
   ],
   [
    "faith",
-   1453,
-   "宗教改革"
+   1563,
+   "三十年战争与宗教宽容"
   ]
  ],
  "tails": {
@@ -526,7 +526,10 @@
    "history-italy-blackdeath/0",
    "history-germany-golden-bull/0",
    "history-germany-hansa/0",
-   "history-lowlands-burgundy/0"
+   "history-lowlands-burgundy/0",
+   "history-faith-reformation-1/0",
+   "history-faith-reformation-2/0",
+   "history-germany-charles5/0"
   ],
   "italy": [
    "history-italy-normans/0",
@@ -541,7 +544,8 @@
    "history-italy-venice/0",
    "history-italy-condottieri/0",
    "history-empire-fall-1453/0",
-   "history-italy-renaissance/0"
+   "history-italy-renaissance/0",
+   "history-germany-charles5/0"
   ],
   "faith": [
    "history-faith-citeaux/0",
@@ -558,7 +562,10 @@
    "history-italy-blackdeath/0",
    "history-faith-schism/0",
    "history-faith-constance/0",
-   "history-empire-fall-1453/0"
+   "history-empire-fall-1453/0",
+   "history-faith-reformation-1/0",
+   "history-faith-reformation-2/0",
+   "history-germany-charles5/0"
   ]
  },
  "shared": {

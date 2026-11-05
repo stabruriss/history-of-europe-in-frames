@@ -270,12 +270,18 @@
   ],
   [
    "eeurope-slavs",
-   "东欧：从斯拉夫人、基辅罗斯到金帐汗国与莫斯科“第三罗马”",
+   "东欧：斯拉夫人与罗斯",
    [
     "history-eeurope-slavs",
     "history-eeurope-balkans",
     "history-eeurope-rus",
-    "history-eeurope-byzantium",
+    "history-eeurope-byzantium"
+   ]
+  ],
+  [
+   "eeurope-moscow",
+   "东欧：金帐汗国与莫斯科“第三罗马”",
+   [
     "history-eeurope-moscow"
    ]
   ]

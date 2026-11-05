@@ -66,6 +66,12 @@
    6,
    5
   ],
+  "history-germany-charles5": [
+   "查理五世与哈布斯堡分家",
+   "1516—1563年",
+   6,
+   5
+  ],
   "history-italy-vespers": [
    "西西里晚祷",
    "1266—1302年",
@@ -118,6 +124,18 @@
    "教会大分裂（下）",
    "1378—1449年",
    11,
+   6
+  ],
+  "history-faith-reformation-1": [
+   "宗教改革（上）",
+   "1450—1536年",
+   8,
+   6
+  ],
+  "history-faith-reformation-2": [
+   "宗教改革（下）",
+   "1521—1555年",
+   6,
    6
   ],
   "history-italy-blackdeath": [
@@ -209,6 +227,15 @@
    1495,
    1500
   ],
+  "history-germany-charles5/0": [
+   [
+    "germany",
+    "faith",
+    "italy"
+   ],
+   1556,
+   1563
+  ],
   "history-italy-vespers/0": [
    [
     "italy"
@@ -273,6 +300,22 @@
    ],
    1380,
    1449
+  ],
+  "history-faith-reformation-1/0": [
+   [
+    "faith",
+    "germany"
+   ],
+   1517,
+   1536
+  ],
+  "history-faith-reformation-2/0": [
+   [
+    "faith",
+    "germany"
+   ],
+   1537,
+   1555
   ],
   "history-italy-blackdeath/0": [
    [
@@ -541,6 +584,30 @@
    "1493年马克西米利安一世继任皇位，在1495年沃尔姆斯帝国会议上颁布《永久和平"
   ],
   [
+   "history-germany-charles5/0",
+   "哈布斯堡的查理五世靠继承联姻坐拥半个欧洲，借富格尔银行八十五万金币击败法王弗朗索"
+  ],
+  [
+   "history-germany-charles5/1",
+   "见查理五世打赢帕维亚独霸意大利，美第奇出身的教宗克莱芒七世倒向法王背刺皇帝，结果"
+  ],
+  [
+   "history-germany-charles5/2",
+   "被抢怕了的克莱芒七世向查理五世屈服：查理五世出兵帮美第奇家族打回趁乱起义的佛罗伦"
+  ],
+  [
+   "history-germany-charles5/3",
+   "克莱芒七世死后，保罗三世上位痛定思痛，一面请米开朗基罗在西斯廷礼拜堂绘出《最后的"
+  ],
+  [
+   "history-germany-charles5/4",
+   "一辈子在五条战线疲于奔命的查理五世最终未能压服新教，在1555—1556年心灰意"
+  ],
+  [
+   "history-germany-charles5/5",
+   "查理五世这一分家直接埋下两颗大雷：让狂热天主教的西班牙儿子去管遍布新教徒的低地诸"
+  ],
+  [
    "history-italy-vespers/0",
    "腓特烈二世死后，西西里王国被安茹伯爵打下"
   ],
@@ -777,6 +844,62 @@
    "其中一人被皇帝开了个保护状去大公会议讨论，结果被烧死了"
   ],
   [
+   "history-faith-reformation-1/0",
+   "古腾堡印刷机大幅压低了小册子印刷成本，造就了人类首个“推特”式的大众舆论场；而在"
+  ],
+  [
+   "history-faith-reformation-1/1",
+   "自克吕尼修道院改革以来，教会五百年间屡演底层反建制派崛起上位、最终“屠龙少年变成"
+  ],
+  [
+   "history-faith-reformation-1/2",
+   "受文艺复兴与美第奇家族浸染，罗马教廷再度彻底腐化，教士、主教乃至教宗公开养情妇、"
+  ],
+  [
+   "history-faith-reformation-1/3",
+   "利奥十世不愿让圣彼得大教堂烂尾，推出卖赎罪券的新业务，同德意志签下一万金币加盟费"
+  ],
+  [
+   "history-faith-reformation-1/4",
+   "马丁·路德本是托钵修会出身的大学小知识分子，此前写过《九十七条》无人问津，这次写"
+  ],
+  [
+   "history-faith-reformation-1/5",
+   "教宗卖赎罪券给英法国王25%回扣，欺负德意志一盘散沙只给德皇两千金币，德皇不爽便"
+  ],
+  [
+   "history-faith-reformation-1/6",
+   "以前的反建制派终究留在体制内争当教宗，这回路德有了新传媒与粉丝声浪，非但没退网，"
+  ],
+  [
+   "history-faith-reformation-1/7",
+   "路德在沃尔姆斯抗命并译出德文《圣经》，同时慈运理、加尔文等其他大V纷纷崛起，加尔"
+  ],
+  [
+   "history-faith-reformation-2/0",
+   "小册子舆论场里大V云集，部分激进大V为了在竞争中占领舆论高地，语不惊人死不休，高"
+  ],
+  [
+   "history-faith-reformation-2/1",
+   "激进大V把火点着后，底层真的乱了，爆发了以宗教狂热为旗号的“德意志农民大起义”，"
+  ],
+  [
+   "history-faith-reformation-2/2",
+   "底层真闹起来后，贵族官军立刻联手重拳镇压，一口气杀了十万农民；路德一看自己惹出大"
+  ],
+  [
+   "history-faith-reformation-2/3",
+   "农民被按下去后，各地已遍布新教信徒与组织；世俗贵族更猛然发现了新教的好处——在自"
+  ],
+  [
+   "history-faith-reformation-2/4",
+   "尝到甜头的第二波新教贵族组成施马尔卡登军事同盟与皇帝对抗；皇帝查理五世虽打赢了战"
+  ],
+  [
+   "history-faith-reformation-2/5",
+   "1552年新教诸侯联手法王反扑，逼皇帝在1555年签下《奥格斯堡和约》确立“教随"
+  ],
+  [
    "history-italy-blackdeath/6",
    "对教会的影响，就是经济收入下降，教廷的控制力低了，给了下层各种派系成长的空间"
   ]
@@ -912,6 +1035,16 @@
     "布鲁日大广场关押未来皇帝四个月"
    ]
   ],
+  "history-germany-charles5": [
+   [
+    1,
+    "带着金绳子去吊教宗的德意志雇佣兵与圣天使堡之围"
+   ],
+   [
+    3,
+    "把挑刺的教廷礼仪官画进地狱当驴耳判官"
+   ]
+  ],
   "history-italy-vespers": [
    [
     1,
@@ -1038,6 +1171,18 @@
     "烤鹅与天鹅"
    ]
   ],
+  "history-faith-reformation-1": [
+   [
+    3,
+    "“银币叮当一响”与买下“未来抢劫罪”的骑士"
+   ]
+  ],
+  "history-faith-reformation-2": [
+   [
+    2,
+    "彩虹下的弗兰肯豪森屠杀与路德“像打死疯狗一样杀掉农民”"
+   ]
+  ],
   "history-italy-blackdeath": [
    [
     1,
@@ -1142,6 +1287,18 @@
     "从“三个教宗”到胡斯战车：宗教改革为什么挡不住"
    ]
   ],
+  "history-faith-reformation-1": [
+   [
+    7,
+    "从克吕尼到路德与加尔文：为什么前五百年的屠龙少年都成了恶龙，唯有印刷机时代的大V直接掀翻了教廷餐桌？"
+   ]
+  ],
+  "history-faith-reformation-2": [
+   [
+    5,
+    "两次基督教大分裂（1054 vs 1517—1555）与“教随国定”的算盘：为什么新教能活下来？"
+   ]
+  ],
   "history-italy-blackdeath": [
    [
     6,
@@ -1161,6 +1318,7 @@
   "history-germany-hansa": 300,
   "history-lowlands-flanders": 300,
   "history-lowlands-burgundy": 300,
+  "history-germany-charles5": 300,
   "history-italy-vespers": 300,
   "history-italy-venice": 300,
   "history-italy-condottieri": 300,
@@ -1170,6 +1328,8 @@
   "history-faith-clement": 230,
   "history-faith-schism": 230,
   "history-faith-constance": 230,
+  "history-faith-reformation-1": 230,
+  "history-faith-reformation-2": 230,
   "history-italy-blackdeath": 300
  },
  "eras": [
@@ -1186,7 +1346,7 @@
   ],
   [
    "empire-frederick2",
-   "德意志、低地与意大利：从腓特烈二世到文艺复兴与哈布斯堡联姻",
+   "德意志、低地与意大利：从腓特烈二世到文艺复兴与查理五世分家",
    [
     "history-germany-frederick2",
     "history-germany-electors",
@@ -1194,6 +1354,7 @@
     "history-germany-hansa",
     "history-lowlands-flanders",
     "history-lowlands-burgundy",
+    "history-germany-charles5",
     "history-italy-vespers",
     "history-italy-venice",
     "history-italy-condottieri",
@@ -1217,10 +1378,12 @@
   ],
   [
    "faith-schism",
-   "教会大分裂",
+   "教会大分裂与宗教改革",
    [
     "history-faith-schism",
-    "history-faith-constance"
+    "history-faith-constance",
+    "history-faith-reformation-1",
+    "history-faith-reformation-2"
    ]
   ],
   [
@@ -1243,21 +1406,21 @@
    "德意志",
    "west",
    843,
-   1500,
+   1563,
    4
   ],
   "italy": [
    "意大利",
    "west",
    843,
-   1494,
+   1563,
    3
   ],
   "faith": [
    "基督教",
    "trunk",
    -1400,
-   1453,
+   1563,
    7
   ]
  },
@@ -1265,22 +1428,22 @@
   [
    "france",
    1483,
-   "百年战争"
+   "胡格诺战争与波旁王朝"
   ],
   [
    "germany",
-   1500,
-   "选帝侯与哈布斯堡"
+   1563,
+   "三十年战争与普鲁士"
   ],
   [
    "italy",
-   1494,
-   "城市共和国与文艺复兴"
+   1563,
+   "哈布斯堡霸权与统一"
   ],
   [
    "faith",
-   1453,
-   "宗教改革"
+   1563,
+   "三十年战争与宗教宽容"
   ]
  ],
  "tails": {
@@ -1311,7 +1474,10 @@
    "history-italy-blackdeath/0",
    "history-germany-golden-bull/0",
    "history-germany-hansa/0",
-   "history-lowlands-burgundy/0"
+   "history-lowlands-burgundy/0",
+   "history-faith-reformation-1/0",
+   "history-faith-reformation-2/0",
+   "history-germany-charles5/0"
   ],
   "italy": [
    "history-germany-innocent/0",
@@ -1321,7 +1487,8 @@
    "history-italy-venice/0",
    "history-italy-condottieri/0",
    "history-empire-fall-1453/0",
-   "history-italy-renaissance/0"
+   "history-italy-renaissance/0",
+   "history-germany-charles5/0"
   ],
   "faith": [
    "history-germany-innocent/0",
@@ -1333,7 +1500,10 @@
    "history-italy-blackdeath/0",
    "history-faith-schism/0",
    "history-faith-constance/0",
-   "history-empire-fall-1453/0"
+   "history-empire-fall-1453/0",
+   "history-faith-reformation-1/0",
+   "history-faith-reformation-2/0",
+   "history-germany-charles5/0"
   ]
  },
  "shared": {
@@ -1365,6 +1535,19 @@
   "history-lowlands-burgundy/0": [
    "lowlands",
    "germany"
+  ],
+  "history-faith-reformation-1/0": [
+   "faith",
+   "germany"
+  ],
+  "history-faith-reformation-2/0": [
+   "faith",
+   "germany"
+  ],
+  "history-germany-charles5/0": [
+   "germany",
+   "faith",
+   "italy"
   ]
  },
  "fixes": [
@@ -1857,5 +2040,5 @@
   "mNaplesAnjou1282",
   "mAragonCrown1282"
  ],
- "pass": "法兰西、基督教、德意志、意大利 on to ~1300 — 21 sections (132 scenes): Hugh Capet and Louis VI, the Plantagenets and Philip II (with the marriage-and-land diagram), Saint Louis to Philip IV and Anagni, universities and scholasticism, Frederick II and the Interregnum (with the 豆腐块 on seven excommunications of five emperors), and the Sicilian Vespers; shared stations across lines; 123 of 老无’s points in bold, 88 facts and their order set right in plain text; 15 豆腐块 with 21 corrections"
+ "pass": "法兰西、基督教、德意志、意大利 on to ~1300 — 24 sections (152 scenes): Hugh Capet and Louis VI, the Plantagenets and Philip II (with the marriage-and-land diagram), Saint Louis to Philip IV and Anagni, universities and scholasticism, Frederick II and the Interregnum (with the 豆腐块 on seven excommunications of five emperors), and the Sicilian Vespers; shared stations across lines; 143 of 老无’s points in bold, 88 facts and their order set right in plain text; 17 豆腐块 with 21 corrections"
 }

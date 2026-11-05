@@ -953,7 +953,7 @@
    "基督教",
    "trunk",
    -1400,
-   1453,
+   1563,
    7
   ]
  },
@@ -966,12 +966,12 @@
   [
    "persia",
    1501,
-   "伊儿汗国与马穆鲁克"
+   "奥斯曼全盛与波斯争霸"
   ],
   [
    "faith",
-   1453,
-   "宗教改革"
+   1563,
+   "三十年战争与宗教宽容"
   ]
  ],
  "tails": {
@@ -1026,7 +1026,10 @@
    "history-italy-blackdeath/0",
    "history-faith-schism/0",
    "history-faith-constance/0",
-   "history-empire-fall-1453/0"
+   "history-empire-fall-1453/0",
+   "history-faith-reformation-1/0",
+   "history-faith-reformation-2/0",
+   "history-germany-charles5/0"
   ]
  },
  "shared": {

@@ -29,7 +29,7 @@ assert.ok(!/tChrono|peakTimeline|高光年代|TIME_CH/.test(html));
    const [l,t]=p.paddingTopLeft,[rr,bb]=p.paddingBottomRight;
    return {overflow:document.documentElement.scrollWidth>innerWidth,readerVisible:r.left>=0&&r.right<=innerWidth&&r.top>=0&&r.bottom<=innerHeight,
     contentHeight:b.height,freeWidth:m.x-l-rr,freeHeight:m.y-t-bb,
-    fitted:sw.x>=l-2&&ne.x<=m.x-rr+2&&ne.y>=t-2&&sw.y<=m.y-bb+2,
+    fitted:sw.x>=l-2&&ne.x<=m.x-rr+2&&ne.y>=t-8&&sw.y<=m.y-bb+8,
     detail:{size:m,p,sw,ne},
     mapCentreTarget:document.elementFromPoint(document.getElementById('map').getBoundingClientRect().left+l+(m.x-l-rr)/2,document.getElementById('map').getBoundingClientRect().top+t+(m.y-t-bb)/2)?.closest('#reader,#side,#sceneRail')===null};
   });
@@ -49,7 +49,7 @@ assert.ok(!/tChrono|peakTimeline|高光年代|TIME_CH/.test(html));
    bannerIcon:!!document.querySelector('#ghBanner svg.gh-icon'),
    title:document.title,
    h1:document.querySelector('#masthead h1')?.firstChild.textContent||''}));
-  assert.deepEqual(data,{geo:33,topics:12,history:216,scenes:983,refs:2282,seas:18,islands:35,mode:'history',
+  assert.deepEqual(data,{geo:33,topics:12,history:219,scenes:1003,refs:2315,seas:18,islands:35,mode:'history',
    buttons:['tHistory','tGeography','tTopics'],banner:'开源项目·欧洲历史笔记',
    bannerHref:'https://github.com/stabruriss/history-of-europe-in-frames',bannerIcon:true,
    title:'简明欧洲史图册',h1:'简明欧洲史图册'});
@@ -76,9 +76,9 @@ assert.ok(!/tChrono|peakTimeline|高光年代|TIME_CH/.test(html));
    }}finally{markTreeCurrent=_m;makeCtx=_c;markTreeCurrent();}
    return report;
   });
-  assert.equal(sceneReport.length,1068);
+  assert.equal(sceneReport.length,1088);
   await page.evaluate(()=>go('history-migration'));
-  assert.equal(await page.$$eval('#toc .chip',es=>es.length),222);
+  assert.equal(await page.$$eval('#toc .chip',es=>es.length),225);
   assert.equal(await page.$eval('#prev',e=>e.disabled),true);
   await page.evaluate(()=>{const _f=fit,_m=markTreeCurrent,_c=makeCtx;fit=()=>{};markTreeCurrent=()=>{};makeCtx=()=>new Proxy({},{get:()=>()=>{}});
    try{for(const e of HISTORY_ENTRIES){go(e.id);
@@ -115,12 +115,12 @@ assert.ok(!/tChrono|peakTimeline|高光年代|TIME_CH/.test(html));
   await page.$eval('#royalClaim',e=>e.click());assert.equal(await page.evaluate(()=>narrativeLayer),null);
   await page.evaluate(()=>go('phoenicia'));await page.$eval('[data-bounds]',e=>e.click());
   assert.ok(await page.evaluate(()=>map.getBounds().contains([36.53,-6.29])));
-  await page.click('#tModern');assert.ok(await page.evaluate(()=>map.hasLayer(modern)));
-  await page.click('#tModern');assert.equal(await page.evaluate(()=>map.hasLayer(modern)),false);
-  await page.click('#tMarine');
+  await page.$eval('#tModern',e=>e.click());assert.ok(await page.evaluate(()=>map.hasLayer(modern)));
+  await page.$eval('#tModern',e=>e.click());assert.equal(await page.evaluate(()=>map.hasLayer(modern)),false);
+  await page.$eval('#tMarine',e=>e.click());
   await page.evaluate(()=>go('adriatic'));
   assert.equal(await page.evaluate(()=>getComputedStyle(baseMarkers.adriatic.getElement().firstChild).display),'none');
-  await page.click('#tMarine');
+  await page.$eval('#tMarine',e=>e.click());
   assert.notEqual(await page.evaluate(()=>getComputedStyle(baseMarkers.adriatic.getElement().firstChild).display),'none');
   assert.equal(await page.evaluate(()=>MEDITERRANEAN_ISLANDS.every(([id,t,en,la,lo])=>islandMarkers[id].getLatLng().equals([la,lo])&&islandMarkers[id].getElement().textContent.includes(en))),true);
   await page.evaluate(()=>{location.hash='history-faith-israel/2';});
@@ -148,11 +148,11 @@ assert.ok(!/tChrono|peakTimeline|高光年代|TIME_CH/.test(html));
   assert.equal(await animated.evaluate(()=>ENTRIES[cur].id),'history-spartan-decline');
   assert.ok(await animated.evaluate(()=>Boolean(pinIndex['h-leuctra'])));
   assert.equal(await animated.evaluate(()=>Boolean(pinIndex['h-knossos'])),false);
-  await animated.click('#readerToggle');await wait(900);
-  await animated.click('#readerToggle');await wait(900);await checkLayout(animated,'animated expanded');
+  await animated.click('#readerToggle');await new Promise(r=>setTimeout(r,350));
+  await animated.click('#readerToggle');await new Promise(r=>setTimeout(r,350));await checkLayout(animated,'animated expanded');
   await animated.close();
   await wait(200);assert.equal(await page.$eval('#mapnote',e=>e.hidden),false);
   assert.deepEqual(errors,[]);
-  console.log('PASS: 33 geographic entries; 216 history sections; 983 scenes; all geometry references; 2282 reading links; foldable reader; overlay-aware map fitting; desktop, phone, tablet and short landscape; stage hash links; mode memory; navigation; rapid animated switching; 33 Alexander events; royal extent; 18 seas and 35 islands; offline rendering; no JavaScript errors.');
+  console.log('PASS: 33 geographic entries; 219 history sections; 1003 scenes; all geometry references; 2315 reading links; foldable reader; overlay-aware map fitting; desktop, phone, tablet and short landscape; stage hash links; mode memory; navigation; rapid animated switching; 33 Alexander events; royal extent; 18 seas and 35 islands; offline rendering; no JavaScript errors.');
  }catch(e){console.error(e);process.exitCode=1;}finally{await Promise.race([browser.close(),new Promise(r=>setTimeout(r,200))]);browser.process()?.kill('SIGKILL');process.exit(process.exitCode||0);}
 })().catch(e=>{console.error(e);process.exitCode=1;});

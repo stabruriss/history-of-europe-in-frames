@@ -49,7 +49,7 @@ const FULL_SHOTS=process.env.FULL_SHOTS==='1';const wait=ms=>FULL_SHOTS?new Prom
    assert.equal(await page.$eval('.active-era',e=>e.dataset.era),'rome-rise');
    assert.ok(await page.$$eval('#toc .chip[data-era="rome-rise"] small i',es=>es.length===6&&es.every(e=>e.textContent.startsWith('Ⅴ'))));
    assert.ok(await page.$$eval('#toc .chip[data-era="rome-med"] small i',es=>es.length===2&&es.every(e=>e.textContent.startsWith('Ⅴ'))));
-   assert.match(await page.$$eval('.era-future',es=>es.map(e=>e.textContent).join(' ')),/百年战争/);
+   assert.match(await page.$$eval('.era-future',es=>es.map(e=>e.textContent).join(' ')),/波旁王朝/);
    assert.ok(await page.$$eval('#toc .chip[data-era="rome-fall"] small i',es=>es.length===8&&es.every(e=>e.textContent.startsWith('Ⅴ'))));
    assert.match(await page.$eval('#indexCaption',e=>e.textContent),/Ⅴ 罗马/);
    const ids=await page.evaluate(()=>HISTORY_ENTRIES.filter(e=>e.ch===4).flatMap(e=>e.scenes.map((s,i)=>e.id+'/'+i)));
