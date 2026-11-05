@@ -88,9 +88,9 @@ const S=JSON.parse(fs.readFileSync(path.join(__dirname,'v43-spec.json'),'utf8'))
     const tree=document.querySelector(sel);
     return {nodes:Object.fromEntries(keys.map(k=>{const ns=[...tree.querySelectorAll(`.tree-node[data-key="${k}"]`)];
       return [k,[new Set(ns.map(n=>n.getAttribute('cx'))).size,new Set(ns.map(n=>n.getAttribute('cy'))).size]];})),
-     futures:[...tree.querySelectorAll('.tree-future')].map(e=>[e.dataset.branch,e.textContent]),overflow:document.documentElement.scrollWidth>innerWidth};
+     lanes:Object.fromEntries(HISTORY_BRANCHES.map(b=>[b.id,b.lane])),futures:[...tree.querySelectorAll('.tree-future')].map(e=>[e.dataset.branch,e.textContent]),overflow:document.documentElement.scrollWidth>innerWidth};
    },{sel,keys:Object.keys(S.shared)});
-   for(const [k,lines] of Object.entries(S.shared))assert.deepEqual(t.nodes[k],[lines.length,1],label+' '+k+' one node on each of its lines, level');
+   for(const [k,lines] of Object.entries(S.shared))assert.deepEqual(t.nodes[k],[new Set(lines.map(l=>t.lanes[l])).size,1],label+' '+k+' one node on each lane of its lines, level');
    for(const [b,,name] of S.futures)assert.ok(t.futures.some(([x,text])=>x===b&&text.includes(name)),label+' '+b+' shoot '+name);
    assert.equal(t.overflow,false,label+' no overflow');
    if(label!=='desktop'){

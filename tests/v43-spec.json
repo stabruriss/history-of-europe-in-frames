@@ -30,6 +30,66 @@
    5,
    5
   ],
+  "history-france-henri2": [
+   "亨利二世与凯瑟琳",
+   "1547—1559年",
+   8,
+   5
+  ],
+  "history-france-huguenots": [
+   "胡格诺与吉斯外戚",
+   "1534—1560年",
+   7,
+   5
+  ],
+  "history-france-catherine": [
+   "孤儿寡母与三大家族",
+   "1560—1570年",
+   9,
+   5
+  ],
+  "history-france-bartholomew": [
+   "血色婚礼",
+   "1570—1574年",
+   11,
+   5
+  ],
+  "history-france-henrys-1": [
+   "三个亨利（上）",
+   "1574—1585年",
+   8,
+   5
+  ],
+  "history-france-henrys-2": [
+   "三个亨利（下）",
+   "1585—1589年",
+   10,
+   5
+  ],
+  "history-france-henry4-1": [
+   "亨利四世（上）",
+   "1589—1598年",
+   10,
+   5
+  ],
+  "history-france-henry4-2": [
+   "亨利四世（下）",
+   "1598—1610年",
+   10,
+   5
+  ],
+  "history-france-marie": [
+   "玛丽太后与路易十三",
+   "1600—1624年",
+   8,
+   5
+  ],
+  "history-france-richelieu": [
+   "黎塞留",
+   "1624—1642年",
+   9,
+   5
+  ],
   "history-germany-frederick2": [
    "腓特烈二世",
    "1212—1273年",
@@ -212,6 +272,79 @@
    1461,
    1483
   ],
+  "history-france-henri2/0": [
+   [
+    "france"
+   ],
+   1557,
+   1559
+  ],
+  "history-france-huguenots/0": [
+   [
+    "france",
+    "faith"
+   ],
+   1559,
+   1560
+  ],
+  "history-france-catherine/0": [
+   [
+    "france"
+   ],
+   1561,
+   1570
+  ],
+  "history-france-bartholomew/0": [
+   [
+    "france",
+    "faith"
+   ],
+   1571,
+   1574
+  ],
+  "history-france-henrys-1/0": [
+   [
+    "france"
+   ],
+   1575,
+   1585
+  ],
+  "history-france-henrys-2/0": [
+   [
+    "france"
+   ],
+   1586,
+   1589
+  ],
+  "history-france-henry4-1/0": [
+   [
+    "france",
+    "faith"
+   ],
+   1590,
+   1598
+  ],
+  "history-france-henry4-2/0": [
+   [
+    "france"
+   ],
+   1599,
+   1610
+  ],
+  "history-france-marie/0": [
+   [
+    "france"
+   ],
+   1611,
+   1624
+  ],
+  "history-france-richelieu/0": [
+   [
+    "france"
+   ],
+   1627,
+   1634
+  ],
   "history-germany-frederick2/0": [
    [
     "germany",
@@ -262,7 +395,8 @@
     "germany",
     "faith",
     "italy",
-    "spain"
+    "spain",
+    "france"
    ],
    1556,
    1563
@@ -272,7 +406,7 @@
     "germany",
     "faith"
    ],
-   1557,
+   1599,
    1624
   ],
   "history-germany-thirty-years-2/0": [
@@ -289,7 +423,8 @@
     "germany",
     "faith",
     "spain",
-    "nordic"
+    "nordic",
+    "france"
    ],
    1635,
    1648
@@ -324,7 +459,8 @@
   ],
   "history-italy-wars-1/0": [
    [
-    "italy"
+    "italy",
+    "france"
    ],
    1500,
    1504
@@ -332,7 +468,8 @@
   "history-italy-wars-2/0": [
    [
     "italy",
-    "faith"
+    "faith",
+    "france"
    ],
    1512,
    1523
@@ -516,6 +653,366 @@
   [
    "history-france-louis11/4",
    "买退英军后，路易十一花钱雇瑞士长矛兵在1477年南锡雪原砍死宿敌“大胆查理”，顺"
+  ],
+  [
+   "history-france-henri2/0",
+   "宫里看不起商人出身的王后，新王亨利二世分家当，也没有王后的份"
+  ],
+  [
+   "history-france-henri2/1",
+   "结婚十年无子，情敌迪亚娜反把亨利推回王妃床上，两人成了闺蜜"
+  ],
+  [
+   "history-france-henri2/2",
+   "1544年头胎落地，十二年生了十个，休妻的话没人再提"
+  ],
+  [
+   "history-france-henri2/3",
+   "亨利二世在外掏钱养德意志路德宗诸侯，换来梅斯、图勒、凡尔登"
+  ],
+  [
+   "history-france-henri2/4",
+   "同一个国王在国内烧新教，法令一道紧过一道，最后亲自到法院抓法官"
+  ],
+  [
+   "history-france-henri2/5",
+   "法军北线先败后胜：蒙莫朗西在圣康坦被俘，吉斯公爵打下加来"
+  ],
+  [
+   "history-france-henri2/6",
+   "法西两边都打到破产，和约放弃意大利，六十五年的意大利战争收场"
+  ],
+  [
+   "history-france-henri2/7",
+   "庆祝和约的比武场上，亨利二世非要再比一次，断矛碎片扎进了眼睛"
+  ],
+  [
+   "history-france-huguenots/0",
+   "法王不用改教就管得住教会，法国的改教只能从下面长"
+  ],
+  [
+   "history-france-huguenots/1",
+   "胡格诺就是法国的加尔文派，牧师、章程和信纲都从日内瓦来"
+  ],
+  [
+   "history-france-huguenots/2",
+   "城里识字的人先信加尔文，农民多守老教，贵族1550年代才大批进来"
+  ],
+  [
+   "history-france-huguenots/3",
+   "新教集中在西边到东南的一弯新月，巴黎和东北守天主教"
+  ],
+  [
+   "history-france-huguenots/4",
+   "十五岁的弗朗索瓦二世体弱，王后玛丽·斯图亚特的两个舅舅入宫，一个管军，一个管钱"
+  ],
+  [
+   "history-france-huguenots/5",
+   "胡格诺贵族要从吉斯兄弟手里抢走国王，事泄，昂布瓦斯城堡上挂满了人"
+  ],
+  [
+   "history-france-huguenots/6",
+   "孔代已经定罪，十六岁的国王耳朵发炎死了，吉斯兄弟的权力随之没了"
+  ],
+  [
+   "history-france-catherine/0",
+   "按惯例摄政该归第一亲王，太后拿孔代一案逼他让了出来"
+  ],
+  [
+   "history-france-catherine/1",
+   "孤儿寡母谁也不押，让三大家族互相牵制"
+  ],
+  [
+   "history-france-catherine/2",
+   "绥靖第一步，太后以为教义可以谈，把新旧两教请到一张桌上"
+  ],
+  [
+   "history-france-catherine/3",
+   "绥靖第二步，教义谈不拢就只管治安，胡格诺第一次有了合法礼拜"
+  ],
+  [
+   "history-france-catherine/4",
+   "谷仓罗生门：瓦西那天谁先动手，两边各执一词"
+  ],
+  [
+   "history-france-catherine/5",
+   "第一场内战一年打掉三个头领，太后趁机讲和"
+  ],
+  [
+   "history-france-catherine/6",
+   "胡格诺想在莫城劫走国王，太后的绥靖第一次裂了"
+  ],
+  [
+   "history-france-catherine/7",
+   "老一辈相继死去，仇落到了下一代头上"
+  ],
+  [
+   "history-france-catherine/8",
+   "王军打赢了也付不出军饷，太后只好再次讲和"
+  ],
+  [
+   "history-france-bartholomew/0",
+   "太后的老办法是结亲，把女儿嫁给胡格诺少主"
+  ],
+  [
+   "history-france-bartholomew/1",
+   "科利尼劝查理九世打西班牙，太后怕的正是这一仗"
+  ],
+  [
+   "history-france-bartholomew/2",
+   "婚礼把胡格诺贵族都聚到了巴黎，喜宴刚散，科利尼就中了一枪"
+  ],
+  [
+   "history-france-bartholomew/3",
+   "科利尼没死，报复的风声逼出一个决定：先杀胡格诺头领"
+  ],
+  [
+   "history-france-bartholomew/4",
+   "天亮之前，名单上的人先死，城里的钟也响了"
+  ],
+  [
+   "history-france-bartholomew/5",
+   "名单杀完，民兵接着杀，国王下令也停不住"
+  ],
+  [
+   "history-france-bartholomew/6",
+   "巴黎杀完，消息传到哪里，哪里跟着杀，一直到10月"
+  ],
+  [
+   "history-france-bartholomew/7",
+   "罗马记功，新教国家记仇，可是没有人为此开战"
+  ],
+  [
+   "history-france-bartholomew/8",
+   "胡格诺不再说替国王清君侧，改说臣民可以废暴君"
+  ],
+  [
+   "history-france-bartholomew/9",
+   "血色婚礼之后太后成了强硬派：胡格诺不再信她，她也回不了头"
+  ],
+  [
+   "history-france-bartholomew/10",
+   "查理九世二十三岁就死了，太后再次摄政，等波兰的亨利回来"
+  ],
+  [
+   "history-france-henrys-1/0",
+   "查理九世的死讯传到克拉科夫，波兰国王亨利连夜溜出王宫，回法国继位"
+  ],
+  [
+   "history-france-henrys-1/1",
+   "打赢过雅尔纳克的将军回国后，舞会上换了女装，成了女装大佬"
+  ],
+  [
+   "history-france-henrys-1/2",
+   "不听太后是从婚事开始的：太后要外国公主，亨利三世自己挑了路易丝"
+  ],
+  [
+   "history-france-henrys-1/3",
+   "弟弟和胡格诺联手打到巴黎南面，太后替儿子谈成最宽的一道敕令"
+  ],
+  [
+   "history-france-henrys-1/4",
+   "胡格诺信不过国王，天主教嫌国王让太多，两头不讨好，同盟也由此而起"
+  ],
+  [
+   "history-france-henrys-1/5",
+   "亨利三世想绕开大贵族，把中等贵族抬成宠臣，钱和骂名都堆到他们身上"
+  ],
+  [
+   "history-france-henrys-1/6",
+   "1584年小弟安茹公爵病死，亨利三世无子，法定继承人成了胡格诺首领"
+  ],
+  [
+   "history-france-henrys-1/7",
+   "同盟拿西班牙的钱抬出波旁枢机，亨利三世被逼签字，公开表态不传胡格诺的波旁"
+  ],
+  [
+   "history-france-henrys-2/0",
+   "三个亨利开打，国王派去打纳瓦拉的宠臣先把命丢在科特拉"
+  ],
+  [
+   "history-france-henrys-2/1",
+   "吉斯打退德意志援军，国王花钱送走瑞士人，巴黎把功劳全记给吉斯"
+  ],
+  [
+   "history-france-henrys-2/2",
+   "吉斯抗命进巴黎，国王调兵反被街垒围困，只好丢下首都出走"
+  ],
+  [
+   "history-france-henrys-2/3",
+   "亨利三世又签了字：不和异端讲和，不让异端继位，全军交给吉斯"
+  ],
+  [
+   "history-france-henrys-2/4",
+   "不听太后到了顶点：9月8日亨利三世把太后用惯的大臣一次全部撤掉"
+  ],
+  [
+   "history-france-henrys-2/5",
+   "三级会议喊着打异端却不肯掏钱，国王认定是吉斯在背后捣鬼"
+  ],
+  [
+   "history-france-henrys-2/6",
+   "亨利三世也来一出手刃权臣，只是动手的是卫队，国王在帷幔后面看"
+  ],
+  [
+   "history-france-henrys-2/7",
+   "手刃之后是气死老娘：太后十三天后病逝，身边人都说是儿子折了她的寿"
+  ],
+  [
+   "history-france-henrys-2/8",
+   "杀了吉斯，全国反了，亨利三世只剩卢瓦尔河一线，只好去找纳瓦拉"
+  ],
+  [
+   "history-france-henrys-2/9",
+   "一把刀替吉斯报了仇，三个亨利只剩波旁这一个，摘了桃子"
+  ],
+  [
+   "history-france-henry4-1/0",
+   "桃子摘到手，军队先散了一半"
+  ],
+  [
+   "history-france-henry4-1/1",
+   "第二年春天在伊夫里亨利四世又赢了，骑兵认的是他头盔上一把白羽毛"
+  ],
+  [
+   "history-france-henry4-1/2",
+   "巴黎饿了近四个月也没开门，解围的是从尼德兰来的西班牙军"
+  ],
+  [
+   "history-france-henry4-1/3",
+   "亨利四世的信仰灵活不是1593年才有的，此前已换过五次"
+  ],
+  [
+   "history-france-henry4-1/4",
+   "同盟要自己选国王，西班牙来抢位子，法官搬出了萨利克法"
+  ],
+  [
+   "history-france-henry4-1/5",
+   "第六次改宗选在圣但尼，这一次是做给全法国看的"
+  ],
+  [
+   "history-france-henry4-1/6",
+   "巴黎的城门不是打开的，是买开的"
+  ],
+  [
+   "history-france-henry4-1/7",
+   "买回来的王国：总督一个一个开价，账上三千二百万"
+  ],
+  [
+   "history-france-henry4-1/8",
+   "南特敕令不是宽容，是一份带驻军的停战书"
+  ],
+  [
+   "history-france-henry4-1/9",
+   "法官不肯登记，亨利四世把人叫进卢浮宫，说自己跳过城墙"
+  ],
+  [
+   "history-france-henry4-2/0",
+   "仗停了，接手的是打了三十六年的烂摊子"
+  ],
+  [
+   "history-france-henry4-2/1",
+   "吃鸡这句话，亨利四世死后五十多年才见于书"
+  ],
+  [
+   "history-france-henry4-2/2",
+   "替这句话算账的是苏利，办法是查账和压价"
+  ],
+  [
+   "history-france-henry4-2/3",
+   "省下的钱有一部分变成了路、树、运河和新桥"
+  ],
+  [
+   "history-france-henry4-2/4",
+   "卖官鬻爵：每年交官价六十分之一，官位就成了传家的私产"
+  ],
+  [
+   "history-france-henry4-2/5",
+   "胡格诺留在城外，耶稣会请回宫里，两边亨利四世都防着"
+  ],
+  [
+   "history-france-henry4-2/6",
+   "大贵族亨利四世砍头立威，城市他换掉市政府"
+  ],
+  [
+   "history-france-henry4-2/7",
+   "1610年春亨利四世要出兵：明面为一块公爵领，火上浇油的是一个女人"
+  ],
+  [
+   "history-france-henry4-2/8",
+   "拉瓦亚克听说国王要打仗，认定这是要打教宗"
+  ],
+  [
+   "history-france-henry4-2/9",
+   "5月14日下午，一辆干草车和一辆酒车堵住了国王"
+  ],
+  [
+   "history-france-marie/0",
+   "亨利四世要儿子，也欠着美第奇家的钱，于是娶了大公的侄女"
+  ],
+  [
+   "history-france-marie/1",
+   "又是孤儿寡母：太后拿亨利四世的积蓄买亲王不闹事"
+  ],
+  [
+   "history-france-marie/2",
+   "太后把亨利四世要打的西班牙，变成了儿女亲家"
+  ],
+  [
+   "history-france-marie/3",
+   "亲王造反讨钱，逼出一场三级会议，下一场要等到1789年"
+  ],
+  [
+   "history-france-marie/4",
+   "太后的宠臣是没打过一仗的意大利人，却当上了法国元帅"
+  ],
+  [
+   "history-france-marie/5",
+   "1617年4月，十五岁的路易十三下令抓孔奇尼，反抗就杀"
+  ],
+  [
+   "history-france-marie/6",
+   "太后爬窗逃出布卢瓦，起兵打儿子，1620年败在蓬德塞"
+  ],
+  [
+   "history-france-marie/7",
+   "黎塞留能爬上去，靠的是谁都用得上他"
+  ],
+  [
+   "history-france-richelieu/0",
+   "黎塞留在海湾里筑一道堤，饿垮了胡格诺的海上重镇"
+  ],
+  [
+   "history-france-richelieu/1",
+   "开城之后只拆城墙，不动礼拜；对外还出钱养新教"
+  ],
+  [
+   "history-france-richelieu/2",
+   "架空太后：她逼路易十三二选一，国王当晚选了黎塞留"
+  ],
+  [
+   "history-france-richelieu/3",
+   "太后从此回不了法国，最后死在科隆一座别人的旧房子里"
+  ],
+  [
+   "history-france-richelieu/4",
+   "架空国王有边界：路易十三随时能罢黎塞留，十八年一直没有"
+  ],
+  [
+   "history-france-richelieu/5",
+   "最后一个宠臣通敌败露，黎塞留连国王身边的亲随也赶走了"
+  ],
+  [
+   "history-france-richelieu/6",
+   "集权三件事：拆城堡、禁决斗、派督办官"
+  ],
+  [
+   "history-france-richelieu/7",
+   "当年压得孤儿寡母透不过气的三大家族，到这时都收场了"
+  ],
+  [
+   "history-france-richelieu/8",
+   "集权和打仗的账单寄给了农民，黎塞留死时各省点起篝火"
   ],
   [
    "history-germany-frederick2/0",
@@ -739,7 +1236,7 @@
   ],
   [
    "history-germany-thirty-years-3/1",
-   "眼看代理人瑞典被打垮、哈布斯堡又要一统德意志，幕后金主法国红衣主教黎塞留不再躲在"
+   "眼看代理人瑞典被打垮、哈布斯堡又要一统德意志，幕后金主法国枢机黎塞留不再躲在后台"
   ],
   [
    "history-germany-thirty-years-3/2",
@@ -1177,6 +1674,106 @@
     "南锡冰河里被野狼啃食的“大胆查理”与皮基尼的防刺杀木栅栏"
    ]
   ],
+  "history-france-henri2": [
+   [
+    1,
+    "天花板上的洞"
+   ],
+   [
+    7,
+    "再来一回"
+   ]
+  ],
+  "history-france-huguenots": [
+   [
+    5,
+    "“恨的是你们还是我”"
+   ],
+   [
+    5,
+    "“他们砍了法国的头”"
+   ]
+  ],
+  "history-france-catherine": [
+   [
+    4,
+    "同一座谷仓，两本账"
+   ],
+   [
+    5,
+    "同桌同床的俘虏"
+   ]
+  ],
+  "history-france-bartholomew": [
+   [
+    4,
+    "科利尼的最后几分钟"
+   ],
+   [
+    5,
+    "玛格丽特的床"
+   ]
+  ],
+  "history-france-henrys-1": [
+   [
+    0,
+    "跳河的长官和泥里的大臣"
+   ],
+   [
+    5,
+    "马市上的三对三"
+   ]
+  ],
+  "history-france-henrys-2": [
+   [
+    6,
+    "字条、手帕和李子"
+   ],
+   [
+    9,
+    "“让他进来”"
+   ]
+  ],
+  "history-france-henry4-1": [
+   [
+    2,
+    "骨粉面包"
+   ],
+   [
+    5,
+    "门是关着的"
+   ]
+  ],
+  "history-france-henry4-2": [
+   [
+    9,
+    "“我自己还看得住自己”"
+   ],
+   [
+    9,
+    "老百姓没有拍手"
+   ]
+  ],
+  "history-france-marie": [
+   [
+    5,
+    "“国王万岁”"
+   ],
+   [
+    6,
+    "卡在窗口的太后"
+   ]
+  ],
+  "history-france-richelieu": [
+   [
+    0,
+    "大理石桌上的刀痕"
+   ],
+   [
+    5,
+    "罗讷河上的两条船"
+   ]
+  ],
   "history-germany-frederick2": [
    [
     0,
@@ -1457,6 +2054,36 @@
     "双簧戏与免求议会的“法国岁币”：科米纳笔下英法两王演给英国纳税人看的戏"
    ]
   ],
+  "history-france-henri2": [
+   [
+    2,
+    "凯瑟琳的十个孩子"
+   ]
+  ],
+  "history-france-huguenots": [
+   [
+    4,
+    "苏格兰女王怎么嫁到法国"
+   ]
+  ],
+  "history-france-catherine": [
+   [
+    1,
+    "吉斯、波旁、蒙莫朗西"
+   ]
+  ],
+  "history-france-henrys-1": [
+   [
+    6,
+    "三个亨利的亲戚账"
+   ]
+  ],
+  "history-france-henry4-2": [
+   [
+    4,
+    "卖官鬻爵怎么成了法国国策"
+   ]
+  ],
   "history-germany-frederick2": [
    [
     3,
@@ -1592,6 +2219,16 @@
   "history-france-stlouis": 300,
   "history-france-valois": 300,
   "history-france-louis11": 300,
+  "history-france-henri2": 300,
+  "history-france-huguenots": 300,
+  "history-france-catherine": 300,
+  "history-france-bartholomew": 300,
+  "history-france-henrys-1": 300,
+  "history-france-henrys-2": 300,
+  "history-france-henry4-1": 300,
+  "history-france-henry4-2": 300,
+  "history-france-marie": 300,
+  "history-france-richelieu": 300,
   "history-germany-frederick2": 300,
   "history-germany-electors": 300,
   "history-germany-golden-bull": 300,
@@ -1627,6 +2264,28 @@
     "history-france-stlouis",
     "history-france-valois",
     "history-france-louis11"
+   ]
+  ],
+  [
+   "empire-france-wars",
+   "法兰西：从亨利二世到三个亨利",
+   [
+    "history-france-henri2",
+    "history-france-huguenots",
+    "history-france-catherine",
+    "history-france-bartholomew",
+    "history-france-henrys-1",
+    "history-france-henrys-2"
+   ]
+  ],
+  [
+   "empire-france-bourbon",
+   "法兰西：波旁开国到黎塞留",
+   [
+    "history-france-henry4-1",
+    "history-france-henry4-2",
+    "history-france-marie",
+    "history-france-richelieu"
    ]
   ],
   [
@@ -1692,7 +2351,7 @@
    "法兰西",
    "west",
    843,
-   1483,
+   1648,
    5
   ],
   "germany": [
@@ -1720,8 +2379,8 @@
  "futures": [
   [
    "france",
-   1483,
-   "胡格诺战争与波旁王朝"
+   1648,
+   "投石党与路易十四"
   ],
   [
    "germany",
@@ -1760,7 +2419,21 @@
    "history-britain-hundred-years-4/0",
    "history-britain-hundred-years-5/0",
    "history-britain-jeanne/0",
-   "history-france-louis11/0"
+   "history-france-louis11/0",
+   "history-italy-wars-1/0",
+   "history-italy-wars-2/0",
+   "history-germany-charles5/0",
+   "history-france-henri2/0",
+   "history-france-huguenots/0",
+   "history-france-catherine/0",
+   "history-france-bartholomew/0",
+   "history-france-henrys-1/0",
+   "history-france-henrys-2/0",
+   "history-france-henry4-1/0",
+   "history-france-henry4-2/0",
+   "history-france-marie/0",
+   "history-france-richelieu/0",
+   "history-germany-thirty-years-3/0"
   ],
   "germany": [
    "history-germany-innocent/0",
@@ -1810,6 +2483,9 @@
    "history-faith-reformation-1/0",
    "history-faith-reformation-2/0",
    "history-germany-charles5/0",
+   "history-france-huguenots/0",
+   "history-france-bartholomew/0",
+   "history-france-henry4-1/0",
    "history-germany-thirty-years-1/0",
    "history-germany-thirty-years-1/5",
    "history-germany-thirty-years-2/0",
@@ -1849,6 +2525,19 @@
   ],
   "history-italy-wars-2/0": [
    "italy",
+   "faith",
+   "france"
+  ],
+  "history-france-huguenots/0": [
+   "france",
+   "faith"
+  ],
+  "history-france-bartholomew/0": [
+   "france",
+   "faith"
+  ],
+  "history-france-henry4-1/0": [
+   "france",
    "faith"
   ],
   "history-faith-reformation-1/0": [
@@ -1863,7 +2552,8 @@
    "germany",
    "faith",
    "italy",
-   "spain"
+   "spain",
+   "france"
   ],
   "history-germany-thirty-years-1/0": [
    "germany",
@@ -1878,7 +2568,8 @@
    "germany",
    "faith",
    "spain",
-   "nordic"
+   "nordic",
+   "france"
   ]
  },
  "fixes": [
@@ -2364,6 +3055,12 @@
   "贯通"
  ],
  "regions": [
+  "fFrance1559",
+  "fHuguenotCrescent",
+  "fGuiseEast",
+  "fBourbonSW",
+  "fMontmorency",
+  "fLeague1589",
   "mAnjou1100",
   "mToulouse1200",
   "mCapetDomain1223",
@@ -2371,5 +3068,5 @@
   "mNaplesAnjou1282",
   "mAragonCrown1282"
  ],
- "pass": "法兰西、基督教、德意志、意大利 on to ~1300 — 29 sections (185 scenes): Hugh Capet and Louis VI, the Plantagenets and Philip II (with the marriage-and-land diagram), Saint Louis to Philip IV and Anagni, universities and scholasticism, Frederick II and the Interregnum (with the 豆腐块 on seven excommunications of five emperors), and the Sicilian Vespers; shared stations across lines; 176 of 老无’s points in bold, 88 facts and their order set right in plain text; 25 豆腐块 with 21 corrections"
+ "pass": "法兰西、基督教、德意志、意大利 on to ~1300 — 39 sections (275 scenes): Hugh Capet and Louis VI, the Plantagenets and Philip II (with the marriage-and-land diagram), Saint Louis to Philip IV and Anagni, universities and scholasticism, Frederick II and the Interregnum (with the 豆腐块 on seven excommunications of five emperors), and the Sicilian Vespers; shared stations across lines; 266 of 老无’s points in bold, 88 facts and their order set right in plain text; 30 豆腐块 with 21 corrections"
 }
