@@ -205,7 +205,7 @@ body.resizing-reader #map{pointer-events:none}
 <body>
 <header id="masthead">
   <img id="brandMark" alt="">
-  <div id="brandText"><div class="kicker">Orbis Terrarum</div><h1>简明欧洲史图册<span>历史进程 · 地理图册 · 动力专题</span></h1></div>
+  <div id="brandText"><h1>简明欧洲史图册<span>历史进程 · 地理图册 · 动力专题</span></h1></div>
   <div id="modebar" aria-label="图册内容"><button id="tHistory" class="on" aria-pressed="true">历史进程</button><button id="tGeography" aria-pressed="false">地理概念</button><button id="tTopics" aria-pressed="false">动力专题</button></div>
   <a id="ghBanner" href="https://github.com/stabruriss/history-of-europe-in-frames" target="_blank" rel="noopener noreferrer" title="在 GitHub 上查看开源仓库" aria-label="开源项目：欧洲历史笔记（打开 GitHub）">
     <span class="gh-banner-text"><b>开源项目</b><i>·</i><span>欧洲历史笔记</span></span>
@@ -228,7 +228,7 @@ body.resizing-reader #map{pointer-events:none}
   <footer class="network-footer"><span id="datasetStats"></span><span>地图视野：线路图不是地理底图，站距不代表时长</span></footer>
 </section>
 <section id="ridePanel" aria-label="沿线路线图">
-  <header class="ride-heading"><div class="riding-line" id="ridingLine"></div><span class="ride-instruction">← → 换站 <span>·</span> ↑ ↓ 换幕</span><div class="station-nav"><button id="prevStation" type="button">← 上一站</button><span id="stationPosition"></span><button id="nextStation" type="button">下一站 →</button></div></header>
+  <header class="ride-heading"><div class="riding-line" id="ridingLine"></div><button id="stripToggle" type="button" aria-expanded="false"><span></span><i>▾</i></button><span class="ride-instruction">← → 换站 <span>·</span> ↑ ↓ 换幕</span><div class="station-nav"><button id="prevStation" type="button">← 上一站</button><span id="stationPosition"></span><button id="nextStation" type="button">下一站 →</button></div></header>
   <div class="route-panel"><div class="route-caption"><span>本线路线图</span><b id="routePeriod"></b><small>拖动看全线 · 点站直达</small></div><div class="route-scroller" id="routeScroller" tabindex="0" aria-label="当前主线上的事件站与历史时期"><div class="route-track" id="routeTrack"></div></div></div>
 </section>
 <aside id="side">
@@ -245,9 +245,9 @@ body.resizing-reader #map{pointer-events:none}
     <button id="tFit" title="回到当前条目或历史阶段的视野">⟲ 本条视野</button>
   </div>
   <section id="reader" aria-label="地图说明">
-    <header id="readerHead"><div id="entryEyebrow" class="eyebrow"></div><h2 id="entryTitle"></h2><div id="entryEnglish" class="en-name"></div><button id="readerToggle" aria-controls="readerBody" aria-expanded="true">收起 −</button></header>
-    <div id="metroBar"><div id="transferBar"></div><div class="scene-nav"><span id="sceneHeading"></span><span id="scenePosition"></span><button id="prevScene" type="button" aria-label="上一幕">↑ 上一幕</button><button id="nextScene" type="button" aria-label="下一幕">下一幕 ↓</button></div></div>
-    <div id="readerBody"><article id="card" aria-labelledby="entryTitle"></article></div>
+    <button id="readerToggle" aria-controls="readerBody" aria-expanded="true">收起 −</button>
+    <div id="metroBar"><div class="scene-nav"><button id="mapFold" type="button" aria-expanded="true">地图 ▴</button><span id="sceneHeading"></span><span id="scenePosition"></span><button id="prevScene" type="button" aria-label="上一幕">↑ 上一幕</button><button id="nextScene" type="button" aria-label="下一幕">下一幕 ↓</button></div></div>
+    <div id="readerBody"><header id="readerHead"><div id="entryEyebrow" class="eyebrow"></div><h2 id="entryTitle"></h2><div id="entryEnglish" class="en-name"></div></header><div id="transferBar"></div><article id="card" aria-labelledby="entryTitle"></article></div>
   </section>
   <div id="mapSceneChip"><div><small id="mapSceneDate"></small><b id="mapSceneTitle"></b></div></div>
   <details id="legendBox"><summary>图例</summary><div id="legend"></div></details>

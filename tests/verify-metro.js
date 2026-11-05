@@ -19,10 +19,10 @@ const settle=p=>p.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestA
   const p=await pageAt(1440,900);
   const shell=await p.evaluate(()=>({
    icon:document.getElementById('brandMark').src===document.querySelector('link[rel="icon"]').href,
-   kicker:document.querySelector('#masthead .kicker').textContent,h1:document.querySelector('#masthead h1').firstChild.textContent,tagline:document.querySelector('#masthead h1 span').textContent,
+   h1:document.querySelector('#masthead h1').firstChild.textContent,tagline:document.querySelector('#masthead h1 span').textContent,
    github:document.getElementById('ghBanner').href,banner:document.getElementById('ghBanner').textContent.replace(/\s/g,''),ghIcon:!!document.querySelector('#ghBanner svg.gh-icon'),title:document.title,
    tabs:[...document.querySelectorAll('#modebar button')].map(b=>b.textContent),cornerButtons:document.getElementById('tools').checkVisibility()}));
-  assert.deepEqual(shell,{icon:true,kicker:'Orbis Terrarum',h1:'简明欧洲史图册',tagline:'历史进程 · 地理图册 · 动力专题',github:'https://github.com/stabruriss/history-of-europe-in-frames',banner:'开源项目·欧洲历史笔记',ghIcon:true,title:'简明欧洲史图册',tabs:['历史进程','地理概念','动力专题'],cornerButtons:false});
+  assert.deepEqual(shell,{icon:true,h1:'简明欧洲史图册',tagline:'历史进程 · 地理图册 · 动力专题',github:'https://github.com/stabruriss/history-of-europe-in-frames',banner:'开源项目·欧洲历史笔记',ghIcon:true,title:'简明欧洲史图册',tabs:['历史进程','地理概念','动力专题'],cornerButtons:false});
 
   /* ---------- Whole map ---------- */
   assert.equal(await p.evaluate(()=>document.body.dataset.metro),'network');
@@ -162,6 +162,50 @@ const settle=p=>p.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestA
   const t1=await touch.evaluate(()=>metroUI.state().camera);assert.ok(t1.x-t0.x>=60,'one finger pans');
   await finger('touchStart',[[0,130,440],[1,230,440]]);for(let i=1;i<=7;i++)await finger('touchMove',[[0,130-i*5,440],[1,230+i*5,440]]);await finger('touchEnd',[]);
   assert.ok((await touch.evaluate(()=>metroUI.state().camera)).z>t1.z*1.4,'two fingers zoom');await touch.close();
+  /* ---------- Reading: the text has the room, and scrolling never moves it by itself ---------- */
+  const READ='#history-germany-charles5';
+  const desk=await pageAt(1280,720,READ);
+  const deskRoom=await desk.evaluate(()=>({text:readerBody.clientHeight,top:document.getElementById('reader').getBoundingClientRect().top}));
+  assert.ok(deskRoom.text>=560,'desktop text height '+deskRoom.text);assert.ok(deskRoom.top<=60,'the reader rises beside the route strip');await desk.close();
+  const reading=await pageAt(390,844,READ,true);
+  const room=await reading.evaluate(()=>({text:readerBody.clientHeight,map:map.getSize().y}));
+  assert.ok(room.text>=440&&room.text>room.map*1.5,'phone text height '+JSON.stringify(room));
+  // The route strip opens on demand and closes on leaving; the map folds away and gives its room to the text.
+  assert.equal(await on(reading,'.route-panel'),false);await reading.click('#stripToggle');assert.equal(await on(reading,'.route-panel'),true);await reading.click('#stripToggle');assert.equal(await on(reading,'.route-panel'),false);
+  await reading.click('#mapFold');await settle(reading);assert.ok((await reading.evaluate(()=>readerBody.clientHeight))>room.text+100,'folding the map gives the text its room');await reading.click('#mapFold');await settle(reading);
+  // Every scene keeps its own cards in place; a person lookup finds the current scene's.
+  const cards=await reading.evaluate(()=>{const here=document.querySelector('#peopleCards');return {blocks:document.querySelectorAll('.scene-people').length,marked:document.querySelectorAll('#peopleCards').length,inScene:here?.closest('.scene-passage')?.dataset.sceneText,scene:sceneIndex,outside:document.querySelectorAll('.scene-people:not(#peopleCards) [data-person]').length}});
+  assert.equal(cards.marked,1);assert.equal(+cards.inScene,cards.scene);assert.ok(cards.blocks>1);assert.equal(cards.outside,0);
+  // A reader's scroll, down and back up: the scene follows, and no visible paragraph moves further than the scroll asked.
+  for(const [dir,name] of [[1,'down'],[-1,'up']]){
+   const r=await reading.evaluate(async dir=>{
+    const body=readerBody,frame=()=>new Promise(r=>requestAnimationFrame(r)),visible=()=>{const b=body.getBoundingClientRect();return [...body.querySelectorAll('.scene-passage:not(.off-station)>p')].filter(e=>{const r=e.getBoundingClientRect();return r.bottom>b.top&&r.top<b.bottom}).map(e=>[e,e.getBoundingClientRect().top])};
+    if(dir>0)body.scrollTop=0;else body.scrollTop=body.scrollHeight;await frame();
+    let worst=0,changes=0,scene=sceneIndex;
+    const check=(seen,asked)=>{for(const [e,top] of seen)if(e.isConnected)worst=Math.max(worst,Math.abs(e.getBoundingClientRect().top-top+asked))};
+    for(let i=0;i<400;i++){
+     const seen=visible(),before=body.scrollTop;
+     body.dispatchEvent(new Event('touchmove',{bubbles:true}));body.scrollTop=before+dir*48;const asked=body.scrollTop-before;
+     await frame();await frame();check(seen,asked);
+     if(i%10===9){const held=visible();await new Promise(r=>setTimeout(r,260));check(held,0)}  // long enough for the map to catch up
+     if(sceneIndex!==scene){changes++;scene=sceneIndex}
+     if(dir>0?body.scrollTop+body.clientHeight>=body.scrollHeight-1:body.scrollTop<=0)break;
+    }
+    return {worst:Math.round(worst),changes};
+   },dir);
+   assert.ok(r.changes>=2,name+': the scene follows the text '+JSON.stringify(r));assert.ok(r.worst<=3,name+': the text stays put '+JSON.stringify(r));
+  }
+  await reading.close();
+  // Going to a short scene stays there, even just after touching the text: that scroll is the page's own, not the reader's.
+  const tall=await pageAt(1440,1600,READ);
+  const short=await tall.evaluate(async()=>{
+   const line=readerBody.clientHeight*.3,rows=[...document.querySelectorAll('.scene-passage:not(.off-station)')];
+   const k=rows.findIndex((p,i)=>i>0&&i<rows.length-1&&p.getBoundingClientRect().height<line);if(k<0)return null;
+   const want=+rows[k].dataset.sceneText;readerBody.dispatchEvent(new PointerEvent('pointerdown',{bubbles:true}));go(ENTRIES[cur].id,{scene:want});
+   const moved=readerBody.scrollTop;await new Promise(r=>setTimeout(r,400));
+   return {want,moved,now:sceneIndex};
+  });
+  assert.ok(short&&short.moved>0,'a short scene to test with '+JSON.stringify(short));assert.equal(short.now,short.want,'stays on the scene it went to');await tall.close();
   assert.deepEqual(errors,[]);
   console.log(`PASS: metro layout — site identity kept; ${counts.stations} stations, ${counts.lines} lines, ${counts.shared} shared on the whole map with clean rails and names; hover, pan, zoom, time slices; on-train view, scene and station navigation, text scrolling, deep links; person cards and family trees; geography and topics; all ${landed.scenes} scenes land on their own marks; laptop, phone, touch emulation; offline; no page errors.`);
  }catch(e){console.error(e);process.exitCode=1;}finally{await Promise.race([browser.close(),new Promise(r=>setTimeout(r,200))]);browser.process()?.kill('SIGKILL');process.exit(process.exitCode||0);}

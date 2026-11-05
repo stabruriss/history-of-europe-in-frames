@@ -7,7 +7,7 @@ const {pathToFileURL}=require('node:url');
 const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','index.html'))).href;
 const shots=path.join(__dirname,'shots-reader-width');
 const shot=async(tab,name)=>{if(process.env.FULL_SHOTS==='1'){fs.mkdirSync(shots,{recursive:true});await tab.screenshot({path:path.join(shots,name+'.png')});}};
-const KEY='agora-atlas-reader-width',TABLE='#history-britain-jeanne/6',MIN=280,MAP_KEPT=332,DEFAULT=460;
+const KEY='agora-atlas-reader-width',TABLE='#history-britain-jeanne/6',MIN=280,MAP_KEPT=332,DEFAULT=560;
 const report=p=>p.evaluate(()=>{
  const r=reader.getBoundingClientRect(),stage=document.getElementById('mapwrap').getBoundingClientRect(),g=document.getElementById('readerGrip'),gr=g.getBoundingClientRect(),m=document.getElementById('map').getBoundingClientRect(),legend=document.getElementById('legendBox').getBoundingClientRect();
  return {width:Math.round(r.width),leftGap:Math.round(r.left-stage.left),stage:Math.round(stage.width),gripRightGap:gr.right-r.right,gripVisible:g.checkVisibility(),mapLeft:Math.round(m.left),readerRight:Math.round(r.right),mapWidth:Math.round(m.width),leafletWidth:map.getSize().x,legendLeft:legend.left,
@@ -52,16 +52,16 @@ const pinnedAtTop=p=>p.evaluate(()=>{const r=window.__pinned.getBoundingClientRe
   // Drag wider: the left edge stays put, the text and its table fill the panel, the map re-fits to what is left, the width is remembered.
   await p.evaluate(()=>fit(ENTRIES[cur],false));await dragGrip(p,150);
   a=await report(p);
-  assert.equal(a.width,610);assert.equal(a.leftGap,0);assert.equal(a.saved,'610');assert.equal(a.now,610);assert.equal(a.leafletWidth,a.mapWidth);assert.ok(a.sees&&a.fits&&!a.dragging,JSON.stringify(a));
+  assert.equal(a.width,710);assert.equal(a.leftGap,0);assert.equal(a.saved,'710');assert.equal(a.now,710);assert.equal(a.leafletWidth,a.mapWidth);assert.ok(a.sees&&a.fits&&!a.dragging,JSON.stringify(a));
   assert.ok(await p.evaluate(()=>{const t=card.querySelector('.scene-passage.current table')||card.querySelector('table');return !!t&&t.getBoundingClientRect().right<=reader.getBoundingClientRect().right;}),'the table stays inside the panel');
   await shot(p,'wide-610');
   // Mid-drag the panel follows the pointer and nothing is saved until release.
   const g1=await gripAt(p);await p.mouse.move(g1.x,g1.y);await p.mouse.down();await p.mouse.move(g1.x+60,g1.y,{steps:3});
-  await p.waitForFunction(()=>Math.round(reader.getBoundingClientRect().width)===670);
-  a=await report(p);assert.ok(a.dragging);assert.equal(a.saved,'610');await p.mouse.up();
-  a=await report(p);assert.equal(a.width,670);assert.equal(a.saved,'670');assert.ok(!a.dragging);
+  await p.waitForFunction(()=>Math.round(reader.getBoundingClientRect().width)===770);
+  a=await report(p);assert.ok(a.dragging);assert.equal(a.saved,'710');await p.mouse.up();
+  a=await report(p);assert.equal(a.width,770);assert.equal(a.saved,'770');assert.ok(!a.dragging);
   // Reading position: the text at the top of the panel is still there after the width changes, both ways, in prose and in the table.
-  for(const [selector,index] of [['.scene-passage.current tr',3],['.scene-passage:not(.off-station) p',2],['.scene-passage:not(.off-station) p',0]]){
+  for(const [selector,index] of [['.scene-passage.current tr',3],['.scene-passage:not(.off-station)>p',2],['.scene-passage:not(.off-station)>p',0]]){
    assert.ok(await pinTop(p,selector,index),selector+' can be scrolled to the top');
    await dragGrip(p,-120);let held=await pinnedAtTop(p);assert.ok(held.holds,selector+' narrower '+JSON.stringify(held));
    await dragGrip(p,120);held=await pinnedAtTop(p);assert.ok(held.holds,selector+' wider '+JSON.stringify(held));
@@ -86,9 +86,9 @@ const pinnedAtTop=p=>p.evaluate(()=>{const r=window.__pinned.getBoundingClientRe
   const g2=await gripAt(p);await p.mouse.click(g2.x,g2.y,{count:2});a=await report(p);assert.equal(a.width,DEFAULT);assert.equal(a.saved,null);
   // Remembered across scenes, entries and reloads; the first fit after a reload already knows the width.
   await dragGrip(p,136);
-  await p.evaluate(()=>go('history-rome-punic',{scene:1}));a=await report(p);assert.equal(a.width,596);assert.ok(a.sees&&a.fits,JSON.stringify(a));
+  await p.evaluate(()=>go('history-rome-punic',{scene:1}));a=await report(p);assert.equal(a.width,DEFAULT+136);assert.ok(a.sees&&a.fits,JSON.stringify(a));
   await p.reload({waitUntil:'domcontentloaded'});await p.evaluate(()=>document.fonts.ready);
-  a=await report(p);assert.equal(a.width,596);assert.ok(a.sees,JSON.stringify(a));assert.equal(a.leafletWidth,a.mapWidth);
+  a=await report(p);assert.equal(a.width,DEFAULT+136);assert.ok(a.sees,JSON.stringify(a));assert.equal(a.leafletWidth,a.mapWidth);
   // Outside 历史进程 the index column takes room from the same stage; a wide reader gives way only for as long as it must.
   await dragGrip(p,2000);a=await report(p);const widest=a.width;
   await p.evaluate(()=>go('overview'));a=await report(p);assert.equal(a.width,a.stage-MAP_KEPT);assert.ok(a.width<widest,JSON.stringify(a));assert.ok(a.fits,JSON.stringify(a));

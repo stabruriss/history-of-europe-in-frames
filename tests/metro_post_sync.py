@@ -35,6 +35,10 @@ for path in sorted(TESTS.glob('verify-*.js')):
     # Without a catch, finally's process.exit(0) turns a failed assertion into a pass.
     if CLOSE in text and CATCH + 'finally{' not in text:
         text = text.replace(CLOSE, CATCH + CLOSE[1:])
+    if path.name == 'verify-figures.js':
+        # Every scene now keeps its own cards on the page; this counts the current scene's.
+        text = swap(text, path.name, "p.$$eval('.person-card',es=>es.length),5)",
+                    "p.$$eval('#peopleCards .person-card',es=>es.length),5)")
     if path.name == 'verify-history.js':
         text = swap(text, path.name, "document.querySelector('#side h1')", "document.querySelector('#masthead h1')")
     if path.name == 'verify-tree.js':

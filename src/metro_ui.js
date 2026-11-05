@@ -228,6 +228,7 @@ function askTransfer(id,key){
 /* ---------- On-train line diagram ---------- */
 let routeSkipClick=false;
 function renderRide(){
+ document.body.classList.remove('strip-open');$('#stripToggle').setAttribute('aria-expanded','false');$('#stripToggle i').textContent='▾';
  const seq=lineStops.get(rideLine),idx=seq.findIndex(s=>s.key===station.key),narrow=narrowScreen();
  document.documentElement.style.setProperty('--line',color(rideLine));
  $('#ridingLine').innerHTML=`<span class="line-number">${lineCode(rideLine)}</span>${esc(lineName(rideLine))}<small>主线 · ${seq.length}站</small>`;
@@ -260,11 +261,16 @@ function renderRide(){
 }
 let routeAt=null;
 function centerRoute(){const s=$('#routeScroller'),b=$('.route-stop.active');if(b)s.scrollLeft=b.offsetLeft-s.clientWidth/2}
+// Scrolling moves this at once; the map follows when the scrolling pauses.
+function showSceneName(i){
+ const data=ENTRIES[cur].scenes[i];if(!data||!station)return;
+ $('#scenePosition').textContent=`${i-station.from+1} / ${station.count} 幕`;
+ $('#sceneHeading').textContent=data.title;
+ $('#prevScene').disabled=i<=station.from;$('#nextScene').disabled=i>=station.to;
+}
 function updateSceneUI(){
  const data=ENTRIES[cur].scenes[sceneIndex];if(!data||!station)return;
- $('#scenePosition').textContent=`${sceneIndex-station.from+1} / ${station.count} 幕`;
- $('#sceneHeading').textContent=`本站 ${station.count} 幕 · 上下阅读`;
- $('#prevScene').disabled=sceneIndex<=station.from;$('#nextScene').disabled=sceneIndex>=station.to;
+ showSceneName(sceneIndex);$('#stripToggle span').textContent=station.title;
  $('#mapSceneDate').textContent=data.date;$('#mapSceneTitle').textContent=data.title;
 }
 
@@ -306,6 +312,7 @@ function afterNavigation(){
 const atlasGo=go;
 go=function(id,opts={}){
  const target=targetOf(id,opts);if(target)focusScene(...target);
+ if(!readerFollows){clearTimeout(sceneTimer);cancelAnimationFrame(scrollFrame);scrollFrame=0;wantedScene=null;readerScrolledUntil=0}
  atlasGo(id,opts);afterNavigation();
 };
 // Only this station's scenes are on the page; the rest of the section belongs to other stops.
@@ -317,25 +324,85 @@ renderScenes=e=>{
 };
 // Reading on down the text moves to the next scene and its map; a scene chosen elsewhere brings the text along.
 // Only the reader's own scrolling counts: a short scene jumped to by code must not read as having scrolled past it.
-let readerFollows=false,readerScrolledUntil=0;
+let readerFollows=false,readerScrolledUntil=0,scrollFrame=0,sceneTimer=0,wantedScene=null;
 const atlasScrollSceneText=scrollSceneText;
-scrollSceneText=animate=>{if(!readerFollows)atlasScrollSceneText(isHistory(ENTRIES[cur])?false:animate)};
-const readerIsScrolling=()=>{readerScrolledUntil=performance.now()+700};
+scrollSceneText=animate=>{
+ if(readerFollows)return;
+ atlasScrollSceneText(isHistory(ENTRIES[cur])?false:animate);
+ // The first scene opens on the section title too, unless the title would fill a short reader.
+ const first=card.querySelector('.scene-passage:not(.off-station)');
+ if(first?.classList.contains('current')&&first.getBoundingClientRect().top-readerBody.getBoundingClientRect().top+readerBody.scrollTop<readerBody.clientHeight*.5)readerBody.scrollTo({top:0,behavior:'instant'});
+};
+// Each scene keeps its own cards in place, so changing scene changes no heights. #peopleCards marks the current scene's block.
+const atlasRenderFigures=renderFigures;
+renderFigures=e=>{
+ if(!isHistory(e)){atlasRenderFigures(e);return}
+ const passages=[...card.querySelectorAll('.scene-passage')];
+ const host=$('#peopleCards');
+ if(host&&!passages.some(p=>p.querySelector(':scope>.scene-people'))){
+  const keep=sceneIndex;
+  for(const p of passages){
+   sceneIndex=+p.dataset.sceneText;atlasRenderFigures(e);
+   const block=document.createElement('section');block.className='scene-people';block.dataset.peopleOf=sceneIndex;block.hidden=host.hidden;block.append(...host.childNodes);p.append(block);
+   // Opening a card closes others in its own scene only: closing one further up would move the text being read.
+   for(const c of block.querySelectorAll('.person-card')){c.dataset.who=c.dataset.person;c.setAttribute('name','atlas-figures-'+sceneIndex)}
+  }
+  sceneIndex=keep;host.remove();
+ }
+ // Going to a scene closes any card left open; scrolling past one leaves it alone, because closing it would move the text.
+ if(!readerFollows)card.querySelectorAll('.person-card[open]').forEach(d=>{d.open=false});
+ // renderScenes has just carried the marked block into the new scene: put it back.
+ for(const p of passages){
+  const block=card.querySelector(`.scene-people[data-people-of="${p.dataset.sceneText}"]`);if(!block)continue;
+  if(block.parentNode!==p)p.append(block);
+  const here=+p.dataset.sceneText===sceneIndex;
+  if(here)block.id='peopleCards';else block.removeAttribute('id');
+  // A person can appear in several scenes: only the current scene's card answers to [data-person].
+  for(const c of block.querySelectorAll('.person-card')){if(here)c.dataset.person=c.dataset.who;else delete c.dataset.person}
+ }
+ // renderScenes moves whatever carries this id, and cannot do without one.
+ if(!$('#peopleCards'))card.querySelector('.scene-people')?.setAttribute('id','peopleCards');
+};
+// The section open at load was drawn before this layer existed: lay out its cards now, not on the first scroll, when the text would jump.
+if(cur>=0&&isHistory(ENTRIES[cur])){renderFigures(ENTRIES[cur]);scrollSceneText(false)}
+// Only real scrolling changes the scene, and it never writes the scroll position, which would stop a phone's inertia.
+const readerIsScrolling=()=>{readerScrolledUntil=performance.now()+400};
 for(const type of ['wheel','touchmove','pointerdown'])readerBody.addEventListener(type,readerIsScrolling,{passive:true});
 readerBody.addEventListener('keydown',ev=>{if(['PageUp','PageDown','Home','End',' '].includes(ev.key))readerIsScrolling()});
-let scrollFrame=0;
+const settleScene=()=>{
+ sceneTimer=0;const i=wantedScene;wantedScene=null;
+ if(i===null||i===sceneIndex||mode!=='ride')return;
+ readerFollows=true;try{go(ENTRIES[cur].id,{scene:i})}finally{readerFollows=false}
+};
+const highlightScene=()=>{
+ scrollFrame=0;
+ const box=readerBody.getBoundingClientRect(),line=box.top+box.height*.3,passages=[...card.querySelectorAll('.scene-passage:not(.off-station)')];
+ if(!passages.length)return;
+ let active=passages[0];for(const p of passages)if(p.getBoundingClientRect().top<=line)active=p;
+ if(readerBody.scrollTop+readerBody.clientHeight>=readerBody.scrollHeight-2)active=passages.at(-1);
+ const i=+active.dataset.sceneText;if(i===(wantedScene??sceneIndex))return;
+ wantedScene=i;for(const p of passages)p.classList.toggle('current',p===active);
+ showSceneName(i);
+};
 readerBody.addEventListener('scroll',()=>{
- if(scrollFrame||mode!=='ride'||performance.now()>readerScrolledUntil)return;
- scrollFrame=requestAnimationFrame(()=>{
-  scrollFrame=0;
-  const edge=readerBody.getBoundingClientRect().top+Math.min(60,readerBody.clientHeight*.14),passages=[...card.querySelectorAll('.scene-passage:not(.off-station)')];
-  let active=passages[0];for(const p of passages)if(p.getBoundingClientRect().top<=edge)active=p;
-  const i=+active?.dataset.sceneText;if(!active||i===sceneIndex)return;
-  const was=active.getBoundingClientRect().top;
-  readerFollows=true;try{go(ENTRIES[cur].id,{scene:i})}finally{readerFollows=false}
-  readerBody.scrollTop+=active.getBoundingClientRect().top-was;
- });
+ const now=performance.now();
+ if(mode!=='ride'||now>readerScrolledUntil)return;
+ readerScrolledUntil=now+250;  // inertia carries on after the finger lifts
+ if(!scrollFrame)scrollFrame=requestAnimationFrame(highlightScene);
+ clearTimeout(sceneTimer);sceneTimer=setTimeout(settleScene,180);
 },{passive:true});
+// On desktop the reader rises beside the route strip, by exactly the strip's height.
+const ridePanel=$('#ridePanel'),measureRide=()=>document.documentElement.style.setProperty('--ride-h',ridePanel.offsetHeight+'px');
+new ResizeObserver(measureRide).observe(ridePanel);measureRide();
+// Phones: the route strip opens on demand, and the map can fold away.
+$('#stripToggle').onclick=()=>{
+ const open=document.body.classList.toggle('strip-open');$('#stripToggle').setAttribute('aria-expanded',String(open));$('#stripToggle i').textContent=open?'▴':'▾';
+ if(open)centerRoute();
+};
+$('#mapFold').onclick=()=>{
+ const folded=document.body.classList.toggle('map-min');$('#mapFold').textContent=folded?'地图 ▾':'地图 ▴';$('#mapFold').setAttribute('aria-expanded',String(!folded));
+ requestAnimationFrame(()=>{map.invalidateSize({animate:false});if(!folded)fit(ENTRIES[cur],false)});
+};
 // The map now fills the space beside the text, so nothing overlaps it but the scene strip outside 历史进程.
 viewportPadding=()=>{
  map.invalidateSize({animate:false,pan:false});

@@ -67,7 +67,7 @@ const wait=ms=>new Promise(r=>setTimeout(r,ms));
    assert.ok(layout.pageFits&&layout.bodyFits&&layout.cardFits&&layout.popupVisible&&layout.noReaderOverlap&&layout.noZoomOverlap,width+'x'+height+': '+JSON.stringify(layout));
    if(process.env.FULL_SHOTS==='1')await p.screenshot({path:path.join(__dirname,'shots',`figures-${width}x${height}.png`)});
    await p.evaluate(()=>go('history-macedonian-rise'));
-   assert.equal(await p.$$eval('.person-card',es=>es.length),5);
+   assert.equal(await p.$$eval('#peopleCards .person-card',es=>es.length),5);
    assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth&&readerBody.scrollWidth<=readerBody.clientWidth+1),true);
    await p.close();
   }
