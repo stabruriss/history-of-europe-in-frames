@@ -128,8 +128,8 @@
   ],
   "history-germany-charles5": [
    "查理五世与哈布斯堡分家",
-   "1523—1563年",
-   6,
+   "1523—1556年",
+   8,
    5
   ],
   "history-germany-thirty-years-1": [
@@ -175,14 +175,14 @@
    5
   ],
   "history-italy-wars-1": [
-   "意大利战争（上）",
-   "1435—1504年",
+   "意大利战争（一）",
+   "1250—1494年",
    6,
    5
   ],
   "history-italy-wars-2": [
-   "意大利战争（下）",
-   "1503—1523年",
+   "利奥十世",
+   "1513—1523年",
    6,
    5
   ],
@@ -462,8 +462,8 @@
     "italy",
     "france"
    ],
-   1500,
-   1504
+   1484,
+   1493
   ],
   "history-italy-wars-2/0": [
    [
@@ -471,7 +471,7 @@
     "faith",
     "france"
    ],
-   1512,
+   1513,
    1523
   ],
   "history-faith-scholasticism/0": [
@@ -1156,27 +1156,35 @@
   ],
   [
    "history-germany-charles5/0",
-   "查理五世不爽美第奇教宗克莱芒七世，教宗又联合法国打米兰；结果法国不争气，1525"
+   "克莱芒七世战前一个月押错了法国，法国又不争气，帕维亚一战就废了"
   ],
   [
    "history-germany-charles5/1",
-   "两边来回打到查理五世没钱发军饷，1527年5月断饷哗变的德西大军冲进罗马酿成“罗"
+   "法王签约时就没打算守：用两个儿子换回自己，一过边境就翻脸"
   ],
   [
    "history-germany-charles5/2",
-   "就在教宗被查理五世捏在手里的这期间，英国国王亨利八世要离婚找来罗马；因为女方是查"
+   "来回打到查理没钱发饷，两万大军就自己去罗马找钱"
   ],
   [
    "history-germany-charles5/3",
-   "后来克莱芒七世同查理五世和解，在博洛尼亚替查理加冕、送美第奇回佛罗伦萨当公爵；教"
+   "佛罗伦萨趁罗马被破赶走美第奇，教宗和查理一和解，又被围了回来"
   ],
   [
    "history-germany-charles5/4",
-   "克莱芒七世死后，继任教宗保罗三世出身意大利豪族，上来时新教势力已经很大了，查理五"
+   "亨利八世要离婚，教宗不敢批，可不光是怕查理"
   ],
   [
    "history-germany-charles5/5",
-   "一辈子在全欧疲于奔命的查理五世既没能彻底打垮法国、也没能扑灭新教，于1555—1"
+   "克莱芒死前还在抬旗，嫁出去的美第奇姑娘，靠大王子一杯水成了王后"
+  ],
+  [
+   "history-germany-charles5/6",
+   "继任的豪族教宗知道非开会不可，却拖了十一年，先忙着给自家抬旗"
+  ],
+  [
+   "history-germany-charles5/7",
+   "一辈子疲于奔命的查理五世，最后把帝国一分为二，自己进了修道院"
   ],
   [
    "history-germany-thirty-years-1/0",
@@ -1340,51 +1348,51 @@
   ],
   [
    "history-italy-wars-1/0",
-   "先算南意大利老账：腓特烈二世死后大空位，教宗防南北夹击先卖西西里给英国、再转卖安"
+   "教宗最怕南北夹击，于是把西西里卖了又卖，最后卖成了两半"
   ],
   [
    "history-italy-wars-1/1",
-   "法国那边，路易十一死后十三岁被宠坏的老来子查理八世登基，由姐姐安妮摄政时风调雨顺"
+   "阿拉贡赢下那不勒斯，靠的不是女王的许诺，而是被俘后的一番话和一条水道"
   ],
   [
    "history-italy-wars-1/2",
-   "法军路过佛罗伦萨时，“豪华者”洛伦佐的儿子皮耶罗二世原主张抵抗，城里说打不过派他"
+   "阿方索住进那不勒斯就不再回去，死后两头分家，两个同名的堂兄弟各管一边"
   ],
   [
    "history-italy-wars-1/3",
-   "查理八世打下那不勒斯威胁教宗国，教宗组织神圣同盟反法，查理八世势单力孤退出意大利"
+   "查理八世十三岁登基，姐姐摄政的太平是打出来的"
   ],
   [
    "history-italy-wars-1/4",
-   "逃回法国的查理八世不久后在城堡看球时一头撞在门框上磕死，瓦卢瓦王朝嫡系绝嗣，王位"
+   "“志大才疏”有账可查：为了打那不勒斯，查理八世把到手的地一块块还了回去"
   ],
   [
    "history-italy-wars-1/5",
-   "路易十二以支系继位合法性不足，继续发兵打意大利；西班牙斐迪南二世指那不勒斯也是阿"
+   "米兰的摄政叔不肯还政，又怕那不勒斯替侄子出头，就撺掇法王南下"
   ],
   [
    "history-italy-wars-2/0",
-   "1503年博吉亚教宗暴毙后，之前羽翼未丰的“战神教宗”尤利乌斯二世终于上位；战神"
+   "战神一死，美第奇家的利奥十世开始抬旗，第一刀就砍在恩人家"
   ],
   [
    "history-italy-wars-2/1",
-   "因为佛罗伦萨共和国站在法国一边，战神教宗便出兵帮美第奇家族复辟；“豪华者”洛伦佐"
+   "有人要毒死教宗未遂，利奥十世借机把枢机团清洗了一遍"
   ],
   [
    "history-italy-wars-2/2",
-   "1513年战神教宗死去，美第奇家的利奥十世继位，开始疯狂给美第奇抬旗、封侄子当公"
+   "法国人又来，教宗押错了边，只好忍气吞声，连法国教会的人事权也让了"
   ],
   [
    "history-italy-wars-2/3",
-   "此时法国新王弗朗索瓦一世又打来夺占米兰（查理五世已继承西班牙与那不勒斯王位），利"
+   "腾不出手收拾路德，是因为路德的保护人手里有一票"
   ],
   [
    "history-italy-wars-2/4",
-   "等到1519年查理五世拿到德国皇位，利奥十世直接反水倒向查理五世，联手把法国人从"
+   "查理一坐稳，利奥就把赌注换过去，法国人丢了米兰，只带走了达·芬奇"
   ],
   [
    "history-italy-wars-2/5",
-   "利奥十世庆祝夺回米兰成功后不久就受凉感冒死了；下一任荷兰教宗哈德良六世想把教会往"
+   "下一任想把教会往回改，抢新教的下沉市场，没见效就死了，主教们又选了个美第奇"
   ],
   [
    "history-faith-scholasticism/0",
@@ -1840,8 +1848,8 @@
   ],
   "history-germany-charles5": [
    [
-    1,
-    "带着金绳子去吊教宗的德意志雇佣兵与圣天使堡之围"
+    2,
+    "“路德教宗万岁”：断饷大军与圣天使堡"
    ]
   ],
   "history-germany-thirty-years-1": [
@@ -1912,14 +1920,18 @@
   ],
   "history-italy-wars-1": [
    [
-    3,
-    "“神棍”萨伏那洛拉的“虚荣之火”与波提切利亲手烧画"
+    1,
+    "读一本古书，钻水道进那不勒斯"
+   ],
+   [
+    2,
+    "费兰特的“木乃伊博物馆”"
    ]
   ],
   "history-italy-wars-2": [
    [
-    3,
-    "达·芬奇的走路开花机械狮与利奥十世拿假《拉奥孔》糊弄法王"
+    2,
+    "开花狮子与假《拉奥孔》"
    ]
   ],
   "history-faith-scholasticism": [
@@ -2114,12 +2126,6 @@
     "古腾堡到底发明了什么？铅锡锑手铸字模、油墨与压榨机如何引爆欧洲信息革命，兼论与中国活字印刷之比较"
    ]
   ],
-  "history-germany-charles5": [
-   [
-    3,
-    "美第奇与法尔内塞的“家族抬旗学”：从大王子喝冰水暴死成王后，到教宗切地封私生子"
-   ]
-  ],
   "history-germany-thirty-years-1": [
    [
     0,
@@ -2158,16 +2164,10 @@
     "为什么文艺复兴偏偏长在意大利？“新钱想更像老钱”的文化贴金术与美第奇三代账"
    ]
   ],
-  "history-italy-wars-1": [
-   [
-    4,
-    "法兰西瓦卢瓦王朝三支更替与美第奇王后世系图（1364—1589年）"
-   ]
-  ],
   "history-italy-wars-2": [
    [
     5,
-    "被罗马人当瘟神送走的唯一荷兰教宗：哈德良六世为什么救不了天主教的下沉市场？"
+    "罗马人送走的荷兰教宗"
    ]
   ],
   "history-faith-scholasticism": [
@@ -2310,6 +2310,10 @@
     "history-italy-condottieri",
     "history-italy-renaissance",
     "history-italy-wars-1",
+    "history-italy-charles8",
+    "history-italy-savonarola",
+    "history-italy-louis12",
+    "history-italy-julius2",
     "history-italy-wars-2"
    ]
   ],
@@ -2421,6 +2425,8 @@
    "history-britain-jeanne/0",
    "history-france-louis11/0",
    "history-italy-wars-1/0",
+   "history-italy-charles8/0",
+   "history-italy-louis12/0",
    "history-italy-wars-2/0",
    "history-germany-charles5/0",
    "history-france-henri2/0",
@@ -2463,6 +2469,10 @@
    "history-empire-fall-1453/0",
    "history-italy-renaissance/0",
    "history-italy-wars-1/0",
+   "history-italy-charles8/0",
+   "history-italy-savonarola/0",
+   "history-italy-louis12/0",
+   "history-italy-julius2/0",
    "history-italy-wars-2/0",
    "history-germany-swiss/3",
    "history-germany-charles5/0"
@@ -2478,6 +2488,8 @@
    "history-faith-schism/0",
    "history-faith-constance/0",
    "history-empire-fall-1453/0",
+   "history-italy-savonarola/0",
+   "history-italy-julius2/0",
    "history-italy-wars-2/0",
    "history-germany-swiss/3",
    "history-faith-reformation-1/0",
@@ -3068,5 +3080,5 @@
   "mNaplesAnjou1282",
   "mAragonCrown1282"
  ],
- "pass": "法兰西、基督教、德意志、意大利 on to ~1300 — 39 sections (275 scenes): Hugh Capet and Louis VI, the Plantagenets and Philip II (with the marriage-and-land diagram), Saint Louis to Philip IV and Anagni, universities and scholasticism, Frederick II and the Interregnum (with the 豆腐块 on seven excommunications of five emperors), and the Sicilian Vespers; shared stations across lines; 266 of 老无’s points in bold, 88 facts and their order set right in plain text; 30 豆腐块 with 21 corrections"
+ "pass": "法兰西、基督教、德意志、意大利 on to ~1300 — 39 sections (277 scenes): Hugh Capet and Louis VI, the Plantagenets and Philip II (with the marriage-and-land diagram), Saint Louis to Philip IV and Anagni, universities and scholasticism, Frederick II and the Interregnum (with the 豆腐块 on seven excommunications of five emperors), and the Sicilian Vespers; shared stations across lines; 268 of 老无’s points in bold, 88 facts and their order set right in plain text; 28 豆腐块 with 21 corrections"
 }

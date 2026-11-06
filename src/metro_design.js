@@ -44,7 +44,7 @@ window.NETWORK_DESIGN = (() => {
     britain: [[-55, y(BRITAIN), null, -26], [1472, y(BRITAIN)]],
     east: [[395, y(ROME), null, -34], [395, y(EAST0)], [518, y(EAST0)], [602, y(PERSIA, 1)], [1450, y(PERSIA, 1)]],
     spain: [[481, y(ROME), null, -34], [481, y(SPAIN)], [1470, y(SPAIN)]],
-    france: [[830, y(ROME)], [843, y(FRANCE), 'e'], [1137, y(FRANCE)], [1154, y(BRITAIN, 1)], [1461, y(BRITAIN, 1)], [1500, y(FRANCE), 'e'], [1648, y(FRANCE)]],
+    france: [[830, y(ROME)], [843, y(FRANCE), 'e'], [1137, y(FRANCE)], [1154, y(BRITAIN, 1)], [1461, y(BRITAIN, 1)], [1484, y(FRANCE)], [1648, y(FRANCE)]],
     lowlands: [[830, y(ROME), null, -10], [1300, y(LOW), 'e'], [1495, y(LOW)]],
     germany: [[830, y(ROME)], [843, y(GER0), 'e'], [860, y(GER0)], [951, y(GERMANY)], [1495, y(GERMANY)]],
     crusade: [[1070, y(GERMANY, 1), null, -92], [1070, y(CRUSADE)], [1295, y(CRUSADE)]],
@@ -61,7 +61,7 @@ window.NETWORK_DESIGN = (() => {
     [1056, 1070, 110],
     [641, 641.4, 34],
     [1296, 1300, 74], [1300, 1304, 74], [1438, 1450, 26], [1450, 1454, 72],
-    [1462, 1472, 76], [1495, 1500, 110],
+    [1462, 1472, 60], [1477, 1484, 40], [1494, 1495, 40],
     [1625, 1627, 38], [1627, 1631, 38],
   ];
 

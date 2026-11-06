@@ -14,7 +14,7 @@ const shots=path.join(__dirname,'shots-v7');require('node:fs').mkdirSync(shots,{
   await page.setOfflineMode(true);await page.evaluateOnNewDocument(full=>{window.addEventListener('DOMContentLoaded',()=>{const n=document.getElementById('mapnote');if(n)n.hidden=false;if(typeof map!=='undefined'){if(typeof tiles!=='undefined')map.removeLayer(tiles);if(typeof closeTerrain!=='undefined')map.removeLayer(closeTerrain);if(!full)for(const l of Object.values(map._layers)){const kp=l.options?.pane;if(kp==='fallbackPane'||kp==='baseLabelPane'||(kp==='riverPane'&&!group.hasLayer(l))){l._project=()=>{};l._update=()=>{};l._setPos=()=>{};}}}});},process.env.FULL_SHOTS==='1');
   await page.goto(pathToFileURL(target).href+'#history-migration',{waitUntil:'domcontentloaded'});
   const list=await page.evaluate(()=>HISTORY_ENTRIES.flatMap(e=>e.moments.map(m=>({id:e.id,scene:m.scene,name:m.name}))));
-  assert.equal(list.length,660);
+  assert.equal(list.length,667);
   await page.evaluate(list=>{const _f=fit,_m=markTreeCurrent,_c=makeCtx;fit=()=>{};markTreeCurrent=()=>{};makeCtx=()=>new Proxy({},{get:()=>()=>{}});try{
    for(const m of list){if(ENTRIES[cur]?.id!==m.id||sceneIndex!==m.scene)go(m.id,{scene:m.scene});
    const ctx=document.getElementById('sceneContext');const tags=[...ctx.querySelectorAll('.moment-tag')].map(t=>t.firstChild.textContent);
@@ -36,6 +36,6 @@ const shots=path.join(__dirname,'shots-v7');require('node:fs').mkdirSync(shots,{
   await page.close();
  }
  assert.deepEqual(errors,[]);
- console.log('PASS: 660 iconic-event tags and 99 豆腐块 (boxed explainers) render inside their scene passages; desktop and 390px; no overflow; offline; no page errors.');
+ console.log('PASS: 667 iconic-event tags and 99 豆腐块 (boxed explainers) render inside their scene passages; desktop and 390px; no overflow; offline; no page errors.');
  await Promise.race([browser.close(),new Promise(r=>setTimeout(r,200))]);browser.process()?.kill('SIGKILL');process.exit(process.exitCode||0);
 })().catch(e=>{console.error(e);process.exit(1);});
