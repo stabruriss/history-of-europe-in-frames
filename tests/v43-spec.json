@@ -424,7 +424,8 @@
     "faith",
     "spain",
     "nordic",
-    "france"
+    "france",
+    "lowlands"
    ],
    1635,
    1648
@@ -2339,7 +2340,10 @@
     "history-faith-schism",
     "history-faith-constance",
     "history-faith-reformation-1",
-    "history-faith-reformation-2"
+    "history-faith-reformation-2",
+    "history-faith-trent",
+    "history-faith-jesuits",
+    "history-faith-teresa"
    ]
   ],
   [
@@ -2455,6 +2459,7 @@
    "history-faith-reformation-1/0",
    "history-faith-reformation-2/0",
    "history-germany-charles5/0",
+   "history-faith-jesuits/0",
    "history-germany-thirty-years-1/0",
    "history-germany-thirty-years-1/5",
    "history-germany-thirty-years-2/0",
@@ -2496,6 +2501,9 @@
    "history-faith-reformation-1/0",
    "history-faith-reformation-2/0",
    "history-germany-charles5/0",
+   "history-faith-trent/0",
+   "history-faith-jesuits/0",
+   "history-faith-teresa/0",
    "history-france-huguenots/0",
    "history-france-bartholomew/0",
    "history-france-henry4-1/0",
@@ -2582,7 +2590,8 @@
    "faith",
    "spain",
    "nordic",
-   "france"
+   "france",
+   "lowlands"
   ]
  },
  "fixes": [
