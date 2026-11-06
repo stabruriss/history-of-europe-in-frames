@@ -1,4 +1,5 @@
 // The text sits left of the map; its right edge can be dragged wider or narrower.
+require('./chrome_guard.cjs');
 const puppeteer=require('puppeteer-core');
 const assert=require('node:assert/strict');
 const fs=require('node:fs');

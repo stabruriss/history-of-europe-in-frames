@@ -1,4 +1,5 @@
 // The layout readers actually see: the whole-map view, the on-train view, and the other two modes.
+require('./chrome_guard.cjs');
 const puppeteer=require('puppeteer-core'),assert=require('node:assert/strict'),path=require('node:path');
 const {pathToFileURL}=require('node:url');
 const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','index.html'))).href;

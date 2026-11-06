@@ -1,4 +1,5 @@
 // On the train: ← → change station, ↑ ↓ change scene. Other modes keep the atlas's own keys.
+require('./chrome_guard.cjs');
 const puppeteer=require('puppeteer-core'),assert=require('node:assert/strict'),path=require('node:path');
 const {pathToFileURL}=require('node:url');
 const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','index.html'))).href;

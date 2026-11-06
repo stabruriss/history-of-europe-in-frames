@@ -4,6 +4,7 @@
 //   Compares with the last check that passed (tests/.check_baseline.json), or with origin/main if there is none.
 //   --all checks every scene. --pending leaves the new baseline for run_tests.py to confirm once the suites it picked have passed too.
 // Writes tests/shots-changed/: the photographs, emptied on each run, and changed.json.
+require('./chrome_guard.cjs');
 const puppeteer=require('puppeteer-core'),path=require('node:path'),fs=require('node:fs'),crypto=require('node:crypto');
 const {pathToFileURL}=require('node:url'),{execFileSync}=require('node:child_process');
 const argv=process.argv.slice(2),flag=name=>argv.includes(name);
@@ -123,7 +124,7 @@ function checkScenes({keys,labelKeys}){
 
 (async()=>{
  fs.rmSync(out,{recursive:true,force:true});fs.mkdirSync(out,{recursive:true});
- const browser=await puppeteer.launch({executablePath:process.env.CHROME_PATH||'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true,pipe:true,args:['--disable-breakpad','--disable-crash-reporter']});
+ const browser=await puppeteer.launch({executablePath:process.env.CHROME_PATH||'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true});
  const errors=[];
  const open=async(file,hash,[,width,height,touch])=>{
   const p=await browser.newPage();p.on('pageerror',e=>errors.push(e.message));await p.setViewport({width,height,hasTouch:touch,isMobile:touch});

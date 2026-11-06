@@ -1,6 +1,7 @@
 // The metro layout hides the old sidebar tree, but atlas_ui.js still builds it from the same rows, and most suites check
 // sections, lines and scenes through it. This shows it again inside those suites only, so their content checks keep working.
 // What readers actually see is tested by verify-metro.js, which does not load this file.
+require('./chrome_guard.cjs');
 const puppeteer = require('puppeteer-core');
 const showSidebar = () => {
   const css = `
