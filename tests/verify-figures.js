@@ -1,6 +1,6 @@
 const puppeteer=require('puppeteer-core');require('./legacy_sidebar.cjs');
 const assert=require('node:assert/strict');
-require('node:fs').mkdirSync(require('node:path').join(__dirname,'shots'),{recursive:true});
+
 const path=require('node:path');
 const {pathToFileURL}=require('node:url');
 const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','index.html'))).href;
@@ -12,7 +12,7 @@ const wait=ms=>new Promise(r=>setTimeout(r,ms));
   const page=await browser.newPage();page.on('pageerror',e=>errors.push(e.message));
   await page.setViewport({width,height});
   if(reduced)await page.emulateMediaFeatures([{name:'prefers-reduced-motion',value:'reduce'}]);
-  await page.setOfflineMode(true);await page.evaluateOnNewDocument(full=>{window.addEventListener('DOMContentLoaded',()=>{const n=document.getElementById('mapnote');if(n)n.hidden=false;if(typeof map!=='undefined'){if(typeof tiles!=='undefined')map.removeLayer(tiles);if(typeof closeTerrain!=='undefined')map.removeLayer(closeTerrain);if(!full)for(const l of Object.values(map._layers)){const kp=l.options?.pane;if(kp==='fallbackPane'||kp==='baseLabelPane'||(kp==='riverPane'&&!group.hasLayer(l))){l._project=()=>{};l._update=()=>{};l._setPos=()=>{};}}}});},process.env.FULL_SHOTS==='1');
+  await page.setOfflineMode(true);await page.evaluateOnNewDocument(full=>{window.addEventListener('DOMContentLoaded',()=>{const n=document.getElementById('mapnote');if(n)n.hidden=false;if(typeof map!=='undefined'){if(typeof tiles!=='undefined')map.removeLayer(tiles);if(typeof closeTerrain!=='undefined')map.removeLayer(closeTerrain);if(!full)for(const l of Object.values(map._layers)){const kp=l.options?.pane;if(kp==='fallbackPane'||kp==='baseLabelPane'||(kp==='riverPane'&&!group.hasLayer(l))){l._project=()=>{};l._update=()=>{};l._setPos=()=>{};}}}});},false);
   await page.goto(url+'#history-spartan-decline',{waitUntil:'domcontentloaded'});return page;
  }
  try{
@@ -55,7 +55,7 @@ const wait=ms=>new Promise(r=>setTimeout(r,ms));
   for(const [width,height] of [[390,844],[360,667],[740,390]]){
    const p=await pageAt(width,height);
    await p.click('[data-person="socrates"] summary');
-   await p.$eval('[data-person="socrates"] .person-map',e=>e.click());if(process.env.FULL_SHOTS==='1')await wait(400);
+   await p.$eval('[data-person="socrates"] .person-map',e=>e.click());if(false)await wait(400);
    const layout=await p.evaluate(()=>{
     const c=document.querySelector('[data-person="socrates"]'),r=reader.getBoundingClientRect(),popup=document.querySelector('.leaflet-popup').getBoundingClientRect(),zoom=document.querySelector('.leaflet-control-zoom').getBoundingClientRect();
     return {pageFits:document.documentElement.scrollWidth<=innerWidth,bodyFits:readerBody.scrollWidth<=readerBody.clientWidth+1,
@@ -65,7 +65,7 @@ const wait=ms=>new Promise(r=>setTimeout(r,ms));
      debug:{popup:{left:popup.left,right:popup.right,top:popup.top,bottom:popup.bottom},reader:{left:r.left,right:r.right,top:r.top,bottom:r.bottom}}};
    });
    assert.ok(layout.pageFits&&layout.bodyFits&&layout.cardFits&&layout.popupVisible&&layout.noReaderOverlap&&layout.noZoomOverlap,width+'x'+height+': '+JSON.stringify(layout));
-   if(process.env.FULL_SHOTS==='1')await p.screenshot({path:path.join(__dirname,'shots',`figures-${width}x${height}.png`)});
+   
    await p.evaluate(()=>go('history-macedonian-rise'));
    assert.equal(await p.$$eval('#peopleCards .person-card',es=>es.length),5);
    assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth&&readerBody.scrollWidth<=readerBody.clientWidth+1),true);

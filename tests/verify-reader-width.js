@@ -1,12 +1,10 @@
-// The text sits left of the map; its right edge can be dragged wider or narrower. Run with FULL_SHOTS=1 to write screenshots.
+// The text sits left of the map; its right edge can be dragged wider or narrower.
 const puppeteer=require('puppeteer-core');
 const assert=require('node:assert/strict');
 const fs=require('node:fs');
 const path=require('node:path');
 const {pathToFileURL}=require('node:url');
 const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','index.html'))).href;
-const shots=path.join(__dirname,'shots-reader-width');
-const shot=async(tab,name)=>{if(process.env.FULL_SHOTS==='1'){fs.mkdirSync(shots,{recursive:true});await tab.screenshot({path:path.join(shots,name+'.png')});}};
 const KEY='agora-atlas-reader-width',TABLE='#history-britain-jeanne/6',MIN=280,MAP_KEPT=332,DEFAULT=560;
 const report=p=>p.evaluate(()=>{
  const r=reader.getBoundingClientRect(),stage=document.getElementById('mapwrap').getBoundingClientRect(),g=document.getElementById('readerGrip'),gr=g.getBoundingClientRect(),m=document.getElementById('map').getBoundingClientRect(),legend=document.getElementById('legendBox').getBoundingClientRect();
@@ -43,7 +41,7 @@ const pinnedAtTop=p=>p.evaluate(()=>{const r=window.__pinned.getBoundingClientRe
   await p.focus('#readerGrip');a=await report(p);assert.equal(a.now,DEFAULT);assert.equal(a.max,max);
   const g0=await gripAt(p);
   assert.ok(await p.evaluate(({x,y})=>{const e=document.elementFromPoint(x,y),g=document.getElementById('readerGrip');return e===g&&g.getAttribute('role')==='separator'&&g.getAttribute('aria-valuemin')==='280'&&getComputedStyle(g).cursor==='col-resize';},g0));
-  await shot(p,'default');
+  
   // A click that does not move changes nothing: not the width, not the store, not a map the reader has panned.
   await p.evaluate(()=>{map.panBy([140,60],{animate:false});window.__panned=map.getCenter();});
   await p.mouse.click(g0.x,g0.y);
@@ -54,7 +52,7 @@ const pinnedAtTop=p=>p.evaluate(()=>{const r=window.__pinned.getBoundingClientRe
   a=await report(p);
   assert.equal(a.width,710);assert.equal(a.leftGap,0);assert.equal(a.saved,'710');assert.equal(a.now,710);assert.equal(a.leafletWidth,a.mapWidth);assert.ok(a.sees&&a.fits&&!a.dragging,JSON.stringify(a));
   assert.ok(await p.evaluate(()=>{const t=card.querySelector('.scene-passage.current table')||card.querySelector('table');return !!t&&t.getBoundingClientRect().right<=reader.getBoundingClientRect().right;}),'the table stays inside the panel');
-  await shot(p,'wide-610');
+  
   // Mid-drag the panel follows the pointer and nothing is saved until release.
   const g1=await gripAt(p);await p.mouse.move(g1.x,g1.y);await p.mouse.down();await p.mouse.move(g1.x+60,g1.y,{steps:3});
   await p.waitForFunction(()=>Math.round(reader.getBoundingClientRect().width)===770);
@@ -69,10 +67,10 @@ const pinnedAtTop=p=>p.evaluate(()=>{const r=window.__pinned.getBoundingClientRe
   // The limits: the map keeps its share and the legend stays uncovered; the text stays readable.
   await dragGrip(p,2000);a=await report(p);
   assert.equal(a.width,max,'widest');assert.equal(+a.saved,max);assert.ok(a.legendLeft>=a.readerRight,JSON.stringify(a));assert.ok(a.fits,JSON.stringify(a));
-  await shot(p,'widest');
+  
   await dragGrip(p,-2000);a=await report(p);
   assert.equal(a.width,MIN,'narrowest');assert.equal(+a.saved,MIN);assert.equal(a.leftGap,0);assert.ok(a.fits,JSON.stringify(a));
-  await shot(p,'narrowest');
+  
   // Keys: right widens because the edge is on the right; they do not change scenes or stations. Enter restores.
   const scene=a.scene,id=a.id;await p.focus('#readerGrip');
   await p.keyboard.press('ArrowRight');a=await report(p);assert.equal(a.width,MIN+16);assert.equal(a.scene,scene,'grip keys do not change scenes');assert.equal(a.id,id);
@@ -100,7 +98,7 @@ const pinnedAtTop=p=>p.evaluate(()=>{const r=window.__pinned.getBoundingClientRe
   // Same for the window: smaller squeezes it, larger gives it back, and neither touches what is saved.
   await p.setViewport({width:1000,height:760});await p.waitForFunction(()=>innerWidth===1000);
   a=await report(p);assert.equal(a.width,a.stage-MAP_KEPT);assert.equal(+a.saved,widest);assert.ok(a.legendLeft>=a.readerRight&&a.fits,JSON.stringify(a));
-  await shot(p,'squeezed-1000');
+  
   await p.setViewport({width:1440,height:900});await p.waitForFunction(()=>innerWidth===1440);
   a=await report(p);assert.equal(a.width,widest);
   // The phone layouts lay the panel out by themselves, and ignore a saved width.
@@ -109,7 +107,7 @@ const pinnedAtTop=p=>p.evaluate(()=>{const r=window.__pinned.getBoundingClientRe
    assert.ok(await m.evaluate(k=>{localStorage.setItem(k,'700');return true;},KEY));
    await m.reload({waitUntil:'domcontentloaded'});await m.evaluate(()=>document.fonts.ready);
    a=await report(m);assert.ok(!a.gripVisible,label);assert.equal(a.width,expected,label);assert.ok(a.fits,label+JSON.stringify(a));
-   await shot(m,label.replace(' ','-'));
+   
    await m.evaluate(k=>localStorage.removeItem(k),KEY);await m.close();
   }
   await p.close();

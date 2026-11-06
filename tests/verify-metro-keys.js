@@ -1,5 +1,5 @@
 // On the train: ← → change station, ↑ ↓ change scene. Other modes keep the atlas's own keys.
-const puppeteer=require('puppeteer-core'),assert=require('node:assert/strict'),path=require('node:path'),fs=require('node:fs');
+const puppeteer=require('puppeteer-core'),assert=require('node:assert/strict'),path=require('node:path');
 const {pathToFileURL}=require('node:url');
 const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','index.html'))).href;
 (async()=>{
@@ -92,19 +92,19 @@ const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','
   assert.equal(await p.evaluate(()=>viewMode),'geography');
   const place=await p.evaluate(()=>cur);await p.keyboard.press('ArrowDown');assert.equal(await p.evaluate(()=>cur),place+1);
   await p.close();
-  fs.mkdirSync(path.join(__dirname,'shots-v6'),{recursive:true});
+  
   for(const [w,h] of [[390,844],[740,390]]){
    const mobile=await pageAt(w,h);await mobile.evaluate(()=>go('history-spartan-decline'));await mobile.focus('#map');
    for(let scene=1;scene<6;scene++){await mobile.keyboard.press('ArrowDown');await visible(mobile,w+' scene '+scene);}
    await mobile.evaluate(()=>readerBody.scrollTo({top:0,behavior:'instant'}));await mobile.keyboard.press('ArrowUp');await visible(mobile,w+' reversed');
-   if(process.env.FULL_SHOTS==='1')await mobile.screenshot({path:path.join(__dirname,'shots-v6','keyboard-'+w+'.png')});await mobile.close();
+   await mobile.close();
   }
   const animated=await pageAt(1440,960,false);await animated.evaluate(()=>go('history-spartan-decline'));await animated.focus('#map');
   for(let n=0;n<5;n++)await animated.keyboard.press('ArrowDown');
   await animated.waitForFunction(()=>pending===null&&document.querySelector('#sceneContext')?.dataset.sceneText==='5',{timeout:6000});
   await animated.waitForFunction(()=>{const t=document.querySelector('#sceneContext .passage-title').getBoundingClientRect(),b=readerBody.getBoundingClientRect();return t.top>=b.top-1&&t.top<b.bottom;});
   assert.equal((await state(animated)).scene,5);await visible(animated,'rapid animated switching');
-  if(process.env.FULL_SHOTS==='1')await animated.screenshot({path:path.join(__dirname,'shots-v6','keyboard-desktop.png')});await animated.close();
+  await animated.close();
   assert.deepEqual(errors,[]);console.log(`PASS: on the train, ← → walked all ${total} stations along every line they sit on and ↑ ↓ walked ${count} scenes with their text, stopping at the edges; line changes keep the scene; focus on the map and in the text; inputs and modifiers; Esc and the whole map; the atlas's own keys outside 历史进程; phones and rapid animated changes; offline; no page errors.`);
  }catch(e){console.error(e);process.exitCode=1;}finally{await Promise.race([browser.close(),new Promise(r=>setTimeout(r,200))]);browser.process()?.kill('SIGKILL');process.exit(process.exitCode||0);}
 })().catch(e=>{console.error(e);process.exitCode=1;});

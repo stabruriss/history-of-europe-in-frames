@@ -6,6 +6,7 @@
     "build": "cd src && python3 assemble.py ../index.html",
     "vercel-build": "cd src && python3 assemble.py ../index.html && mkdir -p ../dist && cp ../index.html ../dist/index.html",
     "test": "python3 tests/run_tests.py index.html",
+    "test:changed": "python3 tests/run_tests.py --changed index.html",
     "test:serial": "python3 tests/run_tests.py index.html --jobs 1"
   },
   "devDependencies": {

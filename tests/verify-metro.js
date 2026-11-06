@@ -1,9 +1,7 @@
-// The layout readers actually see: the whole-map view, the on-train view, and the other two modes. Run with FULL_SHOTS=1 to write screenshots.
-const puppeteer=require('puppeteer-core'),assert=require('node:assert/strict'),path=require('node:path'),fs=require('node:fs');
+// The layout readers actually see: the whole-map view, the on-train view, and the other two modes.
+const puppeteer=require('puppeteer-core'),assert=require('node:assert/strict'),path=require('node:path');
 const {pathToFileURL}=require('node:url');
 const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','index.html'))).href;
-const shots=path.join(__dirname,'shots-metro');
-const shot=async(tab,name)=>{if(process.env.FULL_SHOTS==='1'){fs.mkdirSync(shots,{recursive:true});await tab.screenshot({path:path.join(shots,name+'.png')});}};
 const settle=p=>p.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r))));
 (async()=>{
  const browser=await puppeteer.launch({executablePath:process.env.CHROME_PATH||'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true});
@@ -27,7 +25,7 @@ const settle=p=>p.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestA
   /* ---------- Whole map ---------- */
   assert.equal(await p.evaluate(()=>document.body.dataset.metro),'network');
   assert.ok(await on(p,'#networkMode'));assert.ok(!(await on(p,'#stationInspector')),'opens uncluttered');assert.equal(await p.$eval('#networkCanvas',e=>e.dataset.lod),'1');
-  await shot(p,'network');
+  
   const counts=await p.evaluate(()=>({nodes:document.querySelectorAll('.metro-node').length,stations:metroUI.data.stations.length,rails:document.querySelectorAll('.rail-path').length,lines:HISTORY_BRANCHES.length,
    shared:metroUI.data.stations.filter(s=>s.lines.length>1).length,transfers:document.querySelectorAll('.metro-node.transfer').length,starts:document.querySelectorAll('.line-flag.flag-start').length,ends:document.querySelectorAll('.line-flag.flag-end').length,
    rows:historyTreeRows().filter(r=>r.kind==='item').length,slices:document.querySelectorAll('#yearRuler button').length,sliceData:TREE_SLICES.length,visibleFlags:new Set([...document.querySelectorAll('.line-flag:not(.culled)')].map(e=>e.dataset.line)).size}));
@@ -61,13 +59,13 @@ const settle=p=>p.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestA
   let at=await screenOf(plain.x,plain.y);await p.mouse.click(at.x,at.y);assert.equal(await p.$eval('#inspectorTitle',e=>e.textContent),'大宪章与议会');assert.ok(await on(p,'#stationInspector'));
   const plague=await p.evaluate(()=>{const n=[...metroUI.pointByKey.values()].find(x=>x.s.title==='黑死病');metroUI.inspect(n.s.key);metroUI.focusStation(n.s.key);return{key:n.s.key,lines:n.s.lines.length,links:!!n.link,nodes:document.querySelectorAll(`.metro-node[data-key="${n.s.key}"]`).length,offers:document.querySelectorAll('#inspectorLines button').length}});
   assert.equal(plague.lines,7);assert.equal(plague.nodes,1,'one station');assert.equal(plague.offers,7);assert.ok(plague.links,'far-apart rails are joined by a dashed link');
-  await shot(p,'plague');
+  
   const rail=await p.evaluate(()=>{const a=metroUI.data.lineStops.get('china'),m=metroUI.pointByKey.get(a[8].key),n=metroUI.pointByKey.get(a[9].key);metroUI.focusStation(m.s.key);document.querySelector('#stationInspector').hidden=true;return{x:(m.x+n.x)/2,y:m.y}});
   at=await screenOf(rail.x,rail.y);await p.mouse.click(at.x,at.y);await settle(p);let st=await p.evaluate(()=>metroUI.state());assert.equal(st.mode,'ride');assert.equal(st.line,'china');
   await p.evaluate(()=>metroUI.setMode('network'));await settle(p);
 
   /* ---------- On the train ---------- */
-  await p.evaluate(()=>metroUI.board('east',{key:'history-crusade-fourth/0'}));await settle(p);await shot(p,'ride');
+  await p.evaluate(()=>metroUI.board('east',{key:'history-crusade-fourth/0'}));await settle(p);
   assert.equal(await p.evaluate(()=>document.body.dataset.metro),'ride');assert.ok(!(await on(p,'#networkMode')));assert.ok(await on(p,'#ridePanel'));assert.ok(!(await on(p,'#sceneRail')),'the scene strip gives way to the text');
   const ride=await p.evaluate(()=>{const r=document.getElementById('reader').getBoundingClientRect(),m=document.getElementById('map').getBoundingClientRect();return{textLeftOfMap:r.right<=m.left+1,stops:document.querySelectorAll('.route-stop').length,line:metroUI.data.lineStops.get('east').length,active:document.querySelector('.route-stop.active').dataset.key,inView:(()=>{const a=document.querySelector('.route-stop.active').getBoundingClientRect(),s=document.getElementById('routeScroller').getBoundingClientRect();return a.left>=s.left&&a.right<=s.right})(),chips:[...document.querySelectorAll(`.route-transfers [data-key="${document.querySelector('.route-stop.active').dataset.key}"]`)].map(e=>e.textContent),transfer:[...document.querySelectorAll('#transferBar button')].map(b=>b.dataset.transfer),scenes:card.querySelectorAll('.scene-passage:not(.off-station)').length,count:metroUI.state().sceneCount,position:document.getElementById('scenePosition').textContent,chip:document.getElementById('mapSceneTitle').textContent,scene:activeScene(ENTRIES[cur]).title}});
   assert.ok(ride.textLeftOfMap);assert.equal(ride.stops,ride.line);assert.equal(ride.active,'history-crusade-fourth/0');assert.ok(ride.inView,'the current station is in view');assert.deepEqual(ride.chips,['十']);assert.deepEqual(ride.transfer,['crusade']);assert.equal(ride.scenes,ride.count);assert.equal(ride.position,`1 / ${ride.count} 幕`);assert.equal(ride.chip,ride.scene);
@@ -116,11 +114,11 @@ const settle=p=>p.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestA
   await p.evaluate(()=>{const a=[...document.querySelectorAll('#card a.xref[data-go]')][0];if(a)a.click()});await settle(p);assert.equal(await p.evaluate(()=>metroUI.state().mode),'ride');
 
   /* ---------- The other two modes ---------- */
-  await p.click('#tGeography');await settle(p);await shot(p,'geography');
+  await p.click('#tGeography');await settle(p);
   let m=await p.evaluate(()=>({mode:metroUI.state().mode,metro:document.body.dataset.metro,viewMode,hasIndex:document.getElementById('toc').checkVisibility(),chips:document.querySelectorAll('#toc .chip').length,net:document.getElementById('networkMode').checkVisibility(),line:document.getElementById('ridePanel').checkVisibility(),toggle:document.getElementById('modeToggle').checkVisibility(),legendOK:document.getElementById('map').getBoundingClientRect().left>=document.getElementById('reader').getBoundingClientRect().right-1,size:map.getSize().x===Math.round(document.getElementById('map').getBoundingClientRect().width)}));
   assert.deepEqual(m,{mode:'off',metro:'off',viewMode:'geography',hasIndex:true,chips:33,net:false,line:false,toggle:false,legendOK:true,size:true});
   await p.click('#next');assert.equal(await p.evaluate(()=>viewMode),'geography');assert.notEqual(await p.evaluate(()=>ENTRIES[cur].id),'overview');
-  await p.click('#tTopics');await settle(p);await shot(p,'topics');assert.equal(await p.evaluate(()=>viewMode),'topics');assert.ok(await on(p,'#toc'));assert.equal(await p.evaluate(()=>document.body.dataset.metro),'off');
+  await p.click('#tTopics');await settle(p);assert.equal(await p.evaluate(()=>viewMode),'topics');assert.ok(await on(p,'#toc'));assert.equal(await p.evaluate(()=>document.body.dataset.metro),'off');
   await p.click('#tHistory');await settle(p);m=await p.evaluate(()=>({viewMode,metro:document.body.dataset.metro,side:document.getElementById('side').checkVisibility(),size:map.getSize().x===Math.round(document.getElementById('map').getBoundingClientRect().width)}));assert.deepEqual(m,{viewMode:'history',metro:'ride',side:false,size:true});
   await p.close();
 
@@ -145,17 +143,17 @@ const settle=p=>p.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestA
 
   /* ---------- Other screens ---------- */
   for(const [w,h,hash,label] of [[1280,720,'#history-crusade-fourth/2','laptop'],[1024,768,'#history-empire-fall-1453','small-desktop'],[812,375,'#history-crusade-fourth','short-landscape']]){
-   const q=await pageAt(w,h,hash);await shot(q,label);
+   const q=await pageAt(w,h,hash);
    const d=await q.evaluate(()=>({overflow:document.documentElement.scrollWidth>innerWidth,marks:(()=>{const v=map.getBounds(),pts=[];group.eachLayer(l=>{if(l.getLatLng)pts.push(l.getLatLng())});return pts.every(p=>v.contains(p))})(),map:map.getSize().y,text:readerBody.clientHeight}));
    assert.ok(!d.overflow&&d.marks&&d.map>=150&&d.text>=120,label+JSON.stringify(d));await q.close();
   }
-  const phone=await pageAt(390,844,'#history-crusade-fourth',true);await shot(phone,'phone-ride');
+  const phone=await pageAt(390,844,'#history-crusade-fourth',true);
   const ph=await phone.evaluate(()=>{const t=document.getElementById('reader').getBoundingClientRect(),q=document.getElementById('map').getBoundingClientRect();return{overflow:document.documentElement.scrollWidth>innerWidth,stacked:t.top>=q.bottom-1,mapH:q.height,textH:readerBody.clientHeight,grip:document.getElementById('readerGrip').checkVisibility(),gh:document.getElementById('ghBanner').checkVisibility(),tabs:document.getElementById('modebar').checkVisibility()}});
   assert.ok(!ph.overflow&&ph.stacked&&ph.mapH>=150&&ph.textH>=120&&!ph.grip&&ph.gh&&ph.tabs,JSON.stringify(ph));
-  await phone.click('#modeToggle');await settle(phone);await shot(phone,'phone-network');assert.equal(await phone.evaluate(()=>metroUI.state().mode),'network');
+  await phone.click('#modeToggle');await settle(phone);assert.equal(await phone.evaluate(()=>metroUI.state().mode),'network');
   await phone.click('#legendToggle');assert.ok(await phone.$eval('#networkLegend',e=>e.classList.contains('open')));await phone.click('#lineList [data-line="crusade"]');await settle(phone);assert.equal(await phone.evaluate(()=>metroUI.state().line),'crusade');
   await phone.close();
-  const phoneGeo=await pageAt(390,844,'#overview',true);assert.ok(await phoneGeo.evaluate(()=>document.documentElement.scrollWidth<=innerWidth&&document.getElementById('mobileToc').checkVisibility()));await shot(phoneGeo,'phone-geography');await phoneGeo.close();
+  const phoneGeo=await pageAt(390,844,'#overview',true);assert.ok(await phoneGeo.evaluate(()=>document.documentElement.scrollWidth<=innerWidth&&document.getElementById('mobileToc').checkVisibility()));await phoneGeo.close();
   // Touch: one finger pans the map, two zoom it. Chrome's touch emulation, not a physical device.
   const touch=await pageAt(390,844,'',true),cdp=await touch.createCDPSession(),finger=(type,pts)=>cdp.send('Input.dispatchTouchEvent',{type,touchPoints:pts.map(([id,x,y])=>({id,x,y,radiusX:5,radiusY:5,force:1}))});
   const t0=await touch.evaluate(()=>metroUI.state().camera);await finger('touchStart',[[0,120,420]]);for(let i=1;i<=7;i++)await finger('touchMove',[[0,120+i*10,420+i*6]]);await finger('touchEnd',[]);

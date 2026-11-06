@@ -6,3 +6,5 @@ src/out.html
 src/ne_10m_*/
 __pycache__/
 .DS_Store
+tests/.check_baseline.json
+tests/.test_cache.json

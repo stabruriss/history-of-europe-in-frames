@@ -4,8 +4,8 @@ const fs=require('node:fs');
 const path=require('node:path');
 const {pathToFileURL}=require('node:url');
 const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','index.html'))).href;
-const shots=path.join(__dirname,'shots-v42');fs.mkdirSync(shots,{recursive:true});
-const FULL_SHOTS=process.env.FULL_SHOTS==='1';const wait=ms=>FULL_SHOTS?new Promise(r=>setTimeout(r,ms)):Promise.resolve();
+
+const FULL_SHOTS=false;const wait=ms=>FULL_SHOTS?new Promise(r=>setTimeout(r,ms)):Promise.resolve();
 // 老无 2026-10-30, “回头去把意大利，基督教和德意志往前推推。这三个基本是搅和在一起，所以必要的地方可以用贯通事件”:
 // the second half of the investiture fight (Henry V, Sutri, the excommunication that weighed this time, Worms 1122), shared by 德意志
 //   and 基督教; the popes' new protectors and the split college that elected two popes at once until the two-thirds rule of 1179 (基督教);
@@ -20,7 +20,7 @@ const S=JSON.parse(fs.readFileSync(path.join(__dirname,'v42-spec.json'),'utf8'))
   for(const [label,w,h] of [['desktop',1440,960],['390',390,844]]){
    const page=await browser.newPage();await page.setViewport({width:w,height:h,deviceScaleFactor:1});
    await page.emulateMediaFeatures([{name:'prefers-reduced-motion',value:'reduce'}]);
-   await page.setOfflineMode(true);await page.evaluateOnNewDocument(full=>{window.addEventListener('DOMContentLoaded',()=>{const n=document.getElementById('mapnote');if(n)n.hidden=false;if(typeof map!=='undefined'){if(typeof tiles!=='undefined')map.removeLayer(tiles);if(typeof closeTerrain!=='undefined')map.removeLayer(closeTerrain);if(!full)for(const l of Object.values(map._layers)){const kp=l.options?.pane;if(kp==='fallbackPane'||kp==='baseLabelPane'||(kp==='riverPane'&&!group.hasLayer(l))){l._project=()=>{};l._update=()=>{};l._setPos=()=>{};}}}});},process.env.FULL_SHOTS==='1');
+   await page.setOfflineMode(true);await page.evaluateOnNewDocument(full=>{window.addEventListener('DOMContentLoaded',()=>{const n=document.getElementById('mapnote');if(n)n.hidden=false;if(typeof map!=='undefined'){if(typeof tiles!=='undefined')map.removeLayer(tiles);if(typeof closeTerrain!=='undefined')map.removeLayer(closeTerrain);if(!full)for(const l of Object.values(map._layers)){const kp=l.options?.pane;if(kp==='fallbackPane'||kp==='baseLabelPane'||(kp==='riverPane'&&!group.hasLayer(l))){l._project=()=>{};l._update=()=>{};l._setPos=()=>{};}}}});},false);
    page.on('pageerror',e=>errors.push(label+': '+e.message));
    await page.goto(url,{waitUntil:'domcontentloaded'});await wait(400);
    const r=await page.evaluate(S=>{
@@ -91,10 +91,10 @@ const S=JSON.parse(fs.readFileSync(path.join(__dirname,'v42-spec.json'),'utf8'))
    assert.equal(t.overflow,false,label+' no overflow');
    if(label!=='desktop'){
     await page.evaluate(()=>document.querySelector('#treeSheet .tree-item[data-key="history-germany-innocent/0"]').scrollIntoView({block:'center'}));await wait(150);
-    if(process.env.FULL_SHOTS==='1')await page.screenshot({path:path.join(shots,'tree-sheet-390.png')});await page.keyboard.press('Escape');await wait(150);
+    await page.keyboard.press('Escape');await wait(150);
    }else{
     await page.evaluate(()=>document.querySelector('#toc .tree-item[data-key="history-germany-innocent/0"]').scrollIntoView({block:'center'}));await wait(150);
-    if(process.env.FULL_SHOTS==='1')await page.screenshot({path:path.join(shots,'tree-sidebar.png'),clip:{x:0,y:0,width:520,height:960}});
+    
    }
    // Every new scene draws, fits its view on the desktop, and leaves no horizontal overflow.
    if(!FULL_SHOTS){await page.evaluate(({ids,label})=>{for(const id of ids){const n=HISTORY_ENTRIES.find(e=>e.id===id).scenes.length;for(let i=0;i<n;i++){go(id,{scene:i});const sc=activeScene(ENTRIES[cur]);
@@ -106,7 +106,7 @@ const S=JSON.parse(fs.readFileSync(path.join(__dirname,'v42-spec.json'),'utf8'))
       return {pins:Object.keys(pinIndex).length,layers:group.getLayers().length,fits:map.getBounds().contains(L.latLngBounds(sc.view)),overflow:document.documentElement.scrollWidth>innerWidth};},{id,i});
      await wait(90);
      assert.ok(s.layers>0&&!s.overflow,id+'/'+i+' '+JSON.stringify(s));
-     if(label==='desktop'){assert.ok(s.pins>0&&s.fits,id+'/'+i+' '+JSON.stringify(s));if(process.env.FULL_SHOTS==='1')await page.screenshot({path:path.join(shots,`${id.replace('history-','')}_${i}-desktop.png`)});}
+     if(label==='desktop'){assert.ok(s.pins>0&&s.fits,id+'/'+i+' '+JSON.stringify(s));}
     }
    }
    if(label==='desktop'){

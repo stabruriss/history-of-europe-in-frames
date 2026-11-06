@@ -4,8 +4,8 @@ const fs=require('node:fs');
 const path=require('node:path');
 const {pathToFileURL}=require('node:url');
 const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','index.html'))).href;
-const shots=path.join(__dirname,'shots-carolingian');fs.mkdirSync(shots,{recursive:true});
-const FULL_SHOTS=process.env.FULL_SHOTS==='1';const wait=ms=>FULL_SHOTS?new Promise(r=>setTimeout(r,ms)):Promise.resolve();
+
+const FULL_SHOTS=false;const wait=ms=>FULL_SHOTS?new Promise(r=>setTimeout(r,ms)):Promise.resolve();
 // 老无 2026-10-27: the big rule of arrangement (shared scenes may repeat; near-simultaneous sections of one line run side by side on a
 // passing loop; a region that goes its own way forks off as a line of its own), applied: 东罗马 leaves 罗马 at 395, 中世纪西欧 splits at
 // Verdun (843) into 法兰西, 德意志 and 意大利. The Carolingians rebuilt in three sections, the three heirs of Verdun, and 基督教 pushed on
@@ -83,7 +83,7 @@ const PARALLEL=[['trunk','history-alexander-conquest/0','history-alexander-rule/
   for(const [label,w,h] of [['desktop',1440,960],['390',390,844]]){
    const page=await browser.newPage();await page.setViewport({width:w,height:h,deviceScaleFactor:1});
    await page.emulateMediaFeatures([{name:'prefers-reduced-motion',value:'reduce'}]);
-   await page.setOfflineMode(true);await page.evaluateOnNewDocument(full=>{window.addEventListener('DOMContentLoaded',()=>{const n=document.getElementById('mapnote');if(n)n.hidden=false;if(typeof map!=='undefined'){if(typeof tiles!=='undefined')map.removeLayer(tiles);if(typeof closeTerrain!=='undefined')map.removeLayer(closeTerrain);if(!full)for(const l of Object.values(map._layers)){const kp=l.options?.pane;if(kp==='fallbackPane'||kp==='baseLabelPane'||(kp==='riverPane'&&!group.hasLayer(l))){l._project=()=>{};l._update=()=>{};l._setPos=()=>{};}}}});},process.env.FULL_SHOTS==='1');
+   await page.setOfflineMode(true);await page.evaluateOnNewDocument(full=>{window.addEventListener('DOMContentLoaded',()=>{const n=document.getElementById('mapnote');if(n)n.hidden=false;if(typeof map!=='undefined'){if(typeof tiles!=='undefined')map.removeLayer(tiles);if(typeof closeTerrain!=='undefined')map.removeLayer(closeTerrain);if(!full)for(const l of Object.values(map._layers)){const kp=l.options?.pane;if(kp==='fallbackPane'||kp==='baseLabelPane'||(kp==='riverPane'&&!group.hasLayer(l))){l._project=()=>{};l._update=()=>{};l._setPos=()=>{};}}}});},false);
    page.on('pageerror',e=>errors.push(label+': '+e.message));
    await page.goto(url,{waitUntil:'domcontentloaded'});await wait(400);
    const r=await page.evaluate(({SECTIONS,ROWS,BOLD,FIXES,MOMENTS,PARALLEL})=>{
@@ -153,10 +153,10 @@ const PARALLEL=[['trunk','history-alexander-conquest/0','history-alexander-rule/
       return {pins:Object.keys(pinIndex).length,layers:group.getLayers().length,fits:map.getBounds().contains(L.latLngBounds(sc.view)),overflow:document.documentElement.scrollWidth>innerWidth};},{id,i});
      await wait(90);
      assert.ok(s.layers>0&&!s.overflow,id+'/'+i+' '+JSON.stringify(s));
-     if(label==='desktop'){assert.ok(s.pins>0&&s.fits,id+'/'+i+' '+JSON.stringify(s));if(process.env.FULL_SHOTS==='1')await page.screenshot({path:path.join(shots,`${id.replace('history-','')}_${i}-desktop.png`)});}
+     if(label==='desktop'){assert.ok(s.pins>0&&s.fits,id+'/'+i+' '+JSON.stringify(s));}
     }
    }
-   if(label==='390'){await page.evaluate(()=>go('history-west-louis-pious',{scene:5}));await wait(150);if(process.env.FULL_SHOTS==='1')await page.screenshot({path:path.join(shots,'verdun-390.png')});}
+   if(label==='390'){await page.evaluate(()=>go('history-west-louis-pious',{scene:5}));await wait(150);}
    await page.close();
   }
   assert.deepEqual(errors,[],'page errors');

@@ -4,8 +4,8 @@ const fs=require('node:fs');
 const path=require('node:path');
 const {pathToFileURL}=require('node:url');
 const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','index.html'))).href;
-const shots=path.join(__dirname,'shots-v37');fs.mkdirSync(shots,{recursive:true});
-const FULL_SHOTS=process.env.FULL_SHOTS==='1';const wait=ms=>FULL_SHOTS?new Promise(r=>setTimeout(r,ms)):Promise.resolve();
+
+const FULL_SHOTS=false;const wait=ms=>FULL_SHOTS?new Promise(r=>setTimeout(r,ms)):Promise.resolve();
 // 老无 2026-10-28, four requests in one day:
 // 1. 意大利 rebuilt on 老无’s chain (the eldest son takes Middle Francia → his three sons split it again → none leaves a lawful heir →
 //    Middle Francia is fought over → the uncles split Lotharingia north of the Alps → Otto takes Italy), Otto’s Italy a station shared by
@@ -25,7 +25,7 @@ const SECTIONS=JSON.parse(fs.readFileSync(path.join(__dirname,'v37-spec.json'),'
   for(const [label,w,h] of [['desktop',1440,960],['390',390,844]]){
    const page=await browser.newPage();await page.setViewport({width:w,height:h,deviceScaleFactor:1});
    await page.emulateMediaFeatures([{name:'prefers-reduced-motion',value:'reduce'}]);
-   await page.setOfflineMode(true);await page.evaluateOnNewDocument(full=>{window.addEventListener('DOMContentLoaded',()=>{const n=document.getElementById('mapnote');if(n)n.hidden=false;if(typeof map!=='undefined'){if(typeof tiles!=='undefined')map.removeLayer(tiles);if(typeof closeTerrain!=='undefined')map.removeLayer(closeTerrain);if(!full)for(const l of Object.values(map._layers)){const kp=l.options?.pane;if(kp==='fallbackPane'||kp==='baseLabelPane'||(kp==='riverPane'&&!group.hasLayer(l))){l._project=()=>{};l._update=()=>{};l._setPos=()=>{};}}}});},process.env.FULL_SHOTS==='1');
+   await page.setOfflineMode(true);await page.evaluateOnNewDocument(full=>{window.addEventListener('DOMContentLoaded',()=>{const n=document.getElementById('mapnote');if(n)n.hidden=false;if(typeof map!=='undefined'){if(typeof tiles!=='undefined')map.removeLayer(tiles);if(typeof closeTerrain!=='undefined')map.removeLayer(closeTerrain);if(!full)for(const l of Object.values(map._layers)){const kp=l.options?.pane;if(kp==='fallbackPane'||kp==='baseLabelPane'||(kp==='riverPane'&&!group.hasLayer(l))){l._project=()=>{};l._update=()=>{};l._setPos=()=>{};}}}});},false);
    page.on('pageerror',e=>errors.push(label+': '+e.message));
    await page.goto(url,{waitUntil:'domcontentloaded'});await wait(400);
    const r=await page.evaluate(S=>{
@@ -105,7 +105,7 @@ const SECTIONS=JSON.parse(fs.readFileSync(path.join(__dirname,'v37-spec.json'),'
       return {pins:Object.keys(pinIndex).length,layers:group.getLayers().length,fits:map.getBounds().contains(L.latLngBounds(sc.view)),overflow:document.documentElement.scrollWidth>innerWidth};},{id,i});
      await wait(90);
      assert.ok(s.layers>0&&!s.overflow,id+'/'+i+' '+JSON.stringify(s));
-     if(label==='desktop'){assert.ok(s.pins>0&&s.fits,id+'/'+i+' '+JSON.stringify(s));if(process.env.FULL_SHOTS==='1')await page.screenshot({path:path.join(shots,`${id.replace('history-','')}_${i}-desktop.png`)});}
+     if(label==='desktop'){assert.ok(s.pins>0&&s.fits,id+'/'+i+' '+JSON.stringify(s));}
     }
    }
    // Shared stations open their section on every line they sit on.
@@ -115,7 +115,7 @@ const SECTIONS=JSON.parse(fs.readFileSync(path.join(__dirname,'v37-spec.json'),'
      assert.ok(ok,k+' is a station on '+line);
     }
    }
-   if(label==='390'){await page.evaluate(()=>go('history-italy-middle-francia',{scene:3}));await wait(150);if(process.env.FULL_SHOTS==='1')await page.screenshot({path:path.join(shots,'meerssen-390.png')});}
+   if(label==='390'){await page.evaluate(()=>go('history-italy-middle-francia',{scene:3}));await wait(150);}
    await page.close();
   }
   assert.deepEqual(errors,[],'page errors');

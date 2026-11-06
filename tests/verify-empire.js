@@ -3,8 +3,8 @@ const assert=require('node:assert/strict');
 const path=require('node:path');
 const {pathToFileURL}=require('node:url');
 const target=path.resolve(process.argv[2]||path.join(__dirname,'..','index.html'));
-const shots=path.join(__dirname,'shots-v15');require('node:fs').mkdirSync(shots,{recursive:true});
-const FULL_SHOTS=process.env.FULL_SHOTS==='1';const wait=ms=>FULL_SHOTS?new Promise(r=>setTimeout(r,ms)):Promise.resolve();
+
+const FULL_SHOTS=false;const wait=ms=>FULL_SHOTS?new Promise(r=>setTimeout(r,ms)):Promise.resolve();
 (async()=>{
  const browser=await puppeteer.launch({executablePath:process.env.CHROME_PATH||'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true});
  const errors=[];
@@ -13,7 +13,7 @@ const FULL_SHOTS=process.env.FULL_SHOTS==='1';const wait=ms=>FULL_SHOTS?new Prom
    const page=await browser.newPage();page.on('pageerror',e=>errors.push(e.message));
    await page.setViewport({width,height});
    await page.emulateMediaFeatures([{name:'prefers-reduced-motion',value:'reduce'}]);
-   await page.setOfflineMode(true);await page.evaluateOnNewDocument(full=>{window.addEventListener('DOMContentLoaded',()=>{const n=document.getElementById('mapnote');if(n)n.hidden=false;if(typeof map!=='undefined'){if(typeof tiles!=='undefined')map.removeLayer(tiles);if(typeof closeTerrain!=='undefined')map.removeLayer(closeTerrain);if(!full)for(const l of Object.values(map._layers)){const kp=l.options?.pane;if(kp==='fallbackPane'||kp==='baseLabelPane'||(kp==='riverPane'&&!group.hasLayer(l))){l._project=()=>{};l._update=()=>{};l._setPos=()=>{};}}}});},process.env.FULL_SHOTS==='1');
+   await page.setOfflineMode(true);await page.evaluateOnNewDocument(full=>{window.addEventListener('DOMContentLoaded',()=>{const n=document.getElementById('mapnote');if(n)n.hidden=false;if(typeof map!=='undefined'){if(typeof tiles!=='undefined')map.removeLayer(tiles);if(typeof closeTerrain!=='undefined')map.removeLayer(closeTerrain);if(!full)for(const l of Object.values(map._layers)){const kp=l.options?.pane;if(kp==='fallbackPane'||kp==='baseLabelPane'||(kp==='riverPane'&&!group.hasLayer(l))){l._project=()=>{};l._update=()=>{};l._setPos=()=>{};}}}});},false);
    await page.goto(pathToFileURL(target).href+'#history-empire-principate',{waitUntil:'domcontentloaded'});
    const report=await page.evaluate(()=>{
     const empire=HISTORY_ENTRIES.filter(e=>e.ch===5),eras=HISTORY_ERAS.filter(e=>e.id.startsWith('empire-'));
@@ -143,7 +143,7 @@ const FULL_SHOTS=process.env.FULL_SHOTS==='1';const wait=ms=>FULL_SHOTS?new Prom
    for(const [scene,file] of [['history-empire-principate/1','guard'],['history-empire-crisis/3','split'],['history-empire-west-fall/7','455'],['history-empire-west-end/5','476'],['history-empire-west-end/6','kingdoms-476'],['history-empire-theodosius/6','exiles'],['history-empire-theodosius/10','walls'],['history-empire-constantine/1','307-324'],['history-empire-west-fall/0','huns'],['history-empire-valentinian/2','adrianople-box'],['history-empire-theodosius/1','vesta'],['history-empire-leo/0','aspar'],['history-empire-justinian/3','ravenna'],['history-empire-justinian/5','565'],['history-west-kingdoms/0','kingdoms'],['history-spain-fall/2','711']]){
     await page.evaluate(s=>go(s),scene);await wait(300);
     if(label==='390')await page.evaluate(()=>scrollSceneText(false));
-    if(process.env.FULL_SHOTS==='1')await page.screenshot({path:path.join(shots,`empire-${file}-${label}.png`)});
+    
    }
    await page.close();
   }

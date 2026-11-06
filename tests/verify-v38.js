@@ -4,8 +4,8 @@ const fs=require('node:fs');
 const path=require('node:path');
 const {pathToFileURL}=require('node:url');
 const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','index.html'))).href;
-const shots=path.join(__dirname,'shots-v38');fs.mkdirSync(shots,{recursive:true});
-const FULL_SHOTS=process.env.FULL_SHOTS==='1';const wait=ms=>FULL_SHOTS?new Promise(r=>setTimeout(r,ms)):Promise.resolve();
+
+const FULL_SHOTS=false;const wait=ms=>FULL_SHOTS?new Promise(r=>setTimeout(r,ms)):Promise.resolve();
 // 老无 2026-10-28 夜, two requests:
 // 1. A new 东欧 line: the forest farmers, the steppe nomads and the Greek ports of the north Pontic trading for centuries; under Rome the
 //    grain lost its buyer and slaves paid the bill; new masters on the steppe, the Slavs going south with them; Heraclius won in the east
@@ -21,7 +21,7 @@ const SLICE_YEARS=[-1000,-500,0,500,1000];
   for(const [label,w,h] of [['desktop',1440,960],['390',390,844]]){
    const page=await browser.newPage();await page.setViewport({width:w,height:h,deviceScaleFactor:1});
    await page.emulateMediaFeatures([{name:'prefers-reduced-motion',value:'reduce'}]);
-   await page.setOfflineMode(true);await page.evaluateOnNewDocument(full=>{window.addEventListener('DOMContentLoaded',()=>{const n=document.getElementById('mapnote');if(n)n.hidden=false;if(typeof map!=='undefined'){if(typeof tiles!=='undefined')map.removeLayer(tiles);if(typeof closeTerrain!=='undefined')map.removeLayer(closeTerrain);if(!full)for(const l of Object.values(map._layers)){const kp=l.options?.pane;if(kp==='fallbackPane'||kp==='baseLabelPane'||(kp==='riverPane'&&!group.hasLayer(l))){l._project=()=>{};l._update=()=>{};l._setPos=()=>{};}}}});},process.env.FULL_SHOTS==='1');
+   await page.setOfflineMode(true);await page.evaluateOnNewDocument(full=>{window.addEventListener('DOMContentLoaded',()=>{const n=document.getElementById('mapnote');if(n)n.hidden=false;if(typeof map!=='undefined'){if(typeof tiles!=='undefined')map.removeLayer(tiles);if(typeof closeTerrain!=='undefined')map.removeLayer(closeTerrain);if(!full)for(const l of Object.values(map._layers)){const kp=l.options?.pane;if(kp==='fallbackPane'||kp==='baseLabelPane'||(kp==='riverPane'&&!group.hasLayer(l))){l._project=()=>{};l._update=()=>{};l._setPos=()=>{};}}}});},false);
    page.on('pageerror',e=>errors.push(label+': '+e.message));
    await page.goto(url,{waitUntil:'domcontentloaded'});await wait(400);
    const r=await page.evaluate(S=>{
@@ -116,13 +116,13 @@ const SLICE_YEARS=[-1000,-500,0,500,1000];
       res({grew:after-before,clear:after>=top+s.offsetHeight-1,text:s.querySelector('p').textContent.length});},150));});
     assert.ok(o.grew>40&&o.clear&&o.text>100,JSON.stringify(o));
     await page.evaluate(()=>[...document.querySelectorAll('#toc .tree-slice')][1].scrollIntoView({block:'center'}));await wait(150);
-    if(process.env.FULL_SHOTS==='1')await page.screenshot({path:path.join(shots,'slice-sidebar.png'),clip:{x:0,y:0,width:520,height:960}});
+    
     await page.click('#treeOpen');await wait(300);
     await page.evaluate(()=>[...document.querySelectorAll('#treeSheet .tree-slice')][3].scrollIntoView({block:'center'}));await wait(150);
-    if(process.env.FULL_SHOTS==='1')await page.screenshot({path:path.join(shots,'slice-sheet-1440.png')});await page.keyboard.press('Escape');await wait(150);
+    await page.keyboard.press('Escape');await wait(150);
    }else{
     await page.evaluate(()=>[...document.querySelectorAll('#treeSheet .tree-slice')][2].scrollIntoView({block:'center'}));await wait(150);
-    if(process.env.FULL_SHOTS==='1')await page.screenshot({path:path.join(shots,'slice-sheet-390.png')});await page.keyboard.press('Escape');await wait(150);
+    await page.keyboard.press('Escape');await wait(150);
    }
    // Every new scene draws, fits its view on the desktop, and leaves no horizontal overflow.
    if(!FULL_SHOTS){await page.evaluate(({ids,label})=>{for(const id of ids){const n=HISTORY_ENTRIES.find(e=>e.id===id).scenes.length;for(let i=0;i<n;i++){go(id,{scene:i});const sc=activeScene(ENTRIES[cur]);
@@ -134,7 +134,7 @@ const SLICE_YEARS=[-1000,-500,0,500,1000];
       return {pins:Object.keys(pinIndex).length,layers:group.getLayers().length,fits:map.getBounds().contains(L.latLngBounds(sc.view)),overflow:document.documentElement.scrollWidth>innerWidth};},{id,i});
      await wait(90);
      assert.ok(s.layers>0&&!s.overflow,id+'/'+i+' '+JSON.stringify(s));
-     if(label==='desktop'){assert.ok(s.pins>0&&s.fits,id+'/'+i+' '+JSON.stringify(s));if(process.env.FULL_SHOTS==='1')await page.screenshot({path:path.join(shots,`${id.replace('history-','')}_${i}-desktop.png`)});}
+     if(label==='desktop'){assert.ok(s.pins>0&&s.fits,id+'/'+i+' '+JSON.stringify(s));}
     }
    }
    // 老无 2026-10-28 夜: “见‘X’一节” jumps to that section; “另见‘X’主线” switches to that line at the station of the year its

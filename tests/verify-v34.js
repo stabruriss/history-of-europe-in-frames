@@ -3,8 +3,8 @@ const assert=require('node:assert/strict');
 const path=require('node:path');
 const {pathToFileURL}=require('node:url');
 const target=path.resolve(process.argv[2]||path.join(__dirname,'..','index.html'));
-const shots=path.join(__dirname,'shots-v34');require('node:fs').mkdirSync(shots,{recursive:true});
-const FULL_SHOTS=process.env.FULL_SHOTS==='1';const wait=ms=>FULL_SHOTS?new Promise(r=>setTimeout(r,ms)):Promise.resolve();
+
+const FULL_SHOTS=false;const wait=ms=>FULL_SHOTS?new Promise(r=>setTimeout(r,ms)):Promise.resolve();
 // 老无 2026-10-21 (evening): 罗马 runs to the end of the West; 东罗马 carries on from there (kept as 东罗马, with the sentence on
 // Latin no longer being the official language in bold); 西罗马 is now 中世纪西欧, forking off at the same point; 希腊 ends by running
 // into 罗马; a big event that hits several lines at once is one station on each of them, lit together, with one set of scenes.
@@ -44,7 +44,7 @@ const BOLD=[['history-faith-three-chapters/1','教义之争背后的权力格局
    const page=await browser.newPage();page.on('pageerror',e=>errors.push(e.message));
    await page.setViewport({width,height});
    await page.emulateMediaFeatures([{name:'prefers-reduced-motion',value:'reduce'}]);
-   await page.setOfflineMode(true);await page.evaluateOnNewDocument(full=>{window.addEventListener('DOMContentLoaded',()=>{const n=document.getElementById('mapnote');if(n)n.hidden=false;if(typeof map!=='undefined'){if(typeof tiles!=='undefined')map.removeLayer(tiles);if(typeof closeTerrain!=='undefined')map.removeLayer(closeTerrain);if(!full)for(const l of Object.values(map._layers)){const kp=l.options?.pane;if(kp==='fallbackPane'||kp==='baseLabelPane'||(kp==='riverPane'&&!group.hasLayer(l))){l._project=()=>{};l._update=()=>{};l._setPos=()=>{};}}}});},process.env.FULL_SHOTS==='1');
+   await page.setOfflineMode(true);await page.evaluateOnNewDocument(full=>{window.addEventListener('DOMContentLoaded',()=>{const n=document.getElementById('mapnote');if(n)n.hidden=false;if(typeof map!=='undefined'){if(typeof tiles!=='undefined')map.removeLayer(tiles);if(typeof closeTerrain!=='undefined')map.removeLayer(closeTerrain);if(!full)for(const l of Object.values(map._layers)){const kp=l.options?.pane;if(kp==='fallbackPane'||kp==='baseLabelPane'||(kp==='riverPane'&&!group.hasLayer(l))){l._project=()=>{};l._update=()=>{};l._setPos=()=>{};}}}});},false);
    await page.goto(pathToFileURL(target).href+'#history-empire-heraclius',{waitUntil:'domcontentloaded'});await page.evaluate(()=>document.fonts.ready);await wait(150);
    const r=await page.evaluate(({OWN,SHARED,BOLD})=>{
     const B=Object.fromEntries(HISTORY_BRANCHES.map(b=>[b.id,b])),own=id=>lineStations(id).filter(s=>s.lines.includes(id)).map(s=>s.id);
@@ -131,7 +131,7 @@ const BOLD=[['history-faith-three-chapters/1','教义之争背后的权力格局
    await page.evaluate(()=>{selectTreeLine('egypt');go('history-empire-heraclius');});await page.click('#next');
    assert.equal(await page.evaluate(()=>ENTRIES[cur].id),'history-arab-conquest');assert.equal(await page.evaluate(()=>treeLine),'egypt','stays on 埃及 through shared stations');
    await page.evaluate(()=>go('history-empire-heraclius',{scene:1}));await wait(250);
-   if(process.env.FULL_SHOTS==='1')await page.screenshot({path:path.join(shots,`heraclius_1-${label}.png`)});
+   
    if(label==='desktop'){
     // Top header pills jump to that line's start time; clicking in the tree below keeps the timeline where it is.
     await page.evaluate(()=>{go('history-migration');toc.scrollTop=0;});
@@ -149,7 +149,7 @@ const BOLD=[['history-faith-three-chapters/1','教义之争背后的权力格局
     assert.deepEqual(afterItem,{id:'history-empire-west-fall',line:'rome',scroll:beforeClick},'clicking a tree item below does not move the timeline');
     await page.evaluate(()=>{selectTreeLine('east');go('history-empire-heraclius');});await page.click('#treeOpen');await wait(250);
     await page.evaluate(()=>treeSheet.querySelector('.tree-item.on')?.scrollIntoView({block:'center'}));await wait(150);
-    if(process.env.FULL_SHOTS==='1')await page.screenshot({path:path.join(shots,'tree-shared-1440.png')});
+    
     await page.keyboard.press('Escape');
    }
    await page.close();

@@ -4,8 +4,8 @@ const fs=require('node:fs');
 const path=require('node:path');
 const {pathToFileURL}=require('node:url');
 const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','index.html'))).href;
-const shots=path.join(__dirname,'shots-v10');fs.mkdirSync(shots,{recursive:true});
-const FULL_SHOTS=process.env.FULL_SHOTS==='1';const wait=ms=>new Promise(r=>setTimeout(r,FULL_SHOTS?ms:0));
+
+const FULL_SHOTS=false;const wait=ms=>new Promise(r=>setTimeout(r,FULL_SHOTS?ms:0));
 // Geometry of one rendered tree: rows, nodes, forks, ticks, names; positions relative to the tree box.
 const treeReport=sel=>{
  const tree=document.querySelector(sel),box=tree.getBoundingClientRect();
@@ -63,7 +63,7 @@ function checkTree(r,label){
  async function pageAt(width,height,hash='#history-rome-punic/1'){
   const p=await browser.newPage();p.on('pageerror',e=>errors.push(e.message));await p.setViewport({width,height});
   await p.emulateMediaFeatures([{name:'prefers-reduced-motion',value:'reduce'}]);
-  await p.setOfflineMode(true);await p.evaluateOnNewDocument(full=>{window.addEventListener('DOMContentLoaded',()=>{const n=document.getElementById('mapnote');if(n)n.hidden=false;if(typeof map!=='undefined'){if(typeof tiles!=='undefined')map.removeLayer(tiles);if(typeof closeTerrain!=='undefined')map.removeLayer(closeTerrain);if(!full)for(const l of Object.values(map._layers)){const kp=l.options?.pane;if(kp==='fallbackPane'||kp==='baseLabelPane'||(kp==='riverPane'&&!group.hasLayer(l))){l._project=()=>{};l._update=()=>{};l._setPos=()=>{};}}}});},process.env.FULL_SHOTS==='1');
+  await p.setOfflineMode(true);await p.evaluateOnNewDocument(full=>{window.addEventListener('DOMContentLoaded',()=>{const n=document.getElementById('mapnote');if(n)n.hidden=false;if(typeof map!=='undefined'){if(typeof tiles!=='undefined')map.removeLayer(tiles);if(typeof closeTerrain!=='undefined')map.removeLayer(closeTerrain);if(!full)for(const l of Object.values(map._layers)){const kp=l.options?.pane;if(kp==='fallbackPane'||kp==='baseLabelPane'||(kp==='riverPane'&&!group.hasLayer(l))){l._project=()=>{};l._update=()=>{};l._setPos=()=>{};}}}});},false);
   await p.goto(url+hash,{waitUntil:'domcontentloaded'});await p.evaluate(()=>document.fonts.ready);await wait(150);return p;
  }
  const state=p=>p.evaluate(()=>({id:ENTRIES[cur].id,scene:sceneIndex,eyebrow:document.getElementById('entryEyebrow').textContent,
@@ -235,12 +235,12 @@ function checkTree(r,label){
   await p.reload({waitUntil:'domcontentloaded'});await p.evaluate(()=>document.fonts.ready);await wait(150);
   assert.equal(await p.evaluate(()=>Math.round(side.getBoundingClientRect().width)),640,'width remembered');
   assert.ok(await p.evaluate(()=>map.getBounds().contains(L.latLngBounds(activeScene(ENTRIES[cur]).view))));
-  if(process.env.FULL_SHOTS==='1')await p.screenshot({path:path.join(shots,'tree-sidebar-wide.png')});
+  
   await p.$eval('#sideGrip',e=>e.dispatchEvent(new MouseEvent('dblclick',{bubbles:true})));
   assert.equal(await p.evaluate(()=>Math.round(side.getBoundingClientRect().width)),244);
   assert.equal(await p.evaluate(()=>localStorage.getItem('agora-atlas-side-width')),null);
   await p.close();
-  const tall=await pageAt(1440,2000);if(process.env.FULL_SHOTS==='1')await tall.screenshot({path:path.join(shots,'tree-sidebar-desktop.png')});await tall.close();
+  const tall=await pageAt(1440,2000);await tall.close();
   // Narrower desktop sidebar keeps the same tree inside its width.
   const narrow=await pageAt(1024,768);
   checkTree(await narrow.evaluate(treeReport,'#toc .htree'),'sidebar 1024');
@@ -256,7 +256,7 @@ function checkTree(r,label){
   for(const n of wide.names)for(const i of wide.items)assert.ok(n.right<=i.left||n.left>=i.right||n.bottom<=i.top||n.top>=i.bottom,'name '+n.text+' over '+i.key);
   assert.ok(await d.evaluate(()=>{const b=treeSheet.querySelector('.tree-sheet-body').getBoundingClientRect(),r=treeSheet.querySelector('.tree-item.on').getBoundingClientRect();return r.top>=b.top&&r.bottom<=b.bottom;}));
   assert.ok(await d.evaluate(()=>document.activeElement===treeSheet.querySelector('.tree-item.on')));
-  await d.screenshot({path:path.join(shots,'tree-sheet-desktop.png')});
+  
   await d.keyboard.press('ArrowDown');s=await state(d);assert.equal(s.id,'history-rome-east','still on the Rome line in the big tree');assert.deepEqual(s.sheetOn,['history-rome-east/0']);
   assert.ok(await d.$eval('#treeSheet .tree-line[data-line="rome"]',e=>e.classList.contains('on')));
   assert.ok(await d.evaluate(()=>document.activeElement===treeSheet.querySelector('.tree-item.on')));
@@ -273,7 +273,7 @@ function checkTree(r,label){
    assert.ok(await m.evaluate(()=>getComputedStyle(toc).display==='none'&&treeOpen.checkVisibility()&&treeOpen.innerText.trim()==='树状图'&&!sideGrip.checkVisibility()));
    await m.click('#treeOpen');s=await state(m);assert.ok(s.sheet);
    const r=await m.evaluate(treeReport,'#treeSheet .htree');checkTree(r,'phone '+w);assert.equal(r.wide,w>=480);
-   if(w===390){assert.ok(!r.compact&&r.names.length>=6,JSON.stringify(r.names.map(n=>n.text)));await m.screenshot({path:path.join(shots,'tree-sheet-390.png')});}
+   if(w===390){assert.ok(!r.compact&&r.names.length>=6,JSON.stringify(r.names.map(n=>n.text)));}
    assert.ok(await m.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
    await m.click('#treeSheet .tree-item[data-key="history-ptolemaic-bargain/0"]');s=await state(m);
    assert.equal(s.id,'history-ptolemaic-bargain');assert.equal(s.sheet,false);

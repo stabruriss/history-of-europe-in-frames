@@ -3,8 +3,8 @@ const assert=require('node:assert/strict');
 const path=require('node:path');
 const {pathToFileURL}=require('node:url');
 const target=path.resolve(process.argv[2]||path.join(__dirname,'..','index.html'));
-const shots=path.join(__dirname,'shots-gregory');require('node:fs').mkdirSync(shots,{recursive:true});
-const FULL_SHOTS=process.env.FULL_SHOTS==='1';const wait=ms=>FULL_SHOTS?new Promise(r=>setTimeout(r,ms)):Promise.resolve();
+
+const FULL_SHOTS=false;const wait=ms=>FULL_SHOTS?new Promise(r=>setTimeout(r,ms)):Promise.resolve();
 // 老无 2026-10-25 (night): on the 基督教 line, the rise of the Roman church after the Lombards. Big picture: the Franks to the north, the
 // Lombards all round and nothing like the Ostrogoths with Constantinople, the emperor too far off; small picture: an able pope, a former
 // official and a practical man. Inside: no children for the clergy so the estates stay together; the monks brought in; no hair-splitting.
@@ -37,7 +37,7 @@ const CARDS=[[ID+'/1','gregory-great',/截了下来/],[ID+'/3','columbanus',/十
    const page=await browser.newPage();page.on('pageerror',e=>errors.push(e.message));
    await page.setViewport({width,height});
    await page.emulateMediaFeatures([{name:'prefers-reduced-motion',value:'reduce'}]);
-   await page.setOfflineMode(true);await page.evaluateOnNewDocument(full=>{window.addEventListener('DOMContentLoaded',()=>{const n=document.getElementById('mapnote');if(n)n.hidden=false;if(typeof map!=='undefined'){if(typeof tiles!=='undefined')map.removeLayer(tiles);if(typeof closeTerrain!=='undefined')map.removeLayer(closeTerrain);if(!full)for(const l of Object.values(map._layers)){const kp=l.options?.pane;if(kp==='fallbackPane'||kp==='baseLabelPane'||(kp==='riverPane'&&!group.hasLayer(l))){l._project=()=>{};l._update=()=>{};l._setPos=()=>{};}}}});},process.env.FULL_SHOTS==='1');
+   await page.setOfflineMode(true);await page.evaluateOnNewDocument(full=>{window.addEventListener('DOMContentLoaded',()=>{const n=document.getElementById('mapnote');if(n)n.hidden=false;if(typeof map!=='undefined'){if(typeof tiles!=='undefined')map.removeLayer(tiles);if(typeof closeTerrain!=='undefined')map.removeLayer(closeTerrain);if(!full)for(const l of Object.values(map._layers)){const kp=l.options?.pane;if(kp==='fallbackPane'||kp==='baseLabelPane'||(kp==='riverPane'&&!group.hasLayer(l))){l._project=()=>{};l._update=()=>{};l._setPos=()=>{};}}}});},false);
    await page.goto(pathToFileURL(target).href+'#'+ID,{waitUntil:'domcontentloaded'});await page.evaluate(()=>document.fonts.ready);await wait(150);
    const r=await page.evaluate(({ID,BOLD,FIXES})=>{
     const E=id=>HISTORY_ENTRIES.find(e=>e.id===id),para=(id,i)=>{const d=document.createElement('div');d.innerHTML=E(id).html;return [...d.querySelectorAll('[data-scene-text]')].at(+i);};
@@ -97,7 +97,7 @@ const CARDS=[[ID+'/1','gregory-great',/截了下来/],[ID+'/3','columbanus',/十
     assert.ok(s.layers>0&&s.legend>0&&!s.overflow,ID+'/'+i+' '+JSON.stringify(s));
     if(label==='desktop')assert.ok(s.pins>0&&s.fits,ID+'/'+i+' '+JSON.stringify(s));
     if(label==='390')await page.evaluate(()=>scrollSceneText(false));
-    if(process.env.FULL_SHOTS==='1')await page.screenshot({path:path.join(shots,`gregory_${i}-${label}.png`)});
+    
    }
    // ↑↓ along 基督教: 三章案 → 罗马教会的崛起 → 希拉克略王朝（下）.
    await page.evaluate(()=>{selectTreeLine('faith');go('history-faith-three-chapters',{scene:4});});
@@ -107,11 +107,11 @@ const CARDS=[[ID+'/1','gregory-great',/截了下来/],[ID+'/3','columbanus',/十
    // The west line's scene 3 still reads on its own and points across.
    await page.evaluate(()=>{selectTreeLine('west');go('history-west-lombards',{scene:2});});await wait(120);
    if(label==='desktop'){
-    if(process.env.FULL_SHOTS==='1')await page.screenshot({path:path.join(shots,'lombards_2-desktop.png')});
+    
     const row=await page.$eval(`#toc .tree-item[data-key="${ID}/0"]`,e=>e.textContent);assert.match(row,/^罗马教会的崛起基督教 · 568—604年$/);
     await page.evaluate(id=>{selectTreeLine('faith');go(id);},ID);await page.click('#treeOpen');await wait(250);
     await page.evaluate(()=>treeSheet.querySelector('.tree-item.on')?.scrollIntoView({block:'center'}));await wait(150);
-    if(process.env.FULL_SHOTS==='1')await page.screenshot({path:path.join(shots,'tree-faith-1440.png')});await page.keyboard.press('Escape');
+    await page.keyboard.press('Escape');
    }
    await page.close();
   }

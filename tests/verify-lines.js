@@ -3,8 +3,8 @@ const assert=require('node:assert/strict');
 const path=require('node:path');
 const {pathToFileURL}=require('node:url');
 const target=path.resolve(process.argv[2]||path.join(__dirname,'..','index.html'));
-const shots=path.join(__dirname,'shots-v33');require('node:fs').mkdirSync(shots,{recursive:true});
-const FULL_SHOTS=process.env.FULL_SHOTS==='1';const wait=ms=>FULL_SHOTS?new Promise(r=>setTimeout(r,ms)):Promise.resolve();
+
+const FULL_SHOTS=false;const wait=ms=>FULL_SHOTS?new Promise(r=>setTimeout(r,ms)):Promise.resolve();
 // 老无 2026-10-21: 埃及 and 波斯 are lines of their own, leaving the trunk at the early states; the Ptolemies, the Seleucids,
 // Rome and Byzantium are passing rulers of these lands. The old Ptolemaic and Seleucid sections now sit on these lines.
 const EGYPT=["history-egypt-old", "history-egypt-middle", "history-egypt-new", "history-egypt-late", "history-egypt-roman", "history-egypt-byzantine"],PERSIA=["history-persia-elam", "history-persia-achaemenid", "history-persia-parthia", "history-persia-sasanian", "history-persia-khosrow", "history-persia-khosrow-ii", "history-arab-rise", "history-arab-muhammad", "history-arab-conquest", "history-arab-expansion", "history-arab-caliphs", "history-arab-constantinople", "history-arab-abbasid", "history-arab-seljuks", "history-persia-mongols", "history-persia-timur", "history-persia-ottoman"];
@@ -17,7 +17,7 @@ const PHRASES=[["history-egypt-roman/0", "托勒密只是亚历山大之后的�
    const page=await browser.newPage();page.on('pageerror',e=>errors.push(e.message));
    await page.setViewport({width,height});
    await page.emulateMediaFeatures([{name:'prefers-reduced-motion',value:'reduce'}]);
-   await page.setOfflineMode(true);await page.evaluateOnNewDocument(full=>{window.addEventListener('DOMContentLoaded',()=>{const n=document.getElementById('mapnote');if(n)n.hidden=false;if(typeof map!=='undefined'){if(typeof tiles!=='undefined')map.removeLayer(tiles);if(typeof closeTerrain!=='undefined')map.removeLayer(closeTerrain);if(!full)for(const l of Object.values(map._layers)){const kp=l.options?.pane;if(kp==='fallbackPane'||kp==='baseLabelPane'||(kp==='riverPane'&&!group.hasLayer(l))){l._project=()=>{};l._update=()=>{};l._setPos=()=>{};}}}});},process.env.FULL_SHOTS==='1');
+   await page.setOfflineMode(true);await page.evaluateOnNewDocument(full=>{window.addEventListener('DOMContentLoaded',()=>{const n=document.getElementById('mapnote');if(n)n.hidden=false;if(typeof map!=='undefined'){if(typeof tiles!=='undefined')map.removeLayer(tiles);if(typeof closeTerrain!=='undefined')map.removeLayer(closeTerrain);if(!full)for(const l of Object.values(map._layers)){const kp=l.options?.pane;if(kp==='fallbackPane'||kp==='baseLabelPane'||(kp==='riverPane'&&!group.hasLayer(l))){l._project=()=>{};l._update=()=>{};l._setPos=()=>{};}}}});},false);
    await page.goto(pathToFileURL(target).href+'#'+EGYPT[0],{waitUntil:'domcontentloaded'});
    const report=await page.evaluate(()=>{
     const chars=html=>{const d=document.createElement('div');d.innerHTML=html;return d.textContent.replace(/（[A-Za-z][^）]*）/g,'').replace(/\s/g,'').length;};
@@ -61,7 +61,7 @@ const PHRASES=[["history-egypt-roman/0", "托勒密只是亚历山大之后的�
    for(const scene of [EGYPT[0]+'/0',EGYPT[2]+'/0',EGYPT[4]+'/0',PERSIA[1]+'/0',PERSIA[2]+'/0',PERSIA[4]+'/0']){
     await page.evaluate(s=>go(s),scene);await wait(300);
     if(label==='390')await page.evaluate(()=>scrollSceneText(false));
-    if(process.env.FULL_SHOTS==='1')await page.screenshot({path:path.join(shots,`${scene.replace('/','_')}-${label}.png`)});
+    
    }
    await page.close();
   }
