@@ -7430,9 +7430,9 @@ const HISTORY_ENTRIES=[
     hp(d,'sp1_villalar',{kind:'battle',left:1,note:'1521年4月23日：王军击溃公社军；此前公社军在近旁托德西利亚斯请胡安娜签字遭拒。'});
    },[['fill',HC.spain,'卡斯蒂利亚王国'],['dot',HC.war,'武装冲突地点'],['dot','#2a2018','议会与议事地点']])
  ]},
-{id:'history-spain-philip2',ch:5,title:'腓力二世：分家拿到尼德兰，拿海上的银子做期货，战场开得比银子还多',short:'腓力二世',en:'Philip II: Inheriting the Low Countries, Mortgaging Unmined Silver, and Too Many Wars',period:'1555—1598年',c:HC.spain,
+{id:'history-spain-philip2',ch:5,title:'腓力二世：叔侄裂痕下的分家、“联英守荷”遗策与海上白银期货',short:'腓力二世',en:'Philip II: The Habsburg Split, the Anglo-Dutch Strategy, and Mortgaging Unmined Silver',period:'1555—1598年',c:HC.spain,
  scenes:[
-  hs('1548—1556年','退位分家：为什么把尼德兰分给西班牙','查理五世将勃艮第圈剥离帝国法院，在布鲁塞尔退位时把尼德兰十七省连同西班牙、意大利交予腓力二世，奥地利归斐迪南一世。',[[36.5,-9.5],[53.8,19.5]],d=>{
+  hs('1548—1556年','叔侄裂痕、分家算盘与“联英守荷”遗策','查理五世将勃艮第圈剥离帝国，退位时把尼德兰十七省连同西班牙判给腓力二世，奥地利归斐迪南一世。',[[36.5,-9.5],[53.8,19.5]],d=>{
     ha(d,'sHabsburgSpain1556',HC.spain,{fillOpacity:.26});ha(d,'sNetherlands1556',HC.lowlands,{fillOpacity:.36});ha(d,'sHabsburgAustria1556',HC.germany,{fillOpacity:.24});
     hp(d,'rf1_augsburg',{note:'奥格斯堡：1548年条约将勃艮第行政圈从帝国法院管辖中剥离。'});
     hp(d,'lb_brussels',{kind:'battle',left:1,note:'布鲁塞尔：1549年定十七省合传，1555年查理（生于根特）在此退位。'});
@@ -7440,7 +7440,7 @@ const HISTORY_ENTRIES=[
     hp(d,'s92_valladolid',{left:1,note:'巴利亚多利德：腓力二世出生地，只讲西班牙语，与低地贵族隔阂日深。'});
     hp(d,'c3_vienna',{note:'维也纳：叔父斐迪南一世接掌奥地利与神圣罗马皇位。'});
    },[['fill',HC.lowlands,'分给腓力二世当钱袋的尼德兰十七省'],['fill',HC.spain,'分给腓力二世的西班牙与意大利领地'],['fill',HC.germany,'分给斐迪南一世的奥地利哈布斯堡'],['dot',HC.war,'布鲁塞尔退位大典'],['dot','#2a2018','奥格斯堡、巴利亚多利德与维也纳']]),
-  hs('1556—1575年','银子做期货：阿西恩托与热那亚汇票网','塞维利亚待运的白银与卡斯蒂利亚税款被质押给热那亚银行家，经贝桑松汇票集市变成安特卫普前线的金币军饷。',[[35.5,-10.5],[53.5,16.0]],d=>{
+  hs('1556—1575年','“纸上国王”与银子做期货','塞维利亚待运的白银与税款被质押给热那亚银行家，经贝桑松汇票集市变成安特卫普前线的金币军饷。',[[35.5,-10.5],[53.5,16.0]],d=>{
     ha(d,'sCastile',HC.spain,{fillOpacity:.32});ha(d,'sNetherlands1556',HC.lowlands,{fillOpacity:.32});
     hp(d,'hispalis',{kind:'battle',left:1,note:'塞维利亚：美洲银船到港后，银行家凭特许证提走现银抵债。'});
     hp(d,'c5_madrid',{left:1,note:'马德里：王室与银行家签下高息短期借贷合约“阿西恩托”。'});
@@ -7491,9 +7491,9 @@ const HISTORY_ENTRIES=[
     hr(d,[[38.70,-9.30],[36.6,-7.6],[35.5,-6.1],[35.01,-5.90]],HC.italy);hr(d,[[38.88,-6.97],[38.52,-8.75],[38.70,-9.10]],HC.spain);
    },[['fill',HC.italy,'葡萄牙王国'],['fill',HC.spain,'卡斯蒂利亚王国'],['dline',HC.italy,'1578年葡萄牙远征军（示意）'],['dline',HC.spain,'1580年阿尔瓦进军里斯本（示意）'],['dot',HC.war,'战事地点'],['dot','#2a2018','议会与都城']])
  ]},
-{id:'history-spain-netherlands-1',ch:5,title:'尼德兰之乱（上）：怎么把帝国最富的十七省一步步逼反',short:'尼德兰之乱（上）',en:'The Dutch Revolt (I): How Philip II Drove His Richest Provinces to Rebel',period:'1555—1572年',c:HC.spain,
+{id:'history-spain-netherlands-1',ch:5,title:'尼德兰之乱（上）：本土自治撞上西班牙集权，前两任总督怎么把十七省逼反',short:'尼德兰之乱（上）',en:'The Dutch Revolt (I): Local Autonomy vs. Spanish Rule and the First Two Governors',period:'1555—1572年',c:HC.spain,
  scenes:[
-  hs('1555—1559年','富庶的十七省与离去的国王','1555年查理五世在布鲁塞尔退位；1559年腓力二世从弗利辛恩乘船返回西班牙，留帕尔马的玛格丽特驻守低地。',[[39.5,-6.5],[53.8,7.8]],d=>{
+  hs('1555—1559年','外来国王与本土贵族的自治矛盾','1555年查理五世在布鲁塞尔退位；1559年不会讲本地话的腓力二世从弗利辛恩返西，留第一任总督玛格丽特驻守低地。',[[39.5,-6.5],[53.8,7.8]],d=>{
     ha(d,'sNetherlands1556',HC.lowlands,{fillOpacity:.36});ha(d,'sHabsburgSpain1556',HC.spain,{fillOpacity:.22});
     ha(d,'fFrance1559',HC.france,{fillOpacity:.14});
     hp(d,'sn1_brussels',{kind:'battle',note:'布鲁塞尔：查理五世于此退位，总督玛格丽特驻此主政。'});
@@ -7509,7 +7509,7 @@ const HISTORY_ENTRIES=[
     hp(d,'sn1_cambrai',{left:1,note:'康布雷：南方新升格的总主教区治所。'});
     hp(d,'sn1_antwerp',{left:1,note:'安特卫普：加尔文派商人与工匠聚集，受异端敕令严厉追查。'});
    },[['fill',HC.lowlands,'1559年强行改划十八个教区的尼德兰十七省'],['dot',HC.war,'梅赫伦（格朗韦勒驻地）与布鲁塞尔（贵族罢朝）'],['dot','#2a2018','乌得勒支、康布雷与安特卫普']]),
-  hs('1565—1566年','林宫来信、“乞丐”请愿与圣像破坏风暴','1565年塞哥维亚林宫密信拒不让步；1566年4月小贵族在布鲁塞尔递交请愿书，8月圣像破坏风暴自斯滕福尔德席卷全境。',[[40.0,-5.5],[53.6,7.2]],d=>{
+  hs('1565—1566年','书房否决玛格丽特与砸圣像风暴','1565年塞哥维亚林宫密信否决第一任总督玛格丽特的怀柔；1566年4月“乞丐”请愿，8月圣像破坏风暴席卷全境。',[[40.0,-5.5],[53.6,7.2]],d=>{
     ha(d,'sNetherlands1556',HC.lowlands,{fillOpacity:.36});ha(d,'sHabsburgSpain1556',HC.spain,{fillOpacity:.20});
     hp(d,'sn1_segovia',{kind:'battle',note:'塞哥维亚林宫：腓力二世于此发回密函，拒绝放宽异端惩治。'});
     hp(d,'sn1_brussels',{kind:'battle',note:'布鲁塞尔：1566年4月5日三百名小贵族列队请愿，以“乞丐”自称。'});
@@ -7517,7 +7517,7 @@ const HISTORY_ENTRIES=[
     hp(d,'sn1_antwerp',{kind:'battle',note:'安特卫普：8月20日圣母大教堂圣像被捣毁，根特等城同遭冲击。'});
     hr(d,[[40.88,-4.03],[45.5,-1.0],[50.85,4.35]],HC.spain);
    },[['fill',HC.lowlands,'1566年圣像破坏运动席卷的尼德兰'],['fill',HC.spain,'西班牙王国'],['dline',HC.spain,'1565年10月塞哥维亚林宫密信送抵布鲁塞尔'],['dot',HC.war,'塞哥维亚林宫、布鲁塞尔、斯滕福尔德与安特卫普'],['dot','#2a2018','根特']]),
-  hs('1567—1568年','阿尔瓦远征、血腥委员会与大广场斩首','1567年夏阿尔瓦率军自米兰走军道进驻布鲁塞尔；奥兰治退回迪伦堡，1568年6月埃格蒙特与霍恩在布鲁塞尔被斩。',[[44.5,1.5],[53.6,11.5]],d=>{
+  hs('1567—1568年','第二任总督阿尔瓦：血腥委员会与大广场斩首','1567年夏阿尔瓦率军自米兰走军道进驻布鲁塞尔，玛格丽特辞职；奥兰治退回迪伦堡，1568年6月埃格蒙特与霍恩被斩。',[[44.5,1.5],[53.6,11.5]],d=>{
     ha(d,'sNetherlands1556',HC.lowlands,{fillOpacity:.34});ha(d,'sMilan',HC.spain,{fillOpacity:.34});
     ha(d,'sFrancheComte',HC.spain,{fillOpacity:.30});ha(d,'mEmpire1050',HC.germany,{fillOpacity:.14});
     hp(d,'sn1_milan',{kind:'battle',note:'米兰：1567年夏阿尔瓦公爵在此集结一万精锐老兵启程北上。'});
@@ -7545,9 +7545,9 @@ const HISTORY_ENTRIES=[
     hr(d,[[51.13,1.31],[51.90,4.16]],HC.lowlands);
    },[['fill',HC.lowlands,'1572年春起事翻盘的荷兰与泽兰等北方省份'],['fill',HC.spain,'阿尔瓦驻守的南方诸省'],['dline',HC.lowlands,'1572年3—4月海上乞丐自多佛尔驶向布里勒'],['dot',HC.war,'布里勒、弗利辛恩、恩克赫伊森与蒙斯'],['dot','#2a2018','多佛尔']])
  ]},
-{id:'history-spain-netherlands-2',ch:5,title:'尼德兰之乱（下）：掘堤放水救莱顿，银子断供炸出安特卫普惨案与北方立国',short:'尼德兰之乱（下）',en:'The Dutch Revolt (II): Flooding Leiden, the Spanish Fury at Antwerp, and the Birth of the North',period:'1572—1585年',c:HC.spain,
+{id:'history-spain-netherlands-2',ch:5,title:'尼德兰之乱（下）：后两任总督的成败、安特卫普惨案与四任总督总账',short:'尼德兰之乱（下）',en:'The Dutch Revolt (II): Leiden, the Spanish Fury, the Four Governors, and the Split of North and South',period:'1572—1585年',c:HC.spain,
  scenes:[
-  hs('1572—1574年','三城屠戮与掘堤救莱顿','1572年阿尔瓦连屠梅赫伦、聚特芬、纳尔登；哈勒姆死守七月，阿尔克马尔与1574年莱顿先后掘堤放水退敌。',[[50.7,3.3],[53.2,6.8]],d=>{
+  hs('1572—1574年','阿尔瓦高压破产：三城屠戮与掘堤救莱顿','1572年阿尔瓦连屠梅赫伦、聚特芬、纳尔登；哈勒姆死守七月，阿尔克马尔与1574年莱顿先后掘堤放水退敌。',[[50.7,3.3],[53.2,6.8]],d=>{
     ha(d,'sDutchRepublic1609',HC.lowlands,{fillOpacity:.36});ha(d,'sSpanishNetherlands1609',HC.spain,{fillOpacity:.22});
     hp(d,'sn2_mechelen',{kind:'battle',left:1,note:'梅赫伦：1572年10月遭西军纵兵劫掠三日。'});
     hp(d,'sn2_zutphen',{kind:'battle',note:'聚特芬：1572年11月西军破城杀掠。'});
@@ -7556,22 +7556,22 @@ const HISTORY_ENTRIES=[
     hp(d,'sn2_alkmaar',{kind:'battle',left:1,note:'阿尔克马尔：1573年秋首度开闸放水淹退西军，阿尔瓦年底去职。'});
     hp(d,'sn2_leiden',{kind:'battle',left:1,note:'莱顿：1574年秋掘开十六处河堤引海水与炮船解围，次年建莱顿大学。'});
    },[['fill',HC.lowlands,'掘堤放水死守的荷兰与泽兰'],['fill',HC.spain,'西军控制的南方诸省'],['dot',HC.war,'梅赫伦、聚特芬、纳尔登、哈勒姆、阿尔克马尔与莱顿']]),
-  hs('1575—1576年','马德里停付破产与安特卫普惨案','1575年9月马德里宣布停付，热那亚断汇；1576年11月4日欠饷哗变的西军洗劫安特卫普三天三夜。',[[39.5,-5.0],[52.5,10.5]],d=>{
+  hs('1573—1576年','第三任总督雷克森斯与安特卫普惨案','雷克森斯废除恶税与血腥委员会；1575年马德里停付断汇，雷克森斯暴卒后欠饷西军于1576年洗劫安特卫普。',[[39.5,-5.0],[52.5,10.5]],d=>{
     ha(d,'sHabsburgSpain1556',HC.spain,{fillOpacity:.24});ha(d,'sNetherlands1556',HC.lowlands,{fillOpacity:.34});
-    hp(d,'sn2_madrid',{kind:'battle',left:1,note:'马德里：1575年9月腓力二世宣布第三次停付，切断前线饷源。'});
+    hp(d,'sn2_madrid',{kind:'battle',left:1,note:'马德里：1575年秋王室停付，切断前线饷源。'});
     hp(d,'sn2_genoa',{note:'热那亚：银行家受停付冲击，中止向尼德兰军营兑付汇票。'});
-    hp(d,'sn2_brussels',{left:1,note:'布鲁塞尔：1576年3月总督雷克森斯暴卒，7月哗变西军占近旁阿尔斯特勒索。'});
+    hp(d,'sn2_brussels',{left:1,note:'布鲁塞尔：1576年3月雷克森斯暴卒，7月哗变兵占阿尔斯特。'});
     hp(d,'sn2_antwerp',{kind:'battle',note:'安特卫普：1576年11月4日哗变西军焚掠三日，市民死难逾七千人。'});
     hr(d,[[40.42,-3.70],[44.41,8.93],[50.85,4.35]],HC.spain);
    },[['fill',HC.lowlands,'遭哗变西军冲击的尼德兰'],['fill',HC.spain,'宣布停付的西班牙王国'],['dline',HC.spain,'马德里停付导致热那亚至尼德兰军饷断绝'],['dot',HC.war,'马德里、阿尔斯特与安特卫普（西班牙狂暴）'],['dot','#2a2018','热那亚与布鲁塞尔']]),
-  hs('1576—1579年','《根特协定》与南北两大同盟分裂','1576年11月《根特协定》促成十七省联合；1579年1月南方结阿拉斯同盟、北方结乌得勒支同盟，荷比自此分途。',[[49.6,1.8],[53.6,7.2]],d=>{
+  hs('1576—1579年','唐胡安受制、《根特协定》与南北分裂','1576年《根特协定》促成十七省联合，唐胡安遭兄长猜忌；1579年南方结阿拉斯同盟、北方结乌得勒支同盟。',[[49.6,1.8],[53.6,7.2]],d=>{
     ha(d,'sDutchRepublic1609',HC.lowlands,{fillOpacity:.38});ha(d,'sSpanishNetherlands1609',HC.spain,{fillOpacity:.30});
     hp(d,'sn2_ghent',{kind:'battle',left:1,note:'根特：十七省代表在此签《根特协定》；后加尔文派市政厅夺权。'});
     hp(d,'sn2_arras',{kind:'battle',left:1,note:'阿拉斯：1579年1月6日南方天主教诸省在此缔结阿拉斯同盟。'});
     hp(d,'sn2_utrecht',{kind:'battle',note:'乌得勒支：1579年1月23日北方诸省在此缔结乌得勒支同盟。'});
     hp(d,'sn2_brussels',{note:'布鲁塞尔：总督唐胡安一度被迫签字撤走西班牙驻军。'});
    },[['fill',HC.lowlands,'1579年乌得勒支同盟（北方七省）'],['fill',HC.spain,'1579年阿拉斯同盟与南方天主教诸省'],['dot',HC.war,'根特、阿拉斯与乌得勒支'],['dot','#2a2018','布鲁塞尔']]),
-  hs('1578—1581年','帕尔马招抚南方与海牙《誓绝法》','1578年帕尔马公爵自那慕尔接任，次年招抚南方并攻克马斯特里赫特；1581年7月北方在海牙发布《誓绝法》。',[[49.6,1.8],[53.6,7.2]],d=>{
+  hs('1578—1581年','帕尔马招抚南方与海牙《誓绝法》','1578年帕尔马接任，次年以《阿拉斯条约》归还南方自治并克马斯特里赫特；1581年北方在海牙发《誓绝法》。',[[49.6,1.8],[53.6,7.2]],d=>{
     ha(d,'sDutchRepublic1609',HC.lowlands,{fillOpacity:.38});ha(d,'sSpanishNetherlands1609',HC.spain,{fillOpacity:.32});
     hp(d,'sn2_namur',{left:1,note:'那慕尔：唐胡安病逝于此地军营，外甥帕尔马公爵接掌帅印。'});
     hp(d,'sn2_arras',{left:1,note:'阿拉斯：1579年5月帕尔马与南方诸省签约，保障特权与天主教信仰。'});
@@ -7587,17 +7587,17 @@ const HISTORY_ENTRIES=[
     hr(d,[[51.22,4.40],[51.8,4.4],[52.37,4.90]],HC.lowlands);
    },[['fill',HC.lowlands,'封锁斯海尔德河口并承接资本北迁的北方七省'],['fill',HC.spain,'帕尔马公爵收复的安特卫普与南尼德兰'],['dline',HC.lowlands,'1585年后安特卫普商人与工匠北迁阿姆斯特丹'],['dot',HC.war,'代尔夫特、安特卫普与阿姆斯特丹'],['dot','#2a2018','根特']])
  ]},
-{id:'history-spain-armada',ch:5,title:'和英国打：从英格兰王夫、海盗抢银船，到无敌舰队与荷兰站稳',short:'英西海战与无敌舰队',en:'Fighting England: From King Consort and Silver Pirates to the Armada and the Ten Years',period:'1554—1604年',c:HC.spain,
+{id:'history-spain-armada',ch:5,title:'和英国打：拒婚、苏格兰玛丽的王位、四面包抄与无敌舰队瞎指挥',short:'英西海战与无敌舰队',en:'Fighting England: Mary Stuart, Encirclement, and the Blind Command of the Armada',period:'1554—1604年',c:HC.spain,
  scenes:[
-  hs('1554—1568年','从英格兰王夫到墨西哥湾翻脸','1554年腓力二世在温彻斯特娶玛丽一世；1558年伊丽莎白继位后维持表面和平，1568年圣胡安—德乌卢阿海战结怨。',[[14.0,-100.0],[55.0,6.0]],d=>{
+  hs('1554—1568年','“联英守荷”破局与伊丽莎白拒婚','1554年腓力二世在温彻斯特娶玛丽一世；1558年伊丽莎白继位后因宗教与法统拒婚，1568年墨西哥湾海战结怨。',[[14.0,-100.0],[55.0,6.0]],d=>{
     ha(d,'mEngland1066',HC.britain,{fillOpacity:.28});ha(d,'sHabsburgSpain1556',HC.spain,{fillOpacity:.26});
     ha(d,'aNewSpain1600',HC.spain,{fillOpacity:.24});
     hp(d,'spa_winchester',{kind:'battle',left:1,note:'温彻斯特：1554年7月腓力在此迎娶玛丽一世，任四年英格兰王夫。'});
     hp(d,'spa_london',{note:'伦敦：1558年伊丽莎白继位，腓力初年为防法国拉拢英国仍对其示好。'});
-    hp(d,'spa_veracruz',{kind:'battle',note:'圣胡安—德乌卢阿：1568年霍金斯与德雷克船队在此遭西军突袭惨败。'});
+    hp(d,'spa_veracruz',{kind:'battle',note:'圣胡安—德乌卢阿：英国走私船队在此遭西军突袭惨败。'});
     hr(d,[[50.37,-4.14],[28.0,-45.0],[19.21,-96.13]],HC.britain);
    },[['fill',HC.britain,'英格兰王国'],['fill',HC.spain,'西班牙王国与美洲新西班牙辖区'],['dline',HC.britain,'1568年霍金斯与德雷克跨大西洋走私航线'],['dot',HC.war,'温彻斯特与圣胡安—德乌卢阿'],['dot','#2a2018','伦敦']]),
-  hs('1570—1580年','教宗绝罚与德雷克太平洋抢银船','1570年罗马颁绝罚令；1577—1580年德雷克自普利茅斯出航，在秘鲁外海劫获银船并完成环球航行，归国受封爵士。',[[-22.0,-90.0],[55.0,16.0]],d=>{
+  hs('1568—1584年','苏格兰玛丽倒向西班牙与四面包抄','苏格兰女王玛丽被囚英格兰后转投腓力二世，腓力吞并葡萄牙并四面合围；德雷克环球劫获秘鲁银船。',[[-22.0,-90.0],[55.0,16.0]],d=>{
     ha(d,'mEngland1066',HC.britain,{fillOpacity:.28});ha(d,'aPeru1600',HC.spain,{fillOpacity:.26});
     ha(d,'sHabsburgSpain1556',HC.spain,{fillOpacity:.22});
     hp(d,'spa_rome',{kind:'battle',note:'罗马：1570年庇护五世颁诏将伊丽莎白一世革除教门。'});
@@ -7605,7 +7605,7 @@ const HISTORY_ENTRIES=[
     hp(d,'spa_callao',{kind:'battle',note:'秘鲁外海：1579年3月德雷克截获“卡卡富戈号”，劫走二十六吨白银。'});
     hr(d,[[50.37,-4.14],[10.0,-30.0],[-35.0,-55.0],[-12.06,-77.15]],HC.britain);
    },[['fill',HC.britain,'放纵私掠海盗的英格兰'],['fill',HC.spain,'西班牙本土与秘鲁副王区'],['dline',HC.britain,'1577—1579年德雷克南下绕南美突入太平洋航线'],['dot',HC.war,'罗马、普利茅斯与秘鲁外海']]),
-  hs('1585—1587年','《无双宫条约》与德雷克火烧加的斯','1585年8月英荷签《无双宫条约》，英军入驻弗利辛恩；1587年4月德雷克突袭加的斯港，焚毁造船木桶。',[[35.5,-10.5],[54.0,7.0]],d=>{
+  hs('1585—1587年','《无双宫条约》、处死玛丽与传位遗嘱','1585年英荷签《无双宫条约》；玛丽·斯图亚特立遗嘱将英王位继承权传予腓力后被斩，德雷克突袭加的斯。',[[35.5,-10.5],[54.0,7.0]],d=>{
     ha(d,'mEngland1066',HC.britain,{fillOpacity:.28});ha(d,'sDutchRepublic1609',HC.lowlands,{fillOpacity:.34});
     ha(d,'sIberia1580',HC.spain,{fillOpacity:.24});
     hp(d,'spa_nonsuch',{kind:'battle',left:1,note:'无双宫：1585年8月英荷签约，莱斯特伯爵率七千英军渡海助战。'});
@@ -7614,7 +7614,7 @@ const HISTORY_ENTRIES=[
     hp(d,'spa_lisbon',{left:1,note:'里斯本：腓力二世在此集结侵英舰队，因加的斯遇袭被迫推迟一年出航。'});
     hr(d,[[50.37,-4.14],[43.0,-10.0],[36.53,-6.29]],HC.britain);
    },[['fill',HC.britain,'正式参战的英格兰'],['fill',HC.lowlands,'获英军增援的荷兰北方诸省'],['fill',HC.spain,'1580年合并葡萄牙后的伊比利亚联盟'],['dline',HC.britain,'1587年4月德雷克奇袭加的斯航线'],['dot',HC.war,'无双宫、弗利辛恩与加的斯'],['dot','#2a2018','里斯本']]),
-  hs('1588年','无敌舰队：加来火船与格拉沃利讷海战','1588年无敌舰队自里斯本、拉科鲁尼亚北上；加来外海遭火船冲散，格拉沃利讷海战受创后绕英伦三岛返航。',[[37.8,-15.0],[62.0,8.5]],d=>{
+  hs('1588年','书房瞎指挥：无敌舰队败在加来浅滩','1588年无敌舰队按死命令北上；帕尔马驳船被荷兰快船封在敦刻尔克浅滩，大舰在加来与格拉沃利讷受创。',[[37.8,-15.0],[62.0,8.5]],d=>{
     ha(d,'mEngland1066',HC.britain,{fillOpacity:.24});ha(d,'sSpanishNetherlands1609',HC.spain,{fillOpacity:.30});
     ha(d,'sIberia1580',HC.spain,{fillOpacity:.20});ha(d,'sDutchRepublic1609',HC.lowlands,{fillOpacity:.30});
     hp(d,'spa_lisbon',{left:1,note:'里斯本：1588年5月底约一百三十条船由此起航，用新湿木桶装水。'});
@@ -7624,7 +7624,7 @@ const HISTORY_ENTRIES=[
     hp(d,'spa_gravelines',{kind:'battle',note:'格拉沃利讷与敦刻尔克：8月8日海战受创；帕尔马的驳船被荷兰快船封死在敦刻尔克港内。'});
     hr(d,[[38.72,-9.14],[43.37,-8.40],[49.0,-6.0],[50.0,-2.0],[50.95,1.86],[51.5,2.5],[56.0,1.5],[59.8,-2.5],[59.5,-8.0],[54.0,-12.0],[46.0,-11.0],[43.5,-8.8]],HC.spain);
    },[['fill',HC.spain,'腓力二世领地与西属尼德兰'],['fill',HC.britain,'英格兰'],['fill',HC.lowlands,'封锁敦刻尔克浅滩的荷兰'],['dline',HC.spain,'1588年无敌舰队去程与绕行英伦三岛回程'],['dot',HC.war,'加来火船与格拉沃利讷海战'],['dot','#2a2018','里斯本、拉科鲁尼亚、普利茅斯与敦刻尔克']]),
-  hs('1589—1598年','帕尔马南下救巴黎与莫里斯亲王收复北方','1590、1592年帕尔马两度南下解巴黎与鲁昂之围；莫里斯亲王趁机在北方奇袭布雷达，连克聚特芬与格罗宁根。',[[48.2,0.2],[53.6,7.5]],d=>{
+  hs('1589—1598年','帕尔马南下救巴黎与莫里斯收复北方','1590、1592年帕尔马奉命两度南下解巴黎与鲁昂之围；莫里斯亲王趁机在北方奇袭布雷达，连克聚特芬与格罗宁根。',[[48.2,0.2],[53.6,7.5]],d=>{
     ha(d,'sDutchRepublic1609',HC.lowlands,{fillOpacity:.38});ha(d,'sSpanishNetherlands1609',HC.spain,{fillOpacity:.28});
     ha(d,'fFrance1559',HC.france,{fillOpacity:.16});
     hp(d,'spa_paris',{kind:'battle',left:1,note:'巴黎：1590年帕尔马奉命率西军主力南下，解亨利四世围城之危。'});
@@ -7635,7 +7635,7 @@ const HISTORY_ENTRIES=[
     hr(d,[[50.85,4.35],[49.8,3.2],[48.86,2.35]],HC.spain);
     hr(d,[[51.59,4.78],[52.14,6.20],[53.22,6.57]],HC.lowlands);
    },[['fill',HC.lowlands,'莫里斯亲王“黄金十年”收复打实的北方七省'],['fill',HC.spain,'兵力被抽调南下的西属尼德兰'],['dline',HC.spain,'1590—1592年帕尔马公爵率西军南下干预法国'],['dline',HC.lowlands,'1590—1597年莫里斯亲王北伐收复要塞路线'],['dot',HC.war,'巴黎、鲁昂、布雷达、聚特芬与格罗宁根']]),
-  hs('1596—1609年','《伦敦条约》与荷兰东印度公司崛起','1596年加的斯再遭洗劫，1598年法西韦尔万议和；1602年荷兰建东印度公司，1604年英西停战，1609年西荷休战。',[[35.5,-10.0],[54.0,8.0]],d=>{
+  hs('1596—1604年','《伦敦条约》与荷兰东印度公司崛起','1596年加的斯再遭洗劫，1598年法西韦尔万议和；1602年荷兰建东印度公司，1604年英西签约停战。',[[35.5,-10.0],[54.0,8.0]],d=>{
     ha(d,'sDutchRepublic1609',HC.lowlands,{fillOpacity:.38});ha(d,'sSpanishNetherlands1609',HC.spain,{fillOpacity:.26});
     ha(d,'sIberia1580',HC.spain,{fillOpacity:.22});ha(d,'mEngland1066',HC.britain,{fillOpacity:.22});
     hp(d,'spa_cadiz',{kind:'battle',left:1,note:'加的斯：1596年英荷联军再度攻破洗劫，触发腓力二世第四次停付。'});
@@ -7645,66 +7645,66 @@ const HISTORY_ENTRIES=[
     hp(d,'spa_antwerp',{left:1,note:'安特卫普：1609年4月西班牙被迫与荷兰在此签署《十二年休战协定》。'});
    },[['fill',HC.lowlands,'成立东印度公司并逼和西班牙的荷兰共和国'],['fill',HC.spain,'财政枯竭被迫先后议和的西班牙帝国'],['fill',HC.britain,'1604年签约停战的英格兰'],['dot',HC.war,'加的斯、伦敦与阿姆斯特丹'],['dot','#2a2018','韦尔万与安特卫普']])
  ]},
-{id:'history-spain-philips',ch:5,title:'两位腓力：钱接不上，从休战打到两场叛乱',short:'两位腓力',en:'The Two Philips: Out of Money, from Truce to Twin Revolts',period:'1598—1648年',c:HC.spain,
+{id:'history-spain-philips',ch:5,title:'两位腓力：停付休战、驱逐摩里斯科人、军道危机与两场大叛乱',short:'两位腓力',en:'The Two Philips: Truce, Expulsion of the Moriscos, the Spanish Road, and Twin Revolts',period:'1598—1648年',c:HC.spain,
  scenes:[
-  hs('1598—1609年','腓力三世与莱尔马：钱接不上','1598年对法、1604年对英、1609年对荷，三次停战都有财政压力；1607年王室再度停付。',[[39.8,-6.5],[53.8,8.0]],d=>{
+  hs('1598—1609年','1607年停付与《十二年休战协定》','1598年对法、1604年对英停战后，1607年王室再度停付，1609年在安特卫普同荷兰签下十二年休战。',[[39.8,-6.5],[53.8,8.0]],d=>{
     ha(d,'sSpanishNetherlands1609',HC.spain,{fillOpacity:.3});ha(d,'sDutchRepublic1609',HC.lowlands,{fillOpacity:.3});ha(d,'mEngland1066',HC.britain,{fillOpacity:.18});
-    hp(d,'c5_madrid',{left:1,note:'马德里：腓力三世把政务交给莱尔马；1601—1606年宫廷一度迁到巴利亚多利德。'});
+    hp(d,'c5_madrid',{left:1,note:'马德里：腓力三世委政莱尔马；1607年王室再度停付。'});
     hp(d,'sp3_vervins',{note:'1598年5月2日：腓力二世去世前与法王亨利四世议和。'});
     hp(d,'sp3_ostend',{kind:'battle',left:1,note:'1601—1604年：围城三年，斯皮诺拉自募九千人接手后才打下。'});
     hp(d,'k_london',{left:1,note:'1604年8月：《伦敦条约》结束十九年战争，英国不再正式支持荷兰。'});
     hp(d,'lb_antwerp',{note:'1609年4月9日：十二年休战在此签字，腓力三世7月才批准。'});
    },[['fill',HC.lowlands,'荷兰共和国（1609年）'],['fill',HC.spain,'西属尼德兰（1609年）'],['fill',HC.britain,'英格兰'],['dot',HC.war,'奥斯坦德围城'],['dot','#2a2018','议和与决策地点']]),
-  hs('1609—1614年','驱逐摩里斯科人','巴伦西亚三分之一的居民是摩里斯科人，损失最重；阿拉贡次之，卡斯蒂利亚执行拖沓。',[[35.0,-7.6],[42.6,3.8]],d=>{
+  hs('1609—1614年','休战同日驱逐摩里斯科人','1609年签对荷休战同日下令驱逐摩里斯科人；巴伦西亚与阿拉贡损失最重，卡斯蒂利亚执行拖沓。',[[35.0,-7.6],[42.6,3.8]],d=>{
     ha(d,'sCastile',HC.spain,{fillOpacity:.14});ha(d,'sCrownAragon',HC.italy,{fillOpacity:.2});ha(d,'sValencia',HC.war,{fillOpacity:.44});
-    hp(d,'tf_valencia',{note:'巴伦西亚：摩里斯科人约占三分之一，多是领主的佃农；1609年9月22日公布驱逐令。'});
+    hp(d,'tf_valencia',{note:'巴伦西亚：摩里斯科人约占三成，1609年9月首遭驱逐。'});
     hp(d,'sp3_denia',{note:'德尼亚：上船地之一，意大利调来的西班牙方阵把守港口。'});
     hp(d,'sp3_alicante',{note:'阿利坎特：上船地之一，被逐者要自付船费。'});
-    hp(d,'sp3_alfaques',{note:'阿尔法克斯：1610年阿拉贡约四万二千人由此运往北非，另有约一万三千人越比利牛斯山到法国。'});
+    hp(d,'sp3_alfaques',{note:'阿尔法克斯：1610年阿拉贡数万摩里斯科人由此登船赴北非。'});
     hp(d,'sp3_zaragoza',{left:1,note:'阿拉贡：据史家拉佩尔，被逐比例仅次于巴伦西亚，后果同样严重。'});
-    hp(d,'sp3_plasencia',{left:1,note:'卡斯蒂利亚：摩里斯科人分散且融入较深，当地人有时出面保护，1611—1614年才陆续执行。'});
+    hp(d,'sp3_plasencia',{left:1,note:'卡斯蒂利亚：摩里斯科人融入较深，1611—1614年才陆续执行。'});
     hp(d,'sp3_oran',{note:'奥兰：被逐者在此上岸。'});
     hr(d,[[38.84,0.11],[35.70,-0.63]],HC.war);hr(d,[[38.35,-0.48],[35.70,-0.63]],HC.war);hr(d,[[40.62,0.66],[37.5,1.3],[36.0,-0.3]],HC.war);
    },[['fill',HC.war,'巴伦西亚：损失最重'],['fill',HC.italy,'阿拉贡诸邦'],['fill',HC.spain,'卡斯蒂利亚'],['dline',HC.war,'被驱逐者的海路（示意）'],['dot','#2a2018','上船地与相关地点']]),
-  hs('1618—1621年','军道：为什么西班牙要管布拉格的事','军道只有普法尔茨一段不归西班牙；休战将满，斯皮诺拉1620年进攻下普法尔茨。',[[43.8,1.5],[52.2,16.0]],d=>{
+  hs('1618—1621年','军道咽喉：为什么管布拉格的事','军道唯独下普法尔茨一段不归西班牙；休战将满，斯皮诺拉1620年自布鲁塞尔进占下普法尔茨。',[[43.8,1.5],[52.2,16.0]],d=>{
     ha(d,'sMilan',HC.spain,{fillOpacity:.38});ha(d,'sFrancheComte',HC.spain,{fillOpacity:.34});ha(d,'sSpanishNetherlands1609',HC.spain,{fillOpacity:.3});ha(d,'sLowerPalatinate',HC.war,{fillOpacity:.4});ha(d,'sHabsburgAustria1556',HC.germany,{fillOpacity:.16});
     hp(d,'iv2_genoa',{left:1,note:'热那亚：西班牙王室的银行家所在，也是通往米兰的港口。'});
     hp(d,'ic_milan',{left:1,note:'米兰：军道南端，西班牙在意大利北部的总督驻地。'});
     hp(d,'sp3_valtellina',{note:'瓦尔泰利纳：1620年前后米兰总督出兵占领此谷，军道可经蒂罗尔北上。'});
     hp(d,'lb_brussels',{left:1,note:'布鲁塞尔：1620年8月斯皮诺拉率军由此出发。'});
     hp(d,'sp3_oppenheim',{kind:'battle',note:'1620年9月：斯皮诺拉拿下下普法尔茨门户奥彭海姆。这是军道之战。'});
-    hp(d,'ty1_white_mountain',{kind:'battle',note:'1620年11月8日白山：蒂利和布夸在此打败波希米亚军，属另一条战线。'});
+    hp(d,'ty1_white_mountain',{kind:'battle',note:'1620年11月白山：蒂利等击败波希米亚军，属帝国东线。'});
     hr(d,[[44.41,8.93],[45.46,9.19],[46.17,10.0],[47.2,9.5],[47.6,7.6],[48.6,7.7],[49.6,6.1],[50.85,4.35]],HC.spain);hr(d,[[45.46,9.19],[46.5,6.8],[47.2,6.0],[48.7,6.2],[49.6,6.1]],HC.spain);hr(d,[[50.85,4.35],[50.0,6.5],[49.85,8.36]],HC.war);
    },[['fill',HC.spain,'西班牙在军道上的领地'],['fill',HC.war,'下普法尔茨：1620年斯皮诺拉的目标'],['fill',HC.germany,'奥地利哈布斯堡'],['dline',HC.spain,'西班牙军道（示意）'],['dline',HC.war,'1620年斯皮诺拉进军（示意）'],['dot',HC.war,'奥彭海姆与白山'],['dot','#2a2018','军道上的据点']]),
-  hs('1621—1633年','腓力四世与奥利瓦雷斯','武装联盟要各地分担军费，却推不下去；布雷达、马坦萨斯和卡萨莱都在加大账单。',[[19.5,-86.0],[54.0,18.5]],d=>{
+  hs('1621—1628年','“武装联盟”碰壁与古巴银船被端','1624年奥利瓦雷斯推武装联盟分摊军费遭拒；1625年攻克布雷达，1628年整支银船队在马坦萨斯湾被截获。',[[19.5,-86.0],[54.0,18.5]],d=>{
     ha(d,'sCastile',HC.spain,{fillOpacity:.36});ha(d,'sCrownAragon',HC.italy,{fillOpacity:.24});ha(d,'sPortugal',HC.lowlands,{fillOpacity:.24});ha(d,'sMilan',HC.spain,{fillOpacity:.28});ha(d,'mNaplesAnjou1282',HC.spain,{fillOpacity:.2});ha(d,'sSpanishNetherlands1609',HC.spain,{fillOpacity:.24});ha(d,'aCaribbean',HC.spain,{fillOpacity:.14});
     hp(d,'c5_madrid',{left:1,note:'马德里：腓力四世把公文都交给奥利瓦雷斯，1624年提出武装联盟。'});
     hp(d,'k_barcelona',{note:'加泰罗尼亚议会：1626、1632年两度不了了之，武装联盟就此落空。'});
     hp(d,'sp3_breda',{kind:'battle',note:'1625年6月5日：斯皮诺拉拿下布雷达；1637年荷兰又夺回。'});
     hp(d,'sp3_matanzas',{kind:'battle',note:'1628年9月：皮特·海恩截获银船队，约值1150万荷兰盾。'});
     hp(d,'sp3_casale',{kind:'battle',left:1,note:'1628—1630年：两度围攻不下，1630年斯皮诺拉死于围城期间。'});
-    hp(d,'sp3_mantua',{note:'1627年12月末代公爵去世，西班牙不让法裔纳韦尔公爵继承，反而把法国招进意大利北部。'});
+    hp(d,'sp3_mantua',{note:'曼图亚：1627年公爵绝嗣，西军阻法裔继承反招法军入北意。'});
     hr(d,[[23.04,-81.58],[30.0,-60.0],[36.5,-20.0]],HC.spain);
    },[['fill',HC.spain,'卡斯蒂利亚（最深）与意大利、低地领地'],['fill',HC.italy,'阿拉贡诸邦'],['fill',HC.lowlands,'葡萄牙'],['dline',HC.spain,'银船队回西班牙的航路（示意）'],['dot',HC.war,'军费的三个大窟窿'],['dot','#2a2018','决策与议会地点']]),
-  hs('1634—1640年','从讷德林根到两场叛乱','军道断了，海路也输了；1640年巴塞罗那和里斯本先后起事，起因并不相同。',[[36.2,-11.0],[53.4,12.8]],d=>{
+  hs('1628—1640年','军道海路双断与1640年两场叛乱','1638年布赖萨赫失守断陆路，1639年唐斯海战断海路；1640年巴塞罗那与里斯本先后起事。',[[36.2,-11.0],[53.4,12.8]],d=>{
     ha(d,'sCastile',HC.spain,{fillOpacity:.22});ha(d,'mCatalonia1080',HC.war,{fillOpacity:.42});ha(d,'sPortugal',HC.lowlands,{fillOpacity:.36});ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.14});
     hp(d,'ic_milan',{left:1,note:'1634年：奥利瓦雷斯在意大利新募一军，由枢机亲王斐迪南带往北方。'});
-    hp(d,'sp3_nordlingen',{kind:'battle',note:'1634年9月：西班牙援军约一万五千人参战；战事见“三十年战争（下）”。'});
+    hp(d,'sp3_nordlingen',{kind:'battle',note:'1634年9月：西军约一万五千人助战大胜。'});
     hp(d,'sp3_corbie',{kind:'battle',left:1,note:'1636年8月：西班牙军打到科尔比，因补给不足撤回。'});
     hp(d,'sp3_breisach',{kind:'battle',note:'1638年12月：布赖萨赫失守，军道阿尔萨斯段被切断。'});
-    hp(d,'sp3_downs',{kind:'battle',note:'1639年10月21日：舰队被荷兰人击溃，约三千援军和军饷已运进敦刻尔克。'});
-    hp(d,'sp3_salses',{kind:'battle',note:'1639年法军攻占此堡，西班牙大军入境反攻，1640年1月收复；士兵在加泰罗尼亚由农民供养。'});
-    hp(d,'k_barcelona',{kind:'battle',left:1,note:'1640年6月7日：收割工人暴动，总督圣科洛马被杀；1641年议会承认路易十三。'});
+    hp(d,'sp3_downs',{kind:'battle',note:'1639年10月：西军舰队在此被荷兰舰队击溃。'});
+    hp(d,'sp3_salses',{kind:'battle',note:'萨尔塞斯：1640年初西军收复此堡后驻进加泰罗尼亚。'});
+    hp(d,'k_barcelona',{kind:'battle',left:1,note:'1640年6月：收割者暴动杀总督，次年议会迎法王。'});
     hp(d,'sr_lisbon',{kind:'battle',left:1,note:'1640年12月1日：贵族杀国务秘书，拥立布拉干萨公爵为若昂四世。'});
     hr(d,[[45.46,9.19],[46.17,10.0],[47.26,11.39],[48.85,10.49]],HC.spain);
    },[['fill',HC.war,'加泰罗尼亚：驻军与议会之争'],['fill',HC.lowlands,'葡萄牙：巴西、加税和征调贵族'],['fill',HC.spain,'卡斯蒂利亚'],['fill',HC.france,'法国'],['dline',HC.spain,'1634年援军北上（示意）'],['dot',HC.war,'战事与起事地点']]),
-  hs('1643—1648年','先认荷兰，再打法国','奥利瓦雷斯下台，罗克鲁瓦失利；1648年1月在明斯特承认荷兰，对法战争打到1659年。',[[37.5,-11.0],[53.8,10.0]],d=>{
+  hs('1643—1659年','1648年先认荷兰，腾手打法国','1643年奥利瓦雷斯下台、罗克鲁瓦失利；1648年在明斯特承认荷兰独立，对法打到1659年《比利牛斯条约》。',[[37.5,-11.0],[53.8,10.0]],d=>{
     ha(d,'sDutchRepublic1609',HC.lowlands,{fillOpacity:.36});ha(d,'sSpanishNetherlands1609',HC.spain,{fillOpacity:.32});ha(d,'sCastile',HC.spain,{fillOpacity:.26});ha(d,'sPortugal',HC.italy,{fillOpacity:.28});ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.14});
-    hp(d,'c5_madrid',{left:1,note:'1643年1月：腓力四世罢免奥利瓦雷斯，此后由路易斯·德·阿罗主持；1647年再度停付。'});
-    hp(d,'sp3_rocroi',{kind:'battle',left:1,note:'1643年5月19日：战事见“三十年战争（下）”，西班牙仍守住了南尼德兰。'});
-    hp(d,'sp3_munster',{note:'1648年1月30日：西班牙与荷兰签约，5月15日宣誓批准，承认荷兰独立。'});
+    hp(d,'c5_madrid',{left:1,note:'1643年腓力四世罢免奥利瓦雷斯；1647年再度停付。'});
+    hp(d,'sp3_rocroi',{kind:'battle',left:1,note:'1643年5月罗克鲁瓦之败后，西军仍守住南尼德兰。'});
+    hp(d,'sp3_munster',{note:'1648年1月30日：荷西在此签约，西班牙承认荷兰独立。'});
     hp(d,'k_barcelona',{kind:'battle',note:'1652年：投石党内乱中西班牙围城一年收复此城。'});
-    hp(d,'sp3_pheasant',{left:1,note:'1659年11月7日：《比利牛斯条约》结束对法战争，割让鲁西永和阿图瓦。'});
+    hp(d,'sp3_pheasant',{left:1,note:'1659年11月：《比利牛斯条约》在此签署，割让鲁西永与阿图瓦。'});
     hp(d,'sr_lisbon',{left:1,note:'1668年2月13日：《里斯本条约》，西班牙才承认布拉干萨王朝。'});
    },[['fill',HC.lowlands,'荷兰共和国：1648年获承认'],['fill',HC.spain,'西班牙与西属尼德兰'],['fill',HC.italy,'葡萄牙：1668年才获承认'],['fill',HC.france,'法国'],['dot',HC.war,'罗克鲁瓦与巴塞罗那'],['dot','#2a2018','条约与决策地点']])
  ]},

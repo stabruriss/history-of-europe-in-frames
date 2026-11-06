@@ -22,7 +22,7 @@ const target=path.resolve(process.argv[2]||path.join(__dirname,'..','index.html'
    if(!r.tags.includes(m.name)||r.total!==r.expected||r.overflow)throw new Error(JSON.stringify({m,r}));}}finally{fit=_f;markTreeCurrent=_m;makeCtx=_c;}},list);
   // 豆腐块: boxed explainers render inside their own scene passage, apart from the 名场面.
   const boxes=await page.evaluate(()=>HISTORY_ENTRIES.flatMap(e=>e.boxes.map(b=>({id:e.id,scene:b.scene,name:b.name}))));
-  assert.equal(boxes.length,100);
+  assert.equal(boxes.length,101);
   await page.evaluate(boxes=>{const _f=fit,_m=markTreeCurrent,_c=makeCtx;fit=()=>{};markTreeCurrent=()=>{};makeCtx=()=>new Proxy({},{get:()=>()=>{}});try{
    for(const b of boxes){if(ENTRIES[cur]?.id!==b.id||sceneIndex!==b.scene)go(b.id,{scene:b.scene});
    const ctx=document.getElementById('sceneContext');
@@ -36,6 +36,6 @@ const target=path.resolve(process.argv[2]||path.join(__dirname,'..','index.html'
   await page.close();
  }
  assert.deepEqual(errors,[]);
- console.log('PASS: 672 iconic-event tags and 100 豆腐块 (boxed explainers) render inside their scene passages; desktop and 390px; no overflow; offline; no page errors.');
+ console.log('PASS: 672 iconic-event tags and 101 豆腐块 (boxed explainers) render inside their scene passages; desktop and 390px; no overflow; offline; no page errors.');
  await Promise.race([browser.close(),new Promise(r=>setTimeout(r,200))]);browser.process()?.kill('SIGKILL');process.exit(process.exitCode||0);
 })().catch(e=>{console.error(e);process.exit(1);});
