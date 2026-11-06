@@ -5006,15 +5006,14 @@ const HISTORY_ENTRIES=[
 {id:'history-france-henri2',ch:5,title:'亨利二世：商人的女儿、情敌变闺蜜与一根断矛',short:'亨利二世与凯瑟琳',en:'Henry II: The Merchant’s Daughter, the Rival Turned Confidante, and a Broken Lance',period:'1547—1559年',c:HC.france,
  scenes:[
   hs('1547年','新王分家当','新朝得势三家的据点：迪亚娜的舍农索、阿内，蒙莫朗西的埃库昂，吉斯家的茹安维尔。',[[45.9,-1.6],[50.3,6.6]],d=>{
-    ha(d,'fFrance1559',HC.france,{fillOpacity:.2});ha(d,'fThreeBishoprics',HC.neutral,{fillOpacity:.12,dashArray:'4 4'});
-    hp(d,'fh2_stgermain',{left:1,note:'1547年4月1日，新王和统帅在这里重排朝廷。'});
+    ha(d,'fFrance1547',HC.france,{fillOpacity:.2});
     hp(d,'fh2_chenonceau',{left:1,note:'本是王后想要的城堡，给了迪亚娜。'});
     hp(d,'fh2_anet',{left:1,note:'迪亚娜亡夫家的城堡，她请德洛姆重修。'});
     hp(d,'fh2_ecouen',{note:'蒙莫朗西的城堡，国王常来这里住。'});
     hp(d,'fh2_joinville',{note:'吉斯家的老宅，在洛林和香槟之间。'});
-   },[['fill',HC.france,'法兰西王国（示意）'],['dash',HC.neutral,'三主教区（1552年才归法国）'],['dot','#2a2018','圣日耳曼、舍农索、阿内、埃库昂与茹安维尔']]),
+   },[['fill',HC.france,'法兰西王国（示意）'],['dot','#2a2018','舍农索、阿内、埃库昂与茹安维尔']]),
   hs('1533—1544年','情敌变闺蜜','凯瑟琳1533年从佛罗伦萨到马赛成婚的路线；圣日耳曼王宫；迪亚娜的阿内。',[[42.4,-1.8],[50.2,12.6]],d=>{
-    ha(d,'fFrance1559',HC.france,{fillOpacity:.2});
+    ha(d,'fFrance1547',HC.france,{fillOpacity:.2});
     hp(d,'ci_florence',{note:'凯瑟琳的家乡，1519年生。'});
     hp(d,'k_marseille',{left:1,note:'1533年10月28日成婚，新人都是十四岁。'});
     hp(d,'fh2_stgermain',{note:'迪亚娜的房间在王后楼下。'});
@@ -5022,7 +5021,7 @@ const HISTORY_ENTRIES=[
     hr(d,[[43.77,11.25],[43.55,10.3],[43.3,8.5],[43.3,5.4]],HC.route);
    },[['fill',HC.france,'法兰西王国（示意）'],['dline',HC.route,'1533年凯瑟琳嫁到法国（概略）'],['dot','#2a2018','佛罗伦萨、马赛、圣日耳曼与阿内']]),
   hs('1544—1556年','十个孩子','孩子们后来的去处：一个女儿嫁西班牙，一个嫁洛林，一个嫁到南方的纳瓦拉家。',[[39.2,-6.2],[50.2,9.0]],d=>{
-    ha(d,'fFrance1559',HC.france,{fillOpacity:.2});ha(d,'sCastile',HC.spain,{fillOpacity:.16,dashArray:'4 4'});
+    ha(d,'fFrance1547',HC.france,{fillOpacity:.2});ha(d,'sCastile',HC.spain,{fillOpacity:.16,dashArray:'4 4'});
     ha(d,'fLorraine',HC.germany,{fillOpacity:.2,dashArray:'4 4'});ha(d,'fNavarreBearn',HC.war,{fillOpacity:.22,dashArray:'4 4'});
     hp(d,'fh2_fontainebleau',{note:'1544年1月19日，长子生在这里。'});
     hp(d,'fh2_guadalajara',{left:1,note:'伊丽莎白到西班牙后在这里和腓力二世成婚。'});
@@ -5030,7 +5029,7 @@ const HISTORY_ENTRIES=[
     hp(d,'fh2_nerac',{left:1,note:'玛格丽特1572年嫁入的南方宫廷。'});
    },[['fill',HC.france,'法兰西王国（示意）'],['dash',HC.spain,'卡斯蒂利亚'],['dash',HC.germany,'洛林公国'],['dash',HC.war,'贝亚恩—纳瓦拉'],['dot','#2a2018','枫丹白露、瓜达拉哈拉、南锡与内拉克']]),
   hs('1551—1553年','在外联新教打皇帝','法军1552年4月从香槟东进，占图勒、梅斯，5月后取凡尔登；10月起皇帝围梅斯。',[[46.8,0.4],[52.4,13.3]],d=>{
-    ha(d,'fFrance1559',HC.france,{fillOpacity:.16});ha(d,'mEmpire1050',HC.germany,{fillOpacity:.1,dashArray:'4 4'});ha(d,'fThreeBishoprics',HC.france,{fillOpacity:.46});
+    ha(d,'fFrance1547',HC.france,{fillOpacity:.16});ha(d,'mEmpire1050',HC.germany,{fillOpacity:.1,dashArray:'4 4'});ha(d,'fThreeBishoprics',HC.france,{fillOpacity:.46});
     hp(d,'fh2_chambord',{left:1,note:'卢瓦尔河谷的王家猎堡，条约在这里签。'});
     hp(d,'rf1_wittenberg',{note:'路德宗的老根据地，萨克森选帝侯的领地。'});
     hp(d,'fh2_vitry',{left:1,note:'1552年4月亨利二世在此检阅东征军。'});
@@ -5040,7 +5039,7 @@ const HISTORY_ENTRIES=[
     hr(d,[[48.725,4.585],[48.675,5.891],[49.12,6.177]],HC.france);
    },[['fill',HC.france,'法兰西王国与三主教区（示意）'],['dash',HC.germany,'神圣罗马帝国（约略）'],['dline',HC.france,'1552年4月法军东进（概略）'],['dot',HC.war,'梅斯之围'],['dot','#2a2018','尚博尔、维滕贝格、维特里、图勒与凡尔登']]),
   hs('1547—1559年','在内烧新教','三道敕令的签发地和高等法院所在的巴黎；日内瓦是敕令禁止通信的地方。',[[45.3,-2.6],[50.3,7.3]],d=>{
-    ha(d,'fFrance1559',HC.france,{fillOpacity:.22});
+    ha(d,'fFrance1547',HC.france,{fillOpacity:.22});
     hp(d,'w_paris',{note:'高等法院所在；异端庭设在这里。'});
     hp(d,'fh2_chateaubriant',{left:1,note:'1551年6月27日，敕令在蒙莫朗西的城里颁布。'});
     hp(d,'k_compiegne',{note:'1557年7月24日，把异端定为死罪。'});
@@ -5048,7 +5047,7 @@ const HISTORY_ENTRIES=[
     hp(d,'rf1_geneva',{note:'加尔文所在，法国新教徒逃亡的去处。'});
    },[['fill',HC.france,'法兰西王国（示意）'],['dot','#2a2018','巴黎、沙托布里昂、贡比涅、埃库昂与日内瓦']]),
   hs('1557—1558年','圣康坦与加来','东北边境：西班牙军从尼德兰南下圣康坦；吉斯公爵从贡比涅集结，冬天扑向加来。',[[48.4,-0.9],[52.0,6.1]],d=>{
-    ha(d,'fFrance1559',HC.france,{fillOpacity:.18});ha(d,'sNetherlands1556',HC.spain,{fillOpacity:.22});ha(d,'mEngland1066',HC.britain,{fillOpacity:.2});ha(d,'fCalaisPale',HC.war,{fillOpacity:.5});
+    ha(d,'fFrance1547',HC.france,{fillOpacity:.18});ha(d,'sNetherlands1556',HC.spain,{fillOpacity:.22});ha(d,'mEngland1066',HC.britain,{fillOpacity:.2});ha(d,'fCalaisPale',HC.war,{fillOpacity:.5});
     hp(d,'kp_stquentin',{kind:'battle',note:'1557年8月10日，法军败；8月27日城破。'});
     hp(d,'hy1_calais',{kind:'battle',left:1,note:'1558年1月1—8日，英军约两千五百人。'});
     hp(d,'k_compiegne',{left:1,note:'败后吉斯公爵在此重新集结军队。'});
@@ -5066,7 +5065,7 @@ const HISTORY_ENTRIES=[
     hp(d,'fh2_tournelles',{kind:'battle',note:'6月30日比武受伤，7月10日死在宫里。'});
     hp(d,'lb_brussels',{note:'腓力二世的驻地，派御医来救。'});
     hp(d,'fh2_anet',{left:1,note:'迪亚娜此后退居这里，1566年死。'});
-    hp(d,'fh2_chenonceau',{left:1,note:'太后收回，后来成了她最爱的住处。'});
+    hp(d,'fh2_chenonceau',{note:'太后收回，后来成了她最爱的住处。'});
     hp(d,'fh2_chaumont',{left:1,note:'太后塞给迪亚娜的交换物。'});
     hr(d,[[50.85,4.352],[50.3,3.6],[49.5,2.9],[48.86,2.37]],HC.route);
    },[['fill',HC.france,'法兰西王国（示意）'],['dline',HC.route,'维萨里赶赴巴黎（概略）'],['dot',HC.war,'图尔内勒宫'],['dot','#2a2018','布鲁塞尔、阿内、舍农索与肖蒙']])
@@ -5074,7 +5073,7 @@ const HISTORY_ENTRIES=[
 {id:'history-france-huguenots',ch:5,title:'胡格诺与外戚：日内瓦的牧师、苏格兰女王与一只耳朵',short:'胡格诺与吉斯外戚',en:'Huguenots and In-Laws: Geneva’s Pastors, the Queen of Scots, and an Ear',period:'1534—1560年',c:HC.france,
  scenes:[
   hs('1516—1534年','国王不用改教','莫城小组1521—1525年的所在；1534年10月的标语从纳沙泰尔来，贴到昂布瓦斯。',[[43.6,-1.8],[50.2,12.4]],d=>{
-    ha(d,'fFrance1559',HC.france,{fillOpacity:.2});
+    ha(d,'fFrance1547',HC.france,{fillOpacity:.2});
     hp(d,'bb_bologna',{note:'1515年12月法王和利奥十世在此会谈。'});
     hp(d,'fhg_meaux',{note:'主教布里索内的教区，福音派学者的聚点。'});
     hp(d,'w_paris',{left:1,note:'索邦神学院所在，也是贴标语的头号城市。'});
@@ -5083,7 +5082,7 @@ const HISTORY_ENTRIES=[
     hr(d,[[46.99,6.93],[47.1,4.5],[47.41,0.99]],HC.faith);
    },[['fill',HC.france,'法兰西王国（示意）'],['dline',HC.faith,'1534年标语从纳沙泰尔进入法国（示意）'],['dot','#2a2018','博洛尼亚、莫城、巴黎、昂布瓦斯与纳沙泰尔']]),
   hs('1535—1560年','日内瓦的后方','加尔文从努瓦永逃到巴塞尔，再到日内瓦；箭线示意日内瓦向法国派牧师、运书。',[[44.1,-0.8],[50.4,9.4]],d=>{
-    ha(d,'fFrance1559',HC.france,{fillOpacity:.18});
+    ha(d,'fFrance1547',HC.france,{fillOpacity:.18});
     hp(d,'w_noyon',{left:1,note:'1509年加尔文生在这里。'});
     hp(d,'iv_basel',{note:'1536年3月《基督教要义》在这里出版。'});
     hp(d,'rf1_geneva',{note:'法语新教的中心，1536年起加尔文在此。'});
@@ -5093,7 +5092,7 @@ const HISTORY_ENTRIES=[
     hr(d,[[46.2,6.14],[45.76,4.83],[47.0,3.3],[48.85,2.35]],HC.faith);
    },[['fill',HC.france,'法兰西王国（示意）'],['dline',HC.route,'加尔文出走（概略）'],['dline',HC.faith,'日内瓦向法国派牧师（示意）'],['dot','#2a2018','努瓦永、巴塞尔、日内瓦、巴黎与里昂']]),
   hs('1548—1561年','什么人信什么牌','巴黎圣雅克街的秘密礼拜；科利尼被俘的圣康坦；文字标出贵族改宗比例最高的两处。',[[43.2,-2.2],[50.6,5.8]],d=>{
-    ha(d,'fFrance1559',HC.france,{fillOpacity:.2});
+    ha(d,'fFrance1547',HC.france,{fillOpacity:.2});
     hp(d,'w_paris',{left:1,note:'圣雅克街在塞纳河左岸，离索邦不远。'});
     hp(d,'kp_stquentin',{note:'1557年8月27日城破，科利尼被俘。'});
     hl(d,'博斯：贵族约19%','Beauce',48.2,1.5,HC.faith);hl(d,'凯尔西：贵族约三分之一','Quercy',44.5,1.5,HC.faith);
@@ -5148,7 +5147,7 @@ const HISTORY_ENTRIES=[
     ha(d,'fGuiseEast',HC.war,{fillOpacity:.3});ha(d,'fBourbonSW',HC.france,{fillOpacity:.3});ha(d,'fMontmorency',HC.italy,{fillOpacity:.3});
     hp(d,'fca_joinville',{note:'吉斯家的老家和墓地。'});
     hp(d,'w_reims',{note:'洛林枢机的大主教区，历代国王在此加冕。'});
-    hp(d,'fca_cleri',{left:1,note:'吉斯兄弟带约五百贵族到此朝圣。'});
+    hp(d,'fca_cleri',{note:'吉斯兄弟带约五百贵族到此朝圣。'});
     hp(d,'fca_vendome',{left:1,note:'波旁家的公爵领。'});
     hp(d,'fca_pau',{note:'贝亚恩首府，让娜·达尔布雷的宫廷。'});
     hp(d,'fca_chantilly',{left:1,note:'蒙莫朗西家的城堡。'});
@@ -5195,10 +5194,9 @@ const HISTORY_ENTRIES=[
   hs('1567—1569年','老一辈死光','两场仗一北一西：圣但尼在巴黎城北，雅尔纳克在夏朗特河边；色块是拉罗谢尔所在的奥尼斯。',[[44.9,-2.2],[49.4,3.2]],d=>{
     ha(d,'fAunis',HC.faith,{fillOpacity:.4});
     hp(d,'w_saintdenis',{kind:'battle',note:'王军约两万五千人，胡格诺约五千。'});
-    hp(d,'fca_jarnac',{kind:'battle',left:1,note:'胡格诺后卫被截，主力退走。'});
-    hp(d,'fca_cognac',{left:1,note:'胡格诺军败退到此。'});
+    hp(d,'fca_jarnac',{kind:'battle',left:1,note:'胡格诺后卫被截，主力退到不远的科尼亚克。'});
     hp(d,'sl9_rochelle',{note:'胡格诺的大本营，1568年起成为首领们的退路。'});
-   },[['fill',HC.faith,'奥尼斯（示意）'],['dot',HC.war,'圣但尼与雅尔纳克'],['dot','#2a2018','科尼亚克与拉罗谢尔']]),
+   },[['fill',HC.faith,'奥尼斯（示意）'],['dot',HC.war,'圣但尼与雅尔纳克'],['dot','#2a2018','拉罗谢尔']]),
   hs('1569—1570年','打赢了也没钱','虚线是科利尼败后绕南方再北上的概略路线；图钉标出和约给胡格诺的四座安全城。',[[42.6,-2.8],[49.5,7.3]],d=>{
     ha(d,'fHuguenotCrescent',HC.faith,{fillOpacity:.22});
     hp(d,'fca_moncontour',{kind:'battle',left:1,note:'胡格诺步兵损失惨重。'});
@@ -5224,37 +5222,26 @@ const HISTORY_ENTRIES=[
    },[['fill',HC.france,'法兰西王国（约1559年，示意）'],['fill',HC.faith,'贝亚恩—纳瓦拉（示意）'],['dline',HC.route,'让娜北上（概略）'],['dot','#2a2018','内拉克、舍农索、布卢瓦与巴黎']]),
   hs('1571—1572年','科利尼与少年国王','色块是西属尼德兰，胡格诺援军的路线从法国北境越过去，在蒙斯附近被截住。',[[47.8,0.6],[54.0,8.0]],d=>{
     ha(d,'sNetherlands1556',HC.spain,{fillOpacity:.26});
-    hp(d,'hy5_mons',{note:'1572年5月被拿骚夺下，9月还给西班牙。'});
-    hp(d,'fsb_valenciennes',{left:1,note:'同月也被夺下。'});
+    hp(d,'hy5_mons',{note:'1572年5月被拿骚夺下，瓦朗谢讷同月也丢了；9月蒙斯还给西班牙。'});
     hp(d,'fsb_stghislain',{kind:'battle',left:1,note:'胡格诺援军被打垮。'});
     hp(d,'w_paris',{left:1,note:'8月9—10日御前会议否决开战。'});
     hp(d,'fsb_chalons',{note:'太后从这里赶回巴黎。'});
     hr(d,[[48.85,2.35],[49.85,3.29],[50.45,3.82]],HC.war);
-   },[['fill',HC.spain,'西属尼德兰（示意）'],['dline',HC.war,'让利斯越境（概略）'],['dot',HC.war,'圣吉斯兰'],['dot','#2a2018','蒙斯、瓦朗谢讷、巴黎与沙隆']]),
-  hs('1572年8月18—22日','喜酒与一枪','巴黎城内：圣母院在西岱岛，卢浮宫到科利尼住处只有几百米，普利街就在中间。',[[48.845,2.32],[48.872,2.365]],d=>{
-    hp(d,'fsb_notredame',{note:'高台搭到教堂门口。'});
-    hp(d,'fsb_louvre',{left:1,note:'科利尼从这里开完会出来。'});
-    hp(d,'fsb_poulies',{kind:'battle',note:'枪从街边二楼的窗口打来。'});
-    hp(d,'fsb_bethisy',{note:'科利尼被抬回这里。'});
-   },[['dot',HC.war,'普利街：科利尼中枪处'],['dot','#2a2018','圣母院、卢浮宫与贝蒂西街']]),
-  hs('1572年8月22—23日','三次会','巴黎城内：决定在卢浮宫和杜伊勒里之间作出，命令当夜送到市政厅。',[[48.845,2.32],[48.872,2.365]],d=>{
-    hp(d,'fsb_tuileries',{left:1,note:'第一次会在花园里开，防人偷听。'});
-    hp(d,'fsb_louvre',{left:1,note:'第二、三次会，吉斯公爵半夜被叫来。'});
-    hp(d,'fsb_hotel',{note:'市长连夜回来布防。'});
-    hp(d,'fsb_bethisy',{note:'胡格诺贵族守着科利尼商量对策。'});
-   },[['dot','#2a2018','杜伊勒里、卢浮宫、市政厅与贝蒂西街']]),
-  hs('1572年8月24日凌晨','钟声','巴黎城内：杀手分两路，一路去贝蒂西街，一路在卢浮宫，再过河去左岸的圣日耳曼郊区。',[[48.845,2.32],[48.872,2.365]],d=>{
-    hp(d,'fsb_bethisy',{kind:'battle',note:'吉斯公爵的目标。'});
-    hp(d,'fsb_louvre',{kind:'battle',left:1,note:'蒙庞西耶公爵的目标。'});
-    hp(d,'fsb_auxerrois',{note:'卢浮宫门前的王家堂区教堂。'});
-    hp(d,'fsb_stgermainfbg',{left:1,note:'许多胡格诺贵族住在这里。'});
-   },[['dot',HC.war,'贝蒂西街与卢浮宫'],['dot','#2a2018','圣日耳曼奥塞尔教堂与圣日耳曼郊区']]),
-  hs('1572年8月24—26日','全城动手','巴黎全城：圣婴公墓在市中心，蒙福孔绞架在城北，尸体沿塞纳河往下游漂。',[[48.84,2.31],[48.885,2.385]],d=>{
-    hp(d,'fsb_innocents',{note:'枯山楂返青的地方。'});
-    hp(d,'fsb_hotel',{note:'民兵由这里调度。'});
-    hp(d,'fsb_louvre',{left:1,note:'国王和太后下令的地方。'});
-    hp(d,'fsb_montfaucon',{note:'王家的大绞架。'});
-   },[['dot','#2a2018','圣婴公墓、市政厅、卢浮宫与蒙福孔']]),
+   },[['fill',HC.spain,'西属尼德兰（示意）'],['dline',HC.war,'让利斯越境（概略）'],['dot',HC.war,'圣吉斯兰'],['dot','#2a2018','蒙斯、巴黎与沙隆']]),
+  hs('1572年8月18—22日','喜酒与一枪','巴黎城内几处相距只有几百米，这个比例尺并成一个点。巴黎总督蒙莫朗西20日去了北面的尚蒂伊。',[[48.3,1.3],[49.5,3.4]],d=>{
+    hp(d,'w_paris',{kind:'battle',note:'卢浮宫到科利尼住处只有几百米，枪从中间普利街的二楼窗口打来。'});
+    hp(d,'fca_chantilly',{note:'弗朗索瓦·德·蒙莫朗西20日称病来了这里。'});
+   },[['dot',HC.war,'巴黎：圣母院、卢浮宫、普利街'],['dot','#2a2018','尚蒂伊']]),
+  hs('1572年8月22—23日','三次会','巴黎城内：第一次会在杜伊勒里花园，后两次在卢浮宫，命令当夜送到市政厅。几处并成一个点。',[[48.3,1.3],[49.5,3.4]],d=>{
+    hp(d,'w_paris',{note:'吉斯公爵半夜被叫到卢浮宫，市长连夜回市政厅布防。'});
+   },[['dot','#2a2018','巴黎：杜伊勒里、卢浮宫与市政厅']]),
+  hs('1572年8月24日凌晨','钟声','巴黎城内：杀手分两路，一路去贝蒂西街，一路在卢浮宫，再过河去左岸的圣日耳曼郊区。几处并成一个点。',[[48.3,1.3],[49.5,3.4]],d=>{
+    hp(d,'w_paris',{kind:'battle',note:'吉斯公爵去贝蒂西街，蒙庞西耶公爵管卢浮宫，钟声从圣日耳曼奥塞尔教堂响起。'});
+   },[['dot',HC.war,'巴黎：贝蒂西街、卢浮宫、圣日耳曼奥塞尔教堂与左岸郊区']]),
+  hs('1572年8月24—26日','全城动手','巴黎全城：圣婴公墓在市中心，蒙福孔绞架在城北；尸体沿塞纳河往下游漂，箭头是下游方向。',[[48.3,1.3],[49.5,3.4]],d=>{
+    hp(d,'w_paris',{kind:'battle',note:'枯山楂在圣婴公墓返青；科利尼的尸体最后挂上城北蒙福孔的绞架。'});
+    hr(d,[[48.86,2.33],[48.83,2.24],[48.88,2.17],[48.96,2.22]],HC.war);
+   },[['dline',HC.war,'尸体顺塞纳河往下游漂（概略）'],['dot',HC.war,'巴黎：圣婴公墓、市政厅、卢浮宫与蒙福孔']]),
   hs('1572年8—10月','外省到秋天','红叉是有记载的十二座城中的几座；南特没有发生屠杀。',[[42.2,-5.3],[51.6,8.0]],d=>{
     ha(d,'fFrance1559',HC.france,{fillOpacity:.14});
     hp(d,'w_orleans',{kind:'battle',note:'8月底，连续四天。'});
@@ -5274,10 +5261,10 @@ const HISTORY_ENTRIES=[
     hp(d,'k_london',{left:1,note:'英格兰：穿黑，不断交。'});
     hp(d,'w_paris',{note:'消息从这里传出。'});
    },[['dot','#2a2018','罗马、马德里、维也纳、伦敦与巴黎']]),
-  hs('1572—1579年','胡格诺改了口','霍特曼逃亡的路线（概略）和两部书的出版地；瑞士的新教城市成了胡格诺的出版中心。',[[45.6,0.8],[48.6,8.8]],d=>{
-    hp(d,'cl_bourges',{left:1,note:'霍特曼任教的大学城。'});
+  hs('1572—1579年','胡格诺改了口','霍特曼逃亡的路线（概略）和两部书的出版地；瑞士的新教城市成了胡格诺的出版中心。',[[45.2,-0.4],[48.9,10.4]],d=>{
+    hp(d,'cl_bourges',{note:'霍特曼任教的大学城。'});
     hp(d,'rf1_geneva',{note:'《法兰克高卢》出版地。'});
-    hp(d,'fsb_basel',{note:'《反暴君论》出版地。'});
+    hp(d,'fsb_basel',{left:1,note:'《反暴君论》出版地。'});
     hr(d,[[47.08,2.4],[46.67,4.5],[46.2,6.14]],HC.route);
    },[['dline',HC.route,'霍特曼逃往日内瓦（概略）'],['dot','#2a2018','布尔日、日内瓦与巴塞尔']]),
   hs('1572—1574年','太后再无回头路','色块是拉罗谢尔所在的奥尼斯；三座图钉是《布洛涅敕令》允许礼拜的城市，北面是蒙哥马利投降的地方。',[[42.8,-2.6],[49.6,5.6]],d=>{
@@ -5288,11 +5275,10 @@ const HISTORY_ENTRIES=[
     hp(d,'fsb_domfront',{note:'蒙哥马利被马蒂尼翁元帅围住。'});
     hp(d,'w_paris',{note:'格雷夫广场，行刑地。'});
    },[['fill',HC.faith,'奥尼斯（示意）'],['dot',HC.war,'拉罗谢尔'],['dot','#2a2018','蒙托邦、尼姆、栋夫龙与巴黎']]),
-  hs('1574年5月','小孩儿死','国王死在巴黎东郊的万森讷；安茹公爵这时远在波兰，要从克拉科夫赶回来。',[[47.0,0.6],[52.6,21.0]],d=>{
-    hp(d,'fsb_vincennes',{note:'国王在这里卧床到死。'});
-    hp(d,'fsb_stgermainlaye',{left:1,note:'2月的密谋，事败。'});
-    hp(d,'fsb_krakow',{note:'安茹公爵2月在此加冕为波兰国王。'});
-   },[['dot','#2a2018','万森讷、圣日耳曼昂莱与克拉科夫']])
+  hs('1574年5月','小孩儿死','国王死在巴黎东郊的万森讷；安茹公爵这时远在波兰，要从克拉科夫赶回来。',[[46.6,-1.4],[53.0,24.4]],d=>{
+    hp(d,'fsb_vincennes',{note:'国王在这里卧床到死；2月的密谋出在西郊的圣日耳曼昂莱。'});
+    hp(d,'fsb_krakow',{left:1,note:'安茹公爵2月在此加冕为波兰国王。'});
+   },[['dot','#2a2018','万森讷与克拉科夫']])
  ]},
 {id:'history-france-henrys-1',ch:5,title:'三个亨利（上）：女装大佬、两头不讨好与波旁继承危机',short:'三个亨利（上）',en:'The Three Henrys (I): The King in a Dress, Pleasing No One, and the Bourbon Succession',period:'1574—1585年',c:HC.france,
  scenes:[
@@ -5351,14 +5337,13 @@ const HISTORY_ENTRIES=[
   hs('1584—1585年','不传波旁','图上是吉斯家的东部地盘、1585年春同盟占的城市和两次签约的地点。',[[41.4,-3.0],[51.0,13.4]],d=>{
     ha(d,'fFrance1559',HC.france,{fillOpacity:.18});ha(d,'fGuiseEast',HC.war,{fillOpacity:.32});ha(d,'fBourbonSW',HC.faith,{fillOpacity:.24});ha(d,'sNetherlands1556',HC.spain,{fillOpacity:.2,dashArray:'4 4'});
     hp(d,'f3a_joinville',{kind:'battle',note:'吉斯家的府邸，会谈就在家里。'});
-    hp(d,'f3a_epernay',{left:1,note:'4月起太后在这里和吉斯家讲条件。'});
     hp(d,'f3a_nemours',{left:1,note:'离巴黎约八十公里，几天后国王在圣莫尔画押。'});
-    hp(d,'wo_chalons',{left:1,note:'同盟的大本营，德意志援军的必经之路。'});
+    hp(d,'wo_chalons',{left:1,note:'同盟的大本营；4月起太后在近旁的埃佩尔奈和吉斯家讲条件。'});
     hp(d,'pl_dijon',{note:'马耶讷公爵任勃艮第总督。'});
     hp(d,'k_lyon',{left:1,note:'1585年春倒向同盟。'});
     hp(d,'w_orleans',{left:1,note:'卢瓦尔河上的要城。'});
     hp(d,'rome',{note:'1585年9月9日教宗在这里发绝罚令。'});
-   },[['fill',HC.france,'法兰西王国（示意）'],['fill',HC.war,'吉斯势力：香槟、勃艮第（示意）'],['fill',HC.faith,'波旁—阿尔布雷的地盘（示意）'],['dash',HC.spain,'西属尼德兰'],['dot',HC.war,'1584年茹安维尔密约'],['dot','#2a2018','埃佩尔奈、内穆尔、沙隆、第戎、里昂、奥尔良与罗马']])
+   },[['fill',HC.france,'法兰西王国（示意）'],['fill',HC.war,'吉斯势力：香槟、勃艮第（示意）'],['fill',HC.faith,'波旁—阿尔布雷的地盘（示意）'],['dash',HC.spain,'西属尼德兰'],['dot',HC.war,'1584年茹安维尔密约'],['dot','#2a2018','内穆尔、沙隆、第戎、里昂、奥尔良与罗马']])
  ]},
 {id:'history-france-henrys-2',ch:5,title:'三个亨利（下）：街垒、手刃与波旁摘桃子',short:'三个亨利（下）',en:'The Three Henrys (II): Barricades, a Murder at Blois, and the Bourbon Who Picked the Peach',period:'1585—1589年',c:HC.france,
  scenes:[
@@ -5407,7 +5392,7 @@ const HISTORY_ENTRIES=[
   hs('1588年12月','手刃','图上是布卢瓦和附近的克莱里，国王拿去克莱里过节作托词。',[[47.2,0.6],[48.3,2.4]],d=>{
     ha(d,'fFrance1559',HC.france,{fillOpacity:.18});
     hp(d,'pl_blois',{kind:'battle',note:'1588年12月23日吉斯死，24日枢机死。'});
-    hp(d,'f3b_clery',{note:'国王说要在这里静修过圣诞，议事得提早。'});
+    hp(d,'f3b_clery',{left:1,note:'国王说要在这里静修过圣诞，议事得提早。'});
     hp(d,'w_orleans',{note:'亲信劝吉斯退到这里，他不肯。'});
    },[['fill',HC.france,'法兰西王国（示意）'],['dot',HC.war,'1588年12月23日布卢瓦'],['dot','#2a2018','克莱里与奥尔良']]),
   hs('1589年1月','气死老娘','图上是太后去世和下葬的布卢瓦，以及当时在同盟手里的圣但尼。',[[47.2,0.6],[49.3,3.2]],d=>{
@@ -5426,9 +5411,8 @@ const HISTORY_ENTRIES=[
    },[['fill',HC.war,'同盟控制区（1589年，示意）'],['fill',HC.france,'国王剩下的卢瓦尔河一带（示意）'],['fill',HC.faith,'胡格诺的西南（示意）'],['dline',HC.france,'两王北上巴黎（概略）'],['dot','#2a2018','巴黎、图尔、普莱西、索米尔与波尔多']]),
   hs('1589年8月','一把刀，一颗桃子','图上是巴黎城外：国王驻圣克卢，纳瓦拉驻默东。',[[48.68,2.05],[48.98,2.5]],d=>{
     hp(d,'w_paris',{note:'听到死讯，同盟的街上一片欢呼。'});
-    hp(d,'f3b_stcloud',{kind:'battle',left:1,note:'1589年8月1日早上八点，国王遇刺。'});
-    hp(d,'f3b_meudon',{left:1,note:'纳瓦拉从这里赶来，到时国王已死。'});
-   },[['dot',HC.war,'1589年8月1日圣克卢'],['dot','#2a2018','巴黎与默东']])
+    hp(d,'f3b_stcloud',{kind:'battle',left:1,note:'1589年8月1日早上八点，国王遇刺。纳瓦拉的营地在近旁的默东。'});
+   },[['dot',HC.war,'1589年8月1日圣克卢'],['dot','#2a2018','巴黎']])
  ]},
 {id:'history-france-henry4-1',ch:5,title:'亨利四世（上）：信仰灵活与买回来的王国',short:'亨利四世（上）',en:'Henry IV (I): Flexible Faith and a Kingdom Bought Back',period:'1589—1598年',c:HC.france,
  scenes:[
@@ -5452,11 +5436,10 @@ const HISTORY_ENTRIES=[
     hp(d,'w_paris',{kind:'battle',note:'1590年5月7日至8月30日被围。'});
     hp(d,'fh4a_montmartre',{left:1,note:'亨利四世的炮兵阵地。'});
     hp(d,'lb_brussels',{note:'帕尔马公爵8月6日从这里出发。'});
-    hp(d,'fh4a_meaux',{note:'8月23日帕尔马军到此。'});
-    hp(d,'fh4a_lagny',{note:'9月6日攻下，马恩河粮道打通。'});
+    hp(d,'fh4a_lagny',{note:'8月23日帕尔马军到莫城，9月6日攻下这里，马恩河粮道打通。'});
     hp(d,'fr_rouen',{left:1,note:'1591年12月至1592年4月被围，帕尔马再来解围。'});
     hr(d,[[50.85,4.35],[49.9,3.63],[48.96,2.89],[48.87,2.71]],HC.spain);
-   },[['fill',HC.spain,'西班牙尼德兰（示意）'],['dline',HC.spain,'1590年帕尔马公爵南下（概略）'],['dot',HC.war,'被围的巴黎'],['dot','#2a2018','布鲁塞尔、莫城、拉尼与鲁昂']]),
+   },[['fill',HC.spain,'西班牙尼德兰（示意）'],['dline',HC.spain,'1590年帕尔马公爵南下（概略）'],['dot',HC.war,'被围的巴黎'],['dot','#2a2018','布鲁塞尔、拉尼与鲁昂']]),
   hs('1554—1576年','前五次','他的老家贝亚恩—纳瓦拉，巴黎的宫廷，和1576年逃走的桑利斯一带。',[[42.5,-2.6],[49.6,3.6]],d=>{
     ha(d,'fNavarreBearn',HC.france,{fillOpacity:.32});
     hp(d,'fh4a_pau',{note:'1554年受洗的地方，母亲的都城。'});
@@ -5464,24 +5447,20 @@ const HISTORY_ENTRIES=[
     hp(d,'fr_senlis',{note:'1576年2月，从这一带脱身。'});
     hl(d,'卢瓦尔河','Loire',47.3,0.6,HC.neutral);
    },[['fill',HC.france,'贝亚恩—纳瓦拉'],['dot','#2a2018','波城、巴黎与桑利斯']]),
-  hs('1593年1—6月','三级会议','巴黎和西郊：卢浮宫开三级会议，叙雷讷开谈判，圣但尼是王党的地盘。',[[48.72,2.05],[49.0,2.55]],d=>{
+  hs('1593年1—6月','三级会议','巴黎和西郊：卢浮宫开三级会议，叙雷讷开谈判。',[[48.72,2.05],[49.0,2.55]],d=>{
     hp(d,'fh4a_louvre',{note:'同盟的三级会议在这里开。'});
     hp(d,'fh4a_suresnes',{left:1,note:'4月29日起，两边代表在这里谈。'});
-    hp(d,'w_saintdenis',{note:'亨利四世手里的城，离巴黎不到十公里。'});
-   },[['dot','#2a2018','卢浮宫、叙雷讷与圣但尼']]),
+   },[['dot','#2a2018','卢浮宫与叙雷讷']]),
   hs('1593年7月','惊险一跃','圣但尼在巴黎北面；三级会议在城里，沙特尔是他次年加冕的地方。',[[48.25,1.2],[49.2,2.9]],d=>{
     hp(d,'w_saintdenis',{note:'法国王陵所在，1593年7月25日改宗的地方。'});
     hp(d,'w_paris',{left:1,note:'三级会议8月8日在这里散会。'});
     hp(d,'pl_mantes',{left:1,note:'王党据点，1591年在这里颁过敕令。'});
     hp(d,'fr_chartres',{left:1,note:'1594年2月在这里加冕。'});
    },[['dot','#2a2018','圣但尼、巴黎、芒特与沙特尔']]),
-  hs('1594年3月22日','进城','巴黎城内：王军走新门和圣但尼门，亨利四世到圣母院，西班牙人从圣但尼门撤出。',[[48.846,2.318],[48.872,2.362]],d=>{
-    hp(d,'fh4a_porteneuve',{left:1,note:'西路军的入口。'});
-    hp(d,'fh4a_portestdenis',{note:'东路军入口，也是西班牙人的出口。'});
-    hp(d,'fh4a_notredame',{note:'进城后第一站。'});
-    hp(d,'fh4a_louvre',{note:'午饭已备好，像国王从没离开过。'});
-    hr(d,[[48.8605,2.3325],[48.8595,2.34],[48.8575,2.345],[48.853,2.35]],HC.france);
-   },[['dline',HC.france,'亨利四世入城（概略）'],['dot','#2a2018','两道城门、圣母院与卢浮宫']]),
+  hs('1594年3月22日','进城','巴黎城内：王军走新门和圣但尼门，亨利四世到圣母院；西班牙驻军从圣但尼门往北撤走。',[[48.3,1.3],[49.7,3.4]],d=>{
+    hp(d,'w_paris',{note:'新门是西路军的入口，圣母院是进城后第一站，卢浮宫的午饭已备好。'});
+    hr(d,[[48.87,2.35],[49.2,2.45],[49.6,2.75]],HC.spain);
+   },[['dline',HC.spain,'西班牙驻军撤走（概略）'],['dot','#2a2018','巴黎：两道城门、圣母院与卢浮宫']]),
   hs('1594—1598年','价目表','四笔最大的账：诺曼底、香槟换普罗旺斯、勃艮第换法兰西岛、布列塔尼。',[[42.5,-5.2],[51.2,7.6]],d=>{
     ha(d,'fFrance1610',HC.france,{fillOpacity:.1,dashArray:'4 4'});ha(d,'mNormandy933',HC.war,{fillOpacity:.26});ha(d,'mBrittany851',HC.war,{fillOpacity:.26});ha(d,'mBurgundyDuchy900',HC.war,{fillOpacity:.26});
     hp(d,'fr_rouen',{note:'维拉尔1594年交出。'});
@@ -5530,11 +5509,9 @@ const HISTORY_ENTRIES=[
     hp(d,'fh4b_bourg',{note:'1601年《里昂条约》后归法国。'});
     hl(d,'萨伏依','Savoy',45.3,6.9,HC.italy);
    },[['fill',HC.italy,'萨伏依公国（示意）'],['fill',HC.france,'布雷斯，1601年归法国'],['dot','#2a2018','枫丹白露与布尔']]),
-  hs('1598—1610年','苏利的账房','巴黎东部：苏利住军械库，管巴士底，两处相距约四百米。',[[48.843,2.33],[48.868,2.385]],d=>{
-    hp(d,'fh4b_bastille',{note:'1602年起苏利兼总督，结余存这里。'});
-    hp(d,'fh4b_arsenal',{left:1,note:'苏利的官邸兼炮兵总部。'});
-    hp(d,'fh4b_louvre',{note:'国王住的王宫。'});
-   },[['dot','#2a2018','巴士底、军械库与卢浮宫']]),
+  hs('1598—1610年','苏利的账房','巴黎东部：苏利住军械库，管巴士底，两处相距约四百米，并成一个点。',[[48.3,1.3],[49.5,3.4]],d=>{
+    hp(d,'w_paris',{note:'1602年起苏利兼巴士底总督，结余存那里；官邸在军械库。'});
+   },[['dot','#2a2018','巴黎：巴士底与军械库']]),
   hs('1599—1610年','路、树、运河、新桥','塞纳河到卢瓦尔河的布里亚尔运河（概略），维瓦赖的塞尔庄园，巴黎的新工程。',[[44.2,0.8],[49.2,5.6]],d=>{
     hp(d,'fh4b_briare',{left:1,note:'运河的卢瓦尔河一端。'});
     hp(d,'fh4b_rogny',{note:'七座船闸翻过分水岭。'});
@@ -5554,7 +5531,7 @@ const HISTORY_ENTRIES=[
     hp(d,'fh4b_rennes',{left:1,note:'1553年设。'});
    },[['dot','#2a2018','1604年的八所高等法院']]),
   hs('1594—1608年','两教','巴黎周围：胡格诺的礼拜地从阿布隆搬到沙朗通，枫丹白露是辩经的地方。',[[48.3,1.9],[49.05,3.0]],d=>{
-    hp(d,'w_paris',{note:'五里格以内不许胡格诺礼拜。'});
+    hp(d,'w_paris',{left:1,note:'五里格以内不许胡格诺礼拜。'});
     hp(d,'fh4b_ablon',{left:1,note:'离巴黎正好五里格。'});
     hp(d,'fh4b_charenton',{note:'1606年迁到这里。'});
     hp(d,'fh4b_fontainebleau',{note:'1600年5月4日辩经。'});
@@ -5579,15 +5556,9 @@ const HISTORY_ENTRIES=[
     hp(d,'cd_etampes',{left:1,note:'对着受难像下了决心。'});
     hr(d,[[45.65,0.16],[46.58,0.34],[47.39,0.69],[47.9,1.9],[48.44,2.16],[48.85,2.35]],HC.war);
    },[['dline',HC.war,'昂古莱姆到巴黎（概略）'],['dot','#2a2018','昂古莱姆、埃唐普与巴黎']]),
-  hs('1610年5月14日','费罗讷里街','国王的车从卢浮宫往军械库，走到费罗讷里街被堵；虚线是没走完的路。',[[48.846,2.32],[48.87,2.378]],d=>{
-    hp(d,'fh4b_louvre',{note:'四点前后出发，又被赶着送回。'});
-    hp(d,'fh4b_ferronnerie',{kind:'battle',note:'圣婴公墓外的窄街，1610年5月14日行刺处。'});
-    hp(d,'fh4b_arsenal',{note:'苏利病在这里，国王没走到。'});
-    hp(d,'fh4b_feuillants',{left:1,note:'当天早上国王在这里望弥撒。'});
-    hp(d,'fh4b_greve',{left:1,note:'5月27日行刑的地方。'});
-    hr(d,[[48.8605,2.338],[48.861,2.343],[48.8603,2.3474]],HC.france);
-    hr(d,[[48.8603,2.3474],[48.857,2.356],[48.853,2.362],[48.851,2.365]],HC.war);
-   },[['dline',HC.france,'国王走过的路（概略）'],['dline',HC.war,'没走完的路（概略）'],['dot',HC.war,'行刺处'],['dot','#2a2018','卢浮宫、斐扬修道院、格雷夫广场与军械库']])
+  hs('1610年5月14日','费罗讷里街','国王的车从卢浮宫往军械库，走到费罗讷里街被堵。城内几处相距不到两公里，并成一个点。',[[48.3,1.3],[49.5,3.4]],d=>{
+    hp(d,'w_paris',{kind:'battle',note:'1610年5月14日行刺处：圣婴公墓外的窄街。5月27日在格雷夫广场行刑。'});
+   },[['dot',HC.war,'巴黎：费罗讷里街行刺处']])
  ]},
 {id:'history-france-marie',ch:5,title:'玛丽太后：嫁妆抵债、宠臣与十五岁的国王',short:'玛丽太后与路易十三',en:'Marie de’ Medici: A Dowry Against Debts, a Favourite, and a King at Fifteen',period:'1600—1624年',c:HC.france,
  scenes:[
@@ -5622,15 +5593,14 @@ const HISTORY_ENTRIES=[
     hp(d,'w_paris',{left:1,note:'会场是卢浮宫旁的小波旁府，10月27日开幕。'});
     hp(d,'fma_lucon',{note:'这个穷主教区的主教1614年8月当选普瓦图教士代表。'});
    },[['fill',HC.france,'法兰西王国（示意）'],['dot','#2a2018','圣梅内乌尔德、巴黎与吕松']]),
-  hs('1610—1616年','宠臣孔奇尼','孔奇尼的地盘：先是皮卡第三城和亚眠，1616年换到诺曼底。',[[48.3,-2.0],[50.8,3.8]],d=>{
+  hs('1610—1616年','宠臣孔奇尼','孔奇尼的地盘：先是皮卡第三城和亚眠，1616年换到诺曼底。',[[48.3,-2.0],[50.8,5.2]],d=>{
     ha(d,'mNormandy933',HC.italy,{fillOpacity:.24,dashArray:'4 4'});
     hl(d,'皮卡第','Picardy',49.6,2.75,HC.italy);
-    hp(d,'fma_ancre',{note:'他的侯爵领，时人因此叫他昂克尔元帅。'});
-    hp(d,'fr_peronne',{note:'1610年9月起他任佩罗讷、鲁瓦、蒙迪迪耶三城总督。'});
+    hp(d,'fma_ancre',{left:1,note:'他的侯爵领，时人叫他昂克尔元帅；近旁三城（佩罗讷等）也归他管。'});
     hp(d,'cp_amiens',{left:1,note:'1611年到手的要塞，1616年按和约交出。'});
     hp(d,'uk4_caen',{left:1,note:'交出亚眠后换得这座要塞，兼任诺曼底副总督。'});
     hp(d,'w_paris',{note:'1616年9月他的府邸被抢；1612年起有小屋通卢浮宫。'});
-   },[['dash',HC.italy,'诺曼底：他1616年任副总督（示意）'],['dot','#2a2018','昂克尔、佩罗讷、亚眠、卡昂与巴黎']]),
+   },[['dash',HC.italy,'诺曼底：他1616年任副总督（示意）'],['dot','#2a2018','昂克尔、亚眠、卡昂与巴黎']]),
   hs('1617年','十五岁的国王动手','4月政变在巴黎，太后随后被送到卢瓦尔河边的布卢瓦。',[[46.9,0.3],[49.4,3.5]],d=>{
     hp(d,'w_paris',{note:'卢浮宫、新桥和7月行刑的格雷夫广场都在这里。'});
     hp(d,'pl_blois',{left:1,note:'太后的软禁地，她在此住了不到两年。'});
@@ -5642,7 +5612,7 @@ const HISTORY_ENTRIES=[
     hp(d,'fma_angouleme',{left:1,note:'太后的起事之地，也是1619年订约之地。'});
     hp(d,'pl_chinon',{note:'1619年条约给她的城。'});
     hp(d,'pl_angers',{left:1,note:'1619年条约给她的城，次年她的大本营。'});
-    hp(d,'fma_pontsdece',{kind:'battle',left:1,note:'1620年8月7日，国王胜，太后一方败。'});
+    hp(d,'fma_pontsdece',{kind:'battle',note:'1620年8月7日，国王胜，太后一方败。'});
     hr(d,[[47.59,1.34],[47.13,1.0],[46.4,0.6],[45.65,0.16]],HC.route);
    },[['dline',HC.route,'1619年太后出逃（概略）'],['dot',HC.war,'1620年蓬德塞之战'],['dot','#2a2018','布卢瓦、洛什、昂古莱姆、希农与昂热']]),
   hs('1606—1624年','黎塞留崛起','黎塞留走过的地方：吕松、罗马、巴黎、阿维尼翁和昂古莱姆。',[[41.0,-5.0],[51.3,14.2]],d=>{
@@ -5656,19 +5626,18 @@ const HISTORY_ENTRIES=[
  ]},
 {id:'history-france-richelieu',ch:5,title:'黎塞留：拉罗谢尔、愚人日与三大家族收场',short:'黎塞留',en:'Richelieu: La Rochelle, the Day of the Dupes, and the End of the Great Houses',period:'1624—1642年',c:HC.france,
  scenes:[
-  hs('1627—1628年','拉罗谢尔','拉罗谢尔、雷岛和海堤的位置，以及1627年英军的来路。',[[45.3,-3.6],[47.0,0.4]],d=>{
+  hs('1627—1628年','拉罗谢尔','拉罗谢尔和城外的海堤、雷岛，以及1627年英军的来路。',[[45.3,-3.6],[47.0,0.4]],d=>{
     ha(d,'fAunis',HC.faith,{fillOpacity:.3});
-    hp(d,'sl9_rochelle',{note:'陆上围城线长十二公里，有十一座堡、十八座棱堡。'});
-    hp(d,'fri_digue',{left:1,kind:'battle',note:'堤中间留口走潮，以炮和船封住。'});
+    hp(d,'sl9_rochelle',{note:'陆上围城线长十二公里；海堤中间留口走潮，以炮和船封住。'});
     hp(d,'fri_re',{left:1,kind:'battle',note:'1627年7—11月守将图瓦拉斯守住了圣马丁要塞。'});
     hr(d,[[47.0,-3.5],[46.5,-2.4],[46.25,-1.6]],HC.britain);
-   },[['fill',HC.faith,'奥尼斯：胡格诺的根据地'],['dline',HC.britain,'1627年英军来路（概略）'],['dot',HC.war,'雷岛之围与海堤'],['dot','#2a2018','拉罗谢尔']]),
-  hs('1628—1631年','阿莱斯恩典敕令','胡格诺的新月地带，阿莱斯，以及法国出钱的瑞典军所在的奥得河。',[[42.4,-5.0],[54.2,15.2]],d=>{
+   },[['fill',HC.faith,'奥尼斯：胡格诺的根据地'],['dline',HC.britain,'1627年英军来路（概略）'],['dot',HC.war,'雷岛之围'],['dot','#2a2018','拉罗谢尔与海堤']]),
+  hs('1628—1631年','阿莱斯恩典敕令','胡格诺的新月地带，阿莱斯，以及法国出钱的瑞典军所在的奥得河。',[[42.4,-5.0],[54.4,18.8]],d=>{
     ha(d,'fFrance1610',HC.france,{fillOpacity:.14});ha(d,'fHuguenotCrescent',HC.faith,{fillOpacity:.3});
     hp(d,'sl9_rochelle',{left:1,note:'城墙拆平，主要的新教堂改成主教座堂。'});
     hp(d,'fri_ales',{note:'罗昂的两千三百守军1629年6月17日开城。'});
     hp(d,'w_paris',{note:'黎塞留下令烧掉1625年骂他的两本小册子。'});
-    hp(d,'fri_barwalde',{note:'1631年1月23日条约，为期五年。'});
+    hp(d,'fri_barwalde',{left:1,note:'1631年1月23日条约，为期五年。'});
    },[['fill',HC.france,'法兰西王国（示意）'],['fill',HC.faith,'胡格诺新月地带（示意）'],['dot','#2a2018','拉罗谢尔、阿莱斯、巴黎与贝尔瓦尔德']]),
   hs('1630年11月10日','愚人日','巴黎和凡尔赛猎屋相距约二十公里；黎塞留第二天被打发去蓬图瓦兹避风头。',[[48.5,1.6],[49.25,2.8]],d=>{
     hp(d,'w_paris',{note:'卢森堡宫和隔壁黎塞留住的小卢森堡都在这里。'});
