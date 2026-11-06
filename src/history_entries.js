@@ -12162,7 +12162,7 @@ const TREE_ROWS={
  'history-italy-charles8/0':[['italy','france'],1494,1495,'1494—1495年'],
  'history-italy-savonarola/0':[['italy','faith'],1496,1497,'1494—1498年'],
  'history-italy-louis12/0':[['italy','france','spain'],1498,1498,'1498—1506年'],
- 'history-italy-julius2/0':[['italy','faith'],1503,1512,'1503—1513年'],
+ 'history-italy-julius2/0':[['italy','faith','france'],1503,1512,'1503—1513年'],
  'history-italy-wars-2/0':[['italy','faith','france'],1513,1523,'1513—1523年'],
  'history-spain-reconquista/0':['spain',1128,1252,'1123—1252年'],
  'history-spain-aragon/0':['spain',1253,1469,'1252—1469年'],
