@@ -3,7 +3,7 @@
 """Test runner for tests/verify-*.js.
 After editing the text:
   python3 tests/run_tests.py --changed [index.html]
-    Runs check_changed.js, which checks and photographs only the scenes that changed and scans the whole
+    Runs check_changed.js, which checks only the scenes that changed and scans the whole
     book's references, then only the suites that name a changed section. A change to the lines or to the
     page's own code brings in more; see pick_suites.
 Before publishing:

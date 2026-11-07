@@ -68,7 +68,7 @@ The repository includes a zero-config `vercel.json` so you can import it directl
 
 ```sh
 npm install
-npm run test:changed # after editing the text: checks and photographs only the scenes that changed, then runs the suites that name them
+npm run test:changed # after editing the text: checks only the scenes that changed, then runs the suites that name them
 npm test             # before publishing: all tests/verify-*.js suites, skipping any that already passed with the same inputs
 ```
 
@@ -79,7 +79,7 @@ The test suite drives a local Chrome instance via `puppeteer-core` to verify:
 - Responsive layout at both desktop and 390 px mobile widths, ensuring no horizontal overflow;
 - Zero page errors and full offline functionality.
 
-By default, the scripts look for Chrome at `/Applications/Google Chrome.app`; set `CHROME_PATH` if yours is installed elsewhere. `tests/shots-changed/`, which Git ignores, holds the photographs from the latest check only.
+By default, the scripts look for Chrome at `/Applications/Google Chrome.app`; set `CHROME_PATH` if yours is installed elsewhere. When the check passes, it gives a local link to the first changed scene, to open in a browser.
 
 ## Regenerating the Geography
 

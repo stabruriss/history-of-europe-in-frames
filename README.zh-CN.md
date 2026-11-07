@@ -68,7 +68,7 @@ npm run build        # 即 cd src && python3 assemble.py ../index.html
 
 ```sh
 npm install
-npm run test:changed # 改完稿子后：只检查并拍摄改动过的幕，再跑点名这些节的套件
+npm run test:changed # 改完稿子后：只检查改动过的幕，再跑点名这些节的套件
 npm test             # 上线前：运行全部 tests/verify-*.js，已通过且输入未变的套件不重跑
 ```
 
@@ -79,7 +79,7 @@ npm test             # 上线前：运行全部 tests/verify-*.js，已通过且
 - 桌面端与手机端（390 px 宽）的响应式布局，确保无横向溢出；
 - 页面零运行时报错，以及完全断网状态下的可用性。
 
-脚本默认调用 `/Applications/Google Chrome.app`；若浏览器安装在其他路径，可通过环境变量 `CHROME_PATH` 指定。`tests/shots-changed/` 只保留最近一次检查拍下的改动幕截图（已由 Git 忽略）。
+脚本默认调用 `/Applications/Google Chrome.app`；若浏览器安装在其他路径，可通过环境变量 `CHROME_PATH` 指定。检查通过后会给出改动那一幕的本地链接，在浏览器里打开即可查看。
 
 ## 重新生成地理数据
 

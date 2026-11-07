@@ -1,9 +1,10 @@
-// After editing the text: checks only the scenes that changed, on the page as readers see it, and photographs only those.
+// After editing the text: checks only the scenes that changed, on the page as readers see it, and gives a link to open the first of them.
 // The whole book is also scanned for broken references, without drawing anything. Before publishing, run the full set: python3 tests/run_tests.py
-// Usage: node tests/check_changed.js [index.html] [--since <git-ref>] [--all] [--no-shots] [--pending]
+// Usage: node tests/check_changed.js [index.html] [--since <git-ref>] [--all] [--shots] [--pending]
 //   Compares with the last check that passed (tests/.check_baseline.json), or with origin/main if there is none.
-//   --all checks every scene. --pending leaves the new baseline for run_tests.py to confirm once the suites it picked have passed too.
-// Writes tests/shots-changed/: the photographs, emptied on each run, and changed.json.
+//   --all checks every scene. --shots also photographs the changed scenes, for an agent that needs to look: people check the real page.
+//   --pending leaves the new baseline for run_tests.py to confirm once the suites it picked have passed too.
+// Writes tests/shots-changed/, emptied on each run: changed.json, and any photographs.
 require('./chrome_guard.cjs');
 const puppeteer=require('puppeteer-core'),path=require('node:path'),fs=require('node:fs'),crypto=require('node:crypto');
 const {pathToFileURL}=require('node:url'),{execFileSync}=require('node:child_process');
@@ -168,7 +169,7 @@ function checkScenes({keys,labelKeys}){
     const labelKeys=view[0]==='desktop'?changed.filter(k=>now.maps[k]&&now.maps[k]!==base.maps?.[k]):[];
     const problems=await p.evaluate(checkScenes,{keys:changed,labelKeys});
     if(problems.length){failures.push(`FAIL: ${problems.length} problems on ${view[0]}:`,...problems.slice(0,60));await p.close();continue;}
-    if(!flag('--no-shots')&&!flag('--all')){
+    if(flag('--shots')&&!flag('--all')){
      // Every changed scene on desktop; the first of each section on a phone.
      const seen=new Set();
      for(const key of changed){
@@ -183,7 +184,7 @@ function checkScenes({keys,labelKeys}){
    if(failures.length)await fail(failures);
    console.log(`Scenes: ${changed.length} checked on ${VIEWS.map(v=>v[0]).join(' and ')}.`);
   }
-  if(linesChanged&&!flag('--no-shots')&&!flag('--all')){
+  if(linesChanged&&flag('--shots')&&!flag('--all')){
    const wide=await open(html,'',['network',2200,1100,false]);await wide.evaluate(()=>metroUI.setMode('network'));await new Promise(r=>setTimeout(r,300));
    await wide.screenshot({path:path.join(out,'network.png')});shots.push('network.png');await wide.close();
   }
@@ -194,7 +195,8 @@ function checkScenes({keys,labelKeys}){
   fs.writeFileSync(path.join(out,'changed.json'),JSON.stringify({from,changed,sections,removed,linesChanged,engineChanged,shots},null,1));
   if(flag('--pending'))fs.writeFileSync(path.join(out,'baseline.next.json'),JSON.stringify(next));
   else if(!flag('--all')&&!since)fs.writeFileSync(BASELINE,JSON.stringify(next));
-  if(shots.length)console.log(`Look at ${shots.length} photographs in ${path.relative(process.cwd(),out)||out}/`);
+  if(shots.length)console.log(`${shots.length} photographs in ${path.relative(process.cwd(),out)||out}/`);
+  if(changed.length&&!flag('--all'))console.log(`Open the page: ${pathToFileURL(html).href}#${changed[0]}`);
   console.log('PASS: changed scenes');
  }catch(e){console.error(e);process.exitCode=1;}finally{await Promise.race([browser.close(),new Promise(r=>setTimeout(r,200))]);browser.process()?.kill('SIGKILL');process.exit(process.exitCode||0);}
 })().catch(e=>{console.error(e);process.exit(1);});

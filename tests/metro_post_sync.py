@@ -24,8 +24,7 @@ def swap(t, name, old, new):
 
 
 def drop_screenshots(t):
-    """Nothing ever compared these pictures, and with the old sidebar back they did not show what readers see.
-    check_changed.js photographs the scenes that changed instead."""
+    """Nothing ever compared these pictures, and with the old sidebar back they did not show what readers see."""
     dangling = lambda s: len(re.findall(r"(?:\bif\([^\n;{}]*\)|\belse)[ \t]*$", s, re.M))
     before = dangling(t)
     out, i = [], 0
