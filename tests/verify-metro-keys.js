@@ -66,7 +66,7 @@ const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','
   });
   assert.equal(count,await p.evaluate(()=>ENTRIES.filter(isHistory).reduce((n,e)=>n+e.scenes.length,0)));
   // A chapter that crosses an era is two stations: ↓ stays in one, → moves to the next.
-  await p.evaluate(()=>metroUI.board('trunk',{key:'history-farming/0'}));await p.focus('#map');
+  await p.evaluate(()=>metroUI.board('prehistory',{key:'history-farming/0'}));await p.focus('#map');
   const farming=await state(p);await p.keyboard.press('ArrowDown');let s=await state(p);assert.equal(s.station,farming.station);assert.equal(s.scene,farming.scene);
   await p.keyboard.press('ArrowRight');s=await state(p);assert.notEqual(s.station,farming.station);assert.equal(s.id,'history-farming');assert.equal(s.scene,0);
   // Changing line at a shared station keeps the event and the scene; → then follows the new line.

@@ -2,7 +2,7 @@
 const HISTORY_CONTENT=/*__HISTORY_CONTENT__*/;
 const HISTORY_CH=['上古与黑暗时代','希腊城邦时代','马其顿与帝国','希腊化世界','罗马','罗马帝国','犹太教与基督教','中国对照','埃及','波斯—阿拉伯','东欧','十字军','不列颠','北欧','美洲'];
 const HC={athens:'#276582',sparta:'#99462e',mino:'#ad7c25',myc:'#637541',hittite:'#866347',
-  persia:'#8b644c',thebes:'#387568',macedon:'#6b4d72',war:'#a03327',neutral:'#887b65',route:'#2a7182',celt:'#64763f',parthia:'#765b78',rome:'#a34f36',faith:'#41508c',china:'#2e6b4e',byz:'#93324f',france:'#2b6cb0',germany:'#4a4440',italy:'#b8652a',spain:'#a2337f',lowlands:'#b45309',eeurope:'#1d8a99',crusade:'#c0262d',britain:'#2b6a6c',nordic:'#4f86ad',america:'#8c7a14'};
+  persia:'#8b644c',thebes:'#387568',macedon:'#6b4d72',war:'#a03327',neutral:'#887b65',route:'#2a7182',celt:'#64763f',parthia:'#765b78',rome:'#a34f36',faith:'#41508c',china:'#2e6b4e',byz:'#93324f',france:'#2b6cb0',germany:'#4a4440',italy:'#b8652a',spain:'#a2337f',lowlands:'#b45309',eeurope:'#1d8a99',crusade:'#c0262d',britain:'#2b6a6c',nordic:'#4f86ad',america:'#8c7a14',prehistory:'#7d6b50'};
 const HV={aegean:[[34.3,20.2],[41.3,29.6]],greece:[[35.6,20.4],[39.8,25.1]],
   eastern:[[24.3,19.4],[42.6,49.8]],attica:[[37.55,23.23],[38.45,24.3]],levant:[[27.4,30.2],[35.9,37.2]]};
 const HS={
@@ -13931,7 +13931,10 @@ const HISTORY_ERAS=[
 /* History as a tree: each branch is a topic; distance from the root is time (years, negative = BCE).
    Reading order stays with HISTORY_ERAS; TREE_ROWS puts each era row on a branch at its start and end. */
 const HISTORY_BRANCHES=[
- {id:'trunk',name:'希腊',en:'Greek world',lane:2},
+ // 史前 (老无 2026-11-07): out of Africa, farming and the first cities. No fork: the tree starts here. 埃及 and 波斯—阿拉伯 leave it
+ // at the early states; its rail runs on to the Aegean palaces, where 希腊 carries on in the same lane.
+ {id:'prehistory',name:'史前',en:'Prehistory',lane:2,from:-68000,to:-1900,c:HC.prehistory},
+ {id:'trunk',name:'希腊',en:'Greek world',lane:2,parent:'prehistory',from:-1900,to:-30},
  // 罗马: from the founding to the end of the West in 476, where it carries on as 中世纪西欧.
  {id:'rome',name:'罗马',en:'Rome',lane:3,parent:'trunk',from:-1000,to:476,c:HC.rome},
  // 东罗马 takes the Greek lane, free since the Greek world ran into Rome; from the division of 395 by dynasty to the end of the Macedonians.
@@ -13947,9 +13950,9 @@ const HISTORY_BRANCHES=[
  // The 基督教 line: from the Hebrews' nomadic origins (the old Levant branch) to the schism of 1054; on its own lane, right of the West.
  // After 641 it runs through the shared stations of the East Roman dynasties.
  {id:'faith',name:'基督教',en:'Judaism & Christianity',lane:7,parent:'trunk',from:-1400,to:1648,c:HC.faith},
- // 埃及 and 波斯 leave the trunk at the early states (老无 2026-10-21): the Ptolemies, the Seleucids, Rome and Byzantium are passing rulers of these lands.
- {id:'egypt',name:'埃及',en:'Egypt',lane:1,parent:'trunk',from:-3100,to:642,c:HC.mino},
- {id:'persia',name:'波斯—阿拉伯',en:'Persia and the Arabs',lane:0,parent:'trunk',from:-3200,to:1501,c:HC.parthia},
+ // 埃及 and 波斯 leave 史前 at the early states (老无 2026-10-21; off 史前, not 希腊, since 2026-11-07): the Ptolemies, the Seleucids, Rome and Byzantium are passing rulers of these lands.
+ {id:'egypt',name:'埃及',en:'Egypt',lane:1,parent:'prehistory',from:-3100,to:642,c:HC.mino},
+ {id:'persia',name:'波斯—阿拉伯',en:'Persia and the Arabs',lane:0,parent:'prehistory',from:-3200,to:1501,c:HC.parthia},
  {id:'eeurope',name:'东欧',en:'Eastern Europe',lane:8,parent:'trunk',from:-700,to:1505,c:HC.eeurope},
  // 十字军: from the theatre, the players and the holy war in Spain (the 0th crusade) to Acre (1291) and the military orders.
  {id:'crusade',name:'十字军',en:'The Crusades',lane:1,parent:'faith',from:1070,to:1312,c:HC.crusade},
@@ -13963,9 +13966,9 @@ const HISTORY_BRANCHES=[
 // Trunk colour follows the chapter: 上古, 城邦, 马其顿与帝国, 希腊化世界, 罗马, 罗马帝国, 基督教, 中国对照, 埃及, 波斯.
 const TREE_CH_COLORS=['#7d6b50',HC.athens,HC.macedon,HC.thebes,HC.rome,HC.rome,HC.faith,HC.china,HC.mino,HC.parthia,HC.eeurope,HC.crusade,HC.britain,HC.nordic,HC.america];
 const TREE_ROWS={
- 'history-migration/0':['trunk',-68000,-38000],
- 'history-farming/0':['trunk',-10000,-6000],
- 'history-farming/1':['trunk',-4000,-3100],
+ 'history-migration/0':['prehistory',-68000,-38000],
+ 'history-farming/0':['prehistory',-10000,-6000],
+ 'history-farming/1':['prehistory',-4000,-3100],
  'history-palaces/0':['trunk',-1900,-1100],
  'history-collapse/0':['trunk',-1274,-1100],
  'history-dark-age/0':['trunk',-1100,-800],
@@ -14264,7 +14267,7 @@ const TREE_ROWS={
 // Topics still to be written grow the tree as dashed shoots.
 const TREE_FUTURE=[['france',1648,'投石党与路易十四','1648年后待展开：1648—1653年投石党之乱 · 路易十四亲政、凡尔赛宫与欧洲霸权'],['germany',1648,'普鲁士崛起与七年战争','1648年后待展开：勃兰登堡—普鲁士崛起 · 腓特烈大帝与奥地利王位继承战'],['italy',1563,'哈布斯堡霸权与统一','1563年后待展开：西班牙哈布斯堡霸权下的意大利 · 巴洛克时代与近代统一'],['faith',1648,'政教分离与启蒙时代','1648年后待展开：欧洲大规模宗教战争落幕 · 理性主义、宽容法案与启蒙运动'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',1501,'奥斯曼全盛与波斯争霸','1501年后待展开：1517年奥斯曼灭马穆鲁克 · 苏莱曼一世全盛与奥斯曼—萨法维百年争霸'],['china',845,'晚唐五代与宋','845年起 · 待展开'],['spain',1648,'比利牛斯和约与王朝绝嗣','1648年后待展开：1659年比利牛斯和约 · 1668年承认葡萄牙独立 · 1700年哈布斯堡绝嗣与西班牙王位继承战争'],['eeurope',1505,'伊凡雷帝与沙皇俄国','1505年后待展开：1547年伊凡四世加冕沙皇 · 混乱时代与罗曼诺夫王朝'],['lowlands',1648,'黄金时代与英荷海战','1648年后待展开：17世纪阿姆斯特丹黄金时代 · 三次英荷海战与威廉三世入主英国'],['crusade',1312,'后来的十字军','1396年尼科波利斯 · 1444年瓦尔纳 · 1571年勒班陀 · 待展开'],['america',1648,'十三殖民地与美国独立','1648年后待展开：英荷争新阿姆斯特丹 · 七年战争把法国赶出北美 · 十三殖民地与美国独立'],['nordic',1648,'踏冰渡海与大北方战争','1648年后待展开：1658年卡尔十世踏冰渡海夺下斯科讷 · 1700—1721年大北方战争，瑞典失去波罗的海霸权'],['britain',1694,'英苏合并与日不落帝国','1694年后待展开：1707年英苏合并为大不列颠 · 汉诺威王朝与责任内阁 · 工业革命与日不落帝国']];
 // Where a line stops it says why: [line, year, the event that ends it, note, the line it carries on in].
-const TREE_ENDS=[['trunk',-30,'并入罗马','前146年科林斯被毁 · 前30年最后一个希腊化王国埃及并入罗马','rome'],['rome',476,'西罗马终结','476年西部末代皇帝被废 · 由中世纪西欧接续'],['west',843,'凡尔登三分','843年《凡尔登条约》三分帝国 · 分出法兰西、德意志、意大利'],['east',1453,'东罗马终结','1453年5月29日奥斯曼帝国攻破君士坦丁堡 · 千年东罗马帝国终结']];
+const TREE_ENDS=[['trunk',-30,'并入罗马','前146年科林斯被毁 · 前30年最后一个希腊化王国埃及并入罗马','rome'],['rome',476,'西罗马终结','476年西部末代皇帝被废 · 由中世纪西欧接续'],['west',843,'凡尔登三分','843年《凡尔登条约》三分帝国 · 分出法兰西、德意志、意大利'],['east',1453,'东罗马终结','1453年5月29日奥斯曼帝国攻破君士坦丁堡 · 千年东罗马帝国终结'],['prehistory',-1900,'有了文字','两河、埃及约前3200—前3100年先后有了文字和国家，各自成线 · 约前1900年克里特盖起宫殿、用文字记账，由希腊接续','trunk']];
 // Sections of one line that run side by side: [line, row keys, side of the passing loop].
 const TREE_PARALLEL=[['trunk',['history-alexander-conquest/0','history-alexander-rule/0'],1],['trunk',['history-hellenistic-states/0','history-hellenistic-knowledge/0'],1],['west',['history-west-kingdoms/0','history-west-ostrogoths/0'],1],['west',['history-west-merovingians/0','history-west-lombards/0'],1],['faith',['history-empire-amorian/0','history-faith-carolingian/0'],-1],['faith',['history-faith-imperial-church/0','history-faith-cluny/0'],-1]];
 // Time slices across the whole tree: [year, label, headline, paragraph].

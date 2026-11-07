@@ -13,7 +13,7 @@ const FULL_SHOTS=false;const wait=ms=>FULL_SHOTS?new Promise(r=>setTimeout(r,ms)
 // 老无 2026-10-28: 西班牙 forks off 中世纪西欧 with the Visigoths and runs to 1031; 波斯 is 波斯—阿拉伯, on to 945, the sieges of Constantinople
 // shared with 东罗马 and Tariq's crossing with 西班牙; 德意志 and 意大利 run to Otto's crowning, a station shared with 基督教.
 // 老无 2026-10-28 夜: 东欧 forks off 希腊 at the Black Sea colonies; 罗斯与东罗马 is one station on it and on 东罗马.
-const NAMES=['希腊','罗马','东罗马','中世纪西欧','西班牙','法兰西','低地诸国','德意志','意大利','不列颠','基督教','埃及','波斯—阿拉伯','东欧','十字军','北欧','美洲','中国'];
+const NAMES=['史前','希腊','罗马','东罗马','中世纪西欧','西班牙','法兰西','低地诸国','德意志','意大利','不列颠','基督教','埃及','波斯—阿拉伯','东欧','十字军','北欧','美洲','中国'];
 const OWN={east:['history-empire-theodosius','history-empire-leo','history-empire-justinian','history-empire-heraclius','history-arab-conquest','history-empire-constans','history-arab-constantinople','history-empire-anarchy',
   'history-empire-isaurian','history-empire-amorian','history-eeurope-byzantium','history-empire-macedonian','history-empire-macedonian',
   'history-empire-zoe','history-arab-seljuks','history-empire-alexios','history-faith-crusade','history-empire-komnenos','history-crusade-fourth','history-empire-palaiologos','history-empire-fall-1453'],
@@ -77,7 +77,7 @@ const BOLD=[['history-faith-three-chapters/1','教义之争背后的权力格局
    assert.ok(r.eastHas.includes('history-empire-theodosius')&&r.westHas.includes('history-empire-theodosius'));
    assert.ok(!r.westHas.includes('history-empire-leo')&&!r.eastHas.includes('history-west-kingdoms'));
    for(const [id,list] of Object.entries(OWN))assert.deepEqual(r.own[id],list,id+' stations');
-   assert.deepEqual(r.ends,[['trunk',-30,'rome'],['rome',476,null],['west',843,null],['east',1453,null]]);
+   assert.deepEqual(r.ends,[['trunk',-30,'rome'],['rome',476,null],['west',843,null],['east',1453,null],['prehistory',-1900,'trunk']]);
    // Every line either grows a shoot or ends with an event.
    for(const b of r.branches)assert.ok(r.futures.some(f=>f[0]===b[0])||r.ends.some(e=>e[0]===b[0]),b[0]+' ends without an event');
    assert.deepEqual(r.futures.sort(),[['america',1648],['britain',1694],['china',845],['crusade',1312],['eeurope',1505],['egypt',642],['faith',1648],['france',1648],['germany',1648],['italy',1563],['lowlands',1648],['nordic',1648],['persia',1501],['spain',1648]]);
@@ -100,8 +100,8 @@ const BOLD=[['history-faith-three-chapters/1','教义之争背后的权力格局
      on:[...tree.querySelectorAll('.tree-node.on')].map(n=>n.dataset.key),rows:tree.querySelectorAll('.tree-item[data-key="history-empire-heraclius/0"]').length,
      where:tree.querySelector('.tree-item[data-key="history-empire-heraclius/0"] small i')?.textContent};
    },sel);
-   assert.deepEqual(t.ends.map(e=>e[0]),['trunk','rome','west','east']);assert.match(t.ends[0][1],/并入罗马/);assert.match(t.ends[1][1],/西罗马终结/);assert.match(t.ends[2][1],/凡尔登三分/);
-   assert.equal(t.stops,4);assert.ok(t.merge,'希腊 runs into 罗马');
+   assert.deepEqual(t.ends.map(e=>e[0]),['trunk','rome','west','east','prehistory']);assert.match(t.ends[4][1],/有了文字/);assert.match(t.ends[0][1],/并入罗马/);assert.match(t.ends[1][1],/西罗马终结/);assert.match(t.ends[2][1],/凡尔登三分/);
+   assert.equal(t.stops,5);assert.ok(t.merge,'希腊 runs into 罗马');
    // 老无 2026-10-27: 东罗马 leaves 罗马 at 395, above 罗马’s end; the three heirs of Verdun leave 中世纪西欧 where it stops (德意志 straight on, so no curve).
    assert.deepEqual(t.forks,['britain','crusade','east','eeurope','egypt','faith','france','italy','lowlands','persia','rome','spain','west']);
    assert.ok(t.forkY.east<t.endY.rome);assert.equal(t.forkY.west,t.endY.rome);
@@ -121,11 +121,11 @@ const BOLD=[['history-faith-three-chapters/1','教义之争背后的权力格局
     }
     return out;
    },sel);
-   assert.deepEqual(light.trunk,{ends:['trunk'],merge:true,war:false,lanes:['trunk']});
-   assert.deepEqual(light.rome,{ends:['rome'],merge:false,war:false,lanes:['rome','trunk']});
-   assert.deepEqual(light.east,{ends:['east'],merge:false,war:true,lanes:['east','rome','trunk']},'东罗马 leaves 罗马 at 395, before 罗马’s end');
-   assert.deepEqual(light.west,{ends:['rome','west'],merge:false,war:false,lanes:['rome','trunk','west']},'中世纪西欧 runs through 罗马’s end to its own at Verdun');
-   assert.deepEqual(light.persia,{ends:[],merge:false,war:true,lanes:['persia','trunk']});
+   assert.deepEqual(light.trunk,{ends:['trunk','prehistory'],merge:true,war:false,lanes:['prehistory','trunk']});
+   assert.deepEqual(light.rome,{ends:['rome','prehistory'],merge:false,war:false,lanes:['prehistory','rome','trunk']});
+   assert.deepEqual(light.east,{ends:['east','prehistory'],merge:false,war:true,lanes:['east','prehistory','rome','trunk']},'东罗马 leaves 罗马 at 395, before 罗马’s end');
+   assert.deepEqual(light.west,{ends:['rome','west','prehistory'],merge:false,war:false,lanes:['prehistory','rome','trunk','west']},'中世纪西欧 runs through 罗马’s end to its own at Verdun');
+   assert.deepEqual(light.persia,{ends:[],merge:false,war:true,lanes:['persia','prehistory']});
    // Stepping along 波斯 from the shared war goes on to the Arab conquest; along 埃及 too.
    if(label!=='desktop'){await page.keyboard.press('Escape');await wait(100);}
    await page.evaluate(()=>{selectTreeLine('egypt');go('history-empire-heraclius');});await page.click('#next');

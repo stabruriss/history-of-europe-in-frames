@@ -21,7 +21,7 @@ window.NETWORK_DESIGN = (() => {
   const BRITAIN = 140;   // greece, then britain; france bundles here from 1154
   const FRANCE = 182;
   const LOW = 224;       // low countries
-  const ROME = 266;      // rome, then the medieval west, then italy: one straight lane
+  const ROME = 266;      // prehistory and early greece, then rome, the medieval west, italy: one straight lane
   const GER0 = 310;      // germany before it bundles with the church
   const GERMANY = 345;   // germany; the church runs one step below
   const CRUSADE = 395;
@@ -33,12 +33,13 @@ window.NETWORK_DESIGN = (() => {
   const CHINA = 620;
 
   const routes = {
-    trunk: [[-68000, y(ROME)], [-1000, y(ROME), null, -34], [-800, y(BRITAIN), 'e'], [-55, y(BRITAIN), null, -26], [-30, y(ROME), 'e']],
+    prehistory: [[-68000, y(ROME)], [-1900, y(ROME), null, -14]],
+    trunk: [[-1900, y(ROME), null, -14], [-1000, y(ROME), null, -34], [-800, y(BRITAIN), 'e'], [-55, y(BRITAIN), null, -26], [-30, y(ROME), 'e']],
     rome: [[-1000, y(ROME), null, -34], [476, y(ROME), null, -14]],
     west: [[476, y(ROME), null, -14], [830, y(ROME)]],
     italy: [[830, y(ROME)], [1454, y(ROME)]],
     china: [[-7000, y(CHINA)], [589, y(CHINA)]],
-    persia: [[-3200, y(ROME), null, -20], [-3200, y(PERSIA)], [1454, y(PERSIA)]],
+    persia: [[-3200, y(ROME), null, -7], [-3200, y(PERSIA)], [1454, y(PERSIA)]],
     egypt: [[-3100, y(ROME), null, -100], [-3100, y(EASTEU)], [632, y(EASTEU)]],
     faith: [[-1400, y(ROME), null, -34], [-1400, y(GERMANY, 1)], [1450, y(GERMANY, 1)]],
     eeurope: [[-700, y(BRITAIN), null, -34], [-700, y(TOP)], [602, y(TOP)], [860, y(EASTEU)], [1455, y(EASTEU)]],
@@ -56,7 +57,7 @@ window.NETWORK_DESIGN = (() => {
   // Room around branch points, and where a name needs to sit between dashed links.
   const gaps = [
     [-4000, -3200, 48], [-4000, -3100, 128],
-    [-1900, -1400, 62], [-1100, -1000, 66],
+    [-1900, -1400, 62], [-1100, -1000, 66], [-1900, -1000, 300],
     [-730, -700, 62], [-200, -55, 60], [-44, -30, 40], [-30, -27, 20],
     [379, 395, 62], [455, 476, 30], [480, 481, 62],
     [814, 830, 100],

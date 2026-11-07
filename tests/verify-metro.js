@@ -37,6 +37,19 @@ const settle=p=>p.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestA
   assert.deepEqual(layout.unresolvedLabels,[],'station names collide');assert.deepEqual(layout.foreignStations,[],'a rail runs through a station it does not serve');assert.deepEqual(layout.railOverlaps,[],'lines overlap along a rail');
   assert.deepEqual(layout.routeOrderViolations,[],'a line runs backward in time');assert.deepEqual(layout.periodsUnplaced,[],'a period mark has no place');assert.deepEqual(layout.tightBends,[],'a lane change is not a clean 45 degree run');
   assert.ok(layout.bends<=40,'too many bends: '+layout.bends);assert.deepEqual(layout.linkThroughStations,[],'a dashed link runs through a station');assert.deepEqual(layout.linkOnRail,[],'a dashed link runs along a rail');assert.deepEqual(layout.flagsWithoutRoom,[],'a signpost has no room');
+  // 老无 2026-11-07: 史前 is a line of its own at the root. 波斯—阿拉伯 and 埃及 each drop off its rail on their own
+  // vertical (not one on top of the other); 希腊 starts at 克里特与迈锡尼, head to tail with 史前 in the same lane.
+  const root=await p.evaluate(()=>{
+   const rail=id=>{const e=document.querySelector(`.rail-path[data-line="${id}"]`),n=e.getTotalLength(),at=f=>{const q=e.getPointAtLength(n*f);return [q.x,q.y];};return {a:at(0),b:at(1),mid:[.25,.5,.75].map(at)};};
+   const pre=rail('prehistory'),gr=rail('trunk'),y=pre.a[1],x=k=>metroUI.pointByKey.get(k).x;
+   const off=id=>{const [px,py]=rail(id).a;return Math.abs(py-y)<.5&&px>x('history-farming/1')&&px<pre.b[0];};
+   return {stops:metroUI.data.lineStops.get('prehistory').map(s=>s.key),first:metroUI.data.lineStops.get('trunk')[0].key,
+    parents:['prehistory','trunk','egypt','persia'].map(id=>HISTORY_BRANCHES.find(b=>b.id===id).parent??null),
+    flat:[pre.b,...pre.mid].every(q=>Math.abs(q[1]-y)<.5),persia:off('persia'),egypt:off('egypt'),apart:Math.abs(rail('persia').a[0]-rail('egypt').a[0])>=8,
+    joint:Math.hypot(gr.a[0]-pre.b[0],gr.a[1]-pre.b[1])<.5&&pre.b[0]<x('history-palaces/0')};
+  });
+  assert.deepEqual(root,{stops:['history-migration/0','history-farming/0','history-farming/1'],first:'history-palaces/0',parents:[null,'prehistory','prehistory','prehistory'],
+   flat:true,persia:true,egypt:true,apart:true,joint:true},'史前 at the root: 波斯—阿拉伯 and 埃及 drop off its rail, 希腊 carries on from its end');
   // Pan and zoom.
   const cam0=await p.evaluate(()=>metroUI.state().camera);await p.click('#zoomIn');const cam1=await p.evaluate(()=>metroUI.state().camera);assert.ok(cam1.z>cam0.z);
   await p.mouse.move(700,600);await p.mouse.down();await p.mouse.move(790,650,{steps:5});await p.mouse.up();const cam2=await p.evaluate(()=>metroUI.state().camera);assert.ok(Math.abs(cam2.x-cam1.x)>60);
