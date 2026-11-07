@@ -24,7 +24,9 @@ const engineAt=ref=>sha(ENGINE.map(f=>git('show',`${ref}:${f}`)));
 function fingerprint(){
  const hash=s=>{let h=0x811c9dc5;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619);}return (h>>>0).toString(36)+'.'+s.length.toString(36);};
  const text=x=>JSON.stringify(x,(k,v)=>typeof v==='function'?String(v):v);
- const scenes={},sections={},maps={};
+ const scenes={},sections={},maps={},places={};
+ // Where each section stands on its lines: moving a station changes the order that some suites pin, without changing a word.
+ const rows=typeof TREE_ROWS==='undefined'?{}:TREE_ROWS;
  for(const e of ENTRIES){
   const box=document.createElement('template');box.innerHTML=e.html||'';
   const own=new Map([...box.content.querySelectorAll('[data-scene-text]')].map(p=>[+p.dataset.sceneText,p.outerHTML]));
@@ -35,6 +37,7 @@ function fingerprint(){
     maps[key]=hash(text([s.draw,s.view,s.legend]));
    });
    sections[e.id]=hash(text([e.title,e.en,e.period,e.ch,e.sources]));
+   places[e.id]=hash(text(Object.entries(rows).filter(([k])=>k.startsWith(e.id+'/'))));
   }else{
    scenes[e.id+'/0']=hash(text(e));sections[e.id]=hash(e.title||e.id);
   }
@@ -42,7 +45,7 @@ function fingerprint(){
  // Which stations each line has, and how the lines themselves are defined: parents, spans, how each one ends.
  const lines=[metroUI.data.lines.map(l=>[l.id,metroUI.data.lineStops.get(l.id).map(s=>s.key)]),
   typeof HISTORY_BRANCHES==='undefined'?null:HISTORY_BRANCHES,typeof TREE_ENDS==='undefined'?null:TREE_ENDS];
- return {scenes,sections,maps,lines:hash(JSON.stringify(lines))};
+ return {scenes,sections,maps,places,lines:hash(JSON.stringify(lines))};
 }
 
 // Runs in the page: references across the whole book. Nothing is drawn, so this takes moments.
@@ -153,8 +156,10 @@ function checkScenes({keys,labelKeys}){
   for(const id of Object.keys(now.sections))if(now.sections[id]!==base.sections[id]&&!changed.includes(id+'/0')&&now.scenes[id+'/0'])changed.push(id+'/0');
   const removed=Object.keys(base.scenes).filter(k=>!(k in now.scenes));
   const linesChanged=now.lines!==base.lines,engineChanged=engine!==base.engine;
+  // A baseline from before places were recorded cannot say what moved.
+  const moved=base.places?Object.keys(now.places).filter(id=>now.places[id]!==base.places[id]):[];
   const sections=[...new Set(changed.map(k=>k.split('/')[0]))];
-  console.log(`Since ${from}: ${changed.length} scenes in ${sections.length} sections changed, ${removed.length} removed${linesChanged?'; the lines changed':''}${engineChanged?'; the page code changed':''}.`);
+  console.log(`Since ${from}: ${changed.length} scenes in ${sections.length} sections changed, ${removed.length} removed${moved.length?`; ${moved.length} sections moved on their lines`:''}${linesChanged?'; the lines changed':''}${engineChanged?'; the page code changed':''}.`);
 
   // The whole book's references.
   const book=await page.evaluate(scanBook);
@@ -194,7 +199,7 @@ function checkScenes({keys,labelKeys}){
 
   // Passed: this is now what the next check compares with.
   const next={...now,engine};
-  fs.writeFileSync(path.join(out,'changed.json'),JSON.stringify({from,changed,sections,removed,linesChanged,engineChanged,shots},null,1));
+  fs.writeFileSync(path.join(out,'changed.json'),JSON.stringify({from,changed,sections,moved,removed,linesChanged,engineChanged,shots},null,1));
   if(flag('--pending'))fs.writeFileSync(path.join(out,'baseline.next.json'),JSON.stringify(next));
   else if(!flag('--all')&&!since)fs.writeFileSync(BASELINE,JSON.stringify(next));
   if(shots.length)console.log(`${shots.length} photographs in ${path.relative(process.cwd(),out)||out}/`);

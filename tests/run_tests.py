@@ -122,7 +122,8 @@ def names_a_section(tests_dir: Path, name: str, sections: set) -> bool:
 
 
 def pick_suites(tests_dir: Path, info: dict, all_suites: list) -> list:
-    sections = set(info['sections'])
+    # A section that moved on its lines counts too: suites pin the order of stations.
+    sections = set(info['sections']) | set(info.get('moved', []))
     picked = {s for s in all_suites if s not in WHOLE_BOOK and names_a_section(tests_dir, s, sections)}
     if info['engineChanged']:
         print("The page's own code changed since the last check: running the layout suites here; "
