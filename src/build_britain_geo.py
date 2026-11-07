@@ -52,6 +52,14 @@ NORMAN_IRE = IRELAND.intersection(Polygon([(-9.5, 51.4), (-8.5, 52.8), (-7.5, 53
 regions['mNormanIreland1210'] = NORMAN_IRE
 regions['mGaelicIreland1210'] = IRELAND.difference(NORMAN_IRE.buffer(.01)).buffer(0)
 
+# v85: Ulster Plantation (1609), Civil War division of England & Wales (1643), and Connacht (1652).
+regions['brUlster1609'] = IRELAND.intersection(Polygon([(-8.6, 54.0), (-8.6, 55.45), (-5.35, 55.45), (-5.35, 54.0)])).buffer(0)
+regions['brConnacht1652'] = IRELAND.intersection(Polygon([(-10.5, 52.8), (-10.5, 54.45), (-7.8, 54.45), (-7.8, 52.8)])).buffer(0)
+PARL_POLY = Polygon([(-1.8, 50.6), (-1.4, 52.2), (-0.8, 53.6), (2.0, 53.6), (2.0, 50.6)])
+ENG_WALES = unary_union([regions['mEngland1066'], WALES]).buffer(0)
+regions['brParliament1643'] = ENG_WALES.intersection(PARL_POLY).buffer(0)
+regions['brRoyalist1643'] = ENG_WALES.difference(PARL_POLY.buffer(.01)).buffer(0)
+
 for k, g in regions.items():
     assert not g.is_empty and g.area > 0.3, (k, g.area)
     geo[k] = mapping(g)

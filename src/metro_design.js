@@ -42,7 +42,7 @@ window.NETWORK_DESIGN = (() => {
     egypt: [[-3100, y(ROME), null, -100], [-3100, y(EASTEU)], [632, y(EASTEU)]],
     faith: [[-1400, y(ROME), null, -34], [-1400, y(GERMANY, 1)], [1450, y(GERMANY, 1)]],
     eeurope: [[-700, y(BRITAIN), null, -34], [-700, y(TOP)], [602, y(TOP)], [860, y(EASTEU)], [1455, y(EASTEU)]],
-    britain: [[-55, y(BRITAIN), null, -26], [1472, y(BRITAIN)]],
+    britain: [[-55, y(BRITAIN), null, -26], [1689, y(BRITAIN)]],
     east: [[395, y(ROME), null, -34], [395, y(EAST0)], [518, y(EAST0)], [602, y(PERSIA, 1)], [1450, y(PERSIA, 1)]],
     spain: [[481, y(ROME), null, -34], [481, y(SPAIN)], [1470, y(SPAIN)]],
     france: [[830, y(ROME)], [843, y(FRANCE), 'e'], [1137, y(FRANCE)], [1154, y(BRITAIN, 1)], [1461, y(BRITAIN, 1)], [1484, y(FRANCE)], [1648, y(FRANCE)]],
@@ -64,7 +64,7 @@ window.NETWORK_DESIGN = (() => {
     [641, 641.4, 34],
     [1296, 1300, 74], [1300, 1304, 74], [1438, 1450, 26], [1450, 1454, 72],
     [1462, 1472, 60], [1477, 1484, 40], [1494, 1495, 40], [1495, 1496, 38],
-    [1565, 1566, 38], [1571, 1573, 38], [1625, 1627, 38], [1627, 1631, 38],
+    [1565, 1566, 38], [1571, 1573, 38], [1588, 1590, 38], [1625, 1627, 38], [1627, 1631, 38],
   ];
 
   // Keeps a plain stop off a dashed link that shares its anchor year.

@@ -2073,6 +2073,125 @@ Object.assign(HS,{
   amh_portsmouth:['阿奎德内克岛','Aquidneck Island (Portsmouth)',41.6,-71.25,'纳拉甘西特湾里的岛；1638年哈钦森一派买下，后来就是罗德岛。'],
   amh_mystic:['神秘河寨子','Pequot fort on the Mystic River',41.37,-71.96,'佩科特人的设防村寨；1637年5月26日被英军和印第安盟军焚毁。'],
   amh_pelham:['裂岩','Split Rock (Pelham Bay)',40.88,-73.81,'今纽约布朗克斯一带，当时在新尼德兰治下；1643年安妮·哈钦森全家死于此地。'],
+  bh7_winchester:['温切斯特','Winchester',51.063,-1.308,'汉普郡古都，当时被认作亚瑟王都城卡美洛；1486年9月长子亚瑟在此出生。'],
+  bh7_boulogne:['布洛涅','Boulogne-sur-Mer',50.726,1.614,'法国北部海峡要塞；1492年10月亨利七世围攻此城，换取法王15.9万镑撤军费。'],
+  bh7_blackheath:['黑石原（伦敦城南）','Blackheath',51.466,0.008,'伦敦东南高地；1497年6月亨利七世在此击溃抗税北上的康沃尔起义军。'],
+  bh7_ludlow:['勒德洛城堡','Ludlow Castle',52.367,-2.722,'威尔士边境重镇；1502年4月十五岁的威尔士亲王亚瑟在此病逝。'],
+  bh7_richmond:['里士满宫','Richmond Palace',51.461,-0.309,'泰晤士河畔王宫，亨利七世重建并以自己封爵里士满伯爵命名；1509年在此去世。'],
+  bh8a_fuenterrabia:['巴约讷—丰特拉维亚边境','Bayonne / Fuenterrabia',43.362,-1.791,'法西西端边境；1512年一万英军在此干等五个月，替岳父费迪南二世牵制法军。'],
+  bh8a_therouanne:['泰鲁阿讷与图尔奈','Thérouanne and Tournai',50.636,2.259,'法属阿图瓦与佛兰德边境城池；1513年亨利八世花光国库替盟友打下这两座边城。'],
+  bh8a_flodden:['弗洛登原野','Flodden Field',55.627,-2.175,'英苏边境战场；1513年9月9日留守王后凯瑟琳派军在此击斩苏格兰王詹姆士四世。'],
+  bh8a_guisnes:['吉讷（金帛盛会）','Guisnes (Field of the Cloth of Gold)',50.869,1.87,'加来城南原野；1520年6月亨利八世与法王弗朗索瓦一世在此搭金丝帐篷会盟炫富。'],
+  bh8a_lavenham:['拉文纳姆（萨福克郡）','Lavenham, Suffolk',52.109,0.795,'英格兰东部毛纺重镇；1525年春四千织工与农夫在此抗拒“友好捐”迫使王室退让。'],
+  bh8a_hever:['希弗城堡（肯特郡）','Hever Castle',51.187,0.114,'博林家族乡间庄园；1526年起亨利八世频频写情书追逐退居于此的安妮·博林。'],
+  bh8b_putney:['帕特尼（伦敦西南）','Putney',51.463,-0.216,'泰晤士河南岸村镇；托马斯·克伦威尔出身于此地的铁匠兼啤酒匠家庭。'],
+  bh8b_dunstable:['邓斯特布尔修道院','Dunstable Priory',51.886,-0.521,'贝德福德郡修道院；1533年5月23日大主教克兰麦在此宣判亨利八世与凯瑟琳婚姻无效。'],
+  bh8b_rochester:['罗切斯特','Rochester',51.389,0.504,'肯特郡教区驻地；主教约翰·费舍尔因拒认亨利八世婚姻与至尊法，1535年被斩首。'],
+  bh8b_greenwich:['格林威治宫','Greenwich Palace',51.483,-0.006,'王室宫苑；1533年9月7日安妮·博林在此生下伊丽莎白公主（伊丽莎白一世）。'],
+  bh8c_glastonbury:['格拉斯顿伯里修道院','Glastonbury Abbey',51.146,-2.714,'萨默塞特郡英格兰最富有的千年修道院；1539年11月八十岁院长怀廷被吊死在山头，修道院拆毁。'],
+  bh8c_boxley:['博克斯利修道院','Boxley Abbey',51.312,0.556,'肯特郡熙笃会修道院；1538年2月其会转眼珠的机关“恩典十字架”被拉到伦敦当众拆毁烧掉。'],
+  bh8c_hailes:['黑尔斯修道院','Hailes Abbey',51.968,-1.928,'格洛斯特郡修道院；所藏“基督圣血”在1538年被王室调查官宣布为定期更换的鸭血。'],
+  bh8c_louth:['劳斯（林肯郡）','Louth, Lincolnshire',53.367,-0.005,'林肯郡集镇；1536年10月“求恩巡礼”北方反拆修道院大起义由此点燃。'],
+  bh8c_pontefract:['庞蒂弗拉克特城堡','Pontefract Castle',53.693,-1.307,'约克郡要塞；1536年12月起义军领袖阿斯克在此拟定要求停拆修道院、罢黜克伦威尔的二十四条纲领。'],
+  bh8c_solway:['索尔威苔原','Solway Moss',55.021,-3.025,'英苏西端边境沼泽；1542年11月英军在此击溃苏格兰军，苏格兰王詹姆士五世闻讯气病身亡。'],
+  bh8c_boulogne:['布洛涅','Boulogne-sur-Mer',50.726,1.614,'法国海峡要塞；1544年9月亨利八世耗资65万镑攻占此城。'],
+  benc_wymondham:['温德姆修道院','Wymondham Abbey, Norfolk',52.569,1.112,'诺福克郡集镇修道院；拆毁后律师弗劳尔杜与小地主凯特争围土地，引爆1549年凯特起义。'],
+  benc_norwich:['诺里奇（鼠窝荒原）','Norwich (Mousehold Heath)',52.639,1.325,'东英吉利首府；1549年7—8月罗伯特·凯特率一万六千起义军扎营城外橡树下并攻占此城。'],
+  benc_newton:['牛顿（北安普敦郡）','Newton, Northamptonshire',52.433,-0.713,'米德兰村庄；1607年6月8日上千村民在此扒毁特雷舍姆家族圈占公地的树篱，遭镇压死四五十人。'],
+  benc_laxton:['拉克丝顿（诺丁汉郡）','Laxton, Nottinghamshire',53.193,-0.963,'英格兰中部保留中世纪三圃敞田条田与庄园法庭规矩至今的活化石村庄。'],
+  bm1_pinkie:['平基克卢','Pinkie Cleugh',55.939,-3.035,'爱丁堡以东近郊；1547年9月萨默塞特公爵在此击败苏格兰军。'],
+  bm1_exeter:['埃克塞特','Exeter',50.726,-3.527,'德文郡首府；1549年夏西部民众抗拒新祈祷书在此围城五周。'],
+  bm1_framlingham:['弗拉姆灵厄姆城堡','Framlingham Castle',52.224,1.345,'萨福克郡古堡；1553年7月玛丽一世在此聚兵夺回王位。'],
+  bm1_winchester:['温切斯特','Winchester',51.061,-1.313,'汉普郡古城；1554年7月玛丽一世与腓力二世在此大教堂完婚。'],
+  bm1_oxford:['牛津','Oxford',51.754,-1.258,'大学城；1555至1556年拉蒂默、里德利与克兰麦在此被烧死。'],
+  ber_hatfield:['哈特菲尔德庄园','Hatfield House, Hertfordshire',51.761,-0.209,'伦敦北郊赫特福德郡庄园；伊丽莎白童年与继位前软禁居所，1558年11月在此接见费里亚并闻讯登基。'],
+  ber_woodstock:['伍德斯托克宫','Woodstock Palace, Oxfordshire',51.848,-1.361,'牛津郡王室猎宫；1554—1555年伊丽莎白自伦敦塔出狱后被姐姐玛丽一世软禁于此一年。'],
+  ber_chelsea:['切尔西庄园','Chelsea Manor',51.484,-0.169,'伦敦西郊泰晤士河畔；1547—1548年十四岁的伊丽莎白寄居继母凯瑟琳·帕尔与托马斯·西摩府中。'],
+  ber_greenwich:['格林威治宫','Greenwich Palace',51.483,-0.006,'泰晤士河畔王宫；1533年9月7日伊丽莎白在此降生。'],
+  be1_leith:['利斯港（爱丁堡外港）','Leith',55.975,-3.167,'爱丁堡北侧海港；1560年英军水陆合围驻守于此的法军，迫使法国签《爱丁堡条约》撤兵。'],
+  be1_holyrood:['荷里路德宫（爱丁堡）','Holyrood Palace, Edinburgh',55.953,-3.172,'苏格兰王宫；1566年3月达恩利在此闯入怀孕女王玛丽·斯图亚特卧室刺杀秘书里齐奥。'],
+  be1_dunbar:['邓巴城堡','Dunbar Castle',56.006,-2.514,'苏格兰东海岸要塞；1567年4月24日博思韦尔伯爵将玛丽·斯图亚特绑架至此，五月成婚。'],
+  be1_carlisle:['卡莱尔城堡','Carlisle Castle',54.897,-2.942,'英格兰西北边境要塞；1568年5月兵败退位的玛丽·斯图亚特越过索尔威湾逃入此城，从此被软禁十九年。'],
+  be1_durham:['达勒姆大教堂','Durham Cathedral',54.773,-1.576,'英格兰北方重镇；1569年11月北方天主教伯爵叛乱在此撕毁英文圣经、恢复拉丁弥撒。'],
+  bef_lambeth:['兰贝斯宫','Lambeth Palace',51.495,-0.12,'泰晤士河南岸坎特伯雷大主教官邸；帕克与惠特吉夫特在此整肃清教徒。'],
+  bef_douai:['杜埃','Douai',50.371,3.08,'西属尼德兰大学城；1568年流亡学者艾伦在此创办神学院向英国秘密派神父。'],
+  bef_tyburn:['泰伯恩刑场','Tyburn',51.513,-0.159,'伦敦西郊刑场；1581年耶稣会士坎皮恩与1593年分离派在此受刑。'],
+  bef_durham:['达勒姆','Durham',54.775,-1.576,'英格兰北方主教城；1569年北方伯爵叛乱时在此大教堂搬出旧祭坛做弥撒。'],
+  bef_fawsley:['福斯利庄园','Fawsley Manor',52.203,-1.179,'北安普敦郡乡绅庄园；1588年清教徒地下印刷机曾藏于此印反主教册子。'],
+  be2_sanjuan:['圣胡安-德乌卢阿','San Juan de Ulúa (Veracruz)',19.209,-96.131,'墨西哥湾海港；1568年9月霍金斯与德雷克在此遭西班牙舰队突袭。'],
+  be2_deptford:['德雷特福德','Deptford',51.482,-0.024,'泰晤士河南岸皇家船厂；1581年伊丽莎白在此登船封德雷克为爵士。'],
+  be2_nonsuch:['无双宫','Nonsuch Palace',51.353,-0.232,'萨里郡王室行宫；1585年8月伊丽莎白在此签署公开出兵援荷条约。'],
+  be2_chartley:['查特利庄园','Chartley Manor',52.846,-1.979,'斯塔福德郡庄园；1586年沃尔辛厄姆在此设下啤酒桶传信圈套。'],
+  be2_fotheringhay:['福瑟林黑城堡','Fotheringhay Castle',52.525,-0.405,'北安普敦郡古堡；1587年2月8日苏格兰女王玛丽在此大厅被斩。'],
+  baa_tilbury:['蒂尔伯里','Tilbury',51.453,0.37,'泰晤士河口北岸埃塞克斯郡要塞；1588年8月伊丽莎白一世在此检阅抗西陆军并发表演说。'],
+  baa_margate:['玛格特','Margate',51.389,1.386,'肯特郡东北角海港；1588年秋击败无敌舰队返航的英国水手因停发补给在此成批病饿而死。'],
+  baa_harwich:['哈里奇','Harwich',51.946,1.284,'埃塞克斯郡东岸军港；1588年秋英国舰队返航停泊港之一，水手因伤寒与欠饷死于街头。'],
+  baa_santander:['桑坦德','Santander',43.462,-3.81,'西班牙北岸海港；1588年无敌舰队四十余艘残船退守于此，1589年德雷克违抗王命未去攻打。'],
+  baa_dungannon:['邓甘嫩','Dungannon',54.508,-6.767,'北爱尔兰阿尔斯特重镇；蒂龙伯爵休·奥尼尔的大本营，九年战争反英起义中枢。'],
+  baa_yellow_ford:['黄水滩（布莱克沃特河）','Yellow Ford (Blackwater)',54.442,-6.66,'北爱尔兰阿马郡河滩；1598年8月14日休·奥尼尔在此设伏歼灭两千英军主力。'],
+  baa_kinsale:['金塞尔','Kinsale',51.706,-8.522,'爱尔兰南岸科克郡海港；1601年秋四千西班牙军在此登陆，遭英军统帅芒乔伊围困击败。'],
+  baa_mellifont:['梅利丰特','Mellifont Abbey',53.742,-6.466,'爱尔兰东部劳斯郡旧修道院；1603年3月30日（伊丽莎白一世死后六天）休·奥尼尔在此签约投降。'],
+  be3_southwark:['萨瑟克（环球剧场）','Southwark (Globe Theatre)',51.508,-0.097,'泰晤士河南岸治安自由区；1599年莎士比亚入股的环球剧场在此开张，1601年2月加演《理查二世》。'],
+  be3_stratford:['埃文河畔斯特拉特福','Stratford-upon-Avon',52.192,-1.708,'沃里克郡集镇；1564年威廉·莎士比亚生于此地皮匠家庭，晚年返乡购置房产并于1616年病逝。'],
+  be3_richmond:['里士满宫','Richmond Palace',51.461,-0.309,'伦敦西南泰晤士河畔王宫；1603年3月24日凌晨六十九岁的伊丽莎白一世在此病逝，都铎王朝绝嗣。'],
+  bj1_londonderry:['伦敦德里','Londonderry (Derry)',54.996,-7.309,'北爱尔兰阿尔斯特重镇；1609年起由伦敦十二大行会出资重建城墙并殖民，改称伦敦德里。'],
+  bj1_theobalds:['西奥博尔德宫','Theobalds House',51.685,-0.056,'赫特福德郡皇家行宫，原系小塞西尔私宅；詹姆士一世酷爱在此狩猎，1625年3月27日病逝于此。'],
+  bc1_portsmouth:['朴茨茅斯','Portsmouth',50.805,-1.087,'汉普郡军港；1628年8月23日白金汉公爵在此筹备二救拉罗谢尔时被欠饷军官刺死。'],
+  bc1_buckinghamshire:['大汉普登','Great Hampden, Buckinghamshire',51.714,-0.774,'白金汉郡庄园；富绅约翰·汉普登在此拒交20先令船税，引发1637年全国瞩目的宪制诉讼。'],
+  bc1_glasgow:['格拉斯哥','Glasgow',55.862,-4.235,'苏格兰西部重镇；1638年11月苏格兰教会大会在此大教堂集会，抗命废除全部主教。'],
+  bc1_newburn:['纽伯恩','Newburn',54.983,-1.745,'泰恩河渡口；1640年8月28日苏格兰圣约军在此击溃英军，占领纽卡斯尔煤矿。'],
+  bc1_ripon:['里彭','Ripon',54.138,-1.524,'约克郡小镇；1640年10月查理一世在此签下停火协议，答应每天付给苏格兰军850镑留驻军饷。'],
+  bcw_oxford:['牛津','Oxford',51.752,-1.258,'泰晤士河上游大学城；1642—1646年内战期间查理一世的战时首都与保王党大本营。'],
+  bcw_edgehill:['埃奇山','Edgehill',52.14,-1.482,'沃里克郡山脊；1642年10月23日查理一世与埃塞克斯伯爵在此打成平手，内战首场主力会战。'],
+  bcw_marston:['马斯顿荒原','Marston Moor',53.964,-1.264,'约克城西荒原；1644年7月2日克伦威尔率铁骑军在此大破鲁珀特亲王，夺取英格兰北方。'],
+  bcw_windsor_park:['温莎','Windsor',51.484,-0.604,'泰晤士河畔王室重镇；1645年春费尔法克斯与克伦威尔在此整训组建2.2万新模范军。'],
+  bcw_naseby:['纳斯比','Naseby',52.398,-0.989,'北安普敦郡村庄；1645年6月14日新模范军在此全歼王军主力并缴获查理一世机密文件柜。'],
+  breg_holmby:['霍姆比庄园','Holdenby House, Northamptonshire',52.302,-0.985,'北安普敦郡庄园；1647年6月4日骑兵准尉乔伊斯率五百骑兵在此从议会手中劫走查理一世。'],
+  breg_putney:['普特尼','Putney',51.465,-0.214,'伦敦西南泰晤士河畔教区；1647年10—11月新模范军总委员会在此圣玛丽教堂举行宪制大辩论。'],
+  breg_carisbrooke:['卡里斯布鲁克城堡','Carisbrooke Castle, Isle of Wight',50.687,-1.314,'怀特岛古堡；1647年11月查理一世逃至此地被软禁，并在此与苏格兰代表密签《婚约协定》。'],
+  breg_preston:['普雷斯顿','Preston',53.759,-2.699,'兰开夏郡重镇；1648年8月17—19日克伦威尔率八千精兵在此击溃南下的两万苏格兰大军。'],
+  breg_colchester:['科尔切斯特','Colchester',51.889,0.904,'埃塞克斯郡重镇；1648年6—8月费尔法克斯围城七十余日平定保王党叛乱，枪决两名降将。'],
+  bcom_burford:['伯福德','Burford, Oxfordshire',51.808,-1.637,'牛津郡西部小镇；1649年5月克伦威尔与费尔法克斯连夜奔袭此地，在教堂墓地枪决平等派哗变士兵。'],
+  bcom_drogheda:['德罗赫达','Drogheda',53.718,-6.348,'爱尔兰东岸博因河口重镇；1649年9月克伦威尔攻破该城，下令屠杀拒绝投降的守军与神父。'],
+  bcom_wexford:['韦克斯福德','Wexford',52.337,-6.463,'爱尔兰东南海港；1649年10月新模范军闯入城内，屠杀守军与市民约两千人。'],
+  bcom_galway:['高威','Galway',53.271,-9.057,'爱尔兰西部康诺特省海港；1652年《爱尔兰安置法》将大批被没收地产的天主教徒强迁至香农河以西的康诺特荒原。'],
+  bcom_dunbar:['邓巴','Dunbar',56.003,-2.516,'苏格兰东洛锡安海边小城；1650年9月3日克伦威尔在此拂晓突袭，以一万残兵击溃两万苏格兰长老会大军。'],
+  bcom_worcester:['伍斯特','Worcester',52.192,-2.222,'英格兰西部塞文河畔城市；1651年9月3日克伦威尔在此围歼南下反扑的查理二世主力，终结内战。'],
+  bcom_boscobel:['博斯科贝尔庄园','Boscobel House',52.671,-2.242,'什罗普郡边境林区庄园；1651年9月6日伍斯特战败后的查理二世在此爬上大橡树躲过搜捕。'],
+  bcom_shoreham:['肖勒姆','Shoreham-by-Sea',50.833,-0.273,'苏塞克斯海岸小港；1651年10月化装潜逃六周的查理二世由此搭乘运煤船渡海逃往法国。'],
+  bcom_downs:['唐斯锚地（多佛外海）','The Downs (off Dover)',51.21,1.45,'英吉利海峡窄口锚地；1652年5月英荷舰队因降旗礼争执在此开火，引爆第一次英荷战争。'],
+  bcrom_huntingdon:['亨廷登（欣钦布鲁克）','Huntingdon (Hinchingbrooke)',52.331,-0.186,'剑桥郡西北集镇；1538年理查·克伦威尔获授欣钦布鲁克女修道院，曾孙奥利弗1599年生于此地。'],
+  bcrom_ramsey:['拉姆齐修道院','Ramsey Abbey',52.45,-0.104,'亨廷登郡大修道院；1540年理查·克伦威尔花约4963镑买下该院地产，跃居东英吉利巨富。'],
+  bcrom_santodomingo:['圣多明各','Santo Domingo',18.476,-69.893,'加勒比海伊斯帕尼奥拉岛首府；1655年4月克伦威尔派出的远征军攻打此城惨败。'],
+  bcrom_jamaica:['牙买加','Jamaica',17.997,-76.793,'加勒比海岛屿；1655年5月英军自圣多明各败退后夺取该岛，日后成为英国蔗糖重镇。'],
+  bcrom_salisbury:['索尔兹伯里','Salisbury',51.069,-1.795,'威尔特郡首府；1655年3月彭拉多克在此发动保王党起义，触发全国少将军管。'],
+  bcrom_tunis:['突尼斯（戈莱塔）','Porto Farina (Tunis)',37.183,10.183,'北非突尼斯海港；1655年4月布莱克率英国舰队闯入港内焚毁巴巴里海盗战船。'],
+  bcrom_santacruz:['圣克鲁斯港（特内里费）','Santa Cruz de Tenerife',28.468,-16.254,'大西洋加那利群岛港口；1657年4月布莱克在此全歼西班牙美洲运银船队。'],
+  bcrom_coldstream:['科尔斯特里姆','Coldstream',55.653,-2.251,'苏格兰与英格兰交界特威德河渡口；1660年元旦蒙克将军率驻苏精兵由此渡河南下进京。'],
+  bc2_breda:['布雷达','Breda',51.589,4.776,'荷兰南部城市；1660年4月查理二世在此发出附有“交议会决定”免责尾巴的《布雷达宣言》。'],
+  bc2_dover:['多佛','Dover',51.128,1.313,'肯特郡海峡港口；1660年5月查理二世在此登陆复辟，1670年5月在此同法国密签《多佛条约》。'],
+  bc2_chatham:['查塔姆（梅德韦河）','Chatham (River Medway)',51.389,0.526,'泰晤士河口支流皇家船坞；1667年6月荷兰舰队冲断铁索闯入此地，焚毁英舰并拖走旗舰“皇家查理号”。'],
+  bc2_oxford:['牛津','Oxford',51.752,-1.258,'保王党重镇；1681年3月查理二世将议会挪至此处召开，拿到法王津贴后仅七天便解散议会。'],
+  bc2_ryehouse:['黑麦屋（霍兹登）','Rye House, Hoddesdon',51.771,0.008,'赫特福德郡庄园；1683年激进辉格党人密谋在此伏击查理二世兄弟败露，引发全国大清洗。'],
+  bj2_lyme:['莱姆里吉斯','Lyme Regis',50.725,-2.935,'多塞特郡海港；1685年6月11日蒙茅斯公爵自荷兰率八十余人在此登陆。'],
+  bj2_sedgemoor:['塞奇莫尔','Sedgemoor',51.116,-2.926,'萨默塞特郡低地；1685年7月6日皇家军队在此夜战击溃蒙茅斯农夫义军。'],
+  bj2_winchester:['温切斯特','Winchester',51.063,-1.308,'汉普郡重镇；1685年8月25日大法官杰弗里斯在此开启西部巡回审判。'],
+  bj2_fontainebleau:['枫丹白露','Fontainebleau',48.402,2.7,'巴黎东南王宫；1685年10月18日路易十四在此签署敕令废止《南特敕令》。'],
+  bj2_hounslow:['豪恩斯洛荒原','Hounslow Heath',51.465,-0.385,'伦敦西郊荒原；1686年起詹姆士二世每年在此集结上万大军演习震慑首都。'],
+  bj2_oxford:['牛津','Oxford',51.752,-1.258,'国教神学大本营；1687年国王强行将莫德林学院改为天主教神学院。'],
+  bj2_lambeth:['兰贝斯宫','Lambeth Palace',51.495,-0.12,'泰晤士河南岸坎特伯雷大主教官邸；1688年5月七位主教在此联名写抗命书。'],
+  bj2_st_james:['圣詹姆斯宫','St James Palace',51.505,-0.138,'伦敦西敏王宫；1688年6月10日王后摩德纳的玛丽在此产下天主教太子。'],
+  bgl_hellevoetsluis:['赫勒富特斯劳斯','Hellevoetsluis',51.825,4.13,'荷兰马斯河口军港；1688年11月1日威廉三世率463艘船在此扬帆渡海。'],
+  bgl_torbay:['托贝港','Torbay',50.435,-3.525,'德文郡西南海湾；1688年11月5日威廉三世借东风率一万五千大军在此登陆。'],
+  bgl_salisbury:['索尔兹伯里','Salisbury',51.069,-1.795,'威尔特郡重镇；1688年11月詹姆士二世在此督师时遭大将丘吉尔叛逃。'],
+  bgl_faversham:['法弗舍姆','Faversham',51.315,0.892,'肯特郡海边小镇；1688年12月12日首次化装出逃的詹姆士二世在此被渔民截获。'],
+  bgl_rochester:['罗切斯特','Rochester',51.388,0.505,'肯特郡梅德韦河畔小城；1688年12月23日威廉故意撤走卫兵放任岳父由此逃法。'],
+  bgl_st_james:['圣詹姆斯宫','St James Palace',51.505,-0.138,'伦敦西区王宫；1677年玛丽在此完婚，1689年初威廉在此召见两党领袖摊牌。'],
+  bgl_kensington:['肯辛顿宫','Kensington Palace',51.505,-0.188,'伦敦西郊王宫；1689年威廉与玛丽购入改建，玛丽二世于1694年底在此病逝。'],
+  bgl_greenwich:['格林威治','Greenwich',51.482,-0.005,'泰晤士河畔旧王宫；玛丽二世于1692年海战大捷后下诏将其改建为皇家海军医院。'],
+  bgl_boyne:['博因河','River Boyne',53.722,-6.452,'爱尔兰东部德罗赫达近郊河谷；1690年7月1日威廉三世在此击败詹姆士二世。'],
+  bgl_glencoe:['格伦科峡谷','Glen Coe',56.682,-5.102,'苏格兰西部高地峡谷；1692年2月13日政府军在此雪夜屠杀麦克唐纳氏族东道主。'],
+  bgl_hanover:['汉诺威','Hanover',52.375,9.732,'德意志北部选帝侯国首府；1701年《王位继承法》指定汉诺威选帝侯夫人索菲亚接班。'],
 });
 function hp(d,key,opt={}){
   const [n,en,la,lo,note]=HS[key];
@@ -12234,6 +12353,855 @@ const HISTORY_ENTRIES=[
     hp(d,'k_york',{left:1,note:'北方约克派基地归顺都铎王朝。'});
    },[['fill',HC.britain,'红白玫瑰合一、确立中央集权的都铎王朝英格兰与威尔士'],['dot',HC.war,'1486年伦敦大婚与1487年6月斯托克收官之战'],['dot','#2a2018','约克']])
  ]},
+{id:'history-britain-henry7',ch:12,title:'亨利七世：篡位者如何稳住局面',short:'亨利七世',en:'Henry VII: How a Usurper Kept the Throne',period:'1485—1509年',c:HC.britain,
+ scenes:[
+  hs('1485—1486年','倒签登基日与都铎玫瑰联姻','博斯沃思在莱斯特郡，加冕与大婚在伦敦威斯敏斯特；两朵玫瑰在此合为一室。',[[50.8,-4.5],[54.2,1.2]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'mWales',HC.celt,{fillOpacity:.26});
+    hp(d,'rs4_bosworth',{left:1,note:'1485年8月22日决战地；登基日被倒签到前一天。'});
+    hp(d,'k_london',{kind:'battle',note:'1485年10月加冕，1486年1月18日迎娶约克的伊丽莎白。'});
+   },[['fill',HC.britain,'亨利七世入主的英格兰'],['fill',HC.celt,'都铎起家的威尔士'],['dot',HC.war,'伦敦威斯敏斯特'],['dot','#2a2018','博斯沃思']]),
+  hs('1486—1490年','宗教算盘：买教宗诏书，停办封圣','伦敦与罗马遥相呼应：绝罚诏书从罗马发来，亨利六世的遗骨留在温莎。',[[41.0,-4.0],[53.5,14.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});ha(d,'mPapal1210',HC.faith,{fillOpacity:.3});
+    hp(d,'rome',{note:'1486年3月英诺森八世颁诏，宣布挑战都铎王位者自动绝罚。'});
+    hp(d,'k_london',{left:1,note:'亨利七世嫌罗马封圣收费太贵，只把亨利六世移葬温莎。'});
+   },[['fill',HC.britain,'都铎英格兰'],['fill',HC.faith,'教宗国'],['dot','#2a2018','伦敦与罗马']]),
+  hs('1486—1505年','亚瑟王旗号与温切斯特产房','红龙旗出自威尔士，长子亚瑟特意生在南方的温切斯特古都。',[[50.4,-5.2],[53.6,1.0]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'mWales',HC.celt,{fillOpacity:.28});
+    hp(d,'bh7_winchester',{kind:'battle',left:1,note:'1486年9月20日长子亚瑟在此出生，借亚瑟王传说造势。'});
+    hp(d,'k_london',{note:'宫廷举行触摸治病仪式，一年只摸七八人以省金天使币。'});
+   },[['fill',HC.britain,'英格兰'],['fill',HC.celt,'红龙传说源头威尔士'],['dot',HC.war,'温切斯特'],['dot','#2a2018','伦敦']]),
+  hs('1489—1497年','围布洛涅讹钱与两次抗税民变','北边的约克、西南的康沃尔先后为抗税起事；渡海围布洛涅则在海峡对岸。',[[49.6,-5.6],[54.6,2.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.24});
+    hp(d,'k_york',{left:1,note:'1489年4月约克郡抗税暴动，打死催税的诺森伯兰伯爵。'});
+    hp(d,'bh7_boulogne',{kind:'battle',note:'1492年10月围城两周，换取法国15.9万镑赔款撤兵。'});
+    hp(d,'bh7_blackheath',{kind:'battle',left:1,note:'1497年6月17日，王军在此击溃抗税北上的康沃尔人。'});
+    hr(d,[[50.3,-4.8],[51.1,-2.0],[51.47,0.01]],HC.war);
+   },[['fill',HC.britain,'抗税频发的英格兰'],['fill',HC.france,'付钱送客的法兰西'],['dline',HC.war,'1497年康沃尔抗税大军进逼伦敦路线'],['dot',HC.war,'布洛涅与黑石原'],['dot','#2a2018','约克']]),
+  hs('1487—1503年','两个假王子与西、苏两桩联姻','假王子从爱尔兰、佛兰德和苏格兰轮番袭来；两桩婚姻一南一北拆掉后台。',[[42.0,-9.0],[56.8,5.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'mScotland1200',HC.celt,{fillOpacity:.26});ha(d,'sCastile',HC.spain,{fillOpacity:.22});
+    hp(d,'rs4_stoke',{left:1,note:'1487年6月击败假王子西姆内尔，将其罚入御膳房转烤肉叉。'});
+    hp(d,'uk9_edinburgh',{note:'苏格兰王詹姆士四世先收留沃贝克，1503年迎娶亨利七世长女玛格丽特。'});
+    hp(d,'k_london',{kind:'battle',left:1,note:'1499年绞死沃贝克；1501年11月亚瑟在此迎娶西班牙公主凯瑟琳。'});
+   },[['fill',HC.britain,'英格兰'],['fill',HC.celt,'联姻讲和的苏格兰'],['fill',HC.spain,'送女联姻的西班牙'],['dot',HC.war,'伦敦'],['dot','#2a2018','斯托克与爱丁堡']]),
+  hs('1485—1509年','莫顿之叉与保证金契约捆贵族','坎特伯雷大主教莫顿与威斯敏斯特星室法庭，替国王用欠条管住全境贵族。',[[50.6,-4.5],[54.5,1.6]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.38});
+    hp(d,'w_canterbury',{note:'大主教莫顿以“莫顿之叉”向阔绰与节俭的贵族两头征款。'});
+    hp(d,'k_london',{kind:'battle',left:1,note:'枢密院与星室法庭用保证金契约套牢62家大贵族中的46家。'});
+   },[['fill',HC.britain,'被保证金契约套牢的英格兰贵族领地'],['dot',HC.war,'伦敦威斯敏斯特'],['dot','#2a2018','坎特伯雷']]),
+  hs('1502—1509年','亚瑟早夭、里士满宫算账与新王杀酷吏','长子死在威尔士边境勒德洛，老王死在泰晤士河畔里士满，酷吏斩于伦敦塔。',[[50.8,-4.2],[53.5,1.0]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'mWales',HC.celt,{fillOpacity:.26});
+    hp(d,'bh7_ludlow',{left:1,note:'1502年4月2日，结婚五个月的长子亚瑟在此病逝。'});
+    hp(d,'bh7_richmond',{kind:'battle',left:1,note:'1509年4月21日亨利七世在此去世，留下充盈国库。'});
+    hp(d,'k_london',{kind:'battle',note:'亨利八世即位后将老爹的财务官恩普森与达德利关入伦敦塔斩首。'});
+   },[['fill',HC.britain,'英格兰'],['fill',HC.celt,'威尔士亲王驻地'],['dot',HC.war,'里士满宫与伦敦塔'],['dot','#2a2018','勒德洛城堡']])
+ ]},
+{id:'history-britain-henry8-1',ch:12,title:'亨利八世（上）：几次打法国，都替别人做了嫁衣',short:'亨利八世（上）',en:'Henry VIII (I): Fighting France for Other Men’s Gain',period:'1509—1529年',c:HC.britain,
+ scenes:[
+  hs('1509年','十八岁新王登基与迎娶寡嫂','伦敦威斯敏斯特加冕，格林威治完婚；十八岁的亨利八世接手父亲满库金银。',[[50.6,-3.5],[53.2,1.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});
+    hp(d,'k_london',{kind:'battle',note:'1509年6月亨利八世娶兄长遗孀凯瑟琳，同月在威斯敏斯特加冕。'});
+   },[['fill',HC.britain,'亨利八世初登基的英格兰'],['dot',HC.war,'伦敦与格林威治']]),
+  hs('1512年','第一回当冤大头：巴约讷淋雨与纳瓦拉易手','英军被晾在比斯开湾岸边的法西边境，老丈人费迪南趁机在南面吞并纳瓦拉。',[[41.5,-5.0],[51.8,2.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.3});ha(d,'fFrance1547',HC.france,{fillOpacity:.22});ha(d,'sCastile',HC.spain,{fillOpacity:.26});ha(d,'fNavarreBearn',HC.war,{fillOpacity:.38});
+    hp(d,'bh8a_fuenterrabia',{kind:'battle',left:1,note:'1512年6—10月，一万英军在此淋雨干等五个月后哗变撤归。'});
+    hp(d,'k_london',{left:1,note:'亨利八世自掏军费出兵，结果连阿基坦的边都没摸着。'});
+   },[['fill',HC.britain,'出钱出兵的英格兰'],['fill',HC.spain,'岳父费迪南二世的西班牙'],['fill',HC.war,'被费迪南二世趁机吞并的纳瓦拉'],['fill',HC.france,'法兰西王国'],['dot',HC.war,'法西边境英军营地'],['dot','#2a2018','伦敦']]),
+  hs('1513年','第二回当提款机：泰鲁阿讷与弗洛登之战','亨利八世在海峡对岸花光国库打下两座小城；留守王后在北境弗洛登大破苏格兰军。',[[49.5,-4.5],[56.5,3.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'mScotland1200',HC.celt,{fillOpacity:.28});ha(d,'sNetherlands1556',HC.germany,{fillOpacity:.24});
+    hp(d,'bh8a_therouanne',{kind:'battle',note:'1513年8—9月英军攻占泰鲁阿讷与图尔奈，皇帝领日薪助战。'});
+    hp(d,'bh8a_flodden',{kind:'battle',left:1,note:'1513年9月9日弗洛登之战：英军击斩苏格兰王詹姆士四世。'});
+    hp(d,'k_london',{left:1,note:'留守摄政的王后凯瑟琳调度北方防务，将苏格兰王血衣寄往法国大营。'});
+   },[['fill',HC.britain,'英格兰'],['fill',HC.celt,'战败丧王的苏格兰'],['fill',HC.germany,'得利的哈布斯堡尼德兰'],['dot',HC.war,'泰鲁阿讷与弗洛登战场'],['dot','#2a2018','伦敦']]),
+  hs('1514—1521年','金帛盛会与大国间反复横跳','加来城南搭起金丝帐篷与法王会盟，几天后就在隔壁格拉沃利讷同查理五世密会。',[[48.5,-1.8],[52.2,3.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});ha(d,'fFrance1547',HC.france,{fillOpacity:.24});ha(d,'sNetherlands1556',HC.spain,{fillOpacity:.24});
+    hp(d,'bh8a_guisnes',{kind:'battle',left:1,note:'1520年6月金帛盛会：亨利八世与弗朗索瓦一世比武摔跤，烧掉数万镑。'});
+    hp(d,'spa_gravelines',{note:'盛会刚散，亨利八世在此与查理五世密谈结盟攻法。'});
+    hp(d,'w_paris',{left:1,note:'1514年玛丽·都铎嫁路易十二；1518年沃尔西把图尔奈卖回给法国。'});
+   },[['fill',HC.britain,'英格兰与加来飞地'],['fill',HC.france,'法兰西'],['fill',HC.spain,'查理五世的尼德兰'],['dot',HC.war,'吉讷（金帛盛会）'],['dot','#2a2018','格拉沃利讷与巴黎']]),
+  hs('1522—1525年','帕维亚后被查理耍，国内抗拒“友好捐”','萨福克郡织工抗税迫使王室收手；远在意大利帕维亚大胜的查理五世拒绝同英国分赃。',[[44.5,-2.5],[53.5,11.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'fFrance1547',HC.france,{fillOpacity:.22});
+    hp(d,'bh8a_lavenham',{kind:'battle',left:1,note:'1525年春萨福克郡四千人抗拒“友好捐”，亨利八世被迫撤回征税令。'});
+    hp(d,'k_london',{left:1,note:'沃尔西替国王背锅，谎称强征捐税是自己出的主意。'});
+    hp(d,'w_paris',{note:'1523年英军一度逼近巴黎八十公里，因查理五世不来接应而退兵。'});
+   },[['fill',HC.britain,'爆发抗税风潮的英格兰'],['fill',HC.france,'法兰西'],['dot',HC.war,'拉文纳姆抗税地'],['dot','#2a2018','伦敦与巴黎']]),
+  hs('1526—1527年','绝嗣焦虑与希弗城堡的情书','希弗城堡就在伦敦东南肯特郡；安妮·博林退居乡下，逼亨利八世拿王后桂冠来换。',[[50.8,-1.5],[52.2,1.4]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.38});
+    hp(d,'bh8a_hever',{kind:'battle',note:'博林家庄园：安妮在此拒当情妇，收到亨利十七封情书。'});
+    hp(d,'k_london',{left:1,note:'四十岁的王后凯瑟琳只育有一女玛丽，亨利八世决心休妻再娶。'});
+   },[['fill',HC.britain,'英格兰东南'],['dot',HC.war,'肯特郡希弗城堡'],['dot','#2a2018','伦敦']]),
+  hs('1527—1529年','罗马人质、黑修士庭审与沃尔西倒台','罗马教宗被查理五世看管，伦敦黑修士法庭休庭，沃尔西最终病死在莱斯特修道院。',[[41.2,-3.0],[54.2,14.0]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});ha(d,'mPapal1210',HC.faith,{fillOpacity:.3});ha(d,'sHabsburgSpain1556',HC.spain,{fillOpacity:.22});
+    hp(d,'rome',{note:'1527年罗马之劫后，克莱芒七世受制于查理五世不敢判离婚。'});
+    hp(d,'k_london',{kind:'battle',left:1,note:'1529年6月黑修士法庭上凯瑟琳下跪抗辩，7月案件被调回罗马。'});
+    hp(d,'hy5_leicester',{left:1,note:'1530年11月29日，沃尔西在押赴伦敦途中病死于此。'});
+   },[['fill',HC.britain,'英格兰'],['fill',HC.faith,'教宗国'],['fill',HC.spain,'查理五世治下领地'],['dot',HC.war,'伦敦黑修士法庭'],['dot','#2a2018','罗马与莱斯特']])
+ ]},
+{id:'history-britain-henry8-2',ch:12,title:'亨利八世（中）：为了离婚，一步步脱离罗马',short:'亨利八世（中）',en:'Henry VIII (II): Breaking with Rome to Get a Divorce',period:'1529—1536年',c:HC.britain,
+ scenes:[
+  hs('1529—1530年','莫尔接任大法官与克伦威尔钻营','帕特尼就在伦敦西南泰晤士河畔；铁匠之子克伦威尔从这里走进威斯敏斯特权力中心。',[[51.1,-1.2],[52.0,0.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});
+    hp(d,'bh8b_putney',{left:1,note:'克伦威尔出生地；早年曾替沃尔西经办修道院改建学堂。'});
+    hp(d,'k_london',{kind:'battle',note:'1529年莫尔接任大法官；克伦威尔进入议会替国王谋划脱离罗马。'});
+   },[['fill',HC.britain,'英格兰王畿'],['dot',HC.war,'伦敦威斯敏斯特'],['dot','#2a2018','帕特尼']]),
+  hs('1530—1531年','教士会议交十万镑，勉强开一扇窗','坎特伯雷与约克两大教省的教士会议，各自花重金向伦敦王室买赦免。',[[50.6,-3.5],[54.5,1.6]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});
+    hp(d,'w_canterbury',{note:'南方教省交10万镑罚金，在承认国王最高首领条文里加上限定语。'});
+    hp(d,'k_york',{left:1,note:'北方约克教省另交1.88万镑买赦免。'});
+    hp(d,'k_london',{kind:'battle',left:1,note:'王室控全体教士犯“蔑视王权罪”，逼教会开出第一扇窗。'});
+   },[['fill',HC.britain,'两大教省缴纳罚金的英格兰'],['dot',HC.war,'伦敦'],['dot','#2a2018','坎特伯雷与约克']]),
+  hs('1532年','下议院递控诉书，把窗拆成大门','威斯敏斯特下议院与圣保罗教士会场近在咫尺，克伦威尔两头施压逼教士缴械。',[[51.1,-1.2],[52.0,0.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.38});
+    hp(d,'k_london',{kind:'battle',note:'1532年3月下议院递控诉书，5月教士交出立法权，莫尔辞官。'});
+   },[['fill',HC.britain,'教士向王权交出立法权的英格兰'],['dot',HC.war,'伦敦威斯敏斯特']]),
+  hs('1533年','与肚子赛跑：邓斯特布尔判婚与伊丽莎白降生','邓斯特布尔在伦敦西北，格林威治在伦敦东南；五个月内跑完禁上诉、判离婚与分娩。',[[51.1,-1.5],[52.3,1.3]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.38});
+    hp(d,'k_london',{left:1,note:'1533年1月秘密完婚；4月立法切断向罗马教廷上诉之路。'});
+    hp(d,'bh8b_dunstable',{kind:'battle',left:1,note:'1533年5月23日，大主教克兰麦在此宣判凯瑟琳婚姻无效。'});
+    hp(d,'bh8b_greenwich',{kind:'battle',note:'1533年9月7日安妮生下伊丽莎白公主，差三个多月就是私生女。'});
+   },[['fill',HC.britain,'宣告“英格兰是一个帝国”的都铎王国'],['dot',HC.war,'邓斯特布尔与格林威治'],['dot','#2a2018','伦敦']]),
+  hs('1534年','《至尊法》掀掉屋顶，脱离罗马','罗马教宗的判决被挡在海峡之外，英格兰教会最高首领正式换作国王。',[[41.2,-3.5],[54.0,14.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.38});ha(d,'mWales',HC.britain,{fillOpacity:.32});ha(d,'mPapal1210',HC.faith,{fillOpacity:.28});
+    hp(d,'k_london',{kind:'battle',left:1,note:'1534年11月《至尊法》抹去教士限定语，国王正式取代教宗。'});
+    hp(d,'rome',{note:'克莱芒七世1534年7月判凯瑟琳胜诉，此时英国已断绝与罗马关系。'});
+   },[['fill',HC.britain,'脱离罗马教廷的英格兰与威尔士'],['fill',HC.faith,'失去英格兰教区的罗马教廷'],['dot',HC.war,'伦敦'],['dot','#2a2018','罗马']]),
+  hs('1535年','杀硬骨头立威：莫尔与费舍尔上断头台','罗切斯特主教费舍尔与前大法官莫尔，先后在伦敦塔山断头台掉了脑袋。',[[51.0,-1.0],[52.0,1.2]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.38});
+    hp(d,'bh8b_rochester',{note:'费舍尔主教驻地；保罗三世封其为枢机，反促使其加速被杀。'});
+    hp(d,'k_london',{kind:'battle',left:1,note:'1535年6月22日费舍尔、7月6日莫尔在伦敦塔山被斩首。'});
+   },[['fill',HC.britain,'以叛国法弹压异议的英格兰'],['dot',HC.war,'伦敦塔山刑场'],['dot','#2a2018','罗切斯特']]),
+  hs('1536年5月','安妮·博林被斩与伊丽莎白沦为私生女','请自法国加来的剑手在伦敦塔内行刑；十一天后亨利八世迎娶第三任王后简·西摩。',[[50.5,-1.5],[52.2,2.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.38});
+    hp(d,'spa_calais',{note:'亨利八世提前从加来请来精通双手长剑斩首的法国剑手。'});
+    hp(d,'k_london',{kind:'battle',left:1,note:'1536年5月19日安妮在伦敦塔内被斩，伊丽莎白被判为私生女。'});
+   },[['fill',HC.britain,'英格兰与加来'],['dot',HC.war,'伦敦塔'],['dot','#2a2018','加来']])
+ ]},
+{id:'history-britain-henry8-3',ch:12,title:'亨利八世（下）：拆修道院与克伦威尔之死',short:'亨利八世（下）',en:'Henry VIII (III): Dissolving the Monasteries and the Fall of Cromwell',period:'1536—1547年',c:HC.britain,
+ scenes:[
+  hs('1535—1536年','克伦威尔任宗教副手与新教信纲','伦敦与坎特伯雷联手下发《十条信纲》与英文《圣经》，冲击全国传统堂区。',[[50.6,-3.5],[53.5,1.6]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});
+    hp(d,'k_london',{kind:'battle',left:1,note:'1535年克伦威尔任王室宗教副手，1536年颁《十条信纲》。'});
+    hp(d,'w_canterbury',{note:'大主教克兰麦配合克伦威尔推进礼仪改革与英文圣经。'});
+   },[['fill',HC.britain,'推行初步宗教改革的英格兰'],['dot',HC.war,'伦敦'],['dot','#2a2018','坎特伯雷']]),
+  hs('1536—1540年','铲平近九百座修道院','从西南最富的格拉斯顿伯里到北方各郡，近九百座修道院在四年间被查封拆毁。',[[50.4,-4.8],[54.6,1.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.38});ha(d,'mWales',HC.britain,{fillOpacity:.32});
+    hp(d,'bh8c_glastonbury',{kind:'battle',left:1,note:'1539年11月八十岁老院长怀廷被吊死，千年修道院被拆毁。'});
+    hp(d,'k_london',{note:'议会通过两次解散法案，大修道院长被清出上议院。'});
+   },[['fill',HC.britain,'近九百座修道院被铲平的英格兰与威尔士'],['dot',HC.war,'格拉斯顿伯里修道院'],['dot','#2a2018','伦敦']]),
+  hs('1536—1537年','四万人“求恩巡礼”与诺福克秋后算账','北方林肯郡与约克郡四万起义军南下至唐卡斯特；诺福克公爵先骗散后屠杀。',[[51.2,-3.5],[55.0,1.2]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.3});ha(d,'mNorthumbria700',HC.war,{fillOpacity:.36});
+    hp(d,'bh8c_louth',{kind:'battle',note:'1536年10月林肯郡劳斯镇居民率先起事，抗议拆毁修道院。'});
+    hp(d,'k_york',{kind:'battle',left:1,note:'阿斯克率四万“求恩巡礼”大军进占约克，重开被拆修道院。'});
+    hp(d,'bh8c_pontefract',{left:1,note:'1536年12月诺福克在此骗散起义军，次年处决216人。'});
+   },[['fill',HC.war,'爆发“求恩巡礼”大起义的北方各郡'],['fill',HC.britain,'南方王室控制区'],['dot',HC.war,'劳斯与约克'],['dot','#2a2018','庞蒂弗拉克特城堡']]),
+  hs('1537—1540年','王子爱德华降生与修道院地产抛售','汉普顿宫迎来王储爱德华，伦敦王室增收法院则将大批修道院土地卖给贵族与士绅。',[[50.8,-2.5],[52.5,1.2]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.38});
+    hp(d,'k_london',{kind:'battle',note:'1537年10月简·西摩生下爱德华六世；王室增收法院抛售修道院土地。'});
+   },[['fill',HC.britain,'修道院地产流入世俗地主手中的英格兰'],['dot',HC.war,'伦敦与汉普顿宫']]),
+  hs('1538—1539年','砸贝克特金龛与《六条信纲》踩刹车','博克斯利与黑尔斯的圣物被拉到伦敦当众拆穿，坎特伯雷金龛被砸，议会随即退回传统教义。',[[50.8,-2.8],[52.5,1.6]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});
+    hp(d,'bh8c_hailes',{left:1,note:'1538年黑尔斯修道院所藏“基督圣血”被宣布为鸭血。'});
+    hp(d,'w_canterbury',{kind:'battle',note:'1538年9月拆毁圣托马斯·贝克特金龛，装走二十六车珍宝。'});
+    hp(d,'k_london',{kind:'battle',left:1,note:'1539年5月通过《六条信纲》，以火刑维护圣餐变体论。'});
+   },[['fill',HC.britain,'亨利八世强行踩刹车的英格兰'],['dot',HC.war,'坎特伯雷与伦敦'],['dot','#2a2018','黑尔斯与博克斯利修道院']]),
+  hs('1540年7月','克利夫斯退婚与黑手套克伦威尔被斩','伦敦塔山送走替罪羊克伦威尔，同一天亨利八世迎娶守旧派诺福克公爵的侄女。',[[50.8,-1.8],[52.2,1.2]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.38});
+    hp(d,'k_london',{kind:'battle',note:'1540年7月克利夫斯的安妮退婚，同月克伦威尔被处决。'});
+   },[['fill',HC.britain,'守旧派贵族反扑得手的英格兰'],['dot',HC.war,'伦敦塔山']]),
+  hs('1542—1547年','索尔威苔原、布洛涅之战与铸币大贬值','北线在索尔威苔原击溃苏格兰，南线花65万镑打下布洛涅却遭盟友查理五世单独讲和背刺。',[[49.5,-4.5],[56.2,3.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'mScotland1200',HC.celt,{fillOpacity:.26});ha(d,'fFrance1547',HC.france,{fillOpacity:.24});
+    hp(d,'bh8c_solway',{kind:'battle',left:1,note:'1542年11月英军大胜，詹姆士五世病死，留女婴玛丽。'});
+    hp(d,'bh8c_boulogne',{kind:'battle',note:'1544年9月英军攻占此城，查理五世同日单独对法讲和。'});
+    hp(d,'k_london',{left:1,note:'王室甩卖教产并掺铜贬值银币，1547年1月亨利八世去世。'});
+   },[['fill',HC.britain,'因战争濒临破产的英格兰'],['fill',HC.celt,'幼主玛丽继位的苏格兰'],['fill',HC.france,'法兰西'],['dot',HC.war,'索尔威苔原与布洛涅'],['dot','#2a2018','伦敦']])
+ ]},
+{id:'history-britain-enclosure',ch:12,title:'圈地运动：从铲平修道院到土地哄抢，兼论“羊吃人”为什么找错了矛盾',short:'圈地运动',en:'The Enclosures: From Monastic Spoils to Land Grab, and Why “Sheep Eat Men” Missed the Point',period:'约1485—1640年',c:HC.britain,
+ scenes:[
+  hs('1536年以前','修道院“祠堂”与敞田公地旧稳态','拉克丝顿位于英格兰中部敞田核心带；修道院与庄园法庭在此维系了数百年的条田与公地共享。',[[50.6,-4.2],[54.2,1.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.28});ha(d,'mMercia750',HC.celt,{fillOpacity:.34});
+    hp(d,'benc_laxton',{note:'中部敞田村庄代表：村民插花耕种条田，共享休耕地与荒地放牧权。'});
+    hp(d,'k_london',{left:1,note:'威斯敏斯特修道院1540年前每年发400镑救济金，改组后跌至34镑。'});
+   },[['fill',HC.celt,'中世纪敞田与公地最集中的中部地带'],['fill',HC.britain,'英格兰其余地区'],['dot','#2a2018','拉克丝顿与伦敦']]),
+  hs('1536—1547年','修道院铲平后的无主资产哄抢','伦敦王室增收法院抛售教产，全境修道院庄园与依附公地被新买主用树篱围起。',[[50.6,-4.2],[54.2,1.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.38});
+    hp(d,'k_london',{kind:'battle',left:1,note:'王室增收法院抛售修道院地产，引发围篱笆确权热潮。'});
+    hp(d,'benc_wymondham',{note:'诺福克郡温德姆修道院被拆，庄园与公地流入私人买主之手。'});
+   },[['fill',HC.britain,'修道院资产释放入市的英格兰'],['dot',HC.war,'伦敦增收法院'],['dot','#2a2018','温德姆修道院']]),
+  hs('16世纪中叶','混乱外溢：连别人有主的地一起抢','中部与东部的商业地主强改习惯租约、侵吞条田，把交不起高租的佃农赶出村庄。',[[50.8,-3.8],[53.8,1.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.3});ha(d,'mMercia750',HC.war,{fillOpacity:.34});
+    hp(d,'benc_laxton',{kind:'battle',left:1,note:'许多庄园的新领主强将终身习惯低租改为按市价翻倍的商业租约。'});
+    hp(d,'k_london',{note:'星室法庭与衡平法院堆满佃农控告地主暴力圈占有主条田的诉状。'});
+   },[['fill',HC.war,'暴力圈占与租约冲突最剧烈的中部各郡'],['fill',HC.britain,'英格兰其余地区'],['dot',HC.war,'庄园圈占冲突区'],['dot','#2a2018','伦敦法庭']]),
+  hs('1540—1601年','市镇精英得利与《济贫法》托底','伦敦商人、律师和王室官员下乡买走大头教产；失地流民涌入城市，催生1601年《济贫法》。',[[50.6,-3.8],[53.8,1.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.38});
+    hp(d,'k_london',{kind:'battle',left:1,note:'伦敦富商、律师与财务官买走大宗教产；1601年议会立《济贫法》托底。'});
+   },[['fill',HC.britain,'土地向市镇精英与大士绅集中的英格兰'],['dot',HC.war,'伦敦']]),
+  hs('1549—1607年','凯特起义与米德兰扒篱笆抗争','1549年东英吉利凯特起义攻占诺里奇，1607年中部牛顿村民扒篱填沟，矛头均指向圈地士绅。',[[51.2,-2.5],[53.5,2.0]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.28});ha(d,'amEastAnglia',HC.war,{fillOpacity:.36});ha(d,'mMercia750',HC.celt,{fillOpacity:.3});
+    hp(d,'benc_wymondham',{left:1,note:'1549年7月律师弗劳尔杜与凯特互扒篱笆，凯特自拆篱笆率众起义。'});
+    hp(d,'benc_norwich',{kind:'battle',note:'凯特率1.6万人在鼠窝荒原橡树下设庭审讯士绅，攻克诺里奇。'});
+    hp(d,'benc_newton',{kind:'battle',left:1,note:'1607年6月牛顿村民扒毁特雷舍姆家树篱，遭士绅砍杀四五十人。'});
+   },[['fill',HC.war,'1549年凯特起义的东英吉利'],['fill',HC.celt,'1607年爆发反圈地起义的米德兰'],['dot',HC.war,'诺里奇与牛顿战场'],['dot','#2a2018','温德姆']]),
+  hs('1400—1624年','粮价涨过羊毛：市场调回耕地与废除限圈法','1550年后小麦价格远超羊毛，中部与东南部牧场重归农耕，议会随之废除旧禁令。',[[50.6,-3.8],[54.0,1.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.38});
+    hp(d,'k_london',{kind:'battle',left:1,note:'1550年后粮价涨幅远超羊毛，1624年议会废除限制圈地旧法。'});
+   },[['fill',HC.britain,'市场供需自动调节种粮与养羊的英格兰'],['dot',HC.war,'伦敦威斯敏斯特议会']])
+ ]},
+{id:'history-britain-mary1',ch:12,title:'九日女王与血腥玛丽：信仰来回翻，地契翻不回来',short:'九日女王与血腥玛丽',en:'The Nine Days’ Queen and Bloody Mary: Faith Flips Back, Land Deeds Stay Put',period:'1547—1558年',c:HC.britain,
+ scenes:[
+  hs('1547—1552年','小国王与粗暴求婚','色块是英格兰、苏格兰与法兰西；虚线是苏格兰小女王玛丽·斯图亚特1548年避开英军远嫁法国的航路。',[[47.5,-6.5],[57.2,3.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'mScotland1200',HC.celt,{fillOpacity:.28});ha(d,'fFrance1547',HC.france,{fillOpacity:.22});
+    hp(d,'k_london',{left:1,note:'1549年与1552年先后颁行两版英文《公祷书》。'});
+    hp(d,'bm1_exeter',{kind:'battle',left:1,note:'1549年夏西部农民为保拉丁文弥撒围攻此城。'});
+    hp(d,'bm1_pinkie',{kind:'battle',note:'1547年9月英军在此斩杀苏格兰军上万人。'});
+    hp(d,'w_paris',{note:'1548年8月五岁的苏格兰女王抵达法国宫廷。'});
+    hr(d,[[55.94,-4.56],[52.0,-6.0],[48.6,-4.5],[48.86,2.35]],HC.france);
+   },[['fill',HC.britain,'爱德华六世治下的英格兰'],['fill',HC.celt,'苏格兰王国'],['fill',HC.france,'法兰西王国'],['dline',HC.france,'1548年玛丽·斯图亚特赴法航线（概略）'],['dot',HC.war,'平基会战与埃克塞特围城'],['dot','#2a2018','伦敦与巴黎']]),
+  hs('1553年1—7月','病榻改遗嘱','伦敦与东英吉利：小国王在格林尼治病逝，简·格雷被送进伦敦塔，玛丽连夜逃往萨福克。',[[50.8,-1.8],[53.2,2.2]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});ha(d,'amEastAnglia',HC.faith,{fillOpacity:.32});
+    hp(d,'k_london',{kind:'battle',left:1,note:'7月10日诺森伯兰公爵在伦敦塔宣布简·格雷为女王。'});
+    hp(d,'bm1_framlingham',{note:'玛丽接密报后避开追兵，退守这座萨福克石堡。'});
+   },[['fill',HC.britain,'英格兰'],['fill',HC.faith,'玛丽落脚的东英吉利'],['dot',HC.war,'伦敦塔拥立简·格雷'],['dot','#2a2018','弗拉姆灵厄姆城堡']]),
+  hs('1553年7月','九日女王崩盘','虚线是诺森伯兰公爵北上剑桥扑空被擒，以及玛丽一世从萨福克进军伦敦夺回王位的路线。',[[51.0,-1.5],[53.2,2.2]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'amEastAnglia',HC.war,{fillOpacity:.30});
+    hp(d,'bm1_framlingham',{note:'各地贵族与新教乡绅在此集结成两万大军。'});
+    hp(d,'amh_cambridge',{kind:'battle',left:1,note:'7月20日诺森伯兰在此得知伦敦翻盘，束手被擒。'});
+    hp(d,'k_london',{kind:'battle',left:1,note:'7月19日枢密院倒戈，伦敦全城鸣钟拥戴玛丽一世。'});
+    hr(d,[[52.22,1.35],[51.8,0.6],[51.51,-0.13]],HC.war);
+   },[['fill',HC.britain,'英格兰'],['fill',HC.war,'玛丽一世起兵的东英吉利'],['dline',HC.war,'1553年7月玛丽一世进军伦敦路线'],['dot',HC.war,'伦敦倒戈与剑桥拿获诺森伯兰'],['dot','#2a2018','弗拉姆灵厄姆城堡']]),
+  hs('1553—1555年','地契不退才下跪','虚线是教宗特使波尔枢机1554年秋带着不动修道院地契的保证书，从罗马经布鲁塞尔来伦敦的路。',[[41.0,-3.0],[54.0,15.0]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'mPapal1210',HC.faith,{fillOpacity:.36});ha(d,'sNetherlands1556',HC.spain,{fillOpacity:.22});
+    hp(d,'rome',{note:'教宗尤利乌斯三世签发特赦诏书，放弃追索英国教产。'});
+    hp(d,'lb_brussels',{left:1,note:'波尔在此等候一年，直到英国议会谈妥产权条件才获准过海。'});
+    hp(d,'uk4_westminster',{kind:'battle',left:1,note:'1554年11月30日两院议员在白厅向特使下跪领受赦免。'});
+    hr(d,[[41.9,12.5],[47.5,7.5],[50.85,4.35],[51.5,-0.13]],HC.faith);
+   },[['fill',HC.britain,'保住修道院地契的英格兰'],['fill',HC.faith,'教宗国'],['fill',HC.spain,'哈布斯堡尼德兰'],['dline',HC.faith,'1554年教宗特使波尔赴英路线'],['dot',HC.war,'威斯敏斯特白厅赦免仪式'],['dot','#2a2018','罗马与布鲁塞尔']]),
+  hs('1554—1555年','西班牙联姻与假孕','色块是联姻连接的英格兰与哈布斯堡西班牙、尼德兰；图钉是温切斯特婚礼地与布鲁塞尔。',[[42.0,-9.0],[54.5,7.0]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'sHabsburgSpain1556',HC.spain,{fillOpacity:.26});ha(d,'sNetherlands1556',HC.spain,{fillOpacity:.32});
+    hp(d,'bm1_winchester',{note:'1554年7月25日腓力与玛丽在此完婚。'});
+    hp(d,'k_london',{kind:'battle',left:1,note:'1554年2月怀特叛军攻抵伦敦桥下被击溃，简·格雷随即被斩。'});
+    hp(d,'lb_brussels',{note:'1555年8月腓力离开伦敦赴布鲁塞尔接掌尼德兰。'});
+    hr(d,[[51.51,-0.13],[51.1,1.3],[50.85,4.35]],HC.spain);
+   },[['fill',HC.britain,'英格兰'],['fill',HC.spain,'哈布斯堡西班牙与尼德兰'],['dline',HC.spain,'1555年8月腓力二世离英赴布鲁塞尔路线'],['dot',HC.war,'伦敦平定怀特叛乱'],['dot','#2a2018','温切斯特与布鲁塞尔']]),
+  hs('1555—1558年','火刑柱与丢掉加来','图钉标出烧死三位新教主教的牛津、烧死数十人的伦敦史密斯菲尔德，以及1558年1月陷落的加来。',[[49.2,-3.5],[53.5,3.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'fFrance1559',HC.france,{fillOpacity:.26});
+    hp(d,'bm1_oxford',{kind:'battle',left:1,note:'1555年10月烧死拉蒂默与里德利，次年3月烧死克兰麦。'});
+    hp(d,'k_london',{kind:'battle',left:1,note:'史密斯菲尔德广场：玛丽朝在此烧死五十多名新教徒。'});
+    hp(d,'w_canterbury',{note:'波尔枢机接任大主教驻地，此处亦烧死四十余名新教徒。'});
+    hp(d,'spa_calais',{kind:'battle',note:'1558年1月7日被法国吉斯公爵攻占，守军七天投降。'});
+   },[['fill',HC.britain,'玛丽一世末年的英格兰'],['fill',HC.france,'夺回加来的法兰西'],['dot',HC.war,'牛津、伦敦火刑柱与1558年加来失守'],['dot','#2a2018','坎特伯雷']])
+ ]},
+{id:'history-britain-elizabeth-rise',ch:12,title:'伊丽莎白怎么当上女王：从私生女到博弈出来的唯一人选',short:'伊丽莎白怎么当上女王',en:'How Elizabeth Became Queen: From Bastard Daughter to Philip II’s Only Choice',period:'1533—1558年',c:HC.britain,
+ scenes:[
+  hs('1533—1536年','从格林威治公主到哈特菲尔德私生女','生于泰晤士河畔格林威治，不到三岁被贬往伦敦北郊哈特菲尔德庄园。',[[51.2,-0.8],[52.0,0.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});
+    hp(d,'ber_greenwich',{note:'1533年9月7日伊丽莎白在此出生。'});
+    hp(d,'k_london',{kind:'battle',left:1,note:'1536年5月生母安妮被斩，议会立法剥夺伊丽莎白继承权。'});
+    hp(d,'ber_hatfield',{left:1,note:'伊丽莎白被贬居北郊哈特菲尔德，随剑桥学者苦读四国语言。'});
+   },[['fill',HC.britain,'英格兰王畿'],['dot',HC.war,'伦敦'],['dot','#2a2018','格林威治与哈特菲尔德']]),
+  hs('1544—1547年','干印章遗嘱与苏格兰血统之争','伦敦遗嘱将伊丽莎白排在第三，苏格兰与法国则奉玛丽·斯图亚特为正统。',[[48.0,-5.0],[56.8,4.0]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'mScotland1200',HC.celt,{fillOpacity:.28});ha(d,'fFrance1547',HC.france,{fillOpacity:.22});
+    hp(d,'k_london',{kind:'battle',left:1,note:'1544年继承法与亨利遗嘱把伊丽莎白排在爱德华、玛丽之后。'});
+    hp(d,'uk9_edinburgh',{note:'苏格兰女王玛丽·斯图亚特系亨利八世长姐孙女，天主教视其为正统。'});
+   },[['fill',HC.britain,'按议会法与遗嘱传位的英格兰'],['fill',HC.celt,'斯图亚特支系的苏格兰'],['fill',HC.france,'苏格兰盟友法兰西'],['dot',HC.war,'伦敦'],['dot','#2a2018','爱丁堡']]),
+  hs('1547—1549年','托马斯·西摩案与十五岁的审讯室','切尔西庄园的调情闹出谋逆大祸，十五岁的伊丽莎白在哈特菲尔德顶住盘问。',[[51.2,-0.8],[52.0,0.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.38});
+    hp(d,'ber_chelsea',{left:1,note:'1547—1548年托马斯·西摩在此闯入十四岁伊丽莎白卧室打闹。'});
+    hp(d,'ber_hatfield',{kind:'battle',left:1,note:'1549年初审讯官泰尔威特在此连审伊丽莎白数周，一无所获。'});
+    hp(d,'k_london',{kind:'battle',note:'1549年3月20日托马斯·西摩在伦敦塔山被斩首。'});
+   },[['fill',HC.britain,'爱德华六世朝的英格兰'],['dot',HC.war,'哈特菲尔德与伦敦塔'],['dot','#2a2018','切尔西庄园']]),
+  hs('1554—1555年','伦敦塔囚徒与伍德斯托克望弥撒','从泰晤士河畔的伦敦塔到西北方向牛津郡的皇家猎宫，伊丽莎白步步惊心。',[[51.1,-2.0],[52.3,1.0]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.38});
+    hp(d,'k_london',{kind:'battle',note:'1554年3—5月伊丽莎白被关入伦敦塔，因怀特临刑开脱免死。'});
+    hp(d,'ber_woodstock',{left:1,note:'1554—1555年软禁伍德斯托克宫，跟着姐姐望天主教弥撒保命。'});
+   },[['fill',HC.britain,'玛丽一世统治下的英格兰'],['dot',HC.war,'伦敦塔'],['dot','#2a2018','伍德斯托克宫']]),
+  hs('1555—1558年','腓力二世的地缘算盘：防备英法合体','巴黎刚办完法国王储与苏格兰女王的婚礼；布鲁塞尔的腓力二世全力保住伊丽莎白。',[[48.2,-3.5],[53.8,5.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});ha(d,'fFrance1559',HC.france,{fillOpacity:.26});ha(d,'sNetherlands1556',HC.spain,{fillOpacity:.3});
+    hp(d,'w_paris',{kind:'battle',left:1,note:'1558年4月玛丽·斯图亚特嫁法国王储，法王企图吞并英格兰王位。'});
+    hp(d,'lb_brussels',{note:'腓力二世坐镇尼德兰，严令英国天主教廷臣不准伤害伊丽莎白。'});
+    hp(d,'k_london',{left:1,note:'玛丽一世两次假孕无嗣，在丈夫腓力催促下认妹妹接班。'});
+   },[['fill',HC.britain,'英格兰'],['fill',HC.spain,'腓力二世的西属尼德兰'],['fill',HC.france,'威胁尼德兰的法兰西'],['dot',HC.war,'巴黎'],['dot','#2a2018','布鲁塞尔与伦敦']]),
+  hs('1558年11月','哈特菲尔德接见费里亚与二十五岁登基','费里亚赶往北郊哈特菲尔德邀功，七天后伊丽莎白在此橡树下接任女王。',[[51.2,-0.8],[52.0,0.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.38});
+    hp(d,'ber_hatfield',{kind:'battle',left:1,note:'1558年11月10日接见费里亚称靠民心；17日在此闻讯登基。'});
+    hp(d,'k_london',{note:'11月17日玛丽一世与波尔枢机同日病死，伦敦宣布伊丽莎白继位。'});
+   },[['fill',HC.britain,'伊丽莎白一世登基的英格兰'],['dot',HC.war,'哈特菲尔德庄园'],['dot','#2a2018','伦敦']])
+ ]},
+{id:'history-britain-elizabeth-1',ch:12,title:'伊丽莎白一世（上）：拒婚腓力的博弈均衡与外交太极',short:'伊丽莎白一世（上）',en:'Elizabeth I (I): Why She Could Refuse Philip II and Play Suitors for Twenty Years',period:'1558—1572年',c:HC.britain,
+ scenes:[
+  hs('1559年','拒婚腓力二世的三方地缘棋局','伦敦、巴黎与布鲁塞尔形成三角牵制：只要巴黎的玛丽·斯图亚特还在，腓力就只能保伊丽莎白。',[[48.2,-3.5],[53.8,5.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'fFrance1559',HC.france,{fillOpacity:.26});ha(d,'sNetherlands1556',HC.spain,{fillOpacity:.3});
+    hp(d,'k_london',{kind:'battle',left:1,note:'1559年初伊丽莎白婉拒姐夫腓力二世求婚，独立执掌王权。'});
+    hp(d,'lb_brussels',{note:'腓力二世为防英格兰倒向法国，拒婚后仍在教廷替伊丽莎白挡住绝罚。'});
+    hp(d,'w_paris',{left:1,note:'法国王储妃玛丽·斯图亚特公开自称英格兰女王，构成最差选项威慑。'});
+   },[['fill',HC.britain,'独立保持中立的英格兰'],['fill',HC.spain,'腓力二世的西属尼德兰'],['fill',HC.france,'支持玛丽争位的法兰西'],['dot',HC.war,'伦敦'],['dot','#2a2018','布鲁塞尔与巴黎']]),
+  hs('1559—1561年','腓力改娶法国公主与罗马按兵不动','腓力二世在1559年和约中转娶法王之女，同时压住罗马教廷整整十一年未发绝罚令。',[[40.0,-5.0],[53.5,14.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});ha(d,'fFrance1559',HC.france,{fillOpacity:.22});ha(d,'sHabsburgSpain1556',HC.spain,{fillOpacity:.28});ha(d,'mPapal1210',HC.faith,{fillOpacity:.28});
+    hp(d,'c5_madrid',{left:1,note:'1559年腓力二世转娶法王亨利二世长女伊丽莎白，返回西班牙。'});
+    hp(d,'rome',{note:'在腓力二世干预下，罗马教廷至1570年前未对伊丽莎白下达绝罚。'});
+    hp(d,'k_london',{kind:'battle',left:1,note:'伊丽莎白利用大国均势，在不嫁人的前提下坐稳王位。'});
+   },[['fill',HC.britain,'英格兰'],['fill',HC.spain,'西班牙哈布斯堡领地'],['fill',HC.faith,'教宗国'],['fill',HC.france,'法兰西'],['dot',HC.war,'伦敦'],['dot','#2a2018','马德里与罗马']]),
+  hs('1559—1581年','拿未婚身份遛遍全欧求婚者','从维也纳、斯德哥尔摩到巴黎，各国王公轮番赴伦敦求婚，全被伊丽莎白太极挡回。',[[47.0,-4.0],[59.8,19.0]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'fFrance1559',HC.france,{fillOpacity:.22});ha(d,'sHabsburgAustria1556',HC.germany,{fillOpacity:.24});
+    hp(d,'k_london',{kind:'battle',left:1,note:'伊丽莎白向议会亮出加冕戒指，宣称“已嫁给英格兰王国”。'});
+    hp(d,'w_paris',{left:1,note:'法国安茹公爵1579年赴伦敦求婚，被昵称为“小青蛙”后婉拒。'});
+   },[['fill',HC.britain,'伊丽莎白的英格兰'],['fill',HC.france,'求婚的法兰西王室'],['fill',HC.germany,'求婚的奥地利哈布斯堡'],['dot',HC.war,'伦敦'],['dot','#2a2018','巴黎']]),
+  hs('1560—1561年','塞西尔与格雷欣收回劣币、重铸新银币','格雷欣在安特卫普与伦敦之间运作金融，伦敦塔造币厂将“老铜鼻”劣币全部重铸为足值银币。',[[50.6,-2.0],[52.5,5.2]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.38});ha(d,'sNetherlands1556',HC.spain,{fillOpacity:.24});
+    hp(d,'lb_antwerp',{note:'格雷欣驻安特卫普经办王室借款，于1565年仿此在伦敦建皇家交易所。'});
+    hp(d,'k_london',{kind:'battle',left:1,note:'1560—1561年伦敦造币厂按真银量回收掺铜劣币，重铸足值银币。'});
+   },[['fill',HC.britain,'恢复英镑信用的英格兰'],['fill',HC.spain,'欧洲金融中心安特卫普'],['dot',HC.war,'伦敦造币厂'],['dot','#2a2018','安特卫普']]),
+  hs('1559—1560年','诺克斯求援与《爱丁堡条约》关上后门','英军水陆北上围困爱丁堡外港利斯，迫使驻苏格兰法军撤走，北方后门从此关闭。',[[51.2,-5.0],[57.2,1.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'mScotland1200',HC.celt,{fillOpacity:.32});
+    hp(d,'be1_leith',{kind:'battle',left:1,note:'1560年春英军围困利斯港法军，7月签《爱丁堡条约》迫使法军撤离。'});
+    hp(d,'uk9_edinburgh',{note:'诺克斯领导苏格兰议会废除教宗权威，确立长老会新教。'});
+    hp(d,'k_london',{left:1,note:'伊丽莎白虽厌恶诺克斯骂女人当政，仍听从塞西尔建议出兵助战。'});
+   },[['fill',HC.britain,'出兵北上的英格兰'],['fill',HC.celt,'脱离法国控制、改宗新教的苏格兰'],['dot',HC.war,'利斯港'],['dot','#2a2018','爱丁堡与伦敦']]),
+  hs('1561—1569年','玛丽·斯图亚特炸夫、被绑架与逃入英格兰','爱丁堡发生谋杀，邓巴城堡上演绑架成婚；兵败的玛丽越过边境逃入卡莱尔，引发北方叛乱。',[[51.2,-5.0],[57.0,1.2]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});ha(d,'mScotland1200',HC.celt,{fillOpacity:.28});ha(d,'mNorthumbria700',HC.war,{fillOpacity:.3});
+    hp(d,'be1_holyrood',{kind:'battle',left:1,note:'荷里路德宫：达恩利刺杀里齐奥，次年春达恩利在城南宅邸遇害。'});
+    hp(d,'be1_dunbar',{note:'1567年4月博思韦尔将玛丽绑架至邓巴城堡，5月成婚引发贵族兵变。'});
+    hp(d,'be1_carlisle',{kind:'battle',left:1,note:'1568年5月玛丽越境逃入卡莱尔，被伊丽莎白软禁十九年。'});
+    hp(d,'be1_durham',{kind:'battle',note:'1569年11月北方天主教伯爵在达勒姆起兵企图救出玛丽，迅速败亡。'});
+   },[['fill',HC.britain,'软禁玛丽的英格兰'],['fill',HC.war,'1569年北方天主教伯爵叛乱区'],['fill',HC.celt,'幼主詹姆士六世继位的苏格兰'],['dot',HC.war,'爱丁堡、卡莱尔与达勒姆'],['dot','#2a2018','邓巴城堡']])
+ ]},
+{id:'history-britain-elizabeth-faith',ch:12,title:'伊丽莎白的宗教：四十五年“温水煮青蛙”怎么换掉一国信仰',short:'伊丽莎白的宗教',en:'Elizabeth’s Religion: Forty-Five Years to Boil the Frog',period:'1559—1603年',c:HC.britain,
+ scenes:[
+  hs('1559年','三票之差过关','伦敦与坎特伯雷：威斯敏斯特上议院以21比18票通过《统一法》，两名反对派主教被押入伦敦塔。',[[50.8,-1.5],[52.2,1.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});
+    hp(d,'k_london',{kind:'battle',left:1,note:'1559年4月关押两名天主教主教，上议院以三票之差通过《统一法》。'});
+    hp(d,'w_canterbury',{note:'1559年12月温和派学者马修·帕克就任坎特伯雷大主教。'});
+   },[['fill',HC.britain,'重建英国国教的英格兰（1559年）'],['dot',HC.war,'威斯敏斯特表决与伦敦塔关押主教'],['dot','#2a2018','坎特伯雷']]),
+  hs('1559—1569年','阁楼藏石与祭服之争','南边伦敦兰贝斯宫整肃不穿白祭服的清教徒，北边达勒姆等教区把天主教祭坛石藏在阁楼里等待变天。',[[50.5,-4.5],[55.5,2.0]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});ha(d,'mNorthumbria700',HC.faith,{fillOpacity:.30});
+    hp(d,'bef_lambeth',{kind:'battle',left:1,note:'1566年3月帕克大主教在此停职37名拒穿白祭服的牧师。'});
+    hp(d,'bef_durham',{kind:'battle',note:'1569年11月北方叛乱伯爵在此大教堂搬出旧祭坛做弥撒。'});
+    hp(d,'k_york',{left:1,note:'北方各郡教区账本显示半数教堂私藏旧祭坛石十余年。'});
+   },[['fill',HC.britain,'国教逐步扎根的英格兰中南部'],['fill',HC.faith,'天主教传统深厚的英格兰北方'],['dot',HC.war,'兰贝斯宫祭服之争与达勒姆北方叛乱'],['dot','#2a2018','约克']]),
+  hs('1570—1585年','绝罚诏书与潜入传教','虚线是1570年罗马教宗发出绝罚令后，杜埃神学院神父与耶稣会士秘密潜入英格兰的路线。',[[41.0,-3.5],[54.0,14.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'mPapal1210',HC.faith,{fillOpacity:.34});ha(d,'sSpanishNetherlands1609',HC.spain,{fillOpacity:.28});
+    hp(d,'rome',{note:'1570年2月教宗庇护五世在此颁布绝罚诏书。'});
+    hp(d,'bef_douai',{note:'艾伦在此培训四百余名英国神父秘密送回国内。'});
+    hp(d,'bef_tyburn',{kind:'battle',left:1,note:'1581年12月耶稣会士坎皮恩在此被按叛国罪处决。'});
+    hr(d,[[41.9,12.5],[46.5,7.0],[50.37,3.08],[51.51,-0.16]],HC.war);
+   },[['fill',HC.britain,'严抓潜入神父的英格兰'],['fill',HC.faith,'教宗国'],['fill',HC.spain,'西属尼德兰'],['dline',HC.war,'神学院神父与耶稣会士潜入英格兰路线'],['dot',HC.war,'伦敦泰伯恩刑场'],['dot','#2a2018','罗马与杜埃']]),
+  hs('1560—1579年','日内瓦回流与清教徒','虚线是玛丽一世死后从日内瓦等地回流的加尔文派流亡者；剑桥大学成为清教徒的大本营。',[[45.5,-2.5],[54.0,9.0]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});ha(d,'amEastAnglia',HC.faith,{fillOpacity:.38});
+    hp(d,'rf1_geneva',{note:'流亡新教徒在此印行带反专制评注的《日内瓦圣经》。'});
+    hp(d,'amh_cambridge',{left:1,note:'1570年卡特赖特在此讲授长老制，被革除教授席位。'});
+    hp(d,'bef_lambeth',{kind:'battle',left:1,note:'1577年格林德尔大主教因拒禁讲经会被停职软禁。'});
+    hr(d,[[46.2,6.15],[49.0,2.5],[51.5,-0.12]],HC.faith);
+   },[['fill',HC.britain,'英格兰'],['fill',HC.faith,'清教徒密集的剑桥与东英吉利'],['dline',HC.faith,'日内瓦流亡者回国传播加尔文主义路线'],['dot',HC.war,'兰贝斯宫格林德尔被停职'],['dot','#2a2018','日内瓦与剑桥']]),
+  hs('1583—1593年','惠特吉夫特整肃清教','图钉标出惠特吉夫特坐镇的兰贝斯宫、藏匿地下印刷机的福斯利庄园，以及处死分离派的泰伯恩。',[[51.0,-2.2],[53.0,1.2]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'amEastAnglia',HC.faith,{fillOpacity:.30});
+    hp(d,'bef_fawsley',{kind:'battle',left:1,note:'1588年秋地下印刷机藏于此地印出第一批反主教册子。'});
+    hp(d,'k_london',{kind:'battle',note:'惠特吉夫特颁《三条信纲》整肃牧师，1593年分离派在泰伯恩受刑。'});
+   },[['fill',HC.britain,'惠特吉夫特铁腕整肃的英格兰'],['fill',HC.faith,'清教徒活跃的东部各郡'],['dot',HC.war,'兰贝斯宫、福斯利地下印刷点与泰伯恩刑场']]),
+  hs('1593—1603年','四十五年换掉信仰','到1603年伊丽莎白去世时，英格兰与威尔士绝大多数教区已完成新教化，仅北方偏远地带残留少数天主教庄园。',[[50.0,-5.5],[55.8,2.0]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.40});ha(d,'mWales',HC.britain,{fillOpacity:.34});ha(d,'mNorthumbria700',HC.faith,{fillOpacity:.22});
+    hp(d,'k_london',{left:1,note:'1593年胡克在伦敦出版《教会政制法规》前四卷。'});
+    hp(d,'w_canterbury',{note:'国教主教体系稳固掌控全国八千余个教区。'});
+    hp(d,'amh_cambridge',{left:1,note:'剑桥各学院源源不断向全国输送新教牧师与清教乡绅。'});
+   },[['fill',HC.britain,'95%以上人口习惯国教礼拜的英格兰与威尔士'],['fill',HC.faith,'残留少量地下天主教庄园的北方偏远区'],['dot','#2a2018','伦敦、坎特伯雷与剑桥']])
+ ]},
+{id:'history-britain-elizabeth-2',ch:12,title:'伊丽莎白一世（中）：海盗合股公司、特务网与苏格兰女王之死',short:'伊丽莎白一世（中）',en:'Elizabeth I (II): Joint-Stock Privateers, Walsingham’s Spies and the Execution of Mary Stuart',period:'1568—1587年',c:HC.britain,
+ scenes:[
+  hs('1562—1573年','女王入股海盗船','虚线是霍金斯从普利茅斯出发，经西非沿岸横渡大西洋去西印度群岛，1568年在墨西哥圣胡安港遇袭的航路。',[[6.0,-98.0],[54.0,5.0]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});ha(d,'aCaribbean',HC.spain,{fillOpacity:.22});ha(d,'aNewSpain1600',HC.spain,{fillOpacity:.22});
+    hp(d,'spa_plymouth',{left:1,note:'霍金斯家族母港；女王在此将皇家战船折价入股。'});
+    hp(d,'be2_sanjuan',{kind:'battle',note:'1568年9月霍金斯船队在此遭西班牙新总督舰队突袭。'});
+    hr(d,[[50.37,-4.14],[12.0,-17.0],[15.0,-65.0],[19.21,-96.13]],HC.britain);
+   },[['fill',HC.britain,'英格兰'],['fill',HC.spain,'西属新西班牙与加勒比'],['dline',HC.britain,'霍金斯贩奴走私航线（概略）'],['dot',HC.war,'圣胡安-德乌卢阿港遇袭'],['dot','#2a2018','普利茅斯']]),
+  hs('1577—1580年','金鹿号分红四十七倍','虚线是德雷克钻过麦哲伦海峡、在南美西岸劫掠西班牙银船后环球返回英国的路线。',[[-55.0,-110.0],[55.0,25.0]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.38});ha(d,'aPeru1600',HC.spain,{fillOpacity:.26});ha(d,'aNewSpain1600',HC.spain,{fillOpacity:.20});
+    hp(d,'spa_plymouth',{left:1,note:'1577年12月起航，1580年9月满载二十六吨白银归来。'});
+    hp(d,'be2_deptford',{kind:'battle',note:'1581年4月女王在此登上金鹿号册封德雷克为爵士。'});
+    hr(d,[[50.37,-4.14],[-53.0,-70.0],[-12.0,-78.0],[1.0,-80.0],[38.0,-123.0],[-34.0,18.0],[50.37,-4.14]],HC.britain);
+   },[['fill',HC.britain,'合股分红47倍的英格兰'],['fill',HC.spain,'遭德雷克洗劫的西属秘鲁与新西班牙'],['dline',HC.britain,'1577—1580年德雷克环球劫掠航线（概略）'],['dot',HC.war,'德雷特福德册封爵士'],['dot','#2a2018','普利茅斯']]),
+  hs('1578—1587年','霍金斯改造赛船海军','泰晤士河口与海峡：霍金斯在德雷特福德等皇家船厂削平高船楼，建造长身远炮的赛船型大帆船。',[[50.0,-5.0],[52.2,2.0]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});
+    hp(d,'be2_deptford',{kind:'battle',note:'德雷特福德与伦敦：霍金斯包干修船并建造赛船型大帆船。'});
+    hp(d,'spa_plymouth',{note:'新式快船建成后集结于此，专打远距离舷侧炮战。'});
+   },[['fill',HC.britain,'完成海军硬件换代的英格兰'],['dot',HC.war,'德雷特福德皇家造船厂'],['dot','#2a2018','伦敦与普利茅斯']]),
+  hs('1580—1585年','五路合围与出兵援荷','色块标出1580年代初对英格兰形成合围的西葡帝国、西属尼德兰与法国；虚线是1585年英军渡海援荷。',[[37.0,-11.0],[56.0,8.0]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.38});ha(d,'sIberia1580',HC.spain,{fillOpacity:.28});ha(d,'sSpanishNetherlands1609',HC.spain,{fillOpacity:.34});ha(d,'sDutchRepublic1609',HC.lowlands,{fillOpacity:.36});ha(d,'fFrance1559',HC.france,{fillOpacity:.18});
+    hp(d,'spa_lisbon',{left:1,note:'1580年腓力二世在此接收葡萄牙大西洋舰队。'});
+    hp(d,'lb_antwerp',{kind:'battle',note:'1585年8月被帕尔马公爵攻占，荷兰门户洞开。'});
+    hp(d,'be2_nonsuch',{kind:'battle',left:1,note:'1585年8月伊丽莎白在此签条约，派七千英军援荷。'});
+    hr(d,[[51.5,-0.1],[51.9,1.3],[52.0,4.3]],HC.britain);
+   },[['fill',HC.britain,'被迫参战的英格兰'],['fill',HC.lowlands,'联省共和国（荷兰）'],['fill',HC.spain,'腓力二世的西葡帝国与西属尼德兰'],['fill',HC.france,'法国'],['dline',HC.britain,'1585年莱斯特伯爵率英军援荷路线'],['dot',HC.war,'安特卫普陷落与无双宫签约'],['dot','#2a2018','里斯本']]),
+  hs('1586年','啤酒桶密信陷阱','虚线是装在啤酒桶木塞里的密信从查特利庄园送进伦敦沃尔辛厄姆官邸破译、再送给刺客巴宾顿的路线。',[[51.0,-3.2],[53.6,0.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});
+    hp(d,'be2_chartley',{kind:'battle',left:1,note:'玛丽在此用密码写下批准刺杀女王的复信塞入酒桶。'});
+    hp(d,'k_london',{kind:'battle',note:'沃尔辛厄姆官邸：菲利普斯在此破译密信并画上绞架记号。'});
+    hr(d,[[52.85,-1.98],[52.1,-1.0],[51.51,-0.08]],HC.war);
+   },[['fill',HC.britain,'沃尔辛厄姆特务网监控下的英格兰'],['dline',HC.war,'1586年夏啤酒桶密信截获与破译路线'],['dot',HC.war,'查特利庄园与伦敦情报总部']]),
+  hs('1586—1587年','福瑟林黑斩首与甩锅','虚线是枢密院瞒着女王把死刑令从伦敦连夜送往福瑟林黑城堡斩首玛丽·斯图亚特的路线。',[[51.0,-3.5],[56.3,1.0]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'mScotland1200',HC.celt,{fillOpacity:.24});
+    hp(d,'be2_fotheringhay',{kind:'battle',left:1,note:'1587年2月8日玛丽·斯图亚特在此城堡大厅被三斧斩首。'});
+    hp(d,'k_london',{kind:'battle',left:1,note:'女王把替罪羊秘书戴维森关进伦敦塔，向各国撇清责任。'});
+    hp(d,'uk9_edinburgh',{note:'玛丽之子苏格兰王詹姆士六世仅写信抗议，未为母亲发兵。'});
+    hr(d,[[51.51,-0.13],[52.0,-0.25],[52.53,-0.41]],HC.war);
+   },[['fill',HC.britain,'处决玛丽·斯图亚特的英格兰'],['fill',HC.celt,'按兵不动的苏格兰'],['dline',HC.war,'1587年2月枢密院秘密派员送死刑令路线'],['dot',HC.war,'福瑟林黑城堡斩首与伦敦塔关押秘书'],['dot','#2a2018','爱丁堡']])
+ ]},
+{id:'history-britain-armada-after',ch:12,title:'无敌舰队之后：打赢海战的英国，为什么背上了四十万镑烂账',short:'无敌舰队之后的账单',en:'After the Armada: Why Victory at Sea Left England Deep in Debt',period:'1588—1603年',c:HC.britain,
+ scenes:[
+  hs('1588年8月','烽火备战与蒂尔伯里检阅','英格兰南岸架起烽火台并征调商船；1588年8月伊丽莎白一世赴泰晤士河口蒂尔伯里检阅民兵。',[[50.0,-4.8],[52.8,2.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});ha(d,'sSpanishNetherlands1609',HC.spain,{fillOpacity:.26});
+    hp(d,'spa_plymouth',{left:1,note:'英军征调商船在此集结出海。'});
+    hp(d,'spa_gravelines',{kind:'battle',note:'8月8日英军在此重创无敌舰队。'});
+    hp(d,'baa_tilbury',{kind:'battle',left:1,note:'8月18日女王在泰晤士河口蒂尔伯里检阅四千民兵。'});
+   },[['fill',HC.britain,'征调商船与民兵备战的英格兰'],['fill',HC.spain,'帕尔马大军屯驻的西属尼德兰'],['dot',HC.war,'格拉沃利讷海战与蒂尔伯里检阅'],['dot','#2a2018','普利茅斯与伦敦']]),
+  hs('1588年秋','停发补给：救国水手饿死码头','无敌舰队北逃后王室停发补给；返抵玛格特与哈里奇的英国水手成批病饿死于街头。',[[50.8,-1.2],[52.5,2.2]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});
+    hp(d,'baa_margate',{kind:'battle',note:'返航水手断粮染病，成批死在码头与牛棚。'});
+    hp(d,'baa_harwich',{kind:'battle',left:1,note:'返航舰队停泊港，伤寒与坏血病蔓延。'});
+    hp(d,'k_london',{left:1,note:'枢密院为省钱停发补给并拖欠水手尾款。'});
+   },[['fill',HC.britain,'胜仗后停发水手补给的英格兰'],['dot',HC.war,'玛格特与哈里奇（水手病饿死于码头）'],['dot','#2a2018','伦敦']]),
+  hs('1589年4—7月','反攻里斯本惨败','虚线为1589年德雷克与诺里斯南下航线：绕开桑坦德，劫掠拉科鲁尼亚后兵败里斯本。',[[37.5,-11.0],[51.5,0.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.28});ha(d,'sIberia1580',HC.spain,{fillOpacity:.30});
+    hp(d,'spa_plymouth',{left:1,note:'1589年4月一百五十艘船由此起航。'});
+    hp(d,'baa_santander',{note:'西军残船退守港，德雷克违命未攻。'});
+    hp(d,'spa_corunna',{kind:'battle',left:1,note:'英军贪图劫掠在此耽搁两周。'});
+    hp(d,'spa_lisbon',{kind:'battle',left:1,note:'5月底英军攻城不克，损兵过半撤退。'});
+    hr(d,[[50.37,-4.14],[43.37,-8.40],[38.72,-9.14]],HC.war);
+   },[['fill',HC.britain,'合股出兵的英格兰'],['fill',HC.spain,'击退英军反攻的伊比利亚联盟'],['dline',HC.war,'1589年德雷克与诺里斯反攻里斯本航线'],['dot',HC.war,'拉科鲁尼亚与里斯本'],['dot','#2a2018','普利茅斯与桑坦德']]),
+  hs('1594—1603年','爱尔兰九年战争泥潭','色块为全爱尔兰与北方阿尔斯特；图钉标出休·奥尼尔大本营、黄水滩伏击与金塞尔围城。',[[51.2,-10.8],[55.5,-5.0]],d=>{
+    ha(d,'mIreland',HC.celt,{fillOpacity:.24});ha(d,'brUlster1609',HC.war,{fillOpacity:.38});
+    hp(d,'baa_dungannon',{left:1,note:'休·奥尼尔起兵大本营。'});
+    hp(d,'baa_yellow_ford',{kind:'battle',note:'1598年8月奥尼尔设伏歼灭两千英军。'});
+    hp(d,'baa_kinsale',{kind:'battle',left:1,note:'1601年秋四千西军登陆，被芒乔伊围困击败。'});
+    hp(d,'baa_mellifont',{note:'1603年3月30日奥尼尔在此签约投降。'});
+    hp(d,'uk6_dublin',{note:'英格兰驻爱尔兰总督府所在地。'});
+   },[['fill',HC.war,'休·奥尼尔据守的北爱尔兰阿尔斯特'],['fill',HC.celt,'爱尔兰其余地区'],['dot',HC.war,'黄水滩大捷与金塞尔围城战'],['dot','#2a2018','邓甘嫩、梅利丰特与都柏林']]),
+  hs('1597—1601年','卖王室地产与专卖权危机','王室在伦敦变卖修道院旧地产并滥发商品专卖权；1601年秋威斯敏斯特下议院爆发专卖权抗议。',[[50.5,-3.5],[53.5,1.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});
+    hp(d,'uk4_westminster',{kind:'battle',left:1,note:'1601年秋下议院抗议专卖权，女王发表黄金演讲。'});
+    hp(d,'k_london',{note:'王室在此向商人与权贵抛售近八十万镑领地并批专卖特许状。'});
+   },[['fill',HC.britain,'变卖王室领地与垄断专卖泛滥的英格兰'],['dot',HC.war,'1601年威斯敏斯特议会专卖权风波'],['dot','#2a2018','伦敦金融城']])
+ ]},
+{id:'history-britain-elizabeth-3',ch:12,title:'伊丽莎白一世（下）：东印度公司、莎士比亚与都铎绝嗣的交接暗箱',short:'伊丽莎白一世（下）',en:'Elizabeth I (III): The East India Company, Shakespeare and the Secret Handover of 1603',period:'1590—1603年',c:HC.britain,
+ scenes:[
+  hs('1600年12月31日','伦敦皇家交易所与远航','安特卫普衰落后伦敦接盘欧洲商贸；1600年除夕伦敦商人获好望角以东贸易特许状。',[[49.5,-3.5],[53.2,6.0]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});ha(d,'sDutchRepublic1609',HC.lowlands,{fillOpacity:.28});
+    hp(d,'k_london',{kind:'battle',left:1,note:'1600年除夕218名商人获颁东印度公司特许状。'});
+    hp(d,'lb_antwerp',{note:'战火中衰落的原欧洲金融中心。'});
+    hp(d,'sn2_amsterdam',{note:'1602年六城商会在此合组荷兰东印度公司。'});
+   },[['fill',HC.britain,'签发东印度公司特许状的英格兰'],['fill',HC.lowlands,'竞争亚洲香料贸易的荷兰共和国'],['dot',HC.war,'伦敦（1600年除夕东印度公司成立）'],['dot','#2a2018','安特卫普与阿姆斯特丹']]),
+  hs('1599年','泰晤士河南岸的环球剧场','图钉标出莎士比亚故乡斯特拉特福、禁戏的伦敦城与泰晤士河南岸萨瑟克环球剧场。',[[51.0,-2.8],[52.8,0.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});
+    hp(d,'be3_stratford',{left:1,note:'莎士比亚出生地与晚年归隐处。'});
+    hp(d,'k_london',{left:1,note:'市政厅严令城内禁演世俗戏剧。'});
+    hp(d,'be3_southwark',{kind:'battle',note:'1599年环球剧场在此开张，上演《理查三世》等剧。'});
+   },[['fill',HC.britain,'伊丽莎白时代的英格兰'],['dot',HC.war,'萨瑟克（1599年环球剧场开张）'],['dot','#2a2018','斯特拉特福与伦敦城']]),
+  hs('1599—1601年','埃塞克斯叛乱与《理查二世》','埃塞克斯自都柏林潜回无双宫闯入女王卧室；1601年2月在环球剧场加演旧戏后于伦敦起兵败亡。',[[51.0,-7.2],[54.2,1.0]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});ha(d,'mIreland',HC.celt,{fillOpacity:.22});
+    hp(d,'uk6_dublin',{left:1,note:'1599年9月埃塞克斯擅离爱尔兰军营返英。'});
+    hp(d,'spa_nonsuch',{left:1,note:'1599年9月埃塞克斯在此闯入未化妆的女王寝室。'});
+    hp(d,'k_london',{kind:'battle',note:'1601年2月加演《理查二世》后起兵半天即败，25日斩首。'});
+    hr(d,[[53.34,-6.27],[51.36,-0.23]],HC.war);
+   },[['fill',HC.britain,'平定埃塞克斯叛乱的英格兰'],['fill',HC.celt,'爱尔兰战场'],['dline',HC.war,'1599年9月埃塞克斯擅离爱尔兰返英路线'],['dot',HC.war,'萨瑟克加演与伦敦起兵败亡'],['dot','#2a2018','都柏林与无双宫']]),
+  hs('1558—1603年','死不立储的帝王心术','威斯敏斯特议会多次请愿立储均遭训斥；敦促立储的议员被关入伦敦塔至死。',[[50.8,-2.5],[52.8,1.2]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});
+    hp(d,'uk4_westminster',{left:1,note:'女王严禁上下两院讨论王位继承人。'});
+    hp(d,'k_london',{kind:'battle',note:'伦敦塔：议员温特沃思因敦促立储被囚禁至死。'});
+   },[['fill',HC.britain,'严禁公开议论储位的英格兰'],['dot',HC.war,'伦敦塔（关押议论立储者）'],['dot','#2a2018','威斯敏斯特议会']]),
+  hs('1601—1603年','塞西尔密信与跨国接班','虚线为1603年春女王死于里士满宫后，凯里自伦敦奔爱丁堡向詹姆士六世报喜路线。',[[51.0,-4.5],[56.8,1.2]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});ha(d,'mScotland1200',HC.celt,{fillOpacity:.30});
+    hp(d,'be3_richmond',{kind:'battle',left:1,note:'1603年春伊丽莎白在此病逝，小塞西尔在伦敦宣读詹姆士继位诏书。'});
+    hp(d,'uk9_edinburgh',{kind:'battle',left:1,note:'詹姆士六世接获报喜，南下入主伦敦。'});
+    hr(d,[[51.46,-0.31],[53.96,-1.08],[55.95,-3.20]],HC.route);
+   },[['fill',HC.britain,'都铎绝嗣的英格兰王国'],['fill',HC.celt,'詹姆士六世治下的苏格兰王国'],['dline',HC.route,'1603年3月罗伯特·凯里六十小时北上爱丁堡报喜路线'],['dot',HC.war,'里士满宫驾崩与爱丁堡接班'],['dot','#2a2018','威斯敏斯特']])
+ ]},
+{id:'history-britain-james1',ch:12,title:'詹姆士一世：苏格兰穷国王接手四十万镑烂账',short:'詹姆士一世',en:'James I: A Scottish King Inherits a Broken Ledger',period:'1603—1625年',c:HC.britain,
+ scenes:[
+  hs('1603—1604年','共主联邦与《伦敦条约》','虚线为1603年春新王自爱丁堡南下加冕路线；1604年夏英西两国使臣在泰晤士河畔议和。',[[49.5,-6.5],[58.0,2.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});ha(d,'mScotland1200',HC.celt,{fillOpacity:.30});
+    hp(d,'uk9_edinburgh',{left:1,note:'1603年4月詹姆士由此启程南下。'});
+    hp(d,'uk4_westminster',{left:1,note:'英格兰议会否决英苏正式合并法案。'});
+    hp(d,'k_london',{kind:'battle',note:'1604年8月英西在此签《伦敦条约》停战。'});
+    hr(d,[[55.95,-3.20],[53.96,-1.08],[51.51,-0.13]],HC.route);
+   },[['fill',HC.britain,'英格兰王国'],['fill',HC.celt,'共戴一王的苏格兰王国'],['dline',HC.route,'1603年春詹姆士一世自爱丁堡南下伦敦路线'],['dot',HC.war,'伦敦（1604年英西停战条约）'],['dot','#2a2018','爱丁堡与威斯敏斯特']]),
+  hs('1604—1605年','汉普顿宫与火药阴谋','图钉标出泰晤士河上游的汉普顿宫与查获36桶火药的威斯敏斯特上议院地窖。',[[51.0,-1.5],[52.2,0.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});
+    hp(d,'amm_hampton',{left:1,note:'1604年1月国王在此训斥清教徒并下令重译圣经。'});
+    hp(d,'uk4_westminster',{kind:'battle',note:'1605年11月5日地窖查获盖伊·福克斯看守的火药。'});
+   },[['fill',HC.britain,'镇压清教异议与天主教密谋的英格兰'],['dot',HC.war,'威斯敏斯特（1605年火药阴谋）'],['dot','#2a2018','汉普顿宫']]),
+  hs('1608—1614年','“大契约”谈崩与流产议会','小塞西尔在威斯敏斯特推动买断封建特权的“大契约”破裂；詹姆士一世退居西奥博尔德宫狩猎。',[[51.0,-1.8],[52.4,0.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});
+    hp(d,'uk4_westminster',{kind:'battle',left:1,note:'1610年大契约谈崩，1614年流产议会遭解散。'});
+    hp(d,'bj1_theobalds',{note:'小塞西尔进献给国王的狩猎行宫。'});
+   },[['fill',HC.britain,'王室与议会财政谈判破裂的英格兰'],['dot',HC.war,'威斯敏斯特（大契约破裂）'],['dot','#2a2018','西奥博尔德宫']]),
+  hs('1611—1624年','卖准男爵头衔与罢免柯克','王室在伦敦公开售卖准男爵与贵族头衔；威斯敏斯特普通法法院首席大法官柯克遭撤职。',[[50.8,-2.0],[52.5,1.0]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});
+    hp(d,'k_london',{kind:'battle',note:'1611年起王室明码标价售卖准男爵与贵族头衔。'});
+    hp(d,'uk4_westminster',{left:1,note:'1616年国王撤换普通法首席大法官柯克。'});
+   },[['fill',HC.britain,'靠卖官鬻爵填补亏空的英格兰'],['dot',HC.war,'伦敦（售卖准男爵与专卖权）'],['dot','#2a2018','威斯敏斯特法院']]),
+  hs('1607—1620年','阿尔斯特移民与北美拓殖','色块标出爱尔兰北部殖民区及北美弗吉尼亚、普利茅斯两处早期英国据点。',[[34.0,-78.0],[58.0,2.0]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.28});ha(d,'brUlster1609',HC.war,{fillOpacity:.42});
+    ha(d,'amVirginia1624',HC.britain,{fillOpacity:.40});ha(d,'amPlymouth1621',HC.faith,{fillOpacity:.40});
+    hp(d,'bj1_londonderry',{kind:'battle',left:1,note:'1609年起大批苏格兰与伦敦新教移民迁入。'});
+    hp(d,'amv_jamestown',{note:'1607年弗吉尼亚公司建立的首个永久据点。'});
+    hp(d,'amm_plymouth',{left:1,note:'1620年五月花号分离派建立的据点。'});
+    hr(d,[[51.51,-0.13],[37.21,-76.78]],HC.route);
+   },[['fill',HC.war,'1609年没收殖民的北爱尔兰阿尔斯特六郡'],['fill',HC.britain,'英格兰与北美弗吉尼亚'],['fill',HC.faith,'北美普利茅斯'],['dline',HC.route,'跨大西洋殖民航线'],['dot',HC.war,'伦敦德里（北爱新教殖民中心）'],['dot','#2a2018','詹姆斯敦与普利茅斯']]),
+  hs('1618—1625年','“冬王”惨败与马德里求婚','女婿在布拉格与海德堡战败；虚线为1623年王储查理与白金汉化名自伦敦赴马德里求婚路线。',[[38.5,-6.5],[54.5,16.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.30});ha(d,'sHabsburgSpain1556',HC.spain,{fillOpacity:.26});
+    hp(d,'de_prague',{kind:'battle',note:'1620年白山之战詹姆士女婿“冬王”溃败。'});
+    hp(d,'ty1_heidelberg',{kind:'battle',left:1,note:'1622年西班牙联军攻占女婿首府。'});
+    hp(d,'c5_madrid',{kind:'battle',left:1,note:'1623年查理与白金汉化名至此求婚被耍。'});
+    hp(d,'bj1_theobalds',{left:1,note:'1625年3月27日詹姆士一世在此病逝。'});
+    hr(d,[[51.51,-0.13],[48.86,2.35],[40.42,-3.70]],HC.route);
+   },[['fill',HC.britain,'英格兰王国'],['fill',HC.spain,'西班牙王国'],['dline',HC.route,'1623年王储查理与白金汉化名赴马德里求婚路线'],['dot',HC.war,'布拉格、海德堡与马德里'],['dot','#2a2018','西奥博尔德宫']])
+ ]},
+{id:'history-britain-charles1',ch:12,title:'查理一世：为什么能十一年不开议会，又为什么一打苏格兰就崩盘',short:'查理一世',en:'Charles I: Eleven Years Without Parliament and the Scottish Collapse',period:'1625—1640年',c:HC.britain,
+ scenes:[
+  hs('1625—1628年','两场败仗与《权利请愿书》','色块是英格兰、法兰西与西班牙；图钉标出加的斯、拉罗谢尔两处败仗及朴茨茅斯、伦敦。',[[36.0,-9.5],[54.5,4.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});ha(d,'fFrance1610',HC.france,{fillOpacity:.18});ha(d,'sIberia1580',HC.spain,{fillOpacity:.18});
+    hp(d,'spa_cadiz',{kind:'battle',left:1,note:'1625年10月英军登陆饮酒大醉，未破城即溃退。'});
+    hp(d,'sl9_rochelle',{kind:'battle',left:1,note:'1627年白金汉率军强攻雷岛折损四千人。'});
+    hp(d,'bc1_portsmouth',{kind:'battle',left:1,note:'1628年8月23日白金汉在此被费尔顿一刀刺穿肺部。'});
+    hp(d,'k_london',{note:'1628年6月7日查理一世在威斯敏斯特签署《权利请愿书》。'});
+    hr(d,[[50.8,-1.09],[46.16,-1.15]],HC.war);
+   },[['fill',HC.britain,'英格兰'],['fill',HC.france,'法兰西'],['fill',HC.spain,'西班牙'],['dline',HC.war,'1627年白金汉增援拉罗谢尔航线'],['dot',HC.war,'加的斯、拉罗谢尔与朴茨茅斯'],['dot','#2a2018','伦敦']]),
+  hs('1629年3月','议长被按在椅上','图钉标出威斯敏斯特议会会场与关押伊利奥特等九名议员的伦敦塔。',[[50.5,-4.5],[53.8,1.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});
+    hp(d,'uk4_westminster',{kind:'battle',left:1,note:'1629年3月2日霍利斯与瓦伦丁在此按住议长芬奇表决。'});
+    hp(d,'k_london',{note:'伊利奥特被囚于伦敦塔，1632年11月病死后国王拒还遗体。'});
+   },[['fill',HC.britain,'1629年解散议会的英格兰'],['dot',HC.war,'威斯敏斯特（按住议长表决）'],['dot','#2a2018','伦敦塔']]),
+  hs('1629—1638年','和平停战与全国船税','色块是征收内陆船税的英格兰与威尔士；图钉是签约停战的巴黎、马德里及汉普登抗税庄园。',[[39.5,-6.5],[55.0,4.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'mWales',HC.britain,{fillOpacity:.28});
+    hp(d,'bc1_buckinghamshire',{left:1,note:'汉普登因拒交斯托克曼德维尔地产的20先令船税被起诉。'});
+    hp(d,'k_london',{note:'1637年冬王座法庭十二名大法官在此审理汉普登船税案。'});
+    hp(d,'w_paris',{note:'1629年4月英法签《苏萨条约》停战。'});
+    hp(d,'c5_madrid',{left:1,note:'1630年11月英西在此签《马德里条约》停战。'});
+   },[['fill',HC.britain,'全面摊派内陆船税的英格兰与威尔士'],['dot','#2a2018','大汉普登、伦敦、巴黎与马德里']]),
+  hs('1633—1637年','劳德改祭坛与清教徒出走','虚线为1630年代清教徒横渡大西洋航线；图钉是坎特伯雷、威斯敏斯特与北美波士顿。',[[39.0,-75.0],[56.0,5.0]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});ha(d,'amEastAnglia',HC.faith,{fillOpacity:.42});ha(d,'amMassBay1640',HC.america,{fillOpacity:.45});
+    hp(d,'w_canterbury',{note:'劳德自1633年起任坎特伯雷大主教，派员巡视全国教区。'});
+    hp(d,'uk4_westminster',{kind:'battle',left:1,note:'1637年6月30日普林等三人在新宫院刑台被割耳烙印。'});
+    hp(d,'amh_boston',{left:1,note:'1630—1640年约两万英国清教徒在此一带建立聚落。'});
+    hr(d,[[51.5,-0.1],[47.0,-35.0],[42.36,-71.06]],HC.route);
+   },[['fill',HC.britain,'英格兰'],['fill',HC.faith,'清教徒集中的东英吉利'],['fill',HC.america,'北美马萨诸塞湾'],['dline',HC.route,'1630年代清教徒大移民航线'],['dot',HC.war,'威斯敏斯特星室法庭刑台'],['dot','#2a2018','坎特伯雷与波士顿']]),
+  hs('1637—1638年','爱丁堡折凳与《民族圣约》','色块为签署《民族圣约》的苏格兰与南边的英格兰；图钉标出爱丁堡与格拉斯哥。',[[51.0,-6.5],[58.5,1.8]],d=>{
+    ha(d,'mScotland1200',HC.faith,{fillOpacity:.40});ha(d,'mEngland1066',HC.britain,{fillOpacity:.24});
+    hp(d,'uk9_edinburgh',{kind:'battle',note:'1637年7月圣吉尔斯教堂暴动，次年2月在此签《民族圣约》。'});
+    hp(d,'bc1_glasgow',{left:1,note:'1638年11月格拉斯哥大会不顾王室专员解散令废除主教。'});
+    hp(d,'k_london',{note:'查理一世在白厅闻讯宣称宁死不向苏格兰叛徒让步。'});
+   },[['fill',HC.faith,'签署《民族圣约》废除主教的苏格兰'],['fill',HC.britain,'英格兰'],['dot',HC.war,'爱丁堡（折凳暴动与签署圣约）'],['dot','#2a2018','格拉斯哥与伦敦']]),
+  hs('1639—1640年','主教战争与每天八百五十镑','北方色块是苏格兰圣约军占领的诺森伯兰与达勒姆；虚线为圣约军南下渡河路线。',[[51.0,-5.5],[57.5,1.8]],d=>{
+    ha(d,'mScotland1200',HC.faith,{fillOpacity:.36});ha(d,'mNorthumbria700',HC.war,{fillOpacity:.38});ha(d,'mEngland1066',HC.britain,{fillOpacity:.26});
+    hp(d,'uk9_berwick',{note:'1639年6月第一次主教战争双方在此城外虚张声势后休兵。'});
+    hp(d,'bc1_newburn',{kind:'battle',left:1,note:'1640年8月28日莱斯利架炮轰散英军，渡过泰恩河。'});
+    hp(d,'uk4_durham',{left:1,note:'苏格兰军进占达勒姆与纽卡斯尔，扣住输往伦敦的煤船。'});
+    hp(d,'bc1_ripon',{note:'1640年10月查理一世在此签停火协议，认付每日850镑军费。'});
+    hp(d,'k_london',{note:'1640年11月3日长期议会在威斯敏斯特开幕。'});
+    hr(d,[[55.95,-3.19],[55.77,-2.0],[54.98,-1.75],[54.78,-1.57]],HC.war);
+   },[['fill',HC.faith,'苏格兰'],['fill',HC.war,'1640年秋苏格兰军占领的北方两郡'],['fill',HC.britain,'英格兰其余地区'],['dline',HC.war,'1640年8月莱斯利圣约军南下路线'],['dot',HC.war,'纽伯恩之战'],['dot','#2a2018','贝里克、达勒姆、里彭与伦敦']])
+ ]},
+{id:'history-britain-civil-war',ch:12,title:'英国内战：从一致算账到“军队归谁”的死结',short:'英国内战',en:'The English Civil War: From Unanimous Reckoning to the Deadlock Over the Army',period:'1640—1646年',c:HC.britain,
+ scenes:[
+  hs('1640—1641年夏','长期议会算总账','色块是英格兰与曾由温特沃思练兵的爱尔兰；图钉标出威斯敏斯特与处死温特沃思的伦敦塔山。',[[50.5,-9.5],[55.5,1.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'mIreland',HC.celt,{fillOpacity:.26});
+    hp(d,'uk6_dublin',{left:1,note:'温特沃思在此任爱尔兰总督七年，组建九千天主教新军。'});
+    hp(d,'uk4_westminster',{left:1,note:'1640年11月皮姆在此发动弹劾，次年通过《三年法案》。'});
+    hp(d,'k_london',{kind:'battle',note:'1641年5月12日温特沃思在伦敦塔山当着十万市民被斩首。'});
+   },[['fill',HC.britain,'长期议会算账的英格兰'],['fill',HC.celt,'温特沃思曾镇守的爱尔兰'],['dot',HC.war,'伦敦塔山（斩首斯特拉福德）'],['dot','#2a2018','威斯敏斯特与都柏林']]),
+  hs('1641年秋冬','爱尔兰起义与《大抗议书》','北方色块是爆发天主教起义的阿尔斯特；图钉是都柏林与《大抗议书》激辩的威斯敏斯特。',[[50.5,-9.5],[56.0,1.8]],d=>{
+    ha(d,'brUlster1609',HC.war,{fillOpacity:.45});ha(d,'mIreland',HC.celt,{fillOpacity:.22});ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});
+    hp(d,'uk2_armagh',{kind:'battle',left:1,note:'1641年10月22日菲利姆·奥尼尔在此一带起兵夺回故土。'});
+    hp(d,'uk6_dublin',{left:1,note:'起义军密谋奇袭都柏林城堡因叛徒告密败露。'});
+    hp(d,'uk4_westminster',{kind:'battle',note:'1641年11月22日下院争吵至凌晨两点，多名议员拔剑相向。'});
+   },[['fill',HC.war,'1641年10月起义的北爱阿尔斯特'],['fill',HC.celt,'爱尔兰其余地区'],['fill',HC.britain,'因兵权分裂的英格兰'],['dot',HC.war,'阿马与威斯敏斯特（159比148票分裂）'],['dot','#2a2018','都柏林']]),
+  hs('1642年1—8月','抓五议员扑空与诺丁汉竖旗','虚线为查理一世逃离伦敦北上诺丁汉的路线；图钉标出威斯敏斯特、伦敦城与诺丁汉。',[[50.8,-3.5],[54.2,1.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});
+    hp(d,'uk4_westminster',{kind:'battle',left:1,note:'国王亲率佩剑卫兵闯进下院会场，五人已提前撤走。'});
+    hp(d,'k_london',{note:'五名议员躲进科尔曼街，伦敦市民民兵持长矛护卫。'});
+    hp(d,'uk7_nottingham',{kind:'battle',left:1,note:'1642年8月22日查理一世在此竖起王旗，当晚王旗被狂风吹倒。'});
+    hr(d,[[51.50,-0.13],[52.20,0.12],[53.96,-1.08],[52.95,-1.15]],HC.war);
+   },[['fill',HC.britain,'走向内战的英格兰'],['dline',HC.war,'1642年春夏查理一世离京北上募兵路线'],['dot',HC.war,'威斯敏斯特与诺丁汉竖旗'],['dot','#2a2018','伦敦金融城']]),
+  hs('1642—1644年','圆颅党与骑士党对峙','东南色块是议会控制区，西北与威尔士色块是保王党控制区；图钉是牛津、埃奇山与马斯顿荒原。',[[50.0,-5.8],[56.2,2.0]],d=>{
+    ha(d,'brParliament1643',HC.britain,{fillOpacity:.40});ha(d,'brRoyalist1643',HC.spain,{fillOpacity:.36});ha(d,'mScotland1200',HC.faith,{fillOpacity:.26});
+    hp(d,'k_london',{note:'议会掌控伦敦税源、军械作坊与皇家海军。'});
+    hp(d,'bcw_oxford',{left:1,note:'查理一世以牛津基督堂学院为战时王宫。'});
+    hp(d,'bcw_edgehill',{kind:'battle',left:1,note:'1642年10月23日埃奇山之战双方死伤三千未分胜负。'});
+    hp(d,'bcw_marston',{kind:'battle',note:'1644年7月2日马斯顿荒原之战王军阵亡四千人。'});
+   },[['fill',HC.britain,'议会控制区（1643年，东南与伦敦）'],['fill',HC.spain,'保王党控制区（1643年，北方、西部与威尔士）'],['fill',HC.faith,'1643年底结盟议会的苏格兰'],['dot',HC.war,'埃奇山与马斯顿荒原之战'],['dot','#2a2018','伦敦与牛津']]),
+  hs('1644—1645年春','《自抑法》与新模范军','色块是议会控制区与克伦威尔铁骑军发源地东英吉利；图钉标出威斯敏斯特、剑桥与温莎。',[[50.5,-3.5],[53.8,2.0]],d=>{
+    ha(d,'brParliament1643',HC.britain,{fillOpacity:.34});ha(d,'amEastAnglia',HC.faith,{fillOpacity:.42});
+    hp(d,'amh_cambridge',{note:'克伦威尔在此招募自耕农组建守纪笃信的“铁骑军”。'});
+    hp(d,'uk4_westminster',{note:'1645年4月3日上院批准《自抑法》，埃塞克斯等交出兵权。'});
+    hp(d,'bcw_windsor_park',{kind:'battle',left:1,note:'1645年4—5月费尔法克斯在此整编2.2万红衣新模范军。'});
+   },[['fill',HC.britain,'议会控制区'],['fill',HC.faith,'铁骑军基地东英吉利'],['dot',HC.war,'温莎（整训新模范军）'],['dot','#2a2018','威斯敏斯特与剑桥']]),
+  hs('1645—1646年','纳斯比大捷与交出国王','虚线为查理一世在纳斯比惨败后从牛津化装北逃纽瓦克投降苏格兰军的路线。',[[50.8,-4.5],[55.5,1.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'mScotland1200',HC.faith,{fillOpacity:.28});
+    hp(d,'bcw_naseby',{kind:'battle',left:1,note:'1645年6月14日新模范军在此击溃王军，缴获国王密信木柜。'});
+    hp(d,'bcw_oxford',{left:1,note:'1646年4月27日查理一世剪掉胡须扮作仆人逃出牛津。'});
+    hp(d,'uk8_newark',{kind:'battle',note:'1646年5月5日查理一世在此附近的索斯韦尔向苏格兰军投降。'});
+    hp(d,'k_london',{note:'议会刊印《打开的国王文件柜》，并筹款40万镑赎买国王。'});
+    hr(d,[[51.75,-1.26],[52.40,-0.99],[53.08,-0.81]],HC.war);
+   },[['fill',HC.britain,'新模范军平定的英格兰'],['fill',HC.faith,'收钱交出国王的苏格兰'],['dline',HC.war,'1645—1646年纳斯比决战与查理一世北逃路线'],['dot',HC.war,'纳斯比大捷与纽瓦克投降'],['dot','#2a2018','牛津与伦敦']])
+ ]},
+{id:'history-britain-regicide',ch:12,title:'军事政变与处死查理一世：枪杆子清洗议会，草台法庭审国王',short:'军事政变与处死查理一世',en:'Pride’s Purge and the Execution of Charles I: A Military Coup and a Rump Court',period:'1647—1649年',c:HC.britain,
+ scenes:[
+  hs('1647年春夏','欠饷哗变与抢走国王','虚线为乔伊斯率五百骑兵从霍姆比庄园劫走查理一世押往军营的路线。',[[51.0,-3.2],[53.2,1.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});ha(d,'amEastAnglia',HC.faith,{fillOpacity:.36});
+    hp(d,'breg_holmby',{kind:'battle',left:1,note:'1647年6月4日乔伊斯率五百骑兵在此劫走被议会看管的国王。'});
+    hp(d,'amh_cambridge',{note:'6月新模范军在剑桥近郊纽马基特集会，拒不接受6周欠饷遣散令。'});
+    hp(d,'k_london',{left:1,note:'8月6日两万新模范军列队穿过伦敦城，震慑长老派议会。'});
+    hr(d,[[52.30,-0.99],[52.20,0.12],[51.50,-0.13]],HC.war);
+   },[['fill',HC.britain,'英格兰'],['fill',HC.faith,'新模范军集结的东英吉利'],['dline',HC.war,'1647年6—8月劫持国王与进逼伦敦路线'],['dot',HC.war,'霍姆比庄园（五百骑兵抢走国王）'],['dot','#2a2018','剑桥与伦敦']]),
+  hs('1647年10—11月','普特尼教堂辩论','图钉标出举行军队总委员会辩论的伦敦西南郊普特尼与威斯敏斯特。',[[50.5,-2.5],[52.5,1.2]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});
+    hp(d,'breg_putney',{kind:'battle',left:1,note:'1647年10月底至11月初，艾尔顿与兰伯罗在此激辩选举权。'});
+    hp(d,'uk4_westminster',{note:'下议院长老派趁军队内部争论，继续暗中与查理一世接触。'});
+   },[['fill',HC.britain,'争论国家前途的英格兰'],['dot',HC.war,'普特尼圣玛丽教堂（普选权与恒产权之争）'],['dot','#2a2018','威斯敏斯特']]),
+  hs('1647年底—1648年8月','怀特岛密约与第二次内战','虚线为1648年夏苏格兰军南下及克伦威尔北上普雷斯顿迎击的路线。',[[50.2,-5.8],[56.5,2.0]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});ha(d,'mScotland1200',HC.faith,{fillOpacity:.32});ha(d,'mWales',HC.celt,{fillOpacity:.30});
+    hp(d,'breg_carisbrooke',{left:1,note:'查理一世在此将密约装进铅管埋入花园，与苏格兰签《婚约协定》。'});
+    hp(d,'uk6_windsor',{left:1,note:'1648年4月底军官在此连开三天祈祷会，指认国王为血债之人。'});
+    hp(d,'uk6_pembroke',{kind:'battle',left:1,note:'1648年5—7月克伦威尔围攻彭布罗克城堡平定威尔士叛军。'});
+    hp(d,'breg_colchester',{kind:'battle',note:'1648年8月27日费尔法克斯攻克科尔切斯特。'});
+    hp(d,'breg_preston',{kind:'battle',left:1,note:'1648年8月17—19日克伦威尔以八千兵在此击溃两万苏格兰军。'});
+    hr(d,[[55.95,-3.19],[53.76,-2.70]],HC.war);
+    hr(d,[[51.67,-4.92],[52.6,-1.8],[53.76,-2.70]],HC.route);
+   },[['fill',HC.britain,'英格兰'],['fill',HC.faith,'发兵救王的苏格兰'],['fill',HC.celt,'爆发保王叛乱的威尔士'],['dline',HC.war,'1648年夏苏格兰军南下路线'],['dline',HC.route,'克伦威尔自威尔士北上截击路线'],['dot',HC.war,'普雷斯顿、科尔切斯特与彭布罗克'],['dot','#2a2018','怀特岛与温莎']]),
+  hs('1648年12月6日','普莱德清洗：唯一军事政变','图钉标出发生普莱德清洗的威斯敏斯特大厅与克伦威尔当时滞留的北方。',[[50.5,-3.5],[54.5,1.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});
+    hp(d,'uk4_westminster',{kind:'battle',left:1,note:'1648年12月6日普莱德带兵堵门，驱逐231人、抓走45人。'});
+    hp(d,'hy2_pontefract',{left:1,note:'克伦威尔在约克郡围攻庞蒂弗拉克特，政变次日夜里才赶回伦敦。'});
+   },[['fill',HC.britain,'爆发唯一军事政变的英格兰'],['dot',HC.war,'威斯敏斯特大厅（普莱德清洗）'],['dot','#2a2018','庞蒂弗拉克特']]),
+  hs('1649年1月20—27日','草台法庭审国王','图钉标出审判查理一世的威斯敏斯特大厅与关押国王的伦敦棉氏宅邸。',[[50.5,-3.5],[53.5,1.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});
+    hp(d,'uk4_westminster',{kind:'battle',left:1,note:'135名法官仅68人到场，查理一世四次出庭拒不摘帽认罪。'});
+    hp(d,'k_london',{note:'死刑令在白厅起草，许多法官因恐惧被克伦威尔按手强迫签字。'});
+   },[['fill',HC.britain,'残余议会控制的英格兰'],['dot',HC.war,'威斯敏斯特大厅（草台法庭审判国王）'],['dot','#2a2018','伦敦']]),
+  hs('1649年1月30日','白厅国宴厅外的断头台','色块是英格兰、刚签完《威斯特伐利亚和约》的德意志及苏格兰；图钉标出白厅、温莎与明斯特。',[[47.5,-5.5],[56.5,12.0]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.38});ha(d,'mScotland1200',HC.faith,{fillOpacity:.28});ha(d,'mEmpire1050',HC.germany,{fillOpacity:.18});
+    hp(d,'k_london',{kind:'battle',left:1,note:'1649年1月30日查理一世在白厅被斩首，后秘葬于温莎。'});
+    hp(d,'uk9_edinburgh',{note:'死讯传到爱丁堡后，苏格兰于2月5日宣布拥立其长子查理二世。'});
+    hp(d,'ty3_munster',{note:'1648年10月24日欧洲各国在此签《威斯特伐利亚和约》。'});
+   },[['fill',HC.britain,'处死国王的英格兰'],['fill',HC.faith,'转头拥立查理二世的苏格兰'],['fill',HC.germany,'刚结束三十年战争的德意志'],['dot',HC.war,'伦敦白厅宫（1649年1月30日斩首查理一世）'],['dot','#2a2018','温莎、爱丁堡与明斯特']])
+ ]},
+{id:'history-britain-commonwealth',ch:12,title:'英格兰共和国：杀了国王之后，还是枪杆子说了算',short:'英格兰共和国',en:'The Commonwealth of England: Rule by the Sword After the King’s Death',period:'1649—1653年',c:HC.britain,
+ scenes:[
+  hs('1649年1—5月','残余议会与国务会议','色块为新成立的英格兰共和国与威尔士；图钉标出国务会议所在的威斯敏斯特及驻军首都伦敦。',[[50.2,-5.5],[55.2,2.0]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'mWales',HC.britain,{fillOpacity:.28});
+    hp(d,'uk4_westminster',{kind:'battle',left:1,note:'1649年春在此立法取消君主制与贵族院，成立共和国。'});
+    hp(d,'k_london',{note:'伦敦：四十一人国务会议靠新模范军驻防维持首都秩序。'});
+   },[['fill',HC.britain,'废除君主制与上议院的英格兰共和国（1649年5月）'],['dot',HC.war,'威斯敏斯特（残余下议院与国务会议）'],['dot','#2a2018','伦敦']]),
+  hs('1649年2—5月','伯福德墓地枪声','图钉标出囚禁李尔本的伦敦塔，以及克伦威尔连夜奔袭镇压平等派哗变骑兵的牛津郡伯福德。',[[50.6,-3.5],[53.2,1.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});
+    hp(d,'k_london',{left:1,note:'1649年3月李尔本因印行小册子被关入伦敦塔。'});
+    hp(d,'bcom_burford',{kind:'battle',left:1,note:'1649年5月15日克伦威尔在此教堂墓地枪决三名哗变代表。'});
+    hr(d,[[51.51,-0.13],[51.81,-1.64]],HC.war);
+   },[['fill',HC.britain,'镇压军队内部平等派的英格兰共和国'],['dline',HC.war,'1649年5月克伦威尔急行军奔袭伯福德路线'],['dot',HC.war,'1649年5月15日伯福德枪决哗变骑兵'],['dot','#2a2018','伦敦塔']]),
+  hs('1649—1652年','远征爱尔兰与康诺特迁徙','浅色为被没收土地抵债的爱尔兰三省，深色为强迁天主教徒的西部康诺特；虚线为克伦威尔进军路线。',[[51.2,-10.8],[55.5,-5.0]],d=>{
+    ha(d,'mIreland',HC.britain,{fillOpacity:.26});ha(d,'brConnacht1652',HC.celt,{fillOpacity:.48});
+    hp(d,'uk6_dublin',{note:'1649年8月新模范军自此登岸，展开三年铁腕征讨。'});
+    hp(d,'bcom_drogheda',{kind:'battle',note:'1649年9月英军攻陷此城，守军与神父约三千五百人被杀。'});
+    hp(d,'bcom_wexford',{kind:'battle',note:'1649年10月英军破城，守军与市民约两千人丧生。'});
+    hp(d,'bcom_galway',{left:1,note:'1652年被没收地产的天主教徒被强迁至香农河以西。'});
+    hr(d,[[53.35,-6.26],[53.72,-6.35],[53.35,-6.26],[52.34,-6.46]],HC.war);
+   },[['fill',HC.britain,'没收天主教徒土地抵债分饷的爱尔兰三省'],['fill',HC.celt,'1652年强迁天主教徒的康诺特省（brConnacht1652）'],['dline',HC.war,'1649年秋克伦威尔南北攻城路线'],['dot',HC.war,'德罗赫达与韦克斯福德屠城'],['dot','#2a2018','都柏林与高威']]),
+  hs('1650—1651年','邓巴、伍斯特与橡树逃亡','北方为拥立查理二世的苏格兰，南方为英格兰；虚线标出1651年查理二世南下与战败潜逃路线。',[[50.2,-5.5],[57.2,1.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});ha(d,'mScotland1200',HC.celt,{fillOpacity:.32});
+    hp(d,'bcom_dunbar',{kind:'battle',note:'1650年9月3日克伦威尔在此拂晓突袭，击溃苏格兰主力。'});
+    hp(d,'uk9_edinburgh',{left:1,note:'邓巴战后英军占领爱丁堡，查理二世退守北方。'});
+    hp(d,'bcom_worcester',{kind:'battle',left:1,note:'1651年9月3日克伦威尔三万大军在此围歼南下王军。'});
+    hp(d,'bcom_boscobel',{left:1,note:'1651年9月6日查理二世在此庄园大橡树上躲过搜捕。'});
+    hp(d,'bcom_shoreham',{note:'1651年10月查理二世由此搭运煤船渡海逃往法国。'});
+    hr(d,[[56.12,-3.94],[52.19,-2.22],[52.67,-2.24],[50.83,-0.27]],HC.route);
+   },[['fill',HC.britain,'英格兰共和国'],['fill',HC.celt,'被新模范军征服的苏格兰'],['dline',HC.route,'1651年查理二世南下伍斯特及战败逃亡路线'],['dot',HC.war,'1650年邓巴之战与1651年伍斯特会战'],['dot','#2a2018','博斯科贝尔庄园与肖勒姆港']]),
+  hs('1651—1654年','航海条例与英荷海战','海峡西岸为英格兰，东岸为荷兰联省共和国；图钉标出引爆第一次英荷战争的多佛外海唐斯锚地。',[[49.8,-3.0],[54.2,6.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'sDutchRepublic1609',HC.lowlands,{fillOpacity:.38});
+    hp(d,'k_london',{left:1,note:'1651年10月议会通过《航海条例》，排挤荷兰转口商船。'});
+    hp(d,'bcom_downs',{kind:'battle',note:'1652年5月布莱克与荷兰将领特朗普在此因降旗礼开战。'});
+    hp(d,'sn2_amsterdam',{note:'阿姆斯特丹：英军封锁海峡，大批荷兰商船被截获。'});
+   },[['fill',HC.britain,'推行《航海条例》的英格兰共和国'],['fill',HC.lowlands,'荷兰联省共和国'],['dot',HC.war,'1652年5月多佛外海唐斯海战'],['dot','#2a2018','伦敦与阿姆斯特丹']]),
+  hs('1653年4—12月','火枪兵清场与圣徒议会','图钉标出1653年4月克伦威尔带兵解散残余议会、7月召开圣徒议会的威斯敏斯特，以及伦敦城。',[[51.1,-1.2],[52.0,0.6]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});
+    hp(d,'uk4_westminster',{kind:'battle',left:1,note:'1653年4月克伦威尔带兵驱散残余议会，12月圣徒议会散伙。'});
+    hp(d,'k_london',{note:'伦敦：巴蓬等议员欲废什一税与衡平法院，引起有产者恐慌。'});
+   },[['fill',HC.britain,'议会共和试验终结、转入军事护国体制的英格兰（1653年底）'],['dot',HC.war,'1653年4月20日威斯敏斯特驱散残余议会'],['dot','#2a2018','伦敦城']])
+ ]},
+{id:'history-britain-cromwell',ch:12,title:'奥利弗·克伦威尔：靠拆修道院发家的重孙，当上了不戴王冠的国王',short:'第二个克伦威尔',en:'Oliver Cromwell: The Great-Grandson Built on Monastic Land Becomes an Uncrowned King',period:'1599—1660年',c:HC.britain,
+ scenes:[
+  hs('1538—1640年','修道院地产与家族发迹','色块为清教徒大本营东英吉利；图钉标出克伦威尔家族靠吞并教产发家的欣钦布鲁克与拉姆齐修道院。',[[51.2,-1.8],[53.2,1.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.26});ha(d,'amEastAnglia',HC.faith,{fillOpacity:.42});
+    hp(d,'bcrom_huntingdon',{kind:'battle',left:1,note:'1538年理查获授欣钦布鲁克女修道院，曾孙奥利弗生于此地。'});
+    hp(d,'bcrom_ramsey',{note:'1540年理查购入该修道院广袤庄园，跃居地方巨富。'});
+    hp(d,'k_london',{left:1,note:'1640年奥利弗作为剑桥议员赴伦敦出席长期议会。'});
+   },[['fill',HC.faith,'清教徒与新乡绅集中的东英吉利'],['fill',HC.britain,'英格兰'],['dot',HC.war,'亨廷登（欣钦布鲁克庄园）'],['dot','#2a2018','拉姆齐修道院与伦敦']]),
+  hs('1653—1655年','护国公与成文宪法','色块为《施政文件》统合的英格兰、苏格兰与爱尔兰联邦；图钉标出护国公就职的威斯敏斯特与白厅宫。',[[50.0,-10.5],[58.5,2.0]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'mWales',HC.britain,{fillOpacity:.32});ha(d,'mScotland1200',HC.britain,{fillOpacity:.26});ha(d,'mIreland',HC.britain,{fillOpacity:.26});
+    hp(d,'uk4_westminster',{kind:'battle',left:1,note:'1653年12月克伦威尔在此按《施政文件》宣誓就任终身护国公。'});
+    hp(d,'k_london',{note:'白厅宫：1655年1月按28天一月卡点解散首届护国公议会。'});
+    hp(d,'uk9_edinburgh',{left:1,note:'苏格兰并入护国公联邦，选派代表赴伦敦议会。'});
+    hp(d,'uk6_dublin',{left:1,note:'爱尔兰并入护国公联邦，由克伦威尔次子亨利镇守。'});
+   },[['fill',HC.britain,'《施政文件》统治下的英苏爱护国公联邦（1653—1658年）'],['dot',HC.war,'威斯敏斯特（护国公就职）'],['dot','#2a2018','伦敦、爱丁堡与都柏林']]),
+  hs('1655—1657年','远征美洲与少将治国','左为加勒比海远征圣多明各与牙买加，右为英格兰本国；图钉标出引发十一名少将军管的索尔兹伯里。',[[14.0,-82.0],[56.0,5.0]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.38});ha(d,'aCaribbean',HC.spain,{fillOpacity:.28});
+    hp(d,'bcrom_santodomingo',{kind:'battle',note:'1655年4月英军攻打西属圣多明各失利，折兵两千余人。'});
+    hp(d,'bcrom_jamaica',{kind:'battle',left:1,note:'1655年5月英军夺取牙买加岛，开辟加勒比海据点。'});
+    hp(d,'bcrom_salisbury',{left:1,note:'1655年3月彭拉多克起义于此被平，克伦威尔随即设十一军管区。'});
+    hp(d,'k_london',{note:'1655年秋十一名少将分赴各郡征什一罚税、查禁娱乐与圣诞节。'});
+    hr(d,[[50.8,-1.1],[18.48,-69.89],[18.0,-76.79]],HC.route);
+   },[['fill',HC.britain,'划为十一个少将军管区的英格兰'],['fill',HC.spain,'西属加勒比海殖民地'],['dline',HC.route,'1654—1655年英军“西方计划”远征航线'],['dot',HC.war,'圣多明各与牙买加之战'],['dot','#2a2018','索尔兹伯里与伦敦']]),
+  hs('1654—1658年','称雄海上与夺取敦刻尔克','图钉标出布莱克舰队炮轰海盗的突尼斯、全歼西银船的圣克鲁斯港，以及陆军联法夺取的海峡要塞敦刻尔克。',[[26.0,-19.0],[54.0,14.0]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'fFrance1648',HC.france,{fillOpacity:.22});ha(d,'sCastile',HC.spain,{fillOpacity:.24});
+    hp(d,'bcrom_tunis',{kind:'battle',note:'1655年4月布莱克舰队轰毁突尼斯海盗船队，威震地中海。'});
+    hp(d,'bcrom_santacruz',{kind:'battle',note:'1657年4月布莱克闯入圣克鲁斯港，击毁西班牙美洲运银舰队。'});
+    hp(d,'spa_dunkirk',{kind:'battle',note:'1658年6月新模范军打赢沙丘之战，从西班牙手中夺取敦刻尔克。'});
+    hp(d,'k_london',{left:1,note:'1654年4月荷兰在此签和约，承认英国《航海条例》。'});
+   },[['fill',HC.britain,'克伦威尔护国公联邦'],['fill',HC.france,'结盟夹击西班牙的法兰西'],['fill',HC.spain,'西班牙王国'],['dot',HC.war,'突尼斯、圣克鲁斯港与敦刻尔克大捷'],['dot','#2a2018','伦敦']]),
+  hs('1657—1658年','劝进称王与紫袍就职','图钉标出1657年议会通过《谦卑请愿与劝进书》劝进称王、克伦威尔穿紫袍坐加冕椅二次就职的威斯敏斯特。',[[51.1,-1.2],[52.0,0.6]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.38});
+    hp(d,'uk4_westminster',{kind:'battle',left:1,note:'1657年6月克伦威尔穿紫貂袍、坐加冕椅在此二次就任护国公。'});
+    hp(d,'k_london',{note:'新模范军将领在伦敦联名上书，威胁克伦威尔若戴王冠即哗变。'});
+   },[['fill',HC.britain,'恢复两院制、护国公获准指定继承人的英格兰（1657年）'],['dot',HC.war,'1657年6月威斯敏斯特紫袍就职典礼'],['dot','#2a2018','伦敦']]),
+  hs('1658—1660年','蒙克南下与王朝复辟','虚线标出1660年元旦蒙克率驻苏精兵自科尔斯特里姆渡河南下进驻伦敦的路线；图钉标出威斯敏斯特。',[[50.8,-4.8],[56.8,1.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'mScotland1200',HC.celt,{fillOpacity:.28});
+    hp(d,'bcrom_coldstream',{kind:'battle',left:1,note:'1660年1月1日蒙克率六千精兵由此渡过特威德河南下。'});
+    hp(d,'k_london',{kind:'battle',note:'1660年2月蒙克进驻伦敦，召回旧议员，5月迎回查理二世。'});
+    hp(d,'uk4_westminster',{left:1,note:'1658年9月克伦威尔葬于此，1661年1月遗体被挖出斩首悬颅。'});
+    hr(d,[[55.95,-3.19],[55.65,-2.25],[53.96,-1.08],[51.51,-0.13]],HC.war);
+   },[['fill',HC.britain,'军头混战后迎回旧王的英格兰'],['fill',HC.celt,'蒙克驻守的苏格兰'],['dline',HC.war,'1660年1—2月蒙克将军率军南下伦敦路线'],['dot',HC.war,'科尔斯特里姆渡口与伦敦'],['dot','#2a2018','威斯敏斯特']])
+ ]},
+{id:'history-britain-charles2',ch:12,title:'查理二世复辟：许诺靠甩锅给议会赖掉，治国靠法王津贴过日子',short:'查理二世复辟',en:'The Restoration of Charles II: Shifting Broken Promises to Parliament and Living on French Gold',period:'1660—1685年',c:HC.britain,
+ scenes:[
+  hs('1660年4—12月','布雷达宣言与复辟归国','虚线为1660年5月查理二世自荷兰渡海赴多佛、进驻伦敦的复辟航线；色块为恢复君主制的英格兰。',[[50.2,-3.5],[53.8,6.2]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'sDutchRepublic1609',HC.lowlands,{fillOpacity:.28});
+    hp(d,'bc2_breda',{kind:'battle',note:'1660年4月查理二世在此发出附有议会免责活扣的宣言。'});
+    hp(d,'bc2_dover',{left:1,note:'1660年5月25日查理二世在此登岸，蒙克将军跪迎。'});
+    hp(d,'k_london',{kind:'battle',left:1,note:'1660年5月查理二世进京，遣散军队并收回王室与教会地产。'});
+    hr(d,[[51.59,4.78],[52.10,4.28],[51.13,1.31],[51.51,-0.13]],HC.route);
+   },[['fill',HC.britain,'迎回查理二世复辟的英格兰（1660年5月）'],['fill',HC.lowlands,'荷兰联省共和国'],['dline',HC.route,'1660年5月查理二世渡海复辟路线'],['dot',HC.war,'布雷达与伦敦'],['dot','#2a2018','多佛港']]),
+  hs('1661—1662年','驱逐牧师与背誓杀臣','南方英格兰清洗不从国教的神职人员与旧臣，北方苏格兰废除《圣约》恢复主教制并处决阿盖尔。',[[50.2,-5.8],[57.2,1.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'mScotland1200',HC.celt,{fillOpacity:.32});
+    hp(d,'uk4_westminster',{kind:'battle',left:1,note:'1661年骑士议会开张，次年立《统一法》清洗清教牧师。'});
+    hp(d,'k_london',{note:'伦敦塔山：1662年6月已获议会宽赦的范内在此被斩首。'});
+    hp(d,'uk9_edinburgh',{kind:'battle',left:1,note:'1661年查理二世背弃《圣约》，在此处死阿盖尔侯爵。'});
+   },[['fill',HC.britain,'实施《克拉伦登法典》清洗清教徒的英格兰'],['fill',HC.celt,'废除《圣约》强行恢复主教制的苏格兰'],['dot',HC.war,'威斯敏斯特与爱丁堡'],['dot','#2a2018','伦敦塔山']]),
+  hs('1662—1667年','瘟疫大火与梅德韦河奇耻','图钉标出卖给法国的敦刻尔克、连遭大瘟疫与大火的伦敦，以及被荷兰舰队闯入烧船拖走旗舰的查塔姆梅德韦河。',[[50.2,-2.5],[53.5,5.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'sDutchRepublic1609',HC.lowlands,{fillOpacity:.36});ha(d,'fFrance1648',HC.france,{fillOpacity:.22});
+    hp(d,'spa_dunkirk',{note:'1662年查理二世因缺钱以40万镑将此要塞卖给法王。'});
+    hp(d,'k_london',{kind:'battle',left:1,note:'1665年瘟疫死十万人，1666年大火烧毁一万三千余栋房屋。'});
+    hp(d,'bc2_chatham',{kind:'battle',note:'1667年6月荷兰舰队冲入内河，焚毁十三艘英舰并拖走旗舰。'});
+    hp(d,'sn2_amsterdam',{note:'阿姆斯特丹：英国皇家旗舰“皇家查理号”被拖回荷兰展览。'});
+    hr(d,[[52.37,4.90],[51.39,0.53]],HC.war);
+   },[['fill',HC.britain,'财政枯竭、海军停饷的英格兰'],['fill',HC.lowlands,'荷兰联省共和国'],['fill',HC.france,'买下敦刻尔克的法兰西'],['dline',HC.war,'1667年6月荷兰舰队奇袭梅德韦河路线'],['dot',HC.war,'伦敦与查塔姆船坞'],['dot','#2a2018','敦刻尔克与阿姆斯特丹']]),
+  hs('1670—1674年','多佛密约与宣誓法','图钉标出查理二世同法国签密约领津贴的多佛、路易十四王廷巴黎，以及议会通过《宣誓法》反制的威斯敏斯特。',[[48.2,-3.0],[53.5,5.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'fFrance1648',HC.france,{fillOpacity:.32});ha(d,'sDutchRepublic1609',HC.lowlands,{fillOpacity:.32});
+    hp(d,'bc2_dover',{kind:'battle',left:1,note:'1670年5月查理二世在此同法国签密约，收钱助法攻荷。'});
+    hp(d,'w_paris',{note:'巴黎：表弟路易十四向查理二世支付改宗金与军费津贴。'});
+    hp(d,'uk4_westminster',{kind:'battle',left:1,note:'1673年议会立《宣誓法》，逼国王亲弟詹姆士辞去海军大臣。'});
+   },[['fill',HC.britain,'英格兰王国'],['fill',HC.france,'给查理二世发秘密津贴的法兰西'],['fill',HC.lowlands,'遭英法夹击的荷兰'],['dot',HC.war,'1670年多佛密约与1673年威斯敏斯特《宣誓法》'],['dot','#2a2018','巴黎']]),
+  hs('1678—1681年','天主教阴谋案与两党起源','图钉标出“天主教阴谋案”席卷的伦敦，以及沙夫茨伯里伯爵连推《排除法案》、催生辉格党与托利党的威斯敏斯特。',[[50.8,-2.5],[52.8,1.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});
+    hp(d,'k_london',{kind:'battle',note:'1678年奥茨制造假案，沙夫茨伯里在伦敦组建绿丝带俱乐部。'});
+    hp(d,'uk4_westminster',{kind:'battle',left:1,note:'1679年议会围绕《排除法案》裂为两党，通过《人身保护法》。'});
+   },[['fill',HC.britain,'陷入继承权排除危机、分裂为辉格党与托利党的英格兰'],['dot',HC.war,'伦敦与威斯敏斯特']]),
+  hs('1681—1685年','牛津散会与无议会统治','图钉标出1681年查理二世七天解散议会的牛津、1683年“黑麦屋阴谋”案发地，以及国王病床改宗的白厅宫。',[[50.8,-2.8],[52.8,1.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.38});
+    hp(d,'bc2_oxford',{kind:'battle',left:1,note:'1681年3月查理二世在此开会，拿到法国津贴后七天即解散。'});
+    hp(d,'bc2_ryehouse',{kind:'battle',note:'1683年黑麦屋伏击案败露，辉格党领袖拉塞尔与西德尼被杀。'});
+    hp(d,'k_london',{left:1,note:'1685年2月查理二世在白厅宫弥留之际秘密改宗天主教。'});
+   },[['fill',HC.britain,'靠法国津贴与外贸关税推行无议会统治的英格兰（1681—1685年）'],['dot',HC.war,'1681年牛津议会与1683年黑麦屋案'],['dot','#2a2018','伦敦（白厅宫）']])
+ ]},
+{id:'history-britain-james2',ch:12,title:'詹姆士二世：只要熬到他死一切照旧，偏偏他生了儿子',short:'詹姆士二世',en:'James II: Three Years to Lose a Throne and a Son in a Warming-Pan',period:'1685—1688年',c:HC.britain,
+ scenes:[
+  hs('1685年2—9月','上台蜜月与西部血腥审判','色块是詹姆士二世即位时的英格兰；西南部图钉标出蒙茅斯登陆、塞奇莫尔夜战与温切斯特审判。',[[50.0,-5.2],[53.2,1.2]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});
+    hp(d,'k_london',{left:1,note:'1685年5月议会齐集伦敦，批给新王近200万镑年入。'});
+    hp(d,'bj2_lyme',{left:1,note:'6月11日蒙茅斯带三艘船在此靠岸，招集西部农夫与工匠。'});
+    hp(d,'bj2_sedgemoor',{kind:'battle',left:1,note:'7月6日夜袭迷路，农夫义军被正规火枪兵击溃。'});
+    hp(d,'bj2_winchester',{kind:'battle',note:'8月底杰弗里斯在此首审，判老妇人爱丽丝斩首。'});
+    hr(d,[[50.725,-2.935],[51.02,-3.10],[51.116,-2.926]],HC.war);
+   },[['fill',HC.britain,'英格兰王国'],['dline',HC.war,'1685年6—7月蒙茅斯进军路线'],['dot',HC.war,'塞奇莫尔与温切斯特'],['dot','#2a2018','伦敦与莱姆里吉斯']]),
+  hs('1685年10—11月','法国废敕与难民渡海','南边是路易十四废除宽容敕令的法兰西，虚线示意胡格诺派难民渡过海峡涌入英格兰东南。',[[47.5,-3.5],[52.8,4.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});ha(d,'fFrance1648',HC.france,{fillOpacity:.30});
+    hp(d,'bj2_fontainebleau',{kind:'battle',note:'10月18日路易十四在此签字，严禁新教礼拜并驱逐牧师。'});
+    hp(d,'w_paris',{left:1,note:'巴黎近郊新教圣殿被连夜夷平。'});
+    hp(d,'k_london',{left:1,note:'东区斯皮塔菲尔德涌入大批法国丝织工匠；11月议会休会。'});
+    hp(d,'w_canterbury',{note:'肯特郡与东南沿海港口挤满渡海逃难的法国新教家庭。'});
+    hr(d,[[49.4,0.2],[50.8,0.5],[51.5,-0.1]],HC.route);
+   },[['fill',HC.britain,'英格兰'],['fill',HC.france,'法兰西王国'],['dline',HC.route,'胡格诺派难民渡海流向（概略）'],['dot',HC.war,'枫丹白露'],['dot','#2a2018','巴黎、伦敦与坎特伯雷']]),
+  hs('1686—1687年','大军压城与夺占牛津学院','泰晤士河谷一带：西郊豪恩斯洛是常备军大营，西北牛津是被强行改建的莫德林学院。',[[50.8,-2.5],[52.5,0.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});
+    hp(d,'k_london',{note:'王室法庭在此审结哈利斯案，放开天主教徒任官限制。'});
+    hp(d,'bj2_hounslow',{kind:'battle',left:1,note:'十四营步兵与三十二中队骑兵驻此，营内设天主教弥撒帐篷。'});
+    hp(d,'bj2_oxford',{kind:'battle',left:1,note:'1687年秋全城铁匠拒绝替钦差撬门，钦差仆役用铁棍砸开院长室。'});
+   },[['fill',HC.britain,'英格兰东南'],['dot',HC.war,'豪恩斯洛军营与牛津'],['dot','#2a2018','伦敦']]),
+  hs('1688年5—6月','兰贝斯联名抗命与押入伦敦塔','伦敦城区两岸：南岸兰贝斯宫起草抗命请愿书，北岸白厅受审后经泰晤士河押往东侧伦敦塔。',[[51.2,-0.8],[51.9,0.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});
+    hp(d,'bj2_lambeth',{left:1,note:'5月18日七主教在兰贝斯宫联名上书抗命，6月8日拒保被收押。'});
+    hp(d,'k_london',{kind:'battle',note:'七主教乘船由水门进入伦敦塔，两岸市民跪进河泥求赐福。'});
+   },[['fill',HC.britain,'伦敦与泰晤士河两岸'],['dot',HC.war,'伦敦塔'],['dot','#2a2018','兰贝斯宫与威斯敏斯特']]),
+  hs('1688年6月10日','圣詹姆斯宫产子与顺位翻盘','英格兰与荷兰隔海相望：伦敦圣詹姆斯宫男婴落地，海牙的玛丽公主一夜之间失去第一顺位。',[[50.5,-3.2],[53.0,5.2]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'sDutchRepublic1609',HC.lowlands,{fillOpacity:.36});
+    hp(d,'bj2_st_james',{kind:'battle',left:1,note:'6月9日午夜王后自白厅乘轿移居此宫，次日清晨产下男婴。'});
+    hp(d,'k_london',{note:'咖啡馆遍传暖床炉歌谣，十人中无一人相信王后真生了孩子。'});
+    hp(d,'sn2_hague',{note:'威廉原派特使赴英道贺，闻听全英皆疑假孕后停念小王子祝祷词。'});
+   },[['fill',HC.britain,'英格兰'],['fill',HC.lowlands,'荷兰联省共和国'],['dot',HC.war,'圣詹姆斯宫'],['dot','#2a2018','伦敦与海牙']]),
+  hs('1688年6月30日','无罪欢呼与密信送往海牙','威斯敏斯特宣判无罪当夜，赫伯特化装水手自泰晤士河口渡过北海，把七巨头密信送达海牙。',[[50.6,-2.0],[53.2,5.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'sDutchRepublic1609',HC.lowlands,{fillOpacity:.38});
+    hp(d,'k_london',{kind:'battle',left:1,note:'6月30日七主教获判无罪、军营欢呼，当夜七巨头签密信邀威廉过海。'});
+    hp(d,'sn2_hague',{kind:'battle',note:'赫伯特扮作水手于周五安抵荷兰，威廉定下远征大计。'});
+    hr(d,[[51.5,-0.1],[51.6,1.5],[52.08,4.30]],HC.route);
+   },[['fill',HC.britain,'英格兰'],['fill',HC.lowlands,'荷兰联省共和国'],['dline',HC.route,'1688年6月30日夜赫伯特送密信航线'],['dot',HC.war,'威斯敏斯特与海牙'],['dot','#2a2018','伦敦与豪恩斯洛']])
+ ]},
+{id:'history-britain-glorious',ch:12,title:'光荣革命：荷兰女婿要英国舰队打法国，议会趁机锁死枪与钱',short:'光荣革命',en:'The Glorious Revolution: A Dutch Stadtholder Takes the Fleet and Parliament Locks Up Sword and Purse',period:'1688—1694年',c:HC.britain,
+ scenes:[
+  hs('1672—1688年秋','反法盟主威廉的地缘算盘','色块是英格兰、荷兰与路易十四的法兰西；当法军在东线莱茵河用兵时，海牙正在集结渡海舰队。',[[47.5,-4.5],[53.5,9.0]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.32});ha(d,'sDutchRepublic1609',HC.lowlands,{fillOpacity:.42});ha(d,'fFrance1648',HC.france,{fillOpacity:.30});
+    hp(d,'sn2_hague',{kind:'battle',note:'1672年威廉在此临危受命任执政，1688年秋统筹渡海大计。'});
+    hp(d,'sn2_amsterdam',{left:1,note:'阿姆斯特丹市政厅与银行家出资支持威廉远征，以防英法合流。'});
+    hp(d,'w_paris',{note:'1688年9月路易十四将法军主力派往德意志，给了荷兰渡海空窗。'});
+    hp(d,'k_london',{left:1,note:'英国皇家海军战舰云集泰晤士河口，是威廉志在必得的筹码。'});
+   },[['fill',HC.lowlands,'荷兰联省共和国'],['fill',HC.britain,'英格兰'],['fill',HC.france,'法兰西王国'],['dot',HC.war,'海牙'],['dot','#2a2018','阿姆斯特丹、巴黎与伦敦']]),
+  hs('1662—1688年','从伦敦嫁往海牙的玛丽公主','虚线连接伦敦与海牙：1677年十五岁的玛丽自泰晤士河渡海嫁入荷兰，十一年后成为反攻的正统旗号。',[[50.5,-2.5],[53.2,5.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'sDutchRepublic1609',HC.lowlands,{fillOpacity:.38});
+    hp(d,'bgl_st_james',{left:1,note:'1677年11月4日玛丽在卧室含泪完婚，婚礼由主教康普顿主持。'});
+    hp(d,'k_london',{note:'查理二世下令把两位侄女隔开天主教父母，按新教规矩抚养。'});
+    hp(d,'sn2_hague',{kind:'battle',note:'玛丽在海牙居住十一年，1688年夏致信丈夫全力支持渡海。'});
+    hr(d,[[51.505,-0.138],[51.6,1.8],[52.08,4.30]],HC.route);
+   },[['fill',HC.britain,'英格兰'],['fill',HC.lowlands,'荷兰联省共和国'],['dline',HC.route,'1677年11月玛丽远嫁荷兰航线'],['dot',HC.war,'海牙'],['dot','#2a2018','圣詹姆斯宫与伦敦']]),
+  hs('1688年11—12月','新教东风登陆与旧王扔印出逃','红线是威廉自荷兰顺东风穿海峡至托贝港再进逼伦敦的路线；肯特郡标出詹姆士两次出逃地。',[[49.2,-4.5],[53.0,5.2]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'sDutchRepublic1609',HC.lowlands,{fillOpacity:.34});ha(d,'fFrance1648',HC.france,{fillOpacity:.22});
+    hp(d,'bgl_hellevoetsluis',{note:'11月1日463艘船自此启航，帆幅绵延数海里。'});
+    hp(d,'bgl_torbay',{kind:'battle',left:1,note:'11月5日荷军顺东风在此登岸，沿途未遇像样抵抗。'});
+    hp(d,'bgl_salisbury',{left:1,note:'11月下旬王军集结于此，因主将连夜倒戈而不战自退。'});
+    hp(d,'k_london',{left:1,note:'12月11日凌晨旧王渡河时把大玺丢入水中；大法官剃眉被抓。'});
+    hp(d,'bgl_rochester',{kind:'battle',note:'旧王在法弗舍姆被渔民抓回，12月23日由罗切斯特放逃法国。'});
+    hr(d,[[51.825,4.130],[50.9,1.2],[50.435,-3.525],[51.069,-1.795],[51.5,-0.1]],HC.war);
+   },[['fill',HC.britain,'英格兰'],['fill',HC.lowlands,'荷兰联省共和国'],['fill',HC.france,'法兰西'],['dline',HC.war,'1688年11—12月威廉三世渡海与进军伦敦路线'],['dot',HC.war,'托贝港与罗切斯特'],['dot','#2a2018','赫勒富特斯劳斯、索尔兹伯里、伦敦与法弗舍姆']]),
+  hs('1689年1—2月','威斯敏斯特的三方摊牌与双王加冕','聚焦伦敦西区：威斯敏斯特大厅争辩王位归属，威廉在圣詹姆斯宫摊牌，最终于白厅共受王冠。',[[51.35,-0.45],[51.65,0.15]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});
+    hp(d,'bgl_st_james',{kind:'battle',left:1,note:'2月初威廉在圣詹姆斯宫召见两党贵族，声明不当王夫跟班。'});
+    hp(d,'k_london',{kind:'battle',note:'2月13日威廉与玛丽在白厅听取议会《权利宣言》并共受王位。'});
+   },[['fill',HC.britain,'伦敦与威斯敏斯特'],['dot',HC.war,'威斯敏斯特'],['dot','#2a2018','圣詹姆斯宫与伦敦白厅']]),
+  hs('1689—1694年','威斯敏斯特锁兵权与金融城建国债','西侧威斯敏斯特每年续批军法，东侧伦敦金融城创立英格兰银行，募得国债送往低地战场。',[[50.2,-2.5],[53.0,5.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'sDutchRepublic1609',HC.lowlands,{fillOpacity:.32});ha(d,'sSpanishNetherlands1609',HC.war,{fillOpacity:.34});
+    hp(d,'uk4_westminster',{left:1,note:'1689年12月《权利法案》正式成法，每年重审《兵变法》。'});
+    hp(d,'k_london',{kind:'battle',note:'1694年7月英格兰银行在金融城开业，将商绅资金转为长期国债。'});
+    hp(d,'lb_brussels',{note:'英国国债化作源源不断的军饷，支撑威廉率同盟军在低地抗法。'});
+    hr(d,[[51.5,-0.1],[51.2,2.8],[50.85,4.35]],HC.route);
+   },[['fill',HC.britain,'英格兰'],['fill',HC.lowlands,'荷兰'],['fill',HC.war,'九年战争低地前线'],['dline',HC.route,'英国军费与远征军输往低地前线'],['dot',HC.war,'伦敦金融城（英格兰银行）'],['dot','#2a2018','威斯敏斯特与布鲁塞尔']]),
+  hs('1689—1694年','玛丽二世坐镇肯辛顿宫与格林威治医院','泰晤士河沿线：西郊肯辛顿宫是玛丽二世日常理政与病逝处，东郊格林威治改建为海军医院。',[[51.35,-0.4],[51.65,0.2]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});
+    hp(d,'bgl_kensington',{kind:'battle',left:1,note:'玛丽二世在此理政并下令将通敌亲舅舅关入伦敦塔，1694年底病逝。'});
+    hp(d,'bgl_greenwich',{note:'玛丽命建筑师雷恩将王宫改建为皇家海军伤残水手医院。'});
+   },[['fill',HC.britain,'大伦敦地区'],['dot',HC.war,'肯辛顿宫'],['dot','#2a2018','伦敦塔与格林威治']]),
+  hs('1689—1701年','三岛流血收尾与汉诺威新教接班','西边爱尔兰博因河与北边苏格兰格伦科是流血战场；东边德意志汉诺威是1701年锁定的新王储所在地。',[[50.0,-9.5],[57.8,11.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'mScotland1200',HC.celt,{fillOpacity:.28});ha(d,'mIreland',HC.celt,{fillOpacity:.28});ha(d,'sDutchRepublic1609',HC.lowlands,{fillOpacity:.26});
+    hp(d,'bgl_boyne',{kind:'battle',left:1,note:'1690年7月1日威廉负伤渡河督战，击败岳父詹姆士二世。'});
+    hp(d,'uk6_dublin',{left:1,note:'战后都柏林新教议会立法严禁天主教徒买地、从军与入议会。'});
+    hp(d,'bgl_glencoe',{kind:'battle',left:1,note:'1692年2月13日借宿官军凌晨动手，高地氏族死于风雪。'});
+    hp(d,'uk4_westminster',{note:'1701年议会在此通过《王位继承法》，确立宗教大于血统原则。'});
+    hp(d,'bgl_hanover',{kind:'battle',note:'七十岁的索菲亚夫人获定为英国王位继承人，其子即乔治一世。'});
+    hr(d,[[52.375,9.732],[52.0,4.5],[51.5,-0.1]],HC.route);
+   },[['fill',HC.britain,'英格兰'],['fill',HC.celt,'被武力平定的苏格兰与爱尔兰'],['fill',HC.lowlands,'荷兰'],['dline',HC.route,'1701年锁定汉诺威新教支系接班方向'],['dot',HC.war,'博因河、格伦科与汉诺威'],['dot','#2a2018','都柏林与威斯敏斯特']])
+ ]},
 {id:'history-nordic-before',ch:13,title:'出海之前：罗马没来过的北方，怎么长出了长船',short:'出海之前',en:'Before the Longships: The North Rome Never Reached',period:'约前1700—约790年',c:HC.nordic,
  scenes:[
   hs('地理','地形：路在水上','丹麦卡着海峡、挪威沿着峡湾、瑞典面朝波罗的海；三国的地形决定了后来出海的大方向。',[[53.8,-2.5],[65.5,30.5]],d=>{
@@ -12953,6 +13921,8 @@ const HISTORY_ERAS=[
  {id:'britain-angevin',name:'金雀花帝国：普通法、爱尔兰与狮心王',en:'The Angevin Empire: Common Law, Ireland and Lionheart',date:'1014—1214年',c:HC.britain,items:[['history-britain-henry2'],['history-britain-norman-ireland'],['history-britain-richard']]},
  {id:'britain-parliament',name:'大宪章、议会与英伦三岛的边界',en:'Magna Carta, Parliament and the Bounds of the Isles',date:'1215—1307年',c:HC.britain,items:[['history-britain-magnacarta'],['history-britain-edward1']]},
  {id:'britain-hundred-years',name:'百年战争与红白玫瑰战争：从阿基坦称臣到都铎玫瑰',en:'The Hundred Years’ War and the Wars of the Roses: From Aquitaine to the Tudor Rose',date:'1200—1487年',c:HC.britain,items:[['history-britain-edward2'],['history-britain-hundred-years-1'],['history-britain-hundred-years-2'],['history-britain-hundred-years-3'],['history-britain-richard2'],['history-britain-hundred-years-4'],['history-britain-hundred-years-5'],['history-britain-jeanne'],['history-britain-roses-1'],['history-britain-roses-2'],['history-britain-roses-3'],['history-britain-roses-4']]},
+ {id:'britain-tudor',name:'都铎王朝：宗教改革、圈地与伊丽莎白时代',en:'The House of Tudor: Reformation, Enclosures and the Elizabethan Age',date:'1485—1603年',c:HC.britain,items:[['history-britain-henry7'],['history-britain-henry8-1'],['history-britain-henry8-2'],['history-britain-henry8-3'],['history-britain-enclosure'],['history-britain-mary1'],['history-britain-elizabeth-rise'],['history-britain-elizabeth-1'],['history-britain-elizabeth-faith'],['history-britain-elizabeth-2'],['history-britain-armada-after'],['history-britain-elizabeth-3']]},
+ {id:'britain-stuart',name:'斯图亚特与光荣革命：从内战弑君到锁死枪与钱',en:'The Stuarts and the Glorious Revolution: From Civil War and Regicide to the Bill of Rights',date:'1603—1694年',c:HC.britain,items:[['history-britain-james1'],['history-britain-charles1'],['history-britain-civil-war'],['history-britain-regicide'],['history-britain-commonwealth'],['history-britain-cromwell'],['history-britain-charles2'],['history-britain-james2'],['history-britain-glorious']]},
  {id:'nordic-early',name:'北欧：从出海到三国',en:'Scandinavia: From the Longships to Three Kingdoms',date:'约前1700—1397年',c:HC.nordic,items:[['history-nordic-before'],['history-nordic-kingdoms']]},
  {id:'nordic-baltic',name:'北欧：卡尔马同盟与波罗的海之争',en:'Scandinavia: The Kalmar Union and the Baltic',date:'1397—1648年',c:HC.nordic,items:[['history-nordic-kalmar'],['history-nordic-baltic'],['history-nordic-peace']]},
  {id:'america-early',name:'美洲：大航海之前与大交换',en:'The Americas: Before 1492 and the Great Exchange',date:'约前13000—约1650年',c:HC.america,items:[['history-america-before'],['history-america-exchange']]},
@@ -12973,7 +13943,7 @@ const HISTORY_BRANCHES=[
  {id:'germany',name:'德意志',en:'Germany',lane:4,parent:'west',from:843,to:1648,c:HC.germany},
  {id:'italy',name:'意大利',en:'Italy',lane:3,parent:'west',from:843,to:1563,c:HC.italy},
  // 不列颠 (including Ireland): forks from the trunk before Caesar's landing, on lane 6 right beside 法兰西.
- {id:'britain',name:'不列颠',en:'Britain and Ireland',lane:6,parent:'trunk',from:-55,to:1487,c:HC.britain},
+ {id:'britain',name:'不列颠',en:'Britain and Ireland',lane:6,parent:'trunk',from:-55,to:1694,c:HC.britain},
  // The 基督教 line: from the Hebrews' nomadic origins (the old Levant branch) to the schism of 1054; on its own lane, right of the West.
  // After 641 it runs through the shared stations of the East Roman dynasties.
  {id:'faith',name:'基督教',en:'Judaism & Christianity',lane:7,parent:'trunk',from:-1400,to:1648,c:HC.faith},
@@ -13192,6 +14162,27 @@ const TREE_ROWS={
  'history-france-louis11/0':['france',1461,1483,'1453—1483年'],
  'history-britain-roses-3/0':['britain',1462,1471,'1461—1471年'],
  'history-britain-roses-4/0':['britain',1472,1487,'1471—1487年'],
+ 'history-britain-henry7/0':['britain',1488,1509,'1485—1509年'],
+ 'history-britain-henry8-1/0':['britain',1510,1529,'1509—1529年'],
+ 'history-britain-henry8-2/0':[['britain','faith'],1534,1536,'1529—1536年'],
+ 'history-britain-henry8-3/0':['britain',1538,1547,'1536—1547年'],
+ 'history-britain-enclosure/0':['britain',1548,1552,'约1485—1640年'],
+ 'history-britain-mary1/0':['britain',1553,1558,'1547—1558年'],
+ 'history-britain-elizabeth-rise/0':['britain',1558.2,1558.8,'1533—1558年'],
+ 'history-britain-elizabeth-1/0':['britain',1562,1572,'1558—1572年'],
+ 'history-britain-elizabeth-faith/0':['britain',1574,1580,'1559—1603年'],
+ 'history-britain-elizabeth-2/0':['britain',1582,1587,'1568—1587年'],
+ 'history-britain-armada-after/0':['britain',1592,1598,'1588—1603年'],
+ 'history-britain-elizabeth-3/0':['britain',1601,1603,'1590—1603年'],
+ 'history-britain-james1/0':['britain',1605,1625,'1603—1625年'],
+ 'history-britain-charles1/0':['britain',1628,1640,'1625—1640年'],
+ 'history-britain-civil-war/0':['britain',1642,1646,'1640—1646年'],
+ 'history-britain-regicide/0':['britain',1647,1649,'1647—1649年'],
+ 'history-britain-commonwealth/0':['britain',1650,1653,'1649—1653年'],
+ 'history-britain-cromwell/0':['britain',1654,1660,'1599—1660年'],
+ 'history-britain-charles2/0':['britain',1661,1685,'1660—1685年'],
+ 'history-britain-james2/0':['britain',1686,1688,'1685—1688年'],
+ 'history-britain-glorious/0':['britain',1689,1694,'1688—1694年'],
  'history-faith-avignon/0':[['faith','france'],1296,1303,'1294—1303年'],
  'history-faith-clement/0':[['faith','france'],1304,1314,'1303—1314年'],
  'history-italy-blackdeath/0':[['italy','france','britain','germany','faith','persia','nordic'],1347,1351,'1346—1353年'],
@@ -13249,7 +14240,7 @@ const TREE_ROWS={
  'history-spain-philip2/0':['spain',1557,1581,'1555—1598年'],
  'history-spain-netherlands-1/0':[['spain','lowlands'],1566,1572,'1555—1572年'],
  'history-spain-netherlands-2/0':[['spain','lowlands'],1573,1585,'1572—1585年'],
- 'history-spain-armada/0':[['spain','lowlands','america'],1588,1598,'1554—1604年'],
+ 'history-spain-armada/0':[['spain','lowlands','america','britain'],1588,1598,'1554—1604年'],
  'history-america-before/0':['america',1430,1491,'约前13000—1492年'],
  'history-america-exchange/0':['america',1545,1560,'1492—约1650年'],
  'history-america-france/0':[['america','france'],1565,1570,'1522—1635年'],
@@ -13271,7 +14262,7 @@ const TREE_ROWS={
  'history-germany-swiss/3':[['germany','italy','faith'],1515,1516,'1477—1648年']
 };
 // Topics still to be written grow the tree as dashed shoots.
-const TREE_FUTURE=[['france',1648,'投石党与路易十四','1648年后待展开：1648—1653年投石党之乱 · 路易十四亲政、凡尔赛宫与欧洲霸权'],['germany',1648,'普鲁士崛起与七年战争','1648年后待展开：勃兰登堡—普鲁士崛起 · 腓特烈大帝与奥地利王位继承战'],['italy',1563,'哈布斯堡霸权与统一','1563年后待展开：西班牙哈布斯堡霸权下的意大利 · 巴洛克时代与近代统一'],['faith',1648,'政教分离与启蒙时代','1648年后待展开：欧洲大规模宗教战争落幕 · 理性主义、宽容法案与启蒙运动'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',1501,'奥斯曼全盛与波斯争霸','1501年后待展开：1517年奥斯曼灭马穆鲁克 · 苏莱曼一世全盛与奥斯曼—萨法维百年争霸'],['china',845,'晚唐五代与宋','845年起 · 待展开'],['spain',1648,'比利牛斯和约与王朝绝嗣','1648年后待展开：1659年比利牛斯和约 · 1668年承认葡萄牙独立 · 1700年哈布斯堡绝嗣与西班牙王位继承战争'],['eeurope',1505,'伊凡雷帝与沙皇俄国','1505年后待展开：1547年伊凡四世加冕沙皇 · 混乱时代与罗曼诺夫王朝'],['lowlands',1648,'黄金时代与英荷海战','1648年后待展开：17世纪阿姆斯特丹黄金时代 · 三次英荷海战与威廉三世入主英国'],['crusade',1312,'后来的十字军','1396年尼科波利斯 · 1444年瓦尔纳 · 1571年勒班陀 · 待展开'],['america',1648,'十三殖民地与美国独立','1648年后待展开：英荷争新阿姆斯特丹 · 七年战争把法国赶出北美 · 十三殖民地与美国独立'],['nordic',1648,'踏冰渡海与大北方战争','1648年后待展开：1658年卡尔十世踏冰渡海夺下斯科讷 · 1700—1721年大北方战争，瑞典失去波罗的海霸权'],['britain',1487,'都铎宗教改革与无敌舰队','1487年后待展开：亨利八世英国宗教改革 · 伊丽莎白一世击败西班牙无敌舰队']];
+const TREE_FUTURE=[['france',1648,'投石党与路易十四','1648年后待展开：1648—1653年投石党之乱 · 路易十四亲政、凡尔赛宫与欧洲霸权'],['germany',1648,'普鲁士崛起与七年战争','1648年后待展开：勃兰登堡—普鲁士崛起 · 腓特烈大帝与奥地利王位继承战'],['italy',1563,'哈布斯堡霸权与统一','1563年后待展开：西班牙哈布斯堡霸权下的意大利 · 巴洛克时代与近代统一'],['faith',1648,'政教分离与启蒙时代','1648年后待展开：欧洲大规模宗教战争落幕 · 理性主义、宽容法案与启蒙运动'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',1501,'奥斯曼全盛与波斯争霸','1501年后待展开：1517年奥斯曼灭马穆鲁克 · 苏莱曼一世全盛与奥斯曼—萨法维百年争霸'],['china',845,'晚唐五代与宋','845年起 · 待展开'],['spain',1648,'比利牛斯和约与王朝绝嗣','1648年后待展开：1659年比利牛斯和约 · 1668年承认葡萄牙独立 · 1700年哈布斯堡绝嗣与西班牙王位继承战争'],['eeurope',1505,'伊凡雷帝与沙皇俄国','1505年后待展开：1547年伊凡四世加冕沙皇 · 混乱时代与罗曼诺夫王朝'],['lowlands',1648,'黄金时代与英荷海战','1648年后待展开：17世纪阿姆斯特丹黄金时代 · 三次英荷海战与威廉三世入主英国'],['crusade',1312,'后来的十字军','1396年尼科波利斯 · 1444年瓦尔纳 · 1571年勒班陀 · 待展开'],['america',1648,'十三殖民地与美国独立','1648年后待展开：英荷争新阿姆斯特丹 · 七年战争把法国赶出北美 · 十三殖民地与美国独立'],['nordic',1648,'踏冰渡海与大北方战争','1648年后待展开：1658年卡尔十世踏冰渡海夺下斯科讷 · 1700—1721年大北方战争，瑞典失去波罗的海霸权'],['britain',1694,'英苏合并与日不落帝国','1694年后待展开：1707年英苏合并为大不列颠 · 汉诺威王朝与责任内阁 · 工业革命与日不落帝国']];
 // Where a line stops it says why: [line, year, the event that ends it, note, the line it carries on in].
 const TREE_ENDS=[['trunk',-30,'并入罗马','前146年科林斯被毁 · 前30年最后一个希腊化王国埃及并入罗马','rome'],['rome',476,'西罗马终结','476年西部末代皇帝被废 · 由中世纪西欧接续'],['west',843,'凡尔登三分','843年《凡尔登条约》三分帝国 · 分出法兰西、德意志、意大利'],['east',1453,'东罗马终结','1453年5月29日奥斯曼帝国攻破君士坦丁堡 · 千年东罗马帝国终结']];
 // Sections of one line that run side by side: [line, row keys, side of the passing loop].

@@ -853,6 +853,7 @@
    "history-italy-wars-2/0",
    "history-germany-swiss/3",
    "history-faith-reformation-1/0",
+   "history-britain-henry8-2/0",
    "history-faith-reformation-2/0",
    "history-germany-charles5/0",
    "history-faith-trent/0",
@@ -940,6 +941,10 @@
    "faith",
    "east",
    "persia"
+  ],
+  "history-britain-henry8-2/0": [
+   "britain",
+   "faith"
   ]
  },
  "fixes": [

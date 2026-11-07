@@ -1247,7 +1247,7 @@
    "不列颠",
    "trunk",
    -55,
-   1487,
+   1694,
    6
   ],
   "france": [
@@ -1261,8 +1261,8 @@
  "futures": [
   [
    "britain",
-   1487,
-   "都铎宗教改革与无敌舰队"
+   1694,
+   "英苏合并与日不落帝国"
   ],
   [
    "france",
@@ -1297,7 +1297,29 @@
    "history-britain-roses-1/0",
    "history-britain-roses-2/0",
    "history-britain-roses-3/0",
-   "history-britain-roses-4/0"
+   "history-britain-roses-4/0",
+   "history-britain-henry7/0",
+   "history-britain-henry8-1/0",
+   "history-britain-henry8-2/0",
+   "history-britain-henry8-3/0",
+   "history-britain-enclosure/0",
+   "history-britain-mary1/0",
+   "history-britain-elizabeth-rise/0",
+   "history-britain-elizabeth-1/0",
+   "history-britain-elizabeth-faith/0",
+   "history-britain-elizabeth-2/0",
+   "history-spain-armada/0",
+   "history-britain-armada-after/0",
+   "history-britain-elizabeth-3/0",
+   "history-britain-james1/0",
+   "history-britain-charles1/0",
+   "history-britain-civil-war/0",
+   "history-britain-regicide/0",
+   "history-britain-commonwealth/0",
+   "history-britain-cromwell/0",
+   "history-britain-charles2/0",
+   "history-britain-james2/0",
+   "history-britain-glorious/0"
   ],
   "france": [
    "history-france-west-francia/0",
@@ -1376,6 +1398,10 @@
   "history-britain-jeanne/0": [
    "britain",
    "france"
+  ],
+  "history-britain-henry8-2/0": [
+   "britain",
+   "faith"
   ]
  },
  "fixes": [

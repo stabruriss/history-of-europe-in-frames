@@ -7,7 +7,7 @@ const target=path.resolve(process.argv[2]||path.join(__dirname,'..','index.html'
 // 老无 2026-11-06: 美洲 is a line of its own that does not fork. It starts with one section on the Americas before the voyages, joins the
 // voyages at 1492, and runs on to the Mayflower and the Puritans' city upon a hill. It is there to explain Europe, so what touches Europe is shared.
 const LINE=[['history-america-before/0',['america']],['history-spain-1492/0',['spain','america']],['history-america-exchange/0',['america']],
- ['history-america-france/0',['america','france']],['history-spain-armada/0',['spain','lowlands','america']],['history-america-virginia/0',['america']],
+ ['history-america-france/0',['america','france']],['history-spain-armada/0',['spain','lowlands','america','britain']],['history-america-virginia/0',['america']],
  ['history-america-dutch/0',['america','lowlands']],['history-america-mayflower/0',['america','faith']],['history-america-hill/0',['america','faith']]];
 const SECTIONS={'history-america-before':['大航海之前的美洲','约前13000—1492年',6],'history-america-exchange':['大交换','1492—约1650年',6],
  'history-america-france':['法国人的美洲','1522—1635年',5],'history-america-virginia':['弗吉尼亚','1584—1624年',6],'history-america-dutch':['荷兰人的美洲','1609—1654年',4],
