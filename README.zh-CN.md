@@ -69,7 +69,7 @@ npm run build        # 即 cd src && python3 assemble.py ../index.html
 ```sh
 npm install
 npm run test:changed # 改完稿子后：只检查改动过的幕，再跑点名这些节的套件
-npm test             # 上线前：运行全部 tests/verify-*.js，已通过且输入未变的套件不重跑
+npm test             # 全部 tests/verify-*.js；推送后 GitHub 会自动跑一遍，通过才上线
 ```
 
 测试套件通过 `puppeteer-core` 驱动本地 Chrome 浏览器，自动核验以下内容：

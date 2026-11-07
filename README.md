@@ -69,7 +69,7 @@ The repository includes a zero-config `vercel.json` so you can import it directl
 ```sh
 npm install
 npm run test:changed # after editing the text: checks only the scenes that changed, then runs the suites that name them
-npm test             # before publishing: all tests/verify-*.js suites, skipping any that already passed with the same inputs
+npm test             # all tests/verify-*.js suites; GitHub runs them after every push, and the site waits for them
 ```
 
 The test suite drives a local Chrome instance via `puppeteer-core` to verify:

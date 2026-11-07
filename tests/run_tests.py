@@ -6,9 +6,10 @@ After editing the text:
     Runs check_changed.js, which checks only the scenes that changed and scans the whole
     book's references, then only the suites that name a changed section. A change to the lines or to the
     page's own code brings in more; see pick_suites.
-Before publishing:
+The full set runs on GitHub after every push to main, and the site waits for it (.github/workflows/tests.yml).
+To run it here, say to find out why it failed there:
   python3 tests/run_tests.py [index.html] [--jobs N] [--no-cache]
-    The full set. A suite that already passed with exactly these inputs (page, suite, helpers) is not run
+    A suite that already passed with exactly these inputs (page, suite, helpers) is not run
     again, so rerunning after a fix runs only what the fix touched.
 Some suites only:
   python3 tests/run_tests.py verify-foo.js verify-bar.js
@@ -63,6 +64,8 @@ SLOWEST_FIRST = [
     'verify-gregory.js',
     'verify-v34.js',
 ]
+# What readers actually see. When the page's own code changes, these run here and GitHub runs the rest.
+LAYOUT = ['verify-metro.js', 'verify-metro-keys.js', 'verify-reader-width.js']
 # These walk the whole book, and check_changed.js does their per-scene checks on the scenes that changed.
 # They run in the full set, even if they mention a changed section by name.
 WHOLE_BOOK = {'verify-history.js', 'verify-figures.js', 'verify-moments.js', 'verify-metro.js',
@@ -119,11 +122,12 @@ def names_a_section(tests_dir: Path, name: str, sections: set) -> bool:
 
 
 def pick_suites(tests_dir: Path, info: dict, all_suites: list) -> list:
-    if info['engineChanged']:
-        print("The page's own code changed since the last check: running the full set.", flush=True)
-        return all_suites
     sections = set(info['sections'])
     picked = {s for s in all_suites if s not in WHOLE_BOOK and names_a_section(tests_dir, s, sections)}
+    if info['engineChanged']:
+        print("The page's own code changed since the last check: running the layout suites here; "
+              "GitHub runs the full set after the push.", flush=True)
+        picked |= set(LAYOUT) & set(all_suites)
     if info['linesChanged']:
         # The tree and the whole-map layout are what a new or moved station can break.
         picked |= {'verify-tree.js', 'verify-metro.js'} & set(all_suites)
@@ -385,7 +389,7 @@ def run_suites(ns, pf: Path, tests_dir: Path, target_html: Path, selected: list,
     if pending and pending.exists():
         pending.replace(tests_dir / '.check_baseline.json')
     if ns.changed:
-        print('The full set still has to pass before publishing: python3 tests/run_tests.py')
+        print('After the push, GitHub runs the full set; the site changes only if it passes.')
     return 0
 
 
