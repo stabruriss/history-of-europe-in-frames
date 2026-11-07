@@ -398,8 +398,14 @@
       if (Math.abs(ax * by - ay * bx) > 1e-6) continue;
       const d = Math.abs((b.x1 - a.x1) * ay - (b.y1 - a.y1) * ax) / Math.hypot(ax, ay);
       if (d > 2) continue;
-      const lo = Math.max(Math.min(a.x1, a.x2), Math.min(b.x1, b.x2)), hi = Math.min(Math.max(a.x1, a.x2), Math.max(b.x1, b.x2));
-      if (hi - lo > 6) overlapsRail.push({ a: a.line, b: b.line, from: Math.round(lo), to: Math.round(hi) });
+      // Measured along the rails' own direction: on the x axis alone, two lines stacked on a vertical run always measured 0.
+      const len = Math.hypot(ax, ay), along = (x, y) => ((x - a.x1) * ax + (y - a.y1) * ay) / len;
+      const tb = [along(b.x1, b.y1), along(b.x2, b.y2)];
+      const lo = Math.max(0, Math.min(...tb)), hi = Math.min(len, Math.max(...tb));
+      if (hi - lo > 6) {
+        const at = t => [Math.round(a.x1 + ax * t / len), Math.round(a.y1 + ay * t / len)];
+        overlapsRail.push({ a: a.line, b: b.line, from: at(lo), to: at(hi) });
+      }
     }
     const boxes = [...nodes.values()];
     const world = {

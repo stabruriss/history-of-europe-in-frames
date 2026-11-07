@@ -39,7 +39,9 @@ function fingerprint(){
    scenes[e.id+'/0']=hash(text(e));sections[e.id]=hash(e.title||e.id);
   }
  }
- const lines=metroUI.data.lines.map(l=>[l.id,metroUI.data.lineStops.get(l.id).map(s=>s.key)]);
+ // Which stations each line has, and how the lines themselves are defined: parents, spans, how each one ends.
+ const lines=[metroUI.data.lines.map(l=>[l.id,metroUI.data.lineStops.get(l.id).map(s=>s.key)]),
+  typeof HISTORY_BRANCHES==='undefined'?null:HISTORY_BRANCHES,typeof TREE_ENDS==='undefined'?null:TREE_ENDS];
  return {scenes,sections,maps,lines:hash(JSON.stringify(lines))};
 }
 
