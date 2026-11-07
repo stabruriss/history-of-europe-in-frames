@@ -4340,6 +4340,240 @@ const FIGURE_PLACES={
       3.909
     ],
     "note": "皮卡第小城；1598年5月腓力二世临终前与法国在此签约停战。"
+  },
+  "amb_mani": {
+    "name": "马尼",
+    "en": "Maní",
+    "ll": [
+      20.39,
+      -89.39
+    ],
+    "note": "尤卡坦的玛雅城镇；1562年7月12日兰达在此举行火刑式，烧毁书和神像。"
+  },
+  "amb_tenochtitlan": {
+    "name": "特诺奇蒂特兰",
+    "en": "Tenochtitlan",
+    "ll": [
+      19.43,
+      -99.13
+    ],
+    "note": "阿兹特克都城，湖上之城，今墨西哥城。"
+  },
+  "amb_cusco": {
+    "name": "库斯科",
+    "en": "Cusco",
+    "ll": [
+      -13.53,
+      -71.97
+    ],
+    "note": "印加都城，帕查库特克把它从小城改造成帝国中心。"
+  },
+  "amx_lima": {
+    "name": "利马",
+    "en": "Lima",
+    "ll": [
+      -12.05,
+      -77.04
+    ],
+    "note": "秘鲁总督驻地；阿科斯塔在这里教神学，主持耶稣会的秘鲁教省。"
+  },
+  "amx_paris": {
+    "name": "巴黎",
+    "en": "Paris",
+    "ll": [
+      48.853,
+      2.349
+    ],
+    "note": "1560年代博丹在巴黎当律师，1568年驳马莱斯特鲁瓦。"
+  },
+  "amx_lisbon": {
+    "name": "里斯本",
+    "en": "Lisbon",
+    "ll": [
+      38.714,
+      -9.133
+    ],
+    "note": "1559—1561年让·尼科任法国驻葡萄牙大使的地方。"
+  },
+  "amf_fig_dieppe": {
+    "name": "迪耶普",
+    "en": "Dieppe",
+    "ll": [
+      49.925,
+      1.078
+    ],
+    "note": "诺曼底海港，船主昂戈的基地；弗勒里的船从这里出海，柯克兄弟也生在这里。"
+  },
+  "amf_fig_rio": {
+    "name": "瓜纳巴拉湾",
+    "en": "Guanabara Bay",
+    "ll": [
+      -22.91,
+      -43.17
+    ],
+    "note": "今里约热内卢的海湾；1555年维尔加尼翁在湾内小岛建科利尼堡。"
+  },
+  "amf_fig_brouage": {
+    "name": "布鲁阿日",
+    "en": "Brouage",
+    "ll": [
+      45.86,
+      -1.07
+    ],
+    "note": "圣东日的盐港，离拉罗谢尔不远；尚普兰在这里长大。"
+  },
+  "amf_fig_quebec": {
+    "name": "魁北克",
+    "en": "Quebec",
+    "ll": [
+      46.81,
+      -71.21
+    ],
+    "note": "圣劳伦斯河最窄处；1608年尚普兰在此建点，1635年死在这里。"
+  },
+  "amv_fig_westminster": {
+    "name": "威斯敏斯特",
+    "en": "Westminster",
+    "ll": [
+      51.499,
+      -0.125
+    ],
+    "note": "伦敦西边的王宫区；1618年10月29日罗利在旧王宫场被斩。"
+  },
+  "amv_fig_greenwich": {
+    "name": "格林尼治宫",
+    "en": "Greenwich Palace",
+    "ll": [
+      51.483,
+      -0.006
+    ],
+    "note": "泰晤士河边的王宫；1533年伊丽莎白一世生在这里。"
+  },
+  "amv_fig_edinburgh": {
+    "name": "爱丁堡",
+    "en": "Edinburgh",
+    "ll": [
+      55.949,
+      -3.195
+    ],
+    "note": "苏格兰王都；1566年詹姆士一世生在爱丁堡城堡。"
+  },
+  "amv_fig_roanoke": {
+    "name": "罗阿诺克岛",
+    "en": "Roanoke Island",
+    "ll": [
+      35.93,
+      -75.7
+    ],
+    "note": "今北卡罗来纳外滩沙洲里的小岛；1585年、1587年两批英国人在此落脚。"
+  },
+  "amv_fig_jamestown": {
+    "name": "詹姆斯敦",
+    "en": "Jamestown",
+    "ll": [
+      37.21,
+      -76.78
+    ],
+    "note": "詹姆斯河里的半岛；1607年英国人在此建点。"
+  },
+  "amd_fig_jamesbay": {
+    "name": "詹姆斯湾",
+    "en": "James Bay",
+    "ll": [
+      52.2,
+      -80
+    ],
+    "note": "哈德逊湾南端；1611年6月哈德逊在这一带被水手放逐。"
+  },
+  "amd_fig_hudsonriver": {
+    "name": "哈德逊河口",
+    "en": "Mouth of the Hudson",
+    "ll": [
+      40.7,
+      -74.02
+    ],
+    "note": "曼哈顿岛旁的河口；1609年9月半月号从这里上溯。"
+  },
+  "amd_fig_hague": {
+    "name": "海牙内庭",
+    "en": "Binnenhof, The Hague",
+    "ll": [
+      52.08,
+      4.313
+    ],
+    "note": "荷兰政府所在；1619年5月13日奥尔登巴内费尔特在此被斩首。"
+  },
+  "amd_fig_manhattan": {
+    "name": "新阿姆斯特丹",
+    "en": "New Amsterdam",
+    "ll": [
+      40.704,
+      -74.013
+    ],
+    "note": "曼哈顿南端的据点；1626年起米努伊特把人收拢到这里。"
+  },
+  "amd_fig_wesel": {
+    "name": "韦瑟尔",
+    "en": "Wesel",
+    "ll": [
+      51.66,
+      6.62
+    ],
+    "note": "莱茵河下游的德意志小城；不少南尼德兰新教徒逃到这里，米努伊特生在此地。"
+  },
+  "amm_hampton": {
+    "name": "汉普顿宫",
+    "en": "Hampton Court",
+    "ll": [
+      51.404,
+      -0.337
+    ],
+    "note": "伦敦西南的王宫；1604年1月詹姆士一世在此见主教和清教徒代表。"
+  },
+  "amm_plymouth": {
+    "name": "新大陆的普利茅斯",
+    "en": "Plymouth, New England (Patuxet)",
+    "ll": [
+      41.958,
+      -70.667
+    ],
+    "note": "原是帕图克西特村，1616—1619年大疫后废弃；1620年12月英国人在此定居。"
+  },
+  "amm_capecod": {
+    "name": "科德角港",
+    "en": "Cape Cod Harbor (Provincetown)",
+    "ll": [
+      42.05,
+      -70.18
+    ],
+    "note": "科德角北端的天然良港；1620年11月11日五月花号在此下锚，公约在此签署。"
+  },
+  "amh_boston": {
+    "name": "波士顿",
+    "en": "Boston",
+    "ll": [
+      42.36,
+      -71.06
+    ],
+    "note": "1630年9月定名，取自英格兰林肯郡的港口；马萨诸塞湾殖民地的首府。"
+  },
+  "amh_providence": {
+    "name": "普罗维登斯",
+    "en": "Providence",
+    "ll": [
+      41.824,
+      -71.413
+    ],
+    "note": "1636年罗杰·威廉斯向纳拉甘西特头人买地建的镇子，不问信仰。"
+  },
+  "amh_portsmouth": {
+    "name": "阿奎德内克岛",
+    "en": "Aquidneck Island (Portsmouth)",
+    "ll": [
+      41.6,
+      -71.25
+    ],
+    "note": "纳拉甘西特湾里的岛；1638年哈钦森一派买下，后来就是罗德岛。"
   }
 };
 const FIGURES={
@@ -12001,6 +12235,288 @@ const FIGURES={
         "https://en.wikipedia.org/wiki/Maurice,_Prince_of_Orange"
       ]
     ]
+  },
+  "diego-de-landa": {
+    "name": "兰达",
+    "en": "Diego de Landa",
+    "life": "1524—1579年",
+    "relation": "方济各会士 · 尤卡坦主教 · 《尤卡坦风物志》作者",
+    "place": "amb_mani",
+    "bio": "生于卡斯蒂利亚的西富恩特斯（Cifuentes），到尤卡坦传教，1561年起主管当地方济各会。1562年发现受洗的玛雅人暗中拜旧神后开审逼供，7月12日在马尼烧毁书和神像。主教托拉尔把他送回西班牙受审，他约1566年写下《尤卡坦风物志》，1569年获判无罪，托拉尔死后回尤卡坦接任主教，1579年死在那里。今人对玛雅的了解，很大一部分来自这位烧书人的记录。",
+    "sources": [
+      [
+        "迭戈·德·兰达（英文资料：1562年的审讯与火刑式、受审和接任主教）",
+        "https://en.wikipedia.org/wiki/Diego_de_Landa"
+      ],
+      [
+        "迭戈·德·兰达（西班牙文资料：1562年5月山洞发现到7月12日的经过）",
+        "https://es.wikipedia.org/wiki/Diego_de_Landa"
+      ]
+    ]
+  },
+  "itzcoatl": {
+    "name": "伊兹科阿特尔",
+    "en": "Itzcoatl",
+    "life": "约1380—1440年",
+    "relation": "特诺奇蒂特兰第四代王（1427—1440年）· 三城同盟的缔造者",
+    "place": "amb_tenochtitlan",
+    "bio": "第一代王阿卡马皮奇特利（Acamapichtli）的庶子，母亲是阿斯卡波察尔科的特帕内克人（Tepanec）。前任被宗主马克斯特拉（Maxtla）杀死后获选为王，联合流亡的特斯科科王公内萨瓦尔科约特尔（Nezahualcoyotl）和特拉科潘，打垮宗主，建起三城同盟。据《佛罗伦萨抄本》记载，他下令烧掉旧史书，理由是百姓不必都懂这些图画。",
+    "sources": [
+      [
+        "伊兹科阿特尔（英文资料：身世、1427—1440年在位、三城同盟、烧史书）",
+        "https://en.wikipedia.org/wiki/Itzcoatl"
+      ]
+    ]
+  },
+  "pachacuti": {
+    "name": "帕查库特克",
+    "en": "Pachacuti",
+    "life": "15世纪初—约1471年",
+    "relation": "印加第九代君主 · 印加帝国的开创者",
+    "place": "amb_cusco",
+    "bio": "原名库西·尤潘基（Cusi Yupanqui），“帕查库特克”意为“世界翻转”，据记载是打败昌卡人（Chanka）后得的名号。按罗威的年表在位1438—1471年，别的年表相差几十年。在位时把库斯科改造成帝国都城，和儿子图帕克·尤潘基（Tupac Yupanqui）把今秘鲁大部收入版图。十进位编户和祭祀制度多归功于他，但记载全出自西班牙人到来之后，传说成分不小。",
+    "sources": [
+      [
+        "帕查库特克（英文资料：名号含义、各家年表、昌卡之战与扩张）",
+        "https://en.wikipedia.org/wiki/Pachacuti"
+      ],
+      [
+        "印加帝国（英文资料：无货币无市场、十进位编户、人口估计）",
+        "https://en.wikipedia.org/wiki/Inca_Empire"
+      ]
+    ]
+  },
+  "jose-de-acosta": {
+    "name": "阿科斯塔",
+    "en": "José de Acosta",
+    "life": "约1540—1600年",
+    "relation": "西班牙耶稣会士 · 《西印度自然与道德史》作者",
+    "place": "amx_lima",
+    "bio": "生于卡斯蒂利亚的梅迪纳德尔坎波（Medina del Campo），出身改宗者家庭，十三岁入耶稣会。1570年代初到秘鲁，在利马教神学，1576年起主持耶稣会的秘鲁教省，在第三届利马教务会议（1582—1583年）上担任记录。1586年到墨西哥，后回西班牙，1590年出版《西印度自然与道德史》，书里笑话亚里士多德的赤道说，提出美洲人从陆路走来，记下奇普和高原反应。1600年死于萨拉曼卡。",
+    "sources": [
+      [
+        "何塞·德·阿科斯塔（英文资料：生平、过赤道、第三届利马教务会议）",
+        "https://en.wikipedia.org/wiki/Jos%C3%A9_de_Acosta"
+      ]
+    ]
+  },
+  "jean-bodin": {
+    "name": "博丹",
+    "en": "Jean Bodin",
+    "life": "约1530—1596年",
+    "relation": "法国法学家 · 《国家论六卷》作者",
+    "place": "amx_paris",
+    "bio": "生于昂热（Angers）附近，早年在加尔默罗会当过见习修士，在图卢兹教过法律，后到巴黎当律师。1568年驳马莱斯特鲁瓦，把涨价主要归因于金银增多，还列了垄断、出口、王公喜好和钱币减值四条次要原因。1576年出版《国家论六卷》，提出主权学说。1580年又写鼓吹猎巫的书。晚年在拉昂（Laon）当地方官，1596年死于当地的瘟疫。",
+    "sources": [
+      [
+        "让·博丹（英文资料：生平、驳马莱斯特鲁瓦、《国家论六卷》）",
+        "https://en.wikipedia.org/wiki/Jean_Bodin"
+      ],
+      [
+        "《博丹的货币和贸易思想》（法文研究：引录1568年答辩书的原话，五条涨价原因）",
+        "https://archive.org/details/lesidesmontaire00saingoog"
+      ]
+    ]
+  },
+  "jean-nicot": {
+    "name": "让·尼科",
+    "en": "Jean Nicot",
+    "life": "1530—1604年",
+    "relation": "法国驻葡萄牙大使 · 尼古丁得名于他 · 早期法语词典编者",
+    "place": "amx_lisbon",
+    "bio": "生于尼姆（Nîmes）的公证人之家。1559年被派到里斯本，商谈把六岁的玛格丽特公主嫁给五岁的葡王塞巴斯蒂昂（Sebastian），亲事没成。1560年4月26日写信给洛林枢机，报告弄到一种能治溃疡的“印度草”，烟草由此进入法国上层。晚年编成法语词典《法语宝库》，1606年他死后才出版。植物学名Nicotiana和尼古丁都来自他的姓。",
+    "sources": [
+      [
+        "让·尼科（英文资料：出使葡萄牙、烟草与词典）",
+        "https://en.wikipedia.org/wiki/Jean_Nicot"
+      ],
+      [
+        "《让·尼科：16世纪法国驻葡大使及其通信》（法文原典：1560年4月26日致洛林枢机的信）",
+        "https://archive.org/details/jeannicotambassa00nico"
+      ]
+    ]
+  },
+  "samuel-de-champlain": {
+    "name": "尚普兰",
+    "en": "Samuel de Champlain",
+    "life": "生年不详—1635年",
+    "relation": "魁北克的建立者（1608年）· 新法兰西总督的副手和实际主事人",
+    "place": "amf_fig_brouage",
+    "bio": "在圣东日的盐港布鲁阿日长大，生年和受洗的教派都无定论，名字像新教徒，后来以天主教徒行事。在法国宗教战争中当过兵，1603年随船到圣劳伦斯河，1604年跟胡格诺贵族德蒙去阿卡迪亚，1608年在魁北克建点。此后二十多年靠和休伦人、阿尔冈昆人结盟维持毛皮生意，1629年被柯克兄弟逼降，1632年魁北克归还，次年回来，1635年12月25日死在那里。留下几部游记和大量地图。",
+    "sources": [
+      [
+        "《加拿大人物辞典》尚普兰条（生平、宗教、结盟和晚年）",
+        "https://www.biographi.ca/en/bio/champlain_samuel_de_1E.html"
+      ]
+    ]
+  },
+  "walter-raleigh": {
+    "name": "沃尔特·罗利",
+    "en": "Sir Walter Raleigh",
+    "life": "约1552—1618年",
+    "relation": "伊丽莎白一世的宠臣 · 军人、航海家、诗人 · 罗阿诺克殖民地的出资人",
+    "place": "amv_fig_westminster",
+    "bio": "生于德文郡的士绅家庭，同母异父的哥哥吉尔伯特（Humphrey Gilbert）也搞北美殖民。在爱尔兰打仗起家，1580年代得到伊丽莎白一世宠信，1584年拿到北美特许状，1585年受封爵士，把那块地叫弗吉尼亚。1592年因秘密结婚被关进伦敦塔，失宠。1595年去圭亚那找黄金国，1596年参加攻打加的斯。1603年詹姆士一世即位后被控谋反，在塔里关到1616年。第二次去圭亚那失败，1618年被处死。",
+    "sources": [
+      [
+        "沃尔特·罗利（英文资料：生平、圭亚那、处决和遗言）",
+        "https://en.wikipedia.org/wiki/Walter_Raleigh"
+      ],
+      [
+        "《1911年大英百科全书》罗利条（1617年的圭亚那之行与詹姆士一世、贡多马）",
+        "https://en.wikisource.org/wiki/1911_Encyclop%C3%A6dia_Britannica/Raleigh,_Sir_Walter"
+      ]
+    ]
+  },
+  "elizabeth-i-england": {
+    "name": "伊丽莎白一世",
+    "en": "Elizabeth I of England",
+    "life": "1533—1603年",
+    "relation": "英格兰女王（1558—1603年）· 亨利八世之女 · 玛丽一世的异母妹",
+    "place": "amv_fig_greenwich",
+    "bio": "亨利八世和安妮·博林（Anne Boleyn）之女，不到三岁母亲被斩。1558年接替异母姐玛丽一世继位，1559年定下英国国教的折中方案，终身未嫁。1570年被教宗绝罚，1585年派兵援荷，1587年处死玛丽·斯图亚特，1588年挡住无敌舰队。她不肯花王室的钱办殖民地，只发特许状，让宠臣和商人自己出钱，抢来的分成。",
+    "sources": [
+      [
+        "伊丽莎白一世（英文资料：生平、宗教方案、对西班牙的战争）",
+        "https://en.wikipedia.org/wiki/Elizabeth_I"
+      ]
+    ]
+  },
+  "james-i-england": {
+    "name": "詹姆士一世",
+    "en": "James VI and I",
+    "life": "1566—1625年",
+    "relation": "苏格兰王詹姆士六世（1567—1625年）· 英格兰王（1603—1625年）· 玛丽·斯图亚特之子",
+    "place": "amv_fig_edinburgh",
+    "bio": "一岁时母亲玛丽·斯图亚特被废，由新教贵族带大。1603年伊丽莎白一世死后南下继位，第二年和西班牙签《伦敦条约》。1604年写书痛骂烟草，同年把烟草进口税提高四十倍，1624年又改成王室专卖，只准进口弗吉尼亚烟草。1611年钦定本《圣经》出版。女婿腓特烈五世是波希米亚“冬王”，他却一心想和西班牙联姻，不肯出兵。1624年从公司手里收回弗吉尼亚，第二年去世。",
+    "sources": [
+      [
+        "詹姆士六世和一世（英文资料：继位、对西班牙政策、钦定本）",
+        "https://en.wikipedia.org/wiki/James_VI_and_I"
+      ],
+      [
+        "詹姆士一世《烟草之反击》（英文全文：1604年痛骂烟草）",
+        "https://en.wikisource.org/wiki/A_Counterblaste_to_Tobacco"
+      ]
+    ]
+  },
+  "henry-hudson": {
+    "name": "亨利·哈德逊",
+    "en": "Henry Hudson",
+    "life": "约1565—1611年",
+    "relation": "英国航海家 · 替伦敦和阿姆斯特丹的公司找去中国的水路",
+    "place": "amd_fig_hudsonriver",
+    "bio": "早年事迹几乎没有记录。1607、1608年两次替伦敦的莫斯科公司往北极方向找去中国的路。1609年改替荷兰东印度公司出海，违令西行，到了今天以他命名的河。1610年又替英国人走西北，进入今哈德逊湾，1611年6月水手哗变，把他、儿子约翰和几名病弱者放进小艇，此后再无消息。回到英国的水手受过审问，没有人被判刑，有人认为是因为这些人懂航路，留着有用。",
+    "sources": [
+      [
+        "亨利·哈德逊（英文资料：四次航行、哗变和普里克特的记述）",
+        "https://en.wikipedia.org/wiki/Henry_Hudson"
+      ]
+    ]
+  },
+  "peter-minuit": {
+    "name": "彼得·米努伊特",
+    "en": "Peter Minuit",
+    "life": "约1580—1638年",
+    "relation": "新尼德兰总督（1626—1631年）· 后来替瑞典建新瑞典",
+    "place": "amd_fig_wesel",
+    "bio": "瓦隆新教徒之后，家从南尼德兰的图尔奈逃到德意志的韦瑟尔。约1625年到荷兰，进了西印度公司，1626年任新尼德兰总督，1631年被召回解职。后来替瑞典办事，1638年在特拉华河开了新瑞典。同年回程到加勒比的圣基茨，上一条荷兰朋友的船做客，碰上飓风，船和人都没回来。",
+    "sources": [
+      [
+        "彼得·米努伊特（英文资料：出身、总督任期、新瑞典和死于飓风）",
+        "https://en.wikipedia.org/wiki/Peter_Minuit"
+      ]
+    ]
+  },
+  "william-bradford": {
+    "name": "威廉·布拉德福德",
+    "en": "William Bradford",
+    "life": "1590—1657年",
+    "relation": "新大陆的普利茅斯总督（1621年起任期前后三十余年）· 《普利茅斯开拓史》作者 · 分离派",
+    "place": "amm_plymouth",
+    "bio": "约克郡奥斯特菲尔德人，七岁成孤儿，少年时跟上斯克鲁比的分离派，1608年前后偷渡荷兰，在莱顿织布。1620年随五月花号渡海，妻子多萝西死在科德角港。1621年春卡弗病死后被选为总督，此后除少数年份一直连任。1630年前后动笔写《普利茅斯开拓史》，把合股条款、争吵的信件都抄进书里，又记下斯宽托的两面和1637年神秘河的烧杀，是这段历史最主要的原始记录。手稿后来流落英国，1897年才还给马萨诸塞。",
+    "sources": [
+      [
+        "布拉德福德《普利茅斯开拓史》（英文全文）",
+        "https://www.gutenberg.org/ebooks/24950"
+      ],
+      [
+        "威廉·布拉德福德（英文资料：生平、孤儿出身与总督任期）",
+        "https://en.wikipedia.org/wiki/William_Bradford_(governor)"
+      ]
+    ]
+  },
+  "squanto": {
+    "name": "斯宽托",
+    "en": "Squanto (Tisquantum)",
+    "life": "？—1622年",
+    "relation": "帕图克西特人 · 被贩卖到马拉加 · 普利茅斯的翻译和向导",
+    "place": "amm_plymouth",
+    "bio": "帕图克西特村人。1614年被英国船长亨特诱捕，卖到西班牙马拉加，后来辗转到伦敦和纽芬兰，学会英语。1619年回乡时全村已死于瘟疫。1621年3月随萨莫塞特和马萨索伊特来到普利茅斯，留下当翻译，教英国人种玉米、捕鱼，替他们和各部落打交道。布拉德福德称他是“上帝派来的特别工具”，也记下他借英国人的势吓唬部落、收受礼物。1622年秋死于科德角的马纳莫伊克。",
+    "sources": [
+      [
+        "斯宽托（英文资料：亨特诱捕、马拉加公证档案、伦敦和纽芬兰的经历、早期文献的分歧）",
+        "https://en.wikipedia.org/wiki/Squanto"
+      ],
+      [
+        "布拉德福德《普利茅斯开拓史》（英文全文：1621—1622年有关斯宽托的记载）",
+        "https://www.gutenberg.org/ebooks/24950"
+      ]
+    ]
+  },
+  "john-winthrop": {
+    "name": "约翰·温思罗普",
+    "en": "John Winthrop",
+    "life": "1588—1649年",
+    "relation": "马萨诸塞湾总督（1630年起多次连任）· 萨福克乡绅、律师 · 清教徒主流",
+    "place": "amh_boston",
+    "bio": "萨福克格罗顿的庄园主之子，在剑桥读过书，后在伦敦监护法庭当律师。1629年丢了差事，变卖家产，被选为马萨诸塞湾公司总督，次年带船队渡海，把特许状一起带走。他在任时投票权只给教会成员，主审安妮·哈钦森，却私下给被逐的罗杰·威廉斯指路。写日记记录殖民地的头二十年，是这段历史的主要原始材料。死前两个月查理一世刚被处死。“山巅之城”的讲章长期归在他名下，近年作者和场合都有争议。",
+    "sources": [
+      [
+        "约翰·温思罗普（英文资料：生平、任期与原始文献）",
+        "https://en.wikipedia.org/wiki/John_Winthrop"
+      ],
+      [
+        "温思罗普日记第一卷（1630年起的原文）",
+        "https://archive.org/details/winthropsjournal01wint"
+      ]
+    ]
+  },
+  "roger-williams": {
+    "name": "罗杰·威廉斯",
+    "en": "Roger Williams",
+    "life": "约1603—1683年",
+    "relation": "普罗维登斯创建人 · 清教牧师 · 主张政教分离",
+    "place": "amh_providence",
+    "bio": "伦敦裁缝之子，律师柯克（Edward Coke）的门生，剑桥出身。1631年到波士顿，嫌教会和国教没断干净，又写文章说国王无权把印第安人的地送人，1635年被马萨诸塞议会判驱逐。次年1月雪天出走，向纳拉甘西特头人买地建普罗维登斯，政府只管“世俗之事”。1644年到伦敦拿到特许状，出版《血腥的迫害教义》；同年写下教会花园和世界荒野之间要有“篱笆或墙”。佩科特战争时他替马萨诸塞稳住纳拉甘西特人，也帮着处置过佩科特俘虏。",
+    "sources": [
+      [
+        "罗杰·威廉斯（英文资料：驱逐、普罗维登斯、政教分离与佩科特战争）",
+        "https://en.wikipedia.org/wiki/Roger_Williams"
+      ],
+      [
+        "《罗杰·威廉斯书信集》（1670年致梅森的回忆）",
+        "https://archive.org/details/lettersofrogerwi00will"
+      ]
+    ]
+  },
+  "anne-hutchinson": {
+    "name": "安妮·哈钦森",
+    "en": "Anne Hutchinson",
+    "life": "1591—1643年",
+    "relation": "波士顿的助产士、平信徒讲经人 · 反律法之争的中心人物",
+    "place": "amh_portsmouth",
+    "bio": "林肯郡阿尔福德人，牧师之女，追随牧师科顿（John Cotton）于1634年到波士顿。在家里每周开两次聚会，六十到八十人到场，说除科顿外多数牧师只讲“行为之约”，把殖民地分成两派。1637年11月被议会判驱逐，次年3月被波士顿教会开除，和丈夫去了阿奎德内克岛。丈夫死后迁到新尼德兰，1643年8月连同六个孩子等人死于锡瓦诺伊人的袭击，只有一个女儿被掳后生还。温思罗普日记的评语是：这些人“抛弃了圣礼和教会，最后连自己人也抛弃了”。",
+    "sources": [
+      [
+        "安妮·哈钦森（英文资料：聚会、两次审判、迁往罗德岛和新尼德兰、1643年之死）",
+        "https://en.wikipedia.org/wiki/Anne_Hutchinson"
+      ],
+      [
+        "温思罗普日记第二卷（1643年的记载）",
+        "https://archive.org/details/winthropsjournal02wint"
+      ]
+    ]
   }
 };
 const FIGURE_SCENES={
@@ -19464,6 +19980,243 @@ const FIGURE_SCENES={
       "event": "第四次停付破产，临终前同法国签《韦尔万和约》止损",
       "note": "两度再派舰队皆被大西洋风暴吹散，腓力二世在去世前四个月先结束对法战争。",
       "place": "spa_vervins"
+    }
+  ],
+  "history-america-before/2": [
+    {
+      "id": "diego-de-landa",
+      "when": "1562年",
+      "event": "在马尼开审逼供，7月12日烧毁书和神像",
+      "note": "烧掉大批抄本的兰达，后来写的《尤卡坦风物志》成了破译玛雅文字的钥匙。",
+      "place": "amb_mani"
+    }
+  ],
+  "history-america-before/3": [
+    {
+      "id": "itzcoatl",
+      "when": "1428年前后",
+      "event": "打垮宗主阿斯卡波察尔科，建起三城同盟",
+      "note": "伊兹科阿特尔打赢之后，据《佛罗伦萨抄本》还烧了旧史书，重写本族的来历。",
+      "place": "amb_tenochtitlan"
+    }
+  ],
+  "history-america-before/4": [
+    {
+      "id": "pachacuti",
+      "when": "1438年起（传统年表）",
+      "event": "打败昌卡人后夺位，把库斯科小国变成帝国",
+      "note": "帕查库特克开了头，三代之内，印加从库斯科河谷扩到南美西部一大片。",
+      "place": "amb_cusco"
+    }
+  ],
+  "history-america-exchange/0": [
+    {
+      "id": "jose-de-acosta",
+      "when": "1570年代初—1590年",
+      "event": "过赤道冷得发抖，回头笑话亚里士多德",
+      "note": "阿科斯塔没有扔掉古人，只是把亲眼所见摆在古书前面。",
+      "place": "amx_lima"
+    }
+  ],
+  "history-america-exchange/1": [
+    {
+      "id": "jean-bodin",
+      "when": "1568年",
+      "event": "驳马莱斯特鲁瓦，把涨价算到美洲金银头上",
+      "note": "博丹的结论晚于阿斯皮利奎塔，却因法国那场笔战流传更广。",
+      "place": "amx_paris"
+    }
+  ],
+  "history-america-exchange/3": [
+    {
+      "id": "jean-nicot",
+      "when": "1560年4月",
+      "event": "从里斯本写信给洛林枢机，报告弄到“印度草”",
+      "note": "让·尼科本是去谈婚事的，亲事没成，名字却留在了尼古丁里。",
+      "place": "amx_lisbon"
+    }
+  ],
+  "history-america-france/0": [
+    {
+      "id": "francis-i-france",
+      "when": "1524年",
+      "event": "收到一封说找到了太平洋的信",
+      "note": "韦拉扎诺的钱来自里昂和鲁昂的佛罗伦萨商人，凑了两万多埃居，韦拉扎诺本人也入了股。韦拉扎诺隔着今北卡罗来纳的沙洲望见一片潟湖，写信告诉弗朗索瓦一世，这就是通中国的太平洋。",
+      "place": "amf_fig_dieppe"
+    }
+  ],
+  "history-america-france/2": [
+    {
+      "id": "gaspard-coligny",
+      "when": "1555—1560年",
+      "event": "对国王说为法国，对日内瓦说为信仰",
+      "note": "据帕克曼所记，科利尼向亨利二世只讲法国的利益。1557年加尔文派的十四个人到了里约，几个月后维尔加尼翁和他们为圣餐翻脸，把他们赶下岛，后来又把回岛的三人淹死。走掉的人里有让·德莱里（Jean de Léry），他写的巴西游记后来成了名著。",
+      "place": "amf_fig_rio"
+    }
+  ],
+  "history-america-france/3": [
+    {
+      "id": "samuel-de-champlain",
+      "when": "1609年7月",
+      "event": "维米尔画里的帽子，追到这一枪",
+      "note": "史家卜正民（Timothy Brook）的《维米尔的帽子》从一幅荷兰画上军官的毡帽说起，一路追到1609年尚普兰湖边的枪声：法国人本想找去中国的路，海狸皮只是拿来“贴补路费”的。",
+      "place": "amf_fig_quebec"
+    }
+  ],
+  "history-america-france/4": [
+    {
+      "id": "samuel-de-champlain",
+      "when": "1629—1633年",
+      "event": "拿着投降书去伦敦讨城",
+      "note": "尚普兰投降后被送到英国，1629年10月在伦敦找到法国大使，交上那份签在《苏萨条约》两个多月之后的投降书，证明这次占领不合法，又回巴黎向国王、黎塞留和百人公司奔走。",
+      "place": "amf_fig_quebec"
+    }
+  ],
+  "history-america-virginia/0": [
+    {
+      "id": "elizabeth-i-england",
+      "when": "1584—1585年",
+      "event": "发特许状，不出钱",
+      "note": "据《弗吉尼亚百科》的说法，北美基地是伊丽莎白一世对西班牙总盘算的一环：派兵去尼德兰，派德雷克去西印度，派罗利的人去罗阿诺克。她给罗利的特许状和爵位都不花钱，出钱的是罗利。",
+      "place": "amv_fig_roanoke"
+    },
+    {
+      "id": "walter-raleigh",
+      "when": "1585年",
+      "event": "自封弗吉尼亚总督，人却没去过",
+      "note": "罗利受封爵士后用上了“弗吉尼亚总督”的头衔，女王不放他走，他一次也没有到过这块殖民地。",
+      "place": "amv_fig_roanoke"
+    }
+  ],
+  "history-america-virginia/2": [
+    {
+      "id": "james-i-england",
+      "when": "1606年",
+      "event": "给特许状，不担风险",
+      "note": "据《弗吉尼亚百科》的说法，詹姆士一世欠着债，又想和西班牙缓和。让公司出面，赚了有份，出了事可以撇清。特许状把北纬34度以北的海岸分给伦敦和普利茅斯两伙人。",
+      "place": "amv_fig_jamestown"
+    }
+  ],
+  "history-america-virginia/4": [
+    {
+      "id": "walter-raleigh",
+      "when": "1618年",
+      "event": "金子一场空，烟草却卖钱",
+      "note": "罗利被斩的这一年，弗吉尼亚运回英国的烟草翻了一倍。罗利到死还在找金矿，他当年带进宫廷的烟叶倒成了弗吉尼亚的金矿。",
+      "place": "amv_fig_westminster"
+    }
+  ],
+  "history-america-virginia/5": [
+    {
+      "id": "james-i-england",
+      "when": "1624年",
+      "event": "把弗吉尼亚收归王室",
+      "note": "1622年突袭和接连的瘟疫之后，公司账目和殖民地的死亡人数都瞒不住了。1623年枢密院派人调查，次年法院撤销特许状，弗吉尼亚改由国王任命的总督和参事管。",
+      "place": "amv_fig_jamestown"
+    }
+  ],
+  "history-america-dutch/0": [
+    {
+      "id": "henry-hudson",
+      "when": "1609年",
+      "event": "收了荷兰人的钱，名字留给了英国人的地图",
+      "note": "哈德逊给这条河起名毛里求斯河，用的是莫里斯亲王的名字。合同写的是往东北走，他在阿姆斯特丹等船时就听说北美可能有条水道，出了事才半路改主意。后来英国人占了这里，河也就叫了他的名字。",
+      "place": "amd_fig_hudsonriver"
+    }
+  ],
+  "history-america-dutch/1": [
+    {
+      "id": "maurice-of-nassau",
+      "when": "1609—1619年",
+      "event": "反对休战，十年后除掉对手",
+      "note": "莫里斯亲王原是奥尔登巴内费尔特一手扶上来的（见“英西海战与无敌舰队”一节）。休战谈判时两人翻脸，后来又夹进了加尔文派内部的教义之争。1618年莫里斯亲王抓了老人，第二年老人被斩首，1621年再开战，莫里斯亲王四年后死去。",
+      "place": "amd_fig_hague"
+    }
+  ],
+  "history-america-dutch/2": [
+    {
+      "id": "peter-minuit",
+      "when": "1626年",
+      "event": "被记在账上的人，信里并没有他",
+      "note": "米努伊特买岛这件事是后人根据任期推出来的。1638年他又替瑞典去特拉华河“买地”，老东家的据点就在附近。",
+      "place": "amd_fig_manhattan"
+    }
+  ],
+  "history-america-mayflower/1": [
+    {
+      "id": "james-i-england",
+      "when": "1604年1月",
+      "event": "在汉普顿宫放话不服就撵人，批准重译《圣经》",
+      "note": "詹姆士一世怕的是苏格兰长老会那一套搬到英格兰：没有主教，国王的教会首领也当不成。",
+      "place": "amm_hampton"
+    }
+  ],
+  "history-america-mayflower/2": [
+    {
+      "id": "william-bradford",
+      "when": "1609—1620年",
+      "event": "在莱顿织布，后来写下离开的全部理由",
+      "note": "布拉德福德到莱顿时不到二十岁，离开时已是教会里能拿主意的人。",
+      "place": "sn2_leiden"
+    }
+  ],
+  "history-america-mayflower/4": [
+    {
+      "id": "william-bradford",
+      "when": "1620年11—12月",
+      "event": "记下公约的起因，随队外出探路",
+      "note": "布拉德福德12月在外探路时，妻子多萝西在泊于科德角港的船边落水身亡；他自己书里只写“到后不久死了”。",
+      "place": "amm_capecod"
+    }
+  ],
+  "history-america-mayflower/5": [
+    {
+      "id": "william-bradford",
+      "when": "1621年4月",
+      "event": "卡弗病死，大病未愈的布拉德福德接任总督",
+      "note": "活下来的约五十人里能管事的不多，布拉德福德这一任就当了很多年。",
+      "place": "amm_plymouth"
+    },
+    {
+      "id": "squanto",
+      "when": "1621年3月",
+      "event": "走进普利茅斯，留下当翻译",
+      "note": "斯宽托去过西班牙、英格兰和纽芬兰，村子却已不在，只能跟这伙英国人过。",
+      "place": "amm_plymouth"
+    }
+  ],
+  "history-america-hill/0": [
+    {
+      "id": "john-winthrop",
+      "when": "1629年",
+      "event": "丢了差事，写下移民理由",
+      "note": "温思罗普这年5月写信给妻子说，上帝不久要降大祸给这片土地，也许会给他们备一个藏身之处。",
+      "place": "amh_boston"
+    }
+  ],
+  "history-america-hill/2": [
+    {
+      "id": "john-winthrop",
+      "when": "1630年",
+      "event": "带十一条船和特许状渡海",
+      "note": "温思罗普一到岸就要养活缺粮的先遣队，头一个月儿子亨利又在塞勒姆溺亡。",
+      "place": "amh_boston"
+    }
+  ],
+  "history-america-hill/4": [
+    {
+      "id": "roger-williams",
+      "when": "1635—1636年",
+      "event": "被判驱逐，雪天出走，建普罗维登斯",
+      "note": "威廉斯宽限期内被禁止传播主张，还是在家里接着讲，议会这才决定抓人送回英国。",
+      "place": "amh_providence"
+    },
+    {
+      "id": "anne-hutchinson",
+      "when": "1637—1638年",
+      "event": "受审被逐，去了阿奎德内克岛",
+      "note": "判词说她是“不宜留在我们社会的女人”，先软禁过冬，开春才放人。",
+      "place": "amh_portsmouth"
     }
   ]
 };

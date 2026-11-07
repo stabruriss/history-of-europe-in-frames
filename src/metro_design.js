@@ -29,6 +29,7 @@ window.NETWORK_DESIGN = (() => {
   const EAST0 = 470;     // east rome before it bundles with persia
   const EASTEU = 505;    // egypt in antiquity, eastern europe from 860
   const SPAIN = 550;
+  const AMERICA = 585;
   const CHINA = 620;
 
   const routes = {
@@ -49,6 +50,7 @@ window.NETWORK_DESIGN = (() => {
     germany: [[830, y(ROME)], [843, y(GER0), 'e'], [860, y(GER0)], [951, y(GERMANY)], [1495, y(GERMANY)]],
     crusade: [[1070, y(GERMANY, 1), null, -92], [1070, y(CRUSADE)], [1295, y(CRUSADE)]],
     nordic: [[745, y(TOP)], [1648, y(TOP)]],
+    america: [[1430, y(AMERICA)], [1631, y(AMERICA)]],
   };
 
   // Room around branch points, and where a name needs to sit between dashed links.
@@ -62,7 +64,7 @@ window.NETWORK_DESIGN = (() => {
     [641, 641.4, 34],
     [1296, 1300, 74], [1300, 1304, 74], [1438, 1450, 26], [1450, 1454, 72],
     [1462, 1472, 60], [1477, 1484, 40], [1494, 1495, 40], [1495, 1496, 38],
-    [1571, 1573, 38], [1625, 1627, 38], [1627, 1631, 38],
+    [1565, 1566, 38], [1571, 1573, 38], [1625, 1627, 38], [1627, 1631, 38],
   ];
 
   // Keeps a plain stop off a dashed link that shares its anchor year.

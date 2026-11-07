@@ -21,7 +21,7 @@ const lineStops=new Map(lines.map(l=>[l.id,stations.filter(s=>s.lines.includes(l
 const color=id=>branchById.get(id)?.c||'#26738a';
 const lineName=id=>branchById.get(id)?.name||id;
 const lineCode=id=>String(HISTORY_BRANCHES.findIndex(b=>b.id===id)+1).padStart(2,'0');
-const LINE_MARK={trunk:'希',rome:'罗',east:'东',west:'西欧',spain:'西',france:'法',lowlands:'低',germany:'德',italy:'意',britain:'不',faith:'基',egypt:'埃',persia:'波',eeurope:'欧',crusade:'十',china:'中',nordic:'北'};
+const LINE_MARK={trunk:'希',rome:'罗',east:'东',west:'西欧',spain:'西',france:'法',lowlands:'低',germany:'德',italy:'意',britain:'不',faith:'基',egypt:'埃',persia:'波',eeurope:'欧',crusade:'十',china:'中',nordic:'北',america:'美'};
 const periodFor=(id,t)=>{const a=ROUTE_PERIODS[id]||[];return a.find(([s,e])=>t>=s&&t<e)?.[2]||a.findLast(([s])=>t>=s)?.[2]||a[0]?.[2]||''};
 const SLICES=typeof TREE_SLICES==='undefined'?[]:TREE_SLICES;
 

@@ -14,7 +14,7 @@ const target=path.resolve(process.argv[2]||path.join(__dirname,'..','index.html'
   await page.setOfflineMode(true);await page.evaluateOnNewDocument(full=>{window.addEventListener('DOMContentLoaded',()=>{const n=document.getElementById('mapnote');if(n)n.hidden=false;if(typeof map!=='undefined'){if(typeof tiles!=='undefined')map.removeLayer(tiles);if(typeof closeTerrain!=='undefined')map.removeLayer(closeTerrain);if(!full)for(const l of Object.values(map._layers)){const kp=l.options?.pane;if(kp==='fallbackPane'||kp==='baseLabelPane'||(kp==='riverPane'&&!group.hasLayer(l))){l._project=()=>{};l._update=()=>{};l._setPos=()=>{};}}}});},false);
   await page.goto(pathToFileURL(target).href+'#history-migration',{waitUntil:'domcontentloaded'});
   const list=await page.evaluate(()=>HISTORY_ENTRIES.flatMap(e=>e.moments.map(m=>({id:e.id,scene:m.scene,name:m.name}))));
-  assert.equal(list.length,672);
+  assert.equal(list.length,684);
   await page.evaluate(list=>{const _f=fit,_m=markTreeCurrent,_c=makeCtx;fit=()=>{};markTreeCurrent=()=>{};makeCtx=()=>new Proxy({},{get:()=>()=>{}});try{
    for(const m of list){if(ENTRIES[cur]?.id!==m.id||sceneIndex!==m.scene)go(m.id,{scene:m.scene});
    const ctx=document.getElementById('sceneContext');const tags=[...ctx.querySelectorAll('.moment-tag')].map(t=>t.firstChild.textContent);
@@ -22,7 +22,7 @@ const target=path.resolve(process.argv[2]||path.join(__dirname,'..','index.html'
    if(!r.tags.includes(m.name)||r.total!==r.expected||r.overflow)throw new Error(JSON.stringify({m,r}));}}finally{fit=_f;markTreeCurrent=_m;makeCtx=_c;}},list);
   // 豆腐块: boxed explainers render inside their own scene passage, apart from the 名场面.
   const boxes=await page.evaluate(()=>HISTORY_ENTRIES.flatMap(e=>e.boxes.map(b=>({id:e.id,scene:b.scene,name:b.name}))));
-  assert.equal(boxes.length,101);
+  assert.equal(boxes.length,104);
   await page.evaluate(boxes=>{const _f=fit,_m=markTreeCurrent,_c=makeCtx;fit=()=>{};markTreeCurrent=()=>{};makeCtx=()=>new Proxy({},{get:()=>()=>{}});try{
    for(const b of boxes){if(ENTRIES[cur]?.id!==b.id||sceneIndex!==b.scene)go(b.id,{scene:b.scene});
    const ctx=document.getElementById('sceneContext');
@@ -36,6 +36,6 @@ const target=path.resolve(process.argv[2]||path.join(__dirname,'..','index.html'
   await page.close();
  }
  assert.deepEqual(errors,[]);
- console.log('PASS: 672 iconic-event tags and 101 豆腐块 (boxed explainers) render inside their scene passages; desktop and 390px; no overflow; offline; no page errors.');
+ console.log('PASS: 684 iconic-event tags and 104 豆腐块 (boxed explainers) render inside their scene passages; desktop and 390px; no overflow; offline; no page errors.');
  await Promise.race([browser.close(),new Promise(r=>setTimeout(r,200))]);browser.process()?.kill('SIGKILL');process.exit(process.exitCode||0);
 })().catch(e=>{console.error(e);process.exit(1);});

@@ -1,8 +1,8 @@
 /* Chapters organize the argument; eras independently group dated map scenes. */
 const HISTORY_CONTENT=/*__HISTORY_CONTENT__*/;
-const HISTORY_CH=['上古与黑暗时代','希腊城邦时代','马其顿与帝国','希腊化世界','罗马','罗马帝国','犹太教与基督教','中国对照','埃及','波斯—阿拉伯','东欧','十字军','不列颠','北欧'];
+const HISTORY_CH=['上古与黑暗时代','希腊城邦时代','马其顿与帝国','希腊化世界','罗马','罗马帝国','犹太教与基督教','中国对照','埃及','波斯—阿拉伯','东欧','十字军','不列颠','北欧','美洲'];
 const HC={athens:'#276582',sparta:'#99462e',mino:'#ad7c25',myc:'#637541',hittite:'#866347',
-  persia:'#8b644c',thebes:'#387568',macedon:'#6b4d72',war:'#a03327',neutral:'#887b65',route:'#2a7182',celt:'#64763f',parthia:'#765b78',rome:'#a34f36',faith:'#41508c',china:'#2e6b4e',byz:'#93324f',france:'#2b6cb0',germany:'#4a4440',italy:'#b8652a',spain:'#a2337f',lowlands:'#b45309',eeurope:'#1d8a99',crusade:'#c0262d',britain:'#2b6a6c',nordic:'#4f86ad'};
+  persia:'#8b644c',thebes:'#387568',macedon:'#6b4d72',war:'#a03327',neutral:'#887b65',route:'#2a7182',celt:'#64763f',parthia:'#765b78',rome:'#a34f36',faith:'#41508c',china:'#2e6b4e',byz:'#93324f',france:'#2b6cb0',germany:'#4a4440',italy:'#b8652a',spain:'#a2337f',lowlands:'#b45309',eeurope:'#1d8a99',crusade:'#c0262d',britain:'#2b6a6c',nordic:'#4f86ad',america:'#8c7a14'};
 const HV={aegean:[[34.3,20.2],[41.3,29.6]],greece:[[35.6,20.4],[39.8,25.1]],
   eastern:[[24.3,19.4],[42.6,49.8]],attica:[[37.55,23.23],[38.45,24.3]],levant:[[27.4,30.2],[35.9,37.2]]};
 const HS={
@@ -1989,6 +1989,90 @@ Object.assign(HS,{
   spa_vervins:['韦尔万','Vervins',49.835,3.909,'皮卡第小城；1598年5月腓力二世临终前与法王亨利四世在此签约停战。'],
   spa_amsterdam:['阿姆斯特丹','Amsterdam',52.368,4.904,'荷兰共和国航运与金融中心；1602年联合东印度公司（VOC）在此成立。'],
   spa_antwerp:['安特卫普','Antwerp',51.219,4.402,'南尼德兰大城；1609年4月西班牙与荷兰在此签署《十二年休战协定》。'],
+  amb_bering:['白令海峡','Bering Strait',65.75,-168.75,'亚洲和北美之间的海峡；冰期海面低时是一片陆地，约一万一千年前被淹没。'],
+  amb_monte_verde:['蒙特贝尔德','Monte Verde',-41.5,-73.2,'智利南部的早期遗址；主层长期定在约一万四千五百年前，2026年有研究质疑这一年代。'],
+  amb_balsas:['巴尔萨斯河谷','Balsas River Valley',18.3,-99.6,'墨西哥中南部；玉米很可能在这里从类蜀黍驯化而来，约九千年前。'],
+  amb_titicaca:['的的喀喀湖','Lake Titicaca',-15.9,-69.3,'秘鲁和玻利维亚之间的高原大湖；土豆的驯化地就在秘鲁南部到玻利维亚西北这一带。'],
+  amb_caral:['卡拉尔','Caral',-10.89,-77.52,'秘鲁海岸的古城；约前3000—前1800年，一般认为是美洲最古老的城市。'],
+  amb_tikal:['蒂卡尔','Tikal',17.22,-89.62,'玛雅低地的大城邦，今危地马拉北部，和卡拉克穆尔争霸几百年。'],
+  amb_calakmul:['卡拉克穆尔','Calakmul',18.1,-89.81,'玛雅低地的大城邦，今墨西哥坎佩切南部，蒂卡尔的对头。'],
+  amb_tonina:['托尼纳','Toniná',16.9,-92.01,'恰帕斯的玛雅城邦；909年1月15日的石碑是已知最后一块长纪历碑。'],
+  amb_mani:['马尼','Maní',20.39,-89.39,'尤卡坦的玛雅城镇；1562年7月12日兰达在此举行火刑大典，烧毁书和神像。'],
+  amb_nojpeten:['诺赫佩滕','Nojpetén',16.93,-89.89,'佩滕伊察湖上的伊察人都城，今弗洛雷斯；1697年3月13日陷落，是美洲最后一个独立的原住民王国。'],
+  amb_soconusco:['索科努斯科','Soconusco (Xoconochco)',15.2,-92.7,'今墨西哥恰帕斯太平洋岸，三城同盟的远方飞地，出产可可。'],
+  amb_mantaro:['曼塔罗河谷','Mantaro Valley',-11.8,-75.4,'今秘鲁中部高原，瓦伊卡约到豪哈一带；现存印加粮仓遗迹最多的地方。'],
+  amb_maule:['马乌莱河','Maule River',-35.6,-71.5,'今智利中南部；传统说法里印加南扩到此止步。'],
+  amb_cahokia:['卡霍基亚','Cahokia',38.655,-90.06,'今美国伊利诺伊州，圣路易斯对岸；约1100年一万五到两万人，约1350年前后废弃。'],
+  amb_onondaga:['奥农达加','Onondaga',43.05,-76.15,'今美国纽约州中部；易洛魁五族共同的议事中心。'],
+  amx_saint_die:['圣迪耶','Saint-Dié',48.285,6.95,'洛林公国的小城；1507年一群人文学者在此印出第一张标有America的世界地图。'],
+  amx_breslau:['布雷斯劳','Breslau (Silesia)',51.11,17.03,'西里西亚首府，今波兰弗罗茨瓦夫；1756年腓特烈二世命当地官员推广土豆。'],
+  amx_temesvar:['蒂米什瓦拉','Temesvár (Timișoara)',45.75,21.23,'多瑙河平原巴纳特地区的城市，当时属奥斯曼；1692年有记载玉米已到这里。'],
+  amx_madeira:['马德拉','Madeira',32.65,-16.9,'大西洋上的葡萄牙岛屿；1425年引种甘蔗，15世纪末已是糖业中心。'],
+  amx_sao_tome:['圣多美','São Tomé',0.33,6.73,'几内亚湾的葡萄牙岛屿；16世纪的糖业中心，用非洲奴隶干活，1600年前后被巴西超过。'],
+  amx_olinda:['奥林达','Olinda',-8.01,-34.85,'巴西伯南布哥首府，1536年建城；16世纪巴西糖业最发达的地方。'],
+  amx_salvador:['萨尔瓦多','Salvador',-12.97,-38.5,'巴西巴伊亚的港口，1549年建城，葡属巴西的总督府所在。'],
+  amx_luanda:['罗安达','Luanda',-8.84,13.23,'安哥拉海岸，1576年葡萄牙人建城，此后是运往巴西的主要奴隶港。'],
+  amf_stvincent:['圣文森特角','Cape St. Vincent',37.02,-8.99,'葡萄牙西南角，大西洋回欧洲的船都从这里过；弗勒里在这一带截住运宝船。'],
+  amf_nybay:['纽约湾','New York Bay',40.55,-74.05,'1524年韦拉扎诺沿北美海岸北上时进过这个海湾。'],
+  amf_stmalo:['圣马洛','Saint-Malo',48.65,-2.02,'布列塔尼北岸的海港，卡蒂埃的家乡，纽芬兰渔船的母港之一。'],
+  amf_belleisle:['贝尔岛海峡','Strait of Belle Isle',51.6,-56.3,'纽芬兰和拉布拉多之间的水道；1534年卡蒂埃由此进圣劳伦斯湾。'],
+  amf_gaspe:['加斯佩','Gaspé',48.83,-64.48,'圣劳伦斯湾南岸的海湾；1534年7月卡蒂埃在此立十字架。'],
+  amf_stadacona:['斯塔达科纳','Stadacona',46.81,-71.21,'多纳科纳的村子，在今魁北克城；“加拿大”这个名字由它而来。'],
+  amf_stjohns:['圣约翰斯','St. John’s',47.56,-52.71,'纽芬兰东岸的良港，各国渔船的停靠地；1542年卡蒂埃在此遇到罗贝瓦尔。'],
+  amf_charlesfort:['查尔斯堡','Charlesfort',32.31,-80.68,'今南卡罗来纳的帕里斯岛；1562年里博留人在此筑堡。'],
+  amf_caroline:['卡罗琳堡','Fort Caroline',30.39,-81.5,'佛罗里达圣约翰斯河口的胡格诺堡垒；1565年9月被梅嫩德斯攻下，改名圣马特奥。'],
+  amf_matanzas:['马坦萨斯湾口','Matanzas Inlet',29.71,-81.23,'圣奥古斯丁南面的海湾口；1565年9—10月梅嫩德斯在此两次杀俘，地名就是“屠杀”。'],
+  amf_stcroix:['圣克鲁瓦岛','Saint Croix Island',45.13,-67.13,'今缅因和新不伦瑞克之间的小岛；1604—1605年德蒙一行在此过冬。'],
+  amf_portroyal:['罗亚尔港','Port-Royal',44.74,-65.52,'今新斯科舍；1605年德蒙一行从圣克鲁瓦岛迁到这里。'],
+  amf_tadoussac:['塔杜萨克','Tadoussac',48.14,-69.72,'萨格奈河口的毛皮码头，法国人每年夏天来这里换皮。'],
+  amf_quebec:['魁北克','Quebec',46.81,-71.21,'圣劳伦斯河最窄处；1608年7月3日尚普兰在此建点。'],
+  amf_ticonderoga:['提康德罗加','Ticonderoga',43.85,-73.39,'尚普兰湖南端；1609年7月尚普兰在此枪杀莫霍克酋长。'],
+  amv_roanoke:['罗阿诺克岛','Roanoke Island',35.93,-75.7,'今北卡罗来纳外滩沙洲里的小岛；1585年、1587年两批英国人在此落脚。'],
+  amv_chesapeake:['切萨皮克湾口','Chesapeake Bay',36.95,-76.05,'1587年罗利指定的目的地，水深，能泊大船。'],
+  amv_jamestown:['詹姆斯敦','Jamestown',37.21,-76.78,'詹姆斯河里的半岛；1607年5月英国人在此建点，地势低，水咸。'],
+  amv_pointcomfort:['康福特角','Point Comfort',37.0,-76.31,'詹姆斯河口；1609年此地建阿尔杰农堡，1619年白狮号在此靠岸。'],
+  amv_bermuda:['百慕大','Bermuda',32.31,-64.75,'大西洋中的无人群岛，水手叫它魔鬼岛；1609年7月海洋冒险号在此搁浅。'],
+  amv_trinidad:['特立尼达','Trinidad',10.45,-61.25,'奥里诺科河口外的岛，当时属西班牙，种的烟草欧洲最爱。'],
+  amv_santotome:['圣托梅','San Thomé de Guayana',8.35,-62.65,'奥里诺科河上的西班牙据点；1618年1月瓦特·罗利在此战死。'],
+  amv_gravesend:['格雷夫森德','Gravesend',51.44,0.37,'泰晤士河下游的港口；1617年3月宝嘉康蒂死在这里。'],
+  amv_campeche:['坎佩切湾','Bay of Campeche',19.9,-91.6,'墨西哥湾南部；1619年夏葡萄牙奴隶船在此被两条私掠船抢劫。'],
+  amv_luanda:['罗安达','Luanda',-8.84,13.23,'葡属安哥拉的港口；1619年的奴隶船从这里出发。'],
+  amd_northcape:['北角','North Cape',71.17,25.78,'挪威最北端；1609年5月哈德逊在此以东被冰挡住，违令掉头。'],
+  amd_manhattan:['曼哈顿岛','Manhattan',40.71,-74.01,'哈德逊河口的长岛；1626年公司从当地人手里换下来，建新阿姆斯特丹。'],
+  amd_dartmouth:['达特茅斯','Dartmouth',50.35,-3.58,'英格兰德文郡的海港；1609年11月7日哈德逊回程停靠，被当局扣下。'],
+  amd_jamesbay:['詹姆斯湾','James Bay',52.2,-80.0,'哈德逊湾南端；1610—1611年哈德逊在此过冬，1611年6月被水手放逐。'],
+  amd_fortorange:['奥兰治堡','Fort Orange',42.65,-73.75,'哈德逊河上游，今奥尔巴尼；1624年建的皮货站，易洛魁人和马希坎人到这里卖皮。'],
+  amd_wilhelmus:['威廉堡','Fort Wilhelmus',40.08,-74.85,'特拉华河中的小岛；1624年公司在南河建的第一个据点。'],
+  amd_goodhope:['好望堡','Fort Good Hope',41.76,-72.67,'康涅狄格河边，今哈特福德；公司在东边收皮的据点。'],
+  amd_recife:['累西腓','Recife',-8.05,-34.88,'巴西东北的港口；1630—1654年荷属巴西的首府。'],
+  amd_bahia:['巴伊亚','Salvador da Bahia',-12.97,-38.51,'当时葡属巴西的首府；1624年西印度公司攻占，次年丢掉。'],
+  amd_elmina:['埃尔米纳','Elmina',5.08,-1.35,'西非黄金海岸的葡萄牙堡垒；1637年8月被西印度公司攻下。'],
+  amd_luanda:['罗安达','Luanda',-8.84,13.23,'葡属安哥拉的奴隶港；1641年8月被西印度公司攻下，1648年8月葡军夺回。'],
+  amd_barbados:['巴巴多斯','Barbados',13.19,-59.54,'加勒比东端的英国殖民岛；四十年代起转种甘蔗。'],
+  amm_norwich:['诺里奇','Norwich',52.63,1.297,'英格兰东部大城；1581年布朗在此试办不属国教的教会，是分离派的早期据点。'],
+  amm_hampton:['汉普顿宫','Hampton Court',51.404,-0.337,'伦敦西南的王宫；1604年1月詹姆士一世在此见主教和清教徒代表。'],
+  amm_scrooby:['斯克鲁比','Scrooby',53.413,-1.019,'诺丁汉郡北部的村子，在伦敦通苏格兰的大路上；分离派在约克大主教的庄园聚会。'],
+  amm_humber:['亨伯河口','Humber estuary',53.64,-0.22,'格里姆斯比和赫尔之间的海岸；1608年分离派在此上荷兰船，男人和妻儿被冲散。'],
+  amm_guiana:['圭亚那','Guiana',5.5,-56.0,'南美东北海岸；罗利宣传过的黄金地，莱顿教会有人主张迁来。'],
+  amm_hudson:['哈德逊河口','Mouth of the Hudson River',40.7,-74.02,'当时算弗吉尼亚公司北部的地界，是五月花号原定的目的地一带；后来成了新阿姆斯特丹。'],
+  amm_capecod:['科德角港','Cape Cod Harbor (Provincetown)',42.05,-70.18,'科德角北端的天然良港；1620年11月11日五月花号在此下锚，公约在此签署。'],
+  amm_cornhill:['玉米山','Corn Hill (Truro)',41.99,-70.06,'科德角上的沙丘；1620年11月探路的人在此挖出印第安人埋藏的玉米。'],
+  amm_encounter:['第一次交锋处','First Encounter Beach (Eastham)',41.83,-70.0,'科德角湾东岸；1620年12月探路的小船在此遭瑙塞特人放箭，无人受伤。'],
+  amm_plymouth:['新大陆的普利茅斯','Plymouth, New England (Patuxet)',41.958,-70.667,'原是帕图克西特村，1616—1619年大疫后废弃；1620年12月英国人在此定居。'],
+  amm_sowams:['索瓦姆斯','Sowams',41.73,-71.28,'万帕诺亚格首领马萨索伊特的驻地，今罗德岛沃伦一带，离普利茅斯约四十英里。'],
+  amm_narragansett:['纳拉甘西特人','Narragansett country',41.5,-71.55,'纳拉甘西特湾以西的部族，人口稠密，1616—1619年大疫没有波及。'],
+  amm_monhegan:['蒙希根岛','Monhegan Island',43.76,-69.32,'缅因外海的岛，英国渔船的落脚点；萨莫塞特在这一带学会了几句英语。'],
+  amh_groton:['格罗顿','Groton, Suffolk',52.04,0.87,'萨福克的村庄；温思罗普家的庄园所在，这一带是清教徒的老家。'],
+  amh_cambridge:['剑桥','Cambridge, England',52.205,0.119,'英格兰东部大学城，清教徒牧师多出于此；1629年8月26日十二人在此立约。'],
+  amh_yarmouth:['雅茅斯（怀特岛）','Yarmouth, Isle of Wight',50.705,-1.5,'英吉利海峡上的港口；1630年4月8日阿贝拉号等四条船从这里起航。'],
+  amh_salem:['塞勒姆','Salem',42.52,-70.9,'马萨诸塞湾公司1628年起经营的先遣据点；1630年6月阿贝拉号在此靠岸。'],
+  amh_boston:['波士顿','Boston',42.36,-71.06,'1630年9月定名，取自英格兰林肯郡的港口；马萨诸塞湾殖民地的首府。'],
+  amh_newtown:['新镇（剑桥）','Newtown (Cambridge, Massachusetts)',42.373,-71.119,'波士顿对岸的镇子；1636年议会决定办的学院设在此地，1638年改名剑桥。'],
+  amh_hartford:['哈特福德','Hartford',41.76,-72.67,'康涅狄格河边的镇子；1636年牧师胡克带新镇的大部分会众迁来。'],
+  amh_providence:['普罗维登斯','Providence',41.824,-71.413,'1636年罗杰·威廉斯向纳拉甘西特头人买地建的镇子，不问信仰。'],
+  amh_portsmouth:['阿奎德内克岛','Aquidneck Island (Portsmouth)',41.6,-71.25,'纳拉甘西特湾里的岛；1638年哈钦森一派买下，后来就是罗德岛。'],
+  amh_mystic:['神秘河寨子','Pequot fort on the Mystic River',41.37,-71.96,'佩科特人的设防村寨；1637年5月26日被英军和印第安盟军焚毁。'],
+  amh_pelham:['裂岩','Split Rock (Pelham Bay)',40.88,-73.81,'今纽约布朗克斯一带，当时在新尼德兰治下；1643年安妮·哈钦森全家死于此地。'],
 });
 function hp(d,key,opt={}){
   const [n,en,la,lo,note]=HS[key];
@@ -7286,7 +7370,7 @@ const HISTORY_ENTRIES=[
     hp(d,'hispalis',{left:1,note:'西印度贸易署规定凡搭乘船队前往美洲殖民地者，须查验无犹太及摩尔血统。'});
    },[['fill',HC.spain,'被血统纯洁证书锁死的西班牙核心区'],['dot',HC.war,'1449年与1547年托莱多《血统纯洁章程》中心'],['dot','#2a2018','阿维拉、巴利亚多利德、萨拉曼卡、阿尔卡拉与塞维利亚']])
  ]},
-{id:'history-spain-1492',ch:5,title:'1492大航海与美洲征服：算错地球周长、先抢黄金再挖银山',short:'天主教双王与1492',en:'1492 and the Conquest of the Americas: Bad Math, Caribbean Gold, and the Silver Mountain',period:'1415—1572年',c:HC.spain,
+{id:'history-spain-1492',ch:5,title:'1492大航海与美洲征服：算错地球周长、先抢黄金再挖银山',short:'大航海与美洲征服',en:'1492 and the Conquest of the Americas: Bad Math, Caribbean Gold, and the Silver Mountain',period:'1415—1572年',c:HC.spain,
  scenes:[
   hs('1415—1488年','葡萄牙向大西洋突围：从休达到好望角','东面被卡斯蒂利亚堵死陆路的葡萄牙自1415年攻占北非休达起，沿非洲西岸逐年南下探险，1488年绕过好望角。',[[24.5,-20.5],[44.0,32.0]],d=>{
     ha(d,'mLeonCastile1080',HC.spain,{fillOpacity:.2,dashArray:'4 4'});ha(d,'mOttoman1522',HC.war,{fillOpacity:.22});
@@ -7605,7 +7689,7 @@ const HISTORY_ENTRIES=[
     hp(d,'spa_callao',{kind:'battle',note:'秘鲁外海：1579年3月德雷克截获“卡卡富戈号”，劫走二十六吨白银。'});
     hr(d,[[50.37,-4.14],[10.0,-30.0],[-35.0,-55.0],[-12.06,-77.15]],HC.britain);
    },[['fill',HC.britain,'放纵私掠海盗的英格兰'],['fill',HC.spain,'西班牙本土与秘鲁副王区'],['dline',HC.britain,'1577—1579年德雷克南下绕南美突入太平洋航线'],['dot',HC.war,'罗马、普利茅斯与秘鲁外海']]),
-  hs('1585—1587年','《无双宫条约》、处死玛丽与传位遗嘱','1585年英荷签《无双宫条约》；玛丽·斯图亚特立遗嘱将英王位继承权传予腓力后被斩，德雷克突袭加的斯。',[[35.5,-10.5],[54.0,7.0]],d=>{
+  hs('1585—1587年','《无双宫条约》、处死玛丽与让位密信','1585年英荷签《无双宫条约》；玛丽·斯图亚特许诺把继承权让给腓力后被斩，德雷克突袭加的斯。',[[35.5,-10.5],[54.0,7.0]],d=>{
     ha(d,'mEngland1066',HC.britain,{fillOpacity:.28});ha(d,'sDutchRepublic1609',HC.lowlands,{fillOpacity:.34});
     ha(d,'sIberia1580',HC.spain,{fillOpacity:.24});
     hp(d,'spa_nonsuch',{kind:'battle',left:1,note:'无双宫：1585年8月英荷签约，莱斯特伯爵率七千英军渡海助战。'});
@@ -12449,6 +12533,347 @@ const HISTORY_ENTRIES=[
     hp(d,'np_vechta',{left:1,note:'1654年韦希塔：瑞军最后一处抵押驻地，这一年才交还。'});
     hp(d,'np_uppsala',{note:'1654年6月乌普萨拉：克里斯蒂娜退位，王位传给表兄查理十世。'});
    },[['fill',HC.nordic,'1648年的瑞典（颜色深处为新得的德意志领地）'],['fill',HC.germany,'神圣罗马帝国'],['dot',HC.war,'1648年布拉格'],['dot','#2a2018','新领地、谈判地、最后驻地与退位地']])
+ ]},
+{id:'history-america-before',ch:14,title:'大航海之前的美洲：没有马和铁的两个帝国',short:'大航海之前的美洲',en:'The Americas before 1492: Two Empires without Horses or Iron',period:'约前13000—1492年',c:HC.america,
+ scenes:[
+  hs('约前13000—前3000年','海水关上了门','虚线示意人从亚洲南下的一种路线（沿海说，仍有争议）；钉是陆桥、早期遗址和作物驯化地。',[[-45.0,-175.0],[72.0,-30.0]],d=>{
+    hp(d,'amb_bering',{note:'今天海峡只有四五十米深，海面一降就成陆地。'});
+    hp(d,'amb_balsas',{left:1,note:'磨石上发现约八千七百年前的玉米残留。'});
+    hp(d,'amb_caral',{left:1,note:'占地约一百五十公顷，有神庙、广场和民居。'});
+    hp(d,'amb_titicaca',{note:'湖东岸的奇里帕（Chiripa）出土过前800—前500年的土豆。'});
+    hp(d,'amb_monte_verde',{left:1,note:'泥炭封住了木屋、兽皮和吃剩的海藻。'});
+    hr(d,[[65.75,-168.75],[58,-152],[50,-130],[35,-121],[18,-105],[3,-82],[-18,-72],[-41.5,-73.2]],HC.route);
+   },[['dline',HC.route,'人从亚洲南下的一种路线（示意）'],['dot','#2a2018','陆桥、早期遗址与作物驯化地']]),
+  hs('约前10000—1520年','没有牲口，也没有瘟疫','棕色是大羊驼和羊驼用得上的安第斯一带；钉标出马走出美洲的路口、无轮的中美洲和天花登陆的第一岛。',[[-30.0,-175.0],[70.0,-30.0]],d=>{
+    ha(d,'aInca1532',HC.america,{fillOpacity:.26});
+    hp(d,'amb_bering',{note:'约二百五十万年前，马的祖先由此走进亚欧。'});
+    hp(d,'sp1_tenochtitlan',{left:1,note:'中美洲没有独轮车，也没有陶轮。'});
+    hp(d,'sp1_santo_domingo',{note:'天花在美洲的第一站。'});
+    hp(d,'sp1_cusco',{left:1,note:'大羊驼驮运，一天只走八到十三公里。'});
+   },[['fill',HC.america,'大羊驼和羊驼的安第斯（约略）'],['dot','#2a2018','文中地点']]),
+  hs('约250—1697年','城邦的雨林','绿色是玛雅地区；钉是争霸的城邦、最后的石碑、1562年的烧书地和最后陷落的城。',[[14.3,-94.0],[22.5,-85.5]],d=>{
+    ha(d,'amMaya',HC.america,{fillOpacity:.28});
+    hp(d,'amb_tikal',{note:'古典期最大的城邦之一，今危地马拉北部。'});
+    hp(d,'amb_calakmul',{left:1,note:'各拉盟邦和蒂卡尔打了几百年。'});
+    hp(d,'amb_tonina',{left:1,note:'最后一块长纪历碑：909年1月15日。'});
+    hp(d,'amb_mani',{kind:'battle',note:'当地修族（Xiu）的首领早早归顺了西班牙。'});
+    hp(d,'amb_nojpeten',{kind:'battle',left:1,note:'湖中岛城，比特诺奇蒂特兰晚陷落一百七十六年。'});
+   },[['fill',HC.america,'玛雅地区'],['dot',HC.war,'1562年烧书地与1697年陷落的城'],['dot','#2a2018','古典期城邦']]),
+  hs('1428—1519年','湖上大城的账本','橙色是三城同盟和属邦（约1519年）；特拉斯卡拉被围在中间，索科努斯科是最远的可可产地。',[[13.8,-104.0],[23.0,-89.5]],d=>{
+    ha(d,'aAztec1519',HC.america,{fillOpacity:.26});
+    hp(d,'sp1_tenochtitlan',{left:1,note:'三条堤道连岸，宽得能并行十匹马。'});
+    hp(d,'sp1_tlaxcala',{note:'和韦霍钦戈（Huejotzingo）、乔卢拉（Cholula）同是鲜花战争的对手。'});
+    hp(d,'sp1_cempoala',{note:'托托纳克人的中心，向同盟纳贡。'});
+    hp(d,'amb_soconusco',{left:1,note:'太平洋岸的飞地，向同盟进贡可可。'});
+   },[['fill',HC.america,'三城同盟和属邦（约1519年）'],['dot','#2a2018','文中地点']]),
+  hs('1438—1533年','绳结和劳役','棕色是印加帝国（约1532年）；虚线示意南北山地干道；钉是都城、南北两端和粮仓最集中的河谷。',[[-38.0,-86.0],[5.0,-60.0]],d=>{
+    ha(d,'aInca1532',HC.america,{fillOpacity:.26});
+    hp(d,'sp1_quito',{note:'帝国北方重镇，较晚才并入。'});
+    hp(d,'amb_mantaro',{left:1,note:'粮食一般存一两年，冻干土豆和肉干能存更久。'});
+    hp(d,'sp1_cusco',{note:'帕查库特克把这座小城改造成帝国都城。'});
+    hp(d,'amb_titicaca',{note:'帕查库特克向南打到这一带的湖区。'});
+    hp(d,'amb_maule',{left:1,note:'传统说法：和马普切人（Mapuche）打成僵局，就此止步。'});
+    hr(d,[[-0.22,-78.51],[-7.16,-78.5],[-11.8,-75.4],[-13.53,-71.97],[-15.9,-69.3],[-22,-68.5],[-33.4,-70.6]],HC.america);
+   },[['fill',HC.america,'印加帝国（约1532年）'],['dline',HC.america,'南北山地干道（示意）'],['dot','#2a2018','文中地点']]),
+  hs('约1100—1492年','北边没有帝国','南边两块是现成的帝国，北边只有文化区和部落联盟；钉是卡霍基亚、易洛魁议事地和北欧人的落脚点。',[[-20.0,-125.0],[58.0,-50.0]],d=>{
+    ha(d,'amMississippian',HC.neutral,{fillOpacity:.26});ha(d,'amIroquoia',HC.neutral,{fillOpacity:.32});
+    ha(d,'aAztec1519',HC.america,{fillOpacity:.3});ha(d,'aInca1532',HC.america,{fillOpacity:.3});
+    hp(d,'amb_cahokia',{left:1,note:'城区约十六平方公里，土丘约一百二十座。'});
+    hp(d,'amb_onondaga',{note:'莫霍克、奥奈达、奥农达加、卡尤加、塞内卡五族在此议事。'});
+    hp(d,'nk_lanse',{note:'八座草皮房屋，住得不久。'});
+    hp(d,'sp1_tenochtitlan',{left:1,note:'南边之一：现成的贡赋。'});
+    hp(d,'sp1_cusco',{note:'南边之二：现成的劳役。'});
+   },[['fill',HC.america,'南边：阿兹特克与印加'],['fill',HC.neutral,'北边：密西西比文化区与易洛魁五族'],['dot','#2a2018','文中地点']])
+ ]},
+{id:'history-america-exchange',ch:14,title:'大交换：银子、烟草和土豆，美洲怎么反过来改了欧洲',short:'大交换',en:'The Great Exchange: How Silver, Tobacco and Potatoes Changed Europe',period:'1492—约1650年',c:HC.america,
+ scenes:[
+  hs('1507—1590年','古书失灵','钉是书和地图出现的地方：西欧五处，从韦斯普奇的家乡到蒙田的家。',[[41.0,-9.0],[56.0,15.0]],d=>{
+    ha(d,'mEngland1066',HC.neutral,{fillOpacity:.14});ha(d,'fFrance1559',HC.neutral,{fillOpacity:.14});
+    hp(d,'amx_saint_die',{note:'这张地图只有一份传世，今藏美国国会图书馆。'});
+    hp(d,'k_london',{left:1,note:'莫尔是伦敦的律师，后来当上亨利八世的大法官。'});
+    hp(d,'fr_rouen',{left:1,note:'1560年代初国王到此，三个巴西人被带来见驾。'});
+    hp(d,'w_bordeaux',{left:1,note:'蒙田家里有个在巴西住过十来年的人。'});
+    hp(d,'ir_florence',{note:'韦斯普奇的家乡；他替西班牙和葡萄牙跑过船。'});
+   },[['fill',HC.neutral,'英格兰与法国（约略）'],['dot','#2a2018','地图、书和人物的所在地']]),
+  hs('1556—1650年','银子冲进来','虚线是白银回西班牙的路；钉从银山到塞维利亚，再到写文章的人和加税的地方。',[[-25.0,-82.0],[56.0,15.0]],d=>{
+    ha(d,'aPeru1600',HC.spain,{fillOpacity:.2});ha(d,'sCastile',HC.spain,{fillOpacity:.24});ha(d,'sNetherlands1556',HC.lowlands,{fillOpacity:.26});
+    hp(d,'sp1_potosi',{note:'这条线的源头；1570年代后靠汞齐法和矿役大产。'});
+    hp(d,'hispalis',{left:1,note:'官方账本在此：贸易署给每船金银登记。'});
+    hp(d,'sp1_salamanca',{left:1,note:'阿斯皮利奎塔在这里教过十几年教会法。'});
+    hp(d,'w_paris',{left:1,note:'两人的小册子都在巴黎印行。'});
+    hp(d,'lb_brussels',{note:'阿尔瓦在此宣布新税，全境罢市。'});
+    hr(d,[[-19.58,-65.75],[-12.05,-77.04],[8.95,-79.53],[10.4,-75.51],[23.13,-82.38],[30,-55],[37.39,-5.98]],HC.spain);
+   },[['fill',HC.spain,'秘鲁和卡斯蒂利亚'],['fill',HC.lowlands,'尼德兰'],['dline',HC.spain,'白银回西班牙的路线（示意）'],['dot','#2a2018','文中地点']]),
+  hs('1568—1602年','银子待不住','虚线是白银离开西班牙的两路：去热那亚，去阿姆斯特丹再转波罗的海和亚洲。',[[30.0,-14.0],[59.0,24.0]],d=>{
+    ha(d,'sCastile',HC.spain,{fillOpacity:.24});ha(d,'sDutchRepublic1609',HC.lowlands,{fillOpacity:.3});
+    hp(d,'hispalis',{left:1,note:'银船到港、登记过秤的地方。'});
+    hp(d,'s92_valladolid',{left:1,note:'塞洛里戈的上书1600年在此印行。'});
+    hp(d,'iv2_genoa',{note:'替西班牙王室放贷的银行家的老家。'});
+    hp(d,'sn2_amsterdam',{note:'1609年开了汇兑银行，银子在此集散。'});
+    hp(d,'gh_danzig',{note:'波罗的海粮食的出海口，荷兰人称这门生意为“母贸易”。'});
+    hr(d,[[37.39,-5.98],[39,1],[44.41,8.93]],HC.italy);
+    hr(d,[[37.39,-5.98],[36.5,-9],[43,-10],[49,-6],[50.3,0],[52.37,4.9]],HC.lowlands);
+    hr(d,[[52.37,4.9],[55.5,9],[56,14],[54.35,18.65]],HC.lowlands);
+    hr(d,[[52.37,4.9],[49,-6],[43,-11],[31,-12.5]],HC.route);
+    hl(d,'经好望角去亚洲','VOC silver around the Cape',32.0,-14.0,HC.route);
+   },[['fill',HC.spain,'卡斯蒂利亚'],['fill',HC.lowlands,'荷兰共和国'],['dline',HC.italy,'去热那亚还债的银子（示意）'],['dline',HC.lowlands,'买粮买货流向荷兰和波罗的海的银子（示意）'],['dline',HC.route,'运去亚洲的银子（示意）'],['dot','#2a2018','文中地点']]),
+  hs('1560—1642年','烟草，全欧洲的第一口瘾','烟草由里斯本北上巴黎、伦敦，东到伊斯坦布尔；红钉是吸烟丢命的地方。',[[30.0,-13.0],[56.0,48.0]],d=>{
+    ha(d,'mOttoman1522',HC.war,{fillOpacity:.14});
+    hp(d,'sr_lisbon',{left:1,note:'1533年已有里斯本烟草商的记载。'});
+    hp(d,'w_paris',{note:'到1570年，植物学家已叫它尼科草。'});
+    hp(d,'k_london',{note:'据时人里奇（Barnabee Rych）说，七千家店卖烟草。'});
+    hp(d,'hispalis',{note:'当地教士告状说教堂里有人吸烟。'});
+    hp(d,'spi_istanbul',{note:'约1601年传到这里，苏丹禁烟后士兵躲进茅房抽。'});
+    hp(d,'w_baghdad',{kind:'battle',left:1,note:'征巴格达途中，十几二十个军官因吸烟被当面处死。'});
+   },[['fill',HC.war,'奥斯曼帝国（示意）'],['dot',HC.war,'因吸烟处死军官的行军路'],['dot','#2a2018','文中地点']]),
+  hs('1567—1756年','迟到两百年的红利','虚线是现存最早的土豆货单走的路；钉标出土豆和玉米后来扎根的地方。',[[26.0,-24.0],[58.0,28.0]],d=>{
+    ha(d,'mOttoman1522',HC.neutral,{fillOpacity:.16});
+    hp(d,'s92_canary',{note:'一说1562年前后土豆已从南美传到这里。'});
+    hp(d,'lb_antwerp',{note:'这批货到时，阿尔瓦刚带兵进了尼德兰。'});
+    hp(d,'uk6_dublin',{left:1,note:'18世纪爱尔兰人几乎全靠土豆过活。'});
+    hp(d,'amx_breslau',{note:'腓特烈还派牧师下乡讲种法，人称“土豆牧师”。'});
+    hp(d,'ir_venice',{left:1,note:'玉米在北意大利成了穷人的玉米糊（polenta）。'});
+    hp(d,'amx_temesvar',{note:'1692年有记载玉米到了奥斯曼治下的这一带。'});
+    hr(d,[[28.09,-17.11],[36,-13],[44,-10],[49,-6],[50.3,0],[51.22,4.4]],HC.route);
+   },[['fill',HC.neutral,'奥斯曼帝国（示意）'],['dline',HC.route,'1567年从加那利到安特卫普的货单（示意）'],['dot','#2a2018','土豆和玉米扎根的地方']]),
+  hs('1425—1650年','甘蔗和黑奴','糖业的中心从马德拉南下圣多美，再过海到巴西；虚线是非洲到巴西的贩奴航路。',[[-30.0,-62.0],[42.0,26.0]],d=>{
+    ha(d,'aBrazil1600',HC.spain,{fillOpacity:.24});ha(d,'amAngola1620',HC.war,{fillOpacity:.28});
+    hp(d,'amx_madeira',{left:1,note:'1492年年产已超一千四百吨。'});
+    hp(d,'amx_sao_tome',{note:'1595年奴隶阿马多尔（Amador）起义，一度占了首府。'});
+    hp(d,'amx_olinda',{note:'杜阿尔特·科埃略（Duarte Coelho）的封地，1536年建城。'});
+    hp(d,'amx_salvador',{left:1,note:'1549年建城，诺布雷加的耶稣会士随总督而来。'});
+    hp(d,'amx_luanda',{kind:'battle',note:'1576年建城，此后的主要贩奴港。'});
+    hr(d,[[-8.84,13.23],[-10,-5],[-12.97,-38.5]],HC.war);
+    hr(d,[[0.33,6.73],[-4,-15],[-8.01,-34.85]],HC.war);
+   },[['fill',HC.spain,'葡属巴西（约1600年）'],['fill',HC.war,'葡属安哥拉'],['dline',HC.war,'贩奴航路（示意）'],['dot',HC.war,'罗安达'],['dot','#2a2018','糖业中心']])
+ ]},
+{id:'history-america-france',ch:14,title:'法国人的美洲：亚当的遗嘱、胡格诺的退路与海狸帽',short:'法国人的美洲',en:'The French in America: Adam’s Will, a Huguenot Refuge and the Beaver Hat',period:'1522—1635年',c:HC.america,
+ scenes:[
+  hs('1494—1524年','亚当的遗嘱','一条虚线是运宝船从墨西哥回欧洲的路，一条是韦拉扎诺1524年沿北美海岸的航线。',[[12.0,-104.0],[56.0,16.0]],d=>{
+    ha(d,'fFrance1559',HC.france,{fillOpacity:.26});ha(d,'sHabsburgSpain1556',HC.spain,{fillOpacity:.24});ha(d,'aNewSpain1600',HC.spain,{fillOpacity:.24});
+    hp(d,'s92_tordesillas',{note:'1494年西葡在此划线，法国不在场。'});
+    hp(d,'sp1_veracruz',{note:'运宝船的出发港。'});
+    hp(d,'amf_stvincent',{kind:'battle',left:1,note:'船队在亚速尔休整后到这一带被截。'});
+    hp(d,'fh4a_dieppe',{note:'昂戈的船队母港，法国私掠的大本营。'});
+    hp(d,'amf_nybay',{left:1,note:'韦拉扎诺进过这里，把河口当成大湖。'});
+    hr(d,[[19.2,-96.13],[23.13,-82.38],[29.0,-62.0],[38.7,-27.2],[37.0,-9.5]],HC.spain);
+    hr(d,[[49.93,1.08],[32.7,-16.9],[33.8,-77.9],[40.5,-73.9],[46.5,-58.0],[49.0,-30.0],[49.3,-4.0]],HC.france);
+   },[['fill',HC.france,'法兰西王国（示意）'],['fill',HC.spain,'西班牙与新西班牙（示意）'],['dline',HC.spain,'运宝船回程（示意）'],['dline',HC.france,'1524年韦拉扎诺航线（示意）'],['dot',HC.war,'弗勒里劫船处'],['dot','#2a2018','托德西利亚斯、韦拉克鲁斯、迪耶普与纽约湾']]),
+  hs('1534—1578年','假钻石和真鳕鱼','海上的色块是纽芬兰大浅滩，鳕鱼的渔场；虚线是卡蒂埃1534年的航线。',[[41.0,-76.0],[53.5,1.0]],d=>{
+    ha(d,'amGrandBanks',HC.route,{fillOpacity:.34});ha(d,'amNewFrance1635',HC.america,{fillOpacity:.26});ha(d,'fFrance1559',HC.france,{fillOpacity:.2});
+    hp(d,'amf_stmalo',{note:'卡蒂埃的家乡，1534年4月从这里出海。'});
+    hp(d,'amf_stjohns',{note:'1542年卡蒂埃在此违令，连夜开回法国。'});
+    hp(d,'amf_belleisle',{left:1,note:'1534年撞见一条迷路的拉罗谢尔船。'});
+    hp(d,'amf_gaspe',{left:1,note:'来这里打鱼的是斯塔达科纳人。'});
+    hp(d,'amf_stadacona',{left:1,note:'1541—1542年在附近筑堡，挖“钻石”。'});
+    hr(d,[[48.65,-2.02],[50.2,-20.0],[51.6,-55.4],[50.2,-60.0],[48.83,-64.2]],HC.france);
+   },[['fill',HC.route,'纽芬兰大浅滩'],['fill',HC.america,'圣劳伦斯河谷'],['fill',HC.france,'法兰西王国（示意）'],['dline',HC.france,'1534年卡蒂埃航线（概略）'],['dot','#2a2018','圣马洛、圣约翰斯、贝尔岛海峡、加斯佩与斯塔达科纳']]),
+  hs('1555—1568年','胡格诺的退路','虚线是银船队出哈瓦那后贴着佛罗里达北上的水道；里约在图外的南美。',[[21.5,-88.0],[35.5,-71.0]],d=>{
+    ha(d,'amLaFlorida1565',HC.spain,{fillOpacity:.2});ha(d,'aCaribbean',HC.spain,{fillOpacity:.12});
+    hp(d,'amf_charlesfort',{note:'留守的人第二年自己造船逃，路上吃了同伴。'});
+    hp(d,'amf_caroline',{kind:'battle',note:'1565年9月20日陷落，留下约五十名妇孺。'});
+    hp(d,'amf_matanzas',{kind:'battle',left:1,note:'9月29日和10月12日两次杀俘。'});
+    hp(d,'sp1_havana',{left:1,note:'两支银船队在此会合后结伴回国。'});
+    hr(d,[[23.13,-82.38],[24.4,-80.2],[27.0,-79.7],[31.0,-79.2],[35.0,-74.0]],HC.spain);
+   },[['fill',HC.spain,'西属佛罗里达与加勒比（示意）'],['dline',HC.spain,'银船队北上水道（概略）'],['dot',HC.war,'卡罗琳堡与马坦萨斯'],['dot','#2a2018','查尔斯堡与哈瓦那']]),
+  hs('1598—1609年','海狸帽','新法兰西、阿卡迪亚，以及法国人的盟友休伦人和对手易洛魁五族所在的地方。',[[41.5,-83.0],[50.0,-60.0]],d=>{
+    ha(d,'amNewFrance1635',HC.france,{fillOpacity:.3});ha(d,'amAcadia',HC.france,{fillOpacity:.2});ha(d,'amHuronia',HC.america,{fillOpacity:.42});ha(d,'amIroquoia',HC.war,{fillOpacity:.32});
+    hp(d,'amf_tadoussac',{note:'法国人每年夏天在这里换皮。'});
+    hp(d,'amf_quebec',{left:1,note:'第一冬二十八人过冬，开春只活八人。'});
+    hp(d,'amf_stcroix',{left:1,note:'河面封冻，断了鲜肉，人死于坏血病。'});
+    hp(d,'amf_portroyal',{note:'1605年迁到这里，1607年专卖权被撤。'});
+    hp(d,'amf_ticonderoga',{kind:'battle',left:1,note:'1609年7月：尚普兰只带了两个法国人。'});
+   },[['fill',HC.france,'新法兰西与阿卡迪亚（示意）'],['fill',HC.america,'休伦人'],['fill',HC.war,'易洛魁五族'],['dot',HC.war,'提康德罗加之战'],['dot','#2a2018','塔杜萨克、魁北克、圣克鲁瓦岛与罗亚尔港']]),
+  hs('1627—1640年','最想去的人不准去','大西洋两岸：拉罗谢尔围城、迪耶普的柯克家、伦敦的谈判，和图左边的两块殖民地。',[[38.0,-80.0],[56.0,6.0]],d=>{
+    ha(d,'amNewFrance1635',HC.france,{fillOpacity:.32});ha(d,'fFrance1610',HC.france,{fillOpacity:.15});ha(d,'fAunis',HC.faith,{fillOpacity:.42});ha(d,'mEngland1066',HC.britain,{fillOpacity:.22});ha(d,'amNewEngland1640',HC.britain,{fillOpacity:.32});
+    hp(d,'sl9_rochelle',{kind:'battle',left:1,note:'围城十四个月，1628年10月开城。'});
+    hp(d,'fh4a_dieppe',{note:'柯克家的生意在这里，弗勒里也从这里出海。'});
+    hp(d,'k_london',{left:1,note:'王后亨丽埃塔·玛丽亚是路易十三的妹妹。'});
+    hp(d,'amf_gaspe',{kind:'battle',note:'1628年7月17—18日，船队在圣劳伦斯湾被截。'});
+    hp(d,'amf_quebec',{left:1,note:'1633年尚普兰回到这里，修了座小教堂。'});
+   },[['fill',HC.france,'法国与新法兰西'],['fill',HC.faith,'奥尼斯：拉罗谢尔所在'],['fill',HC.britain,'英格兰与新英格兰（示意）'],['dot',HC.war,'拉罗谢尔与圣劳伦斯湾'],['dot','#2a2018','迪耶普、伦敦与魁北克']])
+ ]},
+{id:'history-america-virginia',ch:14,title:'弗吉尼亚：英国人想学西班牙抢金子，靠烟草才活下来',short:'弗吉尼亚',en:'Virginia: The English Came for Gold and Survived on Tobacco',period:'1584—1624年',c:HC.america,
+ scenes:[
+  hs('1584—1586年','海盗基地','虚线是德雷克1585—1586年抢西印度再北上的路；罗阿诺克正对着银船队回国的水道。',[[6.0,-92.0],[56.0,4.0]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.28});ha(d,'aCaribbean',HC.spain,{fillOpacity:.16});
+    hp(d,'spa_plymouth',{left:1,note:'1585年4月9日，七条船从这里开往美洲。'});
+    hp(d,'amv_roanoke',{note:'全是男人，约一半是兵。'});
+    hp(d,'sp1_santo_domingo',{kind:'battle',note:'1586年1月1日被德雷克攻占，住了一个月。'});
+    hp(d,'sp1_cartagena',{kind:'battle',left:1,note:'1586年2月被德雷克攻下，也交了赎金。'});
+    hr(d,[[50.37,-4.14],[28.0,-16.0],[15.0,-45.0],[18.47,-69.9],[10.4,-75.5],[23.1,-82.4],[29.9,-81.3],[35.9,-75.7],[42.0,-45.0],[50.0,-6.0]],HC.britain);
+   },[['fill',HC.britain,'英格兰'],['fill',HC.spain,'西属加勒比（示意）'],['dline',HC.britain,'1585—1586年德雷克的航线（概略）'],['dot',HC.war,'德雷克洗劫的城市'],['dot','#2a2018','普利茅斯与罗阿诺克']]),
+  hs('1587—1590年','木桩上的字','大西洋两头：等补给的罗阿诺克，和1588年从里斯本北上的无敌舰队所经的海峡。',[[28.0,-84.0],[56.0,4.0]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.28});ha(d,'sIberia1580',HC.spain,{fillOpacity:.2});
+    hp(d,'amv_roanoke',{kind:'battle',note:'原定去北边的切萨皮克湾；1590年8月人去屋空。'});
+    hp(d,'spa_plymouth',{left:1,note:'1588年格伦维尔的船队被扣在这一带防海。'});
+    hp(d,'spa_lisbon',{left:1,note:'1588年5月底，无敌舰队从这里出海。'});
+    hr(d,[[50.37,-4.14],[28.5,-16.0],[18.0,-62.0],[30.0,-77.0],[35.5,-75.4]],HC.britain);
+   },[['fill',HC.britain,'英格兰'],['fill',HC.spain,'腓力二世的伊比利亚'],['dline',HC.britain,'1587年怀特的航线（概略）'],['dot',HC.war,'罗阿诺克'],['dot','#2a2018','普利茅斯与里斯本']]),
+  hs('1603—1607年','公司开张','虚线是1606年12月至次年5月纽波特的航路：走西印度，再北上切萨皮克湾。',[[12.0,-84.0],[56.0,4.0]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.28});ha(d,'amVirginia1624',HC.britain,{fillOpacity:.46});ha(d,'aCaribbean',HC.spain,{fillOpacity:.14});
+    hp(d,'k_london',{left:1,note:'公司总部；东印度公司的掌门史密斯也投了钱。'});
+    hp(d,'spa_plymouth',{left:1,note:'普利茅斯的商人另组一家，1607年去了缅因。'});
+    hp(d,'amv_jamestown',{note:'选在河湾处，地势好守，离海六十多公里。'});
+    hr(d,[[51.5,-0.13],[28.0,-16.0],[15.5,-61.0],[18.5,-66.0],[30.0,-75.5],[36.95,-76.0]],HC.britain);
+   },[['fill',HC.britain,'英格兰与詹姆斯河下游'],['fill',HC.spain,'西属加勒比（示意）'],['dline',HC.britain,'1606—1607年纽波特航路（概略）'],['dot','#2a2018','伦敦、普利茅斯与詹姆斯敦']]),
+  hs('1608—1610年','饿死的冬天','色块是波瓦坦治下的潮水地带；虚线是海难幸存者1610年从百慕大到詹姆斯敦的路。',[[30.0,-80.0],[40.0,-62.0]],d=>{
+    ha(d,'amTsenacommacah',HC.war,{fillOpacity:.34});ha(d,'amVirginia1624',HC.britain,{fillOpacity:.42});
+    hp(d,'amv_jamestown',{kind:'battle',left:1,note:'波瓦坦的人还杀光了岛上放养的猪。'});
+    hp(d,'amv_pointcomfort',{note:'河口的阿尔杰农堡三十人，一冬没死人。'});
+    hp(d,'amv_bermuda',{note:'船失事后，一百五十人在岛上住了九个多月。'});
+    hr(d,[[32.31,-64.75],[35.0,-71.0],[36.95,-76.0]],HC.route);
+   },[['fill',HC.war,'波瓦坦治下的潮水地带'],['fill',HC.britain,'詹姆斯河下游'],['dline',HC.route,'1610年5月从百慕大到詹姆斯敦'],['dot',HC.war,'詹姆斯敦'],['dot','#2a2018','康福特角与百慕大']]),
+  hs('1611—1618年','烟草和金子','两条线：烟种从特立尼达一带到詹姆斯敦，罗利1617—1618年去奥里诺科河又回到伦敦。',[[3.0,-86.0],[56.0,6.0]],d=>{
+    ha(d,'amVirginia1624',HC.america,{fillOpacity:.5});ha(d,'mEngland1066',HC.britain,{fillOpacity:.24});ha(d,'aCaribbean',HC.spain,{fillOpacity:.16});
+    hp(d,'amv_jamestown',{note:'1617年运回两万磅烟草，次年翻倍。'});
+    hp(d,'amv_trinidad',{note:'罗利发着烧留在这里，等上游的消息。'});
+    hp(d,'amv_santotome',{kind:'battle',left:1,note:'凯米斯带五条小船上溯，撞上西班牙据点。'});
+    hp(d,'k_london',{note:'1618年10月29日罗利在此被斩。'});
+    hp(d,'spa_plymouth',{left:1,note:'1618年6月罗利回到这里，没有带回金子。'});
+    hr(d,[[10.45,-61.25],[20.0,-65.0],[36.95,-76.0]],HC.america);
+    hr(d,[[50.37,-4.14],[28.0,-16.0],[10.6,-60.8],[20.0,-55.0],[42.0,-30.0],[50.3,-5.0]],HC.britain);
+   },[['fill',HC.america,'詹姆斯河下游'],['fill',HC.britain,'英格兰'],['fill',HC.spain,'西属加勒比（示意）'],['dline',HC.america,'烟种的来路（示意）'],['dline',HC.britain,'罗利最后一次远航（概略）'],['dot',HC.war,'圣托梅'],['dot','#2a2018','詹姆斯敦、特立尼达、伦敦与普利茅斯']]),
+  hs('1619—1624年','1619年','虚线是那批安哥拉人的路：从罗安达开往韦拉克鲁斯，在坎佩切湾被劫，再运到弗吉尼亚。',[[-14.0,-100.0],[46.0,20.0]],d=>{
+    ha(d,'amAngola1620',HC.war,{fillOpacity:.44});ha(d,'amVirginia1624',HC.britain,{fillOpacity:.5});ha(d,'aNewSpain1600',HC.spain,{fillOpacity:.18});
+    hp(d,'amv_luanda',{left:1,note:'船上原载约三百五十人，路上死了一百多。'});
+    hp(d,'amv_campeche',{kind:'battle',note:'两条私掠船抢走约六十人；此船本要去韦拉克鲁斯。'});
+    hp(d,'amv_pointcomfort',{note:'三四天后僚船宝藏号也到，又带来约三十人。'});
+    hr(d,[[-8.84,13.23],[-5.0,-15.0],[10.0,-58.0],[18.0,-80.0],[19.9,-91.6]],HC.war);
+    hr(d,[[19.9,-91.6],[23.5,-84.0],[28.0,-79.0],[36.95,-76.0]],HC.war);
+   },[['fill',HC.war,'葡属安哥拉'],['fill',HC.britain,'詹姆斯河下游'],['fill',HC.spain,'新西班牙'],['dline',HC.war,'1619年安哥拉人的路（概略）'],['dot',HC.war,'坎佩切湾'],['dot','#2a2018','罗安达与康福特角']])
+ ]},
+{id:'history-america-dutch',ch:14,title:'荷兰人的美洲：休战一满就开公司打仗',short:'荷兰人的美洲',en:'The Dutch in America: A Company for War',period:'1609—1654年',c:HC.america,
+ scenes:[
+  hs('1609—1614年','找到一条河','虚线是半月号1609年的航线：先向东北，被冰挡住后横跨大西洋，再回到英国。',[[34.0,-92.0],[74.0,34.0]],d=>{
+    ha(d,'sDutchRepublic1609',HC.lowlands,{fillOpacity:.4});ha(d,'amNewNetherland1630',HC.lowlands,{fillOpacity:.4});ha(d,'mEngland1066',HC.britain,{fillOpacity:.22});
+    hp(d,'sn2_amsterdam',{note:'合同写明只准往东北走。'});
+    hp(d,'amd_northcape',{left:1,note:'5月中旬，冰挡路，船员也闹事。'});
+    hp(d,'amd_manhattan',{left:1,note:'小艇上溯到今奥尔巴尼附近才折回。'});
+    hp(d,'amd_dartmouth',{left:1,note:'公司叫他回去，英国不放；半月号次年才回荷兰。'});
+    hp(d,'amd_jamesbay',{kind:'battle',left:1,note:'1611年6月23日，病号也被一起扔下。'});
+    hr(d,[[52.37,4.9],[60.0,3.0],[71.5,26.0],[65.0,-5.0],[50.0,-40.0],[44.0,-65.0],[41.5,-70.0],[37.0,-75.5],[40.6,-74.0],[46.0,-40.0],[50.3,-3.6]],HC.lowlands);
+   },[['fill',HC.lowlands,'荷兰共和国与后来的新尼德兰'],['fill',HC.britain,'英格兰'],['dline',HC.lowlands,'1609年半月号航线（概略）'],['dot',HC.war,'1611年哈德逊被放逐处'],['dot','#2a2018','阿姆斯特丹、北角、曼哈顿与达特茅斯']]),
+  hs('1609—1621年','休战一满','共和国和西属尼德兰之间的停战线；图钉是西印度公司的几个决定和出钱的地方。',[[49.8,1.0],[54.2,8.6]],d=>{
+    ha(d,'sDutchRepublic1609',HC.lowlands,{fillOpacity:.38});ha(d,'sSpanishNetherlands1609',HC.spain,{fillOpacity:.3});
+    hp(d,'sn2_hague',{kind:'battle',left:1,note:'在内庭行刑，老人说：别信我是叛徒。'});
+    hp(d,'sn2_amsterdam',{note:'五个分部里出钱最多的一家。'});
+    hp(d,'lf_middelburg',{left:1,note:'泽兰分部，和阿姆斯特丹同是大头。'});
+    hp(d,'lb_antwerp',{note:'乌瑟林克斯的老家，1609年休战在此签字。'});
+   },[['fill',HC.lowlands,'荷兰共和国（1609年）'],['fill',HC.spain,'西属尼德兰（1609年）'],['dot',HC.war,'海牙：1619年行刑'],['dot','#2a2018','阿姆斯特丹、米德尔堡与安特卫普']]),
+  hs('1624—1626年','60盾的曼哈顿','公司的几处皮货站：北河奥兰治堡、南河威廉堡、东边康涅狄格河，都以河口的曼哈顿为中转。',[[39.0,-76.8],[43.6,-71.2]],d=>{
+    ha(d,'amNewNetherland1630',HC.lowlands,{fillOpacity:.34});ha(d,'amIroquoia',HC.war,{fillOpacity:.2});
+    hp(d,'amd_manhattan',{left:1,note:'11000摩根，约合二万二千英亩。'});
+    hp(d,'amd_fortorange',{left:1,note:'1624年建，公司在北河上游的皮货站。'});
+    hp(d,'amd_wilhelmus',{left:1,note:'1624年建在南河中的小岛上。'});
+    hp(d,'amd_goodhope',{note:'公司在康涅狄格河的据点，1633年才筑堡。'});
+   },[['fill',HC.lowlands,'新尼德兰（示意）'],['fill',HC.war,'易洛魁五族'],['dot','#2a2018','曼哈顿、奥兰治堡、威廉堡与好望堡']]),
+  hs('1628—1664年','再抢巴西','公司在大西洋两岸的棋子：银船、糖、奴隶港，和最北边那块皮货站。',[[-18.0,-92.0],[45.0,20.0]],d=>{
+    ha(d,'amDutchBrazil1640',HC.lowlands,{fillOpacity:.42});ha(d,'amAngola1620',HC.lowlands,{fillOpacity:.42});ha(d,'amNewNetherland1630',HC.lowlands,{fillOpacity:.42});ha(d,'aCaribbean',HC.spain,{fillOpacity:.14});
+    hp(d,'sp3_matanzas',{kind:'battle',left:1,note:'1628年9月，约1150万盾的货。'});
+    hp(d,'amd_recife',{kind:'battle',note:'1637年起总督是沉默者威廉的侄孙约翰·毛里茨。'});
+    hp(d,'amd_elmina',{kind:'battle',note:'1637年8月24—29日，八百兵攻下。'});
+    hp(d,'amd_luanda',{kind:'battle',note:'1648年8月，从巴西来的葡军夺回。'});
+    hp(d,'amd_barbados',{note:'1630年代末从巴西引来蔗种。'});
+    hp(d,'amd_manhattan',{note:'1664年9月6日签了投降书。'});
+    hr(d,[[23.04,-81.58],[30.0,-60.0],[42.0,-30.0],[51.5,0.0]],HC.spain);
+   },[['fill',HC.lowlands,'西印度公司的地盘：巴西、安哥拉、新尼德兰'],['fill',HC.spain,'西属加勒比（示意）'],['dline',HC.spain,'银船队回欧洲的航路（示意）'],['dot',HC.war,'公司打下的地方和马坦萨斯'],['dot','#2a2018','巴巴多斯与曼哈顿']])
+ ]},
+{id:'history-america-mayflower',ch:14,title:'五月花号：从斯克鲁比到普利茅斯，分离派的一笔生意',short:'五月花号',en:'The Mayflower: Separatists, Investors and an Emptied Shore',period:'1534—1621年',c:HC.america,
+ scenes:[
+  hs('1534—1593年','老板换了，庙还在','色块是亨利八世的英格兰；日内瓦和法兰克福是玛丽一世时流亡者的两个落脚点。',[[45.3,-6.5],[55.6,11.0]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.28});
+    hp(d,'k_london',{left:1,note:'1534年议会在此立法；1593年巴罗在城西的泰伯恩被绞死。'});
+    hp(d,'amm_norwich',{note:'1581年布朗（Robert Browne）在此试办独立教会。'});
+    hp(d,'k_frankfurt',{note:'流亡者在此为祈祷书吵翻，布拉德福德认定分裂由此开始。'});
+    hp(d,'rf1_geneva',{note:'《日内瓦圣经》1560年在此印行，满页是旁注。'});
+    hr(d,[[51.51,-0.09],[50.11,8.68],[46.2,6.14]],HC.faith);
+   },[['fill',HC.britain,'英格兰'],['dline',HC.faith,'1553年后流亡者的去路（概略）'],['dot','#2a2018','伦敦、诺里奇、法兰克福与日内瓦']]),
+  hs('1604—1608年','不服就撵','虚线是1608年第一船男人的航程：荷兰船在北海遇上风暴，走了十四天。',[[50.7,-3.2],[55.7,6.4]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.22});ha(d,'sDutchRepublic1609',HC.lowlands,{fillOpacity:.3});
+    hp(d,'amm_hampton',{left:1,note:'1604年1月14—18日，会议开了三场。'});
+    hp(d,'amm_scrooby',{left:1,note:'聚会在约克大主教名下的庄园，布鲁斯特住在那里。'});
+    hp(d,'hy2_boston',{kind:'battle',note:'1607年：搜身到衬衣，关一个月，七人留押。'});
+    hp(d,'amm_humber',{kind:'battle',note:'1608年春：官兵带枪赶到，船主骂了一句就起锚。'});
+    hp(d,'sn2_amsterdam',{note:'先到这里，一年后为躲教派内斗迁去莱顿。'});
+    hr(d,[[53.64,-0.22],[55.3,2.5],[53.6,4.2],[52.37,4.9]],HC.route);
+   },[['fill',HC.britain,'英格兰'],['fill',HC.lowlands,'荷兰共和国'],['dline',HC.route,'1608年偷渡航程（概略）'],['dot',HC.war,'两次被截的地方'],['dot','#2a2018','汉普顿宫、斯克鲁比与阿姆斯特丹']]),
+  hs('1609—1620年','莱顿十二年','从莱顿看他们议论过的三个去处：圭亚那、弗吉尼亚和哈德逊河；佛罗里达是前车之鉴。',[[0.0,-82.0],[57.0,12.0]],d=>{
+    ha(d,'sDutchRepublic1609',HC.lowlands,{fillOpacity:.34});ha(d,'sSpanishNetherlands1609',HC.spain,{fillOpacity:.26});ha(d,'amVirginia1624',HC.britain,{fillOpacity:.5});ha(d,'amLaFlorida1565',HC.spain,{fillOpacity:.3});
+    hp(d,'sn2_leiden',{note:'1619年布鲁斯特印禁书遭英国大使追捕，躲了起来。'});
+    hp(d,'amm_guiana',{note:'有人说这里四季常青，不用多干活。'});
+    hp(d,'amm_hudson',{left:1,note:'新尼德兰公司的请愿说要派两条战舰来护航。'});
+   },[['fill',HC.lowlands,'荷兰共和国'],['fill',HC.spain,'西属尼德兰与西属佛罗里达'],['fill',HC.britain,'弗吉尼亚'],['dot','#2a2018','莱顿、圭亚那与哈德逊河口']]),
+  hs('1620年','谁出钱，谁上船','虚线是五月花号的航线；到科德角后折向南，不到半天又退回。',[[37.0,-77.0],[56.0,8.0]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.24});ha(d,'sDutchRepublic1609',HC.lowlands,{fillOpacity:.3});ha(d,'amNewEngland1640',HC.america,{fillOpacity:.3});
+    hp(d,'sn2_leiden',{note:'7月从外港代尔夫斯哈文上斯皮德韦尔号。'});
+    hp(d,'spa_plymouth',{left:1,note:'两次折返后约二十人放弃，其余挤上一条船。'});
+    hp(d,'amm_capecod',{note:'在海上六十四天，途中一人病死、一人出生。'});
+    hp(d,'amm_hudson',{note:'原定在这一带上岸，属弗吉尼亚公司的地界。'});
+    hr(d,[[50.37,-4.14],[49.0,-30.0],[44.5,-58.0],[42.05,-70.0]],HC.route);
+    hr(d,[[42.05,-70.0],[41.55,-69.95]],HC.war);
+   },[['fill',HC.britain,'英格兰'],['fill',HC.lowlands,'荷兰共和国'],['fill',HC.america,'新英格兰'],['dline',HC.route,'1620年9—11月航线（概略）'],['dline',HC.war,'南下被浅滩挡回'],['dot','#2a2018','莱顿、英格兰的普利茅斯、科德角与哈德逊河口']]),
+  hs('1620年11—12月','在科德角立约','科德角湾一带；探路的人花了五周才从科德角港找到普利茅斯。',[[41.45,-71.0],[42.4,-69.6]],d=>{
+    ha(d,'amPlymouth1621',HC.america,{fillOpacity:.26});
+    hp(d,'amm_capecod',{note:'下锚的头一件事就是签字，然后才放人上岸。'});
+    hp(d,'amm_encounter',{kind:'battle',note:'先前挖走印第安人存粮；12月8日清晨遭放箭。'});
+    hp(d,'amm_plymouth',{left:1,note:'12月16日船到，25日动工盖第一间公屋。'});
+    hr(d,[[42.05,-70.18],[41.83,-70.05],[41.96,-70.62]],HC.route);
+   },[['fill',HC.america,'后来的普利茅斯殖民地（约略）'],['dline',HC.route,'12月探路小船的航线（概略）'],['dot',HC.war,'第一次交锋处'],['dot','#2a2018','科德角港与普利茅斯']]),
+  hs('1616—1621年','空地和邻居','色块是万帕诺亚格人的地盘；图钉是1621年春天来往的几方。',[[41.0,-72.3],[44.1,-68.9]],d=>{
+    ha(d,'amWampanoag',HC.america,{fillOpacity:.3});
+    hp(d,'amm_plymouth',{left:1,note:'1621年3月22日在此立约，条款六条，管了五十多年。'});
+    hp(d,'amm_sowams',{left:1,note:'7月英国人走访此地，主人家连饭都供不起。'});
+    hp(d,'amm_narragansett',{left:1,note:'隔湾就是他们，强盛且未受瘟疫波及。'});
+    hp(d,'amm_monhegan',{left:1,note:'每年有英国船来捕鱼，岸上的人因此认得船长。'});
+   },[['fill',HC.america,'万帕诺亚格人（约略）'],['dot','#2a2018','普利茅斯、索瓦姆斯、纳拉甘西特人与蒙希根岛']])
+ ]},
+{id:'history-america-hill',ch:14,title:'山巅之城：清教徒把公司搬到新大陆',short:'山巅之城',en:'A City upon a Hill: The Puritans Move the Company to America',period:'1629—1648年',c:HC.america,
+ scenes:[
+  hs('1620—1629年','败局','色块是神圣罗马帝国、英格兰和清教徒的老家英格兰东部；图钉是败局所在和温思罗普的庄园。',[[44.6,-6.0],[55.4,18.0]],d=>{
+    ha(d,'mEmpire1050',HC.germany,{fillOpacity:.16});ha(d,'mEngland1066',HC.britain,{fillOpacity:.2});ha(d,'amEastAnglia',HC.faith,{fillOpacity:.42});
+    hp(d,'ty1_white_mountain',{kind:'battle',note:'1620年11月8日：波希米亚新教军两小时溃败。'});
+    hp(d,'sl9_rochelle',{kind:'battle',left:1,note:'1628年10月开城，两万多人只剩约五千。'});
+    hp(d,'k_london',{left:1,note:'3月议员按住议长通过决议，国王随即解散议会。'});
+    hp(d,'amh_groton',{note:'温思罗普的庄园，动身时产权官司未了，还没卖掉。'});
+   },[['fill',HC.germany,'神圣罗马帝国'],['fill',HC.britain,'英格兰'],['fill',HC.faith,'英格兰东部'],['dot',HC.war,'白山与拉罗谢尔'],['dot','#2a2018','伦敦与格罗顿']]),
+  hs('1629年','把章程带上船','公司的事都在英格兰东南这一小块地方议定；起航港在怀特岛。',[[50.3,-2.9],[53.4,2.4]],d=>{
+    ha(d,'amEastAnglia',HC.faith,{fillOpacity:.34});
+    hp(d,'k_london',{left:1,note:'8月底公司大会举手，定下搬迁。'});
+    hp(d,'amh_cambridge',{left:1,note:'签字的有萨尔通斯托尔、杜德利和温思罗普。'});
+    hp(d,'amh_groton',{note:'妻子玛格丽特留在这里，1631年才渡海。'});
+    hp(d,'amh_yarmouth',{left:1,note:'1630年3月底已上船，在这一带等了一周多的风。'});
+   },[['fill',HC.faith,'英格兰东部'],['dot','#2a2018','伦敦、剑桥、格罗顿与怀特岛']]),
+  hs('1630年夏','同一个夏天','两条虚线同一个夏天走完：一条横渡大西洋，一条南渡波罗的海。',[[38.0,-76.0],[61.0,22.0]],d=>{
+    ha(d,'amMassBay1640',HC.america,{fillOpacity:.5});ha(d,'mEngland1066',HC.britain,{fillOpacity:.22});ha(d,'mEmpire1050',HC.germany,{fillOpacity:.14});
+    hp(d,'amh_yarmouth',{left:1,note:'阿贝拉号等四条船先走，另外七条晚两三周。'});
+    hp(d,'amh_salem',{left:1,note:'当晚吃到鹿肉馅饼和啤酒，岸上却是缺粮的人。'});
+    hp(d,'ty2_usedom',{kind:'battle',left:1,note:'瑞军约一万三千人在此上岸。'});
+    hp(d,'nk_stockholm',{note:'瑞军从斯德哥尔摩外海起航。'});
+    hr(d,[[50.7,-1.5],[48.5,-25.0],[45.0,-55.0],[42.52,-70.9]],HC.route);
+    hr(d,[[59.33,18.07],[56.5,16.2],[54.14,13.77]],HC.war);
+   },[['fill',HC.america,'马萨诸塞湾（约略）'],['fill',HC.britain,'英格兰'],['fill',HC.germany,'神圣罗马帝国'],['dline',HC.route,'阿贝拉号航线（概略）'],['dline',HC.war,'瑞军渡海路线（概略）'],['dot',HC.war,'瑞军登陆地'],['dot','#2a2018','雅茅斯、塞勒姆与斯德哥尔摩']]),
+  hs('1630—1647年','大学和学校法','北边是清教徒的新英格兰，南边小块是弗吉尼亚：同一时期，两种人口。',[[36.3,-78.2],[43.6,-68.8]],d=>{
+    ha(d,'amNewEngland1640',HC.america,{fillOpacity:.2});ha(d,'amMassBay1640',HC.faith,{fillOpacity:.36});ha(d,'amVirginia1624',HC.britain,{fillOpacity:.46});
+    hp(d,'amh_newtown',{note:'学院和英属北美唯一的印刷机都在这里。'});
+    hp(d,'amh_hartford',{left:1,note:'1636年牧师胡克带会众赶着160头牛走到这里。'});
+   },[['fill',HC.america,'新英格兰'],['fill',HC.faith,'马萨诸塞湾（约略）'],['fill',HC.britain,'弗吉尼亚'],['dot','#2a2018','新镇与哈特福德']]),
+  hs('1635—1647年','撵人和放火','波士顿以南：被撵的人往南和西南走，佩科特人的地盘在康涅狄格东南。',[[40.55,-74.3],[42.75,-70.5]],d=>{
+    ha(d,'amMassBay1640',HC.america,{fillOpacity:.3});ha(d,'amRhodeIsland1640',HC.faith,{fillOpacity:.36});ha(d,'amPequot',HC.war,{fillOpacity:.4});ha(d,'amNewNetherland1630',HC.lowlands,{fillOpacity:.2});
+    hp(d,'amh_boston',{note:'1637年11月哈钦森在对岸的新镇受审，连审两天。'});
+    hp(d,'amh_providence',{left:1,note:'1637年8月的公约规定只管“世俗之事”。'});
+    hp(d,'amh_portsmouth',{note:'1638年3月23人立约迁来，首领称“士师”。'});
+    hp(d,'amh_mystic',{kind:'battle',left:1,note:'民兵不足百人，寨子半小时烧完。'});
+    hp(d,'amh_pelham',{kind:'battle',note:'荷兰总督基夫特挑起的战争，连带杀了英国移民。'});
+   },[['fill',HC.america,'马萨诸塞湾（约略）'],['fill',HC.faith,'罗德岛（约略）'],['fill',HC.war,'佩科特人（约略）'],['fill',HC.lowlands,'新尼德兰'],['dot',HC.war,'神秘河与裂岩'],['dot','#2a2018','波士顿、普罗维登斯与阿奎德内克岛']]),
+  hs('1640—1649年','打样给谁看','虚线是1640年后的回头路：波士顿到伦敦。明斯特是1648年的议和地之一。',[[38.0,-76.0],[57.0,12.0]],d=>{
+    ha(d,'amNewEngland1640',HC.america,{fillOpacity:.34});ha(d,'mEngland1066',HC.britain,{fillOpacity:.24});
+    hp(d,'amh_boston',{left:1,note:'1641年朋友劝他们找议会撑腰，他们婉拒，怕受议会的法管。'});
+    hp(d,'k_london',{left:1,note:'1660年10月彼得在查令十字被处死。'});
+    hp(d,'sn2_hague',{left:1,note:'唐宁任驻荷大使，1662年在代尔夫特抓了三名旧同僚。'});
+    hp(d,'ty3_munster',{note:'1648年10月24日和约在此和奥斯纳布吕克签成。'});
+    hr(d,[[42.36,-71.06],[46.0,-45.0],[49.5,-15.0],[51.5,-0.1]],HC.route);
+   },[['fill',HC.america,'新英格兰'],['fill',HC.britain,'英格兰'],['dline',HC.route,'1640年后的回流（概略）'],['dot','#2a2018','波士顿、伦敦、海牙与明斯特']])
  ]}
 ];
 HISTORY_ENTRIES.forEach(e=>{
@@ -12530,6 +12955,8 @@ const HISTORY_ERAS=[
  {id:'britain-hundred-years',name:'百年战争与红白玫瑰战争：从阿基坦称臣到都铎玫瑰',en:'The Hundred Years’ War and the Wars of the Roses: From Aquitaine to the Tudor Rose',date:'1200—1487年',c:HC.britain,items:[['history-britain-edward2'],['history-britain-hundred-years-1'],['history-britain-hundred-years-2'],['history-britain-hundred-years-3'],['history-britain-richard2'],['history-britain-hundred-years-4'],['history-britain-hundred-years-5'],['history-britain-jeanne'],['history-britain-roses-1'],['history-britain-roses-2'],['history-britain-roses-3'],['history-britain-roses-4']]},
  {id:'nordic-early',name:'北欧：从出海到三国',en:'Scandinavia: From the Longships to Three Kingdoms',date:'约前1700—1397年',c:HC.nordic,items:[['history-nordic-before'],['history-nordic-kingdoms']]},
  {id:'nordic-baltic',name:'北欧：卡尔马同盟与波罗的海之争',en:'Scandinavia: The Kalmar Union and the Baltic',date:'1397—1648年',c:HC.nordic,items:[['history-nordic-kalmar'],['history-nordic-baltic'],['history-nordic-peace']]},
+ {id:'america-early',name:'美洲：大航海之前与大交换',en:'The Americas: Before 1492 and the Great Exchange',date:'约前13000—约1650年',c:HC.america,items:[['history-america-before'],['history-america-exchange']]},
+ {id:'america-latecomers',name:'美洲：后来者与山巅之城',en:'The Americas: The Latecomers and the City upon a Hill',date:'1522—1654年',c:HC.america,items:[['history-america-france'],['history-america-virginia'],['history-america-dutch'],['history-america-mayflower'],['history-america-hill']]},
 ];
 /* History as a tree: each branch is a topic; distance from the root is time (years, negative = BCE).
    Reading order stays with HISTORY_ERAS; TREE_ROWS puts each era row on a branch at its start and end. */
@@ -12558,11 +12985,13 @@ const HISTORY_BRANCHES=[
  {id:'crusade',name:'十字军',en:'The Crusades',lane:1,parent:'faith',from:1070,to:1312,c:HC.crusade},
  // 北欧: no fork, it starts itself; after the look back it runs through the Viking stations it shares (老无 2026-11-05).
  {id:'nordic',name:'北欧',en:'Scandinavia',lane:10,from:745,to:1648,c:HC.nordic},
+ // 美洲: no fork either (老无 2026-11-06); it looks back, then shares 大航海 with 西班牙 and runs on to the Puritans.
+ {id:'america',name:'美洲',en:'The Americas',lane:11,from:1430,to:1648,c:HC.america},
  // Parallel timeline of China for cross-civilizational comparison.
  {id:'china',name:'中国',en:'China',lane:9,from:-7000,to:845,c:HC.china}
 ];
 // Trunk colour follows the chapter: 上古, 城邦, 马其顿与帝国, 希腊化世界, 罗马, 罗马帝国, 基督教, 中国对照, 埃及, 波斯.
-const TREE_CH_COLORS=['#7d6b50',HC.athens,HC.macedon,HC.thebes,HC.rome,HC.rome,HC.faith,HC.china,HC.mino,HC.parthia,HC.eeurope,HC.crusade,HC.britain,HC.nordic];
+const TREE_CH_COLORS=['#7d6b50',HC.athens,HC.macedon,HC.thebes,HC.rome,HC.rome,HC.faith,HC.china,HC.mino,HC.parthia,HC.eeurope,HC.crusade,HC.britain,HC.nordic,HC.america];
 const TREE_ROWS={
  'history-migration/0':['trunk',-68000,-38000],
  'history-farming/0':['trunk',-10000,-6000],
@@ -12789,7 +13218,7 @@ const TREE_ROWS={
  'history-spain-monarchs/0':['spain',1470,1480,'1454—1480年'],
  'history-spain-granada/0':['spain',1481,1492,'1478—1492年'],
  'history-spain-inquisition/0':['spain',1492.3,1502,'1478—1526年'],
- 'history-spain-1492/0':['spain',1492.6,1498,'1415—1572年'],
+ 'history-spain-1492/0':[['spain','america'],1492.6,1498,'1415—1572年'],
  'history-lowlands-flanders/0':['lowlands',1300,1384,'843—1384年'],
  'history-lowlands-burgundy/0':[['lowlands','germany'],1495,1500,'1363—1500年'],
  'history-faith-reformation-1/0':[['faith','germany'],1517,1536,'1450—1536年'],
@@ -12820,7 +13249,14 @@ const TREE_ROWS={
  'history-spain-philip2/0':['spain',1557,1581,'1555—1598年'],
  'history-spain-netherlands-1/0':[['spain','lowlands'],1566,1572,'1555—1572年'],
  'history-spain-netherlands-2/0':[['spain','lowlands'],1573,1585,'1572—1585年'],
- 'history-spain-armada/0':[['spain','lowlands'],1588,1598,'1554—1604年'],
+ 'history-spain-armada/0':[['spain','lowlands','america'],1588,1598,'1554—1604年'],
+ 'history-america-before/0':['america',1430,1491,'约前13000—1492年'],
+ 'history-america-exchange/0':['america',1545,1560,'1492—约1650年'],
+ 'history-america-france/0':[['america','france'],1565,1570,'1522—1635年'],
+ 'history-america-virginia/0':['america',1607,1608,'1584—1624年'],
+ 'history-america-dutch/0':[['america','lowlands'],1609,1619,'1609—1654年'],
+ 'history-america-mayflower/0':[['america','faith'],1620,1621,'1534—1621年'],
+ 'history-america-hill/0':[['america','faith'],1630,1630.5,'1629—1648年'],
  'history-spain-philips/0':['spain',1599,1634,'1598—1648年'],
  'history-germany-swiss/0':[['germany','lowlands'],1476,1477,'约1230—1477年'],
  'history-empire-macedonian/3':[['east','faith'],1054,1056],
@@ -12835,7 +13271,7 @@ const TREE_ROWS={
  'history-germany-swiss/3':[['germany','italy','faith'],1515,1516,'1477—1648年']
 };
 // Topics still to be written grow the tree as dashed shoots.
-const TREE_FUTURE=[['france',1648,'投石党与路易十四','1648年后待展开：1648—1653年投石党之乱 · 路易十四亲政、凡尔赛宫与欧洲霸权'],['germany',1648,'普鲁士崛起与七年战争','1648年后待展开：勃兰登堡—普鲁士崛起 · 腓特烈大帝与奥地利王位继承战'],['italy',1563,'哈布斯堡霸权与统一','1563年后待展开：西班牙哈布斯堡霸权下的意大利 · 巴洛克时代与近代统一'],['faith',1648,'政教分离与启蒙时代','1648年后待展开：欧洲大规模宗教战争落幕 · 理性主义、宽容法案与启蒙运动'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',1501,'奥斯曼全盛与波斯争霸','1501年后待展开：1517年奥斯曼灭马穆鲁克 · 苏莱曼一世全盛与奥斯曼—萨法维百年争霸'],['china',845,'晚唐五代与宋','845年起 · 待展开'],['spain',1648,'比利牛斯和约与王朝绝嗣','1648年后待展开：1659年比利牛斯和约 · 1668年承认葡萄牙独立 · 1700年哈布斯堡绝嗣与西班牙王位继承战争'],['eeurope',1505,'伊凡雷帝与沙皇俄国','1505年后待展开：1547年伊凡四世加冕沙皇 · 混乱时代与罗曼诺夫王朝'],['lowlands',1648,'黄金时代与英荷海战','1648年后待展开：17世纪阿姆斯特丹黄金时代 · 三次英荷海战与威廉三世入主英国'],['crusade',1312,'后来的十字军','1396年尼科波利斯 · 1444年瓦尔纳 · 1571年勒班陀 · 待展开'],['nordic',1648,'踏冰渡海与大北方战争','1648年后待展开：1658年卡尔十世踏冰渡海夺下斯科讷 · 1700—1721年大北方战争，瑞典失去波罗的海霸权'],['britain',1487,'都铎宗教改革与无敌舰队','1487年后待展开：亨利八世英国宗教改革 · 伊丽莎白一世击败西班牙无敌舰队']];
+const TREE_FUTURE=[['france',1648,'投石党与路易十四','1648年后待展开：1648—1653年投石党之乱 · 路易十四亲政、凡尔赛宫与欧洲霸权'],['germany',1648,'普鲁士崛起与七年战争','1648年后待展开：勃兰登堡—普鲁士崛起 · 腓特烈大帝与奥地利王位继承战'],['italy',1563,'哈布斯堡霸权与统一','1563年后待展开：西班牙哈布斯堡霸权下的意大利 · 巴洛克时代与近代统一'],['faith',1648,'政教分离与启蒙时代','1648年后待展开：欧洲大规模宗教战争落幕 · 理性主义、宽容法案与启蒙运动'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',1501,'奥斯曼全盛与波斯争霸','1501年后待展开：1517年奥斯曼灭马穆鲁克 · 苏莱曼一世全盛与奥斯曼—萨法维百年争霸'],['china',845,'晚唐五代与宋','845年起 · 待展开'],['spain',1648,'比利牛斯和约与王朝绝嗣','1648年后待展开：1659年比利牛斯和约 · 1668年承认葡萄牙独立 · 1700年哈布斯堡绝嗣与西班牙王位继承战争'],['eeurope',1505,'伊凡雷帝与沙皇俄国','1505年后待展开：1547年伊凡四世加冕沙皇 · 混乱时代与罗曼诺夫王朝'],['lowlands',1648,'黄金时代与英荷海战','1648年后待展开：17世纪阿姆斯特丹黄金时代 · 三次英荷海战与威廉三世入主英国'],['crusade',1312,'后来的十字军','1396年尼科波利斯 · 1444年瓦尔纳 · 1571年勒班陀 · 待展开'],['america',1648,'十三殖民地与美国独立','1648年后待展开：英荷争新阿姆斯特丹 · 七年战争把法国赶出北美 · 十三殖民地与美国独立'],['nordic',1648,'踏冰渡海与大北方战争','1648年后待展开：1658年卡尔十世踏冰渡海夺下斯科讷 · 1700—1721年大北方战争，瑞典失去波罗的海霸权'],['britain',1487,'都铎宗教改革与无敌舰队','1487年后待展开：亨利八世英国宗教改革 · 伊丽莎白一世击败西班牙无敌舰队']];
 // Where a line stops it says why: [line, year, the event that ends it, note, the line it carries on in].
 const TREE_ENDS=[['trunk',-30,'并入罗马','前146年科林斯被毁 · 前30年最后一个希腊化王国埃及并入罗马','rome'],['rome',476,'西罗马终结','476年西部末代皇帝被废 · 由中世纪西欧接续'],['west',843,'凡尔登三分','843年《凡尔登条约》三分帝国 · 分出法兰西、德意志、意大利'],['east',1453,'东罗马终结','1453年5月29日奥斯曼帝国攻破君士坦丁堡 · 千年东罗马帝国终结']];
 // Sections of one line that run side by side: [line, row keys, side of the passing loop].

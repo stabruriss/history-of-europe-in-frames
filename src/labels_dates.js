@@ -37,6 +37,8 @@ const META = {
 const ENGLISH_LABELS = {
   '近东':'Near East','中东':'Middle East','今日“中东”':'Middle East today','远东':'Far East','东南亚':'Southeast Asia','印度次大陆':'Indian Subcontinent','中亚':'Central Asia',
   '地中海':'Mediterranean Sea','黑海':'Black Sea','里海':'Caspian Sea','红海':'Red Sea','波斯湾':'Persian Gulf','阿拉伯海':'Arabian Sea','大西洋':'Atlantic Ocean','北海':'North Sea',
+  '加勒比海':'Caribbean Sea','墨西哥湾':'Gulf of Mexico','太平洋':'Pacific Ocean','哈德逊湾':'Hudson Bay','圣劳伦斯湾':'Gulf of St. Lawrence','切萨皮克湾':'Chesapeake Bay',
+  '安第斯山脉':'Andes','阿巴拉契亚山脉':'Appalachians','落基山脉':'Rocky Mountains','五大湖':'Great Lakes','亚马孙雨林':'Amazon Rainforest',
   '爱琴海':'Aegean Sea','亚得里亚海':'Adriatic Sea','伊奥尼亚海':'Ionian Sea','第勒尼安海':'Tyrrhenian Sea','马尔马拉海':'Sea of Marmara',
   '托罗斯山脉':'Taurus Mountains','本都山脉':'Pontic Mountains','扎格罗斯山脉':'Zagros Mountains','厄尔布尔士山脉':'Alborz Mountains','兴都库什山脉':'Hindu Kush','高加索山脉':'Caucasus Mountains',
   '阿尔卑斯山脉':'Alps','亚平宁山脉':'Apennines','品都斯山脉':'Pindus Mountains','巴尔干山脉':'Balkan Mountains','迪纳拉山脉':'Dinaric Alps','罗多彼山脉':'Rhodope Mountains',
