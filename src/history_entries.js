@@ -2192,6 +2192,158 @@ Object.assign(HS,{
   bgl_boyne:['博因河','River Boyne',53.722,-6.452,'爱尔兰东部德罗赫达近郊河谷；1690年7月1日威廉三世在此击败詹姆士二世。'],
   bgl_glencoe:['格伦科峡谷','Glen Coe',56.682,-5.102,'苏格兰西部高地峡谷；1692年2月13日政府军在此雪夜屠杀麦克唐纳氏族东道主。'],
   bgl_hanover:['汉诺威','Hanover',52.375,9.732,'德意志北部选帝侯国首府；1701年《王位继承法》指定汉诺威选帝侯夫人索菲亚接班。'],
+  frd_lens:['朗斯','Lens',50.432,2.833,'阿图瓦的小城；1648年8月20日孔代在城外打败利奥波德大公的西班牙军。'],
+  frd_lerida:['莱里达','Lleida (Lérida)',41.617,0.62,'加泰罗尼亚西部的要塞；1647年孔代围城不下，撤军而去。'],
+  frd_rueil:['吕埃尔','Rueil',48.877,2.183,'巴黎西郊的小城；1649年3月11日朝廷与高等法院在此讲和。'],
+  frd_lehavre:['勒阿弗尔','Le Havre',49.494,0.108,'塞纳河口的港口要塞；三位亲王最后关在这里，1651年2月马萨林亲自来放人。'],
+  frd_bruhl:['布吕尔','Brühl',50.829,6.905,'科隆选帝侯的行宫所在；1651年马萨林流亡时住在这里，靠书信遥控朝政。'],
+  frd_rethel:['勒泰勒','Rethel',49.509,4.367,'香槟的小城；1650年12月15日王军在城外打败蒂雷纳。'],
+  frd_bleneau:['布莱诺','Bléneau',47.7,2.95,'卢瓦尔河北面的村镇；1652年4月7日孔代偷袭王军，被蒂雷纳挡住。'],
+  frd_stfargeau:['圣法尔若','Saint-Fargeau',47.64,3.071,'大小姐的城堡；1652年10月她被逐出巴黎，在这里住到1657年，动笔写回忆录。'],
+  fpy_llivia:['利维亚','Llívia',42.465,1.981,'塞尔达尼亚的小城；1660年划界时留给西班牙，至今是法国境内的西班牙飞地。'],
+  fpy_thionville:['蒂永维尔','Thionville',49.358,6.168,'摩泽尔河上的要塞，原属卢森堡公国；比利牛斯和约划归法国。'],
+  fpy_brouage:['布鲁阿日','Brouage',45.861,-1.068,'大西洋边的盐港要塞，马萨林兼任这里的总督；1659年曼奇尼被送到这里。'],
+  fl14_vaux:['沃子爵城堡','Vaux-le-Vicomte',48.566,2.714,'默伦附近富凯的城堡；1657—1661年修成，1661年8月17日在此大宴国王。'],
+  fl14_belleile:['贝勒岛','Belle-Île',47.33,-3.18,'布列塔尼外海的岛；富凯买下后修了港口和要塞。'],
+  fl14_pignerol:['皮内罗洛','Pinerolo (Pignerol)',44.885,7.331,'阿尔卑斯山下的要塞，当时属法国；富凯关在这里，1680年死在这里。'],
+  fl14_sete:['塞特','Sète',43.4,3.7,'托湖边的海港，1666年开建；米迪运河东头经托湖接到这里。'],
+  fl14_naurouze:['诺鲁兹垭口','Seuil de Naurouze',43.352,1.817,'米迪运河的最高点，从黑山引来的水在这里分向东西两头。'],
+  fl14_rochefort:['罗什福尔','Rochefort',45.94,-0.96,'夏朗特河下游；1666年起柯尔贝尔在此新建海军军港和造船厂。'],
+  fdw_lille:['里尔','Lille',50.629,3.057,'佛兰德斯的纺织大城；1667年8月开城，沃邦随后修了五角形的新城堡。'],
+  fdw_charleroi:['沙勒罗瓦','Charleroi',50.411,4.444,'桑布尔河上的要塞；1667年6月蒂雷纳拿下，1678年又还给西班牙。'],
+  fdw_tolhuis:['托尔许斯（洛比特）','Tolhuis (Lobith)',51.862,6.118,'下莱茵河的渡口；1672年6月12日法国骑兵在此泅渡。'],
+  fdw_naarden:['纳尔登','Naarden',52.296,5.162,'阿姆斯特丹东南的要塞小城；1672年6月19日被法军占领，1673年9月威廉夺回。'],
+  fdw_saintleger:['圣莱热沃邦','Saint-Léger-Vauban',47.379,4.022,'勃艮第莫尔旺山区的村子，旧名圣莱热德富舍雷；1633年沃邦生在这里。'],
+  fdw_nijmegen:['奈梅亨','Nijmegen',51.842,5.853,'瓦尔河边的荷兰城市；1676—1679年各国在此议和。'],
+  fdw_sasbach:['萨斯巴赫','Sasbach',48.639,8.0,'莱茵河东岸巴登的村子；1675年7月27日蒂雷纳在此中炮身亡。'],
+  fdw_carhaix:['卡雷','Carhaix',48.276,-3.574,'布列塔尼中部的小城；1675年夏“红帽子”起事最凶的地方。'],
+  frv_gex:['日克斯','Gex',46.333,6.058,'日内瓦湖西北的小地方，1601年才归法国；1662年几天里拆了二十一座新教教堂。'],
+  frv_niort:['尼奥尔','Niort',46.323,-0.459,'普瓦图的城市；1635年曼特农夫人生在这里，父亲正关在城里的监狱。'],
+  frv_cape:['法兰斯胡克（好望角）','Franschhoek (Cape of Good Hope)',-33.91,19.12,'荷兰东印度公司在好望角的殖民地；1688年起胡格诺移民在这一带种葡萄。'],
+  frv_spitalfields:['斯皮塔菲尔兹（伦敦）','Spitalfields, London',51.52,-0.075,'伦敦城东的街区；胡格诺丝织工在这里开起作坊。'],
+  frv_loudun:['卢丹','Loudun',47.01,0.083,'普瓦图北部的小城；1659年法国新教徒在这里开了最后一次获准的全国宗教会议。'],
+  frv_marennes:['马雷讷','Marennes',45.823,-1.104,'圣通日海边的盐场小城；1685年底费奈隆带着传教团到这一带劝改宗。'],
+  f9y_philippsburg:['菲利普斯堡','Philippsburg',49.235,8.46,'莱茵河右岸的要塞，属施派尔主教；1688年10月30日被法军攻下。'],
+  f9y_mannheim:['曼海姆','Mannheim',49.487,8.466,'莱茵河与内卡河交汇处的新城；1689年3月被法军夷平。'],
+  f9y_trier:['特里尔','Trier',49.756,6.637,'摩泽尔河边的古城，特里尔大主教的首府；1689年卢福瓦想把它也烧掉。'],
+  f9y_fleurus:['弗勒吕斯','Fleurus',50.483,4.55,'桑布尔河北边的小镇；1690年7月1日卢森堡元帅在此大胜。'],
+  f9y_beachy:['比奇角','Beachy Head',50.735,0.245,'英格兰东南的白垩岬角；1690年7月10日（新历）法国舰队在外海获胜。'],
+  f9y_hougue:['拉胡格','La Hougue (Saint-Vaast)',49.588,-1.265,'科唐坦半岛东岸的海湾；1692年6月2—3日十二艘法国战舰在此被烧。'],
+  f9y_cherbourg:['瑟堡','Cherbourg',49.64,-1.62,'科唐坦半岛北端的港口；1692年6月1日三艘法舰在此搁浅焚毁。'],
+  f9y_aubergenville:['奥贝尔让维尔','Aubergenville',48.96,1.855,'巴黎西边塞纳河畔的村子；1694年的教区簿记下了饥荒。'],
+  f9y_ryswick:['吕斯维克','Ryswick (Rijswijk)',52.033,4.317,'海牙南郊的村子；1697年各国在村里的宫殿签了和约。'],
+  fss_blenheim:['布伦海姆','Blenheim (Blindheim)',48.645,10.6,'多瑙河边的村子，在多瑙沃特西南约十六公里；1704年8月13日的战场。'],
+  fss_ramillies:['拉米伊','Ramillies',50.64,4.905,'布拉班特的村子，在那慕尔以北；1706年5月23日马尔伯勒在此打败维勒鲁瓦。'],
+  fss_lille:['里尔','Lille',50.637,3.063,'法属佛兰德斯首府，沃邦修的城防；1708年8月起被围一百二十天。'],
+  fss_malplaquet:['马尔普拉凯','Malplaquet (Taisnières-sur-Hon)',50.336,3.876,'蒙斯西南的林间空地；1709年9月11日的战场。'],
+  fss_denain:['德南','Denain',50.329,3.395,'斯海尔德河边的小镇；1712年7月24日维拉尔在此打败阿尔伯马尔。'],
+  fss_rastatt:['拉施塔特','Rastatt',48.858,8.205,'巴登边疆伯爵的新宫城；1714年3月7日法国和皇帝在此签约。'],
+  fss_mahon:['马翁（梅诺卡）','Mahón (Minorca)',39.888,4.265,'梅诺卡岛的深水港；1708年英军占领，1713年割给英国。'],
+  fjl_marly:['马尔利','Marly-le-Roi',48.868,2.094,'凡尔赛北面的离宫；1712年2月18日勃艮第公爵死在这里。'],
+  fjl_vincennes:['万塞讷','Vincennes',48.843,2.435,'巴黎东郊的城堡；1715年9月幼王路易十五先被移到这里。'],
+  fjl_palaisjustice:['司法宫','Palais de Justice',48.8556,2.3453,'西岱岛上的旧王宫，巴黎高等法院在大厅里开庭。'],
+  fjl_palaisroyal:['王家宫','Palais-Royal',48.8638,2.3372,'黎塞留的旧宅，摄政时期奥尔良公爵住在这里理政。'],
+  fjl_quincampoix:['坎康普瓦街','Rue Quincampoix',48.8615,2.3505,'巴黎中区一条三百多米长的窄街；1719年股票露天交易的地方。'],
+  fjl_vivienne:['维维安街','Rue Vivienne',48.8668,2.3388,'王家银行在旧马萨林宫，从维维安街进花园排队兑钱。'],
+  fjl_neworleans:['新奥尔良','New Orleans',29.951,-90.071,'密西西比河下游的新城；1718年春开建，用摄政王的封号命名。'],
+  fjl_lorient:['洛里昂','Lorient',47.748,-3.37,'布列塔尼南岸的港口；1719年起归印度公司，有自己的船坞和库房。'],
+  fl15_luneville:['吕内维尔','Lunéville',48.591,6.496,'洛林的宫城；斯坦尼斯瓦夫在这里住到1766年。'],
+  fl15_fontenoy:['丰特努瓦（1745年）','Fontenoy (Hainaut)',50.566,3.48,'图尔奈东南约七公里的村子，今属比利时；1745年5月11日的战场。'],
+  fl15_sevres:['塞夫尔','Sèvres',48.824,2.211,'巴黎西南的塞纳河边；王家瓷厂从万塞讷迁到这里。'],
+  fl15_ecolemilitaire:['军校','École militaire',48.851,2.305,'巴黎左岸练兵场边上的军校，蓬帕杜尔夫人和帕里斯-迪韦尔奈出钱筹办。'],
+  fen_labrede:['拉布雷德','La Brède',44.683,-0.528,'波尔多以南的小镇，孟德斯鸠的城堡所在；他生在这里，《论法的精神》大半在这里写成。'],
+  fen_cirey:['西雷','Cirey-sur-Blaise',48.33,4.938,'香槟南部的小村；1734年起伏尔泰躲在夏特莱侯爵夫人的城堡里，前后十年。'],
+  fen_ferney:['费尔内','Ferney',46.256,6.108,'日内瓦边上的法国小镇；伏尔泰1758年底买下庄园，住了近二十年。'],
+  fen_montmorency:['蒙莫朗西','Montmorency',48.989,2.322,'巴黎北面的小城；卢梭1756—1762年住在城边，1762年6月从这里出逃。'],
+  fen_motiers:['莫蒂埃','Môtiers',46.912,6.611,'纳沙泰尔公国的山村，属普鲁士国王；卢梭1762—1765年避居在此。'],
+  fsy_necessity:['必要堡','Fort Necessity',39.814,-79.587,'华盛顿在大草地上仓促筑的木堡；1754年7月3日被法军和印第安人围攻后投降。'],
+  fsy_duquesne:['迪凯纳堡（今匹兹堡）','Fort Duquesne (Pittsburgh)',40.441,-80.009,'俄亥俄河的源头；法国1754年在此筑堡，1758年11月撤走前炸毁，英军改建为皮特堡。'],
+  fsy_hastenbeck:['哈斯滕贝克','Hastenbeck',52.087,9.399,'汉诺威西南的村子；1757年7月26日法军在此打败坎伯兰公爵。'],
+  fsy_rossbach:['罗斯巴赫','Rossbach',51.27,11.89,'萨克森的村子，在莱比锡西南；1757年11月5日腓特烈二世在此大胜。'],
+  fsy_leuthen:['洛伊滕','Leuthen (Lutynia)',51.13,16.79,'西里西亚首府布雷斯劳以西的村子；1757年12月5日腓特烈在此打败奥军。'],
+  fsy_dresden:['德累斯顿','Dresden',51.05,13.74,'萨克森的首府；1756年秋被普军占领。'],
+  fsy_minden:['明登','Minden',52.29,8.92,'威悉河边的城市；1759年8月1日英王出钱养的联军在此打败法军。'],
+  fsy_berlin:['柏林','Berlin',52.52,13.4,'普鲁士王国的都城，七年战争中两次遭奥军、俄军突袭。'],
+  fsy_louisbourg:['路易斯堡','Louisbourg',45.92,-59.97,'布雷顿角岛上的法国要塞，守着圣劳伦斯湾口；1758年7月26日被英军攻下。'],
+  fsy_montreal:['蒙特利尔','Montreal',45.508,-73.554,'圣劳伦斯河上游的法国城镇；1760年9月8日总督沃德勒伊在此投降。'],
+  fsy_quiberon:['基伯龙湾','Quiberon Bay',47.5,-3.0,'布列塔尼南岸的海湾；1759年11月20日霍克的舰队冒着风浪追进湾内。'],
+  fsy_pondicherry:['本地治里','Pondicherry',11.934,79.83,'科罗曼德尔海岸的法国大本营；1761年1月向英军投降，城墙被拆平。'],
+  fsy_madras:['马德拉斯','Madras',13.08,80.29,'英国东印度公司的圣乔治堡；1746年被法军攻下，1749年还给英国。'],
+  fsy_arcot:['阿尔果德','Arcot',12.905,79.32,'卡纳蒂克纳瓦布的都城；1751年秋克莱武在此守城五十多天。'],
+  fsy_plassey:['普拉西','Plassey (Palashi)',23.8,88.25,'胡格利河边的芒果林；1757年6月23日克莱武在此打败孟加拉纳瓦布。'],
+  fsy_calcutta:['加尔各答','Calcutta',22.57,88.36,'英国东印度公司的威廉堡；1756年6月被纳瓦布攻下，次年1月夺回。'],
+  fsy_stpierre:['圣皮埃尔和密克隆','Saint-Pierre and Miquelon',46.78,-56.18,'纽芬兰南面的两个小岛；1763年留给法国渔民上岸晒鱼。'],
+  fsy_guadeloupe:['瓜德罗普','Guadeloupe',16.25,-61.58,'小安的列斯的产糖岛；1759年被英军攻下，1763年归还法国。'],
+  fsy_neworleans:['新奥尔良','New Orleans',29.95,-90.07,'路易斯安那的首府；1762年随密西西比河以西一起秘密让给西班牙。'],
+  fsy_hubertusburg:['胡贝图斯堡','Hubertusburg',51.25,12.97,'萨克森的狩猎行宫；1763年2月15日普鲁士、奥地利和萨克森在此讲和。'],
+  fpa_stpierre_mq:['圣皮埃尔（马提尼克）','Saint-Pierre, Martinique',14.744,-61.176,'马提尼克的主要商港；耶稣会在岛上有大片甘蔗园。'],
+  fpa_luneville:['吕内维尔','Lunéville',48.59,6.5,'洛林公爵的行宫；1766年2月23日斯坦尼斯瓦夫在此去世。'],
+  fpa_pontenovu:['蓬特诺沃','Ponte Novu',42.47,9.26,'科西嘉北部戈洛河上的石桥；1769年5月8—9日保利的部队在此败给法军。'],
+  fpa_ajaccio:['阿雅克肖','Ajaccio',41.919,8.738,'科西嘉西岸的港城；1769年8月15日拿破仑生在城里的波拿巴家。'],
+  fpa_chalons:['沙隆','Châlons-sur-Marne',48.957,4.365,'香槟的城市；1771年在此设六个高级法院之一。'],
+  fam_auray:['欧赖','Auray',47.668,-2.981,'布列塔尼南岸的小港；1776年12月4日富兰克林在此上岸，再经南特去巴黎。'],
+  fam_philadelphia:['费城','Philadelphia',39.952,-75.165,'大陆会议所在地；1776年10月富兰克林受命从这里出使法国。'],
+  fam_saratoga:['萨拉托加','Saratoga',43.012,-73.649,'哈德孙河上游；1777年10月17日伯戈因的英军在此投降。'],
+  fam_pasajes:['帕萨赫斯','Pasajes (Pasaia)',43.325,-1.92,'西班牙巴斯克海岸的港口；1777年4月拉法耶特在此登上“胜利号”。'],
+  fam_georgetown:['乔治敦','Georgetown, South Carolina',33.369,-79.284,'南卡罗来纳海岸；1777年6月13日拉法耶特在附近上岸。'],
+  fam_capfrancais:['法兰西角','Cap-Français (Cap-Haïtien)',19.76,-72.2,'圣多明各北岸的港口，今海地角；1781年8月德格拉斯在此接兵北上。'],
+  fam_yorktown:['约克敦','Yorktown',37.239,-76.509,'弗吉尼亚约克河口的小镇；1781年10月19日康沃利斯在此投降。'],
+  fam_newport:['纽波特','Newport, Rhode Island',41.49,-71.313,'罗得岛的港口；1780年7月罗尚博的法军在此上岸。'],
+  fam_tobago:['多巴哥','Tobago',11.25,-60.68,'加勒比海南端的岛；1781年法军攻占，1783年和约划归法国。'],
+  fam_cherbourg:['瑟堡','Cherbourg',49.64,-1.62,'诺曼底半岛北端；卡洛纳任内在此新修军港。'],
+  fbk_vizille:['维齐耶','Vizille',45.078,5.771,'格勒诺布尔以南的城堡；1788年7月21日多菲内三个等级在城堡的网球馆开会。'],
+  fbk_lateste:['拉泰斯特','La Teste-de-Buch',44.63,-1.145,'波尔多西南的海边小城；1788年7月13日的冰雹风暴据说从这里生成。'],
+  fbk_rambouillet:['朗布依埃','Rambouillet',48.644,1.83,'巴黎西南的王家猎苑；1788年7月13日的风暴吹倒了园中上千棵树。'],
+  fbk_frejus:['弗雷瑞斯','Fréjus',43.433,6.737,'普罗旺斯海边的主教城；1748年西耶斯生在这里。'],
+  fba_invalides:['荣军院','Les Invalides',48.8566,2.3126,'路易十四为伤残老兵建的院子；1789年7月14日上午巴黎人从这里拿走三万来支枪。'],
+  fba_palaisroyal:['王宫花园','Palais-Royal',48.8638,2.3372,'奥尔良公爵的府邸和带拱廊的花园；1789年7月12日德穆兰在这里号召拿起武器。'],
+  fba_marly:['马尔利','Marly-le-Roi',48.8697,2.0937,'凡尔赛北边的王家行宫；1789年6月王太子死后路易十六在此住了一阵。'],
+  fba_villette:['维莱特税卡','Barrière de la Villette',48.8833,2.3697,'包税人城墙北段的税卡之一，至今还在；1789年7月城墙上的税卡被烧了四十来处。'],
+  f89_quincey:['坎西','Quincey',47.611,6.186,'维苏勒东南的村子；1789年7月19日夜领主家的火药库爆炸，炸死四个村民。'],
+  f89_lugny:['卢尼','Lugny',46.474,4.811,'马孔内的葡萄酒村；1789年7月领主城堡被抢后烧毁，全区十六个村子卷入。'],
+  f89_philadelphia:['费城','Philadelphia',39.949,-75.15,'北美十三州的大城；1776年7月4日大陆会议在此通过《独立宣言》。'],
+  f89_dourdan:['多尔当','Dourdan',48.529,2.011,'巴黎西南的小城；1789年这里的贵族选出戈维尔男爵进三级会议。'],
+  f89_sevres:['塞夫勒','Sèvres',48.824,2.211,'巴黎去凡尔赛半路的瓷器镇；1789年10月5日居民关门，进军的妇女得讨价还价才有吃喝。'],
+  f89_autun:['欧坦','Autun',46.945,4.299,'勃艮第的古城；塔列朗1788年起任欧坦主教，在此当选教士代表。'],
+  fva_varennes:['瓦伦','Varennes-en-Argonne',49.225,5.032,'阿尔贡森林边的小镇，跨艾尔河两岸；1791年6月21日夜王室在此被扣。'],
+  fva_montmedy:['蒙梅迪','Montmédy',49.52,5.367,'靠近奥属卢森堡边境的要塞；1791年6月布耶在附近等候接驾。'],
+  fva_champdemars:['战神广场','Champ de Mars, Paris',48.8556,2.2986,'军校前的大操场；1790年联盟节在此举行，1791年7月17日自卫军在此开枪。'],
+  fva_pillnitz:['皮尔尼茨','Pillnitz',51.008,13.87,'德累斯顿东南易北河边的萨克森选侯夏宫；1791年8月27日奥普两国君主在此发表声明。'],
+  fre_lille:['里尔','Lille',50.629,3.057,'法属佛兰德斯的要塞大城；1792年4月29日狄龙将军在此被自己的兵杀死。'],
+  fre_brest:['布雷斯特','Brest',48.39,-4.486,'布列塔尼西端的军港；1792年夏这里的联盟军开到巴黎，参加了攻打王宫。'],
+  fre_longwy:['隆维','Longwy',49.52,5.761,'洛林北边靠卢森堡的要塞；1792年8月23日向普军投降。'],
+  fre_valmy:['瓦尔密','Valmy',49.082,4.766,'圣梅内乌尔德西边的村子和风车高地；1792年9月20日法普两军在此炮战。'],
+  fre_jemappes:['热马普','Jemappes',50.453,3.889,'蒙斯西边的村子；1792年11月6日迪穆里埃在此打败奥军。'],
+  fre_temple:['圣殿塔','Temple Tower, Paris',48.8655,2.3605,'巴黎北城圣殿骑士团旧址的塔楼；1792年8月13日起关押王室。'],
+  fter_neerwinden:['内尔温登','Neerwinden',50.766,5.04,'布拉班特东部的村子；1793年3月18日迪穆里埃在此败给科堡亲王的奥军。'],
+  fter_cholet:['绍莱','Cholet',47.06,-0.879,'昂热南面的织布城；1793年3月14日约一万五千名起事农民攻下此城。'],
+  fter_saintamand:['圣阿芒','Saint-Amand-les-Eaux',50.448,3.428,'北部边境小城；1793年4月1日迪穆里埃在此扣下陆军部长和四名特派员。'],
+  fter_ajaccio:['阿雅克肖','Ajaccio',41.919,8.738,'科西嘉西岸港口；1769年8月15日波拿巴生在这里，1793年6月全家被逐出岛。'],
+  fter_mulgrave:['小直布罗陀','Fort Mulgrave (Little Gibraltar)',43.087,5.893,'土伦港西岸高地上的英军堡垒，今拿破仑堡所在；1793年12月17日凌晨被法军攻下。'],
+  fter_savenay:['萨沃奈','Savenay',47.36,-1.94,'卢瓦尔河口北岸的小镇；1793年12月23日旺代军在此最后溃散。'],
+  fter_revolution:['革命广场','Place de la Révolution (Concorde)',48.8656,2.3212,'今协和广场；王后、丹东和罗伯斯庇尔都在这里上了断头台。'],
+  fter_trone:['倒王座广场','Place du Trône-Renversé (Nation)',48.8483,2.3959,'今民族广场；1794年6月14日到7月27日断头台设在城门外这里。'],
+  fter_champdemars:['战神广场','Champ-de-Mars',48.8556,2.2986,'军校前的阅兵场；1794年6月8日最高主宰节的队伍从杜伊勒里宫走到这里。'],
+  fter_fleurus:['弗勒吕斯','Fleurus',50.483,4.55,'沙勒罗瓦东北的小镇；1794年6月26日儒尔当在此击败科堡亲王。'],
+  fdi_palaisroyal:['王宫','Palais-Royal',48.8637,2.3371,'奥尔良家的宫苑，当时叫平等宫；热月后“金色青年”常在这里聚集。'],
+  fdi_santoine:['圣安托万区','Faubourg Saint-Antoine',48.8512,2.3765,'巴士底东面的手工业区；1795年5月20日这里的人冲进了国民公会。'],
+  fdi_saintroch:['圣罗克教堂','Saint-Roch, rue Saint-Honoré',48.8653,2.3325,'圣奥诺雷街上的教堂；1795年10月5日保王派在教堂台阶前被霰弹打散。'],
+  fdi_sablons:['萨布隆营地','Camp des Sablons',48.881,2.27,'巴黎西门外讷伊一带的营地；1795年10月5日凌晨缪拉从这里拖走四十门炮。'],
+  fdi_luxembourg:['卢森堡宫','Luxembourg Palace',48.8482,2.3372,'左岸的宫殿；1795年11月起是督政府的官邸。'],
+  fdi_stquentin:['圣康坦','Saint-Quentin',49.8486,3.2876,'皮卡第的城；1760年巴贝夫生在这里。'],
+  fdi_arcole:['阿尔科莱','Arcole',45.357,11.272,'维罗纳东南沼泽里的村子；1796年11月15—17日法军在此打败奥军。'],
+  fdi_passariano:['帕萨里亚诺','Villa Manin, Passariano',45.954,13.003,'弗留利的乡间别墅，主人是末代威尼斯总督马宁；1797年10月和约在此谈定。'],
+  fdi_temple:['圣殿塔','Tour du Temple',48.8652,2.3617,'巴黎城北的旧塔楼，路易十六一家关押过的地方；1797年9月被捕的议员关在这里。'],
+  fdi_aboukir:['阿布基尔湾','Aboukir Bay',31.32,30.07,'亚历山大东面的海湾；1798年8月1日夜纳尔逊在此击毁法国舰队。'],
+  fdi_embabeh:['因巴巴','Embabeh (Battle of the Pyramids)',30.076,31.205,'开罗对岸的村子，金字塔之战的战场；1798年7月21日法军在此击败马穆鲁克。'],
+  fbr_novi:['诺维','Novi Ligure',44.761,8.787,'热那亚北面的小城；1799年8月15日茹贝尔在此败给苏沃洛夫并阵亡。'],
+  fbr_zurich:['苏黎世','Zurich',47.376,8.541,'瑞士的城；1799年9月25—26日马塞纳在此击败俄军。'],
+  fbr_bergen:['贝亨','Bergen (North Holland)',52.669,4.703,'北荷兰的村子；1799年9月19日布吕纳在此打退登陆的英俄联军。'],
+  fbr_frejus:['弗雷瑞斯','Fréjus',43.433,6.737,'普罗旺斯海边的古城，西耶斯的家乡；1799年10月9日波拿巴从埃及回来在这里上岸。'],
+  fbr_chantereine:['尚特雷讷街','Rue Chantereine (rue de la Victoire)',48.8755,2.3355,'巴黎城北的小街，约瑟芬买下的宅子在这里；后来改名胜利街。'],
+  fbr_bourbon:['波旁宫','Palais Bourbon',48.8619,2.3185,'塞纳河左岸的宫殿；1798年起五百人院在此开会，1800年起是立法院。'],
+  fbr_luxembourg:['卢森堡宫','Luxembourg Palace',48.8482,2.3372,'左岸的宫殿；督政府的官邸，1800年起是护法元老院的会址。'],
+  fbr_palaisroyal:['王宫','Palais-Royal',48.8637,2.3371,'卢浮宫北面的宫苑，当时叫平等宫；1800年起保民院在此开会。'],
 });
 function hp(d,key,opt={}){
   const [n,en,la,lo,note]=HS[key];
@@ -6038,6 +6190,933 @@ const HISTORY_ENTRIES=[
     hp(d,'fr_rouen',{note:'1640年大法官塞吉埃坐镇，换掉市政府，让兵住进民宅。'});
     hp(d,'w_paris',{note:'军队从1621年一万二千人涨到1638年十五万。'});
    },[['fill',HC.france,'法兰西王国（示意）'],['fill',HC.war,'诺曼底：赤脚汉起事区'],['dot',HC.war,'1637年拉索韦塔、1639年阿夫朗什'],['dot','#2a2018','鲁昂与巴黎']])
+ ]},
+{id:'history-france-fronde',ch:5,title:'投石党：法官、亲王和十岁的国王',short:'投石党',en:'The Fronde: Judges, Princes and a Ten-Year-Old King',period:'1643—1653年',c:HC.france,
+ scenes:[
+  hs('1643年5月','先王遗嘱作废','圣日耳曼昂莱、巴黎，以及东北边境上的罗克鲁瓦。',[[47.9,0.6],[50.6,5.6]],d=>{
+    ha(d,'fFrance1610',HC.france,{fillOpacity:.14});ha(d,'sSpanishNetherlands1609',HC.spain,{fillOpacity:.24});
+    hp(d,'fsb_stgermainlaye',{left:1,note:'5月14日路易十三死在这里的新城堡。'});
+    hp(d,'w_paris',{note:'御临法院开在西岱岛上的司法宫。'});
+    hp(d,'ty3_rocroi',{kind:'battle',note:'西班牙统帅是尼德兰总督梅洛。'});
+   },[['fill',HC.france,'法兰西王国（示意）'],['fill',HC.spain,'西属尼德兰'],['dot',HC.war,'1643年罗克鲁瓦之战'],['dot','#2a2018','圣日耳曼昂莱与巴黎']]),
+  hs('1644—1648年','账单与圣路易厅','巴黎，以及这几年法军花钱最多的几条战线。',[[40.8,-2.6],[52.3,12.0]],d=>{
+    ha(d,'fFrance1648',HC.france,{fillOpacity:.16});ha(d,'sSpanishNetherlands1609',HC.spain,{fillOpacity:.22});
+    hp(d,'w_paris',{left:1,note:'高等法院、审计院和间接税法院都在西岱岛的司法宫。'});
+    hp(d,'sp2_dunkirk',{kind:'battle',note:'1646年昂吉安公爵替法国攻下此港。'});
+    hp(d,'sp3_nordlingen',{kind:'battle',note:'1645年8月附近一战，法军赢了，伤亡很重。'});
+    hp(d,'frd_lerida',{kind:'battle',left:1,note:'1647年孔代围城不下，撤围而去。'});
+   },[['fill',HC.france,'法国（1648年实控，示意）'],['fill',HC.spain,'西属尼德兰'],['dot',HC.war,'1645—1647年的几场仗'],['dot','#2a2018','巴黎']]),
+  hs('1648—1649年','街垒、出城与围城','巴黎、朝廷出逃落脚的圣日耳曼昂莱与吕埃尔，以及北边的朗斯战场。',[[48.4,1.3],[50.8,3.6]],d=>{
+    ha(d,'fFrance1648',HC.france,{fillOpacity:.14});ha(d,'sSpanishNetherlands1609',HC.spain,{fillOpacity:.22});
+    hp(d,'frd_lens',{kind:'battle',note:'对面的统帅是尼德兰总督利奥波德大公。'});
+    hp(d,'w_paris',{note:'2月8日王军攻下东南的沙朗通，断了布里来的粮。'});
+    hp(d,'fsb_stgermainlaye',{left:1,note:'太后带国王避居于此，3月在附近的吕埃尔讲和。'});
+   },[['fill',HC.france,'法国（示意）'],['fill',HC.spain,'西属尼德兰'],['dot',HC.war,'1648年朗斯之战'],['dot','#2a2018','巴黎、圣日耳曼昂莱与吕埃尔']]),
+  hs('1650—1651年','亲王入狱，枢机出走','巴黎、勒阿弗尔、勒泰勒战场和布吕尔；虚线是马萨林1651年出走的路线。',[[47.9,-0.8],[51.6,7.8]],d=>{
+    ha(d,'fFrance1648',HC.france,{fillOpacity:.14});ha(d,'sSpanishNetherlands1609',HC.spain,{fillOpacity:.22});
+    hp(d,'w_paris',{left:1,note:'亲王们先关在东郊的万森讷城堡。'});
+    hp(d,'frd_lehavre',{left:1,note:'1650年11月亲王们被转押到这里。'});
+    hp(d,'frd_rethel',{kind:'battle',note:'王军统帅普莱西-普拉兰元帅。'});
+    hp(d,'frd_bruhl',{note:'马萨林在此住到1651年底。'});
+    hr(d,[[48.86,2.35],[48.9,2.09],[49.44,1.1],[49.49,0.11],[49.9,1.9],[50.4,4.0],[50.6,5.6],[50.83,6.9]],HC.route);
+   },[['fill',HC.france,'法国（示意）'],['fill',HC.spain,'西属尼德兰'],['dline',HC.route,'马萨林出走（概略）'],['dot',HC.war,'1650年勒泰勒之战'],['dot','#2a2018','巴黎、勒阿弗尔与布吕尔']]),
+  hs('1651—1652年','孔代与蒂雷纳对阵','孔代起兵的波尔多，1652年的几处战场，以及巴黎东门的巴士底。',[[44.2,-2.0],[49.6,4.6]],d=>{
+    ha(d,'fFrance1648',HC.france,{fillOpacity:.14});
+    hp(d,'w_bordeaux',{left:1,note:'吉耶讷首府，孔代的大本营。'});
+    hp(d,'frd_bleneau',{kind:'battle',note:'孔代从卢瓦尔河南岸一路赶来。'});
+    hp(d,'fh4b_bastille',{kind:'battle',note:'国王在东边沙罗讷的高地上观战。'});
+    hp(d,'hy1_pontoise',{left:1,note:'8月起国王把高等法院召到这里开会。'});
+    hr(d,[[44.84,-0.58],[45.9,0.3],[47.0,1.4],[47.7,2.95]],HC.war);
+   },[['fill',HC.france,'法国（示意）'],['dline',HC.war,'1652年春孔代北上（概略）'],['dot',HC.war,'布莱诺与圣安托万城郊'],['dot','#2a2018','波尔多与蓬图瓦兹']]),
+  hs('1652—1653年','国王回城','国王住进的卢浮宫，失势者的去处，以及最后投降的波尔多。',[[43.6,-2.6],[51.6,6.0]],d=>{
+    ha(d,'fFrance1648',HC.france,{fillOpacity:.14});ha(d,'sSpanishNetherlands1609',HC.spain,{fillOpacity:.22});
+    hp(d,'fsb_louvre',{left:1,note:'1652年10月起国王改住这里，不回王宫。'});
+    hp(d,'pl_blois',{left:1,note:'加斯东被打发回布卢瓦，在此终老。'});
+    hp(d,'frd_stfargeau',{note:'大小姐被逐出巴黎后住在这里。'});
+    hp(d,'w_bordeaux',{left:1,note:'榆树党得名于城墙边种着榆树的高台。'});
+    hp(d,'lb_brussels',{note:'孔代此后替西班牙在尼德兰带兵。'});
+   },[['fill',HC.france,'法国（示意）'],['fill',HC.spain,'西属尼德兰'],['dot','#2a2018','卢浮宫、布卢瓦、圣法尔若、波尔多与布鲁塞尔']])
+ ]},
+{id:'history-france-pyrenees',ch:5,title:'比利牛斯和约：一座小岛和一笔付不出的嫁妆',short:'比利牛斯和约',en:'The Peace of the Pyrenees: An Island and a Dowry Never Paid',period:'1648—1660年',c:HC.france,
+ scenes:[
+  hs('1648—1653年','西班牙收复失地','明斯特，1652年西班牙收回的敦刻尔克与巴塞罗那，以及孔代投奔的布鲁塞尔。',[[40.6,-4.8],[53.4,9.8]],d=>{
+    ha(d,'fFrance1648',HC.france,{fillOpacity:.14});ha(d,'sSpanishNetherlands1609',HC.spain,{fillOpacity:.3});ha(d,'sDutchRepublic1609',HC.lowlands,{fillOpacity:.26});ha(d,'sCastile',HC.spain,{fillOpacity:.18});ha(d,'sCrownAragon',HC.spain,{fillOpacity:.14});
+    hp(d,'sp3_munster',{note:'1648年1月30日西班牙与荷兰在此签约。'});
+    hp(d,'sp2_dunkirk',{kind:'battle',left:1,note:'1646年孔代替法国攻下，六年后又丢给西班牙。'});
+    hp(d,'k_barcelona',{kind:'battle',note:'守城的是法军和加泰罗尼亚人，1651年7月被围。'});
+    hp(d,'lb_brussels',{note:'西属尼德兰总督驻地，孔代的大营在这一带。'});
+   },[['fill',HC.france,'法国（示意）'],['fill',HC.spain,'西班牙与西属尼德兰'],['fill',HC.lowlands,'荷兰共和国'],['dot',HC.war,'1652年失守的敦刻尔克与巴塞罗那'],['dot','#2a2018','明斯特与布鲁塞尔']]),
+  hs('1654—1657年','平手、谈崩与巴黎条约','尼德兰边境的两场围城，谈判未成的马德里，以及订约的巴黎与英国的伦敦。',[[39.8,-5.4],[53.4,5.6]],d=>{
+    ha(d,'fFrance1648',HC.france,{fillOpacity:.14});ha(d,'sSpanishNetherlands1609',HC.spain,{fillOpacity:.28});ha(d,'sCastile',HC.spain,{fillOpacity:.16});
+    hp(d,'pl_arras',{kind:'battle',left:1,note:'8月24日夜，蒂雷纳冲破孔代的围城线。'});
+    hp(d,'ed2_valenciennes',{kind:'battle',note:'7月16日，孔代与胡安·何塞攻破围城线。'});
+    hp(d,'c5_madrid',{left:1,note:'1656年7月里奥纳到此谈和。'});
+    hp(d,'w_paris',{note:'条约3月23日在巴黎签字。'});
+    hp(d,'k_london',{left:1,note:'克伦威尔1653年底起任护国公。'});
+   },[['fill',HC.france,'法国（示意）'],['fill',HC.spain,'西班牙与西属尼德兰'],['dot',HC.war,'阿拉斯与瓦朗谢讷'],['dot','#2a2018','马德里、巴黎与伦敦']]),
+  hs('1658年6月14日','沙丘之战','敦刻尔克城东的沙丘战场、英国舰队封锁的海面，以及战后法军攻下的城镇。',[[50.5,1.5],[51.3,3.3]],d=>{
+    ha(d,'fFrance1648',HC.france,{fillOpacity:.14});ha(d,'sSpanishNetherlands1609',HC.spain,{fillOpacity:.26});
+    hp(d,'sp2_dunkirk',{kind:'battle',note:'城里约三千守军，居民开闸放水阻挡围城。'});
+    hp(d,'hy1_calais',{left:1,note:'路易十四坐镇加来；战后法军又攻下格拉沃利讷。'});
+    hp(d,'lf_ypres',{kind:'battle',note:'蒂雷纳一路打到伊普尔和奥德纳尔德。'});
+    hr(d,[[51.25,1.6],[51.15,2.1],[51.1,2.4]],HC.britain);
+   },[['fill',HC.france,'法国（示意）'],['fill',HC.spain,'西属尼德兰'],['dline',HC.britain,'英国舰队封锁海面（概略）'],['dot',HC.war,'敦刻尔克与战后攻下的城镇'],['dot','#2a2018','加来']]),
+  hs('1659年11月7日','费桑岛和约','和约划给法国的阿图瓦与鲁西永、割地后的西属尼德兰，以及几处地名。',[[41.6,-2.8],[51.4,7.8]],d=>{
+    ha(d,'fFrance1648',HC.france,{fillOpacity:.12});ha(d,'fArtois',HC.war,{fillOpacity:.38});ha(d,'fRoussillon',HC.war,{fillOpacity:.38});ha(d,'fr18SpanishNetherlands1659',HC.spain,{fillOpacity:.26});ha(d,'sCastile',HC.spain,{fillOpacity:.14});ha(d,'sCrownAragon',HC.spain,{fillOpacity:.14});
+    hp(d,'sp3_pheasant',{left:1,note:'岛长约二百一十米，今为两国共管。'});
+    hp(d,'fv_perpignan',{note:'鲁西永首府，1642年已被法军攻下。'});
+    hp(d,'fpy_llivia',{left:1,note:'1660年划界后留给西班牙，不准设防。'});
+    hp(d,'pl_arras',{left:1,note:'阿图瓦首府，1640年起就在法军手里。'});
+    hp(d,'fpy_thionville',{note:'和约划给法国的要塞之一。'});
+   },[['fill',HC.france,'法国（1648年实控，示意）'],['fill',HC.war,'和约划给法国的阿图瓦与鲁西永'],['fill',HC.spain,'西班牙与割地后的西属尼德兰'],['dot','#2a2018','费桑岛、佩皮尼昂、利维亚、阿拉斯与蒂永维尔']]),
+  hs('1659—1660年','婚约与婚礼','腓力四世送女儿北上的路线，两国国王会面的费桑岛，曼奇尼被送去的布鲁阿日，以及巴黎。',[[39.6,-5.6],[49.4,3.4]],d=>{
+    ha(d,'sCastile',HC.spain,{fillOpacity:.18});ha(d,'fFrance1648',HC.france,{fillOpacity:.12});
+    hp(d,'c5_madrid',{left:1,note:'腓力四世的宫廷所在。'});
+    hp(d,'sp3_pheasant',{left:1,note:'1660年6月6日两位国王在岛上见面，宣誓守约。'});
+    hp(d,'fpy_brouage',{left:1,note:'1659年夏天曼奇尼被送到这一带。'});
+    hp(d,'w_paris',{note:'8月26日新王后入城，几十万人围观。'});
+    hr(d,[[40.42,-3.70],[41.65,-4.72],[42.34,-3.70],[43.0,-2.6],[43.34,-1.77]],HC.spain);
+   },[['fill',HC.spain,'卡斯蒂利亚'],['fill',HC.france,'法国（示意）'],['dline',HC.spain,'1660年腓力四世送女儿北上（概略）'],['dot','#2a2018','马德里、费桑岛、布鲁阿日与巴黎']])
+ ]},
+{id:'history-france-louis14',ch:5,title:'太阳王亲政：抓富凯、算细账，把朝廷搬进凡尔赛',short:'太阳王亲政',en:'The Sun King Takes Charge: Fouquet, Colbert and the Move to Versailles',period:'1653—1715年',c:HC.france,
+ scenes:[
+  hs('1661年3月','国王自己管事','巴黎东郊的万森讷城堡、城里的卢浮宫，以及西边还是猎屋的凡尔赛。',[[48.62,1.95],[49.02,2.68]],d=>{
+    hp(d,'fsb_vincennes',{note:'马萨林死在万森讷，国王随后回卢浮宫理政。'});
+    hp(d,'fri_versailles',{left:1,note:'这时还只是路易十三留下的猎屋。'});
+   },[['dot','#2a2018','万森讷、卢浮宫与凡尔赛']]),
+  hs('1661年8—9月','沃城堡与南特','沃子爵城堡、抓人的南特、富凯修了要塞的贝勒岛，以及关押他的皮内罗洛。',[[43.6,-4.6],[49.4,8.4]],d=>{
+    ha(d,'fFrance1648',HC.france,{fillOpacity:.14});
+    hp(d,'fl14_vaux',{note:'城堡1657年动工，四年修成。'});
+    hp(d,'fr_nantes',{left:1,note:'富凯在城堡开完会出来，轿子在门外被拦下。'});
+    hp(d,'fl14_belleile',{left:1,note:'富凯花二百六十万里弗尔买下此岛。'});
+    hp(d,'fl14_pignerol',{note:'富凯在这里关了十五年。'});
+   },[['fill',HC.france,'法国（示意）'],['dot','#2a2018','沃子爵城堡、南特、贝勒岛与皮内罗洛']]),
+  hs('1661—1683年','柯尔贝尔的工程','巴黎的工场、米迪运河从图卢兹到托湖的走向，以及新建的海港和军港。',[[42.6,-5.2],[49.6,6.4]],d=>{
+    ha(d,'fFrance1648',HC.france,{fillOpacity:.14});
+    hp(d,'w_paris',{note:'戈布兰工场在城南的比耶夫尔河边。'});
+    hp(d,'fsb_toulouse',{left:1,note:'运河西头，接加龙河通往大西洋。'});
+    hp(d,'fl14_naurouze',{left:1,note:'运河最高点，海拔约一百九十米。'});
+    hp(d,'fl14_sete',{note:'运河东头；新港1666年开建。'});
+    hp(d,'fl14_rochefort',{left:1,note:'新建的海军军港和造船厂。'});
+    hr(d,[[43.61,1.42],[43.45,1.62],[43.35,1.82],[43.31,1.95],[43.22,2.35],[43.25,2.85],[43.34,3.21],[43.31,3.48],[43.39,3.62]],HC.route);
+   },[['fill',HC.france,'法国（示意）'],['dline',HC.route,'米迪运河（概略）'],['dot','#2a2018','巴黎、图卢兹、诺鲁兹、塞特与罗什福尔']]),
+  hs('1653—1670年','太阳的演出','巴黎和西郊的凡尔赛、圣日耳曼昂莱，几场演出都在这一带。',[[48.62,1.9],[49.0,2.6]],d=>{
+    hp(d,'w_paris',{note:'芭蕾在卢浮宫旁的小波旁厅首演。'});
+    hp(d,'fri_versailles',{left:1,note:'1664年5月在此连办几天的魔岛之乐。'});
+    hp(d,'fsb_stgermainlaye',{left:1,note:'国王的出生地，1660年代朝廷常驻于此。'});
+   },[['dot','#2a2018','巴黎、凡尔赛与圣日耳曼昂莱']]),
+  hs('1682年5月6日','迁往凡尔赛','巴黎城，以及西郊的凡尔赛和圣日耳曼昂莱。',[[48.62,1.9],[49.0,2.6]],d=>{
+    hp(d,'fri_versailles',{left:1,note:'镜厅长七十三米，由阿杜安-芒萨尔设计。'});
+    hp(d,'w_paris',{note:'国王此后难得进一次巴黎城。'});
+    hp(d,'fsb_stgermainlaye',{left:1,note:'1682年以前朝廷多住这里。'});
+   },[['dot','#2a2018','凡尔赛、巴黎与圣日耳曼昂莱']]),
+  hs('1661—1715年','督办官与高等法院','1678年后的法国疆界；图钉标出巴黎和几座设有高等法院的省城。',[[42.2,-5.2],[51.4,8.4]],d=>{
+    ha(d,'fr18France1678',HC.france,{fillOpacity:.16});
+    hp(d,'w_paris',{note:'1667年整顿治安时，城里装了约六千五百盏灯。'});
+    hp(d,'fr_rouen',{left:1,note:'诺曼底高等法院所在。'});
+    hp(d,'fh4b_rennes',{left:1,note:'布列塔尼高等法院，1675年抗税后被迁往瓦讷。'});
+    hp(d,'w_bordeaux',{left:1,note:'吉耶讷高等法院，投石党时与总督埃佩农公爵相斗。'});
+   },[['fill',HC.france,'法国（1678年后，示意）'],['dot','#2a2018','巴黎、鲁昂、雷恩与波尔多']])
+ ]},
+{id:'history-france-dutch-war',ch:5,title:'荷兰战争与沃邦：荷兰人掘堤，沃邦挖壕',short:'荷兰战争与沃邦',en:'The Dutch War and Vauban: The Dutch Cut Their Dikes, Vauban Dug His Trenches',period:'1665—1684年',c:HC.france,
+ scenes:[
+  hs('1665—1668年','王后的遗产','1667年法军打进西属尼德兰，次年亚琛和约留下的里尔一带，以及退回的弗朗什-孔泰。',[[46.2,-0.8],[52.6,8.2]],d=>{
+    ha(d,'fFrance1648',HC.france,{fillOpacity:.16});ha(d,'fr18SpanishNetherlands1659',HC.spain,{fillOpacity:.2});ha(d,'fr18FrenchFlanders',HC.france,{fillOpacity:.42});ha(d,'sFrancheComte',HC.spain,{fillOpacity:.26,dashArray:'4 4'});
+    hp(d,'fdw_lille',{kind:'battle',left:1,note:'西班牙守军获准带着武器撤走。'});
+    hp(d,'fdw_charleroi',{kind:'battle',note:'6月2日蒂雷纳攻下，是这次出兵的第一站。'});
+    hp(d,'gr_besancon',{kind:'battle',note:'1668年2月7日开城；多勒只守了四天。'});
+    hp(d,'w_aachen',{note:'教宗克莱芒九世的使节在此居中调停。'});
+    hp(d,'sn2_hague',{left:1,note:'英国使节坦普尔在这里和德维特谈成同盟。'});
+   },[['fill',HC.france,'法兰西王国（1648年实控，示意）'],['fill',HC.spain,'西属尼德兰与弗朗什-孔泰'],['dot',HC.war,'里尔、沙勒罗瓦与贝桑松'],['dot','#2a2018','亚琛与海牙']]),
+  hs('1668—1672年','一个商人共和国','法国在边城囤粮，查理二世在多佛签约，荷兰的商业中心阿姆斯特丹。',[[47.5,-3.2],[53.6,8.2]],d=>{
+    ha(d,'fFrance1648',HC.france,{fillOpacity:.16});ha(d,'sDutchRepublic1609',HC.lowlands,{fillOpacity:.34});ha(d,'fr18SpanishNetherlands1659',HC.spain,{fillOpacity:.16});
+    hp(d,'fsb_stgermainlaye',{left:1,note:'谈判实际在这里进行，条文再送去亚琛签字。'});
+    hp(d,'bc2_dover',{left:1,note:'查理二世的妹妹亨丽埃塔来此牵线，回法国不到一月病死。'});
+    hp(d,'sn2_amsterdam',{note:'伏尔泰说这位市政官有法国人的急性、西班牙人的傲气。'});
+    hp(d,'fdw_charleroi',{note:'1668年留在法国手里的边城，正好当进兵的跳板。'});
+   },[['fill',HC.lowlands,'荷兰共和国'],['fill',HC.france,'法兰西王国（示意）'],['fill',HC.spain,'西属尼德兰'],['dot','#2a2018','圣日耳曼、多佛、阿姆斯特丹与沙勒罗瓦']]),
+  hs('1672年','灾难年','法军沿莱茵河北上、渡河，荷兰人在阿姆斯特丹与乌得勒支之间放水。',[[50.6,3.6],[53.0,7.4]],d=>{
+    ha(d,'sDutchRepublic1609',HC.lowlands,{fillOpacity:.32});
+    hp(d,'fdw_tolhuis',{kind:'battle',note:'荷军两千骑步兵拦截，被后续法军压垮。'});
+    hp(d,'sn2_utrecht',{note:'市议会把城门钥匙交给法军，免遭洗劫。'});
+    hp(d,'fdw_naarden',{kind:'battle',left:1,note:'1673年9月威廉又把它夺了回来。'});
+    hp(d,'sn2_amsterdam',{left:1,note:'城外低地一淹，挖壕攻城就无从下手。'});
+    hp(d,'sn2_hague',{left:1,note:'科内利斯被诬谋刺威廉，关在这里的监狱。'});
+    hr(d,[[50.85,5.69],[51.45,6.2],[51.86,6.12],[52.09,5.12],[52.3,5.16]],HC.france);
+   },[['fill',HC.lowlands,'荷兰共和国'],['dline',HC.france,'1672年5—6月法军进军（概略）'],['dot',HC.war,'托尔许斯与纳尔登'],['dot','#2a2018','乌得勒支、阿姆斯特丹与海牙']]),
+  hs('1673年','马斯特里赫特的壕沟','沃邦的家乡、他修的里尔城堡，和1673年6月围城的马斯特里赫特。',[[46.6,1.0],[52.0,7.6]],d=>{
+    ha(d,'fFrance1648',HC.france,{fillOpacity:.14});ha(d,'fr18FrenchFlanders',HC.france,{fillOpacity:.34});
+    hp(d,'fdw_saintleger',{left:1,note:'1867年村名改成“圣莱热沃邦”。'});
+    hp(d,'fdw_lille',{left:1,note:'1668年动工，沃邦管它叫“城堡之后”。'});
+    hp(d,'sn2_maastricht',{kind:'battle',note:'守军约五千人，城外法军约四万。'});
+   },[['fill',HC.france,'法兰西王国与新得的佛兰德斯（示意）'],['dot',HC.war,'马斯特里赫特'],['dot','#2a2018','圣莱热沃邦与里尔']]),
+  hs('1673—1680年','奈梅亨和约','1678年以后的法国疆界；布列塔尼、波尔多两处抗税，莱茵河边蒂雷纳阵亡处。',[[42.4,-5.2],[53.0,9.4]],d=>{
+    ha(d,'fr18France1678',HC.france,{fillOpacity:.18});ha(d,'sFrancheComte',HC.france,{fillOpacity:.36});ha(d,'fr18SouthernNetherlands1678',HC.spain,{fillOpacity:.2});
+    hp(d,'fdw_nijmegen',{note:'和会从1676年开到1679年，荷兰最先签字。'});
+    hp(d,'fdw_sasbach',{kind:'battle',note:'对面的皇帝军统帅是蒙泰库科利。'});
+    hp(d,'fdw_carhaix',{kind:'battle',left:1,note:'带头的是公证人勒巴尔普，9月初聚起三万人。'});
+    hp(d,'w_bordeaux',{kind:'battle',left:1,note:'十八个团进城过冬，城里花了近百万里弗尔。'});
+   },[['fill',HC.france,'1678年以后的法国（示意）'],['fill',HC.spain,'缩小了的西属尼德兰'],['dot',HC.war,'萨斯巴赫、卡雷与波尔多'],['dot','#2a2018','奈梅亨']]),
+  hs('1679—1684年','统合法庭与铁边界','三处统合法庭和吞下的斯特拉斯堡、卢森堡；虚线是北方前排要塞线（示意）。',[[46.6,1.6],[51.4,9.4]],d=>{
+    ha(d,'fr18France1678',HC.france,{fillOpacity:.16});ha(d,'fAlsace',HC.france,{fillOpacity:.34});ha(d,'fLorraine',HC.war,{fillOpacity:.16,dashArray:'4 4'});
+    hp(d,'w_metz',{left:1,note:'梅斯的法庭管洛林和萨尔一带的统合。'});
+    hp(d,'gr_besancon',{left:1,note:'这里的高等法院把蒙贝利亚尔判给了法国。'});
+    hp(d,'sp3_breisach',{note:'阿尔萨斯的最高法庭当时设在这里，后迁科尔马。'});
+    hp(d,'k_strasbourg',{kind:'battle',note:'10月23日国王入城，沃邦随后修城堡。'});
+    hp(d,'ge2_luxembourg',{kind:'battle',left:1,note:'沃邦在这里首用壕中高台，居高压住城头。'});
+    hr(d,[[51.03,2.38],[50.85,2.89],[50.63,3.06],[50.61,3.39],[50.36,3.52],[50.28,3.97],[50.26,4.91]],HC.france);
+   },[['fill',HC.france,'法国疆界与阿尔萨斯（示意）'],['fill',HC.war,'被法军占着的洛林'],['dline',HC.france,'沃邦的前排要塞线（概略）'],['dot',HC.war,'斯特拉斯堡与卢森堡'],['dot','#2a2018','梅斯、贝桑松与布赖萨赫']])
+ ]},
+{id:'history-france-revocation',ch:5,title:'废除南特敕令：龙骑兵上门，二十万人出走',short:'废除南特敕令',en:'The Revocation of the Edict of Nantes: Dragoons at the Door, Two Hundred Thousand Gone',period:'1629—1689年',c:HC.france,
+ scenes:[
+  hs('1629—1661年','只剩礼拜的敕令','胡格诺的新月地带，阿莱斯，以及1659年最后一次全国宗教会议所在的卢丹。',[[42.4,-5.0],[51.2,8.2]],d=>{
+    ha(d,'fFrance1648',HC.france,{fillOpacity:.14});ha(d,'fHuguenotCrescent',HC.faith,{fillOpacity:.32});
+    hp(d,'fri_ales',{left:1,note:'1629年在此订的恩典敕令，拆掉了新教徒的城防。'});
+    hp(d,'sl9_rochelle',{left:1,note:'1628年开城以后，这里再没有新教徒的兵。'});
+    hp(d,'frv_loudun',{note:'北边索米尔的新教学院，1685年1月被封。'});
+    hp(d,'fhg_montauban',{note:'南方最大的新教城市之一，城墙1629年拆了。'});
+   },[['fill',HC.france,'法兰西王国（示意）'],['fill',HC.faith,'胡格诺新月地带（示意）'],['dot','#2a2018','阿莱斯、拉罗谢尔、卢丹与蒙托邦']]),
+  hs('1661—1681年','照字面执行','日克斯拆教堂、巴黎近郊沙朗通的礼拜堂，以及被封了学院的色当。',[[42.4,-2.6],[49.6,8.4]],d=>{
+    ha(d,'fFrance1648',HC.france,{fillOpacity:.14});ha(d,'fHuguenotCrescent',HC.faith,{fillOpacity:.26});
+    hp(d,'frv_gex',{kind:'battle',note:'南特敕令颁布三年后才划归法国。'});
+    hp(d,'fh4b_charenton',{left:1,note:'巴黎新教徒的礼拜堂，牧师克洛德1666年起在此讲道。'});
+    hp(d,'fri_sedan',{left:1,note:'1681年7月这里的新教学院被封。'});
+   },[['fill',HC.france,'法兰西王国（示意）'],['fill',HC.faith,'胡格诺新月地带（示意）'],['dot',HC.war,'日克斯'],['dot','#2a2018','沙朗通与色当']]),
+  hs('1681—1685年','龙骑兵传教','1681年普瓦图的第一轮，1685年从贝阿恩出发的第二轮。',[[42.4,-3.6],[48.6,7.6]],d=>{
+    ha(d,'fFrance1648',HC.france,{fillOpacity:.14});ha(d,'fNavarreBearn',HC.war,{fillOpacity:.3});ha(d,'fAunis',HC.faith,{fillOpacity:.3});
+    hp(d,'k_poitiers',{kind:'battle',note:'马里亚克坐镇的监察区，第一批兵从这里派下乡。'});
+    hp(d,'sl9_rochelle',{left:1,note:'逃难的人从这一带海口搭英国、荷兰的船走。'});
+    hp(d,'fh4a_pau',{kind:'battle',left:1,note:'督办官富科在这里先宣布：国王只要一种宗教。'});
+    hp(d,'fhg_montauban',{kind:'battle',note:'1685年8月20日龙骑兵进城。'});
+    hp(d,'fri_ales',{kind:'battle',note:'9月龙骑兵开进塞文山区。'});
+    hr(d,[[43.3,-0.37],[44.02,1.36],[43.6,3.9],[44.12,4.08],[45.0,4.9]],HC.war);
+   },[['fill',HC.war,'贝阿恩：1685年的起点'],['fill',HC.faith,'奥尼斯'],['dline',HC.war,'1685年龙骑兵的去路（概略）'],['dot',HC.war,'普瓦捷、波城、蒙托邦与阿莱斯'],['dot','#2a2018','拉罗谢尔']]),
+  hs('1685年10月','枫丹白露敕令','签字的枫丹白露、登记的巴黎、被拆的沙朗通，和曼特农夫人出生的尼奥尔。',[[45.6,-1.6],[49.6,3.8]],d=>{
+    ha(d,'fFrance1648',HC.france,{fillOpacity:.14});
+    hp(d,'fh2_fontainebleau',{note:'敕令在这座行宫签字，所以叫枫丹白露敕令。'});
+    hp(d,'w_paris',{left:1,note:'大法官勒泰利耶盖了印，几天后去世。'});
+    hp(d,'fh4b_charenton',{kind:'battle',note:'10月18日起五天拆平；牧师克洛德限二十四小时出境。'});
+    hp(d,'frv_niort',{left:1,note:'她的祖父多比涅是亨利四世的战友。'});
+   },[['fill',HC.france,'法兰西王国（示意）'],['dot',HC.war,'沙朗通'],['dot','#2a2018','枫丹白露、巴黎与尼奥尔']]),
+  hs('1685—1700年','带着手艺走','虚线示意几条主要的出逃方向：英国、荷兰、勃兰登堡、瑞士，远到好望角。',[[-36.0,-12.0],[56.0,22.0]],d=>{
+    ha(d,'fFrance1648',HC.france,{fillOpacity:.16});ha(d,'sDutchRepublic1609',HC.lowlands,{fillOpacity:.3});ha(d,'cSwiss1513',HC.faith,{fillOpacity:.26});
+    hp(d,'frv_spitalfields',{left:1,note:'1700年前后，伦敦人里约二十个就有一个是胡格诺。'});
+    hp(d,'ge2_brandenburg',{note:'他们在柏林建起两片新街区。'});
+    hp(d,'rf1_geneva',{note:'走陆路的多半先投瑞士。'});
+    hp(d,'frv_cape',{note:'他们在这里种葡萄，地名意思是“法国角”。'});
+    hr(d,[[46.2,-1.2],[50.5,-1.5],[51.5,-0.1]],HC.route);hr(d,[[48.8,2.3],[51.0,4.0],[52.4,4.9]],HC.route);hr(d,[[44.1,4.1],[46.2,6.15],[49.0,9.5],[52.5,13.4]],HC.route);hr(d,[[52.0,4.0],[20.0,-20.0],[-10.0,0.0],[-33.9,18.4]],HC.route);
+   },[['fill',HC.france,'法兰西王国（示意）'],['fill',HC.lowlands,'荷兰共和国'],['fill',HC.faith,'瑞士诸州'],['dline',HC.route,'主要出逃方向（概略）'],['dot','#2a2018','伦敦、柏林、日内瓦与好望角']]),
+  hs('1685—1688年','新教欧洲','勃兰登堡、奥格斯堡、伦敦和阿姆斯特丹：法国四周的新教邻居和它们的新盟友。',[[46.0,-3.6],[55.0,15.0]],d=>{
+    ha(d,'fr18France1678',HC.france,{fillOpacity:.16});ha(d,'sDutchRepublic1609',HC.lowlands,{fillOpacity:.34});
+    hp(d,'ge2_brandenburg',{left:1,note:'胡格诺给选侯编了两个新团。'});
+    hp(d,'rf1_augsburg',{note:'结的是防守同盟，教宗暗中支持。'});
+    hp(d,'k_london',{left:1,note:'1688年12月詹姆士二世从这里出逃。'});
+    hp(d,'sn2_amsterdam',{kind:'battle',note:'它左右荷兰省，荷兰省出共和国近六成的钱。'});
+   },[['fill',HC.lowlands,'荷兰共和国'],['fill',HC.france,'法国（示意）'],['dot',HC.war,'阿姆斯特丹'],['dot','#2a2018','柏林、奥格斯堡与伦敦']])
+ ]},
+{id:'history-france-nine-years',ch:5,title:'九年战争与大饥荒：陆上打赢，人先饿死',short:'九年战争与大饥荒',en:'The Nine Years’ War and the Great Famine: Winning Battles While France Starved',period:'1688—1697年',c:HC.france,
+ scenes:[
+  hs('1688年','出兵莱茵','法军越过莱茵河的第一批目标，和威廉登陆的托贝湾；荷兰在两者之间。',[[47.4,-5.2],[53.8,10.6]],d=>{
+    ha(d,'fr18France1678',HC.france,{fillOpacity:.16});ha(d,'sDutchRepublic1609',HC.lowlands,{fillOpacity:.34});ha(d,'sLowerPalatinate',HC.germany,{fillOpacity:.28});
+    hp(d,'f9y_philippsburg',{kind:'battle',note:'施派尔主教兼特里尔选侯的要塞。'});
+    hp(d,'f9y_mannheim',{kind:'battle',left:1,note:'普法尔茨选侯的新城，开城后被法军占住。'});
+    hp(d,'sn2_hague',{left:1,note:'9月29日威廉在秘密会议上力主先下手。'});
+    hp(d,'bgl_torbay',{kind:'battle',left:1,note:'荷兰船队顺东风开过海峡，在此登岸。'});
+    hr(d,[[48.58,7.75],[49.24,8.46],[49.49,8.47]],HC.france);
+   },[['fill',HC.france,'法国（示意）'],['fill',HC.lowlands,'荷兰共和国'],['fill',HC.germany,'普法尔茨'],['dline',HC.france,'1688年9—11月法军进军（概略）'],['dot',HC.war,'菲利普斯堡、曼海姆与托贝湾'],['dot','#2a2018','海牙']]),
+  hs('1689年','普法尔茨的火','莱茵河中游：法军撤退时烧掉的城，和卢福瓦还想烧的特里尔。',[[48.7,6.2],[50.4,9.4]],d=>{
+    ha(d,'sLowerPalatinate',HC.war,{fillOpacity:.3});
+    hp(d,'ty1_heidelberg',{kind:'battle',note:'1693年5月法军又打回来。'});
+    hp(d,'f9y_mannheim',{kind:'battle',left:1,note:'她父亲在城里盖过一座三派共用的和合教堂。'});
+    hp(d,'k_worms',{kind:'battle',left:1,note:'大教堂烧得只剩外墙。'});
+    hp(d,'sa_speyer',{kind:'battle',note:'居民先被勒令六天内搬空。'});
+    hp(d,'f9y_trier',{left:1,note:'国王最后下令一间房子也不许烧。'});
+   },[['fill',HC.war,'普法尔茨：焚掠区（示意）'],['dot',HC.war,'海德堡、曼海姆、沃尔姆斯与施派尔'],['dot','#2a2018','特里尔']]),
+  hs('1690—1692年','拉胡格','1690年的三场仗和1692年从巴夫勒尔到拉胡格的海战；圣马洛是逃脱的法舰去处。',[[48.2,-8.6],[54.4,5.4]],d=>{
+    ha(d,'fr18France1678',HC.france,{fillOpacity:.14});
+    hp(d,'f9y_fleurus',{kind:'battle',note:'对手是荷兰元帅瓦尔德克率领的联军。'});
+    hp(d,'f9y_beachy',{kind:'battle',left:1,note:'这一仗后，海峡一时归了法国。'});
+    hp(d,'bgl_boyne',{kind:'battle',left:1,note:'威廉的副帅朔姆贝格战死在河边。'});
+    hp(d,'uk5_barfleur',{kind:'battle',left:1,note:'旗舰“太阳王号”击沉了五艘火船。'});
+    hp(d,'f9y_hougue',{kind:'battle',note:'英国水兵划小艇进湾，一船船点火。'});
+    hp(d,'amf_stmalo',{left:1,note:'二十七艘法舰抢在急流转向前逃到这里。'});
+   },[['fill',HC.france,'法国（示意）'],['dot',HC.war,'弗勒吕斯、比奇角、博因河、巴夫勒尔与拉胡格'],['dot','#2a2018','圣马洛']]),
+  hs('1692—1694年','大医院','饥荒遍及法国北部和中部，地中海沿岸受灾较轻；那慕尔是1692年阴雨开始的地方。',[[42.4,-4.8],[51.6,8.0]],d=>{
+    ha(d,'fr18France1678',HC.war,{fillOpacity:.2});
+    hp(d,'f9y_aubergenville',{left:1,note:'1693年这里一塞捷麦子卖到四十五里弗尔。'});
+    hp(d,'sn2_namur',{kind:'battle',note:'1692年6月围城时，大雨一连下了几个星期。'});
+    hp(d,'fri_versailles',{note:'费奈隆当时住在宫里，教王孙读书。'});
+    hp(d,'k_marseille',{left:1,note:'南方雨水反倒合适，受灾轻得多。'});
+   },[['fill',HC.war,'1693—1694年饥荒波及的法国（示意）'],['dot',HC.war,'那慕尔'],['dot','#2a2018','奥贝尔让维尔、凡尔赛与马赛']]),
+  hs('1693—1701年','二十二等','人头税先由朗格多克三级会议出面提议，声明从凡尔赛发出；韦兹莱是沃邦调查民生的地方。',[[42.4,-4.8],[51.6,8.0]],d=>{
+    ha(d,'fr18France1678',HC.france,{fillOpacity:.18});
+    hl(d,'朗格多克','Languedoc',43.7,3.2,HC.france);
+    hp(d,'fri_versailles',{left:1,note:'1695年1月18日的声明从这里发出。'});
+    hp(d,'w_paris',{note:'包税人在这里替国王收钱，自己也列在头等。'});
+    hp(d,'sc_vezelay',{note:'1696年沃邦写这一带：农民冬夏穿破麻布，光脚套木鞋。'});
+   },[['fill',HC.france,'法国（示意）'],['dot','#2a2018','凡尔赛、巴黎与韦兹莱']]),
+  hs('1695—1697年','吕斯维克和约','吕斯维克和约前后的法国东北边界：留下的阿尔萨斯，还回去的洛林、卢森堡和那慕尔一带。',[[40.6,-3.6],[53.4,10.4]],d=>{
+    ha(d,'fr18France1678',HC.france,{fillOpacity:.16});ha(d,'fAlsace',HC.france,{fillOpacity:.4});ha(d,'fLorraine',HC.neutral,{fillOpacity:.3,dashArray:'4 4'});ha(d,'fr18SouthernNetherlands1678',HC.spain,{fillOpacity:.22});
+    hp(d,'f9y_ryswick',{note:'调停的是瑞典使节。'});
+    hp(d,'sn2_namur',{kind:'battle',left:1,note:'守将是布弗莱元帅，围城拖了整个夏天。'});
+    hp(d,'k_strasbourg',{note:'和约把雷根斯堡停战里暂认的归属变成了永久。'});
+    hp(d,'ge2_luxembourg',{left:1,note:'沃邦1684年攻下、又加固过的要塞，原样交回。'});
+    hp(d,'k_barcelona',{kind:'battle',left:1,note:'1697年8月法军刚攻下，签约后归还。'});
+   },[['fill',HC.france,'法国与阿尔萨斯（示意）'],['fill',HC.neutral,'还给公爵的洛林'],['fill',HC.spain,'西属尼德兰'],['dot',HC.war,'那慕尔与巴塞罗那'],['dot','#2a2018','吕斯维克、斯特拉斯堡与卢森堡']])
+ ]},
+{id:'history-france-spanish-succession',ch:5,title:'西班牙王位继承战争：一纸遗嘱，十三年仗',short:'西班牙王位继承战争',en:'The War of the Spanish Succession: One Will, Thirteen Years of War',period:'1665—1714年',c:HC.france,
+ scenes:[
+  hs('1665—1700年','被施了魔法的国王','卡洛斯二世名下的欧洲领地：伊比利亚、西属尼德兰和意大利四块；两份瓜分条约在海牙和伦敦签订。',[[35.0,-10.5],[53.5,19.0]],d=>{
+    ha(d,'sCastile',HC.spain,{fillOpacity:.3});ha(d,'sCrownAragon',HC.spain,{fillOpacity:.22});
+    ha(d,'fr18SouthernNetherlands1678',HC.spain,{fillOpacity:.3});ha(d,'fr18SpanishItaly1700',HC.spain,{fillOpacity:.3});
+    ha(d,'fFrance1648',HC.france,{fillOpacity:.14});
+    hp(d,'c5_madrid',{left:1,note:'王宫在旧城西头的阿尔卡萨堡，驱魔就在这里。'});
+    hp(d,'sn2_hague',{note:'1698年10月第一份瓜分条约。'});
+    hp(d,'k_london',{left:1,note:'1700年3月第二份瓜分条约。'});
+   },[['fill',HC.spain,'西班牙王冠的欧洲领地（示意）'],['fill',HC.france,'法兰西王国（示意）'],['dot','#2a2018','马德里、海牙与伦敦']]),
+  hs('1700年','枫丹白露的两场会','色块是1700年哈布斯堡两支的地盘，从南、北、东三面围着法国；遗嘱从马德里送到枫丹白露。',[[35.0,-10.5],[54.5,23.0]],d=>{
+    ha(d,'fr18France1678',HC.france,{fillOpacity:.2});
+    ha(d,'sCastile',HC.spain,{fillOpacity:.28});ha(d,'sCrownAragon',HC.spain,{fillOpacity:.22});
+    ha(d,'fr18SouthernNetherlands1678',HC.spain,{fillOpacity:.3});ha(d,'fr18SpanishItaly1700',HC.spain,{fillOpacity:.3});
+    ha(d,'sHabsburgAustria1556',HC.germany,{fillOpacity:.26});
+    hp(d,'c5_madrid',{left:1,note:'11月1日国王死，当天开启遗嘱。'});
+    hp(d,'fh2_fontainebleau',{note:'11月9日、10日在曼特农夫人房里议事。'});
+    hp(d,'fri_versailles',{left:1,note:'11月16日，镜厅旁的国王书房。'});
+    hp(d,'c3_vienna',{note:'皇帝利奥波德一世不认遗嘱。'});
+    hr(d,[[40.42,-3.70],[43.49,-1.47],[46.0,1.2],[48.40,2.70]],HC.route);
+   },[['fill',HC.france,'法兰西王国（示意）'],['fill',HC.spain,'西班牙王冠的领地'],['fill',HC.germany,'奥地利哈布斯堡领地'],['dline',HC.route,'报丧信使经巴约讷北上（概略）'],['dot','#2a2018','马德里、枫丹白露、凡尔赛与维也纳']]),
+  hs('1701—1702年','三步把英国推下场','屏障要塞所在的西属尼德兰、荷兰共和国，以及大同盟签约地海牙和流亡王廷圣日耳曼。',[[47.6,-2.6],[53.6,8.0]],d=>{
+    ha(d,'fr18France1678',HC.france,{fillOpacity:.18});ha(d,'fr18SouthernNetherlands1678',HC.spain,{fillOpacity:.32});
+    ha(d,'sDutchRepublic1609',HC.lowlands,{fillOpacity:.32});
+    hp(d,'sn2_namur',{kind:'battle',note:'屏障要塞之一，1701年2月换上法军。'});
+    hp(d,'sn2_hague',{note:'9月7日（新历）英荷与皇帝签约。'});
+    hp(d,'fsb_stgermainlaye',{left:1,note:'9月16日詹姆士二世死在这里。'});
+    hp(d,'k_london',{left:1,note:'1702年3月威廉三世死于肯辛顿宫。'});
+   },[['fill',HC.france,'法兰西王国（示意）'],['fill',HC.spain,'西属尼德兰'],['fill',HC.lowlands,'荷兰共和国'],['dot',HC.war,'那慕尔'],['dot','#2a2018','海牙、圣日耳曼昂莱与伦敦']]),
+  hs('1704—1708年','布伦海姆到里尔','1704年马尔伯勒从尼德兰南下多瑙河的行军路线，以及之后四年的几个大战场。',[[43.6,0.0],[53.4,17.2]],d=>{
+    ha(d,'fr18France1678',HC.france,{fillOpacity:.16});ha(d,'fr18SouthernNetherlands1678',HC.spain,{fillOpacity:.28});
+    ha(d,'sHabsburgAustria1556',HC.germany,{fillOpacity:.22});ha(d,'sMilan',HC.spain,{fillOpacity:.3});
+    hp(d,'fss_blenheim',{kind:'battle',note:'盟军五万二对法巴五万六。'});
+    hp(d,'c3_vienna',{note:'法巴联军原想直取的皇帝都城。'});
+    hp(d,'fss_ramillies',{kind:'battle',note:'1706年5月23日，维勒鲁瓦败。'});
+    hp(d,'fss_lille',{kind:'battle',left:1,note:'守将布夫莱尔撑了一百二十天。'});
+    hp(d,'f3a_turin',{kind:'battle',left:1,note:'1706年9月7日解围。'});
+    hr(d,[[51.0,6.5],[50.0,8.3],[49.0,9.2],[48.72,10.78]],HC.britain);
+   },[['fill',HC.spain,'西属尼德兰与米兰'],['fill',HC.germany,'奥地利哈布斯堡领地'],['fill',HC.france,'法兰西王国（示意）'],['dline',HC.britain,'1704年马尔伯勒南下多瑙河（概略）'],['dot',HC.war,'布伦海姆、拉米伊、里尔与都灵'],['dot','#2a2018','维也纳']]),
+  hs('1709—1710年','大寒与马尔普拉凯','寒潮从巴黎冻到马赛；北边是谈判所在的海牙和9月的战场。',[[42.6,-2.8],[53.4,8.6]],d=>{
+    ha(d,'fr18France1678',HC.france,{fillOpacity:.2});ha(d,'fr18SouthernNetherlands1678',HC.spain,{fillOpacity:.24});
+    hp(d,'w_paris',{left:1,note:'面包涨价，城门口有人抢粮。'});
+    hp(d,'k_marseille',{note:'1月8日一天之内跌了十九度，老港结冰。'});
+    hp(d,'sn2_hague',{note:'盟国开出四十条初步条件。'});
+    hp(d,'fss_malplaquet',{kind:'battle',note:'维拉尔膝盖中弹，布夫莱尔接手撤退。'});
+   },[['fill',HC.france,'法兰西王国（示意）'],['fill',HC.spain,'西属尼德兰'],['dot',HC.war,'1709年马尔普拉凯'],['dot','#2a2018','巴黎、马赛与海牙']]),
+  hs('1711—1714年','乌得勒支','和约后的归属：意大利和尼德兰的西班牙旧领地改换主人，英国拿走两个地中海港口。',[[35.4,-10.0],[53.0,18.5]],d=>{
+    ha(d,'sCastile',HC.spain,{fillOpacity:.28});ha(d,'sCrownAragon',HC.spain,{fillOpacity:.22});
+    ha(d,'fr18SouthernNetherlands1678',HC.germany,{fillOpacity:.3});ha(d,'fr18SpanishItaly1700',HC.germany,{fillOpacity:.28});
+    ha(d,'fr18France1678',HC.france,{fillOpacity:.16});
+    hp(d,'sn2_utrecht',{note:'1713年4月11日，五份和约同日签字。'});
+    hp(d,'fss_rastatt',{note:'维拉尔和欧根这对老相识当面谈。'});
+    hp(d,'fss_denain',{kind:'battle',left:1,note:'守营的约一万人折了六七千，桥塌淹死数百。'});
+    hp(d,'k_barcelona',{kind:'battle',note:'1713年7月起被围十四个月。'});
+    hp(d,'bd_gibraltar',{left:1,note:'1704年8月英荷舰队攻占。'});
+    hp(d,'fss_mahon',{note:'1708年英军占领。'});
+   },[['fill',HC.spain,'腓力五世保住的西班牙'],['fill',HC.germany,'归皇帝的尼德兰与意大利领地（西西里归萨伏伊）'],['fill',HC.france,'法兰西王国（示意）'],['dot',HC.war,'德南与巴塞罗那'],['dot','#2a2018','乌得勒支、拉施塔特、直布罗陀与梅诺卡']])
+ ]},
+{id:'history-france-law',ch:5,title:'太阳落山与约翰·劳：老王的遗嘱，苏格兰人的纸币',short:'太阳落山与约翰·劳',en:'Sunset of the Sun King and John Law: The Old King’s Will and the Scotsman’s Paper',period:'1711—1729年',c:HC.france,
+ scenes:[
+  hs('1711—1712年','默东、马尔利、凡尔赛','巴黎西南三座王宫，三代储君各死在其中一座。',[[48.7,1.9],[48.97,2.45]],d=>{
+    hp(d,'f3b_meudon',{note:'王太子的城堡，1711年4月14日死在这里。'});
+    hp(d,'fri_versailles',{left:1,note:'王太子妃、勃艮第公爵与长子先后病死在凡尔赛与马尔利。'});
+   },[['dot','#2a2018','默东、马尔利与凡尔赛']]),
+  hs('1715年','“我太爱打仗了”','国王死在凡尔赛，遗体运往圣但尼王家墓地，路上绕开了巴黎城区。',[[48.7,1.95],[49.02,2.55]],d=>{
+    hp(d,'fri_versailles',{left:1,note:'国王卧室在宫殿正中，朝东。'});
+    hp(d,'w_saintdenis',{note:'送葬队伍绕开巴黎城区，9月9日在圣但尼下葬。'});
+    hr(d,[[48.805,2.12],[48.87,2.18],[48.92,2.25],[48.936,2.36]],HC.route);
+   },[['dline',HC.route,'送葬队伍去圣但尼（概略）'],['dot','#2a2018','凡尔赛、巴黎与圣但尼']]),
+  hs('1715年9月','第二次撕遗嘱','巴黎城里：西岱岛上的司法宫、摄政王住的王家宫、幼王住的杜伊勒里宫，东郊是万塞讷。',[[48.825,2.29],[48.88,2.46]],d=>{
+    hp(d,'fsb_tuileries',{left:1,note:'高等法院撕遗嘱后，幼王住进杜伊勒里宫，摄政王住王家宫。'});
+    hp(d,'fjl_vincennes',{note:'1715年9月幼王先送到万塞讷。'});
+   },[['dot','#2a2018','司法宫、王家宫、杜伊勒里宫与万塞讷']]),
+  hs('1694—1718年','苏格兰赌徒','劳从爱丁堡到伦敦、阿姆斯特丹，再到巴黎的大致路线。',[[47.6,-5.6],[57.2,8.4]],d=>{
+    ha(d,'fr18France1678',HC.france,{fillOpacity:.16});
+    hp(d,'uk9_edinburgh',{note:'1671年生，家在城西的劳里斯顿堡。'});
+    hp(d,'k_london',{left:1,note:'1694年4月9日，布卢姆斯伯里广场。'});
+    hp(d,'sn2_amsterdam',{note:'逃到这里，研究荷兰的银行。'});
+    hp(d,'w_paris',{left:1,note:'1716年银行先开在劳自己家里。'});
+    hr(d,[[55.95,-3.2],[51.5,-0.13],[52.37,4.9],[50.85,4.35],[48.86,2.35]],HC.route);
+   },[['fill',HC.france,'法兰西王国（示意）'],['dline',HC.route,'劳的去向（概略）'],['dot','#2a2018','爱丁堡、伦敦、阿姆斯特丹与巴黎']]),
+  hs('1717—1720年','密西西比','印度公司名下的北美地盘，以及布列塔尼的母港和巴黎的股票交易街。',[[24.0,-96.0],[52.5,6.0]],d=>{
+    ha(d,'fr18NewFrance1754',HC.france,{fillOpacity:.22});ha(d,'fr18France1678',HC.france,{fillOpacity:.2});
+    hp(d,'fjl_neworleans',{note:'1718年开建，1722年成为路易斯安那首府。'});
+    hp(d,'fjl_lorient',{left:1,note:'公司的船从这里开往美洲和印度。'});
+    hp(d,'fjl_quincampoix',{note:'窄街两头设栅栏，夜里清场。'});
+    hr(d,[[47.7,-3.4],[40.0,-40.0],[25.0,-80.0],[29.95,-90.07]],HC.route);
+   },[['fill',HC.france,'新法兰西与法兰西王国（示意）'],['dline',HC.route,'洛里昂到路易斯安那的航路（概略）'],['dot','#2a2018','新奥尔良、洛里昂与坎康普瓦街']]),
+  hs('1720—1729年','泡沫破了','同一年破的两个泡沫，以及劳出逃后落脚的地方。',[[44.5,-3.8],[53.4,14.2]],d=>{
+    ha(d,'fr18France1678',HC.france,{fillOpacity:.16});
+    hp(d,'fjl_vivienne',{kind:'battle',left:1,note:'银行一次只兑一张十里弗尔的票。'});
+    hp(d,'k_london',{left:1,note:'南海公司在针线街，英格兰银行就在附近。'});
+    hp(d,'lb_brussels',{note:'1720年12月劳先逃到这里。'});
+    hp(d,'ir_venice',{note:'1729年3月21日死，葬在圣摩西教堂。'});
+    hr(d,[[48.86,2.35],[50.85,4.35],[48.0,9.0],[45.43,12.33]],HC.route);
+   },[['fill',HC.france,'法兰西王国（示意）'],['dline',HC.route,'劳出逃以后的去向（概略）'],['dot',HC.war,'1720年7月17日维维安街'],['dot','#2a2018','伦敦、布鲁塞尔与威尼斯']])
+ ]},
+{id:'history-france-louis15',ch:5,title:'路易十五：“被爱的人”挨了一刀',short:'路易十五',en:'Louis XV: The Well-Beloved Under the Knife',period:'1723—1757年',c:HC.france,
+ scenes:[
+  hs('1723—1738年','老师当家','1733—1738年的局面：国王岳父的波兰王位没保住，换来洛林；吕内维尔是他晚年的宫城。',[[43.0,-2.5],[56.0,22.0]],d=>{
+    ha(d,'fr18France1678',HC.france,{fillOpacity:.18});ha(d,'fLorraine',HC.war,{fillOpacity:.3});
+    hp(d,'fri_versailles',{left:1,note:'1722年6月朝廷搬回这里。'});
+    hp(d,'fl15_luneville',{note:'洛林公国的离宫，1737年起归斯坦尼斯瓦夫。'});
+    hp(d,'gh_danzig',{kind:'battle',left:1,note:'1734年斯坦尼斯瓦夫被俄军围在这里。'});
+    hp(d,'c3_vienna',{note:'1738年11月18日签订和约。'});
+   },[['fill',HC.france,'法兰西王国（示意）'],['fill',HC.war,'洛林：先归斯坦尼斯瓦夫，1766年归法国'],['dot',HC.war,'1734年但泽之围'],['dot','#2a2018','凡尔赛、吕内维尔与维也纳']]),
+  hs('1744年','梅斯的病床','1744年夏国王从尼德兰赶往阿尔萨斯，在梅斯病倒；巴黎庆祝他痊愈。',[[46.6,0.6],[51.2,8.6]],d=>{
+    ha(d,'fr18France1678',HC.france,{fillOpacity:.18});ha(d,'fLorraine',HC.neutral,{fillOpacity:.22});
+    hp(d,'w_metz',{left:1,note:'国王住在总督府，王后也赶来这里。'});
+    hp(d,'k_strasbourg',{note:'奥军这年夏天渡过莱茵河，侵入阿尔萨斯。'});
+    hp(d,'w_paris',{left:1,note:'11月国王回巴黎与凡尔赛，召回沙托鲁夫人。'});
+    hr(d,[[50.6,3.1],[49.9,4.6],[49.12,6.18]],HC.route);
+   },[['fill',HC.france,'法兰西王国（示意）'],['fill',HC.neutral,'洛林（当时属斯坦尼斯瓦夫）'],['dline',HC.route,'国王从尼德兰赶往梅斯（概略）'],['dot','#2a2018','梅斯、斯特拉斯堡、巴黎与凡尔赛']]),
+  hs('1740—1748年','为普鲁士国王干活','法军1745—1747年占下的奥属尼德兰，玛丽亚·特蕾莎的奥地利领地，以及普鲁士抢走的西里西亚。',[[47.8,-0.5],[53.0,19.0]],d=>{
+    ha(d,'fr18France1678',HC.france,{fillOpacity:.16});ha(d,'fr18SouthernNetherlands1678',HC.france,{fillOpacity:.32,dashArray:'4 4'});
+    ha(d,'sHabsburgAustria1556',HC.germany,{fillOpacity:.22});
+    hp(d,'fl15_fontenoy',{kind:'battle',left:1,note:'双方各约五万人，法军伤亡约八千。'});
+    hp(d,'lb_brussels',{note:'1746年法军攻占，国王凯旋入城。'});
+    hp(d,'w_aachen',{note:'1748年10月18日签约。'});
+    hp(d,'amx_breslau',{kind:'battle',note:'西里西亚首府，1742年割给普鲁士。'});
+    hp(d,'de_prague',{note:'1741年法巴联军围城，次年法军撤出折了八千人。'});
+   },[['fill',HC.france,'法兰西王国与法军占领的奥属尼德兰（虚线）'],['fill',HC.germany,'玛丽亚·特蕾莎的奥地利领地（示意）'],['dot',HC.war,'丰特努瓦与布雷斯劳'],['dot','#2a2018','布鲁塞尔、亚琛与布拉格']]),
+  hs('1745—1764年','蓬帕杜尔夫人','巴黎西南这一片：王宫、她扶植的瓷厂和她筹钱办的军校。',[[48.74,2.02],[48.92,2.42]],d=>{
+    hp(d,'fri_versailles',{left:1,note:'1745年2月镜厅化装舞会；近旁的塞夫尔设王家瓷厂。'});
+    hp(d,'w_paris',{note:'她在巴黎筹办王家军校，买下今爱丽舍宫。'});
+   },[['dot','#2a2018','凡尔赛、塞夫尔、军校与巴黎']]),
+  hs('1749—1754年','二十分之一税','抗拒新税的几处：有三级会议的两个外省，以及巴黎的教士大会和高等法院。',[[42.2,-5.0],[51.3,8.4]],d=>{
+    ha(d,'fr18France1678',HC.france,{fillOpacity:.18});
+    hp(d,'w_paris',{left:1,note:'教士大会、高等法院和大主教都在这里。'});
+    hp(d,'fh4b_rennes',{left:1,note:'布列塔尼三级会议闹到几位贵族被关押。'});
+    hp(d,'sh_montpellier',{note:'朗格多克三级会议被停到1752年。'});
+   },[['fill',HC.france,'法兰西王国（示意）'],['dot','#2a2018','巴黎、雷恩与蒙彼利埃']]),
+  hs('1756—1757年','达米安的一刀','凡尔赛的行刺地点、巴黎的审判和行刑地，以及达米安老家所在的阿拉斯。',[[48.55,1.55],[50.55,3.45]],d=>{
+    hp(d,'fri_versailles',{kind:'battle',left:1,note:'冬天宫里冷，王室大多住在大特里亚农。'});
+    hp(d,'w_paris',{left:1,note:'高等法院大法庭审了两个多月。'});
+    hp(d,'pl_arras',{note:'1756年7月他偷了主人的钱逃回这里。'});
+   },[['dot',HC.war,'1757年1月5日凡尔赛'],['dot','#2a2018','巴黎与阿拉斯']])
+ ]},
+{id:'history-france-enlightenment',ch:5,title:'启蒙：舆论成了新法官',short:'启蒙',en:'The Enlightenment: Public Opinion Becomes the New Judge',period:'1721—1784年',c:HC.france,
+ scenes:[
+  hs('1716—1755年','孟德斯鸠与英国宪制','孟德斯鸠的家乡、任职的城市，以及他出书和游历的地方。',[[42.8,-3.2],[53.4,8.8]],d=>{
+    ha(d,'fr18France1678',HC.france,{fillOpacity:.14});
+    hp(d,'w_bordeaux',{left:1,note:'他在波尔多当庭长，在城南拉布雷德城堡写《论法的精神》。'});
+    hp(d,'lb_amsterdam',{note:'《波斯人信札》1721年在此匿名印出。'});
+    hp(d,'k_london',{left:1,note:'1730年5月12日他在一家酒馆的共济会分会入会。'});
+    hp(d,'rf1_geneva',{note:'书商巴里约父子在此替他印了两大卷四开本。'});
+   },[['fill',HC.france,'法兰西王国（1678年后，示意）'],['dot','#2a2018','拉布雷德、波尔多、阿姆斯特丹、伦敦与日内瓦']]),
+  hs('1726—1765年','伏尔泰与卡拉斯案','伏尔泰被押出境的路线，以及他后来躲避、定居和打官司的地方。',[[42.6,-4.6],[53.6,14.6]],d=>{
+    ha(d,'fr18France1678',HC.france,{fillOpacity:.14});
+    hp(d,'w_paris',{left:1,note:'巴士底狱在城东；1717年他已在里面关过十一个月。'});
+    hp(d,'k_london',{left:1,note:'他在这里学会英语，读牛顿和洛克。'});
+    hp(d,'fen_cirey',{note:'书被烧后他躲到夏特莱侯爵夫人家，一住十年。'});
+    hp(d,'fen_ferney',{note:'离日内瓦只有几公里，他在此住到1778年。'});
+    hp(d,'fsb_toulouse',{left:1,kind:'battle',note:'1762年3月10日卡拉斯在圣乔治广场受刑。'});
+    hr(d,[[48.85,2.35],[50.95,1.86],[51.5,-0.12]],HC.route);
+   },[['fill',HC.france,'法兰西王国（示意）'],['dline',HC.route,'1726年被押出境的路线（概略）'],['dot',HC.war,'图卢兹'],['dot','#2a2018','巴黎、伦敦、西雷与费尔内']]),
+  hs('1749—1772年','百科全书与检查官','主编的家乡和牢房，后十卷假托的出书地，以及下令焚书的罗马。',[[41.0,-1.8],[50.8,13.8]],d=>{
+    ha(d,'fr18France1678',HC.france,{fillOpacity:.14});
+    hp(d,'gr_langres',{note:'狄德罗是这里一个刀匠的儿子。'});
+    hp(d,'fsb_vincennes',{left:1,note:'1749年7月24日一早，警官上门把他带到这里。'});
+    hp(d,'fhg_neuchatel',{note:'书商福歇的名号印在后十卷的扉页上。'});
+    hp(d,'rome',{note:'教宗下令：不交书的教徒革出教门。'});
+   },[['fill',HC.france,'法兰西王国（示意）'],['dot','#2a2018','朗格勒、万森讷、纳沙泰尔与罗马']]),
+  hs('1749—1794年','卢梭与“公意”','卢梭的家乡、成名的征文、演歌剧的行宫，以及1762年出逃的路线。',[[43.8,-1.2],[50.2,9.2]],d=>{
+    ha(d,'fr18France1678',HC.france,{fillOpacity:.14});
+    hp(d,'rf1_geneva',{note:'祖上是16世纪逃来的法国新教徒。'});
+    hp(d,'lb_dijon',{note:'第戎学院出的题，1750年发的奖。'});
+    hp(d,'fen_montmorency',{left:1,note:'他在这里写成《新爱洛伊丝》和《爱弥儿》。'});
+    hp(d,'fh2_fontainebleau',{left:1,note:'1752年10月18日国王和蓬帕杜尔夫人在此看他的歌剧。'});
+    hp(d,'fen_motiers',{note:'逃亡后在这里住了三年，学会了织花边。'});
+    hr(d,[[48.99,2.32],[48.3,4.1],[47.3,5.4],[46.78,6.64],[46.91,6.61]],HC.route);
+   },[['fill',HC.france,'法兰西王国（示意）'],['dline',HC.route,'1762年6月出逃的路线（概略）'],['dot','#2a2018','日内瓦、第戎、蒙莫朗西、枫丹白露与莫蒂埃']]),
+  hs('1755—1773年','重农学派和中国热','凡尔赛宫里的魁奈，欧洲人与中国通商的口岸，以及开四库全书馆的北京。',[[18.0,-12.0],[60.0,128.0]],d=>{
+    ha(d,'fr18France1678',HC.france,{fillOpacity:.2});
+    hp(d,'fri_versailles',{left:1,note:'魁奈的夹层常有爱尔维修、孔多塞这些人来聊天。'});
+    hp(d,'fje_macau',{note:'1757年起乾隆只准欧洲商人在附近的广州一口通商。'});
+    hp(d,'fje_beijing',{note:'1773年开馆，前后动员近四千人。'});
+   },[['fill',HC.france,'法兰西王国（示意）'],['dot','#2a2018','凡尔赛、澳门与北京']]),
+  hs('1749—1784年','舆论法庭','巴黎的沙龙和咖啡馆，以及替法国人印书、印小册子的城市。',[[44.6,-3.6],[53.6,9.8]],d=>{
+    ha(d,'fr18France1678',HC.france,{fillOpacity:.14});
+    hp(d,'w_paris',{left:1,note:'普罗科普咖啡馆开在1686年，在左岸。'});
+    hp(d,'k_london',{left:1,note:'流亡的小册子作者在此印书，也拿书稿敲诈。'});
+    hp(d,'lb_amsterdam',{note:'卢梭的《社会契约论》由此地书商雷伊印出。'});
+    hp(d,'fen_ferney',{note:'伏尔泰晚年的信多从这里寄出。'});
+   },[['fill',HC.france,'法兰西王国（示意）'],['dot','#2a2018','巴黎、伦敦、阿姆斯特丹与费尔内']])
+ ]},
+{id:'history-france-seven-years',ch:5,title:'七年战争：换了盟友，丢了加拿大和印度',short:'七年战争',en:'The Seven Years’ War: New Allies, Lost Canada and India',period:'1754—1763年',c:HC.france,
+ scenes:[
+  hs('1740—1756年','情敌变闺蜜','俄亥俄河谷的头一仗，英王的汉诺威，以及订约的凡尔赛和维也纳。',[[25.0,-96.0],[61.0,24.0]],d=>{
+    ha(d,'fr18NewFrance1754',HC.france,{fillOpacity:.25});ha(d,'fr18ThirteenColonies1754',HC.britain,{fillOpacity:.28});
+    ha(d,'fr18France1678',HC.france,{fillOpacity:.2});ha(d,'sHabsburgAustria1556',HC.germany,{fillOpacity:.22});
+    hp(d,'fsy_necessity',{left:1,kind:'battle',note:'1754年7月3日华盛顿在此签降书。'});
+    hp(d,'bgl_hanover',{note:'英王的老家，英王在此是选帝侯。'});
+    hp(d,'fri_versailles',{left:1,note:'订的是防守同盟：一方挨打，另一方出兵两万四千。'});
+    hp(d,'c3_vienna',{note:'玛丽亚·特蕾莎的都城。'});
+   },[['fill',HC.france,'新法兰西（约七万五千人）与法国'],['fill',HC.britain,'英属殖民地（约一百五十万人）'],['fill',HC.germany,'奥地利哈布斯堡领地（示意）'],['dot',HC.war,'必要堡'],['dot','#2a2018','汉诺威、凡尔赛与维也纳']]),
+  hs('1756—1757年','罗斯巴赫','1757年德意志的三场仗，以及罗斯巴赫之后腓特烈东进西里西亚的路线。',[[45.6,2.0],[55.2,18.6]],d=>{
+    ha(d,'sHabsburgAustria1556',HC.germany,{fillOpacity:.2});ha(d,'fr18France1678',HC.france,{fillOpacity:.15});
+    hp(d,'fsy_hastenbeck',{left:1,kind:'battle',note:'7月26日法军胜，坎伯兰公爵退走。'});
+    hp(d,'fsy_rossbach',{kind:'battle',left:1,note:'战场在莱比锡西南的丘陵间。'});
+    hp(d,'fsy_dresden',{note:'1756年9月9日普军占城，萨克森军在附近的皮尔纳被围到十月。'});
+    hp(d,'fsy_leuthen',{kind:'battle',note:'12月5日普军以少胜多，又打败奥军。'});
+    hr(d,[[51.27,11.89],[51.33,12.6],[51.2,14.5],[51.13,16.79]],HC.route);
+   },[['fill',HC.germany,'奥地利哈布斯堡领地（示意）'],['fill',HC.france,'法国'],['dline',HC.route,'罗斯巴赫后腓特烈东进（概略）'],['dot',HC.war,'哈斯滕贝克、罗斯巴赫与洛伊滕'],['dot','#2a2018','德累斯顿']]),
+  hs('1735—1759年','皮特的钱','英国议会所在的威斯敏斯特，英国出钱养的德意志联军，以及普鲁士和法国的都城。',[[44.6,-6.6],[56.6,16.0]],d=>{
+    ha(d,'fr18France1678',HC.france,{fillOpacity:.15});
+    hp(d,'uk4_westminster',{left:1,note:'下院每年表决军费和新借款。'});
+    hp(d,'fsy_minden',{kind:'battle',note:'1759年8月1日英王出钱养的联军在此打败法军。'});
+    hp(d,'fsy_berlin',{note:'英国的金币补贴送给这里的普鲁士国王。'});
+    hp(d,'fri_versailles',{left:1,note:'西卢埃特的预算：1760年收入约2.86亿里弗尔，支出约5.03亿。'});
+   },[['fill',HC.france,'法国'],['dot',HC.war,'明登之战'],['dot','#2a2018','威斯敏斯特、柏林与凡尔赛']]),
+  hs('1758—1760年','奇迹之年','1758—1760年英军拿下的北美要塞和城市，以及1759年11月的基伯龙湾。',[[37.5,-84.0],[56.0,2.0]],d=>{
+    ha(d,'fr18NewFrance1754',HC.france,{fillOpacity:.22});ha(d,'fr18ThirteenColonies1754',HC.britain,{fillOpacity:.22});
+    ha(d,'fr18France1678',HC.france,{fillOpacity:.15});
+    hp(d,'fsy_louisbourg',{kind:'battle',note:'1758年6月8日到7月26日被围七周。'});
+    hp(d,'amf_quebec',{kind:'battle',note:'平原原是农夫亚伯拉罕·马丁的地，因此得名。'});
+    hp(d,'fsy_montreal',{left:1,note:'新法兰西最后的据点。'});
+    hp(d,'fsy_duquesne',{note:'1758年11月法军炸堡撤走。'});
+    hp(d,'fsy_quiberon',{kind:'battle',note:'法国二十一艘战列舰对英国二十四艘。'});
+   },[['fill',HC.france,'新法兰西与法国'],['fill',HC.britain,'英属殖民地'],['dot',HC.war,'路易斯堡、魁北克与基伯龙湾'],['dot','#2a2018','蒙特利尔与迪凯纳堡']]),
+  hs('1751—1766年','普拉西和本地治里','科罗曼德尔海岸的英法据点，以及孟加拉的加尔各答和普拉西。',[[7.0,73.5],[27.5,93.5]],d=>{
+    ha(d,'fr18Carnatic',HC.france,{fillOpacity:.25});ha(d,'fr18Bengal',HC.britain,{fillOpacity:.25});
+    hp(d,'fsy_madras',{note:'克莱武在这里的圣乔治堡当文书。'});
+    hp(d,'fsy_arcot',{left:1,kind:'battle',note:'1751年秋克莱武守城五十多天。'});
+    hp(d,'fsy_pondicherry',{kind:'battle',note:'1760年法军在西北的文迪瓦西战败，次年1月城降。'});
+    hp(d,'fsy_plassey',{kind:'battle',left:1,note:'纳瓦布军中有约五十名法国炮手。'});
+    hp(d,'fsy_calcutta',{note:'1757年3月克莱武又攻下北边的法国商站金德讷格尔。'});
+   },[['fill',HC.france,'卡纳蒂克：英法争夺的科罗曼德尔海岸'],['fill',HC.britain,'孟加拉'],['dot',HC.war,'阿尔果德、本地治里与普拉西'],['dot','#2a2018','马德拉斯与加尔各答']]),
+  hs('1758—1763年','几亩雪地','1763年和约以后北美的归属，法国留下的糖岛和晒鱼的小岛，以及两处订约地。',[[5.0,-100.0],[60.0,20.0]],d=>{
+    ha(d,'fr18BritishGains1763',HC.britain,{fillOpacity:.3});ha(d,'fr18LouisianaWest1763',HC.spain,{fillOpacity:.3});
+    ha(d,'fr18SaintDomingue',HC.france,{fillOpacity:.45});ha(d,'fr18France1678',HC.france,{fillOpacity:.18});
+    hp(d,'w_paris',{note:'1763年2月10日英、法、西在此签约。'});
+    hp(d,'fsy_hubertusburg',{left:1,note:'五天后普奥在此讲和。'});
+    hp(d,'fsy_stpierre',{note:'法国渔民只剩这两个小岛可以上岸晒鱼。'});
+    hp(d,'fsy_guadeloupe',{note:'英国人争论过要它还是要加拿大。'});
+    hp(d,'fsy_neworleans',{left:1,note:'西班牙到1769年才真正接管。'});
+   },[['fill',HC.britain,'1763年归英国：加拿大、密西西比河以东和佛罗里达'],['fill',HC.spain,'1762年让给西班牙：密西西比河以西'],['fill',HC.france,'法国留下的圣多明各与本土'],['dot','#2a2018','巴黎、胡贝图斯堡、圣皮埃尔、瓜德罗普与新奥尔良']])
+ ]},
+{id:'history-france-parlements',ch:5,title:'高等法院：赶走又请回',short:'高等法院',en:'The Parlements: Exiled and Recalled',period:'1761—1776年',c:HC.france,
+ scenes:[
+  hs('1741—1764年','赶走耶稣会','马提尼克的商港、马赛的债主、头一个判耶稣会的鲁昂，以及后来解散整个修会的罗马。',[[10.0,-68.0],[52.5,16.0]],d=>{
+    ha(d,'fr18France1678',HC.france,{fillOpacity:.15});
+    hp(d,'fpa_stpierre_mq',{note:'英军1762年攻下马提尼克，1763年归还。'});
+    hp(d,'k_marseille',{left:1,note:'债主利翁西和古夫尔两家商号在此。'});
+    hp(d,'fr_rouen',{left:1,note:'1762年2月12日这里的高等法院头一个宣布耶稣会不受法律保护。'});
+    hp(d,'rome',{note:'1773年教宗克莱芒十四世下诏解散整个耶稣会。'});
+   },[['fill',HC.france,'法兰西王国（示意）'],['dot','#2a2018','马提尼克、马赛、鲁昂与罗马']]),
+  hs('1763—1766年','鞭笞会议','1760年代先后和国王顶牛的几处高等法院。',[[42.3,-5.6],[51.5,8.6]],d=>{
+    ha(d,'fr18France1678',HC.france,{fillOpacity:.15});
+    hp(d,'fh4b_rennes',{left:1,note:'布列塔尼高等法院的法院宫，今天还在。'});
+    hp(d,'amf_stmalo',{left:1,note:'拉沙洛泰被捕后先关在这一带。'});
+    hp(d,'fr_rouen',{note:'诺曼底高等法院所在；1760年7月5日上了那份谏诤书。'});
+    hp(d,'w_paris',{note:'国王从凡尔赛进城，到法院宫训话。'});
+    hp(d,'gr_besancon',{note:'这里的法官拒收打仗加的二十分之一税，首领被软禁。'});
+    hp(d,'fca_pau',{left:1,note:'1764年这里的高等法院首领被撤换。'});
+   },[['fill',HC.france,'法兰西王国（示意）'],['dot','#2a2018','雷恩、圣马洛、鲁昂、巴黎、贝桑松与波城']]),
+  hs('1766—1769年','洛林与科西嘉','1766年并入的洛林，1768—1769年拿下的科西嘉，以及订约的凡尔赛和热那亚。',[[40.8,1.6],[49.9,11.2]],d=>{
+    ha(d,'fLorraine',HC.france,{fillOpacity:.35});ha(d,'fr18Corsica',HC.france,{fillOpacity:.35});ha(d,'fr18France1678',HC.france,{fillOpacity:.12});
+    hp(d,'fpa_luneville',{note:'斯坦尼斯瓦夫在此当了二十九年洛林公爵。'});
+    hp(d,'fri_versailles',{left:1,note:'1768年5月15日舒瓦瑟尔代表法国在此签约。'});
+    hp(d,'iv2_genoa',{note:'从1284年起统治科西嘉。'});
+    hp(d,'fpa_pontenovu',{kind:'battle',note:'法军由此打通了去科尔泰的路。'});
+    hp(d,'fpa_ajaccio',{left:1,note:'卡洛·波拿巴1769年9月当上这里的王家法庭陪审官。'});
+   },[['fill',HC.france,'洛林、科西嘉与法国（示意）'],['dot',HC.war,'蓬特诺沃之战'],['dot','#2a2018','吕内维尔、凡尔赛、热那亚与阿雅克肖']]),
+  hs('1768—1771年','莫普的改革','1771年从巴黎高等法院辖区里切出来的六个高级法院。',[[44.0,-1.6],[51.4,7.4]],d=>{
+    ha(d,'fr18France1678',HC.france,{fillOpacity:.15});
+    hl(d,'巴黎','Paris',48.85,2.35,HC.war);
+    hp(d,'pl_arras',{note:'最北的一个，在阿图瓦。'});
+    hp(d,'fpa_chalons',{note:'香槟的一个。'});
+    hp(d,'pl_blois',{left:1,note:'卢瓦尔河边的一个。'});
+    hp(d,'k_poitiers',{left:1,note:'西部的一个。'});
+    hp(d,'clermont',{left:1,note:'奥弗涅的一个。'});
+    hp(d,'k_lyon',{note:'东南的一个。'});
+   },[['fill',HC.france,'法兰西王国（示意）'],['dot','#2a2018','阿拉斯、沙隆、布卢瓦、普瓦捷、克莱蒙与里昂']]),
+  hs('1770—1774年','天花与洪水','巴黎西郊的凡尔赛、城北的圣但尼，以及1774年5月12日夜送葬队伍绕城的路线。',[[48.66,1.88],[49.06,2.62]],d=>{
+    hp(d,'fri_versailles',{left:1,note:'宫里的小特里亚农是国王给蓬帕杜尔夫人盖的。'});
+    hp(d,'w_paris',{note:'1770年庆婚踩踏在路易十五广场；1774年送葬绕开巴黎去圣但尼。'});
+    hr(d,[[48.805,2.12],[48.87,2.21],[48.92,2.28],[48.936,2.36]],HC.route);
+   },[['dline',HC.route,'1774年5月12日夜送葬的路线（概略）'],['dot','#2a2018','凡尔赛、圣但尼与巴黎']]),
+  hs('1774—1776年','请回高等法院','杜尔哥写信的贡比涅、当督办官的利摩日，以及1775年面粉风潮起头和蔓延的地方。',[[44.6,-1.0],[50.4,6.6]],d=>{
+    ha(d,'fr18France1678',HC.france,{fillOpacity:.15});
+    hp(d,'k_compiegne',{note:'宫廷夏天常住的行宫，杜尔哥的信写于此。'});
+    hp(d,'w_paris',{left:1,note:'1775年5月初风潮闹到巴黎一带。'});
+    hp(d,'lb_dijon',{note:'1775年4月风潮先在这里闹起来。'});
+    hp(d,'hy3_limoges',{left:1,note:'当督办官时他重新丈量田地，好摊人头税。'});
+   },[['fill',HC.france,'法兰西王国（示意）'],['dot','#2a2018','贡比涅、巴黎、第戎与利摩日']])
+ ]},
+{id:'history-france-american-war',ch:5,title:'赢了美国，输了钱袋：不加税的战争与王后的项链',short:'赢了美国，输了钱袋',en:'Winning America, Losing the Purse: A War Without Taxes and the Queen’s Necklace',period:'1776—1786年',c:HC.france,
+ scenes:[
+  hs('1776—1777年','银行家接手','内克尔的出生地日内瓦，和他办银行、管国库的巴黎与凡尔赛。',[[42.0,-5.5],[51.6,9.2]],d=>{
+    ha(d,'fr18France1789',HC.france,{fillOpacity:.16});
+    hp(d,'rf1_geneva',{note:'内克尔1732年生在这里，1768年起任日内瓦驻巴黎代表。'});
+    hp(d,'w_paris',{note:'国库在此；克吕尼1776年10月18日死在巴黎。'});
+    hp(d,'fri_versailles',{left:1,note:'御前会议在此，内克尔进不去。'});
+   },[['fill',HC.france,'1776年的法国（示意）'],['dot','#2a2018','日内瓦、巴黎与凡尔赛']]),
+  hs('1776—1778年','富兰克林的毛皮帽','富兰克林和拉法耶特横渡大西洋的路线，萨拉托加，以及英国在北美的属地。',[[27.0,-84.0],[52.5,5.0]],d=>{
+    ha(d,'fr18ThirteenColonies1754',HC.america,{fillOpacity:.24});ha(d,'fr18BritishGains1763',HC.britain,{fillOpacity:.14});ha(d,'fr18France1789',HC.france,{fillOpacity:.16});
+    hp(d,'fam_philadelphia',{left:1,note:'大陆会议在此；富兰克林1776年10月受命出使。'});
+    hp(d,'fam_saratoga',{kind:'battle',note:'伯戈因从加拿大南下，困在哈德孙河上游。'});
+    hp(d,'fam_georgetown',{left:1,note:'拉法耶特一行在附近登岸，再北上费城。'});
+    hp(d,'fam_auray',{left:1,note:'从这里坐车经南特去巴黎。'});
+    hp(d,'fam_pasajes',{note:'“胜利号”在西班牙港口等他上船。'});
+    hr(d,[[39.9,-75.1],[38.5,-62.0],[43.0,-30.0],[47.2,-8.0],[47.67,-2.98]],HC.route);
+    hr(d,[[43.33,-1.92],[39.0,-18.0],[31.0,-50.0],[33.37,-79.28]],HC.france);
+   },[['fill',HC.america,'北美十三州（示意）'],['fill',HC.britain,'英国的加拿大和佛罗里达（示意）'],['fill',HC.france,'法国'],['dline',HC.route,'1776年富兰克林的航路（概略）'],['dline',HC.france,'1777年拉法耶特的航路（概略）'],['dot',HC.war,'1777年萨拉托加'],['dot','#2a2018','费城、乔治敦、欧赖与帕萨赫斯']]),
+  hs('1777—1781年','经常账和特别账','印行账目的巴黎、辞职的凡尔赛，以及内克尔拿来作比的伦敦。',[[42.0,-6.0],[54.5,9.0]],d=>{
+    ha(d,'fr18France1789',HC.france,{fillOpacity:.16});
+    hp(d,'w_paris',{note:'他的乡宅圣旺在巴黎北郊，5月人群涌去。'});
+    hp(d,'fri_versailles',{left:1,note:'莫雷帕和韦尔热讷在此反对他进御前会议。'});
+    hp(d,'k_london',{left:1,note:'英国议会每年审议、印行国家收支。'});
+   },[['fill',HC.france,'法国'],['dot','#2a2018','巴黎、凡尔赛与伦敦']]),
+  hs('1781—1783年','切萨皮克湾','德格拉斯从圣多明各北上的航路、格雷夫斯的来回，以及法美联军南下约克敦的行军。',[[9.0,-86.0],[44.0,-56.0]],d=>{
+    ha(d,'fr18ThirteenColonies1754',HC.america,{fillOpacity:.2});ha(d,'fr18SaintDomingue',HC.france,{fillOpacity:.4});
+    hp(d,'fam_capfrancais',{left:1,note:'圣多明各北岸的港口，今海地角。'});
+    hp(d,'amv_chesapeake',{kind:'battle',note:'9月5日湾口海战，法舰24艘对英舰19艘。'});
+    hp(d,'fam_yorktown',{kind:'battle',left:1,note:'康沃利斯在这里修工事，等海路接应。'});
+    hp(d,'amf_nybay',{note:'英军在北美的大本营。'});
+    hp(d,'fam_newport',{note:'罗尚博的法军1780年7月在此上岸。'});
+    hp(d,'fam_tobago',{note:'1781年法军攻占，和约后归法国。'});
+    hr(d,[[19.8,-72.2],[23.5,-74.6],[28.5,-76.8],[33.5,-75.4],[36.9,-75.9]],HC.france);
+    hr(d,[[40.45,-74.0],[38.6,-74.3],[37.0,-75.5]],HC.britain);
+    hr(d,[[41.49,-71.31],[41.05,-73.75],[40.25,-74.75],[39.6,-75.9],[37.27,-76.7]],HC.route);
+   },[['fill',HC.america,'北美十三州（示意）'],['fill',HC.france,'法属圣多明各'],['dline',HC.france,'德格拉斯北上（概略）'],['dline',HC.britain,'格雷夫斯南下（概略）'],['dline',HC.route,'法美联军南下（概略）'],['dot',HC.war,'1781年切萨皮克湾与约克敦'],['dot','#2a2018','法兰西角、纽约、纽波特与多巴哥']]),
+  hs('1783—1786年','摆阔借钱','卡洛纳花钱的几处地方：巴黎的城墙，瑟堡和敦刻尔克的港口；他的老家杜埃。',[[47.6,-3.2],[51.6,5.0]],d=>{
+    ha(d,'fr18France1789',HC.france,{fillOpacity:.16});
+    hp(d,'w_paris',{note:'包税人城墙1784年5月动工，城门设关卡。'});
+    hp(d,'fam_cherbourg',{left:1,note:'诺曼底北端，从无到有修起军港。'});
+    hp(d,'sp2_dunkirk',{note:'1713年起受英国监管，1783年解禁。'});
+    hp(d,'bef_douai',{note:'卡洛纳1734年生在这里，父亲是法官。'});
+   },[['fill',HC.france,'法国'],['dot','#2a2018','巴黎、瑟堡、敦刻尔克与杜埃']]),
+  hs('1784—1786年','王后的项链','骗局牵涉的三处：罗昂在阿尔萨斯的行宫，凡尔赛，以及钻石最后脱手的伦敦。',[[46.6,-3.2],[52.6,9.2]],d=>{
+    ha(d,'fr18France1789',HC.france,{fillOpacity:.14});
+    hp(d,'fri_versailles',{left:1,note:'树丛里的会面和镜厅里的逮捕都在这里。'});
+    hp(d,'fca_saverne',{note:'罗昂的主教行宫，拉莫特在此结识他。'});
+    hp(d,'k_london',{left:1,note:'拉莫特的丈夫带着剩下的钻石逃到这里。'});
+   },[['fill',HC.france,'法国'],['dot','#2a2018','凡尔赛、萨韦尔纳与伦敦']])
+ ]},
+{id:'history-france-bankruptcy',ch:5,title:'国库见底：显贵、法官和停了一百七十五年的会',short:'国库见底',en:'The Treasury Runs Dry: Notables, Judges, and an Assembly Silent for 175 Years',period:'1786—1789年',c:HC.france,
+ scenes:[
+  hs('1786—1787年','显贵会议','开会的凡尔赛，布里耶纳当大主教的图卢兹，和卡洛纳罢官后去的伦敦。',[[42.2,-5.0],[52.2,8.6]],d=>{
+    ha(d,'fr18France1789',HC.france,{fillOpacity:.16});
+    hp(d,'fri_versailles',{note:'会场设在游乐总管府，2月22日到5月25日。'});
+    hp(d,'fsb_toulouse',{left:1,note:'布里耶纳1763年起任图卢兹大主教。'});
+    hp(d,'k_london',{left:1,note:'卡洛纳罢官后不久去了英国。'});
+   },[['fill',HC.france,'法国'],['dot','#2a2018','凡尔赛、图卢兹与伦敦']]),
+  hs('1787年','流放特鲁瓦','高等法院从巴黎被赶到特鲁瓦，9月又回来；国王在凡尔赛开御临法院。',[[47.8,1.4],[49.4,4.8]],d=>{
+    hp(d,'w_paris',{note:'高等法院所在；11月19日公爵在此顶撞国王。'});
+    hp(d,'fri_versailles',{left:1,note:'8月6日御临法院在此强行登记。'});
+    hp(d,'c4_troyes',{note:'法官们8月中旬到9月在这里开庭。'});
+    hr(d,[[48.86,2.35],[48.6,3.1],[48.3,4.07]],HC.war);
+   },[['dline',HC.war,'1787年8月法官被流放的方向（概略）'],['dot','#2a2018','巴黎、凡尔赛与特鲁瓦']]),
+  hs('1788年','格勒诺布尔','为高等法院起事的两处：多菲内的格勒诺布尔与维齐耶，布列塔尼的雷恩；宣布敕令的凡尔赛。',[[42.2,-5.0],[51.6,8.6]],d=>{
+    ha(d,'fr18France1789',HC.france,{fillOpacity:.14});
+    hp(d,'fv_grenoble',{kind:'battle',note:'6月7日瓦片日；城南十几公里就是维齐耶。'});
+    hp(d,'fh4b_rennes',{left:1,note:'布列塔尼高等法院所在，贵族和法官带头抗命。'});
+    hp(d,'fri_versailles',{left:1,note:'5月8日在此开御临法院。'});
+   },[['fill',HC.france,'法国'],['dot',HC.war,'1788年格勒诺布尔'],['dot','#2a2018','雷恩与凡尔赛']]),
+  hs('1788年','五分之二是纸','7月13日那场冰雹风暴的走向（概略），和停付前后的巴黎。',[[43.6,-3.6],[52.8,7.4]],d=>{
+    ha(d,'fr18France1789',HC.france,{fillOpacity:.14});
+    hp(d,'fbk_lateste',{left:1,note:'风暴据说在这里生成，向东北推进。'});
+    hp(d,'fbk_rambouillet',{left:1,note:'王家猎苑的树被成片吹倒。'});
+    hp(d,'w_paris',{note:'多菲内广场在西岱岛西头，草人在此烧掉。'});
+    hp(d,'sn2_utrecht',{note:'风暴一直扫到尼德兰。'});
+    hr(d,[[44.63,-1.15],[46.2,0.1],[48.0,1.4],[49.6,2.8],[51.0,4.2],[52.09,5.12]],HC.war);
+   },[['fill',HC.france,'法国'],['dline',HC.war,'1788年7月13日冰雹风暴（概略）'],['dot','#2a2018','拉泰斯特、朗布依埃、巴黎与乌得勒支']]),
+  hs('1788年','1614年的老规矩','高等法院所在的巴黎，第二次显贵会议和御前会议所在的凡尔赛。',[[48.55,1.75],[49.1,2.75]],d=>{
+    hp(d,'w_paris',{note:'9月25日的登记附上了1614年的条件。'});
+    hp(d,'fri_versailles',{left:1,note:'11月6日到12月12日第二次显贵会议。'});
+   },[['dot','#2a2018','巴黎与凡尔赛']]),
+  hs('1789年','西耶斯的三问','西耶斯的出生地、任职的沙特尔和出书、当选的巴黎。',[[42.6,-1.5],[50.2,9.0]],d=>{
+    ha(d,'fr18France1789',HC.france,{fillOpacity:.14});
+    hp(d,'fbk_frejus',{left:1,note:'普罗旺斯海边的小城。'});
+    hp(d,'fr_chartres',{left:1,note:'他从1783年起在这里的主教府任职。'});
+    hp(d,'w_paris',{note:'西耶斯在这里出书、参选。'});
+   },[['fill',HC.france,'法国'],['dot','#2a2018','弗雷瑞斯、沙特尔与巴黎']])
+ ]},
+{id:'history-france-bastille',ch:5,title:'网球场与巴士底：自封的国民议会和找火药的巴黎',short:'网球场与巴士底',en:'The Tennis Court and the Bastille: A Self-Proclaimed Assembly and a City in Search of Powder',period:'1789年',c:HC.france,
+ scenes:[
+  hs('1789年5—6月','平民院','三级会议开幕的凡尔赛；王太子病死的默东和国王守丧的马尔利；还在选代表的巴黎。',[[48.74,2.02],[48.93,2.42]],d=>{
+    hp(d,'fri_versailles',{left:1,note:'三级会议在凡尔赛开幕；王太子死于默东，国王去马尔利守丧。'});
+    hp(d,'w_paris',{note:'巴黎的选举拖到5月19日才结束。'});
+   },[['dot','#2a2018','凡尔赛、默东、马尔利与巴黎']],10),
+  hs('1789年6月20—27日','网球馆','网球馆宣誓几个当事人的来处：格勒诺布尔、卡斯泰尔诺达里与艾克斯；会场在凡尔赛。',[[42.4,-2.6],[50.4,8.2]],d=>{
+    ha(d,'fr18France1789',HC.france,{fillOpacity:.14});
+    hp(d,'fri_versailles',{note:'网球馆离游乐总管府不到一公里。'});
+    hp(d,'fv_grenoble',{note:'穆尼耶是这里的法官，维齐耶在城南。'});
+    hp(d,'fri_castelnaudary',{left:1,note:'唯一写“反对”的马丁-多什的选区。'});
+    hp(d,'sl9_aix',{note:'米拉波在这里当选第三等级代表。'});
+   },[['fill',HC.france,'法国'],['dot','#2a2018','凡尔赛、格勒诺布尔、卡斯泰尔诺达里与艾克斯']]),
+  hs('1789年7月1—11日','外籍团','国王调兵围住的巴黎与凡尔赛，以及部队在巴黎西南的退路。',[[48.74,2.02],[48.93,2.42]],d=>{
+    hp(d,'fri_versailles',{left:1,note:'外籍团开到凡尔赛与圣克卢一带。'});
+    hp(d,'w_paris',{note:'法兰西卫队驻在城里，倒向了民众。'});
+   },[['dot','#2a2018','凡尔赛、巴黎与圣克卢']],10),
+  hs('1789年7月12—13日','大V上桌','王宫花园、北边被烧的税卡，以及议会日夜开会的凡尔赛。',[[48.78,2.08],[48.92,2.42]],d=>{
+    hp(d,'fri_versailles',{left:1,note:'议会13日起日夜开会，派人去见国王。'});
+    hp(d,'fba_villette',{note:'德穆兰在王宫花园演说；城墙税卡被烧了四十来处。'});
+   },[['dot','#2a2018','王宫花园、维莱特税卡与凡尔赛']],10),
+  hs('1789年7月14日','三万支枪','先荣军院、后巴士底，两处相隔约四公里；撤走的部队去了圣克卢。',[[48.8,2.18],[48.9,2.42]],d=>{
+    hp(d,'f3b_stcloud',{left:1,note:'贝桑瓦尔把练兵场的部队撤到圣克卢。'});
+    hp(d,'fh4b_bastille',{kind:'battle',note:'市民先在荣军院抢到三万支枪，下午攻下巴士底。'});
+   },[['dot',HC.war,'7月14日巴士底'],['dot','#2a2018','荣军院与圣克卢']],10),
+  hs('1789年7月14—17日','国王进城','国王从凡尔赛进巴黎，到市政厅接过帽徽。',[[48.78,2.08],[48.9,2.4]],d=>{
+    hp(d,'fri_versailles',{left:1,note:'国王15日在这里的议会大厅宣布撤兵。'});
+    hp(d,'fsb_hotel',{note:'17日下午四点二十分国王进市政厅。'});
+    hr(d,[[48.805,2.12],[48.82,2.2],[48.84,2.28],[48.856,2.35]],HC.route);
+   },[['dline',HC.route,'7月17日国王进巴黎（概略）'],['dot','#2a2018','凡尔赛与巴黎市政厅']],10)
+ ]},
+{id:'history-france-august',ch:5,title:'拆掉旧制度：烧地契、捐特权、押回国王、卖教产',short:'拆掉旧制度',en:'Tearing Down the Old Regime: Burnt Deeds, Surrendered Privileges, a King Brought Back, Church Lands Sold',period:'1789年',c:HC.france,
+ scenes:[
+  hs('1789年7—8月','大恐慌','1789年的法国疆界；图钉只是本幕提到的几处，恐慌实际波及大半个国家。',[[42.3,-4.8],[51.3,8.4]],d=>{
+    ha(d,'fr18France1789',HC.france,{fillOpacity:.14});
+    hp(d,'f89_quincey',{kind:'battle',note:'领主梅斯迈是贝桑松高等法院的推事，1790年才判无罪。'});
+    hp(d,'gr_besancon',{note:'阿瑟·杨说这里的咖啡馆只有两周前的报纸。'});
+    hp(d,'lb_dijon',{left:1,note:'化学家莫尔沃告诉杨：暴行都是农民自己干的。'});
+    hp(d,'f89_lugny',{kind:'battle',left:1,note:'1791年3月议会才大赦马孔内的“匪徒”。'});
+    hp(d,'fri_versailles',{note:'议会从各地来信里得知乡下的乱局。'});
+   },[['fill',HC.france,'法兰西王国（1789年）'],['dot',HC.war,'坎西爆炸、卢尼烧堡'],['dot','#2a2018','贝桑松、第戎与凡尔赛']]),
+  hs('1789年8月4—11日','八月四日之夜','会场凡尔赛，以及当晚交出本省特权的几个省（按省会标出，示意）。',[[42.3,-4.8],[51.3,8.4]],d=>{
+    ha(d,'fr18France1789',HC.france,{fillOpacity:.14});
+    hp(d,'fri_versailles',{note:'会场在城里的游乐厅（Menus-Plaisirs）。'});
+    hp(d,'fv_grenoble',{note:'多菲内早在1788年就提出放弃本省特权。'});
+    hp(d,'fh4b_rennes',{left:1,note:'布列塔尼代表受本省委托书约束，仍表示愿意并入。'});
+    hp(d,'sl9_aix',{left:1,note:'普罗旺斯随后也交出了特权。'});
+    hp(d,'lb_nancy',{note:'洛林代表说愿意进法兰西这个大家庭。'});
+   },[['fill',HC.france,'法兰西王国（1789年）'],['dot','#2a2018','凡尔赛与格勒诺布尔、雷恩、艾克斯、南锡']]),
+  hs('1789年8月','人权宣言','三份权利文件的签署地：伦敦（1689年）、费城（1776年）和凡尔赛（1789年）。',[[30.0,-82.0],[56.5,9.0]],d=>{
+    ha(d,'fr18ThirteenColonies1754',HC.america,{fillOpacity:.16});ha(d,'fr18France1789',HC.france,{fillOpacity:.16});
+    hp(d,'k_london',{left:1,note:'1689年议会在此通过《权利法案》。'});
+    hp(d,'f89_philadelphia',{note:'1776年《独立宣言》在此通过，执笔的正是杰斐逊。'});
+    hp(d,'fri_versailles',{note:'宣言在城里的游乐厅辩论定稿。'});
+   },[['fill',HC.america,'北美十三州（示意）'],['fill',HC.france,'法兰西王国（1789年）'],['dot','#2a2018','伦敦、费城与凡尔赛']]),
+  hs('1789年8—9月','左派右派','本幕几位代表的选区，以及两院制的样板英国。',[[42.3,-4.8],[52.0,8.4]],d=>{
+    ha(d,'fr18France1789',HC.france,{fillOpacity:.14});
+    hp(d,'f89_dourdan',{left:1,note:'戈维尔男爵的选区。'});
+    hp(d,'fv_grenoble',{note:'1788年7月多菲内三级会议在附近的维齐耶召开，穆尼埃是主角。'});
+    hp(d,'sl9_aix',{left:1,note:'米拉波在这里当选第三等级代表。'});
+    hp(d,'k_london',{left:1,note:'上院是世袭贵族，下院民选。'});
+   },[['fill',HC.france,'法兰西王国（1789年）'],['dot','#2a2018','多尔当、格勒诺布尔、艾克斯与伦敦']]),
+  hs('1789年10月5—6日','面包师一家','巴黎到凡尔赛约二十公里；虚线是5日妇女走的路，6日王室车队沿原路回城。',[[48.72,1.98],[48.93,2.45]],d=>{
+    hp(d,'fri_versailles',{left:1,note:'妇女经塞夫勒走到凡尔赛，次日把王室押回巴黎。'});
+    hp(d,'fsb_tuileries',{note:'妇女从市政厅出发，次日把国王一家押进杜伊勒里宫。'});
+    hr(d,[[48.8566,2.3522],[48.8656,2.3212],[48.848,2.272],[48.824,2.211],[48.805,2.12]],HC.route);
+   },[['dline',HC.route,'10月5日妇女进军的路线（概略）'],['dot','#2a2018','市政厅、塞夫勒、凡尔赛与杜伊勒里宫']]),
+  hs('1789年10—12月','卖教产还旧债','提议人塔列朗的主教座城欧坦、后来被卖掉的克吕尼修道院，以及迁到巴黎的议会。',[[42.3,-4.8],[51.3,8.4]],d=>{
+    ha(d,'fr18France1789',HC.france,{fillOpacity:.14});
+    hp(d,'f89_autun',{note:'塔列朗在这里当选教士代表。'});
+    hp(d,'cl_cluny',{left:1,note:'克吕尼修道院后来当国有财产卖掉。'});
+    hp(d,'w_paris',{note:'议会11月9日起在杜伊勒里宫旁的驯马厅开会。'});
+   },[['fill',HC.france,'法兰西王国（1789年）'],['dot','#2a2018','欧坦、克吕尼与巴黎']])
+ ]},
+{id:'history-france-varennes',ch:5,title:'新法国与国王出逃：八十三个省、宣誓的神父和瓦伦',short:'新法国与国王出逃',en:'A New France and the King’s Flight: Eighty-Three Departments, Sworn Priests, and Varennes',period:'1790—1791年',c:HC.france,
+ scenes:[
+  hs('1789年12月—1791年3月','八十三个省','1789年的法国疆界，几处拆省的例子，以及1792年开测的敦刻尔克—巴塞罗那子午线。',[[40.8,-5.0],[51.4,8.4]],d=>{
+    ha(d,'fr18France1789',HC.france,{fillOpacity:.14});
+    hp(d,'w_bordeaux',{left:1,note:'成了以河口命名的吉伦特省首府。'});
+    hp(d,'fv_grenoble',{note:'多菲内拆成伊泽尔、德龙、上阿尔卑斯三省。'});
+    hp(d,'fh4b_rennes',{left:1,note:'布列塔尼拆成五个省。'});
+    hp(d,'sp2_dunkirk',{note:'1792年起德朗布尔从这里往南测量。'});
+    hp(d,'k_barcelona',{left:1,note:'梅尚负责南段；1799年据测量定下米的长度。'});
+    hr(d,[[51.034,2.377],[48.857,2.352],[45.5,2.4],[42.7,2.9],[41.39,2.17]],HC.route);
+   },[['fill',HC.france,'法兰西（1789年疆界）'],['dline',HC.route,'子午线测量（概略）'],['dot','#2a2018','波尔多、格勒诺布尔、雷恩、敦刻尔克与巴塞罗那']]),
+  hs('1790年7—8月','联盟节','巴黎战神广场、5月先办联盟会的里昂，以及8月兵变的南锡和布耶坐镇的梅斯。',[[44.8,1.2],[49.6,7.6]],d=>{
+    ha(d,'fr18France1789',HC.france,{fillOpacity:.14});
+    hp(d,'fva_champdemars',{left:1,note:'看台能坐十万人。'});
+    hp(d,'k_lyon',{note:'城外平原上二十八个营的自卫军结盟。'});
+    hp(d,'lb_nancy',{kind:'battle',note:'8月31日巷战，平叛一方死五十五人。'});
+    hp(d,'w_metz',{note:'布耶的东部驻军司令部。'});
+   },[['fill',HC.france,'法兰西（1789年疆界）'],['dot',HC.war,'1790年南锡兵变'],['dot','#2a2018','巴黎战神广场、里昂与梅斯']]),
+  hs('1790年7月—1791年4月','教士宣誓','宣誓比例各地不一（几处例子），以及教宗国罗马和法国境内的教宗领地阿维尼翁。',[[40.8,-5.0],[51.4,13.6]],d=>{
+    ha(d,'fr18France1789',HC.france,{fillOpacity:.14});ha(d,'fr18Avignon1791',HC.faith,{fillOpacity:.4});
+    hp(d,'rome',{note:'庇护六世1775年起在位。'});
+    hp(d,'sh_avignon',{left:1,note:'1791年9月14日议会决定并入法国。'});
+    hp(d,'fh4b_rennes',{left:1,note:'布列塔尼宣誓的神父只有约两成。'});
+    hp(d,'k_strasbourg',{note:'下莱茵省宣誓的不到一成。'});
+    hp(d,'bd_toulon',{note:'瓦尔省宣誓的高达九成六。'});
+   },[['fill',HC.france,'法兰西（1789年疆界）'],['fill',HC.faith,'阿维尼翁与孔塔（教宗领地）'],['dot','#2a2018','罗马、雷恩、斯特拉斯堡与土伦']]),
+  hs('1791年6月20—21日','瓦伦','国王一家的出逃路线（终点没到）和普罗旺斯伯爵往北的路线；虚线都是概略。',[[48.3,1.9],[50.9,5.9]],d=>{
+    ha(d,'fr18SouthernNetherlands1678',HC.lowlands,{fillOpacity:.2});
+    hp(d,'w_paris',{left:1,note:'20日深夜从杜伊勒里宫出发。'});
+    hp(d,'fma_stemenehould',{note:'德鲁埃家是镇上最后一栋房子。'});
+    hp(d,'fva_varennes',{kind:'battle',left:1,note:'王室在杂货商索斯家过了一夜。'});
+    hp(d,'fva_montmedy',{note:'布耶在这一带等着接驾。'});
+    hp(d,'sn1_mons',{note:'普罗旺斯伯爵21日夜里到此。'});
+    hr(d,[[48.857,2.352],[48.902,2.48],[48.96,2.878],[48.872,3.538],[48.957,4.363],[49.09,4.9],[49.106,5.07],[49.225,5.032]],HC.war);
+    hr(d,[[48.85,2.337],[48.935,2.425],[49.381,3.323],[49.564,3.624],[50.124,3.927],[50.278,3.973],[50.454,3.952]],HC.route);
+   },[['fill',HC.lowlands,'奥属尼德兰'],['dline',HC.war,'国王一家的路线（概略）'],['dline',HC.route,'普罗旺斯伯爵的路线（概略）'],['dot',HC.war,'瓦伦'],['dot','#2a2018','巴黎、圣梅内乌尔德、蒙梅迪与蒙斯']]),
+  hs('1791年6月22日—7月16日','默默回城','回程四天的落脚处；虚线是王室被押回巴黎的路。',[[48.6,2.0],[49.45,5.3]],d=>{
+    hp(d,'fva_varennes',{note:'押送的自卫军越走越多。'});
+    hp(d,'fsb_chalons',{note:'22日夜宿这里的总督府。'});
+    hp(d,'f3a_dormans',{left:1,note:'23日夜宿此。'});
+    hp(d,'fca_meaux',{left:1,note:'24日夜宿此。'});
+    hp(d,'w_paris',{left:1,note:'进城时绕开了东北的工人区。'});
+    hr(d,[[49.225,5.032],[49.09,4.9],[48.957,4.363],[49.04,3.96],[49.074,3.637],[49.046,3.403],[48.96,2.878],[48.857,2.352]],HC.war);
+   },[['dline',HC.war,'6月22—25日回程（概略）'],['dot','#2a2018','瓦伦、沙隆、多尔芒、莫城与巴黎']]),
+  hs('1791年7—9月','战神广场开枪','巴黎的战神广场，流亡亲王聚集的科布伦茨，以及发表声明的皮尔尼茨。',[[46.5,0.8],[52.6,15.2]],d=>{
+    ha(d,'fr18France1789',HC.france,{fillOpacity:.12});ha(d,'sHabsburgAustria1556',HC.germany,{fillOpacity:.18});
+    hp(d,'fva_champdemars',{kind:'battle',left:1,note:'祖国祭坛是联盟节时堆起来的。'});
+    hp(d,'st_koblenz',{note:'国王的两个弟弟和流亡贵族聚在这里。'});
+    hp(d,'fva_pillnitz',{note:'萨克森选侯的夏宫，在易北河边。'});
+   },[['fill',HC.france,'法兰西（1789年疆界）'],['fill',HC.germany,'哈布斯堡家的奥地利领地（示意）'],['dot',HC.war,'1791年7月17日战神广场'],['dot','#2a2018','科布伦茨与皮尔尼茨']])
+ ]},
+{id:'history-france-regicide',ch:5,title:'战争与弑君：盼来的战争，把国王送上断头台',short:'战争与弑君',en:'War and Regicide: The War Everyone Wanted Sent the King to the Guillotine',period:'1791—1793年',c:HC.france,
+ scenes:[
+  hs('1791年10月—1792年4月','两头都盼打仗','1789年的法国、奥属尼德兰，以及流亡亲王聚集的科布伦茨和写出战歌的斯特拉斯堡。',[[46.6,-1.0],[52.0,9.8]],d=>{
+    ha(d,'fr18France1789',HC.france,{fillOpacity:.12});ha(d,'fr18SouthernNetherlands1678',HC.lowlands,{fillOpacity:.26});
+    hp(d,'w_paris',{left:1,note:'雅各宾俱乐部借用圣奥诺雷街的旧修道院开会。'});
+    hp(d,'st_koblenz',{note:'流亡亲王在此招兵，成了开战的借口之一。'});
+    hp(d,'lb_brussels',{note:'奥属尼德兰的首府，法军开战后的头一个方向。'});
+    hp(d,'k_strasbourg',{note:'传说战歌首唱在市长迪特里希家里。'});
+   },[['fill',HC.france,'法兰西（1789年疆界）'],['fill',HC.lowlands,'奥属尼德兰（奥地利）'],['dot','#2a2018','巴黎、科布伦茨、布鲁塞尔与斯特拉斯堡']]),
+  hs('1792年4—8月','八月十日','北线的里尔、发表宣言的科布伦茨，以及开进巴黎的两支外省联盟军的家乡。',[[42.3,-5.0],[51.3,8.4]],d=>{
+    ha(d,'fr18France1789',HC.france,{fillOpacity:.12});
+    hp(d,'fre_lille',{kind:'battle',note:'狄龙的部队在图尔奈附近的马尔坎不战而退。'});
+    hp(d,'st_koblenz',{note:'宣言由流亡者起草，费森出了主意。'});
+    hp(d,'k_marseille',{left:1,note:'约五百名马赛联盟军7月30日唱着战歌进巴黎。'});
+    hp(d,'fre_brest',{note:'布列塔尼的联盟军也来了巴黎。'});
+    hp(d,'w_paris',{kind:'battle',left:1,note:'攻宫一方约两三万人，带着十二门炮。'});
+   },[['fill',HC.france,'法兰西（1789年疆界）'],['dot',HC.war,'1792年里尔与巴黎'],['dot','#2a2018','科布伦茨、马赛与布雷斯特']]),
+  hs('1792年8月23日—9月6日','九月屠杀','普军从科布伦茨经隆维、凡尔登打进阿尔贡的路线（概略）与巴黎。',[[48.2,1.6],[50.8,7.9]],d=>{
+    ha(d,'fr18France1789',HC.france,{fillOpacity:.12});
+    hp(d,'fre_longwy',{kind:'battle',note:'普奥联军和流亡军共七万多人越境。'});
+    hp(d,'w_verdun',{kind:'battle',left:1,note:'凡尔登是去巴黎路上的最后一道要塞。'});
+    hp(d,'w_paris',{kind:'battle',left:1,note:'加尔默罗会关着的一百六十名教士，一百一十六人被杀。'});
+    hr(d,[[50.357,7.589],[49.75,6.64],[49.52,5.76],[49.16,5.384],[49.09,4.95]],HC.war);
+   },[['fill',HC.france,'法兰西（1789年疆界）'],['dline',HC.war,'普奥联军进军路线（概略）'],['dot',HC.war,'隆维、凡尔登与巴黎']]),
+  hs('1792年9—11月','瓦尔密','瓦尔密战场在圣梅内乌尔德西边；北边是11月打下的奥属尼德兰。',[[48.4,2.0],[51.1,6.2]],d=>{
+    ha(d,'fr18SouthernNetherlands1678',HC.lowlands,{fillOpacity:.22});
+    hp(d,'fre_valmy',{kind:'battle',left:1,note:'法军伤亡约三百，普军一百八十四。'});
+    hp(d,'fma_stemenehould',{note:'十五个月前国王在这里被认出。'});
+    hp(d,'fre_jemappes',{kind:'battle',left:1,note:'法军约四万，奥军约一万三千七百。'});
+    hp(d,'lb_brussels',{note:'法军随后进城，比利时全境到手。'});
+   },[['fill',HC.lowlands,'奥属尼德兰（1792年11月被法军占领）'],['dot',HC.war,'瓦尔密与热马普'],['dot','#2a2018','圣梅内乌尔德与布鲁塞尔']]),
+  hs('1792年11—12月','铁柜子','巴黎城里的杜伊勒里宫和圣殿塔，以及锁匠加曼一家所在的凡尔赛。',[[48.76,2.04],[48.94,2.48]],d=>{
+    hp(d,'fri_versailles',{left:1,note:'加曼生在这里，父亲是王室建筑的锁匠。'});
+    hp(d,'fre_temple',{note:'杜伊勒里宫搜出铁柜后，国王从圣殿塔押去受审。'});
+   },[['dot','#2a2018','杜伊勒里宫、圣殿塔与凡尔赛']]),
+  hs('1793年1—3月','送上断头台','行刑的巴黎，以及2—3月被法国宣战的英国、荷兰和西班牙。',[[38.5,-9.8],[54.8,9.5]],d=>{
+    ha(d,'fr18France1789',HC.france,{fillOpacity:.14});ha(d,'sDutchRepublic1609',HC.lowlands,{fillOpacity:.3});
+    hp(d,'w_paris',{kind:'battle',note:'革命广场就是今天的协和广场。'});
+    hp(d,'k_london',{left:1,note:'英国限法国公使2月1日前离境。'});
+    hp(d,'sn2_amsterdam',{note:'荷兰同英国一起挨了宣战。'});
+    hp(d,'c5_madrid',{note:'3月法国又对西班牙宣战。'});
+   },[['fill',HC.france,'法兰西（1789年疆界）'],['fill',HC.lowlands,'荷兰共和国'],['dot',HC.war,'1793年1月21日巴黎'],['dot','#2a2018','伦敦、阿姆斯特丹与马德里']])
+ ]},
+{id:'history-france-terror',ch:5,title:'恐怖与热月：断头台救了共和国，也吃掉了革命者',short:'恐怖与热月',en:'Terror and Thermidor: The Guillotine That Saved the Republic and Devoured Its Makers',period:'1793—1794年',c:HC.france,
+ scenes:[
+  hs('1793年1—6月','国王死后的半年','旺代起事区、北线败退的比利时，以及6月2日被围的巴黎。',[[44.6,-3.6],[52.0,7.6]],d=>{
+    ha(d,'fr18France1789',HC.france,{fillOpacity:.14});ha(d,'fr18SouthernNetherlands1678',HC.germany,{fillOpacity:.22});ha(d,'fr18Vendee1793',HC.war,{fillOpacity:.34});
+    hp(d,'fter_neerwinden',{kind:'battle',note:'奥军胜，法军退出比利时。'});
+    hp(d,'fter_saintamand',{left:1,note:'迪穆里埃的大营；5日他从这一带投奔奥军。'});
+    hp(d,'fter_cholet',{kind:'battle',left:1,note:'守城的五百名国民自卫军非死即俘。'});
+    hp(d,'w_paris',{note:'炮口对着杜伊勒里宫里的公会会场。'});
+   },[['fill',HC.france,'法兰西共和国（示意）'],['fill',HC.germany,'奥属尼德兰'],['fill',HC.war,'旺代起事区（示意）'],['dot',HC.war,'内尔温登、绍莱'],['dot','#2a2018','圣阿芒、巴黎']]),
+  hs('1793年6—8月','外省起兵与浴缸里的刀','不服巴黎的几座大城，以及科黛从卡昂到巴黎的路。',[[42.4,-5.0],[51.4,8.4]],d=>{
+    ha(d,'fr18France1789',HC.france,{fillOpacity:.14});
+    hp(d,'f3a_caen',{left:1,note:'逃来的议员在此组织诺曼底的联邦军。'});
+    hp(d,'w_paris',{note:'马拉住在左岸科德利埃街三十号。'});
+    hp(d,'k_lyon',{note:'里昂人处死了雅各宾派首领沙利耶。'});
+    hp(d,'k_marseille',{left:1,note:'8月20日马赛的联邦派也去找英国海军要粮。'});
+    hp(d,'bd_toulon',{note:'英国和西班牙舰队8月29日开进港湾。'});
+    hr(d,[[49.18,-0.37],[49.10,0.60],[49.02,1.50],[48.86,2.35]],HC.route);
+   },[['fill',HC.france,'法兰西共和国（示意）'],['dline',HC.route,'科黛去巴黎的路（概略）'],['dot','#2a2018','卡昂、巴黎、里昂、马赛与土伦']]),
+  hs('1793年8—12月','总动员与土伦之围','波拿巴一家逃离的科西嘉，和土伦港西岸那座高地堡垒。',[[41.2,4.6],[44.3,9.9]],d=>{
+    ha(d,'fr18France1789',HC.france,{fillOpacity:.12});ha(d,'fr18Corsica',HC.france,{fillOpacity:.3});
+    hp(d,'fter_ajaccio',{note:'科西嘉议会谴责波拿巴一家，全家逃往土伦。'});
+    hp(d,'fter_mulgrave',{kind:'battle',left:1,note:'英军称它小直布罗陀；拿下它，港湾就在炮口下。'});
+    hp(d,'bd_toulon',{note:'约一万五千城民随英国舰队逃走。'});
+    hp(d,'k_marseille',{left:1,note:'卡尔托的“卡马尼奥拉军”从这里开往土伦。'});
+    hr(d,[[41.92,8.74],[42.6,7.4],[43.1,5.93]],HC.route);
+   },[['fill',HC.france,'法兰西共和国（示意）'],['dline',HC.route,'1793年6月波拿巴一家逃往大陆（概略）'],['dot',HC.war,'小直布罗陀'],['dot','#2a2018','阿雅克肖、土伦、马赛']]),
+  hs('1793年9月—1794年2月','恐怖上了日程','巴黎、被改名的里昂和卢瓦尔河口的南特；旺代军12月在萨沃奈溃散。',[[44.0,-3.6],[49.6,6.4]],d=>{
+    ha(d,'fr18France1789',HC.france,{fillOpacity:.14});ha(d,'fr18Vendee1793',HC.war,{fillOpacity:.3});
+    hp(d,'w_paris',{note:'圣母院的圣坛上搭了一座假山，女演员扮成理性女神。'});
+    hp(d,'k_lyon',{kind:'battle',note:'三个特别法庭共处决约一千八百人。'});
+    hp(d,'fr_nantes',{kind:'battle',left:1,note:'监狱里伤寒另死了约三千人。'});
+    hp(d,'fter_savenay',{kind:'battle',left:1,note:'共和军胜；逃散的旺代男女老少被成批枪决。'});
+   },[['fill',HC.france,'法兰西共和国（示意）'],['fill',HC.war,'旺代起事区（示意）'],['dot',HC.war,'里昂、南特、萨沃奈'],['dot','#2a2018','巴黎']]),
+  hs('1794年2—7月','美德与恐怖','巴黎城里的两处刑场和最高主宰节的会场。',[[48.835,2.27],[48.878,2.42]],d=>{
+    hp(d,'fter_champdemars',{left:1,note:'最高主宰节从杜伊勒里走到战神广场；丹东等死于革命广场。'});
+    hp(d,'fter_trone',{note:'牧月法令后一千三百零六人在此处死，埋进皮克普斯墓园。'});
+   },[['dot','#2a2018','革命广场、战神广场、倒王座广场与杜伊勒里宫']]),
+  hs('1794年6—7月','热月九日','北线打赢的弗勒吕斯，和热月九日那一夜的巴黎。',[[48.3,1.4],[51.4,5.6]],d=>{
+    ha(d,'fr18France1789',HC.france,{fillOpacity:.14});ha(d,'fr18SouthernNetherlands1678',HC.germany,{fillOpacity:.22});
+    hp(d,'fter_fleurus',{kind:'battle',note:'法军胜；侦察气球“进取号”升空报信。'});
+    hp(d,'lb_brussels',{note:'7月10日法军开进布鲁塞尔。'});
+    hp(d,'w_paris',{left:1,note:'四十八个区只有十六个响应公社的号召。'});
+   },[['fill',HC.france,'法兰西共和国（示意）'],['fill',HC.germany,'奥属尼德兰'],['dot',HC.war,'弗勒吕斯'],['dot','#2a2018','布鲁塞尔、巴黎']])
+ ]},
+{id:'history-france-directory',ch:5,title:'督政府：有钱人的共和国，离不开将军',short:'督政府',en:'The Directory: A Republic of Property Owners That Could Not Do Without Its Generals',period:'1794—1799年',c:HC.france,
+ scenes:[
+  hs('1794—1795年','热月反动','巴黎城里的三处：公会所在的杜伊勒里宫、“金色青年”聚集的王宫和城东的圣安托万区。',[[48.838,2.3],[48.874,2.4]],d=>{
+    hp(d,'fsb_tuileries',{left:1,note:'公会在杜伊勒里开会；金色青年常在北面的王宫聚集。'});
+    hp(d,'fdi_santoine',{kind:'battle',note:'牧月起义被压下后，各区都被缴了械。'});
+   },[['dot',HC.war,'圣安托万区'],['dot','#2a2018','杜伊勒里宫与王宫']]),
+  hs('1795年','葡月十三日','萨布隆营地、圣罗克教堂和督政府入住的卢森堡宫。',[[48.838,2.24],[48.895,2.36]],d=>{
+    hp(d,'fdi_sablons',{left:1,note:'缪拉从这里抢来四十门炮。'});
+    hp(d,'fdi_saintroch',{kind:'battle',note:'波拿巴在圣罗克教堂前开炮；督政府后设在卢森堡宫。'});
+    hr(d,[[48.881,2.27],[48.873,2.295],[48.866,2.33]],HC.route);
+   },[['dline',HC.route,'四十门炮运进城的路（概略）'],['dot',HC.war,'圣罗克教堂'],['dot','#2a2018','萨布隆营地与卢森堡宫']]),
+  hs('1796—1797年','平等派密谋','巴贝夫的家乡圣康坦，被捕的巴黎，和受审、行刑的旺多姆。',[[46.9,0.3],[50.3,4.1]],d=>{
+    ha(d,'fr18France1789',HC.france,{fillOpacity:.12});
+    hp(d,'fdi_stquentin',{note:'巴贝夫后来在附近的鲁瓦当土地测量员。'});
+    hp(d,'w_paris',{note:'印指券的版在旺多姆广场当众砸毁。'});
+    hp(d,'fca_vendome',{left:1,note:'审了三个月，另有七人被判流放。'});
+   },[['fill',HC.france,'法兰西共和国（示意）'],['dot','#2a2018','圣康坦、巴黎与旺多姆']]),
+  hs('1796—1797年','意大利打秋风','坎波福米奥和约后的北意大利：法国扶起的两个共和国，和交给奥地利的威尼斯本土。',[[43.6,6.6],[47.0,14.2]],d=>{
+    ha(d,'fr18Cisalpine1797',HC.france,{fillOpacity:.3});ha(d,'fr18Ligurian1797',HC.france,{fillOpacity:.22});ha(d,'fr18VenetoAustria1797',HC.germany,{fillOpacity:.3});
+    hp(d,'ic_lodi',{kind:'battle',left:1,note:'法军冲过阿达河上的木桥。'});
+    hp(d,'fdi_arcole',{kind:'battle',note:'三天苦战，奥军退走。'});
+    hp(d,'ic_bologna',{left:1,note:'1796年6月23日教宗在此签停战协议。'});
+    hp(d,'ir_venice',{note:'末代总督马宁让位，一千年的共和国到此为止。'});
+    hp(d,'fdi_passariano',{note:'条约以附近小村坎波福米奥命名。'});
+   },[['fill',HC.france,'奇萨尔皮尼共和国、利古里亚共和国'],['fill',HC.germany,'划给奥地利的威尼斯本土'],['dot',HC.war,'洛迪、阿尔科莱'],['dot','#2a2018','博洛尼亚、威尼斯与帕萨里亚诺']]),
+  hs('1797—1798年','果月十八日','果月那天的巴黎：被兵围住的议会、督政府和关押议员的圣殿塔。',[[48.84,2.31],[48.875,2.375]],d=>{
+    hp(d,'fsb_tuileries',{left:1,note:'兵围杜伊勒里两院与卢森堡宫，卡诺从卢森堡宫出逃。'});
+    hp(d,'fdi_temple',{note:'被捕的议员和巴泰勒米先关进圣殿塔，再流放圭亚那。'});
+   },[['dot','#2a2018','杜伊勒里宫、卢森堡宫与圣殿塔']]),
+  hs('1798—1799年','埃及远征','法军在埃及和巴勒斯坦海岸打过仗的地方，和挖出石碑的罗塞塔。',[[29.4,27.4],[33.6,36.2]],d=>{
+    ha(d,'nLowerEgypt',HC.neutral,{fillOpacity:.22});
+    hp(d,'rosetta',{kind:'battle',note:'阿布基尔湾海战在此以西；次年法军在罗塞塔挖出三语石碑。'});
+    hp(d,'fdi_embabeh',{kind:'battle',left:1,note:'法军死二十九人，对手死一千多到数千人。'});
+    hp(d,'cx_jaffa',{kind:'battle',left:1,note:'城里随后闹鼠疫，法军也染上了。'});
+    hp(d,'cx_acre',{kind:'battle',note:'英国的西德尼·史密斯帮守军守住了城。'});
+   },[['fill',HC.neutral,'下埃及'],['dot',HC.war,'阿布基尔湾、金字塔之战、雅法、阿卡'],['dot','#2a2018','罗塞塔']])
+ ]},
+{id:'history-france-brumaire',ch:5,title:'雾月政变：西耶斯找来一把剑，革命就此收场',short:'雾月政变',en:'Brumaire: Sieyès Finds His Sword, and the Revolution Is Declared Over',period:'1799年',c:HC.france,
+ scenes:[
+  hs('1799年5—10月','找一把剑','1799年秋法国四面的战场，和波拿巴从埃及回来上岸的地方。',[[42.8,-1.6],[53.6,12.8]],d=>{
+    ha(d,'fr18France1789',HC.france,{fillOpacity:.14});ha(d,'fr18Belgium1795',HC.france,{fillOpacity:.2});ha(d,'fr18LeftBank1797',HC.france,{fillOpacity:.2});
+    ha(d,'cSwiss1513',HC.neutral,{fillOpacity:.24});ha(d,'sDutchRepublic1609',HC.lowlands,{fillOpacity:.24});
+    hp(d,'fbr_novi',{kind:'battle',note:'俄奥联军胜，法军死伤被俘近万人。'});
+    hp(d,'fbr_zurich',{kind:'battle',note:'法军胜，科尔萨科夫的俄军大败。'});
+    hp(d,'fbr_bergen',{kind:'battle',left:1,note:'法荷联军胜，对手是约克公爵统率的英俄联军。'});
+    hp(d,'fbr_frejus',{left:1,note:'护卫舰“米隆号”从埃及驶来，在这里靠岸。'});
+    hp(d,'w_paris',{note:'7月20日富歇当上警务部长。'});
+   },[['fill',HC.france,'法兰西共和国，含比利时与莱茵河左岸（示意）'],['fill',HC.neutral,'海尔维第共和国'],['fill',HC.lowlands,'巴达维亚共和国'],['dot',HC.war,'诺维、苏黎世、贝亨'],['dot','#2a2018','弗雷瑞斯、巴黎']]),
+  hs('1799年11月9日','雾月十八日','那天上午巴黎的四处：波拿巴的家、元老院、五百人院和督政府。',[[48.84,2.3],[48.882,2.37]],d=>{
+    hp(d,'fbr_bourbon',{left:1,note:'波拿巴从尚特雷讷街赴杜伊勒里；五百人院在波旁宫听迁会令。'});
+    hp(d,'fbr_luxembourg',{note:'两位督政官被莫罗看在卢森堡宫里。'});
+   },[['dot','#2a2018','尚特雷讷街、杜伊勒里宫、波旁宫与卢森堡宫']]),
+  hs('1799年11月10日','雾月十九日','巴黎西边的圣克卢宫，议员原先开会的波旁宫，和当晚关了城门的巴黎。',[[48.8,2.16],[48.89,2.4]],d=>{
+    hp(d,'f3b_stcloud',{kind:'battle',left:1,note:'元老院在楼上画廊，五百人院在侧面的橘园。'});
+    hp(d,'w_paris',{note:'两院从巴黎迁往圣克卢；富歇当夜守住巴黎城门。'});
+    hr(d,[[48.862,2.318],[48.852,2.27],[48.84,2.22]],HC.route);
+   },[['dline',HC.route,'议员和军队去圣克卢的路（概略）'],['dot',HC.war,'圣克卢宫'],['dot','#2a2018','波旁宫、巴黎']]),
+  hs('1799年12月','名单与座位','新宪法下各个机关在巴黎的会址。',[[48.84,2.305],[48.87,2.35]],d=>{
+    hp(d,'fbr_bourbon',{left:1,note:'第一执政住杜伊勒里宫；立法院在波旁宫，保民院在王宫。'});
+    hp(d,'fbr_luxembourg',{note:'护法元老院在卢森堡宫开会，会议不公开。'});
+   },[['dot','#2a2018','卢森堡宫、波旁宫、王宫与杜伊勒里宫']]),
+  hs('1799年12月15日','公告','巴黎西边的两处王宫：凡尔赛和圣克卢。',[[48.76,2.02],[48.9,2.42]],d=>{
+    hp(d,'fri_versailles',{left:1,note:'1789年三级会议在凡尔赛开幕，十年后议会在近旁的圣克卢被驱散。'});
+    hp(d,'w_paris',{note:'12月25日新的三名执政就职。'});
+   },[['dot','#2a2018','凡尔赛、圣克卢与巴黎']])
  ]},
 {id:'history-germany-frederick2',ch:5,title:'腓特烈二世：向诸侯放权，跟教宗死磕',short:'腓特烈二世',en:'Frederick II: Yielding Germany to the Princes, Fighting the Popes to the Death',period:'1212—1273年',c:HC.germany,
  scenes:[
@@ -13880,6 +14959,9 @@ const HISTORY_ERAS=[
  {id:'empire-france',name:'法兰西：从卡佩开张到“宇宙蜘蛛”一统',en:'France: From Hugh Capet to Louis XI',date:'987—1483年',c:HC.france,items:[['history-france-capet'],['history-france-plantagenet'],['history-france-stlouis'],['history-france-valois'],['history-france-louis11']]},
  {id:'empire-france-wars',name:'法兰西：从亨利二世到三个亨利',en:'France: From Henry II to the Three Henrys',date:'1534—1589年',c:HC.france,items:[['history-france-henri2'],['history-france-huguenots'],['history-france-catherine'],['history-france-bartholomew'],['history-france-henrys-1'],['history-france-henrys-2']]},
  {id:'empire-france-bourbon',name:'法兰西：波旁开国到黎塞留',en:'France: The First Bourbons and Richelieu',date:'1589—1642年',c:HC.france,items:[['history-france-henry4-1'],['history-france-henry4-2'],['history-france-marie'],['history-france-richelieu']]},
+ {id:'empire-france-louis14',name:'法兰西：路易十四的世纪',en:'France: The Age of Louis XIV',date:'1643—1715年',c:HC.france,items:[['history-france-fronde'],['history-france-pyrenees'],['history-france-louis14'],['history-france-dutch-war'],['history-france-revocation'],['history-france-nine-years'],['history-france-spanish-succession']]},
+ {id:'empire-france-oldregime',name:'法兰西：旧制度的账',en:'France: The Old Regime’s Accounts',date:'1711—1789年',c:HC.france,items:[['history-france-law'],['history-france-louis15'],['history-france-enlightenment'],['history-france-seven-years'],['history-france-parlements'],['history-france-american-war'],['history-france-bankruptcy']]},
+ {id:'empire-france-revolution',name:'法兰西：大革命',en:'France: The Revolution',date:'1789—1799年',c:HC.france,items:[['history-france-bastille'],['history-france-august'],['history-france-varennes'],['history-france-regicide'],['history-france-terror'],['history-france-directory'],['history-france-brumaire']]},
  {id:'empire-frederick2',name:'德意志、低地与意大利：从腓特烈二世到文艺复兴、查理五世与三十年战争',en:'Germany, Low Countries and Italy: From Frederick II to the Renaissance, Charles V, and the Thirty Years’ War',date:'843—1648年',c:HC.germany,items:[['history-germany-frederick2'],['history-germany-electors'],['history-germany-golden-bull'],['history-germany-hansa'],['history-lowlands-flanders'],['history-germany-swiss',0,2,'山口与长矛'],['history-lowlands-burgundy'],['history-germany-swiss',3,5,'雇佣兵之国'],['history-germany-charles5'],['history-germany-thirty-years-1',0,4,'三十年战争（上）'],['history-germany-thirty-years-1',5,6,'丹麦参战与华伦斯坦'],['history-germany-thirty-years-2'],['history-germany-thirty-years-3'],['history-italy-vespers'],['history-italy-venice'],['history-italy-condottieri'],['history-italy-renaissance'],['history-italy-wars-1'],['history-italy-charles8'],['history-italy-savonarola'],['history-italy-louis12'],['history-italy-julius2'],['history-italy-wars-2']]},
  {id:'empire-blackdeath',name:'中世纪晚期：黑死病',en:'The Late Middle Ages: the Black Death',date:'1346—1353年',c:HC.italy,items:[['history-italy-blackdeath']]},
  {id:'empire-taifas',name:'西班牙：泰法与圣战',en:'Spain: the Taifas and Holy War',date:'1031—1123年',c:HC.spain,items:[['history-spain-taifas'],['history-spain-crusade']]},
@@ -13940,8 +15022,8 @@ const HISTORY_BRANCHES=[
  // 东罗马 takes the Greek lane, free since the Greek world ran into Rome; from the division of 395 by dynasty to the end of the Macedonians.
  {id:'east',name:'东罗马',en:'East Rome',lane:2,parent:'rome',from:395,to:1453,c:HC.byz},
  {id:'west',name:'中世纪西欧',en:'Medieval Western Europe',lane:4,parent:'rome',from:476,to:843,c:HC.celt},
- {id:'spain',name:'西班牙',en:'Spain',lane:5,parent:'west',from:481,to:1648,c:HC.spain},
- {id:'france',name:'法兰西',en:'France',lane:5,parent:'west',from:843,to:1648,c:HC.france},
+ {id:'spain',name:'西班牙',en:'Spain',lane:5,parent:'west',from:481,to:1714,c:HC.spain},
+ {id:'france',name:'法兰西',en:'France',lane:5,parent:'west',from:843,to:1800,c:HC.france},
  {id:'lowlands',name:'低地诸国',en:'Low Countries',lane:5,parent:'west',from:843,to:1648,c:HC.lowlands},
  {id:'germany',name:'德意志',en:'Germany',lane:4,parent:'west',from:843,to:1648,c:HC.germany},
  {id:'italy',name:'意大利',en:'Italy',lane:3,parent:'west',from:843,to:1563,c:HC.italy},
@@ -13949,7 +15031,7 @@ const HISTORY_BRANCHES=[
  {id:'britain',name:'不列颠',en:'Britain and Ireland',lane:6,parent:'trunk',from:-55,to:1694,c:HC.britain},
  // The 基督教 line: from the Hebrews' nomadic origins (the old Levant branch) to the schism of 1054; on its own lane, right of the West.
  // After 641 it runs through the shared stations of the East Roman dynasties.
- {id:'faith',name:'基督教',en:'Judaism & Christianity',lane:7,parent:'trunk',from:-1400,to:1648,c:HC.faith},
+ {id:'faith',name:'基督教',en:'Judaism & Christianity',lane:7,parent:'trunk',from:-1400,to:1689,c:HC.faith},
  // 埃及 and 波斯 leave 史前 at the early states (老无 2026-10-21; off 史前, not 希腊, since 2026-11-07; from its station 城市与早期王权 since 2026-11-08): the Ptolemies, the Seleucids, Rome and Byzantium are passing rulers of these lands.
  {id:'egypt',name:'埃及',en:'Egypt',lane:1,parent:'prehistory',from:-4000,to:642,c:HC.mino},
  {id:'persia',name:'波斯—阿拉伯',en:'Persia and the Arabs',lane:0,parent:'prehistory',from:-4000,to:1501,c:HC.parthia},
@@ -14185,7 +15267,28 @@ const TREE_ROWS={
  'history-britain-cromwell/0':['britain',1654,1660,'1599—1660年'],
  'history-britain-charles2/0':['britain',1661,1685,'1660—1685年'],
  'history-britain-james2/0':['britain',1686,1688,'1685—1688年'],
- 'history-britain-glorious/0':['britain',1689,1694,'1688—1694年'],
+ 'history-britain-glorious/0':[['britain','france'],1689,1694,'1688—1694年'],
+ 'history-france-fronde/0':['france',1643,1653,'1643—1653年'],
+ 'history-france-pyrenees/0':[['france','spain'],1655,1660,'1648—1660年'],
+ 'history-france-louis14/0':['france',1661,1682,'1661—1682年'],
+ 'history-france-dutch-war/0':['france',1667,1684,'1665—1684年'],
+ 'history-france-revocation/0':[['france','faith'],1681,1689,'1629—1689年'],
+ 'history-france-nine-years/0':['france',1690,1697,'1688—1697年'],
+ 'history-france-spanish-succession/0':[['france','spain'],1700,1714,'1665—1714年'],
+ 'history-france-law/0':['france',1715,1723,'1711—1723年'],
+ 'history-france-louis15/0':['france',1726,1757,'1723—1757年'],
+ 'history-france-enlightenment/0':['france',1751,1784,'1721—1784年'],
+ 'history-france-seven-years/0':['france',1756,1763,'1754—1763年'],
+ 'history-france-parlements/0':['france',1764,1776,'1761—1776年'],
+ 'history-france-american-war/0':['france',1778,1786,'1776—1786年'],
+ 'history-france-bankruptcy/0':['france',1787,1789,'1786—1789年'],
+ 'history-france-bastille/0':['france',1789.3,1789.5,'1789年5—7月'],
+ 'history-france-august/0':['france',1789.6,1789.9,'1789年7—12月'],
+ 'history-france-varennes/0':['france',1790.5,1791.7,'1790—1791年'],
+ 'history-france-regicide/0':['france',1792.3,1793.1,'1791—1793年'],
+ 'history-france-terror/0':['france',1793.4,1794.6,'1793—1794年'],
+ 'history-france-directory/0':['france',1795.5,1799,'1794—1799年'],
+ 'history-france-brumaire/0':['france',1799.5,1800,'1799年'],
  'history-faith-avignon/0':[['faith','france'],1296,1303,'1294—1303年'],
  'history-faith-clement/0':[['faith','france'],1304,1314,'1303—1314年'],
  'history-italy-blackdeath/0':[['italy','france','britain','germany','faith','persia','nordic'],1347,1351,'1346—1353年'],
@@ -14265,7 +15368,7 @@ const TREE_ROWS={
  'history-germany-swiss/3':[['germany','italy','faith'],1515,1516,'1477—1648年']
 };
 // Topics still to be written grow the tree as dashed shoots.
-const TREE_FUTURE=[['france',1648,'投石党与路易十四','1648年后待展开：1648—1653年投石党之乱 · 路易十四亲政、凡尔赛宫与欧洲霸权'],['germany',1648,'普鲁士崛起与七年战争','1648年后待展开：勃兰登堡—普鲁士崛起 · 腓特烈大帝与奥地利王位继承战'],['italy',1563,'哈布斯堡霸权与统一','1563年后待展开：西班牙哈布斯堡霸权下的意大利 · 巴洛克时代与近代统一'],['faith',1648,'政教分离与启蒙时代','1648年后待展开：欧洲大规模宗教战争落幕 · 理性主义、宽容法案与启蒙运动'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',1501,'奥斯曼全盛与波斯争霸','1501年后待展开：1517年奥斯曼灭马穆鲁克 · 苏莱曼一世全盛与奥斯曼—萨法维百年争霸'],['china',845,'晚唐五代与宋','845年起 · 待展开'],['spain',1648,'比利牛斯和约与王朝绝嗣','1648年后待展开：1659年比利牛斯和约 · 1668年承认葡萄牙独立 · 1700年哈布斯堡绝嗣与西班牙王位继承战争'],['eeurope',1505,'伊凡雷帝与沙皇俄国','1505年后待展开：1547年伊凡四世加冕沙皇 · 混乱时代与罗曼诺夫王朝'],['lowlands',1648,'黄金时代与英荷海战','1648年后待展开：17世纪阿姆斯特丹黄金时代 · 三次英荷海战与威廉三世入主英国'],['crusade',1312,'后来的十字军','1396年尼科波利斯 · 1444年瓦尔纳 · 1571年勒班陀 · 待展开'],['america',1648,'十三殖民地与美国独立','1648年后待展开：英荷争新阿姆斯特丹 · 七年战争把法国赶出北美 · 十三殖民地与美国独立'],['nordic',1648,'踏冰渡海与大北方战争','1648年后待展开：1658年卡尔十世踏冰渡海夺下斯科讷 · 1700—1721年大北方战争，瑞典失去波罗的海霸权'],['britain',1694,'英苏合并与日不落帝国','1694年后待展开：1707年英苏合并为大不列颠 · 汉诺威王朝与责任内阁 · 工业革命与日不落帝国']];
+const TREE_FUTURE=[['france',1800,'执政府与拿破仑帝国','1799年后待展开：执政府与《民法典》 · 拿破仑帝国 · 从莫斯科到滑铁卢 · 复辟、七月王朝、1848年与路易·波拿巴'],['germany',1648,'普鲁士崛起与七年战争','1648年后待展开：勃兰登堡—普鲁士崛起 · 腓特烈大帝与奥地利王位继承战'],['italy',1563,'哈布斯堡霸权与统一','1563年后待展开：西班牙哈布斯堡霸权下的意大利 · 巴洛克时代与近代统一'],['faith',1689,'政教分离与启蒙时代','1689年后待展开：英国《宽容法》 · 启蒙运动与教会 · 大革命与教会'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',1501,'奥斯曼全盛与波斯争霸','1501年后待展开：1517年奥斯曼灭马穆鲁克 · 苏莱曼一世全盛与奥斯曼—萨法维百年争霸'],['china',845,'晚唐五代与宋','845年起 · 待展开'],['spain',1714,'波旁改革与美洲独立','1714年后待展开：腓力五世废各王国旧制 · 卡洛斯三世改革 · 拿破仑入侵与美洲独立'],['eeurope',1505,'伊凡雷帝与沙皇俄国','1505年后待展开：1547年伊凡四世加冕沙皇 · 混乱时代与罗曼诺夫王朝'],['lowlands',1648,'黄金时代与英荷海战','1648年后待展开：17世纪阿姆斯特丹黄金时代 · 三次英荷海战与威廉三世入主英国'],['crusade',1312,'后来的十字军','1396年尼科波利斯 · 1444年瓦尔纳 · 1571年勒班陀 · 待展开'],['america',1648,'十三殖民地与美国独立','1648年后待展开：英荷争新阿姆斯特丹 · 七年战争把法国赶出北美 · 十三殖民地与美国独立'],['nordic',1648,'踏冰渡海与大北方战争','1648年后待展开：1658年卡尔十世踏冰渡海夺下斯科讷 · 1700—1721年大北方战争，瑞典失去波罗的海霸权'],['britain',1694,'英苏合并与日不落帝国','1694年后待展开：1707年英苏合并为大不列颠 · 汉诺威王朝与责任内阁 · 工业革命与日不落帝国']];
 // Where a line stops it says why: [line, year, the event that ends it, note, the line it carries on in].
 const TREE_ENDS=[['trunk',-30,'并入罗马','前146年科林斯被毁 · 前30年最后一个希腊化王国埃及并入罗马','rome'],['rome',476,'西罗马终结','476年西部末代皇帝被废 · 由中世纪西欧接续'],['west',843,'凡尔登三分','843年《凡尔登条约》三分帝国 · 分出法兰西、德意志、意大利'],['east',1453,'东罗马终结','1453年5月29日奥斯曼帝国攻破君士坦丁堡 · 千年东罗马帝国终结'],['prehistory',-3100,'有了文字','两河、埃及约前3200—前3100年先后有了文字和国家 · 由希腊、埃及、波斯—阿拉伯三条线接续','trunk']];
 // Sections of one line that run side by side: [line, row keys, side of the passing loop].

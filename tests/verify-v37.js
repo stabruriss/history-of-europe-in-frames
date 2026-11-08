@@ -93,7 +93,7 @@ const SECTIONS=JSON.parse(fs.readFileSync(path.join(__dirname,'v37-spec.json'),'
     assert.equal(t.loops,S.parallel.length,'loops');
     for(const [k,lines] of Object.entries(S.shared))assert.deepEqual(t.nodes[k],[lines.length,1],k+' one node on each of its lines, level');
     assert.ok(!t.ends.some(e=>/并入阿拉伯/.test(e)),'西班牙 runs on past 711');
-    assert.ok(t.futures.some(([b,x])=>b==='spain'&&/比利牛斯/.test(x)),'西班牙 grows its shoot at 1031 '+JSON.stringify(t.futures));
+    assert.ok(t.futures.some(([b,x])=>b==='spain'&&/波旁改革/.test(x)),'西班牙 grows its shoot at 1031 '+JSON.stringify(t.futures));
    }
    // Every new scene draws, fits its view on the desktop, and leaves no horizontal overflow.
    if(!FULL_SHOTS){await page.evaluate(({ids,label})=>{for(const id of ids){const n=HISTORY_ENTRIES.find(e=>e.id===id).scenes.length;for(let i=0;i<n;i++){go(id,{scene:i});const sc=activeScene(ENTRIES[cur]);

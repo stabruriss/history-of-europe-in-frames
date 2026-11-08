@@ -1254,7 +1254,7 @@
    "法兰西",
    "west",
    843,
-   1648,
+   1800,
    5
   ]
  },
@@ -1266,8 +1266,8 @@
   ],
   [
    "france",
-   1648,
-   "投石党与路易十四"
+   1800,
+   "执政府与拿破仑帝国"
   ]
  ],
  "tails": {
@@ -1359,7 +1359,29 @@
    "history-france-henry4-2/0",
    "history-france-marie/0",
    "history-france-richelieu/0",
-   "history-germany-thirty-years-3/0"
+   "history-germany-thirty-years-3/0",
+   "history-france-fronde/0",
+   "history-france-pyrenees/0",
+   "history-france-louis14/0",
+   "history-france-dutch-war/0",
+   "history-france-revocation/0",
+   "history-britain-glorious/0",
+   "history-france-nine-years/0",
+   "history-france-spanish-succession/0",
+   "history-france-law/0",
+   "history-france-louis15/0",
+   "history-france-enlightenment/0",
+   "history-france-seven-years/0",
+   "history-france-parlements/0",
+   "history-france-american-war/0",
+   "history-france-bankruptcy/0",
+   "history-france-bastille/0",
+   "history-france-august/0",
+   "history-france-varennes/0",
+   "history-france-regicide/0",
+   "history-france-terror/0",
+   "history-france-directory/0",
+   "history-france-brumaire/0"
   ]
  },
  "shared": {
@@ -1402,6 +1424,22 @@
   "history-britain-henry8-2/0": [
    "britain",
    "faith"
+  ],
+  "history-france-pyrenees/0": [
+   "france",
+   "spain"
+  ],
+  "history-france-revocation/0": [
+   "france",
+   "faith"
+  ],
+  "history-britain-glorious/0": [
+   "britain",
+   "france"
+  ],
+  "history-france-spanish-succession/0": [
+   "france",
+   "spain"
   ]
  },
  "fixes": [
