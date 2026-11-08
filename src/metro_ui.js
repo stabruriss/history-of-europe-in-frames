@@ -121,7 +121,9 @@ function buildDeclutter(){
  const flagEls=$$('.line-flag');
  NET.flags.forEach((f,i)=>items.push({el:flagEls[i],x:f.tipX,y:f.tipY,w:f.w+4,h:f.h+2,anchor:f.end==='start'?'tipStart':'tipEnd',levels:['1','2'],scale:flagSize,rank:f.end==='start'?1:2}));
  const biggest=[...pointByKey.values()].filter(n=>n.s.lines.length>2).sort((a,b)=>b.s.lines.length-a.s.lines.length);
- for(const el of $$('.hub-name')){const n=biggest.find(p=>p.s.title===el.textContent);items.push({el,x:n.x,y:n.y0,w:n.s.title.length*12+8,h:17,anchor:'middle',levels:['1'],scale:constant,rank:n.s.lines.length>=4?0:3})}
+ // A hub where a line starts gives way to that line's signpost (城市与早期王权, the first station of 希腊, 埃及 and 波斯—阿拉伯).
+ const starts=new Set(lines.map(l=>lineStops.get(l.id)[0]?.key));
+ for(const el of $$('.hub-name')){const n=biggest.find(p=>p.s.title===el.textContent);items.push({el,x:n.x,y:n.y0,w:n.s.title.length*12+8,h:17,anchor:'middle',levels:['1'],scale:constant,rank:n.s.lines.length>=4&&!starts.has(n.s.key)?0:3})}
  for(const g of $$('.metro-node.transfer')){const n=pointByKey.get(g.dataset.key),el=g.querySelector('.node-name');items.push({el,x:n.label.x,y:n.label.y,w:n.s.title.length*12.5+4,h:15,anchor:n.label.anchor==='start'?'start':'middle',levels:['2'],scale:world,rank:n.s.lines.length>2?0:3})}
  for(const el of $$('.period-annotation'))items.push({el,x:+el.getAttribute('x'),y:+el.getAttribute('y'),w:el.textContent.length*10.5+6,h:13,anchor:'middle',levels:['2'],scale:world,rank:4});
  declutterItems=items.sort((a,b)=>a.rank-b.rank);

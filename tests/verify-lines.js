@@ -36,7 +36,7 @@ const PHRASES=[["history-egypt-roman/0", "托勒密只是亚历山大之后的�
    assert.deepEqual(report.egypt,EGYPT);assert.deepEqual(report.persia,PERSIA);
    assert.ok(report.paras.every(p=>p.chars<=230),'Concise: '+JSON.stringify(report.paras.filter(p=>p.chars>230)));
    assert.match(report.strong,/临时统治者/,'老无’s reading of Egypt in bold');assert.match(report.strong,/东方/,'老无’s reading of the East in bold');
-   assert.deepEqual(report.lines,[['埃及',1,'prehistory',-3100,642],['波斯—阿拉伯',0,'prehistory',-3200,1501]]);assert.equal(report.old,false);
+   assert.deepEqual(report.lines,[['埃及',1,'prehistory',-4000,642],['波斯—阿拉伯',0,'prehistory',-4000,1501]]);assert.equal(report.old,false);
    assert.deepEqual(report.rows,{ptolemaic:'egypt',eastern:'persia'});
    // Each line leaves 史前 at the early states, then runs through its own dynasties; the Hellenistic sections sit in the middle.
    assert.deepEqual(report.egyptLine.slice(0,3),['history-migration','history-farming','history-farming']);

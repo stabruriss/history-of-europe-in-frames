@@ -103,5 +103,5 @@ regions['cBurgundy1476'] = U(NETHERLANDS, FRANCHE_COMTE, G('mBurgundyDuchy900'),
 for key, region in regions.items():
     assert not region.is_empty, key
     geo[key] = mapping(region.simplify(0.02, preserve_topology=True))
-Path('history_geo.json').write_text(json.dumps(geo))
+Path('history_geo.json').write_text(json.dumps(geo, separators=(',', ':')))
 print('regions', len(regions))

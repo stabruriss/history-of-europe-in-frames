@@ -33,14 +33,14 @@ window.NETWORK_DESIGN = (() => {
   const CHINA = 620;
 
   const routes = {
-    prehistory: [[-68000, y(ROME)], [-1900, y(ROME), null, -14]],
-    trunk: [[-1900, y(ROME), null, -14], [-1000, y(ROME), null, -34], [-800, y(BRITAIN), 'e'], [-55, y(BRITAIN), null, -26], [-30, y(ROME), 'e']],
+    prehistory: [[-68000, y(ROME)], [-4000, y(ROME)]],
+    trunk: [[-4000, y(ROME)], [-1000, y(ROME), null, -34], [-800, y(BRITAIN), 'e'], [-55, y(BRITAIN), null, -26], [-30, y(ROME), 'e']],
     rome: [[-1000, y(ROME), null, -34], [476, y(ROME), null, -14]],
     west: [[476, y(ROME), null, -14], [830, y(ROME)]],
     italy: [[830, y(ROME)], [1454, y(ROME)]],
-    china: [[-7000, y(CHINA)], [589, y(CHINA)]],
-    persia: [[-3200, y(ROME), null, -7], [-3200, y(PERSIA)], [1454, y(PERSIA)]],
-    egypt: [[-3100, y(ROME), null, -100], [-3100, y(EASTEU)], [632, y(EASTEU)]],
+    china: [[-68000, y(CHINA)], [589, y(CHINA)]],
+    persia: [[-4000, y(PERSIA)], [1454, y(PERSIA)]],
+    egypt: [[-4000, y(EASTEU)], [632, y(EASTEU)]],
     faith: [[-1400, y(ROME), null, -34], [-1400, y(GERMANY, 1)], [1450, y(GERMANY, 1)]],
     eeurope: [[-700, y(BRITAIN), null, -34], [-700, y(TOP)], [602, y(TOP)], [860, y(EASTEU)], [1455, y(EASTEU)]],
     britain: [[-55, y(BRITAIN), null, -26], [1689, y(BRITAIN)]],
@@ -56,8 +56,8 @@ window.NETWORK_DESIGN = (() => {
 
   // Room around branch points, and where a name needs to sit between dashed links.
   const gaps = [
-    [-4000, -3200, 48], [-4000, -3100, 128],
-    [-1900, -1400, 62], [-1100, -1000, 66], [-1900, -1000, 300],
+    [-10000, -4000, 260], [-4000, -3200, 48], [-4000, -3100, 128],
+    [-1900, -1400, 62], [-1100, -1000, 66],
     [-730, -700, 62], [-200, -55, 60], [-44, -30, 40], [-30, -27, 20],
     [379, 395, 62], [455, 476, 30], [480, 481, 62],
     [814, 830, 100],
