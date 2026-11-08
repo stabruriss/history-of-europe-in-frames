@@ -82,8 +82,8 @@ const chars=s=>s.replace(/<[^>]+>/g,'').replace(/（[A-Za-z][^）]*）/g,'').rep
      urls:e.sources.map(s=>s[1]||s.url),html:e.html,paras:e.scenes.map((_,i)=>para(e,i))}];})),
    };
   },Object.keys(SECTIONS));
-  assert.deepEqual(r.line,{name:'不列颠',parent:'trunk',from:-55,to:1694});
-  assert.deepEqual(r.future,['britain',1694,'英苏合并与日不落帝国']);
+  assert.deepEqual(r.line,{name:'不列颠',parent:'trunk',from:-55,to:1928});
+  assert.deepEqual(r.future,['britain',1928,'大萧条、二战与福利国家']);
   assert.deepEqual(r.report.unresolvedLabels,[]);
   assert.deepEqual(r.report.linkThroughStations,[]);
   assert.deepEqual(r.sharedH8,['britain','faith']);

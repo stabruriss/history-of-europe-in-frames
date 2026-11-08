@@ -1247,7 +1247,7 @@
    "不列颠",
    "trunk",
    -55,
-   1694,
+   1928,
    6
   ],
   "france": [
@@ -1261,8 +1261,8 @@
  "futures": [
   [
    "britain",
-   1694,
-   "英苏合并与日不落帝国"
+   1928,
+   "大萧条、二战与福利国家"
   ],
   [
    "france",
@@ -1319,7 +1319,22 @@
    "history-britain-cromwell/0",
    "history-britain-charles2/0",
    "history-britain-james2/0",
-   "history-britain-glorious/0"
+   "history-britain-glorious/0",
+   "history-france-spanish-succession/0",
+   "history-britain-union/0",
+   "history-britain-walpole/0",
+   "history-france-seven-years/0",
+   "history-britain-america/0",
+   "history-britain-industry-1/0",
+   "history-britain-industry-2/0",
+   "history-britain-napoleon/0",
+   "history-britain-reform-1832/0",
+   "history-britain-chartism/0",
+   "history-britain-victoria/0",
+   "history-britain-reform-1867/0",
+   "history-britain-lords/0",
+   "history-britain-suffrage-1918/0",
+   "history-britain-suffrage-1928/0"
   ],
   "france": [
    "history-france-west-francia/0",
@@ -1439,7 +1454,12 @@
   ],
   "history-france-spanish-succession/0": [
    "france",
-   "spain"
+   "spain",
+   "britain"
+  ],
+  "history-france-seven-years/0": [
+   "france",
+   "britain"
   ]
  },
  "fixes": [

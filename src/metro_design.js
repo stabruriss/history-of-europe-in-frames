@@ -43,7 +43,7 @@ window.NETWORK_DESIGN = (() => {
     egypt: [[-4000, y(EASTEU)], [632, y(EASTEU)]],
     faith: [[-1400, y(ROME), null, -34], [-1400, y(GERMANY, 1)], [1450, y(GERMANY, 1)]],
     eeurope: [[-700, y(BRITAIN), null, -34], [-700, y(TOP)], [602, y(TOP)], [860, y(EASTEU)], [1455, y(EASTEU)]],
-    britain: [[-55, y(BRITAIN), null, -26], [1689, y(BRITAIN)]],
+    britain: [[-55, y(BRITAIN), null, -26], [1924, y(BRITAIN)]],
     east: [[395, y(ROME), null, -34], [395, y(EAST0)], [518, y(EAST0)], [602, y(PERSIA, 1)], [1450, y(PERSIA, 1)]],
     spain: [[481, y(ROME), null, -34], [481, y(SPAIN)], [1470, y(SPAIN)]],
     france: [[830, y(ROME)], [843, y(FRANCE), 'e'], [1137, y(FRANCE)], [1154, y(BRITAIN, 1)], [1461, y(BRITAIN, 1)], [1484, y(FRANCE)], [1648, y(FRANCE)]],
@@ -56,7 +56,7 @@ window.NETWORK_DESIGN = (() => {
 
   // Room around branch points, and where a name needs to sit between dashed links.
   const gaps = [
-    [-10000, -4000, 260], [-4000, -3200, 48], [-4000, -3100, 128],
+    [-10000, -4000, 300], [-4000, -3200, 48], [-4000, -3100, 128],
     [-1900, -1400, 62], [-1100, -1000, 66],
     [-730, -700, 62], [-200, -55, 60], [-44, -30, 40], [-30, -27, 20],
     [379, 395, 62], [455, 476, 30], [480, 481, 62],

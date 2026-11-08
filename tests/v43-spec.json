@@ -2638,7 +2638,12 @@
   ],
   "history-france-spanish-succession/0": [
    "france",
-   "spain"
+   "spain",
+   "britain"
+  ],
+  "history-france-seven-years/0": [
+   "france",
+   "britain"
   ]
  },
  "fixes": [

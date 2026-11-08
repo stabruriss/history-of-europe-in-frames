@@ -2344,6 +2344,95 @@ Object.assign(HS,{
   fbr_bourbon:['波旁宫','Palais Bourbon',48.8619,2.3185,'塞纳河左岸的宫殿；1798年起五百人院在此开会，1800年起是立法院。'],
   fbr_luxembourg:['卢森堡宫','Luxembourg Palace',48.8482,2.3372,'左岸的宫殿；督政府的官邸，1800年起是护法元老院的会址。'],
   fbr_palaisroyal:['王宫','Palais-Royal',48.8637,2.3371,'卢浮宫北面的宫苑，当时叫平等宫；1800年起保民院在此开会。'],
+  bun_blenheim:['布伦海姆','Blenheim (Blindheim)',48.643,10.601,'巴伐利亚多瑙河畔；1704年8月英军主帅马尔伯勒在此击败法军。'],
+  bun_darien:['达里恩湾','Gulf of Darien',8.2,-77.033,'巴拿马地峡东端海湾；1698至1700年苏格兰殖民船队在此覆没。'],
+  bun_berwick:['特威德河畔贝里克','Berwick-upon-Tweed',55.77,-2.005,'英苏边境重镇；1705年《外国人法》威胁在此封锁苏格兰牛煤南下。'],
+  bun_kensington:['肯辛顿宫','Kensington Palace',51.505,-0.188,'伦敦西郊王宫；1714年8月1日安妮女王在此无嗣病逝。'],
+  bun_st_germain:['圣日耳曼昂莱','Saint-Germain-en-Laye',48.898,2.094,'巴黎西郊王宫；路易十四安置流亡斯图亚特王室的驻地。'],
+  bun_braemar:['布雷马','Braemar',57.006,-3.398,'苏格兰阿伯丁郡高地小镇；马尔伯爵在此召集高地氏族举兵。'],
+  bun_sheriffmuir:['谢里夫缪尔','Sheriffmuir',56.195,-3.882,'苏格兰中部荒原；1715年11月政府军在此阻截詹姆士党南下。'],
+  bun_preston:['普雷斯顿','Preston',53.763,-2.703,'兰开夏郡重镇；1715年11月英格兰境内的詹姆士党军在此投降。'],
+  brs_downing:['唐宁街10号','10 Downing Street',51.5034,-0.1276,'1735年起是第一财政大臣（首相）的官邸。'],
+  brs_oldsarum:['老萨勒姆','Old Sarum',51.0936,-1.8048,'索尔兹伯里北面的荒丘，1832年以前选两名议员。'],
+  bwa_exchange:['交换巷','Exchange Alley, London',51.513,-0.087,'伦敦金融城咖啡馆街巷；1720年南海股票在此炒至千镑。'],
+  bwa_houghton:['霍顿府','Houghton Hall, Norfolk',52.826,0.656,'沃波尔在诺福克郡老家兴建的庄园，耗资逾十万镑。'],
+  bwa_havana:['哈瓦那','Havana',23.135,-82.359,'古巴首府；1731年英国商船船长詹金斯在此海域被西军割耳。'],
+  bwa_portobelo:['波托韦洛','Portobelo',9.555,-79.654,'巴拿马加勒比海港；1739年11月英军将领弗农率六舰攻占此港。'],
+  bwa_cartagena:['卡塔赫纳','Cartagena de Indias',10.423,-75.548,'西属南美重镇；1741年英军围攻此城因黄热病惨败。'],
+  bwa_derby:['德比','Derby',52.922,-1.475,'英格兰中部城市；1745年12月查理王子率高地军南下至此折返。'],
+  bwa_culloden:['卡洛登荒原','Culloden Moor',57.478,-4.093,'苏格兰因弗内斯近郊；1746年4月16日英军在此轰平高地氏族军。'],
+  brs_calcutta:['加尔各答','Calcutta (Kolkata)',22.573,88.364,'东印度公司孟加拉的驻地，1772—1911年是英属印度首府。'],
+  brs_canton:['广州','Canton (Guangzhou)',23.129,113.264,'1757—1842年清朝唯一准许西洋商船贸易的口岸。'],
+  bna_exeter:['埃克塞特','Exeter',50.718,-3.534,'德文郡首府；1763年西部果农在此抗议苹果酒税。'],
+  bna_philadelphia:['费城','Philadelphia',39.953,-75.165,'宾夕法尼亚首府；1774—1776年北美大陆会议所在地。'],
+  bna_saratoga:['萨拉托加','Saratoga',43.0,-73.628,'纽约州哈德逊河谷；1777年10月英军将领伯戈因在此投降。'],
+  bna_yorktown:['约克敦','Yorktown',37.239,-76.51,'弗吉尼亚海口；1781年10月英军主力在此向美法联军投降。'],
+  bna_allahabad:['阿拉哈巴德','Allahabad',25.435,81.846,'恒河流域重镇；1765年莫卧儿皇帝在此授东印度公司征税权。'],
+  bna_murshidabad:['穆尔希达巴德','Murshidabad',24.175,88.28,'孟加拉旧都；东印度公司在此接管金库并强征田赋。'],
+  bna_chengde:['承德避暑山庄','Chengde Mountain Resort',40.986,117.939,'清廷塞外行宫；1793年乾隆帝在此接见马戛尔尼使团。'],
+  brs_newcastle:['纽卡斯尔','Newcastle upon Tyne',54.973,-1.614,'泰恩河口煤港，向伦敦运煤几百年。'],
+  brs_manchester:['曼彻斯特','Manchester',53.479,-2.245,'兰开夏郡棉纺中心；1832年以前没有一名下院议员。'],
+  brs_birmingham:['伯明翰','Birmingham',52.479,-1.903,'米德兰五金与机器之城；1832年以前没有一名下院议员。'],
+  brs_liverpool:['利物浦','Liverpool',53.408,-2.991,'默西河口大港，进口美洲棉花。'],
+  brs_leeds:['利兹','Leeds',53.8,-1.549,'约克郡西区的毛纺中心。'],
+  brs_sheffield:['谢菲尔德','Sheffield',53.381,-1.47,'约克郡南部的刀具与钢铁之城。'],
+  bi1_dudley:['达德利','Dudley, Staffordshire',52.512,-2.081,'黑乡煤矿与铁器重镇；1712年纽科门在此竖起第一台抽水蒸汽机。'],
+  bi1_cromford:['克罗姆福德','Cromford, Derbyshire',53.111,-1.556,'德比郡德文特河谷；1771年阿克莱特在此建立第一座水力棉纺厂。'],
+  bi1_coalbrookdale:['科尔布鲁克代尔','Coalbrookdale, Shropshire',52.639,-2.492,'什罗普郡塞文河谷铁都；1709年老达比在此首次用焦炭炼出生铁。'],
+  bi2_cromford:['克罗姆福德','Cromford, Derbyshire',53.111,-1.556,'德比郡峡谷；阿克莱特水力棉纺厂在此以钟表与罚款管束女工童工。'],
+  bi2_newlanark:['新拉纳克','New Lanark, Lanarkshire',55.664,-3.782,'苏格兰克莱德河谷棉纺村；欧文在此试行缩短工时与童工学校教育。'],
+  bi2_nottingham:['诺丁汉','Nottingham',52.954,-1.158,'东米德兰针织袜业重镇；1811年3月卢德派夜袭砸毁织袜机由此发端。'],
+  bi2_huddersfield:['哈德斯菲尔德','Huddersfield, West Riding of Yorkshire',53.645,-1.785,'约克郡西区毛纺重镇；1812年卢德派夜袭罗福兹毛纺厂遭开枪镇压。'],
+  bi2_dunwich:['邓尼奇','Dunwich, Suffolk',52.276,1.631,'萨福克郡海岸腐败选区；中世纪旧城已沉入北海，1832年前仍选两名议员。'],
+  brs_waterloo:['滑铁卢','Waterloo',50.68,4.412,'布鲁塞尔南郊；1815年6月18日拿破仑最后一战。'],
+  bnp_fishguard:['菲什加德','Fishguard',51.995,-4.978,'威尔士西南海湾；法军登陆引发全英储户挤兑金币。'],
+  bnp_portsmouth:['朴茨茅斯','Portsmouth',50.805,-1.087,'英国皇家海军母港；1805年9月纳尔逊由此登胜利号出征。'],
+  bnp_trafalgar:['特拉法加角','Cape Trafalgar',36.183,-6.033,'西班牙西南海角；1805年10月21日纳尔逊在此歼灭法西舰队。'],
+  bnp_heligoland:['黑尔戈兰岛','Heligoland',54.18,7.885,'北海前哨小岛；1807年英军占领该岛作为对欧走私基地。'],
+  bnp_st_peters:['圣彼得广场','St Peters Field, Manchester',53.477,-2.246,'曼彻斯特市中心广场；1819年8月16日彼得卢惨案发生地。'],
+  bnp_ennis:['恩尼斯','Ennis, Co. Clare',52.844,-8.986,'爱尔兰克莱尔郡首府；1828年天主教徒奥康奈尔在此赢下补选。'],
+  bnp_scotland_yard:['苏格兰场','Great Scotland Yard, London',51.506,-0.125,'伦敦白厅街区；1829年皮尔创立的大都会警察总局驻地。'],
+  b32_nottingham:['诺丁汉','Nottingham',52.949,-1.155,'东米德兰工业重镇；1831年10月市民在此火烧诺丁汉城堡。'],
+  b32_derby:['德比','Derby',52.922,-1.475,'米德兰丝纺与铁路城市；1831年10月爆发围攻监狱的改革骚乱。'],
+  b32_canterbury:['坎特伯雷','Canterbury',51.28,1.08,'肯特郡重镇；1830年夏秋“斯温暴动”最早在肯特农村打砸脱粒机。'],
+  b32_howick:['霍威克庄园','Howick Hall',55.446,-1.601,'诺森伯兰郡格雷家族世袭庄园；首相格雷伯爵长期居此。'],
+  b32_andover:['安多弗','Andover',51.211,-1.482,'汉普郡集镇；1834年《新济贫法》后当地济贫院爆出饥民啃腐骨丑闻。'],
+  brs_hydepark:['海德公园','Hyde Park',51.5073,-0.1657,'伦敦西区的王家公园。'],
+  brs_cork:['科克','Cork',51.897,-8.47,'爱尔兰南部港口城市。'],
+  bch_newport:['纽波特','Newport',51.588,-2.998,'南威尔士运煤河港；1839年11月4日四千名宪章派矿工在此武装起义。'],
+  bch_kennington:['肯宁顿公地','Kennington Common',51.483,-0.109,'泰晤士河南岸绿地；1848年4月10日宪章派在此举行第三次大请愿集会。'],
+  bch_rochdale:['罗奇代尔','Rochdale',53.616,-2.155,'兰开夏郡棉纺小城；反谷物法演说家布莱特的家乡与1844年合作社发源地。'],
+  bch_skibbereen:['斯基伯林','Skibbereen',51.551,-9.263,'爱尔兰西南科克郡重灾镇；1845—1847年马铃薯大饥荒中饿殍遍野。'],
+  brs_hongkong:['香港','Hong Kong',22.285,114.158,'1842年《南京条约》割让给英国。'],
+  bvi_kensington:['肯辛顿宫','Kensington Palace',51.505,-0.188,'伦敦西郊王宫；1819年维多利亚生于此，1837年在此获知即位。'],
+  bvi_coburg:['科堡','Coburg',50.258,10.964,'德意志萨克森-科堡-哥达公国首府，阿尔伯特亲王故乡。'],
+  bvi_athens:['比雷埃夫斯','Piraeus (Athens)',37.942,23.646,'雅典外港；1850年帕麦斯顿派皇家海军封锁此港逼希腊赔款。'],
+  bvi_sevastopol:['塞瓦斯托波尔','Sevastopol',44.605,33.523,'俄国黑海舰队母港；1854—1855年英法联军围攻一年攻克。'],
+  bvi_balaclava:['巴拉克拉瓦','Balaclava',44.5,33.6,'克里米亚南岸港湾；1854年10月英军轻骑兵旅在此冲锋惨败。'],
+  bvi_scutari:['斯库台','Scutari (Üsküdar)',41.008,29.016,'伊斯坦布尔亚洲岸军营医院；南丁格尔在此整顿英军伤兵卫生。'],
+  bvi_meerut:['密拉特','Meerut',28.98,77.71,'德里东北驻军重镇；1857年5月10日印度土兵在此拒咬纸弹起义。'],
+  bvi_lucknow:['勒克瑙','Lucknow',26.85,80.95,'阿瓦德首府；1856年被东印度公司吞并，1857年爆发长期围城战。'],
+  bvi_kanpur:['坎普尔','Cawnpore (Kanpur)',26.45,80.332,'恒河上游要冲；1857年印度起义军与英军在此发生惨烈流血。'],
+  bvi_suez:['苏伊士运河','Suez Canal',30.585,32.265,'连接地中海与红海的人工水道；1869年开通，1875年英国购入股份。'],
+  b67_pontefract:['庞蒂弗拉克特','Pontefract',53.691,-1.312,'约克郡西区选区；1872年8月15日在此举行英国首次秘密投票补选。'],
+  b67_durham:['达勒姆煤田','Durham Coalfield',54.776,-1.576,'英格兰东北煤矿区；1884年法案使大批农村矿工户主获得选票。'],
+  b67_norfolk:['诺福克郡','Norfolk',52.63,1.297,'东盎格利亚农业大郡；1884年农业雇工户主首次拿到选票。'],
+  brs_belfast:['贝尔法斯特','Belfast',54.597,-5.93,'阿尔斯特新教徒聚居的造船与亚麻城市。'],
+  b11_avondale:['阿冯代尔庄园','Avondale House',52.909,-6.221,'爱尔兰威克洛郡林地庄园；帕内尔家族祖宅与出生地。'],
+  b11_farringdon:['法灵顿街纪念堂','Memorial Hall, Farringdon Street',51.516,-0.104,'伦敦城西侧会堂；1900年2月工会在此组建劳工代表委员会。'],
+  b11_taff_vale:['塔夫谷铁路','Taff Vale Railway, Cardiff',51.601,-3.321,'南威尔士运煤干线；1900年8月铁路工人在此举行罢工。'],
+  b11_limehouse:['莱姆豪斯','Limehouse, East London',51.512,-0.039,'伦敦东区码头街区；1909年7月劳合·乔治在此发表预算演说。'],
+  b11_larne:['拉恩港','Larne',54.852,-5.814,'北爱尔兰安特里姆郡海港；1914年4月志愿军在此秘密卸下步枪。'],
+  b11_curragh:['库拉大营','Curragh Camp',53.148,-6.834,'都柏林西南基尔代尔郡军营；驻爱尔兰英军主力驻扎地。'],
+  b18_nelson_st:['曼彻斯特纳尔逊街62号','62 Nelson Street, Manchester',53.468,-2.232,'潘克赫斯特故居；1903年10月妇女社会政治同盟在此创立。'],
+  b18_bond_st:['伦敦邦德街','Bond Street, London',51.512,-0.144,'伦敦西区名品商业街；1912年3月激进派在此集中砸窗示威。'],
+  b18_holloway:['霍洛威监狱','Holloway Prison, London',51.552,-0.125,'伦敦北郊女子监狱；大批参政派女囚曾在此绝食受罚。'],
+  b18_epsom:['艾普森赛马场','Epsom Downs Racecourse',51.313,-0.242,'萨里郡皇家德比马赛场地；1913年6月戴维森在此冲入赛道。'],
+  b18_somme:['索姆河战场','River Somme',50.008,2.695,'法国北部皮卡第河谷；1916年夏英法联军在此与德军鏖战。'],
+  b18_woolwich:['伍利奇皇家兵工厂','Royal Arsenal, Woolwich',51.492,0.071,'伦敦东南泰晤士河南岸军火基地；一战期间雇佣数万女工。'],
+  b18_chilwell:['奇尔韦尔国家炮弹填充厂','National Shell Filling Factory, Chilwell',52.912,-1.231,'诺丁汉郡大型军火填充厂；一战期间灌装过半英军高爆炮弹。'],
+  b28_carlton:['卡尔顿俱乐部','Carlton Club, London',51.506,-0.137,'伦敦圣詹姆士街的保守党俱乐部；1922年10月保守党议员在此投票退出劳合·乔治联合政府。'],
+  b28_bealna:['比尔纳布拉','Béal na Bláth, County Cork',51.814,-8.856,'爱尔兰科克郡山谷；1922年8月22日爱尔兰临时政府主席迈克尔·柯林斯在此遭反条约派伏击身亡。'],
 });
 function hp(d,key,opt={}){
   const [n,en,la,lo,note]=HS[key];
@@ -14281,6 +14370,582 @@ const HISTORY_ENTRIES=[
     hr(d,[[52.375,9.732],[52.0,4.5],[51.5,-0.1]],HC.route);
    },[['fill',HC.britain,'英格兰'],['fill',HC.celt,'被武力平定的苏格兰与爱尔兰'],['fill',HC.lowlands,'荷兰'],['dline',HC.route,'1701年锁定汉诺威新教支系接班方向'],['dot',HC.war,'博因河、格伦科与汉诺威'],['dot','#2a2018','都柏林与威斯敏斯特']])
  ]},
+{id:'history-britain-union',ch:12,title:'英苏合并与汉诺威入主：用四十万镑买下苏格兰，请来一位德意志国王',short:'英苏合并与汉诺威',en:'The Anglo-Scottish Union and the Hanoverian Succession: Buying Scotland for £400,000 and Importing a German King',period:'1703—1716年',c:HC.britain,
+ scenes:[
+  hs('1701—1704年','前线布伦海姆与后院《安全法》','色块标出英格兰、苏格兰与法兰西；英军远赴多瑙河布伦海姆作战时，爱丁堡议会通过《安全法》。',[[47.5,-6.5],[58.0,12.0]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});ha(d,'mScotland1200',HC.celt,{fillOpacity:.34});ha(d,'fFrance1648',HC.france,{fillOpacity:.28});
+    hp(d,'uk9_edinburgh',{kind:'battle',left:1,note:'1704年8月苏格兰议会在此通过《安全法》，威胁另立国王。'});
+    hp(d,'uk4_westminster',{left:1,note:'1701年英格兰议会单方面敲定汉诺威继承人，激怒苏格兰。'});
+    hp(d,'bgl_hanover',{note:'1701年《王位继承法》指定汉诺威选帝侯夫人索菲亚为王储。'});
+    hp(d,'bun_blenheim',{kind:'battle',note:'1704年8月马尔伯勒在此重创法军，安妮女王急需后方安稳。'});
+   },[['fill',HC.britain,'英格兰'],['fill',HC.celt,'苏格兰'],['fill',HC.france,'法兰西'],['dot',HC.war,'爱丁堡与布伦海姆'],['dot','#2a2018','威斯敏斯特与汉诺威']]),
+  hs('1695—1700年','巴拿马达里恩湾的殖民破产','红线自爱丁堡横渡大西洋至巴拿马达里恩湾：苏格兰两批远征船队在此覆没，全国四分之一流动资本赔光。',[[5.0,-82.0],[58.5,2.0]],d=>{
+    ha(d,'mScotland1200',HC.celt,{fillOpacity:.38});ha(d,'mEngland1066',HC.britain,{fillOpacity:.28});ha(d,'aNewSpain1600',HC.spain,{fillOpacity:.30});
+    hp(d,'uk9_edinburgh',{left:1,note:'1695年苏格兰在此募资40万镑，权贵市民倾囊认购。'});
+    hp(d,'k_london',{note:'威廉三世与英格兰东印度公司下令封锁苏格兰融资与补给。'});
+    hp(d,'bun_darien',{kind:'battle',note:'1698至1700年两千五百名苏格兰殖民者因疫病与西军围攻覆没。'});
+    hr(d,[[55.95,-3.19],[35.0,-40.0],[8.20,-77.03]],HC.war);
+   },[['fill',HC.celt,'苏格兰'],['fill',HC.britain,'英格兰'],['fill',HC.spain,'西属美洲'],['dline',HC.war,'1698—1699年苏格兰达里恩殖民远征航线'],['dot',HC.war,'巴拿马达里恩湾'],['dot','#2a2018','爱丁堡与伦敦']]),
+  hs('1705—1707年','四十万镑补偿金与大不列颠诞生','全岛色块合为1707年大不列颠王国；虚线示意伦敦运往爱丁堡的39.8万镑等价补偿金马车。',[[50.0,-7.5],[58.8,2.5]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.36});
+    hp(d,'uk4_westminster',{left:1,note:'1705年通过《外国人法》，1707年5月1日合并为大不列颠议会。'});
+    hp(d,'bun_berwick',{note:'英苏边境关口：1705年英格兰威胁在此查禁苏格兰牛煤麻布。'});
+    hp(d,'uk9_edinburgh',{kind:'battle',note:'1707年苏格兰议会在此表决解散，收下39.8万镑补偿金。'});
+    hp(d,'bc1_glasgow',{left:1,note:'合并后格拉斯哥向英属美洲敞开航线，迅速崛起为烟草大港。'});
+    hr(d,[[51.50,-0.12],[53.9,-1.1],[55.77,-2.00],[55.95,-3.19]],HC.route);
+   },[['fill',HC.britain,'1707年合并后的大不列颠王国'],['dline',HC.route,'1707年夏伦敦运往爱丁堡的39.8万镑等价补偿金'],['dot',HC.war,'爱丁堡'],['dot','#2a2018','威斯敏斯特、贝里克与格拉斯哥']]),
+  hs('1714年','安妮女王驾崩与汉诺威选帝侯渡海','色块标出大不列颠与德意志汉诺威选侯国；虚线为1714年秋乔治一世自汉诺威赴伦敦登基航线。',[[50.0,-5.5],[56.5,11.5]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.36});ha(d,'brHanover1714',HC.lowlands,{fillOpacity:.40});ha(d,'sDutchRepublic1609',HC.lowlands,{fillOpacity:.22});
+    hp(d,'bun_kensington',{kind:'battle',left:1,note:'1714年8月1日四十九岁的安妮女王在此病逝，未留一男半女。'});
+    hp(d,'bgl_hanover',{kind:'battle',note:'1714年6月索菲亚在海恩豪森宫猝死，其子乔治一世继任英王。'});
+    hp(d,'bgl_greenwich',{note:'1714年9月乔治一世自汉诺威渡海在此登岸，开启汉诺威王朝。'});
+    hr(d,[[52.375,9.732],[52.08,4.30],[51.482,-0.005]],HC.route);
+   },[['fill',HC.britain,'大不列颠王国'],['fill',HC.lowlands,'汉诺威选侯国与荷兰'],['dline',HC.route,'1714年9月乔治一世自汉诺威赴伦敦登基路线'],['dot',HC.war,'肯辛顿宫与汉诺威'],['dot','#2a2018','格林威治']]),
+  hs('1715—1716年','老觊觎者起兵败北与七年议会法','北面苏格兰高地布雷马起兵，在谢里夫缪尔与普雷斯顿被挡住；南面圣日耳曼宫的老觊觎者败逃回法。',[[48.2,-6.5],[58.5,4.0]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.34});ha(d,'brHighlands1745',HC.war,{fillOpacity:.36});ha(d,'fFrance1648',HC.france,{fillOpacity:.25});
+    hp(d,'bun_braemar',{kind:'battle',left:1,note:'马尔伯爵在此高地小镇召集氏族首领，竖起复辟战旗。'});
+    hp(d,'bun_sheriffmuir',{kind:'battle',left:1,note:'1715年11月13日政府军在此激战，挡住詹姆士党军南下。'});
+    hp(d,'bun_preston',{kind:'battle',left:1,note:'同日英格兰境内的詹姆士党军在此被围投降，叛乱瓦解。'});
+    hp(d,'bun_st_germain',{note:'老觊觎者自法国迟迟赶赴苏格兰，1716年2月败逃回法。'});
+    hp(d,'uk4_westminster',{note:'1716年辉格党通过《七年议会法》，把托利党长期挡在门外。'});
+   },[['fill',HC.britain,'大不列颠王国'],['fill',HC.war,'1715年苏格兰高地起兵区'],['fill',HC.france,'法兰西'],['dot',HC.war,'布雷马、谢里夫缪尔与普雷斯顿'],['dot','#2a2018','威斯敏斯特与圣日耳曼昂莱']]),
+  hs('1714—1721年','汉诺威老家与威斯敏斯特钱袋','色块标出共戴一王的大不列颠与汉诺威；乔治一世常回汉诺威，伦敦预算与防务全靠下院辉格党魁打理。',[[50.2,-4.5],[55.8,11.5]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.36});ha(d,'brHanover1714',HC.lowlands,{fillOpacity:.40});
+    hp(d,'uk4_westminster',{kind:'battle',left:1,note:'一切王室费与军费均须下议院审批，催生掌管多数票的首相。'});
+    hp(d,'k_london',{note:'1717年起乔治一世因与王储反目不再出席全体内阁，改听密报。'});
+    hp(d,'bgl_hanover',{kind:'battle',note:'乔治一世多次回汉诺威避暑理政，英国朝政交由辉格党大臣留守。'});
+    hr(d,[[51.50,-0.12],[52.375,9.732]],HC.route);
+   },[['fill',HC.britain,'大不列颠王国'],['fill',HC.lowlands,'汉诺威选侯国'],['dline',HC.route,'乔治一世往返伦敦与汉诺威选侯国路线'],['dot',HC.war,'威斯敏斯特与汉诺威'],['dot','#2a2018','伦敦王宫']])
+ ]},
+{id:'history-britain-walpole',ch:12,title:'南海泡沫与沃波尔：第一位首相靠捂盖子上台，用官职和年金管住议会',short:'南海泡沫与沃波尔',en:'The South Sea Bubble and Robert Walpole: The First Prime Minister Rides In on a Cover-Up and Rules by Patronage',period:'1711—1746年',c:HC.britain,
+ scenes:[
+  hs('1711—1714年','战债换股与西属美洲专卖画饼','虚线自伦敦连向马德里与加勒比海波托韦洛：南海公司接下900万镑战债，换取每年一艘货船与奴隶专卖权。',[[6.0,-82.0],[54.5,4.0]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.36});ha(d,'sHabsburgSpain1556',HC.spain,{fillOpacity:.28});ha(d,'aNewSpain1600',HC.spain,{fillOpacity:.30});
+    hp(d,'k_london',{kind:'battle',left:1,note:'1711年哈利在此成立南海公司，将900万镑短期战债转为股票。'});
+    hp(d,'c5_madrid',{note:'1713年西班牙转让黑奴专卖权，但严限英国每年只派一艘货船。'});
+    hp(d,'bwa_portobelo',{kind:'battle',note:'巴拿马波托韦洛集市：南海公司许可证货船在西属美洲的卸货点。'});
+    hr(d,[[51.50,-0.12],[40.42,-3.70],[9.555,-79.654]],HC.route);
+   },[['fill',HC.britain,'大不列颠王国'],['fill',HC.spain,'西班牙与西属美洲'],['dline',HC.route,'南海公司“黑奴专卖与一年一船”特许航线'],['dot',HC.war,'伦敦与波托韦洛'],['dot','#2a2018','马德里']]),
+  hs('1720年','伦敦交换巷与巴黎的同岁泡沫','色块标出大不列颠与法兰西；1720年伦敦交换巷南海股价冲上千镑后崩盘，同年巴黎密西西比泡沫破裂。',[[48.0,-4.5],[54.0,4.5]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.36});ha(d,'fFrance1648',HC.france,{fillOpacity:.30});
+    hp(d,'bwa_exchange',{kind:'battle',note:'1720年夏南海股价在交换巷咖啡馆炒至1050镑，9月崩盘。'});
+    hp(d,'uk4_westminster',{left:1,note:'上下两院过半议员与王室情妇收受南海干股，通过包揽国债法案。'});
+    hp(d,'w_paris',{kind:'battle',note:'同年约翰·劳的密西西比泡沫破裂，游资抽逃加速南海崩盘。'});
+   },[['fill',HC.britain,'大不列颠王国'],['fill',HC.france,'法兰西王国'],['dot',HC.war,'伦敦交换巷与巴黎'],['dot','#2a2018','威斯敏斯特']]),
+  hs('1721—1735年','唐宁街10号与“遮羞大臣”沃波尔','标出威斯敏斯特、唐宁街10号与诺福克霍顿府：沃波尔在伦敦捂住王室丑闻，在老家兴建豪华庄园。',[[51.0,-1.5],[53.3,1.5]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.36});
+    hp(d,'brs_downing',{kind:'battle',left:1,note:'1735年沃波尔以第一财政大臣身份迁入此宅，定为首相官邸。'});
+    hp(d,'k_london',{note:'沃波尔在此推动重组法案，由两大特许公司分担南海坏账。'});
+    hp(d,'bwa_houghton',{kind:'battle',note:'沃波尔在诺福克老家大兴土木建成霍顿府，遍藏欧洲名画。'});
+   },[['fill',HC.britain,'英格兰东南部'],['dot',HC.war,'唐宁街10号与霍顿府'],['dot','#2a2018','伦敦金融城']]),
+  hs('1721—1739年','老萨勒姆荒丘与威斯敏斯特分肥','西南威尔特郡的老萨勒姆荒丘无人居住却派两名议员；威斯敏斯特与唐宁街用官职年金掌控下院多数。',[[50.5,-3.0],[52.2,0.5]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.36});
+    hp(d,'brs_oldsarum',{kind:'battle',left:1,note:'老萨勒姆腐败选区：七块荒地地契选出两名议员，老皮特由此入院。'});
+    hp(d,'uk4_westminster',{kind:'battle',note:'沃波尔用海关肥缺、教会禄位与秘密年金掌控下议院多数票。'});
+    hp(d,'brs_downing',{left:1,note:'首相通过压低土地税至1—2先令，换取各郡乡绅议员支持。'});
+   },[['fill',HC.britain,'英格兰南部'],['dot',HC.war,'老萨勒姆荒丘与威斯敏斯特'],['dot','#2a2018','唐宁街10号']]),
+  hs('1731—1742年','詹金斯的耳朵与加勒比海远征','红线自伦敦指向加勒比海：哈瓦那割耳事件引爆1739年海战，英军攻占波托韦洛却在卡塔赫纳惨败。',[[7.0,-85.0],[53.5,2.0]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.36});ha(d,'aCaribbean',HC.spain,{fillOpacity:.28});ha(d,'aNewSpain1600',HC.spain,{fillOpacity:.30});
+    hp(d,'uk4_westminster',{left:1,note:'1738年3月下议院在此举行听证会，借断耳案掀起反西主战浪潮。'});
+    hp(d,'bwa_havana',{note:'1731年西班牙海岸警卫队在此海域登船割下走私船长詹金斯左耳。'});
+    hp(d,'bwa_portobelo',{kind:'battle',left:1,note:'1739年11月海军将领弗农率六艘战舰攻占此港，伦敦举城狂欢。'});
+    hp(d,'bwa_cartagena',{kind:'battle',note:'1741年春英军两万余人围攻此城，因黄热病死伤过万而惨败。'});
+    hr(d,[[51.50,-0.12],[23.135,-82.359],[9.555,-79.654],[10.423,-75.548]],HC.war);
+   },[['fill',HC.britain,'大不列颠王国'],['fill',HC.spain,'西属加勒比与南美海岸'],['dline',HC.war,'1739—1741年“詹金斯的耳朵战争”英军远征航线'],['dot',HC.war,'波托韦洛与卡塔赫纳'],['dot','#2a2018','威斯敏斯特与哈瓦那']]),
+  hs('1745—1746年','查理王子南下德比与卡洛登决战','红线为1745年查理王子率高地氏族军自苏格兰下爱丁堡、逼近德比再北撤至卡洛登荒原覆没的路线。',[[50.5,-7.0],[58.5,1.5]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.34});ha(d,'brHighlands1745',HC.war,{fillOpacity:.38});
+    hp(d,'uk9_edinburgh',{left:1,note:'1745年9月查理王子率高地军占领爱丁堡，入驻荷里路德宫。'});
+    hp(d,'bwa_derby',{kind:'battle',left:1,note:'1745年12月高地军推进至距伦敦两百公里的德比，因无人响应北撤。'});
+    hp(d,'k_london',{note:'伦敦有产者与债主坚定拥护汉诺威王朝，调回大陆主力北上平叛。'});
+    hp(d,'bwa_culloden',{kind:'battle',left:1,note:'1746年4月16日坎伯兰公爵用火炮在此轰平高地军，终结复辟梦。'});
+    hr(d,[[57.478,-4.093],[55.95,-3.19],[52.922,-1.475],[57.478,-4.093]],HC.war);
+   },[['fill',HC.britain,'大不列颠王国'],['fill',HC.war,'苏格兰高地氏族起兵区'],['dline',HC.war,'1745—1746年查理王子南下德比与北撤卡洛登路线'],['dot',HC.war,'德比与卡洛登荒原'],['dot','#2a2018','爱丁堡与伦敦']])
+ ]},
+{id:'history-britain-america',ch:12,title:'丢掉北美，换来印度：七年战争的账单转嫁海外',short:'丢掉北美，换来印度',en:'Losing America, Gaining India: Passing the Seven Years’ War Bill Overseas',period:'1760—1793年',c:HC.britain,
+ scenes:[
+  hs('1760—1765年','七年战争账单与跨大西洋转嫁','色块是大不列颠、新夺取的英属加拿大与北美十三州；虚线自伦敦跨大西洋指向波士顿与费城。',[[32.0,-82.0],[58.0,5.0]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.36});ha(d,'brCanada1763',HC.britain,{fillOpacity:.24});ha(d,'brThirteenColonies1775',HC.war,{fillOpacity:.34});
+    hp(d,'k_london',{kind:'battle',note:'1763年英国国债升至1.327亿镑，年利息吃掉财政岁入过半。'});
+    hp(d,'bna_exeter',{left:1,note:'1763年西南各郡果农抗议苹果酒税，迫使政府放弃本土加税。'});
+    hp(d,'amf_quebec',{note:'1763年法属加拿大并入英国，常驻英军需年耗逾三十万镑。'});
+    hp(d,'amh_boston',{kind:'battle',left:1,note:'1765年伦敦向北美开征印花税，波士顿率先掀起抗税风潮。'});
+    hr(d,[[51.5,-0.1],[46.0,-35.0],[42.36,-71.06]],HC.route);
+   },[['fill',HC.britain,'大不列颠与1763年新获英属加拿大'],['fill',HC.war,'被要求分摊防务费的北美十三州'],['dline',HC.route,'1765年伦敦将驻军税单转嫁北美'],['dot',HC.war,'伦敦与波士顿'],['dot','#2a2018','埃克塞特与魁北克']]),
+  hs('1765—1773年','法国威胁消失与波士顿倾茶','北面是已归英国的加拿大，南面是抗税的十三州；航线显示东印度公司免税茶叶运抵波士顿港。',[[34.0,-82.0],[52.0,-55.0]],d=>{
+    ha(d,'brCanada1763',HC.britain,{fillOpacity:.28});ha(d,'brThirteenColonies1775',HC.war,{fillOpacity:.38});
+    hp(d,'amf_quebec',{note:'法军被逐出加拿大后，十三州不再需要仰赖英军抵御北面威胁。'});
+    hp(d,'amh_boston',{kind:'battle',left:1,note:'1773年12月16日波士顿激进派化装登船，将342箱茶叶倒入海湾。'});
+    hp(d,'amf_nybay',{left:1,note:'1765年九殖民地代表在纽约集会，宣告无代表不得征税。'});
+    hp(d,'bna_philadelphia',{left:1,note:'费城商人与律师联合抵制英国印花税票与进口商品。'});
+   },[['fill',HC.britain,'英属加拿大（原法属威胁已除）'],['fill',HC.war,'抗税的北美十三州'],['dot',HC.war,'波士顿'],['dot','#2a2018','魁北克、纽约湾与费城']]),
+  hs('1774—1783年','北美战局与欧洲三强围攻英国','西侧标出北美萨拉托加与约克敦两处降地，东侧是趁机参战围攻英国的法国、西班牙与荷兰。',[[32.0,-82.0],[55.0,10.0]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.36});ha(d,'brThirteenColonies1775',HC.war,{fillOpacity:.38});ha(d,'fFrance1648',HC.france,{fillOpacity:.30});ha(d,'sHabsburgSpain1556',HC.spain,{fillOpacity:.26});ha(d,'sDutchRepublic1609',HC.lowlands,{fillOpacity:.30});
+    hp(d,'uk4_westminster',{note:'乔治三世与诺斯勋爵拒绝退让，1782年战败后诺斯内阁倒台。'});
+    hp(d,'bna_saratoga',{kind:'battle',left:1,note:'1777年10月英军在萨拉托加投降，促成法国正式参战。'});
+    hp(d,'bna_yorktown',{kind:'battle',left:1,note:'1781年10月康沃利斯在约克敦投降，终结北美陆上战事。'});
+    hp(d,'w_paris',{note:'1778年起法、西、荷相继对英开战，1783年签署《巴黎条约》。'});
+   },[['fill',HC.britain,'大不列颠'],['fill',HC.war,'独立建国的北美十三州'],['fill',HC.france,'参战报复的法兰西'],['fill',HC.spain,'参战的西班牙'],['fill',HC.lowlands,'参战的荷兰'],['dot',HC.war,'萨拉托加与约克敦'],['dot','#2a2018','威斯敏斯特与巴黎']]),
+  hs('1776—1793年','小皮特的自由贸易与马戛尔尼访华','西起恢复贸易的美国与英国本土，东至广州与承德，连线展示英国工业品外销与1793年访华航线。',[[18.0,-80.0],[58.0,122.0]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.36});ha(d,'brThirteenColonies1775',HC.lowlands,{fillOpacity:.28});
+    hp(d,'bc1_glasgow',{left:1,note:'亚当·斯密曾任教于此，1776年出版《国富论》力倡自由贸易。'});
+    hp(d,'brs_downing',{kind:'battle',note:'1783年底二十四岁的小皮特入主唐宁街，降茶税消灭走私。'});
+    hp(d,'amf_nybay',{left:1,note:'美国独立后与英国贸易额反超战前，大量进口英国棉布五金。'});
+    hp(d,'brs_canton',{left:1,note:'1784年茶税猛降后，英国自广州进口的合法茶叶激增。'});
+    hp(d,'bna_chengde',{kind:'battle',left:1,note:'1793年乾隆帝在避暑山庄接见马戛尔尼，驳回英国通商请求。'});
+    hr(d,[[51.5,-0.1],[23.13,113.26],[40.99,117.94]],HC.route);
+   },[['fill',HC.britain,'大不列颠'],['fill',HC.lowlands,'与英国贸易反超战前的美国'],['dline',HC.route,'茶叶贸易与1793年马戛尔尼使团访华路线'],['dot',HC.war,'唐宁街10号与承德避暑山庄'],['dot','#2a2018','格拉斯哥、纽约湾与广州']]),
+  hs('1765—1795年','孟加拉田赋提款机与伦敦弹劾案','东侧色块是东印度公司取得征税权的孟加拉三省，西侧威斯敏斯特是伯克弹劾黑斯廷斯的议事厅。',[[18.0,-5.0],[55.0,95.0]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.36});ha(d,'brBengal1765',HC.war,{fillOpacity:.40});
+    hp(d,'bna_allahabad',{kind:'battle',left:1,note:'1765年克莱武在此取得孟加拉、比哈尔与奥里萨三省征税权。'});
+    hp(d,'brs_calcutta',{kind:'battle',note:'黑斯廷斯在此坐镇征税；1770年孟加拉饥荒饿死千万人，田赋反增。'});
+    hp(d,'uk4_westminster',{kind:'battle',note:'1787—1795年伯克在威斯敏斯特大厅弹劾黑斯廷斯贪腐虐民。'});
+    hr(d,[[22.57,88.36],[23.13,113.26]],HC.route);
+   },[['fill',HC.britain,'大不列颠（人均年税负约26先令）'],['fill',HC.war,'1765年获征税权的孟加拉三省'],['dline',HC.route,'用孟加拉田赋白银赴广州采购茶叶'],['dot',HC.war,'阿拉哈巴德、加尔各答与威斯敏斯特'],['dot','#2a2018','穆尔希达巴德']])
+ ]},
+{id:'history-britain-industry-1',ch:12,title:'工业革命（上）：为什么蒸汽机和纺纱机偏偏长在英国（约1700—1830年）',short:'工业革命（上）',en:'The Industrial Revolution I: Why Steam Engines and Spinning Frames Grew in Britain',period:'约1700—1830年',c:HC.britain,
+ scenes:[
+  hs('18世纪初','高工资与廉价煤：欧亚要素价格鸿沟','伦敦工资冠绝欧亚，纽卡斯尔海运煤矿廉价，与巴黎、北京形成鲜明反差。',[[18.0,-8.0],[58.0,122.0]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.35});ha(d,'fFrance1648',HC.france,{fillOpacity:.25});
+    hp(d,'k_london',{left:1,note:'18世纪初建筑工日薪折银逾10克，为北京、广州的五至六倍。'});
+    hp(d,'brs_newcastle',{note:'泰恩河口煤矿紧挨海运水道，矿口煤价不到1克银/百万BTU。'});
+    hp(d,'w_paris',{note:'巴黎人工比伦敦便宜近半，木柴与煤炭价格却贵出数倍。'});
+    hp(d,'fje_beijing',{note:'北京与广州劳工日薪仅1至2克白银，燃料昂贵而人工极贱。'});
+   },[['fill',HC.britain,'高工资与廉价煤并存的大不列颠'],['fill',HC.france,'人工较低、燃料较贵的法国'],['dot','#2a2018','伦敦、纽卡斯尔、巴黎与北京']]),
+  hs('1709—1733年','达比焦炭炼铁与纽科门煤矿抽水机','达德利煤矿装起第一台纽科门抽水蒸汽机，科尔布鲁克代尔首次用焦炭炼铁。',[[50.5,-4.5],[55.5,1.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.28});ha(d,'brMidlandsIron',HC.war,{fillOpacity:.36});ha(d,'brTyneCoal',HC.celt,{fillOpacity:.36});
+    hp(d,'bi1_dudley',{kind:'battle',note:'1712年纽科门在此竖起第一台大气蒸汽机，烧免费碎煤抽矿井水。'});
+    hp(d,'bi1_coalbrookdale',{left:1,note:'1709年老达比在此用焦炭替代木炭炼出生铁，打破森林枯竭限制。'});
+    hp(d,'brs_newcastle',{note:'泰恩河煤田密集安装纽科门机抽水，到1733年全英已运转约百台。'});
+   },[['fill',HC.war,'米德兰煤铁核心区'],['fill',HC.celt,'泰恩河煤田'],['dot',HC.war,'达德利'],['dot','#2a2018','科尔布鲁克代尔与纽卡斯尔']]),
+  hs('1764—1785年','抗衡印度棉布：珍妮机与水力纺纱厂','为抗衡加尔各答运来的廉价印度棉布，兰开夏与德比郡率先实现纺纱机械化。',[[18.0,-5.0],[56.0,92.0]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.34});ha(d,'brBengal1765',HC.celt,{fillOpacity:.34});
+    hp(d,'brs_calcutta',{note:'孟加拉女工日薪仅为英国女工六分之一，手纺棉布质优价廉。'});
+    hp(d,'bi1_cromford',{kind:'battle',note:'1771年阿克莱特在此建起第一座水力棉纺厂，开创现代工厂制。'});
+    hp(d,'brs_manchester',{left:1,note:'兰开夏郡普及珍妮纺纱机与水力纱厂，投资回报率高达40%。'});
+   },[['fill',HC.britain,'推进纺纱机械化的大不列颠'],['fill',HC.celt,'输出手工印花棉布的孟加拉'],['dot',HC.war,'克罗姆福德水力纱厂'],['dot','#2a2018','曼彻斯特与加尔各答']]),
+  hs('1769—1830年','瓦特改良蒸汽机与利物浦—曼彻斯特铁路','瓦特在格拉斯哥改良蒸汽机并与伯明翰博尔顿合股，斯蒂芬森修通利曼铁路。',[[51.0,-4.8],[56.5,0.5]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.28});ha(d,'brCottonLancs',HC.war,{fillOpacity:.36});ha(d,'brMidlandsIron',HC.celt,{fillOpacity:.34});
+    hp(d,'bc1_glasgow',{note:'瓦特在格拉斯哥大学修理纽科门机模型时发明分离冷凝器。'});
+    hp(d,'brs_birmingham',{note:'1775年博尔顿与瓦特在索霍工厂合股，按省煤量三分之一收专利费。'});
+    hp(d,'brs_liverpool',{left:1,note:'1830年斯蒂芬森“火箭号”拉通利物浦至曼彻斯特铁路。'});
+    hp(d,'brs_manchester',{note:'瓦特旋转式蒸汽机让棉纺厂摆脱山谷溪流，集中落户曼彻斯特。'});
+   },[['fill',HC.war,'兰开夏棉纺与首条客货运铁路区'],['fill',HC.celt,'伯明翰蒸汽机与五金制造区'],['dot','#2a2018','格拉斯哥、伯明翰、利物浦与曼彻斯特']]),
+  hs('约1830年','经济版图北移：煤田上的北方工业走廊','兰开夏、约克郡、米德兰、泰恩河与南威尔士煤田长成英国新的财富中心。',[[50.5,-4.8],[55.6,1.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.24});ha(d,'mWales',HC.britain,{fillOpacity:.24});
+    ha(d,'brCottonLancs',HC.war,{fillOpacity:.4});ha(d,'brWoolYorks',HC.celt,{fillOpacity:.38});
+    ha(d,'brMidlandsIron',HC.war,{fillOpacity:.38});ha(d,'brTyneCoal',HC.celt,{fillOpacity:.38});ha(d,'brSouthWalesCoal',HC.celt,{fillOpacity:.38});
+    hp(d,'brs_manchester',{left:1,note:'“棉都”曼彻斯特人口逼近十八万，成为全球机制棉布中心。'});
+    hp(d,'brs_birmingham',{left:1,note:'米德兰五金与蒸汽机之都，人口约十四万。'});
+    hp(d,'brs_leeds',{note:'约克郡西区毛纺织工业中心。'});
+    hp(d,'brs_sheffield',{note:'约克郡南部坩埚钢与刀具中心。'});
+    hp(d,'k_london',{note:'南方政治与金融中心；北方新工业带在议会中却缺乏席位。'});
+   },[['fill',HC.war,'兰开夏棉纺区与米德兰钢铁五金区'],['fill',HC.celt,'约克郡毛纺区、泰恩河与南威尔士煤田'],['dot','#2a2018','北方工业大城与伦敦']])
+ ]},
+{id:'history-britain-industry-2',ch:12,title:'工业革命（下）：工厂钟、恩格斯停顿与砸机器（约1760—1832年）',short:'工业革命（下）',en:'The Industrial Revolution II: Factory Clocks, Engels’ Pause and the Luddites',period:'约1760—1832年',c:HC.britain,
+ scenes:[
+  hs('1760—1830年','四千部《议会圈地法》与劳力进城','威斯敏斯特议会立法分完中部敞田公地，失地农民涌向曼彻斯特等北方车间。',[[50.6,-4.2],[54.6,1.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.28});ha(d,'brCottonLancs',HC.war,{fillOpacity:.36});
+    hp(d,'uk4_westminster',{left:1,note:'大地主控制的上下两院派专员丈量田亩，以立法完成全国圈地。'});
+    hp(d,'brs_manchester',{kind:'battle',note:'失去公地放牧拾柴权的农村劳力成批涌入兰开夏棉纺车间。'});
+   },[['fill',HC.war,'吸纳失地劳力的兰开夏工业区'],['fill',HC.britain,'推行议会圈地的英格兰'],['dot',HC.war,'曼彻斯特'],['dot','#2a2018','威斯敏斯特议会']]),
+  hs('1771—1833年','工厂钟表、孤儿童工与新拉纳克试验','克罗姆福德与曼彻斯特纱厂实行严苛厂规与童工制，欧文在新拉纳克试行改良。',[[51.0,-4.8],[56.5,0.5]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.28});ha(d,'brCottonLancs',HC.war,{fillOpacity:.36});
+    hp(d,'bi2_cromford',{note:'阿克莱特水力纱厂每天五点半敲钟锁门，以重罚训立车间纪律。'});
+    hp(d,'brs_manchester',{left:1,note:'棉纺厂过半劳力为女工与每天钻纱锭扫花十四小时的济贫院孤儿。'});
+    hp(d,'bi2_newlanark',{note:'欧文在此停用十岁以下童工、将工时缩至十小时半并办幼儿学校。'});
+   },[['fill',HC.war,'童工与女工最集中的棉纺核心区'],['fill',HC.britain,'大不列颠其余地区'],['dot','#2a2018','克罗姆福德、曼彻斯特与新拉纳克']]),
+  hs('1780—1845年','“恩格斯停顿”与曼彻斯特贫民窟','英国工业总产出翻番而工人工资停滞，恩格斯在曼彻斯特调查工人阶级状况。',[[51.0,-4.2],[54.8,0.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.28});ha(d,'brCottonLancs',HC.war,{fillOpacity:.4});
+    hp(d,'brs_manchester',{kind:'battle',left:1,note:'恩格斯在此算账并夜访贫民窟，写成《英国工人阶级状况》。'});
+    hp(d,'k_london',{note:'资本利润与地主地租拿走增长大头，劳动报酬占比从60%跌至45%。'});
+   },[['fill',HC.war,'恩格斯实地调查的曼彻斯特工业区'],['fill',HC.britain,'英格兰其余地区'],['dot',HC.war,'曼彻斯特'],['dot','#2a2018','伦敦']]),
+  hs('1811—1816年','卢德派夜袭砸机与一万两千英军北调','诺丁汉、哈德斯菲尔德与曼彻斯特爆发卢德派砸机抗争，政府调大军北上镇压。',[[51.0,-3.8],[54.6,0.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.26});ha(d,'brCottonLancs',HC.war,{fillOpacity:.36});ha(d,'brWoolYorks',HC.war,{fillOpacity:.36});
+    hp(d,'bi2_nottingham',{kind:'battle',note:'1811年3月针织工以“卢德将军”之名夜袭砸毁压价雇主的织袜机。'});
+    hp(d,'bi2_huddersfield',{kind:'battle',note:'1812年4月约克郡毛纺工夜袭罗福兹厂遭枪击，次年十七人被绞死。'});
+    hp(d,'brs_manchester',{left:1,note:'政府调1.2万正规军驻扎北方，超过威灵顿在半岛打拿破仑的英军。'});
+   },[['fill',HC.war,'卢德派运动最剧烈的北部纺织区'],['fill',HC.britain,'英格兰其余地区'],['dot',HC.war,'诺丁汉、哈德斯菲尔德与曼彻斯特']]),
+  hs('1831年前后','零议员的工业巨城对老萨勒姆荒土坡','北方四座工业大城无一名议员，南方荒丘老萨勒姆与沉海古镇邓尼奇却各占两席。',[[50.4,-3.8],[54.6,2.2]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.26});ha(d,'brCottonLancs',HC.war,{fillOpacity:.38});
+    ha(d,'brWoolYorks',HC.war,{fillOpacity:.38});ha(d,'brMidlandsIron',HC.war,{fillOpacity:.38});
+    hp(d,'brs_manchester',{left:1,note:'人口约18万，下议院议席：0。'});
+    hp(d,'brs_birmingham',{left:1,note:'人口约14万，下议院议席：0。'});
+    hp(d,'brs_leeds',{note:'人口约12万，下议院议席：0。'});
+    hp(d,'brs_sheffield',{left:1,note:'人口约9万，下议院议席：0。'});
+    hp(d,'brs_oldsarum',{kind:'battle',left:1,note:'荒土丘无一栋房屋、7名挂名选民，下议院议席：2。'});
+    hp(d,'bi2_dunwich',{kind:'battle',note:'旧城已沉入北海海底、32名选民，下议院议席：2。'});
+   },[['fill',HC.war,'合计逾五十万人口却无一名议员的北方工业区'],['fill',HC.britain,'包揽腐败选区的南方旧郡'],['dot',HC.war,'老萨勒姆与邓尼奇腐败选区'],['dot','#2a2018','四大无代表工业城']])
+ ]},
+{id:'history-britain-napoleon',ch:12,title:'拿破仑战争与谷物法：用所得税打赢法国，地主却要全国替他们保粮价',short:'拿破仑战争与谷物法',en:'The Napoleonic Wars and the Corn Laws: Beating France with Income Tax, Pricing Bread for Landlords',period:'1789—1829年',c:HC.britain,
+ scenes:[
+  hs('1789—1797年','法国大革命冲击与英格兰银行停兑','色块是大不列颠与爆发大革命的法兰西；西侧威尔士标出1797年法军登陆并引发全英挤兑的菲什加德。',[[47.5,-6.5],[55.5,4.5]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.36});ha(d,'fFrance1648',HC.france,{fillOpacity:.32});
+    hp(d,'w_paris',{kind:'battle',note:'1789年法国大革命爆发，1793年处死路易十六后英法开战。'});
+    hp(d,'bnp_fishguard',{kind:'battle',left:1,note:'一千四百名法军在此登岸，触发全英储户向银行挤兑金币。'});
+    hp(d,'k_london',{kind:'battle',note:'小皮特坐镇唐宁街；1797年2月英格兰银行暂停兑付黄金。'});
+   },[['fill',HC.britain,'大不列颠'],['fill',HC.france,'革命中的法兰西'],['dot',HC.war,'巴黎、菲什加德与伦敦金融城'],['dot','#2a2018','唐宁街10号']]),
+  hs('1798—1805年','所得税筹款与特拉法加锁死海权','蓝线自朴茨茅斯南下至西班牙特拉法加角；虚线显示伦敦用个人所得税向维也纳等反法盟友输送军费。',[[35.0,-10.0],[54.0,18.0]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.36});ha(d,'fFrance1648',HC.france,{fillOpacity:.28});ha(d,'sHabsburgSpain1556',HC.spain,{fillOpacity:.26});ha(d,'sHabsburgAustria1556',HC.lowlands,{fillOpacity:.28});
+    hp(d,'uk4_westminster',{left:1,note:'1799年小皮特在此开征累进个人所得税，最高税率10%。'});
+    hp(d,'bnp_portsmouth',{left:1,note:'1805年9月纳尔逊自朴茨茅斯登胜利号战列舰南下迎敌。'});
+    hp(d,'bnp_trafalgar',{kind:'battle',left:1,note:'1805年10月21日纳尔逊在加的斯外海特拉法加角大破法西舰队。'});
+    hp(d,'c3_vienna',{note:'英国将国债与所得税化作巨额补贴，资助奥、俄组建反法同盟。'});
+    hr(d,[[50.805,-1.087],[43.0,-9.5],[36.183,-6.033]],HC.war);
+    hr(d,[[51.5,-0.1],[48.21,16.37]],HC.route);
+   },[['fill',HC.britain,'大不列颠'],['fill',HC.lowlands,'受英国财政补贴的奥地利'],['fill',HC.france,'法兰西第一帝国'],['fill',HC.spain,'与法国结盟的西班牙'],['dline',HC.war,'1805年纳尔逊南下特拉法加航线'],['dline',HC.route,'英国向大陆反法盟友输送财政补贴'],['dot',HC.war,'特拉法加角'],['dot','#2a2018','威斯敏斯特、朴茨茅斯、加的斯与维也纳']]),
+  hs('1806—1815年','反封锁走私网与滑铁卢决战','地图展示英国经黑尔戈兰岛与里斯本突破大陆封锁的路线，以及1815年6月威灵顿击败拿破仑的滑铁卢。',[[37.5,-10.5],[56.0,15.0]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.36});ha(d,'fFrance1648',HC.france,{fillOpacity:.30});ha(d,'sPortugal',HC.lowlands,{fillOpacity:.30});
+    hp(d,'ge2_brandenburg',{note:'1806年拿破仑在柏林颁布敕令，下令封锁英国对欧贸易。'});
+    hp(d,'bnp_heligoland',{kind:'battle',note:'1807年英军占领黑尔戈兰岛，以此为跳板向德意志走私棉布。'});
+    hp(d,'sc_lisbon',{left:1,note:'威灵顿以里斯本为基地打响半岛战争，掩护英货销往伊比利亚。'});
+    hp(d,'brs_waterloo',{kind:'battle',note:'1815年6月18日威灵顿与普军在此击败拿破仑，终结二十二年大战。'});
+    hp(d,'k_london',{left:1,note:'伦敦金融城承接八亿多镑国债，稳居全球金融中心。'});
+    hr(d,[[51.5,-0.1],[54.18,7.89]],HC.route);
+    hr(d,[[51.5,-0.1],[38.72,-9.14]],HC.route);
+   },[['fill',HC.britain,'大不列颠'],['fill',HC.lowlands,'英国盟友葡萄牙'],['fill',HC.france,'法兰西'],['dline',HC.route,'英国向北海与伊比利亚突破封锁航线'],['dot',HC.war,'黑尔戈兰岛与滑铁卢'],['dot','#2a2018','柏林、里斯本与伦敦']]),
+  hs('1815年','威斯敏斯特强推谷物法与李嘉图算账','聚焦英国本土：南方威斯敏斯特议会立法抬高粮价保地租，北方工业区曼彻斯特与伯明翰承受高成本。',[[50.2,-4.5],[55.2,1.5]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.34});ha(d,'brCottonLancs',HC.war,{fillOpacity:.42});ha(d,'brMidlandsIron',HC.war,{fillOpacity:.42});
+    hp(d,'uk4_westminster',{kind:'battle',note:'1815年3月地主议会在军队护卫下通过《谷物法》，限80先令禁进口。'});
+    hp(d,'k_london',{left:1,note:'李嘉图在此发表论文，证明高粮价红利全被地主通过涨租收走。'});
+    hp(d,'brs_manchester',{left:1,note:'兰开夏棉纺厂主痛恨《谷物法》推高工人工资并阻碍外国买布。'});
+    hp(d,'brs_birmingham',{left:1,note:'米德兰五金厂主因欧洲卖不出粮食换英镑而遭遇出口萎缩。'});
+   },[['fill',HC.britain,'土地贵族控场的郡县选区'],['fill',HC.war,'受损的兰开夏与米德兰工业区'],['dot',HC.war,'威斯敏斯特'],['dot','#2a2018','伦敦、曼彻斯特与伯明翰']]),
+  hs('1815—1819年','曼彻斯特圣彼得广场的彼得卢惨案','放大兰开夏与伦敦：曼彻斯特圣彼得广场六万工人和平请愿遭骑兵砍杀，伦敦随即颁布《六项法案》镇压。',[[51.0,-3.8],[54.5,0.5]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.34});ha(d,'brCottonLancs',HC.war,{fillOpacity:.45});
+    hp(d,'bnp_st_peters',{kind:'battle',note:'1819年8月16日曼彻斯特骑兵冲入六万请愿人群，酿成彼得卢惨案。'});
+    hp(d,'brs_liverpool',{left:1,note:'外国谷物被卡在利物浦海关仓库，国内面包价格居高不下。'});
+    hp(d,'uk4_westminster',{note:'惨案后政府非但不追责，反而通过《六项法案》严禁大型集会。'});
+   },[['fill',HC.britain,'英格兰'],['fill',HC.war,'兰开夏工业抗争中心'],['dot',HC.war,'曼彻斯特圣彼得广场'],['dot','#2a2018','曼彻斯特、利物浦与威斯敏斯特']]),
+  hs('1828—1830年','爱尔兰天主教解放与伦敦苏格兰场警察','西侧爱尔兰克莱尔郡选出天主教议员奥康奈尔，东侧伦敦威斯敏斯特通过解放法并在苏格兰场建现代警察。',[[50.5,-10.5],[55.2,1.0]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.36});ha(d,'mIreland',HC.war,{fillOpacity:.36});
+    hp(d,'bnp_ennis',{kind:'battle',left:1,note:'数万名天主教农夫在此投票，把奥康奈尔送进威斯敏斯特下院。'});
+    hp(d,'uk6_dublin',{left:1,note:'奥康奈尔在此组建天主教协会，靠每人每月一便士会费动员全岛。'});
+    hp(d,'uk4_westminster',{kind:'battle',note:'1829年威灵顿与皮尔通过《天主教解放法》，引发托利党分裂。'});
+    hp(d,'bnp_scotland_yard',{left:1,note:'1829年皮尔创立穿蓝制服、不带枪的伦敦警察，替代军队维稳。'});
+   },[['fill',HC.britain,'大不列颠'],['fill',HC.war,'动员起来的爱尔兰'],['dot',HC.war,'恩尼斯与威斯敏斯特'],['dot','#2a2018','都柏林与伦敦苏格兰场']])
+ ]},
+{id:'history-britain-reform-1832',ch:12,title:'1832年议会改革：旧贵族为什么肯交出腐败选区',short:'1832年议会改革',en:'The Great Reform Act of 1832: Why the Old Aristocracy Surrendered Rotten Boroughs to Split the Rebel Coalition',period:'1830—1834年',c:HC.britain,
+ scenes:[
+  hs('1830年夏—11月','七月革命冲击波与城乡抗争合流','南面巴黎街垒刚赶走法王，英格兰东南农村爆发斯温暴动，中部伯明翰政治同盟集结，伦敦威灵顿内阁倒台。',[[48.3,-4.0],[54.2,3.2]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.32});ha(d,'fFrance1648',HC.france,{fillOpacity:.28});ha(d,'brMidlandsIron',HC.war,{fillOpacity:.35});
+    hp(d,'w_paris',{kind:'battle',note:'1830年7月巴黎三天街垒赶走查理十世，震动海峡对岸。'});
+    hp(d,'b32_canterbury',{kind:'battle',note:'1830年夏秋肯特郡等地雇农夜间烧谷仓、砸毁脱粒机。'});
+    hp(d,'brs_birmingham',{kind:'battle',left:1,note:'银行家阿特伍德在此组建政治同盟，工厂主与工人合流。'});
+    hp(d,'brs_downing',{left:1,note:'11月威灵顿拒不改革被倒阁，辉格党格雷伯爵入主组阁。'});
+    hr(d,[[48.85,2.35],[50.8,0.5],[51.5034,-0.1276]],HC.route);
+   },[['fill',HC.britain,'大不列颠'],['fill',HC.war,'米德兰工业走廊'],['fill',HC.france,'七月革命后的法国'],['dline',HC.route,'1830年巴黎七月革命政治冲击波'],['dot',HC.war,'巴黎、坎特伯雷与伯明翰'],['dot','#2a2018','伦敦唐宁街10号']]),
+  hs('1831年3月','废除腐败选区与议席北移方案','南面老萨勒姆等腐败选区被砍，腾出的议席分给北方兰开夏棉纺区、约克郡毛纺区与米德兰钢铁大城。',[[50.3,-4.2],[55.8,1.5]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.30});ha(d,'brCottonLancs',HC.war,{fillOpacity:.38});ha(d,'brWoolYorks',HC.lowlands,{fillOpacity:.36});ha(d,'brMidlandsIron',HC.spain,{fillOpacity:.36});
+    hp(d,'b32_howick',{note:'首相格雷伯爵的北方庄园；他算准拉拢中产才能保住贵族体制。'});
+    hp(d,'uk4_westminster',{kind:'battle',note:'1831年3月罗素勋爵在下院抛出废56个腐败选区的法案。'});
+    hp(d,'brs_oldsarum',{left:1,note:'荒无人烟的土丘选区被列入第一批废除名单。'});
+    hp(d,'brs_manchester',{kind:'battle',left:1,note:'棉纺之都获配2席，但选票卡在年房租10英镑以上。'});
+    hp(d,'brs_birmingham',{note:'五金与机器大城获配2席，新钱老板得以进门。'});
+    hp(d,'brs_leeds',{note:'约克郡毛纺中心获配2名下院议员席位。'});
+    hr(d,[[51.0936,-1.8048],[52.479,-1.903],[53.479,-2.245]],HC.route);
+   },[['fill',HC.britain,'大不列颠'],['fill',HC.war,'兰开夏棉纺区'],['fill',HC.lowlands,'约克郡毛纺区'],['fill',HC.spain,'米德兰钢铁五金区'],['dline',HC.route,'143个下院议席从南方腐败选区向工业大城转移'],['dot',HC.war,'威斯敏斯特与曼彻斯特'],['dot','#2a2018','霍威克庄园、老萨勒姆、伯明翰与利兹']]),
+  hs('1831年10月','上议院否决与三大城市烈火','威斯敏斯特上议院否决法案后，德比、诺丁汉与布里斯托尔三座重镇接连燃起烧城堡、砸监狱的大火。',[[50.5,-4.2],[54.2,1.2]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});ha(d,'mWales',HC.celt,{fillOpacity:.26});
+    hp(d,'uk4_westminster',{note:'10月8日清晨上议院以199票对158票否决第二份改革法案。'});
+    hp(d,'b32_derby',{kind:'battle',left:1,note:'市民围攻市政厅并冲击市监狱，与守军交火。'});
+    hp(d,'b32_nottingham',{kind:'battle',note:'10月10日市民冲上山头，一把火烧毁纽卡斯尔公爵的诺丁汉城堡。'});
+    hp(d,'uk5_bristol',{kind:'battle',left:1,note:'10月29—31日连烧三天，主教宫、市长官邸与三座监狱被毁。'});
+    hr(d,[[51.5,-0.12],[52.949,-1.155]],HC.war);hr(d,[[51.5,-0.12],[51.45,-2.58]],HC.war);
+   },[['fill',HC.britain,'英格兰'],['fill',HC.celt,'威尔士'],['dline',HC.war,'上议院否决消息引爆外省城市暴动'],['dot',HC.war,'德比、诺丁汉与布里斯托尔暴动'],['dot','#2a2018','威斯敏斯特上议院']]),
+  hs('1832年5—6月','五月危机与查令十字街的提金传单','聚焦伦敦与伯明翰：伯明翰二十万人待命南下，伦敦市民围住英格兰银行提走金币，逼威灵顿放弃组阁。',[[51.2,-2.5],[52.8,0.4]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'brMidlandsIron',HC.war,{fillOpacity:.36});
+    hp(d,'brs_birmingham',{kind:'battle',left:1,note:'阿特伍德召集二十万人集会，威胁一旦威灵顿执政即武装进京。'});
+    hp(d,'uk6_windsor',{left:1,note:'威廉四世起初拒封50名新贵族，危机后被迫书面承诺按需册封。'});
+    hp(d,'uk4_westminster',{kind:'battle',note:'市民提走英格兰银行150万镑金币；6月4日上院放行改革法案。'});
+    hr(d,[[52.479,-1.903],[51.5,-0.12]],HC.war);
+   },[['fill',HC.britain,'英格兰'],['fill',HC.war,'伯明翰政治同盟大本营'],['dline',HC.war,'1832年5月伯明翰政治同盟威慑伦敦方向'],['dot',HC.war,'伯明翰与伦敦金融城（英格兰银行）'],['dot','#2a2018','温莎堡与威斯敏斯特']]),
+  hs('1832年夏','十英镑门槛下的赢家与输家','英格兰、苏格兰与爱尔兰三部改革法通过：北方工业大城老板入座威斯敏斯特，车间工人仍被挡在门外。',[[50.5,-8.5],[57.2,1.5]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.32});ha(d,'mIreland',HC.celt,{fillOpacity:.28});ha(d,'brCottonLancs',HC.war,{fillOpacity:.38});
+    hp(d,'brs_manchester',{kind:'battle',left:1,note:'棉纺厂老板与富商拿到选票，住不起10镑房子的纺工依然0票。'});
+    hp(d,'brs_sheffield',{note:'钢铁与刀具工匠绝大部分因房租不达标被排除在选民册外。'});
+    hp(d,'uk9_edinburgh',{note:'1832年7月苏格兰改革法施行，当地选民规模扩大约十四倍。'});
+    hp(d,'uk6_dublin',{left:1,note:'8月爱尔兰改革法通过，全联合王国选民合计达约81.3万人。'});
+    hp(d,'uk4_westminster',{note:'中产新贵进入下议院，与旧贵族合筑防备底层工人的新防线。'});
+   },[['fill',HC.britain,'大不列颠'],['fill',HC.celt,'爱尔兰'],['fill',HC.war,'兰开夏工业区'],['dot',HC.war,'曼彻斯特'],['dot','#2a2018','谢菲尔德、爱丁堡、都柏林与威斯敏斯特']]),
+  hs('1834年','新济贫法与穷人的巴士底狱','威斯敏斯特新议会颁布《新济贫法》，从南方安多弗到北方曼彻斯特遍修高墙隔离的济贫院。',[[50.5,-3.5],[54.2,1.2]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.35});ha(d,'brCottonLancs',HC.war,{fillOpacity:.35});
+    hp(d,'uk4_westminster',{kind:'battle',note:'中产与地主议员在此联手立法，设立中央济贫法委员会。'});
+    hp(d,'b32_andover',{kind:'battle',left:1,note:'安多弗济贫院克扣口粮，饥民被迫啃食用来捣碎做肥料的腐烂兽骨。'});
+    hp(d,'brs_manchester',{left:1,note:'北方工人将强迫夫妻分居的济贫院痛骂为“巴士底狱”，酝酿宪章运动。'});
+    hr(d,[[51.5,-0.12],[51.211,-1.482]],HC.route);hr(d,[[51.5,-0.12],[53.479,-2.245]],HC.route);
+   },[['fill',HC.britain,'英格兰'],['fill',HC.war,'北方工业区'],['dline',HC.route,'1834年《新济贫法》向全国推行严苛济贫院制度'],['dot',HC.war,'威斯敏斯特与安多弗济贫院'],['dot','#2a2018','曼彻斯特']])
+ ]},
+{id:'history-britain-chartism',ch:12,title:'宪章运动与废除谷物法：1848年欧洲都在造反，英国工人为什么散了伙',short:'宪章运动与废除谷物法',en:'Chartism and the Repeal of the Corn Laws: Why British Workers Went Home in the Rain in 1848 While Europe Built Barricades',period:'1836—1851年',c:HC.britain,
+ scenes:[
+  hs('1836—1838年','《人民宪章》从伦敦传遍工业走廊','伦敦工人协会起草《人民宪章》六点要求，迅速向伯明翰、曼彻斯特、利兹与格拉斯哥工业区扩散。',[[51.0,-4.8],[56.2,0.8]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.32});ha(d,'brCottonLancs',HC.war,{fillOpacity:.36});ha(d,'brWoolYorks',HC.lowlands,{fillOpacity:.36});ha(d,'brMidlandsIron',HC.spain,{fillOpacity:.36});
+    hp(d,'k_london',{kind:'battle',note:'木匠洛维特在此召集手工业工匠，拟定六点民权纲领。'});
+    hp(d,'brs_birmingham',{left:1,note:'1838年8月二十万人在霍洛韦头山集会，推举全国宪章派代表。'});
+    hp(d,'brs_manchester',{left:1,note:'兰开夏棉纺工人火炬夜会，要求21岁男子普选权与秘密投票。'});
+    hp(d,'brs_leeds',{note:'奥康纳在此出版《北方之星报》，成为全国宪章运动喉舌。'});
+    hp(d,'bc1_glasgow',{left:1,note:'1838年5月格拉斯哥绿地十五万工人集会声援《人民宪章》。'});
+    hr(d,[[51.5,-0.12],[52.479,-1.903],[53.479,-2.245],[53.8,-1.549],[55.86,-4.25]],HC.route);
+   },[['fill',HC.britain,'大不列颠'],['fill',HC.war,'兰开夏棉纺区'],['fill',HC.lowlands,'约克郡毛纺区'],['fill',HC.spain,'米德兰工业区'],['dline',HC.route,'1838年《人民宪章》全国串连与大集会路线'],['dot',HC.war,'伦敦（《人民宪章》起草地）'],['dot','#2a2018','伯明翰、曼彻斯特、利兹与格拉斯哥']]),
+  hs('1839—1842年','两次百万人大请愿与纽波特流血','1839年与1842年两卷巨型请愿书送入威斯敏斯特遭拒；南威尔士煤田纽波特爆发矿工武装起义。',[[51.0,-4.5],[54.5,0.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});ha(d,'mWales',HC.celt,{fillOpacity:.30});ha(d,'brSouthWalesCoal',HC.war,{fillOpacity:.40});ha(d,'brCottonLancs',HC.war,{fillOpacity:.36});
+    hp(d,'uk4_westminster',{kind:'battle',note:'两次巨型工人请愿卷轴运抵下议院大厅，均被大比数否决。'});
+    hp(d,'bch_newport',{kind:'battle',left:1,note:'弗罗斯特率南威尔士矿工攻打西门旅馆，遭驻军开火镇压。'});
+    hp(d,'brs_manchester',{left:1,note:'1842年夏第二次请愿被拒后，兰开夏爆发拔掉锅炉塞子的总罢工。'});
+    hp(d,'brs_leeds',{note:'约克郡宪章派响应1842年大罢工，遭军警逮捕数百名骨干。'});
+    hr(d,[[53.479,-2.245],[51.5,-0.12]],HC.route);hr(d,[[51.5,-0.12],[51.588,-2.998]],HC.war);
+   },[['fill',HC.britain,'英格兰'],['fill',HC.celt,'威尔士'],['fill',HC.war,'南威尔士煤田与兰开夏罢工区'],['dline',HC.route,'百万工人签名请愿书送往威斯敏斯特'],['dline',HC.war,'1839年纽波特武装起义'],['dot',HC.war,'威斯敏斯特与纽波特'],['dot','#2a2018','曼彻斯特与利兹']]),
+  hs('1838—1845年','反谷物法同盟的一便士邮包战','以曼彻斯特与罗奇代尔为大本营，工业资本家借廉价邮政与铁路网向全英寄发小册子围剿地主关税。',[[50.8,-3.8],[54.5,0.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});ha(d,'brCottonLancs',HC.war,{fillOpacity:.40});
+    hp(d,'brs_manchester',{kind:'battle',left:1,note:'1839年科布登在此建立反谷物法同盟总部，并建起自由贸易大厅。'});
+    hp(d,'bch_rochdale',{note:'贵格会棉纺厂主布莱特自此出发，与科布登搭档巡回全国演说。'});
+    hp(d,'brs_birmingham',{left:1,note:'米德兰铁器制造商捐款入盟，要求放开外国粮食以换取工业品出口。'});
+    hp(d,'uk4_westminster',{note:'1841年科布登当选下院议员，在议会内直接向地主保护派开火。'});
+    hr(d,[[53.479,-2.245],[52.479,-1.903],[51.5,-0.12]],HC.route);
+   },[['fill',HC.britain,'英格兰'],['fill',HC.war,'反谷物法同盟大本营（兰开夏）'],['dline',HC.route,'反谷物法同盟依托铁路与一便士邮政向伦敦施压'],['dot',HC.war,'曼彻斯特（自由贸易大厅）'],['dot','#2a2018','罗奇代尔、伯明翰与威斯敏斯特']]),
+  hs('1845—1846年','爱尔兰大饥荒与皮尔废除谷物法','西侧爱尔兰马铃薯绝收饿殍遍野；伦敦首相皮尔为防饥荒与宪章运动合流，联手辉格党废除《谷物法》。',[[50.5,-10.5],[55.2,1.2]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.32});ha(d,'mIreland',HC.war,{fillOpacity:.40});
+    hp(d,'bch_skibbereen',{kind:'battle',left:1,note:'1845—1847年马铃薯霉烂绝收，科克郡斯基伯林等地整村饿死。'});
+    hp(d,'brs_cork',{left:1,note:'大批饥民自科克港挤上“棺材船”逃往北美，全岛人口锐减四分之一。'});
+    hp(d,'uk6_dublin',{left:1,note:'爱尔兰饥荒冲击全英政局，继续阻拦外国廉价粮食已成政治自杀。'});
+    hp(d,'uk4_westminster',{kind:'battle',note:'1846年6月首相皮尔顶住本党倒戈废除《谷物法》，当晚被轰下台。'});
+    hr(d,[[51.897,-8.470],[51.5,-0.12]],HC.route);
+   },[['fill',HC.war,'爆发马铃薯大饥荒的爱尔兰'],['fill',HC.britain,'大不列颠'],['dline',HC.route,'爱尔兰饥荒危机倒逼威斯敏斯特废除谷物法'],['dot',HC.war,'斯基伯林与唐宁街10号'],['dot','#2a2018','科克、都柏林与威斯敏斯特']]),
+  hs('1848年4月10日','欧洲筑街垒而伦敦肯宁顿在淋雨','巴黎、柏林、维也纳尽起革命街垒；伦敦南岸肯宁顿公地宪章派集会遭威灵顿封桥布防，淋雨散伙。',[[47.2,-2.5],[54.0,17.5]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.34});ha(d,'fFrance1648',HC.war,{fillOpacity:.34});ha(d,'sHabsburgAustria1556',HC.war,{fillOpacity:.30});
+    hp(d,'w_paris',{kind:'battle',note:'1848年2月巴黎街垒推翻路易-菲利普，点燃全欧革命。'});
+    hp(d,'ge2_brandenburg',{kind:'battle',note:'1848年3月柏林爆发街垒巷战，普鲁士国王被迫向起义死者脱帽。'});
+    hp(d,'c3_vienna',{kind:'battle',note:'1848年3月维也纳起义，执政近四十年的首相梅特涅化装出逃。'});
+    hp(d,'bch_kennington',{kind:'battle',left:1,note:'伦敦南岸草坪聚集数万宪章派，因河桥被封锁而冒雨散去。'});
+   },[['fill',HC.britain,'平稳度过1848年的大不列颠'],['fill',HC.war,'1848年爆发街垒革命的欧洲大陆'],['dot',HC.war,'肯宁顿公地与巴黎、柏林、维也纳革命']]),
+  hs('1847—1851年','水晶宫万国博览会与维多利亚繁荣','1851年伦敦海德公园建起水晶宫举办首届世博会，北方工业区工人乘火车南下参观，激进造反退潮。',[[51.0,-3.5],[54.5,0.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});ha(d,'brCottonLancs',HC.lowlands,{fillOpacity:.36});ha(d,'brWoolYorks',HC.lowlands,{fillOpacity:.36});ha(d,'brMidlandsIron',HC.lowlands,{fillOpacity:.36});
+    hp(d,'brs_hydepark',{kind:'battle',left:1,note:'1851年5—10月海德公园水晶宫展出万国工业奇观，吸引六百万人次。'});
+    hp(d,'uk4_westminster',{note:'1846年废谷物法与1847年《十小时工作法》拆掉了底层造反引信。'});
+    hp(d,'brs_manchester',{left:1,note:'廉价粮食与全球棉布出口拉动工资上涨，工人转向温和行业工会。'});
+    hp(d,'brs_birmingham',{left:1,note:'米德兰机器与铁路工业进入维多利亚中期黄金繁荣。'});
+    hr(d,[[53.479,-2.245],[52.479,-1.903],[51.5073,-0.1657]],HC.route);
+   },[['fill',HC.britain,'英格兰'],['fill',HC.lowlands,'繁荣的北方与中部工业走廊'],['dline',HC.route,'北方工人乘廉价火车专列赴伦敦参观水晶宫'],['dot',HC.war,'海德公园（水晶宫世博会）'],['dot','#2a2018','威斯敏斯特、曼彻斯特与伯明翰']])
+ ]},
+{id:'history-britain-victoria',ch:12,title:'维多利亚的帝国账本：炮舰开门、印度兵变与苏伊士运河',short:'维多利亚的帝国账本',en:'Victoria’s Imperial Ledger: Gunboat Diplomacy, the Indian Mutiny, and the Suez Canal',period:'1837—1877年',c:HC.britain,
+ scenes:[
+  hs('1837—1861年','英汉分家与维多利亚王室转型','色块是大不列颠、爱尔兰与汉诺威；1837年维多利亚继位后，英汉123年共主联邦解除。',[[49.2,-9.5],[56.8,12.0]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.36});ha(d,'mIreland',HC.britain,{fillOpacity:.26});ha(d,'brHanover1714',HC.lowlands,{fillOpacity:.38});
+    hp(d,'k_london',{note:'1840年维多利亚与表哥阿尔伯特在伦敦完婚。'});
+    hp(d,'brs_hydepark',{left:1,note:'1837年维多利亚在肯辛顿宫即位；1851年阿尔伯特在此办世博会。'});
+    hp(d,'bgl_hanover',{kind:'battle',note:'汉诺威行萨利克法不传女，由女王五叔恩斯特继任国王。'});
+    hp(d,'bvi_coburg',{note:'阿尔伯特亲王故乡萨克森-科堡-哥达公国。'});
+    hr(d,[[51.51,-0.13],[52.38,9.73]],HC.war);
+   },[['fill',HC.britain,'大不列颠及爱尔兰联合王国'],['fill',HC.lowlands,'汉诺威王国（1837年分立）'],['dline',HC.war,'1837年英汉共主联邦解除'],['dot','#2a2018','伦敦、汉诺威与科堡']]),
+  hs('1839—1860年','英印华三角贸易与炮舰外交','色块是英国、孟加拉与英属印度；弧线示意棉布、鸦片与茶叶的三角贸易及英军航线。',[[15.0,-5.0],[55.0,120.0]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.36});ha(d,'brBengal1765',HC.britain,{fillOpacity:.42});
+    hp(d,'k_london',{left:1,note:'帕麦斯顿在此调度皇家海军蒸汽炮舰强开商埠。'});
+    hp(d,'bvi_athens',{note:'1850年帕麦斯顿派舰队封锁雅典外港逼希腊赔款。'});
+    hp(d,'brs_calcutta',{note:'东印度公司在此拍卖孟加拉鸦片，运往中国换取白银。'});
+    hp(d,'brs_canton',{left:1,note:'英国鸦片商船在此走私，1839年林则徐虎门销烟。'});
+    hp(d,'brs_hongkong',{kind:'battle',note:'1842年《南京条约》割让香港岛，成为英军远东基地。'});
+    hp(d,'fje_beijing',{kind:'battle',note:'1860年英法联军攻入北京并火烧圆明园。'});
+    hr(d,[[51.51,-0.13],[22.57,88.36],[23.13,113.26]],HC.route);
+   },[['fill',HC.britain,'英国与孟加拉鸦片产区'],['dline',HC.route,'棉布与鸦片贸易航线'],['dot',HC.war,'香港与北京（两次鸦片战争）'],['dot','#2a2018','伦敦、雅典、加尔各答与广州']]),
+  hs('1853—1856年','克里米亚战争与斯库台军医院','色块是奥斯曼帝国与克里米亚半岛；英法联军经伊斯坦布尔北上黑海围攻塞瓦斯托波尔。',[[38.0,24.0],[47.5,38.0]],d=>{
+    ha(d,'mOttoman1522',HC.spain,{fillOpacity:.24});ha(d,'brCrimea1854',HC.war,{fillOpacity:.42});
+    hp(d,'bvi_sevastopol',{kind:'battle',note:'1854—1855年英法联军围攻俄国黑海舰队母港长达十一个月。'});
+    hp(d,'bvi_balaclava',{left:1,kind:'battle',note:'1854年10月25日英军轻骑兵旅因错令正面冲向俄军炮群。'});
+    hp(d,'po_constantinople',{left:1,note:'英法联军在此集结中转，封锁博斯普鲁斯海峡。'});
+    hp(d,'bvi_scutari',{note:'南丁格尔在此整顿英军后方医院，伤兵病死率从42%降至2%。'});
+    hr(d,[[44.62,33.53],[41.02,29.02]],HC.route);
+   },[['fill',HC.war,'克里米亚战场'],['fill',HC.spain,'奥斯曼帝国'],['dline',HC.route,'黑海航线与伤兵后送'],['dot',HC.war,'塞瓦斯托波尔与巴拉克拉瓦'],['dot','#2a2018','斯库台医院']]),
+  hs('1857—1858年','1857年印度民族大起义','色块是英属印度与孟加拉；1857年5月密拉特土兵起义，战火席卷恒河流域的德里、坎普尔与勒克瑙。',[[18.0,70.0],[32.0,92.0]],d=>{
+    ha(d,'brIndia1858',HC.britain,{fillOpacity:.28});ha(d,'brBengal1765',HC.britain,{fillOpacity:.40});
+    hp(d,'bvi_meerut',{kind:'battle',note:'1857年5月10日印度土兵因涂油纸弹壳在此首先起义。'});
+    hp(d,'pt_delhi',{left:1,kind:'battle',note:'起义土兵涌入德里拥立莫卧儿末代皇帝，英军苦战四月夺回。'});
+    hp(d,'bvi_kanpur',{left:1,kind:'battle',note:'起义军与英军在此展开惨烈围城与报复屠杀。'});
+    hp(d,'bvi_lucknow',{kind:'battle',note:'1856年阿瓦德被吞并引发民愤，1857年英军驻地遭长期围困。'});
+    hp(d,'brs_calcutta',{note:'东印度公司首府；英军由此沿恒河逆流北上镇压起义。'});
+    hr(d,[[28.98,77.71],[28.66,77.23],[26.45,80.33],[26.85,80.95]],HC.war);
+   },[['fill',HC.britain,'英属印度与孟加拉'],['dline',HC.war,'1857年恒河流域起义蔓延'],['dot',HC.war,'密拉特、德里、坎普尔与勒克瑙'],['dot','#2a2018','加尔各答']]),
+  hs('1858—1877年','收购苏伊士运河与加冕印度女皇','色块是英国与直辖后的英属印度；弧线经苏伊士运河连接伦敦、埃及与德里。',[[15.0,-5.0],[54.0,88.0]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.36});ha(d,'brIndia1858',HC.britain,{fillOpacity:.36});
+    hp(d,'brs_downing',{left:1,note:'1875年11月首相迪斯雷利借400万镑买下苏伊士运河44%股份。'});
+    hp(d,'bvi_suez',{kind:'battle',note:'1869年开通，使伦敦至孟买航程缩短逾四成，成为帝国咽喉。'});
+    hp(d,'c4_cairo',{left:1,note:'埃及总督伊斯梅尔因债台高筑被迫向英国出售运河股票。'});
+    hp(d,'pt_delhi',{kind:'battle',note:'1877年1月1日印度总督在此举行大集会，宣告维多利亚为印度女皇。'});
+    hp(d,'brs_calcutta',{note:'1858年东印度公司解散后，英国王室总督在此直接统辖印度。'});
+    hr(d,[[51.50,-0.13],[30.59,32.27],[28.66,77.23]],HC.route);
+   },[['fill',HC.britain,'大不列颠与王室直辖英属印度'],['dline',HC.route,'经苏伊士运河的帝国命脉航线'],['dot',HC.war,'苏伊士运河与德里'],['dot','#2a2018','唐宁街、开罗与加尔各答']])
+ ]},
+{id:'history-britain-reform-1867',ch:12,title:'1867年与1884年扩权：两党抢着给工人发选票',short:'1867年与1884年扩权',en:'The 1867 and 1884 Reform Acts: Two Parties Bidding for Working-Class Votes',period:'1865—1885年',c:HC.britain,
+ scenes:[
+  hs('1865—1866年','两大宿敌登场与工业城市扩权诉求','色块是大不列颠及爱尔兰；利物浦与北威尔士是格莱斯顿基地，伦敦与白金汉郡是迪斯雷利大本营。',[[50.2,-6.5],[55.8,1.8]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.34});ha(d,'mIreland',HC.britain,{fillOpacity:.22});
+    hp(d,'uk4_westminster',{kind:'battle',note:'1865年帕麦斯顿死后，格莱斯顿与生于伦敦的迪斯雷利在此对决。'});
+    hp(d,'brs_liverpool',{left:1,note:'格莱斯顿生于利物浦富商家庭，后代表北方工业与自由贸易派。'});
+    hp(d,'brs_manchester',{note:'兰开夏棉纺重镇；大批纳税技术工人因10镑门槛仍无选票。'});
+    hp(d,'brs_birmingham',{left:1,note:'激进派大本营，当地工联与中产阶级联手要求降低选票门槛。'});
+   },[['fill',HC.britain,'大不列颠及爱尔兰联合王国'],['dot',HC.war,'威斯敏斯特议会'],['dot','#2a2018','伦敦、利物浦、曼彻斯特与伯明翰']]),
+  hs('1866—1867年','海德公园铁栏倒塌与两党竞标','色块是英格兰与工业区；1866年海德公园集会震动伦敦，迪斯雷利抢先推出激进扩权案。',[[50.5,-4.5],[54.8,1.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});ha(d,'brCottonLancs',HC.lowlands,{fillOpacity:.40});ha(d,'brMidlandsIron',HC.lowlands,{fillOpacity:.40});
+    hp(d,'brs_hydepark',{left:1,kind:'battle',note:'1866年7月23日二十万民众集会要选票，推倒海德公园铁栏。'});
+    hp(d,'uk4_westminster',{kind:'battle',note:'1866年6月格莱斯顿改革案被否决，迪斯雷利随保守党内阁接掌下院。'});
+    hp(d,'brs_birmingham',{left:1,note:'约翰·布莱特在此号召二十万工人集会，向保守党内阁施压。'});
+    hp(d,'brs_manchester',{note:'北方工业城市纷纷响应改革同盟，逼议会放宽选民资格。'});
+   },[['fill',HC.britain,'英格兰'],['fill',HC.lowlands,'兰开夏与米德兰工业区'],['dot',HC.war,'海德公园与威斯敏斯特'],['dot','#2a2018','唐宁街、伯明翰与曼彻斯特']]),
+  hs('1867—1874年','1867年城市男户主获票与法国对照','色块是英国与法国；1867年英国各大工业市镇男户主获票，海峡对岸法国则在1848年一步普选。',[[48.0,-4.8],[55.5,4.0]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.36});ha(d,'fFrance1648',HC.france,{fillOpacity:.28});
+    hp(d,'uk4_westminster',{kind:'battle',note:'1867年8月通过《第二次改革法案》，城市男户主全部获票。'});
+    hp(d,'brs_manchester',{left:1,note:'曼彻斯特等工业市镇选民激增，1874年大选大批工人转投保守党。'});
+    hp(d,'brs_leeds',{note:'利兹与谢菲尔德等北方工业城男户主跨过门槛进入选民册。'});
+    hp(d,'w_paris',{note:'1848年二月革命后法国推行男子普选，路易-拿破仑高票当选总统。'});
+   },[['fill',HC.britain,'大不列颠（1867年城市男户主获票）'],['fill',HC.france,'法兰西（1848年男子普选对照）'],['dot',HC.war,'威斯敏斯特议会'],['dot','#2a2018','曼彻斯特、利兹、谢菲尔德与巴黎']]),
+  hs('1870—1872年','初等教育普及与首次秘密投票','色块是英格兰、威尔士与爱尔兰；1872年庞蒂弗拉克特首次使用封闭票箱，终结地主盯票。',[[50.5,-8.5],[55.5,1.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'mWales',HC.britain,{fillOpacity:.32});ha(d,'mIreland',HC.britain,{fillOpacity:.26});
+    hp(d,'b67_pontefract',{kind:'battle',note:'1872年8月15日在此举行英国首次印制选票与封闭票箱补选。'});
+    hp(d,'uk4_westminster',{note:'格莱斯顿首任内阁在此通过《初等教育法》与《秘密投票法》。'});
+    hp(d,'k_london',{left:1,note:'伦敦率先成立民选地方教育委员会，兴办世俗公立小学。'});
+    hp(d,'uk6_dublin',{left:1,note:'秘密投票使爱尔兰天主教佃农不再惧怕新教地主报复。'});
+   },[['fill',HC.britain,'大不列颠及爱尔兰'],['dot',HC.war,'庞蒂弗拉克特（首次秘密投票）'],['dot','#2a2018','威斯敏斯特、伦敦与都柏林']]),
+  hs('1884—1885年','农村矿工与农工进门及一人一选区','色块是大不列颠、爱尔兰与南北煤田；1884年农村煤矿工人与农业雇工户主获得选票。',[[50.2,-9.0],[56.5,2.0]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.34});ha(d,'mIreland',HC.britain,{fillOpacity:.28});ha(d,'brTyneCoal',HC.lowlands,{fillOpacity:.45});ha(d,'brSouthWalesCoal',HC.lowlands,{fillOpacity:.45});
+    hp(d,'b67_durham',{kind:'battle',note:'1884年法案使达勒姆等农村矿村的煤矿男户主首次拿到选票。'});
+    hp(d,'brs_newcastle',{left:1,note:'泰恩河煤田重镇；矿工选票成为自由党与日后工党的重要力量。'});
+    hp(d,'b67_norfolk',{note:'东盎格利亚农业雇工户主在1884年获票，打破乡村地主垄断。'});
+    hp(d,'uk4_westminster',{left:1,kind:'battle',note:'1884—1885年通过《第三次改革法案》并划定一人一选区。'});
+    hp(d,'uk6_dublin',{left:1,note:'爱尔兰农村选民激增，为帕内尔民族派席卷86席铺平道路。'});
+   },[['fill',HC.britain,'全国各郡农村统一推行户主选票'],['fill',HC.lowlands,'泰恩河与南威尔士煤田矿区'],['dot',HC.war,'达勒姆煤田与威斯敏斯特'],['dot','#2a2018','纽卡斯尔、诺福克与都柏林']]),
+  hs('1885年','仍被挡在门外的四成男性与全体女性','色块是联合王国；到1885年，无独立住房的四成底层男青年与全体女性依然没有选票。',[[50.2,-8.5],[56.5,1.8]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.34});ha(d,'mIreland',HC.britain,{fillOpacity:.26});
+    hp(d,'k_london',{left:1,note:'伦敦大批住雇主家的男仆、店员与半年搬家一次的劳工仍无选票。'});
+    hp(d,'uk4_westminster',{kind:'battle',note:'议会坚守“一户之长一票”，拒绝给无房青年与女性发选票。'});
+    hp(d,'brs_manchester',{left:1,note:'兰开夏棉纺厂大批女工虽独立挣钱养家，大选选票依然是零。'});
+    hp(d,'bc2_oxford',{note:'与父母同住的未婚成年儿子及住营房的士兵均被排除在选民册外。'});
+    hp(d,'uk9_edinburgh',{note:'苏格兰与英格兰一样，全体成年女性被排除在议会选举之外。'});
+   },[['fill',HC.britain,'1885年维持“男户主专享”的联合王国'],['dot',HC.war,'威斯敏斯特议会'],['dot','#2a2018','伦敦、曼彻斯特、牛津与爱丁堡']])
+ ]},
+{id:'history-britain-lords',ch:12,title:'爱尔兰自治、工党与议会法：上议院丢掉否决权',short:'爱尔兰自治与议会法',en:'Irish Home Rule, Labour and the Parliament Act: The Lords Lose Their Veto',period:'1885—1914年',c:HC.britain,
+ scenes:[
+  hs('1885—1893年','帕内尔造王与爱尔兰自治撕裂自由党','色块标出大不列颠与爱尔兰；都柏林与阿冯代尔是帕内尔根基，伯明翰是张伯伦倒戈大本营，威斯敏斯特两拒自治。',[[50.5,-10.5],[56.2,1.8]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.30});ha(d,'mIreland',HC.war,{fillOpacity:.34});
+    hp(d,'b11_avondale',{left:1,note:'帕内尔在威克洛郡的家族庄园，率爱尔兰议会党拿下86席。'});
+    hp(d,'uk6_dublin',{left:1,note:'格莱斯顿拟在都柏林重设爱尔兰自治议会，管理本地事务。'});
+    hp(d,'brs_birmingham',{left:1,note:'张伯伦以伯明翰为根基创立自由统一党，带走93名自由党议员。'});
+    hp(d,'uk4_westminster',{kind:'battle',note:'1886年下院否决首部自治案，1893年上院否决第二部自治案。'});
+    hr(d,[[53.34,-6.26],[51.50,-0.12]],HC.route);
+   },[['fill',HC.britain,'大不列颠'],['fill',HC.war,'要求自治的爱尔兰'],['dline',HC.route,'爱尔兰民族派议员赴威斯敏斯特卡住多数'],['dot',HC.war,'威斯敏斯特议会'],['dot','#2a2018','阿冯代尔、都柏林与伯明翰']]),
+  hs('1899—1906年','征兵体检警钟、塔夫谷案与工党诞生','色块为兰开夏棉纺区与南威尔士煤田；曼彻斯特体检暴露贫民体弱，塔夫谷罢工赔款催生伦敦劳工代表委员会。',[[50.5,-5.5],[56.2,1.5]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.28});ha(d,'brCottonLancs',HC.war,{fillOpacity:.38});ha(d,'brSouthWalesCoal',HC.war,{fillOpacity:.38});
+    hp(d,'brs_manchester',{left:1,note:'布尔战争期间曼彻斯特1.1万名应征青年中8000人体检不合格。'});
+    hp(d,'bc1_glasgow',{left:1,note:'苏格兰矿工领袖哈迪在格拉斯哥与艾尔郡矿区组织独立劳工运动。'});
+    hp(d,'b11_taff_vale',{kind:'battle',left:1,note:'1901年上院判塔夫谷罢工工会赔偿铁路公司4.2万镑。'});
+    hp(d,'b11_farringdon',{kind:'battle',note:'129名劳工与社会主义代表在此开会建党，六年后再易名工党。'});
+   },[['fill',HC.britain,'大不列颠本土'],['fill',HC.war,'兰开夏工业区与南威尔士煤田'],['dot',HC.war,'塔夫谷铁路与伦敦法灵顿街纪念堂'],['dot','#2a2018','曼彻斯特与格拉斯哥']]),
+  hs('1908—1909年','劳合·乔治的人民预算与上议院掀桌','聚焦伦敦：唐宁街拟定预算，劳合·乔治赴东区莱姆豪斯动员劳工，威斯敏斯特上议院打破惯例否决财政案。',[[51.44,-0.22],[51.56,0.04]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});
+    hp(d,'b11_limehouse',{kind:'battle',note:'1909年7月劳合·乔治在此痛批大地主坐享地价暴涨却不交税。'});
+    hp(d,'uk4_westminster',{kind:'battle',left:1,note:'劳合·乔治拟定人民预算；1909年11月上议院以350比75票将其否决。'});
+   },[['fill',HC.britain,'大伦敦地区'],['dot',HC.war,'莱姆豪斯与威斯敏斯特上议院'],['dot','#2a2018','唐宁街10号']]),
+  hs('1910—1911年','五百新贵密诺与上议院酷暑夜表决','伦敦西敏中枢：白金汉宫乔治五世密诺册封新贵族，威斯敏斯特上议院篱笆派与壕沟派摊牌通过《议会法》。',[[51.48,-0.18],[51.53,-0.09]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});
+    hp(d,'brs_downing',{left:1,note:'阿斯奎斯凭两场大选胜利与王室密诺向上议院保守党摊牌。'});
+    hp(d,'uk4_westminster',{kind:'battle',note:'乔治五世密诺册封新贵；1911年8月10日上院以131比114票通过《议会法》。'});
+   },[['fill',HC.britain,'伦敦西敏政务核心区'],['dot',HC.war,'威斯敏斯特上议院'],['dot','#2a2018','白金汉宫（伦敦）与唐宁街10号']]),
+  hs('1911年','锁死上议院否决权与下院议员领年薪','色块为大不列颠与爱尔兰；威斯敏斯特锁定下院财政大权与议员年薪，工业区与爱尔兰议员得以专职参政。',[[50.5,-9.5],[56.5,1.8]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.34});ha(d,'mIreland',HC.britain,{fillOpacity:.24});
+    hp(d,'uk4_westminster',{kind:'battle',note:'1911年8月《议会法》成法，同月下院表决发放400镑议员年薪。'});
+    hp(d,'brs_manchester',{left:1,note:'北方工业城市选出的工党议员靠年薪得以在伦敦全职履职。'});
+    hp(d,'uk6_dublin',{left:1,note:'爱尔兰议会党帮自由党废除上院否决权，为自治法案扫清路障。'});
+   },[['fill',HC.britain,'大不列颠及爱尔兰联合王国'],['dot',HC.war,'威斯敏斯特下议院'],['dot','#2a2018','曼彻斯特与都柏林']]),
+  hs('1912—1914年夏','阿尔斯特走私步枪与库拉兵谏','色块区分北方新教阿尔斯特与南方天主教各郡；拉恩港卸下德奥步枪，库拉大营英军军官抗命，内战一触即发。',[[51.3,-10.5],[55.5,-5.0]],d=>{
+    ha(d,'brUlster1609',HC.war,{fillOpacity:.40});ha(d,'mIreland',HC.britain,{fillOpacity:.24});
+    hp(d,'brs_belfast',{kind:'battle',left:1,note:'1912年9月卡森在贝尔法斯特市政厅率47万人签署《阿尔斯特盟约》。'});
+    hp(d,'b11_larne',{kind:'battle',note:'阿尔斯特志愿军深夜在此调集汽车转运走私入境的步枪与弹药。'});
+    hp(d,'b11_curragh',{kind:'battle',left:1,note:'1914年3月20日驻库拉大营的57名英军骑兵军官集体辞职抗命。'});
+    hp(d,'uk6_dublin',{note:'南方天主教民族派在都柏林组建爱尔兰志愿军，7月在豪斯港走私步枪。'});
+    hp(d,'brs_cork',{left:1,note:'南方各郡天主教徒拥护自治法案，与北方新教武装对峙。'});
+   },[['fill',HC.war,'阿尔斯特新教徒武装抗拒区'],['fill',HC.britain,'爱尔兰其余地区'],['dot',HC.war,'贝尔法斯特、拉恩港与库拉大营'],['dot','#2a2018','都柏林与科克']])
+ ]},
+{id:'history-britain-suffrage-1918',ch:12,title:'妇女参政与一战：战壕和兵工厂换来1918年的选票',short:'妇女参政与一战',en:'Women’s Suffrage and the Great War: Trenches and Munitions Factories Bring the 1918 Vote',period:'1897—1918年',c:HC.britain,
+ scenes:[
+  hs('1897—1912年','从曼彻斯特客厅到伦敦邦德街橱窗','色块为英格兰；潘克赫斯特在曼彻斯特创立激进同盟，南下伦敦海德公园集会、锁唐宁街栏杆并砸碎邦德街橱窗。',[[51.2,-3.2],[54.0,0.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.32});ha(d,'brCottonLancs',HC.war,{fillOpacity:.34});
+    hp(d,'b18_nelson_st',{kind:'battle',left:1,note:'1903年10月10日潘克赫斯特母女在此创立妇女社会政治同盟。'});
+    hp(d,'brs_hydepark',{left:1,note:'1908年6月逾二十五万人在海德公园集会要求妇女投票权。'});
+    hp(d,'brs_downing',{kind:'battle',note:'激进派锁身首相府栏杆，并在西区邦德街同步砸碎商铺橱窗。'});
+    hr(d,[[53.468,-2.232],[51.512,-0.144]],HC.route);
+   },[['fill',HC.britain,'英格兰'],['fill',HC.war,'兰开夏棉纺区（激进女权发源地）'],['dline',HC.route,'1906年妇女社会政治同盟总部自曼彻斯特迁往伦敦'],['dot',HC.war,'曼彻斯特纳尔逊街与伦敦邦德街'],['dot','#2a2018','海德公园与唐宁街10号']]),
+  hs('1909—1913年','霍洛威监狱灌食与艾普森赛马场丧生','大伦敦与萨里郡：北郊霍洛威监狱强行灌食并以猫捉老鼠法反复收监，南郊艾普森赛马场戴维森冲入赛道。',[[51.24,-0.38],[51.62,0.05]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.35});
+    hp(d,'b18_holloway',{kind:'battle',left:1,note:'1909年起绝食女囚在此遭橡胶管强行灌食，1913年后被反复释囚。'});
+    hp(d,'uk4_westminster',{note:'1913年4月下议院通过俗称“猫捉老鼠法”的暂时释放法案。'});
+    hp(d,'b18_epsom',{kind:'battle',left:1,note:'1913年6月4日戴维森在此钻过护栏撞上国王赛马“安默号”。'});
+   },[['fill',HC.britain,'大伦敦与萨里郡'],['dot',HC.war,'霍洛威监狱与艾普森赛马场'],['dot','#2a2018','威斯敏斯特议会']]),
+  hs('1914—1916年','索姆河战壕流血与前线士兵丢掉选票','红线自伦敦跨海峡至法国北部索姆河战线；五百万英军赴前线作战，却因离开原住址逾十二个月在法律上丧失选票。',[[49.5,-2.5],[52.5,3.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});ha(d,'fFrance1648',HC.france,{fillOpacity:.28});
+    hp(d,'uk4_westminster',{left:1,note:'1916年议会通过《兵役法》，同时发现旧居住条款剥夺了军人选票。'});
+    hp(d,'k_london',{note:'数百万应征青年从滑铁卢与维多利亚车站登车开赴法国前线。'});
+    hp(d,'b18_somme',{kind:'battle',note:'皮卡第河谷阵地；英军新编师团在此攻坚，华工赴后方修筑工事。'});
+    hr(d,[[51.50,-0.12],[50.8,1.1],[50.008,2.695]],HC.war);
+   },[['fill',HC.britain,'英格兰'],['fill',HC.france,'法兰西西线战场'],['dline',HC.war,'英国远征军跨海峡开赴索姆河战壕路线'],['dot',HC.war,'索姆河战场'],['dot','#2a2018','威斯敏斯特与伦敦']]),
+  hs('1914—1917年','伍利奇与奇尔韦尔的百万金丝雀女工','色块标出大不列颠主要工业区；伍利奇、奇尔韦尔与格拉斯哥军火厂雇佣近百万女工日夜灌装炸药支援前线。',[[51.0,-4.8],[56.2,1.2]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.30});ha(d,'brMidlandsIron',HC.war,{fillOpacity:.36});ha(d,'brCottonLancs',HC.war,{fillOpacity:.36});
+    hp(d,'b18_woolwich',{kind:'battle',note:'伍利奇皇家兵工厂扩招约2.7万名女工车削弹体与装配引信。'});
+    hp(d,'b18_chilwell',{kind:'battle',left:1,note:'诺丁汉郡弹药基地；女工在此灌装烈性炸药，曾发生车间大爆炸。'});
+    hp(d,'bc1_glasgow',{left:1,note:'克莱德河畔军工与造船基地大批女工接替男工操作重型车床。'});
+    hp(d,'brs_manchester',{left:1,note:'兰开夏纺织女工转入军火车间，皮肤被炸药粉末染成亮黄色。'});
+   },[['fill',HC.britain,'大不列颠'],['fill',HC.war,'米德兰与兰开夏军工生产带'],['dot',HC.war,'伍利奇兵工厂与奇尔韦尔炮弹填充厂'],['dot','#2a2018','格拉斯哥与曼彻斯特']]),
+  hs('1918年2月','国民参政法通过与选民扩至两千一百万人','色块为联合王国全境；威斯敏斯特通过《1918年国民参政法》，全国登记选民从771万增至2139万。',[[50.5,-9.5],[56.5,1.8]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.35});ha(d,'mIreland',HC.britain,{fillOpacity:.25});
+    hp(d,'uk4_westminster',{kind:'battle',note:'两院在此通过新选举法并获御准，八百余万妇女首次取得投票资格。'});
+    hp(d,'brs_downing',{left:1,note:'劳合·乔治联合内阁与议长劳瑟主持跨党派妥协，平稳完成扩权。'});
+    hp(d,'uk9_edinburgh',{left:1,note:'苏格兰与英格兰满21岁男子及满19岁服役军人全部取消财产门槛。'});
+    hp(d,'uk6_dublin',{left:1,note:'年底大选中都柏林选出英国史上首位女议员马尔凯维奇伯爵夫人。'});
+   },[['fill',HC.britain,'大不列颠及爱尔兰联合王国（2139万选民）'],['dot',HC.war,'威斯敏斯特议会'],['dot','#2a2018','唐宁街10号、爱丁堡与都柏林']]),
+  hs('1918年','三十岁红线背后的人口算术与年轻女工','对比威斯敏斯特议会与伍利奇、奇尔韦尔军火厂：议会给30岁以上有房妇女发票，却将30岁以下年轻军火女工挡在门外。',[[51.2,-2.5],[53.6,0.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});
+    hp(d,'uk4_westminster',{kind:'battle',left:1,note:'男议员因70万青壮年阵亡后怕女选民过半，将女性投票年龄卡在30岁。'});
+    hp(d,'b18_woolwich',{note:'兵工厂里二十岁出头的未婚金丝雀女工在1918年大选中一张选票也没有。'});
+    hp(d,'b18_chilwell',{left:1,note:'约五百万21至29岁年轻女性被排除在外，再等十年才于1928年获票。'});
+   },[['fill',HC.britain,'英格兰'],['dot',HC.war,'威斯敏斯特议会（划定30岁红线）'],['dot','#2a2018','伍利奇与奇尔韦尔（年轻女工无票）']])
+ ]},
+{id:'history-britain-suffrage-1928',ch:12,title:'1928年普选：男女满21岁一人一票，工党取代自由党',short:'1928年普选',en:'Universal Suffrage of 1928: One Person One Vote at 21, and Labour Replaces the Liberals',period:'1918—1928年',c:HC.britain,
+ scenes:[
+  hs('1918—1923年','一战后的总账单：版图到顶与钱袋见底','1921年大英帝国版图达历史极值，但英国国债暴涨十二倍至78.1亿镑，金融霸权移交纽约。',[[36.0,-76.0],[58.0,35.0]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.36});ha(d,'mIreland',HC.britain,{fillOpacity:.3});
+    hp(d,'k_london',{kind:'capital',note:'1919/20财年英国国债升至78.1亿镑，预算逾四成用于付息。'});
+    hp(d,'amf_nybay',{kind:'port',left:1,note:'1923年鲍德温赴美签下战债偿还协议，华尔街跃居世界债权中心。'});
+    hp(d,'c4_cairo',{note:'巴黎和会后英国拿下巴勒斯坦、伊拉克等中东委任统治地。'});
+    hr(d,[[51.51,-0.13],[40.66,-74.04]],HC.route);
+   },[['fill',HC.britain,'战后背负78.1亿镑国债的英国本土'],['dline',HC.route,'跨大西洋战债偿付链'],['dot',HC.war,'伦敦与开罗'],['dot','#2a2018','纽约华尔街']]),
+  hs('1916—1922年','复活节起义与1921年南北爱尔兰分治','1916年都柏林爆发复活节起义；1921年《英爱条约》将南方二十六郡建为爱尔兰自由邦，北方六郡留英。',[[51.0,-10.8],[56.0,0.5]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.3});ha(d,'brNorthernIreland1921',HC.britain,{fillOpacity:.44});ha(d,'brFreeState1922',HC.war,{fillOpacity:.34});
+    hp(d,'uk6_dublin',{kind:'battle',left:1,note:'1916年复活节起义；1919年新芬党在此自建爱尔兰议会。'});
+    hp(d,'brs_belfast',{left:1,note:'阿尔斯特新教六郡留在联合王国内，设北爱尔兰自治议会。'});
+    hp(d,'b28_bealna',{kind:'battle',left:1,note:'1922年8月22日迈克尔·柯林斯在此遭反条约派伏击身亡。'});
+    hp(d,'brs_downing',{note:'1921年12月6日劳合·乔治与柯林斯在此签署《英爱条约》。'});
+   },[['fill',HC.war,'1922年成立的爱尔兰自由邦（南方二十六郡）'],['fill',HC.britain,'留在联合王国内的北爱尔兰（六郡）与大不列颠'],['dot',HC.war,'都柏林与科克郡战场'],['dot','#2a2018','贝尔法斯特与唐宁街']]),
+  hs('1918—1924年','两千万选民洗牌：自由党出局与工党上位','1922年卡尔顿俱乐部会议终结联合政府；苏格兰与兰开夏工业区选票大举转向工党。',[[50.5,-5.5],[56.5,1.5]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.34});ha(d,'brNorthernIreland1921',HC.britain,{fillOpacity:.34});
+    hp(d,'b28_carlton',{left:1,note:'1922年10月鲍德温率保守党议员在此投票退出劳合·乔治政府。'});
+    hp(d,'brs_downing',{kind:'capital',note:'1924年1月麦克唐纳成为英国历史上第一位工党首相。'});
+    hp(d,'bc1_glasgow',{left:1,note:'“红色克莱德赛德”等工业重镇工会选票大批转向工党。'});
+    hp(d,'brs_manchester',{left:1,note:'昔日自由党大本营兰开夏选区被工党与保守党瓜分。'});
+   },[['fill',HC.britain,'进入“保守党对工党”两党时代的英国（1922—1924年）'],['dot',HC.war,'唐宁街10号'],['dot','#2a2018','卡尔顿俱乐部、格拉斯哥与曼彻斯特']]),
+  hs('1925—1926年','英镑高估与煤矿总罢工摊牌','1925年英镑高估重创泰恩河与南威尔士煤矿出口；1926年5月全国多个行业停工声援矿工。',[[50.5,-5.2],[55.8,1.5]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.28});ha(d,'brTyneCoal',HC.war,{fillOpacity:.45});ha(d,'brSouthWalesCoal',HC.war,{fillOpacity:.45});
+    hp(d,'k_london',{kind:'battle',note:'1925年恢复金本位；1926年5月工会大会在此发动全国罢工。'});
+    hp(d,'brs_newcastle',{kind:'battle',left:1,note:'泰恩河与南威尔士煤矿因英镑高估出口暴跌，120万矿工停工。'});
+   },[['fill',HC.war,'受英镑高估冲击最重的泰恩河与南威尔士煤田'],['fill',HC.britain,'1926年5月4—12日经历全国总罢工的大不列颠'],['dot',HC.war,'伦敦与纽卡斯尔矿区']]),
+  hs('1919—1928年','1928年平等选举权法：男女同权','1919年阿斯特夫人成首位就座女议员；1928年7月鲍德温政府将女性投票年龄降至21岁，实现全民普选。',[[20.0,-10.0],[56.5,122.0]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.36});ha(d,'brNorthernIreland1921',HC.britain,{fillOpacity:.36});
+    hp(d,'uk4_westminster',{kind:'capital',note:'1928年7月新法生效，女性选民人数首次超过男性。'});
+    hp(d,'sp2_plymouth',{left:1,note:'1919年11月阿斯特夫人在普利茅斯补选胜出，首入下院就座。'});
+    hp(d,'fje_nanjing',{note:'1928年10月南京颁布《训政纲领》，以一党训政推迟宪政普选。'});
+   },[['fill',HC.britain,'1928年实现21岁以上成年男女完全普选的联合王国（2885万选民）'],['dot',HC.war,'威斯敏斯特议会'],['dot','#2a2018','普利茅斯与南京对照']]),
+  hs('1215—1928年','七百年宪制台阶总盘点：从3%到100%','从1215年《大宪章》、1689年《权利法案》到1832—1928年五次扩权，英国用七百年走完普选台阶。',[[50.3,-6.5],[56.5,1.8]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.38});ha(d,'brNorthernIreland1921',HC.britain,{fillOpacity:.38});
+    hp(d,'uk4_westminster',{kind:'capital',note:'1832至1928年五次议会改革，将选民从约50万扩至2885万。'});
+    hp(d,'brs_oldsarum',{left:1,note:'1832年被废除的荒丘选区，见证旧贵族寡头议会的起点。'});
+    hp(d,'brs_manchester',{left:1,note:'从1832年前零席位到1928年全民一人一票的工业与劳工重镇。'});
+   },[['fill',HC.britain,'走完七百年宪政与五步普选台阶的大不列颠及北爱尔兰联合王国'],['dot',HC.war,'威斯敏斯特议会'],['dot','#2a2018','老萨勒姆与曼彻斯特']])
+ ]},
 {id:'history-nordic-before',ch:13,title:'出海之前：罗马没来过的北方，怎么长出了长船',short:'出海之前',en:'Before the Longships: The North Rome Never Reached',period:'约前1700—约790年',c:HC.nordic,
  scenes:[
   hs('地理','地形：路在水上','丹麦卡着海峡、挪威沿着峡湾、瑞典面朝波罗的海；三国的地形决定了后来出海的大方向。',[[53.8,-2.5],[65.5,30.5]],d=>{
@@ -15005,6 +15670,8 @@ const HISTORY_ERAS=[
  {id:'britain-hundred-years',name:'百年战争与红白玫瑰战争：从阿基坦称臣到都铎玫瑰',en:'The Hundred Years’ War and the Wars of the Roses: From Aquitaine to the Tudor Rose',date:'1200—1487年',c:HC.britain,items:[['history-britain-edward2'],['history-britain-hundred-years-1'],['history-britain-hundred-years-2'],['history-britain-hundred-years-3'],['history-britain-richard2'],['history-britain-hundred-years-4'],['history-britain-hundred-years-5'],['history-britain-jeanne'],['history-britain-roses-1'],['history-britain-roses-2'],['history-britain-roses-3'],['history-britain-roses-4']]},
  {id:'britain-tudor',name:'都铎王朝：宗教改革、圈地与伊丽莎白时代',en:'The House of Tudor: Reformation, Enclosures and the Elizabethan Age',date:'1485—1603年',c:HC.britain,items:[['history-britain-henry7'],['history-britain-henry8-1'],['history-britain-henry8-2'],['history-britain-henry8-3'],['history-britain-enclosure'],['history-britain-mary1'],['history-britain-elizabeth-rise'],['history-britain-elizabeth-1'],['history-britain-elizabeth-faith'],['history-britain-elizabeth-2'],['history-britain-armada-after'],['history-britain-elizabeth-3']]},
  {id:'britain-stuart',name:'斯图亚特与光荣革命：从内战弑君到锁死枪与钱',en:'The Stuarts and the Glorious Revolution: From Civil War and Regicide to the Bill of Rights',date:'1603—1694年',c:HC.britain,items:[['history-britain-james1'],['history-britain-charles1'],['history-britain-civil-war'],['history-britain-regicide'],['history-britain-commonwealth'],['history-britain-cromwell'],['history-britain-charles2'],['history-britain-james2'],['history-britain-glorious']]},
+ {id:'britain-hanover',name:'汉诺威与工业革命：从英苏合并到滑铁卢',en:'Hanover and the Industrial Revolution: From the Union to Waterloo',date:'1703—1829年',c:HC.britain,items:[['history-britain-union'],['history-britain-walpole'],['history-britain-america'],['history-britain-industry-1'],['history-britain-industry-2'],['history-britain-napoleon']]},
+ {id:'britain-suffrage',name:'维多利亚与普选之路：五步把选票扩到全民',en:'The Victorian Age and the Road to Universal Suffrage: Five Steps to One Person One Vote',date:'1830—1928年',c:HC.britain,items:[['history-britain-reform-1832'],['history-britain-chartism'],['history-britain-victoria'],['history-britain-reform-1867'],['history-britain-lords'],['history-britain-suffrage-1918'],['history-britain-suffrage-1928']]},
  {id:'nordic-early',name:'北欧：从出海到三国',en:'Scandinavia: From the Longships to Three Kingdoms',date:'约前1700—1397年',c:HC.nordic,items:[['history-nordic-before'],['history-nordic-kingdoms']]},
  {id:'nordic-baltic',name:'北欧：卡尔马同盟与波罗的海之争',en:'Scandinavia: The Kalmar Union and the Baltic',date:'1397—1648年',c:HC.nordic,items:[['history-nordic-kalmar'],['history-nordic-baltic'],['history-nordic-peace']]},
  {id:'america-early',name:'美洲：大航海之前与大交换',en:'The Americas: Before 1492 and the Great Exchange',date:'约前13000—约1650年',c:HC.america,items:[['history-america-before'],['history-america-exchange']]},
@@ -15028,7 +15695,7 @@ const HISTORY_BRANCHES=[
  {id:'germany',name:'德意志',en:'Germany',lane:4,parent:'west',from:843,to:1648,c:HC.germany},
  {id:'italy',name:'意大利',en:'Italy',lane:3,parent:'west',from:843,to:1563,c:HC.italy},
  // 不列颠 (including Ireland): forks from the trunk before Caesar's landing, on lane 6 right beside 法兰西.
- {id:'britain',name:'不列颠',en:'Britain and Ireland',lane:6,parent:'trunk',from:-55,to:1694,c:HC.britain},
+ {id:'britain',name:'不列颠',en:'Britain and Ireland',lane:6,parent:'trunk',from:-55,to:1928,c:HC.britain},
  // The 基督教 line: from the Hebrews' nomadic origins (the old Levant branch) to the schism of 1054; on its own lane, right of the West.
  // After 641 it runs through the shared stations of the East Roman dynasties.
  {id:'faith',name:'基督教',en:'Judaism & Christianity',lane:7,parent:'trunk',from:-1400,to:1689,c:HC.faith},
@@ -15274,11 +15941,11 @@ const TREE_ROWS={
  'history-france-dutch-war/0':['france',1667,1684,'1665—1684年'],
  'history-france-revocation/0':[['france','faith'],1681,1689,'1629—1689年'],
  'history-france-nine-years/0':['france',1690,1697,'1688—1697年'],
- 'history-france-spanish-succession/0':[['france','spain'],1700,1714,'1665—1714年'],
+ 'history-france-spanish-succession/0':[['france','spain','britain'],1700,1714,'1665—1714年'],
  'history-france-law/0':['france',1715,1723,'1711—1723年'],
  'history-france-louis15/0':['france',1726,1757,'1723—1757年'],
  'history-france-enlightenment/0':['france',1751,1784,'1721—1784年'],
- 'history-france-seven-years/0':['france',1756,1763,'1754—1763年'],
+ 'history-france-seven-years/0':[['france','britain'],1756,1763,'1754—1763年'],
  'history-france-parlements/0':['france',1764,1776,'1761—1776年'],
  'history-france-american-war/0':['france',1778,1786,'1776—1786年'],
  'history-france-bankruptcy/0':['france',1787,1789,'1786—1789年'],
@@ -15289,6 +15956,19 @@ const TREE_ROWS={
  'history-france-terror/0':['france',1793.4,1794.6,'1793—1794年'],
  'history-france-directory/0':['france',1795.5,1799,'1794—1799年'],
  'history-france-brumaire/0':['france',1799.5,1800,'1799年'],
+ 'history-britain-union/0':['britain',1707,1716,'1703—1716年'],
+ 'history-britain-walpole/0':['britain',1720,1746,'1711—1746年'],
+ 'history-britain-america/0':['britain',1765,1785,'1763—1793年'],
+ 'history-britain-industry-1/0':['britain',1772,1788,'约1700—1830年'],
+ 'history-britain-industry-2/0':['britain',1784,1796,'约1760—1832年'],
+ 'history-britain-napoleon/0':['britain',1805,1829,'1789—1829年'],
+ 'history-britain-reform-1832/0':['britain',1832,1834,'1830—1834年'],
+ 'history-britain-chartism/0':['britain',1838,1851,'1836—1851年'],
+ 'history-britain-victoria/0':['britain',1857,1864,'1837—1877年'],
+ 'history-britain-reform-1867/0':['britain',1867,1885,'1865—1885年'],
+ 'history-britain-lords/0':['britain',1909,1913,'1885—1914年'],
+ 'history-britain-suffrage-1918/0':['britain',1918,1920,'1897—1918年'],
+ 'history-britain-suffrage-1928/0':['britain',1924,1928,'1918—1928年'],
  'history-faith-avignon/0':[['faith','france'],1296,1303,'1294—1303年'],
  'history-faith-clement/0':[['faith','france'],1304,1314,'1303—1314年'],
  'history-italy-blackdeath/0':[['italy','france','britain','germany','faith','persia','nordic'],1347,1351,'1346—1353年'],
@@ -15368,7 +16048,7 @@ const TREE_ROWS={
  'history-germany-swiss/3':[['germany','italy','faith'],1515,1516,'1477—1648年']
 };
 // Topics still to be written grow the tree as dashed shoots.
-const TREE_FUTURE=[['france',1800,'执政府与拿破仑帝国','1799年后待展开：执政府与《民法典》 · 拿破仑帝国 · 从莫斯科到滑铁卢 · 复辟、七月王朝、1848年与路易·波拿巴'],['germany',1648,'普鲁士崛起与七年战争','1648年后待展开：勃兰登堡—普鲁士崛起 · 腓特烈大帝与奥地利王位继承战'],['italy',1563,'哈布斯堡霸权与统一','1563年后待展开：西班牙哈布斯堡霸权下的意大利 · 巴洛克时代与近代统一'],['faith',1689,'政教分离与启蒙时代','1689年后待展开：英国《宽容法》 · 启蒙运动与教会 · 大革命与教会'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',1501,'奥斯曼全盛与波斯争霸','1501年后待展开：1517年奥斯曼灭马穆鲁克 · 苏莱曼一世全盛与奥斯曼—萨法维百年争霸'],['china',845,'晚唐五代与宋','845年起 · 待展开'],['spain',1714,'波旁改革与美洲独立','1714年后待展开：腓力五世废各王国旧制 · 卡洛斯三世改革 · 拿破仑入侵与美洲独立'],['eeurope',1505,'伊凡雷帝与沙皇俄国','1505年后待展开：1547年伊凡四世加冕沙皇 · 混乱时代与罗曼诺夫王朝'],['lowlands',1648,'黄金时代与英荷海战','1648年后待展开：17世纪阿姆斯特丹黄金时代 · 三次英荷海战与威廉三世入主英国'],['crusade',1312,'后来的十字军','1396年尼科波利斯 · 1444年瓦尔纳 · 1571年勒班陀 · 待展开'],['america',1648,'十三殖民地与美国独立','1648年后待展开：英荷争新阿姆斯特丹 · 七年战争把法国赶出北美 · 十三殖民地与美国独立'],['nordic',1648,'踏冰渡海与大北方战争','1648年后待展开：1658年卡尔十世踏冰渡海夺下斯科讷 · 1700—1721年大北方战争，瑞典失去波罗的海霸权'],['britain',1694,'英苏合并与日不落帝国','1694年后待展开：1707年英苏合并为大不列颠 · 汉诺威王朝与责任内阁 · 工业革命与日不落帝国']];
+const TREE_FUTURE=[['france',1800,'执政府与拿破仑帝国','1799年后待展开：执政府与《民法典》 · 拿破仑帝国 · 从莫斯科到滑铁卢 · 复辟、七月王朝、1848年与路易·波拿巴'],['germany',1648,'普鲁士崛起与七年战争','1648年后待展开：勃兰登堡—普鲁士崛起 · 腓特烈大帝与奥地利王位继承战'],['italy',1563,'哈布斯堡霸权与统一','1563年后待展开：西班牙哈布斯堡霸权下的意大利 · 巴洛克时代与近代统一'],['faith',1689,'政教分离与启蒙时代','1689年后待展开：英国《宽容法》 · 启蒙运动与教会 · 大革命与教会'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',1501,'奥斯曼全盛与波斯争霸','1501年后待展开：1517年奥斯曼灭马穆鲁克 · 苏莱曼一世全盛与奥斯曼—萨法维百年争霸'],['china',845,'晚唐五代与宋','845年起 · 待展开'],['spain',1714,'波旁改革与美洲独立','1714年后待展开：腓力五世废各王国旧制 · 卡洛斯三世改革 · 拿破仑入侵与美洲独立'],['eeurope',1505,'伊凡雷帝与沙皇俄国','1505年后待展开：1547年伊凡四世加冕沙皇 · 混乱时代与罗曼诺夫王朝'],['lowlands',1648,'黄金时代与英荷海战','1648年后待展开：17世纪阿姆斯特丹黄金时代 · 三次英荷海战与威廉三世入主英国'],['crusade',1312,'后来的十字军','1396年尼科波利斯 · 1444年瓦尔纳 · 1571年勒班陀 · 待展开'],['america',1648,'十三殖民地与美国独立','1648年后待展开：英荷争新阿姆斯特丹 · 七年战争把法国赶出北美 · 十三殖民地与美国独立'],['nordic',1648,'踏冰渡海与大北方战争','1648年后待展开：1658年卡尔十世踏冰渡海夺下斯科讷 · 1700—1721年大北方战争，瑞典失去波罗的海霸权'],['britain',1928,'大萧条、二战与福利国家','1928年后待展开：1929年大萧条 · 丘吉尔与二战不列颠之战 · 战后福利国家与大英帝国解体']];
 // Where a line stops it says why: [line, year, the event that ends it, note, the line it carries on in].
 const TREE_ENDS=[['trunk',-30,'并入罗马','前146年科林斯被毁 · 前30年最后一个希腊化王国埃及并入罗马','rome'],['rome',476,'西罗马终结','476年西部末代皇帝被废 · 由中世纪西欧接续'],['west',843,'凡尔登三分','843年《凡尔登条约》三分帝国 · 分出法兰西、德意志、意大利'],['east',1453,'东罗马终结','1453年5月29日奥斯曼帝国攻破君士坦丁堡 · 千年东罗马帝国终结'],['prehistory',-3100,'有了文字','两河、埃及约前3200—前3100年先后有了文字和国家 · 由希腊、埃及、波斯—阿拉伯三条线接续','trunk']];
 // Sections of one line that run side by side: [line, row keys, side of the passing loop].
