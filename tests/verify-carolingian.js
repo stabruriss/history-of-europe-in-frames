@@ -141,7 +141,7 @@ const PARALLEL=[['trunk','history-alexander-conquest/0','history-alexander-rule/
    assert.equal(t.loops,PARALLEL.length,label+' loops');
    assert.deepEqual(t.side,PARALLEL.map(p=>p[2]).sort(),label+' the later section of each pair rides the loop');
    assert.ok(['east','france','italy'].every(f=>t.forks.includes(f))&&!t.forks.includes('germany'),label+' forks '+JSON.stringify(t.forks));
-   assert.deepEqual(t.pills,['史前','希腊','罗马','东罗马','中世纪西欧','西班牙','法兰西','低地诸国','德意志','意大利','不列颠','基督教','埃及','波斯—阿拉伯','东欧','十字军','北欧','美洲','中国'],label+' line pills');
+   assert.deepEqual(t.pills,['史前','希腊','罗马','东罗马','中世纪西欧','西班牙','法兰西','低地诸国','德意志','意大利','不列颠','基督教','埃及','中东','东欧','十字军','北欧','美洲','中国'],label+' line pills');
    }
    // Every new scene draws, fits its view on the desktop, and leaves no horizontal overflow.
    if(!FULL_SHOTS){await page.evaluate(({ids,label})=>{for(const id of ids){const n=HISTORY_ENTRIES.find(e=>e.id===id).scenes.length;for(let i=0;i<n;i++){go(id,{scene:i});const sc=activeScene(ENTRIES[cur]);

@@ -2670,6 +2670,18 @@
   "history-spain-1898/0": [
    "spain",
    "america"
+  ],
+  "history-france-waterloo/0": [
+   "france",
+   "eeurope"
+  ],
+  "history-ottoman-crimea/0": [
+   "persia",
+   "eeurope"
+  ],
+  "history-ottoman-ww1/0": [
+   "persia",
+   "eeurope"
   ]
  },
  "fixes": [

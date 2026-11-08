@@ -285,6 +285,24 @@
    [
     "history-eeurope-moscow"
    ]
+  ],
+  [
+   "eeurope-tsardom",
+   "东欧：沙皇俄国与波兰—立陶宛",
+   [
+    "history-eeurope-ivan4",
+    "history-eeurope-romanov",
+    "history-eeurope-peter",
+    "history-eeurope-catherine"
+   ]
+  ],
+  [
+   "eeurope-revolution",
+   "东欧：从农奴解放到苏联",
+   [
+    "history-eeurope-reform",
+    "history-eeurope-october"
+   ]
   ]
  ],
  "fixes": [
@@ -371,7 +389,7 @@
   "不列颠",
   "基督教",
   "埃及",
-  "波斯—阿拉伯",
+  "中东",
   "东欧",
   "十字军",
   "北欧",

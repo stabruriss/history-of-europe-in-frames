@@ -943,10 +943,10 @@
    1
   ],
   "persia": [
-   "波斯—阿拉伯",
+   "中东",
    "prehistory",
    -4000,
-   1501,
+   1923,
    0
   ],
   "faith": [
@@ -965,8 +965,8 @@
   ],
   [
    "persia",
-   1501,
-   "奥斯曼全盛与波斯争霸"
+   1923,
+   "土耳其共和国与现代中东"
   ],
   [
    "faith",
@@ -1006,7 +1006,14 @@
    "history-italy-blackdeath/0",
    "history-persia-timur/0",
    "history-empire-fall-1453/0",
-   "history-persia-ottoman/0"
+   "history-persia-ottoman/0",
+   "history-ottoman-suleiman/0",
+   "history-ottoman-lepanto/0",
+   "history-ottoman-eastern-question/0",
+   "history-ottoman-crimea/0",
+   "history-ottoman-berlin/0",
+   "history-ottoman-ww1/0",
+   "history-ottoman-kemal/0"
   ],
   "faith": [
    "history-spain-crusade/0",

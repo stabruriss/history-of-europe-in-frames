@@ -1,6 +1,6 @@
 /* Chapters organize the argument; eras independently group dated map scenes. */
 const HISTORY_CONTENT=/*__HISTORY_CONTENT__*/;
-const HISTORY_CH=['上古与黑暗时代','希腊城邦时代','马其顿与帝国','希腊化世界','罗马','罗马帝国','犹太教与基督教','中国对照','埃及','波斯—阿拉伯','东欧','十字军','不列颠','北欧','美洲'];
+const HISTORY_CH=['上古与黑暗时代','希腊城邦时代','马其顿与帝国','希腊化世界','罗马','罗马帝国','犹太教与基督教','中国对照','埃及','中东','东欧','十字军','不列颠','北欧','美洲'];
 const HC={athens:'#276582',sparta:'#99462e',mino:'#ad7c25',myc:'#637541',hittite:'#866347',
   persia:'#8b644c',thebes:'#387568',macedon:'#6b4d72',war:'#a03327',neutral:'#887b65',route:'#2a7182',celt:'#64763f',parthia:'#765b78',rome:'#a34f36',faith:'#41508c',china:'#2e6b4e',byz:'#93324f',france:'#2b6cb0',germany:'#4a4440',italy:'#b8652a',spain:'#a2337f',lowlands:'#b45309',eeurope:'#1d8a99',crusade:'#c0262d',britain:'#2b6a6c',nordic:'#4f86ad',america:'#8c7a14',prehistory:'#7d6b50'};
 const HV={aegean:[[34.3,20.2],[41.3,29.6]],greece:[[35.6,20.4],[39.8,25.1]],
@@ -2578,6 +2578,106 @@ Object.assign(HS,{
   amwi_qingdao:['青岛（山东）','Qingdao, Shandong',36.07,120.38,'中国山东胶州湾海港；1919年巴黎和会将德国在山东权益转交日本，触发五四运动。'],
   amwi_pueblo:['普韦布洛','Pueblo, Colorado',38.25,-104.61,'科罗拉多州城市；1919年9月25日威尔逊巡回演说至此累倒，返华盛顿后中风瘫痪。'],
   amwi_geneva:['日内瓦','Geneva',46.2,6.14,'瑞士莱芒湖畔城市；1920年国际联盟总部设于此地，倡议建国联的美国却始终未加入。'],
+  ote_buda:['布达','Buda',47.498,19.04,'匈牙利王国的都城，1541—1686年归奥斯曼。'],
+  osm1_chaldiran:['查尔迪兰','Chaldiran',39.089,44.385,'东安纳托利亚高原盆地；1514年8月23日塞利姆一世以火器车阵在此击溃萨法维沙阿伊斯玛仪一世。'],
+  osm1_dabiq:['达比克草原','Marj Dabiq',36.542,37.271,'阿勒颇以北平原；1516年8月24日塞利姆一世在此以火炮击毙马穆鲁克苏丹坎苏·古里。'],
+  osm1_mohacs:['莫哈奇','Mohács',45.941,18.647,'多瑙河西岸平原；1526年8月29日苏莱曼一世在此歼灭匈牙利主力，国王路易二世溺亡。'],
+  osm1_koszeg:['克塞格（金斯）','Kőszeg (Güns)',47.389,16.541,'奥匈边境小堡；1532年8月守将尤里希奇率八百军民挡住苏莱曼大军二十五天。'],
+  osm1_amasya:['阿马斯亚','Amasya',40.654,35.833,'安纳托利亚北部重镇；1555年5月奥斯曼与萨法维波斯在此签署首次正式划界和约。'],
+  osm1_szigetvar:['锡盖特堡','Szigetvár',46.051,17.806,'匈牙利西南部水泽要塞；1566年9月苏莱曼一世在攻城营帐中病逝。'],
+  ote_azov:['亚速','Azov',47.107,39.416,'顿河入亚速海处的奥斯曼要塞，俄土两国反复争夺。'],
+  osm2_nicosia:['尼科西亚','Nicosia',35.175,33.364,'塞浦路斯岛中心首府；1570年9月被奥斯曼军攻陷，1573年威尼斯正式割让全岛。'],
+  osm2_julfa:['新朱尔法（伊斯法罕南郊）','New Julfa, Isfahan',32.633,51.656,'扎因代河南岸亚美尼亚人聚居区；1606年阿巴斯一世迁亚美尼亚商人至此专营波斯生丝出口。'],
+  osm2_zuhab:['佐哈布（舍林堡）','Zuhab (Qasr-e Shirin)',34.516,45.579,'扎格罗斯山脉西麓边境镇；1639年5月奥斯曼与萨法维在此缔结《佐哈布条约》划定两伊边界。'],
+  osm2_kahlenberg:['卡伦堡山','Kahlenberg, Vienna',48.276,16.337,'维也纳西北多瑙河畔高地；1683年9月12日波兰国王索别斯基率联军自此俯冲解维也纳之围。'],
+  osm2_zenta:['森塔','Zenta (Senta)',45.928,20.078,'蒂萨河渡口；1697年9月11日奥地利名将欧根亲王在此半渡击歼奥斯曼主力。'],
+  osm2_karlowitz:['卡尔洛维茨','Karlowitz (Sremski Karlovci)',45.203,19.934,'多瑙河畔小镇；1699年1月奥斯曼在此与神圣同盟签署首次大规模割地和约。'],
+  osm2_passarowitz:['帕萨罗维茨','Passarowitz (Požarevac)',44.621,21.187,'塞尔维亚北部城镇；1718年7月奥斯曼在此签约将贝尔格莱德与巴纳特割予奥地利。'],
+  ote_petersburg:['圣彼得堡','Saint Petersburg',59.939,30.316,'1703年在涅瓦河口建城，1712—1918年是俄国首都。'],
+  ote_odessa:['敖德萨','Odessa',46.482,30.723,'1794年建的黑海港口，后来是俄国出口粮食的大港。'],
+  ote_bucharest:['布加勒斯特','Bucharest',44.426,26.102,'瓦拉几亚公国的都城，1862年起是罗马尼亚首都。'],
+  osm3_chesma:['切什梅','Çeşme',38.324,26.303,'安纳托利亚西岸爱琴海港湾；1770年7月俄国舰队在此用火船焚毁奥斯曼主力舰队。'],
+  osm3_kaynarca:['库楚克开纳吉','Küçük Kaynarca (Kaynardzha)',43.993,27.507,'多瑙河南岸保加利亚东北村落；1774年7月俄土在此签署《库楚克开纳吉条约》。'],
+  osm3_abukir:['阿布基尔湾','Abu Qir Bay',31.33,30.1,'尼罗河口西侧海湾；1798年8月英国海军将领纳尔逊在此歼灭拿破仑的法国舰队。'],
+  osm3_navarino:['纳瓦里诺（皮洛斯）','Navarino (Pylos)',36.914,21.696,'伯罗奔尼撒西南海湾；1827年10月英法俄联合舰队在此击沉奥斯曼与埃及主力舰队。'],
+  osm3_konya:['科尼亚','Konya',37.872,32.493,'安纳托利亚腹地重镇；1832年12月埃及统帅易卜拉欣帕夏在此击败奥斯曼主力并俘获大维齐尔。'],
+  osm3_kutahya:['屈塔希亚','Kütahya',39.42,29.985,'距伊斯坦布尔约两百公里的安纳托利亚西北部城市；1833年埃及军推进至此。'],
+  osm3_nezib:['尼齐普','Nizip (Nezib)',37.01,37.797,'幼发拉底河西岸城镇；1839年6月易卜拉欣帕夏在此再度击溃奥斯曼新军。'],
+  osm3_acre:['阿卡','Acre',32.928,35.068,'黎凡特海岸坚固要塞；1799年挡住拿破仑，1832年被埃及攻占，1840年11月被英奥土舰队炮击攻克。'],
+  ote_warsaw:['华沙','Warsaw',52.23,21.012,'1596年起是波兰—立陶宛的王都，1815年后是俄属波兰首府。'],
+  ote_kars:['卡尔斯','Kars',40.601,43.097,'东安纳托利亚的要塞，俄土两国反复争夺。'],
+  crw_bethlehem:['伯利恒','Bethlehem',31.704,35.207,'耶路撒冷以南城镇；1847年圣诞教堂银星失窃引发法俄两国的圣地管辖权争端。'],
+  crw_silistria:['锡利斯特拉','Silistra (Silistria)',44.117,27.26,'多瑙河南岸奥斯曼要塞；1854年春夏奥斯曼守军在此顶住俄军围攻，奥地利随即施压逼俄军撤出两公国。'],
+  ote_sofia:['索非亚','Sofia',42.698,23.322,'1879年起是保加利亚公国的首都。'],
+  ote_plevna:['普列文','Pleven (Plevna)',43.417,24.617,'保加利亚北部的要塞城市。'],
+  ote_sarajevo:['萨拉热窝','Sarajevo',43.856,18.413,'波斯尼亚首府，1878年起归奥匈帝国占领。'],
+  ote_salonica:['萨洛尼卡','Salonica (Thessaloniki)',40.64,22.944,'马其顿大港，1912年以前属奥斯曼。'],
+  osm4_sanstefano:['圣斯特凡诺','San Stefano (Yeşilköy)',40.958,28.821,'伊斯坦布尔西郊马尔马拉海边小城；1878年3月俄军进抵此地签下条约。'],
+  osm4_batak:['巴塔克','Batak, Bulgaria',41.942,24.218,'保加利亚罗多彼山脉山镇；1876年5月非正规军在此屠杀平民，震动欧洲舆论。'],
+  osm4_nicosia:['尼科西亚','Nicosia, Cyprus',35.185,33.382,'塞浦路斯首府；1878年6月英国与奥斯曼秘约接管该岛。'],
+  ote_brest:['布列斯特—立托夫斯克','Brest-Litovsk',52.097,23.735,'布格河畔的要塞城市。'],
+  ww1_tannenberg:['坦能堡','Tannenberg (Stębark)',53.494,20.134,'东普鲁士战场；1914年8月德军在此包抄歼灭俄国第二集团军。'],
+  ww1_sarikamish:['萨勒卡默什','Sarıkamış',40.338,42.573,'东安纳托利亚高寒山城；1914年12月—1915年1月恩维尔率军攻俄在此冻死数万。'],
+  ww1_deirezzor:['代尔祖尔','Deir ez-Zor',35.336,40.141,'幼发拉底河畔叙利亚沙漠重镇；1915—1916年亚美尼亚人死亡行军的终点营地。'],
+  ww1_mudros:['穆德洛斯','Moudros, Lemnos',39.874,25.268,'爱琴海利姆诺斯岛军港；1918年10月30日奥斯曼在此签署停战协定。'],
+  osm5_samsun:['萨姆松','Samsun',41.287,36.336,'黑海南岸港口；1919年5月19日凯末尔在此登陆，打响独立战争。'],
+  osm5_sakarya:['萨卡里亚河','Sakarya River (Polatlı)',39.584,32.147,'安卡拉以西约八十公里防线；1921年8—9月凯末尔在此顶住希腊军猛攻。'],
+  osm5_chanak:['恰纳卡莱（恰纳克）','Çanakkale (Chanak)',40.147,26.409,'达达尼尔海峡南岸重镇；1922年9—10月土军在此逼退英军防线。'],
+  osm5_lausanne:['洛桑','Lausanne',46.52,6.632,'瑞士莱芒湖北岸城市；1923年7月24日在此签署承认土耳其独立主权的《洛桑条约》。'],
+  ote_smolensk:['斯摩棱斯克','Smolensk',54.782,32.045,'第聂伯河上游要塞，莫斯科通往波兰—立陶宛的门户。'],
+  rus1_ryazan:['梁赞','Ryazan',54.63,39.74,'奥卡河中游的罗斯公国都城，1521年并入莫斯科。'],
+  rus1_kazan:['喀山','Kazan',55.799,49.106,'伏尔加河中游喀山汗国的都城。'],
+  rus1_astrakhan:['阿斯特拉罕','Astrakhan',46.35,48.04,'伏尔加河入里海处的汗国都城。'],
+  rus1_molodi:['莫洛季','Molodi',55.5,37.533,'莫斯科以南约50公里的村庄。'],
+  rus1_bakhchisaray:['巴赫奇萨赖','Bakhchysarai',44.75,33.86,'克里米亚汗国的都城。'],
+  rus1_polotsk:['波洛茨克','Polotsk',55.485,28.768,'西德维纳河畔的立陶宛要塞城市。'],
+  rus1_lublin:['卢布林','Lublin',51.246,22.568,'波兰东部城市，1569年波兰与立陶宛在此合并。'],
+  rus1_alexandrov:['亚历山德罗夫村','Aleksandrova Sloboda',56.4,38.739,'莫斯科东北约一百公里的沙皇行宫。'],
+  rus1_solvychegodsk:['索利维切戈茨克','Solvychegodsk',61.333,46.917,'北方盐业小城，斯特罗加诺夫家族的老家。'],
+  rus1_qashliq:['卡什雷克','Qashliq (Isker)',58.149,68.52,'额尔齐斯河畔，西伯利亚汗国的都城。'],
+  rus1_uglich:['乌格利奇','Uglich',57.533,38.333,'伏尔加河上游小城，伊凡四世幼子的封地。'],
+  rus2_novodevichy:['新圣女修道院','Novodevichy Convent',55.726,37.556,'莫斯科西南城郊的女修道院。'],
+  rus2_klushino:['克卢希诺','Klushino',55.658,34.93,'斯摩棱斯克以东、通往莫斯科大路边的村庄。'],
+  rus2_tushino:['图希诺','Tushino',55.833,37.433,'莫斯科西北郊的村庄。'],
+  rus2_nizhny:['下诺夫哥罗德','Nizhny Novgorod',56.327,44.006,'伏尔加河与奥卡河汇合处的商城。'],
+  rus2_ipatiev:['伊帕季耶夫修道院','Ipatiev Monastery, Kostroma',57.776,40.894,'伏尔加河畔科斯特罗马城外的修道院。'],
+  rus2_trinity:['三一修道院','Trinity Lavra of St. Sergius',56.31,38.131,'莫斯科东北约70公里的大修道院。'],
+  rus2_sich:['扎波罗热营地','Zaporozhian Sich',47.6,34.4,'第聂伯河险滩下游的哥萨克营地（位置示意）。'],
+  rus2_chyhyryn:['奇吉林','Chyhyryn',49.077,32.649,'第聂伯河右岸小城，哥萨克盖特曼的驻地。'],
+  rus2_berestechko:['别列斯捷奇科','Berestechko',50.35,25.117,'沃伦地区的小城。'],
+  rus2_pereiaslav:['佩列亚斯拉夫','Pereiaslav',50.065,31.445,'第聂伯河左岸的小城。'],
+  rus2_tsaritsyn:['察里津','Tsaritsyn',48.708,44.513,'伏尔加河下游的要塞，今伏尔加格勒。'],
+  rus2_simbirsk:['辛比尔斯克','Simbirsk',54.317,48.4,'伏尔加河中游的要塞。'],
+  rus2_pustozersk:['普斯托泽尔斯克','Pustozersk',67.533,52.583,'北冰洋边伯朝拉河口的流放地。'],
+  rus2_yakutsk:['雅库茨克','Yakutsk',62.028,129.732,'勒拿河畔的堡寨。'],
+  rus2_okhotsk:['鄂霍次克','Okhotsk',59.368,143.259,'鄂霍次克海边的哥萨克堡寨。'],
+  rus2_albazin:['雅克萨（阿尔巴津）','Albazin',53.391,124.078,'黑龙江上游北岸的哥萨克木堡。'],
+  rus2_nerchinsk:['尼布楚','Nerchinsk',51.994,116.556,'石勒喀河畔的俄国堡寨。'],
+  rus3_voronezh:['沃罗涅日','Voronezh',51.672,39.211,'顿河支流沃罗涅日河畔造船城；1695—1696年彼得一世在此赶造舰队顺流南下攻取亚速。'],
+  rus3_zaandam:['赞丹','Zaandam',52.44,4.826,'阿姆斯特丹北面的荷兰造船小镇；1697年8月彼得一世化名在此学做船匠。'],
+  rus3_poltava:['波尔塔瓦','Poltava',49.588,34.551,'第聂伯河左岸乌克兰重镇；1709年7月8日彼得一世在此歼灭卡尔十二世的瑞典主力。'],
+  rus3_pruth:['普鲁特河（斯塔尼莱什蒂）','Stănilești on the Pruth',46.633,28.167,'摩尔达维亚普鲁特河畔；1711年7月彼得一世率军在此被奥斯曼大军合围，被迫签约交还亚速。'],
+  rus3_nystad:['尼斯塔德（新考蓬基）','Nystad (Uusikaupunki)',60.8,21.41,'芬兰西南海滨小城；1721年9月俄瑞在此签署《尼斯塔德和约》，结束二十一年大北方战争。'],
+  rus4_kazan:['喀山','Kazan',55.796,49.106,'伏尔加河中游重镇；1774年7月普加乔夫起义军攻占并焚毁喀山外城。'],
+  rus4_orenburg:['奥伦堡','Orenburg',51.768,55.097,'乌拉尔河畔边防要塞；1773年10月至1774年3月遭普加乔夫大军围困半年。'],
+  rus4_kuchuk:['库楚克开纳吉','Küçük Kaynarca (Kaynardzha)',43.993,27.507,'多瑙河南岸保加利亚村庄；1774年7月俄土在此签下《库楚克开纳吉条约》。'],
+  rus4_jassy:['雅西','Jassy (Iași)',47.158,27.601,'摩尔达维亚首府；1791年波将金病逝于城外，1792年1月俄土在此签署《雅西和约》。'],
+  rus4_grodno:['格罗德诺','Grodno (Hrodna)',53.678,23.829,'涅曼河畔的立陶宛重镇；1793年俄军包围“哑巴议会”强逼割地，1795年末代波王在此退位。'],
+  ote_vladivostok:['符拉迪沃斯托克（海参崴）','Vladivostok',43.115,131.885,'1860年起俄国在日本海边的港口。'],
+  rus5_elisavetgrad:['伊丽莎白格勒','Yelizavetgrad (Kropyvnytskyi)',48.5,32.267,'乌克兰中部的县城，今名克罗佩夫尼茨基。'],
+  rus5_portarthur:['旅顺','Port Arthur (Lüshun)',38.813,121.242,'辽东半岛南端的军港，1898年由俄国租借。'],
+  rus5_mukden:['奉天（沈阳）','Mukden (Shenyang)',41.783,123.433,'清朝的盛京，1905年日俄两军在此会战。'],
+  rus5_tsushima:['对马海峡','Tsushima Strait',34.45,130.15,'朝鲜半岛与日本九州之间的海峡。'],
+  rus6_zurich:['苏黎世','Zurich',47.377,8.54,'瑞士城市，列宁1916—1917年的流亡住地。'],
+  rus6_sassnitz:['萨斯尼茨','Sassnitz',54.516,13.644,'德国吕根岛上的渡轮港口。'],
+  rus6_finland:['芬兰车站','Finland Station, Petrograd',59.956,30.357,'彼得格勒通往芬兰的铁路终点站。'],
+  rus6_lemberg:['利沃夫（伦贝格）','Lemberg (Lviv)',49.842,24.032,'奥匈帝国加利西亚省的首府。'],
+  rus6_winterpalace:['冬宫','Winter Palace, Petrograd',59.94,30.314,'涅瓦河边的沙皇正宫。'],
+  rus6_smolny:['斯莫尔尼宫','Smolny Institute, Petrograd',59.946,30.396,'原贵族女子学校，1917年秋是彼得格勒苏维埃会址。'],
+  rus6_tauride:['塔夫利宫','Tauride Palace, Petrograd',59.948,30.376,'国家杜马的会址。'],
+  rus6_kronstadt:['喀琅施塔得','Kronstadt',59.991,29.775,'芬兰湾科特林岛上的海军要塞。'],
+  rus6_samara:['萨马拉','Samara',53.195,50.1,'伏尔加河中游的省城。'],
+  rus6_shanghai:['上海','Shanghai',31.222,121.475,'1921年中共第一次全国代表大会在法租界望志路开幕。'],
 });
 function hp(d,key,opt={}){
   const [n,en,la,lo,note]=HS[key];
@@ -11992,6 +12092,328 @@ const HISTORY_ENTRIES=[
     hr(d,[[38.25,48.29],[38.08,46.29]],HC.parthia);
    },[['fill',HC.war,'逊尼派霸主：奥斯曼帝国'],['fill',HC.parthia,'什叶派帝国：萨法维波斯（1501年起）'],['dline',HC.parthia,'1499—1501年伊斯玛仪一世率红头军夺取大不里士'],['dot',HC.war,'1501年萨法维开国都城大不里士'],['dot','#2a2018','阿尔达比勒与君士坦丁堡']])
  ]},
+{id:'history-ottoman-suleiman',ch:9,title:'塞利姆与苏莱曼：火炮打出逊尼帝国，维也纳卡在补给半径上',short:'塞利姆与苏莱曼',en:'Selim and Suleiman: Cannon Forge a Sunni Empire, and Vienna Lies Beyond the Supply Radius',period:'1501—1566年',c:HC.parthia,
+ scenes:[
+  hs('1501—1514年','查尔迪兰会战：火炮车阵击溃红头军','1512年塞利姆一世在伊斯坦布尔登基；1514年东征查尔迪兰重创萨法维波斯，并短暂进入大不里士。',[[33.0,26.0],[43.5,52.0]],d=>{
+    ha(d,'mOttoman1522',HC.parthia,{fillOpacity:.26});ha(d,'osSafavid1514',HC.war,{fillOpacity:.24});
+    hp(d,'po_constantinople',{kind:'capital',left:1,note:'1512年4月塞利姆一世在此获新军拥立登基。'});
+    hp(d,'po_trebizond',{note:'塞利姆任皇子时的驻地，在此募集边疆部队。'});
+    hp(d,'osm1_chaldiran',{kind:'battle',left:1,note:'1514年8月23日奥斯曼火器车阵重创波斯红头军。'});
+    hp(d,'po_tabriz',{note:'查尔迪兰战后塞利姆一度占领萨法维都城大不里士。'});
+    hr(d,[[41.01,28.98],[39.09,44.39],[38.08,46.29]],HC.war);
+   },[['fill',HC.parthia,'塞利姆一世即位时的奥斯曼帝国'],['fill',HC.war,'伊斯玛仪一世统治的萨法维波斯'],['dline',HC.war,'1514年塞利姆一世东征路线'],['dot',HC.war,'伊斯坦布尔与查尔迪兰战场'],['dot','#2a2018','特拉布宗与大不里士']]),
+  hs('1516—1517年','达比克与里达尼亚：攻灭马穆鲁克','1516—1517年塞利姆一世南下攻取大马士革与开罗，并受麦加与麦地那归附，吞并马穆鲁克全境。',[[20.0,25.0],[42.5,45.0]],d=>{
+    ha(d,'mOttoman1522',HC.parthia,{fillOpacity:.28});ha(d,'mMamluks1291',HC.war,{fillOpacity:.26,dashArray:'4 4'});
+    hp(d,'osm1_dabiq',{kind:'battle',note:'1516年8月24日奥斯曼军在此击溃马穆鲁克主力，夺取叙利亚。'});
+    hp(d,'p_damascus',{note:'1516年秋塞利姆一世进驻大马士革休整。'});
+    hp(d,'c4_cairo',{kind:'battle',left:1,note:'1517年1月里达尼亚之战后奥斯曼军攻占开罗。'});
+    hp(d,'p_mecca',{note:'1517年麦加谢里夫遣使赴开罗归顺奥斯曼。'});
+    hr(d,[[41.01,28.98],[36.54,37.27],[33.51,36.29],[30.04,31.24]],HC.war);
+   },[['fill',HC.parthia,'吞并叙利亚与埃及后的奥斯曼版图（1517年）'],['dash',HC.war,'被塞利姆一世攻灭的马穆鲁克苏丹国'],['dline',HC.war,'1516—1517年塞利姆一世南征路线'],['dot',HC.war,'达比克战场与开罗'],['dot','#2a2018','大马士革与麦加']]),
+  hs('1520—1526年','贝尔格莱德、罗得岛与莫哈奇会战','苏莱曼一世于1521年克贝尔格莱德、1522年取罗得岛，1526年北上莫哈奇击溃匈牙利王国。',[[35.0,15.0],[48.5,34.0]],d=>{
+    ha(d,'mOttoman1522',HC.parthia,{fillOpacity:.28});ha(d,'mHungary1100',HC.war,{fillOpacity:.22,dashArray:'4 4'});
+    hp(d,'po_constantinople',{kind:'capital',note:'1520年9月二十五岁的苏莱曼一世在此登基。'});
+    hp(d,'cx_belgrade',{kind:'battle',left:1,note:'1521年8月苏莱曼攻克多瑙河重镇贝尔格莱德。'});
+    hp(d,'rhodes',{kind:'battle',note:'1522年12月围攻五个月后迫降罗得岛医院骑士团。'});
+    hp(d,'osm1_mohacs',{kind:'battle',left:1,note:'1526年8月29日莫哈奇会战摧毁匈牙利王军。'});
+    hr(d,[[41.01,28.98],[44.82,20.46],[45.94,18.65]],HC.war);
+   },[['fill',HC.parthia,'1522年控制东地中海的奥斯曼帝国'],['dash',HC.war,'1526年莫哈奇会战后瓦解的匈牙利王国'],['dline',HC.war,'苏莱曼北上贝尔格莱德与莫哈奇路线'],['dot',HC.war,'伊斯坦布尔、贝尔格莱德、罗得岛与莫哈奇']]),
+  hs('1529—1532年','第一次围攻维也纳与单季补给半径','1529年苏莱曼一世自伊斯坦布尔长途行军至维也纳城下，围城两周撤回；1532年又止步于克塞格。',[[38.0,13.0],[50.0,32.0]],d=>{
+    ha(d,'osOttoman1566',HC.parthia,{fillOpacity:.26});ha(d,'sHabsburgAustria1556',HC.germany,{fillOpacity:.28});
+    hp(d,'po_constantinople',{kind:'capital',note:'1529年5月10日苏莱曼率十万大军自此出发。'});
+    hp(d,'ote_buda',{note:'奥斯曼大军北上维也纳的中途水陆转运基地。'});
+    hp(d,'c3_vienna',{kind:'battle',left:1,note:'1529年9月27日至10月15日奥斯曼军围攻维也纳未克。'});
+    hp(d,'osm1_koszeg',{kind:'battle',left:1,note:'1532年8月克罗地亚守将在此阻滞奥斯曼军二十五天。'});
+    hr(d,[[41.01,28.98],[44.82,20.46],[47.50,19.04],[48.21,16.37]],HC.route);
+   },[['fill',HC.parthia,'奥斯曼帝国在巴尔干与匈牙利的统治区'],['fill',HC.germany,'斐迪南一世驻守的奥地利哈布斯堡领地'],['dline',HC.route,'伊斯坦布尔至维也纳的一千四百公里远征线'],['dot',HC.war,'伊斯坦布尔、维也纳与克塞格'],['dot','#2a2018','布达']]),
+  hs('1525—1569年','法奥跨教派同盟与土伦港驻冬','法国与奥斯曼联手夹击哈布斯堡领地；1543—1544年奥斯曼舰队横跨地中海进驻法国土伦港。',[[34.0,-5.0],[50.0,34.0]],d=>{
+    ha(d,'osOttoman1566',HC.parthia,{fillOpacity:.26});ha(d,'fFrance1648',HC.france,{fillOpacity:.26});ha(d,'sHabsburgSpain1556',HC.spain,{fillOpacity:.24});ha(d,'sHabsburgAustria1556',HC.germany,{fillOpacity:.24});
+    hp(d,'w_paris',{kind:'capital',note:'弗朗索瓦一世自马德里获释后遣使与奥斯曼缔盟。'});
+    hp(d,'bd_toulon',{kind:'port',left:1,note:'1543—1544年法国腾空土伦港供奥斯曼舰队过冬。'});
+    hp(d,'sp2_algiers',{kind:'port',note:'海雷丁·巴巴罗萨统辖的北非海盗舰队基地。'});
+    hp(d,'po_constantinople',{kind:'capital',left:1,note:'1536年商谈特权草案，1569年正式颁赐对法让步条约。'});
+    hr(d,[[41.01,28.98],[36.75,3.06],[43.12,5.93]],HC.route);
+   },[['fill',HC.parthia,'奥斯曼帝国'],['fill',HC.france,'与苏丹结盟的法兰西王国'],['fill',HC.spain,'查理五世治下的西班牙与意大利领地'],['fill',HC.germany,'奥地利哈布斯堡领地'],['dline',HC.route,'巴巴罗萨舰队赴法国土伦港航线'],['dot',HC.war,'巴黎與伊斯坦布尔'],['dot','#2a2018','土伦港与阿尔及尔']]),
+  hs('1534—1566年','横跨三洲的极盛版图与锡盖特堡绝响','苏莱曼一世夺取巴格达、设布达省、签《阿马斯亚和约》划界，1566年死于匈牙利锡盖特堡。',[[22.0,12.0],[49.0,52.0]],d=>{
+    ha(d,'osOttoman1566',HC.parthia,{fillOpacity:.32});ha(d,'osVassals1566',HC.parthia,{fillOpacity:.16,dashArray:'4 4'});ha(d,'osSafavid1600',HC.war,{fillOpacity:.22});
+    hp(d,'w_baghdad',{kind:'battle',note:'1534年12月苏莱曼攻取巴格达，打通波斯湾出口。'});
+    hp(d,'ote_buda',{note:'1541年8月苏莱曼进占布达，设为奥斯曼直辖行省。'});
+    hp(d,'osm1_amasya',{note:'1555年5月奥斯曼与萨法维在此签署《阿马斯亚和约》。'});
+    hp(d,'osm1_szigetvar',{kind:'battle',left:1,note:'1566年9月苏莱曼病逝于此，守将兹林斯基突围战死。'});
+   },[['fill',HC.parthia,'1566年苏莱曼去世时的奥斯曼直辖疆域'],['dash',HC.parthia,'奥斯曼附庸国（特兰西瓦尼亚、两公国与克里米亚）'],['fill',HC.war,'《阿马斯亚和约》划界后的萨法维波斯'],['dot',HC.war,'巴格达与锡盖特堡'],['dot','#2a2018','布达与阿马斯亚']])
+ ]},
+{id:'history-ottoman-lepanto',ch:9,title:'勒班陀之后：苏丹进了笼子，帝国换了主人',short:'勒班陀之后',en:'After Lepanto: The Sultan in the Cage, and New Masters of the Empire',period:'1566—1718年',c:HC.parthia,
+ scenes:[
+  hs('1566—1573年','塞浦路斯之战与勒班陀海战','1570—1571年奥斯曼攻占塞浦路斯；虽在勒班陀海战受挫，仍迫威尼斯于1573年签约割岛。',[[31.0,11.0],[46.5,37.0]],d=>{
+    ha(d,'osOttoman1566',HC.parthia,{fillOpacity:.28});
+    hp(d,'po_constantinople',{kind:'capital',note:'索库鲁在1571—1572年冬下令船厂赶造百余艘新战船。'});
+    hp(d,'osm2_nicosia',{kind:'battle',left:1,note:'1570年9月奥斯曼军攻占塞浦路斯首府尼科西亚。'});
+    hp(d,'sp2_famagusta',{kind:'battle',note:'1571年8月威尼斯守军在法马古斯塔粮尽投降。'});
+    hp(d,'sp2_lepanto',{kind:'battle',left:1,note:'1571年10月7日神圣同盟舰队在此重创奥斯曼舰队。'});
+    hp(d,'w_venice',{kind:'port',left:1,note:'1573年3月威尼斯单独讲和，正式割让塞浦路斯并赔款。'});
+   },[['fill',HC.parthia,'夺取塞浦路斯后的奥斯曼帝国'],['dot',HC.war,'伊斯坦布尔、尼科西亚、法马古斯塔与勒班陀'],['dot','#2a2018','威尼斯']]),
+  hs('1580—1600年','美洲白银涌入、铸币减色与新军哗变','西属美洲波托西白银经地中海与马尼拉两条航线分别流入奥斯曼与明朝，引发物价上涨与银币减色。',[[-22.0,-75.0],[50.0,125.0]],d=>{
+    ha(d,'osOttoman1566',HC.parthia,{fillOpacity:.28});ha(d,'sHabsburgSpain1556',HC.spain,{fillOpacity:.24});
+    hp(d,'sp1_potosi',{left:1,note:'西属秘鲁波托西银矿，16世纪末全球白银的主要产地。'});
+    hp(d,'hispalis',{kind:'port',left:1,note:'塞维利亚：美洲白银由此入欧，再经商船流入东地中海。'});
+    hp(d,'po_constantinople',{kind:'battle',note:'1585—1586年阿克切银币减色，1589年引发新军哗变。'});
+    hp(d,'fje_beijing',{note:'美洲白银经马尼拉流入明朝，推动万历年间一条鞭法改革。'});
+    hr(d,[[-19.58,-65.75],[37.39,-5.99],[41.01,28.98]],HC.route);
+   },[['fill',HC.parthia,'受白银通胀与财政转型冲击的奥斯曼帝国'],['fill',HC.spain,'输出美洲白银的西班牙帝国欧洲领地'],['dline',HC.route,'美洲白银经塞维利亚流入奥斯曼航线'],['dot',HC.war,'1589年新军哗变地伊斯坦布尔'],['dot','#2a2018','波托西、塞维利亚与北京对照']]),
+  hs('1603—1669年','托普卡帕宫“笼子”与攻占克里特岛','伊斯坦布尔宫廷改行皇子幽禁与年长继位制；1648—1669年奥斯曼围攻二十一年夺下克里特岛坎迪亚。',[[33.5,19.0],[44.5,36.0]],d=>{
+    ha(d,'osOttoman1683',HC.parthia,{fillOpacity:.28});
+    hp(d,'po_constantinople',{kind:'capital',note:'1603年起皇子幽禁后宫；1622年新军在此弑杀奥斯曼二世。'});
+    hp(d,'iv2_candia',{kind:'battle',left:1,note:'1669年9月奥斯曼攻克威尼斯坚守二十一年的坎迪亚。'});
+    hp(d,'ax_smyrna',{kind:'port',note:'17世纪包税商与西欧领事云集的爱琴海贸易大港。'});
+   },[['fill',HC.parthia,'1669年吞并克里特岛后的奥斯曼版图'],['dot',HC.war,'伊斯坦布尔与克里特首府坎迪亚'],['dot','#2a2018','士麦那港']]),
+  hs('1588—1639年','阿巴斯一世迁都伊斯法罕与《佐哈布条约》','色块是奥斯曼与阿巴斯一世统治下的萨法维波斯；图钉标出伊斯法罕、新朱尔法与两伊边境重镇。',[[28.0,28.0],[43.0,56.0]],d=>{
+    ha(d,'osOttoman1566',HC.parthia,{fillOpacity:.26});ha(d,'osSafavid1600',HC.war,{fillOpacity:.28});
+    hp(d,'pt_isfahan',{kind:'capital',note:'1598年阿巴斯一世迁都于此，并在南郊新朱尔法安置亚美尼亚丝商。'});
+    hp(d,'w_baghdad',{kind:'battle',left:1,note:'1623年被波斯攻占，1638年12月被穆拉德四世夺回。'});
+    hp(d,'osm2_zuhab',{left:1,note:'1639年5月17日双方在此签《佐哈布条约》划定两伊边界。'});
+    hr(d,[[41.01,28.98],[33.31,44.36],[34.52,45.58]],HC.war);
+   },[['fill',HC.parthia,'保住两河流域的奥斯曼帝国'],['fill',HC.war,'阿巴斯一世改革后的萨法维波斯'],['dline',HC.war,'1638年穆拉德四世收复巴格达路线'],['dot',HC.war,'伊斯法罕与巴格达'],['dot','#2a2018','新朱尔法与佐哈布']]),
+  hs('1656—1683年','科普鲁律中兴与1683年第二次维也纳之围','科普鲁律父子解海峡封锁并北扩；1683年卡拉·穆斯塔法围攻维也纳两个月，在卡伦堡山下被联军击溃。',[[38.0,14.0],[51.5,32.0]],d=>{
+    ha(d,'osOttoman1683',HC.parthia,{fillOpacity:.3});ha(d,'sHabsburgAustria1556',HC.germany,{fillOpacity:.26});ha(d,'plCommonwealth1569',HC.eeurope,{fillOpacity:.22});
+    hp(d,'po_gallipoli',{kind:'battle',note:'1656—1657年科普鲁律在此打破威尼斯对海峡的封锁。'});
+    hp(d,'c3_vienna',{kind:'battle',left:1,note:'1683年奥斯曼围城六十天，波兰王索别斯基自卡伦堡山冲锋解围。'});
+    hp(d,'cx_belgrade',{note:'1683年12月25日战败的卡拉·穆斯塔法在此被赐死。'});
+    hr(d,[[52.23,21.01],[48.28,16.34]],HC.eeurope);
+   },[['fill',HC.parthia,'1683年欧洲疆域达极值的奥斯曼帝国'],['fill',HC.germany,'奥地利哈布斯堡领地'],['fill',HC.eeurope,'南下驰援的波兰—立陶宛联邦'],['dline',HC.eeurope,'1683年索别斯基自华沙南下救援维也纳路线'],['dot',HC.war,'加里波利、维也纳与卡伦堡山'],['dot','#2a2018','贝尔格莱德']]),
+  hs('1683—1718年','《卡尔洛维茨条约》首次大割地与俄国夺亚速','1686年奥斯曼失布达，1696年失亚速；1699与1718年两次缔约割让中欧大片疆土。',[[36.0,14.0],[51.0,42.0]],d=>{
+    ha(d,'osOttoman1683',HC.parthia,{fillOpacity:.22});ha(d,'osCeded1699',HC.war,{fillOpacity:.38});ha(d,'ruRussia1689',HC.eeurope,{fillOpacity:.2});
+    hp(d,'ote_buda',{kind:'battle',left:1,note:'1686年9月神圣同盟攻克布达，终结奥斯曼145年统治。'});
+    hp(d,'ote_azov',{kind:'battle',note:'1696年7月俄国沙皇彼得一世造舰顺顿河南下攻占亚速。'});
+    hp(d,'osm2_zenta',{kind:'battle',left:1,note:'1697年9月欧根亲王在森塔渡口歼灭奥斯曼主力。'});
+    hp(d,'osm2_karlowitz',{left:1,note:'1699年1月26日在此签署《卡尔洛维茨条约》割让匈牙利等地。'});
+    hp(d,'osm2_passarowitz',{note:'1718年7月在此签约，再将贝尔格莱德与巴纳特割予奥地利。'});
+   },[['fill',HC.war,'1699年《卡尔洛维茨条约》奥斯曼割让的领土'],['fill',HC.parthia,'割地后的奥斯曼帝国疆域'],['fill',HC.eeurope,'彼得一世统治下开始南下的俄国'],['dot',HC.war,'布达、亚速与森塔战场'],['dot','#2a2018','卡尔洛维茨与帕萨罗维茨']])
+ ]},
+{id:'history-ottoman-eastern-question',ch:9,title:'东方问题：俄国南下，埃及自立，英国保住一个弱而不倒的奥斯曼',short:'东方问题',en:'The Eastern Question: Russia Presses South, Egypt Breaks Loose, and Britain Props Up a Weak Ottoman Empire',period:'1768—1841年',c:HC.parthia,
+ scenes:[
+  hs('1768—1783年','切什梅火船与《库楚克开纳吉条约》','色块是奥斯曼、俄国与克里米亚；图钉标出切什梅海战、库楚克开纳吉签约地与黑海北岸要冲。',[[35.5,22.0],[48.5,40.5]],d=>{
+    ha(d,'osOttoman1830',HC.parthia,{fillOpacity:.28});ha(d,'ruRussia1796',HC.eeurope,{fillOpacity:.26});ha(d,'brCrimea1854',HC.war,{fillOpacity:.44});
+    hp(d,'osm3_chesma',{kind:'battle',left:1,note:'1770年7月俄国舰队在此用火船焚毁奥斯曼主力舰队。'});
+    hp(d,'osm3_kaynarca',{kind:'battle',left:1,note:'1774年7月俄土在此签约，俄国取得黑海港口与护教借口。'});
+    hp(d,'bvi_sevastopol',{note:'1783年俄国并吞半岛后，在此修建黑海舰队母港。'});
+    hp(d,'po_constantinople',{kind:'capital',note:'条约准许俄使驻京护卫新建的希腊礼教堂。'});
+   },[['fill',HC.war,'1774年脱离奥斯曼、1783年被俄国吞并的克里米亚'],['fill',HC.eeurope,'向黑海北岸扩张的俄罗斯帝国'],['fill',HC.parthia,'奥斯曼帝国'],['dot',HC.war,'切什梅与库楚克开纳吉'],['dot','#2a2018','伊斯坦布尔与塞瓦斯托波尔']]),
+  hs('1789—1807年','拿破仑征埃及与塞利姆三世新军夭折','1798年拿破仑在开罗击败马穆鲁克、在阿布基尔湾被英舰断后；1807年伊斯坦布尔近卫军哗变废塞利姆三世。',[[29.0,25.0],[42.5,36.5]],d=>{
+    ha(d,'osOttoman1830',HC.parthia,{fillOpacity:.28});
+    hp(d,'c4_cairo',{kind:'battle',note:'1798年7月拿破仑在金字塔之战击溃马穆鲁克骑兵，进占开罗。'});
+    hp(d,'osm3_abukir',{kind:'battle',left:1,note:'1798年8月纳尔逊率英国舰队在此歼灭法国地中海舰队。'});
+    hp(d,'po_constantinople',{kind:'capital',left:1,note:'塞利姆三世在此操练新秩序军，1807年5月遭近卫军哗变废黜。'});
+    hr(d,[[31.33,30.10],[30.04,31.24]],HC.route);
+   },[['fill',HC.parthia,'奥斯曼帝国（含埃及行省）'],['dline',HC.route,'1798年拿破仑入侵埃及路线'],['dot',HC.war,'开罗与阿布基尔湾战场'],['dot','#2a2018','伊斯坦布尔']]),
+  hs('1805—1820年','开罗城堡屠杀与穆罕默德·阿里的埃及强军','1805年穆罕默德·阿里掌权埃及，1811年在开罗城堡诱杀马穆鲁克，以棉花专卖与征兵建立国中之国。',[[23.5,26.0],[34.5,39.5]],d=>{
+    ha(d,'osMuhammadAli1839',HC.war,{fillOpacity:.34});ha(d,'osOttoman1830',HC.parthia,{fillOpacity:.22});
+    hp(d,'c4_cairo',{kind:'capital',note:'开罗萨拉丁城堡；马穆鲁克首领在此赴宴被伏兵诛灭。'});
+    hp(d,'alexandria',{left:1,note:'长绒棉由此出口欧洲，新建造船厂在此打造埃及西式舰队。'});
+    hp(d,'p_mecca',{note:'1811年起埃及新军受苏丹之命渡红海收复麦加与麦地那。'});
+   },[['fill',HC.war,'穆罕默德·阿里统治并扩张的埃及势力范围'],['fill',HC.parthia,'奥斯曼帝国直辖区'],['dot',HC.war,'开罗城堡'],['dot','#2a2018','亚历山大里亚与麦加']]),
+  hs('1808—1826年','1826年“吉祥事件”：炮轰近卫军营','1826年6月马哈茂德二世在伊斯坦布尔展开先知圣旗，调集炮兵轰平叛乱的近卫军营房，废除近卫军。',[[38.5,25.5],[43.0,31.5]],d=>{
+    ha(d,'osOttoman1830',HC.parthia,{fillOpacity:.34});
+    hp(d,'po_constantinople',{kind:'battle',note:'1826年6月马哈茂德二世炮轰近卫军营，并在对岸斯库台驻扎新军。'});
+    hp(d,'po_edirne',{left:1,note:'色雷斯重镇；各省近卫军残部在此后数月被逐一缴械遣散。'});
+   },[['fill',HC.parthia,'马哈茂德二世推行军事集权的奥斯曼帝国'],['dot',HC.war,'伊斯坦布尔近卫军营战场'],['dot','#2a2018','斯库台军营与埃迪尔内']]),
+  hs('1821—1832年','希腊独立战争与纳瓦里诺海战','1827年10月英法俄舰队在纳瓦里诺击沉土埃舰队；1829年俄军进抵埃迪尔内，1832年希腊王国独立。',[[35.0,19.5],[45.5,31.5]],d=>{
+    ha(d,'osGreece1832',HC.war,{fillOpacity:.45});ha(d,'osOttoman1830',HC.parthia,{fillOpacity:.26});
+    hp(d,'osm3_navarino',{kind:'battle',left:1,note:'1827年10月20日英法俄联合舰队在此击沉奥斯曼与埃及舰队。'});
+    hp(d,'athens',{kind:'capital',note:'巴伐利亚王子奥托入主的新王国于1834年迁都于此。'});
+    hp(d,'po_edirne',{kind:'battle',left:1,note:'1829年俄军越巴尔干山占领此城，迫使奥斯曼签《阿德里安堡条约》。'});
+    hp(d,'ote_bucharest',{left:1,note:'条约规定多瑙河两公国由俄军占领至赔款付清，实权落入俄国之手。'});
+   },[['fill',HC.war,'1832年正式独立的希腊王国'],['fill',HC.parthia,'失去希腊与多瑙河口控制权的奥斯曼帝国'],['dot',HC.war,'纳瓦里诺与埃迪尔内'],['dot','#2a2018','雅典与布加勒斯特']]),
+  hs('1831—1841年','埃及北伐、英土商约与1841年海峡公约','1832—1839年埃及军两败奥斯曼；英国以1838年低关税商约为对价，于1840年炮击阿卡并促成海峡公约。',[[28.5,25.0],[42.5,40.0]],d=>{
+    ha(d,'osOttoman1830',HC.parthia,{fillOpacity:.3});ha(d,'osMuhammadAli1839',HC.war,{fillOpacity:.34});
+    hp(d,'osm3_konya',{kind:'battle',note:'1832年12月易卜拉欣帕夏在此大败奥斯曼军，生擒大维齐尔。'});
+    hp(d,'osm3_kutahya',{left:1,note:'1833年春埃及军进逼至此，马哈茂德二世被迫请俄国舰队入海峡护都。'});
+    hp(d,'osm3_nezib',{kind:'battle',note:'1839年6月埃及军在此再败奥斯曼军，数日后马哈茂德二世病逝。'});
+    hp(d,'osm3_acre',{kind:'battle',left:1,note:'1840年11月英奥土联合舰队炮击攻占阿卡，迫使埃及撤出叙利亚。'});
+    hp(d,'po_constantinople',{kind:'capital',left:1,note:'高门在此签署1838年商约与1839年《花厅御诏》。'});
+   },[['fill',HC.war,'1839年穆罕默德·阿里父子控制的最大范围（1841年缩回埃及）'],['fill',HC.parthia,'奥斯曼帝国直辖核心区'],['dot',HC.war,'科尼亚、尼齐普与阿卡战场'],['dot','#2a2018','伊斯坦布尔与屈塔希亚']])
+ ]},
+{id:'history-ottoman-crimea',ch:9,title:'克里米亚战争：嘴上争圣地钥匙，心里算海峡和铁路',short:'克里米亚战争',en:'The Crimean War: Quarrelling Over Holy Land Keys, Calculating Straits and Railways',period:'1825—1856年',c:HC.parthia,
+ scenes:[
+  hs('1815—1849年','从神圣同盟到“欧洲宪兵”尼古拉一世','1815年俄军进驻巴黎；1825年尼古拉一世在圣彼得堡镇压十二月党人，1831年平波兰，1849年入匈牙利。',[[44.0,1.5],[61.0,39.0]],d=>{
+    ha(d,'ruRussia1796',HC.eeurope,{fillOpacity:.32});ha(d,'osOttoman1830',HC.parthia,{fillOpacity:.22});
+    hp(d,'w_paris',{left:1,note:'反法同盟终局之地；俄军由此班师，倡建维也纳正统秩序。'});
+    hp(d,'ote_petersburg',{kind:'capital',note:'1825年12月尼古拉一世调炮兵轰散参政院广场的十二月党人。'});
+    hp(d,'ote_warsaw',{kind:'battle',left:1,note:'1831年俄军攻克华沙，镇压波兰十一月起义并废除波兰宪法。'});
+    hp(d,'ote_buda',{kind:'battle',left:1,note:'1849年尼古拉一世派二十万俄军越山替奥地利扑灭匈牙利革命。'});
+    hp(d,'po_constantinople',{note:'1841年五国签署《伦敦海峡公约》，和平时期关闭两海峡。'});
+   },[['fill',HC.eeurope,'自诩“欧洲宪兵”的俄罗斯帝国'],['fill',HC.parthia,'1841年海峡公约保护下的奥斯曼帝国'],['dot',HC.war,'圣彼得堡、华沙与布达战场'],['dot','#2a2018','巴黎与伊斯坦布尔']]),
+  hs('1850—1853年','伯利恒圣地钥匙与“欧洲病夫”交涉','1852年法国战舰迫使奥斯曼移交伯利恒圣诞教堂钥匙；1853年缅希科夫赴伊斯坦布尔索要东正教徒保护权。',[[30.0,24.0],[60.5,42.0]],d=>{
+    ha(d,'osOttoman1830',HC.parthia,{fillOpacity:.3});ha(d,'ruRussia1796',HC.eeurope,{fillOpacity:.28});
+    hp(d,'crw_bethlehem',{kind:'battle',note:'圣诞教堂银星与大门钥匙之争成为法俄争夺近东威望的导火索。'});
+    hp(d,'jerusalem',{left:1,note:'天主教与希腊东正教修士围绕圣墓教堂与圣诞教堂管辖权频发冲突。'});
+    hp(d,'po_constantinople',{kind:'capital',left:1,note:'1853年春俄使缅希科夫在此逼宫，苏丹在英使支持下拒绝护教条约。'});
+    hp(d,'ote_petersburg',{kind:'capital',note:'1853年1月尼古拉一世在冬宫向英国公使称奥斯曼为“重病之人”。'});
+   },[['fill',HC.parthia,'夹在法俄护教争端中的奥斯曼帝国'],['fill',HC.eeurope,'索要逾千万东正教臣民保护权的俄罗斯帝国'],['dot',HC.war,'伯利恒圣地争端'],['dot','#2a2018','伊斯坦布尔、圣彼得堡与耶路撒冷']]),
+  hs('1853—1854年','俄军进占两公国与锡诺普海战','1853年7月俄军占领多瑙河两公国，11月30日在锡诺普用爆炸弹全歼奥斯曼分舰队，引发1854年3月英法宣战。',[[38.0,22.0],[48.5,42.5]],d=>{
+    ha(d,'osOttoman1830',HC.parthia,{fillOpacity:.28});ha(d,'ruRussia1796',HC.eeurope,{fillOpacity:.28});ha(d,'brCrimea1854',HC.war,{fillOpacity:.4});
+    hp(d,'ote_bucharest',{kind:'battle',left:1,note:'1853年7月俄军渡过普鲁特河，进驻多瑙河下游两公国首府。'});
+    hp(d,'crw_silistria',{kind:'battle',left:1,note:'1854年春夏奥斯曼军在此顽强守城，奥地利随即施压逼俄军撤退。'});
+    hp(d,'sinope',{kind:'battle',note:'1853年11月30日俄舰在此用爆炸弹全歼奥斯曼分舰队。'});
+    hp(d,'po_constantinople',{kind:'capital',left:1,note:'1854年初英法舰队穿过博斯普鲁斯海峡驶入黑海参战。'});
+    hr(d,[[44.62,33.53],[42.03,35.15]],HC.route);
+   },[['fill',HC.war,'俄国黑海舰队基地克里米亚半岛'],['fill',HC.eeurope,'南下占领多瑙河两公国的俄罗斯帝国'],['fill',HC.parthia,'奥斯曼帝国'],['dline',HC.route,'俄国黑海舰队突袭锡诺普航线'],['dot',HC.war,'锡诺普、布加勒斯特与锡利斯特拉'],['dot','#2a2018','伊斯坦布尔']]),
+  hs('1854—1855年','塞瓦斯托波尔围城十一个月与斯库台医院','1854年9月英法联军登陆克里米亚，围攻塞瓦斯托波尔十一个月；后方斯库台军医院与前线霍乱暴露后勤危机。',[[39.5,25.5],[47.5,44.5]],d=>{
+    ha(d,'brCrimea1854',HC.war,{fillOpacity:.46});ha(d,'osOttoman1830',HC.parthia,{fillOpacity:.24});ha(d,'ruRussia1796',HC.eeurope,{fillOpacity:.24});
+    hp(d,'bvi_sevastopol',{kind:'battle',note:'1854年10月至1855年9月英法土联军苦围十一个月后攻克此城。'});
+    hp(d,'bvi_balaclava',{kind:'battle',left:1,note:'1854年10月轻骑兵在此冲锋；次年英军建成战地铁路。'});
+    hp(d,'bvi_scutari',{left:1,note:'南丁格尔在此整顿英军后方医院，配合卫生委员会大幅降低病死率。'});
+    hp(d,'ote_kars',{kind:'battle',note:'高加索前线要塞；奥斯曼守军与俄军在此反复拉锯至1855年11月。'});
+   },[['fill',HC.war,'克里米亚主战场'],['fill',HC.eeurope,'俄罗斯帝国'],['fill',HC.parthia,'奥斯曼帝国'],['dot',HC.war,'塞瓦斯托波尔、巴拉克拉瓦与卡尔斯'],['dot','#2a2018','斯库台医院']]),
+  hs('1854—1856年','1856年《巴黎和约》与黑海中立化','1856年3月《巴黎和约》宣布黑海中立化并禁止俄土设军港；奥斯曼借下首笔伦敦外债；同年英法转向广州开战。',[[21.0,-2.0],[53.0,116.0]],d=>{
+    ha(d,'osOttoman1830',HC.parthia,{fillOpacity:.3});ha(d,'ruRussia1796',HC.eeurope,{fillOpacity:.24});
+    hp(d,'w_paris',{kind:'capital',left:1,note:'交战各国代表在此缔结和约，宣告黑海全面中立化。'});
+    hp(d,'k_london',{left:1,note:'1854—1855年奥斯曼在此借下首批外债，开启二十年外债螺旋。'});
+    hp(d,'bvi_sevastopol',{note:'条约规定俄国不得在黑海沿岸保留舰队与海军兵工厂。'});
+    hp(d,'brs_canton',{note:'1856年10月自克里米亚抽身后的英法联军在广州挑起第二次鸦片战争。'});
+   },[['fill',HC.parthia,'进入“欧洲协调”但背上外债的奥斯曼帝国'],['fill',HC.eeurope,'失去黑海舰队与多瑙河口的俄罗斯帝国'],['dot',HC.war,'巴黎和会'],['dot','#2a2018','伦敦、塞瓦斯托波尔与广州对照']]),
+  hs('1854—1856年','蒸汽海运对决泥路牛车：俄国的战败账单','英法靠蒸汽船海运三周直达克里米亚；俄国莫斯科以南无铁路，靠牛车走泥道耗时三月，惨败逼出农奴制改革。',[[35.0,-5.0],[60.5,42.0]],d=>{
+    ha(d,'ruRussia1796',HC.eeurope,{fillOpacity:.3});ha(d,'brCrimea1854',HC.war,{fillOpacity:.44});ha(d,'fFrance1648',HC.france,{fillOpacity:.24});
+    hp(d,'ote_petersburg',{note:'1851年俄国仅建成圣彼得堡至莫斯科一条干线铁路。'});
+    hp(d,'bd_moscow',{kind:'capital',note:'俄国铁路南端终点；战后沙皇在此向贵族宣告启动农奴改革。'});
+    hp(d,'bvi_sevastopol',{kind:'battle',note:'俄军靠牛车走黑土泥道运粮，援兵耗时三个月、沿途病死无数。'});
+    hp(d,'po_constantinople',{left:1,note:'英法蒸汽轮船经地中海与博斯普鲁斯海峡源源不断输送线膛枪与弹药。'});
+    hr(d,[[55.75,37.62],[44.62,33.53]],HC.war);
+    hr(d,[[43.30,5.37],[41.01,28.98],[44.62,33.53]],HC.route);
+   },[['fill',HC.eeurope,'莫斯科以南无铁路的俄罗斯帝国'],['fill',HC.france,'拥有工业化海运与米涅线膛枪的西欧联军'],['fill',HC.war,'克里米亚半岛'],['dline',HC.war,'俄国莫斯科以南泥道牛车补给线（耗时约三个月）'],['dline',HC.route,'英法蒸汽船地中海—黑海补给线（耗时约三周）'],['dot',HC.war,'莫斯科与塞瓦斯托波尔'],['dot','#2a2018','圣彼得堡与伊斯坦布尔']])
+ ]},
+{id:'history-ottoman-berlin',ch:9,title:'改革、外债与柏林会议：借钱修国家，债主进税关',short:'改革、外债与柏林会议',en:'Reform, Foreign Debt, and the Congress of Berlin: Borrowing to Modernize, Creditors in the Customs House',period:'1856—1908年',c:HC.parthia,
+ scenes:[
+  hs('1856—1876年','坦志麦特变法与教派平权双刃剑','色块是1856年巴黎和约后的奥斯曼疆域；图钉标出颁布敕令的伊斯坦布尔与巴尔干、阿拉伯各重镇。',[[29.0,15.0],[47.5,46.0]],d=>{
+    ha(d,'osOttoman1830',HC.parthia,{fillOpacity:.34});
+    hp(d,'po_constantinople',{kind:'capital',note:'1856年2月颁布《改革敕令》，许诺各教派臣民法律平等。'});
+    hp(d,'ote_salonica',{left:1,note:'巴尔干基督徒在新学堂接受民族主义思潮，离心力日增。'});
+    hp(d,'p_damascus',{note:'帝国架设电报网连接各省，但取消宗教等级引发穆斯林不满。'});
+   },[['fill',HC.parthia,'坦志麦特改革时期的奥斯曼帝国'],['dot',HC.war,'伊斯坦布尔（高门）'],['dot','#2a2018','萨洛尼卡与大马士革']]),
+  hs('1854—1881年','外债违约与1881年国债管理处','弧线连接伦敦、巴黎金融中心与伊斯坦布尔、开罗；图钉标出外债管理与苏伊士运河股权易手之地。',[[28.0,-3.0],[53.0,42.0]],d=>{
+    ha(d,'osOttoman1878',HC.parthia,{fillOpacity:.3});ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.28});ha(d,'fFrance1648',HC.france,{fillOpacity:.25});
+    hp(d,'po_constantinople',{kind:'capital',note:'1875年外债违约；1881年设国债管理处，外国债主直收六项专税。'});
+    hp(d,'k_london',{left:1,note:'1854年奥斯曼首次在伦敦借债；1875年英国购入苏伊士股份。'});
+    hp(d,'w_paris',{left:1,note:'法英银行团包销奥斯曼债券，折价与佣金吞掉近半本金。'});
+    hp(d,'bvi_suez',{note:'1875年破产的埃及总督将44%运河股份卖给英国。'});
+    hr(d,[[51.51,-0.13],[48.86,2.35],[41.01,28.98]],HC.route);
+   },[['fill',HC.parthia,'背负巨额外债的奥斯曼帝国'],['fill',HC.britain,'英国债权国与苏伊士买家'],['fill',HC.france,'法国债权国'],['dline',HC.route,'英法对土贷款与偿债通道'],['dot',HC.war,'伊斯坦布尔与苏伊士']]),
+  hs('1876—1878年','1876年立宪与第一次宪政夭折','色块是奥斯曼疆域；图钉标出颁布1876年宪法的伊斯坦布尔及米德哈特曾任省督的多瑙省、巴格达。',[[31.0,18.0],[46.5,46.5]],d=>{
+    ha(d,'osOttoman1830',HC.parthia,{fillOpacity:.32});
+    hp(d,'po_constantinople',{kind:'capital',note:'1876年12月米德哈特颁布宪法；1878年2月哈米德二世解散议会。'});
+    hp(d,'ote_bucharest',{left:1,note:'米德哈特早年治理多瑙省的北邻重镇，宪政派力图保住巴尔干。'});
+    hp(d,'w_baghdad',{note:'米德哈特曾任巴格达省督推行新政，立宪失败后遭放逐。'});
+   },[['fill',HC.parthia,'1876—1878年第一次宪政时期的奥斯曼帝国'],['dot',HC.war,'伊斯坦布尔'],['dot','#2a2018','布加勒斯特与巴格达']]),
+  hs('1875—1878年','普列文围城与《圣斯特凡诺条约》','色块是奥斯曼与南下的俄国；弧线标出1877—1878年俄军在巴尔干与高加索两线进军路线。',[[38.5,18.0],[47.5,45.5]],d=>{
+    ha(d,'osOttoman1830',HC.parthia,{fillOpacity:.28});ha(d,'ruRussia1796',HC.eeurope,{fillOpacity:.28});
+    hp(d,'osm4_batak',{kind:'battle',left:1,note:'1876年5月巴塔克惨案，格莱斯顿小册子令英国不便出兵助土。'});
+    hp(d,'ote_plevna',{kind:'battle',left:1,note:'1877年7—12月奥斯曼帕夏在此死守近五个月，阻滞俄军南下。'});
+    hp(d,'osm4_sanstefano',{kind:'battle',note:'1878年3月3日俄军兵临城下，逼签划出大保加利亚的条约。'});
+    hp(d,'ote_kars',{kind:'battle',note:'1877年11月俄军在高加索战线攻克卡尔斯要塞。'});
+    hr(d,[[44.43,26.10],[43.42,24.62],[42.70,23.32],[40.96,28.82]],HC.war);
+   },[['fill',HC.parthia,'两线受敌的奥斯曼帝国'],['fill',HC.eeurope,'出兵南下的俄罗斯帝国'],['dline',HC.war,'1877—1878年俄军进逼伊斯坦布尔路线'],['dot',HC.war,'普列文、圣斯特凡诺与卡尔斯']]),
+  hs('1878年','1878年柏林会议：列强重画巴尔干','色块标出柏林会议后的奥斯曼、巴尔干四国、奥匈占领的波黑与英国接管的塞浦路斯。',[[33.5,11.0],[53.5,44.5]],d=>{
+    ha(d,'osOttoman1878',HC.parthia,{fillOpacity:.32});ha(d,'osBalkanStates1878',HC.eeurope,{fillOpacity:.36});ha(d,'osBosnia1878',HC.germany,{fillOpacity:.42});ha(d,'osCyprus1878',HC.britain,{fillOpacity:.48});
+    hp(d,'fsy_berlin',{kind:'capital',left:1,note:'1878年6—7月俾斯麦主持柏林会议，拆散大保加利亚。'});
+    hp(d,'ote_sofia',{left:1,note:'大保加利亚被砍成三块，仅北部的保加利亚公国获自治。'});
+    hp(d,'ote_sarajevo',{left:1,note:'波斯尼亚与黑塞哥维那交奥匈占领管辖，埋下萨拉热窝引信。'});
+    hp(d,'osm4_nicosia',{note:'英国秘密签约接管塞浦路斯，换取在柏林会议上顶住俄国。'});
+   },[['fill',HC.parthia,'1878年柏林会议后的奥斯曼疆域'],['fill',HC.eeurope,'独立或自治的罗、塞、黑、保四国'],['fill',HC.germany,'奥匈帝国占领的波黑'],['fill',HC.britain,'英国接管的塞浦路斯']]),
+  hs('1878—1908年','哈米德专制与1908年青年土耳其党起事','色块是1878年后的奥斯曼疆域；弧线标出大马士革至麦地那的汉志铁路；图钉标出萨洛尼卡起事地。',[[23.5,19.0],[43.5,45.0]],d=>{
+    ha(d,'osOttoman1878',HC.parthia,{fillOpacity:.34});
+    hp(d,'po_constantinople',{kind:'capital',note:'哈米德二世居耶尔德兹宫专制三十年，并把巴格达铁路交给德国。'});
+    hp(d,'ote_salonica',{kind:'battle',left:1,note:'1908年7月恩维尔等少壮军官在此起兵，逼苏丹重开议会。'});
+    hp(d,'p_damascus',{note:'1900年从大马士革动工修建汉志铁路，宣扬哈里发威望。'});
+    hp(d,'p_medina',{note:'1908年9月汉志铁路通车至麦地那，便于朝觐与调兵。'});
+    hr(d,[[33.51,36.29],[24.47,39.61]],HC.route);
+   },[['fill',HC.parthia,'哈米德二世统治下的奥斯曼帝国（1878—1908年）'],['dline',HC.route,'1900—1908年修建的汉志铁路'],['dot',HC.war,'萨洛尼卡起事与伊斯坦布尔'],['dot','#2a2018','大马士革与麦地那']])
+ ]},
+{id:'history-ottoman-ww1',ch:9,title:'第一次世界大战：巴尔干点火，四个帝国一起倒下',short:'第一次世界大战',en:'World War I: The Balkan Spark That Brought Down Four Empires',period:'1908—1918年',c:HC.parthia,
+ scenes:[
+  hs('1908—1913年','波黑危机、意土战争与巴尔干战争','色块是1914年前夕退守东色雷斯的奥斯曼、俄国与奥匈；图钉标出波黑、的黎波里与巴尔干争夺点。',[[31.0,12.0],[50.0,44.0]],d=>{
+    ha(d,'osOttoman1914',HC.parthia,{fillOpacity:.34});ha(d,'wwAustriaHungary1914',HC.germany,{fillOpacity:.28});ha(d,'ruRussia1914',HC.eeurope,{fillOpacity:.25});
+    hp(d,'ote_sarajevo',{left:1,note:'1908年奥匈趁奥斯曼内乱正式兼并波斯尼亚与黑塞哥维那。'});
+    hp(d,'ote_salonica',{kind:'battle',left:1,note:'1912年第一次巴尔干战争中希腊夺取萨洛尼卡，奥斯曼尽失马其顿。'});
+    hp(d,'po_edirne',{kind:'battle',note:'1913年1月恩维尔高门政变，同年7月出兵重夺埃迪尔内。'});
+    hp(d,'po_constantinople',{kind:'capital',note:'1913年起恩维尔、塔拉特、杰马勒“三帕夏”控制高门。'});
+   },[['fill',HC.parthia,'1913年巴尔干战后仅保住东色雷斯的奥斯曼帝国'],['fill',HC.germany,'吞并波黑后的奥匈帝国'],['fill',HC.eeurope,'重返巴尔干博弈的俄罗斯帝国'],['dot',HC.war,'萨洛尼卡、埃迪尔内与伊斯坦布尔']]),
+  hs('1914年','萨拉热窝枪声与德土结盟参战','色块标出1914年开战时的德、奥匈、奥斯曼同盟国与俄、英、法协约国；弧线标出戈本号驶入海峡与炮击塞瓦斯托波尔。',[[34.0,-3.0],[56.0,44.0]],d=>{
+    ha(d,'osOttoman1914',HC.parthia,{fillOpacity:.34});ha(d,'wwGermany1914',HC.germany,{fillOpacity:.32});ha(d,'wwAustriaHungary1914',HC.germany,{fillOpacity:.26});ha(d,'ruRussia1914',HC.eeurope,{fillOpacity:.26});ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.24});ha(d,'fFrance1648',HC.france,{fillOpacity:.24});
+    hp(d,'ote_sarajevo',{kind:'battle',left:1,note:'1914年6月28日斐迪南夫妇遇刺，引爆七月危机。'});
+    hp(d,'fsy_berlin',{left:1,note:'德皇威廉二世给奥匈开空白支票，并在8月2日与奥斯曼缔结密约。'});
+    hp(d,'po_constantinople',{kind:'capital',note:'德国战列巡洋舰戈本号驶入海峡编入土军，顶替被英国扣留的两舰。'});
+    hp(d,'bvi_sevastopol',{kind:'battle',note:'1914年10月29日改挂奥斯曼旗的戈本号炮击俄港，拉奥斯曼入战。'});
+    hr(d,[[41.01,28.98],[44.62,33.53]],HC.war);
+   },[['fill',HC.parthia,'1914年10月参战的奥斯曼帝国'],['fill',HC.germany,'德意志与奥匈同盟国'],['fill',HC.eeurope,'俄罗斯帝国'],['dline',HC.war,'戈本号北上炮击塞瓦斯托波尔'],['dot',HC.war,'萨拉热窝、伊斯坦布尔与塞瓦斯托波尔']]),
+  hs('1914—1915年','东线坦能堡、俄军大撤退与萨勒卡默什','色块是俄国、德奥与奥斯曼；图钉标出东普鲁士坦能堡、波兰华沙与高加索萨勒卡默什三处主战场。',[[37.5,16.0],[58.0,46.5]],d=>{
+    ha(d,'ruRussia1914',HC.eeurope,{fillOpacity:.3});ha(d,'wwGermany1914',HC.germany,{fillOpacity:.3});ha(d,'wwAustriaHungary1914',HC.germany,{fillOpacity:.24});ha(d,'osOttoman1914',HC.parthia,{fillOpacity:.3});
+    hp(d,'ww1_tannenberg',{kind:'battle',left:1,note:'1914年8月德军在此包抄歼灭俄国第二集团军十余万人。'});
+    hp(d,'ote_warsaw',{kind:'battle',left:1,note:'1915年夏俄军因严重炮弹荒大撤退，8月丢掉华沙。'});
+    hp(d,'ww1_sarikamish',{kind:'battle',note:'1914年冬恩维尔攻卡尔斯在此冻死数万，俄军随即反攻。'});
+   },[['fill',HC.eeurope,'1915年东线大撤退的俄国'],['fill',HC.germany,'德奥同盟国'],['fill',HC.parthia,'高加索战线惨败的奥斯曼'],['dot',HC.war,'坦能堡、华沙与萨勒卡默什']]),
+  hs('1915—1916年','加里波利阻击战与亚美尼亚死亡行军','色块是奥斯曼疆域；图钉标出加里波利战场、伊斯坦布尔及东安纳托利亚至代尔祖尔的押解路线。',[[33.5,24.0],[42.5,45.0]],d=>{
+    ha(d,'osOttoman1914',HC.parthia,{fillOpacity:.34});
+    hp(d,'po_gallipoli',{kind:'battle',left:1,note:'1915年3月—1916年1月凯末尔等部死守半岛，击退英法澳新联军。'});
+    hp(d,'po_constantinople',{kind:'capital',note:'1915年4月24日逮捕亚美尼亚精英，随后下令全境强迁。'});
+    hp(d,'ote_kars',{left:1,note:'东安纳托利亚前线各省亚美尼亚人被指通俄，遭成批驱逐。'});
+    hp(d,'ww1_deirezzor',{kind:'battle',note:'叙利亚沙漠代尔祖尔营地，数十万亚美尼亚妇孺死于押解途中与荒漠。'});
+    hr(d,[[39.90,41.27],[35.34,40.14]],HC.war);
+   },[['fill',HC.parthia,'1915—1916年两线作战的奥斯曼帝国'],['dline',HC.war,'亚美尼亚人被押往代尔祖尔沙漠路线'],['dot',HC.war,'加里波利与代尔祖尔'],['dot','#2a2018','伊斯坦布尔与东安纳托利亚']]),
+  hs('1915—1917年','一块地许给三家与英军北伐','色块是奥斯曼中东各省；弧线标出1916—1918年阿拉伯起义军与英军向大马士革、巴格达推进路线。',[[20.5,29.0],[38.0,49.0]],d=>{
+    ha(d,'osOttoman1914',HC.parthia,{fillOpacity:.32});
+    hp(d,'c4_cairo',{left:1,note:'1915年驻埃及专员麦克马洪致信麦加，许诺战后建阿拉伯独立国。'});
+    hp(d,'p_mecca',{note:'1916年6月谢里夫侯赛因在此起兵反土，北上袭扰汉志铁路。'});
+    hp(d,'jerusalem',{kind:'battle',left:1,note:'1917年11月贝尔福宣言许诺犹太民族家园；12月英军占领耶路撒冷。'});
+    hp(d,'w_baghdad',{kind:'battle',note:'1916年英法密约预分中东；1917年3月英军攻入巴格达。'});
+    hr(d,[[21.42,39.83],[24.47,39.61],[31.78,35.22],[33.51,36.29]],HC.war);
+   },[['fill',HC.parthia,'被英国同时许给三家的奥斯曼阿拉伯各省'],['dline',HC.war,'阿拉伯起义军与英军北上路线'],['dot',HC.war,'耶路撒冷与巴格达'],['dot','#2a2018','开罗与麦加']]),
+  hs('1917—1918年','布列斯特和约与四大帝国崩塌','色块标出1918年布列斯特和约俄国割让地带及战败解体的德、奥匈、奥斯曼三国。',[[34.0,8.0],[60.5,45.0]],d=>{
+    ha(d,'ruBrestLitovsk1918',HC.war,{fillOpacity:.4});ha(d,'ruRussia1914',HC.eeurope,{fillOpacity:.22});ha(d,'wwGermany1914',HC.germany,{fillOpacity:.26});ha(d,'wwAustriaHungary1914',HC.germany,{fillOpacity:.22});ha(d,'osOttoman1914',HC.parthia,{fillOpacity:.28});
+    hp(d,'ote_petersburg',{kind:'battle',note:'1917年二月革命推翻沙皇，十月革命布尔什维克夺权。'});
+    hp(d,'ote_brest',{left:1,note:'1918年3月3日苏俄签下《布列斯特和约》，割地退出大战。'});
+    hp(d,'ww1_mudros',{kind:'battle',left:1,note:'1918年10月奥斯曼在利姆诺斯岛军港签字投降，开放海峡。'});
+    hp(d,'fsy_berlin',{left:1,note:'1918年11月德奥相继停战解体，威廉二世退位流亡荷兰。'});
+   },[['fill',HC.war,'1918年3月《布列斯特和约》俄国割让地带'],['fill',HC.eeurope,'爆发革命退出一战的俄国'],['fill',HC.germany,'1918年11月战败解体的德、奥匈帝国'],['fill',HC.parthia,'1918年10月穆德洛斯停战的奥斯曼帝国']])
+ ]},
+{id:'history-ottoman-kemal',ch:9,title:'凯末尔与土耳其共和国：唯一打翻和约的战败国',short:'凯末尔与土耳其共和国',en:'Kemal and the Republic of Turkey: The Only Defeated Power to Overturn Its Peace Treaty',period:'1918—1924年',c:HC.parthia,
+ scenes:[
+  hs('1918—1919年','协约国进驻海峡与萨姆松登陆','色块是1919年希腊占领的士麦那区与安纳托利亚腹地；图钉标出伊斯坦布尔、士麦那与萨姆松。',[[35.5,24.5],[42.5,43.5]],d=>{
+    ha(d,'osTurkey1923',HC.parthia,{fillOpacity:.28});ha(d,'osSmyrnaZone1920',HC.war,{fillOpacity:.48});
+    hp(d,'po_constantinople',{kind:'capital',note:'1918年11月英法意舰队进驻伊斯坦布尔，苏丹政府听命于占领军。'});
+    hp(d,'ax_smyrna',{kind:'battle',left:1,note:'1919年5月15日希腊军队在士麦那登陆，激起土耳其全境抵抗。'});
+    hp(d,'osm5_samsun',{kind:'battle',note:'1919年5月19日凯末尔在此上岸，串联安纳托利亚驻军起兵。'});
+    hp(d,'pt_ankara',{note:'凯末尔将抵抗指挥部迁往铁路终点站内陆高原城市安卡拉。'});
+    hr(d,[[41.01,28.98],[41.29,36.34],[39.93,32.86]],HC.route);
+   },[['fill',HC.war,'1919年5月希腊占领的士麦那地区'],['fill',HC.parthia,'凯末尔串联组织抵抗的安纳托利亚腹地'],['dline',HC.route,'凯末尔从伊斯坦布尔经萨姆松赴安卡拉路线'],['dot',HC.war,'士麦那与萨姆松']]),
+  hs('1920年','安卡拉议会与《色佛尔条约》瓜分图','色块标出1920年《色佛尔条约》划定的英法委任统治地、希腊士麦那区与安卡拉抵抗政权。',[[29.5,24.0],[42.5,46.0]],d=>{
+    ha(d,'osTurkey1923',HC.parthia,{fillOpacity:.24});ha(d,'osSmyrnaZone1920',HC.war,{fillOpacity:.46});ha(d,'osMandateFrench1920',HC.france,{fillOpacity:.36});ha(d,'osMandateBritish1920',HC.britain,{fillOpacity:.36});
+    hp(d,'pt_ankara',{kind:'capital',note:'1920年4月23日大国民议会在安卡拉开幕，宣布主权属于国民。'});
+    hp(d,'po_constantinople',{left:1,note:'1920年春协约国军管旧都；苏丹朝廷在此判凯末尔死刑。'});
+    hp(d,'w_paris',{left:1,note:'1920年8月10日在巴黎近郊色佛尔瓷器厂签署瓜分奥斯曼的条约。'});
+    hp(d,'cx_aleppo',{note:'法国委任统治叙利亚并进军奇里乞亚，遭土耳其民兵顽强阻击。'});
+   },[['fill',HC.parthia,'安卡拉大国民议会控制的安纳托利亚高原'],['fill',HC.war,'《色佛尔条约》交希腊代管的士麦那区'],['fill',HC.france,'法国叙利亚—黎巴嫩委任统治地'],['fill',HC.britain,'英国巴勒斯坦与美索不达米亚委任统治地']]),
+  hs('1920—1922年','萨卡里亚河决战、收复士麦那与恰纳克危机','色块是土耳其与苏俄；弧线标出1921—1922年土军从萨卡里亚河反攻收复士麦那并推进至恰纳克。',[[35.5,25.0],[43.0,45.0]],d=>{
+    ha(d,'osTurkey1923',HC.parthia,{fillOpacity:.34});ha(d,'ruUSSR1922',HC.eeurope,{fillOpacity:.26});
+    hp(d,'ote_kars',{kind:'battle',note:'1920年秋土军收复卡尔斯，次年与苏俄签约稳住东疆。'});
+    hp(d,'osm5_sakarya',{kind:'battle',note:'1921年8—9月凯末尔在此苦战二十一天，挡住逼近安卡拉的希军。'});
+    hp(d,'ax_smyrna',{kind:'battle',left:1,note:'1922年9月9日土军大反攻收复士麦那，随后发生士麦那大火。'});
+    hp(d,'osm5_chanak',{kind:'battle',note:'1922年9—10月土军逼近海峡英军防线，引发倒阁的恰纳克危机。'});
+    hr(d,[[39.58,32.15],[38.42,27.14],[40.15,26.41]],HC.war);
+   },[['fill',HC.parthia,'1921—1922年反攻制胜的安卡拉政府军控制区'],['fill',HC.eeurope,'向安卡拉提供黄金与军火的苏维埃俄国'],['dline',HC.war,'1922年大反攻收复士麦那与北进海峡路线'],['dot',HC.war,'萨卡里亚河、士麦那与恰纳克']]),
+  hs('1922—1923年','废除苏丹、洛桑条约与希土人口交换','色块是1923年《洛桑条约》确认的土耳其疆域与希腊；弧线标出爱琴海两岸160万人的强制迁徙。',[[35.0,6.0],[47.5,44.5]],d=>{
+    ha(d,'osTurkey1923',HC.parthia,{fillOpacity:.38});ha(d,'osGreece1832',HC.byz,{fillOpacity:.34});
+    hp(d,'po_constantinople',{left:1,note:'1922年11月1日废除苏丹制，末代苏丹乘英舰流亡马耳他。'});
+    hp(d,'osm5_lausanne',{kind:'capital',left:1,note:'1923年7月24日签署《洛桑条约》，承认土耳其疆界并废除治外法权。'});
+    hp(d,'athens',{left:1,note:'希腊接收百余万小亚细亚难民，爱琴海两岸完成人口置换。'});
+    hp(d,'po_edirne',{note:'《洛桑条约》确认土耳其收回东色雷斯与重镇埃迪尔内。'});
+    hr(d,[[38.42,27.14],[37.98,23.73]],HC.route);
+   },[['fill',HC.parthia,'1923年《洛桑条约》国际承认的土耳其疆域'],['fill',HC.byz,'执行强制人口交换的希腊王国'],['dline',HC.route,'1923年约160万希土居民跨爱琴海强制交换'],['dot',HC.war,'洛桑、伊斯坦布尔与埃迪尔内']]),
+  hs('1923—1924年','定都安卡拉、成立共和国与废除哈里发','色块是1923年成立的土耳其共和国与邻近的英法委任统治地、苏联；图钉标出新旧两都。',[[30.0,25.0],[43.5,45.5]],d=>{
+    ha(d,'osTurkey1923',HC.parthia,{fillOpacity:.4});ha(d,'osMandateFrench1920',HC.france,{fillOpacity:.25});ha(d,'osMandateBritish1920',HC.britain,{fillOpacity:.25});ha(d,'ruUSSR1922',HC.eeurope,{fillOpacity:.22});
+    hp(d,'pt_ankara',{kind:'capital',note:'1923年10月新共和国定都于此，次年春废除哈里发。'});
+    hp(d,'po_constantinople',{left:1,note:'告别近五百年帝都地位，奥斯曼皇室成员于1924年3月被驱逐出境。'});
+    hp(d,'ote_salonica',{left:1,note:'凯末尔的故乡萨洛尼卡留在希腊境内，新共和国退守民族国家疆界。'});
+   },[['fill',HC.parthia,'1923年10月29日成立的土耳其共和国'],['fill',HC.france,'法属叙利亚与黎巴嫩'],['fill',HC.britain,'英属伊拉克与巴勒斯坦'],['dot',HC.war,'新首都安卡拉'],['dot','#2a2018','旧都伊斯坦布尔与萨洛尼卡']])
+ ]},
 {id:'history-eeurope-pontic',ch:10,title:'黑海北岸：森林种地，草原放牧，海边做买卖',short:'黑海北岸',en:'The North Pontic: Farmers, Nomads and Greek Ports',period:'约前700—前63年',c:HC.eeurope,
  scenes:[
   hs('前8—前5世纪','两种活法：森林里种地，草原上放牧','沿海是草原，往北是森林草原，再往北是森林；希罗多德记下港口以北为出卖而种粮的农夫、东边住在车上的游牧民。',[[43.8,18.5],[55.0,41.0]],d=>{
@@ -12286,6 +12708,281 @@ const HISTORY_ENTRIES=[
     hp(d,'constantinople',{left:1,note:'君士坦丁堡（“第二罗马”）：1453年陷落于奥斯曼帝国，莫斯科遂以东正教唯一继承者自居。'});
     hr(d,[[41.89,12.48],[53.87,10.69],[57.81,28.35],[55.75,37.62]],HC.faith);
    },[['fill',HC.parthia,'攻占“第二罗马”君士坦丁堡的奥斯曼帝国'],['dash',HC.celt,'立陶宛大公国'],['dline',HC.faith,'1472年东罗马索菲娅公主自罗马北嫁莫斯科路线（示意）'],['dot',HC.war,'“第三罗马”莫斯科'],['dot','#2a2018','普斯科夫、罗马与君士坦丁堡']])
+ ]},
+{id:'history-eeurope-ivan4',ch:10,title:'伊凡雷帝：沙皇专制与波兰贵族共和，东欧分出两条路',short:'伊凡雷帝',en:'Ivan the Terrible: Tsarist Autocracy and the Polish Noble Republic, Two Roads for Eastern Europe',period:'1505—1598年',c:HC.eeurope,
+ scenes:[
+  hs('1505—1547年','收齐罗斯与少年加冕','1505年的莫斯科大公国、瓦西里三世并入的普斯科夫与梁赞、从立陶宛夺来的斯摩棱斯克。',[[49.0,24.0],[60.5,45.0]],d=>{
+    ha(d,'ruMuscovy1505',HC.eeurope,{fillOpacity:.3});ha(d,'mLithuania1385',HC.celt,{fillOpacity:.16,dashArray:'4 4'});
+    hp(d,'bd_moscow',{kind:'capital',note:'1547年1月加冕礼在克里姆林宫举行。'});
+    hp(d,'em_pskov',{left:1,note:'1510年并入，市民大会钟被运走。'});
+    hp(d,'ote_smolensk',{kind:'battle',left:1,note:'1514年夏莫斯科军围城后夺得。'});
+    hp(d,'rus1_ryazan',{note:'1521年并入，罗斯再无自治公国。'});
+   },[['fill',HC.eeurope,'1505年的莫斯科大公国'],['dash',HC.celt,'立陶宛大公国'],['dot',HC.war,'莫斯科与斯摩棱斯克'],['dot','#2a2018','普斯科夫与梁赞']]),
+  hs('1550—1572年','喀山、阿斯特拉罕与莫洛季','1598年的俄国、攻下的喀山与阿斯特拉罕、奥斯曼附庸克里米亚汗国与1572年的莫洛季战场。',[[43.0,30.0],[58.5,52.0]],d=>{
+    ha(d,'ruRussia1598',HC.eeurope,{fillOpacity:.26});ha(d,'osVassals1566',HC.parthia,{fillOpacity:.2});
+    hp(d,'rus1_kazan',{kind:'battle',note:'1552年10月城破，后建圣瓦西里大教堂纪念。'});
+    hp(d,'rus1_astrakhan',{kind:'battle',note:'1556年并入，1569年奥斯曼来攻未果。'});
+    hp(d,'rus1_bakhchisaray',{left:1,note:'可汗从这里出兵北上。'});
+    hp(d,'bd_moscow',{kind:'battle',left:1,note:'1571年5月24日城郊起火。'});
+    hp(d,'rus1_molodi',{kind:'battle',note:'1572年7月29日至8月2日的会战处。'});
+    hr(d,[[55.75,37.62],[55.80,49.11]],HC.eeurope);
+    hr(d,[[44.75,33.86],[55.50,37.53]],HC.war);
+   },[['fill',HC.eeurope,'1598年的俄国'],['fill',HC.parthia,'奥斯曼的附庸（含克里米亚汗国）'],['dline',HC.eeurope,'1552年莫斯科军东征喀山'],['dline',HC.war,'克里米亚军北上莫斯科'],['dot',HC.war,'喀山、阿斯特拉罕、莫斯科与莫洛季'],['dot','#2a2018','巴赫奇萨赖']]),
+  hs('1558—1583年','立窝尼亚战争与卢布林联合','卢布林联合后的波兰—立陶宛、1598年的俄国、旧立窝尼亚骑士团领地，以及纳尔瓦、波洛茨克和华沙。',[[49.5,14.0],[60.5,40.0]],d=>{
+    ha(d,'plCommonwealth1569',HC.celt,{fillOpacity:.26});ha(d,'ruRussia1598',HC.eeurope,{fillOpacity:.2});ha(d,'mLivonia1300',HC.crusade,{fillOpacity:.2,dashArray:'4 4'});
+    hp(d,'nd_narva',{kind:'battle',left:1,note:'1558年俄军夺下，1583年停战后归瑞典。'});
+    hp(d,'rus1_polotsk',{kind:'battle',note:'1563年被俄军攻下，1582年交还。'});
+    hp(d,'em_pskov',{kind:'battle',note:'1581年巴托里围城，城守住了。'});
+    hp(d,'rus1_lublin',{left:1,note:'1569年7月1日联合条约在此签订。'});
+    hp(d,'ote_warsaw',{left:1,note:'1573年选王大会在城外举行。'});
+   },[['fill',HC.celt,'1569年卢布林联合后的波兰—立陶宛'],['fill',HC.eeurope,'1598年的俄国'],['dash',HC.crusade,'1561年瓦解的立窝尼亚骑士团领地'],['dot',HC.war,'纳尔瓦、波洛茨克与普斯科夫'],['dot','#2a2018','卢布林与华沙']]),
+  hs('1564—1572年','特辖制：一国两半','1598年的俄国、特辖制大本营亚历山德罗夫村与1570年遭血洗的诺夫哥罗德。',[[53.0,28.0],[61.0,46.0]],d=>{
+    ha(d,'ruRussia1598',HC.eeurope,{fillOpacity:.22});
+    hp(d,'rus1_alexandrov',{kind:'capital',note:'沙皇住在这里遥控特辖区。'});
+    hp(d,'bd_moscow',{left:1,note:'普通区仍由大贵族杜马在此管理。'});
+    hp(d,'er_novgorod',{kind:'battle',left:1,note:'1570年初特辖军在此屠城数周。'});
+    hr(d,[[56.40,38.74],[58.52,31.28]],HC.war);
+   },[['fill',HC.eeurope,'1598年的俄国'],['dline',HC.war,'1570年特辖军北上诺夫哥罗德'],['dot',HC.war,'亚历山德罗夫村与诺夫哥罗德'],['dot','#2a2018','莫斯科']]),
+  hs('1581—1584年','杀子与翻越乌拉尔','1598年的俄国、斯特罗加诺夫家族的老家与叶尔马克翻越乌拉尔攻下卡什雷克的路线（示意）。',[[50.0,30.0],[64.0,75.0]],d=>{
+    ha(d,'ruRussia1598',HC.eeurope,{fillOpacity:.22});
+    hp(d,'bd_moscow',{left:1,note:'1584年3月伊凡四世死在这里。'});
+    hp(d,'rus1_solvychegodsk',{left:1,note:'斯特罗加诺夫家族靠盐业起家之地。'});
+    hp(d,'rus1_qashliq',{kind:'battle',note:'1582年10月26日被叶尔马克攻下。'});
+    hr(d,[[58.01,56.25],[58.60,60.00],[58.15,68.52]],HC.route);
+   },[['fill',HC.eeurope,'1598年的俄国'],['dline',HC.route,'1582年叶尔马克东进路线（示意）'],['dot',HC.war,'卡什雷克'],['dot','#2a2018','莫斯科与索利维切戈茨克']]),
+  hs('1584—1598年','内兄当国与王朝绝嗣','1598年的俄国、1589年成为牧首驻地的莫斯科、1591年小王子德米特里死去的乌格利奇。',[[53.5,30.0],[60.0,44.0]],d=>{
+    ha(d,'ruRussia1598',HC.eeurope,{fillOpacity:.26});
+    hp(d,'bd_moscow',{kind:'capital',note:'1589年首任莫斯科牧首在此就任。'});
+    hp(d,'rus1_uglich',{left:1,note:'小王子德米特里的封地。'});
+   },[['fill',HC.eeurope,'1598年留里克王朝绝嗣时的俄国'],['dot',HC.war,'莫斯科'],['dot','#2a2018','乌格利奇']])
+ ]},
+{id:'history-eeurope-romanov',ch:10,title:'混乱时代与罗曼诺夫：选出一个沙皇，钉死一代农奴',short:'混乱时代与罗曼诺夫',en:'The Time of Troubles and the Romanovs: Electing a Tsar, Binding the Serfs',period:'1598—1689年',c:HC.eeurope,
+ scenes:[
+  hs('1598—1605年','选王、饥荒与冒名王子','1598年的俄国与波兰—立陶宛，1604年伪德米特里从波兰—立陶宛入境、1605年进入莫斯科的路线（示意）。',[[47.0,16.0],[60.0,42.0]],d=>{
+    ha(d,'ruRussia1598',HC.eeurope,{fillOpacity:.26});ha(d,'plCommonwealth1569',HC.celt,{fillOpacity:.2});
+    hp(d,'bd_moscow',{kind:'capital',note:'新沙皇在克里姆林宫加冕。'});
+    hp(d,'rus2_novodevichy',{left:1,note:'戈杜诺夫在此闭门“推辞”皇位。'});
+    hp(d,'ko_krakow',{left:1,note:'1604年3月伪德米特里在此觐见波兰国王。'});
+    hr(d,[[50.06,19.94],[51.50,31.30],[55.75,37.62]],HC.war);
+   },[['fill',HC.eeurope,'1598年的俄国'],['fill',HC.celt,'波兰—立陶宛'],['dline',HC.war,'1604—1605年伪德米特里进军莫斯科（示意）'],['dot',HC.war,'莫斯科'],['dot','#2a2018','新圣女修道院与克拉科夫']]),
+  hs('1606—1613年','波兰人进了克里姆林宫','1598年的俄国、波兰—立陶宛、克卢希诺战场与图希诺营地，以及1612年民军收复莫斯科的路线。',[[50.0,20.0],[58.5,46.0]],d=>{
+    ha(d,'ruRussia1598',HC.eeurope,{fillOpacity:.2,dashArray:'4 4'});ha(d,'plCommonwealth1569',HC.celt,{fillOpacity:.24});
+    hp(d,'ote_smolensk',{kind:'battle',left:1,note:'1609—1611年波军围攻陷落，并在克卢希诺击败俄军。'});
+    hp(d,'bd_moscow',{kind:'battle',left:1,note:'伪德米特里二世曾扎营西郊图希诺；1612年波兰守军在此投降。'});
+    hp(d,'rus2_nizhny',{note:'1611年米宁在此筹款组建第二支民军。'});
+    hr(d,[[56.33,44.01],[55.75,37.62]],HC.eeurope);
+   },[['dash',HC.eeurope,'1598年的俄国'],['fill',HC.celt,'波兰—立陶宛'],['dline',HC.eeurope,'1612年民军西进莫斯科'],['dot',HC.war,'斯摩棱斯克、克卢希诺与莫斯科'],['dot','#2a2018','图希诺与下诺夫哥罗德']]),
+  hs('1613—1649年','从尤里节到《会议法典》','1598年的俄国疆域、1648年爆发盐税暴动并于次年颁布《会议法典》的莫斯科与几处大修道院。',[[50.0,26.0],[62.0,50.0]],d=>{
+    ha(d,'ruRussia1598',HC.eeurope,{fillOpacity:.26});
+    hp(d,'bd_moscow',{kind:'capital',note:'1649年1月缙绅会议在此通过法典。'});
+    hp(d,'rus2_ipatiev',{left:1,note:'1613年3月使者在此找到米哈伊尔母子。'});
+    hp(d,'rus2_trinity',{note:'俄国最富的修道院之一，庄园遍布各地。'});
+   },[['fill',HC.eeurope,'1598年的俄国'],['dot',HC.war,'莫斯科'],['dot','#2a2018','伊帕季耶夫修道院与三一修道院']]),
+  hs('1648—1667年','赫梅利尼茨基与安德鲁索沃','波兰—立陶宛、1689年的俄国、克里米亚汗国、扎波罗热营地、别列斯捷奇科战场与佩列亚斯拉夫。',[[44.0,20.0],[56.5,40.0]],d=>{
+    ha(d,'plCommonwealth1569',HC.celt,{fillOpacity:.22});ha(d,'ruRussia1689',HC.eeurope,{fillOpacity:.22});ha(d,'osVassals1566',HC.parthia,{fillOpacity:.14,dashArray:'4 4'});
+    hp(d,'rus2_sich',{kind:'battle',note:'1648年起义从这里出发。'});
+    hp(d,'rus2_chyhyryn',{left:1,note:'赫梅利尼茨基的盖特曼驻地。'});
+    hp(d,'rus2_berestechko',{kind:'battle',left:1,note:'1651年夏哥萨克在此战败。'});
+    hp(d,'rus2_pereiaslav',{note:'1654年1月的宣誓大会在此举行。'});
+    hp(d,'b_kiev',{left:1,note:'1686年俄国付14.6万卢布买断。'});
+    hp(d,'ote_smolensk',{left:1,note:'1667年停战后归俄国。'});
+   },[['fill',HC.celt,'波兰—立陶宛'],['fill',HC.eeurope,'1689年的俄国'],['dash',HC.parthia,'奥斯曼的附庸（含克里米亚汗国）'],['dot',HC.war,'扎波罗热营地与别列斯捷奇科'],['dot','#2a2018','奇吉林、佩列亚斯拉夫、基辅与斯摩棱斯克']]),
+  hs('1652—1682年','旧礼仪派、拉辛与射击军','1689年的俄国、拉辛溯伏尔加河北上的路线（示意）、阿瓦库姆被烧死的普斯托泽尔斯克与莫斯科。',[[44.0,30.0],[69.0,58.0]],d=>{
+    ha(d,'ruRussia1689',HC.eeurope,{fillOpacity:.22});
+    hp(d,'rus2_pustozersk',{left:1,note:'1682年4月阿瓦库姆在此受火刑。'});
+    hp(d,'rus2_tsaritsyn',{kind:'battle',note:'1670年被拉辛攻下。'});
+    hp(d,'rus2_simbirsk',{kind:'battle',left:1,note:'1670年秋拉辛在此受挫。'});
+    hp(d,'bd_moscow',{kind:'battle',left:1,note:'1682年5月射击军冲进克里姆林宫。'});
+    hr(d,[[46.35,48.04],[48.71,44.51],[54.32,48.40]],HC.war);
+   },[['fill',HC.eeurope,'1689年的俄国'],['dline',HC.war,'1670年拉辛溯伏尔加河北上（示意）'],['dot',HC.war,'察里津、辛比尔斯克与莫斯科'],['dot','#2a2018','普斯托泽尔斯克']]),
+  hs('1639—1689年','尼布楚与三一修道院','1689年的俄国、雅库茨克与鄂霍次克、雅克萨与尼布楚、清方使团北上路线（示意）与三一修道院。',[[36.0,30.0],[66.0,150.0]],d=>{
+    ha(d,'ruRussia1689',HC.eeurope,{fillOpacity:.24});
+    hp(d,'rus2_yakutsk',{note:'勒拿河畔的收税总据点。'});
+    hp(d,'rus2_okhotsk',{left:1,note:'1639年俄国人首次到达的太平洋海岸。'});
+    hp(d,'rus2_albazin',{kind:'battle',note:'1685、1686年两次被清军围攻。'});
+    hp(d,'rus2_nerchinsk',{kind:'battle',left:1,note:'条约以额尔古纳河与外兴安岭分界。'});
+    hp(d,'fje_beijing',{note:'1689年6月索额图从这里出发北上。'});
+    hp(d,'rus2_trinity',{kind:'battle',left:1,note:'1689年8月彼得一世在此避难。'});
+    hr(d,[[39.90,116.40],[51.99,116.56]],HC.china);
+   },[['fill',HC.eeurope,'1689年的俄国'],['dline',HC.china,'1689年清方使团北上（示意）'],['dot',HC.war,'雅克萨、尼布楚与三一修道院'],['dot','#2a2018','雅库茨克、鄂霍次克与北京']])
+ ]},
+{id:'history-eeurope-peter',ch:10,title:'彼得大帝：照着瑞典打造军队，拿农奴供养帝国',short:'彼得大帝',en:'Peter the Great: Building a Swedish-Style Army and Feeding an Empire with Serfs',period:'1689—1725年',c:HC.eeurope,
+ scenes:[
+  hs('1689—1698年','夺取亚速与西欧大使团','1696年彼得一世造船顺顿河夺取亚速，1697—1698年化名赴荷兰赞丹与英国伦敦船厂学造船。',[[44.0,-3.0],[60.5,44.0]],d=>{
+    ha(d,'ruRussia1689',HC.eeurope,{fillOpacity:.3});ha(d,'osOttoman1683',HC.parthia,{fillOpacity:.22});
+    hp(d,'bd_moscow',{kind:'capital',note:'1689年彼得在此亲政；1698年回朝镇压射击军叛乱。'});
+    hp(d,'rus3_voronezh',{note:'1695—1696年彼得在此造桨帆船队顺顿河南下。'});
+    hp(d,'ote_azov',{kind:'battle',note:'1696年7月俄军水陆封锁攻克顿河口亚速要塞。'});
+    hp(d,'rus3_zaandam',{left:1,note:'1697年8月彼得化名在荷兰船厂做木匠。'});
+    hp(d,'k_london',{left:1,note:'1698年春彼得在德普特福德皇家船厂钻研造船图纸。'});
+    hr(d,[[55.756,37.617],[56.95,24.11],[52.440,4.826],[51.51,-0.13]],HC.route);
+   },[['fill',HC.eeurope,'1689年彼得亲政时的俄国（示意）'],['fill',HC.parthia,'奥斯曼帝国与克里米亚汗国（示意）'],['dline',HC.route,'1697—1698年西欧大使团路线（概略）'],['dot',HC.war,'莫斯科与亚速战场'],['dot','#2a2018','沃罗涅日、赞丹与伦敦']]),
+  hs('1700—1705年','纳尔瓦惨败与重建新军','1700年11月卡尔十二世在纳尔瓦以少胜多击溃俄军，彼得在莫斯科熔教堂钟铸炮并推行征兵制。',[[52.0,15.0],[62.0,42.0]],d=>{
+    ha(d,'ruRussia1689',HC.eeurope,{fillOpacity:.28});ha(d,'nSweden1648',HC.nordic,{fillOpacity:.32});ha(d,'nLivonia1621',HC.nordic,{fillOpacity:.32});ha(d,'nFinland',HC.nordic,{fillOpacity:.26});
+    hp(d,'nd_narva',{kind:'battle',left:1,note:'1700年11月瑞军借暴风雪突袭，击溃围城俄军。'});
+    hp(d,'nk_stockholm',{left:1,note:'十八岁的卡尔十二世从斯德哥尔摩跨海出征。'});
+    hp(d,'bd_moscow',{kind:'capital',note:'战败后在此督办熔钟铸炮与按户抽丁新政。'});
+   },[['fill',HC.nordic,'垄断波罗的海沿岸的瑞典帝国'],['fill',HC.eeurope,'急需波罗的海出海口的俄国'],['dot',HC.war,'纳尔瓦战场与莫斯科'],['dot','#2a2018','斯德哥尔摩']]),
+  hs('1703—1712年','涅瓦河口建起圣彼得堡','1703年彼得在瑞典领土的涅瓦河口奠基圣彼得堡，强征劳工在沼泽筑城，1712年迁都于此。',[[54.0,20.0],[62.5,41.0]],d=>{
+    ha(d,'ruRussia1689',HC.eeurope,{fillOpacity:.3});ha(d,'nLivonia1621',HC.nordic,{fillOpacity:.25});
+    hp(d,'ote_petersburg',{kind:'capital',left:1,note:'1703年5月奠基要塞，1712年取代莫斯科成为俄国新都。'});
+    hp(d,'nd_riga',{left:1,note:'1710年俄军攻克瑞典帝国第一大城里加。'});
+    hp(d,'bd_moscow',{note:'旧都莫斯科；1714年起全国石匠被征调前往新都。'});
+    hr(d,[[55.756,37.617],[59.939,30.316]],HC.route);
+   },[['fill',HC.eeurope,'向波罗的海推进的俄国'],['fill',HC.nordic,'俄军逐步占领的瑞典波罗的海省份'],['dline',HC.route,'1712年从莫斯科迁都圣彼得堡'],['dot',HC.war,'新都圣彼得堡'],['dot','#2a2018','里加与莫斯科']]),
+  hs('1708—1721年','波尔塔瓦决战与尼斯塔德和约','1709年俄军在波尔塔瓦歼灭南下乌克兰的瑞军主力，1711年普鲁特河受挫，1721年签约夺得波罗的海东岸。',[[45.0,16.0],[62.5,43.0]],d=>{
+    ha(d,'ruRussia1725',HC.eeurope,{fillOpacity:.34});ha(d,'nSweden1648',HC.nordic,{fillOpacity:.24});ha(d,'osOttoman1683',HC.parthia,{fillOpacity:.2});
+    hp(d,'rus3_poltava',{kind:'battle',note:'1709年7月俄军在此击溃卡尔十二世主力。'});
+    hp(d,'rus3_pruth',{kind:'battle',left:1,note:'1711年7月俄军在普鲁特河被围，交还亚速脱困。'});
+    hp(d,'rus3_nystad',{left:1,note:'1721年9月俄瑞在此议和，瑞典割让波罗的海东岸三省。'});
+    hp(d,'ote_petersburg',{kind:'capital',note:'1721年11月参政院在此尊彼得为皇帝与“大帝”。'});
+    hr(d,[[53.9,27.5],[53.6,31.0],[49.588,34.551]],HC.war);
+   },[['fill',HC.eeurope,'1721年《尼斯塔德和约》后的俄罗斯帝国'],['fill',HC.nordic,'失去波罗的海东岸霸权的瑞典'],['fill',HC.parthia,'收回亚速的奥斯曼帝国'],['dline',HC.war,'1708—1709年卡尔十二世南下波尔塔瓦路线'],['dot',HC.war,'波尔塔瓦、普鲁特河与圣彼得堡'],['dot','#2a2018','尼斯塔德']]),
+  hs('1718—1725年','人头税、官秩表与杀子立储','彼得在圣彼得堡推行人头税、十四级官秩表与神圣宗教会议，皇储阿列克谢从维也纳押回后死于狱中。',[[46.5,14.0],[61.5,41.0]],d=>{
+    ha(d,'ruRussia1725',HC.eeurope,{fillOpacity:.34});ha(d,'sHabsburgAustria1556',HC.germany,{fillOpacity:.22});
+    hp(d,'ote_petersburg',{kind:'capital',note:'1718年皇储死于要塞狱中；1722年在此颁行十四级官阶。'});
+    hp(d,'c3_vienna',{left:1,note:'1716年皇储阿列克谢逃往维也纳投奔连襟查理六世。'});
+    hp(d,'bd_moscow',{note:'旧都牧首出缺后不再补选，教会改归新都官署管辖。'});
+   },[['fill',HC.eeurope,'实行人头税与十四级官秩表的俄罗斯帝国'],['fill',HC.germany,'皇储阿列克谢一度出逃的奥地利哈布斯堡领地'],['dot',HC.war,'圣彼得堡（彼得保罗要塞）'],['dot','#2a2018','维也纳与莫斯科']]),
+  hs('1689—1725年','西欧军事技术与农奴帝国对照','1725年彼得去世时的俄罗斯帝国与同时代实测《康熙皇舆全览图》的大清帝国对照。',[[28.0,20.0],[63.0,125.0]],d=>{
+    ha(d,'ruRussia1725',HC.eeurope,{fillOpacity:.36});
+    hp(d,'ote_petersburg',{kind:'capital',left:1,note:'彼得建成二十一万常备军与波罗的海新都。'});
+    hp(d,'bd_moscow',{left:1,note:'内陆旧都莫斯科；贵族与农奴被官阶和人头税绑在战车上。'});
+    hp(d,'fje_beijing',{note:'清廷聘传教士用三角测量法绘成全国地图，秘藏于大内。'});
+   },[['fill',HC.eeurope,'1725年彼得一世去世时的俄罗斯帝国版图'],['dot',HC.war,'圣彼得堡'],['dot','#2a2018','莫斯科与北京对照']])
+ ]},
+{id:'history-eeurope-catherine',ch:10,title:'叶卡捷琳娜与瓜分波兰：开明是场面话，一票否决亡了邻国',short:'叶卡捷琳娜与瓜分波兰',en:'Catherine the Great and the Partitions of Poland: Enlightened Talk and the Fatal Liberum Veto',period:'1725—1796年',c:HC.eeurope,
+ scenes:[
+  hs('1725—1762年','近卫军造王与1762年夏宫政变','1725—1762年圣彼得堡近卫军五次左右皇位；1762年彼得三世与柏林讲和后，叶卡捷琳娜从夏宫进城夺权。',[[51.0,11.0],[61.5,39.0]],d=>{
+    ha(d,'ruRussia1725',HC.eeurope,{fillOpacity:.32});ha(d,'plCommonwealth1569',HC.neutral,{fillOpacity:.22});
+    hp(d,'ote_petersburg',{kind:'capital',note:'近卫军五次拥立新君；1762年6月叶卡捷琳娜在此夺权。'});
+    hp(d,'fsy_berlin',{left:1,note:'1762年5月彼得三世向普王求和，退还东普鲁士占领地。'});
+    hp(d,'bd_moscow',{note:'1762年9月叶卡捷琳娜二世在克里姆林宫加冕。'});
+    hr(d,[[59.939,30.316],[52.52,13.40]],HC.route);
+   },[['fill',HC.eeurope,'1725—1762年经历多次宫廷政变的俄罗斯帝国'],['fill',HC.neutral,'俄军借道穿行的波兰—立陶宛联邦'],['dline',HC.route,'1762年彼得三世向柏林腓特烈二世求和撤军'],['dot',HC.war,'圣彼得堡（夏宫政变）'],['dot','#2a2018','柏林与莫斯科']]),
+  hs('1762—1790年','启蒙通信与农奴赏赐账本','叶卡捷琳娜与巴黎启蒙学者通信，在国内召开法典委员会、颁赐贵族特权，并将拉季舍夫流放西伯利亚。',[[45.0,0.0],[61.5,42.0]],d=>{
+    ha(d,'ruRussia1725',HC.eeurope,{fillOpacity:.34});ha(d,'fFrance1648',HC.france,{fillOpacity:.22});
+    hp(d,'ote_petersburg',{kind:'capital',note:'女皇在此颁诏免除贵族税役，并将拉季舍夫判处流放。'});
+    hp(d,'bd_moscow',{note:'1767年新法典委员会在此召集，次年因战事停会。'});
+    hp(d,'w_paris',{left:1,note:'女皇重金购下巴黎百科全书派藏书，博取西欧开明名声。'});
+    hr(d,[[59.939,30.316],[48.857,2.352]],HC.route);
+   },[['fill',HC.eeurope,'贵族享尽特权、农奴制推向顶峰的俄罗斯帝国'],['fill',HC.france,'《圣谕》一度遭查禁的法兰西王国'],['dline',HC.route,'圣彼得堡与巴黎启蒙文人的书信往来'],['dot',HC.war,'圣彼得堡与莫斯科'],['dot','#2a2018','巴黎']]),
+  hs('1773—1775年','普加乔夫起义震动伏尔加流域','1773—1774年普加乔夫冒称彼得三世在乌拉尔与伏尔加河流域起兵，围奥伦堡、破喀山，1775年在莫斯科被处决。',[[30.0,32.0],[60.0,122.0]],d=>{
+    ha(d,'ruRussia1725',HC.eeurope,{fillOpacity:.32});
+    hp(d,'rus4_orenburg',{kind:'battle',note:'1773年冬至次年春普加乔夫率军围攻这座边塞半年。'});
+    hp(d,'rus4_kazan',{kind:'battle',note:'1774年7月起义军攻破并焚毁喀山外城。'});
+    hp(d,'bd_moscow',{kind:'capital',left:1,note:'1775年1月普加乔夫在莫斯科被处决；同年改行五十省制。'});
+    hp(d,'fje_beijing',{note:'1774年山东王伦起兵，清廷镇压后地方矛盾持续累积。'});
+    hr(d,[[51.768,55.097],[55.796,49.106],[51.53,46.01],[48.70,44.51]],HC.war);
+   },[['fill',HC.eeurope,'1773—1775年镇压普加乔夫起义后的俄罗斯帝国'],['dline',HC.war,'1773—1774年普加乔夫起义军转战路线（概略）'],['dot',HC.war,'奥伦堡、喀山与莫斯科'],['dot','#2a2018','北京对照']]),
+  hs('1768—1794年','南下黑海与吞并克里米亚','1774年与1792年两份和约加上1783年吞并克里米亚，波将金为俄国夺取黑海北岸并兴建新港。',[[39.5,24.0],[56.5,42.0]],d=>{
+    ha(d,'ruRussia1796',HC.eeurope,{fillOpacity:.34});ha(d,'brCrimea1854',HC.war,{fillOpacity:.45});ha(d,'osOttoman1683',HC.parthia,{fillOpacity:.2});
+    hp(d,'bvi_sevastopol',{kind:'port',note:'1783年波将金在此辟建黑海舰队母港，四年后女皇南巡至此。'});
+    hp(d,'rus4_kuchuk',{kind:'battle',left:1,note:'1774年7月在此议和，俄商船获准通行黑海与海峡。'});
+    hp(d,'rus4_jassy',{left:1,note:'1792年1月俄土在此签约，确认德涅斯特河以东归俄。'});
+    hp(d,'ote_odessa',{kind:'port',left:1,note:'1794年在哈吉贝旧址兴建，日后成为黑海头号小麦出口港。'});
+    hp(d,'po_constantinople',{left:1,note:'奥斯曼都城伊斯坦布尔；条约赋予俄国护教干涉借口。'});
+   },[['fill',HC.war,'1783年被俄国吞并的克里米亚半岛'],['fill',HC.eeurope,'夺取黑海北岸“新俄罗斯”后的俄罗斯帝国'],['fill',HC.parthia,'节节败退的奥斯曼帝国'],['dot',HC.war,'塞瓦斯托波尔、库楚克开纳吉与敖德萨'],['dot','#2a2018','雅西与伊斯坦布尔']]),
+  hs('1652—1795年','一票否决与俄普奥三次瓜分波兰','三块色块标出俄、普、奥各自瓜分所得疆域；图钉标出华沙、格罗德诺、维尔纽斯与克拉科夫。',[[47.5,12.5],[58.5,34.0]],d=>{
+    ha(d,'plRussiaShare1795',HC.eeurope,{fillOpacity:.42});ha(d,'plPrussiaShare1795',HC.germany,{fillOpacity:.42});ha(d,'plAustriaShare1795',HC.spain,{fillOpacity:.42});
+    hp(d,'ote_warsaw',{kind:'battle',left:1,note:'1794年俄军攻占华沙郊区普拉加，次年华沙划归普鲁士。'});
+    hp(d,'rus4_grodno',{note:'1793年俄军包围格罗德诺议会逼签割地条约；两年后波王在此退位。'});
+    hp(d,'ko_vilnius',{note:'立陶宛古都维尔纽斯；第三次瓜分中划归俄罗斯帝国。'});
+    hp(d,'ko_krakow',{left:1,note:'1794年春起义军在此誓师；次年划归奥地利。'});
+    hp(d,'fsy_berlin',{left:1,note:'腓特烈二世倡议瓜分波兰，夺取皇家普鲁士打通本土。'});
+    hp(d,'c3_vienna',{left:1,note:'奥地利分得加利西亚与克拉科夫，与俄普维持东欧均势。'});
+   },[['fill',HC.eeurope,'俄国三次瓜分所得（46.32万平方公里，占63.2%）'],['fill',HC.germany,'普鲁士三次瓜分所得（14.14万平方公里，占19.3%）'],['fill',HC.spain,'奥地利三次瓜分所得（12.89万平方公里，占17.6%）'],['dot',HC.war,'华沙与格罗德诺'],['dot','#2a2018','维尔纽斯、克拉科夫、柏林与维也纳']]),
+  hs('1762—1796年','1796年女皇遗产：走向莫斯科之战','1796年叶卡捷琳娜去世时俄国版图推进到中欧与黑海，人口达3740万，十几年后迎战拿破仑。',[[43.0,14.0],[61.5,45.0]],d=>{
+    ha(d,'ruRussia1796',HC.eeurope,{fillOpacity:.36});ha(d,'sHabsburgAustria1556',HC.germany,{fillOpacity:.22});
+    hp(d,'ote_petersburg',{kind:'capital',note:'女皇死于冬宫；五年后其子保罗一世也在宫中遇刺。'});
+    hp(d,'bd_moscow',{kind:'battle',note:'俄国旧都；十六年后拿破仑率六十万大军打进此城。'});
+    hp(d,'ote_warsaw',{left:1,note:'波兰故都；1807年拿破仑在此重建华沙公国作为攻俄跳板。'});
+    hp(d,'ote_odessa',{left:1,note:'黑海新港敖德萨，把乌克兰农奴种出的小麦运往西欧。'});
+   },[['fill',HC.eeurope,'1796年叶卡捷琳娜二世去世时的俄罗斯帝国版图'],['fill',HC.germany,'与俄国直接接壤的奥地利与普鲁士（示意）'],['dot',HC.war,'圣彼得堡与莫斯科'],['dot','#2a2018','华沙与敖德萨']])
+ ]},
+{id:'history-eeurope-reform',ch:10,title:'农奴解放到1905年：解放了人没解放地，修了铁路输了战争',short:'农奴解放到1905年',en:'From Emancipation to 1905: Serfs Freed Without Their Land, Railways Built and a War Lost',period:'1855—1914年',c:HC.eeurope,
+ scenes:[
+  hs('1856—1861年','解放宣言与赎买','俄罗斯帝国范围（按1914年疆域示意），标出圣彼得堡与莫斯科。',[[44.0,22.0],[62.5,58.0]],d=>{
+    ha(d,'ruRussia1914',HC.eeurope,{fillOpacity:.3});
+    hp(d,'ote_petersburg',{kind:'capital',note:'首都；解放宣言在此签署。'});
+    hp(d,'bd_moscow',{note:'1856年3月沙皇对本地贵族讲话。'});
+   },[['fill',HC.eeurope,'俄罗斯帝国（按1914年疆域示意）'],['dot',HC.war,'圣彼得堡'],['dot','#2a2018','莫斯科']]),
+  hs('1863—1874年','自治会、陪审团与新兵役','俄罗斯帝国西部与俄属波兰，标出华沙和圣彼得堡。',[[45.0,14.0],[62.0,45.0]],d=>{
+    ha(d,'ruRussia1914',HC.eeurope,{fillOpacity:.28});
+    hp(d,'ote_warsaw',{kind:'battle',note:'1863年1月起义从这里发动。'});
+    hp(d,'ote_petersburg',{kind:'capital',note:'1864年11月颁布司法改革条例。'});
+   },[['fill',HC.eeurope,'俄罗斯帝国（含俄属波兰）'],['dot',HC.war,'华沙'],['dot','#2a2018','圣彼得堡']]),
+  hs('1874—1882年','下乡、民意党与反动','俄罗斯帝国与1878年后的巴尔干诸国，标出普列文、柏林、圣彼得堡和伊丽莎白格勒。',[[38.0,12.0],[61.0,42.0]],d=>{
+    ha(d,'ruRussia1914',HC.eeurope,{fillOpacity:.26});ha(d,'osBalkanStates1878',HC.neutral,{fillOpacity:.32});
+    hp(d,'ote_petersburg',{kind:'capital',note:'沙皇遇刺后被抬回冬宫，下午去世。'});
+    hp(d,'rus5_elisavetgrad',{note:'1881年4月南俄集体迫害的第一站。'});
+    hp(d,'ote_plevna',{kind:'battle',note:'1877年俄土战争中的要塞战场。'});
+    hp(d,'fsy_berlin',{note:'1878年列强在此重划巴尔干。'});
+   },[['fill',HC.eeurope,'俄罗斯帝国'],['fill',HC.neutral,'1878年柏林会议后的巴尔干诸国'],['dot',HC.war,'普列文与伊丽莎白格勒'],['dot','#2a2018','圣彼得堡与柏林']]),
+  hs('1887—1903年','维什涅格拉茨基与维特','俄罗斯帝国与西伯利亚大铁路走向（经中国东北一段为示意），标出海参崴、敖德萨和巴黎。',[[30.0,0.0],[66.0,140.0]],d=>{
+    ha(d,'ruRussia1914',HC.eeurope,{fillOpacity:.26});
+    hr(d,[[55.75,37.62],[55.16,61.40],[54.99,73.37],[56.01,92.87],[52.29,104.30],[51.83,107.58],[52.03,113.50],[49.60,117.43],[45.76,126.64],[44.40,131.15],[43.12,131.89]],HC.route);
+    hp(d,'ote_vladivostok',{kind:'port',left:1,note:'1891年5月皇储尼古拉在此为大铁路开工。'});
+    hp(d,'w_paris',{note:'法国储户大批买进俄国政府债券。'});
+    hp(d,'ote_odessa',{kind:'port',left:1,note:'黑海粮食出口大港。'});
+   },[['fill',HC.eeurope,'俄罗斯帝国'],['dline',HC.route,'西伯利亚大铁路（示意）'],['dot',HC.war,'海参崴与敖德萨'],['dot','#2a2018','巴黎']]),
+  hs('1896—1905年','在中国东北打的日俄战争','中国东北、朝鲜半岛与俄国远东，画出中东铁路及南满支线（示意）和主要战场。',[[30.0,112.0],[54.0,144.0]],d=>{
+    ha(d,'ruRussia1914',HC.eeurope,{fillOpacity:.26});
+    hr(d,[[49.60,117.43],[45.76,126.64],[44.40,131.15],[43.12,131.89]],HC.route);hr(d,[[45.76,126.64],[43.88,125.32],[41.80,123.43],[38.92,121.60],[38.81,121.24]],HC.route);
+    hp(d,'rus5_portarthur',{kind:'battle',note:'日军围攻五个月，港内俄舰尽失。'});
+    hp(d,'rus5_mukden',{kind:'battle',note:'双方投入近55万人，伤亡逾15万。'});
+    hp(d,'rus5_tsushima',{kind:'battle',left:1,note:'俄舰21艘沉没，日方只沉3艘鱼雷艇。'});
+    hp(d,'ote_vladivostok',{kind:'port',note:'对马海战后只有少数俄舰逃到这里。'});
+    hp(d,'fje_beijing',{kind:'capital',left:1,note:'清廷宣布对日俄交战守中立。'});
+   },[['fill',HC.eeurope,'俄罗斯帝国'],['dline',HC.route,'中东铁路及南满支线（示意）'],['dot',HC.war,'旅顺、奉天与对马海峡'],['dot','#2a2018','北京与海参崴']]),
+  hs('1905—1911年','流血星期日、杜马与斯托雷平','俄罗斯帝国与北波斯，标出圣彼得堡、基辅和大不里士。',[[28.0,22.0],[62.0,62.0]],d=>{
+    ha(d,'ruRussia1914',HC.eeurope,{fillOpacity:.3});
+    hp(d,'ote_petersburg',{kind:'capital',note:'1905年1月卫队在冬宫前向请愿者开枪。'});
+    hp(d,'b_kiev',{note:'斯托雷平陪沙皇看歌剧时遇刺。'});
+    hp(d,'po_tabriz',{note:'协约签订后北波斯归俄国势力范围。'});
+   },[['fill',HC.eeurope,'俄罗斯帝国'],['dot',HC.war,'圣彼得堡与基辅'],['dot','#2a2018','大不里士（北波斯）']])
+ ]},
+{id:'history-eeurope-october',ch:10,title:'十月革命与苏联：面包队伍推倒沙皇，少数派拿下政权',short:'十月革命与苏联',en:'The October Revolution and the Soviet Union: Bread Queues Topple the Tsar, a Minority Takes Power',period:'1917—1922年',c:HC.eeurope,
+ scenes:[
+  hs('1916—1917年3月','面包队伍与两个政权','俄国西北部，标出彼得格勒和普斯科夫。',[[53.0,24.0],[61.5,40.0]],d=>{
+    ha(d,'ruRussia1914',HC.eeurope,{fillOpacity:.3});
+    hp(d,'ote_petersburg',{kind:'capital',note:'彼得格勒（1914年由圣彼得堡改名）。'});
+    hp(d,'em_pskov',{note:'北方面军司令部，沙皇专列在此停靠。'});
+   },[['fill',HC.eeurope,'俄罗斯帝国（1914年疆域）'],['dot',HC.war,'彼得格勒'],['dot','#2a2018','普斯科夫']]),
+  hs('1917年4—7月','铅封车厢与夏季攻势','德国、奥匈与俄国，画出列宁从苏黎世回彼得格勒的路线（示意）。',[[44.0,4.0],[67.5,36.0]],d=>{
+    ha(d,'wwGermany1914',HC.germany,{fillOpacity:.3});ha(d,'wwAustriaHungary1914',HC.germany,{fillOpacity:.22});ha(d,'ruRussia1914',HC.eeurope,{fillOpacity:.26});
+    hr(d,[[47.38,8.54],[50.11,8.68],[52.52,13.40],[54.52,13.64],[55.38,13.16],[59.33,18.07],[65.84,24.14],[60.17,24.94],[59.96,30.36]],HC.route);
+    hp(d,'rus6_zurich',{note:'流亡者一行从这里登车出发。'});
+    hp(d,'rus6_sassnitz',{kind:'port',note:'换乘渡轮前往瑞典。'});
+    hp(d,'nk_stockholm',{note:'流亡者经瑞典北上芬兰。'});
+    hp(d,'rus6_finland',{kind:'capital',note:'1917年4月3日晚列宁在此下车。'});
+    hp(d,'rus6_lemberg',{kind:'battle',note:'夏季攻势原想夺取的目标。'});
+   },[['fill',HC.germany,'德国与奥匈'],['fill',HC.eeurope,'俄国'],['dline',HC.route,'列宁回国路线（示意）'],['dot',HC.war,'利沃夫（伦贝格）'],['dot','#2a2018','苏黎世、萨斯尼茨、斯德哥尔摩与芬兰车站']]),
+  hs('1917年8月—1918年1月','冬宫、土地法令与立宪会议','彼得格勒市中心，标出冬宫、斯莫尔尼宫和塔夫利宫。',[[59.925,30.28],[59.962,30.42]],d=>{
+    ha(d,'ruRussia1914',HC.eeurope,{fillOpacity:.12});
+    hp(d,'rus6_winterpalace',{kind:'battle',left:1,note:'临时政府部长们在此被捕。'});
+    hp(d,'rus6_smolny',{kind:'capital',note:'十月夺权指挥部；次年1月在近旁塔夫利宫驱散立宪会议。'});
+   },[['dot',HC.war,'冬宫'],['dot','#2a2018','斯莫尔尼宫与塔夫利宫']]),
+  hs('1918年','布列斯特和约','布列斯特和约割出的波兰、波罗的海、乌克兰等地（示意）与苏俄剩下的部分。',[[38.0,14.0],[66.0,52.0]],d=>{
+    ha(d,'ruRussia1914',HC.eeurope,{fillOpacity:.2});ha(d,'ruBrestLitovsk1918',HC.germany,{fillOpacity:.42});
+    hp(d,'ote_brest',{kind:'battle',note:'和约在城中要塞里签字。'});
+    hp(d,'bd_moscow',{kind:'capital',note:'1918年3月苏维埃政府迁到这里。'});
+    hp(d,'ote_petersburg',{note:'德军逼近，首都地位就此结束。'});
+    hp(d,'ote_kars',{note:'与阿尔达汉、巴统一起割给奥斯曼。'});
+   },[['fill',HC.germany,'布列斯特和约割出去的土地（示意）'],['fill',HC.eeurope,'苏俄保留的部分'],['dot',HC.war,'布列斯特—立托夫斯克与卡尔斯'],['dot','#2a2018','莫斯科与彼得格勒']]),
+  hs('1918—1921年','内战与华沙城下','1921年里加条约后的波兰与东邻，标出华沙、基辅和里加。',[[44.0,14.0],[60.0,45.0]],d=>{
+    ha(d,'ruRussia1914',HC.eeurope,{fillOpacity:.2});ha(d,'plPoland1921',HC.war,{fillOpacity:.36});
+    hp(d,'ote_warsaw',{kind:'battle',note:'1920年8月12—25日华沙会战。'});
+    hp(d,'b_kiev',{kind:'battle',note:'1920年5月7日波乌联军入城。'});
+    hp(d,'nd_riga',{note:'1921年3月18日波苏在此签约。'});
+   },[['fill',HC.war,'1921年《里加条约》后的波兰'],['fill',HC.eeurope,'苏俄与苏维埃乌克兰（按旧帝国疆域示意）'],['dot',HC.war,'华沙与基辅'],['dot','#2a2018','里加']]),
+  hs('1921—1922年','新经济政策与苏联成立','1922年底成立的苏联，标出喀琅施塔得、萨马拉、莫斯科和上海。',[[25.0,20.0],[66.0,128.0]],d=>{
+    ha(d,'ruUSSR1922',HC.eeurope,{fillOpacity:.32});
+    hp(d,'rus6_kronstadt',{kind:'battle',note:'1921年3月1—18日水兵起义。'});
+    hp(d,'rus6_samara',{note:'1921—1922年饥荒的重灾区。'});
+    hp(d,'bd_moscow',{kind:'capital',note:'1922年12月30日在此通过联盟条约。'});
+    hp(d,'rus6_shanghai',{kind:'port',left:1,note:'1921年7月中共一大在此开幕。'});
+   },[['fill',HC.eeurope,'1922年成立的苏联'],['dot',HC.war,'喀琅施塔得与萨马拉'],['dot','#2a2018','莫斯科与上海']])
  ]},
 {id:'history-crusade-theatre',ch:11,title:'十字军的战场：一条陆路、一道海岸、一个埃及',short:'十字军的战场',en:'The Theatre of the Crusades: A Land Road, a Coast and Egypt',period:'1095—1291年',c:HC.crusade,
  scenes:[
@@ -16698,9 +17395,13 @@ const HISTORY_ERAS=[
  {id:'arab-caliphate',name:'阿拉伯：兴起、扩张与统治',en:'The Arabs: Rise, Conquest and Rule',date:'约525—945年',c:HC.parthia,items:[['history-arab-rise'],['history-arab-muhammad'],['history-arab-conquest'],['history-arab-expansion'],['history-arab-caliphs'],['history-arab-constantinople'],['history-arab-abbasid']]},
  {id:'arab-seljuks',name:'塞尔柱突厥',en:'The Seljuk Turks',date:'945—1092年',c:HC.parthia,items:[['history-arab-seljuks',0,2],['history-arab-seljuks',3,4,'曼齐刻尔特']]},
  {id:'arab-mongols',name:'从蒙古西征到帖木儿与奥斯曼崛起',en:'From the Mongols to Timur and the Ottomans',date:'1206—1501年',c:HC.parthia,items:[['history-persia-mongols'],['history-persia-timur'],['history-persia-ottoman']]},
+ {id:'ottoman-empire',name:'奥斯曼：从查尔迪兰到卡尔洛维茨',en:'The Ottomans: From Chaldiran to Karlowitz',date:'1501—1718年',c:HC.parthia,items:[['history-ottoman-suleiman'],['history-ottoman-lepanto']]},
+ {id:'ottoman-end',name:'奥斯曼：东方问题与帝国的终结',en:'The Ottomans: The Eastern Question and the End of Empire',date:'1768—1923年',c:HC.parthia,items:[['history-ottoman-eastern-question'],['history-ottoman-crimea'],['history-ottoman-berlin'],['history-ottoman-ww1'],['history-ottoman-kemal']]},
  {id:'eeurope-pontic',name:'东欧：草原、森林与港口',en:'Eastern Europe: Steppe, Forest and Ports',date:'约前700—375年',c:HC.eeurope,items:[['history-eeurope-pontic'],['history-eeurope-roman']]},
  {id:'eeurope-slavs',name:'东欧：斯拉夫人与罗斯',en:'Eastern Europe: Slavs and Rus',date:'375—1043年',c:HC.eeurope,items:[['history-eeurope-slavs'],['history-eeurope-balkans'],['history-eeurope-rus'],['history-eeurope-byzantium']]},
  {id:'eeurope-moscow',name:'东欧：金帐汗国与莫斯科“第三罗马”',en:'Eastern Europe: The Golden Horde and Moscow the Third Rome',date:'1054—1505年',c:HC.eeurope,items:[['history-eeurope-moscow']]},
+ {id:'eeurope-tsardom',name:'东欧：沙皇俄国与波兰—立陶宛',en:'Eastern Europe: Tsarist Russia and Poland–Lithuania',date:'1505—1796年',c:HC.eeurope,items:[['history-eeurope-ivan4'],['history-eeurope-romanov'],['history-eeurope-peter'],['history-eeurope-catherine']]},
+ {id:'eeurope-revolution',name:'东欧：从农奴解放到苏联',en:'Eastern Europe: From Emancipation to the Soviet Union',date:'1855—1922年',c:HC.eeurope,items:[['history-eeurope-reform'],['history-eeurope-october']]},
  {id:'crusade-setting',name:'十字军：战场与玩家',en:'The Crusades: Theatre and Players',date:'约1000—1291年',c:HC.crusade,items:[['history-crusade-theatre'],['history-crusade-players']]},
  {id:'crusade-first',name:'第一次十字军与十字军国家',en:'The First Crusade and the Crusader States',date:'1095—1144年',c:HC.crusade,items:[['history-crusade-people'],['history-faith-crusade'],['history-crusade-states']]},
  {id:'crusade-saladin',name:'从第二次十字军到萨拉丁',en:'From the Second Crusade to Saladin',date:'1145—1192年',c:HC.crusade,items:[['history-crusade-second'],['history-crusade-nuraldin'],['history-crusade-saladin'],['history-crusade-third']]},
@@ -16746,8 +17447,8 @@ const HISTORY_BRANCHES=[
  {id:'faith',name:'基督教',en:'Judaism & Christianity',lane:7,parent:'trunk',from:-1400,to:1689,c:HC.faith},
  // 埃及 and 波斯 leave 史前 at the early states (老无 2026-10-21; off 史前, not 希腊, since 2026-11-07; from its station 城市与早期王权 since 2026-11-08): the Ptolemies, the Seleucids, Rome and Byzantium are passing rulers of these lands.
  {id:'egypt',name:'埃及',en:'Egypt',lane:1,parent:'prehistory',from:-4000,to:642,c:HC.mino},
- {id:'persia',name:'波斯—阿拉伯',en:'Persia and the Arabs',lane:0,parent:'prehistory',from:-4000,to:1501,c:HC.parthia},
- {id:'eeurope',name:'东欧',en:'Eastern Europe',lane:8,parent:'trunk',from:-700,to:1505,c:HC.eeurope},
+ {id:'persia',name:'中东',en:'The Middle East',lane:0,parent:'prehistory',from:-4000,to:1923,c:HC.parthia},
+ {id:'eeurope',name:'东欧',en:'Eastern Europe',lane:8,parent:'trunk',from:-700,to:1922,c:HC.eeurope},
  // 十字军: from the theatre, the players and the holy war in Spain (the 0th crusade) to Acre (1291) and the military orders.
  {id:'crusade',name:'十字军',en:'The Crusades',lane:1,parent:'faith',from:1070,to:1312,c:HC.crusade},
  // 北欧: no fork, it starts itself; after the look back it runs through the Viking stations it shares (老无 2026-11-05).
@@ -17016,7 +17717,7 @@ const TREE_ROWS={
  'history-britain-suffrage-1928/0':['britain',1924,1928,'1918—1928年'],
  'history-france-consulate/0':['france',1800,1804,'1800—1804年'],
  'history-france-empire/0':[['france','spain'],1805,1811,'1805—1811年'],
- 'history-france-waterloo/0':['france',1812,1815,'1810—1815年'],
+ 'history-france-waterloo/0':[['france','eeurope'],1812,1815,'1810—1815年'],
  'history-france-restoration/0':['france',1816,1830,'1815—1830年'],
  'history-france-july-monarchy/0':['france',1831,1848,'1830—1848年'],
  'history-france-1848/0':['france',1848.3,1848.9,'1848年'],
@@ -17034,6 +17735,19 @@ const TREE_ROWS={
  'history-america-civilwar/0':['america',1861,1865,'1861—1865年'],
  'history-america-gilded/0':['america',1882,1894,'1865—1914年'],
  'history-america-wilson/0':['america',1917,1920,'1914—1920年'],
+ 'history-ottoman-suleiman/0':['persia',1514,1566,'1501—1566年'],
+ 'history-ottoman-lepanto/0':['persia',1571,1718,'1566—1718年'],
+ 'history-ottoman-eastern-question/0':['persia',1768,1841,'1768—1841年'],
+ 'history-ottoman-crimea/0':[['persia','eeurope'],1853,1856,'1825—1856年'],
+ 'history-ottoman-berlin/0':['persia',1876,1908,'1856—1908年'],
+ 'history-ottoman-ww1/0':[['persia','eeurope'],1914,1918,'1908—1918年'],
+ 'history-ottoman-kemal/0':['persia',1919,1923,'1918—1924年'],
+ 'history-eeurope-ivan4/0':['eeurope',1547,1598,'1505—1598年'],
+ 'history-eeurope-romanov/0':['eeurope',1649,1689,'1598—1689年'],
+ 'history-eeurope-peter/0':['eeurope',1721,1725,'1689—1725年'],
+ 'history-eeurope-catherine/0':['eeurope',1795,1796,'1725—1796年'],
+ 'history-eeurope-reform/0':['eeurope',1861,1911,'1855—1914年'],
+ 'history-eeurope-october/0':['eeurope',1917,1922,'1917—1922年'],
  'history-faith-avignon/0':[['faith','france'],1296,1303,'1294—1303年'],
  'history-faith-clement/0':[['faith','france'],1304,1314,'1303—1314年'],
  'history-italy-blackdeath/0':[['italy','france','britain','germany','faith','persia','nordic'],1347,1351,'1346—1353年'],
@@ -17113,9 +17827,9 @@ const TREE_ROWS={
  'history-germany-swiss/3':[['germany','italy','faith'],1515,1516,'1477—1648年']
 };
 // Topics still to be written grow the tree as dashed shoots.
-const TREE_FUTURE=[['france',1852,'第二帝国与普法战争','1852年后待展开：奥斯曼改造巴黎 · 克里米亚与意大利战争 · 1870年色当与巴黎公社 · 第三共和国'],['germany',1648,'普鲁士崛起与七年战争','1648年后待展开：勃兰登堡—普鲁士崛起 · 腓特烈大帝与奥地利王位继承战'],['italy',1563,'哈布斯堡霸权与统一','1563年后待展开：西班牙哈布斯堡霸权下的意大利 · 巴洛克时代与近代统一'],['faith',1689,'政教分离与启蒙时代','1689年后待展开：英国《宽容法》 · 启蒙运动与教会 · 大革命与教会'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',1501,'奥斯曼全盛与波斯争霸','1501年后待展开：1517年奥斯曼灭马穆鲁克 · 苏莱曼一世全盛与奥斯曼—萨法维百年争霸'],['china',845,'晚唐五代与宋','845年起 · 待展开'],['spain',1931,'第二共和国与西班牙内战','1931年后待展开：1931—1936年第二共和国改革与左右撕裂 · 1936—1939年西班牙内战与佛朗哥独裁'],['eeurope',1505,'伊凡雷帝与沙皇俄国','1505年后待展开：1547年伊凡四世加冕沙皇 · 混乱时代与罗曼诺夫王朝'],['lowlands',1648,'黄金时代与英荷海战','1648年后待展开：17世纪阿姆斯特丹黄金时代 · 三次英荷海战与威廉三世入主英国'],['crusade',1312,'后来的十字军','1396年尼科波利斯 · 1444年瓦尔纳 · 1571年勒班陀 · 待展开'],['america',1920,'大萧条、罗斯福新政与二战','1920年后待展开：1929年华尔街崩盘与大萧条 · 罗斯福新政 · 二战两洋作战与布雷顿森林体系'],['nordic',1648,'踏冰渡海与大北方战争','1648年后待展开：1658年卡尔十世踏冰渡海夺下斯科讷 · 1700—1721年大北方战争，瑞典失去波罗的海霸权'],['britain',1928,'大萧条、二战与福利国家','1928年后待展开：1929年大萧条 · 丘吉尔与二战不列颠之战 · 战后福利国家与大英帝国解体']];
+const TREE_FUTURE=[['france',1852,'第二帝国与普法战争','1852年后待展开：奥斯曼改造巴黎 · 克里米亚与意大利战争 · 1870年色当与巴黎公社 · 第三共和国'],['germany',1648,'普鲁士崛起与七年战争','1648年后待展开：勃兰登堡—普鲁士崛起 · 腓特烈大帝与奥地利王位继承战'],['italy',1563,'哈布斯堡霸权与统一','1563年后待展开：西班牙哈布斯堡霸权下的意大利 · 巴洛克时代与近代统一'],['faith',1689,'政教分离与启蒙时代','1689年后待展开：英国《宽容法》 · 启蒙运动与教会 · 大革命与教会'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',1923,'土耳其共和国与现代中东','1923年后待展开：凯末尔世俗化改革 · 英法委任统治、海湾石油与现代中东格局'],['china',845,'晚唐五代与宋','845年起 · 待展开'],['spain',1931,'第二共和国与西班牙内战','1931年后待展开：1931—1936年第二共和国改革与左右撕裂 · 1936—1939年西班牙内战与佛朗哥独裁'],['eeurope',1922,'斯大林与冷战','1922年后待展开：斯大林五年计划 · 二战苏德战场 · 冷战与苏联解体'],['lowlands',1648,'黄金时代与英荷海战','1648年后待展开：17世纪阿姆斯特丹黄金时代 · 三次英荷海战与威廉三世入主英国'],['crusade',1312,'后来的十字军','1396年尼科波利斯 · 1444年瓦尔纳 · 1571年勒班陀 · 待展开'],['america',1920,'大萧条、罗斯福新政与二战','1920年后待展开：1929年华尔街崩盘与大萧条 · 罗斯福新政 · 二战两洋作战与布雷顿森林体系'],['nordic',1648,'踏冰渡海与大北方战争','1648年后待展开：1658年卡尔十世踏冰渡海夺下斯科讷 · 1700—1721年大北方战争，瑞典失去波罗的海霸权'],['britain',1928,'大萧条、二战与福利国家','1928年后待展开：1929年大萧条 · 丘吉尔与二战不列颠之战 · 战后福利国家与大英帝国解体']];
 // Where a line stops it says why: [line, year, the event that ends it, note, the line it carries on in].
-const TREE_ENDS=[['trunk',-30,'并入罗马','前146年科林斯被毁 · 前30年最后一个希腊化王国埃及并入罗马','rome'],['rome',476,'西罗马终结','476年西部末代皇帝被废 · 由中世纪西欧接续'],['west',843,'凡尔登三分','843年《凡尔登条约》三分帝国 · 分出法兰西、德意志、意大利'],['east',1453,'东罗马终结','1453年5月29日奥斯曼帝国攻破君士坦丁堡 · 千年东罗马帝国终结'],['prehistory',-3100,'有了文字','两河、埃及约前3200—前3100年先后有了文字和国家 · 由希腊、埃及、波斯—阿拉伯三条线接续','trunk']];
+const TREE_ENDS=[['trunk',-30,'并入罗马','前146年科林斯被毁 · 前30年最后一个希腊化王国埃及并入罗马','rome'],['rome',476,'西罗马终结','476年西部末代皇帝被废 · 由中世纪西欧接续'],['west',843,'凡尔登三分','843年《凡尔登条约》三分帝国 · 分出法兰西、德意志、意大利'],['east',1453,'东罗马终结','1453年5月29日奥斯曼帝国攻破君士坦丁堡 · 千年东罗马帝国终结'],['prehistory',-3100,'有了文字','两河、埃及约前3200—前3100年先后有了文字和国家 · 由希腊、埃及、中东三条线接续','trunk']];
 // Sections of one line that run side by side: [line, row keys, side of the passing loop].
 const TREE_PARALLEL=[['trunk',['history-alexander-conquest/0','history-alexander-rule/0'],1],['trunk',['history-hellenistic-states/0','history-hellenistic-knowledge/0'],1],['west',['history-west-kingdoms/0','history-west-ostrogoths/0'],1],['west',['history-west-merovingians/0','history-west-lombards/0'],1],['faith',['history-empire-amorian/0','history-faith-carolingian/0'],-1],['faith',['history-faith-imperial-church/0','history-faith-cluny/0'],-1]];
 // Time slices across the whole tree: [year, label, headline, paragraph].
