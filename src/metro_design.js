@@ -38,7 +38,7 @@ window.NETWORK_DESIGN = (() => {
     rome: [[-1000, y(ROME), null, -34], [476, y(ROME), null, -14]],
     west: [[476, y(ROME), null, -14], [830, y(ROME)]],
     italy: [[830, y(ROME)], [1454, y(ROME)]],
-    china: [[-68000, y(CHINA)], [589, y(CHINA)]],
+    china: [[-68000, y(CHINA)], [1919, y(CHINA)]],
     persia: [[-4000, y(PERSIA)], [1923, y(PERSIA)]],
     egypt: [[-4000, y(EASTEU)], [632, y(EASTEU)]],
     faith: [[-1400, y(ROME), null, -34], [-1400, y(GERMANY, 1)], [1450, y(GERMANY, 1)]],
