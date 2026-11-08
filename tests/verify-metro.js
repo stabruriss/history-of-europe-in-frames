@@ -104,7 +104,9 @@ const settle=p=>p.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestA
   await p.keyboard.press('Escape');assert.equal((await dialog()).open,false);const kept=await p.evaluate(()=>metroUI.state());assert.equal(kept.line,'eeurope');assert.equal(kept.mode,'ride','Esc closes the question, not the train');
   await p.click(eastBadge);await p.click('#transferDialog button[value="cancel"]');assert.equal((await p.evaluate(()=>metroUI.state())).line,'eeurope','cancel stays');
   await p.click(eastBadge);await p.mouse.click(4,4);assert.equal((await dialog()).open,false,'the backdrop cancels');assert.equal((await p.evaluate(()=>metroUI.state())).line,'eeurope');
-  await p.click(eastBadge);await p.click('#transferConfirm');await new Promise(r=>setTimeout(r,60));
+  await p.click(eastBadge);await p.click('#transferConfirm');
+  // The strip scrolls to the new stop on a later frame, and a busy machine may take several: wait for it, then check it below.
+  await p.waitForFunction(()=>{const a=document.querySelector('.route-stop.active'),s=document.getElementById('routeScroller');if(!a||!s)return false;const b=a.getBoundingClientRect(),r=s.getBoundingClientRect();return b.left>=r.left&&b.right<=r.right},{timeout:5000}).catch(()=>{});
   let switched=await p.evaluate(()=>{const b=document.querySelector('.route-stop.active').getBoundingClientRect(),s=document.getElementById('routeScroller').getBoundingClientRect();return {...metroUI.state(),inView:b.left>=s.left&&b.right<=s.right}});
   assert.equal(switched.line,'east');assert.equal(switched.station,'history-empire-fall-1453/0');assert.ok(switched.inView,'the strip shows the stop on the new line');
   await p.evaluate(()=>metroUI.board('crusade',{key:'history-crusade-fourth/0'}));await settle(p);
