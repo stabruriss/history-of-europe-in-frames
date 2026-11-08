@@ -77,6 +77,29 @@ regions['fr18Roman1798'] = L([(11.75, 42.25), (11.3, 43.1), (12.3, 43.85), (13.0
 regions['fr18Parthenopean1799'] = NAPLES
 regions['fr18VenetoAustria1797'] = L([(10.5, 45.4), (10.65, 46.0), (11.6, 46.3), (12.5, 46.6), (13.7, 46.5), (13.65, 45.75), (12.4, 45.2), (11.4, 45.0), (10.7, 45.1)])
 
+# --- The Consulate, the First Empire (1812), 1815 and Algiers (1830) ------------------------------------------------
+regions['fr18Louisiana1803'] = LOUISIANA_WEST
+FRANCE_1815 = U(regions['fr18France1789'], regions['fr18Avignon1791'])
+regions['fr18France1815'] = FRANCE_1815
+# Direct departments of the French Empire in 1812 (130 departments: France, Low Countries, NW Germany to Lübeck,
+# Piedmont–Genoa–Tuscany–Rome, and the Illyrian Provinces).
+NW_GER_1812 = L([(5.9, 51.8), (6.8, 53.5), (8.6, 54.0), (10.9, 54.1), (10.9, 53.4), (9.2, 52.5), (7.6, 51.8)])
+ITALY_ANNEX_1812 = L([(6.6, 45.1), (7.6, 45.9), (8.6, 45.9), (8.5, 45.0), (9.9, 44.5), (11.6, 44.2), (12.3, 43.8),
+                      (13.3, 42.3), (13.3, 41.2), (11.0, 42.2), (9.8, 44.0), (7.5, 43.7)])
+ILLYRIA_1812 = L([(13.4, 46.6), (14.8, 46.6), (15.8, 45.5), (15.8, 44.2), (17.8, 43.0), (18.6, 42.2), (16.5, 42.5), (14.2, 44.8), (13.4, 45.5)])
+CATALONIA_1812 = L([(0.6, 40.6), (0.7, 42.7), (3.3, 42.5), (2.2, 41.2)])
+regions['fr18Empire1812'] = U(FRANCE_1815, regions['fr18Savoy1792'], regions['fr18Belgium1795'], regions['fr18LeftBank1797'],
+                              G('sDutchRepublic1609'), G('cSwiss1513').intersection(Polygon([(5.8, 45.8), (6.5, 46.5), (8.0, 46.5), (8.0, 45.8)])),
+                              NW_GER_1812, ITALY_ANNEX_1812, ILLYRIA_1812, CATALONIA_1812)
+regions['fr18ConfedRhine1812'] = L([(7.5, 47.5), (7.8, 50.1), (7.0, 51.1), (7.6, 51.8), (9.2, 52.5), (10.9, 53.4), (11.2, 54.2),
+                                    (14.0, 54.0), (14.8, 51.0), (13.8, 48.5), (13.0, 47.2), (10.2, 47.2)])
+regions['fr18KingdomItaly1812'] = L([(8.5, 45.0), (8.6, 46.2), (10.5, 46.6), (12.4, 46.6), (13.6, 46.0), (13.9, 42.8),
+                                     (13.3, 42.3), (12.3, 43.8), (11.6, 44.2), (9.9, 44.5)])
+regions['fr18Warsaw1812'] = L([(15.2, 51.2), (15.5, 53.2), (18.5, 53.6), (23.5, 54.2), (24.0, 52.0), (23.0, 50.0), (19.0, 49.8), (16.5, 51.2)])
+regions['fr18Naples1812'] = NAPLES
+regions['fr18Spain1812'] = U(G('sCastile'), G('sCrownAragon')).difference(CATALONIA_1812.buffer(.02)).buffer(0)
+regions['fr18Algiers1830'] = L([(-1.8, 34.8), (1.0, 36.8), (5.0, 37.1), (8.6, 37.0), (8.4, 35.4), (4.0, 35.0), (0.0, 34.6)])
+
 for key, region in regions.items():
     assert not region.is_empty, key
     assert key not in geo, key

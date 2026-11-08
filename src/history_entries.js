@@ -2433,6 +2433,57 @@ Object.assign(HS,{
   b18_chilwell:['奇尔韦尔国家炮弹填充厂','National Shell Filling Factory, Chilwell',52.912,-1.231,'诺丁汉郡大型军火填充厂；一战期间灌装过半英军高爆炮弹。'],
   b28_carlton:['卡尔顿俱乐部','Carlton Club, London',51.506,-0.137,'伦敦圣詹姆士街的保守党俱乐部；1922年10月保守党议员在此投票退出劳合·乔治联合政府。'],
   b28_bealna:['比尔纳布拉','Béal na Bláth, County Cork',51.814,-8.856,'爱尔兰科克郡山谷；1922年8月22日爱尔兰临时政府主席迈克尔·柯林斯在此遭反条约派伏击身亡。'],
+  fco_stbernard:['大圣伯纳德山口','Great St Bernard Pass',45.869,7.17,'瑞意边境海拔两千四百多米的阿尔卑斯山口；1800年5月波拿巴率军由此进入意大利。'],
+  fco_marengo:['马伦哥','Marengo',44.887,8.678,'皮埃蒙特亚历山德里亚城东的村子；1800年6月14日法军在此由败转胜击败奥军。'],
+  fco_hohenlinden:['霍恩林登','Hohenlinden',48.157,11.997,'慕尼黑东面的林地；1800年12月3日莫罗在此击败奥军，逼奥地利讲和。'],
+  fco_neworleans:['新奥尔良','New Orleans',29.951,-90.071,'密西西比河出海口的大港；1803年12月法国在此向美国移交路易斯安那。'],
+  fco_capfrancais:['法兰西角（今海地角）','Cap-Français (Cap-Haïtien)',19.76,-72.204,'圣多明各北岸的最大港口；1802年2月勒克莱尔在此登陆，次年11月法军在城外战败。'],
+  fco_joux:['茹堡','Fort de Joux',46.872,6.374,'汝拉山脉海拔近千米的岩石要塞，靠近瑞士边境；1803年4月7日杜桑·卢维杜尔死于此地牢房。'],
+  fco_biville:['比维尔悬崖','Biville Cliffs',49.982,1.262,'诺曼底迪耶普东北的海边峭壁；1803年8月卡杜达尔与皮什格吕乘英国船由此爬绳潜入法国。'],
+  fco_vincennes:['万塞讷城堡','Château de Vincennes',48.843,2.435,'巴黎东郊的旧王家城堡；1804年3月21日凌晨昂基安公爵在此地的护城河被枪决。'],
+  fco_ettenheim:['埃滕海姆','Ettenheim',48.256,7.812,'莱茵河东岸巴登选侯国的小城；1804年3月15日法国龙骑兵越境在此抓走昂基安公爵。'],
+  fem_trafalgar:['特拉法加角','Cape Trafalgar',36.183,-6.033,'西班牙加的斯东南的大西洋海角；1805年10月21日纳尔逊在此击溃法西联合舰队。'],
+  fem_boulogne:['布洛涅','Boulogne-sur-Mer',50.726,1.614,'海峡边的法国军港；1803—1805年拿破仑在此集结大军准备渡海攻英。'],
+  fem_ulm:['乌尔姆','Ulm',48.401,9.988,'多瑙河上游的要塞；1805年10月20日奥将马克率两万多守军在此向拿破仑投降。'],
+  fem_austerlitz:['奥斯特里茨（今斯拉夫科夫）','Austerlitz (Slavkov u Brna)',49.153,16.876,'摩拉维亚布尔诺东面的小城；1805年12月2日拿破仑在此打赢三皇会战。'],
+  fem_frankfurt:['法兰克福','Frankfurt am Main',50.111,8.682,'美因河畔的旧帝国加冕城；1806年起为莱茵邦联议会所在地。'],
+  fem_jena:['耶拿','Jena',50.927,11.589,'图林根萨勒河畔的大学城；1806年10月14日拿破仑在此大败普军，黑格尔当时在此任教。'],
+  fem_berlin:['柏林','Berlin',52.52,13.405,'普鲁士王国都城；1806年11月21日拿破仑在此颁布封锁不列颠诸岛的敕令。'],
+  fem_friedland:['弗里德兰（今普拉夫丁斯克）','Friedland (Pravdinsk)',54.444,21.018,'东普鲁士小城；1807年6月14日拿破仑在此击败俄军，逼俄国讲和。'],
+  fem_tilsit:['提尔西特（今苏维埃茨克）','Tilsit (Sovetsk)',55.083,21.883,'东普鲁士涅曼河畔的边境城；1807年6—7月法俄两皇在河心木筏会晤并签和约。'],
+  fem_kassel:['卡塞尔','Kassel',51.313,9.497,'威斯特伐利亚王国都城；1807—1813年拿破仑幼弟热罗姆在此当国王。'],
+  fem_bayonne:['巴约讷','Bayonne',43.493,-1.475,'法国西南靠近西班牙边境的城；1808年5月拿破仑在此逼西班牙国王父子让位。'],
+  fem_bailen:['拜伦','Bailén',38.096,-3.779,'安达卢西亚北门的小城；1808年7月19日法将杜庞率部在此向西班牙军投降。'],
+  fem_savona:['萨沃纳','Savona',44.309,8.477,'热那亚西面的海港；1809—1812年教宗庇护七世被拿破仑软禁于此。'],
+  fwa_kovno:['科夫诺','Kovno (Kaunas)',54.898,23.904,'涅曼河畔的立陶宛城池；1812年6月24日拿破仑大军主力在此搭浮桥渡河入俄，12月残军也从这里退回。'],
+  fwa_berezina:['别列津纳河','Berezina (Studzianka)',54.321,28.506,'白俄罗斯境内的第聂伯河支流；1812年11月26—29日法军工兵在冰水里架桥，护送残军突围。'],
+  fwa_moscow:['莫斯科','Moscow',55.756,37.617,'俄国旧都；1812年9月7日西郊博罗季诺会战后法军进城，大火烧毁全城四分之三房屋。'],
+  fwa_elba:['厄尔巴岛','Elba',42.814,10.329,'托斯卡纳外海的小岛；1814年5月至1815年2月拿破仑被安置在此当主权亲王。'],
+  fwa_golfejuan:['儒昂湾','Golfe-Juan',43.567,7.072,'戛纳与昂蒂布之间的海湾；1815年3月1日拿破仑率约一千人在此登陆。'],
+  fwa_lons:['隆斯勒索涅','Lons-le-Saunier',46.675,5.554,'汝拉山麓的小城；1815年3月14日奈伊元帅在此宣读宣言倒向拿破仑。'],
+  fwa_rochefort:['罗什福尔（艾克斯岛）','Rochefort (Île d’Aix)',46.012,-1.173,'大西洋岸军港；1815年7月15日拿破仑在此登上英舰“贝勒罗丰号”。'],
+  fwa_waterloo:['滑铁卢','Waterloo',50.68,4.412,'布鲁塞尔南面的小镇；1815年6月18日拿破仑在镇南的圣让山高地败给威灵顿与布吕歇尔。'],
+  f1830_aachen:['亚琛','Aachen (Aix-la-Chapelle)',50.775,6.084,'莱茵兰名城；1818年秋四国同盟在此开会，同意法国付清赔款后提前撤走占领军。'],
+  f1830_rambouillet:['朗布依埃','Rambouillet',48.644,1.83,'巴黎西南森林中的王家城堡；1830年8月2日查理十世在此签署退位诏书。'],
+  f1830_cherbourg:['瑟堡','Cherbourg',49.639,-1.616,'诺曼底半岛北端军港；1830年8月16日查理十世一家由此登船流亡英国。'],
+  fjm_murato:['穆拉托','Murato',42.578,9.326,'科西嘉北部山村；1790年菲耶斯基生于此地牧羊人家。'],
+  fjm_arenenberg:['阿伦嫩贝格庄园','Arenenberg',47.673,9.059,'瑞士图尔高州博登湖畔的庄园；奥坦丝带儿子路易-拿破仑在此流亡。'],
+  fjm_boulogne:['布洛涅','Boulogne-sur-Mer',50.726,1.614,'加来海峡海港；1840年8月6日凌晨路易-拿破仑在近旁维姆勒上岸起事。'],
+  fjm_ham:['哈姆要塞','Fort de Ham',49.747,3.073,'索姆河畔的中世纪古堡监狱；1840—1846年路易-拿破仑被关押于此。'],
+  fjm_cherbourg:['瑟堡','Cherbourg',49.639,-1.616,'诺曼底军港；1840年11月30日护卫舰载拿破仑灵柩在此靠岸。'],
+  fjm_lisieux:['利雪','Lisieux',49.146,0.229,'诺曼底小城；1830—1848年基佐一直当选此地的众议院议员。'],
+  fjm_buzancais:['比藏赛','Buzançais',46.889,1.423,'安德尔省小镇；1847年1月饥民在此拦抢粮车、打死地主，三人被判死刑。'],
+  fjm_valognes:['瓦洛涅','Valognes',49.509,-1.469,'诺曼底科唐坦半岛小城；1839年起托克维尔代表此地当选众议院议员。'],
+  f1848_lehavre:['勒阿弗尔','Le Havre',49.494,0.107,'塞纳河口海港；1848年3月2日退位的路易-菲利普化名从近旁登船赴英。'],
+  f1848_macon:['马孔','Mâcon',46.306,4.829,'勃艮第索恩河畔小城；1790年拉马丁生于此地贵族之家。'],
+  f1848_ajain:['阿让','Ajain',46.208,1.999,'克勒兹省村庄；1848年6月当地农民因抗拒四十五生丁税进城冲击省府。'],
+  f1848_algiers:['阿尔及尔','Algiers',36.785,3.06,'法属阿尔及利亚首府；卡芬雅克原任此地总督，六月起义后四千多名工人被流放至此。'],
+  f1848_auxerre:['欧塞尔','Auxerre',47.798,3.573,'约讷省首府；1848年6月和9月两次补选路易-拿破仑都在该省高票当选。'],
+  flb_quimper:['坎佩尔','Quimper',47.996,-4.102,'布列塔尼菲尼斯泰尔省首府；1848年12月总统大选卡芬雅克仅赢下该省等四省。'],
+  flb_lille:['里尔','Lille',50.629,3.057,'北方纺织重镇；1850年5月31日选举法将该城选民从一万五千砍到四千五百。'],
+  flb_constantine:['君士坦丁','Constantine',36.365,6.615,'阿尔及利亚东部重镇；1851年夏圣阿诺在此作战后调回巴黎任陆军部长。'],
+  flb_clamecy:['克莱姆西','Clamecy',47.46,3.519,'涅夫勒省小城；1851年12月政变后当地伐木工与农民起义占领全城。'],
+  flb_digne:['迪涅','Digne-les-Bains',44.092,6.236,'下阿尔卑斯省首府；1851年12月数千名农民与手艺人武装进城抗议政变。'],
 });
 function hp(d,key,opt={}){
   const [n,en,la,lo,note]=HS[key];
@@ -7206,6 +7257,329 @@ const HISTORY_ENTRIES=[
     hp(d,'fri_versailles',{left:1,note:'1789年三级会议在凡尔赛开幕，十年后议会在近旁的圣克卢被驱散。'});
     hp(d,'w_paris',{note:'12月25日新的三名执政就职。'});
    },[['dot','#2a2018','凡尔赛、圣克卢与巴黎']])
+ ]},
+{id:'history-france-consulate',ch:5,title:'执政府：把革命装进法典，再给自己戴上皇冠',short:'执政府',en:'The Consulate: Putting the Revolution into a Code, and a Crown on His Own Head',period:'1800—1804年',c:HC.france,
+ scenes:[
+  hs('1800—1801年','马伦哥与《教务专约》','1800年法军翻越阿尔卑斯山与两场胜仗的地点，以及新教宗当选的威尼斯、罗马和签约的巴黎。',[[40.5,0.5],[50.8,15.2]],d=>{
+    ha(d,'fr18France1789',HC.france,{fillOpacity:.14});ha(d,'fr18Belgium1795',HC.france,{fillOpacity:.2});ha(d,'fr18LeftBank1797',HC.france,{fillOpacity:.2});
+    ha(d,'fr18Cisalpine1797',HC.france,{fillOpacity:.26});ha(d,'sHabsburgAustria1556',HC.germany,{fillOpacity:.18});
+    hp(d,'w_paris',{note:'1801年7月15日《教务专约》在此签字。'});
+    hp(d,'fco_stbernard',{left:1,note:'四万法军把拆开的炮管塞进树干拖过雪山。'});
+    hp(d,'fco_marengo',{kind:'battle',left:1,note:'法军胜；同日留守埃及的克莱贝尔在开罗遇刺。'});
+    hp(d,'fco_hohenlinden',{kind:'battle',left:1,note:'法军胜；奥军死伤被俘一万多人。'});
+    hp(d,'ir_venice',{left:1,note:'1800年3月14日枢机们在圣乔治修道院选出新教宗。'});
+    hp(d,'rome',{left:1,note:'庇护七世7月回罗马，次年8月批准专约。'});
+    hr(d,[[47.32,5.04],[46.2,6.1],[45.87,7.17],[45.46,9.19],[44.89,8.68]],HC.route);
+   },[['fill',HC.france,'法兰西共和国与北意大利姊妹共和国（示意）'],['fill',HC.germany,'奥地利哈布斯堡领地（示意）'],['dline',HC.route,'1800年5—6月波拿巴进军马伦哥（概略）'],['dot',HC.war,'马伦哥、霍恩林登'],['dot','#2a2018','巴黎、大圣伯纳德山口、威尼斯与罗马']]),
+  hs('1800—1803年','省长、银行与法郎','法兰西银行与内政部所在的巴黎，以及派驻省长的几处大城（示意）。',[[42.2,-4.5],[51.8,9.2]],d=>{
+    ha(d,'fr18France1789',HC.france,{fillOpacity:.14});ha(d,'fr18Belgium1795',HC.france,{fillOpacity:.22});ha(d,'fr18LeftBank1797',HC.france,{fillOpacity:.22});
+    hp(d,'w_paris',{note:'法兰西银行初设在奥拉托利会街，后迁入图卢兹府邸。'});
+    hp(d,'fr_rouen',{left:1,note:'下塞纳省首府；伯尼奥在此当了六年省长。'});
+    hp(d,'lb_brussels',{left:1,note:'迪尔省首府；并入法国的比利时各省同样派驻省长。'});
+    hp(d,'k_lyon',{left:1,note:'罗讷省首府；1800年由省长接管市政与治安。'});
+    hp(d,'w_bordeaux',{note:'吉伦特省首府；首任省长是前立法议会议员。'});
+   },[['fill',HC.france,'法兰西共和国，含比利时与莱茵河左岸（示意）'],['dot','#2a2018','巴黎、鲁昂、布鲁塞尔、里昂与波尔多']]),
+  hs('1800—1804年','法国民法典','起草民法典的巴黎、旧制度南部的成文法区，以及后来推行民法典的几处欧洲城市。',[[42.0,-3.5],[53.8,13.5]],d=>{
+    ha(d,'fr18France1789',HC.france,{fillOpacity:.14});ha(d,'fr18Belgium1795',HC.france,{fillOpacity:.22});ha(d,'fr18LeftBank1797',HC.france,{fillOpacity:.22});
+    ha(d,'fr18Cisalpine1797',HC.france,{fillOpacity:.26});ha(d,'sDutchRepublic1609',HC.lowlands,{fillOpacity:.22});
+    hp(d,'w_paris',{note:'北部习惯法以《巴黎习惯法》为代表，特龙谢精于此道。'});
+    hp(d,'w_bordeaux',{note:'南部沿用罗马成文法，起草人马勒维尔曾在此当律师。'});
+    hp(d,'sn2_amsterdam',{left:1,note:'荷兰后来也照法国蓝本施行民法典。'});
+    hp(d,'ir_milan',{left:1,note:'意大利语译本1806年在米兰生效。'});
+   },[['fill',HC.france,'法兰西共和国与北意大利（示意）'],['fill',HC.lowlands,'巴达维亚共和国（荷兰）'],['dot','#2a2018','巴黎、波尔多、阿姆斯特丹与米兰']]),
+  hs('1801—1804年','圣多明各与路易斯安那','加勒比海的圣多明各、1803年卖给美国的路易斯安那，以及杜桑死去的汝拉山茹堡。',[[14.0,-104.0],[54.0,12.0]],d=>{
+    ha(d,'fr18Louisiana1803',HC.america,{fillOpacity:.32});ha(d,'fr18SaintDomingue',HC.war,{fillOpacity:.45});ha(d,'fr18France1789',HC.france,{fillOpacity:.18});
+    hp(d,'fco_neworleans',{note:'1803年11月法国刚从西班牙接手，20天后就移交给美国。'});
+    hp(d,'fco_capfrancais',{kind:'battle',note:'1803年11月18日德萨林在城南的韦尔蒂耶尔击败法军。'});
+    hp(d,'fco_joux',{left:1,note:'杜桑被押来此地冻病而死；西北的巴黎签下卖地条约。'});
+    hr(d,[[19.76,-72.20],[32.0,-45.0],[48.39,-4.49],[46.87,6.37]],HC.route);
+   },[['fill',HC.war,'圣多明各（1804年独立为海地）'],['fill',HC.america,'1803年卖给美国的路易斯安那（示意）'],['fill',HC.france,'法国本土'],['dline',HC.route,'1802年夏押送杜桑赴法国（概略）'],['dot',HC.war,'法兰西角'],['dot','#2a2018','新奥尔良与茹堡']]),
+  hs('1802—1804年','万塞讷的护城河','卡杜达尔潜入法国的比维尔悬崖、抓捕昂基安公爵的埃滕海姆，以及巴黎东郊的万塞讷城堡。',[[46.5,-0.5],[51.0,10.2]],d=>{
+    ha(d,'fr18France1789',HC.france,{fillOpacity:.14});ha(d,'fr18Belgium1795',HC.france,{fillOpacity:.22});ha(d,'fr18LeftBank1797',HC.france,{fillOpacity:.22});
+    hp(d,'fco_biville',{note:'刺客们夜间从英国军舰下船，抓着缆绳爬上悬崖。'});
+    hp(d,'fco_vincennes',{kind:'battle',note:'卡杜达尔在巴黎被捕；昂基安公爵在东郊万塞讷护城河被枪决。'});
+    hp(d,'fco_ettenheim',{kind:'battle',left:1,note:'法军从对岸的斯特拉斯堡渡过莱茵河，夜袭抓人。'});
+    hr(d,[[48.256,7.812],[48.583,7.746],[48.69,6.18],[48.843,2.435]],HC.route);
+   },[['fill',HC.france,'法兰西共和国（示意）'],['dline',HC.route,'1804年3月押送昂基安公爵去万塞讷（概略）'],['dot',HC.war,'埃滕海姆与万塞讷城堡'],['dot','#2a2018','比维尔悬崖']]),
+  hs('1804年5—12月','巴黎圣母院的皇冠','教宗庇护七世从罗马北上加冕的巴黎，以及贝多芬所在的维也纳。',[[40.5,0.0],[51.2,18.5]],d=>{
+    ha(d,'fr18France1789',HC.france,{fillOpacity:.16});ha(d,'fr18Belgium1795',HC.france,{fillOpacity:.22});ha(d,'fr18LeftBank1797',HC.france,{fillOpacity:.22});
+    ha(d,'sHabsburgAustria1556',HC.germany,{fillOpacity:.2});
+    hp(d,'w_paris',{note:'5月在西郊圣克卢称帝，12月2日在圣母院加冕，不去兰斯。'});
+    hp(d,'rome',{left:1,note:'11月2日庇护七世不顾多数枢机反对，动身赴巴黎。'});
+    hp(d,'c3_vienna',{left:1,note:'8月奥皇弗朗茨二世也给自己加上世袭的奥地利皇帝头衔。'});
+    hr(d,[[41.89,12.48],[43.77,11.25],[45.07,7.69],[45.76,4.83],[48.40,2.70],[48.85,2.35]],HC.route);
+   },[['fill',HC.france,'法兰西帝国（1804年）'],['fill',HC.germany,'奥地利哈布斯堡领地（示意）'],['dline',HC.route,'1804年11月教宗庇护七世赴巴黎（概略）'],['dot','#2a2018','巴黎、罗马与维也纳']])
+ ]},
+{id:'history-france-empire',ch:5,title:'拿破仑帝国：打服欧洲大陆，困在封锁与西班牙',short:'拿破仑帝国',en:'The Napoleonic Empire: Master of the Continent, Trapped by the Blockade and Spain',period:'1805—1811年',c:HC.france,
+ scenes:[
+  hs('1805年','特拉法加与奥斯特里茨','1805年秋法军从布洛涅东进乌尔姆与奥斯特里茨的路线，以及西班牙外海的特拉法加角。',[[34.5,-9.0],[53.5,19.5]],d=>{
+    ha(d,'fr18France1789',HC.france,{fillOpacity:.16});ha(d,'fr18Belgium1795',HC.france,{fillOpacity:.22});ha(d,'fr18LeftBank1797',HC.france,{fillOpacity:.22});
+    ha(d,'sHabsburgAustria1556',HC.germany,{fillOpacity:.2});
+    hp(d,'fem_trafalgar',{kind:'battle',note:'英军胜，法西舰队被俘击沉二十二艘。'});
+    hp(d,'fem_boulogne',{note:'十几万大军在此练了两年渡海登船。'});
+    hp(d,'ir_milan',{left:1,note:'5月26日拿破仑在米兰主教座堂戴上伦巴第铁王冠。'});
+    hp(d,'fem_ulm',{kind:'battle',left:1,note:'法军绕到奥军背后，马克不战而降。'});
+    hp(d,'fem_austerlitz',{kind:'battle',left:1,note:'法军11月占维也纳，12月2日在北面的奥斯特里茨击败俄奥联军。'});
+    hr(d,[[50.73,1.61],[48.58,7.75],[48.40,9.99],[48.21,16.37],[49.15,16.88]],HC.route);
+   },[['fill',HC.france,'法兰西帝国（1805年）'],['fill',HC.germany,'奥地利哈布斯堡领地（示意）'],['dline',HC.route,'1805年秋大军团从布洛涅东进（概略）'],['dot',HC.war,'特拉法加角、乌尔姆与奥斯特里茨'],['dot','#2a2018','布洛涅与米兰']]),
+  hs('1806年','神圣罗马帝国关门','1806年成立的莱茵邦联、签约的巴黎，以及奥托一世加冕的罗马和弗朗茨二世退位的维也纳。',[[40.5,0.0],[54.2,19.0]],d=>{
+    ha(d,'fr18France1789',HC.france,{fillOpacity:.14});ha(d,'fr18Belgium1795',HC.france,{fillOpacity:.2});ha(d,'fr18LeftBank1797',HC.france,{fillOpacity:.2});
+    ha(d,'fr18ConfedRhine1812',HC.france,{fillOpacity:.3});ha(d,'sHabsburgAustria1556',HC.germany,{fillOpacity:.2});
+    hp(d,'w_paris',{note:'7月12日十六个德意志邦国的代表在此签约。'});
+    hp(d,'fem_frankfurt',{left:1,note:'旧帝国皇帝的选举与加冕城，改为莱茵邦联首府。'});
+    hp(d,'c3_vienna',{left:1,note:'8月6日使者在维也纳宣读退位诏书，解散帝国法院与议会。'});
+    hp(d,'rome',{left:1,note:'962年2月2日教宗在此为奥托一世加冕。'});
+   },[['fill',HC.france,'法兰西帝国与莱茵邦联（示意）'],['fill',HC.germany,'奥地利帝国（示意）'],['dot','#2a2018','巴黎、法兰克福、维也纳与罗马']]),
+  hs('1806—1807年','耶拿、柏林与提尔西特','1806—1807年法军从耶拿打到东普鲁士弗里德兰的战场，以及提尔西特和约拆出的华沙公国。',[[48.5,8.5],[56.8,24.8]],d=>{
+    ha(d,'fr18ConfedRhine1812',HC.france,{fillOpacity:.24});ha(d,'fr18Warsaw1812',HC.france,{fillOpacity:.34});
+    hp(d,'fem_jena',{kind:'battle',note:'法军胜；达武同日在北面的奥尔施泰特以少胜多。'});
+    hp(d,'fem_berlin',{note:'拿破仑在此颁布封锁令，还运走了勃兰登堡门上的四马铜车。'});
+    hp(d,'fem_friedland',{kind:'battle',left:1,note:'法军胜；2月两军刚在西面的埃劳雪地死伤数万。'});
+    hp(d,'fem_tilsit',{left:1,note:'涅曼河心搭起两座木亭，普鲁士国王只能在岸上冒雨等候。'});
+    hr(d,[[50.93,11.59],[52.52,13.41],[52.41,16.93],[54.44,21.02],[55.08,21.88]],HC.route);
+   },[['fill',HC.france,'莱茵邦联与1807年新建的华沙公国（示意）'],['dline',HC.route,'1806—1807年法军进军路线（概略）'],['dot',HC.war,'耶拿与弗里德兰'],['dot','#2a2018','柏林与提尔西特']]),
+  hs('1806—1810年','波拿巴家的国王们','拿破仑三个兄弟与妹夫分封的都城：阿姆斯特丹、卡塞尔、马德里和那不勒斯，以及巴黎。',[[37.5,-7.0],[54.8,17.5]],d=>{
+    ha(d,'fr18Empire1812',HC.france,{fillOpacity:.18});ha(d,'fr18ConfedRhine1812',HC.france,{fillOpacity:.28});
+    ha(d,'fr18Spain1812',HC.spain,{fillOpacity:.24});ha(d,'fr18Naples1812',HC.spain,{fillOpacity:.28});
+    hp(d,'c5_madrid',{note:'长兄约瑟夫1808—1813年在此当西班牙国王。'});
+    hp(d,'w_paris',{note:'1808年4月20日路易-拿破仑生于巴黎拉菲特街。'});
+    hp(d,'sn2_amsterdam',{left:1,note:'荷兰国王路易1808年把王宫搬进市政厅，1810年退位。'});
+    hp(d,'fem_kassel',{note:'幼弟热罗姆在此当威斯特伐利亚国王。'});
+    hp(d,'naples',{left:1,note:'约瑟夫、妹夫缪拉先后在此当那不勒斯国王。'});
+   },[['fill',HC.france,'法兰西帝国与莱茵邦联（含威斯特伐利亚）'],['fill',HC.spain,'波拿巴家族治下的西班牙与那不勒斯'],['dot','#2a2018','马德里、巴黎、阿姆斯特丹、卡塞尔与那不勒斯']]),
+  hs('1807—1811年','西班牙的溃疡','逼退西班牙王室的巴约讷、起事的马德里、法军投降的拜伦，以及英军据守的里斯本。',[[35.5,-11.0],[45.2,4.0]],d=>{
+    ha(d,'fr18France1789',HC.france,{fillOpacity:.14});ha(d,'fr18Spain1812',HC.war,{fillOpacity:.28});ha(d,'sPortugal',HC.britain,{fillOpacity:.28});
+    hp(d,'sr_lisbon',{note:'韦尔斯利1808年8月在北面登陆，后筑防线守住里斯本。'});
+    hp(d,'c5_madrid',{kind:'battle',note:'1808年5月2日市民在太阳门广场袭击法国骑兵。'});
+    hp(d,'fem_bailen',{kind:'battle',note:'西班牙军胜；杜庞部一万七千多人被俘。'});
+    hp(d,'fem_bayonne',{left:1,note:'拿破仑在城南的马拉克城堡逼西班牙父子交出王冠。'});
+   },[['fill',HC.war,'约瑟夫治下遍地游击战的西班牙'],['fill',HC.britain,'英葡联军据守的葡萄牙'],['fill',HC.france,'法兰西帝国'],['dot',HC.war,'马德里与拜伦'],['dot','#2a2018','里斯本与巴约讷']]),
+  hs('1808—1811年','一百三十省的大帝国','1811—1812年法兰西帝国直辖的一百三十个省与外围附庸国，以及巴黎、维也纳、罗马和萨沃纳。',[[37.5,-6.0],[55.8,25.0]],d=>{
+    ha(d,'fr18Empire1812',HC.france,{fillOpacity:.36});
+    ha(d,'fr18ConfedRhine1812',HC.france,{fillOpacity:.18});ha(d,'fr18KingdomItaly1812',HC.france,{fillOpacity:.18});
+    ha(d,'fr18Warsaw1812',HC.france,{fillOpacity:.18});ha(d,'fr18Naples1812',HC.france,{fillOpacity:.18});ha(d,'fr18Spain1812',HC.france,{fillOpacity:.18});
+    ha(d,'sHabsburgAustria1556',HC.germany,{fillOpacity:.22});
+    hp(d,'w_paris',{note:'1810年4月在卢浮宫办婚礼，次年3月罗马王生于杜伊勒里宫。'});
+    hp(d,'fem_savona',{left:1,note:'庇护七世在此被囚三年，1812年又被转押到枫丹白露。'});
+    hp(d,'rome',{left:1,note:'1809年5月并入帝国，定为帝国第二大城。'});
+    hp(d,'c3_vienna',{kind:'battle',left:1,note:'1809年7月拿破仑在北郊瓦格拉姆获胜，次年迎娶奥皇长女。'});
+   },[['fill',HC.france,'法兰西帝国直辖130省（深）与附庸国（浅）'],['fill',HC.germany,'奥地利帝国（示意）'],['dot',HC.war,'维也纳（瓦格拉姆之战）'],['dot','#2a2018','巴黎、萨沃纳与罗马']])
+ ]},
+{id:'history-france-waterloo',ch:5,title:'从莫斯科到滑铁卢：六十万大军冻饿而归，百日一战收场',short:'从莫斯科到滑铁卢',en:'From Moscow to Waterloo: A Grand Army Frozen and Starved, a Hundred Days Ended on One Field',period:'1810—1815年',c:HC.france,
+ scenes:[
+  hs('1810—1812年','渡过涅曼河','1812年的法兰西帝国与各附庸国，拿破仑召见各国君主的德累斯顿，以及大军渡河的科夫诺。',[[38.0,-6.0],[58.0,32.0]],d=>{
+    ha(d,'fr18Empire1812',HC.france,{fillOpacity:.22});ha(d,'fr18ConfedRhine1812',HC.france,{fillOpacity:.12});ha(d,'fr18KingdomItaly1812',HC.france,{fillOpacity:.12});ha(d,'fr18Warsaw1812',HC.france,{fillOpacity:.14});ha(d,'fr18Naples1812',HC.france,{fillOpacity:.12});ha(d,'fr18Spain1812',HC.spain,{fillOpacity:.14});
+    hp(d,'w_paris',{note:'1811年帝国扩至一百三十个省。'});
+    hp(d,'fsy_dresden',{note:'1812年5月奥皇与普王在此朝见拿破仑。'});
+    hp(d,'fwa_kovno',{kind:'battle',left:1,note:'6月24日夜，大军搭三座浮桥渡过涅曼河。'});
+   },[['fill',HC.france,'1812年法兰西帝国与附庸邦国（示意）'],['fill',HC.spain,'约瑟夫治下的西班牙'],['dot',HC.war,'科夫诺（渡涅曼河）'],['dot','#2a2018','巴黎与德累斯顿']]),
+  hs('1812年9—12月','莫斯科与别列津纳河','1812年大军从科夫诺进军莫斯科与寒冬西撤的概略路线。',[[52.0,20.0],[57.5,40.5]],d=>{
+    ha(d,'fr18Warsaw1812',HC.france,{fillOpacity:.14});
+    hp(d,'fwa_kovno',{note:'去时四十二万主力由此渡河，归时仅剩一万人。'});
+    hp(d,'fwa_berezina',{kind:'battle',note:'工兵将军埃布莱率部在冰水中架起两座木桥。'});
+    hp(d,'fwa_moscow',{kind:'battle',left:1,note:'城西博罗季诺一战死伤七万余人；城内大火烧了五天。'});
+    hr(d,[[54.898,23.904],[54.687,25.279],[54.783,32.045],[55.526,35.822],[55.756,37.617]],HC.route);
+    hr(d,[[55.756,37.617],[55.02,36.47],[54.783,32.045],[54.321,28.506],[54.687,25.279],[54.898,23.904]],HC.war);
+   },[['fill',HC.france,'华沙公国'],['dline',HC.route,'1812年夏秋进军路线（概略）'],['dline',HC.war,'1812年冬撤退路线（概略）'],['dot',HC.war,'莫斯科（含博罗季诺）与别列津纳河'],['dot','#2a2018','科夫诺']]),
+  hs('1813—1814年','莱比锡到巴黎','1813年10月的莱比锡战场、1814年春失守的巴黎与南线战场图卢兹，以及拿破仑流放的厄尔巴岛。',[[41.5,-2.5],[53.5,16.5]],d=>{
+    ha(d,'fr18France1815',HC.france,{fillOpacity:.14});ha(d,'fr18ConfedRhine1812',HC.germany,{fillOpacity:.16});ha(d,'sHabsburgAustria1556',HC.germany,{fillOpacity:.22});
+    hp(d,'fsb_toulouse',{kind:'battle',note:'1814年4月10日威灵顿与苏尔特在此交战，时尚不知皇帝已退位。'});
+    hp(d,'w_paris',{kind:'battle',note:'3月31日联军入城；拿破仑随后在城南枫丹白露退位。'});
+    hp(d,'fwa_elba',{note:'《枫丹白露条约》将此岛划为拿破仑的领地，年俸两百万法郎。'});
+    hp(d,'rf1_leipzig',{kind:'battle',left:1,note:'四天会战双方死伤逾十万人，法军退回莱茵河西岸。'});
+   },[['fill',HC.france,'法国（1814—1815年疆界）'],['fill',HC.germany,'德意志与奥地利（示意）'],['dot',HC.war,'莱比锡、巴黎与图卢兹'],['dot','#2a2018','厄尔巴岛']]),
+  hs('1814年5月—1815年2月','宪章与维也纳','路易十八起程归国的英国、颁布《宪章》的巴黎，以及欧洲列强分赃的维也纳。',[[44.5,-2.5],[53.5,19.5]],d=>{
+    ha(d,'fr18France1815',HC.france,{fillOpacity:.16});ha(d,'sHabsburgAustria1556',HC.germany,{fillOpacity:.2});ha(d,'mEngland1066',HC.britain,{fillOpacity:.16});
+    hp(d,'k_london',{note:'路易十八自1807年起住在伦敦西北的哈特韦尔庄园。'});
+    hp(d,'w_paris',{note:'1814年6月4日路易十八在波旁宫向两院宣读《宪章》。'});
+    hp(d,'c3_vienna',{left:1,note:'1814年9月至1815年6月各国在此重划欧洲版图。'});
+   },[['fill',HC.france,'法兰西王国（1814年疆界）'],['fill',HC.britain,'英国'],['fill',HC.germany,'奥地利帝国（示意）'],['dot','#2a2018','伦敦、巴黎与维也纳']]),
+  hs('1815年3月','百日北上','1815年3月拿破仑从厄尔巴岛登陆儒昂湾、经阿尔卑斯山路北上巴黎的路线，以及路易十八出逃的根特。',[[42.0,-1.5],[52.0,12.0]],d=>{
+    ha(d,'fr18France1815',HC.france,{fillOpacity:.14});
+    hp(d,'w_paris',{note:'3月20日晚拿破仑重返杜伊勒里宫。'});
+    hp(d,'uk9_ghent',{note:'路易十八在此成立流亡朝廷，住了三个月。'});
+    hp(d,'fwa_lons',{note:'奈伊在此向部队宣读“波旁王朝的事业永远完了”。'});
+    hp(d,'fv_grenoble',{left:1,note:'城南拉弗雷草地上第五步兵团倒戈，城民劈开城门迎入拿破仑。'});
+    hp(d,'fwa_golfejuan',{left:1,note:'七艘小船载着约一千名官兵在此抢滩。'});
+    hp(d,'fwa_elba',{left:1,note:'2月26日夜趁英国巡逻舰离开，拿破仑登船出海。'});
+    hr(d,[[42.814,10.329],[43.567,7.072],[44.09,6.23],[45.189,5.725],[45.76,4.83],[46.675,5.554],[47.80,3.57],[48.857,2.352]],HC.route);
+   },[['fill',HC.france,'法兰西'],['dline',HC.route,'“鹰的飞翔”北上路线（概略）'],['dot','#2a2018','厄尔巴岛、儒昂湾、格勒诺布尔、隆斯勒索涅、巴黎与根特']]),
+  hs('1815年6—7月','滑铁卢','1815年6月比利时的滑铁卢战场、拿破仑退位的巴黎，以及他登上英舰投降的罗什福尔。',[[45.2,-3.0],[51.8,6.8]],d=>{
+    ha(d,'fr18France1815',HC.france,{fillOpacity:.14});ha(d,'fr18Belgium1795',HC.lowlands,{fillOpacity:.22});
+    hp(d,'fwa_rochefort',{note:'拿破仑本想由此去美国，海口被英舰封死，遂登舰投降。'});
+    hp(d,'w_paris',{note:'6月22日拿破仑在爱丽舍宫签署第二次退位诏书。'});
+    hp(d,'fwa_waterloo',{kind:'battle',left:1,note:'6月16日法军先胜普军于利尼；18日在滑铁卢被英普联军合击溃败。'});
+   },[['fill',HC.france,'法兰西'],['fill',HC.lowlands,'尼德兰联合王国（比利时）'],['dot',HC.war,'滑铁卢（含利尼）'],['dot','#2a2018','巴黎与罗什福尔']])
+ ]},
+{id:'history-france-restoration',ch:5,title:'复辟与七月革命：查理十世撕毁宪章，奥尔良公爵摘了桃子',short:'复辟与七月革命',en:'Restoration and the July Revolution: Charles X Tears Up the Charter, Orléans Picks the Peach',period:'1815—1830年',c:HC.france,
+ scenes:[
+  hs('1815—1818年','白色恐怖与撤军','1815年法国退回的疆界、爆发白色恐怖与政治处决的几座城市，以及1818年决定撤军的亚琛。',[[42.0,-3.5],[51.8,9.5]],d=>{
+    ha(d,'fr18France1815',HC.france,{fillOpacity:.16});
+    hp(d,'w_bordeaux',{note:'1815年9月，百日时效忠拿破仑的福谢双胞胎将军在此被枪决。'});
+    hp(d,'w_paris',{note:'奈伊在卢森堡宫外受刑；“无双议院”坐了不到一年即被解散。'});
+    hp(d,'k_marseille',{kind:'battle',left:1,note:'马赛、尼姆与阿维尼翁发生保王派暴徒杀人的白色恐怖。'});
+    hp(d,'f1830_aachen',{left:1,note:'1818年秋四国同盟在此同意提前撤走十五万驻法占领军。'});
+   },[['fill',HC.france,'法兰西王国（1815年疆界）'],['dot',HC.war,'南方白色恐怖（马赛、尼姆、阿维尼翁）'],['dot','#2a2018','巴黎、波尔多与亚琛']]),
+  hs('1820—1824年','歌剧院与西班牙','1820年贝里公爵遇刺与遗腹子出生的巴黎，以及1823年法军出兵干涉西班牙的路线。',[[35.5,-8.5],[50.8,7.5]],d=>{
+    ha(d,'fr18France1815',HC.france,{fillOpacity:.16});ha(d,'fr18Spain1812',HC.spain,{fillOpacity:.14});
+    hp(d,'spa_cadiz',{kind:'battle',note:'1823年8月31日法军攻下加的斯湾的特罗卡德罗堡，救出西王。'});
+    hp(d,'c5_madrid',{note:'1823年5月昂古莱姆公爵率法军进入马德里。'});
+    hp(d,'w_paris',{left:1,note:'1820年2月贝里公爵在歌剧院门外遇刺，9月遗腹子在杜伊勒里宫出生。'});
+    hr(d,[[48.857,2.352],[43.49,-1.47],[40.417,-3.704],[36.527,-6.289]],HC.route);
+   },[['fill',HC.france,'法兰西王国'],['fill',HC.spain,'西班牙王国'],['dline',HC.route,'1823年法军远征西班牙路线（概略）'],['dot',HC.war,'加的斯（特罗卡德罗）'],['dot','#2a2018','巴黎与马德里']]),
+  hs('1824—1827年','兰斯加冕','通过十亿法郎赔偿法与解散自卫军的巴黎，以及查理十世恢复中世纪涂油加冕礼的兰斯。',[[47.8,0.8],[50.2,5.5]],d=>{
+    ha(d,'fr18France1815',HC.france,{fillOpacity:.18});
+    hp(d,'w_paris',{note:'议会在此通过两项新法；国王在战神广场阅兵后撤掉巴黎自卫军。'});
+    hp(d,'w_reims',{left:1,note:'1825年5月29日查理十世在兰斯大教堂加冕，次日给瘰疬病人摸头。'});
+   },[['fill',HC.france,'法兰西王国'],['dot','#2a2018','巴黎与兰斯']]),
+  hs('1827—1830年','苍蝇拍与阿尔及尔','1830年法国远征军从土伦渡海攻占阿尔及尔的路线。',[[34.2,-2.5],[49.8,9.5]],d=>{
+    ha(d,'fr18France1815',HC.france,{fillOpacity:.14});ha(d,'fr18Algiers1830',HC.war,{fillOpacity:.28});
+    hp(d,'w_paris',{note:'查理十世与波利尼亚克指望靠北非捷报赢下7月大选。'});
+    hp(d,'sp2_algiers',{kind:'battle',note:'1830年6月法军在城西西迪费鲁什登陆，三周后德伊献城。'});
+    hp(d,'bd_toulon',{left:1,note:'1830年5月25日，百余艘军舰与数百艘运输船从土伦启航。'});
+    hr(d,[[43.124,5.928],[39.5,4.2],[36.76,3.06]],HC.route);
+   },[['fill',HC.france,'法兰西王国'],['fill',HC.war,'1830年法军占领的阿尔及尔沿海（示意）'],['dline',HC.route,'1830年远征舰队航线（概略）'],['dot',HC.war,'阿尔及尔'],['dot','#2a2018','巴黎与土伦']]),
+  hs('1830年7—8月','光荣三日','查理十世签署四道敕令的圣克卢宫、筑起四千多道街垒的巴黎，以及国王退位的朗布依埃。',[[48.52,1.45],[48.96,2.75]],d=>{
+    hp(d,'f1830_rambouillet',{note:'8月2日查理十世与长子昂古莱姆公爵在此签字退位。'});
+    hp(d,'f3b_stcloud',{left:1,note:'7月25日查理十世在此签署四道敕令。'});
+    hp(d,'w_paris',{kind:'battle',note:'7月27—29日街垒战，起义者攻占市政厅、卢浮宫与杜伊勒里宫。'});
+   },[['dot',HC.war,'巴黎（光荣三日街垒战）'],['dot','#2a2018','圣克卢宫与朗布依埃']]),
+  hs('1830年7—8月','摘桃子与流亡','路易-菲利普接过王位的巴黎，以及查理十世经瑟堡流亡英国的路线。',[[43.5,-3.5],[52.0,5.5]],d=>{
+    ha(d,'fr18France1815',HC.france,{fillOpacity:.16});ha(d,'mEngland1066',HC.britain,{fillOpacity:.16});
+    hp(d,'f1830_cherbourg',{note:'8月16日查理十世在此登上美国商船“大不列颠号”赴英。'});
+    hp(d,'k_london',{note:'查理十世先住英国多塞特郡，后居苏格兰爱丁堡荷里路德宫。'});
+    hp(d,'w_paris',{left:1,note:'7月31日市政厅阳台之吻；8月9日路易-菲利普在波旁宫宣誓即位。'});
+    hr(d,[[48.644,1.830],[49.18,-0.37],[49.639,-1.616],[50.7,-1.9]],HC.route);
+   },[['fill',HC.france,'法兰西王国'],['fill',HC.britain,'英国'],['dline',HC.route,'查理十世流亡英国路线（概略）'],['dot','#2a2018','巴黎、瑟堡与伦敦']])
+ ]},
+{id:'history-france-july-monarchy',ch:5,title:'七月王朝：叫大家先发财再来投票的国王',short:'七月王朝',en:'The July Monarchy: The King Who Told France to Get Rich Before Voting',period:'1830—1848年',c:HC.france,
+ scenes:[
+  hs('1830—1834年','雨伞、梨与街垒','1831—1834年两次起义的里昂，以及1832年6月和1834年4月筑起街垒的巴黎。',[[42.5,-4.5],[51.2,8.2]],d=>{
+    ha(d,'fr18France1815',HC.france,{fillOpacity:.14});
+    hp(d,'w_paris',{kind:'battle',note:'1832年6月圣梅里修道院街垒战；1834年4月特兰斯诺南街惨案。'});
+    hp(d,'k_lyon',{kind:'battle',left:1,note:'1831年11月丝工占领全城十天；1834年4月再起义，死伤数百。'});
+   },[['fill',HC.france,'法兰西王国（1815年疆界）'],['dot',HC.war,'巴黎与里昂']]),
+  hs('1835年7—9月','圣殿大道的排枪','1835年7月28日发生行刺的巴黎，以及刺客菲耶斯基的家乡科西嘉穆拉托。',[[41.2,-2.0],[50.2,10.2]],d=>{
+    ha(d,'fr18France1815',HC.france,{fillOpacity:.14});ha(d,'fr18Corsica',HC.france,{fillOpacity:.28});
+    hp(d,'w_paris',{kind:'battle',note:'圣殿大道五十号窗口排枪齐发；贵族院在卢森堡宫审理此案。'});
+    hp(d,'fjm_murato',{left:1,note:'菲耶斯基早年在此偷牛被判十年徒刑，1830年后混入巴黎。'});
+   },[['fill',HC.france,'法兰西王国'],['dot',HC.war,'巴黎'],['dot','#2a2018','穆拉托']]),
+  hs('1836—1840年','两次兵变与哈姆要塞','路易-拿破仑从瑞士去斯特拉斯堡、从伦敦去布洛涅，以及关押他的哈姆要塞。',[[46.8,-1.2],[52.2,10.0]],d=>{
+    ha(d,'fr18France1815',HC.france,{fillOpacity:.14});ha(d,'cSwiss1513',HC.neutral,{fillOpacity:.22});ha(d,'mEngland1066',HC.britain,{fillOpacity:.18});
+    hp(d,'k_london',{note:'密谋者租下英国蒸汽船“爱丁堡城堡号”渡海。'});
+    hp(d,'fjm_boulogne',{kind:'battle',note:'1840年8月6日凌晨在近旁维姆勒上岸，几小时即败。'});
+    hp(d,'fjm_ham',{note:'1840年10月起路易-拿破仑在此服无期徒刑。'});
+    hp(d,'k_strasbourg',{kind:'battle',note:'1836年10月30日在芬克马特兵营被第四十六步兵团扣下。'});
+    hp(d,'fjm_arenenberg',{left:1,note:'路易-拿破仑随母亲奥坦丝居住的瑞士庄园。'});
+    hr(d,[[47.67,9.06],[48.57,7.75]],HC.route);
+    hr(d,[[51.51,-0.13],[50.73,1.61]],HC.route);
+   },[['fill',HC.france,'法兰西王国'],['fill',HC.neutral,'瑞士'],['fill',HC.britain,'英国'],['dline',HC.route,'1836年与1840年两次闯关路线（概略）'],['dot',HC.war,'斯特拉斯堡、布洛涅'],['dot','#2a2018','阿伦嫩贝格、伦敦、哈姆要塞']]),
+  hs('1840年12月','迎回拿破仑灵柩','1840年冬拿破仑灵柩从瑟堡经鲁昂运抵巴黎，以及关着路易-拿破仑的哈姆要塞。',[[48.0,-2.4],[50.5,4.2]],d=>{
+    ha(d,'fr18France1815',HC.france,{fillOpacity:.14});
+    hp(d,'fjm_cherbourg',{note:'11月30日“美人鱼号”抵港，灵柩转内河船溯塞纳河而上。'});
+    hp(d,'fr_rouen',{note:'灵柩途经鲁昂时两岸民众鸣炮致敬。'});
+    hp(d,'w_paris',{note:'12月15日灵柩穿过星形广场凯旋门，安放荣军院。'});
+    hp(d,'fjm_ham',{left:1,note:'路易-拿破仑在狱中写下《致皇帝亡灵书》。'});
+    hr(d,[[49.64,-1.62],[49.49,0.11],[49.44,1.10],[48.86,2.31]],HC.route);
+   },[['fill',HC.france,'法兰西王国'],['dline',HC.route,'灵柩转运巴黎路线（概略）'],['dot','#2a2018','瑟堡、鲁昂、巴黎与哈姆要塞']]),
+  hs('1840—1847年','“发财吧”与越狱','基佐的选区利雪、路易-拿破仑逃往伦敦的哈姆要塞、发生饥民暴动的比藏赛与巴黎。',[[46.0,-1.5],[52.0,4.2]],d=>{
+    ha(d,'fr18France1815',HC.france,{fillOpacity:.14});ha(d,'mEngland1066',HC.britain,{fillOpacity:.18});
+    hp(d,'k_london',{note:'1846年5月26日路易-拿破仑经比利时逃抵伦敦。'});
+    hp(d,'fjm_lisieux',{note:'基佐的选区，乡间宅邸瓦尔里谢修道院在近旁。'});
+    hp(d,'fjm_buzancais',{kind:'battle',note:'1847年1月饥民拦抢粮车、打死拒卖平价粮的地主。'});
+    hp(d,'w_paris',{note:'1842年定下以巴黎为中心的全国铁路干线网。'});
+    hp(d,'fjm_ham',{left:1,note:'1846年5月25日清早路易-拿破仑扛木板走出要塞。'});
+   },[['fill',HC.france,'法兰西王国'],['fill',HC.britain,'英国'],['dot',HC.war,'比藏赛'],['dot','#2a2018','巴黎、利雪、哈姆要塞与伦敦']]),
+  hs('1847—1848年2月','宴会与火山','1847—1848年举办改革宴会的巴黎、第戎，以及托克维尔的选区瓦洛涅。',[[46.5,-2.4],[50.4,6.0]],d=>{
+    ha(d,'fr18France1815',HC.france,{fillOpacity:.14});
+    hp(d,'fjm_valognes',{note:'托克维尔的诺曼底选区；邻近鲁昂也有千人赴宴。'});
+    hp(d,'w_paris',{note:'1847年7月红堡花园办首场宴会；次年2月第十二区宴会被禁。'});
+    hp(d,'lb_dijon',{left:1,note:'1847年11月第戎宴会全是共和派与社会主义者登台。'});
+   },[['fill',HC.france,'法兰西王国'],['dot','#2a2018','瓦洛涅、巴黎与第戎']])
+ ]},
+{id:'history-france-1848',ch:5,title:'1848年革命：二月街垒立起共和国，六月街垒流尽工人血',short:'1848年革命',en:'The Revolution of 1848: February Barricades Made the Republic, June Barricades Drowned It in Blood',period:'1848年',c:HC.france,
+ scenes:[
+  hs('1848年2月22—24日','二月街垒与国王出逃','1848年2月筑起街垒的巴黎，以及路易-菲利普经勒阿弗尔逃往英国的路。',[[48.2,-1.8],[52.0,3.8]],d=>{
+    ha(d,'fr18France1815',HC.france,{fillOpacity:.14});ha(d,'mEngland1066',HC.britain,{fillOpacity:.18});
+    hp(d,'f1848_lehavre',{note:'3月2日退位国王化名从塞纳河口登英国邮船。'});
+    hp(d,'k_london',{note:'路易-菲利普住进近郊克莱蒙特庄园，基佐也逃到伦敦。'});
+    hp(d,'w_paris',{kind:'battle',left:1,note:'23日晚卡皮西纳大道开枪；24日国王在杜伊勒里宫退位。'});
+    hr(d,[[48.86,2.33],[49.49,0.11],[50.79,0.06],[51.51,-0.13]],HC.route);
+   },[['fill',HC.france,'法兰西共和国'],['fill',HC.britain,'英国'],['dline',HC.route,'路易-菲利普出逃路线（概略）'],['dot',HC.war,'巴黎'],['dot','#2a2018','勒阿弗尔与伦敦']]),
+  hs('1848年2—4月','三色旗与普选','宣布成立第二共和国的巴黎，拉马丁的家乡马孔，以及响应革命的波尔多和马赛。',[[42.6,-2.0],[50.2,7.6]],d=>{
+    ha(d,'fr18France1815',HC.france,{fillOpacity:.14});
+    hp(d,'w_bordeaux',{note:'4月27日临时政府颁令废除各殖民地奴隶制。'});
+    hp(d,'w_paris',{note:'2月25日市政厅台阶保住三色旗；3月5日颁布普选令。'});
+    hp(d,'f1848_macon',{left:1,note:'拉马丁的故乡，4月他在十个省同时当选制宪议员。'});
+    hp(d,'k_marseille',{left:1,note:'南方大港市民欢迎新共和国使节进城。'});
+   },[['fill',HC.france,'法兰西第二共和国'],['dot','#2a2018','巴黎、马孔、波尔多与马赛']]),
+  hs('1848年2—5月','卢森堡宫与国家工场','巴黎的卢森堡宫与战神广场工地、抢修铁路路基的凡尔赛，以及发生失业骚动的鲁昂。',[[48.4,0.4],[49.8,3.2]],d=>{
+    ha(d,'fr18France1815',HC.france,{fillOpacity:.14});
+    hp(d,'fr_rouen',{note:'诺曼底棉纺厂停工，郊区工人砸毁机械织机。'});
+    hp(d,'fri_versailles',{left:1,note:'国家工场派工人修筑巴黎至凡尔赛铁路的克拉马尔路堑。'});
+    hp(d,'w_paris',{note:'卢森堡宫开劳工委员会；战神广场聚集数万挖土工人。'});
+   },[['fill',HC.france,'法兰西第二共和国'],['dot','#2a2018','鲁昂、凡尔赛与巴黎']]),
+  hs('1848年3—5月','四十五生丁税与大选','开征四十五生丁税的巴黎、农民抗税的阿让，以及4月大选后发生武装冲突的鲁昂。',[[44.2,-1.6],[50.4,5.4]],d=>{
+    ha(d,'fr18France1815',HC.france,{fillOpacity:.14});
+    hp(d,'fr_rouen',{kind:'battle',note:'4月27—28日工人抗议保守派当选，被军队炮击打死数十人。'});
+    hp(d,'f1848_ajain',{kind:'battle',left:1,note:'克勒兹省农民进城抗拒四十五生丁税；邻近利摩日工人也夺权三周。'});
+    hp(d,'w_paris',{left:1,note:'5月4日制宪议会在波旁宫临时议事厅开幕。'});
+   },[['fill',HC.france,'法兰西第二共和国'],['dot',HC.war,'鲁昂与阿让'],['dot','#2a2018','巴黎']]),
+  hs('1848年6月23—26日','六月街垒','发生六月街垒战的巴黎、派自卫军乘火车进京助战的鲁昂，以及流放战俘的阿尔及尔。',[[35.5,-3.0],[50.8,8.2]],d=>{
+    ha(d,'fr18France1815',HC.france,{fillOpacity:.14});ha(d,'fr18Algiers1830',HC.france,{fillOpacity:.26});
+    hp(d,'fr_rouen',{left:1,note:'鲁昂、亚眠、奥尔良等地自卫军乘火车赴巴黎参战。'});
+    hp(d,'w_paris',{kind:'battle',note:'东城筑起数百道街垒；大主教阿弗尔在巴士底街垒中弹。'});
+    hp(d,'f1848_algiers',{left:1,note:'卡芬雅克原任此地总督；四千多名起义工人被流放至此。'});
+   },[['fill',HC.france,'法兰西第二共和国与法属阿尔及利亚'],['dot',HC.war,'巴黎'],['dot','#2a2018','鲁昂与阿尔及尔']]),
+  hs('1848年6—11月','直选总统的宪法','1848年9月补选把路易-拿破仑送进制宪议会的巴黎、欧塞尔与梅斯。',[[46.2,0.2],[50.4,7.6]],d=>{
+    ha(d,'fr18France1815',HC.france,{fillOpacity:.14});
+    hp(d,'w_paris',{note:'11月4日通过宪法；路易-拿破仑在巴黎获十一万票当选议员。'});
+    hp(d,'f1848_auxerre',{note:'约讷省农民在6月和9月两次补选都把路易-拿破仑推上榜首。'});
+    hp(d,'w_metz',{left:1,note:'边防重镇摩泽尔省同样补选路易-拿破仑为议员。'});
+   },[['fill',HC.france,'法兰西第二共和国'],['dot','#2a2018','巴黎、欧塞尔与梅斯']])
+ ]},
+{id:'history-france-louis-bonaparte',ch:5,title:'路易·波拿巴的雾月十八：农民的选票和军队的刺刀，选出一位皇帝',short:'路易·波拿巴的雾月十八',en:'The Eighteenth Brumaire of Louis Bonaparte: Peasant Ballots and Bayonets Make an Emperor',period:'1848—1852年',c:HC.france,
+ scenes:[
+  hs('1848年12月10日','一个名字的选票','1848年12月总统大选：路易-拿破仑赢下全国七十九个省，卡芬雅克只赢下四个省。',[[42.4,-4.8],[51.2,8.2]],d=>{
+    ha(d,'fr18France1815',HC.france,{fillOpacity:.14});
+    hp(d,'flb_quimper',{note:'卡芬雅克仅在布列塔尼两省与东南两省拿到多数。'});
+    hp(d,'w_paris',{note:'12月20日路易-拿破仑在波旁宫宣誓，入住爱丽舍宫。'});
+    hp(d,'k_marseille',{left:1,note:'罗讷河口省与邻省瓦尔投给卡芬雅克，其余七十九省全归波拿巴。'});
+   },[['fill',HC.france,'法兰西第二共和国'],['dot','#2a2018','巴黎、坎佩尔与马赛']]),
+  hs('1849—1850年','远征罗马与法卢法','1849年法军从土伦出海攻入罗马，迎回逃往那不勒斯王国避难的教宗庇护九世。',[[40.2,1.0],[49.8,15.0]],d=>{
+    ha(d,'fr18France1815',HC.france,{fillOpacity:.14});
+    hp(d,'w_paris',{note:'1849年6月13日山岳党示威失败；次年3月通过《法卢法》。'});
+    hp(d,'bd_toulon',{note:'乌迪诺率法国远征军从土伦登船出海。'});
+    hp(d,'rome',{kind:'battle',left:1,note:'法军在奇维塔韦基亚登陆，7月占领罗马，次年迎回逃往加埃塔的教宗。'});
+    hr(d,[[43.12,5.93],[42.09,11.80],[41.90,12.50]],HC.route);
+   },[['fill',HC.france,'法兰西第二共和国'],['dline',HC.route,'1849年远征罗马路线（概略）'],['dot',HC.war,'罗马'],['dot','#2a2018','巴黎与土伦']]),
+  hs('1850年5月31日','砍掉三百万选民','1850年5月31日选举法通过后，选民被砍掉三分之二的巴黎与工业城里尔、里昂。',[[44.5,-1.8],[51.2,7.6]],d=>{
+    ha(d,'fr18France1815',HC.france,{fillOpacity:.14});
+    hp(d,'w_paris',{note:'巴黎选民从二十二万四千减到七万四千。'});
+    hp(d,'flb_lille',{note:'里尔选民从一万五千零五十八人减到四千五百二十四人。'});
+    hp(d,'k_lyon',{left:1,note:'大批流动丝工与手艺人因未住满三年被除名。'});
+   },[['fill',HC.france,'法兰西第二共和国'],['dot','#2a2018','巴黎、里尔与里昂']]),
+  hs('1851年1—11月','修宪被否与调兵','1851年路易-拿破仑外巡造势的第戎、里昂，否决修宪的巴黎，以及圣阿诺调回前驻扎的君士坦丁。',[[35.5,-2.0],[50.2,8.5]],d=>{
+    ha(d,'fr18France1815',HC.france,{fillOpacity:.14});ha(d,'fr18Algiers1830',HC.france,{fillOpacity:.26});
+    hp(d,'w_paris',{note:'7月19日议会否决修宪连任；11月13日又否决恢复普选。'});
+    hp(d,'k_lyon',{note:'里昂军区司令卡斯特拉纳早就准备配合总统行动。'});
+    hp(d,'lb_dijon',{left:1,note:'6月1日路易-拿破仑在此演说，公开指责议会阻挠惠民法案。'});
+    hp(d,'flb_constantine',{left:1,note:'圣阿诺在此作战升任少将，10月调回巴黎任陆军部长。'});
+   },[['fill',HC.france,'法兰西第二共和国与法属阿尔及利亚'],['dot','#2a2018','巴黎、第戎、里昂与君士坦丁']]),
+  hs('1851年12月','十二月二日政变','1851年12月2日发生政变的巴黎、雨果流亡的布鲁塞尔，以及爆发护宪起义的克莱姆西与迪涅。',[[43.0,-1.0],[51.5,7.8]],d=>{
+    ha(d,'fr18France1815',HC.france,{fillOpacity:.14});
+    hp(d,'w_paris',{kind:'battle',note:'2日夜逮捕议员解散议会；3日博丹阵亡；4日林荫大道开枪。'});
+    hp(d,'flb_clamecy',{kind:'battle',note:'涅夫勒省伐木工与农民举红旗进城，后遭重兵镇压。'});
+    hp(d,'lb_brussels',{note:'12月11日雨果持假护照乘火车逃抵布鲁塞尔。'});
+    hp(d,'flb_digne',{kind:'battle',left:1,note:'下阿尔卑斯省五千名农民与工匠武装进城，设护宪委员会。'});
+   },[['fill',HC.france,'法兰西共和国'],['dot',HC.war,'巴黎、克莱姆西与迪涅'],['dot','#2a2018','布鲁塞尔']]),
+  hs('1852年','全民公投选出的皇帝','1852年发表波尔多演说的波尔多、呈递帝制法令的圣克卢宫、称帝的巴黎，以及马克思流亡的伦敦。',[[44.0,-2.5],[52.2,5.0]],d=>{
+    ha(d,'fr18France1815',HC.france,{fillOpacity:.14});ha(d,'mEngland1066',HC.britain,{fillOpacity:.18});
+    hp(d,'w_bordeaux',{note:'10月9日路易-拿破仑在此赴宴，宣布“帝国就是和平”。'});
+    hp(d,'k_london',{note:'马克思在伦敦写成《路易·波拿巴的雾月十八日》。'});
+    hp(d,'f3b_stcloud',{left:1,note:'11月7日元老院赴圣克卢宫呈递恢复帝制法令。'});
+    hp(d,'w_paris',{note:'12月2日拿破仑三世骑马从凯旋门进入杜伊勒里宫。'});
+   },[['fill',HC.france,'法兰西第二帝国'],['fill',HC.britain,'英国'],['dot','#2a2018','波尔多、圣克卢宫、巴黎与伦敦']])
  ]},
 {id:'history-germany-frederick2',ch:5,title:'腓特烈二世：向诸侯放权，跟教宗死磕',short:'腓特烈二世',en:'Frederick II: Yielding Germany to the Princes, Fighting the Popes to the Death',period:'1212—1273年',c:HC.germany,
  scenes:[
@@ -15627,6 +16001,7 @@ const HISTORY_ERAS=[
  {id:'empire-france-louis14',name:'法兰西：路易十四的世纪',en:'France: The Age of Louis XIV',date:'1643—1715年',c:HC.france,items:[['history-france-fronde'],['history-france-pyrenees'],['history-france-louis14'],['history-france-dutch-war'],['history-france-revocation'],['history-france-nine-years'],['history-france-spanish-succession']]},
  {id:'empire-france-oldregime',name:'法兰西：旧制度的账',en:'France: The Old Regime’s Accounts',date:'1711—1789年',c:HC.france,items:[['history-france-law'],['history-france-louis15'],['history-france-enlightenment'],['history-france-seven-years'],['history-france-parlements'],['history-france-american-war'],['history-france-bankruptcy']]},
  {id:'empire-france-revolution',name:'法兰西：大革命',en:'France: The Revolution',date:'1789—1799年',c:HC.france,items:[['history-france-bastille'],['history-france-august'],['history-france-varennes'],['history-france-regicide'],['history-france-terror'],['history-france-directory'],['history-france-brumaire']]},
+ {id:'empire-france-two-bonapartes',name:'法兰西：两个波拿巴之间',en:'France: Between Two Bonapartes',date:'1800—1852年',c:HC.france,items:[['history-france-consulate'],['history-france-empire'],['history-france-waterloo'],['history-france-restoration'],['history-france-july-monarchy'],['history-france-1848'],['history-france-louis-bonaparte']]},
  {id:'empire-frederick2',name:'德意志、低地与意大利：从腓特烈二世到文艺复兴、查理五世与三十年战争',en:'Germany, Low Countries and Italy: From Frederick II to the Renaissance, Charles V, and the Thirty Years’ War',date:'843—1648年',c:HC.germany,items:[['history-germany-frederick2'],['history-germany-electors'],['history-germany-golden-bull'],['history-germany-hansa'],['history-lowlands-flanders'],['history-germany-swiss',0,2,'山口与长矛'],['history-lowlands-burgundy'],['history-germany-swiss',3,5,'雇佣兵之国'],['history-germany-charles5'],['history-germany-thirty-years-1',0,4,'三十年战争（上）'],['history-germany-thirty-years-1',5,6,'丹麦参战与华伦斯坦'],['history-germany-thirty-years-2'],['history-germany-thirty-years-3'],['history-italy-vespers'],['history-italy-venice'],['history-italy-condottieri'],['history-italy-renaissance'],['history-italy-wars-1'],['history-italy-charles8'],['history-italy-savonarola'],['history-italy-louis12'],['history-italy-julius2'],['history-italy-wars-2']]},
  {id:'empire-blackdeath',name:'中世纪晚期：黑死病',en:'The Late Middle Ages: the Black Death',date:'1346—1353年',c:HC.italy,items:[['history-italy-blackdeath']]},
  {id:'empire-taifas',name:'西班牙：泰法与圣战',en:'Spain: the Taifas and Holy War',date:'1031—1123年',c:HC.spain,items:[['history-spain-taifas'],['history-spain-crusade']]},
@@ -15690,7 +16065,7 @@ const HISTORY_BRANCHES=[
  {id:'east',name:'东罗马',en:'East Rome',lane:2,parent:'rome',from:395,to:1453,c:HC.byz},
  {id:'west',name:'中世纪西欧',en:'Medieval Western Europe',lane:4,parent:'rome',from:476,to:843,c:HC.celt},
  {id:'spain',name:'西班牙',en:'Spain',lane:5,parent:'west',from:481,to:1714,c:HC.spain},
- {id:'france',name:'法兰西',en:'France',lane:5,parent:'west',from:843,to:1800,c:HC.france},
+ {id:'france',name:'法兰西',en:'France',lane:5,parent:'west',from:843,to:1852,c:HC.france},
  {id:'lowlands',name:'低地诸国',en:'Low Countries',lane:5,parent:'west',from:843,to:1648,c:HC.lowlands},
  {id:'germany',name:'德意志',en:'Germany',lane:4,parent:'west',from:843,to:1648,c:HC.germany},
  {id:'italy',name:'意大利',en:'Italy',lane:3,parent:'west',from:843,to:1563,c:HC.italy},
@@ -15969,6 +16344,13 @@ const TREE_ROWS={
  'history-britain-lords/0':['britain',1909,1913,'1885—1914年'],
  'history-britain-suffrage-1918/0':['britain',1918,1920,'1897—1918年'],
  'history-britain-suffrage-1928/0':['britain',1924,1928,'1918—1928年'],
+ 'history-france-consulate/0':['france',1800,1804,'1800—1804年'],
+ 'history-france-empire/0':['france',1805,1811,'1805—1811年'],
+ 'history-france-waterloo/0':['france',1812,1815,'1810—1815年'],
+ 'history-france-restoration/0':['france',1816,1830,'1815—1830年'],
+ 'history-france-july-monarchy/0':['france',1831,1848,'1830—1848年'],
+ 'history-france-1848/0':['france',1848.3,1848.9,'1848年'],
+ 'history-france-louis-bonaparte/0':['france',1849,1852,'1848—1852年'],
  'history-faith-avignon/0':[['faith','france'],1296,1303,'1294—1303年'],
  'history-faith-clement/0':[['faith','france'],1304,1314,'1303—1314年'],
  'history-italy-blackdeath/0':[['italy','france','britain','germany','faith','persia','nordic'],1347,1351,'1346—1353年'],
@@ -16048,7 +16430,7 @@ const TREE_ROWS={
  'history-germany-swiss/3':[['germany','italy','faith'],1515,1516,'1477—1648年']
 };
 // Topics still to be written grow the tree as dashed shoots.
-const TREE_FUTURE=[['france',1800,'执政府与拿破仑帝国','1799年后待展开：执政府与《民法典》 · 拿破仑帝国 · 从莫斯科到滑铁卢 · 复辟、七月王朝、1848年与路易·波拿巴'],['germany',1648,'普鲁士崛起与七年战争','1648年后待展开：勃兰登堡—普鲁士崛起 · 腓特烈大帝与奥地利王位继承战'],['italy',1563,'哈布斯堡霸权与统一','1563年后待展开：西班牙哈布斯堡霸权下的意大利 · 巴洛克时代与近代统一'],['faith',1689,'政教分离与启蒙时代','1689年后待展开：英国《宽容法》 · 启蒙运动与教会 · 大革命与教会'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',1501,'奥斯曼全盛与波斯争霸','1501年后待展开：1517年奥斯曼灭马穆鲁克 · 苏莱曼一世全盛与奥斯曼—萨法维百年争霸'],['china',845,'晚唐五代与宋','845年起 · 待展开'],['spain',1714,'波旁改革与美洲独立','1714年后待展开：腓力五世废各王国旧制 · 卡洛斯三世改革 · 拿破仑入侵与美洲独立'],['eeurope',1505,'伊凡雷帝与沙皇俄国','1505年后待展开：1547年伊凡四世加冕沙皇 · 混乱时代与罗曼诺夫王朝'],['lowlands',1648,'黄金时代与英荷海战','1648年后待展开：17世纪阿姆斯特丹黄金时代 · 三次英荷海战与威廉三世入主英国'],['crusade',1312,'后来的十字军','1396年尼科波利斯 · 1444年瓦尔纳 · 1571年勒班陀 · 待展开'],['america',1648,'十三殖民地与美国独立','1648年后待展开：英荷争新阿姆斯特丹 · 七年战争把法国赶出北美 · 十三殖民地与美国独立'],['nordic',1648,'踏冰渡海与大北方战争','1648年后待展开：1658年卡尔十世踏冰渡海夺下斯科讷 · 1700—1721年大北方战争，瑞典失去波罗的海霸权'],['britain',1928,'大萧条、二战与福利国家','1928年后待展开：1929年大萧条 · 丘吉尔与二战不列颠之战 · 战后福利国家与大英帝国解体']];
+const TREE_FUTURE=[['france',1852,'第二帝国与普法战争','1852年后待展开：奥斯曼改造巴黎 · 克里米亚与意大利战争 · 1870年色当与巴黎公社 · 第三共和国'],['germany',1648,'普鲁士崛起与七年战争','1648年后待展开：勃兰登堡—普鲁士崛起 · 腓特烈大帝与奥地利王位继承战'],['italy',1563,'哈布斯堡霸权与统一','1563年后待展开：西班牙哈布斯堡霸权下的意大利 · 巴洛克时代与近代统一'],['faith',1689,'政教分离与启蒙时代','1689年后待展开：英国《宽容法》 · 启蒙运动与教会 · 大革命与教会'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',1501,'奥斯曼全盛与波斯争霸','1501年后待展开：1517年奥斯曼灭马穆鲁克 · 苏莱曼一世全盛与奥斯曼—萨法维百年争霸'],['china',845,'晚唐五代与宋','845年起 · 待展开'],['spain',1714,'波旁改革与美洲独立','1714年后待展开：腓力五世废各王国旧制 · 卡洛斯三世改革 · 拿破仑入侵与美洲独立'],['eeurope',1505,'伊凡雷帝与沙皇俄国','1505年后待展开：1547年伊凡四世加冕沙皇 · 混乱时代与罗曼诺夫王朝'],['lowlands',1648,'黄金时代与英荷海战','1648年后待展开：17世纪阿姆斯特丹黄金时代 · 三次英荷海战与威廉三世入主英国'],['crusade',1312,'后来的十字军','1396年尼科波利斯 · 1444年瓦尔纳 · 1571年勒班陀 · 待展开'],['america',1648,'十三殖民地与美国独立','1648年后待展开：英荷争新阿姆斯特丹 · 七年战争把法国赶出北美 · 十三殖民地与美国独立'],['nordic',1648,'踏冰渡海与大北方战争','1648年后待展开：1658年卡尔十世踏冰渡海夺下斯科讷 · 1700—1721年大北方战争，瑞典失去波罗的海霸权'],['britain',1928,'大萧条、二战与福利国家','1928年后待展开：1929年大萧条 · 丘吉尔与二战不列颠之战 · 战后福利国家与大英帝国解体']];
 // Where a line stops it says why: [line, year, the event that ends it, note, the line it carries on in].
 const TREE_ENDS=[['trunk',-30,'并入罗马','前146年科林斯被毁 · 前30年最后一个希腊化王国埃及并入罗马','rome'],['rome',476,'西罗马终结','476年西部末代皇帝被废 · 由中世纪西欧接续'],['west',843,'凡尔登三分','843年《凡尔登条约》三分帝国 · 分出法兰西、德意志、意大利'],['east',1453,'东罗马终结','1453年5月29日奥斯曼帝国攻破君士坦丁堡 · 千年东罗马帝国终结'],['prehistory',-3100,'有了文字','两河、埃及约前3200—前3100年先后有了文字和国家 · 由希腊、埃及、波斯—阿拉伯三条线接续','trunk']];
 // Sections of one line that run side by side: [line, row keys, side of the passing loop].

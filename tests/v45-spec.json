@@ -1254,7 +1254,7 @@
    "法兰西",
    "west",
    843,
-   1800,
+   1852,
    5
   ]
  },
@@ -1266,8 +1266,8 @@
   ],
   [
    "france",
-   1800,
-   "执政府与拿破仑帝国"
+   1852,
+   "第二帝国与普法战争"
   ]
  ],
  "tails": {
@@ -1396,7 +1396,14 @@
    "history-france-regicide/0",
    "history-france-terror/0",
    "history-france-directory/0",
-   "history-france-brumaire/0"
+   "history-france-brumaire/0",
+   "history-france-consulate/0",
+   "history-france-empire/0",
+   "history-france-waterloo/0",
+   "history-france-restoration/0",
+   "history-france-july-monarchy/0",
+   "history-france-1848/0",
+   "history-france-louis-bonaparte/0"
   ]
  },
  "shared": {

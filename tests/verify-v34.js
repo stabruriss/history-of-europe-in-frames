@@ -80,7 +80,7 @@ const BOLD=[['history-faith-three-chapters/1','教义之争背后的权力格局
    assert.deepEqual(r.ends,[['trunk',-30,'rome'],['rome',476,null],['west',843,null],['east',1453,null],['prehistory',-3100,'trunk']]);
    // Every line either grows a shoot or ends with an event.
    for(const b of r.branches)assert.ok(r.futures.some(f=>f[0]===b[0])||r.ends.some(e=>e[0]===b[0]),b[0]+' ends without an event');
-   assert.deepEqual(r.futures.sort(),[['america',1648],['britain',1928],['china',845],['crusade',1312],['eeurope',1505],['egypt',642],['faith',1689],['france',1800],['germany',1648],['italy',1563],['lowlands',1648],['nordic',1648],['persia',1501],['spain',1714]]);
+   assert.deepEqual(r.futures.sort(),[['america',1648],['britain',1928],['china',845],['crusade',1312],['eeurope',1505],['egypt',642],['faith',1689],['france',1852],['germany',1648],['italy',1563],['lowlands',1648],['nordic',1648],['persia',1501],['spain',1714]]);
    // Shared stations: one section, on each of its lines.
    for(const [k,lines] of Object.entries(SHARED)){assert.deepEqual(r.shared[k].lines,lines);assert.deepEqual(r.shared[k].on.sort(),[...lines].sort());assert.equal(r.shared[k].entries,1);}
    // 老无's own words, verbatim and bold.

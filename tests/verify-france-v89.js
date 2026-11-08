@@ -28,13 +28,22 @@ const SECTIONS={
  'history-france-terror':['恐怖与热月','1793—1794年',6],
  'history-france-directory':['督政府','1794—1799年',6],
  'history-france-brumaire':['雾月政变','1799年',5],
+ 'history-france-consulate':['执政府','1800—1804年',6],
+ 'history-france-empire':['拿破仑帝国','1805—1811年',6],
+ 'history-france-waterloo':['从莫斯科到滑铁卢','1810—1815年',6],
+ 'history-france-restoration':['复辟与七月革命','1815—1830年',6],
+ 'history-france-july-monarchy':['七月王朝','1830—1848年',6],
+ 'history-france-1848':['1848年革命','1848年',6],
+ 'history-france-louis-bonaparte':['路易·波拿巴的雾月十八','1848—1852年',6],
 };
 const ORDER=['history-france-fronde/0','history-france-pyrenees/0','history-france-louis14/0','history-france-dutch-war/0',
  'history-france-revocation/0','history-britain-glorious/0','history-france-nine-years/0','history-france-spanish-succession/0',
  'history-france-law/0','history-france-louis15/0','history-france-enlightenment/0','history-france-seven-years/0',
  'history-france-parlements/0','history-france-american-war/0','history-france-bankruptcy/0','history-france-bastille/0',
  'history-france-august/0','history-france-varennes/0','history-france-regicide/0','history-france-terror/0',
- 'history-france-directory/0','history-france-brumaire/0'];
+ 'history-france-directory/0','history-france-brumaire/0','history-france-consulate/0','history-france-empire/0',
+ 'history-france-waterloo/0','history-france-restoration/0','history-france-july-monarchy/0','history-france-1848/0',
+ 'history-france-louis-bonaparte/0'];
 const FACTS=[
  ['history-france-fronde',1,'卖官鬻爵'],['history-france-fronde',2,'老法官布鲁塞尔'],['history-france-fronde',3,'所查当时记载未见'],
  ['history-france-pyrenees',2,'五百万里弗尔'],['history-france-pyrenees',4,'五十万金埃居'],
@@ -56,11 +65,19 @@ const FACTS=[
  ['history-france-terror',2,'二十四岁'],['history-france-terror',4,'屠龙少年终成恶龙'],['history-france-terror',5,'吃鸡'],
  ['history-france-directory',1,'霰弹'],['history-france-directory',4,'三分之二'],['history-france-directory',5,'罗塞塔'],
  ['history-france-brumaire',0,'一把剑'],['history-france-brumaire',2,'吕西安'],['history-france-brumaire',4,'它结束了'],
+ ['history-france-consulate',1,'法兰西银行'],['history-france-consulate',3,'奶牛'],['history-france-consulate',4,'这是错误'],['history-france-consulate',5,'当什么假齐王'],
+ ['history-france-empire',2,'世界精神'],['history-france-empire',3,'荷兰国王路易'],['history-france-empire',3,'路易-拿破仑'],['history-france-empire',3,'路易·波拿巴'],['history-france-empire',5,'新钱'],
+ ['history-france-waterloo',1,'米纳德'],['history-france-waterloo',2,'眉来眼去'],['history-france-waterloo',5,'睡狮'],
+ ['history-france-restoration',3,'苍蝇拍'],['history-france-restoration',5,'桃子'],
+ ['history-france-july-monarchy',2,'路易·波拿巴'],['history-france-july-monarchy',4,'发财'],['history-france-july-monarchy',5,'火山'],
+ ['history-france-1848',1,'三色旗'],['history-france-1848',3,'四十五生丁'],['history-france-1848',3,'下沉市场'],
+ ['history-france-louis-bonaparte',0,'傻瓜'],['history-france-louis-bonaparte',2,'三百万'],['history-france-louis-bonaparte',5,'第一次是悲剧，第二次是笑剧'],
 ];
 const BOXES={'history-france-pyrenees':'婚约原文怎么写','history-france-louis14':'凡尔赛的一天','history-france-revocation':'国王数学家',
  'history-france-spanish-succession':'三位候选人的血缘','history-france-enlightenment':'《百科全书》与《四库全书》',
  'history-france-seven-years':'英法借钱的价钱（1755—1798年）','history-france-varennes':'瓦伦路上的一天一夜',
- 'history-france-regicide':'断头台：为平等发明的死法','history-france-terror':'恐怖统治死了多少人'};
+ 'history-france-regicide':'断头台：为平等发明的死法','history-france-terror':'恐怖统治死了多少人',
+ 'history-france-waterloo':'米纳德的那张图：四十二万人怎样缩成一万','history-france-louis-bonaparte':'1789—1852年法国政体轮换表'};
 const chars=s=>s.replace(/<[^>]+>/g,'').replace(/（[A-Za-z][^）]*）/g,'').replace(/\s/g,'').length;
 
 (async()=>{
@@ -82,7 +99,7 @@ const chars=s=>s.replace(/<[^>]+>/g,'').replace(/（[A-Za-z][^）]*）/g,'').rep
     line:(({name,parent,from,to})=>({name,parent,from,to}))(HISTORY_BRANCHES.find(b=>b.id==='france')),
     spainTo:HISTORY_BRANCHES.find(b=>b.id==='spain').to,
     faithTo:HISTORY_BRANCHES.find(b=>b.id==='faith').to,
-    stretch:idx>=0?fStops.slice(idx,idx+22):[],
+    stretch:idx>=0?fStops.slice(idx,idx+29):[],
     report:metroUI.layoutReport(),
     shared:{
      pyrenees:TREE_ROWS['history-france-pyrenees/0'][0],
@@ -96,9 +113,9 @@ const chars=s=>s.replace(/<[^>]+>/g,'').replace(/（[A-Za-z][^）]*）/g,'').rep
      urls:e.sources.map(s=>s[1]||s.url),html:e.html,paras:e.scenes.map((_,i)=>para(e,i)),boxes:e.boxes.map(b=>b.name||b.title)}];})),
    };
   },Object.keys(SECTIONS));
-  assert.equal(r.line.name,'法兰西');assert.equal(r.line.parent,'west');assert.equal(r.line.from,843);assert.ok(r.line.to>=1800);
+  assert.equal(r.line.name,'法兰西');assert.equal(r.line.parent,'west');assert.equal(r.line.from,843);assert.equal(r.line.to,1852);
   assert.ok(r.spainTo>=1714);assert.ok(r.faithTo>=1689);
-  assert.deepEqual(r.stretch,ORDER,'France runs through the 22 stations from Fronde to Brumaire (including Glorious Revolution) in order');
+  assert.deepEqual(r.stretch,ORDER,'France runs through the 29 stations from Fronde to Louis-Napoléon Bonaparte (including Glorious Revolution) in order');
   assert.deepEqual(r.report.unresolvedLabels,[]);
   assert.deepEqual(r.report.linkThroughStations,[]);
   assert.ok(r.shared.pyrenees.includes('france')&&r.shared.pyrenees.includes('spain'));
@@ -130,6 +147,6 @@ const chars=s=>s.replace(/<[^>]+>/g,'').replace(/（[A-Za-z][^）]*）/g,'').rep
   }
   await page.close();
   assert.deepEqual(errors,[],'no page errors');
-  console.log('PASS: 法兰西 v89 — 21 new sections (124 scenes) from the Fronde (1643) to Brumaire (1799), 4 interchanges, BoE interest-rate box & source checks verified.');
+  console.log('PASS: 法兰西 v89/v91 — 28 new sections (166 scenes) from the Fronde (1643) to Louis-Napoléon Bonaparte (1852), interchanges, BoE interest-rate box & source checks verified.');
  }catch(e){console.error(e);process.exitCode=1;}finally{await Promise.race([browser.close(),new Promise(r=>setTimeout(r,200))]);browser.process()?.kill('SIGKILL');process.exit(process.exitCode||0);}
 })();
