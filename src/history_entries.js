@@ -2484,6 +2484,101 @@ Object.assign(HS,{
   flb_constantine:['君士坦丁','Constantine',36.365,6.615,'阿尔及利亚东部重镇；1851年夏圣阿诺在此作战后调回巴黎任陆军部长。'],
   flb_clamecy:['克莱姆西','Clamecy',47.46,3.519,'涅夫勒省小城；1851年12月政变后当地伐木工与农民起义占领全城。'],
   flb_digne:['迪涅','Digne-les-Bains',44.092,6.236,'下阿尔卑斯省首府；1851年12月数千名农民与手艺人武装进城抗议政变。'],
+  spb_parma:['帕尔马','Parma',44.801,10.328,'北意大利公国都城，王后伊丽莎白·法尔内塞的娘家；1731年由长子卡洛斯继承，1748年归次子腓力。'],
+  spb_bitonto:['比通托','Bitonto',41.108,16.692,'南意大利普利亚小城；1734年5月25日西军在此击溃奥军，夺下那不勒斯王国。'],
+  spb_sanignacio:['圣伊格纳西奥传教村','San Ignacio Miní',-27.255,-55.531,'巴拉那河流域的耶稣会瓜拉尼印第安传教村；1767年被查封后逐渐荒废。'],
+  spb_buenosaires:['布宜诺斯艾利斯','Buenos Aires',-34.604,-58.382,'拉普拉塔河口大港；1776年设为新成立的拉普拉塔总督区首府。'],
+  spb_lima:['利马','Lima',-12.046,-77.043,'秘鲁总督区首府与高等法院所在地；波旁改革后高等法院法官多换成本土半岛人。'],
+  spc_bayonne:['巴约讷','Bayonne',43.493,-1.475,'法西边境小城；1808年5月拿破仑在此逼卡洛斯四世与费迪南七世父子双双退位。'],
+  spc_valencay:['瓦朗塞城堡','Château de Valençay',47.158,1.566,'法国中部塔列朗的庄园；1808—1814年费迪南七世在此被软禁六年，1813年底签约获释。'],
+  spc_cabezas:['拉斯卡韦萨斯-德圣胡安','Las Cabezas de San Juan',36.98,-5.937,'塞维利亚与加的斯之间的集镇；1820年1月1日列戈中校在此率远征军起事。'],
+  spc_coruna:['拉科鲁尼亚','A Coruña',43.362,-8.412,'加利西亚海港；1820年2月当地驻军率先响应列戈起事，引发全国多米诺骨牌倒戈。'],
+  spc_pamplona:['潘普洛纳','Pamplona',42.812,-1.645,'纳瓦拉首府；1823年4月法军由此进兵，1833年秋又成为拥立唐·卡洛斯的北方大本营。'],
+  spca_vergara:['贝尔加拉','Vergara (Bergara)',43.118,-2.414,'巴斯克吉普斯夸省山城；1839年8月31日埃斯帕特罗与马罗托在此拥抱讲和。'],
+  spca_morella:['莫雷利亚','Morella',40.619,-0.102,'巴伦西亚北境山城，卡洛斯派名将卡夫雷拉的据点；1840年5月被埃斯帕特罗攻克。'],
+  spca_loja:['洛哈','Loja',37.166,-4.151,'格拉纳达西面的山城，温和派铁腕大帅纳瓦埃斯的故乡。'],
+  spca_cartagena:['卡塔赫纳','Cartagena',37.606,-0.986,'东南军港；1870年底阿玛迪奥一世在此登岸，1873年7月爆发州际起义并劫走铁甲舰队。'],
+  spca_malaga:['马拉加','Málaga',36.721,-4.421,'安达卢西亚海港，保守党魁首卡诺瓦斯的故乡；1868年与1873年两度起事。'],
+  sp98_dos_rios:['多斯里奥斯','Dos Ríos',20.37,-76.33,'古巴东部考托河畔；1895年5月19日何塞·马蒂在此中弹阵亡。'],
+  sp98_santiago:['古巴圣地亚哥','Santiago de Cuba',20.02,-75.83,'古巴东南海港；1898年7月美军攻克城外圣胡安山并全歼塞韦拉舰队。'],
+  sp98_manila:['马尼拉湾','Manila Bay',14.52,120.78,'菲律宾吕宋岛西南海湾；1898年5月1日杜威在此全歼西班牙太平洋舰队。'],
+  sp98_hongkong:['香港','Hong Kong',22.28,114.16,'英属海港；1898年4月杜威率美国亚洲分舰队由此起航南下菲律宾。'],
+  sp98_guam:['关岛','Guam',13.44,144.79,'西太平洋马里亚纳群岛南端主岛；1898年美军占领并由和约划归美国。'],
+  sp98_salamanca:['萨拉曼卡','Salamanca',40.97,-5.66,'卡斯蒂利亚西部大学城；乌纳穆诺长期任萨拉曼卡大学校长。'],
+  sp98_bilbao:['毕尔巴鄂','Bilbao',43.26,-2.93,'巴斯克重工业中心；1898年后回流侨资在此兴办比斯开银行与钢铁厂。'],
+  sp98_annual:['阿努瓦尔','Annual',35.12,-3.58,'西属摩洛哥东北部里夫山区营地；1921年7月西军在此遭里夫部落伏击溃败。'],
+  amc_philadelphia:['费城','Philadelphia',39.95,-75.16,'特拉华河畔港口；1682年威廉·佩恩按方格棋盘规划的宾夕法尼亚首府。'],
+  amc_savannah:['萨凡纳','Savannah',32.08,-81.09,'萨凡纳河口海港；1733年奥格尔索普率首批移民在此建立佐治亚殖民地。'],
+  amc_charleston:['查尔斯顿','Charleston (Charles Town)',32.78,-79.93,'南卡罗来纳首府与南方第一大港；18世纪依靠黑奴大种稻米与靛蓝。'],
+  amc_williamsburg:['威廉斯堡','Williamsburg',37.27,-76.7,'弗吉尼亚半岛城镇；1699年殖民地首府与议会从詹姆斯敦迁来此地。'],
+  ami_detroit:['底特律堡','Fort Detroit',42.33,-83.05,'五大湖连接水道要塞；1763年5月庞蒂亚克率部在此围攻英军五个月。'],
+  ami_williamsburg:['威廉斯堡','Williamsburg',37.27,-76.7,'弗吉尼亚首府；1765年帕特里克·亨利在此拍案抗议印花税。'],
+  ami_philadelphia:['费城','Philadelphia',39.95,-75.16,'大陆会议所在地；1774—1776年代表在此集会并通过《独立宣言》。'],
+  ami_charleston:['查尔斯顿','Charleston',32.78,-79.93,'南卡罗来纳海港；1773年底把运抵的东印度公司茶叶扣入地窖拒销。'],
+  amco_annapolis:['安纳波利斯','Annapolis',38.978,-76.492,'马里兰州首府；1783年12月华盛顿在此向邦联国会交还军权，1786年五州代表在此倡议去费城修宪。'],
+  amco_springfield:['斯普林菲尔德','Springfield, Massachusetts',42.101,-72.59,'马萨诸塞西部重镇，设有联邦军械库；1787年1月谢斯率债农攻打此地被击退。'],
+  amco_mountvernon:['弗农山庄','Mount Vernon',38.708,-77.086,'弗吉尼亚波托马克河畔的庄园；华盛顿的故居，与新建首都华盛顿特区隔河相望。'],
+  amco_richmond:['里士满','Richmond',37.541,-77.436,'弗吉尼亚州首府；1788年6月麦迪逊在此与反联邦派激辩，促成弗吉尼亚批准宪法。'],
+  amco_charleston:['查尔斯顿','Charleston',32.776,-79.931,'南卡罗来纳最大海港；南方蓄奴种植园主在制宪会议上力争五分之三人口折算与奴隶进口期限。'],
+  amco_washington:['华盛顿特区','Washington, D.C.',38.89,-77.009,'波托马克河畔的新首都；1790年餐桌妥协定址于此，1800年联邦政府正式迁入。'],
+  amco_monticello:['蒙蒂塞洛','Monticello (Charlottesville)',38.009,-78.453,'弗吉尼亚夏洛茨维尔山顶的庄园；杰斐逊自建的宅邸，邻近麦迪逊的蒙彼利埃庄园。'],
+  amw_stlouis:['圣路易斯','St. Louis',38.627,-90.199,'密西西比河与密苏里河交汇处的门户；1804年5月刘易斯与克拉克探险队由此西进。'],
+  amw_clatsop:['克拉索普堡（哥伦比亚河口）','Fort Clatsop (Astoria)',46.134,-123.879,'俄勒冈哥伦比亚河入太平洋处；1805年底刘易斯与克拉克探险队抵此过冬。'],
+  amw_washington:['华盛顿与巴尔的摩','Washington & Baltimore',38.895,-77.036,'1814年8月英军攻入华盛顿烧毁白宫，9月北攻巴尔的摩麦克亨利堡未克。'],
+  amw_buffalo:['布法罗（伊利运河西端）','Buffalo',42.886,-78.878,'伊利湖东岸港口；1825年伊利运河由此东通哈德逊河，打开五大湖水路。'],
+  amw_new_echota:['新埃科塔','New Echota, Georgia',34.539,-84.909,'佐治亚西北的切诺基族首府；族人在此办双语报纸，1838年由此被强押西迁。'],
+  amw_tahlequah:['塔勒阔（印第安领地）','Tahlequah, Indian Territory',35.915,-94.97,'今俄克拉荷马州东北部；切诺基人走完“血泪之路”后的新首府。'],
+  amw_sanjacinto:['圣哈辛托（近阿拉莫）','San Jacinto',29.75,-95.081,'今休斯敦东郊；1836年4月21日休斯敦率德克萨斯军在此突袭俘虏圣安纳。'],
+  amw_coloma:['萨特锯木厂（科洛马）','Sutter’s Mill (Coloma)',38.803,-120.892,'加利福尼亚萨克拉门托东北的山谷水渠；1848年1月24日马歇尔在此发现金粒。'],
+  amw_sanfrancisco:['旧金山（圣弗朗西斯科）','San Francisco',37.775,-122.419,'加利福尼亚海湾良港；1849年全球淘金船队涌入此港，华人称“旧金山”。'],
+  aml_caracas:['加拉加斯','Caracas',10.481,-66.904,'委内瑞拉首府，玻利瓦尔故乡；1810年成立自治委员会，1821年卡拉沃沃大捷后获解放。'],
+  aml_bogota:['波哥大（博亚卡）','Bogotá (Boyacá)',4.711,-74.072,'新格拉纳达首府；1819年8月玻利瓦尔翻越安第斯山在博亚卡获胜后进占此城。'],
+  aml_portauprince:['太子港','Port-au-Prince',18.594,-72.307,'海地共和国首都；1815—1816年海地总统佩蒂翁在此资助流亡的玻利瓦尔军火与船只。'],
+  aml_buenosaires:['布宜诺斯艾利斯','Buenos Aires',-34.604,-58.382,'拉普拉塔总督区首府；1810年5月成立自治政府，成为南美唯一未被西军收复的独立大本营。'],
+  aml_mendoza:['门多萨','Mendoza',-32.889,-68.845,'安第斯山东麓重镇；1814—1816年圣马丁在此练成五千“安第斯山军”。'],
+  aml_guayaquil:['瓜亚基尔','Guayaquil',-2.189,-79.889,'厄瓜多尔海港；1822年7月26—27日玻利瓦尔与圣马丁在此闭门会晤。'],
+  aml_ayacucho:['阿亚库乔','Ayacucho',-13.159,-74.223,'秘鲁安第斯山谷；1824年12月9日苏克雷在此俘虏秘鲁末代总督，终结西班牙南美统治。'],
+  aml_dolores:['多洛雷斯','Dolores Hidalgo, Guanajuato',21.156,-100.931,'墨西哥中部小镇；1810年9月16日伊达尔哥神父在此敲钟呼唤印第安与混血贫民起义。'],
+  aml_rio:['里约热内卢','Rio de Janeiro',-22.907,-43.173,'巴西首府；1808年葡萄牙王室迁都于此，1822年佩德罗一世在此称巴西皇帝。'],
+  aml_washington:['华盛顿','Washington, D.C.',38.895,-77.036,'美国首都；1823年12月门罗总统在此向国会发表《门罗宣言》。'],
+  amct_savannah:['萨凡纳','Savannah (Mulberry Grove)',32.081,-81.091,'佐治亚州海港；1793年春惠特尼在城北桑树林庄园造出轧棉机。'],
+  amct_newhaven:['纽黑文','New Haven, Connecticut',41.308,-72.928,'康涅狄格州耶鲁学院所在地；惠特尼毕业后在此开办步枪兵工厂。'],
+  amct_charleston:['查尔斯顿','Charleston, South Carolina',32.776,-79.931,'南卡罗来纳最大海港与蓄奴大本营；1860年12月在此通过脱离联邦法令。'],
+  amct_stlouis:['圣路易斯','St. Louis, Missouri',38.627,-90.199,'密苏里州大港；1820年密苏里获准蓄奴入盟，1846年黑奴斯科特在此起诉争自由。'],
+  amct_washington:['华盛顿','Washington, D.C.',38.89,-77.009,'美国联邦首都；国会山与最高法院成为南北蓄奴之争的交锋中心。'],
+  amct_sanfrancisco:['旧金山','San Francisco, California',37.775,-122.419,'加利福尼亚大港；1850年加州作为自由州入盟，打破参议院南北均势。'],
+  amct_lawrence:['劳伦斯','Lawrence, Kansas',38.972,-95.235,'堪萨斯领地反蓄奴移民重镇；1856年5月遭密苏里蓄奴派武装洗劫焚烧。'],
+  amct_harpers_ferry:['哈珀斯费里','Harpers Ferry, Virginia',39.325,-77.739,'波托马克河与谢南多厄河交汇处；1859年10月约翰·布朗在此突袭联邦军械库。'],
+  amct_springfield:['斯普林菲尔德','Springfield, Illinois',39.799,-89.644,'伊利诺伊州首府；林肯在此执业并发表《裂屋演说》，1860年在此当选总统。'],
+  amcw_sumter:['萨姆特堡（查尔斯顿）','Fort Sumter (Charleston)',32.752,-79.875,'南卡罗来纳查尔斯顿港口要塞；1861年4月12日邦联军在此打响内战第一炮。'],
+  amcw_richmond:['里士满','Richmond, Virginia',37.541,-77.436,'弗吉尼亚首府，1861年5月起为美利坚邦联首都，北距华盛顿仅百余公里。'],
+  amcw_hampton:['汉普顿锚地','Hampton Roads, Virginia',36.975,-76.325,'弗吉尼亚詹姆斯河口水道；1862年3月9日南北铁甲舰在此首次交锋。'],
+  amcw_antietam:['安提塔姆（夏普斯堡）','Antietam (Sharpsburg, Maryland)',39.467,-77.745,'马里兰州西部溪流；1862年9月17日两军在此血战，单日死伤逾两万两千人。'],
+  amcw_gettysburg:['葛底斯堡','Gettysburg, Pennsylvania',39.814,-77.231,'宾夕法尼亚南部小镇；1863年7月1—3日北军在此击退李将军北上主力。'],
+  amcw_vicksburg:['维克斯堡','Vicksburg, Mississippi',32.353,-90.878,'密西西比河东岸高崖要塞；1863年7月4日格兰特围攻四十七天迫其投降。'],
+  amcw_atlanta:['亚特兰大','Atlanta, Georgia',33.749,-84.388,'佐治亚州铁路与军工枢纽；1864年9月被谢尔曼攻占，11月焚毁后向东进军。'],
+  amcw_savannah:['萨凡纳','Savannah, Georgia',32.081,-81.091,'佐治亚州大西洋海港；1864年12月21日谢尔曼完成“向大海进军”占领此城。'],
+  amcw_spotsylvania:['斯波茨尔瓦尼亚与冷港','Spotsylvania and Cold Harbor, Virginia',38.202,-77.589,'弗吉尼亚东北部战场；1864年5—6月格兰特在此与李将军展开消耗战。'],
+  amcw_appomattox:['阿波马托克斯法院村','Appomattox Court House, Virginia',37.377,-78.796,'弗吉尼亚中部村镇；1865年4月9日李将军在此向格兰特投降。'],
+  amcw_washington:['华盛顿（福特剧院）','Washington, D.C. (Ford’s Theatre)',38.897,-77.026,'美国联邦首都；1865年4月14日夜林肯在福特剧院看戏时遇刺身亡。'],
+  amg_sacramento:['萨克拉门托','Sacramento',38.58,-121.49,'加利福尼亚首府；中央太平洋铁路西端起点，逾万名广东华工由此向东凿穿内华达山脉。'],
+  amg_promontory:['普罗蒙特里峰','Promontory Summit, Utah',41.62,-112.55,'犹他准州大盐湖北岸高地；1869年5月10日两洋铁路在此合龙敲下金道钉。'],
+  amg_omaha:['奥马哈','Omaha, Nebraska',41.26,-95.93,'密苏里河西岸枢纽，联合太平洋铁路向西铺轨的起点；1892年人民党在此通过纲领。'],
+  amg_washington:['华盛顿','Washington, D.C.',38.9,-77.04,'美国首都；国会与最高法院在此通过排华法案、反垄断判决与所得税修正案。'],
+  amg_cleveland:['克利夫兰','Cleveland',41.5,-81.69,'伊利湖南岸工业城；1870年洛克菲勒在此创办标准石油公司，吞并二十余家炼油厂。'],
+  amg_pittsburgh:['匹兹堡','Pittsburgh',40.44,-80.0,'宾夕法尼亚西部三河交汇处的“世界钢都”；卡内基在此建钢铁帝国，近郊霍姆斯特德曾爆发枪战。'],
+  amg_newyork:['纽约','New York',40.71,-74.01,'美国金融与航运中心；华尔街摩根财团、珍珠街发电站与港内埃利斯岛移民站皆在于此。'],
+  amg_detroit:['底特律','Detroit (Highland Park)',42.33,-83.05,'密歇根州汽车工业之都；福特在北郊海兰帕克工厂装上移动流水线并推行五美元日薪。'],
+  amg_chicago:['芝加哥','Chicago',41.88,-87.63,'密歇根湖西南岸的铁路与肉类加工枢纽；1886年干草市场惨案与1896年黄金十字架演说所在地。'],
+  amwi_newyork:['纽约','New York',40.71,-74.01,'美国金融与航运枢纽；摩根财团在华尔街包销协约国战债，大批军火与新兵由此出海。'],
+  amwi_washington:['华盛顿','Washington, D.C.',38.9,-77.04,'美国首都；1917年4月威尔逊在此请求国会对德宣战，1919—1920年参议院在此否决和约。'],
+  amwi_kinsale:['金赛尔老岬外海','Off the Old Head of Kinsale',51.42,-8.55,'爱尔兰南岸外海；1915年5月7日德国潜艇在此击沉“卢西塔尼亚号”邮轮。'],
+  amwi_mexicocity:['墨西哥城','Mexico City',19.43,-99.13,'墨西哥首都；1917年1月德国外长向驻墨公使发密电，许诺助墨西哥夺回德克萨斯等地。'],
+  amwi_brest:['布雷斯特','Brest',48.39,-4.49,'法国布列塔尼军港；1918年夏美军远征军主力由此登岸，威尔逊亦乘船在此登陆欧洲。'],
+  amwi_argonne:['默兹—阿尔贡战场','Meuse-Argonne',49.32,5.09,'法国东北部林地与河谷；1918年秋潘兴率百余万美军在此发起大战役压垮德军防线。'],
+  amwi_qingdao:['青岛（山东）','Qingdao, Shandong',36.07,120.38,'中国山东胶州湾海港；1919年巴黎和会将德国在山东权益转交日本，触发五四运动。'],
+  amwi_pueblo:['普韦布洛','Pueblo, Colorado',38.25,-104.61,'科罗拉多州城市；1919年9月25日威尔逊巡回演说至此累倒，返华盛顿后中风瘫痪。'],
+  amwi_geneva:['日内瓦','Geneva',46.2,6.14,'瑞士莱芒湖畔城市；1920年国际联盟总部设于此地，倡议建国联的美国却始终未加入。'],
 });
 function hp(d,key,opt={}){
   const [n,en,la,lo,note]=HS[key];
@@ -9453,6 +9548,197 @@ const HISTORY_ENTRIES=[
     hp(d,'sr_lisbon',{left:1,note:'1668年2月13日：《里斯本条约》，西班牙才承认布拉干萨王朝。'});
    },[['fill',HC.lowlands,'荷兰共和国：1648年获承认'],['fill',HC.spain,'西班牙与西属尼德兰'],['fill',HC.italy,'葡萄牙：1668年才获承认'],['fill',HC.france,'法国'],['dot',HC.war,'罗克鲁瓦与巴塞罗那'],['dot','#2a2018','条约与决策地点']])
  ]},
+{id:'history-spain-bourbon',ch:5,title:'波旁改革：搬来法国集权，推向美洲风暴',short:'波旁改革',en:'The Bourbon Reforms: Importing French Centralization, Sowing the Storm in America',period:'1714—1788年',c:HC.spain,
+ scenes:[
+  hs('1707—1724年','废除旧宪章与迁署加的斯','被废除自治宪章的阿拉贡王冠诸邦，以及西印度贸易署从内河港塞维利亚迁往海湾港加的斯。',[[35.5,-10.0],[43.8,4.5]],d=>{
+    ha(d,'sCastile',HC.spain,{fillOpacity:.28});ha(d,'sCrownAragon',HC.war,{fillOpacity:.36});
+    hp(d,'spa_cadiz',{note:'1717年西印度贸易署迁入此地，垄断美洲航运六十年。'});
+    hp(d,'hispalis',{note:'旧贸易署设在此地两百余年，因河道变浅失去垄断权。'});
+    hp(d,'c5_madrid',{note:'朝廷模仿法国设内阁各部大臣，取代哈布斯堡旧委员会。'});
+    hp(d,'k_barcelona',{kind:'battle',left:1,note:'1714年陷落后筑起蒙胡伊克与城堡要塞弹压市民。'});
+    hr(d,[[37.389,-5.984],[36.527,-6.289]],HC.route);
+   },[['fill',HC.spain,'卡斯蒂利亚王冠领地'],['fill',HC.war,'被废除自治宪章的阿拉贡诸邦'],['dline',HC.route,'1717年西印度贸易署迁址'],['dot',HC.war,'巴塞罗那'],['dot','#2a2018','马德里、塞维利亚与加的斯']]),
+  hs('1714—1748年','意大利捞回的王冠','王后伊丽莎白·法尔内塞的娘家帕尔马，以及长子卡洛斯1734年南下夺取那不勒斯的战场比通托。',[[36.0,-6.5],[46.5,19.0]],d=>{
+    ha(d,'sCastile',HC.spain,{fillOpacity:.26});ha(d,'sCrownAragon',HC.spain,{fillOpacity:.26});
+    ha(d,'sHabsburgAustria1556',HC.germany,{fillOpacity:.2});
+    hp(d,'c5_madrid',{note:'王后伊丽莎白·法尔内塞主持外交三十年。'});
+    hp(d,'spb_parma',{note:'法尔内塞家族绝嗣后，1731年由卡洛斯接管。'});
+    hp(d,'naples',{left:1,note:'1734年5月卡洛斯进城，称那不勒斯国王卡洛斯七世。'});
+    hp(d,'spb_bitonto',{kind:'battle',left:1,note:'1734年5月25日西军击败奥军，俘获数千人。'});
+    hr(d,[[44.801,10.328],[43.77,11.25],[41.89,12.48],[40.85,14.27],[41.108,16.692]],HC.route);
+   },[['fill',HC.spain,'西班牙王国'],['fill',HC.germany,'奥地利哈布斯堡领地（示意）'],['dline',HC.route,'1734年卡洛斯南下进军路线（概略）'],['dot',HC.war,'比通托之战'],['dot','#2a2018','马德里、帕尔马与那不勒斯']]),
+  hs('1759—1766年','斗篷与宽边帽骚乱','1759年卡洛斯三世从那不勒斯经巴塞罗那返国即位的航线，以及1766年3月爆发大骚乱的马德里。',[[36.5,-6.5],[44.5,16.5]],d=>{
+    ha(d,'sCastile',HC.spain,{fillOpacity:.28});ha(d,'sCrownAragon',HC.spain,{fillOpacity:.28});
+    hp(d,'c5_madrid',{kind:'battle',note:'市民砸路灯抗议禁斗篷令，国王连夜退往南郊阿兰胡埃斯。'});
+    hp(d,'k_barcelona',{note:'1759年10月卡洛斯三世在此登岸，免除加泰罗尼亚欠税。'});
+    hp(d,'naples',{left:1,note:'卡洛斯三世离任前将王位传给八岁的第三子费迪南。'});
+    hr(d,[[40.85,14.27],[41.0,7.5],[41.385,2.173],[40.417,-3.704]],HC.route);
+   },[['fill',HC.spain,'西班牙王国'],['dline',HC.route,'1759年卡洛斯三世返国路线（概略）'],['dot',HC.war,'马德里（1766年骚乱）'],['dot','#2a2018','巴塞罗那与那不勒斯']]),
+  hs('1767年','午夜查封耶稣会','1767年发出驱逐密令的马德里、被查封的美洲耶稣会传教区，以及流亡神父被押往的罗马。',[[-32.0,-105.0],[45.0,16.0]],d=>{
+    ha(d,'sCastile',HC.spain,{fillOpacity:.28});ha(d,'aNewSpain1600',HC.spain,{fillOpacity:.24});ha(d,'aPeru1600',HC.spain,{fillOpacity:.24});
+    hp(d,'sp1_veracruz',{note:'新西班牙六百七十多名耶稣会士由此登船流亡意大利。'});
+    hp(d,'spb_sanignacio',{note:'巴拉圭三十座瓜拉尼印第安传教村被官府接管。'});
+    hp(d,'c5_madrid',{note:'1767年3月31日午夜马德里驻军率先包围六座修院。'});
+    hp(d,'rome',{left:1,note:'教宗起初拒收流亡神父，1773年被迫解散耶稣会。'});
+    hr(d,[[19.2,-96.13],[23.13,-82.38],[36.5,-6.3],[41.89,12.48]],HC.route);
+   },[['fill',HC.spain,'西班牙帝国（本土与美洲总督区）'],['dline',HC.route,'1767年押送耶稣会士赴意大利航线（概略）'],['dot','#2a2018','马德里、罗马、韦拉克鲁斯与圣伊格纳西奥']]),
+  hs('1765—1788年','拉普拉塔与十三港通商','1776年新建的拉普拉塔总督区，以及1778年《自由贸易条例》连通的西班牙与美洲大港。',[[-38.0,-90.0],[44.5,5.0]],d=>{
+    ha(d,'sCastile',HC.spain,{fillOpacity:.28});ha(d,'sCrownAragon',HC.spain,{fillOpacity:.28});
+    ha(d,'aPeru1600',HC.spain,{fillOpacity:.2});ha(d,'am19RioPlata',HC.america,{fillOpacity:.36});
+    hp(d,'sp1_havana',{note:'1762年曾被英军攻占，1764年率先试点督办官与自由通商。'});
+    hp(d,'spb_buenosaires',{note:'1776年设为拉普拉塔总督区首府，波托西白银改由此出海。'});
+    hp(d,'spa_cadiz',{note:'失去一港垄断特权，但仍占美洲贸易额的大头。'});
+    hp(d,'k_barcelona',{left:1,note:'获准与美洲直接通商后，加泰罗尼亚棉纺与葡萄酒大量外销。'});
+    hr(d,[[41.385,2.173],[36.527,-6.289],[23.13,-82.38]],HC.route);
+    hr(d,[[36.527,-6.289],[-10.0,-30.0],[-34.604,-58.382]],HC.route);
+   },[['fill',HC.spain,'西班牙本土与秘鲁总督区'],['fill',HC.america,'1776年新设的拉普拉塔总督区（示意）'],['dline',HC.route,'1778年开放通商后的跨大西洋航线（概略）'],['dot','#2a2018','巴塞罗那、加的斯、哈瓦那与布宜诺斯艾利斯']]),
+  hs('1776—1783年','土生白人失势与库斯科起义','1780—1783年图帕克·阿马鲁二世起义的库斯科、矿役中心波托西，以及利马与布宜诺斯艾利斯。',[[-36.5,-82.0],[12.0,-52.0]],d=>{
+    ha(d,'aPeru1600',HC.spain,{fillOpacity:.26});ha(d,'am19RioPlata',HC.america,{fillOpacity:.28});ha(d,'am19GranColombia',HC.spain,{fillOpacity:.2});
+    hp(d,'spb_lima',{note:'秘鲁总督从利马发兵一万七千人进山镇压起义。'});
+    hp(d,'sp1_cusco',{kind:'battle',note:'1781年1月起义军围攻库斯科未克，5月阿马鲁在此受刑。'});
+    hp(d,'sp1_potosi',{kind:'battle',note:'1781年艾马拉首领图帕克·卡塔里率众围攻拉巴斯与矿区。'});
+    hp(d,'spb_buenosaires',{left:1,note:'拉普拉塔总督也派兵北上安第斯高原协同平乱。'});
+   },[['fill',HC.spain,'秘鲁与新格拉纳达总督区（示意）'],['fill',HC.america,'拉普拉塔总督区（示意）'],['dot',HC.war,'库斯科与波托西（安第斯大起义）'],['dot','#2a2018','利马与布宜诺斯艾利斯']])
+ ]},
+{id:'history-spain-cadiz',ch:5,title:'加的斯宪法：围城里写出的自由，国王一回来就撕掉',short:'加的斯宪法',en:'The Constitution of Cádiz: Liberty Written Under Siege, Torn Up by the Returning King',period:'1808—1833年',c:HC.spain,
+ scenes:[
+  hs('1808—1810年','退守加的斯','1808年西班牙王室退位的巴约讷、起义的马德里，以及1810年退守召开议会的海岛良港加的斯。',[[35.0,-11.5],[45.0,4.0]],d=>{
+    ha(d,'fr18Spain1812',HC.war,{fillOpacity:.28});ha(d,'sPortugal',HC.britain,{fillOpacity:.28});
+    hp(d,'sr_lisbon',{note:'威灵顿率英葡联军在此筑托雷斯韦德拉斯防线，牵制法军主力。'});
+    hp(d,'spa_cadiz',{kind:'battle',note:'法军围城两年半打不进海湾，议会在湾内莱昂岛开幕。'});
+    hp(d,'c5_madrid',{kind:'battle',note:'1808年5月起事后，最高中央委员会先在南郊阿兰胡埃斯成立。'});
+    hp(d,'spc_bayonne',{left:1,note:'拿破仑在此收走西班牙王冠，转封长兄约瑟夫。'});
+    hr(d,[[40.417,-3.704],[37.389,-5.984],[36.527,-6.289]],HC.route);
+   },[['fill',HC.war,'遍地游击战的西班牙'],['fill',HC.britain,'英葡联军据守的葡萄牙'],['dline',HC.route,'1808—1810年抗法中枢南迁路线'],['dot',HC.war,'马德里与加的斯'],['dot','#2a2018','里斯本与巴约讷']]),
+  hs('1812—1813年','“拉佩帕”与帝国代表','颁布1812年《加的斯宪法》的加的斯，以及选派代表或候补代表参会的西属美洲总督区。',[[-20.0,-105.0],[44.0,5.0]],d=>{
+    ha(d,'fr18Spain1812',HC.war,{fillOpacity:.28});ha(d,'aNewSpain1600',HC.spain,{fillOpacity:.22});ha(d,'aPeru1600',HC.spain,{fillOpacity:.22});
+    hp(d,'sp1_tenochtitlan',{note:'新西班牙选派二十余名代表赴加的斯，争取美洲自治与自由贸易。'});
+    hp(d,'sp1_cusco',{note:'秘鲁总督区也有代表在加的斯签署1812年宪法。'});
+    hp(d,'spa_cadiz',{note:'1812年3月19日圣腓力内里教堂举行宪法宣誓典礼。'});
+    hp(d,'c5_madrid',{left:1,note:'1812年夏威灵顿一度收复马德里，次年法军彻底败退。'});
+    hr(d,[[19.43,-99.13],[23.13,-82.38],[36.527,-6.289]],HC.route);
+   },[['fill',HC.war,'抗法战争中的西班牙本土'],['fill',HC.spain,'派代表出席议会的西属美洲'],['dline',HC.route,'美洲代表赴加的斯航线（概略）'],['dot','#2a2018','加的斯、马德里、墨西哥城与库斯科']]),
+  hs('1813—1814年','瓦朗塞返国与巴伦西亚政变','费迪南七世被软禁六年的法国瓦朗塞城堡，以及1814年春他返国途中宣布废除宪法的巴伦西亚。',[[35.0,-8.5],[48.8,4.5]],d=>{
+    ha(d,'sCastile',HC.spain,{fillOpacity:.26});ha(d,'sCrownAragon',HC.spain,{fillOpacity:.26});ha(d,'fr18France1815',HC.france,{fillOpacity:.16});
+    hp(d,'spa_cadiz',{note:'1814年初议会已从加的斯迁回马德里，等候国王宣誓。'});
+    hp(d,'c5_madrid',{note:'5月10日夜王家军队在马德里大举抓捕自由派议员与报人。'});
+    hp(d,'tf_valencia',{kind:'battle',note:'4月16日国王抵此，受《波斯人宣言》与埃利奥将军拥戴，5月4日废宪。'});
+    hp(d,'spc_valencay',{left:1,note:'1813年12月11日拿破仑与费迪南七世在此签和约放人。'});
+    hr(d,[[47.158,1.566],[42.4,2.8],[41.65,-0.88],[39.47,-0.376],[40.417,-3.704]],HC.route);
+   },[['fill',HC.spain,'西班牙王国'],['fill',HC.france,'法兰西王国'],['dline',HC.route,'1814年春费迪南七世返国路线（概略）'],['dot',HC.war,'巴伦西亚（5月4日废宪政变）'],['dot','#2a2018','瓦朗塞城堡、马德里与加的斯']]),
+  hs('1820年','列戈兵变与南欧立宪潮','1820年1月列戈起事的拉斯卡韦萨斯，2月响应的拉科鲁尼亚，以及被点燃立宪革命的那不勒斯。',[[35.5,-10.5],[44.5,16.0]],d=>{
+    ha(d,'sCastile',HC.spain,{fillOpacity:.26});ha(d,'sCrownAragon',HC.spain,{fillOpacity:.26});ha(d,'sPortugal',HC.lowlands,{fillOpacity:.26});
+    hp(d,'spc_coruna',{kind:'battle',note:'2月21日驻军起事响应列戈，随后波尔图也爆发立宪革命。'});
+    hp(d,'spc_cabezas',{kind:'battle',note:'1月1日列戈在此向阿斯图里亚斯营宣读1812年宪法。'});
+    hp(d,'c5_madrid',{note:'3月9日费迪南七世在王宫被迫向1812年宪法宣誓。'});
+    hp(d,'naples',{kind:'battle',left:1,note:'7月烧炭党人与军官起事，逼两西西里国王照搬西班牙1812年宪法。'});
+   },[['fill',HC.spain,'恢复1812年宪法的西班牙'],['fill',HC.lowlands,'同年爆发立宪革命的葡萄牙'],['dot',HC.war,'拉斯卡韦萨斯、拉科鲁尼亚与那不勒斯'],['dot','#2a2018','马德里']]),
+  hs('1822—1823年','“圣路易的十万子孙”','1823年法军越过比利牛斯山南下马德里、攻破加的斯特罗卡德罗要塞的进军路线。',[[35.5,-8.0],[50.0,5.0]],d=>{
+    ha(d,'fr18France1815',HC.france,{fillOpacity:.18});ha(d,'sCastile',HC.spain,{fillOpacity:.24});ha(d,'sCrownAragon',HC.spain,{fillOpacity:.24});
+    hp(d,'spa_cadiz',{kind:'battle',note:'8月31日法军攻克湾内特罗卡德罗堡，9月底国王获释翻脸。'});
+    hp(d,'c5_madrid',{kind:'battle',note:'5月法军进占马德里；11月7日列戈在塞瓦达广场被绞死。'});
+    hp(d,'k_barcelona',{note:'名将米纳在加泰罗尼亚孤军抵抗法军至11月。'});
+    hp(d,'w_paris',{left:1,note:'路易十八与外长夏多布里昂派昂古莱姆公爵率军南征。'});
+    hr(d,[[48.853,2.349],[43.3,-1.7],[40.417,-3.704],[37.389,-5.984],[36.527,-6.289]],HC.route);
+   },[['fill',HC.france,'复辟波旁王朝的法国'],['fill',HC.spain,'重回专制的西班牙'],['dline',HC.route,'1823年法军南征路线（概略）'],['dot',HC.war,'马德里与加的斯'],['dot','#2a2018','巴黎与巴塞罗那']]),
+  hs('1830—1833年','国事诏书与叔侄决裂','1830—1833年颁布《国事诏书》的马德里，唐·卡洛斯拒不返国效忠的里斯本，以及北方卡洛斯派大本营。',[[35.5,-11.5],[44.5,4.2]],d=>{
+    ha(d,'sCastile',HC.spain,{fillOpacity:.24});ha(d,'sCrownAragon',HC.spain,{fillOpacity:.24});
+    ha(d,'sp19CarlistNorth',HC.war,{fillOpacity:.42});ha(d,'sPortugal',HC.lowlands,{fillOpacity:.24});
+    hp(d,'sr_lisbon',{note:'1833年春唐·卡洛斯前往葡萄牙，在来信中拒向侄女宣誓。'});
+    hp(d,'c5_madrid',{note:'1830年10月伊莎贝拉生于王宫；1833年9月费迪南七世死。'});
+    hp(d,'spc_pamplona',{kind:'battle',left:1,note:'费迪南七世死讯一传到，纳瓦拉与巴斯克纷纷起兵拥立唐·卡洛斯。'});
+   },[['fill',HC.spain,'承认女王伊莎贝拉二世的西班牙'],['fill',HC.war,'拥立王叔唐·卡洛斯的北方山区'],['fill',HC.lowlands,'葡萄牙'],['dot',HC.war,'潘普洛纳'],['dot','#2a2018','马德里与里斯本']])
+ ]},
+{id:'history-spain-carlist',ch:5,title:'卡洛斯战争与第一共和国：大帅换内阁，两党分选票',short:'卡洛斯战争与第一共和国',en:'The Carlist Wars and the First Republic: Generals Make Cabinets, Two Parties Share the Vote',period:'1833—1895年',c:HC.spain,
+ scenes:[
+  hs('1833—1840年','第一次卡洛斯战争','拥立王叔唐·卡洛斯的北方两片交战山区，以及女王坐镇的马德里与1839年讲和地贝尔加拉。',[[35.5,-9.5],[44.6,4.2]],d=>{
+    ha(d,'sCastile',HC.spain,{fillOpacity:.24});ha(d,'sCrownAragon',HC.spain,{fillOpacity:.24});
+    ha(d,'sp19CarlistNorth',HC.war,{fillOpacity:.44});
+    hp(d,'c5_madrid',{note:'摄政太后克里斯蒂娜1834年颁布《王室宪章》，拉拢自由派。'});
+    hp(d,'spca_vergara',{kind:'battle',note:'卡洛斯派两围邻近的毕尔巴鄂不下，1839年8月在此拥抱讲和。'});
+    hp(d,'spca_morella',{kind:'battle',left:1,note:'卡洛斯派名将卡夫雷拉坚守此地至1840年5月才退入法国。'});
+   },[['fill',HC.spain,'女王伊莎贝拉二世治下的西班牙'],['fill',HC.war,'卡洛斯派据守的北方山区'],['dot',HC.war,'贝尔加拉与莫雷利亚'],['dot','#2a2018','马德里']]),
+  hs('1835—1837年','门迪萨瓦尔拍卖修道院','1835年爆发反修会暴动的巴塞罗那，以及1836年门迪萨瓦尔下令关停修道院、拍卖教产的马德里与安达卢西亚。',[[35.0,-9.5],[44.2,4.2]],d=>{
+    ha(d,'sCastile',HC.spain,{fillOpacity:.28});ha(d,'sCrownAragon',HC.spain,{fillOpacity:.28});
+    hp(d,'spa_cadiz',{note:'门迪萨瓦尔生于加的斯湾的奇克拉纳，早年靠在伦敦筹资成名。'});
+    hp(d,'hispalis',{note:'安达卢西亚大片修道院庄园被富商与大地主整块买走。'});
+    hp(d,'c5_madrid',{note:'马德里城内十七座修道院被拆改建为广场、议会与公署。'});
+    hp(d,'k_barcelona',{kind:'battle',left:1,note:'1835年7月市民焚烧多座修道院，催生全面查封修会令。'});
+   },[['fill',HC.spain,'推行教产充公拍卖的西班牙'],['dot',HC.war,'巴塞罗那（1835年焚烧修院）'],['dot','#2a2018','马德里、塞维利亚与加的斯']]),
+  hs('1840—1868年','大帅当家与宣言政变','1840—1868年将军们频频发动“宣言政变”的马德里、巴塞罗那、巴伦西亚，以及纳瓦埃斯故乡洛哈。',[[36.0,-9.0],[43.8,3.8]],d=>{
+    ha(d,'sCastile',HC.spain,{fillOpacity:.26});ha(d,'sCrownAragon',HC.spain,{fillOpacity:.26});
+    hp(d,'spca_loja',{note:'纳瓦埃斯故乡；1861年此地还爆发过上万无地农民起义。'});
+    hp(d,'c5_madrid',{kind:'battle',note:'1843年纳瓦埃斯与1854年奥唐奈都在马德里东郊起兵夺权。'});
+    hp(d,'tf_valencia',{note:'1840年太后由此流亡法国，1843年纳瓦埃斯在此登陆反攻。'});
+    hp(d,'k_barcelona',{kind:'battle',left:1,note:'1842年市民抗议自由贸易，摄政埃斯帕特罗下令炮轰全城。'});
+   },[['fill',HC.spain,'伊莎贝拉二世时代的西班牙'],['dot',HC.war,'马德里与巴塞罗那'],['dot','#2a2018','巴伦西亚与洛哈']]),
+  hs('1868—1873年','赶走女王与借来国王','1868年9月起义的加的斯、伊莎贝拉二世流亡的巴黎，以及1870年底阿玛迪奥一世登岸的卡塔赫纳与马德里。',[[35.0,-8.5],[50.5,6.0]],d=>{
+    ha(d,'sCastile',HC.spain,{fillOpacity:.26});ha(d,'sCrownAragon',HC.spain,{fillOpacity:.26});ha(d,'fr18France1815',HC.france,{fillOpacity:.16});
+    hp(d,'spa_cadiz',{kind:'battle',note:'1868年9月19日海军上将托佩特在此发宣言，掀起“光荣革命”。'});
+    hp(d,'c5_madrid',{kind:'battle',note:'1870年12月27日普里姆在土耳其街遇刺，三天后不治身亡。'});
+    hp(d,'spca_cartagena',{note:'1870年12月30日阿玛迪奥一世在此登岸，当即获知普里姆死讯。'});
+    hp(d,'w_paris',{left:1,note:'伊莎贝拉二世流亡巴黎卡斯蒂利亚宫，直至1904年去世。'});
+    hr(d,[[40.417,-3.704],[43.3,-1.9],[48.853,2.349]],HC.route);
+   },[['fill',HC.spain,'民主六年期间的西班牙'],['fill',HC.france,'法国'],['dline',HC.route,'1868年秋伊莎贝拉二世流亡法国路线'],['dot',HC.war,'加的斯与马德里'],['dot','#2a2018','卡塔赫纳与巴黎']]),
+  hs('1873—1874年','第一共和国与卡塔赫纳建州','1873年成立第一共和国的马德里，北方第三次卡洛斯战争战区，以及南方掀起州际起义的塞维利亚、卡塔赫纳与巴伦西亚。',[[35.8,-8.5],[43.8,3.8]],d=>{
+    ha(d,'sCastile',HC.spain,{fillOpacity:.22});ha(d,'sCrownAragon',HC.spain,{fillOpacity:.22});
+    ha(d,'sp19CarlistNorth',HC.war,{fillOpacity:.42});
+    hp(d,'hispalis',{kind:'battle',note:'1873年7月宣布建独立州，月底被帕维亚率军攻破。'});
+    hp(d,'c5_madrid',{kind:'battle',note:'十一个月换四任总统，1874年1月3日帕维亚派宪兵冲散议会。'});
+    hp(d,'spca_cartagena',{kind:'battle',note:'劫走四艘铁甲舰出海征饷，被陆海围困半年至1874年1月才降。'});
+    hp(d,'tf_valencia',{kind:'battle',left:1,note:'巴伦西亚州坚守两周后被马丁内斯·坎波斯攻克。'});
+   },[['fill',HC.spain,'第一共和国治下的西班牙'],['fill',HC.war,'北方第三次卡洛斯战争战区'],['dot',HC.war,'马德里、卡塔赫纳、塞维利亚与巴伦西亚']]),
+  hs('1874—1895年','波旁复辟与轮流坐庄','1874年底迎回阿方索十二世的巴伦西亚、制定1876年宪法的马德里，以及卡诺瓦斯故乡马拉加与遇刺地。',[[35.2,-8.5],[44.6,4.2]],d=>{
+    ha(d,'sCastile',HC.spain,{fillOpacity:.28});ha(d,'sCrownAragon',HC.spain,{fillOpacity:.28});
+    hp(d,'spca_malaga',{note:'卡诺瓦斯1828年生于此地，父亲是小学教师。'});
+    hp(d,'c5_madrid',{note:'1885年两党在北郊帕尔多宫定约，继续轮流坐庄。'});
+    hp(d,'spca_vergara',{note:'1876年平定卡洛斯派；1897年卡诺瓦斯在邻镇遇刺。'});
+    hp(d,'tf_valencia',{left:1,note:'1874年12月29日坎波斯在北郊萨贡托发宣言迎回阿方索十二世。'});
+   },[['fill',HC.spain,'波旁复辟体制下的西班牙（1874—1895年）'],['dot','#2a2018','马德里、巴伦西亚、马拉加与贝尔加拉']])
+ ]},
+{id:'history-spain-1898',ch:5,title:'美西战争：四百年帝国的谢幕与第二共和国',short:'美西战争',en:'The Spanish–American War: Curtain Call of a Four-Hundred-Year Empire and the Second Republic',period:'1895—1931年',c:HC.spain,
+ scenes:[
+  hs('1895—1897年','帝国残片与古巴起义','色块是西班牙本土及古巴、波多黎各；图钉标出哈瓦那、马蒂阵亡的多斯里奥斯与马德里。',[[15.0,-86.0],[45.0,5.0]],d=>{
+    ha(d,'am19Cuba',HC.spain,{fillOpacity:.45});ha(d,'am19PuertoRico',HC.spain,{fillOpacity:.45});ha(d,'fr18Spain1812',HC.spain,{fillOpacity:.22});
+    hp(d,'sp1_havana',{note:'魏勒总督在此下令将数十万农村居民强行并入城镇集中区。'});
+    hp(d,'sp98_dos_rios',{kind:'battle',note:'1895年5月19日马蒂骑白马冲向西军防线时中弹身亡。'});
+    hp(d,'c5_madrid',{left:1,note:'卡诺瓦斯政府坚持平叛，先后向古巴派兵约二十万人。'});
+   },[['fill',HC.spain,'西班牙本土与西属古巴、波多黎各'],['dot',HC.war,'多斯里奥斯'],['dot','#2a2018','哈瓦那与马德里']]),
+  hs('1897—1898年','黄色新闻与缅因号爆炸','色块为起义中的古巴、美国东部与西班牙；图钉标出哈瓦那港、纽约报馆与马德里。',[[18.0,-88.0],[46.0,4.0]],d=>{
+    ha(d,'am19Cuba',HC.war,{fillOpacity:.45});ha(d,'am19US1783',HC.america,{fillOpacity:.22});ha(d,'fr18Spain1812',HC.spain,{fillOpacity:.22});
+    hp(d,'sp1_havana',{kind:'battle',note:'2月15日晚缅因号在此爆炸，1976年重查倾向煤舱自燃引爆火药库。'});
+    hp(d,'amf_nybay',{note:'赫斯特与普利策在此竞印号外，日销各超百万份。'});
+    hp(d,'c5_madrid',{left:1,note:'萨加斯塔内阁明知海战必败，仍怕不战退让会引发国内军人政变。'});
+   },[['fill',HC.war,'古巴战场'],['fill',HC.america,'美国（东半部）'],['fill',HC.spain,'西班牙'],['dot',HC.war,'哈瓦那港'],['dot','#2a2018','纽约湾与马德里']]),
+  hs('1898年5—7月','马尼拉湾与圣地亚哥海战','西端是古巴圣地亚哥海陆战场，东端是杜威从香港南下马尼拉湾的航线，中间是西班牙军港加的斯。',[[8.0,-86.0],[45.0,128.0]],d=>{
+    ha(d,'am19Cuba',HC.war,{fillOpacity:.45});ha(d,'am19Philippines',HC.war,{fillOpacity:.45});ha(d,'fr18Spain1812',HC.spain,{fillOpacity:.22});
+    hp(d,'sp98_santiago',{kind:'battle',note:'7月1日美军夺取圣胡安山，3日塞韦拉舰队出港突围全军覆没。'});
+    hp(d,'spa_cadiz',{note:'西班牙本土增援舰队走到苏伊士运河便在7月被召回。'});
+    hp(d,'sp98_hongkong',{left:1,note:'杜威在此备齐煤炭弹药，4月27日率舰队南下吕宋岛。'});
+    hp(d,'sp98_manila',{kind:'battle',left:1,note:'5月1日晨开战，西军死伤三百余人，美军无一人阵亡。'});
+    hr(d,[[22.28,114.16],[14.52,120.78]],HC.route);
+   },[['fill',HC.war,'古巴与菲律宾战场'],['fill',HC.spain,'西班牙'],['dline',HC.route,'1898年4月底杜威舰队南下马尼拉湾'],['dot',HC.war,'古巴圣地亚哥与马尼拉湾'],['dot','#2a2018','加的斯与香港']]),
+  hs('1898—1914年','巴黎和约与巴拿马运河','色块是美国新获或控制的巴拿马、波多黎各、古巴与菲律宾；图钉标出巴拿马、巴黎、马尼拉与关岛。',[[4.0,-86.0],[52.0,148.0]],d=>{
+    ha(d,'am19Cuba',HC.america,{fillOpacity:.32});ha(d,'am19PuertoRico',HC.america,{fillOpacity:.48});ha(d,'am19Panama',HC.america,{fillOpacity:.5});ha(d,'am19Philippines',HC.america,{fillOpacity:.38});
+    hp(d,'sp1_panama',{note:'1903年美国取得运河区永租权，1914年8月15日运河正式通航。'});
+    hp(d,'w_paris',{note:'12月10日在此签约，西代表叹道除了君主制一切都丢光了。'});
+    hp(d,'sp98_manila',{kind:'battle',left:1,note:'美国以两千万美元买下菲律宾并得关岛，接着打了三年美菲战争。'});
+   },[['fill',HC.america,'1898—1903年美国获取或控制的跨洋据点'],['dot',HC.war,'马尼拉湾'],['dot','#2a2018','巴拿马城、巴黎与关岛']]),
+  hs('1898—1914年','九八一代与侨资回流','色块为西班牙与卡斯蒂利亚腹地；图钉标出乌纳穆诺任教的萨拉曼卡及侨资汇聚的马德里、毕尔巴鄂与巴塞罗那。',[[35.5,-10.0],[44.2,4.2]],d=>{
+    ha(d,'fr18Spain1812',HC.spain,{fillOpacity:.18});ha(d,'sCastile',HC.spain,{fillOpacity:.25});
+    hp(d,'sp98_salamanca',{note:'乌纳穆诺在此任大学校长，与马查多等人反思西班牙精神危机。'});
+    hp(d,'c5_madrid',{note:'1900年古巴归侨资金在此创办西班牙西美银行。'});
+    hp(d,'sp98_bilbao',{note:'1901年成立比斯开银行，并合并炼铁厂组建西班牙高炉公司。'});
+    hp(d,'k_barcelona',{left:1,note:'失去了古巴棉布保护市场，转而发展水电与内销工业。'});
+   },[['fill',HC.spain,'西班牙与卡斯蒂利亚腹地'],['dot','#2a2018','萨拉曼卡、马德里、毕尔巴鄂与巴塞罗那']]),
+  hs('1914—1931年','阿努瓦尔惨败与第二共和国','北面是西班牙本土，南面红色是西属摩洛哥；图钉标出加的斯、马德里、阿努瓦尔与巴塞罗那。',[[34.0,-9.5],[43.8,4.2]],d=>{
+    ha(d,'fr18Spain1812',HC.spain,{fillOpacity:.24});ha(d,'sp19SpanishMorocco',HC.war,{fillOpacity:.45});
+    hp(d,'spa_cadiz',{note:'西军由此渡海增援摩洛哥，征兵屡次激起国内工农骚乱。'});
+    hp(d,'c5_madrid',{note:'1931年4月14日市民涌上太阳门广场欢呼共和，国王当夜离京。'});
+    hp(d,'sp98_annual',{kind:'battle',note:'1921年7月西军在此溃败，主将西尔韦斯特雷自杀或阵亡。'});
+    hp(d,'k_barcelona',{left:1,note:'1923年9月普里莫·德·里维拉在此发表宣言发动军事政变。'});
+   },[['fill',HC.spain,'西班牙（1931年4月成立第二共和国）'],['fill',HC.war,'西属摩洛哥（里夫战争）'],['dot',HC.war,'阿努瓦尔'],['dot','#2a2018','加的斯、马德里与巴塞罗那']])
+ ]},
 {id:'history-faith-israel',ch:6,title:'从大河那边来：希伯来人与出埃及',short:'族长与出埃及',en:'From Beyond the River: the Hebrews and the Exodus',period:'约前1400—前1200年',c:HC.faith,
  scenes:[
   hs('传说时代—前14世纪','大河那边来的人','经书说祖先从幼发拉底河下游的乌尔经哈兰来到迦南；前14世纪的泥板里，迦南诸王向法老告“哈比鲁人”的状。',[[25.5,29.5],[38.6,48.5]],d=>{
@@ -15960,6 +16246,388 @@ const HISTORY_ENTRIES=[
     hp(d,'ty3_munster',{note:'1648年10月24日和约在此和奥斯纳布吕克签成。'});
     hr(d,[[42.36,-71.06],[46.0,-45.0],[49.5,-15.0],[51.5,-0.1]],HC.route);
    },[['fill',HC.america,'新英格兰'],['fill',HC.britain,'英格兰'],['dline',HC.route,'1640年后的回流（概略）'],['dot','#2a2018','波士顿、伦敦、海牙与明斯特']])
+ ]},
+{id:'history-america-colonies',ch:14,title:'十三殖民地：英国放任不管，议会攥住总督钱袋',short:'十三殖民地',en:'The Thirteen Colonies: Salutary Neglect and Assemblies Holding the Governor’s Purse',period:'1648—1754年',c:HC.america,
+ scenes:[
+  hs('1651—1664年','四条军舰收下曼哈顿','色块是南北两片英国殖民地与夹在中间的新尼德兰；图钉标出詹姆斯敦、曼哈顿与波士顿。',[[36.0,-78.5],[44.2,-69.0]],d=>{
+    ha(d,'amNewEngland1640',HC.britain,{fillOpacity:.32});ha(d,'amNewNetherland1630',HC.lowlands,{fillOpacity:.45});ha(d,'amVirginia1624',HC.britain,{fillOpacity:.38});
+    hp(d,'amv_jamestown',{note:'弗吉尼亚烟草此前常由荷兰商船廉价转运欧洲。'});
+    hp(d,'amd_manhattan',{kind:'battle',note:'1664年9月6日签字交城，改名纽约，荷兰居民保留产权与宗教自由。'});
+    hp(d,'amh_boston',{left:1,note:'英舰先在此停靠征募新英格兰民兵，再南下哈德逊河口。'});
+   },[['fill',HC.britain,'英属新英格兰与弗吉尼亚'],['fill',HC.lowlands,'1664年被英国吞并的新尼德兰'],['dot',HC.war,'曼哈顿岛'],['dot','#2a2018','詹姆斯敦与波士顿']]),
+  hs('1681—1701年','佩恩的林地与费城','西侧是新建的宾夕法尼亚与南面的弗吉尼亚，东侧是颁发特许状的伦敦。',[[36.0,-82.0],[55.0,3.0]],d=>{
+    ha(d,'am19Pennsylvania',HC.america,{fillOpacity:.48});ha(d,'amVirginia1624',HC.britain,{fillOpacity:.32});ha(d,'mEngland1066',HC.britain,{fillOpacity:.25});
+    hp(d,'amv_jamestown',{note:'南面弗吉尼亚奉英国国教，与贵格会的宽容体制迥异。'});
+    hp(d,'amc_philadelphia',{note:'1682年佩恩乘欢迎号在此登岸，与莱纳佩人树下盟约。'});
+    hp(d,'k_london',{left:1,note:'1681年3月查理二世在此签发特许状，抵销一万六千镑旧债。'});
+   },[['fill',HC.america,'宾夕法尼亚（1681年特许）'],['fill',HC.britain,'英格兰与弗吉尼亚'],['dot','#2a2018','詹姆斯敦、费城与伦敦']]),
+  hs('1686—1740年','波士顿起义与糖蜜走私','北面是新英格兰与英国本土，南面是产糖蜜的法属加勒比海岛；虚线示意北美走私船航路。',[[14.0,-82.0],[56.0,4.0]],d=>{
+    ha(d,'amNewEngland1640',HC.america,{fillOpacity:.38});ha(d,'fr18SaintDomingue',HC.france,{fillOpacity:.48});ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.28});
+    hp(d,'amh_boston',{kind:'battle',note:'1689年4月18日市民抓捕总督安德罗斯；港内朗姆酒坊全靠走私糖蜜。'});
+    hp(d,'sp1_santo_domingo',{note:'岛西部的法属圣多明各糖蜜廉价，大量走私北运新英格兰。'});
+    hp(d,'k_london',{left:1,note:'沃波尔内阁对北美走私睁一只眼闭一只眼，以换取殖民地买英国货。'});
+    hr(d,[[18.47,-69.89],[30.0,-70.5],[42.36,-71.06]],HC.route);
+   },[['fill',HC.america,'新英格兰'],['fill',HC.france,'法属圣多明各（廉价糖蜜产地）'],['fill',HC.britain,'大不列颠'],['dline',HC.route,'法属加勒比糖蜜走私北上航线（概略）'],['dot',HC.war,'波士顿'],['dot','#2a2018','圣多明各与伦敦']]),
+  hs('1700—1750年','十三殖民地成型与议会控权','色块是大西洋岸边成型的十三殖民地与南面的西属佛罗里达；图钉标出萨凡纳、威廉斯堡与波士顿。',[[27.0,-85.0],[45.0,-68.0]],d=>{
+    ha(d,'fr18ThirteenColonies1754',HC.america,{fillOpacity:.38});ha(d,'amLaFlorida1565',HC.spain,{fillOpacity:.32});
+    hp(d,'amc_savannah',{note:'1733年奥格尔索普建城，安置英国负债贫民并充当南方防线。'});
+    hp(d,'amc_williamsburg',{note:'1699年起为弗吉尼亚新首府，市民院在此掌握地方税款。'});
+    hp(d,'amh_boston',{left:1,note:'马萨诸塞议会拒设固定总督年薪，坚持每年视总督表现拨款。'});
+   },[['fill',HC.america,'英属北美十三殖民地'],['fill',HC.spain,'西属佛罗里达'],['dot','#2a2018','萨凡纳、威廉斯堡与波士顿']]),
+  hs('1676—1740年','培根起义与南方黑奴种植园','色块是弗吉尼亚、南方种植园带与加勒比糖岛；图钉标出查尔斯顿、被烧的詹姆斯敦与巴巴多斯。',[[11.0,-85.0],[40.0,-56.0]],d=>{
+    ha(d,'amVirginia1624',HC.war,{fillOpacity:.48});ha(d,'am19CottonBelt',HC.america,{fillOpacity:.3});ha(d,'aCaribbean',HC.britain,{fillOpacity:.22});
+    hp(d,'amc_charleston',{note:'南卡罗来纳照搬巴巴多斯奴隶法典，黑奴人口超过白人。'});
+    hp(d,'amv_jamestown',{kind:'battle',note:'1676年9月19日培根率黑白起义者焚毁城池，后首府迁往威廉斯堡。'});
+    hp(d,'amd_barbados',{left:1,note:'英属加勒比糖岛；大批种植园主带着黑奴与严苛法典由此迁往南卡。'});
+   },[['fill',HC.war,'1676年培根起义的弗吉尼亚'],['fill',HC.america,'南方黑奴种植园带（示意）'],['fill',HC.britain,'加勒比海岛（示意）'],['dot',HC.war,'詹姆斯敦'],['dot','#2a2018','查尔斯顿与巴巴多斯']]),
+  hs('1730—1754年','大觉醒与富兰克林的邮路','色块是十三殖民地与西侧的新法兰西；虚线是富兰克林整顿的快马邮路，连接波士顿、费城与查尔斯顿。',[[30.5,-84.0],[45.0,-68.0]],d=>{
+    ha(d,'fr18ThirteenColonies1754',HC.america,{fillOpacity:.36});ha(d,'fr18NewFrance1754',HC.france,{fillOpacity:.22});
+    hp(d,'amc_charleston',{note:'怀特菲尔德多次南下至此布道，邮船与驿路将南方连入北方报网。'});
+    hp(d,'amc_philadelphia',{left:1,note:'富兰克林在此办报、建北美第一家公共借阅图书馆与哲学会。'});
+    hp(d,'amh_boston',{left:1,note:'富兰克林将波士顿至费城的邮信往返时间从六周缩短到三周。'});
+    hr(d,[[42.36,-71.06],[39.95,-75.16],[32.78,-79.93]],HC.route);
+   },[['fill',HC.america,'1750年达120万人的十三殖民地'],['fill',HC.france,'新法兰西（俄亥俄河谷冲突前夕）'],['dline',HC.route,'东海岸主干邮政驿路（概略）'],['dot','#2a2018','查尔斯顿、费城与波士顿']])
+ ]},
+{id:'history-america-independence',ch:14,title:'无代表不纳税：从撕税票倒茶叶到独立宣言',short:'无代表不纳税',en:'No Taxation Without Representation: From Stamp Act Protests and Boston Tea to Independence',period:'1763—1776年',c:HC.america,
+ scenes:[
+  hs('1763—1764年','1763年王室公告线与糖税','色块是1763年英国新获领地与十三殖民地；红虚线为沿阿巴拉契亚山脊禁越的王室公告线。',[[30.0,-89.0],[49.0,-66.0]],d=>{
+    ha(d,'fr18BritishGains1763',HC.britain,{fillOpacity:.28});ha(d,'brThirteenColonies1775',HC.america,{fillOpacity:.38});
+    hp(d,'ami_detroit',{kind:'battle',note:'1763年5月庞蒂亚克率部围攻此堡，英军派兵解围。'});
+    hp(d,'fsy_duquesne',{note:'俄亥俄河源头的皮特堡，弗吉尼亚土地投机商急欲越山圈地。'});
+    hp(d,'amh_boston',{left:1,note:'1764年《糖税法》严查走私，违禁案改由无陪审团的海事法庭审理。'});
+    hr(d,[[44.5,-72.0],[40.44,-80.01],[36.5,-81.5],[33.0,-84.0]],HC.war);
+   },[['fill',HC.britain,'1763年英国新获领地（山脉以西划为印第安保留地）'],['fill',HC.america,'北美十三殖民地'],['dline',HC.war,'1763年王室公告线（严禁移民越山西进）'],['dot',HC.war,'底特律堡'],['dot','#2a2018','皮特堡（今匹兹堡）与波士顿']]),
+  hs('1765—1766年','印花税大会与无代表不纳税','西侧是抗议印花税的十三殖民地，东侧是下令征税又被迫撤回的伦敦威斯敏斯特。',[[33.0,-82.0],[55.0,4.0]],d=>{
+    ha(d,'brThirteenColonies1775',HC.america,{fillOpacity:.38});ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.3});
+    hp(d,'ami_williamsburg',{note:'1765年5月帕特里克·亨利在弗吉尼亚市民院率先通过反印花税决议。'});
+    hp(d,'amf_nybay',{note:'1765年10月九殖民地代表在此开印花税大会，宣告无代表不纳税。'});
+    hp(d,'k_london',{left:1,note:'受英国出口商请愿压力，议会于1766年3月废除印花税并立《宣示法》。'});
+   },[['fill',HC.america,'联合抵制印花税的十三殖民地'],['fill',HC.britain,'大不列颠'],['dot','#2a2018','威廉斯堡、纽约湾与伦敦']]),
+  hs('1767—1773年','波士顿惨案与倾茶入海','色块是掀起抵制英货浪潮的十三殖民地；图钉标出拒销茶叶的查尔斯顿、费城与倾茶入海的波士顿。',[[31.0,-83.0],[44.5,-68.0]],d=>{
+    ha(d,'brThirteenColonies1775',HC.war,{fillOpacity:.38});
+    hp(d,'ami_charleston',{note:'海关将无人认领的东印度公司茶叶扣入交易所地窖，不准上市。'});
+    hp(d,'ami_philadelphia',{left:1,note:'市民大会逼迫茶船船长不卸一箱茶，原船掉头返航英国。'});
+    hp(d,'amh_boston',{kind:'battle',left:1,note:'1770年发生波士顿惨案；1773年12月夜342箱茶叶在此入海。'});
+   },[['fill',HC.war,'抵制汤森税与茶税的十三殖民地'],['dot',HC.war,'波士顿'],['dot','#2a2018','查尔斯顿与费城']]),
+  hs('1774—1775年4月','大陆会议与列克星敦枪声','南面是十二州代表集会的费城与波士顿战场，北面是1774年英国同时颁布《魁北克法》安抚的加拿大。',[[35.5,-80.0],[48.5,-68.0]],d=>{
+    ha(d,'brThirteenColonies1775',HC.war,{fillOpacity:.38});ha(d,'fr18BritishGains1763',HC.britain,{fillOpacity:.25});
+    hp(d,'ami_philadelphia',{note:'1774年9—10月第一届大陆会议在此木匠厅召开，决议全面断绝英货。'});
+    hp(d,'amf_quebec',{note:'1774年《魁北克法》准许法裔保留天主教并把俄亥俄河谷划归魁北克。'});
+    hp(d,'amh_boston',{kind:'battle',left:1,note:'1775年4月19日英军出城赴列克星敦与康科德搜火药，沿路遭伏击。'});
+   },[['fill',HC.war,'武装备战的十三殖民地'],['fill',HC.britain,'英属加拿大'],['dot',HC.war,'波士顿（列克星敦与康科德）'],['dot','#2a2018','费城与魁北克']]),
+  hs('1775年5月—1776年1月','华盛顿统兵与常识问世','色块是十三殖民地；虚线是1775年夏华盛顿从费城大陆会议北上波士顿接掌大陆军的路线。',[[31.5,-83.0],[44.5,-68.0]],d=>{
+    ha(d,'brThirteenColonies1775',HC.america,{fillOpacity:.38});
+    hp(d,'ami_charleston',{note:'南方民兵同步接管火药库，驱逐英王委派的王室总督。'});
+    hp(d,'ami_philadelphia',{left:1,note:'第二届大陆会议在此任命华盛顿；1776年1月潘恩在此印行《常识》。'});
+    hp(d,'amh_boston',{kind:'battle',left:1,note:'1775年6月邦克山血战后，华盛顿赶到剑桥大营围困城内英军。'});
+    hr(d,[[39.95,-75.16],[40.71,-74.01],[41.31,-72.92],[42.36,-71.06]],HC.route);
+   },[['fill',HC.america,'组建大陆军的十三殖民地'],['dline',HC.route,'1775年6—7月华盛顿赴波士顿统兵路线（概略）'],['dot',HC.war,'波士顿（邦克山）'],['dot','#2a2018','查尔斯顿与费城']]),
+  hs('1776年7月','独立宣言与合众国诞生','色块是宣告脱离英国独立的十三州；图钉标出查尔斯顿、率先指示提议独立的威廉斯堡与通过宣言的费城。',[[31.0,-84.0],[45.0,-68.0]],d=>{
+    ha(d,'am19US1783',HC.america,{fillOpacity:.38});
+    hp(d,'ami_charleston',{note:'南卡罗来纳代表坚持删去宣言草稿中谴责奴隶贸易的段落。'});
+    hp(d,'ami_williamsburg',{note:'1776年5月弗吉尼亚议会在此授权代表向大陆会议正式动议独立。'});
+    hp(d,'ami_philadelphia',{kind:'battle',left:1,note:'1776年7月4日在议事堂通过《独立宣言》，7月8日当众宣读。'});
+   },[['fill',HC.america,'1776年7月宣告独立的美利坚合众国（含西部声索地）'],['dot',HC.war,'费城（独立厅）'],['dot','#2a2018','查尔斯顿与威廉斯堡']])
+ ]},
+{id:'history-america-constitution',ch:14,title:'费城制宪：五十五个有产者关门写宪法，再用国债绑住富人',short:'费城制宪',en:'The Philadelphia Convention: Fifty-Five Men of Property Behind Closed Doors',period:'1783—1800年',c:HC.america,
+ scenes:[
+  hs('1783—1787年','没牙的邦联与谢斯起义','1783年独立后的美国疆域、谢斯起义的斯普林菲尔德，以及华盛顿交还军权的安纳波利斯。',[[34.0,-86.0],[45.5,-66.0]],d=>{
+    ha(d,'am19US1783',HC.america,{fillOpacity:.22});ha(d,'amMassBay1640',HC.war,{fillOpacity:.36});
+    hp(d,'amco_springfield',{kind:'battle',left:1,note:'1787年1月谢斯率债农攻打军械库，波士顿富商雇民兵击退。'});
+    hp(d,'amco_annapolis',{left:1,note:'1783年华盛顿在此交还军权；1786年五州在此倡议费城修宪。'});
+    hp(d,'fsy_duquesne',{note:'阿巴拉契亚山以西的边疆重镇；邦联无力在此维持驻军。'});
+   },[['fill',HC.america,'1783年独立后的美国疆域（示意）'],['fill',HC.war,'爆发谢斯起义的马萨诸塞'],['dot',HC.war,'斯普林菲尔德'],['dot','#2a2018','安纳波利斯与匹兹堡']]),
+  hs('1787年5—9月','费城关门修宪','召开制宪会议的费城、缺席的罗德岛普罗维登斯，以及华盛顿与麦迪逊的弗吉尼亚家乡。',[[35.5,-83.0],[44.0,-67.0]],d=>{
+    ha(d,'am19US1783',HC.america,{fillOpacity:.18});ha(d,'am19Pennsylvania',HC.america,{fillOpacity:.34});ha(d,'amRhodeIsland1640',HC.war,{fillOpacity:.38});
+    hp(d,'amh_providence',{left:1,note:'罗德岛正印纸币帮债农还债，拒绝派代表去费城。'});
+    hp(d,'fam_philadelphia',{left:1,note:'五十五名代表在议事堂钉死窗户，闷热中秘议四个月。'});
+    hp(d,'amco_monticello',{note:'弗吉尼亚山麓；麦迪逊在邻近的蒙彼利埃庄园苦读政体史。'});
+   },[['fill',HC.america,'派代表赴费城的十二州与宾夕法尼亚'],['fill',HC.war,'抵制制宪会议的罗德岛'],['dot','#2a2018','费城、普罗维登斯与弗吉尼亚山麓']]),
+  hs('1787年7—9月','大小州与五分之三妥协','提出两院妥协的康涅狄格哈特福德、签字的费城，以及南方蓄奴州重镇查尔斯顿。',[[31.0,-84.0],[44.0,-68.0]],d=>{
+    ha(d,'am19US1783',HC.america,{fillOpacity:.2});ha(d,'am19Pennsylvania',HC.america,{fillOpacity:.34});
+    hp(d,'amh_hartford',{left:1,note:'康涅狄格代表谢尔曼提出众议院按人口、参议院每州两席。'});
+    hp(d,'fam_philadelphia',{left:1,note:'宾夕法尼亚议事堂；新宪法在此定稿后送交各州审议。'});
+    hp(d,'amco_charleston',{note:'南卡罗来纳与佐治亚代表威胁若禁贩奴就不入联邦。'});
+   },[['fill',HC.america,'美国十三州与宾夕法尼亚（示意）'],['dot','#2a2018','哈特福德、费城与查尔斯顿']]),
+  hs('1787—1791年','联邦党人文集与权利法案','连载《联邦党人文集》并举行首任总统就职礼的纽约、激辩批宪的里士满与波士顿。',[[34.5,-83.0],[44.5,-67.0]],d=>{
+    ha(d,'am19US1783',HC.america,{fillOpacity:.22});
+    hp(d,'amh_boston',{left:1,note:'1788年2月马萨诸塞以附加权利修正案为条件批准宪法。'});
+    hp(d,'amd_manhattan',{left:1,note:'纽约报刊连载八十五篇文集；1789年4月华盛顿在华尔街就职。'});
+    hp(d,'amco_richmond',{note:'1788年6月弗吉尼亚在此以89票对79票惊险批准新宪法。'});
+   },[['fill',HC.america,'批准新宪法的美国各州（示意）'],['dot','#2a2018','波士顿、纽约与里士满']]),
+  hs('1789—1794年','国债交易与威士忌平叛','支持财税新政的北方商港波士顿、选定新首都的华盛顿特区，以及华盛顿率军平定抗税的匹兹堡。',[[35.5,-84.0],[44.5,-67.0]],d=>{
+    ha(d,'am19US1783',HC.america,{fillOpacity:.18});ha(d,'am19Pennsylvania',HC.war,{fillOpacity:.28});
+    hp(d,'amh_boston',{left:1,note:'北方航运商人与公债买主云集，力挺汉密尔顿全额付息。'});
+    hp(d,'amco_washington',{left:1,note:'1790年纽约餐桌妥协选定波托马克河畔为新首都。'});
+    hp(d,'fsy_duquesne',{kind:'battle',note:'1794年秋一万三千民兵翻山进驻匹兹堡，抗税农夫散去。'});
+    hr(d,[[39.95,-75.17],[40.2,-77.2],[40.44,-80.01]],HC.route);
+   },[['fill',HC.america,'美国疆域（示意）'],['fill',HC.war,'爆发威士忌抗税的宾夕法尼亚'],['dline',HC.route,'1794年秋华盛顿率民兵西进路线（概略）'],['dot',HC.war,'匹兹堡'],['dot','#2a2018','波士顿与华盛顿特区']]),
+  hs('1793—1801年','两党分野与和平交班','1800年迁入新都的华盛顿特区，以及把美国政坛劈成两派的英法交战国伦敦与巴黎。',[[32.0,-84.0],[54.0,8.0]],d=>{
+    ha(d,'am19US1783',HC.america,{fillOpacity:.24});ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.22});ha(d,'fr18France1789',HC.france,{fillOpacity:.22});
+    hp(d,'w_paris',{left:1,note:'法国革命政府派公使来美募私掠船，杰斐逊派深表同情。'});
+    hp(d,'k_london',{left:1,note:'1794年杰伊赴伦敦签约，换英军撤出北美西北据点。'});
+    hp(d,'amco_washington',{note:'1801年3月4日杰斐逊在此步行前往国会大厦宣誓就职。'});
+   },[['fill',HC.america,'美国'],['fill',HC.britain,'大不列颠'],['fill',HC.france,'法兰西共和国'],['dot','#2a2018','华盛顿特区、伦敦与巴黎']])
+ ]},
+{id:'history-america-westward',ch:14,title:'西进运动与美墨战争：花小钱买路易斯安那，用运河与大炮推到太平洋',short:'西进运动与美墨战争',en:'Westward Expansion and the Mexican-American War: From the Louisiana Purchase to California Gold',period:'1801—1848年',c:HC.america,
+ scenes:[
+  hs('1801—1806年','路易斯安那与穿越大陆','1803年路易斯安那购地范围，以及刘易斯与克拉克从圣路易斯到太平洋岸的探险路线。',[[24.0,-128.0],[51.0,-68.0]],d=>{
+    ha(d,'am19US1783',HC.america,{fillOpacity:.18});ha(d,'am19LouisianaPurchase',HC.america,{fillOpacity:.36});
+    hp(d,'amw_stlouis',{left:1,note:'1804年5月刘易斯与克拉克率四十余人由此启程溯河西上。'});
+    hp(d,'fco_neworleans',{left:1,note:'密西西比河出海港；1803年12月法方向美方降旗移交。'});
+    hp(d,'amw_clatsop',{note:'1805年11月探险队抵达哥伦比亚河入海口，见到了太平洋。'});
+    hr(d,[[38.63,-90.20],[41.2,-96.0],[46.8,-100.8],[47.5,-111.3],[46.2,-119.1],[46.13,-123.88]],HC.route);
+   },[['fill',HC.america,'1803年路易斯安那购地（深）与原有疆域（浅）'],['dline',HC.route,'1804—1806年刘易斯与克拉克探险路线（概略）'],['dot','#2a2018','新奥尔良、圣路易斯与克拉索普堡']]),
+  hs('1812—1815年','白宫被烧与新奥尔良','1812年战争的美加边境、英军焚毁白宫的华盛顿，以及1815年1月杰克逊获胜的新奥尔良。',[[25.0,-96.0],[49.0,-65.0]],d=>{
+    ha(d,'am19US1783',HC.america,{fillOpacity:.22});ha(d,'am19LouisianaPurchase',HC.america,{fillOpacity:.14});ha(d,'fr18BritishGains1763',HC.britain,{fillOpacity:.18});
+    hp(d,'amf_quebec',{left:1,note:'英属加拿大首府；美军多次北攻加拿大均被英军与民兵击退。'});
+    hp(d,'amw_washington',{kind:'battle',left:1,note:'1814年8月英军烧白宫；9月北攻巴尔的摩麦克亨利堡未克。'});
+    hp(d,'fco_neworleans',{kind:'battle',note:'1815年1月8日杰克逊在此大败英军，美军仅阵亡十余人。'});
+   },[['fill',HC.america,'美国疆域（示意）'],['fill',HC.britain,'英属加拿大（示意）'],['dot',HC.war,'华盛顿与新奥尔良'],['dot','#2a2018','魁北克']]),
+  hs('1817—1829年','伊利运河与平民总统','连通伊利湖布法罗与纽约港的水路，以及平民涌入庆祝杰克逊就职的华盛顿。',[[34.5,-86.0],[45.5,-69.0]],d=>{
+    ha(d,'am19US1783',HC.america,{fillOpacity:.22});
+    hp(d,'amd_manhattan',{left:1,note:'哈德逊河出海口；伊利运河通航后跃居全美第一大港。'});
+    hp(d,'amw_washington',{left:1,note:'1829年3月4日杰克逊就职，白宫草坪摆出酒桶与奶酪待客。'});
+    hp(d,'amw_buffalo',{note:'伊利运河西端起点；中西部小麦由此入运河东下纽约。'});
+    hr(d,[[42.89,-78.88],[43.05,-76.15],[42.65,-73.75],[40.71,-74.01]],HC.route);
+   },[['fill',HC.america,'美国东部与中西部（示意）'],['dline',HC.route,'1825年通航的伊利运河与哈德逊河水路（概略）'],['dot','#2a2018','布法罗、纽约与华盛顿']]),
+  hs('1830—1839年','印第安迁移与血泪之路','1838—1839年切诺基人从佐治亚新埃科塔被强押西迁至俄克拉荷马塔勒阔的“血泪之路”。',[[29.0,-100.0],[41.5,-74.0]],d=>{
+    ha(d,'am19US1783',HC.america,{fillOpacity:.18});ha(d,'am19CottonBelt',HC.war,{fillOpacity:.32});
+    hp(d,'amw_washington',{left:1,note:'1830年国会通过迁移法；1832年最高法院判词成一纸空文。'});
+    hp(d,'amw_new_echota',{kind:'battle',left:1,note:'切诺基族旧都；1838年美军在此设营房关押族人西迁。'});
+    hp(d,'amw_tahlequah',{note:'千余公里强行军终点；约四分之一切诺基人死在半路。'});
+    hr(d,[[34.54,-84.91],[35.9,-86.9],[37.2,-89.5],[37.2,-93.3],[35.92,-94.97]],HC.war);
+   },[['fill',HC.war,'逼迁原住民以扩种棉花的南方棉花带'],['fill',HC.america,'美国其余地区（示意）'],['dline',HC.war,'1838—1839年切诺基人“血泪之路”北线（概略）'],['dot',HC.war,'新埃科塔'],['dot','#2a2018','华盛顿与塔勒阔']]),
+  hs('1835—1848年','阿拉莫与美墨战争','德克萨斯与1848年墨西哥割让地，以及圣哈辛托、墨西哥城和旧金山湾。',[[15.0,-126.0],[43.0,-82.0]],d=>{
+    ha(d,'am19Texas1836',HC.america,{fillOpacity:.34});ha(d,'am19MexicanCession1848',HC.america,{fillOpacity:.26});ha(d,'am19Mexico1848',HC.spain,{fillOpacity:.22});
+    hp(d,'amw_sanjacinto',{kind:'battle',left:1,note:'1836年3月圣安纳破阿拉莫，4月休斯敦在此突袭俘圣安纳。'});
+    hp(d,'sp1_tenochtitlan',{kind:'battle',left:1,note:'1847年美军自韦拉克鲁斯登陆攻占此城，次年2月签割地约。'});
+    hp(d,'amw_sanfrancisco',{note:'1846年美国海军太平洋分舰队占领蒙特雷与旧金山湾。'});
+   },[['fill',HC.america,'德克萨斯（深）与1848年墨西哥割让地（浅）'],['fill',HC.spain,'1848年割地后的墨西哥'],['dot',HC.war,'圣哈辛托与墨西哥城'],['dot','#2a2018','旧金山']]),
+  hs('1848—1850年','九天之差的加州金矿','发现金矿的萨特锯木厂，以及淘金客从美东经巴拿马地峡赴加利福尼亚的航路。',[[5.0,-130.0],[46.0,-66.0]],d=>{
+    ha(d,'am19US1783',HC.america,{fillOpacity:.16});ha(d,'am19LouisianaPurchase',HC.america,{fillOpacity:.2});ha(d,'am19Texas1836',HC.america,{fillOpacity:.24});ha(d,'am19MexicanCession1848',HC.war,{fillOpacity:.38});
+    hp(d,'amd_manhattan',{left:1,note:'美东淘金客由此登船，或绕合恩角，或经巴拿马地峡赴加州。'});
+    hp(d,'sp1_panama',{left:1,note:'淘金客在此下船穿过热带雨林，再换太平洋轮船北上。'});
+    hp(d,'amw_coloma',{note:'1848年1月24日发现金沙；西南的旧金山港停满弃船。'});
+    hr(d,[[40.71,-74.01],[24.0,-74.5],[8.95,-79.53],[20.0,-107.0],[37.78,-122.42]],HC.route);
+   },[['fill',HC.war,'1848年割得并发现金矿的加利福尼亚与新墨西哥'],['fill',HC.america,'美国其余疆域'],['dline',HC.route,'1849年美东经巴拿马赴加州淘金航线（概略）'],['dot','#2a2018','萨特锯木厂、纽约与巴拿马城']])
+ ]},
+{id:'history-america-latam',ch:14,title:'拉美独立：趁拿破仑绑走西班牙国王，翻越安第斯山拆碎三百年帝国',short:'拉美独立',en:'Latin American Independence: Crossing the Andes While Madrid Had No King',period:'1780—1825年',c:HC.america,
+ scenes:[
+  hs('1780—1804年','土生白人的夹心账','西属新西班牙与秘鲁总督区、图帕克·阿马鲁起义的库斯科，以及黑奴建国的海地。',[[-24.0,-106.0],[28.0,-56.0]],d=>{
+    ha(d,'aNewSpain1600',HC.spain,{fillOpacity:.22});ha(d,'aPeru1600',HC.spain,{fillOpacity:.22});ha(d,'fr18SaintDomingue',HC.war,{fillOpacity:.45});
+    hp(d,'aml_caracas',{left:1,note:'委内瑞拉首府；可可庄园主皆为土生白人，大权却归半岛官员。'});
+    hp(d,'fco_capfrancais',{kind:'battle',left:1,note:'1804年黑奴起义军建海地国，震慑全美洲白人庄园主。'});
+    hp(d,'sp1_cusco',{kind:'battle',note:'1781年5月图帕克·阿马鲁二世在此城广场被处死。'});
+    hp(d,'sp1_tenochtitlan',{note:'新西班牙首府墨西哥城；银矿与庄园富甲美洲。'});
+   },[['fill',HC.spain,'西属新西班牙与秘鲁总督区（示意）'],['fill',HC.war,'1804年独立的海地'],['dot',HC.war,'法兰西角与库斯科'],['dot','#2a2018','加拉加斯与墨西哥城']]),
+  hs('1808—1815年','马德里没了国王','1810年起事的多洛雷斯、加拉加斯与布宜诺斯艾利斯，以及1815年莫里略远征军航线。',[[-40.0,-108.0],[42.0,2.0]],d=>{
+    ha(d,'fr18Spain1812',HC.spain,{fillOpacity:.28});ha(d,'aNewSpain1600',HC.spain,{fillOpacity:.18});ha(d,'am19GranColombia',HC.war,{fillOpacity:.26});ha(d,'am19RioPlata',HC.america,{fillOpacity:.26});
+    hp(d,'spa_cadiz',{left:1,note:'1815年春莫里略率一万西班牙老兵由此起航扑向委内瑞拉。'});
+    hp(d,'aml_buenosaires',{left:1,note:'1810年5月成立自治政府，是唯一未被西军收复的据点。'});
+    hp(d,'aml_caracas',{left:1,note:'1811年宣布成立共和国，后被保王派与莫里略大军攻占。'});
+    hp(d,'aml_dolores',{kind:'battle',note:'1810年9月伊达尔哥神父在此敲钟起事，次年兵败被杀。'});
+    hr(d,[[36.53,-6.29],[25.0,-32.0],[14.0,-55.0],[10.48,-66.90]],HC.spain);
+   },[['fill',HC.spain,'西班牙本土与新西班牙'],['fill',HC.war,'莫里略收复的新格拉纳达与委内瑞拉'],['fill',HC.america,'保持自治的拉普拉塔'],['dline',HC.spain,'1815年莫里略远征军航线（概略）'],['dot',HC.war,'多洛雷斯'],['dot','#2a2018','加的斯、加拉加斯与布宜诺斯艾利斯']]),
+  hs('1815—1821年','玻利瓦尔翻越安第斯山','海地太子港、加拉加斯与波哥大，以及1819年玻利瓦尔从大草原翻越安第斯山的奇袭路线。',[[-6.0,-84.0],[23.0,-58.0]],d=>{
+    ha(d,'am19GranColombia',HC.america,{fillOpacity:.32});ha(d,'fr18SaintDomingue',HC.france,{fillOpacity:.36});
+    hp(d,'aml_caracas',{kind:'battle',left:1,note:'1821年6月玻利瓦尔在城西卡拉沃沃击败西军，解放故乡。'});
+    hp(d,'aml_portauprince',{left:1,note:'1816年佩蒂翁在此赠枪支船只，嘱玻利瓦尔解放黑奴。'});
+    hp(d,'aml_bogota',{kind:'battle',note:'1819年8月7日博亚卡大捷后，玻利瓦尔进占波哥大。'});
+    hr(d,[[18.59,-72.31],[11.0,-64.0],[8.1,-63.5],[6.5,-70.0],[5.5,-73.3],[4.71,-74.07]],HC.route);
+   },[['fill',HC.america,'玻利瓦尔建立的大哥伦比亚共和国'],['fill',HC.france,'资助玻利瓦尔的海地'],['dline',HC.route,'1816—1819年玻利瓦尔自海地经草原翻山进军路线（概略）'],['dot',HC.war,'波哥大与加拉加斯'],['dot','#2a2018','太子港']]),
+  hs('1814—1824年','圣马丁北上与阿亚库乔','圣马丁翻越安第斯山解放智利、海路北上秘鲁与瓜亚基尔会晤的路线，以及阿亚库乔决战地。',[[-41.0,-86.0],[4.0,-52.0]],d=>{
+    ha(d,'am19RioPlata',HC.america,{fillOpacity:.24});ha(d,'aPeru1600',HC.spain,{fillOpacity:.2});ha(d,'am19GranColombia',HC.america,{fillOpacity:.18});
+    hp(d,'aml_mendoza',{left:1,note:'1817年1月圣马丁率五千安第斯山军由此翻越雪山入智利。'});
+    hp(d,'aml_ayacucho',{kind:'battle',left:1,note:'1824年12月9日苏克雷在此全歼西军主力、俘虏总督。'});
+    hp(d,'aml_guayaquil',{note:'1822年7月南北两位解放者在此密谈，圣马丁急流勇退。'});
+    hr(d,[[-32.89,-68.85],[-33.45,-70.67],[-33.0,-71.6],[-12.05,-77.04],[-2.19,-79.89]],HC.route);
+   },[['fill',HC.america,'拉普拉塔与大哥伦比亚'],['fill',HC.spain,'西军最后据守的秘鲁高地'],['dline',HC.route,'1817—1822年圣马丁翻山入智利并北上秘鲁、瓜亚基尔（概略）'],['dot',HC.war,'阿亚库乔'],['dot','#2a2018','门多萨与瓜亚基尔']]),
+  hs('1820—1822年','墨西哥与巴西的反路','伊图尔维德反水独立的墨西哥城、葡萄牙王室往返的里斯本，以及佩德罗一世称帝的里约热内卢。',[[-32.0,-108.0],[45.0,2.0]],d=>{
+    ha(d,'aNewSpain1600',HC.america,{fillOpacity:.28});ha(d,'aBrazil1600',HC.america,{fillOpacity:.28});ha(d,'sPortugal',HC.spain,{fillOpacity:.28});
+    hp(d,'sr_lisbon',{left:1,note:'1807年葡王室由此迁往巴西，1821年老王返国召王子回家。'});
+    hp(d,'aml_rio',{left:1,note:'1822年9月留守王子佩德罗拒绝返欧，在此加冕为巴西皇帝。'});
+    hp(d,'sp1_tenochtitlan',{note:'1821年9月伊图尔维德率军进占墨西哥城，次年加冕称帝。'});
+    hr(d,[[38.72,-9.14],[15.0,-26.0],[-8.0,-34.8],[-22.91,-43.17]],HC.route);
+   },[['fill',HC.america,'1821—1822年独立的墨西哥帝国与巴西帝国（示意）'],['fill',HC.spain,'葡萄牙本土'],['dline',HC.route,'1807—1808年葡萄牙王室迁都里约热内卢航线（概略）'],['dot','#2a2018','墨西哥城、里斯本与里约热内卢']]),
+  hs('1823—1830年','在海里耕地与门罗宣言','1830年解体的大哥伦比亚、发表《门罗宣言》的华盛顿，以及操控拉美商路与海权的伦敦。',[[-12.0,-90.0],[56.0,8.0]],d=>{
+    ha(d,'am19GranColombia',HC.war,{fillOpacity:.32});ha(d,'am19US1783',HC.america,{fillOpacity:.22});ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.24});
+    hp(d,'k_london',{left:1,note:'坎宁靠英国海军挡住欧洲干涉，伦敦银行包揽拉美新国公债。'});
+    hp(d,'aml_washington',{note:'1823年12月门罗与国务卿小亚当斯在此抛出“美洲是美洲人的美洲”。'});
+    hp(d,'sp1_cartagena',{note:'1830年12月玻利瓦尔在东面的圣玛尔塔贫病交加中去世。'});
+   },[['fill',HC.war,'1830年一分为三的大哥伦比亚'],['fill',HC.america,'发表《门罗宣言》的美国'],['fill',HC.britain,'掌控拉美海权与贸易的大不列颠'],['dot','#2a2018','卡塔赫纳、华盛顿与伦敦']])
+ ]},
+{id:'history-america-cotton',ch:14,title:'棉花王国与南北裂痕：一台轧棉机救活的奴隶制',short:'棉花王国与南北裂痕',en:'The Cotton Kingdom and the North–South Rift: Slavery Revived by a Cotton Gin',period:'1793—1860年',c:HC.america,
+ scenes:[
+  hs('1793—1850年','轧棉机与跨大西洋棉花航线','色块是美国南方棉花带与英国兰开夏棉纺区；虚线示意原棉从萨凡纳等南方海港运往英国。',[[24.0,-96.0],[57.0,4.0]],d=>{
+    ha(d,'am19CottonBelt',HC.america,{fillOpacity:.42});ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.28});ha(d,'brCottonLancs',HC.war,{fillOpacity:.42});
+    hp(d,'amct_savannah',{note:'1793年春惠特尼在城北桑树林庄园造出轧棉机，原棉由此出海。'});
+    hp(d,'amct_newhaven',{note:'惠特尼因轧棉机专利被仿造，回此开厂用可互换零件造滑膛枪。'});
+    hp(d,'brs_manchester',{left:1,note:'兰开夏棉纺厂经利物浦港吃进美国四分之三的出口原棉。'});
+    hr(d,[[29.95,-90.07],[32.08,-81.09],[42.0,-50.0],[53.48,-2.25]],HC.route);
+   },[['fill',HC.america,'美国南方棉花带'],['fill',HC.war,'英国兰开夏棉纺区'],['fill',HC.britain,'大不列颠'],['dline',HC.route,'跨大西洋原棉航线（概略）'],['dot','#2a2018','萨凡纳、纽黑文与曼彻斯特']]),
+  hs('1820—1848年','两种社会与北纬36度30分妥协线','色块是1783年美国疆域、路易斯安那购地与南方棉花带；红虚线标示北纬36度30分禁奴界线。',[[27.0,-106.0],[47.5,-66.0]],d=>{
+    ha(d,'am19US1783',HC.america,{fillOpacity:.22});ha(d,'am19LouisianaPurchase',HC.lowlands,{fillOpacity:.28});ha(d,'am19CottonBelt',HC.war,{fillOpacity:.38});
+    hp(d,'amct_stlouis',{note:'1820年密苏里与缅因成对入盟，参议院维持南北各十二州。'});
+    hp(d,'amct_charleston',{kind:'battle',note:'1832年南卡罗来纳在此通过法令拒交联邦高额保护关税。'});
+    hp(d,'amh_boston',{left:1,note:'新英格兰依靠保护性关税与自由劳工建起机制棉纺工业群。'});
+    hr(d,[[36.5,-100.0],[36.5,-89.5]],HC.war);
+   },[['fill',HC.war,'南方棉花与蓄奴核心带'],['fill',HC.lowlands,'路易斯安那购地（36°30′以北禁奴）'],['fill',HC.america,'密西西比河以东各州'],['dline',HC.war,'1820年北纬36度30分妥协线'],['dot',HC.war,'查尔斯顿'],['dot','#2a2018','圣路易斯与波士顿']]),
+  hs('1850—1852年','加州自由入盟与逃奴追缉法','色块是北方自由州与加利福尼亚、墨西哥割让地及南方棉花带；图钉标示旧金山、查尔斯顿与波士顿。',[[26.0,-126.0],[47.0,-67.0]],d=>{
+    ha(d,'am19Union1861',HC.america,{fillOpacity:.28});ha(d,'am19MexicanCession1848',HC.lowlands,{fillOpacity:.28});ha(d,'am19CottonBelt',HC.war,{fillOpacity:.38});
+    hp(d,'amct_sanfrancisco',{note:'1850年9月加利福尼亚跳过领地阶段，直接作为自由州加入联邦。'});
+    hp(d,'amct_charleston',{left:1,note:'《1850年妥协案》出台严苛捕奴法，准许南方奴主赴北方抓捕逃奴。'});
+    hp(d,'amh_boston',{left:1,note:'1852年《汤姆叔叔的小屋》在此出版；市民屡次冲击法院营救逃奴。'});
+   },[['fill',HC.america,'北方自由州与加利福尼亚'],['fill',HC.lowlands,'1848年墨西哥割让地'],['fill',HC.war,'南方棉花带'],['dot','#2a2018','旧金山、查尔斯顿与波士顿']]),
+  hs('1854—1856年','流血的堪萨斯与参议院手杖案','色块是放开公投的路易斯安那购地、北方自由州与南方棉花带；图钉标示劳伦斯、查尔斯顿与华盛顿。',[[28.0,-104.0],[45.5,-69.0]],d=>{
+    ha(d,'am19LouisianaPurchase',HC.lowlands,{fillOpacity:.32});ha(d,'am19Union1861',HC.america,{fillOpacity:.24});ha(d,'am19CottonBelt',HC.war,{fillOpacity:.38});
+    hp(d,'amct_lawrence',{kind:'battle',note:'1856年5月蓄奴派洗劫劳伦斯，布朗随后在波塔瓦托米溪杀五人报复。'});
+    hp(d,'amct_charleston',{note:'南卡罗来纳支持者寄去上百根刻着“再打他一次”的新手杖。'});
+    hp(d,'amct_washington',{kind:'battle',left:1,note:'1856年5月22日布鲁克斯在参议院议事厅打断手杖重伤萨姆纳。'});
+   },[['fill',HC.lowlands,'取消禁奴线的西部内陆领地'],['fill',HC.america,'北方自由州'],['fill',HC.war,'南方棉花带'],['dot',HC.war,'劳伦斯与华盛顿'],['dot','#2a2018','查尔斯顿']]),
+  hs('1857—1859年','斯科特败诉与哈珀斯费里夜袭','色块是北方自由州与南方蓄奴州；图钉标示圣路易斯、哈珀斯费里与波士顿。',[[30.5,-93.5],[43.8,-69.5]],d=>{
+    ha(d,'am19Union1861',HC.america,{fillOpacity:.28});ha(d,'am19Confederacy1861',HC.war,{fillOpacity:.34});
+    hp(d,'amct_stlouis',{note:'斯科特在圣路易斯老法院打了十一年官司，1857年被最高法院驳回。'});
+    hp(d,'amct_harpers_ferry',{kind:'battle',left:1,note:'1859年10月18日陆战队冲破军械库水龙车房，生擒负伤的布朗。'});
+    hp(d,'amh_boston',{left:1,note:'新英格兰“秘密六人组”资助布朗枪支，受刑日北方各城鸣钟志哀。'});
+   },[['fill',HC.america,'北方自由州'],['fill',HC.war,'南方蓄奴州'],['dot',HC.war,'哈珀斯费里'],['dot','#2a2018','圣路易斯与波士顿']]),
+  hs('1858—1860年','1860年大选与南卡罗来纳脱离联邦','色块是投给林肯的北方自由州与随后脱离联邦的南方十一州；图钉标示斯普林菲尔德与查尔斯顿等地。',[[28.0,-93.5],[43.0,-74.0]],d=>{
+    ha(d,'am19Union1861',HC.america,{fillOpacity:.36});ha(d,'am19Confederacy1861',HC.war,{fillOpacity:.40});
+    hp(d,'amct_springfield',{note:'1858年林肯在此发表《裂屋演说》，1860年在此获知当选总统。'});
+    hp(d,'fco_neworleans',{note:'密西西比、路易斯安那等深南产棉州在1861年1月相继脱离联邦。'});
+    hp(d,'amct_charleston',{kind:'battle',left:1,note:'1860年12月20日南卡罗来纳代表大会以169比0全票脱离联邦。'});
+    hp(d,'amct_washington',{left:1,note:'南方国会议员成批辞职南归，看守总统布坎南束手无策。'});
+   },[['fill',HC.america,'林肯横扫的北方自由州'],['fill',HC.war,'1860—1861年脱离联邦的南方蓄奴州'],['dot',HC.war,'查尔斯顿'],['dot','#2a2018','斯普林菲尔德、新奥尔良与华盛顿']])
+ ]},
+{id:'history-america-civilwar',ch:14,title:'美国内战：用兵工厂和废奴令磨穿南方',short:'美国内战',en:'The American Civil War: Grinding Down the Confederacy with Factories and Emancipation',period:'1861—1865年',c:HC.america,
+ scenes:[
+  hs('1861年','萨姆特堡炮声与南北阵营','色块是北方联邦各州与南方美利坚邦联十一州；图钉标示新奥尔良、萨姆特堡、里士满与波士顿。',[[25.5,-104.0],[47.0,-66.5]],d=>{
+    ha(d,'am19Union1861',HC.america,{fillOpacity:.34});ha(d,'am19Confederacy1861',HC.war,{fillOpacity:.38});
+    hp(d,'fco_neworleans',{note:'南方最大海港；西面的蒙哥马利在2月成立美利坚邦联。'});
+    hp(d,'amcw_sumter',{kind:'battle',note:'1861年4月12日凌晨南军炮轰要塞三十四小时，守军次日降旗。'});
+    hp(d,'amcw_richmond',{left:1,note:'5月邦联自蒙哥马利迁都于此，与北面的华盛顿隔河相望。'});
+    hp(d,'amh_boston',{left:1,note:'新英格兰与北方各州兵工厂贡献全美九成以上军火产能。'});
+   },[['fill',HC.america,'北方美利坚合众国（联邦）'],['fill',HC.war,'南方美利坚邦联（11州）'],['dot',HC.war,'萨姆特堡'],['dot','#2a2018','新奥尔良、里士满与波士顿']]),
+  hs('1861—1862年','海上封锁、英国棉荒与铁甲舰对决','色块是南北阵营与英国；虚线示意北军封锁南方海岸，图钉标示新奥尔良、汉普顿锚地与曼彻斯特。',[[24.0,-96.0],[57.0,4.0]],d=>{
+    ha(d,'am19Union1861',HC.america,{fillOpacity:.28});ha(d,'am19Confederacy1861',HC.war,{fillOpacity:.36});ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.30});
+    hp(d,'fco_neworleans',{note:'南方在码头焚棉逼英法干预；1862年4月北军舰队攻占此港。'});
+    hp(d,'amcw_hampton',{kind:'battle',note:'1862年3月9日“莫尼特号”与“弗吉尼亚号”在此展开铁甲舰首战。'});
+    hp(d,'brs_manchester',{left:1,note:'1862年除夕曼彻斯特纺织工人集会致信林肯，宁挨饿也支持废奴。'});
+    hr(d,[[36.98,-76.33],[32.5,-78.5],[25.0,-80.0],[28.5,-89.0]],HC.route);
+   },[['fill',HC.america,'北方联邦'],['fill',HC.war,'被封锁的南方邦联'],['fill',HC.britain,'大不列颠'],['dline',HC.route,'北军“巨蟒计划”海上封锁线（概略）'],['dot',HC.war,'汉普顿锚地'],['dot','#2a2018','新奥尔良与曼彻斯特']]),
+  hs('1862—1863年','安提塔姆血战与解放黑奴宣言','色块是南北阵营；图钉标示密西西比河畔的维克斯堡、里士满、安提塔姆与波士顿。',[[29.0,-94.0],[44.0,-69.0]],d=>{
+    ha(d,'am19Union1861',HC.america,{fillOpacity:.32});ha(d,'am19Confederacy1861',HC.war,{fillOpacity:.36});
+    hp(d,'amcw_vicksburg',{note:'大批南方黑奴逃入密西西比河沿岸北军营地，先被列为“战时没收物资”。'});
+    hp(d,'amcw_richmond',{note:'1862年夏李将军在七日战役解里士满之围，随即挥师北进。'});
+    hp(d,'amcw_antietam',{kind:'battle',left:1,note:'1862年9月17日玉米地血战；五天后林肯在华盛顿发预先宣言。'});
+    hp(d,'amh_boston',{left:1,note:'1863年春在此组建北方第一支正规黑人部队第54马萨诸塞步兵团。'});
+   },[['fill',HC.america,'北方联邦'],['fill',HC.war,'南方邦联'],['dot',HC.war,'安提塔姆'],['dot','#2a2018','维克斯堡、里士满与波士顿']]),
+  hs('1863年7—11月','葛底斯堡与维克斯堡双城翻盘','色块是南北阵营；图钉标示东线葛底斯堡、里士满与西线密西西比河要塞维克斯堡。',[[28.0,-96.0],[43.0,-71.0]],d=>{
+    ha(d,'am19Union1861',HC.america,{fillOpacity:.32});ha(d,'am19Confederacy1861',HC.war,{fillOpacity:.36});
+    hp(d,'amcw_vicksburg',{kind:'battle',note:'1863年7月4日守将彭伯顿投降，北军打通整条密西西比河。'});
+    hp(d,'amcw_richmond',{left:1,note:'李将军自弗吉尼亚北上求决战，葛底斯堡败后退回防线。'});
+    hp(d,'amcw_gettysburg',{kind:'battle',left:1,note:'7月3日皮克特冲锋折戟，两军三日死伤五万余人；11月林肯来此演说。'});
+    hr(d,[[37.54,-77.44],[39.0,-77.8],[39.81,-77.23]],HC.war);
+   },[['fill',HC.america,'北方联邦'],['fill',HC.war,'被密西西比河劈开的南方邦联'],['dline',HC.war,'1863年夏李将军北上葛底斯堡（概略）'],['dot',HC.war,'葛底斯堡与维克斯堡'],['dot','#2a2018','里士满']]),
+  hs('1864年','弗吉尼亚消耗战与谢尔曼向大海进军','色块是南北阵营；红虚线标示谢尔曼从亚特兰大向东打穿佐治亚至萨凡纳的进军路线。',[[29.0,-92.0],[41.5,-73.0]],d=>{
+    ha(d,'am19Union1861',HC.america,{fillOpacity:.32});ha(d,'am19Confederacy1861',HC.war,{fillOpacity:.36});
+    hp(d,'amcw_atlanta',{kind:'battle',note:'1864年9月2日谢尔曼攻克此城，11月15日焚毁军工设施后东进。'});
+    hp(d,'amcw_savannah',{kind:'battle',note:'12月21日谢尔曼占领此港，致电林肯献上萨凡纳作圣诞礼物。'});
+    hp(d,'amcw_spotsylvania',{kind:'battle',left:1,note:'5—6月格兰特在此连番强攻，随后南渡詹姆斯河围困彼得斯堡。'});
+    hr(d,[[33.75,-84.39],[32.8,-82.8],[32.08,-81.09]],HC.war);
+   },[['fill',HC.america,'北方联邦'],['fill',HC.war,'南方邦联'],['dline',HC.war,'1864年11—12月谢尔曼“向大海进军”'],['dot',HC.war,'斯波茨尔瓦尼亚、亚特兰大与萨凡纳']]),
+  hs('1865—1877年','阿波马托克斯受降与联邦重建','色块是重归统一的合众国；图钉标示重升国旗的萨姆特堡、受降地阿波马托克斯与华盛顿。',[[30.5,-90.0],[42.0,-72.0]],d=>{
+    ha(d,'am19Union1861',HC.america,{fillOpacity:.38});ha(d,'am19Confederacy1861',HC.america,{fillOpacity:.22});
+    hp(d,'amcw_sumter',{note:'1865年4月14日安德森将军重返要塞，升起四年前降下的星条旗。'});
+    hp(d,'amcw_appomattox',{kind:'battle',note:'4月2日里士满失守，9日李将军在麦克林家客厅向格兰特签字投降。'});
+    hp(d,'amcw_washington',{kind:'battle',left:1,note:'4月14日夜林肯在福特剧院遇刺；国会后通过第13至15修正案。'});
+   },[['fill',HC.america,'重归统一的美利坚合众国（深浅示原南北疆域）'],['dot',HC.war,'阿波马托克斯与华盛顿'],['dot','#2a2018','萨姆特堡']])
+ ]},
+{id:'history-america-gilded',ch:14,title:'镀金时代：铁轨、石油与流水线焊出头号工业国',short:'镀金时代',en:'The Gilded Age: Rails, Oil, and Assembly Lines Forge the First Industrial Power',period:'1865—1914年',c:HC.america,
+ scenes:[
+  hs('1865—1882年','金道钉与排华法案','虚线为第一条横贯大陆铁路：自奥马哈与萨克拉门托双向铺轨，在犹他普罗蒙特里峰合龙；东端华盛顿通过排华法案。',[[30.0,-126.0],[49.0,-72.0]],d=>{
+    ha(d,'am19Union1861',HC.america,{fillOpacity:.26});ha(d,'am19Confederacy1861',HC.america,{fillOpacity:.18});
+    ha(d,'am19LouisianaPurchase',HC.america,{fillOpacity:.22});ha(d,'am19MexicanCession1848',HC.america,{fillOpacity:.22});
+    hp(d,'amg_sacramento',{note:'中央太平洋铁路起点；逾万名广东华工由此向东凿穿花岗岩绝壁。'});
+    hp(d,'amg_promontory',{note:'1869年5月10日两路在此合龙，敲下最后一颗金道钉。'});
+    hp(d,'amg_omaha',{note:'联合太平洋铁路起点；内战老兵与爱尔兰移民由此向西铺轨。'});
+    hp(d,'amg_washington',{left:1,note:'林肯在此签宅地法与铁路法；1882年国会通过《排华法案》。'});
+    hr(d,[[38.58,-121.49],[41.62,-112.55],[41.26,-95.93]],HC.route);
+   },[['fill',HC.america,'统一后的美利坚合众国（示意）'],['dline',HC.route,'第一条横贯大陆铁路（1869年通车）'],['dot','#2a2018','萨克拉门托、普罗蒙特里峰、奥马哈与华盛顿']]),
+  hs('1870—1901年','钢铁、石油与托拉斯','伊利湖至大西洋岸的重工业与金融走廊：克利夫兰炼油、匹兹堡炼钢，最终汇入纽约华尔街的托拉斯与大财团。',[[38.5,-85.0],[43.5,-71.5]],d=>{
+    ha(d,'am19Pennsylvania',HC.america,{fillOpacity:.34});ha(d,'amNewNetherland1630',HC.america,{fillOpacity:.22});
+    hp(d,'amg_cleveland',{note:'1870年洛克菲勒在此创办标准石油，靠铁路回扣吞并对手。'});
+    hp(d,'amg_pittsburgh',{note:'卡内基引进转炉炼钢建起世界钢都，1901年卖给摩根。'});
+    hp(d,'amg_newyork',{left:1,note:'标准石油总部迁此；摩根在华尔街组建美国钢铁公司。'});
+   },[['fill',HC.america,'宾夕法尼亚与纽约工业金融带'],['dot','#2a2018','克利夫兰、匹兹堡与纽约']]),
+  hs('1879—1914年','实验室灯泡与底特律流水线','底特律的汽车流水线、匹兹堡的钢铁供给，以及纽约都会区的门洛帕克实验室与珍珠街发电站。',[[38.5,-86.5],[44.5,-71.5]],d=>{
+    ha(d,'am19Union1861',HC.america,{fillOpacity:.26});ha(d,'am19Pennsylvania',HC.america,{fillOpacity:.36});
+    hp(d,'amg_detroit',{note:'福特在北郊海兰帕克装上移动流水线，1914年推五美元日薪。'});
+    hp(d,'amg_pittsburgh',{note:'为底特律车厂与全美电网供应廉价钢板与重型机械。'});
+    hp(d,'amg_newyork',{left:1,note:'爱迪生在新泽西门洛帕克试成白炽灯，于曼哈顿珍珠街建发电站。'});
+   },[['fill',HC.america,'美国东北部与五大湖工业带'],['dot','#2a2018','底特律、匹兹堡与纽约']]),
+  hs('1880—1894年','埃利斯岛移民与流血工潮','欧洲移民从纽约港登陆，向西进入匹兹堡钢厂与芝加哥铁路枢纽；三地先后爆发工潮与流血冲突。',[[38.5,-90.5],[44.0,-71.5]],d=>{
+    ha(d,'am19Union1861',HC.america,{fillOpacity:.24});ha(d,'am19Pennsylvania',HC.war,{fillOpacity:.32});
+    hp(d,'amg_chicago',{kind:'battle',note:'1886年5月干草市场爆炸案与1894年普尔曼铁路罢工所在地。'});
+    hp(d,'amg_pittsburgh',{kind:'battle',note:'近郊霍姆斯特德钢厂工人封锁厂区，同乘驳船登岸的平克顿侦探交火。'});
+    hp(d,'amg_newyork',{left:1,note:'1886年自由女神像落成；两千余万欧洲移民经港内埃利斯岛入境。'});
+   },[['fill',HC.america,'美国北部工业区'],['fill',HC.war,'宾夕法尼亚煤铁罢工中心'],['dot',HC.war,'芝加哥与匹兹堡（流血罢工）'],['dot','#2a2018','纽约（埃利斯岛移民港）']]),
+  hs('1890—1896年','西部债农与黄金十字架','中西部与南方农业带爆发民粹运动：奥马哈成立人民党，布莱恩在芝加哥演说争银币，华尔街助麦金莱守住金本位。',[[30.0,-104.0],[45.0,-71.5]],d=>{
+    ha(d,'am19LouisianaPurchase',HC.war,{fillOpacity:.28});ha(d,'am19CottonBelt',HC.war,{fillOpacity:.28});ha(d,'am19Union1861',HC.america,{fillOpacity:.20});
+    hp(d,'amg_omaha',{note:'人民党在此通过党纲，主张放开银币铸造并把铁路电报收归国有。'});
+    hp(d,'amg_chicago',{kind:'battle',note:'1896年7月布莱恩在此发表“黄金十字架”演说，获民主党提名。'});
+    hp(d,'amg_newyork',{left:1,note:'华尔街摩根等大财团出巨资助共和党人麦金莱胜选，守住金本位。'});
+   },[['fill',HC.war,'负债累累的西部与南方农业带'],['fill',HC.america,'坚持金本位的东北部工业金融区'],['dot',HC.war,'芝加哥（民主党大会）'],['dot','#2a2018','奥马哈与纽约']]),
+  hs('1901—1913年','扒粪记者与反垄断大棒','芝加哥肉联厂与纽约石油金融巨头遭到调查记者揭露，华盛顿联邦政府启动反垄断诉讼与食品金融立法。',[[35.0,-91.0],[44.0,-71.5]],d=>{
+    ha(d,'am19Union1861',HC.america,{fillOpacity:.26});ha(d,'am19Pennsylvania',HC.america,{fillOpacity:.34});
+    hp(d,'amg_chicago',{note:'辛克莱小说《屠场》揭露此地肉联厂黑幕，促成联邦食品药品监管。'});
+    hp(d,'amg_washington',{kind:'battle',left:1,note:'罗斯福挥大棒反垄断；最高法院判拆标准石油，国会立法设美联储。'});
+    hp(d,'amg_newyork',{left:1,note:'塔贝尔在此发文揭露石油垄断；摩根北方证券公司被联邦政府起诉拆分。'});
+   },[['fill',HC.america,'进步主义改革下的合众国核心区'],['dot',HC.war,'华盛顿（联邦反垄断与立法）'],['dot','#2a2018','芝加哥与纽约']])
+ ]},
+{id:'history-america-wilson',ch:14,title:'威尔逊与一战：先当债主后派兵，赢了战场输了国联',short:'威尔逊与一战',en:'Wilson and the Great War: From Creditor to Combatant, Winning the Front but Losing the League',period:'1914—1920年',c:HC.america,
+ scenes:[
+  hs('1914—1916年','三年中立与世界总债主','虚线为跨大西洋军火与战债通道：英法在西线消耗家底，纽约华尔街向伦敦与巴黎源源供货放贷，跃居全球最大债主。',[[34.0,-82.0],[56.0,8.0]],d=>{
+    ha(d,'am19Union1861',HC.america,{fillOpacity:.26});ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.28});ha(d,'fr18France1815',HC.france,{fillOpacity:.24});
+    hp(d,'amwi_newyork',{note:'摩根财团在此承销英法巨额公债，华尔街跃居全球资本枢纽。'});
+    hp(d,'k_london',{left:1,note:'英国海军封锁德国海港，同时向美国大举举债采购钢铁与弹药。'});
+    hp(d,'w_paris',{left:1,note:'法军在西线苦战消耗，粮食与火药补给高度仰赖北美商船队。'});
+    hr(d,[[40.71,-74.01],[45.0,-40.0],[51.51,-0.09]],HC.route);
+   },[['fill',HC.america,'保持中立的美国（最大债权国）'],['fill',HC.britain,'大不列颠'],['fill',HC.france,'法兰西'],['dline',HC.route,'跨大西洋军火与战债生命线'],['dot','#2a2018','纽约、伦敦与巴黎']]),
+  hs('1915—1917年3月','卢西塔尼亚号与齐默尔曼密电','爱尔兰外海的潜艇袭击与发往墨西哥城的密电：两起事件将华盛顿推向对德宣战边缘。',[[16.0,-104.0],[56.0,5.0]],d=>{
+    ha(d,'am19Mexico1848',HC.war,{fillOpacity:.28});ha(d,'am19Texas1836',HC.america,{fillOpacity:.30});ha(d,'am19MexicanCession1848',HC.america,{fillOpacity:.24});ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.28});
+    hp(d,'amwi_mexicocity',{kind:'battle',note:'德国密电驻墨公使，提议结盟并助墨西哥收回德克萨斯等三州。'});
+    hp(d,'amwi_washington',{note:'英国海军40号房将破译密电转交美方，威尔逊向报界公开。'});
+    hp(d,'amwi_kinsale',{kind:'battle',left:1,note:'德国U-20潜艇在此击沉卢西塔尼亚号，逾百名美国乘客丧生。'});
+   },[['fill',HC.war,'德国密电试图拉拢的墨西哥'],['fill',HC.america,'1848年前属墨西哥的德克萨斯与西南三州'],['fill',HC.britain,'大不列颠'],['dot',HC.war,'墨西哥城与金赛尔老岬外海'],['dot','#2a2018','华盛顿']]),
+  hs('1917—1918年','两百万远征军渡海定胜负','红线为美国远征军跨大西洋航线：自华盛顿动员，在法国西南波尔多等港登岸，开赴默兹—阿尔贡前线决战。',[[34.0,-82.0],[53.0,12.0]],d=>{
+    ha(d,'am19Union1861',HC.america,{fillOpacity:.26});ha(d,'fr18France1815',HC.france,{fillOpacity:.28});
+    hp(d,'amwi_washington',{note:'国会通过宣战案与征兵法，两百万美军经东岸港口登船赴欧。'});
+    hp(d,'w_bordeaux',{left:1,note:'美军在波尔多、布雷斯特等港建起大型船坞，每日万名新兵登岸。'});
+    hp(d,'amwi_argonne',{kind:'battle',left:1,note:'潘兴率百余万美军独立成军在此苦战四十七天，打穿德军防线。'});
+    hr(d,[[38.90,-77.04],[43.0,-40.0],[44.84,-0.58],[49.32,5.09]],HC.war);
+   },[['fill',HC.america,'参战动员的美国'],['fill',HC.france,'法兰西西线战场'],['dline',HC.war,'1917—1918年两百万美军渡海赴法路线'],['dot',HC.war,'默兹—阿尔贡战场'],['dot','#2a2018','华盛顿与波尔多']]),
+  hs('1918—1919年1月','十四点原则与欧洲街头欢呼','威尔逊自法国布雷斯特登陆欧洲，先后造访巴黎、伦敦与罗马，所到之处民众夹道欢呼。',[[40.0,-7.0],[54.0,16.0]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.28});ha(d,'fr18France1815',HC.france,{fillOpacity:.28});
+    hp(d,'amwi_brest',{note:'1918年12月13日威尔逊乘船在此登岸，开启在任总统首次欧洲之行。'});
+    hp(d,'k_london',{note:'威尔逊访英受白金汉宫外民众欢呼，英方却拒绝放弃海上封锁权。'});
+    hp(d,'w_paris',{note:'两百万巴黎市民涌上香榭丽舍大街欢呼这位提出“十四点”的美国总统。'});
+    hp(d,'rome',{left:1,note:'1919年1月威尔逊抵罗马，意大利民众将其视作和平救世主。'});
+    hr(d,[[48.39,-4.49],[48.85,2.35],[51.51,-0.09],[48.85,2.35],[41.89,12.48]],HC.route);
+   },[['fill',HC.france,'法兰西'],['fill',HC.britain,'大不列颠'],['dline',HC.route,'1918年12月—1919年1月威尔逊访欧路线'],['dot','#2a2018','布雷斯特、巴黎、伦敦与罗马']]),
+  hs('1919年1—6月','凡尔赛镜厅与山东问题','从华盛顿到凡尔赛再到中国山东青岛：威尔逊在巴黎和会上为保住国联盟约，对英法日步步退让。',[[25.0,-85.0],[55.0,130.0]],d=>{
+    ha(d,'am19Union1861',HC.america,{fillOpacity:.24});ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.28});ha(d,'fr18France1815',HC.france,{fillOpacity:.28});
+    hp(d,'amwi_washington',{note:'共和党参议员在国会山联署声明，警告不得把国联盟约绑进和约。'});
+    hp(d,'fri_versailles',{kind:'battle',note:'三巨头在此密商分赃，6月28日在镜厅签署对德和约。'});
+    hp(d,'amwi_qingdao',{kind:'battle',left:1,note:'和会将德国在山东权益转交日本，引发北京五四运动，中国代表拒签。'});
+   },[['fill',HC.america,'美国'],['fill',HC.france,'法兰西（巴黎和会主办国）'],['fill',HC.britain,'大不列颠'],['dot',HC.war,'凡尔赛与青岛（山东问题与五四运动）'],['dot','#2a2018','华盛顿']]),
+  hs('1919—1920年','普韦布洛演说与国联门外','威尔逊自华盛顿乘火车西行巡回演说至科罗拉多州普韦布洛累倒；参议院两度否决和约，日内瓦国联始终不见美国身影。',[[30.0,-112.0],[52.0,12.0]],d=>{
+    ha(d,'am19Union1861',HC.america,{fillOpacity:.26});ha(d,'am19LouisianaPurchase',HC.america,{fillOpacity:.20});ha(d,'fr18France1815',HC.france,{fillOpacity:.24});
+    hp(d,'amwi_pueblo',{note:'1919年9月25日威尔逊巡回演说至此哭诉反战，当晚病倒返京中风。'});
+    hp(d,'amwi_washington',{kind:'battle',note:'洛奇率参议院反对盟约第十条，两度投票否决《凡尔赛条约》。'});
+    hp(d,'amwi_geneva',{left:1,note:'1920年国际联盟总部设于此地，倡议建国联的美国却始终缺席。'});
+    hr(d,[[38.90,-77.04],[38.25,-104.61]],HC.route);
+   },[['fill',HC.america,'退回孤立主义的美国'],['fill',HC.france,'欧洲国际联盟核心区'],['dline',HC.route,'1919年9月威尔逊西行巡回演说路线（示意）'],['dot',HC.war,'华盛顿（参议院否决和约）'],['dot','#2a2018','普韦布洛与日内瓦']])
  ]}
 ];
 HISTORY_ENTRIES.forEach(e=>{
@@ -16007,6 +16675,7 @@ const HISTORY_ERAS=[
  {id:'empire-taifas',name:'西班牙：泰法与圣战',en:'Spain: the Taifas and Holy War',date:'1031—1123年',c:HC.spain,items:[['history-spain-taifas'],['history-spain-crusade']]},
  {id:'empire-spain-1492',name:'西班牙与葡萄牙：从托洛萨到1492大航海',en:'Spain and Portugal: From Las Navas to 1492',date:'1123—1572年',c:HC.spain,items:[['history-spain-reconquista'],['history-spain-aragon'],['history-spain-monarchs'],['history-spain-granada'],['history-spain-inquisition'],['history-spain-1492']]},
  {id:'empire-spain-habsburg',name:'西班牙：哈布斯堡的世界帝国与尼德兰独立',en:'Habsburg Spain and the Dutch Revolt',date:'1489—1648年',c:HC.spain,items:[['history-spain-habsburg'],['history-spain-philip2'],['history-spain-netherlands-1'],['history-spain-netherlands-2'],['history-spain-armada'],['history-spain-philips']]},
+ {id:'empire-spain-bourbon',name:'西班牙：从波旁改革到1898年帝国落幕',en:'Spain: From the Bourbon Reforms to the Loss of Empire in 1898',date:'1714—1931年',c:HC.spain,items:[['history-spain-bourbon'],['history-spain-cadiz'],['history-spain-carlist'],['history-spain-1898']]},
  {id:'faith-israel',name:'古代以色列',en:'Ancient Israel',date:'约前1400—前538年',c:HC.faith,items:[['history-faith-israel'],['history-faith-first-temple']]},
  {id:'faith-temple',name:'第二圣殿时期',en:'The Second Temple',date:'前538—公元73年',c:HC.faith,items:[['history-faith-second-temple'],['history-faith-jesus']]},
  {id:'faith-church',name:'早期教会',en:'The Early Church',date:'73—451年',c:HC.faith,items:[['history-faith-church'],['history-faith-empire-church'],['history-faith-councils'],['history-faith-ephesus'],['history-faith-two-cities']]},
@@ -16051,6 +16720,8 @@ const HISTORY_ERAS=[
  {id:'nordic-baltic',name:'北欧：卡尔马同盟与波罗的海之争',en:'Scandinavia: The Kalmar Union and the Baltic',date:'1397—1648年',c:HC.nordic,items:[['history-nordic-kalmar'],['history-nordic-baltic'],['history-nordic-peace']]},
  {id:'america-early',name:'美洲：大航海之前与大交换',en:'The Americas: Before 1492 and the Great Exchange',date:'约前13000—约1650年',c:HC.america,items:[['history-america-before'],['history-america-exchange']]},
  {id:'america-latecomers',name:'美洲：后来者与山巅之城',en:'The Americas: The Latecomers and the City upon a Hill',date:'1522—1654年',c:HC.america,items:[['history-america-france'],['history-america-virginia'],['history-america-dutch'],['history-america-mayflower'],['history-america-hill']]},
+ {id:'america-independence',name:'美洲：北美独立、费城制宪与拉美解放',en:'The Americas: American Independence, the Constitution and Latin American Liberation',date:'1648—1848年',c:HC.america,items:[['history-america-colonies'],['history-america-independence'],['history-america-constitution'],['history-america-westward'],['history-america-latam']]},
+ {id:'america-power',name:'美洲：南北内战、镀金时代与世界强权',en:'The Americas: Civil War, the Gilded Age and World Power',date:'1793—1920年',c:HC.america,items:[['history-america-cotton'],['history-america-civilwar'],['history-america-gilded'],['history-america-wilson']]},
 ];
 /* History as a tree: each branch is a topic; distance from the root is time (years, negative = BCE).
    Reading order stays with HISTORY_ERAS; TREE_ROWS puts each era row on a branch at its start and end. */
@@ -16064,7 +16735,7 @@ const HISTORY_BRANCHES=[
  // 东罗马 takes the Greek lane, free since the Greek world ran into Rome; from the division of 395 by dynasty to the end of the Macedonians.
  {id:'east',name:'东罗马',en:'East Rome',lane:2,parent:'rome',from:395,to:1453,c:HC.byz},
  {id:'west',name:'中世纪西欧',en:'Medieval Western Europe',lane:4,parent:'rome',from:476,to:843,c:HC.celt},
- {id:'spain',name:'西班牙',en:'Spain',lane:5,parent:'west',from:481,to:1714,c:HC.spain},
+ {id:'spain',name:'西班牙',en:'Spain',lane:5,parent:'west',from:481,to:1931,c:HC.spain},
  {id:'france',name:'法兰西',en:'France',lane:5,parent:'west',from:843,to:1852,c:HC.france},
  {id:'lowlands',name:'低地诸国',en:'Low Countries',lane:5,parent:'west',from:843,to:1648,c:HC.lowlands},
  {id:'germany',name:'德意志',en:'Germany',lane:4,parent:'west',from:843,to:1648,c:HC.germany},
@@ -16083,7 +16754,7 @@ const HISTORY_BRANCHES=[
  // 北欧: no fork, it starts itself; after the look back it runs through the Viking stations it shares (老无 2026-11-05).
  {id:'nordic',name:'北欧',en:'Scandinavia',lane:10,from:745,to:1648,c:HC.nordic},
  // 美洲: no fork either (老无 2026-11-06); it looks back, then shares 大航海 with 西班牙 and runs on to the Puritans.
- {id:'america',name:'美洲',en:'The Americas',lane:11,from:1430,to:1648,c:HC.america},
+ {id:'america',name:'美洲',en:'The Americas',lane:11,from:1430,to:1920,c:HC.america},
  // Parallel timeline of China for cross-civilizational comparison; it starts at 走出非洲 with 史前 (老无 2026-11-08).
  {id:'china',name:'中国',en:'China',lane:9,from:-68000,to:845,c:HC.china}
 ];
@@ -16320,9 +16991,9 @@ const TREE_ROWS={
  'history-france-law/0':['france',1715,1723,'1711—1723年'],
  'history-france-louis15/0':['france',1726,1757,'1723—1757年'],
  'history-france-enlightenment/0':['france',1751,1784,'1721—1784年'],
- 'history-france-seven-years/0':[['france','britain'],1756,1763,'1754—1763年'],
+ 'history-france-seven-years/0':[['france','britain','spain','america'],1756,1763,'1754—1763年'],
  'history-france-parlements/0':['france',1764,1776,'1761—1776年'],
- 'history-france-american-war/0':['france',1778,1786,'1776—1786年'],
+ 'history-france-american-war/0':[['france','spain','america'],1778,1786,'1776—1786年'],
  'history-france-bankruptcy/0':['france',1787,1789,'1786—1789年'],
  'history-france-bastille/0':['france',1789.3,1789.5,'1789年5—7月'],
  'history-france-august/0':['france',1789.6,1789.9,'1789年7—12月'],
@@ -16345,12 +17016,25 @@ const TREE_ROWS={
  'history-britain-suffrage-1918/0':['britain',1918,1920,'1897—1918年'],
  'history-britain-suffrage-1928/0':['britain',1924,1928,'1918—1928年'],
  'history-france-consulate/0':['france',1800,1804,'1800—1804年'],
- 'history-france-empire/0':['france',1805,1811,'1805—1811年'],
+ 'history-france-empire/0':[['france','spain'],1805,1811,'1805—1811年'],
  'history-france-waterloo/0':['france',1812,1815,'1810—1815年'],
  'history-france-restoration/0':['france',1816,1830,'1815—1830年'],
  'history-france-july-monarchy/0':['france',1831,1848,'1830—1848年'],
  'history-france-1848/0':['france',1848.3,1848.9,'1848年'],
  'history-france-louis-bonaparte/0':['france',1849,1852,'1848—1852年'],
+ 'history-spain-bourbon/0':['spain',1735,1755,'1714—1788年'],
+ 'history-spain-cadiz/0':['spain',1812.5,1823,'1808—1833年'],
+ 'history-spain-carlist/0':['spain',1868,1885,'1833—1895年'],
+ 'history-spain-1898/0':[['spain','america'],1898,1914,'1895—1931年'],
+ 'history-america-colonies/0':['america',1685,1750,'1648—1754年'],
+ 'history-america-independence/0':['america',1775,1776,'1763—1776年'],
+ 'history-america-constitution/0':['america',1787.5,1800,'1783—1800年'],
+ 'history-america-westward/0':['america',1815,1823,'1801—1848年'],
+ 'history-america-latam/0':[['america','spain'],1824,1826,'1780—1825年'],
+ 'history-america-cotton/0':['america',1850,1860,'1793—1860年'],
+ 'history-america-civilwar/0':['america',1861,1865,'1861—1865年'],
+ 'history-america-gilded/0':['america',1882,1894,'1865—1914年'],
+ 'history-america-wilson/0':['america',1917,1920,'1914—1920年'],
  'history-faith-avignon/0':[['faith','france'],1296,1303,'1294—1303年'],
  'history-faith-clement/0':[['faith','france'],1304,1314,'1303—1314年'],
  'history-italy-blackdeath/0':[['italy','france','britain','germany','faith','persia','nordic'],1347,1351,'1346—1353年'],
@@ -16430,7 +17114,7 @@ const TREE_ROWS={
  'history-germany-swiss/3':[['germany','italy','faith'],1515,1516,'1477—1648年']
 };
 // Topics still to be written grow the tree as dashed shoots.
-const TREE_FUTURE=[['france',1852,'第二帝国与普法战争','1852年后待展开：奥斯曼改造巴黎 · 克里米亚与意大利战争 · 1870年色当与巴黎公社 · 第三共和国'],['germany',1648,'普鲁士崛起与七年战争','1648年后待展开：勃兰登堡—普鲁士崛起 · 腓特烈大帝与奥地利王位继承战'],['italy',1563,'哈布斯堡霸权与统一','1563年后待展开：西班牙哈布斯堡霸权下的意大利 · 巴洛克时代与近代统一'],['faith',1689,'政教分离与启蒙时代','1689年后待展开：英国《宽容法》 · 启蒙运动与教会 · 大革命与教会'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',1501,'奥斯曼全盛与波斯争霸','1501年后待展开：1517年奥斯曼灭马穆鲁克 · 苏莱曼一世全盛与奥斯曼—萨法维百年争霸'],['china',845,'晚唐五代与宋','845年起 · 待展开'],['spain',1714,'波旁改革与美洲独立','1714年后待展开：腓力五世废各王国旧制 · 卡洛斯三世改革 · 拿破仑入侵与美洲独立'],['eeurope',1505,'伊凡雷帝与沙皇俄国','1505年后待展开：1547年伊凡四世加冕沙皇 · 混乱时代与罗曼诺夫王朝'],['lowlands',1648,'黄金时代与英荷海战','1648年后待展开：17世纪阿姆斯特丹黄金时代 · 三次英荷海战与威廉三世入主英国'],['crusade',1312,'后来的十字军','1396年尼科波利斯 · 1444年瓦尔纳 · 1571年勒班陀 · 待展开'],['america',1648,'十三殖民地与美国独立','1648年后待展开：英荷争新阿姆斯特丹 · 七年战争把法国赶出北美 · 十三殖民地与美国独立'],['nordic',1648,'踏冰渡海与大北方战争','1648年后待展开：1658年卡尔十世踏冰渡海夺下斯科讷 · 1700—1721年大北方战争，瑞典失去波罗的海霸权'],['britain',1928,'大萧条、二战与福利国家','1928年后待展开：1929年大萧条 · 丘吉尔与二战不列颠之战 · 战后福利国家与大英帝国解体']];
+const TREE_FUTURE=[['france',1852,'第二帝国与普法战争','1852年后待展开：奥斯曼改造巴黎 · 克里米亚与意大利战争 · 1870年色当与巴黎公社 · 第三共和国'],['germany',1648,'普鲁士崛起与七年战争','1648年后待展开：勃兰登堡—普鲁士崛起 · 腓特烈大帝与奥地利王位继承战'],['italy',1563,'哈布斯堡霸权与统一','1563年后待展开：西班牙哈布斯堡霸权下的意大利 · 巴洛克时代与近代统一'],['faith',1689,'政教分离与启蒙时代','1689年后待展开：英国《宽容法》 · 启蒙运动与教会 · 大革命与教会'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',1501,'奥斯曼全盛与波斯争霸','1501年后待展开：1517年奥斯曼灭马穆鲁克 · 苏莱曼一世全盛与奥斯曼—萨法维百年争霸'],['china',845,'晚唐五代与宋','845年起 · 待展开'],['spain',1931,'第二共和国与西班牙内战','1931年后待展开：1931—1936年第二共和国改革与左右撕裂 · 1936—1939年西班牙内战与佛朗哥独裁'],['eeurope',1505,'伊凡雷帝与沙皇俄国','1505年后待展开：1547年伊凡四世加冕沙皇 · 混乱时代与罗曼诺夫王朝'],['lowlands',1648,'黄金时代与英荷海战','1648年后待展开：17世纪阿姆斯特丹黄金时代 · 三次英荷海战与威廉三世入主英国'],['crusade',1312,'后来的十字军','1396年尼科波利斯 · 1444年瓦尔纳 · 1571年勒班陀 · 待展开'],['america',1920,'大萧条、罗斯福新政与二战','1920年后待展开：1929年华尔街崩盘与大萧条 · 罗斯福新政 · 二战两洋作战与布雷顿森林体系'],['nordic',1648,'踏冰渡海与大北方战争','1648年后待展开：1658年卡尔十世踏冰渡海夺下斯科讷 · 1700—1721年大北方战争，瑞典失去波罗的海霸权'],['britain',1928,'大萧条、二战与福利国家','1928年后待展开：1929年大萧条 · 丘吉尔与二战不列颠之战 · 战后福利国家与大英帝国解体']];
 // Where a line stops it says why: [line, year, the event that ends it, note, the line it carries on in].
 const TREE_ENDS=[['trunk',-30,'并入罗马','前146年科林斯被毁 · 前30年最后一个希腊化王国埃及并入罗马','rome'],['rome',476,'西罗马终结','476年西部末代皇帝被废 · 由中世纪西欧接续'],['west',843,'凡尔登三分','843年《凡尔登条约》三分帝国 · 分出法兰西、德意志、意大利'],['east',1453,'东罗马终结','1453年5月29日奥斯曼帝国攻破君士坦丁堡 · 千年东罗马帝国终结'],['prehistory',-3100,'有了文字','两河、埃及约前3200—前3100年先后有了文字和国家 · 由希腊、埃及、波斯—阿拉伯三条线接续','trunk']];
 // Sections of one line that run side by side: [line, row keys, side of the passing loop].

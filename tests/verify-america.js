@@ -56,12 +56,12 @@ const chars=s=>s.replace(/<[^>]+>/g,'').replace(/（[A-Za-z][^）]*）/g,'').rep
       .map(id=>{const e=by(id);return [id,{paras:e.scenes.map((_,i)=>para(e,i)),all:[e.html,...e.moments.map(m=>(m.name||m.title)+m.text),...e.boxes.map(b=>(b.name||b.title)+b.text)].join(' ')}];})),
     };
    });
-   assert.deepEqual(r.line,{name:'美洲',from:1430,to:1648},'starts by itself, no fork: there is no parent');
-   assert.deepEqual(r.stops,LINE,'the stations in order, with what they share');
-   assert.deepEqual(r.future,['america',1648,'十三殖民地与美国独立']);
+   assert.deepEqual(r.line,{name:'美洲',from:1430,to:1920},'starts by itself, no fork: there is no parent');
+   assert.deepEqual(r.stops.slice(0,LINE.length),LINE,'the initial stations in order, with what they share');
+   assert.deepEqual(r.future,['america',1920,'大萧条、罗斯福新政与二战']);
    assert.deepEqual(r.report,[],'no dashed link runs through a station');
    assert.equal(r.renamed,'大航海与美洲征服');assert.deepEqual(r.oldName,[],'the old station name is gone from the text');
-   assert.deepEqual(Object.keys(r.sections).sort(),Object.keys(SECTIONS).sort());
+   assert.ok(Object.keys(SECTIONS).every(k=>k in r.sections));
    for(const [id,[short,period,n]] of Object.entries(SECTIONS)){
     const s=r.sections[id];
     assert.deepEqual([s.short,s.period,s.ch,s.scenes],[short,period,14,n],id);

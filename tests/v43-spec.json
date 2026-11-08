@@ -2650,7 +2650,26 @@
   ],
   "history-france-seven-years/0": [
    "france",
-   "britain"
+   "britain",
+   "spain",
+   "america"
+  ],
+  "history-france-american-war/0": [
+   "france",
+   "spain",
+   "america"
+  ],
+  "history-france-empire/0": [
+   "france",
+   "spain"
+  ],
+  "history-america-latam/0": [
+   "america",
+   "spain"
+  ],
+  "history-spain-1898/0": [
+   "spain",
+   "america"
   ]
  },
  "fixes": [
