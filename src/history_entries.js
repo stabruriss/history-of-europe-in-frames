@@ -2836,6 +2836,83 @@ Object.assign(HS,{
   zr_xiaozhan:['小站','Xiaozhan',38.88,117.4,'天津东南的练兵场；1895年起袁世凯在此编练新建陆军。'],
   zr_chengdu:['成都','Chengdu',30.66,104.07,'四川省城；1911年9月7日赵尔丰在此逮捕保路首领，向请愿群众开枪。'],
   zr_kunming:['昆明','Kunming',25.04,102.71,'云南省城；1915年12月25日唐继尧、蔡锷等在此宣布云南独立，讨伐帝制。'],
+  gpr_berlin:['柏林（含波茨坦）','Berlin (with Potsdam)',52.52,13.405,'勃兰登堡与普鲁士都城；1685年《波茨坦敕令》接纳两万胡格诺难民，波茨坦亦为巨人掷弹兵团驻地。'],
+  gpr_cleves:['克莱沃','Cleves (Kleve)',51.789,6.138,'莱茵河下游公国首府；1614年起归属霍亨索伦家族，是勃兰登堡在德意志西部的飞地。'],
+  gpr_konigsberg:['柯尼斯堡（今加里宁格勒）','Königsberg (Kaliningrad)',54.707,20.511,'东普鲁士首府；1657年脱离波兰宗主权，1701年1月18日腓特烈一世在此自行戴冠称王。'],
+  gpr_oliva:['奥利瓦（但泽近郊）','Oliva (near Danzig)',54.411,18.559,'波罗的海畔修道院；1660年5月各方在此签署《奥利瓦和约》，国际承认东普鲁士主权独立。'],
+  gpr_warsaw:['华沙','Warsaw',52.23,21.012,'波兰—立陶宛联邦都城；1656年勃兰登堡与瑞典联军在此交战，次年波兰放弃对东普鲁士的宗主权。'],
+  gpr_fehrbellin:['费尔贝林','Fehrbellin',52.8,12.767,'柏林西北沼泽小城；1675年6月28日腓特烈·威廉在此击败瑞典军，赢得“大选帝侯”名号。'],
+  gpr_petersburg:['圣彼得堡','Saint Petersburg',59.939,30.316,'俄罗斯帝国新都；1716年沙皇彼得一世获赠普鲁士琥珀屋后，每年从俄国挑选高个子士兵回赠士兵王。'],
+  gpr_kustrin:['屈斯特林（今科斯特申）','Küstrin (Kostrzyn nad Odrą)',52.588,14.65,'奥得河畔要塞；1730年王太子腓特烈出逃失败被囚于此，在牢房窗口目睹挚友卡特赴死。'],
+  gfr_berlin:['柏林（含波茨坦无忧宫）','Berlin (with Sanssouci, Potsdam)',52.52,13.405,'普鲁士王国都城；西南郊波茨坦的无忧宫为腓特烈二世1745—1747年所建夏宫与墓园所在。'],
+  gfr_breslau:['布雷斯劳（含洛伊滕与莫尔维茨）','Breslau (Wrocław, with Leuthen and Mollwitz)',51.108,17.039,'西里西亚首府；1741年莫尔维茨之战后归普鲁士，1757年12月腓特烈在西郊洛伊滕以斜线阵大破奥军。'],
+  gfr_pressburg:['普雷斯堡（今布拉迪斯拉发）','Pressburg (Bratislava)',48.148,17.107,'多瑙河畔的匈牙利议会驻地；1741年9月玛丽亚·特蕾莎在此向匈牙利贵族泣血求援。'],
+  gfr_hohenfriedberg:['霍亨弗里德贝格（今多布罗梅日）','Hohenfriedberg (Dobromierz)',50.916,16.245,'西里西亚山麓小城；1745年6月4日腓特烈二世在此运用斜线阵击败奥萨联军。'],
+  gfr_rossbach:['罗斯巴赫','Rossbach',51.27,11.89,'萨克森莱比锡西南丘陵；1757年11月5日腓特烈二世在此以少胜多击溃法军与帝国军。'],
+  gfr_kunersdorf:['库内斯多夫（今库诺维采）','Kunersdorf (Kunowice)',52.356,14.63,'奥得河东岸村庄；1759年8月12日腓特烈二世在此惨败于俄奥联军，几乎自尽。'],
+  gfr_petersburg:['圣彼得堡','Saint Petersburg',59.939,30.316,'俄罗斯帝国都城；1762年彼得三世在此即位后倒向普鲁士，1772年三国在此签署第一次瓜分波兰条约。'],
+  gfr_marienwerder:['马林韦德（西普鲁士）','Marienwerder (Kwidzyn)',53.736,18.931,'维斯瓦河下游重镇；1772年第一次瓜分波兰后普鲁士在此设西普鲁士省署，打通东西领地。'],
+  gfr_konigsberg:['柯尼斯堡','Königsberg',54.707,20.511,'东普鲁士首府；康德在此任教讲学，1772年西普鲁士并入后正式与勃兰登堡本土陆路相连。'],
+  gre_berlin:['柏林','Berlin',52.52,13.405,'普鲁士都城；1806年被法军占领，1807年冬费希特在此发表演讲，1810年洪堡在此创办柏林大学。'],
+  gre_jena:['耶拿（含奥尔施泰特）','Jena (with Auerstedt)',50.927,11.589,'图林根萨勒河畔大学城；1806年10月14日普军主力在此同日被拿破仑与达武击溃。'],
+  gre_tilsit:['提尔西特（今苏维埃茨克）','Tilsit (Sovetsk)',55.083,21.883,'东普鲁士涅曼河畔边境城；1807年7月9日普鲁士在此签下割地过半的《提尔西特和约》。'],
+  gre_konigsberg:['柯尼斯堡','Königsberg',54.707,20.511,'东普鲁士首府；1807—1809年普鲁士朝廷暂驻于此，施泰因与沙恩霍斯特在此主持改革。'],
+  gre_memel:['梅梅尔（今克莱佩达）','Memel (Klaipėda)',55.703,21.144,'东普鲁士最北端海港；1807年普王退守于此，同年10月9日在此签署解放农奴的《十月敕令》。'],
+  gre_breslau:['布雷斯劳（今弗罗茨瓦夫）','Breslau (Wrocław)',51.108,17.039,'西里西亚首府；1813年3月普王腓特烈·威廉三世在此创设铁十字勋章并发表《告吾民书》。'],
+  gre_tauroggen:['陶罗根（今陶拉盖）','Tauroggen (Tauragė)',55.252,22.289,'俄普边境磨坊；1812年12月30日普将约克在此擅自与俄军签协定宣布中立。'],
+  gre_leipzig:['莱比锡','Leipzig',51.34,12.375,'萨克森商贸重镇；1813年10月16—19日俄、普、奥、瑞联军在此打赢“民族大会战”。'],
+  gre_essen:['埃森（鲁尔煤田）','Essen (Ruhr Coalfield)',51.456,7.012,'莱茵—威斯特伐利亚鲁尔区中心；1815年维也纳会议划归普鲁士，日后成为德意志重工业心脏。'],
+  g48_karlsbad:['卡尔斯巴德（今卡罗维发利）','Karlsbad (Karlovy Vary)',50.232,12.871,'波希米亚温泉城；1819年8月梅特涅在此召集十邦大臣拟定《卡尔斯巴德法令》。'],
+  g48_hambach:['汉巴赫城堡','Hambach Castle (Neustadt)',49.325,8.119,'普法尔茨山顶城堡；1832年5月约三万名市民与学生在此举黑红金旗集会要求统一与自由。'],
+  g48_olmutz:['奥尔米茨（今奥洛穆茨）','Olmütz (Olomouc)',49.594,17.251,'摩拉维亚重镇；1850年11月29日普鲁士在此向奥俄低头签约，放弃埃尔富特联盟。'],
+  gbi_essen:['埃森','Essen (Ruhr)',51.456,7.012,'鲁尔煤铁工业区核心城池；克虏伯铸钢与后装火炮工厂所在地。'],
+  gbi_soemmerda:['瑟默达','Sömmerda',51.161,11.117,'图林根小城；枪械师德莱赛在此研制并生产普军后装针发枪。'],
+  gbi_dybbol:['迪伯尔','Dybbøl (Düppel)',54.907,9.757,'石勒苏益格北部要塞；1864年4月18日普军攻克此地，迫使丹麦求和。'],
+  gbi_gastein:['巴德加斯泰因','Bad Gastein',47.115,13.135,'奥地利山间温泉镇；1865年8月普奥在此签约分管石勒苏益格与荷尔斯泰因。'],
+  gbi_biarritz:['比亚里茨','Biarritz',43.483,-1.558,'法国西南海滨度假地；1865年10月俾斯麦在此会晤拿破仑三世，稳住法国中立。'],
+  gbi_sadowa:['萨多瓦（克尼格雷茨）','Sadowa (Königgrätz)',50.267,15.75,'波希米亚易北河上游战场；1866年7月3日普军三路合击在此大破奥军主力。'],
+  gbi_nikolsburg:['尼科尔斯堡（今米库洛夫）','Nikolsburg (Mikulov)',48.806,16.638,'摩拉维亚南部城堡；1866年7月俾斯麦在此哭谏普王停止进军并签停战预备和约。'],
+  gfp_sigmaringen:['锡格马林根','Sigmaringen',48.087,9.216,'多瑙河上游的霍亨索伦家族天主教旁支驻地；1870年该支利奥波德亲王获邀候选西班牙王位。'],
+  gfp_ems:['巴德埃姆斯','Bad Ems',50.331,7.711,'莱茵兰温泉疗养镇；1870年7月13日普王威廉一世在此回绝法国大使贝内代蒂的无理要求。'],
+  gfp_belfort:['贝尔福','Belfort',47.638,6.863,'勃艮第门户要塞；法军守军死守百日未降，1871年和约特准法国保留此城。'],
+  gw2_berlin:['柏林','Berlin',52.52,13.405,'德意志帝国首都；帝国议会、宰相府与西门子电气工业总部所在地。'],
+  gw2_essen:['埃森（鲁尔区）','Essen (Ruhr)',51.456,7.012,'鲁尔煤钢重镇与克虏伯总部；帝国第二次工业革命的动力核心。'],
+  gw2_gotha:['哥达','Gotha',50.949,10.702,'图林根城市；1875年德国两派工人组织在此合并为社会民主党。'],
+  gw2_friedrichsruh:['弗里德里希斯鲁','Friedrichsruh',53.53,10.335,'汉堡东郊庄园；1890年3月俾斯麦被威廉二世解职后退居于此。'],
+  gw2_petersburg:['圣彼得堡','Saint Petersburg',59.934,30.335,'俄罗斯帝国首都；1887年与德密签《再保险条约》，1894年转与法国结盟。'],
+  gw2_wilhelmshaven:['威廉港','Wilhelmshaven',53.523,8.106,'北海主力军港；提尔皮茨在此扩建船坞，作为公海舰队大本营。'],
+  gw2_tangier:['丹吉尔','Tangier',35.767,-5.8,'摩洛哥直布罗陀海峡港口；1905年3月威廉二世在此登岸挑起第一次摩洛哥危机。'],
+  gw2_agadir:['阿加迪尔','Agadir',30.428,-9.598,'摩洛哥大西洋沿岸港口；1911年7月德国炮舰“豹”号闯入此港引发第二次摩洛哥危机。'],
+  gww_berlin:['柏林','Berlin',52.52,13.405,'德意志帝国首都；1914年8月在此下达借道比利时通牒，1916年冬深陷“芜菁之冬”饥荒。'],
+  gww_somme:['阿尔贝（索姆河）','Albert (River Somme)',50.004,2.652,'皮卡第索姆河战场中心；1916年7月1日英军在此单日伤亡近六万，9月首次投入坦克。'],
+  gww_aisne:['克拉奥讷（贵妇小径）','Craonne (Chemin des Dames)',49.441,3.787,'埃纳河北岸高地；1917年4月尼韦勒攻势在此惨败，引发法军过半师团哗变。'],
+  gww_spa:['斯帕','Spa',50.492,5.864,'比利时东部温泉城；1918年德军最高统帅部驻地，春季攻势与秋季认输均在此决策。'],
+  gww_noyelles:['诺耶勒（华工墓园）','Noyelles-sur-Mer',50.185,1.706,'法国索姆河口；一战赴欧十四万华工的大本营与全欧最大华工墓园所在地。'],
+  gve_spa:['斯帕','Spa',50.492,5.864,'比利时德军最高统帅部驻地；1918年9月底鲁登道夫在此催文官求和，11月威廉二世由此逃往荷兰。'],
+  gve_kiel:['基尔','Kiel',54.323,10.123,'波罗的海军港；1918年10月底至11月3日水兵在此熄灭锅炉起义，引爆十一月革命。'],
+  gve_berlin:['柏林','Berlin',52.52,13.405,'德国首都；1918年11月9日同日宣布两个共和国，1919年1月自由军团在此镇压斯巴达克起义。'],
+  gve_doorn:['多恩','Doorn',52.031,5.339,'荷兰乌得勒支省小城；1918年11月10日德皇威廉二世退位后流亡于此终老。'],
+  gve_compiegne:['贡比涅森林','Forest of Compiègne',49.427,2.906,'巴黎东北林地；1918年11月11日清晨德国文官代表在福煦元帅的餐车里签下停战协定。'],
+  gve_weimar:['魏玛','Weimar',50.979,11.324,'图林根文化小城；1919年2月制宪国民议会避开柏林动乱在此召开，通过《魏玛宪法》。'],
+  gve_danzig:['但泽（波兰走廊）','Danzig (Polish Corridor)',54.352,18.647,'波罗的海港城；1919年《凡尔赛条约》将西普鲁士划归波兰，把东普鲁士切成飞地。'],
+  gve_essen:['埃森（鲁尔区）','Essen (Ruhr)',51.456,7.012,'鲁尔工业心脏；1923年1月法比联军进占鲁尔矿厂，魏玛印钞支持罢工引发四万亿马克通胀。'],
+  f2e_lecreusot:['勒克勒佐','Le Creusot',46.804,4.433,'勃艮第煤铁重镇；施耐德工厂在此制造第二帝国大批铁路机车与钢轨。'],
+  f2e_plombieres:['普隆比耶尔','Plombières-les-Bains',47.966,6.46,'孚日山温泉小镇；1858年7月拿破仑三世与撒丁首相加富尔在此密谋联手抗奥。'],
+  f2e_nice:['尼斯','Nice',43.703,7.266,'地中海滨城市；1860年3月《都灵条约》与公投后连同萨伏伊并入法国。'],
+  f2e_solferino:['索尔费里诺','Solferino',45.368,10.566,'伦巴第村镇；1859年6月24日法撒联军在此击败奥军，战地惨状催生红十字会。'],
+  f2e_suez:['苏伊士运河（塞得港）','Port Said (Suez Canal)',31.265,32.302,'连接地中海与红海的运河起点；法国外交官雷赛布主持开凿十年，1869年11月通航。'],
+  f2e_queretaro:['克雷塔罗','Querétaro',20.588,-100.389,'墨西哥中部城市；1867年6月19日马克西米连皇帝在此地钟山被华雷斯军枪决。'],
+  f2e_mexicocity:['墨西哥城','Mexico City',19.432,-99.133,'墨西哥首都；1863年6月法军攻占该城，次年迎奥地利大公马克西米连入城称帝。'],
+  f2e_veracruz:['韦拉克鲁斯','Veracruz',19.173,-96.134,'墨西哥湾海港；1861年底英法西三国联军在此登陆讨债，1867年法军由此撤退。'],
+  f2e_biarritz:['比亚里茨','Biarritz',43.483,-1.558,'大西洋畔海滨度假城；1865年10月俾斯麦在此会晤拿破仑三世，探得法国在普奥冲突中守中立。'],
+  f2e_luxembourg:['卢森堡','Luxembourg',49.611,6.132,'荷王兼任大公的要塞邦；1867年拿破仑三世求购此地作补偿被俾斯麦阻挠，改为永久中立。'],
+  fco3_larochelle:['拉罗谢尔（雷岛）','La Rochelle (Île de Ré)',46.16,-1.151,'大西洋海港与近岸要塞；流血周后数千名公社社员关押于此，由此登船流放新喀里多尼亚。'],
+  fco3_chambord:['尚博尔城堡','Château de Chambord',47.616,1.517,'卢瓦尔河谷王室城堡；1871年7月尚博尔伯爵在此发表首份拒弃波旁白旗的宣言。'],
+  fco3_frohsdorf:['弗罗斯多夫','Frohsdorf',47.747,16.256,'维也纳南郊庄园；尚博尔伯爵流亡居所，1873年10月在此写信拒绝三色旗，葬送复辟。'],
+  fco3_dole:['多勒（蒙苏沃德雷）','Dole (Mont-sous-Vaudrey)',47.093,5.49,'汝拉省城镇、格雷维故乡；1879年格雷维接任总统，宣布永不动用解散众议院之权。'],
+  fco3_rennes:['雷恩','Rennes',48.117,-1.678,'布列塔尼首府；1899年8—9月德雷福斯自魔鬼岛押回此地军事法庭重审。'],
+  fco3_mulhouse:['米卢斯','Mulhouse',47.749,7.339,'上阿尔萨斯工业城、德雷福斯故乡；1871年割归德国后其家人选择保留法国国籍迁往巴黎。'],
+  fco3_nantes:['南特','Nantes',47.218,-1.553,'卢瓦尔河口大城；《1905年政教分离法》起草人白里安出生于此。'],
 });
 function hp(d,key,opt={}){
   const [n,en,la,lo,note]=HS[key];
@@ -7933,6 +8010,91 @@ const HISTORY_ENTRIES=[
     hp(d,'w_paris',{note:'12月2日拿破仑三世骑马从凯旋门进入杜伊勒里宫。'});
    },[['fill',HC.france,'法兰西第二帝国'],['fill',HC.britain,'英国'],['dot','#2a2018','波尔多、圣克卢宫、巴黎与伦敦']])
  ]},
+{id:'history-france-second-empire',ch:5,title:'拿破仑三世与第二帝国：宽马路和铁路网喂饱巴黎，墨西哥和萨多瓦接连失手',short:'拿破仑三世与第二帝国',en:'Napoleon III and the Second Empire: Grand Boulevards, Railways, and Foreign Blunders',period:'1852—1870年',c:HC.france,
+ scenes:[
+  hs('1852—1867年','铁路干线与世博会','第二帝国以巴黎为中心辐射全国的铁路网，连接勒克勒佐煤铁机车厂、波尔多与马赛港。',[[42.4,-2.5],[50.8,7.6]],d=>{
+    ha(d,'fr18France1815',HC.france,{fillOpacity:.14});
+    hp(d,'w_bordeaux',{note:'佩雷尔兄弟的故乡与南方铁路干线终点。'});
+    hp(d,'w_paris',{note:'动产信贷银行与乐蓬马歇百货所在地；1855、1867年两办世博会。'});
+    hp(d,'f2e_lecreusot',{note:'施耐德钢铁厂为全国铁路干线大批量制造蒸汽机车。'});
+    hp(d,'k_marseille',{left:1,note:'巴黎—里昂—地中海铁路终点港，吞吐量随苏伊士工程激增。'});
+    hr(d,[[48.85,2.35],[46.80,4.43],[45.76,4.83],[43.30,5.37]],HC.route);
+   },[['fill',HC.france,'法兰西第二帝国'],['dline',HC.route,'巴黎—里昂—地中海铁路干线（概略）'],['dot','#2a2018','巴黎、勒克勒佐、波尔多与马赛']]),
+  hs('1853—1870年','奥斯曼改造巴黎','奥斯曼男爵早年任省长的波尔多、花十七年拆建林荫大道的巴黎，以及同步推行大道改造的里昂。',[[43.8,-2.2],[50.4,7.2]],d=>{
+    ha(d,'fr18France1815',HC.france,{fillOpacity:.14});
+    hp(d,'w_bordeaux',{note:'奥斯曼1851—1853年任吉伦特省长，因筹备迎驾获拿破仑三世拔擢。'});
+    hp(d,'w_paris',{note:'拆毁近两万栋旧屋，打通塞瓦斯托波尔大道，修筑六百公里下水道。'});
+    hp(d,'k_lyon',{left:1,note:'省长瓦伊斯仿照奥斯曼在里昂老城开辟帝国街与共和国街。'});
+   },[['fill',HC.france,'法兰西第二帝国'],['dot','#2a2018','波尔多、巴黎与里昂']]),
+  hs('1854—1860年','普隆比耶尔与索尔费里诺','1856年召开和会的巴黎、1858年密谋联意的普隆比耶尔、1860年并入法国的尼斯，以及1859年击败奥军的索尔费里诺。',[[42.5,0.8],[50.2,13.5]],d=>{
+    ha(d,'fr18France1815',HC.france,{fillOpacity:.14});
+    hp(d,'w_paris',{note:'1856年春在此缔结克里米亚和约；两年后歌剧院外发生炸弹刺杀案。'});
+    hp(d,'f2e_plombieres',{note:'1858年7月拿破仑三世与加富尔在此密商联手抗奥。'});
+    hp(d,'f2e_nice',{note:'1860年3月《都灵条约》与公投后，连同萨伏伊并入法国。'});
+    hp(d,'f2e_solferino',{kind:'battle',left:1,note:'1859年6月24日法撒联军击败奥军，双方死伤近四万人。'});
+   },[['fill',HC.france,'法兰西第二帝国'],['dot',HC.war,'索尔费里诺'],['dot','#2a2018','巴黎、普隆比耶尔与尼斯']]),
+  hs('1860—1869年','英法商约与苏伊士运河','1860年签署自由贸易条约的伦敦与巴黎、远征军出发港土伦，以及1869年凿通的苏伊士运河。',[[28.5,-4.0],[53.5,36.5]],d=>{
+    ha(d,'fr18France1815',HC.france,{fillOpacity:.14});ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.16});
+    hp(d,'k_london',{note:'科布登代表英国议定互降关税，免除法国丝绸与葡萄酒税。'});
+    hp(d,'w_paris',{note:'1860年1月23日绕开立法院签订《科布登—谢瓦利埃条约》。'});
+    hp(d,'bd_toulon',{note:'远征中国、越南西贡与叙利亚的法国舰队由此起航。'});
+    hp(d,'f2e_suez',{left:1,note:'1869年11月17日地中海与红海航道打通，法国皇室出席庆典。'});
+   },[['fill',HC.france,'法兰西第二帝国'],['fill',HC.britain,'英国'],['dot','#2a2018','伦敦、巴黎、土伦与苏伊士运河']]),
+  hs('1861—1867年','墨西哥皇冠的覆灭','法军登陆与撤离的韦拉克鲁斯、攻占后扶立皇帝的墨西哥城，以及1867年6月马克西米连被枪决的克雷塔罗。',[[16.5,-104.5],[24.5,-92.5]],d=>{
+    ha(d,'am19Mexico1848',HC.spain,{fillOpacity:.14});
+    hp(d,'f2e_queretaro',{kind:'battle',note:'1867年6月19日马克西米连与两名墨西哥保守派将军在此被枪决。'});
+    hp(d,'f2e_mexicocity',{kind:'battle',note:'1863年6月法军攻占首都，次年迎马克西米连入城称帝。'});
+    hp(d,'f2e_veracruz',{left:1,note:'1861年底法军在此登陆，1867年春巴赞率末批法军登船撤回。'});
+    hr(d,[[19.17,-96.13],[19.43,-99.13],[20.59,-100.39]],HC.route);
+   },[['fill',HC.spain,'墨西哥'],['dline',HC.route,'法军推进与马克西米连败退路线（概略）'],['dot',HC.war,'克雷塔罗与墨西哥城'],['dot','#2a2018','韦拉克鲁斯']]),
+  hs('1865—1870年','比亚里茨会晤与自由帝国','1865年拿破仑三世会晤俾斯麦的比亚里茨、推行自由帝国改革的巴黎，以及1867年法国求购未果的卢森堡。',[[42.5,-3.5],[51.2,8.5]],d=>{
+    ha(d,'fr18France1815',HC.france,{fillOpacity:.14});ha(d,'ger19NorthGerman1867',HC.germany,{fillOpacity:.16});
+    hp(d,'f2e_biarritz',{note:'1865年10月俾斯麦来访，探明法国在普奥冲突中保持中立。'});
+    hp(d,'w_paris',{note:'1870年1月奥利维耶组阁，5月公投七百三十五万票支持自由帝国改革。'});
+    hp(d,'f2e_luxembourg',{left:1,note:'1867年法国求购此地遭俾斯麦阻挠，伦敦会议改定其永久中立。'});
+   },[['fill',HC.france,'法兰西第二帝国'],['fill',HC.germany,'北德意志邦联（1867年）'],['dot','#2a2018','比亚里茨、巴黎与卢森堡']])
+ ]},
+{id:'history-france-commune',ch:5,title:'巴黎公社与第三共和国：公社流血让农民放心，白旗争执与一票之差留下共和国',short:'巴黎公社与第三共和国',en:'The Paris Commune and the Third Republic: Bloodshed in Paris and a One-Vote Republic',period:'1871—1914年',c:HC.france,
+ scenes:[
+  hs('1871年2—3月','蒙马特尔夺炮与退守凡尔赛','1871年2月国民议会初聚的波尔多、3月18日爆发夺炮起义的巴黎（与退守的凡尔赛），以及起义响应的里昂。',[[43.5,-2.2],[50.4,7.2]],d=>{
+    ha(d,'fr18France1815',HC.france,{fillOpacity:.14});
+    hp(d,'w_bordeaux',{note:'1871年2月国民议会在此开幕，推梯也尔任行政首脑，3月迁往凡尔赛。'});
+    hp(d,'w_paris',{kind:'battle',note:'3月18日蒙马特尔高地夺炮起义；梯也尔率政府与正规军撤往凡尔赛。'});
+    hp(d,'k_lyon',{kind:'battle',left:1,note:'3月22日里昂与圣艾蒂安工人起义响应巴黎，不久被扑灭。'});
+   },[['fill',HC.france,'法兰西第三共和国'],['dot',HC.war,'巴黎（与凡尔赛）、里昂'],['dot','#2a2018','波尔多']]),
+  hs('1871年3—5月','七十二天公社与流血周','经历七十二天公社与流血周巷战的巴黎、关押并起运流放犯的拉罗谢尔，以及呼应公社起义的马赛。',[[42.4,-2.5],[50.4,7.5]],d=>{
+    ha(d,'fr18France1815',HC.france,{fillOpacity:.14});
+    hp(d,'fco3_larochelle',{note:'数千名公社社员关押于此地要塞，随后登船流放太平洋新喀里多尼亚。'});
+    hp(d,'w_paris',{kind:'battle',note:'3月28日公社成立；5月流血周，社员在拉雪兹神父公墓墙前被枪决。'});
+    hp(d,'k_marseille',{kind:'battle',left:1,note:'克雷米厄领导的马赛公社坚持两周，4月4日被政府军炮击镇压。'});
+   },[['fill',HC.france,'法兰西第三共和国'],['dot',HC.war,'巴黎与马赛'],['dot','#2a2018','拉罗谢尔（雷岛）']]),
+  hs('1871—1873年','提前赎国与白旗泡汤','尚博尔伯爵发表白旗宣言的尚博尔城堡与奥地利弗罗斯多夫，以及募集赎国公债并筹备复辟的巴黎（与凡尔赛）。',[[44.8,-1.0],[51.0,18.2]],d=>{
+    ha(d,'fr18France1815',HC.france,{fillOpacity:.14});ha(d,'ger19GermanEmpire1871',HC.germany,{fillOpacity:.15});ha(d,'ger19AustriaHungary1867',HC.spain,{fillOpacity:.14});
+    hp(d,'fco3_chambord',{note:'1871年7月尚博尔伯爵回国暂居于此，发表首份拒弃波旁白旗宣言。'});
+    hp(d,'w_paris',{note:'赎国公债超额认购十余倍提前清偿赔款；凡尔赛议会推麦克马洪任总统。'});
+    hp(d,'fco3_frohsdorf',{left:1,note:'1873年10月尚博尔伯爵在此写信拒绝三色旗，正统派复辟泡汤。'});
+   },[['fill',HC.france,'法兰西第三共和国'],['fill',HC.germany,'德意志帝国'],['fill',HC.spain,'奥匈帝国'],['dot','#2a2018','尚博尔城堡、巴黎（与凡尔赛）与弗罗斯多夫']]),
+  hs('1875—1879年','一票共和与五月十六日危机','1875年通过瓦隆修正案并在1879年迎回议会的巴黎（与凡尔赛）、甘必大发表演说的里尔，以及格雷维故乡多勒。',[[45.8,-0.5],[51.3,7.5]],d=>{
+    ha(d,'fr18France1815',HC.france,{fillOpacity:.14});
+    hp(d,'w_paris',{note:'凡尔赛议会1875年一票通过瓦隆修正案；1879年迁回巴黎。'});
+    hp(d,'flb_lille',{note:'1877年8月甘必大在此演说，向麦克马洪喊出“要么服从，要么辞职”。'});
+    hp(d,'fco3_dole',{left:1,note:'格雷维故乡；1879年他接任总统，宣布放弃动用解散众议院之权。'});
+   },[['fill',HC.france,'法兰西第三共和国'],['dot','#2a2018','巴黎（与凡尔赛）、里尔与多勒']]),
+  hs('1894—1906年','从魔鬼岛到《我控诉》','德雷福斯故乡米卢斯、发表《我控诉》的巴黎、1899年重审的雷恩，以及左拉避难的伦敦。',[[46.5,-3.2],[52.2,8.8]],d=>{
+    ha(d,'fr18France1815',HC.france,{fillOpacity:.14});ha(d,'ger19AlsaceLorraine1871',HC.germany,{fillOpacity:.22});ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.16});
+    hp(d,'fco3_rennes',{note:'1899年8—9月德雷福斯自南美魔鬼岛押回此地重审，随后获总统特赦。'});
+    hp(d,'k_london',{note:'1898年7月左拉被判诽谤罪后，听从克列孟梭劝告暂避伦敦十一个月。'});
+    hp(d,'w_paris',{note:'1895年拔除德雷福斯军衔；1898年1月《震旦报》印出《我控诉》。'});
+    hp(d,'fco3_mulhouse',{left:1,note:'德雷福斯故乡；1871年割归德国后其家人选择保留法国国籍迁居巴黎。'});
+   },[['fill',HC.france,'法兰西第三共和国'],['fill',HC.germany,'德属阿尔萨斯—洛林'],['fill',HC.britain,'英国'],['dot','#2a2018','雷恩、伦敦、巴黎与米卢斯']]),
+  hs('1889—1914年','政教分离与三年兵役法','白里安的故乡南特、竖起埃菲尔铁塔并立法备战的巴黎、克列孟梭任参议员的土伦，以及边防重镇南锡。',[[42.4,-2.8],[50.5,8.0]],d=>{
+    ha(d,'fr18France1815',HC.france,{fillOpacity:.14});ha(d,'ger19AlsaceLorraine1871',HC.germany,{fillOpacity:.22});
+    hp(d,'fco3_nantes',{note:'《1905年政教分离法》报告人白里安的故乡。'});
+    hp(d,'w_paris',{note:'1889年竖埃菲尔铁塔；1905年立政教分离法，1913年扩充兵役。'});
+    hp(d,'bd_toulon',{note:'克列孟梭1902年起任瓦尔省参议员，1906年首次出任总理。'});
+    hp(d,'lb_nancy',{left:1,note:'法德新边境旁的洛林门户，第20军在此扩编备战。'});
+   },[['fill',HC.france,'法兰西第三共和国'],['fill',HC.germany,'德属阿尔萨斯—洛林'],['dot','#2a2018','南特、巴黎、土伦与南锡']])
+ ]},
 {id:'history-germany-frederick2',ch:5,title:'腓特烈二世：向诸侯放权，跟教宗死磕',short:'腓特烈二世',en:'Frederick II: Yielding Germany to the Princes, Fighting the Popes to the Death',period:'1212—1273年',c:HC.germany,
  scenes:[
   hs('1198—1220年','从西西里迎来转机','腓特烈二世在巴勒莫长大；1212年春经罗马北上，抢先进康斯坦茨，在美因茨加冕；1215年在亚琛加冕，1220年在罗马称帝，后将穆斯林迁至卢切拉。',[[36.6,5.0],[52.0,18.0]],d=>{
@@ -8956,6 +9118,426 @@ const HISTORY_ENTRIES=[
     hp(d,'rome',{kind:'battle',note:'1522年8月底进城，31日加冕，1523年9月14日去世。'});
     hr(d,[[42.85,-2.67],[41.89,12.48]],HC.faith);
    },[['fill',HC.faith,'教宗国'],['dline',HC.faith,'1522年哈德良赴罗马路线（约略）'],['dot',HC.war,'罗马'],['dot','#2a2018','乌得勒支、维多利亚与纽伦堡']])
+ ]},
+{id:'history-germany-prussia-rise',ch:5,title:'大选帝侯与士兵王：跟容克分权换军费，小邦攒出八万兵',short:'大选帝侯与士兵王',en:'The Great Elector and the Soldier King: A Bargain with the Junkers and an Army of Eighty Thousand',period:'1640—1740年',c:HC.germany,
+ scenes:[
+  hs('1640—1648年','沙盒与三块飞地','1648年和约后散成西、中、东三块的勃兰登堡—普鲁士领地，以及瑞典控制的西波美拉尼亚。',[[49.5,4.5],[56.0,22.8]],d=>{
+    ha(d,'ger19BrandenburgPrussia1688',HC.germany,{fillOpacity:.32});ha(d,'nPomerania1648',HC.war,{fillOpacity:.28});
+    hp(d,'gpr_cleves',{note:'莱茵河畔的西部飞地，与柏林隔着多个邦国。'});
+    hp(d,'ty3_munster',{note:'1648年和约在此签署，勃兰登堡获东波美拉尼亚与马格德堡。'});
+    hp(d,'gpr_berlin',{note:'三十年战争后城垣残破，居民仅剩约六千人。'});
+    hp(d,'gpr_konigsberg',{left:1,note:'未受战火波及的东普鲁士首府，当时仍奉波兰国王为宗主。'});
+   },[['fill',HC.germany,'霍亨索伦家族分散的东西领地（示意）'],['fill',HC.war,'瑞典控制的西波美拉尼亚'],['dot','#2a2018','克莱沃、明斯特、柏林与柯尼斯堡']]),
+  hs('1653—1660年','容克妥协与东普鲁士主权','1653年达成容克妥协的柏林，以及1657—1660年摆脱波兰宗主权的东普鲁士与奥利瓦。',[[50.5,11.0],[56.0,23.0]],d=>{
+    ha(d,'ger19BrandenburgPrussia1688',HC.germany,{fillOpacity:.34});ha(d,'nSweden1648',HC.war,{fillOpacity:.22});
+    hp(d,'gpr_berlin',{note:'1653年议会批准拨款养兵，选帝侯确认庄园农奴制。'});
+    hp(d,'gpr_oliva',{note:'1660年5月在此缔约，各方承认东普鲁士完全主权。'});
+    hp(d,'gpr_konigsberg',{kind:'battle',note:'1657年《韦劳条约》摆脱波兰封贡，城内市民抗税随后被平息。'});
+    hp(d,'gpr_warsaw',{left:1,note:'1656年勃兰登堡与瑞军在此激战三日，次年倒向波兰换取主权。'});
+   },[['fill',HC.germany,'勃兰登堡—普鲁士领地'],['fill',HC.war,'波罗的海对岸的瑞典帝国'],['dot',HC.war,'柯尼斯堡（获完全主权）'],['dot','#2a2018','柏林、奥利瓦与华沙']]),
+  hs('1675—1688年','费尔贝林大捷与波茨坦敕令','1675年大选帝侯自莱茵河驰援费尔贝林击败瑞典军，1685年法国胡格诺难民迁往柏林。',[[46.5,1.5],[56.0,22.5]],d=>{
+    ha(d,'fr18France1789',HC.france,{fillOpacity:.2});ha(d,'ger19BrandenburgPrussia1688',HC.germany,{fillOpacity:.34});ha(d,'nPomerania1648',HC.war,{fillOpacity:.28});
+    hp(d,'fh2_fontainebleau',{note:'1685年10月路易十四在此签署废除南特敕令的诏书。'});
+    hp(d,'k_strasbourg',{note:'大选帝侯原在莱茵河防线抗法，闻瑞军南下即刻拔营东返。'});
+    hp(d,'gpr_fehrbellin',{kind:'battle',note:'1675年6月28日选帝侯击退瑞典军；东南波茨坦接纳两万法国难民。'});
+    hp(d,'gpr_konigsberg',{left:1,note:'1679年冬大选帝侯又乘雪橇跨冰泻湖驱逐入侵东普鲁士的瑞军。'});
+    hr(d,[[48.402,2.700],[50.11,8.68],[52.52,13.40]],HC.route);
+   },[['fill',HC.germany,'大选帝侯晚年的勃兰登堡—普鲁士（1688年）'],['fill',HC.france,'迫害胡格诺派的法兰西王国'],['fill',HC.war,'瑞典属西波美拉尼亚'],['dline',HC.route,'1685年后胡格诺派赴柏林与波茨坦路线（概略）'],['dot',HC.war,'费尔贝林之战'],['dot','#2a2018','枫丹白露、斯特拉斯堡与柯尼斯堡']]),
+  hs('1701年','柯尼斯堡自行加冕','1701年1月腓特烈一世从柏林远赴神圣罗马帝国疆界之外的柯尼斯堡加冕称王。',[[47.2,8.0],[56.0,22.8]],d=>{
+    ha(d,'ger19BrandenburgPrussia1688',HC.germany,{fillOpacity:.36});ha(d,'sHabsburgAustria1556',HC.spain,{fillOpacity:.22});
+    hp(d,'bgl_hanover',{note:'王后索菲·夏洛特的娘家，1692年刚升为第九选帝侯。'});
+    hp(d,'gpr_berlin',{note:'1700年冬三百辆马车与三万匹驿马由此启程东行。'});
+    hp(d,'c3_vienna',{note:'皇帝利奥波德一世为换取八千援兵，在此批准选帝侯称王。'});
+    hp(d,'gpr_konigsberg',{kind:'battle',left:1,note:'1701年1月18日腓特烈一世在城堡内先给自己戴冠，再去教堂受膏。'});
+    hr(d,[[52.52,13.405],[53.43,14.55],[54.35,18.65],[54.707,20.511]],HC.route);
+   },[['fill',HC.germany,'升格为“在普鲁士的国王”的霍亨索伦领地'],['fill',HC.spain,'神圣罗马皇帝直辖的奥地利领地（示意）'],['dline',HC.route,'1700—1701年冬柏林赴柯尼斯堡加冕路线（概略）'],['dot',HC.war,'柯尼斯堡（1701年戴冠）'],['dot','#2a2018','汉诺威、柏林与维也纳']]),
+  hs('1713—1740年','士兵王与巨人兵团','士兵王整军经武的柏林与波茨坦、移民垦殖的东普鲁士，以及用琥珀屋换来高个子士兵的圣彼得堡。',[[50.0,5.0],[61.0,32.5]],d=>{
+    ha(d,'ger19BrandenburgPrussia1688',HC.germany,{fillOpacity:.36});ha(d,'ruRussia1914',HC.eeurope,{fillOpacity:.18});
+    hp(d,'gpr_cleves',{note:'西部领地同样推行税制改革，替王室金库输血。'});
+    hp(d,'gpr_berlin',{kind:'battle',note:'波茨坦驻扎巨人掷弹兵团；1720年又从瑞典夺得什切青。'});
+    hp(d,'gpr_konigsberg',{note:'1732年士兵王接纳两万名萨尔茨堡新教难民垦殖东普鲁士瘟疫荒地。'});
+    hp(d,'gpr_petersburg',{left:1,note:'1716年彼得一世收到琥珀屋，此后年年挑选俄国高个子送往波茨坦。'});
+    hr(d,[[59.939,30.316],[54.707,20.511],[52.520,13.405]],HC.route);
+   },[['fill',HC.germany,'常备军扩至八万三千人的普鲁士王国'],['fill',HC.eeurope,'回赠高个子士兵的俄罗斯帝国（示意）'],['dline',HC.route,'琥珀屋与俄国高个子士兵交换路线（概略）'],['dot',HC.war,'柏林与波茨坦（巨人兵团）'],['dot','#2a2018','克莱沃、柯尼斯堡与圣彼得堡']]),
+  hs('1730年','屈斯特林要塞斩首','1730年王太子腓特烈计划逃往的伦敦、在西南行程中事泄被捕的海德堡近郊，以及囚禁行刑的屈斯特林要塞。',[[48.0,-2.0],[56.0,22.5]],d=>{
+    ha(d,'ger19BrandenburgPrussia1688',HC.germany,{fillOpacity:.36});ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.22});
+    hp(d,'k_london',{note:'王太子原想投奔舅舅英王乔治二世并迎娶英国公主。'});
+    hp(d,'ty1_heidelberg',{note:'1730年8月王太子随父南巡至近郊施泰因富特村，夜逃时被捕。'});
+    hp(d,'gpr_kustrin',{kind:'battle',note:'1730年11月6日卡特在要塞牢窗下被斩首，王太子在此学算账赎罪。'});
+    hp(d,'gpr_konigsberg',{left:1,note:'卡特的父亲与祖父皆为普鲁士高级将领，求情仍被士兵王驳回。'});
+   },[['fill',HC.germany,'普鲁士王国'],['fill',HC.britain,'王太子试图逃往的大不列颠王国'],['dot',HC.war,'屈斯特林要塞（卡特斩首）'],['dot','#2a2018','伦敦、海德堡与柯尼斯堡']])
+ ]},
+{id:'history-germany-frederick-great',ch:5,title:'腓特烈大帝：抢下西里西亚跃居列强，无忧宫里自称第一公仆',short:'腓特烈大帝',en:'Frederick the Great: Seizing Silesia to Join the Great Powers, Calling Himself First Servant at Sanssouci',period:'1740—1786年',c:HC.germany,
+ scenes:[
+  hs('1740—1742年','突袭并夺取西里西亚','1740年12月腓特烈二世自柏林南下突入西里西亚，以及玛丽亚·特蕾莎赴普雷斯堡向匈牙利议会求援。',[[47.5,11.0],[55.0,21.0]],d=>{
+    ha(d,'ger19BrandenburgPrussia1688',HC.germany,{fillOpacity:.34});ha(d,'ger19Silesia1742',HC.war,{fillOpacity:.42});ha(d,'sHabsburgAustria1556',HC.spain,{fillOpacity:.22});
+    hp(d,'gfr_berlin',{note:'1740年12月腓特烈二世在宫廷舞会次日清晨率军南下。'});
+    hp(d,'de_prague',{note:'1741年法巴联军一度攻占此城，逼奥地利先同普鲁士议和。'});
+    hp(d,'gfr_breslau',{kind:'battle',note:'东南郊莫尔维茨首战得胜，次年在此签署割地条约。'});
+    hp(d,'gfr_pressburg',{left:1,note:'1741年9月玛丽亚·特蕾莎穿黑衣在此打动匈牙利贵族出兵勤王。'});
+    hr(d,[[52.520,13.405],[51.60,15.50],[51.108,17.039]],HC.route);
+   },[['fill',HC.germany,'普鲁士原有领地'],['fill',HC.war,'1740—1742年普鲁士夺取的西里西亚'],['fill',HC.spain,'玛丽亚·特蕾莎治下的奥地利领地（示意）'],['dline',HC.route,'1740年冬腓特烈二世突入西里西亚路线（概略）'],['dot',HC.war,'布雷斯劳与莫尔维茨'],['dot','#2a2018','柏林、布拉格与普雷斯堡']]),
+  hs('1744—1748年','霍亨弗里德贝格与奥地利整军','1745年第二次西里西亚战争的霍亨弗里德贝格战场、1748年签约的亚琛，以及整军经武的维也纳。',[[47.5,5.0],[54.5,19.5]],d=>{
+    ha(d,'ger19BrandenburgPrussia1688',HC.germany,{fillOpacity:.34});ha(d,'ger19Silesia1742',HC.germany,{fillOpacity:.42});ha(d,'sHabsburgAustria1556',HC.spain,{fillOpacity:.24});
+    hp(d,'w_aachen',{note:'1748年10月《亚琛和约》在此签署，欧洲列强承认西里西亚归普。'});
+    hp(d,'gfr_berlin',{note:'腓特烈二世凯旋回都，被柏林市民与报刊尊称为“大帝”。'});
+    hp(d,'gfr_hohenfriedberg',{kind:'battle',note:'1745年6月4日普军晨袭大胜，腓特烈亲自谱写同名进行曲。'});
+    hp(d,'c3_vienna',{left:1,note:'玛丽亚·特蕾莎在此设最高行政院，并在南郊创办特蕾莎军事学院。'});
+   },[['fill',HC.germany,'保住西里西亚的普鲁士王国'],['fill',HC.spain,'推行哈乌格维茨税制与军制改革的奥地利'],['dot',HC.war,'霍亨弗里德贝格之战'],['dot','#2a2018','亚琛、柏林与维也纳']]),
+  hs('1757—1763年','洛伊滕、库内斯多夫与俄国倒戈','七年战争中腓特烈二世转战的罗斯巴赫、洛伊滕与库内斯多夫，以及1762年倒戈求和的圣彼得堡。',[[49.5,10.0],[60.8,32.0]],d=>{
+    ha(d,'ger19BrandenburgPrussia1688',HC.germany,{fillOpacity:.34});ha(d,'ger19Silesia1742',HC.germany,{fillOpacity:.34});ha(d,'ruRussia1914',HC.eeurope,{fillOpacity:.18});
+    hp(d,'gfr_rossbach',{kind:'battle',note:'1757年11月5日普军不到九十分钟击溃法军与帝国军。'});
+    hp(d,'gfr_kunersdorf',{kind:'battle',note:'1759年8月12日普军在此折损近两万人，腓特烈两匹坐骑中弹。'});
+    hp(d,'gfr_breslau',{kind:'battle',note:'1757年12月5日西郊洛伊滕之战，普军以斜线阵大破奥军收复此城。'});
+    hp(d,'gfr_petersburg',{left:1,note:'1762年1月彼得三世在此即位，立即下令俄军停火并退还东普鲁士。'});
+    hr(d,[[51.270,11.890],[51.108,17.039]],HC.route);
+   },[['fill',HC.germany,'四面受敌苦撑七年的普鲁士王国'],['fill',HC.eeurope,'1762年因沙皇更迭退出反普同盟的俄国（示意）'],['dline',HC.route,'1757年冬腓特烈自罗斯巴赫急行军赴洛伊滕（概略）'],['dot',HC.war,'罗斯巴赫、洛伊滕与库内斯多夫'],['dot','#2a2018','圣彼得堡']]),
+  hs('1745—1786年','无忧宫与第一公仆','波茨坦无忧宫所在的柏林、伏尔泰晚年退居的日内瓦近郊、百科全书派大本营巴黎，以及康德任教的柯尼斯堡。',[[45.2,1.0],[55.8,22.0]],d=>{
+    ha(d,'ger19Prussia1786',HC.germany,{fillOpacity:.34});ha(d,'fr18France1789',HC.france,{fillOpacity:.18});
+    hp(d,'w_paris',{note:'腓特烈二世终身向往的法语文化中心，他雇人按月寄送巴黎文坛通讯。'});
+    hp(d,'rf1_geneva',{note:'1753年伏尔泰与腓特烈闹翻离开波茨坦，后定居近郊费尔奈。'});
+    hp(d,'gfr_berlin',{note:'1747年无忧宫落成，宫旁保留着那座流传法治佳话的历史风车磨坊。'});
+    hp(d,'gfr_konigsberg',{left:1,note:'1784年哲学家康德在此发表文章，盛赞“腓特烈的世纪”是启蒙的时代。'});
+   },[['fill',HC.germany,'标榜开明专制与司法改革的普鲁士'],['fill',HC.france,'法兰西王国'],['dot','#2a2018','巴黎、日内瓦、柏林（无忧宫）与柯尼斯堡']]),
+  hs('1756—1772年','强推种土豆与首次瓜分波兰','1756年首发“土豆令”的布雷斯劳、1772年第一次瓜分波兰签约的圣彼得堡，以及新并入的西普鲁士。',[[50.0,11.5],[60.8,32.0]],d=>{
+    ha(d,'ger19Prussia1786',HC.germany,{fillOpacity:.38});ha(d,'ruRussia1914',HC.eeurope,{fillOpacity:.22});
+    hp(d,'gfr_berlin',{note:'奥得河流域排干沼泽建立上千座新移民村，广种土豆与桑树。'});
+    hp(d,'gfr_breslau',{note:'1756年3月腓特烈在此向西里西亚官员下达第一道推广种土豆的通令。'});
+    hp(d,'gfr_marienwerder',{kind:'battle',note:'1772年9月普鲁士在此接管皇家普鲁士，设西普鲁士省打通东西疆域。'});
+    hp(d,'gfr_petersburg',{left:1,note:'1772年8月俄、普、奥三国在此签署第一次瓜分波兰条约。'});
+   },[['fill',HC.germany,'1772年并入西普鲁士、打通东西领地后的普鲁士王国'],['fill',HC.eeurope,'遭三国瓜分的波兰—立陶宛与俄罗斯帝国（示意）'],['dot',HC.war,'马林韦德（吞并西普鲁士）'],['dot','#2a2018','柏林、布雷斯劳与圣彼得堡']]),
+  hs('1786年','老王去世时的普鲁士版图','1786年腓特烈二世去世时的普鲁士版图、老王安葬的无忧宫，以及维也纳与巴黎。',[[47.0,1.0],[56.0,22.5]],d=>{
+    ha(d,'ger19Prussia1786',HC.germany,{fillOpacity:.38});ha(d,'sHabsburgAustria1556',HC.spain,{fillOpacity:.22});ha(d,'fr18France1789',HC.france,{fillOpacity:.18});
+    hp(d,'w_paris',{note:'1786年米拉波自柏林返法，写下批评普鲁士军国体制的专著。'});
+    hp(d,'gfr_berlin',{kind:'battle',note:'1786年8月17日腓特烈二世病逝于无忧宫，留十九万大军与满库白银。'});
+    hp(d,'c3_vienna',{note:'玛丽亚·特蕾莎之子约瑟夫二世仿效普王推行激进改革，却四处碰壁。'});
+    hp(d,'gfr_konigsberg',{left:1,note:'从东普鲁士到西里西亚已连成一片，跃居欧洲五大强国之列。'});
+   },[['fill',HC.germany,'1786年腓特烈二世去世时的普鲁士王国版图'],['fill',HC.spain,'奥地利哈布斯堡领地（示意）'],['fill',HC.france,'大革命前夕的法兰西王国'],['dot',HC.war,'柏林与无忧宫（1786年老王去世）'],['dot','#2a2018','巴黎、维也纳与柯尼斯堡']])
+ ]},
+{id:'history-germany-reform',ch:5,title:'施泰因与哈登堡改革：耶拿惨败后自上而下换骨，七年反攻进巴黎',short:'施泰因与哈登堡改革',en:'The Stein–Hardenberg Reforms: Revolution from Above After Jena and the Road Back to Paris',period:'1807—1815年',c:HC.germany,
+ scenes:[
+  hs('1806—1808年','耶拿惨败与提尔西特割地','1806年普军溃败的耶拿、被法军占领的柏林、1807年签约割地的提尔西特，以及1808年严限普军兵额的巴黎。',[[47.5,1.0],[56.5,23.5]],d=>{
+    ha(d,'fr18ConfedRhine1812',HC.france,{fillOpacity:.26});ha(d,'fr18Warsaw1812',HC.france,{fillOpacity:.32});ha(d,'ger19BrandenburgPrussia1688',HC.germany,{fillOpacity:.28});
+    hp(d,'w_paris',{note:'1808年9月在此签约，严限普军不得超过四万二千人。'});
+    hp(d,'gre_jena',{kind:'battle',note:'1806年10月14日普军主力一日崩溃，老帅布伦瑞克公爵重伤身亡。'});
+    hp(d,'gre_berlin',{note:'要塞守将纷纷不战而降，法军在此驻扎并征收一亿多法郎赔款。'});
+    hp(d,'gre_tilsit',{left:1,note:'1807年7月路易丝王后携玫瑰求情未果，普鲁士割走近半疆土。'});
+    hr(d,[[50.927,11.589],[52.520,13.405],[54.707,20.511],[55.083,21.883]],HC.war);
+   },[['fill',HC.germany,'1807年《提尔西特和约》后残存的普鲁士四省'],['fill',HC.france,'拿破仑控制的莱茵邦联与新建的华沙公国'],['dline',HC.war,'1806—1807年普鲁士败退路线（概略）'],['dot',HC.war,'耶拿（含奥尔施泰特）'],['dot','#2a2018','巴黎、柏林与提尔西特']]),
+  hs('1807—1812年','十月敕令与自上而下改革','1807年签署《十月敕令》的梅梅尔、颁布《城市法》的柯尼斯堡，以及哈登堡在柏林与布雷斯劳推进的后续改革。',[[50.0,11.5],[56.5,23.0]],d=>{
+    ha(d,'ger19BrandenburgPrussia1688',HC.germany,{fillOpacity:.34});ha(d,'fr18Warsaw1812',HC.france,{fillOpacity:.2});
+    hp(d,'gre_berlin',{note:'1810年起哈登堡在此推行自由营业税制与《犹太人解放敕令》。'});
+    hp(d,'gre_breslau',{note:'西里西亚与勃兰登堡的容克庄园借赎役令兼并了大批小农耕地。'});
+    hp(d,'gre_konigsberg',{note:'1808年11月施泰因在此颁布《城市法》，在全邦设立民选市议会。'});
+    hp(d,'gre_memel',{kind:'battle',left:1,note:'1807年10月9日普王在此签署《十月敕令》，废除世袭农奴人身依附。'});
+   },[['fill',HC.germany,'推行施泰因—哈登堡改革的普鲁士残存领地'],['fill',HC.france,'法国附庸华沙公国'],['dot',HC.war,'梅梅尔（颁布《十月敕令》）'],['dot','#2a2018','柏林、布雷斯劳与柯尼斯堡']]),
+  hs('1807—1810年','费希特演讲与创办柏林大学','费希特发表演讲与洪堡创办柏林大学的柏林、早年讲学的耶拿，以及洪堡起草学制方案的柯尼斯堡。',[[49.8,10.0],[56.0,22.5]],d=>{
+    ha(d,'ger19BrandenburgPrussia1688',HC.germany,{fillOpacity:.34});ha(d,'fr18ConfedRhine1812',HC.france,{fillOpacity:.22});
+    hp(d,'gre_jena',{note:'费希特与洪堡早年在此交游，哈雷大学被法军关闭后学者纷纷北迁。'});
+    hp(d,'gre_berlin',{kind:'battle',note:'1807年冬费希特在科学院演讲，1810年柏林大学开学。'});
+    hp(d,'gre_konigsberg',{left:1,note:'1809年洪堡在此拟定从小学、文理中学到研究型大学的三级学制。'});
+   },[['fill',HC.germany,'以教育与精神力量重塑国家的普鲁士'],['fill',HC.france,'莱茵邦联'],['dot',HC.war,'柏林（演讲与建校）'],['dot','#2a2018','耶拿与柯尼斯堡']]),
+  hs('1807—1813年','轮休练兵与总参谋部','沙恩霍斯特的家乡汉诺威、军事改革委员会起家的柯尼斯堡，以及训练后备兵与培养参谋军官的柏林与布雷斯劳。',[[50.0,8.5],[56.0,22.5]],d=>{
+    ha(d,'ger19BrandenburgPrussia1688',HC.germany,{fillOpacity:.36});ha(d,'fr18ConfedRhine1812',HC.france,{fillOpacity:.2});
+    hp(d,'bgl_hanover',{note:'沙恩霍斯特与哈登堡皆出身此地，把外部视野带进保守的普鲁士。'});
+    hp(d,'gre_berlin',{kind:'battle',note:'1810年在此创办军官总军事学校，克劳塞维茨任教并服务总参谋部。'});
+    hp(d,'gre_breslau',{note:'西里西亚各军区借轮休制分批短训新兵，藏兵于乡间。'});
+    hp(d,'gre_konigsberg',{left:1,note:'1807年7月军事改革委员会在此成立，废除鞭刑并整肃投降将领。'});
+   },[['fill',HC.germany,'实行轮休兵制与参谋本部改革的普鲁士'],['fill',HC.france,'莱茵邦联'],['dot',HC.war,'柏林（参谋本部与军校）'],['dot','#2a2018','汉诺威、布雷斯劳与柯尼斯堡']]),
+  hs('1812—1814年','解放战争与莱比锡会战','1812年底约克倒戈的陶罗根、1813年春普王宣战的布雷斯劳、10月决战的莱比锡，以及1814年春攻占的巴黎。',[[47.5,1.0],[56.5,24.0]],d=>{
+    ha(d,'ger19BrandenburgPrussia1688',HC.germany,{fillOpacity:.36});ha(d,'fr18France1815',HC.france,{fillOpacity:.2});
+    hp(d,'w_paris',{kind:'battle',note:'1814年3月31日普军与联军入城，运回勃兰登堡门上的胜利女神铜车。'});
+    hp(d,'gre_leipzig',{kind:'battle',note:'1813年10月莱比锡会战，布吕歇尔率普军从北面猛攻打垮法军。'});
+    hp(d,'gre_breslau',{kind:'battle',note:'1813年3月普王在此创设铁十字勋章，发表《告吾民书》举国宣战。'});
+    hp(d,'gre_tauroggen',{kind:'battle',left:1,note:'1812年12月30日约克将军在磨坊内同俄军签约，点燃反法导火索。'});
+    hr(d,[[55.252,22.289],[54.707,20.511],[51.108,17.039],[51.340,12.375],[48.853,2.349]],HC.route);
+   },[['fill',HC.germany,'举国动员发动解放战争的普鲁士'],['fill',HC.france,'败退回本土的法兰西'],['dline',HC.route,'1813—1814年普军自陶罗根、布雷斯劳反攻至莱比锡与巴黎路线（概略）'],['dot',HC.war,'陶罗根、布雷斯劳、莱比锡与巴黎']]),
+  hs('1814—1815年','维也纳分赃与鲁尔煤田','1815年维也纳会议后的普鲁士新版图：西边分得富含煤矿的莱茵—威斯特伐利亚（埃森），东边保留东、西普鲁士。',[[47.2,5.0],[56.0,22.8]],d=>{
+    ha(d,'ger19Prussia1815',HC.germany,{fillOpacity:.38});ha(d,'sHabsburgAustria1556',HC.spain,{fillOpacity:.22});
+    hp(d,'gre_essen',{kind:'battle',note:'新并入的莱茵—威斯特伐利亚鲁尔区，脚下埋着全欧最大的焦煤层。'});
+    hp(d,'gre_berlin',{note:'并入萨克森北半部与瑞典波美拉尼亚，控制易北河与奥得河全线。'});
+    hp(d,'c3_vienna',{note:'1814—1815年哈登堡与洪堡在此谈判，拿波兰故地换取德意志西境。'});
+    hp(d,'gre_konigsberg',{left:1,note:'交出华沙后，普鲁士居民中德意志人占比反倒从五成升至八成以上。'});
+   },[['fill',HC.germany,'1815年维也纳会议后的普鲁士王国版图（东西两大块）'],['fill',HC.spain,'奥地利帝国（示意）'],['dot',HC.war,'埃森（获得鲁尔大煤田）'],['dot','#2a2018','柏林、维也纳与柯尼斯堡']])
+ ]},
+{id:'history-germany-1848',ch:5,title:'关税同盟与法兰克福议会：先连起钱袋，清谈捧不出一顶皇冠',short:'关税同盟与法兰克福议会',en:'The Zollverein and the Frankfurt Parliament: A Common Market First, a Crown Refused from the Gutter',period:'1815—1850年',c:HC.germany,
+ scenes:[
+  hs('1815—1817年','三十九邦与瓦特堡焚书','1815年维也纳会议后的普鲁士与奥地利、邦联议会所在地法兰克福，以及学生运动中心耶拿与瓦特堡。',[[46.5,5.5],[55.5,22.5]],d=>{
+    ha(d,'ger19Prussia1815',HC.germany,{fillOpacity:.22});ha(d,'sHabsburgAustria1556',HC.germany,{fillOpacity:.16});
+    hp(d,'fem_frankfurt',{note:'德意志邦联议会常驻地，由奥地利代表任主席。'});
+    hp(d,'rf1_wartburg',{note:'1817年10月五百名师生在此集会，夜间焚烧反动书刊与军棍。'});
+    hp(d,'fem_jena',{note:'1815年6月退伍大学生在此成立首个“青年学生同盟”。'});
+    hp(d,'c3_vienna',{left:1,note:'1815年6月各国在此签《德意志邦联条约》，维持三十九邦分立。'});
+   },[['fill',HC.germany,'普鲁士王国（深）与奥地利帝国（浅）'],['dot','#2a2018','法兰克福、瓦特堡、耶拿与维也纳']]),
+  hs('1819—1832年','卡尔斯巴德法令与汉巴赫','1819年拟定高压法令的卡尔斯巴德、设中央调查委员会的美因茨，以及1832年三万人集会的汉巴赫城堡。',[[46.5,6.0],[53.5,18.0]],d=>{
+    ha(d,'ger19Prussia1815',HC.germany,{fillOpacity:.18});ha(d,'sHabsburgAustria1556',HC.germany,{fillOpacity:.2});
+    hp(d,'g48_hambach',{note:'1832年5月三万市民在此集会，重举黑红金三色旗。'});
+    hp(d,'k_mainz',{note:'邦联在此设中央调查委员会，专事审讯民族派师生。'});
+    hp(d,'g48_karlsbad',{note:'1819年8月梅特涅在此召集十邦代表拟定查禁与审查法令。'});
+    hp(d,'c3_vienna',{left:1,note:'梅特涅在维也纳坐镇指挥全德警察与书报检查网。'});
+   },[['fill',HC.germany,'普鲁士与奥地利（示意）'],['dot','#2a2018','汉巴赫城堡、美因茨、卡尔斯巴德与维也纳']]),
+  hs('1818—1844年','关税同盟与第一条铁路','1834年普鲁士主导的德意志关税同盟范围，1835年开通首条铁路的纽伦堡，以及被挡在同盟外的维也纳。',[[46.5,5.5],[55.5,22.0]],d=>{
+    ha(d,'ger19Zollverein1834',HC.germany,{fillOpacity:.26});ha(d,'sHabsburgAustria1556',HC.war,{fillOpacity:.16});
+    hp(d,'ot_hamburg',{note:'自由市汉堡靠海外转口贸易，迟至1888年才加入关税同盟。'});
+    hp(d,'in_nuremberg',{note:'1835年12月纽伦堡至菲尔特建成德意志第一条蒸汽铁路。'});
+    hp(d,'fem_berlin',{note:'1818年先废除普鲁士内部关卡，1834年元旦领头成立关税同盟。'});
+    hp(d,'c3_vienna',{left:1,note:'奥地利坚持高关税保护本国工业，被普鲁士挡在同盟之外。'});
+   },[['fill',HC.germany,'德意志关税同盟（示意）'],['fill',HC.war,'被挡在关税同盟外的奥地利'],['dot','#2a2018','汉堡、纽伦堡、柏林与维也纳']]),
+  hs('1848年3月','三月街垒与梅特涅出逃','1848年3月爆发市民起义的维也纳与柏林、召开预备议会的法兰克福，以及梅特涅流亡的伦敦。',[[46.5,-2.0],[54.5,18.0]],d=>{
+    ha(d,'ger19Prussia1815',HC.germany,{fillOpacity:.22});ha(d,'sHabsburgAustria1556',HC.germany,{fillOpacity:.18});ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.16});
+    hp(d,'k_london',{note:'梅特涅与被骂作“霰弹亲王”的普鲁士威廉亲王先后逃来英国。'});
+    hp(d,'fem_frankfurt',{note:'3月31日全德自由派代表在此召开预备议会，筹备大选。'});
+    hp(d,'fem_berlin',{kind:'battle',note:'3月18日王宫广场走火引发彻夜街垒战，国王次日撤军脱帽。'});
+    hp(d,'c3_vienna',{kind:'battle',left:1,note:'3月13日学生与市民起义，掌权三十九年的梅特涅当晚辞职。'});
+    hr(d,[[48.208,16.373],[51.5,10.0],[52.0,4.5],[51.51,-0.09]],HC.route);
+   },[['fill',HC.germany,'普鲁士与奥地利'],['fill',HC.britain,'英国'],['dline',HC.route,'1848年3月梅特涅流亡伦敦路线（概略）'],['dot',HC.war,'维也纳与柏林（三月街垒战）'],['dot','#2a2018','伦敦与法兰克福']]),
+  hs('1848—1849年','保罗教堂的教授议会','召开首届全德意志国民议会的法兰克福、签署普丹停战协定的马尔默，以及大小德意志之争的柏林与维也纳。',[[47.0,6.0],[56.5,18.0]],d=>{
+    ha(d,'ger19Prussia1815',HC.germany,{fillOpacity:.22});ha(d,'sHabsburgAustria1556',HC.germany,{fillOpacity:.18});
+    hp(d,'fem_frankfurt',{kind:'battle',note:'五百八十余名议员在圣保罗教堂辩论；9月普奥派兵入城平暴。'});
+    hp(d,'nm_malmo',{note:'1848年8月普鲁士背着议会与丹麦在此停战，暴露议会手无兵权。'});
+    hp(d,'fem_berlin',{note:'小德意志派主张排除奥地利，推普鲁士国王为世袭皇帝。'});
+    hp(d,'c3_vienna',{left:1,note:'大德意志派原想囊括奥地利德语区，遭奥皇强硬拒绝。'});
+   },[['fill',HC.germany,'普鲁士与奥地利'],['dot',HC.war,'法兰克福（圣保罗教堂与九月暴动）'],['dot','#2a2018','马尔默、柏林与维也纳']]),
+  hs('1849—1850年','拒戴皇冠与奥尔米茨之辱','1849年普王拒受皇冠的柏林、护宪起义最后据点拉施塔特、普王召集联盟议会的埃尔富特，以及向奥俄认怂的奥尔米茨。',[[47.2,6.5],[54.2,19.0]],d=>{
+    ha(d,'ger19Prussia1815',HC.germany,{fillOpacity:.22});ha(d,'sHabsburgAustria1556',HC.germany,{fillOpacity:.2});
+    hp(d,'fss_rastatt',{kind:'battle',note:'1849年7月威廉亲王率普军攻陷要塞，处决巴登起义军骨干。'});
+    hp(d,'h6_erfurt',{note:'1850年春普鲁士在此召集北方邦国议会，图谋自建联盟。'});
+    hp(d,'fem_berlin',{note:'1849年4月3日腓特烈·威廉四世在王宫拒受法兰克福议会皇冠。'});
+    hp(d,'g48_olmutz',{left:1,note:'1850年11月29日普鲁士在此向奥俄屈服，恢复德意志旧邦联。'});
+   },[['fill',HC.germany,'普鲁士与奥地利'],['dot',HC.war,'拉施塔特（平定巴登护宪起义）'],['dot','#2a2018','埃尔富特、柏林与奥尔米茨']])
+ ]},
+{id:'history-germany-bismarck',ch:5,title:'俾斯麦与普奥战争：鲁尔钢炮撑腰，铁与血七周把奥地利踢出局',short:'俾斯麦与普奥战争',en:'Bismarck and the Austro-Prussian War: Ruhr Steel and Needle Guns Ousted Austria in Seven Weeks',period:'1850—1866年',c:HC.germany,
+ scenes:[
+  hs('1850—1861年','鲁尔煤铁与新式枪炮','1850年代普鲁士工业起飞的鲁尔区埃森、生产针发枪的瑟默达，以及威廉一世推行军改的柏林。',[[47.5,5.5],[55.5,22.5]],d=>{
+    ha(d,'ger19Prussia1815',HC.germany,{fillOpacity:.24});
+    hp(d,'gbi_essen',{note:'克虏伯在此铸造无缝钢轮与后装线膛钢炮，鲁尔焦煤产量倍增。'});
+    hp(d,'gbi_soemmerda',{note:'德莱赛在此造出后装针发枪，成为普军步兵制式武器。'});
+    hp(d,'fem_berlin',{left:1,note:'威廉一世与陆军大臣罗恩在此力推三年现役扩军方案。'});
+   },[['fill',HC.germany,'普鲁士王国（1815—1866年）'],['dot','#2a2018','埃森、瑟默达与柏林']]),
+  hs('1862年9月','宪政危机与铁和血演说','1862年9月俾斯麦奉召自巴黎急返柏林拜相的路线，以及他曾任八年邦联代表的法兰克福。',[[47.0,1.0],[54.5,16.0]],d=>{
+    ha(d,'ger19Prussia1815',HC.germany,{fillOpacity:.24});ha(d,'fr18France1815',HC.france,{fillOpacity:.14});
+    hp(d,'w_paris',{note:'俾斯麦原任驻法大使，1862年9月接罗恩急电赶回柏林。'});
+    hp(d,'fem_frankfurt',{note:'俾斯麦1851—1859年在此任邦联代表，看透普奥必有一战。'});
+    hp(d,'fem_berlin',{left:1,note:'9月22日在西南郊巴贝尔斯堡宫拜相；30日发表“铁和血”演说。'});
+    hr(d,[[48.853,2.349],[50.94,6.96],[52.52,13.405]],HC.route);
+   },[['fill',HC.germany,'普鲁士王国'],['fill',HC.france,'法兰西第二帝国'],['dline',HC.route,'1862年9月俾斯麦自巴黎返柏林路线（概略）'],['dot','#2a2018','巴黎、法兰克福与柏林（含波茨坦）']]),
+  hs('1862—1866年','无预算征税与联俄堵波兰','无预算期间照收税扩军的柏林、加紧造炮的埃森，以及1863年俾斯麦助俄堵截起义的华沙。',[[48.5,5.5],[55.5,23.0]],d=>{
+    ha(d,'ger19Prussia1815',HC.germany,{fillOpacity:.24});ha(d,'fr18Warsaw1812',HC.eeurope,{fillOpacity:.18});
+    hp(d,'gbi_essen',{note:'政府绕开议会拨款，向克虏伯大举订购后装钢炮。'});
+    hp(d,'fem_berlin',{note:'俾斯麦端出“宪法漏洞论”，连续四年无预算照旧收税养兵。'});
+    hp(d,'ote_warsaw',{kind:'battle',left:1,note:'1863年波兰起义，俾斯麦签《阿尔文斯莱本协定》助沙皇封锁边境。'});
+   },[['fill',HC.germany,'普鲁士王国'],['fill',HC.eeurope,'俄属波兰（示意）'],['dot',HC.war,'华沙（1863年波兰起义）'],['dot','#2a2018','埃森与柏林']]),
+  hs('1863—1865年','普丹战争与加斯泰因引信','1864年普奥联军攻克的丹麦迪伯尔要塞、丹麦都城哥本哈根、签约的维也纳，以及分赃的巴德加斯泰因。',[[46.2,7.0],[56.8,18.5]],d=>{
+    ha(d,'ger19Prussia1815',HC.germany,{fillOpacity:.22});ha(d,'sHabsburgAustria1556',HC.germany,{fillOpacity:.18});
+    hp(d,'gbi_dybbol',{kind:'battle',note:'1864年4月18日普军轰平丹麦堡垒，夺取石勒苏益格。'});
+    hp(d,'gh_copenhagen',{note:'1863年11月丹麦新宪法并吞石勒苏益格，点燃战争导火索。'});
+    hp(d,'gbi_gastein',{note:'1865年8月普奥在此签约：普管石勒苏益格、奥管荷尔斯泰因。'});
+    hp(d,'c3_vienna',{left:1,note:'1864年10月丹麦在此签和约，割出北方三公国交普奥共管。'});
+   },[['fill',HC.germany,'普鲁士与奥地利'],['dot',HC.war,'迪伯尔要塞（1864年普丹战争）'],['dot','#2a2018','哥本哈根、巴德加斯泰因与维也纳']]),
+  hs('1865—1866年6月','外交孤立与毛奇分进合击','俾斯麦会晤拿破仑三世的比亚里茨、签约结盟的意大利都城佛罗伦萨，以及毛奇调兵扑向的萨多瓦。',[[42.0,-3.5],[54.5,18.5]],d=>{
+    ha(d,'ger19Prussia1815',HC.germany,{fillOpacity:.24});ha(d,'sHabsburgAustria1556',HC.war,{fillOpacity:.2});ha(d,'fr18France1815',HC.france,{fillOpacity:.12});
+    hp(d,'gbi_biarritz',{note:'1865年10月俾斯麦在此稳住拿破仑三世，换取法国中立。'});
+    hp(d,'ir_florence',{note:'1866年4月意大利在此与普鲁士签下三个月攻守同盟，夹击奥地利。'});
+    hp(d,'fem_berlin',{note:'老毛奇在总参谋部利用五条铁路干线与电报网分路调兵。'});
+    hp(d,'gbi_sadowa',{kind:'battle',left:1,note:'1866年6月二十五万普军分三路越过边境，在波希米亚合围。'});
+    hr(d,[[52.52,13.405],[51.05,13.74],[50.267,15.750]],HC.route);
+   },[['fill',HC.germany,'普鲁士王国'],['fill',HC.war,'奥地利帝国（含威尼斯）'],['fill',HC.france,'法兰西第二帝国'],['dline',HC.route,'1866年6月普军铁路进军主方向（概略）'],['dot',HC.war,'萨多瓦'],['dot','#2a2018','比亚里茨、佛罗伦萨与柏林']]),
+  hs('1866年7—8月','萨多瓦决战与北德意志邦联','1866年7月萨多瓦战场、停战签约的尼科尔斯堡，以及战后普鲁士吞并北德诸邦建成的北德意志邦联。',[[46.5,6.0],[55.5,19.5]],d=>{
+    ha(d,'ger19NorthGerman1867',HC.germany,{fillOpacity:.26});ha(d,'ger19AustriaHungary1867',HC.war,{fillOpacity:.16});
+    hp(d,'fem_frankfurt',{note:'普鲁士吞并汉诺威、黑森—卡塞尔、拿骚与法兰克福，东西领土连成一片。'});
+    hp(d,'fem_berlin',{note:'北德意志邦联定都柏林；众议院高票通过《免责法案》。'});
+    hp(d,'gbi_sadowa',{kind:'battle',note:'7月3日普军凭针发枪大破奥军，奥军死伤被俘四万余人。'});
+    hp(d,'gbi_nikolsburg',{left:1,note:'7月26日在此签停战预备和约，8月在布拉格正式签约，奥地利未割寸土。'});
+   },[['fill',HC.germany,'1866—1867年北德意志邦联'],['fill',HC.war,'退出德意志后的奥地利（1867年改组奥匈帝国）'],['dot',HC.war,'萨多瓦（克尼格雷茨决战）'],['dot','#2a2018','法兰克福、柏林与尼科尔斯堡']])
+ ]},
+{id:'history-germany-franco-prussian',ch:5,title:'普法战争与德意志帝国：删改一封电报开仗，凡尔赛镜厅里加冕称帝',short:'普法战争与德意志帝国',en:'The Franco-Prussian War and the German Empire: A Telegram Sparked the War, an Empire Proclaimed at Versailles',period:'1870—1871年',c:HC.germany,
+ scenes:[
+  hs('1868—1870年7月','西班牙王位候选人风波','1870年夏围绕西班牙王位候选人展开博弈的马德里、巴黎、柏林，以及利奥波德亲王封地锡格马林根。',[[38.0,-6.0],[54.5,16.0]],d=>{
+    ha(d,'ger19NorthGerman1867',HC.germany,{fillOpacity:.24});ha(d,'fr18France1815',HC.france,{fillOpacity:.18});
+    hp(d,'c5_madrid',{note:'1868年西班牙革命后，临时政府邀霍亨索伦亲王入继王位。'});
+    hp(d,'w_paris',{note:'拿破仑三世与外长格拉蒙强烈抗议，深怕重演普西两面夹击。'});
+    hp(d,'gfp_sigmaringen',{note:'霍亨索伦天主教旁支驻地；7月12日亲王之父宣布放弃候选。'});
+    hp(d,'fem_berlin',{left:1,note:'俾斯麦暗中撮合亲王候选，并将南德四邦绑在攻守同盟上。'});
+   },[['fill',HC.germany,'北德意志邦联'],['fill',HC.france,'法兰西第二帝国'],['dot','#2a2018','马德里、巴黎、锡格马林根与柏林']]),
+  hs('1870年7月13—19日','埃姆斯电报与法国宣战','1870年7月13日威廉一世回绝法国大使的巴德埃姆斯、俾斯麦删改电报的柏林、宣战的巴黎，以及参战的慕尼黑。',[[46.5,0.5],[54.2,16.0]],d=>{
+    ha(d,'ger19NorthGerman1867',HC.germany,{fillOpacity:.24});ha(d,'fr18France1815',HC.france,{fillOpacity:.18});
+    hp(d,'w_paris',{kind:'battle',note:'7月14日各报登出电报译文，19日法国正式向普鲁士宣战。'});
+    hp(d,'gfp_ems',{note:'7月13日普王在此礼貌回绝法国大使索要的永久保证，发电报回柏林。'});
+    hp(d,'sh_munich',{note:'巴伐利亚等南德四邦认定法国挑衅，按盟约归入普军指挥。'});
+    hp(d,'fem_berlin',{left:1,note:'7月13日晚俾斯麦在首相府餐桌上删改电报，当夜公开发布。'});
+    hr(d,[[50.331,7.711],[52.52,13.405]],HC.route);
+   },[['fill',HC.germany,'北德意志邦联'],['fill',HC.france,'法兰西第二帝国'],['dline',HC.route,'1870年7月13日埃姆斯电报发往柏林'],['dot',HC.war,'巴黎（7月19日宣战）'],['dot','#2a2018','巴德埃姆斯、慕尼黑与柏林']]),
+  hs('1870年7—8月','铁路动员与梅斯合围','1870年8月老毛奇用铁路将大军运抵法德边境，进围斯特拉斯堡并将巴赞十七万法军主力困死梅斯。',[[47.0,2.0],[54.0,15.5]],d=>{
+    ha(d,'ger19NorthGerman1867',HC.germany,{fillOpacity:.22});ha(d,'fr18France1815',HC.france,{fillOpacity:.16});
+    hp(d,'fpa_chalons',{note:'麦克马洪败退沙隆大营重整，拿破仑三世抵此随军。'});
+    hp(d,'w_metz',{kind:'battle',note:'8月18日格拉沃洛特血战后，巴赞十七万法军被死死围困城内。'});
+    hp(d,'k_strasbourg',{kind:'battle',note:'8月6日沃尔特之战后，德军进围阿尔萨斯首府斯特拉斯堡。'});
+    hp(d,'fem_berlin',{left:1,note:'老毛奇按列车时刻表，十八天将三十八万德军投送至边境。'});
+    hr(d,[[52.52,13.405],[50.111,8.682],[49.12,6.177]],HC.route);
+   },[['fill',HC.germany,'北德意志邦联'],['fill',HC.france,'法兰西第二帝国'],['dline',HC.route,'1870年7—8月德军铁路动员主干线（概略）'],['dot',HC.war,'梅斯（含格拉沃洛特）与斯特拉斯堡'],['dot','#2a2018','沙隆与柏林']]),
+  hs('1870年9月','色当之战与第三共和国','1870年9月1—2日拿破仑三世被俘的色当、宣布成立第三共和国的巴黎，以及法军撤离后被意军占领的罗马。',[[41.0,0.5],[51.5,14.5]],d=>{
+    ha(d,'fr18France1815',HC.france,{fillOpacity:.16});ha(d,'ger19NorthGerman1867',HC.germany,{fillOpacity:.22});
+    hp(d,'w_paris',{note:'9月4日消息传至巴黎，甘必大等在市政厅宣布成立第三共和国。'});
+    hp(d,'fpa_chalons',{note:'8月下旬麦克马洪与拿破仑三世率十二万大军由此北上救梅斯。'});
+    hp(d,'fma_sedan',{kind:'battle',note:'9月1—2日六百门克虏伯钢炮合围轰击，拿破仑三世与十万法军投降。'});
+    hp(d,'rome',{left:1,note:'法国撤回驻罗马保护军，9月20日意大利王国军进占罗马。'});
+    hr(d,[[48.957,4.365],[49.5,4.7],[49.7,4.94]],HC.route);
+   },[['fill',HC.france,'法兰西（9月4日改建第三共和国）'],['fill',HC.germany,'北德意志邦联'],['dline',HC.route,'麦克马洪与拿破仑三世北上色当路线（概略）'],['dot',HC.war,'色当（9月2日法国皇帝投降）'],['dot','#2a2018','巴黎、沙隆与罗马']]),
+  hs('1870年9月—1871年1月','巴黎围城与凡尔赛镜厅称帝','被德军合围的巴黎与威廉一世加冕的凡尔赛宫、甘必大乘热气球飞往的图尔、巴赞投降的梅斯，以及劝进的慕尼黑。',[[46.2,-0.5],[51.2,13.0]],d=>{
+    ha(d,'ger19GermanEmpire1871',HC.germany,{fillOpacity:.24});ha(d,'fr18France1815',HC.france,{fillOpacity:.14});
+    hp(d,'w_tours',{note:'10月7日甘必大乘热气球飞出巴黎，赴图尔组织外省新军。'});
+    hp(d,'fri_versailles',{kind:'battle',note:'德军围困巴黎四个月；1871年1月18日在镜厅宣告德意志帝国成立。'});
+    hp(d,'w_metz',{note:'1870年10月27日巴赞元帅率十七万正规军在此向德军投降。'});
+    hp(d,'sh_munich',{left:1,note:'1870年11月巴伐利亚签约并入帝国，路德维希二世出面领衔劝进。'});
+    hr(d,[[48.853,2.349],[48.0,1.5],[47.394,0.685]],HC.route);
+   },[['fill',HC.germany,'1871年1月成立的德意志帝国'],['fill',HC.france,'法兰西第三共和国'],['dline',HC.route,'甘必大乘热气球飞出巴黎赴图尔（概略）'],['dot',HC.war,'凡尔赛与巴黎（围城与镜厅加冕）'],['dot','#2a2018','图尔、梅斯与慕尼黑']]),
+  hs('1871年1—5月','法兰克福条约与阿尔萨斯—洛林','1871年5月《法兰克福条约》割让给德意志帝国的阿尔萨斯—洛林、保留在法国的贝尔福，以及签约地法兰克福。',[[46.5,1.0],[51.5,11.0]],d=>{
+    ha(d,'ger19GermanEmpire1871',HC.germany,{fillOpacity:.18});ha(d,'ger19AlsaceLorraine1871',HC.war,{fillOpacity:.38});ha(d,'fr18France1815',HC.france,{fillOpacity:.14});
+    hp(d,'w_paris',{note:'1月28日停战；3月1日三万德军开进香榭丽舍大街阅兵。'});
+    hp(d,'w_metz',{note:'随洛林东北部与阿尔萨斯一并割让德国，设为帝国直辖领地。'});
+    hp(d,'gfp_belfort',{note:'法军死守百日未降，梯也尔以准许德军入巴黎阅兵换取保住此城。'});
+    hp(d,'fem_frankfurt',{left:1,note:'1871年5月10日在此签约：割走阿尔萨斯—洛林，赔款五十亿金法郎。'});
+   },[['fill',HC.war,'1871年割让德国的阿尔萨斯—洛林'],['fill',HC.germany,'德意志帝国'],['fill',HC.france,'法兰西第三共和国'],['dot','#2a2018','巴黎、梅斯、贝尔福与法兰克福']])
+ ]},
+{id:'history-germany-wilhelm2',ch:5,title:'威廉二世与世界政策：俾斯麦织网守成，新皇造舰把英法俄逼进同壕',short:'威廉二世与世界政策',en:'Wilhelm II and Weltpolitik: Bismarck’s Web of Alliances and the Naval Race That United Germany’s Rivals',period:'1871—1914年',c:HC.germany,
+ scenes:[
+  hs('1871—1880年','煤钢起飞与文化斗争','1871年统一后的德意志帝国疆域与新并入的阿尔萨斯—洛林，标出梅斯、鲁尔埃森、柏林与罗马。',[[40.5,2.0],[55.5,20.0]],d=>{
+    ha(d,'ger19GermanEmpire1871',HC.germany,{fillOpacity:.30});ha(d,'ger19AlsaceLorraine1871',HC.war,{fillOpacity:.36});ha(d,'fr18France1815',HC.france,{fillOpacity:.18});
+    hp(d,'w_metz',{kind:'battle',note:'洛林铁矿重镇，托马斯炼钢法使当地高磷铁矿变成工业黄金。'});
+    hp(d,'gw2_essen',{note:'鲁尔煤钢心脏与克虏伯总部，粗钢产量在此反超英国。'});
+    hp(d,'rome',{note:'1878年利奥十三世即位后与柏林缓和关系，结束文化斗争。'});
+    hp(d,'gw2_berlin',{left:1,note:'俾斯麦在此推行世俗婚姻登记，西门子在此研发实用发电机。'});
+   },[['fill',HC.germany,'1871年统一的德意志帝国'],['fill',HC.war,'割自法国的阿尔萨斯—洛林'],['fill',HC.france,'法兰西第三共和国'],['dot',HC.war,'梅斯（洛林矿区）'],['dot','#2a2018','埃森、柏林与罗马']]),
+  hs('1878—1889年','禁党法与三大社会保险','德意志帝国境内的重工业区与工人运动重镇，标出鲁尔区埃森、图林根哥达与首都柏林。',[[47.0,5.0],[55.5,19.5]],d=>{
+    ha(d,'ger19GermanEmpire1871',HC.germany,{fillOpacity:.32});
+    hp(d,'gw2_essen',{note:'鲁尔矿工与钢铁工人率先纳入国家强制工伤与疾病保险。'});
+    hp(d,'gw2_gotha',{note:'1875年德国工人党派在此合并，禁党法期间仍凭个人身份参选壮大。'});
+    hp(d,'gw2_berlin',{left:1,note:'1878年威廉一世在此两度遇刺，帝国议会先后通过禁党法与三大社保法。'});
+   },[['fill',HC.germany,'率先建成国家强制社保网的德意志帝国'],['dot','#2a2018','埃森、哥达与柏林']]),
+  hs('1873—1887年','俾斯麦的同盟迷宫','连线为俾斯麦在柏林织起的大陆同盟网：拉住维也纳与圣彼得堡，把复仇的巴黎孤立在西欧。',[[43.0,-1.0],[61.5,33.0]],d=>{
+    ha(d,'ger19GermanEmpire1871',HC.germany,{fillOpacity:.32});ha(d,'ger19AustriaHungary1867',HC.germany,{fillOpacity:.22});ha(d,'ruRussia1914',HC.eeurope,{fillOpacity:.22});ha(d,'fr18France1815',HC.france,{fillOpacity:.24});
+    hp(d,'w_paris',{note:'痛失阿尔萨斯—洛林的法国被俾斯麦同盟网死死孤立。'});
+    hp(d,'gw2_berlin',{note:'俾斯麦坐镇帝国宰相府织起同盟网，先后在此主持两次国际会议。'});
+    hp(d,'c3_vienna',{note:'1879年与德国缔结秘密军事同盟，1882年再拉意大利结成三国同盟。'});
+    hp(d,'gw2_petersburg',{left:1,note:'1887年与德国密签《再保险条约》，承诺非主动开战则严守中立。'});
+    hr(d,[[52.52,13.41],[48.21,16.37]],HC.route);
+    hr(d,[[52.52,13.41],[59.93,30.34]],HC.route);
+   },[['fill',HC.germany,'德意志帝国与盟邦奥匈帝国'],['fill',HC.eeurope,'签有《再保险条约》的俄罗斯帝国'],['fill',HC.france,'被外交孤立的法兰西'],['dline',HC.route,'俾斯麦联奥稳俄的同盟连线'],['dot','#2a2018','巴黎、柏林、维也纳与圣彼得堡']]),
+  hs('1888—1890年','领航员下船与法俄结盟','威廉二世在柏林逼退俾斯麦并拒续俄约，红线标出1894年巴黎与圣彼得堡结成法俄军事同盟。',[[44.0,-1.0],[61.5,33.0]],d=>{
+    ha(d,'ger19GermanEmpire1871',HC.germany,{fillOpacity:.30});ha(d,'fr18France1815',HC.france,{fillOpacity:.26});ha(d,'ruRussia1914',HC.eeurope,{fillOpacity:.26});
+    hp(d,'w_paris',{kind:'battle',note:'巴黎银行团向沙俄提供巨额铁路贷款，与圣彼得堡结成军事同盟。'});
+    hp(d,'gw2_friedrichsruh',{note:'1890年3月俾斯麦下台退居于此，预言死后二十年帝国将迎大崩溃。'});
+    hp(d,'gw2_berlin',{note:'1888年威廉二世即位，1890年解职俾斯麦并拒绝续签对俄密约。'});
+    hp(d,'gw2_petersburg',{kind:'battle',left:1,note:'遭柏林弃绝后转与法国结盟，对德形成东西两线夹击之势。'});
+    hr(d,[[48.85,2.35],[59.93,30.34]],HC.war);
+   },[['fill',HC.germany,'放弃俾斯麦外交路线的德意志帝国'],['fill',HC.france,'法兰西共和国'],['fill',HC.eeurope,'俄罗斯帝国'],['dline',HC.war,'1894年法俄军事同盟（东西夹击德国）'],['dot',HC.war,'巴黎与圣彼得堡'],['dot','#2a2018','弗里德里希斯鲁与柏林']]),
+  hs('1897—1907年','公海造舰竞赛与三国协约','威廉港的德国公海舰队基地与隔海相望的伦敦，以及连成一气的伦敦、巴黎与圣彼得堡三国协约。',[[44.0,-4.0],[57.5,18.0]],d=>{
+    ha(d,'ger19GermanEmpire1871',HC.germany,{fillOpacity:.32});ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.28});ha(d,'fr18France1815',HC.france,{fillOpacity:.26});
+    hp(d,'k_london',{note:'视德国造舰为致命威胁，1904年联法、1907年联俄，合拢三国协约。'});
+    hp(d,'w_paris',{note:'1904年与英国签《挚诚协定》，化解海外殖民争端共同防德。'});
+    hp(d,'gw2_wilhelmshaven',{kind:'battle',note:'提尔皮茨在此扩建军港大造无畏舰，企图以风险舰队逼退英国。'});
+    hp(d,'gw2_berlin',{left:1,note:'1897年比洛在此宣示争夺“阳光下的地盘”，议会连过两部海军法。'});
+    hr(d,[[51.51,-0.09],[48.85,2.35]],HC.route);
+   },[['fill',HC.germany,'大造战列舰的德意志帝国'],['fill',HC.britain,'放弃光荣孤立的大不列颠'],['fill',HC.france,'法兰西'],['dline',HC.route,'1904年英法《挚诚协定》连线'],['dot',HC.war,'威廉港（公海舰队基地）'],['dot','#2a2018','伦敦、巴黎与柏林']]),
+  hs('1905—1914年','摩洛哥危机与施里芬计划','南面是威廉二世两度挑衅的摩洛哥丹吉尔与阿加迪尔，北面是施里芬计划借道比利时包抄巴黎的弧线。',[[28.5,-12.0],[55.0,16.5]],d=>{
+    ha(d,'ger19GermanEmpire1871',HC.germany,{fillOpacity:.32});ha(d,'fr18France1815',HC.france,{fillOpacity:.26});ha(d,'fr18Belgium1795',HC.lowlands,{fillOpacity:.28});ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.24});
+    hp(d,'gw2_agadir',{kind:'battle',note:'1911年7月德国炮舰“豹”号闯入此港，英法联手强硬顶回。'});
+    hp(d,'gw2_tangier',{kind:'battle',note:'1905年3月威廉二世登岸挑衅，反在阿尔赫西拉斯会议陷入孤立。'});
+    hp(d,'lb_brussels',{note:'施里芬计划设定德军右翼主力借道比利时平原，六周内包抄巴黎。'});
+    hp(d,'gw2_berlin',{left:1,note:'1905年底总参谋长施里芬在此拟定先西后东的铁道动员时刻表。'});
+    hr(d,[[50.94,6.96],[50.85,4.35],[48.85,2.35]],HC.war);
+   },[['fill',HC.germany,'德意志帝国'],['fill',HC.france,'法兰西'],['fill',HC.lowlands,'永久中立国比利时'],['dline',HC.war,'施里芬计划右翼借道比利时包抄巴黎路线'],['dot',HC.war,'丹吉尔与阿加迪尔（两次摩洛哥危机）'],['dot','#2a2018','布鲁塞尔与柏林']])
+ ]},
+{id:'history-germany-ww1-west',ch:5,title:'一战西线：六周速胜卡在马恩河，四年战壕流尽两代青年血',short:'一战西线',en:'The Western Front of World War I: From the Marne Taxis to the Trenches of Verdun and the Somme',period:'1914—1918年',c:HC.germany,
+ scenes:[
+  hs('1914年7—8月','借道比利时与列日巨炮','德军越过边境强攻比利时列日要塞与布鲁塞尔，比军退守西北部海岸放水阻敌，伦敦对德宣战。',[[47.5,-1.5],[54.0,15.0]],d=>{
+    ha(d,'ger19GermanEmpire1871',HC.germany,{fillOpacity:.32});ha(d,'fr18Belgium1795',HC.lowlands,{fillOpacity:.32});ha(d,'fr18France1815',HC.france,{fillOpacity:.24});ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.24});
+    hp(d,'k_london',{note:'1914年8月4日因德军侵犯比利时永久中立，英国正式对德宣战。'});
+    hp(d,'lb_brussels',{note:'比利时王室驻地；拒绝借道要求后退守西北沿海平原死战。'});
+    hp(d,'lf_liege',{kind:'battle',note:'默兹河谷要塞群；德军调集超重型攻城榴弹炮轰穿环形混凝土堡垒。'});
+    hp(d,'gww_berlin',{left:1,note:'德军参谋本部启动西进时刻表，宰相府痛斥英国驻德大使戈申。'});
+    hr(d,[[50.78,6.08],[50.63,5.57],[50.85,4.35]],HC.war);
+   },[['fill',HC.germany,'按施里芬计划西进的德意志帝国'],['fill',HC.lowlands,'遭入侵的永久中立国比利时'],['fill',HC.france,'法兰西'],['fill',HC.britain,'参战护约的大不列颠'],['dline',HC.war,'1914年8月德军右翼突入比利时路线'],['dot',HC.war,'列日要塞'],['dot','#2a2018','伦敦、布鲁塞尔与柏林']]),
+  hs('1914年9—11月','马恩河出租车与七百公里战壕','红线标出从比利时伊普尔经凡尔登延绵至瑞士边境的西线战壕；法国政府一度南迁波尔多。',[[44.0,-2.0],[52.2,9.5]],d=>{
+    ha(d,'fr18France1815',HC.france,{fillOpacity:.28});ha(d,'fr18Belgium1795',HC.lowlands,{fillOpacity:.26});ha(d,'ger19GermanEmpire1871',HC.germany,{fillOpacity:.28});
+    hp(d,'w_bordeaux',{note:'9月初德军前锋逼近巴黎外围时，法国政府一度南迁于此办公。'});
+    hp(d,'w_paris',{kind:'battle',note:'加利埃尼征调六百辆雷诺出租车连夜运兵赴马恩河前线反击。'});
+    hp(d,'lf_ypres',{kind:'battle',note:'双方“奔向大海”抢占侧翼的北端终点，战壕一路挖到海边。'});
+    hp(d,'w_verdun',{left:1,note:'法军东段战线要塞枢轴，与瑞士边境相连构成七百公里战壕网。'});
+    hr(d,[[51.15,2.75],[50.85,2.89],[49.89,2.65],[49.26,4.03],[49.16,5.38],[47.56,7.59]],HC.war);
+   },[['fill',HC.france,'挡住德军速胜攻势的法兰西'],['fill',HC.germany,'后撤转入战壕防线的德意志帝国'],['dline',HC.war,'1914年11月凝固的七百公里西线战壕（概略）'],['dot',HC.war,'巴黎（马恩河反击）与伊普尔'],['dot','#2a2018','波尔多与凡尔登']]),
+  hs('1915—1916年6月','伊普尔毒气与凡尔登绞肉机','西线南北两处血战焦点：北面比利时伊普尔首次毒气战，南面法国凡尔登十个月消耗战。',[[46.5,0.5],[52.2,9.0]],d=>{
+    ha(d,'fr18France1815',HC.france,{fillOpacity:.28});ha(d,'fr18Belgium1795',HC.lowlands,{fillOpacity:.26});ha(d,'ger19GermanEmpire1871',HC.germany,{fillOpacity:.30});
+    hp(d,'w_paris',{note:'法军统帅部通过“神圣之路”将全国三分之二师团轮换投入凡尔登。'});
+    hp(d,'lf_ypres',{kind:'battle',note:'1915年4月22日德军在此拧开五千七百个钢瓶首放液氯毒气。'});
+    hp(d,'w_verdun',{kind:'battle',left:1,note:'1916年2月起法德互轰两千万发炮弹，贝当率军死守十个月。'});
+   },[['fill',HC.france,'死守凡尔登的法兰西'],['fill',HC.germany,'发起消耗战的德意志帝国'],['fill',HC.lowlands,'比利时战场'],['dot',HC.war,'伊普尔（首次毒气战）与凡尔登（绞肉机）'],['dot','#2a2018','巴黎']]),
+  hs('1916年7—11月','索姆河血战与坦克上场','英军自伦敦渡海开赴皮卡第索姆河战场，为南侧苦撑的凡尔登解围，并首次投入履带装甲坦克。',[[47.5,-1.5],[52.5,8.0]],d=>{
+    ha(d,'fr18France1815',HC.france,{fillOpacity:.28});ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.28});ha(d,'ger19GermanEmpire1871',HC.germany,{fillOpacity:.28});
+    hp(d,'k_london',{note:'大批“基奇纳志愿新军”由此渡海赴法，并秘密研发代号水箱的坦克。'});
+    hp(d,'gww_somme',{kind:'battle',note:'7月1日首日英军伤亡五万七千余人，9月15日坦克在此首次参战。'});
+    hp(d,'w_verdun',{kind:'battle',left:1,note:'索姆河攻势迫使德军北调重炮与兵力，缓解了凡尔登防线压力。'});
+   },[['fill',HC.britain,'大不列颠'],['fill',HC.france,'法兰西西线战场'],['fill',HC.germany,'德意志帝国'],['dot',HC.war,'阿尔贝（索姆河战场）与凡尔登'],['dot','#2a2018','伦敦']]),
+  hs('1916—1917年','芜菁之冬与贵妇小径哗变','英国海军在北海封锁致柏林深陷饥荒，法军在埃纳河贵妇小径哗变，克列孟梭在巴黎出任总理。',[[46.5,-1.5],[54.5,15.0]],d=>{
+    ha(d,'fr18France1815',HC.france,{fillOpacity:.28});ha(d,'ger19GermanEmpire1871',HC.germany,{fillOpacity:.30});ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.26});
+    hp(d,'k_london',{note:'英国皇家海军封锁北海航道，截断德国化肥与海外粮食输入。'});
+    hp(d,'w_paris',{note:'年逾古稀的克列孟梭接任总理兼陆军部长，铁腕整肃主和政客。'});
+    hp(d,'gww_aisne',{kind:'battle',note:'1917年4月尼韦勒仰攻贵妇小径惨败，引发法军六十八个师哗变。'});
+    hp(d,'gww_berlin',{left:1,note:'1916至1917年冬市民靠饲料芜菁充饥，统帅部决定赌无限制潜艇战。'});
+   },[['fill',HC.france,'经历哗变后由克列孟梭稳住的法兰西'],['fill',HC.germany,'遭受封锁与芜菁之冬的德意志帝国'],['fill',HC.britain,'实施海上封锁的大不列颠'],['dot',HC.war,'克拉奥讷（贵妇小径哗变）'],['dot','#2a2018','伦敦、巴黎与柏林']]),
+  hs('1918年','皇帝会战、百日反攻与赴欧华工','1918年春德军自斯帕指挥突击逼近巴黎，8月起协约国发起百日反攻；诺耶勒为十四万赴欧华工大本营。',[[47.5,0.5],[51.8,8.0]],d=>{
+    ha(d,'fr18France1815',HC.france,{fillOpacity:.28});ha(d,'fr18Belgium1795',HC.lowlands,{fillOpacity:.26});ha(d,'ger19GermanEmpire1871',HC.germany,{fillOpacity:.28});
+    hp(d,'gww_noyelles',{note:'十四万赴欧山东与河北华工的总医院与大本营，近九百名华工长眠于此。'});
+    hp(d,'w_paris',{kind:'battle',note:'德军春季攻势二度逼近马恩河，福煦统率英法美军于7月转入反攻。'});
+    hp(d,'w_verdun',{kind:'battle',note:'1918年9月起美法联军在北侧默兹—阿尔贡发起总攻，砸穿德军防线。'});
+    hp(d,'gww_spa',{left:1,note:'8月8日亚眠坦克战成“德军黑日”，鲁登道夫在此大本营承认败局。'});
+    hr(d,[[48.85,2.35],[49.89,2.30],[50.49,5.86]],HC.route);
+   },[['fill',HC.france,'转入百日大反攻的协约国西线'],['fill',HC.germany,'防线全线瓦解的德军'],['dline',HC.route,'1918年8—11月协约国百日反攻推进方向（示意）'],['dot',HC.war,'巴黎与凡尔登（反攻主战场）'],['dot','#2a2018','诺耶勒（华工墓园）与斯帕']])
+ ]},
+{id:'history-germany-versailles',ch:5,title:'十一月革命与凡尔赛：军方甩锅给魏玛，镜厅复仇与四万亿马克废纸',short:'十一月革命与凡尔赛',en:'The November Revolution and Versailles: The Stab-in-the-Back Myth, the Hall of Mirrors, and Hyperinflation',period:'1918—1923年',c:HC.germany,
+ scenes:[
+  hs('1918年9—11月','斯帕甩锅与基尔水兵起义','比利时斯帕的德军统帅部催促柏林文官求和，基尔港水兵拒绝出海引爆革命并烧向慕尼黑与柏林。',[[47.0,4.0],[55.5,16.0]],d=>{
+    ha(d,'ger19GermanEmpire1871',HC.germany,{fillOpacity:.32});ha(d,'fr18Belgium1795',HC.lowlands,{fillOpacity:.26});ha(d,'fr18France1815',HC.france,{fillOpacity:.20});
+    hp(d,'gve_spa',{note:'9月29日鲁登道夫与兴登堡在此催促组建文官内阁出面求和背锅。'});
+    hp(d,'gve_kiel',{kind:'battle',note:'10月底至11月3日水兵拒绝出海做自杀决战，熄灭锅炉升起红旗。'});
+    hp(d,'sh_munich',{kind:'battle',note:'11月7日革命烧至巴伐利亚，传承七百余年的维特尔斯巴赫王室率先倒台。'});
+    hp(d,'gve_berlin',{left:1,note:'巴登亲王马克斯在此组建议会多数内阁，向美国总统威尔逊发信求和。'});
+    hr(d,[[54.32,10.12],[52.52,13.41],[48.14,11.58]],HC.war);
+   },[['fill',HC.germany,'爆发十一月革命的德意志帝国'],['fill',HC.lowlands,'德军统帅部驻地比利时'],['dline',HC.war,'1918年11月初基尔水兵革命蔓延方向'],['dot',HC.war,'基尔与慕尼黑'],['dot','#2a2018','斯帕与柏林']]),
+  hs('1918年11月','两个共和国与贡比涅停战','柏林同日宣告两个共和国，威廉二世逃往荷兰多恩，文官代表在法国贡比涅森林餐车内签字停战。',[[47.5,1.0],[54.5,15.5]],d=>{
+    ha(d,'ger19GermanEmpire1871',HC.germany,{fillOpacity:.30});ha(d,'fr18France1815',HC.france,{fillOpacity:.28});ha(d,'fr18Belgium1795',HC.lowlands,{fillOpacity:.24});
+    hp(d,'gve_compiegne',{kind:'battle',note:'11月11日清晨文官埃茨贝格尔在福煦车厢签字停战，德军将领全员缺席。'});
+    hp(d,'gve_doorn',{note:'威廉二世失去军队效忠后于11月10日乘火车逃入荷兰，在此庄园终老。'});
+    hp(d,'gve_berlin',{kind:'battle',left:1,note:'11月9日艾伯特接任总理，谢德曼与李卜克内西同日宣布两个共和国。'});
+   },[['fill',HC.germany,'霍亨索伦王朝倒台后的德国'],['fill',HC.france,'签署停战协定的法兰西'],['dot',HC.war,'贡比涅森林与柏林'],['dot','#2a2018','多恩（德皇流亡地）']]),
+  hs('1918年11月—1919年1月','秘密电话与自由军团镇压','连接斯帕与柏林的秘密军用电话线促成军政同盟，右翼自由军团进京镇压斯巴达克起义。',[[48.5,4.0],[55.5,16.0]],d=>{
+    ha(d,'ger19Weimar1919',HC.germany,{fillOpacity:.32});ha(d,'fr18Belgium1795',HC.lowlands,{fillOpacity:.22});
+    hp(d,'gve_spa',{note:'11月10日夜格勒纳将军由此打秘密电话给柏林，与艾伯特达成防左交易。'});
+    hp(d,'gve_kiel',{note:'各地工兵代表进京开会，投票支持选举制宪议会而非实行苏维埃专政。'});
+    hp(d,'gve_berlin',{kind:'battle',left:1,note:'1919年1月诺斯克调自由军团入城巷战，杀害卢森堡与李卜克内西。'});
+    hr(d,[[50.49,5.86],[52.52,13.41]],HC.route);
+   },[['fill',HC.germany,'过渡期德国'],['dline',HC.route,'1918年11月10日夜斯帕—柏林秘密军用电话线'],['dot',HC.war,'柏林（斯巴达克起义）'],['dot','#2a2018','斯帕与基尔']]),
+  hs('1919年2—6月','魏玛制宪与凡尔赛割地','色块标出1919年魏玛德国疆域与归还法国的阿尔萨斯—洛林，以及但泽波兰走廊切出的东普鲁士飞地。',[[47.0,0.5],[55.8,22.0]],d=>{
+    ha(d,'ger19Weimar1919',HC.germany,{fillOpacity:.32});ha(d,'ger19AlsaceLorraine1871',HC.war,{fillOpacity:.38});ha(d,'fr18France1815',HC.france,{fillOpacity:.26});
+    hp(d,'fri_versailles',{kind:'battle',note:'1919年6月28日德国代表在镜厅签下含231条罪责的对德和约。'});
+    hp(d,'k_strasbourg',{note:'割走四十八年的阿尔萨斯与洛林重归法国，莱茵兰实行非军事化。'});
+    hp(d,'gve_weimar',{note:'制宪国民议会在此选艾伯特为总统，通过含第48条紧急权的宪法。'});
+    hp(d,'gve_danzig',{kind:'battle',left:1,note:'西普鲁士划归波兰成波兰走廊，但泽设为自由市，东普鲁士成飞地。'});
+   },[['fill',HC.germany,'1919年割地后的魏玛共和国（东普鲁士沦为飞地）'],['fill',HC.war,'归还法国的阿尔萨斯—洛林'],['fill',HC.france,'法兰西'],['dot',HC.war,'凡尔赛与但泽（波兰走廊）'],['dot','#2a2018','斯特拉斯堡与魏玛']]),
+  hs('1919—1922年','背后一刀神话与政治暗杀','伦敦开出1320亿金马克账单，柏林议会传出“背后一刀”谎言，巴登与柏林接连发生右翼暗杀。',[[47.5,-1.5],[54.5,16.5]],d=>{
+    ha(d,'ger19Weimar1919',HC.germany,{fillOpacity:.32});ha(d,'fr18France1815',HC.france,{fillOpacity:.24});ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.24});
+    hp(d,'k_london',{note:'1921年春协约国在此发出最后通牒，定下1320亿金马克赔款总额。'});
+    hp(d,'ty1_heidelberg',{kind:'battle',note:'艾伯特故乡巴登重镇；1921年8月前财长埃茨贝格尔在黑森林遇刺。'});
+    hp(d,'gve_berlin',{kind:'battle',left:1,note:'兴登堡在议会抛出背后一刀论，外长拉特瑙在此街头遇刺身亡。'});
+   },[['fill',HC.germany,'受困于赔款与右翼暗杀的魏玛共和国'],['fill',HC.britain,'大不列颠'],['fill',HC.france,'法兰西'],['dot',HC.war,'海德堡（巴登暗杀案）与柏林'],['dot','#2a2018','伦敦']]),
+  hs('1923年','鲁尔占领与四万亿马克通胀','法比联军自巴黎方向开进鲁尔区埃森接管矿厂，柏林印钞引发恶性通胀，慕尼黑爆发啤酒馆暴动。',[[47.0,1.0],[54.5,16.0]],d=>{
+    ha(d,'ger19Weimar1919',HC.germany,{fillOpacity:.32});ha(d,'fr18France1815',HC.france,{fillOpacity:.28});ha(d,'fr18Belgium1795',HC.lowlands,{fillOpacity:.26});
+    hp(d,'w_paris',{note:'普恩加莱内阁以德方拖欠实物赔款为由，下令法比联军武装占领鲁尔。'});
+    hp(d,'gve_essen',{kind:'battle',note:'1923年1月六万法比军队进占鲁尔矿厂，两百万德国工人罢工消极抵抗。'});
+    hp(d,'sh_munich',{kind:'battle',note:'11月9日希特勒与鲁登道夫趁通胀大乱在此发动啤酒馆暴动未遂。'});
+    hp(d,'gve_berlin',{left:1,note:'帝国银行印钞致4.2万亿马克兑一美元，施特雷泽曼发地租马克止血。'});
+    hr(d,[[48.85,2.35],[51.46,7.01]],HC.war);
+   },[['fill',HC.germany,'经历恶性通胀的魏玛共和国'],['fill',HC.france,'出兵占领鲁尔的法兰西'],['fill',HC.lowlands,'协同出兵的比利时'],['dline',HC.war,'1923年1月法比联军进占鲁尔工业区'],['dot',HC.war,'埃森（鲁尔占领区）与慕尼黑'],['dot','#2a2018','巴黎与柏林']])
  ]},
 {id:'history-italy-blackdeath',ch:5,title:'黑死病：从卡法到伦敦',short:'黑死病',en:'The Black Death: From Caffa to London',period:'1346—1353年',c:HC.italy,
  scenes:[
@@ -17939,7 +18521,10 @@ const HISTORY_ERAS=[
  {id:'empire-france-oldregime',name:'法兰西：旧制度的账',en:'France: The Old Regime’s Accounts',date:'1711—1789年',c:HC.france,items:[['history-france-law'],['history-france-louis15'],['history-france-enlightenment'],['history-france-seven-years'],['history-france-parlements'],['history-france-american-war'],['history-france-bankruptcy']]},
  {id:'empire-france-revolution',name:'法兰西：大革命',en:'France: The Revolution',date:'1789—1799年',c:HC.france,items:[['history-france-bastille'],['history-france-august'],['history-france-varennes'],['history-france-regicide'],['history-france-terror'],['history-france-directory'],['history-france-brumaire']]},
  {id:'empire-france-two-bonapartes',name:'法兰西：两个波拿巴之间',en:'France: Between Two Bonapartes',date:'1800—1852年',c:HC.france,items:[['history-france-consulate'],['history-france-empire'],['history-france-waterloo'],['history-france-restoration'],['history-france-july-monarchy'],['history-france-1848'],['history-france-louis-bonaparte']]},
+ {id:'empire-france-third-republic',name:'法兰西：第二帝国与第三共和国',en:'France: The Second Empire and the Third Republic',date:'1852—1914年',c:HC.france,items:[['history-france-second-empire'],['history-france-commune']]},
  {id:'empire-frederick2',name:'德意志、低地与意大利：从腓特烈二世到文艺复兴、查理五世与三十年战争',en:'Germany, Low Countries and Italy: From Frederick II to the Renaissance, Charles V, and the Thirty Years’ War',date:'843—1648年',c:HC.germany,items:[['history-germany-frederick2'],['history-germany-electors'],['history-germany-golden-bull'],['history-germany-hansa'],['history-lowlands-flanders'],['history-germany-swiss',0,2,'山口与长矛'],['history-lowlands-burgundy'],['history-germany-swiss',3,5,'雇佣兵之国'],['history-germany-charles5'],['history-germany-thirty-years-1',0,4,'三十年战争（上）'],['history-germany-thirty-years-1',5,6,'丹麦参战与华伦斯坦'],['history-germany-thirty-years-2'],['history-germany-thirty-years-3'],['history-italy-vespers'],['history-italy-venice'],['history-italy-condottieri'],['history-italy-renaissance'],['history-italy-wars-1'],['history-italy-charles8'],['history-italy-savonarola'],['history-italy-louis12'],['history-italy-julius2'],['history-italy-wars-2']]},
+ {id:'empire-germany-prussia',name:'德意志：从普鲁士崛起到1848年议会',en:'Germany: From the Rise of Prussia to the Frankfurt Parliament',date:'1640—1850年',c:HC.germany,items:[['history-germany-prussia-rise'],['history-germany-frederick-great'],['history-germany-reform'],['history-germany-1848']]},
+ {id:'empire-germany-reich',name:'德意志：铁血统一、威廉帝国与魏玛共和',en:'Germany: Unification, the Kaiserreich and Weimar',date:'1850—1923年',c:HC.germany,items:[['history-germany-bismarck'],['history-germany-franco-prussian'],['history-germany-wilhelm2'],['history-germany-ww1-west'],['history-germany-versailles']]},
  {id:'empire-blackdeath',name:'中世纪晚期：黑死病',en:'The Late Middle Ages: the Black Death',date:'1346—1353年',c:HC.italy,items:[['history-italy-blackdeath']]},
  {id:'empire-taifas',name:'西班牙：泰法与圣战',en:'Spain: the Taifas and Holy War',date:'1031—1123年',c:HC.spain,items:[['history-spain-taifas'],['history-spain-crusade']]},
  {id:'empire-spain-1492',name:'西班牙与葡萄牙：从托洛萨到1492大航海',en:'Spain and Portugal: From Las Navas to 1492',date:'1123—1572年',c:HC.spain,items:[['history-spain-reconquista'],['history-spain-aragon'],['history-spain-monarchs'],['history-spain-granada'],['history-spain-inquisition'],['history-spain-1492']]},
@@ -18012,9 +18597,9 @@ const HISTORY_BRANCHES=[
  {id:'east',name:'东罗马',en:'East Rome',lane:2,parent:'rome',from:395,to:1453,c:HC.byz},
  {id:'west',name:'中世纪西欧',en:'Medieval Western Europe',lane:4,parent:'rome',from:476,to:843,c:HC.celt},
  {id:'spain',name:'西班牙',en:'Spain',lane:5,parent:'west',from:481,to:1931,c:HC.spain},
- {id:'france',name:'法兰西',en:'France',lane:5,parent:'west',from:843,to:1852,c:HC.france},
- {id:'lowlands',name:'低地诸国',en:'Low Countries',lane:5,parent:'west',from:843,to:1648,c:HC.lowlands},
- {id:'germany',name:'德意志',en:'Germany',lane:4,parent:'west',from:843,to:1648,c:HC.germany},
+ {id:'france',name:'法兰西',en:'France',lane:5,parent:'west',from:843,to:1923,c:HC.france},
+ {id:'lowlands',name:'低地诸国',en:'Low Countries',lane:5,parent:'west',from:843,to:1918,c:HC.lowlands},
+ {id:'germany',name:'德意志',en:'Germany',lane:4,parent:'west',from:843,to:1923,c:HC.germany},
  {id:'italy',name:'意大利',en:'Italy',lane:3,parent:'west',from:843,to:1563,c:HC.italy},
  // 不列颠 (including Ireland): forks from the trunk before Caesar's landing, on lane 6 right beside 法兰西.
  {id:'britain',name:'不列颠',en:'Britain and Ireland',lane:6,parent:'trunk',from:-55,to:1928,c:HC.britain},
@@ -18267,7 +18852,7 @@ const TREE_ROWS={
  'history-france-law/0':['france',1715,1723,'1711—1723年'],
  'history-france-louis15/0':['france',1726,1757,'1723—1757年'],
  'history-france-enlightenment/0':['france',1751,1784,'1721—1784年'],
- 'history-france-seven-years/0':[['france','britain','spain','america'],1756,1763,'1754—1763年'],
+ 'history-france-seven-years/0':[['france','britain','spain','america','germany'],1756,1763,'1754—1763年'],
  'history-france-parlements/0':['france',1764,1776,'1761—1776年'],
  'history-france-american-war/0':[['france','spain','america'],1778,1786,'1776—1786年'],
  'history-france-bankruptcy/0':['france',1787,1789,'1786—1789年'],
@@ -18292,8 +18877,8 @@ const TREE_ROWS={
  'history-britain-suffrage-1918/0':['britain',1918,1920,'1897—1918年'],
  'history-britain-suffrage-1928/0':['britain',1924,1928,'1918—1928年'],
  'history-france-consulate/0':['france',1800,1804,'1800—1804年'],
- 'history-france-empire/0':[['france','spain'],1805,1811,'1805—1811年'],
- 'history-france-waterloo/0':[['france','eeurope'],1812,1815,'1810—1815年'],
+ 'history-france-empire/0':[['france','spain','germany'],1805,1811,'1805—1811年'],
+ 'history-france-waterloo/0':[['france','eeurope','germany'],1812,1815,'1810—1815年'],
  'history-france-restoration/0':['france',1816,1830,'1815—1830年'],
  'history-france-july-monarchy/0':['france',1831,1848,'1830—1848年'],
  'history-france-1848/0':['france',1848.3,1848.9,'1848年'],
@@ -18334,6 +18919,17 @@ const TREE_ROWS={
  'history-china-early-qing/0':['china',1683,1796,'1683—1796年'],
  'history-china-qing-decline/0':['china',1796,1895,'1796—1895年'],
  'history-china-republic/0':['china',1895,1919,'1895—1919年'],
+ 'history-germany-prussia-rise/0':['germany',1720,1740,'1640—1740年'],
+ 'history-germany-frederick-great/0':['germany',1742,1755,'1740—1786年'],
+ 'history-germany-reform/0':['germany',1808,1811.5,'1807—1815年'],
+ 'history-germany-1848/0':['germany',1834,1850,'1815—1850年'],
+ 'history-germany-bismarck/0':['germany',1864,1866,'1850—1866年'],
+ 'history-germany-franco-prussian/0':[['germany','france'],1870,1871,'1870—1871年'],
+ 'history-germany-wilhelm2/0':['germany',1890,1913,'1871—1914年'],
+ 'history-germany-ww1-west/0':[['germany','france','lowlands'],1914.5,1918,'1914—1918年'],
+ 'history-germany-versailles/0':[['germany','france'],1919,1923,'1918—1923年'],
+ 'history-france-second-empire/0':['france',1856,1869,'1852—1870年'],
+ 'history-france-commune/0':['france',1875,1913,'1871—1914年'],
  'history-faith-avignon/0':[['faith','france'],1296,1303,'1294—1303年'],
  'history-faith-clement/0':[['faith','france'],1304,1314,'1303—1314年'],
  'history-italy-blackdeath/0':[['italy','france','britain','germany','faith','persia','nordic'],1347,1351,'1346—1353年'],
@@ -18413,7 +19009,7 @@ const TREE_ROWS={
  'history-germany-swiss/3':[['germany','italy','faith'],1515,1516,'1477—1648年']
 };
 // Topics still to be written grow the tree as dashed shoots.
-const TREE_FUTURE=[['france',1852,'第二帝国与普法战争','1852年后待展开：奥斯曼改造巴黎 · 克里米亚与意大利战争 · 1870年色当与巴黎公社 · 第三共和国'],['germany',1648,'普鲁士崛起与七年战争','1648年后待展开：勃兰登堡—普鲁士崛起 · 腓特烈大帝与奥地利王位继承战'],['italy',1563,'哈布斯堡霸权与统一','1563年后待展开：西班牙哈布斯堡霸权下的意大利 · 巴洛克时代与近代统一'],['faith',1689,'政教分离与启蒙时代','1689年后待展开：英国《宽容法》 · 启蒙运动与教会 · 大革命与教会'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',1923,'土耳其共和国与现代中东','1923年后待展开：凯末尔世俗化改革 · 英法委任统治、海湾石油与现代中东格局'],['china',1919,'国民革命、抗战与内战','1919年后待展开：国共合作与北伐 · 抗日战争 · 国共内战与1949年'],['spain',1931,'第二共和国与西班牙内战','1931年后待展开：1931—1936年第二共和国改革与左右撕裂 · 1936—1939年西班牙内战与佛朗哥独裁'],['eeurope',1922,'斯大林与冷战','1922年后待展开：斯大林五年计划 · 二战苏德战场 · 冷战与苏联解体'],['lowlands',1648,'黄金时代与英荷海战','1648年后待展开：17世纪阿姆斯特丹黄金时代 · 三次英荷海战与威廉三世入主英国'],['crusade',1312,'后来的十字军','1396年尼科波利斯 · 1444年瓦尔纳 · 1571年勒班陀 · 待展开'],['america',1920,'大萧条、罗斯福新政与二战','1920年后待展开：1929年华尔街崩盘与大萧条 · 罗斯福新政 · 二战两洋作战与布雷顿森林体系'],['nordic',1648,'踏冰渡海与大北方战争','1648年后待展开：1658年卡尔十世踏冰渡海夺下斯科讷 · 1700—1721年大北方战争，瑞典失去波罗的海霸权'],['britain',1928,'大萧条、二战与福利国家','1928年后待展开：1929年大萧条 · 丘吉尔与二战不列颠之战 · 战后福利国家与大英帝国解体']];
+const TREE_FUTURE=[['france',1923,'大萧条、二战与第五共和国','1923年后待展开：1936年人民阵线 · 1940年败降与自由法国 · 戴高乐与第五共和国'],['germany',1923,'大萧条、第三帝国与两德分合','1923年后待展开：1929年大萧条与希特勒上台 · 二战与大屠杀 · 冷战两德分裂与1990年统一'],['italy',1563,'哈布斯堡霸权与统一','1563年后待展开：西班牙哈布斯堡霸权下的意大利 · 巴洛克时代与近代统一'],['faith',1689,'政教分离与启蒙时代','1689年后待展开：英国《宽容法》 · 启蒙运动与教会 · 大革命与教会'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',1923,'土耳其共和国与现代中东','1923年后待展开：凯末尔世俗化改革 · 英法委任统治、海湾石油与现代中东格局'],['china',1919,'国民革命、抗战与内战','1919年后待展开：国共合作与北伐 · 抗日战争 · 国共内战与1949年'],['spain',1931,'第二共和国与西班牙内战','1931年后待展开：1931—1936年第二共和国改革与左右撕裂 · 1936—1939年西班牙内战与佛朗哥独裁'],['eeurope',1922,'斯大林与冷战','1922年后待展开：斯大林五年计划 · 二战苏德战场 · 冷战与苏联解体'],['lowlands',1918,'比荷卢联盟与欧洲一体化','1918年后待展开：战间期普选与福利 · 二战占领 · 比荷卢联盟与欧盟创始'],['crusade',1312,'后来的十字军','1396年尼科波利斯 · 1444年瓦尔纳 · 1571年勒班陀 · 待展开'],['america',1920,'大萧条、罗斯福新政与二战','1920年后待展开：1929年华尔街崩盘与大萧条 · 罗斯福新政 · 二战两洋作战与布雷顿森林体系'],['nordic',1648,'踏冰渡海与大北方战争','1648年后待展开：1658年卡尔十世踏冰渡海夺下斯科讷 · 1700—1721年大北方战争，瑞典失去波罗的海霸权'],['britain',1928,'大萧条、二战与福利国家','1928年后待展开：1929年大萧条 · 丘吉尔与二战不列颠之战 · 战后福利国家与大英帝国解体']];
 // Where a line stops it says why: [line, year, the event that ends it, note, the line it carries on in].
 const TREE_ENDS=[['trunk',-30,'并入罗马','前146年科林斯被毁 · 前30年最后一个希腊化王国埃及并入罗马','rome'],['rome',476,'西罗马终结','476年西部末代皇帝被废 · 由中世纪西欧接续'],['west',843,'凡尔登三分','843年《凡尔登条约》三分帝国 · 分出法兰西、德意志、意大利'],['east',1453,'东罗马终结','1453年5月29日奥斯曼帝国攻破君士坦丁堡 · 千年东罗马帝国终结'],['prehistory',-3100,'有了文字','两河、埃及约前3200—前3100年先后有了文字和国家 · 由希腊、埃及、中东三条线接续','trunk']];
 // Sections of one line that run side by side: [line, row keys, side of the passing loop].

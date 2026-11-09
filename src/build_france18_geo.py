@@ -100,6 +100,34 @@ regions['fr18Naples1812'] = NAPLES
 regions['fr18Spain1812'] = U(G('sCastile'), G('sCrownAragon')).difference(CATALONIA_1812.buffer(.02)).buffer(0)
 regions['fr18Algiers1830'] = L([(-1.8, 34.8), (1.0, 36.8), (5.0, 37.1), (8.6, 37.0), (8.4, 35.4), (4.0, 35.0), (0.0, 34.6)])
 
+# --- Germany (1648—1923) and France (1852—1923) --------------------------------------------------------------------
+BRANDENBURG = L([(11.2, 51.8), (11.5, 53.3), (14.6, 53.5), (15.6, 52.8), (15.0, 51.6), (12.5, 51.6)])
+FARTHER_POM = L([(14.6, 53.3), (14.8, 54.2), (17.8, 54.8), (18.0, 53.6), (16.0, 53.2)])
+EAST_PRUSSIA = L([(19.4, 53.5), (19.6, 54.8), (21.5, 55.3), (22.8, 54.8), (22.7, 53.5), (20.5, 53.3)])
+CLEVES_MARK = L([(6.0, 51.2), (6.2, 51.9), (7.9, 51.8), (7.9, 51.1)])
+SILESIA = L([(14.8, 50.9), (15.5, 52.0), (17.5, 51.6), (19.1, 50.2), (18.2, 49.8), (16.2, 50.1)])
+WEST_PRUSSIA = L([(16.8, 53.1), (17.5, 54.6), (19.5, 54.4), (19.5, 53.1), (18.0, 52.8)])
+RHINE_WESTPHALIA = L([(6.0, 49.8), (6.0, 52.2), (8.8, 52.2), (8.5, 50.8), (7.5, 49.7)])
+PRUSSIA_1688 = U(BRANDENBURG, FARTHER_POM, EAST_PRUSSIA, CLEVES_MARK)
+PRUSSIA_1786 = U(PRUSSIA_1688, SILESIA, WEST_PRUSSIA)
+PRUSSIA_1815 = U(PRUSSIA_1786, RHINE_WESTPHALIA, L([(11.2, 51.0), (13.8, 51.0), (14.8, 51.5), (13.0, 52.0), (11.0, 52.0)]))
+NORTH_GER_1867 = U(PRUSSIA_1815, L([(6.8, 51.5), (7.2, 53.8), (9.0, 55.0), (11.2, 54.5), (14.8, 54.2), (15.0, 50.5), (9.0, 50.2), (7.5, 50.2)]))
+SOUTH_GER_1871 = L([(7.5, 47.5), (7.5, 50.2), (12.5, 50.3), (13.8, 48.6), (13.0, 47.5), (9.5, 47.5)])
+ALSACE_LOR_1871 = U(G('fAlsace'), L([(5.8, 48.5), (5.9, 49.5), (7.2, 49.2), (7.2, 48.4)]))
+EMPIRE_1871 = U(NORTH_GER_1867, SOUTH_GER_1871, ALSACE_LOR_1871)
+regions['ger19BrandenburgPrussia1688'] = PRUSSIA_1688
+regions['ger19Silesia1742'] = SILESIA
+regions['ger19Prussia1786'] = PRUSSIA_1786
+regions['ger19Prussia1815'] = PRUSSIA_1815
+regions['ger19Zollverein1834'] = U(NORTH_GER_1867, SOUTH_GER_1871).difference(L([(8.5, 53.5), (9.0, 55.1), (11.2, 54.5), (10.5, 53.4)]).buffer(.01)).buffer(0)
+regions['ger19NorthGerman1867'] = NORTH_GER_1867
+regions['ger19AlsaceLorraine1871'] = ALSACE_LOR_1871
+regions['ger19GermanEmpire1871'] = EMPIRE_1871
+regions['ger19AustriaHungary1867'] = L([(9.5, 46.2), (12.2, 47.5), (12.2, 50.2), (14.5, 50.9), (18.8, 50.1), (22.5, 49.5), (26.2, 48.0),
+                                        (25.5, 45.4), (22.5, 44.5), (19.0, 43.5), (16.0, 44.2), (13.6, 45.5), (10.5, 45.8)])
+regions['ger19Weimar1919'] = EMPIRE_1871.difference(U(ALSACE_LOR_1871, WEST_PRUSSIA, L([(15.5, 51.5), (16.0, 53.1), (18.2, 53.1), (18.2, 51.4)]),
+                                                      L([(8.5, 54.8), (8.5, 55.5), (10.2, 55.5), (10.2, 54.8)])).buffer(.02)).buffer(0)
+
 for key, region in regions.items():
     assert not region.is_empty, key
     assert key not in geo, key

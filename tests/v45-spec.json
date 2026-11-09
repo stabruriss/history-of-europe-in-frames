@@ -1254,7 +1254,7 @@
    "法兰西",
    "west",
    843,
-   1852,
+   1923,
    5
   ]
  },
@@ -1266,8 +1266,8 @@
   ],
   [
    "france",
-   1852,
-   "第二帝国与普法战争"
+   1923,
+   "大萧条、二战与第五共和国"
   ]
  ],
  "tails": {
@@ -1403,7 +1403,12 @@
    "history-france-restoration/0",
    "history-france-july-monarchy/0",
    "history-france-1848/0",
-   "history-france-louis-bonaparte/0"
+   "history-france-louis-bonaparte/0",
+   "history-france-second-empire/0",
+   "history-germany-franco-prussian/0",
+   "history-france-commune/0",
+   "history-germany-ww1-west/0",
+   "history-germany-versailles/0"
   ]
  },
  "shared": {
@@ -1468,7 +1473,8 @@
    "france",
    "britain",
    "spain",
-   "america"
+   "america",
+   "germany"
   ],
   "history-france-american-war/0": [
    "france",
@@ -1477,7 +1483,8 @@
   ],
   "history-france-empire/0": [
    "france",
-   "spain"
+   "spain",
+   "germany"
   ],
   "history-america-latam/0": [
    "america",
@@ -1489,7 +1496,8 @@
   ],
   "history-france-waterloo/0": [
    "france",
-   "eeurope"
+   "eeurope",
+   "germany"
   ],
   "history-ottoman-crimea/0": [
    "persia",
@@ -1498,6 +1506,19 @@
   "history-ottoman-ww1/0": [
    "persia",
    "eeurope"
+  ],
+  "history-germany-franco-prussian/0": [
+   "germany",
+   "france"
+  ],
+  "history-germany-ww1-west/0": [
+   "germany",
+   "france",
+   "lowlands"
+  ],
+  "history-germany-versailles/0": [
+   "germany",
+   "france"
   ]
  },
  "fixes": [

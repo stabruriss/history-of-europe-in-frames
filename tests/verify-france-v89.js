@@ -113,7 +113,7 @@ const chars=s=>s.replace(/<[^>]+>/g,'').replace(/（[A-Za-z][^）]*）/g,'').rep
      urls:e.sources.map(s=>s[1]||s.url),html:e.html,paras:e.scenes.map((_,i)=>para(e,i)),boxes:e.boxes.map(b=>b.name||b.title)}];})),
    };
   },Object.keys(SECTIONS));
-  assert.equal(r.line.name,'法兰西');assert.equal(r.line.parent,'west');assert.equal(r.line.from,843);assert.equal(r.line.to,1852);
+  assert.equal(r.line.name,'法兰西');assert.equal(r.line.parent,'west');assert.equal(r.line.from,843);assert.ok(r.line.to>=1852);
   assert.ok(r.spainTo>=1714);assert.ok(r.faithTo>=1689);
   assert.deepEqual(r.stretch,ORDER,'France runs through the 29 stations from Fronde to Louis-Napoléon Bonaparte (including Glorious Revolution) in order');
   assert.deepEqual(r.report.unresolvedLabels,[]);

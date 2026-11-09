@@ -85,7 +85,7 @@ const chars=s=>s.replace(/<[^>]+>/g,'').replace(/（[A-Za-z][^）]*）/g,'').rep
   assert.deepEqual(r.futureEeurope,['eeurope',1922,'斯大林与冷战']);
   assert.deepEqual(r.report.unresolvedLabels,[]);
   assert.deepEqual(r.report.linkThroughStations,[]);
-  assert.deepEqual(r.sharedWaterloo,['france','eeurope']);
+  assert.deepEqual(r.sharedWaterloo,['france','eeurope','germany']);
   assert.deepEqual(r.sharedCrimea,['persia','eeurope']);
   assert.deepEqual(r.sharedWw1,['persia','eeurope']);
   for(const [id,[short,ch]] of Object.entries(SECTIONS)){

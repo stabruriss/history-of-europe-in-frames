@@ -2359,14 +2359,14 @@
    "法兰西",
    "west",
    843,
-   1852,
+   1923,
    5
   ],
   "germany": [
    "德意志",
    "west",
    843,
-   1648,
+   1923,
    4
   ],
   "italy": [
@@ -2387,13 +2387,13 @@
  "futures": [
   [
    "france",
-   1852,
-   "第二帝国与普法战争"
+   1923,
+   "大萧条、二战与第五共和国"
   ],
   [
    "germany",
-   1648,
-   "普鲁士崛起与七年战争"
+   1923,
+   "大萧条、第三帝国与两德分合"
   ],
   [
    "italy",
@@ -2474,7 +2474,12 @@
    "history-france-restoration/0",
    "history-france-july-monarchy/0",
    "history-france-1848/0",
-   "history-france-louis-bonaparte/0"
+   "history-france-louis-bonaparte/0",
+   "history-france-second-empire/0",
+   "history-germany-franco-prussian/0",
+   "history-france-commune/0",
+   "history-germany-ww1-west/0",
+   "history-germany-versailles/0"
   ],
   "germany": [
    "history-germany-innocent/0",
@@ -2493,7 +2498,19 @@
    "history-germany-thirty-years-1/0",
    "history-germany-thirty-years-1/5",
    "history-germany-thirty-years-2/0",
-   "history-germany-thirty-years-3/0"
+   "history-germany-thirty-years-3/0",
+   "history-germany-prussia-rise/0",
+   "history-germany-frederick-great/0",
+   "history-france-seven-years/0",
+   "history-france-empire/0",
+   "history-germany-reform/0",
+   "history-france-waterloo/0",
+   "history-germany-1848/0",
+   "history-germany-bismarck/0",
+   "history-germany-franco-prussian/0",
+   "history-germany-wilhelm2/0",
+   "history-germany-ww1-west/0",
+   "history-germany-versailles/0"
   ],
   "italy": [
    "history-germany-innocent/0",
@@ -2652,7 +2669,8 @@
    "france",
    "britain",
    "spain",
-   "america"
+   "america",
+   "germany"
   ],
   "history-france-american-war/0": [
    "france",
@@ -2661,7 +2679,8 @@
   ],
   "history-france-empire/0": [
    "france",
-   "spain"
+   "spain",
+   "germany"
   ],
   "history-america-latam/0": [
    "america",
@@ -2673,7 +2692,8 @@
   ],
   "history-france-waterloo/0": [
    "france",
-   "eeurope"
+   "eeurope",
+   "germany"
   ],
   "history-ottoman-crimea/0": [
    "persia",
@@ -2682,6 +2702,19 @@
   "history-ottoman-ww1/0": [
    "persia",
    "eeurope"
+  ],
+  "history-germany-franco-prussian/0": [
+   "germany",
+   "france"
+  ],
+  "history-germany-ww1-west/0": [
+   "germany",
+   "france",
+   "lowlands"
+  ],
+  "history-germany-versailles/0": [
+   "germany",
+   "france"
   ]
  },
  "fixes": [

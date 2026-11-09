@@ -478,7 +478,7 @@
    "德意志",
    "west",
    843,
-   1648,
+   1923,
    4
   ],
   "italy": [
@@ -499,8 +499,8 @@
  "futures": [
   [
    "germany",
-   1648,
-   "普鲁士崛起与七年战争"
+   1923,
+   "大萧条、第三帝国与两德分合"
   ],
   [
    "italy",
@@ -536,7 +536,19 @@
    "history-germany-thirty-years-1/0",
    "history-germany-thirty-years-1/5",
    "history-germany-thirty-years-2/0",
-   "history-germany-thirty-years-3/0"
+   "history-germany-thirty-years-3/0",
+   "history-germany-prussia-rise/0",
+   "history-germany-frederick-great/0",
+   "history-france-seven-years/0",
+   "history-france-empire/0",
+   "history-germany-reform/0",
+   "history-france-waterloo/0",
+   "history-germany-1848/0",
+   "history-germany-bismarck/0",
+   "history-germany-franco-prussian/0",
+   "history-germany-wilhelm2/0",
+   "history-germany-ww1-west/0",
+   "history-germany-versailles/0"
   ],
   "italy": [
    "history-italy-normans/0",
