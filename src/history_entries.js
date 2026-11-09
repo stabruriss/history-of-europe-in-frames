@@ -2615,11 +2615,13 @@ Object.assign(HS,{
   osm4_sanstefano:['圣斯特凡诺','San Stefano (Yeşilköy)',40.958,28.821,'伊斯坦布尔西郊马尔马拉海边小城；1878年3月俄军进抵此地签下条约。'],
   osm4_batak:['巴塔克','Batak, Bulgaria',41.942,24.218,'保加利亚罗多彼山脉山镇；1876年5月非正规军在此屠杀平民，震动欧洲舆论。'],
   osm4_nicosia:['尼科西亚','Nicosia, Cyprus',35.185,33.382,'塞浦路斯首府；1878年6月英国与奥斯曼秘约接管该岛。'],
+  ww1_sarikamish:['萨勒卡默什','Sarıkamış',40.338,42.573,'俄国卡尔斯州的铁路终点，离奥斯曼边境约二十四公里。'],
+  ww1_chunukbair:['琼克巴伊尔','Chunuk Bair (Conkbayırı)',40.252,26.309,'加里波利半岛西侧山脊上的高地，俯瞰澳新湾。'],
+  ww1_van:['凡城','Van',38.494,43.38,'凡湖东岸的城市，亚美尼亚人聚居的东部重镇。'],
+  ww1_deirezzor:['代尔祖尔','Deir ez-Zor',35.336,40.141,'叙利亚沙漠里的幼发拉底河畔小城。'],
+  ww1_aqaba:['亚喀巴','Aqaba',29.527,35.008,'红海亚喀巴湾顶端的小港。'],
+  ww1_kut:['库特','Kut al-Amara',32.506,45.825,'巴格达东南约一百六十公里的底格里斯河畔小城。'],
   ote_brest:['布列斯特—立托夫斯克','Brest-Litovsk',52.097,23.735,'布格河畔的要塞城市。'],
-  ww1_tannenberg:['坦能堡','Tannenberg (Stębark)',53.494,20.134,'东普鲁士战场；1914年8月德军在此包抄歼灭俄国第二集团军。'],
-  ww1_sarikamish:['萨勒卡默什','Sarıkamış',40.338,42.573,'东安纳托利亚高寒山城；1914年12月—1915年1月恩维尔率军攻俄在此冻死数万。'],
-  ww1_deirezzor:['代尔祖尔','Deir ez-Zor',35.336,40.141,'幼发拉底河畔叙利亚沙漠重镇；1915—1916年亚美尼亚人死亡行军的终点营地。'],
-  ww1_mudros:['穆德洛斯','Moudros, Lemnos',39.874,25.268,'爱琴海利姆诺斯岛军港；1918年10月30日奥斯曼在此签署停战协定。'],
   osm5_samsun:['萨姆松','Samsun',41.287,36.336,'黑海南岸港口；1919年5月19日凯末尔在此登陆，打响独立战争。'],
   osm5_sakarya:['萨卡里亚河','Sakarya River (Polatlı)',39.584,32.147,'安卡拉以西约八十公里防线；1921年8—9月凯末尔在此顶住希腊军猛攻。'],
   osm5_chanak:['恰纳卡莱（恰纳克）','Çanakkale (Chanak)',40.147,26.409,'达达尼尔海峡南岸重镇；1922年9—10月土军在此逼退英军防线。'],
@@ -10132,35 +10134,35 @@ const HISTORY_ENTRIES=[
     hp(d,'ko_tripoli',{kind:'port',note:'1911年10月意军从这里登陆。'});
    },[['fill',HC.italy,'意大利王国'],['fill',HC.war,'1912年夺得的利比亚'],['dot',HC.war,'安科纳'],['dot','#2a2018','都灵、米兰、热那亚与的黎波里']])
  ]},
-{id:'history-italy-lateran',ch:5,title:'墨索里尼与拉特兰条约：“残缺的胜利”养大了黑衫党，独裁者替教廷了结旧账',short:'墨索里尼与拉特兰条约',en:'Mussolini and the Lateran Pacts: A “Mutilated Victory” Breeds the Blackshirts, and a Dictator Settles the Church’s Old Account',period:'1914—1929年',c:HC.italy,
+{id:'history-italy-lateran',ch:5,title:'墨索里尼与拉特兰条约：“残缺的胜利”养大了黑衫党，独裁者替教廷了结旧账',short:'墨索里尼与拉特兰条约',en:'Mussolini and the Lateran Pacts: A “Mutilated Victory” Breeds the Blackshirts, and a Dictator Settles the Church’s Old Account',period:'1918—1929年',c:HC.italy,
  scenes:[
-  hs('1914—1915年','中立、密约与光辉五月','1914年的意大利王国与奥匈帝国，红色块是《伦敦条约》许给意大利的土地（示意）。',[[40.2,6.0],[48.6,20.2]],d=>{
-    ha(d,'itItaly1871',HC.italy,{fillOpacity:.3});ha(d,'wwAustriaHungary1914',HC.germany,{fillOpacity:.2});ha(d,'itLondonPact1915',HC.war,{fillOpacity:.42});
-    hp(d,'rome',{kind:'capital',note:'5月20日议会以407票对74票交出宣战权。'});
-    hp(d,'cx_genoa',{left:1,note:'5月5日邓南遮在城东夸尔托演说主战。'});
-    hp(d,'ic_milan',{left:1,note:'1914年11月15日《意大利人民报》创刊。'});
-    hp(d,'itl_trento',{note:'奥地利至多肯让出的一块。'});
-    hp(d,'c4_trieste',{note:'协约国许下的头号港口。'});
-    hp(d,'itl_fiume',{kind:'port',note:'密约把它留给了克罗地亚。'});
-   },[['fill',HC.italy,'意大利王国（1871—1919年疆域）'],['fill',HC.war,'《伦敦条约》许给意大利的土地（示意）'],['fill',HC.germany,'奥匈帝国'],['dot','#2a2018','罗马、热那亚、米兰、特伦托、的里雅斯特与阜姆']]),
-  hs('1915—1918年','伊松佐河、卡波雷托与皮亚韦河','意奥之间的东北战线，标出最高统帅部、伊松佐河、卡波雷托、皮亚韦河和停战地帕多瓦。',[[44.9,10.9],[46.9,14.4]],d=>{
-    ha(d,'itItaly1871',HC.italy,{fillOpacity:.26});ha(d,'wwAustriaHungary1914',HC.germany,{fillOpacity:.24});
-    hp(d,'itl7_udine',{left:1,note:'1915—1917年意军最高统帅部驻地。'});
-    hp(d,'o_isonzo',{kind:'battle',note:'1915年6月起十一次攻势都在这条河上。'});
-    hp(d,'itl7_caporetto',{kind:'battle',note:'德军先打毒气弹，再派突击队渗透。'});
-    hp(d,'itl7_piave',{kind:'battle',left:1,note:'1917年11月与1918年6月两次守住。'});
-    hp(d,'itl7_vittorioveneto',{kind:'battle',left:1,note:'1918年10月底意军在此突破奥匈防线。'});
+  hs('1918—1919年','战争的账单与“残缺的胜利”','战前的意大利、《伦敦条约》许了却没给的北达尔马提亚和1920年实得的新领土，标出前线、米兰、阜姆、扎拉与巴勒莫。',[[37.6,6.2],[47.6,18.6]],d=>{
+    ha(d,'itItaly1871',HC.italy,{fillOpacity:.26});ha(d,'itLondonPact1915',HC.neutral,{fillOpacity:.32});ha(d,'itGains1920',HC.war,{fillOpacity:.42});
+    hp(d,'itl7_caporetto',{kind:'battle',note:'1917年10月24日德奥联军在此突破。'});
+    hp(d,'itl7_vittorioveneto',{kind:'battle',left:1,note:'1918年10月30日意军开进此城，奥匈军队被切成两段。'});
     hp(d,'iv2_padua',{left:1,note:'11月3日在城郊朱斯蒂别墅签停战协定。'});
-   },[['fill',HC.italy,'意大利王国'],['fill',HC.germany,'奥匈帝国'],['dot',HC.war,'伊松佐河、卡波雷托、皮亚韦河与维托里奥韦内托'],['dot','#2a2018','乌迪内与帕多瓦']]),
-  hs('1919—1920年','和会、阜姆与人民党','战前的意大利与1920年实得的新领土，标出巴黎、龙基、阜姆、拉帕洛和罗马。',[[40.5,1.0],[50.2,16.6]],d=>{
+    hp(d,'ic_milan',{left:1,note:'《晚邮报》在这里出版。'});
+    hp(d,'itl_fiume',{kind:'port',note:'城里讲意大利语的人最多，四周乡间多是克罗地亚人。'});
+    hp(d,'c4_zara',{note:'北达尔马提亚最后只有这座城归了意大利。'});
+    hp(d,'it_palermo',{note:'1919—1920年西西里中西部有不少大庄园被退伍兵占了。'});
+   },[['fill',HC.italy,'意大利王国（1871—1919年疆域）'],['fill',HC.neutral,'《伦敦条约》许了却没给的北达尔马提亚（示意）'],['fill',HC.war,'1920年实得的新领土（示意）'],['dot',HC.war,'卡波雷托与维托里奥韦内托'],['dot','#2a2018','帕多瓦、米兰、阜姆、扎拉与巴勒莫']]),
+  hs('1919—1920年','阜姆的十五个月','亚得里亚海北端，标出出发地龙基、阜姆和扎拉，以及签约的拉帕洛、发起募捐的米兰。',[[43.7,8.5],[46.5,15.9]],d=>{
     ha(d,'itItaly1871',HC.italy,{fillOpacity:.26});ha(d,'itGains1920',HC.war,{fillOpacity:.4});
-    hp(d,'w_paris',{note:'四巨头在此议定对德、对奥和约。'});
     hp(d,'itl7_ronchi',{left:1,note:'9月12日拂晓，哗变的掷弹兵从这里出发。'});
-    hp(d,'itl_fiume',{kind:'battle',note:'邓南遮在总督府阳台宣布并入意大利。'});
-    hp(d,'iw8_rapallo',{left:1,note:'1920年11月12日意南签约，阜姆成自由市。'});
-    hp(d,'rome',{kind:'capital',note:'1918年底斯图尔佐在城里筹备人民党。'});
+    hp(d,'itl_fiume',{kind:'battle',note:'1920年9月邓南遮在此颁布《卡尔纳罗宪章》。'});
+    hp(d,'c4_zara',{note:'条约把它划归意大利，城外就是南斯拉夫。'});
+    hp(d,'iw8_rapallo',{left:1,note:'1920年11月12日意南两国在此签约。'});
+    hp(d,'ic_milan',{left:1,note:'9月12日《意大利人民报》在报社门前发起募捐。'});
     hr(d,[[45.828,13.500],[45.55,13.95],[45.327,14.442]],HC.war);
-   },[['fill',HC.italy,'战前的意大利王国'],['fill',HC.war,'1920年实得的特伦蒂诺—南蒂罗尔、伊斯特拉和扎拉'],['dline',HC.war,'1919年9月12日邓南遮开进阜姆的路线（示意）'],['dot',HC.war,'阜姆'],['dot','#2a2018','巴黎、龙基、拉帕洛与罗马']]),
+   },[['fill',HC.italy,'战前的意大利王国'],['fill',HC.war,'1920年实得的新领土（示意）'],['dline',HC.war,'1919年9月12日邓南遮开进阜姆的路线（示意）'],['dot',HC.war,'阜姆'],['dot','#2a2018','龙基、扎拉、拉帕洛与米兰']]),
+  hs('1919—1920年','人民党、大选与占厂','意大利北部和中部，标出筹备人民党的罗马、梵蒂冈，以及占厂的米兰、都灵和热那亚。',[[41.4,6.9],[46.4,13.4]],d=>{
+    ha(d,'itItaly1871',HC.italy,{fillOpacity:.22});ha(d,'itGains1920',HC.italy,{fillOpacity:.22});
+    hp(d,'rome',{kind:'capital',note:'1918年底斯图尔佐在城里的乌米尔塔街开筹备会。'});
+    hp(d,'fsb_vatican',{left:1,note:'1919年起不再禁止信徒参加国会选举。'});
+    hp(d,'ic_milan',{kind:'battle',note:'8月30日罗密欧公司闭厂，工会当天决定占厂。'});
+    hp(d,'f3a_turin',{kind:'battle',left:1,note:'9月3日全城已有185家金属厂被占。'});
+    hp(d,'cx_genoa',{kind:'battle',note:'9月2日王家卫队在船厂开枪，打死一名工人。'});
+   },[['fill',HC.italy,'意大利王国（1920年疆域，示意）'],['dot',HC.war,'米兰、都灵与热那亚'],['dot','#2a2018','罗马与梵蒂冈']]),
   hs('1920—1922年','行动队与进军罗马','意大利北部和中部，标出行动队起家的博洛尼亚、费拉拉，进军指挥部佩鲁贾，米兰和罗马王宫。',[[41.3,8.6],[46.0,13.4]],d=>{
     ha(d,'itItaly1871',HC.italy,{fillOpacity:.26});ha(d,'itGains1920',HC.italy,{fillOpacity:.22});
     hp(d,'bb_bologna',{kind:'battle',note:'波河平原行动队最早的据点之一。'});
@@ -10168,7 +10170,7 @@ const HISTORY_ENTRIES=[
     hp(d,'av_perugia',{note:'进军的四人指挥部设在城里的饭店。'});
     hp(d,'ic_milan',{left:1,note:'墨索里尼守在《意大利人民报》报社。'});
     hp(d,'itl7_quirinale',{kind:'capital',note:'10月28日上午9点法令送进王宫。'});
-    hr(d,[[45.464,9.19],[44.494,11.343],[43.77,11.25],[41.90,12.50]],HC.route);
+    hr(d,[[45.464,9.19],[41.90,12.50]],HC.route);
    },[['fill',HC.italy,'意大利王国（1920年疆域）'],['dline',HC.route,'10月29日夜墨索里尼坐火车南下（示意）'],['dot',HC.war,'博洛尼亚与费拉拉'],['dot','#2a2018','佩鲁贾、米兰与奎里纳莱宫']]),
   hs('1923—1926年','马泰奥蒂案与梵蒂冈的选择','罗马城与北郊，标出众议院、遗体发现地和梵蒂冈。',[[41.86,12.38],[42.12,12.62]],d=>{
     ha(d,'itItaly1924',HC.italy,{fillOpacity:.12});
@@ -14440,52 +14442,60 @@ const HISTORY_ENTRIES=[
     hr(d,[[33.51,36.29],[24.47,39.61]],HC.route);
    },[['fill',HC.parthia,'哈米德二世统治下的奥斯曼帝国（1878—1908年）'],['dline',HC.route,'1900—1908年修建的汉志铁路'],['dot',HC.war,'萨洛尼卡起事与伊斯坦布尔'],['dot','#2a2018','大马士革与麦地那']])
  ]},
-{id:'history-ottoman-ww1',ch:9,title:'第一次世界大战：巴尔干点火，四个帝国一起倒下',short:'第一次世界大战',en:'World War I: The Balkan Spark That Brought Down Four Empires',period:'1908—1918年',c:HC.parthia,
+{id:'history-ottoman-ww1',ch:9,title:'奥斯曼的最后一战：押注德国，守住了海峡，丢掉了阿拉伯',short:'奥斯曼的最后一战',en:'The Last Ottoman War: Betting on Germany, Holding the Straits, Losing the Arab Lands',period:'1908—1917年',c:HC.parthia,
  scenes:[
-  hs('1908—1913年','波黑危机、意土战争与巴尔干战争','色块是1914年前夕退守东色雷斯的奥斯曼、俄国与奥匈；图钉标出波黑、的黎波里与巴尔干争夺点。',[[31.0,12.0],[50.0,44.0]],d=>{
-    ha(d,'osOttoman1914',HC.parthia,{fillOpacity:.34});ha(d,'wwAustriaHungary1914',HC.germany,{fillOpacity:.28});ha(d,'ruRussia1914',HC.eeurope,{fillOpacity:.25});
-    hp(d,'ote_sarajevo',{left:1,note:'1908年奥匈趁奥斯曼内乱正式兼并波斯尼亚与黑塞哥维那。'});
-    hp(d,'ote_salonica',{kind:'battle',left:1,note:'1912年第一次巴尔干战争中希腊夺取萨洛尼卡，奥斯曼尽失马其顿。'});
-    hp(d,'po_edirne',{kind:'battle',note:'1913年1月恩维尔高门政变，同年7月出兵重夺埃迪尔内。'});
-    hp(d,'po_constantinople',{kind:'capital',note:'1913年起恩维尔、塔拉特、杰马勒“三帕夏”控制高门。'});
-   },[['fill',HC.parthia,'1913年巴尔干战后仅保住东色雷斯的奥斯曼帝国'],['fill',HC.germany,'吞并波黑后的奥匈帝国'],['fill',HC.eeurope,'重返巴尔干博弈的俄罗斯帝国'],['dot',HC.war,'萨洛尼卡、埃迪尔内与伊斯坦布尔']]),
-  hs('1914年','萨拉热窝枪声与德土结盟参战','色块标出1914年开战时的德、奥匈、奥斯曼同盟国与俄、英、法协约国；弧线标出戈本号驶入海峡与炮击塞瓦斯托波尔。',[[34.0,-3.0],[56.0,44.0]],d=>{
-    ha(d,'osOttoman1914',HC.parthia,{fillOpacity:.34});ha(d,'wwGermany1914',HC.germany,{fillOpacity:.32});ha(d,'wwAustriaHungary1914',HC.germany,{fillOpacity:.26});ha(d,'ruRussia1914',HC.eeurope,{fillOpacity:.26});ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.24});ha(d,'fFrance1648',HC.france,{fillOpacity:.24});
-    hp(d,'ote_sarajevo',{kind:'battle',left:1,note:'1914年6月28日斐迪南夫妇遇刺，引爆七月危机。'});
-    hp(d,'fsy_berlin',{left:1,note:'德皇威廉二世给奥匈开空白支票，并在8月2日与奥斯曼缔结密约。'});
-    hp(d,'po_constantinople',{kind:'capital',note:'德国战列巡洋舰戈本号驶入海峡编入土军，顶替被英国扣留的两舰。'});
-    hp(d,'bvi_sevastopol',{kind:'battle',note:'1914年10月29日改挂奥斯曼旗的戈本号炮击俄港，拉奥斯曼入战。'});
-    hr(d,[[41.01,28.98],[44.62,33.53]],HC.war);
-   },[['fill',HC.parthia,'1914年10月参战的奥斯曼帝国'],['fill',HC.germany,'德意志与奥匈同盟国'],['fill',HC.eeurope,'俄罗斯帝国'],['dline',HC.war,'戈本号北上炮击塞瓦斯托波尔'],['dot',HC.war,'萨拉热窝、伊斯坦布尔与塞瓦斯托波尔']]),
-  hs('1914—1915年','东线坦能堡、俄军大撤退与萨勒卡默什','色块是俄国、德奥与奥斯曼；图钉标出东普鲁士坦能堡、波兰华沙与高加索萨勒卡默什三处主战场。',[[37.5,16.0],[58.0,46.5]],d=>{
-    ha(d,'ruRussia1914',HC.eeurope,{fillOpacity:.3});ha(d,'wwGermany1914',HC.germany,{fillOpacity:.3});ha(d,'wwAustriaHungary1914',HC.germany,{fillOpacity:.24});ha(d,'osOttoman1914',HC.parthia,{fillOpacity:.3});
-    hp(d,'ww1_tannenberg',{kind:'battle',left:1,note:'1914年8月德军在此包抄歼灭俄国第二集团军十余万人。'});
-    hp(d,'ote_warsaw',{kind:'battle',left:1,note:'1915年夏俄军因严重炮弹荒大撤退，8月丢掉华沙。'});
-    hp(d,'ww1_sarikamish',{kind:'battle',note:'1914年冬恩维尔攻卡尔斯在此冻死数万，俄军随即反攻。'});
-   },[['fill',HC.eeurope,'1915年东线大撤退的俄国'],['fill',HC.germany,'德奥同盟国'],['fill',HC.parthia,'高加索战线惨败的奥斯曼'],['dot',HC.war,'坦能堡、华沙与萨勒卡默什']]),
-  hs('1915—1916年','加里波利阻击战与亚美尼亚死亡行军','色块是奥斯曼疆域；图钉标出加里波利战场、伊斯坦布尔及东安纳托利亚至代尔祖尔的押解路线。',[[33.5,24.0],[42.5,45.0]],d=>{
-    ha(d,'osOttoman1914',HC.parthia,{fillOpacity:.34});
-    hp(d,'po_gallipoli',{kind:'battle',left:1,note:'1915年3月—1916年1月凯末尔等部死守半岛，击退英法澳新联军。'});
-    hp(d,'po_constantinople',{kind:'capital',note:'1915年4月24日逮捕亚美尼亚精英，随后下令全境强迁。'});
-    hp(d,'ote_kars',{left:1,note:'东安纳托利亚前线各省亚美尼亚人被指通俄，遭成批驱逐。'});
-    hp(d,'ww1_deirezzor',{kind:'battle',note:'叙利亚沙漠代尔祖尔营地，数十万亚美尼亚妇孺死于押解途中与荒漠。'});
-    hr(d,[[39.90,41.27],[35.34,40.14]],HC.war);
-   },[['fill',HC.parthia,'1915—1916年两线作战的奥斯曼帝国'],['dline',HC.war,'亚美尼亚人被押往代尔祖尔沙漠路线'],['dot',HC.war,'加里波利与代尔祖尔'],['dot','#2a2018','伊斯坦布尔与东安纳托利亚']]),
-  hs('1915—1917年','一块地许给三家与英军北伐','色块是奥斯曼中东各省；弧线标出1916—1918年阿拉伯起义军与英军向大马士革、巴格达推进路线。',[[20.5,29.0],[38.0,49.0]],d=>{
-    ha(d,'osOttoman1914',HC.parthia,{fillOpacity:.32});
-    hp(d,'c4_cairo',{left:1,note:'1915年驻埃及专员麦克马洪致信麦加，许诺战后建阿拉伯独立国。'});
-    hp(d,'p_mecca',{note:'1916年6月谢里夫侯赛因在此起兵反土，北上袭扰汉志铁路。'});
-    hp(d,'jerusalem',{kind:'battle',left:1,note:'1917年11月贝尔福宣言许诺犹太民族家园；12月英军占领耶路撒冷。'});
-    hp(d,'w_baghdad',{kind:'battle',note:'1916年英法密约预分中东；1917年3月英军攻入巴格达。'});
-    hr(d,[[21.42,39.83],[24.47,39.61],[31.78,35.22],[33.51,36.29]],HC.war);
-   },[['fill',HC.parthia,'被英国同时许给三家的奥斯曼阿拉伯各省'],['dline',HC.war,'阿拉伯起义军与英军北上路线'],['dot',HC.war,'耶路撒冷与巴格达'],['dot','#2a2018','开罗与麦加']]),
-  hs('1917—1918年','布列斯特和约与四大帝国崩塌','色块标出1918年布列斯特和约俄国割让地带及战败解体的德、奥匈、奥斯曼三国。',[[34.0,8.0],[60.5,45.0]],d=>{
-    ha(d,'ruBrestLitovsk1918',HC.war,{fillOpacity:.4});ha(d,'ruRussia1914',HC.eeurope,{fillOpacity:.22});ha(d,'wwGermany1914',HC.germany,{fillOpacity:.26});ha(d,'wwAustriaHungary1914',HC.germany,{fillOpacity:.22});ha(d,'osOttoman1914',HC.parthia,{fillOpacity:.28});
-    hp(d,'ote_petersburg',{kind:'battle',note:'1917年二月革命推翻沙皇，十月革命布尔什维克夺权。'});
-    hp(d,'ote_brest',{left:1,note:'1918年3月3日苏俄签下《布列斯特和约》，割地退出大战。'});
-    hp(d,'ww1_mudros',{kind:'battle',left:1,note:'1918年10月奥斯曼在利姆诺斯岛军港签字投降，开放海峡。'});
-    hp(d,'fsy_berlin',{left:1,note:'1918年11月德奥相继停战解体，威廉二世退位流亡荷兰。'});
-   },[['fill',HC.war,'1918年3月《布列斯特和约》俄国割让地带'],['fill',HC.eeurope,'爆发革命退出一战的俄国'],['fill',HC.germany,'1918年11月战败解体的德、奥匈帝国'],['fill',HC.parthia,'1918年10月穆德洛斯停战的奥斯曼帝国']])
+  hs('1908—1914年','押注德国','色块是1914年的奥斯曼和1878—1913年丢掉的土地，红线是“戈本号”从墨西拿到塞瓦斯托波尔的航迹（示意）。',[[30.5,11.0],[47.5,40.5]],d=>{
+    ha(d,'osOttoman1878',HC.war,{fillOpacity:.22});ha(d,'osOttoman1914',HC.parthia,{fillOpacity:.38});ha(d,'osBosnia1878',HC.germany,{fillOpacity:.3});ha(d,'itLibya1912',HC.italy,{fillOpacity:.3});ha(d,'ruRussia1914',HC.eeurope,{fillOpacity:.2});
+    hr(d,[[38.19,15.56],[36.30,22.60],[40.02,26.18],[41.01,28.98],[44.60,33.52]],HC.war);
+    hp(d,'ote_salonica',{left:1,note:'1908年7月起事的第三军团驻地，1912年归希腊。'});
+    hp(d,'po_edirne',{kind:'battle',left:1,note:'1913年3月被保加利亚攻陷，7月夺回。'});
+    hp(d,'po_constantinople',{kind:'capital',note:'8月“戈本号”进港，改挂奥斯曼旗。'});
+    hp(d,'ko_tripoli',{note:'1911年10月意军登陆，次年割给意大利。'});
+    hp(d,'bvi_sevastopol',{kind:'battle',note:'1914年10月29日遭“戈本号”炮击。'});
+   },[['fill',HC.parthia,'1914年的奥斯曼帝国'],['fill',HC.war,'1878—1913年丢掉的土地'],['fill',HC.germany,'1908年被奥匈吞并的波黑'],['fill',HC.italy,'1912年割给意大利的利比亚'],['fill',HC.eeurope,'俄罗斯帝国'],['dline',HC.war,'“戈本号”航迹（示意）'],['dot',HC.war,'伊斯坦布尔、埃迪尔内与塞瓦斯托波尔'],['dot','#2a2018','萨洛尼卡与的黎波里']]),
+  hs('1914—1915年','高加索雪山与苏伊士运河','色块是奥斯曼与俄国；图钉标出高加索前线和苏伊士运河，红线是土军穿越西奈的路线（示意）。',[[28.0,26.0],[43.5,46.5]],d=>{
+    ha(d,'osOttoman1914',HC.parthia,{fillOpacity:.34});ha(d,'ruRussia1914',HC.eeurope,{fillOpacity:.26});
+    hr(d,[[31.25,34.79],[30.85,33.60],[30.58,32.30]],HC.war);
+    hp(d,'po_constantinople',{kind:'capital',note:'11月14日在法提赫清真寺前当众宣读圣战号召。'});
+    hp(d,'ww1_sarikamish',{kind:'battle',left:1,note:'1914年12月底至次年1月初土俄两军在此激战。'});
+    hp(d,'ote_kars',{note:'1878年割给俄国的要塞，恩维尔想打回的目标。'});
+    hp(d,'bvi_suez',{kind:'battle',note:'2月3日土军在伊斯梅利亚以南试图架桥渡河。'});
+    hp(d,'c4_cairo',{left:1,note:'1914年12月英国宣布埃及为保护国，废黜反英的赫迪夫。'});
+   },[['fill',HC.parthia,'奥斯曼帝国'],['fill',HC.eeurope,'俄罗斯帝国'],['dline',HC.war,'杰马勒部从贝尔谢巴穿越西奈（示意）'],['dot',HC.war,'伊斯坦布尔、萨勒卡默什与苏伊士运河'],['dot','#2a2018','卡尔斯与开罗']]),
+  hs('1915—1916年','加里波利','色块是奥斯曼；图钉标出半岛西侧的琼克巴伊尔山脊和海峡最窄处的恰纳卡莱。',[[39.3,24.8],[41.6,29.8]],d=>{
+    ha(d,'osOttoman1914',HC.parthia,{fillOpacity:.3});
+    hr(d,[[39.80,25.85],[40.02,26.18],[40.14,26.38]],HC.war);
+    hp(d,'ww1_chunukbair',{kind:'battle',left:1,note:'凯末尔4月25日与8月10日两度在此反冲击。'});
+    hp(d,'osm5_chanak',{kind:'battle',note:'海峡最窄处的炮台与雷区。'});
+    hp(d,'po_constantinople',{kind:'capital',note:'协约国此役的最终目标。'});
+   },[['fill',HC.parthia,'奥斯曼帝国'],['dline',HC.war,'3月18日英法舰队闯海峡（示意）'],['dot',HC.war,'琼克巴伊尔、恰纳卡莱与伊斯坦布尔']]),
+  hs('1915—1916年','亚美尼亚人','色块是奥斯曼与俄国；红线示意亚美尼亚人从东部诸省经马拉蒂亚、阿勒颇押往代尔祖尔。',[[33.5,26.0],[42.5,46.5]],d=>{
+    ha(d,'osOttoman1914',HC.parthia,{fillOpacity:.32});ha(d,'ruRussia1914',HC.eeurope,{fillOpacity:.2});
+    hr(d,[[39.90,41.27],[38.35,38.31],[36.20,37.16],[35.34,40.14]],HC.war);
+    hp(d,'po_constantinople',{kind:'capital',note:'首批被捕者押往安卡拉附近的关押点。'});
+    hp(d,'ww1_van',{note:'1915年4月亚美尼亚人据城自卫，5月俄军进城。'});
+    hp(d,'cx_aleppo',{left:1,note:'1915年押解队伍的中转站。'});
+    hp(d,'ww1_deirezzor',{kind:'battle',note:'1916年3—10月一带营地又遭集中屠杀。'});
+   },[['fill',HC.parthia,'奥斯曼帝国'],['fill',HC.eeurope,'俄罗斯帝国'],['dline',HC.war,'从东部诸省押往代尔祖尔（示意）'],['dot',HC.war,'伊斯坦布尔与代尔祖尔'],['dot','#2a2018','凡城与阿勒颇']]),
+  hs('1915—1917年','许地与起事','色块是奥斯曼和日后英法分走的地区；虚线是从大马士革到麦地那的汉志铁路（示意）。',[[19.5,29.5],[37.5,49.5]],d=>{
+    ha(d,'osOttoman1914',HC.parthia,{fillOpacity:.3});ha(d,'osMandateFrench1920',HC.france,{fillOpacity:.3});ha(d,'osMandateBritish1920',HC.britain,{fillOpacity:.3});
+    hr(d,[[33.51,36.29],[31.95,35.93],[30.19,35.73],[28.38,36.57],[26.60,37.92],[24.47,39.61]],HC.route);
+    hp(d,'c4_cairo',{left:1,note:'英国驻埃及高级专员府，通信从这里发出。'});
+    hp(d,'p_mecca',{kind:'battle',note:'1916年6月10日起事，7月9日拿下全城。'});
+    hp(d,'p_medina',{kind:'battle',note:'土军守将法赫里一直守到1919年1月。'});
+    hp(d,'ww1_aqaba',{kind:'battle',note:'据劳伦斯自述，东面陆路是守军没设防的一侧。'});
+    hp(d,'p_damascus',{left:1,note:'汉志铁路的北端起点。'});
+   },[['fill',HC.parthia,'奥斯曼帝国'],['fill',HC.france,'日后的法国委任统治地（示意）'],['fill',HC.britain,'日后的英国委任统治地（示意）'],['dline',HC.route,'汉志铁路（示意）'],['dot',HC.war,'麦加、麦地那与亚喀巴'],['dot','#2a2018','开罗与大马士革']]),
+  hs('1916—1917年','库特、饥荒与耶路撒冷','色块是奥斯曼；红线示意英军从巴士拉沿底格里斯河、从苏伊士经加沙两路推进。',[[28.5,30.5],[38.0,50.0]],d=>{
+    ha(d,'osOttoman1914',HC.parthia,{fillOpacity:.3});
+    hr(d,[[30.50,47.81],[31.84,47.15],[32.51,45.83],[33.31,44.37]],HC.war);
+    hr(d,[[30.58,32.30],[31.50,34.47],[31.78,35.23]],HC.war);
+    hp(d,'ab_basra',{note:'1914年11月英印军攻占这里，此后沿河北上。'});
+    hp(d,'ww1_kut',{kind:'battle',note:'1915年12月起英印军被围在河湾里。'});
+    hp(d,'w_baghdad',{kind:'battle',left:1,note:'撤退中约九千至一万五千土军被俘。'});
+    hp(d,'cm_beirut',{left:1,note:'1916年5月6日杰马勒在此绞死十四人。'});
+    hp(d,'jerusalem',{kind:'battle',note:'12月9日市长出城递交投降书。'});
+   },[['fill',HC.parthia,'奥斯曼帝国'],['dline',HC.war,'英军两路推进（示意）'],['dot',HC.war,'库特、巴格达与耶路撒冷'],['dot','#2a2018','巴士拉与贝鲁特']])
  ]},
 {id:'history-ottoman-kemal',ch:9,title:'凯末尔与土耳其共和国：唯一打翻和约的战败国',short:'凯末尔与土耳其共和国',en:'Kemal and the Republic of Turkey: The Only Defeated Power to Overturn Its Peace Treaty',period:'1918—1924年',c:HC.parthia,
  scenes:[
@@ -18346,7 +18356,7 @@ const HISTORY_ENTRIES=[
     hp(d,'uk4_westminster',{note:'1913年4月下议院通过俗称“猫捉老鼠法”的暂时释放法案。'});
     hp(d,'b18_epsom',{kind:'battle',left:1,note:'1913年6月4日戴维森在此钻过护栏撞上国王赛马“安默号”。'});
    },[['fill',HC.britain,'大伦敦与萨里郡'],['dot',HC.war,'霍洛威监狱与艾普森赛马场'],['dot','#2a2018','威斯敏斯特议会']]),
-  hs('1914—1916年','索姆河战壕流血与前线士兵丢掉选票','红线自伦敦跨海峡至法国北部索姆河战线；五百万英军赴前线作战，却因离开原住址逾十二个月在法律上丧失选票。',[[49.5,-2.5],[52.5,3.8]],d=>{
+  hs('1914—1916年','征兵与前线士兵丢掉选票','红线自伦敦跨海峡至法国北部索姆河战线；五百万英军赴前线作战，却因离开原住址逾十二个月在法律上丧失选票。',[[49.5,-2.5],[52.5,3.8]],d=>{
     ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});ha(d,'fFrance1648',HC.france,{fillOpacity:.28});
     hp(d,'uk4_westminster',{left:1,note:'1916年议会通过《兵役法》，同时发现旧居住条款剥夺了军人选票。'});
     hp(d,'k_london',{note:'数百万应征青年从滑铁卢与维多利亚车站登车开赴法国前线。'});
@@ -20081,7 +20091,7 @@ const TREE_ROWS={
  'history-ottoman-eastern-question/0':['persia',1768,1841,'1768—1841年'],
  'history-ottoman-crimea/0':[['persia','eeurope'],1853,1856,'1825—1856年'],
  'history-ottoman-berlin/0':['persia',1876,1908,'1856—1908年'],
- 'history-ottoman-ww1/0':[['persia','eeurope'],1914,1918,'1908—1918年'],
+ 'history-ottoman-ww1/0':['persia',1917,1917,'1908—1917年'],
  'history-ottoman-kemal/0':['persia',1919,1923,'1918—1924年'],
  'history-eeurope-ivan4/0':['eeurope',1547,1598,'1505—1598年'],
  'history-eeurope-romanov/0':['eeurope',1649,1689,'1598—1689年'],
@@ -20151,7 +20161,7 @@ const TREE_ROWS={
  'history-italy-mazzini/0':['italy',1848,1849,'1815—1849年'],
  'history-italy-cavour/0':['italy',1859,1861,'1849—1861年'],
  'history-italy-rome/0':['italy',1870,1914,'1861—1914年'],
- 'history-italy-lateran/0':[['italy','faith'],1922,1929,'1914—1929年'],
+ 'history-italy-lateran/0':[['italy','faith'],1922,1929,'1918—1929年'],
  'history-lowlands-golden-age/0':['lowlands',1650,1666,'1648—1667年'],
  'history-lowlands-batavian/0':['lowlands',1795,1815,'1702—1815年'],
  'history-lowlands-belgium/0':['lowlands',1830,1839,'1815—1839年'],

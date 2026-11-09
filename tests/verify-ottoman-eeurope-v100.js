@@ -12,7 +12,7 @@ const SECTIONS={
  'history-ottoman-eastern-question':['东方问题',9],
  'history-ottoman-crimea':['克里米亚战争',9],
  'history-ottoman-berlin':['改革、外债与柏林会议',9],
- 'history-ottoman-ww1':['第一次世界大战',9],
+ 'history-ottoman-ww1':['奥斯曼的最后一战',9],
  'history-ottoman-kemal':['凯末尔与土耳其共和国',9],
  'history-eeurope-ivan4':['伊凡雷帝',10],
  'history-eeurope-romanov':['混乱时代与罗曼诺夫',10],
@@ -32,7 +32,7 @@ const FACTS=[
  ['history-ottoman-crimea',3,'塞瓦斯托波尔'],
  ['history-ottoman-berlin',1,'1881'],
  ['history-ottoman-berlin',4,'俾斯麦'],
- ['history-ottoman-ww1',3,'加里波利'],
+ ['history-ottoman-ww1',2,'达达尼尔'],
  ['history-ottoman-kemal',3,'洛桑'],
  ['history-eeurope-ivan4',2,'卢布林'],
  ['history-eeurope-ivan4',3,'特辖'],
@@ -87,7 +87,7 @@ const chars=s=>s.replace(/<[^>]+>/g,'').replace(/（[A-Za-z][^）]*）/g,'').rep
   assert.deepEqual(r.report.linkThroughStations,[]);
   assert.deepEqual(r.sharedWaterloo,['france','eeurope','germany']);
   assert.deepEqual(r.sharedCrimea,['persia','eeurope']);
-  assert.deepEqual(r.sharedWw1,['persia','eeurope']);
+  assert.equal(r.sharedWw1,'persia');
   for(const [id,[short,ch]] of Object.entries(SECTIONS)){
    const s=r.sections[id];
    assert.deepEqual([s.short,s.ch],[short,ch],id);
