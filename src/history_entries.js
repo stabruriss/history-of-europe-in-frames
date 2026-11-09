@@ -2836,6 +2836,97 @@ Object.assign(HS,{
   zr_xiaozhan:['小站','Xiaozhan',38.88,117.4,'天津东南的练兵场；1895年起袁世凯在此编练新建陆军。'],
   zr_chengdu:['成都','Chengdu',30.66,104.07,'四川省城；1911年9月7日赵尔丰在此逮捕保路首领，向请愿群众开枪。'],
   zr_kunming:['昆明','Kunming',25.04,102.71,'云南省城；1915年12月25日唐继尧、蔡锷等在此宣布云南独立，讨伐帝制。'],
+  itl1_chambery:['尚贝里','Chambery',45.5646,5.9178,'阿尔卑斯山西侧的城，萨伏伊公国的旧都。'],
+  itl1_arcetri:['阿切特里','Arcetri',43.7476,11.2576,'佛罗伦萨南郊的山村。'],
+  itl1_caraglio:['卡拉利奥','Caraglio',44.4251,7.4277,'皮埃蒙特库内奥附近的小镇。'],
+  itl1_lindau:['林道','Lindau',47.546,9.684,'博登湖东岸的帝国城市，商货和兵员南下伦巴第的集散地。'],
+  itl_nice:['尼斯','Nice (Nizza)',43.703,7.266,'萨伏伊家的出海口，1860年割给法国。'],
+  itl2_superga:['苏佩尔加山','Superga',45.0806,7.7674,'都灵东郊的山顶，俯瞰全城。'],
+  itl2_passaro:['帕萨罗角','Cape Passaro',36.688,15.134,'西西里岛东南角的海岬。'],
+  itl2_pompeii:['庞贝','Pompeii',40.749,14.4847,'维苏威火山南麓的古罗马城址。'],
+  itl2_cherasco:['切拉斯科','Cherasco',44.65,7.8667,'皮埃蒙特南部的小城。'],
+  itl3_reggio:['雷焦艾米利亚','Reggio Emilia',44.698,10.631,'艾米利亚古道上的城市，当时属摩德纳公国。'],
+  itl3_tolentino:['托伦蒂诺','Tolentino',43.209,13.284,'马尔凯山区的小城，当时属教宗国。'],
+  itl3_bagnara:['巴尼亚拉','Bagnara Calabra',38.287,15.807,'卡拉布里亚南端、墨西拿海峡边的渔镇。'],
+  itl3_simplon:['辛普朗山口','Simplon Pass',46.25,8.033,'瑞士瓦莱与意大利之间海拔约两千米的山口。'],
+  itl3_moncenis:['塞尼山口','Mont Cenis Pass',45.258,6.901,'萨伏伊与皮埃蒙特苏萨谷之间的山口。'],
+  itl3_rimini:['里米尼','Rimini',44.059,12.568,'亚得里亚海边的古城，属罗马涅，1815年归还教宗国。'],
+  itl3_pizzo:['皮佐','Pizzo',38.735,16.161,'卡拉布里亚第勒尼安海岸的小城。'],
+  itl_custoza:['库斯托扎','Custoza',45.379,10.795,'维罗纳西南的丘陵村庄。'],
+  itl4_nola:['诺拉','Nola',40.926,14.528,'那不勒斯东北的古城，驻有骑兵团。'],
+  itl4_laibach:['莱巴赫（今卢布尔雅那）','Laibach (Ljubljana)',46.051,14.505,'奥地利卡尼奥拉公国的首府。'],
+  itl4_antrodoco:['安特罗多科','Antrodoco',42.416,13.08,'亚平宁山中的隘口小镇，当时在那不勒斯王国北境。'],
+  itl4_spielberg:['施皮尔贝格要塞','Špilberk Castle, Brno',49.195,16.6,'摩拉维亚布尔诺城边山上的要塞监狱。'],
+  itl4_modena:['摩德纳','Modena',44.647,10.925,'摩德纳公国的都城。'],
+  itl4_forli:['弗利','Forlì',44.223,12.041,'罗马涅的城市，当时属教宗国。'],
+  itl4_geneva:['日内瓦','Geneva',46.204,6.143,'瑞士西南的湖滨城市，意大利流亡者的聚集地。'],
+  itl4_janiculum:['贾尼科洛山','Janiculum (Porta San Pancrazio), Rome',41.885,12.461,'罗马城西、台伯河右岸的山冈与城门。'],
+  itl4_sanmarino:['圣马力诺','San Marino',43.936,12.447,'亚平宁山上的小共和国。'],
+  itl4_mandriole:['曼德里奥莱','Mandriole',44.551,12.25,'拉文纳北面潟湖边的村子。'],
+  itl4_marghera:['马尔盖拉堡','Forte Marghera',45.48,12.242,'威尼斯潟湖岸上守着铁路桥头的炮台。'],
+  itl_caprera:['卡普雷拉岛','Caprera',41.217,9.461,'撒丁岛东北角外的小岛。'],
+  itl5_vignale:['维尼亚莱','Vignale (Novara)',45.45,8.617,'诺瓦拉城北的村子。'],
+  itl5_chernaya:['切尔纳亚河','Chernaya River (Traktir Bridge)',44.557,33.647,'塞瓦斯托波尔东南的小河，河上有特拉克蒂尔桥。'],
+  itl5_plombieres:['普隆比耶尔','Plombières-les-Bains',47.967,6.464,'法国东部孚日山区的温泉小镇。'],
+  itl5_magenta:['马真塔','Magenta',45.467,8.883,'提契诺河东岸的伦巴第小城。'],
+  itl5_solferino:['索尔费里诺','Solferino',45.367,10.55,'加尔达湖南面丘陵上的村镇。'],
+  itl5_castiglione:['卡斯蒂廖内','Castiglione delle Stiviere',45.392,10.489,'索尔费里诺西边的小城。'],
+  itl5_villafranca:['维拉弗兰卡','Villafranca di Verona',45.354,10.845,'维罗纳西南的小城。'],
+  itl5_quarto:['夸尔托','Quarto dei Mille',44.389,8.992,'热那亚东郊的海边村子。'],
+  itl5_marsala:['马尔萨拉','Marsala',37.798,12.435,'西西里岛最西端的港口。'],
+  itl5_calatafimi:['卡拉塔菲米','Calatafimi',37.914,12.864,'西西里西部山区的小镇。'],
+  itl5_bronte:['布龙泰','Bronte',37.788,14.833,'埃特纳火山西坡的小镇。'],
+  itl5_castelfidardo:['卡斯泰尔菲达尔多','Castelfidardo',43.463,13.55,'安科纳南边的丘陵小镇。'],
+  itl5_volturno:['沃尔图诺河（卡普阿）','Volturno River (Capua)',41.106,14.213,'那不勒斯北面的河，卡普阿要塞守着渡口。'],
+  itl5_teano:['特亚诺','Teano',41.25,14.067,'那不勒斯北面的小城。'],
+  itl6_pontelandolfo:['蓬泰兰多尔福','Pontelandolfo',41.29,14.69,'贝内文托西北山区的村镇。'],
+  itl6_lissa:['利萨岛（今维斯岛）','Lissa (Vis)',43.176,16.053,'达尔马提亚外海的岛屿。'],
+  itl6_mentana:['门塔纳','Mentana',42.035,12.64,'罗马东北的小镇。'],
+  itl6_portapia:['庇亚门','Porta Pia, Rome',41.9095,12.5013,'罗马奥勒良城墙东北段的城门。'],
+  itl6_massawa:['马萨瓦','Massawa',15.609,39.45,'红海西岸的港口。'],
+  itl6_adwa:['阿杜瓦','Adwa',14.164,38.896,'埃塞俄比亚北部提格雷的山城。'],
+  itl_fiume:['阜姆（今里耶卡）','Fiume (Rijeka)',45.327,14.442,'亚得里亚海北岸的港口，1919年后意南两国争夺。'],
+  itl_trento:['特伦托','Trento',46.067,11.121,'阿迪杰河谷的主教城，1919年以前属奥地利。'],
+  itl7_udine:['乌迪内','Udine',46.066,13.235,'弗留利地区的首府，在伊松佐河以西。'],
+  itl7_caporetto:['卡波雷托（今科巴里德）','Caporetto (Kobarid)',46.247,13.58,'伊松佐河上游的小镇，今属斯洛文尼亚。'],
+  itl7_piave:['皮亚韦河（内尔韦萨一带）','Piave River near Nervesa',45.825,12.208,'威尼斯以北的河流，从阿尔卑斯山流进亚得里亚海。'],
+  itl7_vittorioveneto:['维托里奥韦内托','Vittorio Veneto',45.988,12.299,'皮亚韦河北面山脚下的小城。'],
+  itl7_ronchi:['龙基','Ronchi dei Legionari',45.828,13.5,'伊松佐河口西边的小镇。'],
+  itl7_quirinale:['奎里纳莱宫','Quirinal Palace, Rome',41.8996,12.4873,'罗马的王宫，1871年起意大利国王住在这里。'],
+  itl7_montecitorio:['蒙特奇托里奥宫','Palazzo Montecitorio, Rome',41.9009,12.4786,'意大利众议院的会址。'],
+  itl7_lungotevere:['阿尔纳多·达布雷西亚河滨路','Lungotevere Arnaldo da Brescia, Rome',41.9132,12.4728,'台伯河左岸、人民广场北边的河滨大道。'],
+  itl7_riano:['里亚诺乡间的夸尔塔雷拉树林','Quartarella wood, Riano',42.08,12.515,'罗马以北约23公里的乡间（位置示意）。'],
+  lcl_scheveningen:['斯赫弗宁根','Scheveningen',52.105,4.27,'海牙边上的渔村和海滩。'],
+  lcl1_loevestein:['卢弗斯泰因城堡','Loevestein Castle',51.816,5.022,'瓦尔河与马斯河交汇处的水城堡，共和国关押要犯的地方。'],
+  lcl1_hilversum:['希尔弗瑟姆荒原','Heath near Hilversum',52.223,5.176,'阿姆斯特丹东南的荒原和沙地。'],
+  lcl1_dordrecht:['多德雷赫特','Dordrecht',51.813,4.69,'荷兰省最老的城市，在几条大河的交汇处。'],
+  lcl1_hoorn:['霍伦','Hoorn',52.643,5.06,'须德海西岸的港口和造船城。'],
+  lcl1_dungeness:['邓杰内斯','Dungeness',50.913,0.976,'英格兰肯特郡南端伸进海峡的岬角。'],
+  lcl1_egmond:['埃格蒙德','Egmond-Binnen',52.597,4.651,'北荷兰海边的村子。'],
+  lcl_den_helder:['登海尔德','Den Helder',52.958,4.76,'北荷兰半岛尖端的港口，对着特塞尔岛。'],
+  lcl2_menen:['梅嫩','Menen (Menin)',50.797,3.121,'利斯河边的边境城，屏障要塞之一。'],
+  lcl2_dendermonde:['登德尔蒙德','Dendermonde (Termonde)',51.028,4.101,'斯海尔德河与登德尔河交汇处的要塞城。'],
+  lcl2_steustatius:['圣尤斯特歇斯岛','Sint Eustatius',17.489,-62.974,'加勒比海背风群岛中的荷兰小岛，1756年起是免税港。'],
+  lcl2_goejanverwelle:['古詹弗韦勒斯劳斯','Goejanverwellesluis',52.024,4.829,'豪达以东的船闸小村，属荷兰省地界。'],
+  lcl2_turnhout:['图恩豪特','Turnhout',51.323,4.945,'坎彭地区的布拉班特小城，离荷兰边境不远。'],
+  lcl_seraing:['瑟兰','Seraing',50.583,5.5,'列日上游的马斯河畔工业镇。'],
+  lcl_batavia:['巴达维亚（今雅加达）','Batavia (Jakarta)',-6.135,106.813,'1619年起是荷兰东印度公司在亚洲的总部。'],
+  lcl3_monnaie:['莫奈剧院','Théâtre de la Monnaie, Brussels',50.8497,4.3539,'布鲁塞尔下城的王家剧院，以旧铸币厂得名。'],
+  lcl3_park:['布鲁塞尔公园','Brussels Park',50.8443,4.364,'王宫与议会大厦之间的公园。'],
+  lcl3_hasselt:['哈瑟尔特','Hasselt',50.931,5.338,'林堡省的省城。'],
+  lcl3_leuven:['鲁汶','Leuven (Louvain)',50.879,4.701,'布鲁塞尔以东的大学城。'],
+  lcl3_cirebon:['井里汶','Cirebon',-6.706,108.557,'爪哇西部北岸的港口。'],
+  lcl3_demak:['淡目','Demak',-6.894,110.638,'中爪哇北岸的旧王都。'],
+  lcl3_semarang:['三宝垄','Semarang',-6.966,110.42,'中爪哇北岸的大港。'],
+  lcl3_arlon:['阿尔隆','Arlon',49.683,5.816,'卢森堡省的省城。'],
+  lcl_boma:['博马','Boma',-5.85,13.05,'刚果河口附近的港口，1886—1926年是刚果的首府。'],
+  lcl4_lebak:['勒巴克（朗卡斯比通）','Lebak (Rangkasbitung)',-6.356,106.251,'爪哇西部万丹地区的县城。'],
+  lcl4_medan:['棉兰（日里）','Medan (Deli)',3.595,98.672,'苏门答腊东北日里苏丹国的地方，烟草园的中心。'],
+  lcl4_bandaaceh:['亚齐（今班达亚齐）','Banda Aceh',5.548,95.323,'苏门答腊北端亚齐苏丹国的都城。'],
+  lcl4_leopoldville:['利奥波德维尔（今金沙萨）','Léopoldville (Kinshasa)',-4.322,15.312,'刚果河下游急流上方的大河湾。'],
+  lcl4_ujiji:['乌吉吉','Ujiji',-4.911,29.675,'坦噶尼喀湖东岸的商站。'],
+  lcl4_basankusu:['巴桑库苏','Basankusu',1.222,19.803,'刚果河支流交汇处的商站。'],
+  lcl4_roux:['鲁','Roux',50.441,4.393,'沙勒罗瓦西北的煤矿镇。'],
   gpr_berlin:['柏林（含波茨坦）','Berlin (with Potsdam)',52.52,13.405,'勃兰登堡与普鲁士都城；1685年《波茨坦敕令》接纳两万胡格诺难民，波茨坦亦为巨人掷弹兵团驻地。'],
   gpr_cleves:['克莱沃','Cleves (Kleve)',51.789,6.138,'莱茵河下游公国首府；1614年起归属霍亨索伦家族，是勃兰登堡在德意志西部的飞地。'],
   gpr_konigsberg:['柯尼斯堡（今加里宁格勒）','Königsberg (Kaliningrad)',54.707,20.511,'东普鲁士首府；1657年脱离波兰宗主权，1701年1月18日腓特烈一世在此自行戴冠称王。'],
@@ -9538,6 +9629,554 @@ const HISTORY_ENTRIES=[
     hp(d,'gve_berlin',{left:1,note:'帝国银行印钞致4.2万亿马克兑一美元，施特雷泽曼发地租马克止血。'});
     hr(d,[[48.85,2.35],[51.46,7.01]],HC.war);
    },[['fill',HC.germany,'经历恶性通胀的魏玛共和国'],['fill',HC.france,'出兵占领鲁尔的法兰西'],['fill',HC.lowlands,'协同出兵的比利时'],['dline',HC.war,'1923年1月法比联军进占鲁尔工业区'],['dot',HC.war,'埃森（鲁尔占领区）与慕尼黑'],['dot','#2a2018','巴黎与柏林']])
+ ]},
+{id:'history-italy-spanish',ch:5,title:'西班牙治下的意大利：半岛上少有大仗，钱和兵被抽去打别人的仗',short:'西班牙治下的意大利',en:'Spanish Italy: Few Wars at Home, Its Money and Men Drawn Off to Spain’s Wars',period:'1559—1700年',c:HC.italy,
+ scenes:[
+  hs('1557—1563年','卡托—康布雷齐和约','西班牙在意大利的领地与萨伏伊、教宗国、威尼斯；虚线是兵员北上尼德兰的“西班牙之路”。',[[36.5,3.0],[51.5,19.5]],d=>{
+    ha(d,'fr18SpanishItaly1700',HC.spain,{fillOpacity:.32});ha(d,'fSavoy1559',HC.italy,{fillOpacity:.34});ha(d,'itPapal1600',HC.faith,{fillOpacity:.26});ha(d,'itVenice1600',HC.neutral,{fillOpacity:.3});
+    hr(d,[[44.41,8.93],[45.46,9.19],[45.07,7.69],[45.26,6.90],[45.57,5.92],[47.24,6.02],[48.69,6.18],[49.61,6.13],[50.85,4.35]],HC.route);
+    hp(d,'fh2_cateau',{kind:'battle',note:'1559年4月2—3日英法、法西在此分别签约。'});
+    hp(d,'fdi_stquentin',{kind:'battle',left:1,note:'1557年8月10日法军主力在此溃败。'});
+    hp(d,'itl1_chambery',{left:1,note:'萨伏伊公国的旧都。'});
+    hp(d,'f3a_turin',{kind:'capital',note:'1563年2月7日公爵隆重入城。'});
+    hp(d,'cx_genoa',{kind:'port',note:'从西班牙来的兵船在此靠岸。'});
+    hp(d,'ic_milan',{note:'西班牙总督的驻地。'});
+   },[['fill',HC.spain,'西班牙直管的米兰、那不勒斯、西西里、撒丁（示意）'],['fill',HC.italy,'萨伏伊公国'],['fill',HC.faith,'教宗国'],['fill',HC.neutral,'威尼斯共和国（本土与亚得里亚海岸领地）'],['dline',HC.route,'“西班牙之路”（示意）'],['dot',HC.war,'勒卡托—康布雷西与圣康坦'],['dot','#2a2018','尚贝里、都灵、热那亚与米兰']]),
+  hs('1557—1627年','热那亚银行家的世纪','白银从塞维利亚运到热那亚，钱在皮亚琴察的集市上周转，再到安特卫普发饷（示意）。',[[36.0,-9.5],[52.5,15.0]],d=>{
+    ha(d,'sHabsburgSpain1556',HC.spain,{fillOpacity:.26});ha(d,'itGenoa1600',HC.italy,{fillOpacity:.4});
+    hr(d,[[37.39,-5.99],[38.3,0.2],[41.38,2.17],[43.2,6.2],[44.41,8.93]],HC.route);
+    hr(d,[[44.41,8.93],[45.05,9.69],[47.24,6.02],[51.22,4.40]],HC.war);
+    hp(d,'hispalis',{kind:'port',left:1,note:'美洲银船队的终点。'});
+    hp(d,'sn2_madrid',{note:'王室在此同银行家订借款合同。'});
+    hp(d,'cx_genoa',{kind:'capital',note:'银行家们的总部。'});
+    hp(d,'r_placentia',{note:'1579年起汇兑集市在此举行。'});
+    hp(d,'sp2_besancon',{left:1,note:'1579年以前的集市所在地。'});
+    hp(d,'lb_antwerp',{note:'西班牙军队在尼德兰领饷的地方。'});
+   },[['fill',HC.spain,'西班牙哈布斯堡的领地（示意）'],['fill',HC.italy,'热那亚共和国（含科西嘉）'],['dline',HC.route,'白银从塞维利亚运往热那亚（示意）'],['dline',HC.war,'汇票和军饷北上尼德兰（示意）'],['dot','#2a2018','塞维利亚、马德里、热那亚、皮亚琴察、贝桑松与安特卫普']]),
+  hs('1605—1607年','威尼斯不理禁令','威尼斯共和国与教宗国；西班牙在米兰的军队奉命待命，法国站在威尼斯一边。',[[41.2,7.6],[46.9,16.6]],d=>{
+    ha(d,'itVenice1600',HC.italy,{fillOpacity:.32});ha(d,'itPapal1600',HC.faith,{fillOpacity:.3});ha(d,'sMilan',HC.spain,{fillOpacity:.28});
+    hp(d,'w_venice',{kind:'capital',note:'元老院在此宣布禁令无效。'});
+    hp(d,'rome',{kind:'battle',note:'1606年4月17日教宗在此发出绝罚。'});
+    hp(d,'ic_milan',{left:1,note:'米兰总督富恩特斯奉命备战。'});
+    hp(d,'iv2_padua',{left:1,note:'萨尔皮早年在这里的大学读书。'});
+   },[['fill',HC.italy,'威尼斯共和国（本土与亚得里亚海岸领地）'],['fill',HC.faith,'教宗国'],['fill',HC.spain,'西属米兰'],['dot',HC.war,'罗马'],['dot','#2a2018','威尼斯、米兰与帕多瓦']]),
+  hs('1629—1633年','瘟疫、涂油者与伽利略','帝国雇佣兵从林道经瓦尔泰利纳南下曼托瓦（示意）；托斯卡纳与教宗国之间是伽利略往返的路。',[[41.3,7.8],[47.9,13.6]],d=>{
+    ha(d,'sMilan',HC.spain,{fillOpacity:.3});ha(d,'itTuscany',HC.italy,{fillOpacity:.26});ha(d,'itPapal1600',HC.faith,{fillOpacity:.24});
+    hr(d,[[47.55,9.68],[46.17,10.0],[45.6,10.3],[45.16,10.79]],HC.war);
+    hp(d,'itl1_lindau',{left:1,note:'帝国军在此集结南下。'});
+    hp(d,'iv_mantua',{kind:'battle',note:'1630年7月18日城破遭洗劫。'});
+    hp(d,'ic_milan',{kind:'battle',left:1,note:'城外的隔离病院一度挤满病人。'});
+    hp(d,'itl1_arcetri',{note:'伽利略1631年起住在这里。'});
+    hp(d,'rome',{note:'1633年2月13日伽利略到达。'});
+   },[['fill',HC.spain,'西属米兰'],['fill',HC.italy,'托斯卡纳大公国'],['fill',HC.faith,'教宗国'],['dline',HC.war,'帝国雇佣兵南下曼托瓦（示意）'],['dot',HC.war,'曼托瓦与米兰'],['dot','#2a2018','林道、阿切特里与罗马']]),
+  hs('1647—1648年','那不勒斯的水果税','西班牙治下的那不勒斯王国与西西里；1647年两地先后暴动。',[[36.4,11.6],[42.8,18.8]],d=>{
+    ha(d,'itTwoSicilies',HC.spain,{fillOpacity:.3});
+    hp(d,'naples',{kind:'battle',note:'城东的集市广场是暴动的中心。'});
+    hp(d,'it_palermo',{kind:'battle',note:'5月饥荒中市民冲击官署、放出囚犯。'});
+   },[['fill',HC.spain,'西班牙治下的那不勒斯王国与西西里'],['dot',HC.war,'那不勒斯与巴勒莫']]),
+  hs('1669—1700年','克里特、香料与丝绸','1683年前后的奥斯曼疆域与克里特岛（示意）；图钉标出香料、毛呢、丝绸生意的此消彼长。',[[29.5,-2.0],[54.0,38.5]],d=>{
+    ha(d,'osOttoman1683',HC.byz,{fillOpacity:.2});ha(d,'itCrete1600',HC.war,{fillOpacity:.4});ha(d,'itVenice1600',HC.italy,{fillOpacity:.3});ha(d,'fr18SpanishItaly1700',HC.spain,{fillOpacity:.22});
+    hp(d,'c4_candia',{kind:'battle',note:'1669年9月6日守将莫罗西尼签约投降。'});
+    hp(d,'w_venice',{note:'1669年关掉亚历山大里亚的领事馆。'});
+    hp(d,'gh_amsterdam',{left:1,note:'香料转运的新中心。'});
+    hp(d,'cx_aleppo',{note:'威尼斯1675年撤回这里的领事。'});
+    hp(d,'itl1_caraglio',{left:1,note:'水力捻丝厂1678年开工。'});
+   },[['fill',HC.byz,'奥斯曼帝国（1683年前后，示意）'],['fill',HC.war,'克里特岛（1669年失守）'],['fill',HC.italy,'威尼斯共和国'],['fill',HC.spain,'西属意大利（1700年）'],['dot',HC.war,'坎迪亚'],['dot','#2a2018','威尼斯、卡拉利奥、阿姆斯特丹与阿勒颇']])
+ ]},
+{id:'history-italy-savoy',ch:5,title:'萨伏伊与奥地利：王冠在条约里换手，改革在米兰和佛罗伦萨试水',short:'萨伏伊与奥地利',en:'Savoy and Austria: Crowns Change Hands by Treaty, Reform Is Tried Out in Milan and Florence',period:'1700—1796年',c:HC.italy,
+ scenes:[
+  hs('1700—1706年','都灵之围','萨伏伊公国夹在法国和米兰之间（示意）；图钉标出都灵、苏佩尔加山和翻越阿尔卑斯的塞尼山口。',[[43.4,4.6],[46.7,10.3]],d=>{
+    ha(d,'fr18France1678',HC.france,{fillOpacity:.2});ha(d,'fSavoy1559',HC.italy,{fillOpacity:.34});ha(d,'sMilan',HC.spain,{fillOpacity:.3});
+    hp(d,'f3a_turin',{kind:'battle',left:1,note:'1706年5月起被四万多法军围困。'});
+    hp(d,'itl2_superga',{note:'9月2日公爵与欧根登山察看敌营。'});
+    hp(d,'fr_mtcenis',{note:'法军进出意大利的主要山口。'});
+    hp(d,'ic_milan',{note:'1701年起由腓力五世的总督治理。'});
+   },[['fill',HC.france,'法国'],['fill',HC.italy,'萨伏伊公国（示意）'],['fill',HC.spain,'西属米兰（1706年后归奥地利）'],['dot',HC.war,'都灵'],['dot','#2a2018','苏佩尔加山、塞尼山口与米兰']]),
+  hs('1713—1720年','西西里换撒丁','1720年对换以后：萨伏伊本土加撒丁岛成了撒丁王国，奥地利管米兰、曼托瓦、那不勒斯和西西里。',[[36.2,5.0],[46.6,17.5]],d=>{
+    ha(d,'itSardinia1720',HC.italy,{fillOpacity:.34});ha(d,'itAustria1720',HC.germany,{fillOpacity:.28});
+    hp(d,'f3a_turin',{kind:'capital',note:'国王照旧住在这里。'});
+    hp(d,'it_palermo',{kind:'capital',note:'1713年圣诞前夜在此加冕。'});
+    hp(d,'itl2_passaro',{kind:'battle',note:'1718年8月11日的海战。'});
+    hp(d,'c7_cagliari',{kind:'capital',left:1,note:'撒丁王国名义上的首府。'});
+   },[['fill',HC.italy,'撒丁王国（1720年）'],['fill',HC.germany,'奥地利在意大利（1720年）'],['dot',HC.war,'帕萨罗角'],['dot','#2a2018','都灵、巴勒莫与卡利亚里']]),
+  hs('1731—1748年','洛林换托斯卡纳','洛林与托斯卡纳一北一南对换；那不勒斯和西西里归西班牙王子卡洛斯（示意）。',[[36.5,3.5],[50.2,17.5]],d=>{
+    ha(d,'fLorraine',HC.germany,{fillOpacity:.32});ha(d,'itTuscany',HC.germany,{fillOpacity:.28});ha(d,'itTwoSicilies',HC.spain,{fillOpacity:.28});ha(d,'itParma',HC.spain,{fillOpacity:.22});
+    hr(d,[[48.69,6.18],[46.5,7.6],[44.8,9.8],[43.77,11.26]],HC.route);
+    hp(d,'lb_nancy',{note:'洛林都城，1738年让给斯坦尼斯瓦夫。'});
+    hp(d,'ci_florence',{kind:'capital',note:'1737年7月9日末代大公死在城里。'});
+    hp(d,'f2_parma',{note:'法尔内塞家的藏品被运往南方。'});
+    hp(d,'spb_bitonto',{kind:'battle',note:'1734年西班牙军在此击败奥军。'});
+    hp(d,'naples',{kind:'capital',left:1,note:'卡洛斯在这里当了二十五年国王。'});
+   },[['fill',HC.germany,'洛林与托斯卡纳（弗朗茨·斯蒂芬以前者换后者）'],['fill',HC.spain,'西班牙王子的那不勒斯、西西里与帕尔马'],['dline',HC.route,'洛林公爵移封托斯卡纳（示意）'],['dot',HC.war,'比通托'],['dot','#2a2018','南锡、佛罗伦萨、帕尔马与那不勒斯']]),
+  hs('1740—1767年','米兰的地籍与咖啡馆','奥属伦巴第（米兰与曼托瓦）和洛林家的托斯卡纳；图钉标出米兰、帕维亚和书稿付印的里窝那。',[[43.0,7.8],[46.6,12.2]],d=>{
+    ha(d,'itLombardy1748',HC.germany,{fillOpacity:.32});ha(d,'itTuscany',HC.germany,{fillOpacity:.16});
+    hp(d,'ic_milan',{kind:'capital',note:'新地籍1760年1月1日起施行。'});
+    hp(d,'ic_pavia',{note:'贝卡里亚1758年在这里拿到法学学位。'});
+    hp(d,'iw8_livorno',{kind:'port',note:'托斯卡纳的港口，书商在这里替他印书。'});
+   },[['fill',HC.germany,'奥属伦巴第与托斯卡纳（哈布斯堡—洛林家）'],['dot','#2a2018','米兰、帕维亚与里窝那']]),
+  hs('1765—1790年','托斯卡纳废除死刑','利奥波德治下的托斯卡纳与波旁家的那不勒斯、西西里；科西嘉1768年由热那亚抵给法国。',[[36.6,7.5],[44.6,16.8]],d=>{
+    ha(d,'itTuscany',HC.germany,{fillOpacity:.3});ha(d,'itTwoSicilies',HC.spain,{fillOpacity:.24});ha(d,'fr18Corsica',HC.france,{fillOpacity:.36});
+    hp(d,'ci_florence',{kind:'capital',note:'大公在这里颁行新刑法典。'});
+    hp(d,'naples',{left:1,note:'热诺韦西在这里的大学开讲。'});
+    hp(d,'itl2_pompeii',{note:'1748年起断断续续地发掘。'});
+    hp(d,'fpa_pontenovu',{kind:'battle',note:'1769年5月8—9日科西嘉人战败。'});
+    hp(d,'fpa_ajaccio',{left:1,note:'波拿巴家的老宅在城里。'});
+   },[['fill',HC.germany,'托斯卡纳大公国（洛林家）'],['fill',HC.spain,'那不勒斯与西西里（波旁家）'],['fill',HC.france,'科西嘉（1768年起归法国）'],['dot',HC.war,'蓬特诺沃'],['dot','#2a2018','佛罗伦萨、那不勒斯、庞贝与阿雅克肖']]),
+  hs('1790—1796年','法军翻过阿尔卑斯','1792年法军占领的萨伏伊和尼斯；撒丁岛的卡利亚里与皮埃蒙特南部的切拉斯科。',[[38.6,4.5],[46.6,10.6]],d=>{
+    ha(d,'fr18France1789',HC.france,{fillOpacity:.18});ha(d,'itSardinia1748',HC.italy,{fillOpacity:.26});ha(d,'fr18Savoy1792',HC.war,{fillOpacity:.36});
+    hp(d,'itl_nice',{kind:'battle',note:'1792年9月29日法军开进城。'});
+    hp(d,'f3a_turin',{kind:'capital',note:'撒丁国王的都城。'});
+    hp(d,'c7_cagliari',{kind:'battle',note:'4月28日如今是撒丁岛的节日。'});
+    hp(d,'itl2_cherasco',{note:'1796年4月28日撒丁在此签停战。'});
+   },[['fill',HC.france,'法国（1789年）'],['fill',HC.italy,'撒丁王国（1748年后）'],['fill',HC.war,'1792年法军占领的萨伏伊和尼斯'],['dot',HC.war,'尼斯与卡利亚里'],['dot','#2a2018','都灵与切拉斯科']])
+ ]},
+{id:'history-italy-napoleon',ch:5,title:'拿破仑与意大利：法军带来了法典和三色旗，也带走了画和钱',short:'拿破仑与意大利',en:'Napoleon and Italy: The French Brought Codes and the Tricolour, and Carried Off the Paintings and the Money',period:'1796—1815年',c:HC.italy,
+ scenes:[
+  hs('1796—1797年','姐妹共和国','1797年的北意大利：法国扶起的两个共和国、交给奥地利的威尼斯本土与教宗国。',[[41.6,6.6],[47.0,14.2]],d=>{
+    ha(d,'itPapal1600',HC.faith,{fillOpacity:.16});ha(d,'fr18Cisalpine1797',HC.france,{fillOpacity:.3});ha(d,'fr18Ligurian1797',HC.france,{fillOpacity:.2});ha(d,'fr18VenetoAustria1797',HC.germany,{fillOpacity:.3});
+    hp(d,'itl3_reggio',{note:'会场原是公爵修的档案大厅，今称三色旗厅。'});
+    hp(d,'ic_milan',{kind:'capital',left:1,note:'奇萨尔皮纳共和国的首都。'});
+    hp(d,'itl3_tolentino',{note:'条约以这座小城命名。'});
+    hp(d,'w_venice',{note:'末代总督马宁当天摘下了总督冠帽。'});
+    hp(d,'rome',{left:1,note:'教宗还保住罗马、翁布里亚和马尔凯。'});
+   },[['fill',HC.france,'奇萨尔皮纳、利古里亚两个共和国'],['fill',HC.germany,'交给奥地利的威尼斯本土'],['fill',HC.faith,'教宗国（示意）'],['dot','#2a2018','雷焦艾米利亚、米兰、托伦蒂诺、威尼斯与罗马']]),
+  hs('1798—1799年','罗马、那不勒斯与圣信军','1798—1799年法国扶起的罗马、那不勒斯两个共和国，和圣信军从卡拉布里亚北上的路线。',[[37.6,3.8],[46.2,17.6]],d=>{
+    ha(d,'fr18Roman1798',HC.france,{fillOpacity:.28});ha(d,'fr18Parthenopean1799',HC.france,{fillOpacity:.2});
+    hp(d,'rome',{kind:'capital',note:'1798年2月15日宣布罗马共和国。'});
+    hp(d,'fc_valence',{left:1,note:'庇护六世最后六个星期关在城中要塞。'});
+    hp(d,'it_palermo',{note:'1798年12月王室坐英国军舰逃来。'});
+    hp(d,'itl3_bagnara',{note:'鲁福家的封地，最早在这里招兵。'});
+    hp(d,'naples',{kind:'battle',note:'6月13日圣信军从马达莱纳桥打进城。'});
+    hr(d,[[38.29,15.81],[39.08,17.12],[40.83,16.55],[40.85,14.27]],HC.war);
+   },[['fill',HC.france,'罗马共和国与帕尔泰诺佩共和国'],['dline',HC.war,'1799年2—6月圣信军北上（示意）'],['dot',HC.war,'那不勒斯'],['dot','#2a2018','罗马、瓦朗斯、巴勒莫与巴尼亚拉']]),
+  hs('1800—1805年','意大利共和国与王国','1802年的意大利共和国，以及里昂、米兰和两条新修的阿尔卑斯山道。',[[43.6,3.8],[47.4,13.4]],d=>{
+    ha(d,'fr18France1815',HC.france,{fillOpacity:.12});ha(d,'fr18Cisalpine1797',HC.italy,{fillOpacity:.32});
+    hp(d,'k_lyon',{left:1,note:'会场是旧耶稣会学院的礼拜堂。'});
+    hp(d,'ic_milan',{kind:'capital',note:'共和国和王国的首都。'});
+    hp(d,'fco_marengo',{kind:'battle',note:'1800年6月14日法军转败为胜。'});
+    hp(d,'itl3_simplon',{note:'1801—1805年修成，为了让大炮翻山。'});
+    hp(d,'itl3_moncenis',{left:1,note:'1810年已是法意之间最繁忙的路。'});
+   },[['fill',HC.italy,'意大利共和国（1802年，示意）'],['fill',HC.france,'法国（示意）'],['dot',HC.war,'马伦哥'],['dot','#2a2018','里昂、米兰、辛普朗山口与塞尼山口']]),
+  hs('1806—1812年','一分为三的半岛','1812年的意大利：并入法国的各省、意大利王国、那不勒斯王国，和英国保护下的两座岛。',[[36.4,5.8],[47.4,19.0]],d=>{
+    ha(d,'fr18Empire1812',HC.france,{fillOpacity:.22});ha(d,'fr18KingdomItaly1812',HC.italy,{fillOpacity:.34});ha(d,'fr18Naples1812',HC.spain,{fillOpacity:.3});
+    hp(d,'f3a_turin',{note:'1802年起是法国波河省的省会。'});
+    hp(d,'ci_florence',{note:'1809年起拿破仑的妹妹埃莉萨在此当大公。'});
+    hp(d,'rome',{note:'1809年并入法国，号称帝国第二城。'});
+    hp(d,'naples',{kind:'capital',note:'约瑟夫与缪拉先后在此当国王。'});
+    hp(d,'it_palermo',{left:1,note:'斐迪南王室躲在这里，靠英军保护。'});
+    hp(d,'c7_cagliari',{left:1,note:'萨伏伊王室避居撒丁岛的首府。'});
+   },[['fill',HC.france,'并入法兰西帝国的各省'],['fill',HC.italy,'意大利王国（1812年）'],['fill',HC.spain,'那不勒斯王国'],['dot','#2a2018','都灵、佛罗伦萨、罗马、那不勒斯、巴勒莫与卡利亚里']]),
+  hs('1814—1815年','缪拉的最后一年','1815年缪拉北上与败退的地点，和他最后登陆的卡拉布里亚海岸。',[[37.8,7.6],[46.0,17.6]],d=>{
+    ha(d,'fr18Naples1812',HC.spain,{fillOpacity:.3});
+    hp(d,'ic_milan',{note:'1814年4月20日暴民冲进参议院。'});
+    hp(d,'itl3_rimini',{note:'3月底缪拉的东路军经此北上。'});
+    hp(d,'itl3_tolentino',{kind:'battle',note:'奥军胜，那不勒斯军死伤被俘四千多人。'});
+    hp(d,'fpa_ajaccio',{left:1,note:'9月28日缪拉从这里出海。'});
+    hp(d,'itl3_pizzo',{kind:'battle',note:'城堡里受审，就地枪决。'});
+    hr(d,[[41.92,8.74],[40.2,12.2],[38.73,16.16]],HC.route);
+   },[['fill',HC.spain,'缪拉的那不勒斯王国'],['dline',HC.route,'1815年9—10月缪拉从科西嘉驶往卡拉布里亚（示意）'],['dot',HC.war,'托伦蒂诺与皮佐'],['dot','#2a2018','米兰、里米尼与阿雅克肖']]),
+  hs('1815年','维也纳会议重画半岛','维也纳会议后的意大利各邦：奥地利直辖、哈布斯堡亲戚、撒丁、教宗国与两西西里。',[[36.4,6.0],[48.6,17.2]],d=>{
+    ha(d,'itLombardyVenetia1815',HC.germany,{fillOpacity:.34});ha(d,'itTuscany',HC.germany,{fillOpacity:.16});ha(d,'itModena',HC.germany,{fillOpacity:.16});ha(d,'itParma',HC.germany,{fillOpacity:.16});
+    ha(d,'itSardinia1815',HC.italy,{fillOpacity:.3});ha(d,'itPapal1815',HC.faith,{fillOpacity:.26});ha(d,'itTwoSicilies',HC.spain,{fillOpacity:.26});
+    hp(d,'c3_vienna',{left:1,note:'1815年6月9日签署会议总决议书。'});
+    hp(d,'cx_genoa',{note:'1814年复国不到一年就并进撒丁。'});
+    hp(d,'f2_parma',{note:'玛丽-路易丝在此终身当女公爵。'});
+    hp(d,'ci_florence',{note:'洛林家的斐迪南三世复位为大公。'});
+    hp(d,'naples',{kind:'capital',note:'1816年12月起是两西西里王国首都。'});
+   },[['fill',HC.germany,'奥地利直辖（深）与哈布斯堡亲戚的公国（浅）'],['fill',HC.italy,'撒丁王国（含热那亚）'],['fill',HC.faith,'教宗国'],['fill',HC.spain,'两西西里王国'],['dot','#2a2018','维也纳、热那亚、帕尔马、佛罗伦萨与那不勒斯']])
+ ]},
+{id:'history-italy-mazzini',ch:5,title:'马志尼与1848年：密谋点不着火，教宗和国王也靠不住',short:'马志尼与1848年',en:'Mazzini and 1848: Conspiracies That Would Not Catch Fire, a Pope and a King Who Could Not Be Relied On',period:'1815—1849年',c:HC.italy,
+ scenes:[
+  hs('1815—1821年','复辟秩序与烧炭党','1815年后的意大利各邦，标出1820—1821年起事和奥军出兵的地点。',[[37.5,6.5],[49.8,18.0]],d=>{
+    ha(d,'itLombardyVenetia1815',HC.germany,{fillOpacity:.34});ha(d,'itTuscany',HC.germany,{fillOpacity:.16});ha(d,'itModena',HC.germany,{fillOpacity:.16});ha(d,'itParma',HC.germany,{fillOpacity:.16});
+    ha(d,'itSardinia1815',HC.italy,{fillOpacity:.28});ha(d,'itPapal1815',HC.faith,{fillOpacity:.22});ha(d,'itTwoSicilies',HC.spain,{fillOpacity:.24});
+    hp(d,'itl4_nola',{kind:'battle',note:'骑兵中尉莫雷利和西尔瓦蒂在此起事。'});
+    hp(d,'itl4_laibach',{note:'1821年1月起神圣同盟各国在此开会。'});
+    hp(d,'itl4_antrodoco',{kind:'battle',left:1,note:'1821年3月7日奥军胜。'});
+    hp(d,'ci_novara',{kind:'battle',note:'1821年4月8日奥军胜。'});
+    hp(d,'itl4_spielberg',{note:'佩利科等烧炭党人关押在此。'});
+   },[['fill',HC.germany,'奥地利直辖（深）与哈布斯堡亲戚的公国（浅）'],['fill',HC.italy,'撒丁王国'],['fill',HC.faith,'教宗国'],['fill',HC.spain,'两西西里王国'],['dot',HC.war,'诺拉、安特罗多科与诺瓦拉'],['dot','#2a2018','莱巴赫与施皮尔贝格要塞']]),
+  hs('1831—1834年','青年意大利','1831年起事的中部城市、马志尼流亡的马赛，与1834年起事计划里的日内瓦、热那亚。',[[42.0,4.6],[46.6,13.6]],d=>{
+    ha(d,'itModena',HC.war,{fillOpacity:.22});ha(d,'itPapal1815',HC.faith,{fillOpacity:.2});ha(d,'itSardinia1815',HC.italy,{fillOpacity:.24});
+    hp(d,'itl4_modena',{kind:'battle',note:'2月3日公爵下令逮捕密谋首领梅诺蒂。'});
+    hp(d,'bb_bologna',{kind:'battle',note:'起事者在此宣布意大利联合省。'});
+    hp(d,'itl4_forli',{note:'拿破仑的侄子拿破仑-路易病死于此。'});
+    hp(d,'k_marseille',{left:1,note:'青年意大利的创立地。'});
+    hp(d,'itl4_geneva',{note:'1834年2月攻萨伏伊的出发地。'});
+    hp(d,'cx_genoa',{note:'1830年马志尼在此被捕。'});
+    hp(d,'itl_nice',{left:1,note:'1807年加里波第生于此。'});
+   },[['fill',HC.war,'1831年起事的摩德纳公国'],['fill',HC.faith,'教宗国'],['fill',HC.italy,'撒丁王国'],['dot',HC.war,'摩德纳与博洛尼亚'],['dot','#2a2018','弗利、马赛、日内瓦、热那亚与尼斯']]),
+  hs('1846—1848年3月','新教宗与宪法潮','1848年头三个月起事或颁宪法的地方：巴勒莫、罗马、都灵、米兰与威尼斯。',[[37.6,6.5],[46.8,16.0]],d=>{
+    ha(d,'itLombardyVenetia1815',HC.germany,{fillOpacity:.3});ha(d,'itTuscany',HC.germany,{fillOpacity:.14});
+    ha(d,'itSardinia1815',HC.italy,{fillOpacity:.28});ha(d,'itPapal1815',HC.faith,{fillOpacity:.24});ha(d,'itTwoSicilies',HC.spain,{fillOpacity:.22});
+    hp(d,'rome',{kind:'capital',note:'教宗国3月14日颁布根本法。'});
+    hp(d,'it_palermo',{kind:'battle',note:'1月12日正是那不勒斯国王的生日。'});
+    hp(d,'f3a_turin',{left:1,note:'国王在王宫签署宪章。'});
+    hp(d,'ic_milan',{kind:'battle',note:'3月20日三色旗插上大教堂尖顶。'});
+    hp(d,'w_venice',{kind:'battle',note:'起事者先夺下了兵工厂。'});
+   },[['fill',HC.germany,'伦巴第—威尼西亚与托斯卡纳'],['fill',HC.italy,'撒丁王国'],['fill',HC.faith,'教宗国'],['fill',HC.spain,'两西西里王国'],['dot',HC.war,'巴勒莫、米兰与威尼斯'],['dot','#2a2018','罗马与都灵']]),
+  hs('1848年3—8月','训谕与库斯托扎','1848年撒丁军东进的路线、奥军据守的四边形要塞区和库斯托扎战场。',[[44.6,7.2],[46.2,12.6]],d=>{
+    ha(d,'itLombardyVenetia1815',HC.germany,{fillOpacity:.28});ha(d,'itSardinia1815',HC.italy,{fillOpacity:.3});
+    hp(d,'ic_milan',{left:1,note:'8月初国王在格雷皮宫答应交出米兰。'});
+    hp(d,'verona',{note:'四边形要塞区的中心，拉德茨基的大本营。'});
+    hp(d,'iv_mantua',{note:'四边形要塞之一，始终在奥军手里。'});
+    hp(d,'itl_custoza',{left:1,kind:'battle',note:'7月24—25日主战，奥军胜。'});
+    hr(d,[[45.07,7.69],[45.46,9.19],[45.33,10.72]],HC.route);
+   },[['fill',HC.germany,'伦巴第—威尼西亚'],['fill',HC.italy,'撒丁王国'],['dline',HC.route,'1848年3—4月撒丁军东进（示意）'],['dot',HC.war,'库斯托扎'],['dot','#2a2018','米兰、维罗纳与曼托瓦']]),
+  hs('1848年11月—1849年8月','罗马共和国与诺瓦拉','诺瓦拉、加埃塔、罗马，以及加里波第撤出罗马后北上的路线。',[[40.8,7.6],[46.0,14.2]],d=>{
+    ha(d,'itPapal1815',HC.faith,{fillOpacity:.22});ha(d,'itSardinia1815',HC.italy,{fillOpacity:.24});
+    hp(d,'ci_novara',{kind:'battle',note:'3月23日奥军胜，撒丁军死伤被俘近六千。'});
+    hp(d,'wo_gaeta',{note:'庇护九世在此避居到1849年9月。'});
+    hp(d,'itl4_janiculum',{kind:'battle',note:'城门外的别墅几度易手。'});
+    hp(d,'itl4_sanmarino',{note:'7月29日残部一千五百人在此避难。'});
+    hp(d,'itl4_mandriole',{left:1,note:'8月4日阿妮塔死在一户农家。'});
+    hr(d,[[41.89,12.49],[41.96,12.80],[42.56,12.64],[42.78,12.41],[42.72,12.11],[43.46,11.88],[43.94,12.45],[44.20,12.40],[44.55,12.25]],HC.route);
+   },[['fill',HC.faith,'教宗国（1849年2—7月为罗马共和国）'],['fill',HC.italy,'撒丁王国'],['dline',HC.route,'1849年7—8月加里波第撤退路线（示意）'],['dot',HC.war,'诺瓦拉与贾尼科洛山'],['dot','#2a2018','加埃塔、圣马力诺与曼德里奥莱']]),
+  hs('1849年','威尼斯投降','被围的威尼斯与潟湖岸边的马尔盖拉堡，以及保住宪章的撒丁王国。',[[44.0,6.8],[46.6,13.4]],d=>{
+    ha(d,'itLombardyVenetia1815',HC.germany,{fillOpacity:.3});ha(d,'itSardinia1815',HC.italy,{fillOpacity:.32});
+    hp(d,'w_venice',{kind:'battle',note:'8月下旬签降，奥军随后入城。'});
+    hp(d,'itl4_marghera',{kind:'battle',left:1,note:'5月26日夜守军撤出炮台。'});
+    hp(d,'f3a_turin',{note:'议会照常开会的撒丁首都。'});
+   },[['fill',HC.germany,'奥地利收复的伦巴第—威尼西亚'],['fill',HC.italy,'保住宪章的撒丁王国'],['dot',HC.war,'威尼斯与马尔盖拉堡'],['dot','#2a2018','都灵']])
+ ]},
+{id:'history-italy-cavour',ch:5,title:'加富尔与加里波第：借法国的兵赶走奥地利，红衫军把南方送上门',short:'加富尔与加里波第',en:'Cavour and Garibaldi: French Troops Drive Out Austria, the Redshirts Deliver the South',period:'1849—1861年',c:HC.italy,
+ scenes:[
+  hs('1849—1852年','维尼亚莱的停战与都灵的样板','1849年的意大利各邦，标出诺瓦拉、维尼亚莱和都灵。',[[37.0,5.5],[47.2,19.0]],d=>{
+    ha(d,'itSardinia1815',HC.italy,{fillOpacity:.38});ha(d,'itLombardyVenetia1815',HC.germany,{fillOpacity:.3});ha(d,'itPapal1815',HC.faith,{fillOpacity:.24});ha(d,'itTwoSicilies',HC.spain,{fillOpacity:.22});ha(d,'itTuscany',HC.neutral,{fillOpacity:.26});
+    hp(d,'ci_novara',{kind:'battle',note:'1849年3月23日撒丁军在这里大败。'});
+    hp(d,'itl5_vignale',{left:1,note:'3月24日新王与拉德茨基在农舍里站着谈判。'});
+    hp(d,'f3a_turin',{kind:'capital',note:'撒丁首都，议会设在卡里尼亚诺宫。'});
+   },[['fill',HC.italy,'撒丁王国（含热那亚、萨伏伊和尼斯）'],['fill',HC.germany,'奥属伦巴第—威尼西亚'],['fill',HC.faith,'教宗国'],['fill',HC.spain,'两西西里王国'],['fill',HC.neutral,'托斯卡纳大公国'],['dot',HC.war,'诺瓦拉'],['dot','#2a2018','维尼亚莱与都灵']]),
+  hs('1855—1858年','从克里米亚到普隆比耶尔','撒丁远征军从热那亚到克里米亚的航路，以及巴黎和普隆比耶尔。',[[36.0,0.0],[52.0,36.0]],d=>{
+    ha(d,'itSardinia1815',HC.italy,{fillOpacity:.38});ha(d,'fr18France1815',HC.france,{fillOpacity:.22});ha(d,'brCrimea1854',HC.war,{fillOpacity:.36});
+    hp(d,'cx_genoa',{kind:'port',note:'1855年4月25日远征军从这里出海。'});
+    hp(d,'itl5_chernaya',{kind:'battle',note:'1855年8月16日撒丁军在桥边参战。'});
+    hp(d,'w_paris',{kind:'capital',left:1,note:'1856年和会与1858年的歌剧院炸弹。'});
+    hp(d,'itl5_plombieres',{note:'1858年7月皇帝在这里疗养，约加富尔来谈。'});
+    hr(d,[[44.41,8.93],[38.2,15.6],[36.4,22.5],[40.0,26.2],[41.0,29.0],[44.5,33.6]],HC.route);
+   },[['fill',HC.italy,'撒丁王国'],['fill',HC.france,'法兰西第二帝国'],['fill',HC.war,'克里米亚半岛'],['dline',HC.route,'撒丁远征军航路（示意）'],['dot',HC.war,'切尔纳亚河'],['dot','#2a2018','热那亚、巴黎与普隆比耶尔']]),
+  hs('1859年','马真塔、索尔费里诺与维拉弗兰卡','1859年伦巴第战场，标出马真塔、索尔费里诺和维拉弗兰卡，以及四要塞中的曼托瓦。',[[44.6,7.4],[46.2,11.6]],d=>{
+    ha(d,'itSardinia1815',HC.italy,{fillOpacity:.34});ha(d,'itLombardyVenetia1815',HC.germany,{fillOpacity:.28});
+    hp(d,'itl5_magenta',{kind:'battle',note:'6月4日法军在这里获胜。'});
+    hp(d,'ic_milan',{kind:'capital',note:'6月8日拿破仑三世和撒丁国王入城。'});
+    hp(d,'itl5_solferino',{left:1,kind:'battle',note:'6月24日三位君主各自督战，伤兵抬进近旁的卡斯蒂廖内。'});
+    hp(d,'itl5_villafranca',{note:'7月11日两位皇帝在这里会面。'});
+    hp(d,'iv_mantua',{left:1,note:'四要塞之一，与维罗纳等城停战后仍归奥地利。'});
+   },[['fill',HC.italy,'撒丁王国'],['fill',HC.germany,'奥属伦巴第—威尼西亚'],['dot',HC.war,'马真塔与索尔费里诺'],['dot','#2a2018','米兰、维拉弗兰卡与曼托瓦']]),
+  hs('1859—1860年','中部公投与萨伏伊、尼斯','1860年3月的撒丁王国：并入的伦巴第和中部各邦，以及割给法国的萨伏伊与尼斯。',[[40.5,4.5],[47.5,14.5]],d=>{
+    ha(d,'itSardinia1859',HC.italy,{fillOpacity:.38});ha(d,'itCentral1860',HC.italy,{fillOpacity:.24});ha(d,'itNiceSavoy1860',HC.france,{fillOpacity:.4});ha(d,'itLazio1870',HC.faith,{fillOpacity:.2});ha(d,'itMarcheUmbria1860',HC.faith,{fillOpacity:.2});
+    hp(d,'ci_florence',{kind:'capital',note:'托斯卡纳临时政府所在地。'});
+    hp(d,'bb_bologna',{left:1,note:'罗马涅的首府，随罗马涅公投并入撒丁。'});
+    hp(d,'f3a_turin',{kind:'capital',note:'3月24日在这里签约割地。'});
+    hp(d,'itl_nice',{kind:'port',left:1,note:'4月15—16日公投，加里波第的故乡。'});
+   },[['fill',HC.italy,'撒丁王国与1860年3月并入的中部各邦'],['fill',HC.france,'割给法国的萨伏伊与尼斯'],['fill',HC.faith,'教宗国剩下的部分'],['dot','#2a2018','佛罗伦萨、博洛尼亚、都灵与尼斯']]),
+  hs('1860年','夸尔托到特亚诺','千人远征从夸尔托到那不勒斯的路线，撒丁军南下马尔凯、翁布里亚的路线（示意）。',[[36.5,7.5],[45.0,17.0]],d=>{
+    ha(d,'itTwoSicilies',HC.spain,{fillOpacity:.28});ha(d,'itMarcheUmbria1860',HC.faith,{fillOpacity:.32});ha(d,'itSardinia1859',HC.italy,{fillOpacity:.3});ha(d,'itCentral1860',HC.italy,{fillOpacity:.3});
+    hp(d,'itl5_quarto',{kind:'port',note:'5月5日夜在这里登船。'});
+    hp(d,'itl5_marsala',{kind:'port',left:1,note:'5月11日上岸。'});
+    hp(d,'itl5_calatafimi',{kind:'battle',note:'5月15日第一仗。'});
+    hp(d,'itl5_bronte',{kind:'battle',note:'8月10日五人被枪决。'});
+    hp(d,'naples',{kind:'capital',note:'9月7日加里波第入城。'});
+    hp(d,'itl5_castelfidardo',{kind:'battle',note:'9月18日教宗军战败。'});
+    hp(d,'itl5_volturno',{kind:'battle',left:1,note:'10月1—2日南方军苦战获胜；26日两人在北边特亚诺附近相见。'});
+    hr(d,[[44.39,8.99],[42.4,10.9],[37.80,12.44],[38.12,13.36],[38.19,15.55],[38.0,15.7],[39.5,16.1],[40.85,14.27]],HC.route);
+    hr(d,[[44.06,12.57],[43.46,13.55],[42.6,13.9],[41.6,14.1],[41.25,14.07]],HC.war);
+   },[['fill',HC.spain,'两西西里王国'],['fill',HC.faith,'教宗的马尔凯与翁布里亚'],['fill',HC.italy,'撒丁王国'],['dline',HC.route,'千人远征路线（示意）'],['dline',HC.war,'撒丁军南下路线（示意）'],['dot',HC.war,'卡拉塔菲米、布龙泰、卡斯泰尔菲达尔多与沃尔图诺河'],['dot','#2a2018','夸尔托、马尔萨拉与那不勒斯']]),
+  hs('1861年','意大利王国成立','1861年3月的意大利王国，旁边是还归教宗的拉齐奥和还归奥地利的威尼西亚。',[[36.0,6.0],[47.5,19.0]],d=>{
+    ha(d,'itItaly1861',HC.italy,{fillOpacity:.36});ha(d,'itLazio1870',HC.faith,{fillOpacity:.34});ha(d,'itVeneto1866',HC.germany,{fillOpacity:.3});
+    hp(d,'f3a_turin',{kind:'capital',note:'第一届意大利议会在这里开会。'});
+    hp(d,'rome',{left:1,note:'3月27日被宣布为未来的首都。'});
+    hp(d,'w_venice',{note:'仍归奥地利。'});
+    hp(d,'itl_caprera',{left:1,note:'加里波第回岛上种地。'});
+   },[['fill',HC.italy,'意大利王国（1861年）'],['fill',HC.faith,'教宗国（拉齐奥）'],['fill',HC.germany,'奥属威尼西亚'],['dot','#2a2018','都灵、罗马、威尼斯与卡普雷拉岛']])
+ ]},
+{id:'history-italy-rome',ch:5,title:'罗马城破与南方问题：首都拿到了，南方农民却觉得被征服了',short:'罗马城破与南方问题',en:'The Breach of Rome and the Southern Question: The Capital Won, the Southern Peasants Felt Conquered',period:'1861—1914年',c:HC.italy,
+ scenes:[
+  hs('1861—1865年','南方的“土匪战争”','“土匪战争”的主要地区：旧两西西里王国的大陆部分，标出梅尔菲、蓬泰兰多尔福和那不勒斯。',[[37.5,12.0],[42.9,18.6]],d=>{
+    ha(d,'itItaly1861',HC.italy,{fillOpacity:.18});ha(d,'itTwoSicilies',HC.war,{fillOpacity:.26});
+    hp(d,'no_melfi',{kind:'battle',note:'克罗科是武尔图雷—梅尔菲一带各股匪帮的头领。'});
+    hp(d,'itl6_pontelandolfo',{kind:'battle',left:1,note:'1861年8月14日村子被狙击兵焱烧。'});
+    hp(d,'naples',{kind:'capital',note:'第六军区司令部所在地，统管剿匪。'});
+   },[['fill',HC.war,'旧两西西里王国（1861年并入意大利）'],['fill',HC.italy,'意大利王国其余部分'],['dot',HC.war,'梅尔菲与蓬泰兰多尔福'],['dot','#2a2018','那不勒斯']]),
+  hs('1864—1867年','九月协定、库斯托扎与利萨','1866年以前的意大利、奥属威尼西亚和教宗国，标出佛罗伦萨、库斯托扎、利萨岛和门塔纳。',[[40.5,7.0],[46.8,17.5]],d=>{
+    ha(d,'itItaly1861',HC.italy,{fillOpacity:.3});ha(d,'itVeneto1866',HC.germany,{fillOpacity:.34});ha(d,'itLazio1870',HC.faith,{fillOpacity:.3});
+    hp(d,'ci_florence',{kind:'capital',note:'1865—1871年的首都，国王住碧提宫。'});
+    hp(d,'itl_custoza',{kind:'battle',note:'1866年6月24日意军败退。'});
+    hp(d,'itl6_lissa',{kind:'battle',note:'1866年7月20日两支铁甲舰队交战。'});
+    hp(d,'w_venice',{note:'1866年10月公投后并入意大利。'});
+    hp(d,'itl6_mentana',{kind:'battle',left:1,note:'1867年11月3日加里波第战败。'});
+   },[['fill',HC.italy,'意大利王国'],['fill',HC.germany,'奥属威尼西亚（1866年割让）'],['fill',HC.faith,'教宗国（拉齐奥）'],['dot',HC.war,'库斯托扎、利萨岛与门塔纳'],['dot','#2a2018','佛罗伦萨与威尼斯']]),
+  hs('1870—1871年','色当与庇亚门','1870年9月的教宗国拉齐奥与意大利王国，以及法军投降的色当。',[[40.5,2.5],[50.5,15.5]],d=>{
+    ha(d,'itItaly1861',HC.italy,{fillOpacity:.24});ha(d,'itVeneto1866',HC.italy,{fillOpacity:.24});ha(d,'itLazio1870',HC.faith,{fillOpacity:.42});ha(d,'fr18France1815',HC.france,{fillOpacity:.16});ha(d,'itNiceSavoy1860',HC.france,{fillOpacity:.16});
+    hp(d,'fma_sedan',{kind:'battle',note:'9月2日拿破仑三世在这里投降。'});
+    hp(d,'itl6_portapia',{kind:'battle',note:'9月20日城墙在门右侧被轰开。'});
+    hp(d,'ci_florence',{left:1,note:'临时首都，1871年7月迁往罗马。'});
+   },[['fill',HC.faith,'教宗国（1870年9月）'],['fill',HC.italy,'意大利王国'],['fill',HC.france,'法国'],['dot',HC.war,'色当与庇亚门'],['dot','#2a2018','佛罗伦萨']]),
+  hs('1868—1900年','磨面税、西西里调查与大移民','移民出海的热那亚、那不勒斯和巴勒莫，以及纽约、布宜诺斯艾利斯两个大目的地（航线示意）。',[[-38.0,-78.0],[50.0,22.0]],d=>{
+    ha(d,'itItaly1871',HC.italy,{fillOpacity:.4});
+    hp(d,'cx_genoa',{kind:'port',note:'北方移民的出海口。'});
+    hp(d,'naples',{kind:'port',left:1,note:'南方移民的主要出海口。'});
+    hp(d,'it_palermo',{kind:'port',note:'西西里移民的出海口。'});
+    hp(d,'amg_newyork',{kind:'port',note:'移民先在埃利斯岛受检查。'});
+    hp(d,'aml_buenosaires',{kind:'port',note:'阿根廷的主要入境港。'});
+    hr(d,[[40.85,14.27],[38.5,8.5],[36.0,-5.6],[39.0,-30.0],[40.6,-73.9]],HC.route);
+    hr(d,[[44.40,8.93],[36.0,-5.6],[15.0,-25.0],[-5.0,-33.0],[-34.6,-58.3]],HC.route);
+   },[['fill',HC.italy,'意大利王国'],['dline',HC.route,'去纽约和布宜诺斯艾利斯的航线（示意）'],['dot','#2a2018','热那亚、那不勒斯、巴勒莫、纽约与布宜诺斯艾利斯']]),
+  hs('1882—1900年','阿杜瓦、米兰与蒙扎','1890年的厄立特里亚殖民地和埃塞俄比亚，以及米兰和蒙扎。',[[8.0,6.0],[47.5,45.0]],d=>{
+    ha(d,'itItaly1871',HC.italy,{fillOpacity:.3});ha(d,'itEritrea1890',HC.italy,{fillOpacity:.42});ha(d,'itEthiopia1896',HC.neutral,{fillOpacity:.32});
+    hp(d,'itl6_massawa',{kind:'port',note:'厄立特里亚殖民地的红海港口。'});
+    hp(d,'itl6_adwa',{kind:'battle',left:1,note:'意军几路纵队在城东山谷里各自被围。'});
+    hp(d,'ic_milan',{kind:'battle',note:'1898年5月军队向示威者开炮。'});
+    hp(d,'w_monza',{kind:'battle',left:1,note:'1900年7月29日国王在这里遇刺。'});
+   },[['fill',HC.italy,'意大利王国与厄立特里亚殖民地'],['fill',HC.neutral,'埃塞俄比亚帝国'],['dot',HC.war,'阿杜瓦、米兰与蒙扎'],['dot','#2a2018','马萨瓦']]),
+  hs('1901—1914年','焦利蒂时代与利比亚','1912年意大利夺得的利比亚，标出工业三角的都灵、米兰、热那亚和“红色星期”起事的安科纳。',[[29.0,5.5],[47.5,22.0]],d=>{
+    ha(d,'itItaly1871',HC.italy,{fillOpacity:.3});ha(d,'itLibya1912',HC.war,{fillOpacity:.34});
+    hp(d,'f3a_turin',{note:'菲亚特1899年在这里成立。'});
+    hp(d,'ic_milan',{note:'倍耐力等工厂所在，工业三角的一角。'});
+    hp(d,'cx_genoa',{kind:'port',left:1,note:'工业三角的港口，有安萨尔多工厂。'});
+    hp(d,'in_ancona',{kind:'battle',note:'1914年6月7日三名示威者被打死。'});
+    hp(d,'ko_tripoli',{kind:'port',note:'1911年10月意军从这里登陆。'});
+   },[['fill',HC.italy,'意大利王国'],['fill',HC.war,'1912年夺得的利比亚'],['dot',HC.war,'安科纳'],['dot','#2a2018','都灵、米兰、热那亚与的黎波里']])
+ ]},
+{id:'history-italy-lateran',ch:5,title:'墨索里尼与拉特兰条约：“残缺的胜利”养大了黑衫党，独裁者替教廷了结旧账',short:'墨索里尼与拉特兰条约',en:'Mussolini and the Lateran Pacts: A “Mutilated Victory” Breeds the Blackshirts, and a Dictator Settles the Church’s Old Account',period:'1914—1929年',c:HC.italy,
+ scenes:[
+  hs('1914—1915年','中立、密约与光辉五月','1914年的意大利王国与奥匈帝国，红色块是《伦敦条约》许给意大利的土地（示意）。',[[40.2,6.0],[48.6,20.2]],d=>{
+    ha(d,'itItaly1871',HC.italy,{fillOpacity:.3});ha(d,'wwAustriaHungary1914',HC.germany,{fillOpacity:.2});ha(d,'itLondonPact1915',HC.war,{fillOpacity:.42});
+    hp(d,'rome',{kind:'capital',note:'5月20日议会以407票对74票交出宣战权。'});
+    hp(d,'cx_genoa',{left:1,note:'5月5日邓南遮在城东夸尔托演说主战。'});
+    hp(d,'ic_milan',{left:1,note:'1914年11月15日《意大利人民报》创刊。'});
+    hp(d,'itl_trento',{note:'奥地利至多肯让出的一块。'});
+    hp(d,'c4_trieste',{note:'协约国许下的头号港口。'});
+    hp(d,'itl_fiume',{kind:'port',note:'密约把它留给了克罗地亚。'});
+   },[['fill',HC.italy,'意大利王国（1871—1919年疆域）'],['fill',HC.war,'《伦敦条约》许给意大利的土地（示意）'],['fill',HC.germany,'奥匈帝国'],['dot','#2a2018','罗马、热那亚、米兰、特伦托、的里雅斯特与阜姆']]),
+  hs('1915—1918年','伊松佐河、卡波雷托与皮亚韦河','意奥之间的东北战线，标出最高统帅部、伊松佐河、卡波雷托、皮亚韦河和停战地帕多瓦。',[[44.9,10.9],[46.9,14.4]],d=>{
+    ha(d,'itItaly1871',HC.italy,{fillOpacity:.26});ha(d,'wwAustriaHungary1914',HC.germany,{fillOpacity:.24});
+    hp(d,'itl7_udine',{left:1,note:'1915—1917年意军最高统帅部驻地。'});
+    hp(d,'o_isonzo',{kind:'battle',note:'1915年6月起十一次攻势都在这条河上。'});
+    hp(d,'itl7_caporetto',{kind:'battle',note:'德军先打毒气弹，再派突击队渗透。'});
+    hp(d,'itl7_piave',{kind:'battle',left:1,note:'1917年11月与1918年6月两次守住。'});
+    hp(d,'itl7_vittorioveneto',{kind:'battle',left:1,note:'1918年10月底意军在此突破奥匈防线。'});
+    hp(d,'iv2_padua',{left:1,note:'11月3日在城郊朱斯蒂别墅签停战协定。'});
+   },[['fill',HC.italy,'意大利王国'],['fill',HC.germany,'奥匈帝国'],['dot',HC.war,'伊松佐河、卡波雷托、皮亚韦河与维托里奥韦内托'],['dot','#2a2018','乌迪内与帕多瓦']]),
+  hs('1919—1920年','和会、阜姆与人民党','战前的意大利与1920年实得的新领土，标出巴黎、龙基、阜姆、拉帕洛和罗马。',[[40.5,1.0],[50.2,16.6]],d=>{
+    ha(d,'itItaly1871',HC.italy,{fillOpacity:.26});ha(d,'itGains1920',HC.war,{fillOpacity:.4});
+    hp(d,'w_paris',{note:'四巨头在此议定对德、对奥和约。'});
+    hp(d,'itl7_ronchi',{left:1,note:'9月12日拂晓，哗变的掷弹兵从这里出发。'});
+    hp(d,'itl_fiume',{kind:'battle',note:'邓南遮在总督府阳台宣布并入意大利。'});
+    hp(d,'iw8_rapallo',{left:1,note:'1920年11月12日意南签约，阜姆成自由市。'});
+    hp(d,'rome',{kind:'capital',note:'1918年底斯图尔佐在城里筹备人民党。'});
+    hr(d,[[45.828,13.500],[45.55,13.95],[45.327,14.442]],HC.war);
+   },[['fill',HC.italy,'战前的意大利王国'],['fill',HC.war,'1920年实得的特伦蒂诺—南蒂罗尔、伊斯特拉和扎拉'],['dline',HC.war,'1919年9月12日邓南遮开进阜姆的路线（示意）'],['dot',HC.war,'阜姆'],['dot','#2a2018','巴黎、龙基、拉帕洛与罗马']]),
+  hs('1920—1922年','行动队与进军罗马','意大利北部和中部，标出行动队起家的博洛尼亚、费拉拉，进军指挥部佩鲁贾，米兰和罗马王宫。',[[41.3,8.6],[46.0,13.4]],d=>{
+    ha(d,'itItaly1871',HC.italy,{fillOpacity:.26});ha(d,'itGains1920',HC.italy,{fillOpacity:.22});
+    hp(d,'bb_bologna',{kind:'battle',note:'波河平原行动队最早的据点之一。'});
+    hp(d,'c3_ferrara',{kind:'battle',note:'与博洛尼亚之间是行动队最凶的地带。'});
+    hp(d,'av_perugia',{note:'进军的四人指挥部设在城里的饭店。'});
+    hp(d,'ic_milan',{left:1,note:'墨索里尼守在《意大利人民报》报社。'});
+    hp(d,'itl7_quirinale',{kind:'capital',note:'10月28日上午9点法令送进王宫。'});
+    hr(d,[[45.464,9.19],[44.494,11.343],[43.77,11.25],[41.90,12.50]],HC.route);
+   },[['fill',HC.italy,'意大利王国（1920年疆域）'],['dline',HC.route,'10月29日夜墨索里尼坐火车南下（示意）'],['dot',HC.war,'博洛尼亚与费拉拉'],['dot','#2a2018','佩鲁贾、米兰与奎里纳莱宫']]),
+  hs('1923—1926年','马泰奥蒂案与梵蒂冈的选择','罗马城与北郊，标出众议院、遗体发现地和梵蒂冈。',[[41.86,12.38],[42.12,12.62]],d=>{
+    ha(d,'itItaly1924',HC.italy,{fillOpacity:.12});
+    hp(d,'itl7_montecitorio',{kind:'capital',note:'5月30日发言、次年1月3日讲话都在此；6月10日赴会途中遇绑。'});
+    hp(d,'itl7_riano',{kind:'battle',note:'8月16日在这片树林里找到遗体。'});
+    hp(d,'fsb_vatican',{left:1,note:'1923年7月起逼人民党书记让位。'});
+   },[['fill',HC.italy,'意大利王国（1924年疆域）'],['dot',HC.war,'遗体发现地'],['dot','#2a2018','蒙特奇托里奥宫与梵蒂冈']]),
+  hs('1926—1929年','拉特兰宫的三份文件','罗马城，标出签约的拉特兰宫和新成立的梵蒂冈城国。',[[41.875,12.43],[41.915,12.52]],d=>{
+    ha(d,'itItaly1924',HC.italy,{fillOpacity:.12});
+    hp(d,'cd_lateran',{kind:'capital',note:'1929年2月11日在宫中签字，墨索里尼代表国王；6月7日生效。'});
+    hp(d,'fsb_vatican',{kind:'capital',left:1,note:'城国1930年登记44公顷，后来更正为49公顷。'});
+   },[['fill',HC.italy,'意大利王国（1924年疆域）'],['dot','#2a2018','拉特兰宫与梵蒂冈城国']])
+ ]},
+{id:'history-lowlands-golden-age',ch:5,title:'荷兰黄金时代：没有国王的商人共和国，把全世界的货运进阿姆斯特丹',short:'荷兰黄金时代',en:'The Dutch Golden Age: A Merchant Republic Without a King Brings the World’s Goods to Amsterdam',period:'1648—1667年',c:HC.lowlands,
+ scenes:[
+  hs('1648年','明斯特的和约','1648年的联省共和国与西属尼德兰（示意），标出明斯特、海牙、阿姆斯特丹、米德尔堡和安特卫普。',[[49.4,2.0],[53.8,8.4]],d=>{
+    ha(d,'lcDutchRepublic1648',HC.lowlands,{fillOpacity:.36});ha(d,'lcSouthern1648',HC.spain,{fillOpacity:.24});
+    hp(d,'ty3_munster',{kind:'capital',note:'西荷代表在今天的“尼德兰之家”里谈判。'});
+    hp(d,'hy5_hague',{left:1,note:'联省议会所在地，各省代表在这里表决和约。'});
+    hp(d,'gh_amsterdam',{note:'比克尔、德赫拉夫两家掌权，力主议和。'});
+    hp(d,'lf_middelburg',{left:1,note:'泽兰省的首府，扼住斯海尔德河口。'});
+    hp(d,'lb_antwerp',{note:'1585年被西班牙收复，商人陆续北迁。'});
+   },[['fill',HC.lowlands,'联省共和国（1648年，示意）'],['fill',HC.spain,'西属尼德兰（示意）'],['dot',HC.war,'明斯特'],['dot','#2a2018','海牙、阿姆斯特丹、米德尔堡与安特卫普']]),
+  hs('1650—1653年','执政之死与大议长','荷兰省一带，标出抓人的海牙、关人的城堡、奔袭部队迷路的荒原和德维特家的城。',[[51.4,3.9],[52.75,5.9]],d=>{
+    ha(d,'lcDutchRepublic1648',HC.lowlands,{fillOpacity:.3});
+    hp(d,'hy5_hague',{kind:'capital',left:1,note:'六名议员在内庭的执政住处被扣下。'});
+    hp(d,'lcl1_loevestein',{kind:'battle',note:'后来主张不设执政的一派就叫“卢弗斯泰因派”。'});
+    hp(d,'lcl1_hilversum',{kind:'battle',note:'三支奔袭的队伍有两支在雨雾里走散。'});
+    hp(d,'gh_amsterdam',{note:'民兵上城，又临时招了两千名兵。'});
+    hp(d,'lcl1_dordrecht',{left:1,note:'德维特的家乡，约翰先在这里当市政法律顾问。'});
+   },[['fill',HC.lowlands,'联省共和国（示意）'],['dot',HC.war,'海牙、卢弗斯泰因城堡与希尔弗瑟姆荒原'],['dot','#2a2018','阿姆斯特丹与多德雷赫特']]),
+  hs('17世纪中叶','运费与利息','虚线是从但泽经松德海峡到阿姆斯特丹的粮路（示意），标出霍伦的船厂。',[[50.5,2.5],[59.5,24.5]],d=>{
+    ha(d,'lcDutchRepublic1648',HC.lowlands,{fillOpacity:.32});
+    hr(d,[[54.35,18.65],[55.0,14.6],[55.95,12.68],[57.8,10.8],[56.0,7.4],[53.4,4.9],[52.37,4.9]],HC.route);
+    hp(d,'gh_danzig',{left:1,kind:'port',note:'波兰庄园的麦子顺维斯瓦河运到这里装船。'});
+    hp(d,'nb_oresund',{note:'丹麦国王在这里按货值收过路钱。'});
+    hp(d,'lcl1_hoorn',{left:1,note:'福禄特船最早在这里的船厂造出来。'});
+    hp(d,'gh_amsterdam',{kind:'capital',left:1,note:'汇兑银行设在市政厅里，交易所在达姆广场边。'});
+   },[['fill',HC.lowlands,'联省共和国（示意）'],['dline',HC.route,'波罗的海粮路（示意）'],['dot',HC.war,'阿姆斯特丹'],['dot','#2a2018','但泽、松德海峡与霍伦']]),
+  hs('1651—1654年','扫帚与密约','英吉利海峡和荷兰沿海，标出1652年和1653年的两处海战与签约、表决的两座城。',[[50.2,-1.6],[53.4,6.4]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.28});ha(d,'lcDutchRepublic1648',HC.lowlands,{fillOpacity:.32});
+    hp(d,'lcl1_dungeness',{kind:'battle',note:'特龙普这一趟护送约270条商船出海峡。'});
+    hp(d,'k_london',{left:1,note:'和约在这里签字，克伦威尔随后批准。'});
+    hp(d,'hy5_hague',{note:'斯赫弗宁根外海激战三天；5月4日省议会在此通过《除名法》。'});
+   },[['fill',HC.britain,'英格兰'],['fill',HC.lowlands,'联省共和国（示意）'],['dot',HC.war,'邓杰内斯'],['dot','#2a2018','伦敦与海牙']]),
+  hs('1579—1656年','宽容的生意','荷兰省的阿姆斯特丹、莱顿和埃格蒙德，以及难民出走的安特卫普。',[[50.9,3.4],[52.9,5.6]],d=>{
+    ha(d,'lcDutchRepublic1648',HC.lowlands,{fillOpacity:.3});ha(d,'lcSouthern1648',HC.spain,{fillOpacity:.18});
+    hp(d,'gh_amsterdam',{kind:'capital',note:'伦勃朗1639年买的房子就在新兴的犹太区里。'});
+    hp(d,'sn2_leiden',{left:1,note:'1575年建了大学，毛呢业靠南方来的织工。'});
+    hp(d,'lcl1_egmond',{left:1,note:'笛卡尔1643—1649年住在这个村子。'});
+    hp(d,'lb_antwerp',{note:'1585年西班牙收复后，新教徒限期离城。'});
+   },[['fill',HC.lowlands,'联省共和国（示意）'],['fill',HC.spain,'西属尼德兰（示意）'],['dot',HC.war,'阿姆斯特丹'],['dot','#2a2018','莱顿、埃格蒙德与安特卫普']]),
+  hs('1664—1667年','梅德韦河与布雷达','虚线是1667年6月荷兰舰队进泰晤士河口的航路（示意），标出查塔姆、布雷达和法军攻下的沙勒罗瓦。',[[50.0,-0.9],[52.6,5.9]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.28});ha(d,'lcDutchRepublic1648',HC.lowlands,{fillOpacity:.32});ha(d,'lcSouthern1648',HC.spain,{fillOpacity:.22});
+    hr(d,[[51.9,4.0],[51.75,2.6],[51.5,1.2],[51.45,0.75],[51.39,0.53]],HC.lowlands);
+    hp(d,'bc2_chatham',{kind:'battle',note:'拦河铁链在吉灵厄姆一带，旁边是船坞。'});
+    hp(d,'k_london',{left:1,note:'国王和弟弟约克公爵到下游督促沉船堵河。'});
+    hp(d,'bc2_breda',{note:'瑞典人居中调停，英荷代表在这里谈。'});
+    hp(d,'fdw_charleroi',{kind:'battle',note:'法军6月初拿下这座桑布尔河上的要塞。'});
+   },[['fill',HC.britain,'英格兰'],['fill',HC.lowlands,'联省共和国（示意）'],['fill',HC.spain,'西属尼德兰（示意）'],['dline',HC.lowlands,'1667年6月荷兰舰队航路（示意）'],['dot',HC.war,'查塔姆与沙勒罗瓦'],['dot','#2a2018','伦敦与布雷达']])
+ ]},
+{id:'history-lowlands-batavian',ch:5,title:'从联省到联合王国：战债压垮了共和国，列强把南北拼成一国',short:'从联省到联合王国',en:'From United Provinces to United Kingdom: War Debt Breaks the Republic, the Powers Stitch North and South Together',period:'1702—1815年',c:HC.lowlands,
+ scenes:[
+  hs('1702—1715年','坠马之后的无执政共和国','色块是荷兰共和国和1714年起归奥地利的南方；红点是1715年荷军驻守的屏障要塞。',[[49.6,1.6],[53.6,7.4]],d=>{
+    ha(d,'lcDutchRepublic1648',HC.lowlands,{fillOpacity:.32});ha(d,'lcAustrian1714',HC.germany,{fillOpacity:.26});ha(d,'lcLiege',HC.neutral,{fillOpacity:.2});
+    hp(d,'hy5_hague',{note:'大议长在内庭底楼办公，盟军统帅冬天在此议事。'});
+    hp(d,'sn1_utrecht',{note:'1713年4月起各国在此分头签约。'});
+    hp(d,'sn2_namur',{kind:'battle',note:'屏障要塞中最靠东的一座。'});
+    hp(d,'w_tournai',{kind:'battle',left:1,note:'屏障要塞，1745年被法军攻下。'});
+    hp(d,'lf_ypres',{kind:'battle',left:1,note:'屏障要塞；近旁梅嫩的城防是沃邦修的。'});
+    hp(d,'lcl2_dendermonde',{kind:'battle',note:'荷奥两国联合驻军。'});
+   },[['fill',HC.lowlands,'荷兰共和国'],['fill',HC.germany,'奥属尼德兰（1714年起）'],['fill',HC.neutral,'列日主教侯国'],['dot',HC.war,'1715年的屏障要塞（部分）'],['dot','#2a2018','海牙与乌得勒支']]),
+  hs('1713—1747年','债主当家的共和国','荷兰共和国与奥属尼德兰，以及奥斯坦德公司的船远航去买茶的广州。',[[0.0,-12.0],[58.0,122.0]],d=>{
+    ha(d,'lcDutchRepublic1648',HC.lowlands,{fillOpacity:.4});ha(d,'lcAustrian1714',HC.germany,{fillOpacity:.34});
+    hp(d,'gh_amsterdam',{note:'摄政家族的钱从这里流进英国国债和各国国库。'});
+    hp(d,'sp3_ostend',{left:1,note:'公司的母港，股票在安特卫普发行。'});
+    hp(d,'c3_vienna',{note:'皇帝查理六世的朝廷。'});
+    hp(d,'brs_canton',{note:'各国公司在城外珠江边租商馆。'});
+   },[['fill',HC.lowlands,'荷兰共和国'],['fill',HC.germany,'奥属尼德兰'],['dot','#2a2018','阿姆斯特丹、奥斯坦德、维也纳与广州']]),
+  hs('1747—1787年','从世袭执政到普鲁士进兵','大西洋两岸：加勒比海上的圣尤斯特歇斯岛，以及执政夫人被拦、普军开进的荷兰。',[[8.0,-72.0],[57.0,14.0]],d=>{
+    ha(d,'lcDutchRepublic1648',HC.lowlands,{fillOpacity:.34});
+    hp(d,'lcl2_steustatius',{kind:'battle',note:'1781年2月英国舰队来攻，总督投降。'});
+    hp(d,'lcl2_goejanverwelle',{left:1,kind:'battle',note:'1787年6月执政夫人在此被拦，10月普军开进阿姆斯特丹。'});
+   },[['fill',HC.lowlands,'荷兰共和国'],['dot',HC.war,'圣尤斯特歇斯岛与古詹弗韦勒斯劳斯']]),
+  hs('1781—1791年','布拉班特的保守革命','奥属尼德兰与列日主教侯国；虚线是1789年10月流亡军从荷兰境内越境的路线。',[[49.3,2.4],[52.0,6.6]],d=>{
+    ha(d,'lcAustrian1714',HC.germany,{fillOpacity:.3});ha(d,'lcLiege',HC.neutral,{fillOpacity:.26});ha(d,'lcDutchRepublic1648',HC.lowlands,{fillOpacity:.2});
+    hp(d,'sp3_breda',{note:'流亡者的委员会和军队在此集结。'});
+    hp(d,'lcl2_turnhout',{kind:'battle',note:'1789年10月27日爱国者胜。'});
+    hp(d,'lb_brussels',{left:1,note:'1789年12月奥军撤出，1790年12月重回。'});
+    hp(d,'ca_liege',{note:'1789年8月市民赶走主教侯。'});
+    hr(d,[[51.59,4.78],[51.40,4.76],[51.32,4.94]],HC.war);
+   },[['fill',HC.germany,'奥属尼德兰'],['fill',HC.neutral,'列日主教侯国'],['fill',HC.lowlands,'荷兰共和国'],['dline',HC.war,'1789年10月流亡军越境（概略）'],['dot',HC.war,'图恩豪特'],['dot','#2a2018','布雷达、布鲁塞尔与列日']]),
+  hs('1794—1810年','踏冰而来的姐妹共和国','1795年的巴达维亚共和国与并入法国的南方；北面标出舰队被冻住的登海尔德。',[[49.3,2.3],[53.6,7.4]],d=>{
+    ha(d,'lcBatavian1795',HC.lowlands,{fillOpacity:.34});ha(d,'fr18Belgium1795',HC.france,{fillOpacity:.28});
+    hp(d,'lcl_den_helder',{kind:'battle',note:'舰队冻在新渠港内，对面是特塞尔岛。'});
+    hp(d,'lcl_scheveningen',{left:1,note:'执政一家由此出海，十八年后其子在此上岸。'});
+    hp(d,'gh_amsterdam',{note:'1795年1月革命委员会接管市政，5月法巴在海牙签约。'});
+   },[['fill',HC.lowlands,'巴达维亚共和国（1806年起荷兰王国）'],['fill',HC.france,'1795年并入法国的南方与列日'],['dot',HC.war,'登海尔德'],['dot','#2a2018','斯赫弗宁根与阿姆斯特丹']]),
+  hs('1813—1815年','斯赫弗宁根上岸与新王国','1815年维也纳会议拼成的尼德兰联合王国和卢森堡大公国，南面标出滑铁卢。',[[49.2,2.3],[53.6,7.4]],d=>{
+    ha(d,'lcUnited1815',HC.lowlands,{fillOpacity:.34});ha(d,'lcLuxembourg1815',HC.lowlands,{fillOpacity:.16,dashArray:'4 3'});
+    hp(d,'lcl_scheveningen',{note:'1813年11月30日亲王在此上岸。'});
+    hp(d,'gh_amsterdam',{note:'1813年12月2日亲王在此接受主权。'});
+    hp(d,'lb_brussels',{left:1,note:'与海牙轮流召开议会。'});
+    hp(d,'brs_waterloo',{kind:'battle',note:'奥兰治亲王在此肩部中弹，后堆起狮子丘。'});
+    hp(d,'ge2_luxembourg',{note:'大公国归国王个人，城里驻普鲁士兵。'});
+   },[['fill',HC.lowlands,'尼德兰联合王国（深）与卢森堡大公国（浅）'],['dot',HC.war,'滑铁卢'],['dot','#2a2018','斯赫弗宁根、阿姆斯特丹、布鲁塞尔与卢森堡']])
+ ]},
+{id:'history-lowlands-belgium',ch:5,title:'比利时独立：一场歌剧散场后的暴动，被列强做成永久中立国',short:'比利时独立',en:'Belgian Independence: A Riot After the Opera, Made by the Powers into a Perpetually Neutral State',period:'1815—1839年',c:HC.lowlands,
+ scenes:[
+  hs('1815—1828年','商人国王的新王国','尼德兰联合王国和卢森堡大公国，标出北方的海牙和南方几座工商城市。',[[49.2,2.3],[53.6,7.4]],d=>{
+    ha(d,'lcUnited1815',HC.lowlands,{fillOpacity:.3});ha(d,'lcLuxembourg1815',HC.lowlands,{fillOpacity:.14,dashArray:'4 3'});
+    hp(d,'hy5_hague',{note:'国王和各部所在，议会与布鲁塞尔轮流开。'});
+    hp(d,'lb_brussels',{left:1,note:'1822年通用公司在此成立。'});
+    hp(d,'lb_antwerp',{left:1,note:'1829年进港船只一千零二十八艘。'});
+    hp(d,'sn1_ghent',{left:1,note:'1829年棉纺业加工七百五十万公斤棉花。'});
+    hp(d,'lcl_seraing',{note:'科克里尔的机器厂和高炉。'});
+   },[['fill',HC.lowlands,'尼德兰联合王国与卢森堡大公国（虚线）'],['dot','#2a2018','海牙、布鲁塞尔、安特卫普、根特与瑟兰']]),
+  hs('1825—1830年8月','从请愿到莫奈剧院','七月革命的巴黎与八月起事的布鲁塞尔，北面是国王所在的海牙。',[[47.8,0.8],[53.0,6.8]],d=>{
+    ha(d,'lcUnited1815',HC.lowlands,{fillOpacity:.26});ha(d,'fr18France1815',HC.france,{fillOpacity:.16});
+    hp(d,'w_paris',{note:'7月27—29日的街垒战。'});
+    hp(d,'lcl3_monnaie',{kind:'battle',note:'散场的观众先去砸亲政府报人的家。'});
+    hp(d,'hy5_hague',{note:'国王和各部所在。'});
+   },[['fill',HC.lowlands,'尼德兰联合王国'],['fill',HC.france,'法国'],['dot',HC.war,'莫奈剧院（布鲁塞尔）'],['dot','#2a2018','巴黎与海牙']]),
+  hs('1830年9—12月','公园里的四天与伦敦的会','起事的南方与仍归荷兰国王的北方，以及开会的伦敦和起义的华沙。',[[44.5,-2.5],[56.0,24.0]],d=>{
+    ha(d,'lcBelgium1839',HC.lowlands,{fillOpacity:.34});ha(d,'lcNetherlands1839',HC.neutral,{fillOpacity:.22});
+    hp(d,'lcl3_park',{kind:'battle',note:'荷军攻到公园就再也推不动。'});
+    hp(d,'lb_antwerp',{kind:'battle',left:1,note:'荷军守着城南的要塞。'});
+    hp(d,'k_london',{note:'英、法、普、奥、俄五国代表在此议事。'});
+    hp(d,'ote_warsaw',{left:1,kind:'battle',note:'军校学员起事，进攻大公住的贝尔韦德宫。'});
+   },[['fill',HC.lowlands,'起事的南方各省（示意）'],['fill',HC.neutral,'仍归荷兰国王的北方'],['dot',HC.war,'布鲁塞尔公园、安特卫普与华沙'],['dot','#2a2018','伦敦']]),
+  hs('1831—1832年','请来的国王与十日战役','1831年8月荷军南下的路线（概略）、两场败仗的战场，以及法军围攻的安特卫普要塞。',[[49.4,2.4],[52.2,6.6]],d=>{
+    ha(d,'lcBelgium1839',HC.lowlands,{fillOpacity:.32});ha(d,'lcNetherlands1839',HC.neutral,{fillOpacity:.2});
+    hp(d,'lb_brussels',{left:1,note:'新王在王家广场的教堂台阶上宣誓。'});
+    hp(d,'lcl3_hasselt',{kind:'battle',note:'比军默兹集团军溃败，荷军入城。'});
+    hp(d,'lcl3_leuven',{kind:'battle',note:'利奥波德的大本营，荷军短暂进城。'});
+    hp(d,'lb_antwerp',{kind:'battle',left:1,note:'工兵专家阿克索用重臼炮轰击城南要塞。'});
+    hr(d,[[51.45,5.05],[51.32,4.94],[51.05,5.10],[50.93,5.34],[50.88,4.70]],HC.war);
+   },[['fill',HC.lowlands,'比利时'],['fill',HC.neutral,'荷兰'],['dline',HC.war,'1831年8月荷军南下（概略）'],['dot',HC.war,'哈瑟尔特、鲁汶与安特卫普要塞'],['dot','#2a2018','布鲁塞尔']]),
+  hs('1830—1839年','爪哇的软木塞','荷属爪哇，标出东印度政府所在的巴达维亚、北岸大港三宝垄和1840年代闹饥荒的两处产区。',[[-9.2,104.5],[-4.8,115.0]],d=>{
+    ha(d,'lcJava',HC.lowlands,{fillOpacity:.32});
+    hp(d,'lcl_batavia',{note:'总督和东印度政府所在。'});
+    hp(d,'lcl3_semarang',{left:1,note:'东边不远就是淡目。'});
+    hp(d,'lcl3_cirebon',{kind:'battle',note:'1840年代最先闹饥荒的产区。'});
+    hp(d,'lcl3_demak',{kind:'battle',note:'1850年前后稻米歉收，饥荒蔓延。'});
+   },[['fill',HC.lowlands,'爪哇（荷属东印度的核心）'],['dot',HC.war,'井里汶与淡目（饥荒）'],['dot','#2a2018','巴达维亚与三宝垄']]),
+  hs('1838—1839年','伦敦条约划的线','1839年伦敦条约后的比利时、荷兰与卢森堡大公国，以及一分为二的林堡和卢森堡。',[[49.2,2.4],[53.6,7.4]],d=>{
+    ha(d,'lcBelgium1839',HC.lowlands,{fillOpacity:.32});ha(d,'lcNetherlands1839',HC.neutral,{fillOpacity:.22});
+    ha(d,'lcLimburg1839',HC.war,{fillOpacity:.3});ha(d,'lcLuxembourg1839',HC.germany,{fillOpacity:.3});ha(d,'lcLuxBelgian1839',HC.lowlands,{fillOpacity:.46});
+    hp(d,'sn2_maastricht',{note:'荷军1830年起一直守住这座要塞城。'});
+    hp(d,'ge2_luxembourg',{note:'德意志邦联的要塞，驻普鲁士兵。'});
+    hp(d,'lcl3_arlon',{left:1,note:'讲卢森堡话，却为政治和战略划给比利时。'});
+    hp(d,'lb_antwerp',{left:1,note:'河口仍归荷兰，进港的船要交通行费。'});
+   },[['fill',HC.lowlands,'比利时（深色为新设的卢森堡省）'],['fill',HC.neutral,'荷兰'],['fill',HC.war,'划归荷兰的东林堡'],['fill',HC.germany,'留给威廉一世的卢森堡大公国'],['dot','#2a2018','马斯特里赫特、卢森堡、阿尔隆与安特卫普']])
+ ]},
+{id:'history-lowlands-congo',ch:5,title:'煤铁与刚果：小国抢先工业化，国王把非洲一大块当私产',short:'煤铁与刚果',en:'Coal, Iron and the Congo: A Small Country Industrializes First and Its King Takes a Slice of Africa as Private Property',period:'1839—1914年',c:HC.lowlands,
+ scenes:[
+  hs('1839—1848年','先修铁路的小国','1839年划定的比利时与荷兰；虚线是两条国营铁路干线（示意），标出瑟兰的工厂。',[[49.4,2.3],[51.9,7.3]],d=>{
+    ha(d,'lcBelgium1839',HC.lowlands,{fillOpacity:.36});ha(d,'lcNetherlands1839',HC.neutral,{fillOpacity:.2});
+    hr(d,[[51.22,4.40],[51.03,4.48],[50.88,4.70],[50.63,5.57],[50.59,5.86],[50.94,6.96]],HC.route);
+    hr(d,[[51.03,4.48],[51.05,3.72],[51.21,3.22],[51.23,2.92]],HC.route);
+    hp(d,'lb_brussels',{kind:'capital',note:'头一列火车从城北的绿径站开出。'});
+    hp(d,'sn1_mechelen',{left:1,note:'两条干线在这里交叉，是全国铁路的十字中心。'});
+    hp(d,'lcl_seraing',{note:'工厂设在列日主教从前的行宫里。'});
+    hp(d,'fri_cologne',{note:'1843年比利时铁路接上了这里的普鲁士铁路。'});
+    hp(d,'sp3_ostend',{left:1,note:'西线的终点，比利时自己的出海口。'});
+   },[['fill',HC.lowlands,'比利时（1839年）'],['fill',HC.neutral,'荷兰（1839年）'],['dline',HC.route,'国营铁路干线（示意）'],['dot',HC.war,'布鲁塞尔'],['dot','#2a2018','梅赫伦、瑟兰、科隆与奥斯坦德']]),
+  hs('1848—1880年代','爪哇的账','荷属东印度（示意，按1914年的范围）与爪哇，标出巴达维亚、勒巴克、日里和亚齐。',[[-9.8,93.5],[7.8,116.5]],d=>{
+    ha(d,'lcEastIndies1914',HC.lowlands,{fillOpacity:.2});ha(d,'lcJava',HC.lowlands,{fillOpacity:.42});
+    hp(d,'lcl_batavia',{kind:'capital',note:'总督府所在，强迫种植的货从这里装船。'});
+    hp(d,'lcl4_lebak',{left:1,note:'道韦斯·德克尔在这里只做了三个月。'});
+    hp(d,'lcl4_medan',{note:'1869年日里公司在这里开烟草园。'});
+    hp(d,'lcl4_bandaaceh',{kind:'battle',note:'1873年第一次进攻失败，主将克勒阵亡。'});
+   },[['fill',HC.lowlands,'荷属东印度（示意）与爪哇'],['dot',HC.war,'巴达维亚与亚齐'],['dot','#2a2018','勒巴克与日里']]),
+  hs('1876—1885年','非洲蛋糕','1885年的刚果自由邦（示意）和比利时，标出柏林、博马、利奥波德维尔和乌吉吉。',[[-14.0,-2.0],[56.0,36.0]],d=>{
+    ha(d,'lcCongo1885',HC.lowlands,{fillOpacity:.38});ha(d,'lcBelgium1839',HC.lowlands,{fillOpacity:.5});
+    hp(d,'lb_brussels',{kind:'capital',note:'国王的王宫在这里，刚果的事都由这里遥控。'});
+    hp(d,'fsy_berlin',{kind:'capital',note:'十四国代表在俾斯麦的官邸开会。'});
+    hp(d,'lcl_boma',{kind:'port',left:1,note:'1877年斯坦利横穿非洲，到这里时只剩一半人。'});
+    hp(d,'lcl4_leopoldville',{left:1,note:'1881年斯坦利设站，以国王的名字命名。'});
+    hp(d,'lcl4_ujiji',{note:'1871年11月斯坦利在这里找到利文斯通。'});
+   },[['fill',HC.lowlands,'刚果自由邦（示意）与比利时'],['dot',HC.war,'布鲁塞尔与柏林'],['dot','#2a2018','博马、利奥波德维尔与乌吉吉']]),
+  hs('1890—1904年','红色橡胶','刚果自由邦（示意），标出阿比尔公司的巴桑库苏、出海的博马和收橡胶的安特卫普。',[[-14.0,-2.0],[56.0,32.0]],d=>{
+    ha(d,'lcCongo1885',HC.lowlands,{fillOpacity:.38});ha(d,'lcBelgium1839',HC.lowlands,{fillOpacity:.5});
+    hp(d,'lcl4_basankusu',{kind:'battle',note:'阿比尔公司的总部，各站有欧洲代理人和持枪“哨兵”。'});
+    hp(d,'lcl4_leopoldville',{left:1,note:'下游急流过不了船，货在这里转陆路。'});
+    hp(d,'lcl_boma',{kind:'port',left:1,note:'刚果自由邦的首府，橡胶在这里装上海船。'});
+    hp(d,'lb_antwerp',{kind:'port',note:'刚果的象牙和橡胶在这里上岸拍卖。'});
+   },[['fill',HC.lowlands,'刚果自由邦（示意）与比利时'],['dot',HC.war,'巴桑库苏'],['dot','#2a2018','利奥波德维尔、博马与安特卫普']]),
+  hs('1890—1909年','货单与照片','虚线是安特卫普到博马的航线（示意），标出利物浦和航线两头的港口。',[[-12.0,-26.0],[56.0,32.0]],d=>{
+    ha(d,'lcCongo1885',HC.lowlands,{fillOpacity:.32});ha(d,'lcBelgium1839',HC.lowlands,{fillOpacity:.5});
+    hr(d,[[51.23,4.40],[50.2,-2.5],[43.5,-10.5],[28.0,-17.5],[10.0,-20.0],[0.0,4.0],[-5.85,13.05]],HC.route);
+    hp(d,'brs_liverpool',{left:1,note:'埃尔德·登普斯特航运公司的总部。'});
+    hp(d,'lb_antwerp',{kind:'port',note:'航线的欧洲一头，莫雷尔常被派来对账。'});
+    hp(d,'lcl_boma',{kind:'port',left:1,note:'英国领事馆在这里，凯斯门特从这里上溯。'});
+   },[['fill',HC.lowlands,'刚果（示意）与比利时'],['dline',HC.route,'安特卫普—博马航线（示意）'],['dot','#2a2018','利物浦、安特卫普与博马']]),
+  hs('1885—1914年','罢工、选票与借道','1914年以前的比利时、荷兰与德国，标出1886年见血的列日和鲁，以及挡在列日北边的荷兰林堡。',[[49.3,2.3],[52.2,8.2]],d=>{
+    ha(d,'lcBelgium1839',HC.lowlands,{fillOpacity:.36});ha(d,'lcNetherlands1839',HC.neutral,{fillOpacity:.2});ha(d,'wwGermany1914',HC.germany,{fillOpacity:.2});
+    hp(d,'ca_liege',{kind:'battle',note:'3月18日无政府派在这里纪念巴黎公社，暴动由此起。'});
+    hp(d,'lcl4_roux',{kind:'battle',left:1,note:'3月29日军队在这里一次打死十名工人。'});
+    hp(d,'lb_brussels',{kind:'capital',left:1,note:'1893年4月议会否决扩大选举权，总罢工随之而起。'});
+    hp(d,'sn2_maastricht',{note:'荷兰林堡在列日北边，德军不借道荷兰，只能从这里南边挤过去。'});
+   },[['fill',HC.lowlands,'比利时'],['fill',HC.neutral,'荷兰'],['fill',HC.germany,'德意志帝国'],['dot',HC.war,'列日与鲁'],['dot','#2a2018','布鲁塞尔与马斯特里赫特']])
  ]},
 {id:'history-italy-blackdeath',ch:5,title:'黑死病：从卡法到伦敦',short:'黑死病',en:'The Black Death: From Caffa to London',period:'1346—1353年',c:HC.italy,
  scenes:[
@@ -18525,6 +19164,9 @@ const HISTORY_ERAS=[
  {id:'empire-frederick2',name:'德意志、低地与意大利：从腓特烈二世到文艺复兴、查理五世与三十年战争',en:'Germany, Low Countries and Italy: From Frederick II to the Renaissance, Charles V, and the Thirty Years’ War',date:'843—1648年',c:HC.germany,items:[['history-germany-frederick2'],['history-germany-electors'],['history-germany-golden-bull'],['history-germany-hansa'],['history-lowlands-flanders'],['history-germany-swiss',0,2,'山口与长矛'],['history-lowlands-burgundy'],['history-germany-swiss',3,5,'雇佣兵之国'],['history-germany-charles5'],['history-germany-thirty-years-1',0,4,'三十年战争（上）'],['history-germany-thirty-years-1',5,6,'丹麦参战与华伦斯坦'],['history-germany-thirty-years-2'],['history-germany-thirty-years-3'],['history-italy-vespers'],['history-italy-venice'],['history-italy-condottieri'],['history-italy-renaissance'],['history-italy-wars-1'],['history-italy-charles8'],['history-italy-savonarola'],['history-italy-louis12'],['history-italy-julius2'],['history-italy-wars-2']]},
  {id:'empire-germany-prussia',name:'德意志：从普鲁士崛起到1848年议会',en:'Germany: From the Rise of Prussia to the Frankfurt Parliament',date:'1640—1850年',c:HC.germany,items:[['history-germany-prussia-rise'],['history-germany-frederick-great'],['history-germany-reform'],['history-germany-1848']]},
  {id:'empire-germany-reich',name:'德意志：铁血统一、威廉帝国与魏玛共和',en:'Germany: Unification, the Kaiserreich and Weimar',date:'1850—1923年',c:HC.germany,items:[['history-germany-bismarck'],['history-germany-franco-prussian'],['history-germany-wilhelm2'],['history-germany-ww1-west'],['history-germany-versailles']]},
+ {id:'empire-italy-habsburg',name:'意大利：西班牙与奥地利治下',en:'Italy under Spain and Austria',date:'1559—1796年',c:HC.italy,items:[['history-italy-spanish'],['history-italy-savoy']]},
+ {id:'empire-italy-risorgimento',name:'意大利：从拿破仑到拉特兰条约',en:'Italy: From Napoleon to the Lateran Treaty',date:'1796—1929年',c:HC.italy,items:[['history-italy-napoleon'],['history-italy-mazzini'],['history-italy-cavour'],['history-italy-rome'],['history-italy-lateran']]},
+ {id:'empire-lowlands-modern',name:'低地诸国：从黄金时代到比利时中立',en:'The Low Countries: From the Golden Age to Belgian Neutrality',date:'1648—1914年',c:HC.lowlands,items:[['history-lowlands-golden-age'],['history-lowlands-batavian'],['history-lowlands-belgium'],['history-lowlands-congo']]},
  {id:'empire-blackdeath',name:'中世纪晚期：黑死病',en:'The Late Middle Ages: the Black Death',date:'1346—1353年',c:HC.italy,items:[['history-italy-blackdeath']]},
  {id:'empire-taifas',name:'西班牙：泰法与圣战',en:'Spain: the Taifas and Holy War',date:'1031—1123年',c:HC.spain,items:[['history-spain-taifas'],['history-spain-crusade']]},
  {id:'empire-spain-1492',name:'西班牙与葡萄牙：从托洛萨到1492大航海',en:'Spain and Portugal: From Las Navas to 1492',date:'1123—1572年',c:HC.spain,items:[['history-spain-reconquista'],['history-spain-aragon'],['history-spain-monarchs'],['history-spain-granada'],['history-spain-inquisition'],['history-spain-1492']]},
@@ -18600,12 +19242,12 @@ const HISTORY_BRANCHES=[
  {id:'france',name:'法兰西',en:'France',lane:5,parent:'west',from:843,to:1923,c:HC.france},
  {id:'lowlands',name:'低地诸国',en:'Low Countries',lane:5,parent:'west',from:843,to:1918,c:HC.lowlands},
  {id:'germany',name:'德意志',en:'Germany',lane:4,parent:'west',from:843,to:1923,c:HC.germany},
- {id:'italy',name:'意大利',en:'Italy',lane:3,parent:'west',from:843,to:1563,c:HC.italy},
+ {id:'italy',name:'意大利',en:'Italy',lane:3,parent:'west',from:843,to:1929,c:HC.italy},
  // 不列颠 (including Ireland): forks from the trunk before Caesar's landing, on lane 6 right beside 法兰西.
  {id:'britain',name:'不列颠',en:'Britain and Ireland',lane:6,parent:'trunk',from:-55,to:1928,c:HC.britain},
  // The 基督教 line: from the Hebrews' nomadic origins (the old Levant branch) to the schism of 1054; on its own lane, right of the West.
  // After 641 it runs through the shared stations of the East Roman dynasties.
- {id:'faith',name:'基督教',en:'Judaism & Christianity',lane:7,parent:'trunk',from:-1400,to:1689,c:HC.faith},
+ {id:'faith',name:'基督教',en:'Judaism & Christianity',lane:7,parent:'trunk',from:-1400,to:1929,c:HC.faith},
  // 埃及 and 波斯 leave 史前 at the early states (老无 2026-10-21; off 史前, not 希腊, since 2026-11-07; from its station 城市与早期王权 since 2026-11-08): the Ptolemies, the Seleucids, Rome and Byzantium are passing rulers of these lands.
  {id:'egypt',name:'埃及',en:'Egypt',lane:1,parent:'prehistory',from:-4000,to:642,c:HC.mino},
  {id:'persia',name:'中东',en:'The Middle East',lane:0,parent:'prehistory',from:-4000,to:1923,c:HC.parthia},
@@ -18841,11 +19483,11 @@ const TREE_ROWS={
  'history-britain-cromwell/0':['britain',1654,1660,'1599—1660年'],
  'history-britain-charles2/0':['britain',1661,1685,'1660—1685年'],
  'history-britain-james2/0':['britain',1686,1688,'1685—1688年'],
- 'history-britain-glorious/0':[['britain','france'],1689,1694,'1688—1694年'],
+ 'history-britain-glorious/0':[['britain','france','lowlands'],1689,1694,'1688—1694年'],
  'history-france-fronde/0':['france',1643,1653,'1643—1653年'],
  'history-france-pyrenees/0':[['france','spain'],1655,1660,'1648—1660年'],
  'history-france-louis14/0':['france',1661,1682,'1661—1682年'],
- 'history-france-dutch-war/0':['france',1667,1684,'1665—1684年'],
+ 'history-france-dutch-war/0':[['france','lowlands'],1667,1684,'1665—1684年'],
  'history-france-revocation/0':[['france','faith'],1681,1689,'1629—1689年'],
  'history-france-nine-years/0':['france',1690,1697,'1688—1697年'],
  'history-france-spanish-succession/0':[['france','spain','britain'],1700,1714,'1665—1714年'],
@@ -18963,6 +19605,17 @@ const TREE_ROWS={
  'history-faith-reformation-2/0':[['faith','germany'],1537,1555,'1521—1555年'],
  'history-germany-charles5/0':[['germany','faith','italy','spain','france'],1556,1563,'1523—1556年'],
  'history-faith-trent/0':['faith',1556.3,1563,'1541—1566年'],
+ 'history-italy-spanish/0':['italy',1600,1700,'1559—1700年'],
+ 'history-italy-savoy/0':['italy',1720,1795,'1700—1796年'],
+ 'history-italy-napoleon/0':['italy',1797,1815,'1796—1815年'],
+ 'history-italy-mazzini/0':['italy',1848,1849,'1815—1849年'],
+ 'history-italy-cavour/0':['italy',1859,1861,'1849—1861年'],
+ 'history-italy-rome/0':['italy',1870,1914,'1861—1914年'],
+ 'history-italy-lateran/0':[['italy','faith'],1922,1929,'1914—1929年'],
+ 'history-lowlands-golden-age/0':['lowlands',1650,1666,'1648—1667年'],
+ 'history-lowlands-batavian/0':['lowlands',1795,1815,'1702—1815年'],
+ 'history-lowlands-belgium/0':['lowlands',1830,1839,'1815—1839年'],
+ 'history-lowlands-congo/0':['lowlands',1885,1913,'1839—1914年'],
  'history-faith-jesuits/0':[['faith','germany'],1556.6,1599,'1521—1669年'],
  'history-faith-teresa/0':[['faith','spain'],1558,1593,'1515—1622年'],
  'history-germany-thirty-years-1/0':[['germany','faith'],1599,1624,'1555—1625年'],
@@ -19009,7 +19662,7 @@ const TREE_ROWS={
  'history-germany-swiss/3':[['germany','italy','faith'],1515,1516,'1477—1648年']
 };
 // Topics still to be written grow the tree as dashed shoots.
-const TREE_FUTURE=[['france',1923,'大萧条、二战与第五共和国','1923年后待展开：1936年人民阵线 · 1940年败降与自由法国 · 戴高乐与第五共和国'],['germany',1923,'大萧条、第三帝国与两德分合','1923年后待展开：1929年大萧条与希特勒上台 · 二战与大屠杀 · 冷战两德分裂与1990年统一'],['italy',1563,'哈布斯堡霸权与统一','1563年后待展开：西班牙哈布斯堡霸权下的意大利 · 巴洛克时代与近代统一'],['faith',1689,'政教分离与启蒙时代','1689年后待展开：英国《宽容法》 · 启蒙运动与教会 · 大革命与教会'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',1923,'土耳其共和国与现代中东','1923年后待展开：凯末尔世俗化改革 · 英法委任统治、海湾石油与现代中东格局'],['china',1919,'国民革命、抗战与内战','1919年后待展开：国共合作与北伐 · 抗日战争 · 国共内战与1949年'],['spain',1931,'第二共和国与西班牙内战','1931年后待展开：1931—1936年第二共和国改革与左右撕裂 · 1936—1939年西班牙内战与佛朗哥独裁'],['eeurope',1922,'斯大林与冷战','1922年后待展开：斯大林五年计划 · 二战苏德战场 · 冷战与苏联解体'],['lowlands',1918,'比荷卢联盟与欧洲一体化','1918年后待展开：战间期普选与福利 · 二战占领 · 比荷卢联盟与欧盟创始'],['crusade',1312,'后来的十字军','1396年尼科波利斯 · 1444年瓦尔纳 · 1571年勒班陀 · 待展开'],['america',1920,'大萧条、罗斯福新政与二战','1920年后待展开：1929年华尔街崩盘与大萧条 · 罗斯福新政 · 二战两洋作战与布雷顿森林体系'],['nordic',1648,'踏冰渡海与大北方战争','1648年后待展开：1658年卡尔十世踏冰渡海夺下斯科讷 · 1700—1721年大北方战争，瑞典失去波罗的海霸权'],['britain',1928,'大萧条、二战与福利国家','1928年后待展开：1929年大萧条 · 丘吉尔与二战不列颠之战 · 战后福利国家与大英帝国解体']];
+const TREE_FUTURE=[['france',1923,'大萧条、二战与第五共和国','1923年后待展开：1936年人民阵线 · 1940年败降与自由法国 · 戴高乐与第五共和国'],['germany',1923,'大萧条、第三帝国与两德分合','1923年后待展开：1929年大萧条与希特勒上台 · 二战与大屠杀 · 冷战两德分裂与1990年统一'],['italy',1929,'法西斯意大利与二战','1929年后待展开：1935年入侵埃塞俄比亚 · 1940年参加二战 · 1946年公投废除君主制'],['faith',1929,'二战与梵二会议','1929年后待展开：二战中的教廷 · 1962—1965年梵蒂冈第二次大公会议'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',1923,'土耳其共和国与现代中东','1923年后待展开：凯末尔世俗化改革 · 英法委任统治、海湾石油与现代中东格局'],['china',1919,'国民革命、抗战与内战','1919年后待展开：国共合作与北伐 · 抗日战争 · 国共内战与1949年'],['spain',1931,'第二共和国与西班牙内战','1931年后待展开：1931—1936年第二共和国改革与左右撕裂 · 1936—1939年西班牙内战与佛朗哥独裁'],['eeurope',1922,'斯大林与冷战','1922年后待展开：斯大林五年计划 · 二战苏德战场 · 冷战与苏联解体'],['lowlands',1918,'比荷卢联盟与欧洲一体化','1918年后待展开：战间期普选与福利 · 二战占领 · 比荷卢联盟与欧盟创始'],['crusade',1312,'后来的十字军','1396年尼科波利斯 · 1444年瓦尔纳 · 1571年勒班陀 · 待展开'],['america',1920,'大萧条、罗斯福新政与二战','1920年后待展开：1929年华尔街崩盘与大萧条 · 罗斯福新政 · 二战两洋作战与布雷顿森林体系'],['nordic',1648,'踏冰渡海与大北方战争','1648年后待展开：1658年卡尔十世踏冰渡海夺下斯科讷 · 1700—1721年大北方战争，瑞典失去波罗的海霸权'],['britain',1928,'大萧条、二战与福利国家','1928年后待展开：1929年大萧条 · 丘吉尔与二战不列颠之战 · 战后福利国家与大英帝国解体']];
 // Where a line stops it says why: [line, year, the event that ends it, note, the line it carries on in].
 const TREE_ENDS=[['trunk',-30,'并入罗马','前146年科林斯被毁 · 前30年最后一个希腊化王国埃及并入罗马','rome'],['rome',476,'西罗马终结','476年西部末代皇帝被废 · 由中世纪西欧接续'],['west',843,'凡尔登三分','843年《凡尔登条约》三分帝国 · 分出法兰西、德意志、意大利'],['east',1453,'东罗马终结','1453年5月29日奥斯曼帝国攻破君士坦丁堡 · 千年东罗马帝国终结'],['prehistory',-3100,'有了文字','两河、埃及约前3200—前3100年先后有了文字和国家 · 由希腊、埃及、中东三条线接续','trunk']];
 // Sections of one line that run side by side: [line, row keys, side of the passing loop].

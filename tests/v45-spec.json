@@ -1462,7 +1462,8 @@
   ],
   "history-britain-glorious/0": [
    "britain",
-   "france"
+   "france",
+   "lowlands"
   ],
   "history-france-spanish-succession/0": [
    "france",
@@ -1519,6 +1520,14 @@
   "history-germany-versailles/0": [
    "germany",
    "france"
+  ],
+  "history-italy-lateran/0": [
+   "italy",
+   "faith"
+  ],
+  "history-france-dutch-war/0": [
+   "france",
+   "lowlands"
   ]
  },
  "fixes": [

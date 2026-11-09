@@ -713,7 +713,7 @@
    "意大利",
    "west",
    843,
-   1563,
+   1929,
    3
   ],
   "spain": [
@@ -727,7 +727,7 @@
    "基督教",
    "trunk",
    -1400,
-   1689,
+   1929,
    7
   ],
   "east": [
@@ -753,13 +753,13 @@
   ],
   [
    "italy",
-   1563,
-   "哈布斯堡霸权与统一"
+   1929,
+   "法西斯意大利与二战"
   ],
   [
    "faith",
-   1689,
-   "政教分离与启蒙时代"
+   1929,
+   "二战与梵二会议"
   ],
   [
    "spain",
@@ -835,7 +835,14 @@
    "history-italy-julius2/0",
    "history-italy-wars-2/0",
    "history-germany-swiss/3",
-   "history-germany-charles5/0"
+   "history-germany-charles5/0",
+   "history-italy-spanish/0",
+   "history-italy-savoy/0",
+   "history-italy-napoleon/0",
+   "history-italy-mazzini/0",
+   "history-italy-cavour/0",
+   "history-italy-rome/0",
+   "history-italy-lateran/0"
   ],
   "faith": [
    "history-faith-leo-ix/0",
@@ -880,7 +887,8 @@
    "history-america-hill/0",
    "history-germany-thirty-years-2/0",
    "history-germany-thirty-years-3/0",
-   "history-france-revocation/0"
+   "history-france-revocation/0",
+   "history-italy-lateran/0"
   ],
   "spain": [
    "history-spain-andalus/0",

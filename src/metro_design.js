@@ -66,10 +66,11 @@ window.NETWORK_DESIGN = (() => {
     [1296, 1300, 74], [1300, 1304, 74], [1438, 1450, 26], [1450, 1454, 72],
     [1462, 1472, 60], [1477, 1484, 40], [1494, 1495, 40], [1495, 1496, 38],
     [1565, 1566, 38], [1566, 1571, 38], [1571, 1573, 38], [1588, 1590, 38], [1625, 1627, 38], [1627, 1631, 38],
+    [1870, 1870.4, 30], [1914.5, 1919, 80], [1919, 1922, 70],
   ];
 
   // Keeps a plain stop off a dashed link that shares its anchor year.
-  const nudge = { 'history-empire-constans/0': 0.4 };
+  const nudge = { 'history-empire-constans/0': 0.4, 'history-italy-rome/0': 0.4 };
 
   return { S, B, routes, gaps, nudge, top: y(TOP) };
 })();
