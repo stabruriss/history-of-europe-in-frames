@@ -2374,11 +2374,15 @@ Object.assign(HS,{
   brs_manchester:['曼彻斯特','Manchester',53.479,-2.245,'兰开夏郡棉纺中心；1832年以前没有一名下院议员。'],
   brs_birmingham:['伯明翰','Birmingham',52.479,-1.903,'米德兰五金与机器之城；1832年以前没有一名下院议员。'],
   brs_liverpool:['利物浦','Liverpool',53.408,-2.991,'默西河口大港，进口美洲棉花。'],
-  brs_leeds:['利兹','Leeds',53.8,-1.549,'约克郡西区的毛纺中心。'],
-  brs_sheffield:['谢菲尔德','Sheffield',53.381,-1.47,'约克郡南部的刀具与钢铁之城。'],
-  bi1_dudley:['达德利','Dudley, Staffordshire',52.512,-2.081,'黑乡煤矿与铁器重镇；1712年纽科门在此竖起第一台抽水蒸汽机。'],
+  bi1_dudley:['达德利','Dudley, Staffordshire',52.512,-2.081,'黑乡煤铁重镇；1712年第一台纽科门机装在城堡附近的煤矿。'],
   bi1_cromford:['克罗姆福德','Cromford, Derbyshire',53.111,-1.556,'德比郡德文特河谷；1771年阿克莱特在此建立第一座水力棉纺厂。'],
   bi1_coalbrookdale:['科尔布鲁克代尔','Coalbrookdale, Shropshire',52.639,-2.492,'什罗普郡塞文河谷铁都；1709年老达比在此首次用焦炭炼出生铁。'],
+  bi1_funtley:['方特利','Funtley (Fontley), Hampshire',50.871,-1.203,'汉普郡费勒姆北面的小铁厂；科特在此试成搅炼法与槽辊轧制。'],
+  bi1_merthyr:['梅瑟蒂德菲尔','Merthyr Tydfil',51.75,-3.376,'南威尔士铁都，赛法斯法、佩尼达伦等铁厂所在。'],
+  bi1_bolton:['博尔顿','Bolton, Lancashire',53.578,-2.43,'兰开夏郡棉纺镇；克朗普顿在城北老宅造成骡机。'],
+  bi1_bersham:['伯沙姆','Bersham, near Wrexham',53.036,-3.028,'北威尔士雷克瑟姆附近，威尔金森家的铸炮厂。'],
+  brs_leeds:['利兹','Leeds',53.8,-1.549,'约克郡西区的毛纺中心。'],
+  brs_sheffield:['谢菲尔德','Sheffield',53.381,-1.47,'约克郡南部的刀具与钢铁之城。'],
   bi2_cromford:['克罗姆福德','Cromford, Derbyshire',53.111,-1.556,'德比郡峡谷；阿克莱特水力棉纺厂在此以钟表与罚款管束女工童工。'],
   bi2_newlanark:['新拉纳克','New Lanark, Lanarkshire',55.664,-3.782,'苏格兰克莱德河谷棉纺村；欧文在此试行缩短工时与童工学校教育。'],
   bi2_nottingham:['诺丁汉','Nottingham',52.954,-1.158,'东米德兰针织袜业重镇；1811年3月卢德派夜袭砸毁织袜机由此发端。'],
@@ -17981,44 +17985,53 @@ const HISTORY_ENTRIES=[
     hr(d,[[22.57,88.36],[23.13,113.26]],HC.route);
    },[['fill',HC.britain,'大不列颠（人均年税负约26先令）'],['fill',HC.war,'1765年获征税权的孟加拉三省'],['dline',HC.route,'用孟加拉田赋白银赴广州采购茶叶'],['dot',HC.war,'阿拉哈巴德、加尔各答与威斯敏斯特'],['dot','#2a2018','穆尔希达巴德']])
  ]},
-{id:'history-britain-industry-1',ch:12,title:'工业革命（上）：为什么蒸汽机和纺纱机偏偏长在英国（约1700—1830年）',short:'工业革命（上）',en:'The Industrial Revolution I: Why Steam Engines and Spinning Frames Grew in Britain',period:'约1700—1830年',c:HC.britain,
+{id:'history-britain-industry-1',ch:12,title:'工业革命（上）：煤、铁、蒸汽机与纺纱机，一级垫着一级（约1700—1830年）',short:'工业革命（上）',en:'The Industrial Revolution I: Coal, Iron, Steam and Spinning, Each Technology Built on the Last',period:'约1700—1830年',c:HC.britain,
  scenes:[
-  hs('18世纪初','高工资与廉价煤：欧亚要素价格鸿沟','伦敦工资冠绝欧亚，纽卡斯尔海运煤矿廉价，与巴黎、北京形成鲜明反差。',[[18.0,-8.0],[58.0,122.0]],d=>{
+  hs('约1700—1760年','工钱与煤价：一张欧亚账单','图上标出伦敦、巴黎、北京与南京，并给英、法两国上色。',[[18.0,-8.0],[58.0,122.0]],d=>{
     ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.35});ha(d,'fFrance1648',HC.france,{fillOpacity:.25});
-    hp(d,'k_london',{left:1,note:'18世纪初建筑工日薪折银逾10克，为北京、广州的五至六倍。'});
-    hp(d,'brs_newcastle',{note:'泰恩河口煤矿紧挨海运水道，矿口煤价不到1克银/百万BTU。'});
-    hp(d,'w_paris',{note:'巴黎人工比伦敦便宜近半，木柴与煤炭价格却贵出数倍。'});
-    hp(d,'fje_beijing',{note:'北京与广州劳工日薪仅1至2克白银，燃料昂贵而人工极贱。'});
-   },[['fill',HC.britain,'高工资与廉价煤并存的大不列颠'],['fill',HC.france,'人工较低、燃料较贵的法国'],['dot','#2a2018','伦敦、纽卡斯尔、巴黎与北京']]),
-  hs('1709—1733年','达比焦炭炼铁与纽科门煤矿抽水机','达德利煤矿装起第一台纽科门抽水蒸汽机，科尔布鲁克代尔首次用焦炭炼铁。',[[50.5,-4.5],[55.5,1.5]],d=>{
-    ha(d,'mEngland1066',HC.britain,{fillOpacity:.28});ha(d,'brMidlandsIron',HC.war,{fillOpacity:.36});ha(d,'brTyneCoal',HC.celt,{fillOpacity:.36});
-    hp(d,'bi1_dudley',{kind:'battle',note:'1712年纽科门在此竖起第一台大气蒸汽机，烧免费碎煤抽矿井水。'});
-    hp(d,'bi1_coalbrookdale',{left:1,note:'1709年老达比在此用焦炭替代木炭炼出生铁，打破森林枯竭限制。'});
-    hp(d,'brs_newcastle',{note:'泰恩河煤田密集安装纽科门机抽水，到1733年全英已运转约百台。'});
-   },[['fill',HC.war,'米德兰煤铁核心区'],['fill',HC.celt,'泰恩河煤田'],['dot',HC.war,'达德利'],['dot','#2a2018','科尔布鲁克代尔与纽卡斯尔']]),
-  hs('1764—1785年','抗衡印度棉布：珍妮机与水力纺纱厂','为抗衡加尔各答运来的廉价印度棉布，兰开夏与德比郡率先实现纺纱机械化。',[[18.0,-5.0],[56.0,92.0]],d=>{
-    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.34});ha(d,'brBengal1765',HC.celt,{fillOpacity:.34});
-    hp(d,'brs_calcutta',{note:'孟加拉女工日薪仅为英国女工六分之一，手纺棉布质优价廉。'});
-    hp(d,'bi1_cromford',{kind:'battle',note:'1771年阿克莱特在此建起第一座水力棉纺厂，开创现代工厂制。'});
-    hp(d,'brs_manchester',{left:1,note:'兰开夏郡普及珍妮纺纱机与水力纱厂，投资回报率高达40%。'});
-   },[['fill',HC.britain,'推进纺纱机械化的大不列颠'],['fill',HC.celt,'输出手工印花棉布的孟加拉'],['dot',HC.war,'克罗姆福德水力纱厂'],['dot','#2a2018','曼彻斯特与加尔各答']]),
-  hs('1769—1830年','瓦特改良蒸汽机与利物浦—曼彻斯特铁路','瓦特在格拉斯哥改良蒸汽机并与伯明翰博尔顿合股，斯蒂芬森修通利曼铁路。',[[51.0,-4.8],[56.5,0.5]],d=>{
-    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.28});ha(d,'brCottonLancs',HC.war,{fillOpacity:.36});ha(d,'brMidlandsIron',HC.celt,{fillOpacity:.34});
-    hp(d,'bc1_glasgow',{note:'瓦特在格拉斯哥大学修理纽科门机模型时发明分离冷凝器。'});
-    hp(d,'brs_birmingham',{note:'1775年博尔顿与瓦特在索霍工厂合股，按省煤量三分之一收专利费。'});
-    hp(d,'brs_liverpool',{left:1,note:'1830年斯蒂芬森“火箭号”拉通利物浦至曼彻斯特铁路。'});
-    hp(d,'brs_manchester',{note:'瓦特旋转式蒸汽机让棉纺厂摆脱山谷溪流，集中落户曼彻斯特。'});
-   },[['fill',HC.war,'兰开夏棉纺与首条客货运铁路区'],['fill',HC.celt,'伯明翰蒸汽机与五金制造区'],['dot','#2a2018','格拉斯哥、伯明翰、利物浦与曼彻斯特']]),
-  hs('约1830年','经济版图北移：煤田上的北方工业走廊','兰开夏、约克郡、米德兰、泰恩河与南威尔士煤田长成英国新的财富中心。',[[50.5,-4.8],[55.6,1.5]],d=>{
-    ha(d,'mEngland1066',HC.britain,{fillOpacity:.24});ha(d,'mWales',HC.britain,{fillOpacity:.24});
-    ha(d,'brCottonLancs',HC.war,{fillOpacity:.4});ha(d,'brWoolYorks',HC.celt,{fillOpacity:.38});
-    ha(d,'brMidlandsIron',HC.war,{fillOpacity:.38});ha(d,'brTyneCoal',HC.celt,{fillOpacity:.38});ha(d,'brSouthWalesCoal',HC.celt,{fillOpacity:.38});
-    hp(d,'brs_manchester',{left:1,note:'“棉都”曼彻斯特人口逼近十八万，成为全球机制棉布中心。'});
-    hp(d,'brs_birmingham',{left:1,note:'米德兰五金与蒸汽机之都，人口约十四万。'});
-    hp(d,'brs_leeds',{note:'约克郡西区毛纺织工业中心。'});
-    hp(d,'brs_sheffield',{note:'约克郡南部坩埚钢与刀具中心。'});
-    hp(d,'k_london',{note:'南方政治与金融中心；北方新工业带在议会中却缺乏席位。'});
-   },[['fill',HC.war,'兰开夏棉纺区与米德兰钢铁五金区'],['fill',HC.celt,'约克郡毛纺区、泰恩河与南威尔士煤田'],['dot','#2a2018','北方工业大城与伦敦']])
+    hp(d,'k_london',{left:1,note:'工钱最贵的都城，烧的是海运来的泰恩河煤。'});
+    hp(d,'w_paris',{note:'一台珍妮机要花掉工人一年多的工钱。'});
+    hp(d,'fje_beijing',{note:'柴炭比人工贵，省燃料比省人工划算。'});
+    hp(d,'fje_nanjing',{note:'江南棉纺靠农家手工，离大煤田很远。'});
+   },[['fill',HC.britain,'工钱高、煤价低的大不列颠'],['fill',HC.france,'工钱较低、燃料较贵的法国'],['dot','#2a2018','伦敦、巴黎、北京与南京']]),
+  hs('1712—1775年','纽科门机：煤田上的抽水机','图上标出第一台纽科门机所在地、泰恩河煤田与康沃尔铜锡矿区。',[[49.8,-6.2],[55.6,1.0]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.22});ha(d,'mWales',HC.britain,{fillOpacity:.22});
+    ha(d,'brMidlandsIron',HC.war,{fillOpacity:.36});ha(d,'brTyneCoal',HC.celt,{fillOpacity:.36});
+    hp(d,'bi1_dudley',{kind:'battle',note:'1712年的第一台装在城堡附近的煤矿。'});
+    hp(d,'brs_newcastle',{note:'1733年前已有机器在这里的煤矿抽水。'});
+    hp(d,'uk0_cornwall',{left:1,note:'铜锡矿缺煤，煤得靠海船运来。'});
+   },[['fill',HC.war,'米德兰黑乡煤铁区'],['fill',HC.celt,'泰恩河煤田'],['dot',HC.war,'第一台纽科门机'],['dot','#2a2018','纽卡斯尔与康沃尔矿区']]),
+  hs('1709—1828年','焦炭、搅炼与热风','图上标出焦炭高炉、搅炼法专利地、南威尔士铁都与热风炉专利地。',[[50.3,-5.6],[56.3,0.8]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.22});ha(d,'brMidlandsIron',HC.war,{fillOpacity:.38});ha(d,'brSouthWalesCoal',HC.celt,{fillOpacity:.36});
+    hp(d,'bi1_coalbrookdale',{kind:'battle',note:'达比之孙在此铸出378吨铁件，1779年架起下游的铁桥。'});
+    hp(d,'bi1_funtley',{left:1,note:'给海军供铁件的小厂，科特在此试出新法。'});
+    hp(d,'bi1_merthyr',{left:1,note:'克劳谢等铁厂主改良搅炼法后大批采用。'});
+    hp(d,'bc1_glasgow',{note:'尼尔森在此试成热风，炼得动苏格兰黑带矿。'});
+   },[['fill',HC.war,'什罗普郡与黑乡铁区'],['fill',HC.celt,'南威尔士煤铁区'],['dot',HC.war,'科尔布鲁克代尔'],['dot','#2a2018','方特利、梅瑟蒂德菲尔与格拉斯哥']]),
+  hs('1733—1830年','从珍妮机到动力织机','图上标出兰开夏棉纺区、骡机诞生地、第一座水力纱厂与原棉进口港。',[[52.6,-3.6],[54.2,-0.9]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.2});ha(d,'brCottonLancs',HC.war,{fillOpacity:.38});
+    hp(d,'brs_liverpool',{left:1,note:'美国南方的原棉多从这里上岸。'});
+    hp(d,'bi1_bolton',{left:1,note:'克朗普顿家住城北老宅，骡机在此造成。'});
+    hp(d,'brs_manchester',{note:'1820年代，铸铁织机和自动骡机在此问世。'});
+    hp(d,'bi1_cromford',{kind:'battle',note:'1771年开工的水力纱厂，两班轮流不停机。'});
+   },[['fill',HC.war,'兰开夏棉纺区'],['dot',HC.war,'克罗姆福德水力纱厂'],['dot','#2a2018','利物浦、博尔顿与曼彻斯特']]),
+  hs('1765—1790年','冷凝器、镗床与旋转机','图上标出瓦特想到冷凝器的城市、镗缸的铸炮厂、索霍工厂与康沃尔矿区。',[[49.8,-6.3],[56.3,0.9]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.26});ha(d,'brMidlandsIron',HC.war,{fillOpacity:.36});
+    hp(d,'bc1_glasgow',{note:'1765年春，瓦特在城中绿地散步时想到冷凝器。'});
+    hp(d,'bi1_bersham',{left:1,note:'镗炮的厂子，此后约二十年专供汽缸。'});
+    hp(d,'brs_birmingham',{note:'城北索霍工厂，1775年博尔顿与瓦特合伙。'});
+    hp(d,'uk0_cornwall',{left:1,note:'1777年起最早成批订购瓦特机的地方。'});
+   },[['fill',HC.war,'米德兰铁区'],['fill',HC.britain,'大不列颠'],['dot','#2a2018','格拉斯哥、伯沙姆、伯明翰与康沃尔']]),
+  hs('1800—1830年','高压机、铁路与北方煤田','图上标出北方各工业区与煤田、第一次铁轨机车试车地、铁路两端的利物浦与曼彻斯特，以及伦敦。',[[50.4,-5.6],[55.6,1.3]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.2});ha(d,'mWales',HC.britain,{fillOpacity:.2});
+    ha(d,'brCottonLancs',HC.war,{fillOpacity:.4});ha(d,'brMidlandsIron',HC.war,{fillOpacity:.36});
+    ha(d,'brWoolYorks',HC.celt,{fillOpacity:.36});ha(d,'brTyneCoal',HC.celt,{fillOpacity:.36});ha(d,'brSouthWalesCoal',HC.celt,{fillOpacity:.36});
+    hp(d,'bi1_merthyr',{kind:'battle',left:1,note:'1804年2月21日，机车从这里出发。'});
+    hp(d,'brs_liverpool',{left:1,note:'1829年10月城东雷恩希尔赛车，火箭号胜出。'});
+    hp(d,'brs_manchester',{note:'1830年9月15日铁路通车的另一头。'});
+    hp(d,'brs_newcastle',{note:'斯蒂芬森父子的机车厂，火箭号在此造成。'});
+    hp(d,'k_london',{note:'莫兹利的作坊，一代机床匠在此学艺。'});
+   },[['fill',HC.war,'兰开夏棉纺区与米德兰铁区'],['fill',HC.celt,'约克郡毛纺区、泰恩河与南威尔士煤田'],['dot',HC.war,'梅瑟蒂德菲尔'],['dot','#2a2018','利物浦、曼彻斯特、纽卡斯尔与伦敦']])
  ]},
 {id:'history-britain-industry-2',ch:12,title:'工业革命（下）：工厂钟、恩格斯停顿与砸机器（约1760—1832年）',short:'工业革命（下）',en:'The Industrial Revolution II: Factory Clocks, Engels’ Pause and the Luddites',period:'约1760—1832年',c:HC.britain,
  scenes:[
@@ -18029,20 +18042,20 @@ const HISTORY_ENTRIES=[
    },[['fill',HC.war,'吸纳失地劳力的兰开夏工业区'],['fill',HC.britain,'推行议会圈地的英格兰'],['dot',HC.war,'曼彻斯特'],['dot','#2a2018','威斯敏斯特议会']]),
   hs('1771—1833年','工厂钟表、孤儿童工与新拉纳克试验','克罗姆福德与曼彻斯特纱厂实行严苛厂规与童工制，欧文在新拉纳克试行改良。',[[51.0,-4.8],[56.5,0.5]],d=>{
     ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.28});ha(d,'brCottonLancs',HC.war,{fillOpacity:.36});
-    hp(d,'bi2_cromford',{note:'阿克莱特水力纱厂每天五点半敲钟锁门，以重罚训立车间纪律。'});
+    hp(d,'bi2_cromford',{note:'阿克莱特水力纱厂两班倒，每班十三小时，迟到者重罚。'});
     hp(d,'brs_manchester',{left:1,note:'棉纺厂过半劳力为女工与每天钻纱锭扫花十四小时的济贫院孤儿。'});
     hp(d,'bi2_newlanark',{note:'欧文在此停用十岁以下童工、将工时缩至十小时半并办幼儿学校。'});
    },[['fill',HC.war,'童工与女工最集中的棉纺核心区'],['fill',HC.britain,'大不列颠其余地区'],['dot','#2a2018','克罗姆福德、曼彻斯特与新拉纳克']]),
   hs('1780—1845年','“恩格斯停顿”与曼彻斯特贫民窟','英国工业总产出翻番而工人工资停滞，恩格斯在曼彻斯特调查工人阶级状况。',[[51.0,-4.2],[54.8,0.8]],d=>{
     ha(d,'mEngland1066',HC.britain,{fillOpacity:.28});ha(d,'brCottonLancs',HC.war,{fillOpacity:.4});
     hp(d,'brs_manchester',{kind:'battle',left:1,note:'恩格斯在此算账并夜访贫民窟，写成《英国工人阶级状况》。'});
-    hp(d,'k_london',{note:'资本利润与地主地租拿走增长大头，劳动报酬占比从60%跌至45%。'});
+    hp(d,'k_london',{note:'资本利润拿走增长大头，劳动报酬占比从60%跌至45%。'});
    },[['fill',HC.war,'恩格斯实地调查的曼彻斯特工业区'],['fill',HC.britain,'英格兰其余地区'],['dot',HC.war,'曼彻斯特'],['dot','#2a2018','伦敦']]),
   hs('1811—1816年','卢德派夜袭砸机与一万两千英军北调','诺丁汉、哈德斯菲尔德与曼彻斯特爆发卢德派砸机抗争，政府调大军北上镇压。',[[51.0,-3.8],[54.6,0.8]],d=>{
     ha(d,'mEngland1066',HC.britain,{fillOpacity:.26});ha(d,'brCottonLancs',HC.war,{fillOpacity:.36});ha(d,'brWoolYorks',HC.war,{fillOpacity:.36});
     hp(d,'bi2_nottingham',{kind:'battle',note:'1811年3月针织工以“卢德将军”之名夜袭砸毁压价雇主的织袜机。'});
     hp(d,'bi2_huddersfield',{kind:'battle',note:'1812年4月约克郡毛纺工夜袭罗福兹厂遭枪击，次年十七人被绞死。'});
-    hp(d,'brs_manchester',{left:1,note:'政府调1.2万正规军驻扎北方，超过威灵顿在半岛打拿破仑的英军。'});
+    hp(d,'brs_manchester',{left:1,note:'约1.2万官兵在北方各郡驻防，大半不是正规军。'});
    },[['fill',HC.war,'卢德派运动最剧烈的北部纺织区'],['fill',HC.britain,'英格兰其余地区'],['dot',HC.war,'诺丁汉、哈德斯菲尔德与曼彻斯特']]),
   hs('1831年前后','零议员的工业巨城对老萨勒姆荒土坡','北方四座工业大城无一名议员，南方荒丘老萨勒姆与沉海古镇邓尼奇却各占两席。',[[50.4,-3.8],[54.6,2.2]],d=>{
     ha(d,'mEngland1066',HC.britain,{fillOpacity:.26});ha(d,'brCottonLancs',HC.war,{fillOpacity:.38});
