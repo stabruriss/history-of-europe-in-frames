@@ -49,7 +49,7 @@ assert.ok(!/tChrono|peakTimeline|高光年代|TIME_CH/.test(html));
    bannerIcon:!!document.querySelector('#ghBanner svg.gh-icon'),
    title:document.title,
    h1:document.querySelector('#masthead h1')?.firstChild.textContent||''}));
-  assert.deepEqual(data,{geo:33,topics:12,history:392,scenes:2056,refs:4289,seas:18,islands:35,mode:'history',
+  assert.deepEqual(data,{geo:33,topics:14,history:392,scenes:2056,refs:4289,seas:18,islands:35,mode:'history',
    buttons:['tHistory','tGeography','tTopics'],banner:'开源项目·欧洲历史笔记',
    bannerHref:'https://github.com/stabruriss/history-of-europe-in-frames',bannerIcon:true,
    title:'简明欧洲史图册',h1:'简明欧洲史图册'});
@@ -76,7 +76,7 @@ assert.ok(!/tChrono|peakTimeline|高光年代|TIME_CH/.test(html));
    }}finally{markTreeCurrent=_m;makeCtx=_c;markTreeCurrent();}
    return report;
   });
-  assert.equal(sceneReport.length,2141);
+  assert.equal(sceneReport.length,2156);
   await page.evaluate(()=>go('history-migration'));
   assert.equal(await page.$$eval('#toc .chip',es=>es.length),405);
   assert.equal(await page.$eval('#prev',e=>e.disabled),true);
@@ -101,7 +101,7 @@ assert.ok(!/tChrono|peakTimeline|高光年代|TIME_CH/.test(html));
   assert.equal(await page.$$eval('#toc .chip',es=>es.length),33);
   assert.equal(await page.$eval('#readerBody',e=>e.hidden),true);
   await page.click('#tTopics');assert.equal(await page.evaluate(()=>viewMode),'topics');
-  assert.equal(await page.evaluate(()=>ENTRIES[cur].id),'topic-three-states');
+  assert.equal(await page.evaluate(()=>ENTRIES[cur].id),'topic-republic');
   await page.evaluate(()=>go('topic-grail-sword'));assert.equal(await page.evaluate(()=>ENTRIES[cur].id),'topic-grail-sword');
   assert.equal(await page.$$eval('#sceneRail .scene-buttons button',es=>es.length),4);
   await page.click('#sceneRail [data-scene="1"]');assert.equal(await page.evaluate(()=>location.hash),'#topic-grail-sword/1');

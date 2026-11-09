@@ -81,8 +81,8 @@ function scanBook(){
  // "见“X”一节" and "见“X”主线" only become links if the page knows X; otherwise they stay plain words.
  const pointers=[...ENTRIES.flatMap(e=>[[e.id,e.html||''],...(e.moments||[]).map(m=>[e.id,m.text]),...(e.boxes||[]).map(b=>[e.id,b.text])]),
   ...Object.entries(FIGURE_SCENES).flatMap(([key,items])=>items.flatMap(item=>[[key,item.note],[key,FIGURES[item.id]?.bio],[key,FIGURES[item.id]?.relation]]))];
- for(const [where,text] of pointers)for(const m of String(text||'').matchAll(/见“([^”]+)”(一节|主线)/g))
-  if(!(m[2]==='一节'?SHORT_ID.get(m[1]):LINE_ID.get(m[1])))note(where,`pointer to “${m[1]}”${m[2]} leads nowhere`);
+ for(const [where,text] of pointers)for(const m of String(text||'').matchAll(/见“([^”]+)”(一节|主线|专题)/g))
+  if(!(m[2]==='一节'?SHORT_ID.get(m[1]):m[2]==='专题'?TOPIC_ID.get(m[1]):LINE_ID.get(m[1])))note(where,`pointer to “${m[1]}”${m[2]} leads nowhere`);
  const onLines=new Set(metroUI.data.lines.flatMap(l=>metroUI.data.lineStops.get(l.id).map(s=>s.key)));
  for(const s of metroUI.data.stations)if(!onLines.has(s.key))note(s.key,'station on no line');
  return {problems,scenes};

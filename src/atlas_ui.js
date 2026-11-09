@@ -554,6 +554,8 @@ function focusFigure(item){
 const SHORT_ID=new Map(),LINE_ID=new Map(HISTORY_BRANCHES.map(b=>[b.name,b.id]));
 HISTORY_ENTRIES.forEach(e=>{if(!SHORT_ID.has(e.short))SHORT_ID.set(e.short,e.id);});
 HISTORY_ENTRIES.forEach(e=>{if(!SHORT_ID.has(e.title))SHORT_ID.set(e.title,e.id);});  // or by its full title
+// 老无 2026-11-09: “见‘X’专题” jumps to that topic, by its short name, its full title, or the part before the colon of either.
+const TOPIC_ID=new Map(TOPIC_ENTRIES.flatMap(t=>[t.short,t.title,t.short.split('：')[0],t.title.split('：')[0]].map(k=>[k,t.id])).reverse());
 const yearOf=(m,cent)=>{let y=+m[2];if(cent)return m[1]?-y*100:(y-1)*100;return m[1]?-y:y;};
 function pointerYear(a){
   const block=a.closest('p,aside,li,.person-detail')||a.parentElement,r=document.createRange();r.setStart(block,0);r.setEndBefore(a);
@@ -570,15 +572,15 @@ function neighbourSection(e,dir){
 }
 function linkPointers(root,e){
   const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode:n=>n.parentElement.closest('a,.sources,.passage-title,.moment-tag,.box-tag,summary')
-    ?NodeFilter.FILTER_REJECT:/见“[^”]+”(一节|主线)|见[上下]一节/.test(n.data)?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_SKIP});
+    ?NodeFilter.FILTER_REJECT:/见“[^”]+”(一节|主线|专题)|见[上下]一节/.test(n.data)?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_SKIP});
   const nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);
   for(const n of nodes){
     const frag=document.createDocumentFragment();let last=0;
-    for(const m of n.data.matchAll(/(另)?见“([^”]+)”(一节|主线)|见(上|下)一节/g)){
-      const id=m[4]?e&&neighbourSection(e,m[4]):m[3]==='一节'?SHORT_ID.get(m[2]):null,line=m[3]==='主线'?LINE_ID.get(m[2]):null;
+    for(const m of n.data.matchAll(/(另)?见“([^”]+)”(一节|主线|专题)|见(上|下)一节/g)){
+      const id=m[4]?e&&neighbourSection(e,m[4]):m[3]==='一节'?SHORT_ID.get(m[2]):m[3]==='专题'?TOPIC_ID.get(m[2]):null,line=m[3]==='主线'?LINE_ID.get(m[2]):null;
       if(!id&&!line)continue;
       const a=document.createElement('a');a.className='xref';a.textContent=m[0];
-      if(id){a.dataset.go=id;a.href='#'+id;a.title=`跳到“${m[2]??HISTORY_ENTRIES.find(x=>x.id===id).short}”一节`;a.onclick=ev=>{ev.preventDefault();go(id);};}
+      if(id){a.dataset.go=id;a.href='#'+id;a.title=`跳到“${m[2]??HISTORY_ENTRIES.find(x=>x.id===id).short}”${m[3]==='专题'?'专题':'一节'}`;a.onclick=ev=>{ev.preventDefault();go(id);};}
       else{
         a.dataset.line=line;a.href='#';a.title=`切到“${m[2]}”线上同一时期的一站`;
         a.onclick=ev=>{
