@@ -9763,7 +9763,7 @@ const HISTORY_ENTRIES=[
     ha(d,'osOttoman1914',HC.parthia,{fillOpacity:.30});ha(d,'osBalkanStates1878',HC.eeurope,{fillOpacity:.22});
     hp(d,'wwe_salonika',{kind:'battle',note:'9月15日协约国东方军团由此北上突破，29日保加利亚率先投降。'});
     hp(d,'wwe_mudros',{kind:'battle',note:'10月30日奥斯曼代表在爱琴海穆德洛斯港英舰上签字停战。'});
-    hp(d,'constantinople',{note:'陆路被断、叙利亚尽失后，青年土耳其党三巨头乘潜艇出逃。'});
+    hp(d,'constantinople',{note:'陆路被断、叙利亚尽失后，青年土耳其党三巨头乘军舰出逃。'});
     hp(d,'wwe_megiddo',{kind:'battle',left:1,note:'9月19日英军艾伦比在此击溃土军主力，10月1日进占大马士革。'});
    },[['fill',HC.parthia,'战败停战的奥斯曼帝国'],['fill',HC.eeurope,'巴尔干战场'],['dot',HC.war,'塞萨洛尼基、梅吉多与穆德洛斯'],['dot','#2a2018','君士坦丁堡']]),
   hs('1918年10—11月','维托里奥韦内托与奥匈解体','意军在维托里奥韦内托击溃奥匈军队，布拉格与布达佩斯纷纷脱离，哈布斯堡帝国解体。',[[41.0,9.5],[51.5,21.0]],d=>{
