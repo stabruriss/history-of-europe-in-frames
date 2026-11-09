@@ -123,7 +123,7 @@ const S=JSON.parse(fs.readFileSync(path.join(__dirname,'v40-spec.json'),'utf8'))
     }
     // Pointers in the new sections are links that land where they say.
     const links=await page.evaluate(ids=>{const out=[];for(const id of ids){go(id);
-      for(const a of document.querySelectorAll('#card a.xref[data-go]'))out.push([id,a.textContent,!!HISTORY_ENTRIES.find(e=>e.id===a.dataset.go)]);}return out;},Object.keys(S.sections));
+      for(const a of document.querySelectorAll('#card a.xref[data-go]'))out.push([id,a.textContent,!!ENTRIES.find(e=>e.id===a.dataset.go)]);}return out;},Object.keys(S.sections));
     assert.ok(links.length>=10&&links.every(x=>x[2]),'section links in the new sections '+JSON.stringify(links.filter(x=>!x[2])));
     // The eyebrow names the era; the shared stations keep their home chapter.
     for(const [id,era] of S.eras.flatMap(([,name,items])=>items.map(i=>[i,name]))){
