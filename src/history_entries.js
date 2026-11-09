@@ -3054,11 +3054,30 @@ Object.assign(HS,{
   gw2_wilhelmshaven:['威廉港','Wilhelmshaven',53.523,8.106,'北海主力军港；提尔皮茨在此扩建船坞，作为公海舰队大本营。'],
   gw2_tangier:['丹吉尔','Tangier',35.767,-5.8,'摩洛哥直布罗陀海峡港口；1905年3月威廉二世在此登岸挑起第一次摩洛哥危机。'],
   gw2_agadir:['阿加迪尔','Agadir',30.428,-9.598,'摩洛哥大西洋沿岸港口；1911年7月德国炮舰“豹”号闯入此港引发第二次摩洛哥危机。'],
-  gww_berlin:['柏林','Berlin',52.52,13.405,'德意志帝国首都；1914年8月在此下达借道比利时通牒，1916年冬深陷“芜菁之冬”饥荒。'],
-  gww_somme:['阿尔贝（索姆河）','Albert (River Somme)',50.004,2.652,'皮卡第索姆河战场中心；1916年7月1日英军在此单日伤亡近六万，9月首次投入坦克。'],
-  gww_aisne:['克拉奥讷（贵妇小径）','Craonne (Chemin des Dames)',49.441,3.787,'埃纳河北岸高地；1917年4月尼韦勒攻势在此惨败，引发法军过半师团哗变。'],
-  gww_spa:['斯帕','Spa',50.492,5.864,'比利时东部温泉城；1918年德军最高统帅部驻地，春季攻势与秋季认输均在此决策。'],
-  gww_noyelles:['诺耶勒（华工墓园）','Noyelles-sur-Mer',50.185,1.706,'法国索姆河口；一战赴欧十四万华工的大本营与全欧最大华工墓园所在地。'],
+  gww_berlin:['柏林','Berlin',52.52,13.405,'德意志帝国首都；1914年7月在此向奥匈开出“空白支票”，8月启动施里芬西进时刻表。'],
+  gww_sarajevo:['萨拉热窝','Sarajevo',43.856,18.413,'波斯尼亚首府；1914年6月28日奥匈皇储斐迪南夫妇在此遇刺，引爆七月危机。'],
+  gww_tannenberg:['坦能堡','Tannenberg (Stębark)',53.494,20.134,'东普鲁士战场；1914年8月兴登堡与鲁登道夫在此包抄歼灭俄国第二集团军。'],
+  gww_gorlice:['戈尔利采','Gorlice',49.655,21.16,'西加利西亚山城；1915年5月德奥联军在此突破，引发俄军全线“大撤退”。'],
+  gww_isonzo:['戈里齐亚（伊松佐河）','Gorizia (Isonzo)',45.941,13.622,'奥意边境伊松佐河谷重镇；1915年5月起意军总参谋长卡多尔纳在此连发十一次强攻。'],
+  gww_somme:['阿尔贝（索姆河）','Albert (River Somme)',50.004,2.652,'皮卡第索姆河战场中心。'],
+  gww_aisne:['克拉奥讷（贵妇小径）','Craonne (Chemin des Dames)',49.441,3.787,'埃纳河北岸高地。'],
+  gww_spa:['斯帕','Spa',50.492,5.864,'比利时东部温泉城；1918年德军最高统帅部驻地。'],
+  gww_noyelles:['诺耶勒（华工墓园）','Noyelles-sur-Mer',50.185,1.706,'法国索姆河口；一战赴欧十四万华工大本营所在地。'],
+  wwm_jutland:['日德兰外海','Jutland Bank',56.7,5.9,'丹麦日德兰半岛以西北海海域；1916年5月31日英德主力舰队在此展开唯一一次大决战。'],
+  wwm_lutsk:['卢茨克','Lutsk',50.747,25.325,'沃里尼亚重镇；1916年6月俄将勃鲁西洛夫在此率先突破奥匈防线。'],
+  wwm_bucharest:['布加勒斯特','Bucharest',44.427,26.103,'罗马尼亚首都；1916年8月罗马尼亚参战，12月即被德奥联军攻占。'],
+  wwm_kinsale:['金塞尔外海','Old Head of Kinsale',51.417,-8.55,'爱尔兰南岸海域；德军U型潜艇在大西洋与北海封锁线上猎杀协约国商船。'],
+  wwm_caporetto:['卡波雷托（今科巴里德）','Caporetto (Kobarid)',46.247,13.58,'伊松佐河上游小镇；1917年10月24日德奥联军在此突破意军防线。'],
+  wwm_piave:['皮亚韦河','Piave River',45.75,12.2,'威尼斯以北防线；卡波雷托溃败后迪亚兹率意军在此稳住战线。'],
+  wwe_brest:['布列斯特—立陶夫斯克','Brest-Litovsk',52.083,23.655,'白俄罗斯边境要塞；1918年3月3日苏俄在此签下割地退战和约，德军得以主力西调。'],
+  wwe_saintnazaire:['圣纳泽尔','Saint-Nazaire',47.274,-2.214,'法国大西洋岸大港；1917—1918年美国远征军两百万官兵登陆欧洲的主要港口之一。'],
+  wwe_amiens:['亚眠','Amiens',49.894,2.296,'皮卡第交通枢纽；1918年8月8日英法加澳联军在此发动坦克突袭，成为“德军最黑暗的一天”。'],
+  wwe_salonika:['塞萨洛尼基','Thessaloniki (Salonica)',40.64,22.944,'希腊马其顿海港；1918年9月协约国东方军团由此北上突破，逼降保加利亚。'],
+  wwe_megiddo:['梅吉多','Megiddo',32.585,35.184,'巴勒斯坦北部平原；1918年9月英军艾伦比在此联手阿拉伯部队击溃奥斯曼军主力。'],
+  wwe_mudros:['穆德洛斯（利姆诺斯岛）','Moudros, Lemnos',39.874,25.268,'爱琴海利姆诺斯岛军港；1918年10月30日奥斯曼帝国在此签署停战协定。'],
+  wwe_vittorioveneto:['维托里奥韦内托','Vittorio Veneto',45.988,12.299,'皮亚韦河北面山城；1918年10月底意军在此击溃奥匈军队，促成奥匈停战解体。'],
+  wwe_budapest:['布达佩斯','Budapest',47.498,19.04,'匈牙利首都；1918年10月底爆发革命脱离奥地利，奥匈二元帝国就此瓦解。'],
+  wwe_compiegne:['贡比涅森林','Forest of Compiègne',49.427,2.906,'巴黎东北森林；1918年11月11日清晨五点协约国与德国代表在此餐车内签字停战。'],
   gve_spa:['斯帕','Spa',50.492,5.864,'比利时德军最高统帅部驻地；1918年9月底鲁登道夫在此催文官求和，11月威廉二世由此逃往荷兰。'],
   gve_kiel:['基尔','Kiel',54.323,10.123,'波罗的海军港；1918年10月底至11月3日水兵在此熄灭锅炉起义，引爆十一月革命。'],
   gve_berlin:['柏林','Berlin',52.52,13.405,'德国首都；1918年11月9日同日宣布两个共和国，1919年1月自由军团在此镇压斯巴达克起义。'],
@@ -9619,51 +9638,146 @@ const HISTORY_ENTRIES=[
     hr(d,[[50.94,6.96],[50.85,4.35],[48.85,2.35]],HC.war);
    },[['fill',HC.germany,'德意志帝国'],['fill',HC.france,'法兰西'],['fill',HC.lowlands,'永久中立国比利时'],['dline',HC.war,'施里芬计划右翼借道比利时包抄巴黎路线'],['dot',HC.war,'丹吉尔与阿加迪尔（两次摩洛哥危机）'],['dot','#2a2018','布鲁塞尔与柏林']])
  ]},
-{id:'history-germany-ww1-west',ch:5,title:'一战西线：六周速胜卡在马恩河，四年战壕流尽两代青年血',short:'一战西线',en:'The Western Front of World War I: From the Marne Taxis to the Trenches of Verdun and the Somme',period:'1914—1918年',c:HC.germany,
+{id:'history-germany-ww1-west',ch:5,title:'第一次世界大战（上）：萨拉热窝拉动同盟链条，东西两线打成战壕僵局',short:'第一次世界大战（上）',en:'World War I (Part I): From Sarajevo and the Marne Taxis to Tannenberg and the Isonzo',period:'1914—1915年',c:HC.germany,
  scenes:[
-  hs('1914年7—8月','借道比利时与列日巨炮','德军越过边境强攻比利时列日要塞与布鲁塞尔，比军退守西北部海岸放水阻敌，伦敦对德宣战。',[[47.5,-1.5],[54.0,15.0]],d=>{
+  hs('1914年6—8月','萨拉热窝枪声与七月危机','1914年6月28日萨拉热窝刺杀案引爆同盟链条，维也纳、圣彼得堡、柏林、巴黎与伦敦在五周内接连卷入大战。',[[41.0,-2.0],[60.5,32.0]],d=>{
+    ha(d,'ger19GermanEmpire1871',HC.germany,{fillOpacity:.30});ha(d,'wwAustriaHungary1914',HC.germany,{fillOpacity:.22});ha(d,'fr18France1815',HC.france,{fillOpacity:.24});ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.22});ha(d,'ruRussia1914',HC.eeurope,{fillOpacity:.22});
+    hp(d,'gww_sarajevo',{kind:'battle',note:'1914年6月28日普林西普在此刺杀奥匈皇储斐迪南夫妇。'});
+    hp(d,'c3_vienna',{note:'7月28日奥匈帝国仗着德国支持向塞尔维亚宣战。'});
+    hp(d,'gww_berlin',{note:'7月5日德皇开出空白支票，8月1日至3日相继对俄、法宣战。'});
+    hp(d,'w_paris',{note:'法国按法俄同盟动员应战，德国启动施里芬先西后东计划。'});
+    hr(d,[[43.86,18.41],[48.21,16.37],[52.52,13.41],[48.85,2.35]],HC.war);
+   },[['fill',HC.germany,'同盟国（德意志与奥匈帝国）'],['fill',HC.france,'法兰西与大不列颠'],['fill',HC.eeurope,'俄罗斯帝国'],['dline',HC.war,'1914年7—8月同盟宣战连锁反应'],['dot',HC.war,'萨拉热窝'],['dot','#2a2018','维也纳、柏林与巴黎']]),
+  hs('1914年8—10月','借道比利时与列日巨炮','德军越过边境强攻比利时列日要塞与布鲁塞尔，比军退守西北部海岸放水阻敌，伦敦对德宣战。',[[47.5,-1.5],[54.0,15.0]],d=>{
     ha(d,'ger19GermanEmpire1871',HC.germany,{fillOpacity:.32});ha(d,'fr18Belgium1795',HC.lowlands,{fillOpacity:.32});ha(d,'fr18France1815',HC.france,{fillOpacity:.24});ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.24});
     hp(d,'k_london',{note:'1914年8月4日因德军侵犯比利时永久中立，英国正式对德宣战。'});
-    hp(d,'lb_brussels',{note:'比利时王室驻地；拒绝借道要求后退守西北沿海平原死战。'});
-    hp(d,'lf_liege',{kind:'battle',note:'默兹河谷要塞群；德军调集超重型攻城榴弹炮轰穿环形混凝土堡垒。'});
-    hp(d,'gww_berlin',{left:1,note:'德军参谋本部启动西进时刻表，宰相府痛斥英国驻德大使戈申。'});
+    hp(d,'lb_brussels',{note:'比利时王室驻地；拒绝借道要求后退守西北沿海伊瑟河放水阻敌。'});
+    hp(d,'lf_liege',{kind:'battle',note:'默兹河谷要塞群；德军调集420毫米攻城榴弹炮轰穿混凝土堡垒。'});
+    hp(d,'gww_berlin',{left:1,note:'德军参谋本部启动西进时刻表，宰相痛斥英国为“一张废纸”参战。'});
     hr(d,[[50.78,6.08],[50.63,5.57],[50.85,4.35]],HC.war);
    },[['fill',HC.germany,'按施里芬计划西进的德意志帝国'],['fill',HC.lowlands,'遭入侵的永久中立国比利时'],['fill',HC.france,'法兰西'],['fill',HC.britain,'参战护约的大不列颠'],['dline',HC.war,'1914年8月德军右翼突入比利时路线'],['dot',HC.war,'列日要塞'],['dot','#2a2018','伦敦、布鲁塞尔与柏林']]),
-  hs('1914年9—11月','马恩河出租车与七百公里战壕','红线标出从比利时伊普尔经凡尔登延绵至瑞士边境的西线战壕；法国政府一度南迁波尔多。',[[44.0,-2.0],[52.2,9.5]],d=>{
+  hs('1914年9—12月','马恩河出租车与七百公里战壕','红线标出从比利时伊普尔经凡尔登延绵至瑞士边境的西线战壕；法国政府一度南迁波尔多。',[[44.0,-2.0],[52.2,9.5]],d=>{
     ha(d,'fr18France1815',HC.france,{fillOpacity:.28});ha(d,'fr18Belgium1795',HC.lowlands,{fillOpacity:.26});ha(d,'ger19GermanEmpire1871',HC.germany,{fillOpacity:.28});
     hp(d,'w_bordeaux',{note:'9月初德军前锋逼近巴黎外围时，法国政府一度南迁于此办公。'});
     hp(d,'w_paris',{kind:'battle',note:'加利埃尼征调六百辆雷诺出租车连夜运兵赴马恩河前线反击。'});
-    hp(d,'lf_ypres',{kind:'battle',note:'双方“奔向大海”抢占侧翼的北端终点，战壕一路挖到海边。'});
+    hp(d,'lf_ypres',{kind:'battle',note:'双方“奔向大海”北端终点；1914年圣诞夜英德士兵在此自发休战。'});
     hp(d,'w_verdun',{left:1,note:'法军东段战线要塞枢轴，与瑞士边境相连构成七百公里战壕网。'});
     hr(d,[[51.15,2.75],[50.85,2.89],[49.89,2.65],[49.26,4.03],[49.16,5.38],[47.56,7.59]],HC.war);
    },[['fill',HC.france,'挡住德军速胜攻势的法兰西'],['fill',HC.germany,'后撤转入战壕防线的德意志帝国'],['dline',HC.war,'1914年11月凝固的七百公里西线战壕（概略）'],['dot',HC.war,'巴黎（马恩河反击）与伊普尔'],['dot','#2a2018','波尔多与凡尔登']]),
-  hs('1915—1916年6月','伊普尔毒气与凡尔登绞肉机','西线南北两处血战焦点：北面比利时伊普尔首次毒气战，南面法国凡尔登十个月消耗战。',[[46.5,0.5],[52.2,9.0]],d=>{
-    ha(d,'fr18France1815',HC.france,{fillOpacity:.28});ha(d,'fr18Belgium1795',HC.lowlands,{fillOpacity:.26});ha(d,'ger19GermanEmpire1871',HC.germany,{fillOpacity:.30});
+  hs('1914年8月—1915年9月','东线坦能堡与戈尔利采突破','东普鲁士坦能堡之战与1915年加利西亚戈尔利采突破，俄军被迫撤出波兰。',[[47.0,12.0],[56.5,28.0]],d=>{
+    ha(d,'ger19GermanEmpire1871',HC.germany,{fillOpacity:.30});ha(d,'wwAustriaHungary1914',HC.germany,{fillOpacity:.22});ha(d,'ruRussia1914',HC.eeurope,{fillOpacity:.26});
+    hp(d,'gww_berlin',{note:'紧急召回退休上将兴登堡与鲁登道夫赶赴东普鲁士救场。'});
+    hp(d,'c3_vienna',{note:'奥匈在加利西亚受挫后请德军南下支援，联手发起1915年春季攻势。'});
+    hp(d,'gww_tannenberg',{kind:'battle',note:'1914年8月底德军在此截获明码电报，围歼俄军萨姆索诺夫部。'});
+    hp(d,'gww_gorlice',{kind:'battle',left:1,note:'1915年5月德奥重炮在此打穿俄防线，俄军全线撤出波兰与立陶宛。'});
+   },[['fill',HC.germany,'德意志与奥匈帝国'],['fill',HC.eeurope,'深陷炮弹荒的俄罗斯帝国'],['dot',HC.war,'坦能堡与戈尔利采'],['dot','#2a2018','柏林与维也纳']]),
+  hs('1915年4—5月','伦敦密约与伊松佐河开战','意大利在伦敦密约获得领土许诺后倒戈攻奥，在伊松佐河山地发起反复强攻。',[[40.5,-1.5],[52.5,18.0]],d=>{
+    ha(d,'itItaly1871',HC.italy,{fillOpacity:.32});ha(d,'wwAustriaHungary1914',HC.germany,{fillOpacity:.26});ha(d,'fr18France1815',HC.france,{fillOpacity:.22});ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.22});
+    hp(d,'k_london',{note:'1915年4月26日英法俄与意大利在此密签条约，许诺奥匈领土。'});
+    hp(d,'rome',{note:'5月邓南遮煽起“光辉五月”街头示威，议会407票对74票授权参战。'});
+    hp(d,'gww_isonzo',{kind:'battle', note:'5月24日开战后，卡多尔纳在伊松佐河峡谷连发十一次血腥强攻。'});
+    hp(d,'c3_vienna',{left:1,note:'奥匈抽调山地部队据守阿尔卑斯与喀斯特高地，挡住意军突破。'});
+   },[['fill',HC.italy,'倒戈加入协约国的意大利王国'],['fill',HC.germany,'两线受敌的奥匈帝国'],['dot',HC.war,'戈里齐亚（伊松佐河战线）'],['dot','#2a2018','伦敦、罗马与维也纳']]),
+  hs('1915年4—12月','伊普尔毒气战与巴尔干贯通','德军在西线伊普尔首放液氯毒气，南线联手保加利亚攻占塞尔维亚，打通柏林至君士坦丁堡的铁路。',[[40.0,1.0],[54.0,30.0]],d=>{
+    ha(d,'ger19GermanEmpire1871',HC.germany,{fillOpacity:.30});ha(d,'wwAustriaHungary1914',HC.germany,{fillOpacity:.22});ha(d,'fr18Belgium1795',HC.lowlands,{fillOpacity:.28});ha(d,'osOttoman1914',HC.parthia,{fillOpacity:.26});
+    hp(d,'lf_ypres',{kind:'battle',note:'1915年4月22日德军在此顺风拧开钢瓶，首次大规模释放液氯毒气。'});
+    hp(d,'gww_berlin',{note:'同盟国打通经巴尔干直达奥斯曼首都的军火列车通道。'});
+    hp(d,'gww_sarajevo',{kind:'battle',note:'1915年秋德奥保三方夹击占领塞尔维亚，塞军翻越雪山撤往海岛。'});
+    hp(d,'constantinople',{left:1,note:'奥斯曼在加里波利挡住英法登陆，接通来自柏林的重炮弹药补给。'});
+    hr(d,[[52.52,13.41],[48.21,16.37],[44.82,20.46],[42.70,23.32],[41.01,28.98]],HC.route);
+   },[['fill',HC.germany,'德意志与奥匈帝国'],['fill',HC.parthia,'奥斯曼帝国'],['dline',HC.route,'1915年底打通的柏林—伊斯坦布尔军火通道'],['dot',HC.war,'伊普尔（首次毒气战）与巴尔干战场'],['dot','#2a2018','柏林与君士坦丁堡']])
+ ]},
+{id:'history-ww1-middle',ch:5,title:'第一次世界大战（中）：凡尔登与索姆河绞肉机，潜艇战拉美国下水',short:'第一次世界大战（中）',en:'World War I (Part II): Verdun, the Somme, Caporetto, and American Entry',period:'1916—1917年',c:HC.germany,
+ scenes:[
+  hs('1916年2—12月','凡尔登绞肉机与神圣之路','德军自北南下猛攻凡尔登突出部，法军通过唯一公路“神圣之路”昼夜轮换部队死守十个月。',[[46.5,0.5],[52.0,9.0]],d=>{
+    ha(d,'fr18France1815',HC.france,{fillOpacity:.28});ha(d,'ger19GermanEmpire1871',HC.germany,{fillOpacity:.30});ha(d,'fr18Belgium1795',HC.lowlands,{fillOpacity:.22});
     hp(d,'w_paris',{note:'法军统帅部通过“神圣之路”将全国三分之二师团轮换投入凡尔登。'});
-    hp(d,'lf_ypres',{kind:'battle',note:'1915年4月22日德军在此拧开五千七百个钢瓶首放液氯毒气。'});
-    hp(d,'w_verdun',{kind:'battle',left:1,note:'1916年2月起法德互轰两千万发炮弹，贝当率军死守十个月。'});
-   },[['fill',HC.france,'死守凡尔登的法兰西'],['fill',HC.germany,'发起消耗战的德意志帝国'],['fill',HC.lowlands,'比利时战场'],['dot',HC.war,'伊普尔（首次毒气战）与凡尔登（绞肉机）'],['dot','#2a2018','巴黎']]),
-  hs('1916年7—11月','索姆河血战与坦克上场','英军自伦敦渡海开赴皮卡第索姆河战场，为南侧苦撑的凡尔登解围，并首次投入履带装甲坦克。',[[47.5,-1.5],[52.5,8.0]],d=>{
+    hp(d,'gww_somme',{note:'英法在此筹备夏季联合作战，以分担南面凡尔登的沉重压力。'});
+    hp(d,'w_verdun',{kind:'battle',left:1,note:'1916年2月起法德互倾两千余万发炮弹，双方死伤逾七十万。'});
+   },[['fill',HC.france,'死守凡尔登的法兰西'],['fill',HC.germany,'发起消耗战的德意志帝国'],['dot',HC.war,'凡尔登（绞肉机）'],['dot','#2a2018','巴黎与索姆河']]),
+  hs('1916年5—11月','日德兰海战与索姆河坦克','英德主力舰队在北海日德兰交锋；英军在皮卡第索姆河发起解围攻势并首次投入坦克。',[[48.0,-2.5],[58.0,10.5]],d=>{
     ha(d,'fr18France1815',HC.france,{fillOpacity:.28});ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.28});ha(d,'ger19GermanEmpire1871',HC.germany,{fillOpacity:.28});
-    hp(d,'k_london',{note:'大批“基奇纳志愿新军”由此渡海赴法，并秘密研发代号水箱的坦克。'});
-    hp(d,'gww_somme',{kind:'battle',note:'7月1日首日英军伤亡五万七千余人，9月15日坦克在此首次参战。'});
-    hp(d,'w_verdun',{kind:'battle',left:1,note:'索姆河攻势迫使德军北调重炮与兵力，缓解了凡尔登防线压力。'});
-   },[['fill',HC.britain,'大不列颠'],['fill',HC.france,'法兰西西线战场'],['fill',HC.germany,'德意志帝国'],['dot',HC.war,'阿尔贝（索姆河战场）与凡尔登'],['dot','#2a2018','伦敦']]),
-  hs('1916—1917年','芜菁之冬与贵妇小径哗变','英国海军在北海封锁致柏林深陷饥荒，法军在埃纳河贵妇小径哗变，克列孟梭在巴黎出任总理。',[[46.5,-1.5],[54.5,15.0]],d=>{
-    ha(d,'fr18France1815',HC.france,{fillOpacity:.28});ha(d,'ger19GermanEmpire1871',HC.germany,{fillOpacity:.30});ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.26});
-    hp(d,'k_london',{note:'英国皇家海军封锁北海航道，截断德国化肥与海外粮食输入。'});
-    hp(d,'w_paris',{note:'年逾古稀的克列孟梭接任总理兼陆军部长，铁腕整肃主和政客。'});
-    hp(d,'gww_aisne',{kind:'battle',note:'1917年4月尼韦勒仰攻贵妇小径惨败，引发法军六十八个师哗变。'});
-    hp(d,'gww_berlin',{left:1,note:'1916至1917年冬市民靠饲料芜菁充饥，统帅部决定赌无限制潜艇战。'});
-   },[['fill',HC.france,'经历哗变后由克列孟梭稳住的法兰西'],['fill',HC.germany,'遭受封锁与芜菁之冬的德意志帝国'],['fill',HC.britain,'实施海上封锁的大不列颠'],['dot',HC.war,'克拉奥讷（贵妇小径哗变）'],['dot','#2a2018','伦敦、巴黎与柏林']]),
-  hs('1918年','皇帝会战、百日反攻与赴欧华工','1918年春德军自斯帕指挥突击逼近巴黎，8月起协约国发起百日反攻；诺耶勒为十四万赴欧华工大本营。',[[47.5,0.5],[51.8,8.0]],d=>{
+    hp(d,'k_london',{note:'大批志愿新军由此渡海赴法，并秘密研发代号“水箱”的坦克。'});
+    hp(d,'gww_somme',{kind:'battle',note:'7月1日首日英军伤亡57470人，9月15日坦克在此首次参战。'});
+    hp(d,'w_verdun',{kind:'battle',note:'索姆河攻势迫使德军北调重炮与兵力，缓解了凡尔登压力。'});
+    hp(d,'wwm_jutland',{kind:'battle',left:1,note:'5月31日英德主力舰队在此决战，英国保住北海封锁权。'});
+   },[['fill',HC.britain,'掌控海上封锁的大不列颠'],['fill',HC.france,'法兰西西线战场'],['fill',HC.germany,'德意志帝国'],['dot',HC.war,'日德兰外海、阿尔贝（索姆河）与凡尔登'],['dot','#2a2018','伦敦']]),
+  hs('1916年6—9月','勃鲁西洛夫突破','俄军在加利西亚卢茨克打穿奥匈防线，罗马尼亚参战后布加勒斯特陷落。',[[43.0,12.0],[54.5,29.0]],d=>{
+    ha(d,'ruRussia1914',HC.eeurope,{fillOpacity:.28});ha(d,'wwAustriaHungary1914',HC.germany,{fillOpacity:.26});ha(d,'ger19GermanEmpire1871',HC.germany,{fillOpacity:.24});
+    hp(d,'gww_berlin',{note:'德军被迫从西线凡尔登抽调师团乘火车东援奥匈。'});
+    hp(d,'c3_vienna',{note:'奥匈在加利西亚损失近四十万被俘官兵，从此在军事上仰赖德国。'});
+    hp(d,'wwm_lutsk',{kind:'battle',note:'1916年6月勃鲁西洛夫在此多点突击打穿奥匈防线。'});
+    hp(d,'wwm_bucharest',{kind:'battle',left:1,note:'8月罗马尼亚加入协约国，12月首都即被德奥联军攻占。'});
+   },[['fill',HC.eeurope,'发起勃鲁西洛夫攻势的俄罗斯帝国'],['fill',HC.germany,'同盟国（德意志与奥匈）'],['dot',HC.war,'卢茨克与布加勒斯特'],['dot','#2a2018','柏林与维也纳']]),
+  hs('1917年1—8月','无限制潜艇战与赴欧华工','英国封锁致柏林芜菁之冬，德国潜艇在大西洋袭船拉美国参战；诺耶勒为十四万赴欧华工大本营。',[[47.0,-10.0],[55.0,15.0]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.28});ha(d,'fr18France1815',HC.france,{fillOpacity:.26});ha(d,'ger19GermanEmpire1871',HC.germany,{fillOpacity:.30});
+    hp(d,'wwm_kinsale',{kind:'battle',note:'德国U型潜艇在英伦三岛外海无限制击沉商船，促使美国于4月宣战。'});
+    hp(d,'k_london',{note:'英国海军推行护航船队制度反制潜艇，40号房破译齐默尔曼密电。'});
+    hp(d,'gww_noyelles',{note:'十四万山东与河北赴欧华工的大本营，在西线挖战壕、修铁路、运弹药。'});
+    hp(d,'gww_berlin',{left:1,note:'1916—1917年冬市民靠饲料芜菁充饥，统帅部决定豪赌潜艇战。'});
+   },[['fill',HC.britain,'大不列颠'],['fill',HC.france,'法兰西（华工劳作主战区）'],['fill',HC.germany,'深陷芜菁之冬的德意志帝国'],['dot',HC.war,'爱尔兰外海（潜艇战）'],['dot','#2a2018','伦敦、诺耶勒（华工营）与柏林']]),
+  hs('1917年4—11月','贵妇小径哗变与帕申代尔泥战','法军在埃纳河贵妇小径惨败哗变，英军在比利时伊普尔帕申代尔苦战，克列孟梭在巴黎组阁。',[[47.5,-1.0],[52.5,8.0]],d=>{
+    ha(d,'fr18France1815',HC.france,{fillOpacity:.28});ha(d,'fr18Belgium1795',HC.lowlands,{fillOpacity:.28});ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.24});ha(d,'ger19GermanEmpire1871',HC.germany,{fillOpacity:.26});
+    hp(d,'k_london',{note:'劳合·乔治战时内阁与统帅黑格就西线消耗战伤亡产生激烈争执。'});
+    hp(d,'w_paris',{note:'1917年11月七十六岁的克列孟梭出任总理兼陆军部长，铁腕主战。'});
+    hp(d,'lf_ypres',{kind:'battle',note:'7—11月帕申代尔战役在豪雨泥潭中进行，英德各死伤二十余万。'});
+    hp(d,'gww_aisne',{kind:'battle',left:1,note:'4月尼韦勒仰攻贵妇小径惨败，引发法军六十八个师哗变。'});
+   },[['fill',HC.france,'经历哗变后稳住防线的法兰西'],['fill',HC.lowlands,'比利时帕申代尔战场'],['dot',HC.war,'克拉奥讷（贵妇小径）与伊普尔（帕申代尔）'],['dot','#2a2018','伦敦与巴黎']]),
+  hs('1917年8—11月','卡波雷托惨败与皮亚韦河防线','教宗在罗马呼吁停火被拒，德奥联军在伊松佐河上游卡波雷托突围，意军退守皮亚韦河。',[[41.0,9.0],[49.0,18.0]],d=>{
+    ha(d,'itItaly1871',HC.italy,{fillOpacity:.32});ha(d,'wwAustriaHungary1914',HC.germany,{fillOpacity:.28});
+    hp(d,'wwm_piave',{kind:'battle',note:'意军后撤150公里退守皮亚韦河，新帅迪亚兹在此稳住防线。'});
+    hp(d,'rome',{note:'本笃十五世呼吁停火称“无益的屠杀”；卡波雷托败后奥兰多组阁。'});
+    hp(d,'wwm_caporetto',{kind:'battle',note:'10月24日德奥联军在此突破，意军约27万人被俘。'});
+    hp(d,'c3_vienna',{left:1,note:'奥匈借德军七个师助战重创意军，东线俄国则在11月爆发十月革命。'});
+    hr(d,[[46.25,13.58],[45.75,12.20]],HC.war);
+   },[['fill',HC.italy,'退守皮亚韦河的意大利王国'],['fill',HC.germany,'突破卡波雷托的德奥联军'],['dline',HC.war,'1917年10—11月意军后撤150公里路线'],['dot',HC.war,'卡波雷托与皮亚韦河'],['dot','#2a2018','罗马与维也纳']])
+ ]},
+{id:'history-ww1-end',ch:5,title:'第一次世界大战（下）：皇帝会战耗光老本，百日反攻推倒四大帝国',short:'第一次世界大战（下）',en:'World War I (Part III): The Kaiserschlacht, the Hundred Days Offensive, and the Fall of Four Empires',period:'1918年',c:HC.germany,
+ scenes:[
+  hs('1918年1—3月','布列斯特和约与百万美军登船','苏俄在布列斯特签字退战使德军得以将五十余师西调；美国远征军在法国大西洋港口圣纳泽尔源源登陆。',[[44.0,-5.0],[55.5,26.0]],d=>{
+    ha(d,'ger19GermanEmpire1871',HC.germany,{fillOpacity:.30});ha(d,'ruBrestLitovsk1918',HC.war,{fillOpacity:.28});ha(d,'fr18France1815',HC.france,{fillOpacity:.26});ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.22});
+    hp(d,'wwe_saintnazaire',{note:'美国远征军主力由此等大西洋港口源源登陆，每月逾二十万人。'});
+    hp(d,'gww_spa',{note:'鲁登道夫在比利时斯帕大本营策划春季决战，力求赶在美军成军前打垮英法。'});
+    hp(d,'gww_berlin',{note:'德国通过铁路网将东线五十余个师紧急调往西线战场。'});
+    hp(d,'wwe_brest',{kind:'battle',left:1,note:'1918年3月3日苏俄在此签下割地和约退出大战。'});
+    hr(d,[[52.08,23.66],[52.52,13.41],[50.49,5.86]],HC.route);
+   },[['fill',HC.germany,'西调东线兵力的德意志帝国'],['fill',HC.war,'1918年3月《布列斯特和约》苏俄割让区'],['fill',HC.france,'迎接美军登陆的法兰西'],['dline',HC.route,'1918年春德军五十余师自东线西调路线'],['dot',HC.war,'布列斯特—立陶夫斯克'],['dot','#2a2018','圣纳泽尔、斯帕与柏林']]),
+  hs('1918年3—7月','皇帝会战与福煦统帅联军','德军自斯帕指挥连发五次春季攻势二度逼近马恩河；协约国推举福煦统一指挥西线联军挡住攻势。',[[47.0,-1.5],[52.5,8.5]],d=>{
+    ha(d,'fr18France1815',HC.france,{fillOpacity:.28});ha(d,'fr18Belgium1795',HC.lowlands,{fillOpacity:.26});ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.24});ha(d,'ger19GermanEmpire1871',HC.germany,{fillOpacity:.28});
+    hp(d,'k_london',{note:'劳合·乔治内阁紧急把驻英本土预备队全数渡海送往法国救场。'});
+    hp(d,'w_paris',{kind:'battle',note:'德军超远程大炮轰击市区；福煦统一调度联军在马恩河挡住德军。'});
+    hp(d,'wwe_amiens',{kind:'battle',note:'3月米夏埃尔攻势直扑英法接合部枢纽亚眠，被联军死守挡住。'});
+    hp(d,'gww_spa',{left:1,note:'鲁登道夫在此连发五次春季攻势，暴风突击队精锐消耗殆尽。'});
+   },[['fill',HC.france,'由福煦统一指挥的协约国西线'],['fill',HC.germany,'发起春季攻势的德军'],['dot',HC.war,'亚眠与巴黎（马恩河防线）'],['dot','#2a2018','伦敦与斯帕']]),
+  hs('1918年8—9月','亚眠坦克反击与百日攻势','8月8日联军在亚眠发动坦克突袭成“德军黑日”，美法联军在凡尔登北侧默兹—阿贡总攻，砸穿兴登堡防线。',[[47.5,0.5],[51.8,8.0]],d=>{
     ha(d,'fr18France1815',HC.france,{fillOpacity:.28});ha(d,'fr18Belgium1795',HC.lowlands,{fillOpacity:.26});ha(d,'ger19GermanEmpire1871',HC.germany,{fillOpacity:.28});
-    hp(d,'gww_noyelles',{note:'十四万赴欧山东与河北华工的总医院与大本营，近九百名华工长眠于此。'});
-    hp(d,'w_paris',{kind:'battle',note:'德军春季攻势二度逼近马恩河，福煦统率英法美军于7月转入反攻。'});
-    hp(d,'w_verdun',{kind:'battle',note:'1918年9月起美法联军在北侧默兹—阿尔贡发起总攻，砸穿德军防线。'});
-    hp(d,'gww_spa',{left:1,note:'8月8日亚眠坦克战成“德军黑日”，鲁登道夫在此大本营承认败局。'});
-    hr(d,[[48.85,2.35],[49.89,2.30],[50.49,5.86]],HC.route);
-   },[['fill',HC.france,'转入百日大反攻的协约国西线'],['fill',HC.germany,'防线全线瓦解的德军'],['dline',HC.route,'1918年8—11月协约国百日反攻推进方向（示意）'],['dot',HC.war,'巴黎与凡尔登（反攻主战场）'],['dot','#2a2018','诺耶勒（华工墓园）与斯帕']])
+    hp(d,'wwe_amiens',{kind:'battle',note:'8月8日英加澳军配五百辆坦克奇袭，单日俘德军近两万，成“德军黑日”。'});
+    hp(d,'w_paris',{note:'福煦元帅晋升后统筹英、法、美、比四军轮番猛攻，不给德军喘息。'});
+    hp(d,'w_verdun',{kind:'battle',note:'9月起潘兴率一百二十万美军在此北侧发起默兹—阿贡总攻。'});
+    hp(d,'gww_spa',{left:1,note:'9月底兴登堡防线被砸穿，鲁登道夫在此向德皇承认战败。'});
+    hr(d,[[49.89,2.30],[50.49,5.86]],HC.war);
+   },[['fill',HC.france,'发起百日反攻的协约国联军'],['fill',HC.germany,'防线崩塌的德军'],['dline',HC.war,'1918年8—11月联军百日反攻推进方向'],['dot',HC.war,'亚眠与凡尔登（默兹—阿贡战场）'],['dot','#2a2018','巴黎与斯帕']]),
+  hs('1918年9—10月','巴尔干突破、梅吉多与奥斯曼停战','联军自塞萨洛尼基北上逼降保加利亚，艾伦比在巴勒斯坦梅吉多击溃土军，奥斯曼在穆德洛斯签字停战。',[[30.0,18.0],[45.5,39.0]],d=>{
+    ha(d,'osOttoman1914',HC.parthia,{fillOpacity:.30});ha(d,'osBalkanStates1878',HC.eeurope,{fillOpacity:.22});
+    hp(d,'wwe_salonika',{kind:'battle',note:'9月15日协约国东方军团由此北上突破，29日保加利亚率先投降。'});
+    hp(d,'wwe_mudros',{kind:'battle',note:'10月30日奥斯曼代表在爱琴海穆德洛斯港英舰上签字停战。'});
+    hp(d,'constantinople',{note:'陆路被断、叙利亚尽失后，青年土耳其党三巨头乘潜艇出逃。'});
+    hp(d,'wwe_megiddo',{kind:'battle',left:1,note:'9月19日英军艾伦比在此击溃土军主力，10月1日进占大马士革。'});
+   },[['fill',HC.parthia,'战败停战的奥斯曼帝国'],['fill',HC.eeurope,'巴尔干战场'],['dot',HC.war,'塞萨洛尼基、梅吉多与穆德洛斯'],['dot','#2a2018','君士坦丁堡']]),
+  hs('1918年10—11月','维托里奥韦内托与奥匈解体','意军在维托里奥韦内托击溃奥匈军队，布拉格与布达佩斯纷纷脱离，哈布斯堡帝国解体。',[[41.0,9.5],[51.5,21.0]],d=>{
+    ha(d,'itItaly1871',HC.italy,{fillOpacity:.32});ha(d,'wwAustriaHungary1914',HC.germany,{fillOpacity:.26});
+    hp(d,'rome',{note:'意大利在11月3日帕多瓦停战协定后进占特伦托与的里雅斯特。'});
+    hp(d,'wwe_vittorioveneto',{kind:'battle',note:'10月24日起迪亚兹率意军在此总攻，俘虏奥匈官兵逾四十万。'});
+    hp(d,'c3_vienna',{note:'11月11日卡尔一世退隐，统治中欧六百余年的王朝落幕。'});
+    hp(d,'wwe_budapest',{left:1,note:'10月底布拉格与布达佩斯相继宣告独立，奥匈二元帝国瓦解。'});
+   },[['fill',HC.italy,'赢得维托里奥韦内托大捷的意大利王国'],['fill',HC.germany,'分崩离析的奥匈帝国'],['dot',HC.war,'维托里奥韦内托'],['dot','#2a2018','罗马、维也纳与布达佩斯']]),
+  hs('1918年11月','贡比涅森林餐车停战與诺耶勒华工','德国水兵起义与柏林革命后，德国文官代表在法国贡比涅森林餐车签字停战；诺耶勒长眠着赴欧华工。',[[47.5,-1.0],[54.5,15.0]],d=>{
+    ha(d,'fr18France1815',HC.france,{fillOpacity:.28});ha(d,'fr18Belgium1795',HC.lowlands,{fillOpacity:.26});ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.24});ha(d,'ger19GermanEmpire1871',HC.germany,{fillOpacity:.28});
+    hp(d,'k_london',{note:'11月11日11时停战钟声敲响，大英帝国赢下大战却背上沉重外债。'});
+    hp(d,'gww_noyelles',{note:'十四万赴欧华工大本营，停战后华工继续清理西线未爆炮弹与埋葬阵亡者。'});
+    hp(d,'wwe_compiegne',{kind:'battle',note:'11月11日清晨，德方代表在福煦元帅的2419D号餐车签字。'});
+    hp(d,'gww_berlin',{left:1,note:'11月9日柏林总罢工推翻霍亨索伦王朝，威廉二世次日逃往荷兰。'});
+   },[['fill',HC.france,'法兰西'],['fill',HC.britain,'大不列颠'],['fill',HC.germany,'停战易帜的德国'],['dot',HC.war,'贡比涅森林（停战餐车）'],['dot','#2a2018','伦敦、诺耶勒（华工墓园）与柏林']])
  ]},
 {id:'history-germany-versailles',ch:5,title:'十一月革命与凡尔赛：军方甩锅给魏玛，镜厅复仇与四万亿马克废纸',short:'十一月革命与凡尔赛',en:'The November Revolution and Versailles: The Stab-in-the-Back Myth, the Hall of Mirrors, and Hyperinflation',period:'1918—1923年',c:HC.germany,
  scenes:[
@@ -19584,7 +19698,7 @@ const HISTORY_ERAS=[
  {id:'empire-france-third-republic',name:'法兰西：第二帝国与第三共和国',en:'France: The Second Empire and the Third Republic',date:'1852—1914年',c:HC.france,items:[['history-france-second-empire'],['history-france-commune']]},
  {id:'empire-frederick2',name:'德意志、低地与意大利：从腓特烈二世到文艺复兴、查理五世与三十年战争',en:'Germany, Low Countries and Italy: From Frederick II to the Renaissance, Charles V, and the Thirty Years’ War',date:'843—1648年',c:HC.germany,items:[['history-germany-frederick2'],['history-germany-electors'],['history-germany-golden-bull'],['history-germany-hansa'],['history-lowlands-flanders'],['history-germany-swiss',0,2,'山口与长矛'],['history-lowlands-burgundy'],['history-germany-swiss',3,5,'雇佣兵之国'],['history-germany-charles5'],['history-germany-thirty-years-1',0,4,'三十年战争（上）'],['history-germany-thirty-years-1',5,6,'丹麦参战与华伦斯坦'],['history-germany-thirty-years-2'],['history-germany-thirty-years-3'],['history-italy-vespers'],['history-italy-venice'],['history-italy-condottieri'],['history-italy-renaissance'],['history-italy-wars-1'],['history-italy-charles8'],['history-italy-savonarola'],['history-italy-louis12'],['history-italy-julius2'],['history-italy-wars-2']]},
  {id:'empire-germany-prussia',name:'德意志：从普鲁士崛起到1848年议会',en:'Germany: From the Rise of Prussia to the Frankfurt Parliament',date:'1640—1850年',c:HC.germany,items:[['history-germany-prussia-rise'],['history-germany-frederick-great'],['history-germany-reform'],['history-germany-1848']]},
- {id:'empire-germany-reich',name:'德意志：铁血统一、威廉帝国与魏玛共和',en:'Germany: Unification, the Kaiserreich and Weimar',date:'1850—1923年',c:HC.germany,items:[['history-germany-bismarck'],['history-germany-franco-prussian'],['history-germany-wilhelm2'],['history-germany-ww1-west'],['history-germany-versailles']]},
+ {id:'empire-germany-reich',name:'德意志：铁血统一、威廉帝国与魏玛共和',en:'Germany: Unification, the Kaiserreich and Weimar',date:'1850—1923年',c:HC.germany,items:[['history-germany-bismarck'],['history-germany-franco-prussian'],['history-germany-wilhelm2'],['history-germany-ww1-west'],['history-ww1-middle'],['history-ww1-end'],['history-germany-versailles']]},
  {id:'empire-italy-habsburg',name:'意大利：西班牙与奥地利治下',en:'Italy under Spain and Austria',date:'1559—1796年',c:HC.italy,items:[['history-italy-spanish'],['history-italy-savoy']]},
  {id:'empire-italy-risorgimento',name:'意大利：从拿破仑到拉特兰条约',en:'Italy: From Napoleon to the Lateran Treaty',date:'1796—1929年',c:HC.italy,items:[['history-italy-napoleon'],['history-italy-mazzini'],['history-italy-cavour'],['history-italy-rome'],['history-italy-lateran']]},
  {id:'empire-lowlands-modern',name:'低地诸国：从黄金时代到比利时中立',en:'The Low Countries: From the Golden Age to Belgian Neutrality',date:'1648—1914年',c:HC.lowlands,items:[['history-lowlands-golden-age'],['history-lowlands-batavian'],['history-lowlands-belgium'],['history-lowlands-congo']]},
@@ -19992,8 +20106,10 @@ const TREE_ROWS={
  'history-germany-bismarck/0':['germany',1864,1866,'1850—1866年'],
  'history-germany-franco-prussian/0':[['germany','france'],1870,1871,'1870—1871年'],
  'history-germany-wilhelm2/0':['germany',1890,1913,'1871—1914年'],
- 'history-germany-ww1-west/0':[['germany','france','lowlands'],1914.5,1918,'1914—1918年'],
- 'history-germany-versailles/0':[['germany','france'],1919,1923,'1918—1923年'],
+ 'history-germany-ww1-west/0':[['germany','france','britain','lowlands','italy','eeurope','persia'],1914.5,1915,'1914—1915年'],
+ 'history-ww1-middle/0':[['germany','france','britain','lowlands','italy','eeurope'],1916.5,1917,'1916—1917年'],
+ 'history-ww1-end/0':[['germany','france','britain','lowlands','italy','persia','america'],1918.4,1918,'1918年'],
+ 'history-germany-versailles/0':[['germany','france','britain','italy','china'],1919,1923,'1918—1923年'],
  'history-france-second-empire/0':['france',1856,1869,'1852—1870年'],
  'history-france-commune/0':['france',1875,1913,'1871—1914年'],
  'history-faith-avignon/0':[['faith','france'],1296,1303,'1294—1303年'],

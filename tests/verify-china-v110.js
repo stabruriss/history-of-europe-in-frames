@@ -97,7 +97,7 @@ const chars=s=>s.replace(/<[^>]+>/g,'').replace(/（[A-Za-z][^）]*）/g,'').rep
   const tail=r.stations.slice(r.stations.indexOf('history-china-tang'));
   assert.deepEqual(tail.filter(id=>id.startsWith('history-china-')),['history-china-tang',...ORDER]);
   assert.ok(tail.includes('history-persia-mongols')&&tail.includes('history-america-exchange'),JSON.stringify(tail));
-  assert.equal(tail.at(-1),'history-china-republic');
+  assert.deepEqual(tail.slice(-2),['history-china-republic','history-germany-versailles']);
   assert.deepEqual(r.eras.slice(-3),[['china-song',ORDER.slice(0,4)],['china-yuan-ming',ORDER.slice(4,7)],['china-qing',ORDER.slice(7)]]);
   assert.deepEqual(r.sharedMongols,['persia','eeurope','china']);
   assert.deepEqual(r.sharedExchange,['america','china']);

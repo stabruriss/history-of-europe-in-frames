@@ -14,7 +14,9 @@ const SECTIONS={
  'history-germany-bismarck':['俾斯麦与普奥战争',5,6],
  'history-germany-franco-prussian':['普法战争与德意志帝国',5,6],
  'history-germany-wilhelm2':['威廉二世与世界政策',5,6],
- 'history-germany-ww1-west':['一战西线',5,6],
+ 'history-germany-ww1-west':['第一次世界大战（上）',5,6],
+ 'history-ww1-middle':['第一次世界大战（中）',5,6],
+ 'history-ww1-end':['第一次世界大战（下）',5,6],
  'history-germany-versailles':['十一月革命与凡尔赛',5,6],
  'history-france-second-empire':['拿破仑三世与第二帝国',5,6],
  'history-france-commune':['巴黎公社与第三共和国',5,6],
@@ -24,11 +26,12 @@ const GERMANY_ORDER=[
  'history-france-seven-years/0','history-france-empire/0','history-germany-reform/0',
  'history-france-waterloo/0','history-germany-1848/0','history-germany-bismarck/0',
  'history-germany-franco-prussian/0','history-germany-wilhelm2/0','history-germany-ww1-west/0',
- 'history-germany-versailles/0',
+ 'history-ww1-middle/0','history-ww1-end/0','history-germany-versailles/0',
 ];
 const FRANCE_ORDER=[
  'history-france-louis-bonaparte/0','history-france-second-empire/0','history-germany-franco-prussian/0',
- 'history-france-commune/0','history-germany-ww1-west/0','history-germany-versailles/0',
+ 'history-france-commune/0','history-germany-ww1-west/0','history-ww1-middle/0',
+ 'history-ww1-end/0','history-germany-versailles/0',
 ];
 const chars=s=>s.replace(/<[^>]+>/g,'').replace(/（[A-Za-z][^）]*）/g,'').replace(/\s/g,'').length;
 
@@ -52,8 +55,8 @@ const chars=s=>s.replace(/<[^>]+>/g,'').replace(/（[A-Za-z][^）]*）/g,'').rep
    return {
     germanyLine:(({name,parent,from,to})=>({name,parent,from,to}))(HISTORY_BRANCHES.find(b=>b.id==='germany')),
     franceLine:(({name,parent,from,to})=>({name,parent,from,to}))(HISTORY_BRANCHES.find(b=>b.id==='france')),
-    germanyStretch:gi>=0?gStops.slice(gi,gi+13):[],
-    franceStretch:fi>=0?fStops.slice(fi,fi+6):[],
+    germanyStretch:gi>=0?gStops.slice(gi,gi+15):[],
+    franceStretch:fi>=0?fStops.slice(fi,fi+8):[],
     report:metroUI.layoutReport(),
     shared:{
      sevenYears:TREE_ROWS['history-france-seven-years/0'][0],
@@ -61,6 +64,8 @@ const chars=s=>s.replace(/<[^>]+>/g,'').replace(/（[A-Za-z][^）]*）/g,'').rep
      waterloo:TREE_ROWS['history-france-waterloo/0'][0],
      francoPrussian:TREE_ROWS['history-germany-franco-prussian/0'][0],
      ww1West:TREE_ROWS['history-germany-ww1-west/0'][0],
+     ww1Mid:TREE_ROWS['history-ww1-middle/0'][0],
+     ww1End:TREE_ROWS['history-ww1-end/0'][0],
      versailles:TREE_ROWS['history-germany-versailles/0'][0],
     },
     sections:Object.fromEntries(ids.map(id=>{const e=by(id);return [id,{short:e.short,period:e.period,ch:e.ch,scenes:e.scenes.length,sources:e.sources.length,
@@ -77,8 +82,10 @@ const chars=s=>s.replace(/<[^>]+>/g,'').replace(/（[A-Za-z][^）]*）/g,'').rep
   for(const l of ['france','spain','germany'])assert.ok(r.shared.empire.includes(l),'Napoleonic Empire includes '+l);
   for(const l of ['france','eeurope','germany'])assert.ok(r.shared.waterloo.includes(l),'Waterloo includes '+l);
   for(const l of ['germany','france'])assert.ok(r.shared.francoPrussian.includes(l),'Franco-Prussian War includes '+l);
-  for(const l of ['germany','france','lowlands'])assert.ok(r.shared.ww1West.includes(l),'WW1 Western Front includes '+l);
-  for(const l of ['germany','france'])assert.ok(r.shared.versailles.includes(l),'Versailles 1919 includes '+l);
+  for(const l of ['germany','france','britain','lowlands','italy','eeurope','persia'])assert.ok(r.shared.ww1West.includes(l),'WW1 Part I includes '+l);
+  for(const l of ['germany','france','britain','lowlands','italy','eeurope'])assert.ok(r.shared.ww1Mid.includes(l),'WW1 Part II includes '+l);
+  for(const l of ['germany','france','britain','lowlands','italy','persia','america'])assert.ok(r.shared.ww1End.includes(l),'WW1 Part III includes '+l);
+  for(const l of ['germany','france','britain','italy','china'])assert.ok(r.shared.versailles.includes(l),'Versailles 1919 includes '+l);
   for(const [id,[short,ch,n]] of Object.entries(SECTIONS)){
    const s=r.sections[id];
    assert.deepEqual([s.short,s.ch,s.scenes],[short,ch,n],id);

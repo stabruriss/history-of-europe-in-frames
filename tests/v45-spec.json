@@ -1333,7 +1333,11 @@
    "history-britain-victoria/0",
    "history-britain-reform-1867/0",
    "history-britain-lords/0",
+   "history-germany-ww1-west/0",
+   "history-ww1-middle/0",
    "history-britain-suffrage-1918/0",
+   "history-ww1-end/0",
+   "history-germany-versailles/0",
    "history-britain-suffrage-1928/0"
   ],
   "france": [
@@ -1408,6 +1412,8 @@
    "history-germany-franco-prussian/0",
    "history-france-commune/0",
    "history-germany-ww1-west/0",
+   "history-ww1-middle/0",
+   "history-ww1-end/0",
    "history-germany-versailles/0"
   ]
  },
@@ -1515,11 +1521,18 @@
   "history-germany-ww1-west/0": [
    "germany",
    "france",
-   "lowlands"
+   "britain",
+   "lowlands",
+   "italy",
+   "eeurope",
+   "persia"
   ],
   "history-germany-versailles/0": [
    "germany",
-   "france"
+   "france",
+   "britain",
+   "italy",
+   "china"
   ],
   "history-italy-lateran/0": [
    "italy",
@@ -1528,6 +1541,23 @@
   "history-france-dutch-war/0": [
    "france",
    "lowlands"
+  ],
+  "history-ww1-middle/0": [
+   "germany",
+   "france",
+   "britain",
+   "lowlands",
+   "italy",
+   "eeurope"
+  ],
+  "history-ww1-end/0": [
+   "germany",
+   "france",
+   "britain",
+   "lowlands",
+   "italy",
+   "persia",
+   "america"
   ]
  },
  "fixes": [

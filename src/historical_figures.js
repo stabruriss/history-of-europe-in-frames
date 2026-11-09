@@ -36715,13 +36715,22 @@ const FIGURE_SCENES={
   "history-germany-ww1-west/0": [
     {
       "id": "wilhelm-ii-germany",
-      "when": "1914年8月",
-      "event": "批准按施里芬时刻表入侵中立国比利时，招致大不列颠对德宣战",
+      "when": "1914年7—8月",
+      "event": "向奥匈开出“空白支票”，批准按施里芬时刻表入侵比利时",
       "note": "威廉二世曾想在最后关头让德军只打俄国不打法国，被小毛奇告知“百万大军的列车时刻表无法临时调头”，只得下令西进。",
       "place": "gww_fig_spa"
     }
   ],
-  "history-germany-ww1-west/4": [
+  "history-germany-ww1-west/3": [
+    {
+      "id": "paul-von-hindenburg",
+      "when": "1914年8月",
+      "event": "退休三年后被紧急召回东普鲁士，在坦能堡包抄歼灭俄国第二集团军",
+      "note": "六十七岁的兴登堡与参谋长鲁登道夫乘专列赶赴东线，利用俄军两路脱节与明码电报打赢坦能堡之战，获封陆军元帅与全民偶像。",
+      "place": "gww_fig_spa"
+    }
+  ],
+  "history-ww1-middle/3": [
     {
       "id": "paul-von-hindenburg",
       "when": "1916年8月—1917年",
@@ -36730,6 +36739,15 @@ const FIGURE_SCENES={
       "place": "gww_fig_spa"
     },
     {
+      "id": "woodrow-wilson",
+      "when": "1917年4月",
+      "event": "因德国重启无限制潜艇战与齐默尔曼密电，提请国会对德宣战",
+      "note": "威尔逊赴国会发表演说称“世界必须为民主而变得安全”，动员两千四百万青年登记征兵、向欧洲派出两百万远征军。",
+      "place": "amwi_fig_whitehouse"
+    }
+  ],
+  "history-ww1-middle/4": [
+    {
       "id": "georges-clemenceau",
       "when": "1917年11月",
       "event": "七十六岁出任法国总理兼陆军部长，以“我一直在打仗”压下主和浪潮",
@@ -36737,10 +36755,10 @@ const FIGURE_SCENES={
       "place": "gww_fig_paris"
     }
   ],
-  "history-germany-ww1-west/5": [
+  "history-ww1-end/2": [
     {
       "id": "paul-von-hindenburg",
-      "when": "1918年3—8月",
+      "when": "1918年3—9月",
       "event": "指挥春季“皇帝会战”耗尽最后精锐，在8月8日亚眠“德军黑日”后防线崩盘",
       "note": "趁美军未齐连发五次渗透攻势，却因步兵跑不过补给线而力竭；8月起在福煦联军与数百辆坦克反击下退守兴登堡防线并全线瓦解。",
       "place": "gww_fig_spa"

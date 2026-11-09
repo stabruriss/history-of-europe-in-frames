@@ -20,9 +20,9 @@ const SECTIONS={
  'history-lowlands-congo':'煤铁与刚果',
 };
 const ITALY=['history-germany-charles5','history-italy-spanish','history-italy-savoy','history-italy-napoleon','history-italy-mazzini',
- 'history-italy-cavour','history-italy-rome','history-italy-lateran'];
+ 'history-italy-cavour','history-italy-rome','history-germany-ww1-west','history-ww1-middle','history-ww1-end','history-germany-versailles','history-italy-lateran'];
 const LOWLANDS=['history-germany-thirty-years-3','history-lowlands-golden-age','history-france-dutch-war','history-britain-glorious',
- 'history-lowlands-batavian','history-lowlands-belgium','history-lowlands-congo','history-germany-ww1-west'];
+ 'history-lowlands-batavian','history-lowlands-belgium','history-lowlands-congo','history-germany-ww1-west','history-ww1-middle','history-ww1-end'];
 const CHINA=/见“(五代十国|北宋|辽金西夏|南宋|蒙古崛起|明|明清易代|清前期|清中晚期|辛亥民初)”一节/;
 
 // One fact per scene that the section turns on, so that a later rewrite cannot quietly drop it.
