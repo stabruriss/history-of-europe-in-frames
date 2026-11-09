@@ -23,7 +23,7 @@ const treeReport=sel=>{
   timeOrder:HISTORY_ERAS.flatMap(era=>era.items.map(([id,from=0])=>id+'/'+from)).map((k,i)=>[k,TREE_ROWS[k][1],i]).sort((a,b)=>a[1]-b[1]||a[2]-b[2]).map(x=>x[0])};
 };
 function checkTree(r,label){
- assert.equal(r.items.length,396,label);
+ assert.equal(r.items.length,403,label);
  // Navigation order (DOM order) is the time order, and it reads top to bottom.
  assert.deepEqual(r.items.map(i=>i.key),r.timeOrder,label+' rows follow the time order');
  for(let i=1;i<r.items.length;i++)assert.ok(r.items[i].top>r.items[i-1].top,label+' row order runs top to bottom at '+r.items[i].key);
@@ -49,7 +49,7 @@ function checkTree(r,label){
  const top=k=>r.items.find(i=>i.key===k).top;
  assert.ok(top('history-poleis/0')<top('history-rome-kings/0')&&top('history-rome-kings/0')<top('history-sparta/0'),label+' Rome kings beside archaic Greece');
  assert.ok(top('history-celts/0')<top('history-rome-punic/0')&&top('history-rome-punic/0')<top('history-eastern-kingdoms/0'),label+' Punic Wars beside the Hellenistic kingdoms');
- assert.equal(r.futures.length,14,label);assert.match(r.futures.map(f=>f.text).join(' '),/两德分合/,label);assert.match(r.futures.map(f=>f.text).join(' '),/后来的十字军/,label);assert.match(r.futures.map(f=>f.text).join(' '),/国民革命、抗战与内战/,label);assert.ok(r.futureLane,label);
+ assert.equal(r.futures.length,12,label);assert.match(r.futures.map(f=>f.text).join(' '),/两德分合/,label);assert.match(r.futures.map(f=>f.text).join(' '),/冬季战争与北欧模式/,label);assert.match(r.futures.map(f=>f.text).join(' '),/国民革命、抗战与内战/,label);assert.ok(r.futureLane,label);
  assert.ok(r.futures.every(f=>f.top>top('history-rome-augustus/0')),label+' unwritten topics grow below');
  assert.match(r.futures.map(f=>f.text).join(' '),/第五共和国/,label);
  assert.ok(r.futures.every(f=>f.top>top('history-empire-west-fall/0')),label+' the medieval shoot grows below 476');
@@ -156,6 +156,10 @@ function checkTree(r,label){
   await p.click('#next');s=await state(p);assert.deepEqual([s.id,s.scene],['history-germany-thirty-years-2',0]);
   await p.click('#next');s=await state(p);assert.deepEqual([s.id,s.scene],['history-germany-thirty-years-3',0]);
   await p.click('#next');s=await state(p);assert.deepEqual([s.id,s.scene],['history-france-revocation',0]);
+  await p.click('#next');s=await state(p);assert.deepEqual([s.id,s.scene],['history-faith-toleration',0]);
+  await p.click('#next');s=await state(p);assert.deepEqual([s.id,s.scene],['history-faith-revolution',0]);
+  await p.click('#next');s=await state(p);assert.deepEqual([s.id,s.scene],['history-france-consulate',0]);
+  await p.click('#next');s=await state(p);assert.deepEqual([s.id,s.scene],['history-faith-pius9',0]);
   await p.click('#next');s=await state(p);assert.deepEqual([s.id,s.scene],['history-italy-lateran',0]);
   assert.ok(await p.$eval('#next',e=>e.disabled),'end of the 基督教 line');
   await p.click('#toc .tree-item[data-key="history-faith-israel/0"]');
@@ -208,7 +212,7 @@ function checkTree(r,label){
   await p.evaluate(()=>go('history-palaces'));await p.click('#toc .tree-line[data-line="rome"]');s=await state(p);
   assert.equal(s.id,'history-rome-site');
   // A full ride on each line from the root: every ↓ lands lower in the tree, and the footer counts stations.
-  for(const [line,startId,count,last] of [['prehistory','history-migration',3,'history-farming'],['trunk','history-migration',23,'history-hellenistic-end'],['rome','history-migration',33,'history-empire-west-end'],['east','history-migration',52,'history-empire-fall-1453'],['west','history-migration',40,'history-west-louis-pious'],['spain','history-migration',69,'history-spain-1898'],['france','history-migration',112,'history-germany-versailles'],['lowlands','history-migration',55,'history-germany-ww1-west'],['germany','history-migration',79,'history-germany-versailles'],['italy','history-migration',70,'history-italy-lateran'],['britain','history-migration',86,'history-britain-suffrage-1928'],['faith','history-migration',68,'history-italy-lateran'],['egypt','history-migration',12,'history-arab-conquest'],['persia','history-migration',39,'history-ottoman-kemal'],['eeurope','history-migration',26,'history-eeurope-october'],['crusade','history-migration',44,'history-crusade-orders'],['nordic','history-nordic-before',13,'history-nordic-peace'],['america','history-america-before',21,'history-america-wilson'],['china','history-migration',25,'history-china-republic']]){
+  for(const [line,startId,count,last] of [['prehistory','history-migration',3,'history-farming'],['trunk','history-migration',23,'history-hellenistic-end'],['rome','history-migration',33,'history-empire-west-end'],['east','history-migration',52,'history-empire-fall-1453'],['west','history-migration',40,'history-west-louis-pious'],['spain','history-migration',69,'history-spain-1898'],['france','history-migration',112,'history-germany-versailles'],['lowlands','history-migration',55,'history-germany-ww1-west'],['germany','history-migration',79,'history-germany-versailles'],['italy','history-migration',70,'history-italy-lateran'],['britain','history-migration',86,'history-britain-suffrage-1928'],['faith','history-migration',72,'history-italy-lateran'],['egypt','history-migration',12,'history-arab-conquest'],['persia','history-migration',39,'history-ottoman-kemal'],['eeurope','history-migration',26,'history-eeurope-october'],['crusade','history-migration',44,'history-crusade-orders'],['nordic','history-nordic-before',17,'history-nordic-modern'],['america','history-america-before',21,'history-america-wilson'],['china','history-migration',25,'history-china-republic']]){
    await p.evaluate(({line,startId,count,last})=>{
     const _rc=renderCard,_rs=renderScenes,_f=fit,_m=markTreeCurrent,_c=makeCtx;renderCard=()=>{};renderScenes=()=>{};fit=()=>{};markTreeCurrent=()=>{};makeCtx=()=>new Proxy({},{get:()=>()=>{}});
     try{
@@ -290,6 +294,6 @@ function checkTree(r,label){
    await m.close();
   }
   assert.deepEqual(errors,[]);
-  console.log('PASS: history tree — 396 rows on 13 lines (希腊, 罗马, 东罗马, 中世纪西欧, 西班牙, 法兰西, 德意志, 意大利, 基督教, 埃及, 波斯—阿拉伯, 东欧, 中国) with 10 forks (东欧 off 希腊 at the Black Sea colonies, 埃及 and 波斯—阿拉伯 off the trunk at the early states, 基督教 at 前1400 on the outermost lane, 东罗马 off 罗马 at 395 and 中世纪西欧 at 476, 西班牙 off 中世纪西欧 with the Visigoths, 法兰西 and 意大利 at Verdun; 东罗马 to 1056, 基督教 through its shared stations to 1054); every earlier start sits higher; no overlapping rows, the five time slices included; nodes on their lanes; Rome beside Greece and the Hellenistic kingdoms; unwritten topics as dashed shoots; time ticks and compressed-prehistory breaks; metro lines: pick a line (button or the drawn line itself) in place, ↑↓ / 上一条 / 下一条 ride only that line in time order, line lit root-to-fork, everything else greyed; draggable, remembered, clamped column; sidebar at 1440 and 1024; expanded view with branch names; phone and short-landscape sheets; geography mode untouched; offline; no page errors.');
+  console.log('PASS: history tree — 403 rows on 13 lines (希腊, 罗马, 东罗马, 中世纪西欧, 西班牙, 法兰西, 德意志, 意大利, 基督教, 埃及, 波斯—阿拉伯, 东欧, 中国) with 10 forks (东欧 off 希腊 at the Black Sea colonies, 埃及 and 波斯—阿拉伯 off the trunk at the early states, 基督教 at 前1400 on the outermost lane, 东罗马 off 罗马 at 395 and 中世纪西欧 at 476, 西班牙 off 中世纪西欧 with the Visigoths, 法兰西 and 意大利 at Verdun; 东罗马 to 1056, 基督教 through its shared stations to 1054); every earlier start sits higher; no overlapping rows, the five time slices included; nodes on their lanes; Rome beside Greece and the Hellenistic kingdoms; unwritten topics as dashed shoots; time ticks and compressed-prehistory breaks; metro lines: pick a line (button or the drawn line itself) in place, ↑↓ / 上一条 / 下一条 ride only that line in time order, line lit root-to-fork, everything else greyed; draggable, remembered, clamped column; sidebar at 1440 and 1024; expanded view with branch names; phone and short-landscape sheets; geography mode untouched; offline; no page errors.');
  }catch(e){console.error(e);process.exitCode=1;}finally{await Promise.race([browser.close(),new Promise(r=>setTimeout(r,200))]);browser.process()?.kill('SIGKILL');process.exit(process.exitCode||0);}
 })();

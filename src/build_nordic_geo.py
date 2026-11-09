@@ -63,6 +63,53 @@ SWEDEN_1629 = U(SWEDEN_1523, ESTONIA, LIVONIA, INGRIA)
 regions['nSweden1629'] = SWEDEN_1629
 regions['nSweden1648'] = U(SWEDEN_1629, JAMTLAND, GOTLAND, OSEL, HALLAND, POMERANIA, BREMEN_VERDEN)
 
+# v111 (老无 2026-11-08): 北欧 from 1648 to 1920. Inserted into src/build_nordic_geo.py by patch_v111.py, before the 西班牙 block.
+# Scania as drawn for v73 ran over the Sound onto Zealand (Copenhagen); cut Zealand out of it, here and in nScania.
+from shapely.geometry import Point
+ZEALAND = next(p for p in getattr(land, 'geoms', [land]) if p.contains(Point(11.8, 55.5)))
+SCANIA = SCANIA.difference(ZEALAND.buffer(.01)).buffer(0)
+regions['nScania'] = SCANIA
+# The lands that changed hands after 1648.
+BOHUSLAN = L([(11.0, 57.7), (11.0, 59.1), (11.5, 59.15), (11.8, 58.9), (12.1, 58.5), (12.35, 58.2), (12.0, 57.7)]).intersection(NORWAY).buffer(0)
+TRONDELAG = L([(9.3, 62.6), (10.6, 65.0), (12.2, 65.1), (14.3, 64.9), (12.2, 63.6), (12.2, 62.5)]).difference(JAMTLAND.buffer(.01)).buffer(0)
+BORNHOLM = L([(14.6, 54.95), (14.6, 55.35), (15.25, 55.35), (15.25, 54.95)])
+ALAND = L([(19.3, 59.8), (19.3, 60.5), (21.2, 60.5), (21.2, 59.8)])
+# Old Finland: Viborg and Kexholm (here the part of INGRIA north of the gulf) went to Russia in 1721, the land east of the Kymi in 1743.
+OLD_FINLAND_1721 = INGRIA.intersection(L([(27.5, 60.3), (27.5, 62.6), (33.5, 62.6), (33.5, 60.3)])).buffer(0)
+OLD_FINLAND_1743 = U(OLD_FINLAND_1721, L([(26.85, 60.4), (27.1, 61.3), (29.4, 61.95), (30.8, 62.3), (28.6, 60.6)]).intersection(FINLAND))
+# Swedish Pomerania after 1720: west of the Peene, with Rügen and Stralsund; Wismar.
+POMERANIA_1720 = POMERANIA.intersection(L([(12.0, 53.5), (12.0, 55.0), (13.85, 55.0), (13.85, 53.5)])).buffer(0)
+WISMAR = L([(11.25, 53.8), (11.25, 54.05), (11.65, 54.05), (11.65, 53.8)])
+regions['nBohuslan'] = BOHUSLAN
+regions['nTrondelag'] = TRONDELAG
+regions['nBornholm'] = BORNHOLM
+regions['nAland'] = ALAND
+regions['nOldFinland1721'] = OLD_FINLAND_1721
+regions['nOldFinland1743'] = OLD_FINLAND_1743
+# Denmark-Norway after the peace of Copenhagen (1660): without Scania, Halland, Bohuslän and Jämtland; Trøndelag and Bornholm back.
+DENMARK_PROPER = U(G('mDenmark800').difference(SCANIA.buffer(.01)).difference(HALLAND.buffer(.01)), BORNHOLM)
+NORWAY_1660 = NORWAY.difference(JAMTLAND.buffer(.01)).difference(BOHUSLAN.buffer(.01)).buffer(0)
+regions['nDenmarkNorway1660'] = U(DENMARK_PROPER, NORWAY_1660, ICELAND)
+# Sweden at its widest after 1660, and after the Great Northern War (1721).
+SWEDEN_1660 = U(regions['nSweden1648'], SCANIA, BOHUSLAN)
+regions['nSweden1660'] = SWEDEN_1660
+regions['nSweden1721'] = U(SWEDEN_1660.difference(U(ESTONIA, LIVONIA, INGRIA, BREMEN_VERDEN, POMERANIA, OLD_FINLAND_1721).buffer(.01)), POMERANIA_1720, WISMAR)
+# 1814: Norway leaves Denmark for a union with Sweden; Finland (with Old Finland, rejoined 1812) is a Russian grand duchy.
+regions['nNorway1814'] = NORWAY_1660
+regions['nSweden1815'] = U(SWEDEN, JAMTLAND, GOTLAND, SCANIA, HALLAND, BOHUSLAN)
+# The duchies: Schleswig (north of the Eider) and Holstein; north Schleswig voted to rejoin Denmark in 1920.
+EIDER = [(8.9, 54.25), (9.7, 54.3), (10.0, 54.42), (10.2, 54.45)]
+SCHLESWIG = L([(8.0, 54.25), (8.0, 55.38), (9.28, 55.43), (9.75, 55.47), (10.15, 54.8)] + list(reversed(EIDER)))  # north edge on the Kongeå
+HOLSTEIN = L(EIDER + [(11.25, 54.5), (11.0, 53.9), (10.4, 53.45), (9.6, 53.55), (8.6, 53.55), (8.4, 54.0)])
+regions['nSchleswig'] = SCHLESWIG
+regions['nHolstein'] = HOLSTEIN
+regions['nNorthSchleswig1920'] = SCHLESWIG.intersection(L([(7.9, 54.85), (7.9, 55.6), (10.2, 55.6), (10.2, 54.82)])).buffer(0)
+# The kingdom without the duchies, 1864—1920 (border on the Kongeå), and with north Schleswig after the 1920 plebiscite.
+KINGDOM_1864 = DENMARK_PROPER.difference(SCHLESWIG.buffer(.01)).buffer(0)
+regions['nDenmark1864'] = KINGDOM_1864
+# The electorate of Saxony, about 1700 (Augustus the Strong, also king of Poland).
+regions['nSaxony1700'] = L([(11.85, 50.25), (11.9, 51.45), (12.6, 51.95), (13.6, 51.9), (14.95, 51.45), (15.0, 50.9), (14.3, 50.85), (12.9, 50.3)])
+
 # ---------- 西班牙 ----------
 IBERIA = L([(-9.9, 36.0), (-9.9, 43.9), (-1.8, 43.5), (-0.7, 42.8), (0.7, 42.75), (3.3, 42.4), (3.5, 41.3), (0.6, 39.6), (-0.1, 38.0), (-2.0, 36.5), (-5.4, 35.9)])
 PORTUGAL = L([(-9.9, 36.9), (-9.9, 42.2), (-8.1, 42.2), (-6.2, 41.9), (-6.9, 41.0), (-7.0, 39.5), (-7.5, 38.2), (-7.4, 37.0)])

@@ -2927,6 +2927,86 @@ Object.assign(HS,{
   lcl4_ujiji:['乌吉吉','Ujiji',-4.911,29.675,'坦噶尼喀湖东岸的商站。'],
   lcl4_basankusu:['巴桑库苏','Basankusu',1.222,19.803,'刚果河支流交汇处的商站。'],
   lcl4_roux:['鲁','Roux',50.441,4.393,'沙勒罗瓦西北的煤矿镇。'],
+  nx_frederiksodde:['腓特烈索德','Frederiksodde (Fredericia)',55.567,9.75,'日德兰东岸的要塞，今弗雷德里西亚；1657年10月被瑞军攻破，日德兰全失。'],
+  nx_iversnaes:['伊弗斯内斯','Iversnæs',55.52,9.87,'菲英岛西岸的岬角；1658年1月30日瑞军从小贝尔特海峡的冰面上在此登岸。'],
+  nx_rudkobing:['鲁德克宾（朗厄兰岛）','Rudkøbing (Langeland)',54.937,10.71,'朗厄兰岛的港镇；1658年2月瑞军从菲英岛南边走冰到这里，再往洛兰岛去。'],
+  nx_nakskov:['纳克斯考（洛兰岛）','Nakskov (Lolland)',54.83,11.13,'洛兰岛西岸的设防小城；1658年2月瑞军围城，城里市民逼守军投降。'],
+  nx_vordingborg:['沃尔丁堡','Vordingborg',55.01,11.91,'西兰岛南端；1658年2月11日瑞军从法尔斯特岛走冰上岸，在此开始谈和。'],
+  nx_korsor:['科瑟','Korsør',55.33,11.14,'西兰岛西岸的港口；1658年8月7日瑞军在此登陆，第二次攻丹麦。'],
+  nx_sound:['厄勒海峡海战','Battle of the Sound',55.93,12.72,'1658年10月29日荷兰舰队在此打败瑞典舰队，给被围的哥本哈根打通海路。'],
+  nx_aarhus:['奥胡斯','Aarhus',56.157,10.21,'日德兰东岸的城市；1661年城边的王室庄园抵给了债主马塞利斯，后称马塞利斯堡。'],
+  nx_mon:['默恩岛','Møn',54.97,12.33,'西兰岛东南的岛屿；1664年整个岛抵给了马塞利斯。'],
+  nx_landskrona:['兰斯克鲁纳','Landskrona',55.87,12.83,'斯科讷西岸的要塞港；1677年7月瑞军在城外打败丹麦军，丹麦守城到1678年。'],
+  nx_kristianstad:['克里斯蒂安斯塔德','Kristianstad',56.03,14.16,'斯科讷东北的要塞城；1678年瑞军收复，丹麦军随即撤出斯科讷。'],
+  nx_kronan:['克罗南号沉没处（厄兰岛外）','Wreck of the Kronan',56.43,16.67,'1676年6月厄兰岛海战，瑞典旗舰克罗南号爆炸沉没，瑞典从此丢了制海权。'],
+  nx_lacko:['莱克厄城堡','Läckö Castle',58.675,13.22,'维纳恩湖南岸的城堡；摄政大臣德拉加尔迪1681年在收回中把它交还王室。'],
+  nx_karlskrona:['卡尔斯克鲁纳','Karlskrona',56.16,15.59,'布莱金厄的不冻港；1680年起建为瑞典海军基地，取代冬季封冻的斯德哥尔摩。'],
+  ny_humlebaek:['胡姆勒拜克','Humlebæk',55.961,12.525,'西兰岛东北岸的村子；1700年8月4日卡尔十二世在英荷舰队掩护下在此登陆。'],
+  ny_travendal:['特拉文达尔','Traventhal',53.97,10.33,'荷尔斯泰因的庄园；1700年8月18日丹麦在此签约退出战争。'],
+  ny_tonning:['滕宁','Tönning',54.32,8.94,'荷尔斯泰因—戈托普公爵的要塞；1700年3月起被丹麦军围攻。'],
+  ny_pernau:['佩尔瑙','Pernau (Pärnu)',58.383,24.5,'利沃尼亚的港口；1700年10月卡尔十二世在此登陆，东去解纳尔瓦之围。'],
+  ny_kliszow:['克利舒夫','Kliszów',50.6,20.5,'小波兰的村子；1702年7月瑞军在此打败萨克森—波兰军。'],
+  ny_lviv:['利沃夫','Lviv (Lemberg)',49.84,24.03,'波兰东南的商城；1704年8月被瑞军攻下，交了三十万银元的免烧钱。'],
+  ny_altranstadt:['阿尔特兰施泰特','Altranstädt',51.3,12.21,'莱比锡西边的村子；1706—1707年卡尔十二世在此驻跸，奥古斯特二世签约退位。'],
+  ny_lesnaya:['列斯纳亚','Lesnaya',53.54,30.92,'今白俄罗斯东部；1708年10月列文豪普特带来的辎重车队在此被俄军截住。'],
+  ny_perevolochna:['佩列沃洛奇纳','Perevolochna',48.817,34.117,'沃尔斯克拉河汇入第聂伯河处；1709年7月瑞军余部在此投降。'],
+  ny_bender:['本德尔','Bender',46.833,29.483,'奥斯曼的德涅斯特河要塞，今属摩尔多瓦；1709—1713年卡尔十二世在城外扎营。'],
+  ny_fredriksten:['弗雷德里克斯滕','Fredriksten',59.117,11.4,'挪威东南边境的要塞，俯瞰弗雷德里克斯哈尔德（今哈尔登）；1718年11月30日卡尔十二世在此中弹身亡。'],
+  ny_frederiksborg:['腓特烈堡','Frederiksborg',55.935,12.3,'西兰岛北部的丹麦王宫；1720年7月丹瑞在此签和约。'],
+  ny_norrkoping:['诺尔雪平','Norrköping',58.59,16.18,'瑞典东部的工商城；1719年被俄军登陆烧毁，1769年议会在此开会。'],
+  ny_umea:['于默奥','Umeå',63.825,20.26,'波的尼亚湾西岸的城镇；1720年7月被俄军桨帆船队焚毁。'],
+  ny_abo:['奥布','Åbo (Turku)',60.452,22.267,'芬兰的旧都，今图尔库；1743年俄瑞在此签和约。'],
+  ny_villmanstrand:['维尔曼斯特兰','Villmanstrand (Lappeenranta)',61.06,28.19,'芬兰东南的要塞；1741年瑞军在此大败，礼帽派的复仇战一开头就输了。'],
+  nz_opera:['斯德哥尔摩歌剧院','Royal Opera House, Stockholm',59.3297,18.0705,'古斯塔夫三世建的歌剧院，1782年落成，在王宫北面隔水相望的广场上（旧楼1891年拆除，原址建了今天的歌剧院）；1792年3月16日国王在此的假面舞会上中枪。'],
+  nz_puumala:['普马拉','Puumala',61.52,28.18,'瑞俄边境上的瑞方哨所，在今芬兰东南；1788年6月27日这里发生交火，通行的记载说是瑞方自导自演。'],
+  nz_anjala:['安贾拉','Anjala',60.69,26.83,'屈米河畔的庄园，离当时的瑞俄边界不远；1788年8月113名瑞典军官在此签署盟约。'],
+  nz_svensksund:['斯文斯克松德','Svensksund (Ruotsinsalmi)',60.45,26.95,'今芬兰科特卡外海的海峡；1790年7月9日瑞典舰队在此大败俄国舰队。'],
+  nz_kingsdeep:['国王深水道','Kongedybet',55.69,12.62,'哥本哈根港外的水道；1801年4月2日丹麦把旧船排成浮动炮台守在这里，被英国舰队打垮。'],
+  nz_koge:['克厄','Køge',55.457,12.182,'西兰岛东岸的小城；1807年8月29日韦尔斯利（后来的威灵顿公爵）在此击溃前来解围的丹麦部队。'],
+  nz_heligoland:['赫尔戈兰岛','Heligoland',54.18,7.885,'北海里的丹麦小岛；1807年9月被英国占领，成了向大陆走私英国货的据点，1814年正式割给英国。'],
+  nz_christiania:['克里斯蒂安尼亚（今奥斯陆）','Christiania (Oslo)',59.91,10.75,'挪威的首府；1814年后是挪威议会所在地。'],
+  nz_sveaborg:['斯韦阿堡','Sveaborg (Suomenlinna)',60.145,24.988,'赫尔辛基外海的海上要塞，号称“北方直布罗陀”；1808年5月6日守军投降。'],
+  nz_porvoo:['波尔沃','Porvoo (Borgå)',60.393,25.664,'赫尔辛基以东的主教城；1809年3月亚历山大一世在此接受芬兰四个等级宣誓。'],
+  nz_tornio:['托尔尼奥','Tornio',65.848,24.147,'波的尼亚湾北头的小城；1809年后托尔讷河成为瑞典与芬兰的界河。'],
+  nz_karlstad:['卡尔斯塔德','Karlstad',59.379,13.504,'瑞典西部韦姆兰省的首府；1809年3月阿德勒斯帕雷在此举兵，1905年瑞挪在此谈判分家。'],
+  nz_orebro:['厄勒布鲁','Örebro',59.274,15.207,'瑞典中部的城市；1810年8月21日议会在此选贝尔纳多特为王储。'],
+  nz_kvidinge:['克维丁厄','Kvidinge',56.135,13.048,'斯科讷北部的村子；1810年5月28日王储克里斯蒂安·奥古斯特在此操练时坠马身亡。'],
+  nz_kiel:['基尔','Kiel',54.323,10.139,'荷尔斯泰因的港城；1814年1月14日丹麦在此签约割让挪威。'],
+  nz_eidsvoll:['埃兹沃尔','Eidsvoll',60.33,11.26,'克里斯蒂安尼亚以北的庄园；1814年4—5月挪威制宪会议在此开会。'],
+  nz_moss:['莫斯','Moss',59.434,10.658,'奥斯陆峡湾东岸的城；1814年8月14日瑞挪在此签停战协定。'],
+  nz_fredriksten:['哈尔登（弗雷德里克斯滕）','Halden (Fredriksten)',59.118,11.393,'挪瑞边境的要塞城；1718年查理十二世死在要塞城下，1814年7月瑞军主力从这里越境。'],
+  nq_idstedt:['伊斯泰兹','Idstedt',54.567,9.505,'石勒苏益格城北的村子；1850年7月24—25日丹麦军在此击败两公国的德意志军队。'],
+  nq_danevirke:['丹麦墙','Danevirke',54.47,9.55,'石勒苏益格南部的古代防线；1864年2月丹麦军未经大战就从这里撤走。'],
+  nq_dybbol:['迪伯尔','Dybbøl',54.909,9.748,'松讷堡对岸的山头阵地；1864年4月18日被普军攻破。'],
+  nq_hjedding:['耶丁','Hjedding',55.79,8.61,'日德兰西部的村子；1882年丹麦第一家合作社乳品厂在此开工。'],
+  nq_esbjerg:['埃斯比约','Esbjerg',55.467,8.452,'日德兰西岸的港口；1868年决定在此建港，代替划归普鲁士的阿尔托纳，把农产品直接运往英国。'],
+  nq_askov:['阿斯科','Askov',55.469,9.105,'1864年新边界北边的村子；1865年勒丁民众高中的校长越界在此另办一所。'],
+  nq_stavanger:['斯塔万格','Stavanger',58.97,5.73,'挪威西南岸的港城；1825年7月4日“复兴号”载52人从这里出发去纽约。'],
+  nq_hull:['赫尔','Hull',53.744,-0.333,'英格兰东岸的港口；多数瑞典移民从哥德堡坐船到这里，再坐火车去利物浦换远洋船。'],
+  nq_newyork:['纽约','New York',40.71,-74.0,'1825年10月9日“复兴号”在此靠岸；后来北欧移民大多在这里上岸。'],
+  nq_chicago:['芝加哥','Chicago',41.88,-87.63,'中西部的大城；19世纪后期越来越多的瑞典移民进城做工，芝加哥是首选。'],
+  nq_stpaul:['圣保罗（明尼苏达）','Saint Paul, Minnesota',44.95,-93.09,'明尼苏达州首府；这一带是北欧农民移民最集中的地区之一。'],
+  nq_senate:['赫尔辛基参政院','Senate House, Helsinki',60.169,24.952,'参政院广场边的政府大楼；1904年6月16日芬兰总督博布里科夫在此中枪。'],
+  nq_tampere:['坦佩雷','Tampere',61.498,23.761,'芬兰的工业城，内战中红军的据点；1918年4月6日被白军攻下。'],
+  nq_hanko:['汉科','Hanko',59.823,22.968,'芬兰南端的港口；1918年4月3日约一万德军在此登陆。'],
+  nq_mariehamn:['玛丽港','Mariehamn',60.097,19.935,'奥兰群岛的首府；1921年6月国际联盟裁定群岛归芬兰。'],
+  fq_halle:['哈勒','Halle',51.482,11.97,'勃兰登堡选侯1694年办起大学的城市（今属萨克森-安哈尔特）；1695年弗兰克在此办穷孩子学校，1698年盖孤儿院，成了虔敬派的大本营。'],
+  fq_herrnhut:['赫恩胡特','Herrnhut',51.016,14.746,'萨克森东部的小镇；1722年钦岑多夫伯爵在自家庄园收留摩拉维亚弟兄会难民，由此建镇。'],
+  fq_aldersgate:['阿尔德斯门街（伦敦）','Aldersgate Street, London',51.519,-0.097,'伦敦城北的街道；1738年5月24日卫斯理在这里的一次聚会上“心里奇妙地暖了起来”。'],
+  fq_abbeville:['阿布维尔','Abbeville',50.105,1.835,'皮卡第的小城；1766年7月1日二十岁的骑士拉巴尔以渎神罪在此被斩首焚尸。'],
+  fq_polotsk:['波洛茨克（白俄罗斯）','Polotsk',55.486,28.785,'德维纳河边的城，1772年第一次瓜分波兰时归俄国；耶稣会解散后，会士在这一带照常办学。'],
+  fq_pavia:['帕维亚','Pavia',45.185,9.159,'伦巴第的大学城，当时属奥地利；1783年约瑟夫二世在此设总神学院之一。'],
+  fv2_orleans:['奥尔良（卢瓦雷省）','Orléans (Loiret)',47.902,1.909,'卢瓦尔河边的城；1791年卢瓦雷省约九成神父宣誓效忠宪法。'],
+  fv2_draguignan:['德拉吉尼昂（瓦尔省）','Draguignan (Var)',43.536,6.465,'普罗旺斯的山城，1800—1974年是瓦尔省的省会；1791年全省宣誓的神父约96%。'],
+  fv2_freetown:['弗里敦（塞拉利昂）','Freetown, Sierra Leone',8.484,-13.234,'西非海岸的英国据点；英国海军从奴隶船上截下的非洲人多在此上岸。'],
+  fv2_minden:['明登要塞','Minden',52.289,8.917,'威悉河边的普鲁士要塞；1837年11月至1839年4月科隆大主教德罗斯特被关押在此。'],
+  fp_lourdes:['卢尔德','Lourdes',43.095,-0.046,'比利牛斯山脚的小镇；1858年少女贝尔纳黛特说圣母在马萨比耶勒岩洞向她显现了十八次。'],
+  fp_posen:['波森（波兹南）','Posen (Poznań)',52.406,16.925,'普鲁士治下的波兰城市；文化斗争中格涅兹诺—波森大主教莱多霍夫斯基被捕入狱。'],
+  fp_kissingen:['巴特基辛根','Bad Kissingen',50.2,10.078,'巴伐利亚的温泉小城；1874年7月13日天主教徒库尔曼在此枪击俾斯麦，只伤了手。'],
+  fp_harzburg:['巴特哈尔茨堡','Bad Harzburg',51.88,10.562,'哈茨山北麓小城；1877年在此立起卡诺莎纪念柱，刻着俾斯麦那句“我们不去卡诺莎”。'],
+  fp_downe:['唐村（肯特）','Downe, Kent',51.334,0.053,'伦敦东南的村子；达尔文1842年起住在村边的唐宅，在这里写成《物种起源》。'],
+  fp_perugia:['佩鲁贾','Perugia',43.112,12.389,'翁布里亚的山城；1846—1878年佩奇（后来的利奥十三世）在此任主教。'],
+  fp_boeschepe:['布舍普','Boeschepe',50.801,2.691,'法国北部靠比利时边境的村子；1906年3月6日清点教堂财产时，一名屠夫在此被打死。'],
   gpr_berlin:['柏林（含波茨坦）','Berlin (with Potsdam)',52.52,13.405,'勃兰登堡与普鲁士都城；1685年《波茨坦敕令》接纳两万胡格诺难民，波茨坦亦为巨人掷弹兵团驻地。'],
   gpr_cleves:['克莱沃','Cleves (Kleve)',51.789,6.138,'莱茵河下游公国首府；1614年起归属霍亨索伦家族，是勃兰登堡在德意志西部的飞地。'],
   gpr_konigsberg:['柯尼斯堡（今加里宁格勒）','Königsberg (Kaliningrad)',54.707,20.511,'东普鲁士首府；1657年脱离波兰宗主权，1701年1月18日腓特烈一世在此自行戴冠称王。'],
@@ -12561,6 +12641,131 @@ const HISTORY_ENTRIES=[
     hp(d,'sp3_munster',{left:1,note:'1648年《威斯特伐利亚和约》签订地，新旧两教版图划定。'});
    },[['fill',HC.faith,'教宗国'],['fill',HC.spain,'西班牙与南欧天主教区'],['fill',HC.france,'天主教守住的法兰西'],['fill',HC.germany,'收复天主教的奥地利与波希米亚'],['dot',HC.war,'罗马（1622年五圣同封与1773年解散耶稣会）'],['dot','#2a2018','马德里、阿维拉、罗耀拉堡、维也纳与明斯特']])
  ]},
+{id:'history-faith-toleration',ch:6,title:'宽容与启蒙：强迫信仰太贵，国家改管教会',short:'宽容与启蒙',en:'Toleration and Enlightenment: Forcing Belief Costs Too Much, So the State Takes Over the Church',period:'1689—1789年',c:HC.faith,
+ scenes:[
+  hs('1687—1689年','宽容法','1689年威廉三世在威斯敏斯特批准宽容法；坎特伯雷大主教拒誓；法国四年前在枫丹白露走了反方向。',[[47.6,-6.5],[56.2,6.5]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.18});ha(d,'fr18France1678',HC.france,{fillOpacity:.12});
+    hp(d,'uk4_westminster',{kind:'battle',left:1,note:'1689年5月24日威廉三世在此批准《宽容法》。'});
+    hp(d,'w_canterbury',{note:'大主教桑克罗夫特拒向新王宣誓，1690年被革职。'});
+    hp(d,'bj2_fontainebleau',{note:'1685年法国在此废除南特敕令，走了反方向。'});
+   },[['fill',HC.britain,'大不列颠（示意）'],['fill',HC.france,'法国（示意）'],['dot',HC.war,'威斯敏斯特'],['dot','#2a2018','坎特伯雷与枫丹白露']]),
+  hs('1695—1791年','虔敬派与卫斯理','弗兰克在哈勒办孤儿院，摩拉维亚难民建赫恩胡特；卫斯理在伦敦阿尔德斯门街“心里暖了起来”，到布里斯托尔露天讲道。',[[49.6,-4.5],[54.6,16.5]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.14});
+    hp(d,'fq_halle',{kind:'battle',note:'1698年弗兰克在此盖孤儿院，靠药房和印刷所的收入养活。'});
+    hp(d,'fq_herrnhut',{note:'1722年钦岑多夫伯爵在自家庄园收留摩拉维亚难民。'});
+    hp(d,'fq_aldersgate',{kind:'battle',note:'1738年5月24日晚卫斯理在此的聚会上“心里奇妙地暖了起来”。'});
+    hp(d,'uk5_bristol',{left:1,note:'1739年4月2日卫斯理在城边砖场头一回露天讲道。'});
+   },[['fill',HC.britain,'大不列颠（示意）'],['dot',HC.war,'哈勒与阿尔德斯门街'],['dot','#2a2018','赫恩胡特与布里斯托尔']]),
+  hs('1696—1787年','启蒙与教会','卡拉斯受刑的图卢兹、拉巴尔受刑的阿布维尔、伏尔泰住的费尔内，和1787年签宽容敕令的凡尔赛。',[[42.8,-1.6],[51.0,7.4]],d=>{
+    ha(d,'fr18France1789',HC.france,{fillOpacity:.12});
+    hp(d,'fsb_toulouse',{note:'1762年新教布商卡拉斯在此被车裂。'});
+    hp(d,'fq_abbeville',{kind:'battle',note:'1766年7月1日拉巴尔在此被斩首，尸体和《哲学辞典》一起烧掉。'});
+    hp(d,'fen_ferney',{note:'伏尔泰在此写《论宽容》，信尾常署“Écr. l’inf.”。'});
+    hp(d,'fri_versailles',{left:1,note:'1787年11月路易十六在此签宽容敕令。'});
+   },[['fill',HC.france,'法国（示意）'],['dot',HC.war,'阿布维尔'],['dot','#2a2018','图卢兹、费尔内与凡尔赛']]),
+  hs('1750—1773年','驱逐耶稣会','葡萄牙1759年、法国1764年、西班牙1767年先后驱逐，1773年罗马解散全会；俄国和普鲁士不公布诏书。',[[36.5,-10.5],[57.5,32.0]],d=>{
+    ha(d,'sPortugal',HC.spain,{fillOpacity:.26});ha(d,'itPapal1815',HC.faith,{fillOpacity:.3});ha(d,'ruRussia1796',HC.eeurope,{fillOpacity:.1});
+    hp(d,'sc_lisbon',{kind:'battle',note:'1759年9月3日蓬巴尔下令驱逐全体耶稣会士。'});
+    hp(d,'c5_madrid',{note:'1767年卡洛斯三世驱逐耶稣会。'});
+    hp(d,'w_paris',{left:1,note:'1764年11月路易十五解散法国耶稣会。'});
+    hp(d,'rome',{kind:'battle',note:'1773年7月21日克莱芒十四世颁诏解散耶稣会。'});
+    hp(d,'fsy_berlin',{left:1,note:'腓特烈二世不准在普鲁士公布解散诏书。'});
+    hp(d,'fq_polotsk',{left:1,note:'叶卡捷琳娜二世不准公布诏书，会士在此照常办学。'});
+   },[['fill',HC.spain,'葡萄牙'],['fill',HC.faith,'教宗国'],['fill',HC.eeurope,'俄国（示意）'],['dot',HC.war,'里斯本与罗马'],['dot','#2a2018','马德里、巴黎、柏林与波洛茨克']]),
+  hs('1780—1790年','约瑟夫二世的国家教会','维也纳颁宽容特许令、关修院、设总神学院；1782年庇护六世从罗马赶来劝说，空手而回。',[[41.0,8.0],[51.5,20.5]],d=>{
+    ha(d,'sHabsburgAustria1556',HC.germany,{fillOpacity:.2});ha(d,'itPapal1815',HC.faith,{fillOpacity:.28});
+    hp(d,'c3_vienna',{kind:'battle',note:'1781年10月在此颁宽容特许令；1782年春庇护六世来此劝说。'});
+    hp(d,'rome',{note:'1782年2月27日庇护六世从这里动身北上。'});
+    hp(d,'sc_prague',{left:1,note:'1783年设总神学院之一，神父改由国家培养。'});
+    hp(d,'fq_pavia',{left:1,note:'奥属伦巴第的总神学院设在这里的大学。'});
+    hr(d,[[41.9,12.5],[44.5,11.3],[46.6,14.3],[48.2,16.4]],HC.faith);
+   },[['fill',HC.germany,'哈布斯堡领地（示意）'],['fill',HC.faith,'教宗国'],['dline',HC.faith,'1782年庇护六世北上维也纳（示意）'],['dot',HC.war,'维也纳'],['dot','#2a2018','罗马、布拉格与帕维亚']])
+ ]},
+{id:'history-faith-revolution',ch:6,title:'革命与教会：没收、宣誓、领国家工资',short:'革命与教会',en:'Revolution and the Church: Confiscated, Sworn In, Put on the State Payroll',period:'1789—1846年',c:HC.faith,
+ scenes:[
+  hs('1789—1791年','没收教产与宣誓分裂','1791年神父宣誓比例：布列塔尼约两成、下莱茵不到一成，卢瓦雷九成、瓦尔近乎全体；同年并吞阿维尼翁。',[[42.3,-5.2],[51.2,8.6]],d=>{
+    ha(d,'fr18France1789',HC.france,{fillOpacity:.12});ha(d,'fr18Avignon1791',HC.faith,{fillOpacity:.4});
+    hp(d,'w_paris',{note:'1790年7月议会在此通过《教士公民组织法》。'});
+    hp(d,'iw1_rennes',{left:1,note:'布列塔尼的神父约只有两成宣誓。'});
+    hp(d,'k_strasbourg',{note:'下莱茵省宣誓的神父只有约8%。'});
+    hp(d,'fv2_orleans',{left:1,note:'卢瓦雷省约九成神父宣誓。'});
+    hp(d,'fv2_draguignan',{note:'瓦尔省宣誓的神父约96%。'});
+    hp(d,'sl9_avignon',{kind:'battle',left:1,note:'1791年法国并吞了这块飞地：沃奈桑1274年起归教宗，阿维尼翁是1348年买下的。'});
+   },[['fill',HC.france,'法国（示意）'],['fill',HC.faith,'阿维尼翁与沃奈桑'],['dot',HC.war,'阿维尼翁'],['dot','#2a2018','巴黎、雷恩、斯特拉斯堡、奥尔良与德拉吉尼昂']]),
+  hs('1793—1795年','去基督教化','巴黎圣母院改成理性神殿；贡比涅的修女押往巴黎处死；里昂的游行让驴披上主教袍；拒誓神父关在罗什福尔。',[[44.8,-2.4],[50.2,5.6]],d=>{
+    ha(d,'fr18France1789',HC.france,{fillOpacity:.12});
+    hp(d,'w_paris',{kind:'battle',note:'1794年7月17日贡比涅的十六名加尔默罗修女在城东被送上断头台。'});
+    hp(d,'k_compiegne',{note:'1794年6月22日修女们在此被捕。'});
+    hp(d,'k_lyon',{left:1,note:'1793年11月特派员富歇在此办游行，让驴子披上主教的祭服。'});
+    hp(d,'fl14_rochefort',{note:'数百名拒誓神父关在这里的港口，等着流放。'});
+    hr(d,[[49.42,2.83],[48.85,2.35]],HC.war);
+   },[['fill',HC.france,'法国（示意）'],['dline',HC.war,'修女们被押往巴黎'],['dot',HC.war,'巴黎'],['dot','#2a2018','贡比涅、里昂与罗什福尔']]),
+  hs('1801—1814年','教务专约与教宗被俘','1801年在巴黎签教务专约；1809年教宗被押往萨沃纳，1812年转到枫丹白露，1814年5月回到罗马。',[[40.8,0.5],[49.8,14.5]],d=>{
+    ha(d,'fr18Empire1812',HC.france,{fillOpacity:.14});
+    hp(d,'w_paris',{note:'1801年7月15日在此签教务专约，1806年颁《帝国教理问答》。'});
+    hp(d,'fh2_fontainebleau',{left:1,note:'1812—1814年教宗被关在宫里。'});
+    hp(d,'fem_savona',{kind:'battle',note:'1809—1812年庇护七世被软禁于此。'});
+    hp(d,'rome',{note:'1814年5月庇护七世回城，同年夏天恢复耶稣会。'});
+   },[['fill',HC.france,'法兰西帝国（1812年，示意）'],['dot',HC.war,'萨沃纳'],['dot','#2a2018','巴黎、枫丹白露与罗马']]),
+  hs('1787—1838年','废奴','伦敦的废奴协会、贩奴港利物浦、西非的弗里敦和加勒比的牙买加；虚线示意三角贸易。',[[5.5,-80.5],[57.0,6.5]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.18});ha(d,'aCaribbean',HC.america,{fillOpacity:.22});
+    hp(d,'k_london',{kind:'battle',note:'1787年5月22日废奴协会在城里一家贵格会印刷所成立。'});
+    hp(d,'brs_liverpool',{left:1,note:'英国主要的贩奴港之一。'});
+    hp(d,'fv2_freetown',{note:'1808年后英国海军截下的奴隶船多在此放人。'});
+    hp(d,'bcrom_jamaica',{note:'1834年起奴隶改称“学徒”，1838年8月1日全部获释。'});
+    hr(d,[[53.4,-3.0],[8.5,-13.2],[18.0,-76.8],[53.4,-3.0]],HC.route);
+   },[['fill',HC.britain,'大不列颠（示意）'],['fill',HC.america,'加勒比（示意）'],['dline',HC.route,'三角贸易（示意）'],['dot',HC.war,'伦敦'],['dot','#2a2018','利物浦、弗里敦与牙买加']]),
+  hs('1815—1846年','王座与祭坛','巴黎签神圣同盟、拉梅内办《未来报》；1832年罗马发通谕；科隆大主教被押往明登要塞。',[[41.0,-1.5],[53.5,14.0]],d=>{
+    ha(d,'fr18France1815',HC.france,{fillOpacity:.12});ha(d,'ger19Prussia1815',HC.germany,{fillOpacity:.14});ha(d,'itPapal1815',HC.faith,{fillOpacity:.28});
+    hp(d,'w_paris',{note:'1815年9月26日三国君主在此签神圣同盟；1830年10月《未来报》在此创刊。'});
+    hp(d,'rome',{kind:'battle',note:'1832年3月拉梅内一行获教宗接见，8月通谕《惊异你们》发出。'});
+    hp(d,'fri_cologne',{kind:'battle',left:1,note:'1837年11月20日大主教德罗斯特在此被捕。'});
+    hp(d,'fv2_minden',{note:'大主教在要塞里关到1839年4月。'});
+   },[['fill',HC.france,'法国（示意）'],['fill',HC.germany,'普鲁士（示意）'],['fill',HC.faith,'教宗国（示意）'],['dot',HC.war,'罗马与科隆'],['dot','#2a2018','巴黎与明登']])
+ ]},
+{id:'history-faith-pius9',ch:6,title:'庇护九世与文化斗争：教宗丢了国土，抓紧了教会',short:'庇护九世与文化斗争',en:'Pius IX and the Culture Wars: The Pope Loses His State and Tightens His Grip on the Church',period:'1846—1914年',c:HC.faith,
+ scenes:[
+  hs('1846—1864年','无染原罪与谬论要录','加埃塔写信问主教、罗马宣布信条、卢尔德的显现，以及1858年莫尔塔拉被带走的博洛尼亚。',[[40.6,-1.6],[45.8,14.6]],d=>{
+    ha(d,'itPapal1815',HC.faith,{fillOpacity:.3});
+    hp(d,'rome',{kind:'battle',note:'1854年12月8日庇护九世在圣彼得大教堂宣布圣母无染原罪为信条。'});
+    hp(d,'wo_gaeta',{note:'1849年庇护九世避居于此，写信询问各地主教。'});
+    hp(d,'fp_lourdes',{note:'1858年3月25日贝尔纳黛特说显现的夫人自称“我是无染原罪”。'});
+    hp(d,'bb_bologna',{left:1,note:'1858年6月教宗国宪兵在此带走六岁的莫尔塔拉。'});
+   },[['fill',HC.faith,'教宗国（示意）'],['dot',HC.war,'罗马'],['dot','#2a2018','加埃塔、卢尔德与博洛尼亚']]),
+  hs('1869—1871年','梵蒂冈大公会议','圣彼得大教堂里定下教宗无误，两个月后意大利军队进城；慕尼黑的德林格拒不接受，被绝罚。',[[40.8,6.0],[49.5,15.0]],d=>{
+    ha(d,'itLazio1870',HC.faith,{fillOpacity:.3});
+    hp(d,'rome',{kind:'battle',note:'1870年7月18日在圣彼得大教堂以533票对2票通过《永恒牧者》；9月20日意大利军队进城。'});
+    hp(d,'sh_munich',{note:'1871年4月德林格在此被慕尼黑大主教绝罚。'});
+   },[['fill',HC.faith,'1860年后只剩拉齐奥的教宗国（示意）'],['dot',HC.war,'罗马'],['dot','#2a2018','慕尼黑']]),
+  hs('1871—1887年','文化斗争','柏林立法，富尔达的主教会议号召抵抗，波森大主教入狱；1874年基辛根的枪击，1877年哈尔茨堡的卡诺莎柱。',[[47.2,5.5],[55.2,18.5]],d=>{
+    ha(d,'wwGermany1914',HC.germany,{fillOpacity:.14});
+    hp(d,'fsy_berlin',{kind:'battle',note:'1872年5月14日俾斯麦在帝国议会说“我们不去卡诺莎”。'});
+    hp(d,'k_fulda',{note:'普鲁士主教们在此开会，号召信徒消极抵抗。'});
+    hp(d,'fp_posen',{note:'大主教莱多霍夫斯基被捕入狱。'});
+    hp(d,'fp_kissingen',{note:'1874年7月13日天主教徒库尔曼在此枪击俾斯麦。'});
+    hp(d,'fp_harzburg',{left:1,note:'1877年在此立起刻着俾斯麦那句话的卡诺莎纪念柱。'});
+   },[['fill',HC.germany,'德意志帝国（示意）'],['dot',HC.war,'柏林'],['dot','#2a2018','富尔达、波森、巴特基辛根与巴特哈尔茨堡']]),
+  hs('1859—1910年','进化论与圣经考证','达尔文在肯特的唐村写书，1860年牛津博物馆里的交锋；罗马不禁《物种起源》，1907年却谴责“现代主义”。',[[41.2,-3.5],[53.2,13.8]],d=>{
+    ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.14});
+    hp(d,'sh_oxford',{kind:'battle',left:1,note:'1860年6月30日在新落成的大学博物馆里，威尔伯福斯主教与赫胥黎交锋。'});
+    hp(d,'fp_downe',{note:'达尔文在唐村写成《物种起源》，1860年病着没去牛津。'});
+    hp(d,'rome',{note:'1907年庇护十世在此谴责“现代主义”。'});
+   },[['fill',HC.britain,'大不列颠（示意）'],['dot',HC.war,'牛津'],['dot','#2a2018','唐村与罗马']]),
+  hs('1864—1891年','新事通谕','佩奇当过驻布鲁塞尔大使、做了三十二年佩鲁贾主教；克特勒在美因茨，曼宁在伦敦；1891年罗马发通谕。',[[41.2,-1.2],[52.2,13.6]],d=>{
+    hp(d,'rome',{kind:'battle',note:'1891年5月15日利奥十三世在此发《新事通谕》。'});
+    hp(d,'fp_perugia',{left:1,note:'1846—1878年佩奇在此任主教。'});
+    hp(d,'lb_brussels',{note:'1843—1846年佩奇在此任教廷大使。'});
+    hp(d,'k_london',{left:1,note:'1889年八十一岁的曼宁枢机参与调停码头罢工。'});
+    hp(d,'k_mainz',{note:'克特勒1850—1877年任美因茨主教。'});
+   },[['dot',HC.war,'罗马'],['dot','#2a2018','佩鲁贾、布鲁塞尔、伦敦与美因茨']]),
+  hs('1894—1906年','政教分离','德雷福斯在雷恩重审；巴黎通过分离法；布舍普清点教产时死了人；阿尔萨斯当时属德国，至今仍守教务专约。',[[42.3,-5.2],[51.3,8.6]],d=>{
+    ha(d,'fr18France1815',HC.france,{fillOpacity:.12});ha(d,'fAlsace',HC.germany,{fillOpacity:.32});
+    hp(d,'w_paris',{kind:'battle',note:'1905年12月9日政教分离法公布。'});
+    hp(d,'iw1_rennes',{left:1,note:'1899年德雷福斯在此的军事法庭重审，再被判有罪。'});
+    hp(d,'fp_boeschepe',{note:'1906年3月6日清点教堂财产时，一名屠夫在此被打死。'});
+    hp(d,'k_strasbourg',{note:'1905年属德国，至今仍守1801年教务专约。'});
+   },[['fill',HC.france,'法国（示意）'],['fill',HC.germany,'阿尔萨斯（1871—1918年属德国，示意）'],['dot',HC.war,'巴黎'],['dot','#2a2018','雷恩、布舍普与斯特拉斯堡']])
+ ]},
 {id:'history-china-neolithic',ch:7,title:'新石器聚落与万邦时代',short:'仰韶与良渚',en:'Neolithic China: Yangshao to Liangzhu',period:'约前7000—前1900年',c:HC.china,
  scenes:[
   hs('约前7000—前1900年','南稻北粟与良渚古城','黄河流域种粟、长江流域种稻；前3300年起良渚筑起古城与大型水利，龙山时代城址林立。',[[27.0,104.0],[40.0,122.5]],d=>{
@@ -18396,6 +18601,222 @@ const HISTORY_ENTRIES=[
     hp(d,'np_uppsala',{note:'1654年6月乌普萨拉：克里斯蒂娜退位，王位传给表兄查理十世。'});
    },[['fill',HC.nordic,'1648年的瑞典（颜色深处为新得的德意志领地）'],['fill',HC.germany,'神圣罗马帝国'],['dot',HC.war,'1648年布拉格'],['dot','#2a2018','新领地、谈判地、最后驻地与退位地']])
  ]},
+{id:'history-nordic-ice',ch:13,title:'踏冰渡海：瑞典靠打仗养军队，丹麦国王趁败收权',short:'踏冰渡海',en:'Across the Ice: Sweden Lives off War, Denmark’s King Takes Power in Defeat',period:'1648—1697年',c:HC.nordic,
+ scenes:[
+  hs('1654—1657年','退位与再开战','克里斯蒂娜退位，卡尔十世出兵波兰，一度占了华沙；俄国、丹麦先后对瑞典开战，瑞军陷在波兰。',[[50.8,12.8],[60.6,26.0]],d=>{
+    ha(d,'nSweden1648',HC.nordic,{fillOpacity:.2});ha(d,'nLivonia1621',HC.nordic,{fillOpacity:.38});ha(d,'plCommonwealth1569',HC.war,{fillOpacity:.12});
+    hp(d,'np_uppsala',{note:'1654年6月乌普萨拉：克里斯蒂娜退位，表兄卡尔十世同日加冕。'});
+    hp(d,'np_stockholm',{left:1,note:'1655年斯德哥尔摩：议会定下收回四分之一赐地，又被说动去打波兰。'});
+    hp(d,'ote_warsaw',{note:'1655年华沙：瑞军进城，一批波兰大贵族向卡尔十世称臣；次年波兰人反攻。'});
+    hp(d,'nd_riga',{kind:'battle',note:'1656年里加：俄国转而攻打瑞典，围城不下。'});
+    hp(d,'ko_torun',{left:1,note:'1657年6月托伦：卡尔十世在营中接到丹麦宣战的消息。'});
+    hr(d,[[53.43,14.55],[52.41,16.93],[52.23,21.01]],HC.nordic);hr(d,[[52.23,21.01],[53.01,18.6],[54.0,15.0]],HC.war);
+   },[['fill',HC.nordic,'瑞典及其属地，颜色深处为利沃尼亚（示意）'],['fill',HC.war,'波兰—立陶宛（示意）'],['dline',HC.nordic,'1655年进军华沙（示意）'],['dline',HC.war,'1657年撤出波兰（示意）'],['dot',HC.war,'里加'],['dot','#2a2018','退位地、议会、华沙与托伦']]),
+  hs('1657—1658年','踏冰渡海','瑞军从日德兰走冰过小贝尔特，再绕南边的岛屿上西兰岛；丹麦在罗斯基勒割地求和。',[[54.2,8.4],[58.8,15.8]],d=>{
+    ha(d,'nDenmarkNorway1660',HC.italy,{fillOpacity:.18});ha(d,'nSweden1648',HC.nordic,{fillOpacity:.14});ha(d,'nScania',HC.nordic,{fillOpacity:.5});ha(d,'nHalland',HC.nordic,{fillOpacity:.5});ha(d,'nBohuslan',HC.nordic,{fillOpacity:.5});ha(d,'nBornholm',HC.nordic,{fillOpacity:.4,dashArray:'4 4'});ha(d,'nTrondelag',HC.nordic,{fillOpacity:.4,dashArray:'4 4'});
+    hp(d,'nx_frederiksodde',{kind:'battle',left:1,note:'1657年10月腓特烈索德：要塞被攻破，丹麦丢了整个日德兰。'});
+    hp(d,'nx_iversnaes',{kind:'battle',note:'1658年1月30日伊弗斯内斯：瑞军从冰上冲上菲英岛，两个骑兵中队落水淹死。'});
+    hp(d,'nx_rudkobing',{left:1,note:'1658年2月朗厄兰：瑞军避开大贝尔特最宽的水面，从南边一岛一岛走冰。'});
+    hp(d,'nx_nakskov',{note:'1658年2月纳克斯考：瑞军围城，城里市民逼守军投降。'});
+    hp(d,'nx_vordingborg',{note:'1658年2月11日沃尔丁堡：瑞军上了西兰岛，英国使节在此开始调停。'});
+    hp(d,'uk4_roskilde',{left:1,note:'1658年2月罗斯基勒：丹麦割地约占国土三分之一，初约在附近的塔斯楚普签订。'});
+    hp(d,'gh_copenhagen',{note:'哥本哈根：2月中旬瑞军前锋离城只有二十多公里。'});
+    hr(d,[[55.38,9.62],[55.52,9.87],[55.4,10.38],[55.31,10.79]],HC.war);hr(d,[[55.06,10.6],[54.94,10.71],[54.83,11.13],[54.77,11.87],[55.01,11.91],[55.45,12.15],[55.64,12.08]],HC.war);
+   },[['fill',HC.italy,'割地后的丹麦—挪威（示意）'],['fill',HC.nordic,'瑞典；颜色深处为1658年割得的斯科讷、布莱金厄、哈兰与博胡斯兰，虚线为1660年还回的博恩霍尔姆与特伦德拉格（示意）'],['dline',HC.war,'1658年1—2月瑞军走冰的路线（示意）'],['dot',HC.war,'腓特烈索德与伊弗斯内斯'],['dot','#2a2018','沿途岛屿、和约地与丹麦都城']]),
+  hs('1658—1665年','哥本哈根与丹麦的专制','瑞军再攻丹麦，哥本哈根靠市民和荷兰舰队守住；1660年国王借市民和教士之手改成世袭专制。',[[54.6,9.6],[56.6,13.4]],d=>{
+    ha(d,'nDenmarkNorway1660',HC.italy,{fillOpacity:.2});ha(d,'nSweden1660',HC.nordic,{fillOpacity:.2});ha(d,'nScania',HC.nordic,{fillOpacity:.42});ha(d,'nHalland',HC.nordic,{fillOpacity:.42});
+    hp(d,'nx_korsor',{kind:'battle',note:'1658年8月7日科瑟：卡尔十世撕毁和约，第二次登陆西兰岛。'});
+    hp(d,'nd_kronborg',{kind:'battle',left:1,note:'1658年克伦堡：瑞军攻下海峡收税的城堡，抢走了许多陈设。'});
+    hp(d,'nx_sound',{kind:'battle',note:'1658年10月29日：荷兰舰队打败瑞典舰队，给哥本哈根送进粮食和援兵。'});
+    hp(d,'gh_copenhagen',{note:'哥本哈根：1659年2月10日夜至11日晨挡住瑞军强攻；1660年10月城门关闭，贵族让出权力。'});
+    hp(d,'nx_aarhus',{note:'1661年奥胡斯：王室庄园抵给债主马塞利斯。'});
+    hp(d,'nx_mon',{left:1,note:'1664年默恩岛：为抵战时的供货和借款，整个岛归了马塞利斯。'});
+   },[['fill',HC.italy,'1660年以后的丹麦—挪威（示意）'],['fill',HC.nordic,'瑞典；颜色深处为1660年不还的斯科讷三省（示意）'],['dot',HC.war,'登陆、城堡与海战'],['dot','#2a2018','丹麦都城与抵债的王室土地']]),
+  hs('1658—1686年','斯科讷：先许旧法，再改造','马尔默宣誓、隆德设大学；斯科讷战争中农民倒向丹麦，打完仗瑞典改法律、改教会、外地招兵。',[[55.2,12.2],[56.9,17.0]],d=>{
+    ha(d,'nDenmarkNorway1660',HC.italy,{fillOpacity:.14});ha(d,'nScania',HC.nordic,{fillOpacity:.36});ha(d,'nHalland',HC.nordic,{fillOpacity:.24});
+    hl(d,'斯纳普哈内出没的北部林区（示意）','Snapphane forests',56.36,14.05,HC.war);
+    hp(d,'nm_malmo',{left:1,note:'1658年4月马尔默：三省代表对着一把空椅子宣誓效忠。'});
+    hp(d,'nk_lund',{kind:'battle',note:'隆德：1666年瑞典在此设大学；1676年12月城北一战，卡尔十一世获胜。'});
+    hp(d,'nk_helsingborg',{kind:'battle',note:'1676年6月赫尔辛堡：克里斯蒂安五世带兵登陆，斯科讷大部倒向丹麦。'});
+    hp(d,'nx_landskrona',{kind:'battle',left:1,note:'1677年兰斯克鲁纳：瑞军城外获胜，丹麦军仍守着要塞。'});
+    hp(d,'nx_kristianstad',{note:'1678年克里斯蒂安斯塔德：瑞军收复，丹麦军撤出斯科讷。'});
+    hp(d,'nx_kronan',{kind:'battle',left:1,note:'1676年6月厄兰岛外：瑞典旗舰克罗南号爆炸沉没，海上归丹麦和荷兰。'});
+   },[['fill',HC.italy,'丹麦（示意）'],['fill',HC.nordic,'1658年割给瑞典的斯科讷、布莱金厄（颜色深）与哈兰（示意）'],['dot',HC.war,'斯科讷战争的战场'],['dot','#2a2018','宣誓地与要塞']]),
+  hs('1680—1697年','收回与分田养兵','1680年议会通过大收回，国王只对上帝负责；收回的庄园拨给军官，农户按约合养士兵。',[[55.0,11.0],[62.6,27.2]],d=>{
+    ha(d,'nSweden1660',HC.nordic,{fillOpacity:.2});ha(d,'nLivonia1621',HC.war,{fillOpacity:.36});ha(d,'nEstonia1561',HC.nordic,{fillOpacity:.3});
+    hl(d,'各省立约：约四户农家合养一名步兵（示意）','Allotment system',61.2,15.2,HC.nordic);
+    hp(d,'np_stockholm',{note:'1680年斯德哥尔摩：议会通过大收回，答复国王只对上帝负责。'});
+    hp(d,'nx_lacko',{note:'1681年莱克厄城堡：摄政大臣德拉加尔迪交出这座有二百四十八个房间的城堡。'});
+    hp(d,'nx_karlskrona',{note:'1680年卡尔斯克鲁纳：新建的海军基地，冬天不封冻。'});
+    hp(d,'nd_riga',{note:'里加：利沃尼亚的庄园几乎全是德意志贵族的封地，收回在这里最狠。'});
+   },[['fill',HC.nordic,'瑞典本土与属地（示意）'],['fill',HC.war,'收回最狠的利沃尼亚（示意）'],['dot','#2a2018','议会、交还的城堡、新海军基地与里加']])
+ ]},
+{id:'history-nordic-great-northern',ch:13,title:'大北方战争：少年国王赢了开头，瑞典输掉了大国地位',short:'大北方战争',en:'The Great Northern War: A Boy King Wins the Opening, Sweden Loses Its Empire',period:'1697—1772年',c:HC.nordic,
+ scenes:[
+  hs('1697—1700年','少年国王与三国同盟','萨克森、丹麦、俄国约定三面进攻；卡尔十二世先登陆西兰岛逼丹麦退出，再渡海解纳尔瓦之围。',[[53.5,8.4],[60.6,29.8]],d=>{
+    ha(d,'nDenmarkNorway1660',HC.italy,{fillOpacity:.14});ha(d,'nSweden1660',HC.nordic,{fillOpacity:.18});ha(d,'nLivonia1621',HC.nordic,{fillOpacity:.36});ha(d,'nEstonia1561',HC.nordic,{fillOpacity:.36});ha(d,'nIngria1617',HC.nordic,{fillOpacity:.36});
+    hp(d,'np_stockholm',{note:'1697年12月斯德哥尔摩：卡尔十二世加冕不宣誓，自己戴上王冠。'});
+    hp(d,'ny_tonning',{kind:'battle',note:'1700年3月滕宁：丹麦军围攻瑞典盟友荷尔斯泰因—戈托普的要塞。'});
+    hp(d,'ny_humlebaek',{kind:'battle',note:'1700年8月4日胡姆勒拜克：卡尔十二世登陆西兰岛，直逼哥本哈根。'});
+    hp(d,'ny_travendal',{left:1,note:'1700年8月18日特拉文达尔：丹麦签约退出，赔荷尔斯泰因公爵二十六万塔勒。'});
+    hp(d,'nd_riga',{kind:'battle',note:'1700年2月起里加：奥古斯特二世的萨克森军来攻利沃尼亚。'});
+    hp(d,'ny_pernau',{left:1,note:'1700年10月佩尔瑙：卡尔十二世渡海登陆，带约一万人东去。'});
+    hp(d,'nd_narva',{kind:'battle',note:'1700年11月纳尔瓦：瑞军阵亡约七百人，击溃围城的俄军。'});
+    hr(d,[[56.16,15.59],[55.7,13.5],[55.96,12.53]],HC.nordic);hr(d,[[58.38,24.5],[58.9,26.5],[59.38,28.19]],HC.nordic);
+   },[['fill',HC.italy,'丹麦—挪威（示意）'],['fill',HC.nordic,'瑞典及其属地；颜色深处为同盟要瓜分的波罗的海诸省（示意）'],['dline',HC.nordic,'1700年登陆西兰岛与东援纳尔瓦（示意）'],['dot',HC.war,'1700年的三处战场'],['dot','#2a2018','加冕地、和约地与登陆港']]),
+  hs('1701—1709年','波兰六年与波尔塔瓦','瑞军在波兰和萨克森追打奥古斯特、沿途勒索，再东征俄国，转进乌克兰，波尔塔瓦大败后余部投降。',[[45.8,11.2],[57.6,36.6]],d=>{
+    ha(d,'plCommonwealth1569',HC.celt,{fillOpacity:.14});ha(d,'nSaxony1700',HC.celt,{fillOpacity:.3});ha(d,'ruRussia1689',HC.eeurope,{fillOpacity:.1});ha(d,'osOttoman1683',HC.parthia,{fillOpacity:.1});
+    hp(d,'nd_riga',{kind:'battle',note:'1701年7月里加：瑞军强渡道加瓦河，打败萨克森军。'});
+    hp(d,'ny_kliszow',{kind:'battle',note:'1702年7月克利舒夫：瑞军获胜；同月克拉科夫交了六万银元免烧钱。'});
+    hp(d,'ote_warsaw',{left:1,note:'1704年华沙：瑞典扶立莱什琴斯基为波兰国王。'});
+    hp(d,'ny_lviv',{note:'1704年8月利沃夫：城破，交了三十万银元免烧钱。'});
+    hp(d,'ny_altranstadt',{note:'1706年阿尔特兰施泰特：奥古斯特签约退位、交出帕特库尔，萨克森供瑞军过冬。'});
+    hp(d,'ny_lesnaya',{kind:'battle',note:'1708年10月列斯纳亚：援军的辎重车队被俄军截住。'});
+    hp(d,'rus3_poltava',{kind:'battle',left:1,note:'1709年7月8日波尔塔瓦：瑞军约一万人死伤被俘，国王躺在担架上。'});
+    hp(d,'ny_perevolochna',{kind:'battle',left:1,note:'1709年7月11日佩列沃洛奇纳：渡不过河的瑞军余部一万多人投降。'});
+    hp(d,'ny_bender',{note:'本德尔：国王带约三千人逃进奥斯曼境内。'});
+    hr(d,[[56.95,24.11],[54.35,18.65],[52.23,21.01],[50.6,20.5],[49.84,24.03],[52.23,21.01],[51.3,12.21]],HC.nordic);hr(d,[[51.3,12.21],[52.23,21.01],[53.68,23.83],[54.05,29.92],[53.54,30.92],[52.0,32.6],[49.59,34.55],[48.82,34.12],[46.83,29.48]],HC.war);
+   },[['fill',HC.celt,'波兰—立陶宛与萨克森（示意）'],['fill',HC.eeurope,'俄国（示意）'],['fill',HC.parthia,'奥斯曼（示意）'],['dline',HC.nordic,'1701—1706年追打奥古斯特（示意）'],['dline',HC.war,'1707—1709年东征与败逃（示意）'],['dot',HC.war,'战场'],['dot','#2a2018','索钱的城市、和约地与本德尔']]),
+  hs('1709—1718年','本德尔的国王与抽空的本土','国王在奥斯曼借债五年；本土丢了波罗的海诸省、芬兰和德意志属地，靠紧急币撑到1718年。',[[44.2,8.2],[64.6,31.6]],d=>{
+    ha(d,'nSweden',HC.nordic,{fillOpacity:.2});ha(d,'nScania',HC.nordic,{fillOpacity:.2});ha(d,'nHalland',HC.nordic,{fillOpacity:.2});ha(d,'nBohuslan',HC.nordic,{fillOpacity:.2});ha(d,'nFinland',HC.eeurope,{fillOpacity:.26});ha(d,'nLivonia1621',HC.eeurope,{fillOpacity:.26});ha(d,'nEstonia1561',HC.eeurope,{fillOpacity:.26});ha(d,'nPomerania1648',HC.war,{fillOpacity:.3});
+    hp(d,'ny_bender',{kind:'battle',left:1,note:'本德尔：1713年2月苏丹派兵围营，卡尔十二世据屋抵抗后被俘。'});
+    hp(d,'nk_helsingborg',{kind:'battle',note:'1710年2月赫尔辛堡：瑞典将领斯滕博克打退丹麦军，斯科讷没有再倒向丹麦。'});
+    hp(d,'gh_stralsund',{kind:'battle',note:'施特拉尔松德：1714年11月国王骑马回到这里，1715年12月城破。'});
+    hp(d,'np_stockholm',{note:'斯德哥尔摩：1715—1719年铸紧急币四千二百多万枚，铜片当一银达勒用。'});
+    hp(d,'ny_fredriksten',{kind:'battle',note:'1718年11月30日弗雷德里克斯滕：国王在战壕里头部中弹身亡。'});
+    hr(d,[[46.83,29.48],[44.86,24.87],[47.53,21.63],[48.21,16.37],[49.45,11.08],[51.31,9.48],[54.31,13.08]],HC.nordic);
+   },[['fill',HC.nordic,'仍在瑞典手里的本土（示意）'],['fill',HC.eeurope,'1710—1714年被俄军占领的波罗的海诸省与芬兰（示意）'],['fill',HC.war,'1715年失守的波美拉尼亚（示意）'],['dline',HC.nordic,'1714年国王骑马回国（示意）'],['dot',HC.war,'本德尔、赫尔辛堡、施特拉尔松德与弗雷德里克斯滕'],['dot','#2a2018','铸紧急币的都城']]),
+  hs('1718—1721年','和约：卖地、割地、换和平','瑞典把不来梅—费尔登和斯德丁卖给汉诺威和普鲁士，把波罗的海东岸割给俄国，换回芬兰。',[[52.6,8.0],[64.6,31.0]],d=>{
+    ha(d,'ruRussia1725',HC.eeurope,{fillOpacity:.14});ha(d,'nLivonia1621',HC.eeurope,{fillOpacity:.4});ha(d,'nEstonia1561',HC.eeurope,{fillOpacity:.4});ha(d,'nIngria1617',HC.eeurope,{fillOpacity:.4});ha(d,'nOldFinland1721',HC.eeurope,{fillOpacity:.4});ha(d,'nBremenVerden1648',HC.germany,{fillOpacity:.4});ha(d,'nPomerania1648',HC.germany,{fillOpacity:.24});ha(d,'nSweden1721',HC.nordic,{fillOpacity:.22});
+    hp(d,'np_stockholm',{note:'1719—1720年斯德哥尔摩：与汉诺威、普鲁士签约，卖地共得三百万银元。'});
+    hp(d,'np_stade',{note:'不来梅—费尔登：1719年卖给汉诺威，得一百万银元。'});
+    hp(d,'np_stettin',{note:'斯德丁：1720年连同奥得河口卖给普鲁士，得二百万银元；北边的波美拉尼亚仍归瑞典。'});
+    hp(d,'ny_frederiksborg',{note:'1720年7月腓特烈堡：瑞典付给丹麦六十万银元，放弃海峡免税。'});
+    hp(d,'ny_norrkoping',{kind:'battle',note:'1719年诺尔雪平：俄军登陆烧城，逼瑞典在和谈中让步。'});
+    hp(d,'ny_umea',{kind:'battle',note:'1720年7月于默奥：俄军烧了城，想把瑞典舰队从斯德哥尔摩引开。'});
+    hp(d,'rus3_nystad',{note:'1721年尼斯塔德：割让波罗的海东岸，俄国交还芬兰并付二百万银元。'});
+   },[['fill',HC.eeurope,'俄国；颜色深处为1721年割让的利沃尼亚、爱沙尼亚、英格利亚与维堡、凯克斯霍尔姆（示意）'],['fill',HC.germany,'卖给汉诺威和普鲁士的德意志领地（示意）'],['fill',HC.nordic,'《尼斯塔德和约》后的瑞典与芬兰（示意）'],['dot',HC.war,'俄军焚掠的城市'],['dot','#2a2018','和约地与卖出的领地']]),
+  hs('1719—1772年','自由时代','四等级议会掌权；礼帽派两次复仇都输了，1743年丢掉芬兰东南一角；1772年古斯塔夫三世政变。',[[53.8,11.0],[64.2,30.6]],d=>{
+    ha(d,'nSweden1721',HC.nordic,{fillOpacity:.2});ha(d,'ruRussia1725',HC.eeurope,{fillOpacity:.14});ha(d,'nOldFinland1743',HC.eeurope,{fillOpacity:.36});
+    hp(d,'np_stockholm',{note:'斯德哥尔摩：四等级议会和秘密委员会所在；1772年8月19日古斯塔夫三世在此政变。'});
+    hp(d,'ny_villmanstrand',{kind:'battle',left:1,note:'1741年维尔曼斯特兰：礼帽派对俄开战，第一场大仗就败了。'});
+    hp(d,'ny_abo',{note:'1743年奥布：瑞典接受俄国中意的王储，换回芬兰大部。'});
+    hp(d,'ny_norrkoping',{note:'1769年诺尔雪平：亲俄的一派把议会挪到俄国舰队容易开到的地方，结果选输了。'});
+    hp(d,'gh_stralsund',{kind:'battle',note:'施特拉尔松德：1757—1762年礼帽派拿法国补贴打普鲁士，损失约三四万人。'});
+   },[['fill',HC.nordic,'瑞典与芬兰（示意）'],['fill',HC.eeurope,'俄国；颜色深处为1721年和1743年割让的芬兰东南部（示意）'],['dot',HC.war,'礼帽派两次复仇战'],['dot','#2a2018','议会、和约地与1769年的会场']])
+ ]},
+{id:'history-nordic-napoleon',ch:13,title:'芬兰与挪威易手：瑞典丢了芬兰换来挪威，丹麦站错了队',short:'芬兰与挪威易手',en:'Finland and Norway Change Hands: Sweden Trades Finland for Norway, Denmark Backs the Losing Side',period:'1772—1815年',c:HC.nordic,
+ scenes:[
+  hs('1772—1792年','古斯塔夫三世：拉平民，压贵族','法国的钱撑起1772年政变；1788年国王越过议会打俄国，芬兰的军官抗命；1789年国王拉三个平民等级压贵族，1792年遇刺。',[[54.8,11.0],[62.4,31.2]],d=>{
+    ha(d,'nSweden1815',HC.nordic,{fillOpacity:.2});ha(d,'nFinland',HC.nordic,{fillOpacity:.3});ha(d,'ruRussia1796',HC.eeurope,{fillOpacity:.14});ha(d,'nOldFinland1743',HC.eeurope,{fillOpacity:.3});
+    hp(d,'nz_opera',{note:'1792年3月16日歌剧院：午夜的假面舞会上，国王背后中枪，13天后死去。'});
+    hp(d,'nz_puumala',{kind:'battle',note:'1788年6月27日普马拉：边境交火被当成俄国先动手的证据；宪法不许国王不经议会打进攻战。'});
+    hp(d,'nz_anjala',{left:1,note:'1788年8月安贾拉：113名军官签约要求停战、召开议会，还派人去见叶卡捷琳娜二世。'});
+    hp(d,'nz_svensksund',{kind:'battle',note:'1790年7月9日斯文斯克松德：瑞典舰队大胜，8月按战前边界议和。'});
+    hp(d,'ote_petersburg',{note:'圣彼得堡：俄军主力正在南方打奥斯曼，古斯塔夫三世想趁虚而入。'});
+   },[['fill',HC.nordic,'瑞典与芬兰（示意）'],['fill',HC.eeurope,'俄国；颜色深处为1721、1743年割给俄国的旧芬兰（示意）'],['dot',HC.war,'普马拉交火与斯文斯克松德海战'],['dot','#2a2018','歌剧院、军官盟约地与俄国都城']]),
+  hs('1801—1807年','哥本哈根两次挨打','丹麦—挪威靠中立做生意；1801年英国舰队打垮港外的浮动炮台，1807年英军炮轰哥本哈根、掳走舰队，丹麦倒向拿破仑。',[[53.6,6.8],[60.4,22.6]],d=>{
+    ha(d,'nDenmarkNorway1660',HC.italy,{fillOpacity:.22});ha(d,'nSweden1815',HC.nordic,{fillOpacity:.14});
+    hp(d,'nz_kingsdeep',{kind:'battle',note:'1801年4月2日国王深水道：丹麦旧船排成浮动炮台，被纳尔逊的分舰队打垮。'});
+    hp(d,'gh_copenhagen',{left:1,kind:'battle',note:'1807年9月2—5日哥本哈根：英军炮轰，约195名平民死亡，一千多座房屋烧毁。'});
+    hp(d,'nz_koge',{left:1,kind:'battle',note:'1807年8月29日克厄：韦尔斯利击溃前来解围的丹麦部队。'});
+    hp(d,'nz_heligoland',{note:'1807年9月赫尔戈兰岛：英国占领，此后成了向大陆走私英国货的据点。'});
+    hp(d,'fem_tilsit',{left:1,note:'1807年7月提尔西特：法俄和谈，英国怕两国联手逼丹麦交出舰队。'});
+    hp(d,'nz_christiania',{note:'挪威：靠丹麦运粮；1808年起英国封锁挪威港口，挪威与丹麦的联系几乎断绝。'});
+    hr(d,[[55.7,12.62],[56.1,12.6],[56.9,11.6],[57.8,10.8],[57.6,8.0],[56.6,7.0]],HC.britain);
+   },[['fill',HC.italy,'丹麦—挪威（示意）'],['fill',HC.nordic,'瑞典（示意）'],['dline',HC.britain,'1807年被英国掳走的丹麦舰队（示意）'],['dot',HC.war,'1801年海战、1807年炮轰与克厄之战'],['dot','#2a2018','提尔西特、赫尔戈兰与挪威首府']]),
+  hs('1808—1809年','芬兰战争','俄国按提尔西特的约定逼瑞典断绝英国贸易；1808年2月俄军越境，斯韦阿堡投降；1809年芬兰成了沙皇兼任大公的大公国。',[[58.8,12.6],[66.4,31.0]],d=>{
+    ha(d,'nSweden1815',HC.nordic,{fillOpacity:.2});ha(d,'ruRussia1796',HC.eeurope,{fillOpacity:.14});ha(d,'nFinland',HC.eeurope,{fillOpacity:.36});ha(d,'nAland',HC.eeurope,{fillOpacity:.5});
+    hp(d,'nz_sveaborg',{kind:'battle',left:1,note:'1808年5月6日斯韦阿堡：约6000守军、700多门炮的要塞谈判后投降。'});
+    hp(d,'nz_porvoo',{note:'1809年3月29日波尔沃：芬兰四个等级宣誓效忠，亚历山大一世保证保留芬兰的法律和宗教。'});
+    hp(d,'nz_tornio',{note:'1809年9月和约：以托尔讷河、穆奥尼奥河为界，河东连同奥兰群岛归俄国。'});
+    hp(d,'np_stockholm',{note:'1809年3月13日斯德哥尔摩：军官闯进王宫逮捕古斯塔夫四世；6月6日议会通过新的政府约法。'});
+    hp(d,'nz_karlstad',{left:1,note:'1809年3月7日卡尔斯塔德：西路军军官阿德勒斯帕雷举兵，向首都进发。'});
+    hp(d,'ote_petersburg',{note:'圣彼得堡：1807年9月亚历山大一世写信给古斯塔夫四世，要瑞典遵守提尔西特的封锁约定。'});
+    hr(d,[[60.62,27.4],[60.46,26.2],[60.4,25.0],[60.45,22.3],[63.1,21.6]],HC.eeurope);
+   },[['fill',HC.nordic,'瑞典（示意）'],['fill',HC.eeurope,'俄国；颜色深处为1809年割让的芬兰和奥兰（示意）'],['dline',HC.eeurope,'1808年俄军进军（示意）'],['dot',HC.war,'斯韦阿堡'],['dot','#2a2018','宣誓地、政变地、新界河与俄国都城']]),
+  hs('1810—1813年','贝尔纳多特','瑞典选法国元帅当王储；卡尔·约翰不去夺芬兰，1812年与俄国结盟换挪威，1813年打完莱比锡转攻丹麦。',[[50.6,9.4],[61.0,31.0]],d=>{
+    ha(d,'fr18Empire1812',HC.france,{fillOpacity:.14});ha(d,'fr18ConfedRhine1812',HC.france,{fillOpacity:.08});ha(d,'nSweden1815',HC.nordic,{fillOpacity:.2});ha(d,'nDenmarkNorway1660',HC.italy,{fillOpacity:.2});ha(d,'ruRussia1796',HC.eeurope,{fillOpacity:.12});ha(d,'nFinland',HC.eeurope,{fillOpacity:.26});ha(d,'nOldFinland1743',HC.eeurope,{fillOpacity:.26});
+    hp(d,'nz_kvidinge',{note:'1810年5月28日克维丁厄：王储克里斯蒂安·奥古斯特操练时坠马，尸检为中风。'});
+    hp(d,'np_stockholm',{note:'1810年6月20日斯德哥尔摩：王储出殡，被谣传下毒的王国大元帅（宫廷最高官职）费森被暴民打死；费森就是1791年替法王策划出逃的那位。'});
+    hp(d,'nz_orebro',{left:1,note:'1810年8月21日厄勒布鲁：议会选贝尔纳多特为王储。'});
+    hp(d,'gh_lubeck',{note:'1806年11月吕贝克：贝尔纳多特俘获一支瑞典小部队（英文资料说600人投降，瑞典文资料说一千多人），善待后放回。'});
+    hp(d,'gh_stralsund',{note:'1812年1月瑞属波美拉尼亚：法军以违反对英封锁为由占领。'});
+    hp(d,'ote_petersburg',{note:'1812年4月5日圣彼得堡：瑞俄结盟，俄国答应帮瑞典拿挪威。'});
+    hp(d,'rf1_leipzig',{kind:'battle',note:'1813年10月莱比锡：卡尔·约翰率北方军团参战。'});
+    hp(d,'nz_kiel',{left:1,note:'1813年12月荷尔斯泰因：北方军团转攻丹麦，丹麦很快求和。'});
+    hr(d,[[51.34,12.37],[52.5,11.2],[53.87,10.69],[54.3,10.15]],HC.nordic);
+   },[['fill',HC.france,'法兰西帝国与莱茵邦联（示意）'],['fill',HC.nordic,'瑞典（示意）'],['fill',HC.italy,'丹麦—挪威（示意）'],['fill',HC.eeurope,'俄国与芬兰大公国（示意）'],['dline',HC.nordic,'1813年北方军团从莱比锡北上（示意）'],['dot',HC.war,'莱比锡'],['dot','#2a2018','王储之死、选举地与结盟地']]),
+  hs('1813—1815年','基尔条约与埃兹沃尔宪法','丹麦1813年国家破产，1814年在基尔割让挪威；挪威人在埃兹沃尔自订宪法，打了不到三周，与瑞典共戴一君。',[[53.8,7.6],[61.2,19.0]],d=>{
+    ha(d,'nNorway1814',HC.celt,{fillOpacity:.26});ha(d,'nSweden1815',HC.nordic,{fillOpacity:.2});ha(d,'nDenmark1864',HC.italy,{fillOpacity:.24});ha(d,'nSchleswig',HC.italy,{fillOpacity:.16});ha(d,'nHolstein',HC.italy,{fillOpacity:.12});
+    hp(d,'gh_copenhagen',{note:'1813年1月5日哥本哈根：币制改革，全国地产压上6%的抵押，史称国家破产。'});
+    hp(d,'nz_kiel',{note:'1814年1月14日基尔：丹麦割让挪威，留下冰岛、法罗群岛和格陵兰。'});
+    hp(d,'nz_eidsvoll',{note:'1814年4—5月埃兹沃尔：制宪会议，5月17日议定宪法。'});
+    hp(d,'nz_christiania',{left:1,note:'1814年10—11月克里斯蒂安尼亚：克里斯蒂安·弗雷德里克退位，议会修宪后选瑞典国王为挪威国王。'});
+    hp(d,'nz_moss',{left:1,note:'1814年8月14日莫斯：停战协定，瑞典承认挪威宪法。'});
+    hp(d,'nz_fredriksten',{kind:'battle',note:'1814年7月底哈尔登：瑞军主力从这里越境，绕过要塞北上。'});
+    hr(d,[[59.2,11.95],[59.12,11.39],[59.35,11.15]],HC.nordic);
+   },[['fill',HC.celt,'1814年后的挪威（示意）'],['fill',HC.nordic,'瑞典（示意）'],['fill',HC.italy,'丹麦本土与两公国（示意）'],['dline',HC.nordic,'1814年7月瑞军进兵（示意）'],['dot',HC.war,'哈尔登'],['dot','#2a2018','破产、条约、制宪与停战地']])
+ ]},
+{id:'history-nordic-modern',ch:13,title:'北欧小国的现代路：合作社、移民船和公投',short:'北欧小国的现代路',en:'The Nordic Small States Go Modern: Cooperatives, Emigrant Ships and Plebiscites',period:'1815—1920年',c:HC.nordic,
+ scenes:[
+  hs('1848—1864年','两次石勒苏益格战争','1849年宪法结束专制；1848—1851年丹麦守住两公国，1863年想把石勒苏益格并进本国，1864年败给普鲁士和奥地利。',[[53.3,7.9],[56.2,13.0]],d=>{
+    ha(d,'nDenmark1864',HC.italy,{fillOpacity:.24});ha(d,'nSchleswig',HC.italy,{fillOpacity:.14,dashArray:'4 4'});ha(d,'nHolstein',HC.germany,{fillOpacity:.16});
+    hl(d,'石勒苏益格','Schleswig',55.15,8.95,HC.italy);hl(d,'荷尔斯泰因','Holstein',54.05,9.95,HC.germany);hl(d,'劳恩堡','Lauenburg',53.5,10.65,HC.germany);
+    hp(d,'gh_copenhagen',{note:'1849年6月5日哥本哈根：腓特烈七世签署宪法，1660年以来的专制结束；起草时参考了1814年的挪威宪法。腓特烈七世之父就是1814年的克里斯蒂安·弗雷德里克，1839—1848年为丹麦国王克里斯蒂安八世。'});
+    hp(d,'nq_idstedt',{kind:'battle',note:'1850年7月伊斯泰兹：丹麦军击败两公国的德意志军队。'});
+    hp(d,'nq_danevirke',{left:1,note:'1864年2月丹麦墙：丹麦军未经大战就撤离这条古防线。'});
+    hp(d,'nq_dybbol',{kind:'battle',note:'1864年4月18日迪伯尔：普军攻破阵地，丹麦一方伤亡失踪约3600人。'});
+    hr(d,[[55.37,8.66],[55.43,8.95],[55.43,9.15],[55.4,9.35],[55.35,9.6]],HC.war);
+   },[['fill',HC.italy,'丹麦本土；虚线为石勒苏益格（示意）'],['fill',HC.germany,'荷尔斯泰因（属德意志邦联，示意）'],['dline',HC.war,'1864—1920年的丹麦南界（示意）'],['dot',HC.war,'伊斯泰兹与迪伯尔'],['dot','#2a2018','首都与丹麦墙']]),
+  hs('1864—1900年','黄油、培根和民众高中','丢了两公国后，丹麦农民改养牛猪、合伙办奶厂；新港埃斯比约直通英国，民众高中越过新边界另起炉灶。',[[54.6,7.6],[57.9,12.9]],d=>{
+    ha(d,'nDenmark1864',HC.italy,{fillOpacity:.2});ha(d,'nSchleswig',HC.germany,{fillOpacity:.14});hr(d,[[55.37,8.66],[55.43,8.95],[55.43,9.15],[55.4,9.35],[55.35,9.6]],HC.war);
+    hl(d,'1864年后归普鲁士','Prussian after 1864',55.0,9.25,HC.germany);
+    hp(d,'nq_hjedding',{note:'1882年耶丁：丹麦第一家合作社乳品厂，按人头投票，按交奶多少分利。'});
+    hp(d,'nq_esbjerg',{left:1,note:'1868年埃斯比约：开建新港，代替划归普鲁士的阿尔托纳，直接装船去英国。'});
+    hp(d,'nq_askov',{note:'1865年阿斯科：勒丁的民众高中归了普鲁士，校长越过新边界在此另办一所。'});
+    hp(d,'gh_copenhagen',{note:'1872年哥本哈根：北欧工业展览会，纪念章上的诗句后来成了“外面丢的，要在里面赢回来”。'});
+    hr(d,[[55.47,8.45],[55.2,7.95],[54.9,7.65]],HC.britain);
+   },[['fill',HC.italy,'1864年后的丹麦（示意）'],['fill',HC.germany,'划归普鲁士的石勒苏益格（示意）'],['dline',HC.war,'1864—1920年的丹麦南界（示意）'],['dline',HC.britain,'运往英国的航线（示意）'],['dot','#2a2018','奶厂、新港、民众高中与首都']]),
+  hs('1825—1914年','去美国','瑞典约130万、挪威约80万人去了北美：瑞典人多从哥德堡坐船到英国，换船到纽约，再去中西部的农场和芝加哥。',[[38.8,-95.5],[61.0,19.5]],d=>{
+    ha(d,'nSweden1815',HC.nordic,{fillOpacity:.2});ha(d,'nNorway1814',HC.celt,{fillOpacity:.22});
+    hl(d,'斯莫兰','Småland',57.1,15.0,HC.nordic);
+    hp(d,'nq_stavanger',{left:1,note:'1825年7月4日斯塔万格：“复兴号”载52人出发，10月9日到纽约。'});
+    hp(d,'nd_gothenburg',{note:'哥德堡：多数瑞典移民从这里坐威尔逊航运的船去英国赫尔。'});
+    hp(d,'nq_hull',{note:'赫尔：上岸后坐火车横穿英格兰，到利物浦换乘远洋船。'});
+    hp(d,'nq_newyork',{note:'纽约：北欧移民大多在这里上岸。'});
+    hp(d,'nq_chicago',{note:'芝加哥：越来越穷的新移民多进城做工，芝加哥是首选。'});
+    hp(d,'nq_stpaul',{note:'明尼苏达：北欧农民移民最集中的地区之一，宅地法的地就在这一带。'});
+    hr(d,[[57.71,11.97],[57.3,8.0],[55.5,3.0],[53.74,-0.33]],HC.nordic);hr(d,[[53.74,-0.33],[53.41,-2.99]],HC.neutral);hr(d,[[53.41,-2.99],[51.6,-10.0],[47.0,-35.0],[42.0,-60.0],[40.71,-74.0]],HC.nordic);
+    hr(d,[[58.97,5.73],[58.6,-2.0],[55.0,-20.0],[46.0,-48.0],[40.9,-72.5]],HC.celt);
+    hr(d,[[40.71,-74.0],[41.6,-82.0],[41.88,-87.63],[44.95,-93.09]],HC.america);
+   },[['fill',HC.nordic,'瑞典（示意）'],['fill',HC.celt,'挪威（示意）'],['dline',HC.nordic,'瑞典移民常走的路：哥德堡—赫尔—利物浦—纽约（示意）'],['dline',HC.neutral,'赫尔到利物浦的火车（示意）'],['dline',HC.celt,'1825年“复兴号”的航程（示意）'],['dline',HC.america,'上岸后去中西部（示意）'],['dot','#2a2018','出发港、中转港与落脚地']]),
+  hs('1809—1918年','芬兰：从大公国到独立','大公国自管内政近百年；1899年起俄化，1906年男女普选，1917年宣布独立，1918年打了一场内战。',[[59.3,20.6],[62.3,31.0]],d=>{
+    ha(d,'ruRussia1914',HC.eeurope,{fillOpacity:.12});ha(d,'nFinland',HC.lowlands,{fillOpacity:.3});
+    hp(d,'nq_senate',{note:'1904年6月16日赫尔辛基参政院：总督博布里科夫中枪，次日死去。1917年12月6日议会在赫尔辛基宣布独立。'});
+    hp(d,'ote_petersburg',{note:'彼得堡：1899年2月尼古拉二世颁布二月宣言；3月芬兰代表团带着请愿书来，沙皇不见。'});
+    hp(d,'nq_tampere',{kind:'battle',note:'1918年4月6日坦佩雷：红军据点被白军攻下，是内战的决定性一仗。'});
+    hp(d,'nq_hanko',{note:'1918年4月3日汉科：约一万德军登陆，4月12—13日拿下赫尔辛基。'});
+   },[['fill',HC.lowlands,'芬兰大公国（示意）'],['fill',HC.eeurope,'俄罗斯帝国'],['dot',HC.war,'坦佩雷'],['dot','#2a2018','参政院、德军登陆地与俄国都城']]),
+  hs('1905年','挪威与瑞典分家','领事之争让挪威议会宣布解散联合；男人公投、女人签名，卡尔斯塔德谈判后和平分家，丹麦王子当了挪威国王。',[[55.3,4.6],[64.4,19.4]],d=>{
+    ha(d,'nNorway1814',HC.celt,{fillOpacity:.26});ha(d,'nSweden1815',HC.nordic,{fillOpacity:.2});
+    hp(d,'nz_christiania',{note:'1905年6月7日克里斯蒂安尼亚：议会一致决议解散联合；11月25日新国王一家到达。'});
+    hp(d,'nz_karlstad',{note:'1905年8月31日至9月23日卡尔斯塔德：两国代表谈妥分家条件，边境两侧都驻着军队。'});
+    hp(d,'np_stockholm',{note:'斯德哥尔摩：10月26日奥斯卡二世放弃挪威王位。'});
+    hp(d,'gh_copenhagen',{left:1,note:'哥本哈根：丹麦王子卡尔要挪威先公投，11月79%赞成。'});
+    hp(d,'uk4_nidaros',{note:'1906年6月22日特隆赫姆：哈康七世与王后莫德在尼达罗斯主教座堂加冕。'});
+   },[['fill',HC.celt,'挪威（示意）'],['fill',HC.nordic,'瑞典（示意）'],['dot','#2a2018','议会、谈判地、两国都城与加冕地']]),
+  hs('1914—1921年','中立、配给与公投','三国一战守中立，挪威商船损失约一半，瑞典面包配给；战后北石勒苏益格公投回归丹麦，奥兰归芬兰。',[[53.6,3.0],[61.4,21.6]],d=>{
+    ha(d,'wwGermany1914',HC.germany,{fillOpacity:.12});ha(d,'nDenmark1864',HC.italy,{fillOpacity:.22});ha(d,'nNorthSchleswig1920',HC.italy,{fillOpacity:.42});ha(d,'nNorway1814',HC.celt,{fillOpacity:.2});ha(d,'nSweden1815',HC.nordic,{fillOpacity:.2});ha(d,'nFinland',HC.lowlands,{fillOpacity:.26});ha(d,'nAland',HC.lowlands,{fillOpacity:.5});
+    hl(d,'挪威商船被击沉约一半','Half the Norwegian fleet sunk',58.6,4.6,HC.war);
+    hl(d,'第一区：74.9%选丹麦','Zone I: 74.9% for Denmark',55.25,8.9,HC.italy);
+    hp(d,'nm_malmo',{note:'1914年12月18日马尔默：瑞典、丹麦、挪威三国国王会面，重申中立。'});
+    hp(d,'np_stockholm',{note:'1917年斯德哥尔摩：面包、糖、面粉配给，饥饿游行，首相哈马舍尔德下台。'});
+    hp(d,'nm_flensburg',{left:1,note:'1920年3月14日第二区：弗伦斯堡所在的这一区80.2%投票留在德国。'});
+    hp(d,'nq_mariehamn',{note:'1921年6月玛丽港：国际联盟裁定奥兰归芬兰，芬兰须保障岛民的瑞典语和文化。'});
+    hr(d,[[54.92,8.62],[54.9,9.0],[54.85,9.3],[54.82,9.6]],HC.italy);
+   },[['fill',HC.italy,'丹麦；颜色深处为1920年回归的北石勒苏益格（示意）'],['fill',HC.celt,'挪威（示意）'],['fill',HC.nordic,'瑞典（示意）'],['fill',HC.lowlands,'芬兰；颜色深处为奥兰群岛（示意）'],['fill',HC.germany,'德国（示意）'],['dline',HC.italy,'1920年公投后的丹德边界（示意）'],['dot','#2a2018','会面地、首都、公投区与奥兰首府']])
+ ]},
 {id:'history-america-before',ch:14,title:'大航海之前的美洲：没有马和铁的两个帝国',short:'大航海之前的美洲',en:'The Americas before 1492: Two Empires without Horses or Iron',period:'约前13000—1492年',c:HC.america,
  scenes:[
   hs('约前13000—前3000年','海水关上了门','虚线示意人从亚洲南下的一种路线（沿海说，仍有争议）；钉是陆桥、早期遗址和作物驯化地。',[[-45.0,-175.0],[72.0,-30.0]],d=>{
@@ -19184,6 +19605,7 @@ const HISTORY_ERAS=[
  {id:'faith-scholasticism',name:'大学与经院哲学',en:'Universities and Scholasticism',date:'约1150—1303年',c:HC.faith,items:[['history-faith-scholasticism']]},
  {id:'faith-avignon',name:'阿维尼翁之囚',en:'The Avignon Captivity',date:'1294—1314年',c:HC.faith,items:[['history-faith-avignon'],['history-faith-clement']]},
  {id:'faith-schism',name:'教会大分裂与宗教改革',en:'The Western Schism and the Reformation',date:'1322—1669年',c:HC.faith,items:[['history-faith-schism'],['history-faith-constance'],['history-faith-reformation-1'],['history-faith-reformation-2'],['history-faith-trent'],['history-faith-jesuits'],['history-faith-teresa']]},
+ {id:'faith-modern',name:'宽容、革命与政教分离',en:'Toleration, Revolution and the Separation of Church and State',date:'1689—1914年',c:HC.faith,items:[['history-faith-toleration'],['history-faith-revolution'],['history-faith-pius9']]},
  {id:'china-early',name:'先秦：三代与春秋战国',en:'Pre-Imperial China',date:'约前7000—前221年',c:HC.china,items:[['history-china-neolithic'],['history-china-bronze'],['history-china-western-zhou'],['history-china-spring-autumn'],['history-china-warring-states']]},
  {id:'china-qin-han',name:'秦汉帝国',en:'Qin and Han Empires',date:'前221—公元189年',c:HC.china,items:[['history-china-qin'],['history-china-western-han'],['history-china-eastern-han']]},
  {id:'china-six-dynasties',name:'三国两晋南北朝',en:'Six Dynasties',date:'190—589年',c:HC.china,items:[['history-china-three-kingdoms'],['history-china-sixteen-kingdoms'],['history-china-sui']]},
@@ -19221,6 +19643,8 @@ const HISTORY_ERAS=[
  {id:'britain-suffrage',name:'维多利亚与普选之路：五步把选票扩到全民',en:'The Victorian Age and the Road to Universal Suffrage: Five Steps to One Person One Vote',date:'1830—1928年',c:HC.britain,items:[['history-britain-reform-1832'],['history-britain-chartism'],['history-britain-victoria'],['history-britain-reform-1867'],['history-britain-lords'],['history-britain-suffrage-1918'],['history-britain-suffrage-1928']]},
  {id:'nordic-early',name:'北欧：从出海到三国',en:'Scandinavia: From the Longships to Three Kingdoms',date:'约前1700—1397年',c:HC.nordic,items:[['history-nordic-before'],['history-nordic-kingdoms']]},
  {id:'nordic-baltic',name:'北欧：卡尔马同盟与波罗的海之争',en:'Scandinavia: The Kalmar Union and the Baltic',date:'1397—1648年',c:HC.nordic,items:[['history-nordic-kalmar'],['history-nordic-baltic'],['history-nordic-peace']]},
+ {id:'nordic-sweden',name:'北欧：瑞典大国的兴衰',en:'Scandinavia: Sweden as a Great Power',date:'1648—1772年',c:HC.nordic,items:[['history-nordic-ice'],['history-nordic-great-northern']]},
+ {id:'nordic-modern',name:'北欧：从拿破仑战争到小国的现代路',en:'Scandinavia: From the Napoleonic Wars to the Modern States',date:'1772—1920年',c:HC.nordic,items:[['history-nordic-napoleon'],['history-nordic-modern']]},
  {id:'america-early',name:'美洲：大航海之前与大交换',en:'The Americas: Before 1492 and the Great Exchange',date:'约前13000—约1650年',c:HC.america,items:[['history-america-before'],['history-america-exchange']]},
  {id:'america-latecomers',name:'美洲：后来者与山巅之城',en:'The Americas: The Latecomers and the City upon a Hill',date:'1522—1654年',c:HC.america,items:[['history-america-france'],['history-america-virginia'],['history-america-dutch'],['history-america-mayflower'],['history-america-hill']]},
  {id:'america-independence',name:'美洲：北美独立、费城制宪与拉美解放',en:'The Americas: American Independence, the Constitution and Latin American Liberation',date:'1648—1848年',c:HC.america,items:[['history-america-colonies'],['history-america-independence'],['history-america-constitution'],['history-america-westward'],['history-america-latam']]},
@@ -19255,7 +19679,7 @@ const HISTORY_BRANCHES=[
  // 十字军: from the theatre, the players and the holy war in Spain (the 0th crusade) to Acre (1291) and the military orders.
  {id:'crusade',name:'十字军',en:'The Crusades',lane:1,parent:'faith',from:1070,to:1312,c:HC.crusade},
  // 北欧: no fork, it starts itself; after the look back it runs through the Viking stations it shares (老无 2026-11-05).
- {id:'nordic',name:'北欧',en:'Scandinavia',lane:10,from:745,to:1648,c:HC.nordic},
+ {id:'nordic',name:'北欧',en:'Scandinavia',lane:10,from:745,to:1920,c:HC.nordic},
  // 美洲: no fork either (老无 2026-11-06); it looks back, then shares 大航海 with 西班牙 and runs on to the Puritans.
  {id:'america',name:'美洲',en:'The Americas',lane:11,from:1430,to:1920,c:HC.america},
  // Parallel timeline of China for cross-civilizational comparison; it starts at 走出非洲 with 史前 (老无 2026-11-08).
@@ -19518,7 +19942,7 @@ const TREE_ROWS={
  'history-britain-lords/0':['britain',1909,1913,'1885—1914年'],
  'history-britain-suffrage-1918/0':['britain',1918,1920,'1897—1918年'],
  'history-britain-suffrage-1928/0':['britain',1924,1928,'1918—1928年'],
- 'history-france-consulate/0':['france',1800,1804,'1800—1804年'],
+ 'history-france-consulate/0':[['france','faith'],1800,1804,'1800—1804年'],
  'history-france-empire/0':[['france','spain','germany'],1805,1811,'1805—1811年'],
  'history-france-waterloo/0':[['france','eeurope','germany'],1812,1815,'1810—1815年'],
  'history-france-restoration/0':['france',1816,1830,'1815—1830年'],
@@ -19636,6 +20060,13 @@ const TREE_ROWS={
  'history-nordic-kalmar/0':['nordic',1397,1560,'1397—1560年'],
  'history-nordic-baltic/0':['nordic',1561,1624,'1558—1629年'],
  'history-nordic-peace/0':['nordic',1640,1648,'1630—1648年'],
+ 'history-nordic-ice/0':['nordic',1658,1680,'1648—1697年'],
+ 'history-nordic-great-northern/0':['nordic',1700,1721,'1697—1772年'],
+ 'history-nordic-napoleon/0':['nordic',1808,1814,'1772—1815年'],
+ 'history-nordic-modern/0':['nordic',1864,1920,'1815—1920年'],
+ 'history-faith-toleration/0':['faith',1738,1773,'1689—1789年'],
+ 'history-faith-revolution/0':['faith',1790,1799,'1789—1846年'],
+ 'history-faith-pius9/0':['faith',1854,1905,'1846—1914年'],
  'history-spain-habsburg/0':['spain',1496,1555,'1489—1521年'],
  'history-spain-philip2/0':['spain',1557,1581,'1555—1598年'],
  'history-spain-netherlands-1/0':[['spain','lowlands'],1566,1572,'1555—1572年'],
@@ -19662,9 +20093,9 @@ const TREE_ROWS={
  'history-germany-swiss/3':[['germany','italy','faith'],1515,1516,'1477—1648年']
 };
 // Topics still to be written grow the tree as dashed shoots.
-const TREE_FUTURE=[['france',1923,'大萧条、二战与第五共和国','1923年后待展开：1936年人民阵线 · 1940年败降与自由法国 · 戴高乐与第五共和国'],['germany',1923,'大萧条、第三帝国与两德分合','1923年后待展开：1929年大萧条与希特勒上台 · 二战与大屠杀 · 冷战两德分裂与1990年统一'],['italy',1929,'法西斯意大利与二战','1929年后待展开：1935年入侵埃塞俄比亚 · 1940年参加二战 · 1946年公投废除君主制'],['faith',1929,'二战与梵二会议','1929年后待展开：二战中的教廷 · 1962—1965年梵蒂冈第二次大公会议'],['egypt',642,'伊斯兰时代的埃及','642年起 · 待展开'],['persia',1923,'土耳其共和国与现代中东','1923年后待展开：凯末尔世俗化改革 · 英法委任统治、海湾石油与现代中东格局'],['china',1919,'国民革命、抗战与内战','1919年后待展开：国共合作与北伐 · 抗日战争 · 国共内战与1949年'],['spain',1931,'第二共和国与西班牙内战','1931年后待展开：1931—1936年第二共和国改革与左右撕裂 · 1936—1939年西班牙内战与佛朗哥独裁'],['eeurope',1922,'斯大林与冷战','1922年后待展开：斯大林五年计划 · 二战苏德战场 · 冷战与苏联解体'],['lowlands',1918,'比荷卢联盟与欧洲一体化','1918年后待展开：战间期普选与福利 · 二战占领 · 比荷卢联盟与欧盟创始'],['crusade',1312,'后来的十字军','1396年尼科波利斯 · 1444年瓦尔纳 · 1571年勒班陀 · 待展开'],['america',1920,'大萧条、罗斯福新政与二战','1920年后待展开：1929年华尔街崩盘与大萧条 · 罗斯福新政 · 二战两洋作战与布雷顿森林体系'],['nordic',1648,'踏冰渡海与大北方战争','1648年后待展开：1658年卡尔十世踏冰渡海夺下斯科讷 · 1700—1721年大北方战争，瑞典失去波罗的海霸权'],['britain',1928,'大萧条、二战与福利国家','1928年后待展开：1929年大萧条 · 丘吉尔与二战不列颠之战 · 战后福利国家与大英帝国解体']];
+const TREE_FUTURE=[['france',1923,'大萧条、二战与第五共和国','1923年后待展开：1936年人民阵线 · 1940年败降与自由法国 · 戴高乐与第五共和国'],['germany',1923,'大萧条、第三帝国与两德分合','1923年后待展开：1929年大萧条与希特勒上台 · 二战与大屠杀 · 冷战两德分裂与1990年统一'],['italy',1929,'法西斯意大利与二战','1929年后待展开：1935年入侵埃塞俄比亚 · 1940年参加二战 · 1946年公投废除君主制'],['faith',1929,'二战与梵二会议','1929年后待展开：二战中的教廷 · 1962—1965年梵蒂冈第二次大公会议'],['persia',1923,'土耳其共和国与现代中东','1923年后待展开：凯末尔世俗化改革 · 英法委任统治、海湾石油与现代中东格局'],['china',1919,'国民革命、抗战与内战','1919年后待展开：国共合作与北伐 · 抗日战争 · 国共内战与1949年'],['spain',1931,'第二共和国与西班牙内战','1931年后待展开：1931—1936年第二共和国改革与左右撕裂 · 1936—1939年西班牙内战与佛朗哥独裁'],['eeurope',1922,'斯大林与冷战','1922年后待展开：斯大林五年计划 · 二战苏德战场 · 冷战与苏联解体'],['lowlands',1918,'比荷卢联盟与欧洲一体化','1918年后待展开：战间期普选与福利 · 二战占领 · 比荷卢联盟与欧盟创始'],['america',1920,'大萧条、罗斯福新政与二战','1920年后待展开：1929年华尔街崩盘与大萧条 · 罗斯福新政 · 二战两洋作战与布雷顿森林体系'],['nordic',1920,'冬季战争与北欧模式','1920年后待展开：1939—1940年苏芬冬季战争 · 1940年德国占领丹麦、挪威 · 瑞典中立与北欧福利国家'],['britain',1928,'大萧条、二战与福利国家','1928年后待展开：1929年大萧条 · 丘吉尔与二战不列颠之战 · 战后福利国家与大英帝国解体']];
 // Where a line stops it says why: [line, year, the event that ends it, note, the line it carries on in].
-const TREE_ENDS=[['trunk',-30,'并入罗马','前146年科林斯被毁 · 前30年最后一个希腊化王国埃及并入罗马','rome'],['rome',476,'西罗马终结','476年西部末代皇帝被废 · 由中世纪西欧接续'],['west',843,'凡尔登三分','843年《凡尔登条约》三分帝国 · 分出法兰西、德意志、意大利'],['east',1453,'东罗马终结','1453年5月29日奥斯曼帝国攻破君士坦丁堡 · 千年东罗马帝国终结'],['prehistory',-3100,'有了文字','两河、埃及约前3200—前3100年先后有了文字和国家 · 由希腊、埃及、中东三条线接续','trunk']];
+const TREE_ENDS=[['trunk',-30,'并入罗马','前146年科林斯被毁 · 前30年最后一个希腊化王国埃及并入罗马','rome'],['rome',476,'西罗马终结','476年西部末代皇帝被废 · 由中世纪西欧接续'],['west',843,'凡尔登三分','843年《凡尔登条约》三分帝国 · 分出法兰西、德意志、意大利'],['east',1453,'东罗马终结','1453年5月29日奥斯曼帝国攻破君士坦丁堡 · 千年东罗马帝国终结'],['egypt',642,'并入中东','642年阿拉伯人拿下亚历山大，埃及并入哈里发国 · 此后的埃及由“中东”线接续'],['crusade',1312,'十字军落幕','1291年阿卡陷落，圣地的十字军国家覆灭 · 1312年圣殿骑士团被解散'],['prehistory',-3100,'有了文字','两河、埃及约前3200—前3100年先后有了文字和国家 · 由希腊、埃及、中东三条线接续','trunk']];
 // Sections of one line that run side by side: [line, row keys, side of the passing loop].
 const TREE_PARALLEL=[['trunk',['history-alexander-conquest/0','history-alexander-rule/0'],1],['trunk',['history-hellenistic-states/0','history-hellenistic-knowledge/0'],1],['west',['history-west-kingdoms/0','history-west-ostrogoths/0'],1],['west',['history-west-merovingians/0','history-west-lombards/0'],1],['faith',['history-empire-amorian/0','history-faith-carolingian/0'],-1],['faith',['history-faith-imperial-church/0','history-faith-cluny/0'],-1]];
 // Time slices across the whole tree: [year, label, headline, paragraph].

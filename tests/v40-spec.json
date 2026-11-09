@@ -959,11 +959,6 @@
  },
  "futures": [
   [
-   "crusade",
-   1312,
-   "后来的十字军"
-  ],
-  [
    "persia",
    1923,
    "土耳其共和国与现代中东"
@@ -1055,6 +1050,10 @@
    "history-germany-thirty-years-2/0",
    "history-germany-thirty-years-3/0",
    "history-france-revocation/0",
+   "history-faith-toleration/0",
+   "history-faith-revolution/0",
+   "history-france-consulate/0",
+   "history-faith-pius9/0",
    "history-italy-lateran/0"
   ]
  },

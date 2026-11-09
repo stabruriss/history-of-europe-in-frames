@@ -50,7 +50,7 @@ window.NETWORK_DESIGN = (() => {
     lowlands: [[830, y(ROME), null, -10], [1300, y(LOW), 'e'], [1495, y(LOW)]],
     germany: [[830, y(ROME)], [843, y(GER0), 'e'], [860, y(GER0)], [951, y(GERMANY)], [1495, y(GERMANY)]],
     crusade: [[1070, y(GERMANY, 1), null, -92], [1070, y(CRUSADE)], [1295, y(CRUSADE)]],
-    nordic: [[745, y(TOP)], [1648, y(TOP)]],
+    nordic: [[745, y(TOP)], [1920, y(TOP)]],
     america: [[1430, y(AMERICA)], [1631, y(AMERICA)]],
   };
 
