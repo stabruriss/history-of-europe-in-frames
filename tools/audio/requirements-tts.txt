@@ -1,0 +1,2 @@
+# Optional: needed only for an explicitly authorized synthesize --execute.
+edge-tts==7.3.1

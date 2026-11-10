@@ -414,7 +414,7 @@ viewportPadding=()=>{
 // ← → change station and ↑ ↓ change scene on the train; other modes keep the atlas's own keys.
 window.addEventListener('keydown',ev=>{
  if(transferDialog.open||mode==='off'||ev.defaultPrevented||ev.isComposing||ev.altKey||ev.ctrlKey||ev.metaKey||ev.shiftKey)return;
- if(ev.target.isContentEditable||ev.target.closest('input,textarea,select,[role="textbox"],[role="separator"],#toc,#treeSheet')||!$('#kinSheet')?.hidden)return;
+ if(ev.target.isContentEditable||ev.target.closest('input:not(#audioSpeed):not(#audioSeek):not(#audioIncludeExtras):not(#audioIncludePeople),textarea,select,[role="textbox"],[role="separator"],#toc,#treeSheet')||!$('#kinSheet')?.hidden)return;
  if(ev.key==='Escape'&&mode==='ride'){ev.preventDefault();setMode('network');return}
  if(!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(ev.key))return;
  ev.preventDefault();ev.stopImmediatePropagation();

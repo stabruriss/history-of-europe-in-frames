@@ -676,6 +676,8 @@ function go(id,opts={}){
   if(first||reduceMotion)drawNow();
   else{pending=drawNow;map.once('moveend',drawNow);drawNow.t=setTimeout(drawNow,1200);}
   if(!opts.noHash)history.replaceState(null,'','#'+e.id+(selected?'/'+selected:''));
+  // Reading controls observe navigation; they never drive playback from it.
+  document.dispatchEvent(new Event('atlas:navigate'));
 }
 
 function buildTimeline(){
@@ -714,7 +716,9 @@ document.getElementById('next').onclick=()=>stepEntry(1);
 document.getElementById('tFit').onclick=()=>{map.closePopup();fit(ENTRIES[cur],true);};
 document.addEventListener('keydown',ev=>{
   if(ev.defaultPrevented||ev.isComposing||ev.altKey||ev.ctrlKey||ev.metaKey||ev.shiftKey)return;
-  if(ev.target.isContentEditable||ev.target.closest('input,textarea,select,[role="textbox"],[role="separator"]'))return;
+  if(document.querySelector('dialog[open],#kinSheet:not([hidden])'))return;
+  // Only the two audio ranges share navigation keys; editing and layout controls keep theirs.
+  if(ev.target.isContentEditable||ev.target.closest('input:not(#audioSpeed):not(#audioSeek):not(#audioIncludeExtras):not(#audioIncludePeople),textarea,select,[role="textbox"],[role="separator"]'))return;
   const vertical=ev.key==='ArrowUp'||ev.key==='ArrowDown';
   const horizontal=ev.key==='ArrowLeft'||ev.key==='ArrowRight';
   if(!vertical&&!horizontal)return;

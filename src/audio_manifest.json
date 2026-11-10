@@ -1,0 +1,237 @@
+{
+  "schema": 2,
+  "policy": 3,
+  "profile": {
+    "voice": "zh-CN-YunjianNeural",
+    "pitch": "+0Hz",
+    "rate": "+0%",
+    "volume": "+0%"
+  },
+  "source": {
+    "commit": "6f36fe82bf3a5cf8b0260039b20cbc3fd5601294",
+    "dirty": [],
+    "files": {
+      "src/history_entries.js": "3c1b09f4d074e429e99e355aba2dccbc23951713cf8d1cec29b33479f3be0a0b",
+      "src/history_content.json": "ae40d074d83e8ba1f799167e280d16f12d90a7b1a061a9f389ed9102747faf35",
+      "src/historical_figures.js": "95c19749d249f451f0245cf0c096ef9917f643593eddeb46f12f39f310e69c7e"
+    }
+  },
+  "assets": {
+    "topic-grail-sword": {
+      "url": "https://ccjesfa3fpqn3fps.public.blob.vercel-storage.com/audio/v1/3551a8feaceb98d6da820edb262c3a05c57597f9c7f4dbaee9fd783bce6f5874.mp3",
+      "duration": 230.592,
+      "bytes": 1383552,
+      "textHash": "a831885e11606c03191ff57304b04502a575e8b368291c2a998582b8f915a3ae",
+      "inputHash": "34272d5915c385ecb02de2835a2a755bd9079c67db85823f4dd1ffa618da3a1b",
+      "audioHash": "3551a8feaceb98d6da820edb262c3a05c57597f9c7f4dbaee9fd783bce6f5874"
+    },
+    "topic-grail-sword/0/box/0": {
+      "url": "https://ccjesfa3fpqn3fps.public.blob.vercel-storage.com/audio/v1/981c0d0f4f7e046d2eea5c82abd14b3e927d7b05c3b937ffbb743e897adc3bca.mp3",
+      "duration": 38.448,
+      "bytes": 230688,
+      "textHash": "a5ebbb6553a5b5f940db36d7c5c0a519dfd7070e4a04e760ce01143c9bbd75bc",
+      "inputHash": "2bf467be90d3b80403345ce4120b53be939a00f386cd8609f30710dda9c562bf",
+      "audioHash": "981c0d0f4f7e046d2eea5c82abd14b3e927d7b05c3b937ffbb743e897adc3bca"
+    },
+    "topic-social-ladder": {
+      "url": "https://ccjesfa3fpqn3fps.public.blob.vercel-storage.com/audio/v1/993f24e5cdf41bc6722dbeda597887d70441091b3884c5e7b3d3716d3313a8b9.mp3",
+      "duration": 283.176,
+      "bytes": 1699056,
+      "textHash": "02bd1e35d6b4d5f5f624b0a5aa06bb56c449f9b3ef9485381a3e428c8d5043ec",
+      "inputHash": "5f07cf9a97090c72f34a0d82b2e0f7a1c532be48440c5ebb518bc95fed5f48ab",
+      "audioHash": "993f24e5cdf41bc6722dbeda597887d70441091b3884c5e7b3d3716d3313a8b9"
+    },
+    "topic-social-ladder/0/box/0": {
+      "url": "https://ccjesfa3fpqn3fps.public.blob.vercel-storage.com/audio/v1/f20f132848e76e04dc51088158518bd6d862582e8ff0945a89356673515174cb.mp3",
+      "duration": 48.144,
+      "bytes": 288864,
+      "textHash": "bfb76ea7b54b126601b078912a5d3925936ee964573e68831cd9474600049a11",
+      "inputHash": "9bbfb7b0dcba79d8dc2ef63b148a9492fe487f66e58afe42c57684073345ff1d",
+      "audioHash": "f20f132848e76e04dc51088158518bd6d862582e8ff0945a89356673515174cb"
+    },
+    "topic-military-power": {
+      "url": "https://ccjesfa3fpqn3fps.public.blob.vercel-storage.com/audio/v1/dc11acda8fcab531b1bbbcedcec132bff709f78e0995cd539cc800d41431c88c.mp3",
+      "duration": 346.344,
+      "bytes": 2078064,
+      "textHash": "a86eee70d2dd0a3560b401a4c0f18b957f646edb6f3faa8c6b238ba809c1f53c",
+      "inputHash": "6f0f39e8102e22a8d46b6ad727c3e500912bad688d836e64a8c259ecb208d584",
+      "audioHash": "dc11acda8fcab531b1bbbcedcec132bff709f78e0995cd539cc800d41431c88c"
+    },
+    "topic-military-power/0/box/0": {
+      "url": "https://ccjesfa3fpqn3fps.public.blob.vercel-storage.com/audio/v1/2d81dbc505fe2c69255a4173be3da1c8919091caf08a67011cea5bf489a3950b.mp3",
+      "duration": 77.688,
+      "bytes": 466128,
+      "textHash": "412f0bde8b4c82a1f12052a4ad85fc7629dcbf8c41ca0afced66dd651741be3c",
+      "inputHash": "1626c66f7a0acbe660ffbf2a9388b975e16f6d8e2da5e21729693187ba1effc9",
+      "audioHash": "2d81dbc505fe2c69255a4173be3da1c8919091caf08a67011cea5bf489a3950b"
+    },
+    "topic-china-arithmetic": {
+      "url": "https://ccjesfa3fpqn3fps.public.blob.vercel-storage.com/audio/v1/ea17b59ae4cccd09c5f6a57848253981bd08b737a53f189254ff457c9f9080fd.mp3",
+      "duration": 324.384,
+      "bytes": 1946304,
+      "textHash": "ad31a60917cb1dea822e7fa6faab82c80a32ece3ba4f36f3c31c98245f165f72",
+      "inputHash": "e9c280b636e67d19498807cc7a12a32a64a120c6c481ecf9b94c7d883c086c42",
+      "audioHash": "ea17b59ae4cccd09c5f6a57848253981bd08b737a53f189254ff457c9f9080fd"
+    },
+    "topic-china-arithmetic/0/box/0": {
+      "url": "https://ccjesfa3fpqn3fps.public.blob.vercel-storage.com/audio/v1/d99c747a5879181d50bdaab00e7f776bc2178e88c22ccea140ced7e40947862f.mp3",
+      "duration": 64.824,
+      "bytes": 388944,
+      "textHash": "9c2fbebfd36dab29efbb4057bdfba80c3380181a6557c82eb6ef78fc185645af",
+      "inputHash": "d8fcbfd81d8c8860bed4cafecae6d85aebe5e0afb022f2307ff6acc441679b58",
+      "audioHash": "d99c747a5879181d50bdaab00e7f776bc2178e88c22ccea140ced7e40947862f"
+    },
+    "topic-roman-triangle": {
+      "url": "https://ccjesfa3fpqn3fps.public.blob.vercel-storage.com/audio/v1/9fb942a5375279fa917d64f82ed6bce29358683be8a6ea72c1257fe31a14c855.mp3",
+      "duration": 276.984,
+      "bytes": 1661904,
+      "textHash": "755119b9ded5e50b6f7c4835b41d3e1aa6aea2f05335b5c385b2411c28956828",
+      "inputHash": "9388f2e6cf578f18f96ae4348969264bbc6d0cb324aa6934d476884b4092377e",
+      "audioHash": "9fb942a5375279fa917d64f82ed6bce29358683be8a6ea72c1257fe31a14c855"
+    },
+    "topic-roman-triangle/0/box/0": {
+      "url": "https://ccjesfa3fpqn3fps.public.blob.vercel-storage.com/audio/v1/216eb54efe65cbf3ab3059bee646583772bcd013da2556907f0f2b771e0649e7.mp3",
+      "duration": 73.968,
+      "bytes": 443808,
+      "textHash": "85509d70bdce95dbda7881139d3718874c1b10422bd2bf4ab4788663898140e7",
+      "inputHash": "9fc15e9666dfd223523740ce3fcba30b2bad48f3415e0edf2995cf87c927e37e",
+      "audioHash": "216eb54efe65cbf3ab3059bee646583772bcd013da2556907f0f2b771e0649e7"
+    },
+    "topic-roman-machine": {
+      "url": "https://ccjesfa3fpqn3fps.public.blob.vercel-storage.com/audio/v1/06d26c152d380f6f130b2e30e175f5170f804381063c2eec45f10531a257baab.mp3",
+      "duration": 288.312,
+      "bytes": 1729872,
+      "textHash": "463a3dae4977ec9b96bb7fe56d0ee7fea389e74395b7654b05258d60dd2daac4",
+      "inputHash": "c729b4a6a6b79c9feb6cc20bbed5438406a4dc67240196494c6e29d350fe42a0",
+      "audioHash": "06d26c152d380f6f130b2e30e175f5170f804381063c2eec45f10531a257baab"
+    },
+    "topic-roman-machine/0/box/0": {
+      "url": "https://ccjesfa3fpqn3fps.public.blob.vercel-storage.com/audio/v1/9c67a2801429cc8ae477bc620982a9a0714f226383252b65f72d225bcea805ab.mp3",
+      "duration": 43.296,
+      "bytes": 259776,
+      "textHash": "6093cd60d4c2f5a6db2dd9fb65072f9b83fb460db16e342ed08b790c2c8a9e81",
+      "inputHash": "7db0872e4c5f6a201473fe5e86f4e9e0e4d930d391c5303de12c35bdbf908d55",
+      "audioHash": "9c67a2801429cc8ae477bc620982a9a0714f226383252b65f72d225bcea805ab"
+    },
+    "topic-black-sheep": {
+      "url": "https://ccjesfa3fpqn3fps.public.blob.vercel-storage.com/audio/v1/89ad4074fed662919760bbb1636d8ea46bf0ea316d43a786b41cb5f170d2a3de.mp3",
+      "duration": 285.936,
+      "bytes": 1715616,
+      "textHash": "af9e421ec0b29ce47c345ef76ba886b71de6af30c9dc7d25c341637e3179d1b6",
+      "inputHash": "3f2706293afbb58a17db4cbf14e05810ddf0b07433cf99a2638e4f51cf385a0a",
+      "audioHash": "89ad4074fed662919760bbb1636d8ea46bf0ea316d43a786b41cb5f170d2a3de"
+    },
+    "topic-black-sheep/0/box/0": {
+      "url": "https://ccjesfa3fpqn3fps.public.blob.vercel-storage.com/audio/v1/3845d8620aaade6bd71c9577cb9250741264e02f2020fa805e4bac83e169a408.mp3",
+      "duration": 68.088,
+      "bytes": 408528,
+      "textHash": "700c7a7d13c77d692cf4373bb0a84d5f5bf318d89108c528364b184dac613489",
+      "inputHash": "995ee90a59d236acf4dd1341cfe37938aaecd0fac49fc60ca51b9d0e0c6fb7c0",
+      "audioHash": "3845d8620aaade6bd71c9577cb9250741264e02f2020fa805e4bac83e169a408"
+    },
+    "topic-no-garrison": {
+      "url": "https://ccjesfa3fpqn3fps.public.blob.vercel-storage.com/audio/v1/6ba545ac6d538ed019e14c1a3841a28f1dc4aae6434c8d47f5d921fd739a360c.mp3",
+      "duration": 345.768,
+      "bytes": 2074608,
+      "textHash": "883e8db4860111e43ac5504f06e7ae53ef4f8b3db7177ed5f65bb14d8663933a",
+      "inputHash": "e272ebabfc5847e32ca63d1ca913238667d82061fa9b165603fe185a811b641e",
+      "audioHash": "6ba545ac6d538ed019e14c1a3841a28f1dc4aae6434c8d47f5d921fd739a360c"
+    },
+    "topic-no-garrison/0/box/0": {
+      "url": "https://ccjesfa3fpqn3fps.public.blob.vercel-storage.com/audio/v1/2fc0649b1923f72e41c1534632c50b6593ce9ed156ef0e17d5c36e54119a0a96.mp3",
+      "duration": 62.904,
+      "bytes": 377424,
+      "textHash": "225a544534589ecddf1f3d0ba2849da3859182f3852d62ae58e91823d55c6776",
+      "inputHash": "e9676537c88e4d8d8d35114e2752be888e09c3503f1ef258b6b47d0e20301408",
+      "audioHash": "2fc0649b1923f72e41c1534632c50b6593ce9ed156ef0e17d5c36e54119a0a96"
+    },
+    "topic-paper-power": {
+      "url": "https://ccjesfa3fpqn3fps.public.blob.vercel-storage.com/audio/v1/c95192d22d2c17d58b665703803a38b74c52747889daae9edadb22aeff885fd5.mp3",
+      "duration": 475.368,
+      "bytes": 2852208,
+      "textHash": "8c87144fc2438df3189de08b022270e57dec87a4220a94b39decf4230ff1969a",
+      "inputHash": "c696334761de3796aef3cb41cbce1bd7583aac5353f444ad680da11b5caf806c",
+      "audioHash": "c95192d22d2c17d58b665703803a38b74c52747889daae9edadb22aeff885fd5"
+    },
+    "topic-paper-power/0/box/0": {
+      "url": "https://ccjesfa3fpqn3fps.public.blob.vercel-storage.com/audio/v1/5a36d3e2f6c1518deaa8ee6fcfa0f614751fb52dca532b509340e5a182279ef4.mp3",
+      "duration": 88.08,
+      "bytes": 528480,
+      "textHash": "0e4ac317ad413f6793bb59e00a7eeb9a8de948df224030b0220f758e17c56130",
+      "inputHash": "2f69d40a9357d0fd8243259257019e5c56b1b3d20f2cf923a7aaaf74d5b6d2de",
+      "audioHash": "5a36d3e2f6c1518deaa8ee6fcfa0f614751fb52dca532b509340e5a182279ef4"
+    },
+    "topic-one-vs-many": {
+      "url": "https://ccjesfa3fpqn3fps.public.blob.vercel-storage.com/audio/v1/aace89501fca88cfa5aa93f15be7449cbd9824a8826da6eb3cbed7748a2b48af.mp3",
+      "duration": 386.016,
+      "bytes": 2316096,
+      "textHash": "15b8418295ac8df869d6af716ce589abc422548b07f8267a68f08b4a23b24cbc",
+      "inputHash": "ab6b63ebee30b73ed98a2cc9cd817f5845a7f54918edbfad6e7d28502468e825",
+      "audioHash": "aace89501fca88cfa5aa93f15be7449cbd9824a8826da6eb3cbed7748a2b48af"
+    },
+    "topic-one-vs-many/3/box/0": {
+      "url": "https://ccjesfa3fpqn3fps.public.blob.vercel-storage.com/audio/v1/5093792ed20161065636902fe61ee2a17b8069a5b8c0ccc3d86b665e57616e31.mp3",
+      "duration": 443.136,
+      "bytes": 2658816,
+      "textHash": "1c4cb2d9925bcbf07ed07931533b63d08729534d3116f952151ee31b54718ff2",
+      "inputHash": "790ac339f1855f0a404a282181802922257e253f9a9449a7306d565116e22f3c",
+      "audioHash": "5093792ed20161065636902fe61ee2a17b8069a5b8c0ccc3d86b665e57616e31"
+    },
+    "topic-china-cycles": {
+      "url": "https://ccjesfa3fpqn3fps.public.blob.vercel-storage.com/audio/v1/db7912ce6e1ac99f427bb85ad6d1ccd4f825d144b5c4b21764de8cda35b21544.mp3",
+      "duration": 1542.72,
+      "bytes": 9256320,
+      "textHash": "f18a147a916e04a26185c1c8c6b2248f33400e67fc479ee217a83037f726d548",
+      "inputHash": "0325e683b09fe213bfdffd2873ce794ed2fc456b7388e0ad051235e3014f0d66",
+      "audioHash": "db7912ce6e1ac99f427bb85ad6d1ccd4f825d144b5c4b21764de8cda35b21544"
+    },
+    "topic-three-states": {
+      "url": "https://ccjesfa3fpqn3fps.public.blob.vercel-storage.com/audio/v1/7d2e32b2d48dbcdacc0e4d87601fe754a5030fe59e564c9d13779e4b47922e28.mp3",
+      "duration": 514.296,
+      "bytes": 3085776,
+      "textHash": "8eacc67fafa23015a53db9dd3490f620542b6ba82876ca7a0669f52c263231d8",
+      "inputHash": "5258b6d6e77690dc02277c66ca6f873ed5ca55e78f7854f060270471fa665904",
+      "audioHash": "7d2e32b2d48dbcdacc0e4d87601fe754a5030fe59e564c9d13779e4b47922e28"
+    },
+    "topic-three-states/0/box/0": {
+      "url": "https://ccjesfa3fpqn3fps.public.blob.vercel-storage.com/audio/v1/135aa5572d68a4117a7e3f3ea433fa7c86206d82424fb223b70e556d68b8879c.mp3",
+      "duration": 33.816,
+      "bytes": 202896,
+      "textHash": "d387b9eb1f435159c5961cad03b6e75842487bdd8bdf9c4925bd6e58f56c4835",
+      "inputHash": "b426167229f93ed2570c67b7df8a36173bb07fa8c2310ebaeb0977b1ddac06ea",
+      "audioHash": "135aa5572d68a4117a7e3f3ea433fa7c86206d82424fb223b70e556d68b8879c"
+    },
+    "topic-energy": {
+      "url": "https://ccjesfa3fpqn3fps.public.blob.vercel-storage.com/audio/v1/48a1a46a8009c046e48a47e089e180b9c2c37ceb90d6e21942f2d09effcb5b41.mp3",
+      "duration": 430.176,
+      "bytes": 2581056,
+      "textHash": "0edae122394239097793f78704fbed341e60b791ff1e967262c1e6a28b7f2ff8",
+      "inputHash": "944668aac464d0f4fc3f8be5f0b77495199e83e63dda7a438d86232d0c82d9fc",
+      "audioHash": "48a1a46a8009c046e48a47e089e180b9c2c37ceb90d6e21942f2d09effcb5b41"
+    },
+    "topic-energy/0/box/0": {
+      "url": "https://ccjesfa3fpqn3fps.public.blob.vercel-storage.com/audio/v1/6523818fc3107d0ef6ffa8cb2e2f144fac96e51b45678381352002215b32610f.mp3",
+      "duration": 6.648,
+      "bytes": 39888,
+      "textHash": "7012dc35119c12e35eef08b0a4a5fab8324fd3e21a40aeca11f14a8ad213b234",
+      "inputHash": "f32db975e500e2379897e340c0095489e0212f98f7c4f973a6e5b6b19ee17533",
+      "audioHash": "6523818fc3107d0ef6ffa8cb2e2f144fac96e51b45678381352002215b32610f"
+    },
+    "topic-republic": {
+      "url": "https://ccjesfa3fpqn3fps.public.blob.vercel-storage.com/audio/v1/facd4f33cc744324c7f40583b394a0f5c27cfa72830462360af47d1a12aa11c7.mp3",
+      "duration": 836.16,
+      "bytes": 5016960,
+      "textHash": "ab48258793c427c9cf45323c54d08bbc03f07e5764a86b55cc743e5957b2726f",
+      "inputHash": "8436bbeeab46cbba030fadb32400e2c6f262c8d988ce23eabef147ff6c74e340",
+      "audioHash": "facd4f33cc744324c7f40583b394a0f5c27cfa72830462360af47d1a12aa11c7"
+    },
+    "topic-republic/1/box/0": {
+      "url": "https://ccjesfa3fpqn3fps.public.blob.vercel-storage.com/audio/v1/c706ee4ce176004bd975a29b5ac9f89e8e933e0b41a0321e4077366d975d43ac.mp3",
+      "duration": 17.88,
+      "bytes": 107280,
+      "textHash": "1a422c98624375cd0fdd1fa4511fa1cc94d1e7a267e4437893c2699d1e2b611d",
+      "inputHash": "7ce29a262b385185ccf347583e1c52b23c8cdac996a80c4bc27108b54640483c",
+      "audioHash": "c706ee4ce176004bd975a29b5ac9f89e8e933e0b41a0321e4077366d975d43ac"
+    }
+  }
+}

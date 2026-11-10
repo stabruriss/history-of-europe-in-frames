@@ -100,7 +100,11 @@ const settle=p=>p.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestA
   const eastBadge='.route-transfers [data-switch-line="east"][data-key="history-empire-fall-1453/0"]',dialog=()=>p.$eval('#transferDialog',e=>({open:e.open,text:e.textContent,focus:document.activeElement.id}));
   await p.click(eastBadge);const asked=await dialog();assert.ok(asked.open&&asked.text.includes('是否从这里切换到东罗马线')&&asked.text.includes('君士坦丁堡陷落'),JSON.stringify(asked));assert.equal(asked.focus,'transferConfirm');
   assert.equal((await p.evaluate(()=>metroUI.state())).line,'eeurope','nothing changes before the answer');
-  await p.keyboard.press('ArrowRight');assert.equal((await p.evaluate(()=>metroUI.state())).station,'history-empire-fall-1453/0','the arrows wait for the answer');
+  const behindDialog=await p.evaluate(()=>({station:metroUI.state().station,globalScene:sceneIndex,entry:ENTRIES[cur].id,hash:location.hash}));
+  for(const key of ['ArrowRight','ArrowLeft','ArrowUp','ArrowDown']){
+   await p.keyboard.press(key);
+   assert.deepEqual(await p.evaluate(()=>({station:metroUI.state().station,globalScene:sceneIndex,entry:ENTRIES[cur].id,hash:location.hash})),behindDialog,'the arrows wait for the answer: '+key);
+  }
   await p.keyboard.press('Escape');assert.equal((await dialog()).open,false);const kept=await p.evaluate(()=>metroUI.state());assert.equal(kept.line,'eeurope');assert.equal(kept.mode,'ride','Esc closes the question, not the train');
   await p.click(eastBadge);await p.click('#transferDialog button[value="cancel"]');assert.equal((await p.evaluate(()=>metroUI.state())).line,'eeurope','cancel stays');
   await p.click(eastBadge);await p.mouse.click(4,4);assert.equal((await dialog()).open,false,'the backdrop cancels');assert.equal((await p.evaluate(()=>metroUI.state())).line,'eeurope');

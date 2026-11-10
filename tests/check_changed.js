@@ -14,11 +14,15 @@ const html=path.resolve(argv.find(a=>a.endsWith('.html'))||path.join(__dirname,'
 const root=path.resolve(__dirname,'..'),out=path.join(__dirname,'shots-changed'),BASELINE=path.join(__dirname,'.check_baseline.json');
 const VIEWS=[['desktop',1440,960,false],['phone',390,844,true]];
 // The page's own code, as against its content: when this changes, a change anywhere can show up everywhere.
-const ENGINE=['src/template.html','src/assemble.py','src/atlas_ui.js','src/layout.css','src/metro_ui.js','src/metro.css','src/metro_layout.js','src/metro_design.js'];
+const ENGINE=['src/template.html','src/assemble.py','src/atlas_ui.js','src/layout.css','src/metro_ui.js','src/metro.css','src/metro_layout.js','src/metro_design.js','src/audio_player.js','src/audio_player.css'];
 const git=(...a)=>execFileSync('git',['-C',root,...a],{maxBuffer:64*1024*1024});
 const sha=parts=>{const h=crypto.createHash('sha256');for(const p of parts)h.update(p);return h.digest('hex').slice(0,16)};
 const engineNow=()=>sha(ENGINE.map(f=>fs.readFileSync(path.join(root,f))));
-const engineAt=ref=>sha(ENGINE.map(f=>git('show',`${ref}:${f}`)));
+const engineAt=ref=>{
+ const present=new Set(git('ls-tree','-r','--name-only',ref,'--',...ENGINE).toString().trim().split('\n'));
+ // New modules did not exist in older baselines; that is a code change, not an invalid Git ref.
+ return sha(ENGINE.map(f=>present.has(f)?git('show',`${ref}:${f}`):`absent:${f}`));
+};
 
 // Runs in the page: a fingerprint of each scene's own content, so that one changed scene does not count as its whole section.
 function fingerprint(){

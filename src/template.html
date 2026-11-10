@@ -200,9 +200,44 @@ body.resizing-reader{cursor:col-resize;user-select:none}
 body.resizing-reader #map{pointer-events:none}
 @media(max-width:820px){#readerGrip{display:none}}
 /*__METRO_CSS__*/
+/*__AUDIO_CSS__*/
 </style>
 </head>
 <body>
+<section id="audioPlayer" aria-label="朗读播放器" hidden>
+  <div class="audio-player-inner">
+    <div class="audio-transport">
+      <button id="audioPrevious" type="button" aria-label="上一首" title="上一首">Ⅰ◀</button>
+      <button id="audioToggle" type="button" aria-label="暂停">Ⅱ</button>
+      <button id="audioNext" type="button" aria-label="下一首" title="下一首">▶Ⅰ</button>
+    </div>
+    <div class="audio-now">
+      <div id="audioContext"></div>
+      <button id="audioTitle" type="button" title="定位到朗读正文（不会重播）"></button>
+      <div class="audio-progress"><span id="audioElapsed">0:00</span><input id="audioSeek" type="range" min="0" max="1000" step="1" value="0" aria-label="播放进度" aria-keyshortcuts="PageUp PageDown Home End" title="拖动调进度；方向键浏览正文，PageUp/PageDown 调进度，Home/End 到首尾"><span id="audioDuration">0:00</span></div>
+      <div id="audioPhase"></div>
+    </div>
+    <div class="audio-speed">
+      <label for="audioSpeed">语速 <output id="audioSpeedValue" for="audioSpeed">1×</output></label>
+      <input id="audioSpeed" type="range" min="0" max="6" step="1" value="0" aria-label="朗读语速" list="audioSpeedTicks" aria-keyshortcuts="PageUp PageDown Home End" title="拖动调语速；方向键浏览正文，PageUp/PageDown 调一档，Home/End 到两端">
+      <datalist id="audioSpeedTicks"><option value="0"></option><option value="1"></option><option value="2"></option><option value="3"></option><option value="4"></option><option value="5"></option><option value="6"></option></datalist>
+      <div class="audio-speed-labels" aria-hidden="true"><span>1</span><span>1.25</span><span>1.5</span><span>1.75</span><span>2</span><span>2.5</span><span>3</span></div>
+    </div>
+    <button id="audioQueueToggle" type="button" aria-expanded="false" aria-controls="audioQueuePanel">队列 <span id="audioCount"></span> ▾</button>
+    <div class="audio-options" role="group" aria-label="朗读包括的独立片段">
+      <label title="正文之后播放名场面和豆腐块；切换只影响尚未经过的片段"><input id="audioIncludeExtras" type="checkbox" autocomplete="off">包括补充趣事</label>
+      <label title="人物姓名、小事标题、小事文字和生平同属人物片段；不读固定日期与外部参考链接"><input id="audioIncludePeople" type="checkbox" autocomplete="off">包括人物小传</label>
+    </div>
+  </div>
+  <p id="audioError" role="status" hidden></p>
+  <section id="audioQueuePanel" aria-label="播放队列" hidden>
+    <div class="audio-queue-heading"><strong id="audioQueueName"></strong><button id="audioQueueClose" type="button" aria-label="关闭播放队列">×</button></div>
+    <p>选曲只切换声音；点播放器标题才定位正文。</p>
+    <ol id="audioQueue"></ol>
+    <p id="audioQueueNote"></p>
+  </section>
+  <audio id="atlasAudioElement" preload="none"></audio>
+</section>
 <header id="masthead">
   <img id="brandMark" alt="">
   <div id="brandText"><h1>简明欧洲史图册<span>历史进程 · 地理图册 · 动力专题</span></h1></div>
@@ -247,6 +282,11 @@ body.resizing-reader #map{pointer-events:none}
   <section id="reader" aria-label="地图说明">
     <button id="readerToggle" aria-controls="readerBody" aria-expanded="true">收起 −</button>
     <div id="metroBar"><div class="scene-nav"><button id="mapFold" type="button" aria-expanded="true">地图 ▴</button><span id="sceneHeading"></span><span id="scenePosition"></span><button id="prevScene" type="button" aria-label="上一幕">↑ 上一幕</button><button id="nextScene" type="button" aria-label="下一幕">下一幕 ↓</button></div></div>
+    <div id="readerAudioActions" hidden>
+      <button id="audioRead" type="button" aria-describedby="audioAvailability">朗读</button>
+      <button id="audioReadLine" type="button" aria-describedby="audioAvailability">连续朗读</button>
+      <span id="audioAvailability"></span>
+    </div>
     <div id="readerBody"><header id="readerHead"><div id="entryEyebrow" class="eyebrow"></div><h2 id="entryTitle"></h2><div id="entryEnglish" class="en-name"></div></header><div id="transferBar"></div><article id="card" aria-labelledby="entryTitle"></article></div>
   </section>
   <div id="mapSceneChip"><div><small id="mapSceneDate"></small><b id="mapSceneTitle"></b></div></div>
@@ -1416,6 +1456,8 @@ function makeCtx(entry){
    ============================================================ */
 /*__ATLAS_UI__*/
 </script>
+<script>const AUDIO_MANIFEST = /*__AUDIO_MANIFEST__*/;</script>
+<script>/*__AUDIO_PLAYER__*/</script>
 <script>
 /*__METRO_PERIODS__*/
 /*__METRO_DESIGN__*/

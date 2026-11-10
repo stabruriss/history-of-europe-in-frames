@@ -1,6 +1,8 @@
 node_modules
 dist/
 .vercel/
+.env*.local
+*.mp3
 tests/shots*/
 src/out.html
 src/ne_10m_*/

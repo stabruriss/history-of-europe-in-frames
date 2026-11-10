@@ -65,11 +65,11 @@ SLOWEST_FIRST = [
     'verify-v34.js',
 ]
 # What readers actually see. When the page's own code changes, these run here and GitHub runs the rest.
-LAYOUT = ['verify-metro.js', 'verify-metro-keys.js', 'verify-reader-width.js']
+LAYOUT = ['verify-metro.js', 'verify-metro-keys.js', 'verify-reader-width.js', 'verify-audio-player.js']
 # These walk the whole book, and check_changed.js does their per-scene checks on the scenes that changed.
 # They run in the full set, even if they mention a changed section by name.
 WHOLE_BOOK = {'verify-history.js', 'verify-figures.js', 'verify-moments.js', 'verify-metro.js',
-              'verify-metro-keys.js', 'verify-reader-width.js', 'verify-v5.js'}
+              'verify-metro-keys.js', 'verify-reader-width.js', 'verify-audio-player.js', 'verify-v5.js'}
 # On this shared 8-core, 16 GB machine, 3 at once finished about as fast as 8 (109-159s against 124s for the
 # same suites) with less than half the total Chrome time, and 1 took 349s.
 DEFAULT_JOBS = 3
@@ -106,6 +106,13 @@ def inputs_key(tests_dir: Path, page_hash: str, name: str) -> str:
     paths = [tests_dir / 'legacy_sidebar.cjs', tests_dir / 'chrome_guard.cjs', *suite_specs(tests_dir, text)]
     if 'run_tests.py' in text:
         paths.append(tests_dir / 'run_tests.py')
+    if name in {'verify-audio-pipeline.js','verify-audio-player.js'}:
+        paths.extend(p for p in sorted((tests_dir.parent / 'tools' / 'audio').glob('*')) if p.is_file())
+    if name == 'verify-audio-pipeline.js':
+        paths.extend([tests_dir / 'audio_pipeline_test.py', tests_dir / 'run_tests.py'])
+    if name == 'verify-audio-player.js':
+        # This suite assembles its own previews; index.html alone is not its rendering input.
+        paths.extend(p for p in sorted((tests_dir.parent / 'src').glob('*')) if p.is_file())
     for path in paths:
         if path.exists():
             h.update(path.read_bytes())
@@ -131,7 +138,7 @@ def pick_suites(tests_dir: Path, info: dict, all_suites: list) -> list:
         picked |= set(LAYOUT) & set(all_suites)
     if info['linesChanged']:
         # The tree and the whole-map layout are what a new or moved station can break.
-        picked |= {'verify-tree.js', 'verify-metro.js'} & set(all_suites)
+        picked |= {'verify-tree.js', 'verify-metro.js', 'verify-audio-player.js'} & set(all_suites)
     return sorted(picked)
 
 

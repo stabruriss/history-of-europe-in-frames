@@ -1528,9 +1528,124 @@ body.history-mode #mapSceneChip{display:block}
  #transferBar{padding:2px 14px 8px;border:0;background:none}
 }
 
+/* A small blue-ink reading ribbon, within the atlas's existing parchment shell. */
+:root{--audio-blue:#235f93;--audio-height:0px}
+body{padding-top:var(--audio-height)}
+#networkMode{top:calc(var(--masthead-h,65px) + var(--audio-height))}
+#readerAudioActions[hidden],#audioPlayer[hidden],#audioPlayer [hidden],#readerAudioActions [hidden]{display:none!important}
+#readerAudioActions{display:flex;align-items:center;gap:7px;flex:none;order:0;padding:7px 22px;border-bottom:1px solid var(--rule);background:var(--paper-light);min-width:0}
+#readerAudioActions button{font:12px var(--serif);color:var(--audio-blue);background:transparent;border:1px solid #235f9360;border-radius:2px;min-height:32px;padding:4px 11px;white-space:nowrap;cursor:pointer}
+#readerAudioActions button:not(:disabled):hover{background:#235f9310;border-color:var(--audio-blue)}
+#readerAudioActions button:disabled{opacity:.48;cursor:default}
+#audioAvailability{font:10px/1.5 var(--serif);color:var(--soft);min-width:0;overflow-wrap:anywhere}
+#readerAudioActions :focus-visible,#audioPlayer :focus-visible{outline:2px solid var(--audio-blue);outline-offset:2px}
+#audioPlayer{position:fixed;inset:0 0 auto;z-index:1400;background:var(--paper-light);border-bottom:2px solid var(--audio-blue);box-shadow:0 3px 12px #2a201819;color:var(--ink)}
+.audio-player-inner{display:grid;grid-template-columns:116px minmax(0,1fr) 184px 92px;gap:4px 22px;align-items:center;padding:8px 22px;max-width:1500px;margin:auto}
+#audioPlayer button{font:inherit;color:var(--audio-blue);background:transparent;cursor:pointer;border:1px solid transparent;border-radius:2px;touch-action:manipulation}
+#audioPlayer button:disabled{opacity:.35;cursor:default}
+#audioPlayer button:not(:disabled):hover{background:#235f9310}
+.audio-transport{display:flex;align-items:center;gap:4px;grid-column:1;grid-row:1/3}
+.audio-transport button{width:34px;height:40px;padding:0;font-size:12px!important;flex:none}
+#audioPlayer #audioToggle{width:40px;border-color:var(--audio-blue);background:var(--audio-blue);color:var(--paper-light);font:19px var(--latin)}
+.audio-now{min-width:0;grid-column:2;grid-row:1/3}
+#audioContext{font:10px/1.5 var(--serif);color:var(--soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#audioPlayer #audioTitle{display:block;text-align:left;font:700 14px/1.6 var(--serif);text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;padding:0;min-height:24px}
+.audio-progress{display:flex;align-items:center;gap:8px;font:11px var(--latin);font-variant-numeric:tabular-nums;color:var(--ink2)}
+#audioPlayer input[type=range]{min-width:0;accent-color:var(--audio-blue);cursor:pointer;height:20px;margin:0}
+#audioSeek{flex:1;width:100%}
+#audioPhase{font:10px/1.4 var(--serif);color:var(--soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.audio-speed{grid-column:3;grid-row:1}
+.audio-speed label{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--soft)}
+.audio-speed output{font:16px var(--latin);color:var(--audio-blue)}
+#audioSpeed{display:block;width:100%}
+.audio-speed-labels{display:flex;justify-content:space-between;font:10px var(--latin);color:var(--soft)}
+#audioPlayer #audioQueueToggle{font-size:12px;min-height:36px;padding:6px;border-color:var(--rule);white-space:nowrap;grid-column:4;grid-row:1}
+#audioQueueToggle[aria-expanded=true]{background:#235f9310}
+.audio-options{display:flex;gap:12px;align-items:center;grid-column:3/5;grid-row:2;min-width:0}
+.audio-options label{display:flex;align-items:center;gap:5px;min-height:24px;font:11px var(--serif);color:var(--audio-blue);white-space:nowrap;cursor:pointer}
+.audio-options input{margin:0;width:14px;height:14px;accent-color:var(--audio-blue);flex:none;cursor:pointer}
+#audioError{margin:0;padding:0 22px 8px;font:12px/1.6 var(--serif);color:var(--accent)}
+#audioQueuePanel{position:absolute;right:16px;top:calc(100% + 6px);width:min(460px,calc(100vw - 24px));max-height:min(48dvh,calc(100dvh - var(--audio-height) - 80px));overflow:auto;overscroll-behavior:contain;padding:10px 16px;background:var(--paper-light);border:1px solid var(--rule);box-shadow:0 6px 18px #2a20182b}
+.audio-queue-heading{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:14px}
+#audioPlayer #audioQueueClose{font-size:22px;width:34px;height:34px}
+#audioQueuePanel p{margin:4px 0 9px;font:11px/1.6 var(--serif);color:var(--soft)}
+#audioQueue{list-style:none;margin:0;padding:0}
+#audioQueue li{margin:0;padding:0;border-top:1px dotted var(--rule)}
+#audioQueue button{display:grid;grid-template-columns:25px minmax(0,1fr) 38px;align-items:center;gap:8px;width:100%;padding:9px 4px;text-align:left;font-size:12px;line-height:1.5}
+#audioQueue button[aria-current=true]{background:#235f9310;font-weight:bold}
+#audioQueue small{display:block;font-weight:400;color:var(--soft);font-size:10px}
+#audioQueue .audio-number,#audioQueue time{font:11px var(--latin);font-variant-numeric:tabular-nums;color:var(--soft)}
+@media(max-width:820px){
+ .audio-player-inner{grid-template-columns:112px minmax(0,1fr) 70px;gap:5px 9px;padding:6px 10px}
+ .audio-transport{grid-row:1}
+ .audio-now{grid-column:2/4;grid-row:1}
+ .audio-options{grid-column:1/-1;grid-row:3;gap:18px}
+ .audio-options label{font-size:11px}
+ #audioContext{font-size:9px}
+ #audioPlayer #audioTitle{font-size:12px}
+ #audioPhase{font-size:9px}
+ .audio-speed{grid-column:1/3;grid-row:2;display:grid;grid-template-columns:66px minmax(0,1fr);gap:0 8px;align-items:center}
+ .audio-speed label{font-size:10px}
+ .audio-speed-labels{grid-column:2;font-size:9px}
+ #audioPlayer #audioQueueToggle{grid-column:3;grid-row:2;font-size:11px;min-height:34px}
+ #audioQueuePanel{right:12px;max-height:min(34dvh,calc(100dvh - var(--audio-height) - 120px));padding:8px 12px}
+ #audioError{padding:0 10px 6px;font-size:11px}
+ #readerAudioActions{padding:5px 14px;gap:6px}
+ #readerAudioActions button{font-size:11.5px;padding:4px 9px;min-height:32px}
+ #audioAvailability{font-size:9px}
+ /* Keep the reading pane usable when both the ribbon and the map are open. */
+ body.history-mode:has(#audioPlayer:not([hidden])) #mapwrap{grid-template-rows:clamp(110px,20dvh,180px) minmax(0,1fr)}
+ body.history-mode.map-min:has(#audioPlayer:not([hidden])) #mapwrap{grid-template-rows:0 minmax(0,1fr)}
+}
+@media(max-width:820px) and (max-height:520px) and (orientation:landscape){
+ body.history-mode:has(#audioPlayer:not([hidden])) #mapwrap{grid-template-rows:minmax(0,1fr)}
+ .audio-player-inner{grid-template-columns:112px minmax(0,1fr) 145px 65px;gap:8px}
+ .audio-transport{grid-row:1/3}
+ .audio-now{grid-column:2;grid-row:1/3}
+ .audio-speed{grid-column:3;grid-row:1;display:block}
+ #audioPlayer #audioQueueToggle{grid-column:4;grid-row:1}
+ .audio-options{grid-column:3/5;grid-row:2;gap:8px}
+ .audio-options label{font-size:10px}
+ #audioPhase{font-size:9px}
+}
+
 </style>
 </head>
 <body>
+<section id="audioPlayer" aria-label="朗读播放器" hidden>
+  <div class="audio-player-inner">
+    <div class="audio-transport">
+      <button id="audioPrevious" type="button" aria-label="上一首" title="上一首">Ⅰ◀</button>
+      <button id="audioToggle" type="button" aria-label="暂停">Ⅱ</button>
+      <button id="audioNext" type="button" aria-label="下一首" title="下一首">▶Ⅰ</button>
+    </div>
+    <div class="audio-now">
+      <div id="audioContext"></div>
+      <button id="audioTitle" type="button" title="定位到朗读正文（不会重播）"></button>
+      <div class="audio-progress"><span id="audioElapsed">0:00</span><input id="audioSeek" type="range" min="0" max="1000" step="1" value="0" aria-label="播放进度" aria-keyshortcuts="PageUp PageDown Home End" title="拖动调进度；方向键浏览正文，PageUp/PageDown 调进度，Home/End 到首尾"><span id="audioDuration">0:00</span></div>
+      <div id="audioPhase"></div>
+    </div>
+    <div class="audio-speed">
+      <label for="audioSpeed">语速 <output id="audioSpeedValue" for="audioSpeed">1×</output></label>
+      <input id="audioSpeed" type="range" min="0" max="6" step="1" value="0" aria-label="朗读语速" list="audioSpeedTicks" aria-keyshortcuts="PageUp PageDown Home End" title="拖动调语速；方向键浏览正文，PageUp/PageDown 调一档，Home/End 到两端">
+      <datalist id="audioSpeedTicks"><option value="0"></option><option value="1"></option><option value="2"></option><option value="3"></option><option value="4"></option><option value="5"></option><option value="6"></option></datalist>
+      <div class="audio-speed-labels" aria-hidden="true"><span>1</span><span>1.25</span><span>1.5</span><span>1.75</span><span>2</span><span>2.5</span><span>3</span></div>
+    </div>
+    <button id="audioQueueToggle" type="button" aria-expanded="false" aria-controls="audioQueuePanel">队列 <span id="audioCount"></span> ▾</button>
+    <div class="audio-options" role="group" aria-label="朗读包括的独立片段">
+      <label title="正文之后播放名场面和豆腐块；切换只影响尚未经过的片段"><input id="audioIncludeExtras" type="checkbox" autocomplete="off">包括补充趣事</label>
+      <label title="人物姓名、小事标题、小事文字和生平同属人物片段；不读固定日期与外部参考链接"><input id="audioIncludePeople" type="checkbox" autocomplete="off">包括人物小传</label>
+    </div>
+  </div>
+  <p id="audioError" role="status" hidden></p>
+  <section id="audioQueuePanel" aria-label="播放队列" hidden>
+    <div class="audio-queue-heading"><strong id="audioQueueName"></strong><button id="audioQueueClose" type="button" aria-label="关闭播放队列">×</button></div>
+    <p>选曲只切换声音；点播放器标题才定位正文。</p>
+    <ol id="audioQueue"></ol>
+    <p id="audioQueueNote"></p>
+  </section>
+  <audio id="atlasAudioElement" preload="none"></audio>
+</section>
 <header id="masthead">
   <img id="brandMark" alt="">
   <div id="brandText"><h1>简明欧洲史图册<span>历史进程 · 地理图册 · 动力专题</span></h1></div>
@@ -1575,6 +1690,11 @@ body.history-mode #mapSceneChip{display:block}
   <section id="reader" aria-label="地图说明">
     <button id="readerToggle" aria-controls="readerBody" aria-expanded="true">收起 −</button>
     <div id="metroBar"><div class="scene-nav"><button id="mapFold" type="button" aria-expanded="true">地图 ▴</button><span id="sceneHeading"></span><span id="scenePosition"></span><button id="prevScene" type="button" aria-label="上一幕">↑ 上一幕</button><button id="nextScene" type="button" aria-label="下一幕">下一幕 ↓</button></div></div>
+    <div id="readerAudioActions" hidden>
+      <button id="audioRead" type="button" aria-describedby="audioAvailability">朗读</button>
+      <button id="audioReadLine" type="button" aria-describedby="audioAvailability">连续朗读</button>
+      <span id="audioAvailability"></span>
+    </div>
     <div id="readerBody"><header id="readerHead"><div id="entryEyebrow" class="eyebrow"></div><h2 id="entryTitle"></h2><div id="entryEnglish" class="en-name"></div></header><div id="transferBar"></div><article id="card" aria-labelledby="entryTitle"></article></div>
   </section>
   <div id="mapSceneChip"><div><small id="mapSceneDate"></small><b id="mapSceneTitle"></b></div></div>
@@ -88880,6 +89000,8 @@ function go(id,opts={}){
   if(first||reduceMotion)drawNow();
   else{pending=drawNow;map.once('moveend',drawNow);drawNow.t=setTimeout(drawNow,1200);}
   if(!opts.noHash)history.replaceState(null,'','#'+e.id+(selected?'/'+selected:''));
+  // Reading controls observe navigation; they never drive playback from it.
+  document.dispatchEvent(new Event('atlas:navigate'));
 }
 
 function buildTimeline(){
@@ -88918,7 +89040,9 @@ document.getElementById('next').onclick=()=>stepEntry(1);
 document.getElementById('tFit').onclick=()=>{map.closePopup();fit(ENTRIES[cur],true);};
 document.addEventListener('keydown',ev=>{
   if(ev.defaultPrevented||ev.isComposing||ev.altKey||ev.ctrlKey||ev.metaKey||ev.shiftKey)return;
-  if(ev.target.isContentEditable||ev.target.closest('input,textarea,select,[role="textbox"],[role="separator"]'))return;
+  if(document.querySelector('dialog[open],#kinSheet:not([hidden])'))return;
+  // Only the two audio ranges share navigation keys; editing and layout controls keep theirs.
+  if(ev.target.isContentEditable||ev.target.closest('input:not(#audioSpeed):not(#audioSeek):not(#audioIncludeExtras):not(#audioIncludePeople),textarea,select,[role="textbox"],[role="separator"]'))return;
   const vertical=ev.key==='ArrowUp'||ev.key==='ArrowDown';
   const horizontal=ev.key==='ArrowLeft'||ev.key==='ArrowRight';
   if(!vertical&&!horizontal)return;
@@ -89013,6 +89137,363 @@ card.addEventListener('click',ev=>{
   if(trigger){const box=trigger.closest('.box');if(box)openKinSheet(box);}
 });
 
+</script>
+<script>const AUDIO_MANIFEST = {"schema":2,"policy":3,"profile":{"voice":"zh-CN-YunjianNeural","pitch":"+0Hz","rate":"+0%","volume":"+0%"},"source":{"commit":"6f36fe82bf3a5cf8b0260039b20cbc3fd5601294","dirty":[],"files":{"src/history_entries.js":"3c1b09f4d074e429e99e355aba2dccbc23951713cf8d1cec29b33479f3be0a0b","src/history_content.json":"ae40d074d83e8ba1f799167e280d16f12d90a7b1a061a9f389ed9102747faf35","src/historical_figures.js":"95c19749d249f451f0245cf0c096ef9917f643593eddeb46f12f39f310e69c7e"}},"assets":{"topic-grail-sword":{"url":"https://ccjesfa3fpqn3fps.public.blob.vercel-storage.com/audio/v1/3551a8feaceb98d6da820edb262c3a05c57597f9c7f4dbaee9fd783bce6f5874.mp3","duration":230.592,"bytes":1383552,"textHash":"a831885e11606c03191ff57304b04502a575e8b368291c2a998582b8f915a3ae","inputHash":"34272d5915c385ecb02de2835a2a755bd9079c67db85823f4dd1ffa618da3a1b","audioHash":"3551a8feaceb98d6da820edb262c3a05c57597f9c7f4dbaee9fd783bce6f5874"},"topic-grail-sword/0/box/0":{"url":"https://ccjesfa3fpqn3fps.public.blob.vercel-storage.com/audio/v1/981c0d0f4f7e046d2eea5c82abd14b3e927d7b05c3b937ffbb743e897adc3bca.mp3","duration":38.448,"bytes":230688,"textHash":"a5ebbb6553a5b5f940db36d7c5c0a519dfd7070e4a04e760ce01143c9bbd75bc","inputHash":"2bf467be90d3b80403345ce4120b53be939a00f386cd8609f30710dda9c562bf","audioHash":"981c0d0f4f7e046d2eea5c82abd14b3e927d7b05c3b937ffbb743e897adc3bca"},"topic-social-ladder":{"url":"https://ccjesfa3fpqn3fps.public.blob.vercel-storage.com/audio/v1/993f24e5cdf41bc6722dbeda597887d70441091b3884c5e7b3d3716d3313a8b9.mp3","duration":283.176,"bytes":1699056,"textHash":"02bd1e35d6b4d5f5f624b0a5aa06bb56c449f9b3ef9485381a3e428c8d5043ec","inputHash":"5f07cf9a97090c72f34a0d82b2e0f7a1c532be48440c5ebb518bc95fed5f48ab","audioHash":"993f24e5cdf41bc6722dbeda597887d70441091b3884c5e7b3d3716d3313a8b9"},"topic-social-ladder/0/box/0":{"url":"https://ccjesfa3fpqn3fps.public.blob.vercel-storage.com/audio/v1/f20f132848e76e04dc51088158518bd6d862582e8ff0945a89356673515174cb.mp3","duration":48.144,"bytes":288864,"textHash":"bfb76ea7b54b126601b078912a5d3925936ee964573e68831cd9474600049a11","inputHash":"9bbfb7b0dcba79d8dc2ef63b148a9492fe487f66e58afe42c57684073345ff1d","audioHash":"f20f132848e76e04dc51088158518bd6d862582e8ff0945a89356673515174cb"},"topic-military-power":{"url":"https://ccjesfa3fpqn3fps.public.blob.vercel-storage.com/audio/v1/dc11acda8fcab531b1bbbcedcec132bff709f78e0995cd539cc800d41431c88c.mp3","duration":346.344,"bytes":2078064,"textHash":"a86eee70d2dd0a3560b401a4c0f18b957f646edb6f3faa8c6b238ba809c1f53c","inputHash":"6f0f39e8102e22a8d46b6ad727c3e500912bad688d836e64a8c259ecb208d584","audioHash":"dc11acda8fcab531b1bbbcedcec132bff709f78e0995cd539cc800d41431c88c"},"topic-military-power/0/box/0":{"url":"https://ccjesfa3fpqn3fps.public.blob.vercel-storage.com/audio/v1/2d81dbc505fe2c69255a4173be3da1c8919091caf08a67011cea5bf489a3950b.mp3","duration":77.688,"bytes":466128,"textHash":"412f0bde8b4c82a1f12052a4ad85fc7629dcbf8c41ca0afced66dd651741be3c","inputHash":"1626c66f7a0acbe660ffbf2a9388b975e16f6d8e2da5e21729693187ba1effc9","audioHash":"2d81dbc505fe2c69255a4173be3da1c8919091caf08a67011cea5bf489a3950b"},"topic-china-arithmetic":{"url":"https://ccjesfa3fpqn3fps.public.blob.vercel-storage.com/audio/v1/ea17b59ae4cccd09c5f6a57848253981bd08b737a53f189254ff457c9f9080fd.mp3","duration":324.384,"bytes":1946304,"textHash":"ad31a60917cb1dea822e7fa6faab82c80a32ece3ba4f36f3c31c98245f165f72","inputHash":"e9c280b636e67d19498807cc7a12a32a64a120c6c481ecf9b94c7d883c086c42","audioHash":"ea17b59ae4cccd09c5f6a57848253981bd08b737a53f189254ff457c9f9080fd"},"topic-china-arithmetic/0/box/0":{"url":"https://ccjesfa3fpqn3fps.public.blob.vercel-storage.com/audio/v1/d99c747a5879181d50bdaab00e7f776bc2178e88c22ccea140ced7e40947862f.mp3","duration":64.824,"bytes":388944,"textHash":"9c2fbebfd36dab29efbb4057bdfba80c3380181a6557c82eb6ef78fc185645af","inputHash":"d8fcbfd81d8c8860bed4cafecae6d85aebe5e0afb022f2307ff6acc441679b58","audioHash":"d99c747a5879181d50bdaab00e7f776bc2178e88c22ccea140ced7e40947862f"},"topic-roman-triangle":{"url":"https://ccjesfa3fpqn3fps.public.blob.vercel-storage.com/audio/v1/9fb942a5375279fa917d64f82ed6bce29358683be8a6ea72c1257fe31a14c855.mp3","duration":276.984,"bytes":1661904,"textHash":"755119b9ded5e50b6f7c4835b41d3e1aa6aea2f05335b5c385b2411c28956828","inputHash":"9388f2e6cf578f18f96ae4348969264bbc6d0cb324aa6934d476884b4092377e","audioHash":"9fb942a5375279fa917d64f82ed6bce29358683be8a6ea72c1257fe31a14c855"},"topic-roman-triangle/0/box/0":{"url":"https://ccjesfa3fpqn3fps.public.blob.vercel-storage.com/audio/v1/216eb54efe65cbf3ab3059bee646583772bcd013da2556907f0f2b771e0649e7.mp3","duration":73.968,"bytes":443808,"textHash":"85509d70bdce95dbda7881139d3718874c1b10422bd2bf4ab4788663898140e7","inputHash":"9fc15e9666dfd223523740ce3fcba30b2bad48f3415e0edf2995cf87c927e37e","audioHash":"216eb54efe65cbf3ab3059bee646583772bcd013da2556907f0f2b771e0649e7"},"topic-roman-machine":{"url":"https://ccjesfa3fpqn3fps.public.blob.vercel-storage.com/audio/v1/06d26c152d380f6f130b2e30e175f5170f804381063c2eec45f10531a257baab.mp3","duration":288.312,"bytes":1729872,"textHash":"463a3dae4977ec9b96bb7fe56d0ee7fea389e74395b7654b05258d60dd2daac4","inputHash":"c729b4a6a6b79c9feb6cc20bbed5438406a4dc67240196494c6e29d350fe42a0","audioHash":"06d26c152d380f6f130b2e30e175f5170f804381063c2eec45f10531a257baab"},"topic-roman-machine/0/box/0":{"url":"https://ccjesfa3fpqn3fps.public.blob.vercel-storage.com/audio/v1/9c67a2801429cc8ae477bc620982a9a0714f226383252b65f72d225bcea805ab.mp3","duration":43.296,"bytes":259776,"textHash":"6093cd60d4c2f5a6db2dd9fb65072f9b83fb460db16e342ed08b790c2c8a9e81","inputHash":"7db0872e4c5f6a201473fe5e86f4e9e0e4d930d391c5303de12c35bdbf908d55","audioHash":"9c67a2801429cc8ae477bc620982a9a0714f226383252b65f72d225bcea805ab"},"topic-black-sheep":{"url":"https://ccjesfa3fpqn3fps.public.blob.vercel-storage.com/audio/v1/89ad4074fed662919760bbb1636d8ea46bf0ea316d43a786b41cb5f170d2a3de.mp3","duration":285.936,"bytes":1715616,"textHash":"af9e421ec0b29ce47c345ef76ba886b71de6af30c9dc7d25c341637e3179d1b6","inputHash":"3f2706293afbb58a17db4cbf14e05810ddf0b07433cf99a2638e4f51cf385a0a","audioHash":"89ad4074fed662919760bbb1636d8ea46bf0ea316d43a786b41cb5f170d2a3de"},"topic-black-sheep/0/box/0":{"url":"https://ccjesfa3fpqn3fps.public.blob.vercel-storage.com/audio/v1/3845d8620aaade6bd71c9577cb9250741264e02f2020fa805e4bac83e169a408.mp3","duration":68.088,"bytes":408528,"textHash":"700c7a7d13c77d692cf4373bb0a84d5f5bf318d89108c528364b184dac613489","inputHash":"995ee90a59d236acf4dd1341cfe37938aaecd0fac49fc60ca51b9d0e0c6fb7c0","audioHash":"3845d8620aaade6bd71c9577cb9250741264e02f2020fa805e4bac83e169a408"},"topic-no-garrison":{"url":"https://ccjesfa3fpqn3fps.public.blob.vercel-storage.com/audio/v1/6ba545ac6d538ed019e14c1a3841a28f1dc4aae6434c8d47f5d921fd739a360c.mp3","duration":345.768,"bytes":2074608,"textHash":"883e8db4860111e43ac5504f06e7ae53ef4f8b3db7177ed5f65bb14d8663933a","inputHash":"e272ebabfc5847e32ca63d1ca913238667d82061fa9b165603fe185a811b641e","audioHash":"6ba545ac6d538ed019e14c1a3841a28f1dc4aae6434c8d47f5d921fd739a360c"},"topic-no-garrison/0/box/0":{"url":"https://ccjesfa3fpqn3fps.public.blob.vercel-storage.com/audio/v1/2fc0649b1923f72e41c1534632c50b6593ce9ed156ef0e17d5c36e54119a0a96.mp3","duration":62.904,"bytes":377424,"textHash":"225a544534589ecddf1f3d0ba2849da3859182f3852d62ae58e91823d55c6776","inputHash":"e9676537c88e4d8d8d35114e2752be888e09c3503f1ef258b6b47d0e20301408","audioHash":"2fc0649b1923f72e41c1534632c50b6593ce9ed156ef0e17d5c36e54119a0a96"},"topic-paper-power":{"url":"https://ccjesfa3fpqn3fps.public.blob.vercel-storage.com/audio/v1/c95192d22d2c17d58b665703803a38b74c52747889daae9edadb22aeff885fd5.mp3","duration":475.368,"bytes":2852208,"textHash":"8c87144fc2438df3189de08b022270e57dec87a4220a94b39decf4230ff1969a","inputHash":"c696334761de3796aef3cb41cbce1bd7583aac5353f444ad680da11b5caf806c","audioHash":"c95192d22d2c17d58b665703803a38b74c52747889daae9edadb22aeff885fd5"},"topic-paper-power/0/box/0":{"url":"https://ccjesfa3fpqn3fps.public.blob.vercel-storage.com/audio/v1/5a36d3e2f6c1518deaa8ee6fcfa0f614751fb52dca532b509340e5a182279ef4.mp3","duration":88.08,"bytes":528480,"textHash":"0e4ac317ad413f6793bb59e00a7eeb9a8de948df224030b0220f758e17c56130","inputHash":"2f69d40a9357d0fd8243259257019e5c56b1b3d20f2cf923a7aaaf74d5b6d2de","audioHash":"5a36d3e2f6c1518deaa8ee6fcfa0f614751fb52dca532b509340e5a182279ef4"},"topic-one-vs-many":{"url":"https://ccjesfa3fpqn3fps.public.blob.vercel-storage.com/audio/v1/aace89501fca88cfa5aa93f15be7449cbd9824a8826da6eb3cbed7748a2b48af.mp3","duration":386.016,"bytes":2316096,"textHash":"15b8418295ac8df869d6af716ce589abc422548b07f8267a68f08b4a23b24cbc","inputHash":"ab6b63ebee30b73ed98a2cc9cd817f5845a7f54918edbfad6e7d28502468e825","audioHash":"aace89501fca88cfa5aa93f15be7449cbd9824a8826da6eb3cbed7748a2b48af"},"topic-one-vs-many/3/box/0":{"url":"https://ccjesfa3fpqn3fps.public.blob.vercel-storage.com/audio/v1/5093792ed20161065636902fe61ee2a17b8069a5b8c0ccc3d86b665e57616e31.mp3","duration":443.136,"bytes":2658816,"textHash":"1c4cb2d9925bcbf07ed07931533b63d08729534d3116f952151ee31b54718ff2","inputHash":"790ac339f1855f0a404a282181802922257e253f9a9449a7306d565116e22f3c","audioHash":"5093792ed20161065636902fe61ee2a17b8069a5b8c0ccc3d86b665e57616e31"},"topic-china-cycles":{"url":"https://ccjesfa3fpqn3fps.public.blob.vercel-storage.com/audio/v1/db7912ce6e1ac99f427bb85ad6d1ccd4f825d144b5c4b21764de8cda35b21544.mp3","duration":1542.72,"bytes":9256320,"textHash":"f18a147a916e04a26185c1c8c6b2248f33400e67fc479ee217a83037f726d548","inputHash":"0325e683b09fe213bfdffd2873ce794ed2fc456b7388e0ad051235e3014f0d66","audioHash":"db7912ce6e1ac99f427bb85ad6d1ccd4f825d144b5c4b21764de8cda35b21544"},"topic-three-states":{"url":"https://ccjesfa3fpqn3fps.public.blob.vercel-storage.com/audio/v1/7d2e32b2d48dbcdacc0e4d87601fe754a5030fe59e564c9d13779e4b47922e28.mp3","duration":514.296,"bytes":3085776,"textHash":"8eacc67fafa23015a53db9dd3490f620542b6ba82876ca7a0669f52c263231d8","inputHash":"5258b6d6e77690dc02277c66ca6f873ed5ca55e78f7854f060270471fa665904","audioHash":"7d2e32b2d48dbcdacc0e4d87601fe754a5030fe59e564c9d13779e4b47922e28"},"topic-three-states/0/box/0":{"url":"https://ccjesfa3fpqn3fps.public.blob.vercel-storage.com/audio/v1/135aa5572d68a4117a7e3f3ea433fa7c86206d82424fb223b70e556d68b8879c.mp3","duration":33.816,"bytes":202896,"textHash":"d387b9eb1f435159c5961cad03b6e75842487bdd8bdf9c4925bd6e58f56c4835","inputHash":"b426167229f93ed2570c67b7df8a36173bb07fa8c2310ebaeb0977b1ddac06ea","audioHash":"135aa5572d68a4117a7e3f3ea433fa7c86206d82424fb223b70e556d68b8879c"},"topic-energy":{"url":"https://ccjesfa3fpqn3fps.public.blob.vercel-storage.com/audio/v1/48a1a46a8009c046e48a47e089e180b9c2c37ceb90d6e21942f2d09effcb5b41.mp3","duration":430.176,"bytes":2581056,"textHash":"0edae122394239097793f78704fbed341e60b791ff1e967262c1e6a28b7f2ff8","inputHash":"944668aac464d0f4fc3f8be5f0b77495199e83e63dda7a438d86232d0c82d9fc","audioHash":"48a1a46a8009c046e48a47e089e180b9c2c37ceb90d6e21942f2d09effcb5b41"},"topic-energy/0/box/0":{"url":"https://ccjesfa3fpqn3fps.public.blob.vercel-storage.com/audio/v1/6523818fc3107d0ef6ffa8cb2e2f144fac96e51b45678381352002215b32610f.mp3","duration":6.648,"bytes":39888,"textHash":"7012dc35119c12e35eef08b0a4a5fab8324fd3e21a40aeca11f14a8ad213b234","inputHash":"f32db975e500e2379897e340c0095489e0212f98f7c4f973a6e5b6b19ee17533","audioHash":"6523818fc3107d0ef6ffa8cb2e2f144fac96e51b45678381352002215b32610f"},"topic-republic":{"url":"https://ccjesfa3fpqn3fps.public.blob.vercel-storage.com/audio/v1/facd4f33cc744324c7f40583b394a0f5c27cfa72830462360af47d1a12aa11c7.mp3","duration":836.16,"bytes":5016960,"textHash":"ab48258793c427c9cf45323c54d08bbc03f07e5764a86b55cc743e5957b2726f","inputHash":"8436bbeeab46cbba030fadb32400e2c6f262c8d988ce23eabef147ff6c74e340","audioHash":"facd4f33cc744324c7f40583b394a0f5c27cfa72830462360af47d1a12aa11c7"},"topic-republic/1/box/0":{"url":"https://ccjesfa3fpqn3fps.public.blob.vercel-storage.com/audio/v1/c706ee4ce176004bd975a29b5ac9f89e8e933e0b41a0321e4077366d975d43ac.mp3","duration":17.88,"bytes":107280,"textHash":"1a422c98624375cd0fdd1fa4511fa1cc94d1e7a267e4437893c2699d1e2b611d","inputHash":"7ce29a262b385185ccf347583e1c52b23c8cdac996a80c4bc27108b54640483c","audioHash":"c706ee4ce176004bd975a29b5ac9f89e8e933e0b41a0321e4077366d975d43ac"}},"tracks":{"history-migration/0":{"bodyId":"history-migration/0","titleId":"history-migration/title","extras":[],"people":[]},"history-migration/1":{"bodyId":"history-migration/1","titleId":"history-migration/title","extras":[],"people":[]},"history-farming/0":{"bodyId":"history-farming/0","titleId":"history-farming/title","extras":[],"people":[]},"history-farming/1":{"bodyId":"history-farming/1","titleId":"history-farming/title","extras":[],"people":[]},"history-palaces/0":{"bodyId":"history-palaces/0","titleId":"history-palaces/title","extras":[{"id":"history-palaces/0/moment/0","kind":"moment","label":"迷宫与牛头怪"}],"people":[]},"history-palaces/1":{"bodyId":"history-palaces/1","titleId":"history-palaces/title","extras":[],"people":[]},"history-palaces/2":{"bodyId":"history-palaces/2","titleId":"history-palaces/title","extras":[],"people":[]},"history-collapse/0":{"bodyId":"history-collapse/0","titleId":"history-collapse/title","extras":[],"people":[]},"history-collapse/1":{"bodyId":"history-collapse/1","titleId":"history-collapse/title","extras":[{"id":"history-collapse/1/moment/0","kind":"moment","label":"特洛伊战争"}],"people":[]},"history-collapse/2":{"bodyId":"history-collapse/2","titleId":"history-collapse/title","extras":[],"people":[]},"history-dark-age/0":{"bodyId":"history-dark-age/0","titleId":"history-dark-age/title","extras":[],"people":[]},"history-poleis/0":{"bodyId":"history-poleis/0","titleId":"history-poleis/title","extras":[{"id":"history-poleis/0/moment/0","kind":"moment","label":"第一届奥运会"}],"people":[]},"history-poleis/1":{"bodyId":"history-poleis/1","titleId":"history-poleis/title","extras":[],"people":[]},"history-sparta/0":{"bodyId":"history-sparta/0","titleId":"history-sparta/title","extras":[],"people":[]},"history-sparta/1":{"bodyId":"history-sparta/1","titleId":"history-sparta/title","extras":[],"people":[]},"history-athens/0":{"bodyId":"history-athens/0","titleId":"history-athens/title","extras":[],"people":[]},"history-athens/1":{"bodyId":"history-athens/1","titleId":"history-athens/title","extras":[],"people":[]},"history-athens/2":{"bodyId":"history-athens/2","titleId":"history-athens/title","extras":[],"people":[]},"history-persian-wars/0":{"bodyId":"history-persian-wars/0","titleId":"history-persian-wars/title","extras":[],"people":[]},"history-persian-wars/1":{"bodyId":"history-persian-wars/1","titleId":"history-persian-wars/title","extras":[],"people":[]},"history-persian-wars/2":{"bodyId":"history-persian-wars/2","titleId":"history-persian-wars/title","extras":[{"id":"history-persian-wars/2/moment/0","kind":"moment","label":"马拉松"}],"people":[]},"history-persian-wars/3":{"bodyId":"history-persian-wars/3","titleId":"history-persian-wars/title","extras":[{"id":"history-persian-wars/3/moment/1","kind":"moment","label":"斯巴达三百勇士"}],"people":[]},"history-persian-wars/4":{"bodyId":"history-persian-wars/4","titleId":"history-persian-wars/title","extras":[],"people":[]},"history-persian-wars/5":{"bodyId":"history-persian-wars/5","titleId":"history-persian-wars/title","extras":[],"people":[]},"history-leagues/0":{"bodyId":"history-leagues/0","titleId":"history-leagues/title","extras":[],"people":[]},"history-leagues/1":{"bodyId":"history-leagues/1","titleId":"history-leagues/title","extras":[],"people":[{"id":"history-leagues/1/person/0","kind":"person","label":"苏格拉底 · 在雅典追问德性与正义"},{"id":"history-leagues/1/person/1","kind":"person","label":"普罗泰戈拉 · 智者与公民教育"}]},"history-peloponnesian-war/0":{"bodyId":"history-peloponnesian-war/0","titleId":"history-peloponnesian-war/title","extras":[],"people":[]},"history-peloponnesian-war/1":{"bodyId":"history-peloponnesian-war/1","titleId":"history-peloponnesian-war/title","extras":[{"id":"history-peloponnesian-war/1/moment/0","kind":"moment","label":"伯利克里葬礼演说"}],"people":[{"id":"history-peloponnesian-war/1/person/0","kind":"person","label":"苏格拉底 · 哲学家也参加城邦战争"},{"id":"history-peloponnesian-war/1/person/1","kind":"person","label":"高尔吉亚 · 出使雅典"}]},"history-peloponnesian-war/2":{"bodyId":"history-peloponnesian-war/2","titleId":"history-peloponnesian-war/title","extras":[],"people":[]},"history-peloponnesian-war/3":{"bodyId":"history-peloponnesian-war/3","titleId":"history-peloponnesian-war/title","extras":[],"people":[{"id":"history-peloponnesian-war/3/person/0","kind":"person","label":"苏格拉底 · 顶着众怒反对集体审判"},{"id":"history-peloponnesian-war/3/person/1","kind":"person","label":"柏拉图 · 在战争与政变中成长"},{"id":"history-peloponnesian-war/3/person/2","kind":"person","label":"色诺芬 · 苏格拉底圈子中的另一位作者"}]},"history-spartan-decline/0":{"bodyId":"history-spartan-decline/0","titleId":"history-spartan-decline/title","extras":[],"people":[{"id":"history-spartan-decline/0/person/0","kind":"person","label":"苏格拉底 · 苏格拉底之死"},{"id":"history-spartan-decline/0/person/1","kind":"person","label":"柏拉图 · 写下苏格拉底的形象"}]},"history-spartan-decline/1":{"bodyId":"history-spartan-decline/1","titleId":"history-spartan-decline/title","extras":[],"people":[{"id":"history-spartan-decline/1/person/0","kind":"person","label":"色诺芬 · 远征、撤退与《远征记》"}]},"history-spartan-decline/2":{"bodyId":"history-spartan-decline/2","titleId":"history-spartan-decline/title","extras":[],"people":[]},"history-spartan-decline/3":{"bodyId":"history-spartan-decline/3","titleId":"history-spartan-decline/title","extras":[],"people":[{"id":"history-spartan-decline/3/person/0","kind":"person","label":"柏拉图 · 雅典学园形成"},{"id":"history-spartan-decline/3/person/1","kind":"person","label":"安提斯泰尼 · 从苏格拉底走向犬儒传统"},{"id":"history-spartan-decline/3/person/2","kind":"person","label":"阿里斯提卜 · 另一条道路：愉悦与自制"}]},"history-spartan-decline/4":{"bodyId":"history-spartan-decline/4","titleId":"history-spartan-decline/title","extras":[],"people":[]},"history-spartan-decline/5":{"bodyId":"history-spartan-decline/5","titleId":"history-spartan-decline/title","extras":[],"people":[{"id":"history-spartan-decline/5/person/0","kind":"person","label":"柏拉图 · 学园与对话录"},{"id":"history-spartan-decline/5/person/1","kind":"person","label":"亚里士多德 · 进入柏拉图学园"}]},"history-macedonian-rise/0":{"bodyId":"history-macedonian-rise/0","titleId":"history-macedonian-rise/title","extras":[],"people":[{"id":"history-macedonian-rise/0/person/0","kind":"person","label":"亚里士多德 · 从学园到马其顿宫廷"},{"id":"history-macedonian-rise/0/person/1","kind":"person","label":"泰奥弗拉斯托斯 · 莱斯博斯岛上的共同研究"},{"id":"history-macedonian-rise/0/person/2","kind":"person","label":"亚历山大 · 王子的教育"},{"id":"history-macedonian-rise/0/person/3","kind":"person","label":"柏拉图 · 柏拉图去世"},{"id":"history-macedonian-rise/0/person/4","kind":"person","label":"斯彪西波 · 接掌柏拉图学园"}]},"history-macedonian-rise/1":{"bodyId":"history-macedonian-rise/1","titleId":"history-macedonian-rise/title","extras":[],"people":[{"id":"history-macedonian-rise/1/person/0","kind":"person","label":"色诺克拉底 · 学园第三任主持者"},{"id":"history-macedonian-rise/1/person/1","kind":"person","label":"第欧根尼 · 别挡住我的阳光"}]},"history-macedonian-rise/2":{"bodyId":"history-macedonian-rise/2","titleId":"history-macedonian-rise/title","extras":[],"people":[]},"history-macedonian-rise/3":{"bodyId":"history-macedonian-rise/3","titleId":"history-macedonian-rise/title","extras":[],"people":[{"id":"history-macedonian-rise/3/person/0","kind":"person","label":"亚里士多德 · 吕刻昂开始讲学"}]},"history-alexander-conquest/0":{"bodyId":"history-alexander-conquest/0","titleId":"history-alexander-conquest/title","extras":[{"id":"history-alexander-conquest/0/moment/0","kind":"moment","label":"戈尔迪之结"}],"people":[]},"history-alexander-conquest/1":{"bodyId":"history-alexander-conquest/1","titleId":"history-alexander-conquest/title","extras":[{"id":"history-alexander-conquest/1/moment/1","kind":"moment","label":"火烧波斯波利斯"}],"people":[]},"history-alexander-conquest/2":{"bodyId":"history-alexander-conquest/2","titleId":"history-alexander-conquest/title","extras":[],"people":[]},"history-alexander-rule/0":{"bodyId":"history-alexander-rule/0","titleId":"history-alexander-rule/title","extras":[],"people":[]},"history-alexander-rule/1":{"bodyId":"history-alexander-rule/1","titleId":"history-alexander-rule/title","extras":[],"people":[{"id":"history-alexander-rule/1/person/0","kind":"person","label":"卡利斯提尼 · 少一个吻，也不俯拜"}]},"history-alexander-rule/2":{"bodyId":"history-alexander-rule/2","titleId":"history-alexander-rule/title","extras":[],"people":[{"id":"history-alexander-rule/2/person/0","kind":"person","label":"亚历山大 · 谁有资格成为国王的亲人"}]},"history-successors/0":{"bodyId":"history-successors/0","titleId":"history-successors/title","extras":[],"people":[{"id":"history-successors/0/person/0","kind":"person","label":"亚里士多德 · 帝国的死讯传回雅典"},{"id":"history-successors/0/person/1","kind":"person","label":"泰奥弗拉斯托斯 · 吕刻昂继续研究"}]},"history-successors/1":{"bodyId":"history-successors/1","titleId":"history-successors/title","extras":[],"people":[]},"history-successors/2":{"bodyId":"history-successors/2","titleId":"history-successors/title","extras":[],"people":[]},"history-hellenistic-states/0":{"bodyId":"history-hellenistic-states/0","titleId":"history-hellenistic-states/title","extras":[],"people":[]},"history-hellenistic-states/1":{"bodyId":"history-hellenistic-states/1","titleId":"history-hellenistic-states/title","extras":[],"people":[]},"history-hellenistic-states/2":{"bodyId":"history-hellenistic-states/2","titleId":"history-hellenistic-states/title","extras":[{"id":"history-hellenistic-states/2/moment/0","kind":"moment","label":"罗德岛巨像"}],"people":[]},"history-hellenistic-knowledge/0":{"bodyId":"history-hellenistic-knowledge/0","titleId":"history-hellenistic-knowledge/title","extras":[],"people":[{"id":"history-hellenistic-knowledge/0/person/0","kind":"person","label":"伊壁鸠鲁 · 朋友共同体中的安宁"},{"id":"history-hellenistic-knowledge/0/person/1","kind":"person","label":"基提翁的芝诺 · 彩绘柱廊里的哲学"}]},"history-hellenistic-knowledge/1":{"bodyId":"history-hellenistic-knowledge/1","titleId":"history-hellenistic-knowledge/title","extras":[{"id":"history-hellenistic-knowledge/1/moment/0","kind":"moment","label":"法罗斯灯塔"}],"people":[{"id":"history-hellenistic-knowledge/1/person/0","kind":"person","label":"欧几里得 · 把几何组织成体系"},{"id":"history-hellenistic-knowledge/1/person/1","kind":"person","label":"埃拉托色尼 · 用两地太阳高度估算地球"}]},"history-hellenistic-knowledge/2":{"bodyId":"history-hellenistic-knowledge/2","titleId":"history-hellenistic-knowledge/title","extras":[],"people":[{"id":"history-hellenistic-knowledge/2/person/0","kind":"person","label":"阿基米德 · 研究者与守城器械"}]},"history-celts/0":{"bodyId":"history-celts/0","titleId":"history-celts/title","extras":[],"people":[{"id":"history-celts/0/person/0","kind":"person","label":"布伦努斯 · 兵临德尔斐"}]},"history-celts/1":{"bodyId":"history-celts/1","titleId":"history-celts/title","extras":[],"people":[]},"history-celts/2":{"bodyId":"history-celts/2","titleId":"history-celts/title","extras":[],"people":[{"id":"history-celts/2/person/0","kind":"person","label":"阿塔罗斯一世 · 胜利怎样变成雕像"}]},"history-spartan-reforms/0":{"bodyId":"history-spartan-reforms/0","titleId":"history-spartan-reforms/title","extras":[],"people":[{"id":"history-spartan-reforms/0/person/0","kind":"person","label":"阿吉斯四世 · 免债之后，分地受阻"},{"id":"history-spartan-reforms/0/person/1","kind":"person","label":"克里昂米尼三世 · 从土地改革重建军队"}]},"history-spartan-reforms/1":{"bodyId":"history-spartan-reforms/1","titleId":"history-spartan-reforms/title","extras":[],"people":[{"id":"history-spartan-reforms/1/person/0","kind":"person","label":"克里昂米尼三世 · 改革政权的战场终点"}]},"history-hellenistic-end/0":{"bodyId":"history-hellenistic-end/0","titleId":"history-hellenistic-end/title","extras":[],"people":[]},"history-hellenistic-end/1":{"bodyId":"history-hellenistic-end/1","titleId":"history-hellenistic-end/title","extras":[],"people":[]},"history-hellenistic-end/2":{"bodyId":"history-hellenistic-end/2","titleId":"history-hellenistic-end/title","extras":[{"id":"history-hellenistic-end/2/moment/0","kind":"moment","label":"埃及艳后之死"}],"people":[{"id":"history-hellenistic-end/2/person/0","kind":"person","label":"克娄巴特拉七世 · 埃及的命运进入罗马内战"}]},"history-rome-site/0":{"bodyId":"history-rome-site/0","titleId":"history-rome-site/title","extras":[],"people":[]},"history-rome-site/1":{"bodyId":"history-rome-site/1","titleId":"history-rome-site/title","extras":[{"id":"history-rome-site/1/moment/0","kind":"moment","label":"母狼与双生子"},{"id":"history-rome-site/1/moment/1","kind":"moment","label":"抢萨宾妇女"}],"people":[]},"history-rome-kings/0":{"bodyId":"history-rome-kings/0","titleId":"history-rome-kings/title","extras":[{"id":"history-rome-kings/0/moment/0","kind":"moment","label":"三兄弟决斗"}],"people":[]},"history-rome-kings/1":{"bodyId":"history-rome-kings/1","titleId":"history-rome-kings/title","extras":[],"people":[{"id":"history-rome-kings/1/person/0","kind":"person","label":"塞尔维乌斯·图利乌斯 · 按家产给人民分等"},{"id":"history-rome-kings/1/person/1","kind":"person","label":"傲慢者塔克文 · 打落最高的罂粟花"}]},"history-rome-republic/0":{"bodyId":"history-rome-republic/0","titleId":"history-rome-republic/title","extras":[{"id":"history-rome-republic/0/moment/0","kind":"moment","label":"卢克蕾提娅"}],"people":[{"id":"history-rome-republic/0/person/0","kind":"person","label":"卢基乌斯·尤尼乌斯·布鲁图斯 · 亲自监斩两个儿子"}]},"history-rome-republic/1":{"bodyId":"history-rome-republic/1","titleId":"history-rome-republic/title","extras":[{"id":"history-rome-republic/1/moment/1","kind":"moment","label":"独守桥头"},{"id":"history-rome-republic/1/moment/2","kind":"moment","label":"左手穆基乌斯"}],"people":[{"id":"history-rome-republic/1/person/0","kind":"person","label":"傲慢者塔克文 · 借兵复辟，客死库迈"}]},"history-rome-plebs/0":{"bodyId":"history-rome-plebs/0","titleId":"history-rome-plebs/title","extras":[{"id":"history-rome-plebs/0/moment/0","kind":"moment","label":"肚子与四肢"},{"id":"history-rome-plebs/0/moment/1","kind":"moment","label":"辛辛纳图斯"}],"people":[{"id":"history-rome-plebs/0/person/0","kind":"person","label":"斯普里乌斯·卡西乌斯 · 分地法与“图谋称王”"}]},"history-rome-plebs/1":{"bodyId":"history-rome-plebs/1","titleId":"history-rome-plebs/title","extras":[{"id":"history-rome-plebs/1/moment/2","kind":"moment","label":"维吉尼娅"}],"people":[{"id":"history-rome-plebs/1/person/0","kind":"person","label":"阿庇乌斯·克劳狄 · 讨好平民，连任专权"}]},"history-rome-orders/0":{"bodyId":"history-rome-orders/0","titleId":"history-rome-orders/title","extras":[{"id":"history-rome-orders/0/moment/0","kind":"moment","label":"卡匹托尔的鹅"},{"id":"history-rome-orders/0/moment/1","kind":"moment","label":"战败者活该"}],"people":[{"id":"history-rome-orders/0/person/0","kind":"person","label":"马库斯·福里乌斯·卡米卢斯 · 攻灭维爱，又被流放"},{"id":"history-rome-orders/0/person/1","kind":"person","label":"亚里士多德 · 在雅典听说罗马失陷"}]},"history-rome-orders/1":{"bodyId":"history-rome-orders/1","titleId":"history-rome-orders/title","extras":[],"people":[{"id":"history-rome-orders/1/person/0","kind":"person","label":"马库斯·曼利乌斯·卡皮托利努斯 · 从救城英雄到塔佩亚岩下"},{"id":"history-rome-orders/1/person/1","kind":"person","label":"盖约·李锡尼·斯托洛 · 十年否决，逼开执政官"},{"id":"history-rome-orders/1/person/2","kind":"person","label":"马库斯·福里乌斯·卡米卢斯 · 许愿修建和谐女神庙"}]},"history-rome-mature/0":{"bodyId":"history-rome-mature/0","titleId":"history-rome-mature/title","extras":[{"id":"history-rome-mature/0/moment/0","kind":"moment","label":"撞角讲坛"}],"people":[{"id":"history-rome-mature/0/person/0","kind":"person","label":"提图斯·曼利乌斯·托夸图斯 · 斩了违令出战的儿子"}]},"history-rome-mature/1":{"bodyId":"history-rome-mature/1","titleId":"history-rome-mature/title","extras":[{"id":"history-rome-mature/1/moment/1","kind":"moment","label":"卡夫丁之轭"}],"people":[{"id":"history-rome-mature/1/person/0","kind":"person","label":"阿庇乌斯·克劳狄·凯库斯 · 修大道、开水渠、改名册"},{"id":"history-rome-mature/1/person/1","kind":"person","label":"普布利乌斯·德基乌斯·穆斯 · 学父亲以身献祭"}]},"history-rome-mature/2":{"bodyId":"history-rome-mature/2","titleId":"history-rome-mature/title","extras":[],"people":[]},"history-rome-mature/3":{"bodyId":"history-rome-mature/3","titleId":"history-rome-mature/title","extras":[{"id":"history-rome-mature/3/moment/2","kind":"moment","label":"皮洛士式胜利"}],"people":[{"id":"history-rome-mature/3/person/0","kind":"person","label":"阿庇乌斯·克劳狄·凯库斯 · 失明后被抬进元老院"},{"id":"history-rome-mature/3/person/1","kind":"person","label":"马尼乌斯·库里乌斯·登塔图斯 · 煮萝卜的执政官"}]},"history-rome-punic/0":{"bodyId":"history-rome-punic/0","titleId":"history-rome-punic/title","extras":[{"id":"history-rome-punic/0/moment/0","kind":"moment","label":"乌鸦吊桥"},{"id":"history-rome-punic/0/moment/1","kind":"moment","label":"雷古卢斯回营"}],"people":[]},"history-rome-punic/1":{"bodyId":"history-rome-punic/1","titleId":"history-rome-punic/title","extras":[{"id":"history-rome-punic/1/moment/2","kind":"moment","label":"九岁的誓言"},{"id":"history-rome-punic/1/moment/3","kind":"moment","label":"坎尼的口袋"}],"people":[{"id":"history-rome-punic/1/person/0","kind":"person","label":"汉尼拔·巴卡 · “你会取胜，却不会利用胜利”"},{"id":"history-rome-punic/1/person/1","kind":"person","label":"昆图斯·费边·马克西穆斯 · 人民另立一个独裁官"}]},"history-rome-punic/2":{"bodyId":"history-rome-punic/2","titleId":"history-rome-punic/title","extras":[{"id":"history-rome-punic/2/moment/4","kind":"moment","label":"汉尼拔就在门口"}],"people":[{"id":"history-rome-punic/2/person/0","kind":"person","label":"普布利乌斯·科尔内利乌斯·西庇阿 · 没当过执政官就领兵"}]},"history-rome-east/0":{"bodyId":"history-rome-east/0","titleId":"history-rome-east/title","extras":[{"id":"history-rome-east/0/moment/0","kind":"moment","label":"乌鸦掉进运动场"}],"people":[{"id":"history-rome-east/0/person/0","kind":"person","label":"汉尼拔·巴卡 · 改革、出逃、服毒"}]},"history-rome-east/1":{"bodyId":"history-rome-east/1","titleId":"history-rome-east/title","extras":[{"id":"history-rome-east/1/moment/1","kind":"moment","label":"沙地上的圈"}],"people":[{"id":"history-rome-east/1/person/0","kind":"person","label":"普布利乌斯·科尔内利乌斯·西庇阿 · “忘恩的祖国”"},{"id":"history-rome-east/1/person/1","kind":"person","label":"马库斯·波尔基乌斯·加图 · 监察官：盯住冒尖的人"},{"id":"history-rome-east/1/person/2","kind":"person","label":"卢基乌斯·埃米利乌斯·保卢斯 · 凯旋前后丧二子"},{"id":"history-rome-east/1/person/3","kind":"person","label":"波利比乌斯 · 一千名人质之一"}]},"history-rome-east/2":{"bodyId":"history-rome-east/2","titleId":"history-rome-east/title","extras":[{"id":"history-rome-east/2/moment/2","kind":"moment","label":"迦太基必须毁灭"},{"id":"history-rome-east/2/moment/3","kind":"moment","label":"小西庇阿的眼泪"}],"people":[{"id":"history-rome-east/2/person/0","kind":"person","label":"普布利乌斯·科尔内利乌斯·西庇阿·埃米利亚努斯 · 破格当选，连下两城"},{"id":"history-rome-east/2/person/1","kind":"person","label":"马库斯·波尔基乌斯·加图 · 写史不写将军名字"}]},"history-rome-gracchi/0":{"bodyId":"history-rome-gracchi/0","titleId":"history-rome-gracchi/title","extras":[{"id":"history-rome-gracchi/0/moment/0","kind":"moment","label":"母亲的珠宝"}],"people":[{"id":"history-rome-gracchi/0/person/0","kind":"person","label":"提比略·森普罗尼乌斯·格拉古 · 一路走过伊特鲁里亚"}]},"history-rome-gracchi/1":{"bodyId":"history-rome-gracchi/1","titleId":"history-rome-gracchi/title","extras":[{"id":"history-rome-gracchi/1/moment/1","kind":"moment","label":"灌了铅的人头"},{"id":"history-rome-gracchi/1/moment/2","kind":"moment","label":"和谐女神庙"}],"people":[{"id":"history-rome-gracchi/1/person/0","kind":"person","label":"盖约·森普罗尼乌斯·格拉古 · 哥哥托梦"},{"id":"history-rome-gracchi/1/person/1","kind":"person","label":"科尔内利娅 · “格拉古兄弟之母”"}]},"history-rome-marius/0":{"bodyId":"history-rome-marius/0","titleId":"history-rome-marius/title","extras":[{"id":"history-rome-marius/0/moment/0","kind":"moment","label":"冷水澡"}],"people":[{"id":"history-rome-marius/0/person/0","kind":"person","label":"朱古达 · 被罗马买下，又被罗马处死"},{"id":"history-rome-marius/0/person/1","kind":"person","label":"盖约·马略 · 征兵不看家产"},{"id":"history-rome-marius/0/person/2","kind":"person","label":"卢基乌斯·科尔内利乌斯·苏拉 · 戒指上的功劳"}]},"history-rome-marius/1":{"bodyId":"history-rome-marius/1","titleId":"history-rome-marius/title","extras":[{"id":"history-rome-marius/1/moment/1","kind":"moment","label":"马略的骡子"}],"people":[]},"history-rome-social/0":{"bodyId":"history-rome-social/0","titleId":"history-rome-social/title","extras":[{"id":"history-rome-social/0/moment/0","kind":"moment","label":"公牛顶翻母狼"}],"people":[]},"history-rome-social/1":{"bodyId":"history-rome-social/1","titleId":"history-rome-social/title","extras":[],"people":[{"id":"history-rome-social/1/person/0","kind":"person","label":"格奈乌斯·庞培（伟大者） · 十七岁的新兵"}]},"history-rome-sulla/0":{"bodyId":"history-rome-sulla/0","titleId":"history-rome-sulla/title","extras":[{"id":"history-rome-sulla/0/moment/0","kind":"moment","label":"你敢杀盖约·马略吗"},{"id":"history-rome-sulla/0/moment/1","kind":"moment","label":"迦太基废墟上的马略"}],"people":[{"id":"history-rome-sulla/0/person/0","kind":"person","label":"米特拉达梯六世 · 一天杀八万"},{"id":"history-rome-sulla/0/person/1","kind":"person","label":"卢基乌斯·科尔内利乌斯·苏拉 · 躲进马略家，再带兵进城"}]},"history-rome-sulla/1":{"bodyId":"history-rome-sulla/1","titleId":"history-rome-sulla/title","extras":[],"people":[{"id":"history-rome-sulla/1/person/0","kind":"person","label":"卢基乌斯·科尔内利乌斯·秦纳 · 把大哥请回来"},{"id":"history-rome-sulla/1/person/1","kind":"person","label":"盖约·马略 · 第七次执政官"}]},"history-rome-sulla/2":{"bodyId":"history-rome-sulla/2","titleId":"history-rome-sulla/title","extras":[{"id":"history-rome-sulla/2/moment/2","kind":"moment","label":"阿尔班庄园在追杀我"},{"id":"history-rome-sulla/2/moment/3","kind":"moment","label":"苏拉的墓志铭"}],"people":[{"id":"history-rome-sulla/2/person/0","kind":"person","label":"马库斯·李锡尼·克拉苏 · 科林门与公敌财产"},{"id":"history-rome-sulla/2/person/1","kind":"person","label":"盖约·尤利乌斯·恺撒 · “这孩子身上有好多个马略”"},{"id":"history-rome-sulla/2/person/2","kind":"person","label":"卢基乌斯·科尔内利乌斯·苏拉 · 交权与回忆录"}]},"history-rome-pompey/0":{"bodyId":"history-rome-pompey/0","titleId":"history-rome-pompey/title","extras":[{"id":"history-rome-pompey/0/moment/0","kind":"moment","label":"初升的太阳"},{"id":"history-rome-pompey/0/moment/1","kind":"moment","label":"罗马的消防队"}],"people":[{"id":"history-rome-pompey/0/person/0","kind":"person","label":"斯巴达克斯 · 杀马决战"},{"id":"history-rome-pompey/0/person/1","kind":"person","label":"格奈乌斯·庞培（伟大者） · “伟大者”"}]},"history-rome-pompey/1":{"bodyId":"history-rome-pompey/1","titleId":"history-rome-pompey/title","extras":[],"people":[{"id":"history-rome-pompey/1/person/0","kind":"person","label":"格奈乌斯·庞培（伟大者） · 解散军队"},{"id":"history-rome-pompey/1/person/1","kind":"person","label":"米特拉达梯六世 · 毒药毒不死自己"},{"id":"history-rome-pompey/1/person/2","kind":"person","label":"马库斯·波尔基乌斯·加图（小加图） · 晾着庞培"}]},"history-rome-triumvirate/0":{"bodyId":"history-rome-triumvirate/0","titleId":"history-rome-triumvirate/title","extras":[{"id":"history-rome-triumvirate/0/moment/0","kind":"moment","label":"恺撒的妻子"},{"id":"history-rome-triumvirate/0/moment/1","kind":"moment","label":"尤利乌斯与恺撒"}],"people":[{"id":"history-rome-triumvirate/0/person/0","kind":"person","label":"盖约·尤利乌斯·恺撒 · 被海盗绑架"},{"id":"history-rome-triumvirate/0/person/1","kind":"person","label":"马库斯·图利乌斯·西塞罗 · “国父”"},{"id":"history-rome-triumvirate/0/person/2","kind":"person","label":"马库斯·波尔基乌斯·加图（小加图） · 用嘴拖死对手"}]},"history-rome-triumvirate/1":{"bodyId":"history-rome-triumvirate/1","titleId":"history-rome-triumvirate/title","extras":[{"id":"history-rome-triumvirate/1/moment/2","kind":"moment","label":"维钦托利投降"}],"people":[]},"history-rome-triumvirate/2":{"bodyId":"history-rome-triumvirate/2","titleId":"history-rome-triumvirate/title","extras":[{"id":"history-rome-triumvirate/2/moment/3","kind":"moment","label":"克拉苏的首级"}],"people":[{"id":"history-rome-triumvirate/2/person/0","kind":"person","label":"马库斯·李锡尼·克拉苏 · 卡莱"},{"id":"history-rome-triumvirate/2/person/1","kind":"person","label":"普布利乌斯·克洛狄乌斯 · 从善德女神到阿庇亚大道"},{"id":"history-rome-triumvirate/2/person/2","kind":"person","label":"格奈乌斯·庞培（伟大者） · 唯一的执政官"},{"id":"history-rome-triumvirate/2/person/3","kind":"person","label":"马库斯·波尔基乌斯·加图（小加图） · 从反庞培到抱紧庞培"}]},"history-rome-caesar/0":{"bodyId":"history-rome-caesar/0","titleId":"history-rome-caesar/title","extras":[{"id":"history-rome-caesar/0/moment/0","kind":"moment","label":"他们本可以赢"}],"people":[{"id":"history-rome-caesar/0/person/0","kind":"person","label":"格奈乌斯·庞培（伟大者） · 死在埃及海滩"}]},"history-rome-caesar/1":{"bodyId":"history-rome-caesar/1","titleId":"history-rome-caesar/title","extras":[{"id":"history-rome-caesar/1/moment/1","kind":"moment","label":"铺盖卷里的女王"}],"people":[{"id":"history-rome-caesar/1/person/0","kind":"person","label":"马库斯·波尔基乌斯·加图（小加图） · 徒步穿越利比亚"},{"id":"history-rome-caesar/1/person/1","kind":"person","label":"克娄巴特拉七世 · 借恺撒坐稳王位"}]},"history-rome-caesar/2":{"bodyId":"history-rome-caesar/2","titleId":"history-rome-caesar/title","extras":[{"id":"history-rome-caesar/2/moment/2","kind":"moment","label":"儒略历"},{"id":"history-rome-caesar/2/moment/3","kind":"moment","label":"三月十五"},{"id":"history-rome-caesar/2/moment/4","kind":"moment","label":"孩子，也有你？"}],"people":[{"id":"history-rome-caesar/2/person/0","kind":"person","label":"马克·安东尼 · 牧神节的王冠"},{"id":"history-rome-caesar/2/person/1","kind":"person","label":"马库斯·尤尼乌斯·布鲁图斯 · “你不是真布鲁图斯”"}]},"history-rome-augustus/0":{"bodyId":"history-rome-augustus/0","titleId":"history-rome-augustus/title","extras":[{"id":"history-rome-augustus/0/moment/0","kind":"moment","label":"恺撒的彗星"}],"people":[{"id":"history-rome-augustus/0/person/0","kind":"person","label":"马克·安东尼 · 葬礼演说"},{"id":"history-rome-augustus/0/person/1","kind":"person","label":"盖约·屋大维（奥古斯都） · 接下名字"}]},"history-rome-augustus/1":{"bodyId":"history-rome-augustus/1","titleId":"history-rome-augustus/title","extras":[{"id":"history-rome-augustus/1/moment/1","kind":"moment","label":"捧一捧，奉一奉，踢走"}],"people":[{"id":"history-rome-augustus/1/person/0","kind":"person","label":"马库斯·图利乌斯·西塞罗 · 最后的战斗"},{"id":"history-rome-augustus/1/person/1","kind":"person","label":"盖约·屋大维（奥古斯都） · 十九岁的执政官"}]},"history-rome-augustus/2":{"bodyId":"history-rome-augustus/2","titleId":"history-rome-augustus/title","extras":[{"id":"history-rome-augustus/2/moment/2","kind":"moment","label":"腓立比再见"}],"people":[{"id":"history-rome-augustus/2/person/0","kind":"person","label":"马库斯·尤尼乌斯·布鲁图斯 · 腓立比"},{"id":"history-rome-augustus/2/person/1","kind":"person","label":"马库斯·埃米利乌斯·雷必达 · 被兵抛弃"},{"id":"history-rome-augustus/2/person/2","kind":"person","label":"马库斯·维普萨尼乌斯·阿格里帕 · 瑙洛库斯"}]},"history-rome-augustus/3":{"bodyId":"history-rome-augustus/3","titleId":"history-rome-augustus/title","extras":[{"id":"history-rome-augustus/3/moment/3","kind":"moment","label":"恺撒太多不是好事"}],"people":[{"id":"history-rome-augustus/3/person/0","kind":"person","label":"马库斯·维普萨尼乌斯·阿格里帕 · 阿克提乌姆"},{"id":"history-rome-augustus/3/person/1","kind":"person","label":"马克·安东尼 · 伏剑"},{"id":"history-rome-augustus/3/person/2","kind":"person","label":"克娄巴特拉七世 · 最后的托勒密"}]},"history-rome-augustus/4":{"bodyId":"history-rome-augustus/4","titleId":"history-rome-augustus/title","extras":[{"id":"history-rome-augustus/4/moment/4","kind":"moment","label":"砖与大理石"}],"people":[{"id":"history-rome-augustus/4/person/0","kind":"person","label":"盖约·屋大维（奥古斯都） · 奥古斯都"}]},"history-empire-principate/0":{"bodyId":"history-empire-principate/0","titleId":"history-empire-principate/title","extras":[{"id":"history-empire-principate/0/moment/0","kind":"moment","label":"一年十四个月"}],"people":[]},"history-empire-principate/1":{"bodyId":"history-empire-principate/1","titleId":"history-empire-principate/title","extras":[{"id":"history-empire-principate/1/moment/1","kind":"moment","label":"私人救火队"}],"people":[{"id":"history-empire-principate/1/person/0","kind":"person","label":"卢基乌斯·埃利乌斯·塞扬努斯 · 禁卫军大营"}]},"history-empire-principate/2":{"bodyId":"history-empire-principate/2","titleId":"history-empire-principate/title","extras":[{"id":"history-empire-principate/2/moment/2","kind":"moment","label":"瓦卢斯，还我军团！"},{"id":"history-empire-principate/2/moment/3","kind":"moment","label":"这出戏演得可好"}],"people":[{"id":"history-empire-principate/2/person/0","kind":"person","label":"尤利娅 · 流放"},{"id":"history-empire-principate/2/person/1","kind":"person","label":"提比略 · 罗得岛"},{"id":"history-empire-principate/2/person/2","kind":"person","label":"普布利乌斯·昆克提利乌斯·瓦卢斯 · 条顿堡"},{"id":"history-empire-principate/2/person/3","kind":"person","label":"盖约·屋大维（奥古斯都） · 死在诺拉"}]},"history-empire-julio-claudian/0":{"bodyId":"history-empire-julio-claudian/0","titleId":"history-empire-julio-claudian/title","extras":[{"id":"history-empire-julio-claudian/0/moment/0","kind":"moment","label":"看见他升天的元老"}],"people":[{"id":"history-empire-julio-claudian/0/person/0","kind":"person","label":"提比略 · 推让"}]},"history-empire-julio-claudian/1":{"bodyId":"history-empire-julio-claudian/1","titleId":"history-empire-julio-claudian/title","extras":[{"id":"history-empire-julio-claudian/1/moment/1","kind":"moment","label":"卡普里来的长信"}],"people":[]},"history-empire-julio-claudian/2":{"bodyId":"history-empire-julio-claudian/2","titleId":"history-empire-julio-claudian/title","extras":[{"id":"history-empire-julio-claudian/2/moment/2","kind":"moment","label":"执政官马"}],"people":[{"id":"history-empire-julio-claudian/2/person/0","kind":"person","label":"卡利古拉（盖乌斯） · 拜伊船桥"}]},"history-empire-julio-claudian/3":{"bodyId":"history-empire-julio-claudian/3","titleId":"history-empire-julio-claudian/title","extras":[{"id":"history-empire-julio-claudian/3/moment/3","kind":"moment","label":"变瓜记"}],"people":[{"id":"history-empire-julio-claudian/3/person/0","kind":"person","label":"克劳狄乌斯 · 帘子后面"},{"id":"history-empire-julio-claudian/3/person/1","kind":"person","label":"小阿格里皮娜 · 一盘蘑菇"}]},"history-empire-julio-claudian/4":{"bodyId":"history-empire-julio-claudian/4","titleId":"history-empire-julio-claudian/title","extras":[{"id":"history-empire-julio-claudian/4/moment/4","kind":"moment","label":"多么伟大的艺术家"},{"id":"history-empire-julio-claudian/4/box/0","kind":"box","label":"罗马帝国世系表"}],"people":[{"id":"history-empire-julio-claudian/4/person/0","kind":"person","label":"小阿格里皮娜 · 沉船"},{"id":"history-empire-julio-claudian/4/person/1","kind":"person","label":"尼禄 · 大火"},{"id":"history-empire-julio-claudian/4/person/2","kind":"person","label":"卢基乌斯·安奈乌斯·塞涅卡 · 赐死"}]},"history-empire-flavian/0":{"bodyId":"history-empire-flavian/0","titleId":"history-empire-flavian/title","extras":[],"people":[]},"history-empire-flavian/1":{"bodyId":"history-empire-flavian/1","titleId":"history-empire-flavian/title","extras":[{"id":"history-empire-flavian/1/moment/0","kind":"moment","label":"钱不臭"},{"id":"history-empire-flavian/1/moment/1","kind":"moment","label":"我大概要成神了"},{"id":"history-empire-flavian/1/box/0","kind":"box","label":"罗马帝国世系表"}],"people":[{"id":"history-empire-flavian/1/person/0","kind":"person","label":"韦斯巴芗 · 亚历山大里亚"}]},"history-empire-antonine/0":{"bodyId":"history-empire-antonine/0","titleId":"history-empire-antonine/title","extras":[{"id":"history-empire-antonine/0/moment/0","kind":"moment","label":"什么都许的皇帝"}],"people":[]},"history-empire-antonine/1":{"bodyId":"history-empire-antonine/1","titleId":"history-empire-antonine/title","extras":[{"id":"history-empire-antonine/1/moment/1","kind":"moment","label":"图拉真柱"},{"id":"history-empire-antonine/1/moment/2","kind":"moment","label":"海湾边的叹息"}],"people":[{"id":"history-empire-antonine/1/person/0","kind":"person","label":"图拉真 · 在科隆得知继位"}]},"history-empire-antonine/2":{"bodyId":"history-empire-antonine/2","titleId":"history-empire-antonine/title","extras":[{"id":"history-empire-antonine/2/moment/3","kind":"moment","label":"去画你的南瓜"}],"people":[{"id":"history-empire-antonine/2/person/0","kind":"person","label":"哈德良 · 安提诺乌斯"}]},"history-empire-antonine/3":{"bodyId":"history-empire-antonine/3","titleId":"history-empire-antonine/title","extras":[{"id":"history-empire-antonine/3/moment/4","kind":"moment","label":"平静"}],"people":[]},"history-empire-antonine/4":{"bodyId":"history-empire-antonine/4","titleId":"history-empire-antonine/title","extras":[{"id":"history-empire-antonine/4/moment/5","kind":"moment","label":"军帐里的沉思录"}],"people":[{"id":"history-empire-antonine/4/person/0","kind":"person","label":"马可·奥勒留 · 卡农图姆"}]},"history-empire-antonine/5":{"bodyId":"history-empire-antonine/5","titleId":"history-empire-antonine/title","extras":[{"id":"history-empire-antonine/5/moment/6","kind":"moment","label":"鸵鸟头与月桂叶"}],"people":[{"id":"history-empire-antonine/5/person/0","kind":"person","label":"康茂德 · 罗马的赫拉克勒斯"}]},"history-empire-antonine/6":{"bodyId":"history-empire-antonine/6","titleId":"history-empire-antonine/title","extras":[],"people":[]},"history-empire-antonine/7":{"bodyId":"history-empire-antonine/7","titleId":"history-empire-antonine/title","extras":[{"id":"history-empire-antonine/7/box/0","kind":"box","label":"罗马帝国世系表"}],"people":[]},"history-empire-crisis/0":{"bodyId":"history-empire-crisis/0","titleId":"history-empire-crisis/title","extras":[{"id":"history-empire-crisis/0/moment/0","kind":"moment","label":"营墙上的拍卖"}],"people":[{"id":"history-empire-crisis/0/person/0","kind":"person","label":"佩蒂纳克斯 · 让我们当兵吧"}]},"history-empire-crisis/1":{"bodyId":"history-empire-crisis/1","titleId":"history-empire-crisis/title","extras":[{"id":"history-empire-crisis/1/moment/1","kind":"moment","label":"玫瑰雨"}],"people":[{"id":"history-empire-crisis/1/person/0","kind":"person","label":"塞普蒂米乌斯·塞维鲁 · 解散禁卫军"},{"id":"history-empire-crisis/1/person/1","kind":"person","label":"埃拉伽巴路斯 · 黑石进城"}]},"history-empire-crisis/2":{"bodyId":"history-empire-crisis/2","titleId":"history-empire-crisis/title","extras":[{"id":"history-empire-crisis/2/moment/2","kind":"moment","label":"抹掉的脸"}],"people":[{"id":"history-empire-crisis/2/person/0","kind":"person","label":"卡拉卡拉 · 亚历山大里亚"}]},"history-empire-crisis/3":{"bodyId":"history-empire-crisis/3","titleId":"history-empire-crisis/title","extras":[{"id":"history-empire-crisis/3/moment/3","kind":"moment","label":"金锁链"}],"people":[{"id":"history-empire-crisis/3/person/0","kind":"person","label":"芝诺比娅 · 被擒"},{"id":"history-empire-crisis/3/person/1","kind":"person","label":"奥勒良 · 无敌太阳神"}]},"history-empire-crisis/4":{"bodyId":"history-empire-crisis/4","titleId":"history-empire-crisis/title","extras":[{"id":"history-empire-crisis/4/moment/4","kind":"moment","label":"皇帝当脚凳"}],"people":[]},"history-empire-crisis/5":{"bodyId":"history-empire-crisis/5","titleId":"history-empire-crisis/title","extras":[{"id":"history-empire-crisis/5/box/0","kind":"box","label":"罗马帝国世系表"}],"people":[]},"history-empire-dominate/0":{"bodyId":"history-empire-dominate/0","titleId":"history-empire-dominate/title","extras":[],"people":[{"id":"history-empire-dominate/0/person/0","kind":"person","label":"戴克里先 · 野猪"}]},"history-empire-dominate/1":{"bodyId":"history-empire-dominate/1","titleId":"history-empire-dominate/title","extras":[],"people":[]},"history-empire-dominate/2":{"bodyId":"history-empire-dominate/2","titleId":"history-empire-dominate/title","extras":[{"id":"history-empire-dominate/2/moment/0","kind":"moment","label":"界神节"}],"people":[]},"history-empire-constantine/0":{"bodyId":"history-empire-constantine/0","titleId":"history-empire-constantine/title","extras":[{"id":"history-empire-constantine/0/moment/0","kind":"moment","label":"君士坦丁改名了？"}],"people":[{"id":"history-empire-constantine/0/person/0","kind":"person","label":"伽列里乌斯 · 挑人"}]},"history-empire-constantine/1":{"bodyId":"history-empire-constantine/1","titleId":"history-empire-constantine/title","extras":[{"id":"history-empire-constantine/1/moment/1","kind":"moment","label":"以此必胜"},{"id":"history-empire-constantine/1/moment/2","kind":"moment","label":"回去种白菜"}],"people":[{"id":"history-empire-constantine/1/person/0","kind":"person","label":"马克森提乌斯 · 落水"},{"id":"history-empire-constantine/1/person/1","kind":"person","label":"李锡尼 · 投降"}]},"history-empire-constantine/2":{"bodyId":"history-empire-constantine/2","titleId":"history-empire-constantine/title","extras":[{"id":"history-empire-constantine/2/moment/3","kind":"moment","label":"升天的钱币"}],"people":[]},"history-empire-constantine/3":{"bodyId":"history-empire-constantine/3","titleId":"history-empire-constantine/title","extras":[{"id":"history-empire-constantine/3/moment/4","kind":"moment","label":"蛇柱"}],"people":[{"id":"history-empire-constantine/3/person/0","kind":"person","label":"君士坦丁 · 给新都划界"}]},"history-empire-constantine/4":{"bodyId":"history-empire-constantine/4","titleId":"history-empire-constantine/title","extras":[{"id":"history-empire-constantine/4/moment/5","kind":"moment","label":"加利利人，你赢了"},{"id":"history-empire-constantine/4/box/0","kind":"box","label":"罗马帝国世系表"}],"people":[{"id":"history-empire-constantine/4/person/0","kind":"person","label":"克里斯普斯 · 波拉"}]},"history-empire-valentinian/0":{"bodyId":"history-empire-valentinian/0","titleId":"history-empire-valentinian/title","extras":[],"people":[]},"history-empire-valentinian/1":{"bodyId":"history-empire-valentinian/1","titleId":"history-empire-valentinian/title","extras":[],"people":[]},"history-empire-valentinian/2":{"bodyId":"history-empire-valentinian/2","titleId":"history-empire-valentinian/title","extras":[{"id":"history-empire-valentinian/2/moment/0","kind":"moment","label":"坎尼以来"},{"id":"history-empire-valentinian/2/box/0","kind":"box","label":"哥特人怎么打仗"}],"people":[]},"history-empire-theodosius/0":{"bodyId":"history-empire-theodosius/0","titleId":"history-empire-theodosius/title","extras":[{"id":"history-empire-theodosius/0/moment/0","kind":"moment","label":"粟特古信札"}],"people":[]},"history-empire-theodosius/1":{"bodyId":"history-empire-theodosius/1","titleId":"history-empire-theodosius/title","extras":[{"id":"history-empire-theodosius/1/moment/1","kind":"moment","label":"最后的贞女"},{"id":"history-empire-theodosius/1/moment/2","kind":"moment","label":"金雷电"},{"id":"history-empire-theodosius/1/box/0","kind":"box","label":"圣火灭了以后"},{"id":"history-empire-theodosius/1/box/1","kind":"box","label":"奥运圣火与维斯塔"}],"people":[{"id":"history-empire-theodosius/1/person/0","kind":"person","label":"狄奥多西一世 · 悔罪"},{"id":"history-empire-theodosius/1/person/1","kind":"person","label":"安布罗斯 · 胜利女神祭坛"}]},"history-empire-theodosius/2":{"bodyId":"history-empire-theodosius/2","titleId":"history-empire-theodosius/title","extras":[],"people":[]},"history-empire-west-fall/0":{"bodyId":"history-empire-west-fall/0","titleId":"history-empire-west-fall/title","extras":[{"id":"history-empire-west-fall/0/moment/0","kind":"moment","label":"不译《列王纪》"}],"people":[]},"history-empire-west-fall/1":{"bodyId":"history-empire-west-fall/1","titleId":"history-empire-west-fall/title","extras":[],"people":[{"id":"history-empire-west-fall/1/person/0","kind":"person","label":"阿拉里克一世 · “草越稠，割起来越省力”"}]},"history-empire-west-fall/2":{"bodyId":"history-empire-west-fall/2","titleId":"history-empire-west-fall/title","extras":[{"id":"history-empire-west-fall/2/moment/1","kind":"moment","label":"替罗马守河的法兰克人"}],"people":[]},"history-empire-west-fall/3":{"bodyId":"history-empire-west-fall/3","titleId":"history-empire-west-fall/title","extras":[{"id":"history-empire-west-fall/3/moment/2","kind":"moment","label":"名叫罗马的鸡"}],"people":[{"id":"history-empire-west-fall/3/person/0","kind":"person","label":"斯提里科 · 伸出脖子"}]},"history-empire-west-fall/4":{"bodyId":"history-empire-west-fall/4","titleId":"history-empire-west-fall/title","extras":[{"id":"history-empire-west-fall/4/box/0","kind":"box","label":"老丈人坠马与碰壁的女婿"}],"people":[]},"history-empire-west-fall/5":{"bodyId":"history-empire-west-fall/5","titleId":"history-empire-west-fall/title","extras":[],"people":[]},"history-empire-west-fall/6":{"bodyId":"history-empire-west-fall/6","titleId":"history-empire-west-fall/title","extras":[{"id":"history-empire-west-fall/6/moment/3","kind":"moment","label":"金发王子与卡塔隆前夜"}],"people":[]},"history-empire-west-fall/7":{"bodyId":"history-empire-west-fall/7","titleId":"history-empire-west-fall/title","extras":[{"id":"history-empire-west-fall/7/moment/4","kind":"moment","label":"左手砍了右手：手刃权臣的皇帝"},{"id":"history-empire-west-fall/7/box/1","kind":"box","label":"罗马帝国世系表"}],"people":[{"id":"history-empire-west-fall/7/person/0","kind":"person","label":"奥古斯丁 · 上帝之城"}]},"history-empire-west-end/0":{"bodyId":"history-empire-west-end/0","titleId":"history-empire-west-end/title","extras":[{"id":"history-empire-west-end/0/moment/0","kind":"moment","label":"“汪达尔主义”"}],"people":[{"id":"history-empire-west-end/0/person/0","kind":"person","label":"盖萨里克 · “上帝发怒的那些人”"}]},"history-empire-west-end/1":{"bodyId":"history-empire-west-end/1","titleId":"history-empire-west-end/title","extras":[{"id":"history-empire-west-end/1/moment/1","kind":"moment","label":"染黑金发进敌营"}],"people":[{"id":"history-empire-west-end/1/person/0","kind":"person","label":"马约里安 · 砍手护古迹"}]},"history-empire-west-end/2":{"bodyId":"history-empire-west-end/2","titleId":"history-empire-west-end/title","extras":[{"id":"history-empire-west-end/2/moment/2","kind":"moment","label":"图尔奈墓里的金蜜蜂"}],"people":[{"id":"history-empire-west-end/2/person/0","kind":"person","label":"李希梅尔 · 两个王国请他当王"},{"id":"history-empire-west-end/2/person/1","kind":"person","label":"希尔德里克一世 · 半枚金币的暗号"}]},"history-empire-west-end/3":{"bodyId":"history-empire-west-end/3","titleId":"history-empire-west-end/title","extras":[],"people":[{"id":"history-empire-west-end/3/person/0","kind":"person","label":"安提米乌斯 · 两位皇帝携手的金币"}]},"history-empire-west-end/4":{"bodyId":"history-empire-west-end/4","titleId":"history-empire-west-end/title","extras":[{"id":"history-empire-west-end/4/moment/3","kind":"moment","label":"穿皮袄的哥特人与爱激动的加拉太人"}],"people":[]},"history-empire-west-end/5":{"bodyId":"history-empire-west-end/5","titleId":"history-empire-west-end/title","extras":[{"id":"history-empire-west-end/5/moment/4","kind":"moment","label":"十八骑破围"},{"id":"history-empire-west-end/5/moment/5","kind":"moment","label":"末代皇帝的名字"},{"id":"history-empire-west-end/5/box/0","kind":"box","label":"罗马帝国世系表"}],"people":[{"id":"history-empire-west-end/5/person/0","kind":"person","label":"奥多亚克 · 冠服送回"}]},"history-empire-west-end/6":{"bodyId":"history-empire-west-end/6","titleId":"history-empire-west-end/title","extras":[{"id":"history-empire-west-end/6/box/1","kind":"box","label":"蛮族王国与五胡十六国"}],"people":[{"id":"history-empire-west-end/6/person/0","kind":"person","label":"西多尼乌斯·阿波利纳里斯 · 输棋求情"}]},"topic-grail-sword":{"bodyId":"topic-grail-sword","titleId":null,"extras":[{"id":"topic-grail-sword/0/box/0","kind":"box","label":"统治成本的算术"}],"people":[]},"topic-social-ladder":{"bodyId":"topic-social-ladder","titleId":null,"extras":[{"id":"topic-social-ladder/0/box/0","kind":"box","label":"三条通道的对比"}],"people":[]},"topic-military-power":{"bodyId":"topic-military-power","titleId":null,"extras":[{"id":"topic-military-power/0/box/0","kind":"box","label":"战斗力与政体的九次摆动"}],"people":[]},"topic-china-arithmetic":{"bodyId":"topic-china-arithmetic","titleId":null,"extras":[{"id":"topic-china-arithmetic/0/box/0","kind":"box","label":"中西底盘的四项算术差"}],"people":[]},"topic-roman-triangle":{"bodyId":"topic-roman-triangle","titleId":null,"extras":[{"id":"topic-roman-triangle/0/box/0","kind":"box","label":"三方联手洗牌表"}],"people":[]},"topic-roman-machine":{"bodyId":"topic-roman-machine","titleId":null,"extras":[{"id":"topic-roman-machine/0/box/0","kind":"box","label":"罗马会员制的四个台阶"}],"people":[]},"topic-black-sheep":{"bodyId":"topic-black-sheep","titleId":null,"extras":[{"id":"topic-black-sheep/0/box/0","kind":"box","label":"罗马民粹出价与收场表"}],"people":[]},"topic-no-garrison":{"bodyId":"topic-no-garrison","titleId":null,"extras":[{"id":"topic-no-garrison/0/box/0","kind":"box","label":"罗马城里的刀：从无兵到禁卫军"}],"people":[]},"topic-paper-power":{"bodyId":"topic-paper-power","titleId":null,"extras":[{"id":"topic-paper-power/0/box/0","kind":"box","label":"信息载体与平民精英的边际收益表"}],"people":[]},"topic-one-vs-many":{"bodyId":"topic-one-vs-many","titleId":null,"extras":[{"id":"topic-one-vs-many/3/box/0","kind":"box","label":"一头独大、多头并立与技术手段一览表（每项一例）"}],"people":[]},"topic-china-cycles":{"bodyId":"topic-china-cycles","titleId":null,"extras":[],"people":[]},"topic-three-states":{"bodyId":"topic-three-states","titleId":null,"extras":[{"id":"topic-three-states/0/box/0","kind":"box","label":"三种文明状态（A / B / C）"}],"people":[]},"topic-energy":{"bodyId":"topic-energy","titleId":null,"extras":[{"id":"topic-energy/0/box/0","kind":"box","label":"四个时代的账本"}],"people":[]},"topic-republic":{"bodyId":"topic-republic","titleId":null,"extras":[{"id":"topic-republic/1/box/0","kind":"box","label":"共和的账本"}],"people":[]}}};</script>
+<script>/* Playback is independent of the reader. Only a reading button replaces the frozen queue.
+   Load before metro_ui.js so Escape can close the focused queue before leaving the reader. */
+(() => {
+'use strict';
+const $ = id => document.getElementById(id);
+const audio = $('atlasAudioElement'), player = $('audioPlayer');
+const rates = [1, 1.25, 1.5, 1.75, 2, 2.5, 3];
+const SPEED_KEY = 'atlas-audio-speed-v1';
+const entries = new Map(ENTRIES.map(e => [e.id, e]));
+const supported = AUDIO_MANIFEST.schema === 2 && AUDIO_MANIFEST.policy === 3;
+const assets = supported ? AUDIO_MANIFEST.assets : {}, plans = supported ? AUDIO_MANIFEST.tracks : {};
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const time = n => { n = Math.max(0, Math.floor(Number.isFinite(n) ? n : 0)); return Math.floor(n / 60) + ':' + String(n % 60).padStart(2, '0'); };
+let queue = Object.freeze([]), at = -1, mode = 'single', line = null;
+let phase = 'body', partIndex = 0, finished = false, error = '', errorKind = '', speed = 1;
+let includeExtras = false, includePeople = false;
+let loadToken = 0, playToken = 0, wantsPlay = false, waiting = false, expectedURL = '', pendingOffset = null;
+try { const saved = Number(localStorage.getItem(SPEED_KEY)); if (rates.includes(saved)) speed = saved; } catch {}
+const current = () => queue[at];
+// -1 is the separate title prelude; nonnegative positions follow the frozen canonical part order.
+const part = () => partIndex < 0 ? current()?.titlePart : current()?.parts[partIndex];
+const clip = () => part()?.asset;
+const enabled = p => p?.group === 'extras' ? includeExtras : p?.group === 'people' ? includePeople : true;
+const isCurrentSource = () => Boolean(expectedURL) && audio.currentSrc === expectedURL;
+
+function assetFor(key) {
+  const a = assets?.[key];
+  if (!a || typeof a.url !== 'string' || !a.url.trim() || !(Number.isFinite(a.duration) && a.duration > 0)) return null;
+  try {
+    const url = new URL(a.url, location.href);
+    // Published recordings use HTTPS; a preview may use a relative file/localhost URL.
+    if ((/^[a-z][\w+.-]*:/i.test(a.url) || a.url.startsWith('//')) && url.protocol !== 'https:') return null;
+    if (!['https:', 'http:', 'file:'].includes(url.protocol)) return null;
+    return Object.freeze({...a, url: url.href});
+  } catch { return null; }
+}
+function track(id, scene = 0) {
+  const e = entries.get(id);
+  if (!e || !['history', 'topic'].includes(e.kind)) return null;
+  const historical = e.kind === 'history';
+  if (historical && !e.scenes[scene]) return null;
+  const key = historical ? `${id}/${scene}` : id;
+  const plan = plans?.[key], title = historical ? e.scenes[scene].title : e.title;
+  const planned = plan?.bodyId === key && Array.isArray(plan.extras) && Array.isArray(plan.people) &&
+    (historical ? plan.titleId === id + '/title' : plan.titleId === null);
+  const makePart = (id, kind, label, group) => Object.freeze({id, kind, label, group, asset:assetFor(id)});
+  // Canonical IDs, order and labels come only from the resolved source plan, never reconstructed in the UI.
+  const parts = planned ? [makePart(plan.bodyId, 'body', title, 'body'),
+    ...plan.extras.map(p => makePart(p.id, p.kind, p.label, 'extras')),
+    ...plan.people.map(p => makePart(p.id, p.kind, p.label, 'people'))] : [];
+  return Object.freeze({key, entryId:id, scene, kind:e.kind, title, chapter:e.title, planned,
+    parts:Object.freeze(parts), titlePart:planned && plan.titleId ? makePart(plan.titleId, 'title', e.title, 'title') : null});
+}
+function lineSnapshot(id) {
+  const metro = window.metroUI, source = metro?.data.lines.find(l => l.id === id), stops = metro?.data.lineStops.get(id);
+  if (!source || !stops?.length) return null;
+  const tracks = [];
+  // These are the actual metro stations, including split sections. No ancestor lines or inferred route.
+  for (const s of stops) for (let i = s.from; i <= s.to; i++) tracks.push(track(s.id, i));
+  return {line:Object.freeze({id:source.id, name:source.name}), tracks};
+}
+function requiredParts(t) {
+  if (!t?.planned) return [{id:t?.key || '无效幕', asset:null}];
+  return [...(t.titlePart ? [t.titlePart] : []), ...t.parts.filter(enabled)];
+}
+const countMissing = parts => new Set(parts.filter(p => !p.asset).map(p => p.id)).size;
+const missing = tracks => countMissing(tracks.flatMap(requiredParts));
+function remainingMissing() {
+  const t = current();
+  if (!t || finished) return 0;
+  if (!t.planned) return 1;
+  // Passed parts (including an earlier, unselected group) stay passed when a checkbox changes.
+  return countMissing([...(partIndex < 0 && t.titlePart ? [t.titlePart] : []),
+    ...t.parts.slice(Math.max(0, partIndex)).filter(enabled), ...queue.slice(at + 1).flatMap(requiredParts)]);
+}
+function selectedDuration(t) {
+  if (!t?.planned) return null;
+  const selected = t.parts.filter(enabled);
+  return selected.some(p => !p.asset) ? null : selected.reduce((total, p) => total + p.asset.duration, 0);
+}
+function partLabel() {
+  const p = part();
+  if (phase === 'title') return '节标题前奏：' + current().chapter;
+  if (phase === 'body') return current()?.kind === 'topic' ? '专题正文' : '本幕正文';
+  return ({moment:'补充趣事 · 名场面', box:'补充趣事 · 豆腐块', person:'人物小传'}[phase] || '独立片段') + '：' + (p?.label || '');
+}
+function reading() {
+  const e = ENTRIES[cur];
+  return e ? track(e.id, sceneIndex) : null;
+}
+function refreshReading() {
+  const t = reading(), actions = $('readerAudioActions');
+  // No resolved body/plan means no dead action strip; optional gaps still show their readiness message.
+  actions.hidden = !t?.planned || !t.parts[0]?.asset;
+  if (!t) return;
+  const historical = t.kind === 'history', singleMissing = missing([t]);
+  const route = historical ? lineSnapshot(window.metroUI?.state().line) : null;
+  const count = route ? missing(route.tracks) : 0;
+  const onLine = route?.tracks.some(x => x?.key === t.key);
+  $('audioRead').disabled = Boolean(singleMissing);
+  $('audioRead').title = singleMissing ? '本幕／专题的所选内容或节标题尚未齐全；不会跳过缺段' : '朗读：' + t.title;
+  $('audioRead').setAttribute('aria-label', '朗读：' + t.title);
+  $('audioReadLine').hidden = !historical;
+  $('audioReadLine').disabled = !onLine || count > 0;
+  $('audioReadLine').title = !route ? '当前线路尚不可用' : count ? `${route.line.name}线所选内容缺 ${count} 段音频（含节标题），不跳过缺段` : `载入${route.line.name}线全部 ${route.tracks.length} 幕，从本幕开始`;
+  $('audioAvailability').textContent = singleMissing ? '所选内容待补齐' : historical && count ? '此线所选未齐 · 可单幕读' : historical && onLine ? `${route.line.name}线 · ${route.tracks.length} 幕所选齐全` : '专题正文及所选部分 · 云健';
+  // Only reader-button readiness; never mutates the queue, part cursor or transport.
+}
+// go() notifies after any kind of navigation. Boarding another line at the same shared station
+// does not call go(), but does repaint #ridingLine. Coalesce both after metro finishes its work.
+let refreshPending = false;
+function scheduleRefresh() {
+  if (refreshPending) return;
+  refreshPending = true;
+  queueMicrotask(() => { refreshPending = false; refreshReading(); });
+}
+document.addEventListener('atlas:navigate', scheduleRefresh);
+new MutationObserver(scheduleRefresh).observe($('ridingLine'), {childList:true});
+scheduleRefresh();
+
+function renderQueue() {
+  $('audioCount').textContent = String(queue.length);
+  $('audioQueueName').textContent = mode === 'line' ? line.name + '线 · 完整队列' : queue[0]?.kind === 'topic' ? '专题朗读' : '单幕朗读';
+  $('audioQueueNote').textContent = '到尾停止，不循环；队列保留，可选曲重播。所选时长含正文及勾选的独立片段；节标题另作前奏，不计入此时长。';
+  $('audioQueue').innerHTML = queue.map((t, i) => `<li><button type="button" data-audio-index="${i}" aria-current="${i === at}"><span class="audio-number">${i + 1}</span><span>${esc(t.title)}${t.kind === 'history' ? `<small>${esc(t.chapter)}</small>` : ''}</span><time></time></button></li>`).join('');
+  updateQueueDurations();
+}
+function updateQueueDurations() {
+  $('audioQueue').querySelectorAll('time').forEach((el, i) => {
+    const duration = selectedDuration(queue[i]);
+    el.textContent = duration === null ? '待补' : time(duration);
+    el.dataset.seconds = duration === null ? '' : String(duration);
+    el.title = duration === null ? '所选内容缺音频，不会跳过' : '所选时长（不含节标题前奏）';
+  });
+}
+function markQueue() {
+  for (const b of $('audioQueue').querySelectorAll('button')) b.setAttribute('aria-current', String(Number(b.dataset.audioIndex) === at));
+}
+function progress() {
+  const duration = isCurrentSource() && Number.isFinite(audio.duration) ? audio.duration : (clip()?.duration || 0);
+  const position = isCurrentSource() ? audio.currentTime : 0;
+  const label = partLabel();
+  $('audioElapsed').textContent = time(position);
+  $('audioDuration').textContent = time(duration);
+  $('audioSeek').value = String(duration ? Math.round(position / duration * 1000) : 0);
+  $('audioSeek').disabled = Boolean(error) || !enabled(part()) || !isCurrentSource() || audio.readyState < 1 || !Number.isFinite(audio.duration) || audio.duration <= 0;
+  $('audioSeek').setAttribute('aria-label', label + '进度');
+  $('audioSeek').setAttribute('aria-valuetext', `${label} ${time(position)}，共 ${time(duration)}`);
+}
+function status() {
+  const t = current(); if (!t) return;
+  const playing = wantsPlay && !audio.paused && !audio.ended;
+  const state = error ? '已停住' : finished ? '已播完' : wantsPlay ? waiting ? '载入中' : '正在朗读' : '已暂停';
+  const duration = selectedDuration(t);
+  $('audioContext').textContent = `${state} · ${mode === 'line' ? line.name + '线' : t.kind === 'topic' ? '专题' : '单幕'} · ${at + 1}/${queue.length} · ${duration === null ? '所选待补齐' : '所选 ' + time(duration)}`;
+  $('audioContext').title = '所选时长含正文及勾选的片段，不含节标题前奏';
+  $('audioTitle').textContent = t.title;
+  $('audioTitle').setAttribute('aria-label', '定位朗读正文：' + t.title);
+  $('audioPhase').textContent = finished && !enabled(part()) ? '所选内容已结束 · 未选部分不播放' : partLabel() + (phase === 'title' ? ' · 播完接正文' : ' · 进度仅计本段');
+  $('audioPhase').title = $('audioPhase').textContent;
+  $('audioToggle').textContent = wantsPlay ? 'Ⅱ' : '▶';
+  $('audioToggle').setAttribute('aria-label', wantsPlay ? '暂停' : error ? '重试播放' : finished ? '重新播放当前项' : '继续播放');
+  $('audioToggle').title = $('audioToggle').getAttribute('aria-label');
+  $('audioPrevious').disabled = at <= 0;
+  $('audioNext').disabled = at >= queue.length - 1;
+  $('audioError').hidden = !error;
+  $('audioError').textContent = error;
+  if ('mediaSession' in navigator) navigator.mediaSession.playbackState = playing ? 'playing' : 'paused';
+  progress();
+}
+function applyRate() {
+  audio.defaultPlaybackRate = speed;
+  audio.playbackRate = speed;
+  audio.preservesPitch = true;
+}
+function setSpeed(value) {
+  if (!rates.includes(value)) return;
+  speed = value; applyRate();
+  $('audioSpeed').value = String(rates.indexOf(speed));
+  $('audioSpeedValue').textContent = speed + '×';
+  $('audioSpeed').setAttribute('aria-valuetext', speed + '倍');
+  try { localStorage.setItem(SPEED_KEY, String(speed)); } catch {}
+}
+function fail(message, kind = 'media') {
+  ++playToken; wantsPlay = false; waiting = false; error = message; errorKind = kind;
+  audio.pause(); status();
+}
+function failMissing(count) {
+  fail(`队列余下所选内容缺 ${count} 段音频，已停住。可取消对应选项后继续；不会跳过缺段。`, 'availability');
+}
+async function play() {
+  const count = remainingMissing(); if (count) { failMissing(count); return; }
+  const token = ++playToken, generation = loadToken;
+  wantsPlay = true; error = ''; errorKind = ''; applyRate(); status();
+  try {
+    await audio.play();
+    if (token !== playToken || generation !== loadToken) return;
+    waiting = false; status();
+  } catch (e) {
+    if (token !== playToken || generation !== loadToken) return;
+    fail(e.name === 'NotAllowedError' ? '浏览器阻止了播放。请按播放键继续；不会跳过本段。' : '播放中断或音频不可用。请按播放键重试；不会跳过本段。');
+  }
+}
+function pause() {
+  ++playToken; wantsPlay = false; audio.pause(); status();
+}
+function loadClip(index, {autoplay = true, offset = 0} = {}) {
+  ++loadToken; ++playToken; wantsPlay = false; audio.pause();
+  partIndex = index; phase = part()?.kind || 'body';
+  finished = false; error = ''; errorKind = ''; waiting = true; expectedURL = ''; pendingOffset = offset;
+  const a = clip(), count = remainingMissing();
+  if (!a || count) {
+    audio.removeAttribute('src'); audio.load();
+    failMissing(count || 1); return;
+  }
+  expectedURL = a.url;
+  // Only this selected part is loaded, also allowing a paused skip to expose its seek range.
+  audio.preload = 'metadata';
+  audio.src = expectedURL;
+  audio.load();
+  applyRate(); // load() resets playbackRate in some browsers, even with the same element.
+  status();
+  if (autoplay) play();
+}
+function selectTrack(index, {automatic = false, autoplay = true} = {}) {
+  if (index < 0 || index >= queue.length) return;
+  const previous = current();
+  at = index;
+  const t = current(), prelude = t.kind === 'history' && (!automatic || previous?.entryId !== t.entryId);
+  markQueue();
+  if ('mediaSession' in navigator && 'MediaMetadata' in window) {
+    navigator.mediaSession.metadata = new MediaMetadata({title:t.title, artist:'云健 · AI 合成语音', album:mode === 'line' ? line.name + '线 · 简明欧洲史图册' : '简明欧洲史图册'});
+  }
+  loadClip(prelude ? -1 : 0, {autoplay});
+  // Never go(), board(), scroll, or change location here.
+}
+function finishSelection() {
+  ++loadToken; ++playToken; wantsPlay = false; waiting = false; finished = true; error = ''; errorKind = '';
+  audio.pause();
+  if (!enabled(part())) {
+    // A disabled final part may still have metadata/play/error events in flight.
+    expectedURL = ''; pendingOffset = null; audio.removeAttribute('src'); audio.load();
+  }
+  status();
+}
+function advance({autoplay = wantsPlay} = {}) {
+  const next = current().parts.findIndex((p, i) => i > partIndex && enabled(p));
+  if (next >= 0) loadClip(next, {autoplay});
+  else if (mode === 'line' && at < queue.length - 1) selectTrack(at + 1, {automatic:true, autoplay});
+  else finishSelection();
+}
+function changeOptions() {
+  includeExtras = $('audioIncludeExtras').checked; includePeople = $('audioIncludePeople').checked;
+  refreshReading(); updateQueueDurations();
+  if (!current() || finished) { status(); return; }
+  const autoplay = wantsPlay, count = remainingMissing();
+  if (count) { failMissing(count); return; }
+  if (errorKind === 'availability') { error = ''; errorKind = ''; }
+  if (!enabled(part())) advance({autoplay});
+  else status(); // Never reload the title/body or rewind already-passed groups.
+}
+function start(continuous) {
+  const t = reading(); if (!t) return;
+  const route = continuous && t.kind === 'history' ? lineSnapshot(window.metroUI?.state().line) : null;
+  const tracks = route ? route.tracks : [t], index = tracks.findIndex(x => x?.key === t.key);
+  if ((continuous && !route) || index < 0 || missing(tracks)) { refreshReading(); return; }
+  queue = Object.freeze([...tracks]); mode = route ? 'line' : 'single'; line = route?.line || null;
+  player.hidden = false; measurePlayer();
+  renderQueue();
+  selectTrack(index);
+}
+function resume() {
+  if (!current()) return;
+  if (finished) { selectTrack(at); return; }
+  const count = remainingMissing(); if (count) { failMissing(count); return; }
+  if (errorKind === 'availability') { error = ''; errorKind = ''; }
+  if (error || audio.error || !expectedURL) loadClip(partIndex, {offset:audio.error || !expectedURL ? 0 : audio.currentTime});
+  else play();
+}
+function setQueueOpen(open, {focus = false} = {}) {
+  $('audioQueuePanel').hidden = !open;
+  $('audioQueueToggle').setAttribute('aria-expanded', String(open));
+  if (open) $('audioQueue').querySelector('[aria-current="true"]')?.scrollIntoView({block:'nearest'});
+  if (focus) $('audioQueueToggle').focus({preventScroll:true});
+}
+function seek(fraction) {
+  if ($('audioSeek').disabled) return;
+  finished = false;
+  audio.currentTime = Math.max(0, Math.min(audio.duration, audio.duration * fraction));
+  progress(); status();
+}
+$('audioRead').onclick = () => start(false);
+$('audioReadLine').onclick = () => start(true);
+$('audioPrevious').onclick = () => selectTrack(at - 1);
+$('audioNext').onclick = () => selectTrack(at + 1);
+$('audioToggle').onclick = () => wantsPlay ? pause() : resume();
+$('audioQueueToggle').onclick = () => setQueueOpen($('audioQueuePanel').hidden);
+$('audioQueueClose').onclick = () => setQueueOpen(false, {focus:true});
+$('audioQueue').onclick = ev => { const b = ev.target.closest('[data-audio-index]'); if (b) selectTrack(Number(b.dataset.audioIndex)); };
+$('audioTitle').onclick = () => {
+  const t = current(); if (!t) return;
+  setQueueOpen(false);
+  go(t.kind === 'history' ? t.key : t.entryId);
+  if (t.kind === 'topic') readerBody.scrollTo({top:0, behavior:'instant'});
+};
+$('audioSpeed').oninput = ev => setSpeed(rates[Number(ev.target.value)]);
+$('audioSeek').oninput = ev => seek(Number(ev.target.value) / 1000);
+for (const id of ['audioIncludeExtras', 'audioIncludePeople']) {
+  $(id).checked = false;
+  $(id).onchange = changeOptions;
+}
+for (const id of ['audioSpeed', 'audioSeek', 'audioIncludeExtras', 'audioIncludePeople']) $(id).addEventListener('keydown', ev => {
+  // Navigation gets the capture phase first. If it has no action (or a modal owns the page),
+  // arrows still must not change sound. Keep native PageUp/PageDown/Home/End and pointer input.
+  if (!ev.defaultPrevented && !ev.isComposing && !ev.altKey && !ev.ctrlKey && !ev.metaKey && !ev.shiftKey &&
+      ['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(ev.key)) ev.preventDefault();
+});
+window.addEventListener('keydown', ev => {
+  if (ev.defaultPrevented || ev.isComposing || ev.altKey || ev.ctrlKey || ev.metaKey || ev.shiftKey) return;
+  if (ev.key === 'Escape' && !$('audioQueuePanel').hidden && ev.target.closest?.('#audioPlayer') &&
+      !document.querySelector('dialog[open],#kinSheet:not([hidden])')) {
+    ev.preventDefault(); ev.stopImmediatePropagation(); setQueueOpen(false, {focus:true});
+  }
+}, true);
+audio.addEventListener('loadedmetadata', () => {
+  if (!isCurrentSource()) return;
+  applyRate();
+  if (pendingOffset !== null) { audio.currentTime = Math.min(pendingOffset, Number.isFinite(audio.duration) ? audio.duration : pendingOffset); pendingOffset = null; }
+  status();
+});
+audio.addEventListener('playing', () => { if (isCurrentSource()) { waiting = false; status(); } });
+audio.addEventListener('waiting', () => { if (isCurrentSource()) { waiting = true; status(); } });
+for (const event of ['pause', 'durationchange']) audio.addEventListener(event, status);
+audio.addEventListener('timeupdate', progress);
+audio.addEventListener('error', () => {
+  if (!finished && enabled(part()) && isCurrentSource() && audio.error) fail(`无法加载${partLabel()}，已停住。请检查网络后按播放键重试；不会跳过本段。`);
+});
+audio.addEventListener('ended', () => {
+  if (!isCurrentSource() || !audio.ended || !wantsPlay || error) return;
+  advance();
+});
+function measurePlayer() { document.documentElement.style.setProperty('--audio-height', player.hidden ? '0px' : player.offsetHeight + 'px'); }
+new ResizeObserver(measurePlayer).observe(player);
+setSpeed(speed);
+if ('mediaSession' in navigator) {
+  for (const [action, handler] of Object.entries({play:resume, pause, previoustrack:() => selectTrack(at - 1), nexttrack:() => selectTrack(at + 1), seekto:details => { if (Number.isFinite(audio.duration)) seek(details.seekTime / audio.duration); }})) {
+    try { navigator.mediaSession.setActionHandler(action, handler); } catch {} // Optional browser/OS support.
+  }
+}
+// Read-only diagnostics; the live queue, manifest and navigation are never exposed for mutation.
+window.atlasAudio = Object.freeze({state:() => ({queue:queue.map(t => t.key), index:at, mode, line:line?.id || null, phase,
+  partId:part()?.id || '', partIndex, partLabel:part()?.label || '', includeExtras, includePeople, selectedDuration:selectedDuration(current()),
+  title:current()?.title || '', playing:wantsPlay && !audio.paused && !audio.ended, wantsPlay, finished, speed,
+  src:audio.currentSrc, currentTime:audio.currentTime, error, frozen:Object.isFrozen(queue) && queue.every(t => Object.isFrozen(t) && Object.isFrozen(t.parts) && t.parts.every(Object.isFrozen))})});
+})();
 </script>
 <script>
 // Route-section marks only (dynasty or broad period), written for this mock as an orientation aid.
@@ -89989,7 +90470,7 @@ viewportPadding=()=>{
 // ← → change station and ↑ ↓ change scene on the train; other modes keep the atlas's own keys.
 window.addEventListener('keydown',ev=>{
  if(transferDialog.open||mode==='off'||ev.defaultPrevented||ev.isComposing||ev.altKey||ev.ctrlKey||ev.metaKey||ev.shiftKey)return;
- if(ev.target.isContentEditable||ev.target.closest('input,textarea,select,[role="textbox"],[role="separator"],#toc,#treeSheet')||!$('#kinSheet')?.hidden)return;
+ if(ev.target.isContentEditable||ev.target.closest('input:not(#audioSpeed):not(#audioSeek):not(#audioIncludeExtras):not(#audioIncludePeople),textarea,select,[role="textbox"],[role="separator"],#toc,#treeSheet')||!$('#kinSheet')?.hidden)return;
  if(ev.key==='Escape'&&mode==='ride'){ev.preventDefault();setMode('network');return}
  if(!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(ev.key))return;
  ev.preventDefault();ev.stopImmediatePropagation();

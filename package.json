@@ -4,12 +4,14 @@
   "license": "MIT",
   "scripts": {
     "build": "cd src && python3 assemble.py ../index.html",
-    "vercel-build": "cd src && python3 assemble.py ../index.html && mkdir -p ../dist && cp ../index.html ../dist/index.html",
+    "vercel-build": "npm run build && mkdir -p dist && cp index.html dist/index.html",
+    "audio:check": "python3 tools/audio/release.py check",
     "test": "python3 tests/run_tests.py index.html",
     "test:changed": "python3 tests/run_tests.py --changed index.html",
     "test:serial": "python3 tests/run_tests.py index.html --jobs 1"
   },
   "devDependencies": {
+    "@vercel/blob": "2.4.0",
     "puppeteer-core": "24.43.1"
   }
 }
