@@ -11,6 +11,8 @@ const supported = AUDIO_MANIFEST.schema === 2 && AUDIO_MANIFEST.policy === 3;
 const assets = supported ? AUDIO_MANIFEST.assets : {}, plans = supported ? AUDIO_MANIFEST.tracks : {};
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const time = n => { n = Math.max(0, Math.floor(Number.isFinite(n) ? n : 0)); return Math.floor(n / 60) + ':' + String(n % 60).padStart(2, '0'); };
+const extrasControls = ['audioIncludeExtras', 'audioReadIncludeExtras'];
+const peopleControls = ['audioIncludePeople', 'audioReadIncludePeople'];
 let queue = Object.freeze([]), at = -1, mode = 'single', line = null;
 let phase = 'body', partIndex = 0, finished = false, error = '', errorKind = '', speed = 1;
 let includeExtras = false, includePeople = false;
@@ -23,6 +25,10 @@ const clip = () => part()?.asset;
 const enabled = p => p?.group === 'extras' ? includeExtras : p?.group === 'people' ? includePeople : true;
 const isCurrentSource = () => Boolean(expectedURL) && audio.currentSrc === expectedURL;
 
+function syncOptionInputs() {
+  for (const id of extrasControls) $(id).checked = includeExtras;
+  for (const id of peopleControls) $(id).checked = includePeople;
+}
 function assetFor(key) {
   const a = assets?.[key];
   if (!a || typeof a.url !== 'string' || !a.url.trim() || !(Number.isFinite(a.duration) && a.duration > 0)) return null;
@@ -78,11 +84,29 @@ function selectedDuration(t) {
   const selected = t.parts.filter(enabled);
   return selected.some(p => !p.asset) ? null : selected.reduce((total, p) => total + p.asset.duration, 0);
 }
+function playlistItems() {
+  const items = [];
+  queue.forEach((t, trackIndex) => {
+    if (!t) return;
+    t.parts.forEach((p, pi) => {
+      if (enabled(p)) items.push({trackIndex, partIndex:pi, track:t, part:p});
+    });
+  });
+  return items;
+}
+function currentPlaylistIndex(items = playlistItems()) {
+  if (at < 0 || !items.length) return -1;
+  const activePart = partIndex < 0 ? 0 : partIndex;
+  const exact = items.findIndex(x => x.trackIndex === at && x.partIndex === activePart);
+  if (exact >= 0) return exact;
+  for (let i = items.length - 1; i >= 0; i--) if (items[i].trackIndex === at) return i;
+  return -1;
+}
 function partLabel() {
   const p = part();
   if (phase === 'title') return '节标题前奏：' + current().chapter;
-  if (phase === 'body') return current()?.kind === 'topic' ? '专题正文' : '本幕正文';
-  return ({moment:'补充趣事 · 名场面', box:'补充趣事 · 豆腐块', person:'人物小传'}[phase] || '独立片段') + '：' + (p?.label || '');
+  if (phase === 'body') return current()?.kind === 'topic' ? '专题正文' : '本幕正文 · ' + current().chapter;
+  return ({moment:'补充趣事', box:'补充趣事', person:'人物小传'}[phase] || '附加内容') + '：' + (p?.label || '');
 }
 function reading() {
   const e = ENTRIES[cur];
@@ -103,7 +127,7 @@ function refreshReading() {
   $('audioReadLine').hidden = !historical;
   $('audioReadLine').disabled = !onLine || count > 0;
   $('audioReadLine').title = !route ? '当前线路尚不可用' : count ? `${route.line.name}线所选内容缺 ${count} 段音频（含节标题），不跳过缺段` : `载入${route.line.name}线全部 ${route.tracks.length} 幕，从本幕开始`;
-  $('audioAvailability').textContent = singleMissing ? '所选内容待补齐' : historical && count ? '此线所选未齐 · 可单幕读' : historical && onLine ? `${route.line.name}线 · ${route.tracks.length} 幕所选齐全` : '专题正文及所选部分 · 云健';
+  $('audioAvailability').textContent = singleMissing ? '所选内容待补齐' : historical && count ? '此线待补齐 · 可单幕读' : '';
   // Only reader-button readiness; never mutates the queue, part cursor or transport.
 }
 // go() notifies after any kind of navigation. Boarding another line at the same shared station
@@ -119,22 +143,27 @@ new MutationObserver(scheduleRefresh).observe($('ridingLine'), {childList:true})
 scheduleRefresh();
 
 function renderQueue() {
-  $('audioCount').textContent = String(queue.length);
-  $('audioQueueName').textContent = mode === 'line' ? line.name + '线 · 完整队列' : queue[0]?.kind === 'topic' ? '专题朗读' : '单幕朗读';
-  $('audioQueueNote').textContent = '到尾停止，不循环；队列保留，可选曲重播。所选时长含正文及勾选的独立片段；节标题另作前奏，不计入此时长。';
-  $('audioQueue').innerHTML = queue.map((t, i) => `<li><button type="button" data-audio-index="${i}" aria-current="${i === at}"><span class="audio-number">${i + 1}</span><span>${esc(t.title)}${t.kind === 'history' ? `<small>${esc(t.chapter)}</small>` : ''}</span><time></time></button></li>`).join('');
-  updateQueueDurations();
+  const items = playlistItems(), active = currentPlaylistIndex(items);
+  $('audioCount').textContent = String(items.length);
+  $('audioQueueName').textContent = mode === 'line' ? line.name + '线 · 播放列表' : '播放列表';
+  const kindTag = {moment:'补充趣事', box:'补充趣事', person:'人物小传'};
+  $('audioQueue').innerHTML = items.map((item, i) => {
+    const {track:t, part:p, trackIndex:ti, partIndex:pi} = item;
+    const isSub = pi > 0, tag = kindTag[p.kind] || '';
+    const title = isSub ? `<em class="audio-part-tag">${tag}</em>${esc(p.label)}` : esc(t.title);
+    const sub = isSub ? (queue.length > 1 ? `<small>${esc(t.title)}</small>` : '') : (t.kind === 'history' ? `<small>${esc(t.chapter)}</small>` : '');
+    const dur = p.asset ? p.asset.duration : null;
+    return `<li${isSub ? ' class="audio-subitem"' : ''}><button type="button" data-audio-item="${i}" data-audio-index="${ti}" data-audio-part="${pi}" data-audio-kind="${esc(p.kind)}" aria-current="${i === active}"><span class="audio-number">${i + 1}</span><span>${title}${sub}</span><time data-seconds="${dur === null ? '' : dur}">${dur === null ? '待补' : time(dur)}</time></button></li>`;
+  }).join('');
+  const emptyGroups = [];
+  if (includeExtras && queue.length && !queue.some(t => t?.parts.some(p => p.group === 'extras'))) emptyGroups.push('补充趣事');
+  if (includePeople && queue.length && !queue.some(t => t?.parts.some(p => p.group === 'people'))) emptyGroups.push('人物小传');
+  $('audioQueueEmptyNote').hidden = !emptyGroups.length;
+  $('audioQueueEmptyNote').textContent = emptyGroups.length ? `当前内容无${emptyGroups.join('、')}` : '';
 }
-function updateQueueDurations() {
-  $('audioQueue').querySelectorAll('time').forEach((el, i) => {
-    const duration = selectedDuration(queue[i]);
-    el.textContent = duration === null ? '待补' : time(duration);
-    el.dataset.seconds = duration === null ? '' : String(duration);
-    el.title = duration === null ? '所选内容缺音频，不会跳过' : '所选时长（不含节标题前奏）';
-  });
-}
-function markQueue() {
-  for (const b of $('audioQueue').querySelectorAll('button')) b.setAttribute('aria-current', String(Number(b.dataset.audioIndex) === at));
+function markQueue(items = playlistItems()) {
+  const active = currentPlaylistIndex(items);
+  $('audioQueue').querySelectorAll('button').forEach((b, i) => b.setAttribute('aria-current', String(i === active)));
 }
 function progress() {
   const duration = isCurrentSource() && Number.isFinite(audio.duration) ? audio.duration : (clip()?.duration || 0);
@@ -149,22 +178,23 @@ function progress() {
 }
 function status() {
   const t = current(); if (!t) return;
+  const items = playlistItems(), pos = currentPlaylistIndex(items);
   const playing = wantsPlay && !audio.paused && !audio.ended;
   const state = error ? '已停住' : finished ? '已播完' : wantsPlay ? waiting ? '载入中' : '正在朗读' : '已暂停';
-  const duration = selectedDuration(t);
-  $('audioContext').textContent = `${state} · ${mode === 'line' ? line.name + '线' : t.kind === 'topic' ? '专题' : '单幕'} · ${at + 1}/${queue.length} · ${duration === null ? '所选待补齐' : '所选 ' + time(duration)}`;
-  $('audioContext').title = '所选时长含正文及勾选的片段，不含节标题前奏';
+  const total = items.some(x => !x.part.asset) ? null : items.reduce((n, x) => n + x.part.asset.duration, 0);
+  $('audioContext').textContent = `${state} · ${mode === 'line' ? line.name + '线' : t.kind === 'topic' ? '专题' : '本幕'} · ${Math.max(1, pos + 1)}/${items.length}${total === null ? ' · 待补齐' : ' · 共 ' + time(total)}`;
   $('audioTitle').textContent = t.title;
   $('audioTitle').setAttribute('aria-label', '定位朗读正文：' + t.title);
-  $('audioPhase').textContent = finished && !enabled(part()) ? '所选内容已结束 · 未选部分不播放' : partLabel() + (phase === 'title' ? ' · 播完接正文' : ' · 进度仅计本段');
+  $('audioPhase').textContent = partLabel();
   $('audioPhase').title = $('audioPhase').textContent;
   $('audioToggle').textContent = wantsPlay ? 'Ⅱ' : '▶';
   $('audioToggle').setAttribute('aria-label', wantsPlay ? '暂停' : error ? '重试播放' : finished ? '重新播放当前项' : '继续播放');
   $('audioToggle').title = $('audioToggle').getAttribute('aria-label');
-  $('audioPrevious').disabled = at <= 0;
-  $('audioNext').disabled = at >= queue.length - 1;
+  $('audioPrevious').disabled = pos <= 0;
+  $('audioNext').disabled = pos < 0 || pos >= items.length - 1;
   $('audioError').hidden = !error;
   $('audioError').textContent = error;
+  markQueue(items);
   if ('mediaSession' in navigator) navigator.mediaSession.playbackState = playing ? 'playing' : 'paused';
   progress();
 }
@@ -227,12 +257,22 @@ function selectTrack(index, {automatic = false, autoplay = true} = {}) {
   const previous = current();
   at = index;
   const t = current(), prelude = t.kind === 'history' && (!automatic || previous?.entryId !== t.entryId);
-  markQueue();
   if ('mediaSession' in navigator && 'MediaMetadata' in window) {
     navigator.mediaSession.metadata = new MediaMetadata({title:t.title, artist:'云健 · AI 合成语音', album:mode === 'line' ? line.name + '线 · 简明欧洲史图册' : '简明欧洲史图册'});
   }
   loadClip(prelude ? -1 : 0, {autoplay});
   // Never go(), board(), scroll, or change location here.
+}
+function selectPlaylistItem(itemIndex, {autoplay = true} = {}) {
+  const item = playlistItems()[itemIndex];
+  if (!item) return;
+  if (item.partIndex === 0) { selectTrack(item.trackIndex, {autoplay}); return; }
+  at = item.trackIndex;
+  const t = current();
+  if ('mediaSession' in navigator && 'MediaMetadata' in window) {
+    navigator.mediaSession.metadata = new MediaMetadata({title:item.part.label || t.title, artist:'云健 · AI 合成语音', album:mode === 'line' ? line.name + '线 · 简明欧洲史图册' : '简明欧洲史图册'});
+  }
+  loadClip(item.partIndex, {autoplay});
 }
 function finishSelection() {
   ++loadToken; ++playToken; wantsPlay = false; waiting = false; finished = true; error = ''; errorKind = '';
@@ -249,15 +289,18 @@ function advance({autoplay = wantsPlay} = {}) {
   else if (mode === 'line' && at < queue.length - 1) selectTrack(at + 1, {automatic:true, autoplay});
   else finishSelection();
 }
-function changeOptions() {
-  includeExtras = $('audioIncludeExtras').checked; includePeople = $('audioIncludePeople').checked;
-  refreshReading(); updateQueueDurations();
-  if (!current() || finished) { status(); return; }
+function changeOptions(ev) {
+  if (extrasControls.includes(ev.currentTarget.id)) includeExtras = ev.currentTarget.checked;
+  else includePeople = ev.currentTarget.checked;
+  syncOptionInputs();
+  refreshReading();
+  if (!current()) { renderQueue(); return; }
+  if (finished) { renderQueue(); status(); return; }
   const autoplay = wantsPlay, count = remainingMissing();
-  if (count) { failMissing(count); return; }
+  if (count) { renderQueue(); failMissing(count); return; }
   if (errorKind === 'availability') { error = ''; errorKind = ''; }
-  if (!enabled(part())) advance({autoplay});
-  else status(); // Never reload the title/body or rewind already-passed groups.
+  if (!enabled(part())) { advance({autoplay}); renderQueue(); status(); }
+  else { renderQueue(); status(); } // Never reload the title/body or rewind already-passed groups.
 }
 function start(continuous) {
   const t = reading(); if (!t) return;
@@ -291,12 +334,12 @@ function seek(fraction) {
 }
 $('audioRead').onclick = () => start(false);
 $('audioReadLine').onclick = () => start(true);
-$('audioPrevious').onclick = () => selectTrack(at - 1);
-$('audioNext').onclick = () => selectTrack(at + 1);
+$('audioPrevious').onclick = () => selectPlaylistItem(currentPlaylistIndex() - 1);
+$('audioNext').onclick = () => selectPlaylistItem(currentPlaylistIndex() + 1);
 $('audioToggle').onclick = () => wantsPlay ? pause() : resume();
 $('audioQueueToggle').onclick = () => setQueueOpen($('audioQueuePanel').hidden);
 $('audioQueueClose').onclick = () => setQueueOpen(false, {focus:true});
-$('audioQueue').onclick = ev => { const b = ev.target.closest('[data-audio-index]'); if (b) selectTrack(Number(b.dataset.audioIndex)); };
+$('audioQueue').onclick = ev => { const b = ev.target.closest('[data-audio-item]'); if (b) selectPlaylistItem(Number(b.dataset.audioItem)); };
 $('audioTitle').onclick = () => {
   const t = current(); if (!t) return;
   setQueueOpen(false);
@@ -305,11 +348,11 @@ $('audioTitle').onclick = () => {
 };
 $('audioSpeed').oninput = ev => setSpeed(rates[Number(ev.target.value)]);
 $('audioSeek').oninput = ev => seek(Number(ev.target.value) / 1000);
-for (const id of ['audioIncludeExtras', 'audioIncludePeople']) {
+for (const id of [...extrasControls, ...peopleControls]) {
   $(id).checked = false;
   $(id).onchange = changeOptions;
 }
-for (const id of ['audioSpeed', 'audioSeek', 'audioIncludeExtras', 'audioIncludePeople']) $(id).addEventListener('keydown', ev => {
+for (const id of ['audioSpeed', 'audioSeek', ...extrasControls, ...peopleControls]) $(id).addEventListener('keydown', ev => {
   // Navigation gets the capture phase first. If it has no action (or a modal owns the page),
   // arrows still must not change sound. Keep native PageUp/PageDown/Home/End and pointer input.
   if (!ev.defaultPrevented && !ev.isComposing && !ev.altKey && !ev.ctrlKey && !ev.metaKey && !ev.shiftKey &&
@@ -343,12 +386,12 @@ function measurePlayer() { document.documentElement.style.setProperty('--audio-h
 new ResizeObserver(measurePlayer).observe(player);
 setSpeed(speed);
 if ('mediaSession' in navigator) {
-  for (const [action, handler] of Object.entries({play:resume, pause, previoustrack:() => selectTrack(at - 1), nexttrack:() => selectTrack(at + 1), seekto:details => { if (Number.isFinite(audio.duration)) seek(details.seekTime / audio.duration); }})) {
+  for (const [action, handler] of Object.entries({play:resume, pause, previoustrack:() => selectPlaylistItem(currentPlaylistIndex() - 1), nexttrack:() => selectPlaylistItem(currentPlaylistIndex() + 1), seekto:details => { if (Number.isFinite(audio.duration)) seek(details.seekTime / audio.duration); }})) {
     try { navigator.mediaSession.setActionHandler(action, handler); } catch {} // Optional browser/OS support.
   }
 }
 // Read-only diagnostics; the live queue, manifest and navigation are never exposed for mutation.
-window.atlasAudio = Object.freeze({state:() => ({queue:queue.map(t => t.key), index:at, mode, line:line?.id || null, phase,
+window.atlasAudio = Object.freeze({state:() => ({queue:queue.map(t => t.key), playlist:playlistItems().map(x => x.part.id), index:at, mode, line:line?.id || null, phase,
   partId:part()?.id || '', partIndex, partLabel:part()?.label || '', includeExtras, includePeople, selectedDuration:selectedDuration(current()),
   title:current()?.title || '', playing:wantsPlay && !audio.paused && !audio.ended, wantsPlay, finished, speed,
   src:audio.currentSrc, currentTime:audio.currentTime, error, frozen:Object.isFrozen(queue) && queue.every(t => Object.isFrozen(t) && Object.isFrozen(t.parts) && t.parts.every(Object.isFrozen))})});

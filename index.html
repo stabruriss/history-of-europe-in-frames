@@ -1533,14 +1533,15 @@ body.history-mode #mapSceneChip{display:block}
 body{padding-top:var(--audio-height)}
 #networkMode{top:calc(var(--masthead-h,65px) + var(--audio-height))}
 #readerAudioActions[hidden],#audioPlayer[hidden],#audioPlayer [hidden],#readerAudioActions [hidden]{display:none!important}
-#readerAudioActions{display:flex;align-items:center;gap:7px;flex:none;order:0;padding:7px 22px;border-bottom:1px solid var(--rule);background:var(--paper-light);min-width:0}
+#readerAudioActions{display:flex;align-items:center;flex-wrap:wrap;gap:6px 10px;flex:none;order:0;padding:7px 22px;border-bottom:1px solid var(--rule);background:var(--paper-light);min-width:0}
 #readerAudioActions button{font:12px var(--serif);color:var(--audio-blue);background:transparent;border:1px solid #235f9360;border-radius:2px;min-height:32px;padding:4px 11px;white-space:nowrap;cursor:pointer}
 #readerAudioActions button:not(:disabled):hover{background:#235f9310;border-color:var(--audio-blue)}
 #readerAudioActions button:disabled{opacity:.48;cursor:default}
 #audioAvailability{font:10px/1.5 var(--serif);color:var(--soft);min-width:0;overflow-wrap:anywhere}
+#audioAvailability:empty{display:none}
 #readerAudioActions :focus-visible,#audioPlayer :focus-visible{outline:2px solid var(--audio-blue);outline-offset:2px}
 #audioPlayer{position:fixed;inset:0 0 auto;z-index:1400;background:var(--paper-light);border-bottom:2px solid var(--audio-blue);box-shadow:0 3px 12px #2a201819;color:var(--ink)}
-.audio-player-inner{display:grid;grid-template-columns:116px minmax(0,1fr) 184px 92px;gap:4px 22px;align-items:center;padding:8px 22px;max-width:1500px;margin:auto}
+.audio-player-inner{display:grid;grid-template-columns:116px minmax(0,1fr) 176px 106px;gap:4px 20px;align-items:center;padding:8px 22px;max-width:1500px;margin:auto}
 #audioPlayer button{font:inherit;color:var(--audio-blue);background:transparent;cursor:pointer;border:1px solid transparent;border-radius:2px;touch-action:manipulation}
 #audioPlayer button:disabled{opacity:.35;cursor:default}
 #audioPlayer button:not(:disabled):hover{background:#235f9310}
@@ -1562,24 +1563,29 @@ body{padding-top:var(--audio-height)}
 #audioPlayer #audioQueueToggle{font-size:12px;min-height:36px;padding:6px;border-color:var(--rule);white-space:nowrap;grid-column:4;grid-row:1}
 #audioQueueToggle[aria-expanded=true]{background:#235f9310}
 .audio-options{display:flex;gap:12px;align-items:center;grid-column:3/5;grid-row:2;min-width:0}
-.audio-options label{display:flex;align-items:center;gap:5px;min-height:24px;font:11px var(--serif);color:var(--audio-blue);white-space:nowrap;cursor:pointer}
+.audio-reader-options{flex-wrap:wrap;gap:4px 12px;margin-left:2px}
+.audio-options label{display:inline-flex;align-items:center;gap:5px;min-height:26px;font:11.5px var(--serif);color:var(--ink2);white-space:nowrap;cursor:pointer;user-select:none}
+.audio-options label:has(input:checked){color:var(--audio-blue);font-weight:600}
 .audio-options input{margin:0;width:14px;height:14px;accent-color:var(--audio-blue);flex:none;cursor:pointer}
 #audioError{margin:0;padding:0 22px 8px;font:12px/1.6 var(--serif);color:var(--accent)}
-#audioQueuePanel{position:absolute;right:16px;top:calc(100% + 6px);width:min(460px,calc(100vw - 24px));max-height:min(48dvh,calc(100dvh - var(--audio-height) - 80px));overflow:auto;overscroll-behavior:contain;padding:10px 16px;background:var(--paper-light);border:1px solid var(--rule);box-shadow:0 6px 18px #2a20182b}
-.audio-queue-heading{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:14px}
+#audioQueuePanel{position:absolute;right:16px;top:calc(100% + 6px);width:min(460px,calc(100vw - 24px));max-height:min(48dvh,calc(100dvh - var(--audio-height) - 80px));overflow:auto;overscroll-behavior:contain;padding:8px 16px 10px;background:var(--paper-light);border:1px solid var(--rule);box-shadow:0 6px 18px #2a20182b}
+.audio-queue-heading{display:flex;align-items:center;justify-content:space-between;gap:8px;padding-bottom:4px;font-size:13.5px}
 #audioPlayer #audioQueueClose{font-size:22px;width:34px;height:34px}
-#audioQueuePanel p{margin:4px 0 9px;font:11px/1.6 var(--serif);color:var(--soft)}
 #audioQueue{list-style:none;margin:0;padding:0}
 #audioQueue li{margin:0;padding:0;border-top:1px dotted var(--rule)}
-#audioQueue button{display:grid;grid-template-columns:25px minmax(0,1fr) 38px;align-items:center;gap:8px;width:100%;padding:9px 4px;text-align:left;font-size:12px;line-height:1.5}
-#audioQueue button[aria-current=true]{background:#235f9310;font-weight:bold}
+#audioQueue button{display:grid;grid-template-columns:25px minmax(0,1fr) 38px;align-items:center;gap:8px;width:100%;padding:8px 4px;text-align:left;font-size:12px;line-height:1.5;color:var(--ink)}
+#audioQueue li.audio-subitem button{padding-left:12px}
+#audioQueue button[aria-current=true]{background:#235f9312;color:var(--audio-blue);font-weight:bold}
+.audio-part-tag{display:inline-block;margin-right:6px;padding:0 5px;border:1px solid #235f9355;border-radius:2px;font:10px/1.5 var(--serif);color:var(--audio-blue);font-style:normal;font-weight:400;vertical-align:1px}
 #audioQueue small{display:block;font-weight:400;color:var(--soft);font-size:10px}
 #audioQueue .audio-number,#audioQueue time{font:11px var(--latin);font-variant-numeric:tabular-nums;color:var(--soft)}
+#audioQueue time{text-align:right}
+#audioQueueEmptyNote{margin:6px 0 0;padding-top:6px;border-top:1px dotted var(--rule);font:11px/1.5 var(--serif);color:var(--soft)}
 @media(max-width:820px){
- .audio-player-inner{grid-template-columns:112px minmax(0,1fr) 70px;gap:5px 9px;padding:6px 10px}
+ .audio-player-inner{grid-template-columns:112px minmax(0,1fr) 86px;gap:5px 9px;padding:6px 10px}
  .audio-transport{grid-row:1}
  .audio-now{grid-column:2/4;grid-row:1}
- .audio-options{grid-column:1/-1;grid-row:3;gap:18px}
+ .audio-options{grid-column:1/-1;grid-row:3;gap:16px}
  .audio-options label{font-size:11px}
  #audioContext{font-size:9px}
  #audioPlayer #audioTitle{font-size:12px}
@@ -1587,10 +1593,11 @@ body{padding-top:var(--audio-height)}
  .audio-speed{grid-column:1/3;grid-row:2;display:grid;grid-template-columns:66px minmax(0,1fr);gap:0 8px;align-items:center}
  .audio-speed label{font-size:10px}
  .audio-speed-labels{grid-column:2;font-size:9px}
- #audioPlayer #audioQueueToggle{grid-column:3;grid-row:2;font-size:11px;min-height:34px}
+ #audioPlayer #audioQueueToggle{grid-column:3;grid-row:2;font-size:11px;min-height:34px;padding:4px}
  #audioQueuePanel{right:12px;max-height:min(34dvh,calc(100dvh - var(--audio-height) - 120px));padding:8px 12px}
  #audioError{padding:0 10px 6px;font-size:11px}
- #readerAudioActions{padding:5px 14px;gap:6px}
+ #readerAudioActions{padding:5px 14px;gap:5px 8px}
+ .audio-reader-options{gap:3px 10px;margin-left:0}
  #readerAudioActions button{font-size:11.5px;padding:4px 9px;min-height:32px}
  #audioAvailability{font-size:9px}
  /* Keep the reading pane usable when both the ribbon and the map are open. */
@@ -1599,7 +1606,7 @@ body{padding-top:var(--audio-height)}
 }
 @media(max-width:820px) and (max-height:520px) and (orientation:landscape){
  body.history-mode:has(#audioPlayer:not([hidden])) #mapwrap{grid-template-rows:minmax(0,1fr)}
- .audio-player-inner{grid-template-columns:112px minmax(0,1fr) 145px 65px;gap:8px}
+ .audio-player-inner{grid-template-columns:112px minmax(0,1fr) 136px 84px;gap:8px}
  .audio-transport{grid-row:1/3}
  .audio-now{grid-column:2;grid-row:1/3}
  .audio-speed{grid-column:3;grid-row:1;display:block}
@@ -1615,9 +1622,9 @@ body{padding-top:var(--audio-height)}
 <section id="audioPlayer" aria-label="朗读播放器" hidden>
   <div class="audio-player-inner">
     <div class="audio-transport">
-      <button id="audioPrevious" type="button" aria-label="上一首" title="上一首">Ⅰ◀</button>
+      <button id="audioPrevious" type="button" aria-label="上一项" title="上一项">Ⅰ◀</button>
       <button id="audioToggle" type="button" aria-label="暂停">Ⅱ</button>
-      <button id="audioNext" type="button" aria-label="下一首" title="下一首">▶Ⅰ</button>
+      <button id="audioNext" type="button" aria-label="下一项" title="下一项">▶Ⅰ</button>
     </div>
     <div class="audio-now">
       <div id="audioContext"></div>
@@ -1631,18 +1638,17 @@ body{padding-top:var(--audio-height)}
       <datalist id="audioSpeedTicks"><option value="0"></option><option value="1"></option><option value="2"></option><option value="3"></option><option value="4"></option><option value="5"></option><option value="6"></option></datalist>
       <div class="audio-speed-labels" aria-hidden="true"><span>1</span><span>1.25</span><span>1.5</span><span>1.75</span><span>2</span><span>2.5</span><span>3</span></div>
     </div>
-    <button id="audioQueueToggle" type="button" aria-expanded="false" aria-controls="audioQueuePanel">队列 <span id="audioCount"></span> ▾</button>
-    <div class="audio-options" role="group" aria-label="朗读包括的独立片段">
-      <label title="正文之后播放名场面和豆腐块；切换只影响尚未经过的片段"><input id="audioIncludeExtras" type="checkbox" autocomplete="off">包括补充趣事</label>
-      <label title="人物姓名、小事标题、小事文字和生平同属人物片段；不读固定日期与外部参考链接"><input id="audioIncludePeople" type="checkbox" autocomplete="off">包括人物小传</label>
+    <button id="audioQueueToggle" type="button" aria-expanded="false" aria-controls="audioQueuePanel">播放列表 <span id="audioCount"></span> ▾</button>
+    <div class="audio-options" role="group" aria-label="朗读附加内容">
+      <label title="纳入名场面与豆腐块"><input id="audioIncludeExtras" type="checkbox" autocomplete="off">包括补充趣事</label>
+      <label title="纳入人物小传（含事件、小事与生平）"><input id="audioIncludePeople" type="checkbox" autocomplete="off">包括人物小传</label>
     </div>
   </div>
   <p id="audioError" role="status" hidden></p>
-  <section id="audioQueuePanel" aria-label="播放队列" hidden>
-    <div class="audio-queue-heading"><strong id="audioQueueName"></strong><button id="audioQueueClose" type="button" aria-label="关闭播放队列">×</button></div>
-    <p>选曲只切换声音；点播放器标题才定位正文。</p>
+  <section id="audioQueuePanel" aria-label="播放列表" hidden>
+    <div class="audio-queue-heading"><strong id="audioQueueName"></strong><button id="audioQueueClose" type="button" aria-label="关闭播放列表">×</button></div>
     <ol id="audioQueue"></ol>
-    <p id="audioQueueNote"></p>
+    <p id="audioQueueEmptyNote" hidden></p>
   </section>
   <audio id="atlasAudioElement" preload="none"></audio>
 </section>
@@ -1693,6 +1699,10 @@ body{padding-top:var(--audio-height)}
     <div id="readerAudioActions" hidden>
       <button id="audioRead" type="button" aria-describedby="audioAvailability">朗读</button>
       <button id="audioReadLine" type="button" aria-describedby="audioAvailability">连续朗读</button>
+      <div class="audio-options audio-reader-options" role="group" aria-label="朗读前选择附加内容">
+        <label title="纳入名场面与豆腐块"><input id="audioReadIncludeExtras" type="checkbox" autocomplete="off">包括补充趣事</label>
+        <label title="纳入人物小传（含事件、小事与生平）"><input id="audioReadIncludePeople" type="checkbox" autocomplete="off">包括人物小传</label>
+      </div>
       <span id="audioAvailability"></span>
     </div>
     <div id="readerBody"><header id="readerHead"><div id="entryEyebrow" class="eyebrow"></div><h2 id="entryTitle"></h2><div id="entryEnglish" class="en-name"></div></header><div id="transferBar"></div><article id="card" aria-labelledby="entryTitle"></article></div>
@@ -89041,8 +89051,8 @@ document.getElementById('tFit').onclick=()=>{map.closePopup();fit(ENTRIES[cur],t
 document.addEventListener('keydown',ev=>{
   if(ev.defaultPrevented||ev.isComposing||ev.altKey||ev.ctrlKey||ev.metaKey||ev.shiftKey)return;
   if(document.querySelector('dialog[open],#kinSheet:not([hidden])'))return;
-  // Only the two audio ranges share navigation keys; editing and layout controls keep theirs.
-  if(ev.target.isContentEditable||ev.target.closest('input:not(#audioSpeed):not(#audioSeek):not(#audioIncludeExtras):not(#audioIncludePeople),textarea,select,[role="textbox"],[role="separator"]'))return;
+  // Only explicit audio controls share navigation keys; editing and layout controls keep theirs.
+  if(ev.target.isContentEditable||ev.target.closest('input:not(#audioSpeed):not(#audioSeek):not(#audioIncludeExtras):not(#audioIncludePeople):not(#audioReadIncludeExtras):not(#audioReadIncludePeople),textarea,select,[role="textbox"],[role="separator"]'))return;
   const vertical=ev.key==='ArrowUp'||ev.key==='ArrowDown';
   const horizontal=ev.key==='ArrowLeft'||ev.key==='ArrowRight';
   if(!vertical&&!horizontal)return;
@@ -89152,6 +89162,8 @@ const supported = AUDIO_MANIFEST.schema === 2 && AUDIO_MANIFEST.policy === 3;
 const assets = supported ? AUDIO_MANIFEST.assets : {}, plans = supported ? AUDIO_MANIFEST.tracks : {};
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const time = n => { n = Math.max(0, Math.floor(Number.isFinite(n) ? n : 0)); return Math.floor(n / 60) + ':' + String(n % 60).padStart(2, '0'); };
+const extrasControls = ['audioIncludeExtras', 'audioReadIncludeExtras'];
+const peopleControls = ['audioIncludePeople', 'audioReadIncludePeople'];
 let queue = Object.freeze([]), at = -1, mode = 'single', line = null;
 let phase = 'body', partIndex = 0, finished = false, error = '', errorKind = '', speed = 1;
 let includeExtras = false, includePeople = false;
@@ -89164,6 +89176,10 @@ const clip = () => part()?.asset;
 const enabled = p => p?.group === 'extras' ? includeExtras : p?.group === 'people' ? includePeople : true;
 const isCurrentSource = () => Boolean(expectedURL) && audio.currentSrc === expectedURL;
 
+function syncOptionInputs() {
+  for (const id of extrasControls) $(id).checked = includeExtras;
+  for (const id of peopleControls) $(id).checked = includePeople;
+}
 function assetFor(key) {
   const a = assets?.[key];
   if (!a || typeof a.url !== 'string' || !a.url.trim() || !(Number.isFinite(a.duration) && a.duration > 0)) return null;
@@ -89219,11 +89235,29 @@ function selectedDuration(t) {
   const selected = t.parts.filter(enabled);
   return selected.some(p => !p.asset) ? null : selected.reduce((total, p) => total + p.asset.duration, 0);
 }
+function playlistItems() {
+  const items = [];
+  queue.forEach((t, trackIndex) => {
+    if (!t) return;
+    t.parts.forEach((p, pi) => {
+      if (enabled(p)) items.push({trackIndex, partIndex:pi, track:t, part:p});
+    });
+  });
+  return items;
+}
+function currentPlaylistIndex(items = playlistItems()) {
+  if (at < 0 || !items.length) return -1;
+  const activePart = partIndex < 0 ? 0 : partIndex;
+  const exact = items.findIndex(x => x.trackIndex === at && x.partIndex === activePart);
+  if (exact >= 0) return exact;
+  for (let i = items.length - 1; i >= 0; i--) if (items[i].trackIndex === at) return i;
+  return -1;
+}
 function partLabel() {
   const p = part();
   if (phase === 'title') return '节标题前奏：' + current().chapter;
-  if (phase === 'body') return current()?.kind === 'topic' ? '专题正文' : '本幕正文';
-  return ({moment:'补充趣事 · 名场面', box:'补充趣事 · 豆腐块', person:'人物小传'}[phase] || '独立片段') + '：' + (p?.label || '');
+  if (phase === 'body') return current()?.kind === 'topic' ? '专题正文' : '本幕正文 · ' + current().chapter;
+  return ({moment:'补充趣事', box:'补充趣事', person:'人物小传'}[phase] || '附加内容') + '：' + (p?.label || '');
 }
 function reading() {
   const e = ENTRIES[cur];
@@ -89244,7 +89278,7 @@ function refreshReading() {
   $('audioReadLine').hidden = !historical;
   $('audioReadLine').disabled = !onLine || count > 0;
   $('audioReadLine').title = !route ? '当前线路尚不可用' : count ? `${route.line.name}线所选内容缺 ${count} 段音频（含节标题），不跳过缺段` : `载入${route.line.name}线全部 ${route.tracks.length} 幕，从本幕开始`;
-  $('audioAvailability').textContent = singleMissing ? '所选内容待补齐' : historical && count ? '此线所选未齐 · 可单幕读' : historical && onLine ? `${route.line.name}线 · ${route.tracks.length} 幕所选齐全` : '专题正文及所选部分 · 云健';
+  $('audioAvailability').textContent = singleMissing ? '所选内容待补齐' : historical && count ? '此线待补齐 · 可单幕读' : '';
   // Only reader-button readiness; never mutates the queue, part cursor or transport.
 }
 // go() notifies after any kind of navigation. Boarding another line at the same shared station
@@ -89260,22 +89294,27 @@ new MutationObserver(scheduleRefresh).observe($('ridingLine'), {childList:true})
 scheduleRefresh();
 
 function renderQueue() {
-  $('audioCount').textContent = String(queue.length);
-  $('audioQueueName').textContent = mode === 'line' ? line.name + '线 · 完整队列' : queue[0]?.kind === 'topic' ? '专题朗读' : '单幕朗读';
-  $('audioQueueNote').textContent = '到尾停止，不循环；队列保留，可选曲重播。所选时长含正文及勾选的独立片段；节标题另作前奏，不计入此时长。';
-  $('audioQueue').innerHTML = queue.map((t, i) => `<li><button type="button" data-audio-index="${i}" aria-current="${i === at}"><span class="audio-number">${i + 1}</span><span>${esc(t.title)}${t.kind === 'history' ? `<small>${esc(t.chapter)}</small>` : ''}</span><time></time></button></li>`).join('');
-  updateQueueDurations();
+  const items = playlistItems(), active = currentPlaylistIndex(items);
+  $('audioCount').textContent = String(items.length);
+  $('audioQueueName').textContent = mode === 'line' ? line.name + '线 · 播放列表' : '播放列表';
+  const kindTag = {moment:'补充趣事', box:'补充趣事', person:'人物小传'};
+  $('audioQueue').innerHTML = items.map((item, i) => {
+    const {track:t, part:p, trackIndex:ti, partIndex:pi} = item;
+    const isSub = pi > 0, tag = kindTag[p.kind] || '';
+    const title = isSub ? `<em class="audio-part-tag">${tag}</em>${esc(p.label)}` : esc(t.title);
+    const sub = isSub ? (queue.length > 1 ? `<small>${esc(t.title)}</small>` : '') : (t.kind === 'history' ? `<small>${esc(t.chapter)}</small>` : '');
+    const dur = p.asset ? p.asset.duration : null;
+    return `<li${isSub ? ' class="audio-subitem"' : ''}><button type="button" data-audio-item="${i}" data-audio-index="${ti}" data-audio-part="${pi}" data-audio-kind="${esc(p.kind)}" aria-current="${i === active}"><span class="audio-number">${i + 1}</span><span>${title}${sub}</span><time data-seconds="${dur === null ? '' : dur}">${dur === null ? '待补' : time(dur)}</time></button></li>`;
+  }).join('');
+  const emptyGroups = [];
+  if (includeExtras && queue.length && !queue.some(t => t?.parts.some(p => p.group === 'extras'))) emptyGroups.push('补充趣事');
+  if (includePeople && queue.length && !queue.some(t => t?.parts.some(p => p.group === 'people'))) emptyGroups.push('人物小传');
+  $('audioQueueEmptyNote').hidden = !emptyGroups.length;
+  $('audioQueueEmptyNote').textContent = emptyGroups.length ? `当前内容无${emptyGroups.join('、')}` : '';
 }
-function updateQueueDurations() {
-  $('audioQueue').querySelectorAll('time').forEach((el, i) => {
-    const duration = selectedDuration(queue[i]);
-    el.textContent = duration === null ? '待补' : time(duration);
-    el.dataset.seconds = duration === null ? '' : String(duration);
-    el.title = duration === null ? '所选内容缺音频，不会跳过' : '所选时长（不含节标题前奏）';
-  });
-}
-function markQueue() {
-  for (const b of $('audioQueue').querySelectorAll('button')) b.setAttribute('aria-current', String(Number(b.dataset.audioIndex) === at));
+function markQueue(items = playlistItems()) {
+  const active = currentPlaylistIndex(items);
+  $('audioQueue').querySelectorAll('button').forEach((b, i) => b.setAttribute('aria-current', String(i === active)));
 }
 function progress() {
   const duration = isCurrentSource() && Number.isFinite(audio.duration) ? audio.duration : (clip()?.duration || 0);
@@ -89290,22 +89329,23 @@ function progress() {
 }
 function status() {
   const t = current(); if (!t) return;
+  const items = playlistItems(), pos = currentPlaylistIndex(items);
   const playing = wantsPlay && !audio.paused && !audio.ended;
   const state = error ? '已停住' : finished ? '已播完' : wantsPlay ? waiting ? '载入中' : '正在朗读' : '已暂停';
-  const duration = selectedDuration(t);
-  $('audioContext').textContent = `${state} · ${mode === 'line' ? line.name + '线' : t.kind === 'topic' ? '专题' : '单幕'} · ${at + 1}/${queue.length} · ${duration === null ? '所选待补齐' : '所选 ' + time(duration)}`;
-  $('audioContext').title = '所选时长含正文及勾选的片段，不含节标题前奏';
+  const total = items.some(x => !x.part.asset) ? null : items.reduce((n, x) => n + x.part.asset.duration, 0);
+  $('audioContext').textContent = `${state} · ${mode === 'line' ? line.name + '线' : t.kind === 'topic' ? '专题' : '本幕'} · ${Math.max(1, pos + 1)}/${items.length}${total === null ? ' · 待补齐' : ' · 共 ' + time(total)}`;
   $('audioTitle').textContent = t.title;
   $('audioTitle').setAttribute('aria-label', '定位朗读正文：' + t.title);
-  $('audioPhase').textContent = finished && !enabled(part()) ? '所选内容已结束 · 未选部分不播放' : partLabel() + (phase === 'title' ? ' · 播完接正文' : ' · 进度仅计本段');
+  $('audioPhase').textContent = partLabel();
   $('audioPhase').title = $('audioPhase').textContent;
   $('audioToggle').textContent = wantsPlay ? 'Ⅱ' : '▶';
   $('audioToggle').setAttribute('aria-label', wantsPlay ? '暂停' : error ? '重试播放' : finished ? '重新播放当前项' : '继续播放');
   $('audioToggle').title = $('audioToggle').getAttribute('aria-label');
-  $('audioPrevious').disabled = at <= 0;
-  $('audioNext').disabled = at >= queue.length - 1;
+  $('audioPrevious').disabled = pos <= 0;
+  $('audioNext').disabled = pos < 0 || pos >= items.length - 1;
   $('audioError').hidden = !error;
   $('audioError').textContent = error;
+  markQueue(items);
   if ('mediaSession' in navigator) navigator.mediaSession.playbackState = playing ? 'playing' : 'paused';
   progress();
 }
@@ -89368,12 +89408,22 @@ function selectTrack(index, {automatic = false, autoplay = true} = {}) {
   const previous = current();
   at = index;
   const t = current(), prelude = t.kind === 'history' && (!automatic || previous?.entryId !== t.entryId);
-  markQueue();
   if ('mediaSession' in navigator && 'MediaMetadata' in window) {
     navigator.mediaSession.metadata = new MediaMetadata({title:t.title, artist:'云健 · AI 合成语音', album:mode === 'line' ? line.name + '线 · 简明欧洲史图册' : '简明欧洲史图册'});
   }
   loadClip(prelude ? -1 : 0, {autoplay});
   // Never go(), board(), scroll, or change location here.
+}
+function selectPlaylistItem(itemIndex, {autoplay = true} = {}) {
+  const item = playlistItems()[itemIndex];
+  if (!item) return;
+  if (item.partIndex === 0) { selectTrack(item.trackIndex, {autoplay}); return; }
+  at = item.trackIndex;
+  const t = current();
+  if ('mediaSession' in navigator && 'MediaMetadata' in window) {
+    navigator.mediaSession.metadata = new MediaMetadata({title:item.part.label || t.title, artist:'云健 · AI 合成语音', album:mode === 'line' ? line.name + '线 · 简明欧洲史图册' : '简明欧洲史图册'});
+  }
+  loadClip(item.partIndex, {autoplay});
 }
 function finishSelection() {
   ++loadToken; ++playToken; wantsPlay = false; waiting = false; finished = true; error = ''; errorKind = '';
@@ -89390,15 +89440,18 @@ function advance({autoplay = wantsPlay} = {}) {
   else if (mode === 'line' && at < queue.length - 1) selectTrack(at + 1, {automatic:true, autoplay});
   else finishSelection();
 }
-function changeOptions() {
-  includeExtras = $('audioIncludeExtras').checked; includePeople = $('audioIncludePeople').checked;
-  refreshReading(); updateQueueDurations();
-  if (!current() || finished) { status(); return; }
+function changeOptions(ev) {
+  if (extrasControls.includes(ev.currentTarget.id)) includeExtras = ev.currentTarget.checked;
+  else includePeople = ev.currentTarget.checked;
+  syncOptionInputs();
+  refreshReading();
+  if (!current()) { renderQueue(); return; }
+  if (finished) { renderQueue(); status(); return; }
   const autoplay = wantsPlay, count = remainingMissing();
-  if (count) { failMissing(count); return; }
+  if (count) { renderQueue(); failMissing(count); return; }
   if (errorKind === 'availability') { error = ''; errorKind = ''; }
-  if (!enabled(part())) advance({autoplay});
-  else status(); // Never reload the title/body or rewind already-passed groups.
+  if (!enabled(part())) { advance({autoplay}); renderQueue(); status(); }
+  else { renderQueue(); status(); } // Never reload the title/body or rewind already-passed groups.
 }
 function start(continuous) {
   const t = reading(); if (!t) return;
@@ -89432,12 +89485,12 @@ function seek(fraction) {
 }
 $('audioRead').onclick = () => start(false);
 $('audioReadLine').onclick = () => start(true);
-$('audioPrevious').onclick = () => selectTrack(at - 1);
-$('audioNext').onclick = () => selectTrack(at + 1);
+$('audioPrevious').onclick = () => selectPlaylistItem(currentPlaylistIndex() - 1);
+$('audioNext').onclick = () => selectPlaylistItem(currentPlaylistIndex() + 1);
 $('audioToggle').onclick = () => wantsPlay ? pause() : resume();
 $('audioQueueToggle').onclick = () => setQueueOpen($('audioQueuePanel').hidden);
 $('audioQueueClose').onclick = () => setQueueOpen(false, {focus:true});
-$('audioQueue').onclick = ev => { const b = ev.target.closest('[data-audio-index]'); if (b) selectTrack(Number(b.dataset.audioIndex)); };
+$('audioQueue').onclick = ev => { const b = ev.target.closest('[data-audio-item]'); if (b) selectPlaylistItem(Number(b.dataset.audioItem)); };
 $('audioTitle').onclick = () => {
   const t = current(); if (!t) return;
   setQueueOpen(false);
@@ -89446,11 +89499,11 @@ $('audioTitle').onclick = () => {
 };
 $('audioSpeed').oninput = ev => setSpeed(rates[Number(ev.target.value)]);
 $('audioSeek').oninput = ev => seek(Number(ev.target.value) / 1000);
-for (const id of ['audioIncludeExtras', 'audioIncludePeople']) {
+for (const id of [...extrasControls, ...peopleControls]) {
   $(id).checked = false;
   $(id).onchange = changeOptions;
 }
-for (const id of ['audioSpeed', 'audioSeek', 'audioIncludeExtras', 'audioIncludePeople']) $(id).addEventListener('keydown', ev => {
+for (const id of ['audioSpeed', 'audioSeek', ...extrasControls, ...peopleControls]) $(id).addEventListener('keydown', ev => {
   // Navigation gets the capture phase first. If it has no action (or a modal owns the page),
   // arrows still must not change sound. Keep native PageUp/PageDown/Home/End and pointer input.
   if (!ev.defaultPrevented && !ev.isComposing && !ev.altKey && !ev.ctrlKey && !ev.metaKey && !ev.shiftKey &&
@@ -89484,12 +89537,12 @@ function measurePlayer() { document.documentElement.style.setProperty('--audio-h
 new ResizeObserver(measurePlayer).observe(player);
 setSpeed(speed);
 if ('mediaSession' in navigator) {
-  for (const [action, handler] of Object.entries({play:resume, pause, previoustrack:() => selectTrack(at - 1), nexttrack:() => selectTrack(at + 1), seekto:details => { if (Number.isFinite(audio.duration)) seek(details.seekTime / audio.duration); }})) {
+  for (const [action, handler] of Object.entries({play:resume, pause, previoustrack:() => selectPlaylistItem(currentPlaylistIndex() - 1), nexttrack:() => selectPlaylistItem(currentPlaylistIndex() + 1), seekto:details => { if (Number.isFinite(audio.duration)) seek(details.seekTime / audio.duration); }})) {
     try { navigator.mediaSession.setActionHandler(action, handler); } catch {} // Optional browser/OS support.
   }
 }
 // Read-only diagnostics; the live queue, manifest and navigation are never exposed for mutation.
-window.atlasAudio = Object.freeze({state:() => ({queue:queue.map(t => t.key), index:at, mode, line:line?.id || null, phase,
+window.atlasAudio = Object.freeze({state:() => ({queue:queue.map(t => t.key), playlist:playlistItems().map(x => x.part.id), index:at, mode, line:line?.id || null, phase,
   partId:part()?.id || '', partIndex, partLabel:part()?.label || '', includeExtras, includePeople, selectedDuration:selectedDuration(current()),
   title:current()?.title || '', playing:wantsPlay && !audio.paused && !audio.ended, wantsPlay, finished, speed,
   src:audio.currentSrc, currentTime:audio.currentTime, error, frozen:Object.isFrozen(queue) && queue.every(t => Object.isFrozen(t) && Object.isFrozen(t.parts) && t.parts.every(Object.isFrozen))})});
@@ -90470,7 +90523,7 @@ viewportPadding=()=>{
 // ← → change station and ↑ ↓ change scene on the train; other modes keep the atlas's own keys.
 window.addEventListener('keydown',ev=>{
  if(transferDialog.open||mode==='off'||ev.defaultPrevented||ev.isComposing||ev.altKey||ev.ctrlKey||ev.metaKey||ev.shiftKey)return;
- if(ev.target.isContentEditable||ev.target.closest('input:not(#audioSpeed):not(#audioSeek):not(#audioIncludeExtras):not(#audioIncludePeople),textarea,select,[role="textbox"],[role="separator"],#toc,#treeSheet')||!$('#kinSheet')?.hidden)return;
+ if(ev.target.isContentEditable||ev.target.closest('input:not(#audioSpeed):not(#audioSeek):not(#audioIncludeExtras):not(#audioIncludePeople):not(#audioReadIncludeExtras):not(#audioReadIncludePeople),textarea,select,[role="textbox"],[role="separator"],#toc,#treeSheet')||!$('#kinSheet')?.hidden)return;
  if(ev.key==='Escape'&&mode==='ride'){ev.preventDefault();setMode('network');return}
  if(!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(ev.key))return;
  ev.preventDefault();ev.stopImmediatePropagation();

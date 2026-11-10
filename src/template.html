@@ -207,9 +207,9 @@ body.resizing-reader #map{pointer-events:none}
 <section id="audioPlayer" aria-label="朗读播放器" hidden>
   <div class="audio-player-inner">
     <div class="audio-transport">
-      <button id="audioPrevious" type="button" aria-label="上一首" title="上一首">Ⅰ◀</button>
+      <button id="audioPrevious" type="button" aria-label="上一项" title="上一项">Ⅰ◀</button>
       <button id="audioToggle" type="button" aria-label="暂停">Ⅱ</button>
-      <button id="audioNext" type="button" aria-label="下一首" title="下一首">▶Ⅰ</button>
+      <button id="audioNext" type="button" aria-label="下一项" title="下一项">▶Ⅰ</button>
     </div>
     <div class="audio-now">
       <div id="audioContext"></div>
@@ -223,18 +223,17 @@ body.resizing-reader #map{pointer-events:none}
       <datalist id="audioSpeedTicks"><option value="0"></option><option value="1"></option><option value="2"></option><option value="3"></option><option value="4"></option><option value="5"></option><option value="6"></option></datalist>
       <div class="audio-speed-labels" aria-hidden="true"><span>1</span><span>1.25</span><span>1.5</span><span>1.75</span><span>2</span><span>2.5</span><span>3</span></div>
     </div>
-    <button id="audioQueueToggle" type="button" aria-expanded="false" aria-controls="audioQueuePanel">队列 <span id="audioCount"></span> ▾</button>
-    <div class="audio-options" role="group" aria-label="朗读包括的独立片段">
-      <label title="正文之后播放名场面和豆腐块；切换只影响尚未经过的片段"><input id="audioIncludeExtras" type="checkbox" autocomplete="off">包括补充趣事</label>
-      <label title="人物姓名、小事标题、小事文字和生平同属人物片段；不读固定日期与外部参考链接"><input id="audioIncludePeople" type="checkbox" autocomplete="off">包括人物小传</label>
+    <button id="audioQueueToggle" type="button" aria-expanded="false" aria-controls="audioQueuePanel">播放列表 <span id="audioCount"></span> ▾</button>
+    <div class="audio-options" role="group" aria-label="朗读附加内容">
+      <label title="纳入名场面与豆腐块"><input id="audioIncludeExtras" type="checkbox" autocomplete="off">包括补充趣事</label>
+      <label title="纳入人物小传（含事件、小事与生平）"><input id="audioIncludePeople" type="checkbox" autocomplete="off">包括人物小传</label>
     </div>
   </div>
   <p id="audioError" role="status" hidden></p>
-  <section id="audioQueuePanel" aria-label="播放队列" hidden>
-    <div class="audio-queue-heading"><strong id="audioQueueName"></strong><button id="audioQueueClose" type="button" aria-label="关闭播放队列">×</button></div>
-    <p>选曲只切换声音；点播放器标题才定位正文。</p>
+  <section id="audioQueuePanel" aria-label="播放列表" hidden>
+    <div class="audio-queue-heading"><strong id="audioQueueName"></strong><button id="audioQueueClose" type="button" aria-label="关闭播放列表">×</button></div>
     <ol id="audioQueue"></ol>
-    <p id="audioQueueNote"></p>
+    <p id="audioQueueEmptyNote" hidden></p>
   </section>
   <audio id="atlasAudioElement" preload="none"></audio>
 </section>
@@ -285,6 +284,10 @@ body.resizing-reader #map{pointer-events:none}
     <div id="readerAudioActions" hidden>
       <button id="audioRead" type="button" aria-describedby="audioAvailability">朗读</button>
       <button id="audioReadLine" type="button" aria-describedby="audioAvailability">连续朗读</button>
+      <div class="audio-options audio-reader-options" role="group" aria-label="朗读前选择附加内容">
+        <label title="纳入名场面与豆腐块"><input id="audioReadIncludeExtras" type="checkbox" autocomplete="off">包括补充趣事</label>
+        <label title="纳入人物小传（含事件、小事与生平）"><input id="audioReadIncludePeople" type="checkbox" autocomplete="off">包括人物小传</label>
+      </div>
       <span id="audioAvailability"></span>
     </div>
     <div id="readerBody"><header id="readerHead"><div id="entryEyebrow" class="eyebrow"></div><h2 id="entryTitle"></h2><div id="entryEnglish" class="en-name"></div></header><div id="transferBar"></div><article id="card" aria-labelledby="entryTitle"></article></div>

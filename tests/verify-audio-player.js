@@ -73,9 +73,20 @@ const partReady = (p, id, paused = false) => p.waitForFunction((id, paused) => {
   return s.partId === id && !s.error && a.readyState >= (paused ? 1 : 2) && (paused ? a.paused && !s.wantsPlay : s.playing);
 }, {}, id, paused);
 async function setOptions(p, extras, people) {
-  for (const [id, checked] of [['audioIncludeExtras',extras], ['audioIncludePeople',people]]) {
+  const open = await p.$eval('#audioPlayer', e => !e.hidden);
+  const pairs = open ? [['audioIncludeExtras',extras], ['audioIncludePeople',people]]
+                     : [['audioReadIncludeExtras',extras], ['audioReadIncludePeople',people]];
+  for (const [id, checked] of pairs) {
     if (await p.$eval('#' + id, e => e.checked) !== checked) await p.click('#' + id);
   }
+  const synced = await p.evaluate(() => ({
+    e1:document.getElementById('audioIncludeExtras').checked,
+    e2:document.getElementById('audioReadIncludeExtras').checked,
+    p1:document.getElementById('audioIncludePeople').checked,
+    p2:document.getElementById('audioReadIncludePeople').checked
+  }));
+  assert.equal(synced.e1, extras); assert.equal(synced.e2, extras);
+  assert.equal(synced.p1, people); assert.equal(synced.p2, people);
 }
 const mediaIds = urls => urls.filter(u => new URL(u).pathname.startsWith('/media/')).map(u => decodeURIComponent(new URL(u).pathname.slice('/media/'.length, -4)));
 async function finishClip(p) {
@@ -103,7 +114,7 @@ async function readerActions(p, visible) {
 async function geometry(p, width) {
   const g = await p.evaluate(() => {
     const box = id => document.getElementById(id).getBoundingClientRect().toJSON();
-    const controls = ['audioPrevious','audioToggle','audioNext','audioTitle','audioSeek','audioSpeed','audioQueueToggle','audioIncludeExtras','audioIncludePeople'];
+    const controls = ['audioPrevious','audioToggle','audioNext','audioTitle','audioSeek','audioSpeed','audioQueueToggle','audioIncludeExtras','audioIncludePeople','audioReadIncludeExtras','audioReadIncludePeople'];
     return {width:innerWidth, scroll:document.documentElement.scrollWidth, player:box('audioPlayer'), masthead:box('masthead'),
       reader:box('readerBody'), actions:box('readerAudioActions'),
       controls:controls.map(id => { const el = document.getElementById(id), b = el.getBoundingClientRect(), hit = document.elementFromPoint(b.x + b.width / 2, b.y + b.height / 2); return {id, hit:hit === el || el.contains(hit), left:b.left, right:b.right, height:b.height}; })};
@@ -157,7 +168,7 @@ print(json.dumps({'manifest':manifest,'report':report}, ensure_ascii=False))
   assert.deepEqual((await state(p)).queue, []);
   assert.equal(requests.length, 0);
   assert.equal((await state(p)).speed, 1);
-  for (const id of ['audioIncludeExtras','audioIncludePeople']) assert.equal(await p.$eval('#' + id, e => e.checked), false);
+  for (const id of ['audioIncludeExtras','audioIncludePeople','audioReadIncludeExtras','audioReadIncludePeople']) assert.equal(await p.$eval('#' + id, e => e.checked), false);
   assert.equal((await state(p)).includeExtras, false); assert.equal((await state(p)).includePeople, false);
   pass('Default schema2/policy3 build and file:// opening: one native audio, hidden player, 1×, both options off, no MP3 before a click');
 
@@ -435,22 +446,90 @@ print(json.dumps({'ids':ids, 'hashes':hashes, 'kinds':kinds,
     const after = await state(p);
     for (const field of ['queue','index','partId','partIndex','phase','src','currentTime','wantsPlay','playing']) assert.deepEqual(after[field], before[field], label + ': changed ' + field);
   };
-  const verifyParts = async (key, extras, people) => {
-    await setOptions(p, extras, people);
+  // The optional groups must be selectable before any queue/media exists, not only after Play.
+  for (const width of [1440, 390]) {
+    await p.setViewport({width, height:width === 390 ? 844 : 960});
+    await p.goto(url('fixture') + '?preflight=' + width + '#topic-energy', {waitUntil:'load'}); await ready(p);
+    const from = requests.length, idle = await state(p);
+    for (const [id, mirror, field] of [['audioReadIncludeExtras','audioIncludeExtras','includeExtras'], ['audioReadIncludePeople','audioIncludePeople','includePeople']]) {
+      await p.focus('#' + id); await p.keyboard.press('Space');
+      assert.equal((await state(p))[field], true);
+      assert.equal(await p.$eval('#' + mirror, e => e.checked), true);
+      await p.keyboard.press('Space'); assert.equal((await state(p))[field], false);
+      assert.equal(await p.$eval('#' + mirror, e => e.checked), false);
+      assert.equal(await p.evaluate(() => document.activeElement.id), id);
+      for (const [key, scene] of [['ArrowRight',1], ['ArrowLeft',0]]) {
+        await p.keyboard.press(key); assert.equal((await browseState(p)).scene, scene);
+        assert.deepEqual(await state(p), idle, 'Preflight arrows must not load/change audio or options');
+      }
+      await p.keyboard.press('ArrowDown'); assert.notEqual((await browseState(p)).id, 'topic-energy');
+      await p.keyboard.press('ArrowUp'); assert.equal((await browseState(p)).id, 'topic-energy');
+      assert.deepEqual(await state(p), idle);
+    }
+    await p.focus('#audioRead'); await p.keyboard.press('Tab');
+    assert.equal(await p.evaluate(() => document.activeElement.id), 'audioReadIncludeExtras');
+    await p.keyboard.press('Tab'); assert.equal(await p.evaluate(() => document.activeElement.id), 'audioReadIncludePeople');
+    assert.equal(requests.length, from);
+    assert.equal(await p.$eval('#audioPlayer', e => e.hidden), true);
+  }
+  pass('Desktop/390px preflight: visible reader checkboxes sync with player, keep native Space/Tab and reader arrows without a queue, player or MP3 request');
+
+  let freshCase = 0;
+  const verifyParts = async (key, extras, people, {fresh = false} = {}) => {
+    if (fresh) {
+      await p.goto(url('fixture') + `?fresh=${++freshCase}#` + key, {waitUntil:'load'}); await ready(p);
+      await readerActions(p, true);
+    } else {
+      await p.evaluate(key => go(key), key); await readerActions(p, true);
+    }
     const from = requests.length, plan = plans[key];
+    const preflight = await p.evaluate(() => {
+      const ids = ['audioReadIncludeExtras','audioReadIncludePeople'];
+      return {width:innerWidth, scroll:document.documentElement.scrollWidth,
+        availability:document.getElementById('audioAvailability').textContent,
+        controls:ids.map(id => { const el=document.getElementById(id), b=el.getBoundingClientRect(); return {id,checked:el.checked,left:b.left,right:b.right,hit:document.elementFromPoint(b.x+b.width/2,b.y+b.height/2)===el}; })};
+    });
+    assert.equal(preflight.availability, '', 'Ready reading bar should not show filler prose');
+    assert(preflight.scroll <= preflight.width);
+    for (const c of preflight.controls) assert((!fresh || !c.checked) && c.hit && c.left >= 0 && c.right <= preflight.width, JSON.stringify(preflight));
+    if (fresh) await setOptions(p, extras, people);
+    else {
+      for (const [id, checked] of [['audioReadIncludeExtras',extras], ['audioReadIncludePeople',people]]) {
+        if (await p.$eval('#' + id, e => e.checked) !== checked) await p.click('#' + id);
+      }
+    }
+    assert.equal((await state(p)).includeExtras, extras); assert.equal((await state(p)).includePeople, people);
+    if (fresh) {
+      assert.deepEqual((await state(p)).queue, []);
+      assert.equal(await p.$eval('#audioPlayer', e => e.hidden), true);
+      assert.equal(await p.$eval('#atlasAudioElement', e => e.getAttribute('src')), null);
+      assert.equal(await p.$eval('#atlasAudioElement', e => e.preload), 'none');
+      assert.equal(requests.length, from, 'Choosing options before Play must not fetch even metadata');
+    }
     await readBody(key);
+    assert.equal((await state(p)).includeExtras, extras); assert.equal((await state(p)).includePeople, people);
     const steps = [{id:key, kind:'body'}, ...(extras ? plan.extras : []), ...(people ? plan.people : [])];
     const duration = steps.reduce((n, s) => n + fixture.assets[s.id].duration, 0);
     assert.equal((await state(p)).selectedDuration, duration);
-    assert.equal(await p.$eval('#audioQueue time', e => Number(e.dataset.seconds)), duration);
-    assert.match(await p.$eval('#audioContext', e => e.textContent), /所选/);
-    assert.match(await p.$eval('#audioQueueNote', e => e.textContent), /节标题.*不计入/);
+    assert.deepEqual((await state(p)).playlist, steps.map(s => s.id));
+    assert.equal(await p.$eval('#audioCount', e => Number(e.textContent)), steps.length);
+    assert.equal(await p.$$eval('#audioQueuePanel > p:not([hidden])', es => es.length), (extras && !plan.extras.length) || (people && !plan.people.length) ? 1 : 0, 'No boilerplate paragraphs in playlist');
+    const rowData = await p.$$eval('#audioQueue button', bs => bs.map(b => ({kind:b.dataset.audioKind, text:b.textContent, seconds:Number(b.querySelector('time').dataset.seconds)})));
+    assert.equal(rowData.length, steps.length, 'Every selected anecdote/person bio must appear as its own playlist entry');
+    steps.forEach((step, idx) => {
+      assert.equal(rowData[idx].kind, step.kind);
+      assert.equal(rowData[idx].seconds, fixture.assets[step.id].duration);
+      if (step.label) assert(rowData[idx].text.includes(step.label), 'Playlist row must show item label: ' + step.label);
+    });
+    assert.match(await p.$eval('#audioContext', e => e.textContent), new RegExp(`1/${steps.length}`));
     assert(!mediaIds(requests.slice(from)).some(id => ['moment','box','person'].includes(material.kinds[id])), 'No optional prefetch during title/body');
-    for (const step of steps) {
+    for (let idx = 0; idx < steps.length; idx++) {
+      const step = steps[idx];
       await partReady(p, step.id);
       assert.equal((await state(p)).phase, step.kind);
+      assert.equal(await p.$eval(`[data-audio-item="${idx}"]`, e => e.getAttribute('aria-current')), 'true');
       if (step.label) assert((await p.$eval('#audioPhase', e => e.textContent)).includes(step.label));
-      assert.deepEqual((await state(p)).queue, [key], 'Parts are not additional queue rows');
+      assert.deepEqual((await state(p)).queue, [key]);
       await p.click('#audioToggle');
       await p.$eval('#audioSeek', e => { e.value = '400'; e.dispatchEvent(new Event('input', {bubbles:true})); });
       await p.waitForFunction(() => !document.getElementById('atlasAudioElement').seeking);
@@ -461,15 +540,35 @@ print(json.dumps({'ids':ids, 'hashes':hashes, 'kinds':kinds,
     await p.waitForFunction(() => atlasAudio.state().finished);
     assert.equal((await state(p)).partId, steps.at(-1).id);
     assert.deepEqual((await state(p)).queue, [key]);
-    for (const id of ['audioPrevious','audioNext']) assert.equal(await p.$eval('#' + id, e => e.disabled), true);
+    assert.equal(await p.$eval('#audioNext', e => e.disabled), true);
+    assert.equal(await p.$eval('#audioPrevious', e => e.disabled), steps.length <= 1);
     assert.deepEqual(sorted(new Set(mediaIds(requests.slice(from)))), sorted([...(plan.titleId ? [plan.titleId] : []), ...steps.map(s => s.id)]), 'Only selected canonical clips may be fetched');
   };
+  for (const width of [1440, 390]) {
+    await p.setViewport({width, height:width === 390 ? 844 : 960});
+    await verifyParts(optionalKey, true, true, {fresh:true});
+  }
+  await p.setViewport({width:1440, height:960});
   for (const [extras, people] of [[false,false],[true,false],[false,true],[true,true]]) await verifyParts(optionalKey, extras, people);
   await verifyParts(boxCase[0], true, false);
   await verifyParts(peopleCase[0], false, true);
   const topicParts = Object.entries(plans).find(([id, t]) => id.startsWith('topic-') && (t.extras.length || t.people.length));
   if (topicParts) await verifyParts(topicParts[0], true, true);
-  pass('Four option combinations, separate moment/box/person clips, multiple people and topic parts: selected durations, per-part seek/EOF, one queue row, no unselected fetch');
+  // Direct playlist click + Prev/Next across body, anecdote and person bio entries.
+  await p.goto(url('fixture') + '?direct=1#' + optionalKey, {waitUntil:'load'}); await ready(p);
+  await setOptions(p, true, true);
+  await p.click('#audioRead'); await partReady(p, optionalPlan.titleId);
+  await p.click('#audioQueueToggle');
+  const personRowIndex = 1 + optionalPlan.extras.length;
+  await p.click(`[data-audio-item="${personRowIndex}"]`);
+  await partReady(p, optionalPlan.people[0].id);
+  assert.equal(await p.$eval(`[data-audio-item="${personRowIndex}"]`, e => e.getAttribute('aria-current')), 'true');
+  await p.click('#audioPrevious');
+  await partReady(p, optionalPlan.extras.at(-1).id);
+  await p.click('#audioNext');
+  await partReady(p, optionalPlan.people[0].id);
+  await p.click('#audioQueueClose'); await p.click('#audioToggle');
+  pass('Desktop/390px select-before-Play & separate playlist items: all four combinations, direct anecdote/person click, Prev/Next across parts, zero boilerplate, no unselected fetch');
 
   await setOptions(p, false, false);
   await p.evaluate(key => go(key), optionalKey); await p.click('#audioRead'); await partReady(p, optionalPlan.titleId);
@@ -542,6 +641,15 @@ print(json.dumps({'ids':ids, 'hashes':hashes, 'kinds':kinds,
     assert(await p.evaluate((key, group, id) => AUDIO_MANIFEST.tracks[key][group].some(p => p.id === id), optionalKey, group, id), 'Missing/stale optional IDs stay in the canonical plan');
     assert.equal(await p.$eval('#audioRead', e => e.disabled), false);
     assert.equal(await p.$eval('#audioReadLine', e => e.disabled), false);
+    const beforeSelection = requests.length;
+    await setOptions(p, group === 'extras', group === 'people');
+    assert.equal(await p.$eval('#audioRead', e => e.disabled), true);
+    assert.equal(await p.$eval('#audioReadLine', e => e.disabled), true);
+    assert.equal(await p.$eval('#audioPlayer', e => e.hidden), true);
+    assert.deepEqual((await state(p)).queue, []);
+    assert.equal(requests.length, beforeSelection);
+    await setOptions(p, false, false);
+    assert.equal(await p.$eval('#audioRead', e => e.disabled), false);
     await readBody(optionalKey);
     if (name === 'missing-extra') {
       before = await state(p); assert(before.playing);
@@ -559,7 +667,8 @@ print(json.dumps({'ids':ids, 'hashes':hashes, 'kinds':kinds,
     assert(await p.evaluate(key => Boolean(AUDIO_MANIFEST.assets[key]), optionalKey));
     assert.match(await p.$eval('#audioAvailability', e => e.textContent), /所选内容待补齐/);
     assert.equal(await p.$eval('#audioRead', e => e.disabled), true); assert.equal(await p.$eval('#audioReadLine', e => e.disabled), true);
-    assert.equal((await state(p)).selectedDuration, null); assert.equal(await p.$eval('#audioQueue time', e => e.textContent), '待补');
+    assert.equal((await state(p)).selectedDuration, null);
+    assert((await p.$$eval('#audioQueue time', es => es.map(e => e.textContent))).includes('待补'), 'Missing optional row must show 待补 in playlist');
     assert.equal(requests.length, from, 'Missing selected parts must not trigger fallback/skip requests');
     await setOptions(p, false, false);
     assert.equal((await state(p)).error, ''); await samePosition(before, 'Clear optional availability error without auto-resume');
@@ -736,12 +845,12 @@ print(json.dumps({'ids':ids, 'hashes':hashes, 'kinds':kinds,
     await settledSeek();
     await board(p, 'trunk', anchorKey); await p.click('#audioQueueToggle');
     // Enumerate every enabled audio control, including every row in the frozen queue.
-    const controls = await p.$$eval('#audioPlayer button,#audioPlayer input[type="range"],#audioPlayer input[type="checkbox"],#readerAudioActions button', es => es.map(e => {
+    const controls = await p.$$eval('#audioPlayer button,#audioPlayer input[type="range"],#audioPlayer input[type="checkbox"],#readerAudioActions button,#readerAudioActions input[type="checkbox"]', es => es.map(e => {
       if (e.id) return '#' + e.id;
-      if (e.dataset.audioIndex !== undefined) return '[data-audio-index="' + e.dataset.audioIndex + '"]';
+      if (e.dataset.audioItem !== undefined) return '[data-audio-item="' + e.dataset.audioItem + '"]';
       throw new Error('Audio control has no test selector');
     }));
-    const playerControls = controls.filter(s => !['#audioRead', '#audioReadLine'].includes(s));
+    const playerControls = controls.filter(s => !['#audioRead', '#audioReadLine', '#audioReadIncludeExtras', '#audioReadIncludePeople'].includes(s));
     const frozen = await state(p); assert.equal(frozen.playing, false);
     for (const selector of controls) {
       await board(p, 'trunk', anchorKey);
@@ -758,7 +867,7 @@ print(json.dumps({'ids':ids, 'hashes':hashes, 'kinds':kinds,
       }
     }
     // At line boundaries the keys are still consumed by navigation, not by a range's native value step.
-    for (const selector of ['#audioSpeed', '#audioSeek', '#audioIncludeExtras', '#audioIncludePeople']) {
+    for (const selector of ['#audioSpeed', '#audioSeek', '#audioIncludeExtras', '#audioIncludePeople', '#audioReadIncludeExtras', '#audioReadIncludePeople']) {
       for (const [key, scene] of [['ArrowLeft', data.routes.trunk[0]], ['ArrowRight', data.routes.trunk.at(-1)]]) {
         await board(p, 'trunk', scene); const edge = await browseState(p);
         await focusControl(selector); await p.keyboard.press(key);
@@ -833,7 +942,7 @@ print(json.dumps({'ids':ids, 'hashes':hashes, 'kinds':kinds,
     const guardedAudio = await state(p), guardedBrowse = await browseState(p);
     const untouchedModifiers = await p.evaluate(() => {
       const results = [];
-      for (const id of ['audioSpeed','audioSeek','audioIncludeExtras','audioIncludePeople']) for (const flag of ['altKey','ctrlKey','metaKey','shiftKey','isComposing']) {
+      for (const id of ['audioSpeed','audioSeek','audioIncludeExtras','audioIncludePeople','audioReadIncludeExtras','audioReadIncludePeople']) for (const flag of ['altKey','ctrlKey','metaKey','shiftKey','isComposing']) {
         const ev = new KeyboardEvent('keydown', {key:'ArrowRight', bubbles:true, cancelable:true, [flag]:true});
         document.getElementById(id).dispatchEvent(ev); results.push({id, flag, untouched:!ev.defaultPrevented});
       }

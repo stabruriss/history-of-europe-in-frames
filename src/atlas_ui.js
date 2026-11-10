@@ -717,8 +717,8 @@ document.getElementById('tFit').onclick=()=>{map.closePopup();fit(ENTRIES[cur],t
 document.addEventListener('keydown',ev=>{
   if(ev.defaultPrevented||ev.isComposing||ev.altKey||ev.ctrlKey||ev.metaKey||ev.shiftKey)return;
   if(document.querySelector('dialog[open],#kinSheet:not([hidden])'))return;
-  // Only the two audio ranges share navigation keys; editing and layout controls keep theirs.
-  if(ev.target.isContentEditable||ev.target.closest('input:not(#audioSpeed):not(#audioSeek):not(#audioIncludeExtras):not(#audioIncludePeople),textarea,select,[role="textbox"],[role="separator"]'))return;
+  // Only explicit audio controls share navigation keys; editing and layout controls keep theirs.
+  if(ev.target.isContentEditable||ev.target.closest('input:not(#audioSpeed):not(#audioSeek):not(#audioIncludeExtras):not(#audioIncludePeople):not(#audioReadIncludeExtras):not(#audioReadIncludePeople),textarea,select,[role="textbox"],[role="separator"]'))return;
   const vertical=ev.key==='ArrowUp'||ev.key==='ArrowDown';
   const horizontal=ev.key==='ArrowLeft'||ev.key==='ArrowRight';
   if(!vertical&&!horizontal)return;
