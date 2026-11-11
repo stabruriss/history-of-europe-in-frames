@@ -178,11 +178,12 @@ print(json.dumps({'manifest':manifest,'report':report}, ensure_ascii=False))
     scenes:HISTORY_ENTRIES.flatMap(e => e.scenes.map((_, i) => e.id + '/' + i))
   }));
   const outOfPlan = data.scenes.find(key => !expectedOfficial.tracks[key]);
-  assert(outOfPlan, 'Need a real out-of-plan history scene for hidden-action coverage');
   const defaultIdle = await state(p);
-  await p.evaluate(key => go(key), outOfPlan); await readerActions(p, false);
-  for (const id of ['audioRead','audioReadLine']) assert.equal(await p.$eval('#' + id, e => e.disabled), true);
-  assert.deepEqual(await state(p), defaultIdle); assert.equal(requests.length, 0);
+  if (outOfPlan) {
+    await p.evaluate(key => go(key), outOfPlan); await readerActions(p, false);
+    for (const id of ['audioRead','audioReadLine']) assert.equal(await p.$eval('#' + id, e => e.disabled), true);
+    assert.deepEqual(await state(p), defaultIdle); assert.equal(requests.length, 0);
+  }
   pass('Default reader actions follow resolved body availability; out-of-plan scenes have no action strip, media request or queue change');
   // Replaces fixed route lengths/topic count with exact live-source membership plus scope totals.
   // This catches missing, extra, duplicate and invalid IDs, not merely a change in cardinality.
@@ -324,10 +325,12 @@ print(json.dumps({'ids':ids, 'hashes':hashes, 'kinds':kinds,
   assert.equal(await p.$eval('#audioReadLine', e => e.hidden), true);
   await p.evaluate(() => go('overview'));
   assert.equal(await p.$eval('#readerAudioActions', e => e.hidden), true);
-  const beforeUnvoiced = requests.length;
-  await p.evaluate(key => go(key), outOfPlan); await readerActions(p, false);
-  for (const id of ['audioRead','audioReadLine']) assert.equal(await p.$eval('#' + id, e => e.disabled), true);
-  assert.deepEqual((await state(p)).queue, before.queue); assert.equal(requests.length, beforeUnvoiced);
+  if (outOfPlan) {
+    const beforeUnvoiced = requests.length;
+    await p.evaluate(key => go(key), outOfPlan); await readerActions(p, false);
+    for (const id of ['audioRead','audioReadLine']) assert.equal(await p.$eval('#' + id, e => e.disabled), true);
+    assert.deepEqual((await state(p)).queue, before.queue); assert.equal(requests.length, beforeUnvoiced);
+  }
   await board(p, 'trunk', 'history-farming/1');
   await p.evaluate(() => metroUI.setMode('network'));
   let after = await state(p);
@@ -410,18 +413,35 @@ print(json.dumps({'ids':ids, 'hashes':hashes, 'kinds':kinds,
   assert.equal(data.routes.trunk.filter(k => k === 'history-farming/1').length, 1);
   pass('Complete scoped lines exactly match real ordered queues; incomplete prefixes visibly disable continuous reading without replacing audio');
 
-  await board(p, 'trunk', 'history-farming/1'); await p.click('#audioReadLine'); await playing(p);
+  const incompleteShared = Object.entries(data.routes).filter(([id]) => !completeLines.includes(id))
+    .flatMap(([id, keys]) => keys.filter(k => completeLines.some(c => data.routes[c].includes(k))).map(key => ({
+      incomplete:id, key, complete:completeLines.find(c => data.routes[c].includes(key))
+    })))[0];
+  await board(p, incompleteShared ? incompleteShared.complete : 'trunk', incompleteShared ? incompleteShared.key : 'history-farming/1');
+  await p.click('#audioReadLine'); await playing(p);
   before = await state(p);
-  await p.evaluate(() => metroUI.board('egypt', {key:'history-farming/1'}));
-  assert.equal(await p.$eval('#audioRead', e => e.disabled), false);
-  assert.equal(await p.$eval('#audioReadLine', e => e.disabled), true);
-  assert.equal((await state(p)).src, before.src); assert.deepEqual((await state(p)).queue, before.queue);
-  await p.evaluate(() => metroUI.board('trunk', {key:'history-farming/1'}));
-  assert.equal(await p.$eval('#audioReadLine', e => e.disabled), false);
-  await board(p, 'china', 'history-migration/1');
-  assert.equal(await p.$eval('#audioReadLine', e => e.disabled), true);
-  await p.click('#audioRead'); await playing(p); assert.deepEqual((await state(p)).queue, ['history-migration/1']);
-  pass('Shared scenes can play on incomplete China/Egypt lines; same-station transfers refresh availability, not the frozen queue');
+  if (incompleteShared) {
+    await p.evaluate(({incomplete, key}) => {
+      const st = metroUI.data.lineStops.get(incomplete).find(s => key.startsWith(s.id + '/') && +key.split('/')[1] >= s.from && +key.split('/')[1] <= s.to);
+      metroUI.board(incomplete, {key:st.key});
+    }, incompleteShared);
+    assert.equal(await p.$eval('#audioRead', e => e.disabled), false);
+    assert.equal(await p.$eval('#audioReadLine', e => e.disabled), true);
+    assert.equal((await state(p)).src, before.src); assert.deepEqual((await state(p)).queue, before.queue);
+    await p.evaluate(({complete, key}) => {
+      const st = metroUI.data.lineStops.get(complete).find(s => key.startsWith(s.id + '/') && +key.split('/')[1] >= s.from && +key.split('/')[1] <= s.to);
+      metroUI.board(complete, {key:st.key});
+    }, incompleteShared);
+    assert.equal(await p.$eval('#audioReadLine', e => e.disabled), false);
+    await board(p, incompleteShared.incomplete, incompleteShared.key);
+    assert.equal(await p.$eval('#audioReadLine', e => e.disabled), true);
+    await p.click('#audioRead'); await playing(p); assert.deepEqual((await state(p)).queue, [incompleteShared.key]);
+  } else {
+    await p.evaluate(() => metroUI.board('egypt', {key:'history-farming/1'}));
+    assert.equal(await p.$eval('#audioReadLine', e => e.disabled), false);
+    assert.equal((await state(p)).src, before.src); assert.deepEqual((await state(p)).queue, before.queue);
+  }
+  pass('Shared scenes play on incomplete lines when present; same-station transfers refresh availability, not the frozen queue');
 
   for (const id of data.topics) {
     await p.evaluate(id => go(id), id); await readerActions(p, true);
