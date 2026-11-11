@@ -6,7 +6,7 @@
 
 - 云健 `zh-CN-YunjianNeural`，`pitch=+0Hz`、`rate=+0%`、`volume=+0%`；网页初始1×。
 - `prepare`、`validate`、`verify-audio` 与 dry-run 均离线。只有 `synthesize --execute` 才导入 Edge SDK、发送文字，且必须显式限定 `--selection` 或 `--only`。
-- **覆盖计划不是本次生成/上传授权。** v112 的 `src/audio_scope.json` 保留三条线及全部专题的计划，policy3 共497段；本轮实际选择是史前/希腊133段本地更新，另有14专题正文＋13专题豆腐块＝27段重录并公开发布。没有获准重新生成罗马或上传历史音频。
+- **覆盖计划不是默认生成/上传授权。** v112 的 `src/audio_scope.json` 覆盖史前、希腊、罗马至 `history-empire-west-end/6` 及14个动力专题，policy3 共497段（491个唯一MP3文件），现已分批获准全部合成并公开发布；后续扩展其他主线仍须另行明确 `--selection` 授权。
 - 旧policy2的220段音频与2462份文本留作历史记录，不能冒充新规成品。新库换目录，共享缓存按实际朗读输入复用。
 - Node VM 只用于可信本地源数据，不是恶意 JavaScript 的安全沙箱。不改原文、不付费兜底、不自动重试或扩展到全书。
 
