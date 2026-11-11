@@ -220,6 +220,7 @@ let transferTo=null;
 $('#transferConfirm').onclick=ev=>{ev.preventDefault();const to=transferTo;transferDialog.close();if(to)board(to.id,{key:to.key})};
 transferDialog.addEventListener('click',ev=>{if(ev.target===transferDialog)transferDialog.close()});  // the backdrop
 function askTransfer(id,key){
+ clearTimeout(sceneTimer);cancelAnimationFrame(scrollFrame);scrollFrame=0;wantedScene=null;readerScrolledUntil=0;
  const s=stationByKey.get(key),name=lineName(id);transferTo={id,key};
  $('#transferQuestion').textContent=`是否从这里切换到${name}线？`;
  $('#transferNote').textContent=key===station?.key?`还在“${s.title}”这一幕，之后沿${name}线往前走。`:`会跳到“${s.title}”，之后沿${name}线往前走。`;
@@ -369,11 +370,12 @@ renderFigures=e=>{
 if(cur>=0&&isHistory(ENTRIES[cur])){renderFigures(ENTRIES[cur]);scrollSceneText(false)}
 // Only real scrolling changes the scene, and it never writes the scroll position, which would stop a phone's inertia.
 const readerIsScrolling=()=>{readerScrolledUntil=performance.now()+400};
-for(const type of ['wheel','touchmove','pointerdown'])readerBody.addEventListener(type,readerIsScrolling,{passive:true});
+for(const type of ['wheel','touchmove'])readerBody.addEventListener(type,readerIsScrolling,{passive:true});
+readerBody.addEventListener('pointerdown',e=>{if(!e.target.closest('button,a,summary'))readerIsScrolling()},{passive:true});
 readerBody.addEventListener('keydown',ev=>{if(['PageUp','PageDown','Home','End',' '].includes(ev.key))readerIsScrolling()});
 const settleScene=()=>{
  sceneTimer=0;const i=wantedScene;wantedScene=null;
- if(i===null||i===sceneIndex||mode!=='ride')return;
+ if(transferDialog.open||i===null||i===sceneIndex||mode!=='ride')return;
  readerFollows=true;try{go(ENTRIES[cur].id,{scene:i})}finally{readerFollows=false}
 };
 const highlightScene=()=>{
