@@ -84,27 +84,8 @@ def text_of(markup, omit_external_links=False):
     return ReaderHTML(markup or '', omit_external_links=omit_external_links).value()
 
 
-# Reviewed calendar vocabulary, used ONLY in fixed-layout metadata, never in authored prose.
-# Unknown/mixed wording is retained for review instead of guessing from the presence of digits.
-FIXED_TIME_WORDS = re.compile(
-    r'生年不详|传统年表|传说时代|征服后至|及此后|活跃于|铭刻于|'
-    r'公元|距今|世纪|千纪|年代|在位|卒于|活跃|尤其|凌晨|传统|传说|俄历|一说|'
-    r'[约前后至今年月日初中末叶半上下春夏秋冬底夜旬期间或起以千万]')
-
-
-def fixed_time_label(value):
-    """Conservative calendar recognition for period/date/when/life slots, not a text filter."""
-    compact = re.sub(r'\s+', '', value)
-    if compact in {'古风时代', '公元前后'}:
-        return True
-    if not re.search(r'[0-9]', compact):
-        return False
-    numeric = FIXED_TIME_WORDS.sub('', compact)
-    if not re.fullmatch(r'[0-9?？()（）/／—–－\-、·.]+', numeric):
-        return False
-    # A ratio or an unexplained number is not evidence of a year. Bare year ranges are conventional.
-    return bool(re.search(r'[0-9][千万]?(?:世纪|千纪|年代|年|月|日)', compact) or
-                re.fullmatch(r'[0-9]{1,4}[—–－-][0-9]{1,4}', numeric))
+# Fixed year slots (historical period/date, person when/life) are omitted unconditionally by layout role;
+# topical scene.date kickers (e.g. '中央官制', '技术链') are always retained.
 
 
 def parse_asset_id(asset_id):
@@ -215,21 +196,18 @@ def _render(entry, asset_id, body=None):
             raise ValueError('Empty required text: '+prefix+'.'+ref)
         if value:
             if metadata:
-                if metadata != 'topic-kicker' and fixed_time_label(value):
-                    return
                 retained_metadata.append({'source':prefix+'.'+ref, 'text':value, 'reason':metadata})
             blocks.append({'source': prefix+'.'+ref, 'text': value})
 
     if topic or kind == 'title':
         for field in ('title', 'en'):
             add(field, entry[field], required=True)
-        if kind == 'title':  # Topic period is not rendered, even when it is not a time label.
-            add('period', entry.get('period', ''), metadata='non-time-or-uncertain')
     if topic or kind == 'scene':
         body = body if body is not None else body_for(entry)
         for i in indices:
-            add('scenes[%d].date' % i, entry['scenes'][i].get('date', ''), required=topic,
-                metadata='topic-kicker' if topic else 'non-time-or-uncertain')
+            if topic:
+                add('scenes[%d].date' % i, entry['scenes'][i].get('date', ''), required=True,
+                    metadata='topic-kicker')
             add('scenes[%d].title' % i, entry['scenes'][i]['title'], required=True)
             blocks.append({'source': prefix+'.html[data-scene-text="%d"]' % i, 'text': body.value(i)})
             excluded.update(body.excluded[i])
@@ -241,10 +219,9 @@ def _render(entry, asset_id, body=None):
             add('%s[%d].%s' % (field, part_index, key), part.get(key, ''), required=key == 'name')
     elif kind == 'person':
         person = entry['scenes'][index]['people'][part_index]
-        for field in ('when', 'name', 'en', 'life', 'event', 'relation', 'note', 'bio'):
+        for field in ('name', 'en', 'event', 'relation', 'note', 'bio'):
             add('scenes[%d].people[%d].%s' % (index, part_index, field), person.get(field, ''),
-                required=field in ('name', 'bio'), person=True,
-                metadata='non-time-or-uncertain' if field in ('when', 'life') else None)
+                required=field in ('name', 'bio'), person=True)
     if not blocks:
         raise ValueError('Empty spoken asset: '+asset_id)
     script = '\n\n'.join(block['text'] for block in blocks)+'\n'

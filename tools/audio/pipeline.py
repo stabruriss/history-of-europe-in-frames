@@ -273,8 +273,9 @@ def input_hash(record, config):
 
 def spoken_characters(s):
     # Service metadata may escape XML entities or format whitespace/punctuation differently.
+    # U+02BE/U+02BF (ʾ/ʿ) are silent Arabic transliteration half-rings tokenized like apostrophes.
     return ''.join(c for c in unicodedata.normalize('NFKC',html.unescape(s))
-                   if unicodedata.category(c)[0] in 'LN')
+                   if unicodedata.category(c)[0] in 'LN' and c not in '\u02be\u02bf')
 
 
 def check_boundaries(script, boundaries, duration):

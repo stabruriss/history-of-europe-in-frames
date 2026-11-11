@@ -10,6 +10,8 @@ import re
 import subprocess
 import sys
 from urllib.parse import quote, unquote, urlsplit
+import time
+from urllib.error import HTTPError
 from urllib.request import Request, urlopen
 
 import pipeline as p
@@ -188,12 +190,20 @@ def check_manifest(source, manifest_path, scope_path, allow_local=False, remote=
         if allow_local:raise ValueError('Remote checks require a public-only manifest')
         def check_one(pair):
             url,size = pair
-            req = Request(url,headers={'Range':'bytes=0-0','User-Agent':'atlas-audio-release/1.0'})
-            with urlopen(req,timeout=30) as response:
-                if (response.status!=206 or response.headers.get('Content-Range')!='bytes 0-0/'+str(size) or
-                    response.headers.get_content_type()!='audio/mpeg' or len(response.read(1))!=1):
-                    raise ValueError('Public MP3 range/MIME/size check failed: '+url)
-        with ThreadPoolExecutor(max_workers=12) as pool:
+            for attempt in range(4):
+                try:
+                    req = Request(url,headers={'Range':'bytes=0-0','User-Agent':'atlas-audio-release/1.0'})
+                    with urlopen(req,timeout=30) as response:
+                        if (response.status!=206 or response.headers.get('Content-Range')!='bytes 0-0/'+str(size) or
+                            response.headers.get_content_type()!='audio/mpeg' or len(response.read(1))!=1):
+                            raise ValueError('Public MP3 range/MIME/size check failed: '+url)
+                    return
+                except HTTPError as err:
+                    if err.code == 429 and attempt < 3:
+                        time.sleep(3 * (attempt + 1))
+                        continue
+                    raise
+        with ThreadPoolExecutor(max_workers=4) as pool:
             for _ in pool.map(check_one,urls.items()):
                 pass
     return {**report,'remoteChecked':len(urls) if remote else 0,'networkRequests':len(urls) if remote else 0}

@@ -489,69 +489,51 @@ const HISTORY_BRANCHES=[{id:'main',name:'主线'},{id:'shared',name:'换乘线'}
         changed['scenes'][0]['date']='中央制度'
         self.assertNotEqual(render(changed,'topic-fixture')['textHash'],record['textHash'])
 
-    def test_non_time_and_uncertain_fixed_labels_retained_actual_times_omitted(self):
-        snapshot=self.prepared();history=snapshot['entries'][0]
+    def test_fixed_year_slots_always_omitted_while_topic_kickers_and_prose_remain(self):
+        snapshot=self.prepared();history,topic=snapshot['entries']
         baseline=render(history,'history-fixture/0')['text']
-        for label in ('古风时代','公元前后','前 4千纪—约前 3100年','尤其前 14—前 13世纪',
-                      '征服后至前 4世纪','1572年8月24日凌晨','1849年3月23日夜','1500—1560'):
+        for label in ('古风时代','公元前后','前 4千纪—约前 3100年','地理','1:10 与 1:1000','1500—1560'):
             history['scenes'][0]['date']=label
             record=render(history,'history-fixture/0')
-            with self.subTest(time_label=label):
+            with self.subTest(scene_date=label):
                 self.assertEqual(record['text'],baseline)
                 self.assertNotIn('retainedMetadata',record)
-        for label in ('地理','1:10 与 1:1000','1/10','1500','未知纪元','第2版：1500年的地理'):
-            history['scenes'][0]['date']=label
-            record=render(history,'history-fixture/0')
-            with self.subTest(retained_label=label):
-                self.assertEqual(record['text'],label+'\n\n'+baseline)
-                self.assertEqual(record['retainedMetadata'],[{
-                    'source':'history-fixture.scenes[0].date','text':label,'reason':'non-time-or-uncertain'}])
         history['period']='地理概览'
         title=render(history,'history-fixture/title')
-        self.assertEqual(title['text'],'章节标题\n\nChapter English\n\n地理概览\n')
-        self.assertEqual(title['retainedMetadata'][0]['source'],'history-fixture.period')
+        self.assertEqual(title['text'],'章节标题\n\nChapter English\n')
+        self.assertNotIn('retainedMetadata',title)
         person=history['scenes'][0]['people'][0]
-        person.update(when='身份待考2则',life='传说人物',note='1501年有12人的叙述不删。')
+        person.update(when='1456年平反—1920年封圣',life='前2世纪 · 安息国王',note='1501年有12人的叙述不删。')
         record=render(history,'history-fixture/0/person/0')
-        self.assertEqual(record['text'],'身份待考2则\n\n测试人\n\nRené Example\n\n传说人物\n\n一件小事\n\n师承关系。\n\n1501年有12人的叙述不删。\n\n折叠传记（Foreign Name）。\n')
-        self.assertEqual(record['retainedMetadata'],[
-            {'source':'history-fixture.scenes[0].people[0].when','text':'身份待考2则','reason':'non-time-or-uncertain'},
-            {'source':'history-fixture.scenes[0].people[0].life','text':'传说人物','reason':'non-time-or-uncertain'}])
-        # Mixed date/identity and date/event wording is deliberately flagged, not guessed away.
-        person.update(life='前2世纪 · 安息国王',when='1456年平反—1920年封圣')
-        record=render(history,'history-fixture/0/person/0')
-        self.assertEqual([m['text'] for m in record['retainedMetadata']],[person['when'],person['life']])
-        self.assertIn(person['life'],record['text']);self.assertIn(person['when'],record['text'])
-        # The same known time words in ordinary authored titles/body are never filtered.
+        self.assertEqual(record['text'],'测试人\n\nRené Example\n\n一件小事\n\n师承关系。\n\n1501年有12人的叙述不删。\n\n折叠传记（Foreign Name）。\n')
+        self.assertNotIn('retainedMetadata',record)
+        # Topic scene.date kickers remain spoken before their scene titles.
+        topic_rec=render(topic,'topic-fixture')
+        self.assertIn('第一阶段',topic_rec['text']);self.assertIn('第二阶段',topic_rec['text'])
+        self.assertEqual([m['text'] for m in topic_rec['retainedMetadata']],['第一阶段','第二阶段'])
+        # Authored titles and prose years/era names are never filtered.
         history['scenes'][0].update(date='古风时代',title='古风时代：公元前后仍有12人')
         history['html']=history['html'].replace('甲<strong>乙</strong>丙','古风时代、公元前后，1501年甲<strong>乙</strong>丙')
         record=render(history,'history-fixture/0')
         self.assertIn('古风时代：公元前后仍有12人',record['text'])
         self.assertIn('古风时代、公元前后，1501年甲乙丙',record['text'])
-        self.assertNotIn('retainedMetadata',record)
 
-    def test_retained_metadata_audit_includes_unprepared_unselected_catalog(self):
+    def test_retained_metadata_audit_tracks_topic_kickers_and_rejects_tampering(self):
         self.raw['history'][0]['period']='地理概览'
         self.raw['history'][0]['scenes'][0]['date']='地理'
-        self.cards['history-fixture/0'][0]['when']='人物身份待考'
+        self.cards['history-fixture/0'][0]['when']='传说人物'
         self.write_source()
         before={f.name:f.read_bytes() for f in (self.source/'src').iterdir()}
         selection=['history-fixture/0']
-        report=p.prepare(self.library,self.source,selection=selection)
+        p.prepare(self.library,self.source,selection=selection)
         report=p.validate(self.library,self.source,complete=True,selection=selection)
         self.assertEqual((report['prepared'],report['catalogMissing']),(1,6))
         audit=report['retainedMetadata']
         self.assertEqual([(m['id'],m['source'],m['text'],m['reason'],m['selected']) for m in audit],[
-            ('history-fixture/title','history-fixture.period','地理概览','non-time-or-uncertain',False),
-            ('history-fixture/0','history-fixture.scenes[0].date','地理','non-time-or-uncertain',True),
-            ('history-fixture/0/person/0','history-fixture.scenes[0].people[0].when','人物身份待考','non-time-or-uncertain',False),
             ('topic-fixture','topic-fixture.scenes[0].date','第一阶段','topic-kicker',False),
             ('topic-fixture','topic-fixture.scenes[1].date','第二阶段','topic-kicker',False)])
         catalog=p.read_json(self.library/'catalog.json')
         self.assertEqual(catalog['retainedMetadata'],[{k:v for k,v in m.items() if k!='selected'} for m in audit])
-        record=p.read_json(p.item_paths(self.library,'history-fixture/0')[0])
-        self.assertEqual(record['retainedMetadata'],[{'source':'history-fixture.scenes[0].date',
-                                                    'text':'地理','reason':'non-time-or-uncertain'}])
         self.assertEqual(before,{f.name:f.read_bytes() for f in (self.source/'src').iterdir()})
         catalog['retainedMetadata'][0]['text']='篡改审计标签';p.save_json(self.library/'catalog.json',catalog)
         with self.assertRaisesRegex(ValueError,'Catalog/snapshot mismatch'):
@@ -930,7 +912,7 @@ const HISTORY_BRANCHES=[{id:'main',name:'主线'},{id:'shared',name:'换乘线'}
         with p.lock(self.library):
             with self.assertRaisesRegex(ValueError,'Another audio'):
                 with p.lock(self.library):pass
-        p.check_boundaries('中文 A & B １２',[{'text':'中文 A &amp; B 12','offset':0,'duration':8_000_000}],1)
+        p.check_boundaries('中文 A & B １２ al-Muʿtamid',[{'text':'中文 A &amp; B 12 al Mutamid','offset':0,'duration':8_000_000}],1)
         with self.assertRaisesRegex(ValueError,'duration'):
             p.check_boundaries('abc',[{'text':'abc','offset':0,'duration':90_000_000}],1)
 
