@@ -3,9 +3,9 @@
 ## 已定口径
 
 - 云健 `zh-CN-YunjianNeural`，pitch `+0Hz`、rate/volume `+0%`，网页初始1×。
-- 当前policy3：去掉固定位置的纯时间信息，正文年份不动；不读“史料与延伸阅读”或人物外链文字。**专题date实际是副标题**，不是年代，必须保留。非时间/混合标签列在retainedMetadata供复核，细则见 [README.md](README.md)。
+- 当前policy3/r3：固定年份栏即使混入文字也一律省略，正文年份不动；不读“史料与延伸阅读”或人物外链文字。**专题date实际是副标题**，必须保留并记入retainedMetadata，细则见 [README.md](README.md)。
 - 每幕一份正文、节题另作前奏；每题一份完整专题正文；每则名场面、豆腐块和人物卡各自一份。两项“包括补充趣事”“包括人物小传”默认关闭，整张人物卡的小事/生平归人物组。
-- 播放顺序：节题（需要时）→正文→勾选趣事→勾选人物。专题补充接在整题正文之后。勾选的趣事与人物小传作为独立条目列入播放列表，前奏不占行；朗读前与播放中均可切换，只影响未经过的片段。
+- 播放顺序：节题（开始朗读或自然接播到新节时）→正文→勾选趣事→勾选人物。手动上一项/下一项、列表点选与系统媒体切歌直接播目标幕正文，不重复节题；可选条目直接播自身。专题补充接在整题正文之后。勾选的趣事与人物小传作为独立条目列入播放列表，前奏不占行；朗读前与播放中均可切换，只影响未经过的片段。
 - 浏览和播放独立；连续朗读冻结真实整线（包括点击幕之前的幕），到尾停止、不循环。未齐全的所选内容不能跳过；缺未选补充不影响正文。
 
 ### 计划、制作选择、公开范围必须分开
@@ -46,7 +46,11 @@ cd "$SRC"
 
 上传工具使用 `@vercel/blob@2.4.0`、RW token、`multipart:false`。它是本地开发依赖，不进网页；不借CLI默认多段上传虚增操作数。
 
-## 日常操作（以下在 project-files/ 下）
+## 操作模板（以下在 project-files/ 下；命令示例保留早期27段专题范围，不是当前执行授权）
+
+当前库是 `v112-policy3-r3`。对正在制作的原稿，应以 `work/v35/audio_runs/v112-frozen-r3-source`（detached at `c5c945b`）作显式 `--source`，配本批的窄 scope/selection；不要再用下面旧 r2 库运行当前提取器。完整的新库命令见 README。
+
+本批先在冻结源严格验收2619段，再合入最新正文、普通组装；v97 新增的 `history-spain-1492/3/box/1` 留为 pending，不纳入584段授权。后续增改音频等存量全部上线后集中补录。
 
 ```sh
 PY=../work/v35/audio_poc/.venv/bin/python
@@ -162,7 +166,7 @@ python3 tests/run_tests.py verify-audio-pipeline.js verify-audio-player.js \
 - strict/remote是**本次音频发布**门禁：窄scope完整、新鲜、同一获批host，真实HTTP Range/MIME/长度正确。普通build不联网、不读receipt/ledger/token。
 - 普通组装过滤陈旧/缺失音频，正文照发。独立人物/补充过期不撤正文；节题缺失会撤依赖它的历史音频。非法schema/profile/host/URL/哈希/元数据仍硬失败。
 - 未发布正文不展示无用的灰色朗读栏；有正文但已选补充缺失时保留提示。新建/改稿不要求先有TTS。
-- 提交播放器、工具、公开manifest及组装index；MP3、素材库、receipt、凭据和本地预览不进Git。推main后走现有 **GitHub全量测试 → Vercel Deployment Check → 自动切线上**，不另开绕过门禁的CLI部署。
+- 提交播放器、工具、公开manifest及组装index；MP3、素材库、receipt、凭据和本地预览不进Git。顺序必须是 **commit → Bartender sync → 推送房间规范SHA到main → GitHub全量测试 → Vercel Deployment Check → 自动切线上**，不先推agent提交，也不另开绕过门禁的CLI部署。
 - 在老无Chrome打开真实本地/线上页面，不拿截图交付；报告实际上传数、commit、CI/部署结果，不能只说“已推送”就称上线成功。
 
 ## 同文重录与备份
@@ -175,6 +179,6 @@ Git/Bartender不保存源码树外音频。归档/删除工作区前备份素材
 
 官方定价页2026-11-10实读：Hobby含1GB存储、每月10GB Blob下载、2000次高级/10000次简单操作；CDN另按通用规则。超限可能暂停服务，不自动转为付费超额。升级/支出控制另需老无批准。
 
-本次公开27段，不是旧全书2462或新目录5284段，不能据全书文件数要求买Pro。当月剩余额度未核实，也不承诺无限流量免费。建库通常一次高级操作，新单段PUT通常每文件一次；重试和读取/流量另计。
+早期首次公开为27段；当前累计2619段在R2，不能把旧Blob额度或冻结全书5284段的计划误当实际账单，也不能据全书文件数要求买Pro。当月剩余额度未核实，也不承诺无限流量免费。建库通常一次高级操作，新单段PUT通常每文件一次；重试和读取/流量另计。
 
 参考：[额度](https://vercel.com/docs/vercel-blob/usage-and-pricing)、[Public Blob](https://vercel.com/docs/vercel-blob/public-storage)、[CLI](https://vercel.com/docs/cli/blob)。当前是否真的建库/上传/部署，以BUILD证据为准。

@@ -142,6 +142,16 @@ print(json.dumps({'manifest':manifest,'report':report}, ensure_ascii=False))
   const defaultPage = assemble('default');
   browser = await puppeteer.launch({executablePath:process.env.CHROME_PATH || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', headless:true});
   const p = await browser.newPage();
+  // Exercise the actual handlers registered with the browser, including OS/headset track controls.
+  await p.evaluateOnNewDocument(() => {
+    if (!('mediaSession' in navigator)) return;
+    const register = navigator.mediaSession.setActionHandler.bind(navigator.mediaSession);
+    window.audioTestMediaActions = {};
+    navigator.mediaSession.setActionHandler = (action, handler) => {
+      window.audioTestMediaActions[action] = handler;
+      return register(action, handler);
+    };
+  });
   p.setDefaultTimeout(15000);
   p.on('pageerror', e => errors.push(String(e)));
   let realSmoke = false;
@@ -346,25 +356,32 @@ print(json.dumps({'ids':ids, 'hashes':hashes, 'kinds':kinds,
   }
   await p.click('#audioToggle'); assert.equal(await p.$eval('#atlasAudioElement', a => a.paused), true);
   await p.click('#audioToggle'); await playing(p);
-  const browsing = await browseState(p);
-  await p.click('#audioPrevious'); await stage(p, 0, 'title');
-  await p.click('#audioNext'); await stage(p, 1, 'title');
+  const browsing = await browseState(p), manualRequests = requests.length;
+  await p.click('#audioPrevious'); await partReady(p, data.routes.prehistory[0]);
+  await p.click('#audioNext'); await partReady(p, data.routes.prehistory[1]);
   await p.click('#audioQueueToggle');
   assert.equal(await p.$$eval('#audioQueue button', a => a.length), data.routes.prehistory.length);
-  await p.click('[data-audio-index="2"]'); await stage(p, 2, 'title');
+  await p.click('[data-audio-index="2"]'); await partReady(p, data.routes.prehistory[2]);
+  await p.click('#audioPrevious'); await partReady(p, data.routes.prehistory[1]); // Across sections.
+  await p.click('#audioNext'); await partReady(p, data.routes.prehistory[2]);
+  await p.click('[data-audio-index="1"]'); await partReady(p, data.routes.prehistory[1]);
+  await p.evaluate(() => window.audioTestMediaActions.nexttrack()); await partReady(p, data.routes.prehistory[2]);
+  await p.evaluate(() => window.audioTestMediaActions.previoustrack()); await partReady(p, data.routes.prehistory[1]);
+  assert.deepEqual(sorted(new Set(mediaIds(requests.slice(manualRequests)))), sorted(data.routes.prehistory.slice(0, 3)),
+    'Manual Prev/Next, list selection and Media Session must load only target bodies, never section titles');
   assert.deepEqual(await browseState(p), browsing);
   assert.equal(await p.$eval('#atlasAudioElement', a => a.playbackRate), 3);
   await p.keyboard.press('Escape');
   assert.equal((await browseState(p)).metro, 'ride');
   assert.equal(await p.$eval('#audioQueuePanel', e => e.hidden), true);
-  pass('Pause/resume, all seven speeds, prev/next and queue selection use the same audio and never turn the page');
+  pass('Pause/resume and seven speeds; manual Prev/Next, queue and Media Session skip titles within/across sections without turning the page');
 
-  await p.click('#audioPrevious'); await p.click('#audioPrevious'); await stage(p, 0, 'title');
-  // Keep the natural-EOF/title assertions for every scene, without assuming a four-scene terminus.
+  await p.click('#audioPrevious'); await partReady(p, data.routes.prehistory[0]);
+  // Manual selection starts at its body; natural EOF still introduces each subsequent new section.
   const prehistory = data.routes.prehistory, lastPrehistory = prehistory.length - 1;
   for (let i = 0; i < prehistory.length; i++) {
-    if (i === 0 || prehistory[i].split('/')[0] !== prehistory[i - 1].split('/')[0]) {
-      await stage(p, i, 'title'); await finishClip(p); // First scene or a new section: title first.
+    if (i > 0 && prehistory[i].split('/')[0] !== prehistory[i - 1].split('/')[0]) {
+      await stage(p, i, 'title'); await finishClip(p);
     }
     await stage(p, i, 'body'); // Same section's next scene must enter body without another title.
     await finishClip(p);
@@ -587,6 +604,13 @@ print(json.dumps({'ids':ids, 'hashes':hashes, 'kinds':kinds,
   await partReady(p, optionalPlan.extras.at(-1).id);
   await p.click('#audioNext');
   await partReady(p, optionalPlan.people[0].id);
+  const optionalManualRequests = requests.length;
+  await p.click('[data-audio-item="1"]'); await partReady(p, optionalPlan.extras[0].id);
+  await p.click('#audioPrevious'); await partReady(p, optionalKey);
+  await p.click('#audioNext'); await partReady(p, optionalPlan.extras[0].id);
+  await p.click('[data-audio-item="0"]'); await partReady(p, optionalKey);
+  assert.deepEqual(sorted(new Set(mediaIds(requests.slice(optionalManualRequests)))), sorted([optionalKey, optionalPlan.extras[0].id]),
+    '390px returning from optional items to the body never replays the section title');
   await p.click('#audioQueueClose'); await p.click('#audioToggle');
   pass('Desktop/390px select-before-Play & separate playlist items: all four combinations, direct anecdote/person click, Prev/Next across parts, zero boilerplate, no unselected fetch');
 
@@ -750,7 +774,7 @@ print(json.dumps({'ids':ids, 'hashes':hashes, 'kinds':kinds,
   failedMedia.delete('history-migration/1');
   await p.click('#audioToggle'); await stage(p, 1, 'body');
   failedMedia.add('history-farming/title');
-  await p.click('#audioNext'); await p.waitForFunction(() => Boolean(atlasAudio.state().error));
+  await finishClip(p); await p.waitForFunction(() => Boolean(atlasAudio.state().error));
   assert.equal((await state(p)).index, 2); assert.equal((await state(p)).phase, 'title');
   failedMedia.delete('history-farming/title');
   await p.click('#audioToggle'); await stage(p, 2, 'title');

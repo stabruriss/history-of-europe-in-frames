@@ -186,6 +186,7 @@ def resolve_manifest(source, manifest_path, scope_path, allow_local=False, stric
 def check_manifest(source, manifest_path, scope_path, allow_local=False, remote=False, strict=False):
     manifest,report = resolve_manifest(source,manifest_path,scope_path,allow_local,strict or remote)
     urls = {a['url']:a['bytes'] for a in manifest['assets'].values()}
+    remote_requests = 0
     if remote:
         if allow_local:raise ValueError('Remote checks require a public-only manifest')
         def check_one(pair):
@@ -197,16 +198,15 @@ def check_manifest(source, manifest_path, scope_path, allow_local=False, remote=
                         if (response.status!=206 or response.headers.get('Content-Range')!='bytes 0-0/'+str(size) or
                             response.headers.get_content_type()!='audio/mpeg' or len(response.read(1))!=1):
                             raise ValueError('Public MP3 range/MIME/size check failed: '+url)
-                    return
+                    return attempt + 1
                 except HTTPError as err:
                     if err.code == 429 and attempt < 3:
                         time.sleep(3 * (attempt + 1))
                         continue
                     raise
         with ThreadPoolExecutor(max_workers=4) as pool:
-            for _ in pool.map(check_one,urls.items()):
-                pass
-    return {**report,'remoteChecked':len(urls) if remote else 0,'networkRequests':len(urls) if remote else 0}
+            remote_requests = sum(pool.map(check_one,urls.items()))
+    return {**report,'remoteChecked':len(urls) if remote else 0,'networkRequests':remote_requests}
 
 
 def accepted(folder, source, cache, scope):

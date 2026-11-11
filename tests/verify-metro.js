@@ -195,8 +195,10 @@ const settle=p=>p.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestA
   const deskRoom=await desk.evaluate(()=>({text:readerBody.clientHeight,top:document.getElementById('reader').getBoundingClientRect().top}));
   assert.ok(deskRoom.text>=560,'desktop text height '+deskRoom.text);assert.ok(deskRoom.top<=60,'the reader rises beside the route strip');await desk.close();
   const reading=await pageAt(390,844,READ,true);
-  const room=await reading.evaluate(()=>({text:readerBody.clientHeight,map:map.getSize().y}));
-  assert.ok(room.text>=440&&room.text>room.map*1.5,'phone text height '+JSON.stringify(room));
+  const room=await reading.evaluate(()=>({text:readerBody.clientHeight,map:map.getSize().y,audio:document.getElementById('readerAudioActions').getBoundingClientRect().height}));
+  // A newly voiced/shared section has pre-play controls. Preserve the original reader-space budget,
+  // accounting only for that measured strip; actual text must still dominate the map.
+  assert.ok(room.text+room.audio>=440&&room.text>room.map*1.5,'phone text height '+JSON.stringify(room));
   // The route strip opens on demand and closes on leaving; the map folds away and gives its room to the text.
   assert.equal(await on(reading,'.route-panel'),false);await reading.click('#stripToggle');assert.equal(await on(reading,'.route-panel'),true);await reading.click('#stripToggle');assert.equal(await on(reading,'.route-panel'),false);
   await reading.click('#mapFold');await settle(reading);assert.ok((await reading.evaluate(()=>readerBody.clientHeight))>room.text+100,'folding the map gives the text its room');await reading.click('#mapFold');await settle(reading);

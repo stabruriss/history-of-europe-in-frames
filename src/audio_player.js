@@ -252,11 +252,11 @@ function loadClip(index, {autoplay = true, offset = 0} = {}) {
   status();
   if (autoplay) play();
 }
-function selectTrack(index, {automatic = false, autoplay = true} = {}) {
+function selectTrack(index, {automatic = false, autoplay = true, withTitle = true} = {}) {
   if (index < 0 || index >= queue.length) return;
   const previous = current();
   at = index;
-  const t = current(), prelude = t.kind === 'history' && (!automatic || previous?.entryId !== t.entryId);
+  const t = current(), prelude = withTitle && t.kind === 'history' && (!automatic || previous?.entryId !== t.entryId);
   if ('mediaSession' in navigator && 'MediaMetadata' in window) {
     navigator.mediaSession.metadata = new MediaMetadata({title:t.title, artist:'云健 · AI 合成语音', album:mode === 'line' ? line.name + '线 · 简明欧洲史图册' : '简明欧洲史图册'});
   }
@@ -266,7 +266,8 @@ function selectTrack(index, {automatic = false, autoplay = true} = {}) {
 function selectPlaylistItem(itemIndex, {autoplay = true} = {}) {
   const item = playlistItems()[itemIndex];
   if (!item) return;
-  if (item.partIndex === 0) { selectTrack(item.trackIndex, {autoplay}); return; }
+  // Explicit skips (buttons, playlist or Media Session) go straight to the selected body.
+  if (item.partIndex === 0) { selectTrack(item.trackIndex, {autoplay, withTitle:false}); return; }
   at = item.trackIndex;
   const t = current();
   if ('mediaSession' in navigator && 'MediaMetadata' in window) {

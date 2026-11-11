@@ -843,7 +843,27 @@ const HISTORY_BRANCHES=[{id:'main',name:'主线'},{id:'shared',name:'换乘线'}
         with patch.object(release,'urlopen',side_effect=lambda *a,**k:response()) as remote:
             report=release.check_manifest(self.source,manifest_path,scope_path,remote=True)
             self.assertEqual(report['remoteChecked'],1)
+            self.assertEqual(report['networkRequests'],1)
             self.assertEqual(remote.call_args.args[0].get_header('Range'),'bytes=0-0')
+        # Rate-limit retries are bounded and counted as requests, never as extra checked objects.
+        throttled=release.HTTPError('https://example.invalid',429,'Too Many Requests',{},None)
+        with patch.object(release,'urlopen',side_effect=[throttled,response()]) as remote, \
+                patch.object(release,'time') as clock:
+            report=release.check_manifest(self.source,manifest_path,scope_path,remote=True)
+            self.assertEqual((report['remoteChecked'],report['networkRequests']),(1,2))
+            self.assertEqual(remote.call_count,2);clock.sleep.assert_called_once_with(3)
+        with patch.object(release,'urlopen',side_effect=throttled) as remote, \
+                patch.object(release,'time') as clock:
+            with self.assertRaises(release.HTTPError):
+                release.check_manifest(self.source,manifest_path,scope_path,remote=True)
+            self.assertEqual(remote.call_count,4)
+            self.assertEqual([c.args[0] for c in clock.sleep.call_args_list],[3,6,9])
+        for code in (403,404,500):
+            with patch.object(release,'urlopen',side_effect=release.HTTPError('https://example.invalid',code,'Stop',{},None)) as remote, \
+                    patch.object(release,'time') as clock:
+                with self.subTest(code=code),self.assertRaises(release.HTTPError):
+                    release.check_manifest(self.source,manifest_path,scope_path,remote=True)
+                self.assertEqual(remote.call_count,1);clock.sleep.assert_not_called()
         for bad in ({'status':200},{'size':1},{'mime':'text/html'},{'body':b''}):
             with patch.object(release,'urlopen',side_effect=lambda *a,**k:response(**bad)):
                 with self.subTest(bad=bad),self.assertRaisesRegex(ValueError,'range/MIME/size'):
