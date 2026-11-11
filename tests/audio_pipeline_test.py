@@ -915,6 +915,16 @@ const HISTORY_BRANCHES=[{id:'main',name:'主线'},{id:'shared',name:'换乘线'}
         self.assertNotEqual(child.returncode,0)
         self.assertIn('credential/store hostname mismatch',child.stderr)
         self.assertNotIn(env['BLOB_READ_WRITE_TOKEN'],child.stderr)
+        # Cloudflare R2 public URLs and wrong-bucket/host rejection.
+        r2_host='pub-'+'c'*32+'.r2.dev'
+        self.assertEqual(release.public_url('https://'+r2_host+'/audio/v1/'+'a'*64+'.mp3','a'*64,r2_host),r2_host)
+        with self.assertRaises(ValueError):
+            release.public_url('https://'+r2_host+'/audio/v1/'+'a'*64+'.mp3','a'*64,'pub-'+'d'*32+'.r2.dev')
+        bad_r2=subprocess.run(['node',str(p.HERE/'r2.cjs')],input=json.dumps({
+            'expectedHost':'not-r2.example.com','bucket':'atlas-history-audio',
+            'pathname':'audio/v1/'+'a'*64+'.mp3','file':'does-not-exist'
+        }),text=True,capture_output=True)
+        self.assertNotEqual(bad_r2.returncode,0)
 
     def test_lock_and_entity_boundary_checks(self):
         with p.lock(self.library):

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Publish checks and immutable Blob manifests. Upload is explicit; builds never synthesize/upload."""
 import argparse
+from concurrent.futures import ThreadPoolExecutor
 import json
 import math
 import os
@@ -15,6 +16,7 @@ import pipeline as p
 from text import POLICY, asset_ids, parse_asset_id, render, tracks_for
 
 PROJECT = p.PROJECT
+PUBLIC_HOST = r'[a-z0-9-]+\.public\.blob\.vercel-storage\.com|pub-[a-f0-9]+\.r2\.dev'
 
 
 def current_source(source):
@@ -84,7 +86,7 @@ def checked_scope(snapshot, scope):
 def public_url(url, audio_hash, host=None):
     u = urlsplit(url)
     if (u.scheme != 'https' or u.username or u.password or u.port or u.query or u.fragment or
-        not re.fullmatch(r'[a-z0-9-]+\.public\.blob\.vercel-storage\.com',u.hostname or '') or
+        not re.fullmatch(PUBLIC_HOST,u.hostname or '') or
         u.path != '/audio/v1/'+audio_hash+'.mp3' or (host and u.hostname != host)):
         raise ValueError('Expected immutable public Blob URL (invalid host/path/query)')
     return u.hostname
@@ -184,11 +186,16 @@ def check_manifest(source, manifest_path, scope_path, allow_local=False, remote=
     urls = {a['url']:a['bytes'] for a in manifest['assets'].values()}
     if remote:
         if allow_local:raise ValueError('Remote checks require a public-only manifest')
-        for url,size in urls.items():
-            with urlopen(Request(url,headers={'Range':'bytes=0-0'}),timeout=30) as response:
+        def check_one(pair):
+            url,size = pair
+            req = Request(url,headers={'Range':'bytes=0-0','User-Agent':'atlas-audio-release/1.0'})
+            with urlopen(req,timeout=30) as response:
                 if (response.status!=206 or response.headers.get('Content-Range')!='bytes 0-0/'+str(size) or
                     response.headers.get_content_type()!='audio/mpeg' or len(response.read(1))!=1):
                     raise ValueError('Public MP3 range/MIME/size check failed: '+url)
+        with ThreadPoolExecutor(max_workers=12) as pool:
+            for _ in pool.map(check_one,urls.items()):
+                pass
     return {**report,'remoteChecked':len(urls) if remote else 0,'networkRequests':len(urls) if remote else 0}
 
 
@@ -205,7 +212,7 @@ def accepted(folder, source, cache, scope):
 
 
 def host_value(host):
-    if not isinstance(host,str) or not re.fullmatch(r'[a-z0-9-]+\.public\.blob\.vercel-storage\.com',host):
+    if not isinstance(host,str) or not re.fullmatch(PUBLIC_HOST,host):
         raise ValueError('An approved project-specific --host is required, without https:// or a path')
     return host
 
@@ -224,7 +231,7 @@ def upload(folder, source, cache, scope_path, host, execute=False, limit=25):
         host_value(host)
         if host != scope.get('blobHost'):
             raise ValueError('Record the approved blobHost in audio_scope.json before uploading')
-        if not os.environ.get('BLOB_READ_WRITE_TOKEN'):
+        if not host.endswith('.r2.dev') and not os.environ.get('BLOB_READ_WRITE_TOKEN'):
             raise ValueError('No Blob write credential; authorize/connect the store first')
     ledger_file = ledger_path(cache,host) if host else None
     ledger = p.read_json(ledger_file) if ledger_file and ledger_file.exists() else {'schema':1,'host':host,'files':{}}
@@ -247,6 +254,31 @@ def upload(folder, source, cache, scope_path, host, execute=False, limit=25):
     if not execute:
         return report
     with p.lock(cache):
+        if host.endswith('.r2.dev') and jobs:
+            bucket = scope.get('r2Bucket') or 'atlas-history-audio'
+            payload = {'expectedHost':host,'bucket':bucket,'concurrency':6,'items':[
+                {'audioHash':r['audioHash'],'file':str(p.within(cache,r['file'])),
+                 'pathname':'audio/v1/'+r['audioHash']+'.mp3','bytes':r['audio']['bytes']}
+                for r in jobs
+            ]}
+            size_by_sha = {r['audioHash']:r['audio']['bytes'] for r in jobs}
+            proc = subprocess.Popen(['node',str(p.HERE/'r2.cjs')],stdin=subprocess.PIPE,
+                                    stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True)
+            assert proc.stdin is not None and proc.stdout is not None and proc.stderr is not None
+            proc.stdin.write(json.dumps(payload));proc.stdin.close()
+            for line in proc.stdout:
+                line = line.strip()
+                if not line:continue
+                result = json.loads(line)
+                sha = result['audioHash']
+                public_url(result['url'],sha,host)
+                ledger['files'][sha] = {'url':result['url'],'bytes':size_by_sha[sha]}
+                p.save_json(ledger_file,ledger)
+                report['reusedRemote' if result['reused'] else 'uploaded'] += 1
+            stderr = proc.stderr.read().strip()
+            if proc.wait(timeout=600):
+                raise ValueError('R2 upload stopped: '+stderr)
+            return report
         for r in jobs:
             request = {'expectedHost':host,'file':str(p.within(cache,r['file'])),
                        'pathname':'audio/v1/'+r['audioHash']+'.mp3'}

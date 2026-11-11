@@ -14,9 +14,9 @@
 
 **总计划不等于默认全书授权。** 继首批497段上线后，第1批补齐其余4条已收尾古中世纪线605段，累计1102/1102段全部通过远端校验；剩余12条近现代主线（4182段）按批次推进。普通构建始终支持部分嵌入，不因未录线路阻塞改稿。
 
-## 一次性托管接入
+## 音频对象存储托管（Cloudflare R2 主用，兼容 Vercel Blob）
 
-2026-11-10只读核实：项目 `history-of-europe-in-frames`（`prj_PLQed0U7rWBL6Eof03Ip4ujUmyPY`），团队 `chris-projects-41eb6ac7`（`team_P7zO50QeJs79fz0JZgYKQiUp`），**Hobby/active**；接入前没有关联Blob store。
+当前正式音频托管在专用 **Cloudflare R2** 公开桶 `atlas-history-audio`（`pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev`，48kbps 原音质单文件直传，10GB 免费存储、每月100万次写入免费、免流量费）；网页托管仍保持 Vercel Hobby（`history-of-europe-in-frames`）。`release.py` 同时保留 `r2.cjs`（`*.r2.dev`）与 `blob.cjs`（`*.public.blob.vercel-storage.com`）两套不可变上传通路。
 
 本轮专题公开发布及专用Public Blob已获准。开通存储不是升级Pro；不购买套餐、不改支付信息、不放开额外收费。创建是否完成、上传多少仍以BUILD记录为准，不把许可当执行结果。
 

@@ -148,7 +148,7 @@ print(json.dumps({'manifest':manifest,'report':report}, ensure_ascii=False))
   await p.setRequestInterception(true);
   p.on('request', r => {
     if (/\.mp3(?:[?#]|$)/.test(r.url())) requests.push(r.url());
-    const actualBlob = realSmoke && /^https:\/\/[a-z0-9-]+\.public\.blob\.vercel-storage\.com\/audio\//.test(r.url());
+    const actualBlob = realSmoke && /^https:\/\/([a-z0-9-]+\.public\.blob\.vercel-storage\.com|pub-[a-f0-9]+\.r2\.dev)\/audio\//.test(r.url());
     if (/^https?:/.test(r.url()) && !r.url().startsWith('http://127.0.0.1:') && !actualBlob) return r.abort(); // Map tiles are unrelated.
     return r.continue();
   });

@@ -2,7 +2,8 @@
   "schema": 1,
   "policy": 3,
   "name": "全部7条已收尾古中世纪主线（史前、希腊、罗马、埃及、中世纪西欧、东罗马、十字军）及全部动力专题",
-  "blobHost": "ccjesfa3fpqn3fps.public.blob.vercel-storage.com",
+  "blobHost": "pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev",
+  "r2Bucket": "atlas-history-audio",
   "profile": {
     "voice": "zh-CN-YunjianNeural",
     "pitch": "+0Hz",
