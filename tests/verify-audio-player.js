@@ -27,7 +27,7 @@ function audioPython(script, input) {
   // Offline helpers only; -B avoids writing module caches into tools/audio.
   const code = `import json, sys\nfrom pathlib import Path\nroot = Path(sys.argv[1])\nsys.path.insert(0, str(root / 'tools' / 'audio'))\n${script}`;
   return JSON.parse(execFileSync(process.env.PYTHON || 'python3', ['-B', '-c', code, root], {
-    cwd:root, input:JSON.stringify(input), encoding:'utf8'
+    cwd:root, input:JSON.stringify(input), encoding:'utf8', maxBuffer:64 * 1024 * 1024
   }));
 }
 function assemble(name, manifest) {
@@ -40,7 +40,7 @@ function assemble(name, manifest) {
     fs.writeFileSync(manifestPath, JSON.stringify(manifest));
     args.push('--audio-manifest', manifestPath);
   }
-  execFileSync(process.env.PYTHON || 'python3', args, {cwd:src, stdio:'pipe'});
+  execFileSync(process.env.PYTHON || 'python3', args, {cwd:src, stdio:'pipe', maxBuffer:64 * 1024 * 1024});
   return output;
 }
 async function serve() {
