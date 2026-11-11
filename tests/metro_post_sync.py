@@ -8,7 +8,8 @@ from pathlib import Path
 
 TESTS = Path(sys.argv[1]).resolve() if len(sys.argv) > 1 else Path(__file__).resolve().parent
 # These test the layout as shipped, so they do not bring the old sidebar back.
-METRO_SUITES = {'verify-metro.js', 'verify-metro-keys.js', 'verify-reader-width.js', 'verify-no-leak.js'}
+METRO_SUITES = {'verify-metro.js', 'verify-metro-keys.js', 'verify-reader-width.js', 'verify-no-leak.js',
+                'verify-audio-pipeline.js', 'verify-audio-player.js'}
 REQUIRE = "const puppeteer=require('puppeteer-core');"
 SHIM = "require('./legacy_sidebar.cjs');"
 CLOSE = "}finally{await Promise.race([browser.close()"
