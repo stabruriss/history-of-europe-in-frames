@@ -413,22 +413,27 @@ print(json.dumps({'ids':ids, 'hashes':hashes, 'kinds':kinds,
     } else {
       if ((await state(p)).wantsPlay) await p.click('#audioToggle');
       const held = await state(p), from = requests.length, prefix = scopedRoutes[id];
-      const covered = prefix[Math.floor(prefix.length / 2)], uncovered = keys.find(key => !fixtureHasBody(key));
+      const covered = prefix.find(key => fixtureHasBody(key)), uncovered = keys.find(key => !fixtureHasBody(key));
       assert(uncovered, 'An incomplete line must have an unavailable body/title');
-      for (const key of [covered, uncovered]) {
-        await board(p, id, key); await readerActions(p, fixtureHasBody(key));
-        assert.equal(await p.$eval('#audioRead', e => e.disabled), !fixtureHasBody(key));
-        assert.equal(await p.$eval('#audioReadLine', e => e.disabled), true, 'Scoped prefix is not the whole ' + id + ' route');
-        if (fixtureHasBody(key)) await p.$eval('#audioReadLine', e => e.click());
-        assert.deepEqual(await state(p), held, 'Unavailable continuous reading must not replace/shorten the queue');
-        assert.equal(requests.length, from, 'Unavailable continuous reading must not fetch MP3s');
+      // An unvoiced scene still has no strip and starts nothing.
+      await board(p, id, uncovered); await readerActions(p, false);
+      for (const ctl of ['audioRead','audioReadLine']) assert.equal(await p.$eval('#' + ctl, e => e.disabled), true);
+      assert.deepEqual(await state(p), held, 'An unvoiced scene must not replace the queue'); assert.equal(requests.length, from);
+      if (covered) {
+        // 老无 2026-11-12: gaps no longer disable the line; the whole real line is frozen from the clicked scene.
+        await board(p, id, covered); await readerActions(p, true);
+        assert.equal(await p.$eval('#audioReadLine', e => e.disabled), false, 'An incomplete ' + id + ' line still reads continuously');
+        assert.match(await p.$eval('#audioAvailability', e => e.textContent), /暂缺.*接着读/);
+        await p.click('#audioReadLine'); await playing(p);
+        const s = await state(p); assert.deepEqual(s.queue, keys); assert.equal(s.index, keys.indexOf(covered)); assert.equal(s.line, id); assert(s.frozen);
+        await p.click('#audioToggle');
       }
-      console.log(`NOTE ${id}: planned prefix ${prefix.length}/${keys.length} real scenes; whole-line reading correctly unavailable.`);
+      console.log(`NOTE ${id}: planned prefix ${prefix.length}/${keys.length} real scenes; continuous reading announces gaps instead of refusing.`);
     }
   }
   assert.equal(data.routes.prehistory.filter(k => k === 'history-farming/1').length, 1);
   assert.equal(data.routes.trunk.filter(k => k === 'history-farming/1').length, 1);
-  pass('Complete scoped lines exactly match real ordered queues; incomplete prefixes visibly disable continuous reading without replacing audio');
+  pass('Complete and incomplete lines both freeze the exact real ordered queue from the clicked scene; unvoiced scenes stay unavailable');
 
   const incompleteShared = Object.entries(data.routes).filter(([id]) => !completeLines.includes(id))
     .flatMap(([id, keys]) => keys.filter(k => completeLines.some(c => data.routes[c].includes(k))).map(key => ({
@@ -443,7 +448,7 @@ print(json.dumps({'ids':ids, 'hashes':hashes, 'kinds':kinds,
       metroUI.board(incomplete, {key:st.key});
     }, incompleteShared);
     assert.equal(await p.$eval('#audioRead', e => e.disabled), false);
-    assert.equal(await p.$eval('#audioReadLine', e => e.disabled), true);
+    assert.equal(await p.$eval('#audioReadLine', e => e.disabled), false, 'Gaps on the incomplete line are announced, not refused');
     assert.equal((await state(p)).src, before.src); assert.deepEqual((await state(p)).queue, before.queue);
     await p.evaluate(({complete, key}) => {
       const st = metroUI.data.lineStops.get(complete).find(s => key.startsWith(s.id + '/') && +key.split('/')[1] >= s.from && +key.split('/')[1] <= s.to);
@@ -451,14 +456,14 @@ print(json.dumps({'ids':ids, 'hashes':hashes, 'kinds':kinds,
     }, incompleteShared);
     assert.equal(await p.$eval('#audioReadLine', e => e.disabled), false);
     await board(p, incompleteShared.incomplete, incompleteShared.key);
-    assert.equal(await p.$eval('#audioReadLine', e => e.disabled), true);
+    assert.equal(await p.$eval('#audioReadLine', e => e.disabled), false);
     await p.click('#audioRead'); await playing(p); assert.deepEqual((await state(p)).queue, [incompleteShared.key]);
   } else {
     await p.evaluate(() => metroUI.board('egypt', {key:'history-farming/1'}));
     assert.equal(await p.$eval('#audioReadLine', e => e.disabled), false);
     assert.equal((await state(p)).src, before.src); assert.deepEqual((await state(p)).queue, before.queue);
   }
-  pass('Shared scenes play on incomplete lines when present; same-station transfers refresh availability, not the frozen queue');
+  pass('Shared scenes play on incomplete lines and may start them; same-station transfers refresh availability, not the frozen queue');
 
   for (const id of data.topics) {
     await p.evaluate(id => go(id), id); await readerActions(p, true);
@@ -687,43 +692,45 @@ print(json.dumps({'ids':ids, 'hashes':hashes, 'kinds':kinds,
     assert.equal(await p.$eval('#audioReadLine', e => e.disabled), false);
     const beforeSelection = requests.length;
     await setOptions(p, group === 'extras', group === 'people');
-    assert.equal(await p.$eval('#audioRead', e => e.disabled), true);
-    assert.equal(await p.$eval('#audioReadLine', e => e.disabled), true);
+    // 老无 2026-11-12: selecting a group with a gap never refuses reading; the gap is announced when reached.
+    assert.equal(await p.$eval('#audioRead', e => e.disabled), false);
+    assert.equal(await p.$eval('#audioReadLine', e => e.disabled), false);
+    assert.match(await p.$eval('#audioAvailability', e => e.textContent), /暂缺.*接着读/);
     assert.equal(await p.$eval('#audioPlayer', e => e.hidden), true);
     assert.deepEqual((await state(p)).queue, []);
     assert.equal(requests.length, beforeSelection);
     await setOptions(p, false, false);
-    assert.equal(await p.$eval('#audioRead', e => e.disabled), false);
     await readBody(optionalKey);
     if (name === 'missing-extra') {
       before = await state(p); assert(before.playing);
       await setOptions(p, true, false);
-      after = await state(p); assert(after.error && !after.wantsPlay && !after.playing); assert.equal(after.partId, before.partId); assert(after.currentTime >= before.currentTime);
-      await setOptions(p, false, false); assert(!(await state(p)).wantsPlay);
-      await p.click('#audioToggle'); await partReady(p, optionalKey);
+      after = await state(p); assert(!after.error && after.wantsPlay); assert.equal(after.partId, before.partId); assert(after.currentTime >= before.currentTime);
+      await setOptions(p, false, false);
     }
-    await p.click('#audioToggle');
-    before = await state(p); const from = requests.length;
     await setOptions(p, group === 'extras', group === 'people');
-    after = await state(p); assert(after.error && !after.wantsPlay); assert.equal(after.partId, before.partId); assert.equal(after.currentTime, before.currentTime);
-    assert.match(await p.$eval('#audioError', e => e.textContent), /不会跳过/);
-    await readerActions(p, true); // The resolved body survives: selected optional loss must remain explainable.
-    assert(await p.evaluate(key => Boolean(AUDIO_MANIFEST.assets[key]), optionalKey));
-    assert.match(await p.$eval('#audioAvailability', e => e.textContent), /所选内容待补齐/);
-    assert.equal(await p.$eval('#audioRead', e => e.disabled), true); assert.equal(await p.$eval('#audioReadLine', e => e.disabled), true);
-    assert.equal((await state(p)).selectedDuration, null);
-    assert((await p.$$eval('#audioQueue time', es => es.map(e => e.textContent))).includes('待补'), 'Missing optional row must show 待补 in playlist');
-    assert.equal(requests.length, from, 'Missing selected parts must not trigger fallback/skip requests');
+    assert((await p.$$eval('#audioQueue time', es => es.map(e => e.textContent))).includes('暂缺'), 'Missing optional row must show 暂缺 in playlist');
+    assert.equal(typeof (await state(p)).selectedDuration, 'number');
+    // Published parts play; the gap voices the inline notice (no request for the missing clip), then reading goes on.
+    const sincePage = requests.length; await finishClip(p);
+    for (const piece of plans[optionalKey][group]) {
+      if (piece.id === id) {
+        await p.waitForFunction(id => { const s = atlasAudio.state(); return s.partId === id && s.gap && s.playing; }, {}, id);
+        assert.match(await p.$eval('#audioPhase', e => e.textContent), /音频暂缺/);
+        assert.match(await p.$eval('#atlasAudioElement', a => a.currentSrc), /^data:audio\/mpeg;base64,/);
+        assert.equal((await state(p)).error, '');
+      } else await partReady(p, piece.id);
+      await finishClip(p);
+    }
+    await p.waitForFunction(() => atlasAudio.state().finished);
+    assert(!mediaIds(requests.slice(sincePage)).includes(id), 'A missing part must never be requested');
     await setOptions(p, false, false);
-    assert.equal((await state(p)).error, ''); await samePosition(before, 'Clear optional availability error without auto-resume');
-    await p.click('#audioToggle'); await partReady(p, optionalKey); await finishClip(p); await p.waitForFunction(() => atlasAudio.state().finished);
   }
-  // Full-line readiness includes an earlier missing optional part; an already-running suffix does not rewind it.
+  // An earlier gap neither rewinds a running suffix nor disables the line.
   await p.goto(url('missing-extra') + '#' + followingKey, {waitUntil:'load'}); await ready(p);
   await board(p, optionalLine, followingKey); await p.click('#audioReadLine'); await playing(p); await p.click('#audioToggle');
   before = await state(p); await setOptions(p, true, false); await samePosition(before, 'Enable a group whose missing part is already passed');
-  assert.equal((await state(p)).error, ''); assert.equal(await p.$eval('#audioReadLine', e => e.disabled), true);
-  pass('Missing/stale optional parts do not block body-only reading; selecting them visibly blocks/stops without loss of position, while passed parts are never revisited');
+  assert.equal((await state(p)).error, ''); assert.equal(await p.$eval('#audioReadLine', e => e.disabled), false);
+  pass('Missing/stale optional parts never block reading: a selected gap voices the inline notice once and reading goes on, without requesting the clip or revisiting passed parts');
 
   await p.goto(url('fixture') + '#' + optionalKey, {waitUntil:'load'}); await ready(p);
   await p.click('#audioRead'); await playing(p); await p.click('#audioToggle');
@@ -745,23 +752,40 @@ print(json.dumps({'ids':ids, 'hashes':hashes, 'kinds':kinds,
   }
   pass('Moment, box and person HTTP failures stop on their own part; explicit retry resumes that part, never a later item');
 
-  for (const [name, key, singleDisabled] of [['missing-earlier','history-migration/1',false], ['missing-later','history-migration/0',false], ['missing-earlier','history-migration/0',true], ['missing-title','history-migration/1',true]]) {
+  // 老无 2026-11-12: a missing body or title is announced and passed over; only an unvoiced clicked scene has no strip.
+  {
     const count = requests.length;
-    await p.goto(url(name) + '#' + key, {waitUntil:'load'}); await ready(p);
-    const held = await state(p); assert.deepEqual(held.queue, []);
-    await readerActions(p, !singleDisabled);
-    assert.equal(await p.$eval('#audioReadLine', e => e.disabled), true);
-    assert.equal(await p.$eval('#audioRead', e => e.disabled), singleDisabled);
-    if (singleDisabled) {
-      assert(await p.evaluate(key => Boolean(AUDIO_MANIFEST.tracks[key]) && !AUDIO_MANIFEST.assets[key], key), 'Missing body/title leaves a plan, not a resolved body');
-      if (name === 'missing-title') assert.equal(await p.evaluate(() => Boolean(AUDIO_MANIFEST.assets['history-migration/title'])), false);
-      // No click on hidden controls: title filtering removes the dependent body, so the whole strip is absent.
-    } else await p.$eval('#audioReadLine', e => e.click());
-    assert.deepEqual(await state(p), held, 'Unavailable reading must leave the queue/transport untouched');
-    assert.equal(await p.$eval('#audioPlayer', e => e.hidden), true);
+    await p.goto(url('missing-earlier') + '#history-migration/0', {waitUntil:'load'}); await ready(p);
+    await readerActions(p, false); assert.deepEqual((await state(p)).queue, []);
     assert.equal(await p.$eval('#atlasAudioElement', a => a.getAttribute('src')), null); assert.equal(requests.length, count);
+    // An earlier gap is not on the way: reading the line from the next scene starts normally.
+    await p.goto(url('missing-earlier') + '#history-migration/1', {waitUntil:'load'}); await ready(p);
+    await readerActions(p, true); assert.equal(await p.$eval('#audioReadLine', e => e.disabled), false);
+    await p.click('#audioReadLine'); await stage(p, 1, 'title');
+    assert.deepEqual((await state(p)).queue, data.routes.prehistory); await p.click('#audioToggle');
+    // A later gap: landing on it voices the notice once, then the next published part plays.
+    await p.goto(url('missing-later') + '#history-migration/0', {waitUntil:'load'}); await ready(p);
+    assert.equal(await p.$eval('#audioReadLine', e => e.disabled), false);
+    const sinceLater = requests.length; await p.click('#audioReadLine'); await playing(p);
+    const gapIndex = data.routes.prehistory.indexOf('history-farming/1');
+    await p.$eval(`#audioQueue [data-audio-index="${gapIndex}"][data-audio-part="0"]`, b => b.click());
+    await p.waitForFunction(i => { const s = atlasAudio.state(); return s.index === i && s.gap && s.playing && s.partId === 'history-farming/1'; }, {}, gapIndex);
+    assert(!mediaIds(requests.slice(sinceLater)).includes('history-farming/1'), 'A missing body must never be requested');
+    await finishClip(p);
+    // After the notice: the next published part plays, or a gap at the line's end simply ends the reading.
+    const lastOnLine = gapIndex === data.routes.prehistory.length - 1;
+    await p.waitForFunction((i, last) => { const s = atlasAudio.state(); return last ? s.finished && s.index === i : s.index > i && !s.gap && s.playing; }, {}, gapIndex, lastOnLine);
+    assert.equal((await state(p)).error, ''); if (!lastOnLine) await p.click('#audioToggle');
+    // A missing section title no longer withdraws its bodies: the notice stands in for the prelude.
+    await p.goto(url('missing-title') + '#history-migration/1', {waitUntil:'load'}); await ready(p);
+    assert.equal(await p.evaluate(() => Boolean(AUDIO_MANIFEST.assets['history-migration/title'])), false);
+    assert(await p.evaluate(() => Boolean(AUDIO_MANIFEST.assets['history-migration/1'])), 'A body survives its missing title');
+    await readerActions(p, true); await p.click('#audioRead');
+    await p.waitForFunction(() => { const s = atlasAudio.state(); return s.phase === 'title' && s.gap && s.playing; });
+    await finishClip(p); await partReady(p, 'history-migration/1');
+    assert.equal((await state(p)).gap, false); await p.click('#audioToggle');
   }
-  pass('Missing body/title hides the reader strip; missing earlier/later scenes still disable whole-line reading without media requests or queue changes');
+  pass('Missing bodies/titles never disable reading: an unvoiced clicked scene has no strip, a gap is announced once and reading continues with the next published part');
 
   await p.goto(url('fixture') + '#history-migration', {waitUntil:'load'}); await ready(p);
   failedMedia.add('history-migration/1');

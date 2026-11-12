@@ -166,12 +166,10 @@ def resolve_manifest(source, manifest_path, scope_path, allow_local=False, stric
         active[asset_id] = item
     if len(hosts)>1:
         raise ValueError('Do not mix stores in one release')
-    # Optional loss never disables a body. Title loss disables historical bodies and their parts.
-    missing_title = []
-    for asset_id in list(active):
-        if asset_id.startswith('history-') and not asset_id.endswith('/title'):
-            if asset_id.split('/')[0]+'/title' not in active:
-                missing_title.append(asset_id);del active[asset_id]
+    # A missing or stale section title is only reported. The player voices its fixed gap notice in the
+    # prelude's place and goes on reading the bodies and parts (老无 2026-11-12), so nothing else is withdrawn.
+    missing_title = [i for i in active if i.startswith('history-') and not i.endswith('/title')
+                     and i.split('/')[0]+'/title' not in active]
     pending = [i for i in all_ids if i in wanted and i not in active]
     if strict and (pending or obsolete):
         raise ValueError('Audio incomplete/outdated; text changed: '+str(stale)+'; missing: '+str(pending)+

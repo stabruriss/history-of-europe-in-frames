@@ -447,7 +447,8 @@ const HISTORY_BRANCHES=[{id:'main',name:'主线'},{id:'shared',name:'换乘线'}
         with self.assertRaisesRegex(ValueError,'text changed'):
             release.check_manifest(self.source,published,scope_path,strict=True)
         resolved,report=release.resolve_manifest(self.source,published,scope_path)
-        self.assertEqual(set(resolved['assets']),{'topic-fixture'})
+        # Only the stale title leaves; its bodies and parts stay playable behind the player's gap notice.
+        self.assertEqual(set(resolved['assets']),set(scope['ids'])-{'history-fixture/title'})
         self.assertEqual(report['stale'],['history-fixture/title'])
         self.assertEqual(set(report['missingTitle']),set(scope['ids'])-{'history-fixture/title','topic-fixture'})
         self.assertEqual(report['networkRequests'],0)

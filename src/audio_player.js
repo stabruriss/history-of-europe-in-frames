@@ -13,8 +13,13 @@ const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt
 const time = n => { n = Math.max(0, Math.floor(Number.isFinite(n) ? n : 0)); return Math.floor(n / 60) + ':' + String(n % 60).padStart(2, '0'); };
 const extrasControls = ['audioIncludeExtras', 'audioReadIncludeExtras'];
 const peopleControls = ['audioIncludePeople', 'audioReadIncludePeople'];
+// 老无 2026-11-12: a part with no published audio is not a dead end. The fixed notice
+// “此处音频文件暂缺，为您继续朗读下一段。” plays in its place and reading carries on with the next part;
+// a run of missing parts gets one notice. Once the recording is published it simply plays instead.
+const NOTICE = typeof AUDIO_GAP_NOTICE === 'object' && AUDIO_GAP_NOTICE && typeof AUDIO_GAP_NOTICE.url === 'string' &&
+  AUDIO_GAP_NOTICE.url.startsWith('data:audio/mpeg;base64,') ? Object.freeze({...AUDIO_GAP_NOTICE}) : null;
 let queue = Object.freeze([]), at = -1, mode = 'single', line = null;
-let phase = 'body', partIndex = 0, finished = false, error = '', errorKind = '', speed = 1;
+let phase = 'body', partIndex = 0, finished = false, error = '', errorKind = '', speed = 1, gap = false;
 let includeExtras = false, includePeople = false;
 let loadToken = 0, playToken = 0, wantsPlay = false, waiting = false, expectedURL = '', pendingOffset = null;
 try { const saved = Number(localStorage.getItem(SPEED_KEY)); if (rates.includes(saved)) speed = saved; } catch {}
@@ -70,19 +75,11 @@ function requiredParts(t) {
   return [...(t.titlePart ? [t.titlePart] : []), ...t.parts.filter(enabled)];
 }
 const countMissing = parts => new Set(parts.filter(p => !p.asset).map(p => p.id)).size;
+// Informational only: missing parts are announced and passed over, never a reason to refuse reading.
 const missing = tracks => countMissing(tracks.flatMap(requiredParts));
-function remainingMissing() {
-  const t = current();
-  if (!t || finished) return 0;
-  if (!t.planned) return 1;
-  // Passed parts (including an earlier, unselected group) stay passed when a checkbox changes.
-  return countMissing([...(partIndex < 0 && t.titlePart ? [t.titlePart] : []),
-    ...t.parts.slice(Math.max(0, partIndex)).filter(enabled), ...queue.slice(at + 1).flatMap(requiredParts)]);
-}
 function selectedDuration(t) {
   if (!t?.planned) return null;
-  const selected = t.parts.filter(enabled);
-  return selected.some(p => !p.asset) ? null : selected.reduce((total, p) => total + p.asset.duration, 0);
+  return t.parts.filter(enabled).reduce((total, p) => total + (p.asset ? p.asset.duration : 0), 0);
 }
 function playlistItems() {
   const items = [];
@@ -104,9 +101,10 @@ function currentPlaylistIndex(items = playlistItems()) {
 }
 function partLabel() {
   const p = part();
-  if (phase === 'title') return '节标题前奏：' + current().chapter;
-  if (phase === 'body') return current()?.kind === 'topic' ? '专题正文' : '本幕正文 · ' + current().chapter;
-  return ({moment:'补充趣事', box:'补充趣事', person:'人物小传'}[phase] || '附加内容') + '：' + (p?.label || '');
+  const label = phase === 'title' ? '节标题前奏：' + current().chapter :
+    phase === 'body' ? (current()?.kind === 'topic' ? '专题正文' : '本幕正文 · ' + current().chapter) :
+    ({moment:'补充趣事', box:'补充趣事', person:'人物小传'}[phase] || '附加内容') + '：' + (p?.label || '');
+  return gap ? '音频暂缺，提示后接着读 · ' + label : label;
 }
 function reading() {
   const e = ENTRIES[cur];
@@ -121,13 +119,15 @@ function refreshReading() {
   const route = historical ? lineSnapshot(window.metroUI?.state().line) : null;
   const count = route ? missing(route.tracks) : 0;
   const onLine = route?.tracks.some(x => x?.key === t.key);
-  $('audioRead').disabled = Boolean(singleMissing);
-  $('audioRead').title = singleMissing ? '本幕／专题的所选内容或节标题尚未齐全；不会跳过缺段' : '朗读：' + t.title;
+  const gapNote = n => `所选内容有 ${n} 段音频暂缺，读到时提示并接着读`, hasBody = Boolean(t.planned && t.parts[0]?.asset);
+  // A strip is only shown for a published body; the controls stay disabled behind a hidden strip.
+  $('audioRead').disabled = !hasBody;
+  $('audioRead').title = '朗读：' + t.title + (singleMissing ? '（' + gapNote(singleMissing) + '）' : '');
   $('audioRead').setAttribute('aria-label', '朗读：' + t.title);
   $('audioReadLine').hidden = !historical;
-  $('audioReadLine').disabled = !onLine || count > 0;
-  $('audioReadLine').title = !route ? '当前线路尚不可用' : count ? `${route.line.name}线所选内容缺 ${count} 段音频（含节标题），不跳过缺段` : `载入${route.line.name}线全部 ${route.tracks.length} 幕，从本幕开始`;
-  $('audioAvailability').textContent = singleMissing ? '所选内容待补齐' : historical && count ? '此线待补齐 · 可单幕读' : '';
+  $('audioReadLine').disabled = !hasBody || !onLine;
+  $('audioReadLine').title = !route ? '当前线路尚不可用' : `载入${route.line.name}线全部 ${route.tracks.length} 幕，从本幕开始` + (count ? '；' + gapNote(count) : '');
+  $('audioAvailability').textContent = singleMissing ? '本幕' + gapNote(singleMissing) : historical && count ? '此线' + gapNote(count) : '';
   // Only reader-button readiness; never mutates the queue, part cursor or transport.
 }
 // go() notifies after any kind of navigation. Boarding another line at the same shared station
@@ -153,7 +153,8 @@ function renderQueue() {
     const title = isSub ? `<em class="audio-part-tag">${tag}</em>${esc(p.label)}` : esc(t.title);
     const sub = isSub ? (queue.length > 1 ? `<small>${esc(t.title)}</small>` : '') : (t.kind === 'history' ? `<small>${esc(t.chapter)}</small>` : '');
     const dur = p.asset ? p.asset.duration : null;
-    return `<li${isSub ? ' class="audio-subitem"' : ''}><button type="button" data-audio-item="${i}" data-audio-index="${ti}" data-audio-part="${pi}" data-audio-kind="${esc(p.kind)}" aria-current="${i === active}"><span class="audio-number">${i + 1}</span><span>${title}${sub}</span><time data-seconds="${dur === null ? '' : dur}">${dur === null ? '待补' : time(dur)}</time></button></li>`;
+    const cls = [isSub ? 'audio-subitem' : '', dur === null ? 'audio-missing' : ''].filter(Boolean).join(' ');
+    return `<li${cls ? ` class="${cls}"` : ''}><button type="button" data-audio-item="${i}" data-audio-index="${ti}" data-audio-part="${pi}" data-audio-kind="${esc(p.kind)}" aria-current="${i === active}"><span class="audio-number">${i + 1}</span><span>${title}${sub}</span><time data-seconds="${dur === null ? '' : dur}"${dur === null ? ' title="音频暂缺：读到时提示并接着读"' : ''}>${dur === null ? '暂缺' : time(dur)}</time></button></li>`;
   }).join('');
   const emptyGroups = [];
   if (includeExtras && queue.length && !queue.some(t => t?.parts.some(p => p.group === 'extras'))) emptyGroups.push('补充趣事');
@@ -172,7 +173,7 @@ function progress() {
   $('audioElapsed').textContent = time(position);
   $('audioDuration').textContent = time(duration);
   $('audioSeek').value = String(duration ? Math.round(position / duration * 1000) : 0);
-  $('audioSeek').disabled = Boolean(error) || !enabled(part()) || !isCurrentSource() || audio.readyState < 1 || !Number.isFinite(audio.duration) || audio.duration <= 0;
+  $('audioSeek').disabled = Boolean(error) || gap || !enabled(part()) || !isCurrentSource() || audio.readyState < 1 || !Number.isFinite(audio.duration) || audio.duration <= 0;
   $('audioSeek').setAttribute('aria-label', label + '进度');
   $('audioSeek').setAttribute('aria-valuetext', `${label} ${time(position)}，共 ${time(duration)}`);
 }
@@ -181,8 +182,8 @@ function status() {
   const items = playlistItems(), pos = currentPlaylistIndex(items);
   const playing = wantsPlay && !audio.paused && !audio.ended;
   const state = error ? '已停住' : finished ? '已播完' : wantsPlay ? waiting ? '载入中' : '正在朗读' : '已暂停';
-  const total = items.some(x => !x.part.asset) ? null : items.reduce((n, x) => n + x.part.asset.duration, 0);
-  $('audioContext').textContent = `${state} · ${mode === 'line' ? line.name + '线' : t.kind === 'topic' ? '专题' : '本幕'} · ${Math.max(1, pos + 1)}/${items.length}${total === null ? ' · 待补齐' : ' · 共 ' + time(total)}`;
+  const gaps = items.filter(x => !x.part.asset).length, total = items.reduce((n, x) => n + (x.part.asset ? x.part.asset.duration : 0), 0);
+  $('audioContext').textContent = `${state} · ${mode === 'line' ? line.name + '线' : t.kind === 'topic' ? '专题' : '本幕'} · ${Math.max(1, pos + 1)}/${items.length} · 共 ${time(total)}${gaps ? `（${gaps} 段暂缺）` : ''}`;
   $('audioTitle').textContent = t.title;
   $('audioTitle').setAttribute('aria-label', '定位朗读正文：' + t.title);
   $('audioPhase').textContent = partLabel();
@@ -215,11 +216,7 @@ function fail(message, kind = 'media') {
   ++playToken; wantsPlay = false; waiting = false; error = message; errorKind = kind;
   audio.pause(); status();
 }
-function failMissing(count) {
-  fail(`队列余下所选内容缺 ${count} 段音频，已停住。可取消对应选项后继续；不会跳过缺段。`, 'availability');
-}
 async function play() {
-  const count = remainingMissing(); if (count) { failMissing(count); return; }
   const token = ++playToken, generation = loadToken;
   wantsPlay = true; error = ''; errorKind = ''; applyRate(); status();
   try {
@@ -234,16 +231,17 @@ async function play() {
 function pause() {
   ++playToken; wantsPlay = false; audio.pause(); status();
 }
-function loadClip(index, {autoplay = true, offset = 0} = {}) {
+function loadClip(index, {autoplay = true, offset = 0, afterGap = false} = {}) {
   ++loadToken; ++playToken; wantsPlay = false; audio.pause();
   partIndex = index; phase = part()?.kind || 'body';
-  finished = false; error = ''; errorKind = ''; waiting = true; expectedURL = ''; pendingOffset = offset;
-  const a = clip(), count = remainingMissing();
-  if (!a || count) {
-    audio.removeAttribute('src'); audio.load();
-    failMissing(count || 1); return;
+  finished = false; error = ''; errorKind = ''; waiting = true; expectedURL = ''; pendingOffset = offset; gap = false;
+  const a = clip();
+  if (!a) {
+    // No published audio here. Right after a notice (a run of gaps) or without a notice clip, pass on silently.
+    if (afterGap || !NOTICE) { advance({autoplay, afterGap:true}); return; }
+    gap = true; pendingOffset = null;
   }
-  expectedURL = a.url;
+  expectedURL = a ? a.url : NOTICE.url;
   // Only this selected part is loaded, also allowing a paused skip to expose its seek range.
   audio.preload = 'metadata';
   audio.src = expectedURL;
@@ -252,7 +250,7 @@ function loadClip(index, {autoplay = true, offset = 0} = {}) {
   status();
   if (autoplay) play();
 }
-function selectTrack(index, {automatic = false, autoplay = true, withTitle = true} = {}) {
+function selectTrack(index, {automatic = false, autoplay = true, withTitle = true, afterGap = false} = {}) {
   if (index < 0 || index >= queue.length) return;
   const previous = current();
   at = index;
@@ -260,7 +258,7 @@ function selectTrack(index, {automatic = false, autoplay = true, withTitle = tru
   if ('mediaSession' in navigator && 'MediaMetadata' in window) {
     navigator.mediaSession.metadata = new MediaMetadata({title:t.title, artist:'云健 · AI 合成语音', album:mode === 'line' ? line.name + '线 · 简明欧洲史图册' : '简明欧洲史图册'});
   }
-  loadClip(prelude ? -1 : 0, {autoplay});
+  loadClip(prelude ? -1 : 0, {autoplay, afterGap});
   // Never go(), board(), scroll, or change location here.
 }
 function selectPlaylistItem(itemIndex, {autoplay = true} = {}) {
@@ -284,10 +282,10 @@ function finishSelection() {
   }
   status();
 }
-function advance({autoplay = wantsPlay} = {}) {
+function advance({autoplay = wantsPlay, afterGap = false} = {}) {
   const next = current().parts.findIndex((p, i) => i > partIndex && enabled(p));
-  if (next >= 0) loadClip(next, {autoplay});
-  else if (mode === 'line' && at < queue.length - 1) selectTrack(at + 1, {automatic:true, autoplay});
+  if (next >= 0) loadClip(next, {autoplay, afterGap});
+  else if (mode === 'line' && at < queue.length - 1) selectTrack(at + 1, {automatic:true, autoplay, afterGap});
   else finishSelection();
 }
 function changeOptions(ev) {
@@ -297,9 +295,7 @@ function changeOptions(ev) {
   refreshReading();
   if (!current()) { renderQueue(); return; }
   if (finished) { renderQueue(); status(); return; }
-  const autoplay = wantsPlay, count = remainingMissing();
-  if (count) { renderQueue(); failMissing(count); return; }
-  if (errorKind === 'availability') { error = ''; errorKind = ''; }
+  const autoplay = wantsPlay;
   if (!enabled(part())) { advance({autoplay}); renderQueue(); status(); }
   else { renderQueue(); status(); } // Never reload the title/body or rewind already-passed groups.
 }
@@ -307,7 +303,7 @@ function start(continuous) {
   const t = reading(); if (!t) return;
   const route = continuous && t.kind === 'history' ? lineSnapshot(window.metroUI?.state().line) : null;
   const tracks = route ? route.tracks : [t], index = tracks.findIndex(x => x?.key === t.key);
-  if ((continuous && !route) || index < 0 || missing(tracks)) { refreshReading(); return; }
+  if ((continuous && !route) || index < 0) { refreshReading(); return; }
   queue = Object.freeze([...tracks]); mode = route ? 'line' : 'single'; line = route?.line || null;
   player.hidden = false; measurePlayer();
   renderQueue();
@@ -316,8 +312,6 @@ function start(continuous) {
 function resume() {
   if (!current()) return;
   if (finished) { selectTrack(at); return; }
-  const count = remainingMissing(); if (count) { failMissing(count); return; }
-  if (errorKind === 'availability') { error = ''; errorKind = ''; }
   if (error || audio.error || !expectedURL) loadClip(partIndex, {offset:audio.error || !expectedURL ? 0 : audio.currentTime});
   else play();
 }
@@ -377,11 +371,15 @@ audio.addEventListener('waiting', () => { if (isCurrentSource()) { waiting = tru
 for (const event of ['pause', 'durationchange']) audio.addEventListener(event, status);
 audio.addEventListener('timeupdate', progress);
 audio.addEventListener('error', () => {
-  if (!finished && enabled(part()) && isCurrentSource() && audio.error) fail(`无法加载${partLabel()}，已停住。请检查网络后按播放键重试；不会跳过本段。`);
+  if (finished || !isCurrentSource() || !audio.error) return;
+  // A published recording that fails to load is a network/server fault: stop and offer a retry.
+  // The inline notice itself cannot be missing; should a browser still refuse it, carry on reading.
+  if (gap) advance({afterGap:true});
+  else if (enabled(part())) fail(`无法加载${partLabel()}，已停住。请检查网络后按播放键重试；不会跳过本段。`);
 });
 audio.addEventListener('ended', () => {
   if (!isCurrentSource() || !audio.ended || !wantsPlay || error) return;
-  advance();
+  advance({afterGap:gap});
 });
 function measurePlayer() { document.documentElement.style.setProperty('--audio-height', player.hidden ? '0px' : player.offsetHeight + 'px'); }
 new ResizeObserver(measurePlayer).observe(player);
@@ -392,7 +390,7 @@ if ('mediaSession' in navigator) {
   }
 }
 // Read-only diagnostics; the live queue, manifest and navigation are never exposed for mutation.
-window.atlasAudio = Object.freeze({state:() => ({queue:queue.map(t => t.key), playlist:playlistItems().map(x => x.part.id), index:at, mode, line:line?.id || null, phase,
+window.atlasAudio = Object.freeze({state:() => ({queue:queue.map(t => t.key), playlist:playlistItems().map(x => x.part.id), index:at, mode, line:line?.id || null, phase, gap,
   partId:part()?.id || '', partIndex, partLabel:part()?.label || '', includeExtras, includePeople, selectedDuration:selectedDuration(current()),
   title:current()?.title || '', playing:wantsPlay && !audio.paused && !audio.ended, wantsPlay, finished, speed,
   src:audio.currentSrc, currentTime:audio.currentTime, error, frozen:Object.isFrozen(queue) && queue.every(t => Object.isFrozen(t) && Object.isFrozen(t.parts) && t.parts.every(Object.isFrozen))})});

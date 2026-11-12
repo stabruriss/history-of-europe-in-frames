@@ -114,7 +114,7 @@ python3 "$PIPE" verify-audio --source "$SOURCE" --library "$LIB" --selection "$S
 
 manifest使用schema2/policy3；每项仍为url/duration/bytes/textHash/inputHash/audioHash。组装器从**当前源**派生 `tracks[bodyId] = {bodyId,titleId,extras,people}`，忽略来稿清单自带的播放计划，保留缺少音频的预期片段ID。
 
-普通构建过滤陈旧/缺失/超范围音频，不阻塞正文；非法schema/profile/host/URL/哈希/元数据仍失败。缺少可选片段不影响正文模式，勾选后不得跳过；缺标题会撤依赖它的历史片段。完整音频发布另用窄scope做 `--strict --remote`，不把全书计划变成整站发布门禁。详见WORKFLOW。
+普通构建过滤陈旧/缺失/超范围音频，不阻塞正文；非法schema/profile/host/URL/哈希/元数据仍失败。缺音频的片段（正文、节题或勾选的补充）由播放器播内嵌的固定提示 `src/audio_gap_notice.json`（“此处音频文件暂缺，为您继续朗读下一段。”）后接着读，连续缺段只提示一次，入口不因缺段禁用；缺节题只撤节题，正文照常。已发布文件加载失败仍停住重试。完整音频发布另用窄scope做 `--strict --remote`，不把全书计划变成整站发布门禁。详见WORKFLOW。
 
 ## 测试与证据
 
