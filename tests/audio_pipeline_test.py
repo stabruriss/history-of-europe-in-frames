@@ -260,6 +260,48 @@ const HISTORY_BRANCHES=[{id:'main',name:'主线'},{id:'shared',name:'换乘线'}
             _,reused=asyncio.run(p.make_audio(self.cache,record,record['text'],config,3,self.fake_stream))
             self.assertFalse(reused)
 
+    def test_approved_single_omission_is_bound_to_exact_input_and_audio(self):
+        snapshot=self.prepared();record=render(snapshot['entries'][0],'history-fixture/0')
+        config=p.config_for('+0Hz');wanted=p.spoken_characters(record['text'])
+        omission={'index':1,'text':wanted[1],'authorization':'fixture approval'}
+        registry=self.root/'approved-omissions.json'
+        with patch.object(p,'probe_audio',side_effect=self.fake_probe), patch.object(p,'OMISSIONS_PATH',registry):
+            receipt,_=asyncio.run(p.make_audio(self.cache,record,record['text'],config,3,self.fake_stream))
+            receipt['boundaries'][0]['text']=wanted[:1]+wanted[2:]
+            with self.assertRaisesRegex(ValueError,'coverage'):
+                p.check_receipt(self.cache,receipt,record,config,record['text'])
+            receipt.update(approvedOmission=omission,acceptance='machine-checked-with-approved-omission')
+            p.save_json(registry,{})
+            with self.assertRaisesRegex(ValueError,'unapproved'):
+                p.check_receipt(self.cache,receipt,record,config,record['text'])
+            key=receipt['inputHash']+'/'+receipt['audioHash'];p.save_json(registry,{key:omission})
+            p.check_receipt(self.cache,receipt,record,config,record['text'])
+            # The default synthesis guard still rejects even this approved character.
+            with self.assertRaisesRegex(ValueError,'coverage'):
+                p.check_boundaries(record['text'],receipt['boundaries'],1)
+            for alteration in ('extra-loss','tail','approval','missing-approval','audio','input'):
+                bad=copy.deepcopy(receipt);bad_record=record
+                if alteration=='extra-loss':bad['boundaries'][0]['text']=wanted[:1]+wanted[3:]
+                elif alteration=='tail':bad['boundaries'][0]['duration']=90_000_000
+                elif alteration=='approval':bad['approvedOmission']['index']=2
+                elif alteration=='missing-approval':del bad['approvedOmission']
+                elif alteration=='audio':
+                    path=self.cache/'audio/other.mp3';path.write_bytes(b'other-audio')
+                    bad.update(file='audio/other.mp3',audioHash=p.digest(path.read_bytes()),audio=self.fake_probe(path))
+                else:
+                    bad_record={**record,'textHash':'0'*64}
+                    bad.update(textHash=bad_record['textHash'],inputHash=p.input_hash(bad_record,config))
+                with self.subTest(alteration=alteration),self.assertRaises(ValueError):
+                    p.check_receipt(self.cache,bad,bad_record,config,record['text'])
+            p.save_json(p.receipt_path(self.cache,receipt['inputHash']),receipt)
+            p.save_json(self.library/'audio-state.json',{'schema':2,'cache':str(self.cache.resolve()),
+                        'items':{record['id']:p.compact_receipt(receipt)}})
+            checked=p.verify_audio(self.library,self.source,self.cache,'+0Hz',[record['id']])
+            self.assertEqual(checked['status'],'machine-checked-with-approved-omission')
+            self.assertEqual(checked['approvedOmissions'][0]['approval'],omission)
+            self.assertEqual(checked['networkRequests'],0)
+            self.assertEqual(checked['listeningReview'],'pending')
+
     def test_small_state_keeps_boundaries_in_receipt_only(self):
         self.prepared()
         original=p.make_audio

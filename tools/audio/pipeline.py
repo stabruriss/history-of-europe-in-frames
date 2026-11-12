@@ -21,6 +21,7 @@ from text import POLICY, ENTRY_ID, asset_ids, entry_records, parse_asset_id, ren
 HERE = Path(__file__).resolve().parent
 PROJECT = HERE.parents[1]
 EDGE_VERSION = '7.3.1'
+OMISSIONS_PATH = HERE / 'approved_omissions.json'
 
 
 def encoded(value):
@@ -278,8 +279,14 @@ def spoken_characters(s):
                    if unicodedata.category(c)[0] in 'LN' and c not in '\u02be\u02bf')
 
 
-def check_boundaries(script, boundaries, duration):
+def check_boundaries(script, boundaries, duration, approved_omission=None):
     wanted = spoken_characters(script)
+    if approved_omission is not None:
+        at, text = approved_omission.get('index'), approved_omission.get('text')
+        if (type(at) is not int or not isinstance(text,str) or len(text) != 1 or
+                not 0 <= at < len(wanted) or wanted[at] != text):
+            raise ValueError('Invalid approved single-character omission')
+        wanted = wanted[:at] + wanted[at+1:]
     actual = spoken_characters(''.join(b['text'] for b in boundaries))
     if not boundaries or actual != wanted:
         at = next((i for i,(a,b) in enumerate(zip(wanted,actual)) if a != b),min(len(wanted),len(actual)))
@@ -318,7 +325,16 @@ def check_receipt(cache, receipt, record, config, script):
     info = probe_audio(path)
     if info != receipt['audio']:
         raise ValueError(record['id']+': cached audio metadata mismatch')
-    check_boundaries(script,receipt['boundaries'],info['duration'])
+    omission = receipt.get('approvedOmission')
+    if omission is not None:
+        # Approval applies to these exact input AND MP3 bytes, never to all short mismatches.
+        approved = read_json(OMISSIONS_PATH).get(receipt['inputHash']+'/'+receipt['audioHash'])
+        if (not approved or omission != approved or
+                receipt.get('acceptance') != 'machine-checked-with-approved-omission'):
+            raise ValueError(record['id']+': unapproved audio omission')
+    elif receipt.get('acceptance') == 'machine-checked-with-approved-omission':
+        raise ValueError(record['id']+': missing omission approval')
+    check_boundaries(script,receipt['boundaries'],info['duration'],omission)
 
 
 async def edge_stream(script, config):
@@ -458,6 +474,7 @@ def verify_audio(folder, source, cache, pitch, selection=None):
     if state['schema'] != 2 or state['cache'] != str(cache.resolve()):
         raise ValueError('Wrong audio state schema/cache')
     duration, size = 0, 0
+    omissions = []
     for asset_id in ids:
         meta,script = item_paths(folder,asset_id)
         record = read_json(meta)
@@ -468,8 +485,13 @@ def verify_audio(folder, source, cache, pitch, selection=None):
             raise ValueError(asset_id+': audio state/receipt mismatch or missing audio')
         duration += receipt['audio']['duration']
         size += receipt['audio']['bytes']
-    return {'status':'machine-checked','items':len(ids),'duration':duration,'bytes':size,
-            'profile':config,'networkRequests':0,'listeningReview':'pending'}
+        if receipt.get('approvedOmission'):
+            omissions.append({'id':asset_id,'inputHash':key,'audioHash':receipt['audioHash'],
+                              'approval':receipt['approvedOmission']})
+    return {'status':'machine-checked-with-approved-omission' if omissions else 'machine-checked',
+            'items':len(ids),'duration':duration,'bytes':size,
+            'profile':config,'networkRequests':0,'listeningReview':'pending',
+            **({'approvedOmissions':omissions} if omissions else {})}
 
 
 def main(argv=None):
