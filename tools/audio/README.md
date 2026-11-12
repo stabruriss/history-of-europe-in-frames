@@ -6,13 +6,13 @@
 
 - 云健 `zh-CN-YunjianNeural`，`pitch=+0Hz`、`rate=+0%`、`volume=+0%`；网页初始1×。
 - `prepare`、`validate`、`verify-audio` 与 dry-run 均离线。只有 `synthesize --execute` 才导入 Edge SDK、发送文字，且必须显式限定 `--selection` 或 `--only`。
-- **覆盖计划不是默认生成/上传授权。** 当前 `src/audio_scope.json` 已覆盖冻结原稿的18条主线（史前、希腊、罗马、埃及、中世纪西欧、东罗马、十字军、北欧、东欧、美洲、中国、西班牙、中东、基督教、德意志、意大利、英国、法国）及14个动力专题，policy3 共5186段（5173个唯一MP3文件）。英法批补1353段；上线成功后已获准自动推进低地98段及新增/改稿补漏，数字按该顺序扣除共享片段。
+- **覆盖计划不是默认生成/上传授权。** 当前 `src/audio_scope.json` 覆盖最新定稿全部19条主线及14个动力专题，policy3 共5286段（5273个唯一MP3文件）。最后一批108份输入＝低地98＋8份实际改稿＋2则西班牙新增补充；5178份同文同配置直接复用，最终净增100项。当前源严格核对无pending/stale；这是资产齐备，不是宣称逐字人工听审或原稿零瑕疵。
 - 旧policy2的220段音频与2462份文本留作历史记录，不能冒充新规成品。新库换目录，共享缓存按实际朗读输入复用。
 - Node VM 只用于可信本地源数据，不是恶意 JavaScript 的安全沙箱。不改原文、不付费兜底、不自动重试或扩展到全书。
 
 ## 目录与版本
 
-代码、测试在 `project-files/`，素材与MP3必须在其外，当前库为 `work/v35/audio_library/v112-policy3-r3/`；旧 r2 库与录音留档。
+代码、测试在 `project-files/`，素材与MP3必须在其外，当前库为 `work/v35/audio_library/v112-policy3-final-r4/`，冻结源/工具为 `work/v35/audio_runs/v112-final-source/`（67aa817）；旧 r3/r2 库、收据与录音均留档。
 
 ```text
 素材库/
@@ -64,7 +64,7 @@
 
 ## 离线准备与验证
 
-只需Python3.9+与Node。以下在代理工作区根目录执行。第3批后使用源码树外的 detached worktree 固定语料，显式传 `--source`，避免后续改稿影响正在制作的存量音频。
+只需Python3.9+与Node。以下保留第3批的历史命令示例，在代理工作区根目录执行；当前全书库/源见上方。使用源码树外的 detached worktree 固定语料及工具，显式传 `--source`，避免后续改稿影响正在制作的音频。
 
 ```sh
 PIPE=project-files/tools/audio/pipeline.py
@@ -101,7 +101,7 @@ python3 "$PIPE" verify-audio --source "$SOURCE" --library "$LIB" --selection "$S
 - MP3须单音轨、24kHz/mono、正时长，`ffmpeg -xerror`完整解码；核对字节SHA、WordBoundary文字覆盖/时间顺序及尾部。复用也重查这些条件，不仅看文件是否存在。
 - 边界文字比较允许空白、标点与兼容字形正规化差别，不做音频内容识别。非末段重复/静音、发音、语义完整性可能绕过机器检查；**machine-checked不等于人工听审**，listeningReview另记pending。
 - 圈码、外文、特殊字符出错要查证，不为通过验收删字。不能擅自把未获准的其他线路拿来试音。
-- **老无最新规则：除非整段空白或乱码，一两个字词不能挡整批上线。** 这种覆盖差异自动记 `qualityWarnings`、状态 `machine-checked-with-coverage-warning`，复用现有录音，不逐个姓名请求批准或重录；正文/实际边界不改，不冒充逐字吻合。“カーゾン”现已按此保留原音。“の”的既有 `approved_omissions.json` 记录保留向后兼容。整段空/完全无关的边界、坏哈希/格式/配置、解码及时序问题仍需处理；边界元数据不是ASR或人工听审。
+- **老无最新规则：除非整段空白或乱码，一两个字词不能挡整批上线。** 这种覆盖差异自动记 `qualityWarnings`、状态 `machine-checked-with-coverage-warning`，复用现有录音，不逐个姓名请求批准或重录；正文/实际边界不改，不冒充逐字吻合。英法批曾按此保留原“カーゾン”录音；后来v99真正改稿为“寇松”、“の”改成“的”，最终批按新文本配音，原录音/失败证据与旧 `approved_omissions.json` 记录仍留档。整段空/完全无关的边界、坏哈希/格式/配置、解码及时序问题仍需处理；边界元数据不是ASR或人工听审。
 
 ### 同文重录
 
@@ -111,7 +111,9 @@ python3 "$PIPE" verify-audio --source "$SOURCE" --library "$LIB" --selection "$S
 
 手动上一项、下一项、列表点选及系统媒体切歌，直接进入选中幕的正文，不播节题；可选条目仍直接播放自身。点击朗读开始和自然接播到新节时保留节题前奏，同节自然接播不重复。切音频不翻动阅读页面。
 
-基督教优先批补720段（全线939段，另219段此前已发布）；十字军254段已齐，不重复制作。v97/v98新增的 `history-spain-1492/3/box/1`、`history-spain-1492/0/box/2` 仍为 pending，留末批与新增/改稿集中补录；读到缺段时按新播放器规则播暂缺提示。
+最终5286项已覆盖低地及v97/v98两则西班牙新增补充（`history-spain-1492/3/box/1`、`history-spain-1492/0/box/2`），它们不再是暂缺提示。今后新改稿仍按普通缺段机制过渡。
+
+已记录的非阻断源稿问题：`history-britain-lords/3/box/0` 与 `history-britain-suffrage-1918/5/box/0` 使用未渲染的Markdown管道表，作为普通文字进入旧录音，属于表格排除的存量格式例外；`history-spain-1492/3/box/1` 有“阿梅斯（Metz）托”误括注。保留真实输入/录音与问题记录，不伪报全书范围零问题，不为此卡本轮发布；后续由正常内容修订处理。新稿表格使用HTML `<table>`，核心论点另写在表外平文。
 
 manifest使用schema2/policy3；每项仍为url/duration/bytes/textHash/inputHash/audioHash。组装器从**当前源**派生 `tracks[bodyId] = {bodyId,titleId,extras,people}`，忽略来稿清单自带的播放计划，保留缺少音频的预期片段ID。
 
