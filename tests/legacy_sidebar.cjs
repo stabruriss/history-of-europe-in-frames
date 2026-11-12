@@ -3,6 +3,8 @@
 // What readers actually see is tested by verify-metro.js, which does not load this file.
 require('./chrome_guard.cjs');
 const puppeteer = require('puppeteer-core');
+// The reader toggle is shown here only. It sits in the reader's top-right corner, where the reading bar's option chips
+// (positioned, later in the page) can reach on a 390px phone, so it is raised above them to stay clickable.
 const showSidebar = () => {
   const css = `
     body.history-mode #side{display:flex!important}
@@ -10,7 +12,7 @@ const showSidebar = () => {
     #networkMode,#ridePanel{display:none!important}
     body.history-mode #sceneRail:not([hidden]){display:flex!important}
     .scene-passage.off-station{display:block!important}
-    #readerToggle{display:block!important}`;
+    #readerToggle{display:block!important;z-index:3}`;
   const add = () => {
     if (!document.documentElement) return false;
     const style = document.createElement('style');

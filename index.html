@@ -1652,9 +1652,11 @@ body{padding-top:var(--audio-height);padding-bottom:var(--audio-bottom)}
  #audioSpeed{width:calc(100% - 32px);margin:10px 16px 8px;height:28px}
  #audioQueuePanel{max-height:72dvh}
  #audioQueue button{min-height:54px}
- #readerAudioActions{padding:6px 14px;gap:6px 8px}
- #readerAudioActions button{font-size:13px;padding:4px 13px;min-height:44px}
- .audio-reader-options .audio-opt{height:44px;font-size:13.5px}
+ /* One row even in a 326px landscape reader: the targets stay 44px tall, only the side padding is tighter. */
+ #readerAudioActions{padding:6px 12px;gap:6px}
+ #readerAudioActions button{font-size:13px;padding:4px 10px;min-height:44px}
+ .audio-reader-options{gap:6px}
+ .audio-reader-options .audio-opt{height:44px;font-size:13.5px;padding:0 10px 0 8px;gap:5px}
  #audioAvailability{font-size:9px}
  body.history-mode:has(#audioPlayer:not([hidden])) #mapwrap{grid-template-rows:clamp(110px,20dvh,180px) minmax(0,1fr)}
  body.history-mode.map-min:has(#audioPlayer:not([hidden])) #mapwrap{grid-template-rows:0 minmax(0,1fr)}
