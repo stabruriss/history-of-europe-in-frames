@@ -35,6 +35,26 @@ const part = () => partIndex < 0 ? current()?.titlePart : current()?.parts[partI
 const clip = () => part()?.asset;
 const enabled = p => p?.group === 'extras' ? includeExtras : p?.group === 'people' ? includePeople : true;
 const isCurrentSource = () => Boolean(expectedURL) && audio.currentSrc === expectedURL;
+// 老无 2026-11-12: a locked Android phone must read on from clip to clip. Switching the element's src at every boundary
+// (ended → pause → load → play) lets Chrome's media session go idle while the page is hidden; the notification goes
+// and the page is frozen before the next clip starts. On Chromium the clips are therefore fed through Media Source
+// Extensions into one continuous stream: the next clip's bytes are appended ahead, and a boundary is only the playhead
+// moving on (no ended, no pause, no new src). Other browsers, file: previews, a stream that cannot go on (e.g. a fetch
+// that failed: it ends, and the element path retries and stops with a retry message) and suites that ask for it
+// (window.ATLAS_AUDIO_ENGINE = 'element') switch the element's src as before.
+const STREAMING = window.ATLAS_AUDIO_ENGINE !== 'element' && typeof MediaSource === 'function' &&
+  Boolean(navigator.userAgentData?.brands?.some(b => /Chromium/.test(b.brand))) && MediaSource.isTypeSupported('audio/mpeg');
+const streamable = url => STREAMING && /^(https?:|data:audio\/mpeg;)/.test(url);
+let stream = null;
+// The current clip's span on the element's timeline: [0, duration] for a plain src, its place in the stream otherwise.
+function clipSpan() {
+  if (stream) {
+    const c = stream.cur;
+    return c && !stream.switching && audio.currentSrc === stream.url && c.ti === at && c.pi === partIndex ? c : null;
+  }
+  return isCurrentSource() && Number.isFinite(audio.duration) && audio.duration > 0 ? {start:0, end:audio.duration} : null;
+}
+const clipPosition = () => { const s = clipSpan(); return s ? Math.min(s.end - s.start, Math.max(0, audio.currentTime - s.start)) : 0; };
 
 function syncOptionInputs() {
   for (const id of extrasControls) $(id).checked = includeExtras;
@@ -118,11 +138,33 @@ function displayTitle() {
   const title = String((partIndex < 0 ? t.chapter : p?.kind === 'body' ? t.title : p?.label) || '').trim() || t.title || FALLBACK_TITLE;
   return gap ? title + '（音频暂缺）' : title;
 }
+// The line above the title: the section being read. While its own title is the prelude, say so instead of repeating it.
+function kickerText() {
+  const t = current(); if (!t) return '';
+  if (partIndex < 0) return '节题';
+  return t.kind === 'topic' ? '专题' : String(t.chapter || '').trim();
+}
+// What natural playback reaches next, mirroring advance(): the next enabled part here, else (on a line) the next
+// station, whose section title comes first when it opens a new section. Null at the end of the playlist.
+function nextStep() {
+  const t = current(); if (!t || finished) return null;
+  const parts = queue[at].parts;
+  for (let i = partIndex + 1; i < parts.length; i++) if (enabled(parts[i])) return {track:t, partIndex:i, part:parts[i]};
+  if (mode !== 'line' || at >= queue.length - 1) return null;
+  const n = queue[at + 1];
+  if (n.kind === 'history' && n.entryId !== t.entryId && n.titlePart) return {track:n, partIndex:-1, part:n.titlePart};
+  return {track:n, partIndex:0, part:n.parts[0] || null};
+}
+function nextText() {
+  const s = nextStep(); if (!s) return '';
+  const title = s.partIndex < 0 ? '下一节 · ' + s.track.chapter : !s.part || s.part.kind === 'body' ? s.track.title : s.part.label;
+  return String(title || '').trim() + (s.part && !s.part.asset ? '（暂缺）' : '');
+}
 // Exact remaining listening time from here, mirroring advance(): preludes on entering a section, one notice per run of gaps.
 function remainingSeconds() {
   const t = current(); if (!t || finished) return 0;
-  const p = part(), whole = p?.asset ? p.asset.duration : gap ? NOTICE?.duration || 0 : 0;
-  let total = isCurrentSource() && Number.isFinite(audio.duration) ? Math.max(0, audio.duration - audio.currentTime) : whole;
+  const p = part(), whole = p?.asset ? p.asset.duration : gap ? NOTICE?.duration || 0 : 0, span = clipSpan();
+  let total = span ? Math.max(0, span.end - span.start - clipPosition()) : whole;
   let ti = at, pi = partIndex, afterGap = gap;
   for (;;) {
     const parts = queue[ti].parts; let next = -1;
@@ -212,8 +254,9 @@ function markQueue(items = playlistItems()) {
   $('audioQueue').querySelectorAll('button').forEach((b, i) => b.setAttribute('aria-current', String(i === active)));
 }
 function progress() {
-  const duration = isCurrentSource() && Number.isFinite(audio.duration) ? audio.duration : (clip()?.duration || (gap ? NOTICE?.duration : 0) || 0);
-  const position = isCurrentSource() ? audio.currentTime : 0;
+  const span = clipSpan();
+  const duration = span ? span.end - span.start : (clip()?.duration || (gap ? NOTICE?.duration : 0) || 0);
+  const position = span ? clipPosition() : 0;
   const label = partLabel(), fraction = duration ? Math.min(1, position / duration) : 0;
   $('audioElapsed').textContent = time(position);
   $('audioDuration').textContent = time(duration);
@@ -226,10 +269,10 @@ function progress() {
     const items = playlistItems(), pos = currentPlaylistIndex(items);
     $('audioQueueMeta').textContent = `${Math.max(1, pos + 1)}/${items.length} · 剩余 ${left}`;
   }
-  if ('mediaSession' in navigator && 'setPositionState' in navigator.mediaSession && isCurrentSource() && Number.isFinite(audio.duration) && audio.duration > 0) {
-    try { navigator.mediaSession.setPositionState({duration:audio.duration, playbackRate:speed, position:Math.min(audio.currentTime, audio.duration)}); } catch {}
+  if ('mediaSession' in navigator && 'setPositionState' in navigator.mediaSession && span && duration > 0) {
+    try { navigator.mediaSession.setPositionState({duration, playbackRate:speed, position:Math.min(position, duration)}); } catch {}
   }
-  $('audioSeek').disabled = Boolean(error) || gap || !enabled(part()) || !isCurrentSource() || audio.readyState < 1 || !Number.isFinite(audio.duration) || audio.duration <= 0;
+  $('audioSeek').disabled = Boolean(error) || gap || !enabled(part()) || !isCurrentSource() || audio.readyState < 1 || !span || duration <= 0;
   $('audioSeek').setAttribute('aria-label', label + '进度');
   $('audioSeek').setAttribute('aria-valuetext', `${label} ${time(position)}，共 ${time(duration)}`);
 }
@@ -241,6 +284,9 @@ function status() {
   $('audioContext').textContent = `${state} · ${mode === 'line' ? line.name + '线' : t.kind === 'topic' ? '专题' : '本幕'} · ${Math.max(1, pos + 1)}/${items.length} · 共 ${time(total)}${gaps ? `（${gaps} 段暂缺）` : ''}`;
   const title = displayTitle();
   $('audioTitle').textContent = title; $('audioMiniTitle').textContent = title;
+  const kicker = kickerText(), next = nextText();
+  for (const id of ['audioKicker', 'audioMiniKicker']) { $(id).textContent = kicker; $(id).hidden = !kicker; }
+  for (const id of ['audioUpNext', 'audioMiniUpNext']) { $(id).innerHTML = next ? '<b>NEXT:</b> ' + esc(next) : ''; $(id).hidden = !next; }
   $('audioTitle').setAttribute('aria-label', '定位朗读正文：' + t.title);
   $('audioPhase').textContent = partLabel();
   for (const id of ['audioCount', 'audioMiniCount']) $(id).textContent = `${Math.max(1, pos + 1)}/${items.length}`;
@@ -251,7 +297,7 @@ function status() {
     $(id).setAttribute('aria-label', toggleLabel); $(id).title = toggleLabel;
   }
   $('audioPrevious').disabled = pos <= 0;
-  $('audioNext').disabled = pos < 0 || pos >= items.length - 1;
+  $('audioNext').disabled = pos < 0 || (partIndex >= 0 && pos >= items.length - 1);
   $('audioError').hidden = !error;
   $('audioError').textContent = error;
   markQueue(items);
@@ -303,8 +349,17 @@ function loadClip(index, {autoplay = true, offset = 0, afterGap = false} = {}) {
     if (afterGap || !NOTICE) { advance({autoplay, afterGap:true}); return; }
     gap = true; pendingOffset = null;
   }
-  expectedURL = a ? a.url : NOTICE.url;
+  const url = a ? a.url : NOTICE.url;
   updateMetadata();
+  if (streamable(url)) {
+    pendingOffset = null;
+    streamLoad(url, offset);
+    applyRate(); status();
+    if (autoplay) play();
+    return;
+  }
+  dropStream();
+  expectedURL = url;
   // Only this selected part is loaded, also allowing a paused skip to expose its seek range.
   audio.preload = 'metadata';
   audio.src = expectedURL;
@@ -312,6 +367,158 @@ function loadClip(index, {autoplay = true, offset = 0, afterGap = false} = {}) {
   applyRate(); // load() resets playbackRate in some browsers, even with the same element.
   status();
   if (autoplay) play();
+}
+// ---- the continuous stream (see STREAMING) ----
+// What natural playback reaches after (ti, pi), mirroring advance() and loadClip(): the next enabled part, else the
+// next station of a line (its section title first when it opens a new section); a missing part becomes the notice,
+// and the rest of a run of missing parts is passed over. Null at the end of the playlist.
+function planNext(ti, pi, afterGap) {
+  for (let guard = 0; guard < 20000; guard++) {
+    const t = queue[ti]; if (!t) return null;
+    let next = -1;
+    for (let i = pi + 1; i < t.parts.length; i++) if (enabled(t.parts[i])) { next = i; break; }
+    if (next >= 0) pi = next;
+    else if (mode === 'line' && ti < queue.length - 1) { ti++; pi = queue[ti].kind === 'history' && queue[ti].entryId !== t.entryId ? -1 : 0; }
+    else return null;
+    const a = (pi < 0 ? queue[ti].titlePart : queue[ti].parts[pi])?.asset;
+    if (a) return {ti, pi, gap:false, url:a.url};
+    if (afterGap || !NOTICE) { afterGap = true; continue; }
+    return {ti, pi, gap:true, url:NOTICE.url};
+  }
+  return null;
+}
+async function clipBytes(url, signal) {
+  let r = await fetch(url, {credentials:'omit', signal});
+  // A failure the HTTP cache kept (a 404 without cache headers is reusable) must not outlive a retry.
+  if (!r.ok) r = await fetch(url, {cache:'reload', credentials:'omit', signal});
+  if (!r.ok) throw new Error('HTTP ' + r.status);
+  return r.arrayBuffer();
+}
+// SourceBuffer work runs one operation at a time, in order.
+function streamTask(s, fn) { const run = s.chain.catch(() => {}).then(fn); s.chain = run.catch(() => {}); return run; }
+function sbRun(s, op) {
+  return new Promise((resolve, reject) => {
+    const off = () => { s.sb.removeEventListener('updateend', done); s.sb.removeEventListener('error', bad); };
+    const done = () => { off(); resolve(); }, bad = () => { off(); reject(new Error('SourceBuffer error')); };
+    s.sb.addEventListener('updateend', done); s.sb.addEventListener('error', bad);
+    try { op(); } catch (e) { off(); reject(e); }
+  });
+}
+async function appendSeg(s, seg, bytes) {
+  // Sequence mode: each clip is placed right after the previous one, whatever its own timestamps.
+  const start = s.top;
+  await sbRun(s, () => s.sb.appendBuffer(bytes));
+  const b = s.sb.buffered;
+  seg.start = start; seg.end = b.length ? b.end(b.length - 1) : start; s.top = seg.end;
+  s.segs.push(seg);
+}
+function openStream() {
+  const ms = new MediaSource(), url = URL.createObjectURL(ms), old = stream;
+  const s = {ms, url, sb:null, segs:[], cur:null, top:0, gen:0, ended:false, switching:false, filling:false, fetchAbort:null};
+  s.chain = new Promise((resolve, reject) => ms.addEventListener('sourceopen', () => {
+    try { s.sb = ms.addSourceBuffer('audio/mpeg'); s.sb.mode = 'sequence'; resolve(); } catch (e) { reject(e); }
+  }, {once:true}));
+  stream = s;
+  audio.preload = 'auto';
+  audio.src = url;
+  if (old) { old.gen++; old.fetchAbort?.abort(); URL.revokeObjectURL(old.url); }
+  return s;
+}
+function dropStream() {
+  const s = stream; if (!s) return;
+  stream = null; s.gen++; s.fetchAbort?.abort();
+  setTimeout(() => URL.revokeObjectURL(s.url), 0);
+}
+// A selected clip: the first of a new stream, or a jump inside the current one (same element, same player, so a
+// lock-screen skip keeps the session too).
+function streamLoad(url, offset) {
+  const reuse = stream && audio.currentSrc === stream.url && stream.ms.readyState !== 'closed' && !audio.error;
+  const s = reuse ? stream : openStream();
+  const gen = ++s.gen, token = loadToken, seg = {ti:at, pi:partIndex, gap, url};
+  s.fetchAbort?.abort(); s.fetchAbort = new AbortController();
+  s.switching = true; s.cur = null; s.filling = false;
+  expectedURL = s.url;
+  const bytes = clipBytes(url, s.fetchAbort.signal);
+  bytes.catch(() => {});
+  streamTask(s, async () => {
+    if (s.sb.updating) s.sb.abort();
+    if (s.sb.buffered.length) await sbRun(s, () => s.sb.remove(0, Infinity));
+    s.sb.timestampOffset = s.top; s.segs = []; s.ended = false;
+    const data = await bytes;
+    if (gen !== s.gen || token !== loadToken) return;
+    await appendSeg(s, seg, data);
+  }).then(() => {
+    if (gen !== s.gen || token !== loadToken || s !== stream) return;
+    s.cur = seg; s.switching = false;
+    audio.currentTime = seg.start + Math.min(offset || 0, Math.max(0, seg.end - seg.start - .1));
+    status();
+    streamFill(s);
+  }, () => {
+    if (gen !== s.gen || token !== loadToken || s !== stream) return;
+    s.switching = false;
+    if (gap) advance({afterGap:true});
+    else fail(`无法加载${partLabel()}，已停住。请检查网络后按播放键重试；不会跳过本段。`);
+  });
+}
+// Keep up to two clips appended beyond the one playing. At the end of the playlist, or when the next clip cannot be
+// streamed (a file: preview) or fetched, the stream is ended: the element then fires ended after the current clip and
+// advance() takes over as before.
+function streamFill(s) {
+  if (s !== stream || s.switching || s.ended || s.filling || !s.cur) return;
+  if (s.segs.length - 1 - s.segs.indexOf(s.cur) >= 2) return;
+  const last = s.segs[s.segs.length - 1], n = planNext(last.ti, last.pi, last.gap), gen = s.gen;
+  const end = () => streamTask(s, () => {
+    if (gen === s.gen && s === stream && s.ms.readyState === 'open' && !s.sb.updating) { s.ms.endOfStream(); s.ended = true; }
+  });
+  if (!n || !streamable(n.url)) { end(); return; }
+  s.filling = true;
+  clipBytes(n.url, s.fetchAbort?.signal)
+    .then(data => streamTask(s, () => gen === s.gen && s === stream ? appendSeg(s, {ti:n.ti, pi:n.pi, gap:n.gap, url:n.url}, data) : null))
+    .then(() => { if (gen !== s.gen) return; s.filling = false; status(); streamFill(s); },
+          () => { if (gen !== s.gen) return; s.filling = false; end(); });
+}
+// The playhead has passed the end of the current clip: the next appended one becomes current, as advance() would.
+function streamCommit() {
+  const s = stream;
+  if (!s || s.switching || !s.cur || audio.currentSrc !== s.url) return;
+  let moved = false;
+  for (;;) {
+    const next = s.segs[s.segs.indexOf(s.cur) + 1];
+    if (!next || audio.currentTime < s.cur.end - .03) break;
+    s.cur = next; moved = true;
+  }
+  if (!moved) return;
+  const c = s.cur;
+  at = c.ti; partIndex = c.pi; phase = part()?.kind || 'body'; gap = c.gap; finished = false; error = ''; errorKind = '';
+  updateMetadata(); status();
+  // Played clips leave the buffer; the playing one and those appended ahead stay.
+  const before = s.segs.indexOf(c);
+  if (before > 0) {
+    s.segs.splice(0, before);
+    // remove() reopens an ended MediaSource: end it again, or the element would wait at the end instead of ending.
+    if (c.start > .1) streamTask(s, async () => {
+      if (s !== stream || s.switching) return;
+      await sbRun(s, () => s.sb.remove(0, c.start - .05));
+      if (s.ended && s.ms.readyState === 'open' && !s.sb.updating) s.ms.endOfStream();
+    }).catch(() => {});
+  }
+  streamFill(s);
+}
+// The options changed: what was appended ahead may no longer follow. Drop it and append afresh after the current clip.
+function streamRetrim() {
+  const s = stream;
+  if (!s || s.switching || !s.cur) return;
+  streamCommit();
+  const cur = s.cur, gen = ++s.gen;
+  s.fetchAbort?.abort(); s.fetchAbort = new AbortController(); s.filling = false;
+  s.segs.length = s.segs.indexOf(cur) + 1;
+  streamTask(s, async () => {
+    if (gen !== s.gen) return;
+    if (s.sb.updating) s.sb.abort();
+    s.segs.length = s.segs.indexOf(cur) + 1;
+    await sbRun(s, () => s.sb.remove(cur.end, Infinity));
+    s.sb.timestampOffset = cur.end; s.top = cur.end; s.ended = false;
+  }).then(() => { if (gen === s.gen) streamFill(s); }, () => {});
 }
 function updateMetadata() {
   const t = current();
@@ -351,7 +558,7 @@ function finishSelection() {
   audio.pause();
   if (!enabled(part())) {
     // A disabled final part may still have metadata/play/error events in flight.
-    expectedURL = ''; pendingOffset = null; audio.removeAttribute('src'); audio.load();
+    dropStream(); expectedURL = ''; pendingOffset = null; audio.removeAttribute('src'); audio.load();
   }
   status();
 }
@@ -370,7 +577,7 @@ function changeOptions(ev) {
   if (finished) { renderQueue(); status(); return; }
   const autoplay = wantsPlay;
   if (!enabled(part())) { advance({autoplay}); renderQueue(); status(); }
-  else { renderQueue(); status(); } // Never reload the title/body or rewind already-passed groups.
+  else { streamRetrim(); renderQueue(); status(); } // Never reload the title/body or rewind already-passed groups.
 }
 function start(continuous) {
   const t = reading(); if (!t) return;
@@ -386,7 +593,7 @@ function start(continuous) {
 function resume() {
   if (!current()) return;
   if (finished) { selectTrack(at); return; }
-  if (error || audio.error || !expectedURL) loadClip(partIndex, {offset:audio.error || !expectedURL ? 0 : audio.currentTime});
+  if (error || audio.error || !expectedURL) loadClip(partIndex, {offset:audio.error || !expectedURL ? 0 : clipPosition()});
   else play();
 }
 function syncScrim() {
@@ -417,14 +624,17 @@ function setQueueOpen(open, {focus = false} = {}) {
 }
 function seek(fraction) {
   if ($('audioSeek').disabled) return;
+  const span = clipSpan(); if (!span) return;
   finished = false;
-  audio.currentTime = Math.max(0, Math.min(audio.duration, audio.duration * fraction));
+  audio.currentTime = span.start + (span.end - span.start) * Math.max(0, Math.min(1, fraction));
   progress(); status();
 }
 $('audioRead').onclick = () => start(false);
 $('audioReadLine').onclick = () => start(true);
 $('audioPrevious').onclick = () => selectPlaylistItem(currentPlaylistIndex() - 1);
-$('audioNext').onclick = () => selectPlaylistItem(currentPlaylistIndex() + 1);
+// While the section title plays, the scene's own body has not started: 下一项 goes to it, as NEXT says.
+const forwardIndex = () => currentPlaylistIndex() + (partIndex < 0 ? 0 : 1);
+$('audioNext').onclick = () => selectPlaylistItem(forwardIndex());
 $('audioToggle').onclick = $('audioMiniToggle').onclick = () => wantsPlay ? pause() : resume();
 $('audioQueueToggle').onclick = $('audioMiniQueue').onclick = () => setQueueOpen($('audioQueuePanel').hidden);
 $('audioSpeedButton').onclick = () => setSpeedOpen($('audioSpeedPanel').hidden);
@@ -473,19 +683,21 @@ audio.addEventListener('loadedmetadata', () => {
   if (pendingOffset !== null) { audio.currentTime = Math.min(pendingOffset, Number.isFinite(audio.duration) ? audio.duration : pendingOffset); pendingOffset = null; }
   status();
 });
-audio.addEventListener('playing', () => { if (isCurrentSource()) { waiting = false; status(); warmNext(); } });
+audio.addEventListener('playing', () => { if (isCurrentSource()) { waiting = false; status(); if (!stream) warmNext(); } });
 audio.addEventListener('waiting', () => { if (isCurrentSource()) { waiting = true; status(); } });
 for (const event of ['pause', 'durationchange']) audio.addEventListener(event, status);
-audio.addEventListener('timeupdate', progress);
+audio.addEventListener('timeupdate', () => { streamCommit(); progress(); });
 audio.addEventListener('error', () => {
   if (finished || !isCurrentSource() || !audio.error) return;
+  dropStream(); // A failed stream is not reused; the next load starts afresh.
   // A published recording that fails to load is a network/server fault: stop and offer a retry.
   // The inline notice itself cannot be missing; should a browser still refuse it, carry on reading.
   if (gap) advance({afterGap:true});
   else if (enabled(part())) fail(`无法加载${partLabel()}，已停住。请检查网络后按播放键重试；不会跳过本段。`);
 });
 audio.addEventListener('ended', () => {
-  if (!isCurrentSource() || !audio.ended || !wantsPlay || error) return;
+  if (!isCurrentSource() || !audio.ended || !wantsPlay || error || stream?.switching) return;
+  streamCommit(); // A stream only ends after its last clip, or when it cannot go on: advance() takes over from there.
   advance({afterGap:gap});
 });
 // Desktop: the bar pushes the page down. Phone: the strip's own height is reserved in CSS; the open card overlays.
@@ -494,7 +706,7 @@ new ResizeObserver(measurePlayer).observe(player);
 matchMedia('(max-width:820px)').addEventListener('change', () => { syncScrim(); measurePlayer(); });
 setSpeed(speed);
 if ('mediaSession' in navigator) {
-  for (const [action, handler] of Object.entries({play:resume, pause, previoustrack:() => selectPlaylistItem(currentPlaylistIndex() - 1), nexttrack:() => selectPlaylistItem(currentPlaylistIndex() + 1), seekto:details => { if (Number.isFinite(audio.duration)) seek(details.seekTime / audio.duration); }})) {
+  for (const [action, handler] of Object.entries({play:resume, pause, previoustrack:() => selectPlaylistItem(currentPlaylistIndex() - 1), nexttrack:() => selectPlaylistItem(forwardIndex()), seekto:details => { const span = clipSpan(); if (span) seek(details.seekTime / (span.end - span.start)); }})) {
     try { navigator.mediaSession.setActionHandler(action, handler); } catch {} // Optional browser/OS support.
   }
 }
@@ -502,5 +714,6 @@ if ('mediaSession' in navigator) {
 window.atlasAudio = Object.freeze({state:() => ({queue:queue.map(t => t.key), playlist:playlistItems().map(x => x.part.id), index:at, mode, line:line?.id || null, phase, gap,
   partId:part()?.id || '', partIndex, partLabel:part()?.label || '', includeExtras, includePeople, selectedDuration:selectedDuration(current()),
   title:current()?.title || '', playing:wantsPlay && !audio.paused && !audio.ended, wantsPlay, finished, speed,
-  src:audio.currentSrc, currentTime:audio.currentTime, error, frozen:Object.isFrozen(queue) && queue.every(t => Object.isFrozen(t) && Object.isFrozen(t.parts) && t.parts.every(Object.isFrozen))})});
+  src:audio.currentSrc, currentTime:audio.currentTime, error, engine:stream ? 'stream' : 'element', streaming:STREAMING,
+  clip:(span => span ? {start:span.start, end:span.end} : null)(clipSpan()), ahead:stream?.cur ? stream.segs.length - 1 - stream.segs.indexOf(stream.cur) : 0, streamEnded:Boolean(stream?.ended), frozen:Object.isFrozen(queue) && queue.every(t => Object.isFrozen(t) && Object.isFrozen(t.parts) && t.parts.every(Object.isFrozen))})});
 })();

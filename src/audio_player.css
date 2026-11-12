@@ -38,6 +38,10 @@ body{padding-top:var(--audio-height);padding-bottom:var(--audio-bottom)}
 .audio-player-inner{display:grid;grid-template-columns:minmax(200px,1fr) minmax(380px,1.35fr) auto;gap:0 28px;align-items:center;padding:8px 24px;min-height:84px;background:linear-gradient(180deg,var(--audio-card),var(--audio-card2));border-bottom:1px solid var(--rule);box-shadow:0 3px 12px #2a201819}
 .audio-meta{min-width:0}
 #audioPlayer #audioTitle{display:block;max-width:100%;text-align:left;font:700 17px/1.4 var(--serif);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.audio-kicker,.audio-next{display:block;max-width:100%;font:500 12px/1.35 var(--serif);color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+/* The section line in the accent red of the first mock (老无 2026-11-12). */
+.audio-kicker{font-size:11.5px;letter-spacing:.05em;color:var(--accent)}
+.audio-next b{font:700 10.5px/1 var(--audio-num);letter-spacing:.06em;color:var(--ink)}
 @media(hover:hover){#audioPlayer #audioTitle:hover{text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}}
 #audioError{margin:2px 0 0;font:12px/1.5 var(--serif);color:var(--accent)}
 .audio-transport{display:flex;flex-direction:column;gap:2px;min-width:0}
@@ -94,7 +98,9 @@ body{padding-top:var(--audio-height);padding-bottom:var(--audio-bottom)}
  .audio-mini-line{position:absolute;left:0;right:0;top:0;height:3px;background:var(--audio-track)}
  .audio-mini-line i{display:block;height:100%;width:0;background:var(--ink)}
  #audioPlayer #audioExpand{min-width:0;height:52px;text-align:left}
- #audioMiniTitle{display:block;font:700 15px/1.4 var(--serif);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+ #audioMiniTitle{display:block;font:700 14.5px/1.3 var(--serif);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+ #audioExpand .audio-kicker,#audioExpand .audio-next{font-size:11px;line-height:1.3}
+ #audioExpand .audio-next b{font-size:9.5px}
  .audio-player-inner{display:none}
  #audioPlayer.audio-expanded .audio-mini{display:none}
  #audioPlayer.audio-expanded .audio-player-inner{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"collapse collapse" "title remaining" "transport transport" "options options";gap:8px 12px;align-items:center;min-height:0;padding:0 18px calc(16px + env(safe-area-inset-bottom));border:0;border-radius:20px 20px 0 0;box-shadow:0 -14px 34px -14px rgba(42,32,24,.6)}

@@ -161,6 +161,8 @@ print(json.dumps({'manifest':manifest,'report':report}, ensure_ascii=False))
   const defaultPage = assemble('default');
   browser = await puppeteer.launch({executablePath:process.env.CHROME_PATH || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', headless:true});
   const p = await browser.newPage();
+  // These checks drive the element path (one src per clip); the continuous stream has its own checks below.
+  await p.evaluateOnNewDocument(() => { window.ATLAS_AUDIO_ENGINE = 'element'; });
   // Phones keep player controls in a card behind the strip; speed sits in its own panel. Open them before use.
   const revealControl = selector => p.evaluate(sel => {
     const el = document.querySelector(sel), shown = e => e.getClientRects().length > 0, open = id => document.getElementById(id);
@@ -365,19 +367,25 @@ print(json.dumps({'ids':ids, 'hashes':hashes, 'kinds':kinds,
   assert.equal(await p.evaluate(() => navigator.mediaSession.metadata.title), sectionTitle);
   assert.equal(await p.$eval('#audioCount', e => e.textContent), '1/1');
   assert.match(await p.$eval('#audioRemaining', e => e.textContent), /^-\d\d:\d\d:\d\d$/);
-  for (const id of ['audioPrevious','audioNext']) assert.equal(await p.$eval('#' + id, e => e.disabled), true);
+  assert.equal(await p.$eval('#audioPrevious', e => e.disabled), true);
+  assert.equal(await p.$eval('#audioNext', e => e.disabled), false, 'During the section title, 下一项 goes to this scene body');
+  assert.equal(await p.$eval('#audioKicker', e => e.textContent), '节题', 'While the section title plays, the line above says so instead of repeating it');
+  for (const id of ['audioUpNext', 'audioMiniUpNext']) assert.equal(await p.$eval('#' + id, e => e.hidden ? null : e.textContent), 'NEXT: ' + sceneTitle, 'NEXT names the body after the section title');
   assert.match(await p.$eval('#audioPhase', e => e.textContent), /前奏/);
   await p.evaluate(() => { window.sessionStates = []; });
   await finishClip(p); await stage(p, 0, 'body');
   assert(!(await p.evaluate(() => window.sessionStates)).includes('paused'), 'A clip boundary must not report a paused session to the OS');
   assert.equal(await p.$eval('#audioTitle', e => e.textContent), sceneTitle, 'The scene body shows its own scene title');
+  for (const id of ['audioKicker', 'audioMiniKicker']) assert.equal(await p.$eval('#' + id, e => e.textContent), sectionTitle, 'The section title sits above the scene title');
+  for (const id of ['audioUpNext', 'audioMiniUpNext']) assert.equal(await p.$eval('#' + id, e => e.hidden), true, 'No NEXT after the last item');
   assert.equal(await p.evaluate(() => navigator.mediaSession.metadata.title), sceneTitle);
   assert.equal((await state(p)).finished, false);
   assert.match(await p.$eval('#audioSeek', e => e.getAttribute('aria-label')), /正文/);
   await finishClip(p); await p.waitForFunction(() => atlasAudio.state().finished);
   assert.equal((await state(p)).queue.length, 1);
   await p.click('#audioToggle'); await stage(p, 0, 'title');
-  pass('Single middle scene plays its section title first; real MP3 ended enters body, then stops; replay includes title');
+  await p.click('#audioNext'); await stage(p, 0, 'body');
+  pass('Single middle scene plays its section title first; real MP3 ended enters body, then stops; replay includes title; 下一项 skips the title into the body');
 
   await p.click('#audioReadLine'); await stage(p, 1, 'title');
   let before = await state(p);
@@ -412,6 +420,7 @@ print(json.dumps({'ids':ids, 'hashes':hashes, 'kinds':kinds,
   const browsing = await browseState(p), manualRequests = requests.length;
   await p.click('#audioPrevious'); await partReady(p, data.routes.prehistory[0]);
   await p.click('#audioNext'); await partReady(p, data.routes.prehistory[1]);
+  assert.equal(await p.$eval('#audioUpNext', e => e.textContent), await p.evaluate(key => { const e = ENTRIES.find(x => x.id === key.split('/')[0]); return 'NEXT: 下一节 · ' + e.title + (AUDIO_MANIFEST.assets[e.id + '/title'] ? '' : '（暂缺）'); }, data.routes.prehistory[2]), 'Entering a new section, NEXT names the section title that plays first');
   await p.click('#audioQueueToggle');
   assert.equal(await p.$$eval('#audioQueue button', a => a.length), data.routes.prehistory.length);
   await p.click('[data-audio-index="2"]'); await partReady(p, data.routes.prehistory[2]);
@@ -1182,6 +1191,110 @@ print(json.dumps({'ids':ids, 'hashes':hashes, 'kinds':kinds,
   assert.equal(await p.$eval('#readerGrip', e => Number(e.getAttribute('aria-valuenow'))), gripWidth);
   assert.deepEqual(await browseState(p), editorBrowse); await unchangedAudio(editorAudio, 'Separator');
   pass('Text input, textarea, contentEditable, select and explicitly focused separator keep native editing keys');
+
+  // The continuous stream, the default on Chromium (老无 2026-11-12: a locked Android phone stopped at every boundary).
+  // Every check above runs the element path (window.ATLAS_AUDIO_ENGINE = 'element'); these run the stream itself.
+  {
+    const s = await browser.newPage();
+    s.setDefaultTimeout(20000);
+    s.on('pageerror', e => errors.push(String(e)));
+    await s.setRequestInterception(true);
+    s.on('request', r => /^https?:/.test(r.url()) && !r.url().startsWith('http://127.0.0.1:') ? r.abort() : r.continue());
+    await s.evaluateOnNewDocument(() => {
+      window.streamEvents = []; window.sessionStates = []; window.metaTitles = [];
+      document.addEventListener('DOMContentLoaded', () => {
+        const a = document.getElementById('atlasAudioElement');
+        for (const type of ['emptied', 'loadstart', 'pause', 'ended']) a.addEventListener(type, () => window.streamEvents.push(type));
+      });
+      const proto = Object.getPrototypeOf(navigator.mediaSession);
+      const state = Object.getOwnPropertyDescriptor(proto, 'playbackState'), meta = Object.getOwnPropertyDescriptor(proto, 'metadata');
+      Object.defineProperty(navigator.mediaSession, 'playbackState', {configurable:true, get() { return state.get.call(this); }, set(v) { window.sessionStates.push(v); state.set.call(this, v); }});
+      Object.defineProperty(navigator.mediaSession, 'metadata', {configurable:true, get() { return meta.get.call(this); }, set(v) { window.metaTitles.push(v?.title); meta.set.call(this, v); }});
+    });
+    await s.setViewport({width:1440, height:960});
+    const dump = async () => JSON.stringify(await s.evaluate(() => { const a = document.getElementById('atlasAudioElement'), t = atlasAudio.state();
+      return {t:{engine:t.engine, partId:t.partId, gap:t.gap, clip:t.clip, ahead:t.ahead, streamEnded:t.streamEnded, playing:t.playing, wantsPlay:t.wantsPlay, error:t.error, finished:t.finished},
+        el:{paused:a.paused, ended:a.ended, rs:a.readyState, ct:a.currentTime, dur:a.duration, err:a.error?.code, buf:Array.from({length:a.buffered.length}, (_, i) => [a.buffered.start(i), a.buffered.end(i)])}, events:window.streamEvents.slice(-12)}; }));
+    const at = (id, isGap) => s.waitForFunction((id, g) => { const t = atlasAudio.state(); return t.engine === 'stream' && t.partId === id && t.gap === g && t.playing && t.clip; }, {}, id, isGap)
+      .catch(async e => { console.log('STREAM DEBUG waiting for', id, isGap, await dump()); throw e; });
+    // Like a listener reaching the end of the clip: the playhead runs on into what was appended ahead.
+    const toEnd = async () => { await s.waitForFunction(() => atlasAudio.state().ahead >= 1);
+      await s.evaluate(() => { const t = atlasAudio.state(); document.getElementById('atlasAudioElement').currentTime = t.clip.end - .3; }); };
+    const since = () => s.evaluate(() => ({events:window.streamEvents.length, states:window.sessionStates.length, titles:window.metaTitles.length}));
+    const after = mark => s.evaluate(m => ({events:window.streamEvents.slice(m.events), states:window.sessionStates.slice(m.states), titles:window.metaTitles.slice(m.titles)}), mark);
+
+    // 1. A line read across a section title and a missing part: one src, no pause/ended, the OS title moves on.
+    const route = data.routes.prehistory, gapAt = route.indexOf('history-farming/1');
+    await s.goto(url('missing-later') + '#history-farming/0', {waitUntil:'load'}); await ready(s);
+    assert.equal(await s.evaluate(() => atlasAudio.state().streaming), true, 'Chromium reads through the continuous stream');
+    await s.click('#audioReadLine');
+    await at('history-farming/title', false);
+    const src = await s.evaluate(() => document.getElementById('atlasAudioElement').currentSrc), mark = await since();
+    assert.match(src, /^blob:/);
+    const steps = [['history-farming/0', false], ['history-farming/1', true]];
+    const following = route[gapAt + 1];
+    if (following) steps.push(following.split('/')[0] === 'history-farming' ? [following, false] : [following.split('/')[0] + '/title', false]);
+    for (const [id, isGap] of steps) {
+      const before = await s.evaluate(() => atlasAudio.state());
+      if (before.gap) await s.waitForFunction(() => atlasAudio.state().ahead >= 1); // The notice plays out; it cannot be dragged.
+      else await toEnd();
+      await at(id, isGap);
+    }
+    const crossed = await after(mark);
+    assert.deepEqual(crossed.events, [], 'Crossing clips never pauses, ends or reloads the element');
+    assert(!crossed.states.includes('paused'), 'The OS session is never told paused between clips');
+    assert.equal(await s.evaluate(() => document.getElementById('atlasAudioElement').currentSrc), src);
+    assert(crossed.titles.length >= steps.length, 'The lock-screen title follows every clip');
+    assert.equal(crossed.titles.at(-1), await s.$eval('#audioTitle', e => e.textContent));
+    await s.click('#audioToggle');
+
+    // 2. Options changed mid-clip re-append what follows; skips jump inside the same stream; the playlist end ends it.
+    await s.goto(url('fixture') + '#' + optionalKey, {waitUntil:'load'}); await ready(s);
+    await s.click('#audioRead'); await at(optionalPlan.titleId, false);
+    await toEnd(); await at(optionalKey, false);
+    const one = await s.evaluate(() => document.getElementById('atlasAudioElement').currentSrc), mark2 = await since();
+    await s.click('#audioIncludeExtras');
+    await s.waitForFunction(() => atlasAudio.state().ahead >= 1);
+    await toEnd(); await at(optionalPlan.extras[0].id, false);
+    await s.click('#audioPrevious'); await at(optionalKey, false);
+    await s.click('#audioNext'); await at(optionalPlan.extras[0].id, false);
+    const skipped = await after(mark2);
+    assert.deepEqual(skipped.events.filter(e => e !== 'pause'), [], 'Skips stay in the same stream: no new src, no ended');
+    assert.equal(await s.evaluate(() => document.getElementById('atlasAudioElement').currentSrc), one);
+    assert(!skipped.states.includes('paused'));
+    const lastItem = await s.$$eval('#audioQueue button', b => b.length - 1);
+    await s.$eval(`#audioQueue [data-audio-item="${lastItem}"]`, b => b.click());
+    await s.waitForFunction(() => atlasAudio.state().playing && atlasAudio.state().clip);
+    await s.evaluate(() => { const t = atlasAudio.state(); document.getElementById('atlasAudioElement').currentTime = t.clip.end - .3; });
+    await s.waitForFunction(() => atlasAudio.state().finished);
+    assert.equal((await after(mark2)).events.filter(e => e === 'ended').length, 1, 'The end of the playlist ends the stream once');
+    assert.equal(await s.evaluate(() => navigator.mediaSession.playbackState), 'paused');
+
+    // 3. A clip that cannot be fetched ahead: the stream ends after what it holds, the element path retries it once
+    //    and stops on it with the retry message; the play button then reads it.
+    await s.goto(url('fixture') + '#history-migration/0', {waitUntil:'load'}); await ready(s);
+    const failing = route[3];
+    failedMedia.add(failing);
+    await s.click('#audioReadLine'); await at('history-migration/title', false);
+    for (let i = 0; i < 12 && !(await state(s)).error; i++) {
+      const now = await state(s);
+      // Wait until the clips ahead are appended, or the stream has given up on the next one and ended.
+      await s.waitForFunction(() => atlasAudio.state().error || (atlasAudio.state().clip && (atlasAudio.state().ahead >= 1 || atlasAudio.state().streamEnded)));
+      if ((await state(s)).error) break;
+      await s.evaluate(() => { const t = atlasAudio.state(); document.getElementById('atlasAudioElement').currentTime = t.clip.end - .3; });
+      await s.waitForFunction(p => atlasAudio.state().error || atlasAudio.state().partId !== p, {}, now.partId)
+        .catch(async e => { console.log('STREAM DEBUG fetch-failure walk', failing, await dump()); throw e; });
+    }
+    await s.waitForFunction(() => Boolean(atlasAudio.state().error));
+    const stopped = await state(s);
+    assert.equal(stopped.partId, failing, 'It stops on the clip that could not be fetched, never past it');
+    assert.match(await s.$eval('#audioError', e => e.textContent), /不会跳过/);
+    failedMedia.delete(failing);
+    await s.click('#audioToggle'); await at(failing, false);
+    await s.click('#audioToggle');
+    await s.close();
+  }
+  pass('Continuous stream (Chromium default): clips, section titles and the gap notice follow in one src without pause/ended or a paused OS session; the lock-screen title moves on; options re-append; skips stay in the stream; the end ends it once; a clip that cannot be fetched stops with retry');
 
   // Optional handoff smoke: run with AUDIO_PLAYER_SMOKE_MANIFEST=/absolute/local-or-Blob-manifest.json.
   // It is a separate preview, never the fixture or release manifest. No promise of real-device lock-screen coverage.

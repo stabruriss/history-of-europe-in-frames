@@ -208,14 +208,16 @@ body.resizing-reader #map{pointer-events:none}
   <!-- 老无 2026-11-12: a standard player. Phones get a bottom strip that opens into the full card. -->
   <div id="audioMini" class="audio-mini">
     <div class="audio-mini-line" aria-hidden="true"><i id="audioMiniProgress"></i></div>
-    <button id="audioExpand" type="button" aria-expanded="false" aria-controls="audioCard" aria-label="展开播放器"><b id="audioMiniTitle"></b></button>
+    <button id="audioExpand" type="button" aria-expanded="false" aria-controls="audioCard" aria-label="展开播放器"><span id="audioMiniKicker" class="audio-kicker"></span><b id="audioMiniTitle"></b><span id="audioMiniUpNext" class="audio-next" hidden></span></button>
     <button id="audioMiniToggle" type="button" class="audio-round" aria-label="播放"></button>
     <button id="audioMiniQueue" type="button" class="audio-list" aria-label="播放列表"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h13v2H3zm0 5h13v2H3zm0 5h9v2H3zm14-2.5v7l5.5-3.5z"/></svg><span id="audioMiniCount"></span></button>
   </div>
   <div id="audioCard" class="audio-player-inner">
     <button id="audioCollapse" type="button" aria-label="收起播放器"><span aria-hidden="true"></span></button>
     <div class="audio-meta">
+      <span id="audioKicker" class="audio-kicker"></span>
       <button id="audioTitle" type="button" title="定位到朗读正文（不会重播）"></button>
+      <span id="audioUpNext" class="audio-next" hidden></span>
       <p id="audioError" role="status" hidden></p>
       <span id="audioContext" class="audio-sr" aria-live="polite"></span>
       <span id="audioPhase" class="audio-sr"></span>
