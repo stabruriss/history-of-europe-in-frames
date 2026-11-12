@@ -112,19 +112,38 @@ async function readerActions(p, visible) {
   assert(visible ? bar.height > 0 : bar.height === 0, 'Reader action bar must occupy space only when visible: ' + JSON.stringify(bar));
 }
 async function geometry(p, width) {
-  const g = await p.evaluate(() => {
+  // 老无 2026-11-12: desktop keeps one bar on top; phones keep a strip at the bottom that opens into the full card.
+  const card = ['audioPrevious','audioToggle','audioNext','audioTitle','audioSeek','audioSpeedButton','audioQueueToggle','audioIncludeExtras','audioIncludePeople'];
+  const reader = ['audioReadIncludeExtras','audioReadIncludePeople'];
+  const measure = ids => p.evaluate(ids => {
     const box = id => document.getElementById(id).getBoundingClientRect().toJSON();
-    const controls = ['audioPrevious','audioToggle','audioNext','audioTitle','audioSeek','audioSpeed','audioQueueToggle','audioIncludeExtras','audioIncludePeople','audioReadIncludeExtras','audioReadIncludePeople'];
-    return {width:innerWidth, scroll:document.documentElement.scrollWidth, player:box('audioPlayer'), masthead:box('masthead'),
-      reader:box('readerBody'), actions:box('readerAudioActions'),
-      controls:controls.map(id => { const el = document.getElementById(id), b = el.getBoundingClientRect(), hit = document.elementFromPoint(b.x + b.width / 2, b.y + b.height / 2); return {id, hit:hit === el || el.contains(hit), left:b.left, right:b.right, height:b.height}; })};
-  });
-  assert(g.scroll <= width, JSON.stringify(g));
-  assert(g.player.height < (width === 390 ? 155 : 112), JSON.stringify(g));
-  assert(g.masthead.top >= g.player.bottom - 1, JSON.stringify(g));
-  assert(g.reader.height > 230 && g.actions.top >= g.player.bottom, JSON.stringify(g));
-  for (const c of g.controls) assert(c.hit && c.left >= 0 && c.right <= width, JSON.stringify(c));
-  return g;
+    return {width:innerWidth, height:innerHeight, scroll:document.documentElement.scrollWidth, player:box('audioPlayer'), masthead:box('masthead'),
+      reader:box('readerBody'), actions:box('readerAudioActions'), mini:box('audioMini'), card:box('audioCard'),
+      pad:parseFloat(getComputedStyle(document.body).paddingBottom),
+      controls:ids.map(id => { const el = document.getElementById(id), b = el.getBoundingClientRect(), hit = document.elementFromPoint(b.x + b.width / 2, b.y + b.height / 2); return {id, hit:hit === el || el.contains(hit), left:b.left, right:b.right, top:b.top, bottom:b.bottom, width:b.width, height:b.height}; })};
+  }, ids);
+  const inside = (g, c) => assert(c.hit && c.left >= 0 && c.right <= g.width && c.top >= 0 && c.bottom <= g.height, JSON.stringify(c));
+  if (width !== 390) {
+    const g = await measure([...card, ...reader]);
+    assert(g.scroll <= width, JSON.stringify(g));
+    assert(g.player.height < 112, JSON.stringify(g.player));
+    assert(g.masthead.top >= g.player.bottom - 1, JSON.stringify(g));
+    assert(g.reader.height > 230 && g.actions.top >= g.player.bottom, JSON.stringify(g));
+    for (const c of g.controls) inside(g, c);
+    return g;
+  }
+  if (await p.$eval('#audioCard', e => e.getClientRects().length > 0)) await p.click('#audioCollapse');
+  const strip = await measure([...reader, 'audioExpand', 'audioMiniToggle', 'audioMiniQueue']);
+  assert(strip.scroll <= width, JSON.stringify(strip));
+  assert(strip.card.height === 0 && Math.abs(strip.mini.bottom - strip.height) <= 1 && strip.mini.height <= 80, 'Collapsed strip sits at the bottom: ' + JSON.stringify(strip.mini));
+  assert(Math.abs(strip.pad - strip.mini.height) <= 1, 'The page reserves the strip height instead of hiding text under it');
+  assert(strip.reader.height > 230 && strip.reader.bottom <= strip.mini.top + 1 && strip.actions.bottom <= strip.mini.top, JSON.stringify(strip));
+  for (const c of strip.controls) { inside(strip, c); if (c.id !== 'audioExpand') assert(c.width >= 44 && c.height >= 44, 'Thumb target ' + JSON.stringify(c)); }
+  await p.click('#audioExpand');
+  const open = await measure(card);
+  assert(open.card.height > 0 && open.card.height <= open.height * .5 && Math.abs(open.card.bottom - open.height) <= 1, 'Open card rises from the bottom: ' + JSON.stringify(open.card));
+  for (const c of open.controls) { inside(open, c); if (!['audioTitle','audioSeek'].includes(c.id)) assert(c.height >= 44, 'Thumb target ' + JSON.stringify(c)); }
+  return {...open, strip:strip.mini, player:strip.mini};
 }
 (async () => {
   const official = JSON.parse(fs.readFileSync(path.join(src, 'audio_manifest.json'), 'utf8'));
@@ -142,6 +161,26 @@ print(json.dumps({'manifest':manifest,'report':report}, ensure_ascii=False))
   const defaultPage = assemble('default');
   browser = await puppeteer.launch({executablePath:process.env.CHROME_PATH || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', headless:true});
   const p = await browser.newPage();
+  // Phones keep player controls in a card behind the strip; speed sits in its own panel. Open them before use.
+  const revealControl = selector => p.evaluate(sel => {
+    const el = document.querySelector(sel), shown = e => e.getClientRects().length > 0, open = id => document.getElementById(id);
+    if (!el) return;
+    if ((el.closest('#audioCard') || el.closest('#audioSpeedPanel')) && !shown(open('audioCard')) && shown(open('audioExpand'))) open('audioExpand').click();
+    if (el.closest('#audioSpeedPanel') && open('audioSpeedPanel').hidden) open('audioSpeedButton').click();
+    if (el.closest('#audioQueuePanel') && open('audioQueuePanel').hidden) open('audioQueueToggle').click();
+  }, selector);
+  // A phone shows one bottom sheet at a time; tapping a card control means closing a sheet that covers it.
+  const clearSheets = selector => p.evaluate(sel => {
+    const el = document.querySelector(sel), open = id => document.getElementById(id);
+    if (!el?.closest('#audioCard') || !matchMedia('(max-width:820px)').matches) return;
+    if (!open('audioSpeedPanel').hidden) open('audioSpeedClose').click();
+    if (!open('audioQueuePanel').hidden) open('audioQueueClose').click();
+  }, selector);
+  const rawClick = p.click.bind(p);
+  p.click = async (selector, options) => {
+    if (typeof selector === 'string' && selector.startsWith('#audio')) { await revealControl(selector); await clearSheets(selector); }
+    return rawClick(selector, options);
+  };
   // Exercise the actual handlers registered with the browser, including OS/headset track controls.
   await p.evaluateOnNewDocument(() => {
     if (!('mediaSession' in navigator)) return;
@@ -314,11 +353,25 @@ print(json.dumps({'ids':ids, 'hashes':hashes, 'kinds':kinds,
   assert.equal(requests.length, 0);
   await readerActions(p, true);
   assert.equal(await p.$eval('#audioReadLine', e => e.disabled), false);
+  await p.evaluate(() => {
+    window.sessionStates = [];
+    const proto = Object.getPrototypeOf(navigator.mediaSession), d = Object.getOwnPropertyDescriptor(proto, 'playbackState');
+    Object.defineProperty(navigator.mediaSession, 'playbackState', {configurable:true, get() { return d.get.call(this); }, set(v) { window.sessionStates.push(v); d.set.call(this, v); }});
+  });
   await p.click('#audioRead'); await stage(p, 0, 'title');
   assert.deepEqual((await state(p)).queue, ['history-migration/1']);
+  const sectionTitle = await p.evaluate(() => ENTRIES[cur].title), sceneTitle = await p.evaluate(() => ENTRIES[cur].scenes[1].title);
+  assert.equal(await p.$eval('#audioTitle', e => e.textContent), sectionTitle, 'The section title shows only while the title itself plays');
+  assert.equal(await p.evaluate(() => navigator.mediaSession.metadata.title), sectionTitle);
+  assert.equal(await p.$eval('#audioCount', e => e.textContent), '1/1');
+  assert.match(await p.$eval('#audioRemaining', e => e.textContent), /^-\d\d:\d\d:\d\d$/);
   for (const id of ['audioPrevious','audioNext']) assert.equal(await p.$eval('#' + id, e => e.disabled), true);
   assert.match(await p.$eval('#audioPhase', e => e.textContent), /前奏/);
+  await p.evaluate(() => { window.sessionStates = []; });
   await finishClip(p); await stage(p, 0, 'body');
+  assert(!(await p.evaluate(() => window.sessionStates)).includes('paused'), 'A clip boundary must not report a paused session to the OS');
+  assert.equal(await p.$eval('#audioTitle', e => e.textContent), sceneTitle, 'The scene body shows its own scene title');
+  assert.equal(await p.evaluate(() => navigator.mediaSession.metadata.title), sceneTitle);
   assert.equal((await state(p)).finished, false);
   assert.match(await p.$eval('#audioSeek', e => e.getAttribute('aria-label')), /正文/);
   await finishClip(p); await p.waitForFunction(() => atlasAudio.state().finished);
@@ -394,8 +447,11 @@ print(json.dumps({'ids':ids, 'hashes':hashes, 'kinds':kinds,
   await p.$eval('#audioSeek', e => { e.value = '500'; e.dispatchEvent(new Event('input', {bubbles:true})); });
   assert(Math.abs(await p.$eval('#atlasAudioElement', a => a.currentTime / a.duration) - .5) < .02);
   assert.equal((await state(p)).phase, 'title'); assert.equal((await state(p)).index, lastPrehistory);
-  await p.focus('#audioSpeed'); await p.keyboard.press('PageDown');
+  await revealControl('#audioSpeed'); await p.focus('#audioSpeed'); await p.keyboard.press('PageDown');
   assert.equal((await state(p)).speed, 2.5);
+  assert.equal(await p.$eval('#audioSpeedButton', e => e.textContent), '2.5×');
+  assert.equal(await p.$eval('#audioRate5', e => e.getAttribute('aria-pressed')), 'true');
+  await p.click('#audioSpeedClose');
   await p.focus('#audioSeek'); await p.keyboard.press('PageUp');
   assert(Math.abs(await p.$eval('#atlasAudioElement', a => a.currentTime / a.duration) - .6) < .02);
   assert.deepEqual(await browseState(p), browsing);
@@ -554,7 +610,7 @@ print(json.dumps({'ids':ids, 'hashes':hashes, 'kinds':kinds,
     const duration = steps.reduce((n, s) => n + fixture.assets[s.id].duration, 0);
     assert.equal((await state(p)).selectedDuration, duration);
     assert.deepEqual((await state(p)).playlist, steps.map(s => s.id));
-    assert.equal(await p.$eval('#audioCount', e => Number(e.textContent)), steps.length);
+    assert.equal(await p.$eval('#audioCount', e => e.textContent), `1/${steps.length}`, 'Playlist button shows current/total');
     assert.equal(await p.$$eval('#audioQueuePanel > p:not([hidden])', es => es.length), (extras && !plan.extras.length) || (people && !plan.people.length) ? 1 : 0, 'No boilerplate paragraphs in playlist');
     const rowData = await p.$$eval('#audioQueue button', bs => bs.map(b => ({kind:b.dataset.audioKind, text:b.textContent, seconds:Number(b.querySelector('time').dataset.seconds)})));
     assert.equal(rowData.length, steps.length, 'Every selected anecdote/person bio must appear as its own playlist entry');
@@ -716,9 +772,13 @@ print(json.dumps({'ids':ids, 'hashes':hashes, 'kinds':kinds,
       if (piece.id === id) {
         await p.waitForFunction(id => { const s = atlasAudio.state(); return s.partId === id && s.gap && s.playing; }, {}, id);
         assert.match(await p.$eval('#audioPhase', e => e.textContent), /音频暂缺/);
+        assert.match(await p.$eval('#audioTitle', e => e.textContent), /（音频暂缺）$/);
         assert.match(await p.$eval('#atlasAudioElement', a => a.currentSrc), /^data:audio\/mpeg;base64,/);
         assert.equal((await state(p)).error, '');
-      } else await partReady(p, piece.id);
+      } else {
+        await partReady(p, piece.id);
+        assert.equal(await p.$eval('#audioTitle', e => e.textContent), piece.label || '简明欧洲史图册 · 朗读', 'An optional part shows its own title');
+      }
       await finishClip(p);
     }
     await p.waitForFunction(() => atlasAudio.state().finished);
@@ -833,14 +893,14 @@ print(json.dumps({'ids':ids, 'hashes':hashes, 'kinds':kinds,
   await board(p, 'prehistory', 'history-migration/1'); await p.click('#audioReadLine'); await playing(p); await p.click('#audioToggle');
   const desktop = await geometry(p, 1440);
   await p.setViewport({width:390, height:844});
-  await p.waitForFunction(() => parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--audio-height')) === document.getElementById('audioPlayer').offsetHeight);
+  await p.waitForFunction(() => getComputedStyle(document.documentElement).getPropertyValue('--audio-height').trim() === '0px' && parseFloat(getComputedStyle(document.body).paddingBottom) > 0);
   const mobile = await geometry(p, 390);
   await p.click('#audioQueueToggle');
   let panel = await p.$eval('#audioQueuePanel', e => e.getBoundingClientRect().toJSON());
-  assert(panel.left >= 0 && panel.right <= 390 && panel.bottom <= 844 && panel.height <= 844 * .35);
+  assert(panel.left >= 0 && panel.right <= 390 && Math.abs(panel.bottom - 844) <= 1 && panel.height <= 844 * .75, 'Playlist rises as a bounded bottom sheet: ' + JSON.stringify(panel));
   await p.click('#audioQueueClose');
   await p.evaluate(() => metroUI.setMode('network'));
-  assert(await p.$eval('#networkMode', e => e.getBoundingClientRect().top) >= mobile.player.bottom);
+  assert(await p.$eval('#networkMode', e => e.getBoundingClientRect().bottom) <= mobile.strip.top + 1, 'The network map ends above the strip');
   await p.evaluate(() => go('topic-energy'));
   await geometry(p, 390);
   pass(`Desktop and 390px: controls hit-test, no horizontal overflow/covered masthead, usable reader, bounded queue (ribbon ${desktop.player.height}/${mobile.player.height}px)`);
@@ -898,6 +958,7 @@ print(json.dumps({'ids':ids, 'hashes':hashes, 'kinds':kinds,
   };
   const settledSeek = () => p.waitForFunction(() => !document.getElementById('atlasAudioElement').seeking);
   const focusControl = async selector => {
+    await revealControl(selector);
     await p.focus(selector);
     assert(await p.$eval(selector, e => document.activeElement === e && !e.disabled), 'Must really focus ' + selector);
   };
@@ -913,7 +974,7 @@ print(json.dumps({'ids':ids, 'hashes':hashes, 'kinds':kinds,
     await settledSeek();
     await board(p, 'trunk', anchorKey); await p.click('#audioQueueToggle');
     // Enumerate every enabled audio control, including every row in the frozen queue.
-    const controls = await p.$$eval('#audioPlayer button,#audioPlayer input[type="range"],#audioPlayer input[type="checkbox"],#readerAudioActions button,#readerAudioActions input[type="checkbox"]', es => es.map(e => {
+    const controls = await p.$$eval('#audioPlayer button,#audioPlayer input[type="range"],#audioPlayer input[type="checkbox"],#readerAudioActions button,#readerAudioActions input[type="checkbox"]', es => es.filter(e => e.getClientRects().length > 0).map(e => {
       if (e.id) return '#' + e.id;
       if (e.dataset.audioItem !== undefined) return '[data-audio-item="' + e.dataset.audioItem + '"]';
       throw new Error('Audio control has no test selector');
@@ -969,6 +1030,7 @@ print(json.dumps({'ids':ids, 'hashes':hashes, 'kinds':kinds,
     await board(p, 'trunk', anchorKey); await p.click('#audioQueueClose');
     const readingBeforeDrag = await browseState(p);
     for (const id of ['audioSpeed', 'audioSeek']) {
+      await revealControl('#' + id);
       const r = await p.$eval('#' + id, e => { const b = e.getBoundingClientRect(); return {x:b.x, y:b.y, width:b.width, height:b.height}; });
       await p.mouse.move(r.x + r.width * .15, r.y + r.height / 2); await p.mouse.down();
       await p.mouse.move(r.x + r.width * .5, r.y + r.height / 2, {steps:4}); await p.mouse.up();
@@ -981,12 +1043,14 @@ print(json.dumps({'ids':ids, 'hashes':hashes, 'kinds':kinds,
       await p.keyboard.press('ArrowRight'); assert.equal((await browseState(p)).id, keyStops[2].id);
       await p.keyboard.press('ArrowLeft'); assert.equal((await browseState(p)).id, keyStops[1].id);
       await unchangedAudio(afterDrag, 'Arrows after real drag');
+      if (id === 'audioSpeed') await p.click('#audioSpeedClose'); // On a phone the speed sheet covers the progress bar.
     }
     await focusControl('#audioSpeed');
     for (const [key, value] of [['Home',1], ['PageUp',1.25], ['PageDown',1], ['End',3], ['PageDown',2.5]]) {
       await p.keyboard.press(key); assert.equal((await state(p)).speed, value, 'Native speed ' + key);
       assert.equal(await p.$eval('#atlasAudioElement', a => a.playbackRate), value);
     }
+    await p.click('#audioSpeedClose'); // On a phone the open speed sheet's scrim would take the next tap.
     await focusControl('#audioSeek');
     for (const [key, fraction] of [['Home',0], ['PageUp',.1], ['PageDown',0], ['End',1], ['Home',0]]) {
       await p.keyboard.press(key); await settledSeek();
@@ -997,7 +1061,7 @@ print(json.dumps({'ids':ids, 'hashes':hashes, 'kinds':kinds,
     await focusControl('#audioToggle'); await p.keyboard.press('Enter'); await playing(p);
     await p.keyboard.press('Space'); assert.equal((await state(p)).playing, false);
     await focusControl('#audioSeek'); await p.keyboard.press('Tab');
-    assert.equal(await p.evaluate(() => document.activeElement.id), 'audioSpeed');
+    assert.equal(await p.evaluate(() => document.activeElement.id), 'audioIncludeExtras');
     const beforeCheckbox = await state(p), beforeCheckboxBrowse = await browseState(p);
     for (const [id, field] of [['audioIncludeExtras','includeExtras'], ['audioIncludePeople','includePeople']]) {
       await focusControl('#' + id); await p.keyboard.press('Space'); assert.equal((await state(p))[field], true);
@@ -1005,8 +1069,13 @@ print(json.dumps({'ids':ids, 'hashes':hashes, 'kinds':kinds,
       assert.equal(await p.evaluate(() => document.activeElement.id), id, 'Checkbox keeps native focus/Space');
     }
     await unchangedAudio(beforeCheckbox, 'Native checkbox Space round trip'); assert.deepEqual(await browseState(p), beforeCheckboxBrowse);
-    await focusControl('#audioQueueToggle'); await p.keyboard.press('Tab'); assert.equal(await p.evaluate(() => document.activeElement.id), 'audioIncludeExtras');
+    await focusControl('#audioQueueToggle'); await p.keyboard.press('Tab'); assert.equal(await p.evaluate(() => document.activeElement.id), 'audioSeek');
+    await p.keyboard.press('Tab'); assert.equal(await p.evaluate(() => document.activeElement.id), 'audioIncludeExtras');
     await p.keyboard.press('Tab'); assert.equal(await p.evaluate(() => document.activeElement.id), 'audioIncludePeople');
+    // The speed panel closes on Escape only while focus is inside the player, and hands focus back to its button.
+    await focusControl('#audioRate2'); await p.keyboard.press('Escape');
+    assert.equal(await p.$eval('#audioSpeedPanel', e => e.hidden), true);
+    assert.equal(await p.evaluate(() => document.activeElement.id), 'audioSpeedButton');
     const guardedAudio = await state(p), guardedBrowse = await browseState(p);
     const untouchedModifiers = await p.evaluate(() => {
       const results = [];
@@ -1064,9 +1133,13 @@ print(json.dumps({'ids':ids, 'hashes':hashes, 'kinds':kinds,
       await p.$eval('.scene-passage.current svg.kin-tree', e => e.dispatchEvent(new MouseEvent('click', {bubbles:true})));
       assert.equal(await p.$eval('#kinSheet', e => e.hidden), false);
       const behindKin = await browseState(p), kinAudio = await state(p);
-      for (const selector of ['#kinClose', '#audioSpeed', '#audioSeek', '#audioIncludeExtras', '#audioIncludePeople']) for (const key of arrowKeys) {
-        await focusControl(selector); await p.keyboard.press(key);
-        assert.deepEqual(await browseState(p), behindKin); await unchangedAudio(kinAudio, 'Genealogy ' + selector + key);
+      for (const selector of ['#kinClose', '#audioSpeed', '#audioSeek', '#audioIncludeExtras', '#audioIncludePeople']) {
+        for (const key of arrowKeys) {
+          await focusControl(selector); await p.keyboard.press(key);
+          assert.deepEqual(await browseState(p), behindKin); await unchangedAudio(kinAudio, 'Genealogy ' + selector + key);
+        }
+        // Reaching the slider opened the speed panel (on a phone it replaced the playlist sheet); restore the playlist.
+        if (selector === '#audioSpeed') { await p.evaluate(() => document.getElementById('audioSpeedClose').click()); if (await p.$eval('#audioQueuePanel', e => e.hidden)) await p.evaluate(() => document.getElementById('audioQueueToggle').click()); }
       }
       await focusControl(escapeFocus); await p.keyboard.press('Escape');
       assert.equal(await p.$eval('#kinSheet', e => e.hidden), true);
@@ -1176,7 +1249,7 @@ print(json.dumps({'ids':ids, 'hashes':hashes, 'kinds':kinds,
       await p.click('#audioToggle'); sampledKinds.push(kind);
     }
     await p.setViewport({width:390, height:844});
-    await p.waitForFunction(() => parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--audio-height')) === document.getElementById('audioPlayer').offsetHeight);
+    await p.waitForFunction(() => getComputedStyle(document.documentElement).getPropertyValue('--audio-height').trim() === '0px' && parseFloat(getComputedStyle(document.body).paddingBottom) > 0);
     await geometry(p, 390);
     pass(`Real Yunjian ${hasHistory ? 'migration title/body' : 'topic-led smoke (migration pair absent)'}, ${realTopics.length} supplied topics and ${sampledKinds.join('/') || 'no supplied optional kinds'}: receipt hashes/durations/seek, desktop/390px, zero pre-click MP3`);
   }

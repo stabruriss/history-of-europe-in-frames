@@ -205,36 +205,50 @@ body.resizing-reader #map{pointer-events:none}
 </head>
 <body>
 <section id="audioPlayer" aria-label="朗读播放器" hidden>
-  <div class="audio-player-inner">
-    <div class="audio-transport">
-      <button id="audioPrevious" type="button" aria-label="上一项" title="上一项">Ⅰ◀</button>
-      <button id="audioToggle" type="button" aria-label="暂停">Ⅱ</button>
-      <button id="audioNext" type="button" aria-label="下一项" title="下一项">▶Ⅰ</button>
-    </div>
-    <div class="audio-now">
-      <div id="audioContext"></div>
+  <!-- 老无 2026-11-12: a standard player. Phones get a bottom strip that opens into the full card. -->
+  <div id="audioMini" class="audio-mini">
+    <div class="audio-mini-line" aria-hidden="true"><i id="audioMiniProgress"></i></div>
+    <button id="audioExpand" type="button" aria-expanded="false" aria-controls="audioCard" aria-label="展开播放器"><b id="audioMiniTitle"></b></button>
+    <button id="audioMiniToggle" type="button" class="audio-round" aria-label="播放"></button>
+    <button id="audioMiniQueue" type="button" class="audio-list" aria-label="播放列表"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h13v2H3zm0 5h13v2H3zm0 5h9v2H3zm14-2.5v7l5.5-3.5z"/></svg><span id="audioMiniCount"></span></button>
+  </div>
+  <div id="audioCard" class="audio-player-inner">
+    <button id="audioCollapse" type="button" aria-label="收起播放器"><span aria-hidden="true"></span></button>
+    <div class="audio-meta">
       <button id="audioTitle" type="button" title="定位到朗读正文（不会重播）"></button>
-      <div class="audio-progress"><span id="audioElapsed">0:00</span><input id="audioSeek" type="range" min="0" max="1000" step="1" value="0" aria-label="播放进度" aria-keyshortcuts="PageUp PageDown Home End" title="拖动调进度；方向键浏览正文，PageUp/PageDown 调进度，Home/End 到首尾"><span id="audioDuration">0:00</span></div>
-      <div id="audioPhase"></div>
+      <p id="audioError" role="status" hidden></p>
+      <span id="audioContext" class="audio-sr" aria-live="polite"></span>
+      <span id="audioPhase" class="audio-sr"></span>
     </div>
-    <div class="audio-speed">
-      <label for="audioSpeed">语速 <output id="audioSpeedValue" for="audioSpeed">1×</output></label>
-      <input id="audioSpeed" type="range" min="0" max="6" step="1" value="0" aria-label="朗读语速" list="audioSpeedTicks" aria-keyshortcuts="PageUp PageDown Home End" title="拖动调语速；方向键浏览正文，PageUp/PageDown 调一档，Home/End 到两端">
-      <datalist id="audioSpeedTicks"><option value="0"></option><option value="1"></option><option value="2"></option><option value="3"></option><option value="4"></option><option value="5"></option><option value="6"></option></datalist>
-      <div class="audio-speed-labels" aria-hidden="true"><span>1</span><span>1.25</span><span>1.5</span><span>1.75</span><span>2</span><span>2.5</span><span>3</span></div>
+    <div class="audio-transport">
+      <div class="audio-controls">
+        <button id="audioSpeedButton" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="audioSpeedPanel" aria-label="语速 1 倍">1×</button>
+        <button id="audioPrevious" type="button" aria-label="上一项" title="上一项"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h2.4v14H6zM20 5v14L9.2 12z"/></svg></button>
+        <button id="audioToggle" type="button" class="audio-round" aria-label="暂停"></button>
+        <button id="audioNext" type="button" aria-label="下一项" title="下一项"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.6 5H18v14h-2.4zM4 5l10.8 7L4 19z"/></svg></button>
+        <button id="audioQueueToggle" type="button" class="audio-list" aria-expanded="false" aria-controls="audioQueuePanel"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h13v2H3zm0 5h13v2H3zm0 5h9v2H3zm14-2.5v7l5.5-3.5z"/></svg><span id="audioCount"></span></button>
+      </div>
+      <div class="audio-progress"><span id="audioElapsed">0:00</span><input id="audioSeek" type="range" min="0" max="1000" step="1" value="0" aria-label="播放进度" aria-keyshortcuts="PageUp PageDown Home End" title="拖动调进度；方向键浏览正文，PageUp/PageDown 跳一成，Home/End 到头尾"><span id="audioDuration">0:00</span></div>
     </div>
-    <button id="audioQueueToggle" type="button" aria-expanded="false" aria-controls="audioQueuePanel">播放列表 <span id="audioCount"></span> ▾</button>
-    <div class="audio-options" role="group" aria-label="朗读附加内容">
-      <label title="纳入名场面与豆腐块"><input id="audioIncludeExtras" type="checkbox" autocomplete="off">包括补充趣事</label>
-      <label title="纳入人物小传（含事件、小事与生平）"><input id="audioIncludePeople" type="checkbox" autocomplete="off">包括人物小传</label>
+    <div class="audio-side">
+      <span id="audioRemaining" title="播放列表剩余时长（按当前语速）"></span>
+      <div class="audio-options" role="group" aria-label="朗读附加内容">
+        <label class="audio-opt" title="包括补充趣事：名场面与豆腐块"><input id="audioIncludeExtras" type="checkbox" autocomplete="off"><span class="audio-box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9.5 16.6 5 12.1l-1.6 1.6 6.1 6.1L21 8.3l-1.6-1.6z"/></svg></span>趣事</label>
+        <label class="audio-opt" title="包括人物小传：整张人物卡（事件、小事与生平）"><input id="audioIncludePeople" type="checkbox" autocomplete="off"><span class="audio-box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9.5 16.6 5 12.1l-1.6 1.6 6.1 6.1L21 8.3l-1.6-1.6z"/></svg></span>人物</label>
+      </div>
     </div>
   </div>
-  <p id="audioError" role="status" hidden></p>
-  <section id="audioQueuePanel" aria-label="播放列表" hidden>
-    <div class="audio-queue-heading"><strong id="audioQueueName"></strong><button id="audioQueueClose" type="button" aria-label="关闭播放列表">×</button></div>
+  <section id="audioSpeedPanel" class="audio-pop" aria-label="选择语速" hidden>
+    <div class="audio-pop-head"><strong>语速</strong><button id="audioSpeedClose" type="button" aria-label="关闭语速">×</button></div>
+    <div class="audio-rates" role="group" aria-label="常用语速"><button id="audioRate0" type="button" data-rate="1">1×</button><button id="audioRate1" type="button" data-rate="1.25">1.25×</button><button id="audioRate2" type="button" data-rate="1.5">1.5×</button><button id="audioRate3" type="button" data-rate="1.75">1.75×</button><button id="audioRate4" type="button" data-rate="2">2×</button><button id="audioRate5" type="button" data-rate="2.5">2.5×</button><button id="audioRate6" type="button" data-rate="3">3×</button></div>
+    <input id="audioSpeed" type="range" min="0" max="6" step="1" value="0" aria-label="朗读语速" aria-keyshortcuts="PageUp PageDown Home End" title="拖动调语速；方向键浏览正文，PageUp/PageDown 调一档，Home/End 到最慢/最快">
+  </section>
+  <section id="audioQueuePanel" class="audio-pop" aria-label="播放列表" hidden>
+    <div class="audio-pop-head audio-queue-heading"><strong id="audioQueueName"></strong><span id="audioQueueMeta"></span><button id="audioQueueClose" type="button" aria-label="关闭播放列表">×</button></div>
     <ol id="audioQueue"></ol>
     <p id="audioQueueEmptyNote" hidden></p>
   </section>
+  <div id="audioScrim" hidden></div>
   <audio id="atlasAudioElement" preload="none"></audio>
 </section>
 <header id="masthead">
@@ -285,8 +299,8 @@ body.resizing-reader #map{pointer-events:none}
       <button id="audioRead" type="button" aria-describedby="audioAvailability">朗读</button>
       <button id="audioReadLine" type="button" aria-describedby="audioAvailability">连续朗读</button>
       <div class="audio-options audio-reader-options" role="group" aria-label="朗读前选择附加内容">
-        <label title="纳入名场面与豆腐块"><input id="audioReadIncludeExtras" type="checkbox" autocomplete="off">包括补充趣事</label>
-        <label title="纳入人物小传（含事件、小事与生平）"><input id="audioReadIncludePeople" type="checkbox" autocomplete="off">包括人物小传</label>
+        <label class="audio-opt" title="包括补充趣事：名场面与豆腐块"><input id="audioReadIncludeExtras" type="checkbox" autocomplete="off"><span class="audio-box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9.5 16.6 5 12.1l-1.6 1.6 6.1 6.1L21 8.3l-1.6-1.6z"/></svg></span>趣事</label>
+        <label class="audio-opt" title="包括人物小传：整张人物卡（事件、小事与生平）"><input id="audioReadIncludePeople" type="checkbox" autocomplete="off"><span class="audio-box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9.5 16.6 5 12.1l-1.6 1.6 6.1 6.1L21 8.3l-1.6-1.6z"/></svg></span>人物</label>
       </div>
       <span id="audioAvailability"></span>
     </div>

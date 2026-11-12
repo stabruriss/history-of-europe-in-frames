@@ -18,8 +18,14 @@ const peopleControls = ['audioIncludePeople', 'audioReadIncludePeople'];
 // a run of missing parts gets one notice. Once the recording is published it simply plays instead.
 const NOTICE = typeof AUDIO_GAP_NOTICE === 'object' && AUDIO_GAP_NOTICE && typeof AUDIO_GAP_NOTICE.url === 'string' &&
   AUDIO_GAP_NOTICE.url.startsWith('data:audio/mpeg;base64,') ? Object.freeze({...AUDIO_GAP_NOTICE}) : null;
+const ICON = {play:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.2v13.6L19 12z"/></svg>',
+  pause:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 5h4v14h-4zM13.5 5h4v14h-4z"/></svg>'};
+const FALLBACK_TITLE = '简明欧洲史图册 · 朗读';
+const phoneLayout = () => matchMedia('(max-width:820px)').matches;
 let queue = Object.freeze([]), at = -1, mode = 'single', line = null;
 let phase = 'body', partIndex = 0, finished = false, error = '', errorKind = '', speed = 1, gap = false;
+// What the OS media session is told: the listener's intent, kept through clip switches (a locked phone sleeps on 'paused').
+let sessionPlaying = false;
 let includeExtras = false, includePeople = false;
 let loadToken = 0, playToken = 0, wantsPlay = false, waiting = false, expectedURL = '', pendingOffset = null;
 try { const saved = Number(localStorage.getItem(SPEED_KEY)); if (rates.includes(saved)) speed = saved; } catch {}
@@ -106,6 +112,46 @@ function partLabel() {
     ({moment:'补充趣事', box:'补充趣事', person:'人物小传'}[phase] || '附加内容') + '：' + (p?.label || '');
   return gap ? '音频暂缺，提示后接着读 · ' + label : label;
 }
+function displayTitle() {
+  const t = current(), p = part();
+  if (!t) return FALLBACK_TITLE;
+  const title = String((partIndex < 0 ? t.chapter : p?.kind === 'body' ? t.title : p?.label) || '').trim() || t.title || FALLBACK_TITLE;
+  return gap ? title + '（音频暂缺）' : title;
+}
+// Exact remaining listening time from here, mirroring advance(): preludes on entering a section, one notice per run of gaps.
+function remainingSeconds() {
+  const t = current(); if (!t || finished) return 0;
+  const p = part(), whole = p?.asset ? p.asset.duration : gap ? NOTICE?.duration || 0 : 0;
+  let total = isCurrentSource() && Number.isFinite(audio.duration) ? Math.max(0, audio.duration - audio.currentTime) : whole;
+  let ti = at, pi = partIndex, afterGap = gap;
+  for (;;) {
+    const parts = queue[ti].parts; let next = -1;
+    for (let i = pi + 1; i < parts.length; i++) if (enabled(parts[i])) { next = i; break; }
+    if (next >= 0) pi = next;
+    else if (mode === 'line' && ti < queue.length - 1) { const was = queue[ti].entryId; ti++; pi = queue[ti].kind === 'history' && queue[ti].entryId !== was && queue[ti].titlePart ? -1 : 0; }
+    else break;
+    const q = pi < 0 ? queue[ti].titlePart : queue[ti].parts[pi];
+    if (q?.asset) { afterGap = false; total += q.asset.duration; }
+    else if (!afterGap && NOTICE) { afterGap = true; total += NOTICE.duration; }
+  }
+  return total / speed;
+}
+// The next clip the player would load, used only to warm the browser cache while this one plays.
+function upcomingURL() {
+  const t = current(); if (!t || finished) return '';
+  let ti = at, pi = partIndex;
+  for (let guard = 0; guard < 2000; guard++) {
+    const parts = queue[ti].parts; let next = -1;
+    for (let i = pi + 1; i < parts.length; i++) if (enabled(parts[i])) { next = i; break; }
+    if (next >= 0) pi = next;
+    else if (mode === 'line' && ti < queue.length - 1) { const was = queue[ti].entryId; ti++; pi = queue[ti].kind === 'history' && queue[ti].entryId !== was && queue[ti].titlePart ? -1 : 0; }
+    else return '';
+    const q = pi < 0 ? queue[ti].titlePart : queue[ti].parts[pi];
+    if (q?.asset) return q.asset.url;
+  }
+  return '';
+}
+const hms = s => { s = Math.max(0, Math.round(s || 0)); return [Math.floor(s / 3600), Math.floor(s % 3600 / 60), s % 60].map(n => String(n).padStart(2, '0')).join(':'); };
 function reading() {
   const e = ENTRIES[cur];
   return e ? track(e.id, sceneIndex) : null;
@@ -144,7 +190,6 @@ scheduleRefresh();
 
 function renderQueue() {
   const items = playlistItems(), active = currentPlaylistIndex(items);
-  $('audioCount').textContent = String(items.length);
   $('audioQueueName').textContent = mode === 'line' ? line.name + '线 · 播放列表' : '播放列表';
   const kindTag = {moment:'补充趣事', box:'补充趣事', person:'人物小传'};
   $('audioQueue').innerHTML = items.map((item, i) => {
@@ -167,12 +212,23 @@ function markQueue(items = playlistItems()) {
   $('audioQueue').querySelectorAll('button').forEach((b, i) => b.setAttribute('aria-current', String(i === active)));
 }
 function progress() {
-  const duration = isCurrentSource() && Number.isFinite(audio.duration) ? audio.duration : (clip()?.duration || 0);
+  const duration = isCurrentSource() && Number.isFinite(audio.duration) ? audio.duration : (clip()?.duration || (gap ? NOTICE?.duration : 0) || 0);
   const position = isCurrentSource() ? audio.currentTime : 0;
-  const label = partLabel();
+  const label = partLabel(), fraction = duration ? Math.min(1, position / duration) : 0;
   $('audioElapsed').textContent = time(position);
   $('audioDuration').textContent = time(duration);
-  $('audioSeek').value = String(duration ? Math.round(position / duration * 1000) : 0);
+  $('audioSeek').value = String(Math.round(fraction * 1000));
+  $('audioSeek').style.setProperty('--p', (fraction * 100).toFixed(2) + '%');
+  $('audioMiniProgress').style.width = (fraction * 100).toFixed(2) + '%';
+  const left = current() ? '-' + hms(remainingSeconds()) : '';
+  $('audioRemaining').textContent = left;
+  if (current()) {
+    const items = playlistItems(), pos = currentPlaylistIndex(items);
+    $('audioQueueMeta').textContent = `${Math.max(1, pos + 1)}/${items.length} · 剩余 ${left}`;
+  }
+  if ('mediaSession' in navigator && 'setPositionState' in navigator.mediaSession && isCurrentSource() && Number.isFinite(audio.duration) && audio.duration > 0) {
+    try { navigator.mediaSession.setPositionState({duration:audio.duration, playbackRate:speed, position:Math.min(audio.currentTime, audio.duration)}); } catch {}
+  }
   $('audioSeek').disabled = Boolean(error) || gap || !enabled(part()) || !isCurrentSource() || audio.readyState < 1 || !Number.isFinite(audio.duration) || audio.duration <= 0;
   $('audioSeek').setAttribute('aria-label', label + '进度');
   $('audioSeek').setAttribute('aria-valuetext', `${label} ${time(position)}，共 ${time(duration)}`);
@@ -180,23 +236,26 @@ function progress() {
 function status() {
   const t = current(); if (!t) return;
   const items = playlistItems(), pos = currentPlaylistIndex(items);
-  const playing = wantsPlay && !audio.paused && !audio.ended;
   const state = error ? '已停住' : finished ? '已播完' : wantsPlay ? waiting ? '载入中' : '正在朗读' : '已暂停';
   const gaps = items.filter(x => !x.part.asset).length, total = items.reduce((n, x) => n + (x.part.asset ? x.part.asset.duration : 0), 0);
   $('audioContext').textContent = `${state} · ${mode === 'line' ? line.name + '线' : t.kind === 'topic' ? '专题' : '本幕'} · ${Math.max(1, pos + 1)}/${items.length} · 共 ${time(total)}${gaps ? `（${gaps} 段暂缺）` : ''}`;
-  $('audioTitle').textContent = t.title;
+  const title = displayTitle();
+  $('audioTitle').textContent = title; $('audioMiniTitle').textContent = title;
   $('audioTitle').setAttribute('aria-label', '定位朗读正文：' + t.title);
   $('audioPhase').textContent = partLabel();
-  $('audioPhase').title = $('audioPhase').textContent;
-  $('audioToggle').textContent = wantsPlay ? 'Ⅱ' : '▶';
-  $('audioToggle').setAttribute('aria-label', wantsPlay ? '暂停' : error ? '重试播放' : finished ? '重新播放当前项' : '继续播放');
-  $('audioToggle').title = $('audioToggle').getAttribute('aria-label');
+  for (const id of ['audioCount', 'audioMiniCount']) $(id).textContent = `${Math.max(1, pos + 1)}/${items.length}`;
+  for (const id of ['audioQueueToggle', 'audioMiniQueue']) $(id).setAttribute('aria-label', `播放列表，第 ${Math.max(1, pos + 1)} 项，共 ${items.length} 项`);
+  const toggleLabel = wantsPlay ? '暂停' : error ? '重试播放' : finished ? '重新播放当前项' : '继续播放';
+  for (const id of ['audioToggle', 'audioMiniToggle']) {
+    $(id).innerHTML = wantsPlay ? ICON.pause : ICON.play;
+    $(id).setAttribute('aria-label', toggleLabel); $(id).title = toggleLabel;
+  }
   $('audioPrevious').disabled = pos <= 0;
   $('audioNext').disabled = pos < 0 || pos >= items.length - 1;
   $('audioError').hidden = !error;
   $('audioError').textContent = error;
   markQueue(items);
-  if ('mediaSession' in navigator) navigator.mediaSession.playbackState = playing ? 'playing' : 'paused';
+  if ('mediaSession' in navigator) navigator.mediaSession.playbackState = sessionPlaying && !error && !finished ? 'playing' : 'paused';
   progress();
 }
 function applyRate() {
@@ -208,17 +267,20 @@ function setSpeed(value) {
   if (!rates.includes(value)) return;
   speed = value; applyRate();
   $('audioSpeed').value = String(rates.indexOf(speed));
-  $('audioSpeedValue').textContent = speed + '×';
   $('audioSpeed').setAttribute('aria-valuetext', speed + '倍');
+  $('audioSpeedButton').textContent = speed + '×';
+  $('audioSpeedButton').setAttribute('aria-label', `语速 ${speed} 倍`);
+  document.querySelectorAll('.audio-rates [data-rate]').forEach(b => b.setAttribute('aria-pressed', String(Number(b.dataset.rate) === speed)));
+  if (current()) progress();
   try { localStorage.setItem(SPEED_KEY, String(speed)); } catch {}
 }
 function fail(message, kind = 'media') {
-  ++playToken; wantsPlay = false; waiting = false; error = message; errorKind = kind;
+  ++playToken; wantsPlay = false; sessionPlaying = false; waiting = false; error = message; errorKind = kind;
   audio.pause(); status();
 }
 async function play() {
   const token = ++playToken, generation = loadToken;
-  wantsPlay = true; error = ''; errorKind = ''; applyRate(); status();
+  wantsPlay = true; sessionPlaying = true; error = ''; errorKind = ''; applyRate(); status();
   try {
     await audio.play();
     if (token !== playToken || generation !== loadToken) return;
@@ -229,10 +291,10 @@ async function play() {
   }
 }
 function pause() {
-  ++playToken; wantsPlay = false; audio.pause(); status();
+  ++playToken; wantsPlay = false; sessionPlaying = false; audio.pause(); status();
 }
 function loadClip(index, {autoplay = true, offset = 0, afterGap = false} = {}) {
-  ++loadToken; ++playToken; wantsPlay = false; audio.pause();
+  ++loadToken; ++playToken; wantsPlay = false; if (!autoplay) sessionPlaying = false; audio.pause();
   partIndex = index; phase = part()?.kind || 'body';
   finished = false; error = ''; errorKind = ''; waiting = true; expectedURL = ''; pendingOffset = offset; gap = false;
   const a = clip();
@@ -242,6 +304,7 @@ function loadClip(index, {autoplay = true, offset = 0, afterGap = false} = {}) {
     gap = true; pendingOffset = null;
   }
   expectedURL = a ? a.url : NOTICE.url;
+  updateMetadata();
   // Only this selected part is loaded, also allowing a paused skip to expose its seek range.
   audio.preload = 'metadata';
   audio.src = expectedURL;
@@ -250,14 +313,28 @@ function loadClip(index, {autoplay = true, offset = 0, afterGap = false} = {}) {
   status();
   if (autoplay) play();
 }
+function updateMetadata() {
+  const t = current();
+  if (!t || !('mediaSession' in navigator) || !('MediaMetadata' in window)) return;
+  try {
+    navigator.mediaSession.metadata = new MediaMetadata({title:displayTitle(), artist:t.kind === 'topic' ? '动力专题 · 云健朗读' : t.chapter + ' · 云健朗读',
+      album:(mode === 'line' ? line.name + '线 · ' : '') + '简明欧洲史图册'});
+  } catch {}
+}
+// While a clip plays, fetch the next one into the HTTP cache: a phone that sleeps between clips then starts it
+// without waiting on the network. Same no-cors credentialed request shape as the audio element, so the entry is reused.
+const warmed = new Set();
+function warmNext() {
+  const url = upcomingURL();
+  if (!url || warmed.has(url) || !/^https:/.test(url) || warmed.size > 400) return;
+  warmed.add(url);
+  try { fetch(url, {mode:'no-cors', credentials:'include', cache:'force-cache'}).catch(() => warmed.delete(url)); } catch { warmed.delete(url); }
+}
 function selectTrack(index, {automatic = false, autoplay = true, withTitle = true, afterGap = false} = {}) {
   if (index < 0 || index >= queue.length) return;
   const previous = current();
   at = index;
   const t = current(), prelude = withTitle && t.kind === 'history' && (!automatic || previous?.entryId !== t.entryId);
-  if ('mediaSession' in navigator && 'MediaMetadata' in window) {
-    navigator.mediaSession.metadata = new MediaMetadata({title:t.title, artist:'云健 · AI 合成语音', album:mode === 'line' ? line.name + '线 · 简明欧洲史图册' : '简明欧洲史图册'});
-  }
   loadClip(prelude ? -1 : 0, {autoplay, afterGap});
   // Never go(), board(), scroll, or change location here.
 }
@@ -267,14 +344,10 @@ function selectPlaylistItem(itemIndex, {autoplay = true} = {}) {
   // Explicit skips (buttons, playlist or Media Session) go straight to the selected body.
   if (item.partIndex === 0) { selectTrack(item.trackIndex, {autoplay, withTitle:false}); return; }
   at = item.trackIndex;
-  const t = current();
-  if ('mediaSession' in navigator && 'MediaMetadata' in window) {
-    navigator.mediaSession.metadata = new MediaMetadata({title:item.part.label || t.title, artist:'云健 · AI 合成语音', album:mode === 'line' ? line.name + '线 · 简明欧洲史图册' : '简明欧洲史图册'});
-  }
   loadClip(item.partIndex, {autoplay});
 }
 function finishSelection() {
-  ++loadToken; ++playToken; wantsPlay = false; waiting = false; finished = true; error = ''; errorKind = '';
+  ++loadToken; ++playToken; wantsPlay = false; sessionPlaying = false; waiting = false; finished = true; error = ''; errorKind = '';
   audio.pause();
   if (!enabled(part())) {
     // A disabled final part may still have metadata/play/error events in flight.
@@ -305,6 +378,7 @@ function start(continuous) {
   const tracks = route ? route.tracks : [t], index = tracks.findIndex(x => x?.key === t.key);
   if ((continuous && !route) || index < 0) { refreshReading(); return; }
   queue = Object.freeze([...tracks]); mode = route ? 'line' : 'single'; line = route?.line || null;
+  if (player.hidden) setExpanded(false); // A phone starts with the strip; the card opens on request.
   player.hidden = false; measurePlayer();
   renderQueue();
   selectTrack(index);
@@ -315,9 +389,29 @@ function resume() {
   if (error || audio.error || !expectedURL) loadClip(partIndex, {offset:audio.error || !expectedURL ? 0 : audio.currentTime});
   else play();
 }
+function syncScrim() {
+  // Only the two bottom sheets dim the page; the open card leaves the text above it readable and usable.
+  const open = phoneLayout() && (!$('audioQueuePanel').hidden || !$('audioSpeedPanel').hidden);
+  $('audioScrim').hidden = !open;
+}
+function setExpanded(open) {
+  player.classList.toggle('audio-expanded', open);
+  $('audioExpand').setAttribute('aria-expanded', String(open));
+  syncScrim(); measurePlayer();
+}
+function setSpeedOpen(open, {focus = false} = {}) {
+  if (open && phoneLayout() && !$('audioQueuePanel').hidden) setQueueOpen(false); // one bottom sheet at a time
+  $('audioSpeedPanel').hidden = !open;
+  $('audioSpeedButton').setAttribute('aria-expanded', String(open));
+  if (focus) $('audioSpeedButton').focus({preventScroll:true});
+  syncScrim();
+}
 function setQueueOpen(open, {focus = false} = {}) {
+  if (open && phoneLayout() && !$('audioSpeedPanel').hidden) setSpeedOpen(false);
   $('audioQueuePanel').hidden = !open;
   $('audioQueueToggle').setAttribute('aria-expanded', String(open));
+  $('audioMiniQueue').setAttribute('aria-expanded', String(open));
+  syncScrim();
   if (open) $('audioQueue').querySelector('[aria-current="true"]')?.scrollIntoView({block:'nearest'});
   if (focus) $('audioQueueToggle').focus({preventScroll:true});
 }
@@ -331,8 +425,18 @@ $('audioRead').onclick = () => start(false);
 $('audioReadLine').onclick = () => start(true);
 $('audioPrevious').onclick = () => selectPlaylistItem(currentPlaylistIndex() - 1);
 $('audioNext').onclick = () => selectPlaylistItem(currentPlaylistIndex() + 1);
-$('audioToggle').onclick = () => wantsPlay ? pause() : resume();
-$('audioQueueToggle').onclick = () => setQueueOpen($('audioQueuePanel').hidden);
+$('audioToggle').onclick = $('audioMiniToggle').onclick = () => wantsPlay ? pause() : resume();
+$('audioQueueToggle').onclick = $('audioMiniQueue').onclick = () => setQueueOpen($('audioQueuePanel').hidden);
+$('audioSpeedButton').onclick = () => setSpeedOpen($('audioSpeedPanel').hidden);
+$('audioSpeedClose').onclick = () => setSpeedOpen(false, {focus:true});
+// Like any popover, the speed panel closes when one presses anywhere outside it (focus stays where it lands).
+document.addEventListener('pointerdown', ev => {
+  if (!$('audioSpeedPanel').hidden && !ev.target.closest?.('#audioSpeedPanel,#audioSpeedButton')) setSpeedOpen(false);
+}, true);
+document.querySelectorAll('.audio-rates [data-rate]').forEach(b => b.onclick = () => setSpeed(Number(b.dataset.rate)));
+$('audioExpand').onclick = () => setExpanded(true);
+$('audioCollapse').onclick = () => { setExpanded(false); $('audioExpand').focus({preventScroll:true}); };
+$('audioScrim').onclick = () => { if (!$('audioSpeedPanel').hidden) setSpeedOpen(false); else setQueueOpen(false); };
 $('audioQueueClose').onclick = () => setQueueOpen(false, {focus:true});
 $('audioQueue').onclick = ev => { const b = ev.target.closest('[data-audio-item]'); if (b) selectPlaylistItem(Number(b.dataset.audioItem)); };
 $('audioTitle').onclick = () => {
@@ -355,8 +459,11 @@ for (const id of ['audioSpeed', 'audioSeek', ...extrasControls, ...peopleControl
 });
 window.addEventListener('keydown', ev => {
   if (ev.defaultPrevented || ev.isComposing || ev.altKey || ev.ctrlKey || ev.metaKey || ev.shiftKey) return;
-  if (ev.key === 'Escape' && !$('audioQueuePanel').hidden && ev.target.closest?.('#audioPlayer') &&
-      !document.querySelector('dialog[open],#kinSheet:not([hidden])')) {
+  if (ev.key !== 'Escape' || !ev.target.closest?.('#audioPlayer') || document.querySelector('dialog[open],#kinSheet:not([hidden])')) return;
+  // The panel holding focus closes first; otherwise the open playlist. Elsewhere Escape keeps its own meaning.
+  if (!$('audioSpeedPanel').hidden && (ev.target.closest('#audioSpeedPanel') || $('audioQueuePanel').hidden)) {
+    ev.preventDefault(); ev.stopImmediatePropagation(); setSpeedOpen(false, {focus:true});
+  } else if (!$('audioQueuePanel').hidden) {
     ev.preventDefault(); ev.stopImmediatePropagation(); setQueueOpen(false, {focus:true});
   }
 }, true);
@@ -366,7 +473,7 @@ audio.addEventListener('loadedmetadata', () => {
   if (pendingOffset !== null) { audio.currentTime = Math.min(pendingOffset, Number.isFinite(audio.duration) ? audio.duration : pendingOffset); pendingOffset = null; }
   status();
 });
-audio.addEventListener('playing', () => { if (isCurrentSource()) { waiting = false; status(); } });
+audio.addEventListener('playing', () => { if (isCurrentSource()) { waiting = false; status(); warmNext(); } });
 audio.addEventListener('waiting', () => { if (isCurrentSource()) { waiting = true; status(); } });
 for (const event of ['pause', 'durationchange']) audio.addEventListener(event, status);
 audio.addEventListener('timeupdate', progress);
@@ -381,8 +488,10 @@ audio.addEventListener('ended', () => {
   if (!isCurrentSource() || !audio.ended || !wantsPlay || error) return;
   advance({afterGap:gap});
 });
-function measurePlayer() { document.documentElement.style.setProperty('--audio-height', player.hidden ? '0px' : player.offsetHeight + 'px'); }
+// Desktop: the bar pushes the page down. Phone: the strip's own height is reserved in CSS; the open card overlays.
+function measurePlayer() { document.documentElement.style.setProperty('--audio-height', player.hidden || phoneLayout() ? '0px' : player.offsetHeight + 'px'); }
 new ResizeObserver(measurePlayer).observe(player);
+matchMedia('(max-width:820px)').addEventListener('change', () => { syncScrim(); measurePlayer(); });
 setSpeed(speed);
 if ('mediaSession' in navigator) {
   for (const [action, handler] of Object.entries({play:resume, pause, previoustrack:() => selectPlaylistItem(currentPlaylistIndex() - 1), nexttrack:() => selectPlaylistItem(currentPlaylistIndex() + 1), seekto:details => { if (Number.isFinite(audio.duration)) seek(details.seekTime / audio.duration); }})) {
