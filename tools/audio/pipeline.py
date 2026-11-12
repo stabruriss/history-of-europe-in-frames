@@ -4,6 +4,7 @@ import argparse
 import asyncio
 from collections import Counter
 from contextlib import contextmanager
+from difflib import SequenceMatcher
 import fcntl
 import hashlib
 import html
@@ -288,10 +289,19 @@ def check_boundaries(script, boundaries, duration, approved_omission=None):
             raise ValueError('Invalid approved single-character omission')
         wanted = wanted[:at] + wanted[at+1:]
     actual = spoken_characters(''.join(b['text'] for b in boundaries))
-    if not boundaries or actual != wanted:
-        at = next((i for i,(a,b) in enumerate(zip(wanted,actual)) if a != b),min(len(wanted),len(actual)))
-        raise ValueError('WordBoundary coverage differs at %d; expected %r, got %r; lengths %d/%d' %
-                         (at,wanted[max(0,at-12):at+24],actual[max(0,at-12):at+24],len(wanted),len(actual)))
+    warnings = []
+    if not boundaries or not actual:
+        raise ValueError('Empty WordBoundary coverage')
+    if actual != wanted:
+        comparison = SequenceMatcher(None,wanted,actual,autojunk=False)
+        if not any(block.size for block in comparison.get_matching_blocks()):
+            raise ValueError('Unrelated/garbled WordBoundary coverage')
+        # 老无: a word or two must not hold a release hostage. Keep original text/audio and
+        # disclose the metadata difference; do not require a per-name approval or rerecording.
+        warnings.append({'kind':'word-boundary-coverage','expectedCharacters':len(wanted),
+                         'returnedCharacters':len(actual),'differences':[
+            {'index':i,'expected':wanted[i:j],'returned':actual[a:b]}
+            for op,i,j,a,b in comparison.get_opcodes() if op != 'equal']})
     previous = -1
     for b in boundaries:
         if b['offset'] < previous or b['duration'] < 0:
@@ -300,6 +310,7 @@ def check_boundaries(script, boundaries, duration, approved_omission=None):
     end = (boundaries[-1]['offset']+boundaries[-1]['duration'])/10_000_000
     if end <= 0 or end > duration+0.5 or duration-end > 5:
         raise ValueError('Word boundary/audio duration mismatch')
+    return warnings
 
 
 def probe_audio(path):
@@ -334,7 +345,13 @@ def check_receipt(cache, receipt, record, config, script):
             raise ValueError(record['id']+': unapproved audio omission')
     elif receipt.get('acceptance') == 'machine-checked-with-approved-omission':
         raise ValueError(record['id']+': missing omission approval')
-    check_boundaries(script,receipt['boundaries'],info['duration'],omission)
+    warnings = check_boundaries(script,receipt['boundaries'],info['duration'],omission)
+    if receipt.get('qualityWarnings',[]) != warnings:
+        raise ValueError(record['id']+': coverage warnings not faithfully recorded')
+    acceptance = ('machine-checked-with-approved-omission' if omission else
+                  'machine-checked-with-coverage-warning' if warnings else 'machine-checked')
+    if receipt.get('acceptance') != acceptance:
+        raise ValueError(record['id']+': audio acceptance status mismatch')
 
 
 async def edge_stream(script, config):
@@ -370,13 +387,14 @@ async def make_audio(cache, record, script, config, timeout, stream_factory=edge
     try:
         await asyncio.wait_for(receive(),timeout=timeout)
         info = probe_audio(pending)
-        check_boundaries(script,boundaries,info['duration'])
+        warnings = check_boundaries(script,boundaries,info['duration'])
         sha = digest(pending.read_bytes())
         final = cache/'audio'/(sha+'.mp3')
         pending.replace(final)
         receipt = {'inputHash':key,'textHash':record['textHash'],'config':config,'audioHash':sha,
                    'file':'audio/'+sha+'.mp3','audio':info,'boundaries':boundaries,
-                   'acceptance':'machine-checked','listeningReview':'pending'}
+                   'acceptance':'machine-checked-with-coverage-warning' if warnings else 'machine-checked',
+                   'listeningReview':'pending',**({'qualityWarnings':warnings} if warnings else {})}
         save_json(receipt_path,receipt)
         return receipt, False
     except Exception as error:
@@ -474,7 +492,7 @@ def verify_audio(folder, source, cache, pitch, selection=None):
     if state['schema'] != 2 or state['cache'] != str(cache.resolve()):
         raise ValueError('Wrong audio state schema/cache')
     duration, size = 0, 0
-    omissions = []
+    omissions, warnings = [], []
     for asset_id in ids:
         meta,script = item_paths(folder,asset_id)
         record = read_json(meta)
@@ -488,10 +506,15 @@ def verify_audio(folder, source, cache, pitch, selection=None):
         if receipt.get('approvedOmission'):
             omissions.append({'id':asset_id,'inputHash':key,'audioHash':receipt['audioHash'],
                               'approval':receipt['approvedOmission']})
-    return {'status':'machine-checked-with-approved-omission' if omissions else 'machine-checked',
+        if receipt.get('qualityWarnings'):
+            warnings.append({'id':asset_id,'inputHash':key,'audioHash':receipt['audioHash'],
+                             'warnings':receipt['qualityWarnings']})
+    return {'status':'machine-checked-with-coverage-warning' if warnings else
+                    'machine-checked-with-approved-omission' if omissions else 'machine-checked',
             'items':len(ids),'duration':duration,'bytes':size,
             'profile':config,'networkRequests':0,'listeningReview':'pending',
-            **({'approvedOmissions':omissions} if omissions else {})}
+            **({'approvedOmissions':omissions} if omissions else {}),
+            **({'qualityWarnings':warnings} if warnings else {})}
 
 
 def main(argv=None):

@@ -107,7 +107,7 @@ python3 tools/audio/pipeline.py verify-audio --library "$LIB" \
 
 每次只有一个生成器；不在合成期间改冻结提取器、输入或selection。真实失败就停，先看ID、日志、failed证据，不盲目重试、不花钱兜底。SDK内部可能重连；报告的networkRequests是逻辑新合成任务数，不是HTTP/WebSocket/长文本分段次数。
 
-验收重查SHA、MP3格式、完整解码、WordBoundary文字/时间/尾部。老无已接受本次单字“の”遗漏：用 `approved_omissions.json` 将该批准绑定输入哈希、原MP3哈希与具体位置/字符，保留真实边界、失败记录及 `machine-checked-with-approved-omission` 状态；不改原文、不重录，也不将默认检查改为任意少一字都放行。它不是语音识别或人工听审；发音、非末段重复/静音等仍可能漏检，listeningReview单列pending。首次换声线/规则先用获准的长专题和特殊字符小批校准。
+验收重查SHA、MP3格式、完整解码和边界时序。老无2026-11-12最新要求：除非整段空白或乱码，一两个词的差异不得阻断整批上线。WordBoundary覆盖差异默认只记 `qualityWarnings`（`machine-checked-with-coverage-warning`），保留原文、原音和真实边界，不逐词请示或无谓重录，也不伪报完全吻合；整段空/完全无关的边界及技术完整性问题仍拒绝。旧“の”的哈希绑定批准收据继续兼容；本次“カーゾン”直接保留原音。它不是语音识别或人工听审；发音、非末段重复/静音等仍可能漏检，listeningReview单列pending。首次换声线/规则先用获准的长专题和特殊字符小批校准。
 
 ### 4. 本地预览和真实播放器检查
 

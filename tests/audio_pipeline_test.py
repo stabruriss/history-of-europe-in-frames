@@ -276,9 +276,8 @@ const HISTORY_BRANCHES=[{id:'main',name:'主线'},{id:'shared',name:'换乘线'}
                 p.check_receipt(self.cache,receipt,record,config,record['text'])
             key=receipt['inputHash']+'/'+receipt['audioHash'];p.save_json(registry,{key:omission})
             p.check_receipt(self.cache,receipt,record,config,record['text'])
-            # The default synthesis guard still rejects even this approved character.
-            with self.assertRaisesRegex(ValueError,'coverage'):
-                p.check_boundaries(record['text'],receipt['boundaries'],1)
+            # Legacy receipts remain verifiable; new small differences are warnings, not gates.
+            self.assertEqual(len(p.check_boundaries(record['text'],receipt['boundaries'],1)),1)
             for alteration in ('extra-loss','tail','approval','missing-approval','audio','input'):
                 bad=copy.deepcopy(receipt);bad_record=record
                 if alteration=='extra-loss':bad['boundaries'][0]['text']=wanted[:1]+wanted[3:]
@@ -301,6 +300,38 @@ const HISTORY_BRANCHES=[{id:'main',name:'主线'},{id:'shared',name:'换乘线'}
             self.assertEqual(checked['approvedOmissions'][0]['approval'],omission)
             self.assertEqual(checked['networkRequests'],0)
             self.assertEqual(checked['listeningReview'],'pending')
+
+    def test_word_differences_warn_without_rerecord_or_approval(self):
+        snapshot=self.prepared();record=render(snapshot['entries'][0],'history-fixture/0')
+        config=p.config_for('+0Hz');script=record['text']
+        async def omitted(script,config):
+            yield {'type':'audio','data':b'usable-recording'}
+            yield {'type':'WordBoundary','text':script.replace('Descartes',''),'offset':0,'duration':8_000_000}
+        with patch.object(p,'probe_audio',side_effect=self.fake_probe):
+            receipt,reused=asyncio.run(p.make_audio(self.cache,record,script,config,3,omitted))
+            self.assertFalse(reused)
+            self.assertEqual(receipt['acceptance'],'machine-checked-with-coverage-warning')
+            self.assertEqual(receipt['qualityWarnings'][0]['differences'][0]['expected'],'Descartes')
+            p.check_receipt(self.cache,receipt,record,config,script)
+            async def forbidden(*args):
+                raise AssertionError('A word-level warning must not trigger rerecording')
+                yield
+            again,reused=asyncio.run(p.make_audio(self.cache,record,script,config,3,forbidden))
+            self.assertTrue(reused);self.assertEqual(again,receipt)
+            p.save_json(self.library/'audio-state.json',{'schema':2,'cache':str(self.cache.resolve()),
+                        'items':{record['id']:p.compact_receipt(receipt)}})
+            report=p.verify_audio(self.library,self.source,self.cache,'+0Hz',[record['id']])
+            self.assertEqual(report['qualityWarnings'][0]['warnings'],receipt['qualityWarnings'])
+            bad=copy.deepcopy(receipt);bad.pop('qualityWarnings')
+            with self.assertRaisesRegex(ValueError,'faithfully'):
+                p.check_receipt(self.cache,bad,record,config,script)
+        for wanted,got in [('由カーゾン勋爵劝说','由勋爵劝说'),('两个词 First Last 都保留','两个词 都保留'),
+                           ('一句话的结尾','一句话的')]:
+            with self.subTest(wanted=wanted):
+                self.assertTrue(p.check_boundaries(wanted,[{'text':got,'offset':0,'duration':8_000_000}],1))
+        for wanted,bounds in [('正常正文',[]),('正常正文',[{'text':'乱码','offset':0,'duration':8_000_000}])]:
+            with self.subTest(bounds=bounds),self.assertRaisesRegex(ValueError,'coverage'):
+                p.check_boundaries(wanted,bounds,1)
 
     def test_small_state_keeps_boundaries_in_receipt_only(self):
         self.prepared()

@@ -101,7 +101,7 @@ python3 "$PIPE" verify-audio --source "$SOURCE" --library "$LIB" --selection "$S
 - MP3须单音轨、24kHz/mono、正时长，`ffmpeg -xerror`完整解码；核对字节SHA、WordBoundary文字覆盖/时间顺序及尾部。复用也重查这些条件，不仅看文件是否存在。
 - 边界文字比较允许空白、标点与兼容字形正规化差别，不做音频内容识别。非末段重复/静音、发音、语义完整性可能绕过机器检查；**machine-checked不等于人工听审**，listeningReview另记pending。
 - 圈码、外文、特殊字符出错要查证，不为通过验收删字。不能擅自把未获准的其他线路拿来试音。
-- 老无明确接受的单字遗漏无需重录。本次 `history-britain-henry8-2/1/box/0` 漏“の”，原音频按 `approved_omissions.json` 的 **inputHash＋audioHash＋位置/字**登记例外，receipt/验收报告标 `machine-checked-with-approved-omission`。保留原文、原边界和失败证据，不改写成“完全逐字匹配”；其他缺字、错文件、尾部和时序仍失败。普通合成不会自动套宽松阈值。
+- **老无最新规则：除非整段空白或乱码，一两个字词不能挡整批上线。** 这种覆盖差异自动记 `qualityWarnings`、状态 `machine-checked-with-coverage-warning`，复用现有录音，不逐个姓名请求批准或重录；正文/实际边界不改，不冒充逐字吻合。“カーゾン”现已按此保留原音。“の”的既有 `approved_omissions.json` 记录保留向后兼容。整段空/完全无关的边界、坏哈希/格式/配置、解码及时序问题仍需处理；边界元数据不是ASR或人工听审。
 
 ### 同文重录
 
@@ -124,6 +124,6 @@ python3 project-files/tests/run_tests.py verify-audio-pipeline.js verify-audio-p
 python3 project-files/tests/run_tests.py --changed
 ```
 
-35项离线单测覆盖结构、时间/副标题、引用删除、独立分段、选择完整性、输入/源篡改、缓存/失败/锁、清单过期与缺段降级。原生MP3 fixture覆盖播放器而不是TTS内容；真实录音可另设 `AUDIO_PLAYER_SMOKE_MANIFEST` 抽检所供片段。全部经过runner/chrome_guard，不直接启动无守护Chrome。缓存包含Python/音频工具和播放器私有组装输入；改runner须跑verify-no-leak。
+36项离线单测覆盖结构、时间/副标题、引用删除、独立分段、选择完整性、输入/源篡改、缓存/失败/锁、清单过期与缺段降级。原生MP3 fixture覆盖播放器而不是TTS内容；真实录音可另设 `AUDIO_PLAYER_SMOKE_MANIFEST` 抽检所供片段。全部经过runner/chrome_guard，不直接启动无守护Chrome。缓存包含Python/音频工具和播放器私有组装输入；改runner须跑verify-no-leak。
 
 fixture在runner管理的临时目录，依赖/持久脚本不放/tmp。Git不保留素材、音频、receipt、上传ledger或源码树外的窄scope/selection/BUILD证据，移交/删除工作区前先备份。当前生成、上传、测试、部署的实际结果见本轮BUILD记录，不能把本文的示例命令当作已经执行。
