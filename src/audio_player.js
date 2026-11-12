@@ -141,6 +141,8 @@ function displayTitle() {
 // The line above the title: the section being read. While its own title is the prelude, say so instead of repeating it.
 function kickerText() {
   const t = current(); if (!t) return '';
+  // Reading a whole line, the line and where one is in it say more than the section (老无 2026-11-12).
+  if (mode === 'line' && line) { const items = playlistItems(), pos = currentPlaylistIndex(items); return `${line.name}线 · ${Math.max(1, pos + 1)}/${items.length}`; }
   if (partIndex < 0) return '节题';
   return t.kind === 'topic' ? '专题' : String(t.chapter || '').trim();
 }
@@ -289,15 +291,15 @@ function status() {
   for (const id of ['audioUpNext', 'audioMiniUpNext']) { $(id).innerHTML = next ? '<b>NEXT:</b> ' + esc(next) : ''; $(id).hidden = !next; }
   $('audioTitle').setAttribute('aria-label', '定位朗读正文：' + t.title);
   $('audioPhase').textContent = partLabel();
-  for (const id of ['audioCount', 'audioMiniCount']) $(id).textContent = `${Math.max(1, pos + 1)}/${items.length}`;
-  for (const id of ['audioQueueToggle', 'audioMiniQueue']) $(id).setAttribute('aria-label', `播放列表，第 ${Math.max(1, pos + 1)} 项，共 ${items.length} 项`);
+  $('audioCount').textContent = `${Math.max(1, pos + 1)}/${items.length}`;
+  $('audioQueueToggle').setAttribute('aria-label', `播放列表，第 ${Math.max(1, pos + 1)} 项，共 ${items.length} 项`);
   const toggleLabel = wantsPlay ? '暂停' : error ? '重试播放' : finished ? '重新播放当前项' : '继续播放';
   for (const id of ['audioToggle', 'audioMiniToggle']) {
     $(id).innerHTML = wantsPlay ? ICON.pause : ICON.play;
     $(id).setAttribute('aria-label', toggleLabel); $(id).title = toggleLabel;
   }
-  $('audioPrevious').disabled = pos <= 0;
-  $('audioNext').disabled = pos < 0 || (partIndex >= 0 && pos >= items.length - 1);
+  $('audioPrevious').disabled = $('audioMiniPrevious').disabled = pos <= 0;
+  $('audioNext').disabled = $('audioMiniNext').disabled = pos < 0 || (partIndex >= 0 && pos >= items.length - 1);
   $('audioError').hidden = !error;
   $('audioError').textContent = error;
   markQueue(items);
@@ -617,7 +619,6 @@ function setQueueOpen(open, {focus = false} = {}) {
   if (open && phoneLayout() && !$('audioSpeedPanel').hidden) setSpeedOpen(false);
   $('audioQueuePanel').hidden = !open;
   $('audioQueueToggle').setAttribute('aria-expanded', String(open));
-  $('audioMiniQueue').setAttribute('aria-expanded', String(open));
   syncScrim();
   if (open) $('audioQueue').querySelector('[aria-current="true"]')?.scrollIntoView({block:'nearest'});
   if (focus) $('audioQueueToggle').focus({preventScroll:true});
@@ -631,12 +632,12 @@ function seek(fraction) {
 }
 $('audioRead').onclick = () => start(false);
 $('audioReadLine').onclick = () => start(true);
-$('audioPrevious').onclick = () => selectPlaylistItem(currentPlaylistIndex() - 1);
+$('audioPrevious').onclick = $('audioMiniPrevious').onclick = () => selectPlaylistItem(currentPlaylistIndex() - 1);
 // While the section title plays, the scene's own body has not started: 下一项 goes to it, as NEXT says.
 const forwardIndex = () => currentPlaylistIndex() + (partIndex < 0 ? 0 : 1);
-$('audioNext').onclick = () => selectPlaylistItem(forwardIndex());
+$('audioNext').onclick = $('audioMiniNext').onclick = () => selectPlaylistItem(forwardIndex());
 $('audioToggle').onclick = $('audioMiniToggle').onclick = () => wantsPlay ? pause() : resume();
-$('audioQueueToggle').onclick = $('audioMiniQueue').onclick = () => setQueueOpen($('audioQueuePanel').hidden);
+$('audioQueueToggle').onclick = () => setQueueOpen($('audioQueuePanel').hidden);
 $('audioSpeedButton').onclick = () => setSpeedOpen($('audioSpeedPanel').hidden);
 $('audioSpeedClose').onclick = () => setSpeedOpen(false, {focus:true});
 // Like any popover, the speed panel closes when one presses anywhere outside it (focus stays where it lands).
@@ -645,6 +646,13 @@ document.addEventListener('pointerdown', ev => {
 }, true);
 document.querySelectorAll('.audio-rates [data-rate]').forEach(b => b.onclick = () => setSpeed(Number(b.dataset.rate)));
 $('audioExpand').onclick = () => setExpanded(true);
+// The open card is not modal: a tap anywhere outside the player folds it back, and that tap still does its own job.
+// Dialogs and the genealogy sheet sit above it and keep their own taps.
+document.addEventListener('click', ev => {
+  if (!player.classList.contains('audio-expanded') || !phoneLayout()) return;
+  if (ev.target.closest?.('#audioPlayer,dialog,#kinSheet')) return;
+  setExpanded(false);
+}, true);
 $('audioCollapse').onclick = () => { setExpanded(false); $('audioExpand').focus({preventScroll:true}); };
 $('audioScrim').onclick = () => { if (!$('audioSpeedPanel').hidden) setSpeedOpen(false); else setQueueOpen(false); };
 $('audioQueueClose').onclick = () => setQueueOpen(false, {focus:true});
@@ -700,8 +708,9 @@ audio.addEventListener('ended', () => {
   streamCommit(); // A stream only ends after its last clip, or when it cannot go on: advance() takes over from there.
   advance({afterGap:gap});
 });
-// Desktop: the bar pushes the page down. Phone: the strip's own height is reserved in CSS; the open card overlays.
-function measurePlayer() { document.documentElement.style.setProperty('--audio-height', player.hidden || phoneLayout() ? '0px' : player.offsetHeight + 'px'); }
+// Desktop: the bar sits at the bottom and the page reserves its height there (老无 2026-11-12). Phone: the strip's own
+// height is reserved in CSS; the open card overlays.
+function measurePlayer() { document.documentElement.style.setProperty('--audio-bottom', player.hidden || phoneLayout() ? '0px' : player.offsetHeight + 'px'); }
 new ResizeObserver(measurePlayer).observe(player);
 matchMedia('(max-width:820px)').addEventListener('change', () => { syncScrim(); measurePlayer(); });
 setSpeed(speed);

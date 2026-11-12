@@ -1,4 +1,4 @@
-/* 老无 2026-11-12: a standard player in the atlas's parchment ink. Desktop: one bar on top.
+/* 老无 2026-11-12: a standard player in the atlas's parchment ink. Desktop: one bar at the bottom of the page.
    Phones: a strip at the bottom (thumb reach) that opens into the full card; panels rise from the bottom edge. */
 :root{--audio-blue:#235f93;--audio-height:0px;--audio-bottom:0px;--audio-card:#e9dfc9;--audio-card2:#dfd2b6;--audio-track:#bfae8c;
   --audio-num:-apple-system,"SF Pro Text","Helvetica Neue",Arial,sans-serif}
@@ -29,13 +29,13 @@ body{padding-top:var(--audio-height);padding-bottom:var(--audio-bottom)}
 @media(hover:hover){.audio-opt:not(:has(input:checked)):hover{background:rgba(42,32,24,.07)}}
 
 /* ---------- the player ---------- */
-#audioPlayer{position:fixed;inset:0 0 auto;z-index:1400;color:var(--ink);font-family:var(--serif)}
+#audioPlayer{position:fixed;inset:auto 0 0;z-index:1400;color:var(--ink);font-family:var(--serif)}
 #audioPlayer button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
 #audioPlayer button:disabled{opacity:.3;cursor:default}
 #audioPlayer svg{width:24px;height:24px;fill:currentColor;display:block}
 #audioPlayer .audio-box svg{width:13px;height:13px}
 .audio-mini,#audioCollapse,#audioScrim{display:none}
-.audio-player-inner{display:grid;grid-template-columns:minmax(200px,1fr) minmax(380px,1.35fr) auto;gap:0 28px;align-items:center;padding:8px 24px;min-height:84px;background:linear-gradient(180deg,var(--audio-card),var(--audio-card2));border-bottom:1px solid var(--rule);box-shadow:0 3px 12px #2a201819}
+.audio-player-inner{display:grid;grid-template-columns:minmax(200px,1fr) minmax(380px,1.35fr) auto;gap:0 28px;align-items:center;padding:8px 24px;min-height:84px;background:linear-gradient(180deg,var(--audio-card),var(--audio-card2));border-top:1px solid var(--rule);box-shadow:0 -3px 12px #2a201819}
 .audio-meta{min-width:0}
 #audioPlayer #audioTitle{display:block;max-width:100%;text-align:left;font:700 17px/1.4 var(--serif);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .audio-kicker,.audio-next{display:block;max-width:100%;font:500 12px/1.35 var(--serif);color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -72,12 +72,12 @@ body{padding-top:var(--audio-height);padding-bottom:var(--audio-bottom)}
 .audio-pop-head strong{white-space:nowrap}
 #audioQueueMeta{flex:1;text-align:right;color:var(--ink2);font:12px var(--audio-num);font-variant-numeric:tabular-nums}
 .audio-pop-head button{width:40px;height:40px;border-radius:50%;font-size:22px!important;line-height:1;color:var(--ink2)!important;margin-left:auto}
-#audioSpeedPanel{top:calc(100% + 6px);left:50%;transform:translateX(-50%);width:min(480px,calc(100vw - 24px));padding-bottom:12px}
+#audioSpeedPanel{bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);width:min(480px,calc(100vw - 24px));padding-bottom:12px}
 .audio-rates{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;padding:12px 12px 4px}
 #audioPlayer .audio-rates button{height:42px;border-radius:10px;border:1.5px solid var(--rule);font:700 14px var(--audio-num)}
 #audioPlayer .audio-rates button[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
 #audioSpeed{display:block;width:calc(100% - 24px);margin:6px 12px 0;accent-color:var(--ink);cursor:pointer}
-#audioQueuePanel{top:calc(100% + 6px);right:16px;width:min(460px,calc(100vw - 24px));max-height:min(58dvh,calc(100dvh - var(--audio-height) - 80px))}
+#audioQueuePanel{bottom:calc(100% + 6px);right:16px;width:min(460px,calc(100vw - 24px));max-height:min(58dvh,calc(100dvh - var(--audio-bottom) - 80px))}
 #audioQueue{list-style:none;margin:0;padding:4px 0}
 #audioQueue li{margin:0;padding:0}
 #audioQueue button{display:grid;grid-template-columns:34px minmax(0,1fr) auto;align-items:center;gap:8px;width:100%;min-height:46px;padding:6px 16px 6px 4px;text-align:left;font-size:13.5px;line-height:1.45;color:var(--ink)}
@@ -94,7 +94,7 @@ body{padding-top:var(--audio-height);padding-bottom:var(--audio-bottom)}
  /* The strip reserves its own height; the open card and panels overlay the page instead of reflowing it. */
  body:has(#audioPlayer:not([hidden])){--audio-bottom:calc(64px + env(safe-area-inset-bottom))}
  #audioPlayer{inset:auto 0 0}
- .audio-mini{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 48px auto;align-items:center;gap:6px;height:calc(64px + env(safe-area-inset-bottom));padding:4px 6px env(safe-area-inset-bottom) 14px;background:linear-gradient(180deg,var(--audio-card),var(--audio-card2));border-top:1px solid var(--rule);box-shadow:0 -8px 22px -16px rgba(42,32,24,.6)}
+ .audio-mini{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 44px 48px 44px;align-items:center;gap:4px;height:calc(64px + env(safe-area-inset-bottom));padding:4px 8px env(safe-area-inset-bottom) 14px;background:linear-gradient(180deg,var(--audio-card),var(--audio-card2));border-top:1px solid var(--rule);box-shadow:0 -8px 22px -16px rgba(42,32,24,.6)}
  .audio-mini-line{position:absolute;left:0;right:0;top:0;height:3px;background:var(--audio-track)}
  .audio-mini-line i{display:block;height:100%;width:0;background:var(--ink)}
  #audioPlayer #audioExpand{min-width:0;height:52px;text-align:left}
@@ -103,6 +103,9 @@ body{padding-top:var(--audio-height);padding-bottom:var(--audio-bottom)}
  #audioExpand .audio-next b{font-size:9.5px}
  .audio-player-inner{display:none}
  #audioPlayer.audio-expanded .audio-mini{display:none}
+ #audioPlayer .audio-skip{width:44px;height:44px;display:grid;place-items:center;border-radius:50%;color:var(--ink)}
+ #audioPlayer .audio-skip svg{width:24px;height:24px;fill:currentColor}
+ #audioPlayer .audio-skip:disabled{opacity:.32}
  #audioPlayer.audio-expanded .audio-player-inner{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"collapse collapse" "title remaining" "transport transport" "options options";gap:8px 12px;align-items:center;min-height:0;padding:0 18px calc(16px + env(safe-area-inset-bottom));border:0;border-radius:20px 20px 0 0;box-shadow:0 -14px 34px -14px rgba(42,32,24,.6)}
  #audioPlayer #audioCollapse{grid-area:collapse;justify-self:center;display:grid;place-items:center;width:96px;height:40px}
  #audioCollapse span{width:42px;height:5px;border-radius:3px;background:var(--audio-track)}
@@ -122,7 +125,7 @@ body{padding-top:var(--audio-height);padding-bottom:var(--audio-bottom)}
  .audio-player-inner .audio-options{grid-area:options;display:grid;grid-template-columns:1fr 1fr;gap:10px}
  .audio-player-inner .audio-opt{height:46px;justify-content:center;font-size:15px}
  #audioScrim:not([hidden]){display:block;position:fixed;inset:0;z-index:1;background:rgba(42,32,24,.35)}
- .audio-pop{position:fixed;top:auto!important;left:0!important;right:0!important;bottom:0;transform:none!important;width:auto!important;border-radius:20px 20px 0 0;padding-bottom:env(safe-area-inset-bottom)}
+ .audio-pop{position:fixed;top:auto!important;left:0!important;right:0!important;bottom:0!important;transform:none!important;width:auto!important;border-radius:20px 20px 0 0;padding-bottom:env(safe-area-inset-bottom)}
  .audio-rates{grid-template-columns:repeat(4,1fr);padding:12px 16px 4px}
  #audioPlayer .audio-rates button{height:48px;font-size:16px}
  #audioSpeed{width:calc(100% - 32px);margin:10px 16px 8px;height:28px}

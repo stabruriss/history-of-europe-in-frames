@@ -112,7 +112,7 @@ async function readerActions(p, visible) {
   assert(visible ? bar.height > 0 : bar.height === 0, 'Reader action bar must occupy space only when visible: ' + JSON.stringify(bar));
 }
 async function geometry(p, width) {
-  // 老无 2026-11-12: desktop keeps one bar on top; phones keep a strip at the bottom that opens into the full card.
+  // 老无 2026-11-12: desktop keeps one bar at the bottom; phones keep a strip at the bottom that opens into the full card.
   const card = ['audioPrevious','audioToggle','audioNext','audioTitle','audioSeek','audioSpeedButton','audioQueueToggle','audioIncludeExtras','audioIncludePeople'];
   const reader = ['audioReadIncludeExtras','audioReadIncludePeople'];
   const measure = ids => p.evaluate(ids => {
@@ -127,13 +127,14 @@ async function geometry(p, width) {
     const g = await measure([...card, ...reader]);
     assert(g.scroll <= width, JSON.stringify(g));
     assert(g.player.height < 112, JSON.stringify(g.player));
-    assert(g.masthead.top >= g.player.bottom - 1, JSON.stringify(g));
-    assert(g.reader.height > 230 && g.actions.top >= g.player.bottom, JSON.stringify(g));
+    assert(Math.abs(g.player.bottom - g.height) <= 1 && g.masthead.top <= 1, 'Desktop bar sits at the bottom, the masthead stays on top: ' + JSON.stringify(g));
+    assert(Math.abs(g.pad - g.player.height) <= 1, 'The page reserves the bar height instead of hiding text under it');
+    assert(g.reader.height > 230 && g.reader.bottom <= g.player.top + 1, JSON.stringify(g));
     for (const c of g.controls) inside(g, c);
     return g;
   }
   if (await p.$eval('#audioCard', e => e.getClientRects().length > 0)) await p.click('#audioCollapse');
-  const strip = await measure([...reader, 'audioExpand', 'audioMiniToggle', 'audioMiniQueue']);
+  const strip = await measure([...reader, 'audioExpand', 'audioMiniPrevious', 'audioMiniToggle', 'audioMiniNext']);
   assert(strip.scroll <= width, JSON.stringify(strip));
   assert(strip.card.height === 0 && Math.abs(strip.mini.bottom - strip.height) <= 1 && strip.mini.height <= 80, 'Collapsed strip sits at the bottom: ' + JSON.stringify(strip.mini));
   assert(Math.abs(strip.pad - strip.mini.height) <= 1, 'The page reserves the strip height instead of hiding text under it');
@@ -1191,6 +1192,33 @@ print(json.dumps({'ids':ids, 'hashes':hashes, 'kinds':kinds,
   assert.equal(await p.$eval('#readerGrip', e => Number(e.getAttribute('aria-valuenow'))), gripWidth);
   assert.deepEqual(await browseState(p), editorBrowse); await unchangedAudio(editorAudio, 'Separator');
   pass('Text input, textarea, contentEditable, select and explicitly focused separator keep native editing keys');
+
+  // 老无 2026-11-12 (mobile UX): the strip carries 上一项/播放暂停/下一项; a tap outside the open card folds it back
+  // (a sheet's scrim closes only the sheet); reading a line, the line above the title gives the line and the position.
+  {
+    await p.setViewport({width:390, height:844});
+    await p.goto(url('fixture') + '#history-migration/0', {waitUntil:'load'}); await ready(p);
+    await p.click('#audioReadLine'); await stage(p, 0, 'title');
+    const lineLabel = () => p.evaluate(() => { const id = atlasAudio.state().line; return metroUI.data.lines.find(l => l.id === id).name + '线 · ' + document.getElementById('audioCount').textContent; });
+    for (const id of ['audioMiniKicker', 'audioKicker']) assert.equal(await p.$eval('#' + id, e => e.textContent), await lineLabel(), 'On a line, the line and the playlist position replace the section title');
+    assert.equal(await p.$eval('#audioMiniPrevious', e => e.disabled), true, 'Nothing before the first item');
+    await p.click('#audioMiniNext'); await partReady(p, data.routes.prehistory[0]); // From the section title into its body.
+    await p.click('#audioMiniNext'); await partReady(p, data.routes.prehistory[1]);
+    assert.equal(await p.$eval('#audioMiniKicker', e => e.textContent), await lineLabel());
+    await p.click('#audioMiniPrevious'); await partReady(p, data.routes.prehistory[0]);
+    await p.click('#audioMiniToggle'); await p.waitForFunction(() => !atlasAudio.state().wantsPlay);
+    const expanded = () => p.$eval('#audioPlayer', e => e.classList.contains('audio-expanded'));
+    await p.click('#audioExpand'); assert.equal(await expanded(), true);
+    await p.click('#audioRemaining'); assert.equal(await expanded(), true, 'A tap inside the card keeps it open');
+    await p.click('#audioQueueToggle'); assert.equal(await p.$eval('#audioQueuePanel', e => e.hidden), false);
+    await p.mouse.click(195, 90); // The scrim, above the sheet.
+    assert.equal(await p.$eval('#audioQueuePanel', e => e.hidden), true); assert.equal(await expanded(), true, 'The scrim closes only the sheet');
+    const text = await p.$eval('#readerBody', e => { const r = e.getBoundingClientRect(); return {x:r.left + r.width / 2, y:r.top + 20}; });
+    await p.mouse.click(text.x, text.y);
+    assert.equal(await expanded(), false, 'A tap outside the open card folds it back');
+    await p.setViewport({width:1440, height:960});
+  }
+  pass('390px strip: 上一项/播放暂停/下一项; the open card folds on an outside tap, a sheet scrim closes only the sheet; a line shows its name and playlist position above the title');
 
   // The continuous stream, the default on Chromium (老无 2026-11-12: a locked Android phone stopped at every boundary).
   // Every check above runs the element path (window.ATLAS_AUDIO_ENGINE = 'element'); these run the stream itself.

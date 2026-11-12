@@ -235,7 +235,27 @@ const settle=p=>p.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestA
    return {want,moved,now:sceneIndex};
   });
   assert.ok(short&&short.moved>0,'a short scene to test with '+JSON.stringify(short));assert.equal(short.now,short.want,'stays on the scene it went to');await tall.close();
+  /* ---------- The mark top-left goes home, after asking (老无 2026-11-12). Last: its page would otherwise sit in front of the one above. ---------- */
+  {
+   const h=await pageAt(1440,900,'#history-spain-1492/0');
+   assert.equal(await h.evaluate(()=>metroUI.state().mode),'ride');
+   const station=await h.evaluate(()=>metroUI.state().station);
+   await h.click('#brandMark');
+   assert.equal(await h.$eval('#homeDialog',d=>d.open),true,'the mark asks first');
+   await h.keyboard.press('ArrowRight');
+   assert.equal(await h.evaluate(()=>metroUI.state().station),station,'arrows do nothing behind the question');
+   await h.keyboard.press('Escape');
+   assert.equal(await h.$eval('#homeDialog',d=>d.open),false);
+   assert.equal(await h.evaluate(()=>metroUI.state().mode),'ride','cancelling keeps the ride');
+   await h.focus('#brandMark');await h.keyboard.press('Enter');
+   assert.equal(await h.$eval('#homeDialog',d=>d.open),true,'Enter on the mark asks too');
+   await Promise.all([h.waitForNavigation({waitUntil:'load'}),h.click('#homeConfirm')]);
+   await h.waitForFunction(()=>window.metroUI);
+   assert.equal(await h.evaluate(()=>metroUI.state().mode),'network','confirming reloads into the whole map');
+   await h.close();
+  }
+
   assert.deepEqual(errors,[]);
-  console.log(`PASS: metro layout — site identity kept; ${counts.stations} stations, ${counts.lines} lines, ${counts.shared} shared on the whole map with clean rails and names; hover, pan, zoom, time slices; on-train view, scene and station navigation, text scrolling, deep links; person cards and family trees; geography and topics; all ${landed.scenes} scenes land on their own marks; laptop, phone, touch emulation; offline; no page errors.`);
+  console.log(`PASS: metro layout — site identity kept; ${counts.stations} stations, ${counts.lines} lines, ${counts.shared} shared on the whole map with clean rails and names; hover, pan, zoom, time slices; on-train view, scene and station navigation, text scrolling, deep links, the mark going home after asking; person cards and family trees; geography and topics; all ${landed.scenes} scenes land on their own marks; laptop, phone, touch emulation; offline; no page errors.`);
  }catch(e){console.error(e);process.exitCode=1;}finally{await Promise.race([browser.close(),new Promise(r=>setTimeout(r,200))]);browser.process()?.kill('SIGKILL');process.exit(process.exitCode||0);}
 })().catch(e=>{console.error(e);process.exitCode=1;});

@@ -216,6 +216,19 @@ function stepScene(delta){const next=sceneIndex+delta;if(station&&next>=station.
 const transferDialog=document.createElement('dialog');transferDialog.id='transferDialog';
 transferDialog.innerHTML='<form method="dialog"><p id="transferQuestion"></p><small id="transferNote"></small><div class="transfer-actions"><button value="cancel">取消</button><button id="transferConfirm" value="ok"></button></div></form>';
 document.body.append(transferDialog);
+// 老无 2026-11-12: the mark top-left goes home, to the whole metro map, freshly loaded. The reload ends any reading in
+// progress, so it asks first; cancel, Escape or the backdrop leave everything as it was.
+const homeDialog=document.createElement('dialog');homeDialog.id='homeDialog';
+homeDialog.innerHTML='<form method="dialog"><p id="homeQuestion">返回首页？</p><small id="homeNote"></small><div class="transfer-actions"><button value="cancel" autofocus>取消</button><button id="homeConfirm" value="ok">返回首页</button></div></form>';
+document.body.append(homeDialog);
+$('#homeConfirm').onclick=ev=>{ev.preventDefault();homeDialog.close();history.replaceState(null,'',location.pathname+location.search);location.reload()};
+homeDialog.addEventListener('click',ev=>{if(ev.target===homeDialog)homeDialog.close()});  // the backdrop
+homeDialog.addEventListener('close',()=>$('#brandMark').focus({preventScroll:true}));  // cancelled: focus returns to the mark
+function askHome(){
+ if(homeDialog.open)return;
+ $('#homeNote').textContent='页面会刷新并回到地铁全图'+(window.atlasAudio?.state().wantsPlay?'，正在进行的朗读会停止。':'。');
+ homeDialog.showModal();
+}
 let transferTo=null;
 $('#transferConfirm').onclick=ev=>{ev.preventDefault();const to=transferTo;transferDialog.close();if(to)board(to.id,{key:to.key})};
 transferDialog.addEventListener('click',ev=>{if(ev.target===transferDialog)transferDialog.close()});  // the backdrop
@@ -415,7 +428,7 @@ viewportPadding=()=>{
 };
 // ← → change station and ↑ ↓ change scene on the train; other modes keep the atlas's own keys.
 window.addEventListener('keydown',ev=>{
- if(transferDialog.open||mode==='off'||ev.defaultPrevented||ev.isComposing||ev.altKey||ev.ctrlKey||ev.metaKey||ev.shiftKey)return;
+ if(transferDialog.open||homeDialog.open||mode==='off'||ev.defaultPrevented||ev.isComposing||ev.altKey||ev.ctrlKey||ev.metaKey||ev.shiftKey)return;
  if(ev.target.isContentEditable||ev.target.closest('input:not(#audioSpeed):not(#audioSeek):not(#audioIncludeExtras):not(#audioIncludePeople):not(#audioReadIncludeExtras):not(#audioReadIncludePeople),textarea,select,[role="textbox"],[role="separator"],#toc,#treeSheet')||!$('#kinSheet')?.hidden)return;
  if(ev.key==='Escape'&&mode==='ride'){ev.preventDefault();setMode('network');return}
  if(!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(ev.key))return;
@@ -471,6 +484,8 @@ new ResizeObserver(()=>map.invalidateSize({animate:false,pan:false})).observe($(
 
 /* ---------- Start ---------- */
 $('#brandMark').src=$('link[rel="icon"]').href;
+$('#brandMark').addEventListener('click',askHome);
+$('#brandMark').addEventListener('keydown',ev=>{if((ev.key==='Enter'||ev.key===' ')&&!ev.altKey&&!ev.ctrlKey&&!ev.metaKey&&!ev.shiftKey){ev.preventDefault();askHome()}});
 const syncMasthead=()=>document.documentElement.style.setProperty('--masthead-h',$('#masthead').offsetHeight+'px');
 new ResizeObserver(syncMasthead).observe($('#masthead'));syncMasthead();
 $('#datasetStats').textContent=`${lines.length}条主线 · ${stations.length}个事件站 · ${ENTRIES.filter(isHistory).reduce((n,e)=>n+e.scenes.length,0)}幕`;

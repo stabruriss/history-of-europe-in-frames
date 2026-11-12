@@ -209,8 +209,9 @@ body.resizing-reader #map{pointer-events:none}
   <div id="audioMini" class="audio-mini">
     <div class="audio-mini-line" aria-hidden="true"><i id="audioMiniProgress"></i></div>
     <button id="audioExpand" type="button" aria-expanded="false" aria-controls="audioCard" aria-label="展开播放器"><span id="audioMiniKicker" class="audio-kicker"></span><b id="audioMiniTitle"></b><span id="audioMiniUpNext" class="audio-next" hidden></span></button>
+    <button id="audioMiniPrevious" type="button" class="audio-skip" aria-label="上一项" title="上一项"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h2.4v14H6zM20 5v14L9.2 12z"/></svg></button>
     <button id="audioMiniToggle" type="button" class="audio-round" aria-label="播放"></button>
-    <button id="audioMiniQueue" type="button" class="audio-list" aria-label="播放列表"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h13v2H3zm0 5h13v2H3zm0 5h9v2H3zm14-2.5v7l5.5-3.5z"/></svg><span id="audioMiniCount"></span></button>
+    <button id="audioMiniNext" type="button" class="audio-skip" aria-label="下一项" title="下一项"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.6 5H18v14h-2.4zM4 5l10.8 7L4 19z"/></svg></button>
   </div>
   <div id="audioCard" class="audio-player-inner">
     <button id="audioCollapse" type="button" aria-label="收起播放器"><span aria-hidden="true"></span></button>
@@ -254,7 +255,7 @@ body.resizing-reader #map{pointer-events:none}
   <audio id="atlasAudioElement" preload="none"></audio>
 </section>
 <header id="masthead">
-  <img id="brandMark" alt="">
+  <img id="brandMark" alt="" role="button" tabindex="0" aria-label="返回首页（地铁全图）" title="返回首页（地铁全图）">
   <div id="brandText"><h1>简明欧洲史图册<span>历史进程 · 地理图册 · 动力专题</span></h1></div>
   <div id="modebar" aria-label="图册内容"><button id="tHistory" class="on" aria-pressed="true">历史进程</button><button id="tGeography" aria-pressed="false">地理概念</button><button id="tTopics" aria-pressed="false">动力专题</button></div>
   <a id="ghBanner" href="https://github.com/stabruriss/history-of-europe-in-frames" target="_blank" rel="noopener noreferrer" title="在 GitHub 上查看开源仓库" aria-label="开源项目：欧洲历史笔记（打开 GitHub）">
