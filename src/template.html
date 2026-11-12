@@ -209,6 +209,7 @@ body.resizing-reader #map{pointer-events:none}
   <div id="audioMini" class="audio-mini">
     <div class="audio-mini-line" aria-hidden="true"><i id="audioMiniProgress"></i></div>
     <button id="audioExpand" type="button" aria-expanded="false" aria-controls="audioCard" aria-label="展开播放器"><span id="audioMiniKicker" class="audio-kicker"></span><b id="audioMiniTitle"></b><span id="audioMiniUpNext" class="audio-next" hidden></span></button>
+    <button id="audioMiniLocate" type="button" class="audio-skip audio-locate-icon" aria-label="跳到正在朗读的位置" title="跳到正在朗读的位置"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="2.6"/><path d="M11 1.5h2v4h-2zM11 18.5h2v4h-2zM1.5 11h4v2h-4zM18.5 11h4v2h-4z"/></svg></button>
     <button id="audioMiniPrevious" type="button" class="audio-skip" aria-label="上一项" title="上一项"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h2.4v14H6zM20 5v14L9.2 12z"/></svg></button>
     <button id="audioMiniToggle" type="button" class="audio-round" aria-label="播放"></button>
     <button id="audioMiniNext" type="button" class="audio-skip" aria-label="下一项" title="下一项"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.6 5H18v14h-2.4zM4 5l10.8 7L4 19z"/></svg></button>
@@ -217,7 +218,7 @@ body.resizing-reader #map{pointer-events:none}
     <button id="audioCollapse" type="button" aria-label="收起播放器"><span aria-hidden="true"></span></button>
     <div class="audio-meta">
       <span id="audioKicker" class="audio-kicker"></span>
-      <button id="audioTitle" type="button" title="定位到朗读正文（不会重播）"></button>
+      <div class="audio-title-row"><button id="audioTitle" type="button" title="定位到朗读正文（不会重播）"></button><button id="audioLocate" type="button" class="audio-locate" title="跳到正在朗读的位置"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="2.6"/><path d="M11 1.5h2v4h-2zM11 18.5h2v4h-2zM1.5 11h4v2h-4zM18.5 11h4v2h-4z"/></svg><span>定位</span></button></div>
       <span id="audioUpNext" class="audio-next" hidden></span>
       <p id="audioError" role="status" hidden></p>
       <span id="audioContext" class="audio-sr" aria-live="polite"></span>

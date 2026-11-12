@@ -657,12 +657,32 @@ $('audioCollapse').onclick = () => { setExpanded(false); $('audioExpand').focus(
 $('audioScrim').onclick = () => { if (!$('audioSpeedPanel').hidden) setSpeedOpen(false); else setQueueOpen(false); };
 $('audioQueueClose').onclick = () => setQueueOpen(false, {focus:true});
 $('audioQueue').onclick = ev => { const b = ev.target.closest('[data-audio-item]'); if (b) selectPlaylistItem(Number(b.dataset.audioItem)); };
-$('audioTitle').onclick = () => {
+// 老无 2026-11-12: jump the reader to what is being read: the scene's text, or the very anecdote, box or person card
+// (opened). On a phone the card folds first so the text is in sight. Sound and queue are untouched.
+function locateReading() {
   const t = current(); if (!t) return;
   setQueueOpen(false);
+  if (phoneLayout()) setExpanded(false);
   go(t.kind === 'history' ? t.key : t.entryId);
-  if (t.kind === 'topic') readerBody.scrollTo({top:0, behavior:'instant'});
-};
+  if (t.kind === 'topic') { readerBody.scrollTo({top:0, behavior:'instant'}); return; }
+  const m = /\/(moment|box|person)\/(\d+)$/.exec(part()?.id || ''), e = entries.get(t.entryId);
+  // A body or a section title: the scene's own text. go() does not scroll when that scene is already open.
+  if (!m || !e) { requestAnimationFrame(() => scrollReaderTo(document.getElementById('sceneContext'))); return; }
+  let el = null;
+  if (m[1] === 'person') {
+    const id = (typeof FIGURE_SCENES === 'object' ? FIGURE_SCENES[t.key] || [] : [])[Number(m[2])]?.id;
+    if (id) el = [...document.querySelectorAll('#peopleCards [data-person]')].find(c => c.dataset.person === id);
+  } else {
+    // moment/<j> and box/<j> count over the whole section; in the text they sit under their own scene, in order.
+    const list = (m[1] === 'moment' ? e.moments : e.boxes) || [], item = list[Number(m[2])];
+    const block = item && document.querySelector(`.scene-passage[data-scene-text="${item.scene}"]`);
+    if (block) el = block.querySelectorAll('aside.' + m[1])[list.filter(x => x.scene === item.scene).indexOf(item)];
+  }
+  if (!el) return;
+  if (el.tagName === 'DETAILS') el.open = true;
+  requestAnimationFrame(() => scrollReaderTo(el));
+}
+$('audioTitle').onclick = $('audioLocate').onclick = $('audioMiniLocate').onclick = locateReading;
 $('audioSpeed').oninput = ev => setSpeed(rates[Number(ev.target.value)]);
 $('audioSeek').oninput = ev => seek(Number(ev.target.value) / 1000);
 for (const id of [...extrasControls, ...peopleControls]) {

@@ -113,7 +113,7 @@ async function readerActions(p, visible) {
 }
 async function geometry(p, width) {
   // 老无 2026-11-12: desktop keeps one bar at the bottom; phones keep a strip at the bottom that opens into the full card.
-  const card = ['audioPrevious','audioToggle','audioNext','audioTitle','audioSeek','audioSpeedButton','audioQueueToggle','audioIncludeExtras','audioIncludePeople'];
+  const card = ['audioPrevious','audioToggle','audioNext','audioTitle','audioLocate','audioSeek','audioSpeedButton','audioQueueToggle','audioIncludeExtras','audioIncludePeople'];
   const reader = ['audioReadIncludeExtras','audioReadIncludePeople'];
   const measure = ids => p.evaluate(ids => {
     const box = id => document.getElementById(id).getBoundingClientRect().toJSON();
@@ -134,7 +134,7 @@ async function geometry(p, width) {
     return g;
   }
   if (await p.$eval('#audioCard', e => e.getClientRects().length > 0)) await p.click('#audioCollapse');
-  const strip = await measure([...reader, 'audioExpand', 'audioMiniPrevious', 'audioMiniToggle', 'audioMiniNext']);
+  const strip = await measure([...reader, 'audioExpand', 'audioMiniLocate', 'audioMiniPrevious', 'audioMiniToggle', 'audioMiniNext']);
   assert(strip.scroll <= width, JSON.stringify(strip));
   assert(strip.card.height === 0 && Math.abs(strip.mini.bottom - strip.height) <= 1 && strip.mini.height <= 80, 'Collapsed strip sits at the bottom: ' + JSON.stringify(strip.mini));
   assert(Math.abs(strip.pad - strip.mini.height) <= 1, 'The page reserves the strip height instead of hiding text under it');
@@ -1219,6 +1219,38 @@ print(json.dumps({'ids':ids, 'hashes':hashes, 'kinds':kinds,
     await p.setViewport({width:1440, height:960});
   }
   pass('390px strip: 上一项/播放暂停/下一项; the open card folds on an outside tap, a sheet scrim closes only the sheet; a line shows its name and playlist position above the title');
+
+  // 老无 2026-11-12: 定位 brings the very part being read to the top of the reader (scene text, anecdote/box, person card
+  // opened); on a phone the card folds first. Sound and queue are untouched.
+  {
+    await p.setViewport({width:1440, height:960});
+    await p.goto(url('fixture') + '#' + optionalKey, {waitUntil:'load'}); await ready(p);
+    await setOptions(p, true, true);
+    await p.click('#audioRead'); await partReady(p, optionalPlan.titleId);
+    const targets = [optionalPlan.extras[0].id, optionalPlan.people[0].id, optionalKey];
+    const locate = async (id, button) => {
+      const i = await p.evaluate(id => atlasAudio.state().playlist.indexOf(id), id);
+      await p.$eval(`#audioQueue [data-audio-item="${i}"]`, b => b.click()); await partReady(p, id);
+      await p.evaluate(() => readerBody.scrollTo({top:readerBody.scrollHeight, behavior:'instant'}));
+      await p.click(button);
+      await p.waitForFunction(id => {
+        const m = /\/(moment|box|person)\/(\d+)$/.exec(id), key = id.replace(/\/(moment|box|person)\/\d+$/, ''), e = ENTRIES.find(x => x.id === key.split('/')[0]);
+        let el;
+        if (!m) el = ENTRIES[cur].id + '/' + sceneIndex === key && document.getElementById('sceneContext');
+        else if (m[1] === 'person') { const pid = FIGURE_SCENES[key][Number(m[2])].id; el = [...document.querySelectorAll('#peopleCards [data-person]')].find(c => c.dataset.person === pid && c.open); }
+        else { const item = (m[1] === 'moment' ? e.moments : e.boxes)[Number(m[2])]; el = [...document.querySelectorAll('aside.' + m[1])].find(a => a.getAttribute('aria-label').endsWith('：' + item.name)); }
+        return el && Math.abs(el.getBoundingClientRect().top - readerBody.getBoundingClientRect().top - 12) < 4;
+      }, {}, id);
+      assert.equal((await state(p)).partId, id, '定位 never changes what is read');
+    };
+    for (const id of targets) await locate(id, '#audioLocate');
+    await p.setViewport({width:390, height:844});
+    await locate(targets[0], '#audioMiniLocate');
+    await p.click('#audioExpand'); await locate(targets[1], '#audioLocate');
+    assert.equal(await p.$eval('#audioPlayer', e => e.classList.contains('audio-expanded')), false, 'On a phone the card folds so the text is in sight');
+    await p.click('#audioMiniToggle'); await p.setViewport({width:1440, height:960});
+  }
+  pass('定位 (desktop pill, phone strip and card) brings the anecdote, the opened person card or the scene text to the top of the reader without touching the sound');
 
   // The continuous stream, the default on Chromium (老无 2026-11-12: a locked Android phone stopped at every boundary).
   // Every check above runs the element path (window.ATLAS_AUDIO_ENGINE = 'element'); these run the stream itself.

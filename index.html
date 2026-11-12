@@ -1581,6 +1581,11 @@ body{padding-top:var(--audio-height);padding-bottom:var(--audio-bottom)}
 /* The section line in the accent red of the first mock (老无 2026-11-12). */
 .audio-kicker{font-size:11.5px;letter-spacing:.05em;color:var(--accent)}
 .audio-next b{font:700 10.5px/1 var(--audio-num);letter-spacing:.06em;color:var(--ink)}
+.audio-title-row{display:flex;align-items:center;gap:8px;min-width:0}
+.audio-title-row #audioTitle{min-width:0;flex:0 1 auto}
+#audioPlayer .audio-locate{flex:none;display:inline-flex;align-items:center;gap:4px;height:28px;padding:0 10px 0 7px;border:1.5px solid var(--ink);border-radius:999px;font:700 12px var(--serif)}
+#audioPlayer .audio-locate svg{width:15px;height:15px}
+@media(hover:hover){#audioPlayer .audio-locate:hover{background:var(--ink);color:var(--paper)}}
 @media(hover:hover){#audioPlayer #audioTitle:hover{text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}}
 #audioError{margin:2px 0 0;font:12px/1.5 var(--serif);color:var(--accent)}
 .audio-transport{display:flex;flex-direction:column;gap:2px;min-width:0}
@@ -1633,7 +1638,7 @@ body{padding-top:var(--audio-height);padding-bottom:var(--audio-bottom)}
  /* The strip reserves its own height; the open card and panels overlay the page instead of reflowing it. */
  body:has(#audioPlayer:not([hidden])){--audio-bottom:calc(64px + env(safe-area-inset-bottom))}
  #audioPlayer{inset:auto 0 0}
- .audio-mini{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 44px 48px 44px;align-items:center;gap:4px;height:calc(64px + env(safe-area-inset-bottom));padding:4px 8px env(safe-area-inset-bottom) 14px;background:linear-gradient(180deg,var(--audio-card),var(--audio-card2));border-top:1px solid var(--rule);box-shadow:0 -8px 22px -16px rgba(42,32,24,.6)}
+ .audio-mini{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 44px 44px 48px 44px;align-items:center;gap:4px;height:calc(64px + env(safe-area-inset-bottom));padding:4px 8px env(safe-area-inset-bottom) 14px;background:linear-gradient(180deg,var(--audio-card),var(--audio-card2));border-top:1px solid var(--rule);box-shadow:0 -8px 22px -16px rgba(42,32,24,.6)}
  .audio-mini-line{position:absolute;left:0;right:0;top:0;height:3px;background:var(--audio-track)}
  .audio-mini-line i{display:block;height:100%;width:0;background:var(--ink)}
  #audioPlayer #audioExpand{min-width:0;height:52px;text-align:left}
@@ -1644,6 +1649,9 @@ body{padding-top:var(--audio-height);padding-bottom:var(--audio-bottom)}
  #audioPlayer.audio-expanded .audio-mini{display:none}
  #audioPlayer .audio-skip{width:44px;height:44px;display:grid;place-items:center;border-radius:50%;color:var(--ink)}
  #audioPlayer .audio-skip svg{width:24px;height:24px;fill:currentColor}
+ #audioPlayer .audio-locate-icon svg{width:22px;height:22px}
+ #audioPlayer .audio-locate{height:44px;padding:0 14px 0 11px;font-size:14px}
+ #audioPlayer .audio-locate svg{width:18px;height:18px}
  #audioPlayer .audio-skip:disabled{opacity:.32}
  #audioPlayer.audio-expanded .audio-player-inner{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"collapse collapse" "title remaining" "transport transport" "options options";gap:8px 12px;align-items:center;min-height:0;padding:0 18px calc(16px + env(safe-area-inset-bottom));border:0;border-radius:20px 20px 0 0;box-shadow:0 -14px 34px -14px rgba(42,32,24,.6)}
  #audioPlayer #audioCollapse{grid-area:collapse;justify-self:center;display:grid;place-items:center;width:96px;height:40px}
@@ -1693,6 +1701,7 @@ body{padding-top:var(--audio-height);padding-bottom:var(--audio-bottom)}
   <div id="audioMini" class="audio-mini">
     <div class="audio-mini-line" aria-hidden="true"><i id="audioMiniProgress"></i></div>
     <button id="audioExpand" type="button" aria-expanded="false" aria-controls="audioCard" aria-label="展开播放器"><span id="audioMiniKicker" class="audio-kicker"></span><b id="audioMiniTitle"></b><span id="audioMiniUpNext" class="audio-next" hidden></span></button>
+    <button id="audioMiniLocate" type="button" class="audio-skip audio-locate-icon" aria-label="跳到正在朗读的位置" title="跳到正在朗读的位置"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="2.6"/><path d="M11 1.5h2v4h-2zM11 18.5h2v4h-2zM1.5 11h4v2h-4zM18.5 11h4v2h-4z"/></svg></button>
     <button id="audioMiniPrevious" type="button" class="audio-skip" aria-label="上一项" title="上一项"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h2.4v14H6zM20 5v14L9.2 12z"/></svg></button>
     <button id="audioMiniToggle" type="button" class="audio-round" aria-label="播放"></button>
     <button id="audioMiniNext" type="button" class="audio-skip" aria-label="下一项" title="下一项"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.6 5H18v14h-2.4zM4 5l10.8 7L4 19z"/></svg></button>
@@ -1701,7 +1710,7 @@ body{padding-top:var(--audio-height);padding-bottom:var(--audio-bottom)}
     <button id="audioCollapse" type="button" aria-label="收起播放器"><span aria-hidden="true"></span></button>
     <div class="audio-meta">
       <span id="audioKicker" class="audio-kicker"></span>
-      <button id="audioTitle" type="button" title="定位到朗读正文（不会重播）"></button>
+      <div class="audio-title-row"><button id="audioTitle" type="button" title="定位到朗读正文（不会重播）"></button><button id="audioLocate" type="button" class="audio-locate" title="跳到正在朗读的位置"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="2.6"/><path d="M11 1.5h2v4h-2zM11 18.5h2v4h-2zM1.5 11h4v2h-4zM18.5 11h4v2h-4z"/></svg><span>定位</span></button></div>
       <span id="audioUpNext" class="audio-next" hidden></span>
       <p id="audioError" role="status" hidden></p>
       <span id="audioContext" class="audio-sr" aria-live="polite"></span>
@@ -89923,12 +89932,32 @@ $('audioCollapse').onclick = () => { setExpanded(false); $('audioExpand').focus(
 $('audioScrim').onclick = () => { if (!$('audioSpeedPanel').hidden) setSpeedOpen(false); else setQueueOpen(false); };
 $('audioQueueClose').onclick = () => setQueueOpen(false, {focus:true});
 $('audioQueue').onclick = ev => { const b = ev.target.closest('[data-audio-item]'); if (b) selectPlaylistItem(Number(b.dataset.audioItem)); };
-$('audioTitle').onclick = () => {
+// 老无 2026-11-12: jump the reader to what is being read: the scene's text, or the very anecdote, box or person card
+// (opened). On a phone the card folds first so the text is in sight. Sound and queue are untouched.
+function locateReading() {
   const t = current(); if (!t) return;
   setQueueOpen(false);
+  if (phoneLayout()) setExpanded(false);
   go(t.kind === 'history' ? t.key : t.entryId);
-  if (t.kind === 'topic') readerBody.scrollTo({top:0, behavior:'instant'});
-};
+  if (t.kind === 'topic') { readerBody.scrollTo({top:0, behavior:'instant'}); return; }
+  const m = /\/(moment|box|person)\/(\d+)$/.exec(part()?.id || ''), e = entries.get(t.entryId);
+  // A body or a section title: the scene's own text. go() does not scroll when that scene is already open.
+  if (!m || !e) { requestAnimationFrame(() => scrollReaderTo(document.getElementById('sceneContext'))); return; }
+  let el = null;
+  if (m[1] === 'person') {
+    const id = (typeof FIGURE_SCENES === 'object' ? FIGURE_SCENES[t.key] || [] : [])[Number(m[2])]?.id;
+    if (id) el = [...document.querySelectorAll('#peopleCards [data-person]')].find(c => c.dataset.person === id);
+  } else {
+    // moment/<j> and box/<j> count over the whole section; in the text they sit under their own scene, in order.
+    const list = (m[1] === 'moment' ? e.moments : e.boxes) || [], item = list[Number(m[2])];
+    const block = item && document.querySelector(`.scene-passage[data-scene-text="${item.scene}"]`);
+    if (block) el = block.querySelectorAll('aside.' + m[1])[list.filter(x => x.scene === item.scene).indexOf(item)];
+  }
+  if (!el) return;
+  if (el.tagName === 'DETAILS') el.open = true;
+  requestAnimationFrame(() => scrollReaderTo(el));
+}
+$('audioTitle').onclick = $('audioLocate').onclick = $('audioMiniLocate').onclick = locateReading;
 $('audioSpeed').oninput = ev => setSpeed(rates[Number(ev.target.value)]);
 $('audioSeek').oninput = ev => seek(Number(ev.target.value) / 1000);
 for (const id of [...extrasControls, ...peopleControls]) {

@@ -42,6 +42,11 @@ body{padding-top:var(--audio-height);padding-bottom:var(--audio-bottom)}
 /* The section line in the accent red of the first mock (老无 2026-11-12). */
 .audio-kicker{font-size:11.5px;letter-spacing:.05em;color:var(--accent)}
 .audio-next b{font:700 10.5px/1 var(--audio-num);letter-spacing:.06em;color:var(--ink)}
+.audio-title-row{display:flex;align-items:center;gap:8px;min-width:0}
+.audio-title-row #audioTitle{min-width:0;flex:0 1 auto}
+#audioPlayer .audio-locate{flex:none;display:inline-flex;align-items:center;gap:4px;height:28px;padding:0 10px 0 7px;border:1.5px solid var(--ink);border-radius:999px;font:700 12px var(--serif)}
+#audioPlayer .audio-locate svg{width:15px;height:15px}
+@media(hover:hover){#audioPlayer .audio-locate:hover{background:var(--ink);color:var(--paper)}}
 @media(hover:hover){#audioPlayer #audioTitle:hover{text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}}
 #audioError{margin:2px 0 0;font:12px/1.5 var(--serif);color:var(--accent)}
 .audio-transport{display:flex;flex-direction:column;gap:2px;min-width:0}
@@ -94,7 +99,7 @@ body{padding-top:var(--audio-height);padding-bottom:var(--audio-bottom)}
  /* The strip reserves its own height; the open card and panels overlay the page instead of reflowing it. */
  body:has(#audioPlayer:not([hidden])){--audio-bottom:calc(64px + env(safe-area-inset-bottom))}
  #audioPlayer{inset:auto 0 0}
- .audio-mini{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 44px 48px 44px;align-items:center;gap:4px;height:calc(64px + env(safe-area-inset-bottom));padding:4px 8px env(safe-area-inset-bottom) 14px;background:linear-gradient(180deg,var(--audio-card),var(--audio-card2));border-top:1px solid var(--rule);box-shadow:0 -8px 22px -16px rgba(42,32,24,.6)}
+ .audio-mini{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 44px 44px 48px 44px;align-items:center;gap:4px;height:calc(64px + env(safe-area-inset-bottom));padding:4px 8px env(safe-area-inset-bottom) 14px;background:linear-gradient(180deg,var(--audio-card),var(--audio-card2));border-top:1px solid var(--rule);box-shadow:0 -8px 22px -16px rgba(42,32,24,.6)}
  .audio-mini-line{position:absolute;left:0;right:0;top:0;height:3px;background:var(--audio-track)}
  .audio-mini-line i{display:block;height:100%;width:0;background:var(--ink)}
  #audioPlayer #audioExpand{min-width:0;height:52px;text-align:left}
@@ -105,6 +110,9 @@ body{padding-top:var(--audio-height);padding-bottom:var(--audio-bottom)}
  #audioPlayer.audio-expanded .audio-mini{display:none}
  #audioPlayer .audio-skip{width:44px;height:44px;display:grid;place-items:center;border-radius:50%;color:var(--ink)}
  #audioPlayer .audio-skip svg{width:24px;height:24px;fill:currentColor}
+ #audioPlayer .audio-locate-icon svg{width:22px;height:22px}
+ #audioPlayer .audio-locate{height:44px;padding:0 14px 0 11px;font-size:14px}
+ #audioPlayer .audio-locate svg{width:18px;height:18px}
  #audioPlayer .audio-skip:disabled{opacity:.32}
  #audioPlayer.audio-expanded .audio-player-inner{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"collapse collapse" "title remaining" "transport transport" "options options";gap:8px 12px;align-items:center;min-height:0;padding:0 18px calc(16px + env(safe-area-inset-bottom));border:0;border-radius:20px 20px 0 0;box-shadow:0 -14px 34px -14px rgba(42,32,24,.6)}
  #audioPlayer #audioCollapse{grid-area:collapse;justify-self:center;display:grid;place-items:center;width:96px;height:40px}
