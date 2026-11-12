@@ -6,7 +6,7 @@
 
 - 云健 `zh-CN-YunjianNeural`，`pitch=+0Hz`、`rate=+0%`、`volume=+0%`；网页初始1×。
 - `prepare`、`validate`、`verify-audio` 与 dry-run 均离线。只有 `synthesize --execute` 才导入 Edge SDK、发送文字，且必须显式限定 `--selection` 或 `--only`。
-- **覆盖计划不是默认生成/上传授权。** 当前 `src/audio_scope.json` 已覆盖13条完整主线（史前、希腊、罗马、埃及、中世纪西欧、东罗马、十字军、北欧、东欧、美洲、中国、西班牙、中东）及14个动力专题，policy3 共2619段（2606个唯一MP3文件）；剩余6条主线按批次显式 `--selection` 推进。
+- **覆盖计划不是默认生成/上传授权。** 当前 `src/audio_scope.json` 已覆盖冻结原稿的14条主线（史前、希腊、罗马、埃及、中世纪西欧、东罗马、十字军、北欧、东欧、美洲、中国、西班牙、中东、基督教）及14个动力专题，policy3 共3339段（3326个唯一MP3文件）。后续已获准每批上线成功后自动推进：德意志＋意大利494段 → 英国＋法国1353段 → 低地98段及新增/改稿补漏；数字按该顺序扣除共享片段。
 - 旧policy2的220段音频与2462份文本留作历史记录，不能冒充新规成品。新库换目录，共享缓存按实际朗读输入复用。
 - Node VM 只用于可信本地源数据，不是恶意 JavaScript 的安全沙箱。不改原文、不付费兜底、不自动重试或扩展到全书。
 
@@ -101,6 +101,7 @@ python3 "$PIPE" verify-audio --source "$SOURCE" --library "$LIB" --selection "$S
 - MP3须单音轨、24kHz/mono、正时长，`ffmpeg -xerror`完整解码；核对字节SHA、WordBoundary文字覆盖/时间顺序及尾部。复用也重查这些条件，不仅看文件是否存在。
 - 边界文字比较允许空白、标点与兼容字形正规化差别，不做音频内容识别。非末段重复/静音、发音、语义完整性可能绕过机器检查；**machine-checked不等于人工听审**，listeningReview另记pending。
 - 圈码、外文、特殊字符出错要查证，不为通过验收删字。不能擅自把未获准的其他线路拿来试音。
+- 老无明确接受的单字遗漏无需重录。本次 `history-britain-henry8-2/1/box/0` 漏“の”，原音频按 `approved_omissions.json` 的 **inputHash＋audioHash＋位置/字**登记例外，receipt/验收报告标 `machine-checked-with-approved-omission`。保留原文、原边界和失败证据，不改写成“完全逐字匹配”；其他缺字、错文件、尾部和时序仍失败。普通合成不会自动套宽松阈值。
 
 ### 同文重录
 
@@ -110,7 +111,7 @@ python3 "$PIPE" verify-audio --source "$SOURCE" --library "$LIB" --selection "$S
 
 手动上一项、下一项、列表点选及系统媒体切歌，直接进入选中幕的正文，不播节题；可选条目仍直接播放自身。点击朗读开始和自然接播到新节时保留节题前奏，同节自然接播不重复。切音频不翻动阅读页面。
 
-第3批保留冻结原稿2619段；合入 v97 后的 `history-spain-1492/3/box/1` 暂无音频，普通构建报告 pending，正文可播，不擅自扩大本批制作范围。
+基督教优先批补720段（全线939段，另219段此前已发布）；十字军254段已齐，不重复制作。v97/v98新增的 `history-spain-1492/3/box/1`、`history-spain-1492/0/box/2` 仍为 pending，留末批与新增/改稿集中补录；读到缺段时按新播放器规则播暂缺提示。
 
 manifest使用schema2/policy3；每项仍为url/duration/bytes/textHash/inputHash/audioHash。组装器从**当前源**派生 `tracks[bodyId] = {bodyId,titleId,extras,people}`，忽略来稿清单自带的播放计划，保留缺少音频的预期片段ID。
 
@@ -123,6 +124,6 @@ python3 project-files/tests/run_tests.py verify-audio-pipeline.js verify-audio-p
 python3 project-files/tests/run_tests.py --changed
 ```
 
-34项离线单测覆盖结构、时间/副标题、引用删除、独立分段、选择完整性、输入/源篡改、缓存/失败/锁、清单过期与缺段降级。原生MP3 fixture覆盖播放器而不是TTS内容；真实录音可另设 `AUDIO_PLAYER_SMOKE_MANIFEST` 抽检所供片段。全部经过runner/chrome_guard，不直接启动无守护Chrome。缓存包含Python/音频工具和播放器私有组装输入；改runner须跑verify-no-leak。
+35项离线单测覆盖结构、时间/副标题、引用删除、独立分段、选择完整性、输入/源篡改、缓存/失败/锁、清单过期与缺段降级。原生MP3 fixture覆盖播放器而不是TTS内容；真实录音可另设 `AUDIO_PLAYER_SMOKE_MANIFEST` 抽检所供片段。全部经过runner/chrome_guard，不直接启动无守护Chrome。缓存包含Python/音频工具和播放器私有组装输入；改runner须跑verify-no-leak。
 
 fixture在runner管理的临时目录，依赖/持久脚本不放/tmp。Git不保留素材、音频、receipt、上传ledger或源码树外的窄scope/selection/BUILD证据，移交/删除工作区前先备份。当前生成、上传、测试、部署的实际结果见本轮BUILD记录，不能把本文的示例命令当作已经执行。
