@@ -255,7 +255,21 @@ const settle=p=>p.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestA
    await h.close();
   }
 
+  /* ---------- A reload returns to the same spot in the text (老无 2026-11-13); a fresh visit opens at the scene ---------- */
+  {
+   const r=await pageAt(1440,900,'#history-spain-1492/0');
+   await r.evaluate(()=>readerBody.scrollTo({top:Math.min(520,readerBody.scrollHeight-readerBody.clientHeight-10),behavior:'instant'}));
+   const top=await r.evaluate(()=>readerBody.scrollTop),hash=await r.evaluate(()=>location.hash);
+   await r.waitForFunction(()=>JSON.parse(localStorage.getItem('atlas-reader-pos-v1')||'{}').top>0);
+   await r.reload({waitUntil:'load'});await r.waitForFunction(()=>window.metroUI);
+   await r.waitForFunction(t=>Math.abs(readerBody.scrollTop-t)<4,{timeout:4000},top);
+   assert.equal(await r.evaluate(()=>location.hash),hash);
+   await r.goto('about:blank');await r.goto(url+'#history-spain-1492/0',{waitUntil:'load'});await settle(r);await settle(r);
+   assert.ok(await r.evaluate(t=>readerBody.scrollTop<t-100,top),'a fresh visit opens at the scene, not the saved spot');
+   await r.evaluate(()=>localStorage.removeItem('atlas-reader-pos-v1'));await r.close();
+  }
+
   assert.deepEqual(errors,[]);
-  console.log(`PASS: metro layout — site identity kept; ${counts.stations} stations, ${counts.lines} lines, ${counts.shared} shared on the whole map with clean rails and names; hover, pan, zoom, time slices; on-train view, scene and station navigation, text scrolling, deep links, the mark going home after asking; person cards and family trees; geography and topics; all ${landed.scenes} scenes land on their own marks; laptop, phone, touch emulation; offline; no page errors.`);
+  console.log(`PASS: metro layout — site identity kept; ${counts.stations} stations, ${counts.lines} lines, ${counts.shared} shared on the whole map with clean rails and names; hover, pan, zoom, time slices; on-train view, scene and station navigation, text scrolling, deep links, the mark going home after asking, a reload keeping the place in the text; person cards and family trees; geography and topics; all ${landed.scenes} scenes land on their own marks; laptop, phone, touch emulation; offline; no page errors.`);
  }catch(e){console.error(e);process.exitCode=1;}finally{await Promise.race([browser.close(),new Promise(r=>setTimeout(r,200))]);browser.process()?.kill('SIGKILL');process.exit(process.exitCode||0);}
 })().catch(e=>{console.error(e);process.exitCode=1;});

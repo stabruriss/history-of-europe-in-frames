@@ -162,8 +162,11 @@ print(json.dumps({'manifest':manifest,'report':report}, ensure_ascii=False))
   const defaultPage = assemble('default');
   browser = await puppeteer.launch({executablePath:process.env.CHROME_PATH || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', headless:true});
   const p = await browser.newPage();
+  // Saved progress (老无 2026-11-13) would bring the player back on every load; checks start clean unless they ask (?progress=1).
+  const freshStart = () => { if (!/[?&]progress=1/.test(location.search)) try { localStorage.removeItem('atlas-player-pos-v1'); localStorage.removeItem('atlas-reader-pos-v1'); } catch {} };
   // These checks drive the element path (one src per clip); the continuous stream has its own checks below.
   await p.evaluateOnNewDocument(() => { window.ATLAS_AUDIO_ENGINE = 'element'; });
+  await p.evaluateOnNewDocument(freshStart);
   // Phones keep player controls in a card behind the strip; speed sits in its own panel. Open them before use.
   const revealControl = selector => p.evaluate(sel => {
     const el = document.querySelector(sel), shown = e => e.getClientRects().length > 0, open = id => document.getElementById(id);
@@ -1252,12 +1255,42 @@ print(json.dumps({'ids':ids, 'hashes':hashes, 'kinds':kinds,
   }
   pass('定位 (desktop pill, phone strip and card) brings the anecdote, the opened person card or the scene text to the top of the reader without touching the sound');
 
+  // 老无 2026-11-13: a reload brings the player back paused where it stood (line, item, second, options) without
+  // fetching anything; play carries on from that second. A finished playlist leaves nothing to restore.
+  {
+    await p.setViewport({width:1440, height:960});
+    await p.goto(url('fixture') + '?progress=1#history-migration/0', {waitUntil:'load'}); await ready(p);
+    await p.evaluate(() => localStorage.removeItem('atlas-player-pos-v1'));
+    await setOptions(p, true, false);
+    await p.click('#audioReadLine'); await stage(p, 0, 'title');
+    const route = data.routes.prehistory;
+    await p.$eval('#audioQueue [data-audio-index="1"][data-audio-part="0"]', b => b.click()); await partReady(p, route[1]);
+    await p.$eval('#audioSeek', e => { e.value = '400'; e.dispatchEvent(new Event('input', {bubbles:true})); });
+    await p.waitForFunction(() => { const a = document.getElementById('atlasAudioElement'); return !a.seeking && a.currentTime / a.duration > .35; });
+    await p.click('#audioToggle'); await p.waitForFunction(() => !atlasAudio.state().wantsPlay);
+    const stood = (await state(p)).currentTime, fetched = requests.length;
+    await p.reload({waitUntil:'load'}); await ready(p);
+    await p.waitForFunction(() => !document.getElementById('audioPlayer').hidden);
+    const back = await state(p);
+    assert.equal(back.partId, route[1]); assert.deepEqual(back.queue, route); assert.equal(back.mode, 'line');
+    assert.equal(back.wantsPlay, false, 'Back paused: browsers do not let a reloaded page speak by itself');
+    assert.equal(back.includeExtras, true); assert.equal(back.includePeople, false);
+    assert.match(await p.$eval('#audioUpNext', e => e.textContent), /^上次读到 \d+:\d\d · 点播放继续$/);
+    assert.equal(requests.length, fetched, 'Nothing is fetched before play');
+    await p.click('#audioToggle'); await partReady(p, route[1]);
+    assert(Math.abs((await state(p)).currentTime - stood) < 1.5, 'Play carries on from the saved second');
+    await p.click('#audioToggle');
+    await p.evaluate(() => localStorage.removeItem('atlas-player-pos-v1'));
+  }
+  pass('Reload keeps the player where it stood: line, item, second and options come back paused, nothing is fetched until play, play carries on from that second');
+
   // The continuous stream, the default on Chromium (老无 2026-11-12: a locked Android phone stopped at every boundary).
   // Every check above runs the element path (window.ATLAS_AUDIO_ENGINE = 'element'); these run the stream itself.
   {
     const s = await browser.newPage();
     s.setDefaultTimeout(20000);
     s.on('pageerror', e => errors.push(String(e)));
+    await s.evaluateOnNewDocument(freshStart);
     await s.setRequestInterception(true);
     s.on('request', r => /^https?:/.test(r.url()) && !r.url().startsWith('http://127.0.0.1:') ? r.abort() : r.continue());
     await s.evaluateOnNewDocument(() => {

@@ -56,6 +56,25 @@ function clipSpan() {
 }
 const clipPosition = () => { const s = clipSpan(); return s ? Math.min(s.end - s.start, Math.max(0, audio.currentTime - s.start)) : 0; };
 
+// 老无 2026-11-13: a browser may reload or discard a page left in the background, and a phone may sleep. Where reading
+// stood (the line or scene, the item, the second, the two options) is kept on this device (localStorage, never sent
+// anywhere); the next load brings the player back paused there, and one press of play carries on. Nothing is fetched
+// before that press. A finished playlist or the home mark clears it.
+const PROGRESS_KEY = 'atlas-player-pos-v1';
+let restored = null, progressSavedAt = 0; // restored: {offset} until play is pressed
+function saveProgress() {
+  const t = current();
+  try {
+    if (!t) return;
+    if (finished) { localStorage.removeItem(PROGRESS_KEY); return; }
+    localStorage.setItem(PROGRESS_KEY, JSON.stringify({v:1, mode, line:line?.id || null, key:t.key, part:partIndex < 0 ? 'title' : part()?.id || '',
+      offset:Math.round((restored ? restored.offset : clipPosition()) * 10) / 10, extras:includeExtras, people:includePeople, at:Date.now()}));
+  } catch {}
+}
+function noteProgress(force = false) {
+  const now = Date.now();
+  if (force || now - progressSavedAt > 3000) { progressSavedAt = now; saveProgress(); }
+}
 function syncOptionInputs() {
   for (const id of extrasControls) $(id).checked = includeExtras;
   for (const id of peopleControls) $(id).checked = includePeople;
@@ -166,7 +185,7 @@ function nextText() {
 function remainingSeconds() {
   const t = current(); if (!t || finished) return 0;
   const p = part(), whole = p?.asset ? p.asset.duration : gap ? NOTICE?.duration || 0 : 0, span = clipSpan();
-  let total = span ? Math.max(0, span.end - span.start - clipPosition()) : whole;
+  let total = span ? Math.max(0, span.end - span.start - clipPosition()) : Math.max(0, whole - (restored?.offset || 0));
   let ti = at, pi = partIndex, afterGap = gap;
   for (;;) {
     const parts = queue[ti].parts; let next = -1;
@@ -258,7 +277,7 @@ function markQueue(items = playlistItems()) {
 function progress() {
   const span = clipSpan();
   const duration = span ? span.end - span.start : (clip()?.duration || (gap ? NOTICE?.duration : 0) || 0);
-  const position = span ? clipPosition() : 0;
+  const position = span ? clipPosition() : restored ? Math.min(restored.offset, duration) : 0;
   const label = partLabel(), fraction = duration ? Math.min(1, position / duration) : 0;
   $('audioElapsed').textContent = time(position);
   $('audioDuration').textContent = time(duration);
@@ -277,6 +296,7 @@ function progress() {
   $('audioSeek').disabled = Boolean(error) || gap || !enabled(part()) || !isCurrentSource() || audio.readyState < 1 || !span || duration <= 0;
   $('audioSeek').setAttribute('aria-label', label + '进度');
   $('audioSeek').setAttribute('aria-valuetext', `${label} ${time(position)}，共 ${time(duration)}`);
+  noteProgress();
 }
 function status() {
   const t = current(); if (!t) return;
@@ -288,7 +308,8 @@ function status() {
   $('audioTitle').textContent = title; $('audioMiniTitle').textContent = title;
   const kicker = kickerText(), next = nextText();
   for (const id of ['audioKicker', 'audioMiniKicker']) { $(id).textContent = kicker; $(id).hidden = !kicker; }
-  for (const id of ['audioUpNext', 'audioMiniUpNext']) { $(id).innerHTML = next ? '<b>NEXT:</b> ' + esc(next) : ''; $(id).hidden = !next; }
+  const resumeNote = restored ? `上次读到 ${time(restored.offset)} · 点播放继续` : '';
+  for (const id of ['audioUpNext', 'audioMiniUpNext']) { $(id).innerHTML = resumeNote ? esc(resumeNote) : next ? '<b>NEXT:</b> ' + esc(next) : ''; $(id).hidden = !resumeNote && !next; }
   $('audioTitle').setAttribute('aria-label', '定位朗读正文：' + t.title);
   $('audioPhase').textContent = partLabel();
   $('audioCount').textContent = `${Math.max(1, pos + 1)}/${items.length}`;
@@ -305,6 +326,7 @@ function status() {
   markQueue(items);
   if ('mediaSession' in navigator) navigator.mediaSession.playbackState = sessionPlaying && !error && !finished ? 'playing' : 'paused';
   progress();
+  noteProgress(true);
 }
 function applyRate() {
   audio.defaultPlaybackRate = speed;
@@ -342,7 +364,7 @@ function pause() {
   ++playToken; wantsPlay = false; sessionPlaying = false; audio.pause(); status();
 }
 function loadClip(index, {autoplay = true, offset = 0, afterGap = false} = {}) {
-  ++loadToken; ++playToken; wantsPlay = false; if (!autoplay) sessionPlaying = false; audio.pause();
+  ++loadToken; ++playToken; wantsPlay = false; if (!autoplay) sessionPlaying = false; audio.pause(); restored = null;
   partIndex = index; phase = part()?.kind || 'body';
   finished = false; error = ''; errorKind = ''; waiting = true; expectedURL = ''; pendingOffset = offset; gap = false;
   const a = clip();
@@ -594,9 +616,30 @@ function start(continuous) {
 }
 function resume() {
   if (!current()) return;
+  if (restored) { loadClip(partIndex, {offset:restored.offset}); return; } // Back after a reload: from the saved second.
   if (finished) { selectTrack(at); return; }
   if (error || audio.error || !expectedURL) loadClip(partIndex, {offset:audio.error || !expectedURL ? 0 : clipPosition()});
   else play();
+}
+// The saved spot, put back paused. A key, line or part that no longer exists (the book changed) is passed over.
+function restoreProgress() {
+  let s = null;
+  try { s = JSON.parse(localStorage.getItem(PROGRESS_KEY) || 'null'); } catch {}
+  if (!s || s.v !== 1 || typeof s.key !== 'string' || !(Date.now() - s.at < 30 * 864e5) || current()) return;
+  const [id, scene] = s.key.split('/'), t = track(id, Number(scene) || 0);
+  if (!t?.planned || t.key !== s.key) return;
+  const route = s.mode === 'line' && s.line ? lineSnapshot(s.line) : null;
+  const tracks = route ? route.tracks : [t], index = tracks.findIndex(x => x?.key === t.key);
+  if ((s.mode === 'line' && !route) || index < 0) return;
+  includeExtras = Boolean(s.extras); includePeople = Boolean(s.people); syncOptionInputs();
+  queue = Object.freeze([...tracks]); mode = route ? 'line' : 'single'; line = route?.line || null; at = index;
+  const found = tracks[index].parts.findIndex(p => p.id === s.part);
+  partIndex = s.part === 'title' && tracks[index].titlePart ? -1 : found >= 0 && enabled(tracks[index].parts[found]) ? found : 0;
+  phase = part()?.kind || 'body';
+  finished = false; error = ''; errorKind = ''; wantsPlay = false; sessionPlaying = false; waiting = false; gap = false;
+  restored = {offset:Math.max(0, Math.min(Number(s.offset) || 0, (clip()?.duration || 0) - .5))};
+  setExpanded(false); player.hidden = false; measurePlayer();
+  renderQueue(); refreshReading(); status();
 }
 function syncScrim() {
   // Only the two bottom sheets dim the page; the open card leaves the text above it readable and usable.
@@ -715,6 +758,11 @@ audio.addEventListener('playing', () => { if (isCurrentSource()) { waiting = fal
 audio.addEventListener('waiting', () => { if (isCurrentSource()) { waiting = true; status(); } });
 for (const event of ['pause', 'durationchange']) audio.addEventListener(event, status);
 audio.addEventListener('timeupdate', () => { streamCommit(); progress(); });
+document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden' && current()) noteProgress(true); });
+window.addEventListener('pagehide', () => { if (current()) noteProgress(true); });
+// metro_ui.js (the lines) loads after this script; restore once the page's scripts have all run.
+if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', restoreProgress, {once:true});
+else setTimeout(restoreProgress, 0);
 audio.addEventListener('error', () => {
   if (finished || !isCurrentSource() || !audio.error) return;
   dropStream(); // A failed stream is not reused; the next load starts afresh.

@@ -221,7 +221,9 @@ document.body.append(transferDialog);
 const homeDialog=document.createElement('dialog');homeDialog.id='homeDialog';
 homeDialog.innerHTML='<form method="dialog"><p id="homeQuestion">返回首页？</p><small id="homeNote"></small><div class="transfer-actions"><button value="cancel" autofocus>取消</button><button id="homeConfirm" value="ok">返回首页</button></div></form>';
 document.body.append(homeDialog);
-$('#homeConfirm').onclick=ev=>{ev.preventDefault();homeDialog.close();history.replaceState(null,'',location.pathname+location.search);location.reload()};
+$('#homeConfirm').onclick=ev=>{ev.preventDefault();homeDialog.close();
+ try{localStorage.removeItem('atlas-player-pos-v1');localStorage.removeItem('atlas-reader-pos-v1')}catch{}  // home starts afresh
+ history.replaceState(null,'',location.pathname+location.search);location.reload()};
 homeDialog.addEventListener('click',ev=>{if(ev.target===homeDialog)homeDialog.close()});  // the backdrop
 homeDialog.addEventListener('close',()=>$('#brandMark').focus({preventScroll:true}));  // cancelled: focus returns to the mark
 function askHome(){
@@ -486,6 +488,23 @@ new ResizeObserver(()=>map.invalidateSize({animate:false,pan:false})).observe($(
 $('#brandMark').src=$('link[rel="icon"]').href;
 $('#brandMark').addEventListener('click',askHome);
 $('#brandMark').addEventListener('keydown',ev=>{if((ev.key==='Enter'||ev.key===' ')&&!ev.altKey&&!ev.ctrlKey&&!ev.metaKey&&!ev.shiftKey){ev.preventDefault();askHome()}});
+// 老无 2026-11-13: a reload, or a tab the browser discarded and brings back, returns to the same spot in the text. The
+// section and scene are in the address already; the place within a long scene is kept on this device. A fresh visit
+// to an address opens at the scene's start as before.
+const READER_KEY='atlas-reader-pos-v1';
+const saveReader=()=>{if(mode!=='ride'||!location.hash)return;try{localStorage.setItem(READER_KEY,JSON.stringify({hash:location.hash,top:Math.round(readerBody.scrollTop),at:Date.now()}))}catch{}};
+let readerSaveTimer=0;
+readerBody.addEventListener('scroll',()=>{clearTimeout(readerSaveTimer);readerSaveTimer=setTimeout(saveReader,400)},{passive:true});
+document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')saveReader()});
+window.addEventListener('pagehide',saveReader);
+{
+ const nav=performance.getEntriesByType?.('navigation')[0]?.type;let saved=null;
+ if(nav==='reload'||nav==='back_forward'||document.wasDiscarded)try{saved=JSON.parse(localStorage.getItem(READER_KEY)||'null')}catch{}
+ if(saved&&saved.hash===location.hash&&saved.top>0&&Date.now()-saved.at<30*864e5){  // The ride itself starts further down; checked when it is time.
+  const back=()=>requestAnimationFrame(()=>requestAnimationFrame(()=>{if(location.hash===saved.hash&&mode==='ride')readerBody.scrollTo({top:saved.top,behavior:'instant'})}));
+  if(document.readyState==='complete')back();else window.addEventListener('load',back,{once:true});
+ }
+}
 const syncMasthead=()=>document.documentElement.style.setProperty('--masthead-h',$('#masthead').offsetHeight+'px');
 new ResizeObserver(syncMasthead).observe($('#masthead'));syncMasthead();
 $('#datasetStats').textContent=`${lines.length}条主线 · ${stations.length}个事件站 · ${ENTRIES.filter(isHistory).reduce((n,e)=>n+e.scenes.length,0)}幕`;
