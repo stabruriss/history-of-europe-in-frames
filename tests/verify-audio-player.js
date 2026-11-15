@@ -1202,6 +1202,9 @@ print(json.dumps({'ids':ids, 'hashes':hashes, 'kinds':kinds,
     await p.setViewport({width:390, height:844});
     await p.goto(url('fixture') + '#history-migration/0', {waitUntil:'load'}); await ready(p);
     await p.click('#audioReadLine'); await stage(p, 0, 'title');
+    // 老无 2026-11-14: the strip's buttons sit on the left, clear of Android's back gesture; the title follows them.
+    const strip = await p.evaluate(() => Object.fromEntries(['audioMiniPrevious','audioMiniToggle','audioMiniNext','audioMiniLocate','audioExpand'].map(id => [id, Math.round(document.getElementById(id).getBoundingClientRect().left)])));
+    assert(strip.audioMiniPrevious < 20 && strip.audioMiniPrevious < strip.audioMiniToggle && strip.audioMiniToggle < strip.audioMiniNext && strip.audioMiniNext < strip.audioMiniLocate && strip.audioMiniLocate < strip.audioExpand, 'Strip buttons on the left: ' + JSON.stringify(strip));
     const lineLabel = () => p.evaluate(() => { const id = atlasAudio.state().line; return metroUI.data.lines.find(l => l.id === id).name + '线 · ' + document.getElementById('audioCount').textContent; });
     for (const id of ['audioMiniKicker', 'audioKicker']) assert.equal(await p.$eval('#' + id, e => e.textContent), await lineLabel(), 'On a line, the line and the playlist position replace the section title');
     assert.equal(await p.$eval('#audioMiniPrevious', e => e.disabled), true, 'Nothing before the first item');

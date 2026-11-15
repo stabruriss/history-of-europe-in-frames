@@ -201,6 +201,16 @@ const settle=p=>p.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestA
   assert.ok(room.text+room.audio>=440&&room.text>room.map*1.5,'phone text height '+JSON.stringify(room));
   // The route strip opens on demand and closes on leaving; the map folds away and gives its room to the text.
   assert.equal(await on(reading,'.route-panel'),false);await reading.click('#stripToggle');assert.equal(await on(reading,'.route-panel'),true);await reading.click('#stripToggle');assert.equal(await on(reading,'.route-panel'),false);
+  // 老无 2026-11-14: page turners on the left, clear of Android's back gesture; the line title opens the route diagram,
+  // the station title after it is plain text.
+  const lefty=await reading.evaluate(()=>{const b=id=>document.getElementById(id).getBoundingClientRect();
+   return {prevStation:b('prevStation').left,nextStation:b('nextStation').right,toggle:b('stripToggle').left,prevScene:b('prevScene').left,nextScene:b('nextScene').right,
+    toggleText:document.getElementById('stripToggle').textContent,station:document.getElementById('stripStation').textContent,stationInButton:!!document.getElementById('stripStation').closest('button'),
+    ridingShown:document.getElementById('ridingLine').getClientRects().length>0}});
+  assert.ok(lefty.prevStation<20&&lefty.nextStation<130&&lefty.nextStation<=lefty.toggle,'station turners first, on the left '+JSON.stringify(lefty));
+  assert.ok(lefty.prevScene<20&&lefty.nextScene<110,'scene turners on the left '+JSON.stringify(lefty));
+  assert.match(lefty.toggleText,/^\d+.+[▾▴]$/,'the route toggle carries the line title '+JSON.stringify(lefty));
+  assert.ok(lefty.station.length>0&&!lefty.stationInButton&&!lefty.ridingShown,'the station title is plain text after it '+JSON.stringify(lefty));
   await reading.click('#mapFold');await settle(reading);assert.ok((await reading.evaluate(()=>readerBody.clientHeight))>room.text+100,'folding the map gives the text its room');await reading.click('#mapFold');await settle(reading);
   // Every scene keeps its own cards in place; a person lookup finds the current scene's.
   const cards=await reading.evaluate(()=>{const here=document.querySelector('#peopleCards');return {blocks:document.querySelectorAll('.scene-people').length,marked:document.querySelectorAll('#peopleCards').length,inScene:here?.closest('.scene-passage')?.dataset.sceneText,scene:sceneIndex,outside:document.querySelectorAll('.scene-people:not(#peopleCards) [data-person]').length}});

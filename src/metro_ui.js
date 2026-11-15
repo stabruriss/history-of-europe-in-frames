@@ -250,6 +250,8 @@ function renderRide(){
  const seq=lineStops.get(rideLine),idx=seq.findIndex(s=>s.key===station.key),narrow=narrowScreen();
  document.documentElement.style.setProperty('--line',color(rideLine));
  $('#ridingLine').innerHTML=`<span class="line-number">${lineCode(rideLine)}</span>${esc(lineName(rideLine))}<small>主线 · ${seq.length}站</small>`;
+ // Phones open the route diagram from the line title (老无 2026-11-14); the station title follows as plain text.
+ $('#stripToggle span').innerHTML=`<span class="line-number">${lineCode(rideLine)}</span>${esc(lineName(rideLine))}`;
  $('#stationPosition').textContent=`${idx+1} / ${seq.length}`;$('#prevStation').disabled=idx<=0;$('#nextStation').disabled=idx>=seq.length-1;
  $('#routePeriod').textContent=periodFor(rideLine,station.t);
  const future=futureOf(rideLine),step=narrow?128:150,offset=narrow?72:88,span=(seq.length-1)*step,width=Math.max($('#routeScroller').clientWidth,offset*2+span+(future?step:0));
@@ -288,7 +290,7 @@ function showSceneName(i){
 }
 function updateSceneUI(){
  const data=ENTRIES[cur].scenes[sceneIndex];if(!data||!station)return;
- showSceneName(sceneIndex);$('#stripToggle span').textContent=station.title;
+ showSceneName(sceneIndex);$('#stripStation').textContent=station.title;
  $('#mapSceneDate').textContent=data.date;$('#mapSceneTitle').textContent=data.title;
 }
 

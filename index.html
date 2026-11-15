@@ -1447,7 +1447,7 @@ body.history-mode #mapSceneChip{display:block}
 #readerHead{flex:none}
 #transferBar:empty{display:none}
 #sceneHeading{min-width:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
-#stripToggle,#mapFold{display:none}
+#stripToggle,#mapFold,#stripStation{display:none}
 
 /* ---------- Desktop: the reader runs the full height beside the map; the route strip sits over the map only ---------- */
 @media(min-width:821px){
@@ -1535,6 +1535,18 @@ body.history-mode #mapSceneChip{display:block}
  body.history-mode #readerHead{padding:10px 14px 4px;border:0;background:none}
  body.history-mode #reader h2{font-size:18px}
  #transferBar{padding:2px 14px 8px;border:0;background:none}
+}
+/* left-hand phone controls (老无 2026-11-14): page turners on the left, clear of Android's back gesture on the right. */
+@media(max-width:820px){
+ .station-nav{order:-1;margin-left:0}
+ #prevScene{order:-3}#nextScene{order:-2}#scenePosition{order:-1}#sceneHeading{order:0}#mapFold{order:1}
+}
+/* line-title route toggle (老无 2026-11-14): on a phone the line title opens the route diagram; the station title is text. */
+@media(max-width:820px) and (min-height:521px){
+ .riding-line{display:none}
+ #stripToggle{flex:none;max-width:55%;gap:4px;padding:0 6px 0 2px;font-size:14px;font-weight:bold;color:var(--line)}
+ #stripToggle .line-number{margin-right:5px}
+ #stripStation{display:block;flex:1;min-width:0;font-size:12.5px;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 }
 
 /* 老无 2026-11-12: a standard player in the atlas's parchment ink. Desktop: one bar at the bottom of the page.
@@ -1692,6 +1704,11 @@ body{padding-top:var(--audio-height);padding-bottom:var(--audio-bottom)}
  #audioPlayer.audio-expanded .audio-player-inner{grid-template-columns:minmax(0,1fr) minmax(0,1.3fr) auto;grid-template-areas:"collapse collapse collapse" "title transport remaining" "options transport remaining";padding-bottom:10px}
  #audioPlayer #audioToggle{width:52px;height:52px}
 }
+/* left-hand phone controls (老无 2026-11-14): the strip's buttons on the left, the title to their right; the open card stays as it was. */
+@media(max-width:820px){
+ .audio-mini{grid-template-columns:44px 48px 44px 44px minmax(0,1fr);padding-left:8px;padding-right:14px}
+ #audioMiniPrevious{order:1}#audioMiniToggle{order:2}#audioMiniNext{order:3}#audioMiniLocate{order:4}#audioExpand{order:5;padding-left:6px}
+}
 
 </style>
 </head>
@@ -1772,7 +1789,7 @@ body{padding-top:var(--audio-height);padding-bottom:var(--audio-bottom)}
   <footer class="network-footer"><span id="datasetStats"></span><span>地图视野：线路图不是地理底图，站距不代表时长</span></footer>
 </section>
 <section id="ridePanel" aria-label="沿线路线图">
-  <header class="ride-heading"><div class="riding-line" id="ridingLine"></div><button id="stripToggle" type="button" aria-expanded="false"><span></span><i>▾</i></button><span class="ride-instruction">← → 换站 <span>·</span> ↑ ↓ 换幕</span><div class="station-nav"><button id="prevStation" type="button">← 上一站</button><span id="stationPosition"></span><button id="nextStation" type="button">下一站 →</button></div></header>
+  <header class="ride-heading"><div class="riding-line" id="ridingLine"></div><button id="stripToggle" type="button" aria-expanded="false" title="展开或收起路线图"><span></span><i>▾</i></button><span id="stripStation"></span><span class="ride-instruction">← → 换站 <span>·</span> ↑ ↓ 换幕</span><div class="station-nav"><button id="prevStation" type="button">← 上一站</button><span id="stationPosition"></span><button id="nextStation" type="button">下一站 →</button></div></header>
   <div class="route-panel"><div class="route-caption"><span>本线路线图</span><b id="routePeriod"></b><small>拖动看全线 · 点站直达</small></div><div class="route-scroller" id="routeScroller" tabindex="0" aria-label="当前主线上的事件站与历史时期"><div class="route-track" id="routeTrack"></div></div></div>
 </section>
 <aside id="side">
@@ -90887,6 +90904,8 @@ function renderRide(){
  const seq=lineStops.get(rideLine),idx=seq.findIndex(s=>s.key===station.key),narrow=narrowScreen();
  document.documentElement.style.setProperty('--line',color(rideLine));
  $('#ridingLine').innerHTML=`<span class="line-number">${lineCode(rideLine)}</span>${esc(lineName(rideLine))}<small>主线 · ${seq.length}站</small>`;
+ // Phones open the route diagram from the line title (老无 2026-11-14); the station title follows as plain text.
+ $('#stripToggle span').innerHTML=`<span class="line-number">${lineCode(rideLine)}</span>${esc(lineName(rideLine))}`;
  $('#stationPosition').textContent=`${idx+1} / ${seq.length}`;$('#prevStation').disabled=idx<=0;$('#nextStation').disabled=idx>=seq.length-1;
  $('#routePeriod').textContent=periodFor(rideLine,station.t);
  const future=futureOf(rideLine),step=narrow?128:150,offset=narrow?72:88,span=(seq.length-1)*step,width=Math.max($('#routeScroller').clientWidth,offset*2+span+(future?step:0));
@@ -90925,7 +90944,7 @@ function showSceneName(i){
 }
 function updateSceneUI(){
  const data=ENTRIES[cur].scenes[sceneIndex];if(!data||!station)return;
- showSceneName(sceneIndex);$('#stripToggle span').textContent=station.title;
+ showSceneName(sceneIndex);$('#stripStation').textContent=station.title;
  $('#mapSceneDate').textContent=data.date;$('#mapSceneTitle').textContent=data.title;
 }
 

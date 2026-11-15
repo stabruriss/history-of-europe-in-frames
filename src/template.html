@@ -280,7 +280,7 @@ body.resizing-reader #map{pointer-events:none}
   <footer class="network-footer"><span id="datasetStats"></span><span>地图视野：线路图不是地理底图，站距不代表时长</span></footer>
 </section>
 <section id="ridePanel" aria-label="沿线路线图">
-  <header class="ride-heading"><div class="riding-line" id="ridingLine"></div><button id="stripToggle" type="button" aria-expanded="false"><span></span><i>▾</i></button><span class="ride-instruction">← → 换站 <span>·</span> ↑ ↓ 换幕</span><div class="station-nav"><button id="prevStation" type="button">← 上一站</button><span id="stationPosition"></span><button id="nextStation" type="button">下一站 →</button></div></header>
+  <header class="ride-heading"><div class="riding-line" id="ridingLine"></div><button id="stripToggle" type="button" aria-expanded="false" title="展开或收起路线图"><span></span><i>▾</i></button><span id="stripStation"></span><span class="ride-instruction">← → 换站 <span>·</span> ↑ ↓ 换幕</span><div class="station-nav"><button id="prevStation" type="button">← 上一站</button><span id="stationPosition"></span><button id="nextStation" type="button">下一站 →</button></div></header>
   <div class="route-panel"><div class="route-caption"><span>本线路线图</span><b id="routePeriod"></b><small>拖动看全线 · 点站直达</small></div><div class="route-scroller" id="routeScroller" tabindex="0" aria-label="当前主线上的事件站与历史时期"><div class="route-track" id="routeTrack"></div></div></div>
 </section>
 <aside id="side">
