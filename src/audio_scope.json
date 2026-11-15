@@ -1903,6 +1903,7 @@
     "history-italy-venice/2/moment/1",
     "history-italy-venice/3",
     "history-italy-venice/3/box/0",
+    "history-italy-venice/3/box/1",
     "history-italy-venice/4",
     "history-italy-condottieri/title",
     "history-italy-condottieri/0",
@@ -5322,15 +5323,15 @@
     "topic-republic",
     "topic-republic/1/box/0"
   ],
-  "sourceCommit": "67aa81796e0cf046b601ece3ee5256721b8ad002",
+  "sourceCommit": "27021f2006798ace2e13bf2bbe5df4bc7de87063",
   "counts": {
     "scenes": 2056,
     "titles": 392,
     "topics": 14,
     "moments": 842,
-    "boxes": 207,
+    "boxes": 208,
     "people": 1775,
-    "assets": 5286,
-    "characters": 1670501
+    "assets": 5287,
+    "characters": 1671889
   }
 }

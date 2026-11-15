@@ -6,13 +6,13 @@
 
 - 云健 `zh-CN-YunjianNeural`，`pitch=+0Hz`、`rate=+0%`、`volume=+0%`；网页初始1×。
 - `prepare`、`validate`、`verify-audio` 与 dry-run 均离线。只有 `synthesize --execute` 才导入 Edge SDK、发送文字，且必须显式限定 `--selection` 或 `--only`。
-- **覆盖计划不是默认生成/上传授权。** 当前 `src/audio_scope.json` 覆盖最新定稿全部19条主线及14个动力专题，policy3 共5286段（5273个唯一MP3文件）。最后一批108份输入＝低地98＋8份实际改稿＋2则西班牙新增补充；5178份同文同配置直接复用，最终净增100项。当前源严格核对无pending/stale；这是资产齐备，不是宣称逐字人工听审或原稿零瑕疵。
+- **覆盖计划不是默认生成/上传授权。** 当前 `src/audio_scope.json` 覆盖最新定稿全部19条主线及14个动力专题，policy3 共5287段（5274个唯一MP3文件）。全书5286段完成后，本次按老无明确授权仅补录《威尼斯无僭主的底层逻辑》（`history-italy-venice/3/box/1`），原5286项同文同配置全部复用。当前源严格核对无pending/stale；这是资产齐备，不是宣称逐字人工听审或原稿零瑕疵。
 - 旧policy2的220段音频与2462份文本留作历史记录，不能冒充新规成品。新库换目录，共享缓存按实际朗读输入复用。
 - Node VM 只用于可信本地源数据，不是恶意 JavaScript 的安全沙箱。不改原文、不付费兜底、不自动重试或扩展到全书。
 
 ## 目录与版本
 
-代码、测试在 `project-files/`，素材与MP3必须在其外，当前库为 `work/v35/audio_library/v112-policy3-final-r4/`，冻结源/工具为 `work/v35/audio_runs/v112-final-source/`（67aa817）；旧 r3/r2 库、收据与录音均留档。
+代码、测试在 `project-files/`，素材与MP3必须在其外，当前库为 `work/v35/audio_library/v112-policy3-venice-r5/`，冻结源/工具为 `work/v35/audio_runs/v112-venice-source/`（27021f2），补录证据在 `work/v35/audio_runs/v112-era11-venice/`；旧 r4（5286段）、r3/r2 库、收据与录音均留档。
 
 ```text
 素材库/
@@ -111,7 +111,7 @@ python3 "$PIPE" verify-audio --source "$SOURCE" --library "$LIB" --selection "$S
 
 手动上一项、下一项、列表点选及系统媒体切歌，直接进入选中幕的正文，不播节题；可选条目仍直接播放自身。点击朗读开始和自然接播到新节时保留节题前奏，同节自然接播不重复。切音频不翻动阅读页面。
 
-最终5286项已覆盖低地及v97/v98两则西班牙新增补充（`history-spain-1492/3/box/1`、`history-spain-1492/0/box/2`），它们不再是暂缺提示。今后新改稿仍按普通缺段机制过渡。
+此前5286项已覆盖低地及v97/v98两则西班牙新增补充（`history-spain-1492/3/box/1`、`history-spain-1492/0/box/2`）；本次再补威尼斯豆腐块1项，共5287项。新豆腐块仍归默认关闭的“包括补充趣事”，不改变正文队列。今后新改稿仍按普通缺段机制过渡。
 
 已记录的非阻断源稿问题：`history-britain-lords/3/box/0` 与 `history-britain-suffrage-1918/5/box/0` 使用未渲染的Markdown管道表，作为普通文字进入旧录音，属于表格排除的存量格式例外；`history-spain-1492/3/box/1` 有“阿梅斯（Metz）托”误括注。保留真实输入/录音与问题记录，不伪报全书范围零问题，不为此卡本轮发布；后续由正常内容修订处理。新稿表格使用HTML `<table>`，核心论点另写在表外平文。
 

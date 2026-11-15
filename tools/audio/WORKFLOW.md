@@ -11,7 +11,7 @@
 
 ### 计划、制作选择、公开范围必须分开
 
-`src/audio_scope.json` 当前覆盖最新定稿全部19条主线与14个动力专题，共5286段（5273个唯一MP3文件）。最后一批为低地98＋8份改稿＋2则新增补充，5178份未变输入直接复用。当前源无pending/stale；未变成无瑕疵承诺，README已列出两处存量Markdown表格与一处源词注问题。
+`src/audio_scope.json` 当前覆盖最新定稿全部19条主线与14个动力专题，共5287段（5274个唯一MP3文件）。全书5286段完成后，老无另行授权补录《威尼斯无僭主的底层逻辑》1项并与手机左手控件合并上线；原5286项未改输入全部复用。当前源无pending/stale；未变成无瑕疵承诺，README已列出两处存量Markdown表格与一处源词注问题。
 
 **总计划不等于默认全书授权。** 老无本次已明确授权后续自动逐批推进：基督教/十字军 → 德意志＋意大利494段 → 英国＋法国1353段 → 低地98段及全书查漏、新增/改稿补录；每批必须验收并上线成功，才执行下一批。总表在 `work/v35/audio_runs/v112-auto-finish-plan.json`。基督教此前补720段，十字军254段原已齐全；德意批补494段；英法批补1353段；最后一批108份新/改输入录成，累计5286段已通过R2远端校验。普通构建始终支持部分嵌入，不因未录线路阻塞改稿。
 
@@ -49,9 +49,9 @@ cd "$SRC"
 
 ## 操作模板（以下在 project-files/ 下；命令示例保留早期27段专题范围，不是当前执行授权）
 
-当前全书库是 `v112-policy3-final-r4`，显式源/工具快照为 `work/v35/audio_runs/v112-final-source`（detached at `67aa817`）；最终selection/scope与证据在 `work/v35/audio_runs/v112-era10-final/`。旧 r3 库及其 `v112-frozen-r3-source`（c5c945b）保留，不能把新源塞回旧库。以下r2/27段命令只是历史示例。
+当前全书库是 `v112-policy3-venice-r5`，显式源/工具快照为 `work/v35/audio_runs/v112-venice-source`（detached at `27021f2`）；本次selection/scope与证据在 `work/v35/audio_runs/v112-era11-venice/`。只新增 `history-italy-venice/3/box/1`；旧 r4（67aa817冻结源/5286段）与 r3/r2 库保留，不能把新源塞回旧库。以下r2/27段命令只是历史示例。
 
-每批先在冻结源严格验收，再合入最新正文、普通组装；本批全书5286段，两则西班牙新增豆腐块及v99八份改稿均已补齐。来源和pipeline/text/extract/requirements/approved_omissions均固定哈希；live播放器、resolver、组装器的并行修改不应打断TTS。
+每批先在冻结源严格验收，再合入最新正文、普通组装；本批全书5287段，新增威尼斯1段；此前两则西班牙新增豆腐块及v99八份改稿均已补齐。来源和pipeline/text/extract/requirements/approved_omissions均固定哈希；live播放器、resolver、组装器的并行修改不应打断TTS。
 
 ```sh
 PY=../work/v35/audio_poc/.venv/bin/python
@@ -180,6 +180,6 @@ Git/Bartender不保存源码树外音频。归档/删除工作区前备份素材
 
 官方定价页2026-11-10实读：Hobby含1GB存储、每月10GB Blob下载、2000次高级/10000次简单操作；CDN另按通用规则。超限可能暂停服务，不自动转为付费超额。升级/支出控制另需老无批准。
 
-早期首次公开为27段；当前累计3833段在R2，不能把旧Blob额度或冻结全书5284段的计划误当实际账单，也不能据全书文件数要求买Pro。当月剩余额度未核实，也不承诺无限流量免费。建库通常一次高级操作，新单段PUT通常每文件一次；重试和读取/流量另计。
+早期首次公开为27段；当前音频已迁至R2，不能把旧Blob额度或早期冻结全书5284段的计划误当实际账单，也不能据全书文件数要求买Pro。当月剩余额度未核实，也不承诺无限流量免费。建库通常一次高级操作，新单段PUT通常每文件一次；重试和读取/流量另计。
 
 参考：[额度](https://vercel.com/docs/vercel-blob/usage-and-pricing)、[Public Blob](https://vercel.com/docs/vercel-blob/public-storage)、[CLI](https://vercel.com/docs/cli/blob)。当前是否真的建库/上传/部署，以BUILD证据为准。
