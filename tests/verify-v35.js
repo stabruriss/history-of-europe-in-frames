@@ -123,8 +123,8 @@ const REGIONS=['mThemeOpsikion','mThemeThrakesion','mThemeAnatolikon','mThemeArm
    // One story told once: the councils after 641 are shared stations on 东罗马 and 基督教.
    for(const [k,lines,on] of r.shared){assert.deepEqual(lines,['east'],k);assert.deepEqual(on,['east'],k);}
    assert.deepEqual(r.east.slice(-EAST_TAIL.length),EAST_TAIL);assert.deepEqual(r.faith.slice(-FAITH_TAIL.length),FAITH_TAIL);
-   assert.deepEqual(r.branches.east,[395,1453]);assert.deepEqual(r.branches.faith,[-1400,1648]);
-   assert.deepEqual(r.futures.filter(f=>['east','faith'].includes(f[0])),[['faith',1648,'政教分离与启蒙时代']]);
+   assert.deepEqual(r.branches.east,[395,1453]);assert.deepEqual(r.branches.faith,[-1400,1929]);
+   assert.deepEqual(r.futures.filter(f=>['east','faith'].includes(f[0])),[['faith',1929,'二战与梵二会议']]);
    for(const [k,ok] of r.bold)assert.ok(ok,k+' lacks 老无’s thesis in bold');
    for(const [k,ok] of r.fixes)assert.ok(ok,k+' lacks the in-place factual correction');
    assert.equal(r.chatFiller,false,'conversational filler or uncorrected wording left in prose');

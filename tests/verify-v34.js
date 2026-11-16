@@ -16,7 +16,7 @@ const FULL_SHOTS=false;const wait=ms=>FULL_SHOTS?new Promise(r=>setTimeout(r,ms)
 const NAMES=['史前','希腊','罗马','东罗马','中世纪西欧','西班牙','法兰西','低地诸国','德意志','意大利','不列颠','基督教','埃及','中东','东欧','十字军','百年战争','黑死病','宗教改革','三十年战争','一战','北欧','美洲','中国'];
 const OWN={east:['history-empire-theodosius','history-empire-leo','history-empire-justinian','history-empire-heraclius','history-empire-constans','history-empire-anarchy','history-empire-isaurian','history-empire-amorian','history-empire-macedonian','history-empire-macedonian','history-empire-zoe','history-empire-alexios','history-empire-komnenos','history-plat-east-1204','history-empire-palaiologos','history-empire-fall-1453'],
  west:['history-west-kingdoms','history-west-ostrogoths','history-west-merovingians','history-west-lombards','history-west-charlemagne','history-west-charlemagne-rule','history-west-louis-pious']};
-const SHARED={'history-empire-heraclius/0':['east','persia','egypt'],'history-arab-conquest/0':['persia','east','egypt']};
+const SHARED={'history-empire-heraclius/0':['east'],'history-arab-conquest/0':['persia']};
 const BOLD=[['history-faith-three-chapters/1','教义之争背后的权力格局之斗争，不一定是阴谋论，只是人类组织内群体对抗外群体和组织扩张，权力自我膨胀的自然结果'],
  ['history-empire-constans/0','吃马肉不吃马肝，不算你傻；谁再讨论什么几性几位几志就弄谁'],
  ['history-empire-constans/0','这是很聪明的策略：虽然有帝国动员能力不足导致底层宗教势大的原因，但君士坦丁以来跟着教义之争翻大饼，也的确弱化了皇权，如果早早就铁腕把这些争论都压下去，本是更聪明的办法。实际上查士丁尼在暴乱后下决心屠杀了三万人，的确让蓝绿党争消停了'],
@@ -78,7 +78,7 @@ const BOLD=[['history-faith-three-chapters/1','教义之争背后的权力格局
    assert.deepEqual(r.ends,[['trunk',-30,'rome'],['rome',476,null],['west',843,null],['east',1453,null],['egypt',642,null],['crusade',1312,null],['hundred-years',1453,null],['black-death',1351,null],['reformation',1599,null],['thirty-years',1648,null],['ww1',1923,null],['prehistory',-3100,'trunk']]);
    // Every line either grows a shoot or ends with an event.
    for(const b of r.branches)assert.ok(r.futures.some(f=>f[0]===b[0])||r.ends.some(e=>e[0]===b[0]),b[0]+' ends without an event');
-   assert.deepEqual(r.futures.sort(),[['america',1920],['britain',1928],['china',1919],['crusade',1312],['eeurope',1922],['egypt',642],['faith',1929],['france',1923],['germany',1923],['italy',1929],['lowlands',1918],['nordic',1648],['persia',1923],['spain',1931]]);
+   assert.deepEqual(r.futures.sort(),[['america',1920],['britain',1928],['china',1919],['eeurope',1922],['faith',1929],['france',1923],['germany',1923],['italy',1929],['lowlands',1918],['nordic',1920],['persia',1923],['spain',1931]]);
    // Shared stations: one section, on each of its lines.
    for(const [k,lines] of Object.entries(SHARED)){assert.deepEqual(r.shared[k].lines,lines);assert.deepEqual(r.shared[k].on.sort(),[...lines].sort());assert.equal(r.shared[k].entries,1);}
    // 老无's own words, verbatim and bold.
@@ -105,9 +105,9 @@ const BOLD=[['history-faith-three-chapters/1','教义之争背后的权力格局
    assert.ok(t.forkY.east<t.endY.rome);assert.equal(t.forkY.west,t.endY.rome);
    assert.ok(['france','germany','italy'].every(l=>t.forkY[l]===t.endY.west),'the heirs of Verdun fork where 中世纪西欧 ends');
    assert.ok(t.forkY.spain>t.forkY.west&&t.forkY.spain<t.endY.west,'西班牙 leaves 中世纪西欧 on the way, with the Visigoths');
-   for(const k of ['war','arab']){assert.equal(t[k].length,3,k+' node on each line');assert.equal(new Set(t[k].map(p=>p[1])).size,1,k+' copies level');assert.equal(new Set(t[k].map(p=>p[0])).size,3);}
-   assert.equal(t.swaps,2,'interchanges (v40: seven more on the 十字军 line; v42: Worms, Barbarossa, Henry VI and Innocent III on two and three lines; v43: Frederick II and Saint Louis–Philip IV; v45: Henry II and Richard I–John on 不列颠 and 法兰西; v49: both halves of Avignon on 基督教 and 法兰西; v50: the Black Death on six lines; v52–v70: all lines aligned through the Reformation): the Persian war, the Arab conquests, the sieges of Constantinople, Tariq’s crossing, Otto’s crowning, the Rus and Byzantium, four East Roman stations shared with 基督教, and (老无 2026-10-29) the investiture contest, Canossa, the holy war in Spain, Manzikert and the First Crusade');assert.equal(t.rows,1,'one row for the shared station');assert.match(t.where,/东罗马、中东、埃及/);
-   assert.deepEqual(t.on,['history-empire-heraclius/0','history-empire-heraclius/0','history-empire-heraclius/0'],'a shared station lights up on all its lines');
+   for(const k of ['war','arab'])assert.equal(t[k].length,1,k+' node on its one line (single ownership, 2026-11-16)');
+   assert.equal(t.swaps,2,'interchanges (v40: seven more on the 十字军 line; v42: Worms, Barbarossa, Henry VI and Innocent III on two and three lines; v43: Frederick II and Saint Louis–Philip IV; v45: Henry II and Richard I–John on 不列颠 and 法兰西; v49: both halves of Avignon on 基督教 and 法兰西; v50: the Black Death on six lines; v52–v70: all lines aligned through the Reformation): the Persian war, the Arab conquests, the sieges of Constantinople, Tariq’s crossing, Otto’s crowning, the Rus and Byzantium, four East Roman stations shared with 基督教, and (老无 2026-10-29) the investiture contest, Canossa, the holy war in Spain, Manzikert and the First Crusade');assert.equal(t.rows,1,'one row for the station');assert.ok(!/中东|埃及/.test(t.where||''),'希拉克略 is 东罗马’s alone: '+t.where);
+   assert.deepEqual(t.on,['history-empire-heraclius/0'],'a single-owner station lights up once');
    // Lighting: the chosen line, its ends and merges.
    const light=await page.evaluate((sel)=>{
     const out={};
@@ -123,11 +123,12 @@ const BOLD=[['history-faith-three-chapters/1','教义之争背后的权力格局
    assert.deepEqual(light.rome,{ends:['rome'],merge:false,war:false,lanes:['prehistory','rome','trunk']});
    assert.deepEqual(light.east,{ends:['east'],merge:false,war:true,lanes:['east','prehistory','rome','trunk']},'东罗马 leaves 罗马 at 395, before 罗马’s end');
    assert.deepEqual(light.west,{ends:['rome','west'],merge:false,war:false,lanes:['prehistory','rome','trunk','west']},'中世纪西欧 runs through 罗马’s end to its own at Verdun');
-   assert.deepEqual(light.persia,{ends:[],merge:false,war:true,lanes:['persia','prehistory']});
+   assert.deepEqual(light.persia,{ends:[],merge:false,war:false,lanes:['persia','prehistory']});
    // Stepping along 波斯 from the shared war goes on to the Arab conquest; along 埃及 too.
    if(label!=='desktop'){await page.keyboard.press('Escape');await wait(100);}
-   await page.evaluate(()=>{selectTreeLine('egypt');go('history-empire-heraclius');});await page.click('#next');
-   assert.equal(await page.evaluate(()=>ENTRIES[cur].id),'history-arab-conquest');assert.equal(await page.evaluate(()=>treeLine),'egypt','stays on 埃及 through shared stations');
+   // Single ownership (2026-11-16): along 东罗马 the war goes on to 君士坦斯二世; the Arab conquest is 中东’s alone.
+   await page.evaluate(()=>{selectTreeLine('east');go('history-empire-heraclius');});await page.click('#next');
+   assert.equal(await page.evaluate(()=>ENTRIES[cur].id),'history-empire-constans');assert.equal(await page.evaluate(()=>treeLine),'east','stays on 东罗马');
    await page.evaluate(()=>go('history-empire-heraclius',{scene:1}));await wait(250);
    
    if(label==='desktop'){

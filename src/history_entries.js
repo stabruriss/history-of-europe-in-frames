@@ -9448,7 +9448,7 @@ const HISTORY_ENTRIES=[
     hr(d,[[42.85,-2.67],[41.89,12.48]],HC.faith);
    },[['fill',HC.faith,'教宗国'],['dline',HC.faith,'1522年哈德良赴罗马路线（约略）'],['dot',HC.war,'罗马'],['dot','#2a2018','乌得勒支、维多利亚与纽伦堡']])
  ]},
-{id:'history-plat-italy-sack',ch:5,title:'从帕维亚生擒法王到罗马浩劫：查理五世称霸半岛与米兰、那不勒斯归西',short:'罗马之劫与西属定局',en:'From Pavia to the Sack of Rome: Habsburg Hegemony in Italy',period:'1525—1559年',c:HC.italy,platform:true,
+{id:'history-plat-italy-sack',ch:5,title:'从帕维亚生擒法王到罗马之劫：查理五世称霸半岛，米兰、那不勒斯归西班牙',short:'罗马之劫与西属定局',en:'From Pavia to the Sack of Rome: Habsburg Hegemony in Italy',period:'1525—1559年',c:HC.italy,platform:true,
  scenes:[
   hs('1525—1559年','帕维亚大捷、罗马之劫与米兰那不勒斯归属西班牙','1525年帕维亚之战与1527年罗马之劫确立查理五世霸权；1556年查理五世退位，米兰和那不勒斯归腓力二世。',[[37.2,7.0],[46.5,18.5]],d=>{
     ha(d,'sMilan',HC.spain,{fillOpacity:.36});ha(d,'itTwoSicilies',HC.spain,{fillOpacity:.34});
@@ -10436,9 +10436,9 @@ const HISTORY_ENTRIES=[
     hl(d,'联省共和国','Dutch Republic',52.6,5.5,HC.lowlands);
     hl(d,'英格兰王国','Kingdom of England',52.2,-1.5,HC.britain);
     hp(d,'sn2_amsterdam',{capital:1,note:'阿姆斯特丹：1672年掘开周边堤坝形成“荷兰水线”，用洪水挡住路易十四大军。'});
-    hp(d,'sn2_hague',{note:'海牙：1672年德·维特兄弟在此遇害，二十二岁的威廉三世出任执政。'});
+    hp(d,'sn2_hague',{note:'海牙：1672年二十一岁的威廉三世出任执政，德·维特兄弟在此遇害。'});
     hp(d,'fdw_nijmegen',{kind:'battle',note:'奈梅亨：1678年法荷在此签下和约，联省共和国保住全部本土。'});
-    hp(d,'bgl_hellevoetsluis',{kind:'battle',left:1,note:'赫勒富茨劳斯：1688年11月威廉三世由此率四百余艘战船渡海赴英。'});
+    hp(d,'bgl_hellevoetsluis',{kind:'battle',left:1,note:'赫勒富茨劳斯：1688年11月威廉三世由此率四百余艘船渡海赴英。'});
     hp(d,'k_london',{capital:1,left:1,note:'伦敦：威廉三世与玛丽二世共治，1701年英国议会把王位继承权定给汉诺威家。'});
    },[['fill',HC.lowlands,'掘堤御法并输出执政王的联省共和国'],['fill',HC.britain,'1688年后与荷兰共戴一君的英格兰'],['fill',HC.france,'路易十四扩张受阻的法兰西'],['dline',HC.lowlands,'1688年威廉三世渡海入英航线']])
  ]},
@@ -10595,7 +10595,7 @@ const HISTORY_ENTRIES=[
     hp(d,'ca_liege',{kind:'battle',note:'列日：1914年8月比军要塞阻击德军十余日，打乱施里芬计划速胜时间表。'});
     hp(d,'lb_brussels',{capital:1,note:'布鲁塞尔：1914年8月陷落，经历四年德军占领后于1918年11月光复。'});
     hp(d,'lb_antwerp',{kind:'battle',left:1,note:'安特卫普：1914年10月比军在此牵制德军后沿海岸西撤。'});
-    hp(d,'lf_ypres',{kind:'battle',left:1,note:'伊普尔：比军在伊瑟河开闸放水，与英法联军死守弗兰德最后一块国土四年。'});
+    hp(d,'lf_ypres',{kind:'battle',left:1,note:'伊普尔：英法比联军在此死守四年，与北侧伊瑟河水线共同锁死德军通往海峡之路。'});
     hp(d,'sn2_hague',{capital:1,left:1,note:'海牙：荷兰严守武装中立，接纳百万比利时难民，战后收留退位德皇威廉二世。'});
    },[['fill',HC.lowlands,'抗击德军入侵的比利时与武装中立的荷兰'],['fill',HC.germany,'撕毁中立条约入侵比利时的德意志帝国'],['dline',HC.war,'1914年德军西进与比军退守伊瑟河—伊普尔路线'],['dot',HC.war,'列日、安特卫普与伊普尔']])
  ]},
@@ -15425,7 +15425,7 @@ const HISTORY_ENTRIES=[
     hp(d,'bd_moscow',{kind:'battle',note:'莫斯科：1812年9月库图佐夫弃城大火，拿破仑大军自此踏上死亡退路。'});
     hp(d,'fwa_berezina',{kind:'battle',left:1,note:'别列津纳河：1812年11月法军残部在此渡河溃败，俄军随后反攻直入巴黎。'});
     hp(d,'ote_warsaw',{left:1,note:'华沙：1815年维也纳会议划归沙皇统治，1830年波兰起义遭铁腕镇压。'});
-    hp(d,'bvi_sevastopol',{kind:'battle',note:'塞瓦斯托波尔：1854—1855年被英法联军围攻十一月失守，促成1856年巴黎和约。'});
+    hp(d,'bvi_sevastopol',{kind:'battle',note:'塞瓦斯托波尔：英法联军围攻十一个月，1855年9月攻下。'});
    },[['fill',HC.eeurope,'1815—1856年自诩“欧洲宪兵”的俄罗斯帝国'],['fill',HC.war,'1854—1855年英法联军登陆围攻的克里米亚'],['dline',HC.eeurope,'1812年拿破仑进兵莫斯科与别列津纳河溃退路线'],['dot',HC.war,'莫斯科、别列津纳河与塞瓦斯托波尔']])
  ]},
 {id:'history-eeurope-reform',ch:10,title:'农奴解放到1905年：解放了人没解放地，修了铁路输了战争',short:'农奴解放到1905年',en:'From Emancipation to 1905: Serfs Freed Without Their Land, Railways Built and a War Lost',period:'1855—1914年',c:HC.eeurope,
@@ -18393,17 +18393,17 @@ const HISTORY_ENTRIES=[
     hr(d,[[57.478,-4.093],[55.95,-3.19],[52.922,-1.475],[57.478,-4.093]],HC.war);
    },[['fill',HC.britain,'大不列颠王国'],['fill',HC.war,'苏格兰高地氏族起兵区'],['dline',HC.war,'1745—1746年查理王子南下德比与北撤卡洛登路线'],['dot',HC.war,'德比与卡洛登荒原'],['dot','#2a2018','爱丁堡与伦敦']])
  ]},
-{id:'history-plat-britain-seven-years',ch:12,title:'老皮特的算盘：欧洲出钱雇普鲁士打陆战，英国海军包揽北美与印度',short:'老皮特与七年战争',en:'Pitt the Elder’s Strategy: Bankrolling Prussia While Conquering Canada and Bengal',period:'1756—1763年',c:HC.britain,platform:true,
+{id:'history-plat-britain-seven-years',ch:12,title:'老皮特的算盘：出钱雇普鲁士在欧陆打仗，英国海军包揽北美与印度',short:'老皮特与七年战争',en:'Pitt the Elder’s Strategy: Bankrolling Prussia While Conquering Canada and Bengal',period:'1756—1763年',c:HC.britain,platform:true,
  scenes:[
-  hs('1756—1763年','基伯龙湾锁海、明登护翼与1763年《巴黎和约》','老皮特以英镑补贴普鲁士拖住法军，1759年基伯龙湾海战锁死法国海援，1763年《巴黎和约》夺取加拿大与印度但国债翻倍。',[[43.0,-9.0],[56.5,14.5]],d=>{
+  hs('1756—1763年','基伯龙湾锁海、明登护翼与1763年《巴黎和约》','老皮特以英镑补贴普鲁士拖住法军，1759年基伯龙湾海战锁死法国海援，1763年《巴黎和约》夺取加拿大与印度。',[[43.0,-9.0],[56.5,14.5]],d=>{
     ha(d,'brGreatBritain1707',HC.britain,{fillOpacity:.34});ha(d,'fFrance1648',HC.france,{fillOpacity:.22});
     hr(d,[[51.51,-0.13],[47.48,-3.12],[52.29,8.92]],HC.britain);
     hl(d,'大不列颠王国','Kingdom of Great Britain',53.5,-2.2,HC.britain);
     hl(d,'法兰西王国','Kingdom of France',46.8,2.2,HC.france);
     hp(d,'uk4_westminster',{capital:1,left:1,note:'威斯敏斯特：老皮特在此操盘战争财政，靠英格兰银行发债夺取全球霸权。'});
-    hp(d,'fsy_quiberon',{kind:'battle',left:1,note:'基伯龙湾：1759年11月英舰队在暴风雨中歼灭法舰队，断绝法国增援北美之路。'});
+    hp(d,'fsy_quiberon',{kind:'battle',left:1,note:'基伯龙湾：1759年11月英舰队在暴风雨中大破法舰队，断绝法国增援北美之路。'});
     hp(d,'fsy_minden',{kind:'battle',note:'明登与汉诺威：1759年8月英德联军在此击败法军，守住英王汉诺威领地并死死吸住法军主力。'});
-    hp(d,'w_paris',{capital:1,note:'巴黎：1763年2月法英西在此签下《巴黎和约》，英国夺下加拿大但国债飙至1.327亿镑。'});
+    hp(d,'w_paris',{capital:1,note:'巴黎：1763年2月英、法、西三国在此签约，结束七年战争。'});
    },[['fill',HC.britain,'老皮特掌舵的大不列颠王国'],['fill',HC.france,'海路被封锁、丧失北美与印度的法兰西'],['dline',HC.britain,'英国海军封锁法国海岸与支援德意志战线'],['dot',HC.war,'基伯龙湾与明登']])
  ]},
 {id:'history-britain-america',ch:12,title:'丢掉北美，换来印度：七年战争的账单转嫁海外',short:'丢掉北美，换来印度',en:'Losing America, Gaining India: Passing the Seven Years’ War Bill Overseas',period:'1760—1793年',c:HC.britain,

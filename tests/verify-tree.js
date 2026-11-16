@@ -49,7 +49,7 @@ function checkTree(r,label){
  const top=k=>r.items.find(i=>i.key===k).top;
  assert.ok(top('history-poleis/0')<top('history-rome-kings/0')&&top('history-rome-kings/0')<top('history-sparta/0'),label+' Rome kings beside archaic Greece');
  assert.ok(top('history-celts/0')<top('history-rome-punic/0')&&top('history-rome-punic/0')<top('history-eastern-kingdoms/0'),label+' Punic Wars beside the Hellenistic kingdoms');
- assert.equal(r.futures.length,12,label);assert.match(r.futures.map(f=>f.text).join(' '),/两德分合/,label);assert.match(r.futures.map(f=>f.text).join(' '),/后来的十字军/,label);assert.match(r.futures.map(f=>f.text).join(' '),/国民革命、抗战与内战/,label);assert.ok(r.futureLane,label);
+ assert.equal(r.futures.length,12,label);assert.match(r.futures.map(f=>f.text).join(' '),/两德分合/,label);assert.match(r.futures.map(f=>f.text).join(' '),/冬季战争与北欧模式/,label);assert.match(r.futures.map(f=>f.text).join(' '),/国民革命、抗战与内战/,label);assert.ok(r.futureLane,label);
  assert.ok(r.futures.every(f=>f.top>top('history-rome-augustus/0')),label+' unwritten topics grow below');
  assert.match(r.futures.map(f=>f.text).join(' '),/第五共和国/,label);
  assert.ok(r.futures.every(f=>f.top>top('history-empire-west-fall/0')),label+' the medieval shoot grows below 476');
