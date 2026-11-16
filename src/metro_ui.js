@@ -13,7 +13,7 @@ const narrowScreen=()=>matchMedia('(max-width:820px)').matches;
 /* ---------- Data, live from the atlas ---------- */
 const branches=HISTORY_BRANCHES.map(b=>({...b,c:lineColor(b)}));
 const branchById=new Map(branches.map(b=>[b.id,b]));
-const stations=historyTreeRows().filter(r=>r.kind==='item').map((r,i)=>({key:r.key,id:r.id,from:r.from,to:r.to,t:r.t,end:r.end,lines:r.lines,title:r.label,period:r.period,sourceOrder:i,count:r.to-r.from+1}));
+const stations=historyTreeRows().filter(r=>r.kind==='item').map((r,i)=>({key:r.key,id:r.id,from:r.from,to:r.to,t:r.t,end:r.end,lines:r.lines,title:r.label,period:r.period,sourceOrder:i,count:r.to-r.from+1,platform:Boolean(r.platform)}));
 const stationByKey=new Map(stations.map(s=>[s.key,s]));
 const firstYear=id=>Math.min(...stations.filter(s=>s.lines.includes(id)).map(s=>s.t));
 const lines=[...branches].sort((a,b)=>firstYear(a.id)-firstYear(b.id));
@@ -21,7 +21,26 @@ const lineStops=new Map(lines.map(l=>[l.id,stations.filter(s=>s.lines.includes(l
 const color=id=>branchById.get(id)?.c||'#26738a';
 const lineName=id=>branchById.get(id)?.name||id;
 const lineCode=id=>String(HISTORY_BRANCHES.findIndex(b=>b.id===id)+1).padStart(2,'0');
-const LINE_MARK={prehistory:'史',trunk:'希',rome:'罗',east:'东',west:'西欧',spain:'西',france:'法',lowlands:'低',germany:'德',italy:'意',britain:'不',faith:'基',egypt:'埃',persia:'波',eeurope:'欧',crusade:'十',china:'中',nordic:'北',america:'美'};
+const LINE_MARK={prehistory:'史',trunk:'希',rome:'罗',east:'东',west:'西欧',spain:'西',france:'法',lowlands:'低',germany:'德',italy:'意',britain:'不',faith:'基',egypt:'埃',persia:'波',eeurope:'欧',crusade:'十',china:'中',nordic:'北',america:'美','hundred-years':'百','black-death':'疫'};
+// An event branch (kind:'branch', like 十字军) is a 支线; the others are 线 (老无 2026-11-15).
+const isBranch=id=>branchById.get(id)?.kind==='branch';
+const lineLabel=id=>lineName(id)+(isBranch(id)?'支线':'线');
+// Where a station changes line, and how (老无 2026-11-15). The authored TREE_XFERS comes first: per station key a list of
+// {line, to, kind:'platform'|'meet'|'peer'|'back', note}. A station it does not list (a batch not reworked yet) offers
+// every other line through it, as before.
+const XFERS=typeof TREE_XFERS==='undefined'?{}:TREE_XFERS;
+function transfersAt(s){
+ const authored=XFERS[s.key];
+ if(authored)return authored.filter(c=>c&&branchById.has(c.line)&&stationByKey.has(c.to)&&c.line!==rideLine);
+ return s.lines.filter(id=>id!==rideLine).map(id=>({line:id,to:s.key,kind:'peer',note:''}));
+}
+// One short line under the buttons per change of line, e.g. “X详情见德意志线。” Never read aloud: it is not in the text.
+function transferNote(s,c){
+ if(c.note)return c.note;
+ if(!XFERS[s.key])return '';
+ const to=stationByKey.get(c.to);
+ return c.kind==='platform'?`${s.title}详情见${lineLabel(c.line)}。`:c.kind==='back'?`后续见${lineLabel(c.line)}《${to.title}》。`:`${to.title}见${lineLabel(c.line)}。`;
+}
 const periodFor=(id,t)=>{const a=ROUTE_PERIODS[id]||[];return a.find(([s,e])=>t>=s&&t<e)?.[2]||a.findLast(([s])=>t>=s)?.[2]||a[0]?.[2]||''};
 const SLICES=typeof TREE_SLICES==='undefined'?[]:TREE_SLICES;
 
@@ -68,7 +87,7 @@ function renderNetwork(){
   const d=roundedPath(pts);
   createSVG('path',{d,class:'rail-casing'},paths);
   createSVG('path',{d,class:'rail-path',style:`--c:${l.c}`,'data-line':l.id},paths);
-  const hit=createSVG('path',{d,class:'rail-hit','data-line':l.id,'aria-label':`乘坐${l.name}线`},paths);
+  const hit=createSVG('path',{d,class:'rail-hit','data-line':l.id,'aria-label':`乘坐${lineLabel(l.id)}`},paths);
   hit.addEventListener('click',e=>{e.stopPropagation();if(!skipGraphClick)board(l.id)});
  }
  for(const t of NET.ticks)createSVG('line',{x1:t.x,x2:t.x,y1:t.y-8,y2:t.y+8,class:'period-tick','data-line':t.line,style:`--c:${color(t.line)}`},ticks);
@@ -76,7 +95,7 @@ function renderNetwork(){
  for(const n of NET.notes){const t=textSVG(periods,n.name,{x:n.x,y:n.y,class:'junction-note','data-line':n.line,style:`--c:${color(n.line)}`});if(n.note)createSVG('title',{},t).textContent=n.note}
  for(const f of NET.flags){
   // Signposts: the start flag points right at the line's first stop, the end flag left at its last.
-  const g=createSVG('g',{class:`line-flag flag-${f.end}`+(f.free?'':' no-room'),'data-line':f.line,role:'button','aria-label':`${f.name}线${f.end==='start'?'起点':'终点'}，点击上车`,transform:`translate(${f.tipX} ${f.tipY})`},flags),inner=createSVG('g',{class:'flag-scale'},g);
+  const g=createSVG('g',{class:`line-flag flag-${f.end}`+(f.free?'':' no-room'),'data-line':f.line,role:'button','aria-label':`${lineLabel(f.line)}${f.end==='start'?'起点':'终点'}，点击上车`,transform:`translate(${f.tipX} ${f.tipY})`},flags),inner=createSVG('g',{class:'flag-scale'},g);
   const dir=f.end==='start'?-1:1,half=f.h/2,point=8;
   createSVG('path',{d:`M0 0 L${dir*point} ${-half} L${dir*f.w} ${-half} L${dir*f.w} ${half} L${dir*point} ${half} Z`,fill:f.c,class:'flag-shape'},inner);
   textSVG(inner,f.name,{x:dir*(f.w+point)/2,y:4,'text-anchor':'middle'});
@@ -100,7 +119,7 @@ function renderNetwork(){
   if(s.lines.length>2){const h=createSVG('g',{class:'hub-name','data-lines':s.lines.join(' '),transform:`translate(${n.x} ${n.y0})`},hubs),i=createSVG('g',{class:'flag-scale'},h);textSVG(i,s.title,{x:0,y:-11,'text-anchor':'middle'});h.addEventListener('click',e=>{e.stopPropagation();if(!skipGraphClick)inspect(s.key)})}
  }
  buildDeclutter();
- $('#lineList').innerHTML=lines.map(l=>`<button class="line-choice" data-line="${l.id}" style="--c:${l.c}" title="乘坐${esc(l.name)}线"><i class="line-swatch"></i><span>${esc(l.name)}</span><span class="line-count">${lineStops.get(l.id).length}</span></button>`).join('');
+ $('#lineList').innerHTML=lines.map(l=>`<button class="line-choice" data-line="${l.id}" style="--c:${l.c}" title="乘坐${esc(lineLabel(l.id))}"><i class="line-swatch"></i><span>${esc(l.name)}</span><span class="line-count">${lineStops.get(l.id).length}</span></button>`).join('');
  $$('#lineList button').forEach(b=>{b.onclick=()=>board(b.dataset.line);b.onmouseenter=()=>highlightLine(b.dataset.line);b.onmouseleave=()=>highlightLine(null)});
  markNetwork();
 }
@@ -147,10 +166,10 @@ const futureOf=id=>TREE_FUTURE.find(f=>f[0]===id);
 function inspect(key){
  selectedKey=key;const s=stationByKey.get(key),entry=HISTORY_ENTRIES.find(e=>e.id===s.id);
  $('#stationInspector').hidden=false;
- $('#inspectorKicker').textContent=s.lines.length>1?`贯通事件 · ${s.lines.length}线换乘`:`事件站 · ${lineName(s.lines[0])}线`;
+ $('#inspectorKicker').textContent=s.lines.length>1?`贯通事件 · ${s.lines.length}线换乘`:`事件站 · ${lineLabel(s.lines[0])}`;
  $('#inspectorTitle').textContent=s.title;$('#inspectorPeriod').textContent=`${s.period} · ${s.count}幕`;
  $('#inspectorSummary').textContent=entry.scenes[s.from]?.title||entry.title;
- $('#inspectorLines').innerHTML=s.lines.map(id=>`<button class="board-line" data-line="${id}" style="--c:${color(id)}"><i></i>乘坐${esc(lineName(id))}线<span>→</span></button>`).join('');
+ $('#inspectorLines').innerHTML=s.lines.map(id=>`<button class="board-line" data-line="${id}" style="--c:${color(id)}"><i></i>乘坐${esc(lineLabel(id))}<span>→</span></button>`).join('');
  $$('#inspectorLines button').forEach(b=>b.onclick=()=>board(b.dataset.line,{key}));
  $('#inspectorHint').hidden=s.lines.length<2;
  const future=s.lines.map(futureOf).find((f,i)=>f&&lineStops.get(s.lines[i]).at(-1).key===key);
@@ -184,7 +203,7 @@ function fitWhole(){const w=NET.world;focusBox(w.minX-90,w.maxX+90,w.minY-30,w.m
 function focusStation(key=selectedKey){const n=pointByKey.get(key);if(!n)return;const small=narrowScreen(),z=small?.83:.95;camera={z,x:network.clientWidth*(small?.5:.44)-n.x*z,y:network.clientHeight*(small?.38:.45)-n.y*z};applyCamera()}
 function updateModeToggle(){
  const s=stationByKey.get(selectedKey);
- $('#modeToggle').textContent=mode==='ride'?'展开地铁全图 ↗':`乘坐${lineName(s.lines.includes(rideLine)?rideLine:s.lines[0])}线 →`;
+ $('#modeToggle').textContent=mode==='ride'?'展开地铁全图 ↗':`乘坐${lineLabel(s.lines.includes(rideLine)?rideLine:s.lines[0])} →`;
 }
 function setMode(next,{whole=false}={}){
  mode=next;document.body.dataset.metro=next;$('#networkLegend').classList.remove('open');$('#slicePanel').hidden=true;
@@ -234,12 +253,12 @@ function askHome(){
 let transferTo=null;
 $('#transferConfirm').onclick=ev=>{ev.preventDefault();const to=transferTo;transferDialog.close();if(to)board(to.id,{key:to.key})};
 transferDialog.addEventListener('click',ev=>{if(ev.target===transferDialog)transferDialog.close()});  // the backdrop
-function askTransfer(id,key){
+// 老无 2026-11-15: the question says only where it goes, “换乘到德意志线 · 腓特烈一世”.
+function askTransfer(c){
  clearTimeout(sceneTimer);cancelAnimationFrame(scrollFrame);scrollFrame=0;wantedScene=null;readerScrolledUntil=0;
- const s=stationByKey.get(key),name=lineName(id);transferTo={id,key};
- $('#transferQuestion').textContent=`是否从这里切换到${name}线？`;
- $('#transferNote').textContent=key===station?.key?`还在“${s.title}”这一幕，之后沿${name}线往前走。`:`会跳到“${s.title}”，之后沿${name}线往前走。`;
- $('#transferConfirm').textContent=`切换到${name}线`;transferDialog.style.setProperty('--c',color(id));
+ const to=stationByKey.get(c.to);transferTo={id:c.line,key:c.to};
+ $('#transferQuestion').textContent=`换乘到${lineLabel(c.line)} · ${to.title}`;$('#transferNote').textContent='';
+ $('#transferConfirm').textContent='换乘';transferDialog.style.setProperty('--c',color(c.line));
  transferDialog.showModal();$('#transferConfirm').focus();
 }
 
@@ -249,7 +268,7 @@ function renderRide(){
  document.body.classList.remove('strip-open');$('#stripToggle').setAttribute('aria-expanded','false');$('#stripToggle i').textContent='▾';
  const seq=lineStops.get(rideLine),idx=seq.findIndex(s=>s.key===station.key),narrow=narrowScreen();
  document.documentElement.style.setProperty('--line',color(rideLine));
- $('#ridingLine').innerHTML=`<span class="line-number">${lineCode(rideLine)}</span>${esc(lineName(rideLine))}<small>主线 · ${seq.length}站</small>`;
+ $('#ridingLine').innerHTML=`<span class="line-number">${lineCode(rideLine)}</span>${esc(lineName(rideLine))}<small>${isBranch(rideLine)?'支线':'主线'} · ${seq.length}站</small>`;
  // Phones open the route diagram from the line title (老无 2026-11-14); the station title follows as plain text.
  $('#stripToggle span').innerHTML=`<span class="line-number">${lineCode(rideLine)}</span>${esc(lineName(rideLine))}`;
  $('#stationPosition').textContent=`${idx+1} / ${seq.length}`;$('#prevStation').disabled=idx<=0;$('#nextStation').disabled=idx>=seq.length-1;
@@ -261,23 +280,27 @@ function renderRide(){
  const groups=[];seq.forEach((s,i)=>{const title=periodFor(rideLine,s.t),last=groups.at(-1);if(last?.title===title)last.end=i;else groups.push({title,start:i,end:i})});
  for(const g of groups){const left=offset+(g.start-.47)*step,w=(g.end-g.start+.94)*step;track.insertAdjacentHTML('beforeend',`<div class="route-period-band" title="${esc(g.title)} · 路段标记，章节可能跨越多个时段" style="left:${left}px;width:${w}px"><span>${esc(g.title)}</span></div>`)}
  seq.forEach((s,i)=>{
-  const others=s.lines.filter(id=>id!==rideLine),b=document.createElement('button');b.className='route-stop'+(others.length?' shared':'')+(s.key===station.key?' active':'')+(i<idx?' past':'');b.style.left=offset+i*step+'px';b.dataset.key=s.key;b.title=`${s.title} · ${s.period} · ${s.count}幕${others.length?'；可换乘'+others.map(lineName).join('、'):''}`;b.setAttribute('aria-label',b.title);b.setAttribute('aria-current',s.key===station.key?'step':'false');
-  b.innerHTML=`<i class="dot"></i><span class="stop-text"><span class="stop-name">${esc(s.title)}</span><span class="stop-date">${esc(s.period)}</span></span>`;
+  const xs=transfersAt(s),b=document.createElement('button');b.className='route-stop'+(xs.length?' shared':'')+(s.platform?' plat':'')+(s.key===station.key?' active':'')+(i<idx?' past':'');b.style.left=offset+i*step+'px';b.dataset.key=s.key;b.title=`${s.title} · ${s.platform?'月台 · ':''}${s.period} · ${s.count}幕${xs.length?'；可换乘'+xs.map(c=>lineLabel(c.line)).join('、'):''}`;b.setAttribute('aria-label',b.title);b.setAttribute('aria-current',s.key===station.key?'step':'false');
+  // A platform (月台) is this line's short summary of a story told in full on another line: a hollow diamond.
+  b.innerHTML=`<i class="dot"></i><span class="stop-text"><span class="stop-name">${esc(s.title)}</span><span class="stop-date">${s.platform?`月台 · ${s.count}幕`:esc(s.period)}</span></span>`;
   b.onclick=()=>{if(!routeSkipClick)goStation(s.key)};track.appendChild(b);
  });
  // The badges above a stop change line there. They sit beside the stop buttons, after all of them: a button cannot hold buttons.
  seq.forEach((s,i)=>{
-  const others=s.lines.filter(id=>id!==rideLine);if(!others.length)return;
+  const xs=transfersAt(s);if(!xs.length)return;
   const row=document.createElement('div');row.className='route-transfers';row.style.left=offset+i*step+'px';
-  for(const id of others){
-   const t=document.createElement('button');t.type='button';t.dataset.switchLine=id;t.dataset.key=s.key;t.style.setProperty('--c',color(id));t.textContent=LINE_MARK[id]||lineName(id)[0];
-   t.title=`在“${s.title}”换乘${lineName(id)}线`;t.setAttribute('aria-label',t.title);t.onclick=()=>{if(!routeSkipClick)askTransfer(id,s.key)};row.appendChild(t);
+  for(const c of xs){
+   const t=document.createElement('button');t.type='button';t.dataset.switchLine=c.line;t.dataset.key=s.key;t.dataset.to=c.to;if(c.kind==='platform')t.className='to-detail';
+   t.style.setProperty('--c',color(c.line));t.textContent=LINE_MARK[c.line]||lineName(c.line)[0];
+   t.title=`在“${s.title}”换乘${lineLabel(c.line)}`;t.setAttribute('aria-label',t.title);t.onclick=()=>{if(!routeSkipClick)askTransfer(c)};row.appendChild(t);
   }
   track.appendChild(row);
  });
  if(future)track.insertAdjacentHTML('beforeend',`<i class="route-rail upcoming" style="left:${offset+span}px;width:${step}px"></i><div class="route-future" title="${esc(future[3])}" style="left:${offset+span+step}px"><i class="dot"></i><span class="stop-text"><span class="stop-name">${esc(future[2])}</span><span class="stop-date">待展开</span></span></div>`);
- const transfers=station.lines.filter(id=>id!==rideLine);$('#transferBar').innerHTML=transfers.length?'<span>⇄ 本站可换乘</span>'+transfers.map(id=>`<button data-transfer="${id}" style="--c:${color(id)}"><i></i>${esc(lineName(id))}</button>`).join(''):'';
- $$('#transferBar button').forEach(b=>b.onclick=()=>askTransfer(b.dataset.transfer,station.key));
+ const xs=transfersAt(station);$('#transferBar').innerHTML=xs.length?'<span>⇄ 本站可换乘</span>'+xs.map((c,i)=>`<button data-transfer="${c.line}" data-i="${i}" style="--c:${color(c.line)}"><i></i>${esc(lineLabel(c.line))}</button>`).join(''):'';
+ $$('#transferBar button').forEach(b=>b.onclick=()=>askTransfer(xs[+b.dataset.i]));
+ const notes=xs.map(c=>transferNote(station,c)).filter(Boolean);
+ $('#transferHint').innerHTML=notes.map(n=>`<span>${esc(n)}</span>`).join('');$('#transferHint').hidden=!notes.length;
 }
 let routeAt=null;
 function centerRoute(){const s=$('#routeScroller'),b=$('.route-stop.active');if(b)s.scrollLeft=b.offsetLeft-s.clientWidth/2}

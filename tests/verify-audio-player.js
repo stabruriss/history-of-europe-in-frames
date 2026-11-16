@@ -387,6 +387,7 @@ print(json.dumps({'ids':ids, 'hashes':hashes, 'kinds':kinds,
   assert.match(await p.$eval('#audioSeek', e => e.getAttribute('aria-label')), /正文/);
   await finishClip(p); await p.waitForFunction(() => atlasAudio.state().finished);
   assert.equal((await state(p)).queue.length, 1);
+  assert(!(await p.$eval('#atlasAudioElement', a => a.currentSrc)).startsWith('data:'), 'One scene ends without the line end notice');
   await p.click('#audioToggle'); await stage(p, 0, 'title');
   await p.click('#audioNext'); await stage(p, 0, 'body');
   pass('Single middle scene plays its section title first; real MP3 ended enters body, then stops; replay includes title; 下一项 skips the title into the body');
@@ -452,6 +453,13 @@ print(json.dumps({'ids':ids, 'hashes':hashes, 'kinds':kinds,
     await stage(p, i, 'body'); // Same section's next scene must enter body without another title.
     await finishClip(p);
   }
+  // 老无 2026-11-15: a whole line read to its end closes with “本主线已经到达终点站。” in a female voice, once.
+  await p.waitForFunction(() => atlasAudio.state().ending && atlasAudio.state().playing);
+  assert.equal(await p.$eval('#audioTitle', e => e.textContent), '本主线已经到达终点站');
+  assert.equal(await p.evaluate(() => navigator.mediaSession.metadata.title), '本主线已经到达终点站');
+  assert.match(await p.$eval('#atlasAudioElement', a => a.currentSrc), /^data:audio\/mpeg;base64,/);
+  assert.equal(await p.evaluate(() => AUDIO_END_NOTICE.text), '本主线已经到达终点站。');
+  await finishClip(p);
   await p.waitForFunction(() => atlasAudio.state().finished);
   after = await state(p); assert.equal(after.index, lastPrehistory); assert(!after.playing); assert.deepEqual(after.queue, prehistory);
   assert.deepEqual(await browseState(p), browsing);
@@ -1388,9 +1396,24 @@ print(json.dumps({'ids':ids, 'hashes':hashes, 'kinds':kinds,
     failedMedia.delete(failing);
     await s.click('#audioToggle'); await at(failing, false);
     await s.click('#audioToggle');
+    // 4. A whole line ends with its end notice inside the same stream, then ends once.
+    await s.goto(url('fixture') + '#' + route.at(-1), {waitUntil:'load'}); await ready(s);
+    await s.click('#audioReadLine'); await s.waitForFunction(() => atlasAudio.state().engine === 'stream' && atlasAudio.state().playing && atlasAudio.state().clip);
+    const lineSrc = await s.evaluate(() => document.getElementById('atlasAudioElement').currentSrc), mark4 = await since();
+    for (let i = 0; i < 6 && !(await state(s)).ending; i++) {
+      const now = await state(s);
+      await toEnd();
+      await s.waitForFunction(p => atlasAudio.state().ending || atlasAudio.state().partId !== p, {}, now.partId).catch(async e => { console.log('STREAM DEBUG end notice', await dump()); throw e; });
+    }
+    assert.equal((await state(s)).ending, true, 'A whole line closes with the end notice');
+    assert.equal(await s.$eval('#audioTitle', e => e.textContent), '本主线已经到达终点站');
+    assert.equal(await s.evaluate(() => document.getElementById('atlasAudioElement').currentSrc), lineSrc, 'The end notice plays in the same stream');
+    await s.waitForFunction(() => atlasAudio.state().finished, {timeout:20000});
+    const closed = await after(mark4);
+    assert.equal(closed.events.filter(e => e === 'ended').length, 1); assert(!closed.events.includes('loadstart'));
     await s.close();
   }
-  pass('Continuous stream (Chromium default): clips, section titles and the gap notice follow in one src without pause/ended or a paused OS session; the lock-screen title moves on; options re-append; skips stay in the stream; the end ends it once; a clip that cannot be fetched stops with retry');
+  pass('Continuous stream (Chromium default): clips, section titles and the gap notice follow in one src without pause/ended or a paused OS session; the lock-screen title moves on; options re-append; skips stay in the stream; the end ends it once; a clip that cannot be fetched stops with retry; a whole line closes with the female end notice in the same stream');
 
   // Optional handoff smoke: run with AUDIO_PLAYER_SMOKE_MANIFEST=/absolute/local-or-Blob-manifest.json.
   // It is a separate preview, never the fixture or release manifest. No promise of real-device lock-screen coverage.

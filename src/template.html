@@ -308,7 +308,7 @@ body.resizing-reader #map{pointer-events:none}
       </div>
       <span id="audioAvailability"></span>
     </div>
-    <div id="readerBody"><header id="readerHead"><div id="entryEyebrow" class="eyebrow"></div><h2 id="entryTitle"></h2><div id="entryEnglish" class="en-name"></div></header><div id="transferBar"></div><article id="card" aria-labelledby="entryTitle"></article></div>
+    <div id="readerBody"><header id="readerHead"><div id="entryEyebrow" class="eyebrow"></div><h2 id="entryTitle"></h2><div id="entryEnglish" class="en-name"></div></header><div id="transferBar"></div><p id="transferHint" hidden></p><article id="card" aria-labelledby="entryTitle"></article></div>
   </section>
   <div id="mapSceneChip"><div><small id="mapSceneDate"></small><b id="mapSceneTitle"></b></div></div>
   <details id="legendBox"><summary>图例</summary><div id="legend"></div></details>
@@ -1479,6 +1479,7 @@ function makeCtx(entry){
 </script>
 <script>const AUDIO_MANIFEST = /*__AUDIO_MANIFEST__*/;</script>
 <script>const AUDIO_GAP_NOTICE = /*__AUDIO_GAP_NOTICE__*/;</script>
+<script>const AUDIO_END_NOTICE = /*__AUDIO_END_NOTICE__*/;</script>
 <script>/*__AUDIO_PLAYER__*/</script>
 <script>
 /*__METRO_PERIODS__*/

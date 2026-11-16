@@ -98,7 +98,7 @@ const settle=p=>p.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestA
   // The badges above a stop change line, after asking: on the current stop in place, with the strip finding that stop on the new line; on another stop, there.
   await p.evaluate(()=>metroUI.board('eeurope',{key:'history-empire-fall-1453/0'}));await settle(p);
   const eastBadge='.route-transfers [data-switch-line="east"][data-key="history-empire-fall-1453/0"]',dialog=()=>p.$eval('#transferDialog',e=>({open:e.open,text:e.textContent,focus:document.activeElement.id}));
-  await p.click(eastBadge);const asked=await dialog();assert.ok(asked.open&&asked.text.includes('是否从这里切换到东罗马线')&&asked.text.includes('君士坦丁堡陷落'),JSON.stringify(asked));assert.equal(asked.focus,'transferConfirm');
+  await p.click(eastBadge);const asked=await dialog();assert.ok(asked.open&&asked.text.includes('换乘到东罗马线 · ')&&asked.text.includes('君士坦丁堡陷落'),JSON.stringify(asked));assert.equal(asked.focus,'transferConfirm');
   assert.equal((await p.evaluate(()=>metroUI.state())).line,'eeurope','nothing changes before the answer');
   const behindDialog=await p.evaluate(()=>({station:metroUI.state().station,globalScene:sceneIndex,entry:ENTRIES[cur].id,hash:location.hash}));
   for(const key of ['ArrowRight','ArrowLeft','ArrowUp','ArrowDown']){
@@ -114,7 +114,7 @@ const settle=p=>p.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestA
   let switched=await p.evaluate(()=>{const b=document.querySelector('.route-stop.active').getBoundingClientRect(),s=document.getElementById('routeScroller').getBoundingClientRect();return {...metroUI.state(),inView:b.left>=s.left&&b.right<=s.right}});
   assert.equal(switched.line,'east');assert.equal(switched.station,'history-empire-fall-1453/0');assert.ok(switched.inView,'the strip shows the stop on the new line');
   await p.evaluate(()=>metroUI.board('crusade',{key:'history-crusade-fourth/0'}));await settle(p);
-  const away=await p.$eval('.route-transfers [data-switch-line]',e=>[e.dataset.switchLine,e.dataset.key]);await p.$eval(`.route-transfers [data-switch-line="${away[0]}"][data-key="${away[1]}"]`,e=>e.click());await p.click('#transferConfirm');await new Promise(r=>setTimeout(r,60));
+  const away=await p.$eval('.route-transfers [data-switch-line]',e=>[e.dataset.switchLine,e.dataset.to||e.dataset.key,e.dataset.key]);await p.$eval(`.route-transfers [data-switch-line="${away[0]}"][data-key="${away[2]}"]`,e=>e.click());await p.click('#transferConfirm');await new Promise(r=>setTimeout(r,60));
   switched=await p.evaluate(()=>metroUI.state());assert.equal(switched.line,away[0]);assert.equal(switched.station,away[1]);
   await p.evaluate(()=>metroUI.board('crusade',{key:'history-crusade-fourth/0'}));
   const stop=await p.$eval('.route-stop.active',e=>e.nextElementSibling.dataset.key);await p.click(`.route-stop[data-key="${stop}"]`);assert.equal((await p.evaluate(()=>metroUI.state())).station,stop);

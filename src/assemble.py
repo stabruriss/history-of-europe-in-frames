@@ -44,6 +44,15 @@ if (notice.get('schema') != 1 or notice.get('profile') != approved or not clip o
         hashlib.sha256(clip).hexdigest() != notice.get('audioHash') or not notice.get('duration', 0) > 0):
     parser.error('audio_gap_notice.json must be the approved-voice MP3 data URI with matching bytes and audioHash')
 notice_json = json.dumps({k: notice[k] for k in ('text', 'duration', 'url')}, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c')
+# 老无 2026-11-15: the end of a whole line is announced in a different, female voice. Same checks as the gap notice.
+END_TEXT = '本主线已经到达终点站。'
+END_PROFILE = {'voice': 'zh-CN-XiaoxiaoNeural', 'pitch': '+0Hz', 'rate': '+0%', 'volume': '+0%'}
+end = json.loads(open('audio_end_notice.json', encoding='utf-8').read())
+end_clip = base64.b64decode(end['url'][len(prefix):], validate=True) if str(end.get('url', '')).startswith(prefix) else b''
+if (end.get('schema') != 1 or end.get('text') != END_TEXT or end.get('profile') != END_PROFILE or not end_clip or
+        len(end_clip) != end.get('bytes') or hashlib.sha256(end_clip).hexdigest() != end.get('audioHash') or not end.get('duration', 0) > 0):
+    parser.error('audio_end_notice.json must be the Xiaoxiao “本主线已经到达终点站。” MP3 data URI with matching bytes and audioHash')
+end_json = json.dumps({k: end[k] for k in ('text', 'duration', 'url')}, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c')
 t = open('template.html', encoding='utf-8').read()
 t = t.replace('/*__LEAFLET_CSS__*/', open('leaflet.css', encoding='utf-8').read())
 t = t.replace('/*__LEAFLET_JS__*/', open('leaflet.js', encoding='utf-8').read())
@@ -60,6 +69,7 @@ t = t.replace('/*__ATLAS_UI__*/', open('atlas_ui.js', encoding='utf-8').read())
 t = t.replace('/*__AUDIO_CSS__*/', open('audio_player.css', encoding='utf-8').read())
 t = t.replace('/*__AUDIO_MANIFEST__*/', audio_json)
 t = t.replace('/*__AUDIO_GAP_NOTICE__*/', notice_json)
+t = t.replace('/*__AUDIO_END_NOTICE__*/', end_json)
 t = t.replace('/*__AUDIO_PLAYER__*/', open('audio_player.js', encoding='utf-8').read())
 t = t.replace('/*__METRO_CSS__*/', open('metro.css', encoding='utf-8').read())
 t = t.replace('/*__METRO_PERIODS__*/', open('metro_periods.js', encoding='utf-8').read())
