@@ -55,6 +55,10 @@ window.NETWORK_DESIGN = (() => {
     // Event branches of the transfer rework (老无 2026-11-15): each on a lane of its own, met by platforms on the main lines.
     'hundred-years': [[1315, y(HUNDRED)], [1453, y(HUNDRED)]],
     'black-death': [[1347, y(PLAGUE)], [1351, y(PLAGUE)]],
+    // Batch 2 (老无 2026-11-15): lanes freed by earlier branches. 十字军's lane after 1295, 黑死病's after 1351, 百年战争's after 1453.
+    reformation: [[1517, y(CRUSADE)], [1599, y(CRUSADE)]],
+    'thirty-years': [[1599, y(PLAGUE)], [1648, y(PLAGUE)]],
+    ww1: [[1914, y(HUNDRED)], [1923, y(HUNDRED)]],
     nordic: [[745, y(TOP)], [1920, y(TOP)]],
     america: [[1430, y(AMERICA)], [1631, y(AMERICA)]],
   };

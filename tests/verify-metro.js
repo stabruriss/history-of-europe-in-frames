@@ -71,7 +71,7 @@ const settle=p=>p.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestA
   let hover=await hoverOn('.line-flag.flag-start[data-line="china"]');assert.deepEqual(hover.on,['china']);assert.equal(hover.muted,counts.lines-1);
   const endLine=await p.$eval('.line-flag.flag-end:not(.culled)',e=>e.dataset.line);hover=await hoverOn(`.line-flag.flag-end[data-line="${endLine}"]`);assert.deepEqual(hover.on,[endLine]);
   await p.mouse.move(700,40);assert.equal(await p.$$eval('.rail-path.muted',e=>e.length),0,'leaving clears the highlight');
-  const sharedStop=await p.evaluate(()=>{const s=metroUI.data.stations.find(s=>s.lines.length>1&&s.t>1500);return {key:s.key,lines:[...s.lines].sort()}});
+  const sharedStop=await p.evaluate(()=>{const s=metroUI.data.stations.filter(s=>s.lines.length>1).sort((x,y)=>y.t-x.t)[0];return {key:s.key,lines:[...s.lines].sort()}});
   await p.evaluate(k=>metroUI.focusStation(k),sharedStop.key);await settle(p);
   hover=await hoverOn(`.metro-node[data-key="${sharedStop.key}"] .node-name`);assert.deepEqual(hover.on,sharedStop.lines);assert.ok(hover.dimmed>0);
   await p.evaluate(()=>metroUI.focusStation('history-crusade-fourth/0'));await settle(p);

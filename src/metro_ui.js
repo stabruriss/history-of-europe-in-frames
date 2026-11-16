@@ -21,7 +21,7 @@ const lineStops=new Map(lines.map(l=>[l.id,stations.filter(s=>s.lines.includes(l
 const color=id=>branchById.get(id)?.c||'#26738a';
 const lineName=id=>branchById.get(id)?.name||id;
 const lineCode=id=>String(HISTORY_BRANCHES.findIndex(b=>b.id===id)+1).padStart(2,'0');
-const LINE_MARK={prehistory:'史',trunk:'希',rome:'罗',east:'东',west:'西欧',spain:'西',france:'法',lowlands:'低',germany:'德',italy:'意',britain:'不',faith:'基',egypt:'埃',persia:'波',eeurope:'欧',crusade:'十',china:'中',nordic:'北',america:'美','hundred-years':'百','black-death':'疫'};
+const LINE_MARK={prehistory:'史',trunk:'希',rome:'罗',east:'东',west:'西欧',spain:'西',france:'法',lowlands:'低',germany:'德',italy:'意',britain:'不',faith:'基',egypt:'埃',persia:'波',eeurope:'欧',crusade:'十',china:'中',nordic:'北',america:'美','hundred-years':'百','black-death':'疫',reformation:'改','thirty-years':'卅',ww1:'战'};
 // An event branch (kind:'branch', like 十字军) is a 支线; the others are 线 (老无 2026-11-15).
 const isBranch=id=>branchById.get(id)?.kind==='branch';
 const lineLabel=id=>lineName(id)+(isBranch(id)?'支线':'线');

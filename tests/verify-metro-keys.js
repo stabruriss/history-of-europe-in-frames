@@ -70,12 +70,14 @@ const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','
   const farming=await state(p);await p.keyboard.press('ArrowDown');let s=await state(p);assert.equal(s.station,farming.station);assert.equal(s.scene,farming.scene);
   await p.keyboard.press('ArrowRight');s=await state(p);assert.notEqual(s.station,farming.station);assert.equal(s.id,'history-farming');assert.equal(s.scene,0);
   // A station still shared (outside the authored table): changing line keeps the event and the scene; → then follows the new line.
-  const shared=await p.evaluate(()=>{const s=metroUI.data.stations.find(s=>s.lines.length>1&&s.count>=3&&!(typeof TREE_XFERS!=='undefined'&&TREE_XFERS[s.key]));
-   if(!s)return null;const b=s.lines[1],seq=metroUI.data.lineStops.get(b);return {key:s.key,a:s.lines[0],b,next:seq[seq.findIndex(x=>x.key===s.key)+1]?.key||null}});
-  assert.ok(shared,'a shared station outside TREE_XFERS');
-  await p.evaluate(f=>metroUI.board(f.a,{key:f.key}),shared);await p.focus('#map');await p.keyboard.press('ArrowDown');await p.keyboard.press('ArrowDown');
-  await p.click(`[data-transfer="${shared.b}"]`);assert.equal((await state(p)).line,shared.a,'asks first');await p.click('#transferConfirm');s=await state(p);assert.equal(s.line,shared.b);assert.equal(s.station,shared.key);assert.equal(s.scene,2);
-  if(shared.next){await p.keyboard.press('ArrowRight');s=await state(p);assert.equal(s.line,shared.b);assert.equal(s.station,shared.next);}
+  // After the 2026-11-15 rework only the prehistoric roots may still be shared; with every one authored there is nothing left to test.
+  const shared=await p.evaluate(()=>{const s=metroUI.data.stations.find(s=>s.lines.length>1&&s.count>=2&&!(typeof TREE_XFERS!=='undefined'&&TREE_XFERS[s.key]));
+   if(!s)return null;const b=s.lines[1],seq=metroUI.data.lineStops.get(b);return {key:s.key,a:s.lines[0],b,down:Math.min(2,s.count-1),next:seq[seq.findIndex(x=>x.key===s.key)+1]?.key||null}});
+  if(shared){
+   await p.evaluate(f=>metroUI.board(f.a,{key:f.key}),shared);await p.focus('#map');for(let i=0;i<shared.down;i++)await p.keyboard.press('ArrowDown');
+   await p.click(`[data-transfer="${shared.b}"]`);assert.equal((await state(p)).line,shared.a,'asks first');await p.click('#transferConfirm');s=await state(p);assert.equal(s.line,shared.b);assert.equal(s.station,shared.key);assert.equal(s.scene,shared.down);
+   if(shared.next){await p.keyboard.press('ArrowRight');s=await state(p);assert.equal(s.line,shared.b);assert.equal(s.station,shared.next);}
+  }else console.log('NOTE every shared station is in TREE_XFERS: no station is left on the old shared-station change');
   // An authored transfer (老无 2026-11-15) lands at the start of its destination on the other line; → then follows that line.
   await p.evaluate(()=>metroUI.board('east',{key:'history-plat-east-1204/0'}));await p.focus('#map');
   await p.click('[data-transfer="crusade"]');assert.equal((await state(p)).line,'east','asks first');await p.click('#transferConfirm');s=await state(p);assert.equal(s.line,'crusade');assert.equal(s.station,'history-crusade-fourth/0');assert.equal(s.scene,0);
