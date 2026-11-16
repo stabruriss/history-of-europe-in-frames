@@ -115,42 +115,35 @@
   ],
   "history-faith-crusade/0": [
    [
-    "crusade",
-    "faith",
-    "east",
-    "persia"
+    "crusade"
    ],
    1096,
    1099
   ],
   "history-crusade-states/0": [
    [
-    "crusade",
-    "persia"
+    "crusade"
    ],
    1099,
    1144
   ],
   "history-crusade-second/0": [
    [
-    "crusade",
-    "faith"
+    "crusade"
    ],
    1145,
    1149
   ],
   "history-crusade-nuraldin/0": [
    [
-    "crusade",
-    "persia"
+    "crusade"
    ],
    1150,
    1171
   ],
   "history-crusade-saladin/0": [
    [
-    "crusade",
-    "persia"
+    "crusade"
    ],
    1171,
    1187
@@ -164,8 +157,7 @@
   ],
   "history-crusade-fourth/0": [
    [
-    "crusade",
-    "east"
+    "crusade"
    ],
    1198,
    1204
@@ -186,16 +178,14 @@
   ],
   "history-crusade-louis/0": [
    [
-    "crusade",
-    "persia"
+    "crusade"
    ],
    1248,
    1270
   ],
   "history-crusade-end/0": [
    [
-    "crusade",
-    "persia"
+    "crusade"
    ],
    1258,
    1291
@@ -209,17 +199,14 @@
   ],
   "history-spain-crusade/0": [
    [
-    "spain",
-    "faith",
-    "crusade"
+    "spain"
    ],
    1085,
    1123
   ],
   "history-faith-urban/0": [
    [
-    "faith",
-    "crusade"
+    "faith"
    ],
    1088,
    1095
@@ -973,8 +960,6 @@
   "crusade": [
    "history-crusade-theatre/0",
    "history-crusade-players/0",
-   "history-spain-crusade/0",
-   "history-faith-urban/0",
    "history-crusade-people/0",
    "history-faith-crusade/0",
    "history-crusade-states/0",
@@ -991,16 +976,9 @@
   ],
   "persia": [
    "history-arab-seljuks/3",
-   "history-faith-crusade/0",
-   "history-crusade-states/0",
-   "history-crusade-nuraldin/0",
-   "history-crusade-saladin/0",
+   "history-plat-persia-crusade/0",
    "history-persia-mongols/0",
-   "history-crusade-louis/0",
-   "history-crusade-end/0",
-   "history-italy-blackdeath/0",
    "history-persia-timur/0",
-   "history-empire-fall-1453/0",
    "history-persia-ottoman/0",
    "history-ottoman-suleiman/0",
    "history-ottoman-lepanto/0",
@@ -1013,24 +991,15 @@
    "history-ottoman-kemal/0"
   ],
   "faith": [
-   "history-spain-crusade/0",
    "history-faith-urban/0",
-   "history-faith-crusade/0",
    "history-faith-citeaux/0",
-   "history-germany-worms/0",
    "history-faith-cardinals/0",
-   "history-crusade-second/0",
-   "history-germany-barbarossa/0",
-   "history-germany-innocent/0",
-   "history-germany-frederick2/0",
+   "history-plat-faith-staufer/0",
    "history-faith-scholasticism/0",
-   "history-france-stlouis/0",
    "history-faith-avignon/0",
    "history-faith-clement/0",
-   "history-italy-blackdeath/0",
    "history-faith-schism/0",
    "history-faith-constance/0",
-   "history-empire-fall-1453/0",
    "history-italy-savonarola/0",
    "history-italy-julius2/0",
    "history-italy-wars-2/0",
@@ -1060,49 +1029,6 @@
   ]
  },
  "shared": {
-  "history-spain-crusade/0": [
-   "spain",
-   "faith",
-   "crusade"
-  ],
-  "history-faith-urban/0": [
-   "faith",
-   "crusade"
-  ],
-  "history-faith-crusade/0": [
-   "crusade",
-   "faith",
-   "east",
-   "persia"
-  ],
-  "history-crusade-states/0": [
-   "crusade",
-   "persia"
-  ],
-  "history-crusade-second/0": [
-   "crusade",
-   "faith"
-  ],
-  "history-crusade-nuraldin/0": [
-   "crusade",
-   "persia"
-  ],
-  "history-crusade-saladin/0": [
-   "crusade",
-   "persia"
-  ],
-  "history-crusade-fourth/0": [
-   "crusade",
-   "east"
-  ],
-  "history-crusade-louis/0": [
-   "crusade",
-   "persia"
-  ],
-  "history-crusade-end/0": [
-   "crusade",
-   "persia"
-  ],
   "history-britain-henry8-2/0": [
    "britain",
    "faith"

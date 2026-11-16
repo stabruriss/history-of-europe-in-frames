@@ -96,16 +96,14 @@
   ],
   "history-germany-investiture/0": [
    [
-    "germany",
-    "faith"
+    "germany"
    ],
    1056,
    1075
   ],
   "history-germany-canossa/0": [
    [
-    "germany",
-    "faith"
+    "germany"
    ],
    1076,
    1106
@@ -133,9 +131,7 @@
   ],
   "history-spain-crusade/0": [
    [
-    "spain",
-    "faith",
-    "crusade"
+    "spain"
    ],
    1085,
    1123
@@ -163,26 +159,21 @@
   ],
   "history-faith-urban/0": [
    [
-    "faith",
-    "crusade"
+    "faith"
    ],
    1088,
    1095
   ],
   "history-faith-crusade/0": [
    [
-    "crusade",
-    "faith",
-    "east",
-    "persia"
+    "crusade"
    ],
    1096,
    1099
   ],
   "history-arab-seljuks/3": [
    [
-    "persia",
-    "east"
+    "persia"
    ],
    1071,
    1092
@@ -786,7 +777,6 @@
    "history-germany-innocent/0",
    "history-germany-frederick2/0",
    "history-germany-electors/0",
-   "history-italy-blackdeath/0",
    "history-germany-golden-bull/0",
    "history-germany-hansa/0",
    "history-germany-swiss/0",
@@ -816,19 +806,13 @@
    "history-germany-versailles/0"
   ],
   "italy": [
-   "history-germany-otto/0",
    "history-italy-normans/0",
    "history-italy-cities/0",
    "history-italy-sicily/0",
-   "history-germany-barbarossa/0",
-   "history-germany-henry6/0",
-   "history-germany-innocent/0",
-   "history-germany-frederick2/0",
+   "history-plat-italy-staufer/0",
    "history-italy-vespers/0",
-   "history-italy-blackdeath/0",
    "history-italy-venice/0",
    "history-italy-condottieri/0",
-   "history-empire-fall-1453/0",
    "history-italy-renaissance/0",
    "history-italy-wars-1/0",
    "history-italy-charles8/0",
@@ -852,27 +836,16 @@
   ],
   "faith": [
    "history-faith-leo-ix/0",
-   "history-empire-macedonian/3",
-   "history-germany-investiture/0",
-   "history-germany-canossa/0",
-   "history-spain-crusade/0",
+   "history-plat-faith-investiture/0",
    "history-faith-urban/0",
-   "history-faith-crusade/0",
    "history-faith-citeaux/0",
-   "history-germany-worms/0",
    "history-faith-cardinals/0",
-   "history-crusade-second/0",
-   "history-germany-barbarossa/0",
-   "history-germany-innocent/0",
-   "history-germany-frederick2/0",
+   "history-plat-faith-staufer/0",
    "history-faith-scholasticism/0",
-   "history-france-stlouis/0",
    "history-faith-avignon/0",
    "history-faith-clement/0",
-   "history-italy-blackdeath/0",
    "history-faith-schism/0",
    "history-faith-constance/0",
-   "history-empire-fall-1453/0",
    "history-italy-savonarola/0",
    "history-italy-julius2/0",
    "history-italy-wars-2/0",
@@ -934,11 +907,9 @@
   "east": [
    "history-empire-macedonian/3",
    "history-empire-zoe/0",
-   "history-arab-seljuks/3",
    "history-empire-alexios/0",
-   "history-faith-crusade/0",
    "history-empire-komnenos/0",
-   "history-crusade-fourth/0",
+   "history-plat-east-1204/0",
    "history-empire-palaiologos/0",
    "history-empire-fall-1453/0"
   ],
@@ -946,16 +917,9 @@
    "history-arab-abbasid/0",
    "history-arab-seljuks/0",
    "history-arab-seljuks/3",
-   "history-faith-crusade/0",
-   "history-crusade-states/0",
-   "history-crusade-nuraldin/0",
-   "history-crusade-saladin/0",
+   "history-plat-persia-crusade/0",
    "history-persia-mongols/0",
-   "history-crusade-louis/0",
-   "history-crusade-end/0",
-   "history-italy-blackdeath/0",
    "history-persia-timur/0",
-   "history-empire-fall-1453/0",
    "history-persia-ottoman/0",
    "history-ottoman-suleiman/0",
    "history-ottoman-lepanto/0",
@@ -969,29 +933,6 @@
   ]
  },
  "shared": {
-  "history-germany-investiture/0": [
-   "germany",
-   "faith"
-  ],
-  "history-germany-canossa/0": [
-   "germany",
-   "faith"
-  ],
-  "history-spain-crusade/0": [
-   "spain",
-   "faith",
-   "crusade"
-  ],
-  "history-arab-seljuks/3": [
-   "persia",
-   "east"
-  ],
-  "history-faith-crusade/0": [
-   "crusade",
-   "faith",
-   "east",
-   "persia"
-  ],
   "history-britain-henry8-2/0": [
    "britain",
    "faith"

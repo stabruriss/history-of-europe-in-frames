@@ -96,7 +96,7 @@ const SLICE_YEARS=[-1000,-500,0,500,1000];
      shared:nodes('history-eeurope-byzantium/0'),overflow:document.documentElement.scrollWidth>innerWidth};
    },sel);
    assert.ok(t.forks.includes('eeurope'),label+' 东欧 forks off');
-   assert.deepEqual(t.shared,[2,1],label+' 罗斯与东罗马: one node on 东欧 and one on 东罗马, level');
+   assert.deepEqual(t.shared,[1,1],label+' 罗斯与东罗马: one node on 东欧 and one on 东罗马, level');
    assert.deepEqual(t.slices.map(s=>s.t),SLICE_YEARS,label+' slices');
    assert.equal(t.lines.length,5,label+' one line across the tree per slice');
    for(const [i,s] of t.slices.entries()){
@@ -140,7 +140,7 @@ const SLICE_YEARS=[-1000,-500,0,500,1000];
    // 老无 2026-10-28 夜: “见‘X’一节” jumps to that section; “另见‘X’主线” switches to that line at the station of the year its
    // sentence names (860: the Rus and Byzantium), or, with no year, at the scene's start (750: 西法兰克王国, the line's first station).
    for(const [from,scene,sel,to,line] of [['history-eeurope-slavs',0,'a.xref[data-go="history-eeurope-roman"]','history-eeurope-roman',null],
-     ['history-france-west-francia',1,'a.xref[data-line="east"]','history-eeurope-byzantium','east'],
+     ['history-france-west-francia',1,'a.xref[data-line="east"]','history-empire-amorian','east'],
      ['history-eeurope-rus',0,'a.xref[data-line="france"]','history-france-west-francia','france'],
      ['history-eeurope-pontic',3,'a.xref[data-line="china"]','history-china-western-han','china']]){
     await page.evaluate(({from,scene})=>go(from,{scene}),{from,scene});await wait(80);
@@ -178,7 +178,7 @@ const SLICE_YEARS=[-1000,-500,0,500,1000];
     assert.equal(await page.$eval('#entryEyebrow',e=>e.textContent),era+' · 第十一章',id+' eyebrow');
    }
    // The shared station opens on both of its lines; ↑↓ along 东欧 walks its six sections in order.
-   for(const line of ['eeurope','east'])assert.ok(await page.evaluate(line=>lineStations(line).some(s=>s.key==='history-eeurope-byzantium/0'),line),'罗斯与东罗马 on '+line);
+   for(const line of ['eeurope'])assert.ok(await page.evaluate(line=>lineStations(line).some(s=>s.key==='history-eeurope-byzantium/0'),line),'罗斯与东罗马 on '+line);
    const walk=await page.evaluate(ids=>{selectTreeLine('eeurope');return lineStations('eeurope').map(s=>s.id).filter(id=>ids.includes(id));},Object.keys(S.sections));
    assert.deepEqual(walk,Object.keys(S.sections),'东欧 in reading order');
    await page.close();

@@ -52,8 +52,7 @@
  "rows": {
   "history-germany-worms/0": [
    [
-    "germany",
-    "faith"
+    "germany"
    ],
    1106,
    1125
@@ -81,26 +80,21 @@
   ],
   "history-germany-barbarossa/0": [
    [
-    "germany",
-    "italy",
-    "faith"
+    "germany"
    ],
    1152,
    1183
   ],
   "history-germany-henry6/0": [
    [
-    "germany",
-    "italy"
+    "germany"
    ],
    1184,
    1197
   ],
   "history-germany-innocent/0": [
    [
-    "germany",
-    "faith",
-    "italy"
+    "germany"
    ],
    1198,
    1216
@@ -453,7 +447,8 @@
    "中世纪盛期：北意大利城市与西西里王国",
    [
     "history-italy-cities",
-    "history-italy-sicily"
+    "history-italy-sicily",
+    "history-plat-italy-staufer"
    ]
   ],
   [
@@ -467,9 +462,10 @@
   ],
   [
    "faith-cardinals",
-   "枢机团与两个教宗",
+   "枢机团、双选与霍亨施陶芬",
    [
-    "history-faith-cardinals"
+    "history-faith-cardinals",
+    "history-plat-faith-staufer"
    ]
   ]
  ],
@@ -523,7 +519,6 @@
    "history-germany-innocent/0",
    "history-germany-frederick2/0",
    "history-germany-electors/0",
-   "history-italy-blackdeath/0",
    "history-germany-golden-bull/0",
    "history-germany-hansa/0",
    "history-germany-swiss/0",
@@ -556,15 +551,10 @@
    "history-italy-normans/0",
    "history-italy-cities/0",
    "history-italy-sicily/0",
-   "history-germany-barbarossa/0",
-   "history-germany-henry6/0",
-   "history-germany-innocent/0",
-   "history-germany-frederick2/0",
+   "history-plat-italy-staufer/0",
    "history-italy-vespers/0",
-   "history-italy-blackdeath/0",
    "history-italy-venice/0",
    "history-italy-condottieri/0",
-   "history-empire-fall-1453/0",
    "history-italy-renaissance/0",
    "history-italy-wars-1/0",
    "history-italy-charles8/0",
@@ -588,20 +578,13 @@
   ],
   "faith": [
    "history-faith-citeaux/0",
-   "history-germany-worms/0",
    "history-faith-cardinals/0",
-   "history-crusade-second/0",
-   "history-germany-barbarossa/0",
-   "history-germany-innocent/0",
-   "history-germany-frederick2/0",
+   "history-plat-faith-staufer/0",
    "history-faith-scholasticism/0",
-   "history-france-stlouis/0",
    "history-faith-avignon/0",
    "history-faith-clement/0",
-   "history-italy-blackdeath/0",
    "history-faith-schism/0",
    "history-faith-constance/0",
-   "history-empire-fall-1453/0",
    "history-italy-savonarola/0",
    "history-italy-julius2/0",
    "history-italy-wars-2/0",
@@ -631,24 +614,6 @@
   ]
  },
  "shared": {
-  "history-germany-worms/0": [
-   "germany",
-   "faith"
-  ],
-  "history-germany-barbarossa/0": [
-   "germany",
-   "italy",
-   "faith"
-  ],
-  "history-germany-henry6/0": [
-   "germany",
-   "italy"
-  ],
-  "history-germany-innocent/0": [
-   "germany",
-   "faith",
-   "italy"
-  ],
   "history-britain-henry8-2/0": [
    "britain",
    "faith"

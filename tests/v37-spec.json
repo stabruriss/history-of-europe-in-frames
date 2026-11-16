@@ -144,9 +144,7 @@
   ],
   "history-germany-otto/0": [
    [
-    "germany",
-    "italy",
-    "faith"
+    "germany"
    ],
    951,
    964
@@ -230,7 +228,6 @@
   ],
   "history-arab-constantinople/0": [
    [
-    "east",
     "persia"
    ],
    667,
@@ -275,8 +272,7 @@
   ],
   "history-empire-macedonian/3": [
    [
-    "east",
-    "faith"
+    "east"
    ],
    1054,
    1056
@@ -291,11 +287,17 @@
   ],
   "history-arab-seljuks/3": [
    [
-    "persia",
-    "east"
+    "persia"
    ],
    1071,
    1092
+  ],
+  "history-italy-blackdeath/3": [
+   [
+    "black-death"
+   ],
+   1349,
+   1351
   ],
   "history-britain-anglosaxon/2": [
    [
@@ -354,48 +356,22 @@
   ]
  },
  "shared": {
-  "history-germany-otto/0": [
-   "germany",
-   "italy",
-   "faith"
-  ],
-  "history-arab-constantinople/0": [
-   "east",
-   "persia"
-  ],
   "history-arab-conquest/0": [
    "persia",
    "east",
    "egypt"
   ],
-  "history-empire-macedonian/3": [
-   "east",
-   "faith"
-  ],
   "history-spain-fall/2": [
    "spain",
    "persia"
-  ],
-  "history-arab-seljuks/3": [
-   "persia",
-   "east"
   ],
   "history-britain-anglosaxon/2": [
    "britain",
    "nordic"
   ],
-  "history-britain-anglosaxon/4": [
-   "britain"
-  ],
-  "history-britain-norman/1": [
-   "britain"
-  ],
   "history-france-west-francia/1": [
    "france",
    "nordic"
-  ],
-  "history-france-west-francia/5": [
-   "france"
   ],
   "history-germany-thirty-years-1/5": [
    "germany",
@@ -1359,6 +1335,16 @@
    "十字军落幕"
   ],
   [
+   "hundred-years",
+   1453,
+   "英军退回海岛"
+  ],
+  [
+   "black-death",
+   1351,
+   "瘟疫退潮"
+  ],
+  [
    "prehistory",
    -3100,
    "有了文字"
@@ -1414,11 +1400,6 @@
   ],
   [
    "faith",
-   "history-empire-amorian/0",
-   "history-faith-carolingian/0"
-  ],
-  [
-   "faith",
    "history-faith-imperial-church/0",
    "history-faith-cluny/0"
   ]
@@ -1440,6 +1421,8 @@
   "中东",
   "东欧",
   "十字军",
+  "百年战争",
+  "黑死病",
   "北欧",
   "美洲",
   "中国"

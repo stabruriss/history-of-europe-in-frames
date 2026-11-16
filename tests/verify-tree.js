@@ -23,7 +23,7 @@ const treeReport=sel=>{
   timeOrder:HISTORY_ERAS.flatMap(era=>era.items.map(([id,from=0])=>id+'/'+from)).map((k,i)=>[k,TREE_ROWS[k][1],i]).sort((a,b)=>a[1]-b[1]||a[2]-b[2]).map(x=>x[0])};
 };
 function checkTree(r,label){
- assert.equal(r.items.length,405,label);
+ assert.equal(r.items.length,416,label);
  // Navigation order (DOM order) is the time order, and it reads top to bottom.
  assert.deepEqual(r.items.map(i=>i.key),r.timeOrder,label+' rows follow the time order');
  for(let i=1;i<r.items.length;i++)assert.ok(r.items[i].top>r.items[i-1].top,label+' row order runs top to bottom at '+r.items[i].key);
@@ -33,7 +33,7 @@ function checkTree(r,label){
  for(let i=1;i<byTop.length;i++)assert.ok(byTop[i].top>=byTop[i-1].bottom-.5,`${label}: rows overlap: ${byTop[i-1].text} / ${byTop[i].text}`);
  // Each branch is one lane; each row's node sits on its lane, level with its label.
  const lanes={};for(const i of r.items){assert.ok(i.cx!==null&&i.cy>=i.top&&i.cy<=i.bottom,label+' node '+i.key);(lanes[i.branch]??=new Set()).add(i.cx);}
- assert.deepEqual(Object.keys(lanes).sort(),['america','britain','china','crusade','east','eeurope','egypt','faith','france','germany','italy','lowlands','nordic','persia','prehistory','rome','spain','trunk','west'],label);
+ assert.deepEqual(Object.keys(lanes).sort(),['america','black-death','britain','china','crusade','east','eeurope','egypt','faith','france','germany','hundred-years','italy','lowlands','nordic','persia','prehistory','rome','spain','trunk','west'],label);
  assert.ok(Object.values(lanes).every(s=>s.size===1),label+' one lane per branch');
  // 东罗马 takes the Greek lane, free since 希腊 ran into 罗马; China sits on its own parallel lane on the far right.
  assert.ok([...lanes.east][0]===[...lanes.trunk][0],label+' 东罗马 on the Greek lane');
@@ -89,7 +89,7 @@ function checkTree(r,label){
   assert.ok(side.lanes.some(l=>l.branch==='rome'&&l.fork)&&side.lanes.some(l=>l.branch==='trunk'),JSON.stringify(side.lanes));
   assert.ok(side.lanes.every(l=>l.branch==='rome'||(l.branch==='trunk'&&l.y1<=side.forkY.rome+.5)||(l.branch==='prehistory'&&l.y1<=side.forkY.trunk+.5)),JSON.stringify(side.lanes));
   assert.ok(side.dimTrunk>0);assert.ok(side.lanes.some(l=>l.branch==='prehistory'),'罗马 rides down 史前 too');
-  assert.deepEqual(side.pills,[['prehistory',false],['trunk',false],['rome',true],['east',false],['west',false],['spain',false],['france',false],['lowlands',false],['germany',false],['italy',false],['britain',false],['faith',false],['egypt',false],['persia',false],['eeurope',false],['crusade',false],['nordic',false],['america',false],['china',false]]);
+  assert.deepEqual(side.pills,[['prehistory',false],['trunk',false],['rome',true],['east',false],['west',false],['spain',false],['france',false],['lowlands',false],['germany',false],['italy',false],['britain',false],['faith',false],['egypt',false],['persia',false],['eeurope',false],['crusade',false],['hundred-years',false],['black-death',false],['nordic',false],['america',false],['china',false]]);
   assert.equal(side.pos,'13 / 33');assert.ok(side.offLine.includes('history-poleis/0')&&!side.offLine.includes('history-palaces/0')&&!side.offLine.includes('history-rome-site/0'));
   assert.equal(side.node,'history-rome-punic/0');assert.equal(side.r,'5.5');
   let s=await state(p);assert.deepEqual(s.on,['history-rome-punic/0']);assert.equal(s.era,'rome-med');
@@ -105,36 +105,22 @@ function checkTree(r,label){
   await p.click('#next');s=await state(p);assert.deepEqual([s.id,s.scene],['history-faith-papacy',0]);
   await p.click('#next');s=await state(p);assert.deepEqual([s.id,s.scene],['history-faith-three-chapters',0]);
   await p.click('#next');s=await state(p);assert.deepEqual([s.id,s.scene],['history-faith-gregory',0]);
-  await p.click('#next');s=await state(p);assert.deepEqual([s.id,s.scene],['history-empire-constans',0]);
-  await p.click('#next');s=await state(p);assert.deepEqual([s.id,s.scene],['history-empire-isaurian',0]);
+  await p.click('#next');s=await state(p);assert.deepEqual([s.id,s.scene],['history-plat-faith-iconoclasm',0]);
   await p.click('#next');s=await state(p);assert.deepEqual([s.id,s.scene],['history-faith-carolingian',0]);
-  await p.click('#next');s=await state(p);assert.deepEqual([s.id,s.scene],['history-empire-amorian',0]);
   await p.click('#next');s=await state(p);assert.deepEqual([s.id,s.scene],['history-faith-dark-century',0]);
-  await p.click('#next');s=await state(p);assert.deepEqual([s.id,s.scene],['history-germany-otto',0]);
   await p.click('#next');s=await state(p);assert.deepEqual([s.id,s.scene],['history-faith-imperial-church',0]);
   await p.click('#next');s=await state(p);assert.deepEqual([s.id,s.scene],['history-faith-cluny',0]);
   await p.click('#next');s=await state(p);assert.deepEqual([s.id,s.scene],['history-faith-leo-ix',0]);
-  await p.click('#next');s=await state(p);assert.deepEqual([s.id,s.scene],['history-empire-macedonian',3]);
-  await p.click('#next');s=await state(p);assert.deepEqual([s.id,s.scene],['history-germany-investiture',0]);
-  await p.click('#next');s=await state(p);assert.deepEqual([s.id,s.scene],['history-germany-canossa',0]);
-  await p.click('#next');s=await state(p);assert.deepEqual([s.id,s.scene],['history-spain-crusade',0]);
+  await p.click('#next');s=await state(p);assert.deepEqual([s.id,s.scene],['history-plat-faith-investiture',0]);
   await p.click('#next');s=await state(p);assert.deepEqual([s.id,s.scene],['history-faith-urban',0]);
-  await p.click('#next');s=await state(p);assert.deepEqual([s.id,s.scene],['history-faith-crusade',0]);
   await p.click('#next');s=await state(p);assert.deepEqual([s.id,s.scene],['history-faith-citeaux',0]);
-  await p.click('#next');s=await state(p);assert.deepEqual([s.id,s.scene],['history-germany-worms',0]);
   await p.click('#next');s=await state(p);assert.deepEqual([s.id,s.scene],['history-faith-cardinals',0]);
-  await p.click('#next');s=await state(p);assert.deepEqual([s.id,s.scene],['history-crusade-second',0]);
-  await p.click('#next');s=await state(p);assert.deepEqual([s.id,s.scene],['history-germany-barbarossa',0]);
-  await p.click('#next');s=await state(p);assert.deepEqual([s.id,s.scene],['history-germany-innocent',0]);
-  await p.click('#next');s=await state(p);assert.deepEqual([s.id,s.scene],['history-germany-frederick2',0]);
+  await p.click('#next');s=await state(p);assert.deepEqual([s.id,s.scene],['history-plat-faith-staufer',0]);
   await p.click('#next');s=await state(p);assert.deepEqual([s.id,s.scene],['history-faith-scholasticism',0]);
-  await p.click('#next');s=await state(p);assert.deepEqual([s.id,s.scene],['history-france-stlouis',0]);
   await p.click('#next');s=await state(p);assert.deepEqual([s.id,s.scene],['history-faith-avignon',0]);
   await p.click('#next');s=await state(p);assert.deepEqual([s.id,s.scene],['history-faith-clement',0]);
-  await p.click('#next');s=await state(p);assert.deepEqual([s.id,s.scene],['history-italy-blackdeath',0]);
   await p.click('#next');s=await state(p);assert.deepEqual([s.id,s.scene],['history-faith-schism',0]);
   await p.click('#next');s=await state(p);assert.deepEqual([s.id,s.scene],['history-faith-constance',0]);
-  await p.click('#next');s=await state(p);assert.deepEqual([s.id,s.scene],['history-empire-fall-1453',0]);
   await p.click('#next');s=await state(p);assert.deepEqual([s.id,s.scene],['history-italy-savonarola',0]);
   await p.click('#next');s=await state(p);assert.deepEqual([s.id,s.scene],['history-italy-julius2',0]);
   await p.click('#next');s=await state(p);assert.deepEqual([s.id,s.scene],['history-italy-wars-2',0]);
@@ -212,7 +198,7 @@ function checkTree(r,label){
   await p.evaluate(()=>go('history-palaces'));await p.click('#toc .tree-line[data-line="rome"]');s=await state(p);
   assert.equal(s.id,'history-rome-site');
   // A full ride on each line from the root: every ↓ lands lower in the tree, and the footer counts stations.
-  for(const [line,startId,count,last] of [['prehistory','history-migration',3,'history-farming'],['trunk','history-migration',23,'history-hellenistic-end'],['rome','history-migration',33,'history-empire-west-end'],['east','history-migration',52,'history-empire-fall-1453'],['west','history-migration',40,'history-west-louis-pious'],['spain','history-migration',69,'history-spain-1898'],['france','history-migration',114,'history-germany-versailles'],['lowlands','history-migration',57,'history-ww1-end'],['germany','history-migration',81,'history-germany-versailles'],['italy','history-migration',74,'history-italy-lateran'],['britain','history-migration',90,'history-britain-suffrage-1928'],['faith','history-migration',72,'history-italy-lateran'],['egypt','history-migration',12,'history-arab-conquest'],['persia','history-migration',41,'history-ottoman-kemal'],['eeurope','history-migration',27,'history-eeurope-october'],['crusade','history-migration',44,'history-crusade-orders'],['nordic','history-nordic-before',17,'history-nordic-modern'],['america','history-america-before',22,'history-ww1-end'],['china','history-migration',26,'history-germany-versailles']]){
+  for(const [line,startId,count,last] of [['prehistory','history-migration',3,'history-farming'],['trunk','history-migration',23,'history-hellenistic-end'],['rome','history-migration',33,'history-empire-west-end'],['east','history-migration',48,'history-empire-fall-1453'],['west','history-migration',40,'history-west-louis-pious'],['spain','history-migration',69,'history-spain-1898'],['france','history-migration',104,'history-germany-versailles'],['lowlands','history-migration',57,'history-ww1-end'],['germany','history-migration',80,'history-germany-versailles'],['italy','history-migration',68,'history-italy-lateran'],['britain','history-migration',84,'history-britain-suffrage-1928'],['faith','history-migration',58,'history-italy-lateran'],['egypt','history-migration',12,'history-arab-conquest'],['persia','history-migration',34,'history-ottoman-kemal'],['eeurope','history-migration',25,'history-eeurope-october'],['crusade','history-migration',38,'history-crusade-orders'],['hundred-years','history-britain-edward2',7,'history-britain-jeanne'],['black-death','history-italy-blackdeath',2,'history-italy-blackdeath'],['nordic','history-nordic-before',16,'history-nordic-modern'],['america','history-america-before',22,'history-ww1-end'],['china','history-migration',25,'history-germany-versailles']]){
    await p.evaluate(({line,startId,count,last})=>{
     const _rc=renderCard,_rs=renderScenes,_f=fit,_m=markTreeCurrent,_c=makeCtx;renderCard=()=>{};renderScenes=()=>{};fit=()=>{};markTreeCurrent=()=>{};makeCtx=()=>new Proxy({},{get:()=>()=>{}});
     try{
@@ -264,7 +250,7 @@ function checkTree(r,label){
   await d.click('#treeOpen');s=await state(d);assert.ok(s.sheet);assert.deepEqual(s.sheetOn,['history-rome-punic/0']);
   const wide=await d.evaluate(treeReport,'#treeSheet .htree');checkTree(wide,'expanded');assert.ok(wide.wide);
   // Short lines still get their names where a stretch below the fork can hold them (sidebar dragged wide, phone sheet).
-  assert.ok(['中东','埃及','罗马','基督教','中国'].every(t=>wide.names.some(n=>n.text===t))&&wide.names.every(n=>['史前','罗马','东罗马','中世纪西欧','西班牙','法兰西','低地诸国','德意志','意大利','不列颠','基督教','埃及','中东','东欧','十字军','北欧','美洲','中国'].includes(n.text)),JSON.stringify(wide.names.map(n=>n.text)));
+  assert.ok(['中东','埃及','罗马','基督教','中国'].every(t=>wide.names.some(n=>n.text===t))&&wide.names.every(n=>['史前','罗马','东罗马','中世纪西欧','西班牙','法兰西','低地诸国','德意志','意大利','不列颠','基督教','埃及','中东','东欧','十字军','百年战争','黑死病','北欧','美洲','中国'].includes(n.text)),JSON.stringify(wide.names.map(n=>n.text)));
   for(const n of wide.names)for(const i of wide.items)assert.ok(n.right<=i.left||n.left>=i.right||n.bottom<=i.top||n.top>=i.bottom,'name '+n.text+' over '+i.key);
   assert.ok(await d.evaluate(()=>{const b=treeSheet.querySelector('.tree-sheet-body').getBoundingClientRect(),r=treeSheet.querySelector('.tree-item.on').getBoundingClientRect();return r.top>=b.top&&r.bottom<=b.bottom;}));
   assert.ok(await d.evaluate(()=>document.activeElement===treeSheet.querySelector('.tree-item.on')));
@@ -294,6 +280,6 @@ function checkTree(r,label){
    await m.close();
   }
   assert.deepEqual(errors,[]);
-  console.log('PASS: history tree — 405 rows on 13 lines (希腊, 罗马, 东罗马, 中世纪西欧, 西班牙, 法兰西, 德意志, 意大利, 基督教, 埃及, 波斯—阿拉伯, 东欧, 中国) with 10 forks (东欧 off 希腊 at the Black Sea colonies, 埃及 and 波斯—阿拉伯 off the trunk at the early states, 基督教 at 前1400 on the outermost lane, 东罗马 off 罗马 at 395 and 中世纪西欧 at 476, 西班牙 off 中世纪西欧 with the Visigoths, 法兰西 and 意大利 at Verdun; 东罗马 to 1056, 基督教 through its shared stations to 1054); every earlier start sits higher; no overlapping rows, the five time slices included; nodes on their lanes; Rome beside Greece and the Hellenistic kingdoms; unwritten topics as dashed shoots; time ticks and compressed-prehistory breaks; metro lines: pick a line (button or the drawn line itself) in place, ↑↓ / 上一条 / 下一条 ride only that line in time order, line lit root-to-fork, everything else greyed; draggable, remembered, clamped column; sidebar at 1440 and 1024; expanded view with branch names; phone and short-landscape sheets; geography mode untouched; offline; no page errors.');
+  console.log('PASS: history tree — 416 rows on 13 lines (希腊, 罗马, 东罗马, 中世纪西欧, 西班牙, 法兰西, 德意志, 意大利, 基督教, 埃及, 波斯—阿拉伯, 东欧, 中国) with 10 forks (东欧 off 希腊 at the Black Sea colonies, 埃及 and 波斯—阿拉伯 off the trunk at the early states, 基督教 at 前1400 on the outermost lane, 东罗马 off 罗马 at 395 and 中世纪西欧 at 476, 西班牙 off 中世纪西欧 with the Visigoths, 法兰西 and 意大利 at Verdun; 东罗马 to 1056, 基督教 through its shared stations to 1054); every earlier start sits higher; no overlapping rows, the five time slices included; nodes on their lanes; Rome beside Greece and the Hellenistic kingdoms; unwritten topics as dashed shoots; time ticks and compressed-prehistory breaks; metro lines: pick a line (button or the drawn line itself) in place, ↑↓ / 上一条 / 下一条 ride only that line in time order, line lit root-to-fork, everything else greyed; draggable, remembered, clamped column; sidebar at 1440 and 1024; expanded view with branch names; phone and short-landscape sheets; geography mode untouched; offline; no page errors.');
  }catch(e){console.error(e);process.exitCode=1;}finally{await Promise.race([browser.close(),new Promise(r=>setTimeout(r,200))]);browser.process()?.kill('SIGKILL');process.exit(process.exitCode||0);}
 })();

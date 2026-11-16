@@ -70,7 +70,7 @@ const CARDS=[[ID+'/1','gregory-great',/截了下来/],[ID+'/3','columbanus',/十
    assert.deepEqual(r.order,['history-faith-three-chapters',ID],'reading order on 基督教');
    assert.deepEqual(r.row,['faith',568,604]);
    const k=r.faith.indexOf('history-faith-three-chapters/0');
-   assert.deepEqual(r.faith.slice(k,k+3),['history-faith-three-chapters/0',ID+'/0','history-empire-constans/0'],'between 三章案 and the shared 一志论 station');
+   assert.deepEqual(r.faith.slice(k,k+3),['history-faith-three-chapters/0',ID+'/0','history-plat-faith-iconoclasm/0'],'between 三章案 and the shared 一志论 station');
    assert.deepEqual(r.era,['history-faith-papacy','history-faith-three-chapters',ID]);
    assert.deepEqual(r.lombards,[true,false,true,true,true,[[0,'阿尔博因的头骨杯'],[4,'伪造的《君士坦丁赠礼》']],false,false],JSON.stringify(r.lombards));
    for(const [k,ok] of r.bold)assert.ok(ok,k+' lacks 老无’s thesis in bold');
@@ -103,7 +103,7 @@ const CARDS=[[ID+'/1','gregory-great',/截了下来/],[ID+'/3','columbanus',/十
    await page.evaluate(()=>{selectTreeLine('faith');go('history-faith-three-chapters',{scene:4});});
    await page.click('#next');assert.deepEqual(await page.evaluate(()=>[ENTRIES[cur].id,sceneIndex]),[ID,0]);
    await page.evaluate(id=>go(id,{scene:7}),ID);
-   await page.click('#next');assert.deepEqual(await page.evaluate(()=>[ENTRIES[cur].id,sceneIndex]),['history-empire-constans',0]);
+   await page.click('#next');assert.deepEqual(await page.evaluate(()=>[ENTRIES[cur].id,sceneIndex]),['history-plat-faith-iconoclasm',0]);
    // The west line's scene 3 still reads on its own and points across.
    await page.evaluate(()=>{selectTreeLine('west');go('history-west-lombards',{scene:2});});await wait(120);
    if(label==='desktop'){

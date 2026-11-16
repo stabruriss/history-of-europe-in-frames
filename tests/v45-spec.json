@@ -172,8 +172,7 @@
   ],
   "history-britain-henry2/0": [
    [
-    "britain",
-    "france"
+    "britain"
    ],
    1154,
    1189
@@ -187,8 +186,7 @@
   ],
   "history-britain-richard/0": [
    [
-    "britain",
-    "france"
+    "britain"
    ],
    1189,
    1214
@@ -209,32 +207,28 @@
   ],
   "history-britain-edward2/0": [
    [
-    "britain",
-    "france"
+    "hundred-years"
    ],
    1315,
    1330
   ],
   "history-britain-hundred-years-1/0": [
    [
-    "britain",
-    "france"
+    "hundred-years"
    ],
    1352,
    1360
   ],
   "history-britain-hundred-years-2/0": [
    [
-    "britain",
-    "france"
+    "hundred-years"
    ],
    1361,
    1370
   ],
   "history-britain-hundred-years-3/0": [
    [
-    "britain",
-    "france"
+    "hundred-years"
    ],
    1371,
    1381
@@ -248,24 +242,21 @@
   ],
   "history-britain-hundred-years-4/0": [
    [
-    "britain",
-    "france"
+    "hundred-years"
    ],
    1401,
    1422
   ],
   "history-britain-hundred-years-5/0": [
    [
-    "britain",
-    "france"
+    "hundred-years"
    ],
    1423,
    1435
   ],
   "history-britain-jeanne/0": [
    [
-    "britain",
-    "france"
+    "hundred-years"
    ],
    1436,
    1453
@@ -1228,11 +1219,13 @@
    "百年战争与红白玫瑰战争：从阿基坦称臣到都铎玫瑰",
    [
     "history-britain-edward2",
+    "history-plat-britain-hyw1",
     "history-britain-hundred-years-1",
     "history-britain-hundred-years-2",
     "history-britain-hundred-years-3",
     "history-britain-richard2",
     "history-britain-hundred-years-4",
+    "history-plat-britain-hyw2",
     "history-britain-hundred-years-5",
     "history-britain-jeanne",
     "history-britain-roses-1",
@@ -1285,15 +1278,9 @@
    "history-britain-richard/0",
    "history-britain-magnacarta/0",
    "history-britain-edward1/0",
-   "history-britain-edward2/0",
-   "history-italy-blackdeath/0",
-   "history-britain-hundred-years-1/0",
-   "history-britain-hundred-years-2/0",
-   "history-britain-hundred-years-3/0",
+   "history-plat-britain-hyw1/0",
    "history-britain-richard2/0",
-   "history-britain-hundred-years-4/0",
-   "history-britain-hundred-years-5/0",
-   "history-britain-jeanne/0",
+   "history-plat-britain-hyw2/0",
    "history-britain-roses-1/0",
    "history-britain-roses-2/0",
    "history-britain-roses-3/0",
@@ -1346,20 +1333,10 @@
    "history-france-west-francia/5",
    "history-france-capet/0",
    "history-france-plantagenet/0",
-   "history-britain-henry2/0",
-   "history-britain-richard/0",
    "history-france-stlouis/0",
-   "history-faith-avignon/0",
-   "history-faith-clement/0",
-   "history-britain-edward2/0",
-   "history-italy-blackdeath/0",
-   "history-britain-hundred-years-1/0",
-   "history-britain-hundred-years-2/0",
-   "history-britain-hundred-years-3/0",
+   "history-plat-france-hyw1/0",
    "history-france-valois/0",
-   "history-britain-hundred-years-4/0",
-   "history-britain-hundred-years-5/0",
-   "history-britain-jeanne/0",
+   "history-plat-france-hyw2/0",
    "history-france-louis11/0",
    "history-italy-wars-1/0",
    "history-italy-charles8/0",
@@ -1418,42 +1395,6 @@
   ]
  },
  "shared": {
-  "history-britain-henry2/0": [
-   "britain",
-   "france"
-  ],
-  "history-britain-richard/0": [
-   "britain",
-   "france"
-  ],
-  "history-britain-edward2/0": [
-   "britain",
-   "france"
-  ],
-  "history-britain-hundred-years-1/0": [
-   "britain",
-   "france"
-  ],
-  "history-britain-hundred-years-2/0": [
-   "britain",
-   "france"
-  ],
-  "history-britain-hundred-years-3/0": [
-   "britain",
-   "france"
-  ],
-  "history-britain-hundred-years-4/0": [
-   "britain",
-   "france"
-  ],
-  "history-britain-hundred-years-5/0": [
-   "britain",
-   "france"
-  ],
-  "history-britain-jeanne/0": [
-   "britain",
-   "france"
-  ],
   "history-britain-henry8-2/0": [
    "britain",
    "faith"

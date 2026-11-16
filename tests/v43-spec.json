@@ -252,8 +252,7 @@
   ],
   "history-france-stlouis/0": [
    [
-    "france",
-    "faith"
+    "france"
    ],
    1291,
    1309
@@ -347,9 +346,7 @@
   ],
   "history-germany-frederick2/0": [
    [
-    "germany",
-    "italy",
-    "faith"
+    "germany"
    ],
    1220,
    1273
@@ -484,16 +481,14 @@
   ],
   "history-faith-avignon/0": [
    [
-    "faith",
-    "france"
+    "faith"
    ],
    1296,
    1303
   ],
   "history-faith-clement/0": [
    [
-    "faith",
-    "france"
+    "faith"
    ],
    1304,
    1314
@@ -530,16 +525,10 @@
   ],
   "history-italy-blackdeath/0": [
    [
-    "italy",
-    "france",
-    "britain",
-    "germany",
-    "faith",
-    "persia",
-    "nordic"
+    "black-death"
    ],
    1347,
-   1351
+   1349
   ]
  },
  "bold": [
@@ -2267,7 +2256,9 @@
     "history-france-capet",
     "history-france-plantagenet",
     "history-france-stlouis",
+    "history-plat-france-hyw1",
     "history-france-valois",
+    "history-plat-france-hyw2",
     "history-france-louis11"
    ]
   ],
@@ -2354,6 +2345,7 @@
    "empire-blackdeath",
    "中世纪晚期：黑死病",
    [
+    "history-italy-blackdeath",
     "history-italy-blackdeath"
    ]
   ]
@@ -2417,20 +2409,10 @@
    "history-france-west-francia/5",
    "history-france-capet/0",
    "history-france-plantagenet/0",
-   "history-britain-henry2/0",
-   "history-britain-richard/0",
    "history-france-stlouis/0",
-   "history-faith-avignon/0",
-   "history-faith-clement/0",
-   "history-britain-edward2/0",
-   "history-italy-blackdeath/0",
-   "history-britain-hundred-years-1/0",
-   "history-britain-hundred-years-2/0",
-   "history-britain-hundred-years-3/0",
+   "history-plat-france-hyw1/0",
    "history-france-valois/0",
-   "history-britain-hundred-years-4/0",
-   "history-britain-hundred-years-5/0",
-   "history-britain-jeanne/0",
+   "history-plat-france-hyw2/0",
    "history-france-louis11/0",
    "history-italy-wars-1/0",
    "history-italy-charles8/0",
@@ -2491,7 +2473,6 @@
    "history-germany-innocent/0",
    "history-germany-frederick2/0",
    "history-germany-electors/0",
-   "history-italy-blackdeath/0",
    "history-germany-golden-bull/0",
    "history-germany-hansa/0",
    "history-germany-swiss/0",
@@ -2521,13 +2502,9 @@
    "history-germany-versailles/0"
   ],
   "italy": [
-   "history-germany-innocent/0",
-   "history-germany-frederick2/0",
    "history-italy-vespers/0",
-   "history-italy-blackdeath/0",
    "history-italy-venice/0",
    "history-italy-condottieri/0",
-   "history-empire-fall-1453/0",
    "history-italy-renaissance/0",
    "history-italy-wars-1/0",
    "history-italy-charles8/0",
@@ -2550,16 +2527,11 @@
    "history-italy-lateran/0"
   ],
   "faith": [
-   "history-germany-innocent/0",
-   "history-germany-frederick2/0",
    "history-faith-scholasticism/0",
-   "history-france-stlouis/0",
    "history-faith-avignon/0",
    "history-faith-clement/0",
-   "history-italy-blackdeath/0",
    "history-faith-schism/0",
    "history-faith-constance/0",
-   "history-empire-fall-1453/0",
    "history-italy-savonarola/0",
    "history-italy-julius2/0",
    "history-italy-wars-2/0",
@@ -2589,32 +2561,6 @@
   ]
  },
  "shared": {
-  "history-germany-frederick2/0": [
-   "germany",
-   "italy",
-   "faith"
-  ],
-  "history-france-stlouis/0": [
-   "france",
-   "faith"
-  ],
-  "history-faith-avignon/0": [
-   "faith",
-   "france"
-  ],
-  "history-faith-clement/0": [
-   "faith",
-   "france"
-  ],
-  "history-italy-blackdeath/0": [
-   "italy",
-   "france",
-   "britain",
-   "germany",
-   "faith",
-   "persia",
-   "nordic"
-  ],
   "history-lowlands-burgundy/0": [
    "lowlands",
    "germany"

@@ -73,9 +73,7 @@ const FIXES=[
 ];
 const MOMENTS={'history-west-charlemagne':[[0,'为了圣彼得'],[2,'阿瓦尔人的宝库'],[3,'龙塞斯瓦列斯'],[3,'哈伦的大象'],[4,'事先不知道']],
  'history-west-louis-pious':[[4,'谎言之野'],[5,'斯特拉斯堡誓言']]};
-const PARALLEL=[['trunk','history-alexander-conquest/0','history-alexander-rule/0'],['trunk','history-hellenistic-states/0','history-hellenistic-knowledge/0'],
- ['west','history-west-kingdoms/0','history-west-ostrogoths/0'],['west','history-west-merovingians/0','history-west-lombards/0'],['faith','history-empire-amorian/0','history-faith-carolingian/0'],
- ['faith','history-faith-imperial-church/0','history-faith-cluny/0']];
+const PARALLEL=[['trunk','history-alexander-conquest/0','history-alexander-rule/0'],['trunk','history-hellenistic-states/0','history-hellenistic-knowledge/0'],['west','history-west-kingdoms/0','history-west-ostrogoths/0'],['west','history-west-merovingians/0','history-west-lombards/0'],['faith','history-faith-imperial-church/0','history-faith-cluny/0']];
 (async()=>{
  const browser=await puppeteer.launch({headless:true,executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'});
  const errors=[];
@@ -119,7 +117,7 @@ const PARALLEL=[['trunk','history-alexander-conquest/0','history-alexander-rule/
    // The tree: forks at 395 and 843, the new lines and their lanes, the West's end, the shoots after the forks, the passing loops.
    for(const [k,spec] of Object.entries(ROWS))assert.deepEqual(r.rows[k],spec,k);
    assert.deepEqual(r.branches,[['east','rome',395,1453,2],['west','rome',476,843,4],['france','west',843,1923,5],['germany','west',843,1923,4],['italy','west',843,1929,3],['faith','trunk',-1400,1929,7],['china',null,-68000,1919,9]]);
-   assert.deepEqual(r.ends,[['trunk',-30,'并入罗马'],['rome',476,'西罗马终结'],['west',843,'凡尔登三分'],['east',1453,'东罗马终结'],['egypt',642,'并入中东'],['crusade',1312,'十字军落幕'],['prehistory',-3100,'有了文字']]);
+   assert.deepEqual(r.ends,[['trunk',-30,'并入罗马'],['rome',476,'西罗马终结'],['west',843,'凡尔登三分'],['east',1453,'东罗马终结'],['egypt',642,'并入中东'],['crusade',1312,'十字军落幕'],['hundred-years',1453,'英军退回海岛'],['black-death',1351,'瘟疫退潮'],['prehistory',-3100,'有了文字']]);
    for(const f of [['france',1923,'大萧条、二战与第五共和国'],['germany',1923,'大萧条、第三帝国与两德分合'],['italy',1929,'法西斯意大利与二战']])assert.ok(r.futures.some(x=>JSON.stringify(x)===JSON.stringify(f)),f[0]+' shoot');
    assert.ok(!r.futures.some(f=>f[0]==='west'),'中世纪西欧 ends at Verdun instead of growing a shoot');
    assert.deepEqual(r.parallel,PARALLEL);
@@ -141,7 +139,7 @@ const PARALLEL=[['trunk','history-alexander-conquest/0','history-alexander-rule/
    assert.equal(t.loops,PARALLEL.length,label+' loops');
    assert.deepEqual(t.side,PARALLEL.map(p=>p[2]).sort(),label+' the later section of each pair rides the loop');
    assert.ok(['east','france','italy'].every(f=>t.forks.includes(f))&&!t.forks.includes('germany'),label+' forks '+JSON.stringify(t.forks));
-   assert.deepEqual(t.pills,['史前','希腊','罗马','东罗马','中世纪西欧','西班牙','法兰西','低地诸国','德意志','意大利','不列颠','基督教','埃及','中东','东欧','十字军','北欧','美洲','中国'],label+' line pills');
+   assert.deepEqual(t.pills,['史前','希腊','罗马','东罗马','中世纪西欧','西班牙','法兰西','低地诸国','德意志','意大利','不列颠','基督教','埃及','中东','东欧','十字军','百年战争','黑死病','北欧','美洲','中国'],label+' line pills');
    }
    // Every new scene draws, fits its view on the desktop, and leaves no horizontal overflow.
    if(!FULL_SHOTS){await page.evaluate(({ids,label})=>{for(const id of ids){const n=HISTORY_ENTRIES.find(e=>e.id===id).scenes.length;for(let i=0;i<n;i++){go(id,{scene:i});const sc=activeScene(ENTRIES[cur]);
