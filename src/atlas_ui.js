@@ -95,7 +95,7 @@ function historyTreeRows(){
       if(!spec)throw new Error('History tree has no place for '+key);
       // One event can sit on several lines at once (one set of scenes); the first line is its home.
       const [branch,t,end,period]=spec,lines=[].concat(branch),b=branches[lines[0]];
-      return {kind:'item',key,id,from,to,era,e,branch:b,lines,t,end,order:order++,c:b.c||TREE_CH_COLORS[e.ch],label:label||e.short,
+      return {kind:'item',key,id,from,to,era,e,branch:b,lines,t,end,order:order++,c:b.c||TREE_CH_COLORS[e.ch],label:label||e.short,platform:Boolean(e.platform),
         period:period||(from===0&&to===e.scenes.length-1?e.period:e.scenes[from].date)};
     });
     const first=items.reduce((a,b)=>b.t<a.t?b:a);
@@ -117,7 +117,7 @@ let treeLine='trunk',treeStationList=null,lastStationKey=null,keepTreeScroll=fal
 const lineCache={},BRANCH=Object.fromEntries(HISTORY_BRANCHES.map(b=>[b.id,b]));
 const lineColor=b=>b.c||TREE_CH_COLORS[1];
 const treeStations=()=>treeStationList??=historyTreeRows().filter(r=>r.kind==='item')
-  .map(r=>({key:r.key,id:r.id,from:r.from,to:r.to,t:r.t,order:r.order,branch:r.branch.id,lines:r.lines,era:r.era.id}));
+  .map(r=>({key:r.key,id:r.id,from:r.from,to:r.to,t:r.t,order:r.order,branch:r.branch.id,lines:r.lines,era:r.era.id,platform:r.platform}));
 function lineStations(id){
   if(lineCache[id])return lineCache[id];
   const b=BRANCH[id],before=b.parent?lineStations(b.parent).filter(s=>s.t<b.from):[];

@@ -2,7 +2,7 @@
 const HISTORY_CONTENT=/*__HISTORY_CONTENT__*/;
 const HISTORY_CH=['上古与黑暗时代','希腊城邦时代','马其顿与帝国','希腊化世界','罗马','罗马帝国','犹太教与基督教','中国对照','埃及','中东','东欧','十字军','不列颠','北欧','美洲'];
 const HC={athens:'#276582',sparta:'#99462e',mino:'#ad7c25',myc:'#637541',hittite:'#866347',
-  persia:'#8b644c',thebes:'#387568',macedon:'#6b4d72',war:'#a03327',neutral:'#887b65',route:'#2a7182',celt:'#64763f',parthia:'#765b78',rome:'#a34f36',faith:'#41508c',china:'#2e6b4e',byz:'#93324f',france:'#2b6cb0',germany:'#4a4440',italy:'#b8652a',spain:'#a2337f',lowlands:'#b45309',eeurope:'#1d8a99',crusade:'#c0262d',britain:'#2b6a6c',nordic:'#4f86ad',america:'#8c7a14',prehistory:'#7d6b50'};
+  persia:'#8b644c',thebes:'#387568',macedon:'#6b4d72',war:'#a03327',neutral:'#887b65',route:'#2a7182',celt:'#64763f',parthia:'#765b78',rome:'#a34f36',faith:'#41508c',china:'#2e6b4e',byz:'#93324f',france:'#2b6cb0',germany:'#4a4440',italy:'#b8652a',spain:'#a2337f',lowlands:'#b45309',eeurope:'#1d8a99',crusade:'#c0262d',britain:'#2b6a6c',nordic:'#4f86ad',america:'#8c7a14',prehistory:'#7d6b50',hyw:'#6b4f8a',plague:'#5c4a3e'};
 const HV={aegean:[[34.3,20.2],[41.3,29.6]],greece:[[35.6,20.4],[39.8,25.1]],
   eastern:[[24.3,19.4],[42.6,49.8]],attica:[[37.55,23.23],[38.45,24.3]],levant:[[27.4,30.2],[35.9,37.2]]};
 const HS={
@@ -4717,6 +4717,22 @@ const HISTORY_ENTRIES=[
     hp(d,'constantinople',{note:'阿历克塞三世把盲弟伊萨克二世与侄子小阿历克塞关在京城；1201年小阿历克塞逃往西方引来第四次十字军。'});
    },[['fill',HC.byz,'安格洛斯王朝治下缩水的东罗马'],['dash',HC.eeurope,'1185年起义独立的保加利亚第二帝国（示意）'],['fill',HC.celt,'匈牙利王国'],['dot',HC.war,'1185年特尔诺沃起义与1195年基普塞拉弑弟政变'],['dot','#2a2018','贝罗埃与君士坦丁堡']])
  ]},
+{id:'history-plat-east-1204',ch:5,title:'1204年京城首破：流亡皇子引狼入室，威尼斯舰队拆碎千年帝都',short:'1204年京城首破',en:'The Sack of Constantinople in 1204',period:'1202—1204年',c:HC.byz,platform:true,
+ scenes:[
+  hs('1202—1204年','讨债偏航、金角湾破城与帝国四分五裂','小阿历克塞借威尼斯与十字军复辟却无钱履约，1204年4月君士坦丁堡首遭攻陷并裂为拉丁帝国与三处流亡政权。',[[34.8,10.5],[46.5,41.5]],d=>{
+    ha(d,'mLatinEmpire1210',HC.crusade,{fillOpacity:.34});ha(d,'mVenetian1210',HC.italy,{fillOpacity:.38});
+    ha(d,'mNicaea1210',HC.byz,{fillOpacity:.34});ha(d,'mEpirus1210',HC.byz,{fillOpacity:.28});
+    ha(d,'mTrebizond1210',HC.byz,{fillOpacity:.28});
+    hr(d,[[45.44,12.34],[44.12,15.23],[36.5,23.0],[41.01,28.98]],HC.italy);
+    hl(d,'尼西亚帝国','Empire of Nicaea',39.2,28.8,HC.byz);
+    hl(d,'伊庇鲁斯专制国','Epirus',39.6,20.8,HC.byz);
+    hp(d,'w_venice',{note:'威尼斯：总督丹多洛垫资造船，借十字军拔除商业对手并分走爱琴海要津。'});
+    hp(d,'c4_zara',{kind:'battle',note:'扎拉：1202年十字军替威尼斯攻打的天主教港城，首次偏离圣地航线。'});
+    hp(d,'constantinople',{capital:1,kind:'battle',left:1,note:'君士坦丁堡：1204年4月13日建城近九百年首次陷落，惨遭洗劫三日。'});
+    hp(d,'nicaea',{dy:14,note:'尼西亚：拉斯卡里斯家族在此延续东罗马正统，五十七年后收复京城。'});
+    hp(d,'c4_trebizond',{note:'特拉布宗：科穆宁皇孙在黑海南岸另立流亡帝国。'});
+   },[['fill',HC.crusade,'十字军建立的拉丁帝国'],['fill',HC.italy,'威尼斯分得的港口与岛屿'],['fill',HC.byz,'尼西亚、伊庇鲁斯与特拉布宗三流亡政权']])
+ ]},
 {id:'history-empire-palaiologos',ch:5,title:'拉丁帝国与巴列奥略复国：卖荆棘冠、暗助西西里晚祷与圣彼得下跪',short:'拉丁帝国与巴列奥略',en:'Latin Empire and Palaiologan Restoration: Selling the Crown of Thorns, Funding the Sicilian Vespers, and Kneeling at St Peter’s',period:'1204—1391年',c:HC.byz,
  scenes:[
   hs('1204—1261年','三国鼎立与拉丁帝国拆房卖荆棘冠','1204年后东罗马裂为尼西亚、伊庇鲁斯、特拉布宗三国；拉丁末帝鲍德温二世拆卖皇宫铜顶，1238年把耶稣荆棘冠卖给法王圣路易，转存巴黎至今。',[[36.0,0.5],[50.0,41.5]],d=>{
@@ -5854,6 +5870,21 @@ const HISTORY_ENTRIES=[
     hp(d,'it_palermo',{note:'1166年5月7日威廉一世死在这里，次子威廉二世在主教座堂加冕。'});
    },[['fill',HC.war,'西西里王国'],['fill',HC.faith,'教宗国'],['dot',HC.war,'1156年5月布林迪西之战'],['dot','#2a2018','巴里、贝内文托、罗马与巴勒莫']])
  ]},
+{id:'history-plat-italy-staufer',ch:5,title:'红胡子南征、诺曼联姻与安茹入主：北城守住自治，南国换了法国主人',short:'红胡子与安茹入主',en:'Barbarossa, the Sicilian Marriage and Anjou',period:'1152—1268年',c:HC.italy,platform:true,
+ scenes:[
+  hs('1152—1268年','莱尼亚诺拒帝、西西里联姻与安茹灭施陶芬','1176年伦巴第同盟击败红胡子，1194年亨利六世联姻入主西西里，1266年安茹的查理受教宗之邀夺取南国。',[[36.8,7.2],[46.4,18.8]],d=>{
+    ha(d,'mLombardLeague1176',HC.italy,{fillOpacity:.36});ha(d,'mPapal1210',HC.faith,{fillOpacity:.3});
+    ha(d,'mNaplesAnjou1282',HC.france,{fillOpacity:.3});
+    hl(d,'伦巴第城市同盟','Lombard League',45.2,10.8,HC.italy);
+    hl(d,'安茹入主后的西西里王国','Angevin Sicily',39.8,16.0,HC.france);
+    hp(d,'bb_legnano',{kind:'battle',left:1,note:'莱尼亚诺：1176年北意大利市民长矛阵击败红胡子重骑兵。'});
+    hp(d,'ic_milan',{dy:12,note:'米兰：伦巴第同盟盟主，被红胡子踏平后在诸城援助下重建。'});
+    hp(d,'rome',{capital:1,left:1,note:'罗马：教宗乌尔班四世与克莱芒四世引法王之弟安茹的查理南下灭施陶芬。'});
+    hp(d,'f2_tagliacozzo',{kind:'battle',note:'塔利亚科佐：1268年安茹的查理在此击败末代施陶芬少年康拉丁并将其斩首。'});
+    hp(d,'w_benevento',{kind:'battle',dy:12,note:'贝内文托：1266年安茹的查理击杀腓特烈二世庶子曼弗雷德。'});
+    hp(d,'it_palermo',{left:1,note:'巴勒莫：亨利六世与腓特烈二世治下西西里王都，安茹入主后迁重心至那不勒斯。'});
+   },[['fill',HC.italy,'北意大利伦巴第同盟诸城'],['fill',HC.faith,'教宗国'],['fill',HC.france,'1266年后安茹王朝入主的西西里与那不勒斯']])
+ ]},
 {id:'history-germany-barbarossa',ch:5,title:'腓特烈一世：硬打北意大利',short:'腓特烈一世',en:'Frederick Barbarossa: Italy by Force',period:'1152—1183年',c:HC.germany,
  scenes:[
   hs('1152—1155年','南下加冕','1153年康斯坦茨立约；1154年秋红胡子经特伦托南下，1155年4月毁托尔托纳，在帕维亚戴意大利王冠；6月过苏特里，18日在罗马加冕。',[[41.3,7.6],[48.0,13.4]],d=>{
@@ -6191,6 +6222,19 @@ const HISTORY_ENTRIES=[
     hp(d,'it_canossa',{note:'1077年卡诺莎以来皇帝与教宗死斗两百年，最终两败俱伤。'});
    },[['fill',HC.france,'987年卡佩开张时的直辖领地（深色）与1300年的法兰西王国（浅色）'],['dash',HC.germany,'一盘散沙的神圣罗马帝国'],['dot',HC.war,'1310—1312年法军占领并吞并里昂'],['dot','#2a2018','巴黎、奥尔良、维埃纳、阿维尼翁与卡诺莎']])
  ]},
+{id:'history-plat-france-hyw1',ch:5,title:'百年战争月台（上）：卡佩绝嗣、黑死病与查理五世收复失地',short:'百年战争月台（上）',en:'Hundred Years’ War I: Valois Succession, Plague and Recovery',period:'1314—1380年',c:HC.france,platform:true,
+ scenes:[
+  hs('1314—1380年','瓦卢瓦继位、两场惨败与查理五世翻盘','1328年瓦卢瓦继位引发英王争位，克雷西、黑死病与普瓦捷重创法国；查理五世避战消耗收复大片失地。',[[43.2,-2.6],[51.6,6.2]],d=>{
+    ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.3});ha(d,'mAquitaineDuchy900',HC.britain,{fillOpacity:.32});
+    hl(d,'瓦卢瓦法兰西','Valois France',48.0,3.2,HC.france);
+    hl(d,'1360年割让英王领地','Ceded Aquitaine 1360',45.4,1.2,HC.britain);
+    hp(d,'hy1_calais',{note:'加来：1347年被爱德华三世围困攻占，此后充当英军登陆桥头堡逾两百年。'});
+    hp(d,'hy1_crecy',{kind:'battle',dy:12,note:'克雷西：1346年英格兰长弓手重创法国封建骑士。'});
+    hp(d,'w_paris',{capital:1,left:1,note:'巴黎：黑死病与普瓦捷惨败后爆发市民起义；查理五世在此重整税制。'});
+    hp(d,'k_poitiers',{kind:'battle',left:1,note:'普瓦捷：1356年黑太子生擒法王约翰二世，索取三百万金币赎金。'});
+    hp(d,'w_bordeaux',{left:1,note:'波尔多：英属阿基坦首府；1380年查理五世反攻后英军仅保住此处与加来等海港。'});
+   },[['fill',HC.france,'法兰西王室与查理五世收复区'],['fill',HC.britain,'1360年《布雷蒂尼和约》英占西南区']])
+ ]},
 {id:'history-france-valois',ch:5,title:'从卡佩到瓦卢瓦：十九代法王、三级会议与常设税',short:'从卡佩到瓦卢瓦',en:'From Capet to Valois: Nineteen French Kings, the Estates-General and Standing Taxes',period:'987—1380年',c:HC.france,
  scenes:[
   hs('987—1285年','卡佩前十王：从巴黎一隅攒出强国','从987年于格·卡佩仅守巴黎—奥尔良王领，经路易六世发城市特许状、腓力二世夺诺曼底与布汶大胜、圣路易设巴黎高院，到1285年腓力三世并入图卢兹与普瓦图。',[[42.2,-3.5],[51.5,6.2]],d=>{
@@ -6229,6 +6273,22 @@ const HISTORY_ENTRIES=[
     hp(d,'sl9_rochelle',{left:1,note:'靠常设王税供养的法军与舰队在1372年收复拉罗谢尔，将英军挤回波尔多沿海。'});
     hp(d,'w_bordeaux',{left:1,note:'1375年休战时英军在西南仅存的波尔多沿海。'});
    },[['fill',HC.france,'推行炉灶税、商品税、盐税三大常设税的查理五世法兰西'],['fill',HC.britain,'被挤回波尔多沿海的英军领地'],['dot',HC.war,'巴黎（王室常设税中枢）'],['dot','#2a2018','鲁昂、拉罗谢尔与波尔多']])
+ ]},
+{id:'history-plat-france-hyw2',ch:5,title:'百年战争月台（下）：勃阿内战、贞德解围与火炮常备军清场',short:'百年战争月台（下）',en:'Hundred Years’ War II: Civil War, Joan of Arc and Final Victory',period:'1407—1453年',c:HC.france,platform:true,
+ scenes:[
+  hs('1407—1453年','阿金库尔失国、奥尔良解围与卡斯蒂永终局','勃阿内战引亨利五世夺继承权，1429年贞德解奥尔良之围，1453年查理七世火炮常备军打赢卡斯蒂永终局。',[[43.8,-2.2],[51.4,6.2]],d=>{
+    ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.3});ha(d,'mBurgundyDuchy900',HC.war,{fillOpacity:.28});
+    ha(d,'mNormandy933',HC.britain,{fillOpacity:.32});
+    hr(d,[[47.90,1.91],[49.26,4.03]],HC.france);
+    hl(d,'查理七世王室腹地','Kingdom of Bourges',46.8,2.2,HC.france);
+    hl(d,'勃艮第公爵领','Burgundy',47.4,4.8,HC.war);
+    hp(d,'hy4_agincourt',{kind:'battle',note:'阿金库尔：1415年亨利五世重创分裂的法国贵族大军。'});
+    hp(d,'fr_rouen',{left:1,note:'鲁昂：英占诺曼底首府；1431年贞德在此被处火刑，1449年法军收复。'});
+    hp(d,'w_reims',{note:'兰斯：1429年7月贞德护送查理七世穿过敌占区在此完成正统加冕。'});
+    hp(d,'c4_troyes',{dy:12,note:'特鲁瓦：1420年签条约废黜王太子查理，改立英王亨利五世为继承人。'});
+    hp(d,'jn_orleans',{kind:'battle',left:1,note:'奥尔良：1429年5月贞德率军突破英军堡垒线，扭转亡国危局。'});
+    hp(d,'jn_castillon',{kind:'battle',note:'卡斯蒂永：1453年法军三百门火炮轰垮英军冲锋，百年战争落幕。'});
+   },[['fill',HC.france,'查理七世收复并统一的法兰西'],['fill',HC.britain,'1420年代英占诺曼底与北法核心'],['fill',HC.war,'1435年倒戈回法的勃艮第公爵领']])
  ]},
 {id:'history-france-louis11',ch:5,title:'查理七世绝食与“宇宙蜘蛛”路易十一：操盘玫瑰战争与肢解勃艮第',short:'“宇宙蜘蛛”路易十一',en:'Charles VII’s Starvation and Louis XI “the Universal Spider”: Manipulating the Wars of the Roses and Dismantling Burgundy',period:'1453—1483年',c:HC.france,
  scenes:[
@@ -10378,7 +10438,7 @@ const HISTORY_ENTRIES=[
     hp(d,'sn2_maastricht',{note:'荷兰林堡在列日北边，德军不借道荷兰，只能从这里南边挤过去。'});
    },[['fill',HC.lowlands,'比利时'],['fill',HC.neutral,'荷兰'],['fill',HC.germany,'德意志帝国'],['dot',HC.war,'列日与鲁'],['dot','#2a2018','布鲁塞尔与马斯特里赫特']])
  ]},
-{id:'history-italy-blackdeath',ch:5,title:'黑死病：从卡法到伦敦',short:'黑死病',en:'The Black Death: From Caffa to London',period:'1346—1353年',c:HC.italy,
+{id:'history-italy-blackdeath',ch:5,title:'黑死病：从卡法到伦敦',short:'黑死病',en:'The Black Death: From Caffa to London',period:'1346—1353年',c:HC.plague,
  scenes:[
   hs('1346—1348年','从卡法到墨西拿：瘟疫顺着商路进欧洲','1346年金帐汗国围攻卡法，军中瘟疫大作；1347年疫病随热那亚商船到君士坦丁堡、墨西拿和亚历山大，1348年1月进热那亚、威尼斯，月底到马赛。',[[30.0,4.0],[47.6,38.6]],d=>{
     ha(d,'mMamluks1291',HC.mino,{fillOpacity:.16,dashArray:'4 4'});
@@ -11826,6 +11886,21 @@ const HISTORY_ENTRIES=[
     hp(d,'w_metz',{note:'8世纪法兰克人在这一带整理出后来叫“格里高利圣咏”的唱法。'});
    },[['dot','#2a2018','礼仪的来路与去处']])
  ]},
+{id:'history-plat-faith-iconoclasm',ch:6,title:'圣像之争与教宗倒向法兰克：东帝撤掉保护伞，逼罗马改换靠山',short:'圣像之争与亲法',en:'Iconoclasm and the Papal Turn to the Franks',period:'641—787年',c:HC.faith,platform:true,
+ scenes:[
+  hs('641—787年','禁毁圣像、丕平献地与尼西亚复像','东帝利奥三世禁圣像并划走南意教产，伦巴第破拉文纳后教宗改投法兰克建教宗国；787年尼西亚恢复圣像。',[[36.8,3.5],[49.8,31.8]],d=>{
+    ha(d,'mFranks768',HC.celt,{fillOpacity:.28});ha(d,'mLombards750',HC.war,{fillOpacity:.28});
+    ha(d,'mPapal756',HC.faith,{fillOpacity:.42});ha(d,'mByz780',HC.byz,{fillOpacity:.28});
+    hr(d,[[41.89,12.48],[45.18,9.16],[48.85,2.35]],HC.faith);
+    hl(d,'法兰克王国','Frankish Kingdom',47.2,3.6,HC.celt);
+    hl(d,'东罗马帝国','East Roman Empire',39.0,23.5,HC.byz);
+    hp(d,'rome',{capital:1,left:1,note:'罗马：东帝无力抵御伦巴第又扣教产，教宗转投法兰克保护。'});
+    hp(d,'ravenna',{note:'拉文纳：751年被伦巴第攻陷，756年丕平夺回献给教宗。'});
+    hp(d,'w_pavia',{left:1,note:'帕维亚：伦巴第都城，774年被查理曼攻克。'});
+    hp(d,'constantinople',{capital:1,left:1,note:'君士坦丁堡：726年利奥三世在此下令禁毁圣像。'});
+    hp(d,'nicaea',{dy:12,note:'尼西亚：787年伊琳娜太后召集第七次大公会议恢复圣像敬礼。'});
+   },[['fill',HC.faith,'丕平献地后的教宗国'],['fill',HC.celt,'法兰克王国'],['fill',HC.war,'伦巴第王国'],['fill',HC.byz,'东罗马帝国']])
+ ]},
 {id:'history-faith-carolingian',ch:6,title:'加洛林神学之争：国王当裁判',short:'加洛林神学之争',en:'The Carolingian Controversies: The King as Referee',period:'787—870年',c:HC.faith,
  scenes:[
   hs('787—794年','圣像：法兰克福驳尼西亚','尼西亚恢复圣像，教宗的使节到会赞同；查理曼的学者逐条驳斥，794年法兰克福会议当着教宗使节斥之为“希腊人的伪会议”。',[[36.0,-2.0],[54.5,31.5]],d=>{
@@ -12030,6 +12105,20 @@ const HISTORY_ENTRIES=[
     hr(d,[[41.49,13.81],[41.13,16.87],[41.32,19.45],[41.12,20.8],[40.64,22.94],[41.01,28.98]],HC.route);
    },[['fill',HC.athens,'东罗马（1025年）'],['dash',HC.athens,'东罗马在南意大利的地盘（巴里、卡拉布里亚）'],['fill',HC.war,'诺曼人的地盘（约1053年）'],['fill',HC.faith,'教宗领'],['dline',HC.route,'1054年使节去君士坦丁堡（概略）'],['dot',HC.war,'1053年奇维塔泰之战'],['dot','#2a2018','卡西诺山、贝内文托、巴里、罗马与君士坦丁堡']])
  ]},
+{id:'history-plat-faith-investiture',ch:6,title:'叙任权之争与卡诺莎：抢回主教任命权，皇帝雪地求饶又反扑',short:'叙任权与卡诺莎',en:'The Investiture Controversy and Canossa',period:'1056—1085年',c:HC.faith,platform:true,
+ scenes:[
+  hs('1056—1085年','枢机选举、卡诺莎罚站与客死萨勒诺','1059年枢机团收回教宗选举权，1077年亨利四世卡诺莎雪地求饶后反攻罗马，1085年格里高利七世死于萨勒诺。',[[39.6,5.8],[51.2,17.8]],d=>{
+    ha(d,'mEmpire1050',HC.germany,{fillOpacity:.28});ha(d,'mMatilda1077',HC.faith,{fillOpacity:.38});
+    ha(d,'mNormanItaly1091',HC.italy,{fillOpacity:.28});
+    hr(d,[[49.63,8.36],[44.58,10.46],[41.89,12.48]],HC.war);
+    hl(d,'神圣罗马帝国','Holy Roman Empire',48.6,11.6,HC.germany);
+    hl(d,'诺曼南意大利','Norman South Italy',40.2,16.2,HC.italy);
+    hp(d,'k_worms',{left:1,note:'沃尔姆斯：1076年亨利四世在此宣布废黜教宗；1122年双方在此签协定妥协。'});
+    hp(d,'it_canossa',{kind:'battle',left:1,note:'卡诺莎：1077年1月亨利四世在玛蒂尔达城堡外雪地赤足悔罪三天。'});
+    hp(d,'rome',{capital:1,left:1,note:'罗马：1084年亨利四世攻入罗马，诺曼援军解围时大肆洗劫全城。'});
+    hp(d,'no_salerno',{dy:12,note:'萨勒诺：1085年5月格里高利七世在诺曼人庇护下流亡病逝于此。'});
+   },[['fill',HC.germany,'神圣罗马帝国'],['fill',HC.faith,'玛蒂尔达领地与教宗盟友'],['fill',HC.italy,'诺曼人统治的南意大利']])
+ ]},
 {id:'history-faith-urban',ch:6,title:'乌尔班二世：两头不讨好',short:'乌尔班二世',en:'Urban II: Squeezed from Both Sides',period:'1085—1095年',c:HC.faith,
  scenes:[
   hs('1085—1088年','主教团选出的克吕尼人','1085年格雷戈里七世死在萨勒诺；1086年德西德里乌斯在罗马被选，在泰拉奇纳卸下标志，回卡西诺山一年，次年在卡普阿松口；1088年3月改革派在泰拉奇纳选出乌尔班二世。',[[40.3,11.8],[42.3,15.3]],d=>{
@@ -12170,6 +12259,19 @@ const HISTORY_ENTRIES=[
     hp(d,'w_pavia',{note:'1160年2月，腓特烈一世召集的会议在此认维克托四世。'});
     hp(d,'w_venice',{note:'1177年腓特烈一世在此认了亚历山大三世。'});
    },[['fill',HC.germany,'意大利王国（帝国治下，约950年轮廓）'],['fill',HC.faith,'教宗领（概略）'],['fill',HC.war,'西西里王国（概略）'],['dot','#2a2018','贝内文托、罗马、宁法、法尔法、帕维亚与威尼斯']])
+ ]},
+{id:'history-plat-faith-staufer',ch:6,title:'教宗与霍亨施陶芬皇室：从南北被夹、登顶监护到透支教廷威信',short:'教宗与霍亨施陶芬',en:'The Papacy and the Hohenstaufen',period:'1152—1250年',c:HC.faith,platform:true,
+ scenes:[
+  hs('1152—1250年','南北合围、英诺森登顶与死磕腓特烈二世','亨利六世并西西里合围罗马后早逝，英诺森三世把教权推向巅峰；此后教廷为灭腓特烈二世透支威信。',[[36.8,3.8],[49.8,18.8]],d=>{
+    ha(d,'mEmpire1050',HC.germany,{fillOpacity:.26});ha(d,'mPapal1210',HC.faith,{fillOpacity:.42});
+    ha(d,'mSicilyKingdom1190',HC.war,{fillOpacity:.28});
+    hl(d,'神圣罗马帝国','Holy Roman Empire',47.6,10.8,HC.germany);
+    hl(d,'西西里王国','Kingdom of Sicily',39.2,15.8,HC.war);
+    hp(d,'rome',{capital:1,left:1,note:'罗马：1215年英诺森三世在此召开第四次拉特兰公会议，号令欧洲列王。'});
+    hp(d,'sh_assisi',{note:'阿西西：英诺森三世批准方济各托钵修会，收编城市贫民信仰热情。'});
+    hp(d,'it_palermo',{note:'巴勒莫：亨利六世与腓特烈二世父子的西西里王都，与罗马南北相持。'});
+    hp(d,'k_lyon',{left:1,note:'里昂：1245年教宗英诺森四世逃往此处开公会议，宣布废黜腓特烈二世。'});
+   },[['fill',HC.faith,'英诺森三世扩建的教宗国'],['fill',HC.germany,'神圣罗马帝国'],['fill',HC.war,'霍亨施陶芬兼领的西西里王国']])
  ]},
 {id:'history-faith-scholasticism',ch:6,title:'经院哲学：城市里的大学与逻辑',short:'经院哲学',en:'Scholasticism: Universities, Aristotle and the Doubts of Logic',period:'约1150—1303年',c:HC.faith,
  scenes:[
@@ -13969,7 +14071,7 @@ const HISTORY_ENTRIES=[
     hr(d,[[37.66,62.19],[36.21,58.8],[35.59,51.44],[34.8,48.52],[33.6,46.0],[32.03,44.4]],HC.war);
    },[['dash',HC.myc,'倭马亚旧疆（示意）'],['dline',HC.war,'747—749年黑旗军西进（概略）'],['dot',HC.war,'大扎卜河'],['dot','#2a2018','木鹿、库法、卡尔巴拉与大马士革']])
  ]},
-{id:'history-arab-constantinople',ch:9,title:'君士坦丁堡之围：希腊火挡住北线',short:'君士坦丁堡之围',en:'The Arab Sieges of Constantinople',period:'667—718年',c:HC.byz,
+{id:'history-arab-constantinople',ch:9,title:'君士坦丁堡之围：希腊火挡住北线',short:'君士坦丁堡之围',en:'The Arab Sieges of Constantinople',period:'667—718年',c:HC.parthia,
  scenes:[
   hs('667—678年','头一回：希腊火','阿拉伯舰队占罗得岛、在基齐库斯过冬，连年攻城；卡利尼库斯的“海火”烧船，舰队又遭风暴；678年哈里发求和纳贡。',[[31.0,22.0],[43.5,39.0]],d=>{
     ha(d,'mByz680',HC.athens,{fillOpacity:.16});ha(d,'mCaliph661',HC.myc,{fillOpacity:.16});
@@ -14079,6 +14181,23 @@ const HISTORY_ENTRIES=[
     hp(d,'w_baghdad',{note:'1092年11月马利克沙在此发烧而死。'});
     hp(d,'p_isfahan',{note:'基利吉·阿尔斯兰被扣在这里当人质，马利克沙死后逃回小亚细亚。'});
    },[['fill',HC.athens,'东罗马（1081年，示意）'],['fill',HC.parthia,'罗姆苏丹国（1092年，示意）'],['dash',HC.parthia,'大塞尔柱（1092年，示意）'],['dot','#2a2018','尼西亚、君士坦丁堡、安条克、萨赫纳、巴格达与伊斯法罕']])
+ ]},
+{id:'history-plat-persia-crusade',ch:9,title:'法兰克东侵与伊斯兰反击：从散沙丢圣城到赞吉、萨拉丁与马穆鲁克清场',short:'十字军与反击',en:'Frankish Invasion and the Zangid–Ayyubid–Mamluk Counteroffensive',period:'1096—1291年',c:HC.parthia,platform:true,
+ scenes:[
+  hs('1096—1291年','叙埃合流、哈丁收复圣城与马穆鲁克清场','塞尔柱分裂让十字军占领海岸；赞吉、努尔丁与萨拉丁合拢叙埃收复耶路撒冷，1291年马穆鲁克拔除阿卡。',[[29.2,29.5],[38.2,44.8]],d=>{
+    ha(d,'mAyyubids1190',HC.parthia,{fillOpacity:.32});ha(d,'mCrusaderCoast1192',HC.crusade,{fillOpacity:.38});
+    ha(d,'mAbbasidIraq1250',HC.celt,{fillOpacity:.24});
+    hr(d,[[33.51,36.29],[32.80,35.44],[31.78,35.24]],HC.parthia);
+    hl(d,'阿尤布—马穆鲁克叙埃疆域','Syria & Egypt',31.2,32.8,HC.parthia);
+    hl(d,'两河阿拔斯残境','Iraq',33.8,42.5,HC.celt);
+    hp(d,'edessa',{kind:'battle',note:'埃德萨：1144年摩苏尔统帅赞吉攻克此城，灭掉首个十字军国家。'});
+    hp(d,'p_damascus',{note:'大马士革：努尔丁与萨拉丁整合叙利亚、反击十字军的前线重镇。'});
+    hp(d,'sl_hattin',{kind:'battle',note:'哈丁角山：1187年7月萨拉丁断水围歼耶路撒冷王国主力。'});
+    hp(d,'jerusalem',{capital:1,dy:12,note:'耶路撒冷：1099年陷于十字军，1187年10月萨拉丁和平受降收复。'});
+    hp(d,'cx_acre',{kind:'battle',left:1,note:'阿卡：十字军最后据点，1291年5月被马穆鲁克苏丹攻克拆毁。'});
+    hp(d,'cm_ainjalut',{kind:'battle',left:1,dy:10,note:'艾因贾鲁特：1260年埃及马穆鲁克在此击溃蒙古西征前锋。'});
+    hp(d,'cx_cairo',{capital:1,left:1,note:'开罗：1171年萨拉丁在此终结法蒂玛朝；1250年马穆鲁克近卫军在此建国。'});
+   },[['fill',HC.parthia,'萨拉丁阿尤布王朝与马穆鲁克苏丹国合拢的叙埃腹地'],['fill',HC.crusade,'残存沿海的十字军据点（1291年清零）'],['fill',HC.celt,'巴格达阿拔斯哈里发辖区']])
  ]},
 {id:'history-persia-mongols',ch:9,title:'蒙古三次西征：踏平花剌子模、拔都屠基辅与旭烈兀灭巴格达',short:'蒙古西征',en:'The Three Mongol Westward Campaigns: Crushing Khwarazm, Batu at Kiev, and Hulagu at Baghdad',period:'1206—1260年',c:HC.parthia,
  scenes:[
@@ -16456,7 +16575,7 @@ const HISTORY_ENTRIES=[
     hp(d,'k_london',{note:'爱德华一世葬入威斯敏斯特修道院素面大理石棺，后世漆上“爱德华一世，苏格兰人之锤，守信当遵”。'});
    },[['fill',HC.celt,'罗伯特·布鲁斯重夺独立的苏格兰王国'],['fill',HC.britain,'英格兰王国'],['dash',HC.britain,'已并入王领的威尔士'],['dot',HC.war,'1306年邓弗里斯刺杀与1314年斯特灵（班诺克本）'],['dot','#2a2018','斯昆、堡下沙地与伦敦']])
  ]},
-{id:'history-britain-edward2',ch:12,title:'百年战争前夜：阿基坦称臣与“法兰西母狼”',short:'百年战争前夜',en:'Eve of the Hundred Years’ War: Homage for Aquitaine and the She-Wolf of France',period:'1200—1330年',c:HC.britain,
+{id:'history-britain-edward2',ch:12,title:'百年战争前夜：阿基坦称臣与“法兰西母狼”',short:'百年战争前夜',en:'Eve of the Hundred Years’ War: Homage for Aquitaine and the She-Wolf of France',period:'1200—1330年',c:HC.hyw,
  scenes:[
   hs('1200—1215年','强娶夺地与布汶战败：大陆只剩加斯科涅','1200年约翰强娶封臣未婚妻，1202年腓力二世没收其大陆封地，1204—1206年夺走诺曼底与安茹；1214年布汶惨败后英王在大陆只剩加斯科涅，1215年被迫签《大宪章》。',[[42.8,-4.8],[52.8,5.2]],d=>{
     ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});ha(d,'mGascony1223',HC.britain,{fillOpacity:.34});
@@ -16516,7 +16635,23 @@ const HISTORY_ENTRIES=[
     hr(d,[[52.95,-1.15],[51.51,-0.13]],HC.britain);
    },[['fill',HC.britain,'爱德华三世亲政后的英格兰（1330年）'],['fill',HC.celt,'莫蒂默盘踞多年的威尔士与边境领'],['dline',HC.britain,'1330年10—11月押解莫蒂默赴伦敦受审路线（概略）'],['dot',HC.war,'1330年10月19日夜诺丁汉城堡密道突袭'],['dot','#2a2018','温彻斯特、伦敦与格洛斯特']])
  ]},
-{id:'history-britain-hundred-years-1',ch:12,title:'百年战争（一）：从内勒塔到生擒法王',short:'百年战争（一）',en:'The Hundred Years’ War (I): From the Tour de Nesle to the Capture of the French King',period:'1314—1360年',c:HC.britain,
+{id:'history-plat-britain-hyw1',ch:12,title:'百年战争月台（前）：长弓胜仗、黑死病与下议院攥住羊毛税',short:'百年战争月台（前）',en:'Hundred Years’ War (Early): Longbows, Plague and the Commons',period:'1307—1377年',c:HC.britain,platform:true,
+ scenes:[
+  hs('1307—1377年','长弓远征、羊毛税换立法权与黑死病缺工','爱德华三世靠长弓大破法军，为筹军费让下议院坐大；1348年黑死病砍半劳力，晚年败兵回流本岛。',[[44.2,-4.5],[54.8,5.2]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'mFlanders900',HC.celt,{fillOpacity:.3});
+    ha(d,'mGascony1223',HC.britain,{fillOpacity:.32});ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.22});
+    hr(d,[[50.91,-1.40],[50.25,1.88],[50.95,1.86]],HC.war);
+    hl(d,'英格兰王国','Kingdom of England',52.6,-1.6,HC.britain);
+    hl(d,'佛兰德毛纺区','Flanders',51.0,3.6,HC.celt);
+    hp(d,'k_london',{capital:1,left:1,note:'伦敦威斯敏斯特：下议院借审批羊毛军费税，确立“先申冤后拨款”规矩。'});
+    hp(d,'sn1_southampton',{left:1,note:'南安普敦：1348年黑死病由此登陆英格兰，劳力锐减动摇庄园农奴制。'});
+    hp(d,'hy1_calais',{note:'加来：1347年英军攻占，成为英国羊毛输往欧洲大陆的总税关。'});
+    hp(d,'hy1_crecy',{kind:'battle',dy:12,note:'克雷西：1346年爱德华三世与黑太子靠长弓阵大破法军。'});
+    hp(d,'k_poitiers',{kind:'battle',note:'普瓦捷：1356年黑太子俘获法王约翰二世。'});
+    hp(d,'w_bordeaux',{left:1,note:'波尔多：英属加斯科涅葡萄酒与驻军中心；1370年代法军反攻后缩回沿海。'});
+   },[['fill',HC.britain,'英格兰本土与加斯科涅领地'],['fill',HC.celt,'英国羊毛买家佛兰德'],['fill',HC.france,'瓦卢瓦法兰西']])
+ ]},
+{id:'history-britain-hundred-years-1',ch:12,title:'百年战争（一）：从内勒塔到生擒法王',short:'百年战争（一）',en:'The Hundred Years’ War (I): From the Tour de Nesle to the Capture of the French King',period:'1314—1360年',c:HC.hyw,
  scenes:[
   hs('1314—1328年','内勒塔丑闻与卡佩王朝绝嗣','1314年春伊莎贝拉回巴黎告发嫂子在内勒塔通奸，奥奈兄弟在蓬图瓦兹受极刑、两王妃囚入加亚尔城堡；三兄弟十四年间相继绝男嗣，1328年瓦卢瓦的腓力六世继位。',[[46.5,-2.5],[52.2,5.5]],d=>{
     ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.3});ha(d,'mEngland1066',HC.britain,{fillOpacity:.26});
@@ -16568,7 +16703,7 @@ const HISTORY_ENTRIES=[
     hp(d,'w_paris',{note:'法国为凑赎金首次开铸“法郎”金币（意为自由之身），并确立常设税收。'});
    },[['fill',HC.britain,'1360年《布雷蒂尼条约》后英王享有完全主权的英格兰与大阿基坦'],['fill',HC.france,'被迫割地赔款的法兰西'],['dot',HC.war,'1360年5月《布雷蒂尼条约》'],['dot','#2a2018','加来、波尔多、伦敦与巴黎']])
  ]},
-{id:'history-britain-hundred-years-2',ch:12,title:'百年战争的账本：下议院、羊毛税与盛世隐患',short:'百年战争的账本',en:'The Ledger of the Hundred Years’ War: Commons, Wool and Hidden Perils',period:'1272—1381年',c:HC.britain,
+{id:'history-britain-hundred-years-2',ch:12,title:'百年战争的账本：下议院、羊毛税与盛世隐患',short:'百年战争的账本',en:'The Ledger of the Hundred Years’ War: Commons, Wool and Hidden Perils',period:'1272—1381年',c:HC.hyw,
  scenes:[
   hs('1272—1307年','爱德华一世：联市镇压贵族与羊毛兴起','英格兰主教服从王权、不握藩镇，爱德华一世给自治市镇更大权力以挤压世俗大贵族；1275年确立每袋半马克羊毛常税，1295年模范议会让市镇代表痛快批税。',[[49.8,-4.8],[55.5,4.8]],d=>{
     ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});ha(d,'mFlanders900',HC.war,{fillOpacity:.28});
@@ -16607,7 +16742,7 @@ const HISTORY_ENTRIES=[
     hp(d,'hy2_bruges',{note:'佛兰德与大陆市场：出口关税与进口英镑税由英格兰产毛户、织工与消费者共同分摊。'});
    },[['fill',HC.britain,'税负层层转嫁、1381年爆发大起义的英格兰'],['fill',HC.war,'大陆毛纺市场'],['dot',HC.war,'加来羊毛专卖公会与1381年伦敦大起义'],['dot','#2a2018','波士顿与布鲁日']])
  ]},
-{id:'history-britain-hundred-years-3',ch:12,title:'百年战争（二）：长弓破骑士、大劫掠反噬与得而复失',short:'百年战争（二）',en:'The Hundred Years’ War (II): The Longbow Revolution, Chevauchée Backlash and Lost Gains',period:'1360—1380年',c:HC.britain,
+{id:'history-britain-hundred-years-3',ch:12,title:'百年战争（二）：长弓破骑士、大劫掠反噬与得而复失',short:'百年战争（二）',en:'The Hundred Years’ War (II): The Longbow Revolution, Chevauchée Backlash and Lost Gains',period:'1360—1380年',c:HC.hyw,
  scenes:[
   hs('1360—1362年','第一阶段后英国收复的土地','1360年《布雷蒂尼条约》后，英王在西南拥有从普瓦图到比利牛斯山的大阿基坦亲王国，在北边握有加来与蓬蒂厄，均享完全主权、不再向法王称臣。',[[42.8,-4.5],[52.2,4.8]],d=>{
     ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});ha(d,'mAquitaineDuchy900',HC.britain,{fillOpacity:.36});
@@ -16696,7 +16831,7 @@ const HISTORY_ENTRIES=[
     hr(d,[[53.61,0.12],[52.95,-1.15],[53.28,-3.83],[51.51,-0.13]],HC.war);
    },[['fill',HC.britain,'倒戈拥立亨利四世（兰开斯特王朝）的英格兰'],['fill',HC.celt,'威尔士'],['fill',HC.war,'理查二世出征的爱尔兰'],['dline',HC.war,'1399年7—9月亨利·博林布鲁克夺位路线（概略）'],['dot',HC.war,'雷文斯珀、康威与庞蒂弗拉克特'],['dot','#2a2018','都柏林与伦敦']])
  ]},
-{id:'history-britain-hundred-years-4',ch:12,title:'百年战争（三）：玻璃疯王、蒙特罗血案与英法双王合体',short:'百年战争（三）',en:'The Hundred Years’ War (III): The Glass King, Agincourt, Montereau and the Dual Monarchy',period:'1380—1422年',c:HC.britain,
+{id:'history-britain-hundred-years-4',ch:12,title:'百年战争（三）：玻璃疯王、蒙特罗血案与英法双王合体',short:'百年战争（三）',en:'The Hundred Years’ War (III): The Glass King, Agincourt, Montereau and the Dual Monarchy',period:'1380—1422年',c:HC.hyw,
  scenes:[
   hs('1380—1411年','疯王自认玻璃人，弟弟派与堂弟派内战','1392年查理六世在勒芒森林发疯，常自认玻璃人；亲弟奥尔良公爵与堂弟勃艮第公爵无畏的约翰争权，1407年无畏的约翰在巴黎暗杀奥尔良公爵，引发与阿马尼亚克派内战。',[[42.8,-2.5],[51.5,6.5]],d=>{
     ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.28});ha(d,'mBurgundyDuchy900',HC.war,{fillOpacity:.32});
@@ -16747,7 +16882,23 @@ const HISTORY_ENTRIES=[
     hp(d,'cl_bourges',{left:1,note:'1422年10月废太子在布尔日自行称王（查理七世），法兰西裂为南北两个朝廷。'});
    },[['fill',HC.britain,'婴儿亨利六世名义统治的英格兰、北法与加斯科涅'],['fill',HC.war,'盟友勃艮第公国'],['fill',HC.france,'南方“布尔日小王”查理七世控制区'],['dot',HC.war,'1422年万塞讷/巴黎两王去世与伦敦双冠继位'],['dot','#2a2018','布尔日']])
  ]},
-{id:'history-britain-hundred-years-5',ch:12,title:'百年战争（四）：托孤制衡、四叔作妖与英勃同盟破裂',short:'百年战争（四）',en:'The Hundred Years’ War (IV): The Regency Feud, Jacqueline of Hainaut and the Breach with Burgundy',period:'1422—1435年',c:HC.britain,
+{id:'history-plat-britain-hyw2',ch:12,title:'百年战争月台（后）：从阿金库尔高光到丢光大陆领地',short:'百年战争月台（后）',en:'Hundred Years’ War (Late): From Agincourt to the Loss of France',period:'1413—1453年',c:HC.britain,platform:true,
+ scenes:[
+  hs('1413—1453年','阿金库尔大捷、幼主接盘与退回海岛','1415年亨利五世赢下阿金库尔却在三十五岁早逝；1453年亨利六世丢尽诺曼底与波尔多，败兵回流引爆内战。',[[44.2,-3.6],[53.4,5.2]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'mNormandy933',HC.war,{fillOpacity:.3});
+    ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.26});
+    hl(d,'英格兰王国','Kingdom of England',52.0,-1.5,HC.britain);
+    hl(d,'1450年失守的诺曼底','Lost Normandy',49.1,-0.4,HC.war);
+    hp(d,'k_london',{capital:1,left:1,note:'伦敦：1453年战败消息传回，亨利六世突发精神木僵，约克与兰开斯特两派拔刀相向。'});
+    hp(d,'hy1_calais',{note:'加来：1453年后英格兰在欧洲大陆残存的唯一据点。'});
+    hp(d,'hy4_agincourt',{kind:'battle',dy:12,note:'阿金库尔：1415年10月亨利五世以少胜多击溃法军主力。'});
+    hp(d,'fr_rouen',{left:1,note:'鲁昂：亨利五世征服的诺曼底首府，1449年被法军收回。'});
+    hp(d,'jn_orleans',{kind:'battle',note:'奥尔良：1429年英军围城功败垂成，成为战局转折点。'});
+    hp(d,'jn_castillon',{kind:'battle',note:'卡斯蒂永：1453年英军老帅塔尔博特战死，英格兰大陆帝国终结。'});
+    hp(d,'w_bordeaux',{left:1,dy:10,note:'波尔多：自1154年金雀花联姻以来统治三百年的阿基坦首府自此易主。'});
+   },[['fill',HC.britain,'退回本岛的英格兰（仅存加来）'],['fill',HC.war,'亨利五世一度占领、1450年丢掉的诺曼底'],['fill',HC.france,'收复大陆领地的法兰西']])
+ ]},
+{id:'history-britain-hundred-years-5',ch:12,title:'百年战争（四）：托孤制衡、四叔作妖与英勃同盟破裂',short:'百年战争（四）',en:'The Hundred Years’ War (IV): The Regency Feud, Jacqueline of Hainaut and the Breach with Burgundy',period:'1422—1435年',c:HC.hyw,
  scenes:[
   hs('1422—1426年','托孤制衡失灵：四叔与王太叔伦敦动兵','1422年亨利五世遗命三叔管法国、四叔护国英格兰、王太叔博福特主教辅政制衡；1425年10月四叔与王太叔在伦敦桥陈兵火并，三叔赶回于1426年2月开莱斯特“棍棒议会”调停。',[[47.5,-3.5],[54.2,3.8]],d=>{
     ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'mNormandy933',HC.britain,{fillOpacity:.3});
@@ -16781,7 +16932,7 @@ const HISTORY_ENTRIES=[
     hp(d,'w_paris',{note:'1432年11月勃艮第的安妮死于巴黎；1435年勃艮第倒戈后，孤立无援的巴黎次年即向法王开门。'});
    },[['fill',HC.britain,'失去勃艮第盟友后孤立无援的英占诺曼底'],['fill',HC.war,'1435年《阿拉斯条约》倒向法王的勃艮第公国'],['fill',HC.france,'查理七世的法兰西'],['dot',HC.war,'1435年9月鲁昂三叔病逝与阿拉斯倒戈'],['dot','#2a2018','巴黎']])
  ]},
-{id:'history-britain-jeanne',ch:12,title:'圣女贞德与百年战争终局：从奥尔良解围到火刑架与神话',short:'圣女贞德与百年战争终局',en:'Joan of Arc and the End of the Hundred Years’ War: From Orléans to the Stake and the Myth',period:'1428—1453年',c:HC.britain,
+{id:'history-britain-jeanne',ch:12,title:'圣女贞德与百年战争终局：从奥尔良解围到火刑架与神话',short:'圣女贞德与百年战争终局',en:'Joan of Arc and the End of the Hundred Years’ War: From Orléans to the Stake and the Myth',period:'1428—1453年',c:HC.hyw,
  scenes:[
   hs('1428—1429年2月','王三叔围攻奥尔良：卢瓦尔河咽喉之战','1428年10月王三叔派索尔兹伯里伯爵围攻奥尔良，夺占南岸图雷尔桥头堡（索尔兹伯里中炮身亡）；1429年2月英军在“鲱鱼之战”击败法苏联军，奥尔良危在旦夕。',[[46.5,-0.5],[50.2,4.2]],d=>{
     ha(d,'mNormandy933',HC.britain,{fillOpacity:.34});ha(d,'mBurgundyDuchy900',HC.war,{fillOpacity:.28});
@@ -19702,16 +19853,16 @@ const HISTORY_ERAS=[
  {id:'empire-iconoclasm',name:'东罗马：圣像之争时代',en:'East Rome: the Age of Iconoclasm',date:'717—867年',c:HC.byz,items:[['history-empire-isaurian'],['history-empire-amorian']]},
  {id:'empire-macedonian',name:'东罗马：马其顿王朝',en:'East Rome: the Macedonian Dynasty',date:'867—1056年',c:HC.byz,items:[['history-empire-macedonian',0,2],['history-empire-macedonian',3,3,'东西教会大分裂']]},
  {id:'empire-late',name:'东罗马：马其顿王朝以后',en:'East Rome after the Macedonians',date:'1025—1095年',c:HC.byz,items:[['history-empire-zoe'],['history-empire-alexios']]},
- {id:'empire-east-end',name:'东罗马：从科穆宁中兴到1453年亡国',en:'East Rome: From the Komnenians to the Fall of 1453',date:'1081—1453年',c:HC.byz,items:[['history-empire-komnenos'],['history-empire-palaiologos'],['history-empire-fall-1453']]},
+ {id:'empire-east-end',name:'东罗马：从科穆宁中兴到1453年亡国',en:'East Rome: From the Komnenians to the Fall of 1453',date:'1081—1453年',c:HC.byz,items:[['history-empire-komnenos'],['history-plat-east-1204'],['history-empire-palaiologos'],['history-empire-fall-1453']]},
  {id:'empire-kingdoms',name:'中世纪早期：蛮族诸王国',en:'The Barbarian Kingdoms',date:'476—568年',c:HC.celt,items:[['history-west-kingdoms'],['history-west-ostrogoths']]},
  {id:'empire-franks',name:'中世纪早期：法兰克与伦巴第',en:'Franks and Lombards',date:'561—843年',c:HC.celt,items:[['history-west-merovingians'],['history-west-lombards'],['history-west-charlemagne'],['history-west-charlemagne-rule'],['history-west-louis-pious']]},
  {id:'empire-verdun',name:'中世纪早期：凡尔登之后',en:'After Verdun',date:'843—987年',c:HC.celt,items:[['history-france-west-francia',0,0,'秃头查理'],['history-france-west-francia',1,4,'维京人与诺曼底'],['history-france-west-francia',5,5,'卡佩登场'],['history-germany-east-francia'],['history-italy-middle-francia'],['history-germany-otto']]},
  {id:'empire-spain',name:'西班牙：从迦太基到后倭马亚',en:'Spain from Carthage to the Umayyads of Córdoba',date:'约前1100—1031年',c:HC.spain,items:[['history-spain-before-goths'],['history-spain-visigoths'],['history-spain-toledo'],['history-spain-fall',0,1],['history-spain-fall',2,2,'塔里克渡海'],['history-spain-andalus']]},
  {id:'empire-high',name:'中世纪盛期：皇帝、教宗与诺曼人',en:'The High Middle Ages: Emperors, Popes and Normans',date:'973—1106年',c:HC.germany,items:[['history-germany-ottonians'],['history-germany-salian'],['history-germany-investiture'],['history-germany-canossa'],['history-italy-normans']]},
  {id:'empire-worms',name:'中世纪盛期：沃尔姆斯之后，施陶芬上台',en:'After Worms: The Hohenstaufen Come to the Throne',date:'1106—1152年',c:HC.germany,items:[['history-germany-worms'],['history-germany-staufer']]},
- {id:'empire-italy',name:'中世纪盛期：北意大利城市与西西里王国',en:'The Northern Cities and the Kingdom of Sicily',date:'约950—1166年',c:HC.italy,items:[['history-italy-cities'],['history-italy-sicily']]},
+ {id:'empire-italy',name:'中世纪盛期：北意大利城市与西西里王国',en:'The Northern Cities and the Kingdom of Sicily',date:'约950—1268年',c:HC.italy,items:[['history-italy-cities'],['history-italy-sicily'],['history-plat-italy-staufer']]},
  {id:'empire-staufer',name:'中世纪盛期：红胡子、亨利六世与英诺森三世',en:'Barbarossa, Henry VI and Innocent III',date:'1152—1216年',c:HC.germany,items:[['history-germany-barbarossa'],['history-germany-henry6'],['history-germany-innocent']]},
- {id:'empire-france',name:'法兰西：从卡佩开张到“宇宙蜘蛛”一统',en:'France: From Hugh Capet to Louis XI',date:'987—1483年',c:HC.france,items:[['history-france-capet'],['history-france-plantagenet'],['history-france-stlouis'],['history-france-valois'],['history-france-louis11']]},
+ {id:'empire-france',name:'法兰西：从卡佩开张到“宇宙蜘蛛”一统',en:'France: From Hugh Capet to Louis XI',date:'987—1483年',c:HC.france,items:[['history-france-capet'],['history-france-plantagenet'],['history-france-stlouis'],['history-plat-france-hyw1'],['history-france-valois'],['history-plat-france-hyw2'],['history-france-louis11']]},
  {id:'empire-france-wars',name:'法兰西：从亨利二世到三个亨利',en:'France: From Henry II to the Three Henrys',date:'1534—1589年',c:HC.france,items:[['history-france-henri2'],['history-france-huguenots'],['history-france-catherine'],['history-france-bartholomew'],['history-france-henrys-1'],['history-france-henrys-2']]},
  {id:'empire-france-bourbon',name:'法兰西：波旁开国到黎塞留',en:'France: The First Bourbons and Richelieu',date:'1589—1642年',c:HC.france,items:[['history-france-henry4-1'],['history-france-henry4-2'],['history-france-marie'],['history-france-richelieu']]},
  {id:'empire-france-louis14',name:'法兰西：路易十四的世纪',en:'France: The Age of Louis XIV',date:'1643—1715年',c:HC.france,items:[['history-france-fronde'],['history-france-pyrenees'],['history-france-louis14'],['history-france-dutch-war'],['history-france-revocation'],['history-france-nine-years'],['history-france-spanish-succession']]},
@@ -19725,7 +19876,7 @@ const HISTORY_ERAS=[
  {id:'empire-italy-habsburg',name:'意大利：西班牙与奥地利治下',en:'Italy under Spain and Austria',date:'1559—1796年',c:HC.italy,items:[['history-italy-spanish'],['history-italy-savoy']]},
  {id:'empire-italy-risorgimento',name:'意大利：从拿破仑到拉特兰条约',en:'Italy: From Napoleon to the Lateran Treaty',date:'1796—1929年',c:HC.italy,items:[['history-italy-napoleon'],['history-italy-mazzini'],['history-italy-cavour'],['history-italy-rome'],['history-italy-lateran']]},
  {id:'empire-lowlands-modern',name:'低地诸国：从黄金时代到比利时中立',en:'The Low Countries: From the Golden Age to Belgian Neutrality',date:'1648—1914年',c:HC.lowlands,items:[['history-lowlands-golden-age'],['history-lowlands-batavian'],['history-lowlands-belgium'],['history-lowlands-congo']]},
- {id:'empire-blackdeath',name:'中世纪晚期：黑死病',en:'The Late Middle Ages: the Black Death',date:'1346—1353年',c:HC.italy,items:[['history-italy-blackdeath']]},
+ {id:'empire-blackdeath',name:'中世纪晚期：黑死病',en:'The Late Middle Ages: the Black Death',date:'1346—1353年',c:HC.plague,items:[['history-italy-blackdeath',0,2,'黑死病（上）'],['history-italy-blackdeath',3,6,'黑死病（下）']]},
  {id:'empire-taifas',name:'西班牙：泰法与圣战',en:'Spain: the Taifas and Holy War',date:'1031—1123年',c:HC.spain,items:[['history-spain-taifas'],['history-spain-crusade']]},
  {id:'empire-spain-1492',name:'西班牙与葡萄牙：从托洛萨到1492大航海',en:'Spain and Portugal: From Las Navas to 1492',date:'1123—1572年',c:HC.spain,items:[['history-spain-reconquista'],['history-spain-aragon'],['history-spain-monarchs'],['history-spain-granada'],['history-spain-inquisition'],['history-spain-1492']]},
  {id:'empire-spain-habsburg',name:'西班牙：哈布斯堡的世界帝国与尼德兰独立',en:'Habsburg Spain and the Dutch Revolt',date:'1489—1648年',c:HC.spain,items:[['history-spain-habsburg'],['history-spain-philip2'],['history-spain-netherlands-1'],['history-spain-netherlands-2'],['history-spain-armada'],['history-spain-philips']]},
@@ -19734,11 +19885,11 @@ const HISTORY_ERAS=[
  {id:'faith-temple',name:'第二圣殿时期',en:'The Second Temple',date:'前538—公元73年',c:HC.faith,items:[['history-faith-second-temple'],['history-faith-jesus']]},
  {id:'faith-church',name:'早期教会',en:'The Early Church',date:'73—451年',c:HC.faith,items:[['history-faith-church'],['history-faith-empire-church'],['history-faith-councils'],['history-faith-ephesus'],['history-faith-two-cities']]},
  {id:'faith-medieval',name:'中世纪早期的教会',en:'The Early Medieval Church',date:'451—604年',c:HC.faith,items:[['history-faith-papacy'],['history-faith-three-chapters'],['history-faith-gregory']]},
- {id:'faith-carolingian',name:'加洛林时代的教会',en:'The Church in the Carolingian Age',date:'787—870年',c:HC.faith,items:[['history-faith-carolingian']]},
- {id:'faith-reform',name:'帝国与教会改革',en:'Empire and Church Reform',date:'875—1054年',c:HC.faith,items:[['history-faith-dark-century'],['history-faith-imperial-church'],['history-faith-cluny'],['history-faith-leo-ix']]},
+ {id:'faith-carolingian',name:'圣像之争与加洛林时代的教会',en:'Iconoclasm and the Church in the Carolingian Age',date:'641—870年',c:HC.faith,items:[['history-plat-faith-iconoclasm'],['history-faith-carolingian']]},
+ {id:'faith-reform',name:'帝国与教会改革',en:'Empire and Church Reform',date:'875—1085年',c:HC.faith,items:[['history-faith-dark-century'],['history-faith-imperial-church'],['history-faith-cluny'],['history-faith-leo-ix'],['history-plat-faith-investiture']]},
  {id:'faith-crusade',name:'乌尔班二世与十字军的号召',en:'Urban II and the Call to Crusade',date:'1085—1095年',c:HC.faith,items:[['history-faith-urban']]},
  {id:'faith-orders',name:'修会的兴替',en:'The Rise and Fall of Monastic Orders',date:'1088—1153年',c:HC.faith,items:[['history-faith-citeaux']]},
- {id:'faith-cardinals',name:'枢机团与两个教宗',en:'The Cardinals and the Double Elections',date:'1099—1179年',c:HC.faith,items:[['history-faith-cardinals']]},
+ {id:'faith-cardinals',name:'枢机团、双选与霍亨施陶芬',en:'The Cardinals, Double Elections and the Hohenstaufen',date:'1099—1250年',c:HC.faith,items:[['history-faith-cardinals'],['history-plat-faith-staufer']]},
  {id:'faith-scholasticism',name:'大学与经院哲学',en:'Universities and Scholasticism',date:'约1150—1303年',c:HC.faith,items:[['history-faith-scholasticism']]},
  {id:'faith-avignon',name:'阿维尼翁之囚',en:'The Avignon Captivity',date:'1294—1314年',c:HC.faith,items:[['history-faith-avignon'],['history-faith-clement']]},
  {id:'faith-schism',name:'教会大分裂与宗教改革',en:'The Western Schism and the Reformation',date:'1322—1669年',c:HC.faith,items:[['history-faith-schism'],['history-faith-constance'],['history-faith-reformation-1'],['history-faith-reformation-2'],['history-faith-trent'],['history-faith-jesuits'],['history-faith-teresa']]},
@@ -19756,7 +19907,7 @@ const HISTORY_ERAS=[
  {id:'persia-iranian',name:'安息与萨珊',en:'Parthians and Sasanians',date:'前141—602年',c:HC.parthia,items:[['history-persia-parthia'],['history-persia-sasanian'],['history-persia-khosrow'],['history-persia-khosrow-ii']]},
  {id:'arab-caliphate',name:'阿拉伯：兴起、扩张与统治',en:'The Arabs: Rise, Conquest and Rule',date:'约525—945年',c:HC.parthia,items:[['history-arab-rise'],['history-arab-muhammad'],['history-arab-conquest'],['history-arab-expansion'],['history-arab-caliphs'],['history-arab-constantinople'],['history-arab-abbasid']]},
  {id:'arab-seljuks',name:'塞尔柱突厥',en:'The Seljuk Turks',date:'945—1092年',c:HC.parthia,items:[['history-arab-seljuks',0,2],['history-arab-seljuks',3,4,'曼齐刻尔特']]},
- {id:'arab-mongols',name:'从蒙古西征到帖木儿与奥斯曼崛起',en:'From the Mongols to Timur and the Ottomans',date:'1206—1501年',c:HC.parthia,items:[['history-persia-mongols'],['history-persia-timur'],['history-persia-ottoman']]},
+ {id:'arab-mongols',name:'从十字军反击、蒙古西征到帖木儿与奥斯曼崛起',en:'From the Counter-Crusade and the Mongols to Timur and the Ottomans',date:'1096—1501年',c:HC.parthia,items:[['history-plat-persia-crusade'],['history-persia-mongols'],['history-persia-timur'],['history-persia-ottoman']]},
  {id:'ottoman-empire',name:'奥斯曼：从查尔迪兰到卡尔洛维茨',en:'The Ottomans: From Chaldiran to Karlowitz',date:'1501—1718年',c:HC.parthia,items:[['history-ottoman-suleiman'],['history-ottoman-lepanto']]},
  {id:'ottoman-end',name:'奥斯曼：东方问题与帝国的终结',en:'The Ottomans: The Eastern Question and the End of Empire',date:'1768—1923年',c:HC.parthia,items:[['history-ottoman-eastern-question'],['history-ottoman-crimea'],['history-ottoman-berlin'],['history-ottoman-ww1'],['history-ottoman-kemal']]},
  {id:'eeurope-pontic',name:'东欧：草原、森林与港口',en:'Eastern Europe: Steppe, Forest and Ports',date:'约前700—375年',c:HC.eeurope,items:[['history-eeurope-pontic'],['history-eeurope-roman']]},
@@ -19773,7 +19924,7 @@ const HISTORY_ERAS=[
  {id:'britain-saxon-norman',name:'英格兰的成型：维京狂潮与诺曼征服',en:'The Making of England: Vikings and Normans',date:'约410—1087年',c:HC.britain,items:[['history-britain-anglosaxon',0,1,'七国时代'],['history-britain-anglosaxon',2,3,'维京大军与丹麦法区'],['history-britain-anglosaxon',4,5,'从七国到英格兰'],['history-britain-norman',0,0,'克努特的北海帝国'],['history-britain-norman',1,5,'诺曼征服']]},
  {id:'britain-angevin',name:'金雀花帝国：普通法、爱尔兰与狮心王',en:'The Angevin Empire: Common Law, Ireland and Lionheart',date:'1014—1214年',c:HC.britain,items:[['history-britain-henry2'],['history-britain-norman-ireland'],['history-britain-richard']]},
  {id:'britain-parliament',name:'大宪章、议会与英伦三岛的边界',en:'Magna Carta, Parliament and the Bounds of the Isles',date:'1215—1307年',c:HC.britain,items:[['history-britain-magnacarta'],['history-britain-edward1']]},
- {id:'britain-hundred-years',name:'百年战争与红白玫瑰战争：从阿基坦称臣到都铎玫瑰',en:'The Hundred Years’ War and the Wars of the Roses: From Aquitaine to the Tudor Rose',date:'1200—1487年',c:HC.britain,items:[['history-britain-edward2'],['history-britain-hundred-years-1'],['history-britain-hundred-years-2'],['history-britain-hundred-years-3'],['history-britain-richard2'],['history-britain-hundred-years-4'],['history-britain-hundred-years-5'],['history-britain-jeanne'],['history-britain-roses-1'],['history-britain-roses-2'],['history-britain-roses-3'],['history-britain-roses-4']]},
+ {id:'britain-hundred-years',name:'百年战争与红白玫瑰战争：从阿基坦称臣到都铎玫瑰',en:'The Hundred Years’ War and the Wars of the Roses: From Aquitaine to the Tudor Rose',date:'1200—1487年',c:HC.britain,items:[['history-britain-edward2'],['history-plat-britain-hyw1'],['history-britain-hundred-years-1'],['history-britain-hundred-years-2'],['history-britain-hundred-years-3'],['history-britain-richard2'],['history-britain-hundred-years-4'],['history-plat-britain-hyw2'],['history-britain-hundred-years-5'],['history-britain-jeanne'],['history-britain-roses-1'],['history-britain-roses-2'],['history-britain-roses-3'],['history-britain-roses-4']]},
  {id:'britain-tudor',name:'都铎王朝：宗教改革、圈地与伊丽莎白时代',en:'The House of Tudor: Reformation, Enclosures and the Elizabethan Age',date:'1485—1603年',c:HC.britain,items:[['history-britain-henry7'],['history-britain-henry8-1'],['history-britain-henry8-2'],['history-britain-henry8-3'],['history-britain-enclosure'],['history-britain-mary1'],['history-britain-elizabeth-rise'],['history-britain-elizabeth-1'],['history-britain-elizabeth-faith'],['history-britain-elizabeth-2'],['history-britain-armada-after'],['history-britain-elizabeth-3']]},
  {id:'britain-stuart',name:'斯图亚特与光荣革命：从内战弑君到锁死枪与钱',en:'The Stuarts and the Glorious Revolution: From Civil War and Regicide to the Bill of Rights',date:'1603—1694年',c:HC.britain,items:[['history-britain-james1'],['history-britain-charles1'],['history-britain-civil-war'],['history-britain-regicide'],['history-britain-commonwealth'],['history-britain-cromwell'],['history-britain-charles2'],['history-britain-james2'],['history-britain-glorious']]},
  {id:'britain-hanover',name:'汉诺威与工业革命：从英苏合并到滑铁卢',en:'Hanover and the Industrial Revolution: From the Union to Waterloo',date:'1703—1829年',c:HC.britain,items:[['history-britain-union'],['history-britain-walpole'],['history-britain-america'],['history-britain-industry-1'],['history-britain-industry-2'],['history-britain-napoleon']]},
@@ -19813,8 +19964,12 @@ const HISTORY_BRANCHES=[
  {id:'egypt',name:'埃及',en:'Egypt',lane:1,parent:'prehistory',from:-4000,to:642,c:HC.mino},
  {id:'persia',name:'中东',en:'The Middle East',lane:0,parent:'prehistory',from:-4000,to:1923,c:HC.parthia},
  {id:'eeurope',name:'东欧',en:'Eastern Europe',lane:8,parent:'trunk',from:-700,to:1922,c:HC.eeurope},
- // 十字军: from the theatre, the players and the holy war in Spain (the 0th crusade) to Acre (1291) and the military orders.
- {id:'crusade',name:'十字军',en:'The Crusades',lane:1,parent:'faith',from:1070,to:1312,c:HC.crusade},
+ // 十字军: from the theatre and the players to Acre (1291) and the military orders.
+ {id:'crusade',name:'十字军',en:'The Crusades',kind:'branch',lane:1,parent:'faith',from:1070,to:1312,c:HC.crusade},
+ // 百年战争支线 (老无 2026-11-15): reuses lane 1 in the legacy tree after 十字军 ends at 1312.
+ {id:'hundred-years',name:'百年战争',en:"The Hundred Years' War",kind:'branch',lane:1,from:1315,to:1453,c:HC.hyw},
+ // 黑死病支线 (老无 2026-11-15): reuses lane 11 in the legacy tree before 美洲 starts at 1430.
+ {id:'black-death',name:'黑死病',en:'The Black Death',kind:'branch',lane:11,from:1347,to:1351,c:HC.plague},
  // 北欧: no fork, it starts itself; after the look back it runs through the Viking stations it shares (老无 2026-11-05).
  {id:'nordic',name:'北欧',en:'Scandinavia',lane:10,from:745,to:1920,c:HC.nordic},
  // 美洲: no fork either (老无 2026-11-06); it looks back, then shares 大航海 with 西班牙 and runs on to the Puritans.
@@ -19915,10 +20070,10 @@ const TREE_ROWS={
  'history-empire-west-end/0':['rome',455,476],
  'history-empire-heraclius/0':[['east','persia','egypt'],602,641],
  'history-arab-conquest/0':[['persia','east','egypt'],632,651],
- 'history-empire-constans/0':[['east','faith'],641,711],
+ 'history-empire-constans/0':['east',641,711],
  'history-empire-anarchy/0':['east',695,717],
- 'history-empire-isaurian/0':[['east','faith'],717,802],
- 'history-empire-amorian/0':[['east','faith'],802,867],
+ 'history-empire-isaurian/0':['east',717,802],
+ 'history-empire-amorian/0':['east',802,867],
  'history-empire-macedonian/0':['east',867,1025,'867—1025年'],
  'history-faith-three-chapters/0':['faith',527,604],
  'history-faith-gregory/0':['faith',568,604],
@@ -19934,7 +20089,7 @@ const TREE_ROWS={
  'history-faith-carolingian/0':['faith',787,870],
  'history-persia-khosrow-ii/0':['persia',579,602],
  'history-china-tang/0':['china',589,845],
- 'history-germany-otto/0':[['germany','italy','faith'],951,964],
+ 'history-germany-otto/0':['germany',951,964],
  'history-faith-dark-century/0':['faith',875,955],
  'history-faith-imperial-church/0':['faith',962,1046],
  'history-faith-cluny/0':['faith',963,1049,'910—1049年'],
@@ -19947,78 +20102,78 @@ const TREE_ROWS={
  'history-arab-muhammad/0':['persia',610,632],
  'history-arab-expansion/0':['persia',641,751],
  'history-arab-caliphs/0':['persia',656,750,'632—750年'],
- 'history-arab-constantinople/0':[['east','persia'],667,718],
+ 'history-arab-constantinople/0':['persia',667,718],
  'history-arab-abbasid/0':['persia',750,945],
  'history-eeurope-pontic/0':['eeurope',-700,-63],
  'history-eeurope-roman/0':['eeurope',-63,375],
  'history-eeurope-slavs/0':['eeurope',375,602],
  'history-eeurope-balkans/0':['eeurope',602,681],
  'history-eeurope-rus/0':[['eeurope','nordic'],750,945],
- 'history-eeurope-byzantium/0':[['eeurope','east'],860,1043],
+ 'history-eeurope-byzantium/0':['eeurope',860,1043],
  'history-spain-andalus/0':['spain',756,1031],
  'history-germany-ottonians/0':['germany',973,1024],
  'history-germany-salian/0':['germany',1024,1056],
- 'history-germany-investiture/0':[['germany','faith'],1056,1075],
- 'history-germany-canossa/0':[['germany','faith'],1076,1106],
+ 'history-germany-investiture/0':['germany',1056,1075],
+ 'history-germany-canossa/0':['germany',1076,1106],
  'history-italy-normans/0':['italy',1016,1091],
  'history-spain-taifas/0':['spain',1031,1086],
- 'history-spain-crusade/0':[['spain','faith','crusade'],1085,1123,'约820—1123年'],
+ 'history-spain-crusade/0':['spain',1085,1123,'约820—1123年'],
  'history-faith-citeaux/0':['faith',1098,1153],
  'history-empire-zoe/0':['east',1056,1081,'1025—1081年'],
  'history-empire-alexios/0':['east',1081,1095],
  'history-arab-seljuks/0':['persia',945,1071,'945—1092年'],
- 'history-faith-urban/0':[['faith','crusade'],1088,1095,'1085—1095年'],
- 'history-faith-crusade/0':[['crusade','faith','east','persia'],1096,1099],
+ 'history-faith-urban/0':['faith',1088,1095,'1085—1095年'],
+ 'history-faith-crusade/0':['crusade',1096,1099],
  'history-crusade-theatre/0':['crusade',1070,1070,'1095—1291年'],
  'history-crusade-players/0':['crusade',1078,1095,'约1000—1095年'],
  'history-crusade-people/0':['crusade',1095,1096],
- 'history-crusade-states/0':[['crusade','persia'],1099,1144,'1098—1144年'],
- 'history-crusade-second/0':[['crusade','faith'],1145,1149],
- 'history-crusade-nuraldin/0':[['crusade','persia'],1150,1171,'1146—1171年'],
- 'history-crusade-saladin/0':[['crusade','persia'],1171,1187,'1169—1187年'],
+ 'history-crusade-states/0':['crusade',1099,1144,'1098—1144年'],
+ 'history-crusade-second/0':['crusade',1145,1149],
+ 'history-crusade-nuraldin/0':['crusade',1150,1171,'1146—1171年'],
+ 'history-crusade-saladin/0':['crusade',1171,1187,'1169—1187年'],
  'history-crusade-third/0':['crusade',1187,1192],
- 'history-crusade-fourth/0':[['crusade','east'],1198,1204],
+ 'history-crusade-fourth/0':['crusade',1198,1204],
  'history-crusade-fifth/0':['crusade',1213,1221],
  'history-crusade-sixth/0':['crusade',1227,1244,'1215—1244年'],
- 'history-crusade-louis/0':[['crusade','persia'],1248,1270,'1244—1270年'],
- 'history-crusade-end/0':[['crusade','persia'],1258,1291],
+ 'history-crusade-louis/0':['crusade',1248,1270,'1244—1270年'],
+ 'history-crusade-end/0':['crusade',1258,1291],
  'history-crusade-orders/0':['crusade',1295,1312,'约1100—1525年'],
- 'history-germany-worms/0':[['germany','faith'],1106,1125],
+ 'history-germany-worms/0':['germany',1106,1125],
  'history-faith-cardinals/0':['faith',1126,1144,'1099—1179年'],
  'history-italy-cities/0':['italy',1092,1126,'约950—1150年'],
  'history-italy-sicily/0':['italy',1127,1151,'1091—1166年'],
  'history-germany-staufer/0':['germany',1125,1152],
- 'history-germany-barbarossa/0':[['germany','italy','faith'],1152,1183],
- 'history-germany-henry6/0':[['germany','italy'],1184,1197],
- 'history-germany-innocent/0':[['germany','faith','italy'],1198,1216,'1197—1216年'],
+ 'history-germany-barbarossa/0':['germany',1152,1183],
+ 'history-germany-henry6/0':['germany',1184,1197],
+ 'history-germany-innocent/0':['germany',1198,1216,'1197—1216年'],
  'history-france-capet/0':['france',987,1137],
  'history-france-plantagenet/0':['france',1137,1223],
- 'history-germany-frederick2/0':[['germany','italy','faith'],1220,1273,'1212—1273年'],
+ 'history-germany-frederick2/0':['germany',1220,1273,'1212—1273年'],
  'history-germany-electors/0':['germany',1274,1308,'1273—1308年'],
  'history-germany-golden-bull/0':['germany',1352,1437,'1308—1437年'],
  'history-germany-hansa/0':['germany',1438,1494,'约1159—1500年'],
  'history-faith-scholasticism/0':['faith',1274,1290,'约1150—1325年'],
  'history-italy-vespers/0':['italy',1282,1302,'1266—1302年'],
- 'history-france-stlouis/0':[['france','faith'],1291,1309,'1223—1314年'],
+ 'history-france-stlouis/0':['france',1291,1309,'1223—1314年'],
  'history-britain-prehistory/0':['britain',-54,-54,'约前8000—前54年'],
  'history-britain-roman/0':['britain',43,410],
  'history-britain-ireland/0':['britain',432,664,'约350—664年'],
  'history-britain-anglosaxon/0':['britain',665,792,'约410—825年'],
  'history-britain-norman/0':[['britain','nordic'],978,1041,'991—1035年'],
- 'history-britain-henry2/0':[['britain','france'],1154,1189,'1087—1189年'],
+ 'history-britain-henry2/0':['britain',1154,1189,'1087—1189年'],
  'history-britain-norman-ireland/0':['britain',1169,1210,'1014—1210年'],
- 'history-britain-richard/0':[['britain','france'],1189,1214,'1173—1214年'],
+ 'history-britain-richard/0':['britain',1189,1214,'1173—1214年'],
  'history-britain-magnacarta/0':['britain',1215,1272,'1215—1295年'],
  'history-britain-edward1/0':['britain',1277,1307,'1272—1307年'],
- 'history-britain-edward2/0':[['britain','france'],1315,1330,'1200—1330年'],
- 'history-britain-hundred-years-1/0':[['britain','france'],1352,1360,'1314—1360年'],
- 'history-britain-hundred-years-2/0':[['britain','france'],1361,1370,'1272—1381年'],
- 'history-britain-hundred-years-3/0':[['britain','france'],1371,1381,'1360—1380年'],
+ 'history-britain-edward2/0':['hundred-years',1315,1330,'1200—1330年'],
+ 'history-britain-hundred-years-1/0':['hundred-years',1352,1360,'1314—1360年'],
+ 'history-britain-hundred-years-2/0':['hundred-years',1361,1370,'1272—1381年'],
+ 'history-britain-hundred-years-3/0':['hundred-years',1371,1381,'1360—1380年'],
  'history-britain-richard2/0':['britain',1382,1400,'1377—1400年'],
  'history-france-valois/0':['france',1382,1400,'987—1380年'],
- 'history-britain-hundred-years-4/0':[['britain','france'],1401,1422,'1380—1422年'],
- 'history-britain-hundred-years-5/0':[['britain','france'],1423,1435,'1422—1435年'],
- 'history-britain-jeanne/0':[['britain','france'],1436,1453,'1428—1453年'],
+ 'history-britain-hundred-years-4/0':['hundred-years',1401,1422,'1380—1422年'],
+ 'history-britain-hundred-years-5/0':['hundred-years',1423,1435,'1422—1435年'],
+ 'history-britain-jeanne/0':['hundred-years',1436,1453,'1428—1453年'],
  'history-britain-roses-1/0':['britain',1454,1455,'1435—1455年'],
  'history-britain-roses-2/0':['britain',1456,1461,'1455—1461年'],
  'history-france-louis11/0':['france',1461,1483,'1453—1483年'],
@@ -20135,15 +20290,15 @@ const TREE_ROWS={
  'history-germany-versailles/0':[['germany','france','britain','italy','china'],1919,1923,'1918—1923年'],
  'history-france-second-empire/0':['france',1856,1869,'1852—1870年'],
  'history-france-commune/0':['france',1875,1913,'1871—1914年'],
- 'history-faith-avignon/0':[['faith','france'],1296,1303,'1294—1303年'],
- 'history-faith-clement/0':[['faith','france'],1304,1314,'1303—1314年'],
- 'history-italy-blackdeath/0':[['italy','france','britain','germany','faith','persia','nordic'],1347,1351,'1346—1353年'],
+ 'history-faith-avignon/0':['faith',1296,1303,'1294—1303年'],
+ 'history-faith-clement/0':['faith',1304,1314,'1303—1314年'],
+ 'history-italy-blackdeath/0':['black-death',1347,1349,'1346—1349年'],
  'history-faith-schism/0':['faith',1352,1379,'1322—1379年'],
  'history-faith-constance/0':['faith',1380,1449,'1378—1449年'],
  'history-empire-komnenos/0':['east',1100,1195,'1081—1195年'],
  'history-empire-palaiologos/0':['east',1261,1391,'1204—1391年'],
- 'history-empire-fall-1453/0':[['east','persia','faith','italy','eeurope'],1450,1453,'1391—1453年'],
- 'history-persia-mongols/0':[['persia','eeurope','china'],1245,1257,'1206—1260年'],
+ 'history-empire-fall-1453/0':['east',1450,1453,'1391—1453年'],
+ 'history-persia-mongols/0':['persia',1245,1257,'1206—1260年'],
  'history-persia-timur/0':['persia',1353,1405,'1260—1405年'],
  'history-persia-ottoman/0':['persia',1454,1501,'约1299—1501年'],
  'history-eeurope-moscow/0':['eeurope',1455,1505,'1054—1505年'],
@@ -20220,9 +20375,20 @@ const TREE_ROWS={
  'history-america-hill/0':[['america','faith'],1630,1630.5,'1629—1648年'],
  'history-spain-philips/0':['spain',1599,1634,'1598—1648年'],
  'history-germany-swiss/0':[['germany','lowlands'],1476,1477,'约1230—1477年'],
- 'history-empire-macedonian/3':[['east','faith'],1054,1056],
+ 'history-plat-faith-iconoclasm/0':['faith',726,786,'641—787年'],
+ 'history-plat-faith-investiture/0':['faith',1059,1085,'1056—1085年'],
+ 'history-plat-faith-staufer/0':['faith',1180,1250,'1152—1250年'],
+ 'history-plat-italy-staufer/0':['italy',1167,1268,'1152—1268年'],
+ 'history-plat-france-hyw1/0':['france',1328,1380,'1314—1380年'],
+ 'history-plat-france-hyw2/0':['france',1415,1453,'1407—1453年'],
+ 'history-plat-britain-hyw1/0':['britain',1337,1377,'1307—1377年'],
+ 'history-plat-britain-hyw2/0':['britain',1413,1453,'1413—1453年'],
+ 'history-plat-east-1204/0':['east',1202,1204,'1202—1204年'],
+ 'history-plat-persia-crusade/0':['persia',1144,1244,'1096—1291年'],
+ 'history-empire-macedonian/3':['east',1054,1056],
  'history-spain-fall/2':[['spain','persia'],711,713],
- 'history-arab-seljuks/3':[['persia','east'],1071,1092],
+ 'history-arab-seljuks/3':['persia',1071,1092],
+ 'history-italy-blackdeath/3':['black-death',1349,1351,'1349—1353年'],
  'history-britain-anglosaxon/2':[['britain','nordic'],793,878,'793—878年'],
  'history-britain-anglosaxon/4':[['britain'],879,927,'878—937年'],
  'history-britain-norman/1':[['britain'],1042,1087,'1042—1087年'],
@@ -20234,11 +20400,13 @@ const TREE_ROWS={
 // Topics still to be written grow the tree as dashed shoots.
 const TREE_FUTURE=[['france',1923,'大萧条、二战与第五共和国','1923年后待展开：1936年人民阵线 · 1940年败降与自由法国 · 戴高乐与第五共和国'],['germany',1923,'大萧条、第三帝国与两德分合','1923年后待展开：1929年大萧条与希特勒上台 · 二战与大屠杀 · 冷战两德分裂与1990年统一'],['italy',1929,'法西斯意大利与二战','1929年后待展开：1935年入侵埃塞俄比亚 · 1940年参加二战 · 1946年公投废除君主制'],['faith',1929,'二战与梵二会议','1929年后待展开：二战中的教廷 · 1962—1965年梵蒂冈第二次大公会议'],['persia',1923,'土耳其共和国与现代中东','1923年后待展开：凯末尔世俗化改革 · 英法委任统治、海湾石油与现代中东格局'],['china',1919,'国民革命、抗战与内战','1919年后待展开：国共合作与北伐 · 抗日战争 · 国共内战与1949年'],['spain',1931,'第二共和国与西班牙内战','1931年后待展开：1931—1936年第二共和国改革与左右撕裂 · 1936—1939年西班牙内战与佛朗哥独裁'],['eeurope',1922,'斯大林与冷战','1922年后待展开：斯大林五年计划 · 二战苏德战场 · 冷战与苏联解体'],['lowlands',1918,'比荷卢联盟与欧洲一体化','1918年后待展开：战间期普选与福利 · 二战占领 · 比荷卢联盟与欧盟创始'],['america',1920,'大萧条、罗斯福新政与二战','1920年后待展开：1929年华尔街崩盘与大萧条 · 罗斯福新政 · 二战两洋作战与布雷顿森林体系'],['nordic',1920,'冬季战争与北欧模式','1920年后待展开：1939—1940年苏芬冬季战争 · 1940年德国占领丹麦、挪威 · 瑞典中立与北欧福利国家'],['britain',1928,'大萧条、二战与福利国家','1928年后待展开：1929年大萧条 · 丘吉尔与二战不列颠之战 · 战后福利国家与大英帝国解体']];
 // Where a line stops it says why: [line, year, the event that ends it, note, the line it carries on in].
-const TREE_ENDS=[['trunk',-30,'并入罗马','前146年科林斯被毁 · 前30年最后一个希腊化王国埃及并入罗马','rome'],['rome',476,'西罗马终结','476年西部末代皇帝被废 · 由中世纪西欧接续'],['west',843,'凡尔登三分','843年《凡尔登条约》三分帝国 · 分出法兰西、德意志、意大利'],['east',1453,'东罗马终结','1453年5月29日奥斯曼帝国攻破君士坦丁堡 · 千年东罗马帝国终结'],['egypt',642,'并入中东','642年阿拉伯人拿下亚历山大，埃及并入哈里发国 · 此后的埃及由“中东”线接续'],['crusade',1312,'十字军落幕','1291年阿卡陷落，圣地的十字军国家覆灭 · 1312年圣殿骑士团被解散'],['prehistory',-3100,'有了文字','两河、埃及约前3200—前3100年先后有了文字和国家 · 由希腊、埃及、中东三条线接续','trunk']];
+const TREE_ENDS=[['trunk',-30,'并入罗马','前146年科林斯被毁 · 前30年最后一个希腊化王国埃及并入罗马','rome'],['rome',476,'西罗马终结','476年西部末代皇帝被废 · 由中世纪西欧接续'],['west',843,'凡尔登三分','843年《凡尔登条约》三分帝国 · 分出法兰西、德意志、意大利'],['east',1453,'东罗马终结','1453年5月29日奥斯曼帝国攻破君士坦丁堡 · 千年东罗马帝国终结'],['egypt',642,'并入中东','642年阿拉伯人拿下亚历山大，埃及并入哈里发国 · 此后的埃及由“中东”线接续'],['crusade',1312,'十字军落幕','1291年阿卡陷落，圣地的十字军国家覆灭 · 1312年圣殿骑士团被解散'],['hundred-years',1453,'英军退回海岛','1453年卡斯蒂永战罢 · 除加来外英军尽退出大陆'],['black-death',1351,'瘟疫退潮','1351年后首轮大流行退潮 · 改写欧洲人口与劳工账本'],['prehistory',-3100,'有了文字','两河、埃及约前3200—前3100年先后有了文字和国家 · 由希腊、埃及、中东三条线接续','trunk']];
 // Sections of one line that run side by side: [line, row keys, side of the passing loop].
-const TREE_PARALLEL=[['trunk',['history-alexander-conquest/0','history-alexander-rule/0'],1],['trunk',['history-hellenistic-states/0','history-hellenistic-knowledge/0'],1],['west',['history-west-kingdoms/0','history-west-ostrogoths/0'],1],['west',['history-west-merovingians/0','history-west-lombards/0'],1],['faith',['history-empire-amorian/0','history-faith-carolingian/0'],-1],['faith',['history-faith-imperial-church/0','history-faith-cluny/0'],-1]];
+const TREE_PARALLEL=[['trunk',['history-alexander-conquest/0','history-alexander-rule/0'],1],['trunk',['history-hellenistic-states/0','history-hellenistic-knowledge/0'],1],['west',['history-west-kingdoms/0','history-west-ostrogoths/0'],1],['west',['history-west-merovingians/0','history-west-lombards/0'],1],['faith',['history-faith-imperial-church/0','history-faith-cluny/0'],-1]];
 // Time slices across the whole tree: [year, label, headline, paragraph].
 const TREE_SLICES=[[-1000, "前1000年", "青铜时代崩了以后，各地从头长起", "约前1200年前后，迈锡尼的宫殿、赫梯帝国接连崩塌，东地中海进了“黑暗时代”，各处都是小王国和村社重新长起来。希腊没了文字、人口稀少，城邦还要两百年才成形；罗马只是拉丁姆山丘上的几处村落；以色列人刚立王，据《圣经》，大卫约在此时定都耶路撒冷；埃及新王国已散（约前1070年），南北分治；伊朗高原上米底人、波斯人刚刚进来，埃兰还在，两河的亚述正要复起；中国是西周，周王分封诸侯、立宗法。"], [-500, "前500年", "波斯一家独大", "大流士一世的阿契美尼德帝国从印度河伸到爱琴海，前525年拿下埃及，前513年还渡过多瑙河去打斯基泰人，无功而返。帝国边上的小地方各走各路：雅典刚经克里斯提尼改革，希腊城邦正要在希波战争里顶住波斯；罗马前509年赶走国王，成了共和国；犹太人从巴比伦回来，重建了圣殿；黑海北岸，希腊港口跟斯基泰人做着粮食和奴隶的买卖。中国是春秋末年，孔子在鲁国做官，几年后周游列国。"], [0, "公元元年", "地中海头一回归了一家", "希腊化诸国已全数并入罗马，最后一个托勒密埃及亡于前30年；罗马自己也从共和变成了奥古斯都的元首制。东边的安息跟罗马隔着幼发拉底河对峙，前53年在卡莱大败克拉苏。罗马治下的犹太地，耶稣约在前4年出生；埃及成了罗马的粮仓；黑海北岸的博斯普鲁斯王国当了罗马的附庸，草原上是萨尔马特人。中国是西汉末年，外戚王莽掌权，八年后篡汉。"], [500, "500年", "西罗马没了，东罗马守着东方", "西罗马已亡二十多年，地盘由蛮族国王分着：法兰克的克洛维占了高卢北部，东哥特的狄奥多里克名义上替东罗马皇帝管着意大利，西哥特人占着西班牙和高卢南部，七年后在武耶败给克洛维。东罗马的阿纳斯塔修斯攒下满库金币，守着东方，两年后又跟萨珊波斯开战；教会为卡尔西顿会议的信经闹分裂，罗马和君士坦丁堡已断交十多年。匈人帝国散了，斯拉夫人正往多瑙河边扩散；中国是南北朝，北魏孝文帝迁都洛阳、改汉俗不久。"], [1000, "1000年", "东罗马正当盛年，西欧的新格局刚刚定型", "巴西尔二世的东罗马正跟保加利亚苦战，十几年后吞了它；皇帝身边的卫队是罗斯人：弗拉基米尔988年受洗、娶了皇帝的妹妹，派来的六千兵从此留下，成了瓦良格卫队。西边，奥托王朝的皇帝（这一年是奥托三世）管着德意志和意大利，还亲手立了教宗；法兰西归了刚开张的卡佩王朝；克吕尼的修院越开越多，教会改革正在酝酿，五十多年后东西教会分裂。北边，丹麦王斯汶（Sweyn Forkbeard）正连年打英格兰，冰岛人约在这一年议决改信基督教，挪威人已从格陵兰摸到美洲海岸。西班牙的科尔多瓦哈里发国盛极将衰；巴格达的哈里发早成了摆设，埃及归了法蒂玛王朝。中国是北宋，五年后与辽订澶渊之盟。"]];
+// Explicit cross-line transfers (老无 2026-11-15): one home line per station, plus 1-scene platforms and event branches.
+const TREE_XFERS={"history-plat-faith-iconoclasm/0": [{"line": "east", "to": "history-empire-isaurian/0", "kind": "platform", "note": "一志论与圣像之争详情见东罗马线。"}, {"line": "west", "to": "history-west-lombards/0", "kind": "peer", "note": "丕平献地与查理曼灭伦巴第见中世纪西欧线。"}], "history-empire-constans/0": [{"line": "faith", "to": "history-plat-faith-iconoclasm/0", "kind": "meet", "note": "圣像之争与教宗改投法兰克见基督教线。"}], "history-empire-isaurian/0": [{"line": "faith", "to": "history-plat-faith-iconoclasm/0", "kind": "meet", "note": "圣像之争与教宗改投法兰克见基督教线。"}, {"line": "persia", "to": "history-arab-constantinople/0", "kind": "peer", "note": "阿拉伯大军两围君士坦丁堡见中东线。"}], "history-arab-constantinople/0": [{"line": "east", "to": "history-empire-isaurian/0", "kind": "peer", "note": "利奥三世与东罗马守城视角见东罗马线。"}], "history-empire-amorian/0": [{"line": "faith", "to": "history-faith-carolingian/0", "kind": "peer", "note": "同期西方加洛林神学之争见基督教线。"}], "history-faith-carolingian/0": [{"line": "east", "to": "history-empire-amorian/0", "kind": "peer", "note": "东罗马圣像终局与佛提乌之争见东罗马线。"}], "history-eeurope-byzantium/0": [{"line": "east", "to": "history-empire-macedonian/0", "kind": "peer", "note": "巴西尔二世与瓦良格卫队见东罗马线。"}], "history-empire-macedonian/0": [{"line": "eeurope", "to": "history-eeurope-byzantium/0", "kind": "peer", "note": "基辅罗斯受洗与黑海通商见东欧线。"}], "history-empire-macedonian/3": [{"line": "faith", "to": "history-faith-leo-ix/0", "kind": "peer", "note": "利奥九世教会改革与1054年使节诏书见基督教线。"}], "history-faith-leo-ix/0": [{"line": "east", "to": "history-empire-macedonian/3", "kind": "peer", "note": "牧首凯鲁拉里乌斯与东罗马视角见东罗马线。"}], "history-germany-otto/0": [{"line": "faith", "to": "history-faith-imperial-church/0", "kind": "peer", "note": "帝国教会体制与皇帝废立教宗见基督教线。"}, {"line": "italy", "to": "history-italy-middle-francia/0", "kind": "peer", "note": "意大利王冠争夺与阿德莱德求援见意大利线。"}], "history-faith-imperial-church/0": [{"line": "germany", "to": "history-germany-otto/0", "kind": "peer", "note": "奥托一世平叛、战马扎尔与加冕称帝见德意志线。"}], "history-italy-middle-francia/0": [{"line": "germany", "to": "history-germany-otto/0", "kind": "peer", "note": "奥托一世南下娶阿德莱德、兼领意大利王冠见德意志线。"}], "history-plat-faith-investiture/0": [{"line": "germany", "to": "history-germany-investiture/0", "kind": "platform", "note": "叙任权之争、卡诺莎之辱与沃尔姆斯协定详情见德意志线。"}], "history-germany-investiture/0": [{"line": "faith", "to": "history-plat-faith-investiture/0", "kind": "meet", "note": "叙任权与卡诺莎概要见基督教线。"}], "history-germany-canossa/0": [{"line": "faith", "to": "history-plat-faith-investiture/0", "kind": "meet", "note": "叙任权与卡诺莎概要见基督教线。"}], "history-germany-worms/0": [{"line": "faith", "to": "history-faith-cardinals/0", "kind": "peer", "note": "沃尔姆斯协定后的枢机团与教宗双选见基督教线。"}], "history-faith-cardinals/0": [{"line": "germany", "to": "history-germany-worms/0", "kind": "peer", "note": "沃尔姆斯宗教协定谈判始末见德意志线。"}], "history-plat-faith-staufer/0": [{"line": "germany", "to": "history-germany-barbarossa/0", "kind": "platform", "note": "红胡子、亨利六世、英诺森三世与腓特烈二世详情见德意志线。"}, {"line": "crusade", "to": "history-crusade-fourth/0", "kind": "platform", "note": "第四至第六次十字军详情见十字军支线。"}], "history-plat-italy-staufer/0": [{"line": "germany", "to": "history-germany-barbarossa/0", "kind": "platform", "note": "霍亨施陶芬皇室南征与教廷博弈详情见德意志线。"}], "history-germany-barbarossa/0": [{"line": "faith", "to": "history-plat-faith-staufer/0", "kind": "meet", "note": "教宗与霍亨施陶芬皇室见基督教线。"}, {"line": "italy", "to": "history-plat-italy-staufer/0", "kind": "meet", "note": "红胡子南征、诺曼联姻与安茹入主见意大利线。"}], "history-germany-henry6/0": [{"line": "italy", "to": "history-plat-italy-staufer/0", "kind": "meet", "note": "红胡子南征、诺曼联姻与安茹入主见意大利线。"}, {"line": "faith", "to": "history-plat-faith-staufer/0", "kind": "meet", "note": "教宗与霍亨施陶芬皇室见基督教线。"}], "history-germany-innocent/0": [{"line": "faith", "to": "history-plat-faith-staufer/0", "kind": "meet", "note": "教宗与霍亨施陶芬皇室见基督教线。"}, {"line": "italy", "to": "history-plat-italy-staufer/0", "kind": "meet", "note": "红胡子南征、诺曼联姻与安茹入主见意大利线。"}, {"line": "crusade", "to": "history-crusade-fourth/0", "kind": "peer", "note": "第四次十字军偏航君士坦丁堡见十字军支线。"}], "history-germany-frederick2/0": [{"line": "faith", "to": "history-plat-faith-staufer/0", "kind": "meet", "note": "教宗与霍亨施陶芬皇室见基督教线。"}, {"line": "italy", "to": "history-plat-italy-staufer/0", "kind": "meet", "note": "红胡子南征、诺曼联姻与安茹入主见意大利线。"}, {"line": "crusade", "to": "history-crusade-sixth/0", "kind": "peer", "note": "腓特烈二世戴绝罚帽赎回耶路撒冷见十字军支线。"}], "history-empire-zoe/0": [{"line": "persia", "to": "history-arab-seljuks/3", "kind": "peer", "note": "塞尔柱突厥崛起与曼齐刻尔特见中东线。"}], "history-arab-seljuks/3": [{"line": "east", "to": "history-empire-zoe/0", "kind": "peer", "note": "东罗马内乱与丢失小亚细亚见东罗马线。"}], "history-spain-crusade/0": [{"line": "crusade", "to": "history-crusade-players/0", "kind": "peer", "note": "东方十字军的战场与玩家见十字军支线。"}, {"line": "faith", "to": "history-faith-urban/0", "kind": "peer", "note": "乌尔班二世与克莱蒙号召见基督教线。"}], "history-faith-urban/0": [{"line": "crusade", "to": "history-crusade-people/0", "kind": "platform", "note": "克莱蒙号召后的东征全过程见十字军支线。"}, {"line": "spain", "to": "history-spain-crusade/0", "kind": "peer", "note": "伊比利亚朝圣路与圣战见西班牙线。"}], "history-empire-alexios/0": [{"line": "crusade", "to": "history-faith-crusade/0", "kind": "peer", "note": "第一次十字军东征全过程见十字军支线。"}], "history-crusade-players/0": [{"line": "spain", "to": "history-spain-crusade/0", "kind": "peer", "note": "伊比利亚“第零次十字军”见西班牙线。"}], "history-crusade-people/0": [{"line": "faith", "to": "history-faith-urban/0", "kind": "peer", "note": "乌尔班二世与克莱蒙会议见基督教线。"}], "history-faith-crusade/0": [{"line": "faith", "to": "history-faith-urban/0", "kind": "meet", "note": "乌尔班二世克莱蒙号召见基督教线。"}, {"line": "east", "to": "history-empire-alexios/0", "kind": "peer", "note": "阿历克塞一世借兵与逼签字据见东罗马线。"}, {"line": "persia", "to": "history-plat-persia-crusade/0", "kind": "meet", "note": "十字军与反击概要见中东线。"}], "history-crusade-states/0": [{"line": "persia", "to": "history-plat-persia-crusade/0", "kind": "meet", "note": "十字军与反击概要见中东线。"}], "history-crusade-second/0": [{"line": "faith", "to": "history-faith-citeaux/0", "kind": "peer", "note": "圣伯尔纳铎与熙笃会见基督教线。"}], "history-faith-citeaux/0": [{"line": "crusade", "to": "history-crusade-second/0", "kind": "peer", "note": "圣伯尔纳铎鼓动的第二次十字军见十字军支线。"}], "history-crusade-nuraldin/0": [{"line": "persia", "to": "history-plat-persia-crusade/0", "kind": "meet", "note": "十字军与反击概要见中东线。"}], "history-crusade-saladin/0": [{"line": "persia", "to": "history-plat-persia-crusade/0", "kind": "meet", "note": "十字军与反击概要见中东线。"}], "history-plat-east-1204/0": [{"line": "crusade", "to": "history-crusade-fourth/0", "kind": "platform", "note": "威尼斯讨债与1204年攻陷君士坦丁堡详情见十字军支线。"}], "history-crusade-fourth/0": [{"line": "east", "to": "history-plat-east-1204/0", "kind": "meet", "note": "1204年京城首破概要见东罗马线。"}, {"line": "germany", "to": "history-germany-innocent/0", "kind": "peer", "note": "教宗英诺森三世全景见德意志线。"}], "history-crusade-sixth/0": [{"line": "germany", "to": "history-germany-frederick2/0", "kind": "peer", "note": "皇帝腓特烈二世生平见德意志线。"}], "history-crusade-louis/0": [{"line": "persia", "to": "history-plat-persia-crusade/0", "kind": "meet", "note": "十字军与反击概要见中东线。"}, {"line": "france", "to": "history-france-stlouis/0", "kind": "peer", "note": "圣路易治国与腓力四世集权见法兰西线。"}], "history-crusade-end/0": [{"line": "persia", "to": "history-plat-persia-crusade/0", "kind": "meet", "note": "十字军与反击概要见中东线。"}], "history-crusade-orders/0": [{"line": "faith", "to": "history-faith-clement/0", "kind": "back", "note": "后续圣殿骑士团审判见基督教线《阿维尼翁之囚（下）》。"}, {"line": "france", "to": "history-france-stlouis/0", "kind": "back", "note": "后续腓力四世抄没圣殿骑士团见法兰西线《圣路易与腓力四世》。"}], "history-plat-persia-crusade/0": [{"line": "crusade", "to": "history-faith-crusade/0", "kind": "platform", "note": "十字军东征、努尔丁、萨拉丁与阿卡终局详情见十字军支线。"}], "history-persia-mongols/0": [{"line": "china", "to": "history-china-mongols/0", "kind": "peer", "note": "成吉思汗统一草原与元朝兴亡见中国线。"}, {"line": "eeurope", "to": "history-eeurope-moscow/0", "kind": "peer", "note": "拔都征服罗斯与金帐汗国统治见东欧线。"}], "history-china-mongols/0": [{"line": "persia", "to": "history-persia-mongols/0", "kind": "peer", "note": "蒙古三次西征与攻灭花剌子模、巴格达见中东线。"}], "history-empire-fall-1453/0": [{"line": "persia", "to": "history-persia-ottoman/0", "kind": "peer", "note": "穆罕默德二世与奥斯曼帝国崛起见中东线。"}, {"line": "italy", "to": "history-italy-condottieri/0", "kind": "peer", "note": "威尼斯震动与《洛迪和约》见意大利线。"}, {"line": "eeurope", "to": "history-eeurope-moscow/0", "kind": "peer", "note": "莫斯科迎娶末帝侄女自居“第三罗马”见东欧线。"}, {"line": "faith", "to": "history-faith-constance/0", "kind": "peer", "note": "东西教会复合落空与公会议时代见基督教线。"}], "history-persia-ottoman/0": [{"line": "east", "to": "history-empire-fall-1453/0", "kind": "peer", "note": "1453年君士坦丁堡守城终局见东罗马线。"}], "history-italy-condottieri/0": [{"line": "east", "to": "history-empire-fall-1453/0", "kind": "peer", "note": "1453年君士坦丁堡陷落详情见东罗马线。"}], "history-eeurope-moscow/0": [{"line": "persia", "to": "history-persia-mongols/0", "kind": "peer", "note": "蒙古三次西征全局见中东线。"}, {"line": "east", "to": "history-empire-fall-1453/0", "kind": "peer", "note": "1453年君士坦丁堡陷落详情见东罗马线。"}], "history-faith-constance/0": [{"line": "east", "to": "history-empire-fall-1453/0", "kind": "peer", "note": "1453年君士坦丁堡陷落详情见东罗马线。"}], "history-france-plantagenet/0": [{"line": "britain", "to": "history-britain-henry2/0", "kind": "peer", "note": "亨利二世普通法改革、狮心王与无地王见不列颠线。"}], "history-britain-henry2/0": [{"line": "france", "to": "history-france-plantagenet/0", "kind": "peer", "note": "腓力二世拆解金雀花大陆领地见法兰西线。"}], "history-britain-richard/0": [{"line": "france", "to": "history-france-plantagenet/0", "kind": "peer", "note": "腓力二世夺取诺曼底与布汶大捷见法兰西线。"}], "history-france-stlouis/0": [{"line": "faith", "to": "history-faith-avignon/0", "kind": "peer", "note": "阿纳尼之变、阿维尼翁之囚与圣殿骑士团审判见基督教线。"}, {"line": "crusade", "to": "history-crusade-louis/0", "kind": "peer", "note": "路易九世两次十字军东征见十字军支线。"}], "history-faith-avignon/0": [{"line": "france", "to": "history-france-stlouis/0", "kind": "peer", "note": "圣路易司法改革与腓力四世集权见法兰西线。"}], "history-faith-clement/0": [{"line": "france", "to": "history-france-stlouis/0", "kind": "peer", "note": "腓力四世财政缺口与强藩并地见法兰西线。"}, {"line": "crusade", "to": "history-crusade-orders/0", "kind": "peer", "note": "三大军事修会来龙去脉见十字军支线。"}], "history-plat-france-hyw1/0": [{"line": "hundred-years", "to": "history-britain-edward2/0", "kind": "platform", "note": "百年战争前半段详情见百年战争支线。"}, {"line": "black-death", "to": "history-italy-blackdeath/0", "kind": "platform", "note": "黑死病详情见黑死病支线。"}], "history-plat-france-hyw2/0": [{"line": "hundred-years", "to": "history-britain-hundred-years-4/0", "kind": "platform", "note": "阿金库尔、圣女贞德与百年战争终局详情见百年战争支线。"}], "history-plat-britain-hyw1/0": [{"line": "hundred-years", "to": "history-britain-edward2/0", "kind": "platform", "note": "百年战争前半段与长弓羊毛税详情见百年战争支线。"}, {"line": "black-death", "to": "history-italy-blackdeath/0", "kind": "platform", "note": "黑死病详情见黑死病支线。"}], "history-plat-britain-hyw2/0": [{"line": "hundred-years", "to": "history-britain-hundred-years-4/0", "kind": "platform", "note": "亨利五世、贞德反攻与失尽大陆详情见百年战争支线。"}], "history-britain-edward2/0": [{"line": "france", "to": "history-plat-france-hyw1/0", "kind": "meet", "note": "百年战争月台（上）见法兰西线。"}, {"line": "britain", "to": "history-plat-britain-hyw1/0", "kind": "meet", "note": "百年战争月台（前）见不列颠线。"}], "history-britain-hundred-years-1/0": [{"line": "france", "to": "history-plat-france-hyw1/0", "kind": "meet", "note": "百年战争月台（上）见法兰西线。"}, {"line": "britain", "to": "history-plat-britain-hyw1/0", "kind": "meet", "note": "百年战争月台（前）见不列颠线。"}, {"line": "black-death", "to": "history-italy-blackdeath/0", "kind": "peer", "note": "1347—1351年黑死病大流行见黑死病支线。"}], "history-britain-hundred-years-2/0": [{"line": "france", "to": "history-plat-france-hyw1/0", "kind": "meet", "note": "百年战争月台（上）见法兰西线。"}, {"line": "britain", "to": "history-plat-britain-hyw1/0", "kind": "meet", "note": "百年战争月台（前）见不列颠线。"}], "history-britain-hundred-years-3/0": [{"line": "france", "to": "history-plat-france-hyw1/0", "kind": "meet", "note": "百年战争月台（上）见法兰西线。"}, {"line": "britain", "to": "history-plat-britain-hyw1/0", "kind": "meet", "note": "百年战争月台（前）见不列颠线。"}], "history-britain-hundred-years-4/0": [{"line": "france", "to": "history-plat-france-hyw2/0", "kind": "meet", "note": "百年战争月台（下）见法兰西线。"}, {"line": "britain", "to": "history-plat-britain-hyw2/0", "kind": "meet", "note": "百年战争月台（后）见不列颠线。"}], "history-britain-hundred-years-5/0": [{"line": "france", "to": "history-plat-france-hyw2/0", "kind": "meet", "note": "百年战争月台（下）见法兰西线。"}, {"line": "britain", "to": "history-plat-britain-hyw2/0", "kind": "meet", "note": "百年战争月台（后）见不列颠线。"}], "history-britain-jeanne/0": [{"line": "france", "to": "history-france-louis11/0", "kind": "back", "note": "后续见法兰西线《“宇宙蜘蛛”路易十一》。"}, {"line": "britain", "to": "history-britain-roses-1/0", "kind": "back", "note": "后续见不列颠线《红白玫瑰战争（上）》。"}], "history-italy-blackdeath/0": [{"line": "italy", "to": "history-italy-venice/0", "kind": "meet", "note": "威尼斯与热那亚海权争霸见意大利线。"}, {"line": "france", "to": "history-plat-france-hyw1/0", "kind": "meet", "note": "百年战争月台（上）见法兰西线。"}, {"line": "britain", "to": "history-plat-britain-hyw1/0", "kind": "meet", "note": "百年战争月台（前）见不列颠线。"}], "history-italy-blackdeath/3": [{"line": "italy", "to": "history-italy-venice/0", "kind": "back", "note": "后续见意大利线《威尼斯与热那亚》。"}, {"line": "france", "to": "history-france-valois/0", "kind": "back", "note": "后续见法兰西线《从卡佩到瓦卢瓦》。"}, {"line": "britain", "to": "history-britain-richard2/0", "kind": "back", "note": "后续见不列颠线《理查二世与金雀花末路》。"}, {"line": "germany", "to": "history-germany-golden-bull/0", "kind": "back", "note": "后续见德意志线《金玺诏书与卢森堡王朝》。"}, {"line": "faith", "to": "history-faith-schism/0", "kind": "back", "note": "后续见基督教线《教会大分裂（上）》。"}], "history-italy-venice/0": [{"line": "black-death", "to": "history-italy-blackdeath/0", "kind": "peer", "note": "1347—1351年黑死病大流行见黑死病支线。"}], "history-germany-golden-bull/0": [{"line": "black-death", "to": "history-italy-blackdeath/0", "kind": "peer", "note": "1347—1351年黑死病与犹太人惨案见黑死病支线。"}], "history-faith-schism/0": [{"line": "black-death", "to": "history-italy-blackdeath/0", "kind": "peer", "note": "1347—1351年黑死病大流行见黑死病支线。"}], "history-persia-timur/0": [{"line": "black-death", "to": "history-italy-blackdeath/0", "kind": "peer", "note": "1347—1351年黑死病从卡法传往地中海见黑死病支线。"}], "history-nordic-kingdoms/0": [{"line": "black-death", "to": "history-italy-blackdeath/0", "kind": "peer", "note": "1349年黑死病重创挪威与北欧见黑死病支线。"}]};
 function historyEra(e,scene=0){return HISTORY_ERAS.find(era=>era.items.some(([id,from=0,to=Infinity])=>id===e.id&&scene>=from&&scene<=to));}
 const TOPIC_ENTRIES=[
  {id:'topic-grail-sword',kind:'topic',ch:0,num:'01',title:'圣杯与剑：统治的成本',short:'圣杯与剑：统治的成本',en:'The Grail and the Sword: the Cost of Rule',
