@@ -71,8 +71,10 @@ const settle=p=>p.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestA
   let hover=await hoverOn('.line-flag.flag-start[data-line="china"]');assert.deepEqual(hover.on,['china']);assert.equal(hover.muted,counts.lines-1);
   const endLine=await p.$eval('.line-flag.flag-end:not(.culled)',e=>e.dataset.line);hover=await hoverOn(`.line-flag.flag-end[data-line="${endLine}"]`);assert.deepEqual(hover.on,[endLine]);
   await p.mouse.move(700,40);assert.equal(await p.$$eval('.rail-path.muted',e=>e.length),0,'leaving clears the highlight');
+  const sharedStop=await p.evaluate(()=>{const s=metroUI.data.stations.find(s=>s.lines.length>1&&s.t>1500);return {key:s.key,lines:[...s.lines].sort()}});
+  await p.evaluate(k=>metroUI.focusStation(k),sharedStop.key);await settle(p);
+  hover=await hoverOn(`.metro-node[data-key="${sharedStop.key}"] .node-name`);assert.deepEqual(hover.on,sharedStop.lines);assert.ok(hover.dimmed>0);
   await p.evaluate(()=>metroUI.focusStation('history-crusade-fourth/0'));await settle(p);
-  hover=await hoverOn('.metro-node[data-key="history-crusade-fourth/0"] .node-name');assert.deepEqual(hover.on,['crusade','east']);assert.ok(hover.dimmed>0);
   hover=await hoverOn('.period-annotation[data-line="crusade"]:not(.culled):not(.mid-only)');assert.deepEqual(hover.on,['crusade']);
   await p.hover('#lineList [data-line="rome"]');assert.deepEqual(await p.$$eval('.rail-path.on',e=>e.map(x=>x.dataset.line)),['rome']);
   await p.mouse.move(700,40);
@@ -80,24 +82,26 @@ const settle=p=>p.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestA
   const screenOf=(x,y)=>p.evaluate((x,y)=>{const c=metroUI.state().camera,r=document.querySelector('#networkCanvas').getBoundingClientRect();return{x:r.left+c.x+x*c.z,y:r.top+c.y+y*c.z}},x,y);
   const plain=await p.evaluate(()=>{const n=[...metroUI.pointByKey.values()].find(x=>x.s.title==='大宪章与议会');metroUI.focusStation(n.s.key);return{x:n.x,y:n.y}});
   let at=await screenOf(plain.x,plain.y);await p.mouse.click(at.x,at.y);assert.equal(await p.$eval('#inspectorTitle',e=>e.textContent),'大宪章与议会');assert.ok(await on(p,'#stationInspector'));
-  const plague=await p.evaluate(()=>{const n=[...metroUI.pointByKey.values()].find(x=>x.s.title==='黑死病');metroUI.inspect(n.s.key);metroUI.focusStation(n.s.key);return{key:n.s.key,lines:n.s.lines.length,links:!!n.link,nodes:document.querySelectorAll(`.metro-node[data-key="${n.s.key}"]`).length,offers:document.querySelectorAll('#inspectorLines button').length}});
-  assert.equal(plague.lines,7);assert.equal(plague.nodes,1,'one station');assert.equal(plague.offers,7);assert.ok(plague.links,'far-apart rails are joined by a dashed link');
+  // The widest interchange still shared after the 2026-11-15 rework (one owner per section elsewhere).
+  const plague=await p.evaluate(()=>{const n=[...metroUI.pointByKey.values()].filter(x=>x.s.lines.length>2&&x.link).sort((a,b)=>b.s.lines.length-a.s.lines.length)[0];metroUI.inspect(n.s.key);metroUI.focusStation(n.s.key);return{key:n.s.key,lines:n.s.lines.length,links:!!n.link,nodes:document.querySelectorAll(`.metro-node[data-key="${n.s.key}"]`).length,offers:document.querySelectorAll('#inspectorLines button').length}});
+  assert.ok(plague.lines>2);assert.equal(plague.nodes,1,'one station');assert.equal(plague.offers,plague.lines);assert.ok(plague.links,'far-apart rails are joined by a dashed link');
   
   const rail=await p.evaluate(()=>{const a=metroUI.data.lineStops.get('china'),m=metroUI.pointByKey.get(a[8].key),n=metroUI.pointByKey.get(a[9].key);metroUI.focusStation(m.s.key);document.querySelector('#stationInspector').hidden=true;return{x:(m.x+n.x)/2,y:m.y}});
   at=await screenOf(rail.x,rail.y);await p.mouse.click(at.x,at.y);await settle(p);let st=await p.evaluate(()=>metroUI.state());assert.equal(st.mode,'ride');assert.equal(st.line,'china');
   await p.evaluate(()=>metroUI.setMode('network'));await settle(p);
 
   /* ---------- On the train ---------- */
-  await p.evaluate(()=>metroUI.board('east',{key:'history-crusade-fourth/0'}));await settle(p);
+  // Since the 2026-11-15 rework 第四次十字军 belongs to the 十字军 branch alone; its transfers come from TREE_XFERS.
+  await p.evaluate(()=>metroUI.board('crusade',{key:'history-crusade-fourth/0'}));await settle(p);
   assert.equal(await p.evaluate(()=>document.body.dataset.metro),'ride');assert.ok(!(await on(p,'#networkMode')));assert.ok(await on(p,'#ridePanel'));assert.ok(!(await on(p,'#sceneRail')),'the scene strip gives way to the text');
-  const ride=await p.evaluate(()=>{const r=document.getElementById('reader').getBoundingClientRect(),m=document.getElementById('map').getBoundingClientRect();return{textLeftOfMap:r.right<=m.left+1,stops:document.querySelectorAll('.route-stop').length,line:metroUI.data.lineStops.get('east').length,active:document.querySelector('.route-stop.active').dataset.key,inView:(()=>{const a=document.querySelector('.route-stop.active').getBoundingClientRect(),s=document.getElementById('routeScroller').getBoundingClientRect();return a.left>=s.left&&a.right<=s.right})(),chips:[...document.querySelectorAll(`.route-transfers [data-key="${document.querySelector('.route-stop.active').dataset.key}"]`)].map(e=>e.textContent),transfer:[...document.querySelectorAll('#transferBar button')].map(b=>b.dataset.transfer),scenes:card.querySelectorAll('.scene-passage:not(.off-station)').length,count:metroUI.state().sceneCount,position:document.getElementById('scenePosition').textContent,chip:document.getElementById('mapSceneTitle').textContent,scene:activeScene(ENTRIES[cur]).title}});
-  assert.ok(ride.textLeftOfMap);assert.equal(ride.stops,ride.line);assert.equal(ride.active,'history-crusade-fourth/0');assert.ok(ride.inView,'the current station is in view');assert.deepEqual(ride.chips,['十']);assert.deepEqual(ride.transfer,['crusade']);assert.equal(ride.scenes,ride.count);assert.equal(ride.position,`1 / ${ride.count} 幕`);assert.equal(ride.chip,ride.scene);
+  const ride=await p.evaluate(()=>{const r=document.getElementById('reader').getBoundingClientRect(),m=document.getElementById('map').getBoundingClientRect();return{textLeftOfMap:r.right<=m.left+1,stops:document.querySelectorAll('.route-stop').length,line:metroUI.data.lineStops.get('crusade').length,expect:TREE_XFERS['history-crusade-fourth/0'].filter(c=>c.line!=='crusade').map(c=>c.line),active:document.querySelector('.route-stop.active').dataset.key,inView:(()=>{const a=document.querySelector('.route-stop.active').getBoundingClientRect(),s=document.getElementById('routeScroller').getBoundingClientRect();return a.left>=s.left&&a.right<=s.right})(),chips:[...document.querySelectorAll(`.route-transfers [data-key="${document.querySelector('.route-stop.active').dataset.key}"]`)].map(e=>e.textContent),transfer:[...document.querySelectorAll('#transferBar button')].map(b=>b.dataset.transfer),scenes:card.querySelectorAll('.scene-passage:not(.off-station)').length,count:metroUI.state().sceneCount,position:document.getElementById('scenePosition').textContent,chip:document.getElementById('mapSceneTitle').textContent,scene:activeScene(ENTRIES[cur]).title}});
+  assert.ok(ride.textLeftOfMap);assert.equal(ride.stops,ride.line);assert.equal(ride.active,'history-crusade-fourth/0');assert.ok(ride.inView,'the current station is in view');assert.equal(ride.chips.length,ride.expect.length);assert.deepEqual(ride.transfer,ride.expect);assert.equal(ride.scenes,ride.count);assert.equal(ride.position,`1 / ${ride.count} 幕`);assert.equal(ride.chip,ride.scene);
   // Scene buttons, station buttons and the line itself.
   await p.click('#nextScene');st=await p.evaluate(()=>metroUI.state());assert.equal(st.scene,1);assert.ok(await p.evaluate(()=>location.hash==='#history-crusade-fourth/1'));
   await p.click('#prevScene');assert.equal((await p.evaluate(()=>metroUI.state())).scene,0);assert.ok(await p.$eval('#prevScene',e=>e.disabled),'no scene before the first');
   // The badges above a stop change line, after asking: on the current stop in place, with the strip finding that stop on the new line; on another stop, there.
-  await p.evaluate(()=>metroUI.board('eeurope',{key:'history-empire-fall-1453/0'}));await settle(p);
-  const eastBadge='.route-transfers [data-switch-line="east"][data-key="history-empire-fall-1453/0"]',dialog=()=>p.$eval('#transferDialog',e=>({open:e.open,text:e.textContent,focus:document.activeElement.id}));
+  await p.evaluate(()=>metroUI.board('eeurope',{key:'history-eeurope-moscow/0'}));await settle(p);
+  const eastBadge='.route-transfers [data-switch-line="east"][data-key="history-eeurope-moscow/0"]',dialog=()=>p.$eval('#transferDialog',e=>({open:e.open,text:e.textContent,focus:document.activeElement.id}));
   await p.click(eastBadge);const asked=await dialog();assert.ok(asked.open&&asked.text.includes('换乘到东罗马线 · ')&&asked.text.includes('君士坦丁堡陷落'),JSON.stringify(asked));assert.equal(asked.focus,'transferConfirm');
   assert.equal((await p.evaluate(()=>metroUI.state())).line,'eeurope','nothing changes before the answer');
   const behindDialog=await p.evaluate(()=>({station:metroUI.state().station,globalScene:sceneIndex,entry:ENTRIES[cur].id,hash:location.hash}));
@@ -245,6 +249,37 @@ const settle=p=>p.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestA
    return {want,moved,now:sceneIndex};
   });
   assert.ok(short&&short.moved>0,'a short scene to test with '+JSON.stringify(short));assert.equal(short.now,short.want,'stays on the scene it went to');await tall.close();
+  /* ---------- Transfer rework, batch 1 (老无 2026-11-15): authored transfers, platforms, 支线 ---------- */
+  {
+   const x=await pageAt(1440,900);
+   await x.evaluate(()=>metroUI.board('faith',{key:'history-plat-faith-staufer/0'}));await settle(x);
+   const plat=await x.evaluate(()=>{const key='history-plat-faith-staufer/0',want=TREE_XFERS[key];
+    return {stop:document.querySelector(`.route-stop.plat[data-key="${key}"] .stop-date`)?.textContent,
+     buttons:[...document.querySelectorAll('#transferBar button')].map(b=>b.dataset.transfer),want:want.map(c=>c.line),
+     hints:[...document.querySelectorAll('#transferHint span')].map(s=>s.textContent),notes:want.map(c=>c.note),
+     detail:document.querySelectorAll(`.route-transfers [data-key="${key}"].to-detail`).length,
+     to:metroUI.data.stations.find(s=>s.key===want[0].to).title}});
+   assert.match(plat.stop,/^月台 · \d+幕$/,'a platform reads as one on the strip');
+   assert.deepEqual(plat.buttons,plat.want,'one button per authored change of line');
+   assert.deepEqual(plat.hints,plat.notes,'one line of hint per change of line');
+   assert.equal(plat.detail,plat.want.length,'the badges that lead to the full story are marked');
+   await x.click(`#transferBar [data-transfer="${plat.want[0]}"]`);
+   assert.equal(await x.$eval('#transferQuestion',e=>e.textContent),`换乘到德意志线 · ${plat.to}`,'the question says only where it goes');
+   assert.equal(await x.$eval('#transferConfirm',e=>e.textContent),'换乘');
+   await x.click('#transferConfirm');
+   const landed=await x.evaluate(()=>metroUI.state());assert.equal(landed.line,'germany');assert.equal(landed.station,'history-germany-barbarossa/0');
+   // Event branches are 支线 in labels and questions.
+   await x.evaluate(()=>metroUI.board('france',{key:'history-plat-france-hyw1/0'}));await settle(x);
+   assert.deepEqual(await x.$$eval('#transferBar button',b=>b.map(e=>e.textContent)),['百年战争支线','黑死病支线']);
+   await x.click('#transferBar [data-transfer="hundred-years"]');
+   assert.match(await x.$eval('#transferQuestion',e=>e.textContent),/^换乘到百年战争支线 · /);
+   await x.click('#transferConfirm');
+   assert.match(await x.$eval('#ridingLine small',e=>e.textContent),/^支线 · \d+站$/);
+   await x.evaluate(()=>metroUI.board('hundred-years',{key:'history-britain-jeanne/0'}));await settle(x);
+   assert.deepEqual(await x.$$eval('#transferHint span',s=>s.map(e=>e.textContent)),await x.evaluate(()=>TREE_XFERS['history-britain-jeanne/0'].map(c=>c.note)),'a branch end points back to the main lines');
+   await x.close();
+  }
+
   /* ---------- The mark top-left goes home, after asking (老无 2026-11-12). Last: its page would otherwise sit in front of the one above. ---------- */
   {
    const h=await pageAt(1440,900,'#history-spain-1492/0');
@@ -280,6 +315,6 @@ const settle=p=>p.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestA
   }
 
   assert.deepEqual(errors,[]);
-  console.log(`PASS: metro layout — site identity kept; ${counts.stations} stations, ${counts.lines} lines, ${counts.shared} shared on the whole map with clean rails and names; hover, pan, zoom, time slices; on-train view, scene and station navigation, text scrolling, deep links, the mark going home after asking, a reload keeping the place in the text; person cards and family trees; geography and topics; all ${landed.scenes} scenes land on their own marks; laptop, phone, touch emulation; offline; no page errors.`);
+  console.log(`PASS: metro layout — site identity kept; ${counts.stations} stations, ${counts.lines} lines, ${counts.shared} shared on the whole map with clean rails and names; hover, pan, zoom, time slices; on-train view, scene and station navigation, text scrolling, deep links, authored transfers with platforms and 支线, the mark going home after asking, a reload keeping the place in the text; person cards and family trees; geography and topics; all ${landed.scenes} scenes land on their own marks; laptop, phone, touch emulation; offline; no page errors.`);
  }catch(e){console.error(e);process.exitCode=1;}finally{await Promise.race([browser.close(),new Promise(r=>setTimeout(r,200))]);browser.process()?.kill('SIGKILL');process.exit(process.exitCode||0);}
 })().catch(e=>{console.error(e);process.exitCode=1;});

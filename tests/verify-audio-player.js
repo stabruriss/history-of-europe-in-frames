@@ -1129,7 +1129,8 @@ print(json.dumps({'ids':ids, 'hashes':hashes, 'kinds':kinds,
     pass(`${width}px: real drag retains focus but not arrow ownership; native Page/Home/End, Enter/Space/Tab, modifiers and EOF remain usable`);
 
     // A true modal outranks both the queue and the two navigation handlers.
-    await board(p, 'eeurope', 'history-empire-fall-1453/0'); await p.click('#audioQueueToggle');
+    // 君士坦丁堡陷落 belongs to 东罗马 alone since 2026-11-15; 莫斯科 on 东欧 still changes to 东罗马 there.
+    await board(p, 'eeurope', 'history-eeurope-moscow/0'); await p.click('#audioQueueToggle');
     await p.focus('#map');
     await p.$eval('#transferBar [data-transfer="east"]', e => e.click());
     assert.equal(await p.evaluate(() => document.activeElement.id), 'transferConfirm');

@@ -18,10 +18,12 @@ window.NETWORK_DESIGN = (() => {
 
   // Lanes, top to bottom.
   const TOP = 60;        // eastern europe in antiquity; scandinavia from about 745, the north of the map
+  const HUNDRED = 100;   // the Hundred Years' War branch (1315—1453), between scandinavia and the english–french bundle
   const BRITAIN = 140;   // greece, then britain; france bundles here from 1154
   const FRANCE = 182;
   const LOW = 224;       // low countries
   const ROME = 266;      // prehistory and early greece, then rome, the medieval west, italy: one straight lane
+  const PLAGUE = 290;    // the Black Death branch (1347—1351), between italy and germany
   const GER0 = 310;      // germany before it bundles with the church
   const GERMANY = 345;   // germany; the church runs one step below
   const CRUSADE = 395;
@@ -50,6 +52,9 @@ window.NETWORK_DESIGN = (() => {
     lowlands: [[830, y(ROME), null, -10], [1300, y(LOW), 'e'], [1495, y(LOW)]],
     germany: [[830, y(ROME)], [843, y(GER0), 'e'], [860, y(GER0)], [951, y(GERMANY)], [1495, y(GERMANY)]],
     crusade: [[1070, y(GERMANY, 1), null, -92], [1070, y(CRUSADE)], [1295, y(CRUSADE)]],
+    // Event branches of the transfer rework (老无 2026-11-15): each on a lane of its own, met by platforms on the main lines.
+    'hundred-years': [[1315, y(HUNDRED)], [1453, y(HUNDRED)]],
+    'black-death': [[1347, y(PLAGUE)], [1351, y(PLAGUE)]],
     nordic: [[745, y(TOP)], [1920, y(TOP)]],
     america: [[1430, y(AMERICA)], [1631, y(AMERICA)]],
   };
@@ -60,9 +65,11 @@ window.NETWORK_DESIGN = (() => {
     [-1900, -1400, 62], [-1100, -1000, 66],
     [-730, -700, 62], [-200, -55, 60], [-44, -30, 40], [-30, -27, 20],
     [379, 395, 62], [455, 476, 30], [480, 481, 62],
-    [814, 830, 100],
+    [814, 830, 140],  // 2026-11-15: room for 东欧's descent past 查理曼的治理 after the 726 platform
     [1056, 1070, 110],
+    [1059, 1070, 190], // 2026-11-15: 十字军 leaves the church rail after the name of the 叙任权与卡诺莎 platform
     [641, 641.4, 34],
+    [711, 717, 34],    // 2026-11-15: 塔里克渡海's link clear of 伊苏里亚王朝
     [1296, 1300, 74], [1300, 1304, 74], [1438, 1450, 26], [1450, 1454, 72],
     [1462, 1472, 60], [1477, 1484, 40], [1494, 1495, 40], [1495, 1496, 38],
     [1565, 1566, 38], [1566, 1571, 38], [1571, 1573, 38], [1588, 1590, 38], [1625, 1627, 38], [1627, 1631, 38],
