@@ -7,18 +7,11 @@ const target=path.resolve(process.argv[2]||path.join(__dirname,'..','index.html'
 // 老无 2026-11-08: “第一次世界大战竟然不是单独的一节么……应该是多放换乘站”. 亚里士多德's v95 made 《第一次世界大战（上）（中）（下）》
 // and 《十一月革命与凡尔赛》 the hubs; v102 fits 柏拉图's lines around them: 《奥斯曼的最后一战》 (was 《第一次世界大战》) on 中东 only,
 // 《妇女参政与一战》 between 中 and 下, and every hand-over and pointer moved to the hub that comes next on its line.
-const ORDER={
- persia:['history-ottoman-berlin','history-germany-ww1-west','history-ottoman-ww1','history-ww1-end','history-ottoman-kemal'],
- eeurope:['history-eeurope-reform','history-germany-ww1-west','history-ww1-middle','history-eeurope-october'],
- britain:['history-britain-lords','history-germany-ww1-west','history-ww1-middle','history-britain-suffrage-1918','history-ww1-end',
-  'history-germany-versailles','history-britain-suffrage-1928'],
- italy:['history-italy-rome','history-germany-ww1-west','history-ww1-middle','history-ww1-end','history-germany-versailles','history-italy-lateran'],
- lowlands:['history-lowlands-congo','history-germany-ww1-west','history-ww1-middle','history-ww1-end'],
-};
+const ORDER={'persia':['history-ottoman-berlin','history-ottoman-ww1','history-ottoman-kemal'],'eeurope':['history-eeurope-reform','history-plat-eeurope-ww1','history-eeurope-october'],'britain':['history-britain-lords','history-britain-suffrage-1918','history-britain-suffrage-1928'],'italy':['history-italy-rome','history-plat-italy-ww1','history-italy-lateran'],'lowlands':['history-lowlands-congo','history-plat-lowlands-ww1']};
 // Each hand-over names the station that now comes next (or came before) on its line.
 const HANDOVERS=[
  ['history-ottoman-berlin',5,'第一次世界大战（上）'],['history-ottoman-berlin',5,'奥斯曼的最后一战'],
- ['history-ottoman-ww1',0,'第一次世界大战（上）'],['history-ottoman-ww1',5,'第一次世界大战（下）'],
+ ['history-ottoman-ww1',0,'改革、外债与柏林会议'],['history-ottoman-ww1',5,'第一次世界大战（下）'],
  ['history-ottoman-kemal',0,'第一次世界大战（下）'],
  ['history-eeurope-reform',5,'第一次世界大战（上）'],['history-eeurope-october',0,'第一次世界大战（中）'],
  ['history-italy-rome',5,'第一次世界大战（上）'],['history-italy-lateran',0,'十一月革命与凡尔赛'],['history-italy-lateran',0,'庇护九世与文化斗争'],

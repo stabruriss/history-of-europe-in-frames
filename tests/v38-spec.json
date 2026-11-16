@@ -68,8 +68,7 @@
   ],
   "history-eeurope-rus/0": [
    [
-    "eeurope",
-    "nordic"
+    "eeurope"
    ],
    750,
    945
@@ -292,7 +291,8 @@
     "history-eeurope-ivan4",
     "history-eeurope-romanov",
     "history-eeurope-peter",
-    "history-eeurope-catherine"
+    "history-eeurope-catherine",
+    "history-plat-eeurope-1812"
    ]
   ],
   [
@@ -300,6 +300,7 @@
    "东欧：从农奴解放到苏联",
    [
     "history-eeurope-reform",
+    "history-plat-eeurope-ww1",
     "history-eeurope-october"
    ]
   ]
@@ -393,6 +394,9 @@
   "十字军",
   "百年战争",
   "黑死病",
+  "宗教改革",
+  "三十年战争",
+  "一战",
   "北欧",
   "美洲",
   "中国"

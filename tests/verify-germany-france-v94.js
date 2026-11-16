@@ -21,18 +21,8 @@ const SECTIONS={
  'history-france-second-empire':['拿破仑三世与第二帝国',5,6],
  'history-france-commune':['巴黎公社与第三共和国',5,6],
 };
-const GERMANY_ORDER=[
- 'history-germany-thirty-years-3/0','history-germany-prussia-rise/0','history-germany-frederick-great/0',
- 'history-france-seven-years/0','history-france-empire/0','history-germany-reform/0',
- 'history-france-waterloo/0','history-germany-1848/0','history-germany-bismarck/0',
- 'history-germany-franco-prussian/0','history-germany-wilhelm2/0','history-germany-ww1-west/0',
- 'history-ww1-middle/0','history-ww1-end/0','history-germany-versailles/0',
-];
-const FRANCE_ORDER=[
- 'history-france-louis-bonaparte/0','history-france-second-empire/0','history-germany-franco-prussian/0',
- 'history-france-commune/0','history-germany-ww1-west/0','history-ww1-middle/0',
- 'history-ww1-end/0','history-germany-versailles/0',
-];
+const GERMANY_ORDER=['history-plat-germany-thirty-years/0','history-germany-prussia-rise/0','history-germany-frederick-great/0','history-germany-reform/0','history-germany-1848/0','history-germany-bismarck/0','history-germany-franco-prussian/0','history-germany-wilhelm2/0','history-plat-germany-ww1/0'];
+const FRANCE_ORDER=['history-france-louis-bonaparte/0','history-france-second-empire/0','history-plat-france-sedan/0','history-france-commune/0','history-plat-france-ww1/0'];
 const chars=s=>s.replace(/<[^>]+>/g,'').replace(/（[A-Za-z][^）]*）/g,'').replace(/\s/g,'').length;
 
 (async()=>{
@@ -50,13 +40,13 @@ const chars=s=>s.replace(/<[^>]+>/g,'').replace(/（[A-Za-z][^）]*）/g,'').rep
    const para=(e,i)=>(e.html.match(new RegExp(`<p data-scene-text="${i}">([\\s\\S]*?)</p>`))||[])[1]||'';
    const gStops=metroUI.data.lineStops.get('germany').map(s=>s.key);
    const fStops=metroUI.data.lineStops.get('france').map(s=>s.key);
-   const gi=gStops.indexOf('history-germany-thirty-years-3/0');
+   const gi=gStops.indexOf('history-plat-germany-thirty-years/0');
    const fi=fStops.indexOf('history-france-louis-bonaparte/0');
    return {
     germanyLine:(({name,parent,from,to})=>({name,parent,from,to}))(HISTORY_BRANCHES.find(b=>b.id==='germany')),
     franceLine:(({name,parent,from,to})=>({name,parent,from,to}))(HISTORY_BRANCHES.find(b=>b.id==='france')),
-    germanyStretch:gi>=0?gStops.slice(gi,gi+15):[],
-    franceStretch:fi>=0?fStops.slice(fi,fi+8):[],
+    germanyStretch:gi>=0?gStops.slice(gi,gi+9):[],
+    franceStretch:fi>=0?fStops.slice(fi,fi+5):[],
     report:metroUI.layoutReport(),
     shared:{
      sevenYears:TREE_ROWS['history-france-seven-years/0'][0],
@@ -78,14 +68,14 @@ const chars=s=>s.replace(/<[^>]+>/g,'').replace(/（[A-Za-z][^）]*）/g,'').rep
   assert.deepEqual(r.franceStretch,FRANCE_ORDER,'France runs through its 1852—1923 stretch in order');
   assert.deepEqual(r.report.unresolvedLabels,[]);
   assert.deepEqual(r.report.linkThroughStations,[]);
-  for(const l of ['france','britain','spain','america','germany'])assert.ok(r.shared.sevenYears.includes(l),'Seven Years War includes '+l);
-  for(const l of ['france','spain','germany'])assert.ok(r.shared.empire.includes(l),'Napoleonic Empire includes '+l);
-  for(const l of ['france','eeurope','germany'])assert.ok(r.shared.waterloo.includes(l),'Waterloo includes '+l);
-  for(const l of ['germany','france'])assert.ok(r.shared.francoPrussian.includes(l),'Franco-Prussian War includes '+l);
-  for(const l of ['germany','france','britain','lowlands','italy','eeurope','persia'])assert.ok(r.shared.ww1West.includes(l),'WW1 Part I includes '+l);
-  for(const l of ['germany','france','britain','lowlands','italy','eeurope'])assert.ok(r.shared.ww1Mid.includes(l),'WW1 Part II includes '+l);
-  for(const l of ['germany','france','britain','lowlands','italy','persia','america'])assert.ok(r.shared.ww1End.includes(l),'WW1 Part III includes '+l);
-  for(const l of ['germany','france','britain','italy','china'])assert.ok(r.shared.versailles.includes(l),'Versailles 1919 includes '+l);
+  assert.equal(r.shared.sevenYears,'france');
+  assert.equal(r.shared.empire,'france');
+  assert.equal(r.shared.waterloo,'france');
+  assert.equal(r.shared.francoPrussian,'germany');
+  assert.equal(r.shared.ww1West,'ww1');
+  assert.equal(r.shared.ww1Mid,'ww1');
+  assert.equal(r.shared.ww1End,'ww1');
+  assert.equal(r.shared.versailles,'ww1');
   for(const [id,[short,ch,n]] of Object.entries(SECTIONS)){
    const s=r.sections[id];
    assert.deepEqual([s.short,s.ch,s.scenes],[short,ch,n],id);

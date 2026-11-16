@@ -83,8 +83,8 @@ const chars=s=>s.replace(/<[^>]+>/g,'').replace(/（[A-Za-z][^）]*）/g,'').rep
   assert.deepEqual(r.future,['britain',1928,'大萧条、二战与福利国家']);
   assert.deepEqual(r.report.unresolvedLabels,[]);
   assert.deepEqual(r.report.linkThroughStations,[]);
-  assert.deepEqual(r.sharedSpanSucc,['france','spain','britain']);
-  assert.deepEqual(r.sharedSevenYears,['france','britain','spain','america','germany']);
+  assert.equal(r.sharedSpanSucc,'france');
+  assert.equal(r.sharedSevenYears,'france');
   assert.equal(r.hanoverTree,true,'Hanover to Windsor SVG family tree present');
   assert.ok(r.newtonBox&&r.allenBox&&r.sarumBox&&r.chartistBox&&r.ledgerBox,'all 5 key boxes present');
   for(const [id,[short,period,n]] of Object.entries(SECTIONS)){

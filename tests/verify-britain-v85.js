@@ -86,8 +86,8 @@ const chars=s=>s.replace(/<[^>]+>/g,'').replace(/（[A-Za-z][^）]*）/g,'').rep
   assert.deepEqual(r.future,['britain',1928,'大萧条、二战与福利国家']);
   assert.deepEqual(r.report.unresolvedLabels,[]);
   assert.deepEqual(r.report.linkThroughStations,[]);
-  assert.deepEqual(r.sharedH8,['britain','faith']);
-  assert.deepEqual(r.sharedArmada,['spain','lowlands','america','britain']);
+  assert.equal(r.sharedH8,'britain');
+  assert.equal(r.sharedArmada,'spain');
   assert.deepEqual(r.kinTrees,[true,true],'both Tudor and Stuart SVG family trees present');
   assert.ok(r.virginBox,'Catherine of Aragon virginity box present');
   assert.ok(r.abductBox,'Mary Stuart abduction box present');

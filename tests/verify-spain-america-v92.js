@@ -21,18 +21,8 @@ const SECTIONS={
  'history-america-gilded':['镀金时代',14,6],
  'history-america-wilson':['威尔逊与一战',14,6],
 };
-const SPAIN_ORDER=[
- 'history-france-spanish-succession/0','history-spain-bourbon/0','history-france-seven-years/0',
- 'history-france-american-war/0','history-france-empire/0','history-spain-cadiz/0',
- 'history-america-latam/0','history-spain-carlist/0','history-spain-1898/0',
-];
-const AMERICA_ORDER=[
- 'history-america-hill/0','history-america-colonies/0','history-france-seven-years/0',
- 'history-america-independence/0','history-france-american-war/0','history-america-constitution/0',
- 'history-america-westward/0','history-america-latam/0','history-america-cotton/0',
- 'history-america-civilwar/0','history-america-gilded/0','history-spain-1898/0',
- 'history-america-wilson/0',
-];
+const SPAIN_ORDER=['history-plat-spain-succession/0','history-spain-bourbon/0','history-plat-spain-bayonne/0','history-spain-cadiz/0','history-plat-spain-latam/0','history-spain-carlist/0','history-spain-1898/0'];
+const AMERICA_ORDER=['history-america-hill/0','history-america-colonies/0','history-plat-america-french-indian/0','history-america-independence/0','history-plat-america-yorktown/0','history-america-constitution/0','history-america-westward/0','history-america-latam/0','history-america-cotton/0','history-america-civilwar/0','history-america-gilded/0','history-plat-america-1898/0','history-america-wilson/0'];
 const chars=s=>s.replace(/<[^>]+>/g,'').replace(/（[A-Za-z][^）]*）/g,'').replace(/\s/g,'').length;
 
 (async()=>{
@@ -50,12 +40,12 @@ const chars=s=>s.replace(/<[^>]+>/g,'').replace(/（[A-Za-z][^）]*）/g,'').rep
    const para=(e,i)=>(e.html.match(new RegExp(`<p data-scene-text="${i}">([\\s\\S]*?)</p>`))||[])[1]||'';
    const sStops=metroUI.data.lineStops.get('spain').map(s=>s.key);
    const aStops=metroUI.data.lineStops.get('america').map(s=>s.key);
-   const si=sStops.indexOf('history-france-spanish-succession/0');
+   const si=sStops.indexOf('history-plat-spain-succession/0');
    const ai=aStops.indexOf('history-america-hill/0');
    return {
     spainLine:(({name,parent,from,to})=>({name,parent,from,to}))(HISTORY_BRANCHES.find(b=>b.id==='spain')),
     americaLine:(({name,from,to})=>({name,from,to}))(HISTORY_BRANCHES.find(b=>b.id==='america')),
-    spainStretch:si>=0?sStops.slice(si,si+9):[],
+    spainStretch:si>=0?sStops.slice(si,si+7):[],
     americaStretch:ai>=0?aStops.slice(ai,ai+13):[],
     report:metroUI.layoutReport(),
     shared:{
@@ -75,11 +65,11 @@ const chars=s=>s.replace(/<[^>]+>/g,'').replace(/（[A-Za-z][^）]*）/g,'').rep
   assert.deepEqual(r.americaStretch,AMERICA_ORDER,'The Americas run through their 1648—1920 stretch in order');
   assert.deepEqual(r.report.unresolvedLabels,[]);
   assert.deepEqual(r.report.linkThroughStations,[]);
-  for(const l of ['france','britain','spain','america'])assert.ok(r.shared.sevenYears.includes(l),'Seven Years War includes '+l);
-  for(const l of ['france','spain','america'])assert.ok(r.shared.americanWar.includes(l),'American War includes '+l);
-  for(const l of ['france','spain'])assert.ok(r.shared.empire.includes(l),'Napoleonic Empire includes '+l);
-  for(const l of ['america','spain'])assert.ok(r.shared.latam.includes(l),'LatAm Independence includes '+l);
-  for(const l of ['spain','america'])assert.ok(r.shared.war1898.includes(l),'1898 War includes '+l);
+  assert.equal(r.shared.sevenYears,'france');
+  assert.equal(r.shared.americanWar,'france');
+  assert.equal(r.shared.empire,'france');
+  assert.equal(r.shared.latam,'america');
+  assert.equal(r.shared.war1898,'spain');
   for(const [id,[short,ch,n]] of Object.entries(SECTIONS)){
    const s=r.sections[id];
    assert.deepEqual([s.short,s.ch,s.scenes],[short,ch,n],id);

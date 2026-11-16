@@ -96,11 +96,11 @@ const chars=s=>s.replace(/<[^>]+>/g,'').replace(/（[A-Za-z][^）]*）/g,'').rep
   // The ten stations in 老无's order after 隋唐, with 蒙古西征 and 大交换 ridden on the way.
   const tail=r.stations.slice(r.stations.indexOf('history-china-tang'));
   assert.deepEqual(tail.filter(id=>id.startsWith('history-china-')),['history-china-tang',...ORDER]);
-  assert.ok(!tail.includes('history-persia-mongols')&&tail.includes('history-america-exchange'),JSON.stringify(tail));
-  assert.deepEqual(tail.slice(-2),['history-china-republic','history-germany-versailles']);
+  assert.ok(!tail.includes('history-persia-mongols')&&!tail.includes('history-america-exchange'),JSON.stringify(tail));
+  assert.equal(tail.at(-1),'history-china-republic');
   assert.deepEqual(r.eras.slice(-3),[['china-song',ORDER.slice(0,4)],['china-yuan-ming',ORDER.slice(4,7)],['china-qing',ORDER.slice(7)]]);
   assert.equal(r.sharedMongols,'persia');
-  assert.deepEqual(r.sharedExchange,['america','china']);
+  assert.equal(r.sharedExchange,'america');
   assert.deepEqual(r.report.unresolvedLabels,[]);
   assert.deepEqual(r.report.linkThroughStations,[]);
   assert.deepEqual(r.regions,[],'every teaching region is in GEO.regions');

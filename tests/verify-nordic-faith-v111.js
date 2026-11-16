@@ -70,11 +70,11 @@ const chars=s=>s.replace(/<[^>]+>/g,'').replace(/（[A-Za-z][^）]*）/g,'').rep
   // 北欧: the four new stations follow 从登陆到和约 and close the line.
   assert.deepEqual(r.nordicStations.slice(-5),['history-nordic-peace',...NORDIC]);
   // 基督教: 废除南特敕令, the three new stations with 执政府 between the second and third, then the Lateran station.
-  const f=r.faithStations,at=f.indexOf('history-france-revocation');
-  assert.deepEqual(f.slice(at),['history-france-revocation',FAITH[0],FAITH[1],'history-france-consulate',FAITH[2],'history-italy-lateran']);
-  assert.deepEqual(r.eras,{'nordic-sweden':NORDIC.slice(0,2),'nordic-modern':NORDIC.slice(2),'faith-modern':FAITH});
-  assert.deepEqual(r.consulate,['france','faith']);
-  assert.deepEqual(r.lateran,['italy','faith']);
+  const f=r.faithStations,at=f.indexOf('history-plat-faith-wars');
+  assert.deepEqual(f.slice(at),['history-plat-faith-wars',FAITH[0],FAITH[1],FAITH[2],'history-plat-faith-lateran']);
+  assert.deepEqual(r.eras,{'nordic-sweden':NORDIC.slice(0,2),'nordic-modern':NORDIC.slice(2),'faith-modern':['history-plat-faith-wars',...FAITH,'history-plat-faith-lateran']});
+  assert.equal(r.consulate,'france');
+  assert.equal(r.lateran,'italy');
   assert.deepEqual(r.report.unresolvedLabels,[]);
   assert.deepEqual(r.report.linkThroughStations,[]);
   assert.deepEqual(r.regions,[],'every region is in GEO.regions');

@@ -36,14 +36,7 @@ const SECTIONS={
  'history-france-1848':['1848年革命','1848年',6],
  'history-france-louis-bonaparte':['路易·波拿巴的雾月十八','1848—1852年',6],
 };
-const ORDER=['history-france-fronde/0','history-france-pyrenees/0','history-france-louis14/0','history-france-dutch-war/0',
- 'history-france-revocation/0','history-britain-glorious/0','history-france-nine-years/0','history-france-spanish-succession/0',
- 'history-france-law/0','history-france-louis15/0','history-france-enlightenment/0','history-france-seven-years/0',
- 'history-france-parlements/0','history-france-american-war/0','history-france-bankruptcy/0','history-france-bastille/0',
- 'history-france-august/0','history-france-varennes/0','history-france-regicide/0','history-france-terror/0',
- 'history-france-directory/0','history-france-brumaire/0','history-france-consulate/0','history-france-empire/0',
- 'history-france-waterloo/0','history-france-restoration/0','history-france-july-monarchy/0','history-france-1848/0',
- 'history-france-louis-bonaparte/0'];
+const ORDER=['history-france-fronde/0','history-france-pyrenees/0','history-france-louis14/0','history-france-dutch-war/0','history-france-revocation/0','history-france-nine-years/0','history-france-spanish-succession/0','history-france-law/0','history-france-louis15/0','history-france-enlightenment/0','history-france-seven-years/0','history-france-parlements/0','history-france-american-war/0','history-france-bankruptcy/0','history-france-bastille/0','history-france-august/0','history-france-varennes/0','history-france-regicide/0','history-france-terror/0','history-france-directory/0','history-france-brumaire/0','history-france-consulate/0','history-france-empire/0','history-france-waterloo/0','history-france-restoration/0','history-france-july-monarchy/0','history-france-1848/0','history-france-louis-bonaparte/0'];
 const FACTS=[
  ['history-france-fronde',1,'卖官鬻爵'],['history-france-fronde',2,'老法官布鲁塞尔'],['history-france-fronde',3,'所查当时记载未见'],
  ['history-france-pyrenees',2,'五百万里弗尔'],['history-france-pyrenees',4,'五十万金埃居'],
@@ -99,7 +92,7 @@ const chars=s=>s.replace(/<[^>]+>/g,'').replace(/（[A-Za-z][^）]*）/g,'').rep
     line:(({name,parent,from,to})=>({name,parent,from,to}))(HISTORY_BRANCHES.find(b=>b.id==='france')),
     spainTo:HISTORY_BRANCHES.find(b=>b.id==='spain').to,
     faithTo:HISTORY_BRANCHES.find(b=>b.id==='faith').to,
-    stretch:idx>=0?fStops.slice(idx,idx+29):[],
+    stretch:idx>=0?fStops.slice(idx,idx+28):[],
     report:metroUI.layoutReport(),
     shared:{
      pyrenees:TREE_ROWS['history-france-pyrenees/0'][0],
@@ -118,10 +111,10 @@ const chars=s=>s.replace(/<[^>]+>/g,'').replace(/（[A-Za-z][^）]*）/g,'').rep
   assert.deepEqual(r.stretch,ORDER,'France runs through the 29 stations from Fronde to Louis-Napoléon Bonaparte (including Glorious Revolution) in order');
   assert.deepEqual(r.report.unresolvedLabels,[]);
   assert.deepEqual(r.report.linkThroughStations,[]);
-  assert.ok(r.shared.pyrenees.includes('france')&&r.shared.pyrenees.includes('spain'));
-  assert.ok(r.shared.revocation.includes('france')&&r.shared.revocation.includes('faith'));
-  assert.ok(r.shared.glorious.includes('britain')&&r.shared.glorious.includes('france'));
-  assert.ok(r.shared.succession.includes('france')&&r.shared.succession.includes('spain'));
+  assert.equal(r.shared.pyrenees,'france');
+  assert.equal(r.shared.revocation,'france');
+  assert.equal(r.shared.glorious,'britain');
+  assert.equal(r.shared.succession,'france');
   assert.ok(r.glorious0.includes('南特敕令'),'Glorious Revolution scene 0 connects from Revocation of the Edict of Nantes');
   for(const num of ['7460万镑','1.327亿镑','103%','2.429亿镑','136%','3.1%','4.0%','5.2%','5.9%','终身年金']){
    assert.ok(r.rateBox.includes(num),'rate box has unified BoE figure '+num);

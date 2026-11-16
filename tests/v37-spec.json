@@ -256,9 +256,7 @@
   ],
   "history-arab-conquest/0": [
    [
-    "persia",
-    "east",
-    "egypt"
+    "persia"
    ],
    632,
    651
@@ -279,8 +277,7 @@
   ],
   "history-spain-fall/2": [
    [
-    "spain",
-    "persia"
+    "spain"
    ],
    711,
    713
@@ -301,8 +298,7 @@
   ],
   "history-britain-anglosaxon/2": [
    [
-    "britain",
-    "nordic"
+    "britain"
    ],
    793,
    878
@@ -323,8 +319,7 @@
   ],
   "history-france-west-francia/1": [
    [
-    "france",
-    "nordic"
+    "france"
    ],
    845,
    911
@@ -338,56 +333,20 @@
   ],
   "history-germany-thirty-years-1/5": [
    [
-    "germany",
-    "faith",
-    "nordic"
+    "thirty-years"
    ],
    1625,
    1630
   ],
   "history-germany-swiss/3": [
    [
-    "germany",
-    "italy",
-    "faith"
+    "germany"
    ],
    1515,
    1516
   ]
  },
- "shared": {
-  "history-arab-conquest/0": [
-   "persia",
-   "east",
-   "egypt"
-  ],
-  "history-spain-fall/2": [
-   "spain",
-   "persia"
-  ],
-  "history-britain-anglosaxon/2": [
-   "britain",
-   "nordic"
-  ],
-  "history-france-west-francia/1": [
-   "france",
-   "nordic"
-  ],
-  "history-germany-thirty-years-1/5": [
-   "germany",
-   "faith",
-   "nordic"
-  ],
-  "history-germany-swiss/3": [
-   "germany",
-   "italy",
-   "faith"
-  ],
-  "history-britain-henry8-2/0": [
-   "britain",
-   "faith"
-  ]
- },
+ "shared": {},
  "bold": [
   [
    "history-italy-middle-francia/0",
@@ -1345,6 +1304,21 @@
    "瘟疫退潮"
   ],
   [
+   "reformation",
+   1599,
+   "教派版图定型"
+  ],
+  [
+   "thirty-years",
+   1648,
+   "威斯特伐利亚和约"
+  ],
+  [
+   "ww1",
+   1923,
+   "凡尔赛—华盛顿体系"
+  ],
+  [
    "prehistory",
    -3100,
    "有了文字"
@@ -1423,6 +1397,9 @@
   "十字军",
   "百年战争",
   "黑死病",
+  "宗教改革",
+  "三十年战争",
+  "一战",
   "北欧",
   "美洲",
   "中国"
