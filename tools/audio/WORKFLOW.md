@@ -11,9 +11,9 @@
 
 ### 计划、制作选择、公开范围必须分开
 
-`src/audio_scope.json` 当前覆盖最新定稿全部19条主线与14个动力专题，共5287段（5274个唯一MP3文件）。全书5286段完成后，老无另行授权补录《威尼斯无僭主的底层逻辑》1项并与手机左手控件合并上线；原5286项未改输入全部复用。当前源无pending/stale；未变成无瑕疵承诺，README已列出两处存量Markdown表格与一处源词注问题。
+`src/audio_scope.json` 当前覆盖24条线路（19条原主线＋5条事件支线）与14个动力专题，共5361段（5348个唯一MP3文件）。本轮明确授权37个月台的74项及两幕奥斯曼改稿，共76份新输入，旧5285项直接复用。线路移动不改变录音；新增支线须加入scope.lines并离线刷新ids/counts/sourceCommit，避免把移过去的有效资产误剔为obsolete。当前源无pending/stale；未变成无瑕疵承诺，README已列出两处存量Markdown表格与一处源词注问题。
 
-**总计划不等于默认全书授权。** 老无本次已明确授权后续自动逐批推进：基督教/十字军 → 德意志＋意大利494段 → 英国＋法国1353段 → 低地98段及全书查漏、新增/改稿补录；每批必须验收并上线成功，才执行下一批。总表在 `work/v35/audio_runs/v112-auto-finish-plan.json`。基督教此前补720段，十字军254段原已齐全；德意批补494段；英法批补1353段；最后一批108份新/改输入录成，累计5286段已通过R2远端校验。普通构建始终支持部分嵌入，不因未录线路阻塞改稿。
+**总计划不等于默认全书授权。** 本轮月台补录依据老无另行明确的“做完、补充音频并且上线”授权；不能由scope扩大自行开启未来TTS。此前已完成的自动批次顺序：基督教/十字军 → 德意志＋意大利494段 → 英国＋法国1353段 → 低地98段及全书查漏、新增/改稿补录；每批必须验收并上线成功，才执行下一批。总表在 `work/v35/audio_runs/v112-auto-finish-plan.json`。基督教此前补720段，十字军254段原已齐全；德意批补494段；英法批补1353段；最后一批108份新/改输入录成，累计5286段已通过R2远端校验。普通构建始终支持部分嵌入，不因未录线路阻塞改稿。
 
 ## 音频对象存储托管（Cloudflare R2 主用，兼容 Vercel Blob）
 
@@ -49,9 +49,9 @@ cd "$SRC"
 
 ## 操作模板（以下在 project-files/ 下；命令示例保留早期27段专题范围，不是当前执行授权）
 
-当前全书库是 `v112-policy3-venice-r5`，显式源/工具快照为 `work/v35/audio_runs/v112-venice-source`（detached at `27021f2`）；本次selection/scope与证据在 `work/v35/audio_runs/v112-era11-venice/`。只新增 `history-italy-venice/3/box/1`；旧 r4（67aa817冻结源/5286段）与 r3/r2 库保留，不能把新源塞回旧库。以下r2/27段命令只是历史示例。
+当前全书库是 `v112-policy3-platforms-r7`，显式源/工具快照为 `work/v35/audio_runs/v112-platforms-final-source`（detached at `af48f7f`）；本次selection/scope与证据在 `work/v35/audio_runs/v112-era12-platforms-r2/`。合成selection是76项，窄发布scope因展开所需旧节题/人物为83项，不能把83误当新增录音数。旧r6底稿（441b880）仅离线准备、未合成，后续史实修订重新建r7；r5及更早库全部保留，不能把新源塞回旧库。以下r2/27段命令只是历史示例。
 
-每批先在冻结源严格验收，再合入最新正文、普通组装；本批全书5287段，新增威尼斯1段；此前两则西班牙新增豆腐块及v99八份改稿均已补齐。来源和pipeline/text/extract/requirements/approved_omissions均固定哈希；live播放器、resolver、组装器的并行修改不应打断TTS。
+每批先在冻结源严格验收，再合入最新正文、普通组装；本批全书5361段，新增月台74项、替换改稿2项；此前威尼斯/西班牙新增补充及v99改稿均已补齐。来源和pipeline/text/extract/requirements/approved_omissions均固定哈希；live播放器、resolver、组装器的并行修改不应打断TTS。
 
 ```sh
 PY=../work/v35/audio_poc/.venv/bin/python

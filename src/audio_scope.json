@@ -5402,7 +5402,7 @@
     "topic-republic",
     "topic-republic/1/box/0"
   ],
-  "sourceCommit": "d46bef552be08c7532d86927ae57a269fe3d2c99",
+  "sourceCommit": "af48f7f91aec6fdb037b3250044f407e67e8eb6e",
   "counts": {
     "scenes": 2093,
     "titles": 429,
@@ -5411,6 +5411,6 @@
     "boxes": 208,
     "people": 1775,
     "assets": 5361,
-    "characters": 1687026
+    "characters": 1686967
   }
 }

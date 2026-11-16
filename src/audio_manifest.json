@@ -8,11 +8,11 @@
     "volume": "+0%"
   },
   "source": {
-    "commit": "27021f2006798ace2e13bf2bbe5df4bc7de87063",
+    "commit": "af48f7f91aec6fdb037b3250044f407e67e8eb6e",
     "dirty": [],
     "files": {
-      "src/history_entries.js": "3c1b09f4d074e429e99e355aba2dccbc23951713cf8d1cec29b33479f3be0a0b",
-      "src/history_content.json": "d2935ff9812c9c3754d952bb9ba6eb4be8d5c7fc3c4bd0fea3228fbc2b39c84b",
+      "src/history_entries.js": "d348a25e74225da729335877fed9a3865c62c0784026a3937483d9c035f3dc6d",
+      "src/history_content.json": "8d1e834d61460ab3d3bd16466d42df3f10a2fc22325dd411d07784a1d24f0893",
       "src/historical_figures.js": "95c19749d249f451f0245cf0c096ef9917f643593eddeb46f12f39f310e69c7e"
     }
   },
@@ -5049,6 +5049,22 @@
       "inputHash": "6a9690d5fcd755a99b01b1cb613186fa2b0bfde2422c4e91a688f6b17eb9d3a4",
       "audioHash": "ceb4cac942cd29b8e8fe55c9424d810b473893c7db48d0011ea6888f2fdaeda6"
     },
+    "history-plat-east-1204/title": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/35772e93c904c99e17166d37799425aa3ce62b52afbf960389ee545957f6f9dc.mp3",
+      "duration": 10.344,
+      "bytes": 62064,
+      "textHash": "640f2c0d0bb553ba0eefb57d4fc054ab38c0a73fc98dca768b135fade79b3675",
+      "inputHash": "9b00ec13ac38629d54df64954223043f2f42a96657a61926117f455193476798",
+      "audioHash": "35772e93c904c99e17166d37799425aa3ce62b52afbf960389ee545957f6f9dc"
+    },
+    "history-plat-east-1204/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/e070f20e0f6ba9276748d3efab22aa6119f66b62756521dc9e84c75d190ec7c2.mp3",
+      "duration": 60.6,
+      "bytes": 363600,
+      "textHash": "20ec4f7c13cd27cc5439e514fa2c449b75699a1b9da1b44832919f70046a853b",
+      "inputHash": "0799d7efd1fa699515ad5b981feb56f6a7bf8728a32f941184c0d814232c7d82",
+      "audioHash": "e070f20e0f6ba9276748d3efab22aa6119f66b62756521dc9e84c75d190ec7c2"
+    },
     "history-empire-palaiologos/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/0fd071a215554d31e0c3836afb8bd96046c5d417d31ecb91e84f6160b155e74d.mp3",
       "duration": 14.64,
@@ -7841,6 +7857,22 @@
       "inputHash": "bdb0c20cc9340a6f686d4c205c60c1e0026bb96f9805d6ce1e5a7984777c5ef5",
       "audioHash": "a130d774a37e023a60c717f9cac5f404080e49abbe2e44444e2602507558fc46"
     },
+    "history-plat-italy-staufer/title": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/96ba4bf948e5884eb580a445ee67a86653747f6935dee7090aa3fe62f2b0292b.mp3",
+      "duration": 10.8,
+      "bytes": 64800,
+      "textHash": "5ac34e19320528f4ee153fec1f6d2ec2db0df85bb968c6b5e5d4a43441aa3255",
+      "inputHash": "f9f1ed1ea65e8c3f1dd37bb8570c936ea0b6f46eb5466cfd6657c4aa2b098a85",
+      "audioHash": "96ba4bf948e5884eb580a445ee67a86653747f6935dee7090aa3fe62f2b0292b"
+    },
+    "history-plat-italy-staufer/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/244177031a134e474bfa2b23b5c0ec39b3787e109868e0e61104d6df94deba83.mp3",
+      "duration": 64.08,
+      "bytes": 384480,
+      "textHash": "0d24f19d0361b67482b14c2c76197dcf658b15693236f9b4214f1be7929d5df3",
+      "inputHash": "e68445ea0cf521f8495b7fb051e1637ef5c8b7886344fd12d0255109ec16b1aa",
+      "audioHash": "244177031a134e474bfa2b23b5c0ec39b3787e109868e0e61104d6df94deba83"
+    },
     "history-germany-barbarossa/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/bc744d2305ebddcf9ebec8f9ddc93cd4e12ecfee10ccbb64b236c7086259649c.mp3",
       "duration": 6.072,
@@ -8697,6 +8729,22 @@
       "inputHash": "0b58a1853d67ec734861f8cc224d2871ddb530f7aed613a6bac45df51e57cfa9",
       "audioHash": "c381808630a4a0c0990f0d8ac9f36d2054baf9eb2c65db85e13af2f3cb4b0bf3"
     },
+    "history-plat-france-hyw1/title": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/8e8f6efc7245ca6053a9a3ede8483a4d1dba1161582598d4ce703a48d287241c.mp3",
+      "duration": 10.968,
+      "bytes": 65808,
+      "textHash": "7cd85c77c4da009aa901cd1e891b1931f4998b789f952b6072a20c5fb73791d8",
+      "inputHash": "2f6163e85099a6a2af0bf2709956c5012990917a77498d06ee78e61a88a024fa",
+      "audioHash": "8e8f6efc7245ca6053a9a3ede8483a4d1dba1161582598d4ce703a48d287241c"
+    },
+    "history-plat-france-hyw1/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/5ec798b638b195a683fd1b36700b1e4f7a114687a2b7aba93b356f3def725be5.mp3",
+      "duration": 62.16,
+      "bytes": 372960,
+      "textHash": "16e3ad119467183a05f4ebe1d4ce43e79ae3c5c7aab3cec5d03fe18a0a979d92",
+      "inputHash": "defe00b09fd22cb874b70e94406b19b3d540feae0c30210cba89eb75b38a3cf5",
+      "audioHash": "5ec798b638b195a683fd1b36700b1e4f7a114687a2b7aba93b356f3def725be5"
+    },
     "history-france-valois/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/b0e1478cda1d3828a72006847cdde722bcdd4c2341a115ff75cbe97b11ba135d.mp3",
       "duration": 11.16,
@@ -8809,6 +8857,22 @@
       "inputHash": "ff6bd4b62d26c957823930c9a8b058aff916f6aa9ea7e115d9e7ab752aa52187",
       "audioHash": "0bd768112a2b6a19a1747676c1b554619d49d097d209dcb3d4033ba6e7fe0b61"
     },
+    "history-plat-france-hyw2/title": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/a1b41d0604eac604512c0a1ee9169099c2c82e59e3bbddf275e59ca06bb43113.mp3",
+      "duration": 11.448,
+      "bytes": 68688,
+      "textHash": "e4bc1de1c2b488da29e920024789662c94da4d0a6a89d3a062c47c32b3581041",
+      "inputHash": "7f92f1d4d3ac3e8d321cc8f56a8da2f11b42c9d81a39ffd7698405ef5ae42016",
+      "audioHash": "a1b41d0604eac604512c0a1ee9169099c2c82e59e3bbddf275e59ca06bb43113"
+    },
+    "history-plat-france-hyw2/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/4d9bde9e8af6589d4f79f56c1ac37b4866441edba8495ab56bed03c5e6353258.mp3",
+      "duration": 59.184,
+      "bytes": 355104,
+      "textHash": "2601e3b0a0271962ecb5aa53b5aaa002b528fb9aa514d1f1bc03a3f6efcccbbd",
+      "inputHash": "5ff9cefd619e6cf712d432038c88b5ac80a52270dabb125fddf64618c9fe6c35",
+      "audioHash": "4d9bde9e8af6589d4f79f56c1ac37b4866441edba8495ab56bed03c5e6353258"
+    },
     "history-france-louis11/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/460ab84839567099083633967fb35a6d67dc372406a49cac3d54fd43fa74c3e9.mp3",
       "duration": 13.752,
@@ -8920,6 +8984,22 @@
       "textHash": "ce1d6aecd00594c0c23f38806dbb891fc1f1e1fd81068751448b9aebfafdf14f",
       "inputHash": "db4907932c4b596a3f499a08a0bc7122e43a47c851118ac2e7d00f08fe9dccdb",
       "audioHash": "9f6fd687493c658c26986b7a698db19582c9f9db16a74bc4414b3a569ed66fd7"
+    },
+    "history-plat-france-italy/title": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/badb86f40cc4481f6082e2d5daaed0020321dadfa0697f4401508389d8ccb968.mp3",
+      "duration": 12.192,
+      "bytes": 73152,
+      "textHash": "fb04f817854daef91758d3ad94e06a35097f7fb879f46474e95cbc81163d4a3e",
+      "inputHash": "31e5c2b6b26ed2ced0fc80ca9ca7d1f382e82116106f56338c14e71759c33572",
+      "audioHash": "badb86f40cc4481f6082e2d5daaed0020321dadfa0697f4401508389d8ccb968"
+    },
+    "history-plat-france-italy/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/7328bf2573bfba44b106b24ffebc5522d22fb24b8250e8e45abe4c5596972272.mp3",
+      "duration": 61.128,
+      "bytes": 366768,
+      "textHash": "8a6acd2ea8c32d06bd918098c949a7f441a5589aeefe4f708bf3e6c57d4a667a",
+      "inputHash": "9de7059ebe6ec2a29edde25b6637d764771bd657449026b2f936c6f7975e892b",
+      "audioHash": "7328bf2573bfba44b106b24ffebc5522d22fb24b8250e8e45abe4c5596972272"
     },
     "history-france-henri2/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/9e1d1aae4e958c052848cd5cf6f860f7070b274ae02186209073e2de08626f74.mp3",
@@ -13425,6 +13505,22 @@
       "inputHash": "b859186a99d70b78f1f22db9cfcca2646d7a47c0f46a75417ba2ce84b93f0984",
       "audioHash": "2c8f0a72c61d6388d621d764d23107846bbeeaeaddb56a58131ca771b2f81dbd"
     },
+    "history-plat-france-sedan/title": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/7012836b1c2f4f395797dd7931a867190a85f07533fac713d638f34c33bd25db.mp3",
+      "duration": 12.888,
+      "bytes": 77328,
+      "textHash": "8288ca74aa8d72d9bd117edcdc77f0e28f7a988d6476eb1ca8a788809c01ca30",
+      "inputHash": "ecd47c4aefa55d63937f43657d20c1429e2d4d594fa27856e6f9842f278e7ff6",
+      "audioHash": "7012836b1c2f4f395797dd7931a867190a85f07533fac713d638f34c33bd25db"
+    },
+    "history-plat-france-sedan/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/dda98c17b654d94ce7bea1da0898f2882379bc73e97a19a045d052c0838b592f.mp3",
+      "duration": 57.504,
+      "bytes": 345024,
+      "textHash": "74be74da36a2102d0284b0970c66debac46f97f42308a5af6f05b11a482e4116",
+      "inputHash": "4f899dcc8ae7dc5bcf79a8327c28b8d66df6def31224f89d367c92482ea4a34a",
+      "audioHash": "dda98c17b654d94ce7bea1da0898f2882379bc73e97a19a045d052c0838b592f"
+    },
     "history-france-commune/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/dfddda5cc79cc531af7c77b8e4ebbaf848a3bb1ee7a67b1d7b092470cd4d060e.mp3",
       "duration": 13.152,
@@ -13536,6 +13632,22 @@
       "textHash": "5daae830e133c3e5b6eb2863975bc256fb687169dcd9b1f14b10aacb01e5e1c7",
       "inputHash": "0f5c20574012c352821aef6d11067bb1c86bbf136b130011e7300180cb9d25b5",
       "audioHash": "8e1bb7cad3032f035d397559fea451ddc8cdc77ef1786596a2ef3eb928eb502f"
+    },
+    "history-plat-france-ww1/title": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/0e84804af8599ebf615a243c783bdbe319c5f78eaa0cd6b117a0a26f25a4d1fe.mp3",
+      "duration": 12.336,
+      "bytes": 74016,
+      "textHash": "a8a9c0ee7ad53822f51939e908b322b551c99d03fed71cbbea29fbb7dd8437e6",
+      "inputHash": "55d3bc9a5ca640049ab3cb12d5072b8b7bfd2d1910aa4660aedd4960d9f9c8b7",
+      "audioHash": "0e84804af8599ebf615a243c783bdbe319c5f78eaa0cd6b117a0a26f25a4d1fe"
+    },
+    "history-plat-france-ww1/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/0e39737483606cf015f034d79ded62291e447a3da15d5c5c682e4659555d5289.mp3",
+      "duration": 60.048,
+      "bytes": 360288,
+      "textHash": "e77b255262d7ebc17ccd1cbbd880242187f1fa82d1217ebf7cc71ccf64af3208",
+      "inputHash": "b670b326a8928227d4e7f45323c3d5a14026320188199ff2c23c533819707769",
+      "audioHash": "0e39737483606cf015f034d79ded62291e447a3da15d5c5c682e4659555d5289"
     },
     "history-germany-frederick2/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/e45b340b80ebd3776f6a8b2a4a5ca0c286d8c3239e892842bd889a48068592b4.mp3",
@@ -14313,6 +14425,22 @@
       "inputHash": "45e9e64939e575bc7ec3b99f8958fb2f83c27cd7f8261848fa224ef9836e3bd9",
       "audioHash": "e4965d168b1a5d85126f568704c773504bb79f1045c6ed2ec70d1bbc1b362c4d"
     },
+    "history-plat-germany-reformation/title": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/f33488d196eb2398fcefb35eeca10bdbd74944acaadf78c5a68d19bfecaaafd9.mp3",
+      "duration": 12.096,
+      "bytes": 72576,
+      "textHash": "87f9da6d37fa61015cd405195d5a34ccb862ab9f827cefaea165decc79b8b8be",
+      "inputHash": "386d81378f7cdd8e8f1bbcd039e68a485b7c8a461f09b159b0b4e8756c7d6e65",
+      "audioHash": "f33488d196eb2398fcefb35eeca10bdbd74944acaadf78c5a68d19bfecaaafd9"
+    },
+    "history-plat-germany-reformation/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/95082f70f1c32b573b5475ac08e1f71f8c45aa46d512567021ca90df0d1f56f5.mp3",
+      "duration": 63.984,
+      "bytes": 383904,
+      "textHash": "9ceef2775562370b77c787ca4a1f65f4b870ea1404c8b222aff1f05845315128",
+      "inputHash": "aacf052a99a861caa42ba8e30b0311590fd229d7fe5db07fe4940e39d57a4926",
+      "audioHash": "95082f70f1c32b573b5475ac08e1f71f8c45aa46d512567021ca90df0d1f56f5"
+    },
     "history-germany-charles5/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/c0461e31c72c3af933b8624e8be3397c04ce925a94c8223aabbfae91d9ba55d2.mp3",
       "duration": 13.632,
@@ -14440,6 +14568,22 @@
       "textHash": "baa25086b18cd75e001d87c3b43f7bc2511d393072dc9eeedbe3b1c666b09042",
       "inputHash": "47c4a6174a0fb7622aaeb7a22a8ad7957283a43c36ab14a5d6f49548815b1bea",
       "audioHash": "4b5cb043b895905e53fd0d7805ff8ef8cb3f098d2d558c6b2e0d0e97cc5882a0"
+    },
+    "history-plat-germany-thirty-years/title": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/e8e0ca167261861256a823a23cfb4cd73223cd9c285e365ac01279adc8c56662.mp3",
+      "duration": 10.92,
+      "bytes": 65520,
+      "textHash": "989c66ea1ec542372cdaf19a41591f1979c560884b1723394162bda1da6e5205",
+      "inputHash": "b10af0bf1f4f6ebaf4da5404c4b18245040f4b7f7fdb71c80febc925b680ee29",
+      "audioHash": "e8e0ca167261861256a823a23cfb4cd73223cd9c285e365ac01279adc8c56662"
+    },
+    "history-plat-germany-thirty-years/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/91712d44f82344985b6cf09e422e2b3c2b439f7e057bb61a9cd692bf7e56d067.mp3",
+      "duration": 65.928,
+      "bytes": 395568,
+      "textHash": "e72ba001c1b00bfa640729bcd5ece58a19f2f68c3c18870be440ec8e549fe02f",
+      "inputHash": "10c0b7c371c4f4016b1ab92fea0bac3e378094a81bed81bcdd5d828b217c709a",
+      "audioHash": "91712d44f82344985b6cf09e422e2b3c2b439f7e057bb61a9cd692bf7e56d067"
     },
     "history-germany-thirty-years-1/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/42d4d303b52ec9975329a33b7c44c94ff699b5d40343adc4510ebd14f65956aa.mp3",
@@ -15785,6 +15929,22 @@
       "inputHash": "4aadc337d57223f7d43274aeec5283c0164b25d1217f5ce82731e217b5cb6c21",
       "audioHash": "24d3db4f80f1bbd511eec2e7eb2021c35071853dc6df99cc8ed5e0085e891dc0"
     },
+    "history-plat-italy-sack/title": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/acd74b4e64957c899945e0580351fc67193cf016a9486150b375d816c5e2d379.mp3",
+      "duration": 12.024,
+      "bytes": 72144,
+      "textHash": "9348a217ed9fb15212634c5eb1ead1bf8d5764d383c9064fae3eeba61d36d279",
+      "inputHash": "3301ad6408a7f405be82ad9619dc610daa5a8f64ab5c4222830d3d76476e392d",
+      "audioHash": "acd74b4e64957c899945e0580351fc67193cf016a9486150b375d816c5e2d379"
+    },
+    "history-plat-italy-sack/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/16e4992d45c46d634b21f94b6d9f26e8241089d5012bef6ca947ad4fc94b78b6.mp3",
+      "duration": 63.096,
+      "bytes": 378576,
+      "textHash": "c2c9a076703143679643b29d30f39a07d50acb64a78d62ff0fb9b0ec10c4f167",
+      "inputHash": "cfd9e862749abfb4982432994a5ccf33e29e780718293a7f2c8737dc357efce0",
+      "audioHash": "16e4992d45c46d634b21f94b6d9f26e8241089d5012bef6ca947ad4fc94b78b6"
+    },
     "history-germany-prussia-rise/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/c59c9866b9667c3584b7317e1abbbe46c370ef4b050fbbf7e01078f19039405a.mp3",
       "duration": 11.496,
@@ -16504,6 +16664,22 @@
       "textHash": "a8bf1d51893d4f3f99698286c7d95e5fe207725fc21d7406c55fa6008cf5f8e9",
       "inputHash": "fe6542b48107a9bb28c440024b3c1b7df321ece4b77d82ade9d48f447874f18e",
       "audioHash": "df03af79735344319806aaf23a891986eb8cdc55a84082720605dd9a609aab18"
+    },
+    "history-plat-germany-ww1/title": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/fff3126470679c4a6ec1e8363bb61dda9333124d4cb0e788e9f0140f83078435.mp3",
+      "duration": 11.184,
+      "bytes": 67104,
+      "textHash": "5e309be828e7735affde39e7ded7e82747b89c515347f4b446ca58ed980293ec",
+      "inputHash": "85e93861331805ebd1ba87c91c7bef8fda9894d0ed67929ab8f4f36d4dfd9392",
+      "audioHash": "fff3126470679c4a6ec1e8363bb61dda9333124d4cb0e788e9f0140f83078435"
+    },
+    "history-plat-germany-ww1/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/49969c5f82890d5a733c4c6162e6e12f1ed45220e2b08c03edc4b2ca21a43620.mp3",
+      "duration": 60.912,
+      "bytes": 365472,
+      "textHash": "223124586efbf48887124418c95e2b66a78fb98126bcc4b2e4a04e43557ebcf4",
+      "inputHash": "247ffa3d3c94809bdb4b35e79e60fdd138c11cfb331abed68f18065f97e97b03",
+      "audioHash": "49969c5f82890d5a733c4c6162e6e12f1ed45220e2b08c03edc4b2ca21a43620"
     },
     "history-germany-ww1-west/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/3d9e7481bccd3b10d797fa5b7bf5be1aea8a618a6021495a88b945aade5e0599.mp3",
@@ -18065,6 +18241,22 @@
       "inputHash": "4bba22b872a020c4cce669125fa665c5a567e179d147153131180d2531566bd6",
       "audioHash": "8ba8dee6160b7c08c14b73b476b0d84d8a6d28984e487cdffa6a9a9e9df604a7"
     },
+    "history-plat-italy-ww1/title": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/8b145bab6ae4510a7c1bde185840de4fb43f3a9db3617628387a39263926dafc.mp3",
+      "duration": 13.008,
+      "bytes": 78048,
+      "textHash": "038e0c7b759a712abdac6a89548ed37242f6573e8d7541de16d14d5b74813049",
+      "inputHash": "e1d727b4e70c78a678df84ccbec6a3c7ae15517d994246639e5db264af2c8bba",
+      "audioHash": "8b145bab6ae4510a7c1bde185840de4fb43f3a9db3617628387a39263926dafc"
+    },
+    "history-plat-italy-ww1/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/8dd6f7d0456a0ef63499b1ebfbcd7763c3c9f8c7bcff5fcb16b18a25684c8e0e.mp3",
+      "duration": 59.28,
+      "bytes": 355680,
+      "textHash": "0ee64c0eb39e80823509f1682cdd4ad232b79e741e9793133c1835ea274e33bb",
+      "inputHash": "292d017aa3896cc74bac5c7640ed74de39db937deefcefa314de79d8a821b6db",
+      "audioHash": "8dd6f7d0456a0ef63499b1ebfbcd7763c3c9f8c7bcff5fcb16b18a25684c8e0e"
+    },
     "history-italy-lateran/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/30f9653a46480f73d97e7aec6c2352c80f41ab5705c5857f52e56de67d24cf39.mp3",
       "duration": 14.016,
@@ -18361,6 +18553,22 @@
       "inputHash": "c66c38f2b2bb600914fe904e82def83c1a41f881e3ecaa212029597b2b2e4abd",
       "audioHash": "cd4a06f63cffc36bac84168747a52405c288658ce4a3dbb01daf6fd3b06b9bc6"
     },
+    "history-plat-lowlands-voc/title": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/fcce633563f5080f1ee64cba0d342a84121eb31012fdfd7933788487ee22169a.mp3",
+      "duration": 11.232,
+      "bytes": 67392,
+      "textHash": "d67b5bd12ab127ace888b55faa3b58810c5743b1a6ba958180cedde9516b2862",
+      "inputHash": "424d4792e2141e174ee140676cd523d9d6660c96b98fab4185fee1865e2e121b",
+      "audioHash": "fcce633563f5080f1ee64cba0d342a84121eb31012fdfd7933788487ee22169a"
+    },
+    "history-plat-lowlands-voc/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/edac57a649e18ac0e1b05794a6646b024ee1d022b74d9847fda7c60f63c0423e.mp3",
+      "duration": 62.928,
+      "bytes": 377568,
+      "textHash": "3646635c55ae67b4feaa5e5b46c72b376d975b6c765e377cb45cd4cf39bc7992",
+      "inputHash": "a389c1d55857c541d193a90c5447d71c8543f1193bde7f0e8614598c7451a053",
+      "audioHash": "edac57a649e18ac0e1b05794a6646b024ee1d022b74d9847fda7c60f63c0423e"
+    },
     "history-lowlands-golden-age/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/21c03d0421a8468f4d667a37b7f0e2182a1f9826a0d142cb9af62b590190d048.mp3",
       "duration": 12.408,
@@ -18544,6 +18752,22 @@
       "textHash": "bbe39f0e65b172b3501a84c707723e98e45b4365f832c59aa7f5696a9890e74f",
       "inputHash": "5812e20d1bf742a722c3df8b408504d8bf9d0f75a3b32fd80473e3b6b14e36a2",
       "audioHash": "933c69147a1b97a17291ae0929da34be7a3e29f4724737ca3fe54d4eb0543a25"
+    },
+    "history-plat-lowlands-1672/title": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/669fa27e66ed4edc8ff73bc46ef0f04ca630dfee926fe6fed6bf82b7e4f97c9c.mp3",
+      "duration": 13.776,
+      "bytes": 82656,
+      "textHash": "e75947d6bfcaf1ae1dbf9a3e95793633d485678629492caa5bee8b03bf107374",
+      "inputHash": "50453265e69b6844ed2f61a2bce00c8f40872505c0d42e33c1ade9bc51782c46",
+      "audioHash": "669fa27e66ed4edc8ff73bc46ef0f04ca630dfee926fe6fed6bf82b7e4f97c9c"
+    },
+    "history-plat-lowlands-1672/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/49dd7c2e83679c763426011b0d29592929aa3b452eb2b64121b00c686af39b6e.mp3",
+      "duration": 60.888,
+      "bytes": 365328,
+      "textHash": "9c1ef187f0f43c363399e2be255f9d38c2b76565b697c49c4dae6652c2a9f862",
+      "inputHash": "21d2a253090e434ab056c0260c968c322b629b86ac5edbcf6dade052a5428517",
+      "audioHash": "49dd7c2e83679c763426011b0d29592929aa3b452eb2b64121b00c686af39b6e"
     },
     "history-lowlands-batavian/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/e673a79eab165065148163074b69176465ae49465dd5b468fa75b3ee5808ba3f.mp3",
@@ -19064,6 +19288,22 @@
       "textHash": "d2b71d4db56b2cb1a68928c98d847d735c55da05e6993476bc2c644f61be8eda",
       "inputHash": "b7fff08c766e078310839e2566b4493c5627fa97867fc423790a361b0cf6e48a",
       "audioHash": "492d0a3f36d8dddbc7f722c67cfef5f0b079d4e1764816acc40400396a475549"
+    },
+    "history-plat-lowlands-ww1/title": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/87debd2177bbbcd5c56e1cb9b05509b72cd78006e6f96a52e8ed7b947fa4e45e.mp3",
+      "duration": 10.8,
+      "bytes": 64800,
+      "textHash": "69429820f9ce7a5d3547ffdc7886c575b574236fa53940c6c53442ea90d852f5",
+      "inputHash": "e6b55d0edbea7a7933bdf4991cd081aaf34e39e469240d597bd3fa975f04be0a",
+      "audioHash": "87debd2177bbbcd5c56e1cb9b05509b72cd78006e6f96a52e8ed7b947fa4e45e"
+    },
+    "history-plat-lowlands-ww1/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/67cf01cb2e37c55586b6393bac6c54a92b1ce3244c8668063e21cfb2c835a004.mp3",
+      "duration": 59.712,
+      "bytes": 358272,
+      "textHash": "b6cefb3cf5bc7cd3afd124be46a404d5aae0f1c6d034f3f3f021e2ff9b99503b",
+      "inputHash": "c7ac26803f6a3cb67fd5718db90130c4a2491aa99afe6e25ddccae410918e712",
+      "audioHash": "67cf01cb2e37c55586b6393bac6c54a92b1ce3244c8668063e21cfb2c835a004"
     },
     "history-italy-blackdeath/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/bf947293e4c8dc8dcc78faecf12dd67a86e5c91c4b65c2e56e2f6ddaee9f9904.mp3",
@@ -20233,6 +20473,22 @@
       "inputHash": "fe01a699f8b4cf531ab33b7dc74b07deec1f68922661b7aa5e88dbccc667ff0b",
       "audioHash": "6d05db1c67ea093327cb1f752989467df33f89430b23e098101ea04a35cdbb9a"
     },
+    "history-plat-spain-dutch/title": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/f5960c8fd30f7ef68d82ae03b51afba9bc3832ce3c42f8c1076febe2e0754ff1.mp3",
+      "duration": 11.04,
+      "bytes": 66240,
+      "textHash": "1ff58edc5d5ec9da95bac19844a947efe760dd60ff03b104cdba4808028d981d",
+      "inputHash": "9dd7efba4ba4684ec928aeacc4fb1a43a8c016b0bdd78fa56c98cf0d495295d2",
+      "audioHash": "f5960c8fd30f7ef68d82ae03b51afba9bc3832ce3c42f8c1076febe2e0754ff1"
+    },
+    "history-plat-spain-dutch/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/36b232122f5169cf81db17776f26e5a8d0cfd8d1b03f8dc1e13fa5b4b384ba5c.mp3",
+      "duration": 66.312,
+      "bytes": 397872,
+      "textHash": "76b705dcf160aaeb44cc463654dea2b04171d9e6d87b1eed1b278d6cf1dff0b6",
+      "inputHash": "c31a80c920f02f9be31719f236cfac04b0009e5a0ee5d94bb59741512d2a151e",
+      "audioHash": "36b232122f5169cf81db17776f26e5a8d0cfd8d1b03f8dc1e13fa5b4b384ba5c"
+    },
     "history-spain-netherlands-1/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/e95f21fa8748b9c2035226169be49bd5aac55828284224c83ac5db6e64072db9.mp3",
       "duration": 14.136,
@@ -20769,6 +21025,22 @@
       "inputHash": "239d84a3bdcc69088624cf3029aacc98994a0ec996f6a970d143909052b11568",
       "audioHash": "8da1166759d696ef795e9ffc62cc75021741e2a787e472112bee2e522b12f76a"
     },
+    "history-plat-spain-succession/title": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/531db92c6069584f9e48cbbc8a75d55ca8104dd7dc816045aeff5d9ced27060d.mp3",
+      "duration": 11.352,
+      "bytes": 68112,
+      "textHash": "5bf5abb706dda94e2433b8c37335ee3d49410999964d54fa4ddd9447d7f2bd89",
+      "inputHash": "721a2d39d5bc73761375f4af7876837e3b92dfd0212f258d492a36e6352510a0",
+      "audioHash": "531db92c6069584f9e48cbbc8a75d55ca8104dd7dc816045aeff5d9ced27060d"
+    },
+    "history-plat-spain-succession/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/427c1740d81cc64addf98e58fbe5545eec0e8f1f8348b1d533cc00b43fa381b6.mp3",
+      "duration": 59.496,
+      "bytes": 356976,
+      "textHash": "5bba32a5ad69cbea1b80fac0271e1051e68a3d6a5149bb7aab75193d33af241f",
+      "inputHash": "db5f6f754df030ee178a249d5c48469577a9c1718ca232828c69afc8eb619ae7",
+      "audioHash": "427c1740d81cc64addf98e58fbe5545eec0e8f1f8348b1d533cc00b43fa381b6"
+    },
     "history-spain-bourbon/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/be10015c91ff91a8179fb14790f4fa5030bbc7a0d29ba514d8d2e7f88402a251.mp3",
       "duration": 9.84,
@@ -20856,6 +21128,22 @@
       "textHash": "ccb602c6c0489fd172ed37e481cf4e16298e6bd9ac6d12c9c73d6c592ee8e648",
       "inputHash": "f3aba50b5236e6fd74f516aa72933437af07014079f1e503a4c897ff62a86fab",
       "audioHash": "97a168f10f308fe74b9dd30b5770514007ef1711442e7259e6e3230a87a5a59e"
+    },
+    "history-plat-spain-bayonne/title": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/388aa93dc7b41ef72e9a7c41a16dd53d9760955c883f32845ef68c7be260a3a1.mp3",
+      "duration": 12.288,
+      "bytes": 73728,
+      "textHash": "1138896fbd5744bc4faa23a5435f2308950049330ffc94f40064b2f2065fec75",
+      "inputHash": "8535a17427ccb5fb1e89197bb3cb62b81a474975d832e1fc345e6ece2f0b857f",
+      "audioHash": "388aa93dc7b41ef72e9a7c41a16dd53d9760955c883f32845ef68c7be260a3a1"
+    },
+    "history-plat-spain-bayonne/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/e728f7cb45de79d0c330c1c51b27a0266bfb9e6e6495ad37550da1c67e75ff17.mp3",
+      "duration": 59.784,
+      "bytes": 358704,
+      "textHash": "d75e7be6576c8b681cd8cc3f870c7309296ae87000d59cdb27f4c4b2705063aa",
+      "inputHash": "fd3c79d97a02f620395e7cf44c03bfb06d0d03cf0dcf45f802ea65a1e7a7c16c",
+      "audioHash": "e728f7cb45de79d0c330c1c51b27a0266bfb9e6e6495ad37550da1c67e75ff17"
     },
     "history-spain-cadiz/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/76cb4ddf9a8d7de283c363190f4b8b04c273c5205324eea8402bac5b2cf442f2.mp3",
@@ -20960,6 +21248,22 @@
       "textHash": "23c07a2e533a2139c67e47561fa54931610b1d7fdb5607f493bc60c605f02bf2",
       "inputHash": "0356122ddb79c5683c7e3742ea7628a47638aaeb21494a5e23441593d4173873",
       "audioHash": "1ea112b86257674d4f9b5260170607e616f15bc0ff88f994d36134dd003da5ad"
+    },
+    "history-plat-spain-latam/title": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/86af9555543e996e5c75caf71370ea7c3e98d8ecc167bd2c6e3fe6d4f99f3fdf.mp3",
+      "duration": 11.184,
+      "bytes": 67104,
+      "textHash": "33049fbecff6179c5bc84d28435ff23a55401c9757dfb427d58a3822d0c22745",
+      "inputHash": "5f14a4505260ca4fdb91c0bd8a96304dcacf97ed3642c2b703bddf57f72b3a60",
+      "audioHash": "86af9555543e996e5c75caf71370ea7c3e98d8ecc167bd2c6e3fe6d4f99f3fdf"
+    },
+    "history-plat-spain-latam/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/8681e1f6efd5255b26389014cf01bc622251c87d764f7321acdb08f186b29767.mp3",
+      "duration": 61.032,
+      "bytes": 366192,
+      "textHash": "94088eff4a0ad1710802f2d9d6101b8e646401e2c45b0310b23377179b432d6d",
+      "inputHash": "dbddfd1c7de0f118629007bbdb8bbcc6add3bf66f9f7f831eedb3c0ac19043e3",
+      "audioHash": "8681e1f6efd5255b26389014cf01bc622251c87d764f7321acdb08f186b29767"
     },
     "history-spain-carlist/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/5c536c7f7d31122243d4cd59ec45f994e5d093ea28e88642bb264a22cd35585e.mp3",
@@ -22233,6 +22537,22 @@
       "inputHash": "da3350e8606b13d3b50439191827860efeeb04f75df2dcecf8a4aa7446ba8ce2",
       "audioHash": "e112db27d979db565389bb8b9a231a8b2211a3947760897f4a4f09edc39f6e11"
     },
+    "history-plat-faith-iconoclasm/title": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/ab1e9cd4b40d72a18e7552629e597bfaba83f1604639a719bd61176d2634e7bf.mp3",
+      "duration": 9.84,
+      "bytes": 59040,
+      "textHash": "76f37cfb9c331c6e734d1a0b838b2808108e25d92ce4c1eac715bbbf954b0ee3",
+      "inputHash": "74476fdd886e04ac13daab9c73de2b90cc0d65ebfd831660f542845914c75e6f",
+      "audioHash": "ab1e9cd4b40d72a18e7552629e597bfaba83f1604639a719bd61176d2634e7bf"
+    },
+    "history-plat-faith-iconoclasm/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/1658e747529b74226790dd59196e10ae449ec6a4f381d4392f6c40328d2460b1.mp3",
+      "duration": 61.8,
+      "bytes": 370800,
+      "textHash": "78a79a5ac6c49f99f8a1b1d1a6c7155c556fbdd6ca37075738cfdeef234aa60b",
+      "inputHash": "44acf76b8abae9736d787b830668d6a969f2400e9243badb0d8463f5cd65ef0a",
+      "audioHash": "1658e747529b74226790dd59196e10ae449ec6a4f381d4392f6c40328d2460b1"
+    },
     "history-faith-carolingian/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/c714098d3c466db0e216293a3838654c1fd72f3ba3b0b1c64b3dab7c0d9b54ef.mp3",
       "duration": 7.464,
@@ -22737,6 +23057,22 @@
       "inputHash": "02b5f8666c0e252f1acf68dfc948d3910e76ff0e32b55075c7316b226da34c0c",
       "audioHash": "576767458d51b92c5b004a9d07ce52b1c201036c5d48070f1e1b319bfea5bd25"
     },
+    "history-plat-faith-investiture/title": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/1324a699ce6aa8e5a6caa9b41c83c8522a4be528b94ea46c9f097f68a4e23509.mp3",
+      "duration": 9.432,
+      "bytes": 56592,
+      "textHash": "1d7ce5f459c27f3fb9b55cfa96ef9e146abf9515acca342a532bed38fff67d3c",
+      "inputHash": "c68d71d5c92ffbf941eaab38ed4b2fa2491211a13e7860e166580dbe069c08f3",
+      "audioHash": "1324a699ce6aa8e5a6caa9b41c83c8522a4be528b94ea46c9f097f68a4e23509"
+    },
+    "history-plat-faith-investiture/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/6983e24f257477b856f8701040ed5136d0a25b9e93c764bec03b2701dd938d3a.mp3",
+      "duration": 62.976,
+      "bytes": 377856,
+      "textHash": "f415c88d0cbd60877752cf57a96f3d44ee9939ae830e2194a548934147f91a87",
+      "inputHash": "c3e1e9371b3f5ddd0f166e064e0b0f1837f58a5e25eb9db8f35500ffa1e5e72e",
+      "audioHash": "6983e24f257477b856f8701040ed5136d0a25b9e93c764bec03b2701dd938d3a"
+    },
     "history-faith-urban/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/6115574081438e9ee8ebff8d04fc35a87ba9a6d4162af5e78e846569f9c0c6b7.mp3",
       "duration": 6.144,
@@ -23112,6 +23448,22 @@
       "textHash": "742c16066138ded71b2df1682ca41f05fa39198c3f98c44250e699eed9548223",
       "inputHash": "46dbf2c3cc0b2ecb45fbfc109b3fb9ee3584872a200ce828cba1d1340b23710d",
       "audioHash": "5e9797bc1a10b7fbbe744287907b6214e0866c51d90dd11754e71f0367ff5d16"
+    },
+    "history-plat-faith-staufer/title": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/6586749f358ba6e7edd2b1f3ee2499fde6a6fa6b9793d1159aea22f2e21a5a0b.mp3",
+      "duration": 9.552,
+      "bytes": 57312,
+      "textHash": "d42e62a9fd418d75234751f22769528aa330cd75649548e1266d9293d46b69b6",
+      "inputHash": "003f8fb59add2fdac18ac3b15e7818ea8cc65c997ac1b3bf73529442386ca2f9",
+      "audioHash": "6586749f358ba6e7edd2b1f3ee2499fde6a6fa6b9793d1159aea22f2e21a5a0b"
+    },
+    "history-plat-faith-staufer/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/c6dd59fcda96cac6d0d811a0e693a0f10021c076427d3c1191390c011e5d5595.mp3",
+      "duration": 57.816,
+      "bytes": 346896,
+      "textHash": "59b134e06c9ae0f9154b04af80905cf8d0eca8abc6d4e81b0c2dfe5cd8fff094",
+      "inputHash": "235a4a09465989ac9b54317700d43b93c8f0bce3b6857279aff1a5590b959c7c",
+      "audioHash": "c6dd59fcda96cac6d0d811a0e693a0f10021c076427d3c1191390c011e5d5595"
     },
     "history-faith-scholasticism/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/a19ac6697c8c541b6cc2a20c7b05d1f3f7291d49b50cdd4011f936cc25f1cb75.mp3",
@@ -23769,6 +24121,22 @@
       "inputHash": "88c6727e3d7e1d62fed8f482ed3cec8c725cf20e00ff0252e0b7715a703d2443",
       "audioHash": "6c41fb6f7b561bb63f275a22700ed21e54efc7f82c888f24e8f20fffe56b09d2"
     },
+    "history-plat-faith-reformation/title": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/8d5f2ab394898b2f82133a6b8ff54a9f05745c3edc5309ca71a86861596f00e1.mp3",
+      "duration": 11.832,
+      "bytes": 70992,
+      "textHash": "fa28e767407060000aa9ed7da8ee6fa48a4700cddf75b5af48b7e9cb8a0f0283",
+      "inputHash": "2a9602ec674f72562b3c0204c4adcd6f415980bff6096dac09470e474a4e90f5",
+      "audioHash": "8d5f2ab394898b2f82133a6b8ff54a9f05745c3edc5309ca71a86861596f00e1"
+    },
+    "history-plat-faith-reformation/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/efb3406a4aabee08fc63ee2ea60c115a6bc06c3c593a7dfdbc1fff4d71f72a35.mp3",
+      "duration": 67.2,
+      "bytes": 403200,
+      "textHash": "a95c108845ac3417e9269afdec1dceceb5053b379784f40cff2b76bc0261d2f4",
+      "inputHash": "d19a3bb6a40b967cad4ad9e6d883dc6fb3016a28187d6d55a55705ae5302beb2",
+      "audioHash": "efb3406a4aabee08fc63ee2ea60c115a6bc06c3c593a7dfdbc1fff4d71f72a35"
+    },
     "history-faith-reformation-1/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/d209940cbf829c9a3aee13d956201316306e57c92619fe50c3fdc21f432f6be0.mp3",
       "duration": 13.536,
@@ -24273,6 +24641,22 @@
       "inputHash": "22b700be674e9f46670250c45015e5dbd8e276881ea6b7f38150d96bd907e378",
       "audioHash": "077d22e96dbe87efa2cdb59c559ca59a2a18e6e062282e5ab916d5f18d53d0d6"
     },
+    "history-plat-faith-wars/title": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/3a43ef19475c37d08cbeeabbc0b04fdd6aefaa6a78e5bcecf8f70d4240d514bd.mp3",
+      "duration": 10.176,
+      "bytes": 61056,
+      "textHash": "871f3875c9616abac0f69ded6e5d4a0ac66356e981405120d37c049dbd05d9d2",
+      "inputHash": "73c970710adbff7173cda3799a5a8f30cee4d733165aa4aa4d80e2ec217aef7c",
+      "audioHash": "3a43ef19475c37d08cbeeabbc0b04fdd6aefaa6a78e5bcecf8f70d4240d514bd"
+    },
+    "history-plat-faith-wars/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/3a5b9ecfe06877e1c3940036f584dbed5522936cda76b9766b285e5bd52f8290.mp3",
+      "duration": 60.216,
+      "bytes": 361296,
+      "textHash": "8f4053c037f72ca301515da10c1b203df78c0fb77b03122c67cef9c8de640fcc",
+      "inputHash": "02821b2573431ba6b63027a02d076447ffd61d366b381d2bb1d3e56ef761b4b3",
+      "audioHash": "3a5b9ecfe06877e1c3940036f584dbed5522936cda76b9766b285e5bd52f8290"
+    },
     "history-faith-toleration/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/22c821769c2ec664371cab8969a6634f796e1ae413befc8b5e786baca8c29faa.mp3",
       "duration": 10.656,
@@ -24616,6 +25000,22 @@
       "textHash": "58e0a5595f2ad263178c5ae88dc41f9ebd9a3fe92e10a740dbbf16b32b6126e7",
       "inputHash": "900a6ec3c4dce052798f210fba09b37be8220358c98918c26b9099c3aa115920",
       "audioHash": "aa9e5c9f83f607eaaa36dbe4d9ef2414589252a953b109dddbe74e5514732631"
+    },
+    "history-plat-faith-lateran/title": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/7178e5e914cc5d102c0c3637edf46928e294c0ebfe7854b38c2c4bd35f2ba74f.mp3",
+      "duration": 10.608,
+      "bytes": 63648,
+      "textHash": "8edcb7324c87d5347770d6c3c8cc0222f3f11b3e61bd38aaa848b2cb568a45d5",
+      "inputHash": "da98b37ce4028cd185acae08aa4e6b0af4fb990261fad96dadb5132d79d6b66b",
+      "audioHash": "7178e5e914cc5d102c0c3637edf46928e294c0ebfe7854b38c2c4bd35f2ba74f"
+    },
+    "history-plat-faith-lateran/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/90858bfb394a2fb40c1605c97d376f92bbace335ea07c28019ecb16d2698040b.mp3",
+      "duration": 52.824,
+      "bytes": 316944,
+      "textHash": "a368c5df4119de83b395d200e087601a330761594a9b24220344c63da7fde2f8",
+      "inputHash": "1557012e6e0b27904e4a5115d5346ba6973f50f192c9c45df8d11668c7efcacb",
+      "audioHash": "90858bfb394a2fb40c1605c97d376f92bbace335ea07c28019ecb16d2698040b"
     },
     "history-china-neolithic/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/26e293e7d19f19c7dc7f364d69ca8c901068315a7fda78138d6525c50022bd17.mp3",
@@ -26681,6 +27081,22 @@
       "inputHash": "f9ae505acc664f2d2b08d12c435d3eb3f67e0410644f75c2dca9948c390b359c",
       "audioHash": "536983d7deef71c2cb38c9dd3949aa4fc54cae0b5f9d4d88c57654accbb5a50b"
     },
+    "history-plat-egypt-arab/title": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/976a5daeed39b56221ea924df36362c47f0fc8bf5b646b9937fc99dbe788a9a5.mp3",
+      "duration": 10.536,
+      "bytes": 63216,
+      "textHash": "3e3dbf186c8288c0e49074a4bd0049c4132a0403fc15e700c6c173027c7cd487",
+      "inputHash": "92ca7f4009de7c334fc0f34fd2d2dd3177b205d235fd4e8e040fe95540c857ae",
+      "audioHash": "976a5daeed39b56221ea924df36362c47f0fc8bf5b646b9937fc99dbe788a9a5"
+    },
+    "history-plat-egypt-arab/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/e85d659df3bf7a014f59f2ea7a2a3260af950a6c35541e75ef71a3d401e02403.mp3",
+      "duration": 61.8,
+      "bytes": 370800,
+      "textHash": "4042cde72c880a0008f83add876dae999201654af888ae74811bc5765d0e7166",
+      "inputHash": "b746e53aaf3aab8f2ee539170c0ece8b96b9e66b1576afdbb0b89a194a806aad",
+      "audioHash": "e85d659df3bf7a014f59f2ea7a2a3260af950a6c35541e75ef71a3d401e02403"
+    },
     "history-persia-khosrow-ii/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/ce5c60e74ae2b602a35ee0c3bd8fb789ebf1330ecc282d9c2760ff5960f62799.mp3",
       "duration": 6.168,
@@ -27457,6 +27873,22 @@
       "inputHash": "73d0428859e5db7102330288c65c956c336258370da7b4661df4eb00a3aa4587",
       "audioHash": "e02101f8b0e51ac907222504ecaebb0a5a13c04926ce3d16ab049b98751e9262"
     },
+    "history-plat-persia-crusade/title": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/cd8af990d21f75ae34aa375700eb0dc4a9578d65180a29e749220fca1f80015c.mp3",
+      "duration": 10.968,
+      "bytes": 65808,
+      "textHash": "2398e83e31e6e7bba5f89fe91f54b8c0f3453e4cff1fd60c4c3308b8108138e5",
+      "inputHash": "23c6d875176d71a142415fbd3f84f238a3a5f87ed649dd75d21cef8a2576b315",
+      "audioHash": "cd8af990d21f75ae34aa375700eb0dc4a9578d65180a29e749220fca1f80015c"
+    },
+    "history-plat-persia-crusade/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/1b43ca92ebb5196de04b7901cf55930fc80e9a98db9f685a19753eea103ad51a.mp3",
+      "duration": 57.864,
+      "bytes": 347184,
+      "textHash": "c6606bff81350cb6e83b7ac29dd8916633718dc8f891961bb459307f88512cd3",
+      "inputHash": "4b2fba7b61a59d492297f999fd528d699b93b19585cffeb0b5a6ead65a0fec71",
+      "audioHash": "1b43ca92ebb5196de04b7901cf55930fc80e9a98db9f685a19753eea103ad51a"
+    },
     "history-persia-mongols/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/95d479e1f934713e43874373184f0317c0e844a74e03bab0bd180c7595015d07.mp3",
       "duration": 13.176,
@@ -28186,12 +28618,12 @@
       "audioHash": "86588f69efe650be6e9de08be875ee0e4076185fe84d7805c9af4f38394cb4e4"
     },
     "history-ottoman-crimea/0": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/8aec2f90ff08411278ba776b99c21ed7c3c07f2dbf80863434d0592a85b04e1d.mp3",
-      "duration": 53.328,
-      "bytes": 319968,
-      "textHash": "e6fd6f386bf1ee5810c056c87aa4b73372664c41fde9feff476a2b8dc084a6d3",
-      "inputHash": "be836a221aa92310f11ccea0e70528282535a187a251cb6ea9294f812aa33813",
-      "audioHash": "8aec2f90ff08411278ba776b99c21ed7c3c07f2dbf80863434d0592a85b04e1d"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/14e1330c021bee4f25d930703178baaef49f3d4a9c5fd1a0181e5fb4a73e5738.mp3",
+      "duration": 52.296,
+      "bytes": 313776,
+      "textHash": "c94ba4344720a92c4dfbecda7bb015d3bdb025f86a45f763ed50e6e307d6f374",
+      "inputHash": "f0686df788510d06b42088a4955afb4f38af8761505710179799a1bb9b0be792",
+      "audioHash": "14e1330c021bee4f25d930703178baaef49f3d4a9c5fd1a0181e5fb4a73e5738"
     },
     "history-ottoman-crimea/0/person/0": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/522d9784b91df72a0f297dc59dc0de5008264c26e135aaa5cc92b3492928f817.mp3",
@@ -28490,12 +28922,12 @@
       "audioHash": "39c149f70ed00c91e1ac166eee8f22524a4986e6c62a1f791add481b0fe2175c"
     },
     "history-ottoman-ww1/0": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/18728f86d503b80bade2f33f23e9c94ea320cd9a20772e126be7299a4cdcaabe.mp3",
-      "duration": 59.376,
-      "bytes": 356256,
-      "textHash": "562d12d1b6db3e66d489d831bf4e8e1bb42d7f430178f2374a28823c66ab4393",
-      "inputHash": "902d4b66887766dfb2c9a86f6c2dc1ba663454ddb78faf15afee7e8bcb084112",
-      "audioHash": "18728f86d503b80bade2f33f23e9c94ea320cd9a20772e126be7299a4cdcaabe"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/9771970e8cf91074cf8fab79ebab954674afc85353633783fb900d4588fed514.mp3",
+      "duration": 57.336,
+      "bytes": 344016,
+      "textHash": "fffee7c995a7a00beccb1d5fe97191d82b65830ca47dbee2ab55a5d688e10a68",
+      "inputHash": "8b747ed2f643484c414c8e8c6e522a4f98a01a86105ce8828e0b2b5007cb4b72",
+      "audioHash": "9771970e8cf91074cf8fab79ebab954674afc85353633783fb900d4588fed514"
     },
     "history-ottoman-ww1/0/person/0": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/e23ababee13fc3c8fddc223c4d3bb3d49edfa4abd83baaeb9442f692b90a36a6.mp3",
@@ -30033,6 +30465,22 @@
       "inputHash": "0ddf347ee6edf4204a60f6567acbea5540f9ef0df7e1acc9bf0d4769626b6a63",
       "audioHash": "5e88d39b4818c440b526bd9c0eb33374a2bc9dcd46c4f6178bece1ef90cbd55c"
     },
+    "history-plat-eeurope-1812/title": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/2d9e833109e783d3045313e0fce776f9592f5efab44f266605b12864ef06ccac.mp3",
+      "duration": 14.976,
+      "bytes": 89856,
+      "textHash": "bf6764bd46cbac0df481f60890a9eb751d0a5d3b987506ead8fa59bcacca4e64",
+      "inputHash": "6f008cdefc42c2a51fc446fc035220b3a3e40a25411c0c46ca3774776c579252",
+      "audioHash": "2d9e833109e783d3045313e0fce776f9592f5efab44f266605b12864ef06ccac"
+    },
+    "history-plat-eeurope-1812/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/1121fd737abccb90acd7f823e6db40b8bde5fcf4f101a93150778aa7381a328d.mp3",
+      "duration": 67.776,
+      "bytes": 406656,
+      "textHash": "4b3e4221e582c61964a23340746d63a5fafe59ee8b844f8a18b030f0b97eeb1d",
+      "inputHash": "04a2ed58daf233ffc75ff84d69a1300cf46f053644900757da0754f91f90eb92",
+      "audioHash": "1121fd737abccb90acd7f823e6db40b8bde5fcf4f101a93150778aa7381a328d"
+    },
     "history-eeurope-reform/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/5131a265692a8d2600da53a6446abab9941e59bdeddd9bdbd12e2db5a9107e87.mp3",
       "duration": 12.72,
@@ -30192,6 +30640,22 @@
       "textHash": "351f41de195be61da4091342cca600abd122dfe6235344fa4bf52c4f1f07348b",
       "inputHash": "7364576e0728c943ba60b254c6cb5c4845af212eda8f38a00811051ed9c4ab93",
       "audioHash": "85dd22ae18ed09fbdc7799d9f5e5cc17900c04c04b2edf36b13fb102d1da0dc1"
+    },
+    "history-plat-eeurope-ww1/title": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/65f21bb7e28ffd19108466e5d1b356cd9e4baee7c11aa0f98bcfa777b86877f9.mp3",
+      "duration": 12.072,
+      "bytes": 72432,
+      "textHash": "d454f3ba52376e7e88d7ec13263d0f301e21407335605f29efeac5d7d88b8594",
+      "inputHash": "baae95e4b6c59a5457b9f3324a8980e138db381929ddd646ab9a3c198ab990e6",
+      "audioHash": "65f21bb7e28ffd19108466e5d1b356cd9e4baee7c11aa0f98bcfa777b86877f9"
+    },
+    "history-plat-eeurope-ww1/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/1d38be0455eaa2285347c6e35f2d83b5eb921d1b67e1bb04a7a690683b6e708d.mp3",
+      "duration": 78.144,
+      "bytes": 468864,
+      "textHash": "f5c644916b3fcd042cc6189bad6dcad78a4db1cf3362feee51f5e8e7f0eb049a",
+      "inputHash": "1d153fa7991ead3e5b192d321853d5f4b53fb4eb171ba0f5e08a91189fd7b3f5",
+      "audioHash": "1d38be0455eaa2285347c6e35f2d83b5eb921d1b67e1bb04a7a690683b6e708d"
     },
     "history-eeurope-october/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/d52fbce33dcdd55c914603128f3caf485d684cc8e2ccb4d49a6bb28372aa86c0.mp3",
@@ -33649,6 +34113,22 @@
       "inputHash": "738f76e1425c8563d0f05c1ef7eb56279785bd7ccd3632f90a5377a726b820cc",
       "audioHash": "b81fb8fb467dbab94cb4ff85088346b1f41159a0bff114a75702d25f4a415738"
     },
+    "history-plat-britain-hyw1/title": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/fb5af324aed9dcc7cdc39dc64aace7a0341afe65ee9959aa8728f131917ecbbc.mp3",
+      "duration": 11.28,
+      "bytes": 67680,
+      "textHash": "dc49809b4e83a89243fe44ab69a1dde44dd5281214af1ba5ef198b042863cb04",
+      "inputHash": "7bdbde9c5f490dc673860f5d783e63e792115911a2ca5cfbec542bff8b5b51bf",
+      "audioHash": "fb5af324aed9dcc7cdc39dc64aace7a0341afe65ee9959aa8728f131917ecbbc"
+    },
+    "history-plat-britain-hyw1/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/18bf31a6efd39d2078587c1dd0345a967ce8156346e76db544671ccb5ef300a8.mp3",
+      "duration": 55.512,
+      "bytes": 333072,
+      "textHash": "9bb260cd04b78514fa3ba8da6873764ae49310b54ff1bb290f99fa70817b06dd",
+      "inputHash": "d7585d8520ec6ff4ee535580831fca6ef7d79f274a889a06aed16d66e833ac1f",
+      "audioHash": "18bf31a6efd39d2078587c1dd0345a967ce8156346e76db544671ccb5ef300a8"
+    },
     "history-britain-hundred-years-1/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/9ffbbc3527458bb42950810292054ae1bb8579bf29c4737e8db8cb47a1f0c20f.mp3",
       "duration": 10.224,
@@ -34272,6 +34752,22 @@
       "textHash": "e48c993ab79355ee47fca64fabe96d96da41bf9135b29d43381c515205a7aca5",
       "inputHash": "ae065f02a11f0cc6eb3120b74368f40ef82757ee86dc1916100143799d0c2ee3",
       "audioHash": "b496dffbe77fd59a5fbdb2c76a726cec9de8148db22175b5c47ab91cc81a2889"
+    },
+    "history-plat-britain-hyw2/title": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/8a106699d862dc1e3f0535ad91de3956cdae0436c9d1a9fbbc039b53b7d9042d.mp3",
+      "duration": 10.224,
+      "bytes": 61344,
+      "textHash": "576d7a0ce290073a03162a36efef420c27e488b573b12dd3a936438c2641cdfa",
+      "inputHash": "78c553d222410d159e1fd62115e25c4bab2513609bec34e1cf3fb5b1c7420fe4",
+      "audioHash": "8a106699d862dc1e3f0535ad91de3956cdae0436c9d1a9fbbc039b53b7d9042d"
+    },
+    "history-plat-britain-hyw2/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/f8d2404c5635f5ae4376bc6c93a4fffa7ded6b41a02d77c04abd32216192f738.mp3",
+      "duration": 54.48,
+      "bytes": 326880,
+      "textHash": "e607b5f9272cd3dd765a1d4d9ce0c0034637f145a8b7deb5376d443cae145b57",
+      "inputHash": "3049dc6b99895152c852b9997c6354324593822766539e5485f9068792eb9482",
+      "audioHash": "f8d2404c5635f5ae4376bc6c93a4fffa7ded6b41a02d77c04abd32216192f738"
     },
     "history-britain-hundred-years-5/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/40826469f4f0b1a36c734149e93f05473da0dee45b84197080da2c3ac77496db.mp3",
@@ -37833,6 +38329,22 @@
       "inputHash": "639e5193cafeeb39380391639dc4341aefcc8fef1e93737c2fb9212d73eb589f",
       "audioHash": "084f822622d2e323444cbf784472e3f8dc7bc3d264622721b745e4a6d33b98f0"
     },
+    "history-plat-britain-seven-years/title": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/2b94fe8ba6b74917bce67b2f9b2032a4aee60437e8ee516577be8e1a57906c7d.mp3",
+      "duration": 11.76,
+      "bytes": 70560,
+      "textHash": "d075a1fcdd8027e4e5c98fa9a4c2080b73a0d1ba117ba97ac348b98ee4babcbc",
+      "inputHash": "a74ad8618bb64ab9c1c69109767d966ddb950fbbf2e9a65b3ad16c766a97dc87",
+      "audioHash": "2b94fe8ba6b74917bce67b2f9b2032a4aee60437e8ee516577be8e1a57906c7d"
+    },
+    "history-plat-britain-seven-years/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/d2bacf482f30f2b150af58e580692bff6556b5353a3de444631324e8bedd6f53.mp3",
+      "duration": 60.192,
+      "bytes": 361152,
+      "textHash": "6ebae55b465702bbb80d4d530f8641aff819ca1929ef047688ef12ecc7b8fc95",
+      "inputHash": "2bf0e5b2ba9422228e5574a8a627089428ba49981220db8f3b1cea3a5122b610",
+      "audioHash": "d2bacf482f30f2b150af58e580692bff6556b5353a3de444631324e8bedd6f53"
+    },
     "history-britain-america/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/bd963ddd4914a0c7ffcb0e03af610dd09e8af10483627ab21717ce80808a6ae6.mp3",
       "duration": 10.152,
@@ -39361,6 +39873,22 @@
       "inputHash": "c0f6df8ac5c0f46151326968fc647a76b82fdfe24cb603818fda3c757d0165fc",
       "audioHash": "7e14afc1a6613ac5598f933a2fe97d17397eebe3615569e3977e2fc17a39f04f"
     },
+    "history-plat-nordic-vikings/title": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/785f298f506b5b70840d0ffab6632df44d1c40e7d7314fc5fb7425c40d69dce0.mp3",
+      "duration": 12.528,
+      "bytes": 75168,
+      "textHash": "e3fcd01ba9e3769599ac2d35f67f51b4226c3ab640b5584af8dc731d74cca007",
+      "inputHash": "00ce37a6fc00fe240298f6c5a3e36bf154a095896378216cf9dd2a8ea4e07f4d",
+      "audioHash": "785f298f506b5b70840d0ffab6632df44d1c40e7d7314fc5fb7425c40d69dce0"
+    },
+    "history-plat-nordic-vikings/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/03077161907c78ef86a2d51057c4b3186c7b4ab5c03f8c28f6312da01191e723.mp3",
+      "duration": 64.344,
+      "bytes": 386064,
+      "textHash": "1bdb8b71fdac955b49738d65d6f7f760417779016de5db189fa318c3fd22754f",
+      "inputHash": "e050648be4af627f52bad01c4d67a85c1a127c9045dd4c5471ec8047cf49afed",
+      "audioHash": "03077161907c78ef86a2d51057c4b3186c7b4ab5c03f8c28f6312da01191e723"
+    },
     "history-nordic-kingdoms/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/4149f0b0cfcf86ecd1f4fe39b8d181944f6fce8d322b81a3d88456d08e68d292.mp3",
       "duration": 9.984,
@@ -40561,6 +41089,22 @@
       "inputHash": "bcc95d0feea562e82ae22455da64b4c40f106d24b02cb54a5c654ac4fbc6263a",
       "audioHash": "af6692b33aca0498039848056be4912c8f92c7b709875e8a4fa3dcb0250c8003"
     },
+    "history-plat-america-conquest/title": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/2c6548f5d0b3ea5f2d1defd9b7725144ad325392676d4b5ffb4dad1de4751063.mp3",
+      "duration": 11.904,
+      "bytes": 71424,
+      "textHash": "1004d9a442924dc67c30a822a6bcfe4763795782b5fb51ec57722dac878f0c78",
+      "inputHash": "f13e5f63bbe72d6047d2b06f6860800ab51f5f8167cd3b7a2106c33c47f97b3d",
+      "audioHash": "2c6548f5d0b3ea5f2d1defd9b7725144ad325392676d4b5ffb4dad1de4751063"
+    },
+    "history-plat-america-conquest/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/f91de8858d36c76fe5d518385df95c7602962e7f6a454b0799f37ef55234083c.mp3",
+      "duration": 64.152,
+      "bytes": 384912,
+      "textHash": "a062335db0e311b361c44f9810acc46248c3b83e096c9671d4c12d3a8eeb0823",
+      "inputHash": "cbf760bfe76174a1cf276e8d102e885f946fff9fcff9c31cf3114cc3493912aa",
+      "audioHash": "f91de8858d36c76fe5d518385df95c7602962e7f6a454b0799f37ef55234083c"
+    },
     "history-america-exchange/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/742d17d19a6efa5ad05feae323db0bd312b7e2541f9a1571b2f407227c0bb3f0.mp3",
       "duration": 10.752,
@@ -41249,6 +41793,22 @@
       "inputHash": "06e3ebd91a4d88514e539e9b82ae0d15f1b6b7ea435593e86b7d63bd0a3aadba",
       "audioHash": "53b8e61d0859ab93d881f783a1b9c784a67bcfae16d0151bec2ef5c2f5e0975a"
     },
+    "history-plat-america-french-indian/title": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/2b855c49a0777a67e8f5bfb28f8279b2dbd75b5f345302d911de6973c5f441da.mp3",
+      "duration": 11.52,
+      "bytes": 69120,
+      "textHash": "cb674621c61221e1d5e30acd2f6ae38e1c030d08e013b0e05c0a48f028ceba92",
+      "inputHash": "30b8336d948d1f6619b81124cd0153567f38413f201a179cd34fb814704f0f9f",
+      "audioHash": "2b855c49a0777a67e8f5bfb28f8279b2dbd75b5f345302d911de6973c5f441da"
+    },
+    "history-plat-america-french-indian/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/34db7158d4c5403a8dded920701c8adf8776d19f735d150868953654dca58fee.mp3",
+      "duration": 59.52,
+      "bytes": 357120,
+      "textHash": "5edcfc9a28989467854421d0646181df29cfa3ac769fd107408260963555461f",
+      "inputHash": "d00286fbfd49185d4e4063ae298cd400ded0657e0db304e12e1ab0b5afc89e3f",
+      "audioHash": "34db7158d4c5403a8dded920701c8adf8776d19f735d150868953654dca58fee"
+    },
     "history-america-independence/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/474ce343036aa639b55c3b29ab6ef462c01d3163a7d84f0a279673a62598f733.mp3",
       "duration": 10.224,
@@ -41352,6 +41912,22 @@
       "textHash": "05c30fef969d45e6dc8f91856b4d90ef7176d56ff4c2e296dfaccce17381570e",
       "inputHash": "96da7684f0e75c776d0d0897419ea692235697b8a5b3bc5004a9d771e203c2dc",
       "audioHash": "6814e059b21ed7ec0ea70d2509fe4a7ca56a8def964c78375daecc9a38e522b5"
+    },
+    "history-plat-america-yorktown/title": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/04233d24b10a78669472f6638f46d094f30d7cf10d7ed30d2066223915157581.mp3",
+      "duration": 13.056,
+      "bytes": 78336,
+      "textHash": "86e40f23a3798b7902cbd548b3aad5ddbaf3e817f901b32a3df0f53cab029f36",
+      "inputHash": "9f9f97d9f35bda5b03ed4eee167925bded3d34a78fe0f90689b7eaf3f2c71309",
+      "audioHash": "04233d24b10a78669472f6638f46d094f30d7cf10d7ed30d2066223915157581"
+    },
+    "history-plat-america-yorktown/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/d5707dbad3db7d5de07d8361e11ecda8d89ae6da7ca196ba755764e74d227923.mp3",
+      "duration": 60.888,
+      "bytes": 365328,
+      "textHash": "41cb7635b665986da2810bdc6ada4501d0d8eda8c05580ab32c77c4375374879",
+      "inputHash": "f35e2594d6da944e4b778734bd34ba4d6bc0723b2b63cbfdb44414a958361380",
+      "audioHash": "d5707dbad3db7d5de07d8361e11ecda8d89ae6da7ca196ba755764e74d227923"
     },
     "history-america-constitution/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/efb9dedb17b7d090ed2bc29bf7f088be7bc2e78c3553ad754d9e8ea542c8bcd8.mp3",
@@ -41976,6 +42552,22 @@
       "textHash": "5213498de665a7ac37fbe67b47423fa005a6c7db55cc636fd6df720fffba7c2d",
       "inputHash": "1257d8098b7cb1c9b4aba2e563b6855b162dc684763f609c6ab8ec93ec9f14b5",
       "audioHash": "7b91e16f8bbdfe714b1d2ae538fd8726560654687c44dce1be7ea7fa7683d189"
+    },
+    "history-plat-america-1898/title": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/ed8a0acd501b51b3a3e617dcbf101fafa731425e642a0646474dc2bfd0b4554f.mp3",
+      "duration": 12.216,
+      "bytes": 73296,
+      "textHash": "76798a43a48f8c74eb433a8823ac516a57298d280aa7bbd9a34b3fec4693d702",
+      "inputHash": "12f116502fa99caa52661bba92f7e6ebf2c8a2e3bb126b64975ef25dde0fc844",
+      "audioHash": "ed8a0acd501b51b3a3e617dcbf101fafa731425e642a0646474dc2bfd0b4554f"
+    },
+    "history-plat-america-1898/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/40eff68b4eb72cb863d8b7de3fe5be8646b1574e14361cb5cf58605e5c77e01c.mp3",
+      "duration": 64.152,
+      "bytes": 384912,
+      "textHash": "a0a7da3317e1f0ae08c843053d1d57475b7d41ecdb5d6a925efe0740d2223236",
+      "inputHash": "cc3ae960ff41caea84bac1adaa304b6d149a0d0224551481f85624227a7c3bf5",
+      "audioHash": "40eff68b4eb72cb863d8b7de3fe5be8646b1574e14361cb5cf58605e5c77e01c"
     },
     "history-america-wilson/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/beb630cdc6a686fd86b6951cac573e7489bea25ef3a3b8a49122ba5ae1b7edb6.mp3",
