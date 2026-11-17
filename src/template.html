@@ -259,6 +259,24 @@ body.resizing-reader #map{pointer-events:none}
   <img id="brandMark" alt="" role="button" tabindex="0" aria-label="返回首页（地铁全图）" title="返回首页（地铁全图）">
   <div id="brandText"><h1>简明欧洲史图册<span>历史进程 · 地理图册 · 动力专题</span></h1></div>
   <div id="modebar" aria-label="图册内容"><button id="tHistory" class="on" aria-pressed="true">历史进程</button><button id="tGeography" aria-pressed="false">地理概念</button><button id="tTopics" aria-pressed="false">动力专题</button></div>
+  <div id="uiZoom" role="group" aria-label="页面缩放" title="页面缩放：只缩放本图册，记在本机浏览器"><button id="uiZoomOut" type="button" aria-label="缩小页面">−</button><button id="uiZoomReset" type="button" aria-label="恢复 100%"><output id="uiZoomValue">100%</output></button><button id="uiZoomIn" type="button" aria-label="放大页面">+</button></div>
+  <script>
+  /* Page zoom (老无 2026-11-16): desktop only, per viewer. Runs before the page's own scripts so they lay out zoomed. */
+  (()=>{const KEY='atlas-ui-zoom-v1',STEPS=[.67,.75,.8,.9,1,1.1,1.25],desk=matchMedia('(min-width:821px)'),root=document.documentElement;
+   let want=1;try{const v=Number(localStorage.getItem(KEY));if(STEPS.includes(v))want=v}catch{}
+   const $=id=>document.getElementById(id),out=$('uiZoomValue'),dn=$('uiZoomOut'),up=$('uiZoomIn');
+   function apply(){const z=desk.matches?want:1;window.atlasUiZoom=z;
+    if(z===1){root.style.removeProperty('zoom');root.style.removeProperty('--app-h');root.classList.remove('ui-zoomed')}
+    else{root.style.zoom=String(z);root.style.setProperty('--app-h',(innerHeight/z).toFixed(2)+'px');root.classList.add('ui-zoomed')}
+    out.textContent=Math.round(want*100)+'%';dn.disabled=want<=STEPS[0];up.disabled=want>=STEPS[STEPS.length-1];}
+   function set(v){want=v;try{v===1?localStorage.removeItem(KEY):localStorage.setItem(KEY,String(v))}catch{}apply();dispatchEvent(new Event('resize'))}
+   dn.addEventListener('click',()=>{const i=STEPS.indexOf(want);if(i>0)set(STEPS[i-1])});
+   up.addEventListener('click',()=>{const i=STEPS.indexOf(want);if(i<STEPS.length-1)set(STEPS[i+1])});
+   $('uiZoomReset').addEventListener('click',()=>set(1));
+   addEventListener('resize',()=>{if(window.atlasUiZoom!==1||want!==1)apply()});
+   desk.addEventListener('change',()=>{apply();dispatchEvent(new Event('resize'))});
+   window.atlasUiZoomSet=set;apply();})();
+  </script>
   <a id="ghBanner" href="https://github.com/stabruriss/history-of-europe-in-frames" target="_blank" rel="noopener noreferrer" title="在 GitHub 上查看开源仓库" aria-label="开源项目：欧洲历史笔记（打开 GitHub）">
     <span class="gh-banner-text"><b>开源项目</b><i>·</i><span>欧洲历史笔记</span></span>
     <svg class="gh-icon" viewBox="0 0 16 16" width="15" height="15" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
@@ -277,7 +295,6 @@ body.resizing-reader #map{pointer-events:none}
       <aside class="station-inspector" id="stationInspector" hidden><button class="inspector-close" id="inspectorClose" type="button" aria-label="关闭车站预览">×</button><div class="inspector-kicker" id="inspectorKicker"></div><h3 id="inspectorTitle"></h3><div class="inspector-period" id="inspectorPeriod"></div><p id="inspectorSummary"></p><div id="inspectorLines"></div><small id="inspectorHint">在贯通站换线，事件和当前幕不会重置。</small><div class="inspector-future" id="inspectorFuture" hidden></div></aside>
     </div>
   </div>
-  <footer class="network-footer"><span id="datasetStats"></span><span>地图视野：线路图不是地理底图，站距不代表时长</span></footer>
 </section>
 <section id="ridePanel" aria-label="沿线路线图">
   <header class="ride-heading"><div class="riding-line" id="ridingLine"></div><button id="stripToggle" type="button" aria-expanded="false" title="展开或收起路线图"><span></span><i>▾</i></button><span id="stripStation"></span><span class="ride-instruction">← → 换站 <span>·</span> ↑ ↓ 换幕</span><div class="station-nav"><button id="prevStation" type="button">← 上一站</button><span id="stationPosition"></span><button id="nextStation" type="button">下一站 →</button></div></header>
@@ -326,7 +343,7 @@ body.resizing-reader #map{pointer-events:none}
   const grip=document.createElement('div');grip.id='readerGrip';grip.tabIndex=0;
   for(const [k,v] of Object.entries({role:'separator','aria-orientation':'vertical','aria-controls':'reader','aria-label':'拖动调整正文宽度（双击复原）',title:'拖动调整宽度 · 双击复原','aria-valuemin':280}))grip.setAttribute(k,v);
   pane.appendChild(grip);
-  const width=()=>Math.round(pane.getBoundingClientRect().width);
+  const width=()=>pane.offsetWidth;  // page pixels: the desktop page zoom (老无 2026-11-16) leaves them as they are
   const syncAria=()=>{grip.setAttribute('aria-valuemax',Math.max(280,stage.clientWidth-332));grip.setAttribute('aria-valuenow',width());};
   const setWidth=(w,settled=true)=>{
     // The text reflows, so hold on to whatever sits at the top of the panel.
@@ -344,7 +361,7 @@ body.resizing-reader #map{pointer-events:none}
   };
   grip.addEventListener('pointerdown',ev=>{
     if(ev.button!==0)return;ev.preventDefault();grip.setPointerCapture(ev.pointerId);document.body.classList.add('resizing-reader');
-    const startX=ev.clientX,startWidth=width(),widthAt=x=>startWidth+x-startX;
+    const startX=ev.clientX,startWidth=width(),widthAt=x=>startWidth+(x-startX)/(window.atlasUiZoom||1);
     let frame=0,x=startX,moved=false;
     const move=e=>{x=e.clientX;moved=true;if(!frame)frame=requestAnimationFrame(()=>{frame=0;setWidth(widthAt(x),false);});};
     const up=()=>{

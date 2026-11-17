@@ -13,6 +13,16 @@ body{display:grid;grid-template-columns:auto minmax(0,1fr);grid-template-rows:au
 #modebar{margin:0 0 0 12px;flex:none}
 #modebar button{padding:7px 14px;font-size:12.5px;white-space:nowrap}
 #ghBanner{margin-left:auto;flex:none;padding:7px 11px;border:0;border-radius:2px}
+/* Page zoom (老无 2026-11-16): desktop only; the body keeps the window height while the page is zoomed. */
+#uiZoom{display:none}
+html.ui-zoomed body{height:var(--app-h,100dvh)}
+@media(min-width:821px){
+ #uiZoom{display:flex;align-items:center;flex:none;margin-left:auto;padding:2px;border:1px solid var(--rule);border-radius:2px;background:var(--paper)}
+ #uiZoom~#ghBanner{margin-left:0}
+ #uiZoom button{min-width:26px;height:26px;padding:0 6px;border:0;border-radius:2px;background:transparent;color:var(--ink);font:inherit;font-size:14px;line-height:1;cursor:pointer}
+ #uiZoom button:hover:not(:disabled){background:#efe3cb}#uiZoom button:disabled{opacity:.35;cursor:default}
+ #uiZoom output{display:block;min-width:36px;font-size:11px;font-variant-numeric:tabular-nums;letter-spacing:.02em;color:var(--ink2)}
+}
 #modeToggle{flex:none;padding:9px 15px;border:1px solid var(--ink);border-radius:2px;background:var(--ink);color:var(--paper-light);font:inherit;font-size:12px;cursor:pointer;white-space:nowrap}
 #modeToggle:hover{background:#463525}
 body[data-metro=off] #modeToggle{display:none}

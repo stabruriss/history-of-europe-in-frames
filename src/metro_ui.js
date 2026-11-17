@@ -467,28 +467,29 @@ window.addEventListener('keydown',ev=>{
 
 /* ---------- Pan and zoom the network like a map ---------- */
 const pointers=new Map();let graphDrag=null,pinch=null,skipGraphClick=false;
+const pageZoom=()=>window.atlasUiZoom||1; // 老无 2026-11-16: the desktop page zoom; pointer pixels over it are page pixels
 network.addEventListener('pointerdown',e=>{
  if(e.target.closest('.station-inspector,.slice-panel,#yearRuler button'))return;
- pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});skipGraphClick=false;
+ pointers.set(e.pointerId,{x:e.clientX/pageZoom(),y:e.clientY/pageZoom()});skipGraphClick=false;
  if(pointers.size===2){const[a,b]=[...pointers.values()];pinch={d:Math.hypot(a.x-b.x,a.y-b.y)};graphDrag=null}
- else graphDrag={id:e.pointerId,x:e.clientX,y:e.clientY,cx:camera.x,cy:camera.y,moved:false};
+ else graphDrag={id:e.pointerId,x:e.clientX/pageZoom(),y:e.clientY/pageZoom(),cx:camera.x,cy:camera.y,moved:false};
 });
 network.addEventListener('pointermove',e=>{
- if(!pointers.has(e.pointerId))return;pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});
- if(pointers.size===2){const[a,b]=[...pointers.values()],d=Math.hypot(a.x-b.x,a.y-b.y),r=network.getBoundingClientRect();if(pinch?.d)zoomAt(d/pinch.d,(a.x+b.x)/2-r.left,(a.y+b.y)/2-r.top);pinch={d};skipGraphClick=true;return}
- if(!graphDrag)return;const dx=e.clientX-graphDrag.x,dy=e.clientY-graphDrag.y;
+ if(!pointers.has(e.pointerId))return;pointers.set(e.pointerId,{x:e.clientX/pageZoom(),y:e.clientY/pageZoom()});
+ if(pointers.size===2){const[a,b]=[...pointers.values()],d=Math.hypot(a.x-b.x,a.y-b.y),r=network.getBoundingClientRect();if(pinch?.d)zoomAt(d/pinch.d,(a.x+b.x)/2-r.left/pageZoom(),(a.y+b.y)/2-r.top/pageZoom());pinch={d};skipGraphClick=true;return}
+ if(!graphDrag)return;const dx=e.clientX/pageZoom()-graphDrag.x,dy=e.clientY/pageZoom()-graphDrag.y;
  if(!graphDrag.moved&&Math.hypot(dx,dy)>5){graphDrag.moved=true;network.setPointerCapture(e.pointerId);network.classList.add('dragging')}
  if(graphDrag.moved){e.preventDefault();camera.x=graphDrag.cx+dx;camera.y=graphDrag.cy+dy;skipGraphClick=true;applyCamera()}
 });
 function endGraphPointer(e){pointers.delete(e.pointerId);graphDrag=null;pinch=null;network.classList.remove('dragging');setTimeout(()=>{skipGraphClick=false},0)}
 network.addEventListener('pointerup',endGraphPointer);network.addEventListener('pointercancel',endGraphPointer);
-network.addEventListener('wheel',e=>{if(e.target.closest('.station-inspector,.slice-panel'))return;e.preventDefault();const r=network.getBoundingClientRect();if(e.shiftKey){camera.x-=e.deltaY;camera.y-=e.deltaX;applyCamera()}else zoomAt(Math.exp(-e.deltaY*.0015),e.clientX-r.left,e.clientY-r.top)},{passive:false});
-network.addEventListener('dblclick',e=>{if(e.target.closest('.station-inspector,.slice-panel,.metro-node,.rail-hit'))return;const r=network.getBoundingClientRect();zoomAt(1.35,e.clientX-r.left,e.clientY-r.top)});
+network.addEventListener('wheel',e=>{if(e.target.closest('.station-inspector,.slice-panel'))return;e.preventDefault();const r=network.getBoundingClientRect();if(e.shiftKey){camera.x-=e.deltaY;camera.y-=e.deltaX;applyCamera()}else zoomAt(Math.exp(-e.deltaY*(e.ctrlKey?.01:.0015)),(e.clientX-r.left)/pageZoom(),(e.clientY-r.top)/pageZoom())},{passive:false}); // a trackpad pinch is ctrl + wheel with deltaY = −100·ln(scale): follow the fingers (老无 2026-11-16)
+network.addEventListener('dblclick',e=>{if(e.target.closest('.station-inspector,.slice-panel,.metro-node,.rail-hit'))return;const r=network.getBoundingClientRect();zoomAt(1.35,(e.clientX-r.left)/pageZoom(),(e.clientY-r.top)/pageZoom())});
 
 /* The on-train line can be dragged too. */
 let routeDrag=null;const routeScroller=$('#routeScroller');
 routeScroller.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse'||e.button!==0)return;routeDrag={x:e.clientX,left:routeScroller.scrollLeft,moved:false};routeSkipClick=false});
-routeScroller.addEventListener('pointermove',e=>{if(!routeDrag)return;const dx=e.clientX-routeDrag.x;if(Math.abs(dx)>5&&!routeDrag.moved){routeDrag.moved=true;routeScroller.setPointerCapture(e.pointerId);routeScroller.classList.add('dragging')}if(routeDrag.moved){routeScroller.scrollLeft=routeDrag.left-dx;routeSkipClick=true}});
+routeScroller.addEventListener('pointermove',e=>{if(!routeDrag)return;const dx=(e.clientX-routeDrag.x)/pageZoom();if(Math.abs(dx)>5&&!routeDrag.moved){routeDrag.moved=true;routeScroller.setPointerCapture(e.pointerId);routeScroller.classList.add('dragging')}if(routeDrag.moved){routeScroller.scrollLeft=routeDrag.left-dx;routeSkipClick=true}});
 routeScroller.addEventListener('pointerup',()=>{routeDrag=null;routeScroller.classList.remove('dragging');setTimeout(()=>{routeSkipClick=false},0)});
 routeScroller.addEventListener('pointercancel',()=>{routeDrag=null;routeScroller.classList.remove('dragging')});
 routeScroller.addEventListener('wheel',e=>{if(Math.abs(e.deltaY)>Math.abs(e.deltaX)){e.preventDefault();routeScroller.scrollLeft+=e.deltaY}},{passive:false});
@@ -532,7 +533,7 @@ window.addEventListener('pagehide',saveReader);
 }
 const syncMasthead=()=>document.documentElement.style.setProperty('--masthead-h',$('#masthead').offsetHeight+'px');
 new ResizeObserver(syncMasthead).observe($('#masthead'));syncMasthead();
-$('#datasetStats').textContent=`${lines.length}条主线 · ${stations.length}个事件站 · ${ENTRIES.filter(isHistory).reduce((n,e)=>n+e.scenes.length,0)}幕`;
+/* 老无 2026-11-16: the stats strip under the network map is gone. */
 setReaderCollapsed(false,{save:false,refit:false});
 $('#legendBox').open=false;
 renderNetwork();

@@ -740,31 +740,31 @@ const side=document.getElementById('side'),SIDE_KEY='agora-atlas-side-width';
 const sideGrip=document.createElement('div');sideGrip.id='sideGrip';sideGrip.tabIndex=0;
 for(const [k,v] of Object.entries({role:'separator','aria-orientation':'vertical','aria-controls':'side','aria-label':'拖动调整左栏宽度（双击复原）',title:'拖动调整宽度 · 双击复原','aria-valuemin':200}))sideGrip.setAttribute(k,v);
 side.appendChild(sideGrip);
-const sideMax=()=>Math.round(Math.max(260,Math.min(640,innerWidth*.5)));
+const sideMax=()=>Math.round(Math.max(260,Math.min(640,innerWidth/(window.atlasUiZoom||1)*.5)));
 function applySideWidth(w){
   if(w===null)document.documentElement.style.removeProperty('--side');
   else document.documentElement.style.setProperty('--side',Math.round(Math.max(200,Math.min(sideMax(),w)))+'px');
-  sideGrip.setAttribute('aria-valuemax',sideMax());sideGrip.setAttribute('aria-valuenow',Math.round(side.getBoundingClientRect().width));
+  sideGrip.setAttribute('aria-valuemax',sideMax());sideGrip.setAttribute('aria-valuenow',Math.round(side.offsetWidth));
 }
 function setSideWidth(w,{save=true,final=true}={}){
   applySideWidth(w);
   toc.querySelectorAll('.htree').forEach(layoutHistoryTree);map.invalidateSize({pan:false});
   if(final&&cur>=0){fit(ENTRIES[cur],false);toc.querySelector('.chip.on')?.scrollIntoView({block:'nearest'});}
-  if(save){try{if(w===null)localStorage.removeItem(SIDE_KEY);else localStorage.setItem(SIDE_KEY,String(Math.round(side.getBoundingClientRect().width)));}catch{}}
+  if(save){try{if(w===null)localStorage.removeItem(SIDE_KEY);else localStorage.setItem(SIDE_KEY,String(Math.round(side.offsetWidth)));}catch{}}
 }
 sideGrip.addEventListener('pointerdown',ev=>{
   if(ev.button!==0)return;ev.preventDefault();sideGrip.setPointerCapture(ev.pointerId);document.body.classList.add('resizing-side');
-  const left=side.getBoundingClientRect().left;let frame=0,x=ev.clientX;
-  const move=e=>{x=e.clientX;if(!frame)frame=requestAnimationFrame(()=>{frame=0;setSideWidth(x-left,{save:false,final:false});});};
+  const left=side.getBoundingClientRect().left,pz=()=>window.atlasUiZoom||1;let frame=0,x=ev.clientX;
+  const move=e=>{x=e.clientX;if(!frame)frame=requestAnimationFrame(()=>{frame=0;setSideWidth((x-left)/pz(),{save:false,final:false});});};
   const up=e=>{
     sideGrip.removeEventListener('pointermove',move);sideGrip.removeEventListener('pointerup',up);sideGrip.removeEventListener('pointercancel',up);
-    cancelAnimationFrame(frame);document.body.classList.remove('resizing-side');setSideWidth(e.clientX-left);
+    cancelAnimationFrame(frame);document.body.classList.remove('resizing-side');setSideWidth((e.clientX-left)/pz());
   };
   sideGrip.addEventListener('pointermove',move);sideGrip.addEventListener('pointerup',up);sideGrip.addEventListener('pointercancel',up);
 });
 sideGrip.ondblclick=()=>setSideWidth(null);
 sideGrip.onkeydown=ev=>{
-  const w=side.getBoundingClientRect().width,step=ev.shiftKey?64:16;
+  const w=side.offsetWidth,step=ev.shiftKey?64:16;
   const target={ArrowLeft:w-step,ArrowRight:w+step,Home:200,End:sideMax()}[ev.key];
   if(target!==undefined){ev.preventDefault();setSideWidth(target);}
   else if(ev.key==='Enter'){ev.preventDefault();setSideWidth(null);}

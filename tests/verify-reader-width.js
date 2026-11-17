@@ -118,7 +118,46 @@ const pinnedAtTop=p=>p.evaluate(()=>{const r=window.__pinned.getBoundingClientRe
   await dragGrip(small,100);a=await report(small);assert.equal(a.width,500);assert.ok(a.fits);
   const g3=await gripAt(small);await small.mouse.click(g3.x,g3.y,{count:2});a=await report(small);assert.equal(a.width,400);assert.equal(a.saved,null);
   await small.close();
+  // Page zoom (老无 2026-11-16): desktop only and kept per viewer; the zoomed page still fills the window,
+  // every grip and drag follows the pointer, widths come back after a reload, a trackpad pinch follows the fingers.
+  {
+   const z=await pageAt(1411,651,'#history-farming/1');await z.waitForFunction(()=>window.metroUI);
+   const zs=()=>z.evaluate(()=>({z:window.atlasUiZoom,value:document.getElementById('uiZoomValue').textContent,body:Math.round(document.body.getBoundingClientRect().height),inner:innerHeight,
+    scroll:document.documentElement.scrollWidth,saved:localStorage.getItem('atlas-ui-zoom-v1'),footer:!!document.querySelector('.network-footer,#datasetStats'),shown:document.getElementById('uiZoom').checkVisibility()}));
+   let s=await zs();assert.equal(s.z,1);assert.ok(s.shown,'the zoom control shows on a desktop');assert.equal(s.footer,false,'no stats strip under the network map');
+   await z.click('#uiZoomOut');await z.click('#uiZoomOut');s=await zs();
+   assert.equal(s.z,.8);assert.equal(s.value,'80%');assert.equal(s.saved,'0.8');assert.ok(Math.abs(s.body-s.inner)<=1,'the zoomed page fills the window '+JSON.stringify(s));assert.ok(s.scroll<=1411,'no sideways scroll');
+   let g=await gripAt(z);await dragGrip(z,60);let g2=await gripAt(z);assert.ok(Math.abs(g2.x-g.x-60)<=2,'the reader grip follows the pointer at 80%: '+(g2.x-g.x));
+   const readerW=(await report(z)).width;
+   await z.click('#tGeography');await z.waitForFunction(()=>document.getElementById('sideGrip').checkVisibility());
+   const sideAt=()=>z.$eval('#sideGrip',e=>{const r=e.getBoundingClientRect();return {x:r.left+r.width/2,y:r.top+r.height/2,w:Math.round(document.getElementById('side').getBoundingClientRect().width)};});
+   let sg=await sideAt();await z.mouse.move(sg.x,sg.y);await z.mouse.down();await z.mouse.move(sg.x+20,sg.y,{steps:4});await z.mouse.move(sg.x+40,sg.y,{steps:4});await z.mouse.up();
+   let sg2=await sideAt();assert.ok(Math.abs(sg2.x-sg.x-40)<=2,'the index grip follows the pointer at 80%: '+(sg2.x-sg.x));
+   await z.reload({waitUntil:'domcontentloaded'});await z.waitForFunction(()=>window.metroUI);s=await zs();assert.equal(s.z,.8,'the zoom is kept');
+   assert.ok(Math.abs((await report(z)).width-readerW)<=2,'the reader width is kept at 80%');
+   await z.click('#tGeography');await z.waitForFunction(()=>document.getElementById('sideGrip').checkVisibility());assert.ok(Math.abs((await sideAt()).w-sg2.w)<=2,'the index width is kept at 80%');
+   await z.click('#tHistory');await z.evaluate(()=>metroUI.setMode('network'));await new Promise(r=>setTimeout(r,500));
+   const pct=()=>z.$eval('.zoom-tools output',e=>parseFloat(e.textContent));
+   const node=()=>z.evaluate(()=>{const b=document.querySelector('.metro-node[data-key="history-faith-crusade/0"]').getBoundingClientRect();return {x:b.left+b.width/2,y:b.top+b.height/2}});
+   const cv=await z.$eval('#networkCanvas',e=>{const b=e.getBoundingClientRect();return {x:b.left+b.width*.45,y:b.top+b.height*.5}});
+   let n0=await node();await z.mouse.move(cv.x,cv.y);await z.mouse.down();await z.mouse.move(cv.x+60,cv.y+20,{steps:4});await z.mouse.move(cv.x+120,cv.y+40,{steps:4});await z.mouse.up();
+   let n1=await node();assert.ok(Math.abs(n1.x-n0.x-120)<=3&&Math.abs(n1.y-n0.y-40)<=3,'the network map follows the pointer at 80%: '+JSON.stringify([n1.x-n0.x,n1.y-n0.y]));
+   const open=await z.evaluate(()=>{const c=document.getElementById('networkCanvas').getBoundingClientRect();for(const n of document.querySelectorAll('.metro-node')){const b=n.getBoundingClientRect(),x=b.left+b.width/2,y=b.top+b.height/2;if(x>c.left+80&&x<c.right-80&&y>c.top+60&&y<c.bottom-60&&document.elementFromPoint(x,y)?.closest('.metro-node')===n)return n.dataset.key}});
+   assert.ok(open,'an uncovered station');const at=()=>z.evaluate(k=>{const b=document.querySelector(`.metro-node[data-key="${k}"]`).getBoundingClientRect();return {x:b.left+b.width/2,y:b.top+b.height/2}},open);
+   n0=await at();let q0=await pct();await z.mouse.move(n0.x+1,n0.y+1);await z.mouse.wheel({deltaY:-100});await new Promise(r=>setTimeout(r,300));n1=await at();
+   assert.ok(await pct()>q0,'the wheel zooms in');assert.ok(Math.hypot(n1.x-n0.x,n1.y-n0.y)<=4,'wheel zoom keeps the point under the pointer at 80%');
+   // A trackpad pinch is ctrl + wheel with deltaY = −100·ln(scale): the map scales by exactly that; a plain wheel notch keeps its old step.
+   await z.evaluate(()=>{window.__dy=0;document.getElementById('networkCanvas').addEventListener('wheel',e=>{window.__dy+=e.deltaY},{capture:true})});
+   await z.mouse.move(cv.x,cv.y);let p0=await pct();await z.keyboard.down('Control');for(let i=0;i<10;i++)await z.mouse.wheel({deltaY:-5});await z.keyboard.up('Control');await new Promise(r=>setTimeout(r,300));
+   let p1=await pct(),dy=await z.evaluate(()=>window.__dy);assert.ok(dy<0);assert.ok(Math.abs(p1/p0/Math.exp(-dy*.01)-1)<.03,'pinch follows the fingers: '+p0+'% → '+p1+'% for deltaY '+dy);
+   await z.evaluate(()=>{window.__dy=0});p0=await pct();await z.mouse.wheel({deltaY:100});await new Promise(r=>setTimeout(r,300));
+   p1=await pct();dy=await z.evaluate(()=>window.__dy);assert.ok(Math.abs(p1/p0/Math.exp(-dy*.0015)-1)<.03,'a wheel notch keeps its step: '+p0+'% → '+p1+'%');
+   await z.click('#uiZoomReset');s=await zs();assert.equal(s.z,1);assert.equal(s.value,'100%');assert.equal(s.saved,null,'100% is the default, nothing kept');
+   await z.click('#uiZoomIn');await z.setViewport({width:390,height:844});await new Promise(r=>setTimeout(r,400));s=await zs();
+   assert.equal(s.z,1,'phones are never zoomed');assert.equal(s.shown,false,'no zoom control on a phone');assert.equal(s.footer,false);
+   await z.evaluate(()=>localStorage.clear());await z.close();
+  }
   assert.deepEqual(errors,[]);
-  console.log('PASS: reader width — text left of the map; drag, keys, double-click, limits, reading position, memory, index column and window squeeze, phone layouts');
+  console.log('PASS: reader width — text left of the map; drag, keys, double-click, limits, reading position, memory, index column and window squeeze, phone layouts; desktop page zoom (grips, network drag, wheel and pinch, memory, phones unzoomed), no network stats strip');
  }catch(e){console.error(e);process.exitCode=1;}finally{await Promise.race([browser.close(),new Promise(r=>setTimeout(r,200))]);browser.process()?.kill('SIGKILL');}
 })();
