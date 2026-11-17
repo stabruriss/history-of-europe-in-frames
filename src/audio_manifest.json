@@ -8,12 +8,12 @@
     "volume": "+0%"
   },
   "source": {
-    "commit": "af48f7f91aec6fdb037b3250044f407e67e8eb6e",
+    "commit": "e2927774a4ef82bd8cc5791cc5f6144d1265195d",
     "dirty": [],
     "files": {
-      "src/history_entries.js": "d348a25e74225da729335877fed9a3865c62c0784026a3937483d9c035f3dc6d",
-      "src/history_content.json": "8d1e834d61460ab3d3bd16466d42df3f10a2fc22325dd411d07784a1d24f0893",
-      "src/historical_figures.js": "95c19749d249f451f0245cf0c096ef9917f643593eddeb46f12f39f310e69c7e"
+      "src/history_entries.js": "236c2e7580d3c604fe07f0526893d014e04b18bec50a16a6e285cdfda01cbdb6",
+      "src/history_content.json": "a11e1c57b1cf1ac3a7612a672b647a4392c952221065512d1a2f5a27ebaf8466",
+      "src/historical_figures.js": "af41baa6fa22c46ecf12d4b7e2d7268144856f1fb707d9caa6673ae9ff2ce5de"
     }
   },
   "assets": {
@@ -14424,6 +14424,150 @@
       "textHash": "dee3ae2eef6df8e39cc595d17f17185ead2a3ad6771666421e3c0e93d12573be",
       "inputHash": "45e9e64939e575bc7ec3b99f8958fb2f83c27cd7f8261848fa224ef9836e3bd9",
       "audioHash": "e4965d168b1a5d85126f568704c773504bb79f1045c6ed2ec70d1bbc1b362c4d"
+    },
+    "history-germany-habsburg/title": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/5766c6bd8e15847660697e08f7f6d3a9b9a2565c93b4b4c3f8ff00ddf85b4d51.mp3",
+      "duration": 15.24,
+      "bytes": 91440,
+      "textHash": "15ad815be816645c081b768d453fd8cdaefb5ee14b34d9384973cb3c6fc3b65a",
+      "inputHash": "2cebc64a164ff6f9b95de31bf404641f0040e3cce7b8f4457eed93900d7d4e7b",
+      "audioHash": "5766c6bd8e15847660697e08f7f6d3a9b9a2565c93b4b4c3f8ff00ddf85b4d51"
+    },
+    "history-germany-habsburg/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/4be1c98724565f78f917a6a676ae3a78fce7f38220f6c149b4dd74a0c028d381.mp3",
+      "duration": 62.832,
+      "bytes": 376992,
+      "textHash": "adc503bbf9814501178c8fdbe2d031a286551efa1e8cd93cfd8fddebce03998f",
+      "inputHash": "f78227217e5ceb42aaa5316de2072bc245a03ff144b99ae5ea45ccbd73f9dd82",
+      "audioHash": "4be1c98724565f78f917a6a676ae3a78fce7f38220f6c149b4dd74a0c028d381"
+    },
+    "history-germany-habsburg/0/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/384a21c570b579e2d889325ab8112a900c5d3b506d0fa975ef1042ef49b890e0.mp3",
+      "duration": 67.464,
+      "bytes": 404784,
+      "textHash": "88725d62211ec1c93a83ed35ee2e555b3f45012f46ce22fdf2b6d3f4acfb456f",
+      "inputHash": "06cbe30a2b74142b92a43ff0d51d8dd4f098cb0d75e3ed10e7370dfc57692116",
+      "audioHash": "384a21c570b579e2d889325ab8112a900c5d3b506d0fa975ef1042ef49b890e0"
+    },
+    "history-germany-habsburg/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/aab74a9c43b8f1220fdbe034d7c2e7e012bc4360d2cb66f2835c1af96f26a6a1.mp3",
+      "duration": 65.808,
+      "bytes": 394848,
+      "textHash": "61c9f2c2ff212a7774551913a0fbbe18fe384a512ec82f8b055e6d61f706a843",
+      "inputHash": "b55e56cd1ff83d9426fcaa47e33bc12b2ab161e9167187b32d3fbbe03a57afb0",
+      "audioHash": "aab74a9c43b8f1220fdbe034d7c2e7e012bc4360d2cb66f2835c1af96f26a6a1"
+    },
+    "history-germany-habsburg/1/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/1bdf8d53940cbe3de54646d54c7d7312994a5c545e354ab9a0dbc0a0157197b2.mp3",
+      "duration": 63.576,
+      "bytes": 381456,
+      "textHash": "1eceeed9a744660ad68e6e20ce19398a1dcfa2de93bb13e720d50b4230494225",
+      "inputHash": "49d5f378c4bcff07a3c9bfee541b60b94957ecc7e9a25d29bb95e5e803b58b35",
+      "audioHash": "1bdf8d53940cbe3de54646d54c7d7312994a5c545e354ab9a0dbc0a0157197b2"
+    },
+    "history-germany-habsburg/1/person/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/ceea8ed12fe99cdbdab9a6d1f1dc3dd2474c957c8396ac84e0253532a08f5bfa.mp3",
+      "duration": 67.656,
+      "bytes": 405936,
+      "textHash": "9f86b91eef972d92dd31fa47c57541100d670475ea08ab08f44a135dcc1d00ca",
+      "inputHash": "2e39654512c6dab6ad6b56453bbcdb7f6cab95ec9426955113dcca29d0805d16",
+      "audioHash": "ceea8ed12fe99cdbdab9a6d1f1dc3dd2474c957c8396ac84e0253532a08f5bfa"
+    },
+    "history-germany-habsburg/2": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/8caf4f6fac2e149547d09c6666e84724516d9252b1c07d81a46896ae0a314ebe.mp3",
+      "duration": 61.488,
+      "bytes": 368928,
+      "textHash": "f7a514aa8894373810054bdb82a2a8e670bb89f88426db6523dc52e1e5329ae3",
+      "inputHash": "7937c21dcc587a9725e2da7ba14f29914a19c600c9f0087c98ed17f52f7c2425",
+      "audioHash": "8caf4f6fac2e149547d09c6666e84724516d9252b1c07d81a46896ae0a314ebe"
+    },
+    "history-germany-habsburg/3": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/217ad3261339625a08cca9b9a515a1841db1099a6707c3c45dc26517bd347854.mp3",
+      "duration": 69.936,
+      "bytes": 419616,
+      "textHash": "b9fc03e7576d2475651687437f50bfa707f5e83b46b18a98d1104341c56adbda",
+      "inputHash": "8ce1c759e0140feafe239c035ab81fe97cf050331eaea1eaa8bc393b3976fd2f",
+      "audioHash": "217ad3261339625a08cca9b9a515a1841db1099a6707c3c45dc26517bd347854"
+    },
+    "history-germany-habsburg/3/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/23970d6ac31377f8ea309e1c4ff2865c8b4bb09a9e1bc0e51e9be1411fd6180c.mp3",
+      "duration": 62.376,
+      "bytes": 374256,
+      "textHash": "260fdc100253c3cf3f6013fb4871628045a4dbc9720549395e90538c55413445",
+      "inputHash": "520ca9ea68d5325559f9980a21a5906f850a22b3e00a70c4a7e4cb519da9eda9",
+      "audioHash": "23970d6ac31377f8ea309e1c4ff2865c8b4bb09a9e1bc0e51e9be1411fd6180c"
+    },
+    "history-germany-habsburg/4": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/90cfcafb4d595bde06f73591f6ed2a08d015661b98dee905b0370d4ac1075b55.mp3",
+      "duration": 62.592,
+      "bytes": 375552,
+      "textHash": "a8c575aad2c2559818667132f62fa698233f7cce03b9a626fae58801ea26bef5",
+      "inputHash": "f31c4fb6a44350aacb7892ff17cca8c45cdfd40d85915475b95f96f23b7fbf99",
+      "audioHash": "90cfcafb4d595bde06f73591f6ed2a08d015661b98dee905b0370d4ac1075b55"
+    },
+    "history-germany-habsburg/4/moment/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/ae41e14f3a2b61a73c3805fce4d445e8b6f6a75c76258b5360bde70709e068ac.mp3",
+      "duration": 85.536,
+      "bytes": 513216,
+      "textHash": "a7982a1c1a83da6aee51d264b7bf4bcb44696ad62c34e39c25f3a8e74b8cee96",
+      "inputHash": "6dac7abe029228fb5c26a65ddd76c50ed50218c4ec73bc8e7744f3088f32bdca",
+      "audioHash": "ae41e14f3a2b61a73c3805fce4d445e8b6f6a75c76258b5360bde70709e068ac"
+    },
+    "history-germany-habsburg/4/box/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/b1087bf4db82c022c1595f8636ad536c44d81e540e0f2828d46ef6aafc70e2a5.mp3",
+      "duration": 73.8,
+      "bytes": 442800,
+      "textHash": "c3dc993d53278dc32dfb50a3a5b01088aee4cf7442b3872ac361ac3673741de2",
+      "inputHash": "998a7614aa83070e0d706210384b92480c955ea5d8fa8d61dff2f445a12ef523",
+      "audioHash": "b1087bf4db82c022c1595f8636ad536c44d81e540e0f2828d46ef6aafc70e2a5"
+    },
+    "history-germany-habsburg/4/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/b9c4c447a3c94c6765a8a72fea1ae21b775651fe152879cf6111aa110e62f5b1.mp3",
+      "duration": 69.576,
+      "bytes": 417456,
+      "textHash": "43852046d76471559c131768ad5eac60db96a35b9ebafd608dd161254bd59c4b",
+      "inputHash": "6666393976b30b85e960bd8fa461532f1135bae4205a2e6053a92c883e0d2677",
+      "audioHash": "b9c4c447a3c94c6765a8a72fea1ae21b775651fe152879cf6111aa110e62f5b1"
+    },
+    "history-germany-habsburg/4/person/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/bf7c2010eeadaf7f4bca2a7a05b039a0bc9bb769ce1f3fdb497914a7b48c4bfc.mp3",
+      "duration": 63.6,
+      "bytes": 381600,
+      "textHash": "06e9f712c27ed09b8a3d6169cf06945210e5a61eb02fa8ea81a7881f9fd05ce8",
+      "inputHash": "2b8a68f65c5206af0d7dd5a8270ffca88e4ec24eb241c3fcd6be28feed17eb62",
+      "audioHash": "bf7c2010eeadaf7f4bca2a7a05b039a0bc9bb769ce1f3fdb497914a7b48c4bfc"
+    },
+    "history-germany-habsburg/5": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/38ef5c73ef90db71e7953eaa45589dc1068bf254c237da41266a0125463e47e6.mp3",
+      "duration": 66.648,
+      "bytes": 399888,
+      "textHash": "ecbd1953215eddd2d5d9947adaaebd8310add88b33539e5156e14b0c7526d999",
+      "inputHash": "22c1c1158d6226baf169dfdb9fc1433ba671dbf790fe279546b2b3811565e353",
+      "audioHash": "38ef5c73ef90db71e7953eaa45589dc1068bf254c237da41266a0125463e47e6"
+    },
+    "history-germany-habsburg/5/moment/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/fb7f6efb66f4fb03f88f3aec3840e817be7d4df7c2fb19812556a0529bebee1d.mp3",
+      "duration": 98.376,
+      "bytes": 590256,
+      "textHash": "0e4a2908f57cfdf51d9284c9d13c078a08efb34fd6dfccd395db405c3bf15afb",
+      "inputHash": "64cd443d362297b3d62f12aa2848ed18f2931db121b98581e5a441028c2d3a8b",
+      "audioHash": "fb7f6efb66f4fb03f88f3aec3840e817be7d4df7c2fb19812556a0529bebee1d"
+    },
+    "history-germany-habsburg/5/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/4c0a1ccf1aec7959c9166efa275e0370b6eabbd08e0cbdfa48125e1b63052e2d.mp3",
+      "duration": 62.832,
+      "bytes": 376992,
+      "textHash": "ae860bc17a2478956f55a4e8474ea538b58c288210dfdefeaf5b9240949d2c68",
+      "inputHash": "02e2ce077bf8eeb9705d1904d5472ca89655d592ec5c6dee92817e4b904e00be",
+      "audioHash": "4c0a1ccf1aec7959c9166efa275e0370b6eabbd08e0cbdfa48125e1b63052e2d"
+    },
+    "history-germany-habsburg/5/person/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/71fc7fd80b2f6bb07765b25954110e464dffbc96071efdbee4267169de0666af.mp3",
+      "duration": 63.696,
+      "bytes": 382176,
+      "textHash": "0a8f3a5200457eb41f236793d967f8fa60058cfdc51512ae8311395edeed62bd",
+      "inputHash": "b3e332ff6e47b76dd80bb8a460b1ff680362144bf6f88550b8de215e37a427c1",
+      "audioHash": "71fc7fd80b2f6bb07765b25954110e464dffbc96071efdbee4267169de0666af"
     },
     "history-plat-germany-reformation/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/f33488d196eb2398fcefb35eeca10bdbd74944acaadf78c5a68d19bfecaaafd9.mp3",
