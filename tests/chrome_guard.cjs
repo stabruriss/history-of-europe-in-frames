@@ -18,7 +18,7 @@ if (!puppeteer.atlasGuarded) {
       pipe: true,
       userDataDir: options?.userDataDir || entry.dir,
       // The crash reporter holds Chrome's stderr open, which has made browser.close() hang for minutes on macOS.
-      args: [...(options?.args || []), '--disable-breakpad', '--disable-crash-reporter'],
+      args: [...(options?.args || []), '--disable-breakpad', '--disable-crash-reporter', '--disable-audio-output'],
     });
     return entry.browser;
   };

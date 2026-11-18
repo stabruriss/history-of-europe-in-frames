@@ -46,7 +46,7 @@ const chars=s=>s.replace(/<[^>]+>/g,'').replace(/（[A-Za-z][^）]*）/g,'').rep
      stops:metroUI.data.stations.filter(s=>s.lines.includes('america')).sort((a,b)=>a.t-b.t).map(s=>[s.key,s.lines]),
      future:TREE_FUTURE.find(f=>f[0]==='america').slice(0,3),
      report:metroUI.layoutReport().linkThroughStations||[],
-     renamed:by('history-spain-1492').short,
+     renamed:by('history-discovery-silver').short,
      oldName:HISTORY_ENTRIES.filter(e=>[e.short,e.html,...e.moments.map(m=>m.text),...e.boxes.map(b=>b.text)].join(' ').includes('天主教双王与1492')).map(e=>e.id),
      sections:Object.fromEntries(HISTORY_ENTRIES.filter(e=>e.id.startsWith('history-america-')).map(e=>[e.id,{short:e.short,period:e.period,ch:e.ch,scenes:e.scenes.length,sources:e.sources.length,
       urls:e.sources.map(s=>s[1]||s.url),html:e.html,paras:e.scenes.map((_,i)=>para(e,i)),moments:e.moments.map(m=>m.name||m.title),boxes:e.boxes.map(b=>b.name||b.title)}])),

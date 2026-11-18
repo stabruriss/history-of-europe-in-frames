@@ -282,7 +282,7 @@ const settle=p=>p.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestA
 
   /* ---------- The mark top-left goes home, after asking (老无 2026-11-12). Last: its page would otherwise sit in front of the one above. ---------- */
   {
-   const h=await pageAt(1440,900,'#history-spain-1492/0');
+   const h=await pageAt(1440,900,'#history-discovery-routes/0');
    assert.equal(await h.evaluate(()=>metroUI.state().mode),'ride');
    const station=await h.evaluate(()=>metroUI.state().station);
    await h.click('#brandMark');
@@ -302,14 +302,14 @@ const settle=p=>p.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestA
 
   /* ---------- A reload returns to the same spot in the text (老无 2026-11-13); a fresh visit opens at the scene ---------- */
   {
-   const r=await pageAt(1440,900,'#history-spain-1492/0');
+   const r=await pageAt(1440,900,'#history-discovery-routes/0');
    await r.evaluate(()=>readerBody.scrollTo({top:Math.min(520,readerBody.scrollHeight-readerBody.clientHeight-10),behavior:'instant'}));
    const top=await r.evaluate(()=>readerBody.scrollTop),hash=await r.evaluate(()=>location.hash);
    await r.waitForFunction(()=>JSON.parse(localStorage.getItem('atlas-reader-pos-v1')||'{}').top>0);
    await r.reload({waitUntil:'load'});await r.waitForFunction(()=>window.metroUI);
    await r.waitForFunction(t=>Math.abs(readerBody.scrollTop-t)<4,{timeout:4000},top);
    assert.equal(await r.evaluate(()=>location.hash),hash);
-   await r.goto('about:blank');await r.goto(url+'#history-spain-1492/0',{waitUntil:'load'});await settle(r);await settle(r);
+   await r.goto('about:blank');await r.goto(url+'#history-discovery-routes/0',{waitUntil:'load'});await settle(r);await settle(r);
    assert.ok(await r.evaluate(t=>readerBody.scrollTop<t-100,top),'a fresh visit opens at the scene, not the saved spot');
    await r.evaluate(()=>localStorage.removeItem('atlas-reader-pos-v1'));await r.close();
   }

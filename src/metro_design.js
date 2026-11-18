@@ -31,8 +31,10 @@ window.NETWORK_DESIGN = (() => {
   const EAST0 = 470;     // east rome before it bundles with persia
   const EASTEU = 505;    // egypt in antiquity, eastern europe from 860
   const SPAIN = 550;
-  const AMERICA = 585;
-  const CHINA = 620;
+  const PORTUGAL = 588;
+  const DISCOVERY = 626;
+  const AMERICA = 706;
+  const CHINA = 746;
 
   const routes = {
     prehistory: [[-68000, y(ROME)], [-4000, y(ROME)]],
@@ -48,6 +50,7 @@ window.NETWORK_DESIGN = (() => {
     britain: [[-55, y(BRITAIN), null, -26], [1924, y(BRITAIN)]],
     east: [[395, y(ROME), null, -34], [395, y(EAST0)], [518, y(EAST0)], [602, y(PERSIA, 1)], [1450, y(PERSIA, 1)]],
     spain: [[481, y(ROME), null, -34], [481, y(SPAIN)], [1470, y(SPAIN)]],
+    portugal: [[1139, y(SPAIN), null, -28], [1139, y(PORTUGAL)], [1910, y(PORTUGAL)]],
     france: [[830, y(ROME)], [843, y(FRANCE), 'e'], [1137, y(FRANCE)], [1154, y(BRITAIN, 1)], [1461, y(BRITAIN, 1)], [1484, y(FRANCE)], [1648, y(FRANCE)]],
     lowlands: [[830, y(ROME), null, -10], [1300, y(LOW), 'e'], [1495, y(LOW)]],
     germany: [[830, y(ROME)], [843, y(GER0), 'e'], [860, y(GER0)], [951, y(GERMANY)], [1495, y(GERMANY)]],
@@ -58,6 +61,7 @@ window.NETWORK_DESIGN = (() => {
     // Batch 2 (老无 2026-11-15): lanes freed by earlier branches. 十字军's lane after 1295, 黑死病's after 1351, 百年战争's after 1453.
     reformation: [[1517, y(CRUSADE)], [1599, y(CRUSADE)]],
     'thirty-years': [[1599, y(PLAGUE)], [1648, y(PLAGUE)]],
+    discovery: [[1415.5, y(DISCOVERY)], [1768, y(DISCOVERY)]],
     ww1: [[1914, y(HUNDRED)], [1923, y(HUNDRED)]],
     nordic: [[745, y(TOP)], [1920, y(TOP)]],
     america: [[1430, y(AMERICA)], [1631, y(AMERICA)]],
@@ -75,6 +79,7 @@ window.NETWORK_DESIGN = (() => {
     [641, 641.4, 34],
     [711, 717, 34],    // 2026-11-15: 塔里克渡海's link clear of 伊苏里亚王朝
     [665, 860, 880],   // 2026-11-16: 东欧's descent to its lower lane passes right of 七国时代 once batch 2 thinned the 7th–9th c. stations
+    [1128, 1139, 62],
     [1296, 1300, 74], [1300, 1304, 74], [1438, 1450, 26], [1450, 1454, 72],
     [1462, 1472, 60], [1477, 1484, 40], [1494, 1495, 40], [1495, 1496, 38],
     [1565, 1566, 38], [1566, 1571, 38], [1571, 1573, 38], [1588, 1590, 38], [1625, 1627, 38], [1627, 1631, 38],
