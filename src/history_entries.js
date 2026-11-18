@@ -1177,6 +1177,7 @@ Object.assign(HS,{
   uk7_windsor:['温莎','Windsor',51.484,-0.604,'泰晤士河畔的王室城堡；1193年约翰叛乱时曾据守此堡，1210年布拉奥斯妻儿曾关押于此。'],
   uk7_dover:['多佛尔','Dover',51.128,1.322,'肯特郡海峡要塞；1213年5月约翰在此城圣殿教堂向教宗使节献出英格兰与爱尔兰称臣。'],
   uk7_rocheauxmoines:['拉罗什奥穆瓦讷','La Roche-aux-Moines',47.382,-0.654,'昂热西南卢瓦尔河畔要塞；1214年7月2日约翰围城时见法王王储路易援军赶到，不战而逃。'],
+  uk7_bonmoulins:['邦穆兰','Bonmoulins',48.59,0.528,'诺曼底南部边境小镇；1188年11月18日亨利二世在此当众拒认理查为王储，理查当场跪拜法王腓力二世宣誓效忠。'],
   uk8_runnymede:['兰尼米德','Runnymede',51.444,-0.565,'温莎与斯泰恩斯之间泰晤士河畔的草地；1215年6月15日英王约翰在此被迫盖印《大宪章》。'],
   uk8_windsor:['温莎','Windsor',51.484,-0.604,'泰晤士河畔的王室城堡；1215年6月约翰从温莎出发赴兰尼米德谈判，随后在第一次男爵战争中顶住两个月围攻。'],
   uk8_lincoln:['林肯','Lincoln',53.234,-0.539,'英格兰东部重镇，座堂藏有1215年《大宪章》原件；1217年5月威廉·马歇尔在此击败法军与叛乱男爵。'],
@@ -17075,29 +17076,46 @@ const HISTORY_ENTRIES=[
     hr(d,[[53.34,-6.27],[54.33,-5.72],[54.71,-5.81]],HC.war);
    },[['fill',HC.britain,'东部与南部盎格鲁-诺曼殖民区（行英语与普通法）'],['fill',HC.celt,'西部与北部盖尔爱尔兰本土区（讲盖尔语、行氏族法）'],['dline',HC.war,'库尔西的约翰与1210年约翰王北进乌尔斯特路线'],['dot','#2a2018','都柏林、唐帕特里克、卡里克弗格斯、沃特福德与图阿姆']])
  ]},
-{id:'history-britain-richard',ch:12,title:'狮心王与无地王：十字军战神、太后埃莉诺与败光祖业',short:'狮心王与无地王',en:'Lionheart and Lackland: Crusader King, Queen Mother Eleanor and the Lost Empire',period:'1173—1214年',c:HC.britain,
+{id:'history-britain-richard',ch:12,title:'狮心王与无地王：十字军战神、太后埃莉诺与败光祖业',short:'狮心王与无地王',en:'Lionheart and Lackland: Crusader King, Queen Mother Eleanor and the Lost Empire',period:'1170—1214年',c:HC.britain,
  scenes:[
-  hs('1173—1189年','偏心的父母、太后埃莉诺与理查夺位','1173年埃莉诺挑动三子反父，兵败后被软禁于温彻斯特等地十五年；1189年理查与腓力二世联兵攻克勒芒、图尔，亨利二世病死希农，理查即位放出埃莉诺。',[[44.2,-4.5],[52.8,4.2]],d=>{
+  hs('1170—1186年','空头共治王、母子大叛乱与次子熬成储君','1170年亨利二世替小亨利加冕却不给实权，1173年埃莉诺挑动三子叛父被囚十五年；1179年理查克塔耶堡得号“狮心”，小亨利与杰弗里连丧后理查升为储君。',[[44.2,-3.8],[52.6,4.2]],d=>{
     ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'mAngevin1189',HC.britain,{fillOpacity:.18,dashArray:'4 4'});
     ha(d,'mAquitaineDuchy900',HC.celt,{fillOpacity:.26});ha(d,'mCapetDomain987',HC.france,{fillOpacity:.32});
-    hp(d,'uk7_winchester',{left:1,note:'1174—1189年埃莉诺被亨利二世软禁于温彻斯特与索尔兹伯里十五年；1189年理查即位后命马歇尔将其放出摄政。'});
-    hp(d,'k_poitiers',{note:'阿基坦与普瓦图首府；埃莉诺偏爱次子理查，1183年亨利二世逼理查将阿基坦让给幼子约翰遭拒。'});
-    hp(d,'w_paris',{note:'1187年理查赴巴黎与腓力二世结盟，两人同桌共食、同床共枕。'});
+    hp(d,'k_london',{left:1,note:'1170年6月亨利二世在此替十五岁的长子小亨利提前加冕共治，却不给寸土与财权。'});
+    hp(d,'uk7_winchester',{left:1,note:'1174—1189年埃莉诺叛父兵败后被亨利二世软禁于温彻斯特与索尔兹伯里十五年。'});
+    hp(d,'k_poitiers',{note:'阿基坦与普瓦图首府；埃莉诺最偏爱次子理查，早早将阿基坦交给理查历练。'});
+    hp(d,'uk7_taillebourg',{kind:'battle',left:1,note:'1179年5月年轻的理查攻克此座三面悬崖的天险要塞，因悍勇无畏得号“狮心”。'});
+    hp(d,'w_paris',{note:'1173年小亨利逃赴巴黎联手法王反父；1186年三弟杰弗里在此比武身亡，次子理查顺延为第一继承人。'});
+   },[['fill',HC.britain,'英格兰与金雀花大陆领地'],['fill',HC.celt,'理查平定坐镇的阿基坦公国'],['fill',HC.france,'招纳叛王子的法兰西王领'],['dot',HC.war,'1179年理查攻克塔耶堡'],['dot','#2a2018','伦敦、温彻斯特、普瓦捷与巴黎']]),
+  hs('1169—1189年','童养媳悬案、同床联法王与逼死亲爹夺位','亨利二世长期扣留理查未婚妻阿莉丝且六年拒认储位；理查赴巴黎与腓力二世同桌共寝，1188年邦穆兰当众跪拜法王，1189年联兵攻破勒芒、图尔，老王病死希农。',[[45.8,-2.5],[52.6,4.0]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'mAngevin1189',HC.britain,{fillOpacity:.18,dashArray:'4 4'});
+    ha(d,'mAquitaineDuchy900',HC.celt,{fillOpacity:.26});ha(d,'mCapetDomain987',HC.france,{fillOpacity:.32});
+    hp(d,'w_paris',{note:'1187年理查赴巴黎投靠腓力二世，两人同桌共食、同床共枕，结成反父同盟。'});
+    hp(d,'uk7_bonmoulins',{kind:'battle',note:'1188年11月邦穆兰会盟：老王再拒确认储位与完婚，理查当着父亲之面跪向腓力二世宣誓效忠。'});
     hp(d,'pl_lemans',{kind:'battle',left:1,note:'1189年6月，理查与腓力二世联兵攻破亨利二世的出生地勒芒。'});
-    hp(d,'w_tours',{kind:'battle',note:'1189年7月联军攻陷图尔，重病的亨利二世被迫求和。'});
-    hp(d,'pl_chinon',{left:1,note:'1189年7月6日，亨利二世在此见叛臣名单榜首竟是最宠爱的幼子约翰，心碎吐血而亡。'});
-   },[['fill',HC.britain,'英格兰与金雀花大陆领地'],['fill',HC.celt,'理查坐镇的阿基坦公国'],['fill',HC.france,'法王腓力二世王室领地'],['dot',HC.war,'1189年勒芒与图尔之战'],['dot','#2a2018','温彻斯特、普瓦捷、巴黎与希农']]),
-  hs('1189—1192年','为什么叫“狮心王”：十字军战神','理查早年攻克塔耶堡得号“狮心”；1189年伦敦加冕后卖官筹款东征，埃莉诺送贝伦加丽亚至西西里，理查连克墨西拿、塞浦路斯、阿卡，于阿尔苏夫、雅法大破萨拉丁。',[[31.2,-3.5],[52.5,36.8]],d=>{
+    hp(d,'w_tours',{kind:'battle',note:'1189年7月联军攻陷图尔，病危的亨利二世被迫认理查为唯一继承人。'});
+    hp(d,'pl_chinon',{left:1,note:'1189年7月6日，亨利二世在此见叛臣名单榜首竟是最宠爱的幼子约翰，心碎死于希农。'});
+    hp(d,'k_london',{left:1,note:'1189年9月3日理查一世在威斯敏斯特加冕，当即放出母亲埃莉诺掌英格兰摄政大权。'});
+   },[['fill',HC.britain,'英格兰与金雀花大陆领地'],['fill',HC.celt,'理查死守不让的阿基坦'],['fill',HC.france,'法王腓力二世王室领地'],['dot',HC.war,'邦穆兰会盟与勒芒、图尔之战'],['dot','#2a2018','巴黎、希农与伦敦']]),
+  hs('1189—1191年','卖官筹饷、西西里揭丑退婚与法王半途抢地','1189年理查在伦敦卖官卖产筹饷东征；在西西里墨西拿指认亡父霸占阿莉丝通奸而赔款退婚，转娶贝伦加丽亚，法王翻脸打完阿卡即回国抢理查地盘。',[[31.5,-3.5],[52.8,36.8]],d=>{
     ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});ha(d,'mAngevin1189',HC.britain,{fillOpacity:.22});
-    ha(d,'mCyprus1192',HC.war,{fillOpacity:.28});ha(d,'mAyyubids1190',HC.mino,{fillOpacity:.2});
-    hp(d,'uk7_taillebourg',{kind:'battle',left:1,note:'1179年5月理查攻克此座三面悬崖的天险石堡，因悍勇无畏得外号“狮心”。'});
-    hp(d,'k_london',{left:1,note:'1189年9月3日理查在威斯敏斯特加冕，大肆卖官卖产筹措军费，戏言“只要有人买，我连伦敦都卖”。'});
-    hp(d,'no_messina',{note:'1190年10月理查攻占墨西拿；次年春太后埃莉诺翻越比利牛斯山护送纳瓦拉公主贝伦加丽亚至此。'});
-    hp(d,'c3_limassol',{note:'1191年5月理查二十天征服塞浦路斯，在此迎娶贝伦加丽亚。'});
-    hp(d,'c3_acre',{kind:'battle',note:'1191年7月12日理查与腓力二世攻克阿卡，随后在南面阿尔苏夫大败萨拉丁。'});
-    hp(d,'c3_jaffa',{kind:'battle',left:1,note:'1192年8月理查跳进齐腰深海水冲滩救下雅法，次日单骑横矛驰过萨拉丁大军阵前。'});
-    hr(d,[[51.51,-0.09],[43.30,5.37],[38.19,15.55],[34.68,33.04],[32.93,35.08],[32.05,34.75]],HC.route);
-   },[['fill',HC.britain,'理查一世的英格兰与大陆领地'],['fill',HC.war,'1191年理查征服的塞浦路斯'],['fill',HC.mino,'萨拉丁的阿尤布王朝版图'],['dline',HC.route,'1190—1192年理查东征航线（概略）'],['dot',HC.war,'塔耶堡、阿卡与雅法之战'],['dot','#2a2018','伦敦、墨西拿与利马索尔']]),
+    ha(d,'mCapetDomain987',HC.france,{fillOpacity:.28});ha(d,'mCyprus1192',HC.war,{fillOpacity:.28});ha(d,'mAyyubids1190',HC.mino,{fillOpacity:.2});
+    hp(d,'k_london',{left:1,note:'1189年理查在威斯敏斯特大肆卖官卖产筹措军费，戏言“只要有人买，我连伦敦都卖”。'});
+    hp(d,'no_messina',{kind:'battle',note:'1190—1191年冬墨西拿：理查当众指认亡父霸占阿莉丝通奸生子，赔法王一万马克退婚，两王彻底闹崩。'});
+    hp(d,'c3_limassol',{note:'1191年5月理查征服塞浦路斯，在此迎娶太后埃莉诺亲送来的纳瓦拉公主贝伦加丽亚。'});
+    hp(d,'c3_acre',{kind:'battle',note:'1191年7月12日英法合克阿卡；憋火的腓力二世打完这半截仗便于月底称病回国。'});
+    hp(d,'c3_gisors',{left:1,note:'腓力二世回国后转手勾结无地王约翰，蚕食理查的诺曼底边防重镇吉索尔。'});
+    hr(d,[[51.51,-0.09],[43.30,5.37],[38.19,15.55],[34.68,33.04],[32.93,35.08]],HC.route);
+   },[['fill',HC.britain,'理查一世的英格兰与大陆领地'],['fill',HC.france,'半途回国抢地的腓力二世王领'],['fill',HC.war,'1191年理查征服完婚的塞浦路斯'],['dline',HC.route,'1190—1191年东征航线（概略）'],['dot',HC.war,'墨西拿退婚与阿卡攻城'],['dot','#2a2018','伦敦、利马索尔与吉索尔']]),
+  hs('1191—1192年','独自硬扛萨拉丁：阿尔苏夫大捷与雅法跳海冲滩','法王走后理查独自留守圣地，1191年9月在阿尔苏夫大破萨拉丁，两逼耶路撒冷至拜特努巴；1192年8月雅法跳海冲滩、单骑横矛驰过敌阵，成骑士战神。',[[31.3,34.0],[33.2,36.0]],d=>{
+    ha(d,'mCrusaderCoast1192',HC.britain,{fillOpacity:.36});ha(d,'mAyyubids1190',HC.mino,{fillOpacity:.24});
+    hp(d,'c3_acre',{note:'1191年8月理查处决两千七百名拖延未赎的战俘后，率军自阿卡沿海南下。'});
+    hp(d,'c3_arsuf',{kind:'battle',note:'1191年9月7日阿尔苏夫之战：理查顶住烈日箭雨统一号令反冲锋，一举击溃萨拉丁主力。'});
+    hp(d,'c3_beitnuba',{left:1,note:'拜特努巴：理查两度进逼距耶路撒冷二十公里处，因孤军缺水难守忍痛退兵。'});
+    hp(d,'jerusalem',{note:'萨拉丁死守的耶路撒冷；后依雅法停战约向基督徒朝圣者免费开放圣墓。'});
+    hp(d,'c3_jaffa',{kind:'battle',left:1,note:'1192年8月理查跳进齐腰深海水冲滩救下雅法，次日单骑横矛驰过萨拉丁大军阵前，无人敢战。'});
+    hr(d,[[32.93,35.08],[32.20,34.81],[32.05,34.75],[31.86,35.03]],HC.war);
+   },[['fill',HC.britain,'理查一世夺回的十字军沿海走廊'],['fill',HC.mino,'萨拉丁的阿尤布王朝版图'],['dline',HC.war,'1191—1192年理查南征与进逼耶路撒冷路线'],['dot',HC.war,'阿尔苏夫与雅法之战'],['dot','#2a2018','阿卡、拜特努巴与耶路撒冷']]),
   hs('1192—1194年','化装归途被俘，七旬太后凑十万马克赎金','1192年冬理查化装归国在维也纳郊外被奥地利公爵抓获，转囚特里菲尔斯；约翰勾结法王谋逆，七旬太后埃莉诺守住英格兰、凑齐十万马克赎金，1194年2月赴美因茨迎回理查。',[[45.0,-3.0],[53.5,17.8]],d=>{
     ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'mAngevin1189',HC.britain,{fillOpacity:.18,dashArray:'4 4'});
     ha(d,'mEmpire1050',HC.germany,{fillOpacity:.22});ha(d,'mCapetDomain987',HC.france,{fillOpacity:.3});
@@ -17305,21 +17323,36 @@ const HISTORY_ENTRIES=[
     hr(d,[[52.95,-1.15],[51.51,-0.13]],HC.britain);
    },[['fill',HC.britain,'爱德华三世亲政后的英格兰（1330年）'],['fill',HC.celt,'莫蒂默盘踞多年的威尔士与边境领'],['dline',HC.britain,'1330年10—11月押解莫蒂默赴伦敦受审路线（概略）'],['dot',HC.war,'1330年10月19日夜诺丁汉城堡密道突袭'],['dot','#2a2018','温彻斯特、伦敦与格洛斯特']])
  ]},
-{id:'history-plat-britain-hyw1',ch:12,title:'百年战争月台（前）：长弓胜仗、黑死病与下议院攥住羊毛税',short:'百年战争月台（前）',en:'Hundred Years’ War (Early): Longbows, Plague and the Commons',period:'1307—1377年',c:HC.britain,platform:true,
+{id:'history-plat-britain-hyw1',ch:12,title:'百年战争月台（前）：“法兰西母狼”、外孙争王位与长弓羊毛税',short:'百年战争月台（前）',en:'Hundred Years’ War (Early): The She-Wolf, the French Claim, Longbows and Commons',period:'1307—1377年',c:HC.britain,platform:true,
  scenes:[
-  hs('1307—1377年','长弓远征、羊毛税换立法权与黑死病缺工','爱德华三世靠长弓大破法军，为筹军费让下议院坐大；1348年黑死病砍半劳力，晚年败兵回流本岛。',[[44.2,-4.5],[54.8,5.2]],d=>{
-    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'mFlanders900',HC.celt,{fillOpacity:.3});
-    ha(d,'mGascony1223',HC.britain,{fillOpacity:.32});ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.22});
-    hr(d,[[50.91,-1.40],[50.25,1.88],[50.95,1.86]],HC.war);
-    hl(d,'英格兰王国','Kingdom of England',52.6,-1.6,HC.britain);
-    hl(d,'佛兰德毛纺区','Flanders',51.0,3.6,HC.celt);
-    hp(d,'k_london',{capital:1,left:1,note:'伦敦威斯敏斯特：下议院借审批羊毛军费税，确立“先申冤后拨款”规矩。'});
-    hp(d,'sn1_southampton',{left:1,note:'南安普敦：1348年黑死病由此登陆英格兰，劳力锐减动摇庄园农奴制。'});
-    hp(d,'hy1_calais',{note:'加来：1347年英军攻占，成为英国羊毛输往欧洲大陆的总税关。'});
-    hp(d,'hy1_crecy',{kind:'battle',dy:12,note:'克雷西：1346年爱德华三世与黑太子靠长弓阵大破法军。'});
-    hp(d,'k_poitiers',{kind:'battle',note:'普瓦捷：1356年黑太子俘获法王约翰二世。'});
-    hp(d,'w_bordeaux',{left:1,note:'波尔多：英属加斯科涅葡萄酒与驻军中心；1370年代法军反攻后缩回沿海。'});
-   },[['fill',HC.britain,'英格兰本土与加斯科涅领地'],['fill',HC.celt,'英国羊毛买家佛兰德'],['fill',HC.france,'瓦卢瓦法兰西']])
+  hs('1307—1330年','娶“法兰西母狼”演成哈姆雷特，爱德华三世搞玄武门','1314年爱德华二世败于班诺克本；1326年王后伊莎贝拉与情夫莫蒂默带兵回国废杀亲夫，1330年十七岁的爱德华三世夜钻诺丁汉城堡密道擒杀莫蒂默夺权。',[[48.2,-5.0],[56.8,3.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'mScotland1200',HC.celt,{fillOpacity:.24});
+    ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.22});
+    hp(d,'ed2_bannockburn',{kind:'battle',note:'班诺克本：1314年爱德华二世在此惨败于苏格兰王罗伯特·布鲁斯。'});
+    hp(d,'w_paris',{note:'巴黎：1325年“法兰西母狼”伊莎贝拉借议和扣住王储，与莫蒂默同居谋反。'});
+    hp(d,'ed2_orwell',{left:1,note:'奥威尔河口：1326年9月伊莎贝拉与莫蒂默率军登陆，全国倒戈废黜国王。'});
+    hp(d,'ed2_berkeley',{left:1,note:'伯克利城堡：1327年9月被废的爱德华二世死于狱中，上演“哈姆雷特”式宫廷弑夫案。'});
+    hp(d,'uk7_nottingham',{kind:'battle',note:'诺丁汉城堡：1330年10月十七岁的爱德华三世率骑士夜钻地底密道擒杀莫蒂默，亲掌王权。'});
+   },[['fill',HC.britain,'爱德华二世至三世初年的英格兰'],['fill',HC.celt,'重挫英军的苏格兰王国'],['fill',HC.france,'王后伊莎贝拉的娘家法兰西']]),
+  hs('1314—1360年','舅舅绝嗣给外孙送争位借口，长弓射穿法兰西','1328年卡佩直系绝男嗣，外孙爱德华三世于1337年索取法国王位开战，在斯勒伊斯、克雷西、普瓦捷连战大捷并生擒法王约翰二世。',[[43.8,-3.2],[52.6,4.8]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'mAquitaineDuchy900',HC.britain,{fillOpacity:.32});
+    ha(d,'mFlanders900',HC.celt,{fillOpacity:.3});ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.22});
+    hp(d,'w_paris',{note:'巴黎：1314年内勒塔案后三王绝男嗣，1328年立旁支腓力六世，给外孙爱德华三世留下争位口实。'});
+    hp(d,'hy1_sluys',{kind:'battle',note:'斯勒伊斯：1340年6月英军全歼法军锁连舰队，夺得英吉利海峡制海权。'});
+    hp(d,'hy1_crecy',{kind:'battle',dy:12,note:'克雷西：1346年8月爱德华三世与黑太子靠自耕农长弓阵射垮法国重骑。'});
+    hp(d,'hy1_calais',{left:1,note:'加来：1347年英军围攻十一个月拿下此港，成为驻军与羊毛总税关。'});
+    hp(d,'k_poitiers',{kind:'battle',note:'普瓦捷：1356年9月黑太子爱德华以少胜多，当场生擒法王约翰二世。'});
+    hp(d,'hy1_bretigny',{note:'布雷蒂尼：1360年签约割让大阿基坦主权并勒索三百万金币赎金。'});
+   },[['fill',HC.britain,'英格兰与1360年扩大的阿基坦领地'],['fill',HC.celt,'英国羊毛命脉佛兰德'],['fill',HC.france,'瓦卢瓦法兰西']]),
+  hs('1341—1377年','羊毛税换出下议院、黑死病缺工与十岁幼主接盘','1341年骑士与市民合流为下议院批羊毛税换立法权；1348年黑死病砍半劳力，1369年后法军收复失地，1377年爱德华三世传位十岁长孙理查二世。',[[44.2,-4.5],[54.8,5.2]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'mFlanders900',HC.celt,{fillOpacity:.28});
+    ha(d,'mGascony1223',HC.britain,{fillOpacity:.3});ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.24});
+    hp(d,'k_london',{capital:1,left:1,note:'伦敦威斯敏斯特：1341年下议院成型，借批羊毛税攥住立法与包税权；1377年十岁理查二世继位。'});
+    hp(d,'sn1_southampton',{left:1,note:'南安普敦：1348年黑死病由此登陆英伦，缺工涨薪与1351年《劳工法》压价埋下民变火种。'});
+    hp(d,'hy1_calais',{note:'加来：羊毛专卖公会垄断出口，将高额关税向上转嫁给中小养羊户。'});
+    hp(d,'w_paris',{note:'巴黎：1369年起法王查理五世坚壁清野，将英军新占领土夺回大半。'});
+    hp(d,'w_bordeaux',{left:1,note:'波尔多：黑太子1376年病逝，英军在西南缩回波尔多与巴约讷沿海。'});
+   },[['fill',HC.britain,'英格兰与缩回沿海的加斯科涅及加来'],['fill',HC.celt,'佛兰德毛纺区'],['fill',HC.france,'查理五世收复失地后的法兰西']])
  ]},
 {id:'history-britain-hundred-years-1',ch:12,title:'百年战争（一）：从内勒塔到生擒法王',short:'百年战争（一）',en:'The Hundred Years’ War (I): From the Tour de Nesle to the Capture of the French King',period:'1314—1360年',c:HC.hyw,
  scenes:[
@@ -17552,21 +17585,38 @@ const HISTORY_ENTRIES=[
     hp(d,'cl_bourges',{left:1,note:'1422年10月废太子在布尔日自行称王（查理七世），法兰西裂为南北两个朝廷。'});
    },[['fill',HC.britain,'婴儿亨利六世名义统治的英格兰、北法与加斯科涅'],['fill',HC.war,'盟友勃艮第公国'],['fill',HC.france,'南方“布尔日小王”查理七世控制区'],['dot',HC.war,'1422年万塞讷/巴黎两王去世与伦敦双冠继位'],['dot','#2a2018','布尔日']])
  ]},
-{id:'history-plat-britain-hyw2',ch:12,title:'百年战争月台（后）：从阿金库尔高光到丢光大陆领地',short:'百年战争月台（后）',en:'Hundred Years’ War (Late): From Agincourt to the Loss of France',period:'1413—1453年',c:HC.britain,platform:true,
+{id:'history-plat-britain-hyw2',ch:12,title:'百年战争月台（后）：王储中箭继位、特鲁瓦拿继承权与双冠丢光大陆',short:'百年战争月台（后）',en:'Hundred Years’ War (Late): Henry V’s Succession, Treaty of Troyes and Loss of France',period:'1399—1453年',c:HC.britain,platform:true,
  scenes:[
-  hs('1413—1453年','阿金库尔大捷、幼主接盘与退回海岛','1415年亨利五世赢下阿金库尔却在三十五岁早逝；1453年亨利六世丢尽诺曼底与波尔多，败兵回流引爆内战。',[[44.2,-3.6],[53.4,5.2]],d=>{
+  hs('1399—1413年','篡位原罪、王储左脸中箭与亨利五世继位','亨利四世夺位后平定威尔士起义、珀西家族反叛（1403年什鲁斯伯里之战王储小亨利左脸中箭）并斩约克大主教；1413年病逝于威斯敏斯特，长子亨利五世继位。',[[50.2,-4.8],[55.0,2.5]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'mWales',HC.celt,{fillOpacity:.26});
+    hp(d,'k_london',{capital:1,left:1,note:'伦敦威斯敏斯特：1413年3月恶疾缠身的亨利四世死于修道院“耶路撒冷厅”，长子亨利五世继位。'});
+    hp(d,'uk9_shrewsbury',{kind:'battle',left:1,note:'什鲁斯伯里：1403年7月造王功臣珀西家族叛乱战败，十六岁王储小亨利左脸中箭六寸仍死战不退。'});
+    hp(d,'k_york',{kind:'battle',note:'约克：1405年6月亨利四世处死起兵讨逆的约克大主教斯克罗普，震动朝野。'});
+    hp(d,'hy1_calais',{note:'加来：1401年穿孝拒婚的法国小王后伊莎贝拉由此返法；亨利五世即位后由此筹划渡海攻法。'});
+   },[['fill',HC.britain,'亨利四世平叛固位的英格兰'],['fill',HC.celt,'爆发格林杜尔大起义的威尔士']]),
+  hs('1415—1422年','阿金库尔大捷、蒙特罗刺杀与特鲁瓦拿稳继承权','1415年亨利五世大胜阿金库尔并征服诺曼底；1419年蒙特罗桥刺杀把勃艮第推向英国，1420年《特鲁瓦条约》立亨利五世为法王继承人，1422年英年暴卒。',[[46.8,-2.2],[52.2,5.2]],d=>{
+    ha(d,'mEngland1066',HC.britain,{fillOpacity:.34});ha(d,'mNormandy933',HC.britain,{fillOpacity:.32});
+    ha(d,'mBurgundyDuchy900',HC.war,{fillOpacity:.28});ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.22});
+    hp(d,'hy4_agincourt',{kind:'battle',note:'阿金库尔：1415年10月亨利五世以木桩长弓阵射杀法国六千贵族。'});
+    hp(d,'fr_rouen',{left:1,note:'鲁昂：1419年1月亨利五世攻克此城，收复整个诺曼底。'});
+    hp(d,'hy4_montereau',{kind:'battle',note:'蒙特罗桥：1419年9月王太子部下一斧劈死勃艮第公爵无畏的约翰，促成英勃同盟。'});
+    hp(d,'ko_troyes',{kind:'battle',note:'特鲁瓦：1420年5月签约，亨利五世娶凯瑟琳公主，获立为法兰西摄政及王位继承人。'});
+    hp(d,'w_paris',{left:1,note:'巴黎与东郊万塞讷：三级会议批准条约；1422年8月三十五岁的亨利五世暴卒于万塞讷。'});
+    hp(d,'k_london',{left:1,note:'伦敦威斯敏斯特：英国议会批准《特鲁瓦条约》，但规定不许征英国税去养法国。'});
+   },[['fill',HC.britain,'亨利五世统治的英格兰与诺曼底'],['fill',HC.war,'倒向英国的勃艮第派领地'],['fill',HC.france,'法兰西其余地区']]),
+  hs('1422—1453年','九月婴儿戴双冠、贞德逆转与丢光大陆','1422年九个月大的亨利六世兼承英法双冠；1429年贞德解奥尔良之围、1435年勃艮第倒戈，1453年卡斯蒂永战败连失波尔多，亨利六世发疯引爆内战。',[[44.2,-3.6],[53.4,5.2]],d=>{
     ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'mNormandy933',HC.war,{fillOpacity:.3});
     ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.26});
     hl(d,'英格兰王国','Kingdom of England',52.0,-1.5,HC.britain);
     hl(d,'1450年失守的诺曼底','Lost Normandy',49.1,-0.4,HC.war);
-    hp(d,'k_london',{capital:1,left:1,note:'伦敦：1453年战败消息传回，亨利六世突发精神木僵，约克与兰开斯特两派拔刀相向。'});
+    hp(d,'k_london',{capital:1,left:1,note:'伦敦：周岁婴儿亨利六世继双冠；1453年战败噩耗传回，亨利六世突发木僵疯症。'});
     hp(d,'hy1_calais',{note:'加来：1453年后英格兰在欧洲大陆残存的唯一据点。'});
-    hp(d,'hy4_agincourt',{kind:'battle',dy:12,note:'阿金库尔：1415年10月亨利五世以少胜多击溃法军主力。'});
-    hp(d,'fr_rouen',{left:1,note:'鲁昂：亨利五世征服的诺曼底首府，1449年被法军收回。'});
-    hp(d,'jn_orleans',{kind:'battle',note:'奥尔良：1429年英军围城功败垂成，成为战局转折点。'});
-    hp(d,'jn_castillon',{kind:'battle',note:'卡斯蒂永：1453年英军老帅塔尔博特战死，英格兰大陆帝国终结。'});
-    hp(d,'w_bordeaux',{left:1,dy:10,note:'波尔多：自1154年金雀花联姻以来统治三百年的阿基坦首府自此易主。'});
-   },[['fill',HC.britain,'退回本岛的英格兰（仅存加来）'],['fill',HC.war,'亨利五世一度占领、1450年丢掉的诺曼底'],['fill',HC.france,'收复大陆领地的法兰西']])
+    hp(d,'jn_orleans',{kind:'battle',note:'奥尔良：1429年贞德解围，逆转百年战争全局。'});
+    hp(d,'pl_arras',{note:'阿拉斯：1435年勃艮第公爵倒戈与查理七世和解，英军失去最大盟友。'});
+    hp(d,'fr_rouen',{left:1,note:'鲁昂：1449—1450年法军收复整个诺曼底。'});
+    hp(d,'jn_castillon',{kind:'battle',note:'卡斯蒂永：1453年7月法军火炮轰垮英军，大陆帝国终结。'});
+    hp(d,'w_bordeaux',{left:1,dy:10,note:'波尔多：自1154年金雀花联姻以来守了三百年的阿基坦首府自此易主。'});
+   },[['fill',HC.britain,'退回本岛的英格兰（仅存加来）'],['fill',HC.war,'1450年丢掉的诺曼底'],['fill',HC.france,'收复大陆领地的法兰西']])
  ]},
 {id:'history-britain-hundred-years-5',ch:12,title:'百年战争（四）：托孤制衡、四叔作妖与英勃同盟破裂',short:'百年战争（四）',en:'The Hundred Years’ War (IV): The Regency Feud, Jacqueline of Hainaut and the Breach with Burgundy',period:'1422—1435年',c:HC.hyw,
  scenes:[
@@ -20927,7 +20977,7 @@ const TREE_ROWS={
  'history-britain-norman/0':['britain',978,1041,'991—1035年'],
  'history-britain-henry2/0':['britain',1154,1189,'1087—1189年'],
  'history-britain-norman-ireland/0':['britain',1169,1210,'1014—1210年'],
- 'history-britain-richard/0':['britain',1189,1214,'1173—1214年'],
+ 'history-britain-richard/0':['britain',1189,1214,'1170—1214年'],
  'history-britain-magnacarta/0':['britain',1215,1272,'1215—1295年'],
  'history-britain-edward1/0':['britain',1277,1307,'1272—1307年'],
  'history-britain-edward2/0':['hundred-years',1315,1330,'1200—1330年'],
@@ -21146,7 +21196,7 @@ const TREE_ROWS={
  'history-plat-france-hyw1/0':['france',1328,1380,'1314—1380年'],
  'history-plat-france-hyw2/0':['france',1415,1453,'1407—1453年'],
  'history-plat-britain-hyw1/0':['britain',1337,1377,'1307—1377年'],
- 'history-plat-britain-hyw2/0':['britain',1413,1453,'1413—1453年'],
+ 'history-plat-britain-hyw2/0':['britain',1413,1453,'1399—1453年'],
  'history-plat-east-1204/0':['east',1202,1204,'1202—1204年'],
  'history-plat-persia-crusade/0':['persia',1144,1244,'1096—1291年'],
  'history-plat-faith-reformation/0':['faith',1518,1563,'1517—1598年'],

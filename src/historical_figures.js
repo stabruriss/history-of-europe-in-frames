@@ -26777,7 +26777,9 @@ const FIGURE_SCENES={
       "event": "女扮男装与十五年软禁",
       "note": "1173年春埃莉诺挑动三子反父后，女扮男装欲赴巴黎会合儿子，半路被亨利二世部下抓获，软禁在温彻斯特与索尔兹伯里十五年。1189年理查即位命马歇尔迎出母亲摄政，据马修·帕里斯所记，尝尽铁窗之苦的埃莉诺第一道命令就是开释全英囚犯。",
       "place": "uk7_winchester"
-    },
+    }
+  ],
+  "history-britain-richard/1": [
     {
       "id": "william-marshal",
       "when": "1189年6月",
@@ -26786,7 +26788,7 @@ const FIGURE_SCENES={
       "place": "uk7_lemans"
     }
   ],
-  "history-britain-richard/1": [
+  "history-britain-richard/3": [
     {
       "id": "richard-i",
       "when": "1192年8月5日",
@@ -26795,7 +26797,7 @@ const FIGURE_SCENES={
       "place": "c6_jaffa"
     }
   ],
-  "history-britain-richard/2": [
+  "history-britain-richard/4": [
     {
       "id": "eleanor-aquitaine",
       "when": "1193年",
@@ -26804,7 +26806,7 @@ const FIGURE_SCENES={
       "place": "wo_trifels"
     }
   ],
-  "history-britain-richard/3": [
+  "history-britain-richard/5": [
     {
       "id": "richard-i",
       "when": "1196—1198年",
@@ -26813,7 +26815,7 @@ const FIGURE_SCENES={
       "place": "uk7_gaillard"
     }
   ],
-  "history-britain-richard/4": [
+  "history-britain-richard/6": [
     {
       "id": "william-marshal",
       "when": "1199年4月10日",
@@ -26829,7 +26831,7 @@ const FIGURE_SCENES={
       "place": "fr_rouen"
     }
   ],
-  "history-britain-richard/5": [
+  "history-britain-richard/7": [
     {
       "id": "john-lackland",
       "when": "1210年",

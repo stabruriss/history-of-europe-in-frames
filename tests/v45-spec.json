@@ -44,8 +44,8 @@
   ],
   "history-britain-richard": [
    "狮心王与无地王",
-   "1173—1214年",
-   7,
+   "1170—1214年",
+   9,
    12
   ],
   "history-britain-magnacarta": [
@@ -380,30 +380,38 @@
   ],
   [
    "history-britain-richard/0",
-   "金雀花家的内斗起于父母偏心：母亲阿基坦的埃莉诺最偏爱次子理查，父亲亨利二世最溺爱"
+   "亨利二世给长子戴空头王冠逼反妻儿，长兄三弟连死才把次子理查推上储位"
   ],
   [
    "history-britain-richard/1",
-   "理查一世在位十年只在英格兰待了六个月，把英格兰当成提款机，可他却是英国人最喜爱的"
+   "老王六年拒立储还扣着准儿媳，理查与法王睡一被窝联兵打亲爹，逼死老王夺位"
   ],
   [
-   "history-britain-richard/4",
+   "history-britain-richard/2",
+   "理查卖官筹饷东征，半路揭出亲爹霸占童养媳退婚，法王翻脸打完阿卡就回头抢地"
+  ],
+  [
+   "history-britain-richard/3",
+   "法王走后理查独自硬扛萨拉丁，凭阿尔苏夫与雅法神勇成了英国人最爱的骑士战神"
+  ],
+  [
+   "history-britain-richard/6",
    "理查一死，八十岁的太后埃莉诺拼尽最后一口气扶小儿子约翰上位，可约翰在五年里就把父"
   ],
   [
-   "history-britain-richard/5",
+   "history-britain-richard/7",
    "约翰上位后跟国内贵族关系极差——贵族崇拜狮心王理查，觉得理查正是被约翰当年勾结法"
   ],
   [
-   "history-britain-richard/5",
+   "history-britain-richard/7",
    "约翰想靠打法国转移国内矛盾，1212年夏集结大军准备渡海，结果出师未捷，北方贵族"
   ],
   [
-   "history-britain-richard/6",
+   "history-britain-richard/8",
    "约翰稳住局面后又要打法国；这时法国因扶腓特烈二世跟德意志韦尔夫家结了仇，约翰便联"
   ],
   [
-   "history-britain-richard/6",
+   "history-britain-richard/8",
    "战败原因有三层：一是英国贵族离心，许多人没来、只交钱弄雇佣军；二是德意志那边奥托"
   ],
   [
@@ -568,7 +576,7 @@
   ],
   [
    "history-britain-hundred-years-4/1",
-   "英国这边，亨利四世篡位后本想收理查二世的法国小未婚妻当儿媳，因理查二世生前待她很"
+   "亨利四世篡位惹来小王后拒婚与功臣教士造反，王储助父平叛、继位后攻法转移矛盾"
   ],
   [
    "history-britain-hundred-years-4/2",
@@ -860,23 +868,23 @@
   ],
   "history-britain-richard": [
    [
-    0,
+    1,
     "同桌共食，同床共枕"
    ],
    [
-    1,
+    2,
     "“只要有人买，我连伦敦都卖”"
    ],
    [
-    2,
+    4,
     "烤肉叉前的国王与侍童的手套"
    ],
    [
-    3,
+    5,
     "平底锅挡箭与临终宽恕"
    ],
    [
-    5,
+    7,
     "温莎地牢里的燕麦与生咸肉"
    ]
   ],
@@ -1487,23 +1495,35 @@
    "爱尔兰武士不穿铁甲、只着亚麻衫持短斧标枪肉搏"
   ],
   [
-   "history-britain-richard/1",
+   "history-britain-richard/0",
    "因悍勇得号“狮心”"
   ],
   [
+   "history-britain-richard/1",
+   "当场跪在亲爹面前向法王效忠"
+  ],
+  [
    "history-britain-richard/2",
-   "七旬太后埃莉诺调兵逼降约翰"
+   "指认亡父亨利二世早与阿莉丝通奸生子"
   ],
   [
    "history-britain-richard/3",
-   "在弗雷特瓦尔设伏打垮法军"
-  ],
-  [
-   "history-britain-richard/3",
-   "被拿平底锅挡箭的彼得一弩射中左肩"
+   "单骑横矛驰过敌阵"
   ],
   [
    "history-britain-richard/4",
+   "七旬太后埃莉诺调兵逼降约翰"
+  ],
+  [
+   "history-britain-richard/5",
+   "在弗雷特瓦尔设伏打垮法军"
+  ],
+  [
+   "history-britain-richard/5",
+   "被拿平底锅挡箭的彼得一弩射中左肩"
+  ],
+  [
+   "history-britain-richard/6",
    "次年4月在鲁昂醉酒亲手杀阿瑟沉入塞纳河"
   ],
   [
@@ -2014,5 +2034,5 @@
   "mNormanIreland1210",
   "mGaelicIreland1210"
  ],
- "pass": "不列颠 — 22 sections (126 scenes) on a new line and chapter ⅩⅢ: Doggerland and Stonehenge to Caesar's raids, Roman Britain and Hadrian's Wall, Ireland's monasteries and Whitby, the Heptarchy, Vikings and Alfred the Great, Cnut and the Norman Conquest, Henry II's juries and Becket, the Normans in Ireland, Richard the Lionheart and Lackland John, Magna Carta and Parliament, Edward I's Wales and Scottish wars; 109 of 老无’s points in bold, 107 facts set right in plain text; 23 豆腐块"
+ "pass": "不列颠 — 22 sections (128 scenes) on a new line and chapter ⅩⅢ: Doggerland and Stonehenge to Caesar's raids, Roman Britain and Hadrian's Wall, Ireland's monasteries and Whitby, the Heptarchy, Vikings and Alfred the Great, Cnut and the Norman Conquest, Henry II's juries and Becket, the Normans in Ireland, Richard the Lionheart and Lackland John, Magna Carta and Parliament, Edward I's Wales and Scottish wars; 111 of 老无’s points in bold, 110 facts set right in plain text; 23 豆腐块"
 }
