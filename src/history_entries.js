@@ -17078,7 +17078,7 @@ const HISTORY_ENTRIES=[
  ]},
 {id:'history-britain-richard',ch:12,title:'狮心王与无地王：十字军战神、太后埃莉诺与败光祖业',short:'狮心王与无地王',en:'Lionheart and Lackland: Crusader King, Queen Mother Eleanor and the Lost Empire',period:'1170—1214年',c:HC.britain,
  scenes:[
-  hs('1170—1186年','空头共治王、母子大叛乱与次子熬成储君','1170年亨利二世替小亨利加冕却不给实权，1173年埃莉诺挑动三子叛父被囚十五年；1179年理查克塔耶堡得号“狮心”，小亨利与杰弗里连丧后理查升为储君。',[[44.2,-3.8],[52.6,4.2]],d=>{
+  hs('1170—1186年','空头共治王、母子大叛乱与次子变长子','1170年亨利二世替小亨利加冕却不给实权，1173年埃莉诺挑动三子叛父被囚十五年；1179年理查克塔耶堡得号“狮心”，小亨利与杰弗里连丧后理查升为储君。',[[44.2,-3.8],[52.6,4.2]],d=>{
     ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'mAngevin1189',HC.britain,{fillOpacity:.18,dashArray:'4 4'});
     ha(d,'mAquitaineDuchy900',HC.celt,{fillOpacity:.26});ha(d,'mCapetDomain987',HC.france,{fillOpacity:.32});
     hp(d,'k_london',{left:1,note:'1170年6月亨利二世在此替十五岁的长子小亨利提前加冕共治，却不给寸土与财权。'});
@@ -17325,7 +17325,7 @@ const HISTORY_ENTRIES=[
  ]},
 {id:'history-plat-britain-hyw1',ch:12,title:'百年战争月台（前）：“法兰西母狼”、外孙争王位与长弓羊毛税',short:'百年战争月台（前）',en:'Hundred Years’ War (Early): The She-Wolf, the French Claim, Longbows and Commons',period:'1307—1377年',c:HC.britain,platform:true,
  scenes:[
-  hs('1307—1330年','娶“法兰西母狼”演成哈姆雷特，爱德华三世搞玄武门','1314年爱德华二世败于班诺克本；1326年王后伊莎贝拉与情夫莫蒂默带兵回国废杀亲夫，1330年十七岁的爱德华三世夜钻诺丁汉城堡密道擒杀莫蒂默夺权。',[[48.2,-5.0],[56.8,3.8]],d=>{
+  hs('1307—1330年','娶“法兰西母狼”演成哈姆雷特，爱德华三世搞玄武门','1314年爱德华二世败于班诺克本；1326年王后伊莎贝拉与情夫莫蒂默带兵回国，次年废杀亲夫，1330年十七岁的爱德华三世夜钻诺丁汉城堡密道擒杀莫蒂默夺权。',[[48.2,-5.0],[56.8,3.8]],d=>{
     ha(d,'mEngland1066',HC.britain,{fillOpacity:.36});ha(d,'mScotland1200',HC.celt,{fillOpacity:.24});
     ha(d,'mFranceCapetian1300',HC.france,{fillOpacity:.22});
     hp(d,'ed2_bannockburn',{kind:'battle',note:'班诺克本：1314年爱德华二世在此惨败于苏格兰王罗伯特·布鲁斯。'});
