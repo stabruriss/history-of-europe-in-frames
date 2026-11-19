@@ -8,12 +8,12 @@
     "volume": "+0%"
   },
   "source": {
-    "commit": "3ac85e54fbfbf7b783777a8c473c795c9112aacc",
+    "commit": "f59dda27a705a26df68328c49a9fa81d54cd1ab2",
     "dirty": [],
     "files": {
-      "src/history_entries.js": "9bda58374dc67f5c6dce594a585cdd12e828df646a08eddbdccb9f6ca2ba9ab6",
-      "src/history_content.json": "46ec641e30486f47fa5e97ae009a806aed8741433b689c84b5532edb45bb08ac",
-      "src/historical_figures.js": "1bac1b6a55cc2c399b444d06ae2340eb96c38e0ab09888d803b2778cafb9a487"
+      "src/history_entries.js": "838674bd61dd29474f2edceca937a408ca1fdf94eaf7dbcb371ee45d7b5a89f0",
+      "src/history_content.json": "3e73596bf3a78dd54128f127f85f6e5e7e5b6d11404f159d8855d36f4cc98ca1",
+      "src/historical_figures.js": "7802da01ed9fc933cee60ac403af546b67ff918888d6a207103d45a330e81e22"
     }
   },
   "assets": {
@@ -34042,20 +34042,12 @@
       "audioHash": "d87cd56da047aa87c38b8391aaad29d030841ba1f2a58fd2609fa4616a709a4e"
     },
     "history-britain-richard/0": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/80b13bce6452cb45fdae91f1500176b68e1d2989c09f64396f653cdb3683355b.mp3",
-      "duration": 68.208,
-      "bytes": 409248,
-      "textHash": "7303cc0a8f504660b2e74fa510981cd3911cda7baee88a4b53f35f79f92a0ede",
-      "inputHash": "6d3f672faa8b3dec8909eb84526b21271969110c2fe32e08c9cefc24e4a7a9aa",
-      "audioHash": "80b13bce6452cb45fdae91f1500176b68e1d2989c09f64396f653cdb3683355b"
-    },
-    "history-britain-richard/0/moment/0": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/db2b32249b5d78f205002400321900eb122aac212d522b3c09ce869293ce828e.mp3",
-      "duration": 52.32,
-      "bytes": 313920,
-      "textHash": "6aaa65b200843c9b91131f28f2ad47f848a2aa00df8d1d2bf7dffd1ea3d2d495",
-      "inputHash": "a8609c1b00800286e48be5bd6cb657a1f2b739b8b0379941e1248a5d6cafd085",
-      "audioHash": "db2b32249b5d78f205002400321900eb122aac212d522b3c09ce869293ce828e"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/76aca203844c56e0ab22438f304f6261dcfd490542da241f67bb43668a38b262.mp3",
+      "duration": 69.144,
+      "bytes": 414864,
+      "textHash": "a599a4ceb2c52dfc477ddead7dfd1c09f3cf4d742fe80bed910b16329b665c63",
+      "inputHash": "8ab895bdf8f7e8e8fd059af161b95bb564c2f252602baa77f8311a1af1c03f27",
+      "audioHash": "76aca203844c56e0ab22438f304f6261dcfd490542da241f67bb43668a38b262"
     },
     "history-britain-richard/0/person/0": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/4d829cc3ddb1cf3465d0a3ae2ddbd23d4c5c0f9890ea3378993d9b45b862af0f.mp3",
@@ -34065,7 +34057,23 @@
       "inputHash": "fd85699718a015cf55934a2398200a8b6334f2822284d1d06ae20ac33acd2785",
       "audioHash": "4d829cc3ddb1cf3465d0a3ae2ddbd23d4c5c0f9890ea3378993d9b45b862af0f"
     },
-    "history-britain-richard/0/person/1": {
+    "history-britain-richard/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/a93cf320e36f652cddb08477a73d95cdcc7e4b162b569aca38ba76cede4e894b.mp3",
+      "duration": 66.528,
+      "bytes": 399168,
+      "textHash": "cf482764fe6730c23459d1e9494ccb2dc6eabbb950f04b6eb5ce83f722ff9265",
+      "inputHash": "5882c19508080e53c0cd65645f17c3607f67b8dff85f07fc6ddd42e09429ecc8",
+      "audioHash": "a93cf320e36f652cddb08477a73d95cdcc7e4b162b569aca38ba76cede4e894b"
+    },
+    "history-britain-richard/1/moment/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/db2b32249b5d78f205002400321900eb122aac212d522b3c09ce869293ce828e.mp3",
+      "duration": 52.32,
+      "bytes": 313920,
+      "textHash": "6aaa65b200843c9b91131f28f2ad47f848a2aa00df8d1d2bf7dffd1ea3d2d495",
+      "inputHash": "a8609c1b00800286e48be5bd6cb657a1f2b739b8b0379941e1248a5d6cafd085",
+      "audioHash": "db2b32249b5d78f205002400321900eb122aac212d522b3c09ce869293ce828e"
+    },
+    "history-britain-richard/1/person/0": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/6fd2bf96fa3ec750305ab8d9a92655f98c6f46664e511647a871a79ffd523080.mp3",
       "duration": 57.408,
       "bytes": 344448,
@@ -34073,15 +34081,15 @@
       "inputHash": "4ced57b437c783c394a42fd0f2c13e70b9abc616bc3e55fd82269b280fb903eb",
       "audioHash": "6fd2bf96fa3ec750305ab8d9a92655f98c6f46664e511647a871a79ffd523080"
     },
-    "history-britain-richard/1": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/af16a8101d47bd3c8faff7ddffab697515acc0daefde4737dc670df7123b906a.mp3",
-      "duration": 62.808,
-      "bytes": 376848,
-      "textHash": "d2d00d2382966555b3435b1aeaae61a009fecf5e525d12cf6b94aee0889d4bef",
-      "inputHash": "589c48de02845a844c9339fd247a574c5b8663642ddde472de2400671ed95a1e",
-      "audioHash": "af16a8101d47bd3c8faff7ddffab697515acc0daefde4737dc670df7123b906a"
+    "history-britain-richard/2": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/7d801e4f5e727e368f35379da664aaf6068e3d6fa1437feff22bf592c60df5c6.mp3",
+      "duration": 67.128,
+      "bytes": 402768,
+      "textHash": "bacf814d6981c79fee563d7fcf8c205a6981bbea2aa7ddef0c1a3232f406c6d6",
+      "inputHash": "9e79485ccc2b581cc48b039fd256e9f0c2aa03ab7869ce4396dd5c946dfb683a",
+      "audioHash": "7d801e4f5e727e368f35379da664aaf6068e3d6fa1437feff22bf592c60df5c6"
     },
-    "history-britain-richard/1/moment/1": {
+    "history-britain-richard/2/moment/1": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/87822f03260f3f71e6a9caae1aaa50f8142d86a6d2556f94165641768e082206.mp3",
       "duration": 49.224,
       "bytes": 295344,
@@ -34089,7 +34097,15 @@
       "inputHash": "d713cc6876184c235f2967842fb4b23329c255c5ef296a176124441f13bfc19d",
       "audioHash": "87822f03260f3f71e6a9caae1aaa50f8142d86a6d2556f94165641768e082206"
     },
-    "history-britain-richard/1/person/0": {
+    "history-britain-richard/3": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/52c01e2d33395e6d2533b89e889c7878882aa3b48ffe8e06f6574f6bf6704285.mp3",
+      "duration": 66.264,
+      "bytes": 397584,
+      "textHash": "d08227dc951fe392aedebc10cbbc370358f63603d5d1f4c12bc4a7b32a2a682f",
+      "inputHash": "59a628cc949efce877e565686b324b4b5afcd88a4129dc38499ebaa379b32928",
+      "audioHash": "52c01e2d33395e6d2533b89e889c7878882aa3b48ffe8e06f6574f6bf6704285"
+    },
+    "history-britain-richard/3/person/0": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/538e2b21a897ebc6553cfbef084fe9a862709329652a3e710fd675955f38aad3.mp3",
       "duration": 56.4,
       "bytes": 338400,
@@ -34097,7 +34113,7 @@
       "inputHash": "b8395efe9094fbd72ef5bb240db172db4bb308f85e47eaea392e6235e7ae7f01",
       "audioHash": "538e2b21a897ebc6553cfbef084fe9a862709329652a3e710fd675955f38aad3"
     },
-    "history-britain-richard/2": {
+    "history-britain-richard/4": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/57a5a4dfdfab69c15c881f70c75e4348c079c27a7f8d8fbdc66a99bce34f4de3.mp3",
       "duration": 66.168,
       "bytes": 397008,
@@ -34105,7 +34121,7 @@
       "inputHash": "a3f87e3530cdc84b31de43dfc5fd48a2b1f7e2a7b0ce9f80012846ee440e5a4f",
       "audioHash": "57a5a4dfdfab69c15c881f70c75e4348c079c27a7f8d8fbdc66a99bce34f4de3"
     },
-    "history-britain-richard/2/moment/2": {
+    "history-britain-richard/4/moment/2": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/55e499424103f3231e384a7777d6ff91ca73e556a38ba44f9544046b31969ff4.mp3",
       "duration": 58.392,
       "bytes": 350352,
@@ -34113,7 +34129,7 @@
       "inputHash": "6a7b7061d062eaf65a5bb5e763effbc10f4badb31153a79b2385cbc536181755",
       "audioHash": "55e499424103f3231e384a7777d6ff91ca73e556a38ba44f9544046b31969ff4"
     },
-    "history-britain-richard/2/person/0": {
+    "history-britain-richard/4/person/0": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/72e934b729b3b9d0584d11c913568cbddc0dc760153a727dfcb7e4e2ade9424d.mp3",
       "duration": 64.392,
       "bytes": 386352,
@@ -34121,7 +34137,7 @@
       "inputHash": "558ab98f9a0f92664af71b67740ac32285ca50fe15ae735409cee6edbd3f69b3",
       "audioHash": "72e934b729b3b9d0584d11c913568cbddc0dc760153a727dfcb7e4e2ade9424d"
     },
-    "history-britain-richard/3": {
+    "history-britain-richard/5": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/42a92f691d12cf5f53a45425fd370f44c6b302cf4d2142689ad85a91eeb24faf.mp3",
       "duration": 65.4,
       "bytes": 392400,
@@ -34129,7 +34145,7 @@
       "inputHash": "5a1d5a7c9d5f15562a432b20ecd0e1d5a33626553db3f1387a2333a7e0642158",
       "audioHash": "42a92f691d12cf5f53a45425fd370f44c6b302cf4d2142689ad85a91eeb24faf"
     },
-    "history-britain-richard/3/moment/3": {
+    "history-britain-richard/5/moment/3": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/1f8a8d4a9aea6214fdaf40289fd509c81ecc1ed62e71fe2a7fe061a3b7cab097.mp3",
       "duration": 63.0,
       "bytes": 378000,
@@ -34137,7 +34153,7 @@
       "inputHash": "192f05ba3ec42a9f1ec45a9d9e56766b63ae636c395ec539026ead37532cd43c",
       "audioHash": "1f8a8d4a9aea6214fdaf40289fd509c81ecc1ed62e71fe2a7fe061a3b7cab097"
     },
-    "history-britain-richard/3/person/0": {
+    "history-britain-richard/5/person/0": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/b55d508356ca711637507969e1ea1724ff28b62f2c121d760325fde325b91d8a.mp3",
       "duration": 57.264,
       "bytes": 343584,
@@ -34145,7 +34161,7 @@
       "inputHash": "e3d24fd94e21fbcb779ed6c72645ca79054d08fbaf219795d3d7c7fad8e6f6c1",
       "audioHash": "b55d508356ca711637507969e1ea1724ff28b62f2c121d760325fde325b91d8a"
     },
-    "history-britain-richard/4": {
+    "history-britain-richard/6": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/6532d7c797e1495b89c874df18a29a94dbcca3f26964aebe9d19ef00f56b5297.mp3",
       "duration": 73.056,
       "bytes": 438336,
@@ -34153,7 +34169,7 @@
       "inputHash": "cfd5da50c9a8e99d5694a0099577a9086899f4a6658f528ad556708fd47bb1c5",
       "audioHash": "6532d7c797e1495b89c874df18a29a94dbcca3f26964aebe9d19ef00f56b5297"
     },
-    "history-britain-richard/4/person/0": {
+    "history-britain-richard/6/person/0": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/c0d8e78c7066d11be4f1196ccb0f332f76f32cf6a77f1ee854e65b4ef8452ee7.mp3",
       "duration": 59.304,
       "bytes": 355824,
@@ -34161,7 +34177,7 @@
       "inputHash": "b9d9d7e6f631b6cf28c349b5fe21c3b66f09da519675fc6a5d7dcac536a7f2bc",
       "audioHash": "c0d8e78c7066d11be4f1196ccb0f332f76f32cf6a77f1ee854e65b4ef8452ee7"
     },
-    "history-britain-richard/4/person/1": {
+    "history-britain-richard/6/person/1": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/9e120b7b7ce9f57ec5f378df1014d69e4428976354b8907c2aab9b9378c6f890.mp3",
       "duration": 59.088,
       "bytes": 354528,
@@ -34169,7 +34185,7 @@
       "inputHash": "668bd4f59d7e6553c14b91fe684ef961d6af78248d081a5ab1182591ce5ea3e7",
       "audioHash": "9e120b7b7ce9f57ec5f378df1014d69e4428976354b8907c2aab9b9378c6f890"
     },
-    "history-britain-richard/5": {
+    "history-britain-richard/7": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/a9e164b8011cac20c204b042ed097a1773c80c185fd778ada54a04d8b5558588.mp3",
       "duration": 63.984,
       "bytes": 383904,
@@ -34177,7 +34193,7 @@
       "inputHash": "75001b7cdcde1f41af8388ed1224a03bbf9ebfd8a59e3d629f23b74f1977a6dc",
       "audioHash": "a9e164b8011cac20c204b042ed097a1773c80c185fd778ada54a04d8b5558588"
     },
-    "history-britain-richard/5/moment/4": {
+    "history-britain-richard/7/moment/4": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/3a76576690112140f8819314a7f436a817cfca6b52c85601198fc334e24d8ace.mp3",
       "duration": 64.464,
       "bytes": 386784,
@@ -34185,7 +34201,7 @@
       "inputHash": "aa36700db1fa28ed7839c574a6dd05411abf4965b37ebfc72061378a232ce6d8",
       "audioHash": "3a76576690112140f8819314a7f436a817cfca6b52c85601198fc334e24d8ace"
     },
-    "history-britain-richard/5/person/0": {
+    "history-britain-richard/7/person/0": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/d76439131d8ddb93cdc7166414222575cd728efee6cc7f9a3115429fcef65ada.mp3",
       "duration": 59.616,
       "bytes": 357696,
@@ -34193,7 +34209,7 @@
       "inputHash": "9e3ced10aa9fe215e93e337e54d8b9aad859a9f6704f1124be679f702121f8d5",
       "audioHash": "d76439131d8ddb93cdc7166414222575cd728efee6cc7f9a3115429fcef65ada"
     },
-    "history-britain-richard/6": {
+    "history-britain-richard/8": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/141ad5abaed9c592cbb4f1a31759bc75f8e6c9d26cdf8c739553e6c7fee55d6a.mp3",
       "duration": 64.728,
       "bytes": 388368,
@@ -34658,20 +34674,36 @@
       "audioHash": "b81fb8fb467dbab94cb4ff85088346b1f41159a0bff114a75702d25f4a415738"
     },
     "history-plat-britain-hyw1/title": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/fb5af324aed9dcc7cdc39dc64aace7a0341afe65ee9959aa8728f131917ecbbc.mp3",
-      "duration": 11.28,
-      "bytes": 67680,
-      "textHash": "dc49809b4e83a89243fe44ab69a1dde44dd5281214af1ba5ef198b042863cb04",
-      "inputHash": "7bdbde9c5f490dc673860f5d783e63e792115911a2ca5cfbec542bff8b5b51bf",
-      "audioHash": "fb5af324aed9dcc7cdc39dc64aace7a0341afe65ee9959aa8728f131917ecbbc"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/33121db3ed51ff7a22165af722dfca2eb092b899a764402c7b60e438488d8ef3.mp3",
+      "duration": 12.552,
+      "bytes": 75312,
+      "textHash": "cb8532a2ca24d31b4eb8d74d705060925ad0a4ad1ecc5a2665a2ecfc12b073cf",
+      "inputHash": "f9edadd6975178a3f4561213a0870bbf2e792a31d90458eeda43f83069e0cb57",
+      "audioHash": "33121db3ed51ff7a22165af722dfca2eb092b899a764402c7b60e438488d8ef3"
     },
     "history-plat-britain-hyw1/0": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/18bf31a6efd39d2078587c1dd0345a967ce8156346e76db544671ccb5ef300a8.mp3",
-      "duration": 55.512,
-      "bytes": 333072,
-      "textHash": "9bb260cd04b78514fa3ba8da6873764ae49310b54ff1bb290f99fa70817b06dd",
-      "inputHash": "d7585d8520ec6ff4ee535580831fca6ef7d79f274a889a06aed16d66e833ac1f",
-      "audioHash": "18bf31a6efd39d2078587c1dd0345a967ce8156346e76db544671ccb5ef300a8"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/acde83ba13dcad3437643f95aff48a29f24685486160dc7ead0eced5607904f1.mp3",
+      "duration": 67.32,
+      "bytes": 403920,
+      "textHash": "694697f47b063d39ca69d2bc82847c0abd8e127119221e862755fdba65936c48",
+      "inputHash": "65e33d438010573a17ca5c0f32d7ec208ba5211ea116adb859961f104c91ccd5",
+      "audioHash": "acde83ba13dcad3437643f95aff48a29f24685486160dc7ead0eced5607904f1"
+    },
+    "history-plat-britain-hyw1/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/d59f537c52fa940c9e01ecd142728fe7f5c6579f21f0d6a9565c4e9100cc9129.mp3",
+      "duration": 65.376,
+      "bytes": 392256,
+      "textHash": "b16fc888d8459a3d3e91f18efe6ad3721ad7242d496ccb48b878f105c425cbef",
+      "inputHash": "74e13b3b270134b275d92ac8ea90510261d18c86c0685ad12d22e5ce4bb6c247",
+      "audioHash": "d59f537c52fa940c9e01ecd142728fe7f5c6579f21f0d6a9565c4e9100cc9129"
+    },
+    "history-plat-britain-hyw1/2": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/7878b934043d420d7e735e4fe10cdbb6a300d491a15c058b25e990dc5ca51fc8.mp3",
+      "duration": 63.384,
+      "bytes": 380304,
+      "textHash": "e8d043f41b26ddf60e8c03aa99e42df0ee2852195e6e9709c88080921d051a8b",
+      "inputHash": "3444e3c7c4b9b574ef8159103d3bd48dd4e839a2f733e39706482db85615752d",
+      "audioHash": "7878b934043d420d7e735e4fe10cdbb6a300d491a15c058b25e990dc5ca51fc8"
     },
     "history-britain-hundred-years-1/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/9ffbbc3527458bb42950810292054ae1bb8579bf29c4737e8db8cb47a1f0c20f.mp3",
@@ -35202,12 +35234,12 @@
       "audioHash": "1d6d18e0044a9a8331c4f4ff48a9509d86a046fb4558cbf7a774e8a847376148"
     },
     "history-britain-hundred-years-4/1": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/134303c89f77fc955a35d5a0be4a444bcfe659e06dc7d23d0a9ebe185ca89dc2.mp3",
-      "duration": 64.728,
-      "bytes": 388368,
-      "textHash": "148c317b7a4053868f259caf49e2303df14a0c75ec4297c214f3821b82442c14",
-      "inputHash": "a30a09ad34b81740797d7cf97dabd51bf46b67846d8f6da9fa5556ced9146e91",
-      "audioHash": "134303c89f77fc955a35d5a0be4a444bcfe659e06dc7d23d0a9ebe185ca89dc2"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/c3792a8a77f4f7de263e8bba51dffc8bafbab5dc1dba9306719e7665441d9f1a.mp3",
+      "duration": 64.896,
+      "bytes": 389376,
+      "textHash": "e8bb73ece371ad12e0213013b8ab08e2fd8ac6c32d0aac3d0b8a32fee78e4a18",
+      "inputHash": "f4435a911f8386f11f8bba56f7d53217dff46a9b20e4195958795a59072e72be",
+      "audioHash": "c3792a8a77f4f7de263e8bba51dffc8bafbab5dc1dba9306719e7665441d9f1a"
     },
     "history-britain-hundred-years-4/1/person/0": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/d94e2acd4caeed81bbd5296a4da3feb9923d5c7828e9c0de39293c0e5ee7b09f.mp3",
@@ -35298,20 +35330,36 @@
       "audioHash": "b496dffbe77fd59a5fbdb2c76a726cec9de8148db22175b5c47ab91cc81a2889"
     },
     "history-plat-britain-hyw2/title": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/8a106699d862dc1e3f0535ad91de3956cdae0436c9d1a9fbbc039b53b7d9042d.mp3",
-      "duration": 10.224,
-      "bytes": 61344,
-      "textHash": "576d7a0ce290073a03162a36efef420c27e488b573b12dd3a936438c2641cdfa",
-      "inputHash": "78c553d222410d159e1fd62115e25c4bab2513609bec34e1cf3fb5b1c7420fe4",
-      "audioHash": "8a106699d862dc1e3f0535ad91de3956cdae0436c9d1a9fbbc039b53b7d9042d"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/b72c98c692162640e4e233b4163d95a7e902554bc512c774b922afa35e052b36.mp3",
+      "duration": 13.08,
+      "bytes": 78480,
+      "textHash": "7c6f9c791bd8b91ac4927ec0dccb1d264eefdd7379e9c0e8e082810b74646369",
+      "inputHash": "807b5d30888882309874be2aadb08c5cf2caeb0aac2d60abfa686f7a19de1454",
+      "audioHash": "b72c98c692162640e4e233b4163d95a7e902554bc512c774b922afa35e052b36"
     },
     "history-plat-britain-hyw2/0": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/f8d2404c5635f5ae4376bc6c93a4fffa7ded6b41a02d77c04abd32216192f738.mp3",
-      "duration": 54.48,
-      "bytes": 326880,
-      "textHash": "e607b5f9272cd3dd765a1d4d9ce0c0034637f145a8b7deb5376d443cae145b57",
-      "inputHash": "3049dc6b99895152c852b9997c6354324593822766539e5485f9068792eb9482",
-      "audioHash": "f8d2404c5635f5ae4376bc6c93a4fffa7ded6b41a02d77c04abd32216192f738"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/8f7a7ae4d58c0fec849b13a5ab163cb8c564db8be711031eefd55fef3a4227f1.mp3",
+      "duration": 65.568,
+      "bytes": 393408,
+      "textHash": "f5c534bb73f915e89f567a765ac2739ae5e4ecad4d8ea6f203b1cb7a84c1dcf3",
+      "inputHash": "8afa232d4c39be14377148c8c43bf5aa9d0ea7753ab22976c09027f237e7bfa6",
+      "audioHash": "8f7a7ae4d58c0fec849b13a5ab163cb8c564db8be711031eefd55fef3a4227f1"
+    },
+    "history-plat-britain-hyw2/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/bbf59eba359b343c2358689ec30bde779089cfe4b8baabf4d1561cca00b183d2.mp3",
+      "duration": 62.88,
+      "bytes": 377280,
+      "textHash": "3a8bfb0bf012673fab344db3b8f169e537c6c430594d401844006f06e3df66a5",
+      "inputHash": "09a8e3be459e0b3cdb3e57f6dc5ee7d9eccfb9d7cd432006ebb45ea69072fe35",
+      "audioHash": "bbf59eba359b343c2358689ec30bde779089cfe4b8baabf4d1561cca00b183d2"
+    },
+    "history-plat-britain-hyw2/2": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/12574bffea983a3c1b1ae43b35e7386e1b8ccf434db807b6ba5583421b7b3d2e.mp3",
+      "duration": 68.952,
+      "bytes": 413712,
+      "textHash": "5dfaa1cb4278b9a0e92a0cd704cea45b07ee64022a9eeffec94d562f8631e843",
+      "inputHash": "9a8188e8842a8c22050d58bea9f59595e6fbd5fcf56baaa44d7096532323823e",
+      "audioHash": "12574bffea983a3c1b1ae43b35e7386e1b8ccf434db807b6ba5583421b7b3d2e"
     },
     "history-britain-hundred-years-5/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/40826469f4f0b1a36c734149e93f05473da0dee45b84197080da2c3ac77496db.mp3",
