@@ -66,6 +66,8 @@ for path in sorted(TESTS.glob('verify-*.js')):
                     "p.$$eval('#peopleCards .person-card',es=>es.length),5)")
     if path.name == 'verify-history.js':
         text = swap(text, path.name, "document.querySelector('#side h1')", "document.querySelector('#masthead h1')")
+        text = text.replace("page.click('[data-scene=\"3\"]')", "page.click('#sceneRail [data-scene=\"3\"]')")
+        text = text.replace("page.$eval('[data-scene=\"3\"]'", "page.$eval('#sceneRail [data-scene=\"3\"]'")
     if path.name == 'verify-tree.js':
         text = text.replace("p.keyboard.press('ArrowDown')", "p.click('#next')").replace("p.keyboard.press('ArrowUp')", "p.click('#prev')")
         text = swap(text, path.name, "; ↑↓ then stay on that line (metro style) and stop at its ends.",

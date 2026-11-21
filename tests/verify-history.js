@@ -49,7 +49,7 @@ assert.ok(!/tChrono|peakTimeline|高光年代|TIME_CH/.test(html));
    bannerIcon:!!document.querySelector('#ghBanner svg.gh-icon'),
    title:document.title,
    h1:document.querySelector('#masthead h1')?.firstChild.textContent||''}));
-  assert.deepEqual(data,{geo:33,topics:14,history:445,scenes:2167,refs:4424,seas:18,islands:35,mode:'history',
+  assert.deepEqual(data,{geo:33,topics:14,history:445,scenes:2167,refs:4449,seas:18,islands:35,mode:'history',
    buttons:['tHistory','tGeography','tTopics'],banner:'开源项目·欧洲历史笔记',
    bannerHref:'https://github.com/stabruriss/history-of-europe-in-frames',bannerIcon:true,
    title:'简明欧洲史图册',h1:'简明欧洲史图册'});
@@ -89,9 +89,9 @@ assert.ok(!/tChrono|peakTimeline|高光年代|TIME_CH/.test(html));
   await page.click('#prev');assert.equal(await page.evaluate(()=>ENTRIES[cur].id),'history-plat-america-1898');
   await page.click('#next');assert.equal(await page.evaluate(()=>ENTRIES[cur].id),'history-america-wilson');
   await page.evaluate(()=>go('history-persian-wars'));
-  await page.click('[data-scene="3"]');
+  await page.click('#sceneRail [data-scene="3"]');
   assert.equal(await page.evaluate(()=>location.hash),'#history-persian-wars/3');
-  assert.equal(await page.$eval('[data-scene="3"]',e=>e.getAttribute('aria-pressed')),'true');
+  assert.equal(await page.$eval('#sceneRail [data-scene="3"]',e=>e.getAttribute('aria-pressed')),'true');
   await checkLayout(page,'desktop');
   await page.click('#readerToggle');
   assert.equal(await page.$eval('#readerBody',e=>e.hidden),true);
@@ -153,6 +153,6 @@ assert.ok(!/tChrono|peakTimeline|高光年代|TIME_CH/.test(html));
   await animated.close();
   await wait(200);assert.equal(await page.$eval('#mapnote',e=>e.hidden),false);
   assert.deepEqual(errors,[]);
-  console.log('PASS: 33 geographic entries; 445 history sections; 2167 scenes; all geometry references; 4424 reading links; foldable reader; overlay-aware map fitting; desktop, phone, tablet and short landscape; stage hash links; mode memory; navigation; rapid animated switching; 33 Alexander events; royal extent; 18 seas and 35 islands; offline rendering; no JavaScript errors.');
+  console.log('PASS: 33 geographic entries; 445 history sections; 2167 scenes; all geometry references; 4449 reading links; foldable reader; overlay-aware map fitting; desktop, phone, tablet and short landscape; stage hash links; mode memory; navigation; rapid animated switching; 33 Alexander events; royal extent; 18 seas and 35 islands; offline rendering; no JavaScript errors.');
  }catch(e){console.error(e);process.exitCode=1;}finally{await Promise.race([browser.close(),new Promise(r=>setTimeout(r,200))]);browser.process()?.kill('SIGKILL');process.exit(process.exitCode||0);}
 })().catch(e=>{console.error(e);process.exitCode=1;});
