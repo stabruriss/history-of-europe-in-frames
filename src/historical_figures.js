@@ -8795,6 +8795,24 @@ const FIGURE_PLACES={
       -8.29
     ],
     "note": "葡萄牙北部古堡；开国国王阿方索·恩里克斯相传诞生于此并在城郊打赢独立第一战。"
+  },
+  "aus_fig_hofburg": {
+    "name": "维也纳霍夫堡皇宫",
+    "en": "Hofburg Palace, Vienna",
+    "ll": [
+      48.2065,
+      16.3655
+    ],
+    "note": "哈布斯堡王朝六百余年的冬宫与帝国中枢；斐迪南一世与梅特涅均在此发号施令。"
+  },
+  "aus_fig_schonbrunn": {
+    "name": "维也纳美泉宫",
+    "en": "Schönbrunn Palace, Vienna",
+    "ll": [
+      48.1849,
+      16.3122
+    ],
+    "note": "哈布斯堡夏宫；玛丽亚·特蕾莎扩建定型，弗朗茨·约瑟夫一世生于此宫并在此签下1914年宣战诏书。"
   }
 };
 const FIGURES={
@@ -22338,6 +22356,34 @@ const FIGURES={
       [
         "葡萄牙阿方索一世（英文资料：1128年圣马梅德之战、1139年奥里基称王、1147年克里斯本与1179年教宗诏书）",
         "https://en.wikipedia.org/wiki/Afonso_I_of_Portugal"
+      ]
+    ]
+  },
+  "ferdinand-i-emperor": {
+    "name": "斐迪南一世",
+    "en": "Ferdinand I",
+    "life": "1503—1564年",
+    "relation": "查理五世之弟 · 波希米亚与匈牙利国王（1526年起）· 神圣罗马皇帝（1556—1564年）",
+    "place": "aus_fig_hofburg",
+    "bio": "1503年生于西班牙阿尔卡拉，是神圣罗马皇帝查理五世的亲弟弟。1521年受封奥地利世袭领地，并在祖父马克西米利安一世生前订立的“维也纳双重婚约”下迎娶匈牙利与波希米亚公主安娜。1526年莫哈奇战役匈牙利国王拉约什二世战死后，斐迪南借婚约拿下波希米亚与匈牙利王冠，奠定了哈布斯堡多瑙河帝国的三块核心拼图。1529年指挥守军在维也纳顶住苏莱曼大帝围攻，1555年代表哥哥签下《奥格斯堡和约》暂息德意志教争；1556年查理五世分家退位后，斐迪南正式成为哈布斯堡维也纳东支创始人，在缺乏美洲白银的困境下为中欧王朝立起常设枢密院与财政机构，1564年病逝于维也纳。",
+    "sources": [
+      [
+        "斐迪南一世（英文资料：1503—1564年；双重婚约、莫哈奇继位、1529年维也纳保卫战与1556年分家）",
+        "https://en.wikipedia.org/wiki/Ferdinand_I,_Holy_Roman_Emperor"
+      ]
+    ]
+  },
+  "franz-joseph-i": {
+    "name": "弗朗茨·约瑟夫一世",
+    "en": "Franz Joseph I",
+    "life": "1830—1916年",
+    "relation": "奥地利皇帝（1848—1916年）· 匈牙利国王（1867—1916年）· 统治六十八年的帝国老舵手",
+    "place": "aus_fig_schonbrunn",
+    "bio": "1830年生于维也纳美泉宫。1848年革命风暴席卷帝国时，年仅十八岁的他临危继位，先靠请沙俄二十万大军镇压匈牙利保住皇冠，后又在1859年与1866年接连败给法国和普鲁士，丢掉北意并被踢出德意志。1867年被迫与匈牙利达成折中方案建立奥匈二元帝国。他在位长达六十八年，以极度勤勉刻板著称，每天清晨四五点起身批阅公文，本人成了维系十余个民族的最后一枚活招牌。晚年家庭悲剧连连：独子鲁道夫自杀、皇后伊丽莎白（茜茜公主）遇刺身亡、侄子兼皇储斐迪南在1914年萨拉热窝遭枪杀。八十四岁的他最终签下对塞尔维亚的宣战书，1916年11月在美泉宫病逝，两年后他守了一辈子的多瑙河帝国随之灰飞烟灭。",
+    "sources": [
+      [
+        "弗朗茨·约瑟夫一世（英文资料：1830—1916年；1848年登基、1867年二元妥协与1914年宣战）",
+        "https://en.wikipedia.org/wiki/Franz_Joseph_I_of_Austria"
       ]
     ]
   }
@@ -37350,6 +37396,110 @@ const FIGURE_SCENES={
       "event": "大地震后铁腕救灾重建抗震新城，处决旧贵族并首驱耶稣会",
       "note": "蓬巴尔在万圣节大地震废墟上立起防震木笼新里斯本，借刺王案打垮门阀并率先驱逐耶稣会，独揽朝纲二十二年。",
       "place": "fq_fig_lisbon"
+    }
+  ],
+  "history-austria-danube/0": [
+    {
+      "id": "ferdinand-i-emperor",
+      "when": "1526年",
+      "event": "借莫哈奇战后双重婚约拿下波希米亚与匈牙利王冠",
+      "note": "亲手拼起奥地利、波希米亚与匈牙利多瑙河三角地盘，开启哈布斯堡东支格局。",
+      "place": "aus_fig_hofburg"
+    },
+    {
+      "id": "suleiman-i",
+      "when": "1526年8月",
+      "event": "在莫哈奇击溃匈牙利大军，直逼维也纳城下",
+      "note": "奥斯曼北进把哈布斯堡推上中欧抗土最前线。",
+      "place": "aus_fig_hofburg"
+    }
+  ],
+  "history-austria-danube/2": [
+    {
+      "id": "ferdinand-ii-emperor",
+      "when": "1620—1621年",
+      "event": "白山击溃波希米亚叛军并没收新教贵族土地",
+      "note": "强推天主教化与波希米亚世袭制，在捷克埋下三百年民族心结。",
+      "place": "aus_fig_hofburg"
+    }
+  ],
+  "history-austria-baroque/1": [
+    {
+      "id": "eugene-of-savoy",
+      "when": "1697—1699年",
+      "event": "森塔大败奥斯曼，替维也纳夺回匈牙利全境",
+      "note": "被路易十四拒收的天才统帅，一手替哈布斯堡打出多瑙河大帝国版图。",
+      "place": "aus_fig_hofburg"
+    }
+  ],
+  "history-austria-baroque/2": [
+    {
+      "id": "maria-theresa",
+      "when": "1740—1780年",
+      "event": "痛失西里西亚后发起财政、常备军与义务教育改制",
+      "note": "硬扛普鲁士崛起保住帝国，为松散王朝装上近代官僚壳子。",
+      "place": "aus_fig_schonbrunn"
+    },
+    {
+      "id": "frederick-ii-prussia",
+      "when": "1740年",
+      "event": "撕毁《国事诏书》抢走奥地利富煤省西里西亚",
+      "note": "就此开启普奥长达百余年的德意志霸权双雄争霸。",
+      "place": "aus_fig_schonbrunn"
+    }
+  ],
+  "history-austria-baroque/3": [
+    {
+      "id": "joseph-ii",
+      "when": "1780—1790年",
+      "event": "连发数千敕令废农奴、强推德语统一行政却激起全境抵制",
+      "note": "临终收回多数政令，证明单一理性集权在多民族王朝里步履维艰。",
+      "place": "aus_fig_hofburg"
+    }
+  ],
+  "history-austria-metternich/1": [
+    {
+      "id": "metternich",
+      "when": "1815—1848年",
+      "event": "坐镇维也纳体系铁幕三十三年，强压自由与民族思潮",
+      "note": "看透民族国家新圣杯会拆散奥地利，却挡不住工业与识字率带来的裂变。",
+      "place": "aus_fig_hofburg"
+    }
+  ],
+  "history-austria-metternich/2": [
+    {
+      "id": "franz-joseph-i",
+      "when": "1848—1849年",
+      "event": "十八岁登基，请沙俄二十万大军镇压匈牙利起义保住皇冠",
+      "note": "靠外力保住王朝，却与匈牙利结下深仇，又在克里米亚战争得罪沙俄。",
+      "place": "aus_fig_schonbrunn"
+    }
+  ],
+  "history-austria-metternich/3": [
+    {
+      "id": "otto-von-bismarck",
+      "when": "1866年",
+      "event": "萨多瓦七周击溃奥军，把奥地利永久踢出德意志",
+      "note": "断绝维也纳西进之路，间接把奥匈逼向巴尔干绝路。",
+      "place": "aus_fig_hofburg"
+    }
+  ],
+  "history-austria-dual/0": [
+    {
+      "id": "franz-joseph-i",
+      "when": "1867年",
+      "event": "签署《奥匈折中方案》，改组为奥匈二元帝国",
+      "note": "安抚了马扎尔贵族，却让占近半人口的斯拉夫人彻底离心。",
+      "place": "aus_fig_schonbrunn"
+    }
+  ],
+  "history-austria-dual/3": [
+    {
+      "id": "franz-joseph-i",
+      "when": "1914年7月",
+      "event": "萨拉热窝刺杀后签下对塞尔维亚宣战书，引爆一战",
+      "note": "两年后病逝于美泉宫，六百四十年哈布斯堡帝国旋即在1918年解体。",
+      "place": "aus_fig_schonbrunn"
     }
   ]
 };

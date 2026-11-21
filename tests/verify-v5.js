@@ -18,17 +18,20 @@ const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','
    let coverage=0;
    for(const e of HISTORY_ENTRIES)for(let i=0;i<e.scenes.length;i++){
     const matches=HISTORY_ERAS.flatMap(era=>era.items.filter(([id,from=0,to=Infinity])=>id===e.id&&i>=from&&i<=to));
-    if(matches.length!==1)throw new Error('Era coverage: '+e.id+'/'+i);
+    const gMatches=(typeof TREE_GANTRIES==='undefined'?[]:TREE_GANTRIES).flatMap(g=>(g.items||[]).filter(([id,from=0,to=Infinity])=>id===e.id&&i>=from&&i<=to));
+    if(matches.length+gMatches.length!==1)throw new Error('Era/gantry coverage: '+e.id+'/'+i);
     go(e.id,{scene:i});
-    if(document.querySelectorAll('#toc .chip.on').length!==1)throw new Error('Selected period: '+e.id+'/'+i);
-    if(document.querySelector('#toc .active-era')?.dataset.era!==document.querySelector('#toc .chip.on')?.dataset.era)throw new Error('Current era does not contain active scene');
-    if(mobileToc.selectedOptions[0].dataset.id!==e.id)throw new Error('Mobile period mismatch');
+    if(matches.length===1){
+     if(document.querySelectorAll('#toc .chip.on').length!==1)throw new Error('Selected period: '+e.id+'/'+i);
+     if(document.querySelector('#toc .active-era')?.dataset.era!==document.querySelector('#toc .chip.on')?.dataset.era)throw new Error('Current era does not contain active scene');
+     if(mobileToc.selectedOptions[0].dataset.id!==e.id)throw new Error('Mobile period mismatch');
+    }
     coverage++;
    }
    return {oldChars:8419,newChars:HISTORY_ENTRIES.filter(e=>oldIDs.includes(e.id)).reduce((n,e)=>n+chars(e.html),0),coverage,eras:HISTORY_ERAS.length};
   });
   assert.ok(report.newChars<=report.oldChars/3,'Existing prose exceeds one-third: '+JSON.stringify(report));
-  assert.equal(report.coverage,2137);assert.equal(report.eras,103);
+  assert.equal(report.coverage,2167);assert.equal(report.eras,104);
   const concise = await page.evaluate(() => {
    const entries=HISTORY_ENTRIES.filter(e=>e.ch===3);
    return entries.map(e=>{const p=document.createElement('div');p.innerHTML=e.html;return {id:e.id,chars:p.textContent.replace(/（[A-Za-z][^）]*）/g,'').replace(/\s/g,'').length};});
@@ -38,7 +41,7 @@ const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','
   await page.evaluate(()=>go('history-celts',{scene:1}));
   assert.match(await page.$eval('#sceneContext',e=>e.textContent),/278／277/);
   assert.match(await page.$eval('#card',e=>e.textContent),/加拉太/);
-  assert.equal(await page.$$eval('#toc .chip small',es=>es.length===454&&es.every(e=>!e.textContent.includes('undefined'))),true);
+  assert.equal(await page.$$eval('#toc .chip small',es=>es.length===458&&es.every(e=>!e.textContent.includes('undefined'))),true);
   assert.equal(await page.$eval('details.sources',e=>e.open),false);
   assert.equal(await page.$eval('.active-era',e=>e.dataset.era),'hellenistic');
   assert.equal(await page.$eval('#entryEyebrow',e=>e.textContent),'希腊化时期 · 第四章');
