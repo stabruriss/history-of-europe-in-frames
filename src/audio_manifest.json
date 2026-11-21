@@ -8,11 +8,11 @@
     "volume": "+0%"
   },
   "source": {
-    "commit": "cf1d7a067c1266ec9b51b6fcef4eec6d19e984f2",
+    "commit": "d4a415810d27b521e494d8ebe9faeff6b2671c84",
     "dirty": [],
     "files": {
       "src/history_entries.js": "ba70c2157c04aeca3eb7b773c64dcbe9e54085cd4aed36cbb62e00d8d973cb20",
-      "src/history_content.json": "c3d78ab1e2951c0d88faf3b417dbc32bdca6ddfd836b10e204642adcbfdda75d",
+      "src/history_content.json": "95b4284126ff657dc3ef6bb63781105737c3b1c1bfba0618f76be0627f2cb692",
       "src/historical_figures.js": "fd314c7b8b932f245c01fd50caa17d34264467e15e899ce34b5952f2f7474081"
     }
   },
@@ -22010,116 +22010,116 @@
       "audioHash": "e8e9a435a019e721086d28dfb8c340f27f914d63c01693a6acf81a4826135cac"
     },
     "history-gantry-1914/0": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/c958ad0297c1082eb161a994c7ea9f46b4969a9c2186ede46befeef8f48f4c09.mp3",
-      "duration": 96.72,
-      "bytes": 580320,
-      "textHash": "4540ac74017ec96920fd0b4ac6a416b5345ddaf21cc142cca8b03ea195696e1f",
-      "inputHash": "d5957f2294590fb514f10874ff2ebd2443214c6a1da6738da13b37329d7059b9",
-      "audioHash": "c958ad0297c1082eb161a994c7ea9f46b4969a9c2186ede46befeef8f48f4c09"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/d88836d39212b895a7b9d13cc935f0b26c637a1d6fc9786c6f3818a60185cbc0.mp3",
+      "duration": 207.192,
+      "bytes": 1243152,
+      "textHash": "eeaeed1b5756bee7fc5640f36017cc1cb3fa17df7dd169311f9b371d0333b420",
+      "inputHash": "d0cc85b1e59c0c3a532560f77c69b2df99d7c4a482b04b374555f4398f44b3d7",
+      "audioHash": "d88836d39212b895a7b9d13cc935f0b26c637a1d6fc9786c6f3818a60185cbc0"
     },
     "history-gantry-1914/1": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/c4bb6cf637118273fec6e46a5f5389076026930822b7fba4dc34f6b2a362bf3b.mp3",
-      "duration": 120.672,
-      "bytes": 724032,
-      "textHash": "fad41639d38c99bbc08115a58079c686d4441a9137b48b07b2357eb1cdb81e45",
-      "inputHash": "ff2526679764dfd1ccb6268a7070a9c4264ed6cdf2b642d7a467bce7db0ce80e",
-      "audioHash": "c4bb6cf637118273fec6e46a5f5389076026930822b7fba4dc34f6b2a362bf3b"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/63e6d44449bcd4e05dd7a1adc948e3a9389af3b02f5c6b9c99b61ac53df5982d.mp3",
+      "duration": 218.448,
+      "bytes": 1310688,
+      "textHash": "bb653d8226fee14ce7c827dbe7588bf2541d33b23897cf72244c5be76c9bf4c9",
+      "inputHash": "dbbbd3c7f51459e934d48ec9e7ecc8c49799f9d0b89d8a53a617ace4aa096dfc",
+      "audioHash": "63e6d44449bcd4e05dd7a1adc948e3a9389af3b02f5c6b9c99b61ac53df5982d"
     },
     "history-gantry-1914/2": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/b3a82dcb3f245effea83dc95a966c2e40e32dd8a5b7084ae6c024e4cd2aa9f37.mp3",
-      "duration": 118.392,
-      "bytes": 710352,
-      "textHash": "0b6ecea1c5cc7adba36882aaa20671f73ae17903f6ef630b498a76ade3752a20",
-      "inputHash": "70864aaa717e5b747d842fac3eb4d8200789148f82903070462d00ae661c36a6",
-      "audioHash": "b3a82dcb3f245effea83dc95a966c2e40e32dd8a5b7084ae6c024e4cd2aa9f37"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/724e35d81c2f65baf65e7bf8bb3c76d57de0fcde96637547c3d99af0d0dd3b54.mp3",
+      "duration": 176.664,
+      "bytes": 1059984,
+      "textHash": "f7b8cefd4df1e33b047c044d3a42ec582c32d1c6ff5d442af10ddfe41dfb0543",
+      "inputHash": "bdfd82af732aacb53933772238201a8533b8dc2916abb2df448f431b0f3f21a2",
+      "audioHash": "724e35d81c2f65baf65e7bf8bb3c76d57de0fcde96637547c3d99af0d0dd3b54"
     },
     "history-gantry-1914/3": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/2a65888f14c3093181c5a298b6c6cdaf17f5e51d27cd24cbba97771822bc1729.mp3",
-      "duration": 117.84,
-      "bytes": 707040,
-      "textHash": "c6e36ce2a5a555f396d7390bc4e5a0dfd455b02a9300f9d7823653a7753556f7",
-      "inputHash": "b8e7f7d9116f12ba906d2abdeac16732fcf9907d4a63c4eac05f8911be9e424c",
-      "audioHash": "2a65888f14c3093181c5a298b6c6cdaf17f5e51d27cd24cbba97771822bc1729"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/a07c9f1a10aef61a1e562c1fa39b1c72926104af4252a48bb01dac31a118e088.mp3",
+      "duration": 236.28,
+      "bytes": 1417680,
+      "textHash": "c7fb39ee91fb6295c74e00e9cb7f494a52ab7b7c001413169da41f983dedcc04",
+      "inputHash": "4d9db5f75ec1bb51ef72ab92d061587bb8e1274c5c9acd91a0953f2ae4f3d4b0",
+      "audioHash": "a07c9f1a10aef61a1e562c1fa39b1c72926104af4252a48bb01dac31a118e088"
     },
     "history-gantry-1914/4": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/f4c6a5c016113e7e5ef22a7fcc4186aa3023b6e6c1f0491887e7258188fa3e1c.mp3",
-      "duration": 103.056,
-      "bytes": 618336,
-      "textHash": "9656b85cd86d8e24b23ded7bda80c830c5df5ce9f0ac877f6edf71602e1008f0",
-      "inputHash": "c25de8ce36e1a5e9c2d10b74353218ed7ba4d868a7a2aad9708c0ead62178a7c",
-      "audioHash": "f4c6a5c016113e7e5ef22a7fcc4186aa3023b6e6c1f0491887e7258188fa3e1c"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/9da165ab9b68afd23cc0b5bffa28b439bd13662df2a23e1d1c234106d8214127.mp3",
+      "duration": 376.44,
+      "bytes": 2258640,
+      "textHash": "cbc094d4882b613b2c8238eefd826981e87505938d2bd70ff66b311c9d497671",
+      "inputHash": "5037f8240ef6a16980cfe3e75bbeb73aeb123658dc43e6f889a55d387d8e4554",
+      "audioHash": "9da165ab9b68afd23cc0b5bffa28b439bd13662df2a23e1d1c234106d8214127"
     },
     "history-gantry-1914/5": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/89c67c6c93b851f0c6c708c60e4adc667265c550beda8fdbcff0abb8cb7f30ff.mp3",
-      "duration": 119.088,
-      "bytes": 714528,
-      "textHash": "02f8951111671b639560467e67fdffaae8d8a6ba1899b60c86a1a4a73d0a55ca",
-      "inputHash": "af97bf354f64d9043b1e4906f3dc1192deda4c3cd259bd5bbee8393ec7508bfb",
-      "audioHash": "89c67c6c93b851f0c6c708c60e4adc667265c550beda8fdbcff0abb8cb7f30ff"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/988e1ac5d43507b3f46333c94043592feed2901c7c4fe141a05e23e90292cfa2.mp3",
+      "duration": 367.968,
+      "bytes": 2207808,
+      "textHash": "b05025b0fee62d3d6a0717e7c151b51809cfeb9ee46e00a6a969f461d46f1880",
+      "inputHash": "b34541d5658549b175ef481cdccd2c3b7f2dd7e0cdfd940589e45e2da5af7ee1",
+      "audioHash": "988e1ac5d43507b3f46333c94043592feed2901c7c4fe141a05e23e90292cfa2"
     },
     "history-gantry-1914/6": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/66739605f8cf09472268a1e20d0e7c439a74aa4c3246cfd39d4a0bed2acca9a1.mp3",
-      "duration": 141.336,
-      "bytes": 848016,
-      "textHash": "afc5010c25987efd1f620b87592dbd643821db2d526d08195e39dec8e7d3828c",
-      "inputHash": "43209eb85ed5a9dbe2b2f4509d94f2440bead923b6ad0d74253cee6666dd90e1",
-      "audioHash": "66739605f8cf09472268a1e20d0e7c439a74aa4c3246cfd39d4a0bed2acca9a1"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/782e92b6234a6120e233e4d06168af8c18e48d8ecf000a2d575f5b69007f40db.mp3",
+      "duration": 433.656,
+      "bytes": 2601936,
+      "textHash": "2b7d9edbbdd496dd947b96d55d355c1063dcd85e421042458c7f62ab32f17f3f",
+      "inputHash": "94fd9b0b34876ae41f610ec95f0796afae062d6595ebca9e2764fc2320fa468b",
+      "audioHash": "782e92b6234a6120e233e4d06168af8c18e48d8ecf000a2d575f5b69007f40db"
     },
     "history-gantry-1914/7": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/3aa857757c500622974fe74aa3583f8dbc3983109721a6b583f88336d73d3b24.mp3",
-      "duration": 134.136,
-      "bytes": 804816,
-      "textHash": "88e61361ac2c104ca3d49df38db503bf3ba842acc0f4e2e5fe54e7ca6aa39dc3",
-      "inputHash": "6a6e8e1bc79ecec0d3c524ea3e65d7380da517e8c3e2bc383d3fd23460a854de",
-      "audioHash": "3aa857757c500622974fe74aa3583f8dbc3983109721a6b583f88336d73d3b24"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/213936af43e417222c8d4180e2d376bfd37ede4ded0d33f4307967ad71ab3519.mp3",
+      "duration": 184.344,
+      "bytes": 1106064,
+      "textHash": "ee79c5dd0dfaf93784e769e02aca1c55ed423d145c959190f38f2617b0fe268c",
+      "inputHash": "cc84a13978e4430ac80579e0b874d5cdde771fb2d3e4c846c6c681994ee18575",
+      "audioHash": "213936af43e417222c8d4180e2d376bfd37ede4ded0d33f4307967ad71ab3519"
     },
     "history-gantry-1914/8": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/8e4724995f403d7c171d3acdf5065320684f3f5ccbc15429e61e5d90d7875fe1.mp3",
-      "duration": 129.24,
-      "bytes": 775440,
-      "textHash": "32735cd75d2f9891ac4fe46fa1bc59da2c9237223e03c7d6b7d52b1641556a98",
-      "inputHash": "10f1ecc29a115eae8d8fdb3b5ed5c52339421ce9957bd311c1baae649bda7e1d",
-      "audioHash": "8e4724995f403d7c171d3acdf5065320684f3f5ccbc15429e61e5d90d7875fe1"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/da85d67bf80b8e62d4d55fdc330b230e797948d8e42977aec65025ad80946987.mp3",
+      "duration": 227.328,
+      "bytes": 1363968,
+      "textHash": "1fa1db382c59acbf9bc81d51b1191f15b8d82c2f54f0c9daae324d3572dac3af",
+      "inputHash": "4b23d5bb5156dae37149863469f4a86774af8076ba0133ec26f1a6ca18ced143",
+      "audioHash": "da85d67bf80b8e62d4d55fdc330b230e797948d8e42977aec65025ad80946987"
     },
     "history-gantry-1914/9": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/f525e75050a6d19d4e72e44c5c78600b748834dbfa708ac86910650a19c038de.mp3",
-      "duration": 111.048,
-      "bytes": 666288,
-      "textHash": "e74ac5c8807ebe6c5277fee164854783a2fd4180a0504a4d757edb70741b16b0",
-      "inputHash": "79a3f3a27b8703506d2698a3814e63c1163a54a9602cc40de86df5959a9918d7",
-      "audioHash": "f525e75050a6d19d4e72e44c5c78600b748834dbfa708ac86910650a19c038de"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/b22db96a9edc80744798e32611877d6a8d0a1fbf7e74778d707c8735f2536463.mp3",
+      "duration": 226.992,
+      "bytes": 1361952,
+      "textHash": "f80d982f8f883362c12d4acfcc7f2cf55b447308443c34767a520963656de84d",
+      "inputHash": "0a52b006a6f39c5957996aa919bc175459e50f4a562e75c7df349a1f41c3c3c7",
+      "audioHash": "b22db96a9edc80744798e32611877d6a8d0a1fbf7e74778d707c8735f2536463"
     },
     "history-gantry-1914/10": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/12725adc02c922520e7a106837b2289742d6a5ddd04770b66feb4539398746a9.mp3",
-      "duration": 113.952,
-      "bytes": 683712,
-      "textHash": "2ebcd6fb240b66abc3aa5fb33dc30a076b7acac994fdcbc8bc6a75bba7ff116e",
-      "inputHash": "40fc0c92a8ed183dd6332935f15c21814fba762db91487e5ae2df20cdea228ef",
-      "audioHash": "12725adc02c922520e7a106837b2289742d6a5ddd04770b66feb4539398746a9"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/c33a12d6ea1d7633c3ad2f3e3d5afce486bb4e5ef8635bfbafb13fc2e25ece0c.mp3",
+      "duration": 124.104,
+      "bytes": 744624,
+      "textHash": "20c853be197c7a3894e6302107f81cc96febd050e9ff7ee47ef2de04f028833a",
+      "inputHash": "122e0d126156b84526c0f27eef3ab12a33cd1a44e57d5e07692b9e4534239206",
+      "audioHash": "c33a12d6ea1d7633c3ad2f3e3d5afce486bb4e5ef8635bfbafb13fc2e25ece0c"
     },
     "history-gantry-1914/11": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/31aded5bab9dd7ed18309355cf7956fd30c9ca1f3d950d6a2745ae08474266ff.mp3",
-      "duration": 110.184,
-      "bytes": 661104,
-      "textHash": "7fa72fabd7457e9b3f4eef4b4726912e54ee2a18fa7933f3ee53a18df65d3650",
-      "inputHash": "196727b9e68977cf11ec35030d255e15ce40bc3fe2b9c15c2af3c8acc91da6c5",
-      "audioHash": "31aded5bab9dd7ed18309355cf7956fd30c9ca1f3d950d6a2745ae08474266ff"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/5463dccbd80482bd68ab78e683646c6b680d6a37292624ac476f0f9a6f582f30.mp3",
+      "duration": 181.2,
+      "bytes": 1087200,
+      "textHash": "d3660781cf011af897795cf629a744bd00bcfd462618ec4eb9abebab9e9d07b5",
+      "inputHash": "c1aecf8f539d593b71690032ea1de21de6cc76ccb0b44d6805d1041f5dea9344",
+      "audioHash": "5463dccbd80482bd68ab78e683646c6b680d6a37292624ac476f0f9a6f582f30"
     },
     "history-gantry-1914/12": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/00f40eb79991dc613e1440f30b35ef4c30b1f23b3718f088f9db5aebedca82fb.mp3",
-      "duration": 117.336,
-      "bytes": 704016,
-      "textHash": "2c3e19098753e2e944b428763621f12652ea13b4bed4d2c27b02d0ae1e5437cd",
-      "inputHash": "f2172c06a9c9046386c3b7bf1c5c79f394aa776187e818ccbd31ca067957bb5e",
-      "audioHash": "00f40eb79991dc613e1440f30b35ef4c30b1f23b3718f088f9db5aebedca82fb"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/2ee29222458883cdb42ba682679b3bb1d6f189d5fda5c209576ec47b71305477.mp3",
+      "duration": 183.72,
+      "bytes": 1102320,
+      "textHash": "ad28cfa9c063d48479bc3bc3d7a63d31750b74608db1c24cc0c11b5e96b588b9",
+      "inputHash": "c5bc94d0ac80f52169ffafe29e43e1488ca3557f8114afb96cca34ae1ccf2cf0",
+      "audioHash": "2ee29222458883cdb42ba682679b3bb1d6f189d5fda5c209576ec47b71305477"
     },
     "history-gantry-1914/13": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/bc10c238745da49a0ba626e2d747ca99a2d13c586df5f70a734a064cb95ea45d.mp3",
-      "duration": 103.752,
-      "bytes": 622512,
-      "textHash": "60d84821e1dad7b47a89d26ecfdb543150c790ceacf622c218857d7dac20cf3f",
-      "inputHash": "ed7c83739474e7b8f5ebfe1a80899d8357637f7793ce35170d81cc135af626fa",
-      "audioHash": "bc10c238745da49a0ba626e2d747ca99a2d13c586df5f70a734a064cb95ea45d"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/fd39c1355e2e0a03140fb2e10fc8ffbf1937c5e37a6cdcd7230241afb959b936.mp3",
+      "duration": 245.112,
+      "bytes": 1470672,
+      "textHash": "ff9446138cfd08b1426af545e2792b2fe4c3b5bcd422f8c5b3ace2cb39bf7618",
+      "inputHash": "c9a62a3e63edd354ef72bbdbebdb53a8619c66338206a960a328ab62398ff54b",
+      "audioHash": "fd39c1355e2e0a03140fb2e10fc8ffbf1937c5e37a6cdcd7230241afb959b936"
     },
     "history-gantry-1914/13/box/0": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/c91c3fb3875de8a1e0bc1cdb1aa78947feaa7674e8763455127b2c86fa550ce7.mp3",
