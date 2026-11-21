@@ -229,6 +229,7 @@ print(json.dumps({'manifest':manifest,'report':report}, ensure_ascii=False))
 
   const data = await p.evaluate(() => ({
     routes:Object.fromEntries(metroUI.data.lines.map(l => [l.id, metroUI.data.lineStops.get(l.id).flatMap(s => Array.from({length:s.to - s.from + 1}, (_, i) => s.id + '/' + (s.from + i)))])),
+    gantries:Object.fromEntries([...(metroUI.data.gantries || new Map())].map(([id, g]) => [id, g.stops.flatMap(s => Array.from({length:s.to - s.from + 1}, (_, i) => s.id + '/' + (s.from + i)))])),
     topics:TOPIC_ENTRIES.map(t => t.id),
     scenes:HISTORY_ENTRIES.flatMap(e => e.scenes.map((_, i) => e.id + '/' + i))
   }));
@@ -256,7 +257,20 @@ print(json.dumps({'manifest':manifest,'report':report}, ensure_ascii=False))
     assert(end >= 0, 'Scoped cutoff disappeared from line: ' + id);
     scopedRoutes[id] = route.slice(0, end + 1);
   }
-  const scenes = new Set([...Object.values(scopedRoutes).flat(), ...(scope.extraIds || []).filter(id => sourceScenes.has(id))]);
+  // A gantry spans lines without being a stop on any: the plan names it apart from the lines, and no line holds its scenes.
+  const scopedGantries = {};
+  assert.equal(new Set(scope.gantries || []).size, (scope.gantries || []).length, 'Duplicate scope gantries');
+  for (const id of scope.gantries || []) {
+    const span = data.gantries[id];
+    assert(span?.length, 'Unknown or empty scoped gantry: ' + id);
+    assert.equal(new Set(span).size, span.length, 'Duplicate scene within gantry: ' + id);
+    for (const key of span) {
+      assert(sourceScenes.has(key), 'Gantry references a nonexistent scene: ' + key);
+      assert(!Object.values(data.routes).some(route => route.includes(key)), 'Gantry scene sits on a line: ' + key);
+    }
+    scopedGantries[id] = span;
+  }
+  const scenes = new Set([...Object.values(scopedRoutes).flat(), ...Object.values(scopedGantries).flat(), ...(scope.extraIds || []).filter(id => sourceScenes.has(id))]);
   const titles = new Set([...scenes].map(key => key.split('/')[0] + '/title'));
   for (const id of scope.extraIds || []) if (id.endsWith('/title')) titles.add(id);
   const topics = new Set(data.topics);
@@ -285,10 +299,12 @@ for asset_id in ids:
     characters += record['characters']
 counts = Counter(kinds.values())
 names = {'scenes':'scene', 'titles':'title', 'topics':'topic', 'moments':'moment', 'boxes':'box', 'people':'person'}
-print(json.dumps({'ids':ids, 'hashes':hashes, 'kinds':kinds,
+print(json.dumps({'ids':ids, 'hashes':hashes, 'kinds':kinds, 'gantries':{g['id']:g['scenes'] for g in snapshot.get('gantries', []) if g['scenes']},
     'counts':{**{name:counts[kind] for name,kind in names.items()}, 'assets':len(ids), 'characters':characters}}, ensure_ascii=False))
 `, scope);
   const expectedIds = new Set(material.ids), hashes = material.hashes, plans = expectedOfficial.tracks;
+  // The page's gantry queue and the audio tools read TREE_GANTRIES the same way: same gantries, same scenes, same order.
+  assert.deepEqual(data.gantries, material.gantries, 'Page and audio tools must expand every written gantry identically');
   const kindIds = kind => material.ids.filter(id => material.kinds[id] === kind);
   assert.deepEqual(sorted(kindIds('scene')), sorted(scenes), 'Canonical bodies must match real metro line ranges');
   assert.deepEqual(sorted(kindIds('topic')), sorted(topics), 'Canonical topics must cover complete source topics');
