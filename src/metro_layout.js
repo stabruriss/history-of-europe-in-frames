@@ -9,6 +9,8 @@
   const RAIL_HALF = 3, GLYPH_R = 4.5, BUNDLED_R = 3.6, RING_R = 5.5, CAPSULE_R = 6.5;
   const NAME_H = 15, NAME_DATE_H = 27, FS = 12.5, MIN_STOP_GAP = 32;
   const FLAG_H = 20, FLAG_POINT = 8, SPARE_LANE = 48;
+  // A gantry (龙门架, 老无 2026-11-20) spans every line at one year; stations, names and flags keep out of its corridor.
+  const GANTRY_HALF = 18, PLANNED_HALF = 14, GANTRY_CLEAR = 30, SIGN_W = 190, SIGN_H = 54, PLANNED_SIGN_W = 150, PLANNED_SIGN_H = 46;
 
   const textWidth = (text, size) => {
     let w = 0;
@@ -36,7 +38,9 @@
     return side(A, B, C) * side(A, B, D) < -1e-6 && side(C, D, A) * side(C, D, B) < -1e-6;
   }
 
-  function build({ stations, lines, lineStops, design, periods, ends }) {
+  function build({ stations, lines, lineStops, design, periods, ends, gantries }) {
+    const gates = (gantries || []).filter(g => g && Number.isFinite(g.year))
+      .map(g => ({ id: g.id, year: g.year, planned: Boolean(g.planned), half: g.planned ? PLANNED_HALF : GANTRY_HALF, name: String(g.name || ''), code: `${g.code || ''} · ${g.yearLabel || ''}${g.planned ? ' · 规划中' : ''}` }));
     // Two stops of one line can share an anchor year; keep them in route order.
     const tx = new Map(stations.map(s => [s.key, s.t]));
     for (const line of lines) {
@@ -57,7 +61,7 @@
       return [id, [[tx.get(seq[0].key), y], [tx.get(seq[seq.length - 1].key), y]]];
     }));
     const knotsOf = id => design.routes[id] || spareRoutes[id];
-    const allTimes = [...new Set([...tx.values(), ...lines.flatMap(l => knotsOf(l.id).map(k => k[0])), ...design.gaps.flatMap(g => [g[0], g[1]])])].sort((a, b) => a - b);
+    const allTimes = [...new Set([...tx.values(), ...lines.flatMap(l => knotsOf(l.id).map(k => k[0])), ...design.gaps.flatMap(g => [g[0], g[1]]), ...gates.map(g => g.year)])].sort((a, b) => a - b);
     const index = new Map(allTimes.map((t, i) => [t, i]));
     const learned = new Map();
     const addLearned = (a, b, d) => {
@@ -103,6 +107,21 @@
         }
       }
       for (const [a, b, d] of design.gaps) add(a, b, d);
+      // Every station stands clear of a gantry's corridor on its own side of the year, with room for a centred name;
+      // a line's first and last stops also leave room for the line's signpost.
+      for (const g of gates) {
+        for (const s of stations) {
+          const t = tx.get(s.key), d = g.half + Math.max(GANTRY_CLEAR, labelWidth(s) / 2 + 6);
+          if (t <= g.year) add(t, g.year, d); else add(g.year, t, d);
+        }
+        for (const line of lines) {
+          const seq = lineStops.get(line.id);
+          if (!seq.length) continue;
+          const flag = textWidth(line.name, 11) + 12 + FLAG_POINT + 12, first = tx.get(seq[0].key), last = tx.get(seq[seq.length - 1].key);
+          if (last <= g.year) add(last, g.year, g.half + flag);
+          if (first > g.year) add(g.year, first, g.half + flag);
+        }
+      }
       for (const { a, b, d } of learned.values()) add(a, b, d);
       xs = new Array(allTimes.length);
       xs[0] = 170;
@@ -150,11 +169,13 @@
     };
 
     const nodes = new Map(stations.map(s => [s.key, { key: s.key, s }]));
-    let routes = new Map(), segments = [], links = [], tightList = [], flagList = [];
+    let routes = new Map(), segments = [], links = [], tightList = [], flagList = [], gateBoxes = [];
+    const hitsGate = box => gateBoxes.find(g => overlaps(box, g.box));
 
     function geometry() {
       solveX();
       routes = new Map(); segments = []; tightList = []; links = [];
+      gateBoxes = gates.map(g => ({ id: g.id, year: g.year, box: { x0: X(g.year) - g.half - 3, x1: X(g.year) + g.half + 3, y0: -1e7, y1: 1e7 } }));
       for (const line of lines) {
         const { pts, tight } = routePoints(line.id);
         routes.set(line.id, pts);
@@ -212,7 +233,8 @@
           const free = (box, onRail) => !segments.some(s => (!onRail || s.line !== line.id) && segmentHitsBox(s, box, 1.5))
             && !links.some(l => segmentHitsBox(l, box, 1.5))
             && !glyphs.some(g => g.key !== n.key && overlaps(box, g.box))
-            && !out.some(f => overlaps(box, f.box));
+            && !out.some(f => overlaps(box, f.box))
+            && !hitsGate(box);
           const tip = tips.find(([tipX, tipY]) => free(boxAt(tipX, tipY), tipY === y));
           const [tipX, tipY] = tip || tips[0];
           out.push({ line: line.id, name: line.name, c: line.c, end, free: Boolean(tip), onRail: tipY === y, tipX, tipY, w, h: FLAG_H, box: boxAt(tipX, tipY) });
@@ -241,6 +263,8 @@
         for (const l of links) if (segmentHitsBox(l, box, 2)) { hits.push({ kind: 'link', key: l.key }); break; }
         for (const g of glyphs) if (g.key !== n.key && overlaps(box, g.box)) { hits.push({ kind: 'glyph', key: g.key }); break; }
         for (const p of placed) if (overlaps(box, p.box)) { hits.push({ kind: 'label', key: p.key, flag: p.flag }); break; }
+        const gate = hitsGate(box);
+        if (gate) hits.push({ kind: 'gantry', key: gate.id, year: gate.year });
         return hits;
       };
       for (const n of ordered) {
@@ -279,6 +303,8 @@
           unresolved.push({ key: n.key, title: n.s.title, hits: best.hits });
           // Only a clash with another name can be cured by moving stations apart.
           for (const h of best.hits) {
+            // A name that will not fit beside a gantry moves its station further from the gantry.
+            if (h.kind === 'gantry') { addLearned(tx.get(n.key), h.year, Math.abs(n.x - X(h.year)) + 40); continue; }
             if (h.flag || (h.kind !== 'label' && h.kind !== 'link')) continue;
             addLearned(tx.get(n.key), tx.get(h.key), Math.abs(n.x - nodes.get(h.key).x) + 18);
           }
@@ -306,7 +332,7 @@
     const periodMarks = [], ticks = [], periodBoxes = [];
     const glyphBoxes = allGlyphs().map(g => g.box);
     const labelBoxes = result.placed.map(p => p.box);
-    const railFree = box => !segments.some(s => segmentHitsBox(s, box, RAIL_HALF)) && !links.some(l => segmentHitsBox(l, box, 2));
+    const railFree = box => !segments.some(s => segmentHitsBox(s, box, RAIL_HALF)) && !links.some(l => segmentHitsBox(l, box, 2)) && !hitsGate(box);
     for (const line of lines) {
       const seq = lineStops.get(line.id), list = periods[line.id] || [], pts = routes.get(line.id);
       if (!seq.length) continue;
@@ -408,16 +434,38 @@
       }
     }
     const boxes = [...nodes.values()];
+    // Gantries: where each crosses the lines alive at its year, and a sign above every name within its width.
+    const gantryList = gates.map(g => {
+      const x = X(g.year), crossings = [];
+      for (const line of lines) {
+        const pts = routes.get(line.id);
+        if (!pts?.length || x <= pts[0].x || x >= pts[pts.length - 1].x) continue;
+        crossings.push({ line: line.id, y: yOn(pts, x) });
+      }
+      crossings.sort((a, b) => a.y - b.y);
+      // The sign is as wide as its words need: the name, and the code line with its letter spacing.
+      const w = Math.max(g.planned ? PLANNED_SIGN_W : SIGN_W, textWidth(g.name, g.planned ? 13 : 14) + 28, textWidth(g.code, 10) + [...g.code].length * 1.4 + 24), h = g.planned ? PLANNED_SIGN_H : SIGN_H;
+      // A gantry past the end of every line still stands across the whole map.
+      const ys = crossings.length ? crossings.map(c => c.y) : segments.flatMap(s => [s.y1, s.y2]), under = boxes.filter(n => n.label.box.x1 > x - w / 2 && n.label.box.x0 < x + w / 2).map(n => n.label.box.y0);
+      const top = Math.min((ys.length ? Math.min(...ys) : 0) - 24, ...under.map(y => y - 10));
+      return { id: g.id, year: g.year, planned: g.planned, x, half: g.half, top, bottom: (ys.length ? Math.max(...ys) : top + 60) + 24, crossings, sign: { w, h, x0: x - w / 2, x1: x + w / 2, y0: top - h, y1: top } };
+    });
+    const intrusions = [];
+    for (const g of gateBoxes) for (const n of boxes) {
+      if (n.clusters.some(c => overlaps(c.box, g.box))) intrusions.push({ gantry: g.id, station: n.s.title, what: 'glyph' });
+      if (overlaps(n.label.box, g.box)) intrusions.push({ gantry: g.id, station: n.s.title, what: 'label' });
+    }
+    for (const g of gateBoxes) for (const f of flagList) if (f.free && overlaps(f.box, g.box)) intrusions.push({ gantry: g.id, station: f.line + ':' + f.end, what: 'flag' });
     const world = {
       minX: Math.min(...boxes.map(n => n.label.box.x0), ...segments.map(s => s.x1), ...flagList.map(f => f.box.x0)),
       maxX: Math.max(...boxes.map(n => n.label.box.x1), ...segments.map(s => s.x2), ...flagList.map(f => f.box.x1)),
-      minY: Math.min(...boxes.map(n => n.label.box.y0), ...segments.map(s => Math.min(s.y1, s.y2))),
+      minY: Math.min(...boxes.map(n => n.label.box.y0), ...segments.map(s => Math.min(s.y1, s.y2)), ...gantryList.map(g => g.sign.y0)),
       maxY: Math.max(...boxes.map(n => n.label.box.y1), ...segments.map(s => Math.max(s.y1, s.y2))),
     };
     const bendsByLine = Object.fromEntries(lines.map(l => [l.id, Math.max(0, (routes.get(l.id)?.length || 2) - 2)]));
 
     return {
-      nodes, routes, segments, ticks, periodMarks, flags: flagList, notes, X: XAt, world,
+      nodes, routes, segments, ticks, periodMarks, flags: flagList, notes, X: XAt, world, gantries: gantryList,
       report: {
         iterations,
         undrawnLines: undrawn,
@@ -447,6 +495,8 @@
           return bad;
         }),
         labelsWithDates: boxes.filter(n => n.label.withDate).length,
+        gantries: gantryList.map(g => ({ id: g.id, x: Math.round(g.x), lines: g.crossings.map(c => c.line) })),
+        gantryIntrusions: intrusions,
       },
     };
   }

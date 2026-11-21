@@ -80,7 +80,9 @@ function noteProgress(force = false) {
   const now = Date.now();
   if (force || now - progressSavedAt > 3000) { progressSavedAt = now; saveProgress(); }
 }
-const lineText = l => l ? l.name + (l.kind === 'branch' ? '支线' : '线') : '';
+const lineText = l => !l ? '' : l.kind === 'gantry' ? `《${l.name}》` : l.name + (l.kind === 'branch' ? '支线' : '线');
+// The route being read: the gantry the reader stands in, otherwise the line being ridden.
+const routeHere = () => { const s = window.metroUI?.state(); return s ? s.gantry || s.line : null; };
 function syncOptionInputs() {
   for (const id of extrasControls) $(id).checked = includeExtras;
   for (const id of peopleControls) $(id).checked = includePeople;
@@ -114,7 +116,12 @@ function track(id, scene = 0) {
     parts:Object.freeze(parts), titlePart:planned && plan.titleId ? makePart(plan.titleId, 'title', e.title, 'title') : null});
 }
 function lineSnapshot(id) {
-  const metro = window.metroUI, source = metro?.data.lines.find(l => l.id === id), stops = metro?.data.lineStops.get(id);
+  const metro = window.metroUI, gantry = metro?.data.gantries?.get(id);
+  if (gantry?.stops?.length) { // a gantry reads like a line: one stop per scene, in its own order
+    const tracks = gantry.stops.map(s => track(s.id, s.from));
+    return {line:Object.freeze({id:gantry.id, name:gantry.name, kind:'gantry'}), tracks};
+  }
+  const source = metro?.data.lines.find(l => l.id === id), stops = metro?.data.lineStops.get(id);
   if (!source || !stops?.length) return null;
   const tracks = [];
   // These are the actual metro stations, including split sections. No ancestor lines or inferred route.
@@ -205,7 +212,7 @@ function remainingSeconds() {
     if (q?.asset) { afterGap = false; total += q.asset.duration; }
     else if (!afterGap && NOTICE) { afterGap = true; total += NOTICE.duration; }
   }
-  if (mode === 'line' && END) total += END.duration;
+  if (mode === 'line' && END && line?.kind !== 'gantry') total += END.duration;
   return total / speed;
 }
 // The next clip the player would load, used only to warm the browser cache while this one plays.
@@ -234,7 +241,7 @@ function refreshReading() {
   actions.hidden = !t?.planned || !t.parts[0]?.asset;
   if (!t) return;
   const historical = t.kind === 'history', singleMissing = missing([t]);
-  const route = historical ? lineSnapshot(window.metroUI?.state().line) : null;
+  const route = historical ? lineSnapshot(routeHere()) : null;
   const count = route ? missing(route.tracks) : 0;
   const onLine = route?.tracks.some(x => x?.key === t.key);
   const gapNote = n => `所选内容有 ${n} 段音频暂缺，读到时提示并接着读`, hasBody = Boolean(t.planned && t.parts[0]?.asset);
@@ -501,7 +508,7 @@ function streamFill(s) {
   if (s.segs.length - 1 - s.segs.indexOf(s.cur) >= 2) return;
   const last = s.segs[s.segs.length - 1], gen = s.gen;
   let n = last.closing ? null : planNext(last.ti, last.pi, last.gap);
-  if (!n && !last.closing && mode === 'line' && END) n = {ti:last.ti, pi:last.pi, gap:false, closing:true, url:END.url};
+  if (!n && !last.closing && mode === 'line' && END && line?.kind !== 'gantry') n = {ti:last.ti, pi:last.pi, gap:false, closing:true, url:END.url};
   const end = () => streamTask(s, () => {
     if (gen === s.gen && s === stream && s.ms.readyState === 'open' && !s.sb.updating) { s.ms.endOfStream(); s.ended = true; }
   });
@@ -604,7 +611,7 @@ function advance({autoplay = wantsPlay, afterGap = false} = {}) {
   const next = current().parts.findIndex((p, i) => i > partIndex && enabled(p));
   if (next >= 0) loadClip(next, {autoplay, afterGap});
   else if (mode === 'line' && at < queue.length - 1) selectTrack(at + 1, {automatic:true, autoplay, afterGap});
-  else if (mode === 'line' && END && autoplay) playEnd();
+  else if (mode === 'line' && END && line?.kind !== 'gantry' && autoplay) playEnd();
   else finishSelection();
 }
 // The element path's end of a line (the stream appends the notice as its last segment instead).
@@ -627,7 +634,7 @@ function changeOptions(ev) {
 }
 function start(continuous) {
   const t = reading(); if (!t) return;
-  const route = continuous && t.kind === 'history' ? lineSnapshot(window.metroUI?.state().line) : null;
+  const route = continuous && t.kind === 'history' ? lineSnapshot(routeHere()) : null;
   const tracks = route ? route.tracks : [t], index = tracks.findIndex(x => x?.key === t.key);
   if ((continuous && !route) || index < 0) { refreshReading(); return; }
   queue = Object.freeze([...tracks]); mode = route ? 'line' : 'single'; line = route?.line || null;

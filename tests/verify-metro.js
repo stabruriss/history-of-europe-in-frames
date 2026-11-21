@@ -34,6 +34,7 @@ const settle=p=>p.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestA
   assert.equal(counts.starts,counts.lines);assert.equal(counts.ends,counts.lines);assert.equal(counts.slices,counts.sliceData,'every time slice is on the ruler');assert.equal(counts.visibleFlags,counts.lines,'every line has a signpost at whole-map zoom');
   const layout=await p.evaluate(()=>metroUI.layoutReport());
   assert.deepEqual(layout.undrawnLines,[],'a new line needs its route drawn in src/metro_design.js');
+  assert.deepEqual(layout.gantryIntrusions||[],[],'a station, name or flag stands inside a gantry');
   assert.deepEqual(layout.unresolvedLabels,[],'station names collide');assert.deepEqual(layout.foreignStations,[],'a rail runs through a station it does not serve');assert.deepEqual(layout.railOverlaps,[],'lines overlap along a rail');
   assert.deepEqual(layout.routeOrderViolations,[],'a line runs backward in time');assert.deepEqual(layout.periodsUnplaced,[],'a period mark has no place');assert.deepEqual(layout.tightBends,[],'a lane change is not a clean 45 degree run');
   assert.ok(layout.bends<=40,'too many bends: '+layout.bends);assert.deepEqual(layout.linkThroughStations,[],'a dashed link runs through a station');assert.deepEqual(layout.linkOnRail,[],'a dashed link runs along a rail');assert.deepEqual(layout.flagsWithoutRoom,[],'a signpost has no room');
@@ -159,8 +160,9 @@ const settle=p=>p.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestA
   const sweep=await pageAt(1440,900,'#history-migration');
   const landed=await sweep.evaluate(()=>{
    const out={scenes:0,noMarks:[],marksOut:[],textWrong:[],overflow:[],chipWrong:[]};
-   for(const s of metroUI.data.stations)for(let i=s.from;i<=s.to;i++){
-    metroUI.board(s.lines[0],{key:s.key});go(s.id,{scene:i});out.scenes++;const name=s.id+'/'+i,view=map.getBounds();
+   const visits=[...metroUI.data.stations.flatMap(s=>Array.from({length:s.to-s.from+1},(_,k)=>({s,i:s.from+k}))),...[...metroUI.data.gantries.values()].flatMap(q=>q.stops.map(st=>({s:{id:st.id},i:st.from})))];
+   for(const {s,i} of visits){
+    if(s.lines)metroUI.board(s.lines[0],{key:s.key});go(s.id,{scene:i});out.scenes++;const name=s.id+'/'+i,view=map.getBounds();
     const points=[];group.eachLayer(l=>{if(l.getLatLng)points.push(l.getLatLng())});
     if(!group.getLayers().length)out.noMarks.push(name);
     if(!points.every(q=>view.contains(q)))out.marksOut.push(name);
@@ -314,7 +316,93 @@ const settle=p=>p.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestA
    await r.evaluate(()=>localStorage.removeItem('atlas-reader-pos-v1'));await r.close();
   }
 
+  /* ---------- Gantries (龙门架, 老无 2026-11-20): across the lines on the map, a mark and a note on each line it lists, a platform of its own ---------- */
+  {
+   const G=await pageAt(1440,900);
+   const data=await G.evaluate(()=>{
+    const list=typeof TREE_GANTRIES==='undefined'?[]:TREE_GANTRIES;
+    const open=list.filter(g=>!g.planned&&g.items?.[0]?.[0]);
+    return {count:list.length,planned:list.filter(g=>g.planned).map(g=>g.id),report:metroUI.layoutReport().gantries.map(g=>g.id),
+     open:open.map(g=>({id:g.id,name:g.name,code:g.code,entry:g.items[0][0],chips:g.chips||[],lineMap:g.lineMap||{},scenes:ENTRIES.find(e=>e.id===g.items[0][0])?.scenes.length||0})),
+     drawn:[...document.querySelectorAll('#gantryLayerFront .gantry')].map(e=>({id:e.dataset.gantry,planned:e.classList.contains('planned')})),
+     inTree:list.some(g=>(g.items||[]).some(([id])=>historyTreeRows().some(r=>r.id===id))),
+     queues:[...metroUI.data.gantries.values()].map(q=>({id:q.id,kind:q.kind,keys:q.stops.map(s=>s.key)}))};
+   });
+   if(!data.count)console.log('NOTE TREE_GANTRIES is empty: the gantry checks wait for the data');
+   else{
+   assert.equal(data.drawn.length,data.count,'every gantry is drawn');assert.deepEqual(data.drawn.map(d=>d.id).sort(),[...data.report].sort());
+   assert.deepEqual(data.drawn.filter(d=>d.planned).map(d=>d.id).sort(),[...data.planned].sort(),'a planned gantry is drawn as planned');
+   assert.equal(data.inTree,false,'a gantry entry is in no line\'s stations');
+   assert.ok(data.open.length>=1,'at least one gantry is open');
+   for(const g of data.open){
+    const q=data.queues.find(x=>x.id===g.id);
+    assert.ok(q&&q.kind==='gantry',g.id+': the player gets the gantry as a queue');
+    assert.deepEqual(q.keys,Array.from({length:g.scenes},(_,i)=>`${g.entry}/${i}`),g.id+': one stop per scene, in order');
+    assert.equal(g.chips.length,g.scenes,g.id+': one chip per scene');
+    // The map: the sign opens the inspector, which enters the platform. With no line to go back to, the way back is the map.
+    await G.evaluate(()=>metroUI.setMode('network',{whole:true}));await settle(G);
+    // Zoomed right out, every gantry still shows its code.
+    assert.deepEqual(await G.$$eval('#gantryLayerFront .gantry .sign-mini',els=>els.filter(e=>!e.checkVisibility()).map(e=>e.closest('.gantry').dataset.gantry)),[],'a gantry has no visible sign at whole-map zoom');
+    await G.evaluate(id=>metroUI.focusGantry(id),g.id);await settle(G);
+    await G.click(`#gantryLayerFront .gantry[data-gantry="${g.id}"] .gantry-sign`);
+    assert.ok(await on(G,'#stationInspector'));assert.match(await G.$eval('#inspectorKicker',e=>e.textContent),/跨线龙门架/);
+    assert.equal(await G.$eval('#inspectorTitle',e=>e.textContent),g.name);
+    await G.click('#inspectorLines .gantry-enter');await settle(G);
+    let s=await G.evaluate(()=>metroUI.state());
+    assert.deepEqual([s.mode,s.gantry,s.station,s.scene,s.returnTo],['ride',g.id,null,0,null]);
+    assert.ok(await on(G,'#gantryBar'));assert.ok(!(await on(G,'.ride-heading'))&&!(await on(G,'.route-panel')),'the platform bar stands in for the line heading and strip');
+    assert.equal(await G.$eval('#gantryBack',b=>b.textContent),'← 全图');
+    assert.deepEqual(await G.$$eval('#gantryChips button',bs=>bs.map(b=>b.textContent)),g.chips);
+    assert.match(await G.$eval('#entryEyebrow',e=>e.textContent),new RegExp(g.code));
+    // Each scene is a stop: ↓ and → step on, ↑ and ← step back; the chip follows; the last scene is the end.
+    await G.focus('#map');await G.keyboard.press('ArrowDown');await G.keyboard.press('ArrowRight');
+    assert.equal((await G.evaluate(()=>metroUI.state())).scene,2);assert.equal(await G.$eval('#gantryChips button.on',b=>b.textContent),g.chips[2]);
+    await G.keyboard.press('ArrowUp');await G.keyboard.press('ArrowLeft');assert.equal((await G.evaluate(()=>metroUI.state())).scene,0);
+    await G.click(`#gantryChips button:nth-child(${g.scenes})`);assert.equal((await G.evaluate(()=>metroUI.state())).scene,g.scenes-1);
+    await G.focus('#map');await G.keyboard.press('ArrowDown');assert.equal((await G.evaluate(()=>metroUI.state())).scene,g.scenes-1);
+    await G.click('#gantryBack');await settle(G);
+    assert.equal((await G.evaluate(()=>metroUI.state())).mode,'network');assert.equal(await G.$eval('#inspectorTitle',e=>e.textContent),g.name,'back on the map, at this gantry');
+    // Every line it lists: a mark right after its station (not a stop, not counted), a note at that station, and ← → pass it by.
+    for(const [line,at] of Object.entries(g.lineMap)){
+     const seq=await G.evaluate(line=>(metroUI.data.lineStops.get(line)||[]).map(s=>s.key),line),i=seq.indexOf(at.after);
+     assert.ok(i>=0,`${g.id}: lineMap.${line}.after (${at.after}) is a station on ${line}`);
+     assert.ok(Number.isInteger(at.scene)&&at.scene>=0&&at.scene<g.scenes,`${g.id}: lineMap.${line}.scene is one of its scenes`);
+     await G.evaluate((line,key)=>metroUI.board(line,{key}),line,at.after);await settle(G);
+     const m=await G.evaluate(id=>{const mark=document.querySelector(`.route-gantry[data-gantry="${id}"]`),stops=[...document.querySelectorAll('.route-stop')],a=document.querySelector('.route-stop.active');
+      return mark&&{x:mark.offsetLeft,after:a.offsetLeft,next:stops[stops.indexOf(a)+1]?.offsetLeft??null,count:stops.length,pos:document.getElementById('stationPosition').textContent}},g.id);
+     assert.ok(m,`${line}: the route strip shows the gantry`);assert.ok(m.x>m.after&&(m.next===null||m.x<m.next),`${line}: the mark stands right after ${at.after}`);
+     assert.equal(m.count,seq.length,`${line}: the gantry is not a stop`);assert.equal(m.pos,`${i+1} / ${seq.length}`,`${line}: station numbers leave it out`);
+     assert.ok(await on(G,'#gantryHint'),`${line}: the station before the gantry says so`);
+     assert.match(await G.$eval('#gantryHint .gh-actions button',b=>b.textContent),new RegExp(g.chips[at.scene]));
+     if(seq[i+1]){await G.focus('#map');await G.keyboard.press('ArrowRight');assert.equal((await G.evaluate(()=>metroUI.state())).station,seq[i+1],`${line}: → passes the gantry by`);assert.ok(!(await on(G,'#gantryHint')));await G.keyboard.press('ArrowLeft')}
+    }
+    // In from a line, through the note or the mark: straight to that line's scene; the way back returns to the station left.
+    const [line,at]=Object.entries(g.lineMap)[0];
+    await G.evaluate((line,key)=>metroUI.board(line,{key}),line,at.after);await settle(G);
+    await G.click('#gantryHint .gh-actions button');await settle(G);
+    s=await G.evaluate(()=>metroUI.state());
+    assert.deepEqual([s.gantry,s.scene,s.returnTo?.line,s.returnTo?.key],[g.id,at.scene,line,at.after]);
+    assert.equal(await G.$eval('#gantryBack',b=>b.textContent),'← 返回'+await G.evaluate(id=>{const b=HISTORY_BRANCHES.find(x=>x.id===id);return b.name+(b.kind==='branch'?'支线':'线')},line));
+    await G.click('#gantryBack');await settle(G);
+    s=await G.evaluate(()=>metroUI.state());assert.deepEqual([s.gantry,s.line,s.station],[null,line,at.after]);assert.ok(!(await on(G,'#gantryBar')));
+    await G.click(`.route-gantry[data-gantry="${g.id}"]`);await settle(G);
+    s=await G.evaluate(()=>metroUI.state());assert.deepEqual([s.gantry,s.scene,s.returnTo?.key],[g.id,at.scene,at.after]);
+    // A link straight to a gantry scene opens its platform; nothing breaks on the way in.
+    const d=await pageAt(1440,900,`#${g.entry}/3`);
+    s=await d.evaluate(()=>metroUI.state());assert.deepEqual([s.mode,s.gantry,s.scene],['ride',g.id,3]);
+    assert.equal(await d.$eval('#gantryChips button.on',b=>b.textContent),g.chips[3]);assert.ok(await d.evaluate(()=>Boolean(document.getElementById('kinSheet'))),'the atlas finished starting');
+    await d.close();
+    // Phones: the way back and the chips under the left thumb, 44px, nothing wider than the screen.
+    const ph=await pageAt(390,844,`#${g.entry}/2`,true);
+    const geo=await ph.evaluate(()=>{const b=document.getElementById('gantryBack').getBoundingClientRect(),c=document.querySelector('#gantryChips button').getBoundingClientRect();return {backH:b.height,backL:b.left,chipH:c.height,wide:document.documentElement.scrollWidth}});
+    assert.ok(geo.backH>=44&&geo.chipH>=44,'44px targets: '+JSON.stringify(geo));assert.ok(geo.backL<60,'the way back is on the left');assert.ok(geo.wide<=390,'no sideways scroll');
+    await ph.close();
+   }
+   }
+   await G.close();
+  }
+
   assert.deepEqual(errors,[]);
-  console.log(`PASS: metro layout — site identity kept; ${counts.stations} stations, ${counts.lines} lines, ${counts.shared} shared on the whole map with clean rails and names; hover, pan, zoom, time slices; on-train view, scene and station navigation, text scrolling, deep links, authored transfers with platforms and 支线, the mark going home after asking, a reload keeping the place in the text; person cards and family trees; geography and topics; all ${landed.scenes} scenes land on their own marks; laptop, phone, touch emulation; offline; no page errors.`);
+  console.log(`PASS: metro layout — site identity kept; ${counts.stations} stations, ${counts.lines} lines, ${counts.shared} shared on the whole map with clean rails and names; hover, pan, zoom, time slices; gantries across the lines (map, marks, notes, platform, keys, way back, deep link, phone); on-train view, scene and station navigation, text scrolling, deep links, authored transfers with platforms and 支线, the mark going home after asking, a reload keeping the place in the text; person cards and family trees; geography and topics; all ${landed.scenes} scenes land on their own marks; laptop, phone, touch emulation; offline; no page errors.`);
  }catch(e){console.error(e);process.exitCode=1;}finally{await Promise.race([browser.close(),new Promise(r=>setTimeout(r,200))]);browser.process()?.kill('SIGKILL');process.exit(process.exitCode||0);}
 })().catch(e=>{console.error(e);process.exitCode=1;});

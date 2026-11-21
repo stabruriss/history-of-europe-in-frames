@@ -1568,6 +1568,78 @@ body.history-mode #mapSceneChip{display:block}
 .route-stop.plat .stop-date{color:var(--line)}
 .route-transfers .to-detail{box-shadow:0 0 0 1.5px #f8f0df,0 0 0 2.5px var(--c)}
 @media(max-width:820px){#transferHint{padding:0 14px 8px;font-size:12px}}
+/* ---------- Gantries (龙门架, 老无 2026-11-20) ---------- */
+.gantry{cursor:pointer}
+.gantry-band{fill:#8a2a1d;opacity:.06}
+.gantry.planned .gantry-band{fill:#a88751;opacity:.05}
+.gantry-column{stroke:#8a2a1d;stroke-width:2.2;vector-effect:non-scaling-stroke}
+.gantry-column.inner{stroke-width:1;opacity:.55}
+.gantry.planned .gantry-column{stroke:#a88751;stroke-width:1.6;stroke-dasharray:5 4}
+.gantry-pass{fill:none;stroke:#8a2a1d;stroke-width:1.6;vector-effect:non-scaling-stroke}
+.gantry.planned .gantry-pass{stroke:#a88751;stroke-width:1.2}
+.gantry-gem{fill:#fbf6ea;stroke:#8a2a1d;stroke-width:1.3;vector-effect:non-scaling-stroke}
+.gantry-hit{fill:transparent}
+.gantry-sign-box{fill:#2b1f17;stroke:#8a2a1d;stroke-width:1.2}
+.gantry.planned .gantry-sign-box{fill:#fbf6ea;stroke:#a88751;stroke-dasharray:3 3}
+.gantry-sign-code{font:600 10px var(--latin);letter-spacing:.14em;fill:#e8c88a}
+.gantry-sign-name{font:600 14px var(--sans);fill:#fbf2df}
+.gantry-sign-sub{font:9.5px var(--sans);fill:#cdb994}
+.gantry.planned .gantry-sign-code{fill:#8a6a3a}
+.gantry.planned .gantry-sign-name{fill:#5a4630;font-size:13px}
+.gantry.planned .gantry-sign-sub{fill:#8f7a5c}
+.gantry:hover .gantry-sign-box,.gantry.selected .gantry-sign-box{stroke:#e0a850;stroke-width:2}
+.gantry:focus-visible{outline:none}.gantry:focus-visible .gantry-sign-box{stroke:var(--accent);stroke-width:2.4}
+.network-canvas[data-lod="1"] .gantry-gem{display:none}
+.gantry-sign .sign-mini{display:none}
+.network-canvas[data-lod="1"] .gantry-sign .sign-full{display:none}
+.network-canvas[data-lod="1"] .gantry-sign .sign-mini{display:inline}
+.gantry-sign .sign-mini .gantry-sign-code{font-size:9.5px;letter-spacing:.1em}
+.station-inspector.for-gantry .inspector-kicker{color:var(--accent)}
+.board-line.gantry-enter{border-color:var(--accent);background:#f3e1d4}
+.board-line.gantry-enter i{background:var(--accent)}
+/* The mark between two stops on the route strip: not a stop, no number. */
+.route-gantry{position:absolute;top:22px;width:92px;height:94px;transform:translateX(-50%);padding:0;border:0;background:none;text-align:center;z-index:2}
+.route-gantry .rg-code{position:absolute;top:0;left:50%;transform:translateX(-50%);white-space:nowrap;padding:1px 5px;background:#2b1f17;color:#f0d9a8;font:600 8.5px/1.4 var(--latin);letter-spacing:.08em;border-radius:2px}
+.route-gantry .rg-cols{position:absolute;top:15px;left:50%;width:14px;height:31px;margin-left:-7px;border-left:2px solid var(--accent);border-right:2px solid var(--accent)}
+.route-gantry .rg-cols::after{content:"";position:absolute;left:50%;top:50%;width:7px;height:7px;margin:-4px 0 0 -4px;border:1.5px solid var(--accent);background:var(--paper-light);transform:rotate(45deg)}
+.route-gantry .rg-name{position:absolute;top:50px;left:0;width:100%;font:600 10.5px/1.25 var(--sans);color:var(--accent)}
+.route-gantry .rg-sub{position:absolute;top:65px;left:0;width:100%;font:9px/1.2 var(--sans);color:var(--soft)}
+.route-gantry:hover .rg-name{text-decoration:underline;text-underline-offset:2px}
+/* The note at the station before a gantry: outside the text, never read aloud. */
+#gantryHint{display:flex;gap:10px;margin:0 24px 12px;padding:10px 12px;border:1px solid #dcc0a8;border-left:3px solid var(--accent);background:#f7ebdd;font-size:11.5px;line-height:1.6;color:var(--ink)}
+#gantryHint[hidden]{display:none}
+#gantryHint b{display:block;font:600 10.5px var(--sans);color:var(--accent);letter-spacing:.06em}
+#gantryHint p{margin:3px 0 8px;color:var(--soft)}
+#gantryHint .gh-mark{flex:none;width:16px;height:13px;margin-top:3px;border:2px solid var(--accent);border-bottom:0;box-shadow:inset 0 3px 0 -1px #f7ebdd,inset 0 4px 0 0 var(--accent)}
+.gh-actions{display:flex;flex-wrap:wrap;gap:6px}
+.gh-actions button{padding:5px 10px;border:1px solid var(--rule);background:#fbf6ea;font:inherit;font-size:11px;line-height:1.4;cursor:pointer;border-radius:2px;color:var(--ink)}
+.gh-actions button:first-child{background:var(--accent);border-color:var(--accent);color:#fffaf0}
+.gh-actions button:hover{filter:brightness(1.06)}
+/* The gantry's own platform bar, in place of the line heading and route strip. */
+#gantryBar{background:#2b1f17;color:#f3e6cc;border-bottom:1px solid #8a2a1d;box-shadow:0 7px 13px -12px #3a2816}
+body.at-gantry #ridePanel .ride-heading,body.at-gantry #ridePanel .route-panel{display:none}
+.gantry-head{display:flex;align-items:center;gap:12px;padding:8px 22px;min-height:46px}
+#gantryBack{flex:none;height:32px;padding:0 12px;border:1px solid #a88751;color:#f6e7c8;font-size:12px}
+#gantryBack:hover{background:#3d2c20}
+.gantry-code{flex:none;padding:2px 8px;background:#8a2a1d;color:#fff4dc;font:600 11px/1.5 var(--latin);letter-spacing:.12em}
+#gantryName{margin:0;min-width:0;font-size:17px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#gantryNote{margin-left:auto;flex:none;font-size:10px;color:#bba57e}
+.gantry-chips{display:flex;gap:6px;padding:0 22px 9px;overflow-x:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#8a6a4a transparent}
+.gantry-chips button{flex:none;display:flex;align-items:center;gap:6px;height:30px;padding:0 11px;border:1px solid #6d5640;color:#ecdcbc;font-size:12px;white-space:nowrap}
+.gantry-chips button i{width:7px;height:7px;border-radius:50%;background:var(--c)}
+.gantry-chips button:hover{background:#3d2c20}
+.gantry-chips button.on{background:#f6ead1;color:#2b1f17;border-color:#f6ead1;font-weight:600}
+@media(max-width:820px){
+ .route-gantry{top:16px}
+ #gantryHint{margin:0 14px 9px}
+ .gh-actions button{min-height:44px}
+ .gantry-head{flex-wrap:wrap;gap:6px 8px;padding:6px 10px}
+ #gantryBack{height:44px}
+ #gantryName{flex-basis:100%;font-size:15px;white-space:normal;line-height:1.35}
+ #gantryNote{display:none}
+ .gantry-chips{padding:0 10px 8px}
+ .gantry-chips button{height:44px}
+}
 
 /* 老无 2026-11-12: a standard player in the atlas's parchment ink. Desktop: one bar at the bottom of the page.
    Phones: a strip at the bottom (thumb reach) that opens into the full card; panels rise from the bottom edge. */
@@ -1817,7 +1889,7 @@ body{padding-top:var(--audio-height);padding-bottom:var(--audio-bottom)}
   <div class="network-workspace">
     <aside class="network-legend" id="networkLegend"><div class="legend-heading"><b>主线</b><span>点线路上车 →</span></div><div id="lineList"></div><div class="symbol-key"><span><i class="key-stop"></i>事件站</span><span><i class="key-transfer"></i>同行线路 · 同站换乘</span><span><i class="key-link"><i></i></i>虚线相连 · 可换乘</span><span><i class="key-cross"></i>线路相交 · 不可换乘</span><span><i class="key-tick"></i>路段标记：王朝／时段</span><span><i class="key-flag"></i><i class="key-flag end"></i>线路起点／终点</span><p>无站圈的分岔来自图册的主线分支，不是换乘站。</p></div></aside>
     <div class="network-canvas" id="networkCanvas" tabindex="0" aria-label="拖动平移，滚轮缩放，点击车站预览；点击线路乘车">
-      <svg id="networkSvg" role="group" aria-label="历史主线与贯通事件组成的地铁式拓扑图"><g id="viewport"><g id="zones"></g><g id="networkLines"></g><g id="periodTicks"></g><g id="periodLabels"></g><g id="networkNodes"></g><g id="lineFlags"></g><g id="hubNames"></g></g></svg>
+      <svg id="networkSvg" role="group" aria-label="历史主线与贯通事件组成的地铁式拓扑图"><g id="viewport"><g id="zones"></g><g id="gantryLayerBack"></g><g id="networkLines"></g><g id="periodTicks"></g><g id="periodLabels"></g><g id="networkNodes"></g><g id="gantryLayerFront"></g><g id="lineFlags"></g><g id="hubNames"></g></g></svg>
       <div class="year-ruler" id="yearRuler"></div>
       <div class="map-instruction">拖动平移 <span>·</span> 滚轮／双指缩放 <span>·</span> 点线路上车</div>
       <aside class="slice-panel" id="slicePanel" hidden><button id="sliceClose" type="button" aria-label="关闭时间切片">×</button><h3 id="sliceTitle"></h3><p id="sliceText"></p></aside>
@@ -1828,6 +1900,7 @@ body{padding-top:var(--audio-height);padding-bottom:var(--audio-bottom)}
 <section id="ridePanel" aria-label="沿线路线图">
   <header class="ride-heading"><div class="riding-line" id="ridingLine"></div><button id="stripToggle" type="button" aria-expanded="false" title="展开或收起路线图"><span></span><i>▾</i></button><span id="stripStation"></span><span class="ride-instruction">← → 换站 <span>·</span> ↑ ↓ 换幕</span><div class="station-nav"><button id="prevStation" type="button">← 上一站</button><span id="stationPosition"></span><button id="nextStation" type="button">下一站 →</button></div></header>
   <div class="route-panel"><div class="route-caption"><span>本线路线图</span><b id="routePeriod"></b><small>拖动看全线 · 点站直达</small></div><div class="route-scroller" id="routeScroller" tabindex="0" aria-label="当前主线上的事件站与历史时期"><div class="route-track" id="routeTrack"></div></div></div>
+  <div id="gantryBar" hidden><div class="gantry-head"><button id="gantryBack" type="button"></button><span class="gantry-code" id="gantryCode"></span><h3 id="gantryName"></h3><small id="gantryNote">独立跨线龙门架 · 不属于任何主线</small></div><div class="gantry-chips" id="gantryChips" role="tablist" aria-label="龙门架各幕"></div></div>
 </section>
 <aside id="side">
   <p id="indexCaption"></p>
@@ -1854,7 +1927,7 @@ body{padding-top:var(--audio-height);padding-bottom:var(--audio-bottom)}
       </div>
       <span id="audioAvailability"></span>
     </div>
-    <div id="readerBody"><header id="readerHead"><div id="entryEyebrow" class="eyebrow"></div><h2 id="entryTitle"></h2><div id="entryEnglish" class="en-name"></div></header><div id="transferBar"></div><p id="transferHint" hidden></p><article id="card" aria-labelledby="entryTitle"></article></div>
+    <div id="readerBody"><header id="readerHead"><div id="entryEyebrow" class="eyebrow"></div><h2 id="entryTitle"></h2><div id="entryEnglish" class="en-name"></div></header><div id="transferBar"></div><p id="transferHint" hidden></p><div id="gantryHint" hidden></div><article id="card" aria-labelledby="entryTitle"></article></div>
   </section>
   <div id="mapSceneChip"><div><small id="mapSceneDate"></small><b id="mapSceneTitle"></b></div></div>
   <details id="legendBox"><summary>图例</summary><div id="legend"></div></details>
@@ -92100,7 +92173,9 @@ function noteProgress(force = false) {
   const now = Date.now();
   if (force || now - progressSavedAt > 3000) { progressSavedAt = now; saveProgress(); }
 }
-const lineText = l => l ? l.name + (l.kind === 'branch' ? '支线' : '线') : '';
+const lineText = l => !l ? '' : l.kind === 'gantry' ? `《${l.name}》` : l.name + (l.kind === 'branch' ? '支线' : '线');
+// The route being read: the gantry the reader stands in, otherwise the line being ridden.
+const routeHere = () => { const s = window.metroUI?.state(); return s ? s.gantry || s.line : null; };
 function syncOptionInputs() {
   for (const id of extrasControls) $(id).checked = includeExtras;
   for (const id of peopleControls) $(id).checked = includePeople;
@@ -92134,7 +92209,12 @@ function track(id, scene = 0) {
     parts:Object.freeze(parts), titlePart:planned && plan.titleId ? makePart(plan.titleId, 'title', e.title, 'title') : null});
 }
 function lineSnapshot(id) {
-  const metro = window.metroUI, source = metro?.data.lines.find(l => l.id === id), stops = metro?.data.lineStops.get(id);
+  const metro = window.metroUI, gantry = metro?.data.gantries?.get(id);
+  if (gantry?.stops?.length) { // a gantry reads like a line: one stop per scene, in its own order
+    const tracks = gantry.stops.map(s => track(s.id, s.from));
+    return {line:Object.freeze({id:gantry.id, name:gantry.name, kind:'gantry'}), tracks};
+  }
+  const source = metro?.data.lines.find(l => l.id === id), stops = metro?.data.lineStops.get(id);
   if (!source || !stops?.length) return null;
   const tracks = [];
   // These are the actual metro stations, including split sections. No ancestor lines or inferred route.
@@ -92225,7 +92305,7 @@ function remainingSeconds() {
     if (q?.asset) { afterGap = false; total += q.asset.duration; }
     else if (!afterGap && NOTICE) { afterGap = true; total += NOTICE.duration; }
   }
-  if (mode === 'line' && END) total += END.duration;
+  if (mode === 'line' && END && line?.kind !== 'gantry') total += END.duration;
   return total / speed;
 }
 // The next clip the player would load, used only to warm the browser cache while this one plays.
@@ -92254,7 +92334,7 @@ function refreshReading() {
   actions.hidden = !t?.planned || !t.parts[0]?.asset;
   if (!t) return;
   const historical = t.kind === 'history', singleMissing = missing([t]);
-  const route = historical ? lineSnapshot(window.metroUI?.state().line) : null;
+  const route = historical ? lineSnapshot(routeHere()) : null;
   const count = route ? missing(route.tracks) : 0;
   const onLine = route?.tracks.some(x => x?.key === t.key);
   const gapNote = n => `所选内容有 ${n} 段音频暂缺，读到时提示并接着读`, hasBody = Boolean(t.planned && t.parts[0]?.asset);
@@ -92521,7 +92601,7 @@ function streamFill(s) {
   if (s.segs.length - 1 - s.segs.indexOf(s.cur) >= 2) return;
   const last = s.segs[s.segs.length - 1], gen = s.gen;
   let n = last.closing ? null : planNext(last.ti, last.pi, last.gap);
-  if (!n && !last.closing && mode === 'line' && END) n = {ti:last.ti, pi:last.pi, gap:false, closing:true, url:END.url};
+  if (!n && !last.closing && mode === 'line' && END && line?.kind !== 'gantry') n = {ti:last.ti, pi:last.pi, gap:false, closing:true, url:END.url};
   const end = () => streamTask(s, () => {
     if (gen === s.gen && s === stream && s.ms.readyState === 'open' && !s.sb.updating) { s.ms.endOfStream(); s.ended = true; }
   });
@@ -92624,7 +92704,7 @@ function advance({autoplay = wantsPlay, afterGap = false} = {}) {
   const next = current().parts.findIndex((p, i) => i > partIndex && enabled(p));
   if (next >= 0) loadClip(next, {autoplay, afterGap});
   else if (mode === 'line' && at < queue.length - 1) selectTrack(at + 1, {automatic:true, autoplay, afterGap});
-  else if (mode === 'line' && END && autoplay) playEnd();
+  else if (mode === 'line' && END && line?.kind !== 'gantry' && autoplay) playEnd();
   else finishSelection();
 }
 // The element path's end of a line (the stream appends the notice as its last segment instead).
@@ -92647,7 +92727,7 @@ function changeOptions(ev) {
 }
 function start(continuous) {
   const t = reading(); if (!t) return;
-  const route = continuous && t.kind === 'history' ? lineSnapshot(window.metroUI?.state().line) : null;
+  const route = continuous && t.kind === 'history' ? lineSnapshot(routeHere()) : null;
   const tracks = route ? route.tracks : [t], index = tracks.findIndex(x => x?.key === t.key);
   if ((continuous && !route) || index < 0) { refreshReading(); return; }
   queue = Object.freeze([...tracks]); mode = route ? 'line' : 'single'; line = route?.line || null;
@@ -92865,6 +92945,7 @@ window.ROUTE_PERIODS = {
  'black-death':[[1347,1352,'第一波大流行']],
  reformation:[[1517,1530,'路德发难'],[1530,1555,'诸侯结盟与奥格斯堡'],[1555,1564,'特兰托与天主教重整'],[1564,1600,'修会与传教']],
  'thirty-years':[[1599,1620,'战前危机与波希米亚'],[1620,1630,'丹麦参战与华伦斯坦'],[1630,1635,'瑞典南下'],[1635,1649,'法国参战与和约']],
+ austria:[[1526,1683,'多瑙河君主国'],[1683,1792,'巴洛克大国与女皇改制'],[1792,1867,'梅特涅体系'],[1867,1919,'二元帝国']],
  ww1:[[1914,1916,'西线僵持'],[1916,1918,'凡尔登到美国参战'],[1918,1919,'停战'],[1919,1924,'凡尔赛体系']],
  crusade:[[1070,1096,'东征前夜'],[1096,1144,'首次东征与十字军国家'],[1144,1198,'第二、三次东征'],[1198,1270,'第四至第八次东征'],[1270,1525,'圣地陷落之后']],
  america:[[1430,1492,'大航海之前'],[1492,1572,'西班牙的征服'],[1572,1607,'后来者的海盗时代'],[1607,1650,'早期北美殖民地'],[1650,1763,'十三殖民地'],[1763,1800,'独立与制宪'],[1800,1861,'西进与拉美独立'],[1861,1865,'南北内战'],[1865,1921,'镀金时代与一战']],
@@ -92901,7 +92982,7 @@ window.NETWORK_DESIGN = (() => {
   const GERMANY = 345;   // germany; the church runs one step below
   const CRUSADE = 395;
   const PERSIA = 440;    // persia; east rome bundles one step below from 602
-  const EAST0 = 470;     // east rome before it bundles with persia
+  const EAST0 = 470;     // east rome before it bundles with persia; 奥匈 from 1526
   const EASTEU = 505;    // egypt in antiquity, eastern europe from 860
   const SPAIN = 550;
   const PORTUGAL = 588;
@@ -92936,6 +93017,8 @@ window.NETWORK_DESIGN = (() => {
     'thirty-years': [[1599, y(PLAGUE)], [1648, y(PLAGUE)]],
     discovery: [[1415.5, y(DISCOVERY)], [1768, y(DISCOVERY)]],
     ww1: [[1914, y(HUNDRED)], [1923, y(HUNDRED)]],
+    // 奥匈 (2026-11-20): between 中东 and 东欧, on east Rome's lane, free since 602.
+    austria: [[1526, y(EAST0)], [1918, y(EAST0)]],
     nordic: [[745, y(TOP)], [1920, y(TOP)]],
     america: [[1430, y(AMERICA)], [1631, y(AMERICA)]],
   };
@@ -92976,6 +93059,8 @@ window.NETWORK_DESIGN = (() => {
   const RAIL_HALF = 3, GLYPH_R = 4.5, BUNDLED_R = 3.6, RING_R = 5.5, CAPSULE_R = 6.5;
   const NAME_H = 15, NAME_DATE_H = 27, FS = 12.5, MIN_STOP_GAP = 32;
   const FLAG_H = 20, FLAG_POINT = 8, SPARE_LANE = 48;
+  // A gantry (龙门架, 老无 2026-11-20) spans every line at one year; stations, names and flags keep out of its corridor.
+  const GANTRY_HALF = 18, PLANNED_HALF = 14, GANTRY_CLEAR = 30, SIGN_W = 190, SIGN_H = 54, PLANNED_SIGN_W = 150, PLANNED_SIGN_H = 46;
 
   const textWidth = (text, size) => {
     let w = 0;
@@ -93003,7 +93088,9 @@ window.NETWORK_DESIGN = (() => {
     return side(A, B, C) * side(A, B, D) < -1e-6 && side(C, D, A) * side(C, D, B) < -1e-6;
   }
 
-  function build({ stations, lines, lineStops, design, periods, ends }) {
+  function build({ stations, lines, lineStops, design, periods, ends, gantries }) {
+    const gates = (gantries || []).filter(g => g && Number.isFinite(g.year))
+      .map(g => ({ id: g.id, year: g.year, planned: Boolean(g.planned), half: g.planned ? PLANNED_HALF : GANTRY_HALF, name: String(g.name || ''), code: `${g.code || ''} · ${g.yearLabel || ''}${g.planned ? ' · 规划中' : ''}` }));
     // Two stops of one line can share an anchor year; keep them in route order.
     const tx = new Map(stations.map(s => [s.key, s.t]));
     for (const line of lines) {
@@ -93024,7 +93111,7 @@ window.NETWORK_DESIGN = (() => {
       return [id, [[tx.get(seq[0].key), y], [tx.get(seq[seq.length - 1].key), y]]];
     }));
     const knotsOf = id => design.routes[id] || spareRoutes[id];
-    const allTimes = [...new Set([...tx.values(), ...lines.flatMap(l => knotsOf(l.id).map(k => k[0])), ...design.gaps.flatMap(g => [g[0], g[1]])])].sort((a, b) => a - b);
+    const allTimes = [...new Set([...tx.values(), ...lines.flatMap(l => knotsOf(l.id).map(k => k[0])), ...design.gaps.flatMap(g => [g[0], g[1]]), ...gates.map(g => g.year)])].sort((a, b) => a - b);
     const index = new Map(allTimes.map((t, i) => [t, i]));
     const learned = new Map();
     const addLearned = (a, b, d) => {
@@ -93070,6 +93157,21 @@ window.NETWORK_DESIGN = (() => {
         }
       }
       for (const [a, b, d] of design.gaps) add(a, b, d);
+      // Every station stands clear of a gantry's corridor on its own side of the year, with room for a centred name;
+      // a line's first and last stops also leave room for the line's signpost.
+      for (const g of gates) {
+        for (const s of stations) {
+          const t = tx.get(s.key), d = g.half + Math.max(GANTRY_CLEAR, labelWidth(s) / 2 + 6);
+          if (t <= g.year) add(t, g.year, d); else add(g.year, t, d);
+        }
+        for (const line of lines) {
+          const seq = lineStops.get(line.id);
+          if (!seq.length) continue;
+          const flag = textWidth(line.name, 11) + 12 + FLAG_POINT + 12, first = tx.get(seq[0].key), last = tx.get(seq[seq.length - 1].key);
+          if (last <= g.year) add(last, g.year, g.half + flag);
+          if (first > g.year) add(g.year, first, g.half + flag);
+        }
+      }
       for (const { a, b, d } of learned.values()) add(a, b, d);
       xs = new Array(allTimes.length);
       xs[0] = 170;
@@ -93117,11 +93219,13 @@ window.NETWORK_DESIGN = (() => {
     };
 
     const nodes = new Map(stations.map(s => [s.key, { key: s.key, s }]));
-    let routes = new Map(), segments = [], links = [], tightList = [], flagList = [];
+    let routes = new Map(), segments = [], links = [], tightList = [], flagList = [], gateBoxes = [];
+    const hitsGate = box => gateBoxes.find(g => overlaps(box, g.box));
 
     function geometry() {
       solveX();
       routes = new Map(); segments = []; tightList = []; links = [];
+      gateBoxes = gates.map(g => ({ id: g.id, year: g.year, box: { x0: X(g.year) - g.half - 3, x1: X(g.year) + g.half + 3, y0: -1e7, y1: 1e7 } }));
       for (const line of lines) {
         const { pts, tight } = routePoints(line.id);
         routes.set(line.id, pts);
@@ -93179,7 +93283,8 @@ window.NETWORK_DESIGN = (() => {
           const free = (box, onRail) => !segments.some(s => (!onRail || s.line !== line.id) && segmentHitsBox(s, box, 1.5))
             && !links.some(l => segmentHitsBox(l, box, 1.5))
             && !glyphs.some(g => g.key !== n.key && overlaps(box, g.box))
-            && !out.some(f => overlaps(box, f.box));
+            && !out.some(f => overlaps(box, f.box))
+            && !hitsGate(box);
           const tip = tips.find(([tipX, tipY]) => free(boxAt(tipX, tipY), tipY === y));
           const [tipX, tipY] = tip || tips[0];
           out.push({ line: line.id, name: line.name, c: line.c, end, free: Boolean(tip), onRail: tipY === y, tipX, tipY, w, h: FLAG_H, box: boxAt(tipX, tipY) });
@@ -93208,6 +93313,8 @@ window.NETWORK_DESIGN = (() => {
         for (const l of links) if (segmentHitsBox(l, box, 2)) { hits.push({ kind: 'link', key: l.key }); break; }
         for (const g of glyphs) if (g.key !== n.key && overlaps(box, g.box)) { hits.push({ kind: 'glyph', key: g.key }); break; }
         for (const p of placed) if (overlaps(box, p.box)) { hits.push({ kind: 'label', key: p.key, flag: p.flag }); break; }
+        const gate = hitsGate(box);
+        if (gate) hits.push({ kind: 'gantry', key: gate.id, year: gate.year });
         return hits;
       };
       for (const n of ordered) {
@@ -93246,6 +93353,8 @@ window.NETWORK_DESIGN = (() => {
           unresolved.push({ key: n.key, title: n.s.title, hits: best.hits });
           // Only a clash with another name can be cured by moving stations apart.
           for (const h of best.hits) {
+            // A name that will not fit beside a gantry moves its station further from the gantry.
+            if (h.kind === 'gantry') { addLearned(tx.get(n.key), h.year, Math.abs(n.x - X(h.year)) + 40); continue; }
             if (h.flag || (h.kind !== 'label' && h.kind !== 'link')) continue;
             addLearned(tx.get(n.key), tx.get(h.key), Math.abs(n.x - nodes.get(h.key).x) + 18);
           }
@@ -93273,7 +93382,7 @@ window.NETWORK_DESIGN = (() => {
     const periodMarks = [], ticks = [], periodBoxes = [];
     const glyphBoxes = allGlyphs().map(g => g.box);
     const labelBoxes = result.placed.map(p => p.box);
-    const railFree = box => !segments.some(s => segmentHitsBox(s, box, RAIL_HALF)) && !links.some(l => segmentHitsBox(l, box, 2));
+    const railFree = box => !segments.some(s => segmentHitsBox(s, box, RAIL_HALF)) && !links.some(l => segmentHitsBox(l, box, 2)) && !hitsGate(box);
     for (const line of lines) {
       const seq = lineStops.get(line.id), list = periods[line.id] || [], pts = routes.get(line.id);
       if (!seq.length) continue;
@@ -93375,16 +93484,38 @@ window.NETWORK_DESIGN = (() => {
       }
     }
     const boxes = [...nodes.values()];
+    // Gantries: where each crosses the lines alive at its year, and a sign above every name within its width.
+    const gantryList = gates.map(g => {
+      const x = X(g.year), crossings = [];
+      for (const line of lines) {
+        const pts = routes.get(line.id);
+        if (!pts?.length || x <= pts[0].x || x >= pts[pts.length - 1].x) continue;
+        crossings.push({ line: line.id, y: yOn(pts, x) });
+      }
+      crossings.sort((a, b) => a.y - b.y);
+      // The sign is as wide as its words need: the name, and the code line with its letter spacing.
+      const w = Math.max(g.planned ? PLANNED_SIGN_W : SIGN_W, textWidth(g.name, g.planned ? 13 : 14) + 28, textWidth(g.code, 10) + [...g.code].length * 1.4 + 24), h = g.planned ? PLANNED_SIGN_H : SIGN_H;
+      // A gantry past the end of every line still stands across the whole map.
+      const ys = crossings.length ? crossings.map(c => c.y) : segments.flatMap(s => [s.y1, s.y2]), under = boxes.filter(n => n.label.box.x1 > x - w / 2 && n.label.box.x0 < x + w / 2).map(n => n.label.box.y0);
+      const top = Math.min((ys.length ? Math.min(...ys) : 0) - 24, ...under.map(y => y - 10));
+      return { id: g.id, year: g.year, planned: g.planned, x, half: g.half, top, bottom: (ys.length ? Math.max(...ys) : top + 60) + 24, crossings, sign: { w, h, x0: x - w / 2, x1: x + w / 2, y0: top - h, y1: top } };
+    });
+    const intrusions = [];
+    for (const g of gateBoxes) for (const n of boxes) {
+      if (n.clusters.some(c => overlaps(c.box, g.box))) intrusions.push({ gantry: g.id, station: n.s.title, what: 'glyph' });
+      if (overlaps(n.label.box, g.box)) intrusions.push({ gantry: g.id, station: n.s.title, what: 'label' });
+    }
+    for (const g of gateBoxes) for (const f of flagList) if (f.free && overlaps(f.box, g.box)) intrusions.push({ gantry: g.id, station: f.line + ':' + f.end, what: 'flag' });
     const world = {
       minX: Math.min(...boxes.map(n => n.label.box.x0), ...segments.map(s => s.x1), ...flagList.map(f => f.box.x0)),
       maxX: Math.max(...boxes.map(n => n.label.box.x1), ...segments.map(s => s.x2), ...flagList.map(f => f.box.x1)),
-      minY: Math.min(...boxes.map(n => n.label.box.y0), ...segments.map(s => Math.min(s.y1, s.y2))),
+      minY: Math.min(...boxes.map(n => n.label.box.y0), ...segments.map(s => Math.min(s.y1, s.y2)), ...gantryList.map(g => g.sign.y0)),
       maxY: Math.max(...boxes.map(n => n.label.box.y1), ...segments.map(s => Math.max(s.y1, s.y2))),
     };
     const bendsByLine = Object.fromEntries(lines.map(l => [l.id, Math.max(0, (routes.get(l.id)?.length || 2) - 2)]));
 
     return {
-      nodes, routes, segments, ticks, periodMarks, flags: flagList, notes, X: XAt, world,
+      nodes, routes, segments, ticks, periodMarks, flags: flagList, notes, X: XAt, world, gantries: gantryList,
       report: {
         iterations,
         undrawnLines: undrawn,
@@ -93414,6 +93545,8 @@ window.NETWORK_DESIGN = (() => {
           return bad;
         }),
         labelsWithDates: boxes.filter(n => n.label.withDate).length,
+        gantries: gantryList.map(g => ({ id: g.id, x: Math.round(g.x), lines: g.crossings.map(c => c.line) })),
+        gantryIntrusions: intrusions,
       },
     };
   }
@@ -93444,7 +93577,7 @@ const lineStops=new Map(lines.map(l=>[l.id,stations.filter(s=>s.lines.includes(l
 const color=id=>branchById.get(id)?.c||'#26738a';
 const lineName=id=>branchById.get(id)?.name||id;
 const lineCode=id=>String(HISTORY_BRANCHES.findIndex(b=>b.id===id)+1).padStart(2,'0');
-const LINE_MARK={prehistory:'史',trunk:'希',rome:'罗',east:'东',west:'西欧',spain:'西',portugal:'葡',france:'法',lowlands:'低',germany:'德',italy:'意',britain:'不',faith:'基',egypt:'埃',persia:'波',eeurope:'欧',crusade:'十',china:'中',nordic:'北',america:'美',discovery:'航','hundred-years':'百','black-death':'疫',reformation:'改','thirty-years':'卅',ww1:'战'};
+const LINE_MARK={prehistory:'史',trunk:'希',rome:'罗',east:'东',west:'西欧',spain:'西',portugal:'葡',france:'法',lowlands:'低',germany:'德',italy:'意',britain:'不',faith:'基',egypt:'埃',persia:'波',eeurope:'欧',crusade:'十',china:'中',nordic:'北',america:'美',discovery:'航','hundred-years':'百','black-death':'疫',reformation:'改','thirty-years':'卅',ww1:'战',austria:'奥'};
 // An event branch (kind:'branch', like 十字军) is a 支线; the others are 线 (老无 2026-11-15).
 const isBranch=id=>branchById.get(id)?.kind==='branch';
 const lineLabel=id=>lineName(id)+(isBranch(id)?'支线':'线');
@@ -93466,9 +93599,27 @@ function transferNote(s,c){
 }
 const periodFor=(id,t)=>{const a=ROUTE_PERIODS[id]||[];return a.find(([s,e])=>t>=s&&t<e)?.[2]||a.findLast(([s])=>t>=s)?.[2]||a[0]?.[2]||''};
 const SLICES=typeof TREE_SLICES==='undefined'?[]:TREE_SLICES;
+// Gantries (龙门架, 老无 2026-11-20): a cross-line summary standing at one year. Each opens an entry of its own that is in
+// no line's stations, so ← →, station numbers and whole-line reading pass straight through. A gantry is reached from the map,
+// from the mark on each line it lists (after that line's station lineMap names), or from the note at that station.
+const GANTRIES=(typeof TREE_GANTRIES==='undefined'?[]:TREE_GANTRIES).filter(g=>g&&g.id&&Number.isFinite(g.year));
+const gantryById=new Map(GANTRIES.map(g=>[g.id,g]));
+const gantryEntryOf=g=>{const id=g?.items?.[0]?.[0];return id?ENTRIES.find(e=>e.id===id&&isHistory(e)&&e.scenes?.length)||null:null};
+const gantryOpen=g=>!g.planned&&Boolean(gantryEntryOf(g));
+const gantryByEntry=new Map(GANTRIES.filter(gantryOpen).map(g=>[gantryEntryOf(g).id,g]));
+const gantryLabel=g=>`${g.code} · ${g.yearLabel}`;
+const gantryChip=(g,i)=>g.chips?.[i]||String(i+1);
+// The scenes of a gantry in the order TREE_GANTRIES lists them (德谟克利特 2026-11-20: the audio tools expand the same way).
+const gantryScenes=g=>(g.items||[]).flatMap(([id,from=0,to])=>{const e=ENTRIES.find(x=>x.id===id);if(!e)return[];const last=Math.min(to??e.scenes.length-1,e.scenes.length-1);return Array.from({length:Math.max(0,last-from+1)},(_,k)=>({id,scene:from+k,title:e.scenes[from+k].title}))});
+// The marks a line passes: an open gantry that lists this line, after a station really on it.
+const gantriesOn=id=>GANTRIES.filter(gantryOpen).map(g=>({g,at:g.lineMap?.[id]})).filter(({at})=>at&&lineStops.get(id)?.some(s=>s.key===at.after));
+// The lines whose own comparison a gantry scene is: its chip takes their colour.
+const gantryLinesAt=(g,i)=>Object.entries(g.lineMap||{}).filter(([id,at])=>at.scene===i&&branchById.has(id)).map(([id])=>id);
 
 // The line being ridden counts only its own stops; the atlas's treeLine also runs back through its ancestors.
 let mode='network',station=null,selectedKey=stations[0].key,rideLine=treeLine;
+// At a gantry: the gantry, and where the reader came from (line, station, scene) for the way back.
+let gantryNow=null,gantryReturn=null,selectedGantry=null;
 const network=$('#networkCanvas'),viewport=$('#viewport'),yearRuler=$('#yearRuler');
 let camera={x:0,y:0,z:.84},NET=null,pointByKey=new Map();
 const createSVG=(name,attrs,parent)=>{const e=document.createElementNS(NS,name);for(const[k,v]of Object.entries(attrs||{}))e.setAttribute(k,v);parent?.appendChild(e);return e};
@@ -93487,6 +93638,52 @@ function roundedPath(points){
 }
 const labelScale=z=>z>=.8?1:Math.min(1.75,.8/z);
 // The ruler's marks: the atlas's time slices, each opening its paragraph, plus a few years for orientation.
+// A gantry on the map: a faint band behind the rails, two columns over them, a bracket where each rail passes through
+// (not a station: the rails do not stop there), and a sign above every name, kept readable at any zoom like the line flags.
+function renderGantries(){
+ const back=$('#gantryLayerBack'),front=$('#gantryLayerFront');back.innerHTML='';front.innerHTML='';
+ for(const n of NET.gantries){
+  const g=gantryById.get(n.id),open=gantryOpen(g),cls='gantry'+(open?'':' planned');
+  createSVG('rect',{x:n.x-n.half,y:n.top,width:n.half*2,height:n.bottom-n.top,class:'gantry-band'},createSVG('g',{class:cls,'data-gantry':n.id},back));
+  const label=`${gantryLabel(g)}《${g.name}》，${open?`跨线龙门架，${gantryScenes(g).length}幕，点击查看`:'规划中的龙门架'}`;
+  const f=createSVG('g',{class:cls,'data-gantry':n.id,role:'button',tabindex:'-1','aria-label':label},front);
+  createSVG('title',{},f).textContent=`${gantryLabel(g)} · ${g.name}\n${g.subtitle||''}${open?'':'\n规划中'}`;
+  for(const dx of [-n.half,n.half])createSVG('line',{x1:n.x+dx,x2:n.x+dx,y1:n.top,y2:n.bottom,class:'gantry-column'},f);
+  if(open)for(const dx of [-n.half+4,n.half-4])createSVG('line',{x1:n.x+dx,x2:n.x+dx,y1:n.top+2,y2:n.bottom,class:'gantry-column inner'},f);
+  for(const c of n.crossings){
+   const l=n.x-n.half,r=n.x+n.half;
+   createSVG('path',{d:`M ${l-3} ${c.y-7} H ${l+3} V ${c.y+7} H ${l-3} M ${r+3} ${c.y-7} H ${r-3} V ${c.y+7} H ${r+3}`,class:'gantry-pass','data-line':c.line},f);
+   if(open)createSVG('path',{d:`M ${n.x} ${c.y-4} L ${n.x+4} ${c.y} L ${n.x} ${c.y+4} L ${n.x-4} ${c.y} Z`,class:'gantry-gem'},f);
+  }
+  createSVG('rect',{x:n.x-n.half-6,y:n.top,width:(n.half+6)*2,height:n.bottom-n.top,class:'gantry-hit'},f);
+  const sign=createSVG('g',{class:'gantry-sign',transform:`translate(${n.x} ${n.top})`},f),k=createSVG('g',{class:'flag-scale'},sign),w=n.sign.w,h=n.sign.h;
+  // The full sign from mid zoom up; zoomed right out, only its code, so the lines' own signposts keep their room.
+  const full=createSVG('g',{class:'sign-full'},k),mini=createSVG('g',{class:'sign-mini'},k);
+  createSVG('rect',{x:-w/2,y:-h,width:w,height:h,rx:3,class:'gantry-sign-box'},full);
+  textSVG(full,`${gantryLabel(g)}${open?'':' · 规划中'}`,{x:0,y:-h+15,'text-anchor':'middle',class:'gantry-sign-code'});
+  textSVG(full,g.name,{x:0,y:-h+(open?33:30),'text-anchor':'middle',class:'gantry-sign-name'});
+  textSVG(full,open?`跨 ${n.crossings.length} 线 · ${gantryScenes(g).length} 幕 · 点击查看`:'预告',{x:0,y:-7,'text-anchor':'middle',class:'gantry-sign-sub'});
+  const mw=miniWidth(gantryLabel(g));createSVG('rect',{x:-mw/2,y:-MINI_SIGN_H,width:mw,height:MINI_SIGN_H,rx:2,class:'gantry-sign-box'},mini);
+  textSVG(mini,gantryLabel(g),{x:0,y:-5,'text-anchor':'middle',class:'gantry-sign-code'});
+  f.addEventListener('click',ev=>{ev.stopPropagation();if(!skipGraphClick)inspectGantry(n.id)});
+  f.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();inspectGantry(n.id)}});
+ }
+}
+const MINI_SIGN_H=18,miniWidth=s=>Math.max(72,[...s].reduce((w,c)=>w+(/[⺀-￯]/.test(c)?10.8:6.6),0)+16);
+function markGantry(){$$('#gantryLayerFront .gantry').forEach(g=>g.classList.toggle('selected',g.dataset.gantry===selectedGantry))}
+function inspectGantry(id){
+ const g=gantryById.get(id);if(!g)return;const open=gantryOpen(g);selectedGantry=id;
+ $('#stationInspector').hidden=false;$('#stationInspector').classList.add('for-gantry');
+ $('#inspectorKicker').textContent=`${gantryLabel(g)} · ${open?'跨线龙门架':'规划中的龙门架'}`;
+ $('#inspectorTitle').textContent=g.name;$('#inspectorPeriod').textContent=g.subtitle||'';
+ $('#inspectorSummary').textContent=g.summary||'';
+ $('#inspectorLines').innerHTML=open?`<button class="board-line gantry-enter" data-gantry="${esc(id)}"><i></i>进入龙门架站台 · ${gantryScenes(g).length}幕<span>→</span></button>`:'';
+ if(open)$('#inspectorLines .gantry-enter').onclick=()=>enterGantry(g,0,null);
+ $('#inspectorHint').hidden=true;
+ $('#inspectorFuture').hidden=open;$('#inspectorFuture').textContent=open?'':'规划中，尚未开放。';
+ markGantry();
+}
+function focusGantry(id){const n=NET.gantries.find(x=>x.id===id);if(!n)return;const small=narrowScreen(),z=small?.6:.8;camera={z,x:network.clientWidth*(small?.5:.42)-n.x*z,y:Math.min(110,network.clientHeight*.2)-(n.top-n.sign.h)*z};applyCamera()}
 function renderZones(){
  const zones=$('#zones'),w=NET.world,top=w.minY-900,h=w.maxY-w.minY+1800;
  const marks=[...SLICES.map((s,i)=>({t:s[0],name:s[1],slice:i})),...[[-3000,'前3000'],[1200,'1200'],[1400,'1400']].map(([t,name])=>({t,name}))].sort((a,b)=>a.t-b.t);
@@ -93501,7 +93698,7 @@ function showSlice(i){
  $('#sliceTitle').textContent=`${label} · ${head}`;$('#sliceText').textContent=text;$('#slicePanel').hidden=false;
 }
 function renderNetwork(){
- NET=window.buildNetworkLayout({stations,lines,lineStops,design:window.NETWORK_DESIGN,periods:window.ROUTE_PERIODS,ends:TREE_ENDS});
+ NET=window.buildNetworkLayout({stations,lines,lineStops,design:window.NETWORK_DESIGN,periods:window.ROUTE_PERIODS,ends:TREE_ENDS,gantries:GANTRIES});
  pointByKey=NET.nodes;
  renderZones();
  const paths=$('#networkLines'),nodes=$('#networkNodes'),periods=$('#periodLabels'),ticks=$('#periodTicks'),flags=$('#lineFlags'),hubs=$('#hubNames');
@@ -93541,6 +93738,7 @@ function renderNetwork(){
   g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();inspect(s.key)}});
   if(s.lines.length>2){const h=createSVG('g',{class:'hub-name','data-lines':s.lines.join(' '),transform:`translate(${n.x} ${n.y0})`},hubs),i=createSVG('g',{class:'flag-scale'},h);textSVG(i,s.title,{x:0,y:-11,'text-anchor':'middle'});h.addEventListener('click',e=>{e.stopPropagation();if(!skipGraphClick)inspect(s.key)})}
  }
+ renderGantries();
  buildDeclutter();
  $('#lineList').innerHTML=lines.map(l=>`<button class="line-choice" data-line="${l.id}" style="--c:${l.c}" title="乘坐${esc(lineLabel(l.id))}"><i class="line-swatch"></i><span>${esc(l.name)}</span><span class="line-count">${lineStops.get(l.id).length}</span></button>`).join('');
  $$('#lineList button').forEach(b=>{b.onclick=()=>board(b.dataset.line);b.onmouseenter=()=>highlightLine(b.dataset.line);b.onmouseleave=()=>highlightLine(null)});
@@ -93561,6 +93759,8 @@ function declutter(){
 function buildDeclutter(){
  const constant=z=>Math.max(1,z),flagSize=z=>z<.36?.8:Math.max(1,z),world=z=>labelScale(z)*z,items=[];
  const flagEls=$$('.line-flag');
+ // A gantry's sign gives way to the lines' signposts, and comes before the station names they share the map with.
+ NET.gantries.forEach(n=>{const g=$(`#gantryLayerFront .gantry[data-gantry="${n.id}"] .gantry-sign`);if(!g)return;items.push({el:g.querySelector('.sign-mini'),x:n.x,y:n.top,w:miniWidth(gantryLabel(gantryById.get(n.id))),h:MINI_SIGN_H,anchor:'middle',levels:['1'],scale:constant,rank:2.5},{el:g.querySelector('.sign-full'),x:n.x,y:n.top,w:n.sign.w,h:n.sign.h,anchor:'middle',levels:['2'],scale:constant,rank:2.5})});
  NET.flags.forEach((f,i)=>items.push({el:flagEls[i],x:f.tipX,y:f.tipY,w:f.w+4,h:f.h+2,anchor:f.end==='start'?'tipStart':'tipEnd',levels:['1','2'],scale:flagSize,rank:f.end==='start'?1:2}));
  const biggest=[...pointByKey.values()].filter(n=>n.s.lines.length>2).sort((a,b)=>b.s.lines.length-a.s.lines.length);
  // A hub where a line starts gives way to that line's signpost (城市与早期王权, the first station of 希腊, 埃及 and 中东).
@@ -93588,7 +93788,7 @@ function markNetwork(){
 const futureOf=id=>TREE_FUTURE.find(f=>f[0]===id);
 function inspect(key){
  selectedKey=key;const s=stationByKey.get(key),entry=HISTORY_ENTRIES.find(e=>e.id===s.id);
- $('#stationInspector').hidden=false;
+ $('#stationInspector').hidden=false;$('#stationInspector').classList.remove('for-gantry');selectedGantry=null;markGantry();
  $('#inspectorKicker').textContent=s.lines.length>1?`贯通事件 · ${s.lines.length}线换乘`:`事件站 · ${lineLabel(s.lines[0])}`;
  $('#inspectorTitle').textContent=s.title;$('#inspectorPeriod').textContent=`${s.period} · ${s.count}幕`;
  $('#inspectorSummary').textContent=entry.scenes[s.from]?.title||entry.title;
@@ -93626,15 +93826,15 @@ function fitWhole(){const w=NET.world;focusBox(w.minX-90,w.maxX+90,w.minY-30,w.m
 function focusStation(key=selectedKey){const n=pointByKey.get(key);if(!n)return;const small=narrowScreen(),z=small?.83:.95;camera={z,x:network.clientWidth*(small?.5:.44)-n.x*z,y:network.clientHeight*(small?.38:.45)-n.y*z};applyCamera()}
 function updateModeToggle(){
  const s=stationByKey.get(selectedKey);
- $('#modeToggle').textContent=mode==='ride'?'展开地铁全图 ↗':`乘坐${lineLabel(s.lines.includes(rideLine)?rideLine:s.lines[0])} →`;
+ $('#modeToggle').textContent=mode==='ride'?'展开地铁全图 ↗':gantryNow?`回到${gantryNow.name} →`:`乘坐${lineLabel(s.lines.includes(rideLine)?rideLine:s.lines[0])} →`;
 }
 function setMode(next,{whole=false}={}){
  mode=next;document.body.dataset.metro=next;$('#networkLegend').classList.remove('open');$('#slicePanel').hidden=true;
  if(next==='network'){
-  if(station)selectedKey=station.key;
-  if(whole)$('#stationInspector').hidden=true;else inspect(selectedKey);
+  if(station&&!gantryNow)selectedKey=station.key;
+  if(whole)$('#stationInspector').hidden=true;else if(gantryNow)inspectGantry(gantryNow.id);else inspect(selectedKey);
   updateModeToggle();
-  requestAnimationFrame(()=>whole?fitWhole():focusStation(selectedKey));
+  requestAnimationFrame(()=>whole?fitWhole():gantryNow?focusGantry(gantryNow.id):focusStation(selectedKey));
  }else{
   updateModeToggle();
   requestAnimationFrame(()=>{centerRoute();map.invalidateSize({animate:false,pan:false})});
@@ -93651,7 +93851,7 @@ function board(id,{key=selectedKey}={}){
  setMode('ride');
 }
 function goStation(key){const s=stationByKey.get(key);if(s)go(s.id,{scene:s.from})}
-function stepStation(delta){const seq=lineStops.get(rideLine),next=seq[seq.findIndex(s=>s.key===station.key)+delta];if(next)goStation(next.key)}
+function stepStation(delta){if(gantryNow){stepScene(delta);return}const seq=lineStops.get(rideLine),next=seq[seq.findIndex(s=>s.key===station.key)+delta];if(next)goStation(next.key)}
 function stepScene(delta){const next=sceneIndex+delta;if(station&&next>=station.from&&next<=station.to)go(station.id,{scene:next})}
 
 /* ---------- Changing line asks first ---------- */
@@ -93689,6 +93889,8 @@ function askTransfer(c){
 let routeSkipClick=false;
 function renderRide(){
  document.body.classList.remove('strip-open');$('#stripToggle').setAttribute('aria-expanded','false');$('#stripToggle i').textContent='▾';
+ document.body.classList.toggle('at-gantry',Boolean(gantryNow));$('#gantryBar').hidden=!gantryNow;
+ if(gantryNow){renderGantryBar();$('#transferBar').innerHTML='';$('#transferHint').hidden=true;$('#gantryHint').hidden=true;return}
  const seq=lineStops.get(rideLine),idx=seq.findIndex(s=>s.key===station.key),narrow=narrowScreen();
  document.documentElement.style.setProperty('--line',color(rideLine));
  $('#ridingLine').innerHTML=`<span class="line-number">${lineCode(rideLine)}</span>${esc(lineName(rideLine))}<small>${isBranch(rideLine)?'支线':'主线'} · ${seq.length}站</small>`;
@@ -93696,22 +93898,31 @@ function renderRide(){
  $('#stripToggle span').innerHTML=`<span class="line-number">${lineCode(rideLine)}</span>${esc(lineName(rideLine))}`;
  $('#stationPosition').textContent=`${idx+1} / ${seq.length}`;$('#prevStation').disabled=idx<=0;$('#nextStation').disabled=idx>=seq.length-1;
  $('#routePeriod').textContent=periodFor(rideLine,station.t);
- const future=futureOf(rideLine),step=narrow?128:150,offset=narrow?72:88,span=(seq.length-1)*step,width=Math.max($('#routeScroller').clientWidth,offset*2+span+(future?step:0));
+ // A gantry this line passes takes a little room between two stops; it is not a stop and has no number.
+ const marks=gantriesOn(rideLine).map(m=>({...m,i:seq.findIndex(s=>s.key===m.at.after)})).filter(m=>m.i>=0).sort((a,b)=>a.i-b.i);
+ const future=futureOf(rideLine),step=narrow?128:150,offset=narrow?72:88,gap=Math.round(step*.62),posOf=i=>offset+i*step+gap*marks.filter(m=>m.i<i).length;
+ const lastX=posOf(seq.length-1),tail=marks.some(m=>m.i===seq.length-1)?gap:0,span=lastX-offset,width=Math.max($('#routeScroller').clientWidth,offset*2+span+tail+(future?step:0));
  const track=$('#routeTrack');track.style.width=width+'px';
- track.innerHTML=`<i class="route-rail" style="left:${offset}px;width:${span}px"></i><i class="route-rail past" style="left:${offset}px;width:${Math.max(0,idx*step)}px"></i>`;
+ track.innerHTML=`<i class="route-rail" style="left:${offset}px;width:${span}px"></i><i class="route-rail past" style="left:${offset}px;width:${Math.max(0,posOf(idx)-offset)}px"></i>`;
  // Section marks group contiguous stations; the name stays in view while its section does.
  const groups=[];seq.forEach((s,i)=>{const title=periodFor(rideLine,s.t),last=groups.at(-1);if(last?.title===title)last.end=i;else groups.push({title,start:i,end:i})});
- for(const g of groups){const left=offset+(g.start-.47)*step,w=(g.end-g.start+.94)*step;track.insertAdjacentHTML('beforeend',`<div class="route-period-band" title="${esc(g.title)} · 路段标记，章节可能跨越多个时段" style="left:${left}px;width:${w}px"><span>${esc(g.title)}</span></div>`)}
+ for(const g of groups){const left=posOf(g.start)-.47*step,w=posOf(g.end)-posOf(g.start)+.94*step;track.insertAdjacentHTML('beforeend',`<div class="route-period-band" title="${esc(g.title)} · 路段标记，章节可能跨越多个时段" style="left:${left}px;width:${w}px"><span>${esc(g.title)}</span></div>`)}
  seq.forEach((s,i)=>{
-  const xs=transfersAt(s),b=document.createElement('button');b.className='route-stop'+(xs.length?' shared':'')+(s.platform?' plat':'')+(s.key===station.key?' active':'')+(i<idx?' past':'');b.style.left=offset+i*step+'px';b.dataset.key=s.key;b.title=`${s.title} · ${s.platform?'月台 · ':''}${s.period} · ${s.count}幕${xs.length?'；可换乘'+xs.map(c=>lineLabel(c.line)).join('、'):''}`;b.setAttribute('aria-label',b.title);b.setAttribute('aria-current',s.key===station.key?'step':'false');
+  const xs=transfersAt(s),b=document.createElement('button');b.className='route-stop'+(xs.length?' shared':'')+(s.platform?' plat':'')+(s.key===station.key?' active':'')+(i<idx?' past':'');b.style.left=posOf(i)+'px';b.dataset.key=s.key;b.title=`${s.title} · ${s.platform?'月台 · ':''}${s.period} · ${s.count}幕${xs.length?'；可换乘'+xs.map(c=>lineLabel(c.line)).join('、'):''}`;b.setAttribute('aria-label',b.title);b.setAttribute('aria-current',s.key===station.key?'step':'false');
   // A platform (月台) is this line's short summary of a story told in full on another line: a hollow diamond.
   b.innerHTML=`<i class="dot"></i><span class="stop-text"><span class="stop-name">${esc(s.title)}</span><span class="stop-date">${s.platform?`月台 · ${s.count}幕`:esc(s.period)}</span></span>`;
   b.onclick=()=>{if(!routeSkipClick)goStation(s.key)};track.appendChild(b);
  });
+ for(const m of marks){
+  const b=document.createElement('button');b.type='button';b.className='route-gantry';b.dataset.gantry=m.g.id;b.style.left=posOf(m.i)+(step+gap)/2+'px';
+  b.title=`跨线龙门架 ${gantryLabel(m.g)}《${m.g.name}》：本线直穿，不停车；点击进入，直达“${gantryChip(m.g,m.at.scene)}”一幕`;b.setAttribute('aria-label',b.title);
+  b.innerHTML=`<span class="rg-code">${esc(gantryLabel(m.g))}</span><i class="rg-cols"></i><span class="rg-name">${esc(m.g.name)}</span><span class="rg-sub">直穿 · 可点入</span>`;
+  b.onclick=()=>{if(!routeSkipClick)enterGantry(m.g,m.at.scene,here())};track.appendChild(b);
+ }
  // The badges above a stop change line there. They sit beside the stop buttons, after all of them: a button cannot hold buttons.
  seq.forEach((s,i)=>{
   const xs=transfersAt(s);if(!xs.length)return;
-  const row=document.createElement('div');row.className='route-transfers';row.style.left=offset+i*step+'px';
+  const row=document.createElement('div');row.className='route-transfers';row.style.left=posOf(i)+'px';
   for(const c of xs){
    const t=document.createElement('button');t.type='button';t.dataset.switchLine=c.line;t.dataset.key=s.key;t.dataset.to=c.to;if(c.kind==='platform')t.className='to-detail';
    t.style.setProperty('--c',color(c.line));t.textContent=LINE_MARK[c.line]||lineName(c.line)[0];
@@ -93719,18 +93930,59 @@ function renderRide(){
   }
   track.appendChild(row);
  });
- if(future)track.insertAdjacentHTML('beforeend',`<i class="route-rail upcoming" style="left:${offset+span}px;width:${step}px"></i><div class="route-future" title="${esc(future[3])}" style="left:${offset+span+step}px"><i class="dot"></i><span class="stop-text"><span class="stop-name">${esc(future[2])}</span><span class="stop-date">待展开</span></span></div>`);
+ if(future)track.insertAdjacentHTML('beforeend',`<i class="route-rail upcoming" style="left:${lastX}px;width:${step+tail}px"></i><div class="route-future" title="${esc(future[3])}" style="left:${lastX+tail+step}px"><i class="dot"></i><span class="stop-text"><span class="stop-name">${esc(future[2])}</span><span class="stop-date">待展开</span></span></div>`);
  const xs=transfersAt(station);$('#transferBar').innerHTML=xs.length?'<span>⇄ 本站可换乘</span>'+xs.map((c,i)=>`<button data-transfer="${c.line}" data-i="${i}" style="--c:${color(c.line)}"><i></i>${esc(lineLabel(c.line))}</button>`).join(''):'';
  $$('#transferBar button').forEach(b=>b.onclick=()=>askTransfer(xs[+b.dataset.i]));
  const notes=xs.map(c=>transferNote(station,c)).filter(Boolean);
  $('#transferHint').innerHTML=notes.map(n=>`<span>${esc(n)}</span>`).join('');$('#transferHint').hidden=!notes.length;
+ // The station before a gantry says so, and offers it; it is not part of the text, so it is never read aloud.
+ const hint=marks.find(m=>m.at.after===station.key),gh=$('#gantryHint');gh.hidden=!hint;gh.innerHTML='';
+ if(hint){
+  const g=hint.g,s=hint.at.scene;
+  gh.innerHTML=`<i class="gh-mark" aria-hidden="true"></i><div><b>跨线龙门架 · ${esc(gantryLabel(g))}</b><p>本站之后，本线穿过《${esc(g.name)}》。连读和朗读不停；想看就进去，看完一键回本线。</p><div class="gh-actions"><button type="button" data-scene="${s}">直达“${esc(gantryChip(g,s))}”对照 →</button>${s?`<button type="button" data-scene="0">从${esc(gantryChip(g,0))}读起</button>`:''}</div></div>`;
+  gh.querySelectorAll('button').forEach(b=>b.onclick=()=>enterGantry(g,+b.dataset.scene,here()));
+ }
 }
+// Where the reader is, for the way back from a gantry.
+const here=()=>station&&!gantryNow?{line:rideLine,key:station.key,id:station.id,scene:sceneIndex}:gantryReturn;
+let gantryArrival;  // set just before going to a gantry on purpose: where its “返回” leads (null: back to the map)
+function enterGantry(g,scene=0,from=null){const e=gantryEntryOf(g);if(!e)return;gantryArrival=from;go(e.id,{scene})}
+function showGantry(g,prev){
+ const e=ENTRIES[cur];
+ if(gantryNow!==g)gantryReturn=gantryArrival!==undefined?gantryArrival:prev;
+ gantryArrival=undefined;gantryNow=g;
+ station={key:`${e.id}/gantry`,id:e.id,from:0,to:e.scenes.length-1,count:e.scenes.length,title:g.name,t:g.year,lines:[],period:e.period,gantry:g.id};
+ renderRide();updateSceneUI();
+ $('#entryEyebrow').textContent=`${gantryLabel(g)} · 跨线龙门架`;
+ if(mode!=='ride')setMode('ride');
+ routeAt=null;
+}
+function leaveGantry(){if(!gantryNow)return;gantryNow=null;gantryReturn=null;document.body.classList.remove('at-gantry');$('#gantryBar').hidden=true}
+// The gantry's own platform: the way back, its name, and one chip per scene.
+function renderGantryBar(){
+ const g=gantryNow,e=ENTRIES[cur],ret=gantryReturn,back=$('#gantryBack');
+ $('#gantryCode').textContent=gantryLabel(g);$('#gantryName').textContent=g.name;
+ back.textContent=ret?`← 返回${lineLabel(ret.line)}`:'← 全图';
+ back.title=ret?`回到${lineLabel(ret.line)}《${stationByKey.get(ret.key)?.title||''}》`:'回到地铁全图上的这座龙门架';back.setAttribute('aria-label',back.title);
+ $('#gantryChips').innerHTML=gantryScenes(g).map((s,i)=>{const ids=gantryLinesAt(g,i);return `<button type="button" role="tab" data-scene="${s.scene}" aria-selected="false" title="${esc(s.title)}" style="--c:${ids.length?color(ids[0]):'var(--accent)'}"><i></i>${esc(gantryChip(g,i))}</button>`}).join('');
+ $$('#gantryChips button').forEach(b=>b.onclick=()=>go(e.id,{scene:+b.dataset.scene}));
+ markGantryChip(sceneIndex);
+}
+function markGantryChip(i){
+ const chips=$$('#gantryChips button');chips.forEach(b=>{const on=+b.dataset.scene===i;b.classList.toggle('on',on);b.setAttribute('aria-selected',String(on))});
+ const on=chips.find(b=>b.classList.contains('on')),bar=$('#gantryChips');if(on)bar.scrollLeft=on.offsetLeft-bar.clientWidth/2+on.offsetWidth/2;
+}
+$('#gantryBack').onclick=()=>{
+ const ret=gantryReturn,g=gantryNow;if(!g)return;
+ if(ret){rideLine=ret.line;treeLine=ret.line;go(ret.id,{scene:ret.scene})}
+ else{setMode('network');inspectGantry(g.id)}
+};
 let routeAt=null;
 function centerRoute(){const s=$('#routeScroller'),b=$('.route-stop.active');if(b)s.scrollLeft=b.offsetLeft-s.clientWidth/2}
 // Scrolling moves this at once; the map follows when the scrolling pauses.
 function showSceneName(i){
  const data=ENTRIES[cur].scenes[i];if(!data||!station)return;
- $('#scenePosition').textContent=`${i-station.from+1} / ${station.count} 幕`;
+ $('#scenePosition').textContent=`${i-station.from+1} / ${station.count} 幕`;if(gantryNow)markGantryChip(i);
  $('#sceneHeading').textContent=data.title;
  $('#prevScene').disabled=i<=station.from;$('#nextScene').disabled=i>=station.to;
 }
@@ -93764,9 +94016,11 @@ const targetOf=(id,opts)=>{
  const e=typeof ref==='number'?ENTRIES[ref]:ENTRIES.find(x=>x.id===ref),i=Number(part);
  return e&&isHistory(e)?[e,e.scenes[Number.isInteger(i)?i:0]||e.scenes[0]]:null;
 };
-function afterNavigation(){
+function afterNavigation(prev=null){
  const e=ENTRIES[cur];
- if(!isHistory(e)){document.body.dataset.metro='off';mode='off';return}
+ if(!isHistory(e)){leaveGantry();document.body.dataset.metro='off';mode='off';return}
+ const g=gantryByEntry.get(e.id);if(g){showGantry(g,prev);return}
+ leaveGantry();
  const current=currentStation();if(!current)return;
  const before=station?.key;station=stationByKey.get(current.key);selectedKey=station.key;
  // A cross-reference may have just chosen a line for the atlas; otherwise stay on this one if the station is on it.
@@ -93775,11 +94029,13 @@ function afterNavigation(){
  if(mode!=='ride')setMode('ride');else if(before!==station.key||routeAt!==rideLine)requestAnimationFrame(centerRoute);
  routeAt=rideLine;
 }
+try{const atlasEra=historyEra;historyEra=(e,s)=>atlasEra(e,s)||(gantryByEntry.has(e.id)?{id:gantryByEntry.get(e.id).id,name:`${gantryLabel(gantryByEntry.get(e.id))} 跨线龙门架`}:undefined)}catch{}
 const atlasGo=go;
 go=function(id,opts={}){
  const target=targetOf(id,opts);if(target)focusScene(...target);
  if(!readerFollows){clearTimeout(sceneTimer);cancelAnimationFrame(scrollFrame);scrollFrame=0;wantedScene=null;readerScrolledUntil=0}
- atlasGo(id,opts);afterNavigation();
+ const prev=station&&!gantryNow?{line:rideLine,key:station.key,id:station.id,scene:sceneIndex}:null;
+ atlasGo(id,opts);afterNavigation(prev);
 };
 // Only this station's scenes are on the page; the rest of the section belongs to other stops.
 const atlasRenderScenes=renderScenes;
@@ -93920,6 +94176,7 @@ routeScroller.addEventListener('wheel',e=>{if(Math.abs(e.deltaY)>Math.abs(e.delt
 /* ---------- Controls ---------- */
 $('#modeToggle').onclick=()=>{
  if(mode==='ride'){setMode('network');return}
+ if(gantryNow){setMode('ride');return}  // the reader is still at the gantry
  const s=stationByKey.get(selectedKey);board(s.lines.includes(rideLine)?rideLine:s.lines[0],{key:selectedKey});
 };
 $('#tHistory').onclick=()=>{if(mode==='ride')setMode('network');else if(mode==='off')go(lastEntry.history)};
@@ -93966,19 +94223,26 @@ const opening=ENTRIES[cur];
 if(isHistory(opening)){
  const deepLink=!window.atlasOpenedBare;
  mode=deepLink?'ride':'network';document.body.dataset.metro=mode;
- station=stationByKey.get(currentStation().key);selectedKey=station.key;
- if(station.lines.includes(treeLine))rideLine=treeLine;else rideLine=station.lines[0];
- card.querySelectorAll('.scene-passage').forEach(p=>{const i=+p.dataset.sceneText;p.classList.toggle('off-station',i<station.from||i>station.to)});
- renderRide();updateSceneUI();
+ const openingGantry=gantryByEntry.get(opening.id);
+ if(openingGantry){gantryArrival=null;showGantry(openingGantry,null)}
+ else{
+  station=stationByKey.get(currentStation().key);selectedKey=station.key;
+  if(station.lines.includes(treeLine))rideLine=treeLine;else rideLine=station.lines[0];
+  card.querySelectorAll('.scene-passage').forEach(p=>{const i=+p.dataset.sceneText;p.classList.toggle('off-station',i<station.from||i>station.to)});
+  renderRide();updateSceneUI();
+ }
  focusScene(opening,activeScene(opening));fit(opening,false);
  setMode(mode,{whole:!deepLink&&!narrowScreen()});
  if(!deepLink)$('#stationInspector').hidden=true;
  scrollSceneText(false);
 }else{document.body.dataset.metro='off';mode='off';fit(opening,false)}
 routeAt=rideLine;
+// For the player (德谟克利特 2026-11-20): every open gantry as a queue shaped like a line, one stop per scene, in TREE_GANTRIES order.
+const gantryQueues=new Map(GANTRIES.filter(gantryOpen).map(g=>[g.id,{id:g.id,name:g.name,kind:'gantry',stops:gantryScenes(g).map(s=>({id:s.id,from:s.scene,to:s.scene,key:`${s.id}/${s.scene}`,title:s.title}))}]));
 window.metroUI={board,inspect,goStation,stepStation,stepScene,setMode,focusStation,focusKeys,fitWhole,zoomAt,setCamera:c=>{camera={...c};applyCamera()},
- state:()=>({mode,line:rideLine,station:station?.key,scene:station?sceneIndex-station.from:0,globalScene:sceneIndex,sceneCount:station?.count,camera:{...camera}}),
- data:{stations,lines,lineStops},get pointByKey(){return pointByKey},layoutReport:()=>NET.report,layoutBounds:()=>NET.world};
+ inspectGantry,focusGantry,openGantry:(id,scene=0)=>{const g=gantryById.get(id);if(g&&gantryOpen(g))enterGantry(g,scene,here())},
+ state:()=>({mode,line:rideLine,station:gantryNow?null:station?.key,gantry:gantryNow?.id||null,returnTo:gantryNow&&gantryReturn?{...gantryReturn}:null,scene:station?sceneIndex-station.from:0,globalScene:sceneIndex,sceneCount:station?.count,camera:{...camera}}),
+ data:{stations,lines,lineStops,gantries:gantryQueues},get pointByKey(){return pointByKey},layoutReport:()=>NET.report,layoutBounds:()=>NET.world};
 })();
 
 </script>

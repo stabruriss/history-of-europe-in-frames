@@ -126,7 +126,7 @@ function checkScenes({keys,labelKeys}){
    count('.moment',e.moments.filter(m=>m.scene===index).length,'moments');
    count('.box',e.boxes.filter(b=>b.scene===index).length,'boxes');
    count('.person-card',(FIGURE_SCENES[key]||[]).length,'person cards');
-   if(isHistory(e)&&!metroUI.state().station)note('no station on the route strip');
+   if(isHistory(e)&&!metroUI.state().station&&!metroUI.state().gantry)note('no station on the route strip');
   }
  }
  return problems;

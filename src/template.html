@@ -288,7 +288,7 @@ body.resizing-reader #map{pointer-events:none}
   <div class="network-workspace">
     <aside class="network-legend" id="networkLegend"><div class="legend-heading"><b>主线</b><span>点线路上车 →</span></div><div id="lineList"></div><div class="symbol-key"><span><i class="key-stop"></i>事件站</span><span><i class="key-transfer"></i>同行线路 · 同站换乘</span><span><i class="key-link"><i></i></i>虚线相连 · 可换乘</span><span><i class="key-cross"></i>线路相交 · 不可换乘</span><span><i class="key-tick"></i>路段标记：王朝／时段</span><span><i class="key-flag"></i><i class="key-flag end"></i>线路起点／终点</span><p>无站圈的分岔来自图册的主线分支，不是换乘站。</p></div></aside>
     <div class="network-canvas" id="networkCanvas" tabindex="0" aria-label="拖动平移，滚轮缩放，点击车站预览；点击线路乘车">
-      <svg id="networkSvg" role="group" aria-label="历史主线与贯通事件组成的地铁式拓扑图"><g id="viewport"><g id="zones"></g><g id="networkLines"></g><g id="periodTicks"></g><g id="periodLabels"></g><g id="networkNodes"></g><g id="lineFlags"></g><g id="hubNames"></g></g></svg>
+      <svg id="networkSvg" role="group" aria-label="历史主线与贯通事件组成的地铁式拓扑图"><g id="viewport"><g id="zones"></g><g id="gantryLayerBack"></g><g id="networkLines"></g><g id="periodTicks"></g><g id="periodLabels"></g><g id="networkNodes"></g><g id="gantryLayerFront"></g><g id="lineFlags"></g><g id="hubNames"></g></g></svg>
       <div class="year-ruler" id="yearRuler"></div>
       <div class="map-instruction">拖动平移 <span>·</span> 滚轮／双指缩放 <span>·</span> 点线路上车</div>
       <aside class="slice-panel" id="slicePanel" hidden><button id="sliceClose" type="button" aria-label="关闭时间切片">×</button><h3 id="sliceTitle"></h3><p id="sliceText"></p></aside>
@@ -299,6 +299,7 @@ body.resizing-reader #map{pointer-events:none}
 <section id="ridePanel" aria-label="沿线路线图">
   <header class="ride-heading"><div class="riding-line" id="ridingLine"></div><button id="stripToggle" type="button" aria-expanded="false" title="展开或收起路线图"><span></span><i>▾</i></button><span id="stripStation"></span><span class="ride-instruction">← → 换站 <span>·</span> ↑ ↓ 换幕</span><div class="station-nav"><button id="prevStation" type="button">← 上一站</button><span id="stationPosition"></span><button id="nextStation" type="button">下一站 →</button></div></header>
   <div class="route-panel"><div class="route-caption"><span>本线路线图</span><b id="routePeriod"></b><small>拖动看全线 · 点站直达</small></div><div class="route-scroller" id="routeScroller" tabindex="0" aria-label="当前主线上的事件站与历史时期"><div class="route-track" id="routeTrack"></div></div></div>
+  <div id="gantryBar" hidden><div class="gantry-head"><button id="gantryBack" type="button"></button><span class="gantry-code" id="gantryCode"></span><h3 id="gantryName"></h3><small id="gantryNote">独立跨线龙门架 · 不属于任何主线</small></div><div class="gantry-chips" id="gantryChips" role="tablist" aria-label="龙门架各幕"></div></div>
 </section>
 <aside id="side">
   <p id="indexCaption"></p>
@@ -325,7 +326,7 @@ body.resizing-reader #map{pointer-events:none}
       </div>
       <span id="audioAvailability"></span>
     </div>
-    <div id="readerBody"><header id="readerHead"><div id="entryEyebrow" class="eyebrow"></div><h2 id="entryTitle"></h2><div id="entryEnglish" class="en-name"></div></header><div id="transferBar"></div><p id="transferHint" hidden></p><article id="card" aria-labelledby="entryTitle"></article></div>
+    <div id="readerBody"><header id="readerHead"><div id="entryEyebrow" class="eyebrow"></div><h2 id="entryTitle"></h2><div id="entryEnglish" class="en-name"></div></header><div id="transferBar"></div><p id="transferHint" hidden></p><div id="gantryHint" hidden></div><article id="card" aria-labelledby="entryTitle"></article></div>
   </section>
   <div id="mapSceneChip"><div><small id="mapSceneDate"></small><b id="mapSceneTitle"></b></div></div>
   <details id="legendBox"><summary>图例</summary><div id="legend"></div></details>

@@ -61,6 +61,19 @@ const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','
      for(let i=s.count-2;i>=0;i--){press('ArrowUp');if(textScene()!==s.from+i)throw new Error(s.key+' up '+i);}
      press('ArrowUp');if(sceneIndex!==s.from||metroUI.state().station!==s.key)throw new Error(s.key+' top edge');
     }
+    // Gantries (老无 2026-11-20): every scene of the entry is on the page; ↓ and → walk them, ↑ and ← walk back, the edges hold.
+    for(const q of metroUI.data.gantries.values()){
+     metroUI.openGantry(q.id,0);mapEl.focus();
+     if(card.querySelectorAll('.scene-passage:not(.off-station)').length!==q.stops.length)throw new Error(q.id+' shows the wrong scenes');
+     q.stops.forEach((s,i)=>{
+      if(i)press(i%2?'ArrowDown':'ArrowRight');
+      if(metroUI.state().gantry!==q.id||sceneIndex!==s.from||textScene()!==s.from)throw new Error(q.id+' scene '+i);
+      checkVis(s.key);count++;
+     });
+     press('ArrowDown');press('ArrowRight');if(sceneIndex!==q.stops.at(-1).from||metroUI.state().gantry!==q.id)throw new Error(q.id+' bottom edge');
+     for(let i=q.stops.length-2;i>=0;i--){press(i%2?'ArrowUp':'ArrowLeft');if(textScene()!==q.stops[i].from)throw new Error(q.id+' up '+i);}
+     press('ArrowUp');press('ArrowLeft');if(sceneIndex!==q.stops[0].from||metroUI.state().gantry!==q.id)throw new Error(q.id+' top edge');
+    }
     return count;
    }finally{fit=_f;makeCtx=_c;}
   });

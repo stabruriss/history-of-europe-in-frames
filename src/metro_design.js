@@ -28,7 +28,7 @@ window.NETWORK_DESIGN = (() => {
   const GERMANY = 345;   // germany; the church runs one step below
   const CRUSADE = 395;
   const PERSIA = 440;    // persia; east rome bundles one step below from 602
-  const EAST0 = 470;     // east rome before it bundles with persia
+  const EAST0 = 470;     // east rome before it bundles with persia; 奥匈 from 1526
   const EASTEU = 505;    // egypt in antiquity, eastern europe from 860
   const SPAIN = 550;
   const PORTUGAL = 588;
@@ -63,6 +63,8 @@ window.NETWORK_DESIGN = (() => {
     'thirty-years': [[1599, y(PLAGUE)], [1648, y(PLAGUE)]],
     discovery: [[1415.5, y(DISCOVERY)], [1768, y(DISCOVERY)]],
     ww1: [[1914, y(HUNDRED)], [1923, y(HUNDRED)]],
+    // 奥匈 (2026-11-20): between 中东 and 东欧, on east Rome's lane, free since 602.
+    austria: [[1526, y(EAST0)], [1918, y(EAST0)]],
     nordic: [[745, y(TOP)], [1920, y(TOP)]],
     america: [[1430, y(AMERICA)], [1631, y(AMERICA)]],
   };
