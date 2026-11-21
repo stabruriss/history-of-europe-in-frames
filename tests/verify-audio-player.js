@@ -1311,6 +1311,56 @@ print(json.dumps({'ids':ids, 'hashes':hashes, 'kinds':kinds, 'gantries':{g['id']
     await p.evaluate(() => localStorage.removeItem('atlas-player-pos-v1'));
   }
   pass('Reload keeps the player where it stood: line, item, second and options come back paused, nothing is fetched until play, play carries on from that second');
+  // Gantries (老无 2026-11-20): at a gantry “连续朗读” reads its scenes in order, as a route of its own named in 书名号; it ends
+  // without the female end-of-line notice; a reload brings it back paused; walking into a gantry while a line plays changes nothing.
+  {
+    const gid = Object.keys(data.gantries)[0], route = data.gantries[gid] || [];
+    if (!gid) console.log('NOTE no gantry with scenes yet: the gantry reading checks wait for the data');
+    else {
+      await p.setViewport({width:1440, height:960});
+      await p.goto(url('fixture') + '?progress=1#' + route.at(-2), {waitUntil:'load'}); await ready(p);
+      await p.evaluate(() => localStorage.removeItem('atlas-player-pos-v1'));
+      await setOptions(p, false, false); // bodies only: the order of the scenes is what is checked here
+      const name = await p.evaluate(id => metroUI.data.gantries.get(id).name, gid);
+      assert.equal(await p.evaluate(() => metroUI.state().gantry), gid);
+      assert(!(await p.$eval('#audioReadLine', b => b.disabled)), 'A gantry can be read whole');
+      assert(( await p.$eval('#audioReadLine', b => b.title)).startsWith(`载入《${name}》全部 ${route.length} 幕`));
+      await p.click('#audioReadLine');
+      let s = await state(p);
+      assert.deepEqual([s.mode, s.line], ['line', gid]); assert.deepEqual(s.queue, route, 'The queue is the gantry, in its own order');
+      assert((await p.$eval('#audioKicker', e => e.textContent)).startsWith(`《${name}》 · `), 'Named in 书名号, without 线');
+      const i = route.length - 2;
+      if ((await state(p)).phase === 'title') { await stage(p, i, 'title'); await finishClip(p); }
+      await stage(p, i, 'body'); await finishClip(p);
+      await stage(p, i + 1, 'body'); await finishClip(p);
+      await p.waitForFunction(() => atlasAudio.state().finished);
+      s = await state(p);
+      assert.equal(s.ending, false, 'A gantry ends without the end-of-line notice');
+      assert(!(await p.$eval('#atlasAudioElement', a => a.currentSrc)).startsWith('data:'), 'No end notice was played');
+      assert.equal(await p.evaluate(() => localStorage.getItem('atlas-player-pos-v1')), null, 'A finished gantry leaves nothing to restore');
+      // A reload brings a gantry being read back paused, with the gantry as the queue.
+      await p.evaluate(k => go(k.split('/')[0], {scene:+k.split('/')[1]}), route[1]);
+      await p.click('#audioReadLine'); await p.waitForFunction(() => atlasAudio.state().playing && atlasAudio.state().index === 1);
+      await p.click('#audioToggle'); await p.waitForFunction(() => !atlasAudio.state().wantsPlay);
+      const stood = await state(p);
+      await p.reload({waitUntil:'load'}); await ready(p);
+      await p.waitForFunction(() => !document.getElementById('audioPlayer').hidden);
+      const back = await state(p);
+      assert.deepEqual([back.mode, back.line, back.index, back.partId, back.wantsPlay], ['line', gid, 1, stood.partId, false]);
+      assert.deepEqual(back.queue, route);
+      await p.evaluate(() => localStorage.removeItem('atlas-player-pos-v1'));
+      // Browsing: a line being read keeps playing while the reader walks into a gantry and back out.
+      await p.goto(url('fixture') + '#history-migration/0', {waitUntil:'load'}); await ready(p);
+      await p.click('#audioReadLine'); await p.waitForFunction(() => atlasAudio.state().playing);
+      const reading = await state(p);
+      await p.evaluate(id => metroUI.openGantry(id, 0), gid);
+      assert.equal(await p.evaluate(() => metroUI.state().gantry), gid);
+      s = await state(p);
+      assert.deepEqual([s.line, s.queue, s.index], [reading.line, reading.queue, reading.index], 'Walking into a gantry never changes the sound');
+      await p.click('#audioToggle'); await p.waitForFunction(() => !atlasAudio.state().wantsPlay);
+    }
+  }
+  pass('Gantries: 连续朗读 at a gantry reads its scenes in order as a route of its own, ends without the line end notice, comes back paused after a reload; walking into a gantry never changes the sound');
 
   // The continuous stream, the default on Chromium (老无 2026-11-12: a locked Android phone stopped at every boundary).
   // Every check above runs the element path (window.ATLAS_AUDIO_ENGINE = 'element'); these run the stream itself.
