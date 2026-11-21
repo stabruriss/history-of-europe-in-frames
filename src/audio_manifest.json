@@ -8,12 +8,12 @@
     "volume": "+0%"
   },
   "source": {
-    "commit": "f59dda27a705a26df68328c49a9fa81d54cd1ab2",
+    "commit": "cf1d7a067c1266ec9b51b6fcef4eec6d19e984f2",
     "dirty": [],
     "files": {
-      "src/history_entries.js": "838674bd61dd29474f2edceca937a408ca1fdf94eaf7dbcb371ee45d7b5a89f0",
-      "src/history_content.json": "3e73596bf3a78dd54128f127f85f6e5e7e5b6d11404f159d8855d36f4cc98ca1",
-      "src/historical_figures.js": "7802da01ed9fc933cee60ac403af546b67ff918888d6a207103d45a330e81e22"
+      "src/history_entries.js": "ba70c2157c04aeca3eb7b773c64dcbe9e54085cd4aed36cbb62e00d8d973cb20",
+      "src/history_content.json": "c3d78ab1e2951c0d88faf3b417dbc32bdca6ddfd836b10e204642adcbfdda75d",
+      "src/historical_figures.js": "fd314c7b8b932f245c01fd50caa17d34264467e15e899ce34b5952f2f7474081"
     }
   },
   "assets": {
@@ -16809,6 +16809,14 @@
       "inputHash": "fe6542b48107a9bb28c440024b3c1b7df321ece4b77d82ade9d48f447874f18e",
       "audioHash": "df03af79735344319806aaf23a891986eb8cdc55a84082720605dd9a609aab18"
     },
+    "history-germany-wilhelm2/5/box/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/e33ecb3accc8395f2969efc202051b71c5d223f2edcab120a24256e72f895b05.mp3",
+      "duration": 132.768,
+      "bytes": 796608,
+      "textHash": "9c1b582a49897865e96941f0ab799b6c0a8337a41710b1c45da75a8fc345c102",
+      "inputHash": "0f03df2d655098a8d0ce3af0b1ce5329cca092a657bb14f8f14f608bce6bc49c",
+      "audioHash": "e33ecb3accc8395f2969efc202051b71c5d223f2edcab120a24256e72f895b05"
+    },
     "history-plat-germany-ww1/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/fff3126470679c4a6ec1e8363bb61dda9333124d4cb0e788e9f0140f83078435.mp3",
       "duration": 11.184,
@@ -18312,6 +18320,14 @@
       "textHash": "2c4466dcfb267af12350f1a923d2dfdee866ac9192221e0c82942bb38c5e93f1",
       "inputHash": "3a24fc37e93e82a9f972643d62e2f1c44040371760115ec3d5570cca91c1f7eb",
       "audioHash": "29e16f788eaa5e1a495444c84c39c914a45089f23036abf0f1c6489067b3cc25"
+    },
+    "history-italy-rome/3/box/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/a2d54f48bd764a85bcbd65c355361e1fec9c421367b34ed64e4e5d88e781bf9f.mp3",
+      "duration": 131.976,
+      "bytes": 791856,
+      "textHash": "891bdd41e6011c05fe5ce27f326ea506e66f61118904ad9d93228b910c24c603",
+      "inputHash": "a27b385becb37a1436e7db293a255ffa82db5f82250f679f598732a60b7aa390",
+      "audioHash": "a2d54f48bd764a85bcbd65c355361e1fec9c421367b34ed64e4e5d88e781bf9f"
     },
     "history-italy-rome/3/person/0": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/0490dedfa3d25030c7f2e4693ba6c28335b1b10f0579e490e5f47ee2f33683cd.mp3",
@@ -21984,6 +22000,414 @@
       "textHash": "b3a29fb00bf956f1ddcedb868904a24c6665f774256f340b0d77ad83fc47d3d9",
       "inputHash": "314d6e74837b6f47abed912ba19ba086e31c66503721b5e2bc42f7086a0f80ad",
       "audioHash": "e97ff5b3b5c8674236345eef5209b6bc3303ba4bcc36473226281e9ab4aba1d8"
+    },
+    "history-gantry-1914/title": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/e8e9a435a019e721086d28dfb8c340f27f914d63c01693a6acf81a4826135cac.mp3",
+      "duration": 11.688,
+      "bytes": 70128,
+      "textHash": "0cf6dabb70ca156c47c69038dc839d0acb3c8ff6a9c8049d8f6d3f43a9525ba0",
+      "inputHash": "481895152bea1d92e7b2e4546fe3c0325c8e8276e9d8995d47bd28b73a215bc7",
+      "audioHash": "e8e9a435a019e721086d28dfb8c340f27f914d63c01693a6acf81a4826135cac"
+    },
+    "history-gantry-1914/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/c958ad0297c1082eb161a994c7ea9f46b4969a9c2186ede46befeef8f48f4c09.mp3",
+      "duration": 96.72,
+      "bytes": 580320,
+      "textHash": "4540ac74017ec96920fd0b4ac6a416b5345ddaf21cc142cca8b03ea195696e1f",
+      "inputHash": "d5957f2294590fb514f10874ff2ebd2443214c6a1da6738da13b37329d7059b9",
+      "audioHash": "c958ad0297c1082eb161a994c7ea9f46b4969a9c2186ede46befeef8f48f4c09"
+    },
+    "history-gantry-1914/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/c4bb6cf637118273fec6e46a5f5389076026930822b7fba4dc34f6b2a362bf3b.mp3",
+      "duration": 120.672,
+      "bytes": 724032,
+      "textHash": "fad41639d38c99bbc08115a58079c686d4441a9137b48b07b2357eb1cdb81e45",
+      "inputHash": "ff2526679764dfd1ccb6268a7070a9c4264ed6cdf2b642d7a467bce7db0ce80e",
+      "audioHash": "c4bb6cf637118273fec6e46a5f5389076026930822b7fba4dc34f6b2a362bf3b"
+    },
+    "history-gantry-1914/2": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/b3a82dcb3f245effea83dc95a966c2e40e32dd8a5b7084ae6c024e4cd2aa9f37.mp3",
+      "duration": 118.392,
+      "bytes": 710352,
+      "textHash": "0b6ecea1c5cc7adba36882aaa20671f73ae17903f6ef630b498a76ade3752a20",
+      "inputHash": "70864aaa717e5b747d842fac3eb4d8200789148f82903070462d00ae661c36a6",
+      "audioHash": "b3a82dcb3f245effea83dc95a966c2e40e32dd8a5b7084ae6c024e4cd2aa9f37"
+    },
+    "history-gantry-1914/3": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/2a65888f14c3093181c5a298b6c6cdaf17f5e51d27cd24cbba97771822bc1729.mp3",
+      "duration": 117.84,
+      "bytes": 707040,
+      "textHash": "c6e36ce2a5a555f396d7390bc4e5a0dfd455b02a9300f9d7823653a7753556f7",
+      "inputHash": "b8e7f7d9116f12ba906d2abdeac16732fcf9907d4a63c4eac05f8911be9e424c",
+      "audioHash": "2a65888f14c3093181c5a298b6c6cdaf17f5e51d27cd24cbba97771822bc1729"
+    },
+    "history-gantry-1914/4": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/f4c6a5c016113e7e5ef22a7fcc4186aa3023b6e6c1f0491887e7258188fa3e1c.mp3",
+      "duration": 103.056,
+      "bytes": 618336,
+      "textHash": "9656b85cd86d8e24b23ded7bda80c830c5df5ce9f0ac877f6edf71602e1008f0",
+      "inputHash": "c25de8ce36e1a5e9c2d10b74353218ed7ba4d868a7a2aad9708c0ead62178a7c",
+      "audioHash": "f4c6a5c016113e7e5ef22a7fcc4186aa3023b6e6c1f0491887e7258188fa3e1c"
+    },
+    "history-gantry-1914/5": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/89c67c6c93b851f0c6c708c60e4adc667265c550beda8fdbcff0abb8cb7f30ff.mp3",
+      "duration": 119.088,
+      "bytes": 714528,
+      "textHash": "02f8951111671b639560467e67fdffaae8d8a6ba1899b60c86a1a4a73d0a55ca",
+      "inputHash": "af97bf354f64d9043b1e4906f3dc1192deda4c3cd259bd5bbee8393ec7508bfb",
+      "audioHash": "89c67c6c93b851f0c6c708c60e4adc667265c550beda8fdbcff0abb8cb7f30ff"
+    },
+    "history-gantry-1914/6": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/66739605f8cf09472268a1e20d0e7c439a74aa4c3246cfd39d4a0bed2acca9a1.mp3",
+      "duration": 141.336,
+      "bytes": 848016,
+      "textHash": "afc5010c25987efd1f620b87592dbd643821db2d526d08195e39dec8e7d3828c",
+      "inputHash": "43209eb85ed5a9dbe2b2f4509d94f2440bead923b6ad0d74253cee6666dd90e1",
+      "audioHash": "66739605f8cf09472268a1e20d0e7c439a74aa4c3246cfd39d4a0bed2acca9a1"
+    },
+    "history-gantry-1914/7": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/3aa857757c500622974fe74aa3583f8dbc3983109721a6b583f88336d73d3b24.mp3",
+      "duration": 134.136,
+      "bytes": 804816,
+      "textHash": "88e61361ac2c104ca3d49df38db503bf3ba842acc0f4e2e5fe54e7ca6aa39dc3",
+      "inputHash": "6a6e8e1bc79ecec0d3c524ea3e65d7380da517e8c3e2bc383d3fd23460a854de",
+      "audioHash": "3aa857757c500622974fe74aa3583f8dbc3983109721a6b583f88336d73d3b24"
+    },
+    "history-gantry-1914/8": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/8e4724995f403d7c171d3acdf5065320684f3f5ccbc15429e61e5d90d7875fe1.mp3",
+      "duration": 129.24,
+      "bytes": 775440,
+      "textHash": "32735cd75d2f9891ac4fe46fa1bc59da2c9237223e03c7d6b7d52b1641556a98",
+      "inputHash": "10f1ecc29a115eae8d8fdb3b5ed5c52339421ce9957bd311c1baae649bda7e1d",
+      "audioHash": "8e4724995f403d7c171d3acdf5065320684f3f5ccbc15429e61e5d90d7875fe1"
+    },
+    "history-gantry-1914/9": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/f525e75050a6d19d4e72e44c5c78600b748834dbfa708ac86910650a19c038de.mp3",
+      "duration": 111.048,
+      "bytes": 666288,
+      "textHash": "e74ac5c8807ebe6c5277fee164854783a2fd4180a0504a4d757edb70741b16b0",
+      "inputHash": "79a3f3a27b8703506d2698a3814e63c1163a54a9602cc40de86df5959a9918d7",
+      "audioHash": "f525e75050a6d19d4e72e44c5c78600b748834dbfa708ac86910650a19c038de"
+    },
+    "history-gantry-1914/10": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/12725adc02c922520e7a106837b2289742d6a5ddd04770b66feb4539398746a9.mp3",
+      "duration": 113.952,
+      "bytes": 683712,
+      "textHash": "2ebcd6fb240b66abc3aa5fb33dc30a076b7acac994fdcbc8bc6a75bba7ff116e",
+      "inputHash": "40fc0c92a8ed183dd6332935f15c21814fba762db91487e5ae2df20cdea228ef",
+      "audioHash": "12725adc02c922520e7a106837b2289742d6a5ddd04770b66feb4539398746a9"
+    },
+    "history-gantry-1914/11": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/31aded5bab9dd7ed18309355cf7956fd30c9ca1f3d950d6a2745ae08474266ff.mp3",
+      "duration": 110.184,
+      "bytes": 661104,
+      "textHash": "7fa72fabd7457e9b3f4eef4b4726912e54ee2a18fa7933f3ee53a18df65d3650",
+      "inputHash": "196727b9e68977cf11ec35030d255e15ce40bc3fe2b9c15c2af3c8acc91da6c5",
+      "audioHash": "31aded5bab9dd7ed18309355cf7956fd30c9ca1f3d950d6a2745ae08474266ff"
+    },
+    "history-gantry-1914/12": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/00f40eb79991dc613e1440f30b35ef4c30b1f23b3718f088f9db5aebedca82fb.mp3",
+      "duration": 117.336,
+      "bytes": 704016,
+      "textHash": "2c3e19098753e2e944b428763621f12652ea13b4bed4d2c27b02d0ae1e5437cd",
+      "inputHash": "f2172c06a9c9046386c3b7bf1c5c79f394aa776187e818ccbd31ca067957bb5e",
+      "audioHash": "00f40eb79991dc613e1440f30b35ef4c30b1f23b3718f088f9db5aebedca82fb"
+    },
+    "history-gantry-1914/13": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/bc10c238745da49a0ba626e2d747ca99a2d13c586df5f70a734a064cb95ea45d.mp3",
+      "duration": 103.752,
+      "bytes": 622512,
+      "textHash": "60d84821e1dad7b47a89d26ecfdb543150c790ceacf622c218857d7dac20cf3f",
+      "inputHash": "ed7c83739474e7b8f5ebfe1a80899d8357637f7793ce35170d81cc135af626fa",
+      "audioHash": "bc10c238745da49a0ba626e2d747ca99a2d13c586df5f70a734a064cb95ea45d"
+    },
+    "history-gantry-1914/13/box/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/c91c3fb3875de8a1e0bc1cdb1aa78947feaa7674e8763455127b2c86fa550ce7.mp3",
+      "duration": 134.04,
+      "bytes": 804240,
+      "textHash": "9e0955a5ecb1fbf886553d65cd69b025426a94f76276fc8ede7fd883da32ae40",
+      "inputHash": "1227d46c6fd667b79d27a35c3d474c0ced3106a6d33285a6395e599bc6322fb0",
+      "audioHash": "c91c3fb3875de8a1e0bc1cdb1aa78947feaa7674e8763455127b2c86fa550ce7"
+    },
+    "history-austria-danube/title": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/ff71495e0d3d651df22f5a1693812717e6dffdd8a5146af9d43ddaed6e9195d3.mp3",
+      "duration": 12.72,
+      "bytes": 76320,
+      "textHash": "c67ca83aa864d68dd615f945ff9380e3c2b577b3a3afbbf7c780566deaee209e",
+      "inputHash": "3bd685411990017bf29b19a043df5e966781e61b50e7dbccb931f52746428efa",
+      "audioHash": "ff71495e0d3d651df22f5a1693812717e6dffdd8a5146af9d43ddaed6e9195d3"
+    },
+    "history-austria-danube/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/65a1486a6716ba75c9571444186c170e2cf1cfe83d0d113f9a91cdcef76cb00a.mp3",
+      "duration": 65.544,
+      "bytes": 393264,
+      "textHash": "05cdc087eacea07b205bd29415c52cefaa02a3ad1a154c084ee3732ec4589c71",
+      "inputHash": "5eb098f3c9f6bbba16f2e32be9fbeb2d1ea09aa0b8ba0ae0a9a16335c85a55ad",
+      "audioHash": "65a1486a6716ba75c9571444186c170e2cf1cfe83d0d113f9a91cdcef76cb00a"
+    },
+    "history-austria-danube/0/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/09c9beb6e9842b0d3142222b1adc4d218cc199f6ee11337994e07af7d082a922.mp3",
+      "duration": 88.2,
+      "bytes": 529200,
+      "textHash": "5127ae98e168fe9d9e5b67d44985533a4c8e910c5741720d7cebf4642a444ee7",
+      "inputHash": "dff6f2aa8100e4423d2c5771b9bb4fa3dd8186b30671283a5269fc26c1f06eda",
+      "audioHash": "09c9beb6e9842b0d3142222b1adc4d218cc199f6ee11337994e07af7d082a922"
+    },
+    "history-austria-danube/0/person/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/68b85da6e1bf6f2e348fd968b6a2449b955374063512c588d5795b264f04e9e0.mp3",
+      "duration": 76.704,
+      "bytes": 460224,
+      "textHash": "2984889c88cb31cf71a47a20d43c48d52b99818e1eb996da18d82f1c74deb85f",
+      "inputHash": "89b8f4c2c7bc4958067e104b57c36eff96d655f9c95b5a3db5d91b37b24b46c1",
+      "audioHash": "68b85da6e1bf6f2e348fd968b6a2449b955374063512c588d5795b264f04e9e0"
+    },
+    "history-austria-danube/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/c1a675d0c23275ed5f3d7522b06f50a235639e64b798f1ee4eda14799dd3fcb2.mp3",
+      "duration": 65.4,
+      "bytes": 392400,
+      "textHash": "2729cb33c907779c06e4de75060819ad540967c5d156abcaa14b2c063386cc9c",
+      "inputHash": "b646b56758a9cd09bb7e8321dac1c97bfecb98fd7df390aa09210e4580186e39",
+      "audioHash": "c1a675d0c23275ed5f3d7522b06f50a235639e64b798f1ee4eda14799dd3fcb2"
+    },
+    "history-austria-danube/2": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/f5a23da5a702ef5176c3b1a993b654cb7afc21e97d47eaf2cf7f2738e4e16003.mp3",
+      "duration": 63.552,
+      "bytes": 381312,
+      "textHash": "b52273827890e33a9819a7521eac476d21eb4bdfd672a27564ac2751d7f45a74",
+      "inputHash": "bcc6acc9660f8168ee77f75d337d74b4f5829a8c523596a9e4df08c43d5abedf",
+      "audioHash": "f5a23da5a702ef5176c3b1a993b654cb7afc21e97d47eaf2cf7f2738e4e16003"
+    },
+    "history-austria-danube/2/moment/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/b7c9092258dca5966fc92a86c2e2f9ea784efd7d5620951b6223e793b2fc4e07.mp3",
+      "duration": 75.96,
+      "bytes": 455760,
+      "textHash": "3325453d94c4d71e122600ee13926eb41167ac1fdb6a93788420cd3408d4c2a7",
+      "inputHash": "4d71875e9f8b0567b2de9ce8786d73ce49a9bff1fdb74ec2df35d960a2dc0ec5",
+      "audioHash": "b7c9092258dca5966fc92a86c2e2f9ea784efd7d5620951b6223e793b2fc4e07"
+    },
+    "history-austria-danube/2/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/64110f0b7fe2fc12830dd95951ac8d56f1ab8869babb5246656471ebfe7c1bda.mp3",
+      "duration": 66.528,
+      "bytes": 399168,
+      "textHash": "2ec2baa2d40f18258b36bb07a5cdbc201204fbe43be4d20eac85ff134304c4a8",
+      "inputHash": "c73857a0bf969c2ca910e6848086f42f4e26e2bd8495ab91ae6ff4f4df4b8ec1",
+      "audioHash": "64110f0b7fe2fc12830dd95951ac8d56f1ab8869babb5246656471ebfe7c1bda"
+    },
+    "history-austria-danube/3": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/071887559a6785ad2e6ae6e9a0e5b2fc6555d749444325da3e9670f9aee06de1.mp3",
+      "duration": 57.696,
+      "bytes": 346176,
+      "textHash": "81d4b1a41f330864beba0b9fab3c49cae0d4bb67e98db8380e92794bb29cbd04",
+      "inputHash": "85c99802f0c9cc96a608586afd58e626cab26a0f547965c465fd7c6bb586c2f7",
+      "audioHash": "071887559a6785ad2e6ae6e9a0e5b2fc6555d749444325da3e9670f9aee06de1"
+    },
+    "history-austria-baroque/title": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/31a607ed0650bc1758324bc8f5a82d7bcbfbe8cd6caae5369cc11a67a443dcf2.mp3",
+      "duration": 11.52,
+      "bytes": 69120,
+      "textHash": "57d28ba5f10f5194dc16dcfb73d5785a2cf725199b63c7b2a18ac4c7eb71f687",
+      "inputHash": "7ccc7eb38590cfae634d49e91d0da6dfdaa09b322b7852df48bad541ea314adf",
+      "audioHash": "31a607ed0650bc1758324bc8f5a82d7bcbfbe8cd6caae5369cc11a67a443dcf2"
+    },
+    "history-austria-baroque/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/606103c9b86890dfa39931fe4a5c176c1976deb1f3f2eb45e1bc0f77c4c396a6.mp3",
+      "duration": 54.576,
+      "bytes": 327456,
+      "textHash": "a5754b984696a87acfd075bbb42e09867b4420b15bb686bb0073135c820daef1",
+      "inputHash": "7786eeb6a5c5fc426782fb43651f4d513d60f0e03e4a28a343f8bcda421879d6",
+      "audioHash": "606103c9b86890dfa39931fe4a5c176c1976deb1f3f2eb45e1bc0f77c4c396a6"
+    },
+    "history-austria-baroque/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/0feb3dd5cf89a07c4b07c1e4245221d197df1fd1392b11292c03a902d7c46986.mp3",
+      "duration": 64.704,
+      "bytes": 388224,
+      "textHash": "61020cc01bb678e4eaab61c253a70f3e767cdffcc420645ff70457c38ae307f2",
+      "inputHash": "b0845a0d11c79df3e11415188a972875cfc2178777a3935c2e5761fc0599cd82",
+      "audioHash": "0feb3dd5cf89a07c4b07c1e4245221d197df1fd1392b11292c03a902d7c46986"
+    },
+    "history-austria-baroque/1/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/278dd209d29eb723488c44f68512f9af15080887c8cdfe5a7be95c9ba415a46c.mp3",
+      "duration": 60.576,
+      "bytes": 363456,
+      "textHash": "c59ff0a53de2f74d055d41dd7f7137a9df276616305869fa0fcfbce50e9cf356",
+      "inputHash": "fc48cebf2659e5360bc9c404cf8d797434e13266895a817022aac2ce61fed53b",
+      "audioHash": "278dd209d29eb723488c44f68512f9af15080887c8cdfe5a7be95c9ba415a46c"
+    },
+    "history-austria-baroque/2": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/2e3f47a0f47368dfeddfedaa819f8e4a425cc626f120350c5cb820efccfe7c18.mp3",
+      "duration": 74.112,
+      "bytes": 444672,
+      "textHash": "8f1cf0bc86f090adc72fc9c39971062a8988d0ad8569dd2ead418f1331b0d265",
+      "inputHash": "c1122dc971165236fbe0f7d1dcd0ebf4d3d2a6e0d33e0dff9984d66c0e2fbf08",
+      "audioHash": "2e3f47a0f47368dfeddfedaa819f8e4a425cc626f120350c5cb820efccfe7c18"
+    },
+    "history-austria-baroque/2/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/a9919c9635bbbf9c8da6262e2e1734c1de8a978245ba55fda58c31c7dcef72d3.mp3",
+      "duration": 91.704,
+      "bytes": 550224,
+      "textHash": "8da7bdf6b546d7764b87e338ab4bf5eaa0207ca3d9fca394c1cc863440ecda35",
+      "inputHash": "020016e4a3bd7befa3fc5626cf2269c7dbc49cafc6f49132f5ab14935e6d454f",
+      "audioHash": "a9919c9635bbbf9c8da6262e2e1734c1de8a978245ba55fda58c31c7dcef72d3"
+    },
+    "history-austria-baroque/2/person/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/04b1f1a1cc5ecdb4b71ef8483b1e9a305fa21660ff074422d8265fc57c63b144.mp3",
+      "duration": 62.352,
+      "bytes": 374112,
+      "textHash": "f8915737f472f01a82e56f532275369f6853de719d0fae85a621715e9a0f63ab",
+      "inputHash": "7c75bc21426db9fc1fadc3344ab1f15cf016beb5ef7573eb0db4cba57355c67d",
+      "audioHash": "04b1f1a1cc5ecdb4b71ef8483b1e9a305fa21660ff074422d8265fc57c63b144"
+    },
+    "history-austria-baroque/3": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/50e7ff7a6489a1db98bd1ac23216c84a62fef079d4fff8072285beda585434d1.mp3",
+      "duration": 61.296,
+      "bytes": 367776,
+      "textHash": "92443b86007d0bf450883d71b380cca36bb9fe410015e8e106457d94d7d21429",
+      "inputHash": "39b268f5f8f93687d406e15dcaf69b5c7f80440245c9c0ff5c2280a40d2f6306",
+      "audioHash": "50e7ff7a6489a1db98bd1ac23216c84a62fef079d4fff8072285beda585434d1"
+    },
+    "history-austria-baroque/3/box/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/909d0f55aa15f4bc89876b377b7ea679cec978db417f6970dafe7b4f3c16e3b3.mp3",
+      "duration": 83.112,
+      "bytes": 498672,
+      "textHash": "94f395ac96cfa6498f43f5b1e751f14db0e8adfc301fe461aa31652da8c013c0",
+      "inputHash": "57cbb3a8ccff8cd2816c0cb0098ee277da8ab3ffe58825a56b7706c95bee1f5b",
+      "audioHash": "909d0f55aa15f4bc89876b377b7ea679cec978db417f6970dafe7b4f3c16e3b3"
+    },
+    "history-austria-baroque/3/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/d1a1b965efa6d26018a05807f7c2616a573ed663ca4c96dad6f3d2a1328ee0f8.mp3",
+      "duration": 83.76,
+      "bytes": 502560,
+      "textHash": "30b98407f774ab93ada7e89eca496d846091ce0f7285d29b66305cb6e1cb60f2",
+      "inputHash": "24daf946d2c85f37afd90f78d416cc5197040d3f17d427207d5085d370187cca",
+      "audioHash": "d1a1b965efa6d26018a05807f7c2616a573ed663ca4c96dad6f3d2a1328ee0f8"
+    },
+    "history-austria-metternich/title": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/b8471411e483298e43f4e9e47beeaeef4382d0ceaf13db85ab931ed5cc645b98.mp3",
+      "duration": 12.768,
+      "bytes": 76608,
+      "textHash": "024ca484fd13d546e64776c9eafad00b6d175dc56df5aecfc2ff288bef9f1047",
+      "inputHash": "670ecd472e39f4515c9b6df6daed49b463b80e22547183ab908ea90d4358eb55",
+      "audioHash": "b8471411e483298e43f4e9e47beeaeef4382d0ceaf13db85ab931ed5cc645b98"
+    },
+    "history-austria-metternich/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/8fff869b76f9661cd5db2959f3688b9374a21aad7b898bb4a809e9fcfa41eb0e.mp3",
+      "duration": 60.648,
+      "bytes": 363888,
+      "textHash": "3d7fafae16fae6371210fa716bfdb2c2ab740653deaf5dd4aaa7237b605af74a",
+      "inputHash": "8fc13299838467e0375b767aaeb027d97af8e9f2780e5c5640ae5c3c69a3f256",
+      "audioHash": "8fff869b76f9661cd5db2959f3688b9374a21aad7b898bb4a809e9fcfa41eb0e"
+    },
+    "history-austria-metternich/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/787bec1a6c1b4947b8242341021c9ef946afcffae61b2ac284118d73fe5e629c.mp3",
+      "duration": 55.848,
+      "bytes": 335088,
+      "textHash": "b1353407d88c001a2b94f324a85508b86b4d3b5b6c7415922d204619ca985ebc",
+      "inputHash": "4898da9f6e132591a9d45a66afb34fcad19f7044c92054a31886e09db65497f6",
+      "audioHash": "787bec1a6c1b4947b8242341021c9ef946afcffae61b2ac284118d73fe5e629c"
+    },
+    "history-austria-metternich/1/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/63b79c2802f90493f765bb47f3552f44d2bc7f9a2f5b280f9bff7bf2cf6a81d2.mp3",
+      "duration": 97.656,
+      "bytes": 585936,
+      "textHash": "30cba0150d127dcb797478e243b944a2443458d4475aa0b4505a1d10dce38f27",
+      "inputHash": "48a68830a797e83957f7c8c9a7d6de655689a57520d201e016bb396b40d6dbf4",
+      "audioHash": "63b79c2802f90493f765bb47f3552f44d2bc7f9a2f5b280f9bff7bf2cf6a81d2"
+    },
+    "history-austria-metternich/2": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/a7b77720714f7ab0b090cad1afdd6635671102fcba0bac2ddf3c95231e97c86e.mp3",
+      "duration": 66.432,
+      "bytes": 398592,
+      "textHash": "45b18c8b6df9d31c6fdf9fd57909d0e5f2687c92595334729bc5dac95358f172",
+      "inputHash": "eec5ce4c345d008a0ec68ed86220c7016968809fbffce88e9c675a4cbfa26f26",
+      "audioHash": "a7b77720714f7ab0b090cad1afdd6635671102fcba0bac2ddf3c95231e97c86e"
+    },
+    "history-austria-metternich/2/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/48b11826be62728873bd245ba28d29b5f75b399f2b56d1bddf62d64bb3113ce2.mp3",
+      "duration": 88.056,
+      "bytes": 528336,
+      "textHash": "af855e6eee42d99144d6b4f3db546e212a8c573ef86d84b18b1520893a593d79",
+      "inputHash": "3e2e4ca393b77f17b8125b3c48c61d2ed42eb283f464848fea8562c447e2143f",
+      "audioHash": "48b11826be62728873bd245ba28d29b5f75b399f2b56d1bddf62d64bb3113ce2"
+    },
+    "history-austria-metternich/3": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/fb953aebec3f156e484d01795b18855e884755ab3879f79887b205806df35603.mp3",
+      "duration": 62.208,
+      "bytes": 373248,
+      "textHash": "f2af3b64916c90017f40334055d3d0e4c20ca01ef433018b7eb6945a28834a04",
+      "inputHash": "a071da8675d283e14c16f3879bead9caf706f48ff66f69e4885ca44f6b413464",
+      "audioHash": "fb953aebec3f156e484d01795b18855e884755ab3879f79887b205806df35603"
+    },
+    "history-austria-metternich/3/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/61f9cf65346e524ccf76a25bb3e600d6705ddaaba6e2d74954eaf72504c9301e.mp3",
+      "duration": 68.064,
+      "bytes": 408384,
+      "textHash": "d99d37f0c2c30122e8157b8c6bb6f52f457047cbb2abbea56ca8598e7ca4b7af",
+      "inputHash": "948b3f0d5f8749c9483710b8598ec2fa6ff719e2823025ca79c30cf0ce7e1e2f",
+      "audioHash": "61f9cf65346e524ccf76a25bb3e600d6705ddaaba6e2d74954eaf72504c9301e"
+    },
+    "history-austria-dual/title": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/8540e807fc2ae47a3c36956023db62c94d65bc3def64155b3050cb1bd0cc24f4.mp3",
+      "duration": 11.688,
+      "bytes": 70128,
+      "textHash": "4716e27998c77ff6768e1f8c9b46e9e8d0be25976d78d2f716977ace94bdadd2",
+      "inputHash": "89b822f5d832cc040db6ed6ba7b2235ab4787ca269a47cfe429ed084eaa75e11",
+      "audioHash": "8540e807fc2ae47a3c36956023db62c94d65bc3def64155b3050cb1bd0cc24f4"
+    },
+    "history-austria-dual/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/f5e66ef745c1d52c03a34df525a34b956058701848f385885bffc0c286fd2612.mp3",
+      "duration": 59.688,
+      "bytes": 358128,
+      "textHash": "d4fd66277eba5668282f02500db651f85b100790fb50f2b62ffb38c486634762",
+      "inputHash": "ebe35e1d9f08f1f8ae0b7d6acbfda135fcaf9d3bfd8ccd43b738f048ebd39689",
+      "audioHash": "f5e66ef745c1d52c03a34df525a34b956058701848f385885bffc0c286fd2612"
+    },
+    "history-austria-dual/0/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/c6b765db66b7896e995b8b226432c15e56f3b8a5a7294ca0e34ff1aa668cc920.mp3",
+      "duration": 85.152,
+      "bytes": 510912,
+      "textHash": "405eff6c5784356a1308e80a60dd42c6fc12f0428127656471982034db95980f",
+      "inputHash": "60eb7357b8af410d674e7c33dcc4d090d47d9dbb22f4e02f984795a81805f78c",
+      "audioHash": "c6b765db66b7896e995b8b226432c15e56f3b8a5a7294ca0e34ff1aa668cc920"
+    },
+    "history-austria-dual/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/5462849430009287ac4fd394defa2cd064c3af9ee9b9c186348545b9f495798c.mp3",
+      "duration": 57.552,
+      "bytes": 345312,
+      "textHash": "7ae10caa154ef4993b8d658b796cf9f50019f02f155daac8dd6c8671c79bf47e",
+      "inputHash": "b1c5e3ae7f3c299bc2068e12b580913f40a61ba220aa57f83e99ab17ca98b008",
+      "audioHash": "5462849430009287ac4fd394defa2cd064c3af9ee9b9c186348545b9f495798c"
+    },
+    "history-austria-dual/2": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/eabc4f5ebb1fc259ba67f9fb38ddaaa2e63769800f58aee2a375cfeb5cff1a61.mp3",
+      "duration": 60.552,
+      "bytes": 363312,
+      "textHash": "78984a8517e9e94dce9ee2b49621ee77797a837d0f63f2b0173df8a600b9ffb9",
+      "inputHash": "d9c9834f8ced9112c44c65e9ddbebf23432abcbceada10325312773bdf8e558c",
+      "audioHash": "eabc4f5ebb1fc259ba67f9fb38ddaaa2e63769800f58aee2a375cfeb5cff1a61"
+    },
+    "history-austria-dual/3": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/e814650b6de2cfabbce9b88d778f0a58ab0d6af436b26740e94d583e4980a776.mp3",
+      "duration": 65.808,
+      "bytes": 394848,
+      "textHash": "d3f485849a0caab6ff034016704dd4274b0a76831a4488fea0054b6e9beb3e17",
+      "inputHash": "a52d9d094c014386a2363ef71c3b5391ec425eb277896bb6d253970dd7d02af1",
+      "audioHash": "e814650b6de2cfabbce9b88d778f0a58ab0d6af436b26740e94d583e4980a776"
+    },
+    "history-austria-dual/3/moment/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/a57bf25c9fab88eab2d900d13eb73174261cdb626ec31fad12d018989a4b7754.mp3",
+      "duration": 100.44,
+      "bytes": 602640,
+      "textHash": "02ea71cafba53592cedcbb3911e38ce4d75d5f56054f6a1c3dcf321c333e2248",
+      "inputHash": "e3bc0211c76f8f19d3d7400ada8fe4d30a5857801ec63d99f72f7e1b30b86454",
+      "audioHash": "a57bf25c9fab88eab2d900d13eb73174261cdb626ec31fad12d018989a4b7754"
+    },
+    "history-austria-dual/3/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/1f78c64f4b00713b459c6b0c32f80eb52df7335e881fc7b28d92483a353f43fa.mp3",
+      "duration": 87.36,
+      "bytes": 524160,
+      "textHash": "e0985af28ced37b9b517562351250c2374bb87d3389373893ce2696691335baf",
+      "inputHash": "51300f187da080475cd06a0a9d522d8e8c580b04e6a58e41054259e460c44587",
+      "audioHash": "1f78c64f4b00713b459c6b0c32f80eb52df7335e881fc7b28d92483a353f43fa"
     },
     "history-faith-israel/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/c5d155b5704c413c32f849e8e611f49851f5c6bba0524a9e86a41c28cf1bf001.mp3",
