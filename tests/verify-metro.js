@@ -341,8 +341,22 @@ const settle=p=>p.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestA
     assert.equal(g.chips.length,g.scenes,g.id+': one chip per scene');
     // The map: the sign opens the inspector, which enters the platform. With no line to go back to, the way back is the map.
     await G.evaluate(()=>metroUI.setMode('network',{whole:true}));await settle(G);
-    // Zoomed right out, every gantry still shows its code.
-    assert.deepEqual(await G.$$eval('#gantryLayerFront .gantry .sign-mini',els=>els.filter(e=>!e.checkVisibility()).map(e=>e.closest('.gantry').dataset.gantry)),[],'a gantry has no visible sign at whole-map zoom');
+    // Across zoom levels (whole-map lod 1, mid lod 2, close lod 3), every gantry keeps a visible, non-overlapping title.
+    for(const z of [null,.25,.38,.52,.9]){
+     if(z!==null){await G.evaluate(tz=>{const c=metroUI.state().camera;metroUI.setCamera({...c,z:tz})},z);await settle(G)}
+     const vis=await G.evaluate(()=>{
+      const lod=document.getElementById('networkCanvas').dataset.lod;
+      const gs=[...document.querySelectorAll('#gantryLayerFront .gantry')].map(el=>{
+       const sign=lod==='1'?el.querySelector('.sign-mini'):el.querySelector('.sign-full'),r=sign.getBoundingClientRect();
+       return {id:el.dataset.gantry,vis:sign.checkVisibility(),culled:sign.classList.contains('culled'),title:sign.querySelector('.gantry-sign-name')?.textContent?.trim()||'',x0:r.left,x1:r.right,y0:r.top,y1:r.bottom};
+      });
+      const overlaps=[];
+      for(let i=0;i<gs.length;i++)for(let j=i+1;j<gs.length;j++){const a=gs[i],b=gs[j];if(a.x0<b.x1&&a.x1>b.x0&&a.y0<b.y1&&a.y1>b.y0)overlaps.push(a.id+'<->'+b.id)}
+      return {hidden:gs.filter(x=>!x.vis||x.culled||!x.title).map(x=>x.id),overlaps};
+     });
+     assert.deepEqual(vis.hidden,[],`a gantry title vanished at zoom ${z||'whole'}`);
+     assert.deepEqual(vis.overlaps,[],`gantry signs overlapped at zoom ${z||'whole'}`);
+    }
     await G.evaluate(id=>metroUI.focusGantry(id),g.id);await settle(G);
     await G.click(`#gantryLayerFront .gantry[data-gantry="${g.id}"] .gantry-sign`);
     assert.ok(await on(G,'#stationInspector'));assert.match(await G.$eval('#inspectorKicker',e=>e.textContent),/跨线龙门架/);
@@ -369,23 +383,34 @@ const settle=p=>p.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestA
      assert.ok(Number.isInteger(at.scene)&&at.scene>=0&&at.scene<g.scenes,`${g.id}: lineMap.${line}.scene is one of its scenes`);
      await G.evaluate((line,key)=>metroUI.board(line,{key}),line,at.after);await settle(G);
      const m=await G.evaluate(id=>{const mark=document.querySelector(`.route-gantry[data-gantry="${id}"]`),stops=[...document.querySelectorAll('.route-stop')],a=document.querySelector('.route-stop.active');
-      return mark&&{x:mark.offsetLeft,after:a.offsetLeft,next:stops[stops.indexOf(a)+1]?.offsetLeft??null,count:stops.length,pos:document.getElementById('stationPosition').textContent}},g.id);
+      const rail=document.querySelector('.route-rail').getBoundingClientRect(),cols=mark?.querySelector('.rg-cols')?.getBoundingClientRect(),sub=mark?.querySelector('.rg-sub')?.getBoundingClientRect(),panel=document.querySelector('.route-panel').getBoundingClientRect();
+      return mark&&{x:mark.offsetLeft,after:a.offsetLeft,next:stops[stops.indexOf(a)+1]?.offsetLeft??null,count:stops.length,pos:document.getElementById('stationPosition').textContent,
+       railMid:rail.top+rail.height/2,colsMid:cols.top+cols.height/2,subBottom:sub.bottom,panelBottom:panel.bottom}},g.id);
      assert.ok(m,`${line}: the route strip shows the gantry`);assert.ok(m.x>m.after&&(m.next===null||m.x<m.next),`${line}: the mark stands right after ${at.after}`);
+     assert.ok(Math.abs(m.colsMid-m.railMid)<=1.5,`${line}: the gantry mark centers on the rail (${m.colsMid} vs ${m.railMid})`);
+     assert.ok(m.subBottom<=m.panelBottom,`${line}: the gantry label fits inside the route panel`);
      assert.equal(m.count,seq.length,`${line}: the gantry is not a stop`);assert.equal(m.pos,`${i+1} / ${seq.length}`,`${line}: station numbers leave it out`);
      assert.ok(await on(G,'#gantryHint'),`${line}: the station before the gantry says so`);
      assert.match(await G.$eval('#gantryHint .gh-actions button',b=>b.textContent),new RegExp(g.chips[at.scene]));
      if(seq[i+1]){await G.focus('#map');await G.keyboard.press('ArrowRight');assert.equal((await G.evaluate(()=>metroUI.state())).station,seq[i+1],`${line}: → passes the gantry by`);assert.ok(!(await on(G,'#gantryHint')));await G.keyboard.press('ArrowLeft')}
     }
-    // In from a line, through the note or the mark: straight to that line's scene; the way back returns to the station left.
+    // In from a line, through the note or the mark: asks to confirm first (like line transfers); cancelling stays, confirming lands on that line's scene; the way back returns to the station left.
     const [line,at]=Object.entries(g.lineMap)[0];
     await G.evaluate((line,key)=>metroUI.board(line,{key}),line,at.after);await settle(G);
     await G.click('#gantryHint .gh-actions button');await settle(G);
+    assert.equal(await G.$eval('#transferDialog',d=>d.open),true,'gantry note asks before leaving the line');
+    await G.keyboard.press('Escape');await settle(G);
+    s=await G.evaluate(()=>metroUI.state());assert.deepEqual([s.gantry,s.line,s.station],[null,line,at.after],'cancelling leaves the reader on the line');
+    await G.click('#gantryHint .gh-actions button');await settle(G);
+    await G.click('#transferConfirm');await settle(G);
     s=await G.evaluate(()=>metroUI.state());
     assert.deepEqual([s.gantry,s.scene,s.returnTo?.line,s.returnTo?.key],[g.id,at.scene,line,at.after]);
     assert.equal(await G.$eval('#gantryBack',b=>b.textContent),'← 返回'+await G.evaluate(id=>{const b=HISTORY_BRANCHES.find(x=>x.id===id);return b.name+(b.kind==='branch'?'支线':'线')},line));
     await G.click('#gantryBack');await settle(G);
     s=await G.evaluate(()=>metroUI.state());assert.deepEqual([s.gantry,s.line,s.station],[null,line,at.after]);assert.ok(!(await on(G,'#gantryBar')));
     await G.click(`.route-gantry[data-gantry="${g.id}"]`);await settle(G);
+    assert.equal(await G.$eval('#transferDialog',d=>d.open),true,'route-strip gantry asks before leaving the line');
+    await G.click('#transferConfirm');await settle(G);
     s=await G.evaluate(()=>metroUI.state());assert.deepEqual([s.gantry,s.scene,s.returnTo?.key],[g.id,at.scene,at.after]);
     // A link straight to a gantry scene opens its platform; nothing breaks on the way in.
     const d=await pageAt(1440,900,`#${g.entry}/3`);

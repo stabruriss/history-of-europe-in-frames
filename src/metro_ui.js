@@ -101,19 +101,22 @@ function renderGantries(){
   }
   createSVG('rect',{x:n.x-n.half-6,y:n.top,width:(n.half+6)*2,height:n.bottom-n.top,class:'gantry-hit'},f);
   const sign=createSVG('g',{class:'gantry-sign',transform:`translate(${n.x} ${n.top})`},f),k=createSVG('g',{class:'flag-scale'},sign),w=n.sign.w,h=n.sign.h;
-  // The full sign from mid zoom up; zoomed right out, only its code, so the lines' own signposts keep their room.
-  const full=createSVG('g',{class:'sign-full'},k),mini=createSVG('g',{class:'sign-mini'},k);
+  createSVG('line',{x1:0,x2:0,y1:0,y2:0,class:'gantry-stem'},k);
+  const lift=createSVG('g',{class:'sign-lift'},k);
+  // The full sign from mid zoom up; zoomed right out, a compact two-line badge with code and title so the title never vanishes.
+  const full=createSVG('g',{class:'sign-full'},lift),mini=createSVG('g',{class:'sign-mini'},lift);
   createSVG('rect',{x:-w/2,y:-h,width:w,height:h,rx:3,class:'gantry-sign-box'},full);
-  textSVG(full,`${gantryLabel(g)}${open?'':' · 规划中'}`,{x:0,y:-h+15,'text-anchor':'middle',class:'gantry-sign-code'});
-  textSVG(full,g.name,{x:0,y:-h+(open?33:30),'text-anchor':'middle',class:'gantry-sign-name'});
-  textSVG(full,open?`跨 ${n.crossings.length} 线 · ${gantryScenes(g).length} 幕 · 点击查看`:'预告',{x:0,y:-7,'text-anchor':'middle',class:'gantry-sign-sub'});
-  const mw=miniWidth(gantryLabel(g));createSVG('rect',{x:-mw/2,y:-MINI_SIGN_H,width:mw,height:MINI_SIGN_H,rx:2,class:'gantry-sign-box'},mini);
-  textSVG(mini,gantryLabel(g),{x:0,y:-5,'text-anchor':'middle',class:'gantry-sign-code'});
+  textSVG(full,`${gantryLabel(g)}${open?'':' · 规划中'}`,{x:0,y:-h+14,'text-anchor':'middle',class:'gantry-sign-code'});
+  textSVG(full,g.name,{x:0,y:-h+(open?33:29),'text-anchor':'middle',class:'gantry-sign-name'});
+  textSVG(full,open?`跨 ${n.crossings.length} 线 · ${gantryScenes(g).length} 幕 · 点击查看`:'预告',{x:0,y:open?-7:-5,'text-anchor':'middle',class:'gantry-sign-sub'});
+  const mw=Math.max(miniWidth(gantryLabel(g)),miniWidth(g.name));createSVG('rect',{x:-mw/2,y:-MINI_SIGN_H,width:mw,height:MINI_SIGN_H,rx:2.5,class:'gantry-sign-box'},mini);
+  textSVG(mini,gantryLabel(g),{x:0,y:-MINI_SIGN_H+11,'text-anchor':'middle',class:'gantry-sign-code'});
+  textSVG(mini,g.name,{x:0,y:-6,'text-anchor':'middle',class:'gantry-sign-name'});
   f.addEventListener('click',ev=>{ev.stopPropagation();if(!skipGraphClick)inspectGantry(n.id)});
   f.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();inspectGantry(n.id)}});
  }
 }
-const MINI_SIGN_H=18,miniWidth=s=>Math.max(72,[...s].reduce((w,c)=>w+(/[⺀-￯]/.test(c)?10.8:6.6),0)+16);
+const MINI_SIGN_H=30,miniWidth=s=>Math.max(76,[...s].reduce((w,c)=>w+(/[⺀-￯]/.test(c)?11.2:6.4),0)+16);
 function markGantry(){$$('#gantryLayerFront .gantry').forEach(g=>g.classList.toggle('selected',g.dataset.gantry===selectedGantry))}
 function inspectGantry(id){
  const g=gantryById.get(id);if(!g)return;const open=gantryOpen(g);selectedGantry=id;
@@ -196,15 +199,35 @@ function declutter(){
  for(const it of declutterItems){
   if(!it.levels.includes(level)){it.el.classList.remove('culled');continue}
   const scale=it.scale(z),w=it.w*scale,h=it.h*scale,cx=it.x*z,cy=it.y*z;
+  if(it.gantry){
+   // Gantry titles are never culled at any zoom; if two neighbouring arches would touch, lift the lower-priority sign up on a stem.
+   it.el.classList.remove('culled');
+   let lift=Math.max(0,Math.ceil(13-24*z)),b={x0:cx-w/2-3,x1:cx+w/2+3,y0:cy-h-lift,y1:cy-lift};
+   for(let hit;hit=taken.find(o=>b.x0<o.x1&&b.x1>o.x0&&b.y0<o.y1&&b.y1>o.y0);){
+    lift+=Math.max(6,b.y1-hit.y0+6);b={x0:cx-w/2-3,x1:cx+w/2+3,y0:cy-h-lift,y1:cy-lift};
+   }
+   const dy=lift?(-lift/scale).toFixed(1):'0';
+   it.liftEl.setAttribute('transform',lift?`translate(0 ${dy})`:'');
+   it.stemEl.setAttribute('y1',dy);
+   taken.push(b);continue;
+  }
   const b=it.anchor==='tipStart'?{x0:cx-w,x1:cx,y0:cy-h/2,y1:cy+h/2}:it.anchor==='tipEnd'?{x0:cx,x1:cx+w,y0:cy-h/2,y1:cy+h/2}:it.anchor==='start'?{x0:cx,x1:cx+w,y0:cy-h,y1:cy+h*.3}:{x0:cx-w/2,x1:cx+w/2,y0:cy-h,y1:cy+h*.3};
   const ok=free(b);it.el.classList.toggle('culled',!ok);if(ok)taken.push(b);
  }
 }
 function buildDeclutter(){
- const constant=z=>Math.max(1,z),flagSize=z=>z<.36?.8:Math.max(1,z),world=z=>labelScale(z)*z,items=[];
+ const constant=z=>z>=1?z:z<.16?z/.16:1,flagSize=z=>constant(z)*(z<.36?.8:1),world=z=>labelScale(z)*z,items=[];
  const flagEls=$$('.line-flag');
- // A gantry's sign gives way to the lines' signposts, and comes before the station names they share the map with.
- NET.gantries.forEach(n=>{const g=$(`#gantryLayerFront .gantry[data-gantry="${n.id}"] .gantry-sign`);if(!g)return;items.push({el:g.querySelector('.sign-mini'),x:n.x,y:n.top,w:miniWidth(gantryLabel(gantryById.get(n.id))),h:MINI_SIGN_H,anchor:'middle',levels:['1'],scale:constant,rank:2.5},{el:g.querySelector('.sign-full'),x:n.x,y:n.top,w:n.sign.w,h:n.sign.h,anchor:'middle',levels:['2'],scale:constant,rank:2.5})});
+ // Gantry milestone arches stay visible at every zoom, open arches before planned ones; neighbouring signs stagger upward instead of disappearing.
+ NET.gantries.forEach(n=>{
+  const gEl=$(`#gantryLayerFront .gantry[data-gantry="${n.id}"] .gantry-sign`),g=gantryById.get(n.id);if(!gEl||!g)return;
+  const rank=gantryOpen(g)?-2:-1,liftEl=gEl.querySelector('.sign-lift'),stemEl=gEl.querySelector('.gantry-stem');
+  const mw=Math.max(miniWidth(gantryLabel(g)),miniWidth(g.name));
+  items.push(
+   {el:gEl.querySelector('.sign-mini'),liftEl,stemEl,gantry:true,x:n.x,y:n.top,w:mw,h:MINI_SIGN_H,levels:['1'],scale:constant,rank},
+   {el:gEl.querySelector('.sign-full'),liftEl,stemEl,gantry:true,x:n.x,y:n.top,w:n.sign.w,h:n.sign.h,levels:['2','3'],scale:constant,rank}
+  );
+ });
  NET.flags.forEach((f,i)=>items.push({el:flagEls[i],x:f.tipX,y:f.tipY,w:f.w+4,h:f.h+2,anchor:f.end==='start'?'tipStart':'tipEnd',levels:['1','2'],scale:flagSize,rank:f.end==='start'?1:2}));
  const biggest=[...pointByKey.values()].filter(n=>n.s.lines.length>2).sort((a,b)=>b.s.lines.length-a.s.lines.length);
  // A hub where a line starts gives way to that line's signpost (城市与早期王权, the first station of 希腊, 埃及 and 中东).
@@ -259,14 +282,14 @@ function applyCamera(){
 }
 function zoomAt(factor,x=network.clientWidth/2,y=network.clientHeight/2){const z=clamp(camera.z*factor,.12,2.3),ratio=z/camera.z;camera.x=x-(x-camera.x)*ratio;camera.y=y-(y-camera.y)*ratio;camera.z=z;applyCamera()}
 function focusBox(minX,maxX,minY,maxY,maxZ=1.05){
- const w=network.clientWidth,h=network.clientHeight,z=clamp(Math.min((w-60)/(maxX-minX),(h-70)/(maxY-minY)),.12,maxZ);
+ const w=network.clientWidth,h=network.clientHeight,z=clamp(Math.min((w-60)/(maxX-minX),(h-70)/(maxY-minY)),.11,maxZ);
  camera={x:(w-(maxX-minX)*z)/2-minX*z,y:(h-(maxY-minY)*z)/2-minY*z,z};applyCamera();
 }
 function focusKeys(keys){
  const p=keys.map(k=>pointByKey.get(k)).filter(Boolean);if(!p.length)return;
  focusBox(Math.min(...p.map(n=>n.x))-130,Math.max(...p.map(n=>n.x))+170,Math.min(...p.map(n=>n.y0))-85,Math.max(...p.map(n=>n.y1))+75,1);
 }
-function fitWhole(){const w=NET.world;focusBox(w.minX-90,w.maxX+90,w.minY-30,w.maxY+30)}
+function fitWhole(){const w=NET.world;focusBox(w.minX-240,w.maxX+440,w.minY-30,w.maxY+30)}
 function focusStation(key=selectedKey){const n=pointByKey.get(key);if(!n)return;const small=narrowScreen(),z=small?.83:.95;camera={z,x:network.clientWidth*(small?.5:.44)-n.x*z,y:network.clientHeight*(small?.38:.45)-n.y*z};applyCamera()}
 function updateModeToggle(){
  const s=stationByKey.get(selectedKey);
@@ -318,7 +341,7 @@ function askHome(){
  homeDialog.showModal();
 }
 let transferTo=null;
-$('#transferConfirm').onclick=ev=>{ev.preventDefault();const to=transferTo;transferDialog.close();if(to)board(to.id,{key:to.key})};
+$('#transferConfirm').onclick=ev=>{ev.preventDefault();const to=transferTo;transferDialog.close();if(!to)return;if(to.gantry)enterGantry(to.gantry,to.scene,to.from);else board(to.id,{key:to.key})};
 transferDialog.addEventListener('click',ev=>{if(ev.target===transferDialog)transferDialog.close()});  // the backdrop
 // 老无 2026-11-15: the question says only where it goes, “换乘到德意志线 · 腓特烈一世”.
 function askTransfer(c){
@@ -326,6 +349,14 @@ function askTransfer(c){
  const to=stationByKey.get(c.to);transferTo={id:c.line,key:c.to};
  $('#transferQuestion').textContent=`换乘到${lineLabel(c.line)} · ${to.title}`;$('#transferNote').textContent='';
  $('#transferConfirm').textContent='换乘';transferDialog.style.setProperty('--c',color(c.line));
+ transferDialog.showModal();$('#transferConfirm').focus();
+}
+function askGantry(g,scene=0,from=here()){
+ clearTimeout(sceneTimer);cancelAnimationFrame(scrollFrame);scrollFrame=0;wantedScene=null;readerScrolledUntil=0;
+ transferTo={gantry:g,scene,from};
+ $('#transferQuestion').textContent=`进入龙门架 · ${g.name}（${gantryChip(g,scene)}）`;
+ $('#transferNote').textContent=`暂离${lineLabel(rideLine)}，读完可一键返回当前站。`;
+ $('#transferConfirm').textContent='进入';transferDialog.style.setProperty('--c','var(--accent)');
  transferDialog.showModal();$('#transferConfirm').focus();
 }
 
@@ -361,7 +392,7 @@ function renderRide(){
   const b=document.createElement('button');b.type='button';b.className='route-gantry';b.dataset.gantry=m.g.id;b.style.left=posOf(m.i)+(step+gap)/2+'px';
   b.title=`跨线龙门架 ${gantryLabel(m.g)}《${m.g.name}》：本线直穿，不停车；点击进入，直达“${gantryChip(m.g,m.at.scene)}”一幕`;b.setAttribute('aria-label',b.title);
   b.innerHTML=`<span class="rg-code">${esc(gantryLabel(m.g))}</span><i class="rg-cols"></i><span class="rg-name">${esc(m.g.name)}</span><span class="rg-sub">直穿 · 可点入</span>`;
-  b.onclick=()=>{if(!routeSkipClick)enterGantry(m.g,m.at.scene,here())};track.appendChild(b);
+  b.onclick=()=>{if(!routeSkipClick)askGantry(m.g,m.at.scene,here())};track.appendChild(b);
  }
  // The badges above a stop change line there. They sit beside the stop buttons, after all of them: a button cannot hold buttons.
  seq.forEach((s,i)=>{
@@ -384,7 +415,7 @@ function renderRide(){
  if(hint){
   const g=hint.g,s=hint.at.scene;
   gh.innerHTML=`<i class="gh-mark" aria-hidden="true"></i><div><b>跨线龙门架 · ${esc(gantryLabel(g))}</b><p>本站之后，本线穿过《${esc(g.name)}》。连读和朗读不停；想看就进去，看完一键回本线。</p><div class="gh-actions"><button type="button" data-scene="${s}">直达“${esc(gantryChip(g,s))}”对照 →</button>${s?`<button type="button" data-scene="0">从${esc(gantryChip(g,0))}读起</button>`:''}</div></div>`;
-  gh.querySelectorAll('button').forEach(b=>b.onclick=()=>enterGantry(g,+b.dataset.scene,here()));
+  gh.querySelectorAll('button').forEach(b=>b.onclick=()=>askGantry(g,+b.dataset.scene,here()));
  }
 }
 // Where the reader is, for the way back from a gantry.
