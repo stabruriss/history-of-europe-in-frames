@@ -49,7 +49,7 @@ cd "$SRC"
 
 ## 操作模板（以下在 project-files/ 下；命令示例保留早期27段专题范围，不是当前执行授权）
 
-当前全书库是 `policy3-v117-r18`，冻结源和工具在 `work/v35/audio_runs/v117-final-source`（`d4a4158`）。本次14项的合成选择、窄发布范围和验证结果在 `work/v35/audio_runs/v117-final/`；此前的 `v117-gantry-full/`（`079f4c4`，库 r17）只做了离线准备、未合成。上一轮 v116 的库 `policy3-v116-r16`（冻结源 `v116-final-source`，`cf1d7a0`）的53项窄发布范围和验证结果在 `work/v35/audio_runs/v116-final/`；53段是在 `v116-release/`（`4cd6d85`，库 `policy3-v116-r15`）录成的，cf1d7a0 只在其上改了两条阅读链接标签、朗读文本全同，录音按 inputHash 搬入 r16。更早的 `v116-austria-gantry/`（`099cf63`，库 r14）只做了离线准备、未合成。v115 的库 `policy3-v115-r13`（冻结源 `v115-release-source`，`f59dda2`）、v114 的库 `policy3-v114-r11`（冻结源 `v114-release-source`，`3ac85e5`，运行目录 `v114-release/`、`v114-final-72/`、`v114-discovery-70/`）及此前各库保留。以下r2/27段命令只是历史示例。
+当前全书库是 `policy3-v118-r19`，冻结源和工具在 `work/v35/audio_runs/v118-source`（`cd40802`）：v118 只改写了龙门架法兰西一幕里的一句话，重录 `history-gantry-1914/5` 这1段，其余5488项复用，证据在 `work/v35/audio_runs/v118-france/`。其前一版 v117 的库是 `policy3-v117-r18`，冻结源 `work/v35/audio_runs/v117-final-source`（`d4a4158`），14项的合成选择、窄发布范围和验证结果在 `work/v35/audio_runs/v117-final/`；此前的 `v117-gantry-full/`（`079f4c4`，库 r17）只做了离线准备、未合成。上一轮 v116 的库 `policy3-v116-r16`（冻结源 `v116-final-source`，`cf1d7a0`）的53项窄发布范围和验证结果在 `work/v35/audio_runs/v116-final/`；53段是在 `v116-release/`（`4cd6d85`，库 `policy3-v116-r15`）录成的，cf1d7a0 只在其上改了两条阅读链接标签、朗读文本全同，录音按 inputHash 搬入 r16。更早的 `v116-austria-gantry/`（`099cf63`，库 r14）只做了离线准备、未合成。v115 的库 `policy3-v115-r13`（冻结源 `v115-release-source`，`f59dda2`）、v114 的库 `policy3-v114-r11`（冻结源 `v114-release-source`，`3ac85e5`，运行目录 `v114-release/`、`v114-final-72/`、`v114-discovery-70/`）及此前各库保留。以下r2/27段命令只是历史示例。
 
 每批先在冻结源严格验收，再合入最新正文并组装。来源和pipeline/text/extract/requirements/approved_omissions均固定哈希；live播放器、resolver、组装器的并行修改不应打断TTS。
 
