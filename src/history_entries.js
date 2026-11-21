@@ -12161,11 +12161,11 @@ const HISTORY_ENTRIES=[
     hp(d,'g14_stockholm',{kind:'capital',note:'大北方战败后戒掉大国梦，靠教育与美洲移民泄压落稳。'});
     hp(d,'g14_copenhagen',{note:'1864年败于普奥联军后深耕农牧合作社，稳守一战中立。'});
    },[['fill',HC.nordic,'主动退场、和平融入新秩序的北欧小国'],['dot','#2a2018','斯德哥尔摩与哥本哈根']]),
-  hs('1453—1914年','美洲：零包袱场外工业巨兽','美国在内战切除奴隶制后打通两洋并通航巴拿马运河，1914年前夕国民收入已超英德法之和。',[[3.0,-128.0],[51.0,-58.0]],d=>{
-    ha(d,'am19Union1861',HC.america,{fillOpacity:.32});ha(d,'am19Confederacy1861',HC.america,{fillOpacity:.26});ha(d,'am19LouisianaPurchase',HC.america,{fillOpacity:.24});ha(d,'am19MexicanCession1848',HC.america,{fillOpacity:.24});
+  hs('1453—1914年','美洲：零包袱场外工业巨兽','美国在内战切除奴隶制后打通两洋并通航巴拿马运河，1914年前夕国民收入已超英德法之和。',[[2.0,-128.0],[51.0,-64.0]],d=>{
+    ha(d,'am19US1914',HC.america,{fillOpacity:.34});
     hp(d,'g14_newyork',{kind:'capital',note:'承接数千万欧洲移民减压阀，镀金时代跃居全球头号工业金融重镇。'});
     hp(d,'g14_panama',{kind:'battle',note:'1914年运河通航，美国手握洲级工业能量坐看欧洲老帝国流血。'});
-   },[['fill',HC.america,'零旧包袱成长起来的头号工业国美国（示意）'],['dot',HC.war,'巴拿马运河'],['dot','#2a2018','纽约']]),
+   },[['fill',HC.america,'1914年的美利坚合众国（本土四十八州）'],['dot',HC.war,'巴拿马运河'],['dot','#2a2018','纽约']]),
   hs('1453—1914年','远东：内卷清朝与明治破壁','封闭农业内卷的清朝外包新宝剑破产而终结，幕藩分权的日本借明治维新破壁并击败沙俄。',[[20.0,95.0],[48.0,146.0]],d=>{
     ha(d,'zhQing1820',HC.china,{fillOpacity:.28});ha(d,'zhJapan1910',HC.war,{fillOpacity:.36});
     hp(d,'g14_beijing',{kind:'capital',note:'大一统农业内卷且洋务外包新宝剑破产，1912年初清帝退位。'});
