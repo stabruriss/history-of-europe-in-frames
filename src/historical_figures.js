@@ -22387,7 +22387,7 @@ const FIGURES={
     "sources": [
       [
         "弗朗茨·约瑟夫一世（大英百科全书：1848年登基、1867年二元妥协与1914年巴德伊舍宣战）",
-        "https://www.britannica.com/biography/Franz-Josef"
+        "https://www.britannica.com/biography/Franz-Joseph"
       ],
       [
         "弗朗茨·约瑟夫一世传略（英文资料）",
