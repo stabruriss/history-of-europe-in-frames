@@ -39,7 +39,7 @@ def expanded_ids(snapshot, ids):
 
 
 def required_ids(snapshot, scope):
-    """Selected lines/topics, their independent parts/titles, and explicit extra IDs."""
+    """Selected lines/gantries/topics, their independent parts/titles, and explicit extra IDs."""
     if (not isinstance(scope.get('lines'),list) or not all(isinstance(i,str) for i in scope['lines']) or
         len(set(scope['lines'])) != len(scope['lines']) or type(scope.get('includeTopics',True)) is not bool):
         raise ValueError('Invalid scope lines/includeTopics')
@@ -47,7 +47,12 @@ def required_ids(snapshot, scope):
     if (not isinstance(extra,list) or not all(isinstance(i,str) for i in extra) or
         len(set(extra)) != len(extra) or not set(extra) <= set(asset_ids(snapshot))):
         raise ValueError('Unknown/duplicate extra audio IDs')
+    covered_gantries = scope.get('gantries',[])
+    if (not isinstance(covered_gantries,list) or not all(isinstance(i,str) for i in covered_gantries) or
+        len(set(covered_gantries)) != len(covered_gantries)):
+        raise ValueError('Invalid scope gantries')
     routes = {r['id']:r['scenes'] for r in snapshot['routes']}
+    spans = {g['id']:g['scenes'] for g in snapshot.get('gantries',[])}
     wanted = {e['id'] for e in snapshot['entries'] if e['kind']=='topic' and scope.get('includeTopics',True)}
     for line in scope['lines']:
         if line not in routes:
@@ -60,6 +65,12 @@ def required_ids(snapshot, scope):
             scenes = scenes[:scenes.index(end)+1]
         wanted.update(scenes)
         wanted.update(i.split('/')[0]+'/title' for i in scenes)
+    # Gantries are named apart from the lines: no route holds their scenes. A planned one has none yet.
+    for gantry in covered_gantries:
+        if gantry not in spans:
+            raise ValueError('Unknown covered gantry: '+gantry)
+        wanted.update(spans[gantry])
+        wanted.update(i.split('/')[0]+'/title' for i in spans[gantry])
     wanted.update(extra)
     return expanded_ids(snapshot,wanted)
 

@@ -12,7 +12,8 @@ const hash = s => createHash('sha256').update(s).digest('hex');
 if (sources['history_entries.js'].split('/*__HISTORY_CONTENT__*/').length !== 2) throw Error('Expected one HISTORY_CONTENT placeholder');
 const ctx = vm.createContext({COL: new Proxy({}, {get: () => ''})});
 vm.runInContext(sources['history_entries.js'].replace('/*__HISTORY_CONTENT__*/', () => sources['history_content.json']) +
-  ';globalThis.book={history:HISTORY_ENTRIES,topics:TOPIC_ENTRIES,eras:HISTORY_ERAS,rows:TREE_ROWS,branches:HISTORY_BRANCHES};', ctx, {timeout:10000});
+  ';globalThis.book={history:HISTORY_ENTRIES,topics:TOPIC_ENTRIES,eras:HISTORY_ERAS,rows:TREE_ROWS,branches:HISTORY_BRANCHES,' +
+  'gantries:typeof TREE_GANTRIES==="undefined"?[]:TREE_GANTRIES};', ctx, {timeout:10000});
 vm.runInContext(sources['historical_figures.js'] + ';globalThis.people={figures:FIGURES,cards:FIGURE_SCENES};', ctx, {timeout:10000});
 const b = ctx.book, p = ctx.people;
 const entries = [...b.history, ...b.topics].map(e => ({
@@ -38,6 +39,18 @@ const routes = b.branches.map(line => ({id:line.id,name:line.name,scenes:station
     if (!Number.isInteger(s.from) || !Number.isInteger(s.to) || s.from<0 || s.to<s.from || s.to>=e.scenes.length) throw Error('Bad station range: ' + s.id);
     return Array.from({length:s.to-s.from+1},(_,i) => s.id+'/'+(s.from+i));
   })}));
+// A gantry spans lines without being a stop on any of them: its scenes are read as a sequence of their own and never join
+// a route. items are [entryId, from?, to?] like an era's, in reading order; a planned gantry has none yet. Other fields are the page's.
+const gantries = b.gantries.map(g => {
+  if (!g || typeof g.id !== 'string' || typeof g.name !== 'string' || !Array.isArray(g.items)) throw Error('Bad gantry: ' + (g && g.id));
+  return {id:g.id,name:g.name,scenes:g.items.flatMap(([id,from=0,to]) => {
+    const e = entries.find(e => e.id === id && e.kind === 'history');
+    if (!e) throw Error('Missing gantry entry ' + id);
+    to = to ?? e.scenes.length-1;
+    if (!Number.isInteger(from) || !Number.isInteger(to) || from<0 || to<from || to>=e.scenes.length) throw Error('Bad gantry range: ' + id);
+    return Array.from({length:to-from+1},(_,i) => id+'/'+(from+i));
+  })};
+});
 let commit = null, dirty = [];
 try {
   commit = execFileSync('git',['-C',root,'rev-parse','HEAD'],{encoding:'utf8',stdio:['ignore','pipe','ignore']}).trim();
@@ -45,4 +58,4 @@ try {
 } catch {} // Fixtures need not be Git repositories; file hashes are always authoritative.
 // Detect concurrent source edits; a snapshot must never silently mix revisions.
 for (const name of names) if (fs.readFileSync(path.join(root,'src',name),'utf8') !== sources[name]) throw Error('Source changed during extraction: '+name);
-process.stdout.write(JSON.stringify({schema:1,source:{commit,dirty,files:Object.fromEntries(names.map(n=>['src/'+n,hash(sources[n])]))},entries,routes})+'\n');
+process.stdout.write(JSON.stringify({schema:1,source:{commit,dirty,files:Object.fromEntries(names.map(n=>['src/'+n,hash(sources[n])]))},entries,routes,gantries})+'\n');

@@ -74,7 +74,7 @@ python3 tools/audio/release.py scope
 python3 tools/audio/release.py scope --scope "$SCOPE"
 ```
 
-scope是schema1/policy3，含profile、lines、includeTopics、ids和counts。史前/希腊用 `lines:["prehistory","trunk"], includeTopics:false`；仅专题用 `lines:[], includeTopics:true`。extraIds可加入零散材料。选正文会包含其独立补充/人物和所需节题，共享幕去重。
+scope是schema1/policy3，含profile、lines、includeTopics、ids和counts。史前/希腊用 `lines:["prehistory","trunk"], includeTopics:false`；仅专题用 `lines:[], includeTopics:true`。龙门架（`history_entries.js` 的 `TREE_GANTRIES`）跨线而不属于任何线路，其各幕不进任何 `routes`，覆盖时在scope里另写 `gantries:["gantry-1914"]` 点名，规划中尚无条目的龙门架不必写。extraIds可加入零散材料。选正文会包含其独立补充/人物和所需节题，共享幕去重。
 
 ### 2. 先导出文本，再审查
 

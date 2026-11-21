@@ -7,6 +7,7 @@ import importlib.util
 import json
 from pathlib import Path
 import socket
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -45,6 +46,7 @@ class PipelineTests(unittest.TestCase):
         self.library.mkdir()
         self.cards = {'history-fixture/0':[{'id':'person','when':'1501年','event':'一件小事','note':'当时的经历。'}]}
         self.raw = {'history':[copy.deepcopy(HISTORY)],'topics':[copy.deepcopy(TOPIC)]}
+        self.tree_extra = ''  # further top-level declarations of history_entries.js, e.g. TREE_GANTRIES
         self.write_source()
         # An accidental Python network call in any offline test is a hard failure.
         self.net = patch.object(socket.socket,'connect',side_effect=AssertionError('Network forbidden'))
@@ -59,7 +61,7 @@ const HISTORY_ENTRIES=HISTORY_CONTENT.history, TOPIC_ENTRIES=HISTORY_CONTENT.top
 const HISTORY_ERAS=[{items:[['history-fixture',0,0],['history-fixture',1,1]]}];
 const TREE_ROWS={'history-fixture/0':[['main','shared'],1501], 'history-fixture/1':['main',1510]};
 const HISTORY_BRANCHES=[{id:'main',name:'主线'},{id:'shared',name:'换乘线'}];
-''',encoding='utf-8')
+'''+self.tree_extra,encoding='utf-8')
         (self.source/'src'/'historical_figures.js').write_text('const FIGURES='+json.dumps({'person':FIGURE},ensure_ascii=False)+';const FIGURE_SCENES='+json.dumps(self.cards,ensure_ascii=False)+';',encoding='utf-8')
 
     def prepared(self):
@@ -981,6 +983,78 @@ const HISTORY_BRANCHES=[{id:'main',name:'主线'},{id:'shared',name:'换乘线'}
         p.save_json(manifest_path,bad)
         with self.assertRaisesRegex(ValueError,'Unsafe asset ID'):
             release.resolve_manifest(self.source,manifest_path,scope_path)
+
+    def test_gantry_scenes_stay_off_every_line_and_are_covered_by_name(self):
+        gantry={**copy.deepcopy(HISTORY),'id':'history-gantry-fixture','title':'龙门架标题','en':'Gantry English'}
+        self.raw['history'].append(gantry)
+        self.cards['history-gantry-fixture/1']=[{'id':'person','when':'1913年','event':'龙门架里的事','note':'另一段经历。'}]
+        self.write_source()
+        # In HISTORY_ENTRIES, on no line and in no gantry: a build refuses it rather than leave it silently unread.
+        with self.assertRaisesRegex(ValueError,'Unrouted historical scenes'):
+            release.current_source(self.source)
+        # The page's own fields (code, year, chips, lineMap) are not the tools' business; a planned gantry has no scenes yet.
+        good='''
+const TREE_GANTRIES=[
+ {id:'gantry-planned',code:'GATE I',name:'规划中的龙门架',year:475,planned:true,items:[],summary:'未写'},
+ {id:'gantry-fixture',code:'GATE III',name:'一战前的世界',year:1913.5,yearLabel:'1914',planned:false,items:[['history-gantry-fixture']],
+  chips:['总纲','德意志'],lineMap:{main:{scene:1,after:'history-fixture/1'}}}];
+'''
+        self.tree_extra=good;self.write_source()
+        snapshot=release.current_source(self.source)
+        scenes=['history-gantry-fixture/0','history-gantry-fixture/1']
+        self.assertEqual(snapshot['gantries'],[{'id':'gantry-planned','name':'规划中的龙门架','scenes':[]},
+                                               {'id':'gantry-fixture','name':'一战前的世界','scenes':scenes}])
+        # Reading a line through never enters the gantry.
+        self.assertEqual([r['scenes'] for r in snapshot['routes']],[['history-fixture/0','history-fixture/1'],['history-fixture/0']])
+        profile={k:p.config_for('+0Hz')[k] for k in ('voice','pitch','rate','volume')}
+        lines={'schema':1,'policy':POLICY,'lines':['main','shared'],'includeTopics':True,'profile':profile}
+        self.assertFalse(any(i.startswith('history-gantry-') for i in release.required_ids(snapshot,lines)))
+        parts=set(scenes)|{'history-gantry-fixture/title','history-gantry-fixture/0/moment/0','history-gantry-fixture/0/box/0',
+                           'history-gantry-fixture/1/person/0'}
+        only={**lines,'lines':[],'includeTopics':False,'gantries':['gantry-fixture']}
+        self.assertEqual(release.required_ids(snapshot,only),parts)
+        self.assertEqual(release.required_ids(snapshot,{**only,'gantries':['gantry-planned']}),set())
+        self.assertEqual(release.required_ids(snapshot,{**lines,'gantries':['gantry-fixture']}),release.required_ids(snapshot,lines)|parts)
+        plan=tracks_for(snapshot,parts)
+        self.assertEqual(set(plan),set(scenes))
+        self.assertEqual(plan[scenes[1]]['titleId'],'history-gantry-fixture/title')
+        self.assertEqual([x['id'] for x in plan[scenes[1]]['people']],['history-gantry-fixture/1/person/0'])
+        for bad,message in [(['gantry-gone'],'Unknown covered gantry'),(['gantry-fixture']*2,'Invalid scope gantries'),
+                            ('gantry-fixture','Invalid scope gantries')]:
+            with self.assertRaisesRegex(ValueError,message):release.required_ids(snapshot,{**only,'gantries':bad})
+        scope_path=self.root/'gantry-scope.json';p.save_json(scope_path,only)
+        counts=release.refresh_scope(self.source,scope_path);scope=p.read_json(scope_path)
+        self.assertEqual({k:counts[k] for k in ('scenes','titles','topics','moments','boxes','people','assets')},
+                         {'scenes':2,'titles':1,'topics':0,'moments':1,'boxes':1,'people':1,'assets':6})
+        self.assertEqual(release.checked_scope(snapshot,scope),scope['ids'])
+        # Nothing recorded yet: an ordinary build lists the gantry as pending. A renamed gantry warns; only the release gate fails.
+        manifest_path=self.root/'gantry-manifest.json'
+        p.save_json(manifest_path,{'schema':2,'policy':POLICY,'profile':profile,'assets':{}})
+        manifest,report=release.resolve_manifest(self.source,manifest_path,scope_path)
+        self.assertEqual((report['status'],report['pending'],report['scopeWarning']),('partial',scope['ids'],''))
+        self.assertEqual(set(manifest['tracks']),set(scenes))
+        p.save_json(scope_path,{**scope,'gantries':['gantry-gone']})
+        manifest,report=release.resolve_manifest(self.source,manifest_path,scope_path)
+        self.assertIn('Unknown covered gantry',report['scopeWarning']);self.assertEqual(report['pending'],scope['ids'])
+        with self.assertRaisesRegex(ValueError,'Unknown covered gantry'):
+            release.resolve_manifest(self.source,manifest_path,scope_path,strict=True)
+        # A material library covers the gantry like any other section.
+        p.prepare(self.library,self.source,limit=99)
+        self.assertEqual(p.validate(self.library,self.source,complete=True)['prepared'],13)
+        self.assertEqual(p.read_json(self.library/'source.json')['gantries'][1]['scenes'],scenes)
+        both=copy.deepcopy(snapshot);both['routes'][0]['scenes'].append(scenes[0])
+        clash=copy.deepcopy(snapshot);clash['gantries'][1]['id']='main'
+        twice=copy.deepcopy(snapshot);twice['gantries'][0]['scenes']=[scenes[1]]
+        unsafe=copy.deepcopy(snapshot);unsafe['gantries'][1]['id']='../gantry'
+        gone=copy.deepcopy(snapshot);gone['gantries']=[]
+        for bad,message in [(both,'both on a line and in a gantry'),(clash,'Duplicate routes/gantries'),
+                            (twice,'Duplicate/unknown scene in gantry'),(unsafe,'Unsafe gantry'),(gone,'Unrouted historical scenes')]:
+            with self.assertRaisesRegex(ValueError,message):p.inspect_snapshot(bad)
+        for items,message in [("[['history-missing']]",'Missing gantry entry'),("[['topic-fixture']]",'Missing gantry entry'),
+                              ("[['history-gantry-fixture',1,5]]",'Bad gantry range')]:
+            self.tree_extra="\nconst TREE_GANTRIES=[{id:'gantry-fixture',name:'坏龙门架',items:"+items+"}];\n";self.write_source()
+            failed=subprocess.run(['node',str(p.HERE/'extract.cjs'),str(self.source)],capture_output=True,text=True,timeout=40)
+            self.assertNotEqual(failed.returncode,0);self.assertIn(message,failed.stderr)
 
     def test_blob_wrong_store_is_rejected_before_upload(self):
         import subprocess,os

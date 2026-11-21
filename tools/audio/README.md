@@ -117,6 +117,8 @@ python3 "$PIPE" verify-audio --source "$SOURCE" --library "$LIB" --selection "$S
 
 已记录的非阻断源稿问题：`history-britain-lords/3/box/0` 与 `history-britain-suffrage-1918/5/box/0` 使用未渲染的Markdown管道表，作为普通文字进入旧录音，属于表格排除的存量格式例外；`history-spain-1492/3/box/1` 有“阿梅斯（Metz）托”误括注。保留真实输入/录音与问题记录，不伪报全书范围零问题，不为此卡本轮发布；后续由正常内容修订处理。新稿表格使用HTML `<table>`，核心论点另写在表外平文。
 
+龙门架：`src/history_entries.js` 可声明纯字面量 `TREE_GANTRIES=[{id,name,items:[[entryId,from?,to?],…],…}]`（items 与 `HISTORY_ERAS[].items` 同形，顺序即朗读顺序；页面自用的其他字段工具不读）。`extract.cjs` 把它另出为快照的 `gantries`，不并入 `routes`。每一幕历史正文必须恰好属于一条线路或一座龙门架：两边都在、两边都不在、龙门架id与线路id重名都拒绝，所以整线连读不会经过龙门架。覆盖计划用 `scope.gantries` 点名，其各幕、节题、补充和人物卡照常成为独立片段；未点名时这些幕不在计划内，页面不显示朗读入口。整座龙门架的播放队列由页面按同一顺序展开，读完不播终点女声。
+
 manifest使用schema2/policy3；每项仍为url/duration/bytes/textHash/inputHash/audioHash。组装器从**当前源**派生 `tracks[bodyId] = {bodyId,titleId,extras,people}`，忽略来稿清单自带的播放计划，保留缺少音频的预期片段ID。
 
 普通构建过滤陈旧/缺失/超范围音频，不阻塞正文；非法schema/profile/host/URL/哈希/元数据仍失败。缺音频的片段（正文、节题或勾选的补充）由播放器播内嵌的固定提示 `src/audio_gap_notice.json`（“此处音频文件暂缺，为您继续朗读下一段。”）后接着读，连续缺段只提示一次，入口不因缺段禁用；缺节题只撤节题，正文照常。已发布文件加载失败仍停住重试。完整音频发布另用窄scope做 `--strict --remote`，不把全书计划变成整站发布门禁。详见WORKFLOW。

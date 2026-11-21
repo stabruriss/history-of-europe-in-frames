@@ -22,6 +22,7 @@ from text import POLICY, ENTRY_ID, asset_ids, entry_records, parse_asset_id, ren
 HERE = Path(__file__).resolve().parent
 PROJECT = HERE.parents[1]
 EDGE_VERSION = '7.3.1'
+GANTRY_ID = r'[a-z0-9]+(?:-[a-z0-9]+)*'
 OMISSIONS_PATH = HERE / 'approved_omissions.json'
 
 
@@ -105,16 +106,30 @@ def inspect_snapshot(snapshot, require_clean=True):
         if e['kind'] == 'history':
             history_scenes.update(e['id']+'/'+str(i) for i in range(len(e['scenes'])))
     routes = snapshot['routes']
-    if len({r['id'] for r in routes}) != len(routes):
-        raise ValueError('Duplicate routes')
+    # A gantry spans lines without being a stop on any: a historical scene is on a line or in one gantry, never both,
+    # so reading a line through can never enter a gantry.
+    gantries = snapshot.get('gantries',[])
+    names = [r['id'] for r in routes]+[g['id'] for g in gantries]
+    if len(set(names)) != len(names):
+        raise ValueError('Duplicate routes/gantries')
     covered = set()
     for r in routes:
         scenes = r['scenes']
         if len(set(scenes)) != len(scenes) or not set(scenes) <= history_scenes:
             raise ValueError('Duplicate/unknown scene in route '+r['id'])
         covered.update(scenes)
-    if covered != history_scenes:
-        raise ValueError('Unrouted historical scenes: '+str(sorted(history_scenes-covered)))
+    spanned = set()
+    for g in gantries:
+        if not isinstance(g['id'],str) or not re.fullmatch(GANTRY_ID,g['id']) or not isinstance(g.get('name'),str):
+            raise ValueError('Unsafe gantry ID/name: '+str(g['id']))
+        scenes = g['scenes']
+        if len(set(scenes)) != len(scenes) or not set(scenes) <= history_scenes or spanned & set(scenes):
+            raise ValueError('Duplicate/unknown scene in gantry '+g['id'])
+        spanned.update(scenes)
+    if covered & spanned:
+        raise ValueError('Scene both on a line and in a gantry: '+str(sorted(covered & spanned)))
+    if covered | spanned != history_scenes:
+        raise ValueError('Unrouted historical scenes: '+str(sorted(history_scenes-covered-spanned)))
     all_ids = asset_ids(snapshot)
     if len(set(all_ids)) != len(all_ids):
         raise ValueError('Duplicate asset IDs')
