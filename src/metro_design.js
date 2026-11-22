@@ -35,6 +35,7 @@ window.NETWORK_DESIGN = (() => {
   const DISCOVERY = 626;
   const AMERICA = 706;
   const CHINA = 746;
+  const JAPAN = 786;
 
   const routes = {
     prehistory: [[-68000, y(ROME)], [-4000, y(ROME)]],
@@ -43,6 +44,7 @@ window.NETWORK_DESIGN = (() => {
     west: [[476, y(ROME), null, -14], [830, y(ROME)]],
     italy: [[830, y(ROME)], [1454, y(ROME)]],
     china: [[-68000, y(CHINA)], [1919, y(CHINA)]],
+    japan: [[230, y(JAPAN)], [2000, y(JAPAN)]],
     persia: [[-4000, y(PERSIA)], [1923, y(PERSIA)]],
     egypt: [[-4000, y(EASTEU)], [632, y(EASTEU)]],
     faith: [[-1400, y(ROME), null, -34], [-1400, y(GERMANY, 1)], [1450, y(GERMANY, 1)]],
