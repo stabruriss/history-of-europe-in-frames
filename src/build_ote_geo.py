@@ -25,6 +25,12 @@ Russia and Poland–Lithuania:
 - ruRussia1914: the Russian Empire in 1914; ruBrestLitovsk1918: what Russia gave up at Brest-Litovsk; ruUSSR1922: the Soviet Union.
 - plPoland1921: the Second Polish Republic after the Treaty of Riga.
 The First World War: wwGermany1914 (the German Empire), wwAustriaHungary1914 (Austria-Hungary with Bosnia).
+Persia after the Safavids (老无 2026-11-21):
+- prCeded1813: what Gulistan gave Russia (Georgia, southern Dagestan and the khanates north of the Aras);
+  prCeded1828: what Turkmenchay added (the Erivan and Nakhchivan khanates with Surmali).
+- prQajar1828: Qajar Iran after Turkmenchay (the Safavid outline less the Caucasus and the Herat country).
+- prRussiaZone1907 / prBritishZone1907 / prNeutralZone1907: the Anglo-Russian convention's lines, Qasr-e Shirin–Isfahan–Yazd–Kakhk
+  to the Russo-Afghan frontier (the towns in the Russian zone) and the Afghan frontier–Gazik–Birjand–Kerman–Bandar Abbas (in the British).
 """
 import json
 from pathlib import Path
@@ -196,6 +202,25 @@ UKRAINE1918 = L([(23.8, 51.6), (26.0, 52.0), (30.0, 51.5), (32.0, 52.3), (34.5, 
                  (26.0, 49.5), (24.0, 50.5)])
 regions['ruBrestLitovsk1918'] = U(FINLAND, BALTIC3, POLAND1921, UKRAINE1918, KARS).intersection(U(RUSSIA1914, FINLAND).buffer(.05)).buffer(0)
 regions['ruUSSR1922'] = RUSSIA1914.difference(U(FINLAND, BALTIC3, POLAND1921, BESSARABIA, KARS.difference(BATUMI)).buffer(.01)).buffer(0)
+
+# ---------- Persia after the Safavids ----------
+CAUCASUS_S = L([(39.9, 43.45), (42.0, 43.25), (44.0, 42.8), (45.8, 42.6), (46.8, 43.5), (47.6, 43.3), (48.4, 42.1), (49.6, 41.0),
+                (50.6, 40.4), (49.6, 39.4), (48.87, 38.43), (48.0, 39.4), (46.0, 38.9), (44.8, 39.7), (43.65, 40.1), (43.45, 41.2),
+                (42.3, 41.6), (41.5, 41.6), (41.0, 42.5)])
+ERIVAN_NAKH = L([(43.45, 41.2), (45.0, 41.25), (45.6, 40.7), (45.9, 40.2), (45.6, 39.75), (46.1, 39.4), (46.05, 38.9), (44.8, 39.7),
+                 (43.65, 40.1)])
+regions['prCeded1828'] = ERIVAN_NAKH
+regions['prCeded1813'] = CAUCASUS_S.difference(ERIVAN_NAKH.buffer(.01)).buffer(0)
+HERAT_COUNTRY = Polygon([(61.3, 35.6), (61.0, 34.3), (60.55, 33.5), (60.85, 31.6), (62.5, 31.6), (63.5, 36.0)])
+IRAN1828 = SAFAVID.difference(U(CAUCASUS_S, HERAT_COUNTRY).buffer(.01)).buffer(0)
+regions['prQajar1828'] = IRAN1828
+RU_ZONE = Polygon([(42.0, 34.6), (45.58, 34.3), (51.67, 32.45), (54.34, 31.68), (58.65, 33.95), (61.3, 35.45), (63.0, 36.0),
+                   (63.0, 42.0), (42.0, 42.0)])
+BR_ZONE = Polygon([(64.0, 33.25), (60.22, 33.25), (59.22, 33.08), (57.06, 30.48), (56.27, 27.4), (55.6, 26.5), (54.0, 24.0),
+                   (64.0, 24.0)])
+regions['prRussiaZone1907'] = IRAN1828.intersection(RU_ZONE).buffer(0)
+regions['prBritishZone1907'] = IRAN1828.intersection(BR_ZONE).buffer(0)
+regions['prNeutralZone1907'] = IRAN1828.difference(U(RU_ZONE, BR_ZONE).buffer(.01)).buffer(0)
 
 # ---------- The First World War ----------
 regions['wwGermany1914'] = L([(6.1, 53.5), (7.1, 52.2), (6.0, 50.8), (6.1, 50.1), (6.4, 49.5), (5.9, 49.5), (6.9, 48.3),
