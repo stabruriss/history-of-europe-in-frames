@@ -8,12 +8,12 @@
     "volume": "+0%"
   },
   "source": {
-    "commit": "3b8727a8aa84716ffecdcd118e220417d61e5526",
+    "commit": "68e74ed6601fcc67f8a36012b1ea89e1c8ca6045",
     "dirty": [],
     "files": {
-      "src/history_entries.js": "a2d12d2f5ea4d92d5ead79003a5e63d8822b06df66c3165683cd7d8f835e7a79",
-      "src/history_content.json": "d29cc8635669a30f947cd2362e6bf40cec33b3e08d21c47768a99b401585c61b",
-      "src/historical_figures.js": "be10de87643ff9183b6394fe963259e025a172b1c4be5e37f77b1e1b515acde4"
+      "src/history_entries.js": "ce5504077eb85f65ccc3df16e80316c0ed30b6f4cef03f5f8b25870e3e7a02a5",
+      "src/history_content.json": "f2d51df338dece4c66ff0f5f9b5b8fe252f72af93f4c38868095bec1512d8e35",
+      "src/historical_figures.js": "dd699bb3a34caef0524d3bd75ce73178e01751b85a964c9aa052c36cb616eb49"
     }
   },
   "assets": {
@@ -43840,6 +43840,990 @@
       "textHash": "fe01811fcd880f42811267beb3ab6d1c8888f9418635bc5f4591d167d09f4235",
       "inputHash": "6255c7fab8519a3b72b627476a1368c4220d6a5b3b010256820b2bdace41f226",
       "audioHash": "030ce88200488c9763cc8d30448a39ccca606b85e7357c49f78762c1a6c976b2"
+    },
+    "history-japan-ancient/title": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/2281bc7c6d67a1921c2d42e83f5ee95001d18cb932b513a3c697df834750e1e6.mp3",
+      "duration": 13.824,
+      "bytes": 82944,
+      "textHash": "6383f44cb5e74b98941db0634daa2530eaf6b5f1fccdd96348e30ecfb0b67c26",
+      "inputHash": "9fe336667299b584a98a686fe0c3aefde106ed3110fee28b1a38dc86fa91f111",
+      "audioHash": "2281bc7c6d67a1921c2d42e83f5ee95001d18cb932b513a3c697df834750e1e6"
+    },
+    "history-japan-ancient/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/31a02328359aa68676f0633c05e9a3d7aa0494d672cab34962d4f7dfebc8f46b.mp3",
+      "duration": 62.592,
+      "bytes": 375552,
+      "textHash": "2e9dd95d1b0789f054f976e3f518f1ebe65b73b52b45364ddc255f17d6adb331",
+      "inputHash": "87e4052e759cbb89cc0f5168e7d4917806ae54df252a1090700e2e8cdb65c979",
+      "audioHash": "31a02328359aa68676f0633c05e9a3d7aa0494d672cab34962d4f7dfebc8f46b"
+    },
+    "history-japan-ancient/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/2b8d242b2af82e54151121039075733bd953aa02c7162e30bd8e5b868d59f7dc.mp3",
+      "duration": 56.184,
+      "bytes": 337104,
+      "textHash": "62ae90556cba4e537c594dfb5786b392bc2187419a7c18d88e2b4c0208663f9d",
+      "inputHash": "3ac3bfaf489c6ec1d916978a14c2301f3399867da8b777de886dafbaeab97b3a",
+      "audioHash": "2b8d242b2af82e54151121039075733bd953aa02c7162e30bd8e5b868d59f7dc"
+    },
+    "history-japan-ancient/1/box/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/74ac0afd720278aae0c75c587b3d86eb480ebc2f91eb575942c0f0085b60fb30.mp3",
+      "duration": 149.784,
+      "bytes": 898704,
+      "textHash": "c9636765b71cc56ed14fed7d19065060e18c24cb485a5b36c460d1b39f29b53a",
+      "inputHash": "be5a9b156fda6357340f14942a585048043679292c3a71eb9420f7e0d8ba8b9f",
+      "audioHash": "74ac0afd720278aae0c75c587b3d86eb480ebc2f91eb575942c0f0085b60fb30"
+    },
+    "history-japan-ancient/2": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/095d566bd94bf70eb333e18fb4e742e4a83014cf71cac2669ceedbd5f5ff0909.mp3",
+      "duration": 66.24,
+      "bytes": 397440,
+      "textHash": "6a341a4cf84e050de15813f4f8a8ca7cb4b6d7cfe1187bff78c7d7c0214cd351",
+      "inputHash": "312eb3462d2a93b74d3eb311a24113b42f8ce2c678b979a68e72c78c38b5df38",
+      "audioHash": "095d566bd94bf70eb333e18fb4e742e4a83014cf71cac2669ceedbd5f5ff0909"
+    },
+    "history-japan-ancient/2/moment/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/52b4bc424a715f09bca1c694b55dd7d936b9843095ead03a372368427a0b952f.mp3",
+      "duration": 47.256,
+      "bytes": 283536,
+      "textHash": "cc8e1190be0471a5ed530adbd77d091bcccfe5eaf9ce20369aad0e31a296b476",
+      "inputHash": "07663814d8af4f83d6c367904c7952e48b41f5d5b93f5732a9177eb9e6993e37",
+      "audioHash": "52b4bc424a715f09bca1c694b55dd7d936b9843095ead03a372368427a0b952f"
+    },
+    "history-japan-ancient/2/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/94e420fe7637889518df90ea6a31ae8478d0d2881b748bd8c5a7dbdd09bcca51.mp3",
+      "duration": 67.656,
+      "bytes": 405936,
+      "textHash": "4e7eb5475efd3dd4584cf2c81cc8c104952bad990f36a29799563d85812bd3c1",
+      "inputHash": "9e40b0f384c56e69704862d98210b275f63458b85c4eebb7c204ee5cdddefb73",
+      "audioHash": "94e420fe7637889518df90ea6a31ae8478d0d2881b748bd8c5a7dbdd09bcca51"
+    },
+    "history-japan-ancient/3": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/7d24fadab65ea5ddbe27fe81d5f4deb8097eb9c88e40350f35df3ece617c7beb.mp3",
+      "duration": 65.232,
+      "bytes": 391392,
+      "textHash": "b99f951105a95f0312e46af132c6d0b588ac92e58b3685366b55cab4544942f4",
+      "inputHash": "a2ea7baad8dbc17f0db43e802d12e4c3476ebd9a29dd706fee3dfb8fa9fe8165",
+      "audioHash": "7d24fadab65ea5ddbe27fe81d5f4deb8097eb9c88e40350f35df3ece617c7beb"
+    },
+    "history-japan-nara/title": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/fd15336a201d9bcfc284d28e886f53d3ca030a4bb69b77ee4dfe0e9072a5c1e0.mp3",
+      "duration": 13.272,
+      "bytes": 79632,
+      "textHash": "b97be3a2c9adc1af7494a029f54bfcb85d6039cff1701ceae094bcdc9968aa71",
+      "inputHash": "004e5d0a3980541489716cdb5156651e0f5ff89da26a321d1f3ecfef876bdbce",
+      "audioHash": "fd15336a201d9bcfc284d28e886f53d3ca030a4bb69b77ee4dfe0e9072a5c1e0"
+    },
+    "history-japan-nara/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/9f5ab4528e70e18d0f93e6fe71d65b2c8dd3526746e7cd3fce05526cca5b2d8e.mp3",
+      "duration": 70.848,
+      "bytes": 425088,
+      "textHash": "a6dbc33405fd24204ad1353120ec0f81b3330be67c6d3ae4eecd1520a67932aa",
+      "inputHash": "0ee8a9f964328efb5d881809605b4e78852587eb834cb6e514bc6ff6c26b1625",
+      "audioHash": "9f5ab4528e70e18d0f93e6fe71d65b2c8dd3526746e7cd3fce05526cca5b2d8e"
+    },
+    "history-japan-nara/0/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/3894c9287ecbe8dae3feda38b79652220c914e235992bf49a07827f56914a756.mp3",
+      "duration": 70.728,
+      "bytes": 424368,
+      "textHash": "033ad8e52ee498688ce8afe03dfa1c0fe0310fa619865bfd680c848e8f62cce8",
+      "inputHash": "9e1fb968b878983bce23c8c4194a4399c157c55866df18986bc44a71e72b3b72",
+      "audioHash": "3894c9287ecbe8dae3feda38b79652220c914e235992bf49a07827f56914a756"
+    },
+    "history-japan-nara/0/person/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/cb609c1588b5cf6c9aa37f4ffafe2c21bce37f309519e486ef8438897de04b19.mp3",
+      "duration": 75.504,
+      "bytes": 453024,
+      "textHash": "c9021875f13f2f8f8eca7547d03ce47370f57a0ce8644d3ccc0cb9263ef9c850",
+      "inputHash": "98a438e008a0f6637256c60905443967b2c42ff5b3429b19f33b0e7c6f25f9fa",
+      "audioHash": "cb609c1588b5cf6c9aa37f4ffafe2c21bce37f309519e486ef8438897de04b19"
+    },
+    "history-japan-nara/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/300a5eef56bbb782b2c394a6bf78542f6ffd60e395c8f6bb3fbf1632e9acfdcf.mp3",
+      "duration": 60.6,
+      "bytes": 363600,
+      "textHash": "8654d810c096f9cf7213396735b5355c39ba2edf57467af6fdf1c735411522b2",
+      "inputHash": "0e5bbb05bef4ffa9c8951430b22d0c0bfe08ea3795e0225447065af8d16ecf54",
+      "audioHash": "300a5eef56bbb782b2c394a6bf78542f6ffd60e395c8f6bb3fbf1632e9acfdcf"
+    },
+    "history-japan-nara/1/moment/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/233dd03f686c9b14ce7e873692eed5923a5bf662d604341e01c812f0da81e22c.mp3",
+      "duration": 79.32,
+      "bytes": 475920,
+      "textHash": "b2d3d5806c4c47598f39b983e79f99c8f224746a57d871294f00611243736e0d",
+      "inputHash": "7a017de9c880967f1a10f9253ca1a37f1c8d0e34d441b5ce3741ff5fa5a066af",
+      "audioHash": "233dd03f686c9b14ce7e873692eed5923a5bf662d604341e01c812f0da81e22c"
+    },
+    "history-japan-nara/1/box/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/1e096c16083cede87b02aae6a1ae530039379e0ca553a3d4f7078b7f2b7d1f22.mp3",
+      "duration": 156.048,
+      "bytes": 936288,
+      "textHash": "5302367ab16005a683e5aefbe0d38ed1aab6fa90c09b5120124eca819a1985c1",
+      "inputHash": "4f5762bd6fe7e2901ddb547f88972c36be7a6e7f0fd130643f7e8567500a5839",
+      "audioHash": "1e096c16083cede87b02aae6a1ae530039379e0ca553a3d4f7078b7f2b7d1f22"
+    },
+    "history-japan-nara/1/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/a010614cc1fa9d1f2491627396496a5c119db202c02ae4272f8975b3b7f023b1.mp3",
+      "duration": 90.576,
+      "bytes": 543456,
+      "textHash": "46473e4c4d3a7064959698ef92b6ad84cafca7588f4102e3815bb69568ea24de",
+      "inputHash": "19aecc2f4dd5c40166dc80b7e13f4ff24aa262f017c94bb220515ca756a35bd0",
+      "audioHash": "a010614cc1fa9d1f2491627396496a5c119db202c02ae4272f8975b3b7f023b1"
+    },
+    "history-japan-nara/2": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/4fb1397f0ab4c8071febd6ddd4a69185990bea3095ffc44a035b7191c5450f6f.mp3",
+      "duration": 63.408,
+      "bytes": 380448,
+      "textHash": "d303281f77730ed22a09965260083fa048c45b3a00719944bbf165bfe50ffa26",
+      "inputHash": "840612bedcdc44d772f4fd3c59d1d45b5ed04d9809676cc209d44515f49ce4ce",
+      "audioHash": "4fb1397f0ab4c8071febd6ddd4a69185990bea3095ffc44a035b7191c5450f6f"
+    },
+    "history-japan-nara/3": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/4b7790370f312cb42a8d3de751a49cb26e9688eba478a792726f7987662efaeb.mp3",
+      "duration": 61.656,
+      "bytes": 369936,
+      "textHash": "e579bfd96c6f42a2de227f87dd32d6dfa2d50852cbbb530085205607d6064a43",
+      "inputHash": "cb14d4af7d5ecb5830a30bf5b2b59fc26f374f8557fcaf48bf9388f8690ce7be",
+      "audioHash": "4b7790370f312cb42a8d3de751a49cb26e9688eba478a792726f7987662efaeb"
+    },
+    "history-japan-heian/title": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/faf154cf872fb17fc24a5af1da40e452e053c03b847c39d4f43d4cf7f22870d4.mp3",
+      "duration": 12.528,
+      "bytes": 75168,
+      "textHash": "65c880fd23693bee26095089ba302df03f4b900749a68b4ecf8c3362f39c8984",
+      "inputHash": "791e48a4164c3b651608928ca4b08738643cfe99856b9babf7b16d6685e9a616",
+      "audioHash": "faf154cf872fb17fc24a5af1da40e452e053c03b847c39d4f43d4cf7f22870d4"
+    },
+    "history-japan-heian/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/43e3dafad00801fad4836fb8c04975da0fe0c0954241b47c46641b5571af4c90.mp3",
+      "duration": 65.712,
+      "bytes": 394272,
+      "textHash": "47a2ac64d3fa0eb22fb394690d8149f1ceac0c7a70f873ef172614a5310496a6",
+      "inputHash": "562623a424acd2c2db31e6989f68e6e26698ea4151efe0346bf9e7fa955b74c7",
+      "audioHash": "43e3dafad00801fad4836fb8c04975da0fe0c0954241b47c46641b5571af4c90"
+    },
+    "history-japan-heian/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/69579d538c48908118b58a4fa8a13e946740b32d891411d0ebbef80f32f59fe8.mp3",
+      "duration": 63.144,
+      "bytes": 378864,
+      "textHash": "a52c668c77ed550451c74bb8d5662c531bcb5f7deba8acde1736e3392d5d81b4",
+      "inputHash": "b50ea6ae727af378f732d8ad2eee30913cfa94aaf4a35e26981ca7c1967fff65",
+      "audioHash": "69579d538c48908118b58a4fa8a13e946740b32d891411d0ebbef80f32f59fe8"
+    },
+    "history-japan-heian/1/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/c66d3818111f20abcaa4531bd957a6649a899e35c25cce2882f77e464caccabc.mp3",
+      "duration": 61.536,
+      "bytes": 369216,
+      "textHash": "71156b6ee5dc1c78f7e4bd43001c56e89963223fce488bc5ce62e3864ef59a53",
+      "inputHash": "0d2962f31c58558b4d6afd73d5792c01150ec1456b0c8c1e93025b75ac2dcd05",
+      "audioHash": "c66d3818111f20abcaa4531bd957a6649a899e35c25cce2882f77e464caccabc"
+    },
+    "history-japan-heian/2": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/f84388cd1507907d080e5458fd49cc52e1cd251fd6a159dbba855c9a9fa0bf8c.mp3",
+      "duration": 82.08,
+      "bytes": 492480,
+      "textHash": "0432d95561dc04a88f5efebe69207b016e7c78992a1dc67e4af137de7181b237",
+      "inputHash": "81eb14ba7f28d68aa062e41f424b095d6bb0095ce64309d6484eb1e37ba1e4de",
+      "audioHash": "f84388cd1507907d080e5458fd49cc52e1cd251fd6a159dbba855c9a9fa0bf8c"
+    },
+    "history-japan-heian/2/box/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/e87f54890fca686dee730595d25860109f918cc923d3c88a55f720fbaa99ac5c.mp3",
+      "duration": 195.408,
+      "bytes": 1172448,
+      "textHash": "449fe98070413a91da8fca6481bff0526aa1eeed5ba02e8b8437bcb21161859c",
+      "inputHash": "9e7fb821678e19bba34c97fe8529c2748699052330fc49e59e55ecea6b88be8c",
+      "audioHash": "e87f54890fca686dee730595d25860109f918cc923d3c88a55f720fbaa99ac5c"
+    },
+    "history-japan-heian/2/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/847f59661ecd85e1cf5bccc868417141eb04d0df64256038ccdd412ae6a6fc26.mp3",
+      "duration": 79.632,
+      "bytes": 477792,
+      "textHash": "1dd249e319bc01ab8971e117a9efedc92da5665a8125838e14fc1606d56f5c5f",
+      "inputHash": "a42aeee3554d1d5f33664e30c650c32c0990bae6687eaf875604d4ba4ed1b660",
+      "audioHash": "847f59661ecd85e1cf5bccc868417141eb04d0df64256038ccdd412ae6a6fc26"
+    },
+    "history-japan-heian/3": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/7339057d918c4438c0d292db4e851c3432761dc759a1fc2a3bce8b0a706add21.mp3",
+      "duration": 61.728,
+      "bytes": 370368,
+      "textHash": "11dd72562dc142e20559d4ae3295cbac84c4a0633bc2a2c30609be141ad507ae",
+      "inputHash": "de1c59f48eda2a6c4ea22de460be4fe6b2d414e30679fc359785c5c1bb1dbc23",
+      "audioHash": "7339057d918c4438c0d292db4e851c3432761dc759a1fc2a3bce8b0a706add21"
+    },
+    "history-japan-heian/3/moment/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/e11997df785ec377a3bd75b44f4e9bd11c0f0862f313405a02192833395c3d3f.mp3",
+      "duration": 56.448,
+      "bytes": 338688,
+      "textHash": "7545067f8145e207d349ed4ab098a595eacc688544854644b04449dc683a6249",
+      "inputHash": "83ad177dfb5ec42f72393da0b68f1ddbbefd66edfed147d3f9c78cd8bc6efa8e",
+      "audioHash": "e11997df785ec377a3bd75b44f4e9bd11c0f0862f313405a02192833395c3d3f"
+    },
+    "history-japan-heian/3/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/69413ed3618e9bdda4bdba7d59cd122c95651003f7dcec05688b3938152079b4.mp3",
+      "duration": 79.512,
+      "bytes": 477072,
+      "textHash": "6d1b4153731eca50baa4f172e1694cecd5a4b9ad02d3e34f98dcedafefdf786f",
+      "inputHash": "b82ea2069be7826f8c08c6738d0a93a38050d9035102a7eefc3c2cf387ede844",
+      "audioHash": "69413ed3618e9bdda4bdba7d59cd122c95651003f7dcec05688b3938152079b4"
+    },
+    "history-japan-bakufu/title": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/6782c0ca4ed2221dc1777278f96fbf9f4ea85e3a2619d7124c0daa415c7c67ad.mp3",
+      "duration": 14.16,
+      "bytes": 84960,
+      "textHash": "adf5669d2a158c47a10fa0cb2cb2f59f0a12aea9861d8592089cdd85f23082c7",
+      "inputHash": "e97526a8ea88b2c370b3c57e7a371ce55f4a084883bab71728f3da994a0709f3",
+      "audioHash": "6782c0ca4ed2221dc1777278f96fbf9f4ea85e3a2619d7124c0daa415c7c67ad"
+    },
+    "history-japan-bakufu/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/070f084dd88c2bb4210762aec83d77f7266cf463dc81dd76653929a67ce57dbd.mp3",
+      "duration": 91.848,
+      "bytes": 551088,
+      "textHash": "bbc1a2acb0846c2b15834402e3b66c59c3291781f650fb26c168b07c033148b3",
+      "inputHash": "de50ad446d4a68449ded4d1e46dea95db14bbb99aa6e3fdaaebe3e1c74b51a2e",
+      "audioHash": "070f084dd88c2bb4210762aec83d77f7266cf463dc81dd76653929a67ce57dbd"
+    },
+    "history-japan-bakufu/0/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/1d61a29ea1d3f1adc257ff5c8e15421bc08a78e4f691610f031364a1da809ed9.mp3",
+      "duration": 79.704,
+      "bytes": 478224,
+      "textHash": "cbf5a863a785c27c5c5d2d3ab5d0faa172c853dc08a7692bb899d92e57a73f19",
+      "inputHash": "c49870b2ec20465036e7af4e9347ed8d34e5504c0dab63691989023350976519",
+      "audioHash": "1d61a29ea1d3f1adc257ff5c8e15421bc08a78e4f691610f031364a1da809ed9"
+    },
+    "history-japan-bakufu/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/ce31348267a440e72d3b57dbd09065ca6adda35ff9a7440473d06f1d2e5f0aa7.mp3",
+      "duration": 67.008,
+      "bytes": 402048,
+      "textHash": "4a16271796accdddcca470498a8deb6a3f9984e99d3bb76dd24253899ed6ae12",
+      "inputHash": "4a6b72abcbbc6911c560d5b06d34b33e701020371bede5338973eac7ce417064",
+      "audioHash": "ce31348267a440e72d3b57dbd09065ca6adda35ff9a7440473d06f1d2e5f0aa7"
+    },
+    "history-japan-bakufu/1/moment/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/230630b0757f21c5a0e598c4dabc8d3c513f4fc418e4bb1d0ec2f3bbd9d8d85a.mp3",
+      "duration": 51.192,
+      "bytes": 307152,
+      "textHash": "99de4485ccc50698c0a16f2b1c99b182dd673f1142ad5d13841be66861d3360b",
+      "inputHash": "76d168c8837f5ad12774007c691992b5dbac4f1a15ef129afc201f3cda13ba71",
+      "audioHash": "230630b0757f21c5a0e598c4dabc8d3c513f4fc418e4bb1d0ec2f3bbd9d8d85a"
+    },
+    "history-japan-bakufu/1/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/713449aa8e741504b582c4ab72bad867981473e8d5e8a2c816b2db697733f10d.mp3",
+      "duration": 62.808,
+      "bytes": 376848,
+      "textHash": "392ebb40bad2d4c62e24b4add197a7e8a26a7d94ce4ba832c621091b3e3a38f1",
+      "inputHash": "ffdff2d26970f60f0f0071b9033e4befeae38ae2df47a78f727a5a409732514f",
+      "audioHash": "713449aa8e741504b582c4ab72bad867981473e8d5e8a2c816b2db697733f10d"
+    },
+    "history-japan-bakufu/2": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/f329d1e6a7ed97f790a6840f18f670466b71ed3e8299b690d20da7f5558d8679.mp3",
+      "duration": 62.592,
+      "bytes": 375552,
+      "textHash": "78e27add26cda8d4f7e0ce7d0bc0f1606abc9c66df1f5a4a13d41143511838bf",
+      "inputHash": "0e15482c52f1fd2c91464d4659eaee6e70b94b04773f5ad4e4119cb4927838c3",
+      "audioHash": "f329d1e6a7ed97f790a6840f18f670466b71ed3e8299b690d20da7f5558d8679"
+    },
+    "history-japan-bakufu/2/moment/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/fe7f99a272e30244b307cabd1e6d506d971ccf818e6823c60862cc8613caa768.mp3",
+      "duration": 67.848,
+      "bytes": 407088,
+      "textHash": "fd66fecad5714edf766fc4e66e87ce174d1ff5cf21d1ea1ea2f37ec0daf1639c",
+      "inputHash": "eddcce8a8f11caa04a1f8488c5afe2cb929a1c509f02a704c6606bdb64c15b78",
+      "audioHash": "fe7f99a272e30244b307cabd1e6d506d971ccf818e6823c60862cc8613caa768"
+    },
+    "history-japan-bakufu/2/moment/2": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/4f7cb7acd9a029e5e795c04b3ceac45ccc3dc0b9c7abb49940f816dae8791f96.mp3",
+      "duration": 70.608,
+      "bytes": 423648,
+      "textHash": "764b2e8ad79ffb3a2c9a12535818aadf54904821e2159d7166636588907608a8",
+      "inputHash": "06847f143a737651b70b4a4162e8a1272505c58cbc27727177f3e1c62534a085",
+      "audioHash": "4f7cb7acd9a029e5e795c04b3ceac45ccc3dc0b9c7abb49940f816dae8791f96"
+    },
+    "history-japan-bakufu/2/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/01db838a1936fbf5a86b958ecc9418c821cebc356ef10c159704bb9f730ff2a6.mp3",
+      "duration": 53.352,
+      "bytes": 320112,
+      "textHash": "82310d5677ca3a6d01529e159b10e698eef4ba004e857a2f3c259e043f6622be",
+      "inputHash": "37991f36264a80b75594862b3f00f6e64332ae633d727caf0491b018fa268ba0",
+      "audioHash": "01db838a1936fbf5a86b958ecc9418c821cebc356ef10c159704bb9f730ff2a6"
+    },
+    "history-japan-bakufu/3": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/8dfedb07d37182e9eec194cc0cfa220b1d1b181aa407d1c5fd4af75fa80770cd.mp3",
+      "duration": 67.656,
+      "bytes": 405936,
+      "textHash": "68015c3d90fb540de6e703a98eee725f72840348d84debc8e4e5905747d1dace",
+      "inputHash": "58fc0efe3c980c4e3b1a13843c8609f1f6cb71bc8c177a61880bb87963c66bde",
+      "audioHash": "8dfedb07d37182e9eec194cc0cfa220b1d1b181aa407d1c5fd4af75fa80770cd"
+    },
+    "history-japan-bakufu/3/moment/3": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/165b72f9262c0bae91ecbd860af9e1948a87d695c49f51a57eddcb88778c4ea0.mp3",
+      "duration": 65.064,
+      "bytes": 390384,
+      "textHash": "51ad95fda12ba86b0980738211bc12f3e1855c6c7450b8549c34120c7f26f7e7",
+      "inputHash": "c9e7aec9de2a4cf96232c2f643e47df7d4e4bdbdaff56e43d87988c7d29613b6",
+      "audioHash": "165b72f9262c0bae91ecbd860af9e1948a87d695c49f51a57eddcb88778c4ea0"
+    },
+    "history-japan-bakufu/4": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/49b4340c0c39b7bfd21dba074b570bf1a1bdd0f4300363ea5dcb42259c71af60.mp3",
+      "duration": 78.984,
+      "bytes": 473904,
+      "textHash": "e0fcc73affd4e1fd20d8127505c2bc5722f62b12c3e94e5960bacd33c7bbff77",
+      "inputHash": "25913251a1017fc2b879013b50aa0b7dfb76aa4be8d2413d01fd1f97107a0519",
+      "audioHash": "49b4340c0c39b7bfd21dba074b570bf1a1bdd0f4300363ea5dcb42259c71af60"
+    },
+    "history-japan-bakufu/4/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/f149bf3850eece9100d442f9af99a998ef704389889206ccec73d280ee9c503c.mp3",
+      "duration": 76.296,
+      "bytes": 457776,
+      "textHash": "c2351a3a9585bfd742dc8869552958a41b2c3a24db2b63c509a2c47f331c2ad2",
+      "inputHash": "dc4aa9e0c3ad21f585227d4ccacb80979e0a0e4dc879638106ff6ca4499ef4f3",
+      "audioHash": "f149bf3850eece9100d442f9af99a998ef704389889206ccec73d280ee9c503c"
+    },
+    "history-japan-sengoku/title": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/dedff1ba8bcce40376ca8f989f36564ac920023e7a91f10f95dd16d58da2471d.mp3",
+      "duration": 12.912,
+      "bytes": 77472,
+      "textHash": "9343fc83f607058592bf001eb2a0082ad41c1154cfa129f7fa39049dd58fe76f",
+      "inputHash": "d49b9d3d3a7a5d08aba27c82b56fa0d3e3a191a15573f43f928ccf13184bcf53",
+      "audioHash": "dedff1ba8bcce40376ca8f989f36564ac920023e7a91f10f95dd16d58da2471d"
+    },
+    "history-japan-sengoku/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/9d094039c74cb4dfd7a2f5a386a5d57f5520db4b9b6fb3e071ffad5aeb594f36.mp3",
+      "duration": 63.792,
+      "bytes": 382752,
+      "textHash": "501272ce0fbe431cf389a1861467d3affa7e11eb3b2255f93262bc83ec3b41c7",
+      "inputHash": "05c29808db92e000d2fc189fbda524ce45e5bf7d28e7803559b20d15a380144b",
+      "audioHash": "9d094039c74cb4dfd7a2f5a386a5d57f5520db4b9b6fb3e071ffad5aeb594f36"
+    },
+    "history-japan-sengoku/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/e054c96419306e7cbc74d6e1cd6c1e5cf78cd2452643e4df466e223d0c4a9340.mp3",
+      "duration": 67.152,
+      "bytes": 402912,
+      "textHash": "649f422fdad2e8a8be22c320173afc6e501d53dd36295958785f49f5bf8ab8f2",
+      "inputHash": "3d78e074ddd35edb348e781fe35f88656dfbb871d4b6e51e8c5cb518b18deb99",
+      "audioHash": "e054c96419306e7cbc74d6e1cd6c1e5cf78cd2452643e4df466e223d0c4a9340"
+    },
+    "history-japan-sengoku/1/box/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/fa74443132c80d5afd798560e1879906ad53c07fe313a57e4df7faf4dc5c3958.mp3",
+      "duration": 70.128,
+      "bytes": 420768,
+      "textHash": "27076c688e10f1e67d4caa2494dd5eba932cdeed78655f1838dc8b9c30ecef89",
+      "inputHash": "4232d195869ae616b579a33d92791a07538f8e18171be0f8399b814e1f6303a0",
+      "audioHash": "fa74443132c80d5afd798560e1879906ad53c07fe313a57e4df7faf4dc5c3958"
+    },
+    "history-japan-sengoku/1/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/88dab56c3d85f9913c557baaaf13eb33efa66414801b90958a680dc8ca0cc467.mp3",
+      "duration": 54.288,
+      "bytes": 325728,
+      "textHash": "70f8da85af1a4afb55d681b86280a0657a7e263d9e820af2072d9d47a7658a78",
+      "inputHash": "e67403cd8b98edec18b9018f1d70c20fb7b74650c3ef817d44952734cbf6bc62",
+      "audioHash": "88dab56c3d85f9913c557baaaf13eb33efa66414801b90958a680dc8ca0cc467"
+    },
+    "history-japan-sengoku/2": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/0172b0bddd9f49e649035c6d733aa01ccf3ef2bf3ec27b6859e9e906a4415306.mp3",
+      "duration": 61.128,
+      "bytes": 366768,
+      "textHash": "81c1c973fc004ce076d10ed44f0d4e0eaa9ef3033cb5cd594884666956f89328",
+      "inputHash": "c15f514c6b3aa1b49d34fef562e7a8466a871a0f394fec260a9cb92d827252b2",
+      "audioHash": "0172b0bddd9f49e649035c6d733aa01ccf3ef2bf3ec27b6859e9e906a4415306"
+    },
+    "history-japan-sengoku/2/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/48d07e4392d76f66b214cc06517fd1fa769e6beb41250d1d4e6d8a0d5bcc4e47.mp3",
+      "duration": 76.728,
+      "bytes": 460368,
+      "textHash": "771307919f633db7e0eeae1d492e140cfb5f135ff7b678134baf932380c8c4fb",
+      "inputHash": "c4aba4d0491aefeae5bf56821c6cff5529cdd7cd4c4d3fa330d1702d9d5263d6",
+      "audioHash": "48d07e4392d76f66b214cc06517fd1fa769e6beb41250d1d4e6d8a0d5bcc4e47"
+    },
+    "history-japan-sengoku/3": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/f4665fee29c319838ae53708a6f51e553f1e01c3c38831f40bc3b98a6534eb24.mp3",
+      "duration": 65.496,
+      "bytes": 392976,
+      "textHash": "7e6ea20b472f742a4f9aa75ea5aa46b8d9a01239cdf30537a73bb37d1ea23405",
+      "inputHash": "ea3075c7a6be9fe4925a7142b8225d40d5bc6016d7adf45cbdec9142d551e7c8",
+      "audioHash": "f4665fee29c319838ae53708a6f51e553f1e01c3c38831f40bc3b98a6534eb24"
+    },
+    "history-japan-sengoku/3/moment/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/4d1aec2226bc1d6acbccbb9487a5515c9279a30934f8dc727a1dcbef41f4ee83.mp3",
+      "duration": 54.048,
+      "bytes": 324288,
+      "textHash": "2fc9a596216e32dd90026e45a4a91c8e8714baed18d96d73808edefcbd20668d",
+      "inputHash": "a0f994e91bef5d1aa486255b58e87555d2a24b316f732e79cf68188becfd2ab8",
+      "audioHash": "4d1aec2226bc1d6acbccbb9487a5515c9279a30934f8dc727a1dcbef41f4ee83"
+    },
+    "history-japan-sengoku/3/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/e15e95914bb04e2eac36cff4102e7a622612c300950b0ef75c574f5d98527960.mp3",
+      "duration": 84.648,
+      "bytes": 507888,
+      "textHash": "d1fb064dd36135e19538415c20d39d4d4e51088a622b8ce3019b573a41009bdf",
+      "inputHash": "c019c0b689b6c4ea4ea6ea5c6bf7cf0aa18ba538f4e2485e3a16b5b9b754b5fc",
+      "audioHash": "e15e95914bb04e2eac36cff4102e7a622612c300950b0ef75c574f5d98527960"
+    },
+    "history-japan-sengoku/4": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/23d98447754c068dd17650b9c9a5f636d40b4ace9def9a58c59a3d573d72b542.mp3",
+      "duration": 67.536,
+      "bytes": 405216,
+      "textHash": "ed54a609db3d585975229cec6d83ca02b82d86204f8360ef7d60194b050c0637",
+      "inputHash": "911a34df1e02118ea8e90d08d320cf2fef3e99d402626d3149520197ec822707",
+      "audioHash": "23d98447754c068dd17650b9c9a5f636d40b4ace9def9a58c59a3d573d72b542"
+    },
+    "history-japan-sengoku/5": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/4d60590e4ed6de809ba30b84f3e673697ea0409f195d7ac4d66b915b0b62e858.mp3",
+      "duration": 66.84,
+      "bytes": 401040,
+      "textHash": "9fdf5595274522a10c4b58ada63273aa2be02fe15b6fff3477c25713ae39e68e",
+      "inputHash": "1961532c1e4301d696f3990a48987db22d782476e6b23bf21acce67350b969e5",
+      "audioHash": "4d60590e4ed6de809ba30b84f3e673697ea0409f195d7ac4d66b915b0b62e858"
+    },
+    "history-japan-edo/title": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/e44b0a9c26d2291f3a9ef967669b36ca9becd3fa428f6f9966752ad227568472.mp3",
+      "duration": 13.296,
+      "bytes": 79776,
+      "textHash": "72b49059a6614af2ad858a6177a60e8afffaea14e7aa4b5f4c4d583872538183",
+      "inputHash": "834ff85510086246fa1fb064d277c3b143d6a5736fc12f8e4751128a18fa243c",
+      "audioHash": "e44b0a9c26d2291f3a9ef967669b36ca9becd3fa428f6f9966752ad227568472"
+    },
+    "history-japan-edo/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/8f8a5ac44d7e82598a002f659d1b4926b242ee2b1b6113ffbc9039a221c4c8c3.mp3",
+      "duration": 62.208,
+      "bytes": 373248,
+      "textHash": "9ea211cd56a0ffd1078bb78fa99e76a7676089fc255d31cbe5d021a8135ba1d0",
+      "inputHash": "28be74341c1c51d3c87e43c327ff06d93e42f8eed5206aa0e0ed618277bbddc5",
+      "audioHash": "8f8a5ac44d7e82598a002f659d1b4926b242ee2b1b6113ffbc9039a221c4c8c3"
+    },
+    "history-japan-edo/0/moment/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/2a80e7f849d77e832d26c550bbc570014cd1f4f08d3b3429c75d564158455043.mp3",
+      "duration": 57.096,
+      "bytes": 342576,
+      "textHash": "58ed7fbf2b997babb3f5fac5404906c1154d543889d7a1589f7b8c1fa7c421c4",
+      "inputHash": "bc46644a5c5aa6a1454d6a4d7dbc89538475d82580e77a7a167a0c34ad834c29",
+      "audioHash": "2a80e7f849d77e832d26c550bbc570014cd1f4f08d3b3429c75d564158455043"
+    },
+    "history-japan-edo/0/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/98c3cf6a47a77ee0fc7df7e2473ccceea9fbb4414c2a3361e7560fec5e3b3304.mp3",
+      "duration": 78.48,
+      "bytes": 470880,
+      "textHash": "0967a8bb37185191e929ce60071c574ea38c29c4821e1e41e704a8173ea101f8",
+      "inputHash": "ea5d376439091cd89d0bb656fc01e5cefc12c618a8a4ae562ee8196e88c94b08",
+      "audioHash": "98c3cf6a47a77ee0fc7df7e2473ccceea9fbb4414c2a3361e7560fec5e3b3304"
+    },
+    "history-japan-edo/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/b614a2994a44948f2803f106c4aab5ffbda37bc8b371ec461fc7fff37cd6ee39.mp3",
+      "duration": 67.656,
+      "bytes": 405936,
+      "textHash": "b23c63c533c44893e90ebb7ca67c47af28ccfdb672d898ee95e8a0e91d9f923e",
+      "inputHash": "596074047d454a9fab63536de0312a4968621a6cf7b29170ea0b4b6e71f5c3e6",
+      "audioHash": "b614a2994a44948f2803f106c4aab5ffbda37bc8b371ec461fc7fff37cd6ee39"
+    },
+    "history-japan-edo/2": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/8a1b4ca33e6f26f25ac524bf7535aea85c56e84c52f4bb5db9e76b0ba9d99dad.mp3",
+      "duration": 66.864,
+      "bytes": 401184,
+      "textHash": "eb4041bc9d13708cadc45d83b12554920988ab0c179ada2c7e5ecbb175dd4ab5",
+      "inputHash": "c4319a5ad78b2b64036ef72c062f4dd6b15c148571fb1f1f4032a33b4d9daff9",
+      "audioHash": "8a1b4ca33e6f26f25ac524bf7535aea85c56e84c52f4bb5db9e76b0ba9d99dad"
+    },
+    "history-japan-edo/3": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/bc3718a00fb0f18206488098b78a2ff34361d5dc4267b43c18b069318df8f0ad.mp3",
+      "duration": 60.264,
+      "bytes": 361584,
+      "textHash": "6b40daecff2bc3cea4f95d3af9cc2cb06157bd284db1bdfc27acc59d86ec9a39",
+      "inputHash": "bd82c443a2f929890e251a1645559b34c56b4590f6c516e2720bfca9b6387da5",
+      "audioHash": "bc3718a00fb0f18206488098b78a2ff34361d5dc4267b43c18b069318df8f0ad"
+    },
+    "history-japan-edo/4": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/6f72e4bb295aa4474985ab6ae93a443b42456f79d4c295ce58a0086d43b9cd27.mp3",
+      "duration": 62.736,
+      "bytes": 376416,
+      "textHash": "3b8135b756be833cea46a76aba8863c93bf4754c63acc2438eac51ae33404eba",
+      "inputHash": "13a371536fcd952ea9d2c6847a93d589e94adb075a15dacad08a574b554549a2",
+      "audioHash": "6f72e4bb295aa4474985ab6ae93a443b42456f79d4c295ce58a0086d43b9cd27"
+    },
+    "history-japan-edo/4/moment/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/a2391f1eb744cf87b9eb77b0364fb4c51026b812cd072efe9bf169e038da559c.mp3",
+      "duration": 59.28,
+      "bytes": 355680,
+      "textHash": "e8472c9bc48c75d5d5d4515b6f1a6383896406dcefb78654c0c3839a02c69c10",
+      "inputHash": "30cf15cba4a917ca9aa72b7f2678de204364d5cbf598a1772d6549070212d01e",
+      "audioHash": "a2391f1eb744cf87b9eb77b0364fb4c51026b812cd072efe9bf169e038da559c"
+    },
+    "history-japan-edo/5": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/0e4caff4b604567ec8d360cca3733d95d7724f841e077edb78cfcc572301c8fd.mp3",
+      "duration": 68.352,
+      "bytes": 410112,
+      "textHash": "09d1342bca543e769c7e2961cba39d514a0b960c066772df948e3c314bb1a859",
+      "inputHash": "9595943ef4264ec21e1e244dc5660f1260b548a92ea8bd85738f537751b8978b",
+      "audioHash": "0e4caff4b604567ec8d360cca3733d95d7724f841e077edb78cfcc572301c8fd"
+    },
+    "history-japan-meiji/title": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/10a5049de8cc251101e28fbbf41522a6fe813e7febd479081115c87a0318d5e2.mp3",
+      "duration": 13.368,
+      "bytes": 80208,
+      "textHash": "1073188a09431a4ccfea1f2c516e72d650c7cd807a593c450c8528521f89a0c2",
+      "inputHash": "12935c588d9056da03dce791c08c75a7817533ed2f6917c9d5686f84d9f7e9ae",
+      "audioHash": "10a5049de8cc251101e28fbbf41522a6fe813e7febd479081115c87a0318d5e2"
+    },
+    "history-japan-meiji/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/cf5fc7bee3797ff851e15e577d94c31e1e87f4dbedee53f824f0eeb8500dad45.mp3",
+      "duration": 64.008,
+      "bytes": 384048,
+      "textHash": "5807c0fc0656e280db866072b9a79af83e5a4b6add8dd4dbe41af1859e65ce01",
+      "inputHash": "a89e22817ad64a98e55a8b68095fb0e640da3f8cf7fca6d7f2c45ea20a5e03f3",
+      "audioHash": "cf5fc7bee3797ff851e15e577d94c31e1e87f4dbedee53f824f0eeb8500dad45"
+    },
+    "history-japan-meiji/0/moment/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/728524cd4d748e8b3ef2ec2771494f0e7c088da6580a982f452deedd01532d11.mp3",
+      "duration": 52.872,
+      "bytes": 317232,
+      "textHash": "18b225d30d1e88f2dc9db340dc69d8fa799a2c9bf5ef11a925a73df7c1e106fc",
+      "inputHash": "eb2e7966c967cce45f88177981e03233c720f6763c2863c1524e161dc36f7619",
+      "audioHash": "728524cd4d748e8b3ef2ec2771494f0e7c088da6580a982f452deedd01532d11"
+    },
+    "history-japan-meiji/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/c75e181a90217f6ea4efc1e8e7cd27966667e1807ee65b25c6b859760fb11f64.mp3",
+      "duration": 66.816,
+      "bytes": 400896,
+      "textHash": "6c4491bd6fcac26736ec6fc6d12a4ce8e7b0a13e24704aa60353a977d1c7e2af",
+      "inputHash": "d65f110002f903964d807fccd89620e0f694466d95f848565f4df427f73fe250",
+      "audioHash": "c75e181a90217f6ea4efc1e8e7cd27966667e1807ee65b25c6b859760fb11f64"
+    },
+    "history-japan-meiji/1/box/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/bbb914ff2e3b9da878a47b68e7e56e5628690a9dd975f3cfe3795ee3ca55845f.mp3",
+      "duration": 370.776,
+      "bytes": 2224656,
+      "textHash": "727c712ef6779253404cc874ed6bbcdf4c890670b8d7ce3514ce6fe152e04e52",
+      "inputHash": "52e781fac1e1ba9e30b5a3ef29d85035dafd7aa5d6356d2c913ccf6d6cd583ed",
+      "audioHash": "bbb914ff2e3b9da878a47b68e7e56e5628690a9dd975f3cfe3795ee3ca55845f"
+    },
+    "history-japan-meiji/1/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/e237dac4cb65ace498a6bb279b84a8654a23516b2b5f9de85e0fcfae48b9e7d9.mp3",
+      "duration": 68.184,
+      "bytes": 409104,
+      "textHash": "e5d134edd6933c55bf82cc1a75acb43e3eb8a0c700f5c4bbbd2d338a847c5ab0",
+      "inputHash": "42aafa04f6a0bf77c4d6fd03617ecfdb1d0e8dd717ac4a75f644e8af77453bef",
+      "audioHash": "e237dac4cb65ace498a6bb279b84a8654a23516b2b5f9de85e0fcfae48b9e7d9"
+    },
+    "history-japan-meiji/2": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/15f9b0c41cd2a21e66078d40768c5cda3e8ab9b5c523080cf60b1026087ed3ab.mp3",
+      "duration": 62.112,
+      "bytes": 372672,
+      "textHash": "cebffd5484720ef82862bb0b52b2122c31a2b5bfa49e631c36af2e37cf50fb6e",
+      "inputHash": "578f029e9a69a20167ba94e6b07afa5f7cc08205b1fed53a6fe4ff31bfbbe761",
+      "audioHash": "15f9b0c41cd2a21e66078d40768c5cda3e8ab9b5c523080cf60b1026087ed3ab"
+    },
+    "history-japan-meiji/2/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/559a1135c9c8617bbab53184df446fa60f0d25a9ee0522c1b45fa3799bbcc49e.mp3",
+      "duration": 70.704,
+      "bytes": 424224,
+      "textHash": "39cb3cf03ec94075565f24364ab1eb37f54bad6987b67def31430a01d3eb43c8",
+      "inputHash": "ea49eaf338ea32ec34e161d5c9d6a88378fa17c08304aa9179d4c0dfd2623e5f",
+      "audioHash": "559a1135c9c8617bbab53184df446fa60f0d25a9ee0522c1b45fa3799bbcc49e"
+    },
+    "history-japan-meiji/3": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/161db470d0b93542e15b7136de30eec76c6a92cf8c719739eccbacc78571e499.mp3",
+      "duration": 67.104,
+      "bytes": 402624,
+      "textHash": "1a230a198c8ff43e7ae7aedee70f158ba81da0b63542670257f2f5c997b6229e",
+      "inputHash": "46af1f3489c7b21fbc001aa9f5c53653f4824b914daa0b419d9425295ff425ed",
+      "audioHash": "161db470d0b93542e15b7136de30eec76c6a92cf8c719739eccbacc78571e499"
+    },
+    "history-japan-meiji/3/moment/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/d8b438df56fa13008d5749a4ba4d16ee5d31a4e9ca7ad2188dbbd4ddf2b1f409.mp3",
+      "duration": 56.976,
+      "bytes": 341856,
+      "textHash": "5c49d09d28868cc65c8c8d8dd27b1dccec2c83748018dd0fed1d85e1eff27dab",
+      "inputHash": "11912e665958ebb74e54148da003e6685150c24105a44bb83a524ee8c7ccd53d",
+      "audioHash": "d8b438df56fa13008d5749a4ba4d16ee5d31a4e9ca7ad2188dbbd4ddf2b1f409"
+    },
+    "history-japan-meiji/3/box/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/46a1bfe0ae4a87092a5aa53758e41c446ca2cb132fd088a74f04eb78bf91f042.mp3",
+      "duration": 197.88,
+      "bytes": 1187280,
+      "textHash": "999c0cf6af52149b53bd51ad5c1132cad98ea087559769dbf5117533c38ea3ed",
+      "inputHash": "6e8eed1f8628e9595c6b36fd809fe1ae5ed16fa16b0038b24bf2865d364958f0",
+      "audioHash": "46a1bfe0ae4a87092a5aa53758e41c446ca2cb132fd088a74f04eb78bf91f042"
+    },
+    "history-japan-meiji/3/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/93c7b0549c4005e00d99d9f198a7e95c5ec63cb601277f79b991227ef93543e3.mp3",
+      "duration": 72.576,
+      "bytes": 435456,
+      "textHash": "ff2a0d6e7a1e6042b8ff7b5175c2b49c9b4c3ebe9da0920919e3da6fb986f0f2",
+      "inputHash": "252ab602b6e04f4d892474621015b2ce76c1ac039c7d342d8b1c240d890efde7",
+      "audioHash": "93c7b0549c4005e00d99d9f198a7e95c5ec63cb601277f79b991227ef93543e3"
+    },
+    "history-japan-meiji/4": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/64e72f78dd870b83dcef8026eeb796f7d03238c5b96718541ea6fa1f42de959c.mp3",
+      "duration": 64.608,
+      "bytes": 387648,
+      "textHash": "9897f0b101d6b55f1dca36117ba97b7537ec285b2102ce04938008336d6ce6a9",
+      "inputHash": "faf091103ec5bf0c20c1f6ca8f3760284047f21d08d0617978f4d161180d959a",
+      "audioHash": "64e72f78dd870b83dcef8026eeb796f7d03238c5b96718541ea6fa1f42de959c"
+    },
+    "history-japan-meiji/4/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/f31f3d2774f45bbc5e961da8acefef2ea2f587dfc2db4fc04ae9db072f962be9.mp3",
+      "duration": 74.928,
+      "bytes": 449568,
+      "textHash": "07681a2149e8935237905be449922291e2a7e89a6b82bcdbb1ddf49e81def8fc",
+      "inputHash": "d715eb96f5b1e479a9201a64c204489714d5e9bc028f18caab38a83bbb29919a",
+      "audioHash": "f31f3d2774f45bbc5e961da8acefef2ea2f587dfc2db4fc04ae9db072f962be9"
+    },
+    "history-japan-empire/title": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/3f2c759ea306ef42e71ba9dc72a92e6bd63cfe7b8b0ebae246925922483c0449.mp3",
+      "duration": 14.544,
+      "bytes": 87264,
+      "textHash": "7a8201ed8a655718a9ac1270780548c4fd95a14989b816a9bd46b6f621bfdc89",
+      "inputHash": "6b73ca3755625fb49c9724c6d5d3b86a762409c981e0ebbc0db70a3bcbf13f10",
+      "audioHash": "3f2c759ea306ef42e71ba9dc72a92e6bd63cfe7b8b0ebae246925922483c0449"
+    },
+    "history-japan-empire/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/2d55c3411c7714de4fe4fd8c01683e27e60d61b16d35c421125460bbeef12edd.mp3",
+      "duration": 60.864,
+      "bytes": 365184,
+      "textHash": "f5644d769829ed9d33a6bf91b861d413ef83a51939a5726232f32b9f673c51e4",
+      "inputHash": "5484b637e53a94d0a406fe98c6c68a3e80b205c8a488fe6223c6cd1449127471",
+      "audioHash": "2d55c3411c7714de4fe4fd8c01683e27e60d61b16d35c421125460bbeef12edd"
+    },
+    "history-japan-empire/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/1ae4d03e4fe2a70397cedf4371847f91549379291c063f1290ee7b3184cb7d3f.mp3",
+      "duration": 61.224,
+      "bytes": 367344,
+      "textHash": "e98d37c316c2bff2ed646cede3c50dc3585b08766883e748fb2618cbdf00d62f",
+      "inputHash": "de565a835a34c6457e9820ec4abdda979949196a0a8dc145e9ad9e54f313180e",
+      "audioHash": "1ae4d03e4fe2a70397cedf4371847f91549379291c063f1290ee7b3184cb7d3f"
+    },
+    "history-japan-empire/1/moment/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/fa385a6f0539cfcb2ca7723dfc111ef2a0e688eb622253f2e4f72be115e2cf9c.mp3",
+      "duration": 62.328,
+      "bytes": 373968,
+      "textHash": "475d5305602e2b323004802f5f6eec61e855e0ba84c393311368c3971ffd0fff",
+      "inputHash": "1a0b0b5f3e270df7204ec7a35b82b1c53a6e27269ec05e3b15d27322871b590d",
+      "audioHash": "fa385a6f0539cfcb2ca7723dfc111ef2a0e688eb622253f2e4f72be115e2cf9c"
+    },
+    "history-japan-empire/1/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/e189b1213006bd23bc9298bba8ab1a89d204ccc9b4a7e8a3aa85e2f457c04fcf.mp3",
+      "duration": 72.696,
+      "bytes": 436176,
+      "textHash": "47fc7be2044b44994f8d917269cec0fbe57fd9ed6796afa4a45a54c2cdbbbd7a",
+      "inputHash": "ce19790b886e0d5ef16f88b43d901d327ff3fc0f63ae9e48fe81583c0e0b2a25",
+      "audioHash": "e189b1213006bd23bc9298bba8ab1a89d204ccc9b4a7e8a3aa85e2f457c04fcf"
+    },
+    "history-japan-empire/1/person/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/f4cfb72e3576fe3cf890ab412ac25a7564f87f5274a5b6ab4ffec4fed58275fe.mp3",
+      "duration": 78.504,
+      "bytes": 471024,
+      "textHash": "b4ff8100dc0821ede5a8674d87355eeb64295b56e1b3b467320e6fd77b0241fb",
+      "inputHash": "3ee457c6c7d2e4211fcb92d5f8c1d4aeb20cc10b2bce408b6e394fbc90c04774",
+      "audioHash": "f4cfb72e3576fe3cf890ab412ac25a7564f87f5274a5b6ab4ffec4fed58275fe"
+    },
+    "history-japan-empire/2": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/5237e413910f62e133b4a882a6e094c290f350a94a211238f43391c1102ecf99.mp3",
+      "duration": 60.864,
+      "bytes": 365184,
+      "textHash": "4b8a6af8d03f5cff5c82c5ca9636d54eff5560fc190b6ac1689f302502475549",
+      "inputHash": "84be129f4afa54ea4822ec23bb547c60eab9855cf1c4f026876712f38e1a2dd7",
+      "audioHash": "5237e413910f62e133b4a882a6e094c290f350a94a211238f43391c1102ecf99"
+    },
+    "history-japan-empire/3": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/34aab652fc9361bafcd8fbdb9ffb344e953ca9b4a7ca983ff4bca94586bf7e0c.mp3",
+      "duration": 63.768,
+      "bytes": 382608,
+      "textHash": "7b21dea65521888f03ab6a00ecc0828ee86d4e720d474c99a6b80b74387ce3bb",
+      "inputHash": "5b4afae83caedf59a2a98c1f07eafa9e704fb5d08f17eb0d4581e3e8102a8b0f",
+      "audioHash": "34aab652fc9361bafcd8fbdb9ffb344e953ca9b4a7ca983ff4bca94586bf7e0c"
+    },
+    "history-japan-empire/4": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/5a6d0ed0197e5a4cc1632681a9af0e04b2d6f5b1bd6cc1ddf5f48d70bf890adb.mp3",
+      "duration": 64.08,
+      "bytes": 384480,
+      "textHash": "d1a305f08a9eda27aec8259101ad9aaa72dd1c6dbe456910b0b2519453f3186c",
+      "inputHash": "e3fbd7d03609c4920d285a1c80bc6e5b0a34f9248cd7fea9daa9b5bae9786815",
+      "audioHash": "5a6d0ed0197e5a4cc1632681a9af0e04b2d6f5b1bd6cc1ddf5f48d70bf890adb"
+    },
+    "history-japan-showa/title": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/661228b5e08b8ce25b84478aae5c8eea13c7a455fc86661419151ab091b91e1f.mp3",
+      "duration": 13.608,
+      "bytes": 81648,
+      "textHash": "b2f5b3d6f524bcd6d04fab68d1818c2ddcb7287f6c4b79ea9d3128026499a8b2",
+      "inputHash": "9a93494ce156217a1c903290e14055afc8320bc619d8805eb398af03aaeaed7f",
+      "audioHash": "661228b5e08b8ce25b84478aae5c8eea13c7a455fc86661419151ab091b91e1f"
+    },
+    "history-japan-showa/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/4e3f0a83b4ea839f50e40e48708c73369da47fda2a39ce7b5e7ca1c169ce3569.mp3",
+      "duration": 61.128,
+      "bytes": 366768,
+      "textHash": "ee50d82f2620708387430d836029797aa058cfca460f04490cc08c4512e88745",
+      "inputHash": "5bf2bb1251d4c21c17bf168f222b8f5397aa0a840ffc57c28967f4cc520d93f0",
+      "audioHash": "4e3f0a83b4ea839f50e40e48708c73369da47fda2a39ce7b5e7ca1c169ce3569"
+    },
+    "history-japan-showa/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/e6183a7edad9c6074fc35306b2e55bc729772260c90ef2d7df4f17aa4b62c087.mp3",
+      "duration": 63.192,
+      "bytes": 379152,
+      "textHash": "ad3bdd6ba7b28336a16da8526e942530093e1a7de36b874b9e6424a440181381",
+      "inputHash": "05a0a742e300df99ffc9b68dcac1761481a61ef577f71dcf673c00736ddcabe8",
+      "audioHash": "e6183a7edad9c6074fc35306b2e55bc729772260c90ef2d7df4f17aa4b62c087"
+    },
+    "history-japan-showa/1/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/d4f825acbf709e57340c1ab8202d0924ff850c81a113150168509ff08c29648e.mp3",
+      "duration": 66.816,
+      "bytes": 400896,
+      "textHash": "a78cab000f40fce50d15c7376159fa8141fbc1f5e3a3d1a9473e1934061ca1bc",
+      "inputHash": "7a53cd5a1bc53b9843b9b85ce4d7880aa1b1b815f3032d459e9fdfcbe0de1593",
+      "audioHash": "d4f825acbf709e57340c1ab8202d0924ff850c81a113150168509ff08c29648e"
+    },
+    "history-japan-showa/2": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/7c9824b63b7aa84d0bd427a80a2b09d6d9f38fa40e14d35cc5b6cdcfac8d3619.mp3",
+      "duration": 68.28,
+      "bytes": 409680,
+      "textHash": "ff2870cae86b09d69d30b19dc2b6c8c2f6af0ea0101300351ad5a9253cbb83f8",
+      "inputHash": "ad892d02f1187299af5b0ad149750a1a4c17b8df359373d04a32f40df2b13262",
+      "audioHash": "7c9824b63b7aa84d0bd427a80a2b09d6d9f38fa40e14d35cc5b6cdcfac8d3619"
+    },
+    "history-japan-showa/3": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/0b3f9540c4a9a04e95fc66c4348f8a8451a07ec63d6a94da5213aa5f5159d493.mp3",
+      "duration": 60.768,
+      "bytes": 364608,
+      "textHash": "74a1d508f767f6ae9e51cd707c3fe4ae4878e8403f6af0e331ba79c9d382a51a",
+      "inputHash": "db150b41881d166aba9b3fcc6f3bbd683159ac137b2d76e93b753bf6760332de",
+      "audioHash": "0b3f9540c4a9a04e95fc66c4348f8a8451a07ec63d6a94da5213aa5f5159d493"
+    },
+    "history-japan-showa/3/moment/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/88791ee9e491cdfab8a3d01a4dec39ff44331ff97fe91b38db1fdf792b3f1cc4.mp3",
+      "duration": 68.664,
+      "bytes": 411984,
+      "textHash": "5fd6ebe8afe43d6208fdf0eee556a30f2a3ad8b15c06b8b24bdaa9afc5413127",
+      "inputHash": "8128a53cee43f5d2dd54dd5d6aecb5ffcb0bf1df8fc73ba49ca48c3c339630d4",
+      "audioHash": "88791ee9e491cdfab8a3d01a4dec39ff44331ff97fe91b38db1fdf792b3f1cc4"
+    },
+    "history-japan-showa/3/box/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/d8de4c062356b5322c779169a34cc546b3517201184e56cdf84d695f9adf91bc.mp3",
+      "duration": 100.872,
+      "bytes": 605232,
+      "textHash": "0d7d20430a68ff3be5eac13e4878dbf297c95f7826d8411dccb69264bde846db",
+      "inputHash": "b0af0cb35e46c95d73150d0a963ad70072b4c9fac3dc9676480ae29d8abd011e",
+      "audioHash": "d8de4c062356b5322c779169a34cc546b3517201184e56cdf84d695f9adf91bc"
+    },
+    "history-japan-showa/3/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/ffe6ce3c5d07930a5a52d6152b4413b6d0b014f35014e0e5856bd4ab5ea50ed3.mp3",
+      "duration": 75.696,
+      "bytes": 454176,
+      "textHash": "0614d342d7dd32d0b3b0c66b8c20afd5a4d3a286978956ccc258d38228d0bd97",
+      "inputHash": "6615e776d5f67e7d5a051ab438018defbcdf00d6c409cf358a6b8b751ecf2287",
+      "audioHash": "ffe6ce3c5d07930a5a52d6152b4413b6d0b014f35014e0e5856bd4ab5ea50ed3"
+    },
+    "history-japan-showa/4": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/692e61c7dd4c514a53a57fff27760ea947f141a4959aaa4bd92d171abab2f5f4.mp3",
+      "duration": 64.8,
+      "bytes": 388800,
+      "textHash": "add2769f082246c368f7d03f4587e0fa8268ab5ace8c6d70b7cdf5542fc3d92f",
+      "inputHash": "deaad729ffb74f956da5187b7eae86ffa4cc3ff42dacffa57b0913c6ce6699e6",
+      "audioHash": "692e61c7dd4c514a53a57fff27760ea947f141a4959aaa4bd92d171abab2f5f4"
+    },
+    "history-japan-showa/4/moment/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/dc2a080f42a321d52e618147d53a83e0406e38ee0587a4667d4db6ca1687de5e.mp3",
+      "duration": 69.384,
+      "bytes": 416304,
+      "textHash": "12e6347ef8b6ad8995568adf3c08d72c42d6b2bb23769e1ed22892f4913467da",
+      "inputHash": "1c0c6347b16b6fc80c2e1763b0943a3589207345dad77374e57c5efc844f9c86",
+      "audioHash": "dc2a080f42a321d52e618147d53a83e0406e38ee0587a4667d4db6ca1687de5e"
+    },
+    "history-japan-showa/4/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/738b28b536b99c123c864b11f9f0f6e19271ad550b3918c864006f73248c053f.mp3",
+      "duration": 72.48,
+      "bytes": 434880,
+      "textHash": "e52a6ede5093d3ffc8bf66b1f3bd2090baf49c137bffa76b21e4b7361d286d02",
+      "inputHash": "4de00adac110475812509c1f05e62212a81165a70ea52985f168f982b22b4d3f",
+      "audioHash": "738b28b536b99c123c864b11f9f0f6e19271ad550b3918c864006f73248c053f"
+    },
+    "history-japan-showa/5": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/3f7d73d6d7887f1d8ee569f9459f3b97676c716b28906e78758292ab56a21590.mp3",
+      "duration": 67.896,
+      "bytes": 407376,
+      "textHash": "3e7c6255aa0e41aebac3d8787948cb48c0d281950474e7ae9caf421ba1e62620",
+      "inputHash": "60b88b295b05715cd6f4678e036d7cf6f94edb09aa7b1088d6b9a2fa292b28a1",
+      "audioHash": "3f7d73d6d7887f1d8ee569f9459f3b97676c716b28906e78758292ab56a21590"
+    },
+    "history-japan-showa/6": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/dd917271dca301450f5ceb5ed5270884e595c2e6753dc38a6d8d9e8b0fd4bf20.mp3",
+      "duration": 60.24,
+      "bytes": 361440,
+      "textHash": "5e874bab13e3a4d46d7b312257e1c5c09a6692623b8571b4ae9a818589fd58e8",
+      "inputHash": "d3d19dac7a493462e4fd6df3477a1ece62615bb8bde1fb62105a328206508122",
+      "audioHash": "dd917271dca301450f5ceb5ed5270884e595c2e6753dc38a6d8d9e8b0fd4bf20"
+    },
+    "history-japan-showa/6/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/7a54c1fb63aa1b3ed6b4d138eda69d876a862b8b968cfc587a3ca0aca02f56ec.mp3",
+      "duration": 71.352,
+      "bytes": 428112,
+      "textHash": "0138f37a7f1bc696f8e1bcd7ab2ba2453d456a06eb686692466dbcb9c154e6ee",
+      "inputHash": "bf65bd386b87620a8f77e2813b4f8a70b4979aea938cfd28afc163709e6beef7",
+      "audioHash": "7a54c1fb63aa1b3ed6b4d138eda69d876a862b8b968cfc587a3ca0aca02f56ec"
+    },
+    "history-japan-showa/7": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/106d9f1473578d9a18b96430725d99cdb2b93ee0f59723d1305d9a4b48b8cf8b.mp3",
+      "duration": 60.048,
+      "bytes": 360288,
+      "textHash": "806c969b895aad6f0016bbb2c114d8872a754fa900baf247a08bf987665f4706",
+      "inputHash": "45d24fc638f16fe5a08171f39c7ee92d0ed66830dc6d2c3b0eb258eb8122eb9e",
+      "audioHash": "106d9f1473578d9a18b96430725d99cdb2b93ee0f59723d1305d9a4b48b8cf8b"
+    },
+    "history-japan-showa/7/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/e3d8953525cbe7af7ca060e84c31fd8c4c10c71bc8db3743ff0aa90e374feb52.mp3",
+      "duration": 66.84,
+      "bytes": 401040,
+      "textHash": "afe2a51fd757c6918df380120a9efd8fc848adbac21ca38561ca396b8ff09eaa",
+      "inputHash": "46d23b17ee482aa528a2176518c376198fc5cb7f6ac0da0eeb67e3df779cbda2",
+      "audioHash": "e3d8953525cbe7af7ca060e84c31fd8c4c10c71bc8db3743ff0aa90e374feb52"
+    },
+    "history-japan-showa/7/person/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/3c5ec3fab8ba874ff91e3a8a5d81fa3ee5c886b16eb1360333982c91f0477b58.mp3",
+      "duration": 71.064,
+      "bytes": 426384,
+      "textHash": "f7c734d92a15948bfb685edb5f8f3ef712d2e6dc2e6b60ad828faf700b1931ad",
+      "inputHash": "5120c429a78357d6afd83b6c5bf3cf7ea322d9704e3cf32d26aeb29c6f1f7637",
+      "audioHash": "3c5ec3fab8ba874ff91e3a8a5d81fa3ee5c886b16eb1360333982c91f0477b58"
+    },
+    "history-japan-showa/7/person/2": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/823e196aefc2a195a3447e47300ded58499102461c50c6689660cd659400fb4b.mp3",
+      "duration": 75.552,
+      "bytes": 453312,
+      "textHash": "1df5229b47997a84279ecc1493c26902c3bbfbe96adbd1b89d65c0472941354a",
+      "inputHash": "c627cd693d4d42dc3ed23232a3fc63f0e40d5bc3c9961541ed33e8bfdea0e5b8",
+      "audioHash": "823e196aefc2a195a3447e47300ded58499102461c50c6689660cd659400fb4b"
+    },
+    "history-japan-postwar/title": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/68d214d3389b13a0c5945e6f8e3fc949b3f981e92f1a8ce78fd1c005b9280d16.mp3",
+      "duration": 13.968,
+      "bytes": 83808,
+      "textHash": "7a201a67d15343e5ffc250c7c32744a4c9256684c217a78392cbb934dedf2f09",
+      "inputHash": "775bece8ea2ff134fe6beafe0a51fb048e890d66c38e2c4aa39121829eaba9c5",
+      "audioHash": "68d214d3389b13a0c5945e6f8e3fc949b3f981e92f1a8ce78fd1c005b9280d16"
+    },
+    "history-japan-postwar/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/562f50906b634f1260b3d368223429bceed7d77cc91f34d14622e4e996f0cd98.mp3",
+      "duration": 65.496,
+      "bytes": 392976,
+      "textHash": "e408bb06bca5c14bb48ad5ab67cd424e27ccf40b2f576db5a1d7a038799c469a",
+      "inputHash": "d27ec8b485722a0481a58f57d8864df35548b2221f27c89c4767b22aa938474a",
+      "audioHash": "562f50906b634f1260b3d368223429bceed7d77cc91f34d14622e4e996f0cd98"
+    },
+    "history-japan-postwar/0/moment/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/7bba8d33c8b19d91da61b759539e3e73003d53117798e9581714f5d03ddfcfa0.mp3",
+      "duration": 64.152,
+      "bytes": 384912,
+      "textHash": "9297274f2f822c952e30f3e94294e8414599e19660ca417edbb69d3324ad0c7a",
+      "inputHash": "3a2c2723f8f52aa1fcdef62eb72d742ed892b965869a8072c787a8f617dd7269",
+      "audioHash": "7bba8d33c8b19d91da61b759539e3e73003d53117798e9581714f5d03ddfcfa0"
+    },
+    "history-japan-postwar/0/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/153cffda50aa525bd01d736382b46e6488fbe16c9df986d84ab68e8ac1706824.mp3",
+      "duration": 69.624,
+      "bytes": 417744,
+      "textHash": "0934746607fd1f8e7c378c5df93d64fa209780be51a0e38c92000b5cd5ff4102",
+      "inputHash": "fc9219a82e56715ddd86fa268285cd611d57ce4fab943fee49741f6f1f34647c",
+      "audioHash": "153cffda50aa525bd01d736382b46e6488fbe16c9df986d84ab68e8ac1706824"
+    },
+    "history-japan-postwar/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/0be061020b0f5acae9fd267ad4b083e7dcc1a57d63ccb8fc20ac97e970830148.mp3",
+      "duration": 62.88,
+      "bytes": 377280,
+      "textHash": "a8eea92e250d3f1230e0d1282494464d0d13d3feba708c93dabc3d4d67d7937a",
+      "inputHash": "1db333cf0a2c8792a0d441819caedbf89d7faf1f7bd74043a88930684748a22b",
+      "audioHash": "0be061020b0f5acae9fd267ad4b083e7dcc1a57d63ccb8fc20ac97e970830148"
+    },
+    "history-japan-postwar/2": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/65fd35922fef013251dbaab279bce7a44d22365837cafeb61ef3b22cb917f1a5.mp3",
+      "duration": 58.704,
+      "bytes": 352224,
+      "textHash": "a53458c739cf54820aa8dbbac2f96b64de7351c7ec6b9f1a4f2b9b1337877eeb",
+      "inputHash": "3bb2f249284bead847713e13fccc66ba6d1ea272d3a2a4455e3b9c969774a134",
+      "audioHash": "65fd35922fef013251dbaab279bce7a44d22365837cafeb61ef3b22cb917f1a5"
+    },
+    "history-japan-postwar/3": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/2cb87b7bc112ba935315d5b1b7c017329f9ea0385d295afa31efb40b0ce509f2.mp3",
+      "duration": 66.192,
+      "bytes": 397152,
+      "textHash": "e302e813a44368396dac39574be109eb7989bad5e99faa60d925f3f4b9cf96f9",
+      "inputHash": "aff2a467eacf38ec9a72aa27b4079c3c831de67f69d432024c35b67f0e1e0f9f",
+      "audioHash": "2cb87b7bc112ba935315d5b1b7c017329f9ea0385d295afa31efb40b0ce509f2"
+    },
+    "history-japan-postwar/3/moment/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/9bb405980705a394a9247869eb09adcb1ed1a27a28999642d5aa2800871e7267.mp3",
+      "duration": 65.352,
+      "bytes": 392112,
+      "textHash": "d39d7df291a3b56a701dcca64e082490803bf61ee62a108f35af8ffb87d2d207",
+      "inputHash": "75c17bf1e1b41353ce60f97b5ad0c89849ffccd4a8ac4dc1235e0153edf7b14c",
+      "audioHash": "9bb405980705a394a9247869eb09adcb1ed1a27a28999642d5aa2800871e7267"
+    },
+    "history-japan-postwar/4": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/b37200e893fce87714a7803536754007fb05ccf0ef6f5c4346f595ffdf0929a4.mp3",
+      "duration": 63.6,
+      "bytes": 381600,
+      "textHash": "3e940ef50e12f90c22e1faecd73fa400563fcd4332ff0c1f1ba0f5c164b35de7",
+      "inputHash": "8464f6c91dcad1eb39328d599fc87128073caab756c8d0d049cb9834e712d88f",
+      "audioHash": "b37200e893fce87714a7803536754007fb05ccf0ef6f5c4346f595ffdf0929a4"
+    },
+    "history-japan-postwar/4/moment/2": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/28434e80620a0245b3d1340f0c52271a4e4e73156d7ed5091b54fd4bd7e22ac0.mp3",
+      "duration": 85.032,
+      "bytes": 510192,
+      "textHash": "3362610dd4f83c1e9bda290e7c60e490b1973fd1d5b1d132013bf6b63b283f13",
+      "inputHash": "198b0751197d8b31c6615f97f5be16a0f8420208ab801bb0e9e8008b0e523eef",
+      "audioHash": "28434e80620a0245b3d1340f0c52271a4e4e73156d7ed5091b54fd4bd7e22ac0"
+    },
+    "history-japan-postwar/4/box/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/de6d980157d7d652dd4e4010abbc68bbdb183290008997f332d50f07889898b2.mp3",
+      "duration": 125.04,
+      "bytes": 750240,
+      "textHash": "22faf529565527e49f31d6f3370983a0e7015a5ee008f7581da3b110e8207694",
+      "inputHash": "289a3bd5d7f13a5a864bec5e41e1f76ed79cf37741e0d5b7c306bb4691919cab",
+      "audioHash": "de6d980157d7d652dd4e4010abbc68bbdb183290008997f332d50f07889898b2"
+    },
+    "history-japan-postwar/4/box/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/44e584f4928d6984ad78bc4c5686671b117066cb5baeef770298b2d92c7e9f90.mp3",
+      "duration": 137.016,
+      "bytes": 822096,
+      "textHash": "8afdcc7daa34cdaea798813ffb40507a2e96ad0a65f6d8d689e24eb94c2bacd8",
+      "inputHash": "c63c9cd67ccee3abf12e958864aca31d7f6fef07df0dbebf2f291db22e5122ba",
+      "audioHash": "44e584f4928d6984ad78bc4c5686671b117066cb5baeef770298b2d92c7e9f90"
+    },
+    "history-japan-postwar/4/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/24bb19bf6340f895f1a18fdf147e60733edba39da81c0f774c09d1ab9cc85b47.mp3",
+      "duration": 55.152,
+      "bytes": 330912,
+      "textHash": "21a9ce78acb2bd3eaeea6e8882358ed2256a9b3649d535cb3504a020922065a6",
+      "inputHash": "4c17dc239dda3ccbd08497a5bbdb9b69abfa665f652fd9bfc2dfb2aef58e762b",
+      "audioHash": "24bb19bf6340f895f1a18fdf147e60733edba39da81c0f774c09d1ab9cc85b47"
+    },
+    "history-japan-postwar/4/person/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/705560b01e2c788b59ee8b2f986e97b00be8bebf90197d0e70d035ff783e1712.mp3",
+      "duration": 71.088,
+      "bytes": 426528,
+      "textHash": "6566b2dbe76288900848a9bfb941aa0708db1043cc58cd0ff69eb556070cc84f",
+      "inputHash": "e2a074ce13eb71edb1fcad4e37fe53021c293ca399ff50e58e26c2205964a283",
+      "audioHash": "705560b01e2c788b59ee8b2f986e97b00be8bebf90197d0e70d035ff783e1712"
+    },
+    "history-japan-postwar/4/person/2": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/e52a85ed751c027d4e16cff1d3c565556f77172c314a731d7dedfe447aaa5a89.mp3",
+      "duration": 73.296,
+      "bytes": 439776,
+      "textHash": "1de1307017e27b6e2bb0b85b2161846e3bedc8e663a51c1810be8158f692daa3",
+      "inputHash": "1837679bcd8a8a85e5f392fce1d3c944e078c2d6f06f916b81f3888d4fac9e7c",
+      "audioHash": "e52a85ed751c027d4e16cff1d3c565556f77172c314a731d7dedfe447aaa5a89"
+    },
+    "history-japan-postwar/5": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/3589f94bc8e2d8b145fb059dc1b539a388d9696d230b666629378b85277fec02.mp3",
+      "duration": 57.84,
+      "bytes": 347040,
+      "textHash": "9cf938fdd4baa793a7246bc9257ca37468be33e60db377a7acd0ccb9ae72358e",
+      "inputHash": "c737c7bff827047930029352516014c91d3b08a41a2522ee1772c4e8f35350fb",
+      "audioHash": "3589f94bc8e2d8b145fb059dc1b539a388d9696d230b666629378b85277fec02"
+    },
+    "history-japan-postwar/6": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/7d96b14786c4d0a4e461f87a9fb5c5dee7d5ec41cbdaa348fcbe98cc962e7a02.mp3",
+      "duration": 55.848,
+      "bytes": 335088,
+      "textHash": "c68903e24c97e227e03286b6a251cff50e08c527088f76ccf9fdfb42d6e5b1bc",
+      "inputHash": "55f4630a5ff75a3fca941d901c91a393e25b1079f2aef006ca5cd5842bedce59",
+      "audioHash": "7d96b14786c4d0a4e461f87a9fb5c5dee7d5ec41cbdaa348fcbe98cc962e7a02"
     },
     "topic-grail-sword": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/3551a8feaceb98d6da820edb262c3a05c57597f9c7f4dbaee9fd783bce6f5874.mp3",
