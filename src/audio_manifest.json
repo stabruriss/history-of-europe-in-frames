@@ -8,12 +8,12 @@
     "volume": "+0%"
   },
   "source": {
-    "commit": "c5e369ef95ea7812df08c13ca99aaa76b7880d7b",
+    "commit": "3b8727a8aa84716ffecdcd118e220417d61e5526",
     "dirty": [],
     "files": {
-      "src/history_entries.js": "83e96189c34529685bd6e0547491b1e936b5e5354493b8256d8ba081efb1af6d",
-      "src/history_content.json": "20389640626dfc53e0253af5b72691600810d3ab46a0eb7fa53e920d1f717b63",
-      "src/historical_figures.js": "fd314c7b8b932f245c01fd50caa17d34264467e15e899ce34b5952f2f7474081"
+      "src/history_entries.js": "a2d12d2f5ea4d92d5ead79003a5e63d8822b06df66c3165683cd7d8f835e7a79",
+      "src/history_content.json": "d29cc8635669a30f947cd2362e6bf40cec33b3e08d21c47768a99b401585c61b",
+      "src/historical_figures.js": "be10de87643ff9183b6394fe963259e025a172b1c4be5e37f77b1e1b515acde4"
     }
   },
   "assets": {
@@ -29408,6 +29408,126 @@
       "textHash": "5459607f303353a560e66340f43dfbde516859bb4f93838c41fdd0a76750c17c",
       "inputHash": "40bc2361a9aa60428c5605a846ef0feabba0509dd2981e250c0ebbe46a46a1a8",
       "audioHash": "907d33db6e018d0065d02d6137b1b23d50321c165523dcef508365f400c86628"
+    },
+    "history-persia-qajar/title": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/3ce7768267c8125b1158d0d926548021dda7e0bd327c52e8c69914cabcd655f1.mp3",
+      "duration": 11.856,
+      "bytes": 71136,
+      "textHash": "5fe799125b05b710f0f7c09eabcccff51d5916e05bda23d2e25b94525d409bea",
+      "inputHash": "aac4b80789c8648077161ffa6b66b8e4b50d7daf0db6d148512a791a3c950a1d",
+      "audioHash": "3ce7768267c8125b1158d0d926548021dda7e0bd327c52e8c69914cabcd655f1"
+    },
+    "history-persia-qajar/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/19af50f5301faac6820e87790c746ddec582309b30aacd4a5759dc46857aa54a.mp3",
+      "duration": 53.976,
+      "bytes": 323856,
+      "textHash": "26bb7f26ede640a469c84b08c5c5ff028c1f6d24856d8b234c4f2e7c3e3038cd",
+      "inputHash": "d979b655b07b9e9533016477f65bbb5374ff47b0dce3723b19b4995bcbdf2c75",
+      "audioHash": "19af50f5301faac6820e87790c746ddec582309b30aacd4a5759dc46857aa54a"
+    },
+    "history-persia-qajar/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/d87caa34dca9be498bd6e626e83d011dc71b474cd30807cb41ae8a5406ced78f.mp3",
+      "duration": 53.184,
+      "bytes": 319104,
+      "textHash": "4bdd8b8b98548fb52119dc54a53b357babbad508d0c70e903029534bd57fb914",
+      "inputHash": "269bedad9919a55243471f781e4bb9b2c70e5c3d2caf6f4fc340ffb78cb4e82a",
+      "audioHash": "d87caa34dca9be498bd6e626e83d011dc71b474cd30807cb41ae8a5406ced78f"
+    },
+    "history-persia-qajar/1/moment/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/5f8337307bbb956525b9769a51d6b949df753ca7033cc9d58f3b5e5e8dc3b7a8.mp3",
+      "duration": 82.512,
+      "bytes": 495072,
+      "textHash": "c7e7baab8f7f3552f43c87fff70f41f0f59529d7f48d0a809a9503123b33611e",
+      "inputHash": "4db5f2ff3a89e1030b78ff49b804501979a881f6382138f2aee501aeb0198244",
+      "audioHash": "5f8337307bbb956525b9769a51d6b949df753ca7033cc9d58f3b5e5e8dc3b7a8"
+    },
+    "history-persia-qajar/1/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/68c4adfa19f03ff5f24cc3edb0f0400ac8dc4b87d8c0042d896b06edbef5a978.mp3",
+      "duration": 90.768,
+      "bytes": 544608,
+      "textHash": "4ad465eb52cc91f218c6f45158c7cf9dea7dcf54394435cbd1ccde8f3bbccdf4",
+      "inputHash": "7cf9651120434c3a5c435d55f859767b7053c373e7937329b8e7626ed4141d6f",
+      "audioHash": "68c4adfa19f03ff5f24cc3edb0f0400ac8dc4b87d8c0042d896b06edbef5a978"
+    },
+    "history-persia-qajar/2": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/de3b8145fcfcdbb3076e8f82b1bf734356f2d13f1bfde14f7127dea5301ff54a.mp3",
+      "duration": 56.64,
+      "bytes": 339840,
+      "textHash": "decaa5fdc3e32be35708c5c190002ae861c6aba16da345926d35cd28ad775ee9",
+      "inputHash": "2aa9df933aa98959c3e5068f6187c6b537900b867e9a7721af26e5553a0a2061",
+      "audioHash": "de3b8145fcfcdbb3076e8f82b1bf734356f2d13f1bfde14f7127dea5301ff54a"
+    },
+    "history-persia-qajar/2/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/e3c60f6333eed1e91a146878b3f477cfac295f64589077ddfb1aff80c9ca4d1a.mp3",
+      "duration": 99.144,
+      "bytes": 594864,
+      "textHash": "84a3a7c0f8ce9122e35a3c65f30fb3fe39f1eea9869444e3ed5698335c7db016",
+      "inputHash": "74599cb3ddcab1f93d795a1ee0fda71e7b5cd2bf3b95baa836a637ec4467dccc",
+      "audioHash": "e3c60f6333eed1e91a146878b3f477cfac295f64589077ddfb1aff80c9ca4d1a"
+    },
+    "history-persia-qajar/3": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/4c04d058aaefc8c3e531cf631992de23d1110300d8e81afa7b9bb9216bbd5ae4.mp3",
+      "duration": 53.808,
+      "bytes": 322848,
+      "textHash": "db668fac9ef7c9b83f66b9e476b0c9af8ff54d6e7229dbd53a0997ded4fcfe3d",
+      "inputHash": "d9fa1a821b0868c219b32ee12472d21a5f4a58424c1958dfba203cc3b0cb0fca",
+      "audioHash": "4c04d058aaefc8c3e531cf631992de23d1110300d8e81afa7b9bb9216bbd5ae4"
+    },
+    "history-persia-qajar/3/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/34ccf6dcbb5fd55f89c815791e4f2df286e08c76fe6977ca3a0736a2e5f930bd.mp3",
+      "duration": 89.76,
+      "bytes": 538560,
+      "textHash": "86abf48661da8ab44aaf0635e7c8cca55d4fa5c6e870109a2fdde3d63a1cf988",
+      "inputHash": "2ad30594e34043ec006faad86f5f55b97218695aa3cc2685fe96617bb7d7dc68",
+      "audioHash": "34ccf6dcbb5fd55f89c815791e4f2df286e08c76fe6977ca3a0736a2e5f930bd"
+    },
+    "history-persia-qajar/4": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/395cdf6167486f83c782975c6ebea6a3d37bc745c17b5f90a0c576badf323c63.mp3",
+      "duration": 57.168,
+      "bytes": 343008,
+      "textHash": "781a98e922662e24b98b4678fe5485e1fc9877517d388dceeb36b498ad16cedc",
+      "inputHash": "35f091004787c58a8346ea2dd71db39c744d595bb0897be3fb4f5b47414f8edf",
+      "audioHash": "395cdf6167486f83c782975c6ebea6a3d37bc745c17b5f90a0c576badf323c63"
+    },
+    "history-persia-qajar/4/moment/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/9d8f4b1837f2c5098b8074821f2e0d71f9b3fa7f62f3fb3d2b15874e61cdf22b.mp3",
+      "duration": 77.664,
+      "bytes": 465984,
+      "textHash": "400c4a599b4905af25f0376e4833deb06a62aef77207c5528317f31b20be2a56",
+      "inputHash": "cbb735ff8f15d950cdb633043a82918e4858679de2cbb2ef0bdd2495d263fc10",
+      "audioHash": "9d8f4b1837f2c5098b8074821f2e0d71f9b3fa7f62f3fb3d2b15874e61cdf22b"
+    },
+    "history-persia-qajar/4/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/cfa6e34a2f5c6a8fdd5bfc9e928e42d3f139514cdc60b231c059e166b6377817.mp3",
+      "duration": 87.384,
+      "bytes": 524304,
+      "textHash": "00250b8b678812e4db6db2d3648e7845572080f57fbe10d66d55f6d37da61065",
+      "inputHash": "705fb3b36e812b10b38b0b0390c1b3d763c586324677c9fb01a93456f5e73648",
+      "audioHash": "cfa6e34a2f5c6a8fdd5bfc9e928e42d3f139514cdc60b231c059e166b6377817"
+    },
+    "history-persia-qajar/5": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/e06a38ba05ca35b23ba8ed1d5c231c1ebd3903c276e12994e097cb7757198e12.mp3",
+      "duration": 52.44,
+      "bytes": 314640,
+      "textHash": "f6885f795a29f2cb34335e7b6cb9b4c519dea81957d83a84e15f142ff457fc48",
+      "inputHash": "3d9ea16c68bac23d841c710249b968283db940316c4e68cf2c5501e1c2629e64",
+      "audioHash": "e06a38ba05ca35b23ba8ed1d5c231c1ebd3903c276e12994e097cb7757198e12"
+    },
+    "history-persia-qajar/5/box/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/8179e9d76139378292c1e548e3154af1060944d10d22819ce3249c6c1b80c706.mp3",
+      "duration": 136.08,
+      "bytes": 816480,
+      "textHash": "c777bda4f52266f765d7f664df378cf0662c60a9fdfe3ad2cdd4b1b3a377f4d2",
+      "inputHash": "792049dd9d0c43174e97a15c6a80a72c5a45f70a1539c5df33c5c1d0125c2362",
+      "audioHash": "8179e9d76139378292c1e548e3154af1060944d10d22819ce3249c6c1b80c706"
+    },
+    "history-persia-qajar/5/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/a8905a0338b81c1a6ec6060a84063562d90904629aae58b64eda7d254190b428.mp3",
+      "duration": 90.576,
+      "bytes": 543456,
+      "textHash": "837287e094d5f1c162ae81e4b24dd6b6f6bdd070f133b794202e91c7ab26216d",
+      "inputHash": "78b0a64da0203d52073ca07517654c0862b01d0f2016bcabb96d663299e01e15",
+      "audioHash": "a8905a0338b81c1a6ec6060a84063562d90904629aae58b64eda7d254190b428"
     },
     "history-ottoman-eastern-question/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/af54fdf5c83639ec07bd451d971881f87c93830b631541184ec611b04d462819.mp3",
