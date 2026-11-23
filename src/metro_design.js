@@ -65,6 +65,7 @@ window.NETWORK_DESIGN = (() => {
     'thirty-years': [[1599, y(PLAGUE)], [1648, y(PLAGUE)]],
     discovery: [[1415.5, y(DISCOVERY)], [1768, y(DISCOVERY)]],
     ww1: [[1914, y(HUNDRED)], [1923, y(HUNDRED)]],
+    ww2: [[1925, y(120)], [1946, y(120)]],
     // 奥匈 (2026-11-20): between 中东 and 东欧, on east Rome's lane, free since 602.
     austria: [[1526, y(EAST0)], [1918, y(EAST0)]],
     nordic: [[745, y(TOP)], [1920, y(TOP)]],
