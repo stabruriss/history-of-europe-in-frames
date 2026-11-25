@@ -1464,7 +1464,8 @@ print(json.dumps({'ids':ids, 'hashes':hashes, 'kinds':kinds, 'gantries':{g['id']
     await s.click('#audioToggle'); await at(failing, false);
     await s.click('#audioToggle');
     // 4. A whole line ends with its end notice inside the same stream, then ends once.
-    await s.goto(url('fixture') + '#' + route.at(-1), {waitUntil:'load'}); await ready(s);
+    // route.at(-1) (history-farming/1) is shared with trunk; board prehistory explicitly so treeLine from step 2 cannot hijack it.
+    await s.goto(url('fixture') + '#' + route.at(-1), {waitUntil:'load'}); await ready(s); await board(s, 'prehistory', route.at(-1));
     await s.click('#audioReadLine'); await s.waitForFunction(() => atlasAudio.state().engine === 'stream' && atlasAudio.state().playing && atlasAudio.state().clip);
     const lineSrc = await s.evaluate(() => document.getElementById('atlasAudioElement').currentSrc), mark4 = await since();
     for (let i = 0; i < 6 && !(await state(s)).ending; i++) {

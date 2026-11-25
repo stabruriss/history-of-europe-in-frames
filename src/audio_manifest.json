@@ -8,12 +8,12 @@
     "volume": "+0%"
   },
   "source": {
-    "commit": "1e5b9e3035db0d778c5ce5f12345dbf4706bcced",
+    "commit": "323f2d3c3487b60e3a5c7db6a6dd11cf423fe065",
     "dirty": [],
     "files": {
-      "src/history_entries.js": "2bb398834b79c7c431b9f6ec4c4dc40185d14f65b2b78407396e54242965822a",
-      "src/history_content.json": "34216d5bdad879f8aea4f3b625fc848e4427e308205ea2bbe3ef3c66e972ec26",
-      "src/historical_figures.js": "5c154e7caf19aa2b4efb7452ca8282785503f2d3b0212a882fc414672466d229"
+      "src/history_entries.js": "03ba71304d8f9d4a2a1000d5ef6bd7d017519fb0614d3bfbbd173e07abc6dc90",
+      "src/history_content.json": "51db4afbab0c60a3f760ded4159317262db69e9eca6e5d20c55fc1ecabe04206",
+      "src/historical_figures.js": "46630d93af2c9ce47a1497e7fb0b27461dbdeb72da74ca8247a130e9ac3e014f"
     }
   },
   "assets": {
@@ -26,20 +26,28 @@
       "audioHash": "79fa8016e966ab3bb4ef75e1eaf7b3598fc2f0a53ea819d1212939eff5ddbe97"
     },
     "history-migration/0": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/a234e4e71e750b263e7868a2ce60206f689fcfd7808701d5300a3287a56590ac.mp3",
-      "duration": 17.04,
-      "bytes": 102240,
-      "textHash": "7dd9580792c983197901aa686d967d218401e805c6b0f32a6bd4feb45878aed8",
-      "inputHash": "03224dc8db8740659e0969c87dddd2657da67f45c489866aff433d1ebb07b6e6",
-      "audioHash": "a234e4e71e750b263e7868a2ce60206f689fcfd7808701d5300a3287a56590ac"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/bad77edf7e607979cb2fd05c2eea1948844a521cbcdbd66e3cebca13ce4d0506.mp3",
+      "duration": 60.528,
+      "bytes": 363168,
+      "textHash": "6f6eb91dcbd02007463eb0325cabe4b7bad11abf8968027436675bb3799bfdfe",
+      "inputHash": "30741782d2057b3d592d9a27743c7c55894d9ef416408f9ca5ad6c70729cdd12",
+      "audioHash": "bad77edf7e607979cb2fd05c2eea1948844a521cbcdbd66e3cebca13ce4d0506"
+    },
+    "history-migration/0/box/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/195d705944548baf4b632e9d82bd5abc67e86da99bc483583c42efaca5d1ca5b.mp3",
+      "duration": 135.6,
+      "bytes": 813600,
+      "textHash": "6a70a477ab0369a676e14458a490a684a6aaaf4878a4ae8cd57d6d849bb6a0f4",
+      "inputHash": "2fb645a750ce714bba800f45f502c344a0998116e4a20f3a2088c5fb8900b0de",
+      "audioHash": "195d705944548baf4b632e9d82bd5abc67e86da99bc483583c42efaca5d1ca5b"
     },
     "history-migration/1": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/3474e23029842a4a4bbf1d3d09505a24d0fceae22335f35cfe813d41fe62df89.mp3",
-      "duration": 13.68,
-      "bytes": 82080,
-      "textHash": "fca0336ded7ca530111b77b6a04ebc2dada6f59905445eab0fe1f680d3ba6da4",
-      "inputHash": "755e248fd033ff027cd8936459c9a1a4da4b8525091cc0e897b466079fbc261e",
-      "audioHash": "3474e23029842a4a4bbf1d3d09505a24d0fceae22335f35cfe813d41fe62df89"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/8b5566dc5c8685aa4587f8b67f4a0bd23dc60625ce8ed17b076286ce38c20e65.mp3",
+      "duration": 52.824,
+      "bytes": 316944,
+      "textHash": "44b1fe11dad12404ddef5d6ac5042f5537605e03e8d11734c249f30e0d9f212e",
+      "inputHash": "35a47590ec6f765d7ebe9a3d6bd68e17bb8e7db6d2e27b5663fb7c6dee834703",
+      "audioHash": "8b5566dc5c8685aa4587f8b67f4a0bd23dc60625ce8ed17b076286ce38c20e65"
     },
     "history-farming/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/9054c4524e8aa03016999e8d7caf27188099eaeeeeea7a92c672dd9af8847120.mp3",
@@ -50,20 +58,28 @@
       "audioHash": "9054c4524e8aa03016999e8d7caf27188099eaeeeeea7a92c672dd9af8847120"
     },
     "history-farming/0": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/14968be51b2f08f0027bd9582f8499098e2496c10e713c9bf9bba25ea1d1b032.mp3",
-      "duration": 14.928,
-      "bytes": 89568,
-      "textHash": "8d56aa91767507e91baef1c0297f0806d1157db8c190df36561f5ecb67539912",
-      "inputHash": "c0545916fdda65a88ee132e5928b338edea796949df0e9f2a82be996d25e693b",
-      "audioHash": "14968be51b2f08f0027bd9582f8499098e2496c10e713c9bf9bba25ea1d1b032"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/117ef3901d5fc9dd8e0684ad1ee9ce8fbca0b9f2873933591a1be3bb30836d87.mp3",
+      "duration": 61.656,
+      "bytes": 369936,
+      "textHash": "8752648a311fab3d63e05e967a73020fe54635d75e50d40619ea57b8aa78c456",
+      "inputHash": "aed9c43e4bab392534b3b3292b073ff3862ee3ba318ee06bd53a12b8b60b8649",
+      "audioHash": "117ef3901d5fc9dd8e0684ad1ee9ce8fbca0b9f2873933591a1be3bb30836d87"
     },
     "history-farming/1": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/3eb82de4176544247d8e122d992578d314c5ebd34ce75b22ee4604d8eba7f3c0.mp3",
-      "duration": 16.464,
-      "bytes": 98784,
-      "textHash": "91304d04d6914c3687b849817be475cc16082ca97788d3c2c21fbaaeb3c3a903",
-      "inputHash": "13b5c4f524f7000f5cd578a45d02cbe1d18c58dce7b8d779a92edf954a6b46c0",
-      "audioHash": "3eb82de4176544247d8e122d992578d314c5ebd34ce75b22ee4604d8eba7f3c0"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/ab98c37db589b0e7e3ff95dec15a81b227717fc26674e97769779ca1db1f0743.mp3",
+      "duration": 55.728,
+      "bytes": 334368,
+      "textHash": "34ad1b980c0546ebe3bf9d545ad02923667b083ba4404401b72637a5065a1c68",
+      "inputHash": "6608240d5b225f0f5df8b4dd9f03c8043c89284889c9b81d58192b02ea10c51e",
+      "audioHash": "ab98c37db589b0e7e3ff95dec15a81b227717fc26674e97769779ca1db1f0743"
+    },
+    "history-farming/1/box/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/2588ec4cfb83ae6b212ff0154ef96dc8b062a272efd38e8a1ef44f7ba09b95b9.mp3",
+      "duration": 96.048,
+      "bytes": 576288,
+      "textHash": "2bd216d336842870db89315ae46d16e131bc3c7346f3badb4920b5782219c958",
+      "inputHash": "f36e3d2611d89fde5767e71acae404373d5b4db04fbd9f714e64b64c3ad888cc",
+      "audioHash": "2588ec4cfb83ae6b212ff0154ef96dc8b062a272efd38e8a1ef44f7ba09b95b9"
     },
     "history-palaces/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/6859bcb39c355339723f1fa42b1761202ce8bc339e79bacd9c5b16827371c2de.mp3",
@@ -74,36 +90,44 @@
       "audioHash": "6859bcb39c355339723f1fa42b1761202ce8bc339e79bacd9c5b16827371c2de"
     },
     "history-palaces/0": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/9b297f62f629ac37582e3a1d820f8eb96ec014b17e525954f1203989a03e3456.mp3",
-      "duration": 15.456,
-      "bytes": 92736,
-      "textHash": "b0c15e9d4dbb661d33588a54caf81f7d1bd890cb6d2c091b1e4ba7fed0c0f5fc",
-      "inputHash": "03060df612fa2f7d9cdaab538a000a6f5d0394306b52e35d943ee986f0086ab8",
-      "audioHash": "9b297f62f629ac37582e3a1d820f8eb96ec014b17e525954f1203989a03e3456"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/c768b237b6c88ab89d1530a45b95323d9bd600af38bcfffda4f0d4be49b97e3c.mp3",
+      "duration": 58.728,
+      "bytes": 352368,
+      "textHash": "f7afe31abfcd84a137ebf6a7909ef3127d75dd5bab42a8ea5c2c29b952d5a314",
+      "inputHash": "5e6e1655ef01a51d857c4b05d769723dde59e509b3feb35c6b4e432b1dfa2ab2",
+      "audioHash": "c768b237b6c88ab89d1530a45b95323d9bd600af38bcfffda4f0d4be49b97e3c"
     },
     "history-palaces/0/moment/0": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/fbb351de2a642af2a09ab30f158d726de589837d06e94174de00435fd31a4db2.mp3",
-      "duration": 13.656,
-      "bytes": 81936,
-      "textHash": "e27df5845239a29226b12c276a963a7afff70b2c2c7c14c91b63c7ec4f34e7a9",
-      "inputHash": "4d809719a02d1de7383f0aa0399b7bca19d10713e5c99d3460ec9c290f1b5781",
-      "audioHash": "fbb351de2a642af2a09ab30f158d726de589837d06e94174de00435fd31a4db2"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/89ceaab70f2d66c55842d34af4d4f1c684c1ad81e6611568ac67b77448afb1f0.mp3",
+      "duration": 53.4,
+      "bytes": 320400,
+      "textHash": "9a980758ed7f9f3f130667785f8599abeb2fc2b2f805024d41860ad35cf83cc0",
+      "inputHash": "8e35bdf9f692bc3eadea2318e9234bbaf920be85b79ebdfcfa090fd129b6cb34",
+      "audioHash": "89ceaab70f2d66c55842d34af4d4f1c684c1ad81e6611568ac67b77448afb1f0"
     },
     "history-palaces/1": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/b69da964ec5a02214041347393d9cdcf0f6a2fd9ea82fdb620e4411d337e7cc7.mp3",
-      "duration": 17.184,
-      "bytes": 103104,
-      "textHash": "0065d87149d7b9f48737dacf548d1ad7d6cd7b5603fd180ee52f3d431eee333c",
-      "inputHash": "0e002730255bd5ff8819bd07be3a41a646484da755bb8ac7eecb5747dc7adb0d",
-      "audioHash": "b69da964ec5a02214041347393d9cdcf0f6a2fd9ea82fdb620e4411d337e7cc7"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/11b3e85da1df9b2e693aa3c67a2ad7ca0cdd27440b1354a2f7ed4a2cf70ed1ca.mp3",
+      "duration": 63.12,
+      "bytes": 378720,
+      "textHash": "90ba3a9f13696f8950e93cce5e5860da8840fdc5730b7baa3740b8056ea48d57",
+      "inputHash": "d7954837ae8299895bacf8c8df8eee7d4c98f4a1e1b8fab9649684ac68509454",
+      "audioHash": "11b3e85da1df9b2e693aa3c67a2ad7ca0cdd27440b1354a2f7ed4a2cf70ed1ca"
+    },
+    "history-palaces/1/box/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/ea3269ad30932c5cecf87a113ddf0b36d0fc24bf9451cca0304501c2d0b9e8a6.mp3",
+      "duration": 70.8,
+      "bytes": 424800,
+      "textHash": "6bf06ff895111df342fdecdf958f4bda436de933ea642483b5b7e3399fdb606f",
+      "inputHash": "81a659071529fc1a2e69d1ac7679ffb0218bcec11f193277ffc61363f7f1a41e",
+      "audioHash": "ea3269ad30932c5cecf87a113ddf0b36d0fc24bf9451cca0304501c2d0b9e8a6"
     },
     "history-palaces/2": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/c0e4698d93defacffe69b9e8bda00ef0dbb9f84ddc57235fc84897ebf5a319b3.mp3",
-      "duration": 14.976,
-      "bytes": 89856,
-      "textHash": "352282b140c0f695e3a7f6a4557eb5e861a42e92b888b3c8dbe311c733bc75f9",
-      "inputHash": "fa6dc5e6ecc46f12711f8e7f1ee42020d92e9c43fd5b83c40d492c4182b49e5b",
-      "audioHash": "c0e4698d93defacffe69b9e8bda00ef0dbb9f84ddc57235fc84897ebf5a319b3"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/024cb463b05cd54a48f6eba510c33f2a1d62d1232a4463a878379432a0c533da.mp3",
+      "duration": 56.04,
+      "bytes": 336240,
+      "textHash": "4ed6c9dee015f0e31204039a5666096a27d49f1645f276e9ca0fd0f528b1ba18",
+      "inputHash": "06181431f8bcb394d0465f85aa14e86ba47bf86b5bf38edca21a56f246720463",
+      "audioHash": "024cb463b05cd54a48f6eba510c33f2a1d62d1232a4463a878379432a0c533da"
     },
     "history-collapse/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/675f0aa77a42591c6b55116240d0237e44a618b5f98ea406580797768feaa7e2.mp3",
@@ -114,36 +138,44 @@
       "audioHash": "675f0aa77a42591c6b55116240d0237e44a618b5f98ea406580797768feaa7e2"
     },
     "history-collapse/0": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/b85eb9f4ba37becac35a3a545a8aefd0e375cd83e5ee19163ac36338f34f8c71.mp3",
-      "duration": 14.112,
-      "bytes": 84672,
-      "textHash": "98e17187b41927e0757abefa7a10132eeba9f7d29e50dcf39b85081decc63aa6",
-      "inputHash": "c7b6edad576582afff7d77202bf1ef2d62533fbdc2a20d8429963448bcb85a66",
-      "audioHash": "b85eb9f4ba37becac35a3a545a8aefd0e375cd83e5ee19163ac36338f34f8c71"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/1647cc39967506293d172ae983fd6fa11a1a3d970d8761849d6b7c26823a3ec0.mp3",
+      "duration": 59.88,
+      "bytes": 359280,
+      "textHash": "4b3be86d34c1eefc80e90cf73633dbb26e761338f8b0f6531e3689f2340b8f99",
+      "inputHash": "615298de0b5bb7a8310b77ce135348df814bd5a54b666ca785fd6773bd2748da",
+      "audioHash": "1647cc39967506293d172ae983fd6fa11a1a3d970d8761849d6b7c26823a3ec0"
     },
     "history-collapse/1": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/013dd28da508a18c8957a7c4c007df44c238488a8ee093f1657ac7fc7cfc0821.mp3",
-      "duration": 17.712,
-      "bytes": 106272,
-      "textHash": "ab537cb2554c4b189b9abfccb595cfe21355384a974ef0efc72edce3492e3978",
-      "inputHash": "dcf0eb5a62673f9f9ee19ef1a7b790a1aebbf893f52a65430644c832d4d6ba35",
-      "audioHash": "013dd28da508a18c8957a7c4c007df44c238488a8ee093f1657ac7fc7cfc0821"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/3afecfd750e8ea12efb20aad6b97c444374027f6847c6985d383f704140288db.mp3",
+      "duration": 51.648,
+      "bytes": 309888,
+      "textHash": "d5d22d2849035697550772a4de84b2f4a3b8e0ab1803f7f36bd5b8ad4e917499",
+      "inputHash": "43867ab4670c417d00642b8ffd9c2c5058505914ccf0fea0ed2e89038a37f612",
+      "audioHash": "3afecfd750e8ea12efb20aad6b97c444374027f6847c6985d383f704140288db"
     },
     "history-collapse/1/moment/0": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/6ae937d992392f8e88c2c89a0d003c83d6f8fbaf5bfb4d2e73719c9f03a42226.mp3",
-      "duration": 13.128,
-      "bytes": 78768,
-      "textHash": "92f38552df6165479cc5b1d63aa2b6557c4e890e7538aaf465f7805cd9941cd9",
-      "inputHash": "224629cdbe30275263a94e30f1a74389deb3601234f3bb088fb9fd82f3c30cf9",
-      "audioHash": "6ae937d992392f8e88c2c89a0d003c83d6f8fbaf5bfb4d2e73719c9f03a42226"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/77b2ed06888015e70bf2d2df993705885045a005989c7aab5891ce3f058e642e.mp3",
+      "duration": 53.256,
+      "bytes": 319536,
+      "textHash": "6e4fb696881a24e9af719d9cd1203db3dda3feff673b218a5afe9997c7e0913a",
+      "inputHash": "b5390a37efad646f3991528f9eaed940e8153ea9d123de09b7fb1a68fba1660c",
+      "audioHash": "77b2ed06888015e70bf2d2df993705885045a005989c7aab5891ce3f058e642e"
+    },
+    "history-collapse/1/moment/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/176423c09fd6bf36d8fb2fe62d982a0975535ceb2738172f55c6cbb2511d7bcd.mp3",
+      "duration": 48.096,
+      "bytes": 288576,
+      "textHash": "e8d50dfb024fd8cd78b6e4e9bee7e98ca271a69e87e7e294b3b8da9081aeaeba",
+      "inputHash": "4abd01eef17fbdd12b9c9333521fe5c5b1a6630ecdcd6e422c25529539236602",
+      "audioHash": "176423c09fd6bf36d8fb2fe62d982a0975535ceb2738172f55c6cbb2511d7bcd"
     },
     "history-collapse/2": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/5494375cf486082862b4e3e28eb913821dc55447427bf6de1d2359a35d5b4dd9.mp3",
-      "duration": 13.656,
-      "bytes": 81936,
-      "textHash": "e8b3df433e466da890396e6f9c5fd139265dc3d7f2285e782599f298a8371fa2",
-      "inputHash": "d577db25fc7aa401a1a0619d621b2cdf78a898e31ef356f0d42321d3e41a9bc7",
-      "audioHash": "5494375cf486082862b4e3e28eb913821dc55447427bf6de1d2359a35d5b4dd9"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/a2ec24673e444e1cae54bd4aa8e9b35131e9902ede9f0df2a4c7bee398d298fc.mp3",
+      "duration": 55.392,
+      "bytes": 332352,
+      "textHash": "a5d9da603dae254e143aaebe2d42cf0c44312ae8f03fb70076882debbeb45e84",
+      "inputHash": "6c93fe8ddc2e12d5b2c2d00b5ec03cb85dd56832ccb83b66b4e597e3aece9e8d",
+      "audioHash": "a2ec24673e444e1cae54bd4aa8e9b35131e9902ede9f0df2a4c7bee398d298fc"
     },
     "history-dark-age/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/398b9bba4d5a6d571e53de71ec65b2d09e555bd4af0d9c072938f7c5f4220727.mp3",
@@ -154,12 +186,60 @@
       "audioHash": "398b9bba4d5a6d571e53de71ec65b2d09e555bd4af0d9c072938f7c5f4220727"
     },
     "history-dark-age/0": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/fce777bac952c5514bb40087e8c2ec385b005280932ab2a5038dc6e8fd17bc4c.mp3",
-      "duration": 33.648,
-      "bytes": 201888,
-      "textHash": "0725ba666915c16674973a76401c57f1a2c8447cad9c8bc9fbf80e4e1958870b",
-      "inputHash": "f14fddbcda6cbd0ec0c42a4f5770829027e71cfd3022940954f7c4c348d586b6",
-      "audioHash": "fce777bac952c5514bb40087e8c2ec385b005280932ab2a5038dc6e8fd17bc4c"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/abc3fbcf0b2e16b30624555a656ab8d48408fb1c3545d7bf2b5c19e0fa2eb80f.mp3",
+      "duration": 58.896,
+      "bytes": 353376,
+      "textHash": "27ebd7eb022fd5ef54558a15c1e54489e5b17f50a9f470049054727af9e38705",
+      "inputHash": "72451ca0e9b15fc754c22113334239a77b6a5f1faa64c23b4ce09fcfa2b013f4",
+      "audioHash": "abc3fbcf0b2e16b30624555a656ab8d48408fb1c3545d7bf2b5c19e0fa2eb80f"
+    },
+    "history-dark-age/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/59edfc805294d3f1f763d78e3d4a9f31954f59fcfcd8ad4e436600591e5e0e31.mp3",
+      "duration": 51.288,
+      "bytes": 307728,
+      "textHash": "8755aede9ab2d38073435e14765c6ede1030973c6b54f0f9cf774db196f533d9",
+      "inputHash": "4e4d82ebb96f57b96ebcb6d848d903a078e0907a5cc03ec5f5776198fff90405",
+      "audioHash": "59edfc805294d3f1f763d78e3d4a9f31954f59fcfcd8ad4e436600591e5e0e31"
+    },
+    "history-dark-age/1/box/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/3a3c470c872f3ed03d3487916024804a1c1a09fadcf1a2087f260ffd368cce58.mp3",
+      "duration": 98.256,
+      "bytes": 589536,
+      "textHash": "b767053bf4509667363b62a33402d5460619fb9aa07afea44b05d466f5ff0e82",
+      "inputHash": "5da2ff061bb30f61766822330647663a59c29107d070cccabfaabfa1f9f90a94",
+      "audioHash": "3a3c470c872f3ed03d3487916024804a1c1a09fadcf1a2087f260ffd368cce58"
+    },
+    "history-dark-age/1/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/bd2896259bb5c42d0847552fd5de6d9d469fc547cb6e49872f481634c55cacfe.mp3",
+      "duration": 64.584,
+      "bytes": 387504,
+      "textHash": "49cb365d29452fce6c3a1aa45d9a1d8f38d012e542b8e3c2e4476c3968e28043",
+      "inputHash": "e891a2e5cd5b1cc18803cf0f5d33d10a1c05110e95b12d526adb590ddcf71937",
+      "audioHash": "bd2896259bb5c42d0847552fd5de6d9d469fc547cb6e49872f481634c55cacfe"
+    },
+    "history-dark-age/2": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/2329d8399d05026bba5e98e3dd3aa1bc6972a9a6bded7cdd93f5219e014b60c0.mp3",
+      "duration": 59.112,
+      "bytes": 354672,
+      "textHash": "34016b7c7822f200987fb85f3a50551f4bccfdf42f201bef78a341c0b3f364b1",
+      "inputHash": "5ce97f6f0af6068faf403055992d4e86013bf44856f01d07386bf73038b0bf48",
+      "audioHash": "2329d8399d05026bba5e98e3dd3aa1bc6972a9a6bded7cdd93f5219e014b60c0"
+    },
+    "history-dark-age/2/moment/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/3b7e959bc0f6f20371f2a8ab49ae239867d4d3ae348452aae95c43c2113c829b.mp3",
+      "duration": 53.064,
+      "bytes": 318384,
+      "textHash": "9bcefc44942f04148d0fc6a9a944e015a38d152f42df53a74ee08a07b87914e3",
+      "inputHash": "a4381500a04bceccd657bf22e0bead07479dbb89564061fedba93948612c54d4",
+      "audioHash": "3b7e959bc0f6f20371f2a8ab49ae239867d4d3ae348452aae95c43c2113c829b"
+    },
+    "history-dark-age/2/box/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/d57ccb920059dddb827a0c02e3426ca188d17f0d71d2ca8567c8f2d366cd843a.mp3",
+      "duration": 94.896,
+      "bytes": 569376,
+      "textHash": "3da788d47fc75e877d59b21ff950be30e3da5c9b297e7a4a2bd3f734d27cf86a",
+      "inputHash": "ca5097d52a5afd181fa4b65c91a7e0b11efbbd81882ce16ccf5441369e9c1600",
+      "audioHash": "d57ccb920059dddb827a0c02e3426ca188d17f0d71d2ca8567c8f2d366cd843a"
     },
     "history-poleis/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/0bb742426892f42fbdf65fe13a8f2a047a1d70e9a2e0eca693a51a174e088fa5.mp3",
@@ -170,28 +250,44 @@
       "audioHash": "0bb742426892f42fbdf65fe13a8f2a047a1d70e9a2e0eca693a51a174e088fa5"
     },
     "history-poleis/0": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/d5e81df75cefcae6079024253ef1521c67e2fe0f9096eb7403f028d396b4322d.mp3",
-      "duration": 14.208,
-      "bytes": 85248,
-      "textHash": "21b1a0edce019d9b33987e745eac168b4812c7de0175caf5a9961e117aefe41d",
-      "inputHash": "571d7a34a64c93e0eaa9cc2b14e76c27039ee844ca136f386c49d09d113b71b1",
-      "audioHash": "d5e81df75cefcae6079024253ef1521c67e2fe0f9096eb7403f028d396b4322d"
-    },
-    "history-poleis/0/moment/0": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/fbc9ae8207e954b1a63cf7ef73eb1fb9368bf1ee156a2f93ce8db69762ad70c1.mp3",
-      "duration": 10.992,
-      "bytes": 65952,
-      "textHash": "d3bd832b74fcb55b7735e02be19bc004335f387e640641a91ac8ea5c1c88bbd8",
-      "inputHash": "aa57d9949cd1cb231600b2d77cd3f3002766ebc967fb1b1e8ec8d333d7a27477",
-      "audioHash": "fbc9ae8207e954b1a63cf7ef73eb1fb9368bf1ee156a2f93ce8db69762ad70c1"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/8c6fbdf80c067fbce678151f0709718dbccd94352ee0544669a2b4eebf85c444.mp3",
+      "duration": 51.624,
+      "bytes": 309744,
+      "textHash": "432988a48856e1f45f492c7ca5456c0dca5691efb6f7d8d2776851842c31d5b6",
+      "inputHash": "7442c2830f55622546cf2ae7a9e652b9a9b3a0b810384ca37f33bf74c442cfbf",
+      "audioHash": "8c6fbdf80c067fbce678151f0709718dbccd94352ee0544669a2b4eebf85c444"
     },
     "history-poleis/1": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/be55d22986d0f9d368159ace1009af5544b585966c4345d7d185f0d7d949684b.mp3",
-      "duration": 15.552,
-      "bytes": 93312,
-      "textHash": "5bfe140d8061601b5d8f2311b369419d08c94ddab93afeddef30fcf0902561d2",
-      "inputHash": "cc5a9127ed52b2ac1695c63409ca5f9cf3e9c399f27986f0d1f6951184513246",
-      "audioHash": "be55d22986d0f9d368159ace1009af5544b585966c4345d7d185f0d7d949684b"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/b846e129614ec274c445ad5ca3b1efc28fe7c58488b7bd641aa348bab680f094.mp3",
+      "duration": 55.152,
+      "bytes": 330912,
+      "textHash": "0dffb0da8ff2d5c73953a1a68fd2028e0c37487e01a26fc752246cac90a21341",
+      "inputHash": "250be9e79171b60fdee9e4aca7acb11e75067e123fb8d1a512df09161c2c5f47",
+      "audioHash": "b846e129614ec274c445ad5ca3b1efc28fe7c58488b7bd641aa348bab680f094"
+    },
+    "history-poleis/1/box/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/ea508eb7baebdff147e57fb97d0e8f420a1baa572cbafaac17f67067ffafbc15.mp3",
+      "duration": 125.376,
+      "bytes": 752256,
+      "textHash": "dcbc1089759c9031a5eb1495b2bac9ac18bf5b72b59a90835654075c595a3439",
+      "inputHash": "565be3c2c149754128d05283aa08e4f0ef28e984c7cdca1bbcc9ff95674f5c0f",
+      "audioHash": "ea508eb7baebdff147e57fb97d0e8f420a1baa572cbafaac17f67067ffafbc15"
+    },
+    "history-poleis/2": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/fd9c26a5d816fe3b322db8a6619056b340f25414e8e0b749bb6b2602602d7e71.mp3",
+      "duration": 54.384,
+      "bytes": 326304,
+      "textHash": "16d7783234f5f8317a2d599635de1260b32909ad3911e41c67648f4f1fb47d00",
+      "inputHash": "1da4ff0531854fa1d634844c2a95104d33c372025e1d32995a39ef6e8b0b5053",
+      "audioHash": "fd9c26a5d816fe3b322db8a6619056b340f25414e8e0b749bb6b2602602d7e71"
+    },
+    "history-poleis/2/moment/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/f803c6089639ac90c75c70376aa316054a3a5e50f9389505411b14d569c25dab.mp3",
+      "duration": 59.088,
+      "bytes": 354528,
+      "textHash": "231c754eccc9e386830531fc15ed283fcc418b8f1232352a8fb0053a6a289695",
+      "inputHash": "eb8b81bd13004153b8cfb29eba1788b91612423e89e650eebc4a2681b0f1bcd3",
+      "audioHash": "f803c6089639ac90c75c70376aa316054a3a5e50f9389505411b14d569c25dab"
     },
     "history-sparta/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/fcaa9c38bc7432f37b448f37c0b5f7f5985099c03c6e868f573a85c7cd8799ea.mp3",
@@ -202,20 +298,44 @@
       "audioHash": "fcaa9c38bc7432f37b448f37c0b5f7f5985099c03c6e868f573a85c7cd8799ea"
     },
     "history-sparta/0": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/876cd5059e23bcff9440d591f53e8eba45339e748883ba5782367626cee5d4ea.mp3",
-      "duration": 13.872,
-      "bytes": 83232,
-      "textHash": "bf3a24e52d573bee9ae9220fbe8cd26dd429c6e5b8fbacde4178139ed7285778",
-      "inputHash": "da9278c1bf2f07c50ffda12fd5c377b9b6d6769a3a7f2bdbaf77811119b76b87",
-      "audioHash": "876cd5059e23bcff9440d591f53e8eba45339e748883ba5782367626cee5d4ea"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/1b039a1d738aaa4e3104ed1cb30e67a707d7b36864158e9beac228b0dc63aa32.mp3",
+      "duration": 56.904,
+      "bytes": 341424,
+      "textHash": "9f1487ebd07c98b5f08d6448991a5fc1c7cf93db6e9e3088a2575e78df72a89e",
+      "inputHash": "c6922540ac9378ce8209492f3ccd885681def5aad93a588c89339f14891a520d",
+      "audioHash": "1b039a1d738aaa4e3104ed1cb30e67a707d7b36864158e9beac228b0dc63aa32"
     },
     "history-sparta/1": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/353fc0c13ba284ea6066b2ed7ff1154415862af7b48431228839a4bba926d5f0.mp3",
-      "duration": 22.92,
-      "bytes": 137520,
-      "textHash": "5e9d41fcfd2b762d24b0202430963fcb8d67f3b1ea024ef1009e8ca258038588",
-      "inputHash": "58e211e6d91bf08058f44845f667a68a805277c0e52ba0610ae492fd402f07d0",
-      "audioHash": "353fc0c13ba284ea6066b2ed7ff1154415862af7b48431228839a4bba926d5f0"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/869286311c33ec782665b5207c256b8ca2fd266456f703feb3410bc69a83c20a.mp3",
+      "duration": 59.184,
+      "bytes": 355104,
+      "textHash": "aff1c7c87b9b7d9653626f98a9849989a10f1f020b5f52a5649889387a7d6c0a",
+      "inputHash": "08a6559d077baa00ed9fb55d1147a0186c7ac7b128b9f19eae59b813bc6872c2",
+      "audioHash": "869286311c33ec782665b5207c256b8ca2fd266456f703feb3410bc69a83c20a"
+    },
+    "history-sparta/1/moment/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/2d543fda44e5c8d27a3621fd0c5d62e045e27ea464f8d31c81617878f2c2c066.mp3",
+      "duration": 43.992,
+      "bytes": 263952,
+      "textHash": "9246aa0e946ddd226f0aab1b2986468d3eb8c5d2e17341f81ba47fa8b35de8c1",
+      "inputHash": "126173d78b44122d29d76f971c53c7486f05df4a3d762027339ef218cdc429b6",
+      "audioHash": "2d543fda44e5c8d27a3621fd0c5d62e045e27ea464f8d31c81617878f2c2c066"
+    },
+    "history-sparta/2": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/bc20b2b21df4c10c93214c530d6d5f4a0cf9198c2fefaeab58953091fd9b4bd4.mp3",
+      "duration": 63.984,
+      "bytes": 383904,
+      "textHash": "98daa30ceb6500fb3713a61b5398ae8a2fa5795961533310774111a148425bf6",
+      "inputHash": "5666a7cd264e6a1837cc22d9eed04c9c7729b3010ad54b9e1d225d5e0919baec",
+      "audioHash": "bc20b2b21df4c10c93214c530d6d5f4a0cf9198c2fefaeab58953091fd9b4bd4"
+    },
+    "history-sparta/2/box/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/0db7e0792eff5f6395971b1a30f91ae059abae2ee98a7f2019f811b930942e3f.mp3",
+      "duration": 112.224,
+      "bytes": 673344,
+      "textHash": "cf5591c217a72d74025fb5883e08ca4fe6c61ee5bdb89ef2346d7ddc5846aa9b",
+      "inputHash": "9cc3c93d474df9474514474d9f78303f278a19a77b82b7420ee1122e5320159d",
+      "audioHash": "0db7e0792eff5f6395971b1a30f91ae059abae2ee98a7f2019f811b930942e3f"
     },
     "history-athens/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/f7ebda5740e653c891d3962a910834e1d7d8c6f14493bb9fac63972a24aa77d4.mp3",
@@ -226,28 +346,84 @@
       "audioHash": "f7ebda5740e653c891d3962a910834e1d7d8c6f14493bb9fac63972a24aa77d4"
     },
     "history-athens/0": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/608bea5e51b06cb16ead8e9278fccfac71a2250f74b088ec610e30c3edac879a.mp3",
-      "duration": 21.84,
-      "bytes": 131040,
-      "textHash": "e5469088437a8c8af21b1f4d0c1f1a5488492ea49be6a86cffc0a1b12cdd3798",
-      "inputHash": "4a107262e9a57e33f5853217539805765c57181535aadd5a2ca2d39b033d8a53",
-      "audioHash": "608bea5e51b06cb16ead8e9278fccfac71a2250f74b088ec610e30c3edac879a"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/e40b8b2c63495f579e01ef93ba86ef6be6bc3a2af19e32febec97ea2ceb16726.mp3",
+      "duration": 63.24,
+      "bytes": 379440,
+      "textHash": "aaded8d3368a88dac5d1b0067a66919f7779ac0ed3d627b0193d19bb35aae559",
+      "inputHash": "a05f66e303d2341754ce34cdd62b872fd5fe2b6004d282052df51bba5cf052d7",
+      "audioHash": "e40b8b2c63495f579e01ef93ba86ef6be6bc3a2af19e32febec97ea2ceb16726"
     },
     "history-athens/1": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/6b936393bdc9ed5abbe3ac7ba311b7e7ddc5a1719e2309cdc3aa89ba9e31e31b.mp3",
-      "duration": 16.296,
-      "bytes": 97776,
-      "textHash": "4cfe03905075e3a20e486e9d643c822f124fa46fb4906bf9007b0cf082426ebb",
-      "inputHash": "6927b836f09c953ac748495755b19e4205bc3ef56187eabe175304b5baa724c1",
-      "audioHash": "6b936393bdc9ed5abbe3ac7ba311b7e7ddc5a1719e2309cdc3aa89ba9e31e31b"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/1ef748d0815a6b668213111b864158553f724ccce78e7d0910888b46aa24f5bb.mp3",
+      "duration": 63.24,
+      "bytes": 379440,
+      "textHash": "fd2e92a71c60d11d0763cfbd4719b888adb20489d3a4e3c227faba53df48d2e7",
+      "inputHash": "dc04bd21521904242b3f2b7af9850cd37ff5cdab7dd44cfe19f49be307b374a7",
+      "audioHash": "1ef748d0815a6b668213111b864158553f724ccce78e7d0910888b46aa24f5bb"
+    },
+    "history-athens/1/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/9708b0f0678450fb5378ab151e90dd594ef45915e28b9879a504de7b3dd3d82b.mp3",
+      "duration": 68.352,
+      "bytes": 410112,
+      "textHash": "a1218bc53a03751617e71ae8f7b397fc96299ab51731df67302eb995989f146c",
+      "inputHash": "8ab0ebc4e395fa3d474f24081b7da8cfeec1ff0eb799cc22fd076c68b25b4e00",
+      "audioHash": "9708b0f0678450fb5378ab151e90dd594ef45915e28b9879a504de7b3dd3d82b"
     },
     "history-athens/2": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/e923bb5334356574caadfb16c47b7175937f452e0018e8ffa7cf6f845b63fa42.mp3",
-      "duration": 16.104,
-      "bytes": 96624,
-      "textHash": "a1120a4b276a1d7c603f9310afa714033ec8fb8897e110b16f4966eecf96799c",
-      "inputHash": "b2d57a8e383190f374519d6b37827b056a30d153959e7952885fd21004c95e23",
-      "audioHash": "e923bb5334356574caadfb16c47b7175937f452e0018e8ffa7cf6f845b63fa42"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/61ffc99682a487e6500b1efd3d22b3acb999306e730e0f0498494b086f8863eb.mp3",
+      "duration": 68.232,
+      "bytes": 409392,
+      "textHash": "33e175cb4001808fc984b757393d4f815066a3772e8beee88b398f166536f11b",
+      "inputHash": "bd71079dbfd71f824417879d2f7767b5b291309b57280ee0be6967d55f66d791",
+      "audioHash": "61ffc99682a487e6500b1efd3d22b3acb999306e730e0f0498494b086f8863eb"
+    },
+    "history-athens/2/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/928ee004842e1a4e09cf20af58bf8370c303080b8c6ffe1972336d7f4953d206.mp3",
+      "duration": 83.352,
+      "bytes": 500112,
+      "textHash": "3d55987728cc8fd9ecc95e26743f2abe01fd7aff1460a424beb6054805dcc6dd",
+      "inputHash": "e9704aaa5399bf8088b4f6f75322bdaf7cf4683d3b182fb566d699687fac8b8d",
+      "audioHash": "928ee004842e1a4e09cf20af58bf8370c303080b8c6ffe1972336d7f4953d206"
+    },
+    "history-athens/3": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/247914ca247765c2972018c3c08057aeec50218b63b65c120325ad2a47696d74.mp3",
+      "duration": 64.44,
+      "bytes": 386640,
+      "textHash": "b310d6e1464299822b6fc51ae3b66afa0c7d5f12283fc025b0396de94c87f4f0",
+      "inputHash": "7735857fa54474304a7035ac0897b46d70b95788c7ddc0485c51249c8f9ceb26",
+      "audioHash": "247914ca247765c2972018c3c08057aeec50218b63b65c120325ad2a47696d74"
+    },
+    "history-athens/4": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/7366c6e0040e72780d5fee1f1fda501d554c26aba0bc08377fd58ac79c9327c6.mp3",
+      "duration": 60.048,
+      "bytes": 360288,
+      "textHash": "6c48071b250bc94246bcec2497e1c36992769f9a52ad4905cfcf05106de2b468",
+      "inputHash": "fb6e35ff89682840d5063d07e5f006a1fad51d2096812840fc8ba553f9223a3c",
+      "audioHash": "7366c6e0040e72780d5fee1f1fda501d554c26aba0bc08377fd58ac79c9327c6"
+    },
+    "history-athens/4/moment/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/50005f426a146a888a0067d168c1c93cb4fae9311a653da27979ea6239a7fd21.mp3",
+      "duration": 62.28,
+      "bytes": 373680,
+      "textHash": "06caba8b2beabc1877c421a3d9b3abe5b0e345feda3d6b3d892491ddca2cfeb2",
+      "inputHash": "3c47a51d2d23b6126a89d0a1d892d1715f394d849f038f57d51c8799e6630941",
+      "audioHash": "50005f426a146a888a0067d168c1c93cb4fae9311a653da27979ea6239a7fd21"
+    },
+    "history-athens/4/box/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/8235914af5bd052dc7b2320241f67317e36bcad743d21ac5e949e2d6c7b60824.mp3",
+      "duration": 127.392,
+      "bytes": 764352,
+      "textHash": "1d6a60c5497abb92c60984ef9e28ed774c2bd27226465a15818da6aa154012cc",
+      "inputHash": "7d4c3a820f7ca4c84757332c7c015999e73a039292bfb79f5aa46513644662ea",
+      "audioHash": "8235914af5bd052dc7b2320241f67317e36bcad743d21ac5e949e2d6c7b60824"
+    },
+    "history-athens/4/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/2361e01df1fcefd1eaa53c3807407db776642d62dcc28ee03f198101773870fc.mp3",
+      "duration": 81.0,
+      "bytes": 486000,
+      "textHash": "2e571e03190a1adddd01d4ac1267e50ba950c53491fbdf9e92152149e988de44",
+      "inputHash": "9fdda555e469780177d7b8a42f2986fa479e01269de9d4e4038e1761dd9264be",
+      "audioHash": "2361e01df1fcefd1eaa53c3807407db776642d62dcc28ee03f198101773870fc"
     },
     "history-persian-wars/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/84c60fd6a42d6734136ea2950fc45387a443695e24e806b106541ab2a4114efd.mp3",
@@ -258,68 +434,124 @@
       "audioHash": "84c60fd6a42d6734136ea2950fc45387a443695e24e806b106541ab2a4114efd"
     },
     "history-persian-wars/0": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/1d0a0a7709c8e03336f2ef6b06adac0292e55712ca2e9390b31106f8921c4d9a.mp3",
-      "duration": 18.528,
-      "bytes": 111168,
-      "textHash": "143f4edcb63ff776509a1e6474d6576db3b5c27ba99d91ebfa4cf1f111b81a76",
-      "inputHash": "b2f9a434c80468cbe29b20671ffd428fd5bfbe30e1fb2925fdad2af4addff94c",
-      "audioHash": "1d0a0a7709c8e03336f2ef6b06adac0292e55712ca2e9390b31106f8921c4d9a"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/e16685bf53ff39a928242d652c954c84c7d66c8aad87f032e93b99738c23941e.mp3",
+      "duration": 66.312,
+      "bytes": 397872,
+      "textHash": "60b15fb6fda66667641bcb770079defcb29ae2c749ab813cc44fe0b531810f48",
+      "inputHash": "172c556dc217a87e5860a00f7aa683cd8b1575d548bf3bd6098ffb83e7bc1771",
+      "audioHash": "e16685bf53ff39a928242d652c954c84c7d66c8aad87f032e93b99738c23941e"
     },
     "history-persian-wars/1": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/b19082c9c9b19daab9cd9b363ebfae6085fdeb5d7f1fb981aad8efcef87f6075.mp3",
-      "duration": 9.888,
-      "bytes": 59328,
-      "textHash": "8918b975c45f5339b392d524e2597f3f6e7b4f4fe97d51dc523861d77ad9e6b7",
-      "inputHash": "b9e9aa6a815ab2b8c16e67fd9145cbb79ede731b54cb9e1bf1268661efd5aee3",
-      "audioHash": "b19082c9c9b19daab9cd9b363ebfae6085fdeb5d7f1fb981aad8efcef87f6075"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/cef08f5372ff6bfc748f5fb2712bdf9e16bb88ce5cef099fcc02602800d2cd52.mp3",
+      "duration": 54.792,
+      "bytes": 328752,
+      "textHash": "babad1fca668953427cfcca10733c44dab8b8afcec699721e899f1239eed2bd5",
+      "inputHash": "22320d19d14978911c6380bc67cad3b8049273350baa5e67057a85db7530cceb",
+      "audioHash": "cef08f5372ff6bfc748f5fb2712bdf9e16bb88ce5cef099fcc02602800d2cd52"
+    },
+    "history-persian-wars/1/moment/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/e90eef435c7415230ae655b28f47a14a610a0702bfd67d4a64d06f8dee2303e1.mp3",
+      "duration": 46.776,
+      "bytes": 280656,
+      "textHash": "2164a73668e88670e4419775fbee3f111a0e3698619029dc38010605f4ea9236",
+      "inputHash": "4fe580be37a4f2616ea7837dc41583aa30d9af46d5cb6d3e264b42ab49fc442b",
+      "audioHash": "e90eef435c7415230ae655b28f47a14a610a0702bfd67d4a64d06f8dee2303e1"
     },
     "history-persian-wars/2": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/545d924ee7b113cf6f3fffba7bc1c751b5320d2dc79c8397ce0837afa576ace8.mp3",
-      "duration": 12.768,
-      "bytes": 76608,
-      "textHash": "65cb1eb3669107427f018e547c103b1a2e3878ea59ab71dfcc9cea3c2b0dcef9",
-      "inputHash": "97d69e7737e11e8105aad3d88006184b224a3098b7c21a1d00b29e4a95d43ac1",
-      "audioHash": "545d924ee7b113cf6f3fffba7bc1c751b5320d2dc79c8397ce0837afa576ace8"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/e7177427189aef6a12d81432776da2ec3d5a7d41a7be1684c8800a44e1daa745.mp3",
+      "duration": 62.976,
+      "bytes": 377856,
+      "textHash": "2850f75afc0a4edba479115c6d90397b08997574fbd59aa90fd70c2980de7408",
+      "inputHash": "08dfdc4015b74fc14c9f6e9e834b3e023daa37cc12942f3ad4976a87a9c5b13f",
+      "audioHash": "e7177427189aef6a12d81432776da2ec3d5a7d41a7be1684c8800a44e1daa745"
     },
-    "history-persian-wars/2/moment/0": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/069ddfcf27935fb0a5e1ae29f3e57f1cdbc14b1982c2434cc92d51261de3ad79.mp3",
-      "duration": 11.064,
-      "bytes": 66384,
-      "textHash": "dee3731d545a4b1392f8ddd1906c1ce762f2e2a0a9cb00b8649d9a85dfbf36af",
-      "inputHash": "e314d0faae97069b633f2ceea7ce035bace66d84647deb9091ed6428e267dcbd",
-      "audioHash": "069ddfcf27935fb0a5e1ae29f3e57f1cdbc14b1982c2434cc92d51261de3ad79"
+    "history-persian-wars/2/moment/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/46d434a4be747d47f46e0a9284446cfdb6a2ea48c3e72051bee4383a812e57a1.mp3",
+      "duration": 43.824,
+      "bytes": 262944,
+      "textHash": "3d647508aff1824b2442a04d21f675b598d8e97e192003e8a663ff96c786b769",
+      "inputHash": "dcc7be5d660e267bb35aadaa41a593483a256642c73d308c5feada09dbf123eb",
+      "audioHash": "46d434a4be747d47f46e0a9284446cfdb6a2ea48c3e72051bee4383a812e57a1"
+    },
+    "history-persian-wars/2/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/0bac1b20c91ecde0f7f3fd43b670983333646f84629efff6924a85b6377f8475.mp3",
+      "duration": 68.328,
+      "bytes": 409968,
+      "textHash": "96492141a465828f9829a9286b0f5cdaef58787fba934b8f377e9f0089d6445f",
+      "inputHash": "77057f08682567905213682a74e4667e6d3c190a3de16af0ee95efab7e7b2ba8",
+      "audioHash": "0bac1b20c91ecde0f7f3fd43b670983333646f84629efff6924a85b6377f8475"
     },
     "history-persian-wars/3": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/a55956115c71041a8a0b3833c2ad17a2b872cec9a2b559d39b000f3f71812437.mp3",
-      "duration": 22.464,
-      "bytes": 134784,
-      "textHash": "845e6b3eecb6403fdedf0df6b8e994003ac89ca057af16b0319df21724f03480",
-      "inputHash": "6dd87867f637508516779f107e1b0079a179ab6ac5ed402dde4ec7a3f7f4cbae",
-      "audioHash": "a55956115c71041a8a0b3833c2ad17a2b872cec9a2b559d39b000f3f71812437"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/d24c808609c67d6e8e65a38beba10c58a8da4e82be7afc24941dacdb5b9a1cf2.mp3",
+      "duration": 65.256,
+      "bytes": 391536,
+      "textHash": "66838de6157a2926e2170b4f76829b4b75311163b8bcb2f5624faa413e03effe",
+      "inputHash": "b68687e6045eaed7c66788ac3c9197afd6ffe0d4966a77ca9df10c5df2ef1b9e",
+      "audioHash": "d24c808609c67d6e8e65a38beba10c58a8da4e82be7afc24941dacdb5b9a1cf2"
     },
-    "history-persian-wars/3/moment/1": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/4d7b653028e84db99fac80e00d50b5dbfa91acbcd37d4c7f251aaa87275b4719.mp3",
-      "duration": 15.888,
-      "bytes": 95328,
-      "textHash": "65f977512b224b81135984992732a17103530687440f5517c5a9b5dac9ef041a",
-      "inputHash": "b33b2c1042a6b06f6cc64fab305e906e977fb2328ae5d6d64da0a86df9f4b679",
-      "audioHash": "4d7b653028e84db99fac80e00d50b5dbfa91acbcd37d4c7f251aaa87275b4719"
+    "history-persian-wars/3/moment/2": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/091a2a64d1747432f2f3917cc6e17136d4c812f1689752778ac94f27eb51b77d.mp3",
+      "duration": 42.6,
+      "bytes": 255600,
+      "textHash": "4fa502066d7fc69a23c699dc4f59feb2b7ea5249a404bb802eb0eec3f556e99b",
+      "inputHash": "1cb47db0769239730141d1647327c7f4538a40f6a2ae3c101fa2b89e8aa44434",
+      "audioHash": "091a2a64d1747432f2f3917cc6e17136d4c812f1689752778ac94f27eb51b77d"
+    },
+    "history-persian-wars/3/box/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/ca5a9f43f3b990bca2ef66956470171670f6e60ef13013405940f5c12f4330e1.mp3",
+      "duration": 99.888,
+      "bytes": 599328,
+      "textHash": "ee3afba7c9af2b1e18a578f2a5e9453ea7c2d3b69a2c1296fcc719efc8103399",
+      "inputHash": "3d7adeef1ebc50b46d3e677668cc9820a8033ac0234ed709987863399c806a9b",
+      "audioHash": "ca5a9f43f3b990bca2ef66956470171670f6e60ef13013405940f5c12f4330e1"
+    },
+    "history-persian-wars/3/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/cf2b77417201a5cfa087f003d78a942609dab70b8ece55059126fc1e0287abc1.mp3",
+      "duration": 78.0,
+      "bytes": 468000,
+      "textHash": "60b3fdfbb3b0723e3e63a9a5d34ba44346022ab67ef2b452c3b75c9daefb732d",
+      "inputHash": "4cd143998cb5b7b4235e9d1179769a7cb09a09b52c06e8a55e2ba36269050455",
+      "audioHash": "cf2b77417201a5cfa087f003d78a942609dab70b8ece55059126fc1e0287abc1"
+    },
+    "history-persian-wars/3/person/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/66a7dbef43263b20a50acca8d4c86b41fd6e55d8fa3a00bf9bc308702de85c1b.mp3",
+      "duration": 77.904,
+      "bytes": 467424,
+      "textHash": "fa4e7e133948294c9a2e860c407e36d0177c9ea58703c326f0af5bf9405fa449",
+      "inputHash": "e8fa3b75bed9023104fb2591a326c1856327af9339b63cbcffaa2875731a215c",
+      "audioHash": "66a7dbef43263b20a50acca8d4c86b41fd6e55d8fa3a00bf9bc308702de85c1b"
     },
     "history-persian-wars/4": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/8f7f3b5255bf7e608a460814997df6305bf38d48b0539af9268b13ad8b90a805.mp3",
-      "duration": 10.032,
-      "bytes": 60192,
-      "textHash": "00af16e1815198ab583a804de2402aa3790dfd5718399d11f15a8a246f0c676e",
-      "inputHash": "5ae1d2cb55e38c9f994d9a34dec560391a10777bd0789e8c8fdf38797cbcf2c9",
-      "audioHash": "8f7f3b5255bf7e608a460814997df6305bf38d48b0539af9268b13ad8b90a805"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/22cfb6cc258cb39d9d3feeb962fbf4587cb85349631e66fbe49326704cac36d4.mp3",
+      "duration": 52.344,
+      "bytes": 314064,
+      "textHash": "2065ecd9e703721c5e517865ea9ad7f3b27dceb17ccde9c2e18bda6c821bcea5",
+      "inputHash": "012c8b5275f93bf49534db1578ab6502f8356d2d25707366a39ecc07ee3e707d",
+      "audioHash": "22cfb6cc258cb39d9d3feeb962fbf4587cb85349631e66fbe49326704cac36d4"
+    },
+    "history-persian-wars/4/moment/3": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/2b5b89a5ae3d5391efa30b790ad56491493c34fe27ab8ca7262d6a4b0de25ecf.mp3",
+      "duration": 51.024,
+      "bytes": 306144,
+      "textHash": "677a3778c320b5cc6f43beff8365887d09bd9afb1d729fc694dd755fac8a8cea",
+      "inputHash": "08604c7c56111ecdcf72d1e70f4e9deec8685265aa7eadf93e950591eccd8052",
+      "audioHash": "2b5b89a5ae3d5391efa30b790ad56491493c34fe27ab8ca7262d6a4b0de25ecf"
     },
     "history-persian-wars/5": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/9ca53da3b2a3e87162bb7f19e59a7d0c3ef941f12315a76105611bf42524f892.mp3",
-      "duration": 11.184,
-      "bytes": 67104,
-      "textHash": "2a751c738f851e25e86731c9a69a53f7c2e6b6f784399bc71cf97ceca551645e",
-      "inputHash": "af067fa9a6b6b9ac7e78e7f806d01222ff492ec8ba60a4b6d59ac361e1e4fe77",
-      "audioHash": "9ca53da3b2a3e87162bb7f19e59a7d0c3ef941f12315a76105611bf42524f892"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/87a96fd186c0e326cc09bc918f380f8cbccc9fd8a21d138683fc3e598d238844.mp3",
+      "duration": 63.864,
+      "bytes": 383184,
+      "textHash": "492f6317a0faa7d0bf093010903f1b9b6fb084b25237f390ac4fea0d224cfd62",
+      "inputHash": "df0598ca80339867442286722277b786df37df11f2cdbe961bcee3e9d6396fae",
+      "audioHash": "87a96fd186c0e326cc09bc918f380f8cbccc9fd8a21d138683fc3e598d238844"
+    },
+    "history-persian-wars/5/box/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/15fcde7d9eb38f43a5050c7905b903e31e3b35651e1ed8b4443530c1ca36dd3d.mp3",
+      "duration": 93.816,
+      "bytes": 562896,
+      "textHash": "dc72d650d183ff7279e1042206f7ade88497f407f28fd4cf2fd1c9b5250475af",
+      "inputHash": "915ef52b13099726b3ed366b5f8156ebca3599aad1365c00620b4e3332f72a08",
+      "audioHash": "15fcde7d9eb38f43a5050c7905b903e31e3b35651e1ed8b4443530c1ca36dd3d"
     },
     "history-leagues/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/92cfcf48d6946fd18c163c25bc26577eaf78084deaf109150a1d08758891b41a.mp3",
@@ -330,22 +562,62 @@
       "audioHash": "92cfcf48d6946fd18c163c25bc26577eaf78084deaf109150a1d08758891b41a"
     },
     "history-leagues/0": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/9d87b6b4b19994cdbaac50abd470cb6a8a4ef9485a43e7978e415b51b4e3ee20.mp3",
-      "duration": 19.944,
-      "bytes": 119664,
-      "textHash": "624b690447def30c81084d926e1ca077a983d0b5f9c6544efb2215c705d677b4",
-      "inputHash": "c47dbe314b76b494d03ef1e4eb4b87a0d11c3e3ccfe8a1127e7fe76fbfcd8522",
-      "audioHash": "9d87b6b4b19994cdbaac50abd470cb6a8a4ef9485a43e7978e415b51b4e3ee20"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/768e004ee54151a0598f32430b2d70398c595b79219ec6f994f5dda8b3a79ef5.mp3",
+      "duration": 60.984,
+      "bytes": 365904,
+      "textHash": "6b30997929569f5e86e5d93d089165d071a434c9f3a2672da6ffa3c9916991af",
+      "inputHash": "a7094fc1a7b9f4d8dde4f50c885004e29d34a8c0fd2238037b96ace1583e742e",
+      "audioHash": "768e004ee54151a0598f32430b2d70398c595b79219ec6f994f5dda8b3a79ef5"
     },
     "history-leagues/1": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/69eab4ef03b2555c9940e0c7cab7114ec6cdd281020db19dc8e3254354d692fd.mp3",
-      "duration": 24.168,
-      "bytes": 145008,
-      "textHash": "d103095d175c8f51ec5e84a6b3f04a7046c9cbe523ae5695bbf07d08c68fe0ef",
-      "inputHash": "456d230f1f9052278ba86e6fb0b60576d03674c8310e31b91e41f83149424cd7",
-      "audioHash": "69eab4ef03b2555c9940e0c7cab7114ec6cdd281020db19dc8e3254354d692fd"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/3eff5d332c844714422fdcc9f62cf7743151a370bb25677361087e30a568e8f1.mp3",
+      "duration": 65.856,
+      "bytes": 395136,
+      "textHash": "c787f0410715dceb1e70811628a03ca8545e0ddddcdee60cdd338be2de6a53e7",
+      "inputHash": "463f7e4143ca8ccda2d40475559ce6d171d4b6e01f71d8c9e3a103d6991bfd12",
+      "audioHash": "3eff5d332c844714422fdcc9f62cf7743151a370bb25677361087e30a568e8f1"
+    },
+    "history-leagues/1/moment/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/8d7ad0f521e77730a9abb00d0f625310396b931cad10e78e88e3c1e16dfe4408.mp3",
+      "duration": 50.04,
+      "bytes": 300240,
+      "textHash": "b645998f5c24c1bdca82e301db346f168401638a4bc21b8f326a6aac7eac45e0",
+      "inputHash": "ab8bb1a5c23f44d61b4b6b460eefceff45239047b312ac1c1d075929d381de7b",
+      "audioHash": "8d7ad0f521e77730a9abb00d0f625310396b931cad10e78e88e3c1e16dfe4408"
+    },
+    "history-leagues/1/box/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/4704b085e175c82d2b2c77d6c29db196a577bee2cf8a3b8df3c7fa6b53bee329.mp3",
+      "duration": 89.064,
+      "bytes": 534384,
+      "textHash": "26d7cb486e4003cfbe46c482ef5176393a82b791610aad95c3cd61f28bd50fcd",
+      "inputHash": "8258b5000b1b0bf0d31b00289801d04443f36dfbbcee365c16be8a998659f46e",
+      "audioHash": "4704b085e175c82d2b2c77d6c29db196a577bee2cf8a3b8df3c7fa6b53bee329"
     },
     "history-leagues/1/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/4e302d47e06df9aafcda82fd979b2c32f194e9b12d4beb9cf9f30fb621f44f3d.mp3",
+      "duration": 69.912,
+      "bytes": 419472,
+      "textHash": "a9c5f7c4688d87e2d6537894fcafa635239b0f948210cbdc339a9172f1d787e4",
+      "inputHash": "4cdfce23af15e43677340b6f38effeb212465a5885e62ba396f2fbf838d4fd37",
+      "audioHash": "4e302d47e06df9aafcda82fd979b2c32f194e9b12d4beb9cf9f30fb621f44f3d"
+    },
+    "history-leagues/2": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/30a4bda987dac831f503360fbd0276b131e0883ef4a13180c19fe2ddfc3a3e06.mp3",
+      "duration": 59.352,
+      "bytes": 356112,
+      "textHash": "b50620b0cd8e5443c9cca0431b97b64ff906f79a123c45b417ad63be4dfb2589",
+      "inputHash": "accf37c9d2a9420eaa77bf1d09424b35565935e91d4379f0e76f8b5fdb87a580",
+      "audioHash": "30a4bda987dac831f503360fbd0276b131e0883ef4a13180c19fe2ddfc3a3e06"
+    },
+    "history-leagues/3": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/d24167e44ccd7ff1aa95e6b01c936dc5582c614ff1eecb2d68fd441e519efea0.mp3",
+      "duration": 58.704,
+      "bytes": 352224,
+      "textHash": "46b48f7f1c7985b7207f480e743a9db190a9e447801f879e020ebc17621c21d0",
+      "inputHash": "bbf301f58b0eeac5626faef22266709b8970729f58fb313b07cb4e86422e1733",
+      "audioHash": "d24167e44ccd7ff1aa95e6b01c936dc5582c614ff1eecb2d68fd441e519efea0"
+    },
+    "history-leagues/3/person/0": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/906362935a5f9fd6295044da27ec6528e246a2aa168aa31fc684ade43f052504.mp3",
       "duration": 17.328,
       "bytes": 103968,
@@ -353,13 +625,21 @@
       "inputHash": "6da59e24d48801942a0526c3dd176c25c99f9eb79ad5a196bfaa2a1119ac75c3",
       "audioHash": "906362935a5f9fd6295044da27ec6528e246a2aa168aa31fc684ade43f052504"
     },
-    "history-leagues/1/person/1": {
+    "history-leagues/3/person/1": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/839aa5463d5ecb34dceff698cddf382170cad852aa22b97d7db76241631e2839.mp3",
       "duration": 19.68,
       "bytes": 118080,
       "textHash": "b11c0086c826168061ece85a90f35cd7d34a4608771cb97dedc496cd1235572f",
       "inputHash": "03daa7ef38440164d7514ac419a7f8c506f9ed415c9fbbb961366cdb0c6e08e5",
       "audioHash": "839aa5463d5ecb34dceff698cddf382170cad852aa22b97d7db76241631e2839"
+    },
+    "history-leagues/3/person/2": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/df1872699b3b2681ebb0ed83953bbef5163adfe9868c050a25c23bad539170ad.mp3",
+      "duration": 38.688,
+      "bytes": 232128,
+      "textHash": "8ccc66d99c983de7b4fd1c5bbb858091ccc5b3b03dc1d7d0bc6191eab9fc92d1",
+      "inputHash": "54da957c0e1b8c1df6318810f343405c2933251638612e808deb2a790295470e",
+      "audioHash": "df1872699b3b2681ebb0ed83953bbef5163adfe9868c050a25c23bad539170ad"
     },
     "history-peloponnesian-war/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/f8bc665882775ac38575b5aedd1cb9db712224e40d40d2315eec5759a81e4e9e.mp3",
@@ -370,28 +650,36 @@
       "audioHash": "f8bc665882775ac38575b5aedd1cb9db712224e40d40d2315eec5759a81e4e9e"
     },
     "history-peloponnesian-war/0": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/c6bd7d8826dde4bbc0d021c3e0e43fbb2ef80e0fc3e26ca9191e900d46724f3f.mp3",
-      "duration": 14.664,
-      "bytes": 87984,
-      "textHash": "444dc4711c15107518831e92a2afe205c41b8c5b560624918a6ec113b26b6a7f",
-      "inputHash": "0cf578e58117327d3079730661a765c00f83ebcf3b64cd6564a00624d06dcf43",
-      "audioHash": "c6bd7d8826dde4bbc0d021c3e0e43fbb2ef80e0fc3e26ca9191e900d46724f3f"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/a2df51da1660b5f2f2fc75adb167a15f7637157a3ae60f3c62e3960f686a614b.mp3",
+      "duration": 59.832,
+      "bytes": 358992,
+      "textHash": "37cef3c17caa133d9358b8c32b1c504c527a8b0f92a2b70ca35a16ca28a35894",
+      "inputHash": "d6419d74fe551c8f86e3a4075524b26f4e3c4537da70112fd866dd853d3afedc",
+      "audioHash": "a2df51da1660b5f2f2fc75adb167a15f7637157a3ae60f3c62e3960f686a614b"
+    },
+    "history-peloponnesian-war/0/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/85e8590efa2f9652a0ebef088d07014d621499e125bc0d24878e1b8a3d047030.mp3",
+      "duration": 58.368,
+      "bytes": 350208,
+      "textHash": "8f2db1404eaf608a5b17e48ded9a1be8c1a6758bc6b83af3060d09d84491e98f",
+      "inputHash": "206a1eedd12580346e36809f3583c656ac266f214e4737e9d98435e332a2014e",
+      "audioHash": "85e8590efa2f9652a0ebef088d07014d621499e125bc0d24878e1b8a3d047030"
     },
     "history-peloponnesian-war/1": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/d239e5d0d1b5fc06cb60b08cfb8611aec80a310b80df32d27c7b06372f09d709.mp3",
-      "duration": 13.272,
-      "bytes": 79632,
-      "textHash": "0511ee04f3fdc832e93d3d1e3cfd0e26fd533ec9f79f5aa6647692cd9f353bd1",
-      "inputHash": "1d1674b06c66031a48ba24ab354c27ecacab76c5ab03cbabc4576b57d4c27301",
-      "audioHash": "d239e5d0d1b5fc06cb60b08cfb8611aec80a310b80df32d27c7b06372f09d709"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/9b4db58902294c31bfdf7287d36ea17fd9db2262b09746ce4e3eff52e2681e21.mp3",
+      "duration": 57.024,
+      "bytes": 342144,
+      "textHash": "d9f205f4bc8eb4956a1d6249ee94b9bb710faf60de0f8509ca350ab1d4853f44",
+      "inputHash": "aec3ce6081ae3d0ebea106af934d85882d02d9143a5d26578447f20a6f2553d4",
+      "audioHash": "9b4db58902294c31bfdf7287d36ea17fd9db2262b09746ce4e3eff52e2681e21"
     },
     "history-peloponnesian-war/1/moment/0": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/14d2a761cdbcb5da3ec6ae4662c7374b0d3de4f74eab7fd7eddab2b772896bea.mp3",
-      "duration": 13.056,
-      "bytes": 78336,
-      "textHash": "be9c96eae5370e8cc8aca6c133761f50f964490fded00b71ec68baadc20af48b",
-      "inputHash": "23958e694c7bfb381e3528c26057fb16183fc003a7cd6062db50054743d289d6",
-      "audioHash": "14d2a761cdbcb5da3ec6ae4662c7374b0d3de4f74eab7fd7eddab2b772896bea"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/521859ab6c7fdae93972326c09e6398d0ffa75f49a339d8a5d4456f561bd075d.mp3",
+      "duration": 41.52,
+      "bytes": 249120,
+      "textHash": "e21eb278d6b38da48f2679c001e71fbdb9c980e9b2e782e45f0cc039a3f933d8",
+      "inputHash": "dc8027c00c16bc5f7c311ce715af4acf34f8efc7dddc460129b83bd7d61c273f",
+      "audioHash": "521859ab6c7fdae93972326c09e6398d0ffa75f49a339d8a5d4456f561bd075d"
     },
     "history-peloponnesian-war/1/person/0": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/56af37438e489f2b1bbf98ce949578c1380eae11766b6b239d60fee72acf5278.mp3",
@@ -410,22 +698,94 @@
       "audioHash": "6247457f45f2005ac6d0beb2c23e0543f3b83234d4faea0d59760b7e7012daf4"
     },
     "history-peloponnesian-war/2": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/fe56641fe5573b1e21d820201413e1a796917eac6973cca4dfedb02a8f701566.mp3",
-      "duration": 14.424,
-      "bytes": 86544,
-      "textHash": "7686c6a544598576a380acb9b24389663b8ea2fa658660bff3919eecbfb5fa60",
-      "inputHash": "6a20e9beabfc9751eb5dd0592e4d3cf5ac66b3d941ab53e788c516e811c87381",
-      "audioHash": "fe56641fe5573b1e21d820201413e1a796917eac6973cca4dfedb02a8f701566"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/e6c8a1c92cc4aabead8e23bce7cc0c38b8ac7571179318615f6733c1c2695788.mp3",
+      "duration": 60.072,
+      "bytes": 360432,
+      "textHash": "28a043f31ae8c886f6902fc81a45a8bf9793ac94384fed6c865d3c5e9246e721",
+      "inputHash": "ca41859f74fb09fe329038d52c6019c41b523ea8b5bc146b45ba78ff15c7c62f",
+      "audioHash": "e6c8a1c92cc4aabead8e23bce7cc0c38b8ac7571179318615f6733c1c2695788"
+    },
+    "history-peloponnesian-war/2/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/2ba1c71ae120ef190e1a3f61c2fee615918585e17e26b01aba5b2bb573713381.mp3",
+      "duration": 65.664,
+      "bytes": 393984,
+      "textHash": "7aca1a20c473f4a3f823cfbdc7aeb47d7eda08f4ba122ad9865437164a155e8e",
+      "inputHash": "9811463f57e6ab353bfa286f89111400ef4ac08f03e2ff01f020322852b493ff",
+      "audioHash": "2ba1c71ae120ef190e1a3f61c2fee615918585e17e26b01aba5b2bb573713381"
     },
     "history-peloponnesian-war/3": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/58fc5dd09b8479c8a463ce39bafa9ebb8e4865b131f3cfa703f1c57caf0c103b.mp3",
-      "duration": 12.216,
-      "bytes": 73296,
-      "textHash": "331dd49bb1d6c864593346651c3eb5b5381a739add9423ee6d83b20d71f8eb46",
-      "inputHash": "ac1765ae7b3f57a91a58c4c66dfd685387ab65411f4f2a76e7fb8d7ba3d42969",
-      "audioHash": "58fc5dd09b8479c8a463ce39bafa9ebb8e4865b131f3cfa703f1c57caf0c103b"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/40c3a0c0fcb57e377026bd9987b7ec93e62ee53b13c46cd9761223ab202f35b1.mp3",
+      "duration": 57.504,
+      "bytes": 345024,
+      "textHash": "73bc21f78e32f00c06e41c1a54c9ad8c2b6a8de7147f78f4f00e425eba654400",
+      "inputHash": "90e9fb727851de0272e57d5208e7f592d2ad6d9bcf390d1fcbc581141bd7581b",
+      "audioHash": "40c3a0c0fcb57e377026bd9987b7ec93e62ee53b13c46cd9761223ab202f35b1"
     },
-    "history-peloponnesian-war/3/person/0": {
+    "history-peloponnesian-war/3/moment/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/cf9aa216f6d959805f74a077d6239e6effd0e84b4a6ec18688ee462b10bc0897.mp3",
+      "duration": 38.904,
+      "bytes": 233424,
+      "textHash": "25ea143521b76d86f074a88df85cb51bdb494e676bbe46ff0285dde83f38ef5b",
+      "inputHash": "aefbb7a05fda7b9e0407aa048e0f07ea1672c126bb9bd9e82d658d0dbb6d1410",
+      "audioHash": "cf9aa216f6d959805f74a077d6239e6effd0e84b4a6ec18688ee462b10bc0897"
+    },
+    "history-peloponnesian-war/4": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/e40bbd3b8eca8feab1b58b771acee754069aa40a44c353f0a00df93dc81c49e8.mp3",
+      "duration": 61.416,
+      "bytes": 368496,
+      "textHash": "99382eb9327e4e69c54a207bd0d0c744bbb17c088a901cfa20db443db6159d76",
+      "inputHash": "5b0ab326299a74c1e682e34882347eb8c0ab803478dfbd2c61880b45fc8b96cb",
+      "audioHash": "e40bbd3b8eca8feab1b58b771acee754069aa40a44c353f0a00df93dc81c49e8"
+    },
+    "history-peloponnesian-war/4/moment/2": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/00e6eeece1eb81b07f0275c8076ab38beaab4856808113ae0eedb3c7c2097a41.mp3",
+      "duration": 41.688,
+      "bytes": 250128,
+      "textHash": "da1faf1c61df3accffd673929ac04411c1dd19a2f76cc036d68be5ba78bad9df",
+      "inputHash": "5c189cce4545564187718b5ba427c1cd051872fcfd043aac8d2e295315644cb1",
+      "audioHash": "00e6eeece1eb81b07f0275c8076ab38beaab4856808113ae0eedb3c7c2097a41"
+    },
+    "history-peloponnesian-war/4/box/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/6dc666b897b5a58234a7a529ba621f7debe2934d2e21b2bf632105616b520ce0.mp3",
+      "duration": 104.544,
+      "bytes": 627264,
+      "textHash": "281909c892940982b9ec5e407dd0cdd6720f740c88c7f48e2e132cfcd63cdb53",
+      "inputHash": "6404569cfc29278ec0066ba6605ec9a27a104b67efe49efa820c743f613d603d",
+      "audioHash": "6dc666b897b5a58234a7a529ba621f7debe2934d2e21b2bf632105616b520ce0"
+    },
+    "history-peloponnesian-war/4/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/4f61cc2211be3082eb62034d7d742a9559a29f4443ac9abd63a12c34a58a233a.mp3",
+      "duration": 70.08,
+      "bytes": 420480,
+      "textHash": "a68779b57eac1da1bc2fc44ef6c3f0bb57ee9aae3953916377e4b44395c1d7b1",
+      "inputHash": "573fba333233348354920e7aefc12adeb689068ee9fb6aa0deee307a78e2f6df",
+      "audioHash": "4f61cc2211be3082eb62034d7d742a9559a29f4443ac9abd63a12c34a58a233a"
+    },
+    "history-peloponnesian-war/5": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/5595b47d30c239645451476d94d39aa17751146c1ff68f9d2c56b87d2293261d.mp3",
+      "duration": 63.144,
+      "bytes": 378864,
+      "textHash": "61bef6c35c4313fdfa93b2bf33cab315af275490b4e309a2bd3835a0d0056bcf",
+      "inputHash": "47a25841310f373236fa2880c18e09a860a82afcc25d3f20cb6459a6ea44f67d",
+      "audioHash": "5595b47d30c239645451476d94d39aa17751146c1ff68f9d2c56b87d2293261d"
+    },
+    "history-peloponnesian-war/5/moment/3": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/da084f11ef21ac1b9640b8f187e43eddab0789be47741644bb5e6ee2cdc26456.mp3",
+      "duration": 54.504,
+      "bytes": 327024,
+      "textHash": "0e592575602c22772719445001346e5353eb17788e1750af91a4c7d445283053",
+      "inputHash": "088f593f7ed14215dfc4cee8502091eb892583cf1631835794c86860c42e0a06",
+      "audioHash": "da084f11ef21ac1b9640b8f187e43eddab0789be47741644bb5e6ee2cdc26456"
+    },
+    "history-peloponnesian-war/5/box/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/86b7a6c8bb59cbae7a9066a90a7d0027faa48e2400505d6235a9e46d69ff2375.mp3",
+      "duration": 83.448,
+      "bytes": 500688,
+      "textHash": "c4c5ef715ebe7b45df5394c795370607e40174c9eca14ac88b2ef0027afa89f4",
+      "inputHash": "170f1367439c0cbaeacc2bd32f51533d81c8d5ef44fe4aa4e2bb7780f6b384f2",
+      "audioHash": "86b7a6c8bb59cbae7a9066a90a7d0027faa48e2400505d6235a9e46d69ff2375"
+    },
+    "history-peloponnesian-war/5/person/0": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/04d1eea675a41555938b0e9a4a61adbb23bffa4a8f2680217af256d7b46127ba.mp3",
       "duration": 23.568,
       "bytes": 141408,
@@ -433,7 +793,7 @@
       "inputHash": "9dc174428041a95a827f66d8f8966ce84504957a7f93dbf46a5a18b06963fc8f",
       "audioHash": "04d1eea675a41555938b0e9a4a61adbb23bffa4a8f2680217af256d7b46127ba"
     },
-    "history-peloponnesian-war/3/person/1": {
+    "history-peloponnesian-war/5/person/1": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/57170348c3645375337b1cf05cc4784129d1b156acaaede03f31c048db0e9641.mp3",
       "duration": 26.712,
       "bytes": 160272,
@@ -441,13 +801,21 @@
       "inputHash": "6b552bcb91f772b8e5522ded8846026e02d9737cb06f4ad30476888f994f65a7",
       "audioHash": "57170348c3645375337b1cf05cc4784129d1b156acaaede03f31c048db0e9641"
     },
-    "history-peloponnesian-war/3/person/2": {
+    "history-peloponnesian-war/5/person/2": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/3f8fcc5bffe1e0ee04e3d4cba584383d772b7020860614e5960c0cd13cc07767.mp3",
       "duration": 20.088,
       "bytes": 120528,
       "textHash": "9a1c84de1361ff8ecb706bdc45422bff9a587306506f7f815f62aa31318fad58",
       "inputHash": "944d8a914c69ddc38b29e67940932e53e51a4a1e5bb1fd1fc7fa7bc67bc3eb20",
       "audioHash": "3f8fcc5bffe1e0ee04e3d4cba584383d772b7020860614e5960c0cd13cc07767"
+    },
+    "history-peloponnesian-war/5/person/3": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/b202168d7bf3fc8f31513a15f5c5f445363266bc896cf00875e036fd21e8ba19.mp3",
+      "duration": 65.352,
+      "bytes": 392112,
+      "textHash": "d537b909b7e77b3e33a4b9e0517edbc5728f4ed7fa281f14f40b8f55b0499871",
+      "inputHash": "b0089f17600b7ab78139e3d044ffe3250ff8996d473869897308319effabc16d",
+      "audioHash": "b202168d7bf3fc8f31513a15f5c5f445363266bc896cf00875e036fd21e8ba19"
     },
     "history-spartan-decline/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/cf21aec441a3d8b69501d46558f5f934030e29290b41ac160decadd192e0b4c2.mp3",
@@ -458,12 +826,20 @@
       "audioHash": "cf21aec441a3d8b69501d46558f5f934030e29290b41ac160decadd192e0b4c2"
     },
     "history-spartan-decline/0": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/05e96920ed7fda70038638c1fff587ecd8bb88dbf9ca2bfce7317e9eac49be7d.mp3",
-      "duration": 18.288,
-      "bytes": 109728,
-      "textHash": "42c66bad543f2f756dfbf27692fff439a2c9cfb93aa1fbcb39a5ee2e57ace1a9",
-      "inputHash": "9494807145228b19759aafcaa64a906b4b29564f0caf452e2ad6f4bf695db6ea",
-      "audioHash": "05e96920ed7fda70038638c1fff587ecd8bb88dbf9ca2bfce7317e9eac49be7d"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/a0b53b7888eccc48d8609e7fa6bd2310de6e2e6b38a3cd6c85952f014cee9b0a.mp3",
+      "duration": 57.336,
+      "bytes": 344016,
+      "textHash": "02ac1b5f78492ba7f76accc7ec7355055096afcaf820eb6f0e594cbab4d58f42",
+      "inputHash": "f86d190e0b7ee6153e0831828055e61c640c415e981d4cca6326d4942e5a6664",
+      "audioHash": "a0b53b7888eccc48d8609e7fa6bd2310de6e2e6b38a3cd6c85952f014cee9b0a"
+    },
+    "history-spartan-decline/0/moment/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/cd4353a85162949f6089c7cb2aee012cb468524b651addd68e812533239a3e57.mp3",
+      "duration": 45.024,
+      "bytes": 270144,
+      "textHash": "845a804e99833259a68cdbc1ccad501c990276d3f8010103dc561d5732b88821",
+      "inputHash": "a82399317e9d66bf295dec094eaa8f84b90e0ea5adee43ba1a7d40e59030d4aa",
+      "audioHash": "cd4353a85162949f6089c7cb2aee012cb468524b651addd68e812533239a3e57"
     },
     "history-spartan-decline/0/person/0": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/5e623cdcfdc4a8243560284a7aa0808a3b8c733857e21a98bd44733ca27fa8e0.mp3",
@@ -482,12 +858,20 @@
       "audioHash": "f0b13598478842a766292b752064dfed5f8f70ac39137309782207b18fe40d2a"
     },
     "history-spartan-decline/1": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/15a5371db7d64ecae1eef91ba526284557b947559ed693f0377bbcc4c77fb1b7.mp3",
-      "duration": 18.192,
-      "bytes": 109152,
-      "textHash": "f3593b9794f34273507c3be0c5942f50c495b0dcf264a562304baefccec1468a",
-      "inputHash": "00b68d3873c399d9032e08dea6cc3807e82915fee4f947001d9be66b2b0e4af9",
-      "audioHash": "15a5371db7d64ecae1eef91ba526284557b947559ed693f0377bbcc4c77fb1b7"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/b70ba2c871496ecee74b5a8d97930e10750a68bc690a1ff8df60b66924f88c6a.mp3",
+      "duration": 63.432,
+      "bytes": 380592,
+      "textHash": "831ab482893925cce53d01300cc988e477352190dc29823d907eb52b74a08534",
+      "inputHash": "9066b78e93871941c24c96fcd2a4b974cf73c9a0bf485529dcb7e2741bd82920",
+      "audioHash": "b70ba2c871496ecee74b5a8d97930e10750a68bc690a1ff8df60b66924f88c6a"
+    },
+    "history-spartan-decline/1/moment/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/4d8e4711eb50fefe863d275155e6e5a84d96cea4a4b27489c139185f356e7d1c.mp3",
+      "duration": 42.432,
+      "bytes": 254592,
+      "textHash": "f0acaee84d5a6d176122af86c5ca87719cf008fd2a1ca7f2b9e1486b1aac5279",
+      "inputHash": "0a6da828116f59f5948ad859289a7ec5f161177d0a081d64696f34c536078000",
+      "audioHash": "4d8e4711eb50fefe863d275155e6e5a84d96cea4a4b27489c139185f356e7d1c"
     },
     "history-spartan-decline/1/person/0": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/b08ad4a632dd313c7a14b196a44dde7522be9fe5794288b8313f2ff7c095e146.mp3",
@@ -498,20 +882,28 @@
       "audioHash": "b08ad4a632dd313c7a14b196a44dde7522be9fe5794288b8313f2ff7c095e146"
     },
     "history-spartan-decline/2": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/e1761a3e1c3a728c4b2001f63fb8b4ed86c8e98f90a3f39a28666f5cb1fa1bb4.mp3",
-      "duration": 17.616,
-      "bytes": 105696,
-      "textHash": "8260f183d51c04d59e1b9e070eb561a9bf4413ff00fd12fc0a922df92eeae4cf",
-      "inputHash": "d950e4cfa29edbe9a61283bda194c5b5b24b8a296d15374f45e78efa7e137c3f",
-      "audioHash": "e1761a3e1c3a728c4b2001f63fb8b4ed86c8e98f90a3f39a28666f5cb1fa1bb4"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/f43580a6e636528ec44ef60459c2acfd4398418ffa198e9467c1839170582ef9.mp3",
+      "duration": 61.584,
+      "bytes": 369504,
+      "textHash": "db85fad47cbf91d0b7531b08bdee620389b553f3e63c7d9e978907b095709ba6",
+      "inputHash": "6a9f191d743aaa667903bd898a23228d1ee55d8026a9322ff0531ee4f0ec8feb",
+      "audioHash": "f43580a6e636528ec44ef60459c2acfd4398418ffa198e9467c1839170582ef9"
+    },
+    "history-spartan-decline/2/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/d9da5b9d6c36157ec13af4b505bdf9b382d96c7a974da924f3904d2a9d02c822.mp3",
+      "duration": 66.888,
+      "bytes": 401328,
+      "textHash": "bfa6f80cec0da815ddb8c2e3e434683af50e7c0dd7b5e7f72f08028df57d668d",
+      "inputHash": "72a5af5485b55117759c55f78fa3747149b2e0d95bb85e2523b02c35efe235c7",
+      "audioHash": "d9da5b9d6c36157ec13af4b505bdf9b382d96c7a974da924f3904d2a9d02c822"
     },
     "history-spartan-decline/3": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/25d5b90b25c6bebf25e3cba483863d4bd52e28addae7f661b822398a05334b87.mp3",
-      "duration": 16.368,
-      "bytes": 98208,
-      "textHash": "77fe34516abfc8d4845b47183f91737315e6fd56328dd124bdb893a522d2fa6d",
-      "inputHash": "c3c0440f3d68098fa027dddeac0f32b0ad758edde09ee45411334ba0d2ac4756",
-      "audioHash": "25d5b90b25c6bebf25e3cba483863d4bd52e28addae7f661b822398a05334b87"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/3018c70e74696780aaf7b21544f5a6ab1ef55330482b748d4c3dafc05706d170.mp3",
+      "duration": 56.64,
+      "bytes": 339840,
+      "textHash": "aa98cb1a66f4e85bf326230b18143c2a0a05459185ce1c84ed84af69f82f4d75",
+      "inputHash": "ee44af7faaa22823a2aef655ab2972aae3259120f5bf19f55ecf92708f4a975e",
+      "audioHash": "3018c70e74696780aaf7b21544f5a6ab1ef55330482b748d4c3dafc05706d170"
     },
     "history-spartan-decline/3/person/0": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/089f503ffaf8ca7eda568b4748963236aa17206b91313874715a66c6ecdaeec1.mp3",
@@ -538,20 +930,44 @@
       "audioHash": "f8f476de3aa82ca1bdda68cce4ad38b59e9cf0f97b1ac3006e01aaefd4e0950f"
     },
     "history-spartan-decline/4": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/03719c90332d31461363f0ac12aa5cfa66b676e3e13f4cc818ac139cae769dc6.mp3",
-      "duration": 17.376,
-      "bytes": 104256,
-      "textHash": "32e03075fbe2ffbc01cd7f06d2ee1f153d3f8beb527dde54eea2271abe810ddd",
-      "inputHash": "3f39f4ea11378c879c79d4c49df7e6ccaccc45d558333344fd0961214737e445",
-      "audioHash": "03719c90332d31461363f0ac12aa5cfa66b676e3e13f4cc818ac139cae769dc6"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/7d5e26d8dc86023103573f88ab11c519f55374feaa03562ecae7477aab329405.mp3",
+      "duration": 59.088,
+      "bytes": 354528,
+      "textHash": "eefd71278677f5b5f36f03a6ed2564bbdd6909d52920044b222970ff2a1a5187",
+      "inputHash": "cd8f229056720a1c0562a587f283ff290a7494fecd5aea236cb50eb8bfa80b34",
+      "audioHash": "7d5e26d8dc86023103573f88ab11c519f55374feaa03562ecae7477aab329405"
+    },
+    "history-spartan-decline/4/box/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/e40b900146d601e87483f24de8b9c5d1c47ed1c2d17e136450be7579c808354a.mp3",
+      "duration": 103.584,
+      "bytes": 621504,
+      "textHash": "eb57e9d18de6711b121c5197cb7fc2d8c2e55e94ca63873e87f1cde5668f0933",
+      "inputHash": "27084b98787ce355cae439354a9a145fd59a9d7bf767aaf7e33b31fb2dae9337",
+      "audioHash": "e40b900146d601e87483f24de8b9c5d1c47ed1c2d17e136450be7579c808354a"
+    },
+    "history-spartan-decline/4/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/af91a206d52f89d439964568e2932c86102d21fb97d21e17d2e898b9839d889e.mp3",
+      "duration": 70.152,
+      "bytes": 420912,
+      "textHash": "c561dc48065929237d9d8ae51554a51873deee0096ff13bb03cca541c101c303",
+      "inputHash": "c7e28b34edb584eda4b6fa2a93f4a9aa321474ec650f8f8ede774cfbb762c31b",
+      "audioHash": "af91a206d52f89d439964568e2932c86102d21fb97d21e17d2e898b9839d889e"
     },
     "history-spartan-decline/5": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/3199c140b5cc81503ec21c5704e30c918ac2920df1420f8f52d2c28ad7f7236c.mp3",
-      "duration": 15.504,
-      "bytes": 93024,
-      "textHash": "b61592a8651f77ee519453bf88e1ea195b3549f0e1c746dc89e1f52f302545fb",
-      "inputHash": "c283a0a7624cd0efcd5b76cfc88e95aa7540e451d5d16a187c083b870052b0d1",
-      "audioHash": "3199c140b5cc81503ec21c5704e30c918ac2920df1420f8f52d2c28ad7f7236c"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/33532b07c8f61aa60aa97dc44a28961a561b242ca3d7ebb1a9053d16c48eafad.mp3",
+      "duration": 59.136,
+      "bytes": 354816,
+      "textHash": "1ed9ee20cf81e38cfd07c50e3ec81b8356b34530a933daff579ea93d1fe873b4",
+      "inputHash": "8d6367b82c870cb86d7365f23112f30e115522adfafe6f84c462bd8c08272beb",
+      "audioHash": "33532b07c8f61aa60aa97dc44a28961a561b242ca3d7ebb1a9053d16c48eafad"
+    },
+    "history-spartan-decline/5/box/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/a09f942431f25aaebeb6f7f200368ec95d0b0e6cb955da6fb46d30e95750dde5.mp3",
+      "duration": 104.688,
+      "bytes": 628128,
+      "textHash": "873e9345d84c9068c6c0a476c4ae2adb86e59ab17726908a811331bf7cae8227",
+      "inputHash": "e2c2d4e328176dc7e8399bb422754ae4ca4a764e5c34d10f026b5aaa6832ecc9",
+      "audioHash": "a09f942431f25aaebeb6f7f200368ec95d0b0e6cb955da6fb46d30e95750dde5"
     },
     "history-spartan-decline/5/person/0": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/223586785a0c7159c3a31d81a35e373bd6c052d3ad40452accde9ed7f9c869c8.mp3",
@@ -578,12 +994,20 @@
       "audioHash": "26c597b7191a1c344b1b8c78bafae4048d5f0d09f8018605aa21fcbc0d0331a5"
     },
     "history-macedonian-rise/0": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/c7707a2a1f416baa8bbf61435c033ecd49987f022519f2ca3eaaccb443045c79.mp3",
-      "duration": 14.184,
-      "bytes": 85104,
-      "textHash": "c8a0e6069e2fbf8f94da0b2c7f192655d7e5a1a0d38464caf589d10748529dd5",
-      "inputHash": "4768b548250eebe95ce92e7082c51b22304dfb3089b8851508641bd469fdd00e",
-      "audioHash": "c7707a2a1f416baa8bbf61435c033ecd49987f022519f2ca3eaaccb443045c79"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/4a0944126f80e70c347238e0a2a195ebb83fa3fc6ab645f61f228e0952ea31bf.mp3",
+      "duration": 60.12,
+      "bytes": 360720,
+      "textHash": "f7b542083d3703366859591f819f8f879e70ccb20f7cf8365608a85258a74375",
+      "inputHash": "10e8f650ee3168b042132282d731038ecdefbe0b34d0c6c0b1b104c09942be4a",
+      "audioHash": "4a0944126f80e70c347238e0a2a195ebb83fa3fc6ab645f61f228e0952ea31bf"
+    },
+    "history-macedonian-rise/0/box/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/610ae5570051441531ff76615f36ff390f33a75147117692fcaa4ed9680d4cfa.mp3",
+      "duration": 84.816,
+      "bytes": 508896,
+      "textHash": "93daad6ec694f94deb45875cf4f600e257e6280f11e3522224b36fe71db86619",
+      "inputHash": "d894014acd1c3702c067e8636540d5d815f4895514e30bf7da67f09e9b9ece17",
+      "audioHash": "610ae5570051441531ff76615f36ff390f33a75147117692fcaa4ed9680d4cfa"
     },
     "history-macedonian-rise/0/person/0": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/d91ebaf51e56adce87f204011d2543966ba6cc94cbe9fa186768b027694f4ee5.mp3",
@@ -626,12 +1050,28 @@
       "audioHash": "f488dc5288ee37416cd71ae8800fed14ac36f9df1a228d219af9d6283c3e6c52"
     },
     "history-macedonian-rise/1": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/d41bb6f8ea4728bd43ec2c606920c12cf777094ce6cf40ab9188d5df6d5a8990.mp3",
-      "duration": 14.976,
-      "bytes": 89856,
-      "textHash": "0d9173353367cbe4f1b1fcf27573c2204c4fa6c3994435938333ac23380696b1",
-      "inputHash": "76b6a281b605f0c901e9ab685f98f03ad03329c49b38da299c541eac6a7717ae",
-      "audioHash": "d41bb6f8ea4728bd43ec2c606920c12cf777094ce6cf40ab9188d5df6d5a8990"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/a8e7ec5aa8adc95af936588aaa4650dd1a0db23a7a32ea0f1a089dc6d3b04f38.mp3",
+      "duration": 62.904,
+      "bytes": 377424,
+      "textHash": "065d68d043f3053f2f755292abc46666476bfe9b5fbead71a10a4fd6c39dbaa7",
+      "inputHash": "b342319483a82691848e67962457eb907e1d6fa19858562a729d9fb0efed4bf6",
+      "audioHash": "a8e7ec5aa8adc95af936588aaa4650dd1a0db23a7a32ea0f1a089dc6d3b04f38"
+    },
+    "history-macedonian-rise/1/moment/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/fa0c377a1be96ce5b2994c3cef5e89526e42e2222339c340080d7e6942155377.mp3",
+      "duration": 40.8,
+      "bytes": 244800,
+      "textHash": "37b5def13b50e347b1116d65585cca84e4ff32caa3d1b7cc61c670705cb90c73",
+      "inputHash": "eaec09dcb74bcec44cdbfb778d1f40e3954217aa865e4c66c1bdbf9a885bfb2d",
+      "audioHash": "fa0c377a1be96ce5b2994c3cef5e89526e42e2222339c340080d7e6942155377"
+    },
+    "history-macedonian-rise/1/moment/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/92a18d801621bdbd989b12ab707e8c6b843c7b2bfa3e534d66ba477954ca47e5.mp3",
+      "duration": 49.056,
+      "bytes": 294336,
+      "textHash": "0e25b03068708e4ebcd7d0caecda9badda5f29c503c9df2728320d536ce2d82d",
+      "inputHash": "5f7968dd3f919db9f8785dc7d7e6159c47fbcaf28e469ffa40e8b70b3feb3d24",
+      "audioHash": "92a18d801621bdbd989b12ab707e8c6b843c7b2bfa3e534d66ba477954ca47e5"
     },
     "history-macedonian-rise/1/person/0": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/479dfaffab5d7800baed05e601472d298a79af5823f88efbfa7604a22323edb0.mp3",
@@ -649,21 +1089,45 @@
       "inputHash": "7dd3a78d42bc639969d5e662a53d806a00e7bf2d12c021a8c19c4e1ce019b148",
       "audioHash": "0c444f6d74ee4ee6e8b1c806c524b920483e65842b4da35406186010ac026797"
     },
+    "history-macedonian-rise/1/person/2": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/0f32523cbe79177d8cd31b08ccf3fae48750387457c56a6babb5e03f7886d667.mp3",
+      "duration": 74.472,
+      "bytes": 446832,
+      "textHash": "f7ec4d30916933404eafce9ea9b29c4e544089498b14bbd85e868fc7c554ee1c",
+      "inputHash": "4931cc50e4c1ba42802c4454030404f912d1ee0c08794ce5e7b565f0fe289a87",
+      "audioHash": "0f32523cbe79177d8cd31b08ccf3fae48750387457c56a6babb5e03f7886d667"
+    },
+    "history-macedonian-rise/1/person/3": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/c077100586a38648425c417ad3916bc3a8145e99ce9e5cce293b7a6dace1bc3b.mp3",
+      "duration": 66.672,
+      "bytes": 400032,
+      "textHash": "eb6189b50822683ebca6e016d5519fb0ef7f31ecd987a61772874646e8e82ebc",
+      "inputHash": "809deaef4e37fea2ba35862739b2da485265b582b5f6c1dac5e4cea4cafda49d",
+      "audioHash": "c077100586a38648425c417ad3916bc3a8145e99ce9e5cce293b7a6dace1bc3b"
+    },
     "history-macedonian-rise/2": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/62b0486b3675dd244c7ed8c2b611f1a196d9a3e465f197a034e7f8431a7883ec.mp3",
-      "duration": 21.216,
-      "bytes": 127296,
-      "textHash": "9a81134f7085134b17b394583dba2b37b00ad15cb64db5b84b6992c774189252",
-      "inputHash": "7b30286c7539bd33a4f154ce716189ab01509db518e9e29c2396c89bb84be1a3",
-      "audioHash": "62b0486b3675dd244c7ed8c2b611f1a196d9a3e465f197a034e7f8431a7883ec"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/c0456a6ce1234bc399a12bfc6452e620402c4839e8741623985550172e643b3f.mp3",
+      "duration": 62.424,
+      "bytes": 374544,
+      "textHash": "6d3257053b4b78949b91ec46b539dc639451838b80fe2e96c35d8a9eee2a495c",
+      "inputHash": "f558aac61b77efc2f87c7fe393c6a8148bb2f08e5cd326cc1f15c76d7df4a70e",
+      "audioHash": "c0456a6ce1234bc399a12bfc6452e620402c4839e8741623985550172e643b3f"
+    },
+    "history-macedonian-rise/2/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/d2ba93f8f0bdd8c8d60a173fd827768d70fa00d55e8ae146d0936872adda9588.mp3",
+      "duration": 66.648,
+      "bytes": 399888,
+      "textHash": "3cfd212dfa6482a6276707c8d0e2fd0c752b1294c10fb9f27cfc7802bb0f5b5e",
+      "inputHash": "c13081b7b04b2801d18b8d7db3fddbe944be8e4768ee38064d4d5bffa694b588",
+      "audioHash": "d2ba93f8f0bdd8c8d60a173fd827768d70fa00d55e8ae146d0936872adda9588"
     },
     "history-macedonian-rise/3": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/f6bfb0eb771dda2df3c57abd61595d847885a5945ebf07d430089a28895529b8.mp3",
-      "duration": 8.712,
-      "bytes": 52272,
-      "textHash": "04bf582d4bf8270d54cd3add1801d9ddf774d63eed98ba3553cd8d4b02e6bef2",
-      "inputHash": "2b4b5c2683f7e9cf9928cf6e57b15b03ce9fa9870c61aeb39f1e290d93be1423",
-      "audioHash": "f6bfb0eb771dda2df3c57abd61595d847885a5945ebf07d430089a28895529b8"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/07138873947227668e861d059dbb5ccd960bd3913cabcf2235ea4ad5dece3f48.mp3",
+      "duration": 58.848,
+      "bytes": 353088,
+      "textHash": "8b3b188742cb19cf95c4b1f4191e1f874bb68ca9c84320cbaddc440eafacd8ca",
+      "inputHash": "87c07c793a8bda494247255bc79ad015ff1a34345ccaf226fdf0b9e5c309db6b",
+      "audioHash": "07138873947227668e861d059dbb5ccd960bd3913cabcf2235ea4ad5dece3f48"
     },
     "history-macedonian-rise/3/person/0": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/c9a20eb2286025eb3348763f678cb128a3e002c069163a75c6c2cba953e81a08.mp3",
@@ -682,44 +1146,108 @@
       "audioHash": "545897eb70a962f1f23d6274b7b5d342fd5281637abedc250fe654e661c2af6d"
     },
     "history-alexander-conquest/0": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/bd8e63bd190cdd52f191dc56759d772128bf967d69eb4e54f751b08109f4edcf.mp3",
-      "duration": 27.984,
-      "bytes": 167904,
-      "textHash": "ba3a2e7675278371db5d86764c15d7aa09657b65c730e16b3f92f555c10a4b39",
-      "inputHash": "609a08f5d2e01ff131831e93752bab875a2fbdff85dfb7074effe121ab6f5f63",
-      "audioHash": "bd8e63bd190cdd52f191dc56759d772128bf967d69eb4e54f751b08109f4edcf"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/e6c5dfbd968eb45e3826ba9b7e1474596ba611acdfc268dbc44a3433a92e02ea.mp3",
+      "duration": 58.392,
+      "bytes": 350352,
+      "textHash": "f5569d14e551839fd5908b075f5f319799d374957260b8354d466c8eaa25e5cf",
+      "inputHash": "771b9dee1763009c198d7f232e1205f8a991214f42f7f95ea07119b0de8960cf",
+      "audioHash": "e6c5dfbd968eb45e3826ba9b7e1474596ba611acdfc268dbc44a3433a92e02ea"
     },
     "history-alexander-conquest/0/moment/0": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/929246fca026389c189c1fb831a668128c59b24cadbe818ed28b94afc2be9e88.mp3",
-      "duration": 11.928,
-      "bytes": 71568,
-      "textHash": "8be9908a8facc943ad892b03eb4a20e60d0d47114d93c84cbf563b9aa98f0912",
-      "inputHash": "4a1114701f47484814542b67401cb5c202afcdb980cd7ae8c8b3ea29507b46e3",
-      "audioHash": "929246fca026389c189c1fb831a668128c59b24cadbe818ed28b94afc2be9e88"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/e273a32b0926ba78e9e47d6cb0e563df6052f7228475a3312ac1e732407dc8e1.mp3",
+      "duration": 41.904,
+      "bytes": 251424,
+      "textHash": "02ded8b50158a1f68fb69fc897ddccb36c58987be9b6b736721f3a773bbe0b51",
+      "inputHash": "2c3600cc481c91bba7229a9725e9c046bb2fe6f61083821e622259abc752c5d0",
+      "audioHash": "e273a32b0926ba78e9e47d6cb0e563df6052f7228475a3312ac1e732407dc8e1"
     },
     "history-alexander-conquest/1": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/67f03783dd944746e33b4cc55187ac69853f14499d586399f0a1c762c1376356.mp3",
-      "duration": 28.704,
-      "bytes": 172224,
-      "textHash": "fbd7c369377973b2648f92f1435d82ea25bffcf64e0a1560cfaa44797d60d211",
-      "inputHash": "86243df1c8384672e439c5dcde4907ed98590cd4ab3aa00212535f8884de876c",
-      "audioHash": "67f03783dd944746e33b4cc55187ac69853f14499d586399f0a1c762c1376356"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/325648c1558815c9cca4de50a3dafede786757e589843288227eac9a97eb1306.mp3",
+      "duration": 62.688,
+      "bytes": 376128,
+      "textHash": "26f222fccf5e15cba39999d8acb374ba2df179dd4b05ecb75001f09d7dd0911f",
+      "inputHash": "a3e1ef0e37290b1e65f33c422eeb9a4a825426f14e9611636f25c399d4ea8e35",
+      "audioHash": "325648c1558815c9cca4de50a3dafede786757e589843288227eac9a97eb1306"
     },
     "history-alexander-conquest/1/moment/1": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/77318f69e92fb62dd9bb1064ca521efe850fed63044c73366731647a4979e5ec.mp3",
-      "duration": 11.856,
-      "bytes": 71136,
-      "textHash": "decaf4bd5d1b64adf11b955f225140433a2d8e129574d970cb7722a802872b72",
-      "inputHash": "262711084e55ed5f145e38efb310eafa7b84fd6c17c8410bba52a5eab9113e80",
-      "audioHash": "77318f69e92fb62dd9bb1064ca521efe850fed63044c73366731647a4979e5ec"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/533fb9c0a10d61c01d244660d52b0c0eeedb29b8e389a12ff81a3df286660d9f.mp3",
+      "duration": 43.128,
+      "bytes": 258768,
+      "textHash": "c65766a23d6078c84fd5be2c797f8a1557d2e6bbe40ded2dc23747beb3d3e9dd",
+      "inputHash": "541bbea846306758813c9458e068482e0cb9d9c235c2d433d82a63d2d555bebd",
+      "audioHash": "533fb9c0a10d61c01d244660d52b0c0eeedb29b8e389a12ff81a3df286660d9f"
+    },
+    "history-alexander-conquest/1/box/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/e29f57c86d166b2eb5d6c1e9e0877eb48871d347807f23ead0d647c5fba85592.mp3",
+      "duration": 82.584,
+      "bytes": 495504,
+      "textHash": "e66c65b7097d0ec618fa2e8d02fb364f26ec1491f6d714699bc5aa7d89c0fc2e",
+      "inputHash": "afeddb85f671f4b08a972c6b984c1950e5ebd5291fe8cc154dccdeb1aac4a0a2",
+      "audioHash": "e29f57c86d166b2eb5d6c1e9e0877eb48871d347807f23ead0d647c5fba85592"
     },
     "history-alexander-conquest/2": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/05df69c847db9b51a319616f0a474100fea3562954708cbc6699d438cd5486be.mp3",
-      "duration": 26.352,
-      "bytes": 158112,
-      "textHash": "d4a68d10b186c8e01b85f09efa8347bfd8829f0956c8c6c251b0e714a0ee538c",
-      "inputHash": "15828f8b2832d0fc23b58ac3c1c8a8a30ac0a4754471a0cfe665b49d8c763a38",
-      "audioHash": "05df69c847db9b51a319616f0a474100fea3562954708cbc6699d438cd5486be"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/4883664f14af9ce00c54b167e82a7be08b2b560abc2e3e9a8f986121ddd2253d.mp3",
+      "duration": 64.512,
+      "bytes": 387072,
+      "textHash": "191f39b6bdf32e7dd8e143638da7dfe4dc87c123fa010558882336213981119b",
+      "inputHash": "b958a5a7f6082540614c7ac9e967b71855200c8e55a6b9d3e442cd3c8aed0b65",
+      "audioHash": "4883664f14af9ce00c54b167e82a7be08b2b560abc2e3e9a8f986121ddd2253d"
+    },
+    "history-alexander-conquest/2/moment/2": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/0dc2dcd19f704d8fd1833cde597b8f5ebed5f9f329abc9e4f171a24de80751de.mp3",
+      "duration": 42.024,
+      "bytes": 252144,
+      "textHash": "0b34ed182c456015fa97cfeb02d913cee18f373097e3346cd3003e8252d2d816",
+      "inputHash": "d4e4f30ea471bd7c68c252549fc5d17d1136b498ba698b65ef12072cb8d30cbc",
+      "audioHash": "0dc2dcd19f704d8fd1833cde597b8f5ebed5f9f329abc9e4f171a24de80751de"
+    },
+    "history-alexander-conquest/2/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/f88363508daa2f021a200fca0d32745682d8314eba7977c2de2f7bfc29f47076.mp3",
+      "duration": 68.904,
+      "bytes": 413424,
+      "textHash": "a8781b43363fb100ffa11914e63f50192863c659ac950beda4665c0d0ab481ff",
+      "inputHash": "be65198ffcaa2805b00cb4f2b6483c0427d60840ac79690b5315619ae53aa131",
+      "audioHash": "f88363508daa2f021a200fca0d32745682d8314eba7977c2de2f7bfc29f47076"
+    },
+    "history-alexander-conquest/2/person/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/e0abde89b442c069711237a31d4543cb868d1c5421a46e5dde0d14f6b09f61b7.mp3",
+      "duration": 66.816,
+      "bytes": 400896,
+      "textHash": "13063927a13d3dcef9631006392b68be14d79e5fbf86ad25cceff34f200d6f6e",
+      "inputHash": "876232ab8c0fa2fa38a74008c82f772effa3f5819659999995f01f45355e2de6",
+      "audioHash": "e0abde89b442c069711237a31d4543cb868d1c5421a46e5dde0d14f6b09f61b7"
+    },
+    "history-alexander-conquest/3": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/8e6afab1f28997915ec370b0c9f93aae04578db079b6444882ab7984fe1a6fe7.mp3",
+      "duration": 57.624,
+      "bytes": 345744,
+      "textHash": "49e3e8fc5111e30b2896101f7735dcb0a62a65fbd6efd416fa1c07d3294fda13",
+      "inputHash": "ddf09d8bbd62d49c30fcd7b7836d79c5acd92dc413f8d172537fa9a697a128a3",
+      "audioHash": "8e6afab1f28997915ec370b0c9f93aae04578db079b6444882ab7984fe1a6fe7"
+    },
+    "history-alexander-conquest/3/box/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/cd387dc67628bb232e83d6e82db519e8aaac3aa2df769270333e41ff070dd702.mp3",
+      "duration": 97.224,
+      "bytes": 583344,
+      "textHash": "e6439a81939f7d71be7ba5b895c95ce89f704722216b26a14c614f70604811c4",
+      "inputHash": "a88a72e5e1414396e2b18bef05f0dc0845d98220303c48bc36989ed150109d88",
+      "audioHash": "cd387dc67628bb232e83d6e82db519e8aaac3aa2df769270333e41ff070dd702"
+    },
+    "history-alexander-conquest/4": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/eb5c18c93a27cac7e1a4b6b230c35a8fa424f02fcb463f1a4b0c4c703d694703.mp3",
+      "duration": 65.832,
+      "bytes": 394992,
+      "textHash": "9acca86917e9fccf0c24b3cccc52ce2b083c61c6c7d9caf81c37e262fd10d09d",
+      "inputHash": "3ed72b5e0a2d5ead8b89162c703721f6c8bc173da006386b1ec1be8de768864d",
+      "audioHash": "eb5c18c93a27cac7e1a4b6b230c35a8fa424f02fcb463f1a4b0c4c703d694703"
+    },
+    "history-alexander-conquest/4/moment/3": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/2f4c578cd2c0b234fc118525cf5b175539cdf308e7986ba1635a43f638e33c05.mp3",
+      "duration": 47.928,
+      "bytes": 287568,
+      "textHash": "4e0a4b4dceaec1c72881ba1d4f1a0ad427d03955c05e5335d371f92fa77b6ddc",
+      "inputHash": "1755bf1663ec6e6c388bb74494a5dc94c934b0d9aca69610466f978d342c0374",
+      "audioHash": "2f4c578cd2c0b234fc118525cf5b175539cdf308e7986ba1635a43f638e33c05"
     },
     "history-alexander-rule/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/c3b21e18bf67e5937c5b800dad5528468b930508aa4c671bbd53d7b99f8318cd.mp3",
@@ -730,20 +1258,20 @@
       "audioHash": "c3b21e18bf67e5937c5b800dad5528468b930508aa4c671bbd53d7b99f8318cd"
     },
     "history-alexander-rule/0": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/9fb2c68cc3cb47b4de9df1c15081966656c590e057dd9ebd8db0ddb432d3ff46.mp3",
-      "duration": 19.224,
-      "bytes": 115344,
-      "textHash": "b1c41fd1ccc095229324078d28a380667b87b1e1da26e88b9daeb76626597bf3",
-      "inputHash": "bccbab2ffe47c16c7a552b404b9190de83552ee5281ba30af2eac3d30f55ba7b",
-      "audioHash": "9fb2c68cc3cb47b4de9df1c15081966656c590e057dd9ebd8db0ddb432d3ff46"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/1ddb308d8b3c39ec1b7ab00b5fcf7d3e8be702d948b6484e8f41907d208c9bf9.mp3",
+      "duration": 53.616,
+      "bytes": 321696,
+      "textHash": "cfb8796c91412edc0f3bcc05017accd05f24985ad895309745eb6c60eb57885a",
+      "inputHash": "9236c428cd826e26b0360477e3afd8bbb96071da9f77c55c1014cd5b6f4907d8",
+      "audioHash": "1ddb308d8b3c39ec1b7ab00b5fcf7d3e8be702d948b6484e8f41907d208c9bf9"
     },
     "history-alexander-rule/1": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/bebe9fb84d31367dd5ea80e9c1e4c1151bc561f88bbce60544007b46c5206002.mp3",
-      "duration": 34.44,
-      "bytes": 206640,
-      "textHash": "08ac38acb86f94ad3636d552744881de4ae072cca3f5aa7f1e154a691d6bb460",
-      "inputHash": "50858ed7a286e8e2cd4b42044e798b41a6d9dc857b63b9a86d063b157866e5d8",
-      "audioHash": "bebe9fb84d31367dd5ea80e9c1e4c1151bc561f88bbce60544007b46c5206002"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/c4b151a4e13b282c57e6bd1389908cf2f4881c8cc189cdd1effd8f1d66c63a41.mp3",
+      "duration": 65.472,
+      "bytes": 392832,
+      "textHash": "c5c80a7196b89f71d241c76b58d6c0ed1debc0b93a53a4befe33418e2f8ff215",
+      "inputHash": "cbcdf612d2242b891781fef83a988cd9fd607e28f55ee3f85db79377f1d68210",
+      "audioHash": "c4b151a4e13b282c57e6bd1389908cf2f4881c8cc189cdd1effd8f1d66c63a41"
     },
     "history-alexander-rule/1/person/0": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/f8db7e987f9e011a02e760c4730a41c25c8b3a2dfc6b3012b26fce0990f0eaf8.mp3",
@@ -754,12 +1282,28 @@
       "audioHash": "f8db7e987f9e011a02e760c4730a41c25c8b3a2dfc6b3012b26fce0990f0eaf8"
     },
     "history-alexander-rule/2": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/8649be2b9d3ea9ba81401e4a894d794b6648533fc4c0aacc32edc0d90d138a6e.mp3",
-      "duration": 27.552,
-      "bytes": 165312,
-      "textHash": "365ba4feb8142a41d6c597360ba7059d6a59fbb9d52572a34e16e5923c9b0a5e",
-      "inputHash": "0bf16fd45120605c41e24950a0e02965bb37490bceb5ea47c44d7a6788dbc009",
-      "audioHash": "8649be2b9d3ea9ba81401e4a894d794b6648533fc4c0aacc32edc0d90d138a6e"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/cdc481892f55e1029e7c4cbaa2b103692e5b532e66a04012e2db62cc71238fa0.mp3",
+      "duration": 62.928,
+      "bytes": 377568,
+      "textHash": "520f69caade1d6b0c71b6856a3561a43b5eb5662d016724a74500ab83ceac1d5",
+      "inputHash": "9ecdd630bcb62061b624c99f39b10d852696555150e7290d767890c9a829da58",
+      "audioHash": "cdc481892f55e1029e7c4cbaa2b103692e5b532e66a04012e2db62cc71238fa0"
+    },
+    "history-alexander-rule/2/moment/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/8cb0f5e63d2b5467648cdc7acb85e456b45e4b2dfdade13d6e0c7a87f4ab3774.mp3",
+      "duration": 52.776,
+      "bytes": 316656,
+      "textHash": "aa3db6881af7c1cb79a9a12b4df17528a14789f8b05385784bf6babe384b1e7b",
+      "inputHash": "d7f8d767170c450d152b8c7b415a5569e1cba189fb6707aef03881d2837471d8",
+      "audioHash": "8cb0f5e63d2b5467648cdc7acb85e456b45e4b2dfdade13d6e0c7a87f4ab3774"
+    },
+    "history-alexander-rule/2/moment/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/7d05fdda24afe8a10a4a95e39f354ee4d274fc0afaf7abc89e7186c6d7b07547.mp3",
+      "duration": 53.952,
+      "bytes": 323712,
+      "textHash": "1cb8e6c4fe05f66257e9d14c5d25609e8e8e217c039a232351ea42330d21ff5a",
+      "inputHash": "4efae99a4379c3e5a8e8cf7915df1567e652694b3702c0e80dd339d0a5548ca4",
+      "audioHash": "7d05fdda24afe8a10a4a95e39f354ee4d274fc0afaf7abc89e7186c6d7b07547"
     },
     "history-alexander-rule/2/person/0": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/298a2d147fef92af242afb9b0a040262da0b70a2d8d98d9452496db08b3824b9.mp3",
@@ -778,12 +1322,20 @@
       "audioHash": "5aea0e7f5c4744c40d289f94a53162b992e7f2272645df2bddbf7da3ee8c96aa"
     },
     "history-successors/0": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/1eabf1c315cccd9340c8f2fc8029e74c1ebb0797c3b2931d02f0a5adc99be8ae.mp3",
-      "duration": 26.136,
-      "bytes": 156816,
-      "textHash": "b930381db903c71b5e6f81002b2425396eb65310a0774f69d52391cb2fc482ed",
-      "inputHash": "2587619723395dbfaea0aa8bce19305d26c83da17cba023b496f7c302d083a0e",
-      "audioHash": "1eabf1c315cccd9340c8f2fc8029e74c1ebb0797c3b2931d02f0a5adc99be8ae"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/25e7986c4d462ceecf2da8d0f665ca4f12f4f24bd63f3f0bb985276d1a9fff78.mp3",
+      "duration": 56.664,
+      "bytes": 339984,
+      "textHash": "cace80760a354af63df932d5ad1d48ad634308d6b5c11ca910f6381ba7c96f71",
+      "inputHash": "a90a996d8cb8f74339c3a1231b67c8f3f02be01229e68820491d2f89bf7b747b",
+      "audioHash": "25e7986c4d462ceecf2da8d0f665ca4f12f4f24bd63f3f0bb985276d1a9fff78"
+    },
+    "history-successors/0/moment/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/28bd85ea84aae6098a5d0d81d3a006477f9d0a017cf8b8107795cf8cb66896d3.mp3",
+      "duration": 50.448,
+      "bytes": 302688,
+      "textHash": "05c4bb33ec2a74f5b8a694aad42985c3a4c0751f9af8c828b19de66961a7c9a8",
+      "inputHash": "8a8af8702831e7e0544572b1fd102bd877bf121ea7a7dbf65e18074fabcbc508",
+      "audioHash": "28bd85ea84aae6098a5d0d81d3a006477f9d0a017cf8b8107795cf8cb66896d3"
     },
     "history-successors/0/person/0": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/9d3decb2f8da8cf2d927533d3ee630a6c3bd38d4fd82a465f3bfd3f2fcd34afa.mp3",
@@ -801,21 +1353,61 @@
       "inputHash": "8448f39c838d5d1ff4e8920ba0bc2dcc90d0cbce440e1ddff9bafad02dd876ac",
       "audioHash": "28f3890ff600fbcdd6edca35887585eb161c85121ba128853e8a914faae3b8fa"
     },
+    "history-successors/0/person/2": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/efa446cf4aa93f041566997b4890036bf08b78bff095b898db37b41c12ceee80.mp3",
+      "duration": 68.568,
+      "bytes": 411408,
+      "textHash": "9a891e91e5e22060b28b7807529238e64fe2e357f1cc37d861befab6579cd105",
+      "inputHash": "7390f4ad80da78daf914d5b878856739eedae5c42b0bcd1e40de38ef9880f4ca",
+      "audioHash": "efa446cf4aa93f041566997b4890036bf08b78bff095b898db37b41c12ceee80"
+    },
     "history-successors/1": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/578e8f9c7679e95a570e8fd67969968aba80470bfeeb17211466bda15101e4ab.mp3",
-      "duration": 23.448,
-      "bytes": 140688,
-      "textHash": "88336d51f369dfc1d7f955e8ec76a8dcbb3966dbe48dc5297a6efd4783d81d1c",
-      "inputHash": "c78a72f22f0a067fa6b42af9f3d01b759ebed1ffe834942bb82b96a698853832",
-      "audioHash": "578e8f9c7679e95a570e8fd67969968aba80470bfeeb17211466bda15101e4ab"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/5c4fd7474bb9d186be72f9f68ebea8e97b21926847a69a2e1d63b74d13d951ca.mp3",
+      "duration": 60.624,
+      "bytes": 363744,
+      "textHash": "01395bd84f2b6781e3d6cc3077ffeacec7d8124fbc67eb355a67c6df699ce3f5",
+      "inputHash": "d5a3e07552eae11777d61ad9f9fd455fa2cee41fd6a614261c854889fe89210a",
+      "audioHash": "5c4fd7474bb9d186be72f9f68ebea8e97b21926847a69a2e1d63b74d13d951ca"
+    },
+    "history-successors/1/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/a53c6b204683dda01707a6fe2b6e7d1f9c8a25a506e215bb0b05a9e4a1c371b0.mp3",
+      "duration": 68.904,
+      "bytes": 413424,
+      "textHash": "57072a73d428579822e2600144c5c41e0fb524973196d691c572e61612a61ffb",
+      "inputHash": "c52c8b08739ed50c75e023cfdb6c0e6f30fe44ceecece3a0c91a4495a0deb4ef",
+      "audioHash": "a53c6b204683dda01707a6fe2b6e7d1f9c8a25a506e215bb0b05a9e4a1c371b0"
     },
     "history-successors/2": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/82387cd072362e09213316eb5c3d5cf7a8c9f51990185aaabcce64cc3621fd16.mp3",
-      "duration": 24.552,
-      "bytes": 147312,
-      "textHash": "ac27b427a4c5eab94b630f4290aa6ba49b1ee5397e206ba1c32a521108c61053",
-      "inputHash": "6760e6f630fab2a95b2f498a9a4a9b1461a5a922ee6483312935950f9af967d3",
-      "audioHash": "82387cd072362e09213316eb5c3d5cf7a8c9f51990185aaabcce64cc3621fd16"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/ad77017e78a066656e31ff91dab1648346a6e6cdfc66c7fe69336c0b2e9c71f0.mp3",
+      "duration": 56.328,
+      "bytes": 337968,
+      "textHash": "e69e881ad76bf1584f86d62becfe935e56e143cd0678e39cbc3434ee8772917c",
+      "inputHash": "42ea35fd5b05c26898bf722f7b4f174b7714d31922eb05ef4517610f8dd6c236",
+      "audioHash": "ad77017e78a066656e31ff91dab1648346a6e6cdfc66c7fe69336c0b2e9c71f0"
+    },
+    "history-successors/2/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/5834424aaa1b003e1621febd278821431302c1a99612daaef7841d9c31b7e405.mp3",
+      "duration": 77.208,
+      "bytes": 463248,
+      "textHash": "7dc13129f9d134a4dfde62a4a9b61533d58395ccbf753ed32168b1acd9f8a60a",
+      "inputHash": "c1bf9f04a71dbfb21d9eb433410cc4b2c3ace621501e2a64a74b3bd25968671a",
+      "audioHash": "5834424aaa1b003e1621febd278821431302c1a99612daaef7841d9c31b7e405"
+    },
+    "history-successors/3": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/81ff4c07d86bf87a7d09605193da440b89f3ff67b370caf0eb70da595ec4a96b.mp3",
+      "duration": 64.128,
+      "bytes": 384768,
+      "textHash": "af706685d3dad00c464f5f24f53a764473271185006967a4a49e84a177e878b2",
+      "inputHash": "635b6feffbbdb5240cb286f935db7e736e92bfba727a2ada69e92cc19500f738",
+      "audioHash": "81ff4c07d86bf87a7d09605193da440b89f3ff67b370caf0eb70da595ec4a96b"
+    },
+    "history-successors/3/box/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/2a0d2da67dfa781482936ad7f8b9c54cb6cbc983b011ad638a308e29f7d1f31a.mp3",
+      "duration": 81.48,
+      "bytes": 488880,
+      "textHash": "b2b06e039baab164b96bcc20e72f402df92ecd717c9b389fbd1226509b284381",
+      "inputHash": "16722a34d7f2b48756030470709f4ab01b6ec4e772a332b80ef5b3d75c295e56",
+      "audioHash": "2a0d2da67dfa781482936ad7f8b9c54cb6cbc983b011ad638a308e29f7d1f31a"
     },
     "history-hellenistic-states/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/6c799df9e82b6d94f0a27da0814270f9e29d78b57dfc0e7133081b98ffb87142.mp3",
@@ -826,36 +1418,60 @@
       "audioHash": "6c799df9e82b6d94f0a27da0814270f9e29d78b57dfc0e7133081b98ffb87142"
     },
     "history-hellenistic-states/0": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/f84059dc383d15c3a3a98fa4529a042bbdd183e3cd923af36964841d23402c4f.mp3",
-      "duration": 18.336,
-      "bytes": 110016,
-      "textHash": "7efd70e4751f4e180551c76711a1cd38ac943e6cd00ea4e4201b02ceae898b65",
-      "inputHash": "9c66d78342c43dc1169165add0d44f445c98864d75379c773dd599b16992ba55",
-      "audioHash": "f84059dc383d15c3a3a98fa4529a042bbdd183e3cd923af36964841d23402c4f"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/5400d7a066a74ea41af0360e3e5ebc6f4dc8c1b728db2fb488cb2414f8cbf4ad.mp3",
+      "duration": 56.664,
+      "bytes": 339984,
+      "textHash": "22ff9b05d34a8636ccf485b1aece7d0405eca99f8d2aa2c2739d0b683ddbd3a9",
+      "inputHash": "31fd29ff7a9bd886991a13150b7a9bd3c3eb3fefc247e507f9ca35a2b3a741af",
+      "audioHash": "5400d7a066a74ea41af0360e3e5ebc6f4dc8c1b728db2fb488cb2414f8cbf4ad"
     },
     "history-hellenistic-states/1": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/5c6618654b37dbea5dfa0bc983cef9f7b67b3aa1d5bfa4ce843aa5e9bc19f23a.mp3",
-      "duration": 15.264,
-      "bytes": 91584,
-      "textHash": "6369e690a3f5dfdfa5af13c3599f1448164aa89e2c2f6fc21d5110a038b130fc",
-      "inputHash": "6d6a33ecadccc8df7661ea7ad032d29e566f2c7002ea936922a78054c39e7354",
-      "audioHash": "5c6618654b37dbea5dfa0bc983cef9f7b67b3aa1d5bfa4ce843aa5e9bc19f23a"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/0fd05043a04cbac2017a83161a433ecc34c37205539f4f34b6b65d0e6d6c5480.mp3",
+      "duration": 61.776,
+      "bytes": 370656,
+      "textHash": "0bc391c48cd7201a733f1355fce3cd3bdd8ffabaa7740da5ff9d6eaf627dc387",
+      "inputHash": "1330a72ea5830c7c84df0f56ed9e9ff98a1cd658c7ad8d2d955931559e977486",
+      "audioHash": "0fd05043a04cbac2017a83161a433ecc34c37205539f4f34b6b65d0e6d6c5480"
     },
     "history-hellenistic-states/2": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/5798cd514264da043de5a63b05ac2e87a34ca4f97eed4fb07d38ffb546c22cbc.mp3",
-      "duration": 14.832,
-      "bytes": 88992,
-      "textHash": "2d30123847d717f703be84af4a21c369e5480c6f667f5fbf9b898c160ebbbd7a",
-      "inputHash": "682f37fd32ba53d3ae4c4b4d540032a75a46a125c08878c3a496b663735e800f",
-      "audioHash": "5798cd514264da043de5a63b05ac2e87a34ca4f97eed4fb07d38ffb546c22cbc"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/503590ab50cc1cf2bca124383262f37232c8bc5879898557934255bc2f00a25c.mp3",
+      "duration": 60.888,
+      "bytes": 365328,
+      "textHash": "43f90e5cbd458959db497daf141a36d13bb8831658e615b1f1d839904af65e8e",
+      "inputHash": "f6f85944ac447c00e4040cfe23e587e6359d3979585e82101e41be7f95b475d9",
+      "audioHash": "503590ab50cc1cf2bca124383262f37232c8bc5879898557934255bc2f00a25c"
     },
     "history-hellenistic-states/2/moment/0": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/6097914f23aef5a4ad484782a95b96d5176fd0d9e30d6659e790732ce5f132cc.mp3",
-      "duration": 13.32,
-      "bytes": 79920,
-      "textHash": "a1efafb5bdd62c059caf19a43e768b5ead984b63fa9da0105f46374ac23b802e",
-      "inputHash": "63acc35e693cb1cffad2ee0b67a4aafab7da548353d2211729ee38d366c706a8",
-      "audioHash": "6097914f23aef5a4ad484782a95b96d5176fd0d9e30d6659e790732ce5f132cc"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/693f2fa375491a67068305e6e0e2ca68454665f40b4eae4cef1c4eb7cf4c645e.mp3",
+      "duration": 50.016,
+      "bytes": 300096,
+      "textHash": "9c3df28a9868aeec36597db60d13ba0dc1f7d011f594658604479515ed439b94",
+      "inputHash": "3e38705332486c755af40dc965b0145e165d181326a9b0f1a5ff90afbae510ab",
+      "audioHash": "693f2fa375491a67068305e6e0e2ca68454665f40b4eae4cef1c4eb7cf4c645e"
+    },
+    "history-hellenistic-states/3": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/d733c964a8494c6f31fc987a117f4ef43b93bbd7b5825011aec6b9c94ff4e57f.mp3",
+      "duration": 63.096,
+      "bytes": 378576,
+      "textHash": "5fe76c192293501a8caafd7df6345ebbd827fcb37bad295a50aa1a4f6b1195cb",
+      "inputHash": "7bb22c69cda81e7da0e7766a6edc930e51ebbb93e03be04ecf7f7f7b518aaf06",
+      "audioHash": "d733c964a8494c6f31fc987a117f4ef43b93bbd7b5825011aec6b9c94ff4e57f"
+    },
+    "history-hellenistic-states/3/moment/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/6a476abc429c7458526b417b07bbea3eecb8aa0acaa9b550ee35e82bdb2d7231.mp3",
+      "duration": 48.48,
+      "bytes": 290880,
+      "textHash": "b36c8aaf0cf71e7a18e7be8a9f292dd1d6e61dad40afc901d6beca545beac0f0",
+      "inputHash": "80997ea65835e2045dec4f26c40cccbbaf3417465bb8d2c4c9281862e978a44f",
+      "audioHash": "6a476abc429c7458526b417b07bbea3eecb8aa0acaa9b550ee35e82bdb2d7231"
+    },
+    "history-hellenistic-states/3/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/e5b500272f462ea3c52866e5e3d463c73ce2643ef2245f06a4e08aaa50af124c.mp3",
+      "duration": 64.032,
+      "bytes": 384192,
+      "textHash": "52b7bfdf2f617e7941ceb24ea14ebe39bef61777483cff4fb6c7ceb4a4e2b07e",
+      "inputHash": "4fe04e4966a78187884e359b096af886478d5ed29b5c5c9037935e58f0ddb28b",
+      "audioHash": "e5b500272f462ea3c52866e5e3d463c73ce2643ef2245f06a4e08aaa50af124c"
     },
     "history-hellenistic-knowledge/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/302bfebc863bed98fa473450fb9f49895aae11757103568e47b845d116feb51f.mp3",
@@ -866,12 +1482,12 @@
       "audioHash": "302bfebc863bed98fa473450fb9f49895aae11757103568e47b845d116feb51f"
     },
     "history-hellenistic-knowledge/0": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/0988c6505c9e687ec67b76a77a09367a5ff51e9ec8d34e2c3f6e7cbc66db16f1.mp3",
-      "duration": 18.48,
-      "bytes": 110880,
-      "textHash": "63556fbe94b99bcbd7e8d4955c9cf7cc7617cdedaca1b484e086ae2d2f166295",
-      "inputHash": "6b8354efef8f11c391724f2baddf71eb5daad3052b4a1f5e5b9fa7fbe306eb7f",
-      "audioHash": "0988c6505c9e687ec67b76a77a09367a5ff51e9ec8d34e2c3f6e7cbc66db16f1"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/c1ba60142d8da488eeb76574be9424b6ff5e34e78169a07231e5604ac89acbb9.mp3",
+      "duration": 62.592,
+      "bytes": 375552,
+      "textHash": "6f9145f788c486d65d8b7d5cc543d41c7614710af5ff06c5a93bbd028b7611f4",
+      "inputHash": "f9caf4e7306cfffad15368bb98df4d2d7ddb3d0f7dcb201a2cfebf273370d0e9",
+      "audioHash": "c1ba60142d8da488eeb76574be9424b6ff5e34e78169a07231e5604ac89acbb9"
     },
     "history-hellenistic-knowledge/0/person/0": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/8b2cb563217fae522d72d322de7509065c0eb653ee65b7a87555177a4488c3a9.mp3",
@@ -890,22 +1506,46 @@
       "audioHash": "678daaa0d8661b23b4ab39a3d8403b142c69a7ada82c02c845d2c0380d9a4271"
     },
     "history-hellenistic-knowledge/1": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/b8db0bc7e0df7aa1cf9d7d5903efd9d7cec1ab76902dab793278afae853c4609.mp3",
-      "duration": 16.92,
-      "bytes": 101520,
-      "textHash": "9e6f6a36edefc4783348de9d60377aa9d51c250e83f8824ba0ccb3ce95ac5158",
-      "inputHash": "7050bb502df8f3b726d26f8e1925f50860cf205ed5417955fb4e953317401945",
-      "audioHash": "b8db0bc7e0df7aa1cf9d7d5903efd9d7cec1ab76902dab793278afae853c4609"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/5980d44d4044194b2fc65da48404adba2a2c4ac8c6ec02dbdbbc1b73cbb1d94d.mp3",
+      "duration": 58.608,
+      "bytes": 351648,
+      "textHash": "0eae82bb7f74aaac6bc0e4fe5ccab575a05a87e6099b5e0f8ecf3551373dc5e8",
+      "inputHash": "94f523640b0bee7643a2089f379a99dac647eec152ae00e27c5ca64762160cbe",
+      "audioHash": "5980d44d4044194b2fc65da48404adba2a2c4ac8c6ec02dbdbbc1b73cbb1d94d"
     },
     "history-hellenistic-knowledge/1/moment/0": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/260bd558e50fa07c5696a44405c19e49973ebe80ae48485be13f8e5a1a18a973.mp3",
-      "duration": 12.84,
-      "bytes": 77040,
-      "textHash": "fe1dfd6c2aaee566556fb8288a06ba480ad0aa7b93892ccaeca4e368aa421087",
-      "inputHash": "bc969cc1320e2756feff16fa0971f441fe56c4e2d426cb6b2dab5d2ac90ef954",
-      "audioHash": "260bd558e50fa07c5696a44405c19e49973ebe80ae48485be13f8e5a1a18a973"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/1788f3b007016d66a83a05c06bc2b64822221cdea339097e4d223ee77a1119c5.mp3",
+      "duration": 42.24,
+      "bytes": 253440,
+      "textHash": "df993af316908af230c02500b10e03c90b0bc5bbfc03f16fe38f376dd81756f4",
+      "inputHash": "f9a54d09e7afc50741ed0a401d025ea9bbdef7d8f709806dd2037451da83972a",
+      "audioHash": "1788f3b007016d66a83a05c06bc2b64822221cdea339097e4d223ee77a1119c5"
     },
-    "history-hellenistic-knowledge/1/person/0": {
+    "history-hellenistic-knowledge/2": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/5b01086a7f34e572c0cf59ad9db645d19b2d9583b3cee140d90ea987a5ecc015.mp3",
+      "duration": 64.632,
+      "bytes": 387792,
+      "textHash": "eba8754867355c072f27011151badf151ad978648a7ed77c96597586370d2b9e",
+      "inputHash": "6e69395e8162de545924634cf6a5a7a9599bc0bc7c1b7df3ee0dfc7c456f39ef",
+      "audioHash": "5b01086a7f34e572c0cf59ad9db645d19b2d9583b3cee140d90ea987a5ecc015"
+    },
+    "history-hellenistic-knowledge/2/moment/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/1d03539877472e94624ca50d7345d2504f1563881ebe05b283618bf0e6ccc3bd.mp3",
+      "duration": 47.616,
+      "bytes": 285696,
+      "textHash": "8f0f57a40c0b4209f2c084e3e52ea6e3be2a318ce8e09bba2c7c241dd88a057b",
+      "inputHash": "74f95749301622c363deca2d27fa9f5a917d1f2ce8f8bf9e3fa57c95020929d1",
+      "audioHash": "1d03539877472e94624ca50d7345d2504f1563881ebe05b283618bf0e6ccc3bd"
+    },
+    "history-hellenistic-knowledge/2/box/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/bca3f58fb08d73d36d9f7362f8fd836ee5b5f1baca8d7a648c2aa226829d046c.mp3",
+      "duration": 95.256,
+      "bytes": 571536,
+      "textHash": "20d5d283db682ddc066cc6e6cd0cefbbec2205fca5ed62dbc108287a81f140c8",
+      "inputHash": "c70f877fc99979d2acaa3db6b9e8353359161f59755ff8bcaf7a557e230f9fbc",
+      "audioHash": "bca3f58fb08d73d36d9f7362f8fd836ee5b5f1baca8d7a648c2aa226829d046c"
+    },
+    "history-hellenistic-knowledge/2/person/0": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/9f36327998ed4f2391dbe0b2f84ff3936b9f92ffe69661399a7326415a8d820d.mp3",
       "duration": 28.584,
       "bytes": 171504,
@@ -913,7 +1553,7 @@
       "inputHash": "81dea2464791959dca3dbe8b3019eabd255c5921c552656c80cb207c3ca8e6a4",
       "audioHash": "9f36327998ed4f2391dbe0b2f84ff3936b9f92ffe69661399a7326415a8d820d"
     },
-    "history-hellenistic-knowledge/1/person/1": {
+    "history-hellenistic-knowledge/2/person/1": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/65fbb7926aab7d8ceec87b929420bd771ab74b52636f0ee9b77ee0ddfb47a2f2.mp3",
       "duration": 29.376,
       "bytes": 176256,
@@ -921,15 +1561,15 @@
       "inputHash": "7cb725014bbd54ac83a625d4a76a6325a877a93d0ddfd12f0163289817d60a6e",
       "audioHash": "65fbb7926aab7d8ceec87b929420bd771ab74b52636f0ee9b77ee0ddfb47a2f2"
     },
-    "history-hellenistic-knowledge/2": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/8057dec053a2f45cb543afb640c73e732b1578ad1c61b0a15b9967e30268fb7a.mp3",
-      "duration": 14.664,
-      "bytes": 87984,
-      "textHash": "968a4d378708f5a9caf67d74ec5d13455fc484fe6702c465be3401d790279c65",
-      "inputHash": "9124f52c2e678e3154a546af5669f92add1f797cf0fc3a3b085080bbcfb3bd8f",
-      "audioHash": "8057dec053a2f45cb543afb640c73e732b1578ad1c61b0a15b9967e30268fb7a"
+    "history-hellenistic-knowledge/3": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/6f6e763ea68d5150b0cea5e7d2cdef0a9ddab80df3938766bf7f5508e47c8c95.mp3",
+      "duration": 60.096,
+      "bytes": 360576,
+      "textHash": "fe397a8bc6b3e01191af57a81a1290d0e8cab9483ca4c0026265cb97b16ca9c5",
+      "inputHash": "003ca101522f4444c7345b5430a8445021a3928e767426c2c52984ff3f7c810f",
+      "audioHash": "6f6e763ea68d5150b0cea5e7d2cdef0a9ddab80df3938766bf7f5508e47c8c95"
     },
-    "history-hellenistic-knowledge/2/person/0": {
+    "history-hellenistic-knowledge/3/person/0": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/19635aa957574726509745d8ccf19d9bb7098cb928ee674e6f2f5321eabd7770.mp3",
       "duration": 28.056,
       "bytes": 168336,
@@ -946,12 +1586,12 @@
       "audioHash": "c6aa77506b76a0d9bb6c24435bfdf9bcc84b3a16604371a85d2092071675118c"
     },
     "history-celts/0": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/d107b1187e938c0664c473dc11e9abf5c8ca4bf6f07ac7ab595f500f315ae4e8.mp3",
-      "duration": 16.176,
-      "bytes": 97056,
-      "textHash": "15c85818cadacd6b94879880070936b545c74a2dd9c381b316de6884db48a626",
-      "inputHash": "7821ad77858a9a0c5e023e5b9137d71e89389a095aab775273ff85a6b5213381",
-      "audioHash": "d107b1187e938c0664c473dc11e9abf5c8ca4bf6f07ac7ab595f500f315ae4e8"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/afcfb578ed87588ec291d313be5d1b16c16ae3d3d4085fa1ea3841355cd5bc3e.mp3",
+      "duration": 63.936,
+      "bytes": 383616,
+      "textHash": "22bf43abd9971f6eb10bd5dc78cf6f4ed92773c93bd9665f080a45e782d8eb88",
+      "inputHash": "4f5bbfdb21ec22739c73d79ae3dc5703a8972b5e8312ca89bc087c005d96fc3b",
+      "audioHash": "afcfb578ed87588ec291d313be5d1b16c16ae3d3d4085fa1ea3841355cd5bc3e"
     },
     "history-celts/0/person/0": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/02690c426fe78d1715e82f12406173935306a6643f9196c98584d3bb5249ce0f.mp3",
@@ -962,20 +1602,28 @@
       "audioHash": "02690c426fe78d1715e82f12406173935306a6643f9196c98584d3bb5249ce0f"
     },
     "history-celts/1": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/ddb2ab8e4f8068660c32b40f2dcf382906a03d6e8cfd4d42f9f04bebd4f2ad40.mp3",
-      "duration": 23.808,
-      "bytes": 142848,
-      "textHash": "8e7dfef1c28aa842af1a50fe43907e051e210f2b1bf9c4b2475f1bf7239b6a09",
-      "inputHash": "f973c598dd89c93a87604dfdc21474299acb1c1c81d515a5422ab05a5f3ab844",
-      "audioHash": "ddb2ab8e4f8068660c32b40f2dcf382906a03d6e8cfd4d42f9f04bebd4f2ad40"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/821a773a5e44229d7ebe8a7b2206c0ef42ca3a125e0f925b74952740fdaf15f0.mp3",
+      "duration": 60.432,
+      "bytes": 362592,
+      "textHash": "db3f5cb578760f2ae757fd9aaa5e2cdb8db3fe68e00b31cb248b63a59d485d8a",
+      "inputHash": "be4dea83b56f876f66f67d01dec5ce0257de88ebf6d13c438754945c712c921b",
+      "audioHash": "821a773a5e44229d7ebe8a7b2206c0ef42ca3a125e0f925b74952740fdaf15f0"
     },
     "history-celts/2": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/d1a76ad6369f895dbea711e31973eace4995e1b9038bb9362cc841e74de01fcd.mp3",
-      "duration": 10.512,
-      "bytes": 63072,
-      "textHash": "0ede0b63375f314d10a2efbbb1cdf134e72b49369d7e1e3300ff1472092062ea",
-      "inputHash": "ac004926b6e32a73bb74ffc365783349f9afcdaaeb97771bb78f72d4abaf3a5c",
-      "audioHash": "d1a76ad6369f895dbea711e31973eace4995e1b9038bb9362cc841e74de01fcd"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/8d8c4a314d9100e9975aec1cd3f133166173518b7048e10348a1078303e3bbf1.mp3",
+      "duration": 61.848,
+      "bytes": 371088,
+      "textHash": "3a83524921830bf708ea1ea244c71cd807ea90a035cde72b1083abd7f095a8aa",
+      "inputHash": "821b7b2f494241c1a0d034a499cc2deb14e0dd1b5e9013bcee55b78cf1413ad8",
+      "audioHash": "8d8c4a314d9100e9975aec1cd3f133166173518b7048e10348a1078303e3bbf1"
+    },
+    "history-celts/2/moment/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/c90cb79aec6ed79cbeb36cf810f77b4c058cd5c505359ad7b762bf2e11df80f0.mp3",
+      "duration": 46.776,
+      "bytes": 280656,
+      "textHash": "feda8391cb80df105caf1a749a335215d61f973d6683670eee96ceea1e03bc1c",
+      "inputHash": "6e8d1896baf4186173997b1e7e00ba616d374ae0ac5466aa68d8c5ba740fb793",
+      "audioHash": "c90cb79aec6ed79cbeb36cf810f77b4c058cd5c505359ad7b762bf2e11df80f0"
     },
     "history-celts/2/person/0": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/4b768919305ffc2b2e7dbfb6478a018b49f5f65ed47897fb2febb8587f4637df.mp3",
@@ -994,22 +1642,38 @@
       "audioHash": "e02cdc0e4639271a8f3e73449cf4a735973df28e53257432ba9d13c3f9c28e29"
     },
     "history-eastern-kingdoms/0": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/4400895ae7dc896179750082a4a9ef57a6041f6ea4324786771c57fd81fb1a73.mp3",
-      "duration": 21.168,
-      "bytes": 127008,
-      "textHash": "27e91ce7e277564940c598a18c7cc5d9cdfb2d189fccbd297f514802d02161bd",
-      "inputHash": "b3e67f74435a9047c9a2a1775339dc6bc36862c7f21d951b86fb0011955e423b",
-      "audioHash": "4400895ae7dc896179750082a4a9ef57a6041f6ea4324786771c57fd81fb1a73"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/5ff18ea0bc76bed1927ad0607d8ff2fded33af1f88e47b973e30ed56ad901a28.mp3",
+      "duration": 52.752,
+      "bytes": 316512,
+      "textHash": "572c01a0b2ff8015c6f3dbdc2c50244944874a992f5879262767ddc944f4f917",
+      "inputHash": "abbea6989c42ae7ada6775ad7c1df02d4844993bdbd7afa4ba94fd09212066fc",
+      "audioHash": "5ff18ea0bc76bed1927ad0607d8ff2fded33af1f88e47b973e30ed56ad901a28"
     },
     "history-eastern-kingdoms/1": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/b63b81f538af7da81812fd6f0f29013c6b587ec603fc2e333aaed66849afdda2.mp3",
-      "duration": 19.224,
-      "bytes": 115344,
-      "textHash": "1ecebb2e6d5ccff0a5f798322308bdc7ed379bda49b63bc771516adb6a46013c",
-      "inputHash": "5d391a0eacf5e5286b2774f658d3effb1aed96f727ed60289a53eee5170dcb6d",
-      "audioHash": "b63b81f538af7da81812fd6f0f29013c6b587ec603fc2e333aaed66849afdda2"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/92d66c5d5061baf71c21e9ba1fd0ffb605f3c32ba3ce75e24fd284b17f8d26b4.mp3",
+      "duration": 48.816,
+      "bytes": 292896,
+      "textHash": "7c62d6812b2da1435c7ff4da3367d92ec04915ec030568d383a11bad56c942a5",
+      "inputHash": "ac8209b11ce454bef617e14d0079c256d4777a87069a8f1479b1a41df056c9da",
+      "audioHash": "92d66c5d5061baf71c21e9ba1fd0ffb605f3c32ba3ce75e24fd284b17f8d26b4"
     },
-    "history-eastern-kingdoms/1/person/0": {
+    "history-eastern-kingdoms/1/moment/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/d538e08bbb169494b8db44693dd52451a7154a87fd6a656c19452246536ff745.mp3",
+      "duration": 37.152,
+      "bytes": 222912,
+      "textHash": "85e445468000a2f41931553a2593722f4f1614da732505a51daa51980dd8cfd1",
+      "inputHash": "a0a341a67dbda30f72922a3ad72d3742d9f37c04f6f99f14fc91704f6981ff62",
+      "audioHash": "d538e08bbb169494b8db44693dd52451a7154a87fd6a656c19452246536ff745"
+    },
+    "history-eastern-kingdoms/2": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/6193d3ca485a0fa0a3240c625e5e563ec6784843a0a1afaf00f3bc69df7caec8.mp3",
+      "duration": 50.088,
+      "bytes": 300528,
+      "textHash": "814afa5b71e666bbe346b7ab9e3eb7b0305264a4eeabd39bb272aa857be7a6a0",
+      "inputHash": "5f7c00818059618a45d50ed95338a07d5413e66f97d958fc8d907c2a82ed8507",
+      "audioHash": "6193d3ca485a0fa0a3240c625e5e563ec6784843a0a1afaf00f3bc69df7caec8"
+    },
+    "history-eastern-kingdoms/2/person/0": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/8e069ee980543328bc3d204384425aa99651fd888c265b0753d788d9ccb66491.mp3",
       "duration": 25.776,
       "bytes": 154656,
@@ -1026,12 +1690,20 @@
       "audioHash": "0e5be73166fa10bf10249b1d8003ab6419cd9db62dfd5ef76da6949a711cc179"
     },
     "history-spartan-reforms/0": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/80f30fbf5d9dea438ae8cf3e04d1065cec5cd355528cbcc8e9b166f771871547.mp3",
-      "duration": 27.264,
-      "bytes": 163584,
-      "textHash": "2f0c478f89da36e99b34deec2d277d309d16ed26e408ba9a0dcbe5edea94dc9b",
-      "inputHash": "0a5450e702d4b76e13162a8182d7d4a63294e52dee5910f6942126e334920bd9",
-      "audioHash": "80f30fbf5d9dea438ae8cf3e04d1065cec5cd355528cbcc8e9b166f771871547"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/93eda78f5dcdfd14574476721a2bd5b275ff1061487871b3ee4d968a47d6055b.mp3",
+      "duration": 64.896,
+      "bytes": 389376,
+      "textHash": "12fba1f97778743a26949121c15c4f1f83b8c2850112844179ecdeea3c940ddb",
+      "inputHash": "fe64c8549fbb6bace706e83e391021a463e61eda7a4e24cd84d9e313c08e9a18",
+      "audioHash": "93eda78f5dcdfd14574476721a2bd5b275ff1061487871b3ee4d968a47d6055b"
+    },
+    "history-spartan-reforms/0/moment/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/dca1ad3e28531a434e496ba95c74284ba5e887b09a6a7eb8db89e2e569b33523.mp3",
+      "duration": 39.72,
+      "bytes": 238320,
+      "textHash": "548f88e06fc034feae0de5acb26e6f7b8414aef09e3a3137c61da59aaa69aebb",
+      "inputHash": "4e05bbbcdd3bd796a4cc2361797e8e082cec83b150791b3f3c6119f96bbfc298",
+      "audioHash": "dca1ad3e28531a434e496ba95c74284ba5e887b09a6a7eb8db89e2e569b33523"
     },
     "history-spartan-reforms/0/person/0": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/7acf1f82486397506248ec7e4ad970cc36a3cbe297ea8b4321441e966af60d9e.mp3",
@@ -1050,12 +1722,12 @@
       "audioHash": "423a734f3a0147dea080b10ed02affcfa10d5fb4cdb1f7e0b01a22148a9c7810"
     },
     "history-spartan-reforms/1": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/b139e2236d29e9e790ba19caf0ea9a2e06af56a82d248dbe1b533bbc955734e4.mp3",
-      "duration": 24.456,
-      "bytes": 146736,
-      "textHash": "f3a45708606b2edb370d15544f03bb537958580699554cff22c38d30ba3abfbf",
-      "inputHash": "18f6e5e3b7138f3bbbec9609ef39bff6d4893ab255baa491a74bcc499cbf1a17",
-      "audioHash": "b139e2236d29e9e790ba19caf0ea9a2e06af56a82d248dbe1b533bbc955734e4"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/db3576905f11555f6490eff855cdd45197e12b83688d617d35b81f7b6ad20e68.mp3",
+      "duration": 64.176,
+      "bytes": 385056,
+      "textHash": "762a13dadc43e49e87e2345b26feb14a58a7bc07762cd163bfe2a76cef62473d",
+      "inputHash": "2c88a52cfcf5bb1ec67a22ac7b374c27d1a11883b3cfff1294665f0c8ef09a34",
+      "audioHash": "db3576905f11555f6490eff855cdd45197e12b83688d617d35b81f7b6ad20e68"
     },
     "history-spartan-reforms/1/person/0": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/d9d41c99d1e0dbd2431dea8d6c444c1179d0cecd2f8223aa759c8331f671d122.mp3",
@@ -1074,20 +1746,28 @@
       "audioHash": "16af8dda7072cd7bc1e86f1d6dd8b0a55c41edbbd5aed3388f9901d08bf0416b"
     },
     "history-ptolemaic-bargain/0": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/56aaab8c1371dae6fcfbed7f0452e62f3da4bb286aa007dcd7453a0168acbbef.mp3",
-      "duration": 20.712,
-      "bytes": 124272,
-      "textHash": "b785abdfcd910eee813f019ff857e002def2ded02e336480513f984868e2fe35",
-      "inputHash": "7dac4fb7756cbca99e51ba5f80d24fb9c6ffc019f9230fa50eaf52367084915f",
-      "audioHash": "56aaab8c1371dae6fcfbed7f0452e62f3da4bb286aa007dcd7453a0168acbbef"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/48d33acbe722a5138725814aac1e4672eade9ecb41ab074926a3f40f861fab2d.mp3",
+      "duration": 57.6,
+      "bytes": 345600,
+      "textHash": "254aeb51624dac839fb73fa43fa0405710b990a724e6b29fa65579d1dbb4c227",
+      "inputHash": "119e38db6bab2855b7784ed93ab773c859efa510be425f072ef13c3cfd55e44e",
+      "audioHash": "48d33acbe722a5138725814aac1e4672eade9ecb41ab074926a3f40f861fab2d"
+    },
+    "history-ptolemaic-bargain/0/moment/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/f4fbc2cf8f99bd9038e051fb09b2cfe592fca5d60432d04742fd4378c27c18b7.mp3",
+      "duration": 45.672,
+      "bytes": 274032,
+      "textHash": "78f502ba6e895350b50ef8dbc0e71c42a2279052c319ca17714ad504f053aeb6",
+      "inputHash": "ce68252d19468cf7e28343968da5c9902c498e5d6eb46c387a329fd21411a043",
+      "audioHash": "f4fbc2cf8f99bd9038e051fb09b2cfe592fca5d60432d04742fd4378c27c18b7"
     },
     "history-ptolemaic-bargain/1": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/c22543e4a47be4fc354302185a81a040028834e545d6d365569a7ce884fac27a.mp3",
-      "duration": 18.264,
-      "bytes": 109584,
-      "textHash": "0ad6da4ffd3a11388f8e303c62137c830212917262c24ea864e47d603cc5e57e",
-      "inputHash": "e62662fa64ca4ce5f44a0540e5e3a2ad94917b782959cfc3d8acb5686dcb5e7c",
-      "audioHash": "c22543e4a47be4fc354302185a81a040028834e545d6d365569a7ce884fac27a"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/4e016b9a89bd1080361fbe166c46ca6709f76ca24aaebb1f20a88a7ea0c23eb5.mp3",
+      "duration": 66.984,
+      "bytes": 401904,
+      "textHash": "9cc0439d70a7a6089f0385cbdd8bc3045a639ed86e2947fec6b39c71cc9269bc",
+      "inputHash": "10b9b173b78cc84b17fc2d37ccadc45268798ce6914a0406f1b1cc8def121be0",
+      "audioHash": "4e016b9a89bd1080361fbe166c46ca6709f76ca24aaebb1f20a88a7ea0c23eb5"
     },
     "history-ptolemaic-bargain/1/person/0": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/06dd6ddcab87f36ce201dd33e5141032803247d9c0905f41ef96ad4d8abe62e8.mp3",
@@ -1106,36 +1786,52 @@
       "audioHash": "84ac239c4b064cdc629d05b4e3f9c62484b8940a13443b5b297af4173987e4e0"
     },
     "history-hellenistic-end/0": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/656e945ab9fc8375a36f6c3b0ddd3754fc42458ea4ea0919a30077cbfa6fca04.mp3",
-      "duration": 15.792,
-      "bytes": 94752,
-      "textHash": "097abcc29d0915a6d01ae945925581ff926c2947f2e368955247002740fa327a",
-      "inputHash": "ac8558308a3409f225741f5e520712ce126ec057b86f52bffdc5166a6d471a32",
-      "audioHash": "656e945ab9fc8375a36f6c3b0ddd3754fc42458ea4ea0919a30077cbfa6fca04"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/36508f9d931bca92bcd15333e46ad56d399ead2e4c1cf9f6d689309f69e2f672.mp3",
+      "duration": 64.224,
+      "bytes": 385344,
+      "textHash": "2b7422cdc69cc852b38338791e39c2ac52b52ce7e98b923d809afd571e399ee7",
+      "inputHash": "4a4639a73003b6a35cac84330aeaefbd99ab7a0175a141d6a22afb72eea3e388",
+      "audioHash": "36508f9d931bca92bcd15333e46ad56d399ead2e4c1cf9f6d689309f69e2f672"
+    },
+    "history-hellenistic-end/0/box/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/605f4941d02aed1f43a82bab4559bce354436f41da950c7c6c32ab03637c142f.mp3",
+      "duration": 99.24,
+      "bytes": 595440,
+      "textHash": "3d642ea98f699827771e2af8c12b87701d5022b29cd7a24a5baccd7d84723e27",
+      "inputHash": "1a1b28aa730fe95397c93af6a683c1f5237745888a204c05b3e67e5bb2eed3fb",
+      "audioHash": "605f4941d02aed1f43a82bab4559bce354436f41da950c7c6c32ab03637c142f"
     },
     "history-hellenistic-end/1": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/03cf0b3ddc97a0e3071c9047a235cb015fce050fb06924b7bef042a245baf69c.mp3",
-      "duration": 14.808,
-      "bytes": 88848,
-      "textHash": "5a321582e8c75056e0959a921d806a7d2708b0aafba1591f8929b8c2799396bd",
-      "inputHash": "a96ab27c8e788e1a2c766763a1b673c32f560433f5045f9b698063dc1017354d",
-      "audioHash": "03cf0b3ddc97a0e3071c9047a235cb015fce050fb06924b7bef042a245baf69c"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/3ff1bf0f3aa556c93193c653abc07f5e1b7fc966d48ea6923860afd77bde4c41.mp3",
+      "duration": 64.68,
+      "bytes": 388080,
+      "textHash": "418bad0ed4f5031cb2227daca4be2646cba5522f33d41cf613d0dc5611a540e7",
+      "inputHash": "663ad73a92dfb53a8909cd78094a2c2d3d96f42a494518ad841f290ce5750d37",
+      "audioHash": "3ff1bf0f3aa556c93193c653abc07f5e1b7fc966d48ea6923860afd77bde4c41"
+    },
+    "history-hellenistic-end/1/moment/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/d1a95143deae87b494e3e0aa9a3db6d4420b7a42c498b311c0506ba7d4c1152a.mp3",
+      "duration": 41.256,
+      "bytes": 247536,
+      "textHash": "d942628ac6ba162e2ba8a708adf9657b6e17ebf5f8f65b3d701ac8fa30097f70",
+      "inputHash": "26c4bf51a498bdb2a7473b4b4a4d4acdb2c4a3dde516e04fc0d8b7e75dc8ee83",
+      "audioHash": "d1a95143deae87b494e3e0aa9a3db6d4420b7a42c498b311c0506ba7d4c1152a"
     },
     "history-hellenistic-end/2": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/9f891b6154500b34e096310256cd4848d937aff1fa00f1eb6ba4291219441ad6.mp3",
-      "duration": 15.888,
-      "bytes": 95328,
-      "textHash": "b2569e1b01c7fb03a4b566283a1bd810706f3c6869044984f611a849d5c95da0",
-      "inputHash": "ac919bf833c4c4c0d36f6bb99eb773a1502c1cd219f0ad67907f33f8ad53b5f5",
-      "audioHash": "9f891b6154500b34e096310256cd4848d937aff1fa00f1eb6ba4291219441ad6"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/74aff8cfa91e40828054c053a57a14df1215c2cc5d0529929e5c8f44e86197dd.mp3",
+      "duration": 58.368,
+      "bytes": 350208,
+      "textHash": "5ebbd1df8d20abc6ef2321a2b0a7240971b49eac941396540965fdff2c4e67ec",
+      "inputHash": "c36aa04cca53fa1cdebc9a0054f8bcb19f0a3df0ccb8876a99daa7ae73d3eb1e",
+      "audioHash": "74aff8cfa91e40828054c053a57a14df1215c2cc5d0529929e5c8f44e86197dd"
     },
-    "history-hellenistic-end/2/moment/0": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/4ceb1e349bd1d0cf77e5445bae68165f54cae3192c0b925c55a29a9aab0ae3c4.mp3",
-      "duration": 10.248,
-      "bytes": 61488,
-      "textHash": "561f805daf489bbb84b490ade3ad86948282ec037b97fb87213f804127f6368f",
-      "inputHash": "be3ed806962572d40cd0518aa9a4d435b02f8a5ce16260612c912d46911aaae6",
-      "audioHash": "4ceb1e349bd1d0cf77e5445bae68165f54cae3192c0b925c55a29a9aab0ae3c4"
+    "history-hellenistic-end/2/moment/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/184118b3893e6b2d9e6a52696c2bca43cdeaa91a25c9a30db4cfc5b443beb501.mp3",
+      "duration": 43.752,
+      "bytes": 262512,
+      "textHash": "3c7cdbc12bdd1fb4e72b688bfd281e97c725e7bd0389c4df2ac1f4337b8700f3",
+      "inputHash": "9afae51818a25e27609623062669cc3b417b077b7db4f9378b1a7c7a21035b96",
+      "audioHash": "184118b3893e6b2d9e6a52696c2bca43cdeaa91a25c9a30db4cfc5b443beb501"
     },
     "history-hellenistic-end/2/person/0": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/58d1c971950857cf1bf855c4cee42a2cce222084cf7ed7df01652bce09d3f944.mp3",
