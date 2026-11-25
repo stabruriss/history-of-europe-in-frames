@@ -3290,11 +3290,25 @@ Object.assign(HS,{
   w2_kuwait:['科威特城','Kuwait City',29.376,47.977,'1991年海湾战争爆发地，美军密苏里号战列舰发射战斧巡航导弹完成最后实战。'],
   w2_grozny:['格罗兹尼（车臣）','Grozny (Chechnya)',43.318,45.698,'1990年代车臣非对称巷战焦点，重甲纵队在城市游击战中付出惨重代价。'],
   w2_tehran:['德黑兰（伊朗）','Tehran (Iran)',35.689,51.389,'后冷战中东代理人与无人机、网络战低烈度博弈的核心节点之一。'],
-  gr1_thera:['锡拉岛（圣托里尼）','Thera (Santorini)',36.393,25.461,'爱琴海南部火山岛；约前1600年前后剧烈喷发，掩埋阿克罗蒂里聚落。'],
+  gr1_thera:['锡拉岛（圣托里尼）','Thera (Santorini)',36.393,25.461,'爱琴海南部火山岛；约前1600年剧烈喷发，掩埋阿克罗蒂里聚落。'],
   gr1_uluburun:['乌鲁布伦沉船海域','Uluburun Shipwreck',36.13,29.69,'小亚细亚南岸外海；前14世纪末商船沉没处，出水十吨铜锭与一吨锡锭。'],
   gr1_chios:['希俄斯岛','Chios',38.37,26.13,'小亚细亚外海伊奥尼亚大岛；古代吟游诗人行会驻地，多传为荷马故乡。'],
   gr1_olympia:['奥林匹亚','Olympia',37.638,21.63,'伯罗奔尼撒西部的宙斯圣所；传统自前776年起每四年办泛希腊竞技会。'],
   gr1_laurium:['拉夫里昂银矿区','Laurium',37.71,24.05,'阿提卡东南角银铅矿山；僭主时期已开采，日后撑起雅典舰队财政。'],
+  gr2_melos:['米洛斯岛','Melos',36.74,24.43,'基克拉迪西南小岛；前416年拒入提洛同盟遭雅典屠城。'],
+  gr2_amphipolis:['安菲波利斯','Amphipolis',40.82,23.85,'色雷斯斯特里蒙河畔重镇；前424年被布拉西达斯夺取，修昔底德因此遭放逐。'],
+  gr2_arginusae:['阿吉努塞群岛','Arginusae',39.01,26.81,'莱斯沃斯东南外海；前406年雅典大胜却因暴风未能救落水兵，六将遭处死。'],
+  gr2_potidaea:['波提狄亚','Potidaea',40.19,23.33,'哈尔基迪基咽喉要塞，科林斯殖民地；前432年叛离雅典成大战导火索之一。'],
+  gr2_corcyra:['科西拉岛','Corcyra',39.62,19.92,'爱奥尼亚海商贸强岛（今科孚岛）；前433年雅典介入其与科林斯之争。'],
+  gr2_thasos:['萨索斯岛','Thasos',40.78,24.71,'北爱琴海富金银矿岛；前465年试图退出提洛同盟，遭雅典围城拆墙。'],
+  gr2_gordium:['戈尔迪乌姆','Gordium',39.655,31.994,'弗里吉亚古都；前333年亚历山大在此解开传说中决定亚洲归属的战车死结。'],
+  gr2_gedrosia:['格德罗西亚沙漠','Gedrosia',25.8,63.8,'今巴基斯坦西南马克兰沿岸荒漠；前325年亚历山大主力返程硬穿此地折损惨重。'],
+  gr3_rhodes:['罗德岛','Rhodes',36.44,28.22,'爱琴海东南商贸强岛；前305年扛住德米特里围城，变卖攻城器铸造巨像。'],
+  gr3_demetrias:['德米特里亚斯','Demetrias',39.35,22.92,'色萨利湾畔军港，马其顿锁控希腊的“三镣铐”最北一锁。'],
+  gr3_chalcis:['哈尔基斯','Chalcis',38.46,23.6,'优卑亚海峡咽喉要塞，马其顿控制中希腊的“三镣铐”之一。'],
+  gr3_epirus:['伊庇鲁斯','Epirus',39.67,20.85,'希腊西北山地王国；名将皮洛士自此率方阵与战象渡海赴南意大利。'],
+  gr3_ai_khanoum:['阿伊哈努姆','Ai-Khanoum',37.169,69.409,'今阿富汗东北部巴克特里亚希腊城址，出土剧场、体育馆与德尔斐箴言碑。'],
+  gr3_gandhara:['犍陀罗','Gandhara',34.015,71.58,'今巴基斯坦西北与阿富汗东缘，希腊雕像技法与佛教交汇催生早期佛像。'],
 });
 function hp(d,key,opt={}){
   const [n,en,la,lo,note]=HS[key];
@@ -3429,16 +3443,17 @@ const HISTORY_ENTRIES=[
   hs('前 7世纪','重装步兵改革与早期商邦僭主','阿尔戈斯、科林斯与雅典等核心城邦率先普及重装步兵方阵并引发政体洗牌。',[[36.3,21.0],[39.2,25.0]],d=>{
     ha(d,'hArgolis',HC.sparta,{fillOpacity:.26});ha(d,'hCorinth',HC.mino,{fillOpacity:.30});
     ha(d,'hAttica',HC.athens,{fillOpacity:.24});ha(d,'hBoeotia',HC.myc,{fillOpacity:.22});
-    hp(d,'argos',{below:1,note:'传说前7世纪中叶国王斐冬借步兵方阵挫败斯巴达。'});
+    hp(d,'argos',{below:1,note:'前7世纪中叶阿尔戈斯步兵方阵挫败斯巴达，后人多归给国王斐冬。'});
     hp(d,'corinth',{left:1,note:'约前657年基普塞卢斯借平民步兵支持推翻巴基亚代贵族寡头。'});
     hp(d,'athens');hp(d,'thebes',{left:1});
    },[['fill',HC.sparta,'阿尔戈利斯'],['fill',HC.mino,'科林斯地峡商邦'],['fill',HC.athens,'阿提卡与彼奥提亚邻邦']]),
   hs('前 8—前 6世纪','地中海与黑海大殖民网','海外子邦沿西西里、南意大利与黑海海峡铺开，吕底亚至爱琴海铸币兴起。',[[31.5,9.0],[46.2,38.0]],d=>{
     ha(d,'greekCore',HC.athens,{fillOpacity:.1});ha(d,'hColonyCoasts',HC.athens,{fillOpacity:.4});
-    hp(d,'athens');hp(d,'syracuse',{left:1});hp(d,'taras');hp(d,'cumae',{left:1});
-    hp(d,'miletus');hp(d,'sardis',{note:'吕底亚都城，约前600年前后首创琥珀金标准铸币。'});
+    hp(d,'corinth',{left:1});hp(d,'syracuse',{left:1});hp(d,'taras');hp(d,'cumae',{left:1});
+    hp(d,'miletus');hp(d,'sardis',{note:'吕底亚都城，约前600年首创琥珀金标准铸币。'});
     hp(d,'byzantium',{left:1});hp(d,'sinope',{left:1});hp(d,'carthage');
-    hr(d,[[37.9,23],[36,22],[37.06,15.29]],HC.athens);hr(d,[[37.5,27.3],[40,26.3],[41,29],[42.03,35.15]],HC.athens);
+    hr(d,[[37.906,22.879],[38.25,21.4],[37.6,19.0],[37.06,15.29]],HC.athens);
+    hr(d,[[37.53,27.28],[38.8,26.0],[40.0,26.2],[41.0,29.0],[42.1,32.0],[42.03,35.15]],HC.athens);
    },[['fill',HC.athens,'希腊本土与海外殖民海岸带'],['dline',HC.athens,'跨海殖民与粮贸航线']])
  ]},
 {id:'history-sparta',ch:1,title:'斯巴达的制度',short:'斯巴达：土地与政体',en:'Sparta: Land & Constitution',period:'前 8—前 6世纪起',c:HC.sparta,
@@ -3472,7 +3487,7 @@ const HISTORY_ENTRIES=[
   hs('前 594／593年','梭伦解负令与财产四等级','拔除阿提卡农田抵押石碑、赎回海外债奴，以土地产值重划公民参政等级。',[[37.55,23.23],[38.45,24.3]],d=>{
     ha(d,'hAttica',HC.athens,{fillOpacity:.25});
     hp(d,'athens',{note:'梭伦颁解负令，创四百人议事会与民众陪审法庭。'});
-    hp(d,'piraeus',{left:1,note:'法勒隆与比雷埃夫斯海湾，梭伦鼓励橄榄油出口与手工业贸易。'});
+    hp(d,'piraeus',{left:1,note:'阿提卡出海口（梭伦时以法勒隆港为主），鼓励橄榄油出口。'});
     hl(d,'阿提卡 · 拔除抵押界碑','Attica · debt stones removed',38.21,23.87,HC.athens);
    },[['fill',HC.athens,'废除公民债务奴役后的阿提卡'],['dot',HC.athens,'雅典政治中心与出海口']],8),
   hs('前 561／560—前 527年','三派角力与庇西特拉图夺权路线','平原、海岸、山地三派博弈；庇西特拉图前546年自马拉松进军三度掌权，扶农兴商稳坐僭主。',[[37.55,23.23],[38.45,24.3]],d=>{
@@ -3487,7 +3502,7 @@ const HISTORY_ENTRIES=[
     hp(d,'sparta',{left:1});hp(d,'athens',{note:'前510年克里昂米尼一世围卫城，希庇亚斯交城流亡。'});
     hp(d,'sardis',{note:'波斯小亚细亚重镇；希庇亚斯投奔波斯求援复辟。'});
     hr(d,[[37.074,22.43],[37.906,22.879],[37.975,23.727]],HC.sparta);
-    hr(d,[[37.975,23.727],[39.5,25.8],[38.49,28.04]],HC.route);
+    hr(d,[[37.975,23.727],[39.99,26.17],[38.49,28.04]],HC.route);
    },[['fill',HC.mino,'僭主末期的阿提卡'],['dline',HC.sparta,'前510年斯巴达军北上倒僭'],['dline',HC.route,'希庇亚斯流亡波斯方向']]),
   hs('前 508／507年','克里斯提尼三区混编十部落','打破平原、海岸、山地地域抱团，将城市、沿海、内陆基层村社抽签拼入十个新部落。',[[37.55,23.23],[38.45,24.3]],d=>{
     ha(d,'hAttica',HC.athens,{fillOpacity:.18});hp(d,'athens');
@@ -3498,271 +3513,415 @@ const HISTORY_ENTRIES=[
  ]},
 {id:'history-persian-wars',ch:1,title:'希波战争',short:'希波战争与海军',en:'The Greco-Persian Wars',period:'约前 499—前 449年',c:HC.war,
  scenes:[
-  hs('前 499—前 494年','伊奥尼亚起义','前499年起义，前494年米利都陷落；雅典援助将冲突推向爱琴海。',[[35.1,22.1],[40.2,30.3]],d=>{
-    ha(d,'achaemenid',HC.persia,{fillOpacity:.17});ha(d,'hIonia',HC.war,{fillOpacity:.3,dashArray:'4 4'});hp(d,'miletus',{kind:'battle'});hp(d,'sardis');hp(d,'athens');
-    hr(d,[[37.95,23.7],[37.5,25.4],[37.53,27.28]],HC.athens);
-   },[['fill',HC.persia,'波斯控制的亚洲背景'],['dash',HC.war,'伊奥尼亚起义涉及地区'],['dline',HC.athens,'援助方向']]),
-  hs('前 492年','北方远征','前492年，波斯巩固北线控制，舰队在阿索斯附近遇风暴。',[[37.4,21.8],[42.1,28.9]],d=>{
-    ha(d,'achaemenid',HC.persia,{fillOpacity:.17});hp(d,'athos',{kind:'battle'});hp(d,'athens');
-    hr(d,[[38.5,27],[40.2,26.4],[40.85,25.1],[40.9,24],[40.158,24.326]],HC.war);
-   },[['fill',HC.persia,'波斯帝国背景（概略）'],['dline',HC.war,'北方远征方向']]),
-  hs('前 490年','横渡爱琴海','前490年，波斯渡海攻埃雷特里亚，在马拉松受挫。',[[36.3,22.8],[39.25,28.9]],d=>{
-    ha(d,'hAttica',HC.athens,{fillOpacity:.3});ha(d,'hIonia',HC.persia);hp(d,'athens',{left:1});hp(d,'eretria',{left:1});hp(d,'marathon',{kind:'battle'});
-    hr(d,[[37.3,27.3],[37.09,25.38],[38.0,24.5],[38.40,23.79],[38.12,23.973]],HC.war);
-   },[['fill',HC.athens,'阿提卡'],['dline',HC.war,'波斯舰队的进攻方向']]),
-  hs('前 480年','温泉关与萨拉米斯','温泉关失守、雅典被占；萨拉米斯海战扭转局势。',[[36.6,21.2],[41.5,27.4]],d=>{
-    ha(d,'hAttica',HC.athens);ha(d,'hLaconia',HC.sparta);hp(d,'thermopylae',{kind:'battle',left:1});hp(d,'salamis',{kind:'battle',left:1});hp(d,'athens',{labelZ:7});
-    hr(d,[[40.2,26.4],[40.9,24.5],[40.5,23.2],[39.5,22.7],[38.796,22.536],[37.975,23.727]],HC.war);
-   },[['fill',HC.athens,'雅典所在地'],['fill',HC.sparta,'斯巴达所在地'],['dline',HC.war,'波斯进军方向']]),
-  hs('前 479年','普拉提亚与米卡勒','普拉提亚与米卡勒胜利后，雅典把战线推回海上。',[[36.2,21.8],[39.6,29]],d=>{
-    ha(d,'hAttica',HC.athens);ha(d,'hIonia',HC.persia,{fillOpacity:.17,dashArray:'4 4'});hp(d,'plataea',{kind:'battle',left:1});hp(d,'mycale',{kind:'battle'});hp(d,'athens',{labelZ:7});
-    hr(d,[[37.8,24],[37.3,25.4],[37.666,27.06]],HC.athens);
-   },[['dash',HC.persia,'小亚细亚沿岸争夺区'],['dline',HC.athens,'希腊海上行动方向']]),
-  hs('前 478—约前 449年','战争继续','雅典同盟继续对波作战，海军与征收能力同步增长。',HV.aegean,d=>{
-    ha(d,'hDelianCoasts',HC.athens,{fillOpacity:.35});ha(d,'hAttica',HC.athens,{fillOpacity:.28});hp(d,'athens');hp(d,'delos');hp(d,'miletus');
-    hr(d,[[37.95,23.7],[37.4,25.26],[37.53,27.28]],HC.athens);
-   },[['fill',HC.athens,'海上同盟的主要活动节点'],['dline',HC.athens,'持续对波作战的联系方向']])
+  hs('前 499—前 494年','伊奥尼亚起义与萨迪斯遭焚','米利都领衔小亚细亚希腊诸邦起义，雅典二十船跨海焚毁波斯萨迪斯。',[[35.5,22.0],[41.0,30.2]],d=>{
+    ha(d,'hIonia',HC.war,{fillOpacity:.34});ha(d,'hAttica',HC.athens,{fillOpacity:.28});
+    hp(d,'athens');hp(d,'eretria',{left:1});hp(d,'miletus',{kind:'battle',note:'起义核心，前494年拉德海战败后被波斯夷平。'});
+    hp(d,'sardis',{kind:'battle',note:'前498年遭雅典与伊奥尼亚联军奇袭焚毁。'});
+    hr(d,[[37.975,23.727],[37.94,27.34],[38.49,28.04]],HC.athens);
+   },[['fill',HC.war,'起义的伊奥尼亚城邦带'],['dline',HC.athens,'雅典与埃雷特里亚跨海援军']]),
+  hs('前 492—前 491年','北方陆海进军与索要水土','马尔多尼奥斯陆路收服色雷斯、马其顿，舰队在阿索斯海角遇风重创。',[[36.2,20.8],[41.8,29.8]],d=>{
+    ha(d,'hMacedonEarly',HC.persia,{fillOpacity:.22});ha(d,'hAttica',HC.athens,{fillOpacity:.28});ha(d,'hSpartaCore',HC.sparta,{fillOpacity:.28});
+    hp(d,'athos',{kind:'battle',note:'前492年暴风毁波斯三百艘战船，迫使远征折返。'});
+    hp(d,'athens',{note:'将索要“水与土”的波斯使者投入处决深坑。'});hp(d,'sparta',{note:'将波斯使者推入水井，公开与波斯决裂。'});
+    hr(d,[[40.15,26.4],[41.0,25.0],[40.158,24.326]],HC.persia);
+   },[['fill',HC.persia,'前492年臣服波斯的马其顿方向'],['dline',HC.persia,'马尔多尼奥斯陆海西进路线']]),
+  hs('前 490年','马拉松登陆与两翼包抄','波斯舰队横渡爱琴海破埃雷特里亚，在老僭主希庇亚斯带路下登陆马拉松惨败。',[[36.5,21.5],[39.3,27.6]],d=>{
+    ha(d,'hAttica',HC.athens,{fillOpacity:.26});ha(d,'hSpartaCore',HC.sparta,{fillOpacity:.24});
+    hp(d,'eretria',{kind:'battle',left:1});hp(d,'marathon',{kind:'battle',note:'米太亚德薄中厚翼，雅典与普拉提亚步兵大破波斯军。'});
+    hp(d,'athens',{left:1});hp(d,'sparta',{left:1,note:'因卡尔涅亚节月圆前不出兵，援军迟到一日。'});
+    hr(d,[[37.7,27.0],[37.4,25.3],[38.40,23.79],[38.12,23.973]],HC.persia);
+   },[['fill',HC.athens,'迎战波斯的阿提卡'],['dline',HC.persia,'波斯跨海直扑埃雷特里亚与马拉松']]),
+  hs('前 480年','温泉关死守与萨拉米斯海战','薛西斯陆海大军压境，列奥尼达殉国温泉关，地米斯托克利窄湾破敌翻盘。',[[36.4,21.0],[41.2,27.6]],d=>{
+    ha(d,'hAttica',HC.war,{fillOpacity:.22,dashArray:'4 3'});ha(d,'hSpartaCore',HC.sparta,{fillOpacity:.26});
+    hp(d,'thermopylae',{kind:'battle',left:1});hp(d,'salamis',{kind:'battle',left:1});
+    hp(d,'athens',{note:'前480年居民疏散登岛，波斯军焚毁卫城神庙。'});hp(d,'sparta');
+    hr(d,[[40.2,26.4],[40.6,23.0],[38.796,22.536],[37.975,23.727]],HC.persia);
+   },[['dline',HC.persia,'薛西斯主力陆海大举南下'],['dot',HC.war,'温泉关与萨拉米斯两大决战']]),
+  hs('前 479年','普拉提亚与米卡勒双线大捷','保萨尼亚斯率陆军在普拉提亚斩敌主帅，联军舰队同日火烧米卡勒波斯船营。',[[36.4,21.5],[39.6,28.4]],d=>{
+    ha(d,'hBoeotia',HC.war,{fillOpacity:.20});ha(d,'hIonia',HC.athens,{fillOpacity:.24});
+    hp(d,'plataea',{kind:'battle',left:1,note:'希腊史上最大重装步兵联军击溃波斯主力、阵斩马尔多尼奥斯。'});
+    hp(d,'mycale',{kind:'battle',note:'联军抢滩焚毁波斯残余舰队，小亚细亚希腊诸邦再起。'});
+    hp(d,'athens');hp(d,'sparta');
+    hr(d,[[37.95,23.56],[37.4,25.27],[37.666,27.06]],HC.athens);
+   },[['dline',HC.athens,'希腊联合舰队跨海追击至米卡勒'],['dot',HC.war,'普拉提亚与米卡勒决战']]),
+  hs('前 478—约前 449年','提洛同盟反攻与爱琴海海权易手','斯巴达退出海外远征，雅典执掌提洛同盟清剿海峡与爱琴海，终成海上霸主。',[[35.4,21.4],[41.5,30.0]],d=>{
+    ha(d,'hDelianCoasts',HC.athens,{fillOpacity:.34});ha(d,'hSpartaCore',HC.sparta,{fillOpacity:.25});
+    hp(d,'athens');hp(d,'delos',{note:'前478年提洛同盟初创金库所在。'});
+    hp(d,'byzantium',{note:'前478年联军克城，斯巴达摄政保萨尼亚斯因傲慢被召回。'});hp(d,'miletus');
+    hr(d,[[37.94,23.64],[37.4,25.27],[41.01,28.98]],HC.athens);
+   },[['fill',HC.athens,'雅典主导的提洛同盟海岸带'],['dline',HC.athens,'同盟舰队控海峡反攻方向']])
  ]},
 {id:'history-leagues',ch:1,title:'同盟与伯利克里',short:'两大同盟与民主深化',en:'Leagues & Periclean Athens',period:'约前 478—前 431年',c:HC.athens,
  scenes:[
-  hs('前 478／477—前 454年','从同盟走向帝国','盟邦交贡，军力集中；前454年金库由提洛迁往雅典。',HV.aegean,d=>{
-    ha(d,'hAttica',HC.athens,{fillOpacity:.3});ha(d,'hDelianCoasts',HC.athens,{fillOpacity:.3});hp(d,'athens');hp(d,'delos');hp(d,'miletus');
-    hr(d,[[37.396,25.268],[37.94,23.64]],HC.mino,{width:3});
-    hl(d,'金库迁往雅典','Treasury transferred · 454 BCE',36.5,24.7,HC.mino);
-   },[['fill',HC.athens,'形成期主要海上网络（成员有变化）'],['dline',HC.mino,'金库由提洛迁往雅典']]),
-  hs('约前 431年','两大阵营','雅典的海上贡赋网络，与斯巴达的陆上盟约体系对峙。',HV.aegean,leagues,leg.leagues)
+  hs('前 478／477—前 454年','提洛同盟迁库与纳贡帝国成型','纳克索斯与萨索斯退盟遭强行镇压，前454年同盟金库由提洛岛迁入雅典卫城。',[[36.0,21.8],[41.3,28.4]],d=>{
+    ha(d,'hDelianCoasts',HC.athens,{fillOpacity:.34});ha(d,'hAttica',HC.athens,{fillOpacity:.36});
+    hp(d,'athens',{note:'前454年同盟金库搬进雅典卫城，抽六十分之一献雅典娜。'});
+    hp(d,'delos',{note:'同盟原金库所在，前454年后名存实亡。'});
+    hp(d,'gr2_thasos',{kind:'battle',note:'前465年退盟遭雅典围攻两年，拆墙失矿。'});hp(d,'miletus');
+    hr(d,[[37.396,25.268],[37.975,23.727]],HC.athens);
+   },[['fill',HC.athens,'雅典控制的提洛同盟海岸带'],['dline',HC.athens,'前454年同盟金库迁往雅典']]),
+  hs('前 462—前 443年','伯利克里改革与卫城大兴土木','削夺战神山否决权、发放公职津贴、收紧公民籍，并挪用盟金兴建帕特农神庙。',[[37.55,23.23],[38.45,24.3]],d=>{
+    ha(d,'hAttica',HC.athens,{fillOpacity:.28});
+    hp(d,'athens',{note:'前447年起大建帕特农神庙，数千公民领取陪审员与公职日薪。'});
+    hp(d,'piraeus',{left:1,note:'雅典海军母港与东地中海贸易总汇。'});
+    hl(d,'阿提卡 · 公民津贴与紧锁门槛','Attica · pay & 451 BCE citizenship law',38.22,23.86,HC.athens);
+   },[['fill',HC.athens,'伯利克里治下的阿提卡'],['dot',HC.athens,'卫城工程与海军母港']],8),
+  hs('前 450—前 431年','长墙、两大同盟与陆海冷战','雅典凭长墙与舰队稳控海上，斯巴达凭伯罗奔尼撒同盟控陆上，前446年暂签三十年和约。',[[35.6,20.6],[40.2,28.2]],d=>{
+    leagues(d);
+   },[['fill',HC.athens,'雅典与提洛同盟'],['fill',HC.sparta,'斯巴达直接领土'],['dash',HC.sparta,'伯罗奔尼撒同盟'],['dline',HC.athens,'雅典海上控制航路']]),
+  hs('前 5世纪中叶','雅典“思想市场”与全希腊英才汇聚','智者、史家、悲喜剧作家与苏格拉底汇聚雅典，剧场与广场成为全希腊文化磁极。',[[36.2,21.4],[41.2,28.6]],d=>{
+    ha(d,'hAttica',HC.athens,{fillOpacity:.34});ha(d,'hIonia',HC.mino,{fillOpacity:.22});
+    hp(d,'athens',{note:'酒神剧场、市政广场与陪审法庭催生古典演说、悲剧与哲学。'});
+    hp(d,'miletus',{note:'阿那克萨戈拉与希波达摩斯等伊奥尼亚学者赴雅典。'});
+    hr(d,[[37.53,27.28],[37.975,23.727]],HC.mino);
+    hl(d,'“全希腊的学校”','“School of Hellas”',38.9,25.2,HC.athens);
+   },[['fill',HC.athens,'雅典文化磁场核心'],['dline',HC.mino,'小亚细亚与海外学者涌入雅典']])
  ]},
 {id:'history-peloponnesian-war',ch:1,title:'伯罗奔尼撒战争',short:'争霸、远征与投降',en:'The Peloponnesian Wars',period:'约前 460—前 404年',c:HC.war,
  scenes:[
-  hs('约前 460—前 446／445年','第一轮冲突','争夺中部希腊与地峡；内战与对波作战同时进行。',HV.greece,d=>{
-    aegeanPowers(d);ha(d,'hBoeotia',HC.neutral,{dashArray:'4 4'});homeCities(d);hp(d,'corinth');hp(d,'thebes');
-    hr(d,[[37.074,22.43],[37.91,22.88],[38.32,23.32]],HC.war);
-   },[['fill',HC.athens,'雅典核心'],['fill',HC.sparta,'斯巴达及主要盟邦'],['dash',HC.neutral,'反复争夺的希腊中部']]),
-  hs('前 431—前 421年','阿基达马斯战争','陆军入侵迫使人口集中长墙内，海运续命，瘟疫扩散。',[[36.3,21.1],[38.7,25.0]],d=>{
-    aegeanPowers(d);homeCities(d);hp(d,'corinth',{left:1});hp(d,'piraeus',{left:1,labelZ:7});
-    hr(d,[[37.07,22.43],[37.9,22.9],[38.05,23.5],[38.0,23.75]],HC.war);
-    hr(d,[[37.6,24.7],[37.7,24.0],[37.94,23.64]],HC.athens);
-   },leg.war),
-  hs('前 415—前 413年','西西里远征','雅典远征叙拉古，前413年舰队与陆军惨败。',[[35.2,12.1],[40.5,25.6]],d=>{
-    ha(d,'hAttica',HC.athens);ha(d,'hSicily',HC.neutral,{fillOpacity:.12});ha(d,'hSyracuse',HC.war,{fillOpacity:.3});hp(d,'athens');hp(d,'syracuse',{kind:'battle',left:1});
-    hr(d,[[37.94,23.64],[37.4,23.7],[36.0,22.7],[37,20.5],[39.6,19.9],[38,16],[37.06,15.29]],HC.athens);
-   },[['fill',HC.neutral,'西西里：地理背景'],['fill',HC.war,'叙拉古及周边战区'],['dline',HC.athens,'雅典远征的大致方向']]),
-  hs('前 413—前 404年','海峡、粮道与投降','波斯金钱支持斯巴达海军；羊河战败后，雅典粮道被切断。',[[36.3,21.2],[44.6,34.9]],d=>{
-    aegeanPowers(d);ha(d,'hIonia',HC.persia,{fillOpacity:.15});homeCities(d);hp(d,'aegospotami',{kind:'battle',left:1});hp(d,'byzantium');hp(d,'decelea',{labelZ:7});
-    hr(d,[[44,33],[42,30.5],[41.01,28.98],[40.35,26.51],[38.0,24.3],[37.94,23.64]],HC.athens);
-    hl(d,'黑海粮食通道','Black Sea grain route',42.6,32.6,HC.athens);
-   },[['fill',HC.sparta,'斯巴达及盟邦'],['fill',HC.athens,'雅典核心'],['dline',HC.athens,'雅典重要粮运通道']])
+  hs('约前 460—前 431年','科林斯、麦加拉纠纷与大战引爆','科西拉与波提狄亚危机叠加麦加拉禁运，把雅典与伯罗奔尼撒同盟推向全面开战。',[[36.0,19.2],[41.0,26.2]],d=>{
+    aegeanPowers(d);hp(d,'athens');hp(d,'sparta');hp(d,'corinth',{left:1});
+    hp(d,'gr2_corcyra',{left:1,note:'前433年雅典助科西拉海战挡住科林斯，激怒斯巴达头号盟友。'});
+    hp(d,'gr2_potidaea',{note:'前432年雅典围攻科林斯殖民地波提狄亚，矛盾彻底公开化。'});
+   },[['fill',HC.athens,'雅典核心'],['fill',HC.sparta,'斯巴达本部'],['dash',HC.sparta,'伯罗奔尼撒同盟'],['dot',HC.war,'导火索热点城邦']]),
+  hs('前 431—前 429年','坚壁清野、长墙与雅典大瘟疫','斯巴达年年入侵焚毁阿提卡，雅典收缩长墙靠海运补给，却遭大瘟疫重创。',[[36.2,21.0],[39.2,25.0]],d=>{
+    aegeanPowers(d);hp(d,'athens',{note:'乡民涌入长墙避敌，前430年大瘟疫夺走近三分之一人口。'});
+    hp(d,'piraeus',{left:1,note:'海运粮道入口，亦为瘟疫传入之地。'});hp(d,'sparta');
+    hr(d,[[37.074,22.43],[37.906,22.879],[38.05,23.62]],HC.sparta);
+   },[['dline',HC.sparta,'斯巴达陆军年年入侵阿提卡'],['fill',HC.athens,'退守长墙的雅典']]),
+  hs('前 425—前 421年','皮洛斯奇袭、安菲波利斯与脆纸和约','雅典在皮洛斯生擒百二十名斯巴达公民；斯巴达北上夺取安菲波利斯扳平筹码。',[[36.4,20.8],[41.5,25.8]],d=>{
+    aegeanPowers(d);hp(d,'pylos',{kind:'battle',left:1,note:'前425年雅典生擒斯法克特里亚孤岛120名斯巴达公民。'});
+    hp(d,'gr2_amphipolis',{kind:'battle',note:'前424年布拉西达斯夺此银矿重镇，两年后双方主将同亡城下。'});
+    hp(d,'athens');hp(d,'sparta');
+    hr(d,[[37.074,22.43],[38.8,22.5],[40.82,23.85]],HC.sparta);
+   },[['dline',HC.sparta,'布拉西达斯千里北袭色雷斯'],['dot',HC.war,'皮洛斯与安菲波利斯转折战']]),
+  hs('前 416年','米洛斯岛：强权逻辑压倒中立','雅典舰队迫降中立小岛米洛斯并屠杀成年男子，帝国赤裸强权暴露无遗。',[[35.8,21.2],[39.0,26.8]],d=>{
+    ha(d,'hAttica',HC.athens,{fillOpacity:.30});ha(d,'hSpartaCore',HC.sparta,{fillOpacity:.26});
+    hp(d,'athens');hp(d,'sparta');hp(d,'gr2_melos',{kind:'battle',note:'前416年拒纳贡遭雅典破城，成年男子全杀、妇孺卖奴。'});
+    hr(d,[[37.94,23.64],[36.74,24.43]],HC.war);
+   },[['dline',HC.war,'雅典舰队远征镇压米洛斯岛'],['dot',HC.war,'米洛斯岛屠城地']]),
+  hs('前 415—前 413年','西西里豪赌与全军覆没','雅典两度增兵跨海攻打叙拉古惨遭全歼，斯巴达趁机常驻德凯利亚卡死阿提卡。',[[35.0,12.2],[41.0,25.8]],d=>{
+    ha(d,'hAttica',HC.athens,{fillOpacity:.30});ha(d,'hSpartaCore',HC.sparta,{fillOpacity:.28});
+    ha(d,'hSicily',HC.mino,{fillOpacity:.28});ha(d,'hSyracuse',HC.sparta,{fillOpacity:.40});
+    hp(d,'athens');hp(d,'decelea',{left:1,note:'亚西比德献计斯巴达前413年常驻此地，切断雅典银矿与农田。'});
+    hp(d,'sparta');hp(d,'syracuse',{kind:'battle',left:1,note:'前413年雅典四万余海陆大军在此全军覆没。'});
+    hr(d,[[37.94,23.64],[36.2,21.5],[37.06,15.29]],HC.war);
+   },[['fill',HC.mino,'西西里战场'],['dline',HC.war,'雅典跨海远征叙拉古路线']]),
+  hs('前 412—前 404年','波斯金援、阿吉努塞与羊河终局','波斯出钱帮斯巴达建舰队，吕山德羊河全歼雅典海军掐断黑海粮道，雅典次年投降。',[[36.2,21.4],[41.5,29.4]],d=>{
+    ha(d,'hAttica',HC.athens,{fillOpacity:.26});ha(d,'hSpartaCore',HC.sparta,{fillOpacity:.28});
+    ha(d,'hIonia',HC.persia,{fillOpacity:.28});
+    hp(d,'athens',{note:'前404年春黑海粮道断绝，被迫拆毁长墙投降。'});hp(d,'sparta');
+    hp(d,'gr2_arginusae',{kind:'battle',note:'前406年雅典胜而未能救落水兵，公民大会违法处死六将。'});
+    hp(d,'aegospotami',{kind:'battle',left:1,note:'前405年吕山德突袭全歼雅典最后舰队。'});hp(d,'sardis',{note:'波斯总督出钱资助斯巴达造舰。'});
+    hr(d,[[37.074,22.43],[37.9,27.0],[40.35,26.51]],HC.sparta);
+   },[['fill',HC.persia,'波斯出资介入的小亚细亚'],['dline',HC.sparta,'斯巴达海军北上掐断黑海粮道']])
  ]},
 {id:'history-spartan-decline',ch:1,title:'波斯调停与霸权轮替',short:'波斯调停与霸权轮替',en:'Persian Arbitration & Greek Hegemonies',period:'前 404—前 362年',c:HC.thebes,
  scenes:[
-  hs('前 404—前 399年','胜利者接管秩序','斯巴达以驻军与寡头政权巩固胜利，雅典前403年恢复民主。',HV.aegean,d=>{
-    ha(d,'hSpartaCore',HC.sparta,{fillOpacity:.3});ha(d,'hPeloponnesianAllies',HC.sparta,{dashArray:'4 3',fillOpacity:.13});
-    homeCities(d);hp(d,'miletus');hr(d,[[37.07,22.43],[37.975,23.727]],HC.sparta);hr(d,[[37.07,22.43],[36.8,25.2],[37.53,27.28]],HC.sparta);
-   },[['fill',HC.sparta,'斯巴达直接控制区'],['dash',HC.sparta,'主要盟邦'],['dline',HC.sparta,'对外干预与影响']]),
-  hs('前 401—前 400年','小居鲁士与万人军','小居鲁士争位战死；多城邦雇佣军经两河与山地艰难撤至黑海。',[[30,25],[43,47]],d=>{
-    ha(d,'anatolia',HC.persia,{fillOpacity:.10});ha(d,'hBabylonia',HC.persia,{fillOpacity:.18});
-    hp(d,'sardis');hp(d,'cunaxa',{kind:'battle'});hp(d,'trapezus');
-    hr(d,[[38.49,28.04],[38.3,31.5],[37,35],[36.5,38.1],[33.33,44.13]],HC.macedon);
-    hr(d,[[33.33,44.13],[35,44],[37,42.5],[38.6,42],[40,41.4],[41.005,39.726]],HC.route);
-   },[['fill',HC.persia,'波斯帝国内的行动背景'],['dline',HC.macedon,'小居鲁士进军方向'],['dline',HC.route,'雇佣军撤退方向']]),
-  hs('前 399—前 394年','霸权引来反联盟','斯巴达出兵亚洲；波斯资助希腊反对者，前394年克尼多斯海战重创斯巴达。',HV.aegean,d=>{
-    ha(d,'hSpartaCore',HC.sparta);['hAttica','hBoeotia','hCorinth','hArgolis'].forEach(k=>ha(d,k,HC.thebes,{fillOpacity:.32}));
-    ha(d,'hIonia',HC.persia,{fillOpacity:.18});homeCities(d);hp(d,'thebes');hp(d,'cnidus',{kind:'battle'});hp(d,'sardis');
-    hr(d,[[37.07,22.43],[36.685,27.375],[38.49,28.04]],HC.sparta);
-   },[['fill',HC.thebes,'反斯巴达联盟主要城邦'],['fill',HC.sparta,'斯巴达核心'],['dline',HC.sparta,'斯巴达在亚洲的军事干预']]),
-  hs('前 387／386年','大王和约','亚洲希腊城市归波斯；城邦“自治”拆解联合体，波斯定规则，斯巴达执行。',[[34,20],[41.7,36.2]],d=>{
-    ha(d,'anatolia',HC.persia,{fillOpacity:.15});ha(d,'hIonia',HC.persia,{fillOpacity:.35});
-    ['hAttica','hBoeotia','hCorinth','hArgolis'].forEach(k=>ha(d,k,HC.thebes,{fillOpacity:.23,dashArray:'3 4'}));
-    ha(d,'hSpartaCore',HC.sparta);homeCities(d);hp(d,'thebes');hp(d,'sardis');hp(d,'miletus');
-    hl(d,'裁判权在波斯','King’s Peace',38.8,32.4,HC.persia);
-   },[['fill',HC.persia,'波斯亚洲领地与希腊城市'],['dash',HC.thebes,'被要求自治的城邦'],['fill',HC.sparta,'和约执行者斯巴达']]),
-  hs('前 371—前 369年','留克特拉与美塞尼亚','留克特拉重创公民军，美塞尼亚独立抽走农业基础。',[[35.9,20.6],[39.1,24.4]],d=>{
-    ha(d,'hLaconia',HC.sparta,{fillOpacity:.3});ha(d,'hMessenia',HC.thebes,{fillOpacity:.35});ha(d,'hBoeotia',HC.thebes,{fillOpacity:.25});
-    hp(d,'sparta');hp(d,'leuctra',{kind:'battle',left:1});hp(d,'messene',{left:1});hp(d,'thebes',{labelZ:7});
-    hr(d,[[38.32,23.32],[37.9,22.88],[37.5,22.3],[37.178,21.919]],HC.thebes);
-    hl(d,'脱离斯巴达控制','Messenia liberated',36.45,21.0,HC.thebes);
-   },[['fill',HC.sparta,'斯巴达留下的拉科尼亚核心'],['fill',HC.thebes,'底比斯与新独立的美塞尼亚'],['dline',HC.thebes,'底比斯南下方向']]),
-  hs('前 362年','优势未能稳定','伊巴密浓达（Epaminondas）战死；胜利仍未换来持久领导权。',HV.greece,d=>{
-    ha(d,'hLaconia',HC.sparta);ha(d,'hMessenia',HC.mino);ha(d,'hAttica',HC.athens);ha(d,'hBoeotia',HC.thebes);
-    homeCities(d);hp(d,'thebes');hp(d,'mantinea',{kind:'battle',left:1});
-   },[['fill',HC.sparta,'斯巴达'],['fill',HC.thebes,'底比斯'],['fill',HC.athens,'雅典'],['fill',HC.mino,'独立的美塞尼亚']])
+  hs('前 404—前 399年','斯巴达十人团高压与雅典审判苏格拉底','斯巴达遍派督军与寡头团压榨爱琴海诸邦；复辟后的雅典在创伤中处死苏格拉底。',[[36.2,21.0],[39.6,27.6]],d=>{
+    ha(d,'hSpartaCore',HC.sparta,{fillOpacity:.34});ha(d,'hAttica',HC.athens,{fillOpacity:.24});
+    hp(d,'sparta',{note:'胜后靠督军与十人团硬控爱琴海，迅速树敌。'});
+    hp(d,'athens',{note:'前404年立三十僭主，前403年复辟，前399年判死苏格拉底。'});
+    hp(d,'corinth',{left:1});hp(d,'thebes',{left:1,note:'庇护雅典民主流亡派，与斯巴达渐生裂痕。'});
+   },[['fill',HC.sparta,'斯巴达高压霸权中心'],['fill',HC.athens,'战败动荡后的雅典']]),
+  hs('前 401—前 400年','库纳克萨与色诺芬“万人军”长征','万名希腊雇佣兵助小居鲁士打进两河，主帅阵亡后北穿亚美尼亚雪山杀回黑海。',[[30.5,25.0],[43.5,47.0]],d=>{
+    ha(d,'hBabylonia',HC.persia,{fillOpacity:.26});
+    hp(d,'sardis',{note:'小居鲁士集结逾万希腊雇佣兵东进起点。'});
+    hp(d,'cunaxa',{kind:'battle',note:'前401年希腊方阵击溃正面波斯军，小居鲁士战死。'});
+    hp(d,'trapezus',{note:'万人军翻越雪山望见黑海，高呼“大海”。'});
+    hr(d,[[38.49,28.04],[37.2,35.5],[36.2,38.0],[33.33,44.13]],HC.war);
+    hr(d,[[33.33,44.13],[36.5,43.0],[39.5,41.5],[41.005,39.726]],HC.thebes);
+   },[['dline',HC.war,'小居鲁士东进两河路线'],['dline',HC.thebes,'色诺芬率万人军北撤黑海路线']]),
+  hs('前 399—前 394年','科林斯战争与克尼多斯海战','波斯撒金币点燃反斯巴达同盟，流亡将领科农克尼多斯一战歼灭斯巴达舰队。',[[35.8,21.2],[39.6,29.0]],d=>{
+    ha(d,'hSpartaCore',HC.sparta,{fillOpacity:.30});ha(d,'hIonia',HC.persia,{fillOpacity:.28});
+    hp(d,'sardis',{note:'阿格西劳斯东征至此，波斯金币则逆向送往希腊。'});
+    hp(d,'cnidus',{kind:'battle',note:'前394年雅典将领科农率波斯舰队全歼斯巴达海军。'});
+    hp(d,'corinth',{left:1});hp(d,'athens');hp(d,'thebes',{left:1});
+    hr(d,[[38.49,28.04],[38.32,23.32]],HC.mino);
+   },[['dline',HC.mino,'波斯“金弓箭手”资助反斯巴达联盟'],['dot',HC.war,'克尼多斯海战']]),
+  hs('前 387／386年','《大王和约》与波斯离岸平衡','波斯收回小亚细亚诸城，以“各邦自治”名义拆散联盟、由斯巴达充当希腊警察。',[[35.5,20.5],[40.5,30.5]],d=>{
+    ha(d,'hIonia',HC.persia,{fillOpacity:.34});ha(d,'hSpartaCore',HC.sparta,{fillOpacity:.30});
+    ha(d,'hPeloponnesianAllies',HC.sparta,{fillOpacity:.14,dashArray:'4 3'});
+    hp(d,'sardis',{note:'波斯总督坐镇小亚细亚，借和约遥控希腊内斗。'});
+    hp(d,'sparta');hp(d,'thebes',{left:1});hp(d,'athens');
+    hl(d,'小亚细亚希腊城邦归波斯','Asia Minor ceded to Persia',38.9,28.8,HC.persia);
+   },[['fill',HC.persia,'和约正式划归波斯的小亚细亚'],['fill',HC.sparta,'充当和约执行警察的斯巴达']]),
+  hs('前 382—前 369年','留克特拉决战与解放美塞尼亚','伊巴密浓达以五十列斜线阵大破斯巴达王军，随即南下解放美塞尼亚筑新城。',[[36.3,20.8],[39.1,24.4]],d=>{
+    ha(d,'hBoeotia',HC.thebes,{fillOpacity:.34});ha(d,'hLaconia',HC.sparta,{fillOpacity:.28});
+    ha(d,'hMessenia',HC.thebes,{fillOpacity:.24,dashArray:'4 3'});
+    hp(d,'thebes');hp(d,'leuctra',{kind:'battle',left:1,note:'前371年底比斯五十列左翼重锤劈碎斯巴达王牌。'});
+    hp(d,'sparta');hp(d,'messene',{left:1,note:'前369年伊巴密浓达南下筑城，美塞尼亚重获自由。'});
+    hr(d,[[38.32,23.32],[37.9,22.88],[37.18,21.92]],HC.thebes);
+   },[['fill',HC.thebes,'崛起的底比斯与获解放的美塞尼亚'],['dline',HC.thebes,'伊巴密浓达南下斩断斯巴达粮仓']]),
+  hs('前 362年','曼丁尼亚三败俱伤与北方马其顿待发','伊巴密浓达战死曼丁尼亚，三强耗尽元气，北方马其顿静候破局时机。',[[36.2,20.8],[41.2,24.8]],d=>{
+    ha(d,'hBoeotia',HC.thebes,{fillOpacity:.22});ha(d,'hAttica',HC.athens,{fillOpacity:.20});
+    ha(d,'hLaconia',HC.sparta,{fillOpacity:.20});ha(d,'hMacedonEarly',HC.macedon,{fillOpacity:.34});
+    hp(d,'mantinea',{kind:'battle',left:1,note:'前362年三强混战，伊巴密浓达胜而阵亡，底比斯霸权随终。'});
+    hp(d,'thebes');hp(d,'athens');hp(d,'sparta');
+    hp(d,'pella',{note:'北方马其顿都城，曾质于底比斯的腓力即将继位。'});
+   },[['fill',HC.macedon,'蓄势待发的北方马其顿'],['dot',HC.war,'曼丁尼亚三败俱伤战场']])
  ]},
 {id:'history-macedonian-rise',ch:2,title:'腓力的军队与王位',short:'腓力：扩张与继承危机',en:'Philip II: Army & Succession',period:'前 359—前 335年',c:HC.macedon,
  scenes:[
-  hs('前 359—前 340年代','北方王国的扩张','矿山收入、军事训练与南下扩张相互支撑。',[[37.8,19.6],[43.6,29.3]],d=>{
-    ha(d,'hMacedonEarly',HC.macedon,{fillOpacity:.32});ha(d,'hThessaly',HC.macedon,{fillOpacity:.13,dashArray:'5 4'});hp(d,'pella');hp(d,'philippi');hp(d,'thebes',{labelZ:6});hp(d,'athens');
-    hr(d,[[40.76,22.52],[39.8,22.4],[39.1,22.5]],HC.macedon);hl(d,'色萨利','Thessaly',39.5,21.4,HC.macedon);
-   },[['fill',HC.macedon,'早期马其顿核心'],['dash',HC.macedon,'逐步取得优势的色萨利'],['dline',HC.macedon,'向南发展的方向']]),
-  hs('前 338—前 337年','喀罗尼亚与同盟','喀罗尼亚战胜雅典—底比斯，科林斯同盟确立马其顿军事领导权。',[[35.7,19.5],[43.5,29.4]],d=>{
-    ha(d,'hMacedonPhilip',HC.macedon,{fillOpacity:.26});ha(d,'hCorinthianLeague',HC.thebes,{fillOpacity:.14,dashArray:'5 4'});ha(d,'hLaconia',HC.neutral,{fillOpacity:.12});
-    hp(d,'pella');hp(d,'chaeronea',{kind:'battle',left:1});hp(d,'athens');hp(d,'corinth',{left:1,labelZ:6});hp(d,'sparta',{note:'斯巴达没有加入腓力组织的科林斯同盟。'});
-   },[['fill',HC.macedon,'马其顿直接统治区（概略）'],['dash',HC.thebes,'科林斯同盟的本土主要范围'],['fill',HC.neutral,'斯巴达：未加入']]),
-  hs('前 337—前 336年','婚姻联盟与刺杀','新婚姻威胁亚历山大母子的地位；腓力遇刺后，继承争夺迅速收束到新王手中。',[[38.7,20],[42.0,25.8]],d=>{
-    ha(d,'hMacedonEarly',HC.macedon,{fillOpacity:.3});hp(d,'pella');hp(d,'aigai',{kind:'battle',left:1});
-   },[['fill',HC.macedon,'马其顿王权核心'],['dot',HC.war,'埃盖：刺杀与权力交接']]),
-  hs('前 335年','压服后方','亚历山大毁灭反叛的底比斯；雅典保留自治，马其顿重申军事领导权。',HV.greece,d=>{
-    ha(d,'hCorinthianLeague',HC.macedon,{fillOpacity:.12,dashArray:'4 4'});ha(d,'hBoeotia',HC.war,{fillOpacity:.27});
-    hp(d,'thebes',{kind:'battle'});hp(d,'athens');hp(d,'corinth',{left:1});
-    hr(d,[[39.6,22.4],[38.8,22.8],[38.322,23.318]],HC.macedon);
-   },[['dash',HC.macedon,'马其顿主导的同盟范围'],['fill',HC.war,'底比斯受毁与彼奥提亚重组']])
+  hs('前 359—前 340年代','马其顿军改与潘盖翁金矿','腓力二世整编六米长矛职业军与重骑兵，东夺腓立比金矿筹足常备军费。',[[38.4,20.5],[42.0,26.2]],d=>{
+    ha(d,'hMacedonEarly',HC.macedon,{fillOpacity:.34});ha(d,'hThracePhilip',HC.macedon,{fillOpacity:.22,dashArray:'4 3'});
+    hp(d,'pella',{note:'腓力改革常备军与王室侍童军官校中枢。'});
+    hp(d,'aigai',{left:1});hp(d,'philippi',{note:'前356年夺取潘盖翁金矿建城，年产约千塔兰特黄金。'});
+    hr(d,[[40.76,22.52],[41.01,24.285]],HC.macedon);
+   },[['fill',HC.macedon,'马其顿本土核心'],['dash',HC.macedon,'向色雷斯矿区扩张范围']]),
+  hs('前 338—前 337年','喀罗尼亚决战与科林斯同盟','腓力父子在喀罗尼亚大破雅典与底比斯联军，组建科林斯同盟统合希腊。',[[36.4,20.4],[41.5,25.4]],d=>{
+    ha(d,'hMacedonPhilip',HC.macedon,{fillOpacity:.32});ha(d,'hCorinthianLeague',HC.macedon,{fillOpacity:.14,dashArray:'4 3'});
+    hp(d,'pella');hp(d,'chaeronea',{kind:'battle',left:1,note:'前338年亚历山大率重骑兵劈穿缺口，全歼底比斯圣队。'});
+    hp(d,'corinth',{left:1,note:'前337年建立科林斯同盟，唯斯巴达拒绝加入。'});hp(d,'athens');hp(d,'sparta');
+    hr(d,[[40.76,22.52],[39.3,22.5],[38.494,22.844]],HC.macedon);
+   },[['fill',HC.macedon,'马其顿王国核心'],['dash',HC.macedon,'科林斯同盟覆盖范围']]),
+  hs('前 337—前 336年','王室多妻危机与埃盖剧场遇刺','婚宴父子翻脸后，前336年腓力二世在旧都埃盖女儿婚礼剧场遭护卫刺杀。',[[38.6,20.2],[41.6,24.8]],d=>{
+    ha(d,'hMacedonPhilip',HC.macedon,{fillOpacity:.32});
+    hp(d,'aigai',{kind:'battle',left:1,note:'前336年腓力在剧场遇刺身亡，二十岁亚历山大即位。'});
+    hp(d,'pella');hl(d,'伊庇鲁斯 · 奥林匹娅丝娘家','Epirus',39.6,20.8,HC.mino);
+   },[['fill',HC.macedon,'阿吉德王朝马其顿'],['dot',HC.war,'埃盖遇刺地']]),
+  hs('前 335年','十四天急行军与底比斯覆灭','新王奇袭攻破叛乱的底比斯，夷城卖奴震慑各邦，锁死东征大后方。',[[36.6,20.5],[41.5,25.2]],d=>{
+    ha(d,'hMacedonPhilip',HC.macedon,{fillOpacity:.30});ha(d,'hBoeotia',HC.war,{fillOpacity:.28});
+    hp(d,'pella');hp(d,'thebes',{kind:'battle',left:1,note:'前335年遭亚历山大夷为废墟，三万余人卖作奴隶。'});
+    hp(d,'athens',{note:'闻底比斯惨状立刻称臣低头。'});
+    hr(d,[[40.76,22.52],[39.6,22.1],[38.322,23.318]],HC.war);
+   },[['dline',HC.war,'亚历山大十四天闪电南下路线'],['dot',HC.war,'遭夷平的底比斯']])
  ]},
 {id:'history-alexander-conquest',ch:2,title:'东征：接管一座帝国',short:'东征与扩张的极限',en:'Conquest & Its Limits',period:'前 334—前 325年',c:HC.macedon,
  scenes:[
-  hs('前 334—前 332年','从海峡到埃及','先取小亚细亚，再拿下黎凡特港口与埃及，拆掉波斯的海上支点。',[[24.5,21.5],[42,39]],d=>{
-    ha(d,'hWestAnatolia',HC.macedon);ha(d,'hLevantCorridor',HC.macedon);ha(d,'egypt',HC.mino,{fillOpacity:.35});
-    hr(d,ALEX_PATH.slice(3,29),HC.macedon);
-    hp(d,'granicus',{kind:'battle',left:1});hp(d,'issus',{kind:'battle'});hp(d,'tyre');hp(d,'memphis');
-   },[['fill',HC.macedon,'西部战事与接管所涉地区'],['fill',HC.mino,'埃及核心'],['dline',HC.macedon,'主要行军方向']]),
-  hs('前 331—前 330年','王都、国库与新王','高加米拉后，波斯王室资源转入征服者手中；中央决战结束，地方战争继续。',[[25.5,32],[40,58]],d=>{
-    ha(d,'hRoyalHeartlands',HC.macedon,{fillOpacity:.22});hr(d,ALEX_PATH.slice(39,60),HC.macedon);
-    hp(d,'gaugamela',{kind:'battle',left:1});hp(d,'babylon',{note:'前331年亚历山大接管这座两河重镇。'});hp(d,'susa');hp(d,'persepolis');hp(d,'ecbatana',{left:1});
-   },[['fill',HC.macedon,'两河—伊朗王权核心地带'],['dline',HC.macedon,'接管都城与追击方向']]),
-  hs('前 329—前 325年','远征的边界','中亚反抗拖长战争；军队在印度拒绝再进，归途沙漠吞噬兵员。',[[22,54],[43,78]],d=>{
-    ha(d,'hBactriaSogdiana',HC.macedon,{fillOpacity:.24});ha(d,'hIndusCampaign',HC.thebes,{fillOpacity:.24});ha(d,'hGedrosia',HC.war,{fillOpacity:.13,dashArray:'5 4'});
-    hr(d,ALEX_PATH.slice(68,89),HC.macedon);hr(d,ALEX_PATH.slice(89,105),HC.war);
-    hp(d,'bactra',{left:1});hp(d,'maracanda');hp(d,'hydaspes',{kind:'battle',left:1});hp(d,'hyphasis');
-    hl(d,'格德罗西亚','Gedrosia',26.6,61,HC.war);
-   },[['fill',HC.macedon,'中亚长期战区'],['fill',HC.thebes,'印度河与旁遮普战区'],['dash',HC.war,'格德罗西亚归程地带'],['dline',HC.war,'回师方向']])
+  hs('前 334—前 333年','渡海首胜格拉尼库斯与戈尔迪乌姆','亚历山大以战养战，渡海峡大破波斯小亚细亚总督军，进驻戈尔迪乌姆斩断车结。',[[35.5,22.0],[42.0,34.5]],d=>{
+    ha(d,'hMacedonPhilip',HC.macedon,{fillOpacity:.28});ha(d,'hWestAnatolia',HC.macedon,{fillOpacity:.22,dashArray:'4 3'});
+    hp(d,'pella');hp(d,'granicus',{kind:'battle',note:'前334年强渡激流破波斯总督联军，险死获黑克利图斯相救。'});
+    hp(d,'sardis');hp(d,'gr2_gordium',{note:'前333年春在此劈开传说决定亚洲归属的戈尔迪乌姆死结。'});
+    hr(d,[[40.76,22.52],[40.22,27.25],[38.49,28.04],[39.655,31.994]],HC.macedon);
+   },[['dline',HC.macedon,'渡海横扫小亚细亚路线'],['dot',HC.war,'格拉尼库斯决战']]),
+  hs('前 333—前 332年','伊苏斯、提尔筑堤与创建亚历山大里亚','伊苏斯击败大流士三世后沿海岸拔除提尔军港、进军埃及，不战废掉波斯海军。',[[28.5,27.5],[38.5,38.5]],d=>{
+    ha(d,'hLevantCorridor',HC.macedon,{fillOpacity:.24});ha(d,'egypt',HC.macedon,{fillOpacity:.24});
+    hp(d,'issus',{kind:'battle',note:'前333年窄谷破大流士三世，缴获波斯王室家眷。'});
+    hp(d,'tyre',{kind:'battle',left:1,note:'海中填石筑堤苦战七个月破城，断波斯海军母港。'});
+    hp(d,'gaza',{kind:'battle'});hp(d,'alexandria',{left:1,note:'前332／331年创建，日后成为地中海头号商港与学术中心。'});
+    hr(d,[[36.84,36.20],[33.27,35.20],[31.50,34.47],[31.20,29.92]],HC.macedon);
+   },[['dline',HC.macedon,'沿黎凡特拔港收埃及路线'],['dot',HC.war,'伊苏斯与提尔攻坚战']]),
+  hs('前 331—前 330年','高加米拉决战与波斯两百年国库易手','高加米拉击溃大流士三世主力，接管巴比伦、苏萨与波斯波利斯十八万塔兰特金银。',[[28.0,34.0],[38.5,55.5]],d=>{
+    ha(d,'hBabylonia',HC.macedon,{fillOpacity:.28});ha(d,'hRoyalHeartlands',HC.macedon,{fillOpacity:.26});
+    hp(d,'gaugamela',{kind:'battle',note:'前331年斜向拉扯撕开波斯阵线，大流士三世再逃。'});
+    hp(d,'babylon',{left:1});hp(d,'susa',{left:1});
+    hp(d,'persepolis',{kind:'battle',note:'前330年搬空波斯国库，王宫在酒宴后焚毁。'});
+    hr(d,[[36.57,43.43],[32.54,44.42],[32.19,48.25],[29.93,52.89]],HC.macedon);
+   },[['fill',HC.macedon,'接管的巴比伦与波斯王畿核心'],['dline',HC.macedon,'高加米拉直插波斯波利斯路线']]),
+  hs('前 330—前 327年','追讨弑君者与中亚三年游击战','大流士遭部将贝苏斯刺杀，亚历山大深入巴克特里亚与粟特苦战三年、联姻稳局。',[[32.0,46.5],[42.0,71.0]],d=>{
+    ha(d,'hBactriaSogdiana',HC.war,{fillOpacity:.26,dashArray:'4 3'});
+    hp(d,'ecbatana',{left:1});hp(d,'bactra',{kind:'battle',note:'前329—前327年中亚游击战重镇，追捕贝苏斯。'});
+    hp(d,'maracanda',{kind:'battle',note:'今撒马尔罕；斯皮塔米尼斯屡袭马其顿驻军，亦为误杀黑克利图斯之地。'});
+    hr(d,[[34.8,48.52],[36.2,58.8],[36.76,66.90],[39.65,66.96]],HC.macedon);
+   },[['dash',HC.war,'陷入三年血腥游击的巴克特里亚与粟特'],['dline',HC.macedon,'亚历山大东进中亚路线']]),
+  hs('前 326—前 325年','印度河战象、希法西斯兵变与沙漠返程','暴雨夜渡河击败波罗斯象军，老兵在希法西斯河罢战，返程硬穿格德罗西亚沙漠惨重折损。',[[23.5,51.0],[36.5,78.0]],d=>{
+    ha(d,'hIndusCampaign',HC.macedon,{fillOpacity:.24});ha(d,'hGedrosia',HC.war,{fillOpacity:.28,dashArray:'4 3'});
+    hp(d,'hydaspes',{kind:'battle',left:1,note:'前326年雨夜强渡击破波罗斯两百头战象。'});
+    hp(d,'hyphasis',{note:'老兵远征八年坐地罢战，东征至此止步。'});
+    hp(d,'gr2_gedrosia',{kind:'battle',note:'前325年主力硬穿灼热荒漠，粮水断绝死伤极重。'});hp(d,'susa',{left:1});
+    hr(d,[[32.93,73.73],[31.55,75.25],[29.0,71.0],[25.8,63.8],[32.19,48.25]],HC.war);
+   },[['fill',HC.macedon,'印度河流域进军范围'],['dash',HC.war,'返程炼狱：格德罗西亚沙漠']])
  ]},
 {id:'history-alexander-rule',ch:2,title:'旧伙伴与新臣民',short:'帝国怎样重组权力',en:'Companions, Subjects & Kingship',period:'前 332—前 324年',c:HC.mino,
  scenes:[
-  hs('前 332—前 331年','祭司与合法性','尊奉埃及神祇、求问锡瓦神谕，把征服者嵌入当地王权传统。',[[24,23.4],[33.4,34.5]],d=>{
-    ha(d,'egypt',HC.mino,{fillOpacity:.38});hp(d,'memphis');hp(d,'siwa',{left:1});hp(d,'alexandria');
-    hr(d,[[29.85,31.25],[31.2,29.92],[31.35,27.23],[29.2,25.52]],HC.mino);
-   },[['fill',HC.mino,'尼罗河国家与神庙网络'],['dline',HC.mino,'沿海新城与锡瓦神谕之行']]),
-  hs('前 330—前 327年','近臣冲突与俯拜礼','旧功臣接连死去；宫廷礼仪之争把国王与伙伴之间的新等级显露出来。',[[29,44],[43,73]],d=>{
-    ha(d,'hRoyalHeartlands',HC.neutral,{fillOpacity:.10});ha(d,'hBactriaSogdiana',HC.macedon,{fillOpacity:.24});
-    hp(d,'ecbatana',{left:1});hp(d,'maracanda');hp(d,'bactra',{left:1});
-    hl(d,'新王权向东扎根','New bases of royal power',32.5,59,HC.macedon);
-   },[['fill',HC.macedon,'中亚驻军与宫廷活动区域'],['fill',HC.neutral,'旧帝国行政背景']]),
-  hs('前 324年','新军、联姻与兵变','苏萨联姻与亚洲军人晋升拓宽基本盘；奥皮斯老兵抗议逼出新的权力妥协。',[[26,40],[42,71]],d=>{
-    ha(d,'iranPlateau',HC.mino,{fillOpacity:.16});ha(d,'hBactriaSogdiana',HC.thebes,{fillOpacity:.2});ha(d,'hBabylonia',HC.macedon);
-    hp(d,'susa');hp(d,'opis',{left:1});hp(d,'bactra');
-    hr(d,[[36.76,66.9],[34,59],[32.19,48.25],[33.19,44.54]],HC.thebes);
-   },[['fill',HC.thebes,'亚洲征募与精英联合的部分来源'],['fill',HC.macedon,'帝国驻军与政治中心'],['dline',HC.thebes,'新力量进入核心的方向']])
+  hs('前 332—前 331年','埃及法老礼与锡瓦绿洲神谕','亚历山大在孟斐斯受法老礼，专程穿沙漠赴锡瓦绿洲获称“阿蒙之子”。',[[27.0,23.5],[32.8,33.5]],d=>{
+    ha(d,'egypt',HC.mino,{fillOpacity:.34});
+    hp(d,'alexandria');hp(d,'memphis',{note:'前332年举行法老登基礼，赢得埃及祭司集团承认。'});
+    hp(d,'siwa',{left:1,note:'前331年初穿沙漠求谕，阿蒙神庙祭司尊其为“神之子”。'});
+    hr(d,[[31.20,29.92],[31.2,27.2],[29.20,25.52],[29.85,31.25]],HC.mino);
+   },[['fill',HC.mino,'接受神圣王权礼仪的埃及'],['dline',HC.mino,'亚历山大往返锡瓦绿洲路线']]),
+  hs('前 330—前 327年','诛杀帕曼尼翁、黑克利图斯与俯拜礼风波','帝国东进途中君臣裂痕爆发，帕曼尼翁、黑克利图斯与拒行俯拜礼的卡利斯提尼先后死去。',[[32.0,45.0],[41.5,70.0]],d=>{
+    ha(d,'hBactriaSogdiana',HC.war,{fillOpacity:.22,dashArray:'4 3'});
+    hp(d,'ecbatana',{left:1,note:'前330年菲洛塔斯案发，七十岁元老帕曼尼翁在此遭密杀。'});
+    hp(d,'bactra',{note:'前327年强推波斯俯拜礼，卡利斯提尼拒拜后下狱身亡。'});
+    hp(d,'maracanda',{note:'前328年酒宴口角，亚历山大亲手刺死救命老友黑克利图斯。'});
+   },[['dot',HC.war,'功臣被杀与俯拜礼决裂地点']]),
+  hs('前 324—前 323年','苏萨集体婚礼、奥皮斯兵变与巴比伦骤逝','苏萨联姻与奥皮斯换兵风波刚平，前323年6月亚历山大在巴比伦病逝，帝国失去核心。',[[29.5,42.0],[35.5,51.5]],d=>{
+    ha(d,'hBabylonia',HC.mino,{fillOpacity:.30});
+    hp(d,'susa',{note:'前324年春百桌集体婚礼，八十余马其顿将领娶波斯贵族女。'});
+    hp(d,'opis',{note:'前324年夏老兵哗变，亚历山大授近卫番号予波斯人逼其低头。'});
+    hp(d,'babylon',{left:1,note:'前323年6月亚历山大高烧骤逝，年仅三十二岁。'});
+    hr(d,[[32.19,48.25],[33.19,44.54],[32.54,44.42]],HC.mino);
+   },[['fill',HC.mino,'帝国最后政治中枢两河流域'],['dline',HC.mino,'苏萨—奥皮斯—巴比伦最后一年行程']])
  ]},
 {id:'history-successors',ch:2,title:'帝国裂开，网络延续',short:'继业者战争与三大王朝',en:'Successors & the Hellenistic World',period:'前 323—约前 270年',c:HC.thebes,
  scenes:[
-  hs('前 323—前 321年','王位悬空，分省争权','国王留下巨大疆域，却没有稳定的继承安排；总督与军队迅速形成多个权力中心。',[[20,18],[44,79]],d=>{
-    ha(d,'hAlexEmpire',HC.neutral,{fillOpacity:.08,dashArray:'5 5'});
-    ha(d,'egypt',HC.mino,{fillOpacity:.34});ha(d,'hBabylonia',HC.thebes,{fillOpacity:.3});ha(d,'hMacedonEarly',HC.macedon,{fillOpacity:.3});ha(d,'hWestAnatolia',HC.sparta,{fillOpacity:.23});
-    hp(d,'babylon',{note:'前323年亚历山大病逝；将领争夺摄政、军队与总督职位。'});hp(d,'pella');hp(d,'memphis');hp(d,'sardis');
-   },[['dash',HC.neutral,'亚历山大统治与同盟所及范围（概略）'],['fill',HC.mino,'埃及总督基地'],['fill',HC.thebes,'巴比伦中枢'],['fill',HC.macedon,'马其顿基地'],['fill',HC.sparta,'小亚细亚将领基地']]),
-  hs('前 301—前 281年','统一机会逐次消失','伊普苏斯打破安提柯的统一尝试；库鲁佩迪翁后仍有王朝更替与新的分配。',[[26,20],[42.7,52]],d=>{
-    ha(d,'hWestAnatolia',HC.war,{fillOpacity:.17,dashArray:'4 4'});ha(d,'hRoyalHeartlands',HC.thebes,{fillOpacity:.15});ha(d,'egypt',HC.mino,{fillOpacity:.3});
-    hp(d,'ipsus',{kind:'battle'});hp(d,'corupedium',{kind:'battle',left:1});hp(d,'alexandria');hp(d,'seleucia');
-    hl(d,'争夺中的安纳托利亚','Contested Anatolia',40.8,33.4,HC.war);
-   },[['dash',HC.war,'关键战争与反复分配地带'],['fill',HC.thebes,'塞琉古的两河—伊朗基础'],['fill',HC.mino,'托勒密的埃及基础']]),
-  hs('约前 270年','三大王朝，多种力量','三大王朝并立；南亚有孔雀王朝，安纳托利亚与希腊仍有地方王国、独立城邦和联盟。',[[20,18],[44,81]],d=>{
-    ha(d,'hSeleucidCore',HC.thebes,{fillOpacity:.25});ha(d,'hPtolemaicCore',HC.mino,{fillOpacity:.38});ha(d,'hAntigonidCore',HC.macedon,{fillOpacity:.35});ha(d,'hMauryaNorthwest',HC.neutral,{fillOpacity:.17,dashArray:'5 4'});
-    hp(d,'alexandria');hp(d,'antioch',{left:1});hp(d,'seleucia');hp(d,'pella');hp(d,'pergamon',{labelZ:5});hp(d,'taxila');
-    hl(d,'塞琉古王朝','Seleucid',34,55,HC.thebes);hl(d,'托勒密王朝','Ptolemaic',26.1,30.1,HC.mino);hl(d,'孔雀王朝西北部','Maurya',29.5,74,HC.neutral);
-   },[['fill',HC.macedon,'安提柯核心与控制地带'],['fill',HC.mino,'托勒密核心与部分属地'],['fill',HC.thebes,'塞琉古主要控制地带'],['dash',HC.neutral,'孔雀王朝西北部（局部）']])
- ]},{
- id:'history-hellenistic-states',ch:3,title:'王国靠什么运转',short:'税收、城市与军队',en:'Revenue, Cities & Armies',period:'前 3世纪',c:HC.thebes,
+  hs('前 323—前 321年','巴比伦分赃与托勒密劫走金棺','双王傀儡下众将瓜分总督区，托勒密单取埃及并在叙利亚半路劫走亚历山大灵车。',[[27.0,21.0],[42.0,48.0]],d=>{
+    ha(d,'egypt',HC.mino,{fillOpacity:.34});ha(d,'hBabylonia',HC.thebes,{fillOpacity:.28});ha(d,'hMacedonEarly',HC.macedon,{fillOpacity:.28});
+    hp(d,'babylon',{note:'前323年分赃会议，佩尔狄卡斯任摄政，众将各领行省。'});
+    hp(d,'alexandria',{left:1,note:'托勒密劫走黄金灵车运回埃及，奠定王朝正统招牌。'});
+    hp(d,'pella');hr(d,[[32.54,44.42],[34.5,37.0],[31.20,29.92]],HC.mino);
+   },[['fill',HC.mino,'托勒密据守的埃及'],['dline',HC.mino,'前321年劫运亚历山大灵车路线']]),
+  hs('前 321—前 306年','王室灭门与安提柯称雄亚洲','欧迈尼斯遭银盾兵出卖，亚历山大母妻幼子尽遭处决，前306年独眼安提柯率先称王。',[[28.0,20.0],[42.5,53.0]],d=>{
+    ha(d,'hWestAnatolia',HC.sparta,{fillOpacity:.30});ha(d,'hSeleucidSyria',HC.sparta,{fillOpacity:.24});
+    ha(d,'hMacedonEarly',HC.macedon,{fillOpacity:.26});ha(d,'egypt',HC.mino,{fillOpacity:.28});
+    hp(d,'pella',{note:'卡山德处死奥林匹娅丝与幼王亚历山大四世，王室绝嗣。'});
+    hp(d,'babylon',{note:'前312年塞琉古奇袭复夺巴比伦，确立塞琉古纪年元年。'});hp(d,'alexandria',{left:1});
+   },[['fill',HC.sparta,'独眼安提柯父子称雄的小亚细亚与叙利亚'],['fill',HC.macedon,'卡山德控制的马其顿']]),
+  hs('前 301—前 281年','伊普苏斯战象墙与老将谢幕','塞琉古携五百印度战象在伊普苏斯击杀安提柯，前281年库鲁佩迪翁老将全数谢幕。',[[27.0,21.0],[42.0,74.0]],d=>{
+    ha(d,'hSeleucidCore',HC.thebes,{fillOpacity:.26});ha(d,'egypt',HC.mino,{fillOpacity:.28});
+    hp(d,'ipsus',{kind:'battle',note:'前301年塞琉古印度战象截断德米特里归路，安提柯阵亡。'});
+    hp(d,'corupedium',{kind:'battle',left:1,note:'前281年塞琉古斩利西马科斯，随即自己遇刺身亡。'});
+    hp(d,'taxila',{note:'前305年前后塞琉古让地孔雀王朝换回近五百头印度战象。'});
+    hr(d,[[33.75,72.83],[34.8,52.0],[38.86,30.69]],HC.thebes);
+   },[['dline',HC.thebes,'印度战象万里西调赴伊普苏斯路线'],['dot',HC.war,'伊普苏斯与库鲁佩迪翁决战']]),
+  hs('约前 270年','希腊化三雄鼎立与跨国商网','马其顿安提柯、埃及托勒密与西亚塞琉古鼎立，共通希腊语与银币联通亚非欧。',[[24.5,19.5],[43.0,68.0]],d=>{
+    ha(d,'hAntigonidCore',HC.macedon,{fillOpacity:.32});ha(d,'egypt',HC.mino,{fillOpacity:.34});
+    ha(d,'hSeleucidCore',HC.thebes,{fillOpacity:.28});ha(d,'hPergamonCore',HC.sparta,{fillOpacity:.34});
+    hp(d,'pella');hp(d,'alexandria',{left:1});hp(d,'antioch');hp(d,'seleucia');hp(d,'pergamon',{left:1});
+    hl(d,'托勒密埃及','Ptolemaic Egypt',27.2,29.8,HC.mino);
+    hl(d,'塞琉古帝国','Seleucid Empire',34.8,52.0,HC.thebes);
+   },[['fill',HC.macedon,'安提柯马其顿'],['fill',HC.mino,'托勒密埃及'],['fill',HC.thebes,'塞琉古西亚']])
+ ]},{id:'history-hellenistic-states',ch:3,title:'王国靠什么运转',short:'税收、城市与军队',en:'Revenue, Cities & Armies',period:'前 3世纪',c:HC.thebes,
  scenes:[
-  hs('前 3世纪','尼罗河与神庙','埃及粮税支撑王室；神庙与地方行政连接征服者和本地社会。',[[23,27],[33.4,34.5]],d=>{
-    ha(d,'egypt',HC.mino,{fillOpacity:.35});hp(d,'alexandria');hp(d,'memphis');hp(d,'luxor',{left:1});
-    hr(d,[[25.72,32.61],[29.85,31.25],[31.2,29.92]],HC.mino);
-   },[['fill',HC.mino,'尼罗河农业与征收核心'],['dline',HC.mino,'粮食与资源向北汇集']]),
-  hs('前 3世纪','城市与地方精英','塞琉古以城市、驻军和地方合作连接远方；安置移民也为征税、征兵建立支点。',[[26,33],[43,73]],d=>{
-    ha(d,'hSeleucidCore',HC.thebes,{fillOpacity:.15});hp(d,'antioch',{left:1});hp(d,'seleucia');hp(d,'ecbatana',{note:'米底重镇，连接两河、伊朗高原与东方交通。'});hp(d,'bactra',{note:'巴克特里亚的城市中心；既有灌溉农业与移民驻军相互结合。'});
-    hr(d,[[36.2,36.16],[33.1,44.52],[34.8,48.52],[36.76,66.9]],HC.thebes);
-   },[['fill',HC.thebes,'塞琉古主要经营地区（概略）'],['dline',HC.thebes,'城市与行政联系示意']]),
-  hs('前 3世纪','马其顿与城邦联盟','马其顿依靠本土兵源和希腊据点；城邦以联邦结集，也在王国之间寻找支援。',[[36,19.4],[42.2,26]],d=>{
-    ha(d,'hAntigonidCore',HC.macedon,{fillOpacity:.28});ha(d,'hAetolia',HC.thebes,{fillOpacity:.3,dashArray:'4 3'});ha(d,'hAchaeanLeague',HC.athens,{fillOpacity:.3,dashArray:'4 3'});
-    hp(d,'pella');hp(d,'corinth',{note:'科林斯山堡控制地峡；城邦联盟与马其顿反复争夺。'});hp(d,'athens');
-    hl(d,'埃托利亚','Aetolian League',39.05,20.6,HC.thebes);hl(d,'亚该亚','Achaean League',37.45,20.7,HC.athens);
-   },[['fill',HC.macedon,'安提柯王朝本土核心'],['dash',HC.thebes,'埃托利亚联盟核心'],['dash',HC.athens,'亚该亚联盟部分成员地区']])
+  hs('前 3世纪','托勒密埃及：王室专卖与尼罗河粮仓','法老水利基层套上希腊会计官僚，谷物、食油与莎草纸专卖撑起地中海头号海军。',[[24.5,26.5],[33.5,36.5]],d=>{
+    ha(d,'hPtolemaicCore',HC.mino,{fillOpacity:.35});ha(d,'hPtolemaicLevant',HC.mino,{fillOpacity:.20,dashArray:'4 3'});
+    hp(d,'alexandria',{left:1,note:'地中海头号粮食出口港与托勒密王廷财库中枢。'});
+    hp(d,'memphis');hp(d,'luxor',{left:1});hp(d,'gr3_rhodes',{note:'前305年扛住德米特里围城，长期与埃及结成商贸盟友。'});
+   },[['fill',HC.mino,'托勒密直接专卖统治核心'],['dash',HC.mino,'与塞琉古反复争夺的南黎凡特']]),
+  hs('前 3世纪','塞琉古点线帝国：七十座希腊化军镇','沿两河与叙利亚干道大建希腊城市扎钉子，乡间神庙与地方贵族自治纳贡。',[[28.5,31.0],[41.5,56.0]],d=>{
+    ha(d,'hSeleucidSyria',HC.thebes,{fillOpacity:.32});ha(d,'hBabylonia',HC.thebes,{fillOpacity:.28});
+    ha(d,'hSeleucidAnatolia',HC.thebes,{fillOpacity:.18,dashArray:'4 3'});
+    hp(d,'antioch',{note:'塞琉古帝国西部首都，控制叙利亚出海口。'});
+    hp(d,'seleucia',{note:'底格里斯河畔大城，取代巴比伦成为两河希腊化枢纽。'});
+    hp(d,'susa');hp(d,'sardis');
+    hr(d,[[38.49,28.04],[36.20,36.16],[33.10,44.52],[32.19,48.25]],HC.thebes);
+   },[['fill',HC.thebes,'塞琉古叙利亚与两河统治干线'],['dline',HC.thebes,'新城串联起的帝国交通主干']]),
+  hs('前 3世纪','马其顿“三镣铐”与希腊城邦联邦','安提柯紧握三要塞锁死希腊；亚该亚同盟试水联邦制，前243年阿拉托斯夜袭夺下科林斯。',[[36.2,20.0],[41.4,24.8]],d=>{
+    ha(d,'hAntigonidCore',HC.macedon,{fillOpacity:.30});ha(d,'hAetolia',HC.thebes,{fillOpacity:.28,dashArray:'4 3'});
+    ha(d,'hAchaeanLeague',HC.athens,{fillOpacity:.28,dashArray:'4 3'});
+    hp(d,'pella');hp(d,'gr3_demetrias',{left:1});hp(d,'gr3_chalcis');
+    hp(d,'corinth',{left:1,note:'“三镣铐”最南一锁；前243年被阿拉托斯夜袭夺回。'});hp(d,'athens');
+   },[['fill',HC.macedon,'安提柯马其顿核心'],['dash',HC.athens,'亚该亚同盟'],['dash',HC.thebes,'埃托利亚同盟']]),
+  hs('前 280—前 275年','皮洛士渡海：长矛方阵初撞罗马军团','皮洛士携方阵与战象驰援南意塔兰托，连赢两仗却拼光老兵，罗马顺势吞并大希腊。',[[37.0,12.0],[42.6,22.8]],d=>{
+    ha(d,'hRomeEarly',HC.rome,{fillOpacity:.30});ha(d,'hColonies290',HC.athens,{fillOpacity:.26,dashArray:'4 3'});
+    hp(d,'rome',{left:1});hp(d,'gr3_epirus',{left:1,note:'皮洛士起兵渡海之地。'});
+    hp(d,'taras',{note:'南意大利希腊大邦，求援皮洛士抗衡罗马南下。'});
+    hp(d,'heraclea',{kind:'battle',left:1});hp(d,'asculum',{kind:'battle'});hp(d,'beneventum',{kind:'battle',left:1});
+    hr(d,[[39.67,20.85],[40.46,17.24],[40.21,16.68],[41.21,15.56],[41.13,14.78]],HC.war);
+   },[['fill',HC.rome,'南下扩张的罗马共和国'],['dline',HC.war,'皮洛士渡海征战路线']])
  ]},
 {id:'history-hellenistic-knowledge',ch:3,title:'王室养学者，个人求安顿',short:'知识网络与生活哲学',en:'Knowledge & Ways of Living',period:'约前 300—前 212年',c:HC.route,
  scenes:[
-  hs('约前 300年','雅典的新学派','伊壁鸠鲁的花园与芝诺的柱廊，给动荡时代提供不同的生活方式。',HV.attica,d=>{
-    ha(d,'hAttica',HC.route,{fillOpacity:.2});hp(d,'athens',{note:'约前306年伊壁鸠鲁在雅典建立花园学园；约前300年芝诺在彩绘柱廊讲学。'});
-    hl(d,'花园与柱廊','Garden & Stoa',38.15,23.74,HC.route);
-   },[['fill',HC.route,'雅典与阿提卡：学派活动背景']],9),
-  hs('前 3世纪','跨海的知识网络','亚历山大里亚汇集学者，帕加马的王室文化事业也逐步成长；海路连接各地研究者。',[[23,12],[42,34]],d=>{
-    ha(d,'egypt',HC.mino,{fillOpacity:.2});ha(d,'hPergamonCore',HC.thebes,{fillOpacity:.18});
-    hp(d,'alexandria');hp(d,'pergamon');hp(d,'athens');hp(d,'syracuse');hp(d,'syene');
-    hr(d,[[37.06,15.29],[34.8,23.8],[31.2,29.92]],HC.route);hr(d,[[31.2,29.92],[35.2,27],[39.12,27.18]],HC.route);
-   },[['fill',HC.mino,'托勒密埃及：研究与资料的依托'],['dline',HC.route,'学者与知识的交流示意']]),
-  hs('前 214—前 212年','学者卷入战争','罗马围攻叙拉古，阿基米德参与守城，城破时被杀；知识网络也承受战争的断裂。',[[36.5,12.3],[38.5,16.2]],d=>{
-    ha(d,'hSicily',HC.neutral,{fillOpacity:.12});ha(d,'hSyracuse',HC.route,{fillOpacity:.35});hp(d,'syracuse',{kind:'battle',note:'前212年罗马攻陷叙拉古，阿基米德死于城破后的暴力。'});
-    hr(d,[[38.2,15.6],[37.6,15.5],[37.06,15.29]],HC.rome);
-   },[['fill',HC.route,'叙拉古及周边'],['dline',HC.rome,'罗马围攻方向示意']])
+  hs('约前 306—前 300年','雅典新学派：花园、柱廊与个人安顿','城邦失去主权后，伊壁鸠鲁花园与芝诺彩绘柱廊在雅典转向探讨个体心灵平静。',[[37.55,23.23],[38.45,24.3]],d=>{
+    ha(d,'hAttica',HC.route,{fillOpacity:.22});
+    hp(d,'athens',{note:'前306年伊壁鸠鲁建花园学派，前300年芝诺创斯多亚派。'});
+    hl(d,'雅典 · 哲学从城邦转向个体','Athens · Epicureans & Stoics',38.22,23.86,HC.route);
+   },[['fill',HC.route,'希腊化哲学重镇阿提卡'],['dot',HC.route,'花园学派与斯多亚柱廊所在']],8),
+  hs('前 3世纪','亚历山大里亚与帕加马的书卷竞赛','埃及禁运莎草纸逼出帕加马羊皮纸，亚历山大里亚大图书馆与《七十士译本》问世。',[[29.0,21.5],[41.5,36.5]],d=>{
+    ha(d,'egypt',HC.mino,{fillOpacity:.28});ha(d,'hPergamonCore',HC.sparta,{fillOpacity:.34});
+    hp(d,'alexandria',{left:1,note:'博学园、大图书馆与犹太《七十士译本》诞生地。'});
+    hp(d,'pergamon',{note:'遭埃及禁运莎草纸后精研小牛皮，催生耐用羊皮纸。'});
+    hp(d,'athens');hr(d,[[31.20,29.92],[39.12,27.18]],HC.route);
+   },[['fill',HC.mino,'莎草纸垄断地托勒密埃及'],['fill',HC.sparta,'改良羊皮纸的帕加马'],['dline',HC.route,'跨海学者与典籍竞争网络']]),
+  hs('前 3世纪','几何公理与赛伊尼—亚历山大里亚测地线','欧几里得编《几何原本》，埃拉托色尼借两地夏至日影差算出地球周长。',[[23.0,25.5],[32.8,35.5]],d=>{
+    ha(d,'egypt',HC.route,{fillOpacity:.26});
+    hp(d,'alexandria',{left:1,note:'夏至正午方尖碑投下约7.2度夹角日影。'});
+    hp(d,'syene',{note:'今阿斯旺，北回归线附近夏至正午阳光直射深井底无影。'});
+    hr(d,[[31.20,29.92],[24.09,32.90]],HC.war);
+   },[['dline',HC.war,'埃拉托色尼测算地球周长的子午弧线']]),
+  hs('前 214—前 212年','叙拉古围城与阿基米德之死','阿基米德以投石机与铁爪助叙拉古死守两年，前212年罗马破城，老科学家死于兵刃。',[[35.6,12.2],[42.4,18.2]],d=>{
+    ha(d,'hSicily',HC.mino,{fillOpacity:.26});ha(d,'hSyracuse',HC.war,{fillOpacity:.40});
+    hp(d,'syracuse',{kind:'battle',left:1,note:'前214—前212年阿基米德守城器械退敌两年，城破遇害。'});
+    hp(d,'rome',{left:1});hr(d,[[41.89,12.48],[38.19,15.55],[37.06,15.29]],HC.rome);
+   },[['dline',HC.rome,'罗马名将马塞卢斯围攻叙拉古路线'],['dot',HC.war,'叙拉古围城战']])
  ]},
 {id:'history-celts',ch:3,title:'凯尔特人来到爱琴海',short:'凯尔特南下与加拉太',en:'Celts & Galatia',period:'前 279—前 230年代',c:HC.celt,
  scenes:[
-  hs('前 279年','南下马其顿与德尔斐','多瑙河地区诸部向南进军：马其顿国王战死，布伦努斯的一军在德尔斐附近受挫。',[[37.2,19],[46.3,29]],d=>{
-    ha(d,'hCelticBalkans',HC.celt,{fillOpacity:.14,dashArray:'5 4'});ha(d,'hAntigonidCore',HC.macedon,{fillOpacity:.15});ha(d,'hAetolia',HC.thebes,{fillOpacity:.22});
-    hp(d,'pella',{note:'前279年，国王托勒密·克劳诺斯（Ptolemy Ceraunus）迎击凯尔特军队战死，马其顿陷入动荡。'});hp(d,'thermopylae',{note:'前279年，希腊联军再次利用温泉关阻击北来的军队。'});hp(d,'delphi',{kind:'battle',left:1});
-    hr(d,[[45.1,22],[42.5,22.2],[40.76,22.52],[39.65,22.5],[38.796,22.536],[38.48,22.5]],HC.celt,{band:true});
-    hl(d,'多瑙河地区','Danube region',45.7,23.6,HC.celt);
-   },[['dash',HC.celt,'凯尔特诸部活动走廊'],['dline',HC.celt,'不同军队南下的方向示意'],['fill',HC.thebes,'参与抵抗的埃托利亚核心']]),
-  hs('前 278／277年起','受邀跨海，落脚加拉太','一支应邀跨海，逐步扎根加拉太；安提柯二世则在前277年击败另一支，借此巩固马其顿王位。',[[37.4,25],[43,36.3]],d=>{
-    ha(d,'hBithynia',HC.macedon,{fillOpacity:.24});ha(d,'hGalatia',HC.celt,{fillOpacity:.27,dashArray:'4 3'});
-    hp(d,'byzantium');hp(d,'nicomedia');hp(d,'ancyra');hp(d,'pessinus',{left:1});hp(d,'lysimachia',{kind:'battle',left:1});
-    hr(d,[[42.1,26.6],[41.01,28.98],[40.76,29.94],[40.2,31.4],[39.93,32.86]],HC.celt,{band:true});
-    hl(d,'加拉太','Galatia',38.6,33.4,HC.celt);hl(d,'比提尼亚','Bithynia',41.5,31.3,HC.macedon);
-   },[['fill',HC.macedon,'比提尼亚的核心地区'],['dash',HC.celt,'后来形成的加拉太聚居区'],['dline',HC.celt,'跨海与内陆迁移方向（概略）']]),
-  hs('前 3世纪后半叶','帕加马的胜利与声望','阿塔罗斯一世击败加拉太军队；纪念雕像把战场胜利转成王朝的保护者形象。',[[37.7,25],[41.1,35.7]],d=>{
-    ha(d,'hPergamonCore',HC.thebes,{fillOpacity:.3});ha(d,'hGalatia',HC.celt,{fillOpacity:.2,dashArray:'4 3'});hp(d,'pergamon');hp(d,'ancyra');
-    hr(d,[[39.4,31.4],[39.2,29.2],[39.12,27.18]],HC.celt);
-    hl(d,'帕加马核心','Pergamon',40.3,27.8,HC.thebes);hl(d,'加拉太','Galatia',38.5,33.5,HC.celt);
-   },[['fill',HC.thebes,'帕加马王国早期核心'],['dash',HC.celt,'加拉太聚居区'],['dline',HC.celt,'向西活动与交战方向示意']])
+  hs('前 279年','凯尔特南冲马其顿与德尔斐受挫','巴尔干北疆防线失守，南下凯尔特军斩杀马其顿王后折戟德尔斐。',[[37.2,18.8],[43.4,26.8]],d=>{
+    ha(d,'hCelticBalkans',HC.celt,{fillOpacity:.26,dashArray:'4 3'});ha(d,'hMacedonEarly',HC.macedon,{fillOpacity:.22});
+    hp(d,'pella',{note:'前279年马其顿王托勒密·克劳诺斯战败被斩，北门大开。'});
+    hp(d,'delphi',{kind:'battle',left:1,note:'布伦努斯直扑圣所，遭暴风雪与埃托利亚联军击退自尽。'});
+    hr(d,[[42.6,21.5],[40.76,22.52],[38.48,22.5]],HC.celt);
+   },[['dash',HC.celt,'自中欧南下巴尔干的凯尔特部族'],['dline',HC.celt,'前279年布伦努斯南袭马其顿与德尔斐']]),
+  hs('前 278／277年起','受雇渡海与安纳托利亚“加拉太”成型','比提尼亚王请两万凯尔特人跨海峡助战，战后不走定居安居拉高原形成加拉太。',[[37.2,24.6],[42.0,35.5]],d=>{
+    ha(d,'hBithynia',HC.mino,{fillOpacity:.24});ha(d,'hGalatia',HC.celt,{fillOpacity:.34});
+    hp(d,'lysimachia',{kind:'battle'});hp(d,'nicomedia');
+    hp(d,'ancyra',{note:'安居拉（今安卡拉），加拉太特克托萨格部核心城址。'});hp(d,'pessinus',{left:1});
+    hr(d,[[40.60,26.85],[40.76,29.94],[39.93,32.86]],HC.celt);
+   },[['fill',HC.celt,'凯尔特移民定居的安纳托利亚加拉太区'],['dline',HC.celt,'前278／277年跨海峡进入小亚细亚路线']]),
+  hs('前 230年代','帕加马破加拉太称王与凯尔特全欧分布','阿塔罗斯一世拒交保护费大败加拉太称王立像，塑造帕加马“文明救星”形象。',[[36.6,25.0],[41.4,34.8]],d=>{
+    ha(d,'hPergamonCore',HC.mino,{fillOpacity:.36});ha(d,'hGalatia',HC.celt,{fillOpacity:.28,dashArray:'4 3'});
+    hp(d,'pergamon',{note:'阿塔罗斯一世破加拉太后称王，立《垂死的高卢人》群雕。'});
+    hp(d,'ancyra');hp(d,'miletus');
+    hr(d,[[39.93,32.86],[39.12,27.18]],HC.celt);
+   },[['fill',HC.mino,'称王崛起的帕加马阿塔罗斯王国'],['dash',HC.celt,'遭击退缩回内陆的加拉太诸部']])
  ]},
 {id:'history-eastern-kingdoms',ch:3,title:'东方边缘长出新中心',short:'巴克特里亚与帕提亚',en:'Bactria & Parthia',period:'约前 250—前 141年',c:HC.parthia,
  scenes:[
-  hs('前 3世纪中叶起','东方走向自主','巴克特里亚与帕提亚逐步脱离塞琉古；地方集团利用既有农业、城镇与兵员建立政权。',[[29,49],[43,75]],d=>{
-    ha(d,'hParthiaEarly',HC.parthia,{fillOpacity:.3});ha(d,'hBactriaSogdiana',HC.thebes,{fillOpacity:.24,dashArray:'5 4'});
-    hp(d,'nisa');hp(d,'bactra',{note:'巴克特里亚王国的中心；希腊统治集团与本地农业、城市网络结合。'});hp(d,'taxila',{note:'南亚西北部的城市节点，连接印度河与中亚交流。'});
-    hr(d,[[36.76,66.9],[34.5,69.2],[33.75,72.83]],HC.route);
-    hl(d,'帕提亚','Parthia',35.5,56,HC.parthia);hl(d,'巴克特里亚','Bactria',40.3,66,HC.thebes);
-   },[['fill',HC.parthia,'早期帕提亚势力核心'],['dash',HC.thebes,'巴克特里亚及邻近活动区'],['dline',HC.route,'中亚与南亚的交流方向']]),
-  hs('前 2世纪中叶—前 141年','向两河扩张','米特里达梯一世取得米底与巴比伦尼亚；原帝国的核心资源转入新王朝。',[[28,40],[41,62]],d=>{
-    ha(d,'hParthiaWest',HC.parthia,{fillOpacity:.23});ha(d,'hBabylonia',HC.parthia,{fillOpacity:.38});hp(d,'nisa');hp(d,'ecbatana',{note:'米底中心，在前2世纪中叶进入安息王朝控制。'});hp(d,'seleucia');hp(d,'babylon',{note:'前141年，巴比伦尼亚进入帕提亚控制，成为新王朝的重要税源。'});
+  hs('前 3世纪中叶起','巴克特里亚自立：张骞笔下的“大夏”','总督狄奥多托斯趁塞琉古西顾自立称王，阿伊哈努姆城址留存希腊剧场与体育馆。',[[29.0,51.0],[43.0,76.0]],d=>{
+    ha(d,'hParthiaEarly',HC.parthia,{fillOpacity:.26});ha(d,'hBactriaSogdiana',HC.thebes,{fillOpacity:.26,dashArray:'5 4'});
+    hp(d,'nisa');hp(d,'bactra',{left:1,note:'巴克特里亚王国核心都城，希腊统治集团与绿洲城邑结合。'});
+    hp(d,'gr3_ai_khanoum');hp(d,'taxila');
+    hr(d,[[36.76,66.9],[37.17,69.41],[34.5,69.2],[33.75,72.83]],HC.route);
+    hl(d,'帕提亚','Parthia',35.5,56.5,HC.parthia);hl(d,'巴克特里亚','Bactria',40.4,65.5,HC.thebes);
+   },[['fill',HC.parthia,'早期帕提亚势力核心'],['dash',HC.thebes,'希腊—巴克特里亚王国核心区'],['dline',HC.route,'希腊势力翻越兴都库什山南下印度']]),
+  hs('前 2世纪—公元初','当阿波罗遇上佛陀：犍陀罗造像','印度—希腊国王米南德留名佛经，希腊雕像技法在犍陀罗与佛教交汇，催生早期人形佛像并经西域东传。',[[28.0,62.0],[41.0,79.0]],d=>{
+    ha(d,'hBactriaSogdiana',HC.thebes,{fillOpacity:.22,dashArray:'5 4'});ha(d,'hMauryaNorthwest',HC.mino,{fillOpacity:.22,dashArray:'4 3'});
+    hp(d,'bactra',{left:1});hp(d,'gr3_ai_khanoum');hp(d,'gr3_gandhara',{left:1});
+    hp(d,'taxila',{note:'印度—希腊王国重镇，犍陀罗佛教艺术核心节点。'});
+    hr(d,[[36.76,66.9],[34.02,71.58],[33.75,72.83]],HC.route);hr(d,[[34.02,71.58],[37.5,75.0],[39.5,76.0]],HC.mino);
+    hl(d,'犍陀罗文化圈','Gandhara',31.2,71.8,HC.mino);
+   },[['dash',HC.thebes,'巴克特里亚故地'],['dash',HC.mino,'印度西北希腊化与佛教交汇区'],['dline',HC.mino,'犍陀罗佛像艺术经西域东传方向']]),
+  hs('前 2世纪中叶—前 141年','安息接盘两河，希腊城市照转','米特里达梯一世攻克米底与巴比伦尼亚，自署“爱希腊者”保留希腊文钱币与城市自治，稳稳接过两河税源。',[[28.0,40.0],[41.0,62.0]],d=>{
+    ha(d,'hParthiaWest',HC.parthia,{fillOpacity:.23});ha(d,'hBabylonia',HC.parthia,{fillOpacity:.38});
+    hp(d,'nisa');hp(d,'ecbatana',{note:'米底重镇，前2世纪中叶归入安息王朝。'});hp(d,'seleucia');
+    hp(d,'babylon',{left:1,note:'前141年巴比伦尼亚归入安息，希腊化城市照常自治纳贡。'});
     hr(d,[[37.95,58.21],[34.8,48.52],[33.1,44.52]],HC.parthia);
-   },[['fill',HC.parthia,'帕提亚向西扩张所及核心（概略）'],['dline',HC.parthia,'向米底、两河发展的方向']])
+   },[['fill',HC.parthia,'安息向西扩张所及核心（概略）'],['dline',HC.parthia,'米特里达梯一世西进两河方向']])
  ]},
 {id:'history-spartan-reforms',ch:3,title:'斯巴达最后的改革',short:'重新分地与城邦联邦',en:'Spartan Reform & Greek Leagues',period:'前 245—前 222年',c:HC.sparta,
  scenes:[
-  hs('前 245—约前 227年','从财产重分到公民扩充','阿吉斯四世失败后，克里昂米尼三世以军队打破监察官权力，重新组织土地和公民兵。',[[36.1,20.5],[38.6,24.1]],d=>{
+  hs('前 245—前 227年','九千变七百：两任国王接力演“黑羊”','阿吉斯四世温和烧借据遇害，克里昂米尼三世动兵杀监察官、重分四千份地并换装长矛，斯巴达战力瞬间回血。',[[36.1,20.5],[38.6,24.1]],d=>{
     ha(d,'hLaconia',HC.sparta,{fillOpacity:.32});ha(d,'hMessenia',HC.neutral,{fillOpacity:.15,dashArray:'5 4'});ha(d,'hAchaeanLeague',HC.athens,{fillOpacity:.19,dashArray:'4 3'});
-    hp(d,'sparta',{note:'公民人数与土地分配决定军队规模；约前227年改革试图重建这套基础。'});hp(d,'messene',{left:1,note:'美塞尼亚此时已独立，斯巴达无法恢复过去全部农业基础。'});hp(d,'corinth');
-   },[['fill',HC.sparta,'斯巴达的拉科尼亚核心'],['dash',HC.neutral,'已脱离斯巴达的美塞尼亚'],['dash',HC.athens,'亚该亚联盟部分成员地区']]),
-  hs('前 224—前 222年','请来马其顿，败于塞拉西亚','阿拉托斯接受马其顿援助；前222年安提柯三世击败斯巴达，改革政权终结。',[[36.2,20],[42,25.5]],d=>{
+    hp(d,'sparta',{note:'公民跌至约七百人，前227年克里昂米尼三世重分四千份地。'});
+    hp(d,'messene',{left:1,note:'前371年后已独立，斯巴达失去半壁粮仓。'});hp(d,'corinth');
+   },[['fill',HC.sparta,'斯巴达的拉科尼亚核心'],['dash',HC.neutral,'早已独立的美塞尼亚'],['dash',HC.athens,'亚该亚同盟主要成员地区']]),
+  hs('前 224—前 222年','各地土豪联合外国按死斯巴达改革','阿拉托斯怕穷人跟着分田，把阿克罗科林斯交还马其顿请来安提柯三世，前222年塞拉西亚一战彻底按死改革。',[[36.2,20.0],[42.0,25.5]],d=>{
     ha(d,'hAntigonidCore',HC.macedon,{fillOpacity:.22});ha(d,'hAchaeanLeague',HC.athens,{fillOpacity:.25,dashArray:'4 3'});ha(d,'hLaconia',HC.sparta,{fillOpacity:.32});
-    hp(d,'pella');hp(d,'corinth',{left:1,note:'阿拉托斯让出科林斯山堡，换取马其顿军事援助。'});hp(d,'sellasia',{kind:'battle'});hp(d,'sparta',{left:1});
+    hp(d,'pella');hp(d,'corinth',{left:1,note:'阿拉托斯交还阿克罗科林斯山堡，换取马其顿大军南下。'});
+    hp(d,'sellasia',{kind:'battle',note:'前222年马其顿与亚该亚三万联军大破斯巴达。'});hp(d,'sparta',{left:1});
     hr(d,[[40.76,22.52],[39.5,22.5],[37.906,22.879],[37.3,22.6],[37.23,22.42]],HC.macedon);
-   },[['fill',HC.sparta,'斯巴达核心'],['dash',HC.athens,'亚该亚联盟部分成员地区'],['dline',HC.macedon,'马其顿援军南下方向']])
+   },[['fill',HC.sparta,'斯巴达核心'],['dash',HC.athens,'亚该亚同盟地区'],['dline',HC.macedon,'安提柯三世援军南下路线']])
  ]},
 {id:'history-ptolemaic-bargain',ch:3,title:'埃及：征兵、反叛与神庙',short:'埃及的兵员与祭司',en:'Soldiers, Revolt & Temples',period:'前 217—前 186年',c:HC.mino,
  scenes:[
-  hs('前 217年','拉菲亚与本地兵员','托勒密大量征募埃及步兵；拉菲亚获胜，暂时保住南黎凡特。',[[27,29],[37.5,39]],d=>{
+  hs('前 217年','拉菲亚战象对撞：给本地人发了枪','托勒密四世破例武装两万本土埃及步兵，在拉菲亚击退安条克三世保住黎凡特，却从此种下国内反叛祸根。',[[27.0,29.0],[37.5,39.0]],d=>{
     ha(d,'egypt',HC.mino,{fillOpacity:.3});ha(d,'hPtolemaicLevant',HC.mino,{fillOpacity:.25});ha(d,'hSeleucidSyria',HC.thebes,{fillOpacity:.25});
-    hp(d,'alexandria');hp(d,'raphia',{kind:'battle'});hp(d,'antioch');hr(d,[[31.2,29.92],[31.2,32.5],[31.29,34.24]],HC.mino);hr(d,[[36.2,36.16],[33.5,35.6],[31.29,34.24]],HC.thebes);
+    hp(d,'alexandria');hp(d,'raphia',{kind:'battle',note:'前217年战象对撞，两万埃及方阵助托勒密四世翻盘。'});hp(d,'antioch');
+    hr(d,[[31.2,29.92],[31.2,32.5],[31.29,34.24]],HC.mino);hr(d,[[36.2,36.16],[33.5,35.6],[31.29,34.24]],HC.thebes);
    },[['fill',HC.mino,'托勒密的埃及与南黎凡特基础'],['fill',HC.thebes,'塞琉古的叙利亚基础'],['dline',HC.thebes,'双方争夺黎凡特走廊']]),
-  hs('约前 206—前 186年','反叛与王室让利','上埃及独立王权持续约二十年；前196年祭司颁布罗塞塔诏令时，统一尚未恢复。',[[22,27],[33.2,35]],d=>{
+  hs('约前 206—前 186年','上埃及独立二十年与《罗塞塔石碑》','上埃及底比斯拥立本土法老抗衡二十年，前196年托勒密五世向祭司减税免债换取背书，三语刻成罗塞塔石碑。',[[22.0,27.0],[33.2,35.0]],d=>{
     ha(d,'egypt',HC.mino,{fillOpacity:.22});ha(d,'hUpperEgypt',HC.war,{fillOpacity:.28,dashArray:'5 4'});
-    hp(d,'luxor',{note:'埃及底比斯是上埃及反叛王权的中心之一，约前206—前186年反复争夺。'});hp(d,'memphis',{note:'前196年祭司会议在孟菲斯颁布诏令，确认托勒密五世的王室崇拜；罗塞塔石碑保存了其中一份。'});hp(d,'rosetta',{left:1});
-   },[['fill',HC.mino,'尼罗河王朝基础'],['dash',HC.war,'上埃及反叛主要活动区（非固定疆界）']])
+    hp(d,'luxor',{note:'上埃及底比斯拥立本土法老独立约二十年。'});
+    hp(d,'memphis',{note:'前196年祭司在此颁布孟斐斯法令，换取王室大笔减税。'});
+    hp(d,'rosetta',{left:1,note:'保存三语诏令的罗塞塔石碑出土地，后成破译圣书体钥匙。'});
+   },[['fill',HC.mino,'托勒密尼罗河王朝核心'],['dash',HC.war,'上埃及本土反叛活动区（非固定疆界）']])
  ]},
 {id:'history-hellenistic-end',ch:3,title:'罗马与帕提亚改变格局',short:'两端推进与王国落幕',en:'Rome, Parthia & a New Order',period:'前 200—前 30年',c:HC.rome,
  scenes:[
-  hs('前 200—前 188年','从盟友到裁判','罗马前197年击败马其顿，前190年击败塞琉古；阿帕米亚和约把小亚细亚资源重新分配给罗马盟友。',[[35,11],[42.8,34]],d=>{
+  hs('前 200—前 188年','库诺斯克法莱到阿帕米亚：罗马拆台','库诺斯克法莱与马格尼西亚连战告捷，罗马以“希腊自由”与阿帕米亚和约重排东地中海。',[[35.0,11.0],[42.8,34.0]],d=>{
     ha(d,'hAntigonidCore',HC.macedon,{fillOpacity:.2});ha(d,'hWestAnatolia',HC.thebes,{fillOpacity:.12,dashArray:'5 4'});ha(d,'hPergamonCore',HC.mino,{fillOpacity:.28});
-    hp(d,'cynoscephalae',{kind:'battle',left:1});hp(d,'magnesia',{kind:'battle'});hp(d,'apamea',{left:1});hp(d,'pergamon');
+    hp(d,'cynoscephalae',{kind:'battle',left:1,note:'前197年丘陵地会战，罗马中队撕裂马其顿方阵。'});
+    hp(d,'magnesia',{kind:'battle',note:'前190年罗马击败安条克三世，塞琉古退出小亚细亚。'});
+    hp(d,'apamea',{left:1});hp(d,'pergamon');
     hr(d,[[40.64,17.95],[39.5,20.2],[39.35,22.55]],HC.rome);hr(d,[[40.5,23],[40.5,26],[38.65,27.45]],HC.rome);
-   },[['fill',HC.macedon,'马其顿核心'],['dash',HC.thebes,'和约重分配的小亚细亚地区'],['fill',HC.mino,'罗马盟友帕加马的早期核心'],['dline',HC.rome,'罗马干预与进军方向']]),
-  hs('前 168—前 64年','王朝失去核心资源','马其顿王朝覆亡、科林斯遭毁；东方帕提亚取得两河，塞琉古残余最终在前64年被罗马吞并。',[[28,19],[43,61]],d=>{
+   },[['fill',HC.macedon,'马其顿核心'],['dash',HC.thebes,'和约重分配的小亚细亚地区'],['fill',HC.mino,'罗马盟友帕加马核心'],['dline',HC.rome,'罗马东进路线']]),
+  hs('前 168—前 64年','骨牌连倒，帝国收网','彼得那灭马其顿、沙地画圈退安条克四世、夷平科林斯、安息取两河、帕加马遗嘱捐国、庞培废塞琉古，格局改写。',[[28.0,19.0],[43.0,61.0]],d=>{
     ha(d,'hGreekMainland',HC.rome,{fillOpacity:.2});ha(d,'hAntigonidCore',HC.rome,{fillOpacity:.22});ha(d,'hSeleucidSyria',HC.rome,{fillOpacity:.24,dashArray:'5 4'});ha(d,'hParthiaWest',HC.parthia,{fillOpacity:.23});
-    hp(d,'pydna',{kind:'battle'});hp(d,'corinth',{kind:'battle',left:1,note:'前146年罗马摧毁科林斯，亚该亚同盟的抵抗失败。'});hp(d,'antioch',{note:'前64年，庞培（Pompey）将叙利亚纳入罗马统治。'});hp(d,'seleucia',{note:'前141年进入帕提亚控制，两河成为安息王朝的重要基础。'});
+    hp(d,'pydna',{kind:'battle',note:'前168年马其顿王国灭亡，旋即改置行省。'});
+    hp(d,'corinth',{kind:'battle',left:1,note:'前146年罗马夷平科林斯，希腊本土彻底屈服。'});
+    hp(d,'antioch',{note:'前64年庞培废黜塞琉古残部，改建叙利亚行省。'});
+    hp(d,'seleucia',{note:'前141年归入安息，两河成为帕提亚帝国税源中心。'});
     hl(d,'帕提亚','Parthia',36.7,54,HC.parthia);
-   },[['fill',HC.rome,'先后落入罗马控制的希腊核心'],['dash',HC.rome,'前64年吞并的叙利亚核心'],['fill',HC.parthia,'帕提亚的伊朗—两河核心（概略）']]),
-  hs('前 31—前 30年','埃及卷入罗马内战','克娄巴特拉与安东尼依靠埃及资源对抗屋大维；阿克提乌姆失败后，埃及被吞并。',[[23.5,18.5],[40.3,35]],d=>{
-    ha(d,'egypt',HC.rome,{fillOpacity:.32});ha(d,'hGreekMainland',HC.rome,{fillOpacity:.13});hp(d,'actium',{kind:'battle',left:1});hp(d,'alexandria',{note:'前30年屋大维进入亚历山大里亚；克娄巴特拉七世与安东尼死去，托勒密王朝终结。'});
+   },[['fill',HC.rome,'先后落入罗马控制的希腊核心'],['dash',HC.rome,'前64年吞并的叙利亚核心'],['fill',HC.parthia,'安息的伊朗—两河核心（概略）']]),
+  hs('前 31—前 30年','托勒密谢幕与希腊反俘罗马','克娄巴特拉七世败于阿克提乌姆后自杀，最后一座希腊化王国并入罗马，但希腊语言与学问反过来重塑罗马灵魂。',[[23.5,18.5],[40.3,35.0]],d=>{
+    ha(d,'egypt',HC.rome,{fillOpacity:.32});ha(d,'hGreekMainland',HC.rome,{fillOpacity:.13});
+    hp(d,'actium',{kind:'battle',left:1,note:'前31年屋大维击败安东尼与克娄巴特拉舰队。'});
+    hp(d,'alexandria',{note:'前30年屋大维入城，克娄巴特拉七世自杀，托勒密王朝落幕。'});
     hr(d,[[38.94,20.77],[35.5,24.4],[31.2,29.92]],HC.rome);
-   },[['fill',HC.rome,'罗马控制继续扩展至埃及'],['dline',HC.rome,'从希腊战场转向埃及的行动方向']])
+   },[['fill',HC.rome,'罗马控制最终覆盖整个东地中海'],['dline',HC.rome,'屋大维从希腊追击至埃及方向']])
  ]},
 {id:'history-rome-site',ch:4,title:'台伯河边的十字路口',short:'罗马起源',en:'A Crossroads on the Tiber',period:'约前1000—前6世纪',c:HC.rome,
  scenes:[
