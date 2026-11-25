@@ -13,8 +13,12 @@ const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','
   await page.setOfflineMode(true);await page.evaluateOnNewDocument(full=>{window.addEventListener('DOMContentLoaded',()=>{const n=document.getElementById('mapnote');if(n)n.hidden=false;if(typeof map!=='undefined'){if(typeof tiles!=='undefined')map.removeLayer(tiles);if(typeof closeTerrain!=='undefined')map.removeLayer(closeTerrain);if(!full)for(const l of Object.values(map._layers)){const kp=l.options?.pane;if(kp==='fallbackPane'||kp==='baseLabelPane'||(kp==='riverPane'&&!group.hasLayer(l))){l._project=()=>{};l._update=()=>{};l._setPos=()=>{};}}}});},false);
   await page.goto(url+'#history-migration',{waitUntil:'domcontentloaded'});
   const report=await page.evaluate(()=>{
-   const oldIDs=['migration','farming','palaces','collapse','dark-age','poleis','sparta','athens','persian-wars','leagues','peloponnesian-war','spartan-decline','macedonian-rise'].map(s=>'history-'+s);
+   const oldIDs=['persian-wars','leagues','peloponnesian-war','spartan-decline','macedonian-rise'].map(s=>'history-'+s);
    const chars=html=>{const div=document.createElement('div');div.innerHTML=html;return div.textContent.replace(/（[A-Za-z][^）]*）/g,'').replace(/\s/g,'').length;};
+   const b1IDs=['migration','farming','palaces','collapse','dark-age','poleis','sparta','athens'].map(s=>'history-'+s);
+   for(const id of b1IDs){const e=HISTORY_ENTRIES.find(x=>x.id===id),d=document.createElement('div');d.innerHTML=e.html;
+    const ps=[...d.querySelectorAll('[data-scene-text]')];if(ps.length!==e.scenes.length)throw new Error('b1 scenes: '+id);
+    ps.forEach((p,i)=>{const b=p.querySelectorAll('strong');if(b.length!==1||chars(b[0].innerHTML)>40||chars(p.innerHTML)>300)throw new Error('b1 budget: '+id+'/'+i);});}
    let coverage=0;
    for(const e of HISTORY_ENTRIES)for(let i=0;i<e.scenes.length;i++){
     const matches=HISTORY_ERAS.flatMap(era=>era.items.filter(([id,from=0,to=Infinity])=>id===e.id&&i>=from&&i<=to));
@@ -31,7 +35,7 @@ const url=pathToFileURL(path.resolve(process.argv[2]||path.join(__dirname,'..','
    return {oldChars:8419,newChars:HISTORY_ENTRIES.filter(e=>oldIDs.includes(e.id)).reduce((n,e)=>n+chars(e.html),0),coverage,eras:HISTORY_ERAS.length};
   });
   assert.ok(report.newChars<=report.oldChars/3,'Existing prose exceeds one-third: '+JSON.stringify(report));
-  assert.equal(report.coverage,2259);assert.equal(report.eras,109);
+  assert.equal(report.coverage,2265);assert.equal(report.eras,109);
   const concise = await page.evaluate(() => {
    const entries=HISTORY_ENTRIES.filter(e=>e.ch===3);
    return entries.map(e=>{const p=document.createElement('div');p.innerHTML=e.html;return {id:e.id,chars:p.textContent.replace(/（[A-Za-z][^）]*）/g,'').replace(/\s/g,'').length};});

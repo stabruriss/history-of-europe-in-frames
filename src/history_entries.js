@@ -3290,6 +3290,11 @@ Object.assign(HS,{
   w2_kuwait:['科威特城','Kuwait City',29.376,47.977,'1991年海湾战争爆发地，美军密苏里号战列舰发射战斧巡航导弹完成最后实战。'],
   w2_grozny:['格罗兹尼（车臣）','Grozny (Chechnya)',43.318,45.698,'1990年代车臣非对称巷战焦点，重甲纵队在城市游击战中付出惨重代价。'],
   w2_tehran:['德黑兰（伊朗）','Tehran (Iran)',35.689,51.389,'后冷战中东代理人与无人机、网络战低烈度博弈的核心节点之一。'],
+  gr1_thera:['锡拉岛（圣托里尼）','Thera (Santorini)',36.393,25.461,'爱琴海南部火山岛；约前1600年前后剧烈喷发，掩埋阿克罗蒂里聚落。'],
+  gr1_uluburun:['乌鲁布伦沉船海域','Uluburun Shipwreck',36.13,29.69,'小亚细亚南岸外海；前14世纪末商船沉没处，出水十吨铜锭与一吨锡锭。'],
+  gr1_chios:['希俄斯岛','Chios',38.37,26.13,'小亚细亚外海伊奥尼亚大岛；古代吟游诗人行会驻地，多传为荷马故乡。'],
+  gr1_olympia:['奥林匹亚','Olympia',37.638,21.63,'伯罗奔尼撒西部的宙斯圣所；传统自前776年起每四年办泛希腊竞技会。'],
+  gr1_laurium:['拉夫里昂银矿区','Laurium',37.71,24.05,'阿提卡东南角银铅矿山；僭主时期已开采，日后撑起雅典舰队财政。'],
 });
 function hp(d,key,opt={}){
   const [n,en,la,lo,note]=HS[key];
@@ -3333,7 +3338,7 @@ const hs=(date,title,note,view,draw,legend,fitZoom)=>({date,title,note,view,draw
 const HISTORY_ENTRIES=[
 {id:'history-migration',ch:0,title:'走出非洲',short:'走出非洲',en:'Out of Africa',period:'距今约 7万—4万年',c:HC.route,
  scenes:[
-  hs('距今约 7万—4万年','欧亚扩散','几条宽带示意扩散方向；沿途人群持续分化与混合。',[[4,12],[57,128]],d=>{
+  hs('距今约 7万—4万年','智人走出非洲与欧亚扩散','三条宽带示意走出非洲后的主要扩散方向，沿途人群分化并与古人类混血。',[[4,12],[57,128]],d=>{
     ha(d,'iranPlateau',HC.mino,{fillOpacity:.17,dashArray:'6 5'});
     hr(d,[[9,37],[20,33],[30,32],[35,36],[39,30],[44,20]],HC.route,{band:true});
     hr(d,[[12,42],[14,45],[23,51],[27,63],[18,73],[12,81],[14,98],[24,111]],HC.mino,{band:true});
@@ -3341,105 +3346,155 @@ const HISTORY_ENTRIES=[
     hl(d,'非洲东北部','Northeast Africa',6,33,HC.route);hl(d,'西亚','Southwest Asia',36,45,HC.route);
     hl(d,'欧洲','Europe',48,18,HC.route);hl(d,'南亚','South Asia',22,78,HC.mino);
     hl(d,'东亚','East Asia',32,116,HC.myc);hl(d,'东南亚','Southeast Asia',9,105,HC.mino);
-   },[['dline',HC.route,'西亚与欧洲方向（概略）'],['dline',HC.mino,'南亚—东南亚方向（概略）'],['dline',HC.myc,'内陆扩散方向（概略）']],3.5),
-  hs('距今约 6万—4万年','伊朗高原假说','伊朗高原：早期人群停驻与再扩散的一种研究模型。',[[19,29],[43,72]],d=>{
+   },[['dline',HC.route,'西亚与欧洲方向（概略）'],['dline',HC.mino,'南亚—东南亚方向（概略）'],['dline',HC.myc,'内陆东进方向（概略）']],3.5),
+  hs('距今约 7万—4.5万年','伊朗高原驻留与再分流','古DNA与古气候模型推定的早期智人驻留中转区域及向外联系方向。',[[19,29],[43,72]],d=>{
     ha(d,'iranPlateau',HC.mino,{dashArray:'6 5',fillOpacity:.18});
     hr(d,[[32,35],[34,43],[32,53]],HC.route,{band:true});hl(d,'伊朗高原','Iranian Plateau',33,57,HC.mino);
     hl(d,'黎凡特','Levant',34,36,HC.route);
-   },[['dash',HC.mino,'可能的停驻区域：研究模型'],['dline',HC.route,'区域间联系方向']])
+   },[['dash',HC.mino,'可能的长期驻留中转区'],['dline',HC.route,'跨区域扩散方向']])
  ]},
 {id:'history-farming',ch:0,title:'农业与早期国家',short:'农业、定居与国家',en:'Farming & Early States',period:'约前 10000—前 3000年',c:COL.crescent,
  scenes:[
-  hs('约前 10000—前 6000年','农业与定居','农业从新月沃地经安纳托利亚传播，进入爱琴海。',[[26,20],[41.6,49]],d=>{
+  hs('约前 10000—前 6000年','新月沃地驯化与农耕西传','小麦牛羊自新月沃地驯化，经安纳托利亚传入爱琴海与东南欧。',[[26,20],[41.6,49]],d=>{
     ha(d,'crescent',COL.crescent,{fillOpacity:.32});ha(d,'anatolia',COL.crescent,{fillOpacity:.10,dashArray:'4 4'});
     hp(d,'jericho');hr(d,[[35,39],[38,35],[38,29],[38,24]],COL.crescent);
     hl(d,'新月沃地','Fertile Crescent',36.9,43,COL.crescent);hl(d,'爱琴海农业聚落','Aegean farming communities',39.7,24,COL.crescent);
-   },[['fill',COL.crescent,'农业形成与传播涉及的地区'],['dline',COL.crescent,'传播方向示意']]),
-  hs('前 4千纪—约前 3100年','城市与王权','仓储、灌溉与征收，在两河和尼罗河流域支撑城市及王权。',[[23.5,28],[38,49]],d=>{
+   },[['fill',COL.crescent,'早期农业形成与传播区'],['dline',COL.crescent,'农耕人群迁徙传播方向']]),
+  hs('前 4千纪—约前 3100年','两河城市与尼罗河王权','灌溉、仓储与文字记账在南部两河与尼罗河流域撑起早期城市及国家。',[[23.5,28],[38,49]],d=>{
     ha(d,'hBabylonia',COL.meso);ha(d,'egypt',COL.egypt,{fillOpacity:.45});
     hp(d,'uruk');hp(d,'ur',{left:1});hp(d,'memphis');hp(d,'luxor',{left:1});
     hl(d,'苏美尔城市地带','Sumer',33.4,46.3,COL.meso);hl(d,'尼罗河流域','Nile Valley',27,29.6,COL.egypt);
-   },[['fill',COL.meso,'南部两河城市地带'],['fill',COL.egypt,'尼罗河农业与国家形成区域']])
+   },[['fill',COL.meso,'南部两河早期城市带'],['fill',COL.egypt,'尼罗河统一王权核心区']])
  ]},
 {id:'history-palaces',ch:0,title:'克里特与迈锡尼',short:'爱琴海宫殿文明',en:'Minoan & Mycenaean Worlds',period:'约前 1900—前 1100年',c:HC.mino,hideIslands:['crete','cyclades'],
  scenes:[
-  hs('约前 1900—前 1450年','克里特宫殿','克里特宫殿集中物资、组织生产，也联系海外。',[[34.3,22.6],[36.6,27.4]],d=>{
-    ha(d,'hCrete',HC.mino,{fillOpacity:.35});hp(d,'knossos');hp(d,'phaistos',{left:1});
-    hl(d,'克里特岛','Crete',35.85,24.6,HC.mino);hl(d,'线形文字 A','Linear A',34.65,25.5,HC.mino);
-   },[['fill',HC.mino,'米诺斯宫殿文明活动区'],['dot',HC.mino,'宫殿中心']],7),
-  hs('约前 1600—前 1200年','大陆宫殿中心','各色块是大陆宫殿中心；前1450年后迈锡尼势力进入克里特。',[[34.5,20.8],[39.0,27]],d=>{
+  hs('约前 1900—前 1450年','克里特宫殿与火山冲击','克里特宫殿集中储藏并联通海路；北侧标锡拉火山岛位置。',[[34.3,22.6],[36.9,27.4]],d=>{
+    ha(d,'hCrete',HC.mino,{fillOpacity:.35});hp(d,'knossos');hp(d,'phaistos',{left:1});hp(d,'gr1_thera');
+    hl(d,'克里特岛','Crete',35.55,24.1,HC.mino);hl(d,'线形文字 A','Linear A',34.65,25.6,HC.mino);
+   },[['fill',HC.mino,'米诺斯宫殿文明活动区'],['dot',HC.mino,'宫殿中心与锡拉火山岛']],7),
+  hs('约前 1600—前 1200年','迈锡尼大陆城堡与入主克里特','大陆巨石要塞群兴起，前1450年后迈锡尼势力接管克里特。',[[34.5,20.8],[39.0,27.0]],d=>{
     ha(d,'hPalaceAreas',HC.myc,{fillOpacity:.40});ha(d,'hCrete',HC.mino,{fillOpacity:.17,dashArray:'4 4'});
     hp(d,'mycenae');hp(d,'pylos',{left:1});hp(d,'thebes');hp(d,'tiryns',{left:1,labelZ:7});hp(d,'knossos');
     hl(d,'线形文字 B · 早期希腊语','Linear B · early Greek',36.5,25.4,HC.myc);
-   },leg.bronze,7),
-  hs('尤其前 14—前 13世纪','东地中海网络','铜、锡与奢侈品沿海路流动，把宫殿精英绑进共同网络。',HV.eastern,bronzeNetwork,
-   [['fill',HC.mino,'克里特'],['fill',HC.myc,'迈锡尼宫殿中心'],['fill',HC.hittite,'赫梯核心及影响区'],['dline',HC.route,'贸易联系示意']])
+   },[['fill',HC.myc,'迈锡尼大陆宫殿中心'],['dash',HC.mino,'迈锡尼接管后的克里特']]),
+  hs('前 14—前 13世纪','东地中海青铜远贸网','铜锡与奢侈品跨海流转，乌鲁布伦沉船见证埃及、赫梯与爱琴海分工。',[[24.3,19.4],[42.6,49.8]],d=>{
+    bronzeNetwork(d);hp(d,'gr1_uluburun',{note:'前14世纪末商船沉没处，出水十吨铜锭、一吨锡锭与多国器物。'});
+   },[['fill',HC.mino,'克里特'],['fill',HC.myc,'迈锡尼宫殿中心'],['fill',HC.hittite,'赫梯核心及影响区'],['dline',HC.route,'跨海铜锡贸易航路']])
  ]},
 {id:'history-collapse',ch:0,title:'青铜时代的危机',short:'晚期青铜时代崩溃',en:'Late Bronze Age Collapse',period:'约前 1274—前 1100年',c:HC.war,
  scenes:[
-  hs('约前 1274 / 前 1259年','战争与后来的和约','约前1274年交战，前1259年议和；宫殿危机随后才全面爆发。',[[27.5,29],[42,41]],d=>{
+  hs('约前 1274 / 前 1259年','卡迭石车战与埃赫和约','约前1274年埃及与赫梯在卡迭石决战，前1259年缔结对等和约。',[[27.5,29],[42,41]],d=>{
     ha(d,'hHittite',HC.hittite);ha(d,'egypt',COL.egypt,{fillOpacity:.4});ha(d,'canaan',COL.egypt,{fillOpacity:.15});
     hp(d,'hattusa');hp(d,'memphis');hp(d,'kadesh',{kind:'battle'});
     hr(d,[[30,31.3],[31.4,34.3],[33,35.4],[34.556,36.518]],COL.egypt);
     hr(d,[[40,34.6],[37,36],[34.556,36.518]],HC.hittite);
-   },[['fill',HC.hittite,'赫梯核心与势力区域'],['fill',COL.egypt,'埃及核心与南黎凡特影响'],['dline',COL.egypt,'埃及北上方向'],['dline',HC.hittite,'赫梯南下方向']]),
-  hs('约前 1200年','多个中心瓦解','战争、粮荒与供应中断互相放大，多个中心先后瓦解。',HV.eastern,d=>{
+   },[['fill',HC.hittite,'赫梯核心与势力区'],['fill',COL.egypt,'埃及核心与南黎凡特控制区'],['dline',COL.egypt,'拉美西斯二世北上路线'],['dline',HC.hittite,'赫梯军南下迎击路线']]),
+  hs('约前 1200年','宫殿中心连环焚毁','大旱、断供与战火叠加，迈锡尼、哈图沙与乌加里特先后瓦解。',[[24.3,19.4],[42.6,49.8]],d=>{
     ha(d,'hPalaceAreas',HC.war,{fillOpacity:.28,dashArray:'4 4'});ha(d,'hHittite',HC.war,{fillOpacity:.12,dashArray:'6 4'});
     ha(d,'egypt',COL.egypt,{fillOpacity:.3});hp(d,'mycenae',{kind:'battle',left:1});hp(d,'pylos',{kind:'battle',labelZ:6,left:1});
-    hp(d,'hattusa',{kind:'battle'});hp(d,'ugarit',{kind:'battle'});hl(d,'旧有宫殿网络受冲击','Palatial networks disrupted',33.7,26.2,HC.war);
-   },[['dash',HC.war,'受冲击的旧有宫殿与国家核心'],['fill',COL.egypt,'埃及王权继续存在']]),
-  hs('约前 1177年','埃及抵抗海上民族','埃及挡住进攻；箭头示东地中海武装活动方向。',[[24,27.8],[36.8,37.8]],d=>{
+    hp(d,'hattusa',{kind:'battle'});hp(d,'ugarit',{kind:'battle'});hl(d,'旧宫殿网络崩解','Palatial networks collapse',33.7,26.2,HC.war);
+   },[['dash',HC.war,'遭焚毁废弃的宫殿与帝国核心'],['fill',COL.egypt,'勉力存续的埃及王权']]),
+  hs('约前 1177年','海上民族南下与尼罗河口阻击','拉美西斯三世在尼罗河三角洲挡住海上民族，但丧失亚洲霸权。',[[24,27.8],[36.8,37.8]],d=>{
     ha(d,'egypt',COL.egypt,{fillOpacity:.4});ha(d,'canaan',HC.war,{fillOpacity:.13,dashArray:'4 4'});
     hr(d,[[35.5,33],[33.5,32.8],[31.4,31.6]],HC.war,{band:true});hp(d,'medinet',{left:1});
-    hp(d,'memphis');hl(d,'埃及存续，海外优势减弱','Egypt survives',28,30, COL.egypt);
-   },[['fill',COL.egypt,'埃及核心区'],['dline',HC.war,'武装与人口活动方向（不确定）']])
+    hp(d,'memphis');hl(d,'埃及本土存续，海外退潮','Egypt survives, empire recedes',28,30,COL.egypt);
+   },[['fill',COL.egypt,'守住本土的埃及核心区'],['dline',HC.war,'海上民族武装迁徙与袭击方向']])
  ]},
 {id:'history-dark-age',ch:0,title:'希腊的黑暗时代',short:'希腊的延续与复苏',en:'The Greek Dark Age',period:'约前 1200／1100—前 800年',c:HC.myc,
  scenes:[
-  hs('约前 1100—前 800年','希腊的延续与复苏','宫殿消失，社群延续；海上往来为恢复与重组提供条件。',HV.aegean,d=>{
-    ha(d,'greekCore',HC.myc,{fillOpacity:.12,dashArray:'5 4'});hp(d,'athens');hp(d,'lefkandi');hp(d,'knossos',{labelZ:6});
-    hr(d,[[34,35.4],[35.5,29],[37.5,25],[38.41,23.68]],HC.route);
-    hl(d,'与东方的联系仍在','Contacts continue',35.3,27,HC.route);
-   },[['dash',HC.myc,'爱琴海聚落活动的概略范围'],['dline',HC.route,'与黎凡特的交流方向']])
+  hs('约前 1100—前 900年','废墟村社与冶铁术扩散','宫殿消失后村社延续，块炼铁技术自小亚细亚与塞浦路斯传入爱琴海。',[[33.5,20.0],[40.8,36.5]],d=>{
+    ha(d,'greekCore',HC.myc,{fillOpacity:.14,dashArray:'5 4'});
+    hp(d,'athens');hp(d,'lefkandi',{left:1});hp(d,'knossos',{labelZ:6});hp(d,'ugarit');
+    hr(d,[[35.6,35.7],[35.1,33.4],[35.3,25.2],[38.41,23.68]],HC.route);
+    hl(d,'冶铁技术与东方海路西传','Ironworking & eastern contacts',34.2,29.5,HC.route);
+   },[['dash',HC.myc,'黑暗时代希腊聚落分布区'],['dline',HC.route,'小亚细亚—塞浦路斯—爱琴海冶铁传播']]),
+  hs('约前 8世纪','腓尼基字母改造与荷马史诗','腓尼基商船航线带来辅音字母，优卑亚与伊奥尼亚率先加元音并定型史诗。',[[31.5,20.5],[40.5,36.5]],d=>{
+    ha(d,'greekCore',HC.myc,{fillOpacity:.15});ha(d,'hIonia',HC.mino,{fillOpacity:.30});
+    hp(d,'tyre');hp(d,'lefkandi',{left:1,note:'优卑亚航海枢纽，最早使用希腊字母的人群之一。'});
+    hp(d,'gr1_chios',{note:'伊奥尼亚吟游诗人传统重镇，《荷马史诗》在此带编定。'});hp(d,'miletus');
+    hr(d,[[33.27,35.20],[35.0,33.0],[36.5,27.5],[38.41,23.68]],HC.route);
+   },[['fill',HC.mino,'史诗传唱活跃的伊奥尼亚海岸'],['dline',HC.route,'腓尼基字母跨海传入路径']]),
+  hs('约前 8世纪—前 776年起','德尔斐神谕与奥林匹亚赛会','语言认同之上，德尔斐圣所与奥林匹亚赛会把分散聚落连成泛希腊文化圈。',[[35.6,20.4],[39.8,27.8]],d=>{
+    ha(d,'greekCore',HC.myc,{fillOpacity:.16});
+    hp(d,'gr1_olympia',{left:1});hp(d,'delphi',{left:1});hp(d,'athens');hp(d,'corinth',{below:1});hp(d,'sparta');hp(d,'gr1_chios');
+    hl(d,'赫楞人 · 共同希腊语文化圈','Hellenes · shared language & sanctuaries',36.2,24.8,HC.myc);
+   },[['fill',HC.myc,'共享语言与泛希腊圣所的文化范围'],['dot',HC.myc,'泛希腊圣所与早期主要聚落']])
  ]},
 {id:'history-poleis',ch:1,title:'城邦世界的形成',short:'城邦与海外聚落',en:'The Rise of the Polis',period:'约前 800—前 600年',c:HC.athens,
  scenes:[
-  hs('约前 800—前 600年','城邦共同体','城邦以乡村土地养活公民军，公共事务集中在城市。',HV.aegean,d=>{
-    ha(d,'greekCore',HC.athens,{fillOpacity:.1,dashArray:'4 4'});homeCities(d);hp(d,'corinth',{left:1});hp(d,'argos',{labelZ:7});hp(d,'miletus');hp(d,'thebes',{labelZ:7});
-   },[['dash',HC.athens,'希腊城邦文化活动范围'],['dot',HC.athens,'彼此独立的城邦']]),
-  hs('前 8—前 6世纪','地中海与黑海网络','聚落沿海扩展，贸易把独立城邦织成网络。',[[31,11],[47,39]],d=>{
+  hs('约前 800—前 600年','山海盆地与独立城邦群','破碎山海地貌中长出彼此独立的城邦，乡村份地供养城市公民共同体。',[[34.3,20.2],[41.3,29.6]],d=>{
+    ha(d,'greekCore',HC.athens,{fillOpacity:.1,dashArray:'4 4'});homeCities(d);
+    hp(d,'corinth',{left:1});hp(d,'argos',{labelZ:7});hp(d,'miletus');hp(d,'thebes',{labelZ:7});
+   },[['dash',HC.athens,'希腊城邦文化分布范围'],['dot',HC.athens,'互不统属的代表城邦']]),
+  hs('前 7世纪','重装步兵改革与早期商邦僭主','阿尔戈斯、科林斯与雅典等核心城邦率先普及重装步兵方阵并引发政体洗牌。',[[36.3,21.0],[39.2,25.0]],d=>{
+    ha(d,'hArgolis',HC.sparta,{fillOpacity:.26});ha(d,'hCorinth',HC.mino,{fillOpacity:.30});
+    ha(d,'hAttica',HC.athens,{fillOpacity:.24});ha(d,'hBoeotia',HC.myc,{fillOpacity:.22});
+    hp(d,'argos',{below:1,note:'传说前7世纪中叶国王斐冬借步兵方阵挫败斯巴达。'});
+    hp(d,'corinth',{left:1,note:'约前657年基普塞卢斯借平民步兵支持推翻巴基亚代贵族寡头。'});
+    hp(d,'athens');hp(d,'thebes',{left:1});
+   },[['fill',HC.sparta,'阿尔戈利斯'],['fill',HC.mino,'科林斯地峡商邦'],['fill',HC.athens,'阿提卡与彼奥提亚邻邦']]),
+  hs('前 8—前 6世纪','地中海与黑海大殖民网','海外子邦沿西西里、南意大利与黑海海峡铺开，吕底亚至爱琴海铸币兴起。',[[31.5,9.0],[46.2,38.0]],d=>{
     ha(d,'greekCore',HC.athens,{fillOpacity:.1});ha(d,'hColonyCoasts',HC.athens,{fillOpacity:.4});
-    hp(d,'athens');hp(d,'syracuse',{left:1});hp(d,'taras');hp(d,'miletus');hp(d,'byzantium');hp(d,'sinope');
+    hp(d,'athens');hp(d,'syracuse',{left:1});hp(d,'taras');hp(d,'cumae',{left:1});
+    hp(d,'miletus');hp(d,'sardis',{note:'吕底亚都城，约前600年前后首创琥珀金标准铸币。'});
+    hp(d,'byzantium',{left:1});hp(d,'sinope',{left:1});hp(d,'carthage');
     hr(d,[[37.9,23],[36,22],[37.06,15.29]],HC.athens);hr(d,[[37.5,27.3],[40,26.3],[41,29],[42.03,35.15]],HC.athens);
-   },[['fill',HC.athens,'主要希腊活动区与部分沿海聚落'],['dline',HC.athens,'跨海联系方向']])
+   },[['fill',HC.athens,'希腊本土与海外殖民海岸带'],['dline',HC.athens,'跨海殖民与粮贸航线']])
  ]},
 {id:'history-sparta',ch:1,title:'斯巴达的制度',short:'斯巴达：土地与政体',en:'Sparta: Land & Constitution',period:'前 8—前 6世纪起',c:HC.sparta,
  scenes:[
-  hs('古风时代','拉科尼亚核心','拉科尼亚是军事公民共同体的核心。',[[35.9,20.6],[38.6,24.4]],d=>{
-    ha(d,'hLaconia',HC.sparta,{fillOpacity:.34});hp(d,'sparta');hp(d,'argos',{left:1});
-    hl(d,'拉科尼亚','Laconia',36.55,23.5,HC.sparta);
-   },[['fill',HC.sparta,'拉科尼亚核心地区']]),
-  hs('征服后至前 4世纪','美塞尼亚与公民军','美塞尼亚土地与希洛人劳动，供养斯巴达公民军。',[[35.9,20.6],[38.6,24.4]],d=>{
-    ha(d,'hLaconia',HC.sparta,{fillOpacity:.34});ha(d,'hMessenia',HC.mino,{fillOpacity:.34});hp(d,'sparta');
-    hl(d,'美塞尼亚','Messenia',37.3,21.3,HC.mino);hl(d,'拉科尼亚','Laconia',36.6,23.5,HC.sparta);
-    hr(d,[[37.0,21.8],[37.074,22.43]],HC.mino);
-   },[['fill',HC.sparta,'拉科尼亚'],['fill',HC.mino,'被斯巴达控制的美塞尼亚'],['dline',HC.mino,'农业资源支撑关系（示意）']])
+  hs('前 8—前 7世纪','吞并美塞尼亚与三层依附底座','斯巴达翻越泰格托斯山兼并美塞尼亚，以希洛农奴与周边边民供养全职公民军。',[[36.1,20.8],[38.4,24.0]],d=>{
+    ha(d,'hLaconia',HC.sparta,{fillOpacity:.36});ha(d,'hMessenia',HC.mino,{fillOpacity:.34});
+    hp(d,'sparta');hp(d,'pylos',{left:1,note:'美塞尼亚西岸要地，全境居民战败后沦为国有希洛农奴。'});hp(d,'argos');
+    hl(d,'拉科尼亚','Laconia',36.65,23.25,HC.sparta);hl(d,'美塞尼亚 · 希洛人粮仓','Messenia · Helot estates',37.35,21.35,HC.mino);
+    hr(d,[[37.074,22.43],[37.12,21.95]],HC.sparta);
+   },[['fill',HC.sparta,'拉科尼亚本部'],['fill',HC.mino,'被吞并奴役的美塞尼亚'],['dline',HC.sparta,'翻山征服与粮食汲取']]),
+  hs('前 7—前 6世纪','军营城邦与压制防线','二次美塞尼亚战争后确立阿戈格军训、公共食堂与防范希洛起义的常备体制。',[[36.2,21.0],[38.2,23.6]],d=>{
+    ha(d,'hSpartaCore',HC.sparta,{fillOpacity:.35});
+    hp(d,'sparta',{note:'无城墙的军营之城：公民七岁入营，终身习武会餐。'});
+    hp(d,'messene',{left:1,note:'伊托美山一带，希洛人屡次据山反抗的核心区。'});
+    hl(d,'斯巴达直接统治区','Spartan direct territory',36.75,22.95,HC.sparta);
+   },[['fill',HC.sparta,'斯巴达直接统治的拉科尼亚与美塞尼亚'],['dot',HC.sparta,'军营中枢与农奴弹压重镇']]),
+  hs('前 6世纪下半叶起','伯罗奔尼撒同盟与陆权霸主','斯巴达止步于直接吞并，改用双边军事盟约统合伯罗奔尼撒诸邦，唯阿尔戈斯拒不入盟。',[[36.0,20.5],[38.7,24.4]],d=>{
+    ha(d,'hSpartaCore',HC.sparta,{fillOpacity:.36});
+    ha(d,'hPeloponnesianAllies',HC.sparta,{fillOpacity:.15,dashArray:'4 3'});
+    hp(d,'sparta');hp(d,'corinth',{left:1,note:'同盟头号海军与商业盟友，握地峡咽喉。'});
+    hp(d,'gr1_olympia',{left:1});hp(d,'argos',{note:'世仇阿尔戈斯长期拒绝加入斯巴达同盟。'});
+   },[['fill',HC.sparta,'斯巴达直接领土'],['dash',HC.sparta,'伯罗奔尼撒同盟成员区（内政自治）']])
  ]},
 {id:'history-athens',ch:1,title:'雅典的权力重组',short:'雅典：改革与僭主',en:'Athens: Reform & Democracy',period:'约前 621—前 508／507年',c:HC.athens,
  scenes:[
-  hs('约前 621—前 594／593年','法律与解负','德拉古成文法、梭伦解负令，先后回应贵族统治下的社会危机。',HV.attica,d=>{
-    ha(d,'hAttica',HC.athens,{fillOpacity:.23});hp(d,'athens');hl(d,'阿提卡','Attica',38.21,23.87,HC.athens);
-   },[['fill',HC.athens,'雅典公民共同体所在的阿提卡']],8),
-  hs('前 561／560—前 510年','僭主与被逐','庇西特拉图约前546年稳住统治；希庇亚斯前510年被逐。',HV.attica,d=>{
-    ha(d,'hAttica',HC.mino,{fillOpacity:.22});hp(d,'athens');hp(d,'marathon',{note:'庇西特拉图最后一次返回雅典时的重要登陆与集结地区；并非此处所有箭头都指前490年的希波战争。'});
+  hs('约前 632—前 621年','贵族垄断、债务碑与德拉古立法','世袭贵族把持战神山议事会，基伦政变流血后德拉古在雅典首次将刑律成文化。',[[37.55,23.23],[38.45,24.3]],d=>{
+    ha(d,'hAttica',HC.athens,{fillOpacity:.23});
+    hp(d,'athens',{note:'战神山议事会所在；前632年基伦夺城未遂，前621年德拉古颁成文法。'});
+    hl(d,'阿提卡贵族地产与负债农区','Attica · estates & debt stones',38.20,23.85,HC.athens);
+   },[['fill',HC.athens,'统一为一邦的阿提卡半岛'],['dot',HC.athens,'雅典卫城与战神山中枢']],8),
+  hs('前 594／593年','梭伦解负令与财产四等级','拔除阿提卡农田抵押石碑、赎回海外债奴，以土地产值重划公民参政等级。',[[37.55,23.23],[38.45,24.3]],d=>{
+    ha(d,'hAttica',HC.athens,{fillOpacity:.25});
+    hp(d,'athens',{note:'梭伦颁解负令，创四百人议事会与民众陪审法庭。'});
+    hp(d,'piraeus',{left:1,note:'法勒隆与比雷埃夫斯海湾，梭伦鼓励橄榄油出口与手工业贸易。'});
+    hl(d,'阿提卡 · 拔除抵押界碑','Attica · debt stones removed',38.21,23.87,HC.athens);
+   },[['fill',HC.athens,'废除公民债务奴役后的阿提卡'],['dot',HC.athens,'雅典政治中心与出海口']],8),
+  hs('前 561／560—前 527年','三派角力与庇西特拉图夺权路线','平原、海岸、山地三派博弈；庇西特拉图前546年自马拉松进军三度掌权，扶农兴商稳坐僭主。',[[37.55,23.23],[38.45,24.3]],d=>{
+    ha(d,'hAttica',HC.mino,{fillOpacity:.22});hp(d,'athens');
+    hp(d,'marathon',{note:'前546年庇西特拉图在此登陆击败贵族军，三度夺权坐稳僭主。'});
+    hp(d,'gr1_laurium',{left:1,note:'南部海岸与银矿带，工商业海岸派与矿山财源所在。'});
     hr(d,[[38.12,23.973],[38.04,23.9],[37.975,23.727]],HC.mino);
-   },[['fill',HC.mino,'僭主统治下的阿提卡'],['dline',HC.mino,'返回雅典的方向示意']],8),
-  hs('前 508／507年','克里斯提尼改革','城市、沿海、内陆混编，削弱旧贵族的地方动员网络。',HV.attica,d=>{
+   },[['fill',HC.mino,'庇西特拉图统治下的阿提卡'],['dline',HC.mino,'前546年马拉松登陆进军雅典路线']],8),
+  hs('前 527—前 510年','神谕公关、斯巴达干预与希庇亚斯东逃','阿尔克迈翁家族修缮德尔斐促斯巴达北上逐僭，希庇亚斯跨爱琴海投奔波斯。',[[36.6,21.6],[40.3,28.6]],d=>{
+    ha(d,'hAttica',HC.mino,{fillOpacity:.24});ha(d,'hSpartaCore',HC.sparta,{fillOpacity:.26});
+    hp(d,'delphi',{left:1,note:'阿尔克迈翁家族大理石重修神庙，神谕屡催斯巴达出兵倒僭。'});
+    hp(d,'sparta',{left:1});hp(d,'athens',{note:'前510年克里昂米尼一世围卫城，希庇亚斯交城流亡。'});
+    hp(d,'sardis',{note:'波斯小亚细亚重镇；希庇亚斯投奔波斯求援复辟。'});
+    hr(d,[[37.074,22.43],[37.906,22.879],[37.975,23.727]],HC.sparta);
+    hr(d,[[37.975,23.727],[39.5,25.8],[38.49,28.04]],HC.route);
+   },[['fill',HC.mino,'僭主末期的阿提卡'],['dline',HC.sparta,'前510年斯巴达军北上倒僭'],['dline',HC.route,'希庇亚斯流亡波斯方向']]),
+  hs('前 508／507年','克里斯提尼三区混编十部落','打破平原、海岸、山地地域抱团，将城市、沿海、内陆基层村社抽签拼入十个新部落。',[[37.55,23.23],[38.45,24.3]],d=>{
     ha(d,'hAttica',HC.athens,{fillOpacity:.18});hp(d,'athens');
-    d.pin(P('内陆地区',38.10,23.74,'地域组织改革打破旧有地方网络；此点仅示意内陆。','site',{en:'Inland',left:1}));
-    d.pin(P('沿海地区',37.89,24.02,'城市、沿海与内陆单位混编；此点仅示意沿海。','site',{en:'Coast'}));
-    d.line([[37.975,23.727],[38.10,23.74],[37.89,24.02],[37.975,23.727]],{color:HC.athens,weight:2,dashArray:'4 5',opacity:.75});
-   },[['fill',HC.athens,'阿提卡'],['dline',HC.athens,'地域混编原则（非实际行政界）']],8)
+    d.pin(P('内陆村社片区',38.14,23.74,'拆散旧贵族同乡门客网络；此点示意内陆三十分区。','site',{en:'Inland trittyes',left:1}));
+    d.pin(P('沿海村社片区',37.82,24.02,'与城市、内陆各出一片拼成同一部落；此点示意沿海三十分区。','site',{en:'Coastal trittyes'}));
+    d.line([[37.975,23.727],[38.14,23.74],[37.82,24.02],[37.975,23.727]],{color:HC.athens,weight:2,dashArray:'4 5',opacity:.75});
+   },[['fill',HC.athens,'混编重组后的雅典公民邦'],['dline',HC.athens,'城市—内陆—沿海跨区混编示意']],8)
  ]},
 {id:'history-persian-wars',ch:1,title:'希波战争',short:'希波战争与海军',en:'The Greco-Persian Wars',period:'约前 499—前 449年',c:HC.war,
  scenes:[
@@ -21662,7 +21717,7 @@ HISTORY_ENTRIES.forEach(e=>{
 const HISTORY_ERAS=[
  {id:'prehistory',name:'史前时期',en:'Prehistory',date:'距今约7万年—前4000年',c:HC.route,items:[['history-migration',0,1],['history-farming',0,0,'农业与定居']]},
  {id:'bronze',name:'早期国家与青铜时代',en:'Early States & Bronze Age',date:'约前4000—前1200年',c:HC.mino,items:[['history-farming',1,1,'城市与早期王权'],['history-palaces'],['history-collapse']]},
- {id:'iron',name:'早期铁器时代',en:'Early Iron Age',date:'约前1200—前800年',c:HC.myc,items:[['history-dark-age',0,0,'希腊的延续与复苏']]},
+ {id:'iron',name:'早期铁器时代',en:'Early Iron Age',date:'约前1200—前800年',c:HC.myc,items:[['history-dark-age',0,2,'希腊的延续与复苏']]},
  {id:'archaic',name:'古风时期',en:'Archaic Greece',date:'约前800—前480年',c:HC.sparta,items:[['history-poleis'],['history-sparta'],['history-athens'],['history-persian-wars',0,2,'从起义到马拉松']]},
  {id:'classical',name:'古典时期',en:'Classical Greece',date:'前480—前323年',c:HC.athens,items:[['history-persian-wars',3,5,'萨拉米斯与战后转折'],['history-leagues'],['history-peloponnesian-war'],['history-spartan-decline'],['history-macedonian-rise'],['history-alexander-conquest'],['history-alexander-rule']]},
  {id:'hellenistic',name:'希腊化时期',en:'Hellenistic World',date:'前323—前30年',c:HC.thebes,items:[['history-successors'],['history-hellenistic-states'],['history-hellenistic-knowledge'],['history-celts'],['history-eastern-kingdoms'],['history-spartan-reforms'],['history-ptolemaic-bargain'],['history-hellenistic-end']]},
