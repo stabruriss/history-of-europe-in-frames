@@ -8,12 +8,12 @@
     "volume": "+0%"
   },
   "source": {
-    "commit": "323f2d3c3487b60e3a5c7db6a6dd11cf423fe065",
+    "commit": "02fd3652c0d3fe39fe118d57d88faff03bfbf30f",
     "dirty": [],
     "files": {
-      "src/history_entries.js": "03ba71304d8f9d4a2a1000d5ef6bd7d017519fb0614d3bfbbd173e07abc6dc90",
-      "src/history_content.json": "51db4afbab0c60a3f760ded4159317262db69e9eca6e5d20c55fc1ecabe04206",
-      "src/historical_figures.js": "46630d93af2c9ce47a1497e7fb0b27461dbdeb72da74ca8247a130e9ac3e014f"
+      "src/history_entries.js": "b2fa61ce8d77267cd8a2bd3c02e648030e4117f17393616f959f36e84eaa24c1",
+      "src/history_content.json": "bc6ad7d03eb8e2a9ab72b66c75146301ec284d5262127d7dd68a607cbbffd2e7",
+      "src/historical_figures.js": "ced642904ba54aa47e38920c5176f77daae7c7b781f3f329a67a2e29e37cab6f"
     }
   },
   "assets": {
@@ -1850,36 +1850,44 @@
       "audioHash": "0c9f0ae91950f25372f7a3012d8618dfec5206bd1a0a613caf336a8deff17b2f"
     },
     "history-rome-site/0": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/fdd08497ea7c4326d2410c7adf85df66117eb4080646c7cad127b867666cf200.mp3",
-      "duration": 29.424,
-      "bytes": 176544,
-      "textHash": "b6d5e497b06d2c89aaa1f3baedd48c11c305a4cfc83a3d7939ba2b07cc759c10",
-      "inputHash": "36a0fb13832412f5922534013ef5f2d951f4287a26befeedb2ebedb77bc7ad73",
-      "audioHash": "fdd08497ea7c4326d2410c7adf85df66117eb4080646c7cad127b867666cf200"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/573822303cc5c43d2a5bf662bf224641f38be8674d4d192dc217e213cb71dfa5.mp3",
+      "duration": 57.12,
+      "bytes": 342720,
+      "textHash": "61b0275f9a6de9320e01d09557fee3115750f66af845a5486aa4ef9c0bcfded7",
+      "inputHash": "ad9228e04f81e3210aea0bce3a6dd93a0b484c4788b7c9edfb04c1345a6bfb14",
+      "audioHash": "573822303cc5c43d2a5bf662bf224641f38be8674d4d192dc217e213cb71dfa5"
     },
     "history-rome-site/1": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/f2a970c71ffe0e2eae162378b166392189659fb82c2ade2f1c7da25217088ce8.mp3",
-      "duration": 43.392,
-      "bytes": 260352,
-      "textHash": "0e1bf9d1ba9717498880627d2703b76f2d88a963edea3a8ea006e151185d90d7",
-      "inputHash": "a42130a028b3b9c018507eec989d50f09e63162bbf55bab5263c70dbd2a7cc5e",
-      "audioHash": "f2a970c71ffe0e2eae162378b166392189659fb82c2ade2f1c7da25217088ce8"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/6bfe550e17f009972d0efb7be267c711b373bc4c7a4a155f7337a63701404147.mp3",
+      "duration": 59.208,
+      "bytes": 355248,
+      "textHash": "30d03685e66d1fdd9f0e283290799fe078dd3580b65010d5d0113c2e574a9f2c",
+      "inputHash": "da4579229b3fe815ab41b71bf87a1389e278df21c81a3c4e299d8b328cb87011",
+      "audioHash": "6bfe550e17f009972d0efb7be267c711b373bc4c7a4a155f7337a63701404147"
     },
     "history-rome-site/1/moment/0": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/3c5150eb4455b938f49eecd18ec102caaf323ac45942e48d46e9220f382b5cd2.mp3",
-      "duration": 17.4,
-      "bytes": 104400,
-      "textHash": "13cefe5b718dac222be5161938965795ad83850e0e40892843b49e082dc98c56",
-      "inputHash": "89c20cd51e346b1cda08317a7bdbc30e16b8552a25444d47bd47540d30608c46",
-      "audioHash": "3c5150eb4455b938f49eecd18ec102caaf323ac45942e48d46e9220f382b5cd2"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/ec8f94fff9c0fe554f86642bfb0831afdfbc17c4180865a1d9b83ad50a2921b3.mp3",
+      "duration": 21.768,
+      "bytes": 130608,
+      "textHash": "4a372db741bd4c06be94f68adb663f0b70e4c37c9d5f6f182570e81feba5ae1d",
+      "inputHash": "7f898007fbdb090c5745e9fb39e14a579d9da70dcc9b1fed3567143ce67f2ceb",
+      "audioHash": "ec8f94fff9c0fe554f86642bfb0831afdfbc17c4180865a1d9b83ad50a2921b3"
     },
     "history-rome-site/1/moment/1": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/5ac0acda7af89ead5af2064e08e93389856063e6547f9b46755f3a154b4c7e0d.mp3",
-      "duration": 15.168,
-      "bytes": 91008,
-      "textHash": "8dd08b241b815dcc674168edf7ca36be4c93b0f5022901f85833ab503b668577",
-      "inputHash": "a34aea324ad051912351ffd33ea2ba34ecec5e4d3642697b51804ad7560a67ae",
-      "audioHash": "5ac0acda7af89ead5af2064e08e93389856063e6547f9b46755f3a154b4c7e0d"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/415bba121cb37f1371ef14067b6eda550f2d0074c26f51f1a584f77333bd8c23.mp3",
+      "duration": 21.072,
+      "bytes": 126432,
+      "textHash": "724601d494bebb9c9884876ae719ba430cf967c4141ee726aeb6a47f93e8ee39",
+      "inputHash": "35575aa98ce28b78e94d58177b3ffd9057aaf7b5c0596bca49a76f1b80f392a6",
+      "audioHash": "415bba121cb37f1371ef14067b6eda550f2d0074c26f51f1a584f77333bd8c23"
+    },
+    "history-rome-site/1/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/c30a3dbee780bd9b8b9af53acc941ed5dcd456a3f0720d4a62e9dc82f53a2392.mp3",
+      "duration": 74.088,
+      "bytes": 444528,
+      "textHash": "8d6fa1df449e1fb31e36abf14ec79d6e9c775787e6e8074386d0a8d3379ca3ca",
+      "inputHash": "900b8e9d57394aa56ac145b79d74401516620488f6cf13f9f0e36240ec6e1b25",
+      "audioHash": "c30a3dbee780bd9b8b9af53acc941ed5dcd456a3f0720d4a62e9dc82f53a2392"
     },
     "history-rome-kings/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/06bd75ad8bc1dfefa497bf78786726fa63ec62aecb2a86e8d4918e325df986cd.mp3",
@@ -1890,28 +1898,28 @@
       "audioHash": "06bd75ad8bc1dfefa497bf78786726fa63ec62aecb2a86e8d4918e325df986cd"
     },
     "history-rome-kings/0": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/639f950c7b578a00f97b863110820dd686d2f33c2538fca3992dfe46278999c1.mp3",
-      "duration": 35.352,
-      "bytes": 212112,
-      "textHash": "fdfbd64000be8d215af9e70bd2f8bbfce6f3491ee305e2d5db7921ba62b3a84c",
-      "inputHash": "d5cf4b5a8d7d811044ded216b6c8ccdca2a06c070284cf41b08fc0fa955c9317",
-      "audioHash": "639f950c7b578a00f97b863110820dd686d2f33c2538fca3992dfe46278999c1"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/826eeb3e1cd769329996fbd8f1e371510426dba3853901c81996bc9815d07b6b.mp3",
+      "duration": 62.304,
+      "bytes": 373824,
+      "textHash": "9f2ceff86ad1ece5daaf79989c5ab92ab533484138df47bedf075a6f15213eb6",
+      "inputHash": "da8131a6661b619996b4cbd144c7736e743ea0d5fe66f3f58e80519e2339fac6",
+      "audioHash": "826eeb3e1cd769329996fbd8f1e371510426dba3853901c81996bc9815d07b6b"
     },
     "history-rome-kings/0/moment/0": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/134f7d2b04fe0b4627a5fb79fafeec3c9221a4988925d8aa1c84c832fcfa6c07.mp3",
-      "duration": 14.856,
-      "bytes": 89136,
-      "textHash": "47e00d5a43f0fedf93ecae8e4d48463422809d274386817005bf4e2a2bd6c473",
-      "inputHash": "6ef72aab42a8d1231aca6c6bb3c3b95431bfdf36336cc692e80acf2fc847e7c1",
-      "audioHash": "134f7d2b04fe0b4627a5fb79fafeec3c9221a4988925d8aa1c84c832fcfa6c07"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/a4c7b0c5c2af2b980feec19558483028935d8e9a38df7eb259324c7767fc90d2.mp3",
+      "duration": 19.056,
+      "bytes": 114336,
+      "textHash": "2217e8fe7e1932553f9f40908474fe5064cb9225993566280ffe751a945e77d6",
+      "inputHash": "8789f8d82cc4fbd1f61d8f70cadf47303dc8eb684d7790062afe81601cf7cd67",
+      "audioHash": "a4c7b0c5c2af2b980feec19558483028935d8e9a38df7eb259324c7767fc90d2"
     },
     "history-rome-kings/1": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/f57eb42a2d592f6f21aefa8a359509241fe4f303f4928695b9973327599bedaa.mp3",
-      "duration": 52.104,
-      "bytes": 312624,
-      "textHash": "a2bb0f2ad1c908b1103f83473ba3ddbb625e43833183ae596ebabc9ee14897fc",
-      "inputHash": "0b12062a61a74e357ff4546fe6082976fc925028474a63c4e1a4d464ee6b7bc2",
-      "audioHash": "f57eb42a2d592f6f21aefa8a359509241fe4f303f4928695b9973327599bedaa"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/6647f1fc4a7334bf80c951c4f107d66271117f0c8bb579de41acc7c0cefa147f.mp3",
+      "duration": 62.4,
+      "bytes": 374400,
+      "textHash": "0adc3f25c4b19561f834de9778d3611062a77c6980d1301eccdfc2748acdac5b",
+      "inputHash": "b01f5c4bdb353b07304faef1ddc5373185a119685b1b2ecadde78bee79b250fc",
+      "audioHash": "6647f1fc4a7334bf80c951c4f107d66271117f0c8bb579de41acc7c0cefa147f"
     },
     "history-rome-kings/1/person/0": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/2c0833db5322379954a5916f2b33e1eb30a08b8affe9f061819f7d1d4cbcc447.mp3",
@@ -1929,6 +1937,14 @@
       "inputHash": "a68e3f223cfd427656d3c03ae55c2a1f04d02de8067856f4f830d2f61abf1afc",
       "audioHash": "fd4f97106f6e6f8e67cca3e4e2f7b8624d48ee8bacf8827b0ea89585d7a838e2"
     },
+    "history-rome-kings/2": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/e727a15d50acc651bcfe1c1331afed5442afaf145395e52c7eab3b1e80c3aa99.mp3",
+      "duration": 60.576,
+      "bytes": 363456,
+      "textHash": "73a02dd15f31d4abb66d0b6f745d2817874ba0f1537b18667f1fc3b1010045ef",
+      "inputHash": "38f81a8772e095e42e90b96f504e0862891309149025790078705c98881a9884",
+      "audioHash": "e727a15d50acc651bcfe1c1331afed5442afaf145395e52c7eab3b1e80c3aa99"
+    },
     "history-rome-republic/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/414d47b05b0d356890147d57f4ae130b483bbff001dbf79e56e25bcef2009b3d.mp3",
       "duration": 3.6,
@@ -1938,20 +1954,20 @@
       "audioHash": "414d47b05b0d356890147d57f4ae130b483bbff001dbf79e56e25bcef2009b3d"
     },
     "history-rome-republic/0": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/ff6ba0ff16a3dd43eeb5f1d44305a11a641c656ea32732861ec12834d7cab600.mp3",
-      "duration": 25.416,
-      "bytes": 152496,
-      "textHash": "ba15834852ba27baf5e427b1348ba1c0991a5d0b5a319b132a31ca52abfe1ada",
-      "inputHash": "f71aaef801541d6612cabb0081fc5652cee8fadf641bf47510b5060911076320",
-      "audioHash": "ff6ba0ff16a3dd43eeb5f1d44305a11a641c656ea32732861ec12834d7cab600"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/29c48951426ebca078103c40e55265875452097a5fbadd384d6f27cac85553e9.mp3",
+      "duration": 53.712,
+      "bytes": 322272,
+      "textHash": "5dd98d765767cf3f16543d3568a1eab69f775eaa1cf221b3fe72279339b5f3ab",
+      "inputHash": "2a4b3882d19466456b527738c3c43c9584a8c5049cb8549a8d2ca556a35be0e0",
+      "audioHash": "29c48951426ebca078103c40e55265875452097a5fbadd384d6f27cac85553e9"
     },
     "history-rome-republic/0/moment/0": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/b18a7d7cb78c5c3a1f8744f6b47f72804e7b1a3c03b80d293f257c2379486e79.mp3",
-      "duration": 16.008,
-      "bytes": 96048,
-      "textHash": "7bcb2f086bbbccef59590f7347dc1cd78f9fcc844a1d62a99dc34264e3a89007",
-      "inputHash": "70c68dc86db806133da05c6e0b1f0f11da690af3e42d50aa7a38d8ef08a9ebfd",
-      "audioHash": "b18a7d7cb78c5c3a1f8744f6b47f72804e7b1a3c03b80d293f257c2379486e79"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/70b357cfe215dab839bb9747c1feb3746d7abd4d9f885bbff311d72249da79d2.mp3",
+      "duration": 19.368,
+      "bytes": 116208,
+      "textHash": "e0ae781b2c09e25f459d8a9d1f971393571633c0942277aba9db54ffbb059b18",
+      "inputHash": "e3bccd27539bc1ed3ab02b204f520ff2ba7378cb1a37a9ca51d57b1eb2f7aef0",
+      "audioHash": "70b357cfe215dab839bb9747c1feb3746d7abd4d9f885bbff311d72249da79d2"
     },
     "history-rome-republic/0/person/0": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/79de0b281b910b7f1debbaf510f2a5c88c6ada3c30506bf5f972a1b89b28d91a.mp3",
@@ -1962,28 +1978,28 @@
       "audioHash": "79de0b281b910b7f1debbaf510f2a5c88c6ada3c30506bf5f972a1b89b28d91a"
     },
     "history-rome-republic/1": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/b62e3ae8c7c20a0970188ef0af780d4b408664269ddf7c994b6af9dc9b0b93fd.mp3",
-      "duration": 24.816,
-      "bytes": 148896,
-      "textHash": "dea905da6953a3b43f62ff7d7ae565aaa598470ba38fe1ab83eddd39fba72e8b",
-      "inputHash": "f6f38c0c959af2d5501a72083d8bebec110b8b9a093df8b1815844f375a5cc2e",
-      "audioHash": "b62e3ae8c7c20a0970188ef0af780d4b408664269ddf7c994b6af9dc9b0b93fd"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/5e2f8ef704dfbd3deb07eb2188985e8da75b0a7bbe34c84b898939acc6287afa.mp3",
+      "duration": 52.152,
+      "bytes": 312912,
+      "textHash": "2d0b52da7b6421fb469ea301398a70a19e4dc187a4aabf224362e25fa1bf960c",
+      "inputHash": "b2f6ce0c4abf57131c9c07fbf3edc2f76d5854cf5fbffecdb133ab3ee2178f2f",
+      "audioHash": "5e2f8ef704dfbd3deb07eb2188985e8da75b0a7bbe34c84b898939acc6287afa"
     },
     "history-rome-republic/1/moment/1": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/d1e081f2d91c98473cf45ee9102ae368f0ebd2a181e7eff634a9e04472d80bdf.mp3",
-      "duration": 13.944,
-      "bytes": 83664,
-      "textHash": "cb6f306f6dc5c7577efe61cfceaaa93d26440f8d19dab1fe5d8950b509021dbe",
-      "inputHash": "29726cd338450f4d0176e822c4b0e6b4de65eb9a37486ca22a654c5fd0f10edf",
-      "audioHash": "d1e081f2d91c98473cf45ee9102ae368f0ebd2a181e7eff634a9e04472d80bdf"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/0c34d00f1b9f505b41ce73ede62c4b2ce9faedd17d94b336c86c93092059ca8f.mp3",
+      "duration": 16.92,
+      "bytes": 101520,
+      "textHash": "110f7423b655d8924fb0c5001ebf18ca4b99a673b6039be0753034a6dca220d8",
+      "inputHash": "cc006b1b1993356df77cd057a32740a9ec99c67f0f9907eb2bf6fbdfa4605483",
+      "audioHash": "0c34d00f1b9f505b41ce73ede62c4b2ce9faedd17d94b336c86c93092059ca8f"
     },
     "history-rome-republic/1/moment/2": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/763efca5c5df94814305913ab27e72bdb65eeeb87aaecaff7440d395df5e308d.mp3",
-      "duration": 16.248,
-      "bytes": 97488,
-      "textHash": "4ff0d25397e6b2728edb64a9fe4fca38dc85b9ca63deae7f46e88f6a5a1fc27d",
-      "inputHash": "a0180c120b6b1215f35873e16df0f4f09f448da1796672ab2f02e04793149efc",
-      "audioHash": "763efca5c5df94814305913ab27e72bdb65eeeb87aaecaff7440d395df5e308d"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/4ad0849640a73bcb7e08300a8c054b399d6b601d8908a4e9e450dad8950851ab.mp3",
+      "duration": 17.808,
+      "bytes": 106848,
+      "textHash": "1929bb6ba03a2892e58b1afce597e8b418a4446643b4a0862c17a8057d1f0582",
+      "inputHash": "1ddb48857e5544531db4c844404cf364630688f329508eea27e0aff780047ef4",
+      "audioHash": "4ad0849640a73bcb7e08300a8c054b399d6b601d8908a4e9e450dad8950851ab"
     },
     "history-rome-republic/1/person/0": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/854f496d8e4eb3a7efacb6b026b8bdfbc099642bc9f36a48a5b17d54923b7296.mp3",
@@ -2002,28 +2018,36 @@
       "audioHash": "594c62be14b19d85221d0e9532f46094715e613ac6f7027e5d7369b2886a779b"
     },
     "history-rome-plebs/0": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/4722d157a1e940449ea243c7b804204d170601d6852829af4210cd6d04f4ec73.mp3",
-      "duration": 28.416,
-      "bytes": 170496,
-      "textHash": "62a023af586e60413440da09b6e7e588d8c9abf534843b841c49b507fc4d2beb",
-      "inputHash": "3647eae0a61f90833d08ddac071bf3c181ba6c3bf117db7dfc166f9860219fae",
-      "audioHash": "4722d157a1e940449ea243c7b804204d170601d6852829af4210cd6d04f4ec73"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/64581c9106983c2fafc7e33f345c7282336584530168489e1253a88f7b316c21.mp3",
+      "duration": 57.312,
+      "bytes": 343872,
+      "textHash": "d701e4e94ab9220d484531b45cf792eb0f39a56d90f54a0d7635dc752153ec46",
+      "inputHash": "805dfa55fc69d5afa0eef68b104fd210a05966540e28179473e90861bf28d0ca",
+      "audioHash": "64581c9106983c2fafc7e33f345c7282336584530168489e1253a88f7b316c21"
     },
     "history-rome-plebs/0/moment/0": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/829ab0db76f0713f69a0d71f4d3eb6ea0e456932bc086b78d37525334ccdae6d.mp3",
-      "duration": 15.864,
-      "bytes": 95184,
-      "textHash": "4ea8689c115731414414c249892b5dfc512ac1d79b974574ec17e8ce962ab5e8",
-      "inputHash": "8ca515eeef0d4ece2533e405652bcc46d7e199f55016dcb1f25c19b8937cd8ce",
-      "audioHash": "829ab0db76f0713f69a0d71f4d3eb6ea0e456932bc086b78d37525334ccdae6d"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/f54fd51bb77b3c7434fdbd02bf0496a32bc901bc402cf111320c99a01cc155d4.mp3",
+      "duration": 19.272,
+      "bytes": 115632,
+      "textHash": "fba7039f4ba6fa2438d3275d2b566144b91dc52ac38ab4f6632a45deb56e4f59",
+      "inputHash": "506e131935747336c40e9599a2f59b5d0e4c700e543fd3c785ba03a310d6e5d8",
+      "audioHash": "f54fd51bb77b3c7434fdbd02bf0496a32bc901bc402cf111320c99a01cc155d4"
     },
     "history-rome-plebs/0/moment/1": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/58e48f734df8cd57cf6ba20bce796a72e77d31c05b4e490c3baebe74d4521e38.mp3",
-      "duration": 16.488,
-      "bytes": 98928,
-      "textHash": "61506f299a6b21e45dd02078092429d6a2551ee6c6eee766c391ee6876dc6d89",
-      "inputHash": "28504e63bdf710caeec0d44567c7e7221c29dac8bae5b0a0289fb93874c4dc0c",
-      "audioHash": "58e48f734df8cd57cf6ba20bce796a72e77d31c05b4e490c3baebe74d4521e38"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/820e10ae13ad0cc3d2ec76a096252905bdce8f37b00874b0d9c4710515a263d6.mp3",
+      "duration": 38.544,
+      "bytes": 231264,
+      "textHash": "e7f8be645e1c4d7c0d896e6c770b060dd61d2e57f06f440b41448b32dd3f69f6",
+      "inputHash": "f2e421f369ba1c01ca08522cf004399d11405f708449bc70bc9397cc9261391a",
+      "audioHash": "820e10ae13ad0cc3d2ec76a096252905bdce8f37b00874b0d9c4710515a263d6"
+    },
+    "history-rome-plebs/0/box/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/1099725186381ccb66282ec552efaf7694eead47be7fdef6a24c50f1493043c0.mp3",
+      "duration": 148.392,
+      "bytes": 890352,
+      "textHash": "162dca64a465a2db75f83f358aeffa6bdd469badbf2fd1f9d1852b412d9a7427",
+      "inputHash": "401b65b68b96dac57f7224ba0476f84d93ec54c4ee924055f2fa2fcb8d8df619",
+      "audioHash": "1099725186381ccb66282ec552efaf7694eead47be7fdef6a24c50f1493043c0"
     },
     "history-rome-plebs/0/person/0": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/278f88c16f9466434648141bc22799fdfed1728ce26b85dca6640ef01bbebaf7.mp3",
@@ -2033,21 +2057,21 @@
       "inputHash": "eb7e8b3f4fea24d2223d7bb2e679188a7edd789548ab85d111464824af7dfe04",
       "audioHash": "278f88c16f9466434648141bc22799fdfed1728ce26b85dca6640ef01bbebaf7"
     },
-    "history-rome-plebs/1": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/2749f7f696c3b062dbb57d3c117d03ccbe2ff8f201a35782d63b8c4d3f4c73aa.mp3",
-      "duration": 33.6,
-      "bytes": 201600,
-      "textHash": "637b847d55d3bcc0e4a9340dddb75c9a2db5d5b47dbbaa1a7f8ae06c8a8ded5d",
-      "inputHash": "5d11b94bc27598d2196d379caf0d26d117e1e8a753aaeb63bc175974f838fcdb",
-      "audioHash": "2749f7f696c3b062dbb57d3c117d03ccbe2ff8f201a35782d63b8c4d3f4c73aa"
+    "history-rome-plebs/0/person/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/ddc19e6c26285b8e213d2d98396a704f50c89f94c00d21f9d55df29255417d9b.mp3",
+      "duration": 89.232,
+      "bytes": 535392,
+      "textHash": "4fb999d5a1601728d882b7194b2c3f7f18ed1e8d02e23b0cc6ce58b1323ced2b",
+      "inputHash": "05721fb33b35f5f70f230b2042a1b2b6baf09bf35ad99701760c25105273cc70",
+      "audioHash": "ddc19e6c26285b8e213d2d98396a704f50c89f94c00d21f9d55df29255417d9b"
     },
-    "history-rome-plebs/1/moment/2": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/9116b1e93c0aa9c4029f23c4733f75324ec8bf31dfa0578e470885b852ded03d.mp3",
-      "duration": 15.768,
-      "bytes": 94608,
-      "textHash": "9b9d8d9643eb4855b1d91600a88780402788a1739f091af1d3dbcee752207a03",
-      "inputHash": "2257b3e440f3f7c8ef5b9dc773602a02858fb9ea5f04aae1ebf6cd8ce305d778",
-      "audioHash": "9116b1e93c0aa9c4029f23c4733f75324ec8bf31dfa0578e470885b852ded03d"
+    "history-rome-plebs/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/b7f98ca3834b00193d42d62cf3cc29df211ae721456e98ae551d3169da8c0646.mp3",
+      "duration": 61.416,
+      "bytes": 368496,
+      "textHash": "e436895077164362aa07a558378ad2ef47e97b911b27651413d58a0b5090ecd5",
+      "inputHash": "9170196d2c3bee866e15f6ae9a1c3b0d8b47f0817e93d1cd86807374321d3ec2",
+      "audioHash": "b7f98ca3834b00193d42d62cf3cc29df211ae721456e98ae551d3169da8c0646"
     },
     "history-rome-plebs/1/person/0": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/565a8eed1ef38fbf31cb5f07d4f51c44a8729ff63bc774dd5c7bd5d4bbfd8d6f.mp3",
@@ -2056,6 +2080,22 @@
       "textHash": "ce3cfa16819f488824579ff56873c49a70eef2021d5f8ff84864f6e22687401b",
       "inputHash": "797c9885fcf084e82181875627ea1aa71b81bb87342434054b7733ea5b85346c",
       "audioHash": "565a8eed1ef38fbf31cb5f07d4f51c44a8729ff63bc774dd5c7bd5d4bbfd8d6f"
+    },
+    "history-rome-plebs/2": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/27fc27cb273fbec2c1260e260e95182e01f5f4f367d2c777804fe366bcb786d8.mp3",
+      "duration": 59.832,
+      "bytes": 358992,
+      "textHash": "263fabe5f11600631dce303f6e3d6a408a996fdb15c8a81b1a6ce790b5392e4b",
+      "inputHash": "07938227e0108764b3db6268024521fec2e54b178493675996377c770d45b8fd",
+      "audioHash": "27fc27cb273fbec2c1260e260e95182e01f5f4f367d2c777804fe366bcb786d8"
+    },
+    "history-rome-plebs/2/moment/2": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/da9be78669cd8cf06c335cd0a165c00541b038975c5e7668d34798d513941018.mp3",
+      "duration": 19.176,
+      "bytes": 115056,
+      "textHash": "4c8f89c65d3c90c778db6d5947277bdb66d654a9bb252d03de9ed5c5b8992caf",
+      "inputHash": "cbd081ed0f079b063fefbfedeaf80f0b00864dab41b87d8414148a9c47b7c76c",
+      "audioHash": "da9be78669cd8cf06c335cd0a165c00541b038975c5e7668d34798d513941018"
     },
     "history-rome-orders/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/6d2b06b24a21c85fd323d21462136c5a8d9759a8b2152bba6ddfd44fb2adc35a.mp3",
@@ -2066,30 +2106,38 @@
       "audioHash": "6d2b06b24a21c85fd323d21462136c5a8d9759a8b2152bba6ddfd44fb2adc35a"
     },
     "history-rome-orders/0": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/b27210daebec3b662244d1dcfce47554f4154dfc3154f983ade5363d38c7c99a.mp3",
-      "duration": 35.064,
-      "bytes": 210384,
-      "textHash": "ac2653b4e71083794f820310fef437b392ef037e9c1c741989f96a57cc4ead9e",
-      "inputHash": "982b1ed48b7f2ae448b334563eb903f4c3c3fef408f0d143abdc135da57e8bd3",
-      "audioHash": "b27210daebec3b662244d1dcfce47554f4154dfc3154f983ade5363d38c7c99a"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/e59dc9ff30490d70390ee966ad6fef6fd8551c56bf7ea242c742cbd091fe1bdb.mp3",
+      "duration": 56.52,
+      "bytes": 339120,
+      "textHash": "157fb0c5dabd6a7bf4f9c97c4d97be948a8357a38a8d75c857272a87cb45d1f3",
+      "inputHash": "f3d39bafb062bde2b254f91b7bcef68110d155a1515a22255f44957a2e69b491",
+      "audioHash": "e59dc9ff30490d70390ee966ad6fef6fd8551c56bf7ea242c742cbd091fe1bdb"
     },
-    "history-rome-orders/0/moment/0": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/ad04bfe801c207c8beaa45acd314a024dbccf973dda677eaa61400f3345cf844.mp3",
-      "duration": 14.208,
-      "bytes": 85248,
-      "textHash": "8ce2cbc080618cd0cbcb5de5aad92e9879d10d3aeb693d618280d446a785fec5",
-      "inputHash": "70491f6c326b7afe328fb078f7ab692f475734dcd04f8878c9616c59eb03af7e",
-      "audioHash": "ad04bfe801c207c8beaa45acd314a024dbccf973dda677eaa61400f3345cf844"
+    "history-rome-orders/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/babe8d81e3f8f12bbd79119726495b4793de59235d2a8326c5e097d1a9f79ffb.mp3",
+      "duration": 58.176,
+      "bytes": 349056,
+      "textHash": "c28bb2f7d47bb15ae783484c47e247436ce6b51141201191cf07100d43a76e12",
+      "inputHash": "ba8d8bbde1b94dbae13ba64935db60490b62d3d96373bdc928e1bab6db365d46",
+      "audioHash": "babe8d81e3f8f12bbd79119726495b4793de59235d2a8326c5e097d1a9f79ffb"
     },
-    "history-rome-orders/0/moment/1": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/eac5bda455f72fe886d2f474f93754a0bedf85e13eef256b5f6a2af05b8e9efb.mp3",
-      "duration": 18.384,
-      "bytes": 110304,
-      "textHash": "f954d6d017ca478dcf8ff7bf9281cad4a54b1d99ccb568c0311056c4025d65b8",
-      "inputHash": "a9f192961df147a42f7426f047399ffdb2ff3372ca059f23c21484cded7a53c4",
-      "audioHash": "eac5bda455f72fe886d2f474f93754a0bedf85e13eef256b5f6a2af05b8e9efb"
+    "history-rome-orders/1/moment/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/2aa77c352f4db3f83f4e28422c46a82070ffd017ca485e1ca0c9c83684b02695.mp3",
+      "duration": 17.016,
+      "bytes": 102096,
+      "textHash": "c93d3aaffec46cdc599c9cc6ce1b8393f791a0e7c8bacd0cd64f44ac49aaa94f",
+      "inputHash": "6d503fa664a6ef9074aeff22cae986f79167a610e4059d276ed0b40a0e90142f",
+      "audioHash": "2aa77c352f4db3f83f4e28422c46a82070ffd017ca485e1ca0c9c83684b02695"
     },
-    "history-rome-orders/0/person/0": {
+    "history-rome-orders/1/moment/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/e1c323b8ba7f943e60ae1865acf470a4bdea0ecd22915f49a78b1b2be895e9d5.mp3",
+      "duration": 22.344,
+      "bytes": 134064,
+      "textHash": "be645a0159662984043a495130eac8ecc7ff1804440c7e265d0980d92aebc476",
+      "inputHash": "42baad6bf5891a14a63f9a0fbfd47968ed1d504bec8fc77391dc60c880c10f29",
+      "audioHash": "e1c323b8ba7f943e60ae1865acf470a4bdea0ecd22915f49a78b1b2be895e9d5"
+    },
+    "history-rome-orders/1/person/0": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/4ed8b394f7df3b3d3ae3ec3f6f974a27b730d0c4a01086b9fedbcad83bb8fa09.mp3",
       "duration": 30.96,
       "bytes": 185760,
@@ -2097,7 +2145,7 @@
       "inputHash": "b5ef461a187b70ecb2707fd711d5682801997188d73aa742d6c8ba7783f87f92",
       "audioHash": "4ed8b394f7df3b3d3ae3ec3f6f974a27b730d0c4a01086b9fedbcad83bb8fa09"
     },
-    "history-rome-orders/0/person/1": {
+    "history-rome-orders/1/person/1": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/c229d23acf77246e8dc0794652a27c468f9f48fb8647d8587474ca2c0477cd45.mp3",
       "duration": 26.544,
       "bytes": 159264,
@@ -2105,15 +2153,15 @@
       "inputHash": "7c8b395ba85181fdb4cdb8990a229157f53d74b552e5012724ca7736122b1a6b",
       "audioHash": "c229d23acf77246e8dc0794652a27c468f9f48fb8647d8587474ca2c0477cd45"
     },
-    "history-rome-orders/1": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/9032569dcab0ef95f512c66d5b01e9429f2771a12f7e3bbcf421a4f6dc4fc9d9.mp3",
-      "duration": 34.728,
-      "bytes": 208368,
-      "textHash": "ce9d58e01be891b846d4b6f6f22aa26654261c51614832a26e56b43640b29e7e",
-      "inputHash": "b171d00ca358dec61b465f084cd37ee5aa01453abd0a4022e6955ff264c46b7e",
-      "audioHash": "9032569dcab0ef95f512c66d5b01e9429f2771a12f7e3bbcf421a4f6dc4fc9d9"
+    "history-rome-orders/2": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/1335698fc5b40e6236d087a351aa81ed44147af3523f0c7f5e75856d99f0a413.mp3",
+      "duration": 64.128,
+      "bytes": 384768,
+      "textHash": "304fed0e4ef56e29c51fe3b6648102feeab5b6b217336627b6b3dbd6dd2fe772",
+      "inputHash": "7d4838e3353b102661b1e6ebc784a722bf9795f0a57ebad2bf96c9b177652357",
+      "audioHash": "1335698fc5b40e6236d087a351aa81ed44147af3523f0c7f5e75856d99f0a413"
     },
-    "history-rome-orders/1/person/0": {
+    "history-rome-orders/2/person/0": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/325a1f259bcb2ad348382fa90eb8b1c687760aa230f5fd3b47ccc480be63a581.mp3",
       "duration": 40.08,
       "bytes": 240480,
@@ -2121,7 +2169,7 @@
       "inputHash": "e1806a15c5e0900b3e8804d654b86fc33feefc9f127fff37c9747ad72658bb14",
       "audioHash": "325a1f259bcb2ad348382fa90eb8b1c687760aa230f5fd3b47ccc480be63a581"
     },
-    "history-rome-orders/1/person/1": {
+    "history-rome-orders/2/person/1": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/ff5e1526aaf94208b509353c885ab2a1fadddee1dabfe3ba2d2ea1518e0a3fc9.mp3",
       "duration": 34.104,
       "bytes": 204624,
@@ -2129,7 +2177,7 @@
       "inputHash": "5ca3b39f4ee71b0d571672ffcefc4a00b9ea242f1733b374a685f827ab2ad7ba",
       "audioHash": "ff5e1526aaf94208b509353c885ab2a1fadddee1dabfe3ba2d2ea1518e0a3fc9"
     },
-    "history-rome-orders/1/person/2": {
+    "history-rome-orders/2/person/2": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/e31e5713d37caf7dd21b86a2dc0a0db275872c057404eea9233dc3afc54fe7df.mp3",
       "duration": 27.12,
       "bytes": 162720,
@@ -2146,20 +2194,20 @@
       "audioHash": "bc8a20810b7830f26a6926d743f713c01b62853baefcee205ac9d932e3c3511e"
     },
     "history-rome-mature/0": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/d466e3955d5c1261b946cfc1f8837be163e2bb4bf9505f5133ea72a2c1e4e8b6.mp3",
-      "duration": 22.032,
-      "bytes": 132192,
-      "textHash": "e26628e445bc6a30b7d720a904a1ede86451683953b33b53bd9da7bec7111688",
-      "inputHash": "f7590eb03c66884a4b98657d9f0dbfd4713889c5bf34f7590ba095908668de71",
-      "audioHash": "d466e3955d5c1261b946cfc1f8837be163e2bb4bf9505f5133ea72a2c1e4e8b6"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/234d004fae155809ffb4cd09817b7801ec70083be70584174db8266c1a343202.mp3",
+      "duration": 58.632,
+      "bytes": 351792,
+      "textHash": "8818128dd5256124bd9793d6a35556708eacf13a7172f1fbc93858ae8ea79dd6",
+      "inputHash": "4bdfa0fb09a542f5414d9f12e75c622c741e2679e72e19f8f65d34d584f7c9ff",
+      "audioHash": "234d004fae155809ffb4cd09817b7801ec70083be70584174db8266c1a343202"
     },
     "history-rome-mature/0/moment/0": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/f2a0bf40a6ad1d9469bb17c167b7a19005b77bed7c80d3603c892b6e5e8f468a.mp3",
-      "duration": 14.664,
-      "bytes": 87984,
-      "textHash": "fe6853e215d79615fc69222f5abefa856be9abb4088aea3ee825f88db8c712f2",
-      "inputHash": "e4ddcb94956a992e3a6f13fe5f0cf9d67dc396d18cc2d43db220da2d1bd477a9",
-      "audioHash": "f2a0bf40a6ad1d9469bb17c167b7a19005b77bed7c80d3603c892b6e5e8f468a"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/3814297034b97feda32b01a2b0f9744ba43d38da8834b1fb184ae9d963d97eeb.mp3",
+      "duration": 17.952,
+      "bytes": 107712,
+      "textHash": "dc9cbcd41ce7a0de8ab455ab537939cb2d24c2c01969d2b1724230c7cdb2020a",
+      "inputHash": "daa84cab4e01f961a6f3da3fbbbffd23593e1aaff40f931ee1f2c3a4ac25c700",
+      "audioHash": "3814297034b97feda32b01a2b0f9744ba43d38da8834b1fb184ae9d963d97eeb"
     },
     "history-rome-mature/0/person/0": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/9d10463e58baf261e5df1f81849c20f90c0a23ce95ee4dd9960f10005c67670b.mp3",
@@ -2170,20 +2218,28 @@
       "audioHash": "9d10463e58baf261e5df1f81849c20f90c0a23ce95ee4dd9960f10005c67670b"
     },
     "history-rome-mature/1": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/17062edda9488978759b97de188d61eb3efdaf46cb85e855a032b2fcd997c9ab.mp3",
-      "duration": 36.096,
-      "bytes": 216576,
-      "textHash": "8fe2c75cc6b82ee42345f5f54b15e49a51c587eebc984b1ab2e1ab1707552b77",
-      "inputHash": "f14df0254dd406ea1e05cc6da4d1420e1554f6615b33201b39f53b507d9cc707",
-      "audioHash": "17062edda9488978759b97de188d61eb3efdaf46cb85e855a032b2fcd997c9ab"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/ebd672c48c46573a818d1ce06b939d9347350feba74eb33c75e0ea8f7bae2a9e.mp3",
+      "duration": 58.656,
+      "bytes": 351936,
+      "textHash": "02d0c3e19587ce15dfdba043f9293c3cebeb4a4df00d4b458654aededbce5a4a",
+      "inputHash": "38ead469cb475f059be77cdd773ecfa0585b197f2b43c4894b8c0782844e7ffd",
+      "audioHash": "ebd672c48c46573a818d1ce06b939d9347350feba74eb33c75e0ea8f7bae2a9e"
     },
     "history-rome-mature/1/moment/1": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/01c56db95d00bac0aea544a582a0b9b3a875b1dfa6183cde309b33d876f0af1b.mp3",
-      "duration": 15.408,
-      "bytes": 92448,
-      "textHash": "ad566a07ebd445c73ffc752ecf36cf7dfca50a87f109638e129ab7027f6ec77a",
-      "inputHash": "824f5395973fc9889cc242f6752315abf1888edf2c96fd98e13ceb836d2ee4bd",
-      "audioHash": "01c56db95d00bac0aea544a582a0b9b3a875b1dfa6183cde309b33d876f0af1b"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/c5da9a9cb35dc56b60f2f2897f4c1932a7e9971ecf3621e86495093a59a423e2.mp3",
+      "duration": 22.848,
+      "bytes": 137088,
+      "textHash": "54827a7c66a68a55ff109b963ebfed05881c36515c8c3e5790a2a343667fdcfe",
+      "inputHash": "f9c8e4eef97147f5a8b24fa58d9a4c6a15ddc3f347e764e178d6545eb69131a6",
+      "audioHash": "c5da9a9cb35dc56b60f2f2897f4c1932a7e9971ecf3621e86495093a59a423e2"
+    },
+    "history-rome-mature/1/box/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/f066e692af00a8bf0e4e4aa6955f9f931307aad712fe08ce1e38d9dbf707314f.mp3",
+      "duration": 120.96,
+      "bytes": 725760,
+      "textHash": "fdcc2b2877c9fd90381738ca155a8de1b6d575df5b1cc55f0c2f3bed7e3ea00a",
+      "inputHash": "70ab9417ab5aeb815b5361984b5aeb1469fba302744662767413a5dc0ae798db",
+      "audioHash": "f066e692af00a8bf0e4e4aa6955f9f931307aad712fe08ce1e38d9dbf707314f"
     },
     "history-rome-mature/1/person/0": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/5f487518b99cf2c6e08a5b15dc7b2208d0a63ec7993df9ea2f4465283dd2b305.mp3",
@@ -2202,28 +2258,28 @@
       "audioHash": "1be5035176510225f9a737c9647cf0fbb46d72e61a984b0b607fc05fbad00d85"
     },
     "history-rome-mature/2": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/541d4de5e35b7e00b07d0b259ac5a48146b8afc7e4707a17e80a1e9a04ea6902.mp3",
-      "duration": 24.768,
-      "bytes": 148608,
-      "textHash": "4ee4fdbd57a50c19abd40ffe799dc59dbdd55879fafa10fccf6e3335fb204d79",
-      "inputHash": "6c7849338fc28c2db7bf8b748e6f4a004721887437adaa7f72138d2ad16117e9",
-      "audioHash": "541d4de5e35b7e00b07d0b259ac5a48146b8afc7e4707a17e80a1e9a04ea6902"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/3b39b8f3149da64a4138e6b88164ee2e7b3249a5646aeabdbfa570fcf229f142.mp3",
+      "duration": 57.048,
+      "bytes": 342288,
+      "textHash": "7b2b669a1d1ec8f5ca3fdfd591027cd63de3c090a41b61d168c9800a346e69b6",
+      "inputHash": "f7f65904cae525653bf8dbbc95940e707385d5203038e2ca6e7d9f7793535540",
+      "audioHash": "3b39b8f3149da64a4138e6b88164ee2e7b3249a5646aeabdbfa570fcf229f142"
     },
     "history-rome-mature/3": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/aa203bfc3a39b52f4a2bfa44d7f35897ff9b357a0188aacc21557f25e1947a7b.mp3",
-      "duration": 32.712,
-      "bytes": 196272,
-      "textHash": "1c3968589ca45eaf6c4b669cb4a0085f852b5dcb8cc90fbc083271391d34b648",
-      "inputHash": "ddb09f7ba254930f53f4c41888494d3598e6850b7ce9f3fc9c179be4f4726ba2",
-      "audioHash": "aa203bfc3a39b52f4a2bfa44d7f35897ff9b357a0188aacc21557f25e1947a7b"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/d044524c604ae6d62e978519c2f695748fe53d2a2c202143f1feede8393f82bd.mp3",
+      "duration": 67.776,
+      "bytes": 406656,
+      "textHash": "6533e5c458e2b746ac1d84e782f732bb3a3c53c22f6d930512c1a922addfce49",
+      "inputHash": "2db43224593883fcdc41957cc6c2cd7942c551ba2f58288b7a59fdabd19a5d65",
+      "audioHash": "d044524c604ae6d62e978519c2f695748fe53d2a2c202143f1feede8393f82bd"
     },
     "history-rome-mature/3/moment/2": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/77027cbf229fbc2bc5c8c07aebf60e229a1428d626c7a454821b99fbc722920b.mp3",
-      "duration": 11.448,
-      "bytes": 68688,
-      "textHash": "cc594298a59ffe2f340623c56066629a8f490549113ba17d3efa39587dbd7368",
-      "inputHash": "3d7221c3a8fbde48b10931703913df2cdf253a23923fb76c5169f5c24fedfa9e",
-      "audioHash": "77027cbf229fbc2bc5c8c07aebf60e229a1428d626c7a454821b99fbc722920b"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/e639d61f185c2abe5ab0fc9bd992015d036357a8902b8d08e9b6cfe6eaaed698.mp3",
+      "duration": 17.808,
+      "bytes": 106848,
+      "textHash": "cfc6b99a5d75719aa4786e7faee8204be708a4fed3d70e119111a991f97e9423",
+      "inputHash": "ad3208a2be5a7d87e6ad515a46074b6dc21704b3e65089fa8ecc3c485bccf970",
+      "audioHash": "e639d61f185c2abe5ab0fc9bd992015d036357a8902b8d08e9b6cfe6eaaed698"
     },
     "history-rome-mature/3/person/0": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/6e9a593189caf5223da597d542b11888d96c8e95d45833a4b31bf8c0752d959f.mp3",
@@ -2241,6 +2297,14 @@
       "inputHash": "66023a6968ce55ee57982c2d06f14f94d90773707586528ac3d704ae2d643449",
       "audioHash": "adeef7fdb1ed2a893a73f5953c1367bf7a79287f854a3693636afb2b3c47e814"
     },
+    "history-rome-mature/3/person/2": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/10bc4064f0c83d4df1f2312a21fe467dd698e7215709407341e8ccffcf4de6df.mp3",
+      "duration": 69.192,
+      "bytes": 415152,
+      "textHash": "7bfec89dccecd49be43d424e043410b77f86eb116d1b1189a45cf07b0a5e1f10",
+      "inputHash": "1a5a1f16bf09d219ab653e93d684a28bced33cc6f381ac1bc22e2c74a8db4841",
+      "audioHash": "10bc4064f0c83d4df1f2312a21fe467dd698e7215709407341e8ccffcf4de6df"
+    },
     "history-rome-punic/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/cfae347b891de74a1ecc2107c0ad4dfb3f338f8affbc0fbdd8984bde77eb361d.mp3",
       "duration": 3.432,
@@ -2250,54 +2314,102 @@
       "audioHash": "cfae347b891de74a1ecc2107c0ad4dfb3f338f8affbc0fbdd8984bde77eb361d"
     },
     "history-rome-punic/0": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/a262a3e21f516634737f25c44c081e6d59b687a676927fcacb1a7d436fc7e2fe.mp3",
-      "duration": 32.496,
-      "bytes": 194976,
-      "textHash": "389d39ffc56ef96301a3242c2f0d1532083fb761175a761f1edd25f2a878bd85",
-      "inputHash": "4c9b1df30aa98cda3a058be71bdf91e4b00a40f6496ed6aa1f0465da45ee17b6",
-      "audioHash": "a262a3e21f516634737f25c44c081e6d59b687a676927fcacb1a7d436fc7e2fe"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/a9648de31064fc92e28d7f0c2942806ddb6d00653a5fbffb8d11cf8a90fb4f35.mp3",
+      "duration": 62.544,
+      "bytes": 375264,
+      "textHash": "27b8f825ae0e3f888221b2d104711355ff0bc52d64dde5b19365122507569c77",
+      "inputHash": "5eee1b2f7e481e1a8ea207fe87381eac87022e143bd73a8b96bf5df8882ddacf",
+      "audioHash": "a9648de31064fc92e28d7f0c2942806ddb6d00653a5fbffb8d11cf8a90fb4f35"
     },
     "history-rome-punic/0/moment/0": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/d972738cbee894aab288cf6cedab1601787ed256fd76c77ade4c049e3b065829.mp3",
-      "duration": 16.968,
-      "bytes": 101808,
-      "textHash": "3c70d1e4df173580a8916a3f02b4ba3ad18259e2975040fc906efa6c19ac1c1a",
-      "inputHash": "5cb9e9fdafb9823442cc827599b07169e9390520da0d09b6ae999974fbaed8c7",
-      "audioHash": "d972738cbee894aab288cf6cedab1601787ed256fd76c77ade4c049e3b065829"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/de7cd51bf442684970b7972b405e40aea1a5840a697790038bd2066b0df42a36.mp3",
+      "duration": 18.312,
+      "bytes": 109872,
+      "textHash": "3f9315b95f396dec196d21612ba589969a5a381e09e98f36a6c1fc33e32442c0",
+      "inputHash": "a17896c40f25d9b2a301cf7f098a448e440eebe5da14e44b0b2f326dcccd584f",
+      "audioHash": "de7cd51bf442684970b7972b405e40aea1a5840a697790038bd2066b0df42a36"
     },
     "history-rome-punic/0/moment/1": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/b3c08b99794f3f706d5d415678e88c18c98f98315e659877e15f5af096913436.mp3",
-      "duration": 15.864,
-      "bytes": 95184,
-      "textHash": "ae0d4bb76a12eb5f24f0f1b2c9a00bb73053583318480c0a700f6153c29752ec",
-      "inputHash": "3f5fff1eb7295d2b4c2e0d575f690f63a0245ef0e645ad4836a7ce65bbf8479a",
-      "audioHash": "b3c08b99794f3f706d5d415678e88c18c98f98315e659877e15f5af096913436"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/dafe93f1230f606881e935d67fdd4d2d9638947440ba37f6cf7bbdb56141c948.mp3",
+      "duration": 20.568,
+      "bytes": 123408,
+      "textHash": "a980bb79a89d53cb453c7a8fd0a9a37f7dd62fc33b07dd2fa7d93fe9b45dc0d6",
+      "inputHash": "858fc4d0aee29466ccf82c4b8b75c804f9220c290d82e65a3f9ab8a7174c4cca",
+      "audioHash": "dafe93f1230f606881e935d67fdd4d2d9638947440ba37f6cf7bbdb56141c948"
     },
     "history-rome-punic/1": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/02a4aecd6fdf7088b5c5ba3b34e73cfe92bc598f8d167381bec78dd8885b0aa0.mp3",
-      "duration": 28.464,
-      "bytes": 170784,
-      "textHash": "8f4765d070781578322546d57cde268abab68cff542044fc24477fc2a8457fcf",
-      "inputHash": "b138d0fc752daeb9baa5794f16594000c384feeb2be8e298973961547c43678b",
-      "audioHash": "02a4aecd6fdf7088b5c5ba3b34e73cfe92bc598f8d167381bec78dd8885b0aa0"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/bee7138a689a905bbf95ce0bc4e41d93a6287578e7da5d3b5857cdf6069bab8f.mp3",
+      "duration": 61.728,
+      "bytes": 370368,
+      "textHash": "e411c2fec655d249de46b28d7fcbffd03c5bbf0556d4412d3ec6a14232cacae5",
+      "inputHash": "ced05230fcd266c9ce68ab7a91cd726449051aaf3e344e16f94c3c14c462caa9",
+      "audioHash": "bee7138a689a905bbf95ce0bc4e41d93a6287578e7da5d3b5857cdf6069bab8f"
     },
     "history-rome-punic/1/moment/2": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/dea42050b6dd64b10d6f0d86a080b356235d5eec0bdb50d9e8ad4d96330e86f3.mp3",
-      "duration": 15.576,
-      "bytes": 93456,
-      "textHash": "0bec2afcd592449dc496e01fb06a635962cdc35e12aec7c9900c06b2e15027c8",
-      "inputHash": "e8afe880455e7b65ecebd85bab99faa93402ec42f8e8d121e8de7324b5e75804",
-      "audioHash": "dea42050b6dd64b10d6f0d86a080b356235d5eec0bdb50d9e8ad4d96330e86f3"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/196d23a4d5a69428a1409c778e38689d6170cdb5563985099021a2062cb6959b.mp3",
+      "duration": 16.536,
+      "bytes": 99216,
+      "textHash": "93b4f4a8c7b7a7227c6b43cf1c98721cbebf3ce5ece37fdee5d2950b3e41ca42",
+      "inputHash": "914a9f3e4d08eee0d0de881de150a7557226d070787b09227678253105d7af9d",
+      "audioHash": "196d23a4d5a69428a1409c778e38689d6170cdb5563985099021a2062cb6959b"
     },
     "history-rome-punic/1/moment/3": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/175211170c831c34960e0508c5d5680cf786cd302dac3d10b0f5830acf9d31af.mp3",
-      "duration": 17.568,
-      "bytes": 105408,
-      "textHash": "2e95407b35cfb670a1cfc725117d2c9644017e625a6d885d8e1f06bfcc1aa887",
-      "inputHash": "5b1c46a7446f104572dec60bccfdcecbf75f3ebaa1c9dc0c6dc5c39e2ff3bd42",
-      "audioHash": "175211170c831c34960e0508c5d5680cf786cd302dac3d10b0f5830acf9d31af"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/1f9a039962946bced072bd9202a7d4b5f4bd161ca307613a588d02460761a7be.mp3",
+      "duration": 31.392,
+      "bytes": 188352,
+      "textHash": "121bf98177113a9671eaf21d637a453c860caa4cc00959f1f7a579b7faf5c560",
+      "inputHash": "328a19a3e2964b03f79b05b61f9d4e53cf36c23e6282f3e6e14aa4bcbd3dd72a",
+      "audioHash": "1f9a039962946bced072bd9202a7d4b5f4bd161ca307613a588d02460761a7be"
     },
     "history-rome-punic/1/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/e52980d7086b204f8b215b541e264801c76e0e40579bf7e4bdae0a126e5b16c5.mp3",
+      "duration": 72.936,
+      "bytes": 437616,
+      "textHash": "6d91570f8782ac10039e84149d46cfd1fe9ce31b78e16d475c57acee9b6506fd",
+      "inputHash": "fd305b8299fe67a4fe3a7dfaa3857fdacfe217300e598401c6f61a572c0d833d",
+      "audioHash": "e52980d7086b204f8b215b541e264801c76e0e40579bf7e4bdae0a126e5b16c5"
+    },
+    "history-rome-punic/2": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/339fb9e39f5743a3a0822ceb40b2f498481c640811b1a3dce36b18ff52c4143b.mp3",
+      "duration": 60.168,
+      "bytes": 361008,
+      "textHash": "6747a083bb6438fd978f4c5b1930e528dae5a1ebea1086756732ffcc673031e2",
+      "inputHash": "aeb0d00155a12c66895deed5c3ddfe8253b44d9b5ebb2bd9b0bbaab974f686b4",
+      "audioHash": "339fb9e39f5743a3a0822ceb40b2f498481c640811b1a3dce36b18ff52c4143b"
+    },
+    "history-rome-punic/2/moment/4": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/ec850c0b5a52fe55eb79eae523faf89cef1bd7d82a4191067679d53044d9247e.mp3",
+      "duration": 20.688,
+      "bytes": 124128,
+      "textHash": "d0af3f7e4520b0fff2ddf717b8a625d34dd1c0611f07b715fe7fcd98369bcb2a",
+      "inputHash": "8213eb181a3395aa876f7e4cd811085417bd6b4107f2e0595c20e190ac20f94f",
+      "audioHash": "ec850c0b5a52fe55eb79eae523faf89cef1bd7d82a4191067679d53044d9247e"
+    },
+    "history-rome-punic/2/moment/5": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/41d3d8999d1ac45d20d6cd926d3943116553e9d480f5f3431a8812523d7cc159.mp3",
+      "duration": 24.936,
+      "bytes": 149616,
+      "textHash": "18e532bcaa5b8ce3f198728984f62767ccad3b833477266b571c202722d408fd",
+      "inputHash": "a9ad4d56b2f662b1a58129dd96ddaea5bdfcede56d85ed6204787214ad7b74e4",
+      "audioHash": "41d3d8999d1ac45d20d6cd926d3943116553e9d480f5f3431a8812523d7cc159"
+    },
+    "history-rome-punic/2/box/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/44bb96f8148ca64322e5a9efe909673a359114048bf9463c31ba5863ae332f33.mp3",
+      "duration": 104.808,
+      "bytes": 628848,
+      "textHash": "47c1e1730e8829d00baad1550363d7a1347c4f14567e3e37f9b26bdf109e223a",
+      "inputHash": "617fa086f8ea793349adbf5af49dd9e7c986c7403b75e0c5fe5d35dbadc18841",
+      "audioHash": "44bb96f8148ca64322e5a9efe909673a359114048bf9463c31ba5863ae332f33"
+    },
+    "history-rome-punic/2/box/1": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/4ebae8e6513e695979cae77725a911e228fcd8036ec1771dc9d95915760f5053.mp3",
+      "duration": 105.216,
+      "bytes": 631296,
+      "textHash": "2b6c21ce53f2162a8fee9307aabe47bb18b25a18373f8cbef98ac28f17a7367d",
+      "inputHash": "647f23f8c43ff2ef64f6490875bde648b42050dfc9795006194256d77323938f",
+      "audioHash": "4ebae8e6513e695979cae77725a911e228fcd8036ec1771dc9d95915760f5053"
+    },
+    "history-rome-punic/2/person/0": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/b9f3a4c12e56b4a8c15f466cf3063342509255b4fe694e12037270a24950555b.mp3",
       "duration": 35.064,
       "bytes": 210384,
@@ -2305,7 +2417,7 @@
       "inputHash": "d6a9a09346f1239e0c05d5df0403d505d09a6eb0b39a51584b6b02f642258632",
       "audioHash": "b9f3a4c12e56b4a8c15f466cf3063342509255b4fe694e12037270a24950555b"
     },
-    "history-rome-punic/1/person/1": {
+    "history-rome-punic/2/person/1": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/ba6e80229fbb9a7e01d2de8dc5a1fe498a00cbe1bedca97972b9b9e5b030d9bd.mp3",
       "duration": 39.864,
       "bytes": 239184,
@@ -2313,23 +2425,55 @@
       "inputHash": "e8e29fc8bd541c40e3b3d2915cde4f725db7ba0e50178b8c2637982c3fd91b63",
       "audioHash": "ba6e80229fbb9a7e01d2de8dc5a1fe498a00cbe1bedca97972b9b9e5b030d9bd"
     },
-    "history-rome-punic/2": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/4ef098702761057d6bdfd0d8e8fb358e36a92a0b07f43f66ba81ede6ecab4ee8.mp3",
-      "duration": 31.392,
-      "bytes": 188352,
-      "textHash": "219b1fa67679550c71406a2dc4ceb5460003c105310221fe660125201d4a2c4c",
-      "inputHash": "5d979807d41007fcf80fcceb402ec52a510d33f7f6d9ba1593792a29afe69e3e",
-      "audioHash": "4ef098702761057d6bdfd0d8e8fb358e36a92a0b07f43f66ba81ede6ecab4ee8"
+    "history-rome-punic/3": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/9efc3d6b23476599b09fcd6b6304d6557d1c49e8f9e734c7f03ee2cf12c46d41.mp3",
+      "duration": 67.296,
+      "bytes": 403776,
+      "textHash": "a87fde508fac51689104e6612f3f57412f8b8125f48875c5423a02094da4f5cb",
+      "inputHash": "2bb26365268ea16b3d7191a616883da18956f0c293b7f797ac1efc2a44714c4b",
+      "audioHash": "9efc3d6b23476599b09fcd6b6304d6557d1c49e8f9e734c7f03ee2cf12c46d41"
     },
-    "history-rome-punic/2/moment/4": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/9cd82928a105661111239f3d67aa8220f7febf4cdd63947eac86f938de42f98e.mp3",
-      "duration": 19.176,
-      "bytes": 115056,
-      "textHash": "b4a7fe0ad1cc30a9e7fa776f2f192a08edaf803a729507c40add71d6825aeff4",
-      "inputHash": "edc9936ccad14a8a952db19b65dff4a924db31bb08801cd9c3adcbebf4e8faaa",
-      "audioHash": "9cd82928a105661111239f3d67aa8220f7febf4cdd63947eac86f938de42f98e"
+    "history-rome-punic/3/moment/6": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/dbc303b32dd355bd82a0189b08966131bd7a3c42c5b7679728fd54b46692d90e.mp3",
+      "duration": 20.232,
+      "bytes": 121392,
+      "textHash": "ddb6146c0ddb02e1d7ab4a7015dd6cc1e35d362f30fcb14bad97ac00e91ac391",
+      "inputHash": "e4f4d7ef79affc1a5fa3c587e44b656fd7e33c3cc1bcc90b852d6d1d1a5ff0ea",
+      "audioHash": "dbc303b32dd355bd82a0189b08966131bd7a3c42c5b7679728fd54b46692d90e"
     },
-    "history-rome-punic/2/person/0": {
+    "history-rome-punic/3/moment/7": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/9c7e7f5c190a0b2aca4db674282bcf99da28ac15a732674c21d6e7b9f84502e9.mp3",
+      "duration": 36.552,
+      "bytes": 219312,
+      "textHash": "3271734bb42ff77884f7d3d20cc596ec751a398fd36f960dfd9c982e312d3d56",
+      "inputHash": "e153568d5208eab043672f9c772ba64d7f7a1ca59b056e9fa6391fd94aeb75b2",
+      "audioHash": "9c7e7f5c190a0b2aca4db674282bcf99da28ac15a732674c21d6e7b9f84502e9"
+    },
+    "history-rome-punic/3/person/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/4876feb01586a7cd79b9b11aca3aec7492af673df1c453faa31e1c1773f34424.mp3",
+      "duration": 32.184,
+      "bytes": 193104,
+      "textHash": "122e355a581c0e162b96abe436d4c473ceedf1d0979768b26d801e90ae695d9f",
+      "inputHash": "f4204be1a8da1e9dda01e7d7b6071d097725728c95583ba4bb2d121fa10c9215",
+      "audioHash": "4876feb01586a7cd79b9b11aca3aec7492af673df1c453faa31e1c1773f34424"
+    },
+    "history-rome-punic/4": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/14cc449a985ded62c6b12e6cbea3b0d9d06c1cc79181aee3179428e765cfd0c9.mp3",
+      "duration": 68.328,
+      "bytes": 409968,
+      "textHash": "807acc9037aaf07d12c68ab0a5218e65d6a3b8647995039533a0f15b23e880bb",
+      "inputHash": "f7842f574bacc04380c6b9f544f5e894cf39baad377b33f1f40ce63d74ee8946",
+      "audioHash": "14cc449a985ded62c6b12e6cbea3b0d9d06c1cc79181aee3179428e765cfd0c9"
+    },
+    "history-rome-punic/4/moment/8": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/857c70d3a603ceea5db3cec0760f29c07e729d263671798cd365ee4a6593bdeb.mp3",
+      "duration": 31.824,
+      "bytes": 190944,
+      "textHash": "eb8c3f7cc902a0e5cab3535b0ff840635af14d3aff170b8ca7d82e20e3bc5cce",
+      "inputHash": "041cc6547b2e45ec56fee55720405ef6e5f3fc4632b0d6496bce695321b1354d",
+      "audioHash": "857c70d3a603ceea5db3cec0760f29c07e729d263671798cd365ee4a6593bdeb"
+    },
+    "history-rome-punic/4/person/0": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/db4f4a0eb3d84cf08c569bf20932138197ddb2cdbe6dfd6243cb399d5b31f4f7.mp3",
       "duration": 42.864,
       "bytes": 257184,
@@ -2337,29 +2481,37 @@
       "inputHash": "792c0076045608ef76a85c85713e4613d4e54fe88c1972742c5c5ac5e24c8d20",
       "audioHash": "db4f4a0eb3d84cf08c569bf20932138197ddb2cdbe6dfd6243cb399d5b31f4f7"
     },
+    "history-rome-punic/5": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/27d48eccb618041bf2f5c27788c6b9f70b5bedfcd15f4a3ea461239939ebbdc4.mp3",
+      "duration": 62.232,
+      "bytes": 373392,
+      "textHash": "5ec8fbf4562adfd8dd50ce43a662b4b26afb79d9f99a26c4866f6517f719465b",
+      "inputHash": "a752142c0e83a6a100539e73417f6183b95818f73522987de795bbec5e7ced9f",
+      "audioHash": "27d48eccb618041bf2f5c27788c6b9f70b5bedfcd15f4a3ea461239939ebbdc4"
+    },
     "history-rome-east/title": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/6fec534ee645ce4d58d496d5ead32dbebebc1d377af8037830c86c29163391c6.mp3",
-      "duration": 3.192,
-      "bytes": 19152,
-      "textHash": "8757320c81f9aedb2ebc3ec39f74a69a8a7f88045881be88b90aecfcb9348ff1",
-      "inputHash": "57c4590dab3cc6dd2c2fb229d3c3aa48db9463008555b2bc26024250dc03c48f",
-      "audioHash": "6fec534ee645ce4d58d496d5ead32dbebebc1d377af8037830c86c29163391c6"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/5a67b40182da44a8bf3121b365dd72e5335dc4be1f4e1f3c0c529b111639a5df.mp3",
+      "duration": 5.616,
+      "bytes": 33696,
+      "textHash": "319c627e42fd7c7b711dd8e959ff5ce08e1e6fab06a27fed2b71a47ab696797b",
+      "inputHash": "faf187064d86cacd7f99ea52dac62afa31c550a04d1c4dce0887bb8ce4c66aee",
+      "audioHash": "5a67b40182da44a8bf3121b365dd72e5335dc4be1f4e1f3c0c529b111639a5df"
     },
     "history-rome-east/0": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/59ec60edd5dd319438231ee17f3667ea9bafe47b105865a826619a35ce06ed70.mp3",
-      "duration": 32.688,
-      "bytes": 196128,
-      "textHash": "43df25834e8a7b0680fdf33a202256c565c3f8abcf13818218186ba8762d5ea5",
-      "inputHash": "84554b1aa8176d942b58f69363151b75596cac26ecd58ed144dae009d444bd93",
-      "audioHash": "59ec60edd5dd319438231ee17f3667ea9bafe47b105865a826619a35ce06ed70"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/a2dfb74aba6cc0d901fa31e2c0b0fb8659c0c9eedadb9ca49e7b327e0463231b.mp3",
+      "duration": 57.048,
+      "bytes": 342288,
+      "textHash": "2cd6007c1df7d6d440820274d0ddbdf85ca6cd3f42cd87698d726e85be432382",
+      "inputHash": "e157e3f297598fed4ac703cb83edc541fb19c8d11dce1d5beedaa5e687a1c811",
+      "audioHash": "a2dfb74aba6cc0d901fa31e2c0b0fb8659c0c9eedadb9ca49e7b327e0463231b"
     },
     "history-rome-east/0/moment/0": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/97f5d1d1b63cffda51f08cf4f50cfcd6f9252e1469411801fbfc0200ae5d3742.mp3",
-      "duration": 15.432,
-      "bytes": 92592,
-      "textHash": "68214b7bd2afa24ff68efcda70aafd5d66e09eb40640618a18b387072b4b59a1",
-      "inputHash": "088138681d3d6ada7a2615eabe3032ad82f4963ef31e3810aed3393eed4dd7e7",
-      "audioHash": "97f5d1d1b63cffda51f08cf4f50cfcd6f9252e1469411801fbfc0200ae5d3742"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/c0a65f78950777960c3923d03b20046fd73086c773f2efdc09821b2e41fcb0cc.mp3",
+      "duration": 15.12,
+      "bytes": 90720,
+      "textHash": "d35c5e6158ae78d3fb98034dd37851c66fa91ee8c34a3624fb3e3f602c433a07",
+      "inputHash": "b6b25fb911d9fde0d4081a10e69bb9a1ffcd6cb5b10d4efb46950e04c5d6cfad",
+      "audioHash": "c0a65f78950777960c3923d03b20046fd73086c773f2efdc09821b2e41fcb0cc"
     },
     "history-rome-east/0/person/0": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/5e4c96d419158e0430fe35bb6db4645950ec94541a46e522a4562131b9b04b3c.mp3",
@@ -2370,20 +2522,20 @@
       "audioHash": "5e4c96d419158e0430fe35bb6db4645950ec94541a46e522a4562131b9b04b3c"
     },
     "history-rome-east/1": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/608386e55838d454e2408785b8e0a43eb5642c08ddd430916c31e8b6e5a164cb.mp3",
-      "duration": 33.024,
-      "bytes": 198144,
-      "textHash": "14cd7a73b97be4bb22e5f94470eaa3ef67e480abce9c443904c0cbebede1f0cd",
-      "inputHash": "d4027c95ea7ac291354afdee9ad8577b9f3724884ee557c5516eb788a5ffd2c9",
-      "audioHash": "608386e55838d454e2408785b8e0a43eb5642c08ddd430916c31e8b6e5a164cb"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/167395da5b5c4678d6207b74554e5e5486cf754ad6704d91647d6edecea6ecb1.mp3",
+      "duration": 58.368,
+      "bytes": 350208,
+      "textHash": "60dc14d67501240e6597aebf8e56355f20fd2a699861b9184b0dc45b73b69376",
+      "inputHash": "07bfa63bdce73c63da62ad6b6737bac7fe8a637bc3710432fd30a90e48edd960",
+      "audioHash": "167395da5b5c4678d6207b74554e5e5486cf754ad6704d91647d6edecea6ecb1"
     },
     "history-rome-east/1/moment/1": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/2c2a6fcf6483091281c176698a646d2d11171834e1daf6b7341191de1ad8b6c7.mp3",
-      "duration": 20.664,
-      "bytes": 123984,
-      "textHash": "168f785e8a50e893ffa732fd5565d293b6f789bf8e149207d2d0b6333f87cb52",
-      "inputHash": "3148f2cb1468da6b449ff3e30bad0fc76b883db7600be028c6fa5b87ccf41a0d",
-      "audioHash": "2c2a6fcf6483091281c176698a646d2d11171834e1daf6b7341191de1ad8b6c7"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/975bc136ad1ebf071f926ecf45740f15f34470b73ac0a4ee5bf41d375a9e4297.mp3",
+      "duration": 20.568,
+      "bytes": 123408,
+      "textHash": "cbe85ba5ea35c03f72716348db923d69f75548ab1814bf6e242242b8b1fabdbf",
+      "inputHash": "36ded6211f1a816b1850fe64142989f8777a6cb1c655ae65b1cc0c72e0e8d8c0",
+      "audioHash": "975bc136ad1ebf071f926ecf45740f15f34470b73ac0a4ee5bf41d375a9e4297"
     },
     "history-rome-east/1/person/0": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/28c7d867e33eb25d52d580e3494ffb413d8e7a201551504d54f87e69d6b5811e.mp3",
@@ -2418,28 +2570,36 @@
       "audioHash": "6a054ff0113fd63366326b2e634c5991399cfb2511b8022636ee0ddd141c9c78"
     },
     "history-rome-east/2": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/2f82d094fc1eac7d957587e2a1f8efeb49e95be0ae119672e9cf48f8d41b647a.mp3",
-      "duration": 33.072,
-      "bytes": 198432,
-      "textHash": "3c9a3d5642e5d5080ad9547b2c779f0254271552100eadb4953810e44ed47068",
-      "inputHash": "60cf4a6cc4d2b8af3f3f54ca4e403a2eb3f6342d12f188cfdda46f814a1ac873",
-      "audioHash": "2f82d094fc1eac7d957587e2a1f8efeb49e95be0ae119672e9cf48f8d41b647a"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/3b44d93130064a367b1aa89de05599a8f8ed08b6fb861fa5a78d17ce4bfecd2b.mp3",
+      "duration": 64.224,
+      "bytes": 385344,
+      "textHash": "914f433992ff8bebce20cd92f151353167af425d0efc3ca8645f01276f215773",
+      "inputHash": "19c723241d8491e08ea199fdb3ef5def5bdbecc1fe928b389d3f77a95cfeb141",
+      "audioHash": "3b44d93130064a367b1aa89de05599a8f8ed08b6fb861fa5a78d17ce4bfecd2b"
     },
     "history-rome-east/2/moment/2": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/c07aa40a8e92207d45ad228c509b7b920df595e9089aa695f24e4e4df4a845cc.mp3",
-      "duration": 17.88,
-      "bytes": 107280,
-      "textHash": "917228aa31597c25c83cdb9683fc82682972203ea38a1caddf061259577f9814",
-      "inputHash": "eafe9e88f43fdcfb09ba85232ae85a059fb7f76d6a090ad0227bb6782b73fbd1",
-      "audioHash": "c07aa40a8e92207d45ad228c509b7b920df595e9089aa695f24e4e4df4a845cc"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/c8961a5d69da4ddfac0acc83b70bb20c5ef7460c2030c942093bd9ba3c610b89.mp3",
+      "duration": 19.344,
+      "bytes": 116064,
+      "textHash": "e089785e2657b1e122e92bbd320b1387abb85797d4f951df03573269c2a39ea8",
+      "inputHash": "b941043051eba970e577d585b5051be88953dd438b30e552ee1e1a50f55cb128",
+      "audioHash": "c8961a5d69da4ddfac0acc83b70bb20c5ef7460c2030c942093bd9ba3c610b89"
     },
     "history-rome-east/2/moment/3": {
-      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/7eccea378a956a121c1e0efc5d71dadd2992bb20fc17c44278852136ba0b90c5.mp3",
-      "duration": 17.208,
-      "bytes": 103248,
-      "textHash": "443a327dbed72a0b1c916760f124264ca7c83dddc1ca90f24e540fd261d6eed0",
-      "inputHash": "7c64fc7f89eff1a69877f73793f7dd664fec51e279185c8efbf7dcecdde45cbc",
-      "audioHash": "7eccea378a956a121c1e0efc5d71dadd2992bb20fc17c44278852136ba0b90c5"
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/4c8cf1eefc7547c0338092cecd87f2e9eaf5ced9ce8a81244457560a139644d5.mp3",
+      "duration": 19.968,
+      "bytes": 119808,
+      "textHash": "d9c96696b5ebba24e9b6f3b5dccbf7d0411eae0ec3b5c2c178f67c719de0976c",
+      "inputHash": "0b3c4a306f67094f75a7471f269eba18c467ffae746f808cb7ddca876744b585",
+      "audioHash": "4c8cf1eefc7547c0338092cecd87f2e9eaf5ced9ce8a81244457560a139644d5"
+    },
+    "history-rome-east/2/moment/4": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/7716319900343070c550fb12d8c7695046b15b479ce6e27c24a77cf251b29e56.mp3",
+      "duration": 36.384,
+      "bytes": 218304,
+      "textHash": "fc7e0790485d4cd54f14f2513cbe80fbe11172493a2f6008f8365099214e98da",
+      "inputHash": "379752ce157b6b2bf95367f35d85be205b91882ad59f5f045943f5022c94fbf5",
+      "audioHash": "7716319900343070c550fb12d8c7695046b15b479ce6e27c24a77cf251b29e56"
     },
     "history-rome-east/2/person/0": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/d616765f6dd1273aa44a54fd9298f0787dd15a6f54926abaab764d1721622581.mp3",
@@ -2456,6 +2616,22 @@
       "textHash": "01bcb10753f7fa125dc26f1caab9bb339fbb1da4aefd8d19668592f6c0480f7d",
       "inputHash": "15057bd8ad4f5c3dd80ec455b1e741c61d6c5de5b43dae583de7d328654c7528",
       "audioHash": "6b9f47a5d97421b41a63978842ff67e6719d467e344242b16576143096b778b8"
+    },
+    "history-rome-east/3": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/45b50203b2128298fef7a23d04fab3d300774543e40e76aafc59c54c07cfce0b.mp3",
+      "duration": 55.968,
+      "bytes": 335808,
+      "textHash": "1ad0f14e38d90f10e0881bb2031a478cc87fb328899ed17308ef42a673124859",
+      "inputHash": "226c220609720631d58ced9b8a4b84ace27bfdcb07c7fdb542a1a685118345ae",
+      "audioHash": "45b50203b2128298fef7a23d04fab3d300774543e40e76aafc59c54c07cfce0b"
+    },
+    "history-rome-east/3/box/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/00107489279e56ba5d8f534befac614a0f3be331f8886bd02ecdb3b6b8b22401.mp3",
+      "duration": 274.272,
+      "bytes": 1645632,
+      "textHash": "cb42ddf8744fafda8996add85076901ed953cbcbcc513a3e56a625ebff9acb59",
+      "inputHash": "9e497c6e183b0c61016c443e0e5cc2ba7d6e7e89049ad92a7f6f24678c078958",
+      "audioHash": "00107489279e56ba5d8f534befac614a0f3be331f8886bd02ecdb3b6b8b22401"
     },
     "history-rome-gracchi/title": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/3b4ae4e6391c1c835fd3597ac1d2763c4fbafc3c131c6796a67292365190c070.mp3",
@@ -2512,6 +2688,14 @@
       "textHash": "2733f5e8f987c0a380a806b58ad63476799cd969cbd15218742f5427a968ff4c",
       "inputHash": "6316cbe4dbcb08b4f2ff69d1f4844dad394bb4798607a9c2fff0a9083edb2eaa",
       "audioHash": "7bcc3ca395997e8489901ec47b55a73fa5ff425cb36d607b7a43d0222860dfa6"
+    },
+    "history-rome-gracchi/1/box/0": {
+      "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/4d643d6650f0a8a3afa446d05979aad0b8e9b4569322e0c987e595929c62101f.mp3",
+      "duration": 229.032,
+      "bytes": 1374192,
+      "textHash": "4f9a86f9374df86966cd6904f47defac298aad7199660b06fb1b11b36a91abf4",
+      "inputHash": "d328656c4485a7247d8f1604f1b171a611239123e77eb2a3b6b3c56314057589",
+      "audioHash": "4d643d6650f0a8a3afa446d05979aad0b8e9b4569322e0c987e595929c62101f"
     },
     "history-rome-gracchi/1/person/0": {
       "url": "https://pub-c8293c639c2c4658b07a4461d1540b6f.r2.dev/audio/v1/d8789c9a8c6566224402d3f8726cb34ba210843b6f6bf25e84273b2c87a54af1.mp3",
