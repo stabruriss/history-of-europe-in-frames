@@ -40,7 +40,7 @@ const FULL_SHOTS=false;const wait=ms=>FULL_SHOTS?new Promise(r=>setTimeout(r,ms)
      ['history-rome-gracchi/0','贵族里的黑羊'],['history-rome-gracchi/1','好处一断'],['history-rome-marius/1','潘多拉魔盒'],['history-rome-social/1','绿卡'],
      ['history-rome-sulla/0','你的小弟打死了我的人'],['history-rome-sulla/2','借一个强人打另一个强人'],['history-rome-caesar/0','基本盘早已散了'],
      ['history-rome-augustus/1','把两个强人推到了一起'],['history-rome-augustus/2','打酱油的雷必达'],['history-rome-augustus/4','共和的壳子里，住进了一个人'],
-     ['history-rome-site/0','罗马起步既晚'],['history-rome-site/1','武装移民避难所'],['history-rome-kings/0','三百大族家长'],['history-rome-kings/2','重装步兵方阵'],['history-rome-orders/0','平民靠罢兵反复施压']]){
+     ['history-rome-site/0','罗马起步既晚'],['history-rome-site/1','武装移民避难所'],['history-rome-kings/0','大族家长组成的元老院提名'],['history-rome-kings/2','重装步兵方阵'],['history-rome-orders/0','平民靠罢兵反复施压']]){
     const _pm=page._pm??=await page.evaluate(()=>{const m={},d=document.createElement('div');for(const e of HISTORY_ENTRIES){d.innerHTML=e.html;for(const p of d.querySelectorAll('[data-scene-text]'))m[e.id+'/'+p.dataset.sceneText]=p.textContent;}return m;});
     assert.ok((_pm[scene]||'').replace(/（[A-Za-z][^）]*）/g,'').includes(phrase),scene+' lacks '+phrase);
    }
