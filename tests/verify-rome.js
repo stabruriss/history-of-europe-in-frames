@@ -28,19 +28,19 @@ const FULL_SHOTS=false;const wait=ms=>FULL_SHOTS?new Promise(r=>setTimeout(r,ms)
     'history-rome-gracchi','history-rome-marius','history-rome-social','history-rome-sulla','history-rome-pompey','history-rome-triumvirate','history-rome-caesar','history-rome-augustus']);
    assert.deepEqual(report.eraIds,['rome-rise','rome-med','rome-fall']);
    assert.deepEqual(report.eraItems,report.ids);
-   assert.equal(report.scenes,42);assert.equal(report.paras.length,42);
+   assert.equal(report.scenes,49);assert.equal(report.paras.length,49);
    assert.ok(report.paras.every(p=>p.chars<=300),'Rome prose budget: '+JSON.stringify(report.paras.filter(p=>p.chars>300)));
-   assert.ok(report.sectionsBold);assert.equal(report.moments,49);assert.equal(report.people,68);
+   assert.ok(report.sectionsBold);assert.equal(report.moments,54);assert.equal(report.people,73);
    // The three-force reading (平民·元老院·官员, two against one) is visible in the decisive scenes.
-   for(const [scene,phrase] of [['history-rome-kings/0','元老、王、人民三方'],['history-rome-republic/0','元老和人民一起赶走了王'],['history-rome-plebs/0','平民从此有了自己的官'],
-     ['history-rome-plebs/1','元老和平民联手，推倒专权的官员'],['history-rome-orders/1','元老与平民的官联手'],['history-rome-mature/1','官员拉着城市平民，跟元老院对着干'],
-     ['history-rome-mature/2','保民官进了体制'],['history-rome-mature/3','另两方都卡得住它'],
-     ['history-rome-punic/0','人民盼着战利品，投票开战'],['history-rome-punic/1','大难临头就拧成一股'],['history-rome-punic/2','将军拉着人民，顶住元老院'],
-     ['history-rome-east/0','元老院和执政官拉着人民出征'],['history-rome-east/1','元老院要防谁冒尖'],['history-rome-east/2','保民官带着不愿当兵的平民'],
+   for(const [scene,phrase] of [['history-rome-kings/0','元老、王、人民三方'],['history-rome-republic/0','元老和人民头一回联手赶走国王'],['history-rome-plebs/0','平民从此有了自己的官'],
+     ['history-rome-plebs/2','元老和平民联手推倒专权官员'],['history-rome-orders/2','元老与平民的官联手'],['history-rome-mature/1','官员拉着城市平民跟元老院对着干'],
+     ['history-rome-mature/2','保民官进了体制'],['history-rome-mature/3','另两方都能牵制'],
+     ['history-rome-punic/0','公民投票开战'],['history-rome-punic/2','大难临头立刻由元老院拧成一股'],['history-rome-punic/4','将军拉着人民顶住元老院'],
+     ['history-rome-east/0','元老院和执政官拉着人民出征'],['history-rome-east/1','元老院时刻防着谁冒尖'],['history-rome-east/3','保民官带着不愿当兵的平民'],
      ['history-rome-gracchi/0','贵族里的黑羊'],['history-rome-gracchi/1','好处一断'],['history-rome-marius/1','潘多拉魔盒'],['history-rome-social/1','绿卡'],
      ['history-rome-sulla/0','你的小弟打死了我的人'],['history-rome-sulla/2','借一个强人打另一个强人'],['history-rome-caesar/0','基本盘早已散了'],
      ['history-rome-augustus/1','把两个强人推到了一起'],['history-rome-augustus/2','打酱油的雷必达'],['history-rome-augustus/4','共和的壳子里，住进了一个人'],
-     ['history-rome-site/0','罗马起步晚'],['history-rome-site/1','边缘人和流窜犯的避难所'],['history-rome-kings/0','三百人'],['history-rome-kings/1','重装步兵方阵'],['history-rome-orders/0','平民的武器就是出走']]){
+     ['history-rome-site/0','罗马起步既晚'],['history-rome-site/1','武装移民避难所'],['history-rome-kings/0','三百大族家长'],['history-rome-kings/2','重装步兵方阵'],['history-rome-orders/0','平民靠罢兵反复施压']]){
     const _pm=page._pm??=await page.evaluate(()=>{const m={},d=document.createElement('div');for(const e of HISTORY_ENTRIES){d.innerHTML=e.html;for(const p of d.querySelectorAll('[data-scene-text]'))m[e.id+'/'+p.dataset.sceneText]=p.textContent;}return m;});
     assert.ok((_pm[scene]||'').replace(/（[A-Za-z][^）]*）/g,'').includes(phrase),scene+' lacks '+phrase);
    }
@@ -59,14 +59,14 @@ const FULL_SHOTS=false;const wait=ms=>FULL_SHOTS?new Promise(r=>setTimeout(r,ms)
      moments:document.querySelectorAll('#sceneContext .moment').length,expected:ENTRIES[cur].moments.filter(m=>m.scene===sceneIndex).length};
     if(!(r.pins>0&&r.layers>0&&r.legend>0&&r.fits&&r.moments===r.expected))throw new Error(id+' '+JSON.stringify(r));}},ids);
    // Dated person cards, including 老夫's own Rome anecdote.
-   await page.evaluate(()=>go('history-rome-orders/0'));
+   await page.evaluate(()=>go('history-rome-orders/1'));
    assert.match(await page.$eval('[data-person="aristotle"]',e=>e.textContent),/卢基乌斯/);
    await page.evaluate(()=>go('history-rome-kings/1'));
    assert.match(await page.$eval('[data-person="tarquinius-superbus"]',e=>e.textContent),/罂粟花/);
    await page.evaluate(()=>go('history-rome-mature/3'));
    assert.match(await page.$eval('[data-person="appius-caecus"]',e=>e.textContent),/抬进元老院/);
    assert.match(await page.$eval('[data-person="curius-dentatus"]',e=>e.textContent),/萝卜/);
-   await page.evaluate(()=>go('history-rome-punic/1'));
+   await page.evaluate(()=>go('history-rome-punic/2'));
    assert.equal(await page.$eval('#entryEyebrow',e=>e.textContent),'罗马：称霸地中海 · 第五章');
    assert.equal(await page.$eval('.active-era',e=>e.dataset.era),'rome-med');
    assert.match(await page.$eval('[data-person="hannibal"]',e=>e.textContent),/利用胜利/);
@@ -85,6 +85,6 @@ const FULL_SHOTS=false;const wait=ms=>FULL_SHOTS?new Promise(r=>setTimeout(r,ms)
    await page.close();
   }
   assert.deepEqual(errors,[]);
-  console.log('PASS: Rome chapter Ⅴ — 16 sections in 3 eras, 42 map scenes, ≤300 chars per scene, three-force theses and the user’s own points in 33 scenes, 49 iconic-event tags (至圣所 moved to the 基督教 line), 68 dated person cards with relationship labels; era/eyebrow/numerals/roadmap; desktop and 390px without overflow; offline; no page errors.');
+  console.log('PASS: Rome chapter Ⅴ — 16 sections in 3 eras, 49 map scenes, ≤300 chars per scene, three-force theses and the user’s own points in 33 scenes, 54 iconic-event tags (至圣所 moved to the 基督教 line), 73 dated person cards with relationship labels; era/eyebrow/numerals/roadmap; desktop and 390px without overflow; offline; no page errors.');
  }catch(e){console.error(e);process.exitCode=1;}finally{await Promise.race([browser.close(),new Promise(r=>setTimeout(r,200))]);browser.process()?.kill('SIGKILL');process.exit(process.exitCode||0);}
 })();

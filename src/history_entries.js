@@ -3309,6 +3309,7 @@ Object.assign(HS,{
   gr3_epirus:['伊庇鲁斯','Epirus',39.67,20.85,'希腊西北山地王国；名将皮洛士自此率方阵与战象渡海赴南意大利。'],
   gr3_ai_khanoum:['阿伊哈努姆','Ai-Khanoum',37.169,69.409,'今阿富汗东北部巴克特里亚希腊城址，出土剧场、体育馆与德尔斐箴言碑。'],
   gr3_gandhara:['犍陀罗','Gandhara',34.015,71.58,'今巴基斯坦西北与阿富汗东缘，希腊雕像技法与佛教交汇催生早期佛像。'],
+  metaurus:['梅陶罗河','Metaurus River',43.81,13.03,'意大利东北亚得里亚海岸小河；前207年罗马两支执政官军合歼汉尼拔之弟哈斯德鲁巴的援军。'],
 });
 function hp(d,key,opt={}){
   const [n,en,la,lo,note]=HS[key];
@@ -3927,137 +3928,175 @@ const HISTORY_ENTRIES=[
  scenes:[
   hs('约前10—前8世纪','渡口、盐与三方边界','台伯河入海前最后的好渡口：盐路由此入山，南北商道在此过河，三个族群在此交界。',[[41.5,11.9],[42.4,13.05]],d=>{
     ha(d,'hEtruria',HC.mino,{fillOpacity:.16});ha(d,'hLatium',HC.myc,{fillOpacity:.2});ha(d,'hSabina',HC.hittite,{fillOpacity:.16,dashArray:'5 4'});
-    hp(d,'rome');hp(d,'ostia',{left:1});hp(d,'veii',{left:1});hp(d,'albalonga');
-    hr(d,[[41.77,12.3],[41.86,12.42],[41.893,12.483],[42.0,12.56],[42.2,12.72],[42.36,12.85]],HC.route);
-    hr(d,[[42.25,11.82],[42.02,12.15],[41.93,12.42],[41.88,12.52],[41.72,12.72],[41.55,12.95]],HC.macedon);
-    hl(d,'伊特鲁里亚','Etruria',42.3,11.98,HC.mino);hl(d,'拉丁姆','Latium',41.62,12.8,HC.myc);hl(d,'萨宾','Sabines',42.3,12.85,HC.hittite);
+        hp(d,'rome');hp(d,'ostia',{left:1});hp(d,'veii',{left:1});hp(d,'albalonga');
+        hr(d,[[41.77,12.3],[41.86,12.42],[41.893,12.483],[42.0,12.56],[42.2,12.72],[42.36,12.85]],HC.route);
+        hr(d,[[42.25,11.82],[42.02,12.15],[41.93,12.42],[41.88,12.52],[41.72,12.72],[41.55,12.95]],HC.macedon);
+        hl(d,'伊特鲁里亚','Etruria',42.3,11.98,HC.mino);hl(d,'拉丁姆','Latium',41.62,12.8,HC.myc);hl(d,'萨宾','Sabines',42.3,12.85,HC.hittite);
    },[['fill',HC.mino,'伊特鲁里亚人'],['fill',HC.myc,'拉丁人'],['dash',HC.hittite,'萨宾人'],['dline',HC.route,'盐路（Via Salaria，示意）'],['dline',HC.macedon,'伊特鲁里亚—坎帕尼亚商道（示意）']],9),
   hs('约前8—前6世纪','谁来了罗马','拉丁人、萨宾人、伊特鲁里亚人、希腊和腓尼基商人，还有传说中的逃亡者。',[[40.75,11.4],[42.55,14.25]],d=>{
     ha(d,'hEtruria',HC.mino,{fillOpacity:.1});ha(d,'hLatium',HC.myc,{fillOpacity:.12});ha(d,'hSabina',HC.hittite,{fillOpacity:.1,dashArray:'5 4'});
-    hp(d,'rome');hp(d,'albalonga');hp(d,'cures');hp(d,'tarquinii',{left:1});hp(d,'pyrgi',{left:1});hp(d,'cumae');
-    hr(d,[[41.75,12.65],[41.86,12.53]],HC.myc);hr(d,[[42.21,12.72],[41.95,12.52]],HC.hittite);
-    hr(d,[[42.25,11.76],[42.0,12.2],[41.92,12.44]],HC.mino);hr(d,[[42.016,11.958],[41.85,12.2],[41.87,12.43]],HC.athens);
-    hr(d,[[40.848,14.054],[41.3,13.3],[41.83,12.55]],HC.athens);
+        hp(d,'rome');hp(d,'albalonga');hp(d,'cures');hp(d,'tarquinii',{left:1});hp(d,'pyrgi',{left:1});hp(d,'cumae');
+        hr(d,[[41.75,12.65],[41.86,12.53]],HC.myc);hr(d,[[42.21,12.72],[41.95,12.52]],HC.hittite);
+        hr(d,[[42.25,11.76],[42.0,12.2],[41.92,12.44]],HC.mino);hr(d,[[42.016,11.958],[41.85,12.2],[41.87,12.43]],HC.athens);
+        hr(d,[[40.848,14.054],[41.3,13.3],[41.83,12.55]],HC.athens);
    },[['dline',HC.myc,'拉丁人'],['dline',HC.hittite,'萨宾人'],['dline',HC.mino,'伊特鲁里亚人'],['dline',HC.athens,'希腊与腓尼基商人']])
  ]},
 {id:'history-rome-kings',ch:4,title:'王、元老与人民',short:'王政时代',en:'The Kings of Rome',period:'前753—前509年',c:HC.rome,
  scenes:[
   hs('前753—前616年','元老推举的王','王不世袭：元老提名，库里亚大会认可；早期罗马吞并阿尔巴隆伽，伸手到河口盐场。',[[41.55,12.1],[42.08,12.95]],d=>{
     ha(d,'hLatium',HC.myc,{fillOpacity:.14});ha(d,'hRomeEarly',HC.rome,{fillOpacity:.32});
-    hp(d,'rome');hp(d,'albalonga',{note:'传说第三王图卢斯·霍斯提利乌斯毁了阿尔巴隆伽，把居民迁进罗马。'});hp(d,'ostia',{left:1,note:'传说第四王安库斯·马基乌斯在河口建奥斯蒂亚，控制盐场。'});
-    hr(d,[[41.75,12.65],[41.86,12.53]],HC.rome);hr(d,[[41.88,12.45],[41.77,12.31]],HC.rome);
+        hp(d,'rome');hp(d,'albalonga',{note:'传说第三王图卢斯·霍斯提利乌斯毁了阿尔巴隆伽，把居民迁进罗马。'});hp(d,'ostia',{left:1,note:'传说第四王安库斯·马基乌斯在河口建奥斯蒂亚，控制盐场。'});
+        hr(d,[[41.75,12.65],[41.86,12.53]],HC.rome);hr(d,[[41.88,12.45],[41.77,12.31]],HC.rome);
    },[['fill',HC.rome,'罗马早期领地（概略）'],['fill',HC.myc,'拉丁诸城'],['dline',HC.rome,'吞并与扩张方向']],10),
-  hs('前616—前509年','伊特鲁里亚系的王','后三王倚重新兵和大工程，撇开元老；罗马成为意大利中部的大城。',[[40.75,11.0],[43.15,14.35]],d=>{
+  hs('前616—前509年','伊特鲁里亚系的王','后三王修下水道与神庙、引入束棒仪仗，倚重新兵和大工程撇开元老。',[[40.75,11.0],[43.15,14.35]],d=>{
     ha(d,'hEtruria',HC.mino,{fillOpacity:.22});ha(d,'hCampania',HC.mino,{fillOpacity:.1,dashArray:'5 4'});ha(d,'hRomeEarly',HC.rome,{fillOpacity:.32});
-    hp(d,'rome');hp(d,'tarquinii',{left:1});hp(d,'veii',{left:1});hp(d,'clusium');hp(d,'capua');hp(d,'cumae',{left:1});
-   },[['fill',HC.mino,'伊特鲁里亚城邦'],['dash',HC.mino,'伊特鲁里亚势力伸入坎帕尼亚'],['fill',HC.rome,'罗马']])
+        hp(d,'rome');hp(d,'tarquinii',{left:1});hp(d,'veii',{left:1});hp(d,'clusium');hp(d,'capua');hp(d,'cumae',{left:1});
+   },[['fill',HC.mino,'伊特鲁里亚城邦'],['dash',HC.mino,'伊特鲁里亚势力伸入坎帕尼亚'],['fill',HC.rome,'罗马']]),
+  hs('前6世纪中叶','财产、方阵与百人团','塞尔维乌斯按财产编百人团：谁买得起盔甲谁上主力，富人团靠加权先投稳占过半票。',[[41.55,12.1],[42.08,12.95]],d=>{
+    ha(d,'hLatium',HC.myc,{fillOpacity:.14});ha(d,'hRomeEarly',HC.rome,{fillOpacity:.36});
+        hp(d,'rome',{note:'塞尔维乌斯普查财产并编百人团，既作征兵编组又作投票单位。'});
+        hp(d,'ostia',{left:1});hp(d,'albalonga');hp(d,'veii',{left:1});
+   },[['fill',HC.rome,'塞尔维乌斯时期罗马城与近郊'],['fill',HC.myc,'拉丁诸城']],10)
  ]},
 {id:'history-rome-republic',ch:4,title:'赶走国王',short:'共和初年',en:'The Kings Expelled',period:'前509—前493年',c:HC.rome,
  scenes:[
   hs('前509年','元老和人民联手','傲慢者塔克文被逐，王权一分为二，交给每年改选的两位执政官。',[[41.15,12.05],[42.1,13.4]],d=>{
     ha(d,'hLatium',HC.myc,{fillOpacity:.16});ha(d,'hRomeEarly',HC.rome,{fillOpacity:.32});
-    hp(d,'rome',{note:'前509年两位执政官取代国王；波利比乌斯说，同年罗马与迦太基立约。'});hp(d,'ardea',{left:1});hp(d,'antium',{left:1});hp(d,'circeii',{left:1});hp(d,'tarracina');
-    hl(d,'条约承认的拉丁海岸','Latin coast in the treaty',41.32,12.62,HC.myc);
+        hp(d,'rome',{note:'前509年两位执政官取代国王；波利比乌斯说，同年罗马与迦太基立约。'});hp(d,'ardea',{left:1});hp(d,'antium',{left:1});hp(d,'circeii',{left:1});hp(d,'tarracina');
+        hl(d,'条约承认的拉丁海岸','Latin coast in the treaty',41.32,12.62,HC.myc);
    },[['fill',HC.rome,'罗马'],['fill',HC.myc,'拉丁地区'],['dot',HC.myc,'罗马—迦太基条约点名的拉丁海岸城市']]),
   hs('前508—前493年','国王的反扑','被逐的王四处借兵：波尔塞纳兵临城下，拉丁诸城在雷吉卢斯湖一战；前493年罗马与拉丁同盟立约。',[[40.75,11.3],[43.2,14.25]],d=>{
     ha(d,'hEtruria',HC.mino,{fillOpacity:.12});ha(d,'hLatium',HC.myc,{fillOpacity:.16});
-    hp(d,'clusium',{kind:'battle',note:'克卢西乌姆王波尔塞纳（Porsenna）进兵罗马；塔西佗说罗马一度向他投降。'});hp(d,'rome');
-    hp(d,'aricia',{kind:'battle',left:1});hp(d,'regillus',{kind:'battle'});hp(d,'cumae',{left:1,note:'傲慢者塔克文投奔库迈的僭主阿里斯托德穆斯，前495年死在这里。'});
-    hr(d,[[43.0,11.95],[42.5,12.15],[41.95,12.45]],HC.mino);hr(d,[[40.85,14.05],[41.3,13.3],[41.7,12.72]],HC.athens);
+        hp(d,'clusium',{kind:'battle',note:'克卢西乌姆王波尔塞纳（Porsenna）进兵罗马；塔西佗说罗马一度向他投降。'});hp(d,'rome');
+        hp(d,'aricia',{kind:'battle',left:1});hp(d,'regillus',{kind:'battle'});hp(d,'cumae',{left:1,note:'傲慢者塔克文投奔库迈的僭主阿里斯托德穆斯，前495年死在这里。'});
+        hr(d,[[43.0,11.95],[42.5,12.15],[41.95,12.45]],HC.mino);hr(d,[[40.85,14.05],[41.3,13.3],[41.7,12.72]],HC.athens);
    },[['dline',HC.mino,'波尔塞纳进军'],['dline',HC.athens,'库迈援军'],['fill',HC.myc,'拉丁诸城'],['dot',HC.war,'战场']])
  ]},
 {id:'history-rome-plebs',ch:4,title:'平民有了自己的官',short:'等级斗争：平民撤离',en:'The Plebs Walk Out',period:'前494—前449年',c:HC.rome,
  scenes:[
   hs('前494—前458年','第一次撤离','山民年年下山劫掠，罗马离不开平民步兵；平民撤到圣山，换来保民官。',[[41.35,12.15],[42.25,13.85]],d=>{
     ha(d,'hLatium',HC.myc,{fillOpacity:.12});ha(d,'hVolsci',HC.hittite,{fillOpacity:.24});ha(d,'hAequi',HC.hittite,{fillOpacity:.24,dashArray:'5 4'});ha(d,'hRomeEarly',HC.rome,{fillOpacity:.3});
-    hp(d,'rome',{left:1});hp(d,'monssacer');hp(d,'algidus',{kind:'battle'});
-    hr(d,[[41.5,13.4],[41.62,13.05],[41.72,12.82]],HC.war);hr(d,[[42.0,13.25],[41.9,12.95],[41.8,12.8]],HC.war);
-    hl(d,'沃尔斯基人','Volsci',41.47,13.48,HC.hittite);hl(d,'埃奎人','Aequi',42.08,13.22,HC.hittite);
+        hp(d,'rome',{left:1});hp(d,'monssacer');hp(d,'algidus',{kind:'battle'});
+        hr(d,[[41.5,13.4],[41.62,13.05],[41.72,12.82]],HC.war);hr(d,[[42.0,13.25],[41.9,12.95],[41.8,12.8]],HC.war);
+        hl(d,'沃尔斯基人','Volsci',41.47,13.48,HC.hittite);hl(d,'埃奎人','Aequi',42.08,13.22,HC.hittite);
    },[['fill',HC.hittite,'南下的山地族群'],['dline',HC.war,'劫掠方向（示意）'],['fill',HC.rome,'罗马'],['fill',HC.myc,'拉丁诸城']]),
-  hs('前451—前449年','十二铜表与十人团','十人团编成十二铜表后赖着不走；元老与平民联手把它推倒。',[[41.55,12.15],[42.25,13.1]],d=>{
+  hs('前451—前450年','十二铜表法挂上广场','平民死磕成文法，十人团把法律刻上十二块铜表挂在广场，贵族再难随口量刑。',[[41.55,12.15],[42.25,13.1]],d=>{
+    ha(d,'hRomeEarly',HC.rome,{fillOpacity:.34});ha(d,'hLatium',HC.myc,{fillOpacity:.12});
+        hp(d,'rome',{left:1,note:'前451—前450年十二铜表在广场公布，打破祭司口头解法垄断。'});
+        hp(d,'ostia',{left:1});hp(d,'albalonga');
+   },[['fill',HC.rome,'罗马领地（概略）'],['fill',HC.myc,'拉丁诸城']],10),
+  hs('前449年','推倒十人团与法理落地','十人团赖权并逼死维吉尼娅；士兵倒戈二次撤离，元老与平民联手推倒专权官员。',[[41.55,12.15],[42.25,13.1]],d=>{
     ha(d,'hRomeEarly',HC.rome,{fillOpacity:.3});ha(d,'hSabina',HC.hittite,{fillOpacity:.12,dashArray:'5 4'});
-    hp(d,'rome',{left:1,note:'前451—前450年，十二铜表在广场公布。'});hp(d,'monssacer',{note:'前449年平民第二次撤离：先上阿文丁山，再到圣山。'});hp(d,'algidus',{kind:'battle',note:'前449年，前线士兵听说维吉尼娅之死，倒戈回城。'});
+        hp(d,'rome',{left:1,note:'前449年十人团倒台，保民官人身神圣与公民上诉权写入法律。'});hp(d,'monssacer',{note:'前449年平民第二次撤离：先上阿文丁山，再到圣山。'});hp(d,'algidus',{kind:'battle',note:'前449年，前线士兵听说维吉尼娅之死，倒戈回城。'});
    },[['fill',HC.rome,'罗马领地（概略）'],['dash',HC.hittite,'萨宾人'],['dot',HC.war,'前线']],10)
  ]},
-{id:'history-rome-orders',ch:4,title:'切香肠与十年否决',short:'等级斗争：执政官开放',en:'The Struggle of the Orders',period:'前445—前367年',c:HC.rome,
+{id:'history-rome-orders',ch:4,title:'切香肠与十年否决',short:'等级斗争：执政官开放',en:'The Struggle of the Orders',period:'前445—前326年',c:HC.rome,
  scenes:[
-  hs('前445—前390年','维爱与高卢人','贵族边打边退；攻灭维爱后分地给平民；前390年高卢人攻破罗马。',[[41.65,11.6],[43.2,12.95]],d=>{
+  hs('前445—前396年','切香肠与攻灭维爱','贵族开放通婚却拆出监察官；前396年卡米卢斯围攻十年灭维爱，分地给平民并始发军饷。',[[41.65,11.6],[42.5,12.95]],d=>{
+    ha(d,'hEtruria',HC.mino,{fillOpacity:.1});ha(d,'hVeii',HC.rome,{fillOpacity:.26,dashArray:'5 4'});ha(d,'hRomeEarly',HC.rome,{fillOpacity:.32});
+        hp(d,'veii',{kind:'battle',left:1,note:'前396年卡米卢斯挖地道灭维爱，罗马自此向远征兵发军饷。'});
+        hp(d,'rome');hp(d,'ostia',{left:1});
+   },[['fill',HC.rome,'罗马原有领地'],['dash',HC.rome,'前396年并入的维爱土地'],['fill',HC.mino,'伊特鲁里亚诸邦']],9),
+  hs('约前390年','阿里亚河与高卢之劫','高卢人在阿里亚河击溃罗马军并焚城，守军死守卡匹托尔山，拿赎金送走敌军。',[[41.65,11.6],[43.2,12.95]],d=>{
     ha(d,'hEtruria',HC.mino,{fillOpacity:.1});ha(d,'hVeii',HC.rome,{fillOpacity:.22,dashArray:'5 4'});ha(d,'hRomeEarly',HC.rome,{fillOpacity:.32});
-    hp(d,'veii',{kind:'battle',left:1,note:'前396年，卡米卢斯攻灭维爱，罗马领土大增。'});hp(d,'allia',{kind:'battle'});hp(d,'rome',{kind:'battle',note:'前390年高卢人攻入城中，只有卡匹托尔山没有失守。'});hp(d,'clusium');
-    hr(d,[[43.3,11.85],[43.017,11.949],[42.5,12.25],[42.1,12.52],[41.93,12.5]],HC.celt,{band:true});
-   },[['fill',HC.rome,'罗马领地'],['dash',HC.rome,'新得的维爱土地'],['dline',HC.celt,'高卢人南下路线（概略）'],['dot',HC.war,'战场']]),
-  hs('前384—前367年','十年否决','曼利乌斯以“图谋称王”被处死；保民官连年否决选举，前367年执政官向平民开放。',[[41.65,12.05],[42.35,12.95]],d=>{
+        hp(d,'allia',{kind:'battle'});hp(d,'rome',{kind:'battle',note:'前390年高卢人破城，唯卡匹托尔山未失；战后筑塞尔维乌斯墙。'});hp(d,'clusium');hp(d,'veii',{left:1});
+        hr(d,[[43.3,11.85],[43.017,11.949],[42.5,12.25],[42.1,12.52],[41.93,12.5]],HC.celt,{band:true});
+   },[['fill',HC.rome,'罗马领地'],['dline',HC.celt,'高卢人南下路线（概略）'],['dot',HC.war,'战场']]),
+  hs('前384—前326年','十年否决与显贵合流','曼利乌斯被处死；保民官十年否决逼出执政官开放，前326年废除公民债务奴役。',[[41.65,12.05],[42.35,12.95]],d=>{
     ha(d,'hVeii',HC.rome,{fillOpacity:.2});ha(d,'hRomeEarly',HC.rome,{fillOpacity:.32});
-    hp(d,'rome',{note:'前384年曼利乌斯从卡匹托尔山的塔佩亚岩被推下；前367年卡米卢斯许愿修建和谐女神庙。'});hp(d,'sutrium',{left:1});hp(d,'nepet');
+        hp(d,'rome',{note:'前384年曼利乌斯处死；前367年开放执政官；前326年废债奴。'});hp(d,'sutrium',{left:1});hp(d,'nepet');
    },[['fill',HC.rome,'罗马领地（含原维爱土地）'],['site',HC.rome,'新设的拉丁殖民地']])
  ]},
 {id:'history-rome-mature',ch:4,title:'征服意大利',short:'征服意大利',en:'Conquering Italy',period:'前340—前264年',c:HC.rome,
  scenes:[
   hs('前340—前338年','分级吸纳','拉丁同盟解散，战败者按等级吸纳：全权公民、无投票权公民、拉丁权、同盟者。',[[40.75,12.0],[42.25,14.45]],d=>{
     ha(d,'hLatium',HC.rome,{fillOpacity:.26});ha(d,'hCampania',HC.rome,{fillOpacity:.12,dashArray:'5 4'});ha(d,'hVolsci',HC.rome,{fillOpacity:.12,dashArray:'5 4'});
-    hp(d,'rome');hp(d,'antium',{left:1,note:'前338年罗马收服安提乌姆，缴获其战船。'});hp(d,'capua');hp(d,'tibur');hp(d,'praeneste',{left:1});
+        hp(d,'rome',{left:1});hp(d,'antium',{left:1,note:'前338年罗马收服安提乌姆，缴获其战船。'});hp(d,'capua');hp(d,'tibur');hp(d,'praeneste');
    },[['fill',HC.rome,'并入罗马公民体（概略）'],['dash',HC.rome,'无投票权公民等附属地区（概略）'],['dot',HC.myc,'保留拉丁权的盟邦（如提布尔、普雷内斯特）']]),
-  hs('前326—前290年','萨莫奈战争与大道','卡夫丁之辱后，罗马修路、设殖民地，把山民围起来；前295年森提努姆一战定局。',[[40.4,11.9],[43.7,16.0]],d=>{
+  hs('前326—前290年','萨莫奈战争与军团改制','卡夫丁之辱后，罗马修阿庇亚大道、建殖民地并改出三线中队制，森提努姆定局。',[[40.4,11.9],[43.7,16.0]],d=>{
     ha(d,'hSamnium',HC.hittite,{fillOpacity:.24});ha(d,'hLatium',HC.rome,{fillOpacity:.2});ha(d,'hCampania',HC.rome,{fillOpacity:.14});ha(d,'hColonies290',HC.rome,{fillOpacity:.6,weight:.8});
-    hp(d,'rome');hp(d,'capua',{left:1});hp(d,'caudium',{kind:'battle'});hp(d,'sentinum',{kind:'battle'});
-    d.line([[41.893,12.483],[41.75,12.65],[41.56,12.95],[41.29,13.25],[41.26,13.6],[41.17,13.9],[41.08,14.25]],{color:HC.rome,weight:2.8,opacity:.95});
-    hl(d,'萨莫奈人','Samnites',41.55,14.62,HC.hittite);
+        hp(d,'rome');hp(d,'capua',{left:1});hp(d,'caudium',{kind:'battle'});hp(d,'sentinum',{kind:'battle'});
+        d.line([[41.893,12.483],[41.75,12.65],[41.56,12.95],[41.29,13.25],[41.26,13.6],[41.17,13.9],[41.08,14.25]],{color:HC.rome,weight:2.8,opacity:.95});
+        hl(d,'萨莫奈人','Samnites',41.55,14.62,HC.hittite);
    },[['fill',HC.hittite,'萨莫奈人'],['line',HC.rome,'阿庇亚大道（前312年起）'],['site',HC.rome,'拉丁殖民地（概略）'],['dot',HC.war,'战场']]),
-  hs('前287年','最后一次撤离','平民退到雅尼库鲁姆山；霍腾西乌斯法规定平民会议的决议约束全体公民。',[[41.62,12.1],[42.15,12.9]],d=>{
+  hs('前287年','最后一次撤离与民粹后门','平民退到雅尼库鲁姆山；霍腾西乌斯法规定平民会议决议直接约束全体公民。',[[41.62,12.1],[42.15,12.9]],d=>{
     ha(d,'hLatium',HC.rome,{fillOpacity:.18});ha(d,'hVeii',HC.rome,{fillOpacity:.18});hp(d,'rome');hp(d,'janiculum',{left:1});hp(d,'monssacer');
    },[['fill',HC.rome,'罗马公民地区（概略）'],['dot',HC.war,'历次撤离地：圣山（前494、前449）、雅尼库鲁姆山（前287）']],10),
   hs('前280—前264年','“一群国王”','皮洛士赢了战役、输了战争；前264年罗马控制阿尔诺河—卢比孔河以南的半岛。',[[37.7,9.0],[44.4,21.3]],d=>{
     ha(d,'romanItaly264',HC.rome,{fillOpacity:.2});ha(d,'hColonies264',HC.rome,{fillOpacity:.65,weight:.8});
-    hp(d,'rome');hp(d,'heraclea',{kind:'battle'});hp(d,'asculum',{kind:'battle'});hp(d,'beneventum',{kind:'battle',left:1});hp(d,'taras',{note:'南意大利最富的希腊城市，请皮洛士来对付罗马；前272年投降。'});
-    hr(d,[[39.16,20.98],[39.8,19.6],[40.3,18.1],[40.45,17.3]],HC.macedon);
+        hp(d,'rome');hp(d,'heraclea',{kind:'battle'});hp(d,'asculum',{kind:'battle'});hp(d,'beneventum',{kind:'battle',left:1});hp(d,'taras',{note:'南意大利最富的希腊城市，请皮洛士来对付罗马；前272年投降。'});
+        hr(d,[[39.16,20.98],[39.8,19.6],[40.3,18.1],[40.45,17.3]],HC.macedon);
    },[['fill',HC.rome,'约前264年罗马控制的意大利'],['site',HC.rome,'拉丁殖民地（概略）'],['dline',HC.macedon,'皮洛士渡海'],['dot',HC.war,'战场']])
  ]},
 {id:'history-rome-punic',ch:4,title:'布匿战争',short:'布匿战争',en:'The Punic Wars',period:'前264—前201年',c:HC.rome,
  scenes:[
   hs('前264—前241年','第一次布匿战争','为墨西拿开战，罗马头一回造舰队；前241年在埃加迪群岛决胜，西西里成了第一个行省。',[[33.0,5.4],[42.0,17.4]],d=>{
     ha(d,'romanItaly264',HC.rome,{fillOpacity:.2});ha(d,'hCarthageAfrica',HC.mino,{fillOpacity:.26});ha(d,'hPunicSicily',HC.mino,{fillOpacity:.3});
-    ha(d,'hSardCorsica',HC.mino,{fillOpacity:.14,dashArray:'5 4'});ha(d,'hSyracuse',HC.route,{fillOpacity:.3});
-    hp(d,'rome');hp(d,'carthage',{left:1});hp(d,'messana');hp(d,'mylae',{kind:'battle',left:1});hp(d,'aegates',{kind:'battle',left:1});
-    hp(d,'syracuse',{note:'国王希伦二世（Hiero II）前263年改投罗马，此后半个世纪是罗马的粮仓和盟友。'});
-    hr(d,[[37.1,13.9],[36.95,12.5],[36.85,11.1]],HC.rome);
+        ha(d,'hSardCorsica',HC.mino,{fillOpacity:.14,dashArray:'5 4'});ha(d,'hSyracuse',HC.route,{fillOpacity:.3});
+        hp(d,'rome');hp(d,'carthage',{left:1});hp(d,'messana');hp(d,'mylae',{kind:'battle',left:1});hp(d,'aegates',{kind:'battle',left:1});
+        hp(d,'syracuse',{note:'国王希伦二世（Hiero II）前263年改投罗马，此后半个世纪是罗马的粮仓和盟友。'});
+        hr(d,[[37.1,13.9],[36.95,12.5],[36.85,11.1]],HC.rome);
    },[['fill',HC.rome,'罗马及意大利同盟'],['fill',HC.mino,'迦太基领地'],['dash',HC.mino,'迦太基的撒丁岛与科西嘉（前238年被罗马夺走）'],['fill',HC.route,'叙拉古王国（罗马盟友）'],['dline',HC.rome,'前256年雷古卢斯登陆非洲'],['dot',HC.war,'海战']]),
-  hs('前218—前216年','汉尼拔翻山','汉尼拔从新迦太基出发，翻比利牛斯山和阿尔卑斯山，在特雷比亚、特拉西梅诺、坎尼三战连胜。',[[36.2,-3.5],[46.6,17.5]],d=>{
+  hs('前218—前217年','翻山奇袭意大利','汉尼拔从新迦太基出发，翻比利牛斯与阿尔卑斯山入意大利，连胜特雷比亚与特拉西梅诺。',[[36.2,-3.5],[46.6,17.5]],d=>{
     ha(d,'hBarcidSpain',HC.mino,{fillOpacity:.24});ha(d,'hCarthageAfrica',HC.mino,{fillOpacity:.2});ha(d,'romanItaly264',HC.rome,{fillOpacity:.2});
-    hp(d,'cartnova',{left:1});hp(d,'saguntum');hp(d,'trebia',{kind:'battle'});hp(d,'trasimene',{kind:'battle',left:1});hp(d,'cannae',{kind:'battle'});hp(d,'rome',{left:1});
-    hr(d,[[37.6,-0.98],[39.68,-0.27],[41.0,0.9],[42.45,2.9],[43.8,4.6],[44.7,6.2],[45.2,6.95],[45.07,7.68],[45.0,9.6],[43.8,11.2],[43.19,12.03],[43.0,13.6],[42.0,14.8],[41.31,16.13]],HC.mino,{band:true});
-   },[['fill',HC.mino,'迦太基与巴卡家族的西班牙'],['fill',HC.rome,'罗马及意大利同盟'],['dline',HC.mino,'汉尼拔进军路线（概略）'],['dot',HC.war,'战场']]),
-  hs('前215—前201年','拆同盟与扎马','卡普阿、南意大利与叙拉古倒向汉尼拔，拉丁殖民地守住；大西庇阿先取西班牙，再渡海打到扎马。',[[33.8,-3.0],[44.0,19.0]],d=>{
+        hp(d,'cartnova',{left:1});hp(d,'saguntum');hp(d,'trebia',{kind:'battle'});hp(d,'trasimene',{kind:'battle',left:1});hp(d,'rome',{left:1});
+        hr(d,[[37.6,-0.98],[39.68,-0.27],[41.0,0.9],[42.45,2.9],[43.8,4.6],[44.7,6.2],[45.2,6.95],[45.07,7.68],[45.0,9.6],[43.8,11.2],[43.19,12.03]],HC.mino,{band:true});
+   },[['fill',HC.mino,'迦太基与巴卡家族的西班牙'],['fill',HC.rome,'罗马及意大利同盟'],['dline',HC.mino,'汉尼拔翻山进军路线（概略）'],['dot',HC.war,'战场']]),
+  hs('前217—前216年','费边拖延与坎尼口袋','费边坚壁消耗遭嘲讽，瓦罗在坎尼硬拼阵亡五万余人，可罗马拒赎俘虏并武装奴隶再战。',[[39.0,11.0],[44.0,18.2]],d=>{
+    ha(d,'romanItaly264',HC.rome,{fillOpacity:.2});ha(d,'hHannibalItaly',HC.mino,{fillOpacity:.22,dashArray:'5 4'});
+        hp(d,'rome',{left:1,note:'坎尼战后元老院拒绝赎俘，购入八千奴隶编成军团，稳住意大利同盟。'});
+        hp(d,'trasimene',{kind:'battle',left:1});hp(d,'cannae',{kind:'battle',note:'前216年汉尼拔以弯月阵合围罗马八万大军，歼敌五万以上。'});hp(d,'capua');
+        hr(d,[[43.19,12.03],[43.0,13.6],[42.0,14.8],[41.31,16.13]],HC.mino,{band:true});
+   },[['fill',HC.rome,'罗马及意大利同盟'],['dash',HC.mino,'战后倒向汉尼拔的南意大利地区'],['dline',HC.mino,'汉尼拔南下坎尼路线'],['dot',HC.war,'战场']]),
+  hs('前215—前207年','叙拉古与梅陶罗河','罗马攻克阿基米德死守的叙拉古与叛城卡普阿；前207年梅陶罗河全歼哈斯德鲁巴援军。',[[36.5,11.2],[45.2,18.5]],d=>{
     ha(d,'romanItaly264',HC.rome,{fillOpacity:.18});ha(d,'hHannibalItaly',HC.mino,{fillOpacity:.22,dashArray:'5 4'});ha(d,'hColonies264',HC.rome,{fillOpacity:.65,weight:.8});
-    ha(d,'hBarcidSpain',HC.mino,{fillOpacity:.12,dashArray:'5 4'});ha(d,'hCarthageAfrica',HC.mino,{fillOpacity:.22});
-    hp(d,'capua',{kind:'battle',note:'前216年倒向汉尼拔，前211年被罗马攻回：城中头面人物被处死，土地充公。'});
-    hp(d,'syracuse',{kind:'battle',note:'前214年改投迦太基，前212年被罗马攻破，阿基米德死于城破。'});
-    hp(d,'cartnova',{kind:'battle',left:1});hp(d,'zama',{kind:'battle'});hp(d,'carthage');hp(d,'rome',{left:1});
-    hr(d,[[37.8,12.43],[37.4,11.3],[37.06,10.06]],HC.rome);
-   },[['fill',HC.rome,'罗马及意大利同盟'],['dash',HC.mino,'倒向汉尼拔的地区（前216—前211年，概略）'],['site',HC.rome,'拉丁殖民地（无一倒戈）'],['fill',HC.mino,'迦太基'],['dline',HC.rome,'前204年大西庇阿从西西里渡海'],['dot',HC.war,'战场']])
+        hp(d,'rome',{left:1});hp(d,'capua',{kind:'battle',note:'前216年倒向汉尼拔，前211年被罗马攻回，城中贵族遭处决。'});
+        hp(d,'syracuse',{kind:'battle',note:'前214年改投迦太基，阿基米德助守两年，前212年城破遇害。'});
+        hp(d,'metaurus',{kind:'battle'});hp(d,'cannae');
+        hr(d,[[45.1,7.7],[44.8,10.3],[44.2,12.2],[43.81,13.03]],HC.mino);hr(d,[[41.0,16.0],[42.2,14.3],[43.5,13.5],[43.81,13.03]],HC.rome);
+   },[['fill',HC.rome,'罗马及同盟'],['dash',HC.mino,'汉尼拔南意控制区'],['site',HC.rome,'拉丁殖民地（无一倒戈）'],['dline',HC.mino,'前207年哈斯德鲁巴南下援军'],['dline',HC.rome,'执政官尼禄千里奔袭合围'],['dot',HC.war,'战场']]),
+  hs('前210—前201年','西班牙与扎马决战','大西庇阿奇袭新迦太基端掉西班牙，再顶住元老院渡海直扑非洲，前202年扎马击败汉尼拔。',[[33.8,-3.0],[43.5,18.5]],d=>{
+    ha(d,'romanItaly264',HC.rome,{fillOpacity:.18});ha(d,'hBarcidSpain',HC.mino,{fillOpacity:.14,dashArray:'5 4'});ha(d,'hCarthageAfrica',HC.mino,{fillOpacity:.24});
+        hp(d,'rome',{left:1});hp(d,'cartnova',{kind:'battle',left:1,note:'前209年二十四岁的大西庇阿奇袭新迦太基，端掉巴卡家族银矿与粮仓。'});
+        hp(d,'syracuse');hp(d,'zama',{kind:'battle',note:'前202年大西庇阿在此击败汉尼拔，终结第二次布匿战争。'});hp(d,'carthage');
+        hr(d,[[41.8,12.2],[41.0,6.0],[39.5,1.5],[37.6,-0.98]],HC.rome);hr(d,[[37.8,12.43],[37.4,11.3],[37.06,10.06]],HC.rome);
+   },[['fill',HC.rome,'罗马及意大利同盟'],['dash',HC.mino,'被罗马夺走的巴卡西班牙'],['fill',HC.mino,'迦太基本土'],['dline',HC.rome,'大西庇阿进军西班牙与渡海北非'],['dot',HC.war,'战场']]),
+  hs('前218—前201年','行省与骑士阶层成形','西西里、撒丁、西班牙转为纳贡行省；克劳狄法禁元老经商，富商接盘包税形成骑士阶层。',[[34.0,-6.0],[45.0,18.5]],d=>{
+    ha(d,'romanItaly264',HC.rome,{fillOpacity:.24});ha(d,'hSicily',HC.rome,{fillOpacity:.26,dashArray:'5 4'});ha(d,'hSardCorsica',HC.rome,{fillOpacity:.24,dashArray:'5 4'});
+        ha(d,'hBarcidSpain',HC.rome,{fillOpacity:.2,dashArray:'5 4'});ha(d,'hCarthageAfrica',HC.mino,{fillOpacity:.2});
+        hp(d,'rome',{note:'前218年克劳狄法禁元老持大船，包税与海贸归骑士阶层。'});
+        hp(d,'syracuse');hp(d,'cartnova',{left:1});hp(d,'carthage');
+   },[['fill',HC.rome,'罗马与意大利同盟'],['dash',HC.rome,'新设纳贡行省（西西里、撒丁、近远西班牙）'],['fill',HC.mino,'战败赔款的迦太基']])
  ]},
-{id:'history-rome-east',ch:4,title:'东进',short:'罗马东进',en:'Rome Turns East',period:'前200—前133年',c:HC.rome,
+{id:'history-rome-east',ch:4,title:'东进与三战灭迦太基',short:'罗马东进',en:'Rome Turns East & Carthage Falls',period:'前200—前133年',c:HC.rome,
  scenes:[
   hs('前200—前188年','先当裁判','人民大会先否决对马其顿开战；罗马击败腓力五世和安条克三世，宣布“希腊人自由”，撤军不设行省。',[[35.2,12.0],[43.3,31.5]],d=>{
     ha(d,'romanItaly264',HC.rome,{fillOpacity:.18});ha(d,'hAntigonidCore',HC.macedon,{fillOpacity:.24});ha(d,'hSeleucidAnatolia',HC.thebes,{fillOpacity:.16,dashArray:'5 4'});
-    ha(d,'hPergamonCore',HC.mino,{fillOpacity:.28});ha(d,'hAetolia',HC.athens,{fillOpacity:.2});ha(d,'hAchaeanLeague',HC.athens,{fillOpacity:.16,dashArray:'4 3'});
-    hp(d,'cynoscephalae',{kind:'battle',left:1});hp(d,'corinth',{left:1,note:'前196年地峡运动会上，弗拉米尼努斯（Flamininus）宣布希腊人自由。'});
-    hp(d,'thermopylae',{kind:'battle',note:'前191年安条克三世据守温泉关，老加图带兵绕山路抄了后路。'});hp(d,'magnesia',{kind:'battle'});hp(d,'apamea',{left:1});hp(d,'pergamon');
-    hr(d,[[40.64,17.95],[40.6,19.4],[39.9,21.0],[39.35,22.55]],HC.rome);hr(d,[[40.5,23],[40.5,26],[38.65,27.45]],HC.rome);
+        ha(d,'hPergamonCore',HC.mino,{fillOpacity:.28});ha(d,'hAetolia',HC.athens,{fillOpacity:.2});ha(d,'hAchaeanLeague',HC.athens,{fillOpacity:.16,dashArray:'4 3'});
+        hp(d,'cynoscephalae',{kind:'battle',left:1});hp(d,'corinth',{left:1,note:'前196年地峡运动会在此宣告希腊诸邦自治。'});
+        hp(d,'thermopylae',{kind:'battle',note:'前191年安条克三世据守温泉关，老加图带兵绕山路抄了后路。'});hp(d,'magnesia',{kind:'battle'});hp(d,'apamea',{left:1});hp(d,'pergamon');
+        hr(d,[[40.64,17.95],[40.6,19.4],[39.9,21.0],[39.35,22.55]],HC.rome);hr(d,[[40.5,23],[40.5,26],[38.65,27.45]],HC.rome);
    },[['fill',HC.macedon,'安提柯马其顿'],['dash',HC.thebes,'塞琉古在小亚细亚的势力（前188年退出）'],['fill',HC.mino,'帕加马（罗马盟友）'],['fill',HC.athens,'埃托利亚同盟'],['dash',HC.athens,'亚该亚同盟'],['dline',HC.rome,'罗马进军方向']]),
-  hs('前187—前167年','战利品与凯旋','西庇阿兄弟被告上法庭；前168年保卢斯在皮德纳灭了马其顿，带回的财宝让罗马公民从此不交直接税。',[[37.2,17.6],[42.4,26.2]],d=>{
+  hs('前187—前167年','战利品与凯旋','西庇阿兄弟被告上法庭；前168年保卢斯在皮德纳灭了马其顿，带回的财宝让罗马公民从此不交直接税。',[[37.2,17.6],[42.4,27.2]],d=>{
     ha(d,'hAntigonidCore',HC.rome,{fillOpacity:.2,dashArray:'5 4'});ha(d,'hGreekMainland',HC.neutral,{fillOpacity:.08});
-    hp(d,'pydna',{kind:'battle'});hp(d,'pella',{note:'前167年马其顿王国被拆成四个共和国，彼此不得通婚、通商。'});hp(d,'epirus',{kind:'battle',left:1});
-    hp(d,'corinth',{left:1,note:'前167年亚该亚同盟一千名头面人物被押往意大利作人质，波利比乌斯在其中。'});
-    hp(d,'delos',{note:'前166年罗马把提洛岛设为免税港，盟友罗得岛的港税收入一落千丈。'});
-    hr(d,[[40.36,22.61],[40.6,20.9],[40.72,19.47],[40.64,17.95]],HC.rome,{band:true});
+        hp(d,'pydna',{kind:'battle'});hp(d,'pella',{note:'前167年马其顿王国被拆成四个共和国，彼此不得通婚、通商。'});hp(d,'epirus',{kind:'battle',left:1});
+        hp(d,'corinth',{left:1,note:'前167年亚该亚一千名显贵押往意大利作人质，波利比乌斯在列。'});
+        hp(d,'delos',{left:1,note:'前166年罗马把提洛岛设为免税港，盟友罗得岛的港税收入一落千丈。'});
+        hr(d,[[40.36,22.61],[40.6,20.9],[40.72,19.47],[40.64,17.95]],HC.rome,{band:true});
    },[['dash',HC.rome,'前167年被拆成四国的马其顿'],['dot',HC.war,'战场与被洗劫的伊庇鲁斯'],['dline',HC.rome,'战利品、奴隶与人质运往意大利']]),
-  hs('前149—前133年','毁城与征兵难','前146年迦太基、科林斯同年被毁；西班牙越打越难，征兵受阻；前133年小西庇阿攻下努曼提亚。',[[32.6,-9.6],[46.2,30.2]],d=>{
+  hs('前149—前146年','第三次布匿战争与双城毁灭','罗马步步紧逼引爆三战，前146年同年焚毁迦太基与科林斯，地中海东西两端归入行省直辖。',[[33.0,6.0],[43.0,26.0]],d=>{
+    ha(d,'romanItaly264',HC.rome,{fillOpacity:.22});ha(d,'hSicily',HC.rome,{fillOpacity:.24});ha(d,'hAfrica146',HC.rome,{fillOpacity:.3});
+        ha(d,'hAntigonidCore',HC.rome,{fillOpacity:.24});ha(d,'hGreekMainland',HC.rome,{fillOpacity:.14,dashArray:'5 4'});
+        hp(d,'rome');hp(d,'carthage',{kind:'battle',note:'前149—前146年苦守三年，城破焚毁，五万幸存者卖奴。'});
+        hp(d,'corinth',{kind:'battle',left:1,note:'前146年同年被罗马焚毁，亚该亚同盟解散。'});
+   },[['fill',HC.rome,'罗马及其新设阿非利加、马其顿行省'],['dash',HC.rome,'纳入管辖的希腊本土'],['dot',HC.war,'前146年同年被毁的两座名城']]),
+  hs('前151—前133年','西班牙泥潭与兵源枯竭','西班牙游击苦战引发抗拒征兵，前133年小西庇阿攻破努曼提亚，同年提比略·格拉古任保民官。',[[32.6,-9.6],[46.2,30.2]],d=>{
     ha(d,'romanItaly264',HC.rome,{fillOpacity:.24});ha(d,'poValley',HC.rome,{fillOpacity:.12,dashArray:'5 4'});ha(d,'hSicily',HC.rome,{fillOpacity:.24});ha(d,'hSardCorsica',HC.rome,{fillOpacity:.2});
-    ha(d,'hHispania133',HC.rome,{fillOpacity:.2});ha(d,'hAfrica146',HC.rome,{fillOpacity:.28});ha(d,'hAntigonidCore',HC.rome,{fillOpacity:.24});
-    ha(d,'hGreekMainland',HC.rome,{fillOpacity:.1,dashArray:'5 4'});ha(d,'hPergamonCore',HC.rome,{fillOpacity:.14,dashArray:'5 4'});
-    hp(d,'rome');hp(d,'carthage',{kind:'battle'});hp(d,'corinth',{kind:'battle',left:1,note:'前146年被罗马攻破焚毁，亚该亚同盟解散。'});hp(d,'numantia',{kind:'battle'});
-    hp(d,'pergamon',{note:'前133年国王阿塔罗斯三世立遗嘱把王国赠给罗马，后来成了亚细亚行省。'});
-   },[['fill',HC.rome,'罗马的意大利与行省（约前133年）'],['dash',HC.rome,'受罗马控制的波河流域、希腊与刚遗赠的帕加马'],['dot',HC.war,'被攻毁的城市']])
+        ha(d,'hHispania133',HC.rome,{fillOpacity:.22});ha(d,'hAfrica146',HC.rome,{fillOpacity:.28});ha(d,'hAntigonidCore',HC.rome,{fillOpacity:.24});
+        ha(d,'hGreekMainland',HC.rome,{fillOpacity:.1,dashArray:'5 4'});ha(d,'hPergamonCore',HC.rome,{fillOpacity:.14,dashArray:'5 4'});
+        hp(d,'rome');hp(d,'numantia',{kind:'battle',note:'前133年小西庇阿筑墙断粮苦围攻破；此前罗马年轻人纷纷避役西班牙。'});
+        hp(d,'carthage');hp(d,'corinth',{left:1});hp(d,'pergamon',{note:'前133年国王阿塔罗斯三世立遗嘱把王国赠给罗马，后来成了亚细亚行省。'});
+   },[['fill',HC.rome,'罗马的意大利与行省（约前133年）'],['dash',HC.rome,'波河流域、希腊与刚遗赠的帕加马'],['dot',HC.war,'努曼提亚苦战']])
  ]},
 {id:'history-rome-gracchi',ch:4,title:'格拉古兄弟',short:'格拉古兄弟',en:'The Gracchi',period:'前133—前121年',c:HC.rome,
  scenes:[
